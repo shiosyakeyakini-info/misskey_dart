@@ -25,6 +25,7 @@ const _$ChannelDataTypeEnumMap = {
   ChannelDataType.subNote: 'subNote',
   ChannelDataType.noteUpdated: 'noteUpdated',
   ChannelDataType.unsubNote: 'unsubNote',
+  ChannelDataType.emojiUpdated: 'emojiUpdated',
 };
 
 _$_ChannelRequestBody _$$_ChannelRequestBodyFromJson(
@@ -44,9 +45,17 @@ Map<String, dynamic> _$$_ChannelRequestBodyToJson(
     };
 
 const _$ChannelEnumMap = {
-  Channel.globalTimeline: 'globalTimeline',
   Channel.homeTimeline: 'homeTimeline',
-  Channel.hybridTimeline: 'hybridTimeline',
   Channel.localTimeline: 'localTimeline',
+  Channel.globalTimeline: 'globalTimeline',
+  Channel.hybridTimeline: 'hybridTimeline',
+  Channel.channel: 'channel',
+  Channel.userList: 'userList',
+  Channel.hashtag: 'hashtag',
+  Channel.antenna: 'antenna',
+  Channel.drive: 'drive',
+  Channel.serverStats: 'serverStats',
+  Channel.queueStats: 'queueStats',
+  Channel.admin: 'admin',
   Channel.main: 'main',
 };

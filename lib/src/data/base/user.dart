@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
@@ -14,13 +13,96 @@ class User with _$User {
     required String username,
     String? host,
     String? name,
-    @OnlineStatusJsonConverter()
-    required OnlineStatus onlineStatus,
-    @UriConverter()
-    required Uri avatarUrl,
-    String? avatarBlurhash
+    @OnlineStatusJsonConverter() required OnlineStatus onlineStatus,
+    @UriConverter() required Uri avatarUrl,
+    String? avatarBlurhash,
+    UserInstanceInfo? instance,
   }) = _User;
 
-  factory User.fromJson(Map<String, Object?> json)
-      => _$UserFromJson(json);
+  factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
+}
+
+@freezed
+class UserInstanceInfo with _$UserInstanceInfo {
+  const factory UserInstanceInfo({
+    String? name,
+    String? softwareVersion,
+    String? softwareName,
+    @NullableUriConverter() Uri? iconUrl,
+    @NullableUriConverter() Uri? faviconUrl,
+    String? themeColor,
+  }) = _UserInstanceInfo;
+
+  factory UserInstanceInfo.fromJson(Map<String, Object?> json) =>
+      _$UserInstanceInfoFromJson(json);
+}
+
+@freezed
+class UserBadgeRole with _$UserBadgeRole {
+  const factory UserBadgeRole({
+    required String name,
+    @UriConverter() required Uri iconUrl,
+  }) = _UserBadgeRole;
+  factory UserBadgeRole.fromJson(Map<String, Object?> json) =>
+      _$UserBadgeRoleFromJson(json);
+}
+
+@freezed
+class UserRole with _$UserRole {
+  const factory UserRole({
+    required String id,
+    required String name,
+    String? color,
+    @NullableUriConverter() Uri? iconUrl,
+    String? description,
+    required bool isModerator,
+    required bool isAdministrator,
+  }) = _UserRole;
+  factory UserRole.fromJson(Map<String, Object?> json) =>
+      _$UserRoleFromJson(json);
+}
+
+@freezed
+class UserAchievement with _$UserAchievement {
+  const factory UserAchievement({
+    required String name,
+    @EpocTimeDateTimeConverter() required DateTime unlockedAt,
+  }) = _UserAchievement;
+
+  factory UserAchievement.fromJson(Map<String, Object?> json) =>
+      _$UserAchievementFromJson(json);
+}
+
+@freezed
+class UserPolicies with _$UserPolicies {
+  const factory UserPolicies({
+    required bool gtlAvailable,
+    required bool ltlAvailable,
+    required bool canPublicNote,
+    required bool canInvite,
+    required bool canManageCustomEmojis,
+    required bool canHideAds,
+    required int driveCapacityMb,
+    required int pinLimit,
+    required int antennaLimit,
+    required int wordMuteLimit,
+    required int webhookLimit,
+    required int clipLimit,
+    required int noteEachClipsLimit,
+    required int userListLimit,
+    required int userEachUserListsLimit,
+    required int rateLimitFactor,
+  }) = _UserPolicies;
+
+  factory UserPolicies.fromJson(Map<String, Object?> json) =>
+      _$UserPoliciesFromJson(json);
+}
+
+@freezed
+class UserField with _$UserField {
+  const factory UserField({required String name, required String value}) =
+      _UserField;
+
+  factory UserField.fromJson(Map<String, Object?> json) =>
+      _$UserFieldFromJson(json);
 }

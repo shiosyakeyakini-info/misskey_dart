@@ -31,7 +31,7 @@ mixin _$IResponse {
   bool get isCat => throw _privateConstructorUsedError;
   Map<dynamic, dynamic>? get emojis => throw _privateConstructorUsedError;
   String? get onlineStatus => throw _privateConstructorUsedError;
-  List<IBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
+  List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get url => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -53,7 +53,7 @@ mixin _$IResponse {
   @NullableDateTimeConverter()
   DateTime? get birthday => throw _privateConstructorUsedError;
   String? get lang => throw _privateConstructorUsedError;
-  List<IField>? get fields => throw _privateConstructorUsedError;
+  List<UserField>? get fields => throw _privateConstructorUsedError;
   int get followersCount => throw _privateConstructorUsedError;
   int get followingCount => throw _privateConstructorUsedError;
   int get notesCount => throw _privateConstructorUsedError;
@@ -93,9 +93,9 @@ mixin _$IResponse {
       throw _privateConstructorUsedError;
   List<String> get emailNotificationTypes => throw _privateConstructorUsedError;
   bool get showTimelineReplies => throw _privateConstructorUsedError;
-  List<IAchievement> get achievements => throw _privateConstructorUsedError;
+  List<UserAchievement> get achievements => throw _privateConstructorUsedError;
   int get loggedInDays => throw _privateConstructorUsedError;
-  IPolicies get policies => throw _privateConstructorUsedError;
+  UserPolicies get policies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -119,7 +119,7 @@ abstract class $IResponseCopyWith<$Res> {
       bool isCat,
       Map<dynamic, dynamic>? emojis,
       String? onlineStatus,
-      List<IBadgeRole> badgeRoles,
+      List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
       @DateTimeConverter() DateTime createdAt,
@@ -134,7 +134,7 @@ abstract class $IResponseCopyWith<$Res> {
       String? location,
       @NullableDateTimeConverter() DateTime? birthday,
       String? lang,
-      List<IField>? fields,
+      List<UserField>? fields,
       int followersCount,
       int followingCount,
       int notesCount,
@@ -172,11 +172,11 @@ abstract class $IResponseCopyWith<$Res> {
       List<String> mutingNotificationTypes,
       List<String> emailNotificationTypes,
       bool showTimelineReplies,
-      List<IAchievement> achievements,
+      List<UserAchievement> achievements,
       int loggedInDays,
-      IPolicies policies});
+      UserPolicies policies});
 
-  $IPoliciesCopyWith<$Res> get policies;
+  $UserPoliciesCopyWith<$Res> get policies;
 }
 
 /// @nodoc
@@ -303,7 +303,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       badgeRoles: null == badgeRoles
           ? _value.badgeRoles
           : badgeRoles // ignore: cast_nullable_to_non_nullable
-              as List<IBadgeRole>,
+              as List<UserBadgeRole>,
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -363,7 +363,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       fields: freezed == fields
           ? _value.fields
           : fields // ignore: cast_nullable_to_non_nullable
-              as List<IField>?,
+              as List<UserField>?,
       followersCount: null == followersCount
           ? _value.followersCount
           : followersCount // ignore: cast_nullable_to_non_nullable
@@ -515,7 +515,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       achievements: null == achievements
           ? _value.achievements
           : achievements // ignore: cast_nullable_to_non_nullable
-              as List<IAchievement>,
+              as List<UserAchievement>,
       loggedInDays: null == loggedInDays
           ? _value.loggedInDays
           : loggedInDays // ignore: cast_nullable_to_non_nullable
@@ -523,14 +523,14 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       policies: null == policies
           ? _value.policies
           : policies // ignore: cast_nullable_to_non_nullable
-              as IPolicies,
+              as UserPolicies,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $IPoliciesCopyWith<$Res> get policies {
-    return $IPoliciesCopyWith<$Res>(_value.policies, (value) {
+  $UserPoliciesCopyWith<$Res> get policies {
+    return $UserPoliciesCopyWith<$Res>(_value.policies, (value) {
       return _then(_value.copyWith(policies: value) as $Val);
     });
   }
@@ -554,7 +554,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       bool isCat,
       Map<dynamic, dynamic>? emojis,
       String? onlineStatus,
-      List<IBadgeRole> badgeRoles,
+      List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
       @DateTimeConverter() DateTime createdAt,
@@ -569,7 +569,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       String? location,
       @NullableDateTimeConverter() DateTime? birthday,
       String? lang,
-      List<IField>? fields,
+      List<UserField>? fields,
       int followersCount,
       int followingCount,
       int notesCount,
@@ -607,12 +607,12 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       List<String> mutingNotificationTypes,
       List<String> emailNotificationTypes,
       bool showTimelineReplies,
-      List<IAchievement> achievements,
+      List<UserAchievement> achievements,
       int loggedInDays,
-      IPolicies policies});
+      UserPolicies policies});
 
   @override
-  $IPoliciesCopyWith<$Res> get policies;
+  $UserPoliciesCopyWith<$Res> get policies;
 }
 
 /// @nodoc
@@ -737,7 +737,7 @@ class __$$_IResponseCopyWithImpl<$Res>
       badgeRoles: null == badgeRoles
           ? _value._badgeRoles
           : badgeRoles // ignore: cast_nullable_to_non_nullable
-              as List<IBadgeRole>,
+              as List<UserBadgeRole>,
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -797,7 +797,7 @@ class __$$_IResponseCopyWithImpl<$Res>
       fields: freezed == fields
           ? _value._fields
           : fields // ignore: cast_nullable_to_non_nullable
-              as List<IField>?,
+              as List<UserField>?,
       followersCount: null == followersCount
           ? _value.followersCount
           : followersCount // ignore: cast_nullable_to_non_nullable
@@ -949,7 +949,7 @@ class __$$_IResponseCopyWithImpl<$Res>
       achievements: null == achievements
           ? _value._achievements
           : achievements // ignore: cast_nullable_to_non_nullable
-              as List<IAchievement>,
+              as List<UserAchievement>,
       loggedInDays: null == loggedInDays
           ? _value.loggedInDays
           : loggedInDays // ignore: cast_nullable_to_non_nullable
@@ -957,7 +957,7 @@ class __$$_IResponseCopyWithImpl<$Res>
       policies: null == policies
           ? _value.policies
           : policies // ignore: cast_nullable_to_non_nullable
-              as IPolicies,
+              as UserPolicies,
     ));
   }
 }
@@ -976,7 +976,7 @@ class _$_IResponse implements _IResponse {
       required this.isCat,
       final Map<dynamic, dynamic>? emojis,
       this.onlineStatus,
-      required final List<IBadgeRole> badgeRoles,
+      required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() this.url,
       @NullableUriConverter() this.uri,
       @DateTimeConverter() required this.createdAt,
@@ -991,7 +991,7 @@ class _$_IResponse implements _IResponse {
       this.location,
       @NullableDateTimeConverter() this.birthday,
       this.lang,
-      final List<IField>? fields,
+      final List<UserField>? fields,
       required this.followersCount,
       required this.followingCount,
       required this.notesCount,
@@ -1029,7 +1029,7 @@ class _$_IResponse implements _IResponse {
       required final List<String> mutingNotificationTypes,
       required final List<String> emailNotificationTypes,
       required this.showTimelineReplies,
-      required final List<IAchievement> achievements,
+      required final List<UserAchievement> achievements,
       required this.loggedInDays,
       required this.policies})
       : _emojis = emojis,
@@ -1074,9 +1074,9 @@ class _$_IResponse implements _IResponse {
 
   @override
   final String? onlineStatus;
-  final List<IBadgeRole> _badgeRoles;
+  final List<UserBadgeRole> _badgeRoles;
   @override
-  List<IBadgeRole> get badgeRoles {
+  List<UserBadgeRole> get badgeRoles {
     if (_badgeRoles is EqualUnmodifiableListView) return _badgeRoles;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_badgeRoles);
@@ -1117,9 +1117,9 @@ class _$_IResponse implements _IResponse {
   final DateTime? birthday;
   @override
   final String? lang;
-  final List<IField>? _fields;
+  final List<UserField>? _fields;
   @override
-  List<IField>? get fields {
+  List<UserField>? get fields {
     final value = _fields;
     if (value == null) return null;
     if (_fields is EqualUnmodifiableListView) return _fields;
@@ -1235,9 +1235,9 @@ class _$_IResponse implements _IResponse {
 
   @override
   final bool showTimelineReplies;
-  final List<IAchievement> _achievements;
+  final List<UserAchievement> _achievements;
   @override
-  List<IAchievement> get achievements {
+  List<UserAchievement> get achievements {
     if (_achievements is EqualUnmodifiableListView) return _achievements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_achievements);
@@ -1246,7 +1246,7 @@ class _$_IResponse implements _IResponse {
   @override
   final int loggedInDays;
   @override
-  final IPolicies policies;
+  final UserPolicies policies;
 
   @override
   String toString() {
@@ -1466,7 +1466,7 @@ abstract class _IResponse implements IResponse {
       required final bool isCat,
       final Map<dynamic, dynamic>? emojis,
       final String? onlineStatus,
-      required final List<IBadgeRole> badgeRoles,
+      required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() final Uri? url,
       @NullableUriConverter() final Uri? uri,
       @DateTimeConverter() required final DateTime createdAt,
@@ -1481,7 +1481,7 @@ abstract class _IResponse implements IResponse {
       final String? location,
       @NullableDateTimeConverter() final DateTime? birthday,
       final String? lang,
-      final List<IField>? fields,
+      final List<UserField>? fields,
       required final int followersCount,
       required final int followingCount,
       required final int notesCount,
@@ -1519,9 +1519,9 @@ abstract class _IResponse implements IResponse {
       required final List<String> mutingNotificationTypes,
       required final List<String> emailNotificationTypes,
       required final bool showTimelineReplies,
-      required final List<IAchievement> achievements,
+      required final List<UserAchievement> achievements,
       required final int loggedInDays,
-      required final IPolicies policies}) = _$_IResponse;
+      required final UserPolicies policies}) = _$_IResponse;
 
   factory _IResponse.fromJson(Map<String, dynamic> json) =
       _$_IResponse.fromJson;
@@ -1548,7 +1548,7 @@ abstract class _IResponse implements IResponse {
   @override
   String? get onlineStatus;
   @override
-  List<IBadgeRole> get badgeRoles;
+  List<UserBadgeRole> get badgeRoles;
   @override
   @NullableUriConverter()
   Uri? get url;
@@ -1585,7 +1585,7 @@ abstract class _IResponse implements IResponse {
   @override
   String? get lang;
   @override
-  List<IField>? get fields;
+  List<UserField>? get fields;
   @override
   int get followersCount;
   @override
@@ -1661,1210 +1661,13 @@ abstract class _IResponse implements IResponse {
   @override
   bool get showTimelineReplies;
   @override
-  List<IAchievement> get achievements;
+  List<UserAchievement> get achievements;
   @override
   int get loggedInDays;
   @override
-  IPolicies get policies;
+  UserPolicies get policies;
   @override
   @JsonKey(ignore: true)
   _$$_IResponseCopyWith<_$_IResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-IBadgeRole _$IBadgeRoleFromJson(Map<String, dynamic> json) {
-  return _IBadgeRole.fromJson(json);
-}
-
-/// @nodoc
-mixin _$IBadgeRole {
-  String get name => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get iconUrl => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $IBadgeRoleCopyWith<IBadgeRole> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IBadgeRoleCopyWith<$Res> {
-  factory $IBadgeRoleCopyWith(
-          IBadgeRole value, $Res Function(IBadgeRole) then) =
-      _$IBadgeRoleCopyWithImpl<$Res, IBadgeRole>;
-  @useResult
-  $Res call({String name, @UriConverter() Uri iconUrl});
-}
-
-/// @nodoc
-class _$IBadgeRoleCopyWithImpl<$Res, $Val extends IBadgeRole>
-    implements $IBadgeRoleCopyWith<$Res> {
-  _$IBadgeRoleCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? iconUrl = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl: null == iconUrl
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_IBadgeRoleCopyWith<$Res>
-    implements $IBadgeRoleCopyWith<$Res> {
-  factory _$$_IBadgeRoleCopyWith(
-          _$_IBadgeRole value, $Res Function(_$_IBadgeRole) then) =
-      __$$_IBadgeRoleCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, @UriConverter() Uri iconUrl});
-}
-
-/// @nodoc
-class __$$_IBadgeRoleCopyWithImpl<$Res>
-    extends _$IBadgeRoleCopyWithImpl<$Res, _$_IBadgeRole>
-    implements _$$_IBadgeRoleCopyWith<$Res> {
-  __$$_IBadgeRoleCopyWithImpl(
-      _$_IBadgeRole _value, $Res Function(_$_IBadgeRole) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? iconUrl = null,
-  }) {
-    return _then(_$_IBadgeRole(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl: null == iconUrl
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_IBadgeRole implements _IBadgeRole {
-  const _$_IBadgeRole(
-      {required this.name, @UriConverter() required this.iconUrl});
-
-  factory _$_IBadgeRole.fromJson(Map<String, dynamic> json) =>
-      _$$_IBadgeRoleFromJson(json);
-
-  @override
-  final String name;
-  @override
-  @UriConverter()
-  final Uri iconUrl;
-
-  @override
-  String toString() {
-    return 'IBadgeRole(name: $name, iconUrl: $iconUrl)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IBadgeRole &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, iconUrl);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_IBadgeRoleCopyWith<_$_IBadgeRole> get copyWith =>
-      __$$_IBadgeRoleCopyWithImpl<_$_IBadgeRole>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_IBadgeRoleToJson(
-      this,
-    );
-  }
-}
-
-abstract class _IBadgeRole implements IBadgeRole {
-  const factory _IBadgeRole(
-      {required final String name,
-      @UriConverter() required final Uri iconUrl}) = _$_IBadgeRole;
-
-  factory _IBadgeRole.fromJson(Map<String, dynamic> json) =
-      _$_IBadgeRole.fromJson;
-
-  @override
-  String get name;
-  @override
-  @UriConverter()
-  Uri get iconUrl;
-  @override
-  @JsonKey(ignore: true)
-  _$$_IBadgeRoleCopyWith<_$_IBadgeRole> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-IField _$IFieldFromJson(Map<String, dynamic> json) {
-  return _IField.fromJson(json);
-}
-
-/// @nodoc
-mixin _$IField {
-  String get name => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $IFieldCopyWith<IField> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IFieldCopyWith<$Res> {
-  factory $IFieldCopyWith(IField value, $Res Function(IField) then) =
-      _$IFieldCopyWithImpl<$Res, IField>;
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class _$IFieldCopyWithImpl<$Res, $Val extends IField>
-    implements $IFieldCopyWith<$Res> {
-  _$IFieldCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_IFieldCopyWith<$Res> implements $IFieldCopyWith<$Res> {
-  factory _$$_IFieldCopyWith(_$_IField value, $Res Function(_$_IField) then) =
-      __$$_IFieldCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class __$$_IFieldCopyWithImpl<$Res>
-    extends _$IFieldCopyWithImpl<$Res, _$_IField>
-    implements _$$_IFieldCopyWith<$Res> {
-  __$$_IFieldCopyWithImpl(_$_IField _value, $Res Function(_$_IField) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_$_IField(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_IField implements _IField {
-  const _$_IField({required this.name, required this.value});
-
-  factory _$_IField.fromJson(Map<String, dynamic> json) =>
-      _$$_IFieldFromJson(json);
-
-  @override
-  final String name;
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'IField(name: $name, value: $value)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IField &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_IFieldCopyWith<_$_IField> get copyWith =>
-      __$$_IFieldCopyWithImpl<_$_IField>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_IFieldToJson(
-      this,
-    );
-  }
-}
-
-abstract class _IField implements IField {
-  const factory _IField(
-      {required final String name, required final String value}) = _$_IField;
-
-  factory _IField.fromJson(Map<String, dynamic> json) = _$_IField.fromJson;
-
-  @override
-  String get name;
-  @override
-  String get value;
-  @override
-  @JsonKey(ignore: true)
-  _$$_IFieldCopyWith<_$_IField> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-IRole _$IRoleFromJson(Map<String, dynamic> json) {
-  return _IRole.fromJson(json);
-}
-
-/// @nodoc
-mixin _$IRole {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get iconUrl => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  bool get isModerator => throw _privateConstructorUsedError;
-  bool get isAdministrator => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $IRoleCopyWith<IRole> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IRoleCopyWith<$Res> {
-  factory $IRoleCopyWith(IRole value, $Res Function(IRole) then) =
-      _$IRoleCopyWithImpl<$Res, IRole>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String color,
-      @UriConverter() Uri iconUrl,
-      String description,
-      bool isModerator,
-      bool isAdministrator});
-}
-
-/// @nodoc
-class _$IRoleCopyWithImpl<$Res, $Val extends IRole>
-    implements $IRoleCopyWith<$Res> {
-  _$IRoleCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? color = null,
-    Object? iconUrl = null,
-    Object? description = null,
-    Object? isModerator = null,
-    Object? isAdministrator = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl: null == iconUrl
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      isModerator: null == isModerator
-          ? _value.isModerator
-          : isModerator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isAdministrator: null == isAdministrator
-          ? _value.isAdministrator
-          : isAdministrator // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_IRoleCopyWith<$Res> implements $IRoleCopyWith<$Res> {
-  factory _$$_IRoleCopyWith(_$_IRole value, $Res Function(_$_IRole) then) =
-      __$$_IRoleCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String color,
-      @UriConverter() Uri iconUrl,
-      String description,
-      bool isModerator,
-      bool isAdministrator});
-}
-
-/// @nodoc
-class __$$_IRoleCopyWithImpl<$Res> extends _$IRoleCopyWithImpl<$Res, _$_IRole>
-    implements _$$_IRoleCopyWith<$Res> {
-  __$$_IRoleCopyWithImpl(_$_IRole _value, $Res Function(_$_IRole) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? color = null,
-    Object? iconUrl = null,
-    Object? description = null,
-    Object? isModerator = null,
-    Object? isAdministrator = null,
-  }) {
-    return _then(_$_IRole(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String,
-      iconUrl: null == iconUrl
-          ? _value.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      isModerator: null == isModerator
-          ? _value.isModerator
-          : isModerator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isAdministrator: null == isAdministrator
-          ? _value.isAdministrator
-          : isAdministrator // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_IRole implements _IRole {
-  const _$_IRole(
-      {required this.id,
-      required this.name,
-      required this.color,
-      @UriConverter() required this.iconUrl,
-      required this.description,
-      required this.isModerator,
-      required this.isAdministrator});
-
-  factory _$_IRole.fromJson(Map<String, dynamic> json) =>
-      _$$_IRoleFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final String color;
-  @override
-  @UriConverter()
-  final Uri iconUrl;
-  @override
-  final String description;
-  @override
-  final bool isModerator;
-  @override
-  final bool isAdministrator;
-
-  @override
-  String toString() {
-    return 'IRole(id: $id, name: $name, color: $color, iconUrl: $iconUrl, description: $description, isModerator: $isModerator, isAdministrator: $isAdministrator)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IRole &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.color, color) || other.color == color) &&
-            (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.isModerator, isModerator) ||
-                other.isModerator == isModerator) &&
-            (identical(other.isAdministrator, isAdministrator) ||
-                other.isAdministrator == isAdministrator));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, color, iconUrl,
-      description, isModerator, isAdministrator);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_IRoleCopyWith<_$_IRole> get copyWith =>
-      __$$_IRoleCopyWithImpl<_$_IRole>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_IRoleToJson(
-      this,
-    );
-  }
-}
-
-abstract class _IRole implements IRole {
-  const factory _IRole(
-      {required final String id,
-      required final String name,
-      required final String color,
-      @UriConverter() required final Uri iconUrl,
-      required final String description,
-      required final bool isModerator,
-      required final bool isAdministrator}) = _$_IRole;
-
-  factory _IRole.fromJson(Map<String, dynamic> json) = _$_IRole.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get color;
-  @override
-  @UriConverter()
-  Uri get iconUrl;
-  @override
-  String get description;
-  @override
-  bool get isModerator;
-  @override
-  bool get isAdministrator;
-  @override
-  @JsonKey(ignore: true)
-  _$$_IRoleCopyWith<_$_IRole> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-IAchievement _$IAchievementFromJson(Map<String, dynamic> json) {
-  return _IAchievement.fromJson(json);
-}
-
-/// @nodoc
-mixin _$IAchievement {
-  String get name => throw _privateConstructorUsedError;
-  @EpocTimeDateTimeConverter()
-  DateTime get unlockedAt => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $IAchievementCopyWith<IAchievement> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IAchievementCopyWith<$Res> {
-  factory $IAchievementCopyWith(
-          IAchievement value, $Res Function(IAchievement) then) =
-      _$IAchievementCopyWithImpl<$Res, IAchievement>;
-  @useResult
-  $Res call({String name, @EpocTimeDateTimeConverter() DateTime unlockedAt});
-}
-
-/// @nodoc
-class _$IAchievementCopyWithImpl<$Res, $Val extends IAchievement>
-    implements $IAchievementCopyWith<$Res> {
-  _$IAchievementCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? unlockedAt = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      unlockedAt: null == unlockedAt
-          ? _value.unlockedAt
-          : unlockedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_IAchievementCopyWith<$Res>
-    implements $IAchievementCopyWith<$Res> {
-  factory _$$_IAchievementCopyWith(
-          _$_IAchievement value, $Res Function(_$_IAchievement) then) =
-      __$$_IAchievementCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, @EpocTimeDateTimeConverter() DateTime unlockedAt});
-}
-
-/// @nodoc
-class __$$_IAchievementCopyWithImpl<$Res>
-    extends _$IAchievementCopyWithImpl<$Res, _$_IAchievement>
-    implements _$$_IAchievementCopyWith<$Res> {
-  __$$_IAchievementCopyWithImpl(
-      _$_IAchievement _value, $Res Function(_$_IAchievement) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? unlockedAt = null,
-  }) {
-    return _then(_$_IAchievement(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      unlockedAt: null == unlockedAt
-          ? _value.unlockedAt
-          : unlockedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_IAchievement implements _IAchievement {
-  const _$_IAchievement(
-      {required this.name,
-      @EpocTimeDateTimeConverter() required this.unlockedAt});
-
-  factory _$_IAchievement.fromJson(Map<String, dynamic> json) =>
-      _$$_IAchievementFromJson(json);
-
-  @override
-  final String name;
-  @override
-  @EpocTimeDateTimeConverter()
-  final DateTime unlockedAt;
-
-  @override
-  String toString() {
-    return 'IAchievement(name: $name, unlockedAt: $unlockedAt)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IAchievement &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.unlockedAt, unlockedAt) ||
-                other.unlockedAt == unlockedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, unlockedAt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_IAchievementCopyWith<_$_IAchievement> get copyWith =>
-      __$$_IAchievementCopyWithImpl<_$_IAchievement>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_IAchievementToJson(
-      this,
-    );
-  }
-}
-
-abstract class _IAchievement implements IAchievement {
-  const factory _IAchievement(
-          {required final String name,
-          @EpocTimeDateTimeConverter() required final DateTime unlockedAt}) =
-      _$_IAchievement;
-
-  factory _IAchievement.fromJson(Map<String, dynamic> json) =
-      _$_IAchievement.fromJson;
-
-  @override
-  String get name;
-  @override
-  @EpocTimeDateTimeConverter()
-  DateTime get unlockedAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$_IAchievementCopyWith<_$_IAchievement> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-IPolicies _$IPoliciesFromJson(Map<String, dynamic> json) {
-  return _IPolicies.fromJson(json);
-}
-
-/// @nodoc
-mixin _$IPolicies {
-  bool get gtlAvailable => throw _privateConstructorUsedError;
-  bool get ltlAvailable => throw _privateConstructorUsedError;
-  bool get canPublicNote => throw _privateConstructorUsedError;
-  bool get canInvite => throw _privateConstructorUsedError;
-  bool get canManageCustomEmojis => throw _privateConstructorUsedError;
-  bool get canHideAds => throw _privateConstructorUsedError;
-  int get driveCapacityMb => throw _privateConstructorUsedError;
-  int get pinLimit => throw _privateConstructorUsedError;
-  int get antennaLimit => throw _privateConstructorUsedError;
-  int get wordMuteLimit => throw _privateConstructorUsedError;
-  int get webhookLimit => throw _privateConstructorUsedError;
-  int get clipLimit => throw _privateConstructorUsedError;
-  int get noteEachClipsLimit => throw _privateConstructorUsedError;
-  int get userListLimit => throw _privateConstructorUsedError;
-  int get userEachUserListsLimit => throw _privateConstructorUsedError;
-  int get rateLimitFactor => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $IPoliciesCopyWith<IPolicies> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IPoliciesCopyWith<$Res> {
-  factory $IPoliciesCopyWith(IPolicies value, $Res Function(IPolicies) then) =
-      _$IPoliciesCopyWithImpl<$Res, IPolicies>;
-  @useResult
-  $Res call(
-      {bool gtlAvailable,
-      bool ltlAvailable,
-      bool canPublicNote,
-      bool canInvite,
-      bool canManageCustomEmojis,
-      bool canHideAds,
-      int driveCapacityMb,
-      int pinLimit,
-      int antennaLimit,
-      int wordMuteLimit,
-      int webhookLimit,
-      int clipLimit,
-      int noteEachClipsLimit,
-      int userListLimit,
-      int userEachUserListsLimit,
-      int rateLimitFactor});
-}
-
-/// @nodoc
-class _$IPoliciesCopyWithImpl<$Res, $Val extends IPolicies>
-    implements $IPoliciesCopyWith<$Res> {
-  _$IPoliciesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? gtlAvailable = null,
-    Object? ltlAvailable = null,
-    Object? canPublicNote = null,
-    Object? canInvite = null,
-    Object? canManageCustomEmojis = null,
-    Object? canHideAds = null,
-    Object? driveCapacityMb = null,
-    Object? pinLimit = null,
-    Object? antennaLimit = null,
-    Object? wordMuteLimit = null,
-    Object? webhookLimit = null,
-    Object? clipLimit = null,
-    Object? noteEachClipsLimit = null,
-    Object? userListLimit = null,
-    Object? userEachUserListsLimit = null,
-    Object? rateLimitFactor = null,
-  }) {
-    return _then(_value.copyWith(
-      gtlAvailable: null == gtlAvailable
-          ? _value.gtlAvailable
-          : gtlAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
-      ltlAvailable: null == ltlAvailable
-          ? _value.ltlAvailable
-          : ltlAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canPublicNote: null == canPublicNote
-          ? _value.canPublicNote
-          : canPublicNote // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canInvite: null == canInvite
-          ? _value.canInvite
-          : canInvite // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canManageCustomEmojis: null == canManageCustomEmojis
-          ? _value.canManageCustomEmojis
-          : canManageCustomEmojis // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canHideAds: null == canHideAds
-          ? _value.canHideAds
-          : canHideAds // ignore: cast_nullable_to_non_nullable
-              as bool,
-      driveCapacityMb: null == driveCapacityMb
-          ? _value.driveCapacityMb
-          : driveCapacityMb // ignore: cast_nullable_to_non_nullable
-              as int,
-      pinLimit: null == pinLimit
-          ? _value.pinLimit
-          : pinLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      antennaLimit: null == antennaLimit
-          ? _value.antennaLimit
-          : antennaLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      wordMuteLimit: null == wordMuteLimit
-          ? _value.wordMuteLimit
-          : wordMuteLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      webhookLimit: null == webhookLimit
-          ? _value.webhookLimit
-          : webhookLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      clipLimit: null == clipLimit
-          ? _value.clipLimit
-          : clipLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      noteEachClipsLimit: null == noteEachClipsLimit
-          ? _value.noteEachClipsLimit
-          : noteEachClipsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      userListLimit: null == userListLimit
-          ? _value.userListLimit
-          : userListLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      userEachUserListsLimit: null == userEachUserListsLimit
-          ? _value.userEachUserListsLimit
-          : userEachUserListsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      rateLimitFactor: null == rateLimitFactor
-          ? _value.rateLimitFactor
-          : rateLimitFactor // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_IPoliciesCopyWith<$Res> implements $IPoliciesCopyWith<$Res> {
-  factory _$$_IPoliciesCopyWith(
-          _$_IPolicies value, $Res Function(_$_IPolicies) then) =
-      __$$_IPoliciesCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool gtlAvailable,
-      bool ltlAvailable,
-      bool canPublicNote,
-      bool canInvite,
-      bool canManageCustomEmojis,
-      bool canHideAds,
-      int driveCapacityMb,
-      int pinLimit,
-      int antennaLimit,
-      int wordMuteLimit,
-      int webhookLimit,
-      int clipLimit,
-      int noteEachClipsLimit,
-      int userListLimit,
-      int userEachUserListsLimit,
-      int rateLimitFactor});
-}
-
-/// @nodoc
-class __$$_IPoliciesCopyWithImpl<$Res>
-    extends _$IPoliciesCopyWithImpl<$Res, _$_IPolicies>
-    implements _$$_IPoliciesCopyWith<$Res> {
-  __$$_IPoliciesCopyWithImpl(
-      _$_IPolicies _value, $Res Function(_$_IPolicies) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? gtlAvailable = null,
-    Object? ltlAvailable = null,
-    Object? canPublicNote = null,
-    Object? canInvite = null,
-    Object? canManageCustomEmojis = null,
-    Object? canHideAds = null,
-    Object? driveCapacityMb = null,
-    Object? pinLimit = null,
-    Object? antennaLimit = null,
-    Object? wordMuteLimit = null,
-    Object? webhookLimit = null,
-    Object? clipLimit = null,
-    Object? noteEachClipsLimit = null,
-    Object? userListLimit = null,
-    Object? userEachUserListsLimit = null,
-    Object? rateLimitFactor = null,
-  }) {
-    return _then(_$_IPolicies(
-      gtlAvailable: null == gtlAvailable
-          ? _value.gtlAvailable
-          : gtlAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
-      ltlAvailable: null == ltlAvailable
-          ? _value.ltlAvailable
-          : ltlAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canPublicNote: null == canPublicNote
-          ? _value.canPublicNote
-          : canPublicNote // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canInvite: null == canInvite
-          ? _value.canInvite
-          : canInvite // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canManageCustomEmojis: null == canManageCustomEmojis
-          ? _value.canManageCustomEmojis
-          : canManageCustomEmojis // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canHideAds: null == canHideAds
-          ? _value.canHideAds
-          : canHideAds // ignore: cast_nullable_to_non_nullable
-              as bool,
-      driveCapacityMb: null == driveCapacityMb
-          ? _value.driveCapacityMb
-          : driveCapacityMb // ignore: cast_nullable_to_non_nullable
-              as int,
-      pinLimit: null == pinLimit
-          ? _value.pinLimit
-          : pinLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      antennaLimit: null == antennaLimit
-          ? _value.antennaLimit
-          : antennaLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      wordMuteLimit: null == wordMuteLimit
-          ? _value.wordMuteLimit
-          : wordMuteLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      webhookLimit: null == webhookLimit
-          ? _value.webhookLimit
-          : webhookLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      clipLimit: null == clipLimit
-          ? _value.clipLimit
-          : clipLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      noteEachClipsLimit: null == noteEachClipsLimit
-          ? _value.noteEachClipsLimit
-          : noteEachClipsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      userListLimit: null == userListLimit
-          ? _value.userListLimit
-          : userListLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      userEachUserListsLimit: null == userEachUserListsLimit
-          ? _value.userEachUserListsLimit
-          : userEachUserListsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      rateLimitFactor: null == rateLimitFactor
-          ? _value.rateLimitFactor
-          : rateLimitFactor // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_IPolicies implements _IPolicies {
-  const _$_IPolicies(
-      {required this.gtlAvailable,
-      required this.ltlAvailable,
-      required this.canPublicNote,
-      required this.canInvite,
-      required this.canManageCustomEmojis,
-      required this.canHideAds,
-      required this.driveCapacityMb,
-      required this.pinLimit,
-      required this.antennaLimit,
-      required this.wordMuteLimit,
-      required this.webhookLimit,
-      required this.clipLimit,
-      required this.noteEachClipsLimit,
-      required this.userListLimit,
-      required this.userEachUserListsLimit,
-      required this.rateLimitFactor});
-
-  factory _$_IPolicies.fromJson(Map<String, dynamic> json) =>
-      _$$_IPoliciesFromJson(json);
-
-  @override
-  final bool gtlAvailable;
-  @override
-  final bool ltlAvailable;
-  @override
-  final bool canPublicNote;
-  @override
-  final bool canInvite;
-  @override
-  final bool canManageCustomEmojis;
-  @override
-  final bool canHideAds;
-  @override
-  final int driveCapacityMb;
-  @override
-  final int pinLimit;
-  @override
-  final int antennaLimit;
-  @override
-  final int wordMuteLimit;
-  @override
-  final int webhookLimit;
-  @override
-  final int clipLimit;
-  @override
-  final int noteEachClipsLimit;
-  @override
-  final int userListLimit;
-  @override
-  final int userEachUserListsLimit;
-  @override
-  final int rateLimitFactor;
-
-  @override
-  String toString() {
-    return 'IPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, canInvite: $canInvite, canManageCustomEmojis: $canManageCustomEmojis, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IPolicies &&
-            (identical(other.gtlAvailable, gtlAvailable) ||
-                other.gtlAvailable == gtlAvailable) &&
-            (identical(other.ltlAvailable, ltlAvailable) ||
-                other.ltlAvailable == ltlAvailable) &&
-            (identical(other.canPublicNote, canPublicNote) ||
-                other.canPublicNote == canPublicNote) &&
-            (identical(other.canInvite, canInvite) ||
-                other.canInvite == canInvite) &&
-            (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
-                other.canManageCustomEmojis == canManageCustomEmojis) &&
-            (identical(other.canHideAds, canHideAds) ||
-                other.canHideAds == canHideAds) &&
-            (identical(other.driveCapacityMb, driveCapacityMb) ||
-                other.driveCapacityMb == driveCapacityMb) &&
-            (identical(other.pinLimit, pinLimit) ||
-                other.pinLimit == pinLimit) &&
-            (identical(other.antennaLimit, antennaLimit) ||
-                other.antennaLimit == antennaLimit) &&
-            (identical(other.wordMuteLimit, wordMuteLimit) ||
-                other.wordMuteLimit == wordMuteLimit) &&
-            (identical(other.webhookLimit, webhookLimit) ||
-                other.webhookLimit == webhookLimit) &&
-            (identical(other.clipLimit, clipLimit) ||
-                other.clipLimit == clipLimit) &&
-            (identical(other.noteEachClipsLimit, noteEachClipsLimit) ||
-                other.noteEachClipsLimit == noteEachClipsLimit) &&
-            (identical(other.userListLimit, userListLimit) ||
-                other.userListLimit == userListLimit) &&
-            (identical(other.userEachUserListsLimit, userEachUserListsLimit) ||
-                other.userEachUserListsLimit == userEachUserListsLimit) &&
-            (identical(other.rateLimitFactor, rateLimitFactor) ||
-                other.rateLimitFactor == rateLimitFactor));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      gtlAvailable,
-      ltlAvailable,
-      canPublicNote,
-      canInvite,
-      canManageCustomEmojis,
-      canHideAds,
-      driveCapacityMb,
-      pinLimit,
-      antennaLimit,
-      wordMuteLimit,
-      webhookLimit,
-      clipLimit,
-      noteEachClipsLimit,
-      userListLimit,
-      userEachUserListsLimit,
-      rateLimitFactor);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_IPoliciesCopyWith<_$_IPolicies> get copyWith =>
-      __$$_IPoliciesCopyWithImpl<_$_IPolicies>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_IPoliciesToJson(
-      this,
-    );
-  }
-}
-
-abstract class _IPolicies implements IPolicies {
-  const factory _IPolicies(
-      {required final bool gtlAvailable,
-      required final bool ltlAvailable,
-      required final bool canPublicNote,
-      required final bool canInvite,
-      required final bool canManageCustomEmojis,
-      required final bool canHideAds,
-      required final int driveCapacityMb,
-      required final int pinLimit,
-      required final int antennaLimit,
-      required final int wordMuteLimit,
-      required final int webhookLimit,
-      required final int clipLimit,
-      required final int noteEachClipsLimit,
-      required final int userListLimit,
-      required final int userEachUserListsLimit,
-      required final int rateLimitFactor}) = _$_IPolicies;
-
-  factory _IPolicies.fromJson(Map<String, dynamic> json) =
-      _$_IPolicies.fromJson;
-
-  @override
-  bool get gtlAvailable;
-  @override
-  bool get ltlAvailable;
-  @override
-  bool get canPublicNote;
-  @override
-  bool get canInvite;
-  @override
-  bool get canManageCustomEmojis;
-  @override
-  bool get canHideAds;
-  @override
-  int get driveCapacityMb;
-  @override
-  int get pinLimit;
-  @override
-  int get antennaLimit;
-  @override
-  int get wordMuteLimit;
-  @override
-  int get webhookLimit;
-  @override
-  int get clipLimit;
-  @override
-  int get noteEachClipsLimit;
-  @override
-  int get userListLimit;
-  @override
-  int get userEachUserListsLimit;
-  @override
-  int get rateLimitFactor;
-  @override
-  @JsonKey(ignore: true)
-  _$$_IPoliciesCopyWith<_$_IPolicies> get copyWith =>
       throw _privateConstructorUsedError;
 }

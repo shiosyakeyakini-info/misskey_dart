@@ -33,11 +33,15 @@ mixin _$Note {
   int get renoteCount => throw _privateConstructorUsedError;
   int get repliesCount => throw _privateConstructorUsedError;
   Map<String, int> get reactions => throw _privateConstructorUsedError;
+  Map<String, String> get reactionEmojis => throw _privateConstructorUsedError;
   List<String> get fileIds => throw _privateConstructorUsedError;
   List<MisskeyFile> get files => throw _privateConstructorUsedError;
   String? get replyId => throw _privateConstructorUsedError;
   String? get renoteId => throw _privateConstructorUsedError;
+  String? get channelId => throw _privateConstructorUsedError;
   Note? get renote => throw _privateConstructorUsedError;
+  String? get myReaction => throw _privateConstructorUsedError;
+  NoteChannelInfo? get channel => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,14 +65,19 @@ abstract class $NoteCopyWith<$Res> {
       int renoteCount,
       int repliesCount,
       Map<String, int> reactions,
+      Map<String, String> reactionEmojis,
       List<String> fileIds,
       List<MisskeyFile> files,
       String? replyId,
       String? renoteId,
-      Note? renote});
+      String? channelId,
+      Note? renote,
+      String? myReaction,
+      NoteChannelInfo? channel});
 
   $UserCopyWith<$Res> get user;
   $NoteCopyWith<$Res>? get renote;
+  $NoteChannelInfoCopyWith<$Res>? get channel;
 }
 
 /// @nodoc
@@ -95,11 +104,15 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? renoteCount = null,
     Object? repliesCount = null,
     Object? reactions = null,
+    Object? reactionEmojis = null,
     Object? fileIds = null,
     Object? files = null,
     Object? replyId = freezed,
     Object? renoteId = freezed,
+    Object? channelId = freezed,
     Object? renote = freezed,
+    Object? myReaction = freezed,
+    Object? channel = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -146,6 +159,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as Map<String, int>,
+      reactionEmojis: null == reactionEmojis
+          ? _value.reactionEmojis
+          : reactionEmojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       fileIds: null == fileIds
           ? _value.fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
@@ -162,10 +179,22 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.renoteId
           : renoteId // ignore: cast_nullable_to_non_nullable
               as String?,
+      channelId: freezed == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String?,
       renote: freezed == renote
           ? _value.renote
           : renote // ignore: cast_nullable_to_non_nullable
               as Note?,
+      myReaction: freezed == myReaction
+          ? _value.myReaction
+          : myReaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      channel: freezed == channel
+          ? _value.channel
+          : channel // ignore: cast_nullable_to_non_nullable
+              as NoteChannelInfo?,
     ) as $Val);
   }
 
@@ -188,6 +217,18 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       return _then(_value.copyWith(renote: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteChannelInfoCopyWith<$Res>? get channel {
+    if (_value.channel == null) {
+      return null;
+    }
+
+    return $NoteChannelInfoCopyWith<$Res>(_value.channel!, (value) {
+      return _then(_value.copyWith(channel: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -208,16 +249,22 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       int renoteCount,
       int repliesCount,
       Map<String, int> reactions,
+      Map<String, String> reactionEmojis,
       List<String> fileIds,
       List<MisskeyFile> files,
       String? replyId,
       String? renoteId,
-      Note? renote});
+      String? channelId,
+      Note? renote,
+      String? myReaction,
+      NoteChannelInfo? channel});
 
   @override
   $UserCopyWith<$Res> get user;
   @override
   $NoteCopyWith<$Res>? get renote;
+  @override
+  $NoteChannelInfoCopyWith<$Res>? get channel;
 }
 
 /// @nodoc
@@ -240,11 +287,15 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? renoteCount = null,
     Object? repliesCount = null,
     Object? reactions = null,
+    Object? reactionEmojis = null,
     Object? fileIds = null,
     Object? files = null,
     Object? replyId = freezed,
     Object? renoteId = freezed,
+    Object? channelId = freezed,
     Object? renote = freezed,
+    Object? myReaction = freezed,
+    Object? channel = freezed,
   }) {
     return _then(_$_Note(
       id: null == id
@@ -291,6 +342,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as Map<String, int>,
+      reactionEmojis: null == reactionEmojis
+          ? _value._reactionEmojis
+          : reactionEmojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       fileIds: null == fileIds
           ? _value._fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
@@ -307,10 +362,22 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.renoteId
           : renoteId // ignore: cast_nullable_to_non_nullable
               as String?,
+      channelId: freezed == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String?,
       renote: freezed == renote
           ? _value.renote
           : renote // ignore: cast_nullable_to_non_nullable
               as Note?,
+      myReaction: freezed == myReaction
+          ? _value.myReaction
+          : myReaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      channel: freezed == channel
+          ? _value.channel
+          : channel // ignore: cast_nullable_to_non_nullable
+              as NoteChannelInfo?,
     ));
   }
 }
@@ -330,12 +397,17 @@ class _$_Note implements _Note {
       required this.renoteCount,
       required this.repliesCount,
       required final Map<String, int> reactions,
+      required final Map<String, String> reactionEmojis,
       required final List<String> fileIds,
       required final List<MisskeyFile> files,
       this.replyId,
       this.renoteId,
-      this.renote})
+      this.channelId,
+      this.renote,
+      this.myReaction,
+      this.channel})
       : _reactions = reactions,
+        _reactionEmojis = reactionEmojis,
         _fileIds = fileIds,
         _files = files;
 
@@ -371,6 +443,14 @@ class _$_Note implements _Note {
     return EqualUnmodifiableMapView(_reactions);
   }
 
+  final Map<String, String> _reactionEmojis;
+  @override
+  Map<String, String> get reactionEmojis {
+    if (_reactionEmojis is EqualUnmodifiableMapView) return _reactionEmojis;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_reactionEmojis);
+  }
+
   final List<String> _fileIds;
   @override
   List<String> get fileIds {
@@ -392,11 +472,17 @@ class _$_Note implements _Note {
   @override
   final String? renoteId;
   @override
+  final String? channelId;
+  @override
   final Note? renote;
+  @override
+  final String? myReaction;
+  @override
+  final NoteChannelInfo? channel;
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, renote: $renote)';
+    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, renote: $renote, myReaction: $myReaction, channel: $channel)';
   }
 
   @override
@@ -421,34 +507,46 @@ class _$_Note implements _Note {
                 other.repliesCount == repliesCount) &&
             const DeepCollectionEquality()
                 .equals(other._reactions, _reactions) &&
+            const DeepCollectionEquality()
+                .equals(other._reactionEmojis, _reactionEmojis) &&
             const DeepCollectionEquality().equals(other._fileIds, _fileIds) &&
             const DeepCollectionEquality().equals(other._files, _files) &&
             (identical(other.replyId, replyId) || other.replyId == replyId) &&
             (identical(other.renoteId, renoteId) ||
                 other.renoteId == renoteId) &&
-            (identical(other.renote, renote) || other.renote == renote));
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId) &&
+            (identical(other.renote, renote) || other.renote == renote) &&
+            (identical(other.myReaction, myReaction) ||
+                other.myReaction == myReaction) &&
+            (identical(other.channel, channel) || other.channel == channel));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      createdAt,
-      text,
-      cw,
-      user,
-      userId,
-      visibility,
-      localOnly,
-      renoteCount,
-      repliesCount,
-      const DeepCollectionEquality().hash(_reactions),
-      const DeepCollectionEquality().hash(_fileIds),
-      const DeepCollectionEquality().hash(_files),
-      replyId,
-      renoteId,
-      renote);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        createdAt,
+        text,
+        cw,
+        user,
+        userId,
+        visibility,
+        localOnly,
+        renoteCount,
+        repliesCount,
+        const DeepCollectionEquality().hash(_reactions),
+        const DeepCollectionEquality().hash(_reactionEmojis),
+        const DeepCollectionEquality().hash(_fileIds),
+        const DeepCollectionEquality().hash(_files),
+        replyId,
+        renoteId,
+        channelId,
+        renote,
+        myReaction,
+        channel
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -477,11 +575,15 @@ abstract class _Note implements Note {
       required final int renoteCount,
       required final int repliesCount,
       required final Map<String, int> reactions,
+      required final Map<String, String> reactionEmojis,
       required final List<String> fileIds,
       required final List<MisskeyFile> files,
       final String? replyId,
       final String? renoteId,
-      final Note? renote}) = _$_Note;
+      final String? channelId,
+      final Note? renote,
+      final String? myReaction,
+      final NoteChannelInfo? channel}) = _$_Note;
 
   factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
 
@@ -510,6 +612,8 @@ abstract class _Note implements Note {
   @override
   Map<String, int> get reactions;
   @override
+  Map<String, String> get reactionEmojis;
+  @override
   List<String> get fileIds;
   @override
   List<MisskeyFile> get files;
@@ -518,7 +622,13 @@ abstract class _Note implements Note {
   @override
   String? get renoteId;
   @override
+  String? get channelId;
+  @override
   Note? get renote;
+  @override
+  String? get myReaction;
+  @override
+  NoteChannelInfo? get channel;
   @override
   @JsonKey(ignore: true)
   _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
@@ -979,5 +1089,159 @@ abstract class _MisskeyFile implements MisskeyFile {
   @override
   @JsonKey(ignore: true)
   _$$_MisskeyFileCopyWith<_$_MisskeyFile> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+NoteChannelInfo _$NoteChannelInfoFromJson(Map<String, dynamic> json) {
+  return _NoteChannelInfo.fromJson(json);
+}
+
+/// @nodoc
+mixin _$NoteChannelInfo {
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NoteChannelInfoCopyWith<NoteChannelInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NoteChannelInfoCopyWith<$Res> {
+  factory $NoteChannelInfoCopyWith(
+          NoteChannelInfo value, $Res Function(NoteChannelInfo) then) =
+      _$NoteChannelInfoCopyWithImpl<$Res, NoteChannelInfo>;
+  @useResult
+  $Res call({String id, String name});
+}
+
+/// @nodoc
+class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
+    implements $NoteChannelInfoCopyWith<$Res> {
+  _$NoteChannelInfoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_NoteChannelInfoCopyWith<$Res>
+    implements $NoteChannelInfoCopyWith<$Res> {
+  factory _$$_NoteChannelInfoCopyWith(
+          _$_NoteChannelInfo value, $Res Function(_$_NoteChannelInfo) then) =
+      __$$_NoteChannelInfoCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String name});
+}
+
+/// @nodoc
+class __$$_NoteChannelInfoCopyWithImpl<$Res>
+    extends _$NoteChannelInfoCopyWithImpl<$Res, _$_NoteChannelInfo>
+    implements _$$_NoteChannelInfoCopyWith<$Res> {
+  __$$_NoteChannelInfoCopyWithImpl(
+      _$_NoteChannelInfo _value, $Res Function(_$_NoteChannelInfo) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+  }) {
+    return _then(_$_NoteChannelInfo(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_NoteChannelInfo implements _NoteChannelInfo {
+  const _$_NoteChannelInfo({required this.id, required this.name});
+
+  factory _$_NoteChannelInfo.fromJson(Map<String, dynamic> json) =>
+      _$$_NoteChannelInfoFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'NoteChannelInfo(id: $id, name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_NoteChannelInfo &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NoteChannelInfoCopyWith<_$_NoteChannelInfo> get copyWith =>
+      __$$_NoteChannelInfoCopyWithImpl<_$_NoteChannelInfo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_NoteChannelInfoToJson(
+      this,
+    );
+  }
+}
+
+abstract class _NoteChannelInfo implements NoteChannelInfo {
+  const factory _NoteChannelInfo(
+      {required final String id,
+      required final String name}) = _$_NoteChannelInfo;
+
+  factory _NoteChannelInfo.fromJson(Map<String, dynamic> json) =
+      _$_NoteChannelInfo.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$_NoteChannelInfoCopyWith<_$_NoteChannelInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -7,7 +7,10 @@ import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/i_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
+import 'package:misskey_dart/src/misskey_channels.dart';
+import 'package:misskey_dart/src/misskey_i.dart';
 import 'package:misskey_dart/src/misskey_note.dart';
+import 'package:misskey_dart/src/misskey_users.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
 
@@ -18,11 +21,17 @@ class Misskey {
   late final ApiService apiService;
 
   late final MisskeyNotes notes;
+  late final MisskeyChannels channels;
+  late final MisskeyUsers users;
+  late final MisskeyI i;
 
   Misskey({required this.token, required this.host}) {
     apiService = ApiService(token: token, host: host);
 
-    notes = MisskeyNotes(apiService: apiService, host: host, token: token);
+    notes = MisskeyNotes(apiService: apiService);
+    channels = MisskeyChannels(apiService: apiService);
+    users = MisskeyUsers(apiService: apiService);
+    i = MisskeyI(apiService: apiService);
   }
 
   Future<Iterable<AnnouncementsResponse>> announcements(
@@ -40,11 +49,6 @@ class Misskey {
   Future<EmojisResponse> emojis() async {
     final response = await apiService.post<Map<String, dynamic>>("emojis", {});
     return EmojisResponse.fromJson(response);
-  }
-
-  Future<IResponse> i() async {
-    final response = await apiService.post<Map<String, dynamic>>("i", {});
-    return IResponse.fromJson(response);
   }
 
   Future<MetaResponse> meta() async {
@@ -83,9 +87,11 @@ class Misskey {
   SocketController channelStream(String channelId,
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
-          channel: Channel.globalTimeline,
+          channel: Channel.channel,
+          id: channelId,
           onEventReceived: (response) {
             final note = Note.fromJson(response);
             onEventReceived(note);
-          });
+          },
+          parameters: {"channelId": channelId});
 }

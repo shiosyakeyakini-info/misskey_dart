@@ -25,6 +25,7 @@ const _$ChannelDataTypeEnumMap = {
   ChannelDataType.subNote: 'subNote',
   ChannelDataType.noteUpdated: 'noteUpdated',
   ChannelDataType.unsubNote: 'unsubNote',
+  ChannelDataType.emojiUpdated: 'emojiUpdated',
 };
 
 _$_ChannelResponseBody _$$_ChannelResponseBodyFromJson(

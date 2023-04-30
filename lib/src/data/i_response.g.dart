@@ -18,7 +18,7 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       emojis: json['emojis'] as Map<String, dynamic>?,
       onlineStatus: json['onlineStatus'] as String?,
       badgeRoles: (json['badgeRoles'] as List<dynamic>)
-          .map((e) => IBadgeRole.fromJson(e as Map<String, dynamic>))
+          .map((e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
           .toList(),
       url: _$JsonConverterFromJson<String, Uri?>(
           json['url'], const NullableUriConverter().fromJson),
@@ -42,7 +42,7 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
           json['birthday'], const NullableDateTimeConverter().fromJson),
       lang: json['lang'] as String?,
       fields: (json['fields'] as List<dynamic>?)
-          ?.map((e) => IField.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
           .toList(),
       followersCount: json['followersCount'] as int,
       followingCount: json['followingCount'] as int,
@@ -94,10 +94,10 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
           .toList(),
       showTimelineReplies: json['showTimelineReplies'] as bool,
       achievements: (json['achievements'] as List<dynamic>)
-          .map((e) => IAchievement.fromJson(e as Map<String, dynamic>))
+          .map((e) => UserAchievement.fromJson(e as Map<String, dynamic>))
           .toList(),
       loggedInDays: json['loggedInDays'] as int,
-      policies: IPolicies.fromJson(json['policies'] as Map<String, dynamic>),
+      policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
@@ -177,98 +177,3 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
-
-_$_IBadgeRole _$$_IBadgeRoleFromJson(Map<String, dynamic> json) =>
-    _$_IBadgeRole(
-      name: json['name'] as String,
-      iconUrl: const UriConverter().fromJson(json['iconUrl'] as String),
-    );
-
-Map<String, dynamic> _$$_IBadgeRoleToJson(_$_IBadgeRole instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'iconUrl': const UriConverter().toJson(instance.iconUrl),
-    };
-
-_$_IField _$$_IFieldFromJson(Map<String, dynamic> json) => _$_IField(
-      name: json['name'] as String,
-      value: json['value'] as String,
-    );
-
-Map<String, dynamic> _$$_IFieldToJson(_$_IField instance) => <String, dynamic>{
-      'name': instance.name,
-      'value': instance.value,
-    };
-
-_$_IRole _$$_IRoleFromJson(Map<String, dynamic> json) => _$_IRole(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      color: json['color'] as String,
-      iconUrl: const UriConverter().fromJson(json['iconUrl'] as String),
-      description: json['description'] as String,
-      isModerator: json['isModerator'] as bool,
-      isAdministrator: json['isAdministrator'] as bool,
-    );
-
-Map<String, dynamic> _$$_IRoleToJson(_$_IRole instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'color': instance.color,
-      'iconUrl': const UriConverter().toJson(instance.iconUrl),
-      'description': instance.description,
-      'isModerator': instance.isModerator,
-      'isAdministrator': instance.isAdministrator,
-    };
-
-_$_IAchievement _$$_IAchievementFromJson(Map<String, dynamic> json) =>
-    _$_IAchievement(
-      name: json['name'] as String,
-      unlockedAt:
-          const EpocTimeDateTimeConverter().fromJson(json['unlockedAt'] as int),
-    );
-
-Map<String, dynamic> _$$_IAchievementToJson(_$_IAchievement instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'unlockedAt':
-          const EpocTimeDateTimeConverter().toJson(instance.unlockedAt),
-    };
-
-_$_IPolicies _$$_IPoliciesFromJson(Map<String, dynamic> json) => _$_IPolicies(
-      gtlAvailable: json['gtlAvailable'] as bool,
-      ltlAvailable: json['ltlAvailable'] as bool,
-      canPublicNote: json['canPublicNote'] as bool,
-      canInvite: json['canInvite'] as bool,
-      canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
-      canHideAds: json['canHideAds'] as bool,
-      driveCapacityMb: json['driveCapacityMb'] as int,
-      pinLimit: json['pinLimit'] as int,
-      antennaLimit: json['antennaLimit'] as int,
-      wordMuteLimit: json['wordMuteLimit'] as int,
-      webhookLimit: json['webhookLimit'] as int,
-      clipLimit: json['clipLimit'] as int,
-      noteEachClipsLimit: json['noteEachClipsLimit'] as int,
-      userListLimit: json['userListLimit'] as int,
-      userEachUserListsLimit: json['userEachUserListsLimit'] as int,
-      rateLimitFactor: json['rateLimitFactor'] as int,
-    );
-
-Map<String, dynamic> _$$_IPoliciesToJson(_$_IPolicies instance) =>
-    <String, dynamic>{
-      'gtlAvailable': instance.gtlAvailable,
-      'ltlAvailable': instance.ltlAvailable,
-      'canPublicNote': instance.canPublicNote,
-      'canInvite': instance.canInvite,
-      'canManageCustomEmojis': instance.canManageCustomEmojis,
-      'canHideAds': instance.canHideAds,
-      'driveCapacityMb': instance.driveCapacityMb,
-      'pinLimit': instance.pinLimit,
-      'antennaLimit': instance.antennaLimit,
-      'wordMuteLimit': instance.wordMuteLimit,
-      'webhookLimit': instance.webhookLimit,
-      'clipLimit': instance.clipLimit,
-      'noteEachClipsLimit': instance.noteEachClipsLimit,
-      'userListLimit': instance.userListLimit,
-      'userEachUserListsLimit': instance.userEachUserListsLimit,
-      'rateLimitFactor': instance.rateLimitFactor,
-    };

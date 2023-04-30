@@ -9,40 +9,43 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {
   final String url;
-  final String id;
   final Channel channel;
   final void Function(Map<String, dynamic> receive) onEventReceived;
+  final Map<String, dynamic>? parameters;
+
+  String id;
 
   WebSocketChannel? _socketChannel;
 
-  SocketController(
-      {required this.url,
-      required this.id,
-      required this.channel,
-      required this.onEventReceived});
+  SocketController({
+    required this.url,
+    required this.id,
+    required this.channel,
+    required this.onEventReceived,
+    this.parameters,
+  });
 
-  Future<void> startStreaming({
-    Map<String, dynamic>? parameters,
-  }) async {
+  Future<void> startStreaming() async {
     final socketChannel = IOWebSocketChannel.connect(Uri.parse(url));
     await socketChannel.ready;
 
     _socketChannel = socketChannel;
     final channelRequest = ChannelRequest(
         type: ChannelDataType.connect,
-        body: ChannelRequestBody(
-            channel: channel, id: id, params: parameters));
+        body: ChannelRequestBody(channel: channel, id: id, params: parameters));
 
     final requestJson = jsonEncode(channelRequest);
     print("send: $requestJson");
     socketChannel
       ..stream.listen(
         (event) {
-          //print(event);
+          // print("received: $event");
           final response = ChannelResponse.fromJson(jsonDecode(event));
-          final responseBody = response.body.body;
-          if (responseBody == null) return;
-          onEventReceived(responseBody);
+          if (response.body.id == id) {
+            final responseBody = response.body.body;
+            if (responseBody == null) return;
+            onEventReceived(responseBody);
+          }
         },
         onError: (e, s) {
           print("Error happen $e ");
@@ -57,7 +60,15 @@ class SocketController {
   }
 
   Future<void> disconnect() async {
-    _socketChannel?.sink.add(ChannelRequest(
-        type: ChannelDataType.disconnect, body: ChannelRequestBody(id: id, params: {})));
+    final request = jsonEncode(ChannelRequest(
+        type: ChannelDataType.disconnect,
+        body: ChannelRequestBody(id: id, params: {})));
+    print("send: $request");
+    _socketChannel?.sink.add(request);
+  }
+
+  Future<void> reconnect() async {
+    await disconnect();
+    await startStreaming();
   }
 }

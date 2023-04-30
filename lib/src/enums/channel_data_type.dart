@@ -7,16 +7,17 @@ enum ChannelDataType {
   subNote,
   noteUpdated,
   unsubNote,
+  emojiUpdated,
 }
 
-class ChannelDataTypeJsonConverter extends JsonConverter<ChannelDataType?, String> {
-
+class ChannelDataTypeJsonConverter
+    extends JsonConverter<ChannelDataType?, String> {
   const ChannelDataTypeJsonConverter();
 
   @override
-  ChannelDataType? fromJson(String json) => ChannelDataType.values.firstWhere((e) => e.name == json );
+  ChannelDataType? fromJson(String json) =>
+      ChannelDataType.values.firstWhere((e) => e.name == json);
 
   @override
   String toJson(ChannelDataType? object) => object?.name ?? "";
-
 }
