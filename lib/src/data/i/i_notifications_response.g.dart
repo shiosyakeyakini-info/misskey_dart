@@ -13,10 +13,23 @@ _$_INotificationsResponse _$$_INotificationsResponseFromJson(
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       type: $enumDecode(_$NotificationTypeEnumMap, json['type']),
-      userId: json['userId'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
-      note: Note.fromJson(json['note'] as Map<String, dynamic>),
+      noteId: json['noteId'] as String?,
+      followRequestId: json['followRequestId'] as String?,
       reaction: json['reaction'] as String?,
+      choice: json['choice'] as int?,
+      achievement: json['achievement'] as String?,
+      customBody: json['customBody'] as String?,
+      customHeader: json['customHeader'] as String?,
+      customIcon: _$JsonConverterFromJson<String, Uri?>(
+          json['customIcon'], const NullableUriConverter().fromJson),
+      appAccessTokenId: json['appAccessTokenId'] as String?,
+      userId: json['userId'] as String?,
+      user: json['user'] == null
+          ? null
+          : User.fromJson(json['user'] as Map<String, dynamic>),
+      note: json['note'] == null
+          ? null
+          : Note.fromJson(json['note'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_INotificationsResponseToJson(
@@ -25,10 +38,18 @@ Map<String, dynamic> _$$_INotificationsResponseToJson(
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'type': _$NotificationTypeEnumMap[instance.type]!,
+      'noteId': instance.noteId,
+      'followRequestId': instance.followRequestId,
+      'reaction': instance.reaction,
+      'choice': instance.choice,
+      'achievement': instance.achievement,
+      'customBody': instance.customBody,
+      'customHeader': instance.customHeader,
+      'customIcon': const NullableUriConverter().toJson(instance.customIcon),
+      'appAccessTokenId': instance.appAccessTokenId,
       'userId': instance.userId,
       'user': instance.user,
       'note': instance.note,
-      'reaction': instance.reaction,
     };
 
 const _$NotificationTypeEnumMap = {
@@ -44,4 +65,11 @@ const _$NotificationTypeEnumMap = {
   NotificationType.followRequestAccepted: 'followRequestAccepted',
   NotificationType.groupInvited: 'groupInvited',
   NotificationType.app: 'app',
+  NotificationType.achievementEarned: 'achievementEarned',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);

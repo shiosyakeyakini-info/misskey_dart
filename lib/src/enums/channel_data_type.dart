@@ -1,13 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum ChannelDataType {
-  connect,
-  channel,
-  disconnect,
+  readNotification,
   subNote,
-  noteUpdated,
+  sn,
   unsubNote,
-  emojiUpdated,
+  un,
+  connect,
+  disconnect,
+  channel,
+  ch
 }
 
 class ChannelDataTypeJsonConverter

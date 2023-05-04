@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'channels_show_response.dart';
+part of 'community_channel.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ChannelsShowResponse _$$_ChannelsShowResponseFromJson(
-        Map<String, dynamic> json) =>
-    _$_ChannelsShowResponse(
+_$_CommunityChannel _$$_CommunityChannelFromJson(Map<String, dynamic> json) =>
+    _$_CommunityChannel(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -28,13 +27,12 @@ _$_ChannelsShowResponse _$$_ChannelsShowResponseFromJson(
       isFollowing: json['isFollowing'] as bool,
       isFavorited: json['isFavorited'] as bool,
       hasUnreadNote: json['hasUnreadNote'] as bool,
-      pinnedNotes: (json['pinnedNotes'] as List<dynamic>)
-          .map((e) => Note.fromJson(e as Map<String, dynamic>))
+      pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
+          ?.map((e) => Note.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_ChannelsShowResponseToJson(
-        _$_ChannelsShowResponse instance) =>
+Map<String, dynamic> _$$_CommunityChannelToJson(_$_CommunityChannel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

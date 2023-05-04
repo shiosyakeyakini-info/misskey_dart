@@ -20,15 +20,30 @@ class MisskeyChannels {
       _apiService.createSocket(
         channel: Channel.channel,
         id: channelId,
-        onEventReceived: (response) {
+        onEventReceived: (type, response) {
+          if (response == null) return;
           final note = Note.fromJson(response);
           onEventReceived(note);
         },
       );
 
-  Future<ChannelsShowResponse> show(ChannelsShowRequest request) async {
+  Future<CommunityChannel> show(ChannelsShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "channels/show", request.toJson());
-    return ChannelsShowResponse.fromJson(response);
+    return CommunityChannel.fromJson(response);
+  }
+
+  Future<Iterable<CommunityChannel>> followed(
+      ChannelsFollowedRequest request) async {
+    final response =
+        await _apiService.post<List>("channels/followed", request.toJson());
+    return response.map((e) => CommunityChannel.fromJson(e));
+  }
+
+  Future<Iterable<CommunityChannel>> myFavorite(
+      ChannelsMyFavoriteRequest request) async {
+    final response =
+        await _apiService.post<List>("channels/my-favorites", request.toJson());
+    return response.map((e) => CommunityChannel.fromJson(e));
   }
 }

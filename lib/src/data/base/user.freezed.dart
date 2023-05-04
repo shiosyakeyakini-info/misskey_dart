@@ -24,8 +24,9 @@ mixin _$User {
   String get username => throw _privateConstructorUsedError;
   String? get host => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
-  OnlineStatus get onlineStatus => throw _privateConstructorUsedError;
+  OnlineStatus? get onlineStatus => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get avatarUrl => throw _privateConstructorUsedError;
   String? get avatarBlurhash => throw _privateConstructorUsedError;
@@ -46,8 +47,11 @@ abstract class $UserCopyWith<$Res> {
       String username,
       String? host,
       String? name,
-      @OnlineStatusJsonConverter() OnlineStatus onlineStatus,
-      @UriConverter() Uri avatarUrl,
+      @UnsupportedDolphin()
+      @OnlineStatusJsonConverter()
+          OnlineStatus? onlineStatus,
+      @UriConverter()
+          Uri avatarUrl,
       String? avatarBlurhash,
       UserInstanceInfo? instance});
 
@@ -71,7 +75,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? username = null,
     Object? host = freezed,
     Object? name = freezed,
-    Object? onlineStatus = null,
+    Object? onlineStatus = freezed,
     Object? avatarUrl = null,
     Object? avatarBlurhash = freezed,
     Object? instance = freezed,
@@ -93,10 +97,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      onlineStatus: null == onlineStatus
+      onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
-              as OnlineStatus,
+              as OnlineStatus?,
       avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -136,8 +140,11 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String username,
       String? host,
       String? name,
-      @OnlineStatusJsonConverter() OnlineStatus onlineStatus,
-      @UriConverter() Uri avatarUrl,
+      @UnsupportedDolphin()
+      @OnlineStatusJsonConverter()
+          OnlineStatus? onlineStatus,
+      @UriConverter()
+          Uri avatarUrl,
       String? avatarBlurhash,
       UserInstanceInfo? instance});
 
@@ -158,7 +165,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? username = null,
     Object? host = freezed,
     Object? name = freezed,
-    Object? onlineStatus = null,
+    Object? onlineStatus = freezed,
     Object? avatarUrl = null,
     Object? avatarBlurhash = freezed,
     Object? instance = freezed,
@@ -180,10 +187,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      onlineStatus: null == onlineStatus
+      onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
-              as OnlineStatus,
+              as OnlineStatus?,
       avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -208,7 +215,7 @@ class _$_User implements _User {
       required this.username,
       this.host,
       this.name,
-      @OnlineStatusJsonConverter() required this.onlineStatus,
+      @UnsupportedDolphin() @OnlineStatusJsonConverter() this.onlineStatus,
       @UriConverter() required this.avatarUrl,
       this.avatarBlurhash,
       this.instance});
@@ -224,8 +231,9 @@ class _$_User implements _User {
   @override
   final String? name;
   @override
+  @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
-  final OnlineStatus onlineStatus;
+  final OnlineStatus? onlineStatus;
   @override
   @UriConverter()
   final Uri avatarUrl;
@@ -284,8 +292,11 @@ abstract class _User implements User {
       required final String username,
       final String? host,
       final String? name,
-      @OnlineStatusJsonConverter() required final OnlineStatus onlineStatus,
-      @UriConverter() required final Uri avatarUrl,
+      @UnsupportedDolphin()
+      @OnlineStatusJsonConverter()
+          final OnlineStatus? onlineStatus,
+      @UriConverter()
+          required final Uri avatarUrl,
       final String? avatarBlurhash,
       final UserInstanceInfo? instance}) = _$_User;
 
@@ -300,8 +311,9 @@ abstract class _User implements User {
   @override
   String? get name;
   @override
+  @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
-  OnlineStatus get onlineStatus;
+  OnlineStatus? get onlineStatus;
   @override
   @UriConverter()
   Uri get avatarUrl;
@@ -1169,7 +1181,7 @@ mixin _$UserPolicies {
   int get noteEachClipsLimit => throw _privateConstructorUsedError;
   int get userListLimit => throw _privateConstructorUsedError;
   int get userEachUserListsLimit => throw _privateConstructorUsedError;
-  int get rateLimitFactor => throw _privateConstructorUsedError;
+  double get rateLimitFactor => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1199,7 +1211,7 @@ abstract class $UserPoliciesCopyWith<$Res> {
       int noteEachClipsLimit,
       int userListLimit,
       int userEachUserListsLimit,
-      int rateLimitFactor});
+      double rateLimitFactor});
 }
 
 /// @nodoc
@@ -1296,7 +1308,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
       rateLimitFactor: null == rateLimitFactor
           ? _value.rateLimitFactor
           : rateLimitFactor // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ) as $Val);
   }
 }
@@ -1325,7 +1337,7 @@ abstract class _$$_UserPoliciesCopyWith<$Res>
       int noteEachClipsLimit,
       int userListLimit,
       int userEachUserListsLimit,
-      int rateLimitFactor});
+      double rateLimitFactor});
 }
 
 /// @nodoc
@@ -1420,7 +1432,7 @@ class __$$_UserPoliciesCopyWithImpl<$Res>
       rateLimitFactor: null == rateLimitFactor
           ? _value.rateLimitFactor
           : rateLimitFactor // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -1480,7 +1492,7 @@ class _$_UserPolicies implements _UserPolicies {
   @override
   final int userEachUserListsLimit;
   @override
-  final int rateLimitFactor;
+  final double rateLimitFactor;
 
   @override
   String toString() {
@@ -1578,7 +1590,7 @@ abstract class _UserPolicies implements UserPolicies {
       required final int noteEachClipsLimit,
       required final int userListLimit,
       required final int userEachUserListsLimit,
-      required final int rateLimitFactor}) = _$_UserPolicies;
+      required final double rateLimitFactor}) = _$_UserPolicies;
 
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =
       _$_UserPolicies.fromJson;
@@ -1614,7 +1626,7 @@ abstract class _UserPolicies implements UserPolicies {
   @override
   int get userEachUserListsLimit;
   @override
-  int get rateLimitFactor;
+  double get rateLimitFactor;
   @override
   @JsonKey(ignore: true)
   _$$_UserPoliciesCopyWith<_$_UserPolicies> get copyWith =>

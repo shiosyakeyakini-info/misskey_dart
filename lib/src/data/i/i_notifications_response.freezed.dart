@@ -26,10 +26,19 @@ mixin _$INotificationsResponse {
   DateTime get createdAt => throw _privateConstructorUsedError;
   @NotificationTypeJsonConverter()
   NotificationType get type => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
-  Note get note => throw _privateConstructorUsedError;
+  String? get noteId => throw _privateConstructorUsedError;
+  String? get followRequestId => throw _privateConstructorUsedError;
   String? get reaction => throw _privateConstructorUsedError;
+  int? get choice => throw _privateConstructorUsedError;
+  String? get achievement => throw _privateConstructorUsedError;
+  String? get customBody => throw _privateConstructorUsedError;
+  String? get customHeader => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get customIcon => throw _privateConstructorUsedError;
+  String? get appAccessTokenId => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
+  Note? get note => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,13 +56,21 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       @NotificationTypeJsonConverter() NotificationType type,
-      String userId,
-      User user,
-      Note note,
-      String? reaction});
+      String? noteId,
+      String? followRequestId,
+      String? reaction,
+      int? choice,
+      String? achievement,
+      String? customBody,
+      String? customHeader,
+      @NullableUriConverter() Uri? customIcon,
+      String? appAccessTokenId,
+      String? userId,
+      User? user,
+      Note? note});
 
-  $UserCopyWith<$Res> get user;
-  $NoteCopyWith<$Res> get note;
+  $UserCopyWith<$Res>? get user;
+  $NoteCopyWith<$Res>? get note;
 }
 
 /// @nodoc
@@ -73,10 +90,18 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     Object? id = null,
     Object? createdAt = null,
     Object? type = null,
-    Object? userId = null,
-    Object? user = null,
-    Object? note = null,
+    Object? noteId = freezed,
+    Object? followRequestId = freezed,
     Object? reaction = freezed,
+    Object? choice = freezed,
+    Object? achievement = freezed,
+    Object? customBody = freezed,
+    Object? customHeader = freezed,
+    Object? customIcon = freezed,
+    Object? appAccessTokenId = freezed,
+    Object? userId = freezed,
+    Object? user = freezed,
+    Object? note = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -91,37 +116,77 @@ class _$INotificationsResponseCopyWithImpl<$Res,
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      note: null == note
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
+      noteId: freezed == noteId
+          ? _value.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      followRequestId: freezed == followRequestId
+          ? _value.followRequestId
+          : followRequestId // ignore: cast_nullable_to_non_nullable
+              as String?,
       reaction: freezed == reaction
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as String?,
+      choice: freezed == choice
+          ? _value.choice
+          : choice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      achievement: freezed == achievement
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customBody: freezed == customBody
+          ? _value.customBody
+          : customBody // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customHeader: freezed == customHeader
+          ? _value.customHeader
+          : customHeader // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customIcon: freezed == customIcon
+          ? _value.customIcon
+          : customIcon // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      appAccessTokenId: freezed == appAccessTokenId
+          ? _value.appAccessTokenId
+          : appAccessTokenId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
+      note: freezed == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_value.note, (value) {
+  $NoteCopyWith<$Res>? get note {
+    if (_value.note == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_value.note!, (value) {
       return _then(_value.copyWith(note: value) as $Val);
     });
   }
@@ -139,15 +204,23 @@ abstract class _$$_INotificationsResponseCopyWith<$Res>
       {String id,
       @DateTimeConverter() DateTime createdAt,
       @NotificationTypeJsonConverter() NotificationType type,
-      String userId,
-      User user,
-      Note note,
-      String? reaction});
+      String? noteId,
+      String? followRequestId,
+      String? reaction,
+      int? choice,
+      String? achievement,
+      String? customBody,
+      String? customHeader,
+      @NullableUriConverter() Uri? customIcon,
+      String? appAccessTokenId,
+      String? userId,
+      User? user,
+      Note? note});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserCopyWith<$Res>? get user;
   @override
-  $NoteCopyWith<$Res> get note;
+  $NoteCopyWith<$Res>? get note;
 }
 
 /// @nodoc
@@ -165,10 +238,18 @@ class __$$_INotificationsResponseCopyWithImpl<$Res>
     Object? id = null,
     Object? createdAt = null,
     Object? type = null,
-    Object? userId = null,
-    Object? user = null,
-    Object? note = null,
+    Object? noteId = freezed,
+    Object? followRequestId = freezed,
     Object? reaction = freezed,
+    Object? choice = freezed,
+    Object? achievement = freezed,
+    Object? customBody = freezed,
+    Object? customHeader = freezed,
+    Object? customIcon = freezed,
+    Object? appAccessTokenId = freezed,
+    Object? userId = freezed,
+    Object? user = freezed,
+    Object? note = freezed,
   }) {
     return _then(_$_INotificationsResponse(
       id: null == id
@@ -183,22 +264,54 @@ class __$$_INotificationsResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      note: null == note
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
+      noteId: freezed == noteId
+          ? _value.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      followRequestId: freezed == followRequestId
+          ? _value.followRequestId
+          : followRequestId // ignore: cast_nullable_to_non_nullable
+              as String?,
       reaction: freezed == reaction
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as String?,
+      choice: freezed == choice
+          ? _value.choice
+          : choice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      achievement: freezed == achievement
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customBody: freezed == customBody
+          ? _value.customBody
+          : customBody // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customHeader: freezed == customHeader
+          ? _value.customHeader
+          : customHeader // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customIcon: freezed == customIcon
+          ? _value.customIcon
+          : customIcon // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      appAccessTokenId: freezed == appAccessTokenId
+          ? _value.appAccessTokenId
+          : appAccessTokenId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
+      note: freezed == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note?,
     ));
   }
 }
@@ -210,10 +323,18 @@ class _$_INotificationsResponse implements _INotificationsResponse {
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NotificationTypeJsonConverter() required this.type,
-      required this.userId,
-      required this.user,
-      required this.note,
-      this.reaction});
+      this.noteId,
+      this.followRequestId,
+      this.reaction,
+      this.choice,
+      this.achievement,
+      this.customBody,
+      this.customHeader,
+      @NullableUriConverter() this.customIcon,
+      this.appAccessTokenId,
+      this.userId,
+      this.user,
+      this.note});
 
   factory _$_INotificationsResponse.fromJson(Map<String, dynamic> json) =>
       _$$_INotificationsResponseFromJson(json);
@@ -227,17 +348,34 @@ class _$_INotificationsResponse implements _INotificationsResponse {
   @NotificationTypeJsonConverter()
   final NotificationType type;
   @override
-  final String userId;
+  final String? noteId;
   @override
-  final User user;
-  @override
-  final Note note;
+  final String? followRequestId;
   @override
   final String? reaction;
+  @override
+  final int? choice;
+  @override
+  final String? achievement;
+  @override
+  final String? customBody;
+  @override
+  final String? customHeader;
+  @override
+  @NullableUriConverter()
+  final Uri? customIcon;
+  @override
+  final String? appAccessTokenId;
+  @override
+  final String? userId;
+  @override
+  final User? user;
+  @override
+  final Note? note;
 
   @override
   String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, userId: $userId, user: $user, note: $note, reaction: $reaction)';
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, customBody: $customBody, customHeader: $customHeader, customIcon: $customIcon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note)';
   }
 
   @override
@@ -249,17 +387,46 @@ class _$_INotificationsResponse implements _INotificationsResponse {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.noteId, noteId) || other.noteId == noteId) &&
+            (identical(other.followRequestId, followRequestId) ||
+                other.followRequestId == followRequestId) &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.choice, choice) || other.choice == choice) &&
+            (identical(other.achievement, achievement) ||
+                other.achievement == achievement) &&
+            (identical(other.customBody, customBody) ||
+                other.customBody == customBody) &&
+            (identical(other.customHeader, customHeader) ||
+                other.customHeader == customHeader) &&
+            (identical(other.customIcon, customIcon) ||
+                other.customIcon == customIcon) &&
+            (identical(other.appAccessTokenId, appAccessTokenId) ||
+                other.appAccessTokenId == appAccessTokenId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.note, note) || other.note == note) &&
-            (identical(other.reaction, reaction) ||
-                other.reaction == reaction));
+            (identical(other.note, note) || other.note == note));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, createdAt, type, userId, user, note, reaction);
+      runtimeType,
+      id,
+      createdAt,
+      type,
+      noteId,
+      followRequestId,
+      reaction,
+      choice,
+      achievement,
+      customBody,
+      customHeader,
+      customIcon,
+      appAccessTokenId,
+      userId,
+      user,
+      note);
 
   @JsonKey(ignore: true)
   @override
@@ -281,10 +448,18 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
       @NotificationTypeJsonConverter() required final NotificationType type,
-      required final String userId,
-      required final User user,
-      required final Note note,
-      final String? reaction}) = _$_INotificationsResponse;
+      final String? noteId,
+      final String? followRequestId,
+      final String? reaction,
+      final int? choice,
+      final String? achievement,
+      final String? customBody,
+      final String? customHeader,
+      @NullableUriConverter() final Uri? customIcon,
+      final String? appAccessTokenId,
+      final String? userId,
+      final User? user,
+      final Note? note}) = _$_INotificationsResponse;
 
   factory _INotificationsResponse.fromJson(Map<String, dynamic> json) =
       _$_INotificationsResponse.fromJson;
@@ -298,13 +473,30 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @NotificationTypeJsonConverter()
   NotificationType get type;
   @override
-  String get userId;
+  String? get noteId;
   @override
-  User get user;
-  @override
-  Note get note;
+  String? get followRequestId;
   @override
   String? get reaction;
+  @override
+  int? get choice;
+  @override
+  String? get achievement;
+  @override
+  String? get customBody;
+  @override
+  String? get customHeader;
+  @override
+  @NullableUriConverter()
+  Uri? get customIcon;
+  @override
+  String? get appAccessTokenId;
+  @override
+  String? get userId;
+  @override
+  User? get user;
+  @override
+  Note? get note;
   @override
   @JsonKey(ignore: true)
   _$$_INotificationsResponseCopyWith<_$_INotificationsResponse> get copyWith =>

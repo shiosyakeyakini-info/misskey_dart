@@ -19,13 +19,15 @@ Map<String, dynamic> _$$_ChannelResponseToJson(_$_ChannelResponse instance) =>
     };
 
 const _$ChannelDataTypeEnumMap = {
-  ChannelDataType.connect: 'connect',
-  ChannelDataType.channel: 'channel',
-  ChannelDataType.disconnect: 'disconnect',
+  ChannelDataType.readNotification: 'readNotification',
   ChannelDataType.subNote: 'subNote',
-  ChannelDataType.noteUpdated: 'noteUpdated',
+  ChannelDataType.sn: 'sn',
   ChannelDataType.unsubNote: 'unsubNote',
-  ChannelDataType.emojiUpdated: 'emojiUpdated',
+  ChannelDataType.un: 'un',
+  ChannelDataType.connect: 'connect',
+  ChannelDataType.disconnect: 'disconnect',
+  ChannelDataType.channel: 'channel',
+  ChannelDataType.ch: 'ch',
 };
 
 _$_ChannelResponseBody _$$_ChannelResponseBodyFromJson(
@@ -46,4 +48,33 @@ Map<String, dynamic> _$$_ChannelResponseBodyToJson(
 
 const _$ChannelResponseTypeEnumMap = {
   ChannelResponseType.note: 'note',
+  ChannelResponseType.emojiAdded: 'emojiAdded',
+  ChannelResponseType.emojiUpdated: 'emojiUpdated',
+  ChannelResponseType.emojiDeleted: 'emojiDeleted',
+  ChannelResponseType.notification: 'notification',
+  ChannelResponseType.mention: 'mention',
+  ChannelResponseType.reply: 'reply',
+  ChannelResponseType.renote: 'renote',
+  ChannelResponseType.follow: 'follow',
+  ChannelResponseType.followed: 'followed',
+  ChannelResponseType.unfollow: 'unfollow',
+  ChannelResponseType.meUpdated: 'meUpdated',
+  ChannelResponseType.pageEvent: 'pageEvent',
+  ChannelResponseType.urlUploadFinished: 'urlUploadFinished',
+  ChannelResponseType.readAllNotifications: 'readAllNotifications',
+  ChannelResponseType.unreadNotification: 'unreadNotification',
+  ChannelResponseType.unreadMention: 'unreadMention',
+  ChannelResponseType.readAllUnreadMentions: 'readAllUnreadMentions',
+  ChannelResponseType.unreadSpecifiedNote: 'unreadSpecifiedNote',
+  ChannelResponseType.readAllUnreadSpecifiedNotes:
+      'readAllUnreadSpecifiedNotes',
+  ChannelResponseType.readAllAntennas: 'readAllAntennas',
+  ChannelResponseType.unreadAntenna: 'unreadAntenna',
+  ChannelResponseType.readAllAnnouncements: 'readAllAnnouncements',
+  ChannelResponseType.myTokenRegenerated: 'myTokenRegenerated',
+  ChannelResponseType.signin: 'signin',
+  ChannelResponseType.registryUpdated: 'registryUpdated',
+  ChannelResponseType.driveFileCreated: 'driveFileCreated',
+  ChannelResponseType.readAntenna: 'readAntenna',
+  ChannelResponseType.receiveFollowRequest: 'receiveFollowRequest',
 };

@@ -17,6 +17,8 @@ _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
       text: json['text'] as String?,
       cw: json['cw'] as String?,
       localOnly: json['localOnly'] as bool?,
+      reactionAcceptance: $enumDecodeNullable(
+          _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
       noExxtractMentions: json['noExxtractMentions'] as bool?,
       noExtractHashtags: json['noExtractHashtags'] as bool?,
       noExtractEmojis: json['noExtractEmojis'] as bool?,
@@ -39,6 +41,8 @@ Map<String, dynamic> _$$_NotesCreateRequestToJson(
       'text': instance.text,
       'cw': instance.cw,
       'localOnly': instance.localOnly,
+      'reactionAcceptance':
+          _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
       'noExxtractMentions': instance.noExxtractMentions,
       'noExtractHashtags': instance.noExtractHashtags,
       'noExtractEmojis': instance.noExtractEmojis,
@@ -54,6 +58,11 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+const _$ReactionAcceptanceEnumMap = {
+  ReactionAcceptance.likeOnly: 'likeOnly',
+  ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+};
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,

@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
+import 'package:misskey_dart/src/data/annotations/annotations.dart';
 import 'package:misskey_dart/src/enums/online_status.dart';
 
 part 'user.freezed.dart';
@@ -13,7 +14,9 @@ class User with _$User {
     required String username,
     String? host,
     String? name,
-    @OnlineStatusJsonConverter() required OnlineStatus onlineStatus,
+    @UnsupportedDolphin()
+    @OnlineStatusJsonConverter()
+        OnlineStatus? onlineStatus,
     @UriConverter() required Uri avatarUrl,
     String? avatarBlurhash,
     UserInstanceInfo? instance,
@@ -91,7 +94,7 @@ class UserPolicies with _$UserPolicies {
     required int noteEachClipsLimit,
     required int userListLimit,
     required int userEachUserListsLimit,
-    required int rateLimitFactor,
+    required double rateLimitFactor,
   }) = _UserPolicies;
 
   factory UserPolicies.fromJson(Map<String, Object?> json) =>

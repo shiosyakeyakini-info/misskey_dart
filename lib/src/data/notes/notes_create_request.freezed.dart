@@ -26,6 +26,8 @@ mixin _$NotesCreateRequest {
   String? get text => throw _privateConstructorUsedError;
   String? get cw => throw _privateConstructorUsedError;
   bool? get localOnly => throw _privateConstructorUsedError;
+  ReactionAcceptance? get reactionAcceptance =>
+      throw _privateConstructorUsedError;
   bool? get noExxtractMentions => throw _privateConstructorUsedError;
   bool? get noExtractHashtags => throw _privateConstructorUsedError;
   bool? get noExtractEmojis => throw _privateConstructorUsedError;
@@ -53,6 +55,7 @@ abstract class $NotesCreateRequestCopyWith<$Res> {
       String? text,
       String? cw,
       bool? localOnly,
+      ReactionAcceptance? reactionAcceptance,
       bool? noExxtractMentions,
       bool? noExtractHashtags,
       bool? noExtractEmojis,
@@ -81,6 +84,7 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
     Object? text = freezed,
     Object? cw = freezed,
     Object? localOnly = freezed,
+    Object? reactionAcceptance = freezed,
     Object? noExxtractMentions = freezed,
     Object? noExtractHashtags = freezed,
     Object? noExtractEmojis = freezed,
@@ -111,6 +115,10 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
+      reactionAcceptance: freezed == reactionAcceptance
+          ? _value.reactionAcceptance
+          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+              as ReactionAcceptance?,
       noExxtractMentions: freezed == noExxtractMentions
           ? _value.noExxtractMentions
           : noExxtractMentions // ignore: cast_nullable_to_non_nullable
@@ -161,6 +169,7 @@ abstract class _$$_NotesCreateRequestCopyWith<$Res>
       String? text,
       String? cw,
       bool? localOnly,
+      ReactionAcceptance? reactionAcceptance,
       bool? noExxtractMentions,
       bool? noExtractHashtags,
       bool? noExtractEmojis,
@@ -187,6 +196,7 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
     Object? text = freezed,
     Object? cw = freezed,
     Object? localOnly = freezed,
+    Object? reactionAcceptance = freezed,
     Object? noExxtractMentions = freezed,
     Object? noExtractHashtags = freezed,
     Object? noExtractEmojis = freezed,
@@ -217,6 +227,10 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
+      reactionAcceptance: freezed == reactionAcceptance
+          ? _value.reactionAcceptance
+          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+              as ReactionAcceptance?,
       noExxtractMentions: freezed == noExxtractMentions
           ? _value.noExxtractMentions
           : noExxtractMentions // ignore: cast_nullable_to_non_nullable
@@ -262,6 +276,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       this.text,
       this.cw,
       this.localOnly,
+      this.reactionAcceptance,
       this.noExxtractMentions,
       this.noExtractHashtags,
       this.noExtractEmojis,
@@ -297,6 +312,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
   @override
   final bool? localOnly;
   @override
+  final ReactionAcceptance? reactionAcceptance;
+  @override
   final bool? noExxtractMentions;
   @override
   final bool? noExtractHashtags;
@@ -331,7 +348,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
 
   @override
   String toString() {
-    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, noExxtractMentions: $noExxtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
+    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExxtractMentions: $noExxtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
   }
 
   @override
@@ -347,6 +364,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
             (identical(other.cw, cw) || other.cw == cw) &&
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
+            (identical(other.reactionAcceptance, reactionAcceptance) ||
+                other.reactionAcceptance == reactionAcceptance) &&
             (identical(other.noExxtractMentions, noExxtractMentions) ||
                 other.noExxtractMentions == noExxtractMentions) &&
             (identical(other.noExtractHashtags, noExtractHashtags) ||
@@ -371,6 +390,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       text,
       cw,
       localOnly,
+      reactionAcceptance,
       noExxtractMentions,
       noExtractHashtags,
       noExtractEmojis,
@@ -402,6 +422,7 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       final String? text,
       final String? cw,
       final bool? localOnly,
+      final ReactionAcceptance? reactionAcceptance,
       final bool? noExxtractMentions,
       final bool? noExtractHashtags,
       final bool? noExtractEmojis,
@@ -425,6 +446,8 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
   String? get cw;
   @override
   bool? get localOnly;
+  @override
+  ReactionAcceptance? get reactionAcceptance;
   @override
   bool? get noExxtractMentions;
   @override

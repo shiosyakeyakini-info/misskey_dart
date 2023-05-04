@@ -20,8 +20,8 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : UserInstanceInfo.fromJson(json['instance'] as Map<String, dynamic>),
       emojis: json['emojis'] as Map<String, dynamic>?,
-      onlineStatus: _$JsonConverterFromJson<String, OnlineStatus>(
-          json['onlineStatus'], const OnlineStatusJsonConverter().fromJson),
+      onlineStatus: const OnlineStatusJsonConverter()
+          .fromJson(json['onlineStatus'] as String?),
       url: _$JsonConverterFromJson<String, Uri?>(
           json['url'], const NullableUriConverter().fromJson),
       uri: _$JsonConverterFromJson<String, Uri?>(
@@ -90,8 +90,8 @@ Map<String, dynamic> _$$_UsersShowResponseToJson(
       'isCat': instance.isCat,
       'instance': instance.instance,
       'emojis': instance.emojis,
-      'onlineStatus': _$JsonConverterToJson<String, OnlineStatus>(
-          instance.onlineStatus, const OnlineStatusJsonConverter().toJson),
+      'onlineStatus':
+          const OnlineStatusJsonConverter().toJson(instance.onlineStatus),
       'url': const NullableUriConverter().toJson(instance.url),
       'uri': const NullableUriConverter().toJson(instance.uri),
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
@@ -136,9 +136,3 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

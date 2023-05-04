@@ -21,6 +21,7 @@ INotificationsRequest _$INotificationsRequestFromJson(
 
 /// @nodoc
 mixin _$INotificationsRequest {
+  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
@@ -209,6 +210,7 @@ class _$_INotificationRequest implements _INotificationRequest {
   factory _$_INotificationRequest.fromJson(Map<String, dynamic> json) =>
       _$$_INotificationRequestFromJson(json);
 
+  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
   @override
   final int? limit;
   @override
@@ -309,6 +311,8 @@ abstract class _INotificationRequest implements INotificationsRequest {
       _$_INotificationRequest.fromJson;
 
   @override
+
+  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
   int? get limit;
   @override
   String? get sinceId;

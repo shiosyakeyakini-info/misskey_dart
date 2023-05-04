@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
+import 'package:misskey_dart/src/enums/channel_response_type.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
 
 class ApiService {
@@ -15,7 +16,7 @@ class ApiService {
       baseUrl: "${Uri.https(host)}/api/",
       contentType: "application/json",
     );
-    dio.interceptors.add(LogInterceptor());
+    dio.interceptors.add(LogInterceptor(requestBody: true));
   }
 
   Future<T> post<T>(String path, Map<String, dynamic> request) async {
@@ -29,11 +30,12 @@ class ApiService {
   SocketController createSocket({
     required Channel channel,
     String? id,
-    required FutureOr<void> Function(Map<String, dynamic> response)
+    required FutureOr<void> Function(
+            ChannelResponseType type, Map<String, dynamic>? response)
         onEventReceived,
     Map<String, dynamic>? parameters,
   }) {
-    id ??= DateTime.now().toIso8601String();
+    id ??= "${channel.name}${DateTime.now().toIso8601String()}";
     return SocketController(
         url: "wss://$host/streaming?i=$token",
         id: id,

@@ -19,13 +19,15 @@ Map<String, dynamic> _$$_ChannelRequestToJson(_$_ChannelRequest instance) =>
     };
 
 const _$ChannelDataTypeEnumMap = {
-  ChannelDataType.connect: 'connect',
-  ChannelDataType.channel: 'channel',
-  ChannelDataType.disconnect: 'disconnect',
+  ChannelDataType.readNotification: 'readNotification',
   ChannelDataType.subNote: 'subNote',
-  ChannelDataType.noteUpdated: 'noteUpdated',
+  ChannelDataType.sn: 'sn',
   ChannelDataType.unsubNote: 'unsubNote',
-  ChannelDataType.emojiUpdated: 'emojiUpdated',
+  ChannelDataType.un: 'un',
+  ChannelDataType.connect: 'connect',
+  ChannelDataType.disconnect: 'disconnect',
+  ChannelDataType.channel: 'channel',
+  ChannelDataType.ch: 'ch',
 };
 
 _$_ChannelRequestBody _$$_ChannelRequestBodyFromJson(

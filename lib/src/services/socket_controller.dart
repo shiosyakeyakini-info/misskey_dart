@@ -4,16 +4,19 @@ import 'package:misskey_dart/src/data/streaming/channel_request.dart';
 import 'package:misskey_dart/src/data/streaming/channel_response.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_data_type.dart';
+import 'package:misskey_dart/src/enums/channel_response_type.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {
   final String url;
   final Channel channel;
-  final void Function(Map<String, dynamic> receive) onEventReceived;
+  final void Function(ChannelResponseType type, Map<String, dynamic>? receive)
+      onEventReceived;
   final Map<String, dynamic>? parameters;
 
   String id;
+  bool _isDisconnected = false;
 
   WebSocketChannel? _socketChannel;
 
@@ -39,20 +42,27 @@ class SocketController {
     socketChannel
       ..stream.listen(
         (event) {
-          // print("received: $event");
+          print("received[$id]: $event");
           final response = ChannelResponse.fromJson(jsonDecode(event));
           if (response.body.id == id) {
             final responseBody = response.body.body;
-            if (responseBody == null) return;
-            onEventReceived(responseBody);
+            onEventReceived(response.body.type, responseBody);
           }
         },
         onError: (e, s) {
           print("Error happen $e ");
           print(s);
+          if (!_isDisconnected) {
+            // 再呼び出し
+            startStreaming();
+          }
         },
         onDone: () {
-          print("onDone happen");
+          print("onDone Called;");
+          if (!_isDisconnected) {
+            // 再呼び出し
+            startStreaming();
+          }
         },
         cancelOnError: true,
       )
@@ -65,6 +75,9 @@ class SocketController {
         body: ChannelRequestBody(id: id, params: {})));
     print("send: $request");
     _socketChannel?.sink.add(request);
+    _socketChannel?.sink.close();
+    _socketChannel = null;
+    _isDisconnected = true;
   }
 
   Future<void> reconnect() async {

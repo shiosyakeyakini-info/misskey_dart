@@ -12,7 +12,7 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       host: json['host'] as String?,
       name: json['name'] as String?,
       onlineStatus: const OnlineStatusJsonConverter()
-          .fromJson(json['onlineStatus'] as String),
+          .fromJson(json['onlineStatus'] as String?),
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
       avatarBlurhash: json['avatarBlurhash'] as String?,
       instance: json['instance'] == null
@@ -125,7 +125,7 @@ _$_UserPolicies _$$_UserPoliciesFromJson(Map<String, dynamic> json) =>
       noteEachClipsLimit: json['noteEachClipsLimit'] as int,
       userListLimit: json['userListLimit'] as int,
       userEachUserListsLimit: json['userEachUserListsLimit'] as int,
-      rateLimitFactor: json['rateLimitFactor'] as int,
+      rateLimitFactor: (json['rateLimitFactor'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_UserPoliciesToJson(_$_UserPolicies instance) =>
