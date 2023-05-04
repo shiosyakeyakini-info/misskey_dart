@@ -20,7 +20,7 @@ ClipsNotesRequest _$ClipsNotesRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClipsNotesRequest {
-  /// minimum 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
+  @Assert('limit > 0')
   int? get limit => throw _privateConstructorUsedError;
   String? get clipId => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
@@ -38,7 +38,11 @@ abstract class $ClipsNotesRequestCopyWith<$Res> {
           ClipsNotesRequest value, $Res Function(ClipsNotesRequest) then) =
       _$ClipsNotesRequestCopyWithImpl<$Res, ClipsNotesRequest>;
   @useResult
-  $Res call({int? limit, String? clipId, String? sinceId, String? untilId});
+  $Res call(
+      {@Assert('limit > 0') int? limit,
+      String? clipId,
+      String? sinceId,
+      String? untilId});
 }
 
 /// @nodoc
@@ -88,7 +92,11 @@ abstract class _$$_ClipsNotesRequestCopyWith<$Res>
       __$$_ClipsNotesRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? limit, String? clipId, String? sinceId, String? untilId});
+  $Res call(
+      {@Assert('limit > 0') int? limit,
+      String? clipId,
+      String? sinceId,
+      String? untilId});
 }
 
 /// @nodoc
@@ -132,13 +140,16 @@ class __$$_ClipsNotesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ClipsNotesRequest implements _ClipsNotesRequest {
   const _$_ClipsNotesRequest(
-      {this.limit, this.clipId, this.sinceId, this.untilId});
+      {@Assert('limit > 0') this.limit,
+      this.clipId,
+      this.sinceId,
+      this.untilId});
 
   factory _$_ClipsNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$$_ClipsNotesRequestFromJson(json);
 
-  /// minimum 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
   @override
+  @Assert('limit > 0')
   final int? limit;
   @override
   final String? clipId;
@@ -184,7 +195,7 @@ class _$_ClipsNotesRequest implements _ClipsNotesRequest {
 
 abstract class _ClipsNotesRequest implements ClipsNotesRequest {
   const factory _ClipsNotesRequest(
-      {final int? limit,
+      {@Assert('limit > 0') final int? limit,
       final String? clipId,
       final String? sinceId,
       final String? untilId}) = _$_ClipsNotesRequest;
@@ -193,8 +204,7 @@ abstract class _ClipsNotesRequest implements ClipsNotesRequest {
       _$_ClipsNotesRequest.fromJson;
 
   @override
-
-  /// minimum 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
+  @Assert('limit > 0')
   int? get limit;
   @override
   String? get clipId;

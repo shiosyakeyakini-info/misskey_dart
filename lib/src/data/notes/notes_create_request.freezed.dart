@@ -24,7 +24,6 @@ mixin _$NotesCreateRequest {
   Visibility? get visibility => throw _privateConstructorUsedError;
   List<String>? get visibleUserIds => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
-  String? get cw => throw _privateConstructorUsedError;
   bool? get localOnly => throw _privateConstructorUsedError;
   ReactionAcceptance? get reactionAcceptance =>
       throw _privateConstructorUsedError;
@@ -53,7 +52,6 @@ abstract class $NotesCreateRequestCopyWith<$Res> {
       {@VisibilityJsonConverter() Visibility? visibility,
       List<String>? visibleUserIds,
       String? text,
-      String? cw,
       bool? localOnly,
       ReactionAcceptance? reactionAcceptance,
       bool? noExxtractMentions,
@@ -82,7 +80,6 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
     Object? visibility = freezed,
     Object? visibleUserIds = freezed,
     Object? text = freezed,
-    Object? cw = freezed,
     Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
     Object? noExxtractMentions = freezed,
@@ -106,10 +103,6 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cw: freezed == cw
-          ? _value.cw
-          : cw // ignore: cast_nullable_to_non_nullable
               as String?,
       localOnly: freezed == localOnly
           ? _value.localOnly
@@ -167,7 +160,6 @@ abstract class _$$_NotesCreateRequestCopyWith<$Res>
       {@VisibilityJsonConverter() Visibility? visibility,
       List<String>? visibleUserIds,
       String? text,
-      String? cw,
       bool? localOnly,
       ReactionAcceptance? reactionAcceptance,
       bool? noExxtractMentions,
@@ -194,7 +186,6 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
     Object? visibility = freezed,
     Object? visibleUserIds = freezed,
     Object? text = freezed,
-    Object? cw = freezed,
     Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
     Object? noExxtractMentions = freezed,
@@ -218,10 +209,6 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cw: freezed == cw
-          ? _value.cw
-          : cw // ignore: cast_nullable_to_non_nullable
               as String?,
       localOnly: freezed == localOnly
           ? _value.localOnly
@@ -274,7 +261,6 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       {@VisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
       this.text,
-      this.cw,
       this.localOnly,
       this.reactionAcceptance,
       this.noExxtractMentions,
@@ -307,8 +293,6 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
 
   @override
   final String? text;
-  @override
-  final String? cw;
   @override
   final bool? localOnly;
   @override
@@ -348,7 +332,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
 
   @override
   String toString() {
-    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExxtractMentions: $noExxtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
+    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExxtractMentions: $noExxtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
   }
 
   @override
@@ -361,7 +345,6 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
             const DeepCollectionEquality()
                 .equals(other._visibleUserIds, _visibleUserIds) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.cw, cw) || other.cw == cw) &&
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.reactionAcceptance, reactionAcceptance) ||
@@ -388,7 +371,6 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       visibility,
       const DeepCollectionEquality().hash(_visibleUserIds),
       text,
-      cw,
       localOnly,
       reactionAcceptance,
       noExxtractMentions,
@@ -420,7 +402,6 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       {@VisibilityJsonConverter() final Visibility? visibility,
       final List<String>? visibleUserIds,
       final String? text,
-      final String? cw,
       final bool? localOnly,
       final ReactionAcceptance? reactionAcceptance,
       final bool? noExxtractMentions,
@@ -442,8 +423,6 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
   List<String>? get visibleUserIds;
   @override
   String? get text;
-  @override
-  String? get cw;
   @override
   bool? get localOnly;
   @override

@@ -21,7 +21,7 @@ INotificationsRequest _$INotificationsRequestFromJson(
 
 /// @nodoc
 mixin _$INotificationsRequest {
-  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
+  @Assert('limit > 0')
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ abstract class $INotificationsRequestCopyWith<$Res> {
       _$INotificationsRequestCopyWithImpl<$Res, INotificationsRequest>;
   @useResult
   $Res call(
-      {int? limit,
+      {@Assert('limit > 0') int? limit,
       String? sinceId,
       String? untilId,
       bool? following,
@@ -125,7 +125,7 @@ abstract class _$$_INotificationRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? limit,
+      {@Assert('limit > 0') int? limit,
       String? sinceId,
       String? untilId,
       bool? following,
@@ -196,7 +196,7 @@ class __$$_INotificationRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_INotificationRequest implements _INotificationRequest {
   const _$_INotificationRequest(
-      {this.limit,
+      {@Assert('limit > 0') this.limit,
       this.sinceId,
       this.untilId,
       this.following,
@@ -210,8 +210,8 @@ class _$_INotificationRequest implements _INotificationRequest {
   factory _$_INotificationRequest.fromJson(Map<String, dynamic> json) =>
       _$$_INotificationRequestFromJson(json);
 
-  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
   @override
+  @Assert('limit > 0')
   final int? limit;
   @override
   final String? sinceId;
@@ -298,7 +298,7 @@ class _$_INotificationRequest implements _INotificationRequest {
 
 abstract class _INotificationRequest implements INotificationsRequest {
   const factory _INotificationRequest(
-      {final int? limit,
+      {@Assert('limit > 0') final int? limit,
       final String? sinceId,
       final String? untilId,
       final bool? following,
@@ -311,8 +311,7 @@ abstract class _INotificationRequest implements INotificationsRequest {
       _$_INotificationRequest.fromJson;
 
   @override
-
-  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
+  @Assert('limit > 0')
   int? get limit;
   @override
   String? get sinceId;

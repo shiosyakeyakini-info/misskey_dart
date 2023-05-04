@@ -37,6 +37,7 @@ class Misskey {
     clips = MisskeyClips(apiService: apiService);
   }
 
+  /// サーバーからのお知らせを取得します。
   Future<Iterable<AnnouncementsResponse>> announcements(
       AnnouncementsRequest request) async {
     final response =
@@ -44,21 +45,25 @@ class Misskey {
     return response.map((e) => AnnouncementsResponse.fromJson(e));
   }
 
+  /// サーバーが持つエンドポイントの一覧を取得します。
   Future<List<String>> endpoints() async {
     final response = await apiService.post<List>("endpoints", {});
     return response.cast<String>();
   }
 
+  /// サーバーが持つカスタム絵文字の一覧を取得します。
   Future<EmojisResponse> emojis() async {
     final response = await apiService.post<Map<String, dynamic>>("emojis", {});
     return EmojisResponse.fromJson(response);
   }
 
+  /// サーバーの情報を取得します。
   Future<MetaResponse> meta() async {
     final response = await apiService.post<Map<String, dynamic>>("meta", {});
     return MetaResponse.fromJson(response);
   }
 
+  /// ホームタイムラインに接続します。
   SocketController homeTimelineStream(
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
@@ -70,6 +75,7 @@ class Misskey {
             onEventReceived(note);
           });
 
+  /// ローカルタイムラインに接続します。
   SocketController localTimelineStream(
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
@@ -82,6 +88,7 @@ class Misskey {
         },
       );
 
+  /// グローバルタイムラインに接続します。
   SocketController globalTimelineStream(
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
@@ -93,6 +100,7 @@ class Misskey {
             onEventReceived(note);
           });
 
+  /// チャンネル（トピック毎の機能の方）に接続します。
   SocketController channelStream(String channelId,
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
@@ -106,6 +114,7 @@ class Misskey {
           },
           parameters: {"channelId": channelId});
 
+  /// メインのストリームに接続します。
   SocketController mainStream({
     FutureOr<void> Function()? onEmojiAdded,
     FutureOr<void> Function()? onEmojiUpdated,

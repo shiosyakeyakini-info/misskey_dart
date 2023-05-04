@@ -20,7 +20,7 @@ IFavoritesRequest _$IFavoritesRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$IFavoritesRequest {
-  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
+  @Assert('limit > 0')
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
@@ -37,7 +37,8 @@ abstract class $IFavoritesRequestCopyWith<$Res> {
           IFavoritesRequest value, $Res Function(IFavoritesRequest) then) =
       _$IFavoritesRequestCopyWithImpl<$Res, IFavoritesRequest>;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {@Assert('limit > 0') int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
@@ -82,7 +83,8 @@ abstract class _$$_IFavoritesRequestCopyWith<$Res>
       __$$_IFavoritesRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {@Assert('limit > 0') int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
@@ -120,13 +122,14 @@ class __$$_IFavoritesRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_IFavoritesRequest implements _IFavoritesRequest {
-  const _$_IFavoritesRequest({this.limit, this.sinceId, this.untilId});
+  const _$_IFavoritesRequest(
+      {@Assert('limit > 0') this.limit, this.sinceId, this.untilId});
 
   factory _$_IFavoritesRequest.fromJson(Map<String, dynamic> json) =>
       _$$_IFavoritesRequestFromJson(json);
 
-  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
   @override
+  @Assert('limit > 0')
   final int? limit;
   @override
   final String? sinceId;
@@ -169,7 +172,7 @@ class _$_IFavoritesRequest implements _IFavoritesRequest {
 
 abstract class _IFavoritesRequest implements IFavoritesRequest {
   const factory _IFavoritesRequest(
-      {final int? limit,
+      {@Assert('limit > 0') final int? limit,
       final String? sinceId,
       final String? untilId}) = _$_IFavoritesRequest;
 
@@ -177,8 +180,7 @@ abstract class _IFavoritesRequest implements IFavoritesRequest {
       _$_IFavoritesRequest.fromJson;
 
   @override
-
-  /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
+  @Assert('limit > 0')
   int? get limit;
   @override
   String? get sinceId;

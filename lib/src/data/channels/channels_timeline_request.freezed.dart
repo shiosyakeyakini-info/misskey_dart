@@ -22,6 +22,7 @@ ChannelsTimelineRequest _$ChannelsTimelineRequestFromJson(
 /// @nodoc
 mixin _$ChannelsTimelineRequest {
   String get channelId => throw _privateConstructorUsedError;
+  @Assert('limit > 0')
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
@@ -44,7 +45,7 @@ abstract class $ChannelsTimelineRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String channelId,
-      int? limit,
+      @Assert('limit > 0') int? limit,
       String? sinceId,
       String? untilId,
       @DateTimeToEpocConverter() DateTime? sinceDate,
@@ -111,7 +112,7 @@ abstract class _$$_ChannelsTimelineRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String channelId,
-      int? limit,
+      @Assert('limit > 0') int? limit,
       String? sinceId,
       String? untilId,
       @DateTimeToEpocConverter() DateTime? sinceDate,
@@ -171,7 +172,7 @@ class __$$_ChannelsTimelineRequestCopyWithImpl<$Res>
 class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
   const _$_ChannelsTimelineRequest(
       {required this.channelId,
-      this.limit,
+      @Assert('limit > 0') this.limit,
       this.sinceId,
       this.untilId,
       @DateTimeToEpocConverter() this.sinceDate,
@@ -183,6 +184,7 @@ class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
   @override
   final String channelId;
   @override
+  @Assert('limit > 0')
   final int? limit;
   @override
   final String? sinceId;
@@ -240,7 +242,7 @@ class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
 abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
   const factory _ChannelsTimelineRequest(
           {required final String channelId,
-          final int? limit,
+          @Assert('limit > 0') final int? limit,
           final String? sinceId,
           final String? untilId,
           @DateTimeToEpocConverter() final DateTime? sinceDate,
@@ -253,6 +255,7 @@ abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
   @override
   String get channelId;
   @override
+  @Assert('limit > 0')
   int? get limit;
   @override
   String? get sinceId;

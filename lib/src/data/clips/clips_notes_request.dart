@@ -6,8 +6,7 @@ part 'clips_notes_request.g.dart';
 @freezed
 class ClipsNotesRequest with _$ClipsNotesRequest {
   const factory ClipsNotesRequest({
-    /// minimum 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
-    int? limit,
+    @Assert('limit > 0') int? limit,
     String? clipId,
     String? sinceId,
     String? untilId,

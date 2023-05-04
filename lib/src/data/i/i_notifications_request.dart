@@ -7,8 +7,7 @@ part 'i_notifications_request.g.dart';
 @freezed
 class INotificationsRequest with _$INotificationsRequest {
   const factory INotificationsRequest({
-    /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
-    int? limit,
+    @Assert('limit > 0') int? limit,
     String? sinceId,
     String? untilId,
     bool? following,

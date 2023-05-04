@@ -1,0 +1,26 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/src/converters/date_time_to_epoc_converter.dart';
+
+part 'user_list_timeline_request.freezed.dart';
+part 'user_list_timeline_request.g.dart';
+
+@freezed
+class UserListTimelineRequest with _$UserListTimelineRequest {
+  const factory UserListTimelineRequest({
+    required String listId,
+    @Assert('limit > 0') int? limit,
+    String? sinceId,
+    String? untilId,
+    @DateTimeToEpocConverter() DateTime? sinceDate,
+    @DateTimeToEpocConverter() DateTime? untilDate,
+    bool? includeMyRenotes,
+    bool? includeRenotedMyNotes,
+    bool? includeLocalRenotes,
+
+    /// Only show notes that have attached files.
+    bool? withFiles,
+  }) = _UserListTimelineRequest;
+
+  factory UserListTimelineRequest.fromJson(Map<String, dynamic> json) =>
+      _$UserListTimelineRequestFromJson(json);
+}

@@ -8,7 +8,7 @@ part 'channels_timeline_request.g.dart';
 class ChannelsTimelineRequest with _$ChannelsTimelineRequest {
   const factory ChannelsTimelineRequest({
     required String channelId,
-    int? limit,
+    @Assert('limit > 0') int? limit,
     String? sinceId,
     String? untilId,
     @DateTimeToEpocConverter() DateTime? sinceDate,

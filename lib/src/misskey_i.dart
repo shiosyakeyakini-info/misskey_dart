@@ -6,11 +6,13 @@ class MisskeyI {
 
   MisskeyI({required ApiService apiService}) : _apiService = apiService;
 
+  /// 自分自身の情報を取得します。
   Future<IResponse> i() async {
     final response = await _apiService.post<Map<String, dynamic>>("i", {});
     return IResponse.fromJson(response);
   }
 
+  /// 通知を取得します。
   Future<Iterable<INotificationsResponse>> notifications(
       INotificationsRequest request) async {
     final response =
@@ -18,6 +20,7 @@ class MisskeyI {
     return response.map((e) => INotificationsResponse.fromJson(e));
   }
 
+  /// お気に入りに登録されたノートの一覧を取得します。
   Future<Iterable<IFavoritesResponse>> favorites(
       IFavoritesRequest request) async {
     final response =

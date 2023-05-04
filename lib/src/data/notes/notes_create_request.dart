@@ -11,7 +11,6 @@ class NotesCreateRequest with _$NotesCreateRequest {
     @VisibilityJsonConverter() Visibility? visibility,
     List<String>? visibleUserIds,
     String? text,
-    String? cw,
     bool? localOnly,
     ReactionAcceptance? reactionAcceptance,
     bool? noExxtractMentions,

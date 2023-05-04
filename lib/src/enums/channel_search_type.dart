@@ -1,0 +1,1 @@
+enum ChannelSearchType { nameAndDescription, nameOnly }

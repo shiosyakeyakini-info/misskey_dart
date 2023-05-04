@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'note_favorites_create_request.freezed.dart';
-part 'note_favorites_create_request.g.dart';
+part 'notes_favorites_create_request.freezed.dart';
+part 'notes_favorites_create_request.g.dart';
 
 @freezed
 class NotesFavoritesCreateRequest with _$NotesFavoritesCreateRequest {

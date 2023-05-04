@@ -5,8 +5,7 @@ part 'i_favorites_request.g.dart';
 @freezed
 class IFavoritesRequest with _$IFavoritesRequest {
   const factory IFavoritesRequest({
-    /// minimum: 1, maximum: 100, default: 10 [misskey-dev/misskey:58c3fc6]
-    int? limit,
+    @Assert('limit > 0') int? limit,
     String? sinceId,
     String? untilId,
   }) = _IFavoritesRequest;

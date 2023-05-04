@@ -15,7 +15,6 @@ _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
           ?.map((e) => e as String)
           .toList(),
       text: json['text'] as String?,
-      cw: json['cw'] as String?,
       localOnly: json['localOnly'] as bool?,
       reactionAcceptance: $enumDecodeNullable(
           _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
@@ -39,7 +38,6 @@ Map<String, dynamic> _$$_NotesCreateRequestToJson(
           instance.visibility, const VisibilityJsonConverter().toJson),
       'visibleUserIds': instance.visibleUserIds,
       'text': instance.text,
-      'cw': instance.cw,
       'localOnly': instance.localOnly,
       'reactionAcceptance':
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
