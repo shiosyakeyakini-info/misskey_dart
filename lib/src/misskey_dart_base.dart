@@ -7,6 +7,7 @@ import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/misskey_antennas.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
 import 'package:misskey_dart/src/misskey_clips.dart';
 import 'package:misskey_dart/src/misskey_i.dart';
@@ -26,6 +27,7 @@ class Misskey {
   late final MisskeyUsers users;
   late final MisskeyI i;
   late final MisskeyClips clips;
+  late final MisskeyAntenna antennas;
 
   Misskey({required this.token, required this.host}) {
     apiService = ApiService(token: token, host: host);
@@ -35,6 +37,7 @@ class Misskey {
     users = MisskeyUsers(apiService: apiService);
     i = MisskeyI(apiService: apiService);
     clips = MisskeyClips(apiService: apiService);
+    antennas = MisskeyAntenna(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。

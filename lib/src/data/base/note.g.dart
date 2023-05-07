@@ -32,6 +32,9 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       renote: json['renote'] == null
           ? null
           : Note.fromJson(json['renote'] as Map<String, dynamic>),
+      reply: json['reply'] == null
+          ? null
+          : Note.fromJson(json['reply'] as Map<String, dynamic>),
       myReaction: json['myReaction'] as String?,
       channel: json['channel'] == null
           ? null
@@ -57,6 +60,7 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
       'renote': instance.renote,
+      'reply': instance.reply,
       'myReaction': instance.myReaction,
       'channel': instance.channel,
     };

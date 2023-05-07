@@ -28,6 +28,7 @@ class Note with _$Note {
     String? renoteId,
     String? channelId,
     Note? renote,
+    Note? reply,
     String? myReaction,
     NoteChannelInfo? channel,
   }) = _Note;
@@ -69,4 +70,3 @@ class NoteChannelInfo with _$NoteChannelInfo {
   factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>
       _$NoteChannelInfoFromJson(json);
 }
-

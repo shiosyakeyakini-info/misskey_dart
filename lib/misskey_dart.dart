@@ -5,9 +5,11 @@ library misskey_dart;
 
 export 'src/misskey_dart_base.dart';
 export 'src/enums/notification_type.dart';
+export 'src/data/antennas/antennas_notes_request.dart';
 export 'src/data/base/note.dart';
 export 'src/data/base/user.dart';
 export 'src/data/base/clip.dart';
+export 'src/data/base/antenna.dart';
 export 'src/data/base/community_channel.dart';
 export 'src/data/announcements_request.dart';
 export 'src/data/announcements_response.dart';
