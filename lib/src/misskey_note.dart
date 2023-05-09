@@ -63,6 +63,20 @@ class MisskeyNotes {
         "notes/state", request.toJson());
     return NotesStateResponse.fromJson(response);
   }
+
+  /// ノートを検索します。
+  Future<Iterable<Note>> search(NotesSearchRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/search", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// 指定されたハッシュタグが付けられたノートを取得します。複数のハッシュタグを組み合わせた検索条件を設定できます。
+  Future<Iterable<Note>> searchByTag(NotesSearchByTagRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/search-by-tag", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
 }
 
 class MisskeyNotesReactions {

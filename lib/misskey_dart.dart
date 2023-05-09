@@ -36,6 +36,8 @@ export 'src/data/notes/notes_show_request.dart';
 export 'src/data/notes/notes_local_timeline_request.dart';
 export 'src/data/notes/notes_state_request.dart';
 export 'src/data/notes/notes_state_response.dart';
+export 'src/data/notes/notes_search_request.dart';
+export 'src/data/notes/notes_search_by_tag_request.dart';
 export 'src/data/notes/favorites/notes_favorites_create_request.dart';
 export 'src/data/notes/favorites/notes_favorites_delete_request.dart';
 export 'src/data/notes/reactions/notes_reactions_create_request.dart';
