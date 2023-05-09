@@ -9,7 +9,7 @@ part of 'users_show_response.dart';
 _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
     _$_UsersShowResponse(
       id: json['id'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       username: json['username'] as String,
       host: json['host'] as String?,
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),

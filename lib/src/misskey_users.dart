@@ -1,5 +1,7 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/base/following.dart';
 import 'package:misskey_dart/src/data/base/user_list.dart';
+import 'package:misskey_dart/src/data/users/users_followeres_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -46,6 +48,20 @@ class MisskeyUsers {
     final response =
         await _apiService.post<List>("users/clips", request.toJson());
     return response.map((e) => Clip.fromJson(e));
+  }
+
+  /// ユーザーをフォローしているユーザーの一覧を取得します。
+  Future<Iterable<Following>> followers(UsersFollowersRequest request) async {
+    final response =
+        await _apiService.post<List>("users/followers", request.toJson());
+    return response.map((e) => Following.fromJson(e));
+  }
+
+  /// ユーザーがフォローしているユーザーの一覧を取得します。
+  Future<Iterable<Following>> following(UsersFollowingRequest request) async {
+    final response =
+        await _apiService.post<List>("users/following", request.toJson());
+    return response.map((e) => Following.fromJson(e));
   }
 }
 

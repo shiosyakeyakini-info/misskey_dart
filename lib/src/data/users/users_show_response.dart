@@ -11,7 +11,7 @@ part 'users_show_response.g.dart';
 class UsersShowResponse with _$UsersShowResponse {
   const factory UsersShowResponse({
     required String id,
-    required String name,
+    String? name,
     required String username,
     String? host,
     @UriConverter() required Uri avatarUrl,

@@ -21,7 +21,7 @@ UsersShowResponse _$UsersShowResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UsersShowResponse {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String? get host => throw _privateConstructorUsedError;
   @UriConverter()
@@ -93,7 +93,7 @@ abstract class $UsersShowResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String name,
+      String? name,
       String username,
       String? host,
       @UriConverter() Uri avatarUrl,
@@ -157,7 +157,7 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? username = null,
     Object? host = freezed,
     Object? avatarUrl = null,
@@ -209,10 +209,10 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -419,7 +419,7 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String name,
+      String? name,
       String username,
       String? host,
       @UriConverter() Uri avatarUrl,
@@ -482,7 +482,7 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? username = null,
     Object? host = freezed,
     Object? avatarUrl = null,
@@ -534,10 +534,10 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -727,7 +727,7 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
 class _$_UsersShowResponse implements _UsersShowResponse {
   const _$_UsersShowResponse(
       {required this.id,
-      required this.name,
+      this.name,
       required this.username,
       this.host,
       @UriConverter() required this.avatarUrl,
@@ -786,7 +786,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
   @override
   final String id;
   @override
-  final String name;
+  final String? name;
   @override
   final String username;
   @override
@@ -1106,7 +1106,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
 abstract class _UsersShowResponse implements UsersShowResponse {
   const factory _UsersShowResponse(
       {required final String id,
-      required final String name,
+      final String? name,
       required final String username,
       final String? host,
       @UriConverter() required final Uri avatarUrl,
@@ -1159,7 +1159,7 @@ abstract class _UsersShowResponse implements UsersShowResponse {
   @override
   String get id;
   @override
-  String get name;
+  String? get name;
   @override
   String get username;
   @override
