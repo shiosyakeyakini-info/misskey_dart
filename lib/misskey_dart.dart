@@ -43,6 +43,8 @@ export 'src/data/notes/favorites/notes_favorites_create_request.dart';
 export 'src/data/notes/favorites/notes_favorites_delete_request.dart';
 export 'src/data/notes/reactions/notes_reactions_create_request.dart';
 export 'src/data/notes/reactions/notes_reactions_delete_request.dart';
+export 'src/data/notes/notes_reactions_request.dart';
+export 'src/data/notes/notes_reactions_response.dart';
 export 'src/data/notes/user_list_timeline_request.dart';
 export 'src/data/users/users_show_request.dart';
 export 'src/data/users/users_show_response.dart';

@@ -1,5 +1,7 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/notes/favorites/notes_favorites_delete_request.dart';
+import 'package:misskey_dart/src/data/notes/notes_reactions_request.dart';
+import 'package:misskey_dart/src/data/notes/notes_reactions_response.dart';
 import 'package:misskey_dart/src/data/notes/notes_state_response.dart';
 
 import 'package:misskey_dart/src/services/api_service.dart';
@@ -94,6 +96,14 @@ class MisskeyNotesReactions {
   Future<void> delete(NotesReactionsDeleteRequest request) async {
     final response = await _apiService.post<void>(
         "notes/reactions/delete", request.toJson());
+  }
+
+  /// ノートのリアクションを取得します。
+  Future<Iterable<NotesReactionsResponse>> reactions(
+      NotesReactionsRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/reactions", request.toJson());
+    return response.map((e) => NotesReactionsResponse.fromJson(e));
   }
 }
 
