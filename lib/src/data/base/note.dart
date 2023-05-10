@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
-import 'package:misskey_dart/src/enums/visibility.dart';
+import 'package:misskey_dart/src/enums/note_visibility.dart';
 
 part 'note.freezed.dart';
 part 'note.g.dart';
@@ -16,7 +16,7 @@ class Note with _$Note {
     String? cw,
     required User user,
     required String userId,
-    @VisibilityJsonConverter() required Visibility visibility,
+    @NoteVisibilityJsonConverter() required NoteVisibility visibility,
     required bool localOnly,
     required int renoteCount,
     required int repliesCount,

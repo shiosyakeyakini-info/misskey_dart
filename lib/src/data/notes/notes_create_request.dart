@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/enums/reaction_acceptance.dart';
-import 'package:misskey_dart/src/enums/visibility.dart';
+import 'package:misskey_dart/src/enums/note_visibility.dart';
 
 part 'notes_create_request.freezed.dart';
 part 'notes_create_request.g.dart';
@@ -8,7 +8,7 @@ part 'notes_create_request.g.dart';
 @freezed
 class NotesCreateRequest with _$NotesCreateRequest {
   const factory NotesCreateRequest({
-    @VisibilityJsonConverter() Visibility? visibility,
+    @NoteVisibilityJsonConverter() NoteVisibility? visibility,
     List<String>? visibleUserIds,
     String? text,
     bool? localOnly,

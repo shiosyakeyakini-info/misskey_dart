@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/date_time_to_epoc_converter.dart';
-import 'package:misskey_dart/src/enums/visibility.dart';
+import 'package:misskey_dart/src/enums/note_visibility.dart';
 
 part 'notes_local_timeline_request.freezed.dart';
 part 'notes_local_timeline_request.g.dart';

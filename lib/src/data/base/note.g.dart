@@ -14,7 +14,7 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       cw: json['cw'] as String?,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
       userId: json['userId'] as String,
-      visibility: const VisibilityJsonConverter()
+      visibility: const NoteVisibilityJsonConverter()
           .fromJson(json['visibility'] as String),
       localOnly: json['localOnly'] as bool,
       renoteCount: json['renoteCount'] as int,
@@ -48,7 +48,8 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'cw': instance.cw,
       'user': instance.user,
       'userId': instance.userId,
-      'visibility': const VisibilityJsonConverter().toJson(instance.visibility),
+      'visibility':
+          const NoteVisibilityJsonConverter().toJson(instance.visibility),
       'localOnly': instance.localOnly,
       'renoteCount': instance.renoteCount,
       'repliesCount': instance.repliesCount,

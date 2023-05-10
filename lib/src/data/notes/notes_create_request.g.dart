@@ -9,8 +9,8 @@ part of 'notes_create_request.dart';
 _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
         Map<String, dynamic> json) =>
     _$_NotesCreateRequest(
-      visibility: _$JsonConverterFromJson<String, Visibility>(
-          json['visibility'], const VisibilityJsonConverter().fromJson),
+      visibility: _$JsonConverterFromJson<String, NoteVisibility>(
+          json['visibility'], const NoteVisibilityJsonConverter().fromJson),
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -34,8 +34,8 @@ _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
 Map<String, dynamic> _$$_NotesCreateRequestToJson(
         _$_NotesCreateRequest instance) =>
     <String, dynamic>{
-      'visibility': _$JsonConverterToJson<String, Visibility>(
-          instance.visibility, const VisibilityJsonConverter().toJson),
+      'visibility': _$JsonConverterToJson<String, NoteVisibility>(
+          instance.visibility, const NoteVisibilityJsonConverter().toJson),
       'visibleUserIds': instance.visibleUserIds,
       'text': instance.text,
       'localOnly': instance.localOnly,

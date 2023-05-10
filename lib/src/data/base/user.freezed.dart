@@ -27,10 +27,13 @@ mixin _$User {
   @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus => throw _privateConstructorUsedError;
+  List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get avatarUrl => throw _privateConstructorUsedError;
   String? get avatarBlurhash => throw _privateConstructorUsedError;
   UserInstanceInfo? get instance => throw _privateConstructorUsedError;
+  bool get isCat => throw _privateConstructorUsedError;
+  bool get isBot => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,10 +53,13 @@ abstract class $UserCopyWith<$Res> {
       @UnsupportedDolphin()
       @OnlineStatusJsonConverter()
           OnlineStatus? onlineStatus,
+      List<UserBadgeRole> badgeRoles,
       @UriConverter()
           Uri avatarUrl,
       String? avatarBlurhash,
-      UserInstanceInfo? instance});
+      UserInstanceInfo? instance,
+      bool isCat,
+      bool isBot});
 
   $UserInstanceInfoCopyWith<$Res>? get instance;
 }
@@ -76,9 +82,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? host = freezed,
     Object? name = freezed,
     Object? onlineStatus = freezed,
+    Object? badgeRoles = null,
     Object? avatarUrl = null,
     Object? avatarBlurhash = freezed,
     Object? instance = freezed,
+    Object? isCat = null,
+    Object? isBot = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -101,6 +110,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
               as OnlineStatus?,
+      badgeRoles: null == badgeRoles
+          ? _value.badgeRoles
+          : badgeRoles // ignore: cast_nullable_to_non_nullable
+              as List<UserBadgeRole>,
       avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -113,6 +126,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.instance
           : instance // ignore: cast_nullable_to_non_nullable
               as UserInstanceInfo?,
+      isCat: null == isCat
+          ? _value.isCat
+          : isCat // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isBot: null == isBot
+          ? _value.isBot
+          : isBot // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -143,10 +164,13 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       @UnsupportedDolphin()
       @OnlineStatusJsonConverter()
           OnlineStatus? onlineStatus,
+      List<UserBadgeRole> badgeRoles,
       @UriConverter()
           Uri avatarUrl,
       String? avatarBlurhash,
-      UserInstanceInfo? instance});
+      UserInstanceInfo? instance,
+      bool isCat,
+      bool isBot});
 
   @override
   $UserInstanceInfoCopyWith<$Res>? get instance;
@@ -166,9 +190,12 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? host = freezed,
     Object? name = freezed,
     Object? onlineStatus = freezed,
+    Object? badgeRoles = null,
     Object? avatarUrl = null,
     Object? avatarBlurhash = freezed,
     Object? instance = freezed,
+    Object? isCat = null,
+    Object? isBot = null,
   }) {
     return _then(_$_User(
       id: null == id
@@ -191,6 +218,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
               as OnlineStatus?,
+      badgeRoles: null == badgeRoles
+          ? _value._badgeRoles
+          : badgeRoles // ignore: cast_nullable_to_non_nullable
+              as List<UserBadgeRole>,
       avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -203,6 +234,14 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.instance
           : instance // ignore: cast_nullable_to_non_nullable
               as UserInstanceInfo?,
+      isCat: null == isCat
+          ? _value.isCat
+          : isCat // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isBot: null == isBot
+          ? _value.isBot
+          : isBot // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -216,9 +255,13 @@ class _$_User implements _User {
       this.host,
       this.name,
       @UnsupportedDolphin() @OnlineStatusJsonConverter() this.onlineStatus,
+      final List<UserBadgeRole> badgeRoles = const [],
       @UriConverter() required this.avatarUrl,
       this.avatarBlurhash,
-      this.instance});
+      this.instance,
+      this.isCat = false,
+      this.isBot = false})
+      : _badgeRoles = badgeRoles;
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -234,6 +277,15 @@ class _$_User implements _User {
   @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
   final OnlineStatus? onlineStatus;
+  final List<UserBadgeRole> _badgeRoles;
+  @override
+  @JsonKey()
+  List<UserBadgeRole> get badgeRoles {
+    if (_badgeRoles is EqualUnmodifiableListView) return _badgeRoles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_badgeRoles);
+  }
+
   @override
   @UriConverter()
   final Uri avatarUrl;
@@ -241,10 +293,16 @@ class _$_User implements _User {
   final String? avatarBlurhash;
   @override
   final UserInstanceInfo? instance;
+  @override
+  @JsonKey()
+  final bool isCat;
+  @override
+  @JsonKey()
+  final bool isBot;
 
   @override
   String toString() {
-    return 'User(id: $id, username: $username, host: $host, name: $name, onlineStatus: $onlineStatus, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, instance: $instance)';
+    return 'User(id: $id, username: $username, host: $host, name: $name, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, instance: $instance, isCat: $isCat, isBot: $isBot)';
   }
 
   @override
@@ -259,18 +317,33 @@ class _$_User implements _User {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.onlineStatus, onlineStatus) ||
                 other.onlineStatus == onlineStatus) &&
+            const DeepCollectionEquality()
+                .equals(other._badgeRoles, _badgeRoles) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
             (identical(other.avatarBlurhash, avatarBlurhash) ||
                 other.avatarBlurhash == avatarBlurhash) &&
             (identical(other.instance, instance) ||
-                other.instance == instance));
+                other.instance == instance) &&
+            (identical(other.isCat, isCat) || other.isCat == isCat) &&
+            (identical(other.isBot, isBot) || other.isBot == isBot));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, username, host, name,
-      onlineStatus, avatarUrl, avatarBlurhash, instance);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      username,
+      host,
+      name,
+      onlineStatus,
+      const DeepCollectionEquality().hash(_badgeRoles),
+      avatarUrl,
+      avatarBlurhash,
+      instance,
+      isCat,
+      isBot);
 
   @JsonKey(ignore: true)
   @override
@@ -295,10 +368,13 @@ abstract class _User implements User {
       @UnsupportedDolphin()
       @OnlineStatusJsonConverter()
           final OnlineStatus? onlineStatus,
+      final List<UserBadgeRole> badgeRoles,
       @UriConverter()
           required final Uri avatarUrl,
       final String? avatarBlurhash,
-      final UserInstanceInfo? instance}) = _$_User;
+      final UserInstanceInfo? instance,
+      final bool isCat,
+      final bool isBot}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -315,12 +391,18 @@ abstract class _User implements User {
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus;
   @override
+  List<UserBadgeRole> get badgeRoles;
+  @override
   @UriConverter()
   Uri get avatarUrl;
   @override
   String? get avatarBlurhash;
   @override
   UserInstanceInfo? get instance;
+  @override
+  bool get isCat;
+  @override
+  bool get isBot;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

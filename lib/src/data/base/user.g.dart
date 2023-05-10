@@ -13,11 +13,17 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       name: json['name'] as String?,
       onlineStatus: const OnlineStatusJsonConverter()
           .fromJson(json['onlineStatus'] as String?),
+      badgeRoles: (json['badgeRoles'] as List<dynamic>?)
+              ?.map((e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
       avatarBlurhash: json['avatarBlurhash'] as String?,
       instance: json['instance'] == null
           ? null
           : UserInstanceInfo.fromJson(json['instance'] as Map<String, dynamic>),
+      isCat: json['isCat'] as bool? ?? false,
+      isBot: json['isBot'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
@@ -27,9 +33,12 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'name': instance.name,
       'onlineStatus':
           const OnlineStatusJsonConverter().toJson(instance.onlineStatus),
+      'badgeRoles': instance.badgeRoles,
       'avatarUrl': const UriConverter().toJson(instance.avatarUrl),
       'avatarBlurhash': instance.avatarBlurhash,
       'instance': instance.instance,
+      'isCat': instance.isCat,
+      'isBot': instance.isBot,
     };
 
 _$_UserInstanceInfo _$$_UserInstanceInfoFromJson(Map<String, dynamic> json) =>

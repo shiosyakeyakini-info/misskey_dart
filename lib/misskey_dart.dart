@@ -5,6 +5,7 @@ library misskey_dart;
 
 export 'src/misskey_dart_base.dart';
 export 'src/enums/notification_type.dart';
+export 'src/enums/note_visibility.dart';
 export 'src/data/antennas/antennas_notes_request.dart';
 export 'src/data/base/note.dart';
 export 'src/data/base/user.dart';

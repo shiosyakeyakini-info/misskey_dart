@@ -17,9 +17,12 @@ class User with _$User {
     @UnsupportedDolphin()
     @OnlineStatusJsonConverter()
         OnlineStatus? onlineStatus,
+    @Default([]) List<UserBadgeRole> badgeRoles,
     @UriConverter() required Uri avatarUrl,
     String? avatarBlurhash,
     UserInstanceInfo? instance,
+    @Default(false) bool isCat,
+    @Default(false) bool isBot,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);

@@ -27,8 +27,8 @@ mixin _$Note {
   String? get cw => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
-  @VisibilityJsonConverter()
-  Visibility get visibility => throw _privateConstructorUsedError;
+  @NoteVisibilityJsonConverter()
+  NoteVisibility get visibility => throw _privateConstructorUsedError;
   bool get localOnly => throw _privateConstructorUsedError;
   int get renoteCount => throw _privateConstructorUsedError;
   int get repliesCount => throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $NoteCopyWith<$Res> {
       String? cw,
       User user,
       String userId,
-      @VisibilityJsonConverter() Visibility visibility,
+      @NoteVisibilityJsonConverter() NoteVisibility visibility,
       bool localOnly,
       int renoteCount,
       int repliesCount,
@@ -146,7 +146,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       visibility: null == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as Visibility,
+              as NoteVisibility,
       localOnly: null == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
@@ -264,7 +264,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       String? cw,
       User user,
       String userId,
-      @VisibilityJsonConverter() Visibility visibility,
+      @NoteVisibilityJsonConverter() NoteVisibility visibility,
       bool localOnly,
       int renoteCount,
       int repliesCount,
@@ -349,7 +349,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
       visibility: null == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as Visibility,
+              as NoteVisibility,
       localOnly: null == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
@@ -420,7 +420,7 @@ class _$_Note implements _Note {
       this.cw,
       required this.user,
       required this.userId,
-      @VisibilityJsonConverter() required this.visibility,
+      @NoteVisibilityJsonConverter() required this.visibility,
       required this.localOnly,
       required this.renoteCount,
       required this.repliesCount,
@@ -456,8 +456,8 @@ class _$_Note implements _Note {
   @override
   final String userId;
   @override
-  @VisibilityJsonConverter()
-  final Visibility visibility;
+  @NoteVisibilityJsonConverter()
+  final NoteVisibility visibility;
   @override
   final bool localOnly;
   @override
@@ -603,7 +603,7 @@ abstract class _Note implements Note {
       final String? cw,
       required final User user,
       required final String userId,
-      @VisibilityJsonConverter() required final Visibility visibility,
+      @NoteVisibilityJsonConverter() required final NoteVisibility visibility,
       required final bool localOnly,
       required final int renoteCount,
       required final int repliesCount,
@@ -635,8 +635,8 @@ abstract class _Note implements Note {
   @override
   String get userId;
   @override
-  @VisibilityJsonConverter()
-  Visibility get visibility;
+  @NoteVisibilityJsonConverter()
+  NoteVisibility get visibility;
   @override
   bool get localOnly;
   @override

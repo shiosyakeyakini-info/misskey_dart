@@ -20,8 +20,8 @@ NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$NotesCreateRequest {
-  @VisibilityJsonConverter()
-  Visibility? get visibility => throw _privateConstructorUsedError;
+  @NoteVisibilityJsonConverter()
+  NoteVisibility? get visibility => throw _privateConstructorUsedError;
   List<String>? get visibleUserIds => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   bool? get localOnly => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $NotesCreateRequestCopyWith<$Res> {
       _$NotesCreateRequestCopyWithImpl<$Res, NotesCreateRequest>;
   @useResult
   $Res call(
-      {@VisibilityJsonConverter() Visibility? visibility,
+      {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? text,
       bool? localOnly,
@@ -95,7 +95,7 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as Visibility?,
+              as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
           ? _value.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
@@ -157,7 +157,7 @@ abstract class _$$_NotesCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@VisibilityJsonConverter() Visibility? visibility,
+      {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? text,
       bool? localOnly,
@@ -201,7 +201,7 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as Visibility?,
+              as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
           ? _value._visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
@@ -258,7 +258,7 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_NotesCreateRequest implements _NotesCreateRequest {
   const _$_NotesCreateRequest(
-      {@VisibilityJsonConverter() this.visibility,
+      {@NoteVisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
       this.text,
       this.localOnly,
@@ -279,8 +279,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       _$$_NotesCreateRequestFromJson(json);
 
   @override
-  @VisibilityJsonConverter()
-  final Visibility? visibility;
+  @NoteVisibilityJsonConverter()
+  final NoteVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
   List<String>? get visibleUserIds {
@@ -399,7 +399,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
 
 abstract class _NotesCreateRequest implements NotesCreateRequest {
   const factory _NotesCreateRequest(
-      {@VisibilityJsonConverter() final Visibility? visibility,
+      {@NoteVisibilityJsonConverter() final NoteVisibility? visibility,
       final List<String>? visibleUserIds,
       final String? text,
       final bool? localOnly,
@@ -417,8 +417,8 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       _$_NotesCreateRequest.fromJson;
 
   @override
-  @VisibilityJsonConverter()
-  Visibility? get visibility;
+  @NoteVisibilityJsonConverter()
+  NoteVisibility? get visibility;
   @override
   List<String>? get visibleUserIds;
   @override
