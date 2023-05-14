@@ -15,10 +15,11 @@ _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
           ?.map((e) => e as String)
           .toList(),
       text: json['text'] as String?,
+      cw: json['cw'] as String?,
       localOnly: json['localOnly'] as bool?,
       reactionAcceptance: $enumDecodeNullable(
           _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
-      noExxtractMentions: json['noExxtractMentions'] as bool?,
+      noExtractMentions: json['noExtractMentions'] as bool?,
       noExtractHashtags: json['noExtractHashtags'] as bool?,
       noExtractEmojis: json['noExtractEmojis'] as bool?,
       fileIds:
@@ -38,10 +39,11 @@ Map<String, dynamic> _$$_NotesCreateRequestToJson(
           instance.visibility, const NoteVisibilityJsonConverter().toJson),
       'visibleUserIds': instance.visibleUserIds,
       'text': instance.text,
+      'cw': instance.cw,
       'localOnly': instance.localOnly,
       'reactionAcceptance':
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
-      'noExxtractMentions': instance.noExxtractMentions,
+      'noExtractMentions': instance.noExtractMentions,
       'noExtractHashtags': instance.noExtractHashtags,
       'noExtractEmojis': instance.noExtractEmojis,
       'fileIds': instance.fileIds,

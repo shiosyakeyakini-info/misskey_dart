@@ -34,6 +34,7 @@ mixin _$Note {
   int get repliesCount => throw _privateConstructorUsedError;
   Map<String, int> get reactions => throw _privateConstructorUsedError;
   Map<String, String> get reactionEmojis => throw _privateConstructorUsedError;
+  Map<String, String> get emojis => throw _privateConstructorUsedError;
   List<String> get fileIds => throw _privateConstructorUsedError;
   List<MisskeyFile> get files => throw _privateConstructorUsedError;
   String? get replyId => throw _privateConstructorUsedError;
@@ -67,6 +68,7 @@ abstract class $NoteCopyWith<$Res> {
       int repliesCount,
       Map<String, int> reactions,
       Map<String, String> reactionEmojis,
+      Map<String, String> emojis,
       List<String> fileIds,
       List<MisskeyFile> files,
       String? replyId,
@@ -108,6 +110,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? repliesCount = null,
     Object? reactions = null,
     Object? reactionEmojis = null,
+    Object? emojis = null,
     Object? fileIds = null,
     Object? files = null,
     Object? replyId = freezed,
@@ -166,6 +169,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       reactionEmojis: null == reactionEmojis
           ? _value.reactionEmojis
           : reactionEmojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+      emojis: null == emojis
+          ? _value.emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
       fileIds: null == fileIds
           ? _value.fileIds
@@ -270,6 +277,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       int repliesCount,
       Map<String, int> reactions,
       Map<String, String> reactionEmojis,
+      Map<String, String> emojis,
       List<String> fileIds,
       List<MisskeyFile> files,
       String? replyId,
@@ -311,6 +319,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? repliesCount = null,
     Object? reactions = null,
     Object? reactionEmojis = null,
+    Object? emojis = null,
     Object? fileIds = null,
     Object? files = null,
     Object? replyId = freezed,
@@ -370,6 +379,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value._reactionEmojis
           : reactionEmojis // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
+      emojis: null == emojis
+          ? _value._emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       fileIds: null == fileIds
           ? _value._fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
@@ -426,6 +439,7 @@ class _$_Note implements _Note {
       required this.repliesCount,
       required final Map<String, int> reactions,
       required final Map<String, String> reactionEmojis,
+      final Map<String, String> emojis = const {},
       required final List<String> fileIds,
       required final List<MisskeyFile> files,
       this.replyId,
@@ -437,6 +451,7 @@ class _$_Note implements _Note {
       this.channel})
       : _reactions = reactions,
         _reactionEmojis = reactionEmojis,
+        _emojis = emojis,
         _fileIds = fileIds,
         _files = files;
 
@@ -480,6 +495,15 @@ class _$_Note implements _Note {
     return EqualUnmodifiableMapView(_reactionEmojis);
   }
 
+  final Map<String, String> _emojis;
+  @override
+  @JsonKey()
+  Map<String, String> get emojis {
+    if (_emojis is EqualUnmodifiableMapView) return _emojis;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_emojis);
+  }
+
   final List<String> _fileIds;
   @override
   List<String> get fileIds {
@@ -513,7 +537,7 @@ class _$_Note implements _Note {
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel)';
+    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel)';
   }
 
   @override
@@ -540,6 +564,7 @@ class _$_Note implements _Note {
                 .equals(other._reactions, _reactions) &&
             const DeepCollectionEquality()
                 .equals(other._reactionEmojis, _reactionEmojis) &&
+            const DeepCollectionEquality().equals(other._emojis, _emojis) &&
             const DeepCollectionEquality().equals(other._fileIds, _fileIds) &&
             const DeepCollectionEquality().equals(other._files, _files) &&
             (identical(other.replyId, replyId) || other.replyId == replyId) &&
@@ -570,6 +595,7 @@ class _$_Note implements _Note {
         repliesCount,
         const DeepCollectionEquality().hash(_reactions),
         const DeepCollectionEquality().hash(_reactionEmojis),
+        const DeepCollectionEquality().hash(_emojis),
         const DeepCollectionEquality().hash(_fileIds),
         const DeepCollectionEquality().hash(_files),
         replyId,
@@ -609,6 +635,7 @@ abstract class _Note implements Note {
       required final int repliesCount,
       required final Map<String, int> reactions,
       required final Map<String, String> reactionEmojis,
+      final Map<String, String> emojis,
       required final List<String> fileIds,
       required final List<MisskeyFile> files,
       final String? replyId,
@@ -647,6 +674,8 @@ abstract class _Note implements Note {
   Map<String, int> get reactions;
   @override
   Map<String, String> get reactionEmojis;
+  @override
+  Map<String, String> get emojis;
   @override
   List<String> get fileIds;
   @override

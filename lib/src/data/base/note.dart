@@ -22,6 +22,7 @@ class Note with _$Note {
     required int repliesCount,
     required Map<String, int> reactions,
     required Map<String, String> reactionEmojis,
+    @Default({}) Map<String, String> emojis,
     required List<String> fileIds,
     required List<MisskeyFile> files,
     String? replyId,

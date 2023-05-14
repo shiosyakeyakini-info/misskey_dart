@@ -24,6 +24,10 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
           : UserInstanceInfo.fromJson(json['instance'] as Map<String, dynamic>),
       isCat: json['isCat'] as bool? ?? false,
       isBot: json['isBot'] as bool? ?? false,
+      emojis: (json['emojis'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          ) ??
+          const {},
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
@@ -39,6 +43,7 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'instance': instance.instance,
       'isCat': instance.isCat,
       'isBot': instance.isBot,
+      'emojis': instance.emojis,
     };
 
 _$_UserInstanceInfo _$$_UserInstanceInfoFromJson(Map<String, dynamic> json) =>

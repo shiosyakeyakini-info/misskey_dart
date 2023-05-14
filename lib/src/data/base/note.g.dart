@@ -21,6 +21,10 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       repliesCount: json['repliesCount'] as int,
       reactions: Map<String, int>.from(json['reactions'] as Map),
       reactionEmojis: Map<String, String>.from(json['reactionEmojis'] as Map),
+      emojis: (json['emojis'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          ) ??
+          const {},
       fileIds:
           (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
       files: (json['files'] as List<dynamic>)
@@ -55,6 +59,7 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'repliesCount': instance.repliesCount,
       'reactions': instance.reactions,
       'reactionEmojis': instance.reactionEmojis,
+      'emojis': instance.emojis,
       'fileIds': instance.fileIds,
       'files': instance.files,
       'replyId': instance.replyId,

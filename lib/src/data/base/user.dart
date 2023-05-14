@@ -23,6 +23,7 @@ class User with _$User {
     UserInstanceInfo? instance,
     @Default(false) bool isCat,
     @Default(false) bool isBot,
+    @Default({}) Map<String, String> emojis,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);

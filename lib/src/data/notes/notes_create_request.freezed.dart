@@ -20,17 +20,37 @@ NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$NotesCreateRequest {
+  /// ノートの公開範囲。
   @NoteVisibilityJsonConverter()
   NoteVisibility? get visibility => throw _privateConstructorUsedError;
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   List<String>? get visibleUserIds => throw _privateConstructorUsedError;
+
+  /// ノートの本文。
   String? get text => throw _privateConstructorUsedError;
+
+  /// ノートのCW。
+  String? get cw => throw _privateConstructorUsedError;
+
+  /// trueにすると、ローカルのみに投稿されます。
   bool? get localOnly => throw _privateConstructorUsedError;
   ReactionAcceptance? get reactionAcceptance =>
       throw _privateConstructorUsedError;
-  bool? get noExxtractMentions => throw _privateConstructorUsedError;
+
+  /// trueにすると、本文からメンションを展開しません。
+  bool? get noExtractMentions => throw _privateConstructorUsedError;
+
+  /// trueにすると、本文からハッシュタグを展開しません。
   bool? get noExtractHashtags => throw _privateConstructorUsedError;
+
+  /// trueにすると、本文から絵文字を展開しません。
   bool? get noExtractEmojis => throw _privateConstructorUsedError;
+
+  /// 添付するファイルのid。
   List<String>? get fileIds => throw _privateConstructorUsedError;
+
+  /// fileIds を使用してください。fileIds と mediaIds が指定された場合、 mediaIds は無視されます。
   List<String>? get mediaIds => throw _privateConstructorUsedError;
   String? get replyId => throw _privateConstructorUsedError;
   String? get renoteId => throw _privateConstructorUsedError;
@@ -52,9 +72,10 @@ abstract class $NotesCreateRequestCopyWith<$Res> {
       {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? text,
+      String? cw,
       bool? localOnly,
       ReactionAcceptance? reactionAcceptance,
-      bool? noExxtractMentions,
+      bool? noExtractMentions,
       bool? noExtractHashtags,
       bool? noExtractEmojis,
       List<String>? fileIds,
@@ -80,9 +101,10 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
     Object? visibility = freezed,
     Object? visibleUserIds = freezed,
     Object? text = freezed,
+    Object? cw = freezed,
     Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
-    Object? noExxtractMentions = freezed,
+    Object? noExtractMentions = freezed,
     Object? noExtractHashtags = freezed,
     Object? noExtractEmojis = freezed,
     Object? fileIds = freezed,
@@ -104,6 +126,10 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
+      cw: freezed == cw
+          ? _value.cw
+          : cw // ignore: cast_nullable_to_non_nullable
+              as String?,
       localOnly: freezed == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
@@ -112,9 +138,9 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
           ? _value.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
               as ReactionAcceptance?,
-      noExxtractMentions: freezed == noExxtractMentions
-          ? _value.noExxtractMentions
-          : noExxtractMentions // ignore: cast_nullable_to_non_nullable
+      noExtractMentions: freezed == noExtractMentions
+          ? _value.noExtractMentions
+          : noExtractMentions // ignore: cast_nullable_to_non_nullable
               as bool?,
       noExtractHashtags: freezed == noExtractHashtags
           ? _value.noExtractHashtags
@@ -160,9 +186,10 @@ abstract class _$$_NotesCreateRequestCopyWith<$Res>
       {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? text,
+      String? cw,
       bool? localOnly,
       ReactionAcceptance? reactionAcceptance,
-      bool? noExxtractMentions,
+      bool? noExtractMentions,
       bool? noExtractHashtags,
       bool? noExtractEmojis,
       List<String>? fileIds,
@@ -186,9 +213,10 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
     Object? visibility = freezed,
     Object? visibleUserIds = freezed,
     Object? text = freezed,
+    Object? cw = freezed,
     Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
-    Object? noExxtractMentions = freezed,
+    Object? noExtractMentions = freezed,
     Object? noExtractHashtags = freezed,
     Object? noExtractEmojis = freezed,
     Object? fileIds = freezed,
@@ -210,6 +238,10 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
+      cw: freezed == cw
+          ? _value.cw
+          : cw // ignore: cast_nullable_to_non_nullable
+              as String?,
       localOnly: freezed == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
@@ -218,9 +250,9 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
           ? _value.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
               as ReactionAcceptance?,
-      noExxtractMentions: freezed == noExxtractMentions
-          ? _value.noExxtractMentions
-          : noExxtractMentions // ignore: cast_nullable_to_non_nullable
+      noExtractMentions: freezed == noExtractMentions
+          ? _value.noExtractMentions
+          : noExtractMentions // ignore: cast_nullable_to_non_nullable
               as bool?,
       noExtractHashtags: freezed == noExtractHashtags
           ? _value.noExtractHashtags
@@ -261,9 +293,10 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       {@NoteVisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
       this.text,
+      this.cw,
       this.localOnly,
       this.reactionAcceptance,
-      this.noExxtractMentions,
+      this.noExtractMentions,
       this.noExtractHashtags,
       this.noExtractEmojis,
       final List<String>? fileIds,
@@ -278,10 +311,15 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
   factory _$_NotesCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$$_NotesCreateRequestFromJson(json);
 
+  /// ノートの公開範囲。
   @override
   @NoteVisibilityJsonConverter()
   final NoteVisibility? visibility;
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   final List<String>? _visibleUserIds;
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   @override
   List<String>? get visibleUserIds {
     final value = _visibleUserIds;
@@ -291,19 +329,36 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  /// ノートの本文。
   @override
   final String? text;
+
+  /// ノートのCW。
+  @override
+  final String? cw;
+
+  /// trueにすると、ローカルのみに投稿されます。
   @override
   final bool? localOnly;
   @override
   final ReactionAcceptance? reactionAcceptance;
+
+  /// trueにすると、本文からメンションを展開しません。
   @override
-  final bool? noExxtractMentions;
+  final bool? noExtractMentions;
+
+  /// trueにすると、本文からハッシュタグを展開しません。
   @override
   final bool? noExtractHashtags;
+
+  /// trueにすると、本文から絵文字を展開しません。
   @override
   final bool? noExtractEmojis;
+
+  /// 添付するファイルのid。
   final List<String>? _fileIds;
+
+  /// 添付するファイルのid。
   @override
   List<String>? get fileIds {
     final value = _fileIds;
@@ -313,7 +368,10 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  /// fileIds を使用してください。fileIds と mediaIds が指定された場合、 mediaIds は無視されます。
   final List<String>? _mediaIds;
+
+  /// fileIds を使用してください。fileIds と mediaIds が指定された場合、 mediaIds は無視されます。
   @override
   List<String>? get mediaIds {
     final value = _mediaIds;
@@ -332,7 +390,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
 
   @override
   String toString() {
-    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExxtractMentions: $noExxtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
+    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExtractMentions: $noExtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
   }
 
   @override
@@ -345,12 +403,13 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
             const DeepCollectionEquality()
                 .equals(other._visibleUserIds, _visibleUserIds) &&
             (identical(other.text, text) || other.text == text) &&
+            (identical(other.cw, cw) || other.cw == cw) &&
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.reactionAcceptance, reactionAcceptance) ||
                 other.reactionAcceptance == reactionAcceptance) &&
-            (identical(other.noExxtractMentions, noExxtractMentions) ||
-                other.noExxtractMentions == noExxtractMentions) &&
+            (identical(other.noExtractMentions, noExtractMentions) ||
+                other.noExtractMentions == noExtractMentions) &&
             (identical(other.noExtractHashtags, noExtractHashtags) ||
                 other.noExtractHashtags == noExtractHashtags) &&
             (identical(other.noExtractEmojis, noExtractEmojis) ||
@@ -371,9 +430,10 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       visibility,
       const DeepCollectionEquality().hash(_visibleUserIds),
       text,
+      cw,
       localOnly,
       reactionAcceptance,
-      noExxtractMentions,
+      noExtractMentions,
       noExtractHashtags,
       noExtractEmojis,
       const DeepCollectionEquality().hash(_fileIds),
@@ -402,9 +462,10 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       {@NoteVisibilityJsonConverter() final NoteVisibility? visibility,
       final List<String>? visibleUserIds,
       final String? text,
+      final String? cw,
       final bool? localOnly,
       final ReactionAcceptance? reactionAcceptance,
-      final bool? noExxtractMentions,
+      final bool? noExtractMentions,
       final bool? noExtractHashtags,
       final bool? noExtractEmojis,
       final List<String>? fileIds,
@@ -417,25 +478,47 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       _$_NotesCreateRequest.fromJson;
 
   @override
+
+  /// ノートの公開範囲。
   @NoteVisibilityJsonConverter()
   NoteVisibility? get visibility;
   @override
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   List<String>? get visibleUserIds;
   @override
+
+  /// ノートの本文。
   String? get text;
   @override
+
+  /// ノートのCW。
+  String? get cw;
+  @override
+
+  /// trueにすると、ローカルのみに投稿されます。
   bool? get localOnly;
   @override
   ReactionAcceptance? get reactionAcceptance;
   @override
-  bool? get noExxtractMentions;
+
+  /// trueにすると、本文からメンションを展開しません。
+  bool? get noExtractMentions;
   @override
+
+  /// trueにすると、本文からハッシュタグを展開しません。
   bool? get noExtractHashtags;
   @override
+
+  /// trueにすると、本文から絵文字を展開しません。
   bool? get noExtractEmojis;
   @override
+
+  /// 添付するファイルのid。
   List<String>? get fileIds;
   @override
+
+  /// fileIds を使用してください。fileIds と mediaIds が指定された場合、 mediaIds は無視されます。
   List<String>? get mediaIds;
   @override
   String? get replyId;

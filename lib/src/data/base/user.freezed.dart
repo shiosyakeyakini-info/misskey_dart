@@ -34,6 +34,7 @@ mixin _$User {
   UserInstanceInfo? get instance => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
   bool get isBot => throw _privateConstructorUsedError;
+  Map<String, String> get emojis => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +60,8 @@ abstract class $UserCopyWith<$Res> {
       String? avatarBlurhash,
       UserInstanceInfo? instance,
       bool isCat,
-      bool isBot});
+      bool isBot,
+      Map<String, String> emojis});
 
   $UserInstanceInfoCopyWith<$Res>? get instance;
 }
@@ -88,6 +90,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? instance = freezed,
     Object? isCat = null,
     Object? isBot = null,
+    Object? emojis = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -134,6 +137,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
               as bool,
+      emojis: null == emojis
+          ? _value.emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ) as $Val);
   }
 
@@ -170,7 +177,8 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? avatarBlurhash,
       UserInstanceInfo? instance,
       bool isCat,
-      bool isBot});
+      bool isBot,
+      Map<String, String> emojis});
 
   @override
   $UserInstanceInfoCopyWith<$Res>? get instance;
@@ -196,6 +204,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? instance = freezed,
     Object? isCat = null,
     Object? isBot = null,
+    Object? emojis = null,
   }) {
     return _then(_$_User(
       id: null == id
@@ -242,6 +251,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
               as bool,
+      emojis: null == emojis
+          ? _value._emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -260,8 +273,10 @@ class _$_User implements _User {
       this.avatarBlurhash,
       this.instance,
       this.isCat = false,
-      this.isBot = false})
-      : _badgeRoles = badgeRoles;
+      this.isBot = false,
+      final Map<String, String> emojis = const {}})
+      : _badgeRoles = badgeRoles,
+        _emojis = emojis;
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -299,10 +314,18 @@ class _$_User implements _User {
   @override
   @JsonKey()
   final bool isBot;
+  final Map<String, String> _emojis;
+  @override
+  @JsonKey()
+  Map<String, String> get emojis {
+    if (_emojis is EqualUnmodifiableMapView) return _emojis;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_emojis);
+  }
 
   @override
   String toString() {
-    return 'User(id: $id, username: $username, host: $host, name: $name, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, instance: $instance, isCat: $isCat, isBot: $isBot)';
+    return 'User(id: $id, username: $username, host: $host, name: $name, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, instance: $instance, isCat: $isCat, isBot: $isBot, emojis: $emojis)';
   }
 
   @override
@@ -326,7 +349,8 @@ class _$_User implements _User {
             (identical(other.instance, instance) ||
                 other.instance == instance) &&
             (identical(other.isCat, isCat) || other.isCat == isCat) &&
-            (identical(other.isBot, isBot) || other.isBot == isBot));
+            (identical(other.isBot, isBot) || other.isBot == isBot) &&
+            const DeepCollectionEquality().equals(other._emojis, _emojis));
   }
 
   @JsonKey(ignore: true)
@@ -343,7 +367,8 @@ class _$_User implements _User {
       avatarBlurhash,
       instance,
       isCat,
-      isBot);
+      isBot,
+      const DeepCollectionEquality().hash(_emojis));
 
   @JsonKey(ignore: true)
   @override
@@ -374,7 +399,8 @@ abstract class _User implements User {
       final String? avatarBlurhash,
       final UserInstanceInfo? instance,
       final bool isCat,
-      final bool isBot}) = _$_User;
+      final bool isBot,
+      final Map<String, String> emojis}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -403,6 +429,8 @@ abstract class _User implements User {
   bool get isCat;
   @override
   bool get isBot;
+  @override
+  Map<String, String> get emojis;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
