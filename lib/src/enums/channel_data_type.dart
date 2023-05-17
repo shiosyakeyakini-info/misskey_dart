@@ -9,7 +9,8 @@ enum ChannelDataType {
   connect,
   disconnect,
   channel,
-  ch
+  ch,
+  noteUpdated
 }
 
 class ChannelDataTypeJsonConverter

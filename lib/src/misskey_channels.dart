@@ -23,7 +23,7 @@ class MisskeyChannels {
       _apiService.createSocket(
         channel: Channel.channel,
         id: channelId,
-        onEventReceived: (type, response) {
+        onEventReceived: (id, type, response) {
           if (response == null) return;
           final note = Note.fromJson(response);
           onEventReceived(note);

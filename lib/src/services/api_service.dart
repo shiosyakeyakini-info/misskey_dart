@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
@@ -27,11 +29,33 @@ class ApiService {
     return response.data;
   }
 
+  Future<T> postWithFile<T>(
+      String path, Map<String, dynamic> request, File file) async {
+    request
+      ..addEntries([MapEntry("i", token)])
+      ..addEntries([
+        MapEntry(
+            "file",
+            await MultipartFile.fromFile(
+              file.path,
+              filename: file.path.split(Platform.pathSeparator).last,
+            ))
+      ])
+      ..removeWhere((key, value) => value == null);
+    final response = await dio.request(path,
+        data: FormData.fromMap(request),
+        options: Options(
+          contentType: "multipart/form-data",
+          method: "POST",
+        ));
+    return response.data;
+  }
+
   SocketController createSocket({
     required Channel channel,
     String? id,
     required FutureOr<void> Function(
-            ChannelResponseType type, Map<String, dynamic>? response)
+            String id, ChannelResponseType type, Map<String, dynamic>? response)
         onEventReceived,
     Map<String, dynamic>? parameters,
   }) {

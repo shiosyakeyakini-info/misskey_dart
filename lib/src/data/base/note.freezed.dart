@@ -36,7 +36,7 @@ mixin _$Note {
   Map<String, String> get reactionEmojis => throw _privateConstructorUsedError;
   Map<String, String> get emojis => throw _privateConstructorUsedError;
   List<String> get fileIds => throw _privateConstructorUsedError;
-  List<MisskeyFile> get files => throw _privateConstructorUsedError;
+  List<DriveFile> get files => throw _privateConstructorUsedError;
   String? get replyId => throw _privateConstructorUsedError;
   String? get renoteId => throw _privateConstructorUsedError;
   String? get channelId => throw _privateConstructorUsedError;
@@ -70,7 +70,7 @@ abstract class $NoteCopyWith<$Res> {
       Map<String, String> reactionEmojis,
       Map<String, String> emojis,
       List<String> fileIds,
-      List<MisskeyFile> files,
+      List<DriveFile> files,
       String? replyId,
       String? renoteId,
       String? channelId,
@@ -181,7 +181,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       files: null == files
           ? _value.files
           : files // ignore: cast_nullable_to_non_nullable
-              as List<MisskeyFile>,
+              as List<DriveFile>,
       replyId: freezed == replyId
           ? _value.replyId
           : replyId // ignore: cast_nullable_to_non_nullable
@@ -279,7 +279,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       Map<String, String> reactionEmojis,
       Map<String, String> emojis,
       List<String> fileIds,
-      List<MisskeyFile> files,
+      List<DriveFile> files,
       String? replyId,
       String? renoteId,
       String? channelId,
@@ -390,7 +390,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
       files: null == files
           ? _value._files
           : files // ignore: cast_nullable_to_non_nullable
-              as List<MisskeyFile>,
+              as List<DriveFile>,
       replyId: freezed == replyId
           ? _value.replyId
           : replyId // ignore: cast_nullable_to_non_nullable
@@ -441,7 +441,7 @@ class _$_Note implements _Note {
       required final Map<String, String> reactionEmojis,
       final Map<String, String> emojis = const {},
       required final List<String> fileIds,
-      required final List<MisskeyFile> files,
+      required final List<DriveFile> files,
       this.replyId,
       this.renoteId,
       this.channelId,
@@ -512,9 +512,9 @@ class _$_Note implements _Note {
     return EqualUnmodifiableListView(_fileIds);
   }
 
-  final List<MisskeyFile> _files;
+  final List<DriveFile> _files;
   @override
-  List<MisskeyFile> get files {
+  List<DriveFile> get files {
     if (_files is EqualUnmodifiableListView) return _files;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_files);
@@ -637,7 +637,7 @@ abstract class _Note implements Note {
       required final Map<String, String> reactionEmojis,
       final Map<String, String> emojis,
       required final List<String> fileIds,
-      required final List<MisskeyFile> files,
+      required final List<DriveFile> files,
       final String? replyId,
       final String? renoteId,
       final String? channelId,
@@ -679,7 +679,7 @@ abstract class _Note implements Note {
   @override
   List<String> get fileIds;
   @override
-  List<MisskeyFile> get files;
+  List<DriveFile> get files;
   @override
   String? get replyId;
   @override
@@ -697,464 +697,6 @@ abstract class _Note implements Note {
   @override
   @JsonKey(ignore: true)
   _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
-}
-
-MisskeyFile _$MisskeyFileFromJson(Map<String, dynamic> json) {
-  return _MisskeyFile.fromJson(json);
-}
-
-/// @nodoc
-mixin _$MisskeyFile {
-  String get id => throw _privateConstructorUsedError;
-  @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  String get md5 => throw _privateConstructorUsedError;
-  int get size => throw _privateConstructorUsedError;
-  bool get isSensitive => throw _privateConstructorUsedError;
-  String? get blurhash => throw _privateConstructorUsedError;
-  Map<String, dynamic> get properties => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get url => throw _privateConstructorUsedError;
-  @NullableUriConverter()
-  Uri? get thumbnailUrl => throw _privateConstructorUsedError;
-  String? get comment => throw _privateConstructorUsedError;
-  String? get folderId => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
-  String? get user => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MisskeyFileCopyWith<MisskeyFile> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MisskeyFileCopyWith<$Res> {
-  factory $MisskeyFileCopyWith(
-          MisskeyFile value, $Res Function(MisskeyFile) then) =
-      _$MisskeyFileCopyWithImpl<$Res, MisskeyFile>;
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String name,
-      String type,
-      String md5,
-      int size,
-      bool isSensitive,
-      String? blurhash,
-      Map<String, dynamic> properties,
-      @UriConverter() Uri url,
-      @NullableUriConverter() Uri? thumbnailUrl,
-      String? comment,
-      String? folderId,
-      String? userId,
-      String? user});
-}
-
-/// @nodoc
-class _$MisskeyFileCopyWithImpl<$Res, $Val extends MisskeyFile>
-    implements $MisskeyFileCopyWith<$Res> {
-  _$MisskeyFileCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? name = null,
-    Object? type = null,
-    Object? md5 = null,
-    Object? size = null,
-    Object? isSensitive = null,
-    Object? blurhash = freezed,
-    Object? properties = null,
-    Object? url = null,
-    Object? thumbnailUrl = freezed,
-    Object? comment = freezed,
-    Object? folderId = freezed,
-    Object? userId = freezed,
-    Object? user = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      md5: null == md5
-          ? _value.md5
-          : md5 // ignore: cast_nullable_to_non_nullable
-              as String,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int,
-      isSensitive: null == isSensitive
-          ? _value.isSensitive
-          : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      blurhash: freezed == blurhash
-          ? _value.blurhash
-          : blurhash // ignore: cast_nullable_to_non_nullable
-              as String?,
-      properties: null == properties
-          ? _value.properties
-          : properties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      thumbnailUrl: freezed == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as Uri?,
-      comment: freezed == comment
-          ? _value.comment
-          : comment // ignore: cast_nullable_to_non_nullable
-              as String?,
-      folderId: freezed == folderId
-          ? _value.folderId
-          : folderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_MisskeyFileCopyWith<$Res>
-    implements $MisskeyFileCopyWith<$Res> {
-  factory _$$_MisskeyFileCopyWith(
-          _$_MisskeyFile value, $Res Function(_$_MisskeyFile) then) =
-      __$$_MisskeyFileCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String name,
-      String type,
-      String md5,
-      int size,
-      bool isSensitive,
-      String? blurhash,
-      Map<String, dynamic> properties,
-      @UriConverter() Uri url,
-      @NullableUriConverter() Uri? thumbnailUrl,
-      String? comment,
-      String? folderId,
-      String? userId,
-      String? user});
-}
-
-/// @nodoc
-class __$$_MisskeyFileCopyWithImpl<$Res>
-    extends _$MisskeyFileCopyWithImpl<$Res, _$_MisskeyFile>
-    implements _$$_MisskeyFileCopyWith<$Res> {
-  __$$_MisskeyFileCopyWithImpl(
-      _$_MisskeyFile _value, $Res Function(_$_MisskeyFile) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? name = null,
-    Object? type = null,
-    Object? md5 = null,
-    Object? size = null,
-    Object? isSensitive = null,
-    Object? blurhash = freezed,
-    Object? properties = null,
-    Object? url = null,
-    Object? thumbnailUrl = freezed,
-    Object? comment = freezed,
-    Object? folderId = freezed,
-    Object? userId = freezed,
-    Object? user = freezed,
-  }) {
-    return _then(_$_MisskeyFile(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      md5: null == md5
-          ? _value.md5
-          : md5 // ignore: cast_nullable_to_non_nullable
-              as String,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int,
-      isSensitive: null == isSensitive
-          ? _value.isSensitive
-          : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      blurhash: freezed == blurhash
-          ? _value.blurhash
-          : blurhash // ignore: cast_nullable_to_non_nullable
-              as String?,
-      properties: null == properties
-          ? _value._properties
-          : properties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      thumbnailUrl: freezed == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as Uri?,
-      comment: freezed == comment
-          ? _value.comment
-          : comment // ignore: cast_nullable_to_non_nullable
-              as String?,
-      folderId: freezed == folderId
-          ? _value.folderId
-          : folderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_MisskeyFile implements _MisskeyFile {
-  const _$_MisskeyFile(
-      {required this.id,
-      @DateTimeConverter() required this.createdAt,
-      required this.name,
-      required this.type,
-      required this.md5,
-      required this.size,
-      required this.isSensitive,
-      this.blurhash,
-      required final Map<String, dynamic> properties,
-      @UriConverter() required this.url,
-      @NullableUriConverter() this.thumbnailUrl,
-      this.comment,
-      this.folderId,
-      this.userId,
-      this.user})
-      : _properties = properties;
-
-  factory _$_MisskeyFile.fromJson(Map<String, dynamic> json) =>
-      _$$_MisskeyFileFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @DateTimeConverter()
-  final DateTime createdAt;
-  @override
-  final String name;
-  @override
-  final String type;
-  @override
-  final String md5;
-  @override
-  final int size;
-  @override
-  final bool isSensitive;
-  @override
-  final String? blurhash;
-  final Map<String, dynamic> _properties;
-  @override
-  Map<String, dynamic> get properties {
-    if (_properties is EqualUnmodifiableMapView) return _properties;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_properties);
-  }
-
-  @override
-  @UriConverter()
-  final Uri url;
-  @override
-  @NullableUriConverter()
-  final Uri? thumbnailUrl;
-  @override
-  final String? comment;
-  @override
-  final String? folderId;
-  @override
-  final String? userId;
-  @override
-  final String? user;
-
-  @override
-  String toString() {
-    return 'MisskeyFile(id: $id, createdAt: $createdAt, name: $name, type: $type, md5: $md5, size: $size, isSensitive: $isSensitive, blurhash: $blurhash, properties: $properties, url: $url, thumbnailUrl: $thumbnailUrl, comment: $comment, folderId: $folderId, userId: $userId, user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_MisskeyFile &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.md5, md5) || other.md5 == md5) &&
-            (identical(other.size, size) || other.size == size) &&
-            (identical(other.isSensitive, isSensitive) ||
-                other.isSensitive == isSensitive) &&
-            (identical(other.blurhash, blurhash) ||
-                other.blurhash == blurhash) &&
-            const DeepCollectionEquality()
-                .equals(other._properties, _properties) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) ||
-                other.thumbnailUrl == thumbnailUrl) &&
-            (identical(other.comment, comment) || other.comment == comment) &&
-            (identical(other.folderId, folderId) ||
-                other.folderId == folderId) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      createdAt,
-      name,
-      type,
-      md5,
-      size,
-      isSensitive,
-      blurhash,
-      const DeepCollectionEquality().hash(_properties),
-      url,
-      thumbnailUrl,
-      comment,
-      folderId,
-      userId,
-      user);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_MisskeyFileCopyWith<_$_MisskeyFile> get copyWith =>
-      __$$_MisskeyFileCopyWithImpl<_$_MisskeyFile>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MisskeyFileToJson(
-      this,
-    );
-  }
-}
-
-abstract class _MisskeyFile implements MisskeyFile {
-  const factory _MisskeyFile(
-      {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
-      required final String name,
-      required final String type,
-      required final String md5,
-      required final int size,
-      required final bool isSensitive,
-      final String? blurhash,
-      required final Map<String, dynamic> properties,
-      @UriConverter() required final Uri url,
-      @NullableUriConverter() final Uri? thumbnailUrl,
-      final String? comment,
-      final String? folderId,
-      final String? userId,
-      final String? user}) = _$_MisskeyFile;
-
-  factory _MisskeyFile.fromJson(Map<String, dynamic> json) =
-      _$_MisskeyFile.fromJson;
-
-  @override
-  String get id;
-  @override
-  @DateTimeConverter()
-  DateTime get createdAt;
-  @override
-  String get name;
-  @override
-  String get type;
-  @override
-  String get md5;
-  @override
-  int get size;
-  @override
-  bool get isSensitive;
-  @override
-  String? get blurhash;
-  @override
-  Map<String, dynamic> get properties;
-  @override
-  @UriConverter()
-  Uri get url;
-  @override
-  @NullableUriConverter()
-  Uri? get thumbnailUrl;
-  @override
-  String? get comment;
-  @override
-  String? get folderId;
-  @override
-  String? get userId;
-  @override
-  String? get user;
-  @override
-  @JsonKey(ignore: true)
-  _$$_MisskeyFileCopyWith<_$_MisskeyFile> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 NoteChannelInfo _$NoteChannelInfoFromJson(Map<String, dynamic> json) {

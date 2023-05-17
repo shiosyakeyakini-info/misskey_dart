@@ -28,6 +28,7 @@ const _$ChannelDataTypeEnumMap = {
   ChannelDataType.disconnect: 'disconnect',
   ChannelDataType.channel: 'channel',
   ChannelDataType.ch: 'ch',
+  ChannelDataType.noteUpdated: 'noteUpdated',
 };
 
 _$_ChannelResponseBody _$$_ChannelResponseBodyFromJson(
@@ -48,6 +49,7 @@ Map<String, dynamic> _$$_ChannelResponseBodyToJson(
 
 const _$ChannelResponseTypeEnumMap = {
   ChannelResponseType.note: 'note',
+  ChannelResponseType.reacted: 'reacted',
   ChannelResponseType.emojiAdded: 'emojiAdded',
   ChannelResponseType.emojiUpdated: 'emojiUpdated',
   ChannelResponseType.emojiDeleted: 'emojiDeleted',

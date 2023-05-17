@@ -5,11 +5,13 @@ import 'package:misskey_dart/src/data/announcements_response.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
+import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_response_type.dart';
 import 'package:misskey_dart/src/misskey_antennas.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
 import 'package:misskey_dart/src/misskey_clips.dart';
+import 'package:misskey_dart/src/misskey_drive.dart';
 import 'package:misskey_dart/src/misskey_i.dart';
 import 'package:misskey_dart/src/misskey_note.dart';
 import 'package:misskey_dart/src/misskey_users.dart';
@@ -28,6 +30,7 @@ class Misskey {
   late final MisskeyI i;
   late final MisskeyClips clips;
   late final MisskeyAntenna antennas;
+  late final MisskeyDrive drive;
 
   Misskey({required this.token, required this.host}) {
     apiService = ApiService(token: token, host: host);
@@ -38,6 +41,7 @@ class Misskey {
     i = MisskeyI(apiService: apiService);
     clips = MisskeyClips(apiService: apiService);
     antennas = MisskeyAntenna(apiService: apiService);
+    drive = MisskeyDrive(apiService);
   }
 
   /// サーバーからのお知らせを取得します。
@@ -68,11 +72,18 @@ class Misskey {
 
   /// ホームタイムラインに接続します。
   SocketController homeTimelineStream(
-          FutureOr<void> Function(Note note) onEventReceived) =>
+    FutureOr<void> Function(Note note) onEventReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+  ) =>
       apiService.createSocket(
           channel: Channel.homeTimeline,
-          onEventReceived: (type, response) {
+          onEventReceived: (id, type, response) {
             if (response == null) return;
+
+            if (type == ChannelResponseType.reacted) {
+              onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            }
 
             final note = Note.fromJson(response);
             onEventReceived(note);
@@ -80,11 +91,18 @@ class Misskey {
 
   /// ローカルタイムラインに接続します。
   SocketController localTimelineStream(
-          FutureOr<void> Function(Note note) onEventReceived) =>
+    FutureOr<void> Function(Note note) onEventReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+  ) =>
       apiService.createSocket(
         channel: Channel.localTimeline,
-        onEventReceived: (type, response) {
+        onEventReceived: (id, type, response) {
           if (response == null) return;
+
+          if (type == ChannelResponseType.reacted) {
+            onReacted(id, TimelineReacted.fromJson(response));
+            return;
+          }
 
           final note = Note.fromJson(response);
           onEventReceived(note);
@@ -96,7 +114,7 @@ class Misskey {
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
           channel: Channel.globalTimeline,
-          onEventReceived: (type, response) {
+          onEventReceived: (id, type, response) {
             if (response == null) return;
 
             final note = Note.fromJson(response);
@@ -104,13 +122,21 @@ class Misskey {
           });
 
   /// チャンネル（トピック毎の機能の方）に接続します。
-  SocketController channelStream(String channelId,
-          FutureOr<void> Function(Note note) onEventReceived) =>
+  SocketController channelStream(
+    String channelId,
+    FutureOr<void> Function(Note note) onEventReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+  ) =>
       apiService.createSocket(
           channel: Channel.channel,
           id: channelId,
-          onEventReceived: (type, response) {
+          onEventReceived: (id, type, response) {
             if (response == null) return;
+
+            if (type == ChannelResponseType.reacted) {
+              onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            }
 
             final note = Note.fromJson(response);
             onEventReceived(note);
@@ -140,7 +166,7 @@ class Misskey {
   }) =>
       apiService.createSocket(
           channel: Channel.main,
-          onEventReceived: (type, response) async {
+          onEventReceived: (id, type, response) async {
             print(response);
             switch (type) {
               case ChannelResponseType.emojiAdded:

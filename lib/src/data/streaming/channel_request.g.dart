@@ -28,6 +28,7 @@ const _$ChannelDataTypeEnumMap = {
   ChannelDataType.disconnect: 'disconnect',
   ChannelDataType.channel: 'channel',
   ChannelDataType.ch: 'ch',
+  ChannelDataType.noteUpdated: 'noteUpdated',
 };
 
 _$_ChannelRequestBody _$$_ChannelRequestBodyFromJson(

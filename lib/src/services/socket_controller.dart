@@ -11,7 +11,8 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 class SocketController {
   final String url;
   final Channel channel;
-  final void Function(ChannelResponseType type, Map<String, dynamic>? receive)
+  final void Function(
+          String id, ChannelResponseType type, Map<String, dynamic>? receive)
       onEventReceived;
   final Map<String, dynamic>? parameters;
 
@@ -44,10 +45,8 @@ class SocketController {
         (event) {
           print("received[$id]: $event");
           final response = ChannelResponse.fromJson(jsonDecode(event));
-          if (response.body.id == id) {
-            final responseBody = response.body.body;
-            onEventReceived(response.body.type, responseBody);
-          }
+          final responseBody = response.body.body;
+          onEventReceived(response.body.id, response.body.type, responseBody);
         },
         onError: (e, s) {
           print("Error happen $e ");
@@ -83,5 +82,12 @@ class SocketController {
   Future<void> reconnect() async {
     await disconnect();
     await startStreaming();
+  }
+
+  Future<void> send(ChannelDataType dataType, String id) async {
+    final request = jsonEncode(ChannelRequest(
+        type: dataType, body: ChannelRequestBody(id: id, params: {})));
+    print("send[$id]: $request}");
+    _socketChannel?.sink.add(request);
   }
 }
