@@ -65,8 +65,8 @@ mixin _$IResponse {
   bool get twoFactorEnabled => throw _privateConstructorUsedError;
   bool get usePasswordLessLogin => throw _privateConstructorUsedError;
   bool get securityKeys => throw _privateConstructorUsedError;
-  String get avatarId => throw _privateConstructorUsedError;
-  String get bannerId => throw _privateConstructorUsedError;
+  String? get avatarId => throw _privateConstructorUsedError;
+  String? get bannerId => throw _privateConstructorUsedError;
   bool get isModerator => throw _privateConstructorUsedError;
   bool get isAdmin => throw _privateConstructorUsedError;
   bool get injectFeaturedNote => throw _privateConstructorUsedError;
@@ -146,8 +146,8 @@ abstract class $IResponseCopyWith<$Res> {
       bool twoFactorEnabled,
       bool usePasswordLessLogin,
       bool securityKeys,
-      String avatarId,
-      String bannerId,
+      String? avatarId,
+      String? bannerId,
       bool isModerator,
       bool isAdmin,
       bool injectFeaturedNote,
@@ -229,8 +229,8 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
     Object? twoFactorEnabled = null,
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
-    Object? avatarId = null,
-    Object? bannerId = null,
+    Object? avatarId = freezed,
+    Object? bannerId = freezed,
     Object? isModerator = null,
     Object? isAdmin = null,
     Object? injectFeaturedNote = null,
@@ -408,14 +408,14 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
               as bool,
-      avatarId: null == avatarId
+      avatarId: freezed == avatarId
           ? _value.avatarId
           : avatarId // ignore: cast_nullable_to_non_nullable
-              as String,
-      bannerId: null == bannerId
+              as String?,
+      bannerId: freezed == bannerId
           ? _value.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isModerator: null == isModerator
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
@@ -581,8 +581,8 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       bool twoFactorEnabled,
       bool usePasswordLessLogin,
       bool securityKeys,
-      String avatarId,
-      String bannerId,
+      String? avatarId,
+      String? bannerId,
       bool isModerator,
       bool isAdmin,
       bool injectFeaturedNote,
@@ -663,8 +663,8 @@ class __$$_IResponseCopyWithImpl<$Res>
     Object? twoFactorEnabled = null,
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
-    Object? avatarId = null,
-    Object? bannerId = null,
+    Object? avatarId = freezed,
+    Object? bannerId = freezed,
     Object? isModerator = null,
     Object? isAdmin = null,
     Object? injectFeaturedNote = null,
@@ -842,14 +842,14 @@ class __$$_IResponseCopyWithImpl<$Res>
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
               as bool,
-      avatarId: null == avatarId
+      avatarId: freezed == avatarId
           ? _value.avatarId
           : avatarId // ignore: cast_nullable_to_non_nullable
-              as String,
-      bannerId: null == bannerId
+              as String?,
+      bannerId: freezed == bannerId
           ? _value.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isModerator: null == isModerator
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
@@ -1003,8 +1003,8 @@ class _$_IResponse implements _IResponse {
       required this.twoFactorEnabled,
       required this.usePasswordLessLogin,
       required this.securityKeys,
-      required this.avatarId,
-      required this.bannerId,
+      this.avatarId,
+      this.bannerId,
       required this.isModerator,
       required this.isAdmin,
       required this.injectFeaturedNote,
@@ -1158,9 +1158,9 @@ class _$_IResponse implements _IResponse {
   @override
   final bool securityKeys;
   @override
-  final String avatarId;
+  final String? avatarId;
   @override
-  final String bannerId;
+  final String? bannerId;
   @override
   final bool isModerator;
   @override
@@ -1493,8 +1493,8 @@ abstract class _IResponse implements IResponse {
       required final bool twoFactorEnabled,
       required final bool usePasswordLessLogin,
       required final bool securityKeys,
-      required final String avatarId,
-      required final String bannerId,
+      final String? avatarId,
+      final String? bannerId,
       required final bool isModerator,
       required final bool isAdmin,
       required final bool injectFeaturedNote,
@@ -1609,9 +1609,9 @@ abstract class _IResponse implements IResponse {
   @override
   bool get securityKeys;
   @override
-  String get avatarId;
+  String? get avatarId;
   @override
-  String get bannerId;
+  String? get bannerId;
   @override
   bool get isModerator;
   @override
