@@ -121,6 +121,24 @@ class Misskey {
             onEventReceived(note);
           });
 
+  SocketController hybridTimelineStream(
+    FutureOr<void> Function(Note note) onEventReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+  ) =>
+      apiService.createSocket(
+          channel: Channel.hybridTimeline,
+          onEventReceived: (id, type, response) {
+            if (response == null) return;
+
+            if (type == ChannelResponseType.reacted) {
+              onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            }
+
+            final note = Note.fromJson(response);
+            onEventReceived(note);
+          });
+
   /// チャンネル（トピック毎の機能の方）に接続します。
   SocketController channelStream(
     String channelId,

@@ -50,6 +50,14 @@ class MisskeyNotes {
     return response.map((e) => Note.fromJson(e));
   }
 
+  /// ソーシャルタイムラインを取得します。
+  Future<Iterable<Note>> hybridTimeline(
+      NotesHybridTimelineRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/hybrid-timeline", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
   /// ユーザーリストのタイムラインを取得します。
   Future<Iterable<Note>> userListTimeline(
     UserListTimelineRequest request,
