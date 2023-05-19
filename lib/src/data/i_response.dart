@@ -10,7 +10,7 @@ part 'i_response.g.dart';
 class IResponse with _$IResponse {
   const factory IResponse({
     required String id,
-    required String name,
+    String? name,
     required String username,
     String? host,
     @UriConverter() required Uri avatarUrl,

@@ -21,7 +21,7 @@ IResponse _$IResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$IResponse {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String? get host => throw _privateConstructorUsedError;
   @UriConverter()
@@ -110,7 +110,7 @@ abstract class $IResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String name,
+      String? name,
       String username,
       String? host,
       @UriConverter() Uri avatarUrl,
@@ -193,7 +193,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? username = null,
     Object? host = freezed,
     Object? avatarUrl = null,
@@ -264,10 +264,10 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -545,7 +545,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String name,
+      String? name,
       String username,
       String? host,
       @UriConverter() Uri avatarUrl,
@@ -627,7 +627,7 @@ class __$$_IResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? username = null,
     Object? host = freezed,
     Object? avatarUrl = null,
@@ -698,10 +698,10 @@ class __$$_IResponseCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -967,7 +967,7 @@ class __$$_IResponseCopyWithImpl<$Res>
 class _$_IResponse implements _IResponse {
   const _$_IResponse(
       {required this.id,
-      required this.name,
+      this.name,
       required this.username,
       this.host,
       @UriConverter() required this.avatarUrl,
@@ -1048,7 +1048,7 @@ class _$_IResponse implements _IResponse {
   @override
   final String id;
   @override
-  final String name;
+  final String? name;
   @override
   final String username;
   @override
@@ -1457,7 +1457,7 @@ class _$_IResponse implements _IResponse {
 abstract class _IResponse implements IResponse {
   const factory _IResponse(
       {required final String id,
-      required final String name,
+      final String? name,
       required final String username,
       final String? host,
       @UriConverter() required final Uri avatarUrl,
@@ -1529,7 +1529,7 @@ abstract class _IResponse implements IResponse {
   @override
   String get id;
   @override
-  String get name;
+  String? get name;
   @override
   String get username;
   @override

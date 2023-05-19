@@ -8,7 +8,7 @@ part of 'i_response.dart';
 
 _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       id: json['id'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       username: json['username'] as String,
       host: json['host'] as String?,
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
