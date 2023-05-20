@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_to_epoc_converter.dart';
 
 part 'notes_show_request.freezed.dart';
 part 'notes_show_request.g.dart';

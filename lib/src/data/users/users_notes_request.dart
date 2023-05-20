@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_to_epoc_converter.dart';
+import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'users_notes_request.freezed.dart';
 part 'users_notes_request.g.dart';
@@ -12,8 +12,8 @@ class UsersNotesRequest with _$UsersNotesRequest {
     int? limit,
     String? sinceId,
     String? untilId,
-    @DateTimeToEpocConverter() int? sinceDate,
-    @DateTimeToEpocConverter() int? untilDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() int? sinceDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() int? untilDate,
     bool? includeMyRenotes,
     bool? withFiles,
     List<String>? fileType,

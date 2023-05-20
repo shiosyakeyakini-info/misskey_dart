@@ -25,9 +25,9 @@ mixin _$UsersNotesRequest {
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   int? get sinceDate => throw _privateConstructorUsedError;
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   int? get untilDate => throw _privateConstructorUsedError;
   bool? get includeMyRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
@@ -52,8 +52,8 @@ abstract class $UsersNotesRequestCopyWith<$Res> {
       int? limit,
       String? sinceId,
       String? untilId,
-      @DateTimeToEpocConverter() int? sinceDate,
-      @DateTimeToEpocConverter() int? untilDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() int? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() int? untilDate,
       bool? includeMyRenotes,
       bool? withFiles,
       List<String>? fileType,
@@ -148,8 +148,8 @@ abstract class _$$_UsersNotesRequestCopyWith<$Res>
       int? limit,
       String? sinceId,
       String? untilId,
-      @DateTimeToEpocConverter() int? sinceDate,
-      @DateTimeToEpocConverter() int? untilDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() int? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() int? untilDate,
       bool? includeMyRenotes,
       bool? withFiles,
       List<String>? fileType,
@@ -237,8 +237,8 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
       this.limit,
       this.sinceId,
       this.untilId,
-      @DateTimeToEpocConverter() this.sinceDate,
-      @DateTimeToEpocConverter() this.untilDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
       this.includeMyRenotes,
       this.withFiles,
       final List<String>? fileType,
@@ -259,10 +259,10 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
   @override
   final String? untilId;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   final int? sinceDate;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   final int? untilDate;
   @override
   final bool? includeMyRenotes;
@@ -348,8 +348,8 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
       final int? limit,
       final String? sinceId,
       final String? untilId,
-      @DateTimeToEpocConverter() final int? sinceDate,
-      @DateTimeToEpocConverter() final int? untilDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() final int? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() final int? untilDate,
       final bool? includeMyRenotes,
       final bool? withFiles,
       final List<String>? fileType,
@@ -369,10 +369,10 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
   @override
   String? get untilId;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   int? get sinceDate;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   int? get untilDate;
   @override
   bool? get includeMyRenotes;

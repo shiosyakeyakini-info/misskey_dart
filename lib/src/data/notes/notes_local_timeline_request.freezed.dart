@@ -27,9 +27,9 @@ mixin _$NotesLocalTimelineRequest {
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get sinceDate => throw _privateConstructorUsedError;
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,8 +51,8 @@ abstract class $NotesLocalTimelineRequestCopyWith<$Res> {
       int? limit,
       String? sinceId,
       String? untilId,
-      @DateTimeToEpocConverter() DateTime? sinceDate,
-      @DateTimeToEpocConverter() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
 }
 
 /// @nodoc
@@ -131,8 +131,8 @@ abstract class _$$_NotesLocalTimelineRequestCopyWith<$Res>
       int? limit,
       String? sinceId,
       String? untilId,
-      @DateTimeToEpocConverter() DateTime? sinceDate,
-      @DateTimeToEpocConverter() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
 }
 
 /// @nodoc
@@ -204,8 +204,8 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
       this.limit,
       this.sinceId,
       this.untilId,
-      @DateTimeToEpocConverter() this.sinceDate,
-      @DateTimeToEpocConverter() this.untilDate})
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate})
       : _fileType = fileType;
 
   factory _$_NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =>
@@ -232,10 +232,10 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
   @override
   final String? untilId;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? sinceDate;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? untilDate;
 
   @override
@@ -292,15 +292,16 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
 
 abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   const factory _NotesLocalTimelineRequest(
-          {final bool? withFiles,
-          final List<String>? fileType,
-          final bool? excludeNsfw,
-          final int? limit,
-          final String? sinceId,
-          final String? untilId,
-          @DateTimeToEpocConverter() final DateTime? sinceDate,
-          @DateTimeToEpocConverter() final DateTime? untilDate}) =
-      _$_NotesLocalTimelineRequest;
+      {final bool? withFiles,
+      final List<String>? fileType,
+      final bool? excludeNsfw,
+      final int? limit,
+      final String? sinceId,
+      final String? untilId,
+      @EpocTimeDateTimeConverter.withMilliSeconds()
+          final DateTime? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds()
+          final DateTime? untilDate}) = _$_NotesLocalTimelineRequest;
 
   factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesLocalTimelineRequest.fromJson;
@@ -318,10 +319,10 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   @override
   String? get untilId;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get sinceDate;
   @override
-  @DateTimeToEpocConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate;
   @override
   @JsonKey(ignore: true)

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_to_epoc_converter.dart';
-import 'package:misskey_dart/src/enums/note_visibility.dart';
+import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'notes_local_timeline_request.freezed.dart';
 part 'notes_local_timeline_request.g.dart';
@@ -14,8 +13,8 @@ class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
     int? limit,
     String? sinceId,
     String? untilId,
-    @DateTimeToEpocConverter() DateTime? sinceDate,
-    @DateTimeToEpocConverter() DateTime? untilDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
   }) = _NotesLocalTimelineRequest;
 
   factory NotesLocalTimelineRequest.fromJson(Map<String, Object?> json) =>

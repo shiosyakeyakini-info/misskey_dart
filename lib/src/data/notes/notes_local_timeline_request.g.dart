@@ -17,10 +17,10 @@ _$_NotesLocalTimelineRequest _$$_NotesLocalTimelineRequestFromJson(
       limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      sinceDate: _$JsonConverterFromJson<int, DateTime>(
-          json['sinceDate'], const DateTimeToEpocConverter().fromJson),
-      untilDate: _$JsonConverterFromJson<int, DateTime>(
-          json['untilDate'], const DateTimeToEpocConverter().fromJson),
+      sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
+          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
+      untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
+          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
     );
 
 Map<String, dynamic> _$$_NotesLocalTimelineRequestToJson(
@@ -32,10 +32,10 @@ Map<String, dynamic> _$$_NotesLocalTimelineRequestToJson(
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'sinceDate': _$JsonConverterToJson<int, DateTime>(
-          instance.sinceDate, const DateTimeToEpocConverter().toJson),
-      'untilDate': _$JsonConverterToJson<int, DateTime>(
-          instance.untilDate, const DateTimeToEpocConverter().toJson),
+      'sinceDate': _$JsonConverterToJson<int, DateTime>(instance.sinceDate,
+          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
+      'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
+          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -1,8 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/base/following.dart';
 import 'package:misskey_dart/src/data/base/user_list.dart';
-import 'package:misskey_dart/src/data/users/users_followeres_request.dart';
-import 'package:misskey_dart/src/data/users/users_report_abuse_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -83,3 +80,5 @@ class MisskeyUsersLists {
     return response.map((e) => UsersList.fromJson(e));
   }
 }
+
+//TODO: 勘違いでuserの下につくったのでなおす

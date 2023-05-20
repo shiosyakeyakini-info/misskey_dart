@@ -111,15 +111,15 @@ Map<String, dynamic> _$$_UserRoleToJson(_$_UserRole instance) =>
 _$_UserAchievement _$$_UserAchievementFromJson(Map<String, dynamic> json) =>
     _$_UserAchievement(
       name: json['name'] as String,
-      unlockedAt:
-          const EpocTimeDateTimeConverter().fromJson(json['unlockedAt'] as int),
+      unlockedAt: const EpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson(json['unlockedAt'] as int),
     );
 
 Map<String, dynamic> _$$_UserAchievementToJson(_$_UserAchievement instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'unlockedAt':
-          const EpocTimeDateTimeConverter().toJson(instance.unlockedAt),
+      'unlockedAt': const EpocTimeDateTimeConverter.withMilliSeconds()
+          .toJson(instance.unlockedAt),
     };
 
 _$_UserPolicies _$$_UserPoliciesFromJson(Map<String, dynamic> json) =>

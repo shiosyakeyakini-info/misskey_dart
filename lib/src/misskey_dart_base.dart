@@ -9,12 +9,15 @@ import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_response_type.dart';
 import 'package:misskey_dart/src/misskey_antennas.dart';
+import 'package:misskey_dart/src/misskey_blocking.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
 import 'package:misskey_dart/src/misskey_clips.dart';
 import 'package:misskey_dart/src/misskey_drive.dart';
 import 'package:misskey_dart/src/misskey_following.dart';
 import 'package:misskey_dart/src/misskey_i.dart';
+import 'package:misskey_dart/src/misskey_mute.dart';
 import 'package:misskey_dart/src/misskey_note.dart';
+import 'package:misskey_dart/src/misskey_renote_mute.dart';
 import 'package:misskey_dart/src/misskey_users.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
@@ -33,6 +36,9 @@ class Misskey {
   late final MisskeyAntenna antennas;
   late final MisskeyDrive drive;
   late final MisskeyFollowing following;
+  late final MisskeyBlocking blocking;
+  late final MisskeyMute mute;
+  late final MisskeyRenoteMute renoteMute;
 
   Misskey({required this.token, required this.host}) {
     apiService = ApiService(token: token, host: host);
@@ -45,6 +51,9 @@ class Misskey {
     antennas = MisskeyAntenna(apiService: apiService);
     drive = MisskeyDrive(apiService);
     following = MisskeyFollowing(apiService: apiService);
+    blocking = MisskeyBlocking(apiService: apiService);
+    mute = MisskeyMute(apiService: apiService);
+    renoteMute = MisskeyRenoteMute(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。

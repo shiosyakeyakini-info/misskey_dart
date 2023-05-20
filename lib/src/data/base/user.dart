@@ -16,7 +16,7 @@ class User with _$User {
     String? name,
     @UnsupportedDolphin()
     @OnlineStatusJsonConverter()
-        OnlineStatus? onlineStatus,
+    OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
     @UriConverter() required Uri avatarUrl,
     String? avatarBlurhash,
@@ -73,7 +73,7 @@ class UserRole with _$UserRole {
 class UserAchievement with _$UserAchievement {
   const factory UserAchievement({
     required String name,
-    @EpocTimeDateTimeConverter() required DateTime unlockedAt,
+    @EpocTimeDateTimeConverter.withMilliSeconds() required DateTime unlockedAt,
   }) = _UserAchievement;
 
   factory UserAchievement.fromJson(Map<String, Object?> json) =>
