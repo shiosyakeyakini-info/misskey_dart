@@ -33,6 +33,8 @@ export 'src/data/clips/clips_remove_note_request.dart';
 export 'src/data/drive/drive_files_request.dart';
 export 'src/data/drive/drive_folders_request.dart';
 export 'src/data/drive/files/drive_file_create_request.dart';
+export 'src/data/following/following_create_request.dart';
+export 'src/data/following/following_delete_request.dart';
 export 'src/data/i_response.dart';
 export 'src/data/i/i_notifications_request.dart';
 export 'src/data/i/i_notifications_response.dart';

@@ -12,6 +12,7 @@ import 'package:misskey_dart/src/misskey_antennas.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
 import 'package:misskey_dart/src/misskey_clips.dart';
 import 'package:misskey_dart/src/misskey_drive.dart';
+import 'package:misskey_dart/src/misskey_following.dart';
 import 'package:misskey_dart/src/misskey_i.dart';
 import 'package:misskey_dart/src/misskey_note.dart';
 import 'package:misskey_dart/src/misskey_users.dart';
@@ -31,6 +32,7 @@ class Misskey {
   late final MisskeyClips clips;
   late final MisskeyAntenna antennas;
   late final MisskeyDrive drive;
+  late final MisskeyFollowing following;
 
   Misskey({required this.token, required this.host}) {
     apiService = ApiService(token: token, host: host);
@@ -42,6 +44,7 @@ class Misskey {
     clips = MisskeyClips(apiService: apiService);
     antennas = MisskeyAntenna(apiService: apiService);
     drive = MisskeyDrive(apiService);
+    following = MisskeyFollowing(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。
