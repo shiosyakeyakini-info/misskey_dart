@@ -1,4 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/i/i_update_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {
@@ -26,5 +27,13 @@ class MisskeyI {
     final response =
         await _apiService.post<List>("i/favorites", request.toJson());
     return response.map((e) => IFavoritesResponse.fromJson(e));
+  }
+
+  Future<IResponse> update(IUpdateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "i/update",
+      request.toJson(),
+    );
+    return IResponse.fromJson(response);
   }
 }

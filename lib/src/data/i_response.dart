@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'i_response.freezed.dart';
@@ -67,7 +68,7 @@ class IResponse with _$IResponse {
     required bool hasUnreadChannel,
     required bool hasUnreadNotification,
     required bool hasPendingReceivedFollowRequest,
-    required List<String> mutedWords,
+    @MuteWordsConverter() required List<MuteWord> mutedWords,
     required List<String> mutedInstances,
     required List<String> mutingNotificationTypes,
     required List<String> emailNotificationTypes,
@@ -79,4 +80,11 @@ class IResponse with _$IResponse {
 
   factory IResponse.fromJson(Map<String, Object?> json) =>
       _$IResponseFromJson(json);
+}
+
+class MuteWord {
+  final String? regExp;
+  final List<String>? content;
+
+  const MuteWord({this.regExp, this.content});
 }

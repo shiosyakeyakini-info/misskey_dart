@@ -87,7 +87,8 @@ mixin _$IResponse {
   bool get hasUnreadNotification => throw _privateConstructorUsedError;
   bool get hasPendingReceivedFollowRequest =>
       throw _privateConstructorUsedError;
-  List<String> get mutedWords => throw _privateConstructorUsedError;
+  @MuteWordsConverter()
+  List<MuteWord> get mutedWords => throw _privateConstructorUsedError;
   List<String> get mutedInstances => throw _privateConstructorUsedError;
   List<String> get mutingNotificationTypes =>
       throw _privateConstructorUsedError;
@@ -167,7 +168,7 @@ abstract class $IResponseCopyWith<$Res> {
       bool hasUnreadChannel,
       bool hasUnreadNotification,
       bool hasPendingReceivedFollowRequest,
-      List<String> mutedWords,
+      @MuteWordsConverter() List<MuteWord> mutedWords,
       List<String> mutedInstances,
       List<String> mutingNotificationTypes,
       List<String> emailNotificationTypes,
@@ -495,7 +496,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       mutedWords: null == mutedWords
           ? _value.mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MuteWord>,
       mutedInstances: null == mutedInstances
           ? _value.mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -602,7 +603,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       bool hasUnreadChannel,
       bool hasUnreadNotification,
       bool hasPendingReceivedFollowRequest,
-      List<String> mutedWords,
+      @MuteWordsConverter() List<MuteWord> mutedWords,
       List<String> mutedInstances,
       List<String> mutingNotificationTypes,
       List<String> emailNotificationTypes,
@@ -929,7 +930,7 @@ class __$$_IResponseCopyWithImpl<$Res>
       mutedWords: null == mutedWords
           ? _value._mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MuteWord>,
       mutedInstances: null == mutedInstances
           ? _value._mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -1024,7 +1025,7 @@ class _$_IResponse implements _IResponse {
       required this.hasUnreadChannel,
       required this.hasUnreadNotification,
       required this.hasPendingReceivedFollowRequest,
-      required final List<String> mutedWords,
+      @MuteWordsConverter() required final List<MuteWord> mutedWords,
       required final List<String> mutedInstances,
       required final List<String> mutingNotificationTypes,
       required final List<String> emailNotificationTypes,
@@ -1199,9 +1200,10 @@ class _$_IResponse implements _IResponse {
   final bool hasUnreadNotification;
   @override
   final bool hasPendingReceivedFollowRequest;
-  final List<String> _mutedWords;
+  final List<MuteWord> _mutedWords;
   @override
-  List<String> get mutedWords {
+  @MuteWordsConverter()
+  List<MuteWord> get mutedWords {
     if (_mutedWords is EqualUnmodifiableListView) return _mutedWords;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_mutedWords);
@@ -1514,7 +1516,7 @@ abstract class _IResponse implements IResponse {
       required final bool hasUnreadChannel,
       required final bool hasUnreadNotification,
       required final bool hasPendingReceivedFollowRequest,
-      required final List<String> mutedWords,
+      @MuteWordsConverter() required final List<MuteWord> mutedWords,
       required final List<String> mutedInstances,
       required final List<String> mutingNotificationTypes,
       required final List<String> emailNotificationTypes,
@@ -1651,7 +1653,8 @@ abstract class _IResponse implements IResponse {
   @override
   bool get hasPendingReceivedFollowRequest;
   @override
-  List<String> get mutedWords;
+  @MuteWordsConverter()
+  List<MuteWord> get mutedWords;
   @override
   List<String> get mutedInstances;
   @override
