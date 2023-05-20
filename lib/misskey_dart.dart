@@ -63,6 +63,7 @@ export 'src/data/users/users_notes_request.dart';
 export 'src/data/users/users_clips_request.dart';
 export 'src/data/users/users_following_request.dart';
 export 'src/data/users/users_followeres_request.dart';
+export 'src/data/users/users_report_abuse_request.dart';
 export 'src/data/streaming/timeline_reacted.dart';
 export 'src/data/join_misskey_instances.dart';
 export 'src/services/socket_controller.dart';
