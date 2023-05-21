@@ -173,6 +173,28 @@ class Misskey {
           },
           parameters: {"channelId": channelId});
 
+  /// アンテナのストリームに接続します。
+  SocketController antennaStream(
+    String antennaId,
+    FutureOr<void> Function(Note note) onEventReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+  ) =>
+      apiService.createSocket(
+          channel: Channel.antenna,
+          id: antennaId,
+          onEventReceived: (id, type, response) {
+            if (response == null) return;
+
+            if (type == ChannelResponseType.reacted) {
+              onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            }
+
+            final note = Note.fromJson(response);
+            onEventReceived(note);
+          },
+          parameters: {"antennaId": antennaId});
+
   /// メインのストリームに接続します。
   SocketController mainStream({
     FutureOr<void> Function()? onEmojiAdded,
