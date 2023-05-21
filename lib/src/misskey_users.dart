@@ -74,10 +74,46 @@ class MisskeyUsersLists {
   MisskeyUsersLists({required ApiService apiService})
       : _apiService = apiService;
 
+  /// リストを作成します。
+  Future<UsersList> create(UsersListsCreateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "users/lists/create", request.toJson());
+    return UsersList.fromJson(response);
+  }
+
+  /// リストを削除します。
+  Future<void> delete(UsersListsDeleteRequest request) async {
+    await _apiService.post("users/lists/delete", request.toJson());
+  }
+
   /// 認証されたアカウントが追加したリストの一覧を取得します。
   Future<Iterable<UsersList>> list() async {
     final response = await _apiService.post<List>("users/lists/list", {});
     return response.map((e) => UsersList.fromJson(e));
+  }
+
+  /// リストからユーザーを削除します。
+  Future<void> pull(UsersListsPullRequest request) async {
+    await _apiService.post("users/lists/pull", request.toJson());
+  }
+
+  /// リストにユーザーを追加します。
+  Future<void> push(UsersListsPushRequest request) async {
+    await _apiService.post("users/lists/push", request.toJson());
+  }
+
+  /// リスト情報をIDから取得します。
+  Future<UsersList> show(UsersListsShowRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "users/lists/show", request.toJson());
+    return UsersList.fromJson(response);
+  }
+
+  /// リスト名を更新します。
+  Future<UsersList> update(UsersListsUpdateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "users/lists/update", request.toJson());
+    return UsersList.fromJson(response);
   }
 }
 
