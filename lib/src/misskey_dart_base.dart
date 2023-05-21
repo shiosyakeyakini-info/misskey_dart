@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:misskey_dart/src/data/announcements_request.dart';
 import 'package:misskey_dart/src/data/announcements_response.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
+import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
@@ -172,6 +173,42 @@ class Misskey {
             onEventReceived(note);
           },
           parameters: {"channelId": channelId});
+
+  /// リストのストリームに接続します。
+  SocketController userListStream(
+    String listId,
+    FutureOr<void> Function(Note note) onEventReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
+    FutureOr<void> Function(User user)? onUserAdded,
+    FutureOr<void> Function(User user)? onUserRemoved,
+  }) =>
+      apiService.createSocket(
+          channel: Channel.userList,
+          id: listId,
+          onEventReceived: (id, type, response) {
+            if (response == null) return;
+
+            if (type == ChannelResponseType.reacted) {
+              onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            }
+
+            if (type == ChannelResponseType.userAdded) {
+              final user = User.fromJson(response);
+              onUserAdded?.call(user);
+              return;
+            }
+
+            if (type == ChannelResponseType.userRemoved) {
+              final user = User.fromJson(response);
+              onUserRemoved?.call(user);
+              return;
+            }
+
+            final note = Note.fromJson(response);
+            onEventReceived(note);
+          },
+          parameters: {"listId": listId});
 
   /// メインのストリームに接続します。
   SocketController mainStream({
