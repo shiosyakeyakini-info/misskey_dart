@@ -4,6 +4,10 @@ enum ChannelResponseType {
   note,
   reacted,
 
+  // userList
+  userAdded,
+  userRemoved,
+
   emojiAdded,
   emojiUpdated,
   emojiDeleted,

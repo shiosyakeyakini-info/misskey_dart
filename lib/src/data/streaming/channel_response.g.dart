@@ -50,6 +50,8 @@ Map<String, dynamic> _$$_ChannelResponseBodyToJson(
 const _$ChannelResponseTypeEnumMap = {
   ChannelResponseType.note: 'note',
   ChannelResponseType.reacted: 'reacted',
+  ChannelResponseType.userAdded: 'userAdded',
+  ChannelResponseType.userRemoved: 'userRemoved',
   ChannelResponseType.emojiAdded: 'emojiAdded',
   ChannelResponseType.emojiUpdated: 'emojiUpdated',
   ChannelResponseType.emojiDeleted: 'emojiDeleted',
