@@ -1,6 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-enum NoteVisibility { public, home, followers, specified }
+enum NoteVisibility {
+  public("パブリック"),
+  home("ホームのみ"),
+  followers("フォロワーのみ"),
+  specified("ダイレクト");
+
+  final String displayName;
+  const NoteVisibility(this.displayName);
+}
 
 class NoteVisibilityJsonConverter
     extends JsonConverter<NoteVisibility, String> {
