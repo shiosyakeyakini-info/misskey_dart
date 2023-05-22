@@ -1,5 +1,6 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/notes/favorites/notes_favorites_delete_request.dart';
+import 'package:misskey_dart/src/data/notes/notes_delete_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_reactions_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_reactions_response.dart';
 import 'package:misskey_dart/src/data/notes/notes_state_response.dart';
@@ -21,6 +22,11 @@ class MisskeyNotes {
   Future<void> create(NotesCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "notes/create", request.toJson());
+  }
+
+  /// ノートを削除します。
+  Future<void> delete(NotesDeleteRequest request) async {
+    await _apiService.post<void>("notes/delete", request.toJson());
   }
 
   Future<Iterable<Note>> notes(NotesRequest request) async {
