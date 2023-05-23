@@ -7,6 +7,16 @@ import 'package:misskey_dart/src/enums/antenna_source.dart';
 import 'package:test/test.dart';
 import 'package:uuid/uuid.dart';
 
+class CreateUserResponse {
+  final Misskey client;
+  final User user;
+
+  CreateUserResponse({
+    required this.client,
+    required this.user,
+  });
+}
+
 Misskey getTestClient(String token) {
   final env = DotEnv(includePlatformEnvironment: true)..load(["test/.env"]);
   return Misskey(
@@ -17,7 +27,7 @@ Misskey getTestClient(String token) {
   );
 }
 
-Future<User> createUser(Misskey adminClient) async {
+Future<CreateUserResponse> createUser(Misskey adminClient) async {
   final response = await adminClient.apiService.post<Map<String, dynamic>>(
     "admin/accounts/create",
     {
@@ -25,7 +35,10 @@ Future<User> createUser(Misskey adminClient) async {
       "password": "test",
     },
   );
-  return User.fromJson(response);
+  return CreateUserResponse(
+    client: getTestClient(response["token"]),
+    user: User.fromJson(response),
+  );
 }
 
 Future<Note> createNote(Misskey client) async {
@@ -150,13 +163,13 @@ void main() async {
 
     group("blocking", () {
       test("create", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.blocking
             .create(BlockCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.blocking
             .create(BlockCreateRequest(userId: newUser.id));
         await userClient.blocking
@@ -193,13 +206,13 @@ void main() async {
 
     group("following", () {
       test("create", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.following
             .create(FollowingCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.following
             .create(FollowingCreateRequest(userId: newUser.id));
         await userClient.following
@@ -227,12 +240,12 @@ void main() async {
 
     group("mute", () {
       test("create", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
         await userClient.mute.delete(MuteDeleteRequest(userId: newUser.id));
       });
@@ -321,13 +334,13 @@ void main() async {
 
     group("renoteMute", () {
       test("create", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.renoteMute
             .create(RenoteMuteCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.renoteMute
             .create(RenoteMuteCreateRequest(userId: newUser.id));
         await userClient.renoteMute
@@ -364,7 +377,7 @@ void main() async {
       });
 
       test("reportAbuse", () async {
-        final newUser = await createUser(adminClient);
+        final newUser = (await createUser(adminClient)).user;
         await userClient.users.reportAbuse(
             UsersReportAbuseRequest(userId: newUser.id, comment: "comment"));
       });
@@ -585,7 +598,6 @@ void main() async {
         final controller = userClient.mainStream(onRenote: completer.complete);
         await controller.startStreaming();
         await adminClient.notes.create(NotesCreateRequest(
-          text: "reply",
           renoteId: note.id,
         ));
         await completer.future;
