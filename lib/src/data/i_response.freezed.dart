@@ -59,7 +59,7 @@ mixin _$IResponse {
   int get notesCount => throw _privateConstructorUsedError;
   List<String>? get pinnedNoteIds => throw _privateConstructorUsedError;
   String? get pinnedPageId => throw _privateConstructorUsedError;
-  String? get pinnedPage => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get pinnedPage => throw _privateConstructorUsedError;
   bool get publicReactions => throw _privateConstructorUsedError;
   String get ffVisibility => throw _privateConstructorUsedError;
   bool get twoFactorEnabled => throw _privateConstructorUsedError;
@@ -141,7 +141,7 @@ abstract class $IResponseCopyWith<$Res> {
       int notesCount,
       List<String>? pinnedNoteIds,
       String? pinnedPageId,
-      String? pinnedPage,
+      Map<String, dynamic>? pinnedPage,
       bool publicReactions,
       String ffVisibility,
       bool twoFactorEnabled,
@@ -388,7 +388,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       pinnedPage: freezed == pinnedPage
           ? _value.pinnedPage
           : pinnedPage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Map<String, dynamic>?,
       publicReactions: null == publicReactions
           ? _value.publicReactions
           : publicReactions // ignore: cast_nullable_to_non_nullable
@@ -576,7 +576,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       int notesCount,
       List<String>? pinnedNoteIds,
       String? pinnedPageId,
-      String? pinnedPage,
+      Map<String, dynamic>? pinnedPage,
       bool publicReactions,
       String ffVisibility,
       bool twoFactorEnabled,
@@ -820,9 +820,9 @@ class __$$_IResponseCopyWithImpl<$Res>
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
               as String?,
       pinnedPage: freezed == pinnedPage
-          ? _value.pinnedPage
+          ? _value._pinnedPage
           : pinnedPage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Map<String, dynamic>?,
       publicReactions: null == publicReactions
           ? _value.publicReactions
           : publicReactions // ignore: cast_nullable_to_non_nullable
@@ -998,7 +998,7 @@ class _$_IResponse implements _IResponse {
       required this.notesCount,
       final List<String>? pinnedNoteIds,
       this.pinnedPageId,
-      this.pinnedPage,
+      final Map<String, dynamic>? pinnedPage,
       required this.publicReactions,
       required this.ffVisibility,
       required this.twoFactorEnabled,
@@ -1037,6 +1037,7 @@ class _$_IResponse implements _IResponse {
         _badgeRoles = badgeRoles,
         _fields = fields,
         _pinnedNoteIds = pinnedNoteIds,
+        _pinnedPage = pinnedPage,
         _mutedWords = mutedWords,
         _mutedInstances = mutedInstances,
         _mutingNotificationTypes = mutingNotificationTypes,
@@ -1146,8 +1147,16 @@ class _$_IResponse implements _IResponse {
 
   @override
   final String? pinnedPageId;
+  final Map<String, dynamic>? _pinnedPage;
   @override
-  final String? pinnedPage;
+  Map<String, dynamic>? get pinnedPage {
+    final value = _pinnedPage;
+    if (value == null) return null;
+    if (_pinnedPage is EqualUnmodifiableMapView) return _pinnedPage;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final bool publicReactions;
   @override
@@ -1312,8 +1321,8 @@ class _$_IResponse implements _IResponse {
                 .equals(other._pinnedNoteIds, _pinnedNoteIds) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
-            (identical(other.pinnedPage, pinnedPage) ||
-                other.pinnedPage == pinnedPage) &&
+            const DeepCollectionEquality()
+                .equals(other._pinnedPage, _pinnedPage) &&
             (identical(other.publicReactions, publicReactions) ||
                 other.publicReactions == publicReactions) &&
             (identical(other.ffVisibility, ffVisibility) ||
@@ -1405,7 +1414,7 @@ class _$_IResponse implements _IResponse {
         notesCount,
         const DeepCollectionEquality().hash(_pinnedNoteIds),
         pinnedPageId,
-        pinnedPage,
+        const DeepCollectionEquality().hash(_pinnedPage),
         publicReactions,
         ffVisibility,
         twoFactorEnabled,
@@ -1489,7 +1498,7 @@ abstract class _IResponse implements IResponse {
       required final int notesCount,
       final List<String>? pinnedNoteIds,
       final String? pinnedPageId,
-      final String? pinnedPage,
+      final Map<String, dynamic>? pinnedPage,
       required final bool publicReactions,
       required final String ffVisibility,
       required final bool twoFactorEnabled,
@@ -1599,7 +1608,7 @@ abstract class _IResponse implements IResponse {
   @override
   String? get pinnedPageId;
   @override
-  String? get pinnedPage;
+  Map<String, dynamic>? get pinnedPage;
   @override
   bool get publicReactions;
   @override

@@ -41,7 +41,7 @@ class IResponse with _$IResponse {
     required int notesCount,
     List<String>? pinnedNoteIds,
     String? pinnedPageId,
-    String? pinnedPage,
+    Map<String, dynamic>? pinnedPage,
     required bool publicReactions,
     required String ffVisibility,
     required bool twoFactorEnabled,
