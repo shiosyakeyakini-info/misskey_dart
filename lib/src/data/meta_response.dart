@@ -38,12 +38,12 @@ class MetaResponse with _$MetaResponse {
     String? turnstileSiteKey,
     String? swPublickey,
     String? themeColor,
-    @UriConverter()
-    required Uri mascotImageUrl,
-    @UriConverter()
-    required Uri bannerUrl,
-    @UriConverter()
-    required Uri errorImageUrl,
+    @NullableUriConverter()
+    Uri? mascotImageUrl,
+    @NullableUriConverter()
+    Uri? bannerUrl,
+    @NullableUriConverter()
+    Uri? errorImageUrl,
     @NullableUriConverter()
     Uri? iconUrl,
     @NullableUriConverter()
@@ -107,7 +107,7 @@ class MetaFeature with _$MetaFeature {
     //required bool localTimeLine,
     //required bool globalTimeLine,
     required bool emailRequiredForSignup,
-    required bool elasticsearch,
+    // required bool elasticsearch,
     required bool hcaptcha,
     required bool recaptcha,
     required bool turnstile,

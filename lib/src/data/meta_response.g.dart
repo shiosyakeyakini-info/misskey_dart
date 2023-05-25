@@ -32,11 +32,12 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       turnstileSiteKey: json['turnstileSiteKey'] as String?,
       swPublickey: json['swPublickey'] as String?,
       themeColor: json['themeColor'] as String?,
-      mascotImageUrl:
-          const UriConverter().fromJson(json['mascotImageUrl'] as String),
-      bannerUrl: const UriConverter().fromJson(json['bannerUrl'] as String),
-      errorImageUrl:
-          const UriConverter().fromJson(json['errorImageUrl'] as String),
+      mascotImageUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['mascotImageUrl'], const NullableUriConverter().fromJson),
+      bannerUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['bannerUrl'], const NullableUriConverter().fromJson),
+      errorImageUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['errorImageUrl'], const NullableUriConverter().fromJson),
       iconUrl: _$JsonConverterFromJson<String, Uri?>(
           json['iconUrl'], const NullableUriConverter().fromJson),
       backgroundImageUrl: _$JsonConverterFromJson<String, Uri?>(
@@ -81,9 +82,11 @@ Map<String, dynamic> _$$_MetaResponseToJson(_$_MetaResponse instance) =>
       'turnstileSiteKey': instance.turnstileSiteKey,
       'swPublickey': instance.swPublickey,
       'themeColor': instance.themeColor,
-      'mascotImageUrl': const UriConverter().toJson(instance.mascotImageUrl),
-      'bannerUrl': const UriConverter().toJson(instance.bannerUrl),
-      'errorImageUrl': const UriConverter().toJson(instance.errorImageUrl),
+      'mascotImageUrl':
+          const NullableUriConverter().toJson(instance.mascotImageUrl),
+      'bannerUrl': const NullableUriConverter().toJson(instance.bannerUrl),
+      'errorImageUrl':
+          const NullableUriConverter().toJson(instance.errorImageUrl),
       'iconUrl': const NullableUriConverter().toJson(instance.iconUrl),
       'backgroundImageUrl':
           const NullableUriConverter().toJson(instance.backgroundImageUrl),
@@ -127,7 +130,6 @@ _$_MetaFeature _$$_MetaFeatureFromJson(Map<String, dynamic> json) =>
     _$_MetaFeature(
       registration: json['registration'] as bool,
       emailRequiredForSignup: json['emailRequiredForSignup'] as bool,
-      elasticsearch: json['elasticsearch'] as bool,
       hcaptcha: json['hcaptcha'] as bool,
       recaptcha: json['recaptcha'] as bool,
       turnstile: json['turnstile'] as bool,
@@ -140,7 +142,6 @@ Map<String, dynamic> _$$_MetaFeatureToJson(_$_MetaFeature instance) =>
     <String, dynamic>{
       'registration': instance.registration,
       'emailRequiredForSignup': instance.emailRequiredForSignup,
-      'elasticsearch': instance.elasticsearch,
       'hcaptcha': instance.hcaptcha,
       'recaptcha': instance.recaptcha,
       'turnstile': instance.turnstile,
