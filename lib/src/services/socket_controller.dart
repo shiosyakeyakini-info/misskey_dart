@@ -54,9 +54,14 @@ class SocketController {
     await socketChannel.ready;
 
     _socketChannel = socketChannel;
-    final channelRequest = ChannelRequest(
-        type: ChannelDataType.connect,
-        body: ChannelRequestBody(channel: channel, id: id, params: parameters));
+    final channelRequest = StreamingRequest(
+      type: StreamingRequestType.connect,
+      body: StreamingRequestBody(
+        channel: channel,
+        id: id,
+        params: parameters,
+      ),
+    );
 
     final requestJson = jsonEncode(channelRequest);
     print("send: $requestJson");
@@ -108,9 +113,10 @@ class SocketController {
   }
 
   Future<void> disconnect() async {
-    final request = jsonEncode(ChannelRequest(
-        type: ChannelDataType.disconnect,
-        body: ChannelRequestBody(id: id, params: {})));
+    final request = jsonEncode(StreamingRequest(
+      type: StreamingRequestType.disconnect,
+      body: StreamingRequestBody(id: id, params: {}),
+    ));
     print("send: $request");
     _socketChannel?.sink.add(request);
     _socketChannel?.sink.close();
@@ -123,9 +129,11 @@ class SocketController {
     await startStreaming();
   }
 
-  Future<void> send(ChannelDataType dataType, String id) async {
-    final request = jsonEncode(ChannelRequest(
-        type: dataType, body: ChannelRequestBody(id: id, params: {})));
+  Future<void> send(StreamingRequestType requestType, String id) async {
+    final request = jsonEncode(StreamingRequest(
+      type: requestType,
+      body: StreamingRequestBody(id: id, params: {}),
+    ));
     print("send[$id]: $request}");
     _socketChannel?.sink.add(request);
   }

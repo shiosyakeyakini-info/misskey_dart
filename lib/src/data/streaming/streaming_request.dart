@@ -6,24 +6,24 @@ part 'streaming_request.freezed.dart';
 part 'streaming_request.g.dart';
 
 @freezed
-class ChannelRequest with _$ChannelRequest {
-  const factory ChannelRequest({
-    @ChannelDataTypeJsonConverter() required ChannelDataType type,
-    required ChannelRequestBody body,
-  }) = _ChannelRequest;
+class StreamingRequest with _$StreamingRequest {
+  const factory StreamingRequest({
+    @StreamingRequestTypeJsonConverter() required StreamingRequestType type,
+    required StreamingRequestBody body,
+  }) = _StreamingRequest;
 
-  factory ChannelRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelRequestFromJson(json);
+  factory StreamingRequest.fromJson(Map<String, Object?> json) =>
+      _$StreamingRequestFromJson(json);
 }
 
 @freezed
-class ChannelRequestBody with _$ChannelRequestBody {
-  const factory ChannelRequestBody({
+class StreamingRequestBody with _$StreamingRequestBody {
+  const factory StreamingRequestBody({
     Channel? channel,
     required String id,
     required Map<String, dynamic>? params,
-  }) = _ChannelRequestBody;
+  }) = _StreamingRequestBody;
 
-  factory ChannelRequestBody.fromJson(Map<String, Object?> json) =>
-      _$ChannelRequestBodyFromJson(json);
+  factory StreamingRequestBody.fromJson(Map<String, Object?> json) =>
+      _$StreamingRequestBodyFromJson(json);
 }

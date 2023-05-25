@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-enum ChannelDataType {
+enum StreamingRequestType {
   readNotification,
   subNote,
   sn,
@@ -10,17 +10,16 @@ enum ChannelDataType {
   disconnect,
   channel,
   ch,
-  noteUpdated
 }
 
-class ChannelDataTypeJsonConverter
-    extends JsonConverter<ChannelDataType?, String> {
-  const ChannelDataTypeJsonConverter();
+class StreamingRequestTypeJsonConverter
+    extends JsonConverter<StreamingRequestType?, String> {
+  const StreamingRequestTypeJsonConverter();
 
   @override
-  ChannelDataType? fromJson(String json) =>
-      ChannelDataType.values.firstWhere((e) => e.name == json);
+  StreamingRequestType? fromJson(String json) =>
+      StreamingRequestType.values.firstWhere((e) => e.name == json);
 
   @override
-  String toJson(ChannelDataType? object) => object?.name ?? "";
+  String toJson(StreamingRequestType? object) => object?.name ?? "";
 }

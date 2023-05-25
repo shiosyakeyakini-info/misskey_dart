@@ -6,41 +6,40 @@ part of 'streaming_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ChannelRequest _$$_ChannelRequestFromJson(Map<String, dynamic> json) =>
-    _$_ChannelRequest(
-      type: $enumDecode(_$ChannelDataTypeEnumMap, json['type']),
-      body: ChannelRequestBody.fromJson(json['body'] as Map<String, dynamic>),
+_$_StreamingRequest _$$_StreamingRequestFromJson(Map<String, dynamic> json) =>
+    _$_StreamingRequest(
+      type: $enumDecode(_$StreamingRequestTypeEnumMap, json['type']),
+      body: StreamingRequestBody.fromJson(json['body'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ChannelRequestToJson(_$_ChannelRequest instance) =>
+Map<String, dynamic> _$$_StreamingRequestToJson(_$_StreamingRequest instance) =>
     <String, dynamic>{
-      'type': _$ChannelDataTypeEnumMap[instance.type]!,
+      'type': _$StreamingRequestTypeEnumMap[instance.type]!,
       'body': instance.body,
     };
 
-const _$ChannelDataTypeEnumMap = {
-  ChannelDataType.readNotification: 'readNotification',
-  ChannelDataType.subNote: 'subNote',
-  ChannelDataType.sn: 'sn',
-  ChannelDataType.unsubNote: 'unsubNote',
-  ChannelDataType.un: 'un',
-  ChannelDataType.connect: 'connect',
-  ChannelDataType.disconnect: 'disconnect',
-  ChannelDataType.channel: 'channel',
-  ChannelDataType.ch: 'ch',
-  ChannelDataType.noteUpdated: 'noteUpdated',
+const _$StreamingRequestTypeEnumMap = {
+  StreamingRequestType.readNotification: 'readNotification',
+  StreamingRequestType.subNote: 'subNote',
+  StreamingRequestType.sn: 'sn',
+  StreamingRequestType.unsubNote: 'unsubNote',
+  StreamingRequestType.un: 'un',
+  StreamingRequestType.connect: 'connect',
+  StreamingRequestType.disconnect: 'disconnect',
+  StreamingRequestType.channel: 'channel',
+  StreamingRequestType.ch: 'ch',
 };
 
-_$_ChannelRequestBody _$$_ChannelRequestBodyFromJson(
+_$_StreamingRequestBody _$$_StreamingRequestBodyFromJson(
         Map<String, dynamic> json) =>
-    _$_ChannelRequestBody(
+    _$_StreamingRequestBody(
       channel: $enumDecodeNullable(_$ChannelEnumMap, json['channel']),
       id: json['id'] as String,
       params: json['params'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$_ChannelRequestBodyToJson(
-        _$_ChannelRequestBody instance) =>
+Map<String, dynamic> _$$_StreamingRequestBodyToJson(
+        _$_StreamingRequestBody instance) =>
     <String, dynamic>{
       'channel': _$ChannelEnumMap[instance.channel],
       'id': instance.id,

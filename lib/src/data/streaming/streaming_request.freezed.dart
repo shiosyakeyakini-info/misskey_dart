@@ -14,39 +14,39 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ChannelRequest _$ChannelRequestFromJson(Map<String, dynamic> json) {
-  return _ChannelRequest.fromJson(json);
+StreamingRequest _$StreamingRequestFromJson(Map<String, dynamic> json) {
+  return _StreamingRequest.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ChannelRequest {
-  @ChannelDataTypeJsonConverter()
-  ChannelDataType get type => throw _privateConstructorUsedError;
-  ChannelRequestBody get body => throw _privateConstructorUsedError;
+mixin _$StreamingRequest {
+  @StreamingRequestTypeJsonConverter()
+  StreamingRequestType get type => throw _privateConstructorUsedError;
+  StreamingRequestBody get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ChannelRequestCopyWith<ChannelRequest> get copyWith =>
+  $StreamingRequestCopyWith<StreamingRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChannelRequestCopyWith<$Res> {
-  factory $ChannelRequestCopyWith(
-          ChannelRequest value, $Res Function(ChannelRequest) then) =
-      _$ChannelRequestCopyWithImpl<$Res, ChannelRequest>;
+abstract class $StreamingRequestCopyWith<$Res> {
+  factory $StreamingRequestCopyWith(
+          StreamingRequest value, $Res Function(StreamingRequest) then) =
+      _$StreamingRequestCopyWithImpl<$Res, StreamingRequest>;
   @useResult
   $Res call(
-      {@ChannelDataTypeJsonConverter() ChannelDataType type,
-      ChannelRequestBody body});
+      {@StreamingRequestTypeJsonConverter() StreamingRequestType type,
+      StreamingRequestBody body});
 
-  $ChannelRequestBodyCopyWith<$Res> get body;
+  $StreamingRequestBodyCopyWith<$Res> get body;
 }
 
 /// @nodoc
-class _$ChannelRequestCopyWithImpl<$Res, $Val extends ChannelRequest>
-    implements $ChannelRequestCopyWith<$Res> {
-  _$ChannelRequestCopyWithImpl(this._value, this._then);
+class _$StreamingRequestCopyWithImpl<$Res, $Val extends StreamingRequest>
+    implements $StreamingRequestCopyWith<$Res> {
+  _$StreamingRequestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,45 +63,45 @@ class _$ChannelRequestCopyWithImpl<$Res, $Val extends ChannelRequest>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as ChannelDataType,
+              as StreamingRequestType,
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as ChannelRequestBody,
+              as StreamingRequestBody,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ChannelRequestBodyCopyWith<$Res> get body {
-    return $ChannelRequestBodyCopyWith<$Res>(_value.body, (value) {
+  $StreamingRequestBodyCopyWith<$Res> get body {
+    return $StreamingRequestBodyCopyWith<$Res>(_value.body, (value) {
       return _then(_value.copyWith(body: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_ChannelRequestCopyWith<$Res>
-    implements $ChannelRequestCopyWith<$Res> {
-  factory _$$_ChannelRequestCopyWith(
-          _$_ChannelRequest value, $Res Function(_$_ChannelRequest) then) =
-      __$$_ChannelRequestCopyWithImpl<$Res>;
+abstract class _$$_StreamingRequestCopyWith<$Res>
+    implements $StreamingRequestCopyWith<$Res> {
+  factory _$$_StreamingRequestCopyWith(
+          _$_StreamingRequest value, $Res Function(_$_StreamingRequest) then) =
+      __$$_StreamingRequestCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@ChannelDataTypeJsonConverter() ChannelDataType type,
-      ChannelRequestBody body});
+      {@StreamingRequestTypeJsonConverter() StreamingRequestType type,
+      StreamingRequestBody body});
 
   @override
-  $ChannelRequestBodyCopyWith<$Res> get body;
+  $StreamingRequestBodyCopyWith<$Res> get body;
 }
 
 /// @nodoc
-class __$$_ChannelRequestCopyWithImpl<$Res>
-    extends _$ChannelRequestCopyWithImpl<$Res, _$_ChannelRequest>
-    implements _$$_ChannelRequestCopyWith<$Res> {
-  __$$_ChannelRequestCopyWithImpl(
-      _$_ChannelRequest _value, $Res Function(_$_ChannelRequest) _then)
+class __$$_StreamingRequestCopyWithImpl<$Res>
+    extends _$StreamingRequestCopyWithImpl<$Res, _$_StreamingRequest>
+    implements _$$_StreamingRequestCopyWith<$Res> {
+  __$$_StreamingRequestCopyWithImpl(
+      _$_StreamingRequest _value, $Res Function(_$_StreamingRequest) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,44 +110,45 @@ class __$$_ChannelRequestCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$_ChannelRequest(
+    return _then(_$_StreamingRequest(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as ChannelDataType,
+              as StreamingRequestType,
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as ChannelRequestBody,
+              as StreamingRequestBody,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelRequest implements _ChannelRequest {
-  const _$_ChannelRequest(
-      {@ChannelDataTypeJsonConverter() required this.type, required this.body});
+class _$_StreamingRequest implements _StreamingRequest {
+  const _$_StreamingRequest(
+      {@StreamingRequestTypeJsonConverter() required this.type,
+      required this.body});
 
-  factory _$_ChannelRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelRequestFromJson(json);
+  factory _$_StreamingRequest.fromJson(Map<String, dynamic> json) =>
+      _$$_StreamingRequestFromJson(json);
 
   @override
-  @ChannelDataTypeJsonConverter()
-  final ChannelDataType type;
+  @StreamingRequestTypeJsonConverter()
+  final StreamingRequestType type;
   @override
-  final ChannelRequestBody body;
+  final StreamingRequestBody body;
 
   @override
   String toString() {
-    return 'ChannelRequest(type: $type, body: $body)';
+    return 'StreamingRequest(type: $type, body: $body)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelRequest &&
+            other is _$_StreamingRequest &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.body, body) || other.body == body));
   }
@@ -159,65 +160,67 @@ class _$_ChannelRequest implements _ChannelRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelRequestCopyWith<_$_ChannelRequest> get copyWith =>
-      __$$_ChannelRequestCopyWithImpl<_$_ChannelRequest>(this, _$identity);
+  _$$_StreamingRequestCopyWith<_$_StreamingRequest> get copyWith =>
+      __$$_StreamingRequestCopyWithImpl<_$_StreamingRequest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelRequestToJson(
+    return _$$_StreamingRequestToJson(
       this,
     );
   }
 }
 
-abstract class _ChannelRequest implements ChannelRequest {
-  const factory _ChannelRequest(
-      {@ChannelDataTypeJsonConverter() required final ChannelDataType type,
-      required final ChannelRequestBody body}) = _$_ChannelRequest;
+abstract class _StreamingRequest implements StreamingRequest {
+  const factory _StreamingRequest(
+      {@StreamingRequestTypeJsonConverter()
+          required final StreamingRequestType type,
+      required final StreamingRequestBody body}) = _$_StreamingRequest;
 
-  factory _ChannelRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelRequest.fromJson;
+  factory _StreamingRequest.fromJson(Map<String, dynamic> json) =
+      _$_StreamingRequest.fromJson;
 
   @override
-  @ChannelDataTypeJsonConverter()
-  ChannelDataType get type;
+  @StreamingRequestTypeJsonConverter()
+  StreamingRequestType get type;
   @override
-  ChannelRequestBody get body;
+  StreamingRequestBody get body;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelRequestCopyWith<_$_ChannelRequest> get copyWith =>
+  _$$_StreamingRequestCopyWith<_$_StreamingRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ChannelRequestBody _$ChannelRequestBodyFromJson(Map<String, dynamic> json) {
-  return _ChannelRequestBody.fromJson(json);
+StreamingRequestBody _$StreamingRequestBodyFromJson(Map<String, dynamic> json) {
+  return _StreamingRequestBody.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ChannelRequestBody {
+mixin _$StreamingRequestBody {
   Channel? get channel => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   Map<String, dynamic>? get params => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ChannelRequestBodyCopyWith<ChannelRequestBody> get copyWith =>
+  $StreamingRequestBodyCopyWith<StreamingRequestBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChannelRequestBodyCopyWith<$Res> {
-  factory $ChannelRequestBodyCopyWith(
-          ChannelRequestBody value, $Res Function(ChannelRequestBody) then) =
-      _$ChannelRequestBodyCopyWithImpl<$Res, ChannelRequestBody>;
+abstract class $StreamingRequestBodyCopyWith<$Res> {
+  factory $StreamingRequestBodyCopyWith(StreamingRequestBody value,
+          $Res Function(StreamingRequestBody) then) =
+      _$StreamingRequestBodyCopyWithImpl<$Res, StreamingRequestBody>;
   @useResult
   $Res call({Channel? channel, String id, Map<String, dynamic>? params});
 }
 
 /// @nodoc
-class _$ChannelRequestBodyCopyWithImpl<$Res, $Val extends ChannelRequestBody>
-    implements $ChannelRequestBodyCopyWith<$Res> {
-  _$ChannelRequestBodyCopyWithImpl(this._value, this._then);
+class _$StreamingRequestBodyCopyWithImpl<$Res,
+        $Val extends StreamingRequestBody>
+    implements $StreamingRequestBodyCopyWith<$Res> {
+  _$StreamingRequestBodyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -249,22 +252,22 @@ class _$ChannelRequestBodyCopyWithImpl<$Res, $Val extends ChannelRequestBody>
 }
 
 /// @nodoc
-abstract class _$$_ChannelRequestBodyCopyWith<$Res>
-    implements $ChannelRequestBodyCopyWith<$Res> {
-  factory _$$_ChannelRequestBodyCopyWith(_$_ChannelRequestBody value,
-          $Res Function(_$_ChannelRequestBody) then) =
-      __$$_ChannelRequestBodyCopyWithImpl<$Res>;
+abstract class _$$_StreamingRequestBodyCopyWith<$Res>
+    implements $StreamingRequestBodyCopyWith<$Res> {
+  factory _$$_StreamingRequestBodyCopyWith(_$_StreamingRequestBody value,
+          $Res Function(_$_StreamingRequestBody) then) =
+      __$$_StreamingRequestBodyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Channel? channel, String id, Map<String, dynamic>? params});
 }
 
 /// @nodoc
-class __$$_ChannelRequestBodyCopyWithImpl<$Res>
-    extends _$ChannelRequestBodyCopyWithImpl<$Res, _$_ChannelRequestBody>
-    implements _$$_ChannelRequestBodyCopyWith<$Res> {
-  __$$_ChannelRequestBodyCopyWithImpl(
-      _$_ChannelRequestBody _value, $Res Function(_$_ChannelRequestBody) _then)
+class __$$_StreamingRequestBodyCopyWithImpl<$Res>
+    extends _$StreamingRequestBodyCopyWithImpl<$Res, _$_StreamingRequestBody>
+    implements _$$_StreamingRequestBodyCopyWith<$Res> {
+  __$$_StreamingRequestBodyCopyWithImpl(_$_StreamingRequestBody _value,
+      $Res Function(_$_StreamingRequestBody) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -274,7 +277,7 @@ class __$$_ChannelRequestBodyCopyWithImpl<$Res>
     Object? id = null,
     Object? params = freezed,
   }) {
-    return _then(_$_ChannelRequestBody(
+    return _then(_$_StreamingRequestBody(
       channel: freezed == channel
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
@@ -293,15 +296,15 @@ class __$$_ChannelRequestBodyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelRequestBody implements _ChannelRequestBody {
-  const _$_ChannelRequestBody(
+class _$_StreamingRequestBody implements _StreamingRequestBody {
+  const _$_StreamingRequestBody(
       {this.channel,
       required this.id,
       required final Map<String, dynamic>? params})
       : _params = params;
 
-  factory _$_ChannelRequestBody.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelRequestBodyFromJson(json);
+  factory _$_StreamingRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$$_StreamingRequestBodyFromJson(json);
 
   @override
   final Channel? channel;
@@ -319,14 +322,14 @@ class _$_ChannelRequestBody implements _ChannelRequestBody {
 
   @override
   String toString() {
-    return 'ChannelRequestBody(channel: $channel, id: $id, params: $params)';
+    return 'StreamingRequestBody(channel: $channel, id: $id, params: $params)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelRequestBody &&
+            other is _$_StreamingRequestBody &&
             (identical(other.channel, channel) || other.channel == channel) &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._params, _params));
@@ -340,26 +343,26 @@ class _$_ChannelRequestBody implements _ChannelRequestBody {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelRequestBodyCopyWith<_$_ChannelRequestBody> get copyWith =>
-      __$$_ChannelRequestBodyCopyWithImpl<_$_ChannelRequestBody>(
+  _$$_StreamingRequestBodyCopyWith<_$_StreamingRequestBody> get copyWith =>
+      __$$_StreamingRequestBodyCopyWithImpl<_$_StreamingRequestBody>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelRequestBodyToJson(
+    return _$$_StreamingRequestBodyToJson(
       this,
     );
   }
 }
 
-abstract class _ChannelRequestBody implements ChannelRequestBody {
-  const factory _ChannelRequestBody(
+abstract class _StreamingRequestBody implements StreamingRequestBody {
+  const factory _StreamingRequestBody(
       {final Channel? channel,
       required final String id,
-      required final Map<String, dynamic>? params}) = _$_ChannelRequestBody;
+      required final Map<String, dynamic>? params}) = _$_StreamingRequestBody;
 
-  factory _ChannelRequestBody.fromJson(Map<String, dynamic> json) =
-      _$_ChannelRequestBody.fromJson;
+  factory _StreamingRequestBody.fromJson(Map<String, dynamic> json) =
+      _$_StreamingRequestBody.fromJson;
 
   @override
   Channel? get channel;
@@ -369,6 +372,6 @@ abstract class _ChannelRequestBody implements ChannelRequestBody {
   Map<String, dynamic>? get params;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelRequestBodyCopyWith<_$_ChannelRequestBody> get copyWith =>
+  _$$_StreamingRequestBodyCopyWith<_$_StreamingRequestBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
