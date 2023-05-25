@@ -7,7 +7,7 @@ export 'src/misskey_dart_base.dart';
 export 'src/enums/notification_type.dart';
 export 'src/enums/note_visibility.dart';
 export 'src/enums/permissions.dart';
-export 'src/enums/channel_data_type.dart';
+export 'src/enums/streaming_request_type.dart';
 export 'src/data/antennas/antennas_create_request.dart';
 export 'src/data/antennas/antennas_delete_request.dart';
 export 'src/data/antennas/antennas_notes_request.dart';

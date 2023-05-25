@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:misskey_dart/src/data/streaming/channel_request.dart';
-import 'package:misskey_dart/src/data/streaming/channel_response.dart';
+import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
+import 'package:misskey_dart/src/data/streaming/streaming_response.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_data_type.dart';
-import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/enums/streaming_request_type.dart';
+import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 

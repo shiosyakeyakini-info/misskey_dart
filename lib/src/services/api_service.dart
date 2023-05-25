@@ -4,7 +4,7 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
 
 class ApiService {

@@ -8,7 +8,7 @@ import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/misskey_antennas.dart';
 import 'package:misskey_dart/src/misskey_blocking.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';

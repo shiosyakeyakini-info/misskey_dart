@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'channel_response.dart';
+part of 'streaming_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
