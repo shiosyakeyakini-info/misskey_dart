@@ -9,7 +9,7 @@ class ChannelEvent with _$ChannelEvent {
   const factory ChannelEvent({
     required String id,
     @ChannelEventTypeJsonConverter() required ChannelEventType type,
-    required Map<String, dynamic>? body,
+    required dynamic body,
   }) = _ChannelEvent;
 
   factory ChannelEvent.fromJson(Map<String, Object?> json) =>

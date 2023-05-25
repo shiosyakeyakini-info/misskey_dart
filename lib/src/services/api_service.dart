@@ -65,7 +65,7 @@ class ApiService {
     required FutureOr<void> Function(
       String id,
       ChannelEventType type,
-      Map<String, dynamic>? response,
+      dynamic response,
     ) onEventReceived,
     FutureOr<void> Function(
       String id,

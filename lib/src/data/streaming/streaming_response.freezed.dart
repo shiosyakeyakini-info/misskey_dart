@@ -22,7 +22,7 @@ StreamingResponse _$StreamingResponseFromJson(Map<String, dynamic> json) {
 mixin _$StreamingResponse {
   @StreamingResponseTypeJsonConverter()
   StreamingResponseType get type => throw _privateConstructorUsedError;
-  Map<String, Object> get body => throw _privateConstructorUsedError;
+  Map<String, dynamic> get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $StreamingResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {@StreamingResponseTypeJsonConverter() StreamingResponseType type,
-      Map<String, Object> body});
+      Map<String, dynamic> body});
 }
 
 /// @nodoc
@@ -65,7 +65,7 @@ class _$StreamingResponseCopyWithImpl<$Res, $Val extends StreamingResponse>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, Object>,
+              as Map<String, dynamic>,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$_StreamingResponseCopyWith<$Res>
   @useResult
   $Res call(
       {@StreamingResponseTypeJsonConverter() StreamingResponseType type,
-      Map<String, Object> body});
+      Map<String, dynamic> body});
 }
 
 /// @nodoc
@@ -105,7 +105,7 @@ class __$$_StreamingResponseCopyWithImpl<$Res>
       body: null == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, Object>,
+              as Map<String, dynamic>,
     ));
   }
 }
@@ -115,7 +115,7 @@ class __$$_StreamingResponseCopyWithImpl<$Res>
 class _$_StreamingResponse implements _StreamingResponse {
   const _$_StreamingResponse(
       {@StreamingResponseTypeJsonConverter() required this.type,
-      required final Map<String, Object> body})
+      required final Map<String, dynamic> body})
       : _body = body;
 
   factory _$_StreamingResponse.fromJson(Map<String, dynamic> json) =>
@@ -124,9 +124,9 @@ class _$_StreamingResponse implements _StreamingResponse {
   @override
   @StreamingResponseTypeJsonConverter()
   final StreamingResponseType type;
-  final Map<String, Object> _body;
+  final Map<String, dynamic> _body;
   @override
-  Map<String, Object> get body {
+  Map<String, dynamic> get body {
     if (_body is EqualUnmodifiableMapView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_body);
@@ -170,7 +170,7 @@ abstract class _StreamingResponse implements StreamingResponse {
   const factory _StreamingResponse(
       {@StreamingResponseTypeJsonConverter()
           required final StreamingResponseType type,
-      required final Map<String, Object> body}) = _$_StreamingResponse;
+      required final Map<String, dynamic> body}) = _$_StreamingResponse;
 
   factory _StreamingResponse.fromJson(Map<String, dynamic> json) =
       _$_StreamingResponse.fromJson;
@@ -179,7 +179,7 @@ abstract class _StreamingResponse implements StreamingResponse {
   @StreamingResponseTypeJsonConverter()
   StreamingResponseType get type;
   @override
-  Map<String, Object> get body;
+  Map<String, dynamic> get body;
   @override
   @JsonKey(ignore: true)
   _$$_StreamingResponseCopyWith<_$_StreamingResponse> get copyWith =>

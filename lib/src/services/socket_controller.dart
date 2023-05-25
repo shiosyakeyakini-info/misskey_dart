@@ -21,7 +21,7 @@ class SocketController {
   final FutureOr<void> Function(
     String id,
     ChannelEventType type,
-    Map<String, dynamic>? response,
+    dynamic response,
   ) onEventReceived;
   final FutureOr<void> Function(
     String id,

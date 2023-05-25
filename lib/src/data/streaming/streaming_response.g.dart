@@ -9,9 +9,7 @@ part of 'streaming_response.dart';
 _$_StreamingResponse _$$_StreamingResponseFromJson(Map<String, dynamic> json) =>
     _$_StreamingResponse(
       type: $enumDecode(_$StreamingResponseTypeEnumMap, json['type']),
-      body: (json['body'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, e as Object),
-      ),
+      body: json['body'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$$_StreamingResponseToJson(

@@ -8,7 +8,7 @@ part 'streaming_response.g.dart';
 class StreamingResponse with _$StreamingResponse {
   const factory StreamingResponse({
     @StreamingResponseTypeJsonConverter() required StreamingResponseType type,
-    required Map<String, Object> body,
+    required Map<String, dynamic> body,
   }) = _StreamingResponse;
 
   factory StreamingResponse.fromJson(Map<String, Object?> json) =>

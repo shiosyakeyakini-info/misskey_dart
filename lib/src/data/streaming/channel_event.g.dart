@@ -10,7 +10,7 @@ _$_ChannelEvent _$$_ChannelEventFromJson(Map<String, dynamic> json) =>
     _$_ChannelEvent(
       id: json['id'] as String,
       type: $enumDecode(_$ChannelEventTypeEnumMap, json['type']),
-      body: json['body'] as Map<String, dynamic>?,
+      body: json['body'],
     );
 
 Map<String, dynamic> _$$_ChannelEventToJson(_$_ChannelEvent instance) =>

@@ -5,6 +5,7 @@ import 'package:misskey_dart/src/data/announcements_response.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
+import 'package:misskey_dart/src/data/i/i_notifications_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
@@ -357,87 +358,94 @@ class Misskey {
 
   /// メインのストリームに接続します。
   SocketController mainStream({
-    FutureOr<void> Function()? onEmojiAdded,
-    FutureOr<void> Function()? onEmojiUpdated,
-    FutureOr<void> Function()? onEmojiDeleted,
-    FutureOr<void> Function()? onNotification,
-    FutureOr<void> Function()? onMention,
-    FutureOr<void> Function()? onReply,
-    FutureOr<void> Function()? onRenote,
-    FutureOr<void> Function()? onFollow,
-    FutureOr<void> Function()? onFollowed,
-    FutureOr<void> Function()? onUnfollow,
-    FutureOr<void> Function()? onMeUpdated,
+    FutureOr<void> Function(Emoji emoji)? onEmojiAdded,
+    FutureOr<void> Function(Iterable<Emoji> emojis)? onEmojiUpdated,
+    FutureOr<void> Function(Iterable<Emoji> emojis)? onEmojiDeleted,
+    FutureOr<void> Function(INotificationsResponse notification)?
+        onNotification,
+    FutureOr<void> Function(Note note)? onMention,
+    FutureOr<void> Function(Note note)? onReply,
+    FutureOr<void> Function(Note note)? onRenote,
+    FutureOr<void> Function(User user)? onFollow,
+    FutureOr<void> Function(User user)? onFollowed,
+    FutureOr<void> Function(User user)? onUnfollow,
+    FutureOr<void> Function(User user)? onMeUpdated,
     FutureOr<void> Function()? onReadAllNotifications,
-    FutureOr<void> Function()? onUnreadNotification,
-    FutureOr<void> Function()? onUnreadMention,
+    FutureOr<void> Function(INotificationsResponse notification)?
+        onUnreadNotification,
+    FutureOr<void> Function(String noteId)? onUnreadMention,
     FutureOr<void> Function()? onReadAllUnreadMentions,
-    FutureOr<void> Function()? onUnreadSpecifiedNote,
+    FutureOr<void> Function(String noteId)? onUnreadSpecifiedNote,
     FutureOr<void> Function()? onReadAllUnreadSpecifiedNotes,
-    FutureOr<void> Function()? onReceiveFollowRequest,
+    FutureOr<void> Function(User user)? onReceiveFollowRequest,
   }) =>
       apiService.createSocket(
-          channel: Channel.main,
-          onEventReceived: (id, type, response) async {
-            print(response);
-            switch (type) {
-              case ChannelEventType.notification:
-                await onNotification?.call();
-                break;
-              case ChannelEventType.mention:
-                await onMention?.call();
-                break;
-              case ChannelEventType.reply:
-                await onReply?.call();
-                break;
-              case ChannelEventType.renote:
-                await onRenote?.call();
-                break;
-              case ChannelEventType.follow:
-                await onFollow?.call();
-                break;
-              case ChannelEventType.followed:
-                await onFollowed?.call();
-                break;
-              case ChannelEventType.meUpdated:
-                await onMeUpdated?.call();
-                break;
-              case ChannelEventType.readAllNotifications:
-                await onReadAllNotifications?.call();
-                break;
-              case ChannelEventType.unreadNotification:
-                await onUnreadNotification?.call();
-                break;
-              case ChannelEventType.unreadMention:
-                await onUnreadMention?.call();
-                break;
-              case ChannelEventType.readAllUnreadMentions:
-                await onReadAllUnreadMentions?.call();
-                break;
-              case ChannelEventType.unreadSpecifiedNote:
-                await onUnreadSpecifiedNote?.call();
-                break;
-              case ChannelEventType.readAllUnreadSpecifiedNotes:
-                await onReadAllUnreadSpecifiedNotes?.call();
-                break;
-              case ChannelEventType.receiveFollowRequest:
-                await onReceiveFollowRequest?.call();
-                break;
-              default:
-                break;
-            }
-          },
-          onBroadcastEventReceived: (type, response) async {
-            switch (type) {
-              case BroadcastEventType.emojiAdded:
-                await onEmojiAdded?.call();
-                break;
-              case BroadcastEventType.emojiUpdated:
-                await onEmojiUpdated?.call();
-                break;
-              case BroadcastEventType.emojiDeleted:
-                await onEmojiDeleted?.call();
-                break;
-            }
-          });
+        channel: Channel.main,
+        onEventReceived: (id, type, response) async {
+          print(response);
+          switch (type) {
+            case ChannelEventType.notification:
+              await onNotification
+                  ?.call(INotificationsResponse.fromJson(response));
+              break;
+            case ChannelEventType.mention:
+              await onMention?.call(Note.fromJson(response));
+              break;
+            case ChannelEventType.reply:
+              await onReply?.call(Note.fromJson(response));
+              break;
+            case ChannelEventType.renote:
+              await onRenote?.call(Note.fromJson(response));
+              break;
+            case ChannelEventType.follow:
+              await onFollow?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.followed:
+              await onFollowed?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.meUpdated:
+              await onMeUpdated?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.readAllNotifications:
+              await onReadAllNotifications?.call();
+              break;
+            case ChannelEventType.unreadNotification:
+              await onUnreadNotification
+                  ?.call(INotificationsResponse.fromJson(response));
+              break;
+            case ChannelEventType.unreadMention:
+              await onUnreadMention?.call(response);
+              break;
+            case ChannelEventType.readAllUnreadMentions:
+              await onReadAllUnreadMentions?.call();
+              break;
+            case ChannelEventType.unreadSpecifiedNote:
+              await onUnreadSpecifiedNote?.call(response);
+              break;
+            case ChannelEventType.readAllUnreadSpecifiedNotes:
+              await onReadAllUnreadSpecifiedNotes?.call();
+              break;
+            case ChannelEventType.receiveFollowRequest:
+              await onReceiveFollowRequest?.call(User.fromJson(response));
+              break;
+            default:
+              break;
+          }
+        },
+        onBroadcastEventReceived: (type, response) async {
+          switch (type) {
+            case BroadcastEventType.emojiAdded:
+              await onEmojiAdded?.call(Emoji.fromJson(response["emoji"]));
+              break;
+            case BroadcastEventType.emojiUpdated:
+              final emojis = response["emojis"] as List;
+              await onEmojiUpdated?.call(emojis.map((e) => Emoji.fromJson(e)));
+              break;
+            case BroadcastEventType.emojiDeleted:
+              final emojis = response["emojis"] as List;
+              await onEmojiDeleted?.call(emojis.map((e) => Emoji.fromJson(e)));
+              break;
+          }
+        },
+      );
 }

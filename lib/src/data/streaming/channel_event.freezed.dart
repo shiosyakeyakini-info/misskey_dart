@@ -23,7 +23,7 @@ mixin _$ChannelEvent {
   String get id => throw _privateConstructorUsedError;
   @ChannelEventTypeJsonConverter()
   ChannelEventType get type => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
+  dynamic get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,7 +40,7 @@ abstract class $ChannelEventCopyWith<$Res> {
   $Res call(
       {String id,
       @ChannelEventTypeJsonConverter() ChannelEventType type,
-      Map<String, dynamic>? body});
+      dynamic body});
 }
 
 /// @nodoc
@@ -72,7 +72,7 @@ class _$ChannelEventCopyWithImpl<$Res, $Val extends ChannelEvent>
       body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -88,7 +88,7 @@ abstract class _$$_ChannelEventCopyWith<$Res>
   $Res call(
       {String id,
       @ChannelEventTypeJsonConverter() ChannelEventType type,
-      Map<String, dynamic>? body});
+      dynamic body});
 }
 
 /// @nodoc
@@ -116,9 +116,9 @@ class __$$_ChannelEventCopyWithImpl<$Res>
           : type // ignore: cast_nullable_to_non_nullable
               as ChannelEventType,
       body: freezed == body
-          ? _value._body
+          ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as dynamic,
     ));
   }
 }
@@ -129,8 +129,7 @@ class _$_ChannelEvent implements _ChannelEvent {
   const _$_ChannelEvent(
       {required this.id,
       @ChannelEventTypeJsonConverter() required this.type,
-      required final Map<String, dynamic>? body})
-      : _body = body;
+      required this.body});
 
   factory _$_ChannelEvent.fromJson(Map<String, dynamic> json) =>
       _$$_ChannelEventFromJson(json);
@@ -140,15 +139,8 @@ class _$_ChannelEvent implements _ChannelEvent {
   @override
   @ChannelEventTypeJsonConverter()
   final ChannelEventType type;
-  final Map<String, dynamic>? _body;
   @override
-  Map<String, dynamic>? get body {
-    final value = _body;
-    if (value == null) return null;
-    if (_body is EqualUnmodifiableMapView) return _body;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final dynamic body;
 
   @override
   String toString() {
@@ -162,13 +154,13 @@ class _$_ChannelEvent implements _ChannelEvent {
             other is _$_ChannelEvent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other._body, _body));
+            const DeepCollectionEquality().equals(other.body, body));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, type, const DeepCollectionEquality().hash(_body));
+      runtimeType, id, type, const DeepCollectionEquality().hash(body));
 
   @JsonKey(ignore: true)
   @override
@@ -188,7 +180,7 @@ abstract class _ChannelEvent implements ChannelEvent {
   const factory _ChannelEvent(
       {required final String id,
       @ChannelEventTypeJsonConverter() required final ChannelEventType type,
-      required final Map<String, dynamic>? body}) = _$_ChannelEvent;
+      required final dynamic body}) = _$_ChannelEvent;
 
   factory _ChannelEvent.fromJson(Map<String, dynamic> json) =
       _$_ChannelEvent.fromJson;
@@ -199,7 +191,7 @@ abstract class _ChannelEvent implements ChannelEvent {
   @ChannelEventTypeJsonConverter()
   ChannelEventType get type;
   @override
-  Map<String, dynamic>? get body;
+  dynamic get body;
   @override
   @JsonKey(ignore: true)
   _$$_ChannelEventCopyWith<_$_ChannelEvent> get copyWith =>
