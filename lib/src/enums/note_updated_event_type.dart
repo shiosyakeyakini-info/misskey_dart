@@ -2,6 +2,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum NoteUpdatedEventType {
   reacted,
+  unreacted,
+  deleted,
+  pollVoted,
 }
 
 class NoteUpdatedEventTypeJsonConverter

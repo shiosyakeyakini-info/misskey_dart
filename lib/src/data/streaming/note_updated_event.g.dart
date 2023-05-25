@@ -22,4 +22,7 @@ Map<String, dynamic> _$$_NoteUpdatedEventToJson(_$_NoteUpdatedEvent instance) =>
 
 const _$NoteUpdatedEventTypeEnumMap = {
   NoteUpdatedEventType.reacted: 'reacted',
+  NoteUpdatedEventType.unreacted: 'unreacted',
+  NoteUpdatedEventType.deleted: 'deleted',
+  NoteUpdatedEventType.pollVoted: 'pollVoted',
 };
