@@ -458,19 +458,19 @@ void main() async {
     });
     group("misc", () {
       test("announcements", () async {
-        userClient.announcements(AnnouncementsRequest());
+        await userClient.announcements(AnnouncementsRequest());
       });
 
       test("endpoints", () async {
-        userClient.endpoints();
+        await userClient.endpoints();
       });
 
       test("emojis", () async {
-        userClient.emojis();
+        await userClient.emojis();
       });
 
       test("meta", () async {
-        userClient.meta();
+        await userClient.meta();
       });
     });
   });
