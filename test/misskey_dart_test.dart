@@ -27,24 +27,26 @@ Misskey getTestClient(String token) {
   );
 }
 
-Future<CreateUserResponse> createUser(Misskey adminClient) async {
-  final response = await adminClient.apiService.post<Map<String, dynamic>>(
-    "admin/accounts/create",
-    {
-      "username": Uuid().v4().replaceAll("-", "").substring(0, 20),
-      "password": "test",
-    },
-  );
-  return CreateUserResponse(
-    client: getTestClient(response["token"]),
-    user: User.fromJson(response),
-  );
-}
+extension on Misskey {
+  Future<CreateUserResponse> createUser() async {
+    final response = await apiService.post<Map<String, dynamic>>(
+      "admin/accounts/create",
+      {
+        "username": Uuid().v4().replaceAll("-", "").substring(0, 20),
+        "password": "test",
+      },
+    );
+    return CreateUserResponse(
+      client: getTestClient(response["token"]),
+      user: User.fromJson(response),
+    );
+  }
 
-Future<Note> createNote(Misskey client) async {
-  final response = await client.apiService
-      .post<Map<String, dynamic>>("notes/create", {"text": "test"});
-  return Note.fromJson(response["createdNote"]);
+  Future<Note> createNote() async {
+    final response = await apiService
+        .post<Map<String, dynamic>>("notes/create", {"text": "test"});
+    return Note.fromJson(response["createdNote"]);
+  }
 }
 
 void main() async {
@@ -57,35 +59,39 @@ void main() async {
   group("API tests", () {
     group("antennas", () {
       test("create", () async {
-        await userClient.antennas.create(AntennasCreateRequest(
-          name: "test",
-          src: AntennaSource.all,
-          keywords: [
-            ["keyword"]
-          ],
-          excludeKeywords: [[]],
-          users: [],
-          caseSensitive: false,
-          withReplies: false,
-          withFile: false,
-          notify: false,
-        ));
+        await userClient.antennas.create(
+          AntennasCreateRequest(
+            name: "test",
+            src: AntennaSource.all,
+            keywords: [
+              ["keyword"]
+            ],
+            excludeKeywords: [[]],
+            users: [],
+            caseSensitive: false,
+            withReplies: false,
+            withFile: false,
+            notify: false,
+          ),
+        );
       });
 
       test("delete", () async {
-        final antenna = await userClient.antennas.create(AntennasCreateRequest(
-          name: "test",
-          src: AntennaSource.all,
-          keywords: [
-            ["keyword"]
-          ],
-          excludeKeywords: [[]],
-          users: [],
-          caseSensitive: false,
-          withReplies: false,
-          withFile: false,
-          notify: false,
-        ));
+        final antenna = await userClient.antennas.create(
+          AntennasCreateRequest(
+            name: "test",
+            src: AntennaSource.all,
+            keywords: [
+              ["keyword"]
+            ],
+            excludeKeywords: [[]],
+            users: [],
+            caseSensitive: false,
+            withReplies: false,
+            withFile: false,
+            notify: false,
+          ),
+        );
         await userClient.antennas
             .delete(AntennasDeleteRequest(antennaId: antenna.id));
       });
@@ -95,81 +101,89 @@ void main() async {
       });
 
       test("notes", () async {
-        final antenna = await userClient.antennas.create(AntennasCreateRequest(
-          name: "test",
-          src: AntennaSource.all,
-          keywords: [
-            ["keyword"]
-          ],
-          excludeKeywords: [[]],
-          users: [],
-          caseSensitive: false,
-          withReplies: false,
-          withFile: false,
-          notify: false,
-        ));
+        final antenna = await userClient.antennas.create(
+          AntennasCreateRequest(
+            name: "test",
+            src: AntennaSource.all,
+            keywords: [
+              ["keyword"]
+            ],
+            excludeKeywords: [[]],
+            users: [],
+            caseSensitive: false,
+            withReplies: false,
+            withFile: false,
+            notify: false,
+          ),
+        );
         await userClient.antennas
             .notes(AntennasNotesRequest(antennaId: antenna.id));
       });
 
       test("show", () async {
-        final antenna = await userClient.antennas.create(AntennasCreateRequest(
-          name: "test",
-          src: AntennaSource.all,
-          keywords: [
-            ["keyword"]
-          ],
-          excludeKeywords: [[]],
-          users: [],
-          caseSensitive: false,
-          withReplies: false,
-          withFile: false,
-          notify: false,
-        ));
+        final antenna = await userClient.antennas.create(
+          AntennasCreateRequest(
+            name: "test",
+            src: AntennaSource.all,
+            keywords: [
+              ["keyword"]
+            ],
+            excludeKeywords: [[]],
+            users: [],
+            caseSensitive: false,
+            withReplies: false,
+            withFile: false,
+            notify: false,
+          ),
+        );
         await userClient.antennas
             .show(AntennasShowRequest(antennaId: antenna.id));
       });
 
       test("update", () async {
-        final antenna = await userClient.antennas.create(AntennasCreateRequest(
-          name: "test",
-          src: AntennaSource.all,
-          keywords: [
-            ["keyword"]
-          ],
-          excludeKeywords: [[]],
-          users: [],
-          caseSensitive: false,
-          withReplies: false,
-          withFile: false,
-          notify: false,
-        ));
-        await userClient.antennas.update(AntennasUpdateRequest(
-          antennaId: antenna.id,
-          name: "updated",
-          src: AntennaSource.users,
-          keywords: [[]],
-          excludeKeywords: [
-            ["keyword"]
-          ],
-          users: ["@admin"],
-          caseSensitive: true,
-          withReplies: true,
-          withFile: true,
-          notify: true,
-        ));
+        final antenna = await userClient.antennas.create(
+          AntennasCreateRequest(
+            name: "test",
+            src: AntennaSource.all,
+            keywords: [
+              ["keyword"]
+            ],
+            excludeKeywords: [[]],
+            users: [],
+            caseSensitive: false,
+            withReplies: false,
+            withFile: false,
+            notify: false,
+          ),
+        );
+        await userClient.antennas.update(
+          AntennasUpdateRequest(
+            antennaId: antenna.id,
+            name: "updated",
+            src: AntennaSource.users,
+            keywords: [[]],
+            excludeKeywords: [
+              ["keyword"]
+            ],
+            users: ["@admin"],
+            caseSensitive: true,
+            withReplies: true,
+            withFile: true,
+            notify: true,
+          ),
+        );
       });
     });
 
     group("blocking", () {
       test("create", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.blocking
             .create(BlockCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.blocking
             .create(BlockCreateRequest(userId: newUser.id));
         await userClient.blocking
@@ -206,13 +220,13 @@ void main() async {
 
     group("following", () {
       test("create", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.following
             .create(FollowingCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.following
             .create(FollowingCreateRequest(userId: newUser.id));
         await userClient.following
@@ -240,12 +254,12 @@ void main() async {
 
     group("mute", () {
       test("create", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
         await userClient.mute.delete(MuteDeleteRequest(userId: newUser.id));
       });
@@ -257,7 +271,7 @@ void main() async {
       });
 
       test("delete", () async {
-        final note = await createNote(userClient);
+        final note = await userClient.createNote();
         await userClient.notes.delete(NotesDeleteRequest(noteId: note.id));
       });
 
@@ -266,7 +280,7 @@ void main() async {
       });
 
       test("show", () async {
-        final note = await createNote(userClient);
+        final note = await userClient.createNote();
         await userClient.notes.show(NotesShowRequest(noteId: note.id));
       });
 
@@ -287,7 +301,7 @@ void main() async {
       });
 
       test("state", () async {
-        final note = await createNote(userClient);
+        final note = await userClient.createNote();
         await userClient.notes.state(NotesStateRequest(noteId: note.id));
       });
 
@@ -301,15 +315,17 @@ void main() async {
 
       group("reactions", () {
         test("create", () async {
-          final note = await createNote(userClient);
+          final note = await userClient.createNote();
           await userClient.notes.reactions.create(
-              NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"));
+            NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
+          );
         });
 
         test("delete", () async {
-          final note = await createNote(userClient);
+          final note = await userClient.createNote();
           await userClient.notes.reactions.create(
-              NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"));
+            NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
+          );
           await userClient.notes.reactions
               .delete(NotesReactionsDeleteRequest(noteId: note.id));
         });
@@ -317,13 +333,13 @@ void main() async {
 
       group("favorites", () {
         test("create", () async {
-          final note = await createNote(userClient);
+          final note = await userClient.createNote();
           await userClient.notes.favorites
               .create(NotesFavoritesCreateRequest(noteId: note.id));
         });
 
         test("delete", () async {
-          final note = await createNote(userClient);
+          final note = await userClient.createNote();
           await userClient.notes.favorites
               .create(NotesFavoritesCreateRequest(noteId: note.id));
           await userClient.notes.favorites
@@ -334,13 +350,13 @@ void main() async {
 
     group("renoteMute", () {
       test("create", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.renoteMute
             .create(RenoteMuteCreateRequest(userId: newUser.id));
       });
 
       test("delete", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.renoteMute
             .create(RenoteMuteCreateRequest(userId: newUser.id));
         await userClient.renoteMute
@@ -377,9 +393,10 @@ void main() async {
       });
 
       test("reportAbuse", () async {
-        final newUser = (await createUser(adminClient)).user;
+        final newUser = (await adminClient.createUser()).user;
         await userClient.users.reportAbuse(
-            UsersReportAbuseRequest(userId: newUser.id, comment: "comment"));
+          UsersReportAbuseRequest(userId: newUser.id, comment: "comment"),
+        );
       });
 
       group("lists", () {
@@ -402,32 +419,40 @@ void main() async {
         test("pull", () async {
           final list = await userClient.users.list
               .create(UsersListsCreateRequest(name: "test"));
-          await userClient.users.list.push(UsersListsPushRequest(
-            listId: list.id,
-            userId: user.id,
-          ));
-          await userClient.users.list.pull(UsersListsPullRequest(
-            listId: list.id,
-            userId: user.id,
-          ));
+          await userClient.users.list.push(
+            UsersListsPushRequest(
+              listId: list.id,
+              userId: user.id,
+            ),
+          );
+          await userClient.users.list.pull(
+            UsersListsPullRequest(
+              listId: list.id,
+              userId: user.id,
+            ),
+          );
         });
 
         test("push", () async {
           final list = await userClient.users.list
               .create(UsersListsCreateRequest(name: "test"));
-          await userClient.users.list.push(UsersListsPushRequest(
-            listId: list.id,
-            userId: user.id,
-          ));
+          await userClient.users.list.push(
+            UsersListsPushRequest(
+              listId: list.id,
+              userId: user.id,
+            ),
+          );
         });
 
         test("update", () async {
           final list = await userClient.users.list
               .create(UsersListsCreateRequest(name: "test"));
-          await userClient.users.list.update(UsersListsUpdateRequest(
-            listId: list.id,
-            name: "updated",
-          ));
+          await userClient.users.list.update(
+            UsersListsUpdateRequest(
+              listId: list.id,
+              name: "updated",
+            ),
+          );
         });
       });
     });
@@ -505,10 +530,12 @@ void main() async {
         final completer = Completer<Note>();
         final list = await userClient.users.list
             .create(UsersListsCreateRequest(name: "test"));
-        await userClient.users.list.push(UsersListsPushRequest(
-          listId: list.id,
-          userId: user.id,
-        ));
+        await userClient.users.list.push(
+          UsersListsPushRequest(
+            listId: list.id,
+            userId: user.id,
+          ),
+        );
         final controller = userClient.userListStream(
           list.id,
           completer.complete,
@@ -531,10 +558,12 @@ void main() async {
           onUserAdded: completer.complete,
         );
         await controller.startStreaming();
-        await userClient.users.list.push(UsersListsPushRequest(
-          listId: list.id,
-          userId: user.id,
-        ));
+        await userClient.users.list.push(
+          UsersListsPushRequest(
+            listId: list.id,
+            userId: user.id,
+          ),
+        );
         await completer.future;
         await controller.disconnect();
       });
@@ -543,10 +572,12 @@ void main() async {
         final completer = Completer<User>();
         final list = await userClient.users.list
             .create(UsersListsCreateRequest(name: "test"));
-        await userClient.users.list.push(UsersListsPushRequest(
-          listId: list.id,
-          userId: user.id,
-        ));
+        await userClient.users.list.push(
+          UsersListsPushRequest(
+            listId: list.id,
+            userId: user.id,
+          ),
+        );
         final controller = userClient.userListStream(
           list.id,
           (note) => null,
@@ -554,10 +585,12 @@ void main() async {
           onUserRemoved: completer.complete,
         );
         await controller.startStreaming();
-        await userClient.users.list.pull(UsersListsPullRequest(
-          listId: list.id,
-          userId: user.id,
-        ));
+        await userClient.users.list.pull(
+          UsersListsPullRequest(
+            listId: list.id,
+            userId: user.id,
+          ),
+        );
         await completer.future;
         await controller.disconnect();
       });
@@ -566,19 +599,21 @@ void main() async {
     group("antenna", () {
       test("note", () async {
         final completer = Completer<Note>();
-        final antenna = await userClient.antennas.create(AntennasCreateRequest(
-          name: "test",
-          src: AntennaSource.all,
-          keywords: [
-            ["keyword"]
-          ],
-          excludeKeywords: [[]],
-          users: [],
-          caseSensitive: false,
-          withReplies: false,
-          withFile: false,
-          notify: false,
-        ));
+        final antenna = await userClient.antennas.create(
+          AntennasCreateRequest(
+            name: "test",
+            src: AntennaSource.all,
+            keywords: [
+              ["keyword"]
+            ],
+            excludeKeywords: [[]],
+            users: [],
+            caseSensitive: false,
+            withReplies: false,
+            withFile: false,
+            notify: false,
+          ),
+        );
         final controller = userClient.antennaStream(
           antenna.id,
           completer.complete,
@@ -594,12 +629,14 @@ void main() async {
     group("main", () {
       test("renote", () async {
         final completer = Completer<void>();
-        final note = await createNote(userClient);
+        final note = await userClient.createNote();
         final controller = userClient.mainStream(onRenote: completer.complete);
         await controller.startStreaming();
-        await adminClient.notes.create(NotesCreateRequest(
-          renoteId: note.id,
-        ));
+        await adminClient.notes.create(
+          NotesCreateRequest(
+            renoteId: note.id,
+          ),
+        );
         await completer.future;
         await controller.disconnect();
       });
