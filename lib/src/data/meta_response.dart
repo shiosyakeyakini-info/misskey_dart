@@ -12,7 +12,7 @@ class MetaResponse with _$MetaResponse {
     String? maintainerName,
     String? maintainerEmail,
     required String version,
-    required String name,
+    String? name,
     @UriConverter()
     required Uri uri,
     String? description,

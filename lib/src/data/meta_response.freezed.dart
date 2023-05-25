@@ -23,7 +23,7 @@ mixin _$MetaResponse {
   String? get maintainerName => throw _privateConstructorUsedError;
   String? get maintainerEmail => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get uri => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -92,7 +92,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       {String? maintainerName,
       String? maintainerEmail,
       String version,
-      String name,
+      String? name,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
@@ -147,7 +147,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
     Object? version = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
@@ -196,10 +196,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -360,7 +360,7 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       {String? maintainerName,
       String? maintainerEmail,
       String version,
-      String name,
+      String? name,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
@@ -414,7 +414,7 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
     Object? version = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
@@ -463,10 +463,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -614,7 +614,7 @@ class _$_MetaResponse implements _MetaResponse {
       {this.maintainerName,
       this.maintainerEmail,
       required this.version,
-      required this.name,
+      this.name,
       @UriConverter() required this.uri,
       this.description,
       required final List<String> langs,
@@ -662,7 +662,7 @@ class _$_MetaResponse implements _MetaResponse {
   @override
   final String version;
   @override
-  final String name;
+  final String? name;
   @override
   @UriConverter()
   final Uri uri;
@@ -906,7 +906,7 @@ abstract class _MetaResponse implements MetaResponse {
       {final String? maintainerName,
       final String? maintainerEmail,
       required final String version,
-      required final String name,
+      final String? name,
       @UriConverter() required final Uri uri,
       final String? description,
       required final List<String> langs,
@@ -952,7 +952,7 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   String get version;
   @override
-  String get name;
+  String? get name;
   @override
   @UriConverter()
   Uri get uri;

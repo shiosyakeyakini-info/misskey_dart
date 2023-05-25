@@ -11,7 +11,7 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       maintainerName: json['maintainerName'] as String?,
       maintainerEmail: json['maintainerEmail'] as String?,
       version: json['version'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       uri: const UriConverter().fromJson(json['uri'] as String),
       description: json['description'] as String?,
       langs: (json['langs'] as List<dynamic>).map((e) => e as String).toList(),
