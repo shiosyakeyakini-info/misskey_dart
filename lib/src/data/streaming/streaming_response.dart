@@ -1,30 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/streaming_request_type.dart';
-import 'package:misskey_dart/src/enums/channel_event_type.dart';
+import 'package:misskey_dart/src/enums/streaming_response_type.dart';
 
 part 'streaming_response.freezed.dart';
 part 'streaming_response.g.dart';
 
 @freezed
-class ChannelResponse with _$ChannelResponse {
-  const factory ChannelResponse({
-    @ChannelDataTypeJsonConverter() required ChannelDataType type,
-    required ChannelResponseBody body,
-  }) = _ChannelResponse;
+class StreamingResponse with _$StreamingResponse {
+  const factory StreamingResponse({
+    @StreamingResponseTypeJsonConverter() required StreamingResponseType type,
+    required Map<String, Object> body,
+  }) = _StreamingResponse;
 
-  factory ChannelResponse.fromJson(Map<String, Object?> json) =>
-      _$ChannelResponseFromJson(json);
-}
-
-@freezed
-class ChannelResponseBody with _$ChannelResponseBody {
-  const factory ChannelResponseBody({
-    required String id,
-    @ChannelResponseTypeJsonConverter() required ChannelResponseType type,
-    required Map<String, dynamic>? body,
-  }) = _ChannelResponseBody;
-
-  factory ChannelResponseBody.fromJson(Map<String, Object?> json) =>
-      _$ChannelResponseBodyFromJson(json);
+  factory StreamingResponse.fromJson(Map<String, Object?> json) =>
+      _$StreamingResponseFromJson(json);
 }

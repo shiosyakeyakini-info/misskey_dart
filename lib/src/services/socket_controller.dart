@@ -1,19 +1,37 @@
+import 'dart:async';
 import 'dart:convert';
 
+import 'package:misskey_dart/src/data/streaming/broadcast_event.dart';
+import 'package:misskey_dart/src/data/streaming/channel_event.dart';
+import 'package:misskey_dart/src/data/streaming/note_updated_event.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_response.dart';
+import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
+import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/enums/streaming_request_type.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
+import 'package:misskey_dart/src/enums/streaming_response_type.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {
   final String url;
   final Channel channel;
-  final void Function(
-          String id, ChannelResponseType type, Map<String, dynamic>? receive)
-      onEventReceived;
+  final FutureOr<void> Function(
+    String id,
+    ChannelEventType type,
+    Map<String, dynamic>? response,
+  ) onEventReceived;
+  final FutureOr<void> Function(
+    String id,
+    NoteUpdatedEventType type,
+    Map<String, dynamic> response,
+  )? onNoteUpdatedEventReceived;
+  final FutureOr<void> Function(
+    BroadcastEventType type,
+    Map<String, dynamic> response,
+  )? onBroadcastEventReceived;
   final Map<String, dynamic>? parameters;
 
   String id;
@@ -26,6 +44,8 @@ class SocketController {
     required this.id,
     required this.channel,
     required this.onEventReceived,
+    this.onNoteUpdatedEventReceived,
+    this.onBroadcastEventReceived,
     this.parameters,
   });
 
@@ -42,11 +62,30 @@ class SocketController {
     print("send: $requestJson");
     socketChannel
       ..stream.listen(
-        (event) {
+        (event) async {
           print("received[$id]: $event");
-          final response = ChannelResponse.fromJson(jsonDecode(event));
-          final responseBody = response.body.body;
-          onEventReceived(response.body.id, response.body.type, responseBody);
+          final responseJson = jsonDecode(event);
+          final response = StreamingResponse.fromJson(responseJson);
+          switch (response.type) {
+            case StreamingResponseType.channel:
+              final event = ChannelEvent.fromJson(response.body);
+              await onEventReceived(event.id, event.type, event.body);
+              break;
+            case StreamingResponseType.noteUpdated:
+              final event = NoteUpdatedEvent.fromJson(response.body);
+              await onNoteUpdatedEventReceived?.call(
+                event.id,
+                event.type,
+                event.body,
+              );
+              break;
+            case StreamingResponseType.emojiAdded:
+            case StreamingResponseType.emojiUpdated:
+            case StreamingResponseType.emojiDeleted:
+              final event = BroadcastEvent.fromJson(responseJson);
+              await onBroadcastEventReceived?.call(event.type, event.body);
+              break;
+          }
         },
         onError: (e, s) {
           print("Error happen $e ");

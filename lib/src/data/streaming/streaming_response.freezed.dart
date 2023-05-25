@@ -14,39 +14,37 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ChannelResponse _$ChannelResponseFromJson(Map<String, dynamic> json) {
-  return _ChannelResponse.fromJson(json);
+StreamingResponse _$StreamingResponseFromJson(Map<String, dynamic> json) {
+  return _StreamingResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ChannelResponse {
-  @ChannelDataTypeJsonConverter()
-  ChannelDataType get type => throw _privateConstructorUsedError;
-  ChannelResponseBody get body => throw _privateConstructorUsedError;
+mixin _$StreamingResponse {
+  @StreamingResponseTypeJsonConverter()
+  StreamingResponseType get type => throw _privateConstructorUsedError;
+  Map<String, Object> get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ChannelResponseCopyWith<ChannelResponse> get copyWith =>
+  $StreamingResponseCopyWith<StreamingResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChannelResponseCopyWith<$Res> {
-  factory $ChannelResponseCopyWith(
-          ChannelResponse value, $Res Function(ChannelResponse) then) =
-      _$ChannelResponseCopyWithImpl<$Res, ChannelResponse>;
+abstract class $StreamingResponseCopyWith<$Res> {
+  factory $StreamingResponseCopyWith(
+          StreamingResponse value, $Res Function(StreamingResponse) then) =
+      _$StreamingResponseCopyWithImpl<$Res, StreamingResponse>;
   @useResult
   $Res call(
-      {@ChannelDataTypeJsonConverter() ChannelDataType type,
-      ChannelResponseBody body});
-
-  $ChannelResponseBodyCopyWith<$Res> get body;
+      {@StreamingResponseTypeJsonConverter() StreamingResponseType type,
+      Map<String, Object> body});
 }
 
 /// @nodoc
-class _$ChannelResponseCopyWithImpl<$Res, $Val extends ChannelResponse>
-    implements $ChannelResponseCopyWith<$Res> {
-  _$ChannelResponseCopyWithImpl(this._value, this._then);
+class _$StreamingResponseCopyWithImpl<$Res, $Val extends StreamingResponse>
+    implements $StreamingResponseCopyWith<$Res> {
+  _$StreamingResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,45 +61,34 @@ class _$ChannelResponseCopyWithImpl<$Res, $Val extends ChannelResponse>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as ChannelDataType,
+              as StreamingResponseType,
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as ChannelResponseBody,
+              as Map<String, Object>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ChannelResponseBodyCopyWith<$Res> get body {
-    return $ChannelResponseBodyCopyWith<$Res>(_value.body, (value) {
-      return _then(_value.copyWith(body: value) as $Val);
-    });
   }
 }
 
 /// @nodoc
-abstract class _$$_ChannelResponseCopyWith<$Res>
-    implements $ChannelResponseCopyWith<$Res> {
-  factory _$$_ChannelResponseCopyWith(
-          _$_ChannelResponse value, $Res Function(_$_ChannelResponse) then) =
-      __$$_ChannelResponseCopyWithImpl<$Res>;
+abstract class _$$_StreamingResponseCopyWith<$Res>
+    implements $StreamingResponseCopyWith<$Res> {
+  factory _$$_StreamingResponseCopyWith(_$_StreamingResponse value,
+          $Res Function(_$_StreamingResponse) then) =
+      __$$_StreamingResponseCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@ChannelDataTypeJsonConverter() ChannelDataType type,
-      ChannelResponseBody body});
-
-  @override
-  $ChannelResponseBodyCopyWith<$Res> get body;
+      {@StreamingResponseTypeJsonConverter() StreamingResponseType type,
+      Map<String, Object> body});
 }
 
 /// @nodoc
-class __$$_ChannelResponseCopyWithImpl<$Res>
-    extends _$ChannelResponseCopyWithImpl<$Res, _$_ChannelResponse>
-    implements _$$_ChannelResponseCopyWith<$Res> {
-  __$$_ChannelResponseCopyWithImpl(
-      _$_ChannelResponse _value, $Res Function(_$_ChannelResponse) _then)
+class __$$_StreamingResponseCopyWithImpl<$Res>
+    extends _$StreamingResponseCopyWithImpl<$Res, _$_StreamingResponse>
+    implements _$$_StreamingResponseCopyWith<$Res> {
+  __$$_StreamingResponseCopyWithImpl(
+      _$_StreamingResponse _value, $Res Function(_$_StreamingResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,232 +97,51 @@ class __$$_ChannelResponseCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$_ChannelResponse(
+    return _then(_$_StreamingResponse(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as ChannelDataType,
+              as StreamingResponseType,
       body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as ChannelResponseBody,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_ChannelResponse implements _ChannelResponse {
-  const _$_ChannelResponse(
-      {@ChannelDataTypeJsonConverter() required this.type, required this.body});
-
-  factory _$_ChannelResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelResponseFromJson(json);
-
-  @override
-  @ChannelDataTypeJsonConverter()
-  final ChannelDataType type;
-  @override
-  final ChannelResponseBody body;
-
-  @override
-  String toString() {
-    return 'ChannelResponse(type: $type, body: $body)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ChannelResponse &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.body, body) || other.body == body));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, type, body);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_ChannelResponseCopyWith<_$_ChannelResponse> get copyWith =>
-      __$$_ChannelResponseCopyWithImpl<_$_ChannelResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_ChannelResponseToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ChannelResponse implements ChannelResponse {
-  const factory _ChannelResponse(
-      {@ChannelDataTypeJsonConverter() required final ChannelDataType type,
-      required final ChannelResponseBody body}) = _$_ChannelResponse;
-
-  factory _ChannelResponse.fromJson(Map<String, dynamic> json) =
-      _$_ChannelResponse.fromJson;
-
-  @override
-  @ChannelDataTypeJsonConverter()
-  ChannelDataType get type;
-  @override
-  ChannelResponseBody get body;
-  @override
-  @JsonKey(ignore: true)
-  _$$_ChannelResponseCopyWith<_$_ChannelResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ChannelResponseBody _$ChannelResponseBodyFromJson(Map<String, dynamic> json) {
-  return _ChannelResponseBody.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ChannelResponseBody {
-  String get id => throw _privateConstructorUsedError;
-  @ChannelResponseTypeJsonConverter()
-  ChannelResponseType get type => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ChannelResponseBodyCopyWith<ChannelResponseBody> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChannelResponseBodyCopyWith<$Res> {
-  factory $ChannelResponseBodyCopyWith(
-          ChannelResponseBody value, $Res Function(ChannelResponseBody) then) =
-      _$ChannelResponseBodyCopyWithImpl<$Res, ChannelResponseBody>;
-  @useResult
-  $Res call(
-      {String id,
-      @ChannelResponseTypeJsonConverter() ChannelResponseType type,
-      Map<String, dynamic>? body});
-}
-
-/// @nodoc
-class _$ChannelResponseBodyCopyWithImpl<$Res, $Val extends ChannelResponseBody>
-    implements $ChannelResponseBodyCopyWith<$Res> {
-  _$ChannelResponseBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? type = null,
-    Object? body = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ChannelResponseType,
-      body: freezed == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_ChannelResponseBodyCopyWith<$Res>
-    implements $ChannelResponseBodyCopyWith<$Res> {
-  factory _$$_ChannelResponseBodyCopyWith(_$_ChannelResponseBody value,
-          $Res Function(_$_ChannelResponseBody) then) =
-      __$$_ChannelResponseBodyCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @ChannelResponseTypeJsonConverter() ChannelResponseType type,
-      Map<String, dynamic>? body});
-}
-
-/// @nodoc
-class __$$_ChannelResponseBodyCopyWithImpl<$Res>
-    extends _$ChannelResponseBodyCopyWithImpl<$Res, _$_ChannelResponseBody>
-    implements _$$_ChannelResponseBodyCopyWith<$Res> {
-  __$$_ChannelResponseBodyCopyWithImpl(_$_ChannelResponseBody _value,
-      $Res Function(_$_ChannelResponseBody) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? type = null,
-    Object? body = freezed,
-  }) {
-    return _then(_$_ChannelResponseBody(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ChannelResponseType,
-      body: freezed == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Map<String, Object>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelResponseBody implements _ChannelResponseBody {
-  const _$_ChannelResponseBody(
-      {required this.id,
-      @ChannelResponseTypeJsonConverter() required this.type,
-      required final Map<String, dynamic>? body})
+class _$_StreamingResponse implements _StreamingResponse {
+  const _$_StreamingResponse(
+      {@StreamingResponseTypeJsonConverter() required this.type,
+      required final Map<String, Object> body})
       : _body = body;
 
-  factory _$_ChannelResponseBody.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelResponseBodyFromJson(json);
+  factory _$_StreamingResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_StreamingResponseFromJson(json);
 
   @override
-  final String id;
+  @StreamingResponseTypeJsonConverter()
+  final StreamingResponseType type;
+  final Map<String, Object> _body;
   @override
-  @ChannelResponseTypeJsonConverter()
-  final ChannelResponseType type;
-  final Map<String, dynamic>? _body;
-  @override
-  Map<String, dynamic>? get body {
-    final value = _body;
-    if (value == null) return null;
+  Map<String, Object> get body {
     if (_body is EqualUnmodifiableMapView) return _body;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+    return EqualUnmodifiableMapView(_body);
   }
 
   @override
   String toString() {
-    return 'ChannelResponseBody(id: $id, type: $type, body: $body)';
+    return 'StreamingResponse(type: $type, body: $body)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelResponseBody &&
-            (identical(other.id, id) || other.id == id) &&
+            other is _$_StreamingResponse &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
@@ -343,42 +149,39 @@ class _$_ChannelResponseBody implements _ChannelResponseBody {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, type, const DeepCollectionEquality().hash(_body));
+      runtimeType, type, const DeepCollectionEquality().hash(_body));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelResponseBodyCopyWith<_$_ChannelResponseBody> get copyWith =>
-      __$$_ChannelResponseBodyCopyWithImpl<_$_ChannelResponseBody>(
+  _$$_StreamingResponseCopyWith<_$_StreamingResponse> get copyWith =>
+      __$$_StreamingResponseCopyWithImpl<_$_StreamingResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelResponseBodyToJson(
+    return _$$_StreamingResponseToJson(
       this,
     );
   }
 }
 
-abstract class _ChannelResponseBody implements ChannelResponseBody {
-  const factory _ChannelResponseBody(
-      {required final String id,
-      @ChannelResponseTypeJsonConverter()
-          required final ChannelResponseType type,
-      required final Map<String, dynamic>? body}) = _$_ChannelResponseBody;
+abstract class _StreamingResponse implements StreamingResponse {
+  const factory _StreamingResponse(
+      {@StreamingResponseTypeJsonConverter()
+          required final StreamingResponseType type,
+      required final Map<String, Object> body}) = _$_StreamingResponse;
 
-  factory _ChannelResponseBody.fromJson(Map<String, dynamic> json) =
-      _$_ChannelResponseBody.fromJson;
+  factory _StreamingResponse.fromJson(Map<String, dynamic> json) =
+      _$_StreamingResponse.fromJson;
 
   @override
-  String get id;
+  @StreamingResponseTypeJsonConverter()
+  StreamingResponseType get type;
   @override
-  @ChannelResponseTypeJsonConverter()
-  ChannelResponseType get type;
-  @override
-  Map<String, dynamic>? get body;
+  Map<String, Object> get body;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelResponseBodyCopyWith<_$_ChannelResponseBody> get copyWith =>
+  _$$_StreamingResponseCopyWith<_$_StreamingResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

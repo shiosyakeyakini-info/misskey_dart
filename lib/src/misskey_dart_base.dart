@@ -7,8 +7,10 @@ import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
+import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
+import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/misskey_antennas.dart';
 import 'package:misskey_dart/src/misskey_blocking.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
@@ -100,16 +102,18 @@ class Misskey {
   ) =>
       apiService.createSocket(
           channel: Channel.homeTimeline,
-          onEventReceived: (id, type, response) {
+          onEventReceived: (id, type, response) async {
             if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
-              return;
-            }
-
             final note = Note.fromJson(response);
-            onEventReceived(note);
+            await onEventReceived(note);
+          },
+          onNoteUpdatedEventReceived: (id, type, response) async {
+            switch (type) {
+              case NoteUpdatedEventType.reacted:
+                await onReacted(id, TimelineReacted.fromJson(response));
+                return;
+            }
           });
 
   /// ローカルタイムラインに接続します。
@@ -119,16 +123,18 @@ class Misskey {
   ) =>
       apiService.createSocket(
         channel: Channel.localTimeline,
-        onEventReceived: (id, type, response) {
+        onEventReceived: (id, type, response) async {
           if (response == null) return;
 
-          if (type == ChannelResponseType.reacted) {
-            onReacted(id, TimelineReacted.fromJson(response));
-            return;
-          }
-
           final note = Note.fromJson(response);
-          onEventReceived(note);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
+              return;
+          }
         },
       );
 
@@ -137,11 +143,11 @@ class Misskey {
           FutureOr<void> Function(Note note) onEventReceived) =>
       apiService.createSocket(
           channel: Channel.globalTimeline,
-          onEventReceived: (id, type, response) {
+          onEventReceived: (id, type, response) async {
             if (response == null) return;
 
             final note = Note.fromJson(response);
-            onEventReceived(note);
+            await onEventReceived(note);
           });
 
   SocketController hybridTimelineStream(
@@ -150,16 +156,18 @@ class Misskey {
   ) =>
       apiService.createSocket(
           channel: Channel.hybridTimeline,
-          onEventReceived: (id, type, response) {
+          onEventReceived: (id, type, response) async {
             if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
-              return;
-            }
-
             final note = Note.fromJson(response);
-            onEventReceived(note);
+            await onEventReceived(note);
+          },
+          onNoteUpdatedEventReceived: (id, type, response) async {
+            switch (type) {
+              case NoteUpdatedEventType.reacted:
+                await onReacted(id, TimelineReacted.fromJson(response));
+                return;
+            }
           });
 
   /// チャンネル（トピック毎の機能の方）に接続します。
@@ -171,16 +179,18 @@ class Misskey {
       apiService.createSocket(
           channel: Channel.channel,
           id: channelId,
-          onEventReceived: (id, type, response) {
+          onEventReceived: (id, type, response) async {
             if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
-              return;
-            }
-
             final note = Note.fromJson(response);
-            onEventReceived(note);
+            await onEventReceived(note);
+          },
+          onNoteUpdatedEventReceived: (id, type, response) async {
+            switch (type) {
+              case NoteUpdatedEventType.reacted:
+                await onReacted(id, TimelineReacted.fromJson(response));
+                return;
+            }
           },
           parameters: {"channelId": channelId});
 
@@ -195,28 +205,30 @@ class Misskey {
       apiService.createSocket(
           channel: Channel.userList,
           id: listId,
-          onEventReceived: (id, type, response) {
+          onEventReceived: (id, type, response) async {
             if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
+            if (type == ChannelEventType.userAdded) {
+              final user = User.fromJson(response);
+              await onUserAdded?.call(user);
               return;
             }
 
-            if (type == ChannelResponseType.userAdded) {
+            if (type == ChannelEventType.userRemoved) {
               final user = User.fromJson(response);
-              onUserAdded?.call(user);
-              return;
-            }
-
-            if (type == ChannelResponseType.userRemoved) {
-              final user = User.fromJson(response);
-              onUserRemoved?.call(user);
+              await onUserRemoved?.call(user);
               return;
             }
 
             final note = Note.fromJson(response);
-            onEventReceived(note);
+            await onEventReceived(note);
+          },
+          onNoteUpdatedEventReceived: (id, type, response) async {
+            switch (type) {
+              case NoteUpdatedEventType.reacted:
+                await onReacted(id, TimelineReacted.fromJson(response));
+                return;
+            }
           },
           parameters: {"listId": listId});
 
@@ -229,16 +241,18 @@ class Misskey {
       apiService.createSocket(
           channel: Channel.antenna,
           id: antennaId,
-          onEventReceived: (id, type, response) {
+          onEventReceived: (id, type, response) async {
             if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
-              return;
-            }
-
             final note = Note.fromJson(response);
-            onEventReceived(note);
+            await onEventReceived(note);
+          },
+          onNoteUpdatedEventReceived: (id, type, response) async {
+            switch (type) {
+              case NoteUpdatedEventType.reacted:
+                await onReacted(id, TimelineReacted.fromJson(response));
+                return;
+            }
           },
           parameters: {"antennaId": antennaId});
 
@@ -268,56 +282,62 @@ class Misskey {
           onEventReceived: (id, type, response) async {
             print(response);
             switch (type) {
-              case ChannelResponseType.emojiAdded:
-                await onEmojiAdded?.call();
-                break;
-              case ChannelResponseType.emojiUpdated:
-                await onEmojiUpdated?.call();
-                break;
-              case ChannelResponseType.emojiDeleted:
-                await onEmojiDeleted?.call();
-                break;
-              case ChannelResponseType.notification:
+              case ChannelEventType.notification:
                 await onNotification?.call();
                 break;
-              case ChannelResponseType.mention:
+              case ChannelEventType.mention:
                 await onMention?.call();
                 break;
-              case ChannelResponseType.reply:
+              case ChannelEventType.reply:
                 await onReply?.call();
                 break;
-              case ChannelResponseType.renote:
+              case ChannelEventType.renote:
                 await onRenote?.call();
                 break;
-              case ChannelResponseType.follow:
+              case ChannelEventType.follow:
                 await onFollow?.call();
                 break;
-              case ChannelResponseType.followed:
+              case ChannelEventType.followed:
                 await onFollowed?.call();
                 break;
-              case ChannelResponseType.meUpdated:
+              case ChannelEventType.meUpdated:
                 await onMeUpdated?.call();
                 break;
-              case ChannelResponseType.readAllNotifications:
+              case ChannelEventType.readAllNotifications:
                 await onReadAllNotifications?.call();
                 break;
-              case ChannelResponseType.unreadNotification:
+              case ChannelEventType.unreadNotification:
                 await onUnreadNotification?.call();
                 break;
-              case ChannelResponseType.unreadMention:
+              case ChannelEventType.unreadMention:
                 await onUnreadMention?.call();
                 break;
-              case ChannelResponseType.readAllUnreadMentions:
+              case ChannelEventType.readAllUnreadMentions:
                 await onReadAllUnreadMentions?.call();
                 break;
-              case ChannelResponseType.unreadSpecifiedNote:
+              case ChannelEventType.unreadSpecifiedNote:
                 await onUnreadSpecifiedNote?.call();
                 break;
-              case ChannelResponseType.readAllUnreadSpecifiedNotes:
+              case ChannelEventType.readAllUnreadSpecifiedNotes:
                 await onReadAllUnreadSpecifiedNotes?.call();
                 break;
-              case ChannelResponseType.receiveFollowRequest:
+              case ChannelEventType.receiveFollowRequest:
                 await onReceiveFollowRequest?.call();
+                break;
+              default:
+                break;
+            }
+          },
+          onBroadcastEventReceived: (type, response) async {
+            switch (type) {
+              case BroadcastEventType.emojiAdded:
+                await onEmojiAdded?.call();
+                break;
+              case BroadcastEventType.emojiUpdated:
+                await onEmojiUpdated?.call();
+                break;
+              case BroadcastEventType.emojiDeleted:
+                await onEmojiDeleted?.call();
                 break;
             }
           });
