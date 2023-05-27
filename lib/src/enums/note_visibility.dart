@@ -1,13 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum NoteVisibility {
-  public("パブリック"),
-  home("ホームのみ"),
-  followers("フォロワーのみ"),
-  specified("ダイレクト");
+  public("パブリック", 0),
+  home("ホームのみ", 1),
+  followers("フォロワーのみ", 2),
+  specified("ダイレクト", 3);
 
   final String displayName;
-  const NoteVisibility(this.displayName);
+  final int priority;
+  const NoteVisibility(this.displayName, this.priority);
+
+  /// 見える範囲が小さい方を返す
+  static NoteVisibility min(NoteVisibility a, NoteVisibility b) {
+    if (a.priority > b.priority) return a;
+    return b;
+  }
 }
 
 class NoteVisibilityJsonConverter
