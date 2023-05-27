@@ -11,11 +11,18 @@ class ApiService {
   final Dio dio = Dio();
   final String token;
   final String host;
+  final String? apiUrl;
+  final String? streamingUrl;
 
-  ApiService({required this.token, required this.host}) {
+  ApiService({
+    required this.token,
+    required this.host,
+    this.apiUrl,
+    this.streamingUrl,
+  }) {
     dio.options = BaseOptions(
       method: "post",
-      baseUrl: "${Uri.https(host)}/api/",
+      baseUrl: apiUrl ?? "${Uri.https(host)}/api/",
       contentType: "application/json",
     );
     dio.interceptors.add(LogInterceptor(requestBody: true));
@@ -61,7 +68,7 @@ class ApiService {
   }) {
     id ??= "${channel.name}${DateTime.now().toIso8601String()}";
     return SocketController(
-        url: "wss://$host/streaming?i=$token",
+        url: "${streamingUrl ?? "wss://$host/streaming"}?i=$token",
         id: id,
         channel: channel,
         onEventReceived: onEventReceived,

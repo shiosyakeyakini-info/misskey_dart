@@ -41,8 +41,18 @@ class Misskey {
   late final MisskeyMute mute;
   late final MisskeyRenoteMute renoteMute;
 
-  Misskey({required this.token, required this.host}) {
-    apiService = ApiService(token: token, host: host);
+  Misskey({
+    required this.token,
+    required this.host,
+    String? apiUrl,
+    String? streamingUrl,
+  }) {
+    apiService = ApiService(
+      token: token,
+      host: host,
+      apiUrl: apiUrl,
+      streamingUrl: streamingUrl,
+    );
 
     notes = MisskeyNotes(apiService: apiService);
     channels = MisskeyChannels(apiService: apiService);
