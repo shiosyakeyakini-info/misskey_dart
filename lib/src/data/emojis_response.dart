@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 
@@ -11,8 +10,8 @@ class EmojisResponse with _$EmojisResponse {
     required List<Emoji> emojis,
   }) = _EmojisResponse;
 
-  factory EmojisResponse.fromJson(Map<String, Object?> json)
-      => _$EmojisResponseFromJson(json);
+  factory EmojisResponse.fromJson(Map<String, Object?> json) =>
+      _$EmojisResponseFromJson(json);
 }
 
 @freezed
@@ -21,10 +20,8 @@ class Emoji with _$Emoji {
     required List<String> aliases,
     required String name,
     String? category,
-    @UriConverter()
-    required Uri url,
+    @UriConverter() required Uri url,
   }) = _Emoji;
 
-  factory Emoji.fromJson(Map<String, Object?> json)
-      => _$EmojiFromJson(json);
+  factory Emoji.fromJson(Map<String, Object?> json) => _$EmojiFromJson(json);
 }
