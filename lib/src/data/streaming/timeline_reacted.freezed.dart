@@ -21,7 +21,7 @@ TimelineReacted _$TimelineReactedFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TimelineReacted {
   String get reaction => throw _privateConstructorUsedError;
-  Map<String, String> get emoji => throw _privateConstructorUsedError;
+  TimelineReactedEmojiData? get emoji => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +36,9 @@ abstract class $TimelineReactedCopyWith<$Res> {
           TimelineReacted value, $Res Function(TimelineReacted) then) =
       _$TimelineReactedCopyWithImpl<$Res, TimelineReacted>;
   @useResult
-  $Res call({String reaction, Map<String, String> emoji, String userId});
+  $Res call({String reaction, TimelineReactedEmojiData? emoji, String userId});
+
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji;
 }
 
 /// @nodoc
@@ -53,7 +55,7 @@ class _$TimelineReactedCopyWithImpl<$Res, $Val extends TimelineReacted>
   @override
   $Res call({
     Object? reaction = null,
-    Object? emoji = null,
+    Object? emoji = freezed,
     Object? userId = null,
   }) {
     return _then(_value.copyWith(
@@ -61,15 +63,27 @@ class _$TimelineReactedCopyWithImpl<$Res, $Val extends TimelineReacted>
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as String,
-      emoji: null == emoji
+      emoji: freezed == emoji
           ? _value.emoji
           : emoji // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
+              as TimelineReactedEmojiData?,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji {
+    if (_value.emoji == null) {
+      return null;
+    }
+
+    return $TimelineReactedEmojiDataCopyWith<$Res>(_value.emoji!, (value) {
+      return _then(_value.copyWith(emoji: value) as $Val);
+    });
   }
 }
 
@@ -81,7 +95,10 @@ abstract class _$$_TimelineReactedCopyWith<$Res>
       __$$_TimelineReactedCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String reaction, Map<String, String> emoji, String userId});
+  $Res call({String reaction, TimelineReactedEmojiData? emoji, String userId});
+
+  @override
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji;
 }
 
 /// @nodoc
@@ -96,7 +113,7 @@ class __$$_TimelineReactedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? reaction = null,
-    Object? emoji = null,
+    Object? emoji = freezed,
     Object? userId = null,
   }) {
     return _then(_$_TimelineReacted(
@@ -104,10 +121,10 @@ class __$$_TimelineReactedCopyWithImpl<$Res>
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as String,
-      emoji: null == emoji
-          ? _value._emoji
+      emoji: freezed == emoji
+          ? _value.emoji
           : emoji // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
+              as TimelineReactedEmojiData?,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -120,25 +137,15 @@ class __$$_TimelineReactedCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TimelineReacted implements _TimelineReacted {
   const _$_TimelineReacted(
-      {required this.reaction,
-      final Map<String, String> emoji = const {},
-      required this.userId})
-      : _emoji = emoji;
+      {required this.reaction, required this.emoji, required this.userId});
 
   factory _$_TimelineReacted.fromJson(Map<String, dynamic> json) =>
       _$$_TimelineReactedFromJson(json);
 
   @override
   final String reaction;
-  final Map<String, String> _emoji;
   @override
-  @JsonKey()
-  Map<String, String> get emoji {
-    if (_emoji is EqualUnmodifiableMapView) return _emoji;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_emoji);
-  }
-
+  final TimelineReactedEmojiData? emoji;
   @override
   final String userId;
 
@@ -154,14 +161,13 @@ class _$_TimelineReacted implements _TimelineReacted {
             other is _$_TimelineReacted &&
             (identical(other.reaction, reaction) ||
                 other.reaction == reaction) &&
-            const DeepCollectionEquality().equals(other._emoji, _emoji) &&
+            (identical(other.emoji, emoji) || other.emoji == emoji) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, reaction,
-      const DeepCollectionEquality().hash(_emoji), userId);
+  int get hashCode => Object.hash(runtimeType, reaction, emoji, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -180,7 +186,7 @@ class _$_TimelineReacted implements _TimelineReacted {
 abstract class _TimelineReacted implements TimelineReacted {
   const factory _TimelineReacted(
       {required final String reaction,
-      final Map<String, String> emoji,
+      required final TimelineReactedEmojiData? emoji,
       required final String userId}) = _$_TimelineReacted;
 
   factory _TimelineReacted.fromJson(Map<String, dynamic> json) =
@@ -189,11 +195,170 @@ abstract class _TimelineReacted implements TimelineReacted {
   @override
   String get reaction;
   @override
-  Map<String, String> get emoji;
+  TimelineReactedEmojiData? get emoji;
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
   _$$_TimelineReactedCopyWith<_$_TimelineReacted> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+TimelineReactedEmojiData _$TimelineReactedEmojiDataFromJson(
+    Map<String, dynamic> json) {
+  return _TimelineReactedEmojiData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TimelineReactedEmojiData {
+  String get name => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TimelineReactedEmojiDataCopyWith<TimelineReactedEmojiData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TimelineReactedEmojiDataCopyWith<$Res> {
+  factory $TimelineReactedEmojiDataCopyWith(TimelineReactedEmojiData value,
+          $Res Function(TimelineReactedEmojiData) then) =
+      _$TimelineReactedEmojiDataCopyWithImpl<$Res, TimelineReactedEmojiData>;
+  @useResult
+  $Res call({String name, String url});
+}
+
+/// @nodoc
+class _$TimelineReactedEmojiDataCopyWithImpl<$Res,
+        $Val extends TimelineReactedEmojiData>
+    implements $TimelineReactedEmojiDataCopyWith<$Res> {
+  _$TimelineReactedEmojiDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? url = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_TimelineReactedEmojiDataCopyWith<$Res>
+    implements $TimelineReactedEmojiDataCopyWith<$Res> {
+  factory _$$_TimelineReactedEmojiDataCopyWith(
+          _$_TimelineReactedEmojiData value,
+          $Res Function(_$_TimelineReactedEmojiData) then) =
+      __$$_TimelineReactedEmojiDataCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String url});
+}
+
+/// @nodoc
+class __$$_TimelineReactedEmojiDataCopyWithImpl<$Res>
+    extends _$TimelineReactedEmojiDataCopyWithImpl<$Res,
+        _$_TimelineReactedEmojiData>
+    implements _$$_TimelineReactedEmojiDataCopyWith<$Res> {
+  __$$_TimelineReactedEmojiDataCopyWithImpl(_$_TimelineReactedEmojiData _value,
+      $Res Function(_$_TimelineReactedEmojiData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? url = null,
+  }) {
+    return _then(_$_TimelineReactedEmojiData(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_TimelineReactedEmojiData implements _TimelineReactedEmojiData {
+  const _$_TimelineReactedEmojiData({required this.name, required this.url});
+
+  factory _$_TimelineReactedEmojiData.fromJson(Map<String, dynamic> json) =>
+      _$$_TimelineReactedEmojiDataFromJson(json);
+
+  @override
+  final String name;
+  @override
+  final String url;
+
+  @override
+  String toString() {
+    return 'TimelineReactedEmojiData(name: $name, url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_TimelineReactedEmojiData &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, url);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TimelineReactedEmojiDataCopyWith<_$_TimelineReactedEmojiData>
+      get copyWith => __$$_TimelineReactedEmojiDataCopyWithImpl<
+          _$_TimelineReactedEmojiData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TimelineReactedEmojiDataToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TimelineReactedEmojiData implements TimelineReactedEmojiData {
+  const factory _TimelineReactedEmojiData(
+      {required final String name,
+      required final String url}) = _$_TimelineReactedEmojiData;
+
+  factory _TimelineReactedEmojiData.fromJson(Map<String, dynamic> json) =
+      _$_TimelineReactedEmojiData.fromJson;
+
+  @override
+  String get name;
+  @override
+  String get url;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TimelineReactedEmojiDataCopyWith<_$_TimelineReactedEmojiData>
+      get copyWith => throw _privateConstructorUsedError;
 }
