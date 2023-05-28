@@ -7,6 +7,7 @@ import 'package:misskey_dart/src/data/base/note.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
+import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/streaming/stats_log_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
@@ -93,6 +94,11 @@ class Misskey {
   Future<MetaResponse> meta() async {
     final response = await apiService.post<Map<String, dynamic>>("meta", {});
     return MetaResponse.fromJson(response);
+  }
+
+  Future<PingResponse> ping() async {
+    final response = await apiService.post<Map<String, dynamic>>("ping", {});
+    return PingResponse.fromJson(response);
   }
 
   Future<ServerInfoResponse> serverInfo() async {
