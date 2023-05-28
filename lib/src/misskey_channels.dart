@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/channels/channels_search_request.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
@@ -59,11 +58,52 @@ class MisskeyChannels {
     return response.map((e) => CommunityChannel.fromJson(e));
   }
 
+  /// アカウントが作成したチャンネルの一覧を取得します。
+  Future<Iterable<CommunityChannel>> owned(ChannelsOwnedRequest request) async {
+    final response =
+        await _apiService.post<List>("channels/owned", request.toJson());
+    return response.map((e) => CommunityChannel.fromJson(e));
+  }
+
   /// チャンネルを検索します。
   Future<Iterable<CommunityChannel>> search(
       ChannelsSearchRequest request) async {
     final response =
         await _apiService.post<List>("channels/search", request.toJson());
     return response.map((e) => CommunityChannel.fromJson(e));
+  }
+
+  /// チャンネルを作成します。
+  Future<CommunityChannel> create(ChannelsCreateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "channels/create",
+      request.toJson(),
+    );
+    return CommunityChannel.fromJson(response);
+  }
+
+  /// チャンネルを更新します。
+  Future<void> update(ChannelsUpdateRequest request) async {
+    await _apiService.post("channels/update", request.toJson());
+  }
+
+  /// チャンネルをお気に入りします。
+  Future<void> favorite(ChannelsFavoriteRequest request) async {
+    await _apiService.post("channels/favorite", request.toJson());
+  }
+
+  /// チャンネルのお気に入りを解除します。
+  Future<void> unfavorite(ChannelsUnfavoriteRequest request) async {
+    await _apiService.post("channels/unfavorite", request.toJson());
+  }
+
+  /// チャンネルをフォローします。
+  Future<void> follow(ChannelsFollowRequest request) async {
+    await _apiService.post("channels/follow", request.toJson());
+  }
+
+  /// チャンネルのフォローを解除します。
+  Future<void> unfollow(ChannelsUnfollowRequest request) async {
+    await _apiService.post("channels/unfollow", request.toJson());
   }
 }
