@@ -19,7 +19,9 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
       instance: json['instance'] == null
           ? null
           : UserInstanceInfo.fromJson(json['instance'] as Map<String, dynamic>),
-      emojis: json['emojis'] as Map<String, dynamic>?,
+      emojis: (json['emojis'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
       onlineStatus: const OnlineStatusJsonConverter()
           .fromJson(json['onlineStatus'] as String?),
       url: _$JsonConverterFromJson<String, Uri?>(
