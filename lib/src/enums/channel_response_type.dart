@@ -8,6 +8,9 @@ enum ChannelResponseType {
   userAdded,
   userRemoved,
 
+  statsLog,
+  stats,
+
   emojiAdded,
   emojiUpdated,
   emojiDeleted,

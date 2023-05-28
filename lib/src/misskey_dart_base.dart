@@ -7,6 +7,7 @@ import 'package:misskey_dart/src/data/base/note.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
+import 'package:misskey_dart/src/data/streaming/stats_log_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_response_type.dart';
@@ -92,6 +93,18 @@ class Misskey {
   Future<MetaResponse> meta() async {
     final response = await apiService.post<Map<String, dynamic>>("meta", {});
     return MetaResponse.fromJson(response);
+  }
+
+  Future<ServerInfoResponse> serverInfo() async {
+    final response =
+        await apiService.post<Map<String, dynamic>>("server-info", {});
+    return ServerInfoResponse.fromJson(response);
+  }
+
+  Future<GetOnlineUsersCountResponse> getOnlineUsersCount() async {
+    final response = await apiService
+        .post<Map<String, dynamic>>("get-online-users-count", {});
+    return GetOnlineUsersCountResponse.fromJson(response);
   }
 
   /// ホームタイムラインに接続します。
@@ -278,6 +291,24 @@ class Misskey {
             onEventReceived(note);
           },
           parameters: {"antennaId": antennaId});
+
+  SocketController serverStatsLogStream(
+    FutureOr<void> Function(List<StatsLogResponse> response) onLogReceived,
+    FutureOr<void> Function(StatsLogResponse response) onEventReceived,
+  ) =>
+      apiService.createSocket(
+          channel: Channel.serverStats,
+          onEventReceived: (id, type, response) {
+            if (response == null) return;
+
+            //TODO: Map<String, dynamic>にしてしまったせいでかえらない
+            // リファクタリングする
+            if (type == ChannelResponseType.statsLog) {}
+
+            if (type == ChannelResponseType.stats) {
+              onEventReceived.call(StatsLogResponse.fromJson(response));
+            }
+          });
 
   /// メインのストリームに接続します。
   SocketController mainStream({

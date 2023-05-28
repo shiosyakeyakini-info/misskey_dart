@@ -788,6 +788,7 @@ void main() async {
         channel.id,
         completer.complete,
         (id, reaction) => null,
+        (id, vote) => null,
       );
       await controller.startStreaming();
       await userClient.notes.create(

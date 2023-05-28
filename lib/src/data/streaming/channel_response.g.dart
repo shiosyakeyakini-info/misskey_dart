@@ -52,6 +52,8 @@ const _$ChannelResponseTypeEnumMap = {
   ChannelResponseType.reacted: 'reacted',
   ChannelResponseType.userAdded: 'userAdded',
   ChannelResponseType.userRemoved: 'userRemoved',
+  ChannelResponseType.statsLog: 'statsLog',
+  ChannelResponseType.stats: 'stats',
   ChannelResponseType.emojiAdded: 'emojiAdded',
   ChannelResponseType.emojiUpdated: 'emojiUpdated',
   ChannelResponseType.emojiDeleted: 'emojiDeleted',
