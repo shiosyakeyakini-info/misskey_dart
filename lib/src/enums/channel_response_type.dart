@@ -20,6 +20,7 @@ enum ChannelResponseType {
   unfollow,
   meUpdated,
   pageEvent,
+  pollVoted,
   urlUploadFinished,
   readAllNotifications,
   unreadNotification,

@@ -64,6 +64,7 @@ const _$ChannelResponseTypeEnumMap = {
   ChannelResponseType.unfollow: 'unfollow',
   ChannelResponseType.meUpdated: 'meUpdated',
   ChannelResponseType.pageEvent: 'pageEvent',
+  ChannelResponseType.pollVoted: 'pollVoted',
   ChannelResponseType.urlUploadFinished: 'urlUploadFinished',
   ChannelResponseType.readAllNotifications: 'readAllNotifications',
   ChannelResponseType.unreadNotification: 'unreadNotification',

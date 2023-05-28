@@ -84,6 +84,7 @@ export 'src/data/renote_mute/renote_mute_delete_request.dart';
 export 'src/data/mute/mute_create_request.dart';
 export 'src/data/mute/mute_delete_request.dart';
 export 'src/data/streaming/timeline_reacted.dart';
+export 'src/data/streaming/timeline_voted.dart';
 export 'src/data/join_misskey_instances.dart';
 export 'src/services/socket_controller.dart';
 export 'src/server.dart';

@@ -481,6 +481,7 @@ void main() async {
       final controller = userClient.homeTimelineStream(
         completer.complete,
         (id, reaction) => null,
+        (id, vote) => null,
       );
       await controller.startStreaming();
       await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -493,6 +494,7 @@ void main() async {
       final controller = userClient.localTimelineStream(
         completer.complete,
         (id, reaction) => null,
+        (id, vote) => null,
       );
       await controller.startStreaming();
       await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -516,6 +518,7 @@ void main() async {
       final controller = userClient.hybridTimelineStream(
         completer.complete,
         (id, reaction) => null,
+        (id, vote) => null,
       );
       await controller.startStreaming();
       await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -618,6 +621,7 @@ void main() async {
           antenna.id,
           completer.complete,
           (id, reaction) => null,
+          (id, vote) => null,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "keyword"));

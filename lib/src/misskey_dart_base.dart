@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/announcements_request.dart';
 import 'package:misskey_dart/src/data/announcements_response.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
@@ -97,6 +98,7 @@ class Misskey {
   SocketController homeTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
   ) =>
       apiService.createSocket(
           channel: Channel.homeTimeline,
@@ -108,6 +110,11 @@ class Misskey {
               return;
             }
 
+            if (type == ChannelResponseType.pollVoted) {
+              onVoted.call(id, TimelineVoted.fromJson(response));
+              return;
+            }
+
             final note = Note.fromJson(response);
             onEventReceived(note);
           });
@@ -116,6 +123,7 @@ class Misskey {
   SocketController localTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
   ) =>
       apiService.createSocket(
         channel: Channel.localTimeline,
@@ -127,6 +135,11 @@ class Misskey {
             return;
           }
 
+          if (type == ChannelResponseType.pollVoted) {
+            onVoted.call(id, TimelineVoted.fromJson(response));
+            return;
+          }
+
           final note = Note.fromJson(response);
           onEventReceived(note);
         },
@@ -134,7 +147,8 @@ class Misskey {
 
   /// グローバルタイムラインに接続します。
   SocketController globalTimelineStream(
-          FutureOr<void> Function(Note note) onEventReceived) =>
+    FutureOr<void> Function(Note note) onEventReceived,
+  ) =>
       apiService.createSocket(
           channel: Channel.globalTimeline,
           onEventReceived: (id, type, response) {
@@ -147,6 +161,7 @@ class Misskey {
   SocketController hybridTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
   ) =>
       apiService.createSocket(
           channel: Channel.hybridTimeline,
@@ -155,6 +170,11 @@ class Misskey {
 
             if (type == ChannelResponseType.reacted) {
               onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            }
+
+            if (type == ChannelResponseType.pollVoted) {
+              onVoted.call(id, TimelineVoted.fromJson(response));
               return;
             }
 
@@ -167,6 +187,7 @@ class Misskey {
     String channelId,
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
   ) =>
       apiService.createSocket(
           channel: Channel.channel,
@@ -176,6 +197,12 @@ class Misskey {
 
             if (type == ChannelResponseType.reacted) {
               onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            } else if (type == ChannelResponseType.pollVoted) {
+              onVoted(id, TimelineVoted.fromJson(response));
+              return;
+            } else if (type == ChannelResponseType.pollVoted) {
+              onVoted.call(id, TimelineVoted.fromJson(response));
               return;
             }
 
@@ -191,6 +218,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
     FutureOr<void> Function(User user)? onUserAdded,
     FutureOr<void> Function(User user)? onUserRemoved,
+    FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
       apiService.createSocket(
           channel: Channel.userList,
@@ -215,6 +243,11 @@ class Misskey {
               return;
             }
 
+            if (type == ChannelResponseType.pollVoted) {
+              onVoted?.call(id, TimelineVoted.fromJson(response));
+              return;
+            }
+
             final note = Note.fromJson(response);
             onEventReceived(note);
           },
@@ -225,6 +258,7 @@ class Misskey {
     String antennaId,
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
   ) =>
       apiService.createSocket(
           channel: Channel.antenna,
@@ -234,6 +268,9 @@ class Misskey {
 
             if (type == ChannelResponseType.reacted) {
               onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            } else if (type == ChannelResponseType.pollVoted) {
+              onVoted(id, TimelineVoted.fromJson(response));
               return;
             }
 
