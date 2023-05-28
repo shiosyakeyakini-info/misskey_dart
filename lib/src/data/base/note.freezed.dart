@@ -44,6 +44,7 @@ mixin _$Note {
   Note? get reply => throw _privateConstructorUsedError;
   String? get myReaction => throw _privateConstructorUsedError;
   NoteChannelInfo? get channel => throw _privateConstructorUsedError;
+  NotePoll? get poll => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -77,12 +78,14 @@ abstract class $NoteCopyWith<$Res> {
       Note? renote,
       Note? reply,
       String? myReaction,
-      NoteChannelInfo? channel});
+      NoteChannelInfo? channel,
+      NotePoll? poll});
 
   $UserCopyWith<$Res> get user;
   $NoteCopyWith<$Res>? get renote;
   $NoteCopyWith<$Res>? get reply;
   $NoteChannelInfoCopyWith<$Res>? get channel;
+  $NotePollCopyWith<$Res>? get poll;
 }
 
 /// @nodoc
@@ -120,6 +123,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? reply = freezed,
     Object? myReaction = freezed,
     Object? channel = freezed,
+    Object? poll = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -210,6 +214,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as NoteChannelInfo?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as NotePoll?,
     ) as $Val);
   }
 
@@ -256,6 +264,18 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       return _then(_value.copyWith(channel: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NotePollCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $NotePollCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -286,7 +306,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       Note? renote,
       Note? reply,
       String? myReaction,
-      NoteChannelInfo? channel});
+      NoteChannelInfo? channel,
+      NotePoll? poll});
 
   @override
   $UserCopyWith<$Res> get user;
@@ -296,6 +317,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   $NoteCopyWith<$Res>? get reply;
   @override
   $NoteChannelInfoCopyWith<$Res>? get channel;
+  @override
+  $NotePollCopyWith<$Res>? get poll;
 }
 
 /// @nodoc
@@ -329,6 +352,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? reply = freezed,
     Object? myReaction = freezed,
     Object? channel = freezed,
+    Object? poll = freezed,
   }) {
     return _then(_$_Note(
       id: null == id
@@ -419,6 +443,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as NoteChannelInfo?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as NotePoll?,
     ));
   }
 }
@@ -448,7 +476,8 @@ class _$_Note implements _Note {
       this.renote,
       this.reply,
       this.myReaction,
-      this.channel})
+      this.channel,
+      this.poll})
       : _reactions = reactions,
         _reactionEmojis = reactionEmojis,
         _emojis = emojis,
@@ -534,10 +563,12 @@ class _$_Note implements _Note {
   final String? myReaction;
   @override
   final NoteChannelInfo? channel;
+  @override
+  final NotePoll? poll;
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel)';
+    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel, poll: $poll)';
   }
 
   @override
@@ -576,7 +607,8 @@ class _$_Note implements _Note {
             (identical(other.reply, reply) || other.reply == reply) &&
             (identical(other.myReaction, myReaction) ||
                 other.myReaction == myReaction) &&
-            (identical(other.channel, channel) || other.channel == channel));
+            (identical(other.channel, channel) || other.channel == channel) &&
+            (identical(other.poll, poll) || other.poll == poll));
   }
 
   @JsonKey(ignore: true)
@@ -604,7 +636,8 @@ class _$_Note implements _Note {
         renote,
         reply,
         myReaction,
-        channel
+        channel,
+        poll
       ]);
 
   @JsonKey(ignore: true)
@@ -644,7 +677,8 @@ abstract class _Note implements Note {
       final Note? renote,
       final Note? reply,
       final String? myReaction,
-      final NoteChannelInfo? channel}) = _$_Note;
+      final NoteChannelInfo? channel,
+      final NotePoll? poll}) = _$_Note;
 
   factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
 
@@ -694,6 +728,8 @@ abstract class _Note implements Note {
   String? get myReaction;
   @override
   NoteChannelInfo? get channel;
+  @override
+  NotePoll? get poll;
   @override
   @JsonKey(ignore: true)
   _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
@@ -850,5 +886,366 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
   @override
   @JsonKey(ignore: true)
   _$$_NoteChannelInfoCopyWith<_$_NoteChannelInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+NotePoll _$NotePollFromJson(Map<String, dynamic> json) {
+  return _NotePoll.fromJson(json);
+}
+
+/// @nodoc
+mixin _$NotePoll {
+  bool get multiple => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime? get expiresAt => throw _privateConstructorUsedError;
+  List<NotePollChoice> get choices => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotePollCopyWith<NotePoll> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotePollCopyWith<$Res> {
+  factory $NotePollCopyWith(NotePoll value, $Res Function(NotePoll) then) =
+      _$NotePollCopyWithImpl<$Res, NotePoll>;
+  @useResult
+  $Res call(
+      {bool multiple,
+      @DateTimeConverter() DateTime? expiresAt,
+      List<NotePollChoice> choices});
+}
+
+/// @nodoc
+class _$NotePollCopyWithImpl<$Res, $Val extends NotePoll>
+    implements $NotePollCopyWith<$Res> {
+  _$NotePollCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? multiple = null,
+    Object? expiresAt = freezed,
+    Object? choices = null,
+  }) {
+    return _then(_value.copyWith(
+      multiple: null == multiple
+          ? _value.multiple
+          : multiple // ignore: cast_nullable_to_non_nullable
+              as bool,
+      expiresAt: freezed == expiresAt
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<NotePollChoice>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_NotePollCopyWith<$Res> implements $NotePollCopyWith<$Res> {
+  factory _$$_NotePollCopyWith(
+          _$_NotePoll value, $Res Function(_$_NotePoll) then) =
+      __$$_NotePollCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool multiple,
+      @DateTimeConverter() DateTime? expiresAt,
+      List<NotePollChoice> choices});
+}
+
+/// @nodoc
+class __$$_NotePollCopyWithImpl<$Res>
+    extends _$NotePollCopyWithImpl<$Res, _$_NotePoll>
+    implements _$$_NotePollCopyWith<$Res> {
+  __$$_NotePollCopyWithImpl(
+      _$_NotePoll _value, $Res Function(_$_NotePoll) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? multiple = null,
+    Object? expiresAt = freezed,
+    Object? choices = null,
+  }) {
+    return _then(_$_NotePoll(
+      multiple: null == multiple
+          ? _value.multiple
+          : multiple // ignore: cast_nullable_to_non_nullable
+              as bool,
+      expiresAt: freezed == expiresAt
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      choices: null == choices
+          ? _value._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<NotePollChoice>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_NotePoll implements _NotePoll {
+  const _$_NotePoll(
+      {required this.multiple,
+      @DateTimeConverter() this.expiresAt,
+      required final List<NotePollChoice> choices})
+      : _choices = choices;
+
+  factory _$_NotePoll.fromJson(Map<String, dynamic> json) =>
+      _$$_NotePollFromJson(json);
+
+  @override
+  final bool multiple;
+  @override
+  @DateTimeConverter()
+  final DateTime? expiresAt;
+  final List<NotePollChoice> _choices;
+  @override
+  List<NotePollChoice> get choices {
+    if (_choices is EqualUnmodifiableListView) return _choices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_choices);
+  }
+
+  @override
+  String toString() {
+    return 'NotePoll(multiple: $multiple, expiresAt: $expiresAt, choices: $choices)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_NotePoll &&
+            (identical(other.multiple, multiple) ||
+                other.multiple == multiple) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            const DeepCollectionEquality().equals(other._choices, _choices));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, multiple, expiresAt,
+      const DeepCollectionEquality().hash(_choices));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NotePollCopyWith<_$_NotePoll> get copyWith =>
+      __$$_NotePollCopyWithImpl<_$_NotePoll>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_NotePollToJson(
+      this,
+    );
+  }
+}
+
+abstract class _NotePoll implements NotePoll {
+  const factory _NotePoll(
+      {required final bool multiple,
+      @DateTimeConverter() final DateTime? expiresAt,
+      required final List<NotePollChoice> choices}) = _$_NotePoll;
+
+  factory _NotePoll.fromJson(Map<String, dynamic> json) = _$_NotePoll.fromJson;
+
+  @override
+  bool get multiple;
+  @override
+  @DateTimeConverter()
+  DateTime? get expiresAt;
+  @override
+  List<NotePollChoice> get choices;
+  @override
+  @JsonKey(ignore: true)
+  _$$_NotePollCopyWith<_$_NotePoll> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+NotePollChoice _$NotePollChoiceFromJson(Map<String, dynamic> json) {
+  return _NotePollChoice.fromJson(json);
+}
+
+/// @nodoc
+mixin _$NotePollChoice {
+  String get text => throw _privateConstructorUsedError;
+  int get votes => throw _privateConstructorUsedError;
+  bool get isVoted => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotePollChoiceCopyWith<NotePollChoice> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotePollChoiceCopyWith<$Res> {
+  factory $NotePollChoiceCopyWith(
+          NotePollChoice value, $Res Function(NotePollChoice) then) =
+      _$NotePollChoiceCopyWithImpl<$Res, NotePollChoice>;
+  @useResult
+  $Res call({String text, int votes, bool isVoted});
+}
+
+/// @nodoc
+class _$NotePollChoiceCopyWithImpl<$Res, $Val extends NotePollChoice>
+    implements $NotePollChoiceCopyWith<$Res> {
+  _$NotePollChoiceCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+    Object? votes = null,
+    Object? isVoted = null,
+  }) {
+    return _then(_value.copyWith(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      votes: null == votes
+          ? _value.votes
+          : votes // ignore: cast_nullable_to_non_nullable
+              as int,
+      isVoted: null == isVoted
+          ? _value.isVoted
+          : isVoted // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_NotePollChoiceCopyWith<$Res>
+    implements $NotePollChoiceCopyWith<$Res> {
+  factory _$$_NotePollChoiceCopyWith(
+          _$_NotePollChoice value, $Res Function(_$_NotePollChoice) then) =
+      __$$_NotePollChoiceCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String text, int votes, bool isVoted});
+}
+
+/// @nodoc
+class __$$_NotePollChoiceCopyWithImpl<$Res>
+    extends _$NotePollChoiceCopyWithImpl<$Res, _$_NotePollChoice>
+    implements _$$_NotePollChoiceCopyWith<$Res> {
+  __$$_NotePollChoiceCopyWithImpl(
+      _$_NotePollChoice _value, $Res Function(_$_NotePollChoice) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+    Object? votes = null,
+    Object? isVoted = null,
+  }) {
+    return _then(_$_NotePollChoice(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      votes: null == votes
+          ? _value.votes
+          : votes // ignore: cast_nullable_to_non_nullable
+              as int,
+      isVoted: null == isVoted
+          ? _value.isVoted
+          : isVoted // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_NotePollChoice implements _NotePollChoice {
+  const _$_NotePollChoice(
+      {required this.text, required this.votes, required this.isVoted});
+
+  factory _$_NotePollChoice.fromJson(Map<String, dynamic> json) =>
+      _$$_NotePollChoiceFromJson(json);
+
+  @override
+  final String text;
+  @override
+  final int votes;
+  @override
+  final bool isVoted;
+
+  @override
+  String toString() {
+    return 'NotePollChoice(text: $text, votes: $votes, isVoted: $isVoted)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_NotePollChoice &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.votes, votes) || other.votes == votes) &&
+            (identical(other.isVoted, isVoted) || other.isVoted == isVoted));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, text, votes, isVoted);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NotePollChoiceCopyWith<_$_NotePollChoice> get copyWith =>
+      __$$_NotePollChoiceCopyWithImpl<_$_NotePollChoice>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_NotePollChoiceToJson(
+      this,
+    );
+  }
+}
+
+abstract class _NotePollChoice implements NotePollChoice {
+  const factory _NotePollChoice(
+      {required final String text,
+      required final int votes,
+      required final bool isVoted}) = _$_NotePollChoice;
+
+  factory _NotePollChoice.fromJson(Map<String, dynamic> json) =
+      _$_NotePollChoice.fromJson;
+
+  @override
+  String get text;
+  @override
+  int get votes;
+  @override
+  bool get isVoted;
+  @override
+  @JsonKey(ignore: true)
+  _$$_NotePollChoiceCopyWith<_$_NotePollChoice> get copyWith =>
       throw _privateConstructorUsedError;
 }
