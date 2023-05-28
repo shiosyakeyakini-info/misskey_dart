@@ -430,6 +430,62 @@ void main() async {
         await userClient.following
             .delete(FollowingDeleteRequest(userId: newUser.id));
       });
+
+      test("invalidate", () async {
+        final response = await adminClient.createUser();
+        final newUser = response.user;
+        final newClient = response.client;
+        await userClient.following
+            .create(FollowingCreateRequest(userId: newUser.id));
+        await newClient.following
+            .invalidate(FollowingInvalidateRequest(userId: user.id));
+      });
+
+      group("requests", () {
+        test("accept", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await newClient.following.requests
+              .accept(FollowingRequestsAcceptRequest(userId: user.id));
+        });
+
+        test("cancel", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await userClient.following.requests
+              .cancel(FollowingRequestsCancelRequest(userId: newUser.id));
+        });
+
+        test("list", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await newClient.following.requests
+              .list(FollowingRequestsListRequest());
+        });
+
+        test("reject", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await newClient.following.requests
+              .reject(FollowingRequestsRejectRequest(userId: user.id));
+        });
+      });
     });
 
     group("i", () {
