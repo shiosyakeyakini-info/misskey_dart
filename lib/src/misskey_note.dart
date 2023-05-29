@@ -3,6 +3,7 @@ import 'package:misskey_dart/src/data/notes/favorites/notes_favorites_delete_req
 import 'package:misskey_dart/src/data/notes/notes_delete_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_reactions_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_reactions_response.dart';
+import 'package:misskey_dart/src/data/notes/notes_renotes_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_state_response.dart';
 import 'package:misskey_dart/src/data/notes/polls/notes_polls_vote_request.dart';
 
@@ -94,6 +95,13 @@ class MisskeyNotes {
   Future<Iterable<Note>> searchByTag(NotesSearchByTagRequest request) async {
     final response =
         await _apiService.post<List>("notes/search-by-tag", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// ノートに対するRenote一覧を返します。
+  Future<Iterable<Note>> renotes(NotesRenoteRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/renotes", request.toJson());
     return response.map((e) => Note.fromJson(e));
   }
 }
