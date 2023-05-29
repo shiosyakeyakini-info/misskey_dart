@@ -98,6 +98,8 @@ export 'src/data/users/lists/users_lists_push_request.dart';
 export 'src/data/users/lists/users_lists_show_request.dart';
 export 'src/data/users/lists/users_lists_update_request.dart';
 export 'src/data/users/users_report_abuse_request.dart';
+export 'src/data/users/users_reactions_request.dart';
+export 'src/data/users/users_reactions_response.dart';
 export 'src/data/block/block_create_request.dart';
 export 'src/data/block/block_delete_request.dart';
 export 'src/data/renote_mute/renote_mute_create_request.dart';
