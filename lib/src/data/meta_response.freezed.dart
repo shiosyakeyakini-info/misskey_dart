@@ -23,7 +23,7 @@ mixin _$MetaResponse {
   String? get maintainerName => throw _privateConstructorUsedError;
   String? get maintainerEmail => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get uri => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -49,12 +49,12 @@ mixin _$MetaResponse {
   String? get turnstileSiteKey => throw _privateConstructorUsedError;
   String? get swPublickey => throw _privateConstructorUsedError;
   String? get themeColor => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get mascotImageUrl => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get bannerUrl => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get errorImageUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get mascotImageUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get bannerUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get errorImageUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get iconUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -92,7 +92,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       {String? maintainerName,
       String? maintainerEmail,
       String version,
-      String name,
+      String? name,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
@@ -111,9 +111,9 @@ abstract class $MetaResponseCopyWith<$Res> {
       String? turnstileSiteKey,
       String? swPublickey,
       String? themeColor,
-      @UriConverter() Uri mascotImageUrl,
-      @UriConverter() Uri bannerUrl,
-      @UriConverter() Uri errorImageUrl,
+      @NullableUriConverter() Uri? mascotImageUrl,
+      @NullableUriConverter() Uri? bannerUrl,
+      @NullableUriConverter() Uri? errorImageUrl,
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
@@ -147,7 +147,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
     Object? version = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
@@ -166,9 +166,9 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? turnstileSiteKey = freezed,
     Object? swPublickey = freezed,
     Object? themeColor = freezed,
-    Object? mascotImageUrl = null,
-    Object? bannerUrl = null,
-    Object? errorImageUrl = null,
+    Object? mascotImageUrl = freezed,
+    Object? bannerUrl = freezed,
+    Object? errorImageUrl = freezed,
     Object? iconUrl = freezed,
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
@@ -196,10 +196,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -272,18 +272,18 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.themeColor
           : themeColor // ignore: cast_nullable_to_non_nullable
               as String?,
-      mascotImageUrl: null == mascotImageUrl
+      mascotImageUrl: freezed == mascotImageUrl
           ? _value.mascotImageUrl
           : mascotImageUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      bannerUrl: null == bannerUrl
+              as Uri?,
+      bannerUrl: freezed == bannerUrl
           ? _value.bannerUrl
           : bannerUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      errorImageUrl: null == errorImageUrl
+              as Uri?,
+      errorImageUrl: freezed == errorImageUrl
           ? _value.errorImageUrl
           : errorImageUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as Uri?,
       iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
@@ -360,7 +360,7 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       {String? maintainerName,
       String? maintainerEmail,
       String version,
-      String name,
+      String? name,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
@@ -379,9 +379,9 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       String? turnstileSiteKey,
       String? swPublickey,
       String? themeColor,
-      @UriConverter() Uri mascotImageUrl,
-      @UriConverter() Uri bannerUrl,
-      @UriConverter() Uri errorImageUrl,
+      @NullableUriConverter() Uri? mascotImageUrl,
+      @NullableUriConverter() Uri? bannerUrl,
+      @NullableUriConverter() Uri? errorImageUrl,
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
@@ -414,7 +414,7 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
     Object? version = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
@@ -433,9 +433,9 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? turnstileSiteKey = freezed,
     Object? swPublickey = freezed,
     Object? themeColor = freezed,
-    Object? mascotImageUrl = null,
-    Object? bannerUrl = null,
-    Object? errorImageUrl = null,
+    Object? mascotImageUrl = freezed,
+    Object? bannerUrl = freezed,
+    Object? errorImageUrl = freezed,
     Object? iconUrl = freezed,
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
@@ -463,10 +463,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -539,18 +539,18 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.themeColor
           : themeColor // ignore: cast_nullable_to_non_nullable
               as String?,
-      mascotImageUrl: null == mascotImageUrl
+      mascotImageUrl: freezed == mascotImageUrl
           ? _value.mascotImageUrl
           : mascotImageUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      bannerUrl: null == bannerUrl
+              as Uri?,
+      bannerUrl: freezed == bannerUrl
           ? _value.bannerUrl
           : bannerUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      errorImageUrl: null == errorImageUrl
+              as Uri?,
+      errorImageUrl: freezed == errorImageUrl
           ? _value.errorImageUrl
           : errorImageUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as Uri?,
       iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
@@ -614,7 +614,7 @@ class _$_MetaResponse implements _MetaResponse {
       {this.maintainerName,
       this.maintainerEmail,
       required this.version,
-      required this.name,
+      this.name,
       @UriConverter() required this.uri,
       this.description,
       required final List<String> langs,
@@ -633,9 +633,9 @@ class _$_MetaResponse implements _MetaResponse {
       this.turnstileSiteKey,
       this.swPublickey,
       this.themeColor,
-      @UriConverter() required this.mascotImageUrl,
-      @UriConverter() required this.bannerUrl,
-      @UriConverter() required this.errorImageUrl,
+      @NullableUriConverter() this.mascotImageUrl,
+      @NullableUriConverter() this.bannerUrl,
+      @NullableUriConverter() this.errorImageUrl,
       @NullableUriConverter() this.iconUrl,
       @NullableUriConverter() this.backgroundImageUrl,
       @NullableUriConverter() this.logoImageUrl,
@@ -662,7 +662,7 @@ class _$_MetaResponse implements _MetaResponse {
   @override
   final String version;
   @override
-  final String name;
+  final String? name;
   @override
   @UriConverter()
   final Uri uri;
@@ -713,14 +713,14 @@ class _$_MetaResponse implements _MetaResponse {
   @override
   final String? themeColor;
   @override
-  @UriConverter()
-  final Uri mascotImageUrl;
+  @NullableUriConverter()
+  final Uri? mascotImageUrl;
   @override
-  @UriConverter()
-  final Uri bannerUrl;
+  @NullableUriConverter()
+  final Uri? bannerUrl;
   @override
-  @UriConverter()
-  final Uri errorImageUrl;
+  @NullableUriConverter()
+  final Uri? errorImageUrl;
   @override
   @NullableUriConverter()
   final Uri? iconUrl;
@@ -906,7 +906,7 @@ abstract class _MetaResponse implements MetaResponse {
       {final String? maintainerName,
       final String? maintainerEmail,
       required final String version,
-      required final String name,
+      final String? name,
       @UriConverter() required final Uri uri,
       final String? description,
       required final List<String> langs,
@@ -925,9 +925,9 @@ abstract class _MetaResponse implements MetaResponse {
       final String? turnstileSiteKey,
       final String? swPublickey,
       final String? themeColor,
-      @UriConverter() required final Uri mascotImageUrl,
-      @UriConverter() required final Uri bannerUrl,
-      @UriConverter() required final Uri errorImageUrl,
+      @NullableUriConverter() final Uri? mascotImageUrl,
+      @NullableUriConverter() final Uri? bannerUrl,
+      @NullableUriConverter() final Uri? errorImageUrl,
       @NullableUriConverter() final Uri? iconUrl,
       @NullableUriConverter() final Uri? backgroundImageUrl,
       @NullableUriConverter() final Uri? logoImageUrl,
@@ -952,7 +952,7 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   String get version;
   @override
-  String get name;
+  String? get name;
   @override
   @UriConverter()
   Uri get uri;
@@ -996,14 +996,14 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   String? get themeColor;
   @override
-  @UriConverter()
-  Uri get mascotImageUrl;
+  @NullableUriConverter()
+  Uri? get mascotImageUrl;
   @override
-  @UriConverter()
-  Uri get bannerUrl;
+  @NullableUriConverter()
+  Uri? get bannerUrl;
   @override
-  @UriConverter()
-  Uri get errorImageUrl;
+  @NullableUriConverter()
+  Uri? get errorImageUrl;
   @override
   @NullableUriConverter()
   Uri? get iconUrl;
@@ -1271,8 +1271,8 @@ mixin _$MetaFeature {
   bool get registration =>
       throw _privateConstructorUsedError; //required bool localTimeLine,
 //required bool globalTimeLine,
-  bool get emailRequiredForSignup => throw _privateConstructorUsedError;
-  bool get elasticsearch => throw _privateConstructorUsedError;
+  bool get emailRequiredForSignup =>
+      throw _privateConstructorUsedError; // required bool elasticsearch,
   bool get hcaptcha => throw _privateConstructorUsedError;
   bool get recaptcha => throw _privateConstructorUsedError;
   bool get turnstile => throw _privateConstructorUsedError;
@@ -1298,7 +1298,6 @@ abstract class $MetaFeatureCopyWith<$Res> {
   $Res call(
       {bool registration,
       bool emailRequiredForSignup,
-      bool elasticsearch,
       bool hcaptcha,
       bool recaptcha,
       bool turnstile,
@@ -1322,7 +1321,6 @@ class _$MetaFeatureCopyWithImpl<$Res, $Val extends MetaFeature>
   $Res call({
     Object? registration = null,
     Object? emailRequiredForSignup = null,
-    Object? elasticsearch = null,
     Object? hcaptcha = null,
     Object? recaptcha = null,
     Object? turnstile = null,
@@ -1338,10 +1336,6 @@ class _$MetaFeatureCopyWithImpl<$Res, $Val extends MetaFeature>
       emailRequiredForSignup: null == emailRequiredForSignup
           ? _value.emailRequiredForSignup
           : emailRequiredForSignup // ignore: cast_nullable_to_non_nullable
-              as bool,
-      elasticsearch: null == elasticsearch
-          ? _value.elasticsearch
-          : elasticsearch // ignore: cast_nullable_to_non_nullable
               as bool,
       hcaptcha: null == hcaptcha
           ? _value.hcaptcha
@@ -1382,7 +1376,6 @@ abstract class _$$_MetaFeatureCopyWith<$Res>
   $Res call(
       {bool registration,
       bool emailRequiredForSignup,
-      bool elasticsearch,
       bool hcaptcha,
       bool recaptcha,
       bool turnstile,
@@ -1404,7 +1397,6 @@ class __$$_MetaFeatureCopyWithImpl<$Res>
   $Res call({
     Object? registration = null,
     Object? emailRequiredForSignup = null,
-    Object? elasticsearch = null,
     Object? hcaptcha = null,
     Object? recaptcha = null,
     Object? turnstile = null,
@@ -1420,10 +1412,6 @@ class __$$_MetaFeatureCopyWithImpl<$Res>
       emailRequiredForSignup: null == emailRequiredForSignup
           ? _value.emailRequiredForSignup
           : emailRequiredForSignup // ignore: cast_nullable_to_non_nullable
-              as bool,
-      elasticsearch: null == elasticsearch
-          ? _value.elasticsearch
-          : elasticsearch // ignore: cast_nullable_to_non_nullable
               as bool,
       hcaptcha: null == hcaptcha
           ? _value.hcaptcha
@@ -1459,7 +1447,6 @@ class _$_MetaFeature implements _MetaFeature {
   const _$_MetaFeature(
       {required this.registration,
       required this.emailRequiredForSignup,
-      required this.elasticsearch,
       required this.hcaptcha,
       required this.recaptcha,
       required this.turnstile,
@@ -1476,8 +1463,7 @@ class _$_MetaFeature implements _MetaFeature {
 //required bool globalTimeLine,
   @override
   final bool emailRequiredForSignup;
-  @override
-  final bool elasticsearch;
+// required bool elasticsearch,
   @override
   final bool hcaptcha;
   @override
@@ -1496,7 +1482,7 @@ class _$_MetaFeature implements _MetaFeature {
 
   @override
   String toString() {
-    return 'MetaFeature(registration: $registration, emailRequiredForSignup: $emailRequiredForSignup, elasticsearch: $elasticsearch, hcaptcha: $hcaptcha, recaptcha: $recaptcha, turnstile: $turnstile, objectStorage: $objectStorage, serviceWorker: $serviceWorker, miauth: $miauth)';
+    return 'MetaFeature(registration: $registration, emailRequiredForSignup: $emailRequiredForSignup, hcaptcha: $hcaptcha, recaptcha: $recaptcha, turnstile: $turnstile, objectStorage: $objectStorage, serviceWorker: $serviceWorker, miauth: $miauth)';
   }
 
   @override
@@ -1508,8 +1494,6 @@ class _$_MetaFeature implements _MetaFeature {
                 other.registration == registration) &&
             (identical(other.emailRequiredForSignup, emailRequiredForSignup) ||
                 other.emailRequiredForSignup == emailRequiredForSignup) &&
-            (identical(other.elasticsearch, elasticsearch) ||
-                other.elasticsearch == elasticsearch) &&
             (identical(other.hcaptcha, hcaptcha) ||
                 other.hcaptcha == hcaptcha) &&
             (identical(other.recaptcha, recaptcha) ||
@@ -1529,7 +1513,6 @@ class _$_MetaFeature implements _MetaFeature {
       runtimeType,
       registration,
       emailRequiredForSignup,
-      elasticsearch,
       hcaptcha,
       recaptcha,
       turnstile,
@@ -1555,7 +1538,6 @@ abstract class _MetaFeature implements MetaFeature {
   const factory _MetaFeature(
       {required final bool registration,
       required final bool emailRequiredForSignup,
-      required final bool elasticsearch,
       required final bool hcaptcha,
       required final bool recaptcha,
       required final bool turnstile,
@@ -1571,9 +1553,7 @@ abstract class _MetaFeature implements MetaFeature {
   @override //required bool localTimeLine,
 //required bool globalTimeLine,
   bool get emailRequiredForSignup;
-  @override
-  bool get elasticsearch;
-  @override
+  @override // required bool elasticsearch,
   bool get hcaptcha;
   @override
   bool get recaptcha;

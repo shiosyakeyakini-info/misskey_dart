@@ -22,6 +22,8 @@ class StreamingRequestBody with _$StreamingRequestBody {
     Channel? channel,
     required String id,
     required Map<String, dynamic>? params,
+    String? type,
+    Map<String, dynamic>? body,
   }) = _StreamingRequestBody;
 
   factory StreamingRequestBody.fromJson(Map<String, Object?> json) =>

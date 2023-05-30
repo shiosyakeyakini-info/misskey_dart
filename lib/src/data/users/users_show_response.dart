@@ -19,7 +19,7 @@ class UsersShowResponse with _$UsersShowResponse {
     required bool isBot,
     required bool isCat,
     UserInstanceInfo? instance,
-    Map? emojis,
+    Map<String, String>? emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,

@@ -200,9 +200,207 @@ void main() async {
       });
     });
 
-    group("channels", () {});
+    group("channels", () {
+      test("timeline", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .timeline(ChannelsTimelineRequest(channelId: channel.id));
+      });
 
-    group("clips", () {});
+      test("show", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .show(ChannelsShowRequest(channelId: channel.id));
+      });
+
+      test("followed", () async {
+        final channel = await adminClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .follow(ChannelsFollowRequest(channelId: channel.id));
+        await userClient.channels.followed(ChannelsFollowedRequest());
+      });
+
+      test("my-favorites", () async {
+        final channel = await adminClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .favorite(ChannelsFavoriteRequest(channelId: channel.id));
+        await userClient.channels.myFavorite(ChannelsMyFavoriteRequest());
+      });
+
+      test("featured", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await adminClient.channels
+            .favorite(ChannelsFavoriteRequest(channelId: channel.id));
+        await userClient.channels.featured();
+      });
+
+      test("owned", () async {
+        await userClient.channels.create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels.owned(ChannelsOwnedRequest());
+      });
+
+      test("search", () async {
+        await userClient.channels.create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels.search(ChannelsSearchRequest(query: "test"));
+      });
+
+      test("create", () async {
+        await userClient.channels.create(ChannelsCreateRequest(name: "test"));
+      });
+
+      test("update", () async {
+        final channel = await userClient.channels.create(
+          ChannelsCreateRequest(
+            name: "test",
+          ),
+        );
+        await userClient.channels.update(
+          ChannelsUpdateRequest(
+            channelId: channel.id,
+            name: "updated",
+            description: "description",
+            color: "#FF0000",
+          ),
+        );
+      });
+
+      test("favorite", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .favorite(ChannelsFavoriteRequest(channelId: channel.id));
+      });
+
+      test("unfavorite", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .favorite(ChannelsFavoriteRequest(channelId: channel.id));
+        await userClient.channels
+            .unfavorite(ChannelsUnfavoriteRequest(channelId: channel.id));
+      });
+
+      test("follow", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .follow(ChannelsFollowRequest(channelId: channel.id));
+      });
+
+      test("unfollow", () async {
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        await userClient.channels
+            .follow(ChannelsFollowRequest(channelId: channel.id));
+        await userClient.channels
+            .unfollow(ChannelsUnfollowRequest(channelId: channel.id));
+      });
+    });
+
+    group("clips", () {
+      test("list", () async {
+        await userClient.clips.create(ClipsCreateRequest(name: "test"));
+        await userClient.clips.list();
+      });
+
+      test("my-favorites", () async {
+        final clip = await adminClient.clips.create(
+          ClipsCreateRequest(
+            name: "test",
+            isPublic: true,
+          ),
+        );
+        await userClient.clips.favorite(ClipsFavoriteRequest(clipId: clip.id));
+        await userClient.clips.myFavorites();
+      });
+
+      test("notes", () async {
+        final clip =
+            await userClient.clips.create(ClipsCreateRequest(name: "test"));
+        final note = await userClient.createNote();
+        await userClient.clips
+            .addNote(ClipsAddNoteRequest(clipId: clip.id, noteId: note.id));
+      });
+
+      test("add-note", () async {
+        final clip =
+            await userClient.clips.create(ClipsCreateRequest(name: "test"));
+        final note = await userClient.createNote();
+        await userClient.clips
+            .addNote(ClipsAddNoteRequest(clipId: clip.id, noteId: note.id));
+      });
+
+      test("remove-note", () async {
+        final clip =
+            await userClient.clips.create(ClipsCreateRequest(name: "test"));
+        final note = await userClient.createNote();
+        await userClient.clips
+            .addNote(ClipsAddNoteRequest(clipId: clip.id, noteId: note.id));
+        await userClient.clips.removeNote(
+          ClipsRemoveNoteRequest(clipId: clip.id, noteId: note.id),
+        );
+      });
+
+      test("create", () async {
+        await userClient.clips.create(ClipsCreateRequest(name: "test"));
+      });
+
+      test("delete", () async {
+        final clip =
+            await userClient.clips.create(ClipsCreateRequest(name: "test"));
+        await userClient.clips.delete(ClipsDeleteRequest(clipId: clip.id));
+      });
+
+      test("update", () async {
+        final clip = await userClient.clips.create(
+          ClipsCreateRequest(
+            name: "test",
+            isPublic: false,
+            description: "test",
+          ),
+        );
+        await userClient.clips.update(
+          ClipsUpdateRequest(
+            clipId: clip.id,
+            name: "updated",
+            isPublic: true,
+          ),
+        );
+      });
+
+      test("show", () async {
+        final clip =
+            await userClient.clips.create(ClipsCreateRequest(name: "test"));
+        await userClient.clips.show(ClipsShowRequest(clipId: clip.id));
+      });
+
+      test("favorite", () async {
+        final clip = await adminClient.clips.create(
+          ClipsCreateRequest(
+            name: "test",
+            isPublic: true,
+          ),
+        );
+        await userClient.clips.favorite(ClipsFavoriteRequest(clipId: clip.id));
+      });
+
+      test("unfavorite", () async {
+        final clip = await adminClient.clips.create(
+          ClipsCreateRequest(
+            name: "test",
+            isPublic: true,
+          ),
+        );
+        await userClient.clips.favorite(ClipsFavoriteRequest(clipId: clip.id));
+        await userClient.clips
+            .unfavorite(ClipsUnfavoriteRequest(clipId: clip.id));
+      });
+    });
 
     group("drive", () {
       group("files", () {
@@ -240,6 +438,62 @@ void main() async {
             .create(FollowingCreateRequest(userId: newUser.id));
         await userClient.following
             .delete(FollowingDeleteRequest(userId: newUser.id));
+      });
+
+      test("invalidate", () async {
+        final response = await adminClient.createUser();
+        final newUser = response.user;
+        final newClient = response.client;
+        await userClient.following
+            .create(FollowingCreateRequest(userId: newUser.id));
+        await newClient.following
+            .invalidate(FollowingInvalidateRequest(userId: user.id));
+      });
+
+      group("requests", () {
+        test("accept", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await newClient.following.requests
+              .accept(FollowingRequestsAcceptRequest(userId: user.id));
+        });
+
+        test("cancel", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await userClient.following.requests
+              .cancel(FollowingRequestsCancelRequest(userId: newUser.id));
+        });
+
+        test("list", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await newClient.following.requests
+              .list(FollowingRequestsListRequest());
+        });
+
+        test("reject", () async {
+          final response = await adminClient.createUser();
+          final newUser = response.user;
+          final newClient = response.client;
+          await newClient.i.update(IUpdateRequest(isLocked: true));
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await newClient.following.requests
+              .reject(FollowingRequestsRejectRequest(userId: user.id));
+        });
       });
     });
 
@@ -491,6 +745,7 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           completer.complete,
           (id, reaction) => null,
+          (id, vote) => null,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -503,6 +758,7 @@ void main() async {
         final controller = userClient.localTimelineStream(
           completer.complete,
           (id, reaction) => null,
+          (id, vote) => null,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -526,6 +782,7 @@ void main() async {
         final controller = userClient.hybridTimelineStream(
           completer.complete,
           (id, reaction) => null,
+          (id, vote) => null,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -533,7 +790,26 @@ void main() async {
         await controller.disconnect();
       });
 
-      test("channel", () async {});
+      test("channel", () async {
+        final completer = Completer<Note>();
+        final channel = await userClient.channels
+            .create(ChannelsCreateRequest(name: "test"));
+        final controller = userClient.channelStream(
+          channel.id,
+          completer.complete,
+          (id, reaction) => null,
+          (id, vote) => null,
+        );
+        await controller.startStreaming();
+        await userClient.notes.create(
+          NotesCreateRequest(
+            text: "test",
+            channelId: channel.id,
+          ),
+        );
+        await completer.future;
+        await controller.disconnect();
+      });
 
       group("userList", () {
         test("note", () async {
@@ -628,9 +904,35 @@ void main() async {
             antenna.id,
             completer.complete,
             (id, reaction) => null,
+            (id, vote) => null,
           );
           await controller.startStreaming();
           await userClient.notes.create(NotesCreateRequest(text: "keyword"));
+          await completer.future;
+          await controller.disconnect();
+        });
+      });
+
+      group("serverStats", () {
+        test("statsLog", () async {
+          final completer = Completer<List<StatsLogResponse>>();
+          final controller = userClient.serverStatsLogStream(
+            completer.complete,
+            (response) => null,
+          );
+          await controller.startStreaming();
+          await controller.requestLog(10);
+          await completer.future;
+          await controller.disconnect();
+        });
+
+        test("stats", () async {
+          final completer = Completer<StatsLogResponse>();
+          final controller = userClient.serverStatsLogStream(
+            (response) => null,
+            completer.complete,
+          );
+          await controller.startStreaming();
           await completer.future;
           await controller.disconnect();
         });
@@ -799,9 +1101,10 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           (note) => null,
           (id, reaction) => completer.complete(reaction),
+          (id, vote) => null,
         );
         await controller.startStreaming();
-        await controller.send(StreamingRequestType.subNote, note.id);
+        await controller.subNote(note.id);
         await userClient.notes.reactions.create(
           NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
         );
@@ -815,10 +1118,11 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           (note) => null,
           (id, reaction) => null,
+          (id, vote) => null,
           onUnreacted: (id, reaction) => completer.complete(reaction),
         );
         await controller.startStreaming();
-        await controller.send(StreamingRequestType.subNote, note.id);
+        await controller.subNote(note.id);
         await userClient.notes.reactions.create(
           NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
         );
@@ -832,17 +1136,37 @@ void main() async {
         final completer = Completer<DateTime>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
-            (note) => null, (id, reaction) => null,
-            onDeleted: completer.complete);
+          (note) => null,
+          (id, reaction) => null,
+          (id, vote) => null,
+          onDeleted: (id, deletedAt) => completer.complete(deletedAt),
+        );
         await controller.startStreaming();
-        await controller.send(StreamingRequestType.subNote, note.id);
+        await controller.subNote(note.id);
         await userClient.notes.delete(NotesDeleteRequest(noteId: note.id));
         await completer.future;
         await controller.disconnect();
       });
 
-      test("pollVoted", () {
-        // TODO
+      test("pollVoted", () async {
+        final completer = Completer<TimelineVoted>();
+        final response = await userClient.apiService.post("notes/create", {
+          "poll": {
+            "choices": ["0", "1"]
+          }
+        });
+        final note = Note.fromJson(response["createdNote"]);
+        final controller = userClient.homeTimelineStream(
+          (note) => null,
+          (id, reaction) => null,
+          (id, vote) => completer.complete(vote),
+        );
+        await controller.startStreaming();
+        await controller.subNote(note.id);
+        await adminClient.notes.polls
+            .vote(NotesPollsVoteRequest(noteId: note.id, choice: 0));
+        await completer.future;
+        await controller.disconnect();
       });
     });
 

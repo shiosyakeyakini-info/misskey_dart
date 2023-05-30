@@ -36,6 +36,8 @@ _$_StreamingRequestBody _$$_StreamingRequestBodyFromJson(
       channel: $enumDecodeNullable(_$ChannelEnumMap, json['channel']),
       id: json['id'] as String,
       params: json['params'] as Map<String, dynamic>?,
+      type: json['type'] as String?,
+      body: json['body'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$_StreamingRequestBodyToJson(
@@ -44,6 +46,8 @@ Map<String, dynamic> _$$_StreamingRequestBodyToJson(
       'channel': _$ChannelEnumMap[instance.channel],
       'id': instance.id,
       'params': instance.params,
+      'type': instance.type,
+      'body': instance.body,
     };
 
 const _$ChannelEnumMap = {

@@ -4,19 +4,22 @@ import 'package:misskey_dart/src/data/notes/notes_delete_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_reactions_request.dart';
 import 'package:misskey_dart/src/data/notes/notes_reactions_response.dart';
 import 'package:misskey_dart/src/data/notes/notes_state_response.dart';
+import 'package:misskey_dart/src/data/notes/polls/notes_polls_vote_request.dart';
 
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyNotes {
   final MisskeyNotesReactions reactions;
   final MisskeyNotesFavorites favorites;
+  final MisskeyNotesPolls polls;
 
   final ApiService _apiService;
 
   MisskeyNotes({required apiService})
       : _apiService = apiService,
         reactions = MisskeyNotesReactions(apiService: apiService),
-        favorites = MisskeyNotesFavorites(apiService: apiService);
+        favorites = MisskeyNotesFavorites(apiService: apiService),
+        polls = MisskeyNotesPolls(apiService: apiService);
 
   /// ノートを投稿します。
   Future<void> create(NotesCreateRequest request) async {
@@ -98,7 +101,8 @@ class MisskeyNotes {
 class MisskeyNotesReactions {
   final ApiService _apiService;
 
-  MisskeyNotesReactions({required apiService}) : _apiService = apiService;
+  MisskeyNotesReactions({required ApiService apiService})
+      : _apiService = apiService;
 
   /// ノートにリアクションします。
   Future<void> create(NotesReactionsCreateRequest request) async {
@@ -124,7 +128,8 @@ class MisskeyNotesReactions {
 class MisskeyNotesFavorites {
   final ApiService _apiService;
 
-  MisskeyNotesFavorites({required apiService}) : _apiService = apiService;
+  MisskeyNotesFavorites({required ApiService apiService})
+      : _apiService = apiService;
 
   /// ノートをお気に入りに登録します。
   Future<void> create(NotesFavoritesCreateRequest request) async {
@@ -134,5 +139,16 @@ class MisskeyNotesFavorites {
   /// ノートのお気に入りを解除します。
   Future<void> delete(NotesFavoritesDeleteRequest request) async {
     await _apiService.post<void>("notes/favorites/delete", request.toJson());
+  }
+}
+
+class MisskeyNotesPolls {
+  final ApiService _apiService;
+
+  MisskeyNotesPolls({required ApiService apiService})
+      : _apiService = apiService;
+
+  Future<void> vote(NotesPollsVoteRequest request) async {
+    await _apiService.post<void>("notes/polls/vote", request.toJson());
   }
 }

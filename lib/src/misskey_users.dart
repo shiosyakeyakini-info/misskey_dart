@@ -66,6 +66,14 @@ class MisskeyUsers {
   Future<void> reportAbuse(UsersReportAbuseRequest request) async {
     await _apiService.post("users/report-abuse", request.toJson());
   }
+
+  /// ユーザーがつけたリアクションを取得します。
+  Future<Iterable<UsersReactionsResponse>> reactions(
+      UsersReactionsRequest request) async {
+    final response =
+        await _apiService.post<List>("users/reactions", request.toJson());
+    return response.map((e) => UsersReactionsResponse.fromJson(e));
+  }
 }
 
 class MisskeyUsersLists {

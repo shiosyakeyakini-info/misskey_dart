@@ -51,7 +51,7 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
           ?.map((e) => e as String)
           .toList(),
       pinnedPageId: json['pinnedPageId'] as String?,
-      pinnedPage: json['pinnedPage'] as String?,
+      pinnedPage: json['pinnedPage'] as Map<String, dynamic>?,
       publicReactions: json['publicReactions'] as bool,
       ffVisibility: json['ffVisibility'] as String,
       twoFactorEnabled: json['twoFactorEnabled'] as bool,

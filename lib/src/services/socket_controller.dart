@@ -129,12 +129,45 @@ class SocketController {
     await startStreaming();
   }
 
-  Future<void> send(StreamingRequestType requestType, String id) async {
-    final request = jsonEncode(StreamingRequest(
-      type: requestType,
-      body: StreamingRequestBody(id: id, params: {}),
-    ));
-    print("send[$id]: $request}");
+  Future<void> subNote(String noteId) async {
+    await send(
+      StreamingRequestType.subNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+  }
+
+  Future<void> unsubNote(String noteId) async {
+    await send(
+      StreamingRequestType.unsubNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+  }
+
+  Future<void> requestLog(int? length) async {
+    await send(
+      StreamingRequestType.channel,
+      StreamingRequestBody(
+        id: id,
+        params: {},
+        type: "requestLog",
+        body: {
+          "length": length,
+        },
+      ),
+    );
+  }
+
+  Future<void> send(
+    StreamingRequestType requestType,
+    StreamingRequestBody body,
+  ) async {
+    final request = jsonEncode(
+      StreamingRequest(
+        type: requestType,
+        body: body,
+      ),
+    );
+    print("send[${body.id}]: $request}");
     _socketChannel?.sink.add(request);
   }
 }

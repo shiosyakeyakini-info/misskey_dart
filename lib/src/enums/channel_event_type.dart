@@ -7,6 +7,10 @@ enum ChannelEventType {
   userAdded,
   userRemoved,
 
+  // serverStats
+  statsLog,
+  stats,
+
   // main
   notification,
   mention,
@@ -17,6 +21,7 @@ enum ChannelEventType {
   unfollow,
   meUpdated,
   pageEvent,
+  pollVoted,
   urlUploadFinished,
   readAllNotifications,
   unreadNotification,

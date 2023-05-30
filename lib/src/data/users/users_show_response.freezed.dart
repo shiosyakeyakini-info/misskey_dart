@@ -30,7 +30,7 @@ mixin _$UsersShowResponse {
   bool get isBot => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
   UserInstanceInfo? get instance => throw _privateConstructorUsedError;
-  Map<dynamic, dynamic>? get emojis => throw _privateConstructorUsedError;
+  Map<String, String>? get emojis => throw _privateConstructorUsedError;
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -101,7 +101,7 @@ abstract class $UsersShowResponseCopyWith<$Res> {
       bool isBot,
       bool isCat,
       UserInstanceInfo? instance,
-      Map<dynamic, dynamic>? emojis,
+      Map<String, String>? emojis,
       @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
@@ -244,7 +244,7 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
       emojis: freezed == emojis
           ? _value.emojis
           : emojis // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
+              as Map<String, String>?,
       onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
@@ -427,7 +427,7 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
       bool isBot,
       bool isCat,
       UserInstanceInfo? instance,
-      Map<dynamic, dynamic>? emojis,
+      Map<String, String>? emojis,
       @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
@@ -569,7 +569,7 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
       emojis: freezed == emojis
           ? _value._emojis
           : emojis // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
+              as Map<String, String>?,
       onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
@@ -735,7 +735,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
       required this.isBot,
       required this.isCat,
       this.instance,
-      final Map<dynamic, dynamic>? emojis,
+      final Map<String, String>? emojis,
       @OnlineStatusJsonConverter() this.onlineStatus,
       @NullableUriConverter() this.url,
       @NullableUriConverter() this.uri,
@@ -802,9 +802,9 @@ class _$_UsersShowResponse implements _UsersShowResponse {
   final bool isCat;
   @override
   final UserInstanceInfo? instance;
-  final Map<dynamic, dynamic>? _emojis;
+  final Map<String, String>? _emojis;
   @override
-  Map<dynamic, dynamic>? get emojis {
+  Map<String, String>? get emojis {
     final value = _emojis;
     if (value == null) return null;
     if (_emojis is EqualUnmodifiableMapView) return _emojis;
@@ -1114,7 +1114,7 @@ abstract class _UsersShowResponse implements UsersShowResponse {
       required final bool isBot,
       required final bool isCat,
       final UserInstanceInfo? instance,
-      final Map<dynamic, dynamic>? emojis,
+      final Map<String, String>? emojis,
       @OnlineStatusJsonConverter() final OnlineStatus? onlineStatus,
       @NullableUriConverter() final Uri? url,
       @NullableUriConverter() final Uri? uri,
@@ -1176,7 +1176,7 @@ abstract class _UsersShowResponse implements UsersShowResponse {
   @override
   UserInstanceInfo? get instance;
   @override
-  Map<dynamic, dynamic>? get emojis;
+  Map<String, String>? get emojis;
   @override
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus;

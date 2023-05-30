@@ -200,6 +200,8 @@ mixin _$StreamingRequestBody {
   Channel? get channel => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   Map<String, dynamic>? get params => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -213,7 +215,12 @@ abstract class $StreamingRequestBodyCopyWith<$Res> {
           $Res Function(StreamingRequestBody) then) =
       _$StreamingRequestBodyCopyWithImpl<$Res, StreamingRequestBody>;
   @useResult
-  $Res call({Channel? channel, String id, Map<String, dynamic>? params});
+  $Res call(
+      {Channel? channel,
+      String id,
+      Map<String, dynamic>? params,
+      String? type,
+      Map<String, dynamic>? body});
 }
 
 /// @nodoc
@@ -233,6 +240,8 @@ class _$StreamingRequestBodyCopyWithImpl<$Res,
     Object? channel = freezed,
     Object? id = null,
     Object? params = freezed,
+    Object? type = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       channel: freezed == channel
@@ -247,6 +256,14 @@ class _$StreamingRequestBodyCopyWithImpl<$Res,
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -259,7 +276,12 @@ abstract class _$$_StreamingRequestBodyCopyWith<$Res>
       __$$_StreamingRequestBodyCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Channel? channel, String id, Map<String, dynamic>? params});
+  $Res call(
+      {Channel? channel,
+      String id,
+      Map<String, dynamic>? params,
+      String? type,
+      Map<String, dynamic>? body});
 }
 
 /// @nodoc
@@ -276,6 +298,8 @@ class __$$_StreamingRequestBodyCopyWithImpl<$Res>
     Object? channel = freezed,
     Object? id = null,
     Object? params = freezed,
+    Object? type = freezed,
+    Object? body = freezed,
   }) {
     return _then(_$_StreamingRequestBody(
       channel: freezed == channel
@@ -290,6 +314,14 @@ class __$$_StreamingRequestBodyCopyWithImpl<$Res>
           ? _value._params
           : params // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _value._body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -300,8 +332,11 @@ class _$_StreamingRequestBody implements _StreamingRequestBody {
   const _$_StreamingRequestBody(
       {this.channel,
       required this.id,
-      required final Map<String, dynamic>? params})
-      : _params = params;
+      required final Map<String, dynamic>? params,
+      this.type,
+      final Map<String, dynamic>? body})
+      : _params = params,
+        _body = body;
 
   factory _$_StreamingRequestBody.fromJson(Map<String, dynamic> json) =>
       _$$_StreamingRequestBodyFromJson(json);
@@ -321,8 +356,20 @@ class _$_StreamingRequestBody implements _StreamingRequestBody {
   }
 
   @override
+  final String? type;
+  final Map<String, dynamic>? _body;
+  @override
+  Map<String, dynamic>? get body {
+    final value = _body;
+    if (value == null) return null;
+    if (_body is EqualUnmodifiableMapView) return _body;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
   String toString() {
-    return 'StreamingRequestBody(channel: $channel, id: $id, params: $params)';
+    return 'StreamingRequestBody(channel: $channel, id: $id, params: $params, type: $type, body: $body)';
   }
 
   @override
@@ -332,13 +379,20 @@ class _$_StreamingRequestBody implements _StreamingRequestBody {
             other is _$_StreamingRequestBody &&
             (identical(other.channel, channel) || other.channel == channel) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._params, _params));
+            const DeepCollectionEquality().equals(other._params, _params) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other._body, _body));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, channel, id, const DeepCollectionEquality().hash(_params));
+      runtimeType,
+      channel,
+      id,
+      const DeepCollectionEquality().hash(_params),
+      type,
+      const DeepCollectionEquality().hash(_body));
 
   @JsonKey(ignore: true)
   @override
@@ -359,7 +413,9 @@ abstract class _StreamingRequestBody implements StreamingRequestBody {
   const factory _StreamingRequestBody(
       {final Channel? channel,
       required final String id,
-      required final Map<String, dynamic>? params}) = _$_StreamingRequestBody;
+      required final Map<String, dynamic>? params,
+      final String? type,
+      final Map<String, dynamic>? body}) = _$_StreamingRequestBody;
 
   factory _StreamingRequestBody.fromJson(Map<String, dynamic> json) =
       _$_StreamingRequestBody.fromJson;
@@ -370,6 +426,10 @@ abstract class _StreamingRequestBody implements StreamingRequestBody {
   String get id;
   @override
   Map<String, dynamic>? get params;
+  @override
+  String? get type;
+  @override
+  Map<String, dynamic>? get body;
   @override
   @JsonKey(ignore: true)
   _$$_StreamingRequestBodyCopyWith<_$_StreamingRequestBody> get copyWith =>

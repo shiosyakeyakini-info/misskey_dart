@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/announcements_request.dart';
 import 'package:misskey_dart/src/data/announcements_response.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
@@ -7,6 +8,8 @@ import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/i/i_notifications_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
+import 'package:misskey_dart/src/data/ping_response.dart';
+import 'package:misskey_dart/src/data/streaming/stats_log_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
@@ -96,13 +99,30 @@ class Misskey {
     return MetaResponse.fromJson(response);
   }
 
+  Future<PingResponse> ping() async {
+    final response = await apiService.post<Map<String, dynamic>>("ping", {});
+    return PingResponse.fromJson(response);
+  }
+
+  Future<ServerInfoResponse> serverInfo() async {
+    final response =
+        await apiService.post<Map<String, dynamic>>("server-info", {});
+    return ServerInfoResponse.fromJson(response);
+  }
+
+  Future<GetOnlineUsersCountResponse> getOnlineUsersCount() async {
+    final response = await apiService
+        .post<Map<String, dynamic>>("get-online-users-count", {});
+    return GetOnlineUsersCountResponse.fromJson(response);
+  }
+
   /// ホームタイムラインに接続します。
   SocketController homeTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
-    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
-    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
   }) =>
       apiService.createSocket(
         channel: Channel.homeTimeline,
@@ -121,10 +141,10 @@ class Misskey {
               await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
             case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
@@ -133,10 +153,10 @@ class Misskey {
   /// ローカルタイムラインに接続します。
   SocketController localTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
-    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
-    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
   }) =>
       apiService.createSocket(
         channel: Channel.localTimeline,
@@ -155,10 +175,10 @@ class Misskey {
               await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
             case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
@@ -169,8 +189,8 @@ class Misskey {
     FutureOr<void> Function(Note note) onEventReceived, {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
-    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+    FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
       apiService.createSocket(
         channel: Channel.globalTimeline,
@@ -189,10 +209,10 @@ class Misskey {
               await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
             case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
@@ -200,10 +220,10 @@ class Misskey {
 
   SocketController hybridTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
-    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
-    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
   }) =>
       apiService.createSocket(
         channel: Channel.hybridTimeline,
@@ -222,10 +242,10 @@ class Misskey {
               await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
             case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
@@ -235,10 +255,10 @@ class Misskey {
   SocketController channelStream(
     String channelId,
     FutureOr<void> Function(Note note) onEventReceived,
-    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
-    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
   }) =>
       apiService.createSocket(
         channel: Channel.channel,
@@ -258,10 +278,10 @@ class Misskey {
               await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
             case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
@@ -277,7 +297,7 @@ class Misskey {
     FutureOr<void> Function(User user)? onUserRemoved,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
       apiService.createSocket(
         channel: Channel.userList,
@@ -312,7 +332,7 @@ class Misskey {
               await onDeleted?.call(DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
@@ -323,10 +343,10 @@ class Misskey {
   SocketController antennaStream(
     String antennaId,
     FutureOr<void> Function(Note note) onEventReceived,
-    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
-    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
-    FutureOr<void> Function(int choice, String userId)? onPollVoted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
   }) =>
       apiService.createSocket(
         channel: Channel.antenna,
@@ -346,14 +366,35 @@ class Misskey {
               await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
             case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onPollVoted?.call(response["choice"], response["userId"]);
+              await onVoted.call(response["choice"], response["userId"]);
               return;
           }
         },
         parameters: {"antennaId": antennaId},
+      );
+
+  SocketController serverStatsLogStream(
+    FutureOr<void> Function(List<StatsLogResponse> response) onLogReceived,
+    FutureOr<void> Function(StatsLogResponse response) onEventReceived,
+  ) =>
+      apiService.createSocket(
+        channel: Channel.serverStats,
+        onEventReceived: (id, type, response) {
+          if (response == null) return;
+
+          if (type == ChannelEventType.statsLog) {
+            final logs = response as List;
+            onLogReceived
+                .call(logs.map((e) => StatsLogResponse.fromJson(e)).toList());
+          }
+
+          if (type == ChannelEventType.stats) {
+            onEventReceived.call(StatsLogResponse.fromJson(response));
+          }
+        },
       );
 
   /// メインのストリームに接続します。

@@ -43,6 +43,9 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       channel: json['channel'] == null
           ? null
           : NoteChannelInfo.fromJson(json['channel'] as Map<String, dynamic>),
+      poll: json['poll'] == null
+          ? null
+          : NotePoll.fromJson(json['poll'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
@@ -69,6 +72,7 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'reply': instance.reply,
       'myReaction': instance.myReaction,
       'channel': instance.channel,
+      'poll': instance.poll,
     };
 
 _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>
@@ -81,4 +85,47 @@ Map<String, dynamic> _$$_NoteChannelInfoToJson(_$_NoteChannelInfo instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+    };
+
+_$_NotePoll _$$_NotePollFromJson(Map<String, dynamic> json) => _$_NotePoll(
+      multiple: json['multiple'] as bool,
+      expiresAt: _$JsonConverterFromJson<String, DateTime>(
+          json['expiresAt'], const DateTimeConverter().fromJson),
+      choices: (json['choices'] as List<dynamic>)
+          .map((e) => NotePollChoice.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_NotePollToJson(_$_NotePoll instance) =>
+    <String, dynamic>{
+      'multiple': instance.multiple,
+      'expiresAt': _$JsonConverterToJson<String, DateTime>(
+          instance.expiresAt, const DateTimeConverter().toJson),
+      'choices': instance.choices,
+    };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
+
+_$_NotePollChoice _$$_NotePollChoiceFromJson(Map<String, dynamic> json) =>
+    _$_NotePollChoice(
+      text: json['text'] as String,
+      votes: json['votes'] as int,
+      isVoted: json['isVoted'] as bool,
+    );
+
+Map<String, dynamic> _$$_NotePollChoiceToJson(_$_NotePollChoice instance) =>
+    <String, dynamic>{
+      'text': instance.text,
+      'votes': instance.votes,
+      'isVoted': instance.isVoted,
     };

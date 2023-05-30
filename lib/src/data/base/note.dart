@@ -33,6 +33,7 @@ class Note with _$Note {
     Note? reply,
     String? myReaction,
     NoteChannelInfo? channel,
+    NotePoll? poll,
   }) = _Note;
 
   factory Note.fromJson(Map<String, Object?> json) => _$NoteFromJson(json);
@@ -47,4 +48,28 @@ class NoteChannelInfo with _$NoteChannelInfo {
 
   factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>
       _$NoteChannelInfoFromJson(json);
+}
+
+@freezed
+class NotePoll with _$NotePoll {
+  const factory NotePoll({
+    required bool multiple,
+    @DateTimeConverter() DateTime? expiresAt,
+    required List<NotePollChoice> choices,
+  }) = _NotePoll;
+
+  factory NotePoll.fromJson(Map<String, dynamic> json) =>
+      _$NotePollFromJson(json);
+}
+
+@freezed
+class NotePollChoice with _$NotePollChoice {
+  const factory NotePollChoice({
+    required String text,
+    required int votes,
+    required bool isVoted,
+  }) = _NotePollChoice;
+
+  factory NotePollChoice.fromJson(Map<String, dynamic> json) =>
+      _$NotePollChoiceFromJson(json);
 }
