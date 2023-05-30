@@ -1189,6 +1189,10 @@ void main() async {
         final name = Uuid().v4().replaceAll("-", "_");
         final response = await adminClient.apiService
             .post("admin/emoji/add", {"fileId": file.id});
+        await adminClient.apiService.post(
+          "admin/emoji/update",
+          {"id": response["id"], "name": name, "aliases": []},
+        );
         final controller =
             userClient.mainStream(onEmojiUpdated: completer.complete);
         await controller.startStreaming();
