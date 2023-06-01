@@ -74,6 +74,12 @@ class MisskeyUsers {
         await _apiService.post<List>("users/reactions", request.toJson());
     return response.map((e) => UsersReactionsResponse.fromJson(e));
   }
+
+  Future<Iterable<User>> search(UsersSearchRequest request) async {
+    final response =
+        await _apiService.post<List>("users/search", request.toJson());
+    return response.map((e) => User.fromJson(e));
+  }
 }
 
 class MisskeyUsersLists {
