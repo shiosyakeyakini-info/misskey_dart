@@ -68,6 +68,7 @@ export 'src/data/i/i_notifications_response.dart';
 export 'src/data/i/i_favorites_request.dart';
 export 'src/data/i/i_favorites_response.dart';
 export 'src/data/i/i_update_request.dart';
+export 'src/data/notes/notes_clips_request.dart';
 export 'src/data/notes/notes_timeline_request.dart';
 export 'src/data/notes/notes_create_request.dart';
 export 'src/data/notes/notes_delete_request.dart';
