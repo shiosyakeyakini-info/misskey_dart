@@ -30,6 +30,10 @@ _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
       replyId: json['replyId'] as String?,
       renoteId: json['renoteId'] as String?,
       channelId: json['channelId'] as String?,
+      poll: json['poll'] == null
+          ? null
+          : NotesCreatePollRequest.fromJson(
+              json['poll'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_NotesCreateRequestToJson(
@@ -51,6 +55,7 @@ Map<String, dynamic> _$$_NotesCreateRequestToJson(
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
+      'poll': instance.poll,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
