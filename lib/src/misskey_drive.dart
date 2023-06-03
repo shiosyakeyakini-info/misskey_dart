@@ -30,6 +30,13 @@ class MisskeyDriveFiles {
     return DriveFile.fromJson(response);
   }
 
+  Future<DriveFile> createAsBinary(
+      DriveFilesCreateRequest request, Uint8List fileContent) async {
+    final response = await _apiService.postWithBinary<Map<String, dynamic>>(
+        "drive/files/create", request.toJson(), fileContent);
+    return DriveFile.fromJson(response);
+  }
+
   Future<Iterable<DriveFile>> files(DriveFilesRequest request) async {
     final response =
         await _apiService.post<List>("drive/files", request.toJson());

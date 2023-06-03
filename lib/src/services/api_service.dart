@@ -58,6 +58,28 @@ class ApiService {
     return response.data;
   }
 
+  Future<T> postWithBinary<T>(
+    String path,
+    Map<String, dynamic> request,
+    Uint8List binaryData, {
+    String? fileName,
+  }) async {
+    request
+      ..addEntries([MapEntry("i", token)])
+      ..addEntries([
+        MapEntry(
+            "file", MultipartFile.fromBytes(binaryData, filename: fileName))
+      ])
+      ..removeWhere((key, value) => value == null);
+    final response = await dio.request(path,
+        data: FormData.fromMap(request),
+        options: Options(
+          contentType: "multipart/form-data",
+          method: "POST",
+        ));
+    return response.data;
+  }
+
   SocketController createSocket({
     required Channel channel,
     String? id,
