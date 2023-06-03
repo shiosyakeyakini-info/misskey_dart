@@ -1,19 +1,37 @@
+import 'dart:async';
 import 'dart:convert';
 
-import 'package:misskey_dart/src/data/streaming/channel_request.dart';
-import 'package:misskey_dart/src/data/streaming/channel_response.dart';
+import 'package:misskey_dart/src/data/streaming/broadcast_event.dart';
+import 'package:misskey_dart/src/data/streaming/channel_event.dart';
+import 'package:misskey_dart/src/data/streaming/note_updated_event.dart';
+import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
+import 'package:misskey_dart/src/data/streaming/streaming_response.dart';
+import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_data_type.dart';
-import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
+import 'package:misskey_dart/src/enums/streaming_request_type.dart';
+import 'package:misskey_dart/src/enums/channel_event_type.dart';
+import 'package:misskey_dart/src/enums/streaming_response_type.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {
   final String url;
   final Channel channel;
-  final void Function(
-          String id, ChannelResponseType type, Map<String, dynamic>? receive)
-      onEventReceived;
+  final FutureOr<void> Function(
+    String id,
+    ChannelEventType type,
+    dynamic response,
+  ) onEventReceived;
+  final FutureOr<void> Function(
+    String id,
+    NoteUpdatedEventType type,
+    Map<String, dynamic> response,
+  )? onNoteUpdatedEventReceived;
+  final FutureOr<void> Function(
+    BroadcastEventType type,
+    Map<String, dynamic> response,
+  )? onBroadcastEventReceived;
   final Map<String, dynamic>? parameters;
 
   String id;
@@ -26,6 +44,8 @@ class SocketController {
     required this.id,
     required this.channel,
     required this.onEventReceived,
+    this.onNoteUpdatedEventReceived,
+    this.onBroadcastEventReceived,
     this.parameters,
   });
 
@@ -34,19 +54,43 @@ class SocketController {
     await socketChannel.ready;
 
     _socketChannel = socketChannel;
-    final channelRequest = ChannelRequest(
-        type: ChannelDataType.connect,
-        body: ChannelRequestBody(channel: channel, id: id, params: parameters));
+    final channelRequest = StreamingRequest(
+      type: StreamingRequestType.connect,
+      body: StreamingRequestBody(
+        channel: channel,
+        id: id,
+        params: parameters,
+      ),
+    );
 
     final requestJson = jsonEncode(channelRequest);
     print("send: $requestJson");
     socketChannel
       ..stream.listen(
-        (event) {
+        (event) async {
           print("received[$id]: $event");
-          final response = ChannelResponse.fromJson(jsonDecode(event));
-          final responseBody = response.body.body;
-          onEventReceived(response.body.id, response.body.type, responseBody);
+          final responseJson = jsonDecode(event);
+          final response = StreamingResponse.fromJson(responseJson);
+          switch (response.type) {
+            case StreamingResponseType.channel:
+              final event = ChannelEvent.fromJson(response.body);
+              await onEventReceived(event.id, event.type, event.body);
+              break;
+            case StreamingResponseType.noteUpdated:
+              final event = NoteUpdatedEvent.fromJson(response.body);
+              await onNoteUpdatedEventReceived?.call(
+                event.id,
+                event.type,
+                event.body,
+              );
+              break;
+            case StreamingResponseType.emojiAdded:
+            case StreamingResponseType.emojiUpdated:
+            case StreamingResponseType.emojiDeleted:
+              final event = BroadcastEvent.fromJson(responseJson);
+              await onBroadcastEventReceived?.call(event.type, event.body);
+              break;
+          }
         },
         onError: (e, s) {
           print("Error happen $e ");
@@ -69,9 +113,10 @@ class SocketController {
   }
 
   Future<void> disconnect() async {
-    final request = jsonEncode(ChannelRequest(
-        type: ChannelDataType.disconnect,
-        body: ChannelRequestBody(id: id, params: {})));
+    final request = jsonEncode(StreamingRequest(
+      type: StreamingRequestType.disconnect,
+      body: StreamingRequestBody(id: id, params: {}),
+    ));
     print("send: $request");
     _socketChannel?.sink.add(request);
     _socketChannel?.sink.close();
@@ -84,10 +129,45 @@ class SocketController {
     await startStreaming();
   }
 
-  Future<void> send(ChannelDataType dataType, String id) async {
-    final request = jsonEncode(ChannelRequest(
-        type: dataType, body: ChannelRequestBody(id: id, params: {})));
-    print("send[$id]: $request}");
+  Future<void> subNote(String noteId) async {
+    await send(
+      StreamingRequestType.subNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+  }
+
+  Future<void> unsubNote(String noteId) async {
+    await send(
+      StreamingRequestType.unsubNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+  }
+
+  Future<void> requestLog(int? length) async {
+    await send(
+      StreamingRequestType.channel,
+      StreamingRequestBody(
+        id: id,
+        params: {},
+        type: "requestLog",
+        body: {
+          "length": length,
+        },
+      ),
+    );
+  }
+
+  Future<void> send(
+    StreamingRequestType requestType,
+    StreamingRequestBody body,
+  ) async {
+    final request = jsonEncode(
+      StreamingRequest(
+        type: requestType,
+        body: body,
+      ),
+    );
+    print("send[${body.id}]: $request}");
     _socketChannel?.sink.add(request);
   }
 }

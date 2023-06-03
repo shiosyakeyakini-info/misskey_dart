@@ -6,12 +6,15 @@ import 'package:misskey_dart/src/data/announcements_response.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/data/emojis_response.dart';
+import 'package:misskey_dart/src/data/i/i_notifications_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/streaming/stats_log_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
+import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/enums/channel_event_type.dart';
+import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/misskey_antennas.dart';
 import 'package:misskey_dart/src/misskey_blocking.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
@@ -117,118 +120,173 @@ class Misskey {
   SocketController homeTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
-    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
-  ) =>
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+  }) =>
       apiService.createSocket(
-          channel: Channel.homeTimeline,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.homeTimeline,
+        onEventReceived: (id, type, response) async {
+          if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
+          final note = Note.fromJson(response);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            if (type == ChannelResponseType.pollVoted) {
-              onVoted.call(id, TimelineVoted.fromJson(response));
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            final note = Note.fromJson(response);
-            onEventReceived(note);
-          });
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
+              return;
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted.call(id, TimelineVoted.fromJson(response));
+              return;
+          }
+        },
+      );
 
   /// ローカルタイムラインに接続します。
   SocketController localTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
-    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
-  ) =>
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+  }) =>
       apiService.createSocket(
         channel: Channel.localTimeline,
-        onEventReceived: (id, type, response) {
+        onEventReceived: (id, type, response) async {
           if (response == null) return;
 
-          if (type == ChannelResponseType.reacted) {
-            onReacted(id, TimelineReacted.fromJson(response));
-            return;
-          }
-
-          if (type == ChannelResponseType.pollVoted) {
-            onVoted.call(id, TimelineVoted.fromJson(response));
-            return;
-          }
-
           final note = Note.fromJson(response);
-          onEventReceived(note);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
+              return;
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted.call(id, TimelineVoted.fromJson(response));
+              return;
+          }
         },
       );
 
   /// グローバルタイムラインに接続します。
   SocketController globalTimelineStream(
-    FutureOr<void> Function(Note note) onEventReceived,
-  ) =>
+    FutureOr<void> Function(Note note) onEventReceived, {
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+    FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+  }) =>
       apiService.createSocket(
-          channel: Channel.globalTimeline,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.globalTimeline,
+        onEventReceived: (id, type, response) async {
+          if (response == null) return;
 
-            final note = Note.fromJson(response);
-            onEventReceived(note);
-          });
+          final note = Note.fromJson(response);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted?.call(id, TimelineReacted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
+              return;
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted?.call(id, TimelineVoted.fromJson(response));
+              return;
+          }
+        },
+      );
 
   SocketController hybridTimelineStream(
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
-    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
-  ) =>
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+  }) =>
       apiService.createSocket(
-          channel: Channel.hybridTimeline,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.hybridTimeline,
+        onEventReceived: (id, type, response) async {
+          if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
+          final note = Note.fromJson(response);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            if (type == ChannelResponseType.pollVoted) {
-              onVoted.call(id, TimelineVoted.fromJson(response));
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            final note = Note.fromJson(response);
-            onEventReceived(note);
-          });
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
+              return;
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted.call(id, TimelineVoted.fromJson(response));
+              return;
+          }
+        },
+      );
 
   /// チャンネル（トピック毎の機能の方）に接続します。
   SocketController channelStream(
     String channelId,
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
-    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
-  ) =>
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+  }) =>
       apiService.createSocket(
-          channel: Channel.channel,
-          id: channelId,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.channel,
+        id: channelId,
+        onEventReceived: (id, type, response) async {
+          if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
+          final note = Note.fromJson(response);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
               return;
-            } else if (type == ChannelResponseType.pollVoted) {
-              onVoted(id, TimelineVoted.fromJson(response));
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
-            } else if (type == ChannelResponseType.pollVoted) {
-              onVoted.call(id, TimelineVoted.fromJson(response));
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
-            }
-
-            final note = Note.fromJson(response);
-            onEventReceived(note);
-          },
-          parameters: {"channelId": channelId});
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted.call(id, TimelineVoted.fromJson(response));
+              return;
+          }
+        },
+        parameters: {"channelId": channelId},
+      );
 
   /// リストのストリームに接続します。
   SocketController userListStream(
@@ -237,162 +295,198 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted, {
     FutureOr<void> Function(User user)? onUserAdded,
     FutureOr<void> Function(User user)? onUserRemoved,
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
       apiService.createSocket(
-          channel: Channel.userList,
-          id: listId,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.userList,
+        id: listId,
+        onEventReceived: (id, type, response) async {
+          if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
+          if (type == ChannelEventType.userAdded) {
+            final user = User.fromJson(response);
+            await onUserAdded?.call(user);
+            return;
+          }
+
+          if (type == ChannelEventType.userRemoved) {
+            final user = User.fromJson(response);
+            await onUserRemoved?.call(user);
+            return;
+          }
+
+          final note = Note.fromJson(response);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            if (type == ChannelResponseType.userAdded) {
-              final user = User.fromJson(response);
-              onUserAdded?.call(user);
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            if (type == ChannelResponseType.userRemoved) {
-              final user = User.fromJson(response);
-              onUserRemoved?.call(user);
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(DateTime.parse(response["deletedAt"]));
               return;
-            }
-
-            if (type == ChannelResponseType.pollVoted) {
-              onVoted?.call(id, TimelineVoted.fromJson(response));
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
-            }
-
-            final note = Note.fromJson(response);
-            onEventReceived(note);
-          },
-          parameters: {"listId": listId});
+          }
+        },
+        parameters: {"listId": listId},
+      );
 
   /// アンテナのストリームに接続します。
   SocketController antennaStream(
     String antennaId,
     FutureOr<void> Function(Note note) onEventReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction) onReacted,
-    FutureOr<void> Function(String id, TimelineVoted vote) onVoted,
-  ) =>
+    FutureOr<void> Function(String id, TimelineVoted vote) onVoted, {
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+  }) =>
       apiService.createSocket(
-          channel: Channel.antenna,
-          id: antennaId,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.antenna,
+        id: antennaId,
+        onEventReceived: (id, type, response) async {
+          if (response == null) return;
 
-            if (type == ChannelResponseType.reacted) {
-              onReacted(id, TimelineReacted.fromJson(response));
+          final note = Note.fromJson(response);
+          await onEventReceived(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted(id, TimelineReacted.fromJson(response));
               return;
-            } else if (type == ChannelResponseType.pollVoted) {
-              onVoted(id, TimelineVoted.fromJson(response));
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
               return;
-            }
-
-            final note = Note.fromJson(response);
-            onEventReceived(note);
-          },
-          parameters: {"antennaId": antennaId});
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
+              return;
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted.call(response["choice"], response["userId"]);
+              return;
+          }
+        },
+        parameters: {"antennaId": antennaId},
+      );
 
   SocketController serverStatsLogStream(
     FutureOr<void> Function(List<StatsLogResponse> response) onLogReceived,
     FutureOr<void> Function(StatsLogResponse response) onEventReceived,
   ) =>
       apiService.createSocket(
-          channel: Channel.serverStats,
-          onEventReceived: (id, type, response) {
-            if (response == null) return;
+        channel: Channel.serverStats,
+        onEventReceived: (id, type, response) {
+          if (response == null) return;
 
-            //TODO: Map<String, dynamic>にしてしまったせいでかえらない
-            // リファクタリングする
-            if (type == ChannelResponseType.statsLog) {}
+          if (type == ChannelEventType.statsLog) {
+            final logs = response as List;
+            onLogReceived
+                .call(logs.map((e) => StatsLogResponse.fromJson(e)).toList());
+          }
 
-            if (type == ChannelResponseType.stats) {
-              onEventReceived.call(StatsLogResponse.fromJson(response));
-            }
-          });
+          if (type == ChannelEventType.stats) {
+            onEventReceived.call(StatsLogResponse.fromJson(response));
+          }
+        },
+      );
 
   /// メインのストリームに接続します。
   SocketController mainStream({
-    FutureOr<void> Function()? onEmojiAdded,
-    FutureOr<void> Function()? onEmojiUpdated,
-    FutureOr<void> Function()? onEmojiDeleted,
-    FutureOr<void> Function()? onNotification,
-    FutureOr<void> Function()? onMention,
-    FutureOr<void> Function()? onReply,
-    FutureOr<void> Function()? onRenote,
-    FutureOr<void> Function()? onFollow,
-    FutureOr<void> Function()? onFollowed,
-    FutureOr<void> Function()? onUnfollow,
-    FutureOr<void> Function()? onMeUpdated,
+    FutureOr<void> Function(Emoji emoji)? onEmojiAdded,
+    FutureOr<void> Function(Iterable<Emoji> emojis)? onEmojiUpdated,
+    FutureOr<void> Function(Iterable<Emoji> emojis)? onEmojiDeleted,
+    FutureOr<void> Function(INotificationsResponse notification)?
+        onNotification,
+    FutureOr<void> Function(Note note)? onMention,
+    FutureOr<void> Function(Note note)? onReply,
+    FutureOr<void> Function(Note note)? onRenote,
+    FutureOr<void> Function(User user)? onFollow,
+    FutureOr<void> Function(User user)? onFollowed,
+    FutureOr<void> Function(User user)? onUnfollow,
+    FutureOr<void> Function(User user)? onMeUpdated,
     FutureOr<void> Function()? onReadAllNotifications,
-    FutureOr<void> Function()? onUnreadNotification,
-    FutureOr<void> Function()? onUnreadMention,
+    FutureOr<void> Function(INotificationsResponse notification)?
+        onUnreadNotification,
+    FutureOr<void> Function(String noteId)? onUnreadMention,
     FutureOr<void> Function()? onReadAllUnreadMentions,
-    FutureOr<void> Function()? onUnreadSpecifiedNote,
+    FutureOr<void> Function(String noteId)? onUnreadSpecifiedNote,
     FutureOr<void> Function()? onReadAllUnreadSpecifiedNotes,
-    FutureOr<void> Function()? onReceiveFollowRequest,
+    FutureOr<void> Function(User user)? onReceiveFollowRequest,
   }) =>
       apiService.createSocket(
-          channel: Channel.main,
-          onEventReceived: (id, type, response) async {
-            print(response);
-            switch (type) {
-              case ChannelResponseType.emojiAdded:
-                await onEmojiAdded?.call();
-                break;
-              case ChannelResponseType.emojiUpdated:
-                await onEmojiUpdated?.call();
-                break;
-              case ChannelResponseType.emojiDeleted:
-                await onEmojiDeleted?.call();
-                break;
-              case ChannelResponseType.notification:
-                await onNotification?.call();
-                break;
-              case ChannelResponseType.mention:
-                await onMention?.call();
-                break;
-              case ChannelResponseType.reply:
-                await onReply?.call();
-                break;
-              case ChannelResponseType.renote:
-                await onRenote?.call();
-                break;
-              case ChannelResponseType.follow:
-                await onFollow?.call();
-                break;
-              case ChannelResponseType.followed:
-                await onFollowed?.call();
-                break;
-              case ChannelResponseType.meUpdated:
-                await onMeUpdated?.call();
-                break;
-              case ChannelResponseType.readAllNotifications:
-                await onReadAllNotifications?.call();
-                break;
-              case ChannelResponseType.unreadNotification:
-                await onUnreadNotification?.call();
-                break;
-              case ChannelResponseType.unreadMention:
-                await onUnreadMention?.call();
-                break;
-              case ChannelResponseType.readAllUnreadMentions:
-                await onReadAllUnreadMentions?.call();
-                break;
-              case ChannelResponseType.unreadSpecifiedNote:
-                await onUnreadSpecifiedNote?.call();
-                break;
-              case ChannelResponseType.readAllUnreadSpecifiedNotes:
-                await onReadAllUnreadSpecifiedNotes?.call();
-                break;
-              case ChannelResponseType.receiveFollowRequest:
-                await onReceiveFollowRequest?.call();
-                break;
-            }
-          });
+        channel: Channel.main,
+        onEventReceived: (id, type, response) async {
+          print(response);
+          switch (type) {
+            case ChannelEventType.notification:
+              await onNotification
+                  ?.call(INotificationsResponse.fromJson(response));
+              break;
+            case ChannelEventType.mention:
+              await onMention?.call(Note.fromJson(response));
+              break;
+            case ChannelEventType.reply:
+              await onReply?.call(Note.fromJson(response));
+              break;
+            case ChannelEventType.renote:
+              await onRenote?.call(Note.fromJson(response));
+              break;
+            case ChannelEventType.follow:
+              await onFollow?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.followed:
+              await onFollowed?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.meUpdated:
+              await onMeUpdated?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.readAllNotifications:
+              await onReadAllNotifications?.call();
+              break;
+            case ChannelEventType.unreadNotification:
+              await onUnreadNotification
+                  ?.call(INotificationsResponse.fromJson(response));
+              break;
+            case ChannelEventType.unreadMention:
+              await onUnreadMention?.call(response);
+              break;
+            case ChannelEventType.readAllUnreadMentions:
+              await onReadAllUnreadMentions?.call();
+              break;
+            case ChannelEventType.unreadSpecifiedNote:
+              await onUnreadSpecifiedNote?.call(response);
+              break;
+            case ChannelEventType.readAllUnreadSpecifiedNotes:
+              await onReadAllUnreadSpecifiedNotes?.call();
+              break;
+            case ChannelEventType.receiveFollowRequest:
+              await onReceiveFollowRequest?.call(User.fromJson(response));
+              break;
+            default:
+              break;
+          }
+        },
+        onBroadcastEventReceived: (type, response) async {
+          switch (type) {
+            case BroadcastEventType.emojiAdded:
+              await onEmojiAdded?.call(Emoji.fromJson(response["emoji"]));
+              break;
+            case BroadcastEventType.emojiUpdated:
+              final emojis = response["emojis"] as List;
+              await onEmojiUpdated?.call(emojis.map((e) => Emoji.fromJson(e)));
+              break;
+            case BroadcastEventType.emojiDeleted:
+              final emojis = response["emojis"] as List;
+              await onEmojiDeleted?.call(emojis.map((e) => Emoji.fromJson(e)));
+              break;
+          }
+        },
+      );
 }

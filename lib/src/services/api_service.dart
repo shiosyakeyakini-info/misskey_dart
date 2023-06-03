@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_response_type.dart';
+import 'package:misskey_dart/src/enums/channel_event_type.dart';
+import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
 
 class ApiService {
@@ -84,16 +85,30 @@ class ApiService {
     required Channel channel,
     String? id,
     required FutureOr<void> Function(
-            String id, ChannelResponseType type, Map<String, dynamic>? response)
-        onEventReceived,
+      String id,
+      ChannelEventType type,
+      dynamic response,
+    ) onEventReceived,
+    FutureOr<void> Function(
+      String id,
+      NoteUpdatedEventType type,
+      Map<String, dynamic> response,
+    )? onNoteUpdatedEventReceived,
+    FutureOr<void> Function(
+      BroadcastEventType type,
+      Map<String, dynamic> response,
+    )? onBroadcastEventReceived,
     Map<String, dynamic>? parameters,
   }) {
     id ??= "${channel.name}${DateTime.now().toIso8601String()}";
     return SocketController(
-        url: "${streamingUrl ?? "wss://$host/streaming"}?i=$token",
-        id: id,
-        channel: channel,
-        onEventReceived: onEventReceived,
-        parameters: parameters);
+      url: "${streamingUrl ?? "wss://$host/streaming"}?i=$token",
+      id: id,
+      channel: channel,
+      onEventReceived: onEventReceived,
+      onNoteUpdatedEventReceived: onNoteUpdatedEventReceived,
+      onBroadcastEventReceived: onBroadcastEventReceived,
+      parameters: parameters,
+    );
   }
 }
