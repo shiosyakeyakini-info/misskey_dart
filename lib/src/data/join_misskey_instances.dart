@@ -40,8 +40,54 @@ class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
     required bool banner,
     required bool background,
     required bool icon,
+    @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
   }) = _JoinMisskeyInstanceInfo;
 
   factory JoinMisskeyInstanceInfo.fromJson(Map<String, dynamic> json) =>
       _$JoinMisskeyInstanceInfoFromJson(json);
+}
+
+@freezed
+class JoinMisskeyNodeInfo with _$JoinMisskeyNodeInfo {
+  const factory JoinMisskeyNodeInfo({
+    String? version,
+    JoinMisskeyNodeInfoSoftware? software,
+    JoinMisskeyNodeInfoUsage? usage,
+  }) = _JoinMisskeyNodeInfo;
+
+  factory JoinMisskeyNodeInfo.fromJson(Map<String, dynamic> json) =>
+      _$JoinMisskeyNodeInfoFromJson(json);
+}
+
+@freezed
+class JoinMisskeyNodeInfoSoftware with _$JoinMisskeyNodeInfoSoftware {
+  const factory JoinMisskeyNodeInfoSoftware({
+    String? name,
+    String? version,
+  }) = _JoinMisskeyNodeInfoSoftware;
+
+  factory JoinMisskeyNodeInfoSoftware.fromJson(Map<String, dynamic> json) =>
+      _$JoinMisskeyNodeInfoSoftwareFromJson(json);
+}
+
+@freezed
+class JoinMisskeyNodeInfoUsage with _$JoinMisskeyNodeInfoUsage {
+  const factory JoinMisskeyNodeInfoUsage({
+    JoinMisskeyNodeInfoUsageUsers? users,
+    int? localPosts,
+    int? localComments,
+  }) = _JoinMisskeyNodeInfoUsage;
+
+  factory JoinMisskeyNodeInfoUsage.fromJson(Map<String, dynamic> json) =>
+      _$JoinMisskeyNodeInfoUsageFromJson(json);
+}
+
+@freezed
+class JoinMisskeyNodeInfoUsageUsers with _$JoinMisskeyNodeInfoUsageUsers {
+  const factory JoinMisskeyNodeInfoUsageUsers({
+    int? total,
+  }) = _JoinMisskeyNodeInfoUsageUsers;
+
+  factory JoinMisskeyNodeInfoUsageUsers.fromJson(Map<String, dynamic> json) =>
+      _$JoinMisskeyNodeInfoUsageUsersFromJson(json);
 }

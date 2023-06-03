@@ -53,6 +53,10 @@ _$_JoinMisskeyInstanceInfo _$$_JoinMisskeyInstanceInfoFromJson(
       banner: json['banner'] as bool,
       background: json['background'] as bool,
       icon: json['icon'] as bool,
+      nodeInfo: json['nodeinfo'] == null
+          ? null
+          : JoinMisskeyNodeInfo.fromJson(
+              json['nodeinfo'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_JoinMisskeyInstanceInfoToJson(
@@ -67,4 +71,72 @@ Map<String, dynamic> _$$_JoinMisskeyInstanceInfoToJson(
       'banner': instance.banner,
       'background': instance.background,
       'icon': instance.icon,
+      'nodeinfo': instance.nodeInfo,
+    };
+
+_$_JoinMisskeyNodeInfo _$$_JoinMisskeyNodeInfoFromJson(
+        Map<String, dynamic> json) =>
+    _$_JoinMisskeyNodeInfo(
+      version: json['version'] as String?,
+      software: json['software'] == null
+          ? null
+          : JoinMisskeyNodeInfoSoftware.fromJson(
+              json['software'] as Map<String, dynamic>),
+      usage: json['usage'] == null
+          ? null
+          : JoinMisskeyNodeInfoUsage.fromJson(
+              json['usage'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_JoinMisskeyNodeInfoToJson(
+        _$_JoinMisskeyNodeInfo instance) =>
+    <String, dynamic>{
+      'version': instance.version,
+      'software': instance.software,
+      'usage': instance.usage,
+    };
+
+_$_JoinMisskeyNodeInfoSoftware _$$_JoinMisskeyNodeInfoSoftwareFromJson(
+        Map<String, dynamic> json) =>
+    _$_JoinMisskeyNodeInfoSoftware(
+      name: json['name'] as String?,
+      version: json['version'] as String?,
+    );
+
+Map<String, dynamic> _$$_JoinMisskeyNodeInfoSoftwareToJson(
+        _$_JoinMisskeyNodeInfoSoftware instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'version': instance.version,
+    };
+
+_$_JoinMisskeyNodeInfoUsage _$$_JoinMisskeyNodeInfoUsageFromJson(
+        Map<String, dynamic> json) =>
+    _$_JoinMisskeyNodeInfoUsage(
+      users: json['users'] == null
+          ? null
+          : JoinMisskeyNodeInfoUsageUsers.fromJson(
+              json['users'] as Map<String, dynamic>),
+      localPosts: json['localPosts'] as int?,
+      localComments: json['localComments'] as int?,
+    );
+
+Map<String, dynamic> _$$_JoinMisskeyNodeInfoUsageToJson(
+        _$_JoinMisskeyNodeInfoUsage instance) =>
+    <String, dynamic>{
+      'users': instance.users,
+      'localPosts': instance.localPosts,
+      'localComments': instance.localComments,
+    };
+
+_$_JoinMisskeyNodeInfoUsageUsers _$$_JoinMisskeyNodeInfoUsageUsersFromJson(
+        Map<String, dynamic> json) =>
+    _$_JoinMisskeyNodeInfoUsageUsers(
+      total: json['total'] as int?,
+    );
+
+Map<String, dynamic> _$$_JoinMisskeyNodeInfoUsageUsersToJson(
+        _$_JoinMisskeyNodeInfoUsageUsers instance) =>
+    <String, dynamic>{
+      'total': instance.total,
     };
