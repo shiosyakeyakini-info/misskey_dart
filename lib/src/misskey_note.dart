@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/notes/notes_clips_request.dart';
 
 import 'package:misskey_dart/src/services/api_service.dart';
 
@@ -7,6 +6,7 @@ class MisskeyNotes {
   final MisskeyNotesReactions reactions;
   final MisskeyNotesFavorites favorites;
   final MisskeyNotesPolls polls;
+  final MisskeyNotesThreadMuting threadMuting;
 
   final ApiService _apiService;
 
@@ -14,7 +14,8 @@ class MisskeyNotes {
       : _apiService = apiService,
         reactions = MisskeyNotesReactions(apiService: apiService),
         favorites = MisskeyNotesFavorites(apiService: apiService),
-        polls = MisskeyNotesPolls(apiService: apiService);
+        polls = MisskeyNotesPolls(apiService: apiService),
+        threadMuting = MisskeyNotesThreadMuting(apiService: apiService);
 
   /// ノートを投稿します。
   Future<void> create(NotesCreateRequest request) async {
@@ -27,6 +28,7 @@ class MisskeyNotes {
     await _apiService.post<void>("notes/delete", request.toJson());
   }
 
+  /// ノートの一覧を取得します。
   Future<Iterable<Note>> notes(NotesRequest request) async {
     final response = await _apiService.post<List>("notes", request.toJson());
     return response.map((e) => Note.fromJson(e));
@@ -59,6 +61,15 @@ class MisskeyNotes {
       NotesHybridTimelineRequest request) async {
     final response =
         await _apiService.post<List>("notes/hybrid-timeline", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// グローバルタイムラインを取得します。
+  Future<Iterable<Note>> globalTimeline(
+    NotesGlobalTimelineRequest request,
+  ) async {
+    final response =
+        await _apiService.post<List>("notes/global-timeline", request.toJson());
     return response.map((e) => Note.fromJson(e));
   }
 
@@ -99,11 +110,51 @@ class MisskeyNotes {
     return response.map((e) => Note.fromJson(e));
   }
 
+  /// ノートに対するリプライの一覧を取得します。
+  Future<Iterable<Note>> replies(NotesRepliesRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/replies", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// ノートに対する引用Renoteとリプライの一覧を取得します。
+  Future<Iterable<Note>> children(NotesChildrenRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/children", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// ノートのリプライ先をたどったノートの一覧を取得します。
+  Future<Iterable<Note>> conversation(NotesConversationRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/conversation", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// 人気なノートの一覧を取得します。
+  Future<Iterable<Note>> featured(NotesFeaturedRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/featured", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
+  /// ログイン中のユーザーに対するメンションとダイレクトノートの一覧を取得します。
+  Future<Iterable<Note>> mentions(NotesMentionsRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/mentions", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
+
   /// ノートに対するクリップの一覧を返します。
   Future<Iterable<Clip>> clips(NotesClipsRequest request) async {
     final response =
         await _apiService.post<List>("notes/clips", request.toJson());
     return response.map((e) => Clip.fromJson(e));
+  }
+
+  /// Renoteを解除します。
+  Future<void> unrenote(NotesUnrenoteRequest request) async {
+    await _apiService.post<void>("notes/unrenote", request.toJson());
   }
 }
 
@@ -157,7 +208,38 @@ class MisskeyNotesPolls {
   MisskeyNotesPolls({required ApiService apiService})
       : _apiService = apiService;
 
+  /// ノートのアンケートに投票します。
   Future<void> vote(NotesPollsVoteRequest request) async {
     await _apiService.post<void>("notes/polls/vote", request.toJson());
+  }
+
+  /// おすすめのアンケート付きノートの一覧を取得します。
+  Future<void> recommendation(NotesPollsRecommendationRequest request) async {
+    await _apiService.post<void>(
+      "notes/polls/recommendation",
+      request.toJson(),
+    );
+  }
+}
+
+class MisskeyNotesThreadMuting {
+  final ApiService _apiService;
+
+  MisskeyNotesThreadMuting({required apiService}) : _apiService = apiService;
+
+  /// 指定したノートが含まれるスレッドをミュートします。
+  Future<void> create(NotesThreadMutingCreateRequest request) async {
+    await _apiService.post<void>(
+      "notes/thread-muting/create",
+      request.toJson(),
+    );
+  }
+
+  /// 指定したノートが含まれるスレッドのミュートを解除します。
+  Future<void> delete(NotesThreadMutingDeleteRequest request) async {
+    await _apiService.post<void>(
+      "notes/thread-muting/delete",
+      request.toJson(),
+    );
   }
 }

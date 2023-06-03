@@ -55,6 +55,7 @@ mixin _$NotesCreateRequest {
   String? get replyId => throw _privateConstructorUsedError;
   String? get renoteId => throw _privateConstructorUsedError;
   String? get channelId => throw _privateConstructorUsedError;
+  NotesCreatePollRequest? get poll => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -82,7 +83,10 @@ abstract class $NotesCreateRequestCopyWith<$Res> {
       List<String>? mediaIds,
       String? replyId,
       String? renoteId,
-      String? channelId});
+      String? channelId,
+      NotesCreatePollRequest? poll});
+
+  $NotesCreatePollRequestCopyWith<$Res>? get poll;
 }
 
 /// @nodoc
@@ -112,6 +116,7 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
     Object? replyId = freezed,
     Object? renoteId = freezed,
     Object? channelId = freezed,
+    Object? poll = freezed,
   }) {
     return _then(_value.copyWith(
       visibility: freezed == visibility
@@ -170,7 +175,23 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as NotesCreatePollRequest?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NotesCreatePollRequestCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $NotesCreatePollRequestCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
   }
 }
 
@@ -196,7 +217,11 @@ abstract class _$$_NotesCreateRequestCopyWith<$Res>
       List<String>? mediaIds,
       String? replyId,
       String? renoteId,
-      String? channelId});
+      String? channelId,
+      NotesCreatePollRequest? poll});
+
+  @override
+  $NotesCreatePollRequestCopyWith<$Res>? get poll;
 }
 
 /// @nodoc
@@ -224,6 +249,7 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
     Object? replyId = freezed,
     Object? renoteId = freezed,
     Object? channelId = freezed,
+    Object? poll = freezed,
   }) {
     return _then(_$_NotesCreateRequest(
       visibility: freezed == visibility
@@ -282,6 +308,10 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as NotesCreatePollRequest?,
     ));
   }
 }
@@ -303,7 +333,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       final List<String>? mediaIds,
       this.replyId,
       this.renoteId,
-      this.channelId})
+      this.channelId,
+      this.poll})
       : _visibleUserIds = visibleUserIds,
         _fileIds = fileIds,
         _mediaIds = mediaIds;
@@ -387,10 +418,12 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
   final String? renoteId;
   @override
   final String? channelId;
+  @override
+  final NotesCreatePollRequest? poll;
 
   @override
   String toString() {
-    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExtractMentions: $noExtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId)';
+    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExtractMentions: $noExtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, poll: $poll)';
   }
 
   @override
@@ -420,7 +453,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
             (identical(other.renoteId, renoteId) ||
                 other.renoteId == renoteId) &&
             (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
+                other.channelId == channelId) &&
+            (identical(other.poll, poll) || other.poll == poll));
   }
 
   @JsonKey(ignore: true)
@@ -440,7 +474,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
       const DeepCollectionEquality().hash(_mediaIds),
       replyId,
       renoteId,
-      channelId);
+      channelId,
+      poll);
 
   @JsonKey(ignore: true)
   @override
@@ -472,7 +507,8 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       final List<String>? mediaIds,
       final String? replyId,
       final String? renoteId,
-      final String? channelId}) = _$_NotesCreateRequest;
+      final String? channelId,
+      final NotesCreatePollRequest? poll}) = _$_NotesCreateRequest;
 
   factory _NotesCreateRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesCreateRequest.fromJson;
@@ -526,6 +562,8 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
   String? get renoteId;
   @override
   String? get channelId;
+  @override
+  NotesCreatePollRequest? get poll;
   @override
   @JsonKey(ignore: true)
   _$$_NotesCreateRequestCopyWith<_$_NotesCreateRequest> get copyWith =>

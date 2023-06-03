@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/src/data/notes/notes_create_poll_request.dart';
 import 'package:misskey_dart/src/enums/reaction_acceptance.dart';
 import 'package:misskey_dart/src/enums/note_visibility.dart';
 
@@ -41,7 +42,7 @@ class NotesCreateRequest with _$NotesCreateRequest {
     String? replyId,
     String? renoteId,
     String? channelId,
-    //NotesCreatePollsData? poll
+    NotesCreatePollRequest? poll,
   }) = _NotesCreateRequest;
 
   factory NotesCreateRequest.fromJson(Map<String, Object?> json) =>
