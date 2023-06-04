@@ -9,6 +9,7 @@ import 'package:misskey_dart/src/data/emojis_response.dart';
 import 'package:misskey_dart/src/data/i/i_notifications_response.dart';
 import 'package:misskey_dart/src/data/meta_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
+import 'package:misskey_dart/src/data/stats_response.dart';
 import 'package:misskey_dart/src/data/streaming/stats_log_response.dart';
 import 'package:misskey_dart/src/data/streaming/timeline_reacted.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
@@ -20,11 +21,14 @@ import 'package:misskey_dart/src/misskey_blocking.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
 import 'package:misskey_dart/src/misskey_clips.dart';
 import 'package:misskey_dart/src/misskey_drive.dart';
+import 'package:misskey_dart/src/misskey_federation.dart';
 import 'package:misskey_dart/src/misskey_following.dart';
+import 'package:misskey_dart/src/misskey_hashtags.dart';
 import 'package:misskey_dart/src/misskey_i.dart';
 import 'package:misskey_dart/src/misskey_mute.dart';
 import 'package:misskey_dart/src/misskey_note.dart';
 import 'package:misskey_dart/src/misskey_renote_mute.dart';
+import 'package:misskey_dart/src/misskey_roles.dart';
 import 'package:misskey_dart/src/misskey_users.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
@@ -46,6 +50,9 @@ class Misskey {
   late final MisskeyBlocking blocking;
   late final MisskeyMute mute;
   late final MisskeyRenoteMute renoteMute;
+  late final MisskeyFederation federation;
+  late final MisskeyRoles roles;
+  late final MisskeyHashtags hashtags;
 
   Misskey({
     required this.token,
@@ -71,6 +78,9 @@ class Misskey {
     blocking = MisskeyBlocking(apiService: apiService);
     mute = MisskeyMute(apiService: apiService);
     renoteMute = MisskeyRenoteMute(apiService: apiService);
+    federation = MisskeyFederation(apiService: apiService);
+    roles = MisskeyRoles(apiService: apiService);
+    hashtags = MisskeyHashtags(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。
@@ -99,6 +109,11 @@ class Misskey {
     return MetaResponse.fromJson(response);
   }
 
+  Future<StatsResponse> stats() async {
+    final response = await apiService.post<Map<String, dynamic>>("stats", {});
+    return StatsResponse.fromJson(response);
+  }
+
   Future<PingResponse> ping() async {
     final response = await apiService.post<Map<String, dynamic>>("ping", {});
     return PingResponse.fromJson(response);
@@ -114,6 +129,11 @@ class Misskey {
     final response = await apiService
         .post<Map<String, dynamic>>("get-online-users-count", {});
     return GetOnlineUsersCountResponse.fromJson(response);
+  }
+
+  Future<Iterable<User>> pinnedUsers() async {
+    final response = await apiService.post<List>("pinned-users", {});
+    return response.map((e) => User.fromJson(e));
   }
 
   /// ホームタイムラインに接続します。

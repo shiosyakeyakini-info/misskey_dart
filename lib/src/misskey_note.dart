@@ -1,5 +1,7 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/notes/notes_clips_request.dart';
+import 'package:misskey_dart/src/data/notes/notes_featured_request.dart';
+import 'package:misskey_dart/src/data/notes/polls/notes_polls_recommendation_request.dart';
 
 import 'package:misskey_dart/src/services/api_service.dart';
 
@@ -105,6 +107,12 @@ class MisskeyNotes {
         await _apiService.post<List>("notes/clips", request.toJson());
     return response.map((e) => Clip.fromJson(e));
   }
+
+  Future<Iterable<Note>> featured(NotesFeaturedRequest request) async {
+    final response =
+        await _apiService.post<List>("notes/featured", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
 }
 
 class MisskeyNotesReactions {
@@ -159,5 +167,12 @@ class MisskeyNotesPolls {
 
   Future<void> vote(NotesPollsVoteRequest request) async {
     await _apiService.post<void>("notes/polls/vote", request.toJson());
+  }
+
+  Future<Iterable<Note>> recommendation(
+      NotesPollsRecommendationRequest request) async {
+    final response = await _apiService.post<List>(
+        "notes/polls/recommendation", request.toJson());
+    return response.map((e) => Note.fromJson(e));
   }
 }

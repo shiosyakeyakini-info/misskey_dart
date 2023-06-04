@@ -1,12 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 class NullableUriConverter extends JsonConverter<Uri?, String> {
-
   const NullableUriConverter();
 
   @override
   Uri? fromJson(String json) {
-    return Uri.tryParse(json);
+    return json.isEmpty ? null : Uri.tryParse(json);
   }
 
   @override
@@ -16,7 +15,6 @@ class NullableUriConverter extends JsonConverter<Uri?, String> {
 }
 
 class UriConverter extends JsonConverter<Uri, String> {
-
   const UriConverter();
 
   @override

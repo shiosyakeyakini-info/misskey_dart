@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/enums/permissions.dart';
 
 class MisskeyServer {
@@ -8,6 +9,27 @@ class MisskeyServer {
 
   MisskeyServer() {
     dio.interceptors.add(LogInterceptor(responseBody: true));
+  }
+
+  /// サーバーの情報を返します
+  Future<MetaResponse> meta(String host) async {
+    final response = await dio.postUri<Map<String, dynamic>>(
+      Uri(scheme: "https", host: host, pathSegments: ["api", "meta"]),
+      data: jsonEncode({}),
+    );
+    return MetaResponse.fromJson(response.data!);
+  }
+
+  /// サーバーからのお知らせを取得します。
+  Future<Iterable<AnnouncementsResponse>> announcements(
+      String host, AnnouncementsRequest request) async {
+    final response = await dio.postUri<List>(
+        Uri(
+            scheme: "https",
+            host: host,
+            pathSegments: ["api", "announcements"]),
+        data: request.toJson()..removeWhere((key, value) => value == null));
+    return response.data!.map((e) => AnnouncementsResponse.fromJson(e));
   }
 
   /// パスワードでログインし、トークンを返します

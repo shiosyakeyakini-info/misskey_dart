@@ -23,7 +23,7 @@ mixin _$UsersSearchRequest {
   String get query => throw _privateConstructorUsedError;
   int? get offset => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
-  UsersSearchOrigin? get origin => throw _privateConstructorUsedError;
+  Origin? get origin => throw _privateConstructorUsedError;
   bool? get detail => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,11 +39,7 @@ abstract class $UsersSearchRequestCopyWith<$Res> {
       _$UsersSearchRequestCopyWithImpl<$Res, UsersSearchRequest>;
   @useResult
   $Res call(
-      {String query,
-      int? offset,
-      int? limit,
-      UsersSearchOrigin? origin,
-      bool? detail});
+      {String query, int? offset, int? limit, Origin? origin, bool? detail});
 }
 
 /// @nodoc
@@ -81,7 +77,7 @@ class _$UsersSearchRequestCopyWithImpl<$Res, $Val extends UsersSearchRequest>
       origin: freezed == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as UsersSearchOrigin?,
+              as Origin?,
       detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
@@ -99,11 +95,7 @@ abstract class _$$_UsersSearchRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String query,
-      int? offset,
-      int? limit,
-      UsersSearchOrigin? origin,
-      bool? detail});
+      {String query, int? offset, int? limit, Origin? origin, bool? detail});
 }
 
 /// @nodoc
@@ -139,7 +131,7 @@ class __$$_UsersSearchRequestCopyWithImpl<$Res>
       origin: freezed == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as UsersSearchOrigin?,
+              as Origin?,
       detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
@@ -164,7 +156,7 @@ class _$_UsersSearchRequest implements _UsersSearchRequest {
   @override
   final int? limit;
   @override
-  final UsersSearchOrigin? origin;
+  final Origin? origin;
   @override
   final bool? detail;
 
@@ -210,7 +202,7 @@ abstract class _UsersSearchRequest implements UsersSearchRequest {
       {required final String query,
       final int? offset,
       final int? limit,
-      final UsersSearchOrigin? origin,
+      final Origin? origin,
       final bool? detail}) = _$_UsersSearchRequest;
 
   factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =
@@ -223,7 +215,7 @@ abstract class _UsersSearchRequest implements UsersSearchRequest {
   @override
   int? get limit;
   @override
-  UsersSearchOrigin? get origin;
+  Origin? get origin;
   @override
   bool? get detail;
   @override

@@ -1,5 +1,6 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/base/user_list.dart';
+import 'package:misskey_dart/src/data/users/users_users_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -78,6 +79,18 @@ class MisskeyUsers {
   Future<Iterable<User>> search(UsersSearchRequest request) async {
     final response =
         await _apiService.post<List>("users/search", request.toJson());
+    return response.map((e) => User.fromJson(e));
+  }
+
+  Future<Iterable<User>> recommendation(
+      UsersRecommendationRequest request) async {
+    final response =
+        await _apiService.post<List>("users/recommendation", request.toJson());
+    return response.map((e) => User.fromJson(e));
+  }
+
+  Future<Iterable<User>> users(UsersUsersRequest request) async {
+    final response = await _apiService.post<List>("users", request.toJson());
     return response.map((e) => User.fromJson(e));
   }
 }

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/users_search_origin.dart';
+import 'package:misskey_dart/src/enums/origin.dart';
 
 part 'users_search_request.freezed.dart';
 part 'users_search_request.g.dart';
@@ -10,7 +10,7 @@ class UsersSearchRequest with _$UsersSearchRequest {
     required String query,
     int? offset,
     int? limit,
-    UsersSearchOrigin? origin,
+    Origin? origin,
     bool? detail,
   }) = _UsersSearchRequest;
 
