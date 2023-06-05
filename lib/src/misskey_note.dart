@@ -156,12 +156,6 @@ class MisskeyNotes {
   Future<void> unrenote(NotesUnrenoteRequest request) async {
     await _apiService.post<void>("notes/unrenote", request.toJson());
   }
-
-  Future<Iterable<Note>> featured(NotesFeaturedRequest request) async {
-    final response =
-        await _apiService.post<List>("notes/featured", request.toJson());
-    return response.map((e) => Note.fromJson(e));
-  }
 }
 
 class MisskeyNotesReactions {
@@ -220,11 +214,13 @@ class MisskeyNotesPolls {
   }
 
   /// おすすめのアンケート付きノートの一覧を取得します。
-  Future<void> recommendation(NotesPollsRecommendationRequest request) async {
-    await _apiService.post<void>(
+  Future<Iterable<Note>> recommendation(
+      NotesPollsRecommendationRequest request) async {
+    final response = await _apiService.post<List>(
       "notes/polls/recommendation",
       request.toJson(),
     );
+    return response.map((e) => Note.fromJson(e));
   }
 }
 
