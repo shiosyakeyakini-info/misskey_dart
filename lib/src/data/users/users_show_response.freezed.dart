@@ -69,6 +69,7 @@ mixin _$UsersShowResponse {
   bool get usePasswordLessLogin => throw _privateConstructorUsedError;
   bool get securityKeys => throw _privateConstructorUsedError;
   List<UserRole>? get roles => throw _privateConstructorUsedError;
+  String? get memo => throw _privateConstructorUsedError;
   bool? get isFollowing => throw _privateConstructorUsedError;
   bool? get isFollowed => throw _privateConstructorUsedError;
   bool? get hasPendingFollowRequestFromYou =>
@@ -131,6 +132,7 @@ abstract class $UsersShowResponseCopyWith<$Res> {
       bool usePasswordLessLogin,
       bool securityKeys,
       List<UserRole>? roles,
+      String? memo,
       bool? isFollowing,
       bool? isFollowed,
       bool? hasPendingFollowRequestFromYou,
@@ -195,6 +197,7 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
     Object? roles = freezed,
+    Object? memo = freezed,
     Object? isFollowing = freezed,
     Object? isFollowed = freezed,
     Object? hasPendingFollowRequestFromYou = freezed,
@@ -361,6 +364,10 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
               as List<UserRole>?,
+      memo: freezed == memo
+          ? _value.memo
+          : memo // ignore: cast_nullable_to_non_nullable
+              as String?,
       isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -457,6 +464,7 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
       bool usePasswordLessLogin,
       bool securityKeys,
       List<UserRole>? roles,
+      String? memo,
       bool? isFollowing,
       bool? isFollowed,
       bool? hasPendingFollowRequestFromYou,
@@ -520,6 +528,7 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
     Object? roles = freezed,
+    Object? memo = freezed,
     Object? isFollowing = freezed,
     Object? isFollowed = freezed,
     Object? hasPendingFollowRequestFromYou = freezed,
@@ -686,6 +695,10 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
               as List<UserRole>?,
+      memo: freezed == memo
+          ? _value.memo
+          : memo // ignore: cast_nullable_to_non_nullable
+              as String?,
       isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -765,6 +778,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
       required this.usePasswordLessLogin,
       required this.securityKeys,
       final List<UserRole>? roles,
+      this.memo,
       this.isFollowing,
       this.isFollowed,
       this.hasPendingFollowRequestFromYou,
@@ -921,6 +935,8 @@ class _$_UsersShowResponse implements _UsersShowResponse {
   }
 
   @override
+  final String? memo;
+  @override
   final bool? isFollowing;
   @override
   final bool? isFollowed;
@@ -939,7 +955,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
 
   @override
   String toString() {
-    return 'UsersShowResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted)';
+    return 'UsersShowResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted)';
   }
 
   @override
@@ -1014,6 +1030,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
             (identical(other.securityKeys, securityKeys) ||
                 other.securityKeys == securityKeys) &&
             const DeepCollectionEquality().equals(other._roles, _roles) &&
+            (identical(other.memo, memo) || other.memo == memo) &&
             (identical(other.isFollowing, isFollowing) ||
                 other.isFollowing == isFollowing) &&
             (identical(other.isFollowed, isFollowed) ||
@@ -1078,6 +1095,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
         usePasswordLessLogin,
         securityKeys,
         const DeepCollectionEquality().hash(_roles),
+        memo,
         isFollowing,
         isFollowed,
         hasPendingFollowRequestFromYou,
@@ -1144,6 +1162,7 @@ abstract class _UsersShowResponse implements UsersShowResponse {
       required final bool usePasswordLessLogin,
       required final bool securityKeys,
       final List<UserRole>? roles,
+      final String? memo,
       final bool? isFollowing,
       final bool? isFollowed,
       final bool? hasPendingFollowRequestFromYou,
@@ -1244,6 +1263,8 @@ abstract class _UsersShowResponse implements UsersShowResponse {
   bool get securityKeys;
   @override
   List<UserRole>? get roles;
+  @override
+  String? get memo;
   @override
   bool? get isFollowing;
   @override

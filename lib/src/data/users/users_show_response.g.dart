@@ -67,6 +67,7 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
       roles: (json['roles'] as List<dynamic>?)
           ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
+      memo: json['memo'] as String?,
       isFollowing: json['isFollowing'] as bool?,
       isFollowed: json['isFollowed'] as bool?,
       hasPendingFollowRequestFromYou:
@@ -123,6 +124,7 @@ Map<String, dynamic> _$$_UsersShowResponseToJson(
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
       'roles': instance.roles,
+      'memo': instance.memo,
       'isFollowing': instance.isFollowing,
       'isFollowed': instance.isFollowed,
       'hasPendingFollowRequestFromYou': instance.hasPendingFollowRequestFromYou,

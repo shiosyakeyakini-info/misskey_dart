@@ -51,6 +51,7 @@ class UsersShowResponse with _$UsersShowResponse {
     required bool usePasswordLessLogin,
     required bool securityKeys,
     List<UserRole>? roles,
+    String? memo,
     bool? isFollowing,
     bool? isFollowed,
     bool? hasPendingFollowRequestFromYou,
