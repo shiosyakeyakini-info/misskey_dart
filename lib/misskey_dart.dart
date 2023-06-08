@@ -12,6 +12,7 @@ export 'src/enums/origin.dart';
 export 'src/enums/users_sort_type.dart';
 export 'src/enums/users_state.dart';
 export 'src/enums/hashtags_list_sort_type.dart';
+export 'src/enums/reaction_acceptance.dart';
 export 'src/data/antennas/antennas_create_request.dart';
 export 'src/data/antennas/antennas_delete_request.dart';
 export 'src/data/antennas/antennas_notes_request.dart';

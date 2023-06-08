@@ -67,6 +67,9 @@ Value? _$JsonConverterFromJson<Json, Value>(
 const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnly: 'likeOnly',
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+  ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
+  ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
+      'nonSensitiveOnlyForLocalLikeOnlyForRemote',
 };
 
 Json? _$JsonConverterToJson<Json, Value>(

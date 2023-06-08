@@ -40,6 +40,8 @@ mixin _$Note {
   String? get replyId => throw _privateConstructorUsedError;
   String? get renoteId => throw _privateConstructorUsedError;
   String? get channelId => throw _privateConstructorUsedError;
+  ReactionAcceptance? get reactionAcceptance =>
+      throw _privateConstructorUsedError;
   Note? get renote => throw _privateConstructorUsedError;
   Note? get reply => throw _privateConstructorUsedError;
   String? get myReaction => throw _privateConstructorUsedError;
@@ -75,6 +77,7 @@ abstract class $NoteCopyWith<$Res> {
       String? replyId,
       String? renoteId,
       String? channelId,
+      ReactionAcceptance? reactionAcceptance,
       Note? renote,
       Note? reply,
       String? myReaction,
@@ -119,6 +122,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? replyId = freezed,
     Object? renoteId = freezed,
     Object? channelId = freezed,
+    Object? reactionAcceptance = freezed,
     Object? renote = freezed,
     Object? reply = freezed,
     Object? myReaction = freezed,
@@ -198,6 +202,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      reactionAcceptance: freezed == reactionAcceptance
+          ? _value.reactionAcceptance
+          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+              as ReactionAcceptance?,
       renote: freezed == renote
           ? _value.renote
           : renote // ignore: cast_nullable_to_non_nullable
@@ -303,6 +311,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       String? replyId,
       String? renoteId,
       String? channelId,
+      ReactionAcceptance? reactionAcceptance,
       Note? renote,
       Note? reply,
       String? myReaction,
@@ -348,6 +357,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? replyId = freezed,
     Object? renoteId = freezed,
     Object? channelId = freezed,
+    Object? reactionAcceptance = freezed,
     Object? renote = freezed,
     Object? reply = freezed,
     Object? myReaction = freezed,
@@ -427,6 +437,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      reactionAcceptance: freezed == reactionAcceptance
+          ? _value.reactionAcceptance
+          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+              as ReactionAcceptance?,
       renote: freezed == renote
           ? _value.renote
           : renote // ignore: cast_nullable_to_non_nullable
@@ -473,6 +487,7 @@ class _$_Note implements _Note {
       this.replyId,
       this.renoteId,
       this.channelId,
+      this.reactionAcceptance,
       this.renote,
       this.reply,
       this.myReaction,
@@ -556,6 +571,8 @@ class _$_Note implements _Note {
   @override
   final String? channelId;
   @override
+  final ReactionAcceptance? reactionAcceptance;
+  @override
   final Note? renote;
   @override
   final Note? reply;
@@ -568,7 +585,7 @@ class _$_Note implements _Note {
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel, poll: $poll)';
+    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel, poll: $poll)';
   }
 
   @override
@@ -603,6 +620,8 @@ class _$_Note implements _Note {
                 other.renoteId == renoteId) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId) &&
+            (identical(other.reactionAcceptance, reactionAcceptance) ||
+                other.reactionAcceptance == reactionAcceptance) &&
             (identical(other.renote, renote) || other.renote == renote) &&
             (identical(other.reply, reply) || other.reply == reply) &&
             (identical(other.myReaction, myReaction) ||
@@ -633,6 +652,7 @@ class _$_Note implements _Note {
         replyId,
         renoteId,
         channelId,
+        reactionAcceptance,
         renote,
         reply,
         myReaction,
@@ -674,6 +694,7 @@ abstract class _Note implements Note {
       final String? replyId,
       final String? renoteId,
       final String? channelId,
+      final ReactionAcceptance? reactionAcceptance,
       final Note? renote,
       final Note? reply,
       final String? myReaction,
@@ -720,6 +741,8 @@ abstract class _Note implements Note {
   String? get renoteId;
   @override
   String? get channelId;
+  @override
+  ReactionAcceptance? get reactionAcceptance;
   @override
   Note? get renote;
   @override

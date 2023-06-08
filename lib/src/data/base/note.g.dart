@@ -33,6 +33,8 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       replyId: json['replyId'] as String?,
       renoteId: json['renoteId'] as String?,
       channelId: json['channelId'] as String?,
+      reactionAcceptance: $enumDecodeNullable(
+          _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
       renote: json['renote'] == null
           ? null
           : Note.fromJson(json['renote'] as Map<String, dynamic>),
@@ -68,12 +70,22 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
+      'reactionAcceptance':
+          _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
       'renote': instance.renote,
       'reply': instance.reply,
       'myReaction': instance.myReaction,
       'channel': instance.channel,
       'poll': instance.poll,
     };
+
+const _$ReactionAcceptanceEnumMap = {
+  ReactionAcceptance.likeOnly: 'likeOnly',
+  ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+  ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
+  ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
+      'nonSensitiveOnlyForLocalLikeOnlyForRemote',
+};
 
 _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>
     _$_NoteChannelInfo(

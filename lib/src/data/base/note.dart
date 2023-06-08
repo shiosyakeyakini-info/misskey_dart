@@ -5,6 +5,7 @@ import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
 import 'package:misskey_dart/src/enums/note_visibility.dart';
+import 'package:misskey_dart/src/enums/reaction_acceptance.dart';
 
 part 'note.freezed.dart';
 part 'note.g.dart';
@@ -30,6 +31,7 @@ class Note with _$Note {
     String? replyId,
     String? renoteId,
     String? channelId,
+    ReactionAcceptance? reactionAcceptance,
     Note? renote,
     Note? reply,
     String? myReaction,
