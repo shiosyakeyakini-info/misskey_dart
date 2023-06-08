@@ -743,6 +743,8 @@ NoteChannelInfo _$NoteChannelInfoFromJson(Map<String, dynamic> json) {
 mixin _$NoteChannelInfo {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @NullableColorConverter()
+  int? get color => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -756,7 +758,7 @@ abstract class $NoteChannelInfoCopyWith<$Res> {
           NoteChannelInfo value, $Res Function(NoteChannelInfo) then) =
       _$NoteChannelInfoCopyWithImpl<$Res, NoteChannelInfo>;
   @useResult
-  $Res call({String id, String name});
+  $Res call({String id, String name, @NullableColorConverter() int? color});
 }
 
 /// @nodoc
@@ -774,6 +776,7 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -784,6 +787,10 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -796,7 +803,7 @@ abstract class _$$_NoteChannelInfoCopyWith<$Res>
       __$$_NoteChannelInfoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name});
+  $Res call({String id, String name, @NullableColorConverter() int? color});
 }
 
 /// @nodoc
@@ -812,6 +819,7 @@ class __$$_NoteChannelInfoCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? color = freezed,
   }) {
     return _then(_$_NoteChannelInfo(
       id: null == id
@@ -822,6 +830,10 @@ class __$$_NoteChannelInfoCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -829,7 +841,10 @@ class __$$_NoteChannelInfoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_NoteChannelInfo implements _NoteChannelInfo {
-  const _$_NoteChannelInfo({required this.id, required this.name});
+  const _$_NoteChannelInfo(
+      {required this.id,
+      required this.name,
+      @NullableColorConverter() this.color});
 
   factory _$_NoteChannelInfo.fromJson(Map<String, dynamic> json) =>
       _$$_NoteChannelInfoFromJson(json);
@@ -838,10 +853,13 @@ class _$_NoteChannelInfo implements _NoteChannelInfo {
   final String id;
   @override
   final String name;
+  @override
+  @NullableColorConverter()
+  final int? color;
 
   @override
   String toString() {
-    return 'NoteChannelInfo(id: $id, name: $name)';
+    return 'NoteChannelInfo(id: $id, name: $name, color: $color)';
   }
 
   @override
@@ -850,12 +868,13 @@ class _$_NoteChannelInfo implements _NoteChannelInfo {
         (other.runtimeType == runtimeType &&
             other is _$_NoteChannelInfo &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(runtimeType, id, name, color);
 
   @JsonKey(ignore: true)
   @override
@@ -874,7 +893,8 @@ class _$_NoteChannelInfo implements _NoteChannelInfo {
 abstract class _NoteChannelInfo implements NoteChannelInfo {
   const factory _NoteChannelInfo(
       {required final String id,
-      required final String name}) = _$_NoteChannelInfo;
+      required final String name,
+      @NullableColorConverter() final int? color}) = _$_NoteChannelInfo;
 
   factory _NoteChannelInfo.fromJson(Map<String, dynamic> json) =
       _$_NoteChannelInfo.fromJson;
@@ -883,6 +903,9 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
   String get id;
   @override
   String get name;
+  @override
+  @NullableColorConverter()
+  int? get color;
   @override
   @JsonKey(ignore: true)
   _$$_NoteChannelInfoCopyWith<_$_NoteChannelInfo> get copyWith =>

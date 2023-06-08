@@ -5,7 +5,7 @@ class NullableColorConverter extends JsonConverter<int?, String?> {
 
   @override
   int? fromJson(String? json) =>
-      json == null ? null : int.tryParse(json.substring(2, 6), radix: 16);
+      json == null ? null : int.tryParse(json.substring(1, 7), radix: 16);
 
   @override
   String? toJson(int? object) =>

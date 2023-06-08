@@ -79,12 +79,14 @@ _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>
     _$_NoteChannelInfo(
       id: json['id'] as String,
       name: json['name'] as String,
+      color: const NullableColorConverter().fromJson(json['color'] as String?),
     );
 
 Map<String, dynamic> _$$_NoteChannelInfoToJson(_$_NoteChannelInfo instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'color': const NullableColorConverter().toJson(instance.color),
     };
 
 _$_NotePoll _$$_NotePollFromJson(Map<String, dynamic> json) => _$_NotePoll(

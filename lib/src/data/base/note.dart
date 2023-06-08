@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/converters/color_converter.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
@@ -44,6 +45,7 @@ class NoteChannelInfo with _$NoteChannelInfo {
   const factory NoteChannelInfo({
     required String id,
     required String name,
+    @NullableColorConverter() int? color,
   }) = _NoteChannelInfo;
 
   factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>
