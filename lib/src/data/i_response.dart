@@ -72,7 +72,7 @@ class IResponse with _$IResponse {
     required List<String> mutedInstances,
     required List<String> mutingNotificationTypes,
     required List<String> emailNotificationTypes,
-    required bool showTimelineReplies,
+    //required bool showTimelineReplies,
     required List<UserAchievement> achievements,
     required int loggedInDays,
     required UserPolicies policies,

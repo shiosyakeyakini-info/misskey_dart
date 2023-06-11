@@ -80,11 +80,11 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
     };
 
 const _$ReactionAcceptanceEnumMap = {
-  ReactionAcceptance.likeOnly: 'likeOnly',
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
   ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
   ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
+  ReactionAcceptance.likeOnly: 'likeOnly',
 };
 
 _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>

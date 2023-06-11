@@ -65,11 +65,11 @@ Value? _$JsonConverterFromJson<Json, Value>(
     json == null ? null : fromJson(json as Json);
 
 const _$ReactionAcceptanceEnumMap = {
-  ReactionAcceptance.likeOnly: 'likeOnly',
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
   ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
   ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
+  ReactionAcceptance.likeOnly: 'likeOnly',
 };
 
 Json? _$JsonConverterToJson<Json, Value>(

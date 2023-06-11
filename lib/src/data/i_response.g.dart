@@ -92,7 +92,6 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      showTimelineReplies: json['showTimelineReplies'] as bool,
       achievements: (json['achievements'] as List<dynamic>)
           .map((e) => UserAchievement.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -167,7 +166,6 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
       'mutedInstances': instance.mutedInstances,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
       'emailNotificationTypes': instance.emailNotificationTypes,
-      'showTimelineReplies': instance.showTimelineReplies,
       'achievements': instance.achievements,
       'loggedInDays': instance.loggedInDays,
       'policies': instance.policies,
