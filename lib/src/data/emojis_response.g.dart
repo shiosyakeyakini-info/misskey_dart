@@ -24,6 +24,7 @@ _$_Emoji _$$_EmojiFromJson(Map<String, dynamic> json) => _$_Emoji(
       name: json['name'] as String,
       category: json['category'] as String?,
       url: const UriConverter().fromJson(json['url'] as String),
+      isSensitive: json['isSensitive'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_EmojiToJson(_$_Emoji instance) => <String, dynamic>{
@@ -31,4 +32,5 @@ Map<String, dynamic> _$$_EmojiToJson(_$_Emoji instance) => <String, dynamic>{
       'name': instance.name,
       'category': instance.category,
       'url': const UriConverter().toJson(instance.url),
+      'isSensitive': instance.isSensitive,
     };

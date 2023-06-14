@@ -169,6 +169,7 @@ mixin _$Emoji {
   String? get category => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get url => throw _privateConstructorUsedError;
+  bool get isSensitive => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -184,7 +185,8 @@ abstract class $EmojiCopyWith<$Res> {
       {List<String> aliases,
       String name,
       String? category,
-      @UriConverter() Uri url});
+      @UriConverter() Uri url,
+      bool isSensitive});
 }
 
 /// @nodoc
@@ -204,6 +206,7 @@ class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
     Object? name = null,
     Object? category = freezed,
     Object? url = null,
+    Object? isSensitive = null,
   }) {
     return _then(_value.copyWith(
       aliases: null == aliases
@@ -222,6 +225,10 @@ class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -236,7 +243,8 @@ abstract class _$$_EmojiCopyWith<$Res> implements $EmojiCopyWith<$Res> {
       {List<String> aliases,
       String name,
       String? category,
-      @UriConverter() Uri url});
+      @UriConverter() Uri url,
+      bool isSensitive});
 }
 
 /// @nodoc
@@ -252,6 +260,7 @@ class __$$_EmojiCopyWithImpl<$Res> extends _$EmojiCopyWithImpl<$Res, _$_Emoji>
     Object? name = null,
     Object? category = freezed,
     Object? url = null,
+    Object? isSensitive = null,
   }) {
     return _then(_$_Emoji(
       aliases: null == aliases
@@ -270,6 +279,10 @@ class __$$_EmojiCopyWithImpl<$Res> extends _$EmojiCopyWithImpl<$Res, _$_Emoji>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -281,7 +294,8 @@ class _$_Emoji implements _Emoji {
       {required final List<String> aliases,
       required this.name,
       this.category,
-      @UriConverter() required this.url})
+      @UriConverter() required this.url,
+      this.isSensitive = false})
       : _aliases = aliases;
 
   factory _$_Emoji.fromJson(Map<String, dynamic> json) =>
@@ -302,10 +316,13 @@ class _$_Emoji implements _Emoji {
   @override
   @UriConverter()
   final Uri url;
+  @override
+  @JsonKey()
+  final bool isSensitive;
 
   @override
   String toString() {
-    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url)';
+    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url, isSensitive: $isSensitive)';
   }
 
   @override
@@ -317,13 +334,20 @@ class _$_Emoji implements _Emoji {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.category, category) ||
                 other.category == category) &&
-            (identical(other.url, url) || other.url == url));
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_aliases), name, category, url);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_aliases),
+      name,
+      category,
+      url,
+      isSensitive);
 
   @JsonKey(ignore: true)
   @override
@@ -344,7 +368,8 @@ abstract class _Emoji implements Emoji {
       {required final List<String> aliases,
       required final String name,
       final String? category,
-      @UriConverter() required final Uri url}) = _$_Emoji;
+      @UriConverter() required final Uri url,
+      final bool isSensitive}) = _$_Emoji;
 
   factory _Emoji.fromJson(Map<String, dynamic> json) = _$_Emoji.fromJson;
 
@@ -357,6 +382,8 @@ abstract class _Emoji implements Emoji {
   @override
   @UriConverter()
   Uri get url;
+  @override
+  bool get isSensitive;
   @override
   @JsonKey(ignore: true)
   _$$_EmojiCopyWith<_$_Emoji> get copyWith =>
