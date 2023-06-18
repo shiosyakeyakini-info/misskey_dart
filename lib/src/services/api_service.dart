@@ -11,7 +11,7 @@ import 'package:misskey_dart/src/services/socket_controller.dart';
 
 class ApiService {
   final Dio dio = Dio();
-  final String token;
+  final String? token;
   final String host;
   final String? apiUrl;
   final String? streamingUrl;
@@ -27,7 +27,7 @@ class ApiService {
       baseUrl: apiUrl ?? "${Uri.https(host)}/api/",
       contentType: "application/json",
     );
-    dio.interceptors.add(LogInterceptor(requestBody: true));
+    dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
   }
 
   Future<T> post<T>(String path, Map<String, dynamic> request) async {

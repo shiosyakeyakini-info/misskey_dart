@@ -17,6 +17,7 @@ import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/misskey_antennas.dart';
+import 'package:misskey_dart/src/misskey_ap.dart';
 import 'package:misskey_dart/src/misskey_blocking.dart';
 import 'package:misskey_dart/src/misskey_channels.dart';
 import 'package:misskey_dart/src/misskey_clips.dart';
@@ -34,7 +35,7 @@ import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/socket_controller.dart';
 
 class Misskey {
-  final String token;
+  final String? token;
   final String host;
 
   late final ApiService apiService;
@@ -53,6 +54,7 @@ class Misskey {
   late final MisskeyFederation federation;
   late final MisskeyRoles roles;
   late final MisskeyHashtags hashtags;
+  late final MisskeyAp ap;
 
   Misskey({
     required this.token,
@@ -81,6 +83,7 @@ class Misskey {
     federation = MisskeyFederation(apiService: apiService);
     roles = MisskeyRoles(apiService: apiService);
     hashtags = MisskeyHashtags(apiService: apiService);
+    ap = MisskeyAp(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。

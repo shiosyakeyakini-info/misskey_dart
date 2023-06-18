@@ -77,13 +77,14 @@ Value? _$JsonConverterFromJson<Json, Value>(
 _$_UserBadgeRole _$$_UserBadgeRoleFromJson(Map<String, dynamic> json) =>
     _$_UserBadgeRole(
       name: json['name'] as String,
-      iconUrl: const UriConverter().fromJson(json['iconUrl'] as String),
+      iconUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['iconUrl'], const NullableUriConverter().fromJson),
     );
 
 Map<String, dynamic> _$$_UserBadgeRoleToJson(_$_UserBadgeRole instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'iconUrl': const UriConverter().toJson(instance.iconUrl),
+      'iconUrl': const NullableUriConverter().toJson(instance.iconUrl),
     };
 
 _$_UserRole _$$_UserRoleFromJson(Map<String, dynamic> json) => _$_UserRole(

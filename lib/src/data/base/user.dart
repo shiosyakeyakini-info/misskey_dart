@@ -16,14 +16,19 @@ class User with _$User {
     String? name,
     @UnsupportedDolphin()
     @OnlineStatusJsonConverter()
-    OnlineStatus? onlineStatus,
-    @Default([]) List<UserBadgeRole> badgeRoles,
-    @UriConverter() required Uri avatarUrl,
+        OnlineStatus? onlineStatus,
+    @Default([])
+        List<UserBadgeRole> badgeRoles,
+    @UriConverter()
+        required Uri avatarUrl,
     String? avatarBlurhash,
     UserInstanceInfo? instance,
-    @Default(false) bool isCat,
-    @Default(false) bool isBot,
-    @Default({}) Map<String, String> emojis,
+    @Default(false)
+        bool isCat,
+    @Default(false)
+        bool isBot,
+    @Default({})
+        Map<String, String> emojis,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
@@ -48,7 +53,7 @@ class UserInstanceInfo with _$UserInstanceInfo {
 class UserBadgeRole with _$UserBadgeRole {
   const factory UserBadgeRole({
     required String name,
-    @UriConverter() required Uri iconUrl,
+    @NullableUriConverter() required Uri? iconUrl,
   }) = _UserBadgeRole;
   factory UserBadgeRole.fromJson(Map<String, Object?> json) =>
       _$UserBadgeRoleFromJson(json);

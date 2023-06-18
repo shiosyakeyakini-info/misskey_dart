@@ -694,8 +694,8 @@ UserBadgeRole _$UserBadgeRoleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserBadgeRole {
   String get name => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get iconUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get iconUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -709,7 +709,7 @@ abstract class $UserBadgeRoleCopyWith<$Res> {
           UserBadgeRole value, $Res Function(UserBadgeRole) then) =
       _$UserBadgeRoleCopyWithImpl<$Res, UserBadgeRole>;
   @useResult
-  $Res call({String name, @UriConverter() Uri iconUrl});
+  $Res call({String name, @NullableUriConverter() Uri? iconUrl});
 }
 
 /// @nodoc
@@ -726,17 +726,17 @@ class _$UserBadgeRoleCopyWithImpl<$Res, $Val extends UserBadgeRole>
   @override
   $Res call({
     Object? name = null,
-    Object? iconUrl = null,
+    Object? iconUrl = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      iconUrl: null == iconUrl
+      iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as Uri?,
     ) as $Val);
   }
 }
@@ -749,7 +749,7 @@ abstract class _$$_UserBadgeRoleCopyWith<$Res>
       __$$_UserBadgeRoleCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, @UriConverter() Uri iconUrl});
+  $Res call({String name, @NullableUriConverter() Uri? iconUrl});
 }
 
 /// @nodoc
@@ -764,17 +764,17 @@ class __$$_UserBadgeRoleCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? iconUrl = null,
+    Object? iconUrl = freezed,
   }) {
     return _then(_$_UserBadgeRole(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      iconUrl: null == iconUrl
+      iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as Uri?,
     ));
   }
 }
@@ -783,7 +783,7 @@ class __$$_UserBadgeRoleCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserBadgeRole implements _UserBadgeRole {
   const _$_UserBadgeRole(
-      {required this.name, @UriConverter() required this.iconUrl});
+      {required this.name, @NullableUriConverter() required this.iconUrl});
 
   factory _$_UserBadgeRole.fromJson(Map<String, dynamic> json) =>
       _$$_UserBadgeRoleFromJson(json);
@@ -791,8 +791,8 @@ class _$_UserBadgeRole implements _UserBadgeRole {
   @override
   final String name;
   @override
-  @UriConverter()
-  final Uri iconUrl;
+  @NullableUriConverter()
+  final Uri? iconUrl;
 
   @override
   String toString() {
@@ -829,7 +829,7 @@ class _$_UserBadgeRole implements _UserBadgeRole {
 abstract class _UserBadgeRole implements UserBadgeRole {
   const factory _UserBadgeRole(
       {required final String name,
-      @UriConverter() required final Uri iconUrl}) = _$_UserBadgeRole;
+      @NullableUriConverter() required final Uri? iconUrl}) = _$_UserBadgeRole;
 
   factory _UserBadgeRole.fromJson(Map<String, dynamic> json) =
       _$_UserBadgeRole.fromJson;
@@ -837,8 +837,8 @@ abstract class _UserBadgeRole implements UserBadgeRole {
   @override
   String get name;
   @override
-  @UriConverter()
-  Uri get iconUrl;
+  @NullableUriConverter()
+  Uri? get iconUrl;
   @override
   @JsonKey(ignore: true)
   _$$_UserBadgeRoleCopyWith<_$_UserBadgeRole> get copyWith =>
