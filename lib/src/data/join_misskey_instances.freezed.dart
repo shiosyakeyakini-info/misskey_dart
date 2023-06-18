@@ -645,9 +645,9 @@ class _$_JoinMisskeyInstanceInfo implements _JoinMisskeyInstanceInfo {
       required this.description,
       required this.isAlive,
       required this.value,
-      required this.banner,
-      required this.background,
-      required this.icon,
+      this.banner = false,
+      this.background = false,
+      this.icon = false,
       @JsonKey(name: "nodeinfo") this.nodeInfo})
       : _langs = langs;
 
@@ -673,10 +673,13 @@ class _$_JoinMisskeyInstanceInfo implements _JoinMisskeyInstanceInfo {
   @override
   final double value;
   @override
+  @JsonKey()
   final bool banner;
   @override
+  @JsonKey()
   final bool background;
   @override
+  @JsonKey()
   final bool icon;
   @override
   @JsonKey(name: "nodeinfo")
@@ -746,9 +749,9 @@ abstract class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
           required final String? description,
           required final bool isAlive,
           required final double value,
-          required final bool banner,
-          required final bool background,
-          required final bool icon,
+          final bool banner,
+          final bool background,
+          final bool icon,
           @JsonKey(name: "nodeinfo") final JoinMisskeyNodeInfo? nodeInfo}) =
       _$_JoinMisskeyInstanceInfo;
 

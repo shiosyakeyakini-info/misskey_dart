@@ -50,9 +50,9 @@ _$_JoinMisskeyInstanceInfo _$$_JoinMisskeyInstanceInfoFromJson(
       description: json['description'] as String?,
       isAlive: json['isAlive'] as bool,
       value: (json['value'] as num).toDouble(),
-      banner: json['banner'] as bool,
-      background: json['background'] as bool,
-      icon: json['icon'] as bool,
+      banner: json['banner'] as bool? ?? false,
+      background: json['background'] as bool? ?? false,
+      icon: json['icon'] as bool? ?? false,
       nodeInfo: json['nodeinfo'] == null
           ? null
           : JoinMisskeyNodeInfo.fromJson(

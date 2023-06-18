@@ -37,9 +37,9 @@ class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
     required String? description,
     required bool isAlive,
     required double value,
-    required bool banner,
-    required bool background,
-    required bool icon,
+    @Default(false) bool banner,
+    @Default(false) bool background,
+    @Default(false) bool icon,
     @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
   }) = _JoinMisskeyInstanceInfo;
 
