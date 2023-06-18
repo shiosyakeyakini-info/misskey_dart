@@ -45,6 +45,10 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       channel: json['channel'] == null
           ? null
           : NoteChannelInfo.fromJson(json['channel'] as Map<String, dynamic>),
+      uri: _$JsonConverterFromJson<String, Uri?>(
+          json['uri'], const NullableUriConverter().fromJson),
+      url: _$JsonConverterFromJson<String, Uri?>(
+          json['url'], const NullableUriConverter().fromJson),
       poll: json['poll'] == null
           ? null
           : NotePoll.fromJson(json['poll'] as Map<String, dynamic>),
@@ -76,6 +80,8 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'reply': instance.reply,
       'myReaction': instance.myReaction,
       'channel': instance.channel,
+      'uri': const NullableUriConverter().toJson(instance.uri),
+      'url': const NullableUriConverter().toJson(instance.url),
       'poll': instance.poll,
     };
 
@@ -86,6 +92,12 @@ const _$ReactionAcceptanceEnumMap = {
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
   ReactionAcceptance.likeOnly: 'likeOnly',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
 
 _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>
     _$_NoteChannelInfo(
@@ -117,12 +129,6 @@ Map<String, dynamic> _$$_NotePollToJson(_$_NotePoll instance) =>
           instance.expiresAt, const DateTimeConverter().toJson),
       'choices': instance.choices,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,

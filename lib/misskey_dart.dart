@@ -18,6 +18,8 @@ export 'src/data/antennas/antennas_delete_request.dart';
 export 'src/data/antennas/antennas_notes_request.dart';
 export 'src/data/antennas/antennas_show_request.dart';
 export 'src/data/antennas/antennas_update_request.dart';
+export 'src/data/ap/ap_show_request.dart';
+export 'src/data/ap/ap_show_response.dart';
 export 'src/data/base/note.dart';
 export 'src/data/base/user.dart';
 export 'src/data/base/clip.dart';

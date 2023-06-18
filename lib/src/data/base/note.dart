@@ -36,6 +36,8 @@ class Note with _$Note {
     Note? reply,
     String? myReaction,
     NoteChannelInfo? channel,
+    @NullableUriConverter() Uri? uri,
+    @NullableUriConverter() Uri? url,
     NotePoll? poll,
   }) = _Note;
 

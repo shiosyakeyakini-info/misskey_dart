@@ -46,6 +46,10 @@ mixin _$Note {
   Note? get reply => throw _privateConstructorUsedError;
   String? get myReaction => throw _privateConstructorUsedError;
   NoteChannelInfo? get channel => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get uri => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get url => throw _privateConstructorUsedError;
   NotePoll? get poll => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -82,6 +86,8 @@ abstract class $NoteCopyWith<$Res> {
       Note? reply,
       String? myReaction,
       NoteChannelInfo? channel,
+      @NullableUriConverter() Uri? uri,
+      @NullableUriConverter() Uri? url,
       NotePoll? poll});
 
   $UserCopyWith<$Res> get user;
@@ -127,6 +133,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? reply = freezed,
     Object? myReaction = freezed,
     Object? channel = freezed,
+    Object? uri = freezed,
+    Object? url = freezed,
     Object? poll = freezed,
   }) {
     return _then(_value.copyWith(
@@ -222,6 +230,14 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as NoteChannelInfo?,
+      uri: freezed == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      url: freezed == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       poll: freezed == poll
           ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
@@ -316,6 +332,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       Note? reply,
       String? myReaction,
       NoteChannelInfo? channel,
+      @NullableUriConverter() Uri? uri,
+      @NullableUriConverter() Uri? url,
       NotePoll? poll});
 
   @override
@@ -362,6 +380,8 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? reply = freezed,
     Object? myReaction = freezed,
     Object? channel = freezed,
+    Object? uri = freezed,
+    Object? url = freezed,
     Object? poll = freezed,
   }) {
     return _then(_$_Note(
@@ -457,6 +477,14 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as NoteChannelInfo?,
+      uri: freezed == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      url: freezed == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       poll: freezed == poll
           ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
@@ -492,6 +520,8 @@ class _$_Note implements _Note {
       this.reply,
       this.myReaction,
       this.channel,
+      @NullableUriConverter() this.uri,
+      @NullableUriConverter() this.url,
       this.poll})
       : _reactions = reactions,
         _reactionEmojis = reactionEmojis,
@@ -581,11 +611,17 @@ class _$_Note implements _Note {
   @override
   final NoteChannelInfo? channel;
   @override
+  @NullableUriConverter()
+  final Uri? uri;
+  @override
+  @NullableUriConverter()
+  final Uri? url;
+  @override
   final NotePoll? poll;
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel, poll: $poll)';
+    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, poll: $poll)';
   }
 
   @override
@@ -627,6 +663,8 @@ class _$_Note implements _Note {
             (identical(other.myReaction, myReaction) ||
                 other.myReaction == myReaction) &&
             (identical(other.channel, channel) || other.channel == channel) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.url, url) || other.url == url) &&
             (identical(other.poll, poll) || other.poll == poll));
   }
 
@@ -657,6 +695,8 @@ class _$_Note implements _Note {
         reply,
         myReaction,
         channel,
+        uri,
+        url,
         poll
       ]);
 
@@ -699,6 +739,8 @@ abstract class _Note implements Note {
       final Note? reply,
       final String? myReaction,
       final NoteChannelInfo? channel,
+      @NullableUriConverter() final Uri? uri,
+      @NullableUriConverter() final Uri? url,
       final NotePoll? poll}) = _$_Note;
 
   factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
@@ -751,6 +793,12 @@ abstract class _Note implements Note {
   String? get myReaction;
   @override
   NoteChannelInfo? get channel;
+  @override
+  @NullableUriConverter()
+  Uri? get uri;
+  @override
+  @NullableUriConverter()
+  Uri? get url;
   @override
   NotePoll? get poll;
   @override
