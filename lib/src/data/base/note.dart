@@ -3,9 +3,6 @@ import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/color_converter.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
-import 'package:misskey_dart/src/data/base/user.dart';
-import 'package:misskey_dart/src/enums/note_visibility.dart';
-import 'package:misskey_dart/src/enums/reaction_acceptance.dart';
 
 part 'note.freezed.dart';
 part 'note.g.dart';

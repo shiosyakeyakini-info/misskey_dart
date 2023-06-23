@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/enums/permissions.dart';
 
 class MisskeyServer {
   final dio = Dio();

@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/i/i_update_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {

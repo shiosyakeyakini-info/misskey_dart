@@ -1,7 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/base/user_list.dart';
-import 'package:misskey_dart/src/data/users/users_update_memo_request.dart';
-import 'package:misskey_dart/src/data/users/users_users_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {

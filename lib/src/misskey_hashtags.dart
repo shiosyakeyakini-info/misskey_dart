@@ -1,6 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/hashtags/hashtags_list_response.dart';
-import 'package:misskey_dart/src/data/hashtags/hashtags_trend_response.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyHashtags {
