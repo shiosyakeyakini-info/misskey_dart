@@ -9,6 +9,8 @@ part 'users_show_response.g.dart';
 
 @freezed
 class UsersShowResponse with _$UsersShowResponse {
+  const UsersShowResponse._();
+
   const factory UsersShowResponse({
     required String id,
     String? name,
@@ -64,4 +66,21 @@ class UsersShowResponse with _$UsersShowResponse {
 
   factory UsersShowResponse.fromJson(Map<String, Object?> json) =>
       _$UsersShowResponseFromJson(json);
+
+  User toUser() => User(
+        id: id,
+        username: username,
+        host: host,
+        onlineStatus: onlineStatus,
+        badgeRoles: roles
+                ?.map((e) => UserBadgeRole(name: e.name, iconUrl: e.iconUrl))
+                .toList() ??
+            [],
+        avatarUrl: avatarUrl,
+        avatarBlurhash: avatarBlurhash,
+        instance: instance,
+        isCat: isCat,
+        isBot: isBot,
+        emojis: emojis ?? {},
+      );
 }

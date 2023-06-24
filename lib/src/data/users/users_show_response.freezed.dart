@@ -737,7 +737,7 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersShowResponse implements _UsersShowResponse {
+class _$_UsersShowResponse extends _UsersShowResponse {
   const _$_UsersShowResponse(
       {required this.id,
       this.name,
@@ -792,7 +792,8 @@ class _$_UsersShowResponse implements _UsersShowResponse {
         _pinnedNoteIds = pinnedNoteIds,
         _pinnedNotes = pinnedNotes,
         _pinnedPage = pinnedPage,
-        _roles = roles;
+        _roles = roles,
+        super._();
 
   factory _$_UsersShowResponse.fromJson(Map<String, dynamic> json) =>
       _$$_UsersShowResponseFromJson(json);
@@ -1121,7 +1122,7 @@ class _$_UsersShowResponse implements _UsersShowResponse {
   }
 }
 
-abstract class _UsersShowResponse implements UsersShowResponse {
+abstract class _UsersShowResponse extends UsersShowResponse {
   const factory _UsersShowResponse(
       {required final String id,
       final String? name,
@@ -1171,6 +1172,7 @@ abstract class _UsersShowResponse implements UsersShowResponse {
       final bool? isBlocked,
       final bool? isMuted,
       final bool? isRenoteMuted}) = _$_UsersShowResponse;
+  const _UsersShowResponse._() : super._();
 
   factory _UsersShowResponse.fromJson(Map<String, dynamic> json) =
       _$_UsersShowResponse.fromJson;
