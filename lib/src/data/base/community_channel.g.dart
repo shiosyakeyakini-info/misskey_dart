@@ -25,9 +25,9 @@ _$_CommunityChannel _$$_CommunityChannelFromJson(Map<String, dynamic> json) =>
       usersCount: json['usersCount'] as int,
       notesCount: json['notesCount'] as int,
       isSensitive: json['isSensitive'] as bool? ?? false,
-      isFollowing: json['isFollowing'] as bool,
-      isFavorited: json['isFavorited'] as bool,
-      hasUnreadNote: json['hasUnreadNote'] as bool,
+      isFollowing: json['isFollowing'] as bool?,
+      isFavorited: json['isFavorited'] as bool?,
+      hasUnreadNote: json['hasUnreadNote'] as bool?,
       pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
           ?.map((e) => Note.fromJson(e as Map<String, dynamic>))
           .toList(),

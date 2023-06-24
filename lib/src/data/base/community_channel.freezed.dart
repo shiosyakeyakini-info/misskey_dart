@@ -34,9 +34,9 @@ mixin _$CommunityChannel {
   int get usersCount => throw _privateConstructorUsedError;
   int get notesCount => throw _privateConstructorUsedError;
   bool get isSensitive => throw _privateConstructorUsedError;
-  bool get isFollowing => throw _privateConstructorUsedError;
-  bool get isFavorited => throw _privateConstructorUsedError;
-  bool get hasUnreadNote => throw _privateConstructorUsedError;
+  bool? get isFollowing => throw _privateConstructorUsedError;
+  bool? get isFavorited => throw _privateConstructorUsedError;
+  bool? get hasUnreadNote => throw _privateConstructorUsedError;
   List<Note>? get pinnedNotes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,9 +63,9 @@ abstract class $CommunityChannelCopyWith<$Res> {
       int usersCount,
       int notesCount,
       bool isSensitive,
-      bool isFollowing,
-      bool isFavorited,
-      bool hasUnreadNote,
+      bool? isFollowing,
+      bool? isFavorited,
+      bool? hasUnreadNote,
       List<Note>? pinnedNotes});
 }
 
@@ -93,9 +93,9 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
     Object? usersCount = null,
     Object? notesCount = null,
     Object? isSensitive = null,
-    Object? isFollowing = null,
-    Object? isFavorited = null,
-    Object? hasUnreadNote = null,
+    Object? isFollowing = freezed,
+    Object? isFavorited = freezed,
+    Object? hasUnreadNote = freezed,
     Object? pinnedNotes = freezed,
   }) {
     return _then(_value.copyWith(
@@ -143,18 +143,18 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFollowing: null == isFollowing
+      isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isFavorited: null == isFavorited
+              as bool?,
+      isFavorited: freezed == isFavorited
           ? _value.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasUnreadNote: null == hasUnreadNote
+              as bool?,
+      hasUnreadNote: freezed == hasUnreadNote
           ? _value.hasUnreadNote
           : hasUnreadNote // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       pinnedNotes: freezed == pinnedNotes
           ? _value.pinnedNotes
           : pinnedNotes // ignore: cast_nullable_to_non_nullable
@@ -183,9 +183,9 @@ abstract class _$$_CommunityChannelCopyWith<$Res>
       int usersCount,
       int notesCount,
       bool isSensitive,
-      bool isFollowing,
-      bool isFavorited,
-      bool hasUnreadNote,
+      bool? isFollowing,
+      bool? isFavorited,
+      bool? hasUnreadNote,
       List<Note>? pinnedNotes});
 }
 
@@ -211,9 +211,9 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
     Object? usersCount = null,
     Object? notesCount = null,
     Object? isSensitive = null,
-    Object? isFollowing = null,
-    Object? isFavorited = null,
-    Object? hasUnreadNote = null,
+    Object? isFollowing = freezed,
+    Object? isFavorited = freezed,
+    Object? hasUnreadNote = freezed,
     Object? pinnedNotes = freezed,
   }) {
     return _then(_$_CommunityChannel(
@@ -261,18 +261,18 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFollowing: null == isFollowing
+      isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isFavorited: null == isFavorited
+              as bool?,
+      isFavorited: freezed == isFavorited
           ? _value.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasUnreadNote: null == hasUnreadNote
+              as bool?,
+      hasUnreadNote: freezed == hasUnreadNote
           ? _value.hasUnreadNote
           : hasUnreadNote // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       pinnedNotes: freezed == pinnedNotes
           ? _value._pinnedNotes
           : pinnedNotes // ignore: cast_nullable_to_non_nullable
@@ -296,9 +296,9 @@ class _$_CommunityChannel implements _CommunityChannel {
       required this.usersCount,
       required this.notesCount,
       this.isSensitive = false,
-      required this.isFollowing,
-      required this.isFavorited,
-      required this.hasUnreadNote,
+      this.isFollowing,
+      this.isFavorited,
+      this.hasUnreadNote,
       required final List<Note>? pinnedNotes})
       : _pinnedNoteIds = pinnedNoteIds,
         _pinnedNotes = pinnedNotes;
@@ -339,11 +339,11 @@ class _$_CommunityChannel implements _CommunityChannel {
   @JsonKey()
   final bool isSensitive;
   @override
-  final bool isFollowing;
+  final bool? isFollowing;
   @override
-  final bool isFavorited;
+  final bool? isFavorited;
   @override
-  final bool hasUnreadNote;
+  final bool? hasUnreadNote;
   final List<Note>? _pinnedNotes;
   @override
   List<Note>? get pinnedNotes {
@@ -440,9 +440,9 @@ abstract class _CommunityChannel implements CommunityChannel {
       required final int usersCount,
       required final int notesCount,
       final bool isSensitive,
-      required final bool isFollowing,
-      required final bool isFavorited,
-      required final bool hasUnreadNote,
+      final bool? isFollowing,
+      final bool? isFavorited,
+      final bool? hasUnreadNote,
       required final List<Note>? pinnedNotes}) = _$_CommunityChannel;
 
   factory _CommunityChannel.fromJson(Map<String, dynamic> json) =
@@ -474,11 +474,11 @@ abstract class _CommunityChannel implements CommunityChannel {
   @override
   bool get isSensitive;
   @override
-  bool get isFollowing;
+  bool? get isFollowing;
   @override
-  bool get isFavorited;
+  bool? get isFavorited;
   @override
-  bool get hasUnreadNote;
+  bool? get hasUnreadNote;
   @override
   List<Note>? get pinnedNotes;
   @override
