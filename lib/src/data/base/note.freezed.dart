@@ -44,6 +44,8 @@ mixin _$Note {
       throw _privateConstructorUsedError;
   Note? get renote => throw _privateConstructorUsedError;
   Note? get reply => throw _privateConstructorUsedError;
+  List<String> get visibleUserIds => throw _privateConstructorUsedError;
+  List<String> get mentions => throw _privateConstructorUsedError;
   String? get myReaction => throw _privateConstructorUsedError;
   NoteChannelInfo? get channel => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -84,6 +86,8 @@ abstract class $NoteCopyWith<$Res> {
       ReactionAcceptance? reactionAcceptance,
       Note? renote,
       Note? reply,
+      List<String> visibleUserIds,
+      List<String> mentions,
       String? myReaction,
       NoteChannelInfo? channel,
       @NullableUriConverter() Uri? uri,
@@ -131,6 +135,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? reactionAcceptance = freezed,
     Object? renote = freezed,
     Object? reply = freezed,
+    Object? visibleUserIds = null,
+    Object? mentions = null,
     Object? myReaction = freezed,
     Object? channel = freezed,
     Object? uri = freezed,
@@ -222,6 +228,14 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.reply
           : reply // ignore: cast_nullable_to_non_nullable
               as Note?,
+      visibleUserIds: null == visibleUserIds
+          ? _value.visibleUserIds
+          : visibleUserIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mentions: null == mentions
+          ? _value.mentions
+          : mentions // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       myReaction: freezed == myReaction
           ? _value.myReaction
           : myReaction // ignore: cast_nullable_to_non_nullable
@@ -330,6 +344,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       ReactionAcceptance? reactionAcceptance,
       Note? renote,
       Note? reply,
+      List<String> visibleUserIds,
+      List<String> mentions,
       String? myReaction,
       NoteChannelInfo? channel,
       @NullableUriConverter() Uri? uri,
@@ -378,6 +394,8 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? reactionAcceptance = freezed,
     Object? renote = freezed,
     Object? reply = freezed,
+    Object? visibleUserIds = null,
+    Object? mentions = null,
     Object? myReaction = freezed,
     Object? channel = freezed,
     Object? uri = freezed,
@@ -469,6 +487,14 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.reply
           : reply // ignore: cast_nullable_to_non_nullable
               as Note?,
+      visibleUserIds: null == visibleUserIds
+          ? _value._visibleUserIds
+          : visibleUserIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mentions: null == mentions
+          ? _value._mentions
+          : mentions // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       myReaction: freezed == myReaction
           ? _value.myReaction
           : myReaction // ignore: cast_nullable_to_non_nullable
@@ -518,6 +544,8 @@ class _$_Note implements _Note {
       this.reactionAcceptance,
       this.renote,
       this.reply,
+      final List<String> visibleUserIds = const [],
+      final List<String> mentions = const [],
       this.myReaction,
       this.channel,
       @NullableUriConverter() this.uri,
@@ -527,7 +555,9 @@ class _$_Note implements _Note {
         _reactionEmojis = reactionEmojis,
         _emojis = emojis,
         _fileIds = fileIds,
-        _files = files;
+        _files = files,
+        _visibleUserIds = visibleUserIds,
+        _mentions = mentions;
 
   factory _$_Note.fromJson(Map<String, dynamic> json) => _$$_NoteFromJson(json);
 
@@ -606,6 +636,24 @@ class _$_Note implements _Note {
   final Note? renote;
   @override
   final Note? reply;
+  final List<String> _visibleUserIds;
+  @override
+  @JsonKey()
+  List<String> get visibleUserIds {
+    if (_visibleUserIds is EqualUnmodifiableListView) return _visibleUserIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_visibleUserIds);
+  }
+
+  final List<String> _mentions;
+  @override
+  @JsonKey()
+  List<String> get mentions {
+    if (_mentions is EqualUnmodifiableListView) return _mentions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_mentions);
+  }
+
   @override
   final String? myReaction;
   @override
@@ -621,7 +669,7 @@ class _$_Note implements _Note {
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, poll: $poll)';
+    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, visibleUserIds: $visibleUserIds, mentions: $mentions, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, poll: $poll)';
   }
 
   @override
@@ -660,6 +708,9 @@ class _$_Note implements _Note {
                 other.reactionAcceptance == reactionAcceptance) &&
             (identical(other.renote, renote) || other.renote == renote) &&
             (identical(other.reply, reply) || other.reply == reply) &&
+            const DeepCollectionEquality()
+                .equals(other._visibleUserIds, _visibleUserIds) &&
+            const DeepCollectionEquality().equals(other._mentions, _mentions) &&
             (identical(other.myReaction, myReaction) ||
                 other.myReaction == myReaction) &&
             (identical(other.channel, channel) || other.channel == channel) &&
@@ -693,6 +744,8 @@ class _$_Note implements _Note {
         reactionAcceptance,
         renote,
         reply,
+        const DeepCollectionEquality().hash(_visibleUserIds),
+        const DeepCollectionEquality().hash(_mentions),
         myReaction,
         channel,
         uri,
@@ -737,6 +790,8 @@ abstract class _Note implements Note {
       final ReactionAcceptance? reactionAcceptance,
       final Note? renote,
       final Note? reply,
+      final List<String> visibleUserIds,
+      final List<String> mentions,
       final String? myReaction,
       final NoteChannelInfo? channel,
       @NullableUriConverter() final Uri? uri,
@@ -789,6 +844,10 @@ abstract class _Note implements Note {
   Note? get renote;
   @override
   Note? get reply;
+  @override
+  List<String> get visibleUserIds;
+  @override
+  List<String> get mentions;
   @override
   String? get myReaction;
   @override

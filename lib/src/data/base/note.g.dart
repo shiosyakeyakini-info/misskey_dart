@@ -41,6 +41,14 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       reply: json['reply'] == null
           ? null
           : Note.fromJson(json['reply'] as Map<String, dynamic>),
+      visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      mentions: (json['mentions'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       myReaction: json['myReaction'] as String?,
       channel: json['channel'] == null
           ? null
@@ -78,6 +86,8 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
       'renote': instance.renote,
       'reply': instance.reply,
+      'visibleUserIds': instance.visibleUserIds,
+      'mentions': instance.mentions,
       'myReaction': instance.myReaction,
       'channel': instance.channel,
       'uri': const NullableUriConverter().toJson(instance.uri),

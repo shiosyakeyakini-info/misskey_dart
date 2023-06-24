@@ -31,6 +31,8 @@ class Note with _$Note {
     ReactionAcceptance? reactionAcceptance,
     Note? renote,
     Note? reply,
+    @Default([]) List<String> visibleUserIds,
+    @Default([]) List<String> mentions,
     String? myReaction,
     NoteChannelInfo? channel,
     @NullableUriConverter() Uri? uri,
