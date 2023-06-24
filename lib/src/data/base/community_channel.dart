@@ -19,9 +19,9 @@ class CommunityChannel with _$CommunityChannel {
     required List<String> pinnedNoteIds,
     required int usersCount,
     required int notesCount,
-    required bool isFollowing,
-    required bool isFavorited,
-    required bool hasUnreadNote,
+    bool? isFollowing,
+    bool? isFavorited,
+    bool? hasUnreadNote,
     required List<Note>? pinnedNotes,
   }) = _CommunityChannel;
 
