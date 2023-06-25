@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/emoji_request.dart';
+import 'package:misskey_dart/src/data/emoji_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
@@ -79,6 +81,12 @@ class Misskey {
   Future<EmojisResponse> emojis() async {
     final response = await apiService.post<Map<String, dynamic>>("emojis", {});
     return EmojisResponse.fromJson(response);
+  }
+
+  Future<EmojiResponse> emoji(EmojiRequest request) async {
+    final response =
+        await apiService.post<Map<String, dynamic>>("emoji", request.toJson());
+    return EmojiResponse.fromJson(response);
   }
 
   /// サーバーの情報を取得します。
