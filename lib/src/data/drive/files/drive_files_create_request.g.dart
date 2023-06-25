@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'drive_file_create_request.dart';
+part of 'drive_files_create_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

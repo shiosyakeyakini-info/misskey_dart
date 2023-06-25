@@ -5,7 +5,8 @@ import 'package:misskey_dart/src/data/base/drive_file.dart';
 import 'package:misskey_dart/src/data/base/drive_folder.dart';
 import 'package:misskey_dart/src/data/drive/drive_files_request.dart';
 import 'package:misskey_dart/src/data/drive/drive_folders_request.dart';
-import 'package:misskey_dart/src/data/drive/files/drive_file_create_request.dart';
+import 'package:misskey_dart/src/data/drive/files/drive_files_create_request.dart';
+import 'package:misskey_dart/src/data/drive/files/drive_files_update_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyDrive {
@@ -34,6 +35,12 @@ class MisskeyDriveFiles {
       DriveFilesCreateRequest request, Uint8List fileContent) async {
     final response = await _apiService.postWithBinary<Map<String, dynamic>>(
         "drive/files/create", request.toJson(), fileContent);
+    return DriveFile.fromJson(response);
+  }
+
+  Future<DriveFile> update(DriveFilesUpdateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "drive/files/update", request.toJson());
     return DriveFile.fromJson(response);
   }
 

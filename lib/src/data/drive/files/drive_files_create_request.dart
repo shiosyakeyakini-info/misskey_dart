@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'drive_file_create_request.freezed.dart';
-part 'drive_file_create_request.g.dart';
+part 'drive_files_create_request.freezed.dart';
+part 'drive_files_create_request.g.dart';
 
 @freezed
 class DriveFilesCreateRequest with _$DriveFilesCreateRequest {
