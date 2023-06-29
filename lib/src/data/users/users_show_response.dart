@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 import 'package:misskey_dart/src/enums/online_status.dart';
 
@@ -54,6 +55,35 @@ class UsersShowResponse with _$UsersShowResponse {
     required bool securityKeys,
     List<UserRole>? roles,
     String? memo,
+    // 以下ログイン時のみ
+    String? avatarId,
+    String? bannerId,
+    bool? isModerator,
+    bool? isAdmin,
+    bool? injectFeaturedNote,
+    bool? receiveAnnouncementEmail,
+    bool? alwaysMarkNsfw,
+    bool? autoSensitive,
+    bool? carefulBot,
+    bool? autoAcceptFollowed,
+    bool? noCrawle,
+    bool? preventAiLearning,
+    bool? isExplorable,
+    bool? isDeleted,
+    bool? hideOnlineStatus,
+    bool? hasUnreadSpecifiedNotes,
+    bool? hasUnreadMentions,
+    bool? hasUnreadAnnouncement,
+    bool? hasUnreadAntenna,
+    bool? hasUnreadNotification,
+    bool? hasPendingReceivedFollowRequest,
+    @MuteWordsConverter() List<MuteWord>? mutedWords,
+    List<String>? mutedInstances,
+    List<String>? mutingNotificationTypes,
+    List<String>? emailNotificationTypes,
+    List<UserAchievement>? achievements,
+    int? loggedInDays,
+    UserPolicies? policies,
     bool? isFollowing,
     bool? isFollowed,
     bool? hasPendingFollowRequestFromYou,

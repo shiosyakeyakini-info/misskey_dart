@@ -69,7 +69,39 @@ mixin _$UsersShowResponse {
   bool get usePasswordLessLogin => throw _privateConstructorUsedError;
   bool get securityKeys => throw _privateConstructorUsedError;
   List<UserRole>? get roles => throw _privateConstructorUsedError;
-  String? get memo => throw _privateConstructorUsedError;
+  String? get memo => throw _privateConstructorUsedError; // 以下ログイン時のみ
+  String? get avatarId => throw _privateConstructorUsedError;
+  String? get bannerId => throw _privateConstructorUsedError;
+  bool? get isModerator => throw _privateConstructorUsedError;
+  bool? get isAdmin => throw _privateConstructorUsedError;
+  bool? get injectFeaturedNote => throw _privateConstructorUsedError;
+  bool? get receiveAnnouncementEmail => throw _privateConstructorUsedError;
+  bool? get alwaysMarkNsfw => throw _privateConstructorUsedError;
+  bool? get autoSensitive => throw _privateConstructorUsedError;
+  bool? get carefulBot => throw _privateConstructorUsedError;
+  bool? get autoAcceptFollowed => throw _privateConstructorUsedError;
+  bool? get noCrawle => throw _privateConstructorUsedError;
+  bool? get preventAiLearning => throw _privateConstructorUsedError;
+  bool? get isExplorable => throw _privateConstructorUsedError;
+  bool? get isDeleted => throw _privateConstructorUsedError;
+  bool? get hideOnlineStatus => throw _privateConstructorUsedError;
+  bool? get hasUnreadSpecifiedNotes => throw _privateConstructorUsedError;
+  bool? get hasUnreadMentions => throw _privateConstructorUsedError;
+  bool? get hasUnreadAnnouncement => throw _privateConstructorUsedError;
+  bool? get hasUnreadAntenna => throw _privateConstructorUsedError;
+  bool? get hasUnreadNotification => throw _privateConstructorUsedError;
+  bool? get hasPendingReceivedFollowRequest =>
+      throw _privateConstructorUsedError;
+  @MuteWordsConverter()
+  List<MuteWord>? get mutedWords => throw _privateConstructorUsedError;
+  List<String>? get mutedInstances => throw _privateConstructorUsedError;
+  List<String>? get mutingNotificationTypes =>
+      throw _privateConstructorUsedError;
+  List<String>? get emailNotificationTypes =>
+      throw _privateConstructorUsedError;
+  List<UserAchievement>? get achievements => throw _privateConstructorUsedError;
+  int? get loggedInDays => throw _privateConstructorUsedError;
+  UserPolicies? get policies => throw _privateConstructorUsedError;
   bool? get isFollowing => throw _privateConstructorUsedError;
   bool? get isFollowed => throw _privateConstructorUsedError;
   bool? get hasPendingFollowRequestFromYou =>
@@ -133,6 +165,34 @@ abstract class $UsersShowResponseCopyWith<$Res> {
       bool securityKeys,
       List<UserRole>? roles,
       String? memo,
+      String? avatarId,
+      String? bannerId,
+      bool? isModerator,
+      bool? isAdmin,
+      bool? injectFeaturedNote,
+      bool? receiveAnnouncementEmail,
+      bool? alwaysMarkNsfw,
+      bool? autoSensitive,
+      bool? carefulBot,
+      bool? autoAcceptFollowed,
+      bool? noCrawle,
+      bool? preventAiLearning,
+      bool? isExplorable,
+      bool? isDeleted,
+      bool? hideOnlineStatus,
+      bool? hasUnreadSpecifiedNotes,
+      bool? hasUnreadMentions,
+      bool? hasUnreadAnnouncement,
+      bool? hasUnreadAntenna,
+      bool? hasUnreadNotification,
+      bool? hasPendingReceivedFollowRequest,
+      @MuteWordsConverter() List<MuteWord>? mutedWords,
+      List<String>? mutedInstances,
+      List<String>? mutingNotificationTypes,
+      List<String>? emailNotificationTypes,
+      List<UserAchievement>? achievements,
+      int? loggedInDays,
+      UserPolicies? policies,
       bool? isFollowing,
       bool? isFollowed,
       bool? hasPendingFollowRequestFromYou,
@@ -143,6 +203,7 @@ abstract class $UsersShowResponseCopyWith<$Res> {
       bool? isRenoteMuted});
 
   $UserInstanceInfoCopyWith<$Res>? get instance;
+  $UserPoliciesCopyWith<$Res>? get policies;
 }
 
 /// @nodoc
@@ -198,6 +259,34 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
     Object? securityKeys = null,
     Object? roles = freezed,
     Object? memo = freezed,
+    Object? avatarId = freezed,
+    Object? bannerId = freezed,
+    Object? isModerator = freezed,
+    Object? isAdmin = freezed,
+    Object? injectFeaturedNote = freezed,
+    Object? receiveAnnouncementEmail = freezed,
+    Object? alwaysMarkNsfw = freezed,
+    Object? autoSensitive = freezed,
+    Object? carefulBot = freezed,
+    Object? autoAcceptFollowed = freezed,
+    Object? noCrawle = freezed,
+    Object? preventAiLearning = freezed,
+    Object? isExplorable = freezed,
+    Object? isDeleted = freezed,
+    Object? hideOnlineStatus = freezed,
+    Object? hasUnreadSpecifiedNotes = freezed,
+    Object? hasUnreadMentions = freezed,
+    Object? hasUnreadAnnouncement = freezed,
+    Object? hasUnreadAntenna = freezed,
+    Object? hasUnreadNotification = freezed,
+    Object? hasPendingReceivedFollowRequest = freezed,
+    Object? mutedWords = freezed,
+    Object? mutedInstances = freezed,
+    Object? mutingNotificationTypes = freezed,
+    Object? emailNotificationTypes = freezed,
+    Object? achievements = freezed,
+    Object? loggedInDays = freezed,
+    Object? policies = freezed,
     Object? isFollowing = freezed,
     Object? isFollowed = freezed,
     Object? hasPendingFollowRequestFromYou = freezed,
@@ -368,6 +457,119 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatarId: freezed == avatarId
+          ? _value.avatarId
+          : avatarId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bannerId: freezed == bannerId
+          ? _value.bannerId
+          : bannerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isModerator: freezed == isModerator
+          ? _value.isModerator
+          : isModerator // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isAdmin: freezed == isAdmin
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      injectFeaturedNote: freezed == injectFeaturedNote
+          ? _value.injectFeaturedNote
+          : injectFeaturedNote // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      receiveAnnouncementEmail: freezed == receiveAnnouncementEmail
+          ? _value.receiveAnnouncementEmail
+          : receiveAnnouncementEmail // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      alwaysMarkNsfw: freezed == alwaysMarkNsfw
+          ? _value.alwaysMarkNsfw
+          : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      autoSensitive: freezed == autoSensitive
+          ? _value.autoSensitive
+          : autoSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      carefulBot: freezed == carefulBot
+          ? _value.carefulBot
+          : carefulBot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      autoAcceptFollowed: freezed == autoAcceptFollowed
+          ? _value.autoAcceptFollowed
+          : autoAcceptFollowed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      noCrawle: freezed == noCrawle
+          ? _value.noCrawle
+          : noCrawle // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      preventAiLearning: freezed == preventAiLearning
+          ? _value.preventAiLearning
+          : preventAiLearning // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isExplorable: freezed == isExplorable
+          ? _value.isExplorable
+          : isExplorable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isDeleted: freezed == isDeleted
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hideOnlineStatus: freezed == hideOnlineStatus
+          ? _value.hideOnlineStatus
+          : hideOnlineStatus // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadSpecifiedNotes: freezed == hasUnreadSpecifiedNotes
+          ? _value.hasUnreadSpecifiedNotes
+          : hasUnreadSpecifiedNotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadMentions: freezed == hasUnreadMentions
+          ? _value.hasUnreadMentions
+          : hasUnreadMentions // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadAnnouncement: freezed == hasUnreadAnnouncement
+          ? _value.hasUnreadAnnouncement
+          : hasUnreadAnnouncement // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadAntenna: freezed == hasUnreadAntenna
+          ? _value.hasUnreadAntenna
+          : hasUnreadAntenna // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadNotification: freezed == hasUnreadNotification
+          ? _value.hasUnreadNotification
+          : hasUnreadNotification // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasPendingReceivedFollowRequest: freezed ==
+              hasPendingReceivedFollowRequest
+          ? _value.hasPendingReceivedFollowRequest
+          : hasPendingReceivedFollowRequest // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mutedWords: freezed == mutedWords
+          ? _value.mutedWords
+          : mutedWords // ignore: cast_nullable_to_non_nullable
+              as List<MuteWord>?,
+      mutedInstances: freezed == mutedInstances
+          ? _value.mutedInstances
+          : mutedInstances // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mutingNotificationTypes: freezed == mutingNotificationTypes
+          ? _value.mutingNotificationTypes
+          : mutingNotificationTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      emailNotificationTypes: freezed == emailNotificationTypes
+          ? _value.emailNotificationTypes
+          : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      achievements: freezed == achievements
+          ? _value.achievements
+          : achievements // ignore: cast_nullable_to_non_nullable
+              as List<UserAchievement>?,
+      loggedInDays: freezed == loggedInDays
+          ? _value.loggedInDays
+          : loggedInDays // ignore: cast_nullable_to_non_nullable
+              as int?,
+      policies: freezed == policies
+          ? _value.policies
+          : policies // ignore: cast_nullable_to_non_nullable
+              as UserPolicies?,
       isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -412,6 +614,18 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
 
     return $UserInstanceInfoCopyWith<$Res>(_value.instance!, (value) {
       return _then(_value.copyWith(instance: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserPoliciesCopyWith<$Res>? get policies {
+    if (_value.policies == null) {
+      return null;
+    }
+
+    return $UserPoliciesCopyWith<$Res>(_value.policies!, (value) {
+      return _then(_value.copyWith(policies: value) as $Val);
     });
   }
 }
@@ -465,6 +679,34 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
       bool securityKeys,
       List<UserRole>? roles,
       String? memo,
+      String? avatarId,
+      String? bannerId,
+      bool? isModerator,
+      bool? isAdmin,
+      bool? injectFeaturedNote,
+      bool? receiveAnnouncementEmail,
+      bool? alwaysMarkNsfw,
+      bool? autoSensitive,
+      bool? carefulBot,
+      bool? autoAcceptFollowed,
+      bool? noCrawle,
+      bool? preventAiLearning,
+      bool? isExplorable,
+      bool? isDeleted,
+      bool? hideOnlineStatus,
+      bool? hasUnreadSpecifiedNotes,
+      bool? hasUnreadMentions,
+      bool? hasUnreadAnnouncement,
+      bool? hasUnreadAntenna,
+      bool? hasUnreadNotification,
+      bool? hasPendingReceivedFollowRequest,
+      @MuteWordsConverter() List<MuteWord>? mutedWords,
+      List<String>? mutedInstances,
+      List<String>? mutingNotificationTypes,
+      List<String>? emailNotificationTypes,
+      List<UserAchievement>? achievements,
+      int? loggedInDays,
+      UserPolicies? policies,
       bool? isFollowing,
       bool? isFollowed,
       bool? hasPendingFollowRequestFromYou,
@@ -476,6 +718,8 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
 
   @override
   $UserInstanceInfoCopyWith<$Res>? get instance;
+  @override
+  $UserPoliciesCopyWith<$Res>? get policies;
 }
 
 /// @nodoc
@@ -529,6 +773,34 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
     Object? securityKeys = null,
     Object? roles = freezed,
     Object? memo = freezed,
+    Object? avatarId = freezed,
+    Object? bannerId = freezed,
+    Object? isModerator = freezed,
+    Object? isAdmin = freezed,
+    Object? injectFeaturedNote = freezed,
+    Object? receiveAnnouncementEmail = freezed,
+    Object? alwaysMarkNsfw = freezed,
+    Object? autoSensitive = freezed,
+    Object? carefulBot = freezed,
+    Object? autoAcceptFollowed = freezed,
+    Object? noCrawle = freezed,
+    Object? preventAiLearning = freezed,
+    Object? isExplorable = freezed,
+    Object? isDeleted = freezed,
+    Object? hideOnlineStatus = freezed,
+    Object? hasUnreadSpecifiedNotes = freezed,
+    Object? hasUnreadMentions = freezed,
+    Object? hasUnreadAnnouncement = freezed,
+    Object? hasUnreadAntenna = freezed,
+    Object? hasUnreadNotification = freezed,
+    Object? hasPendingReceivedFollowRequest = freezed,
+    Object? mutedWords = freezed,
+    Object? mutedInstances = freezed,
+    Object? mutingNotificationTypes = freezed,
+    Object? emailNotificationTypes = freezed,
+    Object? achievements = freezed,
+    Object? loggedInDays = freezed,
+    Object? policies = freezed,
     Object? isFollowing = freezed,
     Object? isFollowed = freezed,
     Object? hasPendingFollowRequestFromYou = freezed,
@@ -699,6 +971,119 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatarId: freezed == avatarId
+          ? _value.avatarId
+          : avatarId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bannerId: freezed == bannerId
+          ? _value.bannerId
+          : bannerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isModerator: freezed == isModerator
+          ? _value.isModerator
+          : isModerator // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isAdmin: freezed == isAdmin
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      injectFeaturedNote: freezed == injectFeaturedNote
+          ? _value.injectFeaturedNote
+          : injectFeaturedNote // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      receiveAnnouncementEmail: freezed == receiveAnnouncementEmail
+          ? _value.receiveAnnouncementEmail
+          : receiveAnnouncementEmail // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      alwaysMarkNsfw: freezed == alwaysMarkNsfw
+          ? _value.alwaysMarkNsfw
+          : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      autoSensitive: freezed == autoSensitive
+          ? _value.autoSensitive
+          : autoSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      carefulBot: freezed == carefulBot
+          ? _value.carefulBot
+          : carefulBot // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      autoAcceptFollowed: freezed == autoAcceptFollowed
+          ? _value.autoAcceptFollowed
+          : autoAcceptFollowed // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      noCrawle: freezed == noCrawle
+          ? _value.noCrawle
+          : noCrawle // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      preventAiLearning: freezed == preventAiLearning
+          ? _value.preventAiLearning
+          : preventAiLearning // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isExplorable: freezed == isExplorable
+          ? _value.isExplorable
+          : isExplorable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isDeleted: freezed == isDeleted
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hideOnlineStatus: freezed == hideOnlineStatus
+          ? _value.hideOnlineStatus
+          : hideOnlineStatus // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadSpecifiedNotes: freezed == hasUnreadSpecifiedNotes
+          ? _value.hasUnreadSpecifiedNotes
+          : hasUnreadSpecifiedNotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadMentions: freezed == hasUnreadMentions
+          ? _value.hasUnreadMentions
+          : hasUnreadMentions // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadAnnouncement: freezed == hasUnreadAnnouncement
+          ? _value.hasUnreadAnnouncement
+          : hasUnreadAnnouncement // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadAntenna: freezed == hasUnreadAntenna
+          ? _value.hasUnreadAntenna
+          : hasUnreadAntenna // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasUnreadNotification: freezed == hasUnreadNotification
+          ? _value.hasUnreadNotification
+          : hasUnreadNotification // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      hasPendingReceivedFollowRequest: freezed ==
+              hasPendingReceivedFollowRequest
+          ? _value.hasPendingReceivedFollowRequest
+          : hasPendingReceivedFollowRequest // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mutedWords: freezed == mutedWords
+          ? _value._mutedWords
+          : mutedWords // ignore: cast_nullable_to_non_nullable
+              as List<MuteWord>?,
+      mutedInstances: freezed == mutedInstances
+          ? _value._mutedInstances
+          : mutedInstances // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mutingNotificationTypes: freezed == mutingNotificationTypes
+          ? _value._mutingNotificationTypes
+          : mutingNotificationTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      emailNotificationTypes: freezed == emailNotificationTypes
+          ? _value._emailNotificationTypes
+          : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      achievements: freezed == achievements
+          ? _value._achievements
+          : achievements // ignore: cast_nullable_to_non_nullable
+              as List<UserAchievement>?,
+      loggedInDays: freezed == loggedInDays
+          ? _value.loggedInDays
+          : loggedInDays // ignore: cast_nullable_to_non_nullable
+              as int?,
+      policies: freezed == policies
+          ? _value.policies
+          : policies // ignore: cast_nullable_to_non_nullable
+              as UserPolicies?,
       isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -779,6 +1164,34 @@ class _$_UsersShowResponse extends _UsersShowResponse {
       required this.securityKeys,
       final List<UserRole>? roles,
       this.memo,
+      this.avatarId,
+      this.bannerId,
+      this.isModerator,
+      this.isAdmin,
+      this.injectFeaturedNote,
+      this.receiveAnnouncementEmail,
+      this.alwaysMarkNsfw,
+      this.autoSensitive,
+      this.carefulBot,
+      this.autoAcceptFollowed,
+      this.noCrawle,
+      this.preventAiLearning,
+      this.isExplorable,
+      this.isDeleted,
+      this.hideOnlineStatus,
+      this.hasUnreadSpecifiedNotes,
+      this.hasUnreadMentions,
+      this.hasUnreadAnnouncement,
+      this.hasUnreadAntenna,
+      this.hasUnreadNotification,
+      this.hasPendingReceivedFollowRequest,
+      @MuteWordsConverter() final List<MuteWord>? mutedWords,
+      final List<String>? mutedInstances,
+      final List<String>? mutingNotificationTypes,
+      final List<String>? emailNotificationTypes,
+      final List<UserAchievement>? achievements,
+      this.loggedInDays,
+      this.policies,
       this.isFollowing,
       this.isFollowed,
       this.hasPendingFollowRequestFromYou,
@@ -793,6 +1206,11 @@ class _$_UsersShowResponse extends _UsersShowResponse {
         _pinnedNotes = pinnedNotes,
         _pinnedPage = pinnedPage,
         _roles = roles,
+        _mutedWords = mutedWords,
+        _mutedInstances = mutedInstances,
+        _mutingNotificationTypes = mutingNotificationTypes,
+        _emailNotificationTypes = emailNotificationTypes,
+        _achievements = achievements,
         super._();
 
   factory _$_UsersShowResponse.fromJson(Map<String, dynamic> json) =>
@@ -937,6 +1355,106 @@ class _$_UsersShowResponse extends _UsersShowResponse {
 
   @override
   final String? memo;
+// 以下ログイン時のみ
+  @override
+  final String? avatarId;
+  @override
+  final String? bannerId;
+  @override
+  final bool? isModerator;
+  @override
+  final bool? isAdmin;
+  @override
+  final bool? injectFeaturedNote;
+  @override
+  final bool? receiveAnnouncementEmail;
+  @override
+  final bool? alwaysMarkNsfw;
+  @override
+  final bool? autoSensitive;
+  @override
+  final bool? carefulBot;
+  @override
+  final bool? autoAcceptFollowed;
+  @override
+  final bool? noCrawle;
+  @override
+  final bool? preventAiLearning;
+  @override
+  final bool? isExplorable;
+  @override
+  final bool? isDeleted;
+  @override
+  final bool? hideOnlineStatus;
+  @override
+  final bool? hasUnreadSpecifiedNotes;
+  @override
+  final bool? hasUnreadMentions;
+  @override
+  final bool? hasUnreadAnnouncement;
+  @override
+  final bool? hasUnreadAntenna;
+  @override
+  final bool? hasUnreadNotification;
+  @override
+  final bool? hasPendingReceivedFollowRequest;
+  final List<MuteWord>? _mutedWords;
+  @override
+  @MuteWordsConverter()
+  List<MuteWord>? get mutedWords {
+    final value = _mutedWords;
+    if (value == null) return null;
+    if (_mutedWords is EqualUnmodifiableListView) return _mutedWords;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _mutedInstances;
+  @override
+  List<String>? get mutedInstances {
+    final value = _mutedInstances;
+    if (value == null) return null;
+    if (_mutedInstances is EqualUnmodifiableListView) return _mutedInstances;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _mutingNotificationTypes;
+  @override
+  List<String>? get mutingNotificationTypes {
+    final value = _mutingNotificationTypes;
+    if (value == null) return null;
+    if (_mutingNotificationTypes is EqualUnmodifiableListView)
+      return _mutingNotificationTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _emailNotificationTypes;
+  @override
+  List<String>? get emailNotificationTypes {
+    final value = _emailNotificationTypes;
+    if (value == null) return null;
+    if (_emailNotificationTypes is EqualUnmodifiableListView)
+      return _emailNotificationTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<UserAchievement>? _achievements;
+  @override
+  List<UserAchievement>? get achievements {
+    final value = _achievements;
+    if (value == null) return null;
+    if (_achievements is EqualUnmodifiableListView) return _achievements;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? loggedInDays;
+  @override
+  final UserPolicies? policies;
   @override
   final bool? isFollowing;
   @override
@@ -956,7 +1474,7 @@ class _$_UsersShowResponse extends _UsersShowResponse {
 
   @override
   String toString() {
-    return 'UsersShowResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted)';
+    return 'UsersShowResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, mutedWords: $mutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted)';
   }
 
   @override
@@ -1032,25 +1550,56 @@ class _$_UsersShowResponse extends _UsersShowResponse {
                 other.securityKeys == securityKeys) &&
             const DeepCollectionEquality().equals(other._roles, _roles) &&
             (identical(other.memo, memo) || other.memo == memo) &&
-            (identical(other.isFollowing, isFollowing) ||
-                other.isFollowing == isFollowing) &&
-            (identical(other.isFollowed, isFollowed) ||
-                other.isFollowed == isFollowed) &&
-            (identical(other.hasPendingFollowRequestFromYou,
-                    hasPendingFollowRequestFromYou) ||
-                other.hasPendingFollowRequestFromYou ==
-                    hasPendingFollowRequestFromYou) &&
-            (identical(other.hasPendingFollowRequestToYou,
-                    hasPendingFollowRequestToYou) ||
-                other.hasPendingFollowRequestToYou ==
-                    hasPendingFollowRequestToYou) &&
-            (identical(other.isBlocking, isBlocking) ||
-                other.isBlocking == isBlocking) &&
-            (identical(other.isBlocked, isBlocked) ||
-                other.isBlocked == isBlocked) &&
+            (identical(other.avatarId, avatarId) ||
+                other.avatarId == avatarId) &&
+            (identical(other.bannerId, bannerId) ||
+                other.bannerId == bannerId) &&
+            (identical(other.isModerator, isModerator) ||
+                other.isModerator == isModerator) &&
+            (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
+            (identical(other.injectFeaturedNote, injectFeaturedNote) ||
+                other.injectFeaturedNote == injectFeaturedNote) &&
+            (identical(other.receiveAnnouncementEmail, receiveAnnouncementEmail) ||
+                other.receiveAnnouncementEmail == receiveAnnouncementEmail) &&
+            (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
+                other.alwaysMarkNsfw == alwaysMarkNsfw) &&
+            (identical(other.autoSensitive, autoSensitive) ||
+                other.autoSensitive == autoSensitive) &&
+            (identical(other.carefulBot, carefulBot) ||
+                other.carefulBot == carefulBot) &&
+            (identical(other.autoAcceptFollowed, autoAcceptFollowed) ||
+                other.autoAcceptFollowed == autoAcceptFollowed) &&
+            (identical(other.noCrawle, noCrawle) ||
+                other.noCrawle == noCrawle) &&
+            (identical(other.preventAiLearning, preventAiLearning) ||
+                other.preventAiLearning == preventAiLearning) &&
+            (identical(other.isExplorable, isExplorable) ||
+                other.isExplorable == isExplorable) &&
+            (identical(other.isDeleted, isDeleted) ||
+                other.isDeleted == isDeleted) &&
+            (identical(other.hideOnlineStatus, hideOnlineStatus) ||
+                other.hideOnlineStatus == hideOnlineStatus) &&
+            (identical(other.hasUnreadSpecifiedNotes, hasUnreadSpecifiedNotes) || other.hasUnreadSpecifiedNotes == hasUnreadSpecifiedNotes) &&
+            (identical(other.hasUnreadMentions, hasUnreadMentions) || other.hasUnreadMentions == hasUnreadMentions) &&
+            (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) || other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
+            (identical(other.hasUnreadAntenna, hasUnreadAntenna) || other.hasUnreadAntenna == hasUnreadAntenna) &&
+            (identical(other.hasUnreadNotification, hasUnreadNotification) || other.hasUnreadNotification == hasUnreadNotification) &&
+            (identical(other.hasPendingReceivedFollowRequest, hasPendingReceivedFollowRequest) || other.hasPendingReceivedFollowRequest == hasPendingReceivedFollowRequest) &&
+            const DeepCollectionEquality().equals(other._mutedWords, _mutedWords) &&
+            const DeepCollectionEquality().equals(other._mutedInstances, _mutedInstances) &&
+            const DeepCollectionEquality().equals(other._mutingNotificationTypes, _mutingNotificationTypes) &&
+            const DeepCollectionEquality().equals(other._emailNotificationTypes, _emailNotificationTypes) &&
+            const DeepCollectionEquality().equals(other._achievements, _achievements) &&
+            (identical(other.loggedInDays, loggedInDays) || other.loggedInDays == loggedInDays) &&
+            (identical(other.policies, policies) || other.policies == policies) &&
+            (identical(other.isFollowing, isFollowing) || other.isFollowing == isFollowing) &&
+            (identical(other.isFollowed, isFollowed) || other.isFollowed == isFollowed) &&
+            (identical(other.hasPendingFollowRequestFromYou, hasPendingFollowRequestFromYou) || other.hasPendingFollowRequestFromYou == hasPendingFollowRequestFromYou) &&
+            (identical(other.hasPendingFollowRequestToYou, hasPendingFollowRequestToYou) || other.hasPendingFollowRequestToYou == hasPendingFollowRequestToYou) &&
+            (identical(other.isBlocking, isBlocking) || other.isBlocking == isBlocking) &&
+            (identical(other.isBlocked, isBlocked) || other.isBlocked == isBlocked) &&
             (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
-            (identical(other.isRenoteMuted, isRenoteMuted) ||
-                other.isRenoteMuted == isRenoteMuted));
+            (identical(other.isRenoteMuted, isRenoteMuted) || other.isRenoteMuted == isRenoteMuted));
   }
 
   @JsonKey(ignore: true)
@@ -1097,6 +1646,34 @@ class _$_UsersShowResponse extends _UsersShowResponse {
         securityKeys,
         const DeepCollectionEquality().hash(_roles),
         memo,
+        avatarId,
+        bannerId,
+        isModerator,
+        isAdmin,
+        injectFeaturedNote,
+        receiveAnnouncementEmail,
+        alwaysMarkNsfw,
+        autoSensitive,
+        carefulBot,
+        autoAcceptFollowed,
+        noCrawle,
+        preventAiLearning,
+        isExplorable,
+        isDeleted,
+        hideOnlineStatus,
+        hasUnreadSpecifiedNotes,
+        hasUnreadMentions,
+        hasUnreadAnnouncement,
+        hasUnreadAntenna,
+        hasUnreadNotification,
+        hasPendingReceivedFollowRequest,
+        const DeepCollectionEquality().hash(_mutedWords),
+        const DeepCollectionEquality().hash(_mutedInstances),
+        const DeepCollectionEquality().hash(_mutingNotificationTypes),
+        const DeepCollectionEquality().hash(_emailNotificationTypes),
+        const DeepCollectionEquality().hash(_achievements),
+        loggedInDays,
+        policies,
         isFollowing,
         isFollowed,
         hasPendingFollowRequestFromYou,
@@ -1164,6 +1741,34 @@ abstract class _UsersShowResponse extends UsersShowResponse {
       required final bool securityKeys,
       final List<UserRole>? roles,
       final String? memo,
+      final String? avatarId,
+      final String? bannerId,
+      final bool? isModerator,
+      final bool? isAdmin,
+      final bool? injectFeaturedNote,
+      final bool? receiveAnnouncementEmail,
+      final bool? alwaysMarkNsfw,
+      final bool? autoSensitive,
+      final bool? carefulBot,
+      final bool? autoAcceptFollowed,
+      final bool? noCrawle,
+      final bool? preventAiLearning,
+      final bool? isExplorable,
+      final bool? isDeleted,
+      final bool? hideOnlineStatus,
+      final bool? hasUnreadSpecifiedNotes,
+      final bool? hasUnreadMentions,
+      final bool? hasUnreadAnnouncement,
+      final bool? hasUnreadAntenna,
+      final bool? hasUnreadNotification,
+      final bool? hasPendingReceivedFollowRequest,
+      @MuteWordsConverter() final List<MuteWord>? mutedWords,
+      final List<String>? mutedInstances,
+      final List<String>? mutingNotificationTypes,
+      final List<String>? emailNotificationTypes,
+      final List<UserAchievement>? achievements,
+      final int? loggedInDays,
+      final UserPolicies? policies,
       final bool? isFollowing,
       final bool? isFollowed,
       final bool? hasPendingFollowRequestFromYou,
@@ -1267,6 +1872,63 @@ abstract class _UsersShowResponse extends UsersShowResponse {
   List<UserRole>? get roles;
   @override
   String? get memo;
+  @override // 以下ログイン時のみ
+  String? get avatarId;
+  @override
+  String? get bannerId;
+  @override
+  bool? get isModerator;
+  @override
+  bool? get isAdmin;
+  @override
+  bool? get injectFeaturedNote;
+  @override
+  bool? get receiveAnnouncementEmail;
+  @override
+  bool? get alwaysMarkNsfw;
+  @override
+  bool? get autoSensitive;
+  @override
+  bool? get carefulBot;
+  @override
+  bool? get autoAcceptFollowed;
+  @override
+  bool? get noCrawle;
+  @override
+  bool? get preventAiLearning;
+  @override
+  bool? get isExplorable;
+  @override
+  bool? get isDeleted;
+  @override
+  bool? get hideOnlineStatus;
+  @override
+  bool? get hasUnreadSpecifiedNotes;
+  @override
+  bool? get hasUnreadMentions;
+  @override
+  bool? get hasUnreadAnnouncement;
+  @override
+  bool? get hasUnreadAntenna;
+  @override
+  bool? get hasUnreadNotification;
+  @override
+  bool? get hasPendingReceivedFollowRequest;
+  @override
+  @MuteWordsConverter()
+  List<MuteWord>? get mutedWords;
+  @override
+  List<String>? get mutedInstances;
+  @override
+  List<String>? get mutingNotificationTypes;
+  @override
+  List<String>? get emailNotificationTypes;
+  @override
+  List<UserAchievement>? get achievements;
+  @override
+  int? get loggedInDays;
+  @override
+  UserPolicies? get policies;
   @override
   bool? get isFollowing;
   @override
