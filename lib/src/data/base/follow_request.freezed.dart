@@ -21,8 +21,8 @@ FollowRequest _$FollowRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FollowRequest {
   String get id => throw _privateConstructorUsedError;
-  String get followeeId => throw _privateConstructorUsedError;
-  String get followerId => throw _privateConstructorUsedError;
+  User get followee => throw _privateConstructorUsedError;
+  User get follower => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,10 @@ abstract class $FollowRequestCopyWith<$Res> {
           FollowRequest value, $Res Function(FollowRequest) then) =
       _$FollowRequestCopyWithImpl<$Res, FollowRequest>;
   @useResult
-  $Res call({String id, String followeeId, String followerId});
+  $Res call({String id, User followee, User follower});
+
+  $UserCopyWith<$Res> get followee;
+  $UserCopyWith<$Res> get follower;
 }
 
 /// @nodoc
@@ -53,23 +56,39 @@ class _$FollowRequestCopyWithImpl<$Res, $Val extends FollowRequest>
   @override
   $Res call({
     Object? id = null,
-    Object? followeeId = null,
-    Object? followerId = null,
+    Object? followee = null,
+    Object? follower = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      followeeId: null == followeeId
-          ? _value.followeeId
-          : followeeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      followerId: null == followerId
-          ? _value.followerId
-          : followerId // ignore: cast_nullable_to_non_nullable
-              as String,
+      followee: null == followee
+          ? _value.followee
+          : followee // ignore: cast_nullable_to_non_nullable
+              as User,
+      follower: null == follower
+          ? _value.follower
+          : follower // ignore: cast_nullable_to_non_nullable
+              as User,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get followee {
+    return $UserCopyWith<$Res>(_value.followee, (value) {
+      return _then(_value.copyWith(followee: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get follower {
+    return $UserCopyWith<$Res>(_value.follower, (value) {
+      return _then(_value.copyWith(follower: value) as $Val);
+    });
   }
 }
 
@@ -81,7 +100,12 @@ abstract class _$$_FollowRequestCopyWith<$Res>
       __$$_FollowRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String followeeId, String followerId});
+  $Res call({String id, User followee, User follower});
+
+  @override
+  $UserCopyWith<$Res> get followee;
+  @override
+  $UserCopyWith<$Res> get follower;
 }
 
 /// @nodoc
@@ -96,22 +120,22 @@ class __$$_FollowRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? followeeId = null,
-    Object? followerId = null,
+    Object? followee = null,
+    Object? follower = null,
   }) {
     return _then(_$_FollowRequest(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      followeeId: null == followeeId
-          ? _value.followeeId
-          : followeeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      followerId: null == followerId
-          ? _value.followerId
-          : followerId // ignore: cast_nullable_to_non_nullable
-              as String,
+      followee: null == followee
+          ? _value.followee
+          : followee // ignore: cast_nullable_to_non_nullable
+              as User,
+      follower: null == follower
+          ? _value.follower
+          : follower // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -120,7 +144,7 @@ class __$$_FollowRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FollowRequest implements _FollowRequest {
   const _$_FollowRequest(
-      {required this.id, required this.followeeId, required this.followerId});
+      {required this.id, required this.followee, required this.follower});
 
   factory _$_FollowRequest.fromJson(Map<String, dynamic> json) =>
       _$$_FollowRequestFromJson(json);
@@ -128,13 +152,13 @@ class _$_FollowRequest implements _FollowRequest {
   @override
   final String id;
   @override
-  final String followeeId;
+  final User followee;
   @override
-  final String followerId;
+  final User follower;
 
   @override
   String toString() {
-    return 'FollowRequest(id: $id, followeeId: $followeeId, followerId: $followerId)';
+    return 'FollowRequest(id: $id, followee: $followee, follower: $follower)';
   }
 
   @override
@@ -143,15 +167,15 @@ class _$_FollowRequest implements _FollowRequest {
         (other.runtimeType == runtimeType &&
             other is _$_FollowRequest &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.followeeId, followeeId) ||
-                other.followeeId == followeeId) &&
-            (identical(other.followerId, followerId) ||
-                other.followerId == followerId));
+            (identical(other.followee, followee) ||
+                other.followee == followee) &&
+            (identical(other.follower, follower) ||
+                other.follower == follower));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, followeeId, followerId);
+  int get hashCode => Object.hash(runtimeType, id, followee, follower);
 
   @JsonKey(ignore: true)
   @override
@@ -170,8 +194,8 @@ class _$_FollowRequest implements _FollowRequest {
 abstract class _FollowRequest implements FollowRequest {
   const factory _FollowRequest(
       {required final String id,
-      required final String followeeId,
-      required final String followerId}) = _$_FollowRequest;
+      required final User followee,
+      required final User follower}) = _$_FollowRequest;
 
   factory _FollowRequest.fromJson(Map<String, dynamic> json) =
       _$_FollowRequest.fromJson;
@@ -179,9 +203,9 @@ abstract class _FollowRequest implements FollowRequest {
   @override
   String get id;
   @override
-  String get followeeId;
+  User get followee;
   @override
-  String get followerId;
+  User get follower;
   @override
   @JsonKey(ignore: true)
   _$$_FollowRequestCopyWith<_$_FollowRequest> get copyWith =>
