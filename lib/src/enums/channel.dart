@@ -28,10 +28,10 @@ enum Channel {
   /// ドライブ？
   drive,
 
-  /// サーバー統計情報？
+  /// サーバー統計情報（メモリ、CPU使用率）
   serverStats,
 
-  /// ？
+  /// ジョブキュー統計情報（inbox, outbox）
   queueStats,
 
   /// 管理者用のなにか？
