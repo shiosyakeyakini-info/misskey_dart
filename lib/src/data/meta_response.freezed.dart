@@ -43,9 +43,9 @@ mixin _$MetaResponse {
   bool get emailRequiredForSignup => throw _privateConstructorUsedError;
   bool get enableHcaptcha => throw _privateConstructorUsedError;
   String? get hcaptchaSiteKey => throw _privateConstructorUsedError;
-  bool get enableRecaptcha => throw _privateConstructorUsedError;
+  bool? get enableRecaptcha => throw _privateConstructorUsedError;
   String? get recaptchaSiteKey => throw _privateConstructorUsedError;
-  bool get enableTurnstile => throw _privateConstructorUsedError;
+  bool? get enableTurnstile => throw _privateConstructorUsedError;
   String? get turnstileSiteKey => throw _privateConstructorUsedError;
   String? get swPublickey => throw _privateConstructorUsedError;
   String? get themeColor => throw _privateConstructorUsedError;
@@ -64,13 +64,13 @@ mixin _$MetaResponse {
   int get maxNoteTextLength =>
       throw _privateConstructorUsedError; //required List<MetaEmoji> emojis,
   List<MetaAd> get ads => throw _privateConstructorUsedError;
-  bool get requireSetup => throw _privateConstructorUsedError;
-  bool get enableEmail =>
+  bool? get requireSetup => throw _privateConstructorUsedError;
+  bool? get enableEmail =>
       throw _privateConstructorUsedError; //required bool enableTwitterIntegration,
 //required bool enableGithubIntegration,
 //required bool enableDiscordIntegration,
-  bool get enableServiceWorker => throw _privateConstructorUsedError;
-  bool get translatorAvailable => throw _privateConstructorUsedError;
+  bool? get enableServiceWorker => throw _privateConstructorUsedError;
+  bool? get translatorAvailable => throw _privateConstructorUsedError;
   String? get proxyAccountName => throw _privateConstructorUsedError;
   String? get mediaProxy => throw _privateConstructorUsedError;
   bool get cacheRemoteFiles => throw _privateConstructorUsedError;
@@ -105,9 +105,9 @@ abstract class $MetaResponseCopyWith<$Res> {
       bool emailRequiredForSignup,
       bool enableHcaptcha,
       String? hcaptchaSiteKey,
-      bool enableRecaptcha,
+      bool? enableRecaptcha,
       String? recaptchaSiteKey,
-      bool enableTurnstile,
+      bool? enableTurnstile,
       String? turnstileSiteKey,
       String? swPublickey,
       String? themeColor,
@@ -119,10 +119,10 @@ abstract class $MetaResponseCopyWith<$Res> {
       @NullableUriConverter() Uri? logoImageUrl,
       int maxNoteTextLength,
       List<MetaAd> ads,
-      bool requireSetup,
-      bool enableEmail,
-      bool enableServiceWorker,
-      bool translatorAvailable,
+      bool? requireSetup,
+      bool? enableEmail,
+      bool? enableServiceWorker,
+      bool? translatorAvailable,
       String? proxyAccountName,
       String? mediaProxy,
       bool cacheRemoteFiles,
@@ -160,9 +160,9 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
     Object? hcaptchaSiteKey = freezed,
-    Object? enableRecaptcha = null,
+    Object? enableRecaptcha = freezed,
     Object? recaptchaSiteKey = freezed,
-    Object? enableTurnstile = null,
+    Object? enableTurnstile = freezed,
     Object? turnstileSiteKey = freezed,
     Object? swPublickey = freezed,
     Object? themeColor = freezed,
@@ -174,10 +174,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? logoImageUrl = freezed,
     Object? maxNoteTextLength = null,
     Object? ads = null,
-    Object? requireSetup = null,
-    Object? enableEmail = null,
-    Object? enableServiceWorker = null,
-    Object? translatorAvailable = null,
+    Object? requireSetup = freezed,
+    Object? enableEmail = freezed,
+    Object? enableServiceWorker = freezed,
+    Object? translatorAvailable = freezed,
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = null,
@@ -248,18 +248,18 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.hcaptchaSiteKey
           : hcaptchaSiteKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      enableRecaptcha: null == enableRecaptcha
+      enableRecaptcha: freezed == enableRecaptcha
           ? _value.enableRecaptcha
           : enableRecaptcha // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       recaptchaSiteKey: freezed == recaptchaSiteKey
           ? _value.recaptchaSiteKey
           : recaptchaSiteKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      enableTurnstile: null == enableTurnstile
+      enableTurnstile: freezed == enableTurnstile
           ? _value.enableTurnstile
           : enableTurnstile // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       turnstileSiteKey: freezed == turnstileSiteKey
           ? _value.turnstileSiteKey
           : turnstileSiteKey // ignore: cast_nullable_to_non_nullable
@@ -304,22 +304,22 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.ads
           : ads // ignore: cast_nullable_to_non_nullable
               as List<MetaAd>,
-      requireSetup: null == requireSetup
+      requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enableEmail: null == enableEmail
+              as bool?,
+      enableEmail: freezed == enableEmail
           ? _value.enableEmail
           : enableEmail // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enableServiceWorker: null == enableServiceWorker
+              as bool?,
+      enableServiceWorker: freezed == enableServiceWorker
           ? _value.enableServiceWorker
           : enableServiceWorker // ignore: cast_nullable_to_non_nullable
-              as bool,
-      translatorAvailable: null == translatorAvailable
+              as bool?,
+      translatorAvailable: freezed == translatorAvailable
           ? _value.translatorAvailable
           : translatorAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       proxyAccountName: freezed == proxyAccountName
           ? _value.proxyAccountName
           : proxyAccountName // ignore: cast_nullable_to_non_nullable
@@ -373,9 +373,9 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       bool emailRequiredForSignup,
       bool enableHcaptcha,
       String? hcaptchaSiteKey,
-      bool enableRecaptcha,
+      bool? enableRecaptcha,
       String? recaptchaSiteKey,
-      bool enableTurnstile,
+      bool? enableTurnstile,
       String? turnstileSiteKey,
       String? swPublickey,
       String? themeColor,
@@ -387,10 +387,10 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       @NullableUriConverter() Uri? logoImageUrl,
       int maxNoteTextLength,
       List<MetaAd> ads,
-      bool requireSetup,
-      bool enableEmail,
-      bool enableServiceWorker,
-      bool translatorAvailable,
+      bool? requireSetup,
+      bool? enableEmail,
+      bool? enableServiceWorker,
+      bool? translatorAvailable,
       String? proxyAccountName,
       String? mediaProxy,
       bool cacheRemoteFiles,
@@ -427,9 +427,9 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
     Object? hcaptchaSiteKey = freezed,
-    Object? enableRecaptcha = null,
+    Object? enableRecaptcha = freezed,
     Object? recaptchaSiteKey = freezed,
-    Object? enableTurnstile = null,
+    Object? enableTurnstile = freezed,
     Object? turnstileSiteKey = freezed,
     Object? swPublickey = freezed,
     Object? themeColor = freezed,
@@ -441,10 +441,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? logoImageUrl = freezed,
     Object? maxNoteTextLength = null,
     Object? ads = null,
-    Object? requireSetup = null,
-    Object? enableEmail = null,
-    Object? enableServiceWorker = null,
-    Object? translatorAvailable = null,
+    Object? requireSetup = freezed,
+    Object? enableEmail = freezed,
+    Object? enableServiceWorker = freezed,
+    Object? translatorAvailable = freezed,
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = null,
@@ -515,18 +515,18 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.hcaptchaSiteKey
           : hcaptchaSiteKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      enableRecaptcha: null == enableRecaptcha
+      enableRecaptcha: freezed == enableRecaptcha
           ? _value.enableRecaptcha
           : enableRecaptcha // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       recaptchaSiteKey: freezed == recaptchaSiteKey
           ? _value.recaptchaSiteKey
           : recaptchaSiteKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      enableTurnstile: null == enableTurnstile
+      enableTurnstile: freezed == enableTurnstile
           ? _value.enableTurnstile
           : enableTurnstile // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       turnstileSiteKey: freezed == turnstileSiteKey
           ? _value.turnstileSiteKey
           : turnstileSiteKey // ignore: cast_nullable_to_non_nullable
@@ -571,22 +571,22 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value._ads
           : ads // ignore: cast_nullable_to_non_nullable
               as List<MetaAd>,
-      requireSetup: null == requireSetup
+      requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enableEmail: null == enableEmail
+              as bool?,
+      enableEmail: freezed == enableEmail
           ? _value.enableEmail
           : enableEmail // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enableServiceWorker: null == enableServiceWorker
+              as bool?,
+      enableServiceWorker: freezed == enableServiceWorker
           ? _value.enableServiceWorker
           : enableServiceWorker // ignore: cast_nullable_to_non_nullable
-              as bool,
-      translatorAvailable: null == translatorAvailable
+              as bool?,
+      translatorAvailable: freezed == translatorAvailable
           ? _value.translatorAvailable
           : translatorAvailable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       proxyAccountName: freezed == proxyAccountName
           ? _value.proxyAccountName
           : proxyAccountName // ignore: cast_nullable_to_non_nullable
@@ -627,9 +627,9 @@ class _$_MetaResponse implements _MetaResponse {
       required this.emailRequiredForSignup,
       required this.enableHcaptcha,
       this.hcaptchaSiteKey,
-      required this.enableRecaptcha,
+      this.enableRecaptcha,
       this.recaptchaSiteKey,
-      required this.enableTurnstile,
+      this.enableTurnstile,
       this.turnstileSiteKey,
       this.swPublickey,
       this.themeColor,
@@ -641,10 +641,10 @@ class _$_MetaResponse implements _MetaResponse {
       @NullableUriConverter() this.logoImageUrl,
       required this.maxNoteTextLength,
       required final List<MetaAd> ads,
-      required this.requireSetup,
-      required this.enableEmail,
-      required this.enableServiceWorker,
-      required this.translatorAvailable,
+      this.requireSetup,
+      this.enableEmail,
+      this.enableServiceWorker,
+      this.translatorAvailable,
       this.proxyAccountName,
       this.mediaProxy,
       required this.cacheRemoteFiles,
@@ -701,11 +701,11 @@ class _$_MetaResponse implements _MetaResponse {
   @override
   final String? hcaptchaSiteKey;
   @override
-  final bool enableRecaptcha;
+  final bool? enableRecaptcha;
   @override
   final String? recaptchaSiteKey;
   @override
-  final bool enableTurnstile;
+  final bool? enableTurnstile;
   @override
   final String? turnstileSiteKey;
   @override
@@ -743,16 +743,16 @@ class _$_MetaResponse implements _MetaResponse {
   }
 
   @override
-  final bool requireSetup;
+  final bool? requireSetup;
   @override
-  final bool enableEmail;
+  final bool? enableEmail;
 //required bool enableTwitterIntegration,
 //required bool enableGithubIntegration,
 //required bool enableDiscordIntegration,
   @override
-  final bool enableServiceWorker;
+  final bool? enableServiceWorker;
   @override
-  final bool translatorAvailable;
+  final bool? translatorAvailable;
   @override
   final String? proxyAccountName;
   @override
@@ -919,9 +919,9 @@ abstract class _MetaResponse implements MetaResponse {
       required final bool emailRequiredForSignup,
       required final bool enableHcaptcha,
       final String? hcaptchaSiteKey,
-      required final bool enableRecaptcha,
+      final bool? enableRecaptcha,
       final String? recaptchaSiteKey,
-      required final bool enableTurnstile,
+      final bool? enableTurnstile,
       final String? turnstileSiteKey,
       final String? swPublickey,
       final String? themeColor,
@@ -933,10 +933,10 @@ abstract class _MetaResponse implements MetaResponse {
       @NullableUriConverter() final Uri? logoImageUrl,
       required final int maxNoteTextLength,
       required final List<MetaAd> ads,
-      required final bool requireSetup,
-      required final bool enableEmail,
-      required final bool enableServiceWorker,
-      required final bool translatorAvailable,
+      final bool? requireSetup,
+      final bool? enableEmail,
+      final bool? enableServiceWorker,
+      final bool? translatorAvailable,
       final String? proxyAccountName,
       final String? mediaProxy,
       required final bool cacheRemoteFiles,
@@ -984,11 +984,11 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   String? get hcaptchaSiteKey;
   @override
-  bool get enableRecaptcha;
+  bool? get enableRecaptcha;
   @override
   String? get recaptchaSiteKey;
   @override
-  bool get enableTurnstile;
+  bool? get enableTurnstile;
   @override
   String? get turnstileSiteKey;
   @override
@@ -1018,15 +1018,15 @@ abstract class _MetaResponse implements MetaResponse {
   @override //required List<MetaEmoji> emojis,
   List<MetaAd> get ads;
   @override
-  bool get requireSetup;
+  bool? get requireSetup;
   @override
-  bool get enableEmail;
+  bool? get enableEmail;
   @override //required bool enableTwitterIntegration,
 //required bool enableGithubIntegration,
 //required bool enableDiscordIntegration,
-  bool get enableServiceWorker;
+  bool? get enableServiceWorker;
   @override
-  bool get translatorAvailable;
+  bool? get translatorAvailable;
   @override
   String? get proxyAccountName;
   @override
