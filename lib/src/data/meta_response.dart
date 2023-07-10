@@ -51,7 +51,7 @@ class MetaResponse with _$MetaResponse {
     bool? translatorAvailable,
     String? proxyAccountName,
     String? mediaProxy,
-    required bool cacheRemoteFiles,
+    bool? cacheRemoteFiles,
     required MetaFeature features,
   }) = _MetaResponse;
 
