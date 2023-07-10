@@ -4,6 +4,7 @@ import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/emoji_request.dart';
 import 'package:misskey_dart/src/data/emoji_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
+import 'package:misskey_dart/src/data/streaming/queue_stats_log_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
@@ -382,6 +383,7 @@ class Misskey {
         parameters: {"antennaId": antennaId},
       );
 
+  /// メモリ使用率・CPU使用率の統計情報のストリームに接続します。
   SocketController serverStatsLogStream(
     FutureOr<void> Function(List<StatsLogResponse> response) onLogReceived,
     FutureOr<void> Function(StatsLogResponse response) onEventReceived,
@@ -399,6 +401,28 @@ class Misskey {
 
           if (type == ChannelEventType.stats) {
             onEventReceived.call(StatsLogResponse.fromJson(response));
+          }
+        },
+      );
+
+  /// ジョブキューの統計情報のストリームに接続します。
+  SocketController queueStatsLogStream(
+    FutureOr<void> Function(List<QueueStatsLogResponse> response) onLogReceived,
+    FutureOr<void> Function(QueueStatsLogResponse response) onEventReceived,
+  ) =>
+      apiService.createSocket(
+        channel: Channel.queueStats,
+        onEventReceived: (id, type, response) {
+          if (response == null) return;
+
+          if (type == ChannelEventType.statsLog) {
+            final logs = response as List;
+            onLogReceived.call(
+                logs.map((e) => QueueStatsLogResponse.fromJson(e)).toList());
+          }
+
+          if (type == ChannelEventType.stats) {
+            onEventReceived.call(QueueStatsLogResponse.fromJson(response));
           }
         },
       );

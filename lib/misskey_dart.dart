@@ -145,6 +145,7 @@ export 'src/data/hashtags/hashtags_trend_response.dart';
 export 'src/data/streaming/timeline_reacted.dart';
 export 'src/data/streaming/timeline_voted.dart';
 export 'src/data/streaming/stats_log_response.dart';
+export 'src/data/streaming/queue_stats_log_response.dart';
 export 'src/data/join_misskey_instances.dart';
 export 'src/services/socket_controller.dart';
 export 'src/server.dart';
