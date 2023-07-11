@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/src/data/base/user.dart';
 
 part 'follow_request.freezed.dart';
 part 'follow_request.g.dart';
@@ -7,8 +8,8 @@ part 'follow_request.g.dart';
 class FollowRequest with _$FollowRequest {
   const factory FollowRequest({
     required String id,
-    required String followeeId,
-    required String followerId,
+    required User followee,
+    required User follower,
   }) = _FollowRequest;
 
   factory FollowRequest.fromJson(Map<String, dynamic> json) =>

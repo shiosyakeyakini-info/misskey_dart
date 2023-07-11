@@ -480,8 +480,9 @@ void main() async {
           await newClient.i.update(IUpdateRequest(isLocked: true));
           await userClient.following
               .create(FollowingCreateRequest(userId: newUser.id));
-          await newClient.following.requests
+          final followRequests = await newClient.following.requests
               .list(FollowingRequestsListRequest());
+          followRequests.toList();
         });
 
         test("reject", () async {
