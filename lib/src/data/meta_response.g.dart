@@ -54,7 +54,7 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       translatorAvailable: json['translatorAvailable'] as bool?,
       proxyAccountName: json['proxyAccountName'] as String?,
       mediaProxy: json['mediaProxy'] as String?,
-      cacheRemoteFiles: json['cacheRemoteFiles'] as bool,
+      cacheRemoteFiles: json['cacheRemoteFiles'] as bool?,
       features: MetaFeature.fromJson(json['features'] as Map<String, dynamic>),
     );
 

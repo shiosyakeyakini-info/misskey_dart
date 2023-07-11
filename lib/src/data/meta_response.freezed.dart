@@ -73,7 +73,7 @@ mixin _$MetaResponse {
   bool? get translatorAvailable => throw _privateConstructorUsedError;
   String? get proxyAccountName => throw _privateConstructorUsedError;
   String? get mediaProxy => throw _privateConstructorUsedError;
-  bool get cacheRemoteFiles => throw _privateConstructorUsedError;
+  bool? get cacheRemoteFiles => throw _privateConstructorUsedError;
   MetaFeature get features => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -125,7 +125,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       bool? translatorAvailable,
       String? proxyAccountName,
       String? mediaProxy,
-      bool cacheRemoteFiles,
+      bool? cacheRemoteFiles,
       MetaFeature features});
 
   $MetaFeatureCopyWith<$Res> get features;
@@ -180,7 +180,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? translatorAvailable = freezed,
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
-    Object? cacheRemoteFiles = null,
+    Object? cacheRemoteFiles = freezed,
     Object? features = null,
   }) {
     return _then(_value.copyWith(
@@ -328,10 +328,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.mediaProxy
           : mediaProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      cacheRemoteFiles: null == cacheRemoteFiles
+      cacheRemoteFiles: freezed == cacheRemoteFiles
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       features: null == features
           ? _value.features
           : features // ignore: cast_nullable_to_non_nullable
@@ -393,7 +393,7 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       bool? translatorAvailable,
       String? proxyAccountName,
       String? mediaProxy,
-      bool cacheRemoteFiles,
+      bool? cacheRemoteFiles,
       MetaFeature features});
 
   @override
@@ -447,7 +447,7 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? translatorAvailable = freezed,
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
-    Object? cacheRemoteFiles = null,
+    Object? cacheRemoteFiles = freezed,
     Object? features = null,
   }) {
     return _then(_$_MetaResponse(
@@ -595,10 +595,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.mediaProxy
           : mediaProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      cacheRemoteFiles: null == cacheRemoteFiles
+      cacheRemoteFiles: freezed == cacheRemoteFiles
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       features: null == features
           ? _value.features
           : features // ignore: cast_nullable_to_non_nullable
@@ -647,7 +647,7 @@ class _$_MetaResponse implements _MetaResponse {
       this.translatorAvailable,
       this.proxyAccountName,
       this.mediaProxy,
-      required this.cacheRemoteFiles,
+      this.cacheRemoteFiles,
       required this.features})
       : _langs = langs,
         _ads = ads;
@@ -758,7 +758,7 @@ class _$_MetaResponse implements _MetaResponse {
   @override
   final String? mediaProxy;
   @override
-  final bool cacheRemoteFiles;
+  final bool? cacheRemoteFiles;
   @override
   final MetaFeature features;
 
@@ -939,7 +939,7 @@ abstract class _MetaResponse implements MetaResponse {
       final bool? translatorAvailable,
       final String? proxyAccountName,
       final String? mediaProxy,
-      required final bool cacheRemoteFiles,
+      final bool? cacheRemoteFiles,
       required final MetaFeature features}) = _$_MetaResponse;
 
   factory _MetaResponse.fromJson(Map<String, dynamic> json) =
@@ -1032,7 +1032,7 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   String? get mediaProxy;
   @override
-  bool get cacheRemoteFiles;
+  bool? get cacheRemoteFiles;
   @override
   MetaFeature get features;
   @override
