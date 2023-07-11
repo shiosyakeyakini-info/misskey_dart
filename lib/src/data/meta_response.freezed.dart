@@ -74,7 +74,7 @@ mixin _$MetaResponse {
   String? get proxyAccountName => throw _privateConstructorUsedError;
   String? get mediaProxy => throw _privateConstructorUsedError;
   bool? get cacheRemoteFiles => throw _privateConstructorUsedError;
-  MetaFeature get features => throw _privateConstructorUsedError;
+  MetaFeature? get features => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -126,9 +126,9 @@ abstract class $MetaResponseCopyWith<$Res> {
       String? proxyAccountName,
       String? mediaProxy,
       bool? cacheRemoteFiles,
-      MetaFeature features});
+      MetaFeature? features});
 
-  $MetaFeatureCopyWith<$Res> get features;
+  $MetaFeatureCopyWith<$Res>? get features;
 }
 
 /// @nodoc
@@ -181,7 +181,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = freezed,
-    Object? features = null,
+    Object? features = freezed,
   }) {
     return _then(_value.copyWith(
       maintainerName: freezed == maintainerName
@@ -332,17 +332,21 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
-      features: null == features
+      features: freezed == features
           ? _value.features
           : features // ignore: cast_nullable_to_non_nullable
-              as MetaFeature,
+              as MetaFeature?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MetaFeatureCopyWith<$Res> get features {
-    return $MetaFeatureCopyWith<$Res>(_value.features, (value) {
+  $MetaFeatureCopyWith<$Res>? get features {
+    if (_value.features == null) {
+      return null;
+    }
+
+    return $MetaFeatureCopyWith<$Res>(_value.features!, (value) {
       return _then(_value.copyWith(features: value) as $Val);
     });
   }
@@ -394,10 +398,10 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       String? proxyAccountName,
       String? mediaProxy,
       bool? cacheRemoteFiles,
-      MetaFeature features});
+      MetaFeature? features});
 
   @override
-  $MetaFeatureCopyWith<$Res> get features;
+  $MetaFeatureCopyWith<$Res>? get features;
 }
 
 /// @nodoc
@@ -448,7 +452,7 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = freezed,
-    Object? features = null,
+    Object? features = freezed,
   }) {
     return _then(_$_MetaResponse(
       maintainerName: freezed == maintainerName
@@ -599,10 +603,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
-      features: null == features
+      features: freezed == features
           ? _value.features
           : features // ignore: cast_nullable_to_non_nullable
-              as MetaFeature,
+              as MetaFeature?,
     ));
   }
 }
@@ -648,7 +652,7 @@ class _$_MetaResponse implements _MetaResponse {
       this.proxyAccountName,
       this.mediaProxy,
       this.cacheRemoteFiles,
-      required this.features})
+      this.features})
       : _langs = langs,
         _ads = ads;
 
@@ -760,7 +764,7 @@ class _$_MetaResponse implements _MetaResponse {
   @override
   final bool? cacheRemoteFiles;
   @override
-  final MetaFeature features;
+  final MetaFeature? features;
 
   @override
   String toString() {
@@ -940,7 +944,7 @@ abstract class _MetaResponse implements MetaResponse {
       final String? proxyAccountName,
       final String? mediaProxy,
       final bool? cacheRemoteFiles,
-      required final MetaFeature features}) = _$_MetaResponse;
+      final MetaFeature? features}) = _$_MetaResponse;
 
   factory _MetaResponse.fromJson(Map<String, dynamic> json) =
       _$_MetaResponse.fromJson;
@@ -1034,7 +1038,7 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   bool? get cacheRemoteFiles;
   @override
-  MetaFeature get features;
+  MetaFeature? get features;
   @override
   @JsonKey(ignore: true)
   _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>

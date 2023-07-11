@@ -52,7 +52,7 @@ class MetaResponse with _$MetaResponse {
     String? proxyAccountName,
     String? mediaProxy,
     bool? cacheRemoteFiles,
-    required MetaFeature features,
+    MetaFeature? features,
   }) = _MetaResponse;
 
   factory MetaResponse.fromJson(Map<String, Object?> json) =>

@@ -55,7 +55,9 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       proxyAccountName: json['proxyAccountName'] as String?,
       mediaProxy: json['mediaProxy'] as String?,
       cacheRemoteFiles: json['cacheRemoteFiles'] as bool?,
-      features: MetaFeature.fromJson(json['features'] as Map<String, dynamic>),
+      features: json['features'] == null
+          ? null
+          : MetaFeature.fromJson(json['features'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MetaResponseToJson(_$_MetaResponse instance) =>
