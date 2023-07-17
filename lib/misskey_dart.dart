@@ -4,15 +4,19 @@
 library misskey_dart;
 
 export 'src/misskey_dart_base.dart';
-export 'src/enums/notification_type.dart';
+export 'src/enums/antenna_source.dart';
+export 'src/enums/channel_search_type.dart';
+export 'src/enums/ff_visibility.dart';
+export 'src/enums/hashtags_list_sort_type.dart';
 export 'src/enums/note_visibility.dart';
-export 'src/enums/permissions.dart';
-export 'src/enums/streaming_request_type.dart';
+export 'src/enums/notification_type.dart';
+export 'src/enums/online_status.dart';
 export 'src/enums/origin.dart';
+export 'src/enums/permissions.dart';
+export 'src/enums/reaction_acceptance.dart';
+export 'src/enums/streaming_request_type.dart';
 export 'src/enums/users_sort_type.dart';
 export 'src/enums/users_state.dart';
-export 'src/enums/hashtags_list_sort_type.dart';
-export 'src/enums/reaction_acceptance.dart';
 export 'src/data/antennas/antennas_create_request.dart';
 export 'src/data/antennas/antennas_delete_request.dart';
 export 'src/data/antennas/antennas_notes_request.dart';
