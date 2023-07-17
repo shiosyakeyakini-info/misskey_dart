@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/base/drive_file.dart';
 import 'package:misskey_dart/src/data/base/drive_folder.dart';
 import 'package:misskey_dart/src/data/drive/drive_files_request.dart';
@@ -43,6 +44,11 @@ class MisskeyDriveFiles {
     final response = await _apiService.post<Map<String, dynamic>>(
         "drive/files/update", request.toJson());
     return DriveFile.fromJson(response);
+  }
+
+  Future<void> delete(DriveFilesDeleteRequest request) async {
+    await _apiService.post<Map<String, dynamic>>(
+        "drive/files/delete", request.toJson());
   }
 
   Future<Iterable<DriveFile>> files(DriveFilesRequest request) async {
