@@ -47,8 +47,7 @@ class MisskeyDriveFiles {
   }
 
   Future<void> delete(DriveFilesDeleteRequest request) async {
-    await _apiService.post<Map<String, dynamic>>(
-        "drive/files/delete", request.toJson());
+    await _apiService.post("drive/files/delete", request.toJson());
   }
 
   Future<Iterable<DriveFile>> files(DriveFilesRequest request) async {
