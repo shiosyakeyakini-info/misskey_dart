@@ -64,6 +64,7 @@ export 'src/data/drive/drive_files_request.dart';
 export 'src/data/drive/drive_folders_request.dart';
 export 'src/data/drive/files/drive_files_create_request.dart';
 export 'src/data/drive/files/drive_files_update_request.dart';
+export 'src/data/drive/files/drive_files_find_request.dart';
 export 'src/data/following/following_create_request.dart';
 export 'src/data/following/following_delete_request.dart';
 export 'src/data/following/following_invalidate_request.dart';
