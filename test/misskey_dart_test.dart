@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:dotenv/dotenv.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/enums/antenna_source.dart';
 import 'package:test/test.dart';
 import 'package:uuid/uuid.dart';
 
