@@ -68,6 +68,48 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
           ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
       memo: json['memo'] as String?,
+      avatarId: json['avatarId'] as String?,
+      bannerId: json['bannerId'] as String?,
+      isModerator: json['isModerator'] as bool?,
+      isAdmin: json['isAdmin'] as bool?,
+      injectFeaturedNote: json['injectFeaturedNote'] as bool?,
+      receiveAnnouncementEmail: json['receiveAnnouncementEmail'] as bool?,
+      alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
+      autoSensitive: json['autoSensitive'] as bool?,
+      carefulBot: json['carefulBot'] as bool?,
+      autoAcceptFollowed: json['autoAcceptFollowed'] as bool?,
+      noCrawle: json['noCrawle'] as bool?,
+      preventAiLearning: json['preventAiLearning'] as bool?,
+      isExplorable: json['isExplorable'] as bool?,
+      isDeleted: json['isDeleted'] as bool?,
+      hideOnlineStatus: json['hideOnlineStatus'] as bool?,
+      hasUnreadSpecifiedNotes: json['hasUnreadSpecifiedNotes'] as bool?,
+      hasUnreadMentions: json['hasUnreadMentions'] as bool?,
+      hasUnreadAnnouncement: json['hasUnreadAnnouncement'] as bool?,
+      hasUnreadAntenna: json['hasUnreadAntenna'] as bool?,
+      hasUnreadNotification: json['hasUnreadNotification'] as bool?,
+      hasPendingReceivedFollowRequest:
+          json['hasPendingReceivedFollowRequest'] as bool?,
+      mutedWords: (json['mutedWords'] as List<dynamic>?)
+          ?.map(const MuteWordsConverter().fromJson)
+          .toList(),
+      mutedInstances: (json['mutedInstances'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      mutingNotificationTypes:
+          (json['mutingNotificationTypes'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+      emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      achievements: (json['achievements'] as List<dynamic>?)
+          ?.map((e) => UserAchievement.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      loggedInDays: json['loggedInDays'] as int?,
+      policies: json['policies'] == null
+          ? null
+          : UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
       isFollowing: json['isFollowing'] as bool?,
       isFollowed: json['isFollowed'] as bool?,
       hasPendingFollowRequestFromYou:
@@ -125,6 +167,36 @@ Map<String, dynamic> _$$_UsersShowResponseToJson(
       'securityKeys': instance.securityKeys,
       'roles': instance.roles,
       'memo': instance.memo,
+      'avatarId': instance.avatarId,
+      'bannerId': instance.bannerId,
+      'isModerator': instance.isModerator,
+      'isAdmin': instance.isAdmin,
+      'injectFeaturedNote': instance.injectFeaturedNote,
+      'receiveAnnouncementEmail': instance.receiveAnnouncementEmail,
+      'alwaysMarkNsfw': instance.alwaysMarkNsfw,
+      'autoSensitive': instance.autoSensitive,
+      'carefulBot': instance.carefulBot,
+      'autoAcceptFollowed': instance.autoAcceptFollowed,
+      'noCrawle': instance.noCrawle,
+      'preventAiLearning': instance.preventAiLearning,
+      'isExplorable': instance.isExplorable,
+      'isDeleted': instance.isDeleted,
+      'hideOnlineStatus': instance.hideOnlineStatus,
+      'hasUnreadSpecifiedNotes': instance.hasUnreadSpecifiedNotes,
+      'hasUnreadMentions': instance.hasUnreadMentions,
+      'hasUnreadAnnouncement': instance.hasUnreadAnnouncement,
+      'hasUnreadAntenna': instance.hasUnreadAntenna,
+      'hasUnreadNotification': instance.hasUnreadNotification,
+      'hasPendingReceivedFollowRequest':
+          instance.hasPendingReceivedFollowRequest,
+      'mutedWords':
+          instance.mutedWords?.map(const MuteWordsConverter().toJson).toList(),
+      'mutedInstances': instance.mutedInstances,
+      'mutingNotificationTypes': instance.mutingNotificationTypes,
+      'emailNotificationTypes': instance.emailNotificationTypes,
+      'achievements': instance.achievements,
+      'loggedInDays': instance.loggedInDays,
+      'policies': instance.policies,
       'isFollowing': instance.isFollowing,
       'isFollowed': instance.isFollowed,
       'hasPendingFollowRequestFromYou': instance.hasPendingFollowRequestFromYou,
