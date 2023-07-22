@@ -9,13 +9,13 @@ part of 'follow_request.dart';
 _$_FollowRequest _$$_FollowRequestFromJson(Map<String, dynamic> json) =>
     _$_FollowRequest(
       id: json['id'] as String,
-      followeeId: json['followeeId'] as String,
-      followerId: json['followerId'] as String,
+      followee: User.fromJson(json['followee'] as Map<String, dynamic>),
+      follower: User.fromJson(json['follower'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_FollowRequestToJson(_$_FollowRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'followeeId': instance.followeeId,
-      'followerId': instance.followerId,
+      'followee': instance.followee,
+      'follower': instance.follower,
     };
