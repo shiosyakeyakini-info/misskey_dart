@@ -28,9 +28,6 @@ mixin _$NotesGlobalTimelineRequest {
   DateTime? get sinceDate => throw _privateConstructorUsedError;
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate => throw _privateConstructorUsedError;
-  bool? get includeMyRenotes => throw _privateConstructorUsedError;
-  bool? get includeRenotedMyNotes => throw _privateConstructorUsedError;
-  bool? get includeLocalRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
   bool? get withRenotes => throw _privateConstructorUsedError;
   @Deprecated("removed at 2023.10.0")
@@ -55,9 +52,6 @@ abstract class $NotesGlobalTimelineRequestCopyWith<$Res> {
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
-      bool? includeMyRenotes,
-      bool? includeRenotedMyNotes,
-      bool? includeLocalRenotes,
       bool? withFiles,
       bool? withRenotes,
       @Deprecated("removed at 2023.10.0") bool? withReplies});
@@ -82,9 +76,6 @@ class _$NotesGlobalTimelineRequestCopyWithImpl<$Res,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
-    Object? includeMyRenotes = freezed,
-    Object? includeRenotedMyNotes = freezed,
-    Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
     Object? withReplies = freezed,
@@ -110,18 +101,6 @@ class _$NotesGlobalTimelineRequestCopyWithImpl<$Res,
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      includeMyRenotes: freezed == includeMyRenotes
-          ? _value.includeMyRenotes
-          : includeMyRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      includeRenotedMyNotes: freezed == includeRenotedMyNotes
-          ? _value.includeRenotedMyNotes
-          : includeRenotedMyNotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      includeLocalRenotes: freezed == includeLocalRenotes
-          ? _value.includeLocalRenotes
-          : includeLocalRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
       withFiles: freezed == withFiles
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
@@ -153,9 +132,6 @@ abstract class _$$NotesGlobalTimelineRequestImplCopyWith<$Res>
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
-      bool? includeMyRenotes,
-      bool? includeRenotedMyNotes,
-      bool? includeLocalRenotes,
       bool? withFiles,
       bool? withRenotes,
       @Deprecated("removed at 2023.10.0") bool? withReplies});
@@ -179,9 +155,6 @@ class __$$NotesGlobalTimelineRequestImplCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
-    Object? includeMyRenotes = freezed,
-    Object? includeRenotedMyNotes = freezed,
-    Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
     Object? withReplies = freezed,
@@ -207,18 +180,6 @@ class __$$NotesGlobalTimelineRequestImplCopyWithImpl<$Res>
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      includeMyRenotes: freezed == includeMyRenotes
-          ? _value.includeMyRenotes
-          : includeMyRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      includeRenotedMyNotes: freezed == includeRenotedMyNotes
-          ? _value.includeRenotedMyNotes
-          : includeRenotedMyNotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      includeLocalRenotes: freezed == includeLocalRenotes
-          ? _value.includeLocalRenotes
-          : includeLocalRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
       withFiles: freezed == withFiles
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
@@ -244,9 +205,6 @@ class _$NotesGlobalTimelineRequestImpl implements _NotesGlobalTimelineRequest {
       this.untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
-      this.includeMyRenotes,
-      this.includeRenotedMyNotes,
-      this.includeLocalRenotes,
       this.withFiles,
       this.withRenotes,
       @Deprecated("removed at 2023.10.0") this.withReplies});
@@ -268,12 +226,6 @@ class _$NotesGlobalTimelineRequestImpl implements _NotesGlobalTimelineRequest {
   @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? untilDate;
   @override
-  final bool? includeMyRenotes;
-  @override
-  final bool? includeRenotedMyNotes;
-  @override
-  final bool? includeLocalRenotes;
-  @override
   final bool? withFiles;
   @override
   final bool? withRenotes;
@@ -283,7 +235,7 @@ class _$NotesGlobalTimelineRequestImpl implements _NotesGlobalTimelineRequest {
 
   @override
   String toString() {
-    return 'NotesGlobalTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies)';
+    return 'NotesGlobalTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies)';
   }
 
   @override
@@ -298,12 +250,6 @@ class _$NotesGlobalTimelineRequestImpl implements _NotesGlobalTimelineRequest {
                 other.sinceDate == sinceDate) &&
             (identical(other.untilDate, untilDate) ||
                 other.untilDate == untilDate) &&
-            (identical(other.includeMyRenotes, includeMyRenotes) ||
-                other.includeMyRenotes == includeMyRenotes) &&
-            (identical(other.includeRenotedMyNotes, includeRenotedMyNotes) ||
-                other.includeRenotedMyNotes == includeRenotedMyNotes) &&
-            (identical(other.includeLocalRenotes, includeLocalRenotes) ||
-                other.includeLocalRenotes == includeLocalRenotes) &&
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             (identical(other.withRenotes, withRenotes) ||
@@ -314,19 +260,8 @@ class _$NotesGlobalTimelineRequestImpl implements _NotesGlobalTimelineRequest {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      limit,
-      sinceId,
-      untilId,
-      sinceDate,
-      untilDate,
-      includeMyRenotes,
-      includeRenotedMyNotes,
-      includeLocalRenotes,
-      withFiles,
-      withRenotes,
-      withReplies);
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
+      sinceDate, untilDate, withFiles, withRenotes, withReplies);
 
   @JsonKey(ignore: true)
   @override
@@ -351,9 +286,6 @@ abstract class _NotesGlobalTimelineRequest
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
-      final bool? includeMyRenotes,
-      final bool? includeRenotedMyNotes,
-      final bool? includeLocalRenotes,
       final bool? withFiles,
       final bool? withRenotes,
       @Deprecated("removed at 2023.10.0")
@@ -374,12 +306,6 @@ abstract class _NotesGlobalTimelineRequest
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate;
-  @override
-  bool? get includeMyRenotes;
-  @override
-  bool? get includeRenotedMyNotes;
-  @override
-  bool? get includeLocalRenotes;
   @override
   bool? get withFiles;
   @override
