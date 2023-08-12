@@ -884,9 +884,7 @@ void main() async {
       test("homeTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.homeTimelineStream(
-          completer.complete,
-          (id, reaction) => null,
-          (id, vote) => null,
+          onNoteReceived: completer.complete,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -897,9 +895,7 @@ void main() async {
       test("localTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.localTimelineStream(
-          completer.complete,
-          (id, reaction) => null,
-          (id, vote) => null,
+          onNoteReceived: completer.complete,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -910,7 +906,7 @@ void main() async {
       test("globalTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.globalTimelineStream(
-          completer.complete,
+          onNoteReceived: completer.complete,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -921,9 +917,7 @@ void main() async {
       test("hybridTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.hybridTimelineStream(
-          completer.complete,
-          (id, reaction) => null,
-          (id, vote) => null,
+          onNoteReceived: completer.complete,
         );
         await controller.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -936,10 +930,8 @@ void main() async {
         final channel = await userClient.channels
             .create(ChannelsCreateRequest(name: "test"));
         final controller = userClient.channelStream(
-          channel.id,
-          completer.complete,
-          (id, reaction) => null,
-          (id, vote) => null,
+          channelId: channel.id,
+          onNoteReceived: completer.complete,
         );
         await controller.startStreaming();
         await userClient.notes.create(
@@ -964,9 +956,8 @@ void main() async {
             ),
           );
           final controller = userClient.userListStream(
-            list.id,
-            completer.complete,
-            (id, reaction) => null,
+            listId: list.id,
+            onNoteReceived: completer.complete,
           );
           await controller.startStreaming();
           await userClient.notes.create(NotesCreateRequest(text: "test"));
@@ -979,9 +970,7 @@ void main() async {
           final list = await userClient.users.list
               .create(UsersListsCreateRequest(name: "test"));
           final controller = userClient.userListStream(
-            list.id,
-            (note) => null,
-            (id, reaction) => null,
+            listId: list.id,
             onUserAdded: completer.complete,
           );
           await controller.startStreaming();
@@ -1006,9 +995,7 @@ void main() async {
             ),
           );
           final controller = userClient.userListStream(
-            list.id,
-            (note) => null,
-            (id, reaction) => null,
+            listId: list.id,
             onUserRemoved: completer.complete,
           );
           await controller.startStreaming();
@@ -1042,10 +1029,8 @@ void main() async {
             ),
           );
           final controller = userClient.antennaStream(
-            antenna.id,
-            completer.complete,
-            (id, reaction) => null,
-            (id, vote) => null,
+            antennaId: antenna.id,
+            onNoteReceived: completer.complete,
           );
           await controller.startStreaming();
           await userClient.notes.create(NotesCreateRequest(text: "keyword"));
@@ -1240,9 +1225,7 @@ void main() async {
         final completer = Completer<TimelineReacted>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
-          (note) => null,
-          (id, reaction) => completer.complete(reaction),
-          (id, vote) => null,
+          onReacted: (id, reaction) => completer.complete(reaction),
         );
         await controller.startStreaming();
         await controller.subNote(note.id);
@@ -1257,9 +1240,6 @@ void main() async {
         final completer = Completer<TimelineReacted>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
-          (note) => null,
-          (id, reaction) => null,
-          (id, vote) => null,
           onUnreacted: (id, reaction) => completer.complete(reaction),
         );
         await controller.startStreaming();
@@ -1277,9 +1257,6 @@ void main() async {
         final completer = Completer<DateTime>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
-          (note) => null,
-          (id, reaction) => null,
-          (id, vote) => null,
           onDeleted: (id, deletedAt) => completer.complete(deletedAt),
         );
         await controller.startStreaming();
@@ -1298,9 +1275,7 @@ void main() async {
         });
         final note = Note.fromJson(response["createdNote"]);
         final controller = userClient.homeTimelineStream(
-          (note) => null,
-          (id, reaction) => null,
-          (id, vote) => completer.complete(vote),
+          onVoted: (id, vote) => completer.complete(vote),
         );
         await controller.startStreaming();
         await controller.subNote(note.id);
