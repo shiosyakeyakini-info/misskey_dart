@@ -886,10 +886,10 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           onNoteReceived: completer.complete,
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("localTimeline", () async {
@@ -897,10 +897,10 @@ void main() async {
         final controller = userClient.localTimelineStream(
           onNoteReceived: completer.complete,
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("globalTimeline", () async {
@@ -908,10 +908,10 @@ void main() async {
         final controller = userClient.globalTimelineStream(
           onNoteReceived: completer.complete,
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("hybridTimeline", () async {
@@ -919,10 +919,10 @@ void main() async {
         final controller = userClient.hybridTimelineStream(
           onNoteReceived: completer.complete,
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await userClient.notes.create(NotesCreateRequest(text: "test"));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("channel", () async {
@@ -933,7 +933,7 @@ void main() async {
           channelId: channel.id,
           onNoteReceived: completer.complete,
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await userClient.notes.create(
           NotesCreateRequest(
             text: "test",
@@ -941,7 +941,7 @@ void main() async {
           ),
         );
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       group("userList", () {
@@ -959,10 +959,10 @@ void main() async {
             listId: list.id,
             onNoteReceived: completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.notes.create(NotesCreateRequest(text: "test"));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("userAdded", () async {
@@ -973,7 +973,7 @@ void main() async {
             listId: list.id,
             onUserAdded: completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.users.list.push(
             UsersListsPushRequest(
               listId: list.id,
@@ -981,7 +981,7 @@ void main() async {
             ),
           );
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("userRemoved", () async {
@@ -998,7 +998,7 @@ void main() async {
             listId: list.id,
             onUserRemoved: completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.users.list.pull(
             UsersListsPullRequest(
               listId: list.id,
@@ -1006,7 +1006,7 @@ void main() async {
             ),
           );
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
       });
 
@@ -1032,10 +1032,10 @@ void main() async {
             antennaId: antenna.id,
             onNoteReceived: completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.notes.create(NotesCreateRequest(text: "keyword"));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
       });
 
@@ -1046,10 +1046,10 @@ void main() async {
             completer.complete,
             (response) => null,
           );
-          await controller.startStreaming();
-          await controller.requestLog(10);
+          await userClient.startStreaming();
+          await controller.requestLog(length: 10);
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("stats", () async {
@@ -1058,9 +1058,9 @@ void main() async {
             (response) => null,
             completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
       });
 
@@ -1069,29 +1069,29 @@ void main() async {
           final completer = Completer<INotificationsResponse>();
           final controller =
               userClient.mainStream(onNotification: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.apiService
               .post("notifications/create", {"body": "!"});
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("mention", () async {
           final completer = Completer<Note>();
           final controller =
               userClient.mainStream(onMention: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await adminClient.notes
               .create(NotesCreateRequest(text: "@${user.username}"));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("reply", () async {
           final completer = Completer<Note>();
           final note = await userClient.createNote();
           final controller = userClient.mainStream(onReply: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await adminClient.notes.create(
             NotesCreateRequest(
               text: "reply",
@@ -1099,7 +1099,7 @@ void main() async {
             ),
           );
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("renote", () async {
@@ -1107,10 +1107,10 @@ void main() async {
           final note = await userClient.createNote();
           final controller =
               userClient.mainStream(onRenote: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await adminClient.notes.create(NotesCreateRequest(renoteId: note.id));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("follow", () async {
@@ -1118,11 +1118,11 @@ void main() async {
           final newUser = (await adminClient.createUser()).user;
           final controller =
               userClient.mainStream(onFollow: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.following
               .create(FollowingCreateRequest(userId: newUser.id));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("followed", () async {
@@ -1130,54 +1130,54 @@ void main() async {
           final newClient = (await adminClient.createUser()).client;
           final controller =
               userClient.mainStream(onFollowed: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await newClient.following
               .create(FollowingCreateRequest(userId: user.id));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("meUpdated", () async {
           final completer = Completer<User>();
           final controller =
               userClient.mainStream(onMeUpdated: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.i.update(IUpdateRequest(name: "name"));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("readAllNotifications", () async {
           final completer = Completer<void>();
           final controller =
               userClient.mainStream(onReadAllNotifications: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.apiService
               .post("notifications/mark-all-as-read", {});
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("unreadNotification", () async {
           final completer = Completer<void>();
           final controller =
               userClient.mainStream(onUnreadNotification: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.apiService
               .post("notifications/create", {"body": "!"});
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("unreadMention", () async {
           final completer = Completer<String>();
           final controller =
               userClient.mainStream(onUnreadMention: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await adminClient.notes
               .create(NotesCreateRequest(text: "@${user.username}"));
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("readAllUnreadMentions", () async {
@@ -1185,17 +1185,17 @@ void main() async {
           final controller = userClient.mainStream(
             onReadAllUnreadMentions: completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.apiService.post("i/read-all-unread-notes", {});
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("unreadSpecifiedNote", () async {
           final completer = Completer<String>();
           final controller =
               userClient.mainStream(onUnreadSpecifiedNote: completer.complete);
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await adminClient.notes.create(
             NotesCreateRequest(
               visibility: NoteVisibility.specified,
@@ -1204,7 +1204,7 @@ void main() async {
             ),
           );
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
 
         test("readAllUnreadSpecifiedNotes", () async {
@@ -1212,10 +1212,10 @@ void main() async {
           final controller = userClient.mainStream(
             onReadAllUnreadSpecifiedNotes: completer.complete,
           );
-          await controller.startStreaming();
+          await userClient.startStreaming();
           await userClient.apiService.post("i/read-all-unread-notes", {});
           await completer.future;
-          await controller.disconnect();
+          controller.disconnect();
         });
       });
     });
@@ -1227,13 +1227,13 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           onReacted: (id, reaction) => completer.complete(reaction),
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await controller.subNote(note.id);
         await userClient.notes.reactions.create(
           NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
         );
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("unreacted", () async {
@@ -1242,7 +1242,7 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           onUnreacted: (id, reaction) => completer.complete(reaction),
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await controller.subNote(note.id);
         await userClient.notes.reactions.create(
           NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
@@ -1250,7 +1250,7 @@ void main() async {
         await userClient.notes.reactions
             .delete(NotesReactionsDeleteRequest(noteId: note.id));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("deleted", () async {
@@ -1259,11 +1259,11 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           onDeleted: (id, deletedAt) => completer.complete(deletedAt),
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await controller.subNote(note.id);
         await userClient.notes.delete(NotesDeleteRequest(noteId: note.id));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("pollVoted", () async {
@@ -1277,12 +1277,12 @@ void main() async {
         final controller = userClient.homeTimelineStream(
           onVoted: (id, vote) => completer.complete(vote),
         );
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await controller.subNote(note.id);
         await adminClient.notes.polls
             .vote(NotesPollsVoteRequest(noteId: note.id, choice: 0));
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
     });
 
@@ -1292,11 +1292,11 @@ void main() async {
         final file = await adminClient.createDriveFile();
         final controller =
             userClient.mainStream(onEmojiAdded: completer.complete);
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await adminClient.apiService
             .post("admin/emoji/add", {"fileId": file.id});
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("emojiUpdated", () async {
@@ -1311,13 +1311,13 @@ void main() async {
         );
         final controller =
             userClient.mainStream(onEmojiUpdated: completer.complete);
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await adminClient.apiService.post(
           "admin/emoji/update",
           {"id": response["id"], "name": name, "aliases": []},
         );
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
 
       test("emojiDeleted", () async {
@@ -1327,11 +1327,11 @@ void main() async {
             .post("admin/emoji/add", {"fileId": file.id});
         final controller =
             userClient.mainStream(onEmojiDeleted: completer.complete);
-        await controller.startStreaming();
+        await userClient.startStreaming();
         await adminClient.apiService
             .post("admin/emoji/delete", {"id": response["id"]});
         await completer.future;
-        await controller.disconnect();
+        controller.disconnect();
       });
     });
   });

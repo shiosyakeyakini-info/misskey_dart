@@ -1,22 +1,21 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/emoji_request.dart';
-import 'package:misskey_dart/src/data/emoji_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
-import 'package:misskey_dart/src/data/streaming/queue_stats_log_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
+import 'package:misskey_dart/src/services/streaming_service.dart';
 
 class Misskey {
   final String? token;
   final String host;
 
   late final ApiService apiService;
+  late final StreamingService streamingService;
 
   late final MisskeyNotes notes;
   late final MisskeyChannels channels;
@@ -44,6 +43,10 @@ class Misskey {
       token: token,
       host: host,
       apiUrl: apiUrl,
+    );
+    streamingService = StreamingService(
+      token: token,
+      host: host,
       streamingUrl: streamingUrl,
     );
 
@@ -131,9 +134,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.homeTimeline,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           final note = Note.fromJson(response);
@@ -165,9 +168,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.localTimeline,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           final note = Note.fromJson(response);
@@ -199,9 +202,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.globalTimeline,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           final note = Note.fromJson(response);
@@ -233,9 +236,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.hybridTimeline,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           final note = Note.fromJson(response);
@@ -268,10 +271,10 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.channel,
         id: channelId,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           final note = Note.fromJson(response);
@@ -307,10 +310,10 @@ class Misskey {
     FutureOr<void> Function(DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.userList,
         id: listId,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           if (type == ChannelEventType.userAdded) {
@@ -356,10 +359,10 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.antenna,
         id: antennaId,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           final note = Note.fromJson(response);
@@ -389,9 +392,9 @@ class Misskey {
     FutureOr<void> Function(List<StatsLogResponse> response) onLogReceived,
     FutureOr<void> Function(StatsLogResponse response) onEventReceived,
   ) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.serverStats,
-        onEventReceived: (id, type, response) {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           if (type == ChannelEventType.statsLog) {
@@ -411,9 +414,9 @@ class Misskey {
     FutureOr<void> Function(List<QueueStatsLogResponse> response) onLogReceived,
     FutureOr<void> Function(QueueStatsLogResponse response) onEventReceived,
   ) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.queueStats,
-        onEventReceived: (id, type, response) {
+        onChannelEventReceived: (type, response) async {
           if (response == null) return;
 
           if (type == ChannelEventType.statsLog) {
@@ -451,9 +454,9 @@ class Misskey {
     FutureOr<void> Function()? onReadAllUnreadSpecifiedNotes,
     FutureOr<void> Function(User user)? onReceiveFollowRequest,
   }) =>
-      apiService.createSocket(
+      streamingService.connect(
         channel: Channel.main,
-        onEventReceived: (id, type, response) async {
+        onChannelEventReceived: (type, response) async {
           print(response);
           switch (type) {
             case ChannelEventType.notification:
@@ -520,4 +523,8 @@ class Misskey {
           }
         },
       );
+
+  Future<void> startStreaming() async {
+    await streamingService.startStreaming();
+  }
 }
