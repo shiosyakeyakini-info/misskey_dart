@@ -42,6 +42,7 @@ class SocketController {
   });
 
   void connect() {
+    isDisconnected = false;
     webSocketChannel.sink.add(
       jsonEncode(
         StreamingRequest(
