@@ -28,6 +28,10 @@ class SocketController {
     BroadcastEventType type,
     Map<String, dynamic> response,
   )? onBroadcastEventReceived;
+
+  final Future<void> Function()? onDisconnected;
+  final Future<void> Function(SocketController)? onConnected;
+
   final Map<String, dynamic>? parameters;
   bool isDisconnected = false;
 
@@ -38,6 +42,8 @@ class SocketController {
     this.onChannelEventReceived,
     this.onNoteUpdatedEventReceived,
     this.onBroadcastEventReceived,
+    this.onDisconnected,
+    this.onConnected,
     this.parameters,
   });
 
@@ -55,6 +61,7 @@ class SocketController {
         ),
       ),
     );
+    onConnected?.call(this);
   }
 
   void disconnect() {
@@ -67,7 +74,13 @@ class SocketController {
       ),
     );
     log("send: $request");
-    webSocketChannel.sink.add(request);
+    try {
+      webSocketChannel.sink.add(request);
+    } catch (e) {
+      print("maybe already disconnected");
+      print(e);
+    }
+    onDisconnected?.call();
     isDisconnected = true;
   }
 

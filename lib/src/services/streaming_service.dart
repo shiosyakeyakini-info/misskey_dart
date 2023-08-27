@@ -156,8 +156,15 @@ class StreamingService {
       onNoteUpdatedEventReceived: onNoteUpdatedEventReceived,
       onBroadcastEventReceived: onBroadcastEventReceived,
       parameters: parameters,
+      onDisconnected: () async {
+        if (id == null) return;
+        streamingChannelControllers.remove(id);
+      },
+      onConnected: (controller) async {
+        if (id == null) return;
+        streamingChannelControllers[id] = controller;
+      },
     );
-    streamingChannelControllers[id] = controller;
     controller.connect();
     return controller;
   }
