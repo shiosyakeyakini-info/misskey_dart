@@ -16,19 +16,6 @@ class MisskeyChannels {
     return response.map((e) => Note.fromJson(e));
   }
 
-  /// チャンネルのタイムラインにWebSocketで接続します。
-  SocketController channelTimelineStream(String channelId,
-          FutureOr<void> Function(Note note) onEventReceived) =>
-      _apiService.createSocket(
-        channel: Channel.channel,
-        id: channelId,
-        onEventReceived: (id, type, response) {
-          if (response == null) return;
-          final note = Note.fromJson(response);
-          onEventReceived(note);
-        },
-      );
-
   /// チャンネルの情報を取得します。
   Future<CommunityChannel> show(ChannelsShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(

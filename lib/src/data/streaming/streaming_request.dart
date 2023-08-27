@@ -21,7 +21,7 @@ class StreamingRequestBody with _$StreamingRequestBody {
   const factory StreamingRequestBody({
     Channel? channel,
     required String id,
-    required Map<String, dynamic>? params,
+    Map<String, dynamic>? params,
     String? type,
     Map<String, dynamic>? body,
   }) = _StreamingRequestBody;
