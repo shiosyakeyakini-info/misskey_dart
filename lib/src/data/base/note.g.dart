@@ -20,11 +20,10 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       renoteCount: json['renoteCount'] as int,
       repliesCount: json['repliesCount'] as int,
       reactions: Map<String, int>.from(json['reactions'] as Map),
-      reactionEmojis: Map<String, String>.from(json['reactionEmojis'] as Map),
-      emojis: (json['emojis'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k, e as String),
-          ) ??
-          const {},
+      reactionEmojis: const EmojisConverter().fromJson(json['reactionEmojis']),
+      emojis: json['emojis'] == null
+          ? const {}
+          : const EmojisConverter().fromJson(json['emojis']),
       fileIds:
           (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
       files: (json['files'] as List<dynamic>)
@@ -75,8 +74,8 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'renoteCount': instance.renoteCount,
       'repliesCount': instance.repliesCount,
       'reactions': instance.reactions,
-      'reactionEmojis': instance.reactionEmojis,
-      'emojis': instance.emojis,
+      'reactionEmojis': const EmojisConverter().toJson(instance.reactionEmojis),
+      'emojis': const EmojisConverter().toJson(instance.emojis),
       'fileIds': instance.fileIds,
       'files': instance.files,
       'replyId': instance.replyId,

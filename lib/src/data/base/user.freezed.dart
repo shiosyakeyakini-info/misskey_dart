@@ -24,7 +24,6 @@ mixin _$User {
   String get username => throw _privateConstructorUsedError;
   String? get host => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus => throw _privateConstructorUsedError;
   List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
@@ -34,6 +33,7 @@ mixin _$User {
   UserInstanceInfo? get instance => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
   bool get isBot => throw _privateConstructorUsedError;
+  @EmojisConverter()
   Map<String, String> get emojis => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,17 +51,14 @@ abstract class $UserCopyWith<$Res> {
       String username,
       String? host,
       String? name,
-      @UnsupportedDolphin()
-      @OnlineStatusJsonConverter()
-          OnlineStatus? onlineStatus,
+      @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       List<UserBadgeRole> badgeRoles,
-      @UriConverter()
-          Uri avatarUrl,
+      @UriConverter() Uri avatarUrl,
       String? avatarBlurhash,
       UserInstanceInfo? instance,
       bool isCat,
       bool isBot,
-      Map<String, String> emojis});
+      @EmojisConverter() Map<String, String> emojis});
 
   $UserInstanceInfoCopyWith<$Res>? get instance;
 }
@@ -168,17 +165,14 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String username,
       String? host,
       String? name,
-      @UnsupportedDolphin()
-      @OnlineStatusJsonConverter()
-          OnlineStatus? onlineStatus,
+      @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       List<UserBadgeRole> badgeRoles,
-      @UriConverter()
-          Uri avatarUrl,
+      @UriConverter() Uri avatarUrl,
       String? avatarBlurhash,
       UserInstanceInfo? instance,
       bool isCat,
       bool isBot,
-      Map<String, String> emojis});
+      @EmojisConverter() Map<String, String> emojis});
 
   @override
   $UserInstanceInfoCopyWith<$Res>? get instance;
@@ -267,14 +261,14 @@ class _$_User implements _User {
       required this.username,
       this.host,
       this.name,
-      @UnsupportedDolphin() @OnlineStatusJsonConverter() this.onlineStatus,
+      @OnlineStatusJsonConverter() this.onlineStatus,
       final List<UserBadgeRole> badgeRoles = const [],
       @UriConverter() required this.avatarUrl,
       this.avatarBlurhash,
       this.instance,
       this.isCat = false,
       this.isBot = false,
-      final Map<String, String> emojis = const {}})
+      @EmojisConverter() final Map<String, String> emojis = const {}})
       : _badgeRoles = badgeRoles,
         _emojis = emojis;
 
@@ -289,7 +283,6 @@ class _$_User implements _User {
   @override
   final String? name;
   @override
-  @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
   final OnlineStatus? onlineStatus;
   final List<UserBadgeRole> _badgeRoles;
@@ -317,6 +310,7 @@ class _$_User implements _User {
   final Map<String, String> _emojis;
   @override
   @JsonKey()
+  @EmojisConverter()
   Map<String, String> get emojis {
     if (_emojis is EqualUnmodifiableMapView) return _emojis;
     // ignore: implicit_dynamic_type
@@ -390,17 +384,14 @@ abstract class _User implements User {
       required final String username,
       final String? host,
       final String? name,
-      @UnsupportedDolphin()
-      @OnlineStatusJsonConverter()
-          final OnlineStatus? onlineStatus,
+      @OnlineStatusJsonConverter() final OnlineStatus? onlineStatus,
       final List<UserBadgeRole> badgeRoles,
-      @UriConverter()
-          required final Uri avatarUrl,
+      @UriConverter() required final Uri avatarUrl,
       final String? avatarBlurhash,
       final UserInstanceInfo? instance,
       final bool isCat,
       final bool isBot,
-      final Map<String, String> emojis}) = _$_User;
+      @EmojisConverter() final Map<String, String> emojis}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -413,7 +404,6 @@ abstract class _User implements User {
   @override
   String? get name;
   @override
-  @UnsupportedDolphin()
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus;
   @override
@@ -430,6 +420,7 @@ abstract class _User implements User {
   @override
   bool get isBot;
   @override
+  @EmojisConverter()
   Map<String, String> get emojis;
   @override
   @JsonKey(ignore: true)

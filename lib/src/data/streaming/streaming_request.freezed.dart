@@ -174,7 +174,7 @@ class _$_StreamingRequest implements _StreamingRequest {
 abstract class _StreamingRequest implements StreamingRequest {
   const factory _StreamingRequest(
       {@StreamingRequestTypeJsonConverter()
-      required final StreamingRequestType type,
+          required final StreamingRequestType type,
       required final StreamingRequestBody body}) = _$_StreamingRequest;
 
   factory _StreamingRequest.fromJson(Map<String, dynamic> json) =

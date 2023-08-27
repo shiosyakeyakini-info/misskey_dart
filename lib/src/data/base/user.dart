@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/src/converters/emojis_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
-import 'package:misskey_dart/src/data/annotations/annotations.dart';
 import 'package:misskey_dart/src/enums/online_status.dart';
 
 part 'user.freezed.dart';
@@ -14,21 +14,14 @@ class User with _$User {
     required String username,
     String? host,
     String? name,
-    @UnsupportedDolphin()
-    @OnlineStatusJsonConverter()
-        OnlineStatus? onlineStatus,
-    @Default([])
-        List<UserBadgeRole> badgeRoles,
-    @UriConverter()
-        required Uri avatarUrl,
+    @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
+    @Default([]) List<UserBadgeRole> badgeRoles,
+    @UriConverter() required Uri avatarUrl,
     String? avatarBlurhash,
     UserInstanceInfo? instance,
-    @Default(false)
-        bool isCat,
-    @Default(false)
-        bool isBot,
-    @Default({})
-        Map<String, String> emojis,
+    @Default(false) bool isCat,
+    @Default(false) bool isBot,
+    @EmojisConverter() @Default({}) Map<String, String> emojis,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);

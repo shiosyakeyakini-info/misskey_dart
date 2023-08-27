@@ -33,7 +33,9 @@ mixin _$Note {
   int get renoteCount => throw _privateConstructorUsedError;
   int get repliesCount => throw _privateConstructorUsedError;
   Map<String, int> get reactions => throw _privateConstructorUsedError;
+  @EmojisConverter()
   Map<String, String> get reactionEmojis => throw _privateConstructorUsedError;
+  @EmojisConverter()
   Map<String, String> get emojis => throw _privateConstructorUsedError;
   List<String> get fileIds => throw _privateConstructorUsedError;
   List<DriveFile> get files => throw _privateConstructorUsedError;
@@ -76,8 +78,8 @@ abstract class $NoteCopyWith<$Res> {
       int renoteCount,
       int repliesCount,
       Map<String, int> reactions,
-      Map<String, String> reactionEmojis,
-      Map<String, String> emojis,
+      @EmojisConverter() Map<String, String> reactionEmojis,
+      @EmojisConverter() Map<String, String> emojis,
       List<String> fileIds,
       List<DriveFile> files,
       String? replyId,
@@ -334,8 +336,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       int renoteCount,
       int repliesCount,
       Map<String, int> reactions,
-      Map<String, String> reactionEmojis,
-      Map<String, String> emojis,
+      @EmojisConverter() Map<String, String> reactionEmojis,
+      @EmojisConverter() Map<String, String> emojis,
       List<String> fileIds,
       List<DriveFile> files,
       String? replyId,
@@ -534,8 +536,8 @@ class _$_Note implements _Note {
       required this.renoteCount,
       required this.repliesCount,
       required final Map<String, int> reactions,
-      required final Map<String, String> reactionEmojis,
-      final Map<String, String> emojis = const {},
+      @EmojisConverter() required final Map<String, String> reactionEmojis,
+      @EmojisConverter() final Map<String, String> emojis = const {},
       required final List<String> fileIds,
       required final List<DriveFile> files,
       this.replyId,
@@ -593,6 +595,7 @@ class _$_Note implements _Note {
 
   final Map<String, String> _reactionEmojis;
   @override
+  @EmojisConverter()
   Map<String, String> get reactionEmojis {
     if (_reactionEmojis is EqualUnmodifiableMapView) return _reactionEmojis;
     // ignore: implicit_dynamic_type
@@ -602,6 +605,7 @@ class _$_Note implements _Note {
   final Map<String, String> _emojis;
   @override
   @JsonKey()
+  @EmojisConverter()
   Map<String, String> get emojis {
     if (_emojis is EqualUnmodifiableMapView) return _emojis;
     // ignore: implicit_dynamic_type
@@ -780,8 +784,8 @@ abstract class _Note implements Note {
       required final int renoteCount,
       required final int repliesCount,
       required final Map<String, int> reactions,
-      required final Map<String, String> reactionEmojis,
-      final Map<String, String> emojis,
+      @EmojisConverter() required final Map<String, String> reactionEmojis,
+      @EmojisConverter() final Map<String, String> emojis,
       required final List<String> fileIds,
       required final List<DriveFile> files,
       final String? replyId,
@@ -825,8 +829,10 @@ abstract class _Note implements Note {
   @override
   Map<String, int> get reactions;
   @override
+  @EmojisConverter()
   Map<String, String> get reactionEmojis;
   @override
+  @EmojisConverter()
   Map<String, String> get emojis;
   @override
   List<String> get fileIds;
