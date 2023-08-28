@@ -11,6 +11,7 @@ _$_AnnouncementsRequest _$$_AnnouncementsRequestFromJson(
     _$_AnnouncementsRequest(
       limit: json['limit'] as int?,
       withUnreads: json['withUnreads'] as bool?,
+      isActive: json['isActive'] as bool?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
@@ -20,6 +21,7 @@ Map<String, dynamic> _$$_AnnouncementsRequestToJson(
     <String, dynamic>{
       'limit': instance.limit,
       'withUnreads': instance.withUnreads,
+      'isActive': instance.isActive,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
     };

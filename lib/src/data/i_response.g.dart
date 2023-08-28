@@ -79,6 +79,11 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       hasUnreadNotification: json['hasUnreadNotification'] as bool,
       hasPendingReceivedFollowRequest:
           json['hasPendingReceivedFollowRequest'] as bool,
+      unreadAnnouncements: (json['unreadAnnouncements'] as List<dynamic>?)
+              ?.map((e) =>
+                  AnnouncementsResponse.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       mutedWords: (json['mutedWords'] as List<dynamic>)
           .map(const MuteWordsConverter().fromJson)
           .toList(),
@@ -161,6 +166,7 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
       'hasUnreadNotification': instance.hasUnreadNotification,
       'hasPendingReceivedFollowRequest':
           instance.hasPendingReceivedFollowRequest,
+      'unreadAnnouncements': instance.unreadAnnouncements,
       'mutedWords':
           instance.mutedWords.map(const MuteWordsConverter().toJson).toList(),
       'mutedInstances': instance.mutedInstances,

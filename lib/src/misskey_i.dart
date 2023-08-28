@@ -1,4 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/i/i_read_announcement_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {
@@ -18,6 +19,11 @@ class MisskeyI {
     final response =
         await _apiService.post<List>("i/notifications", request.toJson());
     return response.map((e) => INotificationsResponse.fromJson(e));
+  }
+
+  /// お知らせを既読にします。
+  Future<void> readAnnouncement(IReadAnnouncementRequest request) async {
+    await _apiService.post("i/read-announcement", request.toJson());
   }
 
   /// お気に入りに登録されたノートの一覧を取得します。

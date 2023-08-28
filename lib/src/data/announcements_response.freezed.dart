@@ -30,7 +30,13 @@ mixin _$AnnouncementsResponse {
   String get title => throw _privateConstructorUsedError;
   @UriConverter()
   Uri? get imageUrl => throw _privateConstructorUsedError;
+  AnnouncementIconType? get icon => throw _privateConstructorUsedError;
+  AnnouncementDisplayType? get display => throw _privateConstructorUsedError;
+  bool? get needConfirmationToRead => throw _privateConstructorUsedError;
+  bool? get forYou => throw _privateConstructorUsedError;
   bool? get isRead => throw _privateConstructorUsedError;
+  bool get forExistingUsers => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +57,13 @@ abstract class $AnnouncementsResponseCopyWith<$Res> {
       String text,
       String title,
       @UriConverter() Uri? imageUrl,
-      bool? isRead});
+      AnnouncementIconType? icon,
+      AnnouncementDisplayType? display,
+      bool? needConfirmationToRead,
+      bool? forYou,
+      bool? isRead,
+      bool forExistingUsers,
+      String? userId});
 }
 
 /// @nodoc
@@ -74,7 +86,13 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
     Object? text = null,
     Object? title = null,
     Object? imageUrl = freezed,
+    Object? icon = freezed,
+    Object? display = freezed,
+    Object? needConfirmationToRead = freezed,
+    Object? forYou = freezed,
     Object? isRead = freezed,
+    Object? forExistingUsers = null,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -101,10 +119,34 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as AnnouncementIconType?,
+      display: freezed == display
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as AnnouncementDisplayType?,
+      needConfirmationToRead: freezed == needConfirmationToRead
+          ? _value.needConfirmationToRead
+          : needConfirmationToRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      forYou: freezed == forYou
+          ? _value.forYou
+          : forYou // ignore: cast_nullable_to_non_nullable
+              as bool?,
       isRead: freezed == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
               as bool?,
+      forExistingUsers: null == forExistingUsers
+          ? _value.forExistingUsers
+          : forExistingUsers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -124,7 +166,13 @@ abstract class _$$_AnnouncementsResponseCopyWith<$Res>
       String text,
       String title,
       @UriConverter() Uri? imageUrl,
-      bool? isRead});
+      AnnouncementIconType? icon,
+      AnnouncementDisplayType? display,
+      bool? needConfirmationToRead,
+      bool? forYou,
+      bool? isRead,
+      bool forExistingUsers,
+      String? userId});
 }
 
 /// @nodoc
@@ -144,7 +192,13 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
     Object? text = null,
     Object? title = null,
     Object? imageUrl = freezed,
+    Object? icon = freezed,
+    Object? display = freezed,
+    Object? needConfirmationToRead = freezed,
+    Object? forYou = freezed,
     Object? isRead = freezed,
+    Object? forExistingUsers = null,
+    Object? userId = freezed,
   }) {
     return _then(_$_AnnouncementsResponse(
       id: null == id
@@ -171,10 +225,34 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as AnnouncementIconType?,
+      display: freezed == display
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as AnnouncementDisplayType?,
+      needConfirmationToRead: freezed == needConfirmationToRead
+          ? _value.needConfirmationToRead
+          : needConfirmationToRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      forYou: freezed == forYou
+          ? _value.forYou
+          : forYou // ignore: cast_nullable_to_non_nullable
+              as bool?,
       isRead: freezed == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
               as bool?,
+      forExistingUsers: null == forExistingUsers
+          ? _value.forExistingUsers
+          : forExistingUsers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -189,7 +267,13 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
       required this.text,
       required this.title,
       @UriConverter() this.imageUrl,
-      this.isRead});
+      this.icon,
+      this.display,
+      this.needConfirmationToRead,
+      this.forYou,
+      this.isRead,
+      this.forExistingUsers = false,
+      this.userId});
 
   factory _$_AnnouncementsResponse.fromJson(Map<String, dynamic> json) =>
       _$$_AnnouncementsResponseFromJson(json);
@@ -210,11 +294,24 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
   @UriConverter()
   final Uri? imageUrl;
   @override
+  final AnnouncementIconType? icon;
+  @override
+  final AnnouncementDisplayType? display;
+  @override
+  final bool? needConfirmationToRead;
+  @override
+  final bool? forYou;
+  @override
   final bool? isRead;
+  @override
+  @JsonKey()
+  final bool forExistingUsers;
+  @override
+  final String? userId;
 
   @override
   String toString() {
-    return 'AnnouncementsResponse(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, title: $title, imageUrl: $imageUrl, isRead: $isRead)';
+    return 'AnnouncementsResponse(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, title: $title, imageUrl: $imageUrl, icon: $icon, display: $display, needConfirmationToRead: $needConfirmationToRead, forYou: $forYou, isRead: $isRead, forExistingUsers: $forExistingUsers, userId: $userId)';
   }
 
   @override
@@ -231,13 +328,34 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
-            (identical(other.isRead, isRead) || other.isRead == isRead));
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.display, display) || other.display == display) &&
+            (identical(other.needConfirmationToRead, needConfirmationToRead) ||
+                other.needConfirmationToRead == needConfirmationToRead) &&
+            (identical(other.forYou, forYou) || other.forYou == forYou) &&
+            (identical(other.isRead, isRead) || other.isRead == isRead) &&
+            (identical(other.forExistingUsers, forExistingUsers) ||
+                other.forExistingUsers == forExistingUsers) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, createdAt, updatedAt, text, title, imageUrl, isRead);
+      runtimeType,
+      id,
+      createdAt,
+      updatedAt,
+      text,
+      title,
+      imageUrl,
+      icon,
+      display,
+      needConfirmationToRead,
+      forYou,
+      isRead,
+      forExistingUsers,
+      userId);
 
   @JsonKey(ignore: true)
   @override
@@ -262,7 +380,13 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
       required final String text,
       required final String title,
       @UriConverter() final Uri? imageUrl,
-      final bool? isRead}) = _$_AnnouncementsResponse;
+      final AnnouncementIconType? icon,
+      final AnnouncementDisplayType? display,
+      final bool? needConfirmationToRead,
+      final bool? forYou,
+      final bool? isRead,
+      final bool forExistingUsers,
+      final String? userId}) = _$_AnnouncementsResponse;
 
   factory _AnnouncementsResponse.fromJson(Map<String, dynamic> json) =
       _$_AnnouncementsResponse.fromJson;
@@ -283,7 +407,19 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   @UriConverter()
   Uri? get imageUrl;
   @override
+  AnnouncementIconType? get icon;
+  @override
+  AnnouncementDisplayType? get display;
+  @override
+  bool? get needConfirmationToRead;
+  @override
+  bool? get forYou;
+  @override
   bool? get isRead;
+  @override
+  bool get forExistingUsers;
+  @override
+  String? get userId;
   @override
   @JsonKey(ignore: true)
   _$$_AnnouncementsResponseCopyWith<_$_AnnouncementsResponse> get copyWith =>

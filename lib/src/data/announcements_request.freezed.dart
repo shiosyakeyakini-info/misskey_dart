@@ -21,7 +21,9 @@ AnnouncementsRequest _$AnnouncementsRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AnnouncementsRequest {
   int? get limit => throw _privateConstructorUsedError;
+  @Deprecated("removed in Misskey 2023.9")
   bool? get withUnreads => throw _privateConstructorUsedError;
+  bool? get isActive => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
 
@@ -37,7 +39,12 @@ abstract class $AnnouncementsRequestCopyWith<$Res> {
           $Res Function(AnnouncementsRequest) then) =
       _$AnnouncementsRequestCopyWithImpl<$Res, AnnouncementsRequest>;
   @useResult
-  $Res call({int? limit, bool? withUnreads, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
+      bool? isActive,
+      String? sinceId,
+      String? untilId});
 }
 
 /// @nodoc
@@ -56,6 +63,7 @@ class _$AnnouncementsRequestCopyWithImpl<$Res,
   $Res call({
     Object? limit = freezed,
     Object? withUnreads = freezed,
+    Object? isActive = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
@@ -67,6 +75,10 @@ class _$AnnouncementsRequestCopyWithImpl<$Res,
       withUnreads: freezed == withUnreads
           ? _value.withUnreads
           : withUnreads // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isActive: freezed == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
               as bool?,
       sinceId: freezed == sinceId
           ? _value.sinceId
@@ -88,7 +100,12 @@ abstract class _$$_AnnouncementsRequestCopyWith<$Res>
       __$$_AnnouncementsRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? limit, bool? withUnreads, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
+      bool? isActive,
+      String? sinceId,
+      String? untilId});
 }
 
 /// @nodoc
@@ -104,6 +121,7 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
   $Res call({
     Object? limit = freezed,
     Object? withUnreads = freezed,
+    Object? isActive = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
@@ -115,6 +133,10 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
       withUnreads: freezed == withUnreads
           ? _value.withUnreads
           : withUnreads // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isActive: freezed == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
               as bool?,
       sinceId: freezed == sinceId
           ? _value.sinceId
@@ -132,7 +154,11 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AnnouncementsRequest implements _AnnouncementsRequest {
   const _$_AnnouncementsRequest(
-      {this.limit, this.withUnreads, this.sinceId, this.untilId});
+      {this.limit,
+      @Deprecated("removed in Misskey 2023.9") this.withUnreads,
+      this.isActive,
+      this.sinceId,
+      this.untilId});
 
   factory _$_AnnouncementsRequest.fromJson(Map<String, dynamic> json) =>
       _$$_AnnouncementsRequestFromJson(json);
@@ -140,7 +166,10 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
   @override
   final int? limit;
   @override
+  @Deprecated("removed in Misskey 2023.9")
   final bool? withUnreads;
+  @override
+  final bool? isActive;
   @override
   final String? sinceId;
   @override
@@ -148,7 +177,7 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
 
   @override
   String toString() {
-    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, sinceId: $sinceId, untilId: $untilId)';
+    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, isActive: $isActive, sinceId: $sinceId, untilId: $untilId)';
   }
 
   @override
@@ -159,6 +188,8 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.withUnreads, withUnreads) ||
                 other.withUnreads == withUnreads) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
@@ -166,7 +197,7 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, limit, withUnreads, sinceId, untilId);
+      Object.hash(runtimeType, limit, withUnreads, isActive, sinceId, untilId);
 
   @JsonKey(ignore: true)
   @override
@@ -186,7 +217,8 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
 abstract class _AnnouncementsRequest implements AnnouncementsRequest {
   const factory _AnnouncementsRequest(
       {final int? limit,
-      final bool? withUnreads,
+      @Deprecated("removed in Misskey 2023.9") final bool? withUnreads,
+      final bool? isActive,
       final String? sinceId,
       final String? untilId}) = _$_AnnouncementsRequest;
 
@@ -196,7 +228,10 @@ abstract class _AnnouncementsRequest implements AnnouncementsRequest {
   @override
   int? get limit;
   @override
+  @Deprecated("removed in Misskey 2023.9")
   bool? get withUnreads;
+  @override
+  bool? get isActive;
   @override
   String? get sinceId;
   @override
