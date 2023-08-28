@@ -170,6 +170,7 @@ class StreamingService {
   }
 
   Future<void> close() async {
+    streamingChannelControllers.clear();
     await Future.wait([
       subscription?.cancel() ?? Future.value(),
       webSocketChannel.sink.close(),
@@ -179,7 +180,11 @@ class StreamingService {
   }
 
   Future<void> restart() async {
-    await close();
+    try {
+      await close();
+    } catch (e) {
+      print("already closed");
+    }
     startStreaming();
   }
 }
