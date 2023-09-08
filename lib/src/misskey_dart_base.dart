@@ -380,7 +380,7 @@ class Misskey {
               await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
               return;
             case NoteUpdatedEventType.pollVoted:
-              await onVoted?.call(response["choice"], response["userId"]);
+              await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
           }
         },
