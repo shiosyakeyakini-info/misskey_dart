@@ -152,7 +152,8 @@ class MisskeyNotes {
     return response.map((e) => Clip.fromJson(e));
   }
 
-  /// Renoteを解除します。
+  /// Renoteを解除します。（これは実際には使用されておらず、notes/deleteを使用します。）
+  @Deprecated("")
   Future<void> unrenote(NotesUnrenoteRequest request) async {
     await _apiService.post<void>("notes/unrenote", request.toJson());
   }

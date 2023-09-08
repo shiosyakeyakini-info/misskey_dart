@@ -25,7 +25,8 @@ mixin _$AnnouncementsRequest {
   bool? get withUnreads => throw _privateConstructorUsedError;
   bool? get isActive => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError; // ioはこれで動く
+  int? get offset => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +45,8 @@ abstract class $AnnouncementsRequestCopyWith<$Res> {
       @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
       bool? isActive,
       String? sinceId,
-      String? untilId});
+      String? untilId,
+      int? offset});
 }
 
 /// @nodoc
@@ -66,6 +68,7 @@ class _$AnnouncementsRequestCopyWithImpl<$Res,
     Object? isActive = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? offset = freezed,
   }) {
     return _then(_value.copyWith(
       limit: freezed == limit
@@ -88,6 +91,10 @@ class _$AnnouncementsRequestCopyWithImpl<$Res,
           ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      offset: freezed == offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -105,7 +112,8 @@ abstract class _$$_AnnouncementsRequestCopyWith<$Res>
       @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
       bool? isActive,
       String? sinceId,
-      String? untilId});
+      String? untilId,
+      int? offset});
 }
 
 /// @nodoc
@@ -124,6 +132,7 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
     Object? isActive = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? offset = freezed,
   }) {
     return _then(_$_AnnouncementsRequest(
       limit: freezed == limit
@@ -146,6 +155,10 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
           ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      offset: freezed == offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -158,7 +171,8 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
       @Deprecated("removed in Misskey 2023.9") this.withUnreads,
       this.isActive,
       this.sinceId,
-      this.untilId});
+      this.untilId,
+      this.offset});
 
   factory _$_AnnouncementsRequest.fromJson(Map<String, dynamic> json) =>
       _$$_AnnouncementsRequestFromJson(json);
@@ -174,10 +188,13 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
   final String? sinceId;
   @override
   final String? untilId;
+// ioはこれで動く
+  @override
+  final int? offset;
 
   @override
   String toString() {
-    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, isActive: $isActive, sinceId: $sinceId, untilId: $untilId)';
+    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, isActive: $isActive, sinceId: $sinceId, untilId: $untilId, offset: $offset)';
   }
 
   @override
@@ -191,13 +208,14 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
             (identical(other.isActive, isActive) ||
                 other.isActive == isActive) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.offset, offset) || other.offset == offset));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, withUnreads, isActive, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, withUnreads, isActive, sinceId, untilId, offset);
 
   @JsonKey(ignore: true)
   @override
@@ -220,7 +238,8 @@ abstract class _AnnouncementsRequest implements AnnouncementsRequest {
       @Deprecated("removed in Misskey 2023.9") final bool? withUnreads,
       final bool? isActive,
       final String? sinceId,
-      final String? untilId}) = _$_AnnouncementsRequest;
+      final String? untilId,
+      final int? offset}) = _$_AnnouncementsRequest;
 
   factory _AnnouncementsRequest.fromJson(Map<String, dynamic> json) =
       _$_AnnouncementsRequest.fromJson;
@@ -236,6 +255,8 @@ abstract class _AnnouncementsRequest implements AnnouncementsRequest {
   String? get sinceId;
   @override
   String? get untilId;
+  @override // ioはこれで動く
+  int? get offset;
   @override
   @JsonKey(ignore: true)
   _$$_AnnouncementsRequestCopyWith<_$_AnnouncementsRequest> get copyWith =>

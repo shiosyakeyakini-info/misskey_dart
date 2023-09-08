@@ -87,6 +87,7 @@ class Misskey {
     return EmojisResponse.fromJson(response);
   }
 
+  /// 単一の絵文字についての情報を取得します。
   Future<EmojiResponse> emoji(EmojiRequest request) async {
     final response =
         await apiService.post<Map<String, dynamic>>("emoji", request.toJson());
@@ -99,28 +100,34 @@ class Misskey {
     return MetaResponse.fromJson(response);
   }
 
+  /// サーバー全体の統計情報を取得します。
   Future<StatsResponse> stats() async {
     final response = await apiService.post<Map<String, dynamic>>("stats", {});
     return StatsResponse.fromJson(response);
   }
 
+  /// サーバーへの応答時間を取得します。
   Future<PingResponse> ping() async {
     final response = await apiService.post<Map<String, dynamic>>("ping", {});
     return PingResponse.fromJson(response);
   }
 
+  /// サーバーのスペック情報を取得します。
+  /// serverStatsLogStreamのストリームの情報には、この情報を先に取得していることが前提のものが含まれています。
   Future<ServerInfoResponse> serverInfo() async {
     final response =
         await apiService.post<Map<String, dynamic>>("server-info", {});
     return ServerInfoResponse.fromJson(response);
   }
 
+  /// オンラインユーザー数を取得します。
   Future<GetOnlineUsersCountResponse> getOnlineUsersCount() async {
     final response = await apiService
         .post<Map<String, dynamic>>("get-online-users-count", {});
     return GetOnlineUsersCountResponse.fromJson(response);
   }
 
+  /// ピン留めされたユーザーを取得します。
   Future<Iterable<User>> pinnedUsers() async {
     final response = await apiService.post<List>("pinned-users", {});
     return response.map((e) => User.fromJson(e));
@@ -436,6 +443,8 @@ class Misskey {
     FutureOr<void> Function(Emoji emoji)? onEmojiAdded,
     FutureOr<void> Function(Iterable<Emoji> emojis)? onEmojiUpdated,
     FutureOr<void> Function(Iterable<Emoji> emojis)? onEmojiDeleted,
+    FutureOr<void> Function(AnnouncementsResponse announcement)?
+        onAnnouncementCreated,
     FutureOr<void> Function(INotificationsResponse notification)?
         onNotification,
     FutureOr<void> Function(Note note)? onMention,
@@ -519,6 +528,12 @@ class Misskey {
             case BroadcastEventType.emojiDeleted:
               final emojis = response["emojis"] as List;
               await onEmojiDeleted?.call(emojis.map((e) => Emoji.fromJson(e)));
+              break;
+            case BroadcastEventType.announcementCreated:
+              final announcement =
+                  response["announcement"] as Map<String, dynamic>;
+              await onAnnouncementCreated
+                  ?.call(AnnouncementsResponse.fromJson(announcement));
               break;
           }
         },

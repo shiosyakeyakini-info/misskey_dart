@@ -74,12 +74,14 @@ class MisskeyUsers {
     return response.map((e) => UsersReactionsResponse.fromJson(e));
   }
 
+  /// ユーザーを検索します。
   Future<Iterable<User>> search(UsersSearchRequest request) async {
     final response =
         await _apiService.post<List>("users/search", request.toJson());
     return response.map((e) => User.fromJson(e));
   }
 
+  /// このAPIは必ずエラーを返し、動作していないようです。
   Future<Iterable<User>> recommendation(
       UsersRecommendationRequest request) async {
     final response =
@@ -93,6 +95,7 @@ class MisskeyUsers {
   }
 
   /// A personal memo for the target user. If null or empty, delete the memo.
+  /// 各ユーザーが個別のユーザーに記述するメモを更新します。
   Future<void> updateMemo(UsersUpdateMemoRequest request) async {
     _apiService.post("users/update-memo", request.toJson());
   }
@@ -146,5 +149,3 @@ class MisskeyUsersLists {
     return UsersList.fromJson(response);
   }
 }
-
-//TODO: 勘違いでuserの下につくったのでなおす

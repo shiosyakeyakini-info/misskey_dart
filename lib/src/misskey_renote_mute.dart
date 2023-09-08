@@ -8,10 +8,12 @@ class MisskeyRenoteMute {
   MisskeyRenoteMute({required ApiService apiService})
       : _apiService = apiService;
 
+  /// ユーザーのリノートをミュートします。
   Future<void> create(RenoteMuteCreateRequest request) async {
     await _apiService.post("renote-mute/create", request.toJson());
   }
 
+  /// ユーザーのリノートをミュートを解除します。
   Future<void> delete(RenoteMuteDeleteRequest request) async {
     await _apiService.post("renote-mute/delete", request.toJson());
   }

@@ -11,6 +11,8 @@ class AnnouncementsRequest with _$AnnouncementsRequest {
     bool? isActive,
     String? sinceId,
     String? untilId,
+    // ioはこれで動く
+    int? offset,
   }) = _AnnouncementsRequest;
 
   factory AnnouncementsRequest.fromJson(Map<String, Object?> json) =>

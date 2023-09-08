@@ -7,6 +7,7 @@ class MisskeyFederation {
   MisskeyFederation({required ApiService apiService})
       : _apiService = apiService;
 
+  /// 自身のサーバーが保持する外部サーバーの情報を取得します。
   Future<FederationShowInstanceResponse> showInstance(
       FederationShowInstanceRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
@@ -14,6 +15,7 @@ class MisskeyFederation {
     return FederationShowInstanceResponse.fromJson(response);
   }
 
+  /// 自身のサーバーが保持する外部サーバーにいるユーザーの一覧を取得します。
   Future<Iterable<User>> users(FederationUsersRequest request) async {
     final response =
         await _apiService.post<List>("federation/users", request.toJson());

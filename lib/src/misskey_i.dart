@@ -34,6 +34,7 @@ class MisskeyI {
     return response.map((e) => IFavoritesResponse.fromJson(e));
   }
 
+  /// 自身の情報を更新します。
   Future<IResponse> update(IUpdateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "i/update",

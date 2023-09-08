@@ -7,10 +7,12 @@ class MisskeyBlocking {
 
   MisskeyBlocking({required ApiService apiService}) : _apiService = apiService;
 
+  /// ユーザーをブロックします。
   Future<void> create(BlockCreateRequest request) async {
     await _apiService.post("blocking/create", request.toJson());
   }
 
+  /// ユーザーのブロックを解除します。
   Future<void> delete(BlockDeleteRequest request) async {
     await _apiService.post("blocking/delete", request.toJson());
   }

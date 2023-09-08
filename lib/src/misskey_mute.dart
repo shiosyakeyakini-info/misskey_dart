@@ -7,10 +7,12 @@ class MisskeyMute {
 
   MisskeyMute({required ApiService apiService}) : _apiService = apiService;
 
+  /// ユーザーをミュートします。
   Future<void> create(MuteCreateRequest request) async {
     await _apiService.post("mute/create", request.toJson());
   }
 
+  /// ユーザーのミュートを解除します。
   Future<void> delete(MuteDeleteRequest request) async {
     await _apiService.post("mute/delete", request.toJson());
   }

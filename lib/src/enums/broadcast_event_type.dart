@@ -4,6 +4,7 @@ enum BroadcastEventType {
   emojiAdded,
   emojiUpdated,
   emojiDeleted,
+  announcementCreated,
 }
 
 class BroadcastEventTypeJsonConverter

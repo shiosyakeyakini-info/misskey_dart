@@ -6,11 +6,13 @@ class MisskeyRoles {
 
   MisskeyRoles({required ApiService apiService}) : _apiService = apiService;
 
+  /// タイムライン公開ロールの一覧を取得します。
   Future<Iterable<RolesListResponse>> list() async {
     final response = await _apiService.post<List>("roles/list", {});
     return response.map((e) => RolesListResponse.fromJson(e));
   }
 
+  /// タイムライン公開ロールを取得します。
   Future<Iterable<RolesUsersResponse>> users(RolesUsersRequest request) async {
     final response =
         await _apiService.post<List>("roles/users", request.toJson());
