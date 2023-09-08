@@ -6,6 +6,7 @@ enum StreamingResponseType {
   emojiAdded,
   emojiUpdated,
   emojiDeleted,
+  announcementCreated,
 }
 
 class StreamingResponseTypeJsonConverter

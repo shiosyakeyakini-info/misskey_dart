@@ -25,4 +25,5 @@ const _$StreamingResponseTypeEnumMap = {
   StreamingResponseType.emojiAdded: 'emojiAdded',
   StreamingResponseType.emojiUpdated: 'emojiUpdated',
   StreamingResponseType.emojiDeleted: 'emojiDeleted',
+  StreamingResponseType.announcementCreated: 'announcementCreated',
 };
