@@ -462,6 +462,7 @@ class Misskey {
     FutureOr<void> Function(String noteId)? onUnreadSpecifiedNote,
     FutureOr<void> Function()? onReadAllUnreadSpecifiedNotes,
     FutureOr<void> Function(User user)? onReceiveFollowRequest,
+    FutureOr<void> Function()? onReadAllAnnouncements,
   }) =>
       streamingService.connect(
         channel: Channel.main,
@@ -511,6 +512,9 @@ class Misskey {
               break;
             case ChannelEventType.receiveFollowRequest:
               await onReceiveFollowRequest?.call(User.fromJson(response));
+              break;
+            case ChannelEventType.readAllAnnouncements:
+              await onReadAllAnnouncements?.call();
               break;
             default:
               break;
