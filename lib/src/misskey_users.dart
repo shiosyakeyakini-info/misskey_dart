@@ -1,4 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/base/flash.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -98,6 +99,13 @@ class MisskeyUsers {
   /// 各ユーザーが個別のユーザーに記述するメモを更新します。
   Future<void> updateMemo(UsersUpdateMemoRequest request) async {
     _apiService.post("users/update-memo", request.toJson());
+  }
+
+  /// ユーザーが作成したPlayの一覧を取得します。
+  Future<Iterable<Flash>> flashs(UsersFlashsRequest request) async {
+    final response =
+        await _apiService.post<List>("users/flashs", request.toJson());
+    return response.map((e) => Flash.fromJson(e));
   }
 }
 
