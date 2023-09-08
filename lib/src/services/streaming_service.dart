@@ -109,6 +109,7 @@ class StreamingService {
           case StreamingResponseType.emojiAdded:
           case StreamingResponseType.emojiUpdated:
           case StreamingResponseType.emojiDeleted:
+          case StreamingResponseType.announcementCreated:
             final event = BroadcastEvent.fromJson(responseJson);
             await onBroadcastEventReceived(event.type, event.body);
             break;
