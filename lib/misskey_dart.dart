@@ -33,6 +33,7 @@ export 'src/data/base/antenna.dart';
 export 'src/data/base/community_channel.dart';
 export 'src/data/base/follow_request.dart';
 export 'src/data/base/following.dart';
+export 'src/data/base/flash.dart';
 export 'src/data/base/drive_file.dart';
 export 'src/data/base/drive_folder.dart';
 export 'src/data/base/user_list.dart';

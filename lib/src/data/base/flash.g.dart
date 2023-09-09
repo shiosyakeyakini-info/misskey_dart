@@ -18,7 +18,7 @@ _$_Flash _$$_FlashFromJson(Map<String, dynamic> json) => _$_Flash(
       userId: json['userId'] as String,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
       likedCount: json['likedCount'] as int?,
-      isLiked: json['isLiked'] as bool,
+      isLiked: json['isLiked'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_FlashToJson(_$_Flash instance) => <String, dynamic>{

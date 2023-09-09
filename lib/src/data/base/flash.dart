@@ -19,7 +19,7 @@ class Flash with _$Flash {
     required String userId,
     required User user,
     int? likedCount,
-    required bool isLiked,
+    @Default(false) bool isLiked,
   }) = _Flash;
 
   factory Flash.fromJson(Map<String, dynamic> json) => _$FlashFromJson(json);

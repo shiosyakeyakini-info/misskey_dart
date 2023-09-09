@@ -235,7 +235,7 @@ class _$_Flash implements _Flash {
       required this.userId,
       required this.user,
       this.likedCount,
-      required this.isLiked});
+      this.isLiked = false});
 
   factory _$_Flash.fromJson(Map<String, dynamic> json) =>
       _$$_FlashFromJson(json);
@@ -261,6 +261,7 @@ class _$_Flash implements _Flash {
   @override
   final int? likedCount;
   @override
+  @JsonKey()
   final bool isLiked;
 
   @override
@@ -318,7 +319,7 @@ abstract class _Flash implements Flash {
       required final String userId,
       required final User user,
       final int? likedCount,
-      required final bool isLiked}) = _$_Flash;
+      final bool isLiked}) = _$_Flash;
 
   factory _Flash.fromJson(Map<String, dynamic> json) = _$_Flash.fromJson;
 
