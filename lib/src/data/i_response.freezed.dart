@@ -29,7 +29,8 @@ mixin _$IResponse {
   String? get avatarBlurhash => throw _privateConstructorUsedError;
   bool get isBot => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
-  Map<dynamic, dynamic>? get emojis => throw _privateConstructorUsedError;
+  @EmojisConverter()
+  Map<String, String>? get emojis => throw _privateConstructorUsedError;
   String? get onlineStatus => throw _privateConstructorUsedError;
   List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -120,7 +121,7 @@ abstract class $IResponseCopyWith<$Res> {
       String? avatarBlurhash,
       bool isBot,
       bool isCat,
-      Map<dynamic, dynamic>? emojis,
+      @EmojisConverter() Map<String, String>? emojis,
       String? onlineStatus,
       List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
@@ -298,7 +299,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
       emojis: freezed == emojis
           ? _value.emojis
           : emojis // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
+              as Map<String, String>?,
       onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
@@ -555,7 +556,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       String? avatarBlurhash,
       bool isBot,
       bool isCat,
-      Map<dynamic, dynamic>? emojis,
+      @EmojisConverter() Map<String, String>? emojis,
       String? onlineStatus,
       List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
@@ -732,7 +733,7 @@ class __$$_IResponseCopyWithImpl<$Res>
       emojis: freezed == emojis
           ? _value._emojis
           : emojis // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
+              as Map<String, String>?,
       onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
@@ -977,7 +978,7 @@ class _$_IResponse implements _IResponse {
       this.avatarBlurhash,
       required this.isBot,
       required this.isCat,
-      final Map<dynamic, dynamic>? emojis,
+      @EmojisConverter() final Map<String, String>? emojis = const {},
       this.onlineStatus,
       required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() this.url,
@@ -1067,9 +1068,11 @@ class _$_IResponse implements _IResponse {
   final bool isBot;
   @override
   final bool isCat;
-  final Map<dynamic, dynamic>? _emojis;
+  final Map<String, String>? _emojis;
   @override
-  Map<dynamic, dynamic>? get emojis {
+  @JsonKey()
+  @EmojisConverter()
+  Map<String, String>? get emojis {
     final value = _emojis;
     if (value == null) return null;
     if (_emojis is EqualUnmodifiableMapView) return _emojis;
@@ -1488,7 +1491,7 @@ abstract class _IResponse implements IResponse {
       final String? avatarBlurhash,
       required final bool isBot,
       required final bool isCat,
-      final Map<dynamic, dynamic>? emojis,
+      @EmojisConverter() final Map<String, String>? emojis,
       final String? onlineStatus,
       required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() final Uri? url,
@@ -1568,7 +1571,8 @@ abstract class _IResponse implements IResponse {
   @override
   bool get isCat;
   @override
-  Map<dynamic, dynamic>? get emojis;
+  @EmojisConverter()
+  Map<String, String>? get emojis;
   @override
   String? get onlineStatus;
   @override

@@ -15,7 +15,9 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       avatarBlurhash: json['avatarBlurhash'] as String?,
       isBot: json['isBot'] as bool,
       isCat: json['isCat'] as bool,
-      emojis: json['emojis'] as Map<String, dynamic>?,
+      emojis: json['emojis'] == null
+          ? const {}
+          : const EmojisConverter().fromJson(json['emojis']),
       onlineStatus: json['onlineStatus'] as String?,
       badgeRoles: (json['badgeRoles'] as List<dynamic>)
           .map((e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
@@ -114,7 +116,8 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
       'avatarBlurhash': instance.avatarBlurhash,
       'isBot': instance.isBot,
       'isCat': instance.isCat,
-      'emojis': instance.emojis,
+      'emojis': _$JsonConverterToJson<dynamic, Map<String, String>>(
+          instance.emojis, const EmojisConverter().toJson),
       'onlineStatus': instance.onlineStatus,
       'badgeRoles': instance.badgeRoles,
       'url': const NullableUriConverter().toJson(instance.url),
@@ -182,3 +185,9 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
