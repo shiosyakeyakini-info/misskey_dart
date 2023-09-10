@@ -1,14 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'hashtags_list_response.dart';
+part of 'hashtag.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_HashtagsListResponse _$$_HashtagsListResponseFromJson(
-        Map<String, dynamic> json) =>
-    _$_HashtagsListResponse(
+_$_Hashtag _$$_HashtagFromJson(Map<String, dynamic> json) => _$_Hashtag(
       tag: json['tag'] as String,
       mentionedUsersCount: json['mentionedUsersCount'] as int,
       mentionedLocalUsersCount: json['mentionedLocalUsersCount'] as int,
@@ -18,8 +16,7 @@ _$_HashtagsListResponse _$$_HashtagsListResponseFromJson(
       attachedRemoteUsersCount: json['attachedRemoteUsersCount'] as int,
     );
 
-Map<String, dynamic> _$$_HashtagsListResponseToJson(
-        _$_HashtagsListResponse instance) =>
+Map<String, dynamic> _$$_HashtagToJson(_$_Hashtag instance) =>
     <String, dynamic>{
       'tag': instance.tag,
       'mentionedUsersCount': instance.mentionedUsersCount,

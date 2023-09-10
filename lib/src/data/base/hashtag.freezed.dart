@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'hashtags_list_response.dart';
+part of 'hashtag.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-HashtagsListResponse _$HashtagsListResponseFromJson(Map<String, dynamic> json) {
-  return _HashtagsListResponse.fromJson(json);
+Hashtag _$HashtagFromJson(Map<String, dynamic> json) {
+  return _Hashtag.fromJson(json);
 }
 
 /// @nodoc
-mixin _$HashtagsListResponse {
+mixin _$Hashtag {
   String get tag => throw _privateConstructorUsedError;
   int get mentionedUsersCount => throw _privateConstructorUsedError;
   int get mentionedLocalUsersCount => throw _privateConstructorUsedError;
@@ -30,15 +30,13 @@ mixin _$HashtagsListResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HashtagsListResponseCopyWith<HashtagsListResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HashtagCopyWith<Hashtag> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HashtagsListResponseCopyWith<$Res> {
-  factory $HashtagsListResponseCopyWith(HashtagsListResponse value,
-          $Res Function(HashtagsListResponse) then) =
-      _$HashtagsListResponseCopyWithImpl<$Res, HashtagsListResponse>;
+abstract class $HashtagCopyWith<$Res> {
+  factory $HashtagCopyWith(Hashtag value, $Res Function(Hashtag) then) =
+      _$HashtagCopyWithImpl<$Res, Hashtag>;
   @useResult
   $Res call(
       {String tag,
@@ -51,10 +49,9 @@ abstract class $HashtagsListResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HashtagsListResponseCopyWithImpl<$Res,
-        $Val extends HashtagsListResponse>
-    implements $HashtagsListResponseCopyWith<$Res> {
-  _$HashtagsListResponseCopyWithImpl(this._value, this._then);
+class _$HashtagCopyWithImpl<$Res, $Val extends Hashtag>
+    implements $HashtagCopyWith<$Res> {
+  _$HashtagCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -106,11 +103,10 @@ class _$HashtagsListResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_HashtagsListResponseCopyWith<$Res>
-    implements $HashtagsListResponseCopyWith<$Res> {
-  factory _$$_HashtagsListResponseCopyWith(_$_HashtagsListResponse value,
-          $Res Function(_$_HashtagsListResponse) then) =
-      __$$_HashtagsListResponseCopyWithImpl<$Res>;
+abstract class _$$_HashtagCopyWith<$Res> implements $HashtagCopyWith<$Res> {
+  factory _$$_HashtagCopyWith(
+          _$_Hashtag value, $Res Function(_$_Hashtag) then) =
+      __$$_HashtagCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -124,11 +120,10 @@ abstract class _$$_HashtagsListResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HashtagsListResponseCopyWithImpl<$Res>
-    extends _$HashtagsListResponseCopyWithImpl<$Res, _$_HashtagsListResponse>
-    implements _$$_HashtagsListResponseCopyWith<$Res> {
-  __$$_HashtagsListResponseCopyWithImpl(_$_HashtagsListResponse _value,
-      $Res Function(_$_HashtagsListResponse) _then)
+class __$$_HashtagCopyWithImpl<$Res>
+    extends _$HashtagCopyWithImpl<$Res, _$_Hashtag>
+    implements _$$_HashtagCopyWith<$Res> {
+  __$$_HashtagCopyWithImpl(_$_Hashtag _value, $Res Function(_$_Hashtag) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -142,7 +137,7 @@ class __$$_HashtagsListResponseCopyWithImpl<$Res>
     Object? attachedLocalUsersCount = null,
     Object? attachedRemoteUsersCount = null,
   }) {
-    return _then(_$_HashtagsListResponse(
+    return _then(_$_Hashtag(
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -177,8 +172,8 @@ class __$$_HashtagsListResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HashtagsListResponse implements _HashtagsListResponse {
-  const _$_HashtagsListResponse(
+class _$_Hashtag implements _Hashtag {
+  const _$_Hashtag(
       {required this.tag,
       required this.mentionedUsersCount,
       required this.mentionedLocalUsersCount,
@@ -187,8 +182,8 @@ class _$_HashtagsListResponse implements _HashtagsListResponse {
       required this.attachedLocalUsersCount,
       required this.attachedRemoteUsersCount});
 
-  factory _$_HashtagsListResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagsListResponseFromJson(json);
+  factory _$_Hashtag.fromJson(Map<String, dynamic> json) =>
+      _$$_HashtagFromJson(json);
 
   @override
   final String tag;
@@ -207,14 +202,14 @@ class _$_HashtagsListResponse implements _HashtagsListResponse {
 
   @override
   String toString() {
-    return 'HashtagsListResponse(tag: $tag, mentionedUsersCount: $mentionedUsersCount, mentionedLocalUsersCount: $mentionedLocalUsersCount, mentionedRemoteUsersCount: $mentionedRemoteUsersCount, attachedUsersCount: $attachedUsersCount, attachedLocalUsersCount: $attachedLocalUsersCount, attachedRemoteUsersCount: $attachedRemoteUsersCount)';
+    return 'Hashtag(tag: $tag, mentionedUsersCount: $mentionedUsersCount, mentionedLocalUsersCount: $mentionedLocalUsersCount, mentionedRemoteUsersCount: $mentionedRemoteUsersCount, attachedUsersCount: $attachedUsersCount, attachedLocalUsersCount: $attachedLocalUsersCount, attachedRemoteUsersCount: $attachedRemoteUsersCount)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HashtagsListResponse &&
+            other is _$_Hashtag &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.mentionedUsersCount, mentionedUsersCount) ||
                 other.mentionedUsersCount == mentionedUsersCount) &&
@@ -249,30 +244,28 @@ class _$_HashtagsListResponse implements _HashtagsListResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagsListResponseCopyWith<_$_HashtagsListResponse> get copyWith =>
-      __$$_HashtagsListResponseCopyWithImpl<_$_HashtagsListResponse>(
-          this, _$identity);
+  _$$_HashtagCopyWith<_$_Hashtag> get copyWith =>
+      __$$_HashtagCopyWithImpl<_$_Hashtag>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagsListResponseToJson(
+    return _$$_HashtagToJson(
       this,
     );
   }
 }
 
-abstract class _HashtagsListResponse implements HashtagsListResponse {
-  const factory _HashtagsListResponse(
+abstract class _Hashtag implements Hashtag {
+  const factory _Hashtag(
       {required final String tag,
       required final int mentionedUsersCount,
       required final int mentionedLocalUsersCount,
       required final int mentionedRemoteUsersCount,
       required final int attachedUsersCount,
       required final int attachedLocalUsersCount,
-      required final int attachedRemoteUsersCount}) = _$_HashtagsListResponse;
+      required final int attachedRemoteUsersCount}) = _$_Hashtag;
 
-  factory _HashtagsListResponse.fromJson(Map<String, dynamic> json) =
-      _$_HashtagsListResponse.fromJson;
+  factory _Hashtag.fromJson(Map<String, dynamic> json) = _$_Hashtag.fromJson;
 
   @override
   String get tag;
@@ -290,6 +283,6 @@ abstract class _HashtagsListResponse implements HashtagsListResponse {
   int get attachedRemoteUsersCount;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagsListResponseCopyWith<_$_HashtagsListResponse> get copyWith =>
+  _$$_HashtagCopyWith<_$_Hashtag> get copyWith =>
       throw _privateConstructorUsedError;
 }

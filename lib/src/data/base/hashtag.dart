@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'hashtags_list_response.freezed.dart';
-part 'hashtags_list_response.g.dart';
+part 'hashtag.freezed.dart';
+part 'hashtag.g.dart';
 
 @freezed
-class HashtagsListResponse with _$HashtagsListResponse {
-  const factory HashtagsListResponse({
+class Hashtag with _$Hashtag {
+  const factory Hashtag({
     required String tag,
     required int mentionedUsersCount,
     required int mentionedLocalUsersCount,
@@ -13,8 +13,8 @@ class HashtagsListResponse with _$HashtagsListResponse {
     required int attachedUsersCount,
     required int attachedLocalUsersCount,
     required int attachedRemoteUsersCount,
-  }) = _HashtagsListResponse;
+  }) = _Hashtag;
 
-  factory HashtagsListResponse.fromJson(Map<String, dynamic> json) =>
-      _$HashtagsListResponseFromJson(json);
+  factory Hashtag.fromJson(Map<String, dynamic> json) =>
+      _$HashtagFromJson(json);
 }
