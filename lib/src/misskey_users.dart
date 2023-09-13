@@ -160,10 +160,10 @@ class MisskeyUsersLists {
   }
 
   /// リスト情報をIDから取得します。
-  Future<UsersList> show(UsersListsShowRequest request) async {
+  Future<UsersListsShowResponse> show(UsersListsShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "users/lists/show", request.toJson());
-    return UsersList.fromJson(response);
+    return UsersListsShowResponse.fromJson(response);
   }
 
   /// リストのお気に入りを解除します。

@@ -136,6 +136,7 @@ export 'src/data/users/lists/users_lists_favorite_request.dart';
 export 'src/data/users/lists/users_lists_pull_request.dart';
 export 'src/data/users/lists/users_lists_push_request.dart';
 export 'src/data/users/lists/users_lists_show_request.dart';
+export 'src/data/users/lists/users_lists_show_response.dart';
 export 'src/data/users/lists/users_lists_unfavorite_request.dart';
 export 'src/data/users/lists/users_lists_update_request.dart';
 export 'src/data/users/users_report_abuse_request.dart';

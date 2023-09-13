@@ -10,10 +10,12 @@ _$_UsersListsShowRequest _$$_UsersListsShowRequestFromJson(
         Map<String, dynamic> json) =>
     _$_UsersListsShowRequest(
       listId: json['listId'] as String,
+      forPublic: json['forPublic'] as bool?,
     );
 
 Map<String, dynamic> _$$_UsersListsShowRequestToJson(
         _$_UsersListsShowRequest instance) =>
     <String, dynamic>{
       'listId': instance.listId,
+      'forPublic': instance.forPublic,
     };
