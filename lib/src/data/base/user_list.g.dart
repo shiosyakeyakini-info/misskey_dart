@@ -13,6 +13,7 @@ _$_UsersList _$$_UsersListFromJson(Map<String, dynamic> json) => _$_UsersList(
       name: json['name'] as String?,
       userIds:
           (json['userIds'] as List<dynamic>).map((e) => e as String).toList(),
+      isPublic: json['isPublic'] as bool?,
     );
 
 Map<String, dynamic> _$$_UsersListToJson(_$_UsersList instance) =>
@@ -21,4 +22,5 @@ Map<String, dynamic> _$$_UsersListToJson(_$_UsersList instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'name': instance.name,
       'userIds': instance.userIds,
+      'isPublic': instance.isPublic,
     };

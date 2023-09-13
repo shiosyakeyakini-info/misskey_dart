@@ -122,9 +122,25 @@ class MisskeyUsersLists {
     return UsersList.fromJson(response);
   }
 
+  /// 公開リストからリストを作成します。
+  Future<UsersList> createFromPublic(
+    UsersListsCreateFromPublicRequest request,
+  ) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "users/lists/create-from-public",
+      request.toJson(),
+    );
+    return UsersList.fromJson(response);
+  }
+
   /// リストを削除します。
   Future<void> delete(UsersListsDeleteRequest request) async {
     await _apiService.post("users/lists/delete", request.toJson());
+  }
+
+  /// リストをお気に入りします。
+  Future<void> favorite(UsersListsFavoriteRequest request) async {
+    await _apiService.post("users/lists/favorite", request.toJson());
   }
 
   /// 認証されたアカウントが追加したリストの一覧を取得します。
@@ -148,6 +164,11 @@ class MisskeyUsersLists {
     final response = await _apiService.post<Map<String, dynamic>>(
         "users/lists/show", request.toJson());
     return UsersList.fromJson(response);
+  }
+
+  /// リストのお気に入りを解除します。
+  Future<void> unfavorite(UsersListsUnfavoriteRequest request) async {
+    await _apiService.post("users/lists/unfavorite", request.toJson());
   }
 
   /// リスト名を更新します。

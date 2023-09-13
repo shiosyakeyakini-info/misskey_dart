@@ -24,7 +24,9 @@ mixin _$UsersList {
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  List<String> get userIds => throw _privateConstructorUsedError;
+  List<String> get userIds =>
+      throw _privateConstructorUsedError; // Misskey 13.13.0 で追加. 後方互換性のためnullable
+  bool? get isPublic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +43,8 @@ abstract class $UsersListCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String? name,
-      List<String> userIds});
+      List<String> userIds,
+      bool? isPublic});
 }
 
 /// @nodoc
@@ -61,6 +64,7 @@ class _$UsersListCopyWithImpl<$Res, $Val extends UsersList>
     Object? createdAt = null,
     Object? name = freezed,
     Object? userIds = null,
+    Object? isPublic = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -79,6 +83,10 @@ class _$UsersListCopyWithImpl<$Res, $Val extends UsersList>
           ? _value.userIds
           : userIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      isPublic: freezed == isPublic
+          ? _value.isPublic
+          : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -94,7 +102,8 @@ abstract class _$$_UsersListCopyWith<$Res> implements $UsersListCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String? name,
-      List<String> userIds});
+      List<String> userIds,
+      bool? isPublic});
 }
 
 /// @nodoc
@@ -112,6 +121,7 @@ class __$$_UsersListCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? name = freezed,
     Object? userIds = null,
+    Object? isPublic = freezed,
   }) {
     return _then(_$_UsersList(
       id: null == id
@@ -130,6 +140,10 @@ class __$$_UsersListCopyWithImpl<$Res>
           ? _value._userIds
           : userIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      isPublic: freezed == isPublic
+          ? _value.isPublic
+          : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -141,7 +155,8 @@ class _$_UsersList implements _UsersList {
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       this.name,
-      required final List<String> userIds})
+      required final List<String> userIds,
+      this.isPublic})
       : _userIds = userIds;
 
   factory _$_UsersList.fromJson(Map<String, dynamic> json) =>
@@ -162,9 +177,13 @@ class _$_UsersList implements _UsersList {
     return EqualUnmodifiableListView(_userIds);
   }
 
+// Misskey 13.13.0 で追加. 後方互換性のためnullable
+  @override
+  final bool? isPublic;
+
   @override
   String toString() {
-    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds)';
+    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
   }
 
   @override
@@ -176,13 +195,15 @@ class _$_UsersList implements _UsersList {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other._userIds, _userIds));
+            const DeepCollectionEquality().equals(other._userIds, _userIds) &&
+            (identical(other.isPublic, isPublic) ||
+                other.isPublic == isPublic));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      const DeepCollectionEquality().hash(_userIds));
+      const DeepCollectionEquality().hash(_userIds), isPublic);
 
   @JsonKey(ignore: true)
   @override
@@ -203,7 +224,8 @@ abstract class _UsersList implements UsersList {
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
       final String? name,
-      required final List<String> userIds}) = _$_UsersList;
+      required final List<String> userIds,
+      final bool? isPublic}) = _$_UsersList;
 
   factory _UsersList.fromJson(Map<String, dynamic> json) =
       _$_UsersList.fromJson;
@@ -217,6 +239,8 @@ abstract class _UsersList implements UsersList {
   String? get name;
   @override
   List<String> get userIds;
+  @override // Misskey 13.13.0 で追加. 後方互換性のためnullable
+  bool? get isPublic;
   @override
   @JsonKey(ignore: true)
   _$$_UsersListCopyWith<_$_UsersList> get copyWith =>
