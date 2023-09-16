@@ -9,10 +9,12 @@ import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
+import 'package:misskey_dart/src/services/streaming_service.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {
-  final WebSocketChannel webSocketChannel;
+  final StreamingService service;
+  WebSocketChannel get webSocketChannel => service.webSocketChannel;
   final String id;
   final Channel channel;
   final Future<void> Function(
@@ -29,14 +31,14 @@ class SocketController {
     Map<String, dynamic> response,
   )? onBroadcastEventReceived;
 
-  final Future<void> Function()? onDisconnected;
-  final Future<void> Function(SocketController)? onConnected;
+  final Future<void> Function(String)? onDisconnected;
+  final Future<void> Function(String, SocketController)? onConnected;
 
   final Map<String, dynamic>? parameters;
   bool isDisconnected = false;
 
   SocketController({
-    required this.webSocketChannel,
+    required this.service,
     required this.id,
     required this.channel,
     this.onChannelEventReceived,
@@ -61,7 +63,7 @@ class SocketController {
         ),
       ),
     );
-    onConnected?.call(this);
+    onConnected?.call(id, this);
   }
 
   void disconnect() {
@@ -80,7 +82,7 @@ class SocketController {
       print("maybe already disconnected");
       print(e);
     }
-    onDisconnected?.call();
+    onDisconnected?.call(id);
     isDisconnected = true;
   }
 

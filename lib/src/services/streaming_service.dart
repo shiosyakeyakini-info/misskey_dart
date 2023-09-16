@@ -49,7 +49,7 @@ class StreamingService {
     if (controller == null || controller.isDisconnected) {
       streamingChannelControllers.remove(id);
       SocketController(
-        webSocketChannel: webSocketChannel,
+        service: this,
         id: id,
         channel: Channel.main,
       ).disconnect();
@@ -65,6 +65,7 @@ class StreamingService {
   ) async {
     await Future.wait(
       streamingChannelControllers.values
+          .where((controller) => !controller.isDisconnected)
           .map((controller) => controller.onNoteUpdatedEventReceived)
           .whereNotNull()
           .map(
@@ -80,6 +81,7 @@ class StreamingService {
   ) async {
     await Future.wait(
       streamingChannelControllers.values
+          .where((controller) => !controller.isDisconnected)
           .map((controller) => controller.onBroadcastEventReceived)
           .whereNotNull()
           .map(
@@ -148,19 +150,17 @@ class StreamingService {
   }) {
     id ??= channel.name;
     final controller = SocketController(
-      webSocketChannel: webSocketChannel,
+      service: this,
       id: id,
       channel: channel,
       onChannelEventReceived: onChannelEventReceived,
       onNoteUpdatedEventReceived: onNoteUpdatedEventReceived,
       onBroadcastEventReceived: onBroadcastEventReceived,
       parameters: parameters,
-      onDisconnected: () async {
-        if (id == null) return;
+      onDisconnected: (id) async {
         streamingChannelControllers.remove(id);
       },
-      onConnected: (controller) async {
-        if (id == null) return;
+      onConnected: (id, controller) async {
         streamingChannelControllers[id] = controller;
       },
     );
@@ -169,21 +169,22 @@ class StreamingService {
   }
 
   Future<void> close() async {
-    streamingChannelControllers.clear();
-    await Future.wait([
-      subscription?.cancel() ?? Future.value(),
-      webSocketChannel.sink.close(),
-    ]);
-    subscription = null;
-    _webSocketChannel = null;
+    try {
+      streamingChannelControllers.clear();
+      await Future.wait([
+        subscription?.cancel() ?? Future.value(),
+        webSocketChannel.sink.close(),
+      ]);
+    } catch (e) {
+      print(e);
+    } finally {
+      subscription = null;
+      _webSocketChannel = null;
+    }
   }
 
   Future<void> restart() async {
-    try {
-      await close();
-    } catch (e) {
-      print("already closed");
-    }
-    startStreaming();
+    await close();
+    await startStreaming();
   }
 }
