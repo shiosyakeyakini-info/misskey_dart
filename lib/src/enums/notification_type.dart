@@ -13,7 +13,8 @@ enum NotificationType {
   followRequestAccepted,
   groupInvited,
   app,
-  achievementEarned
+  achievementEarned,
+  test
 }
 
 class NotificationTypeJsonConverter
