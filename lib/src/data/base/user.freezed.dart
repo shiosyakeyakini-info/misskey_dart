@@ -1249,7 +1249,7 @@ abstract class _UserAchievement implements UserAchievement {
   const factory _UserAchievement(
       {required final String name,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-          required final DateTime unlockedAt}) = _$_UserAchievement;
+      required final DateTime unlockedAt}) = _$_UserAchievement;
 
   factory _UserAchievement.fromJson(Map<String, dynamic> json) =
       _$_UserAchievement.fromJson;

@@ -39,7 +39,7 @@ abstract class $MuteCreateRequestCopyWith<$Res> {
   $Res call(
       {String userId,
       @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-          DateTime? expiresAt});
+      DateTime? expiresAt});
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ abstract class _$$_MuteCreateRequestCopyWith<$Res>
   $Res call(
       {String userId,
       @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-          DateTime? expiresAt});
+      DateTime? expiresAt});
 }
 
 /// @nodoc
@@ -166,7 +166,7 @@ abstract class _MuteCreateRequest implements MuteCreateRequest {
   const factory _MuteCreateRequest(
       {required final String userId,
       @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? expiresAt}) = _$_MuteCreateRequest;
+      final DateTime? expiresAt}) = _$_MuteCreateRequest;
 
   factory _MuteCreateRequest.fromJson(Map<String, dynamic> json) =
       _$_MuteCreateRequest.fromJson;

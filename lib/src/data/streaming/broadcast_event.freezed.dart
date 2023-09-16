@@ -169,7 +169,7 @@ class _$_BroadcastResponse implements _BroadcastResponse {
 abstract class _BroadcastResponse implements BroadcastEvent {
   const factory _BroadcastResponse(
       {@BroadcastEventTypeJsonConverter()
-          required final BroadcastEventType type,
+      required final BroadcastEventType type,
       required final Map<String, dynamic> body}) = _$_BroadcastResponse;
 
   factory _BroadcastResponse.fromJson(Map<String, dynamic> json) =

@@ -185,7 +185,7 @@ abstract class _NotesStateResponse implements NotesStateResponse {
       {required final bool isFavorited,
       required final bool isMutedThread,
       @Deprecated("This property is already removed")
-          final bool? isWatching}) = _$_NotesStateResponse;
+      final bool? isWatching}) = _$_NotesStateResponse;
 
   factory _NotesStateResponse.fromJson(Map<String, dynamic> json) =
       _$_NotesStateResponse.fromJson;

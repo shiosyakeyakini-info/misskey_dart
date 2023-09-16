@@ -221,10 +221,9 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
       {final int? limit,
       final String? sinceId,
       final String? untilId,
+      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? untilDate}) = _$_NotesTimelineRequest;
+      final DateTime? untilDate}) = _$_NotesTimelineRequest;
 
   factory _NotesTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesTimelineRequest.fromJson;

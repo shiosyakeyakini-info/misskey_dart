@@ -242,14 +242,12 @@ class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
 abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
   const factory _ChannelsTimelineRequest(
       {required final String channelId,
-      @Assert('limit > 0')
-          final int? limit,
+      @Assert('limit > 0') final int? limit,
       final String? sinceId,
       final String? untilId,
+      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? untilDate}) = _$_ChannelsTimelineRequest;
+      final DateTime? untilDate}) = _$_ChannelsTimelineRequest;
 
   factory _ChannelsTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$_ChannelsTimelineRequest.fromJson;

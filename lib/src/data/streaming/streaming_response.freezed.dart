@@ -169,7 +169,7 @@ class _$_StreamingResponse implements _StreamingResponse {
 abstract class _StreamingResponse implements StreamingResponse {
   const factory _StreamingResponse(
       {@StreamingResponseTypeJsonConverter()
-          required final StreamingResponseType type,
+      required final StreamingResponseType type,
       required final Map<String, dynamic> body}) = _$_StreamingResponse;
 
   factory _StreamingResponse.fromJson(Map<String, dynamic> json) =

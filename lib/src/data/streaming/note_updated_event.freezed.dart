@@ -186,7 +186,7 @@ abstract class _NoteUpdatedEvent implements NoteUpdatedEvent {
   const factory _NoteUpdatedEvent(
       {required final String id,
       @NoteUpdatedEventTypeJsonConverter()
-          required final NoteUpdatedEventType type,
+      required final NoteUpdatedEventType type,
       required final Map<String, dynamic> body}) = _$_NoteUpdatedEvent;
 
   factory _NoteUpdatedEvent.fromJson(Map<String, dynamic> json) =

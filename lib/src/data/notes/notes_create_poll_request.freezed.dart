@@ -216,12 +216,12 @@ class _$_NotesCreatePollRequest implements _NotesCreatePollRequest {
 
 abstract class _NotesCreatePollRequest implements NotesCreatePollRequest {
   const factory _NotesCreatePollRequest(
-      {required final List<String> choices,
-      final bool? multiple,
-      @NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          {required final List<String> choices,
+          final bool? multiple,
+          @NullableEpocTimeDateTimeConverter.withMilliSeconds()
           final DateTime? expiresAt,
-      @NullableDurationConverter()
-          final Duration? expiredAfter}) = _$_NotesCreatePollRequest;
+          @NullableDurationConverter() final Duration? expiredAfter}) =
+      _$_NotesCreatePollRequest;
 
   factory _NotesCreatePollRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesCreatePollRequest.fromJson;

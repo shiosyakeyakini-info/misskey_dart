@@ -238,10 +238,9 @@ abstract class _UsersReactionsRequest implements UsersReactionsRequest {
       final int? limit,
       final String? sinceId,
       final String? untilId,
+      @EpocTimeDateTimeConverter.withMilliSeconds() final dynamic sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-          final dynamic sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-          final dynamic untilDate}) = _$_UsersReactionsRequest;
+      final dynamic untilDate}) = _$_UsersReactionsRequest;
 
   factory _UsersReactionsRequest.fromJson(Map<String, dynamic> json) =
       _$_UsersReactionsRequest.fromJson;

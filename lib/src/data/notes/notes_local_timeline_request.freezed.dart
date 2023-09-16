@@ -298,10 +298,9 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
       final int? limit,
       final String? sinceId,
       final String? untilId,
+      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-          final DateTime? untilDate}) = _$_NotesLocalTimelineRequest;
+      final DateTime? untilDate}) = _$_NotesLocalTimelineRequest;
 
   factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesLocalTimelineRequest.fromJson;
