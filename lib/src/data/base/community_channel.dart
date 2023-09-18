@@ -19,6 +19,7 @@ class CommunityChannel with _$CommunityChannel {
     required List<String> pinnedNoteIds,
     required int usersCount,
     required int notesCount,
+    @Default(false) bool isSensitive,
     required bool isFollowing,
     required bool isFavorited,
     required bool hasUnreadNote,

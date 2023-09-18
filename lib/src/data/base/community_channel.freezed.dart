@@ -33,6 +33,7 @@ mixin _$CommunityChannel {
   List<String> get pinnedNoteIds => throw _privateConstructorUsedError;
   int get usersCount => throw _privateConstructorUsedError;
   int get notesCount => throw _privateConstructorUsedError;
+  bool get isSensitive => throw _privateConstructorUsedError;
   bool get isFollowing => throw _privateConstructorUsedError;
   bool get isFavorited => throw _privateConstructorUsedError;
   bool get hasUnreadNote => throw _privateConstructorUsedError;
@@ -61,6 +62,7 @@ abstract class $CommunityChannelCopyWith<$Res> {
       List<String> pinnedNoteIds,
       int usersCount,
       int notesCount,
+      bool isSensitive,
       bool isFollowing,
       bool isFavorited,
       bool hasUnreadNote,
@@ -90,6 +92,7 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
     Object? pinnedNoteIds = null,
     Object? usersCount = null,
     Object? notesCount = null,
+    Object? isSensitive = null,
     Object? isFollowing = null,
     Object? isFavorited = null,
     Object? hasUnreadNote = null,
@@ -136,6 +139,10 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
           ? _value.notesCount
           : notesCount // ignore: cast_nullable_to_non_nullable
               as int,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
       isFollowing: null == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -175,6 +182,7 @@ abstract class _$$_CommunityChannelCopyWith<$Res>
       List<String> pinnedNoteIds,
       int usersCount,
       int notesCount,
+      bool isSensitive,
       bool isFollowing,
       bool isFavorited,
       bool hasUnreadNote,
@@ -202,6 +210,7 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
     Object? pinnedNoteIds = null,
     Object? usersCount = null,
     Object? notesCount = null,
+    Object? isSensitive = null,
     Object? isFollowing = null,
     Object? isFavorited = null,
     Object? hasUnreadNote = null,
@@ -248,6 +257,10 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
           ? _value.notesCount
           : notesCount // ignore: cast_nullable_to_non_nullable
               as int,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
       isFollowing: null == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -282,6 +295,7 @@ class _$_CommunityChannel implements _CommunityChannel {
       required final List<String> pinnedNoteIds,
       required this.usersCount,
       required this.notesCount,
+      this.isSensitive = false,
       required this.isFollowing,
       required this.isFavorited,
       required this.hasUnreadNote,
@@ -322,6 +336,9 @@ class _$_CommunityChannel implements _CommunityChannel {
   @override
   final int notesCount;
   @override
+  @JsonKey()
+  final bool isSensitive;
+  @override
   final bool isFollowing;
   @override
   final bool isFavorited;
@@ -339,7 +356,7 @@ class _$_CommunityChannel implements _CommunityChannel {
 
   @override
   String toString() {
-    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, usersCount: $usersCount, notesCount: $notesCount, isFollowing: $isFollowing, isFavorited: $isFavorited, hasUnreadNote: $hasUnreadNote, pinnedNotes: $pinnedNotes)';
+    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, isFollowing: $isFollowing, isFavorited: $isFavorited, hasUnreadNote: $hasUnreadNote, pinnedNotes: $pinnedNotes)';
   }
 
   @override
@@ -364,6 +381,8 @@ class _$_CommunityChannel implements _CommunityChannel {
                 other.usersCount == usersCount) &&
             (identical(other.notesCount, notesCount) ||
                 other.notesCount == notesCount) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
             (identical(other.isFollowing, isFollowing) ||
                 other.isFollowing == isFollowing) &&
             (identical(other.isFavorited, isFavorited) ||
@@ -388,6 +407,7 @@ class _$_CommunityChannel implements _CommunityChannel {
       const DeepCollectionEquality().hash(_pinnedNoteIds),
       usersCount,
       notesCount,
+      isSensitive,
       isFollowing,
       isFavorited,
       hasUnreadNote,
@@ -419,6 +439,7 @@ abstract class _CommunityChannel implements CommunityChannel {
       required final List<String> pinnedNoteIds,
       required final int usersCount,
       required final int notesCount,
+      final bool isSensitive,
       required final bool isFollowing,
       required final bool isFavorited,
       required final bool hasUnreadNote,
@@ -450,6 +471,8 @@ abstract class _CommunityChannel implements CommunityChannel {
   int get usersCount;
   @override
   int get notesCount;
+  @override
+  bool get isSensitive;
   @override
   bool get isFollowing;
   @override
