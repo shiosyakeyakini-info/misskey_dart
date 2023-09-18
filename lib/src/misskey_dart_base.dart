@@ -140,6 +140,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    bool? withReplies,
   }) =>
       streamingService.connect(
         channel: Channel.homeTimeline,
@@ -165,6 +166,9 @@ class Misskey {
               return;
           }
         },
+        parameters: {
+          if (withReplies != null) "withReplies": withReplies,
+        },
       );
 
   /// ローカルタイムラインに接続します。
@@ -174,6 +178,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    bool? withReplies,
   }) =>
       streamingService.connect(
         channel: Channel.localTimeline,
@@ -199,6 +204,9 @@ class Misskey {
               return;
           }
         },
+        parameters: {
+          if (withReplies != null) "withReplies": withReplies,
+        },
       );
 
   /// グローバルタイムラインに接続します。
@@ -208,6 +216,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    bool? withReplies,
   }) =>
       streamingService.connect(
         channel: Channel.globalTimeline,
@@ -233,6 +242,9 @@ class Misskey {
               return;
           }
         },
+        parameters: {
+          if (withReplies != null) "withReplies": withReplies,
+        },
       );
 
   /// ソーシャルタイムラインに接続します。
@@ -242,6 +254,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    bool? withReplies,
   }) =>
       streamingService.connect(
         channel: Channel.hybridTimeline,
@@ -266,6 +279,9 @@ class Misskey {
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
           }
+        },
+        parameters: {
+          if (withReplies != null) "withReplies": withReplies,
         },
       );
 
