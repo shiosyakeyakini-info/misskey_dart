@@ -144,6 +144,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
     FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
+
+    /// ファイルを含まない投稿を除外します。一部のフォークでのみ有効
+    bool? withFiles,
   }) =>
       streamingService.connect(
         channel: Channel.homeTimeline,
@@ -172,6 +175,9 @@ class Misskey {
               return;
           }
         },
+        parameters: {
+          if (withFiles != null) "withFiles": withFiles,
+        },
       );
 
   /// ローカルタイムラインに接続します。
@@ -182,6 +188,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
     FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
+
+    /// ファイルを含まない投稿を除外します。一部のフォークでのみ有効
+    bool? withFiles,
   }) =>
       streamingService.connect(
         channel: Channel.localTimeline,
@@ -210,6 +219,9 @@ class Misskey {
               return;
           }
         },
+        parameters: {
+          if (withFiles != null) "withFiles": withFiles,
+        },
       );
 
   /// グローバルタイムラインに接続します。
@@ -220,6 +232,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
     FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
+
+    /// ファイルを含まない投稿を除外します。一部のフォークでのみ有効
+    bool? withFiles,
   }) =>
       streamingService.connect(
         channel: Channel.globalTimeline,
@@ -248,6 +263,9 @@ class Misskey {
               return;
           }
         },
+        parameters: {
+          if (withFiles != null) "withFiles": withFiles,
+        },
       );
 
   /// ソーシャルタイムラインに接続します。
@@ -258,6 +276,9 @@ class Misskey {
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
     FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
+
+    /// ファイルを含まない投稿を除外します。一部のフォークでのみ有効
+    bool? withFiles,
   }) =>
       streamingService.connect(
         channel: Channel.hybridTimeline,
@@ -285,6 +306,9 @@ class Misskey {
               await onUpdated?.call(id, NoteEdited.fromJson(response));
               return;
           }
+        },
+        parameters: {
+          if (withFiles != null) "withFiles": withFiles,
         },
       );
 
