@@ -13,6 +13,9 @@ enum Channel {
   /// ソーシャルタイムライン
   hybridTimeline,
 
+  /// ロールタイムライン
+  roleTimeline,
+
   /// チャンネル
   channel,
 

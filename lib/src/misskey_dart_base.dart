@@ -269,6 +269,42 @@ class Misskey {
         },
       );
 
+  /// ロールタイムラインに接続します。
+  SocketController roleTimelineStream({
+    required String roleId,
+    FutureOr<void> Function(Note note)? onNoteReceived,
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
+    FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
+    FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+  }) =>
+      streamingService.connect(
+        channel: Channel.roleTimeline,
+        onChannelEventReceived: (type, response) async {
+          if (response == null) return;
+
+          final note = Note.fromJson(response);
+          await onNoteReceived?.call(note);
+        },
+        onNoteUpdatedEventReceived: (id, type, response) async {
+          switch (type) {
+            case NoteUpdatedEventType.reacted:
+              await onReacted?.call(id, TimelineReacted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.unreacted:
+              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.deleted:
+              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
+              return;
+            case NoteUpdatedEventType.pollVoted:
+              await onVoted?.call(id, TimelineVoted.fromJson(response));
+              return;
+          }
+        },
+        parameters: {"roleId": roleId},
+      );
+
   /// チャンネル（トピック毎の機能の方）に接続します。
   SocketController channelStream({
     required String channelId,
