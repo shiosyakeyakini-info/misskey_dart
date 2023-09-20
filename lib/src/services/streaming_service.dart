@@ -171,10 +171,12 @@ class StreamingService {
   Future<void> close() async {
     try {
       streamingChannelControllers.clear();
-      await Future.wait([
-        subscription?.cancel() ?? Future.value(),
-        webSocketChannel.sink.close(),
-      ]);
+      if (webSocketChannel.closeCode == null) {
+        await Future.wait([
+          subscription?.cancel() ?? Future.value(),
+          webSocketChannel.sink.close(),
+        ]);
+      }
     } catch (e) {
       print(e);
     } finally {
