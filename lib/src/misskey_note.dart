@@ -73,15 +73,6 @@ class MisskeyNotes {
     return response.map((e) => Note.fromJson(e));
   }
 
-  /// ロールタイムラインを取得します。
-  Future<Iterable<Note>> roleTimeline(
-    RolesNotesRequest request,
-  ) async {
-    final response =
-        await _apiService.post<List>("roles/notes", request.toJson());
-    return response.map((e) => Note.fromJson(e));
-  }
-
   /// ユーザーリストのタイムラインを取得します。
   Future<Iterable<Note>> userListTimeline(
     UserListTimelineRequest request,
