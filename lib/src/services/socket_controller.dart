@@ -81,12 +81,17 @@ class SocketController {
     } catch (e) {
       print("maybe already disconnected");
       print(e);
+      rethrow;
+    } finally {
+      onDisconnected?.call(id);
+      isDisconnected = true;
     }
-    onDisconnected?.call(id);
-    isDisconnected = true;
   }
 
   void reconnect() {
+    if (webSocketChannel.closeCode != null) {
+      throw Exception("already websocket was closed");
+    }
     disconnect();
     connect();
   }
