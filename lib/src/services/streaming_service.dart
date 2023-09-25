@@ -175,7 +175,7 @@ class StreamingService {
     try {
       streamingChannelControllers.clear();
       if (webSocketChannel.closeCode == null) {
-        await Future.wait([
+        /*await*/ Future.wait([
           subscription?.cancel() ?? Future.value(),
           webSocketChannel.sink.close(),
         ]);
