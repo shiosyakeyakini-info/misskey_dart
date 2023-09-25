@@ -21,6 +21,7 @@ class StreamingService {
   final String? token;
   final String host;
   final String? streamingUrl;
+  final Duration? connectionTimeout;
   WebSocketChannel? _webSocketChannel;
   final HashMap<String, SocketController> streamingChannelControllers =
       HashMap();
@@ -30,12 +31,14 @@ class StreamingService {
     this.token,
     required this.host,
     this.streamingUrl,
+    this.connectionTimeout,
   });
 
   WebSocketChannel get webSocketChannel {
     _webSocketChannel ??= IOWebSocketChannel.connect(
       "${streamingUrl ?? "wss://$host/streaming"}?i=$token",
       pingInterval: Duration(minutes: 1),
+      connectTimeout: connectionTimeout,
     );
     return _webSocketChannel!;
   }
