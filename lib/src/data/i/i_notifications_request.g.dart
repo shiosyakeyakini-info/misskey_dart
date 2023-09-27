@@ -55,4 +55,5 @@ const _$NotificationTypeEnumMap = {
   NotificationType.app: 'app',
   NotificationType.achievementEarned: 'achievementEarned',
   NotificationType.test: 'test',
+  NotificationType.note: 'note',
 };
