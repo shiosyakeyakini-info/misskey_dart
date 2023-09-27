@@ -14,7 +14,8 @@ enum NotificationType {
   groupInvited,
   app,
   achievementEarned,
-  test
+  test,
+  note
 }
 
 class NotificationTypeJsonConverter
