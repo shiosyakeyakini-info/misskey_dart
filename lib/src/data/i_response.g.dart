@@ -93,9 +93,10 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
           .map((e) => e as String)
           .toList(),
       mutingNotificationTypes:
-          (json['mutingNotificationTypes'] as List<dynamic>)
-              .map((e) => e as String)
+          (json['mutingNotificationTypes'] as List<dynamic>?)
+              ?.map((e) => e as String)
               .toList(),
+      notificationRecieveConfig: json['notificationRecieveConfig'],
       emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -174,6 +175,7 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
           instance.mutedWords.map(const MuteWordsConverter().toJson).toList(),
       'mutedInstances': instance.mutedInstances,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
+      'notificationRecieveConfig': instance.notificationRecieveConfig,
       'emailNotificationTypes': instance.emailNotificationTypes,
       'achievements': instance.achievements,
       'loggedInDays': instance.loggedInDays,

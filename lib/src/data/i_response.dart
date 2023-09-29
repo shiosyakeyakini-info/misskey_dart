@@ -72,7 +72,9 @@ class IResponse with _$IResponse {
     @Default([]) List<AnnouncementsResponse> unreadAnnouncements,
     @MuteWordsConverter() required List<MuteWord> mutedWords,
     required List<String> mutedInstances,
-    required List<String> mutingNotificationTypes,
+    @Deprecated("Depracted from Misskey 2023.9.2")
+    List<String>? mutingNotificationTypes,
+    dynamic notificationRecieveConfig,
     required List<String> emailNotificationTypes,
     //required bool showTimelineReplies,
     required List<UserAchievement> achievements,
