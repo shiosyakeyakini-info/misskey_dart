@@ -22,7 +22,7 @@ UsersUsersRequest _$UsersUsersRequestFromJson(Map<String, dynamic> json) {
 mixin _$UsersUsersRequest {
   int? get limit => throw _privateConstructorUsedError;
   int? get offset => throw _privateConstructorUsedError;
-  @UsersSortConverter()
+  @NullableUsersSortConverter()
   UsersSortType? get sort => throw _privateConstructorUsedError;
   UsersState? get state => throw _privateConstructorUsedError;
   Origin? get origin => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $UsersUsersRequestCopyWith<$Res> {
   $Res call(
       {int? limit,
       int? offset,
-      @UsersSortConverter() UsersSortType? sort,
+      @NullableUsersSortConverter() UsersSortType? sort,
       UsersState? state,
       Origin? origin,
       String? hostname});
@@ -109,7 +109,7 @@ abstract class _$$_UsersUsersRequestCopyWith<$Res>
   $Res call(
       {int? limit,
       int? offset,
-      @UsersSortConverter() UsersSortType? sort,
+      @NullableUsersSortConverter() UsersSortType? sort,
       UsersState? state,
       Origin? origin,
       String? hostname});
@@ -168,7 +168,7 @@ class _$_UsersUsersRequest implements _UsersUsersRequest {
   const _$_UsersUsersRequest(
       {this.limit,
       this.offset,
-      @UsersSortConverter() this.sort,
+      @NullableUsersSortConverter() this.sort,
       this.state,
       this.origin,
       this.hostname});
@@ -181,7 +181,7 @@ class _$_UsersUsersRequest implements _UsersUsersRequest {
   @override
   final int? offset;
   @override
-  @UsersSortConverter()
+  @NullableUsersSortConverter()
   final UsersSortType? sort;
   @override
   final UsersState? state;
@@ -233,7 +233,7 @@ abstract class _UsersUsersRequest implements UsersUsersRequest {
   const factory _UsersUsersRequest(
       {final int? limit,
       final int? offset,
-      @UsersSortConverter() final UsersSortType? sort,
+      @NullableUsersSortConverter() final UsersSortType? sort,
       final UsersState? state,
       final Origin? origin,
       final String? hostname}) = _$_UsersUsersRequest;
@@ -246,7 +246,7 @@ abstract class _UsersUsersRequest implements UsersUsersRequest {
   @override
   int? get offset;
   @override
-  @UsersSortConverter()
+  @NullableUsersSortConverter()
   UsersSortType? get sort;
   @override
   UsersState? get state;
