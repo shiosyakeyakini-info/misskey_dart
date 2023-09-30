@@ -23,10 +23,17 @@ class ApiService {
     dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
   }
 
-  Future<T> post<T>(String path, Map<String, dynamic> request) async {
+  Future<T> post<T>(
+    String path,
+    Map<String, dynamic> request, {
+    bool Function(String key, String password)? excludeRemoveNullPredicate,
+  }) async {
     request
       ..addEntries([MapEntry("i", token)])
-      ..removeWhere((key, value) => value == null);
+      ..removeWhere((key, value) =>
+          value == null &&
+          (excludeRemoveNullPredicate == null ||
+              !excludeRemoveNullPredicate.call(key, value)));
     final response = await dio.request(path, data: request);
     return response.data;
   }
