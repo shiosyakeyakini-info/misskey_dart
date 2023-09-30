@@ -25,4 +25,5 @@ const _$NoteUpdatedEventTypeEnumMap = {
   NoteUpdatedEventType.unreacted: 'unreacted',
   NoteUpdatedEventType.deleted: 'deleted',
   NoteUpdatedEventType.pollVoted: 'pollVoted',
+  NoteUpdatedEventType.updated: 'updated',
 };

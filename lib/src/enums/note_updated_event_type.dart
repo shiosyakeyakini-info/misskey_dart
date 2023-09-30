@@ -5,6 +5,7 @@ enum NoteUpdatedEventType {
   unreacted,
   deleted,
   pollVoted,
+  updated,
 }
 
 class NoteUpdatedEventTypeJsonConverter
