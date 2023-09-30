@@ -13,6 +13,7 @@ class Note with _$Note {
   const factory Note({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
+    @NullableDateTimeConverter() DateTime? updatedAt,
     String? text,
     String? cw,
     required User user,
@@ -39,6 +40,7 @@ class Note with _$Note {
     @NullableUriConverter() Uri? uri,
     @NullableUriConverter() Uri? url,
     NotePoll? poll,
+    int? clippedCount,
   }) = _Note;
 
   factory Note.fromJson(Map<String, Object?> json) => _$NoteFromJson(json);

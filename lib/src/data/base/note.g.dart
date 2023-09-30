@@ -10,6 +10,8 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
+      updatedAt: _$JsonConverterFromJson<String, DateTime?>(
+          json['updatedAt'], const NullableDateTimeConverter().fromJson),
       text: json['text'] as String?,
       cw: json['cw'] as String?,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
@@ -59,11 +61,13 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
       poll: json['poll'] == null
           ? null
           : NotePoll.fromJson(json['poll'] as Map<String, dynamic>),
+      clippedCount: json['clippedCount'] as int?,
     );
 
 Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
+      'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
       'text': instance.text,
       'cw': instance.cw,
       'user': instance.user,
@@ -92,7 +96,14 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'uri': const NullableUriConverter().toJson(instance.uri),
       'url': const NullableUriConverter().toJson(instance.url),
       'poll': instance.poll,
+      'clippedCount': instance.clippedCount,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
 
 const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
@@ -101,12 +112,6 @@ const _$ReactionAcceptanceEnumMap = {
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
   ReactionAcceptance.likeOnly: 'likeOnly',
 };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
 
 _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>
     _$_NoteChannelInfo(

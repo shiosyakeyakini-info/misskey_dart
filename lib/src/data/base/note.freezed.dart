@@ -23,6 +23,8 @@ mixin _$Note {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @NullableDateTimeConverter()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   String? get cw => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
@@ -55,6 +57,7 @@ mixin _$Note {
   @NullableUriConverter()
   Uri? get url => throw _privateConstructorUsedError;
   NotePoll? get poll => throw _privateConstructorUsedError;
+  int? get clippedCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,6 +72,7 @@ abstract class $NoteCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
+      @NullableDateTimeConverter() DateTime? updatedAt,
       String? text,
       String? cw,
       User user,
@@ -94,7 +98,8 @@ abstract class $NoteCopyWith<$Res> {
       NoteChannelInfo? channel,
       @NullableUriConverter() Uri? uri,
       @NullableUriConverter() Uri? url,
-      NotePoll? poll});
+      NotePoll? poll,
+      int? clippedCount});
 
   $UserCopyWith<$Res> get user;
   $NoteCopyWith<$Res>? get renote;
@@ -118,6 +123,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
+    Object? updatedAt = freezed,
     Object? text = freezed,
     Object? cw = freezed,
     Object? user = null,
@@ -144,6 +150,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? uri = freezed,
     Object? url = freezed,
     Object? poll = freezed,
+    Object? clippedCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -154,6 +161,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -258,6 +269,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
               as NotePoll?,
+      clippedCount: freezed == clippedCount
+          ? _value.clippedCount
+          : clippedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -327,6 +342,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
+      @NullableDateTimeConverter() DateTime? updatedAt,
       String? text,
       String? cw,
       User user,
@@ -352,7 +368,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       NoteChannelInfo? channel,
       @NullableUriConverter() Uri? uri,
       @NullableUriConverter() Uri? url,
-      NotePoll? poll});
+      NotePoll? poll,
+      int? clippedCount});
 
   @override
   $UserCopyWith<$Res> get user;
@@ -377,6 +394,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
+    Object? updatedAt = freezed,
     Object? text = freezed,
     Object? cw = freezed,
     Object? user = null,
@@ -403,6 +421,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? uri = freezed,
     Object? url = freezed,
     Object? poll = freezed,
+    Object? clippedCount = freezed,
   }) {
     return _then(_$_Note(
       id: null == id
@@ -413,6 +432,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -517,6 +540,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
               as NotePoll?,
+      clippedCount: freezed == clippedCount
+          ? _value.clippedCount
+          : clippedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -527,6 +554,7 @@ class _$_Note implements _Note {
   const _$_Note(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
+      @NullableDateTimeConverter() this.updatedAt,
       this.text,
       this.cw,
       required this.user,
@@ -552,7 +580,8 @@ class _$_Note implements _Note {
       this.channel,
       @NullableUriConverter() this.uri,
       @NullableUriConverter() this.url,
-      this.poll})
+      this.poll,
+      this.clippedCount})
       : _reactions = reactions,
         _reactionEmojis = reactionEmojis,
         _emojis = emojis,
@@ -568,6 +597,9 @@ class _$_Note implements _Note {
   @override
   @DateTimeConverter()
   final DateTime createdAt;
+  @override
+  @NullableDateTimeConverter()
+  final DateTime? updatedAt;
   @override
   final String? text;
   @override
@@ -670,10 +702,12 @@ class _$_Note implements _Note {
   final Uri? url;
   @override
   final NotePoll? poll;
+  @override
+  final int? clippedCount;
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, visibleUserIds: $visibleUserIds, mentions: $mentions, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, poll: $poll)';
+    return 'Note(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, visibleUserIds: $visibleUserIds, mentions: $mentions, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, poll: $poll, clippedCount: $clippedCount)';
   }
 
   @override
@@ -684,6 +718,8 @@ class _$_Note implements _Note {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.cw, cw) || other.cw == cw) &&
             (identical(other.user, user) || other.user == user) &&
@@ -720,7 +756,9 @@ class _$_Note implements _Note {
             (identical(other.channel, channel) || other.channel == channel) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.poll, poll) || other.poll == poll));
+            (identical(other.poll, poll) || other.poll == poll) &&
+            (identical(other.clippedCount, clippedCount) ||
+                other.clippedCount == clippedCount));
   }
 
   @JsonKey(ignore: true)
@@ -729,6 +767,7 @@ class _$_Note implements _Note {
         runtimeType,
         id,
         createdAt,
+        updatedAt,
         text,
         cw,
         user,
@@ -754,7 +793,8 @@ class _$_Note implements _Note {
         channel,
         uri,
         url,
-        poll
+        poll,
+        clippedCount
       ]);
 
   @JsonKey(ignore: true)
@@ -775,6 +815,7 @@ abstract class _Note implements Note {
   const factory _Note(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
+      @NullableDateTimeConverter() final DateTime? updatedAt,
       final String? text,
       final String? cw,
       required final User user,
@@ -800,7 +841,8 @@ abstract class _Note implements Note {
       final NoteChannelInfo? channel,
       @NullableUriConverter() final Uri? uri,
       @NullableUriConverter() final Uri? url,
-      final NotePoll? poll}) = _$_Note;
+      final NotePoll? poll,
+      final int? clippedCount}) = _$_Note;
 
   factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
 
@@ -809,6 +851,9 @@ abstract class _Note implements Note {
   @override
   @DateTimeConverter()
   DateTime get createdAt;
+  @override
+  @NullableDateTimeConverter()
+  DateTime? get updatedAt;
   @override
   String? get text;
   @override
@@ -866,6 +911,8 @@ abstract class _Note implements Note {
   Uri? get url;
   @override
   NotePoll? get poll;
+  @override
+  int? get clippedCount;
   @override
   @JsonKey(ignore: true)
   _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
