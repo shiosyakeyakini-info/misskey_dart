@@ -94,6 +94,7 @@ export 'src/data/i/i_read_announcement_request.dart';
 export 'src/data/notes/notes_clips_request.dart';
 export 'src/data/notes/notes_timeline_request.dart';
 export 'src/data/notes/notes_create_request.dart';
+export 'src/data/notes/notes_update_request.dart';
 export 'src/data/notes/notes_delete_request.dart';
 export 'src/data/notes/notes_show_request.dart';
 export 'src/data/notes/notes_local_timeline_request.dart';
