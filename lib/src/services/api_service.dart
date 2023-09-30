@@ -26,7 +26,7 @@ class ApiService {
   Future<T> post<T>(
     String path,
     Map<String, dynamic> request, {
-    bool Function(String key, String password)? excludeRemoveNullPredicate,
+    bool Function(String key, String? value)? excludeRemoveNullPredicate,
   }) async {
     request
       ..addEntries([MapEntry("i", token)])
