@@ -143,6 +143,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.homeTimeline,
@@ -166,6 +167,9 @@ class Misskey {
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
+              return;
           }
         },
       );
@@ -177,6 +181,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.localTimeline,
@@ -200,6 +205,9 @@ class Misskey {
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
+              return;
           }
         },
       );
@@ -211,6 +219,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.globalTimeline,
@@ -234,6 +243,9 @@ class Misskey {
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
+              return;
           }
         },
       );
@@ -245,6 +257,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.hybridTimeline,
@@ -268,6 +281,9 @@ class Misskey {
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
+              return;
           }
         },
       );
@@ -280,6 +296,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.channel,
@@ -304,6 +321,9 @@ class Misskey {
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
+              return;
           }
         },
         parameters: {"channelId": channelId},
@@ -317,6 +337,7 @@ class Misskey {
     FutureOr<void> Function(User user)? onUserRemoved,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
     FutureOr<void> Function(DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
   }) =>
@@ -355,6 +376,9 @@ class Misskey {
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
               return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
+              return;
           }
         },
         parameters: {"listId": listId},
@@ -368,6 +392,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.antenna,
@@ -391,6 +416,9 @@ class Misskey {
               return;
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(response["choice"], response["userId"]);
+              return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
               return;
           }
         },
