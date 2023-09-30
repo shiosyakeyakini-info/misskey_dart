@@ -26,7 +26,7 @@ class MisskeyNotes {
 
   /// ノートを更新します。
   Future<void> update(NotesUpdateRequest request) async {
-    await _apiService.post<Map<String, dynamic>>(
+    await _apiService.post<void>(
         "notes/update", request.toJson(),
         excludeRemoveNullPredicate: (key, _) => key == "cw");
   }
