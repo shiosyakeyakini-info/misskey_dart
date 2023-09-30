@@ -1,4 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/notes/notes_update_request.dart';
 
 import 'package:misskey_dart/src/services/api_service.dart';
 
@@ -19,8 +20,14 @@ class MisskeyNotes {
 
   /// ノートを投稿します。
   Future<void> create(NotesCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
+    await _apiService.post<Map<String, dynamic>>(
         "notes/create", request.toJson());
+  }
+
+  /// ノートを更新します。
+  Future<void> update(NotesUpdateRequest request) async {
+    await _apiService.post<Map<String, dynamic>>(
+        "notes/update", request.toJson());
   }
 
   /// ノートを削除します。
