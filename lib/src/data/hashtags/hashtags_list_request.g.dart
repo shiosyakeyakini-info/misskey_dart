@@ -13,7 +13,7 @@ _$_HashtagsListRequest _$$_HashtagsListRequestFromJson(
       attachedToUserOnly: json['attachedToUserOnly'] as bool?,
       attachedToLocalUserOnly: json['attachedToLocalUserOnly'] as bool?,
       attachedToRemoteUserOnly: json['attachedToRemoteUserOnly'] as bool?,
-      sort: const HashtagsListSortConverter().fromJson(json['sort'] as String?),
+      sort: const HashtagsListSortConverter().fromJson(json['sort'] as String),
     );
 
 Map<String, dynamic> _$$_HashtagsListRequestToJson(

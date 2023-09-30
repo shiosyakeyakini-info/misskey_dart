@@ -12,7 +12,7 @@ class HashtagsListRequest with _$HashtagsListRequest {
     bool? attachedToUserOnly,
     bool? attachedToLocalUserOnly,
     bool? attachedToRemoteUserOnly,
-    @HashtagsListSortConverter() HashtagsListSortType? sort,
+    @HashtagsListSortConverter() required HashtagsListSortType sort,
   }) = _HashtagsListRequest;
 
   factory HashtagsListRequest.fromJson(Map<String, dynamic> json) =>
