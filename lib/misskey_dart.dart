@@ -151,6 +151,8 @@ export 'src/data/renote_mute/renote_mute_delete_request.dart';
 export 'src/data/mute/mute_create_request.dart';
 export 'src/data/mute/mute_delete_request.dart';
 export 'src/data/roles/roles_list_response.dart';
+export 'src/data/roles/roles_notes_request.dart';
+export 'src/data/roles/roles_show_request.dart';
 export 'src/data/roles/roles_users_request.dart';
 export 'src/data/roles/roles_users_response.dart';
 export 'src/data/hashtags/hashtags_list_request.dart';

@@ -55,6 +55,7 @@ const _$ChannelEnumMap = {
   Channel.localTimeline: 'localTimeline',
   Channel.globalTimeline: 'globalTimeline',
   Channel.hybridTimeline: 'hybridTimeline',
+  Channel.roleTimeline: 'roleTimeline',
   Channel.channel: 'channel',
   Channel.userList: 'userList',
   Channel.hashtag: 'hashtag',
