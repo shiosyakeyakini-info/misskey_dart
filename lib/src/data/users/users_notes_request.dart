@@ -8,7 +8,9 @@ part 'users_notes_request.g.dart';
 class UsersNotesRequest with _$UsersNotesRequest {
   const factory UsersNotesRequest({
     required String userId,
-    bool? includeReplies,
+    @Deprecated("removed at 2023.9.2") bool? includeReplies,
+    bool? withReplies,
+    bool? withRenotes,
     int? limit,
     String? sinceId,
     String? untilId,

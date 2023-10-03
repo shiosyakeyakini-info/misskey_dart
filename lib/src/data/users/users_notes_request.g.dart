@@ -10,6 +10,8 @@ _$_UsersNotesRequest _$$_UsersNotesRequestFromJson(Map<String, dynamic> json) =>
     _$_UsersNotesRequest(
       userId: json['userId'] as String,
       includeReplies: json['includeReplies'] as bool?,
+      withReplies: json['withReplies'] as bool?,
+      withRenotes: json['withRenotes'] as bool?,
       limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
@@ -28,6 +30,8 @@ Map<String, dynamic> _$$_UsersNotesRequestToJson(
     <String, dynamic>{
       'userId': instance.userId,
       'includeReplies': instance.includeReplies,
+      'withReplies': instance.withReplies,
+      'withRenotes': instance.withRenotes,
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,

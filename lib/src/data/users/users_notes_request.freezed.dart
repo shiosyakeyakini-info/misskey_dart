@@ -21,7 +21,10 @@ UsersNotesRequest _$UsersNotesRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UsersNotesRequest {
   String get userId => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.9.2")
   bool? get includeReplies => throw _privateConstructorUsedError;
+  bool? get withReplies => throw _privateConstructorUsedError;
+  bool? get withRenotes => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
@@ -48,7 +51,9 @@ abstract class $UsersNotesRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String userId,
-      bool? includeReplies,
+      @Deprecated("removed at 2023.9.2") bool? includeReplies,
+      bool? withReplies,
+      bool? withRenotes,
       int? limit,
       String? sinceId,
       String? untilId,
@@ -75,6 +80,8 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
   $Res call({
     Object? userId = null,
     Object? includeReplies = freezed,
+    Object? withReplies = freezed,
+    Object? withRenotes = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -93,6 +100,14 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
       includeReplies: freezed == includeReplies
           ? _value.includeReplies
           : includeReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
       limit: freezed == limit
           ? _value.limit
@@ -144,7 +159,9 @@ abstract class _$$_UsersNotesRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String userId,
-      bool? includeReplies,
+      @Deprecated("removed at 2023.9.2") bool? includeReplies,
+      bool? withReplies,
+      bool? withRenotes,
       int? limit,
       String? sinceId,
       String? untilId,
@@ -169,6 +186,8 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
     Object? includeReplies = freezed,
+    Object? withReplies = freezed,
+    Object? withRenotes = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -187,6 +206,14 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
       includeReplies: freezed == includeReplies
           ? _value.includeReplies
           : includeReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
       limit: freezed == limit
           ? _value.limit
@@ -233,7 +260,9 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
 class _$_UsersNotesRequest implements _UsersNotesRequest {
   const _$_UsersNotesRequest(
       {required this.userId,
-      this.includeReplies,
+      @Deprecated("removed at 2023.9.2") this.includeReplies,
+      this.withReplies,
+      this.withRenotes,
       this.limit,
       this.sinceId,
       this.untilId,
@@ -251,7 +280,12 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
   @override
   final String userId;
   @override
+  @Deprecated("removed at 2023.9.2")
   final bool? includeReplies;
+  @override
+  final bool? withReplies;
+  @override
+  final bool? withRenotes;
   @override
   final int? limit;
   @override
@@ -283,7 +317,7 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
 
   @override
   String toString() {
-    return 'UsersNotesRequest(userId: $userId, includeReplies: $includeReplies, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, withFiles: $withFiles, fileType: $fileType, excludeNsfw: $excludeNsfw)';
+    return 'UsersNotesRequest(userId: $userId, includeReplies: $includeReplies, withReplies: $withReplies, withRenotes: $withRenotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, withFiles: $withFiles, fileType: $fileType, excludeNsfw: $excludeNsfw)';
   }
 
   @override
@@ -294,6 +328,10 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.includeReplies, includeReplies) ||
                 other.includeReplies == includeReplies) &&
+            (identical(other.withReplies, withReplies) ||
+                other.withReplies == withReplies) &&
+            (identical(other.withRenotes, withRenotes) ||
+                other.withRenotes == withRenotes) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -316,6 +354,8 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
       runtimeType,
       userId,
       includeReplies,
+      withReplies,
+      withRenotes,
       limit,
       sinceId,
       untilId,
@@ -344,7 +384,9 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
 abstract class _UsersNotesRequest implements UsersNotesRequest {
   const factory _UsersNotesRequest(
       {required final String userId,
-      final bool? includeReplies,
+      @Deprecated("removed at 2023.9.2") final bool? includeReplies,
+      final bool? withReplies,
+      final bool? withRenotes,
       final int? limit,
       final String? sinceId,
       final String? untilId,
@@ -361,7 +403,12 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
   @override
   String get userId;
   @override
+  @Deprecated("removed at 2023.9.2")
   bool? get includeReplies;
+  @override
+  bool? get withReplies;
+  @override
+  bool? get withRenotes;
   @override
   int? get limit;
   @override
