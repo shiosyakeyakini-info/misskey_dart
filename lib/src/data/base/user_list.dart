@@ -11,6 +11,8 @@ class UsersList with _$UsersList {
     @DateTimeConverter() required DateTime createdAt,
     String? name,
     required List<String> userIds,
+    // Misskey 13.13.0 で追加. 後方互換性のためnullable
+    bool? isPublic,
   }) = _UsersList;
 
   factory UsersList.fromJson(Map<String, dynamic> json) =>

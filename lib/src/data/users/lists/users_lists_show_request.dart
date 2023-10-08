@@ -7,6 +7,7 @@ part 'users_lists_show_request.g.dart';
 class UsersListsShowRequest with _$UsersListsShowRequest {
   const factory UsersListsShowRequest({
     required String listId,
+    bool? forPublic,
   }) = _UsersListsShowRequest;
 
   factory UsersListsShowRequest.fromJson(Map<String, Object?> json) =>
