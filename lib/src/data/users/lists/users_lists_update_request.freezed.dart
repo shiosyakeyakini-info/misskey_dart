@@ -22,7 +22,8 @@ UsersListsUpdateRequest _$UsersListsUpdateRequestFromJson(
 /// @nodoc
 mixin _$UsersListsUpdateRequest {
   String get listId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  bool? get isPublic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $UsersListsUpdateRequestCopyWith<$Res> {
           $Res Function(UsersListsUpdateRequest) then) =
       _$UsersListsUpdateRequestCopyWithImpl<$Res, UsersListsUpdateRequest>;
   @useResult
-  $Res call({String listId, String name});
+  $Res call({String listId, String? name, bool? isPublic});
 }
 
 /// @nodoc
@@ -54,17 +55,22 @@ class _$UsersListsUpdateRequestCopyWithImpl<$Res,
   @override
   $Res call({
     Object? listId = null,
-    Object? name = null,
+    Object? name = freezed,
+    Object? isPublic = freezed,
   }) {
     return _then(_value.copyWith(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      isPublic: freezed == isPublic
+          ? _value.isPublic
+          : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -77,7 +83,7 @@ abstract class _$$_UsersListsUpdateRequestCopyWith<$Res>
       __$$_UsersListsUpdateRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String listId, String name});
+  $Res call({String listId, String? name, bool? isPublic});
 }
 
 /// @nodoc
@@ -93,17 +99,22 @@ class __$$_UsersListsUpdateRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? listId = null,
-    Object? name = null,
+    Object? name = freezed,
+    Object? isPublic = freezed,
   }) {
     return _then(_$_UsersListsUpdateRequest(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      isPublic: freezed == isPublic
+          ? _value.isPublic
+          : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -111,7 +122,8 @@ class __$$_UsersListsUpdateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
-  const _$_UsersListsUpdateRequest({required this.listId, required this.name});
+  const _$_UsersListsUpdateRequest(
+      {required this.listId, this.name, this.isPublic});
 
   factory _$_UsersListsUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$$_UsersListsUpdateRequestFromJson(json);
@@ -119,11 +131,13 @@ class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
   @override
   final String listId;
   @override
-  final String name;
+  final String? name;
+  @override
+  final bool? isPublic;
 
   @override
   String toString() {
-    return 'UsersListsUpdateRequest(listId: $listId, name: $name)';
+    return 'UsersListsUpdateRequest(listId: $listId, name: $name, isPublic: $isPublic)';
   }
 
   @override
@@ -132,12 +146,14 @@ class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
         (other.runtimeType == runtimeType &&
             other is _$_UsersListsUpdateRequest &&
             (identical(other.listId, listId) || other.listId == listId) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.isPublic, isPublic) ||
+                other.isPublic == isPublic));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, listId, name);
+  int get hashCode => Object.hash(runtimeType, listId, name, isPublic);
 
   @JsonKey(ignore: true)
   @override
@@ -158,7 +174,8 @@ class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
 abstract class _UsersListsUpdateRequest implements UsersListsUpdateRequest {
   const factory _UsersListsUpdateRequest(
       {required final String listId,
-      required final String name}) = _$_UsersListsUpdateRequest;
+      final String? name,
+      final bool? isPublic}) = _$_UsersListsUpdateRequest;
 
   factory _UsersListsUpdateRequest.fromJson(Map<String, dynamic> json) =
       _$_UsersListsUpdateRequest.fromJson;
@@ -166,7 +183,9 @@ abstract class _UsersListsUpdateRequest implements UsersListsUpdateRequest {
   @override
   String get listId;
   @override
-  String get name;
+  String? get name;
+  @override
+  bool? get isPublic;
   @override
   @JsonKey(ignore: true)
   _$$_UsersListsUpdateRequestCopyWith<_$_UsersListsUpdateRequest>

@@ -1,21 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'users_lists_show_request.dart';
+part of 'users_lists_unfavorite_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersListsShowRequest _$$_UsersListsShowRequestFromJson(
+_$_UsersListsUnfavoriteRequest _$$_UsersListsUnfavoriteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersListsShowRequest(
+    _$_UsersListsUnfavoriteRequest(
       listId: json['listId'] as String,
-      forPublic: json['forPublic'] as bool?,
     );
 
-Map<String, dynamic> _$$_UsersListsShowRequestToJson(
-        _$_UsersListsShowRequest instance) =>
+Map<String, dynamic> _$$_UsersListsUnfavoriteRequestToJson(
+        _$_UsersListsUnfavoriteRequest instance) =>
     <String, dynamic>{
       'listId': instance.listId,
-      'forPublic': instance.forPublic,
     };

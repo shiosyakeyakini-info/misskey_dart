@@ -7,7 +7,8 @@ part 'users_lists_update_request.g.dart';
 class UsersListsUpdateRequest with _$UsersListsUpdateRequest {
   const factory UsersListsUpdateRequest({
     required String listId,
-    required String name,
+    String? name,
+    bool? isPublic,
   }) = _UsersListsUpdateRequest;
 
   factory UsersListsUpdateRequest.fromJson(Map<String, dynamic> json) =>

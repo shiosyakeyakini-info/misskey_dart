@@ -10,7 +10,8 @@ _$_UsersListsUpdateRequest _$$_UsersListsUpdateRequestFromJson(
         Map<String, dynamic> json) =>
     _$_UsersListsUpdateRequest(
       listId: json['listId'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
+      isPublic: json['isPublic'] as bool?,
     );
 
 Map<String, dynamic> _$$_UsersListsUpdateRequestToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$_UsersListsUpdateRequestToJson(
     <String, dynamic>{
       'listId': instance.listId,
       'name': instance.name,
+      'isPublic': instance.isPublic,
     };
