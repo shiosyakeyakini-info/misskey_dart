@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/src/converters/emojis_converter.dart';
 import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 import 'package:misskey_dart/src/enums/online_status.dart';
@@ -22,7 +23,7 @@ class UsersShowResponse with _$UsersShowResponse {
     required bool isBot,
     required bool isCat,
     UserInstanceInfo? instance,
-    Map<String, String>? emojis,
+    @EmojisConverter() Map<String, String>? emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,

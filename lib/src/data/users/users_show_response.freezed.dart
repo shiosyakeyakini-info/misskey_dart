@@ -30,6 +30,7 @@ mixin _$UsersShowResponse {
   bool get isBot => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
   UserInstanceInfo? get instance => throw _privateConstructorUsedError;
+  @EmojisConverter()
   Map<String, String>? get emojis => throw _privateConstructorUsedError;
   @OnlineStatusJsonConverter()
   OnlineStatus? get onlineStatus => throw _privateConstructorUsedError;
@@ -134,7 +135,7 @@ abstract class $UsersShowResponseCopyWith<$Res> {
       bool isBot,
       bool isCat,
       UserInstanceInfo? instance,
-      Map<String, String>? emojis,
+      @EmojisConverter() Map<String, String>? emojis,
       @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
@@ -648,7 +649,7 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
       bool isBot,
       bool isCat,
       UserInstanceInfo? instance,
-      Map<String, String>? emojis,
+      @EmojisConverter() Map<String, String>? emojis,
       @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
@@ -1133,7 +1134,7 @@ class _$_UsersShowResponse extends _UsersShowResponse {
       required this.isBot,
       required this.isCat,
       this.instance,
-      final Map<String, String>? emojis,
+      @EmojisConverter() final Map<String, String>? emojis,
       @OnlineStatusJsonConverter() this.onlineStatus,
       @NullableUriConverter() this.url,
       @NullableUriConverter() this.uri,
@@ -1237,6 +1238,7 @@ class _$_UsersShowResponse extends _UsersShowResponse {
   final UserInstanceInfo? instance;
   final Map<String, String>? _emojis;
   @override
+  @EmojisConverter()
   Map<String, String>? get emojis {
     final value = _emojis;
     if (value == null) return null;
@@ -1710,7 +1712,7 @@ abstract class _UsersShowResponse extends UsersShowResponse {
       required final bool isBot,
       required final bool isCat,
       final UserInstanceInfo? instance,
-      final Map<String, String>? emojis,
+      @EmojisConverter() final Map<String, String>? emojis,
       @OnlineStatusJsonConverter() final OnlineStatus? onlineStatus,
       @NullableUriConverter() final Uri? url,
       @NullableUriConverter() final Uri? uri,
@@ -1802,6 +1804,7 @@ abstract class _UsersShowResponse extends UsersShowResponse {
   @override
   UserInstanceInfo? get instance;
   @override
+  @EmojisConverter()
   Map<String, String>? get emojis;
   @override
   @OnlineStatusJsonConverter()

@@ -19,9 +19,7 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
       instance: json['instance'] == null
           ? null
           : UserInstanceInfo.fromJson(json['instance'] as Map<String, dynamic>),
-      emojis: (json['emojis'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as String),
-      ),
+      emojis: const EmojisConverter().fromJson(json['emojis']),
       onlineStatus: const OnlineStatusJsonConverter()
           .fromJson(json['onlineStatus'] as String?),
       url: _$JsonConverterFromJson<String, Uri?>(
@@ -134,7 +132,8 @@ Map<String, dynamic> _$$_UsersShowResponseToJson(
       'isBot': instance.isBot,
       'isCat': instance.isCat,
       'instance': instance.instance,
-      'emojis': instance.emojis,
+      'emojis': _$JsonConverterToJson<dynamic, Map<String, String>>(
+          instance.emojis, const EmojisConverter().toJson),
       'onlineStatus':
           const OnlineStatusJsonConverter().toJson(instance.onlineStatus),
       'url': const NullableUriConverter().toJson(instance.url),
@@ -212,3 +211,9 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
