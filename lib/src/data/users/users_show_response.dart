@@ -101,6 +101,7 @@ class UsersShowResponse with _$UsersShowResponse {
         id: id,
         username: username,
         host: host,
+        name: name,
         onlineStatus: onlineStatus,
         badgeRoles: roles
                 ?.map((e) => UserBadgeRole(name: e.name, iconUrl: e.iconUrl))
