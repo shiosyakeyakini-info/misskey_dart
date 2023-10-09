@@ -16,11 +16,10 @@ _$_AntennasUpdateRequest _$$_AntennasUpdateRequestFromJson(
       keywords: (json['keywords'] as List<dynamic>)
           .map((e) => (e as List<dynamic>).map((e) => e as String).toList())
           .toList(),
-      excludeKeywords: (json['excludeKeywords'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>).map((e) => e as String).toList())
+      excludeKeywords: (json['excludeKeywords'] as List<dynamic>)
+          .map((e) => (e as List<dynamic>).map((e) => e as String).toList())
           .toList(),
-      users:
-          (json['users'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),
       caseSensitive: json['caseSensitive'] as bool,
       withReplies: json['withReplies'] as bool,
       withFile: json['withFile'] as bool,

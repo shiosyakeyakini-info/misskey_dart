@@ -25,8 +25,8 @@ mixin _$AntennasCreateRequest {
   AntennaSource get src => throw _privateConstructorUsedError;
   String? get userListId => throw _privateConstructorUsedError;
   List<List<String>> get keywords => throw _privateConstructorUsedError;
-  List<List<String>>? get excludeKeywords => throw _privateConstructorUsedError;
-  List<String>? get users => throw _privateConstructorUsedError;
+  List<List<String>> get excludeKeywords => throw _privateConstructorUsedError;
+  List<String> get users => throw _privateConstructorUsedError;
   bool get caseSensitive => throw _privateConstructorUsedError;
   bool get withReplies => throw _privateConstructorUsedError;
   bool get withFile => throw _privateConstructorUsedError;
@@ -49,8 +49,8 @@ abstract class $AntennasCreateRequestCopyWith<$Res> {
       AntennaSource src,
       String? userListId,
       List<List<String>> keywords,
-      List<List<String>>? excludeKeywords,
-      List<String>? users,
+      List<List<String>> excludeKeywords,
+      List<String> users,
       bool caseSensitive,
       bool withReplies,
       bool withFile,
@@ -75,8 +75,8 @@ class _$AntennasCreateRequestCopyWithImpl<$Res,
     Object? src = null,
     Object? userListId = freezed,
     Object? keywords = null,
-    Object? excludeKeywords = freezed,
-    Object? users = freezed,
+    Object? excludeKeywords = null,
+    Object? users = null,
     Object? caseSensitive = null,
     Object? withReplies = null,
     Object? withFile = null,
@@ -99,14 +99,14 @@ class _$AntennasCreateRequestCopyWithImpl<$Res,
           ? _value.keywords
           : keywords // ignore: cast_nullable_to_non_nullable
               as List<List<String>>,
-      excludeKeywords: freezed == excludeKeywords
+      excludeKeywords: null == excludeKeywords
           ? _value.excludeKeywords
           : excludeKeywords // ignore: cast_nullable_to_non_nullable
-              as List<List<String>>?,
-      users: freezed == users
+              as List<List<String>>,
+      users: null == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       caseSensitive: null == caseSensitive
           ? _value.caseSensitive
           : caseSensitive // ignore: cast_nullable_to_non_nullable
@@ -140,8 +140,8 @@ abstract class _$$_AntennasCreateRequestCopyWith<$Res>
       AntennaSource src,
       String? userListId,
       List<List<String>> keywords,
-      List<List<String>>? excludeKeywords,
-      List<String>? users,
+      List<List<String>> excludeKeywords,
+      List<String> users,
       bool caseSensitive,
       bool withReplies,
       bool withFile,
@@ -163,8 +163,8 @@ class __$$_AntennasCreateRequestCopyWithImpl<$Res>
     Object? src = null,
     Object? userListId = freezed,
     Object? keywords = null,
-    Object? excludeKeywords = freezed,
-    Object? users = freezed,
+    Object? excludeKeywords = null,
+    Object? users = null,
     Object? caseSensitive = null,
     Object? withReplies = null,
     Object? withFile = null,
@@ -187,14 +187,14 @@ class __$$_AntennasCreateRequestCopyWithImpl<$Res>
           ? _value._keywords
           : keywords // ignore: cast_nullable_to_non_nullable
               as List<List<String>>,
-      excludeKeywords: freezed == excludeKeywords
+      excludeKeywords: null == excludeKeywords
           ? _value._excludeKeywords
           : excludeKeywords // ignore: cast_nullable_to_non_nullable
-              as List<List<String>>?,
-      users: freezed == users
+              as List<List<String>>,
+      users: null == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       caseSensitive: null == caseSensitive
           ? _value.caseSensitive
           : caseSensitive // ignore: cast_nullable_to_non_nullable
@@ -223,8 +223,8 @@ class _$_AntennasCreateRequest implements _AntennasCreateRequest {
       required this.src,
       this.userListId,
       required final List<List<String>> keywords,
-      required final List<List<String>>? excludeKeywords,
-      required final List<String>? users,
+      required final List<List<String>> excludeKeywords,
+      required final List<String> users,
       required this.caseSensitive,
       required this.withReplies,
       required this.withFile,
@@ -250,24 +250,20 @@ class _$_AntennasCreateRequest implements _AntennasCreateRequest {
     return EqualUnmodifiableListView(_keywords);
   }
 
-  final List<List<String>>? _excludeKeywords;
+  final List<List<String>> _excludeKeywords;
   @override
-  List<List<String>>? get excludeKeywords {
-    final value = _excludeKeywords;
-    if (value == null) return null;
+  List<List<String>> get excludeKeywords {
     if (_excludeKeywords is EqualUnmodifiableListView) return _excludeKeywords;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_excludeKeywords);
   }
 
-  final List<String>? _users;
+  final List<String> _users;
   @override
-  List<String>? get users {
-    final value = _users;
-    if (value == null) return null;
+  List<String> get users {
     if (_users is EqualUnmodifiableListView) return _users;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_users);
   }
 
   @override
@@ -342,8 +338,8 @@ abstract class _AntennasCreateRequest implements AntennasCreateRequest {
       required final AntennaSource src,
       final String? userListId,
       required final List<List<String>> keywords,
-      required final List<List<String>>? excludeKeywords,
-      required final List<String>? users,
+      required final List<List<String>> excludeKeywords,
+      required final List<String> users,
       required final bool caseSensitive,
       required final bool withReplies,
       required final bool withFile,
@@ -361,9 +357,9 @@ abstract class _AntennasCreateRequest implements AntennasCreateRequest {
   @override
   List<List<String>> get keywords;
   @override
-  List<List<String>>? get excludeKeywords;
+  List<List<String>> get excludeKeywords;
   @override
-  List<String>? get users;
+  List<String> get users;
   @override
   bool get caseSensitive;
   @override
