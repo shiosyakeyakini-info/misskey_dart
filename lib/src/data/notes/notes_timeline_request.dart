@@ -12,6 +12,9 @@ class NotesTimelineRequest with _$NotesTimelineRequest {
     String? untilId,
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+    bool? withFiles,
+    bool? withRenotes,
+    bool? excludeNsfw,
   }) = _NotesTimelineRequest;
 
   factory NotesTimelineRequest.fromJson(Map<String, Object?> json) =>

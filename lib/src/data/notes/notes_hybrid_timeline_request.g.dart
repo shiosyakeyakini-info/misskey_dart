@@ -21,6 +21,7 @@ _$_NotesHybridTimelineRequest _$$_NotesHybridTimelineRequestFromJson(
       includeLocalRenotes: json['includeLocalRenotes'] as bool?,
       withFiles: json['withFiles'] as bool?,
       withReplies: json['withReplies'] as bool?,
+      withRenotes: json['withRenotes'] as bool?,
     );
 
 Map<String, dynamic> _$$_NotesHybridTimelineRequestToJson(
@@ -38,6 +39,7 @@ Map<String, dynamic> _$$_NotesHybridTimelineRequestToJson(
       'includeLocalRenotes': instance.includeLocalRenotes,
       'withFiles': instance.withFiles,
       'withReplies': instance.withReplies,
+      'withRenotes': instance.withRenotes,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

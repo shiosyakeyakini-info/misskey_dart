@@ -20,6 +20,7 @@ _$_UserListTimelineRequest _$$_UserListTimelineRequestFromJson(
       includeMyRenotes: json['includeMyRenotes'] as bool?,
       includeRenotedMyNotes: json['includeRenotedMyNotes'] as bool?,
       includeLocalRenotes: json['includeLocalRenotes'] as bool?,
+      withRenotes: json['withRenotes'] as bool?,
       withFiles: json['withFiles'] as bool?,
     );
 
@@ -37,6 +38,7 @@ Map<String, dynamic> _$$_UserListTimelineRequestToJson(
       'includeMyRenotes': instance.includeMyRenotes,
       'includeRenotedMyNotes': instance.includeRenotedMyNotes,
       'includeLocalRenotes': instance.includeLocalRenotes,
+      'withRenotes': instance.withRenotes,
       'withFiles': instance.withFiles,
     };
 

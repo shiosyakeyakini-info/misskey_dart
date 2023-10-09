@@ -32,7 +32,9 @@ mixin _$NotesHybridTimelineRequest {
   bool? get includeRenotedMyNotes => throw _privateConstructorUsedError;
   bool? get includeLocalRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.10.0")
   bool? get withReplies => throw _privateConstructorUsedError;
+  bool? get withRenotes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,7 +59,8 @@ abstract class $NotesHybridTimelineRequestCopyWith<$Res> {
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      bool? withReplies});
+      @Deprecated("removed at 2023.10.0") bool? withReplies,
+      bool? withRenotes});
 }
 
 /// @nodoc
@@ -84,6 +87,7 @@ class _$NotesHybridTimelineRequestCopyWithImpl<$Res,
     Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
     Object? withReplies = freezed,
+    Object? withRenotes = freezed,
   }) {
     return _then(_value.copyWith(
       limit: freezed == limit
@@ -126,6 +130,10 @@ class _$NotesHybridTimelineRequestCopyWithImpl<$Res,
           ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -149,7 +157,8 @@ abstract class _$$_NotesHybridTimelineRequestCopyWith<$Res>
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      bool? withReplies});
+      @Deprecated("removed at 2023.10.0") bool? withReplies,
+      bool? withRenotes});
 }
 
 /// @nodoc
@@ -175,6 +184,7 @@ class __$$_NotesHybridTimelineRequestCopyWithImpl<$Res>
     Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
     Object? withReplies = freezed,
+    Object? withRenotes = freezed,
   }) {
     return _then(_$_NotesHybridTimelineRequest(
       limit: freezed == limit
@@ -217,6 +227,10 @@ class __$$_NotesHybridTimelineRequestCopyWithImpl<$Res>
           ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -234,7 +248,8 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
       this.includeRenotedMyNotes,
       this.includeLocalRenotes,
       this.withFiles,
-      this.withReplies});
+      @Deprecated("removed at 2023.10.0") this.withReplies,
+      this.withRenotes});
 
   factory _$_NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =>
       _$$_NotesHybridTimelineRequestFromJson(json);
@@ -260,11 +275,14 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
   @override
   final bool? withFiles;
   @override
+  @Deprecated("removed at 2023.10.0")
   final bool? withReplies;
+  @override
+  final bool? withRenotes;
 
   @override
   String toString() {
-    return 'NotesHybridTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withReplies: $withReplies)';
+    return 'NotesHybridTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withReplies: $withReplies, withRenotes: $withRenotes)';
   }
 
   @override
@@ -288,7 +306,9 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             (identical(other.withReplies, withReplies) ||
-                other.withReplies == withReplies));
+                other.withReplies == withReplies) &&
+            (identical(other.withRenotes, withRenotes) ||
+                other.withRenotes == withRenotes));
   }
 
   @JsonKey(ignore: true)
@@ -304,7 +324,8 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
       includeRenotedMyNotes,
       includeLocalRenotes,
       withFiles,
-      withReplies);
+      withReplies,
+      withRenotes);
 
   @JsonKey(ignore: true)
   @override
@@ -333,7 +354,8 @@ abstract class _NotesHybridTimelineRequest
       final bool? includeRenotedMyNotes,
       final bool? includeLocalRenotes,
       final bool? withFiles,
-      final bool? withReplies}) = _$_NotesHybridTimelineRequest;
+      @Deprecated("removed at 2023.10.0") final bool? withReplies,
+      final bool? withRenotes}) = _$_NotesHybridTimelineRequest;
 
   factory _NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesHybridTimelineRequest.fromJson;
@@ -359,7 +381,10 @@ abstract class _NotesHybridTimelineRequest
   @override
   bool? get withFiles;
   @override
+  @Deprecated("removed at 2023.10.0")
   bool? get withReplies;
+  @override
+  bool? get withRenotes;
   @override
   @JsonKey(ignore: true)
   _$$_NotesHybridTimelineRequestCopyWith<_$_NotesHybridTimelineRequest>

@@ -20,6 +20,7 @@ _$_NotesGlobalTimelineRequest _$$_NotesGlobalTimelineRequestFromJson(
       includeRenotedMyNotes: json['includeRenotedMyNotes'] as bool?,
       includeLocalRenotes: json['includeLocalRenotes'] as bool?,
       withFiles: json['withFiles'] as bool?,
+      withRenotes: json['withRenotes'] as bool?,
       withReplies: json['withReplies'] as bool?,
     );
 
@@ -37,6 +38,7 @@ Map<String, dynamic> _$$_NotesGlobalTimelineRequestToJson(
       'includeRenotedMyNotes': instance.includeRenotedMyNotes,
       'includeLocalRenotes': instance.includeLocalRenotes,
       'withFiles': instance.withFiles,
+      'withRenotes': instance.withRenotes,
       'withReplies': instance.withReplies,
     };
 

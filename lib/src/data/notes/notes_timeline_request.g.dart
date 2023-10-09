@@ -16,6 +16,9 @@ _$_NotesTimelineRequest _$$_NotesTimelineRequestFromJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
       untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
+      withFiles: json['withFiles'] as bool?,
+      withRenotes: json['withRenotes'] as bool?,
+      excludeNsfw: json['excludeNsfw'] as bool?,
     );
 
 Map<String, dynamic> _$$_NotesTimelineRequestToJson(
@@ -28,6 +31,9 @@ Map<String, dynamic> _$$_NotesTimelineRequestToJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
       'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
           const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
+      'withFiles': instance.withFiles,
+      'withRenotes': instance.withRenotes,
+      'excludeNsfw': instance.excludeNsfw,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/notes/notes_update_request.dart';
 
 import 'package:misskey_dart/src/services/api_service.dart';
 
@@ -26,8 +25,7 @@ class MisskeyNotes {
 
   /// ノートを更新します。
   Future<void> update(NotesUpdateRequest request) async {
-    await _apiService.post<void>(
-        "notes/update", request.toJson(),
+    await _apiService.post<void>("notes/update", request.toJson(),
         excludeRemoveNullPredicate: (key, _) => key == "cw");
   }
 

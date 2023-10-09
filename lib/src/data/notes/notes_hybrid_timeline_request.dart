@@ -16,7 +16,8 @@ class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
     bool? includeRenotedMyNotes,
     bool? includeLocalRenotes,
     bool? withFiles,
-    bool? withReplies,
+    @Deprecated("removed at 2023.10.0") bool? withReplies,
+    bool? withRenotes,
   }) = _NotesHybridTimelineRequest;
 
   factory NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =>

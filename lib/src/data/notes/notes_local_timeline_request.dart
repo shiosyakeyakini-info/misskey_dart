@@ -8,7 +8,8 @@ part 'notes_local_timeline_request.g.dart';
 class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
   const factory NotesLocalTimelineRequest({
     bool? withFiles,
-    List<String>? fileType,
+    bool? withRenotes,
+    @Deprecated("removed at 2023.10.0") List<String>? fileType,
     bool? excludeNsfw,
     int? limit,
     String? sinceId,

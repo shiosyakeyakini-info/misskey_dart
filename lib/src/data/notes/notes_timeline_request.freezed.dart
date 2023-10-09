@@ -27,6 +27,9 @@ mixin _$NotesTimelineRequest {
   DateTime? get sinceDate => throw _privateConstructorUsedError;
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate => throw _privateConstructorUsedError;
+  bool? get withFiles => throw _privateConstructorUsedError;
+  bool? get withRenotes => throw _privateConstructorUsedError;
+  bool? get excludeNsfw => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +48,10 @@ abstract class $NotesTimelineRequestCopyWith<$Res> {
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? withFiles,
+      bool? withRenotes,
+      bool? excludeNsfw});
 }
 
 /// @nodoc
@@ -67,6 +73,9 @@ class _$NotesTimelineRequestCopyWithImpl<$Res,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? withFiles = freezed,
+    Object? withRenotes = freezed,
+    Object? excludeNsfw = freezed,
   }) {
     return _then(_value.copyWith(
       limit: freezed == limit
@@ -89,6 +98,18 @@ class _$NotesTimelineRequestCopyWithImpl<$Res,
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      withFiles: freezed == withFiles
+          ? _value.withFiles
+          : withFiles // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      excludeNsfw: freezed == excludeNsfw
+          ? _value.excludeNsfw
+          : excludeNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -106,7 +127,10 @@ abstract class _$$_NotesTimelineRequestCopyWith<$Res>
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? withFiles,
+      bool? withRenotes,
+      bool? excludeNsfw});
 }
 
 /// @nodoc
@@ -125,6 +149,9 @@ class __$$_NotesTimelineRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? withFiles = freezed,
+    Object? withRenotes = freezed,
+    Object? excludeNsfw = freezed,
   }) {
     return _then(_$_NotesTimelineRequest(
       limit: freezed == limit
@@ -147,6 +174,18 @@ class __$$_NotesTimelineRequestCopyWithImpl<$Res>
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      withFiles: freezed == withFiles
+          ? _value.withFiles
+          : withFiles // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      excludeNsfw: freezed == excludeNsfw
+          ? _value.excludeNsfw
+          : excludeNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -159,7 +198,10 @@ class _$_NotesTimelineRequest implements _NotesTimelineRequest {
       this.sinceId,
       this.untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
+      this.withFiles,
+      this.withRenotes,
+      this.excludeNsfw});
 
   factory _$_NotesTimelineRequest.fromJson(Map<String, dynamic> json) =>
       _$$_NotesTimelineRequestFromJson(json);
@@ -176,10 +218,16 @@ class _$_NotesTimelineRequest implements _NotesTimelineRequest {
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? untilDate;
+  @override
+  final bool? withFiles;
+  @override
+  final bool? withRenotes;
+  @override
+  final bool? excludeNsfw;
 
   @override
   String toString() {
-    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
+    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, withFiles: $withFiles, withRenotes: $withRenotes, excludeNsfw: $excludeNsfw)';
   }
 
   @override
@@ -193,13 +241,19 @@ class _$_NotesTimelineRequest implements _NotesTimelineRequest {
             (identical(other.sinceDate, sinceDate) ||
                 other.sinceDate == sinceDate) &&
             (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
+                other.untilDate == untilDate) &&
+            (identical(other.withFiles, withFiles) ||
+                other.withFiles == withFiles) &&
+            (identical(other.withRenotes, withRenotes) ||
+                other.withRenotes == withRenotes) &&
+            (identical(other.excludeNsfw, excludeNsfw) ||
+                other.excludeNsfw == excludeNsfw));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
+      sinceDate, untilDate, withFiles, withRenotes, excludeNsfw);
 
   @JsonKey(ignore: true)
   @override
@@ -222,8 +276,10 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
       final String? sinceId,
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? untilDate}) = _$_NotesTimelineRequest;
+      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
+      final bool? withFiles,
+      final bool? withRenotes,
+      final bool? excludeNsfw}) = _$_NotesTimelineRequest;
 
   factory _NotesTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$_NotesTimelineRequest.fromJson;
@@ -240,6 +296,12 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate;
+  @override
+  bool? get withFiles;
+  @override
+  bool? get withRenotes;
+  @override
+  bool? get excludeNsfw;
   @override
   @JsonKey(ignore: true)
   _$$_NotesTimelineRequestCopyWith<_$_NotesTimelineRequest> get copyWith =>

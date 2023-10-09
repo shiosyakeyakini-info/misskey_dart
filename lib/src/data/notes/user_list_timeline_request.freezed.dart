@@ -33,6 +33,7 @@ mixin _$UserListTimelineRequest {
   bool? get includeMyRenotes => throw _privateConstructorUsedError;
   bool? get includeRenotedMyNotes => throw _privateConstructorUsedError;
   bool? get includeLocalRenotes => throw _privateConstructorUsedError;
+  bool? get withRenotes => throw _privateConstructorUsedError;
 
   /// Only show notes that have attached files.
   bool? get withFiles => throw _privateConstructorUsedError;
@@ -59,6 +60,7 @@ abstract class $UserListTimelineRequestCopyWith<$Res> {
       bool? includeMyRenotes,
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
+      bool? withRenotes,
       bool? withFiles});
 }
 
@@ -85,6 +87,7 @@ class _$UserListTimelineRequestCopyWithImpl<$Res,
     Object? includeMyRenotes = freezed,
     Object? includeRenotedMyNotes = freezed,
     Object? includeLocalRenotes = freezed,
+    Object? withRenotes = freezed,
     Object? withFiles = freezed,
   }) {
     return _then(_value.copyWith(
@@ -124,6 +127,10 @@ class _$UserListTimelineRequestCopyWithImpl<$Res,
           ? _value.includeLocalRenotes
           : includeLocalRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
       withFiles: freezed == withFiles
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
@@ -150,6 +157,7 @@ abstract class _$$_UserListTimelineRequestCopyWith<$Res>
       bool? includeMyRenotes,
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
+      bool? withRenotes,
       bool? withFiles});
 }
 
@@ -174,6 +182,7 @@ class __$$_UserListTimelineRequestCopyWithImpl<$Res>
     Object? includeMyRenotes = freezed,
     Object? includeRenotedMyNotes = freezed,
     Object? includeLocalRenotes = freezed,
+    Object? withRenotes = freezed,
     Object? withFiles = freezed,
   }) {
     return _then(_$_UserListTimelineRequest(
@@ -213,6 +222,10 @@ class __$$_UserListTimelineRequestCopyWithImpl<$Res>
           ? _value.includeLocalRenotes
           : includeLocalRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
       withFiles: freezed == withFiles
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
@@ -234,6 +247,7 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
       this.includeMyRenotes,
       this.includeRenotedMyNotes,
       this.includeLocalRenotes,
+      this.withRenotes,
       this.withFiles});
 
   factory _$_UserListTimelineRequest.fromJson(Map<String, dynamic> json) =>
@@ -260,6 +274,8 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
   final bool? includeRenotedMyNotes;
   @override
   final bool? includeLocalRenotes;
+  @override
+  final bool? withRenotes;
 
   /// Only show notes that have attached files.
   @override
@@ -267,7 +283,7 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
 
   @override
   String toString() {
-    return 'UserListTimelineRequest(listId: $listId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles)';
+    return 'UserListTimelineRequest(listId: $listId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withRenotes: $withRenotes, withFiles: $withFiles)';
   }
 
   @override
@@ -289,6 +305,8 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
                 other.includeRenotedMyNotes == includeRenotedMyNotes) &&
             (identical(other.includeLocalRenotes, includeLocalRenotes) ||
                 other.includeLocalRenotes == includeLocalRenotes) &&
+            (identical(other.withRenotes, withRenotes) ||
+                other.withRenotes == withRenotes) &&
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles));
   }
@@ -306,6 +324,7 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
       includeMyRenotes,
       includeRenotedMyNotes,
       includeLocalRenotes,
+      withRenotes,
       withFiles);
 
   @JsonKey(ignore: true)
@@ -335,6 +354,7 @@ abstract class _UserListTimelineRequest implements UserListTimelineRequest {
       final bool? includeMyRenotes,
       final bool? includeRenotedMyNotes,
       final bool? includeLocalRenotes,
+      final bool? withRenotes,
       final bool? withFiles}) = _$_UserListTimelineRequest;
 
   factory _UserListTimelineRequest.fromJson(Map<String, dynamic> json) =
@@ -361,6 +381,8 @@ abstract class _UserListTimelineRequest implements UserListTimelineRequest {
   bool? get includeRenotedMyNotes;
   @override
   bool? get includeLocalRenotes;
+  @override
+  bool? get withRenotes;
   @override
 
   /// Only show notes that have attached files.

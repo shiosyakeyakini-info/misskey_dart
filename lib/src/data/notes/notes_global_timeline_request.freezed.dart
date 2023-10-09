@@ -32,6 +32,8 @@ mixin _$NotesGlobalTimelineRequest {
   bool? get includeRenotedMyNotes => throw _privateConstructorUsedError;
   bool? get includeLocalRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
+  bool? get withRenotes => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.10.0")
   bool? get withReplies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,7 +59,8 @@ abstract class $NotesGlobalTimelineRequestCopyWith<$Res> {
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      bool? withReplies});
+      bool? withRenotes,
+      @Deprecated("removed at 2023.10.0") bool? withReplies});
 }
 
 /// @nodoc
@@ -83,6 +86,7 @@ class _$NotesGlobalTimelineRequestCopyWithImpl<$Res,
     Object? includeRenotedMyNotes = freezed,
     Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
+    Object? withRenotes = freezed,
     Object? withReplies = freezed,
   }) {
     return _then(_value.copyWith(
@@ -122,6 +126,10 @@ class _$NotesGlobalTimelineRequestCopyWithImpl<$Res,
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
       withReplies: freezed == withReplies
           ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
@@ -149,7 +157,8 @@ abstract class _$$_NotesGlobalTimelineRequestCopyWith<$Res>
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      bool? withReplies});
+      bool? withRenotes,
+      @Deprecated("removed at 2023.10.0") bool? withReplies});
 }
 
 /// @nodoc
@@ -174,6 +183,7 @@ class __$$_NotesGlobalTimelineRequestCopyWithImpl<$Res>
     Object? includeRenotedMyNotes = freezed,
     Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
+    Object? withRenotes = freezed,
     Object? withReplies = freezed,
   }) {
     return _then(_$_NotesGlobalTimelineRequest(
@@ -213,6 +223,10 @@ class __$$_NotesGlobalTimelineRequestCopyWithImpl<$Res>
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
+      withRenotes: freezed == withRenotes
+          ? _value.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
       withReplies: freezed == withReplies
           ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
@@ -234,7 +248,8 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
       this.includeRenotedMyNotes,
       this.includeLocalRenotes,
       this.withFiles,
-      this.withReplies});
+      this.withRenotes,
+      @Deprecated("removed at 2023.10.0") this.withReplies});
 
   factory _$_NotesGlobalTimelineRequest.fromJson(Map<String, dynamic> json) =>
       _$$_NotesGlobalTimelineRequestFromJson(json);
@@ -260,11 +275,14 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
   @override
   final bool? withFiles;
   @override
+  final bool? withRenotes;
+  @override
+  @Deprecated("removed at 2023.10.0")
   final bool? withReplies;
 
   @override
   String toString() {
-    return 'NotesGlobalTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withReplies: $withReplies)';
+    return 'NotesGlobalTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies)';
   }
 
   @override
@@ -287,6 +305,8 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
                 other.includeLocalRenotes == includeLocalRenotes) &&
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
+            (identical(other.withRenotes, withRenotes) ||
+                other.withRenotes == withRenotes) &&
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies));
   }
@@ -304,6 +324,7 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
       includeRenotedMyNotes,
       includeLocalRenotes,
       withFiles,
+      withRenotes,
       withReplies);
 
   @JsonKey(ignore: true)
@@ -333,6 +354,8 @@ abstract class _NotesGlobalTimelineRequest
       final bool? includeRenotedMyNotes,
       final bool? includeLocalRenotes,
       final bool? withFiles,
+      final bool? withRenotes,
+      @Deprecated("removed at 2023.10.0")
       final bool? withReplies}) = _$_NotesGlobalTimelineRequest;
 
   factory _NotesGlobalTimelineRequest.fromJson(Map<String, dynamic> json) =
@@ -359,6 +382,9 @@ abstract class _NotesGlobalTimelineRequest
   @override
   bool? get withFiles;
   @override
+  bool? get withRenotes;
+  @override
+  @Deprecated("removed at 2023.10.0")
   bool? get withReplies;
   @override
   @JsonKey(ignore: true)

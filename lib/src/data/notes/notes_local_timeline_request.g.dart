@@ -10,6 +10,7 @@ _$_NotesLocalTimelineRequest _$$_NotesLocalTimelineRequestFromJson(
         Map<String, dynamic> json) =>
     _$_NotesLocalTimelineRequest(
       withFiles: json['withFiles'] as bool?,
+      withRenotes: json['withRenotes'] as bool?,
       fileType: (json['fileType'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -27,6 +28,7 @@ Map<String, dynamic> _$$_NotesLocalTimelineRequestToJson(
         _$_NotesLocalTimelineRequest instance) =>
     <String, dynamic>{
       'withFiles': instance.withFiles,
+      'withRenotes': instance.withRenotes,
       'fileType': instance.fileType,
       'excludeNsfw': instance.excludeNsfw,
       'limit': instance.limit,

@@ -16,6 +16,7 @@ class UserListTimelineRequest with _$UserListTimelineRequest {
     bool? includeMyRenotes,
     bool? includeRenotedMyNotes,
     bool? includeLocalRenotes,
+    bool? withRenotes,
 
     /// Only show notes that have attached files.
     bool? withFiles,

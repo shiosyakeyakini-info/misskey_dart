@@ -16,7 +16,8 @@ class NotesGlobalTimelineRequest with _$NotesGlobalTimelineRequest {
     bool? includeRenotedMyNotes,
     bool? includeLocalRenotes,
     bool? withFiles,
-    bool? withReplies,
+    bool? withRenotes,
+    @Deprecated("removed at 2023.10.0") bool? withReplies,
   }) = _NotesGlobalTimelineRequest;
 
   factory NotesGlobalTimelineRequest.fromJson(Map<String, dynamic> json) =>
