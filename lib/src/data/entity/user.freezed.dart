@@ -2381,7 +2381,8 @@ mixin _$UserMe {
   bool get isCat => throw _privateConstructorUsedError;
   @EmojisConverter()
   Map<String, String>? get emojis => throw _privateConstructorUsedError;
-  String? get onlineStatus => throw _privateConstructorUsedError;
+  @OnlineStatusJsonConverter()
+  OnlineStatus? get onlineStatus => throw _privateConstructorUsedError;
   List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get url => throw _privateConstructorUsedError;
@@ -2473,7 +2474,7 @@ abstract class $UserMeCopyWith<$Res> {
       bool isBot,
       bool isCat,
       @EmojisConverter() Map<String, String>? emojis,
-      String? onlineStatus,
+      @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
@@ -2657,7 +2658,7 @@ class _$UserMeCopyWithImpl<$Res, $Val extends UserMe>
       onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as OnlineStatus?,
       badgeRoles: null == badgeRoles
           ? _value.badgeRoles
           : badgeRoles // ignore: cast_nullable_to_non_nullable
@@ -2914,7 +2915,7 @@ abstract class _$$_UserMeCopyWith<$Res> implements $UserMeCopyWith<$Res> {
       bool isBot,
       bool isCat,
       @EmojisConverter() Map<String, String>? emojis,
-      String? onlineStatus,
+      @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
@@ -3096,7 +3097,7 @@ class __$$_UserMeCopyWithImpl<$Res>
       onlineStatus: freezed == onlineStatus
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as OnlineStatus?,
       badgeRoles: null == badgeRoles
           ? _value._badgeRoles
           : badgeRoles // ignore: cast_nullable_to_non_nullable
@@ -3342,7 +3343,7 @@ class _$_UserMe implements _UserMe {
       required this.isBot,
       required this.isCat,
       @EmojisConverter() final Map<String, String>? emojis = const {},
-      this.onlineStatus,
+      @OnlineStatusJsonConverter() this.onlineStatus,
       required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() this.url,
       @NullableUriConverter() this.uri,
@@ -3446,7 +3447,8 @@ class _$_UserMe implements _UserMe {
   }
 
   @override
-  final String? onlineStatus;
+  @OnlineStatusJsonConverter()
+  final OnlineStatus? onlineStatus;
   final List<UserBadgeRole> _badgeRoles;
   @override
   List<UserBadgeRole> get badgeRoles {
@@ -3864,7 +3866,7 @@ abstract class _UserMe implements UserMe, AbstractedUserMe {
       required final bool isBot,
       required final bool isCat,
       @EmojisConverter() final Map<String, String>? emojis,
-      final String? onlineStatus,
+      @OnlineStatusJsonConverter() final OnlineStatus? onlineStatus,
       required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() final Uri? url,
       @NullableUriConverter() final Uri? uri,
@@ -3947,7 +3949,8 @@ abstract class _UserMe implements UserMe, AbstractedUserMe {
   @EmojisConverter()
   Map<String, String>? get emojis;
   @override
-  String? get onlineStatus;
+  @OnlineStatusJsonConverter()
+  OnlineStatus? get onlineStatus;
   @override
   List<UserBadgeRole> get badgeRoles;
   @override

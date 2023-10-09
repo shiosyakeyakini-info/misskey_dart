@@ -268,7 +268,8 @@ _$_UserMe _$$_UserMeFromJson(Map<String, dynamic> json) => _$_UserMe(
       emojis: json['emojis'] == null
           ? const {}
           : const EmojisConverter().fromJson(json['emojis']),
-      onlineStatus: json['onlineStatus'] as String?,
+      onlineStatus: const OnlineStatusJsonConverter()
+          .fromJson(json['onlineStatus'] as String?),
       badgeRoles: (json['badgeRoles'] as List<dynamic>)
           .map((e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -368,7 +369,8 @@ Map<String, dynamic> _$$_UserMeToJson(_$_UserMe instance) => <String, dynamic>{
       'isCat': instance.isCat,
       'emojis': _$JsonConverterToJson<dynamic, Map<String, String>>(
           instance.emojis, const EmojisConverter().toJson),
-      'onlineStatus': instance.onlineStatus,
+      'onlineStatus':
+          const OnlineStatusJsonConverter().toJson(instance.onlineStatus),
       'badgeRoles': instance.badgeRoles,
       'url': const NullableUriConverter().toJson(instance.url),
       'uri': const NullableUriConverter().toJson(instance.uri),

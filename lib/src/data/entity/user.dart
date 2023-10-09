@@ -152,7 +152,7 @@ abstract class AbstractedUserMe extends AbstractedUserDetailed {
 }
 
 @freezed
-sealed class User with _$User {
+sealed class User with _$User implements AbstractedUser {
   @Implements<AbstractedUser>()
   const factory User({
     required String id,
@@ -173,7 +173,9 @@ sealed class User with _$User {
 }
 
 @freezed
-sealed class UserDetailed with _$UserDetailed {
+sealed class UserDetailed
+    with _$UserDetailed
+    implements AbstractedUserDetailed {
   @Implements<AbstractedUserDetailed>()
   const factory UserDetailed({
     required String id,
@@ -262,7 +264,7 @@ sealed class UserDetailed with _$UserDetailed {
 }
 
 @freezed
-sealed class UserMe with _$UserMe {
+sealed class UserMe with _$UserMe implements AbstractedUserMe {
   @Implements<AbstractedUserMe>()
   const factory UserMe({
     required String id,
@@ -274,7 +276,7 @@ sealed class UserMe with _$UserMe {
     required bool isBot,
     required bool isCat,
     @EmojisConverter() @Default({}) Map<String, String>? emojis,
-    String? onlineStatus,
+    @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     required List<UserBadgeRole> badgeRoles,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
