@@ -24,7 +24,6 @@ mixin _$UsersSearchRequest {
   int? get offset => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
   Origin? get origin => throw _privateConstructorUsedError;
-  bool? get detail => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,8 +37,7 @@ abstract class $UsersSearchRequestCopyWith<$Res> {
           UsersSearchRequest value, $Res Function(UsersSearchRequest) then) =
       _$UsersSearchRequestCopyWithImpl<$Res, UsersSearchRequest>;
   @useResult
-  $Res call(
-      {String query, int? offset, int? limit, Origin? origin, bool? detail});
+  $Res call({String query, int? offset, int? limit, Origin? origin});
 }
 
 /// @nodoc
@@ -59,7 +57,6 @@ class _$UsersSearchRequestCopyWithImpl<$Res, $Val extends UsersSearchRequest>
     Object? offset = freezed,
     Object? limit = freezed,
     Object? origin = freezed,
-    Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
       query: null == query
@@ -78,10 +75,6 @@ class _$UsersSearchRequestCopyWithImpl<$Res, $Val extends UsersSearchRequest>
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as Origin?,
-      detail: freezed == detail
-          ? _value.detail
-          : detail // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ) as $Val);
   }
 }
@@ -94,8 +87,7 @@ abstract class _$$_UsersSearchRequestCopyWith<$Res>
       __$$_UsersSearchRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String query, int? offset, int? limit, Origin? origin, bool? detail});
+  $Res call({String query, int? offset, int? limit, Origin? origin});
 }
 
 /// @nodoc
@@ -113,7 +105,6 @@ class __$$_UsersSearchRequestCopyWithImpl<$Res>
     Object? offset = freezed,
     Object? limit = freezed,
     Object? origin = freezed,
-    Object? detail = freezed,
   }) {
     return _then(_$_UsersSearchRequest(
       query: null == query
@@ -132,10 +123,6 @@ class __$$_UsersSearchRequestCopyWithImpl<$Res>
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as Origin?,
-      detail: freezed == detail
-          ? _value.detail
-          : detail // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -144,7 +131,7 @@ class __$$_UsersSearchRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UsersSearchRequest implements _UsersSearchRequest {
   const _$_UsersSearchRequest(
-      {required this.query, this.offset, this.limit, this.origin, this.detail});
+      {required this.query, this.offset, this.limit, this.origin});
 
   factory _$_UsersSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$$_UsersSearchRequestFromJson(json);
@@ -157,12 +144,10 @@ class _$_UsersSearchRequest implements _UsersSearchRequest {
   final int? limit;
   @override
   final Origin? origin;
-  @override
-  final bool? detail;
 
   @override
   String toString() {
-    return 'UsersSearchRequest(query: $query, offset: $offset, limit: $limit, origin: $origin, detail: $detail)';
+    return 'UsersSearchRequest(query: $query, offset: $offset, limit: $limit, origin: $origin)';
   }
 
   @override
@@ -173,14 +158,12 @@ class _$_UsersSearchRequest implements _UsersSearchRequest {
             (identical(other.query, query) || other.query == query) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.detail, detail) || other.detail == detail));
+            (identical(other.origin, origin) || other.origin == origin));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, query, offset, limit, origin, detail);
+  int get hashCode => Object.hash(runtimeType, query, offset, limit, origin);
 
   @JsonKey(ignore: true)
   @override
@@ -202,8 +185,7 @@ abstract class _UsersSearchRequest implements UsersSearchRequest {
       {required final String query,
       final int? offset,
       final int? limit,
-      final Origin? origin,
-      final bool? detail}) = _$_UsersSearchRequest;
+      final Origin? origin}) = _$_UsersSearchRequest;
 
   factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =
       _$_UsersSearchRequest.fromJson;
@@ -216,8 +198,6 @@ abstract class _UsersSearchRequest implements UsersSearchRequest {
   int? get limit;
   @override
   Origin? get origin;
-  @override
-  bool? get detail;
   @override
   @JsonKey(ignore: true)
   _$$_UsersSearchRequestCopyWith<_$_UsersSearchRequest> get copyWith =>

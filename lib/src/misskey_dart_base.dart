@@ -131,9 +131,9 @@ class Misskey {
   }
 
   /// ピン留めされたユーザーを取得します。
-  Future<Iterable<User>> pinnedUsers() async {
+  Future<Iterable<UserDetailed>> pinnedUsers() async {
     final response = await apiService.post<List>("pinned-users", {});
-    return response.map((e) => User.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 
   /// ホームタイムラインに接続します。

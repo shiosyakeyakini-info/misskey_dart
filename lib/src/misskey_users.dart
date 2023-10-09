@@ -1,5 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/base/flash.dart';
+import 'package:misskey_dart/src/data/entity/flash.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -11,27 +11,26 @@ class MisskeyUsers {
         list = MisskeyUsersLists(apiService: apiService);
 
   /// ユーザー情報をIDから取得します。
-  Future<UsersShowResponse> show(UsersShowRequest request) async {
+  Future<UserDetailed> show(UsersShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "users/show", request.toJson());
-    return UsersShowResponse.fromJson(response);
+    return UserDetailed.fromJson(response);
   }
 
   /// ユーザー情報を複数のIDから取得します。
-  Future<Iterable<UsersShowResponse>> showByIds(
+  Future<Iterable<UserDetailed>> showByIds(
       UsersShowByIdsRequest request) async {
     final response =
         await _apiService.post<List>("users/show", request.toJson());
-    return response.map((e) => UsersShowResponse.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 
   /// ユーザー情報をスクリーンネームから取得します。
   /// 自分自身のホストのユーザーを取得する場合、hostはnullである必要があります。
-  Future<UsersShowResponse> showByName(
-      UsersShowByUserNameRequest request) async {
+  Future<UserDetailed> showByName(UsersShowByUserNameRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "users/show", request.toJson());
-    return UsersShowResponse.fromJson(response);
+    return UserDetailed.fromJson(response);
   }
 
   /// ユーザーが投稿したノートを取得します。
@@ -76,10 +75,10 @@ class MisskeyUsers {
   }
 
   /// ユーザーを検索します。
-  Future<Iterable<User>> search(UsersSearchRequest request) async {
+  Future<Iterable<UserDetailed>> search(UsersSearchRequest request) async {
     final response =
         await _apiService.post<List>("users/search", request.toJson());
-    return response.map((e) => User.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 
   /// このAPIは必ずエラーを返し、動作していないようです。
@@ -90,9 +89,9 @@ class MisskeyUsers {
     return response.map((e) => User.fromJson(e));
   }
 
-  Future<Iterable<User>> users(UsersUsersRequest request) async {
+  Future<Iterable<UserDetailed>> users(UsersUsersRequest request) async {
     final response = await _apiService.post<List>("users", request.toJson());
-    return response.map((e) => User.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 
   /// A personal memo for the target user. If null or empty, delete the memo.

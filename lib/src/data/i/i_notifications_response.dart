@@ -22,6 +22,7 @@ class INotificationsResponse with _$INotificationsResponse {
     @NullableUriConverter() Uri? customIcon,
     String? appAccessTokenId,
     String? userId,
+    // 場合によってDetailedUserだったりUserだったりする
     User? user,
     Note? note,
   }) = _INotificationsResponse;

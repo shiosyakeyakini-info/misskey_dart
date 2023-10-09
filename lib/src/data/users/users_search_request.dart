@@ -11,7 +11,8 @@ class UsersSearchRequest with _$UsersSearchRequest {
     int? offset,
     int? limit,
     Origin? origin,
-    bool? detail,
+    // UserDetailedを返すようにしたのでこれは触れない
+    // bool? detail,
   }) = _UsersSearchRequest;
 
   factory UsersSearchRequest.fromJson(Map<String, dynamic> json) =>

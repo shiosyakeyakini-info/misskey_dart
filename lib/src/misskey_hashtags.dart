@@ -32,9 +32,9 @@ class MisskeyHashtags {
     return response.map((e) => HashtagsTrendResponse.fromJson(e));
   }
 
-  Future<Iterable<User>> users(HashtagsUsersRequest request) async {
+  Future<Iterable<UserDetailed>> users(HashtagsUsersRequest request) async {
     final response =
         await _apiService.post<List>("hashtags/users", request.toJson());
-    return response.map((e) => User.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 }

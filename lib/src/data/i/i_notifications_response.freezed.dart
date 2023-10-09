@@ -36,7 +36,8 @@ mixin _$INotificationsResponse {
   @NullableUriConverter()
   Uri? get customIcon => throw _privateConstructorUsedError;
   String? get appAccessTokenId => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
+  String? get userId =>
+      throw _privateConstructorUsedError; // 場合によってDetailedUserだったりUserだったりする
   User? get user => throw _privateConstructorUsedError;
   Note? get note => throw _privateConstructorUsedError;
 
@@ -368,6 +369,7 @@ class _$_INotificationsResponse implements _INotificationsResponse {
   final String? appAccessTokenId;
   @override
   final String? userId;
+// 場合によってDetailedUserだったりUserだったりする
   @override
   final User? user;
   @override
@@ -493,7 +495,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   String? get appAccessTokenId;
   @override
   String? get userId;
-  @override
+  @override // 場合によってDetailedUserだったりUserだったりする
   User? get user;
   @override
   Note? get note;

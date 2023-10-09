@@ -12,8 +12,8 @@ class Following with _$Following {
     @DateTimeConverter() required DateTime createdAt,
     required String followeeId,
     required String followerId,
-    User? followee,
-    User? follower,
+    UserDetailed? followee,
+    UserDetailed? follower,
   }) = _Following;
 
   factory Following.fromJson(Map<String, dynamic> json) =>

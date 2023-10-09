@@ -25,8 +25,8 @@ mixin _$Following {
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get followeeId => throw _privateConstructorUsedError;
   String get followerId => throw _privateConstructorUsedError;
-  User? get followee => throw _privateConstructorUsedError;
-  User? get follower => throw _privateConstructorUsedError;
+  UserDetailed? get followee => throw _privateConstructorUsedError;
+  UserDetailed? get follower => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,11 +44,11 @@ abstract class $FollowingCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      User? followee,
-      User? follower});
+      UserDetailed? followee,
+      UserDetailed? follower});
 
-  $UserCopyWith<$Res>? get followee;
-  $UserCopyWith<$Res>? get follower;
+  $UserDetailedCopyWith<$Res>? get followee;
+  $UserDetailedCopyWith<$Res>? get follower;
 }
 
 /// @nodoc
@@ -91,34 +91,34 @@ class _$FollowingCopyWithImpl<$Res, $Val extends Following>
       followee: freezed == followee
           ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
       follower: freezed == follower
           ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get followee {
+  $UserDetailedCopyWith<$Res>? get followee {
     if (_value.followee == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.followee!, (value) {
+    return $UserDetailedCopyWith<$Res>(_value.followee!, (value) {
       return _then(_value.copyWith(followee: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get follower {
+  $UserDetailedCopyWith<$Res>? get follower {
     if (_value.follower == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.follower!, (value) {
+    return $UserDetailedCopyWith<$Res>(_value.follower!, (value) {
       return _then(_value.copyWith(follower: value) as $Val);
     });
   }
@@ -136,13 +136,13 @@ abstract class _$$_FollowingCopyWith<$Res> implements $FollowingCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      User? followee,
-      User? follower});
+      UserDetailed? followee,
+      UserDetailed? follower});
 
   @override
-  $UserCopyWith<$Res>? get followee;
+  $UserDetailedCopyWith<$Res>? get followee;
   @override
-  $UserCopyWith<$Res>? get follower;
+  $UserDetailedCopyWith<$Res>? get follower;
 }
 
 /// @nodoc
@@ -183,11 +183,11 @@ class __$$_FollowingCopyWithImpl<$Res>
       followee: freezed == followee
           ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
       follower: freezed == follower
           ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
     ));
   }
 }
@@ -216,9 +216,9 @@ class _$_Following implements _Following {
   @override
   final String followerId;
   @override
-  final User? followee;
+  final UserDetailed? followee;
   @override
-  final User? follower;
+  final UserDetailed? follower;
 
   @override
   String toString() {
@@ -268,8 +268,8 @@ abstract class _Following implements Following {
       @DateTimeConverter() required final DateTime createdAt,
       required final String followeeId,
       required final String followerId,
-      final User? followee,
-      final User? follower}) = _$_Following;
+      final UserDetailed? followee,
+      final UserDetailed? follower}) = _$_Following;
 
   factory _Following.fromJson(Map<String, dynamic> json) =
       _$_Following.fromJson;
@@ -284,9 +284,9 @@ abstract class _Following implements Following {
   @override
   String get followerId;
   @override
-  User? get followee;
+  UserDetailed? get followee;
   @override
-  User? get follower;
+  UserDetailed? get follower;
   @override
   @JsonKey(ignore: true)
   _$$_FollowingCopyWith<_$_Following> get copyWith =>
