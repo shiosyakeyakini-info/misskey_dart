@@ -132,6 +132,7 @@ export 'src/data/users/users_followeres_request.dart';
 export 'src/data/users/users_recommendation_request.dart';
 export 'src/data/users/users_flashs_request.dart';
 export 'src/data/users/users_flashs_response.dart';
+export 'src/data/users/users_featured_notes_request.dart';
 export 'src/data/users/lists/users_lists_create_from_public_request.dart';
 export 'src/data/users/lists/users_lists_create_request.dart';
 export 'src/data/users/lists/users_lists_delete_request.dart';

@@ -107,6 +107,14 @@ class MisskeyUsers {
         await _apiService.post<List>("users/flashs", request.toJson());
     return response.map((e) => Flash.fromJson(e));
   }
+
+  /// ユーザーのハイライトのノートを取得します。
+  Future<Iterable<Note>> featuredNotes(
+      UsersFeaturedNotesRequest request) async {
+    final response =
+        await _apiService.post<List>("users/featured-notes", request.toJson());
+    return response.map((e) => Note.fromJson(e));
+  }
 }
 
 class MisskeyUsersLists {
