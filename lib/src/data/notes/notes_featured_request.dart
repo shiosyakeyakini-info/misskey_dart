@@ -7,7 +7,8 @@ part 'notes_featured_request.g.dart';
 class NotesFeaturedRequest with _$NotesFeaturedRequest {
   const factory NotesFeaturedRequest({
     int? limit,
-    int? offset,
+    @Deprecated("removed at 2023.10.0") int? offset,
+    String? untilId,
     String? channelId,
   }) = _NotesFeaturedRequest;
 

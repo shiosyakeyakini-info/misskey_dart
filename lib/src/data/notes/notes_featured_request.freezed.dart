@@ -21,7 +21,9 @@ NotesFeaturedRequest _$NotesFeaturedRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NotesFeaturedRequest {
   int? get limit => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.10.0")
   int? get offset => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
   String? get channelId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +38,11 @@ abstract class $NotesFeaturedRequestCopyWith<$Res> {
           $Res Function(NotesFeaturedRequest) then) =
       _$NotesFeaturedRequestCopyWithImpl<$Res, NotesFeaturedRequest>;
   @useResult
-  $Res call({int? limit, int? offset, String? channelId});
+  $Res call(
+      {int? limit,
+      @Deprecated("removed at 2023.10.0") int? offset,
+      String? untilId,
+      String? channelId});
 }
 
 /// @nodoc
@@ -55,6 +61,7 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res,
   $Res call({
     Object? limit = freezed,
     Object? offset = freezed,
+    Object? untilId = freezed,
     Object? channelId = freezed,
   }) {
     return _then(_value.copyWith(
@@ -66,6 +73,10 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res,
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
       channelId: freezed == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -82,7 +93,11 @@ abstract class _$$_NotesFeaturedRequestCopyWith<$Res>
       __$$_NotesFeaturedRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? limit, int? offset, String? channelId});
+  $Res call(
+      {int? limit,
+      @Deprecated("removed at 2023.10.0") int? offset,
+      String? untilId,
+      String? channelId});
 }
 
 /// @nodoc
@@ -98,6 +113,7 @@ class __$$_NotesFeaturedRequestCopyWithImpl<$Res>
   $Res call({
     Object? limit = freezed,
     Object? offset = freezed,
+    Object? untilId = freezed,
     Object? channelId = freezed,
   }) {
     return _then(_$_NotesFeaturedRequest(
@@ -109,6 +125,10 @@ class __$$_NotesFeaturedRequestCopyWithImpl<$Res>
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
       channelId: freezed == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -120,7 +140,11 @@ class __$$_NotesFeaturedRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
-  const _$_NotesFeaturedRequest({this.limit, this.offset, this.channelId});
+  const _$_NotesFeaturedRequest(
+      {this.limit,
+      @Deprecated("removed at 2023.10.0") this.offset,
+      this.untilId,
+      this.channelId});
 
   factory _$_NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =>
       _$$_NotesFeaturedRequestFromJson(json);
@@ -128,13 +152,16 @@ class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
   @override
   final int? limit;
   @override
+  @Deprecated("removed at 2023.10.0")
   final int? offset;
+  @override
+  final String? untilId;
   @override
   final String? channelId;
 
   @override
   String toString() {
-    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, channelId: $channelId)';
+    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, untilId: $untilId, channelId: $channelId)';
   }
 
   @override
@@ -144,13 +171,15 @@ class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
             other is _$_NotesFeaturedRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, offset, channelId);
+  int get hashCode =>
+      Object.hash(runtimeType, limit, offset, untilId, channelId);
 
   @JsonKey(ignore: true)
   @override
@@ -170,7 +199,8 @@ class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
 abstract class _NotesFeaturedRequest implements NotesFeaturedRequest {
   const factory _NotesFeaturedRequest(
       {final int? limit,
-      final int? offset,
+      @Deprecated("removed at 2023.10.0") final int? offset,
+      final String? untilId,
       final String? channelId}) = _$_NotesFeaturedRequest;
 
   factory _NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =
@@ -179,7 +209,10 @@ abstract class _NotesFeaturedRequest implements NotesFeaturedRequest {
   @override
   int? get limit;
   @override
+  @Deprecated("removed at 2023.10.0")
   int? get offset;
+  @override
+  String? get untilId;
   @override
   String? get channelId;
   @override

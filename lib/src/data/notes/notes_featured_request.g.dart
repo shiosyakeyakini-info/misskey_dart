@@ -11,6 +11,7 @@ _$_NotesFeaturedRequest _$$_NotesFeaturedRequestFromJson(
     _$_NotesFeaturedRequest(
       limit: json['limit'] as int?,
       offset: json['offset'] as int?,
+      untilId: json['untilId'] as String?,
       channelId: json['channelId'] as String?,
     );
 
@@ -19,5 +20,6 @@ Map<String, dynamic> _$$_NotesFeaturedRequestToJson(
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,
+      'untilId': instance.untilId,
       'channelId': instance.channelId,
     };
