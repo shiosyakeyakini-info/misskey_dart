@@ -27,7 +27,7 @@ mixin _$Note {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   String? get cw => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   @NoteVisibilityJsonConverter()
   NoteVisibility get visibility => throw _privateConstructorUsedError;
@@ -77,7 +77,7 @@ abstract class $NoteCopyWith<$Res> {
       @NullableDateTimeConverter() DateTime? updatedAt,
       String? text,
       String? cw,
-      User user,
+      UserLite user,
       String userId,
       @NoteVisibilityJsonConverter() NoteVisibility visibility,
       bool localOnly,
@@ -104,7 +104,7 @@ abstract class $NoteCopyWith<$Res> {
       NotePoll? poll,
       int? clippedCount});
 
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
   $NoteCopyWith<$Res>? get renote;
   $NoteCopyWith<$Res>? get reply;
   $NoteChannelInfoCopyWith<$Res>? get channel;
@@ -180,7 +180,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -286,8 +286,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -354,7 +354,7 @@ abstract class _$$NoteImplCopyWith<$Res> implements $NoteCopyWith<$Res> {
       @NullableDateTimeConverter() DateTime? updatedAt,
       String? text,
       String? cw,
-      User user,
+      UserLite user,
       String userId,
       @NoteVisibilityJsonConverter() NoteVisibility visibility,
       bool localOnly,
@@ -382,7 +382,7 @@ abstract class _$$NoteImplCopyWith<$Res> implements $NoteCopyWith<$Res> {
       int? clippedCount});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
   @override
   $NoteCopyWith<$Res>? get renote;
   @override
@@ -459,7 +459,7 @@ class __$$NoteImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -624,7 +624,7 @@ class _$NoteImpl implements _Note {
   @override
   final String? cw;
   @override
-  final User user;
+  final UserLite user;
   @override
   final String userId;
   @override
@@ -850,7 +850,7 @@ abstract class _Note implements Note {
       @NullableDateTimeConverter() final DateTime? updatedAt,
       final String? text,
       final String? cw,
-      required final User user,
+      required final UserLite user,
       required final String userId,
       @NoteVisibilityJsonConverter() required final NoteVisibility visibility,
       required final bool localOnly,
@@ -892,7 +892,7 @@ abstract class _Note implements Note {
   @override
   String? get cw;
   @override
-  User get user;
+  UserLite get user;
   @override
   String get userId;
   @override

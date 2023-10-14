@@ -6,8 +6,10 @@ part 'roles_users_response.g.dart';
 
 @freezed
 class RolesUsersResponse with _$RolesUsersResponse {
-  const factory RolesUsersResponse({required String id, required User user}) =
-      _RolesUsersResponse;
+  const factory RolesUsersResponse({
+    required String id,
+    required UserDetailed user,
+  }) = _RolesUsersResponse;
 
   factory RolesUsersResponse.fromJson(Map<String, dynamic> json) =>
       _$RolesUsersResponseFromJson(json);

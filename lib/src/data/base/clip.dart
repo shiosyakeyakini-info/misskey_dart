@@ -12,7 +12,7 @@ class Clip with _$Clip {
     @DateTimeConverter() required DateTime createdAt,
     @NullableDateTimeConverter() DateTime? lastClippedAt,
     required String userId,
-    required User user,
+    required UserLite user,
     String? name,
     String? description,
     required bool isPublic,

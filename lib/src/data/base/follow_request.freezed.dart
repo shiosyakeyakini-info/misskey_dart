@@ -21,8 +21,8 @@ FollowRequest _$FollowRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FollowRequest {
   String get id => throw _privateConstructorUsedError;
-  User get followee => throw _privateConstructorUsedError;
-  User get follower => throw _privateConstructorUsedError;
+  UserLite get followee => throw _privateConstructorUsedError;
+  UserLite get follower => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,10 +36,10 @@ abstract class $FollowRequestCopyWith<$Res> {
           FollowRequest value, $Res Function(FollowRequest) then) =
       _$FollowRequestCopyWithImpl<$Res, FollowRequest>;
   @useResult
-  $Res call({String id, User followee, User follower});
+  $Res call({String id, UserLite followee, UserLite follower});
 
-  $UserCopyWith<$Res> get followee;
-  $UserCopyWith<$Res> get follower;
+  $UserLiteCopyWith<$Res> get followee;
+  $UserLiteCopyWith<$Res> get follower;
 }
 
 /// @nodoc
@@ -67,26 +67,26 @@ class _$FollowRequestCopyWithImpl<$Res, $Val extends FollowRequest>
       followee: null == followee
           ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       follower: null == follower
           ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get followee {
-    return $UserCopyWith<$Res>(_value.followee, (value) {
+  $UserLiteCopyWith<$Res> get followee {
+    return $UserLiteCopyWith<$Res>(_value.followee, (value) {
       return _then(_value.copyWith(followee: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get follower {
-    return $UserCopyWith<$Res>(_value.follower, (value) {
+  $UserLiteCopyWith<$Res> get follower {
+    return $UserLiteCopyWith<$Res>(_value.follower, (value) {
       return _then(_value.copyWith(follower: value) as $Val);
     });
   }
@@ -100,12 +100,12 @@ abstract class _$$FollowRequestImplCopyWith<$Res>
       __$$FollowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, User followee, User follower});
+  $Res call({String id, UserLite followee, UserLite follower});
 
   @override
-  $UserCopyWith<$Res> get followee;
+  $UserLiteCopyWith<$Res> get followee;
   @override
-  $UserCopyWith<$Res> get follower;
+  $UserLiteCopyWith<$Res> get follower;
 }
 
 /// @nodoc
@@ -131,11 +131,11 @@ class __$$FollowRequestImplCopyWithImpl<$Res>
       followee: null == followee
           ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       follower: null == follower
           ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
     ));
   }
 }
@@ -152,9 +152,9 @@ class _$FollowRequestImpl implements _FollowRequest {
   @override
   final String id;
   @override
-  final User followee;
+  final UserLite followee;
   @override
-  final User follower;
+  final UserLite follower;
 
   @override
   String toString() {
@@ -194,8 +194,8 @@ class _$FollowRequestImpl implements _FollowRequest {
 abstract class _FollowRequest implements FollowRequest {
   const factory _FollowRequest(
       {required final String id,
-      required final User followee,
-      required final User follower}) = _$FollowRequestImpl;
+      required final UserLite followee,
+      required final UserLite follower}) = _$FollowRequestImpl;
 
   factory _FollowRequest.fromJson(Map<String, dynamic> json) =
       _$FollowRequestImpl.fromJson;
@@ -203,9 +203,9 @@ abstract class _FollowRequest implements FollowRequest {
   @override
   String get id;
   @override
-  User get followee;
+  UserLite get followee;
   @override
-  User get follower;
+  UserLite get follower;
   @override
   @JsonKey(ignore: true)
   _$$FollowRequestImplCopyWith<_$FollowRequestImpl> get copyWith =>

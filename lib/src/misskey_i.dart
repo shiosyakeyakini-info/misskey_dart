@@ -7,9 +7,9 @@ class MisskeyI {
   MisskeyI({required ApiService apiService}) : _apiService = apiService;
 
   /// 自分自身の情報を取得します。
-  Future<IResponse> i() async {
+  Future<MeDetailed> i() async {
     final response = await _apiService.post<Map<String, dynamic>>("i", {});
-    return IResponse.fromJson(response);
+    return MeDetailed.fromJson(response);
   }
 
   /// 通知を取得します。
@@ -34,11 +34,11 @@ class MisskeyI {
   }
 
   /// 自身の情報を更新します。
-  Future<IResponse> update(IUpdateRequest request) async {
+  Future<MeDetailed> update(IUpdateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "i/update",
       request.toJson(),
     );
-    return IResponse.fromJson(response);
+    return MeDetailed.fromJson(response);
   }
 }

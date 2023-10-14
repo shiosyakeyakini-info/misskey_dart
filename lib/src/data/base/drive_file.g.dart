@@ -29,7 +29,7 @@ _$DriveFileImpl _$$DriveFileImplFromJson(Map<String, dynamic> json) =>
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>

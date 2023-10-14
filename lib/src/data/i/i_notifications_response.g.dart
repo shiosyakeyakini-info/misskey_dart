@@ -26,7 +26,7 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
       note: json['note'] == null
           ? null
           : Note.fromJson(json['note'] as Map<String, dynamic>),

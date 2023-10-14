@@ -36,7 +36,7 @@ mixin _$DriveFile {
   String? get folderId => throw _privateConstructorUsedError;
   DriveFolder? get folder => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
-  User? get user => throw _privateConstructorUsedError;
+  UserLite? get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,11 +65,11 @@ abstract class $DriveFileCopyWith<$Res> {
       String? folderId,
       DriveFolder? folder,
       String? userId,
-      User? user});
+      UserLite? user});
 
   $DriveFilePropertiesCopyWith<$Res> get properties;
   $DriveFolderCopyWith<$Res>? get folder;
-  $UserCopyWith<$Res>? get user;
+  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -166,7 +166,7 @@ class _$DriveFileCopyWithImpl<$Res, $Val extends DriveFile>
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
     ) as $Val);
   }
 
@@ -192,12 +192,12 @@ class _$DriveFileCopyWithImpl<$Res, $Val extends DriveFile>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get user {
+  $UserLiteCopyWith<$Res>? get user {
     if (_value.user == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.user!, (value) {
+    return $UserLiteCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -227,14 +227,14 @@ abstract class _$$DriveFileImplCopyWith<$Res>
       String? folderId,
       DriveFolder? folder,
       String? userId,
-      User? user});
+      UserLite? user});
 
   @override
   $DriveFilePropertiesCopyWith<$Res> get properties;
   @override
   $DriveFolderCopyWith<$Res>? get folder;
   @override
-  $UserCopyWith<$Res>? get user;
+  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -329,7 +329,7 @@ class __$$DriveFileImplCopyWithImpl<$Res>
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
     ));
   }
 }
@@ -390,7 +390,7 @@ class _$DriveFileImpl implements _DriveFile {
   @override
   final String? userId;
   @override
-  final User? user;
+  final UserLite? user;
 
   @override
   String toString() {
@@ -478,7 +478,7 @@ abstract class _DriveFile implements DriveFile {
       final String? folderId,
       final DriveFolder? folder,
       final String? userId,
-      final User? user}) = _$DriveFileImpl;
+      final UserLite? user}) = _$DriveFileImpl;
 
   factory _DriveFile.fromJson(Map<String, dynamic> json) =
       _$DriveFileImpl.fromJson;
@@ -515,7 +515,7 @@ abstract class _DriveFile implements DriveFile {
   @override
   String? get userId;
   @override
-  User? get user;
+  UserLite? get user;
   @override
   @JsonKey(ignore: true)
   _$$DriveFileImplCopyWith<_$DriveFileImpl> get copyWith =>

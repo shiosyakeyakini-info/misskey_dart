@@ -9,8 +9,8 @@ part of 'follow_request.dart';
 _$FollowRequestImpl _$$FollowRequestImplFromJson(Map<String, dynamic> json) =>
     _$FollowRequestImpl(
       id: json['id'] as String,
-      followee: User.fromJson(json['followee'] as Map<String, dynamic>),
-      follower: User.fromJson(json['follower'] as Map<String, dynamic>),
+      followee: UserLite.fromJson(json['followee'] as Map<String, dynamic>),
+      follower: UserLite.fromJson(json['follower'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$FollowRequestImplToJson(_$FollowRequestImpl instance) =>

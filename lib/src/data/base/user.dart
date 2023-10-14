@@ -1,31 +1,313 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/emojis_converter.dart';
+import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
-import 'package:misskey_dart/src/enums/online_status.dart';
 
 part 'user.freezed.dart';
 part 'user.g.dart';
 
+abstract class User {
+  String get id;
+  String get username;
+  String? get host;
+  String? get name;
+  OnlineStatus? get onlineStatus;
+  List<UserBadgeRole> get badgeRoles;
+  Uri get avatarUrl;
+  String? get avatarBlurhash;
+  List<UserAvatarDecoration> get avatarDecorations;
+  UserInstanceInfo? get instance;
+  bool get isCat;
+  bool get isBot;
+  Map<String, String> get emojis;
+
+  factory User.fromJson(Map<String, Object?> json) {
+    if (json.containsKey("url")) {
+      return UserDetailed.fromJson(json);
+    } else {
+      return UserLite.fromJson(json);
+    }
+  }
+
+  Map<String, Object?> toJson() {
+    return (this as UserLite).toJson();
+  }
+}
+
+abstract class UserDetailed implements User {
+  Uri? get url;
+  Uri? get uri;
+  DateTime get createdAt;
+  DateTime? get updatedAt;
+  DateTime? get lastFetchedAt;
+  Uri? get bannerUrl;
+  String? get bannerBlurhash;
+  bool get isLocked;
+  bool get isSilenced;
+  bool get isSuspended;
+  String? get description;
+  String? get location;
+  DateTime? get birthday;
+  String? get lang;
+  List<UserField>? get fields;
+  int get followersCount;
+  int get followingCount;
+  int get notesCount;
+  List<String>? get pinnedNoteIds;
+  List<Note>? get pinnedNotes;
+  String? get pinnedPageId;
+  Map<String, dynamic>? get pinnedPage;
+  bool get publicReactions;
+  // Deleted in Misskey 2023.12.0
+  FFVisibility? get ffVisibility;
+  FFVisibility? get followersVisibility;
+  FFVisibility? get followingVisibility;
+  bool get twoFactorEnabled;
+  bool get usePasswordLessLogin;
+  bool get securityKeys;
+  List<UserRole>? get roles;
+  String? get memo;
+
+  factory UserDetailed.fromJson(Map<String, Object?> json) {
+    if (json.containsKey("isFollowing")) {
+      return UserDetailedNotMeWithRelations.fromJson(json);
+    } else if (json.containsKey("avatarId")) {
+      return MeDetailed.fromJson(json);
+    } else {
+      return UserDetailedNotMe.fromJson(json);
+    }
+  }
+
+  @override
+  Map<String, Object?> toJson() {
+    return (this as UserDetailedNotMe).toJson();
+  }
+}
+
 @freezed
-class User with _$User {
-  const factory User({
+class UserLite with _$UserLite implements User {
+  const factory UserLite({
     required String id,
+    String? name,
     required String username,
     String? host,
-    String? name,
+    @UriConverter() required Uri avatarUrl,
+    String? avatarBlurhash,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
+    @Default(false) bool isBot,
+    @Default(false) bool isCat,
+    UserInstanceInfo? instance,
+    @EmojisConverter() @Default({}) Map<String, String> emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
-    @UriConverter() required Uri avatarUrl,
-    @Default([]) List<UserAvatarDecoration> avatarDecorations,
-    String? avatarBlurhash,
-    UserInstanceInfo? instance,
-    @Default(false) bool isCat,
-    @Default(false) bool isBot,
-    @EmojisConverter() @Default({}) Map<String, String> emojis,
-  }) = _User;
+  }) = _UserLite;
 
-  factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
+  factory UserLite.fromJson(Map<String, Object?> json) =>
+      _$UserLiteFromJson(json);
+}
+
+@freezed
+class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
+  const factory UserDetailedNotMe({
+    required String id,
+    String? name,
+    required String username,
+    String? host,
+    @UriConverter() required Uri avatarUrl,
+    String? avatarBlurhash,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
+    required bool isBot,
+    required bool isCat,
+    UserInstanceInfo? instance,
+    @EmojisConverter() @Default({}) Map<String, String> emojis,
+    @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
+    @Default([]) List<UserBadgeRole> badgeRoles,
+    @NullableUriConverter() Uri? url,
+    @NullableUriConverter() Uri? uri,
+    @DateTimeConverter() required DateTime createdAt,
+    @NullableDateTimeConverter() DateTime? updatedAt,
+    @NullableDateTimeConverter() DateTime? lastFetchedAt,
+    @NullableUriConverter() Uri? bannerUrl,
+    String? bannerBlurhash,
+    required bool isLocked,
+    required bool isSilenced,
+    required bool isSuspended,
+    String? description,
+    String? location,
+    @NullableDateTimeConverter() DateTime? birthday,
+    String? lang,
+    List<UserField>? fields,
+    required int followersCount,
+    required int followingCount,
+    required int notesCount,
+    List<String>? pinnedNoteIds,
+    List<Note>? pinnedNotes,
+    String? pinnedPageId,
+    Map<String, dynamic>? pinnedPage,
+    required bool publicReactions,
+    @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
+    FFVisibility? followersVisibility,
+    FFVisibility? followingVisibility,
+    required bool twoFactorEnabled,
+    required bool usePasswordLessLogin,
+    required bool securityKeys,
+    List<UserRole>? roles,
+    String? memo,
+  }) = _UserDetailedNotMe;
+
+  factory UserDetailedNotMe.fromJson(Map<String, Object?> json) =>
+      _$UserDetailedNotMeFromJson(json);
+}
+
+@freezed
+class UserDetailedNotMeWithRelations
+    with _$UserDetailedNotMeWithRelations
+    implements UserDetailed {
+  const factory UserDetailedNotMeWithRelations({
+    required String id,
+    String? name,
+    required String username,
+    String? host,
+    @UriConverter() required Uri avatarUrl,
+    String? avatarBlurhash,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
+    required bool isBot,
+    required bool isCat,
+    UserInstanceInfo? instance,
+    @EmojisConverter() @Default({}) Map<String, String> emojis,
+    @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
+    @Default([]) List<UserBadgeRole> badgeRoles,
+    @NullableUriConverter() Uri? url,
+    @NullableUriConverter() Uri? uri,
+    @DateTimeConverter() required DateTime createdAt,
+    @NullableDateTimeConverter() DateTime? updatedAt,
+    @NullableDateTimeConverter() DateTime? lastFetchedAt,
+    @NullableUriConverter() Uri? bannerUrl,
+    String? bannerBlurhash,
+    required bool isLocked,
+    required bool isSilenced,
+    required bool isSuspended,
+    String? description,
+    String? location,
+    @NullableDateTimeConverter() DateTime? birthday,
+    String? lang,
+    List<UserField>? fields,
+    required int followersCount,
+    required int followingCount,
+    required int notesCount,
+    List<String>? pinnedNoteIds,
+    List<Note>? pinnedNotes,
+    String? pinnedPageId,
+    Map<String, dynamic>? pinnedPage,
+    required bool publicReactions,
+    @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
+    FFVisibility? followersVisibility,
+    FFVisibility? followingVisibility,
+    required bool twoFactorEnabled,
+    required bool usePasswordLessLogin,
+    required bool securityKeys,
+    List<UserRole>? roles,
+    String? memo,
+    required bool isFollowing,
+    required bool isFollowed,
+    required bool hasPendingFollowRequestFromYou,
+    required bool hasPendingFollowRequestToYou,
+    required bool isBlocking,
+    required bool isBlocked,
+    required bool isMuted,
+    required bool isRenoteMuted,
+  }) = _UserDetailedNotMeWithRelations;
+
+  factory UserDetailedNotMeWithRelations.fromJson(Map<String, Object?> json) =>
+      _$UserDetailedNotMeWithRelationsFromJson(json);
+}
+
+@freezed
+class MeDetailed with _$MeDetailed implements UserDetailed {
+  const factory MeDetailed({
+    required String id,
+    String? name,
+    required String username,
+    String? host,
+    @UriConverter() required Uri avatarUrl,
+    String? avatarBlurhash,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
+    required bool isBot,
+    required bool isCat,
+    UserInstanceInfo? instance,
+    @EmojisConverter() @Default({}) Map<String, String> emojis,
+    @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
+    @Default([]) List<UserBadgeRole> badgeRoles,
+    @NullableUriConverter() Uri? url,
+    @NullableUriConverter() Uri? uri,
+    @DateTimeConverter() required DateTime createdAt,
+    @NullableDateTimeConverter() DateTime? updatedAt,
+    @NullableDateTimeConverter() DateTime? lastFetchedAt,
+    @NullableUriConverter() Uri? bannerUrl,
+    String? bannerBlurhash,
+    required bool isLocked,
+    required bool isSilenced,
+    required bool isSuspended,
+    String? description,
+    String? location,
+    @NullableDateTimeConverter() DateTime? birthday,
+    String? lang,
+    List<UserField>? fields,
+    required int followersCount,
+    required int followingCount,
+    required int notesCount,
+    List<String>? pinnedNoteIds,
+    List<Note>? pinnedNotes,
+    String? pinnedPageId,
+    Map<String, dynamic>? pinnedPage,
+    required bool publicReactions,
+    @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
+    FFVisibility? followersVisibility,
+    FFVisibility? followingVisibility,
+    required bool twoFactorEnabled,
+    required bool usePasswordLessLogin,
+    required bool securityKeys,
+    List<UserRole>? roles,
+    String? memo,
+    String? avatarId,
+    String? bannerId,
+    required bool isModerator,
+    required bool isAdmin,
+    required bool injectFeaturedNote,
+    required bool receiveAnnouncementEmail,
+    required bool alwaysMarkNsfw,
+    required bool autoSensitive,
+    required bool carefulBot,
+    required bool autoAcceptFollowed,
+    required bool noCrawle,
+    required bool isExplorable,
+    required bool isDeleted,
+    required bool hideOnlineStatus,
+    required bool hasUnreadSpecifiedNotes,
+    required bool hasUnreadMentions,
+    required bool hasUnreadAnnouncement,
+    required bool hasUnreadAntenna,
+    required bool hasUnreadChannel,
+    required bool hasUnreadNotification,
+    required bool hasPendingReceivedFollowRequest,
+    int? unreadNotificationsCount,
+    @Default([]) List<AnnouncementsResponse> unreadAnnouncements,
+    @MuteWordsConverter() required List<MuteWord> mutedWords,
+    @MuteWordsConverter() @Default([]) List<MuteWord> hardMutedWords,
+    required List<String> mutedInstances,
+    @Deprecated("Deprecated in Misskey 2023.9.2")
+    List<String>? mutingNotificationTypes,
+    dynamic notificationRecieveConfig,
+    required List<String> emailNotificationTypes,
+    required List<UserAchievement> achievements,
+    required int loggedInDays,
+    required UserPolicies policies,
+  }) = _MeDetailed;
+
+  factory MeDetailed.fromJson(Map<String, Object?> json) =>
+      _$MeDetailedFromJson(json);
 }
 
 @freezed
@@ -132,4 +414,11 @@ class UserField with _$UserField {
 
   factory UserField.fromJson(Map<String, Object?> json) =>
       _$UserFieldFromJson(json);
+}
+
+class MuteWord {
+  final String? regExp;
+  final List<String>? content;
+
+  const MuteWord({this.regExp, this.content});
 }

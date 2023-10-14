@@ -11,7 +11,7 @@ void main() async {
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
-      userDetailed.isRenoteMuted,
+      (userDetailed as UserDetailedNotMeWithRelations).isRenoteMuted,
       isTrue,
     );
   });
@@ -25,7 +25,7 @@ void main() async {
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
-      userDetailed.isRenoteMuted,
+      (userDetailed as UserDetailedNotMeWithRelations).isRenoteMuted,
       isFalse,
     );
   });

@@ -13,7 +13,7 @@ _$PageImpl _$$PageImplFromJson(Map<String, dynamic> json) => _$PageImpl(
       updatedAt:
           const DateTimeConverter().fromJson(json['updatedAt'] as String),
       userId: json['userId'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       content:
           const ListPageContentConverter().fromJson(json['content'] as List?),
       variables: (json['variables'] as List<dynamic>)

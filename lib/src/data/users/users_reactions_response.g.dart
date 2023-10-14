@@ -12,7 +12,7 @@ _$UsersReactionsResponseImpl _$$UsersReactionsResponseImplFromJson(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       type: json['type'] as String,
       note: Note.fromJson(json['note'] as Map<String, dynamic>),
     );

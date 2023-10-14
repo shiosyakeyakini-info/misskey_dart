@@ -142,9 +142,9 @@ class Misskey {
   }
 
   /// ピン留めされたユーザーを取得します。
-  Future<Iterable<User>> pinnedUsers() async {
+  Future<Iterable<UserDetailed>> pinnedUsers() async {
     final response = await apiService.post<List>("pinned-users", {});
-    return response.map((e) => User.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 
   /// ホームタイムラインに接続します。
@@ -392,8 +392,8 @@ class Misskey {
   SocketController userListStream({
     required String listId,
     FutureOr<void> Function(Note note)? onNoteReceived,
-    FutureOr<void> Function(User user)? onUserAdded,
-    FutureOr<void> Function(User user)? onUserRemoved,
+    FutureOr<void> Function(UserLite user)? onUserAdded,
+    FutureOr<void> Function(UserLite user)? onUserRemoved,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
@@ -407,13 +407,13 @@ class Misskey {
           if (response == null) return;
 
           if (type == ChannelEventType.userAdded) {
-            final user = User.fromJson(response);
+            final user = UserLite.fromJson(response);
             await onUserAdded?.call(user);
             return;
           }
 
           if (type == ChannelEventType.userRemoved) {
-            final user = User.fromJson(response);
+            final user = UserLite.fromJson(response);
             await onUserRemoved?.call(user);
             return;
           }
@@ -540,10 +540,10 @@ class Misskey {
     FutureOr<void> Function(Note note)? onMention,
     FutureOr<void> Function(Note note)? onReply,
     FutureOr<void> Function(Note note)? onRenote,
-    FutureOr<void> Function(User user)? onFollow,
-    FutureOr<void> Function(User user)? onFollowed,
-    FutureOr<void> Function(User user)? onUnfollow,
-    FutureOr<void> Function(User user)? onMeUpdated,
+    FutureOr<void> Function(UserDetailedNotMe user)? onFollow,
+    FutureOr<void> Function(UserLite user)? onFollowed,
+    FutureOr<void> Function(UserDetailedNotMe user)? onUnfollow,
+    FutureOr<void> Function(MeDetailed me)? onMeUpdated,
     FutureOr<void> Function()? onReadAllNotifications,
     FutureOr<void> Function(INotificationsResponse notification)?
         onUnreadNotification,
@@ -551,7 +551,7 @@ class Misskey {
     FutureOr<void> Function()? onReadAllUnreadMentions,
     FutureOr<void> Function(String noteId)? onUnreadSpecifiedNote,
     FutureOr<void> Function()? onReadAllUnreadSpecifiedNotes,
-    FutureOr<void> Function(User user)? onReceiveFollowRequest,
+    FutureOr<void> Function(UserLite user)? onReceiveFollowRequest,
     FutureOr<void> Function()? onReadAllAnnouncements,
   }) =>
       streamingService.connect(
@@ -573,13 +573,16 @@ class Misskey {
               await onRenote?.call(Note.fromJson(response));
               break;
             case ChannelEventType.follow:
-              await onFollow?.call(User.fromJson(response));
+              await onFollow?.call(UserDetailedNotMe.fromJson(response));
               break;
             case ChannelEventType.followed:
-              await onFollowed?.call(User.fromJson(response));
+              await onFollowed?.call(UserLite.fromJson(response));
+              break;
+            case ChannelEventType.unfollow:
+              await onUnfollow?.call(UserDetailedNotMe.fromJson(response));
               break;
             case ChannelEventType.meUpdated:
-              await onMeUpdated?.call(User.fromJson(response));
+              await onMeUpdated?.call(MeDetailed.fromJson(response));
               break;
             case ChannelEventType.readAllNotifications:
               await onReadAllNotifications?.call();
@@ -601,7 +604,7 @@ class Misskey {
               await onReadAllUnreadSpecifiedNotes?.call();
               break;
             case ChannelEventType.receiveFollowRequest:
-              await onReceiveFollowRequest?.call(User.fromJson(response));
+              await onReceiveFollowRequest?.call(UserLite.fromJson(response));
               break;
             case ChannelEventType.readAllAnnouncements:
               await onReadAllAnnouncements?.call();

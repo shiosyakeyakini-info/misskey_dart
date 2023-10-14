@@ -16,7 +16,7 @@ class Note with _$Note {
     @NullableDateTimeConverter() DateTime? updatedAt,
     String? text,
     String? cw,
-    required User user,
+    required UserLite user,
     required String userId,
     @NoteVisibilityJsonConverter() required NoteVisibility visibility,
     required bool localOnly,

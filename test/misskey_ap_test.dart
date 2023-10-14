@@ -28,7 +28,7 @@ void main() async {
         ),
       );
       expect(response.type, equals("User"));
-      User.fromJson(response.object);
+      MeDetailed.fromJson(response.object);
     });
   });
 }

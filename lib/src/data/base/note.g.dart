@@ -14,7 +14,7 @@ _$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
           json['updatedAt'], const NullableDateTimeConverter().fromJson),
       text: json['text'] as String?,
       cw: json['cw'] as String?,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       userId: json['userId'] as String,
       visibility: const NoteVisibilityJsonConverter()
           .fromJson(json['visibility'] as String),

@@ -23,7 +23,7 @@ class DriveFile with _$DriveFile {
     String? folderId,
     DriveFolder? folder,
     String? userId,
-    User? user,
+    UserLite? user,
   }) = _DriveFile;
 
   factory DriveFile.fromJson(Map<String, dynamic> json) =>

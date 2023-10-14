@@ -12,16 +12,20 @@ void main() async {
       final response =
           await userClient.users.show(UsersShowRequest(userId: user.id));
       expect(response.username, equals(user.username));
+      expect(response, isA<MeDetailed>());
     });
 
     test("not me", () async {
       final response =
           await userClient.users.show(UsersShowRequest(userId: admin.id));
       expect(response.username, equals(admin.username));
+      expect(response, isA<UserDetailedNotMeWithRelations>());
     });
 
     test("anonymous", () async {
-      await anonymousClient.users.show(UsersShowRequest(userId: user.id));
+      final response =
+          await anonymousClient.users.show(UsersShowRequest(userId: user.id));
+      expect(response, isA<UserDetailedNotMe>());
     });
   });
 
@@ -100,12 +104,14 @@ void main() async {
       final response = await userClient.users
           .search(UsersSearchRequest(query: user.username));
       expect(response.map((e) => e.id), contains(user.id));
+      expect(response, everyElement(isA<UserDetailed>()));
     });
 
     test("lite", () async {
       final response = await userClient.users
           .search(UsersSearchRequest(query: user.username, detail: false));
       expect(response.map((e) => e.id), contains(user.id));
+      expect(response, everyElement(isA<UserLite>()));
     });
   });
 

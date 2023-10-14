@@ -13,7 +13,7 @@ class Page with _$Page {
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverter() required DateTime updatedAt,
     required String userId,
-    required User user,
+    required UserLite user,
     @ListPageContentConverter() required List<AbstractPageContent> content,
     required List<Map<String, dynamic>> variables,
     required String title,

@@ -22,7 +22,7 @@ class INotificationsResponse with _$INotificationsResponse {
     @NullableUriConverter() Uri? customIcon,
     String? appAccessTokenId,
     String? userId,
-    User? user,
+    UserLite? user,
     Note? note,
     RolesListResponse? role,
   }) = _INotificationsResponse;

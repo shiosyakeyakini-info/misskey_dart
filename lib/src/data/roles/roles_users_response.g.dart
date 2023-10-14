@@ -10,7 +10,7 @@ _$RolesUsersResponseImpl _$$RolesUsersResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$RolesUsersResponseImpl(
       id: json['id'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserDetailed.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$RolesUsersResponseImplToJson(

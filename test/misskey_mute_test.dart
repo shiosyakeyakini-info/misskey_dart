@@ -9,7 +9,7 @@ void main() async {
     await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
-    expect(userDetailed.isMuted, isTrue);
+    expect((userDetailed as UserDetailedNotMeWithRelations).isMuted, isTrue);
   });
 
   test("delete", () async {
@@ -18,6 +18,6 @@ void main() async {
     await userClient.mute.delete(MuteDeleteRequest(userId: newUser.id));
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
-    expect(userDetailed.isMuted, isFalse);
+    expect((userDetailed as UserDetailedNotMeWithRelations).isMuted, isFalse);
   });
 }

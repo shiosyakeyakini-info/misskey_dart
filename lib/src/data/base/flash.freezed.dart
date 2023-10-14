@@ -29,7 +29,7 @@ mixin _$Flash {
   String get summary => throw _privateConstructorUsedError;
   String get script => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
   int? get likedCount => throw _privateConstructorUsedError;
   bool get isLiked => throw _privateConstructorUsedError;
 
@@ -51,11 +51,11 @@ abstract class $FlashCopyWith<$Res> {
       String summary,
       String script,
       String userId,
-      User user,
+      UserLite user,
       int? likedCount,
       bool isLiked});
 
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class _$FlashCopyWithImpl<$Res, $Val extends Flash>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       likedCount: freezed == likedCount
           ? _value.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
@@ -128,8 +128,8 @@ class _$FlashCopyWithImpl<$Res, $Val extends Flash>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -150,12 +150,12 @@ abstract class _$$FlashImplCopyWith<$Res> implements $FlashCopyWith<$Res> {
       String summary,
       String script,
       String userId,
-      User user,
+      UserLite user,
       int? likedCount,
       bool isLiked});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -212,7 +212,7 @@ class __$$FlashImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       likedCount: freezed == likedCount
           ? _value.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
@@ -260,7 +260,7 @@ class _$FlashImpl implements _Flash {
   @override
   final String userId;
   @override
-  final User user;
+  final UserLite user;
   @override
   final int? likedCount;
   @override
@@ -320,7 +320,7 @@ abstract class _Flash implements Flash {
       required final String summary,
       required final String script,
       required final String userId,
-      required final User user,
+      required final UserLite user,
       final int? likedCount,
       final bool isLiked}) = _$FlashImpl;
 
@@ -343,7 +343,7 @@ abstract class _Flash implements Flash {
   @override
   String get userId;
   @override
-  User get user;
+  UserLite get user;
   @override
   int? get likedCount;
   @override

@@ -25,8 +25,18 @@ mixin _$Following {
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get followeeId => throw _privateConstructorUsedError;
   String get followerId => throw _privateConstructorUsedError;
-  User? get followee => throw _privateConstructorUsedError;
-  User? get follower => throw _privateConstructorUsedError;
+
+  /// 以下のエンドポイントでnon-null
+  ///
+// - [MisskeyFederation.followers]
+// - [MisskeyFederation.following]
+  /// - [MisskeyUsers.following]
+  UserDetailed? get followee => throw _privateConstructorUsedError;
+
+  /// 以下のエンドポイントでnon-null
+  ///
+  /// - [MisskeyUsers.followers]
+  UserDetailed? get follower => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,11 +54,8 @@ abstract class $FollowingCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      User? followee,
-      User? follower});
-
-  $UserCopyWith<$Res>? get followee;
-  $UserCopyWith<$Res>? get follower;
+      UserDetailed? followee,
+      UserDetailed? follower});
 }
 
 /// @nodoc
@@ -91,36 +98,12 @@ class _$FollowingCopyWithImpl<$Res, $Val extends Following>
       followee: freezed == followee
           ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
       follower: freezed == follower
           ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get followee {
-    if (_value.followee == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.followee!, (value) {
-      return _then(_value.copyWith(followee: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get follower {
-    if (_value.follower == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.follower!, (value) {
-      return _then(_value.copyWith(follower: value) as $Val);
-    });
   }
 }
 
@@ -137,13 +120,8 @@ abstract class _$$FollowingImplCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      User? followee,
-      User? follower});
-
-  @override
-  $UserCopyWith<$Res>? get followee;
-  @override
-  $UserCopyWith<$Res>? get follower;
+      UserDetailed? followee,
+      UserDetailed? follower});
 }
 
 /// @nodoc
@@ -184,11 +162,11 @@ class __$$FollowingImplCopyWithImpl<$Res>
       followee: freezed == followee
           ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
       follower: freezed == follower
           ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserDetailed?,
     ));
   }
 }
@@ -216,10 +194,20 @@ class _$FollowingImpl implements _Following {
   final String followeeId;
   @override
   final String followerId;
+
+  /// 以下のエンドポイントでnon-null
+  ///
+// - [MisskeyFederation.followers]
+// - [MisskeyFederation.following]
+  /// - [MisskeyUsers.following]
   @override
-  final User? followee;
+  final UserDetailed? followee;
+
+  /// 以下のエンドポイントでnon-null
+  ///
+  /// - [MisskeyUsers.followers]
   @override
-  final User? follower;
+  final UserDetailed? follower;
 
   @override
   String toString() {
@@ -269,8 +257,8 @@ abstract class _Following implements Following {
       @DateTimeConverter() required final DateTime createdAt,
       required final String followeeId,
       required final String followerId,
-      final User? followee,
-      final User? follower}) = _$FollowingImpl;
+      final UserDetailed? followee,
+      final UserDetailed? follower}) = _$FollowingImpl;
 
   factory _Following.fromJson(Map<String, dynamic> json) =
       _$FollowingImpl.fromJson;
@@ -285,9 +273,19 @@ abstract class _Following implements Following {
   @override
   String get followerId;
   @override
-  User? get followee;
+
+  /// 以下のエンドポイントでnon-null
+  ///
+// - [MisskeyFederation.followers]
+// - [MisskeyFederation.following]
+  /// - [MisskeyUsers.following]
+  UserDetailed? get followee;
   @override
-  User? get follower;
+
+  /// 以下のエンドポイントでnon-null
+  ///
+  /// - [MisskeyUsers.followers]
+  UserDetailed? get follower;
   @override
   @JsonKey(ignore: true)
   _$$FollowingImplCopyWith<_$FollowingImpl> get copyWith =>
