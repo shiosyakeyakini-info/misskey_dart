@@ -9,7 +9,7 @@ part of 'clips_notes_request.dart';
 _$_ClipsNotesRequest _$$_ClipsNotesRequestFromJson(Map<String, dynamic> json) =>
     _$_ClipsNotesRequest(
       limit: json['limit'] as int?,
-      clipId: json['clipId'] as String?,
+      clipId: json['clipId'] as String,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );

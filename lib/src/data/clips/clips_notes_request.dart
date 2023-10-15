@@ -7,7 +7,7 @@ part 'clips_notes_request.g.dart';
 class ClipsNotesRequest with _$ClipsNotesRequest {
   const factory ClipsNotesRequest({
     @Assert('limit > 0') int? limit,
-    String? clipId,
+    required String clipId,
     String? sinceId,
     String? untilId,
   }) = _ClipsNotesRequest;
