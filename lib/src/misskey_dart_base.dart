@@ -7,6 +7,7 @@ import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
+import 'package:misskey_dart/src/misskey_flash.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/streaming_service.dart';
 
@@ -34,6 +35,7 @@ class Misskey {
   late final MisskeyHashtags hashtags;
   late final MisskeyAp ap;
   late final MisskeyPages pages;
+  late final MisskeyFlash flash;
 
   Misskey({
     required this.token,
@@ -70,6 +72,7 @@ class Misskey {
     hashtags = MisskeyHashtags(apiService: apiService);
     ap = MisskeyAp(apiService: apiService);
     pages = MisskeyPages(apiService: apiService);
+    flash = MisskeyFlash(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。
