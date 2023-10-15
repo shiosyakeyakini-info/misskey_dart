@@ -200,32 +200,36 @@ void main() async {
         });
       });
 
-      group("serverStats", () {
-        test("statsLog", () async {
-          final completer = Completer<List<StatsLogResponse>>();
-          final client = userClient;
-          final controller = client.serverStatsLogStream(
-            completer.complete,
-            (response) => null,
-          );
-          await client.startStreaming();
-          await controller.requestLog(length: 10);
-          await completer.future;
-          controller.disconnect();
-        });
+      group(
+        "serverStats",
+        () {
+          test("statsLog", () async {
+            final completer = Completer<List<StatsLogResponse>>();
+            final client = userClient;
+            final controller = client.serverStatsLogStream(
+              completer.complete,
+              (response) => null,
+            );
+            await client.startStreaming();
+            await controller.requestLog(length: 10);
+            await completer.future;
+            controller.disconnect();
+          });
 
-        test("stats", () async {
-          final completer = Completer<StatsLogResponse>();
-          final client = userClient;
-          final controller = client.serverStatsLogStream(
-            (response) => null,
-            completer.complete,
-          );
-          await client.startStreaming();
-          await completer.future;
-          controller.disconnect();
-        });
-      });
+          test("stats", () async {
+            final completer = Completer<StatsLogResponse>();
+            final client = userClient;
+            final controller = client.serverStatsLogStream(
+              (response) => null,
+              completer.complete,
+            );
+            await client.startStreaming();
+            await completer.future;
+            controller.disconnect();
+          });
+        },
+        skip: "disabled by default since Misskey 13.14.0",
+      );
 
       group("main", () {
         test("notification", () async {
@@ -464,24 +468,25 @@ void main() async {
 
     group("broadcast", () {
       test("emojiCreated", () async {
-        final completer = Completer<void>();
+        final completer = Completer<Emoji>();
         final client = userClient;
+        final name = Uuid().v4().replaceAll("-", "_");
         final file = await adminClient.createDriveFile();
         final controller = client.mainStream(onEmojiAdded: completer.complete);
         await client.startStreaming();
         await adminClient.apiService
-            .post("admin/emoji/add", {"fileId": file.id});
+            .post("admin/emoji/add", {"name": name, "fileId": file.id});
         await completer.future;
         controller.disconnect();
       });
 
       test("emojiUpdated", () async {
-        final completer = Completer<void>();
+        final completer = Completer<Iterable<Emoji>>();
         final client = userClient;
         final file = await adminClient.createDriveFile();
         final name = Uuid().v4().replaceAll("-", "_");
         final response = await adminClient.apiService
-            .post("admin/emoji/add", {"fileId": file.id});
+            .post("admin/emoji/add", {"name": name, "fileId": file.id});
         await adminClient.apiService.post(
           "admin/emoji/update",
           {"id": response["id"], "name": name, "aliases": []},
@@ -498,11 +503,12 @@ void main() async {
       });
 
       test("emojiDeleted", () async {
-        final completer = Completer<void>();
+        final completer = Completer<Iterable<Emoji>>();
         final client = userClient;
         final file = await adminClient.createDriveFile();
+        final name = Uuid().v4().replaceAll("-", "_");
         final response = await adminClient.apiService
-            .post("admin/emoji/add", {"fileId": file.id});
+            .post("admin/emoji/add", {"name": name, "fileId": file.id});
         final controller =
             client.mainStream(onEmojiDeleted: completer.complete);
         await client.startStreaming();

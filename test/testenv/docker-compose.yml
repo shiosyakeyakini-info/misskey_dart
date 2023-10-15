@@ -11,7 +11,7 @@ services:
       - ../:/misskey-test
 
   web:
-    image: misskey/misskey:13.12.2
+    image: misskey/misskey:2023.10.1
     restart: always
     links:
       - db
