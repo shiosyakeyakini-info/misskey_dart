@@ -33,6 +33,7 @@ class Misskey {
   late final MisskeyRoles roles;
   late final MisskeyHashtags hashtags;
   late final MisskeyAp ap;
+  late final MisskeyPages pages;
 
   Misskey({
     required this.token,
@@ -68,6 +69,7 @@ class Misskey {
     roles = MisskeyRoles(apiService: apiService);
     hashtags = MisskeyHashtags(apiService: apiService);
     ap = MisskeyAp(apiService: apiService);
+    pages = MisskeyPages(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。

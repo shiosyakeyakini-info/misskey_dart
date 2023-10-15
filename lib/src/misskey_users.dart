@@ -1,5 +1,6 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/base/flash.dart';
+import 'package:misskey_dart/src/data/base/page.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -114,6 +115,13 @@ class MisskeyUsers {
     final response =
         await _apiService.post<List>("users/featured-notes", request.toJson());
     return response.map((e) => Note.fromJson(e));
+  }
+
+  /// ユーザーが作成したページを取得します。
+  Future<Iterable<Page>> pages(UsersPagesRequest request) async {
+    final response =
+        await _apiService.post<List>("users/pages", request.toJson());
+    return response.map((e) => Page.fromJson(e));
   }
 }
 
