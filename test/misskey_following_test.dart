@@ -10,6 +10,12 @@ void main() async {
     final newUser = (await adminClient.createUser()).user;
     await userClient.following
         .create(FollowingCreateRequest(userId: newUser.id));
+    final userDetailed =
+        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    expect(
+      userDetailed.isFollowing,
+      isTrue,
+    );
   });
 
   test("delete", () async {
@@ -18,62 +24,91 @@ void main() async {
         .create(FollowingCreateRequest(userId: newUser.id));
     await userClient.following
         .delete(FollowingDeleteRequest(userId: newUser.id));
+    final userDetailed =
+        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    expect(
+      userDetailed.isFollowing,
+      isFalse,
+    );
   });
 
   test("invalidate", () async {
-    final response = await adminClient.createUser();
-    final newUser = response.user;
-    final newClient = response.client;
+    final clientAndUser = await adminClient.createUser();
+    final newClient = clientAndUser.client;
+    final newUser = clientAndUser.user;
     await userClient.following
         .create(FollowingCreateRequest(userId: newUser.id));
     await newClient.following
         .invalidate(FollowingInvalidateRequest(userId: user.id));
+    final userDetailed =
+        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    expect(
+      userDetailed.isFollowed,
+      isFalse,
+    );
+  });
+
+  test("update-all", () async {
+    await userClient.following
+        .updateAll(FollowingUpdateAllRequest(withReplies: true));
   });
 
   group("requests", () {
     test("accept", () async {
-      final response = await adminClient.createUser();
-      final newUser = response.user;
-      final newClient = response.client;
+      final clientAndUser = await adminClient.createUser();
+      final newClient = clientAndUser.client;
+      final newUser = clientAndUser.user;
       await newClient.i.update(IUpdateRequest(isLocked: true));
       await userClient.following
           .create(FollowingCreateRequest(userId: newUser.id));
       await newClient.following.requests
           .accept(FollowingRequestsAcceptRequest(userId: user.id));
+      final userDetailed =
+          await newClient.users.show(UsersShowRequest(userId: user.id));
+      expect(
+        userDetailed.isFollowed,
+        isTrue,
+      );
     });
 
     test("cancel", () async {
-      final response = await adminClient.createUser();
-      final newUser = response.user;
-      final newClient = response.client;
+      final clientAndUser = await adminClient.createUser();
+      final newClient = clientAndUser.client;
+      final newUser = clientAndUser.user;
       await newClient.i.update(IUpdateRequest(isLocked: true));
       await userClient.following
           .create(FollowingCreateRequest(userId: newUser.id));
       await userClient.following.requests
           .cancel(FollowingRequestsCancelRequest(userId: newUser.id));
+      final requests = await newClient.following.requests
+          .list(FollowingRequestsListRequest());
+      expect(requests.map((e) => e.follower.id), isNot(contains(user.id)));
     });
 
     test("list", () async {
-      final response = await adminClient.createUser();
-      final newUser = response.user;
-      final newClient = response.client;
+      final clientAndUser = await adminClient.createUser();
+      final newClient = clientAndUser.client;
+      final newUser = clientAndUser.user;
       await newClient.i.update(IUpdateRequest(isLocked: true));
       await userClient.following
           .create(FollowingCreateRequest(userId: newUser.id));
-      final followRequests = await newClient.following.requests
+      final requests = await newClient.following.requests
           .list(FollowingRequestsListRequest());
-      followRequests.toList();
+      expect(requests.map((e) => e.follower.id), contains(user.id));
     });
 
     test("reject", () async {
-      final response = await adminClient.createUser();
-      final newUser = response.user;
-      final newClient = response.client;
+      final clientAndUser = await adminClient.createUser();
+      final newClient = clientAndUser.client;
+      final newUser = clientAndUser.user;
       await newClient.i.update(IUpdateRequest(isLocked: true));
       await userClient.following
           .create(FollowingCreateRequest(userId: newUser.id));
       await newClient.following.requests
           .reject(FollowingRequestsRejectRequest(userId: user.id));
+      final requests = await newClient.following.requests
+          .list(FollowingRequestsListRequest());
+      expect(requests.map((e) => e.follower.id), isNot(contains(user.id)));
     });
   });
 }

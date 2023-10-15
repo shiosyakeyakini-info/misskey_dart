@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:dotenv/dotenv.dart';
 import 'package:misskey_dart/misskey_dart.dart';
@@ -17,7 +17,7 @@ class CreateUserResponse {
   });
 }
 
-Misskey getTestClient(String token) {
+Misskey getTestClient(String? token) {
   return Misskey(
     token: token,
     host: env["TEST_HOST"]!,
@@ -32,6 +32,10 @@ Misskey get adminClient {
 
 Misskey get userClient {
   return getTestClient(env["TEST_USER_TOKEN"]!);
+}
+
+Misskey get anonymousClient {
+  return getTestClient(null);
 }
 
 extension MisskeyTestExtension on Misskey {
@@ -49,18 +53,47 @@ extension MisskeyTestExtension on Misskey {
     );
   }
 
-  Future<Note> createNote() async {
-    final response = await apiService
-        .post<Map<String, dynamic>>("notes/create", {"text": "test"});
+  Future<Note> createNote({
+    String text = "test",
+    String? replyId,
+    String? renoteId,
+    String? channelId,
+    List<String>? poll,
+  }) async {
+    final response =
+        await apiService.post<Map<String, dynamic>>("notes/create", {
+      "text": text,
+      "replyId": replyId,
+      "renoteId": renoteId,
+      "channelId": channelId,
+      if (poll != null) "poll": {"choices": poll},
+    });
     return Note.fromJson(response["createdNote"]);
   }
 
   Future<DriveFile> createDriveFile() async {
-    final dir = Directory.systemTemp;
-    final name = Uuid().v4();
-    final path = "${dir.path}/$name.txt";
-    final file = await File(path).create();
-    await file.writeAsString("test");
-    return await drive.files.create(DriveFilesCreateRequest(), file);
+    return drive.files.createAsBinary(
+      DriveFilesCreateRequest(force: true),
+      Uint8List(0),
+    );
+  }
+
+  Future<Map<String, dynamic>> createPage() {
+    return apiService.post<Map<String, dynamic>>("pages/create", {
+      "title": "test",
+      "name": Uuid().v4(),
+      "content": [],
+      "variables": [],
+      "script": "",
+    });
+  }
+
+  Future<Map<String, dynamic>> createFlash() {
+    return apiService.post<Map<String, dynamic>>("flash/create", {
+      "title": "test",
+      "summary": "test",
+      "script": "",
+      "permissions": [],
+    });
   }
 }

@@ -11,7 +11,8 @@ void main() async {
 
   group("misc", () {
     test("announcements", () async {
-      await userClient.announcements(AnnouncementsRequest());
+      final response = await userClient.announcements(AnnouncementsRequest());
+      response.toList();
     });
 
     test("endpoints", () async {
@@ -24,6 +25,46 @@ void main() async {
 
     test("meta", () async {
       await userClient.meta();
+    });
+
+    test("stats", () async {
+      await userClient.stats();
+    });
+
+    test("ping", () async {
+      await userClient.ping();
+    });
+
+    test("server-info", () async {
+      await adminClient.apiService
+          .post("admin/update-meta", {"enableServerMachineStats": true});
+      await userClient.serverInfo();
+    });
+
+    test("get-online-users-count", () async {
+      await userClient.getOnlineUsersCount();
+    });
+
+    test("get-avatar-decorations", () async {
+      await adminClient.apiService.post(
+        "admin/avatar-decorations/create",
+        {
+          "name": "test",
+          "description": "test",
+          "url": "https://example.com",
+        },
+      );
+      final response = await userClient.getAvatarDecorations();
+      response.toList();
+    });
+
+    test("pinned-users", () async {
+      final newUser = (await adminClient.createUser()).user;
+      await adminClient.apiService.post("admin/update-meta", {
+        "pinnedUsers": [newUser.username],
+      });
+      final response = await userClient.pinnedUsers();
+      expect(response.map((e) => e.id), contains(newUser.id));
     });
   });
 
@@ -179,7 +220,7 @@ void main() async {
               name: "test",
               src: AntennaSource.all,
               keywords: [
-                ["keyword"]
+                ["keyword"],
               ],
               excludeKeywords: [[]],
               users: [],
@@ -389,6 +430,52 @@ void main() async {
           await completer.future;
           controller.disconnect();
         });
+
+        test("receiveFollowRequest", () async {
+          final completer = Completer<User>();
+          final newClient = (await adminClient.createUser()).client;
+          final newUser =
+              await newClient.i.update(IUpdateRequest(isLocked: true));
+          final controller =
+              newClient.mainStream(onReceiveFollowRequest: completer.complete);
+          await newClient.startStreaming();
+          await userClient.following
+              .create(FollowingCreateRequest(userId: newUser.id));
+          await completer.future;
+          controller.disconnect();
+        });
+
+        test("readAllAnnouncements", () async {
+          final completer = Completer<void>();
+          final newClient = (await adminClient.createUser()).client;
+          await adminClient.apiService.post("admin/announcements/create", {
+            "title": "title",
+            "text": "test",
+            "imageUrl": "https://example.com",
+          });
+          final announcements =
+              await newClient.announcements(AnnouncementsRequest());
+          final controller = newClient.mainStream(
+            onReadAllAnnouncements: () {
+              if (!completer.isCompleted) {
+                completer.complete();
+              }
+            },
+          );
+          await newClient.startStreaming();
+          await Future.wait(
+            announcements.map((announcement) {
+              if (!(announcement.isRead ?? false)) {
+                return newClient.i.readAnnouncement(
+                  IReadAnnouncementRequest(announcementId: announcement.id),
+                );
+              }
+              return Future.value();
+            }),
+          );
+          await completer.future;
+          controller.disconnect();
+        });
       });
     });
 
@@ -449,8 +536,8 @@ void main() async {
         final client = userClient;
         final response = await client.apiService.post("notes/create", {
           "poll": {
-            "choices": ["0", "1"]
-          }
+            "choices": ["0", "1"],
+          },
         });
         final note = Note.fromJson(response["createdNote"]);
         final controller = client.homeTimelineStream(
@@ -514,6 +601,22 @@ void main() async {
         await client.startStreaming();
         await adminClient.apiService
             .post("admin/emoji/delete", {"id": response["id"]});
+        await completer.future;
+        controller.disconnect();
+      });
+
+      test("announcementCreated", () async {
+        final completer = Completer<AnnouncementsResponse>();
+        final client = userClient;
+        final controller = client.mainStream(
+          onAnnouncementCreated: completer.complete,
+        );
+        await client.startStreaming();
+        await adminClient.apiService.post("admin/announcements/create", {
+          "title": "title",
+          "text": "test",
+          "imageUrl": "https://example.com",
+        });
         await completer.future;
         controller.disconnect();
       });

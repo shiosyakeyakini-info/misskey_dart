@@ -51,13 +51,31 @@ void main() async {
     });
   });
 
+  test(
+    "update",
+    () async {
+      final note = await userClient.createNote();
+      await userClient.notes
+          .update(NotesUpdateRequest(noteId: note.id, text: "updated"));
+      final updated =
+          await userClient.notes.show(NotesShowRequest(noteId: note.id));
+      expect(updated.text, "updated");
+    },
+    skip: "removed in Misskey 2023.10.0",
+  );
+
   test("delete", () async {
     final note = await userClient.createNote();
     await userClient.notes.delete(NotesDeleteRequest(noteId: note.id));
+    final notes =
+        await userClient.users.notes(UsersNotesRequest(userId: user.id));
+    expect(notes.map((e) => e.id), isNot(contains(note.id)));
   });
 
   test("notes", () async {
-    await userClient.notes.notes(NotesRequest());
+    final note = await userClient.createNote();
+    final response = await userClient.notes.notes(NotesRequest());
+    expect(response.map((e) => e.id), contains(note.id));
   });
 
   test("show", () async {
@@ -94,70 +112,80 @@ void main() async {
   });
 
   test("search", () async {
-    await userClient.notes.search(NotesSearchRequest(query: "query"));
+    final note = await userClient.createNote(text: "query");
+    final response =
+        await userClient.notes.search(NotesSearchRequest(query: "query"));
+    expect(response.map((e) => e.id), contains(note.id));
   });
 
   test("searchByTag", () async {
-    await userClient.notes.searchByTag(NotesSearchByTagRequest(tag: "tag"));
+    final note = await userClient.createNote(text: "#tag");
+    final response =
+        await userClient.notes.searchByTag(NotesSearchByTagRequest(tag: "tag"));
+    expect(response.map((e) => e.id), contains(note.id));
   });
 
   test("renotes", () async {
     final note = await userClient.createNote();
-    await userClient.notes.create(NotesCreateRequest(renoteId: note.id));
-    await userClient.notes.renotes(NotesRenoteRequest(noteId: note.id));
+    final renote = await userClient.createNote(renoteId: note.id);
+    final response =
+        await userClient.notes.renotes(NotesRenoteRequest(noteId: note.id));
+    expect(response.map((e) => e.id), contains(renote.id));
   });
 
   test("replies", () async {
     final note = await userClient.createNote();
-    await userClient.notes
-        .create(NotesCreateRequest(text: "test", replyId: note.id));
-    await userClient.notes.replies(NotesRepliesRequest(noteId: note.id));
+    final reply = await userClient.createNote(replyId: note.id);
+    final response =
+        await userClient.notes.replies(NotesRepliesRequest(noteId: note.id));
+    expect(response.map((e) => e.id), contains(reply.id));
   });
 
   test("children", () async {
     final note = await userClient.createNote();
-    await userClient.notes
-        .create(NotesCreateRequest(text: "test", renoteId: note.id));
-    await userClient.notes.children(NotesChildrenRequest(noteId: note.id));
+    final reply = await userClient.createNote(replyId: note.id);
+    final response =
+        await userClient.notes.children(NotesChildrenRequest(noteId: note.id));
+    expect(response.map((e) => e.id), contains(reply.id));
   });
 
   test("conversation", () async {
     final note = await userClient.createNote();
-    final response = await userClient.apiService
-        .post("notes/create", {"text": "test", "replyId": note.id});
-    final reply = Note.fromJson(response["createdNote"]);
-    await userClient.notes
+    final reply = await userClient.createNote(replyId: note.id);
+    final response = await userClient.notes
         .conversation(NotesConversationRequest(noteId: reply.id));
+    expect(response.map((e) => e.id), contains(note.id));
   });
 
   test("featured", () async {
-    await userClient.notes.featured(NotesFeaturedRequest());
+    final response = await userClient.notes.featured(NotesFeaturedRequest());
+    response.toList();
   });
 
   test("mentions", () async {
-    await userClient.notes.create(
-      NotesCreateRequest(
-        text: "test",
-        visibility: NoteVisibility.specified,
-        visibleUserIds: [user.id],
-      ),
-    );
-    await userClient.notes.mentions(NotesMentionsRequest());
+    final note = await adminClient.createNote(text: "@${user.username}");
+    final response = await userClient.notes.mentions(NotesMentionsRequest());
+    expect(response.map((e) => e.id), contains(note.id));
   });
 
   test("clips", () async {
     final note = await userClient.createNote();
-    final clip =
-        await userClient.clips.create(ClipsCreateRequest(name: "test"));
+    final clip = await userClient.clips
+        .create(ClipsCreateRequest(name: "test", isPublic: true));
     await userClient.clips
         .addNote(ClipsAddNoteRequest(clipId: clip.id, noteId: note.id));
-    await userClient.notes.clips(NotesClipsRequest(noteId: note.id));
+    final response =
+        await userClient.notes.clips(NotesClipsRequest(noteId: note.id));
+    expect(response.map((e) => e.id), contains(clip.id));
   });
 
   test("unrenote", () async {
     final note = await userClient.createNote();
-    await userClient.notes.create(NotesCreateRequest(renoteId: note.id));
+    final renote = await userClient.createNote(renoteId: note.id);
     await userClient.notes.unrenote(NotesUnrenoteRequest(noteId: note.id));
+    final notes =
+        await userClient.users.notes(UsersNotesRequest(userId: user.id));
+    expect(notes.map((e) => e.id), isNot(contains(renote.id)));
   });
 
   group("reactions", () {
@@ -175,6 +203,19 @@ void main() async {
       );
       await userClient.notes.reactions
           .delete(NotesReactionsDeleteRequest(noteId: note.id));
+      final response = await userClient.notes.reactions
+          .reactions(NotesReactionsRequest(noteId: note.id));
+      expect(response.map((e) => e.user.id), isNot(contains(user.id)));
+    });
+
+    test("reactions", () async {
+      final note = await userClient.createNote();
+      await userClient.notes.reactions.create(
+        NotesReactionsCreateRequest(noteId: note.id, reaction: "👍"),
+      );
+      final response = await userClient.notes.reactions
+          .reactions(NotesReactionsRequest(noteId: note.id));
+      expect(response.map((e) => e.user.id), contains(user.id));
     });
   });
 
@@ -191,24 +232,23 @@ void main() async {
           .create(NotesFavoritesCreateRequest(noteId: note.id));
       await userClient.notes.favorites
           .delete(NotesFavoritesDeleteRequest(noteId: note.id));
+      final favorites = await userClient.i.favorites(IFavoritesRequest());
+      expect(favorites.map((e) => e.noteId), isNot(contains(note.id)));
     });
   });
 
   group("polls", () {
     test("vote", () async {
-      final response = await userClient.apiService.post("notes/create", {
-        "poll": {
-          "choices": ["a", "b"]
-        },
-      });
-      final note = Note.fromJson(response["createdNote"]);
+      final note = await userClient.createNote(poll: ["a", "b"]);
       await userClient.notes.polls
           .vote(NotesPollsVoteRequest(noteId: note.id, choice: 0));
     });
 
     test("recommendation", () async {
-      await userClient.notes.polls
+      final note = await adminClient.createNote(poll: ["a", "b"]);
+      final response = await userClient.notes.polls
           .recommendation(NotesPollsRecommendationRequest());
+      expect(response.map((e) => e.id), contains(note.id));
     });
   });
 

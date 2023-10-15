@@ -8,6 +8,12 @@ void main() async {
     final newUser = (await adminClient.createUser()).user;
     await userClient.renoteMute
         .create(RenoteMuteCreateRequest(userId: newUser.id));
+    final userDetailed =
+        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    expect(
+      userDetailed.isRenoteMuted,
+      isTrue,
+    );
   });
 
   test("delete", () async {
@@ -16,5 +22,11 @@ void main() async {
         .create(RenoteMuteCreateRequest(userId: newUser.id));
     await userClient.renoteMute
         .delete(RenoteMuteDeleteRequest(userId: newUser.id));
+    final userDetailed =
+        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    expect(
+      userDetailed.isRenoteMuted,
+      isFalse,
+    );
   });
 }

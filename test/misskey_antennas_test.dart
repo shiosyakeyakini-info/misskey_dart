@@ -5,12 +5,12 @@ import 'util/misskey_dart_test_util.dart';
 
 void main() async {
   test("create", () async {
-    await userClient.antennas.create(
+    final antenna = await userClient.antennas.create(
       AntennasCreateRequest(
         name: "test",
         src: AntennaSource.all,
         keywords: [
-          ["keyword"]
+          ["keyword"],
         ],
         excludeKeywords: [[]],
         users: [],
@@ -20,6 +20,7 @@ void main() async {
         notify: false,
       ),
     );
+    expect(antenna.name, equals("test"));
   });
 
   test("delete", () async {
@@ -28,7 +29,7 @@ void main() async {
         name: "test",
         src: AntennaSource.all,
         keywords: [
-          ["keyword"]
+          ["keyword"],
         ],
         excludeKeywords: [[]],
         users: [],
@@ -40,10 +41,28 @@ void main() async {
     );
     await userClient.antennas
         .delete(AntennasDeleteRequest(antennaId: antenna.id));
+    final antennas = await userClient.antennas.list();
+    expect(antennas.map((e) => e.id), isNot(contains(antenna.id)));
   });
 
   test("list", () async {
-    await userClient.antennas.list();
+    final antenna = await userClient.antennas.create(
+      AntennasCreateRequest(
+        name: "test",
+        src: AntennaSource.all,
+        keywords: [
+          ["keyword"],
+        ],
+        excludeKeywords: [[]],
+        users: [],
+        caseSensitive: false,
+        withReplies: false,
+        withFile: false,
+        notify: false,
+      ),
+    );
+    final response = await userClient.antennas.list();
+    expect(response.map((e) => e.id), contains(antenna.id));
   });
 
   test("notes", () async {
@@ -52,7 +71,7 @@ void main() async {
         name: "test",
         src: AntennaSource.all,
         keywords: [
-          ["keyword"]
+          ["keyword"],
         ],
         excludeKeywords: [[]],
         users: [],
@@ -62,8 +81,10 @@ void main() async {
         notify: false,
       ),
     );
-    await userClient.antennas
+    final note = await userClient.createNote(text: "keyword");
+    final response = await userClient.antennas
         .notes(AntennasNotesRequest(antennaId: antenna.id));
+    expect(response.map((e) => e.id), contains(note.id));
   });
 
   test("show", () async {
@@ -72,7 +93,7 @@ void main() async {
         name: "test",
         src: AntennaSource.all,
         keywords: [
-          ["keyword"]
+          ["keyword"],
         ],
         excludeKeywords: [[]],
         users: [],
@@ -82,7 +103,9 @@ void main() async {
         notify: false,
       ),
     );
-    await userClient.antennas.show(AntennasShowRequest(antennaId: antenna.id));
+    final response = await userClient.antennas
+        .show(AntennasShowRequest(antennaId: antenna.id));
+    expect(response.name, equals(antenna.name));
   });
 
   test("update", () async {
@@ -91,7 +114,7 @@ void main() async {
         name: "test",
         src: AntennaSource.all,
         keywords: [
-          ["keyword"]
+          ["keyword"],
         ],
         excludeKeywords: [[]],
         users: [],
@@ -108,7 +131,7 @@ void main() async {
         src: AntennaSource.users,
         keywords: [[]],
         excludeKeywords: [
-          ["keyword"]
+          ["keyword"],
         ],
         users: ["@admin"],
         caseSensitive: true,
@@ -117,5 +140,8 @@ void main() async {
         notify: true,
       ),
     );
+    final updated = await userClient.antennas
+        .show(AntennasShowRequest(antennaId: antenna.id));
+    expect(updated.name, equals("updated"));
   });
 }
