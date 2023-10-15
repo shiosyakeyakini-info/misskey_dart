@@ -14,8 +14,10 @@ class MisskeyPages {
   }
 
   Future<Page> show(PagesShowRequest request) async {
-    final response =
-        await _apiService.post<Map<String, dynamic>>("pages/show", {});
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "pages/show",
+      request.toJson(),
+    );
     return Page.fromJson(response);
   }
 
