@@ -16,7 +16,7 @@ class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
     bool? includeRenotedMyNotes,
     bool? includeLocalRenotes,
     bool? withFiles,
-    @Deprecated("removed at 2023.10.0") bool? withReplies,
+    bool? withReplies,
     bool? withRenotes,
   }) = _NotesHybridTimelineRequest;
 

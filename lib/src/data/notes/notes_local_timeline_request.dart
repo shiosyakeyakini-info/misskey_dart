@@ -9,6 +9,7 @@ class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
   const factory NotesLocalTimelineRequest({
     bool? withFiles,
     bool? withRenotes,
+    bool? withReplies,
     @Deprecated("removed at 2023.10.0") List<String>? fileType,
     bool? excludeNsfw,
     int? limit,

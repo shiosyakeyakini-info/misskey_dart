@@ -32,7 +32,6 @@ mixin _$NotesHybridTimelineRequest {
   bool? get includeRenotedMyNotes => throw _privateConstructorUsedError;
   bool? get includeLocalRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
-  @Deprecated("removed at 2023.10.0")
   bool? get withReplies => throw _privateConstructorUsedError;
   bool? get withRenotes => throw _privateConstructorUsedError;
 
@@ -59,7 +58,7 @@ abstract class $NotesHybridTimelineRequestCopyWith<$Res> {
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      @Deprecated("removed at 2023.10.0") bool? withReplies,
+      bool? withReplies,
       bool? withRenotes});
 }
 
@@ -157,7 +156,7 @@ abstract class _$$_NotesHybridTimelineRequestCopyWith<$Res>
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      @Deprecated("removed at 2023.10.0") bool? withReplies,
+      bool? withReplies,
       bool? withRenotes});
 }
 
@@ -248,7 +247,7 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
       this.includeRenotedMyNotes,
       this.includeLocalRenotes,
       this.withFiles,
-      @Deprecated("removed at 2023.10.0") this.withReplies,
+      this.withReplies,
       this.withRenotes});
 
   factory _$_NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =>
@@ -275,7 +274,6 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
   @override
   final bool? withFiles;
   @override
-  @Deprecated("removed at 2023.10.0")
   final bool? withReplies;
   @override
   final bool? withRenotes;
@@ -354,7 +352,7 @@ abstract class _NotesHybridTimelineRequest
       final bool? includeRenotedMyNotes,
       final bool? includeLocalRenotes,
       final bool? withFiles,
-      @Deprecated("removed at 2023.10.0") final bool? withReplies,
+      final bool? withReplies,
       final bool? withRenotes}) = _$_NotesHybridTimelineRequest;
 
   factory _NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =
@@ -381,7 +379,6 @@ abstract class _NotesHybridTimelineRequest
   @override
   bool? get withFiles;
   @override
-  @Deprecated("removed at 2023.10.0")
   bool? get withReplies;
   @override
   bool? get withRenotes;

@@ -23,6 +23,7 @@ NotesLocalTimelineRequest _$NotesLocalTimelineRequestFromJson(
 mixin _$NotesLocalTimelineRequest {
   bool? get withFiles => throw _privateConstructorUsedError;
   bool? get withRenotes => throw _privateConstructorUsedError;
+  bool? get withReplies => throw _privateConstructorUsedError;
   @Deprecated("removed at 2023.10.0")
   List<String>? get fileType => throw _privateConstructorUsedError;
   bool? get excludeNsfw => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $NotesLocalTimelineRequestCopyWith<$Res> {
   $Res call(
       {bool? withFiles,
       bool? withRenotes,
+      bool? withReplies,
       @Deprecated("removed at 2023.10.0") List<String>? fileType,
       bool? excludeNsfw,
       int? limit,
@@ -74,6 +76,7 @@ class _$NotesLocalTimelineRequestCopyWithImpl<$Res,
   $Res call({
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
+    Object? withReplies = freezed,
     Object? fileType = freezed,
     Object? excludeNsfw = freezed,
     Object? limit = freezed,
@@ -90,6 +93,10 @@ class _$NotesLocalTimelineRequestCopyWithImpl<$Res,
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
       fileType: freezed == fileType
           ? _value.fileType
@@ -135,6 +142,7 @@ abstract class _$$_NotesLocalTimelineRequestCopyWith<$Res>
   $Res call(
       {bool? withFiles,
       bool? withRenotes,
+      bool? withReplies,
       @Deprecated("removed at 2023.10.0") List<String>? fileType,
       bool? excludeNsfw,
       int? limit,
@@ -159,6 +167,7 @@ class __$$_NotesLocalTimelineRequestCopyWithImpl<$Res>
   $Res call({
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
+    Object? withReplies = freezed,
     Object? fileType = freezed,
     Object? excludeNsfw = freezed,
     Object? limit = freezed,
@@ -175,6 +184,10 @@ class __$$_NotesLocalTimelineRequestCopyWithImpl<$Res>
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
       fileType: freezed == fileType
           ? _value._fileType
@@ -214,6 +227,7 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
   const _$_NotesLocalTimelineRequest(
       {this.withFiles,
       this.withRenotes,
+      this.withReplies,
       @Deprecated("removed at 2023.10.0") final List<String>? fileType,
       this.excludeNsfw,
       this.limit,
@@ -230,6 +244,8 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
   final bool? withFiles;
   @override
   final bool? withRenotes;
+  @override
+  final bool? withReplies;
   final List<String>? _fileType;
   @override
   @Deprecated("removed at 2023.10.0")
@@ -258,7 +274,7 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
 
   @override
   String toString() {
-    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
+    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 
   @override
@@ -270,6 +286,8 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
                 other.withFiles == withFiles) &&
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
+            (identical(other.withReplies, withReplies) ||
+                other.withReplies == withReplies) &&
             const DeepCollectionEquality().equals(other._fileType, _fileType) &&
             (identical(other.excludeNsfw, excludeNsfw) ||
                 other.excludeNsfw == excludeNsfw) &&
@@ -288,6 +306,7 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
       runtimeType,
       withFiles,
       withRenotes,
+      withReplies,
       const DeepCollectionEquality().hash(_fileType),
       excludeNsfw,
       limit,
@@ -315,6 +334,7 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   const factory _NotesLocalTimelineRequest(
       {final bool? withFiles,
       final bool? withRenotes,
+      final bool? withReplies,
       @Deprecated("removed at 2023.10.0") final List<String>? fileType,
       final bool? excludeNsfw,
       final int? limit,
@@ -331,6 +351,8 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   bool? get withFiles;
   @override
   bool? get withRenotes;
+  @override
+  bool? get withReplies;
   @override
   @Deprecated("removed at 2023.10.0")
   List<String>? get fileType;
