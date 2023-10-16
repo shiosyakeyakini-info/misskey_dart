@@ -3,6 +3,10 @@ import 'dart:async';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
+import 'package:misskey_dart/src/data/streaming/global_timeline_parameter.dart';
+import 'package:misskey_dart/src/data/streaming/home_timeline_parameter.dart';
+import 'package:misskey_dart/src/data/streaming/hybrid_timeline_parameter.dart';
+import 'package:misskey_dart/src/data/streaming/local_timeline_parameter.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
@@ -143,6 +147,7 @@ class Misskey {
 
   /// ホームタイムラインに接続します。
   SocketController homeTimelineStream({
+    required HomeTimelineParameter parameter,
     FutureOr<void> Function(Note note)? onNoteReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
@@ -151,36 +156,38 @@ class Misskey {
     FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
-        channel: Channel.homeTimeline,
-        onChannelEventReceived: (type, response) async {
-          if (response == null) return;
+          channel: Channel.homeTimeline,
+          onChannelEventReceived: (type, response) async {
+            if (response == null) return;
 
-          final note = Note.fromJson(response);
-          await onNoteReceived?.call(note);
-        },
-        onNoteUpdatedEventReceived: (id, type, response) async {
-          switch (type) {
-            case NoteUpdatedEventType.reacted:
-              await onReacted?.call(id, TimelineReacted.fromJson(response));
-              return;
-            case NoteUpdatedEventType.unreacted:
-              await onUnreacted?.call(id, TimelineReacted.fromJson(response));
-              return;
-            case NoteUpdatedEventType.deleted:
-              await onDeleted?.call(id, DateTime.parse(response["deletedAt"]));
-              return;
-            case NoteUpdatedEventType.pollVoted:
-              await onVoted?.call(id, TimelineVoted.fromJson(response));
-              return;
-            case NoteUpdatedEventType.updated:
-              await onUpdated?.call(id, NoteEdited.fromJson(response));
-              return;
-          }
-        },
-      );
+            final note = Note.fromJson(response);
+            await onNoteReceived?.call(note);
+          },
+          onNoteUpdatedEventReceived: (id, type, response) async {
+            switch (type) {
+              case NoteUpdatedEventType.reacted:
+                await onReacted?.call(id, TimelineReacted.fromJson(response));
+                return;
+              case NoteUpdatedEventType.unreacted:
+                await onUnreacted?.call(id, TimelineReacted.fromJson(response));
+                return;
+              case NoteUpdatedEventType.deleted:
+                await onDeleted?.call(
+                    id, DateTime.parse(response["deletedAt"]));
+                return;
+              case NoteUpdatedEventType.pollVoted:
+                await onVoted?.call(id, TimelineVoted.fromJson(response));
+                return;
+              case NoteUpdatedEventType.updated:
+                await onUpdated?.call(id, NoteEdited.fromJson(response));
+                return;
+            }
+          },
+          parameters: parameter.toJson());
 
   /// ローカルタイムラインに接続します。
   SocketController localTimelineStream({
+    required LocalTimelineParameter parameter,
     FutureOr<void> Function(Note note)? onNoteReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
@@ -215,10 +222,12 @@ class Misskey {
               return;
           }
         },
+        parameters: parameter.toJson(),
       );
 
   /// グローバルタイムラインに接続します。
   SocketController globalTimelineStream({
+    required GlobalTimelineParameter parameter,
     FutureOr<void> Function(Note note)? onNoteReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
@@ -253,10 +262,12 @@ class Misskey {
               return;
           }
         },
+        parameters: parameter.toJson(),
       );
 
   /// ソーシャルタイムラインに接続します。
   SocketController hybridTimelineStream({
+    required HybridTimelineParameter parameter,
     FutureOr<void> Function(Note note)? onNoteReceived,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onReacted,
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
@@ -291,6 +302,7 @@ class Misskey {
               return;
           }
         },
+        parameters: parameter.toJson(),
       );
 
   /// ロールタイムラインに接続します。
