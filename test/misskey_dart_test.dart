@@ -924,6 +924,7 @@ void main() async {
       test("homeTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.homeTimelineStream(
+          parameter: HomeTimelineParameter(),
           onNoteReceived: completer.complete,
         );
         await userClient.startStreaming();
@@ -935,6 +936,7 @@ void main() async {
       test("localTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.localTimelineStream(
+          parameter: LocalTimelineParameter(),
           onNoteReceived: completer.complete,
         );
         await userClient.startStreaming();
@@ -946,6 +948,7 @@ void main() async {
       test("globalTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.globalTimelineStream(
+          parameter: GlobalTimelineParameter(),
           onNoteReceived: completer.complete,
         );
         await userClient.startStreaming();
@@ -957,6 +960,7 @@ void main() async {
       test("hybridTimeline", () async {
         final completer = Completer<Note>();
         final controller = userClient.hybridTimelineStream(
+          parameter: HybridTimelineParameter(),
           onNoteReceived: completer.complete,
         );
         await userClient.startStreaming();
@@ -1265,6 +1269,7 @@ void main() async {
         final completer = Completer<TimelineReacted>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
+          parameter: HomeTimelineParameter(),
           onReacted: (id, reaction) => completer.complete(reaction),
         );
         await userClient.startStreaming();
@@ -1280,6 +1285,7 @@ void main() async {
         final completer = Completer<TimelineReacted>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
+          parameter: HomeTimelineParameter(),
           onUnreacted: (id, reaction) => completer.complete(reaction),
         );
         await userClient.startStreaming();
@@ -1297,6 +1303,7 @@ void main() async {
         final completer = Completer<DateTime>();
         final note = await userClient.createNote();
         final controller = userClient.homeTimelineStream(
+          parameter: HomeTimelineParameter(),
           onDeleted: (id, deletedAt) => completer.complete(deletedAt),
         );
         await userClient.startStreaming();
@@ -1315,6 +1322,7 @@ void main() async {
         });
         final note = Note.fromJson(response["createdNote"]);
         final controller = userClient.homeTimelineStream(
+          parameter: HomeTimelineParameter(),
           onVoted: (id, vote) => completer.complete(vote),
         );
         await userClient.startStreaming();
