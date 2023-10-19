@@ -22,6 +22,7 @@ class Antenna with _$Antenna {
     required bool withFile,
     required bool isActive,
     required bool hasUnreadNote,
+    bool? localOnly,
   }) = _Antenna;
 
   factory Antenna.fromJson(Map<String, dynamic> json) =>

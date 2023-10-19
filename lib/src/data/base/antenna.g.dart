@@ -26,6 +26,7 @@ _$_Antenna _$$_AntennaFromJson(Map<String, dynamic> json) => _$_Antenna(
       withFile: json['withFile'] as bool,
       isActive: json['isActive'] as bool,
       hasUnreadNote: json['hasUnreadNote'] as bool,
+      localOnly: json['localOnly'] as bool?,
     );
 
 Map<String, dynamic> _$$_AntennaToJson(_$_Antenna instance) =>
@@ -44,6 +45,7 @@ Map<String, dynamic> _$$_AntennaToJson(_$_Antenna instance) =>
       'withFile': instance.withFile,
       'isActive': instance.isActive,
       'hasUnreadNote': instance.hasUnreadNote,
+      'localOnly': instance.localOnly,
     };
 
 const _$AntennaSourceEnumMap = {
