@@ -18,6 +18,7 @@ class AntennasUpdateRequest with _$AntennasUpdateRequest {
     required bool withReplies,
     required bool withFile,
     required bool notify,
+    bool? localOnly,
   }) = _AntennasUpdateRequest;
 
   factory AntennasUpdateRequest.fromJson(Map<String, Object?> json) =>

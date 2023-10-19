@@ -24,6 +24,7 @@ _$_AntennasUpdateRequest _$$_AntennasUpdateRequestFromJson(
       withReplies: json['withReplies'] as bool,
       withFile: json['withFile'] as bool,
       notify: json['notify'] as bool,
+      localOnly: json['localOnly'] as bool?,
     );
 
 Map<String, dynamic> _$$_AntennasUpdateRequestToJson(
@@ -40,6 +41,7 @@ Map<String, dynamic> _$$_AntennasUpdateRequestToJson(
       'withReplies': instance.withReplies,
       'withFile': instance.withFile,
       'notify': instance.notify,
+      'localOnly': instance.localOnly,
     };
 
 const _$AntennaSourceEnumMap = {
