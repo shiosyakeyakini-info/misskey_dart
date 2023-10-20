@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
@@ -556,7 +557,7 @@ class Misskey {
       streamingService.connect(
         channel: Channel.main,
         onChannelEventReceived: (type, response) async {
-          print(response);
+          log(response.toString());
           switch (type) {
             case ChannelEventType.notification:
               await onNotification

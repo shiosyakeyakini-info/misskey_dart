@@ -181,7 +181,7 @@ class StreamingService {
         ]);
       }
     } catch (e) {
-      print(e);
+      log(e.toString());
     } finally {
       subscription = null;
       _webSocketChannel = null;

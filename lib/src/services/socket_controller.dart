@@ -78,8 +78,8 @@ class SocketController {
     try {
       webSocketChannel.sink.add(request);
     } catch (e) {
-      print("maybe already disconnected");
-      print(e);
+      log("maybe already disconnected");
+      log(e.toString());
       rethrow;
     } finally {
       onDisconnected?.call(id);
@@ -135,7 +135,7 @@ class SocketController {
         body: body,
       ),
     );
-    print("send[${body.id}]: $request}");
+    log("send[${body.id}]: $request}");
     webSocketChannel.sink.add(request);
   }
 }
