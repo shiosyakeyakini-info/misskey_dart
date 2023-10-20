@@ -1,0 +1,18 @@
+name: Test on misskey/develop
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: ./test/testenv/setup.sh
+        env:
+          MISSKEY_IMAGE: misskey/misskey:develop
+      - run: dart pub get
+      - run: dart test --test-randomize-ordering-seed=random
