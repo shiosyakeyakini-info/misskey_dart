@@ -11,3 +11,4 @@ pubspec.lock
 
 test/.env
 .DS_Store
+.idea/

@@ -29,6 +29,8 @@ jobs:
         image: misskey/misskey:develop
         ports:
           - 3000:3000
+        volumes:
+          /test/testenv/.config/default.yml:/misskey/.config/default.yml
     
     steps:
       - name: Wait for Misskey to be ready
