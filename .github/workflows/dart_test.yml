@@ -1,0 +1,64 @@
+name: Run Dart Test with Misskey Develop Branch
+
+on: 
+  - workflow_dispatch
+  - schedule:
+    - cron: "0 7 * * *"
+
+jobs:
+  test_with_misskey_develop:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    services:
+      db:
+        image: postgres:13
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: misskey
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_USER: example-misskey-user
+          POSTGRESS_PASS: example-misskey-pass
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
+      app:
+        image: misskey/misskey:develop
+        ports:
+          - 3000:3000
+    
+    steps:
+      - name: Wait for Misskey to be ready
+        run: |
+          MAX_RETRIES=12
+          RETRY_DELAY=5
+          count=0
+          until $(curl --output /dev/null --silent --head --fail http://localhost:3000) || [[ $count -eq $MAX_RETRIES ]]; do
+            printf '.'
+            sleep $RETRY_DELAY
+            count=$((count + 1))
+          done
+          if [[ $count -eq $MAX_RETRIES ]]; then
+            echo "Failed to connect to Misskey after $MAX_RETRIES attempts."
+            exit 1
+          fi
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Run flutter version
+        run: flutter --version
+
+      - name: Run flutter pub get
+        run: flutter pub get
+
+      - name: Run flutter test with coverage
+        run: flutter test --coverage --coverage-path=~/coverage/lcov.info
