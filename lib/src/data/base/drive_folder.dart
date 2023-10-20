@@ -9,8 +9,11 @@ class DriveFolder with _$DriveFolder {
   const factory DriveFolder({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    String? name,
+    required String name,
     String? parentId,
+    DriveFolder? parent,
+    int? foldersCount,
+    int? filesCount,
   }) = _DriveFolder;
 
   factory DriveFolder.fromJson(Map<String, dynamic> json) =>

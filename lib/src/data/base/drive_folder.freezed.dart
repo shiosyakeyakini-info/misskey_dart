@@ -23,8 +23,11 @@ mixin _$DriveFolder {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String? get parentId => throw _privateConstructorUsedError;
+  DriveFolder? get parent => throw _privateConstructorUsedError;
+  int? get foldersCount => throw _privateConstructorUsedError;
+  int? get filesCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,8 +44,13 @@ abstract class $DriveFolderCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String? name,
-      String? parentId});
+      String name,
+      String? parentId,
+      DriveFolder? parent,
+      int? foldersCount,
+      int? filesCount});
+
+  $DriveFolderCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
@@ -60,8 +68,11 @@ class _$DriveFolderCopyWithImpl<$Res, $Val extends DriveFolder>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? name = freezed,
+    Object? name = null,
     Object? parentId = freezed,
+    Object? parent = freezed,
+    Object? foldersCount = freezed,
+    Object? filesCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -72,15 +83,39 @@ class _$DriveFolderCopyWithImpl<$Res, $Val extends DriveFolder>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
+      parent: freezed == parent
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as DriveFolder?,
+      foldersCount: freezed == foldersCount
+          ? _value.foldersCount
+          : foldersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      filesCount: freezed == filesCount
+          ? _value.filesCount
+          : filesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DriveFolderCopyWith<$Res>? get parent {
+    if (_value.parent == null) {
+      return null;
+    }
+
+    return $DriveFolderCopyWith<$Res>(_value.parent!, (value) {
+      return _then(_value.copyWith(parent: value) as $Val);
+    });
   }
 }
 
@@ -95,8 +130,14 @@ abstract class _$$DriveFolderImplCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String? name,
-      String? parentId});
+      String name,
+      String? parentId,
+      DriveFolder? parent,
+      int? foldersCount,
+      int? filesCount});
+
+  @override
+  $DriveFolderCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
@@ -112,8 +153,11 @@ class __$$DriveFolderImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? name = freezed,
+    Object? name = null,
     Object? parentId = freezed,
+    Object? parent = freezed,
+    Object? foldersCount = freezed,
+    Object? filesCount = freezed,
   }) {
     return _then(_$DriveFolderImpl(
       id: null == id
@@ -124,14 +168,26 @@ class __$$DriveFolderImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
+      parent: freezed == parent
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as DriveFolder?,
+      foldersCount: freezed == foldersCount
+          ? _value.foldersCount
+          : foldersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      filesCount: freezed == filesCount
+          ? _value.filesCount
+          : filesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -142,8 +198,11 @@ class _$DriveFolderImpl implements _DriveFolder {
   const _$DriveFolderImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
-      this.name,
-      this.parentId});
+      required this.name,
+      this.parentId,
+      this.parent,
+      this.foldersCount,
+      this.filesCount});
 
   factory _$DriveFolderImpl.fromJson(Map<String, dynamic> json) =>
       _$$DriveFolderImplFromJson(json);
@@ -154,13 +213,19 @@ class _$DriveFolderImpl implements _DriveFolder {
   @DateTimeConverter()
   final DateTime createdAt;
   @override
-  final String? name;
+  final String name;
   @override
   final String? parentId;
+  @override
+  final DriveFolder? parent;
+  @override
+  final int? foldersCount;
+  @override
+  final int? filesCount;
 
   @override
   String toString() {
-    return 'DriveFolder(id: $id, createdAt: $createdAt, name: $name, parentId: $parentId)';
+    return 'DriveFolder(id: $id, createdAt: $createdAt, name: $name, parentId: $parentId, parent: $parent, foldersCount: $foldersCount, filesCount: $filesCount)';
   }
 
   @override
@@ -173,12 +238,18 @@ class _$DriveFolderImpl implements _DriveFolder {
                 other.createdAt == createdAt) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.parentId, parentId) ||
-                other.parentId == parentId));
+                other.parentId == parentId) &&
+            (identical(other.parent, parent) || other.parent == parent) &&
+            (identical(other.foldersCount, foldersCount) ||
+                other.foldersCount == foldersCount) &&
+            (identical(other.filesCount, filesCount) ||
+                other.filesCount == filesCount));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, name, parentId);
+  int get hashCode => Object.hash(runtimeType, id, createdAt, name, parentId,
+      parent, foldersCount, filesCount);
 
   @JsonKey(ignore: true)
   @override
@@ -198,8 +269,11 @@ abstract class _DriveFolder implements DriveFolder {
   const factory _DriveFolder(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
-      final String? name,
-      final String? parentId}) = _$DriveFolderImpl;
+      required final String name,
+      final String? parentId,
+      final DriveFolder? parent,
+      final int? foldersCount,
+      final int? filesCount}) = _$DriveFolderImpl;
 
   factory _DriveFolder.fromJson(Map<String, dynamic> json) =
       _$DriveFolderImpl.fromJson;
@@ -210,9 +284,15 @@ abstract class _DriveFolder implements DriveFolder {
   @DateTimeConverter()
   DateTime get createdAt;
   @override
-  String? get name;
+  String get name;
   @override
   String? get parentId;
+  @override
+  DriveFolder? get parent;
+  @override
+  int? get foldersCount;
+  @override
+  int? get filesCount;
   @override
   @JsonKey(ignore: true)
   _$$DriveFolderImplCopyWith<_$DriveFolderImpl> get copyWith =>
