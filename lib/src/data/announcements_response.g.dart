@@ -10,8 +10,8 @@ _$_AnnouncementsResponse _$$_AnnouncementsResponseFromJson(
         Map<String, dynamic> json) =>
     _$_AnnouncementsResponse(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: _$JsonConverterFromJson<String, DateTime?>(
+          json['createdAt'], const NullableDateTimeConverter().fromJson),
       updatedAt: _$JsonConverterFromJson<String, DateTime?>(
           json['updatedAt'], const NullableDateTimeConverter().fromJson),
       text: json['text'] as String,
@@ -32,7 +32,7 @@ Map<String, dynamic> _$$_AnnouncementsResponseToJson(
         _$_AnnouncementsResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'createdAt': const DateTimeConverter().toJson(instance.createdAt),
+      'createdAt': const NullableDateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
       'text': instance.text,
       'title': instance.title,

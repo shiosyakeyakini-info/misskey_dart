@@ -22,8 +22,8 @@ AnnouncementsResponse _$AnnouncementsResponseFromJson(
 /// @nodoc
 mixin _$AnnouncementsResponse {
   String get id => throw _privateConstructorUsedError;
-  @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  @NullableDateTimeConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @NullableDateTimeConverter()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $AnnouncementsResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @DateTimeConverter() DateTime createdAt,
+      @NullableDateTimeConverter() DateTime? createdAt,
       @NullableDateTimeConverter() DateTime? updatedAt,
       String text,
       String title,
@@ -81,7 +81,7 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = null,
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? text = null,
     Object? title = null,
@@ -99,10 +99,10 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ abstract class _$$_AnnouncementsResponseCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @DateTimeConverter() DateTime createdAt,
+      @NullableDateTimeConverter() DateTime? createdAt,
       @NullableDateTimeConverter() DateTime? updatedAt,
       String text,
       String title,
@@ -187,7 +187,7 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? createdAt = null,
+    Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? text = null,
     Object? title = null,
@@ -205,10 +205,10 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -262,7 +262,7 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
 class _$_AnnouncementsResponse implements _AnnouncementsResponse {
   const _$_AnnouncementsResponse(
       {required this.id,
-      @DateTimeConverter() required this.createdAt,
+      @NullableDateTimeConverter() this.createdAt,
       @NullableDateTimeConverter() this.updatedAt,
       required this.text,
       required this.title,
@@ -281,8 +281,8 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
   @override
   final String id;
   @override
-  @DateTimeConverter()
-  final DateTime createdAt;
+  @NullableDateTimeConverter()
+  final DateTime? createdAt;
   @override
   @NullableDateTimeConverter()
   final DateTime? updatedAt;
@@ -375,7 +375,7 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
 abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   const factory _AnnouncementsResponse(
       {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
+      @NullableDateTimeConverter() final DateTime? createdAt,
       @NullableDateTimeConverter() final DateTime? updatedAt,
       required final String text,
       required final String title,
@@ -394,8 +394,8 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   @override
   String get id;
   @override
-  @DateTimeConverter()
-  DateTime get createdAt;
+  @NullableDateTimeConverter()
+  DateTime? get createdAt;
   @override
   @NullableDateTimeConverter()
   DateTime? get updatedAt;

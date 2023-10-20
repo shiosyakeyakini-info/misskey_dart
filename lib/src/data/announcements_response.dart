@@ -11,7 +11,7 @@ part 'announcements_response.g.dart';
 class AnnouncementsResponse with _$AnnouncementsResponse {
   const factory AnnouncementsResponse({
     required String id,
-    @DateTimeConverter() required DateTime createdAt,
+    @NullableDateTimeConverter() DateTime? createdAt,
     @NullableDateTimeConverter() DateTime? updatedAt,
     required String text,
     required String title,
