@@ -9,7 +9,6 @@ import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
-import 'package:misskey_dart/src/services/streaming_service.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {

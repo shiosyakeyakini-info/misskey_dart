@@ -1,20 +1,14 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/get_avatar_decorations_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
-import 'package:misskey_dart/src/data/streaming/global_timeline_parameter.dart';
-import 'package:misskey_dart/src/data/streaming/home_timeline_parameter.dart';
-import 'package:misskey_dart/src/data/streaming/hybrid_timeline_parameter.dart';
-import 'package:misskey_dart/src/data/streaming/local_timeline_parameter.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
 import 'package:misskey_dart/src/misskey_flash.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
-import 'package:misskey_dart/src/services/streaming_service.dart';
 
 class Misskey {
   final String? token;
@@ -320,6 +314,7 @@ class Misskey {
     FutureOr<void> Function(String id, TimelineReacted reaction)? onUnreacted,
     FutureOr<void> Function(String id, DateTime deletedAt)? onDeleted,
     FutureOr<void> Function(String id, TimelineVoted vote)? onVoted,
+    FutureOr<void> Function(String id, NoteEdited note)? onUpdated,
   }) =>
       streamingService.connect(
         channel: Channel.roleTimeline,
@@ -342,6 +337,9 @@ class Misskey {
               return;
             case NoteUpdatedEventType.pollVoted:
               await onVoted?.call(id, TimelineVoted.fromJson(response));
+              return;
+            case NoteUpdatedEventType.updated:
+              await onUpdated?.call(id, NoteEdited.fromJson(response));
               return;
           }
         },
