@@ -7,6 +7,16 @@ part 'federation_show_instance_request.g.dart';
 class FederationShowInstanceRequest with _$FederationShowInstanceRequest {
   const factory FederationShowInstanceRequest({
     required String host,
+    bool? blocked,
+    bool? notResponding,
+    bool? suspended,
+    bool? silenced,
+    bool? federating,
+    bool? subscribing,
+    bool? publishing,
+    int? limit,
+    int? offset,
+    String? sort,
   }) = _FederationShowInstanceRequest;
 
   factory FederationShowInstanceRequest.fromJson(Map<String, dynamic> json) =>

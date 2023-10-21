@@ -58,6 +58,11 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
           json['uri'], const NullableUriConverter().fromJson),
       url: _$JsonConverterFromJson<String, Uri?>(
           json['url'], const NullableUriConverter().fromJson),
+      reactionAndUserPairCache:
+          (json['reactionAndUserPairCache'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
       poll: json['poll'] == null
           ? null
           : NotePoll.fromJson(json['poll'] as Map<String, dynamic>),
@@ -95,6 +100,7 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'channel': instance.channel,
       'uri': const NullableUriConverter().toJson(instance.uri),
       'url': const NullableUriConverter().toJson(instance.url),
+      'reactionAndUserPairCache': instance.reactionAndUserPairCache,
       'poll': instance.poll,
       'clippedCount': instance.clippedCount,
     };

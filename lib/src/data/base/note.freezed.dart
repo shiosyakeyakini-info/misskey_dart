@@ -56,6 +56,8 @@ mixin _$Note {
   Uri? get uri => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get url => throw _privateConstructorUsedError;
+  List<String> get reactionAndUserPairCache =>
+      throw _privateConstructorUsedError;
   NotePoll? get poll => throw _privateConstructorUsedError;
   int? get clippedCount => throw _privateConstructorUsedError;
 
@@ -98,6 +100,7 @@ abstract class $NoteCopyWith<$Res> {
       NoteChannelInfo? channel,
       @NullableUriConverter() Uri? uri,
       @NullableUriConverter() Uri? url,
+      List<String> reactionAndUserPairCache,
       NotePoll? poll,
       int? clippedCount});
 
@@ -149,6 +152,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? channel = freezed,
     Object? uri = freezed,
     Object? url = freezed,
+    Object? reactionAndUserPairCache = null,
     Object? poll = freezed,
     Object? clippedCount = freezed,
   }) {
@@ -265,6 +269,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      reactionAndUserPairCache: null == reactionAndUserPairCache
+          ? _value.reactionAndUserPairCache
+          : reactionAndUserPairCache // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       poll: freezed == poll
           ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
@@ -368,6 +376,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       NoteChannelInfo? channel,
       @NullableUriConverter() Uri? uri,
       @NullableUriConverter() Uri? url,
+      List<String> reactionAndUserPairCache,
       NotePoll? poll,
       int? clippedCount});
 
@@ -420,6 +429,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? channel = freezed,
     Object? uri = freezed,
     Object? url = freezed,
+    Object? reactionAndUserPairCache = null,
     Object? poll = freezed,
     Object? clippedCount = freezed,
   }) {
@@ -536,6 +546,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      reactionAndUserPairCache: null == reactionAndUserPairCache
+          ? _value._reactionAndUserPairCache
+          : reactionAndUserPairCache // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       poll: freezed == poll
           ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
@@ -580,6 +594,7 @@ class _$_Note implements _Note {
       this.channel,
       @NullableUriConverter() this.uri,
       @NullableUriConverter() this.url,
+      final List<String> reactionAndUserPairCache = const [],
       this.poll,
       this.clippedCount})
       : _reactions = reactions,
@@ -588,7 +603,8 @@ class _$_Note implements _Note {
         _fileIds = fileIds,
         _files = files,
         _visibleUserIds = visibleUserIds,
-        _mentions = mentions;
+        _mentions = mentions,
+        _reactionAndUserPairCache = reactionAndUserPairCache;
 
   factory _$_Note.fromJson(Map<String, dynamic> json) => _$$_NoteFromJson(json);
 
@@ -700,6 +716,16 @@ class _$_Note implements _Note {
   @override
   @NullableUriConverter()
   final Uri? url;
+  final List<String> _reactionAndUserPairCache;
+  @override
+  @JsonKey()
+  List<String> get reactionAndUserPairCache {
+    if (_reactionAndUserPairCache is EqualUnmodifiableListView)
+      return _reactionAndUserPairCache;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_reactionAndUserPairCache);
+  }
+
   @override
   final NotePoll? poll;
   @override
@@ -707,7 +733,7 @@ class _$_Note implements _Note {
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, visibleUserIds: $visibleUserIds, mentions: $mentions, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, poll: $poll, clippedCount: $clippedCount)';
+    return 'Note(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, cw: $cw, user: $user, userId: $userId, visibility: $visibility, localOnly: $localOnly, renoteCount: $renoteCount, repliesCount: $repliesCount, reactions: $reactions, reactionEmojis: $reactionEmojis, emojis: $emojis, fileIds: $fileIds, files: $files, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, reactionAcceptance: $reactionAcceptance, renote: $renote, reply: $reply, visibleUserIds: $visibleUserIds, mentions: $mentions, myReaction: $myReaction, channel: $channel, uri: $uri, url: $url, reactionAndUserPairCache: $reactionAndUserPairCache, poll: $poll, clippedCount: $clippedCount)';
   }
 
   @override
@@ -756,6 +782,8 @@ class _$_Note implements _Note {
             (identical(other.channel, channel) || other.channel == channel) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(
+                other._reactionAndUserPairCache, _reactionAndUserPairCache) &&
             (identical(other.poll, poll) || other.poll == poll) &&
             (identical(other.clippedCount, clippedCount) ||
                 other.clippedCount == clippedCount));
@@ -793,6 +821,7 @@ class _$_Note implements _Note {
         channel,
         uri,
         url,
+        const DeepCollectionEquality().hash(_reactionAndUserPairCache),
         poll,
         clippedCount
       ]);
@@ -841,6 +870,7 @@ abstract class _Note implements Note {
       final NoteChannelInfo? channel,
       @NullableUriConverter() final Uri? uri,
       @NullableUriConverter() final Uri? url,
+      final List<String> reactionAndUserPairCache,
       final NotePoll? poll,
       final int? clippedCount}) = _$_Note;
 
@@ -909,6 +939,8 @@ abstract class _Note implements Note {
   @override
   @NullableUriConverter()
   Uri? get url;
+  @override
+  List<String> get reactionAndUserPairCache;
   @override
   NotePoll? get poll;
   @override

@@ -32,6 +32,7 @@ mixin _$FederationShowInstanceResponse {
   bool get isNotResponding => throw _privateConstructorUsedError;
   bool get isSuspended => throw _privateConstructorUsedError;
   bool get isBlocked => throw _privateConstructorUsedError;
+  bool? get isSilenced => throw _privateConstructorUsedError;
   String? get softwareName => throw _privateConstructorUsedError;
   String? get softwareVersion => throw _privateConstructorUsedError;
   bool? get openRegistrations => throw _privateConstructorUsedError;
@@ -73,6 +74,7 @@ abstract class $FederationShowInstanceResponseCopyWith<$Res> {
       bool isNotResponding,
       bool isSuspended,
       bool isBlocked,
+      bool? isSilenced,
       String? softwareName,
       String? softwareVersion,
       bool? openRegistrations,
@@ -110,6 +112,7 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
     Object? isNotResponding = null,
     Object? isSuspended = null,
     Object? isBlocked = null,
+    Object? isSilenced = freezed,
     Object? softwareName = freezed,
     Object? softwareVersion = freezed,
     Object? openRegistrations = freezed,
@@ -163,6 +166,10 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
           ? _value.isBlocked
           : isBlocked // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSilenced: freezed == isSilenced
+          ? _value.isSilenced
+          : isSilenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
       softwareName: freezed == softwareName
           ? _value.softwareName
           : softwareName // ignore: cast_nullable_to_non_nullable
@@ -231,6 +238,7 @@ abstract class _$$_FederationShowInstanceResponseCopyWith<$Res>
       bool isNotResponding,
       bool isSuspended,
       bool isBlocked,
+      bool? isSilenced,
       String? softwareName,
       String? softwareVersion,
       bool? openRegistrations,
@@ -267,6 +275,7 @@ class __$$_FederationShowInstanceResponseCopyWithImpl<$Res>
     Object? isNotResponding = null,
     Object? isSuspended = null,
     Object? isBlocked = null,
+    Object? isSilenced = freezed,
     Object? softwareName = freezed,
     Object? softwareVersion = freezed,
     Object? openRegistrations = freezed,
@@ -320,6 +329,10 @@ class __$$_FederationShowInstanceResponseCopyWithImpl<$Res>
           ? _value.isBlocked
           : isBlocked // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSilenced: freezed == isSilenced
+          ? _value.isSilenced
+          : isSilenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
       softwareName: freezed == softwareName
           ? _value.softwareName
           : softwareName // ignore: cast_nullable_to_non_nullable
@@ -383,6 +396,7 @@ class _$_FederationShowInstanceResponse
       required this.isNotResponding,
       required this.isSuspended,
       required this.isBlocked,
+      this.isSilenced,
       this.softwareName,
       this.softwareVersion,
       this.openRegistrations,
@@ -421,6 +435,8 @@ class _$_FederationShowInstanceResponse
   @override
   final bool isBlocked;
   @override
+  final bool? isSilenced;
+  @override
   final String? softwareName;
   @override
   final String? softwareVersion;
@@ -449,7 +465,7 @@ class _$_FederationShowInstanceResponse
 
   @override
   String toString() {
-    return 'FederationShowInstanceResponse(id: $id, firstRetrievedAt: $firstRetrievedAt, host: $host, usersCount: $usersCount, notesCount: $notesCount, followingCount: $followingCount, followersCount: $followersCount, isNotResponding: $isNotResponding, isSuspended: $isSuspended, isBlocked: $isBlocked, softwareName: $softwareName, softwareVersion: $softwareVersion, openRegistrations: $openRegistrations, name: $name, description: $description, maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, iconUrl: $iconUrl, faviconUrl: $faviconUrl, themeColor: $themeColor, infoUpdatedAt: $infoUpdatedAt)';
+    return 'FederationShowInstanceResponse(id: $id, firstRetrievedAt: $firstRetrievedAt, host: $host, usersCount: $usersCount, notesCount: $notesCount, followingCount: $followingCount, followersCount: $followersCount, isNotResponding: $isNotResponding, isSuspended: $isSuspended, isBlocked: $isBlocked, isSilenced: $isSilenced, softwareName: $softwareName, softwareVersion: $softwareVersion, openRegistrations: $openRegistrations, name: $name, description: $description, maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, iconUrl: $iconUrl, faviconUrl: $faviconUrl, themeColor: $themeColor, infoUpdatedAt: $infoUpdatedAt)';
   }
 
   @override
@@ -475,6 +491,8 @@ class _$_FederationShowInstanceResponse
                 other.isSuspended == isSuspended) &&
             (identical(other.isBlocked, isBlocked) ||
                 other.isBlocked == isBlocked) &&
+            (identical(other.isSilenced, isSilenced) ||
+                other.isSilenced == isSilenced) &&
             (identical(other.softwareName, softwareName) ||
                 other.softwareName == softwareName) &&
             (identical(other.softwareVersion, softwareVersion) ||
@@ -511,6 +529,7 @@ class _$_FederationShowInstanceResponse
         isNotResponding,
         isSuspended,
         isBlocked,
+        isSilenced,
         softwareName,
         softwareVersion,
         openRegistrations,
@@ -552,6 +571,7 @@ abstract class _FederationShowInstanceResponse
           required final bool isNotResponding,
           required final bool isSuspended,
           required final bool isBlocked,
+          final bool? isSilenced,
           final String? softwareName,
           final String? softwareVersion,
           final bool? openRegistrations,
@@ -589,6 +609,8 @@ abstract class _FederationShowInstanceResponse
   bool get isSuspended;
   @override
   bool get isBlocked;
+  @override
+  bool? get isSilenced;
   @override
   String? get softwareName;
   @override

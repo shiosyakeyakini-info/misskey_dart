@@ -22,6 +22,7 @@ FollowingCreateRequest _$FollowingCreateRequestFromJson(
 /// @nodoc
 mixin _$FollowingCreateRequest {
   String get userId => throw _privateConstructorUsedError;
+  bool? get withReplies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $FollowingCreateRequestCopyWith<$Res> {
           $Res Function(FollowingCreateRequest) then) =
       _$FollowingCreateRequestCopyWithImpl<$Res, FollowingCreateRequest>;
   @useResult
-  $Res call({String userId});
+  $Res call({String userId, bool? withReplies});
 }
 
 /// @nodoc
@@ -53,12 +54,17 @@ class _$FollowingCreateRequestCopyWithImpl<$Res,
   @override
   $Res call({
     Object? userId = null,
+    Object? withReplies = freezed,
   }) {
     return _then(_value.copyWith(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -71,7 +77,7 @@ abstract class _$$_FollowingCreateRequestCopyWith<$Res>
       __$$_FollowingCreateRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId});
+  $Res call({String userId, bool? withReplies});
 }
 
 /// @nodoc
@@ -87,12 +93,17 @@ class __$$_FollowingCreateRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = null,
+    Object? withReplies = freezed,
   }) {
     return _then(_$_FollowingCreateRequest(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -100,17 +111,19 @@ class __$$_FollowingCreateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_FollowingCreateRequest implements _FollowingCreateRequest {
-  const _$_FollowingCreateRequest({required this.userId});
+  const _$_FollowingCreateRequest({required this.userId, this.withReplies});
 
   factory _$_FollowingCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$$_FollowingCreateRequestFromJson(json);
 
   @override
   final String userId;
+  @override
+  final bool? withReplies;
 
   @override
   String toString() {
-    return 'FollowingCreateRequest(userId: $userId)';
+    return 'FollowingCreateRequest(userId: $userId, withReplies: $withReplies)';
   }
 
   @override
@@ -118,12 +131,14 @@ class _$_FollowingCreateRequest implements _FollowingCreateRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FollowingCreateRequest &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.withReplies, withReplies) ||
+                other.withReplies == withReplies));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId);
+  int get hashCode => Object.hash(runtimeType, userId, withReplies);
 
   @JsonKey(ignore: true)
   @override
@@ -141,14 +156,17 @@ class _$_FollowingCreateRequest implements _FollowingCreateRequest {
 }
 
 abstract class _FollowingCreateRequest implements FollowingCreateRequest {
-  const factory _FollowingCreateRequest({required final String userId}) =
-      _$_FollowingCreateRequest;
+  const factory _FollowingCreateRequest(
+      {required final String userId,
+      final bool? withReplies}) = _$_FollowingCreateRequest;
 
   factory _FollowingCreateRequest.fromJson(Map<String, dynamic> json) =
       _$_FollowingCreateRequest.fromJson;
 
   @override
   String get userId;
+  @override
+  bool? get withReplies;
   @override
   @JsonKey(ignore: true)
   _$$_FollowingCreateRequestCopyWith<_$_FollowingCreateRequest> get copyWith =>

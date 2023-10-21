@@ -39,6 +39,7 @@ class Note with _$Note {
     NoteChannelInfo? channel,
     @NullableUriConverter() Uri? uri,
     @NullableUriConverter() Uri? url,
+    @Default([]) List<String> reactionAndUserPairCache,
     NotePoll? poll,
     int? clippedCount,
   }) = _Note;

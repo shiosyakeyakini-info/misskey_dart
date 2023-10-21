@@ -22,6 +22,16 @@ FederationShowInstanceRequest _$FederationShowInstanceRequestFromJson(
 /// @nodoc
 mixin _$FederationShowInstanceRequest {
   String get host => throw _privateConstructorUsedError;
+  bool? get blocked => throw _privateConstructorUsedError;
+  bool? get notResponding => throw _privateConstructorUsedError;
+  bool? get suspended => throw _privateConstructorUsedError;
+  bool? get silenced => throw _privateConstructorUsedError;
+  bool? get federating => throw _privateConstructorUsedError;
+  bool? get subscribing => throw _privateConstructorUsedError;
+  bool? get publishing => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  int? get offset => throw _privateConstructorUsedError;
+  String? get sort => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +47,18 @@ abstract class $FederationShowInstanceRequestCopyWith<$Res> {
       _$FederationShowInstanceRequestCopyWithImpl<$Res,
           FederationShowInstanceRequest>;
   @useResult
-  $Res call({String host});
+  $Res call(
+      {String host,
+      bool? blocked,
+      bool? notResponding,
+      bool? suspended,
+      bool? silenced,
+      bool? federating,
+      bool? subscribing,
+      bool? publishing,
+      int? limit,
+      int? offset,
+      String? sort});
 }
 
 /// @nodoc
@@ -55,12 +76,62 @@ class _$FederationShowInstanceRequestCopyWithImpl<$Res,
   @override
   $Res call({
     Object? host = null,
+    Object? blocked = freezed,
+    Object? notResponding = freezed,
+    Object? suspended = freezed,
+    Object? silenced = freezed,
+    Object? federating = freezed,
+    Object? subscribing = freezed,
+    Object? publishing = freezed,
+    Object? limit = freezed,
+    Object? offset = freezed,
+    Object? sort = freezed,
   }) {
     return _then(_value.copyWith(
       host: null == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String,
+      blocked: freezed == blocked
+          ? _value.blocked
+          : blocked // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notResponding: freezed == notResponding
+          ? _value.notResponding
+          : notResponding // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspended: freezed == suspended
+          ? _value.suspended
+          : suspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      silenced: freezed == silenced
+          ? _value.silenced
+          : silenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      federating: freezed == federating
+          ? _value.federating
+          : federating // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      subscribing: freezed == subscribing
+          ? _value.subscribing
+          : subscribing // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      publishing: freezed == publishing
+          ? _value.publishing
+          : publishing // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      offset: freezed == offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -74,7 +145,18 @@ abstract class _$$_FederationShowInstanceRequestCopyWith<$Res>
       __$$_FederationShowInstanceRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String host});
+  $Res call(
+      {String host,
+      bool? blocked,
+      bool? notResponding,
+      bool? suspended,
+      bool? silenced,
+      bool? federating,
+      bool? subscribing,
+      bool? publishing,
+      int? limit,
+      int? offset,
+      String? sort});
 }
 
 /// @nodoc
@@ -91,12 +173,62 @@ class __$$_FederationShowInstanceRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? host = null,
+    Object? blocked = freezed,
+    Object? notResponding = freezed,
+    Object? suspended = freezed,
+    Object? silenced = freezed,
+    Object? federating = freezed,
+    Object? subscribing = freezed,
+    Object? publishing = freezed,
+    Object? limit = freezed,
+    Object? offset = freezed,
+    Object? sort = freezed,
   }) {
     return _then(_$_FederationShowInstanceRequest(
       host: null == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String,
+      blocked: freezed == blocked
+          ? _value.blocked
+          : blocked // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notResponding: freezed == notResponding
+          ? _value.notResponding
+          : notResponding // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspended: freezed == suspended
+          ? _value.suspended
+          : suspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      silenced: freezed == silenced
+          ? _value.silenced
+          : silenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      federating: freezed == federating
+          ? _value.federating
+          : federating // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      subscribing: freezed == subscribing
+          ? _value.subscribing
+          : subscribing // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      publishing: freezed == publishing
+          ? _value.publishing
+          : publishing // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      offset: freezed == offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -105,7 +237,18 @@ class __$$_FederationShowInstanceRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FederationShowInstanceRequest
     implements _FederationShowInstanceRequest {
-  const _$_FederationShowInstanceRequest({required this.host});
+  const _$_FederationShowInstanceRequest(
+      {required this.host,
+      this.blocked,
+      this.notResponding,
+      this.suspended,
+      this.silenced,
+      this.federating,
+      this.subscribing,
+      this.publishing,
+      this.limit,
+      this.offset,
+      this.sort});
 
   factory _$_FederationShowInstanceRequest.fromJson(
           Map<String, dynamic> json) =>
@@ -113,10 +256,30 @@ class _$_FederationShowInstanceRequest
 
   @override
   final String host;
+  @override
+  final bool? blocked;
+  @override
+  final bool? notResponding;
+  @override
+  final bool? suspended;
+  @override
+  final bool? silenced;
+  @override
+  final bool? federating;
+  @override
+  final bool? subscribing;
+  @override
+  final bool? publishing;
+  @override
+  final int? limit;
+  @override
+  final int? offset;
+  @override
+  final String? sort;
 
   @override
   String toString() {
-    return 'FederationShowInstanceRequest(host: $host)';
+    return 'FederationShowInstanceRequest(host: $host, blocked: $blocked, notResponding: $notResponding, suspended: $suspended, silenced: $silenced, federating: $federating, subscribing: $subscribing, publishing: $publishing, limit: $limit, offset: $offset, sort: $sort)';
   }
 
   @override
@@ -124,12 +287,40 @@ class _$_FederationShowInstanceRequest
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FederationShowInstanceRequest &&
-            (identical(other.host, host) || other.host == host));
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.blocked, blocked) || other.blocked == blocked) &&
+            (identical(other.notResponding, notResponding) ||
+                other.notResponding == notResponding) &&
+            (identical(other.suspended, suspended) ||
+                other.suspended == suspended) &&
+            (identical(other.silenced, silenced) ||
+                other.silenced == silenced) &&
+            (identical(other.federating, federating) ||
+                other.federating == federating) &&
+            (identical(other.subscribing, subscribing) ||
+                other.subscribing == subscribing) &&
+            (identical(other.publishing, publishing) ||
+                other.publishing == publishing) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.sort, sort) || other.sort == sort));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, host);
+  int get hashCode => Object.hash(
+      runtimeType,
+      host,
+      blocked,
+      notResponding,
+      suspended,
+      silenced,
+      federating,
+      subscribing,
+      publishing,
+      limit,
+      offset,
+      sort);
 
   @JsonKey(ignore: true)
   @override
@@ -148,14 +339,44 @@ class _$_FederationShowInstanceRequest
 
 abstract class _FederationShowInstanceRequest
     implements FederationShowInstanceRequest {
-  const factory _FederationShowInstanceRequest({required final String host}) =
-      _$_FederationShowInstanceRequest;
+  const factory _FederationShowInstanceRequest(
+      {required final String host,
+      final bool? blocked,
+      final bool? notResponding,
+      final bool? suspended,
+      final bool? silenced,
+      final bool? federating,
+      final bool? subscribing,
+      final bool? publishing,
+      final int? limit,
+      final int? offset,
+      final String? sort}) = _$_FederationShowInstanceRequest;
 
   factory _FederationShowInstanceRequest.fromJson(Map<String, dynamic> json) =
       _$_FederationShowInstanceRequest.fromJson;
 
   @override
   String get host;
+  @override
+  bool? get blocked;
+  @override
+  bool? get notResponding;
+  @override
+  bool? get suspended;
+  @override
+  bool? get silenced;
+  @override
+  bool? get federating;
+  @override
+  bool? get subscribing;
+  @override
+  bool? get publishing;
+  @override
+  int? get limit;
+  @override
+  int? get offset;
+  @override
+  String? get sort;
   @override
   @JsonKey(ignore: true)
   _$$_FederationShowInstanceRequestCopyWith<_$_FederationShowInstanceRequest>

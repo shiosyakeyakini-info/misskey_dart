@@ -19,6 +19,7 @@ class FederationShowInstanceResponse with _$FederationShowInstanceResponse {
     required bool isNotResponding,
     required bool isSuspended,
     required bool isBlocked,
+    bool? isSilenced,
     String? softwareName,
     String? softwareVersion,
     bool? openRegistrations,
