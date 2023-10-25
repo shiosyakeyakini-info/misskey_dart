@@ -18,6 +18,11 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
               .toList() ??
           const [],
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
+      avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
+              ?.map((e) =>
+                  UserAvatarDecoration.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       avatarBlurhash: json['avatarBlurhash'] as String?,
       instance: json['instance'] == null
           ? null
@@ -38,11 +43,30 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
           const OnlineStatusJsonConverter().toJson(instance.onlineStatus),
       'badgeRoles': instance.badgeRoles,
       'avatarUrl': const UriConverter().toJson(instance.avatarUrl),
+      'avatarDecorations': instance.avatarDecorations,
       'avatarBlurhash': instance.avatarBlurhash,
       'instance': instance.instance,
       'isCat': instance.isCat,
       'isBot': instance.isBot,
       'emojis': const EmojisConverter().toJson(instance.emojis),
+    };
+
+_$_UserAvatarDecoration _$$_UserAvatarDecorationFromJson(
+        Map<String, dynamic> json) =>
+    _$_UserAvatarDecoration(
+      id: json['id'] as String,
+      number: (json['number'] as num?)?.toDouble(),
+      flipH: json['flipH'] as bool? ?? false,
+      url: json['url'] as String,
+    );
+
+Map<String, dynamic> _$$_UserAvatarDecorationToJson(
+        _$_UserAvatarDecoration instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'number': instance.number,
+      'flipH': instance.flipH,
+      'url': instance.url,
     };
 
 _$_UserInstanceInfo _$$_UserInstanceInfoFromJson(Map<String, dynamic> json) =>

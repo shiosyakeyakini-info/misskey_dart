@@ -29,6 +29,8 @@ mixin _$User {
   List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get avatarUrl => throw _privateConstructorUsedError;
+  List<UserAvatarDecoration> get avatarDecorations =>
+      throw _privateConstructorUsedError;
   String? get avatarBlurhash => throw _privateConstructorUsedError;
   UserInstanceInfo? get instance => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
@@ -54,6 +56,7 @@ abstract class $UserCopyWith<$Res> {
       @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       List<UserBadgeRole> badgeRoles,
       @UriConverter() Uri avatarUrl,
+      List<UserAvatarDecoration> avatarDecorations,
       String? avatarBlurhash,
       UserInstanceInfo? instance,
       bool isCat,
@@ -83,6 +86,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? onlineStatus = freezed,
     Object? badgeRoles = null,
     Object? avatarUrl = null,
+    Object? avatarDecorations = null,
     Object? avatarBlurhash = freezed,
     Object? instance = freezed,
     Object? isCat = null,
@@ -118,6 +122,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
               as Uri,
+      avatarDecorations: null == avatarDecorations
+          ? _value.avatarDecorations
+          : avatarDecorations // ignore: cast_nullable_to_non_nullable
+              as List<UserAvatarDecoration>,
       avatarBlurhash: freezed == avatarBlurhash
           ? _value.avatarBlurhash
           : avatarBlurhash // ignore: cast_nullable_to_non_nullable
@@ -168,6 +176,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
       List<UserBadgeRole> badgeRoles,
       @UriConverter() Uri avatarUrl,
+      List<UserAvatarDecoration> avatarDecorations,
       String? avatarBlurhash,
       UserInstanceInfo? instance,
       bool isCat,
@@ -194,6 +203,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? onlineStatus = freezed,
     Object? badgeRoles = null,
     Object? avatarUrl = null,
+    Object? avatarDecorations = null,
     Object? avatarBlurhash = freezed,
     Object? instance = freezed,
     Object? isCat = null,
@@ -229,6 +239,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
               as Uri,
+      avatarDecorations: null == avatarDecorations
+          ? _value._avatarDecorations
+          : avatarDecorations // ignore: cast_nullable_to_non_nullable
+              as List<UserAvatarDecoration>,
       avatarBlurhash: freezed == avatarBlurhash
           ? _value.avatarBlurhash
           : avatarBlurhash // ignore: cast_nullable_to_non_nullable
@@ -264,12 +278,14 @@ class _$_User implements _User {
       @OnlineStatusJsonConverter() this.onlineStatus,
       final List<UserBadgeRole> badgeRoles = const [],
       @UriConverter() required this.avatarUrl,
+      final List<UserAvatarDecoration> avatarDecorations = const [],
       this.avatarBlurhash,
       this.instance,
       this.isCat = false,
       this.isBot = false,
       @EmojisConverter() final Map<String, String> emojis = const {}})
       : _badgeRoles = badgeRoles,
+        _avatarDecorations = avatarDecorations,
         _emojis = emojis;
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
@@ -297,6 +313,16 @@ class _$_User implements _User {
   @override
   @UriConverter()
   final Uri avatarUrl;
+  final List<UserAvatarDecoration> _avatarDecorations;
+  @override
+  @JsonKey()
+  List<UserAvatarDecoration> get avatarDecorations {
+    if (_avatarDecorations is EqualUnmodifiableListView)
+      return _avatarDecorations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_avatarDecorations);
+  }
+
   @override
   final String? avatarBlurhash;
   @override
@@ -319,7 +345,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, username: $username, host: $host, name: $name, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, instance: $instance, isCat: $isCat, isBot: $isBot, emojis: $emojis)';
+    return 'User(id: $id, username: $username, host: $host, name: $name, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, avatarUrl: $avatarUrl, avatarDecorations: $avatarDecorations, avatarBlurhash: $avatarBlurhash, instance: $instance, isCat: $isCat, isBot: $isBot, emojis: $emojis)';
   }
 
   @override
@@ -338,6 +364,8 @@ class _$_User implements _User {
                 .equals(other._badgeRoles, _badgeRoles) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
+            const DeepCollectionEquality()
+                .equals(other._avatarDecorations, _avatarDecorations) &&
             (identical(other.avatarBlurhash, avatarBlurhash) ||
                 other.avatarBlurhash == avatarBlurhash) &&
             (identical(other.instance, instance) ||
@@ -358,6 +386,7 @@ class _$_User implements _User {
       onlineStatus,
       const DeepCollectionEquality().hash(_badgeRoles),
       avatarUrl,
+      const DeepCollectionEquality().hash(_avatarDecorations),
       avatarBlurhash,
       instance,
       isCat,
@@ -387,6 +416,7 @@ abstract class _User implements User {
       @OnlineStatusJsonConverter() final OnlineStatus? onlineStatus,
       final List<UserBadgeRole> badgeRoles,
       @UriConverter() required final Uri avatarUrl,
+      final List<UserAvatarDecoration> avatarDecorations,
       final String? avatarBlurhash,
       final UserInstanceInfo? instance,
       final bool isCat,
@@ -412,6 +442,8 @@ abstract class _User implements User {
   @UriConverter()
   Uri get avatarUrl;
   @override
+  List<UserAvatarDecoration> get avatarDecorations;
+  @override
   String? get avatarBlurhash;
   @override
   UserInstanceInfo? get instance;
@@ -425,6 +457,198 @@ abstract class _User implements User {
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+}
+
+UserAvatarDecoration _$UserAvatarDecorationFromJson(Map<String, dynamic> json) {
+  return _UserAvatarDecoration.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserAvatarDecoration {
+  String get id => throw _privateConstructorUsedError;
+  double? get number => throw _privateConstructorUsedError;
+  bool get flipH => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserAvatarDecorationCopyWith<UserAvatarDecoration> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserAvatarDecorationCopyWith<$Res> {
+  factory $UserAvatarDecorationCopyWith(UserAvatarDecoration value,
+          $Res Function(UserAvatarDecoration) then) =
+      _$UserAvatarDecorationCopyWithImpl<$Res, UserAvatarDecoration>;
+  @useResult
+  $Res call({String id, double? number, bool flipH, String url});
+}
+
+/// @nodoc
+class _$UserAvatarDecorationCopyWithImpl<$Res,
+        $Val extends UserAvatarDecoration>
+    implements $UserAvatarDecorationCopyWith<$Res> {
+  _$UserAvatarDecorationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? number = freezed,
+    Object? flipH = null,
+    Object? url = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      number: freezed == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as double?,
+      flipH: null == flipH
+          ? _value.flipH
+          : flipH // ignore: cast_nullable_to_non_nullable
+              as bool,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_UserAvatarDecorationCopyWith<$Res>
+    implements $UserAvatarDecorationCopyWith<$Res> {
+  factory _$$_UserAvatarDecorationCopyWith(_$_UserAvatarDecoration value,
+          $Res Function(_$_UserAvatarDecoration) then) =
+      __$$_UserAvatarDecorationCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, double? number, bool flipH, String url});
+}
+
+/// @nodoc
+class __$$_UserAvatarDecorationCopyWithImpl<$Res>
+    extends _$UserAvatarDecorationCopyWithImpl<$Res, _$_UserAvatarDecoration>
+    implements _$$_UserAvatarDecorationCopyWith<$Res> {
+  __$$_UserAvatarDecorationCopyWithImpl(_$_UserAvatarDecoration _value,
+      $Res Function(_$_UserAvatarDecoration) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? number = freezed,
+    Object? flipH = null,
+    Object? url = null,
+  }) {
+    return _then(_$_UserAvatarDecoration(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      number: freezed == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as double?,
+      flipH: null == flipH
+          ? _value.flipH
+          : flipH // ignore: cast_nullable_to_non_nullable
+              as bool,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UserAvatarDecoration implements _UserAvatarDecoration {
+  const _$_UserAvatarDecoration(
+      {required this.id, this.number, this.flipH = false, required this.url});
+
+  factory _$_UserAvatarDecoration.fromJson(Map<String, dynamic> json) =>
+      _$$_UserAvatarDecorationFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final double? number;
+  @override
+  @JsonKey()
+  final bool flipH;
+  @override
+  final String url;
+
+  @override
+  String toString() {
+    return 'UserAvatarDecoration(id: $id, number: $number, flipH: $flipH, url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UserAvatarDecoration &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.flipH, flipH) || other.flipH == flipH) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, number, flipH, url);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UserAvatarDecorationCopyWith<_$_UserAvatarDecoration> get copyWith =>
+      __$$_UserAvatarDecorationCopyWithImpl<_$_UserAvatarDecoration>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UserAvatarDecorationToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UserAvatarDecoration implements UserAvatarDecoration {
+  const factory _UserAvatarDecoration(
+      {required final String id,
+      final double? number,
+      final bool flipH,
+      required final String url}) = _$_UserAvatarDecoration;
+
+  factory _UserAvatarDecoration.fromJson(Map<String, dynamic> json) =
+      _$_UserAvatarDecoration.fromJson;
+
+  @override
+  String get id;
+  @override
+  double? get number;
+  @override
+  bool get flipH;
+  @override
+  String get url;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UserAvatarDecorationCopyWith<_$_UserAvatarDecoration> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 UserInstanceInfo _$UserInstanceInfoFromJson(Map<String, dynamic> json) {

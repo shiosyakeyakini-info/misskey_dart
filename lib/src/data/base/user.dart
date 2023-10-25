@@ -17,6 +17,7 @@ class User with _$User {
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
     @UriConverter() required Uri avatarUrl,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
     String? avatarBlurhash,
     UserInstanceInfo? instance,
     @Default(false) bool isCat,
@@ -25,6 +26,19 @@ class User with _$User {
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
+}
+
+@freezed
+class UserAvatarDecoration with _$UserAvatarDecoration {
+  const factory UserAvatarDecoration({
+    required String id,
+    double? number,
+    @Default(false) bool flipH,
+    required String url,
+  }) = _UserAvatarDecoration;
+
+  factory UserAvatarDecoration.fromJson(Map<String, Object?> json) =>
+      _$UserAvatarDecorationFromJson(json);
 }
 
 @freezed
