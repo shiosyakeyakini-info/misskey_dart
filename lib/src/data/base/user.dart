@@ -32,7 +32,7 @@ class User with _$User {
 class UserAvatarDecoration with _$UserAvatarDecoration {
   const factory UserAvatarDecoration({
     required String id,
-    double? number,
+    double? angle,
     @Default(false) bool flipH,
     required String url,
   }) = _UserAvatarDecoration;

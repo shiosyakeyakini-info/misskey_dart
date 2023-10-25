@@ -466,7 +466,7 @@ UserAvatarDecoration _$UserAvatarDecorationFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserAvatarDecoration {
   String get id => throw _privateConstructorUsedError;
-  double? get number => throw _privateConstructorUsedError;
+  double? get angle => throw _privateConstructorUsedError;
   bool get flipH => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
@@ -482,7 +482,7 @@ abstract class $UserAvatarDecorationCopyWith<$Res> {
           $Res Function(UserAvatarDecoration) then) =
       _$UserAvatarDecorationCopyWithImpl<$Res, UserAvatarDecoration>;
   @useResult
-  $Res call({String id, double? number, bool flipH, String url});
+  $Res call({String id, double? angle, bool flipH, String url});
 }
 
 /// @nodoc
@@ -500,7 +500,7 @@ class _$UserAvatarDecorationCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = null,
-    Object? number = freezed,
+    Object? angle = freezed,
     Object? flipH = null,
     Object? url = null,
   }) {
@@ -509,9 +509,9 @@ class _$UserAvatarDecorationCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
+      angle: freezed == angle
+          ? _value.angle
+          : angle // ignore: cast_nullable_to_non_nullable
               as double?,
       flipH: null == flipH
           ? _value.flipH
@@ -533,7 +533,7 @@ abstract class _$$_UserAvatarDecorationCopyWith<$Res>
       __$$_UserAvatarDecorationCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, double? number, bool flipH, String url});
+  $Res call({String id, double? angle, bool flipH, String url});
 }
 
 /// @nodoc
@@ -548,7 +548,7 @@ class __$$_UserAvatarDecorationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? number = freezed,
+    Object? angle = freezed,
     Object? flipH = null,
     Object? url = null,
   }) {
@@ -557,9 +557,9 @@ class __$$_UserAvatarDecorationCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
+      angle: freezed == angle
+          ? _value.angle
+          : angle // ignore: cast_nullable_to_non_nullable
               as double?,
       flipH: null == flipH
           ? _value.flipH
@@ -577,7 +577,7 @@ class __$$_UserAvatarDecorationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserAvatarDecoration implements _UserAvatarDecoration {
   const _$_UserAvatarDecoration(
-      {required this.id, this.number, this.flipH = false, required this.url});
+      {required this.id, this.angle, this.flipH = false, required this.url});
 
   factory _$_UserAvatarDecoration.fromJson(Map<String, dynamic> json) =>
       _$$_UserAvatarDecorationFromJson(json);
@@ -585,7 +585,7 @@ class _$_UserAvatarDecoration implements _UserAvatarDecoration {
   @override
   final String id;
   @override
-  final double? number;
+  final double? angle;
   @override
   @JsonKey()
   final bool flipH;
@@ -594,7 +594,7 @@ class _$_UserAvatarDecoration implements _UserAvatarDecoration {
 
   @override
   String toString() {
-    return 'UserAvatarDecoration(id: $id, number: $number, flipH: $flipH, url: $url)';
+    return 'UserAvatarDecoration(id: $id, angle: $angle, flipH: $flipH, url: $url)';
   }
 
   @override
@@ -603,14 +603,14 @@ class _$_UserAvatarDecoration implements _UserAvatarDecoration {
         (other.runtimeType == runtimeType &&
             other is _$_UserAvatarDecoration &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.number, number) || other.number == number) &&
+            (identical(other.angle, angle) || other.angle == angle) &&
             (identical(other.flipH, flipH) || other.flipH == flipH) &&
             (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, number, flipH, url);
+  int get hashCode => Object.hash(runtimeType, id, angle, flipH, url);
 
   @JsonKey(ignore: true)
   @override
@@ -630,7 +630,7 @@ class _$_UserAvatarDecoration implements _UserAvatarDecoration {
 abstract class _UserAvatarDecoration implements UserAvatarDecoration {
   const factory _UserAvatarDecoration(
       {required final String id,
-      final double? number,
+      final double? angle,
       final bool flipH,
       required final String url}) = _$_UserAvatarDecoration;
 
@@ -640,7 +640,7 @@ abstract class _UserAvatarDecoration implements UserAvatarDecoration {
   @override
   String get id;
   @override
-  double? get number;
+  double? get angle;
   @override
   bool get flipH;
   @override

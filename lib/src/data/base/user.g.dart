@@ -55,7 +55,7 @@ _$_UserAvatarDecoration _$$_UserAvatarDecorationFromJson(
         Map<String, dynamic> json) =>
     _$_UserAvatarDecoration(
       id: json['id'] as String,
-      number: (json['number'] as num?)?.toDouble(),
+      angle: (json['angle'] as num?)?.toDouble(),
       flipH: json['flipH'] as bool? ?? false,
       url: json['url'] as String,
     );
@@ -64,7 +64,7 @@ Map<String, dynamic> _$$_UserAvatarDecorationToJson(
         _$_UserAvatarDecoration instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'number': instance.number,
+      'angle': instance.angle,
       'flipH': instance.flipH,
       'url': instance.url,
     };
