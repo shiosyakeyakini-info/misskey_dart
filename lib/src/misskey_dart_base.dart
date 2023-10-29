@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/get_avatar_decorations_response.dart';
 import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
 import 'package:misskey_dart/src/data/streaming/global_timeline_parameter.dart';
@@ -137,6 +138,12 @@ class Misskey {
     final response = await apiService
         .post<Map<String, dynamic>>("get-online-users-count", {});
     return GetOnlineUsersCountResponse.fromJson(response);
+  }
+
+  /// サーバーに設定されたアバターデコレーション情報を取得します。
+  Future<Iterable<GetAvatarDecorationsResponse>> getAvatarDecorations() async {
+    final response = await apiService.post<List>("get-avatar-decorations", {});
+    return response.map((e) => GetAvatarDecorationsResponse.fromJson(e));
   }
 
   /// ピン留めされたユーザーを取得します。

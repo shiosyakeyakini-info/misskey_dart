@@ -1,4 +1,5 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/following/following_update_all.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyFollowing {
@@ -31,6 +32,11 @@ class MisskeyFollowing {
       request.toJson(),
     );
     return User.fromJson(response);
+  }
+
+  /// フォロー中のすべての人の状態を変更します。
+  Future<void> updateAll(FollowingUpdateAllRequest request) async {
+    await _apiService.post<void>("following/update-all", request.toJson());
   }
 }
 

@@ -1,0 +1,1 @@
+enum FollowingUpdateAllNotifyType { normal, none }
