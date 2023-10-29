@@ -17,6 +17,7 @@ class IResponse with _$IResponse {
     String? host,
     @UriConverter() required Uri avatarUrl,
     String? avatarBlurhash,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
     required bool isBot,
     required bool isCat,
     @EmojisConverter() @Default({}) Map<String, String>? emojis,

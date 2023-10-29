@@ -13,6 +13,11 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       host: json['host'] as String?,
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
       avatarBlurhash: json['avatarBlurhash'] as String?,
+      avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
+              ?.map((e) =>
+                  UserAvatarDecoration.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       isBot: json['isBot'] as bool,
       isCat: json['isCat'] as bool,
       emojis: json['emojis'] == null
@@ -115,6 +120,7 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
       'host': instance.host,
       'avatarUrl': const UriConverter().toJson(instance.avatarUrl),
       'avatarBlurhash': instance.avatarBlurhash,
+      'avatarDecorations': instance.avatarDecorations,
       'isBot': instance.isBot,
       'isCat': instance.isCat,
       'emojis': _$JsonConverterToJson<dynamic, Map<String, String>>(

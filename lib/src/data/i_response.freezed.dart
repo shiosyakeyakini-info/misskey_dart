@@ -27,6 +27,8 @@ mixin _$IResponse {
   @UriConverter()
   Uri get avatarUrl => throw _privateConstructorUsedError;
   String? get avatarBlurhash => throw _privateConstructorUsedError;
+  List<UserAvatarDecoration> get avatarDecorations =>
+      throw _privateConstructorUsedError;
   bool get isBot => throw _privateConstructorUsedError;
   bool get isCat => throw _privateConstructorUsedError;
   @EmojisConverter()
@@ -121,6 +123,7 @@ abstract class $IResponseCopyWith<$Res> {
       String? host,
       @UriConverter() Uri avatarUrl,
       String? avatarBlurhash,
+      List<UserAvatarDecoration> avatarDecorations,
       bool isBot,
       bool isCat,
       @EmojisConverter() Map<String, String>? emojis,
@@ -206,6 +209,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
     Object? host = freezed,
     Object? avatarUrl = null,
     Object? avatarBlurhash = freezed,
+    Object? avatarDecorations = null,
     Object? isBot = null,
     Object? isCat = null,
     Object? emojis = freezed,
@@ -293,6 +297,10 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.avatarBlurhash
           : avatarBlurhash // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatarDecorations: null == avatarDecorations
+          ? _value.avatarDecorations
+          : avatarDecorations // ignore: cast_nullable_to_non_nullable
+              as List<UserAvatarDecoration>,
       isBot: null == isBot
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
@@ -563,6 +571,7 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       String? host,
       @UriConverter() Uri avatarUrl,
       String? avatarBlurhash,
+      List<UserAvatarDecoration> avatarDecorations,
       bool isBot,
       bool isCat,
       @EmojisConverter() Map<String, String>? emojis,
@@ -647,6 +656,7 @@ class __$$_IResponseCopyWithImpl<$Res>
     Object? host = freezed,
     Object? avatarUrl = null,
     Object? avatarBlurhash = freezed,
+    Object? avatarDecorations = null,
     Object? isBot = null,
     Object? isCat = null,
     Object? emojis = freezed,
@@ -734,6 +744,10 @@ class __$$_IResponseCopyWithImpl<$Res>
           ? _value.avatarBlurhash
           : avatarBlurhash // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatarDecorations: null == avatarDecorations
+          ? _value._avatarDecorations
+          : avatarDecorations // ignore: cast_nullable_to_non_nullable
+              as List<UserAvatarDecoration>,
       isBot: null == isBot
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
@@ -992,6 +1006,7 @@ class _$_IResponse implements _IResponse {
       this.host,
       @UriConverter() required this.avatarUrl,
       this.avatarBlurhash,
+      final List<UserAvatarDecoration> avatarDecorations = const [],
       required this.isBot,
       required this.isCat,
       @EmojisConverter() final Map<String, String>? emojis = const {},
@@ -1054,7 +1069,8 @@ class _$_IResponse implements _IResponse {
       required final List<UserAchievement> achievements,
       required this.loggedInDays,
       required this.policies})
-      : _emojis = emojis,
+      : _avatarDecorations = avatarDecorations,
+        _emojis = emojis,
         _badgeRoles = badgeRoles,
         _fields = fields,
         _pinnedNoteIds = pinnedNoteIds,
@@ -1082,6 +1098,16 @@ class _$_IResponse implements _IResponse {
   final Uri avatarUrl;
   @override
   final String? avatarBlurhash;
+  final List<UserAvatarDecoration> _avatarDecorations;
+  @override
+  @JsonKey()
+  List<UserAvatarDecoration> get avatarDecorations {
+    if (_avatarDecorations is EqualUnmodifiableListView)
+      return _avatarDecorations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_avatarDecorations);
+  }
+
   @override
   final bool isBot;
   @override
@@ -1300,7 +1326,7 @@ class _$_IResponse implements _IResponse {
 
   @override
   String toString() {
-    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
   }
 
   @override
@@ -1317,6 +1343,8 @@ class _$_IResponse implements _IResponse {
                 other.avatarUrl == avatarUrl) &&
             (identical(other.avatarBlurhash, avatarBlurhash) ||
                 other.avatarBlurhash == avatarBlurhash) &&
+            const DeepCollectionEquality()
+                .equals(other._avatarDecorations, _avatarDecorations) &&
             (identical(other.isBot, isBot) || other.isBot == isBot) &&
             (identical(other.isCat, isCat) || other.isCat == isCat) &&
             const DeepCollectionEquality().equals(other._emojis, _emojis) &&
@@ -1401,8 +1429,7 @@ class _$_IResponse implements _IResponse {
                 other.hideOnlineStatus == hideOnlineStatus) &&
             (identical(other.hasUnreadSpecifiedNotes, hasUnreadSpecifiedNotes) ||
                 other.hasUnreadSpecifiedNotes == hasUnreadSpecifiedNotes) &&
-            (identical(other.hasUnreadMentions, hasUnreadMentions) ||
-                other.hasUnreadMentions == hasUnreadMentions) &&
+            (identical(other.hasUnreadMentions, hasUnreadMentions) || other.hasUnreadMentions == hasUnreadMentions) &&
             (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) || other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
             (identical(other.hasUnreadAntenna, hasUnreadAntenna) || other.hasUnreadAntenna == hasUnreadAntenna) &&
             (identical(other.hasUnreadChannel, hasUnreadChannel) || other.hasUnreadChannel == hasUnreadChannel) &&
@@ -1429,6 +1456,7 @@ class _$_IResponse implements _IResponse {
         host,
         avatarUrl,
         avatarBlurhash,
+        const DeepCollectionEquality().hash(_avatarDecorations),
         isBot,
         isCat,
         const DeepCollectionEquality().hash(_emojis),
@@ -1514,6 +1542,7 @@ abstract class _IResponse implements IResponse {
       final String? host,
       @UriConverter() required final Uri avatarUrl,
       final String? avatarBlurhash,
+      final List<UserAvatarDecoration> avatarDecorations,
       required final bool isBot,
       required final bool isCat,
       @EmojisConverter() final Map<String, String>? emojis,
@@ -1593,6 +1622,8 @@ abstract class _IResponse implements IResponse {
   Uri get avatarUrl;
   @override
   String? get avatarBlurhash;
+  @override
+  List<UserAvatarDecoration> get avatarDecorations;
   @override
   bool get isBot;
   @override

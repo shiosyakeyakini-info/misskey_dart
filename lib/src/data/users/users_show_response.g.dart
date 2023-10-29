@@ -14,6 +14,11 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
       host: json['host'] as String?,
       avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
       avatarBlurhash: json['avatarBlurhash'] as String?,
+      avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
+              ?.map((e) =>
+                  UserAvatarDecoration.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       isBot: json['isBot'] as bool,
       isCat: json['isCat'] as bool,
       instance: json['instance'] == null
@@ -129,6 +134,7 @@ Map<String, dynamic> _$$_UsersShowResponseToJson(
       'host': instance.host,
       'avatarUrl': const UriConverter().toJson(instance.avatarUrl),
       'avatarBlurhash': instance.avatarBlurhash,
+      'avatarDecorations': instance.avatarDecorations,
       'isBot': instance.isBot,
       'isCat': instance.isCat,
       'instance': instance.instance,

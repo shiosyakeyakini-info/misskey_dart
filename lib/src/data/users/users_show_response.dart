@@ -20,6 +20,7 @@ class UsersShowResponse with _$UsersShowResponse {
     String? host,
     @UriConverter() required Uri avatarUrl,
     String? avatarBlurhash,
+    @Default([]) List<UserAvatarDecoration> avatarDecorations,
     required bool isBot,
     required bool isCat,
     UserInstanceInfo? instance,
