@@ -184,6 +184,7 @@ export 'src/data/streaming/global_timeline_parameter.dart';
 export 'src/data/streaming/hybrid_timeline_parameter.dart';
 export 'src/data/join_misskey_instances.dart';
 export 'src/services/socket_controller.dart';
+export 'src/services/streaming_service.dart';
 export 'src/server.dart';
 export 'src/join_misskey.dart';
 
