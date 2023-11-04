@@ -27,6 +27,6 @@ Map<String, dynamic> _$$FollowingImplToJson(_$FollowingImpl instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'followeeId': instance.followeeId,
       'followerId': instance.followerId,
-      'followee': instance.followee,
-      'follower': instance.follower,
+      'followee': instance.followee?.toJson(),
+      'follower': instance.follower?.toJson(),
     };

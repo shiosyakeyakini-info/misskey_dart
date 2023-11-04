@@ -19,9 +19,9 @@ Map<String, dynamic> _$$ServerInfoResponseImplToJson(
         _$ServerInfoResponseImpl instance) =>
     <String, dynamic>{
       'machine': instance.machine,
-      'cpu': instance.cpu,
-      'mem': instance.mem,
-      'fs': instance.fs,
+      'cpu': instance.cpu.toJson(),
+      'mem': instance.mem.toJson(),
+      'fs': instance.fs.toJson(),
     };
 
 _$ServerInfoCpuImpl _$$ServerInfoCpuImplFromJson(Map<String, dynamic> json) =>

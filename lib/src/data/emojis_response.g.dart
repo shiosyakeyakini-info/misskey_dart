@@ -16,7 +16,7 @@ _$EmojisResponseImpl _$$EmojisResponseImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$EmojisResponseImplToJson(
         _$EmojisResponseImpl instance) =>
     <String, dynamic>{
-      'emojis': instance.emojis,
+      'emojis': instance.emojis.map((e) => e.toJson()).toList(),
     };
 
 _$EmojiImpl _$$EmojiImplFromJson(Map<String, dynamic> json) => _$EmojiImpl(

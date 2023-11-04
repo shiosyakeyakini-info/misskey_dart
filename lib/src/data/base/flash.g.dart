@@ -30,7 +30,7 @@ Map<String, dynamic> _$$FlashImplToJson(_$FlashImpl instance) =>
       'summary': instance.summary,
       'script': instance.script,
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'likedCount': instance.likedCount,
       'isLiked': instance.isLiked,
     };

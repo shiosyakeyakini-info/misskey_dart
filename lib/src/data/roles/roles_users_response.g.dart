@@ -17,5 +17,5 @@ Map<String, dynamic> _$$RolesUsersResponseImplToJson(
         _$RolesUsersResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'user': instance.user,
+      'user': instance.user.toJson(),
     };

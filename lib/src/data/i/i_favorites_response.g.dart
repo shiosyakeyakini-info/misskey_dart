@@ -22,5 +22,5 @@ Map<String, dynamic> _$$IFavoritesResponseImplToJson(
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'noteId': instance.noteId,
-      'note': instance.note,
+      'note': instance.note.toJson(),
     };

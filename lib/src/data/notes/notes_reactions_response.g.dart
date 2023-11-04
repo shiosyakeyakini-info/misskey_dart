@@ -21,6 +21,6 @@ Map<String, dynamic> _$$NotesReactionsResponseImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'type': instance.type,
     };

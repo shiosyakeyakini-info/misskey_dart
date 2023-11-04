@@ -16,6 +16,6 @@ _$FollowRequestImpl _$$FollowRequestImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$FollowRequestImplToJson(_$FollowRequestImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'followee': instance.followee,
-      'follower': instance.follower,
+      'followee': instance.followee.toJson(),
+      'follower': instance.follower.toJson(),
     };

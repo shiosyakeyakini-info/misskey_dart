@@ -76,7 +76,7 @@ Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
       'text': instance.text,
       'cw': instance.cw,
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'userId': instance.userId,
       'visibility':
           const NoteVisibilityJsonConverter().toJson(instance.visibility),
@@ -87,22 +87,22 @@ Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
       'reactionEmojis': const EmojisConverter().toJson(instance.reactionEmojis),
       'emojis': const EmojisConverter().toJson(instance.emojis),
       'fileIds': instance.fileIds,
-      'files': instance.files,
+      'files': instance.files.map((e) => e.toJson()).toList(),
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
       'reactionAcceptance':
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
-      'renote': instance.renote,
-      'reply': instance.reply,
+      'renote': instance.renote?.toJson(),
+      'reply': instance.reply?.toJson(),
       'visibleUserIds': instance.visibleUserIds,
       'mentions': instance.mentions,
       'myReaction': instance.myReaction,
-      'channel': instance.channel,
+      'channel': instance.channel?.toJson(),
       'uri': const NullableUriConverter().toJson(instance.uri),
       'url': const NullableUriConverter().toJson(instance.url),
       'reactionAndUserPairCache': instance.reactionAndUserPairCache,
-      'poll': instance.poll,
+      'poll': instance.poll?.toJson(),
       'clippedCount': instance.clippedCount,
     };
 
@@ -155,7 +155,7 @@ Map<String, dynamic> _$$NotePollImplToJson(_$NotePollImpl instance) =>
       'multiple': instance.multiple,
       'expiresAt': _$JsonConverterToJson<String, DateTime>(
           instance.expiresAt, const DateTimeConverter().toJson),
-      'choices': instance.choices,
+      'choices': instance.choices.map((e) => e.toJson()).toList(),
     };
 
 Json? _$JsonConverterToJson<Json, Value>(

@@ -26,7 +26,7 @@ Map<String, dynamic> _$$DriveFolderImplToJson(_$DriveFolderImpl instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'name': instance.name,
       'parentId': instance.parentId,
-      'parent': instance.parent,
+      'parent': instance.parent?.toJson(),
       'foldersCount': instance.foldersCount,
       'filesCount': instance.filesCount,
     };

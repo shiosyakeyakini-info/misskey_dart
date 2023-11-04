@@ -28,7 +28,7 @@ Map<String, dynamic> _$$ClipImplToJson(_$ClipImpl instance) =>
       'lastClippedAt':
           const NullableDateTimeConverter().toJson(instance.lastClippedAt),
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'name': instance.name,
       'description': instance.description,
       'isPublic': instance.isPublic,

@@ -55,7 +55,7 @@ Map<String, dynamic> _$$NotesCreateRequestImplToJson(
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
-      'poll': instance.poll,
+      'poll': instance.poll?.toJson(),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -56,7 +56,7 @@ Map<String, dynamic> _$$CommunityChannelImplToJson(
       'isFollowing': instance.isFollowing,
       'isFavorited': instance.isFavorited,
       'hasUnreadNote': instance.hasUnreadNote,
-      'pinnedNotes': instance.pinnedNotes,
+      'pinnedNotes': instance.pinnedNotes?.map((e) => e.toJson()).toList(),
       'allowRenoteToExternal': instance.allowRenoteToExternal,
     };
 

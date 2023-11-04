@@ -21,7 +21,7 @@ Map<String, dynamic> _$$TimelineReactedImplToJson(
         _$TimelineReactedImpl instance) =>
     <String, dynamic>{
       'reaction': instance.reaction,
-      'emoji': instance.emoji,
+      'emoji': instance.emoji?.toJson(),
       'userId': instance.userId,
     };
 
