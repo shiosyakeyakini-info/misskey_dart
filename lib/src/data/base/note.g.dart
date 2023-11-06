@@ -124,6 +124,8 @@ _$_NoteChannelInfo _$$_NoteChannelInfoFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       color: const NullableColorConverter().fromJson(json['color'] as String?),
+      isSensitive: json['isSensitive'] ?? false,
+      allowRenoteToExternal: json['allowRenoteToExternal'] ?? true,
     );
 
 Map<String, dynamic> _$$_NoteChannelInfoToJson(_$_NoteChannelInfo instance) =>
@@ -131,6 +133,8 @@ Map<String, dynamic> _$$_NoteChannelInfoToJson(_$_NoteChannelInfo instance) =>
       'id': instance.id,
       'name': instance.name,
       'color': const NullableColorConverter().toJson(instance.color),
+      'isSensitive': instance.isSensitive,
+      'allowRenoteToExternal': instance.allowRenoteToExternal,
     };
 
 _$_NotePoll _$$_NotePollFromJson(Map<String, dynamic> json) => _$_NotePoll(
