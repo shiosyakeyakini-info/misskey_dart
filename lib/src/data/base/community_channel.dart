@@ -24,6 +24,7 @@ class CommunityChannel with _$CommunityChannel {
     bool? isFavorited,
     bool? hasUnreadNote,
     required List<Note>? pinnedNotes,
+    @Default(true) bool allowRenoteToExternal,
   }) = _CommunityChannel;
 
   factory CommunityChannel.fromJson(Map<String, Object?> json) =>

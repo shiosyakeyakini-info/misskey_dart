@@ -38,6 +38,7 @@ mixin _$CommunityChannel {
   bool? get isFavorited => throw _privateConstructorUsedError;
   bool? get hasUnreadNote => throw _privateConstructorUsedError;
   List<Note>? get pinnedNotes => throw _privateConstructorUsedError;
+  bool get allowRenoteToExternal => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,7 +67,8 @@ abstract class $CommunityChannelCopyWith<$Res> {
       bool? isFollowing,
       bool? isFavorited,
       bool? hasUnreadNote,
-      List<Note>? pinnedNotes});
+      List<Note>? pinnedNotes,
+      bool allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -97,6 +99,7 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
     Object? isFavorited = freezed,
     Object? hasUnreadNote = freezed,
     Object? pinnedNotes = freezed,
+    Object? allowRenoteToExternal = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -159,6 +162,10 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
           ? _value.pinnedNotes
           : pinnedNotes // ignore: cast_nullable_to_non_nullable
               as List<Note>?,
+      allowRenoteToExternal: null == allowRenoteToExternal
+          ? _value.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -186,7 +193,8 @@ abstract class _$$_CommunityChannelCopyWith<$Res>
       bool? isFollowing,
       bool? isFavorited,
       bool? hasUnreadNote,
-      List<Note>? pinnedNotes});
+      List<Note>? pinnedNotes,
+      bool allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -215,6 +223,7 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
     Object? isFavorited = freezed,
     Object? hasUnreadNote = freezed,
     Object? pinnedNotes = freezed,
+    Object? allowRenoteToExternal = null,
   }) {
     return _then(_$_CommunityChannel(
       id: null == id
@@ -277,6 +286,10 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
           ? _value._pinnedNotes
           : pinnedNotes // ignore: cast_nullable_to_non_nullable
               as List<Note>?,
+      allowRenoteToExternal: null == allowRenoteToExternal
+          ? _value.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -299,7 +312,8 @@ class _$_CommunityChannel implements _CommunityChannel {
       this.isFollowing,
       this.isFavorited,
       this.hasUnreadNote,
-      required final List<Note>? pinnedNotes})
+      required final List<Note>? pinnedNotes,
+      this.allowRenoteToExternal = true})
       : _pinnedNoteIds = pinnedNoteIds,
         _pinnedNotes = pinnedNotes;
 
@@ -355,8 +369,12 @@ class _$_CommunityChannel implements _CommunityChannel {
   }
 
   @override
+  @JsonKey()
+  final bool allowRenoteToExternal;
+
+  @override
   String toString() {
-    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, isFollowing: $isFollowing, isFavorited: $isFavorited, hasUnreadNote: $hasUnreadNote, pinnedNotes: $pinnedNotes)';
+    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, isFollowing: $isFollowing, isFavorited: $isFavorited, hasUnreadNote: $hasUnreadNote, pinnedNotes: $pinnedNotes, allowRenoteToExternal: $allowRenoteToExternal)';
   }
 
   @override
@@ -390,7 +408,9 @@ class _$_CommunityChannel implements _CommunityChannel {
             (identical(other.hasUnreadNote, hasUnreadNote) ||
                 other.hasUnreadNote == hasUnreadNote) &&
             const DeepCollectionEquality()
-                .equals(other._pinnedNotes, _pinnedNotes));
+                .equals(other._pinnedNotes, _pinnedNotes) &&
+            (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
+                other.allowRenoteToExternal == allowRenoteToExternal));
   }
 
   @JsonKey(ignore: true)
@@ -411,7 +431,8 @@ class _$_CommunityChannel implements _CommunityChannel {
       isFollowing,
       isFavorited,
       hasUnreadNote,
-      const DeepCollectionEquality().hash(_pinnedNotes));
+      const DeepCollectionEquality().hash(_pinnedNotes),
+      allowRenoteToExternal);
 
   @JsonKey(ignore: true)
   @override
@@ -443,7 +464,8 @@ abstract class _CommunityChannel implements CommunityChannel {
       final bool? isFollowing,
       final bool? isFavorited,
       final bool? hasUnreadNote,
-      required final List<Note>? pinnedNotes}) = _$_CommunityChannel;
+      required final List<Note>? pinnedNotes,
+      final bool allowRenoteToExternal}) = _$_CommunityChannel;
 
   factory _CommunityChannel.fromJson(Map<String, dynamic> json) =
       _$_CommunityChannel.fromJson;
@@ -481,6 +503,8 @@ abstract class _CommunityChannel implements CommunityChannel {
   bool? get hasUnreadNote;
   @override
   List<Note>? get pinnedNotes;
+  @override
+  bool get allowRenoteToExternal;
   @override
   @JsonKey(ignore: true)
   _$$_CommunityChannelCopyWith<_$_CommunityChannel> get copyWith =>

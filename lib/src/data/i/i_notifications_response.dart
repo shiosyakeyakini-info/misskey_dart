@@ -11,7 +11,7 @@ class INotificationsResponse with _$INotificationsResponse {
   const factory INotificationsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    @NotificationTypeJsonConverter() required NotificationType type,
+    required NotificationType type,
     String? noteId,
     String? followRequestId,
     String? reaction,

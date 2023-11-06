@@ -15,17 +15,9 @@ enum NotificationType {
   app,
   achievementEarned,
   test,
-  note
-}
-
-class NotificationTypeJsonConverter
-    extends JsonConverter<NotificationType?, String> {
-  const NotificationTypeJsonConverter();
-
-  @override
-  NotificationType? fromJson(String json) =>
-      NotificationType.values.firstWhere((e) => e.name == json);
-
-  @override
-  String toJson(NotificationType? object) => object?.name ?? "";
+  note,
+  @JsonValue("reaction:grouped")
+  reactionGrouped,
+  @JsonValue("renote:grouped")
+  renoteGrouped,
 }

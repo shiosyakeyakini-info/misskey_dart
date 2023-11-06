@@ -24,7 +24,6 @@ mixin _$INotificationsResponse {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  @NotificationTypeJsonConverter()
   NotificationType get type => throw _privateConstructorUsedError;
   String? get noteId => throw _privateConstructorUsedError;
   String? get followRequestId => throw _privateConstructorUsedError;
@@ -55,7 +54,7 @@ abstract class $INotificationsResponseCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      @NotificationTypeJsonConverter() NotificationType type,
+      NotificationType type,
       String? noteId,
       String? followRequestId,
       String? reaction,
@@ -203,7 +202,7 @@ abstract class _$$_INotificationsResponseCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      @NotificationTypeJsonConverter() NotificationType type,
+      NotificationType type,
       String? noteId,
       String? followRequestId,
       String? reaction,
@@ -322,7 +321,7 @@ class _$_INotificationsResponse implements _INotificationsResponse {
   const _$_INotificationsResponse(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
-      @NotificationTypeJsonConverter() required this.type,
+      required this.type,
       this.noteId,
       this.followRequestId,
       this.reaction,
@@ -345,7 +344,6 @@ class _$_INotificationsResponse implements _INotificationsResponse {
   @DateTimeConverter()
   final DateTime createdAt;
   @override
-  @NotificationTypeJsonConverter()
   final NotificationType type;
   @override
   final String? noteId;
@@ -447,7 +445,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   const factory _INotificationsResponse(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
-      @NotificationTypeJsonConverter() required final NotificationType type,
+      required final NotificationType type,
       final String? noteId,
       final String? followRequestId,
       final String? reaction,
@@ -470,7 +468,6 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @DateTimeConverter()
   DateTime get createdAt;
   @override
-  @NotificationTypeJsonConverter()
   NotificationType get type;
   @override
   String? get noteId;

@@ -31,6 +31,7 @@ _$_CommunityChannel _$$_CommunityChannelFromJson(Map<String, dynamic> json) =>
       pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
           ?.map((e) => Note.fromJson(e as Map<String, dynamic>))
           .toList(),
+      allowRenoteToExternal: json['allowRenoteToExternal'] as bool? ?? true,
     );
 
 Map<String, dynamic> _$$_CommunityChannelToJson(_$_CommunityChannel instance) =>
@@ -50,6 +51,7 @@ Map<String, dynamic> _$$_CommunityChannelToJson(_$_CommunityChannel instance) =>
       'isFavorited': instance.isFavorited,
       'hasUnreadNote': instance.hasUnreadNote,
       'pinnedNotes': instance.pinnedNotes,
+      'allowRenoteToExternal': instance.allowRenoteToExternal,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

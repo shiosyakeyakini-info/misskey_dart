@@ -68,6 +68,8 @@ const _$NotificationTypeEnumMap = {
   NotificationType.achievementEarned: 'achievementEarned',
   NotificationType.test: 'test',
   NotificationType.note: 'note',
+  NotificationType.reactionGrouped: 'reaction:grouped',
+  NotificationType.renoteGrouped: 'renote:grouped',
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(
