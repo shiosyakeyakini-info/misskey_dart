@@ -126,8 +126,8 @@ _$NoteChannelInfoImpl _$$NoteChannelInfoImplFromJson(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const NullableColorConverter().fromJson(json['color'] as String?),
-      isSensitive: json['isSensitive'] ?? false,
-      allowRenoteToExternal: json['allowRenoteToExternal'] ?? true,
+      isSensitive: json['isSensitive'] as bool? ?? false,
+      allowRenoteToExternal: json['allowRenoteToExternal'] as bool? ?? true,
     );
 
 Map<String, dynamic> _$$NoteChannelInfoImplToJson(

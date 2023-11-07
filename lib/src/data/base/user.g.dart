@@ -157,7 +157,7 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
       gtlAvailable: json['gtlAvailable'] as bool,
       ltlAvailable: json['ltlAvailable'] as bool,
       canPublicNote: json['canPublicNote'] as bool,
-      canEditNote: json['canEditNote'] ?? false,
+      canEditNote: json['canEditNote'] as bool? ?? false,
       canInvite: json['canInvite'] as bool,
       canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
       canHideAds: json['canHideAds'] as bool,

@@ -28,8 +28,8 @@ mixin _$EmojiResponse {
   @NullableUriConverter()
   Uri? get url => throw _privateConstructorUsedError;
   String? get license => throw _privateConstructorUsedError;
-  dynamic get isSensitive => throw _privateConstructorUsedError;
-  dynamic get localOnly => throw _privateConstructorUsedError;
+  bool get isSensitive => throw _privateConstructorUsedError;
+  bool get localOnly => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,8 +51,8 @@ abstract class $EmojiResponseCopyWith<$Res> {
       String? host,
       @NullableUriConverter() Uri? url,
       String? license,
-      dynamic isSensitive,
-      dynamic localOnly});
+      bool isSensitive,
+      bool localOnly});
 }
 
 /// @nodoc
@@ -75,8 +75,8 @@ class _$EmojiResponseCopyWithImpl<$Res, $Val extends EmojiResponse>
     Object? host = freezed,
     Object? url = freezed,
     Object? license = freezed,
-    Object? isSensitive = freezed,
-    Object? localOnly = freezed,
+    Object? isSensitive = null,
+    Object? localOnly = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -107,14 +107,14 @@ class _$EmojiResponseCopyWithImpl<$Res, $Val extends EmojiResponse>
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSensitive: freezed == isSensitive
+      isSensitive: null == isSensitive
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      localOnly: freezed == localOnly
+              as bool,
+      localOnly: null == localOnly
           ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as bool,
     ) as $Val);
   }
 }
@@ -135,8 +135,8 @@ abstract class _$$EmojiResponseImplCopyWith<$Res>
       String? host,
       @NullableUriConverter() Uri? url,
       String? license,
-      dynamic isSensitive,
-      dynamic localOnly});
+      bool isSensitive,
+      bool localOnly});
 }
 
 /// @nodoc
@@ -157,8 +157,8 @@ class __$$EmojiResponseImplCopyWithImpl<$Res>
     Object? host = freezed,
     Object? url = freezed,
     Object? license = freezed,
-    Object? isSensitive = freezed,
-    Object? localOnly = freezed,
+    Object? isSensitive = null,
+    Object? localOnly = null,
   }) {
     return _then(_$EmojiResponseImpl(
       id: null == id
@@ -189,8 +189,14 @@ class __$$EmojiResponseImplCopyWithImpl<$Res>
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSensitive: freezed == isSensitive ? _value.isSensitive! : isSensitive,
-      localOnly: freezed == localOnly ? _value.localOnly! : localOnly,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      localOnly: null == localOnly
+          ? _value.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -237,10 +243,10 @@ class _$EmojiResponseImpl implements _EmojiResponse {
   final String? license;
   @override
   @JsonKey()
-  final dynamic isSensitive;
+  final bool isSensitive;
   @override
   @JsonKey()
-  final dynamic localOnly;
+  final bool localOnly;
 
   @override
   String toString() {
@@ -260,9 +266,10 @@ class _$EmojiResponseImpl implements _EmojiResponse {
             (identical(other.host, host) || other.host == host) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.license, license) || other.license == license) &&
-            const DeepCollectionEquality()
-                .equals(other.isSensitive, isSensitive) &&
-            const DeepCollectionEquality().equals(other.localOnly, localOnly));
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly));
   }
 
   @JsonKey(ignore: true)
@@ -276,8 +283,8 @@ class _$EmojiResponseImpl implements _EmojiResponse {
       host,
       url,
       license,
-      const DeepCollectionEquality().hash(isSensitive),
-      const DeepCollectionEquality().hash(localOnly));
+      isSensitive,
+      localOnly);
 
   @JsonKey(ignore: true)
   @override
@@ -302,8 +309,8 @@ abstract class _EmojiResponse implements EmojiResponse {
       final String? host,
       @NullableUriConverter() required final Uri? url,
       final String? license,
-      final dynamic isSensitive,
-      final dynamic localOnly}) = _$EmojiResponseImpl;
+      final bool isSensitive,
+      final bool localOnly}) = _$EmojiResponseImpl;
 
   factory _EmojiResponse.fromJson(Map<String, dynamic> json) =
       _$EmojiResponseImpl.fromJson;
@@ -324,9 +331,9 @@ abstract class _EmojiResponse implements EmojiResponse {
   @override
   String? get license;
   @override
-  dynamic get isSensitive;
+  bool get isSensitive;
   @override
-  dynamic get localOnly;
+  bool get localOnly;
   @override
   @JsonKey(ignore: true)
   _$$EmojiResponseImplCopyWith<_$EmojiResponseImpl> get copyWith =>
