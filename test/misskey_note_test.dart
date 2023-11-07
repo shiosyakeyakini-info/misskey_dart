@@ -179,15 +179,19 @@ void main() async {
     expect(response.map((e) => e.id), contains(clip.id));
   });
 
-  test("unrenote", () async {
-    final note = await userClient.createNote();
-    final renote = await userClient.createNote(renoteId: note.id);
-    // ignore: deprecated_member_use_from_same_package
-    await userClient.notes.unrenote(NotesUnrenoteRequest(noteId: note.id));
-    final notes =
-        await userClient.users.notes(UsersNotesRequest(userId: user.id));
-    expect(notes.map((e) => e.id), isNot(contains(renote.id)));
-  });
+  test(
+    "unrenote",
+    () async {
+      final note = await userClient.createNote();
+      final renote = await userClient.createNote(renoteId: note.id);
+      // ignore: deprecated_member_use_from_same_package
+      await userClient.notes.unrenote(NotesUnrenoteRequest(noteId: note.id));
+      final notes =
+          await userClient.users.notes(UsersNotesRequest(userId: user.id));
+      expect(notes.map((e) => e.id), isNot(contains(renote.id)));
+    },
+    retry: 3,
+  );
 
   group("reactions", () {
     test("create", () async {

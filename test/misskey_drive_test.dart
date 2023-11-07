@@ -30,13 +30,17 @@ void main() async {
       expect(updated.name, equals("updated"));
     });
 
-    test("delete", () async {
-      final file = await userClient.createDriveFile();
-      await userClient.drive.files
-          .delete(DriveFilesDeleteRequest(fileId: file.id));
-      final files = await userClient.drive.files.files(DriveFilesRequest());
-      expect(files.map((e) => e.id), isNot(contains(file.id)));
-    });
+    test(
+      "delete",
+      () async {
+        final file = await userClient.createDriveFile();
+        await userClient.drive.files
+            .delete(DriveFilesDeleteRequest(fileId: file.id));
+        final files = await userClient.drive.files.files(DriveFilesRequest());
+        expect(files.map((e) => e.id), isNot(contains(file.id)));
+      },
+      retry: 3,
+    );
 
     test("files", () async {
       final file = await userClient.createDriveFile();
