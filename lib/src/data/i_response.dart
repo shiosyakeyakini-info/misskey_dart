@@ -70,6 +70,7 @@ class IResponse with _$IResponse {
     required bool hasUnreadChannel,
     required bool hasUnreadNotification,
     required bool hasPendingReceivedFollowRequest,
+    int? unreadNotificationsCount,
     @Default([]) List<AnnouncementsResponse> unreadAnnouncements,
     @MuteWordsConverter() required List<MuteWord> mutedWords,
     required List<String> mutedInstances,
