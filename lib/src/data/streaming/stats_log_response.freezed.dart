@@ -108,11 +108,11 @@ class _$StatsLogResponseCopyWithImpl<$Res, $Val extends StatsLogResponse>
 }
 
 /// @nodoc
-abstract class _$$_StatsLogResponseCopyWith<$Res>
+abstract class _$$StatsLogResponseImplCopyWith<$Res>
     implements $StatsLogResponseCopyWith<$Res> {
-  factory _$$_StatsLogResponseCopyWith(
-          _$_StatsLogResponse value, $Res Function(_$_StatsLogResponse) then) =
-      __$$_StatsLogResponseCopyWithImpl<$Res>;
+  factory _$$StatsLogResponseImplCopyWith(_$StatsLogResponseImpl value,
+          $Res Function(_$StatsLogResponseImpl) then) =
+      __$$StatsLogResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net});
@@ -126,11 +126,11 @@ abstract class _$$_StatsLogResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_StatsLogResponseCopyWithImpl<$Res>
-    extends _$StatsLogResponseCopyWithImpl<$Res, _$_StatsLogResponse>
-    implements _$$_StatsLogResponseCopyWith<$Res> {
-  __$$_StatsLogResponseCopyWithImpl(
-      _$_StatsLogResponse _value, $Res Function(_$_StatsLogResponse) _then)
+class __$$StatsLogResponseImplCopyWithImpl<$Res>
+    extends _$StatsLogResponseCopyWithImpl<$Res, _$StatsLogResponseImpl>
+    implements _$$StatsLogResponseImplCopyWith<$Res> {
+  __$$StatsLogResponseImplCopyWithImpl(_$StatsLogResponseImpl _value,
+      $Res Function(_$StatsLogResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +141,7 @@ class __$$_StatsLogResponseCopyWithImpl<$Res>
     Object? mem = null,
     Object? net = null,
   }) {
-    return _then(_$_StatsLogResponse(
+    return _then(_$StatsLogResponseImpl(
       cpu: null == cpu
           ? _value.cpu
           : cpu // ignore: cast_nullable_to_non_nullable
@@ -164,15 +164,15 @@ class __$$_StatsLogResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StatsLogResponse implements _StatsLogResponse {
-  const _$_StatsLogResponse(
+class _$StatsLogResponseImpl implements _StatsLogResponse {
+  const _$StatsLogResponseImpl(
       {required this.cpu,
       required this.fs,
       required this.mem,
       required this.net});
 
-  factory _$_StatsLogResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_StatsLogResponseFromJson(json);
+  factory _$StatsLogResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsLogResponseImplFromJson(json);
 
   @override
   final double cpu;
@@ -192,7 +192,7 @@ class _$_StatsLogResponse implements _StatsLogResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StatsLogResponse &&
+            other is _$StatsLogResponseImpl &&
             (identical(other.cpu, cpu) || other.cpu == cpu) &&
             (identical(other.fs, fs) || other.fs == fs) &&
             (identical(other.mem, mem) || other.mem == mem) &&
@@ -206,12 +206,13 @@ class _$_StatsLogResponse implements _StatsLogResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StatsLogResponseCopyWith<_$_StatsLogResponse> get copyWith =>
-      __$$_StatsLogResponseCopyWithImpl<_$_StatsLogResponse>(this, _$identity);
+  _$$StatsLogResponseImplCopyWith<_$StatsLogResponseImpl> get copyWith =>
+      __$$StatsLogResponseImplCopyWithImpl<_$StatsLogResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StatsLogResponseToJson(
+    return _$$StatsLogResponseImplToJson(
       this,
     );
   }
@@ -222,10 +223,10 @@ abstract class _StatsLogResponse implements StatsLogResponse {
       {required final double cpu,
       required final StatsLogFs fs,
       required final StatsLogMem mem,
-      required final StatsLogNet net}) = _$_StatsLogResponse;
+      required final StatsLogNet net}) = _$StatsLogResponseImpl;
 
   factory _StatsLogResponse.fromJson(Map<String, dynamic> json) =
-      _$_StatsLogResponse.fromJson;
+      _$StatsLogResponseImpl.fromJson;
 
   @override
   double get cpu;
@@ -237,7 +238,7 @@ abstract class _StatsLogResponse implements StatsLogResponse {
   StatsLogNet get net;
   @override
   @JsonKey(ignore: true)
-  _$$_StatsLogResponseCopyWith<_$_StatsLogResponse> get copyWith =>
+  _$$StatsLogResponseImplCopyWith<_$StatsLogResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -295,22 +296,22 @@ class _$StatsLogFsCopyWithImpl<$Res, $Val extends StatsLogFs>
 }
 
 /// @nodoc
-abstract class _$$_StatsLogFsCopyWith<$Res>
+abstract class _$$StatsLogFsImplCopyWith<$Res>
     implements $StatsLogFsCopyWith<$Res> {
-  factory _$$_StatsLogFsCopyWith(
-          _$_StatsLogFs value, $Res Function(_$_StatsLogFs) then) =
-      __$$_StatsLogFsCopyWithImpl<$Res>;
+  factory _$$StatsLogFsImplCopyWith(
+          _$StatsLogFsImpl value, $Res Function(_$StatsLogFsImpl) then) =
+      __$$StatsLogFsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double r, double w});
 }
 
 /// @nodoc
-class __$$_StatsLogFsCopyWithImpl<$Res>
-    extends _$StatsLogFsCopyWithImpl<$Res, _$_StatsLogFs>
-    implements _$$_StatsLogFsCopyWith<$Res> {
-  __$$_StatsLogFsCopyWithImpl(
-      _$_StatsLogFs _value, $Res Function(_$_StatsLogFs) _then)
+class __$$StatsLogFsImplCopyWithImpl<$Res>
+    extends _$StatsLogFsCopyWithImpl<$Res, _$StatsLogFsImpl>
+    implements _$$StatsLogFsImplCopyWith<$Res> {
+  __$$StatsLogFsImplCopyWithImpl(
+      _$StatsLogFsImpl _value, $Res Function(_$StatsLogFsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -319,7 +320,7 @@ class __$$_StatsLogFsCopyWithImpl<$Res>
     Object? r = null,
     Object? w = null,
   }) {
-    return _then(_$_StatsLogFs(
+    return _then(_$StatsLogFsImpl(
       r: null == r
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
@@ -334,11 +335,11 @@ class __$$_StatsLogFsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StatsLogFs implements _StatsLogFs {
-  const _$_StatsLogFs({required this.r, required this.w});
+class _$StatsLogFsImpl implements _StatsLogFs {
+  const _$StatsLogFsImpl({required this.r, required this.w});
 
-  factory _$_StatsLogFs.fromJson(Map<String, dynamic> json) =>
-      _$$_StatsLogFsFromJson(json);
+  factory _$StatsLogFsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsLogFsImplFromJson(json);
 
   @override
   final double r;
@@ -354,7 +355,7 @@ class _$_StatsLogFs implements _StatsLogFs {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StatsLogFs &&
+            other is _$StatsLogFsImpl &&
             (identical(other.r, r) || other.r == r) &&
             (identical(other.w, w) || other.w == w));
   }
@@ -366,12 +367,12 @@ class _$_StatsLogFs implements _StatsLogFs {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StatsLogFsCopyWith<_$_StatsLogFs> get copyWith =>
-      __$$_StatsLogFsCopyWithImpl<_$_StatsLogFs>(this, _$identity);
+  _$$StatsLogFsImplCopyWith<_$StatsLogFsImpl> get copyWith =>
+      __$$StatsLogFsImplCopyWithImpl<_$StatsLogFsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StatsLogFsToJson(
+    return _$$StatsLogFsImplToJson(
       this,
     );
   }
@@ -379,10 +380,10 @@ class _$_StatsLogFs implements _StatsLogFs {
 
 abstract class _StatsLogFs implements StatsLogFs {
   const factory _StatsLogFs(
-      {required final double r, required final double w}) = _$_StatsLogFs;
+      {required final double r, required final double w}) = _$StatsLogFsImpl;
 
   factory _StatsLogFs.fromJson(Map<String, dynamic> json) =
-      _$_StatsLogFs.fromJson;
+      _$StatsLogFsImpl.fromJson;
 
   @override
   double get r;
@@ -390,7 +391,7 @@ abstract class _StatsLogFs implements StatsLogFs {
   double get w;
   @override
   @JsonKey(ignore: true)
-  _$$_StatsLogFsCopyWith<_$_StatsLogFs> get copyWith =>
+  _$$StatsLogFsImplCopyWith<_$StatsLogFsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -448,22 +449,22 @@ class _$StatsLogMemCopyWithImpl<$Res, $Val extends StatsLogMem>
 }
 
 /// @nodoc
-abstract class _$$_StatsLogMemCopyWith<$Res>
+abstract class _$$StatsLogMemImplCopyWith<$Res>
     implements $StatsLogMemCopyWith<$Res> {
-  factory _$$_StatsLogMemCopyWith(
-          _$_StatsLogMem value, $Res Function(_$_StatsLogMem) then) =
-      __$$_StatsLogMemCopyWithImpl<$Res>;
+  factory _$$StatsLogMemImplCopyWith(
+          _$StatsLogMemImpl value, $Res Function(_$StatsLogMemImpl) then) =
+      __$$StatsLogMemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double used, double active});
 }
 
 /// @nodoc
-class __$$_StatsLogMemCopyWithImpl<$Res>
-    extends _$StatsLogMemCopyWithImpl<$Res, _$_StatsLogMem>
-    implements _$$_StatsLogMemCopyWith<$Res> {
-  __$$_StatsLogMemCopyWithImpl(
-      _$_StatsLogMem _value, $Res Function(_$_StatsLogMem) _then)
+class __$$StatsLogMemImplCopyWithImpl<$Res>
+    extends _$StatsLogMemCopyWithImpl<$Res, _$StatsLogMemImpl>
+    implements _$$StatsLogMemImplCopyWith<$Res> {
+  __$$StatsLogMemImplCopyWithImpl(
+      _$StatsLogMemImpl _value, $Res Function(_$StatsLogMemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -472,7 +473,7 @@ class __$$_StatsLogMemCopyWithImpl<$Res>
     Object? used = null,
     Object? active = null,
   }) {
-    return _then(_$_StatsLogMem(
+    return _then(_$StatsLogMemImpl(
       used: null == used
           ? _value.used
           : used // ignore: cast_nullable_to_non_nullable
@@ -487,11 +488,11 @@ class __$$_StatsLogMemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StatsLogMem implements _StatsLogMem {
-  const _$_StatsLogMem({required this.used, required this.active});
+class _$StatsLogMemImpl implements _StatsLogMem {
+  const _$StatsLogMemImpl({required this.used, required this.active});
 
-  factory _$_StatsLogMem.fromJson(Map<String, dynamic> json) =>
-      _$$_StatsLogMemFromJson(json);
+  factory _$StatsLogMemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsLogMemImplFromJson(json);
 
   @override
   final double used;
@@ -507,7 +508,7 @@ class _$_StatsLogMem implements _StatsLogMem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StatsLogMem &&
+            other is _$StatsLogMemImpl &&
             (identical(other.used, used) || other.used == used) &&
             (identical(other.active, active) || other.active == active));
   }
@@ -519,12 +520,12 @@ class _$_StatsLogMem implements _StatsLogMem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StatsLogMemCopyWith<_$_StatsLogMem> get copyWith =>
-      __$$_StatsLogMemCopyWithImpl<_$_StatsLogMem>(this, _$identity);
+  _$$StatsLogMemImplCopyWith<_$StatsLogMemImpl> get copyWith =>
+      __$$StatsLogMemImplCopyWithImpl<_$StatsLogMemImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StatsLogMemToJson(
+    return _$$StatsLogMemImplToJson(
       this,
     );
   }
@@ -533,10 +534,10 @@ class _$_StatsLogMem implements _StatsLogMem {
 abstract class _StatsLogMem implements StatsLogMem {
   const factory _StatsLogMem(
       {required final double used,
-      required final double active}) = _$_StatsLogMem;
+      required final double active}) = _$StatsLogMemImpl;
 
   factory _StatsLogMem.fromJson(Map<String, dynamic> json) =
-      _$_StatsLogMem.fromJson;
+      _$StatsLogMemImpl.fromJson;
 
   @override
   double get used;
@@ -544,7 +545,7 @@ abstract class _StatsLogMem implements StatsLogMem {
   double get active;
   @override
   @JsonKey(ignore: true)
-  _$$_StatsLogMemCopyWith<_$_StatsLogMem> get copyWith =>
+  _$$StatsLogMemImplCopyWith<_$StatsLogMemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -602,22 +603,22 @@ class _$StatsLogNetCopyWithImpl<$Res, $Val extends StatsLogNet>
 }
 
 /// @nodoc
-abstract class _$$_StatsLogNetCopyWith<$Res>
+abstract class _$$StatsLogNetImplCopyWith<$Res>
     implements $StatsLogNetCopyWith<$Res> {
-  factory _$$_StatsLogNetCopyWith(
-          _$_StatsLogNet value, $Res Function(_$_StatsLogNet) then) =
-      __$$_StatsLogNetCopyWithImpl<$Res>;
+  factory _$$StatsLogNetImplCopyWith(
+          _$StatsLogNetImpl value, $Res Function(_$StatsLogNetImpl) then) =
+      __$$StatsLogNetImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double rx, double tx});
 }
 
 /// @nodoc
-class __$$_StatsLogNetCopyWithImpl<$Res>
-    extends _$StatsLogNetCopyWithImpl<$Res, _$_StatsLogNet>
-    implements _$$_StatsLogNetCopyWith<$Res> {
-  __$$_StatsLogNetCopyWithImpl(
-      _$_StatsLogNet _value, $Res Function(_$_StatsLogNet) _then)
+class __$$StatsLogNetImplCopyWithImpl<$Res>
+    extends _$StatsLogNetCopyWithImpl<$Res, _$StatsLogNetImpl>
+    implements _$$StatsLogNetImplCopyWith<$Res> {
+  __$$StatsLogNetImplCopyWithImpl(
+      _$StatsLogNetImpl _value, $Res Function(_$StatsLogNetImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -626,7 +627,7 @@ class __$$_StatsLogNetCopyWithImpl<$Res>
     Object? rx = null,
     Object? tx = null,
   }) {
-    return _then(_$_StatsLogNet(
+    return _then(_$StatsLogNetImpl(
       rx: null == rx
           ? _value.rx
           : rx // ignore: cast_nullable_to_non_nullable
@@ -641,11 +642,11 @@ class __$$_StatsLogNetCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StatsLogNet implements _StatsLogNet {
-  const _$_StatsLogNet({required this.rx, required this.tx});
+class _$StatsLogNetImpl implements _StatsLogNet {
+  const _$StatsLogNetImpl({required this.rx, required this.tx});
 
-  factory _$_StatsLogNet.fromJson(Map<String, dynamic> json) =>
-      _$$_StatsLogNetFromJson(json);
+  factory _$StatsLogNetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsLogNetImplFromJson(json);
 
   @override
   final double rx;
@@ -661,7 +662,7 @@ class _$_StatsLogNet implements _StatsLogNet {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StatsLogNet &&
+            other is _$StatsLogNetImpl &&
             (identical(other.rx, rx) || other.rx == rx) &&
             (identical(other.tx, tx) || other.tx == tx));
   }
@@ -673,12 +674,12 @@ class _$_StatsLogNet implements _StatsLogNet {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StatsLogNetCopyWith<_$_StatsLogNet> get copyWith =>
-      __$$_StatsLogNetCopyWithImpl<_$_StatsLogNet>(this, _$identity);
+  _$$StatsLogNetImplCopyWith<_$StatsLogNetImpl> get copyWith =>
+      __$$StatsLogNetImplCopyWithImpl<_$StatsLogNetImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StatsLogNetToJson(
+    return _$$StatsLogNetImplToJson(
       this,
     );
   }
@@ -686,10 +687,10 @@ class _$_StatsLogNet implements _StatsLogNet {
 
 abstract class _StatsLogNet implements StatsLogNet {
   const factory _StatsLogNet(
-      {required final double rx, required final double tx}) = _$_StatsLogNet;
+      {required final double rx, required final double tx}) = _$StatsLogNetImpl;
 
   factory _StatsLogNet.fromJson(Map<String, dynamic> json) =
-      _$_StatsLogNet.fromJson;
+      _$StatsLogNetImpl.fromJson;
 
   @override
   double get rx;
@@ -697,6 +698,6 @@ abstract class _StatsLogNet implements StatsLogNet {
   double get tx;
   @override
   @JsonKey(ignore: true)
-  _$$_StatsLogNetCopyWith<_$_StatsLogNet> get copyWith =>
+  _$$StatsLogNetImplCopyWith<_$StatsLogNetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

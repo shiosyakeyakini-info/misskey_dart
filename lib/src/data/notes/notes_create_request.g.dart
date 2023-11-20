@@ -6,9 +6,9 @@ part of 'notes_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
+_$NotesCreateRequestImpl _$$NotesCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesCreateRequest(
+    _$NotesCreateRequestImpl(
       visibility: _$JsonConverterFromJson<String, NoteVisibility>(
           json['visibility'], const NoteVisibilityJsonConverter().fromJson),
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
@@ -36,8 +36,8 @@ _$_NotesCreateRequest _$$_NotesCreateRequestFromJson(
               json['poll'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_NotesCreateRequestToJson(
-        _$_NotesCreateRequest instance) =>
+Map<String, dynamic> _$$NotesCreateRequestImplToJson(
+        _$NotesCreateRequestImpl instance) =>
     <String, dynamic>{
       'visibility': _$JsonConverterToJson<String, NoteVisibility>(
           instance.visibility, const NoteVisibilityJsonConverter().toJson),

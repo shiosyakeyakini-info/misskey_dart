@@ -192,11 +192,12 @@ class _$INotificationsResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_INotificationsResponseCopyWith<$Res>
+abstract class _$$INotificationsResponseImplCopyWith<$Res>
     implements $INotificationsResponseCopyWith<$Res> {
-  factory _$$_INotificationsResponseCopyWith(_$_INotificationsResponse value,
-          $Res Function(_$_INotificationsResponse) then) =
-      __$$_INotificationsResponseCopyWithImpl<$Res>;
+  factory _$$INotificationsResponseImplCopyWith(
+          _$INotificationsResponseImpl value,
+          $Res Function(_$INotificationsResponseImpl) then) =
+      __$$INotificationsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -223,12 +224,13 @@ abstract class _$$_INotificationsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_INotificationsResponseCopyWithImpl<$Res>
+class __$$INotificationsResponseImplCopyWithImpl<$Res>
     extends _$INotificationsResponseCopyWithImpl<$Res,
-        _$_INotificationsResponse>
-    implements _$$_INotificationsResponseCopyWith<$Res> {
-  __$$_INotificationsResponseCopyWithImpl(_$_INotificationsResponse _value,
-      $Res Function(_$_INotificationsResponse) _then)
+        _$INotificationsResponseImpl>
+    implements _$$INotificationsResponseImplCopyWith<$Res> {
+  __$$INotificationsResponseImplCopyWithImpl(
+      _$INotificationsResponseImpl _value,
+      $Res Function(_$INotificationsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -250,7 +252,7 @@ class __$$_INotificationsResponseCopyWithImpl<$Res>
     Object? user = freezed,
     Object? note = freezed,
   }) {
-    return _then(_$_INotificationsResponse(
+    return _then(_$INotificationsResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -317,8 +319,8 @@ class __$$_INotificationsResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_INotificationsResponse implements _INotificationsResponse {
-  const _$_INotificationsResponse(
+class _$INotificationsResponseImpl implements _INotificationsResponse {
+  const _$INotificationsResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.type,
@@ -335,8 +337,8 @@ class _$_INotificationsResponse implements _INotificationsResponse {
       this.user,
       this.note});
 
-  factory _$_INotificationsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_INotificationsResponseFromJson(json);
+  factory _$INotificationsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$INotificationsResponseImplFromJson(json);
 
   @override
   final String id;
@@ -380,7 +382,7 @@ class _$_INotificationsResponse implements _INotificationsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_INotificationsResponse &&
+            other is _$INotificationsResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -429,13 +431,13 @@ class _$_INotificationsResponse implements _INotificationsResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_INotificationsResponseCopyWith<_$_INotificationsResponse> get copyWith =>
-      __$$_INotificationsResponseCopyWithImpl<_$_INotificationsResponse>(
-          this, _$identity);
+  _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
+      get copyWith => __$$INotificationsResponseImplCopyWithImpl<
+          _$INotificationsResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_INotificationsResponseToJson(
+    return _$$INotificationsResponseImplToJson(
       this,
     );
   }
@@ -457,10 +459,10 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       final String? appAccessTokenId,
       final String? userId,
       final User? user,
-      final Note? note}) = _$_INotificationsResponse;
+      final Note? note}) = _$INotificationsResponseImpl;
 
   factory _INotificationsResponse.fromJson(Map<String, dynamic> json) =
-      _$_INotificationsResponse.fromJson;
+      _$INotificationsResponseImpl.fromJson;
 
   @override
   String get id;
@@ -496,6 +498,6 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   Note? get note;
   @override
   @JsonKey(ignore: true)
-  _$$_INotificationsResponseCopyWith<_$_INotificationsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

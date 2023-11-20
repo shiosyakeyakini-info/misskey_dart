@@ -62,22 +62,22 @@ class _$HashtagsShowRequestCopyWithImpl<$Res, $Val extends HashtagsShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_HashtagsShowRequestCopyWith<$Res>
+abstract class _$$HashtagsShowRequestImplCopyWith<$Res>
     implements $HashtagsShowRequestCopyWith<$Res> {
-  factory _$$_HashtagsShowRequestCopyWith(_$_HashtagsShowRequest value,
-          $Res Function(_$_HashtagsShowRequest) then) =
-      __$$_HashtagsShowRequestCopyWithImpl<$Res>;
+  factory _$$HashtagsShowRequestImplCopyWith(_$HashtagsShowRequestImpl value,
+          $Res Function(_$HashtagsShowRequestImpl) then) =
+      __$$HashtagsShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String tag});
 }
 
 /// @nodoc
-class __$$_HashtagsShowRequestCopyWithImpl<$Res>
-    extends _$HashtagsShowRequestCopyWithImpl<$Res, _$_HashtagsShowRequest>
-    implements _$$_HashtagsShowRequestCopyWith<$Res> {
-  __$$_HashtagsShowRequestCopyWithImpl(_$_HashtagsShowRequest _value,
-      $Res Function(_$_HashtagsShowRequest) _then)
+class __$$HashtagsShowRequestImplCopyWithImpl<$Res>
+    extends _$HashtagsShowRequestCopyWithImpl<$Res, _$HashtagsShowRequestImpl>
+    implements _$$HashtagsShowRequestImplCopyWith<$Res> {
+  __$$HashtagsShowRequestImplCopyWithImpl(_$HashtagsShowRequestImpl _value,
+      $Res Function(_$HashtagsShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_HashtagsShowRequestCopyWithImpl<$Res>
   $Res call({
     Object? tag = null,
   }) {
-    return _then(_$_HashtagsShowRequest(
+    return _then(_$HashtagsShowRequestImpl(
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_HashtagsShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HashtagsShowRequest implements _HashtagsShowRequest {
-  const _$_HashtagsShowRequest({required this.tag});
+class _$HashtagsShowRequestImpl implements _HashtagsShowRequest {
+  const _$HashtagsShowRequestImpl({required this.tag});
 
-  factory _$_HashtagsShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagsShowRequestFromJson(json);
+  factory _$HashtagsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagsShowRequestImplFromJson(json);
 
   @override
   final String tag;
@@ -114,7 +114,7 @@ class _$_HashtagsShowRequest implements _HashtagsShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HashtagsShowRequest &&
+            other is _$HashtagsShowRequestImpl &&
             (identical(other.tag, tag) || other.tag == tag));
   }
 
@@ -125,13 +125,13 @@ class _$_HashtagsShowRequest implements _HashtagsShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagsShowRequestCopyWith<_$_HashtagsShowRequest> get copyWith =>
-      __$$_HashtagsShowRequestCopyWithImpl<_$_HashtagsShowRequest>(
+  _$$HashtagsShowRequestImplCopyWith<_$HashtagsShowRequestImpl> get copyWith =>
+      __$$HashtagsShowRequestImplCopyWithImpl<_$HashtagsShowRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagsShowRequestToJson(
+    return _$$HashtagsShowRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_HashtagsShowRequest implements _HashtagsShowRequest {
 
 abstract class _HashtagsShowRequest implements HashtagsShowRequest {
   const factory _HashtagsShowRequest({required final String tag}) =
-      _$_HashtagsShowRequest;
+      _$HashtagsShowRequestImpl;
 
   factory _HashtagsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_HashtagsShowRequest.fromJson;
+      _$HashtagsShowRequestImpl.fromJson;
 
   @override
   String get tag;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagsShowRequestCopyWith<_$_HashtagsShowRequest> get copyWith =>
+  _$$HashtagsShowRequestImplCopyWith<_$HashtagsShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

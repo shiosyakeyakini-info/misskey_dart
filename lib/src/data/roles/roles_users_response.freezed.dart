@@ -78,11 +78,11 @@ class _$RolesUsersResponseCopyWithImpl<$Res, $Val extends RolesUsersResponse>
 }
 
 /// @nodoc
-abstract class _$$_RolesUsersResponseCopyWith<$Res>
+abstract class _$$RolesUsersResponseImplCopyWith<$Res>
     implements $RolesUsersResponseCopyWith<$Res> {
-  factory _$$_RolesUsersResponseCopyWith(_$_RolesUsersResponse value,
-          $Res Function(_$_RolesUsersResponse) then) =
-      __$$_RolesUsersResponseCopyWithImpl<$Res>;
+  factory _$$RolesUsersResponseImplCopyWith(_$RolesUsersResponseImpl value,
+          $Res Function(_$RolesUsersResponseImpl) then) =
+      __$$RolesUsersResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, User user});
@@ -92,11 +92,11 @@ abstract class _$$_RolesUsersResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RolesUsersResponseCopyWithImpl<$Res>
-    extends _$RolesUsersResponseCopyWithImpl<$Res, _$_RolesUsersResponse>
-    implements _$$_RolesUsersResponseCopyWith<$Res> {
-  __$$_RolesUsersResponseCopyWithImpl(
-      _$_RolesUsersResponse _value, $Res Function(_$_RolesUsersResponse) _then)
+class __$$RolesUsersResponseImplCopyWithImpl<$Res>
+    extends _$RolesUsersResponseCopyWithImpl<$Res, _$RolesUsersResponseImpl>
+    implements _$$RolesUsersResponseImplCopyWith<$Res> {
+  __$$RolesUsersResponseImplCopyWithImpl(_$RolesUsersResponseImpl _value,
+      $Res Function(_$RolesUsersResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -105,7 +105,7 @@ class __$$_RolesUsersResponseCopyWithImpl<$Res>
     Object? id = null,
     Object? user = null,
   }) {
-    return _then(_$_RolesUsersResponse(
+    return _then(_$RolesUsersResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -120,11 +120,11 @@ class __$$_RolesUsersResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RolesUsersResponse implements _RolesUsersResponse {
-  const _$_RolesUsersResponse({required this.id, required this.user});
+class _$RolesUsersResponseImpl implements _RolesUsersResponse {
+  const _$RolesUsersResponseImpl({required this.id, required this.user});
 
-  factory _$_RolesUsersResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_RolesUsersResponseFromJson(json);
+  factory _$RolesUsersResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RolesUsersResponseImplFromJson(json);
 
   @override
   final String id;
@@ -140,7 +140,7 @@ class _$_RolesUsersResponse implements _RolesUsersResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RolesUsersResponse &&
+            other is _$RolesUsersResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.user, user) || other.user == user));
   }
@@ -152,13 +152,13 @@ class _$_RolesUsersResponse implements _RolesUsersResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RolesUsersResponseCopyWith<_$_RolesUsersResponse> get copyWith =>
-      __$$_RolesUsersResponseCopyWithImpl<_$_RolesUsersResponse>(
+  _$$RolesUsersResponseImplCopyWith<_$RolesUsersResponseImpl> get copyWith =>
+      __$$RolesUsersResponseImplCopyWithImpl<_$RolesUsersResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RolesUsersResponseToJson(
+    return _$$RolesUsersResponseImplToJson(
       this,
     );
   }
@@ -167,10 +167,10 @@ class _$_RolesUsersResponse implements _RolesUsersResponse {
 abstract class _RolesUsersResponse implements RolesUsersResponse {
   const factory _RolesUsersResponse(
       {required final String id,
-      required final User user}) = _$_RolesUsersResponse;
+      required final User user}) = _$RolesUsersResponseImpl;
 
   factory _RolesUsersResponse.fromJson(Map<String, dynamic> json) =
-      _$_RolesUsersResponse.fromJson;
+      _$RolesUsersResponseImpl.fromJson;
 
   @override
   String get id;
@@ -178,6 +178,6 @@ abstract class _RolesUsersResponse implements RolesUsersResponse {
   User get user;
   @override
   @JsonKey(ignore: true)
-  _$$_RolesUsersResponseCopyWith<_$_RolesUsersResponse> get copyWith =>
+  _$$RolesUsersResponseImplCopyWith<_$RolesUsersResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

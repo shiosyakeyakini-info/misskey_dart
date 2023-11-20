@@ -71,25 +71,25 @@ class _$FollowingUpdateAllRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FollowingUpdateAllRequestCopyWith<$Res>
+abstract class _$$FollowingUpdateAllRequestImplCopyWith<$Res>
     implements $FollowingUpdateAllRequestCopyWith<$Res> {
-  factory _$$_FollowingUpdateAllRequestCopyWith(
-          _$_FollowingUpdateAllRequest value,
-          $Res Function(_$_FollowingUpdateAllRequest) then) =
-      __$$_FollowingUpdateAllRequestCopyWithImpl<$Res>;
+  factory _$$FollowingUpdateAllRequestImplCopyWith(
+          _$FollowingUpdateAllRequestImpl value,
+          $Res Function(_$FollowingUpdateAllRequestImpl) then) =
+      __$$FollowingUpdateAllRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({FollowingUpdateAllNotifyType? notify, bool? withReplies});
 }
 
 /// @nodoc
-class __$$_FollowingUpdateAllRequestCopyWithImpl<$Res>
+class __$$FollowingUpdateAllRequestImplCopyWithImpl<$Res>
     extends _$FollowingUpdateAllRequestCopyWithImpl<$Res,
-        _$_FollowingUpdateAllRequest>
-    implements _$$_FollowingUpdateAllRequestCopyWith<$Res> {
-  __$$_FollowingUpdateAllRequestCopyWithImpl(
-      _$_FollowingUpdateAllRequest _value,
-      $Res Function(_$_FollowingUpdateAllRequest) _then)
+        _$FollowingUpdateAllRequestImpl>
+    implements _$$FollowingUpdateAllRequestImplCopyWith<$Res> {
+  __$$FollowingUpdateAllRequestImplCopyWithImpl(
+      _$FollowingUpdateAllRequestImpl _value,
+      $Res Function(_$FollowingUpdateAllRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$_FollowingUpdateAllRequestCopyWithImpl<$Res>
     Object? notify = freezed,
     Object? withReplies = freezed,
   }) {
-    return _then(_$_FollowingUpdateAllRequest(
+    return _then(_$FollowingUpdateAllRequestImpl(
       notify: freezed == notify
           ? _value.notify
           : notify // ignore: cast_nullable_to_non_nullable
@@ -113,11 +113,11 @@ class __$$_FollowingUpdateAllRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowingUpdateAllRequest implements _FollowingUpdateAllRequest {
-  const _$_FollowingUpdateAllRequest({this.notify, this.withReplies});
+class _$FollowingUpdateAllRequestImpl implements _FollowingUpdateAllRequest {
+  const _$FollowingUpdateAllRequestImpl({this.notify, this.withReplies});
 
-  factory _$_FollowingUpdateAllRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_FollowingUpdateAllRequestFromJson(json);
+  factory _$FollowingUpdateAllRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowingUpdateAllRequestImplFromJson(json);
 
   @override
   final FollowingUpdateAllNotifyType? notify;
@@ -133,7 +133,7 @@ class _$_FollowingUpdateAllRequest implements _FollowingUpdateAllRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FollowingUpdateAllRequest &&
+            other is _$FollowingUpdateAllRequestImpl &&
             (identical(other.notify, notify) || other.notify == notify) &&
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies));
@@ -146,13 +146,13 @@ class _$_FollowingUpdateAllRequest implements _FollowingUpdateAllRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FollowingUpdateAllRequestCopyWith<_$_FollowingUpdateAllRequest>
-      get copyWith => __$$_FollowingUpdateAllRequestCopyWithImpl<
-          _$_FollowingUpdateAllRequest>(this, _$identity);
+  _$$FollowingUpdateAllRequestImplCopyWith<_$FollowingUpdateAllRequestImpl>
+      get copyWith => __$$FollowingUpdateAllRequestImplCopyWithImpl<
+          _$FollowingUpdateAllRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowingUpdateAllRequestToJson(
+    return _$$FollowingUpdateAllRequestImplToJson(
       this,
     );
   }
@@ -161,10 +161,10 @@ class _$_FollowingUpdateAllRequest implements _FollowingUpdateAllRequest {
 abstract class _FollowingUpdateAllRequest implements FollowingUpdateAllRequest {
   const factory _FollowingUpdateAllRequest(
       {final FollowingUpdateAllNotifyType? notify,
-      final bool? withReplies}) = _$_FollowingUpdateAllRequest;
+      final bool? withReplies}) = _$FollowingUpdateAllRequestImpl;
 
   factory _FollowingUpdateAllRequest.fromJson(Map<String, dynamic> json) =
-      _$_FollowingUpdateAllRequest.fromJson;
+      _$FollowingUpdateAllRequestImpl.fromJson;
 
   @override
   FollowingUpdateAllNotifyType? get notify;
@@ -172,6 +172,6 @@ abstract class _FollowingUpdateAllRequest implements FollowingUpdateAllRequest {
   bool? get withReplies;
   @override
   @JsonKey(ignore: true)
-  _$$_FollowingUpdateAllRequestCopyWith<_$_FollowingUpdateAllRequest>
+  _$$FollowingUpdateAllRequestImplCopyWith<_$FollowingUpdateAllRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

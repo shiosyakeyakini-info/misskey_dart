@@ -92,11 +92,11 @@ class _$NotesMentionsRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesMentionsRequestCopyWith<$Res>
+abstract class _$$NotesMentionsRequestImplCopyWith<$Res>
     implements $NotesMentionsRequestCopyWith<$Res> {
-  factory _$$_NotesMentionsRequestCopyWith(_$_NotesMentionsRequest value,
-          $Res Function(_$_NotesMentionsRequest) then) =
-      __$$_NotesMentionsRequestCopyWithImpl<$Res>;
+  factory _$$NotesMentionsRequestImplCopyWith(_$NotesMentionsRequestImpl value,
+          $Res Function(_$NotesMentionsRequestImpl) then) =
+      __$$NotesMentionsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +108,11 @@ abstract class _$$_NotesMentionsRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesMentionsRequestCopyWithImpl<$Res>
-    extends _$NotesMentionsRequestCopyWithImpl<$Res, _$_NotesMentionsRequest>
-    implements _$$_NotesMentionsRequestCopyWith<$Res> {
-  __$$_NotesMentionsRequestCopyWithImpl(_$_NotesMentionsRequest _value,
-      $Res Function(_$_NotesMentionsRequest) _then)
+class __$$NotesMentionsRequestImplCopyWithImpl<$Res>
+    extends _$NotesMentionsRequestCopyWithImpl<$Res, _$NotesMentionsRequestImpl>
+    implements _$$NotesMentionsRequestImplCopyWith<$Res> {
+  __$$NotesMentionsRequestImplCopyWithImpl(_$NotesMentionsRequestImpl _value,
+      $Res Function(_$NotesMentionsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -124,7 +124,7 @@ class __$$_NotesMentionsRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? visibility = freezed,
   }) {
-    return _then(_$_NotesMentionsRequest(
+    return _then(_$NotesMentionsRequestImpl(
       following: freezed == following
           ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
@@ -151,16 +151,16 @@ class __$$_NotesMentionsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesMentionsRequest implements _NotesMentionsRequest {
-  const _$_NotesMentionsRequest(
+class _$NotesMentionsRequestImpl implements _NotesMentionsRequest {
+  const _$NotesMentionsRequestImpl(
       {this.following,
       this.limit,
       this.sinceId,
       this.untilId,
       this.visibility});
 
-  factory _$_NotesMentionsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesMentionsRequestFromJson(json);
+  factory _$NotesMentionsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesMentionsRequestImplFromJson(json);
 
   @override
   final bool? following;
@@ -182,7 +182,7 @@ class _$_NotesMentionsRequest implements _NotesMentionsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesMentionsRequest &&
+            other is _$NotesMentionsRequestImpl &&
             (identical(other.following, following) ||
                 other.following == following) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -200,13 +200,14 @@ class _$_NotesMentionsRequest implements _NotesMentionsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesMentionsRequestCopyWith<_$_NotesMentionsRequest> get copyWith =>
-      __$$_NotesMentionsRequestCopyWithImpl<_$_NotesMentionsRequest>(
-          this, _$identity);
+  _$$NotesMentionsRequestImplCopyWith<_$NotesMentionsRequestImpl>
+      get copyWith =>
+          __$$NotesMentionsRequestImplCopyWithImpl<_$NotesMentionsRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesMentionsRequestToJson(
+    return _$$NotesMentionsRequestImplToJson(
       this,
     );
   }
@@ -218,10 +219,10 @@ abstract class _NotesMentionsRequest implements NotesMentionsRequest {
       final int? limit,
       final String? sinceId,
       final String? untilId,
-      final NoteVisibility? visibility}) = _$_NotesMentionsRequest;
+      final NoteVisibility? visibility}) = _$NotesMentionsRequestImpl;
 
   factory _NotesMentionsRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesMentionsRequest.fromJson;
+      _$NotesMentionsRequestImpl.fromJson;
 
   @override
   bool? get following;
@@ -235,6 +236,6 @@ abstract class _NotesMentionsRequest implements NotesMentionsRequest {
   NoteVisibility? get visibility;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesMentionsRequestCopyWith<_$_NotesMentionsRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NotesMentionsRequestImplCopyWith<_$NotesMentionsRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

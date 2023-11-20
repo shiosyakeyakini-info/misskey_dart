@@ -64,23 +64,25 @@ class _$UsersListsDeleteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsDeleteRequestCopyWith<$Res>
+abstract class _$$UsersListsDeleteRequestImplCopyWith<$Res>
     implements $UsersListsDeleteRequestCopyWith<$Res> {
-  factory _$$_UsersListsDeleteRequestCopyWith(_$_UsersListsDeleteRequest value,
-          $Res Function(_$_UsersListsDeleteRequest) then) =
-      __$$_UsersListsDeleteRequestCopyWithImpl<$Res>;
+  factory _$$UsersListsDeleteRequestImplCopyWith(
+          _$UsersListsDeleteRequestImpl value,
+          $Res Function(_$UsersListsDeleteRequestImpl) then) =
+      __$$UsersListsDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String listId});
 }
 
 /// @nodoc
-class __$$_UsersListsDeleteRequestCopyWithImpl<$Res>
+class __$$UsersListsDeleteRequestImplCopyWithImpl<$Res>
     extends _$UsersListsDeleteRequestCopyWithImpl<$Res,
-        _$_UsersListsDeleteRequest>
-    implements _$$_UsersListsDeleteRequestCopyWith<$Res> {
-  __$$_UsersListsDeleteRequestCopyWithImpl(_$_UsersListsDeleteRequest _value,
-      $Res Function(_$_UsersListsDeleteRequest) _then)
+        _$UsersListsDeleteRequestImpl>
+    implements _$$UsersListsDeleteRequestImplCopyWith<$Res> {
+  __$$UsersListsDeleteRequestImplCopyWithImpl(
+      _$UsersListsDeleteRequestImpl _value,
+      $Res Function(_$UsersListsDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_UsersListsDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? listId = null,
   }) {
-    return _then(_$_UsersListsDeleteRequest(
+    return _then(_$UsersListsDeleteRequestImpl(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_UsersListsDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsDeleteRequest implements _UsersListsDeleteRequest {
-  const _$_UsersListsDeleteRequest({required this.listId});
+class _$UsersListsDeleteRequestImpl implements _UsersListsDeleteRequest {
+  const _$UsersListsDeleteRequestImpl({required this.listId});
 
-  factory _$_UsersListsDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsDeleteRequestFromJson(json);
+  factory _$UsersListsDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsDeleteRequestImplFromJson(json);
 
   @override
   final String listId;
@@ -117,7 +119,7 @@ class _$_UsersListsDeleteRequest implements _UsersListsDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsDeleteRequest &&
+            other is _$UsersListsDeleteRequestImpl &&
             (identical(other.listId, listId) || other.listId == listId));
   }
 
@@ -128,14 +130,13 @@ class _$_UsersListsDeleteRequest implements _UsersListsDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsDeleteRequestCopyWith<_$_UsersListsDeleteRequest>
-      get copyWith =>
-          __$$_UsersListsDeleteRequestCopyWithImpl<_$_UsersListsDeleteRequest>(
-              this, _$identity);
+  _$$UsersListsDeleteRequestImplCopyWith<_$UsersListsDeleteRequestImpl>
+      get copyWith => __$$UsersListsDeleteRequestImplCopyWithImpl<
+          _$UsersListsDeleteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsDeleteRequestToJson(
+    return _$$UsersListsDeleteRequestImplToJson(
       this,
     );
   }
@@ -143,15 +144,15 @@ class _$_UsersListsDeleteRequest implements _UsersListsDeleteRequest {
 
 abstract class _UsersListsDeleteRequest implements UsersListsDeleteRequest {
   const factory _UsersListsDeleteRequest({required final String listId}) =
-      _$_UsersListsDeleteRequest;
+      _$UsersListsDeleteRequestImpl;
 
   factory _UsersListsDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsDeleteRequest.fromJson;
+      _$UsersListsDeleteRequestImpl.fromJson;
 
   @override
   String get listId;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsDeleteRequestCopyWith<_$_UsersListsDeleteRequest>
+  _$$UsersListsDeleteRequestImplCopyWith<_$UsersListsDeleteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

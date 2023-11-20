@@ -78,11 +78,11 @@ class _$ChannelEventCopyWithImpl<$Res, $Val extends ChannelEvent>
 }
 
 /// @nodoc
-abstract class _$$_ChannelEventCopyWith<$Res>
+abstract class _$$ChannelEventImplCopyWith<$Res>
     implements $ChannelEventCopyWith<$Res> {
-  factory _$$_ChannelEventCopyWith(
-          _$_ChannelEvent value, $Res Function(_$_ChannelEvent) then) =
-      __$$_ChannelEventCopyWithImpl<$Res>;
+  factory _$$ChannelEventImplCopyWith(
+          _$ChannelEventImpl value, $Res Function(_$ChannelEventImpl) then) =
+      __$$ChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -92,11 +92,11 @@ abstract class _$$_ChannelEventCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ChannelEventCopyWithImpl<$Res>
-    extends _$ChannelEventCopyWithImpl<$Res, _$_ChannelEvent>
-    implements _$$_ChannelEventCopyWith<$Res> {
-  __$$_ChannelEventCopyWithImpl(
-      _$_ChannelEvent _value, $Res Function(_$_ChannelEvent) _then)
+class __$$ChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelEventCopyWithImpl<$Res, _$ChannelEventImpl>
+    implements _$$ChannelEventImplCopyWith<$Res> {
+  __$$ChannelEventImplCopyWithImpl(
+      _$ChannelEventImpl _value, $Res Function(_$ChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_ChannelEventCopyWithImpl<$Res>
     Object? type = null,
     Object? body = freezed,
   }) {
-    return _then(_$_ChannelEvent(
+    return _then(_$ChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -125,14 +125,14 @@ class __$$_ChannelEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelEvent implements _ChannelEvent {
-  const _$_ChannelEvent(
+class _$ChannelEventImpl implements _ChannelEvent {
+  const _$ChannelEventImpl(
       {required this.id,
       @ChannelEventTypeJsonConverter() required this.type,
       required this.body});
 
-  factory _$_ChannelEvent.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelEventFromJson(json);
+  factory _$ChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -151,7 +151,7 @@ class _$_ChannelEvent implements _ChannelEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelEvent &&
+            other is _$ChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other.body, body));
@@ -165,12 +165,12 @@ class _$_ChannelEvent implements _ChannelEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelEventCopyWith<_$_ChannelEvent> get copyWith =>
-      __$$_ChannelEventCopyWithImpl<_$_ChannelEvent>(this, _$identity);
+  _$$ChannelEventImplCopyWith<_$ChannelEventImpl> get copyWith =>
+      __$$ChannelEventImplCopyWithImpl<_$ChannelEventImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelEventToJson(
+    return _$$ChannelEventImplToJson(
       this,
     );
   }
@@ -180,10 +180,10 @@ abstract class _ChannelEvent implements ChannelEvent {
   const factory _ChannelEvent(
       {required final String id,
       @ChannelEventTypeJsonConverter() required final ChannelEventType type,
-      required final dynamic body}) = _$_ChannelEvent;
+      required final dynamic body}) = _$ChannelEventImpl;
 
   factory _ChannelEvent.fromJson(Map<String, dynamic> json) =
-      _$_ChannelEvent.fromJson;
+      _$ChannelEventImpl.fromJson;
 
   @override
   String get id;
@@ -194,6 +194,6 @@ abstract class _ChannelEvent implements ChannelEvent {
   dynamic get body;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelEventCopyWith<_$_ChannelEvent> get copyWith =>
+  _$$ChannelEventImplCopyWith<_$ChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

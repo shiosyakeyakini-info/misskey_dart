@@ -93,11 +93,11 @@ class _$FollowRequestCopyWithImpl<$Res, $Val extends FollowRequest>
 }
 
 /// @nodoc
-abstract class _$$_FollowRequestCopyWith<$Res>
+abstract class _$$FollowRequestImplCopyWith<$Res>
     implements $FollowRequestCopyWith<$Res> {
-  factory _$$_FollowRequestCopyWith(
-          _$_FollowRequest value, $Res Function(_$_FollowRequest) then) =
-      __$$_FollowRequestCopyWithImpl<$Res>;
+  factory _$$FollowRequestImplCopyWith(
+          _$FollowRequestImpl value, $Res Function(_$FollowRequestImpl) then) =
+      __$$FollowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, User followee, User follower});
@@ -109,11 +109,11 @@ abstract class _$$_FollowRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FollowRequestCopyWithImpl<$Res>
-    extends _$FollowRequestCopyWithImpl<$Res, _$_FollowRequest>
-    implements _$$_FollowRequestCopyWith<$Res> {
-  __$$_FollowRequestCopyWithImpl(
-      _$_FollowRequest _value, $Res Function(_$_FollowRequest) _then)
+class __$$FollowRequestImplCopyWithImpl<$Res>
+    extends _$FollowRequestCopyWithImpl<$Res, _$FollowRequestImpl>
+    implements _$$FollowRequestImplCopyWith<$Res> {
+  __$$FollowRequestImplCopyWithImpl(
+      _$FollowRequestImpl _value, $Res Function(_$FollowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +123,7 @@ class __$$_FollowRequestCopyWithImpl<$Res>
     Object? followee = null,
     Object? follower = null,
   }) {
-    return _then(_$_FollowRequest(
+    return _then(_$FollowRequestImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -142,12 +142,12 @@ class __$$_FollowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowRequest implements _FollowRequest {
-  const _$_FollowRequest(
+class _$FollowRequestImpl implements _FollowRequest {
+  const _$FollowRequestImpl(
       {required this.id, required this.followee, required this.follower});
 
-  factory _$_FollowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_FollowRequestFromJson(json);
+  factory _$FollowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowRequestImplFromJson(json);
 
   @override
   final String id;
@@ -165,7 +165,7 @@ class _$_FollowRequest implements _FollowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FollowRequest &&
+            other is _$FollowRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.followee, followee) ||
                 other.followee == followee) &&
@@ -180,12 +180,12 @@ class _$_FollowRequest implements _FollowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FollowRequestCopyWith<_$_FollowRequest> get copyWith =>
-      __$$_FollowRequestCopyWithImpl<_$_FollowRequest>(this, _$identity);
+  _$$FollowRequestImplCopyWith<_$FollowRequestImpl> get copyWith =>
+      __$$FollowRequestImplCopyWithImpl<_$FollowRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowRequestToJson(
+    return _$$FollowRequestImplToJson(
       this,
     );
   }
@@ -195,10 +195,10 @@ abstract class _FollowRequest implements FollowRequest {
   const factory _FollowRequest(
       {required final String id,
       required final User followee,
-      required final User follower}) = _$_FollowRequest;
+      required final User follower}) = _$FollowRequestImpl;
 
   factory _FollowRequest.fromJson(Map<String, dynamic> json) =
-      _$_FollowRequest.fromJson;
+      _$FollowRequestImpl.fromJson;
 
   @override
   String get id;
@@ -208,6 +208,6 @@ abstract class _FollowRequest implements FollowRequest {
   User get follower;
   @override
   @JsonKey(ignore: true)
-  _$$_FollowRequestCopyWith<_$_FollowRequest> get copyWith =>
+  _$$FollowRequestImplCopyWith<_$FollowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

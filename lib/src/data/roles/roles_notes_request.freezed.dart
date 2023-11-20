@@ -100,11 +100,11 @@ class _$RolesNotesRequestCopyWithImpl<$Res, $Val extends RolesNotesRequest>
 }
 
 /// @nodoc
-abstract class _$$_RolesNotesRequestCopyWith<$Res>
+abstract class _$$RolesNotesRequestImplCopyWith<$Res>
     implements $RolesNotesRequestCopyWith<$Res> {
-  factory _$$_RolesNotesRequestCopyWith(_$_RolesNotesRequest value,
-          $Res Function(_$_RolesNotesRequest) then) =
-      __$$_RolesNotesRequestCopyWithImpl<$Res>;
+  factory _$$RolesNotesRequestImplCopyWith(_$RolesNotesRequestImpl value,
+          $Res Function(_$RolesNotesRequestImpl) then) =
+      __$$RolesNotesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -117,11 +117,11 @@ abstract class _$$_RolesNotesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RolesNotesRequestCopyWithImpl<$Res>
-    extends _$RolesNotesRequestCopyWithImpl<$Res, _$_RolesNotesRequest>
-    implements _$$_RolesNotesRequestCopyWith<$Res> {
-  __$$_RolesNotesRequestCopyWithImpl(
-      _$_RolesNotesRequest _value, $Res Function(_$_RolesNotesRequest) _then)
+class __$$RolesNotesRequestImplCopyWithImpl<$Res>
+    extends _$RolesNotesRequestCopyWithImpl<$Res, _$RolesNotesRequestImpl>
+    implements _$$RolesNotesRequestImplCopyWith<$Res> {
+  __$$RolesNotesRequestImplCopyWithImpl(_$RolesNotesRequestImpl _value,
+      $Res Function(_$RolesNotesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -134,7 +134,7 @@ class __$$_RolesNotesRequestCopyWithImpl<$Res>
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
   }) {
-    return _then(_$_RolesNotesRequest(
+    return _then(_$RolesNotesRequestImpl(
       roleId: null == roleId
           ? _value.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
@@ -165,8 +165,8 @@ class __$$_RolesNotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RolesNotesRequest implements _RolesNotesRequest {
-  const _$_RolesNotesRequest(
+class _$RolesNotesRequestImpl implements _RolesNotesRequest {
+  const _$RolesNotesRequestImpl(
       {required this.roleId,
       this.limit,
       this.sinceId,
@@ -174,8 +174,8 @@ class _$_RolesNotesRequest implements _RolesNotesRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
 
-  factory _$_RolesNotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_RolesNotesRequestFromJson(json);
+  factory _$RolesNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RolesNotesRequestImplFromJson(json);
 
   @override
   final String roleId;
@@ -201,7 +201,7 @@ class _$_RolesNotesRequest implements _RolesNotesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RolesNotesRequest &&
+            other is _$RolesNotesRequestImpl &&
             (identical(other.roleId, roleId) || other.roleId == roleId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -220,13 +220,13 @@ class _$_RolesNotesRequest implements _RolesNotesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RolesNotesRequestCopyWith<_$_RolesNotesRequest> get copyWith =>
-      __$$_RolesNotesRequestCopyWithImpl<_$_RolesNotesRequest>(
+  _$$RolesNotesRequestImplCopyWith<_$RolesNotesRequestImpl> get copyWith =>
+      __$$RolesNotesRequestImplCopyWithImpl<_$RolesNotesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RolesNotesRequestToJson(
+    return _$$RolesNotesRequestImplToJson(
       this,
     );
   }
@@ -240,10 +240,10 @@ abstract class _RolesNotesRequest implements RolesNotesRequest {
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? untilDate}) = _$_RolesNotesRequest;
+      final DateTime? untilDate}) = _$RolesNotesRequestImpl;
 
   factory _RolesNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$_RolesNotesRequest.fromJson;
+      _$RolesNotesRequestImpl.fromJson;
 
   @override
   String get roleId;
@@ -261,6 +261,6 @@ abstract class _RolesNotesRequest implements RolesNotesRequest {
   DateTime? get untilDate;
   @override
   @JsonKey(ignore: true)
-  _$$_RolesNotesRequestCopyWith<_$_RolesNotesRequest> get copyWith =>
+  _$$RolesNotesRequestImplCopyWith<_$RolesNotesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

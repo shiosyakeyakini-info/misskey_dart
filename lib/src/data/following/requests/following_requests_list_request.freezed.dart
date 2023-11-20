@@ -78,25 +78,25 @@ class _$FollowingRequestsListRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FollowingRequestsListRequestCopyWith<$Res>
+abstract class _$$FollowingRequestsListRequestImplCopyWith<$Res>
     implements $FollowingRequestsListRequestCopyWith<$Res> {
-  factory _$$_FollowingRequestsListRequestCopyWith(
-          _$_FollowingRequestsListRequest value,
-          $Res Function(_$_FollowingRequestsListRequest) then) =
-      __$$_FollowingRequestsListRequestCopyWithImpl<$Res>;
+  factory _$$FollowingRequestsListRequestImplCopyWith(
+          _$FollowingRequestsListRequestImpl value,
+          $Res Function(_$FollowingRequestsListRequestImpl) then) =
+      __$$FollowingRequestsListRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? sinceId, String? untilId, int? limit});
 }
 
 /// @nodoc
-class __$$_FollowingRequestsListRequestCopyWithImpl<$Res>
+class __$$FollowingRequestsListRequestImplCopyWithImpl<$Res>
     extends _$FollowingRequestsListRequestCopyWithImpl<$Res,
-        _$_FollowingRequestsListRequest>
-    implements _$$_FollowingRequestsListRequestCopyWith<$Res> {
-  __$$_FollowingRequestsListRequestCopyWithImpl(
-      _$_FollowingRequestsListRequest _value,
-      $Res Function(_$_FollowingRequestsListRequest) _then)
+        _$FollowingRequestsListRequestImpl>
+    implements _$$FollowingRequestsListRequestImplCopyWith<$Res> {
+  __$$FollowingRequestsListRequestImplCopyWithImpl(
+      _$FollowingRequestsListRequestImpl _value,
+      $Res Function(_$FollowingRequestsListRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_FollowingRequestsListRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_FollowingRequestsListRequest(
+    return _then(_$FollowingRequestsListRequestImpl(
       sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -125,12 +125,14 @@ class __$$_FollowingRequestsListRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowingRequestsListRequest implements _FollowingRequestsListRequest {
-  const _$_FollowingRequestsListRequest(
+class _$FollowingRequestsListRequestImpl
+    implements _FollowingRequestsListRequest {
+  const _$FollowingRequestsListRequestImpl(
       {this.sinceId, this.untilId, this.limit});
 
-  factory _$_FollowingRequestsListRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_FollowingRequestsListRequestFromJson(json);
+  factory _$FollowingRequestsListRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$FollowingRequestsListRequestImplFromJson(json);
 
   @override
   final String? sinceId;
@@ -148,7 +150,7 @@ class _$_FollowingRequestsListRequest implements _FollowingRequestsListRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FollowingRequestsListRequest &&
+            other is _$FollowingRequestsListRequestImpl &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.limit, limit) || other.limit == limit));
@@ -161,13 +163,14 @@ class _$_FollowingRequestsListRequest implements _FollowingRequestsListRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FollowingRequestsListRequestCopyWith<_$_FollowingRequestsListRequest>
-      get copyWith => __$$_FollowingRequestsListRequestCopyWithImpl<
-          _$_FollowingRequestsListRequest>(this, _$identity);
+  _$$FollowingRequestsListRequestImplCopyWith<
+          _$FollowingRequestsListRequestImpl>
+      get copyWith => __$$FollowingRequestsListRequestImplCopyWithImpl<
+          _$FollowingRequestsListRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowingRequestsListRequestToJson(
+    return _$$FollowingRequestsListRequestImplToJson(
       this,
     );
   }
@@ -178,10 +181,10 @@ abstract class _FollowingRequestsListRequest
   const factory _FollowingRequestsListRequest(
       {final String? sinceId,
       final String? untilId,
-      final int? limit}) = _$_FollowingRequestsListRequest;
+      final int? limit}) = _$FollowingRequestsListRequestImpl;
 
   factory _FollowingRequestsListRequest.fromJson(Map<String, dynamic> json) =
-      _$_FollowingRequestsListRequest.fromJson;
+      _$FollowingRequestsListRequestImpl.fromJson;
 
   @override
   String? get sinceId;
@@ -191,6 +194,7 @@ abstract class _FollowingRequestsListRequest
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_FollowingRequestsListRequestCopyWith<_$_FollowingRequestsListRequest>
+  _$$FollowingRequestsListRequestImplCopyWith<
+          _$FollowingRequestsListRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

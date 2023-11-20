@@ -6,14 +6,14 @@ part of 'notes_favorites_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesFavoritesCreateRequest _$$_NotesFavoritesCreateRequestFromJson(
+_$NotesFavoritesCreateRequestImpl _$$NotesFavoritesCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesFavoritesCreateRequest(
+    _$NotesFavoritesCreateRequestImpl(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$$_NotesFavoritesCreateRequestToJson(
-        _$_NotesFavoritesCreateRequest instance) =>
+Map<String, dynamic> _$$NotesFavoritesCreateRequestImplToJson(
+        _$NotesFavoritesCreateRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

@@ -256,11 +256,11 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
 }
 
 /// @nodoc
-abstract class _$$_IUpdateRequestCopyWith<$Res>
+abstract class _$$IUpdateRequestImplCopyWith<$Res>
     implements $IUpdateRequestCopyWith<$Res> {
-  factory _$$_IUpdateRequestCopyWith(
-          _$_IUpdateRequest value, $Res Function(_$_IUpdateRequest) then) =
-      __$$_IUpdateRequestCopyWithImpl<$Res>;
+  factory _$$IUpdateRequestImplCopyWith(_$IUpdateRequestImpl value,
+          $Res Function(_$IUpdateRequestImpl) then) =
+      __$$IUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -295,11 +295,11 @@ abstract class _$$_IUpdateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_IUpdateRequestCopyWithImpl<$Res>
-    extends _$IUpdateRequestCopyWithImpl<$Res, _$_IUpdateRequest>
-    implements _$$_IUpdateRequestCopyWith<$Res> {
-  __$$_IUpdateRequestCopyWithImpl(
-      _$_IUpdateRequest _value, $Res Function(_$_IUpdateRequest) _then)
+class __$$IUpdateRequestImplCopyWithImpl<$Res>
+    extends _$IUpdateRequestCopyWithImpl<$Res, _$IUpdateRequestImpl>
+    implements _$$IUpdateRequestImplCopyWith<$Res> {
+  __$$IUpdateRequestImplCopyWithImpl(
+      _$IUpdateRequestImpl _value, $Res Function(_$IUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -334,7 +334,7 @@ class __$$_IUpdateRequestCopyWithImpl<$Res>
     Object? emailNotificationTypes = freezed,
     Object? alsoKnownAs = freezed,
   }) {
-    return _then(_$_IUpdateRequest(
+    return _then(_$IUpdateRequestImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -450,8 +450,8 @@ class __$$_IUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IUpdateRequest implements _IUpdateRequest {
-  const _$_IUpdateRequest(
+class _$IUpdateRequestImpl implements _IUpdateRequest {
+  const _$IUpdateRequestImpl(
       {this.name,
       this.description,
       this.location,
@@ -487,8 +487,8 @@ class _$_IUpdateRequest implements _IUpdateRequest {
         _emailNotificationTypes = emailNotificationTypes,
         _alsoKnownAs = alsoKnownAs;
 
-  factory _$_IUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_IUpdateRequestFromJson(json);
+  factory _$IUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IUpdateRequestImplFromJson(json);
 
   @override
   final String? name;
@@ -607,7 +607,7 @@ class _$_IUpdateRequest implements _IUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IUpdateRequest &&
+            other is _$IUpdateRequestImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -698,12 +698,13 @@ class _$_IUpdateRequest implements _IUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IUpdateRequestCopyWith<_$_IUpdateRequest> get copyWith =>
-      __$$_IUpdateRequestCopyWithImpl<_$_IUpdateRequest>(this, _$identity);
+  _$$IUpdateRequestImplCopyWith<_$IUpdateRequestImpl> get copyWith =>
+      __$$IUpdateRequestImplCopyWithImpl<_$IUpdateRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IUpdateRequestToJson(
+    return _$$IUpdateRequestImplToJson(
       this,
     );
   }
@@ -738,10 +739,10 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
       final List<String>? mutedInstances,
       final List<String>? emailNotificationTypes,
-      final List<String>? alsoKnownAs}) = _$_IUpdateRequest;
+      final List<String>? alsoKnownAs}) = _$IUpdateRequestImpl;
 
   factory _IUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_IUpdateRequest.fromJson;
+      _$IUpdateRequestImpl.fromJson;
 
   @override
   String? get name;
@@ -803,6 +804,6 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   List<String>? get alsoKnownAs;
   @override
   @JsonKey(ignore: true)
-  _$$_IUpdateRequestCopyWith<_$_IUpdateRequest> get copyWith =>
+  _$$IUpdateRequestImplCopyWith<_$IUpdateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

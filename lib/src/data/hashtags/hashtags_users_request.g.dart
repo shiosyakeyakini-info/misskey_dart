@@ -6,9 +6,9 @@ part of 'hashtags_users_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_HashtagsUsersRequest _$$_HashtagsUsersRequestFromJson(
+_$HashtagsUsersRequestImpl _$$HashtagsUsersRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_HashtagsUsersRequest(
+    _$HashtagsUsersRequestImpl(
       tag: json['tag'] as String,
       limit: json['limit'] as int?,
       sort: const UsersSortConverter().fromJson(json['sort'] as String),
@@ -16,8 +16,8 @@ _$_HashtagsUsersRequest _$$_HashtagsUsersRequestFromJson(
       origin: $enumDecodeNullable(_$OriginEnumMap, json['origin']),
     );
 
-Map<String, dynamic> _$$_HashtagsUsersRequestToJson(
-        _$_HashtagsUsersRequest instance) =>
+Map<String, dynamic> _$$HashtagsUsersRequestImplToJson(
+        _$HashtagsUsersRequestImpl instance) =>
     <String, dynamic>{
       'tag': instance.tag,
       'limit': instance.limit,

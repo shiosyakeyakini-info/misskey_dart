@@ -114,11 +114,12 @@ class _$NotesSearchByTagRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesSearchByTagRequestCopyWith<$Res>
+abstract class _$$NotesSearchByTagRequestImplCopyWith<$Res>
     implements $NotesSearchByTagRequestCopyWith<$Res> {
-  factory _$$_NotesSearchByTagRequestCopyWith(_$_NotesSearchByTagRequest value,
-          $Res Function(_$_NotesSearchByTagRequest) then) =
-      __$$_NotesSearchByTagRequestCopyWithImpl<$Res>;
+  factory _$$NotesSearchByTagRequestImplCopyWith(
+          _$NotesSearchByTagRequestImpl value,
+          $Res Function(_$NotesSearchByTagRequestImpl) then) =
+      __$$NotesSearchByTagRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -133,12 +134,13 @@ abstract class _$$_NotesSearchByTagRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesSearchByTagRequestCopyWithImpl<$Res>
+class __$$NotesSearchByTagRequestImplCopyWithImpl<$Res>
     extends _$NotesSearchByTagRequestCopyWithImpl<$Res,
-        _$_NotesSearchByTagRequest>
-    implements _$$_NotesSearchByTagRequestCopyWith<$Res> {
-  __$$_NotesSearchByTagRequestCopyWithImpl(_$_NotesSearchByTagRequest _value,
-      $Res Function(_$_NotesSearchByTagRequest) _then)
+        _$NotesSearchByTagRequestImpl>
+    implements _$$NotesSearchByTagRequestImplCopyWith<$Res> {
+  __$$NotesSearchByTagRequestImplCopyWithImpl(
+      _$NotesSearchByTagRequestImpl _value,
+      $Res Function(_$NotesSearchByTagRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,7 +155,7 @@ class __$$_NotesSearchByTagRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_NotesSearchByTagRequest(
+    return _then(_$NotesSearchByTagRequestImpl(
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -192,8 +194,8 @@ class __$$_NotesSearchByTagRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesSearchByTagRequest implements _NotesSearchByTagRequest {
-  const _$_NotesSearchByTagRequest(
+class _$NotesSearchByTagRequestImpl implements _NotesSearchByTagRequest {
+  const _$NotesSearchByTagRequestImpl(
       {required this.tag,
       this.reply,
       this.renote,
@@ -203,8 +205,8 @@ class _$_NotesSearchByTagRequest implements _NotesSearchByTagRequest {
       this.untilId,
       this.limit});
 
-  factory _$_NotesSearchByTagRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesSearchByTagRequestFromJson(json);
+  factory _$NotesSearchByTagRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesSearchByTagRequestImplFromJson(json);
 
   @override
   final String tag;
@@ -232,7 +234,7 @@ class _$_NotesSearchByTagRequest implements _NotesSearchByTagRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesSearchByTagRequest &&
+            other is _$NotesSearchByTagRequestImpl &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.reply, reply) || other.reply == reply) &&
             (identical(other.renote, renote) || other.renote == renote) &&
@@ -252,14 +254,13 @@ class _$_NotesSearchByTagRequest implements _NotesSearchByTagRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesSearchByTagRequestCopyWith<_$_NotesSearchByTagRequest>
-      get copyWith =>
-          __$$_NotesSearchByTagRequestCopyWithImpl<_$_NotesSearchByTagRequest>(
-              this, _$identity);
+  _$$NotesSearchByTagRequestImplCopyWith<_$NotesSearchByTagRequestImpl>
+      get copyWith => __$$NotesSearchByTagRequestImplCopyWithImpl<
+          _$NotesSearchByTagRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesSearchByTagRequestToJson(
+    return _$$NotesSearchByTagRequestImplToJson(
       this,
     );
   }
@@ -274,10 +275,10 @@ abstract class _NotesSearchByTagRequest implements NotesSearchByTagRequest {
       final bool? poll,
       final String? sinceId,
       final String? untilId,
-      final int? limit}) = _$_NotesSearchByTagRequest;
+      final int? limit}) = _$NotesSearchByTagRequestImpl;
 
   factory _NotesSearchByTagRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesSearchByTagRequest.fromJson;
+      _$NotesSearchByTagRequestImpl.fromJson;
 
   @override
   String get tag;
@@ -297,6 +298,6 @@ abstract class _NotesSearchByTagRequest implements NotesSearchByTagRequest {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesSearchByTagRequestCopyWith<_$_NotesSearchByTagRequest>
+  _$$NotesSearchByTagRequestImplCopyWith<_$NotesSearchByTagRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

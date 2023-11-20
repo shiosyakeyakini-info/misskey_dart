@@ -71,11 +71,11 @@ class _$StreamingResponseCopyWithImpl<$Res, $Val extends StreamingResponse>
 }
 
 /// @nodoc
-abstract class _$$_StreamingResponseCopyWith<$Res>
+abstract class _$$StreamingResponseImplCopyWith<$Res>
     implements $StreamingResponseCopyWith<$Res> {
-  factory _$$_StreamingResponseCopyWith(_$_StreamingResponse value,
-          $Res Function(_$_StreamingResponse) then) =
-      __$$_StreamingResponseCopyWithImpl<$Res>;
+  factory _$$StreamingResponseImplCopyWith(_$StreamingResponseImpl value,
+          $Res Function(_$StreamingResponseImpl) then) =
+      __$$StreamingResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -84,11 +84,11 @@ abstract class _$$_StreamingResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_StreamingResponseCopyWithImpl<$Res>
-    extends _$StreamingResponseCopyWithImpl<$Res, _$_StreamingResponse>
-    implements _$$_StreamingResponseCopyWith<$Res> {
-  __$$_StreamingResponseCopyWithImpl(
-      _$_StreamingResponse _value, $Res Function(_$_StreamingResponse) _then)
+class __$$StreamingResponseImplCopyWithImpl<$Res>
+    extends _$StreamingResponseCopyWithImpl<$Res, _$StreamingResponseImpl>
+    implements _$$StreamingResponseImplCopyWith<$Res> {
+  __$$StreamingResponseImplCopyWithImpl(_$StreamingResponseImpl _value,
+      $Res Function(_$StreamingResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_StreamingResponseCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$_StreamingResponse(
+    return _then(_$StreamingResponseImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -112,14 +112,14 @@ class __$$_StreamingResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StreamingResponse implements _StreamingResponse {
-  const _$_StreamingResponse(
+class _$StreamingResponseImpl implements _StreamingResponse {
+  const _$StreamingResponseImpl(
       {@StreamingResponseTypeJsonConverter() required this.type,
       required final Map<String, dynamic> body})
       : _body = body;
 
-  factory _$_StreamingResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_StreamingResponseFromJson(json);
+  factory _$StreamingResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StreamingResponseImplFromJson(json);
 
   @override
   @StreamingResponseTypeJsonConverter()
@@ -141,7 +141,7 @@ class _$_StreamingResponse implements _StreamingResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StreamingResponse &&
+            other is _$StreamingResponseImpl &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
@@ -154,13 +154,13 @@ class _$_StreamingResponse implements _StreamingResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StreamingResponseCopyWith<_$_StreamingResponse> get copyWith =>
-      __$$_StreamingResponseCopyWithImpl<_$_StreamingResponse>(
+  _$$StreamingResponseImplCopyWith<_$StreamingResponseImpl> get copyWith =>
+      __$$StreamingResponseImplCopyWithImpl<_$StreamingResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StreamingResponseToJson(
+    return _$$StreamingResponseImplToJson(
       this,
     );
   }
@@ -170,10 +170,10 @@ abstract class _StreamingResponse implements StreamingResponse {
   const factory _StreamingResponse(
       {@StreamingResponseTypeJsonConverter()
       required final StreamingResponseType type,
-      required final Map<String, dynamic> body}) = _$_StreamingResponse;
+      required final Map<String, dynamic> body}) = _$StreamingResponseImpl;
 
   factory _StreamingResponse.fromJson(Map<String, dynamic> json) =
-      _$_StreamingResponse.fromJson;
+      _$StreamingResponseImpl.fromJson;
 
   @override
   @StreamingResponseTypeJsonConverter()
@@ -182,6 +182,6 @@ abstract class _StreamingResponse implements StreamingResponse {
   Map<String, dynamic> get body;
   @override
   @JsonKey(ignore: true)
-  _$$_StreamingResponseCopyWith<_$_StreamingResponse> get copyWith =>
+  _$$StreamingResponseImplCopyWith<_$StreamingResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

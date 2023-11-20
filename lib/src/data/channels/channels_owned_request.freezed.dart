@@ -75,22 +75,22 @@ class _$ChannelsOwnedRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsOwnedRequestCopyWith<$Res>
+abstract class _$$ChannelsOwnedRequestImplCopyWith<$Res>
     implements $ChannelsOwnedRequestCopyWith<$Res> {
-  factory _$$_ChannelsOwnedRequestCopyWith(_$_ChannelsOwnedRequest value,
-          $Res Function(_$_ChannelsOwnedRequest) then) =
-      __$$_ChannelsOwnedRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsOwnedRequestImplCopyWith(_$ChannelsOwnedRequestImpl value,
+          $Res Function(_$ChannelsOwnedRequestImpl) then) =
+      __$$ChannelsOwnedRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? sinceId, String? untilId, int? limit});
 }
 
 /// @nodoc
-class __$$_ChannelsOwnedRequestCopyWithImpl<$Res>
-    extends _$ChannelsOwnedRequestCopyWithImpl<$Res, _$_ChannelsOwnedRequest>
-    implements _$$_ChannelsOwnedRequestCopyWith<$Res> {
-  __$$_ChannelsOwnedRequestCopyWithImpl(_$_ChannelsOwnedRequest _value,
-      $Res Function(_$_ChannelsOwnedRequest) _then)
+class __$$ChannelsOwnedRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsOwnedRequestCopyWithImpl<$Res, _$ChannelsOwnedRequestImpl>
+    implements _$$ChannelsOwnedRequestImplCopyWith<$Res> {
+  __$$ChannelsOwnedRequestImplCopyWithImpl(_$ChannelsOwnedRequestImpl _value,
+      $Res Function(_$ChannelsOwnedRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$_ChannelsOwnedRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_ChannelsOwnedRequest(
+    return _then(_$ChannelsOwnedRequestImpl(
       sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -119,11 +119,11 @@ class __$$_ChannelsOwnedRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsOwnedRequest implements _ChannelsOwnedRequest {
-  const _$_ChannelsOwnedRequest({this.sinceId, this.untilId, this.limit});
+class _$ChannelsOwnedRequestImpl implements _ChannelsOwnedRequest {
+  const _$ChannelsOwnedRequestImpl({this.sinceId, this.untilId, this.limit});
 
-  factory _$_ChannelsOwnedRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsOwnedRequestFromJson(json);
+  factory _$ChannelsOwnedRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsOwnedRequestImplFromJson(json);
 
   @override
   final String? sinceId;
@@ -141,7 +141,7 @@ class _$_ChannelsOwnedRequest implements _ChannelsOwnedRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsOwnedRequest &&
+            other is _$ChannelsOwnedRequestImpl &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.limit, limit) || other.limit == limit));
@@ -154,13 +154,14 @@ class _$_ChannelsOwnedRequest implements _ChannelsOwnedRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsOwnedRequestCopyWith<_$_ChannelsOwnedRequest> get copyWith =>
-      __$$_ChannelsOwnedRequestCopyWithImpl<_$_ChannelsOwnedRequest>(
-          this, _$identity);
+  _$$ChannelsOwnedRequestImplCopyWith<_$ChannelsOwnedRequestImpl>
+      get copyWith =>
+          __$$ChannelsOwnedRequestImplCopyWithImpl<_$ChannelsOwnedRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsOwnedRequestToJson(
+    return _$$ChannelsOwnedRequestImplToJson(
       this,
     );
   }
@@ -170,10 +171,10 @@ abstract class _ChannelsOwnedRequest implements ChannelsOwnedRequest {
   const factory _ChannelsOwnedRequest(
       {final String? sinceId,
       final String? untilId,
-      final int? limit}) = _$_ChannelsOwnedRequest;
+      final int? limit}) = _$ChannelsOwnedRequestImpl;
 
   factory _ChannelsOwnedRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsOwnedRequest.fromJson;
+      _$ChannelsOwnedRequestImpl.fromJson;
 
   @override
   String? get sinceId;
@@ -183,6 +184,6 @@ abstract class _ChannelsOwnedRequest implements ChannelsOwnedRequest {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsOwnedRequestCopyWith<_$_ChannelsOwnedRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChannelsOwnedRequestImplCopyWith<_$ChannelsOwnedRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

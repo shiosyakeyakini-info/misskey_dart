@@ -6,9 +6,9 @@ part of 'channels_timeline_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ChannelsTimelineRequest _$$_ChannelsTimelineRequestFromJson(
+_$ChannelsTimelineRequestImpl _$$ChannelsTimelineRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ChannelsTimelineRequest(
+    _$ChannelsTimelineRequestImpl(
       channelId: json['channelId'] as String,
       limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
@@ -19,8 +19,8 @@ _$_ChannelsTimelineRequest _$$_ChannelsTimelineRequestFromJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
     );
 
-Map<String, dynamic> _$$_ChannelsTimelineRequestToJson(
-        _$_ChannelsTimelineRequest instance) =>
+Map<String, dynamic> _$$ChannelsTimelineRequestImplToJson(
+        _$ChannelsTimelineRequestImpl instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
       'limit': instance.limit,

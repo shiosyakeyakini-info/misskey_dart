@@ -94,11 +94,12 @@ class _$ChannelsSearchRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsSearchRequestCopyWith<$Res>
+abstract class _$$ChannelsSearchRequestImplCopyWith<$Res>
     implements $ChannelsSearchRequestCopyWith<$Res> {
-  factory _$$_ChannelsSearchRequestCopyWith(_$_ChannelsSearchRequest value,
-          $Res Function(_$_ChannelsSearchRequest) then) =
-      __$$_ChannelsSearchRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsSearchRequestImplCopyWith(
+          _$ChannelsSearchRequestImpl value,
+          $Res Function(_$ChannelsSearchRequestImpl) then) =
+      __$$ChannelsSearchRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -110,11 +111,12 @@ abstract class _$$_ChannelsSearchRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ChannelsSearchRequestCopyWithImpl<$Res>
-    extends _$ChannelsSearchRequestCopyWithImpl<$Res, _$_ChannelsSearchRequest>
-    implements _$$_ChannelsSearchRequestCopyWith<$Res> {
-  __$$_ChannelsSearchRequestCopyWithImpl(_$_ChannelsSearchRequest _value,
-      $Res Function(_$_ChannelsSearchRequest) _then)
+class __$$ChannelsSearchRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsSearchRequestCopyWithImpl<$Res,
+        _$ChannelsSearchRequestImpl>
+    implements _$$ChannelsSearchRequestImplCopyWith<$Res> {
+  __$$ChannelsSearchRequestImplCopyWithImpl(_$ChannelsSearchRequestImpl _value,
+      $Res Function(_$ChannelsSearchRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +128,7 @@ class __$$_ChannelsSearchRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_ChannelsSearchRequest(
+    return _then(_$ChannelsSearchRequestImpl(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -153,16 +155,16 @@ class __$$_ChannelsSearchRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsSearchRequest implements _ChannelsSearchRequest {
-  const _$_ChannelsSearchRequest(
+class _$ChannelsSearchRequestImpl implements _ChannelsSearchRequest {
+  const _$ChannelsSearchRequestImpl(
       {required this.query,
       this.type,
       this.sinceId,
       this.untilId,
       @Assert('limit > 0') this.limit});
 
-  factory _$_ChannelsSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsSearchRequestFromJson(json);
+  factory _$ChannelsSearchRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsSearchRequestImplFromJson(json);
 
   @override
   final String query;
@@ -185,7 +187,7 @@ class _$_ChannelsSearchRequest implements _ChannelsSearchRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsSearchRequest &&
+            other is _$ChannelsSearchRequestImpl &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -201,13 +203,13 @@ class _$_ChannelsSearchRequest implements _ChannelsSearchRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsSearchRequestCopyWith<_$_ChannelsSearchRequest> get copyWith =>
-      __$$_ChannelsSearchRequestCopyWithImpl<_$_ChannelsSearchRequest>(
-          this, _$identity);
+  _$$ChannelsSearchRequestImplCopyWith<_$ChannelsSearchRequestImpl>
+      get copyWith => __$$ChannelsSearchRequestImplCopyWithImpl<
+          _$ChannelsSearchRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsSearchRequestToJson(
+    return _$$ChannelsSearchRequestImplToJson(
       this,
     );
   }
@@ -219,10 +221,10 @@ abstract class _ChannelsSearchRequest implements ChannelsSearchRequest {
       final ChannelSearchType? type,
       final String? sinceId,
       final String? untilId,
-      @Assert('limit > 0') final int? limit}) = _$_ChannelsSearchRequest;
+      @Assert('limit > 0') final int? limit}) = _$ChannelsSearchRequestImpl;
 
   factory _ChannelsSearchRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsSearchRequest.fromJson;
+      _$ChannelsSearchRequestImpl.fromJson;
 
   @override
   String get query;
@@ -237,6 +239,6 @@ abstract class _ChannelsSearchRequest implements ChannelsSearchRequest {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsSearchRequestCopyWith<_$_ChannelsSearchRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChannelsSearchRequestImplCopyWith<_$ChannelsSearchRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

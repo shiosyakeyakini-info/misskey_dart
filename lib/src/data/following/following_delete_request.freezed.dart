@@ -64,23 +64,25 @@ class _$FollowingDeleteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FollowingDeleteRequestCopyWith<$Res>
+abstract class _$$FollowingDeleteRequestImplCopyWith<$Res>
     implements $FollowingDeleteRequestCopyWith<$Res> {
-  factory _$$_FollowingDeleteRequestCopyWith(_$_FollowingDeleteRequest value,
-          $Res Function(_$_FollowingDeleteRequest) then) =
-      __$$_FollowingDeleteRequestCopyWithImpl<$Res>;
+  factory _$$FollowingDeleteRequestImplCopyWith(
+          _$FollowingDeleteRequestImpl value,
+          $Res Function(_$FollowingDeleteRequestImpl) then) =
+      __$$FollowingDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$_FollowingDeleteRequestCopyWithImpl<$Res>
+class __$$FollowingDeleteRequestImplCopyWithImpl<$Res>
     extends _$FollowingDeleteRequestCopyWithImpl<$Res,
-        _$_FollowingDeleteRequest>
-    implements _$$_FollowingDeleteRequestCopyWith<$Res> {
-  __$$_FollowingDeleteRequestCopyWithImpl(_$_FollowingDeleteRequest _value,
-      $Res Function(_$_FollowingDeleteRequest) _then)
+        _$FollowingDeleteRequestImpl>
+    implements _$$FollowingDeleteRequestImplCopyWith<$Res> {
+  __$$FollowingDeleteRequestImplCopyWithImpl(
+      _$FollowingDeleteRequestImpl _value,
+      $Res Function(_$FollowingDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_FollowingDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$_FollowingDeleteRequest(
+    return _then(_$FollowingDeleteRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_FollowingDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowingDeleteRequest implements _FollowingDeleteRequest {
-  const _$_FollowingDeleteRequest({required this.userId});
+class _$FollowingDeleteRequestImpl implements _FollowingDeleteRequest {
+  const _$FollowingDeleteRequestImpl({required this.userId});
 
-  factory _$_FollowingDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_FollowingDeleteRequestFromJson(json);
+  factory _$FollowingDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowingDeleteRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -117,7 +119,7 @@ class _$_FollowingDeleteRequest implements _FollowingDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FollowingDeleteRequest &&
+            other is _$FollowingDeleteRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
@@ -128,13 +130,13 @@ class _$_FollowingDeleteRequest implements _FollowingDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FollowingDeleteRequestCopyWith<_$_FollowingDeleteRequest> get copyWith =>
-      __$$_FollowingDeleteRequestCopyWithImpl<_$_FollowingDeleteRequest>(
-          this, _$identity);
+  _$$FollowingDeleteRequestImplCopyWith<_$FollowingDeleteRequestImpl>
+      get copyWith => __$$FollowingDeleteRequestImplCopyWithImpl<
+          _$FollowingDeleteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowingDeleteRequestToJson(
+    return _$$FollowingDeleteRequestImplToJson(
       this,
     );
   }
@@ -142,15 +144,15 @@ class _$_FollowingDeleteRequest implements _FollowingDeleteRequest {
 
 abstract class _FollowingDeleteRequest implements FollowingDeleteRequest {
   const factory _FollowingDeleteRequest({required final String userId}) =
-      _$_FollowingDeleteRequest;
+      _$FollowingDeleteRequestImpl;
 
   factory _FollowingDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_FollowingDeleteRequest.fromJson;
+      _$FollowingDeleteRequestImpl.fromJson;
 
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_FollowingDeleteRequestCopyWith<_$_FollowingDeleteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FollowingDeleteRequestImplCopyWith<_$FollowingDeleteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

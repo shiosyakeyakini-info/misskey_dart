@@ -64,22 +64,24 @@ class _$ChannelsFollowRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsFollowRequestCopyWith<$Res>
+abstract class _$$ChannelsFollowRequestImplCopyWith<$Res>
     implements $ChannelsFollowRequestCopyWith<$Res> {
-  factory _$$_ChannelsFollowRequestCopyWith(_$_ChannelsFollowRequest value,
-          $Res Function(_$_ChannelsFollowRequest) then) =
-      __$$_ChannelsFollowRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsFollowRequestImplCopyWith(
+          _$ChannelsFollowRequestImpl value,
+          $Res Function(_$ChannelsFollowRequestImpl) then) =
+      __$$ChannelsFollowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class __$$_ChannelsFollowRequestCopyWithImpl<$Res>
-    extends _$ChannelsFollowRequestCopyWithImpl<$Res, _$_ChannelsFollowRequest>
-    implements _$$_ChannelsFollowRequestCopyWith<$Res> {
-  __$$_ChannelsFollowRequestCopyWithImpl(_$_ChannelsFollowRequest _value,
-      $Res Function(_$_ChannelsFollowRequest) _then)
+class __$$ChannelsFollowRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsFollowRequestCopyWithImpl<$Res,
+        _$ChannelsFollowRequestImpl>
+    implements _$$ChannelsFollowRequestImplCopyWith<$Res> {
+  __$$ChannelsFollowRequestImplCopyWithImpl(_$ChannelsFollowRequestImpl _value,
+      $Res Function(_$ChannelsFollowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +89,7 @@ class __$$_ChannelsFollowRequestCopyWithImpl<$Res>
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_$_ChannelsFollowRequest(
+    return _then(_$ChannelsFollowRequestImpl(
       channelId: null == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -98,11 +100,11 @@ class __$$_ChannelsFollowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsFollowRequest implements _ChannelsFollowRequest {
-  const _$_ChannelsFollowRequest({required this.channelId});
+class _$ChannelsFollowRequestImpl implements _ChannelsFollowRequest {
+  const _$ChannelsFollowRequestImpl({required this.channelId});
 
-  factory _$_ChannelsFollowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsFollowRequestFromJson(json);
+  factory _$ChannelsFollowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsFollowRequestImplFromJson(json);
 
   @override
   final String channelId;
@@ -116,7 +118,7 @@ class _$_ChannelsFollowRequest implements _ChannelsFollowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsFollowRequest &&
+            other is _$ChannelsFollowRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
@@ -128,13 +130,13 @@ class _$_ChannelsFollowRequest implements _ChannelsFollowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsFollowRequestCopyWith<_$_ChannelsFollowRequest> get copyWith =>
-      __$$_ChannelsFollowRequestCopyWithImpl<_$_ChannelsFollowRequest>(
-          this, _$identity);
+  _$$ChannelsFollowRequestImplCopyWith<_$ChannelsFollowRequestImpl>
+      get copyWith => __$$ChannelsFollowRequestImplCopyWithImpl<
+          _$ChannelsFollowRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsFollowRequestToJson(
+    return _$$ChannelsFollowRequestImplToJson(
       this,
     );
   }
@@ -142,15 +144,15 @@ class _$_ChannelsFollowRequest implements _ChannelsFollowRequest {
 
 abstract class _ChannelsFollowRequest implements ChannelsFollowRequest {
   const factory _ChannelsFollowRequest({required final String channelId}) =
-      _$_ChannelsFollowRequest;
+      _$ChannelsFollowRequestImpl;
 
   factory _ChannelsFollowRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsFollowRequest.fromJson;
+      _$ChannelsFollowRequestImpl.fromJson;
 
   @override
   String get channelId;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsFollowRequestCopyWith<_$_ChannelsFollowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChannelsFollowRequestImplCopyWith<_$ChannelsFollowRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

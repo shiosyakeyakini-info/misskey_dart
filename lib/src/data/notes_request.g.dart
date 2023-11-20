@@ -6,8 +6,8 @@ part of 'notes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesRequest _$$_NotesRequestFromJson(Map<String, dynamic> json) =>
-    _$_NotesRequest(
+_$NotesRequestImpl _$$NotesRequestImplFromJson(Map<String, dynamic> json) =>
+    _$NotesRequestImpl(
       local: json['local'] as bool?,
       reply: json['reply'] as bool?,
       renote: json['renote'] as bool?,
@@ -18,7 +18,7 @@ _$_NotesRequest _$$_NotesRequestFromJson(Map<String, dynamic> json) =>
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$$_NotesRequestToJson(_$_NotesRequest instance) =>
+Map<String, dynamic> _$$NotesRequestImplToJson(_$NotesRequestImpl instance) =>
     <String, dynamic>{
       'local': instance.local,
       'reply': instance.reply,

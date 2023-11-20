@@ -558,10 +558,11 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
 }
 
 /// @nodoc
-abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
-  factory _$$_IResponseCopyWith(
-          _$_IResponse value, $Res Function(_$_IResponse) then) =
-      __$$_IResponseCopyWithImpl<$Res>;
+abstract class _$$IResponseImplCopyWith<$Res>
+    implements $IResponseCopyWith<$Res> {
+  factory _$$IResponseImplCopyWith(
+          _$IResponseImpl value, $Res Function(_$IResponseImpl) then) =
+      __$$IResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -640,11 +641,11 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_IResponseCopyWithImpl<$Res>
-    extends _$IResponseCopyWithImpl<$Res, _$_IResponse>
-    implements _$$_IResponseCopyWith<$Res> {
-  __$$_IResponseCopyWithImpl(
-      _$_IResponse _value, $Res Function(_$_IResponse) _then)
+class __$$IResponseImplCopyWithImpl<$Res>
+    extends _$IResponseCopyWithImpl<$Res, _$IResponseImpl>
+    implements _$$IResponseImplCopyWith<$Res> {
+  __$$IResponseImplCopyWithImpl(
+      _$IResponseImpl _value, $Res Function(_$IResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -719,7 +720,7 @@ class __$$_IResponseCopyWithImpl<$Res>
     Object? loggedInDays = null,
     Object? policies = null,
   }) {
-    return _then(_$_IResponse(
+    return _then(_$IResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -998,8 +999,8 @@ class __$$_IResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IResponse implements _IResponse {
-  const _$_IResponse(
+class _$IResponseImpl implements _IResponse {
+  const _$IResponseImpl(
       {required this.id,
       this.name,
       required this.username,
@@ -1082,8 +1083,8 @@ class _$_IResponse implements _IResponse {
         _emailNotificationTypes = emailNotificationTypes,
         _achievements = achievements;
 
-  factory _$_IResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_IResponseFromJson(json);
+  factory _$IResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IResponseImplFromJson(json);
 
   @override
   final String id;
@@ -1333,7 +1334,7 @@ class _$_IResponse implements _IResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IResponse &&
+            other is _$IResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
@@ -1523,12 +1524,12 @@ class _$_IResponse implements _IResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IResponseCopyWith<_$_IResponse> get copyWith =>
-      __$$_IResponseCopyWithImpl<_$_IResponse>(this, _$identity);
+  _$$IResponseImplCopyWith<_$IResponseImpl> get copyWith =>
+      __$$IResponseImplCopyWithImpl<_$IResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IResponseToJson(
+    return _$$IResponseImplToJson(
       this,
     );
   }
@@ -1604,10 +1605,10 @@ abstract class _IResponse implements IResponse {
       required final List<String> emailNotificationTypes,
       required final List<UserAchievement> achievements,
       required final int loggedInDays,
-      required final UserPolicies policies}) = _$_IResponse;
+      required final UserPolicies policies}) = _$IResponseImpl;
 
   factory _IResponse.fromJson(Map<String, dynamic> json) =
-      _$_IResponse.fromJson;
+      _$IResponseImpl.fromJson;
 
   @override
   String get id;
@@ -1758,6 +1759,6 @@ abstract class _IResponse implements IResponse {
   UserPolicies get policies;
   @override
   @JsonKey(ignore: true)
-  _$$_IResponseCopyWith<_$_IResponse> get copyWith =>
+  _$$IResponseImplCopyWith<_$IResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

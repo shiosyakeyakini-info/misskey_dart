@@ -83,11 +83,12 @@ class _$ChannelsCreateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsCreateRequestCopyWith<$Res>
+abstract class _$$ChannelsCreateRequestImplCopyWith<$Res>
     implements $ChannelsCreateRequestCopyWith<$Res> {
-  factory _$$_ChannelsCreateRequestCopyWith(_$_ChannelsCreateRequest value,
-          $Res Function(_$_ChannelsCreateRequest) then) =
-      __$$_ChannelsCreateRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsCreateRequestImplCopyWith(
+          _$ChannelsCreateRequestImpl value,
+          $Res Function(_$ChannelsCreateRequestImpl) then) =
+      __$$ChannelsCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -95,11 +96,12 @@ abstract class _$$_ChannelsCreateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ChannelsCreateRequestCopyWithImpl<$Res>
-    extends _$ChannelsCreateRequestCopyWithImpl<$Res, _$_ChannelsCreateRequest>
-    implements _$$_ChannelsCreateRequestCopyWith<$Res> {
-  __$$_ChannelsCreateRequestCopyWithImpl(_$_ChannelsCreateRequest _value,
-      $Res Function(_$_ChannelsCreateRequest) _then)
+class __$$ChannelsCreateRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsCreateRequestCopyWithImpl<$Res,
+        _$ChannelsCreateRequestImpl>
+    implements _$$ChannelsCreateRequestImplCopyWith<$Res> {
+  __$$ChannelsCreateRequestImplCopyWithImpl(_$ChannelsCreateRequestImpl _value,
+      $Res Function(_$ChannelsCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,7 +112,7 @@ class __$$_ChannelsCreateRequestCopyWithImpl<$Res>
     Object? bannerId = freezed,
     Object? color = freezed,
   }) {
-    return _then(_$_ChannelsCreateRequest(
+    return _then(_$ChannelsCreateRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -133,12 +135,12 @@ class __$$_ChannelsCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsCreateRequest implements _ChannelsCreateRequest {
-  const _$_ChannelsCreateRequest(
+class _$ChannelsCreateRequestImpl implements _ChannelsCreateRequest {
+  const _$ChannelsCreateRequestImpl(
       {required this.name, this.description, this.bannerId, this.color});
 
-  factory _$_ChannelsCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsCreateRequestFromJson(json);
+  factory _$ChannelsCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsCreateRequestImplFromJson(json);
 
   @override
   final String name;
@@ -158,7 +160,7 @@ class _$_ChannelsCreateRequest implements _ChannelsCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsCreateRequest &&
+            other is _$ChannelsCreateRequestImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -175,13 +177,13 @@ class _$_ChannelsCreateRequest implements _ChannelsCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsCreateRequestCopyWith<_$_ChannelsCreateRequest> get copyWith =>
-      __$$_ChannelsCreateRequestCopyWithImpl<_$_ChannelsCreateRequest>(
-          this, _$identity);
+  _$$ChannelsCreateRequestImplCopyWith<_$ChannelsCreateRequestImpl>
+      get copyWith => __$$ChannelsCreateRequestImplCopyWithImpl<
+          _$ChannelsCreateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsCreateRequestToJson(
+    return _$$ChannelsCreateRequestImplToJson(
       this,
     );
   }
@@ -192,10 +194,10 @@ abstract class _ChannelsCreateRequest implements ChannelsCreateRequest {
       {required final String name,
       final String? description,
       final String? bannerId,
-      final String? color}) = _$_ChannelsCreateRequest;
+      final String? color}) = _$ChannelsCreateRequestImpl;
 
   factory _ChannelsCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsCreateRequest.fromJson;
+      _$ChannelsCreateRequestImpl.fromJson;
 
   @override
   String get name;
@@ -207,6 +209,6 @@ abstract class _ChannelsCreateRequest implements ChannelsCreateRequest {
   String? get color;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsCreateRequestCopyWith<_$_ChannelsCreateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChannelsCreateRequestImplCopyWith<_$ChannelsCreateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

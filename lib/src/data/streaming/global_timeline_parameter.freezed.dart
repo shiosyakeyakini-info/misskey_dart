@@ -70,23 +70,25 @@ class _$GlobalTimelineParameterCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GlobalTimelineParameterCopyWith<$Res>
+abstract class _$$GlobalTimelineParameterImplCopyWith<$Res>
     implements $GlobalTimelineParameterCopyWith<$Res> {
-  factory _$$_GlobalTimelineParameterCopyWith(_$_GlobalTimelineParameter value,
-          $Res Function(_$_GlobalTimelineParameter) then) =
-      __$$_GlobalTimelineParameterCopyWithImpl<$Res>;
+  factory _$$GlobalTimelineParameterImplCopyWith(
+          _$GlobalTimelineParameterImpl value,
+          $Res Function(_$GlobalTimelineParameterImpl) then) =
+      __$$GlobalTimelineParameterImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool? withRenotes, bool? withFiles});
 }
 
 /// @nodoc
-class __$$_GlobalTimelineParameterCopyWithImpl<$Res>
+class __$$GlobalTimelineParameterImplCopyWithImpl<$Res>
     extends _$GlobalTimelineParameterCopyWithImpl<$Res,
-        _$_GlobalTimelineParameter>
-    implements _$$_GlobalTimelineParameterCopyWith<$Res> {
-  __$$_GlobalTimelineParameterCopyWithImpl(_$_GlobalTimelineParameter _value,
-      $Res Function(_$_GlobalTimelineParameter) _then)
+        _$GlobalTimelineParameterImpl>
+    implements _$$GlobalTimelineParameterImplCopyWith<$Res> {
+  __$$GlobalTimelineParameterImplCopyWithImpl(
+      _$GlobalTimelineParameterImpl _value,
+      $Res Function(_$GlobalTimelineParameterImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +97,7 @@ class __$$_GlobalTimelineParameterCopyWithImpl<$Res>
     Object? withRenotes = freezed,
     Object? withFiles = freezed,
   }) {
-    return _then(_$_GlobalTimelineParameter(
+    return _then(_$GlobalTimelineParameterImpl(
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
@@ -110,11 +112,11 @@ class __$$_GlobalTimelineParameterCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GlobalTimelineParameter implements _GlobalTimelineParameter {
-  const _$_GlobalTimelineParameter({this.withRenotes, this.withFiles});
+class _$GlobalTimelineParameterImpl implements _GlobalTimelineParameter {
+  const _$GlobalTimelineParameterImpl({this.withRenotes, this.withFiles});
 
-  factory _$_GlobalTimelineParameter.fromJson(Map<String, dynamic> json) =>
-      _$$_GlobalTimelineParameterFromJson(json);
+  factory _$GlobalTimelineParameterImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GlobalTimelineParameterImplFromJson(json);
 
   @override
   final bool? withRenotes;
@@ -130,7 +132,7 @@ class _$_GlobalTimelineParameter implements _GlobalTimelineParameter {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GlobalTimelineParameter &&
+            other is _$GlobalTimelineParameterImpl &&
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
             (identical(other.withFiles, withFiles) ||
@@ -144,14 +146,13 @@ class _$_GlobalTimelineParameter implements _GlobalTimelineParameter {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GlobalTimelineParameterCopyWith<_$_GlobalTimelineParameter>
-      get copyWith =>
-          __$$_GlobalTimelineParameterCopyWithImpl<_$_GlobalTimelineParameter>(
-              this, _$identity);
+  _$$GlobalTimelineParameterImplCopyWith<_$GlobalTimelineParameterImpl>
+      get copyWith => __$$GlobalTimelineParameterImplCopyWithImpl<
+          _$GlobalTimelineParameterImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GlobalTimelineParameterToJson(
+    return _$$GlobalTimelineParameterImplToJson(
       this,
     );
   }
@@ -160,10 +161,10 @@ class _$_GlobalTimelineParameter implements _GlobalTimelineParameter {
 abstract class _GlobalTimelineParameter implements GlobalTimelineParameter {
   const factory _GlobalTimelineParameter(
       {final bool? withRenotes,
-      final bool? withFiles}) = _$_GlobalTimelineParameter;
+      final bool? withFiles}) = _$GlobalTimelineParameterImpl;
 
   factory _GlobalTimelineParameter.fromJson(Map<String, dynamic> json) =
-      _$_GlobalTimelineParameter.fromJson;
+      _$GlobalTimelineParameterImpl.fromJson;
 
   @override
   bool? get withRenotes;
@@ -171,6 +172,6 @@ abstract class _GlobalTimelineParameter implements GlobalTimelineParameter {
   bool? get withFiles;
   @override
   @JsonKey(ignore: true)
-  _$$_GlobalTimelineParameterCopyWith<_$_GlobalTimelineParameter>
+  _$$GlobalTimelineParameterImplCopyWith<_$GlobalTimelineParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

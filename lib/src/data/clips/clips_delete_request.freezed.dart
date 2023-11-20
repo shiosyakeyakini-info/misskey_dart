@@ -62,22 +62,22 @@ class _$ClipsDeleteRequestCopyWithImpl<$Res, $Val extends ClipsDeleteRequest>
 }
 
 /// @nodoc
-abstract class _$$_ClipsDeleteRequestCopyWith<$Res>
+abstract class _$$ClipsDeleteRequestImplCopyWith<$Res>
     implements $ClipsDeleteRequestCopyWith<$Res> {
-  factory _$$_ClipsDeleteRequestCopyWith(_$_ClipsDeleteRequest value,
-          $Res Function(_$_ClipsDeleteRequest) then) =
-      __$$_ClipsDeleteRequestCopyWithImpl<$Res>;
+  factory _$$ClipsDeleteRequestImplCopyWith(_$ClipsDeleteRequestImpl value,
+          $Res Function(_$ClipsDeleteRequestImpl) then) =
+      __$$ClipsDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String clipId});
 }
 
 /// @nodoc
-class __$$_ClipsDeleteRequestCopyWithImpl<$Res>
-    extends _$ClipsDeleteRequestCopyWithImpl<$Res, _$_ClipsDeleteRequest>
-    implements _$$_ClipsDeleteRequestCopyWith<$Res> {
-  __$$_ClipsDeleteRequestCopyWithImpl(
-      _$_ClipsDeleteRequest _value, $Res Function(_$_ClipsDeleteRequest) _then)
+class __$$ClipsDeleteRequestImplCopyWithImpl<$Res>
+    extends _$ClipsDeleteRequestCopyWithImpl<$Res, _$ClipsDeleteRequestImpl>
+    implements _$$ClipsDeleteRequestImplCopyWith<$Res> {
+  __$$ClipsDeleteRequestImplCopyWithImpl(_$ClipsDeleteRequestImpl _value,
+      $Res Function(_$ClipsDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_ClipsDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? clipId = null,
   }) {
-    return _then(_$_ClipsDeleteRequest(
+    return _then(_$ClipsDeleteRequestImpl(
       clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_ClipsDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsDeleteRequest implements _ClipsDeleteRequest {
-  const _$_ClipsDeleteRequest({required this.clipId});
+class _$ClipsDeleteRequestImpl implements _ClipsDeleteRequest {
+  const _$ClipsDeleteRequestImpl({required this.clipId});
 
-  factory _$_ClipsDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsDeleteRequestFromJson(json);
+  factory _$ClipsDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsDeleteRequestImplFromJson(json);
 
   @override
   final String clipId;
@@ -114,7 +114,7 @@ class _$_ClipsDeleteRequest implements _ClipsDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsDeleteRequest &&
+            other is _$ClipsDeleteRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId));
   }
 
@@ -125,13 +125,13 @@ class _$_ClipsDeleteRequest implements _ClipsDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsDeleteRequestCopyWith<_$_ClipsDeleteRequest> get copyWith =>
-      __$$_ClipsDeleteRequestCopyWithImpl<_$_ClipsDeleteRequest>(
+  _$$ClipsDeleteRequestImplCopyWith<_$ClipsDeleteRequestImpl> get copyWith =>
+      __$$ClipsDeleteRequestImplCopyWithImpl<_$ClipsDeleteRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsDeleteRequestToJson(
+    return _$$ClipsDeleteRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_ClipsDeleteRequest implements _ClipsDeleteRequest {
 
 abstract class _ClipsDeleteRequest implements ClipsDeleteRequest {
   const factory _ClipsDeleteRequest({required final String clipId}) =
-      _$_ClipsDeleteRequest;
+      _$ClipsDeleteRequestImpl;
 
   factory _ClipsDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsDeleteRequest.fromJson;
+      _$ClipsDeleteRequestImpl.fromJson;
 
   @override
   String get clipId;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsDeleteRequestCopyWith<_$_ClipsDeleteRequest> get copyWith =>
+  _$$ClipsDeleteRequestImplCopyWith<_$ClipsDeleteRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

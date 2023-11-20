@@ -6,14 +6,14 @@ part of 'following_requests_cancel_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FollowingRequestsCancelRequest _$$_FollowingRequestsCancelRequestFromJson(
-        Map<String, dynamic> json) =>
-    _$_FollowingRequestsCancelRequest(
-      userId: json['userId'] as String,
-    );
+_$FollowingRequestsCancelRequestImpl
+    _$$FollowingRequestsCancelRequestImplFromJson(Map<String, dynamic> json) =>
+        _$FollowingRequestsCancelRequestImpl(
+          userId: json['userId'] as String,
+        );
 
-Map<String, dynamic> _$$_FollowingRequestsCancelRequestToJson(
-        _$_FollowingRequestsCancelRequest instance) =>
+Map<String, dynamic> _$$FollowingRequestsCancelRequestImplToJson(
+        _$FollowingRequestsCancelRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
     };

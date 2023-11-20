@@ -80,22 +80,22 @@ class _$UsersPagesRequestCopyWithImpl<$Res, $Val extends UsersPagesRequest>
 }
 
 /// @nodoc
-abstract class _$$_UsersPagesRequestCopyWith<$Res>
+abstract class _$$UsersPagesRequestImplCopyWith<$Res>
     implements $UsersPagesRequestCopyWith<$Res> {
-  factory _$$_UsersPagesRequestCopyWith(_$_UsersPagesRequest value,
-          $Res Function(_$_UsersPagesRequest) then) =
-      __$$_UsersPagesRequestCopyWithImpl<$Res>;
+  factory _$$UsersPagesRequestImplCopyWith(_$UsersPagesRequestImpl value,
+          $Res Function(_$UsersPagesRequestImpl) then) =
+      __$$UsersPagesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$_UsersPagesRequestCopyWithImpl<$Res>
-    extends _$UsersPagesRequestCopyWithImpl<$Res, _$_UsersPagesRequest>
-    implements _$$_UsersPagesRequestCopyWith<$Res> {
-  __$$_UsersPagesRequestCopyWithImpl(
-      _$_UsersPagesRequest _value, $Res Function(_$_UsersPagesRequest) _then)
+class __$$UsersPagesRequestImplCopyWithImpl<$Res>
+    extends _$UsersPagesRequestCopyWithImpl<$Res, _$UsersPagesRequestImpl>
+    implements _$$UsersPagesRequestImplCopyWith<$Res> {
+  __$$UsersPagesRequestImplCopyWithImpl(_$UsersPagesRequestImpl _value,
+      $Res Function(_$UsersPagesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_UsersPagesRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_UsersPagesRequest(
+    return _then(_$UsersPagesRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_UsersPagesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersPagesRequest implements _UsersPagesRequest {
-  const _$_UsersPagesRequest(
+class _$UsersPagesRequestImpl implements _UsersPagesRequest {
+  const _$UsersPagesRequestImpl(
       {required this.userId, this.limit, this.sinceId, this.untilId});
 
-  factory _$_UsersPagesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersPagesRequestFromJson(json);
+  factory _$UsersPagesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersPagesRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -154,7 +154,7 @@ class _$_UsersPagesRequest implements _UsersPagesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersPagesRequest &&
+            other is _$UsersPagesRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -168,13 +168,13 @@ class _$_UsersPagesRequest implements _UsersPagesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersPagesRequestCopyWith<_$_UsersPagesRequest> get copyWith =>
-      __$$_UsersPagesRequestCopyWithImpl<_$_UsersPagesRequest>(
+  _$$UsersPagesRequestImplCopyWith<_$UsersPagesRequestImpl> get copyWith =>
+      __$$UsersPagesRequestImplCopyWithImpl<_$UsersPagesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersPagesRequestToJson(
+    return _$$UsersPagesRequestImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _UsersPagesRequest implements UsersPagesRequest {
       {required final String userId,
       final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_UsersPagesRequest;
+      final String? untilId}) = _$UsersPagesRequestImpl;
 
   factory _UsersPagesRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersPagesRequest.fromJson;
+      _$UsersPagesRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -200,6 +200,6 @@ abstract class _UsersPagesRequest implements UsersPagesRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersPagesRequestCopyWith<_$_UsersPagesRequest> get copyWith =>
+  _$$UsersPagesRequestImplCopyWith<_$UsersPagesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

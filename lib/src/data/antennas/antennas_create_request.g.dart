@@ -6,9 +6,9 @@ part of 'antennas_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AntennasCreateRequest _$$_AntennasCreateRequestFromJson(
+_$AntennasCreateRequestImpl _$$AntennasCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AntennasCreateRequest(
+    _$AntennasCreateRequestImpl(
       name: json['name'] as String,
       src: $enumDecode(_$AntennaSourceEnumMap, json['src']),
       userListId: json['userListId'] as String?,
@@ -26,8 +26,8 @@ _$_AntennasCreateRequest _$$_AntennasCreateRequestFromJson(
       localOnly: json['localOnly'] as bool?,
     );
 
-Map<String, dynamic> _$$_AntennasCreateRequestToJson(
-        _$_AntennasCreateRequest instance) =>
+Map<String, dynamic> _$$AntennasCreateRequestImplToJson(
+        _$AntennasCreateRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'src': _$AntennaSourceEnumMap[instance.src]!,

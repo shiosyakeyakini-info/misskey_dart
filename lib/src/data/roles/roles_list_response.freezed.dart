@@ -172,11 +172,11 @@ class _$RolesListResponseCopyWithImpl<$Res, $Val extends RolesListResponse>
 }
 
 /// @nodoc
-abstract class _$$_RolesListResponseCopyWith<$Res>
+abstract class _$$RolesListResponseImplCopyWith<$Res>
     implements $RolesListResponseCopyWith<$Res> {
-  factory _$$_RolesListResponseCopyWith(_$_RolesListResponse value,
-          $Res Function(_$_RolesListResponse) then) =
-      __$$_RolesListResponseCopyWithImpl<$Res>;
+  factory _$$RolesListResponseImplCopyWith(_$RolesListResponseImpl value,
+          $Res Function(_$RolesListResponseImpl) then) =
+      __$$RolesListResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -199,11 +199,11 @@ abstract class _$$_RolesListResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RolesListResponseCopyWithImpl<$Res>
-    extends _$RolesListResponseCopyWithImpl<$Res, _$_RolesListResponse>
-    implements _$$_RolesListResponseCopyWith<$Res> {
-  __$$_RolesListResponseCopyWithImpl(
-      _$_RolesListResponse _value, $Res Function(_$_RolesListResponse) _then)
+class __$$RolesListResponseImplCopyWithImpl<$Res>
+    extends _$RolesListResponseCopyWithImpl<$Res, _$RolesListResponseImpl>
+    implements _$$RolesListResponseImplCopyWith<$Res> {
+  __$$RolesListResponseImplCopyWithImpl(_$RolesListResponseImpl _value,
+      $Res Function(_$RolesListResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -226,7 +226,7 @@ class __$$_RolesListResponseCopyWithImpl<$Res>
     Object? displayOrder = null,
     Object? usersCount = null,
   }) {
-    return _then(_$_RolesListResponse(
+    return _then(_$RolesListResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -297,8 +297,8 @@ class __$$_RolesListResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RolesListResponse implements _RolesListResponse {
-  const _$_RolesListResponse(
+class _$RolesListResponseImpl implements _RolesListResponse {
+  const _$RolesListResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @DateTimeConverter() required this.updatedAt,
@@ -316,8 +316,8 @@ class _$_RolesListResponse implements _RolesListResponse {
       required this.displayOrder,
       required this.usersCount});
 
-  factory _$_RolesListResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_RolesListResponseFromJson(json);
+  factory _$RolesListResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RolesListResponseImplFromJson(json);
 
   @override
   final String id;
@@ -365,7 +365,7 @@ class _$_RolesListResponse implements _RolesListResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RolesListResponse &&
+            other is _$RolesListResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -419,13 +419,13 @@ class _$_RolesListResponse implements _RolesListResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RolesListResponseCopyWith<_$_RolesListResponse> get copyWith =>
-      __$$_RolesListResponseCopyWithImpl<_$_RolesListResponse>(
+  _$$RolesListResponseImplCopyWith<_$RolesListResponseImpl> get copyWith =>
+      __$$RolesListResponseImplCopyWithImpl<_$RolesListResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RolesListResponseToJson(
+    return _$$RolesListResponseImplToJson(
       this,
     );
   }
@@ -448,10 +448,10 @@ abstract class _RolesListResponse implements RolesListResponse {
       required final bool asBadge,
       required final bool canEditMembersByModerator,
       required final int displayOrder,
-      required final int usersCount}) = _$_RolesListResponse;
+      required final int usersCount}) = _$RolesListResponseImpl;
 
   factory _RolesListResponse.fromJson(Map<String, dynamic> json) =
-      _$_RolesListResponse.fromJson;
+      _$RolesListResponseImpl.fromJson;
 
   @override
   String get id;
@@ -491,6 +491,6 @@ abstract class _RolesListResponse implements RolesListResponse {
   int get usersCount;
   @override
   @JsonKey(ignore: true)
-  _$$_RolesListResponseCopyWith<_$_RolesListResponse> get copyWith =>
+  _$$RolesListResponseImplCopyWith<_$RolesListResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

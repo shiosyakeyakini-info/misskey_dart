@@ -219,12 +219,12 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FederationShowInstanceResponseCopyWith<$Res>
+abstract class _$$FederationShowInstanceResponseImplCopyWith<$Res>
     implements $FederationShowInstanceResponseCopyWith<$Res> {
-  factory _$$_FederationShowInstanceResponseCopyWith(
-          _$_FederationShowInstanceResponse value,
-          $Res Function(_$_FederationShowInstanceResponse) then) =
-      __$$_FederationShowInstanceResponseCopyWithImpl<$Res>;
+  factory _$$FederationShowInstanceResponseImplCopyWith(
+          _$FederationShowInstanceResponseImpl value,
+          $Res Function(_$FederationShowInstanceResponseImpl) then) =
+      __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -253,13 +253,13 @@ abstract class _$$_FederationShowInstanceResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FederationShowInstanceResponseCopyWithImpl<$Res>
+class __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>
     extends _$FederationShowInstanceResponseCopyWithImpl<$Res,
-        _$_FederationShowInstanceResponse>
-    implements _$$_FederationShowInstanceResponseCopyWith<$Res> {
-  __$$_FederationShowInstanceResponseCopyWithImpl(
-      _$_FederationShowInstanceResponse _value,
-      $Res Function(_$_FederationShowInstanceResponse) _then)
+        _$FederationShowInstanceResponseImpl>
+    implements _$$FederationShowInstanceResponseImplCopyWith<$Res> {
+  __$$FederationShowInstanceResponseImplCopyWithImpl(
+      _$FederationShowInstanceResponseImpl _value,
+      $Res Function(_$FederationShowInstanceResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -288,7 +288,7 @@ class __$$_FederationShowInstanceResponseCopyWithImpl<$Res>
     Object? themeColor = freezed,
     Object? infoUpdatedAt = null,
   }) {
-    return _then(_$_FederationShowInstanceResponse(
+    return _then(_$FederationShowInstanceResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -383,9 +383,9 @@ class __$$_FederationShowInstanceResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FederationShowInstanceResponse
+class _$FederationShowInstanceResponseImpl
     implements _FederationShowInstanceResponse {
-  const _$_FederationShowInstanceResponse(
+  const _$FederationShowInstanceResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.firstRetrievedAt,
       required this.host,
@@ -409,9 +409,9 @@ class _$_FederationShowInstanceResponse
       @NullableColorConverter() this.themeColor,
       @DateTimeConverter() required this.infoUpdatedAt});
 
-  factory _$_FederationShowInstanceResponse.fromJson(
+  factory _$FederationShowInstanceResponseImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_FederationShowInstanceResponseFromJson(json);
+      _$$FederationShowInstanceResponseImplFromJson(json);
 
   @override
   final String id;
@@ -472,7 +472,7 @@ class _$_FederationShowInstanceResponse
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FederationShowInstanceResponse &&
+            other is _$FederationShowInstanceResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.firstRetrievedAt, firstRetrievedAt) ||
                 other.firstRetrievedAt == firstRetrievedAt) &&
@@ -546,13 +546,14 @@ class _$_FederationShowInstanceResponse
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FederationShowInstanceResponseCopyWith<_$_FederationShowInstanceResponse>
-      get copyWith => __$$_FederationShowInstanceResponseCopyWithImpl<
-          _$_FederationShowInstanceResponse>(this, _$identity);
+  _$$FederationShowInstanceResponseImplCopyWith<
+          _$FederationShowInstanceResponseImpl>
+      get copyWith => __$$FederationShowInstanceResponseImplCopyWithImpl<
+          _$FederationShowInstanceResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FederationShowInstanceResponseToJson(
+    return _$$FederationShowInstanceResponseImplToJson(
       this,
     );
   }
@@ -583,10 +584,10 @@ abstract class _FederationShowInstanceResponse
           @NullableUriConverter() final Uri? faviconUrl,
           @NullableColorConverter() final int? themeColor,
           @DateTimeConverter() required final DateTime infoUpdatedAt}) =
-      _$_FederationShowInstanceResponse;
+      _$FederationShowInstanceResponseImpl;
 
   factory _FederationShowInstanceResponse.fromJson(Map<String, dynamic> json) =
-      _$_FederationShowInstanceResponse.fromJson;
+      _$FederationShowInstanceResponseImpl.fromJson;
 
   @override
   String get id;
@@ -639,6 +640,7 @@ abstract class _FederationShowInstanceResponse
   DateTime get infoUpdatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_FederationShowInstanceResponseCopyWith<_$_FederationShowInstanceResponse>
+  _$$FederationShowInstanceResponseImplCopyWith<
+          _$FederationShowInstanceResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

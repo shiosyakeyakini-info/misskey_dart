@@ -80,22 +80,22 @@ class _$NotesRenoteRequestCopyWithImpl<$Res, $Val extends NotesRenoteRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesRenoteRequestCopyWith<$Res>
+abstract class _$$NotesRenoteRequestImplCopyWith<$Res>
     implements $NotesRenoteRequestCopyWith<$Res> {
-  factory _$$_NotesRenoteRequestCopyWith(_$_NotesRenoteRequest value,
-          $Res Function(_$_NotesRenoteRequest) then) =
-      __$$_NotesRenoteRequestCopyWithImpl<$Res>;
+  factory _$$NotesRenoteRequestImplCopyWith(_$NotesRenoteRequestImpl value,
+          $Res Function(_$NotesRenoteRequestImpl) then) =
+      __$$NotesRenoteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$_NotesRenoteRequestCopyWithImpl<$Res>
-    extends _$NotesRenoteRequestCopyWithImpl<$Res, _$_NotesRenoteRequest>
-    implements _$$_NotesRenoteRequestCopyWith<$Res> {
-  __$$_NotesRenoteRequestCopyWithImpl(
-      _$_NotesRenoteRequest _value, $Res Function(_$_NotesRenoteRequest) _then)
+class __$$NotesRenoteRequestImplCopyWithImpl<$Res>
+    extends _$NotesRenoteRequestCopyWithImpl<$Res, _$NotesRenoteRequestImpl>
+    implements _$$NotesRenoteRequestImplCopyWith<$Res> {
+  __$$NotesRenoteRequestImplCopyWithImpl(_$NotesRenoteRequestImpl _value,
+      $Res Function(_$NotesRenoteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_NotesRenoteRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_NotesRenoteRequest(
+    return _then(_$NotesRenoteRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_NotesRenoteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesRenoteRequest implements _NotesRenoteRequest {
-  const _$_NotesRenoteRequest(
+class _$NotesRenoteRequestImpl implements _NotesRenoteRequest {
+  const _$NotesRenoteRequestImpl(
       {required this.noteId, this.limit, this.sinceId, this.untilId});
 
-  factory _$_NotesRenoteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesRenoteRequestFromJson(json);
+  factory _$NotesRenoteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesRenoteRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -154,7 +154,7 @@ class _$_NotesRenoteRequest implements _NotesRenoteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesRenoteRequest &&
+            other is _$NotesRenoteRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -168,13 +168,13 @@ class _$_NotesRenoteRequest implements _NotesRenoteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesRenoteRequestCopyWith<_$_NotesRenoteRequest> get copyWith =>
-      __$$_NotesRenoteRequestCopyWithImpl<_$_NotesRenoteRequest>(
+  _$$NotesRenoteRequestImplCopyWith<_$NotesRenoteRequestImpl> get copyWith =>
+      __$$NotesRenoteRequestImplCopyWithImpl<_$NotesRenoteRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesRenoteRequestToJson(
+    return _$$NotesRenoteRequestImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _NotesRenoteRequest implements NotesRenoteRequest {
       {required final String noteId,
       final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_NotesRenoteRequest;
+      final String? untilId}) = _$NotesRenoteRequestImpl;
 
   factory _NotesRenoteRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesRenoteRequest.fromJson;
+      _$NotesRenoteRequestImpl.fromJson;
 
   @override
   String get noteId;
@@ -200,6 +200,6 @@ abstract class _NotesRenoteRequest implements NotesRenoteRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesRenoteRequestCopyWith<_$_NotesRenoteRequest> get copyWith =>
+  _$$NotesRenoteRequestImplCopyWith<_$NotesRenoteRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -137,12 +137,12 @@ class _$FederationShowInstanceRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FederationShowInstanceRequestCopyWith<$Res>
+abstract class _$$FederationShowInstanceRequestImplCopyWith<$Res>
     implements $FederationShowInstanceRequestCopyWith<$Res> {
-  factory _$$_FederationShowInstanceRequestCopyWith(
-          _$_FederationShowInstanceRequest value,
-          $Res Function(_$_FederationShowInstanceRequest) then) =
-      __$$_FederationShowInstanceRequestCopyWithImpl<$Res>;
+  factory _$$FederationShowInstanceRequestImplCopyWith(
+          _$FederationShowInstanceRequestImpl value,
+          $Res Function(_$FederationShowInstanceRequestImpl) then) =
+      __$$FederationShowInstanceRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -160,13 +160,13 @@ abstract class _$$_FederationShowInstanceRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FederationShowInstanceRequestCopyWithImpl<$Res>
+class __$$FederationShowInstanceRequestImplCopyWithImpl<$Res>
     extends _$FederationShowInstanceRequestCopyWithImpl<$Res,
-        _$_FederationShowInstanceRequest>
-    implements _$$_FederationShowInstanceRequestCopyWith<$Res> {
-  __$$_FederationShowInstanceRequestCopyWithImpl(
-      _$_FederationShowInstanceRequest _value,
-      $Res Function(_$_FederationShowInstanceRequest) _then)
+        _$FederationShowInstanceRequestImpl>
+    implements _$$FederationShowInstanceRequestImplCopyWith<$Res> {
+  __$$FederationShowInstanceRequestImplCopyWithImpl(
+      _$FederationShowInstanceRequestImpl _value,
+      $Res Function(_$FederationShowInstanceRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -184,7 +184,7 @@ class __$$_FederationShowInstanceRequestCopyWithImpl<$Res>
     Object? offset = freezed,
     Object? sort = freezed,
   }) {
-    return _then(_$_FederationShowInstanceRequest(
+    return _then(_$FederationShowInstanceRequestImpl(
       host: null == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
@@ -235,9 +235,9 @@ class __$$_FederationShowInstanceRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FederationShowInstanceRequest
+class _$FederationShowInstanceRequestImpl
     implements _FederationShowInstanceRequest {
-  const _$_FederationShowInstanceRequest(
+  const _$FederationShowInstanceRequestImpl(
       {required this.host,
       this.blocked,
       this.notResponding,
@@ -250,9 +250,9 @@ class _$_FederationShowInstanceRequest
       this.offset,
       this.sort});
 
-  factory _$_FederationShowInstanceRequest.fromJson(
+  factory _$FederationShowInstanceRequestImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_FederationShowInstanceRequestFromJson(json);
+      _$$FederationShowInstanceRequestImplFromJson(json);
 
   @override
   final String host;
@@ -286,7 +286,7 @@ class _$_FederationShowInstanceRequest
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FederationShowInstanceRequest &&
+            other is _$FederationShowInstanceRequestImpl &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.blocked, blocked) || other.blocked == blocked) &&
             (identical(other.notResponding, notResponding) ||
@@ -325,13 +325,14 @@ class _$_FederationShowInstanceRequest
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FederationShowInstanceRequestCopyWith<_$_FederationShowInstanceRequest>
-      get copyWith => __$$_FederationShowInstanceRequestCopyWithImpl<
-          _$_FederationShowInstanceRequest>(this, _$identity);
+  _$$FederationShowInstanceRequestImplCopyWith<
+          _$FederationShowInstanceRequestImpl>
+      get copyWith => __$$FederationShowInstanceRequestImplCopyWithImpl<
+          _$FederationShowInstanceRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FederationShowInstanceRequestToJson(
+    return _$$FederationShowInstanceRequestImplToJson(
       this,
     );
   }
@@ -350,10 +351,10 @@ abstract class _FederationShowInstanceRequest
       final bool? publishing,
       final int? limit,
       final int? offset,
-      final String? sort}) = _$_FederationShowInstanceRequest;
+      final String? sort}) = _$FederationShowInstanceRequestImpl;
 
   factory _FederationShowInstanceRequest.fromJson(Map<String, dynamic> json) =
-      _$_FederationShowInstanceRequest.fromJson;
+      _$FederationShowInstanceRequestImpl.fromJson;
 
   @override
   String get host;
@@ -379,6 +380,7 @@ abstract class _FederationShowInstanceRequest
   String? get sort;
   @override
   @JsonKey(ignore: true)
-  _$$_FederationShowInstanceRequestCopyWith<_$_FederationShowInstanceRequest>
+  _$$FederationShowInstanceRequestImplCopyWith<
+          _$FederationShowInstanceRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

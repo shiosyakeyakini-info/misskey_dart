@@ -74,22 +74,22 @@ class _$ClipsCreateRequestCopyWithImpl<$Res, $Val extends ClipsCreateRequest>
 }
 
 /// @nodoc
-abstract class _$$_ClipsCreateRequestCopyWith<$Res>
+abstract class _$$ClipsCreateRequestImplCopyWith<$Res>
     implements $ClipsCreateRequestCopyWith<$Res> {
-  factory _$$_ClipsCreateRequestCopyWith(_$_ClipsCreateRequest value,
-          $Res Function(_$_ClipsCreateRequest) then) =
-      __$$_ClipsCreateRequestCopyWithImpl<$Res>;
+  factory _$$ClipsCreateRequestImplCopyWith(_$ClipsCreateRequestImpl value,
+          $Res Function(_$ClipsCreateRequestImpl) then) =
+      __$$ClipsCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, bool? isPublic, String? description});
 }
 
 /// @nodoc
-class __$$_ClipsCreateRequestCopyWithImpl<$Res>
-    extends _$ClipsCreateRequestCopyWithImpl<$Res, _$_ClipsCreateRequest>
-    implements _$$_ClipsCreateRequestCopyWith<$Res> {
-  __$$_ClipsCreateRequestCopyWithImpl(
-      _$_ClipsCreateRequest _value, $Res Function(_$_ClipsCreateRequest) _then)
+class __$$ClipsCreateRequestImplCopyWithImpl<$Res>
+    extends _$ClipsCreateRequestCopyWithImpl<$Res, _$ClipsCreateRequestImpl>
+    implements _$$ClipsCreateRequestImplCopyWith<$Res> {
+  __$$ClipsCreateRequestImplCopyWithImpl(_$ClipsCreateRequestImpl _value,
+      $Res Function(_$ClipsCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_ClipsCreateRequestCopyWithImpl<$Res>
     Object? isPublic = freezed,
     Object? description = freezed,
   }) {
-    return _then(_$_ClipsCreateRequest(
+    return _then(_$ClipsCreateRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -118,12 +118,12 @@ class __$$_ClipsCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsCreateRequest implements _ClipsCreateRequest {
-  const _$_ClipsCreateRequest(
+class _$ClipsCreateRequestImpl implements _ClipsCreateRequest {
+  const _$ClipsCreateRequestImpl(
       {required this.name, this.isPublic, this.description});
 
-  factory _$_ClipsCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsCreateRequestFromJson(json);
+  factory _$ClipsCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsCreateRequestImplFromJson(json);
 
   @override
   final String name;
@@ -141,7 +141,7 @@ class _$_ClipsCreateRequest implements _ClipsCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsCreateRequest &&
+            other is _$ClipsCreateRequestImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.isPublic, isPublic) ||
                 other.isPublic == isPublic) &&
@@ -156,13 +156,13 @@ class _$_ClipsCreateRequest implements _ClipsCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsCreateRequestCopyWith<_$_ClipsCreateRequest> get copyWith =>
-      __$$_ClipsCreateRequestCopyWithImpl<_$_ClipsCreateRequest>(
+  _$$ClipsCreateRequestImplCopyWith<_$ClipsCreateRequestImpl> get copyWith =>
+      __$$ClipsCreateRequestImplCopyWithImpl<_$ClipsCreateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsCreateRequestToJson(
+    return _$$ClipsCreateRequestImplToJson(
       this,
     );
   }
@@ -172,10 +172,10 @@ abstract class _ClipsCreateRequest implements ClipsCreateRequest {
   const factory _ClipsCreateRequest(
       {required final String name,
       final bool? isPublic,
-      final String? description}) = _$_ClipsCreateRequest;
+      final String? description}) = _$ClipsCreateRequestImpl;
 
   factory _ClipsCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsCreateRequest.fromJson;
+      _$ClipsCreateRequestImpl.fromJson;
 
   @override
   String get name;
@@ -185,6 +185,6 @@ abstract class _ClipsCreateRequest implements ClipsCreateRequest {
   String? get description;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsCreateRequestCopyWith<_$_ClipsCreateRequest> get copyWith =>
+  _$$ClipsCreateRequestImplCopyWith<_$ClipsCreateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

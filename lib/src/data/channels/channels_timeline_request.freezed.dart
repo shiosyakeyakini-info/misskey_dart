@@ -103,11 +103,12 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsTimelineRequestCopyWith<$Res>
+abstract class _$$ChannelsTimelineRequestImplCopyWith<$Res>
     implements $ChannelsTimelineRequestCopyWith<$Res> {
-  factory _$$_ChannelsTimelineRequestCopyWith(_$_ChannelsTimelineRequest value,
-          $Res Function(_$_ChannelsTimelineRequest) then) =
-      __$$_ChannelsTimelineRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsTimelineRequestImplCopyWith(
+          _$ChannelsTimelineRequestImpl value,
+          $Res Function(_$ChannelsTimelineRequestImpl) then) =
+      __$$ChannelsTimelineRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -120,12 +121,13 @@ abstract class _$$_ChannelsTimelineRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ChannelsTimelineRequestCopyWithImpl<$Res>
+class __$$ChannelsTimelineRequestImplCopyWithImpl<$Res>
     extends _$ChannelsTimelineRequestCopyWithImpl<$Res,
-        _$_ChannelsTimelineRequest>
-    implements _$$_ChannelsTimelineRequestCopyWith<$Res> {
-  __$$_ChannelsTimelineRequestCopyWithImpl(_$_ChannelsTimelineRequest _value,
-      $Res Function(_$_ChannelsTimelineRequest) _then)
+        _$ChannelsTimelineRequestImpl>
+    implements _$$ChannelsTimelineRequestImplCopyWith<$Res> {
+  __$$ChannelsTimelineRequestImplCopyWithImpl(
+      _$ChannelsTimelineRequestImpl _value,
+      $Res Function(_$ChannelsTimelineRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -138,7 +140,7 @@ class __$$_ChannelsTimelineRequestCopyWithImpl<$Res>
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
   }) {
-    return _then(_$_ChannelsTimelineRequest(
+    return _then(_$ChannelsTimelineRequestImpl(
       channelId: null == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -169,8 +171,8 @@ class __$$_ChannelsTimelineRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
-  const _$_ChannelsTimelineRequest(
+class _$ChannelsTimelineRequestImpl implements _ChannelsTimelineRequest {
+  const _$ChannelsTimelineRequestImpl(
       {required this.channelId,
       @Assert('limit > 0') this.limit,
       this.sinceId,
@@ -178,8 +180,8 @@ class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
 
-  factory _$_ChannelsTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsTimelineRequestFromJson(json);
+  factory _$ChannelsTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsTimelineRequestImplFromJson(json);
 
   @override
   final String channelId;
@@ -206,7 +208,7 @@ class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsTimelineRequest &&
+            other is _$ChannelsTimelineRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -226,14 +228,13 @@ class _$_ChannelsTimelineRequest implements _ChannelsTimelineRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsTimelineRequestCopyWith<_$_ChannelsTimelineRequest>
-      get copyWith =>
-          __$$_ChannelsTimelineRequestCopyWithImpl<_$_ChannelsTimelineRequest>(
-              this, _$identity);
+  _$$ChannelsTimelineRequestImplCopyWith<_$ChannelsTimelineRequestImpl>
+      get copyWith => __$$ChannelsTimelineRequestImplCopyWithImpl<
+          _$ChannelsTimelineRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsTimelineRequestToJson(
+    return _$$ChannelsTimelineRequestImplToJson(
       this,
     );
   }
@@ -247,10 +248,10 @@ abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? untilDate}) = _$_ChannelsTimelineRequest;
+      final DateTime? untilDate}) = _$ChannelsTimelineRequestImpl;
 
   factory _ChannelsTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsTimelineRequest.fromJson;
+      _$ChannelsTimelineRequestImpl.fromJson;
 
   @override
   String get channelId;
@@ -269,6 +270,6 @@ abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
   DateTime? get untilDate;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsTimelineRequestCopyWith<_$_ChannelsTimelineRequest>
+  _$$ChannelsTimelineRequestImplCopyWith<_$ChannelsTimelineRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

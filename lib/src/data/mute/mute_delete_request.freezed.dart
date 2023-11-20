@@ -62,22 +62,22 @@ class _$MuteDeleteRequestCopyWithImpl<$Res, $Val extends MuteDeleteRequest>
 }
 
 /// @nodoc
-abstract class _$$_MuteDeleteRequestCopyWith<$Res>
+abstract class _$$MuteDeleteRequestImplCopyWith<$Res>
     implements $MuteDeleteRequestCopyWith<$Res> {
-  factory _$$_MuteDeleteRequestCopyWith(_$_MuteDeleteRequest value,
-          $Res Function(_$_MuteDeleteRequest) then) =
-      __$$_MuteDeleteRequestCopyWithImpl<$Res>;
+  factory _$$MuteDeleteRequestImplCopyWith(_$MuteDeleteRequestImpl value,
+          $Res Function(_$MuteDeleteRequestImpl) then) =
+      __$$MuteDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$_MuteDeleteRequestCopyWithImpl<$Res>
-    extends _$MuteDeleteRequestCopyWithImpl<$Res, _$_MuteDeleteRequest>
-    implements _$$_MuteDeleteRequestCopyWith<$Res> {
-  __$$_MuteDeleteRequestCopyWithImpl(
-      _$_MuteDeleteRequest _value, $Res Function(_$_MuteDeleteRequest) _then)
+class __$$MuteDeleteRequestImplCopyWithImpl<$Res>
+    extends _$MuteDeleteRequestCopyWithImpl<$Res, _$MuteDeleteRequestImpl>
+    implements _$$MuteDeleteRequestImplCopyWith<$Res> {
+  __$$MuteDeleteRequestImplCopyWithImpl(_$MuteDeleteRequestImpl _value,
+      $Res Function(_$MuteDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_MuteDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$_MuteDeleteRequest(
+    return _then(_$MuteDeleteRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_MuteDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MuteDeleteRequest implements _MuteDeleteRequest {
-  const _$_MuteDeleteRequest({required this.userId});
+class _$MuteDeleteRequestImpl implements _MuteDeleteRequest {
+  const _$MuteDeleteRequestImpl({required this.userId});
 
-  factory _$_MuteDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_MuteDeleteRequestFromJson(json);
+  factory _$MuteDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MuteDeleteRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -114,7 +114,7 @@ class _$_MuteDeleteRequest implements _MuteDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MuteDeleteRequest &&
+            other is _$MuteDeleteRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
@@ -125,13 +125,13 @@ class _$_MuteDeleteRequest implements _MuteDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MuteDeleteRequestCopyWith<_$_MuteDeleteRequest> get copyWith =>
-      __$$_MuteDeleteRequestCopyWithImpl<_$_MuteDeleteRequest>(
+  _$$MuteDeleteRequestImplCopyWith<_$MuteDeleteRequestImpl> get copyWith =>
+      __$$MuteDeleteRequestImplCopyWithImpl<_$MuteDeleteRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MuteDeleteRequestToJson(
+    return _$$MuteDeleteRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_MuteDeleteRequest implements _MuteDeleteRequest {
 
 abstract class _MuteDeleteRequest implements MuteDeleteRequest {
   const factory _MuteDeleteRequest({required final String userId}) =
-      _$_MuteDeleteRequest;
+      _$MuteDeleteRequestImpl;
 
   factory _MuteDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_MuteDeleteRequest.fromJson;
+      _$MuteDeleteRequestImpl.fromJson;
 
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_MuteDeleteRequestCopyWith<_$_MuteDeleteRequest> get copyWith =>
+  _$$MuteDeleteRequestImplCopyWith<_$MuteDeleteRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

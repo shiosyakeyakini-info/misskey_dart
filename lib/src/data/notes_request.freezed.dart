@@ -112,11 +112,11 @@ class _$NotesRequestCopyWithImpl<$Res, $Val extends NotesRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesRequestCopyWith<$Res>
+abstract class _$$NotesRequestImplCopyWith<$Res>
     implements $NotesRequestCopyWith<$Res> {
-  factory _$$_NotesRequestCopyWith(
-          _$_NotesRequest value, $Res Function(_$_NotesRequest) then) =
-      __$$_NotesRequestCopyWithImpl<$Res>;
+  factory _$$NotesRequestImplCopyWith(
+          _$NotesRequestImpl value, $Res Function(_$NotesRequestImpl) then) =
+      __$$NotesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_NotesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesRequestCopyWithImpl<$Res>
-    extends _$NotesRequestCopyWithImpl<$Res, _$_NotesRequest>
-    implements _$$_NotesRequestCopyWith<$Res> {
-  __$$_NotesRequestCopyWithImpl(
-      _$_NotesRequest _value, $Res Function(_$_NotesRequest) _then)
+class __$$NotesRequestImplCopyWithImpl<$Res>
+    extends _$NotesRequestCopyWithImpl<$Res, _$NotesRequestImpl>
+    implements _$$NotesRequestImplCopyWith<$Res> {
+  __$$NotesRequestImplCopyWithImpl(
+      _$NotesRequestImpl _value, $Res Function(_$NotesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +150,7 @@ class __$$_NotesRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_NotesRequest(
+    return _then(_$NotesRequestImpl(
       local: freezed == local
           ? _value.local
           : local // ignore: cast_nullable_to_non_nullable
@@ -189,8 +189,8 @@ class __$$_NotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesRequest implements _NotesRequest {
-  const _$_NotesRequest(
+class _$NotesRequestImpl implements _NotesRequest {
+  const _$NotesRequestImpl(
       {this.local,
       this.reply,
       this.renote,
@@ -200,8 +200,8 @@ class _$_NotesRequest implements _NotesRequest {
       this.sinceId,
       this.untilId});
 
-  factory _$_NotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesRequestFromJson(json);
+  factory _$NotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesRequestImplFromJson(json);
 
   @override
   final bool? local;
@@ -229,7 +229,7 @@ class _$_NotesRequest implements _NotesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesRequest &&
+            other is _$NotesRequestImpl &&
             (identical(other.local, local) || other.local == local) &&
             (identical(other.reply, reply) || other.reply == reply) &&
             (identical(other.renote, renote) || other.renote == renote) &&
@@ -249,12 +249,12 @@ class _$_NotesRequest implements _NotesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesRequestCopyWith<_$_NotesRequest> get copyWith =>
-      __$$_NotesRequestCopyWithImpl<_$_NotesRequest>(this, _$identity);
+  _$$NotesRequestImplCopyWith<_$NotesRequestImpl> get copyWith =>
+      __$$NotesRequestImplCopyWithImpl<_$NotesRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesRequestToJson(
+    return _$$NotesRequestImplToJson(
       this,
     );
   }
@@ -269,10 +269,10 @@ abstract class _NotesRequest implements NotesRequest {
       final bool? poll,
       final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_NotesRequest;
+      final String? untilId}) = _$NotesRequestImpl;
 
   factory _NotesRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesRequest.fromJson;
+      _$NotesRequestImpl.fromJson;
 
   @override
   bool? get local;
@@ -292,6 +292,6 @@ abstract class _NotesRequest implements NotesRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesRequestCopyWith<_$_NotesRequest> get copyWith =>
+  _$$NotesRequestImplCopyWith<_$NotesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

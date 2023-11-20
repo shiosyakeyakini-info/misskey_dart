@@ -25,6 +25,7 @@ mixin _$UsersNotesRequest {
   bool? get includeReplies => throw _privateConstructorUsedError;
   bool? get withReplies => throw _privateConstructorUsedError;
   bool? get withRenotes => throw _privateConstructorUsedError;
+  bool? get withChannelNotes => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
@@ -32,6 +33,7 @@ mixin _$UsersNotesRequest {
   int? get sinceDate => throw _privateConstructorUsedError;
   @EpocTimeDateTimeConverter.withMilliSeconds()
   int? get untilDate => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.11.1")
   bool? get includeMyRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
   List<String>? get fileType => throw _privateConstructorUsedError;
@@ -54,12 +56,13 @@ abstract class $UsersNotesRequestCopyWith<$Res> {
       @Deprecated("removed at 2023.9.2") bool? includeReplies,
       bool? withReplies,
       bool? withRenotes,
+      bool? withChannelNotes,
       int? limit,
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() int? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() int? untilDate,
-      bool? includeMyRenotes,
+      @Deprecated("removed at 2023.11.1") bool? includeMyRenotes,
       bool? withFiles,
       List<String>? fileType,
       bool? excludeNsfw});
@@ -82,6 +85,7 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
     Object? includeReplies = freezed,
     Object? withReplies = freezed,
     Object? withRenotes = freezed,
+    Object? withChannelNotes = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -108,6 +112,10 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withChannelNotes: freezed == withChannelNotes
+          ? _value.withChannelNotes
+          : withChannelNotes // ignore: cast_nullable_to_non_nullable
               as bool?,
       limit: freezed == limit
           ? _value.limit
@@ -150,11 +158,11 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
 }
 
 /// @nodoc
-abstract class _$$_UsersNotesRequestCopyWith<$Res>
+abstract class _$$UsersNotesRequestImplCopyWith<$Res>
     implements $UsersNotesRequestCopyWith<$Res> {
-  factory _$$_UsersNotesRequestCopyWith(_$_UsersNotesRequest value,
-          $Res Function(_$_UsersNotesRequest) then) =
-      __$$_UsersNotesRequestCopyWithImpl<$Res>;
+  factory _$$UsersNotesRequestImplCopyWith(_$UsersNotesRequestImpl value,
+          $Res Function(_$UsersNotesRequestImpl) then) =
+      __$$UsersNotesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -162,23 +170,24 @@ abstract class _$$_UsersNotesRequestCopyWith<$Res>
       @Deprecated("removed at 2023.9.2") bool? includeReplies,
       bool? withReplies,
       bool? withRenotes,
+      bool? withChannelNotes,
       int? limit,
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() int? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() int? untilDate,
-      bool? includeMyRenotes,
+      @Deprecated("removed at 2023.11.1") bool? includeMyRenotes,
       bool? withFiles,
       List<String>? fileType,
       bool? excludeNsfw});
 }
 
 /// @nodoc
-class __$$_UsersNotesRequestCopyWithImpl<$Res>
-    extends _$UsersNotesRequestCopyWithImpl<$Res, _$_UsersNotesRequest>
-    implements _$$_UsersNotesRequestCopyWith<$Res> {
-  __$$_UsersNotesRequestCopyWithImpl(
-      _$_UsersNotesRequest _value, $Res Function(_$_UsersNotesRequest) _then)
+class __$$UsersNotesRequestImplCopyWithImpl<$Res>
+    extends _$UsersNotesRequestCopyWithImpl<$Res, _$UsersNotesRequestImpl>
+    implements _$$UsersNotesRequestImplCopyWith<$Res> {
+  __$$UsersNotesRequestImplCopyWithImpl(_$UsersNotesRequestImpl _value,
+      $Res Function(_$UsersNotesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -188,6 +197,7 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
     Object? includeReplies = freezed,
     Object? withReplies = freezed,
     Object? withRenotes = freezed,
+    Object? withChannelNotes = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -198,7 +208,7 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
     Object? fileType = freezed,
     Object? excludeNsfw = freezed,
   }) {
-    return _then(_$_UsersNotesRequest(
+    return _then(_$UsersNotesRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -214,6 +224,10 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withChannelNotes: freezed == withChannelNotes
+          ? _value.withChannelNotes
+          : withChannelNotes // ignore: cast_nullable_to_non_nullable
               as bool?,
       limit: freezed == limit
           ? _value.limit
@@ -257,25 +271,26 @@ class __$$_UsersNotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersNotesRequest implements _UsersNotesRequest {
-  const _$_UsersNotesRequest(
+class _$UsersNotesRequestImpl implements _UsersNotesRequest {
+  const _$UsersNotesRequestImpl(
       {required this.userId,
       @Deprecated("removed at 2023.9.2") this.includeReplies,
       this.withReplies,
       this.withRenotes,
+      this.withChannelNotes,
       this.limit,
       this.sinceId,
       this.untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
-      this.includeMyRenotes,
+      @Deprecated("removed at 2023.11.1") this.includeMyRenotes,
       this.withFiles,
       final List<String>? fileType,
       this.excludeNsfw})
       : _fileType = fileType;
 
-  factory _$_UsersNotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersNotesRequestFromJson(json);
+  factory _$UsersNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersNotesRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -286,6 +301,8 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
   final bool? withReplies;
   @override
   final bool? withRenotes;
+  @override
+  final bool? withChannelNotes;
   @override
   final int? limit;
   @override
@@ -299,6 +316,7 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
   @EpocTimeDateTimeConverter.withMilliSeconds()
   final int? untilDate;
   @override
+  @Deprecated("removed at 2023.11.1")
   final bool? includeMyRenotes;
   @override
   final bool? withFiles;
@@ -317,14 +335,14 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
 
   @override
   String toString() {
-    return 'UsersNotesRequest(userId: $userId, includeReplies: $includeReplies, withReplies: $withReplies, withRenotes: $withRenotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, withFiles: $withFiles, fileType: $fileType, excludeNsfw: $excludeNsfw)';
+    return 'UsersNotesRequest(userId: $userId, includeReplies: $includeReplies, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, withFiles: $withFiles, fileType: $fileType, excludeNsfw: $excludeNsfw)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersNotesRequest &&
+            other is _$UsersNotesRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.includeReplies, includeReplies) ||
                 other.includeReplies == includeReplies) &&
@@ -332,6 +350,8 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
                 other.withReplies == withReplies) &&
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
+            (identical(other.withChannelNotes, withChannelNotes) ||
+                other.withChannelNotes == withChannelNotes) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -356,6 +376,7 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
       includeReplies,
       withReplies,
       withRenotes,
+      withChannelNotes,
       limit,
       sinceId,
       untilId,
@@ -369,13 +390,13 @@ class _$_UsersNotesRequest implements _UsersNotesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersNotesRequestCopyWith<_$_UsersNotesRequest> get copyWith =>
-      __$$_UsersNotesRequestCopyWithImpl<_$_UsersNotesRequest>(
+  _$$UsersNotesRequestImplCopyWith<_$UsersNotesRequestImpl> get copyWith =>
+      __$$UsersNotesRequestImplCopyWithImpl<_$UsersNotesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersNotesRequestToJson(
+    return _$$UsersNotesRequestImplToJson(
       this,
     );
   }
@@ -387,18 +408,19 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
       @Deprecated("removed at 2023.9.2") final bool? includeReplies,
       final bool? withReplies,
       final bool? withRenotes,
+      final bool? withChannelNotes,
       final int? limit,
       final String? sinceId,
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final int? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() final int? untilDate,
-      final bool? includeMyRenotes,
+      @Deprecated("removed at 2023.11.1") final bool? includeMyRenotes,
       final bool? withFiles,
       final List<String>? fileType,
-      final bool? excludeNsfw}) = _$_UsersNotesRequest;
+      final bool? excludeNsfw}) = _$UsersNotesRequestImpl;
 
   factory _UsersNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersNotesRequest.fromJson;
+      _$UsersNotesRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -409,6 +431,8 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
   bool? get withReplies;
   @override
   bool? get withRenotes;
+  @override
+  bool? get withChannelNotes;
   @override
   int? get limit;
   @override
@@ -422,6 +446,7 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
   @EpocTimeDateTimeConverter.withMilliSeconds()
   int? get untilDate;
   @override
+  @Deprecated("removed at 2023.11.1")
   bool? get includeMyRenotes;
   @override
   bool? get withFiles;
@@ -431,6 +456,6 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
   bool? get excludeNsfw;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersNotesRequestCopyWith<_$_UsersNotesRequest> get copyWith =>
+  _$$UsersNotesRequestImplCopyWith<_$UsersNotesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

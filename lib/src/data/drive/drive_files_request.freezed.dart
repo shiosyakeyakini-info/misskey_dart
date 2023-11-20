@@ -91,11 +91,11 @@ class _$DriveFilesRequestCopyWithImpl<$Res, $Val extends DriveFilesRequest>
 }
 
 /// @nodoc
-abstract class _$$_DriveFilesRequestCopyWith<$Res>
+abstract class _$$DriveFilesRequestImplCopyWith<$Res>
     implements $DriveFilesRequestCopyWith<$Res> {
-  factory _$$_DriveFilesRequestCopyWith(_$_DriveFilesRequest value,
-          $Res Function(_$_DriveFilesRequest) then) =
-      __$$_DriveFilesRequestCopyWithImpl<$Res>;
+  factory _$$DriveFilesRequestImplCopyWith(_$DriveFilesRequestImpl value,
+          $Res Function(_$DriveFilesRequestImpl) then) =
+      __$$DriveFilesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -107,11 +107,11 @@ abstract class _$$_DriveFilesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DriveFilesRequestCopyWithImpl<$Res>
-    extends _$DriveFilesRequestCopyWithImpl<$Res, _$_DriveFilesRequest>
-    implements _$$_DriveFilesRequestCopyWith<$Res> {
-  __$$_DriveFilesRequestCopyWithImpl(
-      _$_DriveFilesRequest _value, $Res Function(_$_DriveFilesRequest) _then)
+class __$$DriveFilesRequestImplCopyWithImpl<$Res>
+    extends _$DriveFilesRequestCopyWithImpl<$Res, _$DriveFilesRequestImpl>
+    implements _$$DriveFilesRequestImplCopyWith<$Res> {
+  __$$DriveFilesRequestImplCopyWithImpl(_$DriveFilesRequestImpl _value,
+      $Res Function(_$DriveFilesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +123,7 @@ class __$$_DriveFilesRequestCopyWithImpl<$Res>
     Object? folderId = freezed,
     Object? type = freezed,
   }) {
-    return _then(_$_DriveFilesRequest(
+    return _then(_$DriveFilesRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -150,12 +150,12 @@ class __$$_DriveFilesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFilesRequest implements _DriveFilesRequest {
-  const _$_DriveFilesRequest(
+class _$DriveFilesRequestImpl implements _DriveFilesRequest {
+  const _$DriveFilesRequestImpl(
       {this.limit, this.sinceId, this.untilId, this.folderId, this.type});
 
-  factory _$_DriveFilesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFilesRequestFromJson(json);
+  factory _$DriveFilesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFilesRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -177,7 +177,7 @@ class _$_DriveFilesRequest implements _DriveFilesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFilesRequest &&
+            other is _$DriveFilesRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -194,13 +194,13 @@ class _$_DriveFilesRequest implements _DriveFilesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFilesRequestCopyWith<_$_DriveFilesRequest> get copyWith =>
-      __$$_DriveFilesRequestCopyWithImpl<_$_DriveFilesRequest>(
+  _$$DriveFilesRequestImplCopyWith<_$DriveFilesRequestImpl> get copyWith =>
+      __$$DriveFilesRequestImplCopyWithImpl<_$DriveFilesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFilesRequestToJson(
+    return _$$DriveFilesRequestImplToJson(
       this,
     );
   }
@@ -212,10 +212,10 @@ abstract class _DriveFilesRequest implements DriveFilesRequest {
       final String? sinceId,
       final String? untilId,
       final String? folderId,
-      final String? type}) = _$_DriveFilesRequest;
+      final String? type}) = _$DriveFilesRequestImpl;
 
   factory _DriveFilesRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriveFilesRequest.fromJson;
+      _$DriveFilesRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -229,6 +229,6 @@ abstract class _DriveFilesRequest implements DriveFilesRequest {
   String? get type;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFilesRequestCopyWith<_$_DriveFilesRequest> get copyWith =>
+  _$$DriveFilesRequestImplCopyWith<_$DriveFilesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

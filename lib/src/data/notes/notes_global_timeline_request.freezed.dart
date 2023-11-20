@@ -139,12 +139,12 @@ class _$NotesGlobalTimelineRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesGlobalTimelineRequestCopyWith<$Res>
+abstract class _$$NotesGlobalTimelineRequestImplCopyWith<$Res>
     implements $NotesGlobalTimelineRequestCopyWith<$Res> {
-  factory _$$_NotesGlobalTimelineRequestCopyWith(
-          _$_NotesGlobalTimelineRequest value,
-          $Res Function(_$_NotesGlobalTimelineRequest) then) =
-      __$$_NotesGlobalTimelineRequestCopyWithImpl<$Res>;
+  factory _$$NotesGlobalTimelineRequestImplCopyWith(
+          _$NotesGlobalTimelineRequestImpl value,
+          $Res Function(_$NotesGlobalTimelineRequestImpl) then) =
+      __$$NotesGlobalTimelineRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -162,13 +162,13 @@ abstract class _$$_NotesGlobalTimelineRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesGlobalTimelineRequestCopyWithImpl<$Res>
+class __$$NotesGlobalTimelineRequestImplCopyWithImpl<$Res>
     extends _$NotesGlobalTimelineRequestCopyWithImpl<$Res,
-        _$_NotesGlobalTimelineRequest>
-    implements _$$_NotesGlobalTimelineRequestCopyWith<$Res> {
-  __$$_NotesGlobalTimelineRequestCopyWithImpl(
-      _$_NotesGlobalTimelineRequest _value,
-      $Res Function(_$_NotesGlobalTimelineRequest) _then)
+        _$NotesGlobalTimelineRequestImpl>
+    implements _$$NotesGlobalTimelineRequestImplCopyWith<$Res> {
+  __$$NotesGlobalTimelineRequestImplCopyWithImpl(
+      _$NotesGlobalTimelineRequestImpl _value,
+      $Res Function(_$NotesGlobalTimelineRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -186,7 +186,7 @@ class __$$_NotesGlobalTimelineRequestCopyWithImpl<$Res>
     Object? withRenotes = freezed,
     Object? withReplies = freezed,
   }) {
-    return _then(_$_NotesGlobalTimelineRequest(
+    return _then(_$NotesGlobalTimelineRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -237,8 +237,8 @@ class __$$_NotesGlobalTimelineRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
-  const _$_NotesGlobalTimelineRequest(
+class _$NotesGlobalTimelineRequestImpl implements _NotesGlobalTimelineRequest {
+  const _$NotesGlobalTimelineRequestImpl(
       {this.limit,
       this.sinceId,
       this.untilId,
@@ -251,8 +251,9 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
       this.withRenotes,
       @Deprecated("removed at 2023.10.0") this.withReplies});
 
-  factory _$_NotesGlobalTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesGlobalTimelineRequestFromJson(json);
+  factory _$NotesGlobalTimelineRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$NotesGlobalTimelineRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -289,7 +290,7 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesGlobalTimelineRequest &&
+            other is _$NotesGlobalTimelineRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -330,13 +331,13 @@ class _$_NotesGlobalTimelineRequest implements _NotesGlobalTimelineRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesGlobalTimelineRequestCopyWith<_$_NotesGlobalTimelineRequest>
-      get copyWith => __$$_NotesGlobalTimelineRequestCopyWithImpl<
-          _$_NotesGlobalTimelineRequest>(this, _$identity);
+  _$$NotesGlobalTimelineRequestImplCopyWith<_$NotesGlobalTimelineRequestImpl>
+      get copyWith => __$$NotesGlobalTimelineRequestImplCopyWithImpl<
+          _$NotesGlobalTimelineRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesGlobalTimelineRequestToJson(
+    return _$$NotesGlobalTimelineRequestImplToJson(
       this,
     );
   }
@@ -356,10 +357,10 @@ abstract class _NotesGlobalTimelineRequest
       final bool? withFiles,
       final bool? withRenotes,
       @Deprecated("removed at 2023.10.0")
-      final bool? withReplies}) = _$_NotesGlobalTimelineRequest;
+      final bool? withReplies}) = _$NotesGlobalTimelineRequestImpl;
 
   factory _NotesGlobalTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesGlobalTimelineRequest.fromJson;
+      _$NotesGlobalTimelineRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -388,6 +389,6 @@ abstract class _NotesGlobalTimelineRequest
   bool? get withReplies;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesGlobalTimelineRequestCopyWith<_$_NotesGlobalTimelineRequest>
+  _$$NotesGlobalTimelineRequestImplCopyWith<_$NotesGlobalTimelineRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

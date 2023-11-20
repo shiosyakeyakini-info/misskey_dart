@@ -76,23 +76,25 @@ class _$HybridTimelineParameterCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_HybridTimelineParameterCopyWith<$Res>
+abstract class _$$HybridTimelineParameterImplCopyWith<$Res>
     implements $HybridTimelineParameterCopyWith<$Res> {
-  factory _$$_HybridTimelineParameterCopyWith(_$_HybridTimelineParameter value,
-          $Res Function(_$_HybridTimelineParameter) then) =
-      __$$_HybridTimelineParameterCopyWithImpl<$Res>;
+  factory _$$HybridTimelineParameterImplCopyWith(
+          _$HybridTimelineParameterImpl value,
+          $Res Function(_$HybridTimelineParameterImpl) then) =
+      __$$HybridTimelineParameterImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool? withRenotes, bool? withReplies, bool? withFiles});
 }
 
 /// @nodoc
-class __$$_HybridTimelineParameterCopyWithImpl<$Res>
+class __$$HybridTimelineParameterImplCopyWithImpl<$Res>
     extends _$HybridTimelineParameterCopyWithImpl<$Res,
-        _$_HybridTimelineParameter>
-    implements _$$_HybridTimelineParameterCopyWith<$Res> {
-  __$$_HybridTimelineParameterCopyWithImpl(_$_HybridTimelineParameter _value,
-      $Res Function(_$_HybridTimelineParameter) _then)
+        _$HybridTimelineParameterImpl>
+    implements _$$HybridTimelineParameterImplCopyWith<$Res> {
+  __$$HybridTimelineParameterImplCopyWithImpl(
+      _$HybridTimelineParameterImpl _value,
+      $Res Function(_$HybridTimelineParameterImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +104,7 @@ class __$$_HybridTimelineParameterCopyWithImpl<$Res>
     Object? withReplies = freezed,
     Object? withFiles = freezed,
   }) {
-    return _then(_$_HybridTimelineParameter(
+    return _then(_$HybridTimelineParameterImpl(
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
@@ -121,12 +123,12 @@ class __$$_HybridTimelineParameterCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HybridTimelineParameter implements _HybridTimelineParameter {
-  const _$_HybridTimelineParameter(
+class _$HybridTimelineParameterImpl implements _HybridTimelineParameter {
+  const _$HybridTimelineParameterImpl(
       {this.withRenotes, this.withReplies, this.withFiles});
 
-  factory _$_HybridTimelineParameter.fromJson(Map<String, dynamic> json) =>
-      _$$_HybridTimelineParameterFromJson(json);
+  factory _$HybridTimelineParameterImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HybridTimelineParameterImplFromJson(json);
 
   @override
   final bool? withRenotes;
@@ -144,7 +146,7 @@ class _$_HybridTimelineParameter implements _HybridTimelineParameter {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HybridTimelineParameter &&
+            other is _$HybridTimelineParameterImpl &&
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
             (identical(other.withReplies, withReplies) ||
@@ -161,14 +163,13 @@ class _$_HybridTimelineParameter implements _HybridTimelineParameter {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HybridTimelineParameterCopyWith<_$_HybridTimelineParameter>
-      get copyWith =>
-          __$$_HybridTimelineParameterCopyWithImpl<_$_HybridTimelineParameter>(
-              this, _$identity);
+  _$$HybridTimelineParameterImplCopyWith<_$HybridTimelineParameterImpl>
+      get copyWith => __$$HybridTimelineParameterImplCopyWithImpl<
+          _$HybridTimelineParameterImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HybridTimelineParameterToJson(
+    return _$$HybridTimelineParameterImplToJson(
       this,
     );
   }
@@ -178,10 +179,10 @@ abstract class _HybridTimelineParameter implements HybridTimelineParameter {
   const factory _HybridTimelineParameter(
       {final bool? withRenotes,
       final bool? withReplies,
-      final bool? withFiles}) = _$_HybridTimelineParameter;
+      final bool? withFiles}) = _$HybridTimelineParameterImpl;
 
   factory _HybridTimelineParameter.fromJson(Map<String, dynamic> json) =
-      _$_HybridTimelineParameter.fromJson;
+      _$HybridTimelineParameterImpl.fromJson;
 
   @override
   bool? get withRenotes;
@@ -191,6 +192,6 @@ abstract class _HybridTimelineParameter implements HybridTimelineParameter {
   bool? get withFiles;
   @override
   @JsonKey(ignore: true)
-  _$$_HybridTimelineParameterCopyWith<_$_HybridTimelineParameter>
+  _$$HybridTimelineParameterImplCopyWith<_$HybridTimelineParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

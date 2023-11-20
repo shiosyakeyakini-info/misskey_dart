@@ -64,23 +64,25 @@ class _$RenoteMuteCreateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RenoteMuteCreateRequestCopyWith<$Res>
+abstract class _$$RenoteMuteCreateRequestImplCopyWith<$Res>
     implements $RenoteMuteCreateRequestCopyWith<$Res> {
-  factory _$$_RenoteMuteCreateRequestCopyWith(_$_RenoteMuteCreateRequest value,
-          $Res Function(_$_RenoteMuteCreateRequest) then) =
-      __$$_RenoteMuteCreateRequestCopyWithImpl<$Res>;
+  factory _$$RenoteMuteCreateRequestImplCopyWith(
+          _$RenoteMuteCreateRequestImpl value,
+          $Res Function(_$RenoteMuteCreateRequestImpl) then) =
+      __$$RenoteMuteCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$_RenoteMuteCreateRequestCopyWithImpl<$Res>
+class __$$RenoteMuteCreateRequestImplCopyWithImpl<$Res>
     extends _$RenoteMuteCreateRequestCopyWithImpl<$Res,
-        _$_RenoteMuteCreateRequest>
-    implements _$$_RenoteMuteCreateRequestCopyWith<$Res> {
-  __$$_RenoteMuteCreateRequestCopyWithImpl(_$_RenoteMuteCreateRequest _value,
-      $Res Function(_$_RenoteMuteCreateRequest) _then)
+        _$RenoteMuteCreateRequestImpl>
+    implements _$$RenoteMuteCreateRequestImplCopyWith<$Res> {
+  __$$RenoteMuteCreateRequestImplCopyWithImpl(
+      _$RenoteMuteCreateRequestImpl _value,
+      $Res Function(_$RenoteMuteCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_RenoteMuteCreateRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$_RenoteMuteCreateRequest(
+    return _then(_$RenoteMuteCreateRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_RenoteMuteCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RenoteMuteCreateRequest implements _RenoteMuteCreateRequest {
-  const _$_RenoteMuteCreateRequest({required this.userId});
+class _$RenoteMuteCreateRequestImpl implements _RenoteMuteCreateRequest {
+  const _$RenoteMuteCreateRequestImpl({required this.userId});
 
-  factory _$_RenoteMuteCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_RenoteMuteCreateRequestFromJson(json);
+  factory _$RenoteMuteCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RenoteMuteCreateRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -117,7 +119,7 @@ class _$_RenoteMuteCreateRequest implements _RenoteMuteCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RenoteMuteCreateRequest &&
+            other is _$RenoteMuteCreateRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
@@ -128,14 +130,13 @@ class _$_RenoteMuteCreateRequest implements _RenoteMuteCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RenoteMuteCreateRequestCopyWith<_$_RenoteMuteCreateRequest>
-      get copyWith =>
-          __$$_RenoteMuteCreateRequestCopyWithImpl<_$_RenoteMuteCreateRequest>(
-              this, _$identity);
+  _$$RenoteMuteCreateRequestImplCopyWith<_$RenoteMuteCreateRequestImpl>
+      get copyWith => __$$RenoteMuteCreateRequestImplCopyWithImpl<
+          _$RenoteMuteCreateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RenoteMuteCreateRequestToJson(
+    return _$$RenoteMuteCreateRequestImplToJson(
       this,
     );
   }
@@ -143,15 +144,15 @@ class _$_RenoteMuteCreateRequest implements _RenoteMuteCreateRequest {
 
 abstract class _RenoteMuteCreateRequest implements RenoteMuteCreateRequest {
   const factory _RenoteMuteCreateRequest({required final String userId}) =
-      _$_RenoteMuteCreateRequest;
+      _$RenoteMuteCreateRequestImpl;
 
   factory _RenoteMuteCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_RenoteMuteCreateRequest.fromJson;
+      _$RenoteMuteCreateRequestImpl.fromJson;
 
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_RenoteMuteCreateRequestCopyWith<_$_RenoteMuteCreateRequest>
+  _$$RenoteMuteCreateRequestImplCopyWith<_$RenoteMuteCreateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

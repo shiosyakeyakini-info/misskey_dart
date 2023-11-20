@@ -6,17 +6,17 @@ part of 'notes_replies_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesRepliesRequest _$$_NotesRepliesRequestFromJson(
+_$NotesRepliesRequestImpl _$$NotesRepliesRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesRepliesRequest(
+    _$NotesRepliesRequestImpl(
       noteId: json['noteId'] as String,
       limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$$_NotesRepliesRequestToJson(
-        _$_NotesRepliesRequest instance) =>
+Map<String, dynamic> _$$NotesRepliesRequestImplToJson(
+        _$NotesRepliesRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
       'limit': instance.limit,

@@ -80,22 +80,22 @@ class _$RolesUsersRequestCopyWithImpl<$Res, $Val extends RolesUsersRequest>
 }
 
 /// @nodoc
-abstract class _$$_RolesUsersRequestCopyWith<$Res>
+abstract class _$$RolesUsersRequestImplCopyWith<$Res>
     implements $RolesUsersRequestCopyWith<$Res> {
-  factory _$$_RolesUsersRequestCopyWith(_$_RolesUsersRequest value,
-          $Res Function(_$_RolesUsersRequest) then) =
-      __$$_RolesUsersRequestCopyWithImpl<$Res>;
+  factory _$$RolesUsersRequestImplCopyWith(_$RolesUsersRequestImpl value,
+          $Res Function(_$RolesUsersRequestImpl) then) =
+      __$$RolesUsersRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String roleId, String? sinceId, String? untilId, int? limit});
 }
 
 /// @nodoc
-class __$$_RolesUsersRequestCopyWithImpl<$Res>
-    extends _$RolesUsersRequestCopyWithImpl<$Res, _$_RolesUsersRequest>
-    implements _$$_RolesUsersRequestCopyWith<$Res> {
-  __$$_RolesUsersRequestCopyWithImpl(
-      _$_RolesUsersRequest _value, $Res Function(_$_RolesUsersRequest) _then)
+class __$$RolesUsersRequestImplCopyWithImpl<$Res>
+    extends _$RolesUsersRequestCopyWithImpl<$Res, _$RolesUsersRequestImpl>
+    implements _$$RolesUsersRequestImplCopyWith<$Res> {
+  __$$RolesUsersRequestImplCopyWithImpl(_$RolesUsersRequestImpl _value,
+      $Res Function(_$RolesUsersRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_RolesUsersRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_RolesUsersRequest(
+    return _then(_$RolesUsersRequestImpl(
       roleId: null == roleId
           ? _value.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_RolesUsersRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RolesUsersRequest implements _RolesUsersRequest {
-  const _$_RolesUsersRequest(
+class _$RolesUsersRequestImpl implements _RolesUsersRequest {
+  const _$RolesUsersRequestImpl(
       {required this.roleId, this.sinceId, this.untilId, this.limit});
 
-  factory _$_RolesUsersRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_RolesUsersRequestFromJson(json);
+  factory _$RolesUsersRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RolesUsersRequestImplFromJson(json);
 
   @override
   final String roleId;
@@ -154,7 +154,7 @@ class _$_RolesUsersRequest implements _RolesUsersRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RolesUsersRequest &&
+            other is _$RolesUsersRequestImpl &&
             (identical(other.roleId, roleId) || other.roleId == roleId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -168,13 +168,13 @@ class _$_RolesUsersRequest implements _RolesUsersRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RolesUsersRequestCopyWith<_$_RolesUsersRequest> get copyWith =>
-      __$$_RolesUsersRequestCopyWithImpl<_$_RolesUsersRequest>(
+  _$$RolesUsersRequestImplCopyWith<_$RolesUsersRequestImpl> get copyWith =>
+      __$$RolesUsersRequestImplCopyWithImpl<_$RolesUsersRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RolesUsersRequestToJson(
+    return _$$RolesUsersRequestImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _RolesUsersRequest implements RolesUsersRequest {
       {required final String roleId,
       final String? sinceId,
       final String? untilId,
-      final int? limit}) = _$_RolesUsersRequest;
+      final int? limit}) = _$RolesUsersRequestImpl;
 
   factory _RolesUsersRequest.fromJson(Map<String, dynamic> json) =
-      _$_RolesUsersRequest.fromJson;
+      _$RolesUsersRequestImpl.fromJson;
 
   @override
   String get roleId;
@@ -200,6 +200,6 @@ abstract class _RolesUsersRequest implements RolesUsersRequest {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_RolesUsersRequestCopyWith<_$_RolesUsersRequest> get copyWith =>
+  _$$RolesUsersRequestImplCopyWith<_$RolesUsersRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

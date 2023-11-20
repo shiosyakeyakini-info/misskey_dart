@@ -102,11 +102,12 @@ class _$UsersReactionsRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersReactionsRequestCopyWith<$Res>
+abstract class _$$UsersReactionsRequestImplCopyWith<$Res>
     implements $UsersReactionsRequestCopyWith<$Res> {
-  factory _$$_UsersReactionsRequestCopyWith(_$_UsersReactionsRequest value,
-          $Res Function(_$_UsersReactionsRequest) then) =
-      __$$_UsersReactionsRequestCopyWithImpl<$Res>;
+  factory _$$UsersReactionsRequestImplCopyWith(
+          _$UsersReactionsRequestImpl value,
+          $Res Function(_$UsersReactionsRequestImpl) then) =
+      __$$UsersReactionsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -119,11 +120,12 @@ abstract class _$$_UsersReactionsRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UsersReactionsRequestCopyWithImpl<$Res>
-    extends _$UsersReactionsRequestCopyWithImpl<$Res, _$_UsersReactionsRequest>
-    implements _$$_UsersReactionsRequestCopyWith<$Res> {
-  __$$_UsersReactionsRequestCopyWithImpl(_$_UsersReactionsRequest _value,
-      $Res Function(_$_UsersReactionsRequest) _then)
+class __$$UsersReactionsRequestImplCopyWithImpl<$Res>
+    extends _$UsersReactionsRequestCopyWithImpl<$Res,
+        _$UsersReactionsRequestImpl>
+    implements _$$UsersReactionsRequestImplCopyWith<$Res> {
+  __$$UsersReactionsRequestImplCopyWithImpl(_$UsersReactionsRequestImpl _value,
+      $Res Function(_$UsersReactionsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -136,7 +138,7 @@ class __$$_UsersReactionsRequestCopyWithImpl<$Res>
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
   }) {
-    return _then(_$_UsersReactionsRequest(
+    return _then(_$UsersReactionsRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -161,8 +163,8 @@ class __$$_UsersReactionsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersReactionsRequest implements _UsersReactionsRequest {
-  const _$_UsersReactionsRequest(
+class _$UsersReactionsRequestImpl implements _UsersReactionsRequest {
+  const _$UsersReactionsRequestImpl(
       {required this.userId,
       this.limit,
       this.sinceId,
@@ -170,8 +172,8 @@ class _$_UsersReactionsRequest implements _UsersReactionsRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
 
-  factory _$_UsersReactionsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersReactionsRequestFromJson(json);
+  factory _$UsersReactionsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersReactionsRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -197,7 +199,7 @@ class _$_UsersReactionsRequest implements _UsersReactionsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersReactionsRequest &&
+            other is _$UsersReactionsRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -220,13 +222,13 @@ class _$_UsersReactionsRequest implements _UsersReactionsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersReactionsRequestCopyWith<_$_UsersReactionsRequest> get copyWith =>
-      __$$_UsersReactionsRequestCopyWithImpl<_$_UsersReactionsRequest>(
-          this, _$identity);
+  _$$UsersReactionsRequestImplCopyWith<_$UsersReactionsRequestImpl>
+      get copyWith => __$$UsersReactionsRequestImplCopyWithImpl<
+          _$UsersReactionsRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersReactionsRequestToJson(
+    return _$$UsersReactionsRequestImplToJson(
       this,
     );
   }
@@ -240,10 +242,10 @@ abstract class _UsersReactionsRequest implements UsersReactionsRequest {
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final dynamic sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-      final dynamic untilDate}) = _$_UsersReactionsRequest;
+      final dynamic untilDate}) = _$UsersReactionsRequestImpl;
 
   factory _UsersReactionsRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersReactionsRequest.fromJson;
+      _$UsersReactionsRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -261,6 +263,6 @@ abstract class _UsersReactionsRequest implements UsersReactionsRequest {
   dynamic get untilDate;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersReactionsRequestCopyWith<_$_UsersReactionsRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersReactionsRequestImplCopyWith<_$UsersReactionsRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

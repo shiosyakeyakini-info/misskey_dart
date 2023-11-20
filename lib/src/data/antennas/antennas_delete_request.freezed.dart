@@ -64,22 +64,24 @@ class _$AntennasDeleteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AntennasDeleteRequestCopyWith<$Res>
+abstract class _$$AntennasDeleteRequestImplCopyWith<$Res>
     implements $AntennasDeleteRequestCopyWith<$Res> {
-  factory _$$_AntennasDeleteRequestCopyWith(_$_AntennasDeleteRequest value,
-          $Res Function(_$_AntennasDeleteRequest) then) =
-      __$$_AntennasDeleteRequestCopyWithImpl<$Res>;
+  factory _$$AntennasDeleteRequestImplCopyWith(
+          _$AntennasDeleteRequestImpl value,
+          $Res Function(_$AntennasDeleteRequestImpl) then) =
+      __$$AntennasDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String antennaId});
 }
 
 /// @nodoc
-class __$$_AntennasDeleteRequestCopyWithImpl<$Res>
-    extends _$AntennasDeleteRequestCopyWithImpl<$Res, _$_AntennasDeleteRequest>
-    implements _$$_AntennasDeleteRequestCopyWith<$Res> {
-  __$$_AntennasDeleteRequestCopyWithImpl(_$_AntennasDeleteRequest _value,
-      $Res Function(_$_AntennasDeleteRequest) _then)
+class __$$AntennasDeleteRequestImplCopyWithImpl<$Res>
+    extends _$AntennasDeleteRequestCopyWithImpl<$Res,
+        _$AntennasDeleteRequestImpl>
+    implements _$$AntennasDeleteRequestImplCopyWith<$Res> {
+  __$$AntennasDeleteRequestImplCopyWithImpl(_$AntennasDeleteRequestImpl _value,
+      $Res Function(_$AntennasDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +89,7 @@ class __$$_AntennasDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? antennaId = null,
   }) {
-    return _then(_$_AntennasDeleteRequest(
+    return _then(_$AntennasDeleteRequestImpl(
       antennaId: null == antennaId
           ? _value.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
@@ -98,11 +100,11 @@ class __$$_AntennasDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AntennasDeleteRequest implements _AntennasDeleteRequest {
-  const _$_AntennasDeleteRequest({required this.antennaId});
+class _$AntennasDeleteRequestImpl implements _AntennasDeleteRequest {
+  const _$AntennasDeleteRequestImpl({required this.antennaId});
 
-  factory _$_AntennasDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_AntennasDeleteRequestFromJson(json);
+  factory _$AntennasDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AntennasDeleteRequestImplFromJson(json);
 
   @override
   final String antennaId;
@@ -116,7 +118,7 @@ class _$_AntennasDeleteRequest implements _AntennasDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AntennasDeleteRequest &&
+            other is _$AntennasDeleteRequestImpl &&
             (identical(other.antennaId, antennaId) ||
                 other.antennaId == antennaId));
   }
@@ -128,13 +130,13 @@ class _$_AntennasDeleteRequest implements _AntennasDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AntennasDeleteRequestCopyWith<_$_AntennasDeleteRequest> get copyWith =>
-      __$$_AntennasDeleteRequestCopyWithImpl<_$_AntennasDeleteRequest>(
-          this, _$identity);
+  _$$AntennasDeleteRequestImplCopyWith<_$AntennasDeleteRequestImpl>
+      get copyWith => __$$AntennasDeleteRequestImplCopyWithImpl<
+          _$AntennasDeleteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AntennasDeleteRequestToJson(
+    return _$$AntennasDeleteRequestImplToJson(
       this,
     );
   }
@@ -142,15 +144,15 @@ class _$_AntennasDeleteRequest implements _AntennasDeleteRequest {
 
 abstract class _AntennasDeleteRequest implements AntennasDeleteRequest {
   const factory _AntennasDeleteRequest({required final String antennaId}) =
-      _$_AntennasDeleteRequest;
+      _$AntennasDeleteRequestImpl;
 
   factory _AntennasDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_AntennasDeleteRequest.fromJson;
+      _$AntennasDeleteRequestImpl.fromJson;
 
   @override
   String get antennaId;
   @override
   @JsonKey(ignore: true)
-  _$$_AntennasDeleteRequestCopyWith<_$_AntennasDeleteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AntennasDeleteRequestImplCopyWith<_$AntennasDeleteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

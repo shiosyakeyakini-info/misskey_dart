@@ -640,11 +640,11 @@ class _$UsersShowResponseCopyWithImpl<$Res, $Val extends UsersShowResponse>
 }
 
 /// @nodoc
-abstract class _$$_UsersShowResponseCopyWith<$Res>
+abstract class _$$UsersShowResponseImplCopyWith<$Res>
     implements $UsersShowResponseCopyWith<$Res> {
-  factory _$$_UsersShowResponseCopyWith(_$_UsersShowResponse value,
-          $Res Function(_$_UsersShowResponse) then) =
-      __$$_UsersShowResponseCopyWithImpl<$Res>;
+  factory _$$UsersShowResponseImplCopyWith(_$UsersShowResponseImpl value,
+          $Res Function(_$UsersShowResponseImpl) then) =
+      __$$UsersShowResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -733,11 +733,11 @@ abstract class _$$_UsersShowResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UsersShowResponseCopyWithImpl<$Res>
-    extends _$UsersShowResponseCopyWithImpl<$Res, _$_UsersShowResponse>
-    implements _$$_UsersShowResponseCopyWith<$Res> {
-  __$$_UsersShowResponseCopyWithImpl(
-      _$_UsersShowResponse _value, $Res Function(_$_UsersShowResponse) _then)
+class __$$UsersShowResponseImplCopyWithImpl<$Res>
+    extends _$UsersShowResponseCopyWithImpl<$Res, _$UsersShowResponseImpl>
+    implements _$$UsersShowResponseImplCopyWith<$Res> {
+  __$$UsersShowResponseImplCopyWithImpl(_$UsersShowResponseImpl _value,
+      $Res Function(_$UsersShowResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -821,7 +821,7 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
     Object? isMuted = freezed,
     Object? isRenoteMuted = freezed,
   }) {
-    return _then(_$_UsersShowResponse(
+    return _then(_$UsersShowResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1137,8 +1137,8 @@ class __$$_UsersShowResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersShowResponse extends _UsersShowResponse {
-  const _$_UsersShowResponse(
+class _$UsersShowResponseImpl extends _UsersShowResponse {
+  const _$UsersShowResponseImpl(
       {required this.id,
       this.name,
       required this.username,
@@ -1230,8 +1230,8 @@ class _$_UsersShowResponse extends _UsersShowResponse {
         _achievements = achievements,
         super._();
 
-  factory _$_UsersShowResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersShowResponseFromJson(json);
+  factory _$UsersShowResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersShowResponseImplFromJson(json);
 
   @override
   final String id;
@@ -1509,7 +1509,7 @@ class _$_UsersShowResponse extends _UsersShowResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersShowResponse &&
+            other is _$UsersShowResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
@@ -1717,13 +1717,13 @@ class _$_UsersShowResponse extends _UsersShowResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersShowResponseCopyWith<_$_UsersShowResponse> get copyWith =>
-      __$$_UsersShowResponseCopyWithImpl<_$_UsersShowResponse>(
+  _$$UsersShowResponseImplCopyWith<_$UsersShowResponseImpl> get copyWith =>
+      __$$UsersShowResponseImplCopyWithImpl<_$UsersShowResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersShowResponseToJson(
+    return _$$UsersShowResponseImplToJson(
       this,
     );
   }
@@ -1807,11 +1807,11 @@ abstract class _UsersShowResponse extends UsersShowResponse {
       final bool? isBlocking,
       final bool? isBlocked,
       final bool? isMuted,
-      final bool? isRenoteMuted}) = _$_UsersShowResponse;
+      final bool? isRenoteMuted}) = _$UsersShowResponseImpl;
   const _UsersShowResponse._() : super._();
 
   factory _UsersShowResponse.fromJson(Map<String, dynamic> json) =
-      _$_UsersShowResponse.fromJson;
+      _$UsersShowResponseImpl.fromJson;
 
   @override
   String get id;
@@ -1981,6 +1981,6 @@ abstract class _UsersShowResponse extends UsersShowResponse {
   bool? get isRenoteMuted;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersShowResponseCopyWith<_$_UsersShowResponse> get copyWith =>
+  _$$UsersShowResponseImplCopyWith<_$UsersShowResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

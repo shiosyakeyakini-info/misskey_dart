@@ -103,10 +103,10 @@ class _$HashtagCopyWithImpl<$Res, $Val extends Hashtag>
 }
 
 /// @nodoc
-abstract class _$$_HashtagCopyWith<$Res> implements $HashtagCopyWith<$Res> {
-  factory _$$_HashtagCopyWith(
-          _$_Hashtag value, $Res Function(_$_Hashtag) then) =
-      __$$_HashtagCopyWithImpl<$Res>;
+abstract class _$$HashtagImplCopyWith<$Res> implements $HashtagCopyWith<$Res> {
+  factory _$$HashtagImplCopyWith(
+          _$HashtagImpl value, $Res Function(_$HashtagImpl) then) =
+      __$$HashtagImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -120,10 +120,11 @@ abstract class _$$_HashtagCopyWith<$Res> implements $HashtagCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HashtagCopyWithImpl<$Res>
-    extends _$HashtagCopyWithImpl<$Res, _$_Hashtag>
-    implements _$$_HashtagCopyWith<$Res> {
-  __$$_HashtagCopyWithImpl(_$_Hashtag _value, $Res Function(_$_Hashtag) _then)
+class __$$HashtagImplCopyWithImpl<$Res>
+    extends _$HashtagCopyWithImpl<$Res, _$HashtagImpl>
+    implements _$$HashtagImplCopyWith<$Res> {
+  __$$HashtagImplCopyWithImpl(
+      _$HashtagImpl _value, $Res Function(_$HashtagImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -137,7 +138,7 @@ class __$$_HashtagCopyWithImpl<$Res>
     Object? attachedLocalUsersCount = null,
     Object? attachedRemoteUsersCount = null,
   }) {
-    return _then(_$_Hashtag(
+    return _then(_$HashtagImpl(
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -172,8 +173,8 @@ class __$$_HashtagCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Hashtag implements _Hashtag {
-  const _$_Hashtag(
+class _$HashtagImpl implements _Hashtag {
+  const _$HashtagImpl(
       {required this.tag,
       required this.mentionedUsersCount,
       required this.mentionedLocalUsersCount,
@@ -182,8 +183,8 @@ class _$_Hashtag implements _Hashtag {
       required this.attachedLocalUsersCount,
       required this.attachedRemoteUsersCount});
 
-  factory _$_Hashtag.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagFromJson(json);
+  factory _$HashtagImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagImplFromJson(json);
 
   @override
   final String tag;
@@ -209,7 +210,7 @@ class _$_Hashtag implements _Hashtag {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Hashtag &&
+            other is _$HashtagImpl &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.mentionedUsersCount, mentionedUsersCount) ||
                 other.mentionedUsersCount == mentionedUsersCount) &&
@@ -244,12 +245,12 @@ class _$_Hashtag implements _Hashtag {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagCopyWith<_$_Hashtag> get copyWith =>
-      __$$_HashtagCopyWithImpl<_$_Hashtag>(this, _$identity);
+  _$$HashtagImplCopyWith<_$HashtagImpl> get copyWith =>
+      __$$HashtagImplCopyWithImpl<_$HashtagImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagToJson(
+    return _$$HashtagImplToJson(
       this,
     );
   }
@@ -263,9 +264,9 @@ abstract class _Hashtag implements Hashtag {
       required final int mentionedRemoteUsersCount,
       required final int attachedUsersCount,
       required final int attachedLocalUsersCount,
-      required final int attachedRemoteUsersCount}) = _$_Hashtag;
+      required final int attachedRemoteUsersCount}) = _$HashtagImpl;
 
-  factory _Hashtag.fromJson(Map<String, dynamic> json) = _$_Hashtag.fromJson;
+  factory _Hashtag.fromJson(Map<String, dynamic> json) = _$HashtagImpl.fromJson;
 
   @override
   String get tag;
@@ -283,6 +284,6 @@ abstract class _Hashtag implements Hashtag {
   int get attachedRemoteUsersCount;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagCopyWith<_$_Hashtag> get copyWith =>
+  _$$HashtagImplCopyWith<_$HashtagImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

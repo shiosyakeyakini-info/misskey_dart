@@ -6,33 +6,33 @@ part of 'queue_stats_log_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_QueueStatsLogResponse _$$_QueueStatsLogResponseFromJson(
+_$QueueStatsLogResponseImpl _$$QueueStatsLogResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_QueueStatsLogResponse(
+    _$QueueStatsLogResponseImpl(
       inbox: QueueStatsLogResponseData.fromJson(
           json['inbox'] as Map<String, dynamic>),
       deliver: QueueStatsLogResponseData.fromJson(
           json['deliver'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_QueueStatsLogResponseToJson(
-        _$_QueueStatsLogResponse instance) =>
+Map<String, dynamic> _$$QueueStatsLogResponseImplToJson(
+        _$QueueStatsLogResponseImpl instance) =>
     <String, dynamic>{
       'inbox': instance.inbox,
       'deliver': instance.deliver,
     };
 
-_$_QueueStatsLogResponseData _$$_QueueStatsLogResponseDataFromJson(
+_$QueueStatsLogResponseDataImpl _$$QueueStatsLogResponseDataImplFromJson(
         Map<String, dynamic> json) =>
-    _$_QueueStatsLogResponseData(
+    _$QueueStatsLogResponseDataImpl(
       activeSincePrevTick: json['activeSincePrevTick'] as int,
       active: json['active'] as int,
       waiting: json['waiting'] as int,
       delayed: json['delayed'] as int,
     );
 
-Map<String, dynamic> _$$_QueueStatsLogResponseDataToJson(
-        _$_QueueStatsLogResponseData instance) =>
+Map<String, dynamic> _$$QueueStatsLogResponseDataImplToJson(
+        _$QueueStatsLogResponseDataImpl instance) =>
     <String, dynamic>{
       'activeSincePrevTick': instance.activeSincePrevTick,
       'active': instance.active,

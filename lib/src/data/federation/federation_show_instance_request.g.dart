@@ -6,24 +6,24 @@ part of 'federation_show_instance_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FederationShowInstanceRequest _$$_FederationShowInstanceRequestFromJson(
-        Map<String, dynamic> json) =>
-    _$_FederationShowInstanceRequest(
-      host: json['host'] as String,
-      blocked: json['blocked'] as bool?,
-      notResponding: json['notResponding'] as bool?,
-      suspended: json['suspended'] as bool?,
-      silenced: json['silenced'] as bool?,
-      federating: json['federating'] as bool?,
-      subscribing: json['subscribing'] as bool?,
-      publishing: json['publishing'] as bool?,
-      limit: json['limit'] as int?,
-      offset: json['offset'] as int?,
-      sort: json['sort'] as String?,
-    );
+_$FederationShowInstanceRequestImpl
+    _$$FederationShowInstanceRequestImplFromJson(Map<String, dynamic> json) =>
+        _$FederationShowInstanceRequestImpl(
+          host: json['host'] as String,
+          blocked: json['blocked'] as bool?,
+          notResponding: json['notResponding'] as bool?,
+          suspended: json['suspended'] as bool?,
+          silenced: json['silenced'] as bool?,
+          federating: json['federating'] as bool?,
+          subscribing: json['subscribing'] as bool?,
+          publishing: json['publishing'] as bool?,
+          limit: json['limit'] as int?,
+          offset: json['offset'] as int?,
+          sort: json['sort'] as String?,
+        );
 
-Map<String, dynamic> _$$_FederationShowInstanceRequestToJson(
-        _$_FederationShowInstanceRequest instance) =>
+Map<String, dynamic> _$$FederationShowInstanceRequestImplToJson(
+        _$FederationShowInstanceRequestImpl instance) =>
     <String, dynamic>{
       'host': instance.host,
       'blocked': instance.blocked,

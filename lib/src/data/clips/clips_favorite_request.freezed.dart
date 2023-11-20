@@ -63,22 +63,22 @@ class _$ClipsFavoriteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ClipsFavoriteRequestCopyWith<$Res>
+abstract class _$$ClipsFavoriteRequestImplCopyWith<$Res>
     implements $ClipsFavoriteRequestCopyWith<$Res> {
-  factory _$$_ClipsFavoriteRequestCopyWith(_$_ClipsFavoriteRequest value,
-          $Res Function(_$_ClipsFavoriteRequest) then) =
-      __$$_ClipsFavoriteRequestCopyWithImpl<$Res>;
+  factory _$$ClipsFavoriteRequestImplCopyWith(_$ClipsFavoriteRequestImpl value,
+          $Res Function(_$ClipsFavoriteRequestImpl) then) =
+      __$$ClipsFavoriteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String clipId});
 }
 
 /// @nodoc
-class __$$_ClipsFavoriteRequestCopyWithImpl<$Res>
-    extends _$ClipsFavoriteRequestCopyWithImpl<$Res, _$_ClipsFavoriteRequest>
-    implements _$$_ClipsFavoriteRequestCopyWith<$Res> {
-  __$$_ClipsFavoriteRequestCopyWithImpl(_$_ClipsFavoriteRequest _value,
-      $Res Function(_$_ClipsFavoriteRequest) _then)
+class __$$ClipsFavoriteRequestImplCopyWithImpl<$Res>
+    extends _$ClipsFavoriteRequestCopyWithImpl<$Res, _$ClipsFavoriteRequestImpl>
+    implements _$$ClipsFavoriteRequestImplCopyWith<$Res> {
+  __$$ClipsFavoriteRequestImplCopyWithImpl(_$ClipsFavoriteRequestImpl _value,
+      $Res Function(_$ClipsFavoriteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_ClipsFavoriteRequestCopyWithImpl<$Res>
   $Res call({
     Object? clipId = null,
   }) {
-    return _then(_$_ClipsFavoriteRequest(
+    return _then(_$ClipsFavoriteRequestImpl(
       clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
@@ -97,11 +97,11 @@ class __$$_ClipsFavoriteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsFavoriteRequest implements _ClipsFavoriteRequest {
-  const _$_ClipsFavoriteRequest({required this.clipId});
+class _$ClipsFavoriteRequestImpl implements _ClipsFavoriteRequest {
+  const _$ClipsFavoriteRequestImpl({required this.clipId});
 
-  factory _$_ClipsFavoriteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsFavoriteRequestFromJson(json);
+  factory _$ClipsFavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsFavoriteRequestImplFromJson(json);
 
   @override
   final String clipId;
@@ -115,7 +115,7 @@ class _$_ClipsFavoriteRequest implements _ClipsFavoriteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsFavoriteRequest &&
+            other is _$ClipsFavoriteRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId));
   }
 
@@ -126,13 +126,14 @@ class _$_ClipsFavoriteRequest implements _ClipsFavoriteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsFavoriteRequestCopyWith<_$_ClipsFavoriteRequest> get copyWith =>
-      __$$_ClipsFavoriteRequestCopyWithImpl<_$_ClipsFavoriteRequest>(
-          this, _$identity);
+  _$$ClipsFavoriteRequestImplCopyWith<_$ClipsFavoriteRequestImpl>
+      get copyWith =>
+          __$$ClipsFavoriteRequestImplCopyWithImpl<_$ClipsFavoriteRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsFavoriteRequestToJson(
+    return _$$ClipsFavoriteRequestImplToJson(
       this,
     );
   }
@@ -140,15 +141,15 @@ class _$_ClipsFavoriteRequest implements _ClipsFavoriteRequest {
 
 abstract class _ClipsFavoriteRequest implements ClipsFavoriteRequest {
   const factory _ClipsFavoriteRequest({required final String clipId}) =
-      _$_ClipsFavoriteRequest;
+      _$ClipsFavoriteRequestImpl;
 
   factory _ClipsFavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsFavoriteRequest.fromJson;
+      _$ClipsFavoriteRequestImpl.fromJson;
 
   @override
   String get clipId;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsFavoriteRequestCopyWith<_$_ClipsFavoriteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ClipsFavoriteRequestImplCopyWith<_$ClipsFavoriteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

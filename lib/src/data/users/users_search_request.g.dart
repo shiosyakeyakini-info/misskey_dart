@@ -6,9 +6,9 @@ part of 'users_search_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersSearchRequest _$$_UsersSearchRequestFromJson(
+_$UsersSearchRequestImpl _$$UsersSearchRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersSearchRequest(
+    _$UsersSearchRequestImpl(
       query: json['query'] as String,
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
@@ -16,8 +16,8 @@ _$_UsersSearchRequest _$$_UsersSearchRequestFromJson(
       detail: json['detail'] as bool?,
     );
 
-Map<String, dynamic> _$$_UsersSearchRequestToJson(
-        _$_UsersSearchRequest instance) =>
+Map<String, dynamic> _$$UsersSearchRequestImplToJson(
+        _$UsersSearchRequestImpl instance) =>
     <String, dynamic>{
       'query': instance.query,
       'offset': instance.offset,

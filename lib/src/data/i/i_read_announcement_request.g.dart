@@ -6,14 +6,14 @@ part of 'i_read_announcement_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IReadAnnouncementRequest _$$_IReadAnnouncementRequestFromJson(
+_$IReadAnnouncementRequestImpl _$$IReadAnnouncementRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_IReadAnnouncementRequest(
+    _$IReadAnnouncementRequestImpl(
       announcementId: json['announcementId'] as String,
     );
 
-Map<String, dynamic> _$$_IReadAnnouncementRequestToJson(
-        _$_IReadAnnouncementRequest instance) =>
+Map<String, dynamic> _$$IReadAnnouncementRequestImplToJson(
+        _$IReadAnnouncementRequestImpl instance) =>
     <String, dynamic>{
       'announcementId': instance.announcementId,
     };

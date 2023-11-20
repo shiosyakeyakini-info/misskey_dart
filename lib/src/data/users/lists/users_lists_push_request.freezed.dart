@@ -70,22 +70,24 @@ class _$UsersListsPushRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsPushRequestCopyWith<$Res>
+abstract class _$$UsersListsPushRequestImplCopyWith<$Res>
     implements $UsersListsPushRequestCopyWith<$Res> {
-  factory _$$_UsersListsPushRequestCopyWith(_$_UsersListsPushRequest value,
-          $Res Function(_$_UsersListsPushRequest) then) =
-      __$$_UsersListsPushRequestCopyWithImpl<$Res>;
+  factory _$$UsersListsPushRequestImplCopyWith(
+          _$UsersListsPushRequestImpl value,
+          $Res Function(_$UsersListsPushRequestImpl) then) =
+      __$$UsersListsPushRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String listId, String userId});
 }
 
 /// @nodoc
-class __$$_UsersListsPushRequestCopyWithImpl<$Res>
-    extends _$UsersListsPushRequestCopyWithImpl<$Res, _$_UsersListsPushRequest>
-    implements _$$_UsersListsPushRequestCopyWith<$Res> {
-  __$$_UsersListsPushRequestCopyWithImpl(_$_UsersListsPushRequest _value,
-      $Res Function(_$_UsersListsPushRequest) _then)
+class __$$UsersListsPushRequestImplCopyWithImpl<$Res>
+    extends _$UsersListsPushRequestCopyWithImpl<$Res,
+        _$UsersListsPushRequestImpl>
+    implements _$$UsersListsPushRequestImplCopyWith<$Res> {
+  __$$UsersListsPushRequestImplCopyWithImpl(_$UsersListsPushRequestImpl _value,
+      $Res Function(_$UsersListsPushRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +96,7 @@ class __$$_UsersListsPushRequestCopyWithImpl<$Res>
     Object? listId = null,
     Object? userId = null,
   }) {
-    return _then(_$_UsersListsPushRequest(
+    return _then(_$UsersListsPushRequestImpl(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
@@ -109,11 +111,12 @@ class __$$_UsersListsPushRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsPushRequest implements _UsersListsPushRequest {
-  const _$_UsersListsPushRequest({required this.listId, required this.userId});
+class _$UsersListsPushRequestImpl implements _UsersListsPushRequest {
+  const _$UsersListsPushRequestImpl(
+      {required this.listId, required this.userId});
 
-  factory _$_UsersListsPushRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsPushRequestFromJson(json);
+  factory _$UsersListsPushRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsPushRequestImplFromJson(json);
 
   @override
   final String listId;
@@ -129,7 +132,7 @@ class _$_UsersListsPushRequest implements _UsersListsPushRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsPushRequest &&
+            other is _$UsersListsPushRequestImpl &&
             (identical(other.listId, listId) || other.listId == listId) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
@@ -141,13 +144,13 @@ class _$_UsersListsPushRequest implements _UsersListsPushRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsPushRequestCopyWith<_$_UsersListsPushRequest> get copyWith =>
-      __$$_UsersListsPushRequestCopyWithImpl<_$_UsersListsPushRequest>(
-          this, _$identity);
+  _$$UsersListsPushRequestImplCopyWith<_$UsersListsPushRequestImpl>
+      get copyWith => __$$UsersListsPushRequestImplCopyWithImpl<
+          _$UsersListsPushRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsPushRequestToJson(
+    return _$$UsersListsPushRequestImplToJson(
       this,
     );
   }
@@ -156,10 +159,10 @@ class _$_UsersListsPushRequest implements _UsersListsPushRequest {
 abstract class _UsersListsPushRequest implements UsersListsPushRequest {
   const factory _UsersListsPushRequest(
       {required final String listId,
-      required final String userId}) = _$_UsersListsPushRequest;
+      required final String userId}) = _$UsersListsPushRequestImpl;
 
   factory _UsersListsPushRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsPushRequest.fromJson;
+      _$UsersListsPushRequestImpl.fromJson;
 
   @override
   String get listId;
@@ -167,6 +170,6 @@ abstract class _UsersListsPushRequest implements UsersListsPushRequest {
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsPushRequestCopyWith<_$_UsersListsPushRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersListsPushRequestImplCopyWith<_$UsersListsPushRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

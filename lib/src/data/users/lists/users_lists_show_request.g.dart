@@ -6,15 +6,15 @@ part of 'users_lists_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersListsShowRequest _$$_UsersListsShowRequestFromJson(
+_$UsersListsShowRequestImpl _$$UsersListsShowRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersListsShowRequest(
+    _$UsersListsShowRequestImpl(
       listId: json['listId'] as String,
       forPublic: json['forPublic'] as bool?,
     );
 
-Map<String, dynamic> _$$_UsersListsShowRequestToJson(
-        _$_UsersListsShowRequest instance) =>
+Map<String, dynamic> _$$UsersListsShowRequestImplToJson(
+        _$UsersListsShowRequestImpl instance) =>
     <String, dynamic>{
       'listId': instance.listId,
       'forPublic': instance.forPublic,

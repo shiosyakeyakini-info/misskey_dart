@@ -64,23 +64,25 @@ class _$UsersListsCreateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsCreateRequestCopyWith<$Res>
+abstract class _$$UsersListsCreateRequestImplCopyWith<$Res>
     implements $UsersListsCreateRequestCopyWith<$Res> {
-  factory _$$_UsersListsCreateRequestCopyWith(_$_UsersListsCreateRequest value,
-          $Res Function(_$_UsersListsCreateRequest) then) =
-      __$$_UsersListsCreateRequestCopyWithImpl<$Res>;
+  factory _$$UsersListsCreateRequestImplCopyWith(
+          _$UsersListsCreateRequestImpl value,
+          $Res Function(_$UsersListsCreateRequestImpl) then) =
+      __$$UsersListsCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_UsersListsCreateRequestCopyWithImpl<$Res>
+class __$$UsersListsCreateRequestImplCopyWithImpl<$Res>
     extends _$UsersListsCreateRequestCopyWithImpl<$Res,
-        _$_UsersListsCreateRequest>
-    implements _$$_UsersListsCreateRequestCopyWith<$Res> {
-  __$$_UsersListsCreateRequestCopyWithImpl(_$_UsersListsCreateRequest _value,
-      $Res Function(_$_UsersListsCreateRequest) _then)
+        _$UsersListsCreateRequestImpl>
+    implements _$$UsersListsCreateRequestImplCopyWith<$Res> {
+  __$$UsersListsCreateRequestImplCopyWithImpl(
+      _$UsersListsCreateRequestImpl _value,
+      $Res Function(_$UsersListsCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_UsersListsCreateRequestCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_UsersListsCreateRequest(
+    return _then(_$UsersListsCreateRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_UsersListsCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsCreateRequest implements _UsersListsCreateRequest {
-  const _$_UsersListsCreateRequest({required this.name});
+class _$UsersListsCreateRequestImpl implements _UsersListsCreateRequest {
+  const _$UsersListsCreateRequestImpl({required this.name});
 
-  factory _$_UsersListsCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsCreateRequestFromJson(json);
+  factory _$UsersListsCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsCreateRequestImplFromJson(json);
 
   @override
   final String name;
@@ -117,7 +119,7 @@ class _$_UsersListsCreateRequest implements _UsersListsCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsCreateRequest &&
+            other is _$UsersListsCreateRequestImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -128,14 +130,13 @@ class _$_UsersListsCreateRequest implements _UsersListsCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsCreateRequestCopyWith<_$_UsersListsCreateRequest>
-      get copyWith =>
-          __$$_UsersListsCreateRequestCopyWithImpl<_$_UsersListsCreateRequest>(
-              this, _$identity);
+  _$$UsersListsCreateRequestImplCopyWith<_$UsersListsCreateRequestImpl>
+      get copyWith => __$$UsersListsCreateRequestImplCopyWithImpl<
+          _$UsersListsCreateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsCreateRequestToJson(
+    return _$$UsersListsCreateRequestImplToJson(
       this,
     );
   }
@@ -143,15 +144,15 @@ class _$_UsersListsCreateRequest implements _UsersListsCreateRequest {
 
 abstract class _UsersListsCreateRequest implements UsersListsCreateRequest {
   const factory _UsersListsCreateRequest({required final String name}) =
-      _$_UsersListsCreateRequest;
+      _$UsersListsCreateRequestImpl;
 
   factory _UsersListsCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsCreateRequest.fromJson;
+      _$UsersListsCreateRequestImpl.fromJson;
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsCreateRequestCopyWith<_$_UsersListsCreateRequest>
+  _$$UsersListsCreateRequestImplCopyWith<_$UsersListsCreateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

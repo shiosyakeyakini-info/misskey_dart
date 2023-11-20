@@ -152,11 +152,12 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AnnouncementsResponseCopyWith<$Res>
+abstract class _$$AnnouncementsResponseImplCopyWith<$Res>
     implements $AnnouncementsResponseCopyWith<$Res> {
-  factory _$$_AnnouncementsResponseCopyWith(_$_AnnouncementsResponse value,
-          $Res Function(_$_AnnouncementsResponse) then) =
-      __$$_AnnouncementsResponseCopyWithImpl<$Res>;
+  factory _$$AnnouncementsResponseImplCopyWith(
+          _$AnnouncementsResponseImpl value,
+          $Res Function(_$AnnouncementsResponseImpl) then) =
+      __$$AnnouncementsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -176,11 +177,12 @@ abstract class _$$_AnnouncementsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AnnouncementsResponseCopyWithImpl<$Res>
-    extends _$AnnouncementsResponseCopyWithImpl<$Res, _$_AnnouncementsResponse>
-    implements _$$_AnnouncementsResponseCopyWith<$Res> {
-  __$$_AnnouncementsResponseCopyWithImpl(_$_AnnouncementsResponse _value,
-      $Res Function(_$_AnnouncementsResponse) _then)
+class __$$AnnouncementsResponseImplCopyWithImpl<$Res>
+    extends _$AnnouncementsResponseCopyWithImpl<$Res,
+        _$AnnouncementsResponseImpl>
+    implements _$$AnnouncementsResponseImplCopyWith<$Res> {
+  __$$AnnouncementsResponseImplCopyWithImpl(_$AnnouncementsResponseImpl _value,
+      $Res Function(_$AnnouncementsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -200,7 +202,7 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
     Object? forExistingUsers = null,
     Object? userId = freezed,
   }) {
-    return _then(_$_AnnouncementsResponse(
+    return _then(_$AnnouncementsResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -259,8 +261,8 @@ class __$$_AnnouncementsResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnnouncementsResponse implements _AnnouncementsResponse {
-  const _$_AnnouncementsResponse(
+class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
+  const _$AnnouncementsResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NullableDateTimeConverter() this.updatedAt,
@@ -275,8 +277,8 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
       this.forExistingUsers = false,
       this.userId});
 
-  factory _$_AnnouncementsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_AnnouncementsResponseFromJson(json);
+  factory _$AnnouncementsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnnouncementsResponseImplFromJson(json);
 
   @override
   final String id;
@@ -318,7 +320,7 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnnouncementsResponse &&
+            other is _$AnnouncementsResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -360,13 +362,13 @@ class _$_AnnouncementsResponse implements _AnnouncementsResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnnouncementsResponseCopyWith<_$_AnnouncementsResponse> get copyWith =>
-      __$$_AnnouncementsResponseCopyWithImpl<_$_AnnouncementsResponse>(
-          this, _$identity);
+  _$$AnnouncementsResponseImplCopyWith<_$AnnouncementsResponseImpl>
+      get copyWith => __$$AnnouncementsResponseImplCopyWithImpl<
+          _$AnnouncementsResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnnouncementsResponseToJson(
+    return _$$AnnouncementsResponseImplToJson(
       this,
     );
   }
@@ -386,10 +388,10 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
       final bool? forYou,
       final bool? isRead,
       final bool forExistingUsers,
-      final String? userId}) = _$_AnnouncementsResponse;
+      final String? userId}) = _$AnnouncementsResponseImpl;
 
   factory _AnnouncementsResponse.fromJson(Map<String, dynamic> json) =
-      _$_AnnouncementsResponse.fromJson;
+      _$AnnouncementsResponseImpl.fromJson;
 
   @override
   String get id;
@@ -422,6 +424,6 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   String? get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_AnnouncementsResponseCopyWith<_$_AnnouncementsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AnnouncementsResponseImplCopyWith<_$AnnouncementsResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

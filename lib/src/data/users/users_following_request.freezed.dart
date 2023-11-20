@@ -82,22 +82,24 @@ class _$UsersFollowingRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersFollowingRequestCopyWith<$Res>
+abstract class _$$UsersFollowingRequestImplCopyWith<$Res>
     implements $UsersFollowingRequestCopyWith<$Res> {
-  factory _$$_UsersFollowingRequestCopyWith(_$_UsersFollowingRequest value,
-          $Res Function(_$_UsersFollowingRequest) then) =
-      __$$_UsersFollowingRequestCopyWithImpl<$Res>;
+  factory _$$UsersFollowingRequestImplCopyWith(
+          _$UsersFollowingRequestImpl value,
+          $Res Function(_$UsersFollowingRequestImpl) then) =
+      __$$UsersFollowingRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, String? sinceId, String? untilId, int? limit});
 }
 
 /// @nodoc
-class __$$_UsersFollowingRequestCopyWithImpl<$Res>
-    extends _$UsersFollowingRequestCopyWithImpl<$Res, _$_UsersFollowingRequest>
-    implements _$$_UsersFollowingRequestCopyWith<$Res> {
-  __$$_UsersFollowingRequestCopyWithImpl(_$_UsersFollowingRequest _value,
-      $Res Function(_$_UsersFollowingRequest) _then)
+class __$$UsersFollowingRequestImplCopyWithImpl<$Res>
+    extends _$UsersFollowingRequestCopyWithImpl<$Res,
+        _$UsersFollowingRequestImpl>
+    implements _$$UsersFollowingRequestImplCopyWith<$Res> {
+  __$$UsersFollowingRequestImplCopyWithImpl(_$UsersFollowingRequestImpl _value,
+      $Res Function(_$UsersFollowingRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +110,7 @@ class __$$_UsersFollowingRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_UsersFollowingRequest(
+    return _then(_$UsersFollowingRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -131,12 +133,12 @@ class __$$_UsersFollowingRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersFollowingRequest implements _UsersFollowingRequest {
-  const _$_UsersFollowingRequest(
+class _$UsersFollowingRequestImpl implements _UsersFollowingRequest {
+  const _$UsersFollowingRequestImpl(
       {required this.userId, this.sinceId, this.untilId, this.limit});
 
-  factory _$_UsersFollowingRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersFollowingRequestFromJson(json);
+  factory _$UsersFollowingRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersFollowingRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -156,7 +158,7 @@ class _$_UsersFollowingRequest implements _UsersFollowingRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersFollowingRequest &&
+            other is _$UsersFollowingRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -170,13 +172,13 @@ class _$_UsersFollowingRequest implements _UsersFollowingRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersFollowingRequestCopyWith<_$_UsersFollowingRequest> get copyWith =>
-      __$$_UsersFollowingRequestCopyWithImpl<_$_UsersFollowingRequest>(
-          this, _$identity);
+  _$$UsersFollowingRequestImplCopyWith<_$UsersFollowingRequestImpl>
+      get copyWith => __$$UsersFollowingRequestImplCopyWithImpl<
+          _$UsersFollowingRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersFollowingRequestToJson(
+    return _$$UsersFollowingRequestImplToJson(
       this,
     );
   }
@@ -187,10 +189,10 @@ abstract class _UsersFollowingRequest implements UsersFollowingRequest {
       {required final String userId,
       final String? sinceId,
       final String? untilId,
-      final int? limit}) = _$_UsersFollowingRequest;
+      final int? limit}) = _$UsersFollowingRequestImpl;
 
   factory _UsersFollowingRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersFollowingRequest.fromJson;
+      _$UsersFollowingRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -202,6 +204,6 @@ abstract class _UsersFollowingRequest implements UsersFollowingRequest {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersFollowingRequestCopyWith<_$_UsersFollowingRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersFollowingRequestImplCopyWith<_$UsersFollowingRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

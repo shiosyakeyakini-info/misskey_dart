@@ -76,23 +76,25 @@ class _$LocalTimelineParameterCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_LocalTimelineParameterCopyWith<$Res>
+abstract class _$$LocalTimelineParameterImplCopyWith<$Res>
     implements $LocalTimelineParameterCopyWith<$Res> {
-  factory _$$_LocalTimelineParameterCopyWith(_$_LocalTimelineParameter value,
-          $Res Function(_$_LocalTimelineParameter) then) =
-      __$$_LocalTimelineParameterCopyWithImpl<$Res>;
+  factory _$$LocalTimelineParameterImplCopyWith(
+          _$LocalTimelineParameterImpl value,
+          $Res Function(_$LocalTimelineParameterImpl) then) =
+      __$$LocalTimelineParameterImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool? withRenotes, bool? withReplies, bool? withFiles});
 }
 
 /// @nodoc
-class __$$_LocalTimelineParameterCopyWithImpl<$Res>
+class __$$LocalTimelineParameterImplCopyWithImpl<$Res>
     extends _$LocalTimelineParameterCopyWithImpl<$Res,
-        _$_LocalTimelineParameter>
-    implements _$$_LocalTimelineParameterCopyWith<$Res> {
-  __$$_LocalTimelineParameterCopyWithImpl(_$_LocalTimelineParameter _value,
-      $Res Function(_$_LocalTimelineParameter) _then)
+        _$LocalTimelineParameterImpl>
+    implements _$$LocalTimelineParameterImplCopyWith<$Res> {
+  __$$LocalTimelineParameterImplCopyWithImpl(
+      _$LocalTimelineParameterImpl _value,
+      $Res Function(_$LocalTimelineParameterImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +104,7 @@ class __$$_LocalTimelineParameterCopyWithImpl<$Res>
     Object? withReplies = freezed,
     Object? withFiles = freezed,
   }) {
-    return _then(_$_LocalTimelineParameter(
+    return _then(_$LocalTimelineParameterImpl(
       withRenotes: freezed == withRenotes
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
@@ -121,12 +123,12 @@ class __$$_LocalTimelineParameterCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_LocalTimelineParameter implements _LocalTimelineParameter {
-  const _$_LocalTimelineParameter(
+class _$LocalTimelineParameterImpl implements _LocalTimelineParameter {
+  const _$LocalTimelineParameterImpl(
       {this.withRenotes, this.withReplies, this.withFiles});
 
-  factory _$_LocalTimelineParameter.fromJson(Map<String, dynamic> json) =>
-      _$$_LocalTimelineParameterFromJson(json);
+  factory _$LocalTimelineParameterImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocalTimelineParameterImplFromJson(json);
 
   @override
   final bool? withRenotes;
@@ -144,7 +146,7 @@ class _$_LocalTimelineParameter implements _LocalTimelineParameter {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LocalTimelineParameter &&
+            other is _$LocalTimelineParameterImpl &&
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
             (identical(other.withReplies, withReplies) ||
@@ -161,13 +163,13 @@ class _$_LocalTimelineParameter implements _LocalTimelineParameter {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LocalTimelineParameterCopyWith<_$_LocalTimelineParameter> get copyWith =>
-      __$$_LocalTimelineParameterCopyWithImpl<_$_LocalTimelineParameter>(
-          this, _$identity);
+  _$$LocalTimelineParameterImplCopyWith<_$LocalTimelineParameterImpl>
+      get copyWith => __$$LocalTimelineParameterImplCopyWithImpl<
+          _$LocalTimelineParameterImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LocalTimelineParameterToJson(
+    return _$$LocalTimelineParameterImplToJson(
       this,
     );
   }
@@ -177,10 +179,10 @@ abstract class _LocalTimelineParameter implements LocalTimelineParameter {
   const factory _LocalTimelineParameter(
       {final bool? withRenotes,
       final bool? withReplies,
-      final bool? withFiles}) = _$_LocalTimelineParameter;
+      final bool? withFiles}) = _$LocalTimelineParameterImpl;
 
   factory _LocalTimelineParameter.fromJson(Map<String, dynamic> json) =
-      _$_LocalTimelineParameter.fromJson;
+      _$LocalTimelineParameterImpl.fromJson;
 
   @override
   bool? get withRenotes;
@@ -190,6 +192,6 @@ abstract class _LocalTimelineParameter implements LocalTimelineParameter {
   bool? get withFiles;
   @override
   @JsonKey(ignore: true)
-  _$$_LocalTimelineParameterCopyWith<_$_LocalTimelineParameter> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LocalTimelineParameterImplCopyWith<_$LocalTimelineParameterImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

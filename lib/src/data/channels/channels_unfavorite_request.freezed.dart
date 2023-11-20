@@ -64,25 +64,25 @@ class _$ChannelsUnfavoriteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsUnfavoriteRequestCopyWith<$Res>
+abstract class _$$ChannelsUnfavoriteRequestImplCopyWith<$Res>
     implements $ChannelsUnfavoriteRequestCopyWith<$Res> {
-  factory _$$_ChannelsUnfavoriteRequestCopyWith(
-          _$_ChannelsUnfavoriteRequest value,
-          $Res Function(_$_ChannelsUnfavoriteRequest) then) =
-      __$$_ChannelsUnfavoriteRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsUnfavoriteRequestImplCopyWith(
+          _$ChannelsUnfavoriteRequestImpl value,
+          $Res Function(_$ChannelsUnfavoriteRequestImpl) then) =
+      __$$ChannelsUnfavoriteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class __$$_ChannelsUnfavoriteRequestCopyWithImpl<$Res>
+class __$$ChannelsUnfavoriteRequestImplCopyWithImpl<$Res>
     extends _$ChannelsUnfavoriteRequestCopyWithImpl<$Res,
-        _$_ChannelsUnfavoriteRequest>
-    implements _$$_ChannelsUnfavoriteRequestCopyWith<$Res> {
-  __$$_ChannelsUnfavoriteRequestCopyWithImpl(
-      _$_ChannelsUnfavoriteRequest _value,
-      $Res Function(_$_ChannelsUnfavoriteRequest) _then)
+        _$ChannelsUnfavoriteRequestImpl>
+    implements _$$ChannelsUnfavoriteRequestImplCopyWith<$Res> {
+  __$$ChannelsUnfavoriteRequestImplCopyWithImpl(
+      _$ChannelsUnfavoriteRequestImpl _value,
+      $Res Function(_$ChannelsUnfavoriteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -90,7 +90,7 @@ class __$$_ChannelsUnfavoriteRequestCopyWithImpl<$Res>
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_$_ChannelsUnfavoriteRequest(
+    return _then(_$ChannelsUnfavoriteRequestImpl(
       channelId: null == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -101,11 +101,11 @@ class __$$_ChannelsUnfavoriteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsUnfavoriteRequest implements _ChannelsUnfavoriteRequest {
-  const _$_ChannelsUnfavoriteRequest({required this.channelId});
+class _$ChannelsUnfavoriteRequestImpl implements _ChannelsUnfavoriteRequest {
+  const _$ChannelsUnfavoriteRequestImpl({required this.channelId});
 
-  factory _$_ChannelsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsUnfavoriteRequestFromJson(json);
+  factory _$ChannelsUnfavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsUnfavoriteRequestImplFromJson(json);
 
   @override
   final String channelId;
@@ -119,7 +119,7 @@ class _$_ChannelsUnfavoriteRequest implements _ChannelsUnfavoriteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsUnfavoriteRequest &&
+            other is _$ChannelsUnfavoriteRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
@@ -131,13 +131,13 @@ class _$_ChannelsUnfavoriteRequest implements _ChannelsUnfavoriteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsUnfavoriteRequestCopyWith<_$_ChannelsUnfavoriteRequest>
-      get copyWith => __$$_ChannelsUnfavoriteRequestCopyWithImpl<
-          _$_ChannelsUnfavoriteRequest>(this, _$identity);
+  _$$ChannelsUnfavoriteRequestImplCopyWith<_$ChannelsUnfavoriteRequestImpl>
+      get copyWith => __$$ChannelsUnfavoriteRequestImplCopyWithImpl<
+          _$ChannelsUnfavoriteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsUnfavoriteRequestToJson(
+    return _$$ChannelsUnfavoriteRequestImplToJson(
       this,
     );
   }
@@ -145,15 +145,15 @@ class _$_ChannelsUnfavoriteRequest implements _ChannelsUnfavoriteRequest {
 
 abstract class _ChannelsUnfavoriteRequest implements ChannelsUnfavoriteRequest {
   const factory _ChannelsUnfavoriteRequest({required final String channelId}) =
-      _$_ChannelsUnfavoriteRequest;
+      _$ChannelsUnfavoriteRequestImpl;
 
   factory _ChannelsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsUnfavoriteRequest.fromJson;
+      _$ChannelsUnfavoriteRequestImpl.fromJson;
 
   @override
   String get channelId;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsUnfavoriteRequestCopyWith<_$_ChannelsUnfavoriteRequest>
+  _$$ChannelsUnfavoriteRequestImplCopyWith<_$ChannelsUnfavoriteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

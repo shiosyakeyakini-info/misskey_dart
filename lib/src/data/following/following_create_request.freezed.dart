@@ -70,23 +70,25 @@ class _$FollowingCreateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FollowingCreateRequestCopyWith<$Res>
+abstract class _$$FollowingCreateRequestImplCopyWith<$Res>
     implements $FollowingCreateRequestCopyWith<$Res> {
-  factory _$$_FollowingCreateRequestCopyWith(_$_FollowingCreateRequest value,
-          $Res Function(_$_FollowingCreateRequest) then) =
-      __$$_FollowingCreateRequestCopyWithImpl<$Res>;
+  factory _$$FollowingCreateRequestImplCopyWith(
+          _$FollowingCreateRequestImpl value,
+          $Res Function(_$FollowingCreateRequestImpl) then) =
+      __$$FollowingCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, bool? withReplies});
 }
 
 /// @nodoc
-class __$$_FollowingCreateRequestCopyWithImpl<$Res>
+class __$$FollowingCreateRequestImplCopyWithImpl<$Res>
     extends _$FollowingCreateRequestCopyWithImpl<$Res,
-        _$_FollowingCreateRequest>
-    implements _$$_FollowingCreateRequestCopyWith<$Res> {
-  __$$_FollowingCreateRequestCopyWithImpl(_$_FollowingCreateRequest _value,
-      $Res Function(_$_FollowingCreateRequest) _then)
+        _$FollowingCreateRequestImpl>
+    implements _$$FollowingCreateRequestImplCopyWith<$Res> {
+  __$$FollowingCreateRequestImplCopyWithImpl(
+      _$FollowingCreateRequestImpl _value,
+      $Res Function(_$FollowingCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +97,7 @@ class __$$_FollowingCreateRequestCopyWithImpl<$Res>
     Object? userId = null,
     Object? withReplies = freezed,
   }) {
-    return _then(_$_FollowingCreateRequest(
+    return _then(_$FollowingCreateRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -110,11 +112,11 @@ class __$$_FollowingCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowingCreateRequest implements _FollowingCreateRequest {
-  const _$_FollowingCreateRequest({required this.userId, this.withReplies});
+class _$FollowingCreateRequestImpl implements _FollowingCreateRequest {
+  const _$FollowingCreateRequestImpl({required this.userId, this.withReplies});
 
-  factory _$_FollowingCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_FollowingCreateRequestFromJson(json);
+  factory _$FollowingCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowingCreateRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -130,7 +132,7 @@ class _$_FollowingCreateRequest implements _FollowingCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FollowingCreateRequest &&
+            other is _$FollowingCreateRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies));
@@ -143,13 +145,13 @@ class _$_FollowingCreateRequest implements _FollowingCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FollowingCreateRequestCopyWith<_$_FollowingCreateRequest> get copyWith =>
-      __$$_FollowingCreateRequestCopyWithImpl<_$_FollowingCreateRequest>(
-          this, _$identity);
+  _$$FollowingCreateRequestImplCopyWith<_$FollowingCreateRequestImpl>
+      get copyWith => __$$FollowingCreateRequestImplCopyWithImpl<
+          _$FollowingCreateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowingCreateRequestToJson(
+    return _$$FollowingCreateRequestImplToJson(
       this,
     );
   }
@@ -158,10 +160,10 @@ class _$_FollowingCreateRequest implements _FollowingCreateRequest {
 abstract class _FollowingCreateRequest implements FollowingCreateRequest {
   const factory _FollowingCreateRequest(
       {required final String userId,
-      final bool? withReplies}) = _$_FollowingCreateRequest;
+      final bool? withReplies}) = _$FollowingCreateRequestImpl;
 
   factory _FollowingCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_FollowingCreateRequest.fromJson;
+      _$FollowingCreateRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -169,6 +171,6 @@ abstract class _FollowingCreateRequest implements FollowingCreateRequest {
   bool? get withReplies;
   @override
   @JsonKey(ignore: true)
-  _$$_FollowingCreateRequestCopyWith<_$_FollowingCreateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FollowingCreateRequestImplCopyWith<_$FollowingCreateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

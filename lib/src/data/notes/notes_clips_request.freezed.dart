@@ -62,22 +62,22 @@ class _$NotesClipsRequestCopyWithImpl<$Res, $Val extends NotesClipsRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesClipsRequestCopyWith<$Res>
+abstract class _$$NotesClipsRequestImplCopyWith<$Res>
     implements $NotesClipsRequestCopyWith<$Res> {
-  factory _$$_NotesClipsRequestCopyWith(_$_NotesClipsRequest value,
-          $Res Function(_$_NotesClipsRequest) then) =
-      __$$_NotesClipsRequestCopyWithImpl<$Res>;
+  factory _$$NotesClipsRequestImplCopyWith(_$NotesClipsRequestImpl value,
+          $Res Function(_$NotesClipsRequestImpl) then) =
+      __$$NotesClipsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$_NotesClipsRequestCopyWithImpl<$Res>
-    extends _$NotesClipsRequestCopyWithImpl<$Res, _$_NotesClipsRequest>
-    implements _$$_NotesClipsRequestCopyWith<$Res> {
-  __$$_NotesClipsRequestCopyWithImpl(
-      _$_NotesClipsRequest _value, $Res Function(_$_NotesClipsRequest) _then)
+class __$$NotesClipsRequestImplCopyWithImpl<$Res>
+    extends _$NotesClipsRequestCopyWithImpl<$Res, _$NotesClipsRequestImpl>
+    implements _$$NotesClipsRequestImplCopyWith<$Res> {
+  __$$NotesClipsRequestImplCopyWithImpl(_$NotesClipsRequestImpl _value,
+      $Res Function(_$NotesClipsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_NotesClipsRequestCopyWithImpl<$Res>
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$_NotesClipsRequest(
+    return _then(_$NotesClipsRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_NotesClipsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesClipsRequest implements _NotesClipsRequest {
-  const _$_NotesClipsRequest({required this.noteId});
+class _$NotesClipsRequestImpl implements _NotesClipsRequest {
+  const _$NotesClipsRequestImpl({required this.noteId});
 
-  factory _$_NotesClipsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesClipsRequestFromJson(json);
+  factory _$NotesClipsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesClipsRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -114,7 +114,7 @@ class _$_NotesClipsRequest implements _NotesClipsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesClipsRequest &&
+            other is _$NotesClipsRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
@@ -125,13 +125,13 @@ class _$_NotesClipsRequest implements _NotesClipsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesClipsRequestCopyWith<_$_NotesClipsRequest> get copyWith =>
-      __$$_NotesClipsRequestCopyWithImpl<_$_NotesClipsRequest>(
+  _$$NotesClipsRequestImplCopyWith<_$NotesClipsRequestImpl> get copyWith =>
+      __$$NotesClipsRequestImplCopyWithImpl<_$NotesClipsRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesClipsRequestToJson(
+    return _$$NotesClipsRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_NotesClipsRequest implements _NotesClipsRequest {
 
 abstract class _NotesClipsRequest implements NotesClipsRequest {
   const factory _NotesClipsRequest({required final String noteId}) =
-      _$_NotesClipsRequest;
+      _$NotesClipsRequestImpl;
 
   factory _NotesClipsRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesClipsRequest.fromJson;
+      _$NotesClipsRequestImpl.fromJson;
 
   @override
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesClipsRequestCopyWith<_$_NotesClipsRequest> get copyWith =>
+  _$$NotesClipsRequestImplCopyWith<_$NotesClipsRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

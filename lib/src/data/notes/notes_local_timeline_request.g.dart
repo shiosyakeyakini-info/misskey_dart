@@ -6,9 +6,9 @@ part of 'notes_local_timeline_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesLocalTimelineRequest _$$_NotesLocalTimelineRequestFromJson(
+_$NotesLocalTimelineRequestImpl _$$NotesLocalTimelineRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesLocalTimelineRequest(
+    _$NotesLocalTimelineRequestImpl(
       withFiles: json['withFiles'] as bool?,
       withRenotes: json['withRenotes'] as bool?,
       withReplies: json['withReplies'] as bool?,
@@ -25,8 +25,8 @@ _$_NotesLocalTimelineRequest _$$_NotesLocalTimelineRequestFromJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
     );
 
-Map<String, dynamic> _$$_NotesLocalTimelineRequestToJson(
-        _$_NotesLocalTimelineRequest instance) =>
+Map<String, dynamic> _$$NotesLocalTimelineRequestImplToJson(
+        _$NotesLocalTimelineRequestImpl instance) =>
     <String, dynamic>{
       'withFiles': instance.withFiles,
       'withRenotes': instance.withRenotes,

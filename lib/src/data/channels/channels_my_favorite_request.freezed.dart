@@ -70,25 +70,25 @@ class _$ChannelsMyFavoriteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsMyFavoriteRequestCopyWith<$Res>
+abstract class _$$ChannelsMyFavoriteRequestImplCopyWith<$Res>
     implements $ChannelsMyFavoriteRequestCopyWith<$Res> {
-  factory _$$_ChannelsMyFavoriteRequestCopyWith(
-          _$_ChannelsMyFavoriteRequest value,
-          $Res Function(_$_ChannelsMyFavoriteRequest) then) =
-      __$$_ChannelsMyFavoriteRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsMyFavoriteRequestImplCopyWith(
+          _$ChannelsMyFavoriteRequestImpl value,
+          $Res Function(_$ChannelsMyFavoriteRequestImpl) then) =
+      __$$ChannelsMyFavoriteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, bool? noPaging});
 }
 
 /// @nodoc
-class __$$_ChannelsMyFavoriteRequestCopyWithImpl<$Res>
+class __$$ChannelsMyFavoriteRequestImplCopyWithImpl<$Res>
     extends _$ChannelsMyFavoriteRequestCopyWithImpl<$Res,
-        _$_ChannelsMyFavoriteRequest>
-    implements _$$_ChannelsMyFavoriteRequestCopyWith<$Res> {
-  __$$_ChannelsMyFavoriteRequestCopyWithImpl(
-      _$_ChannelsMyFavoriteRequest _value,
-      $Res Function(_$_ChannelsMyFavoriteRequest) _then)
+        _$ChannelsMyFavoriteRequestImpl>
+    implements _$$ChannelsMyFavoriteRequestImplCopyWith<$Res> {
+  __$$ChannelsMyFavoriteRequestImplCopyWithImpl(
+      _$ChannelsMyFavoriteRequestImpl _value,
+      $Res Function(_$ChannelsMyFavoriteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_ChannelsMyFavoriteRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? noPaging = freezed,
   }) {
-    return _then(_$_ChannelsMyFavoriteRequest(
+    return _then(_$ChannelsMyFavoriteRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -112,11 +112,11 @@ class __$$_ChannelsMyFavoriteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsMyFavoriteRequest implements _ChannelsMyFavoriteRequest {
-  const _$_ChannelsMyFavoriteRequest({this.limit, this.noPaging});
+class _$ChannelsMyFavoriteRequestImpl implements _ChannelsMyFavoriteRequest {
+  const _$ChannelsMyFavoriteRequestImpl({this.limit, this.noPaging});
 
-  factory _$_ChannelsMyFavoriteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsMyFavoriteRequestFromJson(json);
+  factory _$ChannelsMyFavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsMyFavoriteRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -132,7 +132,7 @@ class _$_ChannelsMyFavoriteRequest implements _ChannelsMyFavoriteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsMyFavoriteRequest &&
+            other is _$ChannelsMyFavoriteRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.noPaging, noPaging) ||
                 other.noPaging == noPaging));
@@ -145,13 +145,13 @@ class _$_ChannelsMyFavoriteRequest implements _ChannelsMyFavoriteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsMyFavoriteRequestCopyWith<_$_ChannelsMyFavoriteRequest>
-      get copyWith => __$$_ChannelsMyFavoriteRequestCopyWithImpl<
-          _$_ChannelsMyFavoriteRequest>(this, _$identity);
+  _$$ChannelsMyFavoriteRequestImplCopyWith<_$ChannelsMyFavoriteRequestImpl>
+      get copyWith => __$$ChannelsMyFavoriteRequestImplCopyWithImpl<
+          _$ChannelsMyFavoriteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsMyFavoriteRequestToJson(
+    return _$$ChannelsMyFavoriteRequestImplToJson(
       this,
     );
   }
@@ -159,10 +159,11 @@ class _$_ChannelsMyFavoriteRequest implements _ChannelsMyFavoriteRequest {
 
 abstract class _ChannelsMyFavoriteRequest implements ChannelsMyFavoriteRequest {
   const factory _ChannelsMyFavoriteRequest(
-      {final int? limit, final bool? noPaging}) = _$_ChannelsMyFavoriteRequest;
+      {final int? limit,
+      final bool? noPaging}) = _$ChannelsMyFavoriteRequestImpl;
 
   factory _ChannelsMyFavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsMyFavoriteRequest.fromJson;
+      _$ChannelsMyFavoriteRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -170,6 +171,6 @@ abstract class _ChannelsMyFavoriteRequest implements ChannelsMyFavoriteRequest {
   bool? get noPaging;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsMyFavoriteRequestCopyWith<_$_ChannelsMyFavoriteRequest>
+  _$$ChannelsMyFavoriteRequestImplCopyWith<_$ChannelsMyFavoriteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

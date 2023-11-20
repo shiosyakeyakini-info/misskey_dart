@@ -76,22 +76,24 @@ class _$HashtagsTrendResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_HashtagsTrendResponseCopyWith<$Res>
+abstract class _$$HashtagsTrendResponseImplCopyWith<$Res>
     implements $HashtagsTrendResponseCopyWith<$Res> {
-  factory _$$_HashtagsTrendResponseCopyWith(_$_HashtagsTrendResponse value,
-          $Res Function(_$_HashtagsTrendResponse) then) =
-      __$$_HashtagsTrendResponseCopyWithImpl<$Res>;
+  factory _$$HashtagsTrendResponseImplCopyWith(
+          _$HashtagsTrendResponseImpl value,
+          $Res Function(_$HashtagsTrendResponseImpl) then) =
+      __$$HashtagsTrendResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String tag, List<int> chart, int usersCount});
 }
 
 /// @nodoc
-class __$$_HashtagsTrendResponseCopyWithImpl<$Res>
-    extends _$HashtagsTrendResponseCopyWithImpl<$Res, _$_HashtagsTrendResponse>
-    implements _$$_HashtagsTrendResponseCopyWith<$Res> {
-  __$$_HashtagsTrendResponseCopyWithImpl(_$_HashtagsTrendResponse _value,
-      $Res Function(_$_HashtagsTrendResponse) _then)
+class __$$HashtagsTrendResponseImplCopyWithImpl<$Res>
+    extends _$HashtagsTrendResponseCopyWithImpl<$Res,
+        _$HashtagsTrendResponseImpl>
+    implements _$$HashtagsTrendResponseImplCopyWith<$Res> {
+  __$$HashtagsTrendResponseImplCopyWithImpl(_$HashtagsTrendResponseImpl _value,
+      $Res Function(_$HashtagsTrendResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +103,7 @@ class __$$_HashtagsTrendResponseCopyWithImpl<$Res>
     Object? chart = null,
     Object? usersCount = null,
   }) {
-    return _then(_$_HashtagsTrendResponse(
+    return _then(_$HashtagsTrendResponseImpl(
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -120,15 +122,15 @@ class __$$_HashtagsTrendResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HashtagsTrendResponse implements _HashtagsTrendResponse {
-  const _$_HashtagsTrendResponse(
+class _$HashtagsTrendResponseImpl implements _HashtagsTrendResponse {
+  const _$HashtagsTrendResponseImpl(
       {required this.tag,
       required final List<int> chart,
       required this.usersCount})
       : _chart = chart;
 
-  factory _$_HashtagsTrendResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagsTrendResponseFromJson(json);
+  factory _$HashtagsTrendResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagsTrendResponseImplFromJson(json);
 
   @override
   final String tag;
@@ -152,7 +154,7 @@ class _$_HashtagsTrendResponse implements _HashtagsTrendResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HashtagsTrendResponse &&
+            other is _$HashtagsTrendResponseImpl &&
             (identical(other.tag, tag) || other.tag == tag) &&
             const DeepCollectionEquality().equals(other._chart, _chart) &&
             (identical(other.usersCount, usersCount) ||
@@ -167,13 +169,13 @@ class _$_HashtagsTrendResponse implements _HashtagsTrendResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagsTrendResponseCopyWith<_$_HashtagsTrendResponse> get copyWith =>
-      __$$_HashtagsTrendResponseCopyWithImpl<_$_HashtagsTrendResponse>(
-          this, _$identity);
+  _$$HashtagsTrendResponseImplCopyWith<_$HashtagsTrendResponseImpl>
+      get copyWith => __$$HashtagsTrendResponseImplCopyWithImpl<
+          _$HashtagsTrendResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagsTrendResponseToJson(
+    return _$$HashtagsTrendResponseImplToJson(
       this,
     );
   }
@@ -183,10 +185,10 @@ abstract class _HashtagsTrendResponse implements HashtagsTrendResponse {
   const factory _HashtagsTrendResponse(
       {required final String tag,
       required final List<int> chart,
-      required final int usersCount}) = _$_HashtagsTrendResponse;
+      required final int usersCount}) = _$HashtagsTrendResponseImpl;
 
   factory _HashtagsTrendResponse.fromJson(Map<String, dynamic> json) =
-      _$_HashtagsTrendResponse.fromJson;
+      _$HashtagsTrendResponseImpl.fromJson;
 
   @override
   String get tag;
@@ -196,6 +198,6 @@ abstract class _HashtagsTrendResponse implements HashtagsTrendResponse {
   int get usersCount;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagsTrendResponseCopyWith<_$_HashtagsTrendResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HashtagsTrendResponseImplCopyWith<_$HashtagsTrendResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

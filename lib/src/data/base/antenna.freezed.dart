@@ -160,10 +160,10 @@ class _$AntennaCopyWithImpl<$Res, $Val extends Antenna>
 }
 
 /// @nodoc
-abstract class _$$_AntennaCopyWith<$Res> implements $AntennaCopyWith<$Res> {
-  factory _$$_AntennaCopyWith(
-          _$_Antenna value, $Res Function(_$_Antenna) then) =
-      __$$_AntennaCopyWithImpl<$Res>;
+abstract class _$$AntennaImplCopyWith<$Res> implements $AntennaCopyWith<$Res> {
+  factory _$$AntennaImplCopyWith(
+          _$AntennaImpl value, $Res Function(_$AntennaImpl) then) =
+      __$$AntennaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -185,10 +185,11 @@ abstract class _$$_AntennaCopyWith<$Res> implements $AntennaCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AntennaCopyWithImpl<$Res>
-    extends _$AntennaCopyWithImpl<$Res, _$_Antenna>
-    implements _$$_AntennaCopyWith<$Res> {
-  __$$_AntennaCopyWithImpl(_$_Antenna _value, $Res Function(_$_Antenna) _then)
+class __$$AntennaImplCopyWithImpl<$Res>
+    extends _$AntennaCopyWithImpl<$Res, _$AntennaImpl>
+    implements _$$AntennaImplCopyWith<$Res> {
+  __$$AntennaImplCopyWithImpl(
+      _$AntennaImpl _value, $Res Function(_$AntennaImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -210,7 +211,7 @@ class __$$_AntennaCopyWithImpl<$Res>
     Object? hasUnreadNote = null,
     Object? localOnly = freezed,
   }) {
-    return _then(_$_Antenna(
+    return _then(_$AntennaImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -277,8 +278,8 @@ class __$$_AntennaCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Antenna implements _Antenna {
-  const _$_Antenna(
+class _$AntennaImpl implements _Antenna {
+  const _$AntennaImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.name,
@@ -298,8 +299,8 @@ class _$_Antenna implements _Antenna {
         _excludeKeywords = excludeKeywords,
         _users = users;
 
-  factory _$_Antenna.fromJson(Map<String, dynamic> json) =>
-      _$$_AntennaFromJson(json);
+  factory _$AntennaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AntennaImplFromJson(json);
 
   @override
   final String id;
@@ -360,7 +361,7 @@ class _$_Antenna implements _Antenna {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Antenna &&
+            other is _$AntennaImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -410,12 +411,12 @@ class _$_Antenna implements _Antenna {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AntennaCopyWith<_$_Antenna> get copyWith =>
-      __$$_AntennaCopyWithImpl<_$_Antenna>(this, _$identity);
+  _$$AntennaImplCopyWith<_$AntennaImpl> get copyWith =>
+      __$$AntennaImplCopyWithImpl<_$AntennaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AntennaToJson(
+    return _$$AntennaImplToJson(
       this,
     );
   }
@@ -437,9 +438,9 @@ abstract class _Antenna implements Antenna {
       required final bool withFile,
       required final bool isActive,
       required final bool hasUnreadNote,
-      final bool? localOnly}) = _$_Antenna;
+      final bool? localOnly}) = _$AntennaImpl;
 
-  factory _Antenna.fromJson(Map<String, dynamic> json) = _$_Antenna.fromJson;
+  factory _Antenna.fromJson(Map<String, dynamic> json) = _$AntennaImpl.fromJson;
 
   @override
   String get id;
@@ -474,6 +475,6 @@ abstract class _Antenna implements Antenna {
   bool? get localOnly;
   @override
   @JsonKey(ignore: true)
-  _$$_AntennaCopyWith<_$_Antenna> get copyWith =>
+  _$$AntennaImplCopyWith<_$AntennaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

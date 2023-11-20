@@ -6,15 +6,15 @@ part of 'drive_files_find_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DriveFilesFindRequest _$$_DriveFilesFindRequestFromJson(
+_$DriveFilesFindRequestImpl _$$DriveFilesFindRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_DriveFilesFindRequest(
+    _$DriveFilesFindRequestImpl(
       name: json['name'] as String,
       folderId: json['folderId'] as String?,
     );
 
-Map<String, dynamic> _$$_DriveFilesFindRequestToJson(
-        _$_DriveFilesFindRequest instance) =>
+Map<String, dynamic> _$$DriveFilesFindRequestImplToJson(
+        _$DriveFilesFindRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'folderId': instance.folderId,

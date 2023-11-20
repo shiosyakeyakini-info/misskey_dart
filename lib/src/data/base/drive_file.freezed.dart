@@ -168,10 +168,11 @@ class _$DriveFileCopyWithImpl<$Res, $Val extends DriveFile>
 }
 
 /// @nodoc
-abstract class _$$_DriveFileCopyWith<$Res> implements $DriveFileCopyWith<$Res> {
-  factory _$$_DriveFileCopyWith(
-          _$_DriveFile value, $Res Function(_$_DriveFile) then) =
-      __$$_DriveFileCopyWithImpl<$Res>;
+abstract class _$$DriveFileImplCopyWith<$Res>
+    implements $DriveFileCopyWith<$Res> {
+  factory _$$DriveFileImplCopyWith(
+          _$DriveFileImpl value, $Res Function(_$DriveFileImpl) then) =
+      __$$DriveFileImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -195,11 +196,11 @@ abstract class _$$_DriveFileCopyWith<$Res> implements $DriveFileCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DriveFileCopyWithImpl<$Res>
-    extends _$DriveFileCopyWithImpl<$Res, _$_DriveFile>
-    implements _$$_DriveFileCopyWith<$Res> {
-  __$$_DriveFileCopyWithImpl(
-      _$_DriveFile _value, $Res Function(_$_DriveFile) _then)
+class __$$DriveFileImplCopyWithImpl<$Res>
+    extends _$DriveFileCopyWithImpl<$Res, _$DriveFileImpl>
+    implements _$$DriveFileImplCopyWith<$Res> {
+  __$$DriveFileImplCopyWithImpl(
+      _$DriveFileImpl _value, $Res Function(_$DriveFileImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -220,7 +221,7 @@ class __$$_DriveFileCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? user = freezed,
   }) {
-    return _then(_$_DriveFile(
+    return _then(_$DriveFileImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -283,8 +284,8 @@ class __$$_DriveFileCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFile implements _DriveFile {
-  const _$_DriveFile(
+class _$DriveFileImpl implements _DriveFile {
+  const _$DriveFileImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.name,
@@ -300,8 +301,8 @@ class _$_DriveFile implements _DriveFile {
       this.userId,
       this.user});
 
-  factory _$_DriveFile.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFileFromJson(json);
+  factory _$DriveFileImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFileImplFromJson(json);
 
   @override
   final String id;
@@ -342,7 +343,7 @@ class _$_DriveFile implements _DriveFile {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFile &&
+            other is _$DriveFileImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -386,12 +387,12 @@ class _$_DriveFile implements _DriveFile {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFileCopyWith<_$_DriveFile> get copyWith =>
-      __$$_DriveFileCopyWithImpl<_$_DriveFile>(this, _$identity);
+  _$$DriveFileImplCopyWith<_$DriveFileImpl> get copyWith =>
+      __$$DriveFileImplCopyWithImpl<_$DriveFileImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFileToJson(
+    return _$$DriveFileImplToJson(
       this,
     );
   }
@@ -412,10 +413,10 @@ abstract class _DriveFile implements DriveFile {
       final String? comment,
       final String? folderId,
       final String? userId,
-      final User? user}) = _$_DriveFile;
+      final User? user}) = _$DriveFileImpl;
 
   factory _DriveFile.fromJson(Map<String, dynamic> json) =
-      _$_DriveFile.fromJson;
+      _$DriveFileImpl.fromJson;
 
   @override
   String get id;
@@ -448,6 +449,6 @@ abstract class _DriveFile implements DriveFile {
   User? get user;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFileCopyWith<_$_DriveFile> get copyWith =>
+  _$$DriveFileImplCopyWith<_$DriveFileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

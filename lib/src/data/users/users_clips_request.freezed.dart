@@ -80,22 +80,22 @@ class _$UsersClipsRequestCopyWithImpl<$Res, $Val extends UsersClipsRequest>
 }
 
 /// @nodoc
-abstract class _$$_UsersClipsRequestCopyWith<$Res>
+abstract class _$$UsersClipsRequestImplCopyWith<$Res>
     implements $UsersClipsRequestCopyWith<$Res> {
-  factory _$$_UsersClipsRequestCopyWith(_$_UsersClipsRequest value,
-          $Res Function(_$_UsersClipsRequest) then) =
-      __$$_UsersClipsRequestCopyWithImpl<$Res>;
+  factory _$$UsersClipsRequestImplCopyWith(_$UsersClipsRequestImpl value,
+          $Res Function(_$UsersClipsRequestImpl) then) =
+      __$$UsersClipsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$_UsersClipsRequestCopyWithImpl<$Res>
-    extends _$UsersClipsRequestCopyWithImpl<$Res, _$_UsersClipsRequest>
-    implements _$$_UsersClipsRequestCopyWith<$Res> {
-  __$$_UsersClipsRequestCopyWithImpl(
-      _$_UsersClipsRequest _value, $Res Function(_$_UsersClipsRequest) _then)
+class __$$UsersClipsRequestImplCopyWithImpl<$Res>
+    extends _$UsersClipsRequestCopyWithImpl<$Res, _$UsersClipsRequestImpl>
+    implements _$$UsersClipsRequestImplCopyWith<$Res> {
+  __$$UsersClipsRequestImplCopyWithImpl(_$UsersClipsRequestImpl _value,
+      $Res Function(_$UsersClipsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_UsersClipsRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_UsersClipsRequest(
+    return _then(_$UsersClipsRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_UsersClipsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersClipsRequest implements _UsersClipsRequest {
-  const _$_UsersClipsRequest(
+class _$UsersClipsRequestImpl implements _UsersClipsRequest {
+  const _$UsersClipsRequestImpl(
       {required this.userId, this.limit, this.sinceId, this.untilId});
 
-  factory _$_UsersClipsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersClipsRequestFromJson(json);
+  factory _$UsersClipsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersClipsRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -154,7 +154,7 @@ class _$_UsersClipsRequest implements _UsersClipsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersClipsRequest &&
+            other is _$UsersClipsRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -168,13 +168,13 @@ class _$_UsersClipsRequest implements _UsersClipsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersClipsRequestCopyWith<_$_UsersClipsRequest> get copyWith =>
-      __$$_UsersClipsRequestCopyWithImpl<_$_UsersClipsRequest>(
+  _$$UsersClipsRequestImplCopyWith<_$UsersClipsRequestImpl> get copyWith =>
+      __$$UsersClipsRequestImplCopyWithImpl<_$UsersClipsRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersClipsRequestToJson(
+    return _$$UsersClipsRequestImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _UsersClipsRequest implements UsersClipsRequest {
       {required final String userId,
       final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_UsersClipsRequest;
+      final String? untilId}) = _$UsersClipsRequestImpl;
 
   factory _UsersClipsRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersClipsRequest.fromJson;
+      _$UsersClipsRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -200,6 +200,6 @@ abstract class _UsersClipsRequest implements UsersClipsRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersClipsRequestCopyWith<_$_UsersClipsRequest> get copyWith =>
+  _$$UsersClipsRequestImplCopyWith<_$UsersClipsRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

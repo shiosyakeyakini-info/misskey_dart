@@ -62,22 +62,22 @@ class _$NotesStateRequestCopyWithImpl<$Res, $Val extends NotesStateRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesStateRequestCopyWith<$Res>
+abstract class _$$NotesStateRequestImplCopyWith<$Res>
     implements $NotesStateRequestCopyWith<$Res> {
-  factory _$$_NotesStateRequestCopyWith(_$_NotesStateRequest value,
-          $Res Function(_$_NotesStateRequest) then) =
-      __$$_NotesStateRequestCopyWithImpl<$Res>;
+  factory _$$NotesStateRequestImplCopyWith(_$NotesStateRequestImpl value,
+          $Res Function(_$NotesStateRequestImpl) then) =
+      __$$NotesStateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$_NotesStateRequestCopyWithImpl<$Res>
-    extends _$NotesStateRequestCopyWithImpl<$Res, _$_NotesStateRequest>
-    implements _$$_NotesStateRequestCopyWith<$Res> {
-  __$$_NotesStateRequestCopyWithImpl(
-      _$_NotesStateRequest _value, $Res Function(_$_NotesStateRequest) _then)
+class __$$NotesStateRequestImplCopyWithImpl<$Res>
+    extends _$NotesStateRequestCopyWithImpl<$Res, _$NotesStateRequestImpl>
+    implements _$$NotesStateRequestImplCopyWith<$Res> {
+  __$$NotesStateRequestImplCopyWithImpl(_$NotesStateRequestImpl _value,
+      $Res Function(_$NotesStateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_NotesStateRequestCopyWithImpl<$Res>
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$_NotesStateRequest(
+    return _then(_$NotesStateRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_NotesStateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesStateRequest implements _NotesStateRequest {
-  const _$_NotesStateRequest({required this.noteId});
+class _$NotesStateRequestImpl implements _NotesStateRequest {
+  const _$NotesStateRequestImpl({required this.noteId});
 
-  factory _$_NotesStateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesStateRequestFromJson(json);
+  factory _$NotesStateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesStateRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -114,7 +114,7 @@ class _$_NotesStateRequest implements _NotesStateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesStateRequest &&
+            other is _$NotesStateRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
@@ -125,13 +125,13 @@ class _$_NotesStateRequest implements _NotesStateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesStateRequestCopyWith<_$_NotesStateRequest> get copyWith =>
-      __$$_NotesStateRequestCopyWithImpl<_$_NotesStateRequest>(
+  _$$NotesStateRequestImplCopyWith<_$NotesStateRequestImpl> get copyWith =>
+      __$$NotesStateRequestImplCopyWithImpl<_$NotesStateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesStateRequestToJson(
+    return _$$NotesStateRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_NotesStateRequest implements _NotesStateRequest {
 
 abstract class _NotesStateRequest implements NotesStateRequest {
   const factory _NotesStateRequest({required final String noteId}) =
-      _$_NotesStateRequest;
+      _$NotesStateRequestImpl;
 
   factory _NotesStateRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesStateRequest.fromJson;
+      _$NotesStateRequestImpl.fromJson;
 
   @override
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesStateRequestCopyWith<_$_NotesStateRequest> get copyWith =>
+  _$$NotesStateRequestImplCopyWith<_$NotesStateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

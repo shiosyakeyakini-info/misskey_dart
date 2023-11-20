@@ -70,22 +70,24 @@ class _$NotesPollsVoteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesPollsVoteRequestCopyWith<$Res>
+abstract class _$$NotesPollsVoteRequestImplCopyWith<$Res>
     implements $NotesPollsVoteRequestCopyWith<$Res> {
-  factory _$$_NotesPollsVoteRequestCopyWith(_$_NotesPollsVoteRequest value,
-          $Res Function(_$_NotesPollsVoteRequest) then) =
-      __$$_NotesPollsVoteRequestCopyWithImpl<$Res>;
+  factory _$$NotesPollsVoteRequestImplCopyWith(
+          _$NotesPollsVoteRequestImpl value,
+          $Res Function(_$NotesPollsVoteRequestImpl) then) =
+      __$$NotesPollsVoteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId, int choice});
 }
 
 /// @nodoc
-class __$$_NotesPollsVoteRequestCopyWithImpl<$Res>
-    extends _$NotesPollsVoteRequestCopyWithImpl<$Res, _$_NotesPollsVoteRequest>
-    implements _$$_NotesPollsVoteRequestCopyWith<$Res> {
-  __$$_NotesPollsVoteRequestCopyWithImpl(_$_NotesPollsVoteRequest _value,
-      $Res Function(_$_NotesPollsVoteRequest) _then)
+class __$$NotesPollsVoteRequestImplCopyWithImpl<$Res>
+    extends _$NotesPollsVoteRequestCopyWithImpl<$Res,
+        _$NotesPollsVoteRequestImpl>
+    implements _$$NotesPollsVoteRequestImplCopyWith<$Res> {
+  __$$NotesPollsVoteRequestImplCopyWithImpl(_$NotesPollsVoteRequestImpl _value,
+      $Res Function(_$NotesPollsVoteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +96,7 @@ class __$$_NotesPollsVoteRequestCopyWithImpl<$Res>
     Object? noteId = null,
     Object? choice = null,
   }) {
-    return _then(_$_NotesPollsVoteRequest(
+    return _then(_$NotesPollsVoteRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -109,11 +111,12 @@ class __$$_NotesPollsVoteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesPollsVoteRequest implements _NotesPollsVoteRequest {
-  const _$_NotesPollsVoteRequest({required this.noteId, required this.choice});
+class _$NotesPollsVoteRequestImpl implements _NotesPollsVoteRequest {
+  const _$NotesPollsVoteRequestImpl(
+      {required this.noteId, required this.choice});
 
-  factory _$_NotesPollsVoteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesPollsVoteRequestFromJson(json);
+  factory _$NotesPollsVoteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesPollsVoteRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -129,7 +132,7 @@ class _$_NotesPollsVoteRequest implements _NotesPollsVoteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesPollsVoteRequest &&
+            other is _$NotesPollsVoteRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.choice, choice) || other.choice == choice));
   }
@@ -141,13 +144,13 @@ class _$_NotesPollsVoteRequest implements _NotesPollsVoteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesPollsVoteRequestCopyWith<_$_NotesPollsVoteRequest> get copyWith =>
-      __$$_NotesPollsVoteRequestCopyWithImpl<_$_NotesPollsVoteRequest>(
-          this, _$identity);
+  _$$NotesPollsVoteRequestImplCopyWith<_$NotesPollsVoteRequestImpl>
+      get copyWith => __$$NotesPollsVoteRequestImplCopyWithImpl<
+          _$NotesPollsVoteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesPollsVoteRequestToJson(
+    return _$$NotesPollsVoteRequestImplToJson(
       this,
     );
   }
@@ -156,10 +159,10 @@ class _$_NotesPollsVoteRequest implements _NotesPollsVoteRequest {
 abstract class _NotesPollsVoteRequest implements NotesPollsVoteRequest {
   const factory _NotesPollsVoteRequest(
       {required final String noteId,
-      required final int choice}) = _$_NotesPollsVoteRequest;
+      required final int choice}) = _$NotesPollsVoteRequestImpl;
 
   factory _NotesPollsVoteRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesPollsVoteRequest.fromJson;
+      _$NotesPollsVoteRequestImpl.fromJson;
 
   @override
   String get noteId;
@@ -167,6 +170,6 @@ abstract class _NotesPollsVoteRequest implements NotesPollsVoteRequest {
   int get choice;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesPollsVoteRequestCopyWith<_$_NotesPollsVoteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NotesPollsVoteRequestImplCopyWith<_$NotesPollsVoteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

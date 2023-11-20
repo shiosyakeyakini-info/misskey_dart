@@ -62,22 +62,22 @@ class _$AntennasShowRequestCopyWithImpl<$Res, $Val extends AntennasShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_AntennasShowRequestCopyWith<$Res>
+abstract class _$$AntennasShowRequestImplCopyWith<$Res>
     implements $AntennasShowRequestCopyWith<$Res> {
-  factory _$$_AntennasShowRequestCopyWith(_$_AntennasShowRequest value,
-          $Res Function(_$_AntennasShowRequest) then) =
-      __$$_AntennasShowRequestCopyWithImpl<$Res>;
+  factory _$$AntennasShowRequestImplCopyWith(_$AntennasShowRequestImpl value,
+          $Res Function(_$AntennasShowRequestImpl) then) =
+      __$$AntennasShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String antennaId});
 }
 
 /// @nodoc
-class __$$_AntennasShowRequestCopyWithImpl<$Res>
-    extends _$AntennasShowRequestCopyWithImpl<$Res, _$_AntennasShowRequest>
-    implements _$$_AntennasShowRequestCopyWith<$Res> {
-  __$$_AntennasShowRequestCopyWithImpl(_$_AntennasShowRequest _value,
-      $Res Function(_$_AntennasShowRequest) _then)
+class __$$AntennasShowRequestImplCopyWithImpl<$Res>
+    extends _$AntennasShowRequestCopyWithImpl<$Res, _$AntennasShowRequestImpl>
+    implements _$$AntennasShowRequestImplCopyWith<$Res> {
+  __$$AntennasShowRequestImplCopyWithImpl(_$AntennasShowRequestImpl _value,
+      $Res Function(_$AntennasShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_AntennasShowRequestCopyWithImpl<$Res>
   $Res call({
     Object? antennaId = null,
   }) {
-    return _then(_$_AntennasShowRequest(
+    return _then(_$AntennasShowRequestImpl(
       antennaId: null == antennaId
           ? _value.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_AntennasShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AntennasShowRequest implements _AntennasShowRequest {
-  const _$_AntennasShowRequest({required this.antennaId});
+class _$AntennasShowRequestImpl implements _AntennasShowRequest {
+  const _$AntennasShowRequestImpl({required this.antennaId});
 
-  factory _$_AntennasShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_AntennasShowRequestFromJson(json);
+  factory _$AntennasShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AntennasShowRequestImplFromJson(json);
 
   @override
   final String antennaId;
@@ -114,7 +114,7 @@ class _$_AntennasShowRequest implements _AntennasShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AntennasShowRequest &&
+            other is _$AntennasShowRequestImpl &&
             (identical(other.antennaId, antennaId) ||
                 other.antennaId == antennaId));
   }
@@ -126,13 +126,13 @@ class _$_AntennasShowRequest implements _AntennasShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AntennasShowRequestCopyWith<_$_AntennasShowRequest> get copyWith =>
-      __$$_AntennasShowRequestCopyWithImpl<_$_AntennasShowRequest>(
+  _$$AntennasShowRequestImplCopyWith<_$AntennasShowRequestImpl> get copyWith =>
+      __$$AntennasShowRequestImplCopyWithImpl<_$AntennasShowRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AntennasShowRequestToJson(
+    return _$$AntennasShowRequestImplToJson(
       this,
     );
   }
@@ -140,15 +140,15 @@ class _$_AntennasShowRequest implements _AntennasShowRequest {
 
 abstract class _AntennasShowRequest implements AntennasShowRequest {
   const factory _AntennasShowRequest({required final String antennaId}) =
-      _$_AntennasShowRequest;
+      _$AntennasShowRequestImpl;
 
   factory _AntennasShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_AntennasShowRequest.fromJson;
+      _$AntennasShowRequestImpl.fromJson;
 
   @override
   String get antennaId;
   @override
   @JsonKey(ignore: true)
-  _$$_AntennasShowRequestCopyWith<_$_AntennasShowRequest> get copyWith =>
+  _$$AntennasShowRequestImplCopyWith<_$AntennasShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

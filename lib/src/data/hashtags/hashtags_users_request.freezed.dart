@@ -93,11 +93,11 @@ class _$HashtagsUsersRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_HashtagsUsersRequestCopyWith<$Res>
+abstract class _$$HashtagsUsersRequestImplCopyWith<$Res>
     implements $HashtagsUsersRequestCopyWith<$Res> {
-  factory _$$_HashtagsUsersRequestCopyWith(_$_HashtagsUsersRequest value,
-          $Res Function(_$_HashtagsUsersRequest) then) =
-      __$$_HashtagsUsersRequestCopyWithImpl<$Res>;
+  factory _$$HashtagsUsersRequestImplCopyWith(_$HashtagsUsersRequestImpl value,
+          $Res Function(_$HashtagsUsersRequestImpl) then) =
+      __$$HashtagsUsersRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -109,11 +109,11 @@ abstract class _$$_HashtagsUsersRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HashtagsUsersRequestCopyWithImpl<$Res>
-    extends _$HashtagsUsersRequestCopyWithImpl<$Res, _$_HashtagsUsersRequest>
-    implements _$$_HashtagsUsersRequestCopyWith<$Res> {
-  __$$_HashtagsUsersRequestCopyWithImpl(_$_HashtagsUsersRequest _value,
-      $Res Function(_$_HashtagsUsersRequest) _then)
+class __$$HashtagsUsersRequestImplCopyWithImpl<$Res>
+    extends _$HashtagsUsersRequestCopyWithImpl<$Res, _$HashtagsUsersRequestImpl>
+    implements _$$HashtagsUsersRequestImplCopyWith<$Res> {
+  __$$HashtagsUsersRequestImplCopyWithImpl(_$HashtagsUsersRequestImpl _value,
+      $Res Function(_$HashtagsUsersRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$_HashtagsUsersRequestCopyWithImpl<$Res>
     Object? state = freezed,
     Object? origin = freezed,
   }) {
-    return _then(_$_HashtagsUsersRequest(
+    return _then(_$HashtagsUsersRequestImpl(
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -152,16 +152,16 @@ class __$$_HashtagsUsersRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HashtagsUsersRequest implements _HashtagsUsersRequest {
-  const _$_HashtagsUsersRequest(
+class _$HashtagsUsersRequestImpl implements _HashtagsUsersRequest {
+  const _$HashtagsUsersRequestImpl(
       {required this.tag,
       this.limit,
       @UsersSortConverter() required this.sort,
       this.state,
       this.origin});
 
-  factory _$_HashtagsUsersRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagsUsersRequestFromJson(json);
+  factory _$HashtagsUsersRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagsUsersRequestImplFromJson(json);
 
   @override
   final String tag;
@@ -184,7 +184,7 @@ class _$_HashtagsUsersRequest implements _HashtagsUsersRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HashtagsUsersRequest &&
+            other is _$HashtagsUsersRequestImpl &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sort, sort) || other.sort == sort) &&
@@ -199,13 +199,14 @@ class _$_HashtagsUsersRequest implements _HashtagsUsersRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagsUsersRequestCopyWith<_$_HashtagsUsersRequest> get copyWith =>
-      __$$_HashtagsUsersRequestCopyWithImpl<_$_HashtagsUsersRequest>(
-          this, _$identity);
+  _$$HashtagsUsersRequestImplCopyWith<_$HashtagsUsersRequestImpl>
+      get copyWith =>
+          __$$HashtagsUsersRequestImplCopyWithImpl<_$HashtagsUsersRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagsUsersRequestToJson(
+    return _$$HashtagsUsersRequestImplToJson(
       this,
     );
   }
@@ -217,10 +218,10 @@ abstract class _HashtagsUsersRequest implements HashtagsUsersRequest {
       final int? limit,
       @UsersSortConverter() required final UsersSortType sort,
       final UsersState? state,
-      final Origin? origin}) = _$_HashtagsUsersRequest;
+      final Origin? origin}) = _$HashtagsUsersRequestImpl;
 
   factory _HashtagsUsersRequest.fromJson(Map<String, dynamic> json) =
-      _$_HashtagsUsersRequest.fromJson;
+      _$HashtagsUsersRequestImpl.fromJson;
 
   @override
   String get tag;
@@ -235,6 +236,6 @@ abstract class _HashtagsUsersRequest implements HashtagsUsersRequest {
   Origin? get origin;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagsUsersRequestCopyWith<_$_HashtagsUsersRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HashtagsUsersRequestImplCopyWith<_$HashtagsUsersRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

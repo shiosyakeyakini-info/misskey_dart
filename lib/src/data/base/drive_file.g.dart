@@ -6,7 +6,8 @@ part of 'drive_file.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DriveFile _$$_DriveFileFromJson(Map<String, dynamic> json) => _$_DriveFile(
+_$DriveFileImpl _$$DriveFileImplFromJson(Map<String, dynamic> json) =>
+    _$DriveFileImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -26,7 +27,7 @@ _$_DriveFile _$$_DriveFileFromJson(Map<String, dynamic> json) => _$_DriveFile(
           : User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DriveFileToJson(_$_DriveFile instance) =>
+Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

@@ -196,11 +196,11 @@ class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesCreateRequestCopyWith<$Res>
+abstract class _$$NotesCreateRequestImplCopyWith<$Res>
     implements $NotesCreateRequestCopyWith<$Res> {
-  factory _$$_NotesCreateRequestCopyWith(_$_NotesCreateRequest value,
-          $Res Function(_$_NotesCreateRequest) then) =
-      __$$_NotesCreateRequestCopyWithImpl<$Res>;
+  factory _$$NotesCreateRequestImplCopyWith(_$NotesCreateRequestImpl value,
+          $Res Function(_$NotesCreateRequestImpl) then) =
+      __$$NotesCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -225,11 +225,11 @@ abstract class _$$_NotesCreateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesCreateRequestCopyWithImpl<$Res>
-    extends _$NotesCreateRequestCopyWithImpl<$Res, _$_NotesCreateRequest>
-    implements _$$_NotesCreateRequestCopyWith<$Res> {
-  __$$_NotesCreateRequestCopyWithImpl(
-      _$_NotesCreateRequest _value, $Res Function(_$_NotesCreateRequest) _then)
+class __$$NotesCreateRequestImplCopyWithImpl<$Res>
+    extends _$NotesCreateRequestCopyWithImpl<$Res, _$NotesCreateRequestImpl>
+    implements _$$NotesCreateRequestImplCopyWith<$Res> {
+  __$$NotesCreateRequestImplCopyWithImpl(_$NotesCreateRequestImpl _value,
+      $Res Function(_$NotesCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -251,7 +251,7 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
     Object? channelId = freezed,
     Object? poll = freezed,
   }) {
-    return _then(_$_NotesCreateRequest(
+    return _then(_$NotesCreateRequestImpl(
       visibility: freezed == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
@@ -318,8 +318,8 @@ class __$$_NotesCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesCreateRequest implements _NotesCreateRequest {
-  const _$_NotesCreateRequest(
+class _$NotesCreateRequestImpl implements _NotesCreateRequest {
+  const _$NotesCreateRequestImpl(
       {@NoteVisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
       this.text,
@@ -339,8 +339,8 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
         _fileIds = fileIds,
         _mediaIds = mediaIds;
 
-  factory _$_NotesCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesCreateRequestFromJson(json);
+  factory _$NotesCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesCreateRequestImplFromJson(json);
 
   /// ノートの公開範囲。
   @override
@@ -430,7 +430,7 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesCreateRequest &&
+            other is _$NotesCreateRequestImpl &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility) &&
             const DeepCollectionEquality()
@@ -480,13 +480,13 @@ class _$_NotesCreateRequest implements _NotesCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesCreateRequestCopyWith<_$_NotesCreateRequest> get copyWith =>
-      __$$_NotesCreateRequestCopyWithImpl<_$_NotesCreateRequest>(
+  _$$NotesCreateRequestImplCopyWith<_$NotesCreateRequestImpl> get copyWith =>
+      __$$NotesCreateRequestImplCopyWithImpl<_$NotesCreateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesCreateRequestToJson(
+    return _$$NotesCreateRequestImplToJson(
       this,
     );
   }
@@ -508,10 +508,10 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
       final String? replyId,
       final String? renoteId,
       final String? channelId,
-      final NotesCreatePollRequest? poll}) = _$_NotesCreateRequest;
+      final NotesCreatePollRequest? poll}) = _$NotesCreateRequestImpl;
 
   factory _NotesCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesCreateRequest.fromJson;
+      _$NotesCreateRequestImpl.fromJson;
 
   @override
 
@@ -566,6 +566,6 @@ abstract class _NotesCreateRequest implements NotesCreateRequest {
   NotesCreatePollRequest? get poll;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesCreateRequestCopyWith<_$_NotesCreateRequest> get copyWith =>
+  _$$NotesCreateRequestImplCopyWith<_$NotesCreateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

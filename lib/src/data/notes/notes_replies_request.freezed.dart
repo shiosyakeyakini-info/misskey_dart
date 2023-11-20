@@ -80,22 +80,22 @@ class _$NotesRepliesRequestCopyWithImpl<$Res, $Val extends NotesRepliesRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesRepliesRequestCopyWith<$Res>
+abstract class _$$NotesRepliesRequestImplCopyWith<$Res>
     implements $NotesRepliesRequestCopyWith<$Res> {
-  factory _$$_NotesRepliesRequestCopyWith(_$_NotesRepliesRequest value,
-          $Res Function(_$_NotesRepliesRequest) then) =
-      __$$_NotesRepliesRequestCopyWithImpl<$Res>;
+  factory _$$NotesRepliesRequestImplCopyWith(_$NotesRepliesRequestImpl value,
+          $Res Function(_$NotesRepliesRequestImpl) then) =
+      __$$NotesRepliesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$_NotesRepliesRequestCopyWithImpl<$Res>
-    extends _$NotesRepliesRequestCopyWithImpl<$Res, _$_NotesRepliesRequest>
-    implements _$$_NotesRepliesRequestCopyWith<$Res> {
-  __$$_NotesRepliesRequestCopyWithImpl(_$_NotesRepliesRequest _value,
-      $Res Function(_$_NotesRepliesRequest) _then)
+class __$$NotesRepliesRequestImplCopyWithImpl<$Res>
+    extends _$NotesRepliesRequestCopyWithImpl<$Res, _$NotesRepliesRequestImpl>
+    implements _$$NotesRepliesRequestImplCopyWith<$Res> {
+  __$$NotesRepliesRequestImplCopyWithImpl(_$NotesRepliesRequestImpl _value,
+      $Res Function(_$NotesRepliesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_NotesRepliesRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_NotesRepliesRequest(
+    return _then(_$NotesRepliesRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_NotesRepliesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesRepliesRequest implements _NotesRepliesRequest {
-  const _$_NotesRepliesRequest(
+class _$NotesRepliesRequestImpl implements _NotesRepliesRequest {
+  const _$NotesRepliesRequestImpl(
       {required this.noteId, this.limit, this.sinceId, this.untilId});
 
-  factory _$_NotesRepliesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesRepliesRequestFromJson(json);
+  factory _$NotesRepliesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesRepliesRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -154,7 +154,7 @@ class _$_NotesRepliesRequest implements _NotesRepliesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesRepliesRequest &&
+            other is _$NotesRepliesRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -168,13 +168,13 @@ class _$_NotesRepliesRequest implements _NotesRepliesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesRepliesRequestCopyWith<_$_NotesRepliesRequest> get copyWith =>
-      __$$_NotesRepliesRequestCopyWithImpl<_$_NotesRepliesRequest>(
+  _$$NotesRepliesRequestImplCopyWith<_$NotesRepliesRequestImpl> get copyWith =>
+      __$$NotesRepliesRequestImplCopyWithImpl<_$NotesRepliesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesRepliesRequestToJson(
+    return _$$NotesRepliesRequestImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _NotesRepliesRequest implements NotesRepliesRequest {
       {required final String noteId,
       final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_NotesRepliesRequest;
+      final String? untilId}) = _$NotesRepliesRequestImpl;
 
   factory _NotesRepliesRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesRepliesRequest.fromJson;
+      _$NotesRepliesRequestImpl.fromJson;
 
   @override
   String get noteId;
@@ -200,6 +200,6 @@ abstract class _NotesRepliesRequest implements NotesRepliesRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesRepliesRequestCopyWith<_$_NotesRepliesRequest> get copyWith =>
+  _$$NotesRepliesRequestImplCopyWith<_$NotesRepliesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

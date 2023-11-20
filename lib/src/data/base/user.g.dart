@@ -6,7 +6,7 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json['id'] as String,
       username: json['username'] as String,
       host: json['host'] as String?,
@@ -34,7 +34,8 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
           : const EmojisConverter().fromJson(json['emojis']),
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'username': instance.username,
       'host': instance.host,
@@ -51,17 +52,17 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'emojis': const EmojisConverter().toJson(instance.emojis),
     };
 
-_$_UserAvatarDecoration _$$_UserAvatarDecorationFromJson(
+_$UserAvatarDecorationImpl _$$UserAvatarDecorationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UserAvatarDecoration(
+    _$UserAvatarDecorationImpl(
       id: json['id'] as String,
       angle: (json['angle'] as num?)?.toDouble(),
       flipH: json['flipH'] as bool? ?? false,
       url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$_UserAvatarDecorationToJson(
-        _$_UserAvatarDecoration instance) =>
+Map<String, dynamic> _$$UserAvatarDecorationImplToJson(
+        _$UserAvatarDecorationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'angle': instance.angle,
@@ -69,8 +70,9 @@ Map<String, dynamic> _$$_UserAvatarDecorationToJson(
       'url': instance.url,
     };
 
-_$_UserInstanceInfo _$$_UserInstanceInfoFromJson(Map<String, dynamic> json) =>
-    _$_UserInstanceInfo(
+_$UserInstanceInfoImpl _$$UserInstanceInfoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UserInstanceInfoImpl(
       name: json['name'] as String?,
       softwareVersion: json['softwareVersion'] as String?,
       softwareName: json['softwareName'] as String?,
@@ -81,7 +83,8 @@ _$_UserInstanceInfo _$$_UserInstanceInfoFromJson(Map<String, dynamic> json) =>
       themeColor: json['themeColor'] as String?,
     );
 
-Map<String, dynamic> _$$_UserInstanceInfoToJson(_$_UserInstanceInfo instance) =>
+Map<String, dynamic> _$$UserInstanceInfoImplToJson(
+        _$UserInstanceInfoImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'softwareVersion': instance.softwareVersion,
@@ -97,20 +100,21 @@ Value? _$JsonConverterFromJson<Json, Value>(
 ) =>
     json == null ? null : fromJson(json as Json);
 
-_$_UserBadgeRole _$$_UserBadgeRoleFromJson(Map<String, dynamic> json) =>
-    _$_UserBadgeRole(
+_$UserBadgeRoleImpl _$$UserBadgeRoleImplFromJson(Map<String, dynamic> json) =>
+    _$UserBadgeRoleImpl(
       name: json['name'] as String,
       iconUrl: _$JsonConverterFromJson<String, Uri?>(
           json['iconUrl'], const NullableUriConverter().fromJson),
     );
 
-Map<String, dynamic> _$$_UserBadgeRoleToJson(_$_UserBadgeRole instance) =>
+Map<String, dynamic> _$$UserBadgeRoleImplToJson(_$UserBadgeRoleImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'iconUrl': const NullableUriConverter().toJson(instance.iconUrl),
     };
 
-_$_UserRole _$$_UserRoleFromJson(Map<String, dynamic> json) => _$_UserRole(
+_$UserRoleImpl _$$UserRoleImplFromJson(Map<String, dynamic> json) =>
+    _$UserRoleImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: json['color'] as String?,
@@ -121,7 +125,7 @@ _$_UserRole _$$_UserRoleFromJson(Map<String, dynamic> json) => _$_UserRole(
       isAdministrator: json['isAdministrator'] as bool,
     );
 
-Map<String, dynamic> _$$_UserRoleToJson(_$_UserRole instance) =>
+Map<String, dynamic> _$$UserRoleImplToJson(_$UserRoleImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -132,22 +136,24 @@ Map<String, dynamic> _$$_UserRoleToJson(_$_UserRole instance) =>
       'isAdministrator': instance.isAdministrator,
     };
 
-_$_UserAchievement _$$_UserAchievementFromJson(Map<String, dynamic> json) =>
-    _$_UserAchievement(
+_$UserAchievementImpl _$$UserAchievementImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UserAchievementImpl(
       name: json['name'] as String,
       unlockedAt: const EpocTimeDateTimeConverter.withMilliSeconds()
           .fromJson(json['unlockedAt'] as int),
     );
 
-Map<String, dynamic> _$$_UserAchievementToJson(_$_UserAchievement instance) =>
+Map<String, dynamic> _$$UserAchievementImplToJson(
+        _$UserAchievementImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'unlockedAt': const EpocTimeDateTimeConverter.withMilliSeconds()
           .toJson(instance.unlockedAt),
     };
 
-_$_UserPolicies _$$_UserPoliciesFromJson(Map<String, dynamic> json) =>
-    _$_UserPolicies(
+_$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
+    _$UserPoliciesImpl(
       gtlAvailable: json['gtlAvailable'] as bool,
       ltlAvailable: json['ltlAvailable'] as bool,
       canPublicNote: json['canPublicNote'] as bool,
@@ -171,7 +177,7 @@ _$_UserPolicies _$$_UserPoliciesFromJson(Map<String, dynamic> json) =>
       rateLimitFactor: (json['rateLimitFactor'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_UserPoliciesToJson(_$_UserPolicies instance) =>
+Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
     <String, dynamic>{
       'gtlAvailable': instance.gtlAvailable,
       'ltlAvailable': instance.ltlAvailable,
@@ -196,12 +202,13 @@ Map<String, dynamic> _$$_UserPoliciesToJson(_$_UserPolicies instance) =>
       'rateLimitFactor': instance.rateLimitFactor,
     };
 
-_$_UserField _$$_UserFieldFromJson(Map<String, dynamic> json) => _$_UserField(
+_$UserFieldImpl _$$UserFieldImplFromJson(Map<String, dynamic> json) =>
+    _$UserFieldImpl(
       name: json['name'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$_UserFieldToJson(_$_UserField instance) =>
+Map<String, dynamic> _$$UserFieldImplToJson(_$UserFieldImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,

@@ -76,22 +76,24 @@ class _$HashtagsSearchRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_HashtagsSearchRequestCopyWith<$Res>
+abstract class _$$HashtagsSearchRequestImplCopyWith<$Res>
     implements $HashtagsSearchRequestCopyWith<$Res> {
-  factory _$$_HashtagsSearchRequestCopyWith(_$_HashtagsSearchRequest value,
-          $Res Function(_$_HashtagsSearchRequest) then) =
-      __$$_HashtagsSearchRequestCopyWithImpl<$Res>;
+  factory _$$HashtagsSearchRequestImplCopyWith(
+          _$HashtagsSearchRequestImpl value,
+          $Res Function(_$HashtagsSearchRequestImpl) then) =
+      __$$HashtagsSearchRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, String query, int? offset});
 }
 
 /// @nodoc
-class __$$_HashtagsSearchRequestCopyWithImpl<$Res>
-    extends _$HashtagsSearchRequestCopyWithImpl<$Res, _$_HashtagsSearchRequest>
-    implements _$$_HashtagsSearchRequestCopyWith<$Res> {
-  __$$_HashtagsSearchRequestCopyWithImpl(_$_HashtagsSearchRequest _value,
-      $Res Function(_$_HashtagsSearchRequest) _then)
+class __$$HashtagsSearchRequestImplCopyWithImpl<$Res>
+    extends _$HashtagsSearchRequestCopyWithImpl<$Res,
+        _$HashtagsSearchRequestImpl>
+    implements _$$HashtagsSearchRequestImplCopyWith<$Res> {
+  __$$HashtagsSearchRequestImplCopyWithImpl(_$HashtagsSearchRequestImpl _value,
+      $Res Function(_$HashtagsSearchRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +103,7 @@ class __$$_HashtagsSearchRequestCopyWithImpl<$Res>
     Object? query = null,
     Object? offset = freezed,
   }) {
-    return _then(_$_HashtagsSearchRequest(
+    return _then(_$HashtagsSearchRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -120,12 +122,12 @@ class __$$_HashtagsSearchRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HashtagsSearchRequest implements _HashtagsSearchRequest {
-  const _$_HashtagsSearchRequest(
+class _$HashtagsSearchRequestImpl implements _HashtagsSearchRequest {
+  const _$HashtagsSearchRequestImpl(
       {this.limit, required this.query, this.offset});
 
-  factory _$_HashtagsSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagsSearchRequestFromJson(json);
+  factory _$HashtagsSearchRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagsSearchRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -143,7 +145,7 @@ class _$_HashtagsSearchRequest implements _HashtagsSearchRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HashtagsSearchRequest &&
+            other is _$HashtagsSearchRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.offset, offset) || other.offset == offset));
@@ -156,13 +158,13 @@ class _$_HashtagsSearchRequest implements _HashtagsSearchRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagsSearchRequestCopyWith<_$_HashtagsSearchRequest> get copyWith =>
-      __$$_HashtagsSearchRequestCopyWithImpl<_$_HashtagsSearchRequest>(
-          this, _$identity);
+  _$$HashtagsSearchRequestImplCopyWith<_$HashtagsSearchRequestImpl>
+      get copyWith => __$$HashtagsSearchRequestImplCopyWithImpl<
+          _$HashtagsSearchRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagsSearchRequestToJson(
+    return _$$HashtagsSearchRequestImplToJson(
       this,
     );
   }
@@ -172,10 +174,10 @@ abstract class _HashtagsSearchRequest implements HashtagsSearchRequest {
   const factory _HashtagsSearchRequest(
       {final int? limit,
       required final String query,
-      final int? offset}) = _$_HashtagsSearchRequest;
+      final int? offset}) = _$HashtagsSearchRequestImpl;
 
   factory _HashtagsSearchRequest.fromJson(Map<String, dynamic> json) =
-      _$_HashtagsSearchRequest.fromJson;
+      _$HashtagsSearchRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -185,6 +187,6 @@ abstract class _HashtagsSearchRequest implements HashtagsSearchRequest {
   int? get offset;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagsSearchRequestCopyWith<_$_HashtagsSearchRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HashtagsSearchRequestImplCopyWith<_$HashtagsSearchRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

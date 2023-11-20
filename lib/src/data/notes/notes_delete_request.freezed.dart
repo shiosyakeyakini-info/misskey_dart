@@ -62,22 +62,22 @@ class _$NotesDeleteRequestCopyWithImpl<$Res, $Val extends NotesDeleteRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesDeleteRequestCopyWith<$Res>
+abstract class _$$NotesDeleteRequestImplCopyWith<$Res>
     implements $NotesDeleteRequestCopyWith<$Res> {
-  factory _$$_NotesDeleteRequestCopyWith(_$_NotesDeleteRequest value,
-          $Res Function(_$_NotesDeleteRequest) then) =
-      __$$_NotesDeleteRequestCopyWithImpl<$Res>;
+  factory _$$NotesDeleteRequestImplCopyWith(_$NotesDeleteRequestImpl value,
+          $Res Function(_$NotesDeleteRequestImpl) then) =
+      __$$NotesDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$_NotesDeleteRequestCopyWithImpl<$Res>
-    extends _$NotesDeleteRequestCopyWithImpl<$Res, _$_NotesDeleteRequest>
-    implements _$$_NotesDeleteRequestCopyWith<$Res> {
-  __$$_NotesDeleteRequestCopyWithImpl(
-      _$_NotesDeleteRequest _value, $Res Function(_$_NotesDeleteRequest) _then)
+class __$$NotesDeleteRequestImplCopyWithImpl<$Res>
+    extends _$NotesDeleteRequestCopyWithImpl<$Res, _$NotesDeleteRequestImpl>
+    implements _$$NotesDeleteRequestImplCopyWith<$Res> {
+  __$$NotesDeleteRequestImplCopyWithImpl(_$NotesDeleteRequestImpl _value,
+      $Res Function(_$NotesDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_NotesDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$_NotesDeleteRequest(
+    return _then(_$NotesDeleteRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_NotesDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesDeleteRequest implements _NotesDeleteRequest {
-  const _$_NotesDeleteRequest({required this.noteId});
+class _$NotesDeleteRequestImpl implements _NotesDeleteRequest {
+  const _$NotesDeleteRequestImpl({required this.noteId});
 
-  factory _$_NotesDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesDeleteRequestFromJson(json);
+  factory _$NotesDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesDeleteRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -114,7 +114,7 @@ class _$_NotesDeleteRequest implements _NotesDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesDeleteRequest &&
+            other is _$NotesDeleteRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
@@ -125,13 +125,13 @@ class _$_NotesDeleteRequest implements _NotesDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesDeleteRequestCopyWith<_$_NotesDeleteRequest> get copyWith =>
-      __$$_NotesDeleteRequestCopyWithImpl<_$_NotesDeleteRequest>(
+  _$$NotesDeleteRequestImplCopyWith<_$NotesDeleteRequestImpl> get copyWith =>
+      __$$NotesDeleteRequestImplCopyWithImpl<_$NotesDeleteRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesDeleteRequestToJson(
+    return _$$NotesDeleteRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_NotesDeleteRequest implements _NotesDeleteRequest {
 
 abstract class _NotesDeleteRequest implements NotesDeleteRequest {
   const factory _NotesDeleteRequest({required final String noteId}) =
-      _$_NotesDeleteRequest;
+      _$NotesDeleteRequestImpl;
 
   factory _NotesDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesDeleteRequest.fromJson;
+      _$NotesDeleteRequestImpl.fromJson;
 
   @override
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesDeleteRequestCopyWith<_$_NotesDeleteRequest> get copyWith =>
+  _$$NotesDeleteRequestImplCopyWith<_$NotesDeleteRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

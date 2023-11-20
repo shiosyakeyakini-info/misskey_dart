@@ -62,22 +62,22 @@ class _$PagesUnlikeRequestCopyWithImpl<$Res, $Val extends PagesUnlikeRequest>
 }
 
 /// @nodoc
-abstract class _$$_PagesUnlikeRequestCopyWith<$Res>
+abstract class _$$PagesUnlikeRequestImplCopyWith<$Res>
     implements $PagesUnlikeRequestCopyWith<$Res> {
-  factory _$$_PagesUnlikeRequestCopyWith(_$_PagesUnlikeRequest value,
-          $Res Function(_$_PagesUnlikeRequest) then) =
-      __$$_PagesUnlikeRequestCopyWithImpl<$Res>;
+  factory _$$PagesUnlikeRequestImplCopyWith(_$PagesUnlikeRequestImpl value,
+          $Res Function(_$PagesUnlikeRequestImpl) then) =
+      __$$PagesUnlikeRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String pageId});
 }
 
 /// @nodoc
-class __$$_PagesUnlikeRequestCopyWithImpl<$Res>
-    extends _$PagesUnlikeRequestCopyWithImpl<$Res, _$_PagesUnlikeRequest>
-    implements _$$_PagesUnlikeRequestCopyWith<$Res> {
-  __$$_PagesUnlikeRequestCopyWithImpl(
-      _$_PagesUnlikeRequest _value, $Res Function(_$_PagesUnlikeRequest) _then)
+class __$$PagesUnlikeRequestImplCopyWithImpl<$Res>
+    extends _$PagesUnlikeRequestCopyWithImpl<$Res, _$PagesUnlikeRequestImpl>
+    implements _$$PagesUnlikeRequestImplCopyWith<$Res> {
+  __$$PagesUnlikeRequestImplCopyWithImpl(_$PagesUnlikeRequestImpl _value,
+      $Res Function(_$PagesUnlikeRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_PagesUnlikeRequestCopyWithImpl<$Res>
   $Res call({
     Object? pageId = null,
   }) {
-    return _then(_$_PagesUnlikeRequest(
+    return _then(_$PagesUnlikeRequestImpl(
       pageId: null == pageId
           ? _value.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_PagesUnlikeRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PagesUnlikeRequest implements _PagesUnlikeRequest {
-  const _$_PagesUnlikeRequest({required this.pageId});
+class _$PagesUnlikeRequestImpl implements _PagesUnlikeRequest {
+  const _$PagesUnlikeRequestImpl({required this.pageId});
 
-  factory _$_PagesUnlikeRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_PagesUnlikeRequestFromJson(json);
+  factory _$PagesUnlikeRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PagesUnlikeRequestImplFromJson(json);
 
   @override
   final String pageId;
@@ -114,7 +114,7 @@ class _$_PagesUnlikeRequest implements _PagesUnlikeRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PagesUnlikeRequest &&
+            other is _$PagesUnlikeRequestImpl &&
             (identical(other.pageId, pageId) || other.pageId == pageId));
   }
 
@@ -125,13 +125,13 @@ class _$_PagesUnlikeRequest implements _PagesUnlikeRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PagesUnlikeRequestCopyWith<_$_PagesUnlikeRequest> get copyWith =>
-      __$$_PagesUnlikeRequestCopyWithImpl<_$_PagesUnlikeRequest>(
+  _$$PagesUnlikeRequestImplCopyWith<_$PagesUnlikeRequestImpl> get copyWith =>
+      __$$PagesUnlikeRequestImplCopyWithImpl<_$PagesUnlikeRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PagesUnlikeRequestToJson(
+    return _$$PagesUnlikeRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_PagesUnlikeRequest implements _PagesUnlikeRequest {
 
 abstract class _PagesUnlikeRequest implements PagesUnlikeRequest {
   const factory _PagesUnlikeRequest({required final String pageId}) =
-      _$_PagesUnlikeRequest;
+      _$PagesUnlikeRequestImpl;
 
   factory _PagesUnlikeRequest.fromJson(Map<String, dynamic> json) =
-      _$_PagesUnlikeRequest.fromJson;
+      _$PagesUnlikeRequestImpl.fromJson;
 
   @override
   String get pageId;
   @override
   @JsonKey(ignore: true)
-  _$$_PagesUnlikeRequestCopyWith<_$_PagesUnlikeRequest> get copyWith =>
+  _$$PagesUnlikeRequestImplCopyWith<_$PagesUnlikeRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

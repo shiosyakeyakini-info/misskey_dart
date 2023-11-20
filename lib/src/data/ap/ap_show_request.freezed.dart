@@ -63,22 +63,22 @@ class _$ApShowRequestCopyWithImpl<$Res, $Val extends ApShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_ApShowRequestCopyWith<$Res>
+abstract class _$$ApShowRequestImplCopyWith<$Res>
     implements $ApShowRequestCopyWith<$Res> {
-  factory _$$_ApShowRequestCopyWith(
-          _$_ApShowRequest value, $Res Function(_$_ApShowRequest) then) =
-      __$$_ApShowRequestCopyWithImpl<$Res>;
+  factory _$$ApShowRequestImplCopyWith(
+          _$ApShowRequestImpl value, $Res Function(_$ApShowRequestImpl) then) =
+      __$$ApShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@UriConverter() Uri uri});
 }
 
 /// @nodoc
-class __$$_ApShowRequestCopyWithImpl<$Res>
-    extends _$ApShowRequestCopyWithImpl<$Res, _$_ApShowRequest>
-    implements _$$_ApShowRequestCopyWith<$Res> {
-  __$$_ApShowRequestCopyWithImpl(
-      _$_ApShowRequest _value, $Res Function(_$_ApShowRequest) _then)
+class __$$ApShowRequestImplCopyWithImpl<$Res>
+    extends _$ApShowRequestCopyWithImpl<$Res, _$ApShowRequestImpl>
+    implements _$$ApShowRequestImplCopyWith<$Res> {
+  __$$ApShowRequestImplCopyWithImpl(
+      _$ApShowRequestImpl _value, $Res Function(_$ApShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_ApShowRequestCopyWithImpl<$Res>
   $Res call({
     Object? uri = null,
   }) {
-    return _then(_$_ApShowRequest(
+    return _then(_$ApShowRequestImpl(
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -97,11 +97,11 @@ class __$$_ApShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApShowRequest implements _ApShowRequest {
-  const _$_ApShowRequest({@UriConverter() required this.uri});
+class _$ApShowRequestImpl implements _ApShowRequest {
+  const _$ApShowRequestImpl({@UriConverter() required this.uri});
 
-  factory _$_ApShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ApShowRequestFromJson(json);
+  factory _$ApShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApShowRequestImplFromJson(json);
 
   @override
   @UriConverter()
@@ -116,7 +116,7 @@ class _$_ApShowRequest implements _ApShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApShowRequest &&
+            other is _$ApShowRequestImpl &&
             (identical(other.uri, uri) || other.uri == uri));
   }
 
@@ -127,12 +127,12 @@ class _$_ApShowRequest implements _ApShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApShowRequestCopyWith<_$_ApShowRequest> get copyWith =>
-      __$$_ApShowRequestCopyWithImpl<_$_ApShowRequest>(this, _$identity);
+  _$$ApShowRequestImplCopyWith<_$ApShowRequestImpl> get copyWith =>
+      __$$ApShowRequestImplCopyWithImpl<_$ApShowRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApShowRequestToJson(
+    return _$$ApShowRequestImplToJson(
       this,
     );
   }
@@ -140,16 +140,16 @@ class _$_ApShowRequest implements _ApShowRequest {
 
 abstract class _ApShowRequest implements ApShowRequest {
   const factory _ApShowRequest({@UriConverter() required final Uri uri}) =
-      _$_ApShowRequest;
+      _$ApShowRequestImpl;
 
   factory _ApShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_ApShowRequest.fromJson;
+      _$ApShowRequestImpl.fromJson;
 
   @override
   @UriConverter()
   Uri get uri;
   @override
   @JsonKey(ignore: true)
-  _$$_ApShowRequestCopyWith<_$_ApShowRequest> get copyWith =>
+  _$$ApShowRequestImplCopyWith<_$ApShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -88,11 +88,12 @@ class _$NotesCreatePollRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesCreatePollRequestCopyWith<$Res>
+abstract class _$$NotesCreatePollRequestImplCopyWith<$Res>
     implements $NotesCreatePollRequestCopyWith<$Res> {
-  factory _$$_NotesCreatePollRequestCopyWith(_$_NotesCreatePollRequest value,
-          $Res Function(_$_NotesCreatePollRequest) then) =
-      __$$_NotesCreatePollRequestCopyWithImpl<$Res>;
+  factory _$$NotesCreatePollRequestImplCopyWith(
+          _$NotesCreatePollRequestImpl value,
+          $Res Function(_$NotesCreatePollRequestImpl) then) =
+      __$$NotesCreatePollRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,12 +104,13 @@ abstract class _$$_NotesCreatePollRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesCreatePollRequestCopyWithImpl<$Res>
+class __$$NotesCreatePollRequestImplCopyWithImpl<$Res>
     extends _$NotesCreatePollRequestCopyWithImpl<$Res,
-        _$_NotesCreatePollRequest>
-    implements _$$_NotesCreatePollRequestCopyWith<$Res> {
-  __$$_NotesCreatePollRequestCopyWithImpl(_$_NotesCreatePollRequest _value,
-      $Res Function(_$_NotesCreatePollRequest) _then)
+        _$NotesCreatePollRequestImpl>
+    implements _$$NotesCreatePollRequestImplCopyWith<$Res> {
+  __$$NotesCreatePollRequestImplCopyWithImpl(
+      _$NotesCreatePollRequestImpl _value,
+      $Res Function(_$NotesCreatePollRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +121,7 @@ class __$$_NotesCreatePollRequestCopyWithImpl<$Res>
     Object? expiresAt = freezed,
     Object? expiredAfter = freezed,
   }) {
-    return _then(_$_NotesCreatePollRequest(
+    return _then(_$NotesCreatePollRequestImpl(
       choices: null == choices
           ? _value._choices
           : choices // ignore: cast_nullable_to_non_nullable
@@ -143,16 +145,16 @@ class __$$_NotesCreatePollRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_NotesCreatePollRequest implements _NotesCreatePollRequest {
-  const _$_NotesCreatePollRequest(
+class _$NotesCreatePollRequestImpl implements _NotesCreatePollRequest {
+  const _$NotesCreatePollRequestImpl(
       {required final List<String> choices,
       this.multiple,
       @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt,
       @NullableDurationConverter() this.expiredAfter})
       : _choices = choices;
 
-  factory _$_NotesCreatePollRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesCreatePollRequestFromJson(json);
+  factory _$NotesCreatePollRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesCreatePollRequestImplFromJson(json);
 
   final List<String> _choices;
   @override
@@ -180,7 +182,7 @@ class _$_NotesCreatePollRequest implements _NotesCreatePollRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesCreatePollRequest &&
+            other is _$NotesCreatePollRequestImpl &&
             const DeepCollectionEquality().equals(other._choices, _choices) &&
             (identical(other.multiple, multiple) ||
                 other.multiple == multiple) &&
@@ -202,13 +204,13 @@ class _$_NotesCreatePollRequest implements _NotesCreatePollRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesCreatePollRequestCopyWith<_$_NotesCreatePollRequest> get copyWith =>
-      __$$_NotesCreatePollRequestCopyWithImpl<_$_NotesCreatePollRequest>(
-          this, _$identity);
+  _$$NotesCreatePollRequestImplCopyWith<_$NotesCreatePollRequestImpl>
+      get copyWith => __$$NotesCreatePollRequestImplCopyWithImpl<
+          _$NotesCreatePollRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesCreatePollRequestToJson(
+    return _$$NotesCreatePollRequestImplToJson(
       this,
     );
   }
@@ -221,10 +223,10 @@ abstract class _NotesCreatePollRequest implements NotesCreatePollRequest {
           @NullableEpocTimeDateTimeConverter.withMilliSeconds()
           final DateTime? expiresAt,
           @NullableDurationConverter() final Duration? expiredAfter}) =
-      _$_NotesCreatePollRequest;
+      _$NotesCreatePollRequestImpl;
 
   factory _NotesCreatePollRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesCreatePollRequest.fromJson;
+      _$NotesCreatePollRequestImpl.fromJson;
 
   @override
   List<String> get choices;
@@ -238,6 +240,6 @@ abstract class _NotesCreatePollRequest implements NotesCreatePollRequest {
   Duration? get expiredAfter;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesCreatePollRequestCopyWith<_$_NotesCreatePollRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NotesCreatePollRequestImplCopyWith<_$NotesCreatePollRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

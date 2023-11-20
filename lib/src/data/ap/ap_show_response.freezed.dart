@@ -68,22 +68,22 @@ class _$ApShowResponseCopyWithImpl<$Res, $Val extends ApShowResponse>
 }
 
 /// @nodoc
-abstract class _$$_ApShowResponseCopyWith<$Res>
+abstract class _$$ApShowResponseImplCopyWith<$Res>
     implements $ApShowResponseCopyWith<$Res> {
-  factory _$$_ApShowResponseCopyWith(
-          _$_ApShowResponse value, $Res Function(_$_ApShowResponse) then) =
-      __$$_ApShowResponseCopyWithImpl<$Res>;
+  factory _$$ApShowResponseImplCopyWith(_$ApShowResponseImpl value,
+          $Res Function(_$ApShowResponseImpl) then) =
+      __$$ApShowResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String type, Map<String, dynamic> object});
 }
 
 /// @nodoc
-class __$$_ApShowResponseCopyWithImpl<$Res>
-    extends _$ApShowResponseCopyWithImpl<$Res, _$_ApShowResponse>
-    implements _$$_ApShowResponseCopyWith<$Res> {
-  __$$_ApShowResponseCopyWithImpl(
-      _$_ApShowResponse _value, $Res Function(_$_ApShowResponse) _then)
+class __$$ApShowResponseImplCopyWithImpl<$Res>
+    extends _$ApShowResponseCopyWithImpl<$Res, _$ApShowResponseImpl>
+    implements _$$ApShowResponseImplCopyWith<$Res> {
+  __$$ApShowResponseImplCopyWithImpl(
+      _$ApShowResponseImpl _value, $Res Function(_$ApShowResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_ApShowResponseCopyWithImpl<$Res>
     Object? type = null,
     Object? object = null,
   }) {
-    return _then(_$_ApShowResponse(
+    return _then(_$ApShowResponseImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_ApShowResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApShowResponse implements _ApShowResponse {
-  const _$_ApShowResponse(
+class _$ApShowResponseImpl implements _ApShowResponse {
+  const _$ApShowResponseImpl(
       {required this.type, required final Map<String, dynamic> object})
       : _object = object;
 
-  factory _$_ApShowResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_ApShowResponseFromJson(json);
+  factory _$ApShowResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApShowResponseImplFromJson(json);
 
   @override
   final String type;
@@ -134,7 +134,7 @@ class _$_ApShowResponse implements _ApShowResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApShowResponse &&
+            other is _$ApShowResponseImpl &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._object, _object));
   }
@@ -147,12 +147,13 @@ class _$_ApShowResponse implements _ApShowResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApShowResponseCopyWith<_$_ApShowResponse> get copyWith =>
-      __$$_ApShowResponseCopyWithImpl<_$_ApShowResponse>(this, _$identity);
+  _$$ApShowResponseImplCopyWith<_$ApShowResponseImpl> get copyWith =>
+      __$$ApShowResponseImplCopyWithImpl<_$ApShowResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApShowResponseToJson(
+    return _$$ApShowResponseImplToJson(
       this,
     );
   }
@@ -161,10 +162,10 @@ class _$_ApShowResponse implements _ApShowResponse {
 abstract class _ApShowResponse implements ApShowResponse {
   const factory _ApShowResponse(
       {required final String type,
-      required final Map<String, dynamic> object}) = _$_ApShowResponse;
+      required final Map<String, dynamic> object}) = _$ApShowResponseImpl;
 
   factory _ApShowResponse.fromJson(Map<String, dynamic> json) =
-      _$_ApShowResponse.fromJson;
+      _$ApShowResponseImpl.fromJson;
 
   @override
   String get type;
@@ -172,6 +173,6 @@ abstract class _ApShowResponse implements ApShowResponse {
   Map<String, dynamic> get object;
   @override
   @JsonKey(ignore: true)
-  _$$_ApShowResponseCopyWith<_$_ApShowResponse> get copyWith =>
+  _$$ApShowResponseImplCopyWith<_$ApShowResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

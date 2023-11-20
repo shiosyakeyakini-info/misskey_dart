@@ -70,22 +70,22 @@ class _$UsersReportAbuseRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersReportAbuseCopyWith<$Res>
+abstract class _$$UsersReportAbuseImplCopyWith<$Res>
     implements $UsersReportAbuseRequestCopyWith<$Res> {
-  factory _$$_UsersReportAbuseCopyWith(
-          _$_UsersReportAbuse value, $Res Function(_$_UsersReportAbuse) then) =
-      __$$_UsersReportAbuseCopyWithImpl<$Res>;
+  factory _$$UsersReportAbuseImplCopyWith(_$UsersReportAbuseImpl value,
+          $Res Function(_$UsersReportAbuseImpl) then) =
+      __$$UsersReportAbuseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, String comment});
 }
 
 /// @nodoc
-class __$$_UsersReportAbuseCopyWithImpl<$Res>
-    extends _$UsersReportAbuseRequestCopyWithImpl<$Res, _$_UsersReportAbuse>
-    implements _$$_UsersReportAbuseCopyWith<$Res> {
-  __$$_UsersReportAbuseCopyWithImpl(
-      _$_UsersReportAbuse _value, $Res Function(_$_UsersReportAbuse) _then)
+class __$$UsersReportAbuseImplCopyWithImpl<$Res>
+    extends _$UsersReportAbuseRequestCopyWithImpl<$Res, _$UsersReportAbuseImpl>
+    implements _$$UsersReportAbuseImplCopyWith<$Res> {
+  __$$UsersReportAbuseImplCopyWithImpl(_$UsersReportAbuseImpl _value,
+      $Res Function(_$UsersReportAbuseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_UsersReportAbuseCopyWithImpl<$Res>
     Object? userId = null,
     Object? comment = null,
   }) {
-    return _then(_$_UsersReportAbuse(
+    return _then(_$UsersReportAbuseImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -109,11 +109,11 @@ class __$$_UsersReportAbuseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersReportAbuse implements _UsersReportAbuse {
-  const _$_UsersReportAbuse({required this.userId, required this.comment});
+class _$UsersReportAbuseImpl implements _UsersReportAbuse {
+  const _$UsersReportAbuseImpl({required this.userId, required this.comment});
 
-  factory _$_UsersReportAbuse.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersReportAbuseFromJson(json);
+  factory _$UsersReportAbuseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersReportAbuseImplFromJson(json);
 
   @override
   final String userId;
@@ -129,7 +129,7 @@ class _$_UsersReportAbuse implements _UsersReportAbuse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersReportAbuse &&
+            other is _$UsersReportAbuseImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.comment, comment) || other.comment == comment));
   }
@@ -141,12 +141,13 @@ class _$_UsersReportAbuse implements _UsersReportAbuse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersReportAbuseCopyWith<_$_UsersReportAbuse> get copyWith =>
-      __$$_UsersReportAbuseCopyWithImpl<_$_UsersReportAbuse>(this, _$identity);
+  _$$UsersReportAbuseImplCopyWith<_$UsersReportAbuseImpl> get copyWith =>
+      __$$UsersReportAbuseImplCopyWithImpl<_$UsersReportAbuseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersReportAbuseToJson(
+    return _$$UsersReportAbuseImplToJson(
       this,
     );
   }
@@ -155,10 +156,10 @@ class _$_UsersReportAbuse implements _UsersReportAbuse {
 abstract class _UsersReportAbuse implements UsersReportAbuseRequest {
   const factory _UsersReportAbuse(
       {required final String userId,
-      required final String comment}) = _$_UsersReportAbuse;
+      required final String comment}) = _$UsersReportAbuseImpl;
 
   factory _UsersReportAbuse.fromJson(Map<String, dynamic> json) =
-      _$_UsersReportAbuse.fromJson;
+      _$UsersReportAbuseImpl.fromJson;
 
   @override
   String get userId;
@@ -166,6 +167,6 @@ abstract class _UsersReportAbuse implements UsersReportAbuseRequest {
   String get comment;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersReportAbuseCopyWith<_$_UsersReportAbuse> get copyWith =>
+  _$$UsersReportAbuseImplCopyWith<_$UsersReportAbuseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

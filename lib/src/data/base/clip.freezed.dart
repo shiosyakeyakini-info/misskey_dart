@@ -136,9 +136,10 @@ class _$ClipCopyWithImpl<$Res, $Val extends Clip>
 }
 
 /// @nodoc
-abstract class _$$_ClipCopyWith<$Res> implements $ClipCopyWith<$Res> {
-  factory _$$_ClipCopyWith(_$_Clip value, $Res Function(_$_Clip) then) =
-      __$$_ClipCopyWithImpl<$Res>;
+abstract class _$$ClipImplCopyWith<$Res> implements $ClipCopyWith<$Res> {
+  factory _$$ClipImplCopyWith(
+          _$ClipImpl value, $Res Function(_$ClipImpl) then) =
+      __$$ClipImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -158,9 +159,10 @@ abstract class _$$_ClipCopyWith<$Res> implements $ClipCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ClipCopyWithImpl<$Res> extends _$ClipCopyWithImpl<$Res, _$_Clip>
-    implements _$$_ClipCopyWith<$Res> {
-  __$$_ClipCopyWithImpl(_$_Clip _value, $Res Function(_$_Clip) _then)
+class __$$ClipImplCopyWithImpl<$Res>
+    extends _$ClipCopyWithImpl<$Res, _$ClipImpl>
+    implements _$$ClipImplCopyWith<$Res> {
+  __$$ClipImplCopyWithImpl(_$ClipImpl _value, $Res Function(_$ClipImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -177,7 +179,7 @@ class __$$_ClipCopyWithImpl<$Res> extends _$ClipCopyWithImpl<$Res, _$_Clip>
     Object? favoritedCount = null,
     Object? isFavorited = null,
   }) {
-    return _then(_$_Clip(
+    return _then(_$ClipImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -224,8 +226,8 @@ class __$$_ClipCopyWithImpl<$Res> extends _$ClipCopyWithImpl<$Res, _$_Clip>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Clip implements _Clip {
-  const _$_Clip(
+class _$ClipImpl implements _Clip {
+  const _$ClipImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NullableDateTimeConverter() this.lastClippedAt,
@@ -237,7 +239,8 @@ class _$_Clip implements _Clip {
       required this.favoritedCount,
       required this.isFavorited});
 
-  factory _$_Clip.fromJson(Map<String, dynamic> json) => _$$_ClipFromJson(json);
+  factory _$ClipImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipImplFromJson(json);
 
   @override
   final String id;
@@ -271,7 +274,7 @@ class _$_Clip implements _Clip {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Clip &&
+            other is _$ClipImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -298,12 +301,12 @@ class _$_Clip implements _Clip {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipCopyWith<_$_Clip> get copyWith =>
-      __$$_ClipCopyWithImpl<_$_Clip>(this, _$identity);
+  _$$ClipImplCopyWith<_$ClipImpl> get copyWith =>
+      __$$ClipImplCopyWithImpl<_$ClipImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipToJson(
+    return _$$ClipImplToJson(
       this,
     );
   }
@@ -320,9 +323,9 @@ abstract class _Clip implements Clip {
       final String? description,
       required final bool isPublic,
       required final int favoritedCount,
-      required final bool isFavorited}) = _$_Clip;
+      required final bool isFavorited}) = _$ClipImpl;
 
-  factory _Clip.fromJson(Map<String, dynamic> json) = _$_Clip.fromJson;
+  factory _Clip.fromJson(Map<String, dynamic> json) = _$ClipImpl.fromJson;
 
   @override
   String get id;
@@ -348,5 +351,6 @@ abstract class _Clip implements Clip {
   bool get isFavorited;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipCopyWith<_$_Clip> get copyWith => throw _privateConstructorUsedError;
+  _$$ClipImplCopyWith<_$ClipImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

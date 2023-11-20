@@ -117,11 +117,11 @@ class _$INotificationsRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_INotificationRequestCopyWith<$Res>
+abstract class _$$INotificationRequestImplCopyWith<$Res>
     implements $INotificationsRequestCopyWith<$Res> {
-  factory _$$_INotificationRequestCopyWith(_$_INotificationRequest value,
-          $Res Function(_$_INotificationRequest) then) =
-      __$$_INotificationRequestCopyWithImpl<$Res>;
+  factory _$$INotificationRequestImplCopyWith(_$INotificationRequestImpl value,
+          $Res Function(_$INotificationRequestImpl) then) =
+      __$$INotificationRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -136,11 +136,12 @@ abstract class _$$_INotificationRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_INotificationRequestCopyWithImpl<$Res>
-    extends _$INotificationsRequestCopyWithImpl<$Res, _$_INotificationRequest>
-    implements _$$_INotificationRequestCopyWith<$Res> {
-  __$$_INotificationRequestCopyWithImpl(_$_INotificationRequest _value,
-      $Res Function(_$_INotificationRequest) _then)
+class __$$INotificationRequestImplCopyWithImpl<$Res>
+    extends _$INotificationsRequestCopyWithImpl<$Res,
+        _$INotificationRequestImpl>
+    implements _$$INotificationRequestImplCopyWith<$Res> {
+  __$$INotificationRequestImplCopyWithImpl(_$INotificationRequestImpl _value,
+      $Res Function(_$INotificationRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -155,7 +156,7 @@ class __$$_INotificationRequestCopyWithImpl<$Res>
     Object? includeTypes = freezed,
     Object? excludeTypes = freezed,
   }) {
-    return _then(_$_INotificationRequest(
+    return _then(_$INotificationRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -194,8 +195,8 @@ class __$$_INotificationRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_INotificationRequest implements _INotificationRequest {
-  const _$_INotificationRequest(
+class _$INotificationRequestImpl implements _INotificationRequest {
+  const _$INotificationRequestImpl(
       {@Assert('limit > 0') this.limit,
       this.sinceId,
       this.untilId,
@@ -207,8 +208,8 @@ class _$_INotificationRequest implements _INotificationRequest {
       : _includeTypes = includeTypes,
         _excludeTypes = excludeTypes;
 
-  factory _$_INotificationRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_INotificationRequestFromJson(json);
+  factory _$INotificationRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$INotificationRequestImplFromJson(json);
 
   @override
   @Assert('limit > 0')
@@ -252,7 +253,7 @@ class _$_INotificationRequest implements _INotificationRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_INotificationRequest &&
+            other is _$INotificationRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -284,13 +285,14 @@ class _$_INotificationRequest implements _INotificationRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_INotificationRequestCopyWith<_$_INotificationRequest> get copyWith =>
-      __$$_INotificationRequestCopyWithImpl<_$_INotificationRequest>(
-          this, _$identity);
+  _$$INotificationRequestImplCopyWith<_$INotificationRequestImpl>
+      get copyWith =>
+          __$$INotificationRequestImplCopyWithImpl<_$INotificationRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_INotificationRequestToJson(
+    return _$$INotificationRequestImplToJson(
       this,
     );
   }
@@ -305,10 +307,10 @@ abstract class _INotificationRequest implements INotificationsRequest {
       final bool? unreadOnly,
       final bool? markAsRead,
       final List<NotificationType>? includeTypes,
-      final List<NotificationType>? excludeTypes}) = _$_INotificationRequest;
+      final List<NotificationType>? excludeTypes}) = _$INotificationRequestImpl;
 
   factory _INotificationRequest.fromJson(Map<String, dynamic> json) =
-      _$_INotificationRequest.fromJson;
+      _$INotificationRequestImpl.fromJson;
 
   @override
   @Assert('limit > 0')
@@ -329,6 +331,6 @@ abstract class _INotificationRequest implements INotificationsRequest {
   List<NotificationType>? get excludeTypes;
   @override
   @JsonKey(ignore: true)
-  _$$_INotificationRequestCopyWith<_$_INotificationRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$INotificationRequestImplCopyWith<_$INotificationRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -92,10 +92,11 @@ class _$UsersListCopyWithImpl<$Res, $Val extends UsersList>
 }
 
 /// @nodoc
-abstract class _$$_UsersListCopyWith<$Res> implements $UsersListCopyWith<$Res> {
-  factory _$$_UsersListCopyWith(
-          _$_UsersList value, $Res Function(_$_UsersList) then) =
-      __$$_UsersListCopyWithImpl<$Res>;
+abstract class _$$UsersListImplCopyWith<$Res>
+    implements $UsersListCopyWith<$Res> {
+  factory _$$UsersListImplCopyWith(
+          _$UsersListImpl value, $Res Function(_$UsersListImpl) then) =
+      __$$UsersListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -107,11 +108,11 @@ abstract class _$$_UsersListCopyWith<$Res> implements $UsersListCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UsersListCopyWithImpl<$Res>
-    extends _$UsersListCopyWithImpl<$Res, _$_UsersList>
-    implements _$$_UsersListCopyWith<$Res> {
-  __$$_UsersListCopyWithImpl(
-      _$_UsersList _value, $Res Function(_$_UsersList) _then)
+class __$$UsersListImplCopyWithImpl<$Res>
+    extends _$UsersListCopyWithImpl<$Res, _$UsersListImpl>
+    implements _$$UsersListImplCopyWith<$Res> {
+  __$$UsersListImplCopyWithImpl(
+      _$UsersListImpl _value, $Res Function(_$UsersListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +124,7 @@ class __$$_UsersListCopyWithImpl<$Res>
     Object? userIds = null,
     Object? isPublic = freezed,
   }) {
-    return _then(_$_UsersList(
+    return _then(_$UsersListImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -150,8 +151,8 @@ class __$$_UsersListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersList implements _UsersList {
-  const _$_UsersList(
+class _$UsersListImpl implements _UsersList {
+  const _$UsersListImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       this.name,
@@ -159,8 +160,8 @@ class _$_UsersList implements _UsersList {
       this.isPublic})
       : _userIds = userIds;
 
-  factory _$_UsersList.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListFromJson(json);
+  factory _$UsersListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListImplFromJson(json);
 
   @override
   final String id;
@@ -190,7 +191,7 @@ class _$_UsersList implements _UsersList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersList &&
+            other is _$UsersListImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -208,12 +209,12 @@ class _$_UsersList implements _UsersList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListCopyWith<_$_UsersList> get copyWith =>
-      __$$_UsersListCopyWithImpl<_$_UsersList>(this, _$identity);
+  _$$UsersListImplCopyWith<_$UsersListImpl> get copyWith =>
+      __$$UsersListImplCopyWithImpl<_$UsersListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListToJson(
+    return _$$UsersListImplToJson(
       this,
     );
   }
@@ -225,10 +226,10 @@ abstract class _UsersList implements UsersList {
       @DateTimeConverter() required final DateTime createdAt,
       final String? name,
       required final List<String> userIds,
-      final bool? isPublic}) = _$_UsersList;
+      final bool? isPublic}) = _$UsersListImpl;
 
   factory _UsersList.fromJson(Map<String, dynamic> json) =
-      _$_UsersList.fromJson;
+      _$UsersListImpl.fromJson;
 
   @override
   String get id;
@@ -243,6 +244,6 @@ abstract class _UsersList implements UsersList {
   bool? get isPublic;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListCopyWith<_$_UsersList> get copyWith =>
+  _$$UsersListImplCopyWith<_$UsersListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -66,25 +66,25 @@ class _$FollowingRequestsRejectRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_FollowingRequestsRejectRequestCopyWith<$Res>
+abstract class _$$FollowingRequestsRejectRequestImplCopyWith<$Res>
     implements $FollowingRequestsRejectRequestCopyWith<$Res> {
-  factory _$$_FollowingRequestsRejectRequestCopyWith(
-          _$_FollowingRequestsRejectRequest value,
-          $Res Function(_$_FollowingRequestsRejectRequest) then) =
-      __$$_FollowingRequestsRejectRequestCopyWithImpl<$Res>;
+  factory _$$FollowingRequestsRejectRequestImplCopyWith(
+          _$FollowingRequestsRejectRequestImpl value,
+          $Res Function(_$FollowingRequestsRejectRequestImpl) then) =
+      __$$FollowingRequestsRejectRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$_FollowingRequestsRejectRequestCopyWithImpl<$Res>
+class __$$FollowingRequestsRejectRequestImplCopyWithImpl<$Res>
     extends _$FollowingRequestsRejectRequestCopyWithImpl<$Res,
-        _$_FollowingRequestsRejectRequest>
-    implements _$$_FollowingRequestsRejectRequestCopyWith<$Res> {
-  __$$_FollowingRequestsRejectRequestCopyWithImpl(
-      _$_FollowingRequestsRejectRequest _value,
-      $Res Function(_$_FollowingRequestsRejectRequest) _then)
+        _$FollowingRequestsRejectRequestImpl>
+    implements _$$FollowingRequestsRejectRequestImplCopyWith<$Res> {
+  __$$FollowingRequestsRejectRequestImplCopyWithImpl(
+      _$FollowingRequestsRejectRequestImpl _value,
+      $Res Function(_$FollowingRequestsRejectRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_FollowingRequestsRejectRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$_FollowingRequestsRejectRequest(
+    return _then(_$FollowingRequestsRejectRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -103,13 +103,13 @@ class __$$_FollowingRequestsRejectRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FollowingRequestsRejectRequest
+class _$FollowingRequestsRejectRequestImpl
     implements _FollowingRequestsRejectRequest {
-  const _$_FollowingRequestsRejectRequest({required this.userId});
+  const _$FollowingRequestsRejectRequestImpl({required this.userId});
 
-  factory _$_FollowingRequestsRejectRequest.fromJson(
+  factory _$FollowingRequestsRejectRequestImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_FollowingRequestsRejectRequestFromJson(json);
+      _$$FollowingRequestsRejectRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -123,7 +123,7 @@ class _$_FollowingRequestsRejectRequest
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FollowingRequestsRejectRequest &&
+            other is _$FollowingRequestsRejectRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
@@ -134,13 +134,14 @@ class _$_FollowingRequestsRejectRequest
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FollowingRequestsRejectRequestCopyWith<_$_FollowingRequestsRejectRequest>
-      get copyWith => __$$_FollowingRequestsRejectRequestCopyWithImpl<
-          _$_FollowingRequestsRejectRequest>(this, _$identity);
+  _$$FollowingRequestsRejectRequestImplCopyWith<
+          _$FollowingRequestsRejectRequestImpl>
+      get copyWith => __$$FollowingRequestsRejectRequestImplCopyWithImpl<
+          _$FollowingRequestsRejectRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FollowingRequestsRejectRequestToJson(
+    return _$$FollowingRequestsRejectRequestImplToJson(
       this,
     );
   }
@@ -149,15 +150,16 @@ class _$_FollowingRequestsRejectRequest
 abstract class _FollowingRequestsRejectRequest
     implements FollowingRequestsRejectRequest {
   const factory _FollowingRequestsRejectRequest(
-      {required final String userId}) = _$_FollowingRequestsRejectRequest;
+      {required final String userId}) = _$FollowingRequestsRejectRequestImpl;
 
   factory _FollowingRequestsRejectRequest.fromJson(Map<String, dynamic> json) =
-      _$_FollowingRequestsRejectRequest.fromJson;
+      _$FollowingRequestsRejectRequestImpl.fromJson;
 
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_FollowingRequestsRejectRequestCopyWith<_$_FollowingRequestsRejectRequest>
+  _$$FollowingRequestsRejectRequestImplCopyWith<
+          _$FollowingRequestsRejectRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

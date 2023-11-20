@@ -92,11 +92,11 @@ class _$HashtagsListRequestCopyWithImpl<$Res, $Val extends HashtagsListRequest>
 }
 
 /// @nodoc
-abstract class _$$_HashtagsListRequestCopyWith<$Res>
+abstract class _$$HashtagsListRequestImplCopyWith<$Res>
     implements $HashtagsListRequestCopyWith<$Res> {
-  factory _$$_HashtagsListRequestCopyWith(_$_HashtagsListRequest value,
-          $Res Function(_$_HashtagsListRequest) then) =
-      __$$_HashtagsListRequestCopyWithImpl<$Res>;
+  factory _$$HashtagsListRequestImplCopyWith(_$HashtagsListRequestImpl value,
+          $Res Function(_$HashtagsListRequestImpl) then) =
+      __$$HashtagsListRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +108,11 @@ abstract class _$$_HashtagsListRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HashtagsListRequestCopyWithImpl<$Res>
-    extends _$HashtagsListRequestCopyWithImpl<$Res, _$_HashtagsListRequest>
-    implements _$$_HashtagsListRequestCopyWith<$Res> {
-  __$$_HashtagsListRequestCopyWithImpl(_$_HashtagsListRequest _value,
-      $Res Function(_$_HashtagsListRequest) _then)
+class __$$HashtagsListRequestImplCopyWithImpl<$Res>
+    extends _$HashtagsListRequestCopyWithImpl<$Res, _$HashtagsListRequestImpl>
+    implements _$$HashtagsListRequestImplCopyWith<$Res> {
+  __$$HashtagsListRequestImplCopyWithImpl(_$HashtagsListRequestImpl _value,
+      $Res Function(_$HashtagsListRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -124,7 +124,7 @@ class __$$_HashtagsListRequestCopyWithImpl<$Res>
     Object? attachedToRemoteUserOnly = freezed,
     Object? sort = null,
   }) {
-    return _then(_$_HashtagsListRequest(
+    return _then(_$HashtagsListRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -151,16 +151,16 @@ class __$$_HashtagsListRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HashtagsListRequest implements _HashtagsListRequest {
-  const _$_HashtagsListRequest(
+class _$HashtagsListRequestImpl implements _HashtagsListRequest {
+  const _$HashtagsListRequestImpl(
       {this.limit,
       this.attachedToUserOnly,
       this.attachedToLocalUserOnly,
       this.attachedToRemoteUserOnly,
       @HashtagsListSortConverter() required this.sort});
 
-  factory _$_HashtagsListRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_HashtagsListRequestFromJson(json);
+  factory _$HashtagsListRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagsListRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -183,7 +183,7 @@ class _$_HashtagsListRequest implements _HashtagsListRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HashtagsListRequest &&
+            other is _$HashtagsListRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.attachedToUserOnly, attachedToUserOnly) ||
                 other.attachedToUserOnly == attachedToUserOnly) &&
@@ -204,13 +204,13 @@ class _$_HashtagsListRequest implements _HashtagsListRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HashtagsListRequestCopyWith<_$_HashtagsListRequest> get copyWith =>
-      __$$_HashtagsListRequestCopyWithImpl<_$_HashtagsListRequest>(
+  _$$HashtagsListRequestImplCopyWith<_$HashtagsListRequestImpl> get copyWith =>
+      __$$HashtagsListRequestImplCopyWithImpl<_$HashtagsListRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HashtagsListRequestToJson(
+    return _$$HashtagsListRequestImplToJson(
       this,
     );
   }
@@ -223,10 +223,10 @@ abstract class _HashtagsListRequest implements HashtagsListRequest {
       final bool? attachedToLocalUserOnly,
       final bool? attachedToRemoteUserOnly,
       @HashtagsListSortConverter()
-      required final HashtagsListSortType sort}) = _$_HashtagsListRequest;
+      required final HashtagsListSortType sort}) = _$HashtagsListRequestImpl;
 
   factory _HashtagsListRequest.fromJson(Map<String, dynamic> json) =
-      _$_HashtagsListRequest.fromJson;
+      _$HashtagsListRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -241,6 +241,6 @@ abstract class _HashtagsListRequest implements HashtagsListRequest {
   HashtagsListSortType get sort;
   @override
   @JsonKey(ignore: true)
-  _$$_HashtagsListRequestCopyWith<_$_HashtagsListRequest> get copyWith =>
+  _$$HashtagsListRequestImplCopyWith<_$HashtagsListRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

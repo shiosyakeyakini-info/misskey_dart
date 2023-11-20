@@ -6,13 +6,13 @@ part of 'timeline_voted.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TimelineVoted _$$_TimelineVotedFromJson(Map<String, dynamic> json) =>
-    _$_TimelineVoted(
+_$TimelineVotedImpl _$$TimelineVotedImplFromJson(Map<String, dynamic> json) =>
+    _$TimelineVotedImpl(
       choice: json['choice'] as int,
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$_TimelineVotedToJson(_$_TimelineVoted instance) =>
+Map<String, dynamic> _$$TimelineVotedImplToJson(_$TimelineVotedImpl instance) =>
     <String, dynamic>{
       'choice': instance.choice,
       'userId': instance.userId,

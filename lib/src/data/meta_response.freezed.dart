@@ -353,11 +353,11 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
 }
 
 /// @nodoc
-abstract class _$$_MetaResponseCopyWith<$Res>
+abstract class _$$MetaResponseImplCopyWith<$Res>
     implements $MetaResponseCopyWith<$Res> {
-  factory _$$_MetaResponseCopyWith(
-          _$_MetaResponse value, $Res Function(_$_MetaResponse) then) =
-      __$$_MetaResponseCopyWithImpl<$Res>;
+  factory _$$MetaResponseImplCopyWith(
+          _$MetaResponseImpl value, $Res Function(_$MetaResponseImpl) then) =
+      __$$MetaResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -405,11 +405,11 @@ abstract class _$$_MetaResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MetaResponseCopyWithImpl<$Res>
-    extends _$MetaResponseCopyWithImpl<$Res, _$_MetaResponse>
-    implements _$$_MetaResponseCopyWith<$Res> {
-  __$$_MetaResponseCopyWithImpl(
-      _$_MetaResponse _value, $Res Function(_$_MetaResponse) _then)
+class __$$MetaResponseImplCopyWithImpl<$Res>
+    extends _$MetaResponseCopyWithImpl<$Res, _$MetaResponseImpl>
+    implements _$$MetaResponseImplCopyWith<$Res> {
+  __$$MetaResponseImplCopyWithImpl(
+      _$MetaResponseImpl _value, $Res Function(_$MetaResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -454,7 +454,7 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? cacheRemoteFiles = freezed,
     Object? features = freezed,
   }) {
-    return _then(_$_MetaResponse(
+    return _then(_$MetaResponseImpl(
       maintainerName: freezed == maintainerName
           ? _value.maintainerName
           : maintainerName // ignore: cast_nullable_to_non_nullable
@@ -613,8 +613,8 @@ class __$$_MetaResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MetaResponse implements _MetaResponse {
-  const _$_MetaResponse(
+class _$MetaResponseImpl implements _MetaResponse {
+  const _$MetaResponseImpl(
       {this.maintainerName,
       this.maintainerEmail,
       required this.version,
@@ -656,8 +656,8 @@ class _$_MetaResponse implements _MetaResponse {
       : _langs = langs,
         _ads = ads;
 
-  factory _$_MetaResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaResponseFromJson(json);
+  factory _$MetaResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaResponseImplFromJson(json);
 
   @override
   final String? maintainerName;
@@ -775,7 +775,7 @@ class _$_MetaResponse implements _MetaResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MetaResponse &&
+            other is _$MetaResponseImpl &&
             (identical(other.maintainerName, maintainerName) ||
                 other.maintainerName == maintainerName) &&
             (identical(other.maintainerEmail, maintainerEmail) ||
@@ -894,12 +894,12 @@ class _$_MetaResponse implements _MetaResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>
-      __$$_MetaResponseCopyWithImpl<_$_MetaResponse>(this, _$identity);
+  _$$MetaResponseImplCopyWith<_$MetaResponseImpl> get copyWith =>
+      __$$MetaResponseImplCopyWithImpl<_$MetaResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaResponseToJson(
+    return _$$MetaResponseImplToJson(
       this,
     );
   }
@@ -944,10 +944,10 @@ abstract class _MetaResponse implements MetaResponse {
       final String? proxyAccountName,
       final String? mediaProxy,
       final bool? cacheRemoteFiles,
-      final MetaFeature? features}) = _$_MetaResponse;
+      final MetaFeature? features}) = _$MetaResponseImpl;
 
   factory _MetaResponse.fromJson(Map<String, dynamic> json) =
-      _$_MetaResponse.fromJson;
+      _$MetaResponseImpl.fromJson;
 
   @override
   String? get maintainerName;
@@ -1041,7 +1041,7 @@ abstract class _MetaResponse implements MetaResponse {
   MetaFeature? get features;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>
+  _$$MetaResponseImplCopyWith<_$MetaResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1122,9 +1122,10 @@ class _$MetaAdCopyWithImpl<$Res, $Val extends MetaAd>
 }
 
 /// @nodoc
-abstract class _$$_MetaAdCopyWith<$Res> implements $MetaAdCopyWith<$Res> {
-  factory _$$_MetaAdCopyWith(_$_MetaAd value, $Res Function(_$_MetaAd) then) =
-      __$$_MetaAdCopyWithImpl<$Res>;
+abstract class _$$MetaAdImplCopyWith<$Res> implements $MetaAdCopyWith<$Res> {
+  factory _$$MetaAdImplCopyWith(
+          _$MetaAdImpl value, $Res Function(_$MetaAdImpl) then) =
+      __$$MetaAdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1136,10 +1137,11 @@ abstract class _$$_MetaAdCopyWith<$Res> implements $MetaAdCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MetaAdCopyWithImpl<$Res>
-    extends _$MetaAdCopyWithImpl<$Res, _$_MetaAd>
-    implements _$$_MetaAdCopyWith<$Res> {
-  __$$_MetaAdCopyWithImpl(_$_MetaAd _value, $Res Function(_$_MetaAd) _then)
+class __$$MetaAdImplCopyWithImpl<$Res>
+    extends _$MetaAdCopyWithImpl<$Res, _$MetaAdImpl>
+    implements _$$MetaAdImplCopyWith<$Res> {
+  __$$MetaAdImplCopyWithImpl(
+      _$MetaAdImpl _value, $Res Function(_$MetaAdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1151,7 +1153,7 @@ class __$$_MetaAdCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? ratio = null,
   }) {
-    return _then(_$_MetaAd(
+    return _then(_$MetaAdImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1178,16 +1180,16 @@ class __$$_MetaAdCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MetaAd implements _MetaAd {
-  const _$_MetaAd(
+class _$MetaAdImpl implements _MetaAd {
+  const _$MetaAdImpl(
       {required this.id,
       required this.place,
       @UriConverter() required this.url,
       @UriConverter() required this.imageUrl,
       required this.ratio});
 
-  factory _$_MetaAd.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaAdFromJson(json);
+  factory _$MetaAdImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaAdImplFromJson(json);
 
   @override
   final String id;
@@ -1211,7 +1213,7 @@ class _$_MetaAd implements _MetaAd {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MetaAd &&
+            other is _$MetaAdImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.place, place) || other.place == place) &&
             (identical(other.url, url) || other.url == url) &&
@@ -1227,12 +1229,12 @@ class _$_MetaAd implements _MetaAd {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaAdCopyWith<_$_MetaAd> get copyWith =>
-      __$$_MetaAdCopyWithImpl<_$_MetaAd>(this, _$identity);
+  _$$MetaAdImplCopyWith<_$MetaAdImpl> get copyWith =>
+      __$$MetaAdImplCopyWithImpl<_$MetaAdImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaAdToJson(
+    return _$$MetaAdImplToJson(
       this,
     );
   }
@@ -1244,9 +1246,9 @@ abstract class _MetaAd implements MetaAd {
       required final String place,
       @UriConverter() required final Uri url,
       @UriConverter() required final Uri imageUrl,
-      required final int ratio}) = _$_MetaAd;
+      required final int ratio}) = _$MetaAdImpl;
 
-  factory _MetaAd.fromJson(Map<String, dynamic> json) = _$_MetaAd.fromJson;
+  factory _MetaAd.fromJson(Map<String, dynamic> json) = _$MetaAdImpl.fromJson;
 
   @override
   String get id;
@@ -1262,7 +1264,7 @@ abstract class _MetaAd implements MetaAd {
   int get ratio;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaAdCopyWith<_$_MetaAd> get copyWith =>
+  _$$MetaAdImplCopyWith<_$MetaAdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1370,11 +1372,11 @@ class _$MetaFeatureCopyWithImpl<$Res, $Val extends MetaFeature>
 }
 
 /// @nodoc
-abstract class _$$_MetaFeatureCopyWith<$Res>
+abstract class _$$MetaFeatureImplCopyWith<$Res>
     implements $MetaFeatureCopyWith<$Res> {
-  factory _$$_MetaFeatureCopyWith(
-          _$_MetaFeature value, $Res Function(_$_MetaFeature) then) =
-      __$$_MetaFeatureCopyWithImpl<$Res>;
+  factory _$$MetaFeatureImplCopyWith(
+          _$MetaFeatureImpl value, $Res Function(_$MetaFeatureImpl) then) =
+      __$$MetaFeatureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1389,11 +1391,11 @@ abstract class _$$_MetaFeatureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MetaFeatureCopyWithImpl<$Res>
-    extends _$MetaFeatureCopyWithImpl<$Res, _$_MetaFeature>
-    implements _$$_MetaFeatureCopyWith<$Res> {
-  __$$_MetaFeatureCopyWithImpl(
-      _$_MetaFeature _value, $Res Function(_$_MetaFeature) _then)
+class __$$MetaFeatureImplCopyWithImpl<$Res>
+    extends _$MetaFeatureCopyWithImpl<$Res, _$MetaFeatureImpl>
+    implements _$$MetaFeatureImplCopyWith<$Res> {
+  __$$MetaFeatureImplCopyWithImpl(
+      _$MetaFeatureImpl _value, $Res Function(_$MetaFeatureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1408,7 +1410,7 @@ class __$$_MetaFeatureCopyWithImpl<$Res>
     Object? serviceWorker = null,
     Object? miauth = null,
   }) {
-    return _then(_$_MetaFeature(
+    return _then(_$MetaFeatureImpl(
       registration: null == registration
           ? _value.registration
           : registration // ignore: cast_nullable_to_non_nullable
@@ -1447,8 +1449,8 @@ class __$$_MetaFeatureCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MetaFeature implements _MetaFeature {
-  const _$_MetaFeature(
+class _$MetaFeatureImpl implements _MetaFeature {
+  const _$MetaFeatureImpl(
       {required this.registration,
       required this.emailRequiredForSignup,
       required this.hcaptcha,
@@ -1458,8 +1460,8 @@ class _$_MetaFeature implements _MetaFeature {
       required this.serviceWorker,
       required this.miauth});
 
-  factory _$_MetaFeature.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaFeatureFromJson(json);
+  factory _$MetaFeatureImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaFeatureImplFromJson(json);
 
   @override
   final bool registration;
@@ -1493,7 +1495,7 @@ class _$_MetaFeature implements _MetaFeature {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MetaFeature &&
+            other is _$MetaFeatureImpl &&
             (identical(other.registration, registration) ||
                 other.registration == registration) &&
             (identical(other.emailRequiredForSignup, emailRequiredForSignup) ||
@@ -1527,12 +1529,12 @@ class _$_MetaFeature implements _MetaFeature {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaFeatureCopyWith<_$_MetaFeature> get copyWith =>
-      __$$_MetaFeatureCopyWithImpl<_$_MetaFeature>(this, _$identity);
+  _$$MetaFeatureImplCopyWith<_$MetaFeatureImpl> get copyWith =>
+      __$$MetaFeatureImplCopyWithImpl<_$MetaFeatureImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaFeatureToJson(
+    return _$$MetaFeatureImplToJson(
       this,
     );
   }
@@ -1547,10 +1549,10 @@ abstract class _MetaFeature implements MetaFeature {
       required final bool turnstile,
       required final bool objectStorage,
       required final bool serviceWorker,
-      required final bool miauth}) = _$_MetaFeature;
+      required final bool miauth}) = _$MetaFeatureImpl;
 
   factory _MetaFeature.fromJson(Map<String, dynamic> json) =
-      _$_MetaFeature.fromJson;
+      _$MetaFeatureImpl.fromJson;
 
   @override
   bool get registration;
@@ -1573,6 +1575,6 @@ abstract class _MetaFeature implements MetaFeature {
   bool get miauth;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaFeatureCopyWith<_$_MetaFeature> get copyWith =>
+  _$$MetaFeatureImplCopyWith<_$MetaFeatureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

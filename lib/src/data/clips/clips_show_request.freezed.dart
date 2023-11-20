@@ -62,22 +62,22 @@ class _$ClipsShowRequestCopyWithImpl<$Res, $Val extends ClipsShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_ClipsShowRequestCopyWith<$Res>
+abstract class _$$ClipsShowRequestImplCopyWith<$Res>
     implements $ClipsShowRequestCopyWith<$Res> {
-  factory _$$_ClipsShowRequestCopyWith(
-          _$_ClipsShowRequest value, $Res Function(_$_ClipsShowRequest) then) =
-      __$$_ClipsShowRequestCopyWithImpl<$Res>;
+  factory _$$ClipsShowRequestImplCopyWith(_$ClipsShowRequestImpl value,
+          $Res Function(_$ClipsShowRequestImpl) then) =
+      __$$ClipsShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String clipId});
 }
 
 /// @nodoc
-class __$$_ClipsShowRequestCopyWithImpl<$Res>
-    extends _$ClipsShowRequestCopyWithImpl<$Res, _$_ClipsShowRequest>
-    implements _$$_ClipsShowRequestCopyWith<$Res> {
-  __$$_ClipsShowRequestCopyWithImpl(
-      _$_ClipsShowRequest _value, $Res Function(_$_ClipsShowRequest) _then)
+class __$$ClipsShowRequestImplCopyWithImpl<$Res>
+    extends _$ClipsShowRequestCopyWithImpl<$Res, _$ClipsShowRequestImpl>
+    implements _$$ClipsShowRequestImplCopyWith<$Res> {
+  __$$ClipsShowRequestImplCopyWithImpl(_$ClipsShowRequestImpl _value,
+      $Res Function(_$ClipsShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_ClipsShowRequestCopyWithImpl<$Res>
   $Res call({
     Object? clipId = null,
   }) {
-    return _then(_$_ClipsShowRequest(
+    return _then(_$ClipsShowRequestImpl(
       clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_ClipsShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsShowRequest implements _ClipsShowRequest {
-  const _$_ClipsShowRequest({required this.clipId});
+class _$ClipsShowRequestImpl implements _ClipsShowRequest {
+  const _$ClipsShowRequestImpl({required this.clipId});
 
-  factory _$_ClipsShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsShowRequestFromJson(json);
+  factory _$ClipsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsShowRequestImplFromJson(json);
 
   @override
   final String clipId;
@@ -114,7 +114,7 @@ class _$_ClipsShowRequest implements _ClipsShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsShowRequest &&
+            other is _$ClipsShowRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId));
   }
 
@@ -125,12 +125,13 @@ class _$_ClipsShowRequest implements _ClipsShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsShowRequestCopyWith<_$_ClipsShowRequest> get copyWith =>
-      __$$_ClipsShowRequestCopyWithImpl<_$_ClipsShowRequest>(this, _$identity);
+  _$$ClipsShowRequestImplCopyWith<_$ClipsShowRequestImpl> get copyWith =>
+      __$$ClipsShowRequestImplCopyWithImpl<_$ClipsShowRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsShowRequestToJson(
+    return _$$ClipsShowRequestImplToJson(
       this,
     );
   }
@@ -138,15 +139,15 @@ class _$_ClipsShowRequest implements _ClipsShowRequest {
 
 abstract class _ClipsShowRequest implements ClipsShowRequest {
   const factory _ClipsShowRequest({required final String clipId}) =
-      _$_ClipsShowRequest;
+      _$ClipsShowRequestImpl;
 
   factory _ClipsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsShowRequest.fromJson;
+      _$ClipsShowRequestImpl.fromJson;
 
   @override
   String get clipId;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsShowRequestCopyWith<_$_ClipsShowRequest> get copyWith =>
+  _$$ClipsShowRequestImplCopyWith<_$ClipsShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

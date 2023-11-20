@@ -90,11 +90,12 @@ class _$QueueStatsLogResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_QueueStatsLogResponseCopyWith<$Res>
+abstract class _$$QueueStatsLogResponseImplCopyWith<$Res>
     implements $QueueStatsLogResponseCopyWith<$Res> {
-  factory _$$_QueueStatsLogResponseCopyWith(_$_QueueStatsLogResponse value,
-          $Res Function(_$_QueueStatsLogResponse) then) =
-      __$$_QueueStatsLogResponseCopyWithImpl<$Res>;
+  factory _$$QueueStatsLogResponseImplCopyWith(
+          _$QueueStatsLogResponseImpl value,
+          $Res Function(_$QueueStatsLogResponseImpl) then) =
+      __$$QueueStatsLogResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -107,11 +108,12 @@ abstract class _$$_QueueStatsLogResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QueueStatsLogResponseCopyWithImpl<$Res>
-    extends _$QueueStatsLogResponseCopyWithImpl<$Res, _$_QueueStatsLogResponse>
-    implements _$$_QueueStatsLogResponseCopyWith<$Res> {
-  __$$_QueueStatsLogResponseCopyWithImpl(_$_QueueStatsLogResponse _value,
-      $Res Function(_$_QueueStatsLogResponse) _then)
+class __$$QueueStatsLogResponseImplCopyWithImpl<$Res>
+    extends _$QueueStatsLogResponseCopyWithImpl<$Res,
+        _$QueueStatsLogResponseImpl>
+    implements _$$QueueStatsLogResponseImplCopyWith<$Res> {
+  __$$QueueStatsLogResponseImplCopyWithImpl(_$QueueStatsLogResponseImpl _value,
+      $Res Function(_$QueueStatsLogResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -120,7 +122,7 @@ class __$$_QueueStatsLogResponseCopyWithImpl<$Res>
     Object? inbox = null,
     Object? deliver = null,
   }) {
-    return _then(_$_QueueStatsLogResponse(
+    return _then(_$QueueStatsLogResponseImpl(
       inbox: null == inbox
           ? _value.inbox
           : inbox // ignore: cast_nullable_to_non_nullable
@@ -135,11 +137,12 @@ class __$$_QueueStatsLogResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_QueueStatsLogResponse implements _QueueStatsLogResponse {
-  const _$_QueueStatsLogResponse({required this.inbox, required this.deliver});
+class _$QueueStatsLogResponseImpl implements _QueueStatsLogResponse {
+  const _$QueueStatsLogResponseImpl(
+      {required this.inbox, required this.deliver});
 
-  factory _$_QueueStatsLogResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_QueueStatsLogResponseFromJson(json);
+  factory _$QueueStatsLogResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QueueStatsLogResponseImplFromJson(json);
 
   @override
   final QueueStatsLogResponseData inbox;
@@ -155,7 +158,7 @@ class _$_QueueStatsLogResponse implements _QueueStatsLogResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QueueStatsLogResponse &&
+            other is _$QueueStatsLogResponseImpl &&
             (identical(other.inbox, inbox) || other.inbox == inbox) &&
             (identical(other.deliver, deliver) || other.deliver == deliver));
   }
@@ -167,13 +170,13 @@ class _$_QueueStatsLogResponse implements _QueueStatsLogResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QueueStatsLogResponseCopyWith<_$_QueueStatsLogResponse> get copyWith =>
-      __$$_QueueStatsLogResponseCopyWithImpl<_$_QueueStatsLogResponse>(
-          this, _$identity);
+  _$$QueueStatsLogResponseImplCopyWith<_$QueueStatsLogResponseImpl>
+      get copyWith => __$$QueueStatsLogResponseImplCopyWithImpl<
+          _$QueueStatsLogResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QueueStatsLogResponseToJson(
+    return _$$QueueStatsLogResponseImplToJson(
       this,
     );
   }
@@ -183,10 +186,10 @@ abstract class _QueueStatsLogResponse implements QueueStatsLogResponse {
   const factory _QueueStatsLogResponse(
           {required final QueueStatsLogResponseData inbox,
           required final QueueStatsLogResponseData deliver}) =
-      _$_QueueStatsLogResponse;
+      _$QueueStatsLogResponseImpl;
 
   factory _QueueStatsLogResponse.fromJson(Map<String, dynamic> json) =
-      _$_QueueStatsLogResponse.fromJson;
+      _$QueueStatsLogResponseImpl.fromJson;
 
   @override
   QueueStatsLogResponseData get inbox;
@@ -194,8 +197,8 @@ abstract class _QueueStatsLogResponse implements QueueStatsLogResponse {
   QueueStatsLogResponseData get deliver;
   @override
   @JsonKey(ignore: true)
-  _$$_QueueStatsLogResponseCopyWith<_$_QueueStatsLogResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QueueStatsLogResponseImplCopyWith<_$QueueStatsLogResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 QueueStatsLogResponseData _$QueueStatsLogResponseDataFromJson(
@@ -266,25 +269,25 @@ class _$QueueStatsLogResponseDataCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_QueueStatsLogResponseDataCopyWith<$Res>
+abstract class _$$QueueStatsLogResponseDataImplCopyWith<$Res>
     implements $QueueStatsLogResponseDataCopyWith<$Res> {
-  factory _$$_QueueStatsLogResponseDataCopyWith(
-          _$_QueueStatsLogResponseData value,
-          $Res Function(_$_QueueStatsLogResponseData) then) =
-      __$$_QueueStatsLogResponseDataCopyWithImpl<$Res>;
+  factory _$$QueueStatsLogResponseDataImplCopyWith(
+          _$QueueStatsLogResponseDataImpl value,
+          $Res Function(_$QueueStatsLogResponseDataImpl) then) =
+      __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int activeSincePrevTick, int active, int waiting, int delayed});
 }
 
 /// @nodoc
-class __$$_QueueStatsLogResponseDataCopyWithImpl<$Res>
+class __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>
     extends _$QueueStatsLogResponseDataCopyWithImpl<$Res,
-        _$_QueueStatsLogResponseData>
-    implements _$$_QueueStatsLogResponseDataCopyWith<$Res> {
-  __$$_QueueStatsLogResponseDataCopyWithImpl(
-      _$_QueueStatsLogResponseData _value,
-      $Res Function(_$_QueueStatsLogResponseData) _then)
+        _$QueueStatsLogResponseDataImpl>
+    implements _$$QueueStatsLogResponseDataImplCopyWith<$Res> {
+  __$$QueueStatsLogResponseDataImplCopyWithImpl(
+      _$QueueStatsLogResponseDataImpl _value,
+      $Res Function(_$QueueStatsLogResponseDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -295,7 +298,7 @@ class __$$_QueueStatsLogResponseDataCopyWithImpl<$Res>
     Object? waiting = null,
     Object? delayed = null,
   }) {
-    return _then(_$_QueueStatsLogResponseData(
+    return _then(_$QueueStatsLogResponseDataImpl(
       activeSincePrevTick: null == activeSincePrevTick
           ? _value.activeSincePrevTick
           : activeSincePrevTick // ignore: cast_nullable_to_non_nullable
@@ -318,15 +321,15 @@ class __$$_QueueStatsLogResponseDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_QueueStatsLogResponseData implements _QueueStatsLogResponseData {
-  const _$_QueueStatsLogResponseData(
+class _$QueueStatsLogResponseDataImpl implements _QueueStatsLogResponseData {
+  const _$QueueStatsLogResponseDataImpl(
       {required this.activeSincePrevTick,
       required this.active,
       required this.waiting,
       required this.delayed});
 
-  factory _$_QueueStatsLogResponseData.fromJson(Map<String, dynamic> json) =>
-      _$$_QueueStatsLogResponseDataFromJson(json);
+  factory _$QueueStatsLogResponseDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QueueStatsLogResponseDataImplFromJson(json);
 
   @override
   final int activeSincePrevTick;
@@ -346,7 +349,7 @@ class _$_QueueStatsLogResponseData implements _QueueStatsLogResponseData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QueueStatsLogResponseData &&
+            other is _$QueueStatsLogResponseDataImpl &&
             (identical(other.activeSincePrevTick, activeSincePrevTick) ||
                 other.activeSincePrevTick == activeSincePrevTick) &&
             (identical(other.active, active) || other.active == active) &&
@@ -362,13 +365,13 @@ class _$_QueueStatsLogResponseData implements _QueueStatsLogResponseData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QueueStatsLogResponseDataCopyWith<_$_QueueStatsLogResponseData>
-      get copyWith => __$$_QueueStatsLogResponseDataCopyWithImpl<
-          _$_QueueStatsLogResponseData>(this, _$identity);
+  _$$QueueStatsLogResponseDataImplCopyWith<_$QueueStatsLogResponseDataImpl>
+      get copyWith => __$$QueueStatsLogResponseDataImplCopyWithImpl<
+          _$QueueStatsLogResponseDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QueueStatsLogResponseDataToJson(
+    return _$$QueueStatsLogResponseDataImplToJson(
       this,
     );
   }
@@ -379,10 +382,10 @@ abstract class _QueueStatsLogResponseData implements QueueStatsLogResponseData {
       {required final int activeSincePrevTick,
       required final int active,
       required final int waiting,
-      required final int delayed}) = _$_QueueStatsLogResponseData;
+      required final int delayed}) = _$QueueStatsLogResponseDataImpl;
 
   factory _QueueStatsLogResponseData.fromJson(Map<String, dynamic> json) =
-      _$_QueueStatsLogResponseData.fromJson;
+      _$QueueStatsLogResponseDataImpl.fromJson;
 
   @override
   int get activeSincePrevTick;
@@ -394,6 +397,6 @@ abstract class _QueueStatsLogResponseData implements QueueStatsLogResponseData {
   int get delayed;
   @override
   @JsonKey(ignore: true)
-  _$$_QueueStatsLogResponseDataCopyWith<_$_QueueStatsLogResponseData>
+  _$$QueueStatsLogResponseDataImplCopyWith<_$QueueStatsLogResponseDataImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

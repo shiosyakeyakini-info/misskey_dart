@@ -64,23 +64,25 @@ class _$RenoteMuteDeleteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RenoteMuteDeleteRequestCopyWith<$Res>
+abstract class _$$RenoteMuteDeleteRequestImplCopyWith<$Res>
     implements $RenoteMuteDeleteRequestCopyWith<$Res> {
-  factory _$$_RenoteMuteDeleteRequestCopyWith(_$_RenoteMuteDeleteRequest value,
-          $Res Function(_$_RenoteMuteDeleteRequest) then) =
-      __$$_RenoteMuteDeleteRequestCopyWithImpl<$Res>;
+  factory _$$RenoteMuteDeleteRequestImplCopyWith(
+          _$RenoteMuteDeleteRequestImpl value,
+          $Res Function(_$RenoteMuteDeleteRequestImpl) then) =
+      __$$RenoteMuteDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$_RenoteMuteDeleteRequestCopyWithImpl<$Res>
+class __$$RenoteMuteDeleteRequestImplCopyWithImpl<$Res>
     extends _$RenoteMuteDeleteRequestCopyWithImpl<$Res,
-        _$_RenoteMuteDeleteRequest>
-    implements _$$_RenoteMuteDeleteRequestCopyWith<$Res> {
-  __$$_RenoteMuteDeleteRequestCopyWithImpl(_$_RenoteMuteDeleteRequest _value,
-      $Res Function(_$_RenoteMuteDeleteRequest) _then)
+        _$RenoteMuteDeleteRequestImpl>
+    implements _$$RenoteMuteDeleteRequestImplCopyWith<$Res> {
+  __$$RenoteMuteDeleteRequestImplCopyWithImpl(
+      _$RenoteMuteDeleteRequestImpl _value,
+      $Res Function(_$RenoteMuteDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_RenoteMuteDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$_RenoteMuteDeleteRequest(
+    return _then(_$RenoteMuteDeleteRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_RenoteMuteDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RenoteMuteDeleteRequest implements _RenoteMuteDeleteRequest {
-  const _$_RenoteMuteDeleteRequest({required this.userId});
+class _$RenoteMuteDeleteRequestImpl implements _RenoteMuteDeleteRequest {
+  const _$RenoteMuteDeleteRequestImpl({required this.userId});
 
-  factory _$_RenoteMuteDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_RenoteMuteDeleteRequestFromJson(json);
+  factory _$RenoteMuteDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RenoteMuteDeleteRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -117,7 +119,7 @@ class _$_RenoteMuteDeleteRequest implements _RenoteMuteDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RenoteMuteDeleteRequest &&
+            other is _$RenoteMuteDeleteRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
@@ -128,14 +130,13 @@ class _$_RenoteMuteDeleteRequest implements _RenoteMuteDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RenoteMuteDeleteRequestCopyWith<_$_RenoteMuteDeleteRequest>
-      get copyWith =>
-          __$$_RenoteMuteDeleteRequestCopyWithImpl<_$_RenoteMuteDeleteRequest>(
-              this, _$identity);
+  _$$RenoteMuteDeleteRequestImplCopyWith<_$RenoteMuteDeleteRequestImpl>
+      get copyWith => __$$RenoteMuteDeleteRequestImplCopyWithImpl<
+          _$RenoteMuteDeleteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RenoteMuteDeleteRequestToJson(
+    return _$$RenoteMuteDeleteRequestImplToJson(
       this,
     );
   }
@@ -143,15 +144,15 @@ class _$_RenoteMuteDeleteRequest implements _RenoteMuteDeleteRequest {
 
 abstract class _RenoteMuteDeleteRequest implements RenoteMuteDeleteRequest {
   const factory _RenoteMuteDeleteRequest({required final String userId}) =
-      _$_RenoteMuteDeleteRequest;
+      _$RenoteMuteDeleteRequestImpl;
 
   factory _RenoteMuteDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_RenoteMuteDeleteRequest.fromJson;
+      _$RenoteMuteDeleteRequestImpl.fromJson;
 
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_RenoteMuteDeleteRequestCopyWith<_$_RenoteMuteDeleteRequest>
+  _$$RenoteMuteDeleteRequestImplCopyWith<_$RenoteMuteDeleteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

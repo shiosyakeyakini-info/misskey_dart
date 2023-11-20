@@ -6,8 +6,9 @@ part of 'users_show_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
-    _$_UsersShowResponse(
+_$UsersShowResponseImpl _$$UsersShowResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UsersShowResponseImpl(
       id: json['id'] as String,
       name: json['name'] as String?,
       username: json['username'] as String,
@@ -125,8 +126,8 @@ _$_UsersShowResponse _$$_UsersShowResponseFromJson(Map<String, dynamic> json) =>
       isRenoteMuted: json['isRenoteMuted'] as bool?,
     );
 
-Map<String, dynamic> _$$_UsersShowResponseToJson(
-        _$_UsersShowResponse instance) =>
+Map<String, dynamic> _$$UsersShowResponseImplToJson(
+        _$UsersShowResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

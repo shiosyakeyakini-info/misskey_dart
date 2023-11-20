@@ -62,22 +62,22 @@ class _$BlockCreateRequestCopyWithImpl<$Res, $Val extends BlockCreateRequest>
 }
 
 /// @nodoc
-abstract class _$$_BlockCreateRequestCopyWith<$Res>
+abstract class _$$BlockCreateRequestImplCopyWith<$Res>
     implements $BlockCreateRequestCopyWith<$Res> {
-  factory _$$_BlockCreateRequestCopyWith(_$_BlockCreateRequest value,
-          $Res Function(_$_BlockCreateRequest) then) =
-      __$$_BlockCreateRequestCopyWithImpl<$Res>;
+  factory _$$BlockCreateRequestImplCopyWith(_$BlockCreateRequestImpl value,
+          $Res Function(_$BlockCreateRequestImpl) then) =
+      __$$BlockCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$_BlockCreateRequestCopyWithImpl<$Res>
-    extends _$BlockCreateRequestCopyWithImpl<$Res, _$_BlockCreateRequest>
-    implements _$$_BlockCreateRequestCopyWith<$Res> {
-  __$$_BlockCreateRequestCopyWithImpl(
-      _$_BlockCreateRequest _value, $Res Function(_$_BlockCreateRequest) _then)
+class __$$BlockCreateRequestImplCopyWithImpl<$Res>
+    extends _$BlockCreateRequestCopyWithImpl<$Res, _$BlockCreateRequestImpl>
+    implements _$$BlockCreateRequestImplCopyWith<$Res> {
+  __$$BlockCreateRequestImplCopyWithImpl(_$BlockCreateRequestImpl _value,
+      $Res Function(_$BlockCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_BlockCreateRequestCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$_BlockCreateRequest(
+    return _then(_$BlockCreateRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_BlockCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BlockCreateRequest implements _BlockCreateRequest {
-  const _$_BlockCreateRequest({required this.userId});
+class _$BlockCreateRequestImpl implements _BlockCreateRequest {
+  const _$BlockCreateRequestImpl({required this.userId});
 
-  factory _$_BlockCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_BlockCreateRequestFromJson(json);
+  factory _$BlockCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BlockCreateRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -114,7 +114,7 @@ class _$_BlockCreateRequest implements _BlockCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BlockCreateRequest &&
+            other is _$BlockCreateRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
@@ -125,13 +125,13 @@ class _$_BlockCreateRequest implements _BlockCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BlockCreateRequestCopyWith<_$_BlockCreateRequest> get copyWith =>
-      __$$_BlockCreateRequestCopyWithImpl<_$_BlockCreateRequest>(
+  _$$BlockCreateRequestImplCopyWith<_$BlockCreateRequestImpl> get copyWith =>
+      __$$BlockCreateRequestImplCopyWithImpl<_$BlockCreateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockCreateRequestToJson(
+    return _$$BlockCreateRequestImplToJson(
       this,
     );
   }
@@ -139,15 +139,15 @@ class _$_BlockCreateRequest implements _BlockCreateRequest {
 
 abstract class _BlockCreateRequest implements BlockCreateRequest {
   const factory _BlockCreateRequest({required final String userId}) =
-      _$_BlockCreateRequest;
+      _$BlockCreateRequestImpl;
 
   factory _BlockCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_BlockCreateRequest.fromJson;
+      _$BlockCreateRequestImpl.fromJson;
 
   @override
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_BlockCreateRequestCopyWith<_$_BlockCreateRequest> get copyWith =>
+  _$$BlockCreateRequestImplCopyWith<_$BlockCreateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

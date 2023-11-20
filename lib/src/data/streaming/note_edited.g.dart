@@ -6,13 +6,13 @@ part of 'note_edited.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NoteEdited _$$_NoteEditedFromJson(Map<String, dynamic> json) =>
-    _$_NoteEdited(
+_$NoteEditedImpl _$$NoteEditedImplFromJson(Map<String, dynamic> json) =>
+    _$NoteEditedImpl(
       cw: json['cw'] as String?,
       text: json['text'] as String?,
     );
 
-Map<String, dynamic> _$$_NoteEditedToJson(_$_NoteEdited instance) =>
+Map<String, dynamic> _$$NoteEditedImplToJson(_$NoteEditedImpl instance) =>
     <String, dynamic>{
       'cw': instance.cw,
       'text': instance.text,

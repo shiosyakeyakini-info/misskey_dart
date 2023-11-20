@@ -6,14 +6,14 @@ part of 'channel_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ChannelEvent _$$_ChannelEventFromJson(Map<String, dynamic> json) =>
-    _$_ChannelEvent(
+_$ChannelEventImpl _$$ChannelEventImplFromJson(Map<String, dynamic> json) =>
+    _$ChannelEventImpl(
       id: json['id'] as String,
       type: $enumDecode(_$ChannelEventTypeEnumMap, json['type']),
       body: json['body'],
     );
 
-Map<String, dynamic> _$$_ChannelEventToJson(_$_ChannelEvent instance) =>
+Map<String, dynamic> _$$ChannelEventImplToJson(_$ChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$ChannelEventTypeEnumMap[instance.type]!,

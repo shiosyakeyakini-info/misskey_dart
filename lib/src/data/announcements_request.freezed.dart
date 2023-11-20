@@ -100,11 +100,11 @@ class _$AnnouncementsRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AnnouncementsRequestCopyWith<$Res>
+abstract class _$$AnnouncementsRequestImplCopyWith<$Res>
     implements $AnnouncementsRequestCopyWith<$Res> {
-  factory _$$_AnnouncementsRequestCopyWith(_$_AnnouncementsRequest value,
-          $Res Function(_$_AnnouncementsRequest) then) =
-      __$$_AnnouncementsRequestCopyWithImpl<$Res>;
+  factory _$$AnnouncementsRequestImplCopyWith(_$AnnouncementsRequestImpl value,
+          $Res Function(_$AnnouncementsRequestImpl) then) =
+      __$$AnnouncementsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -117,11 +117,11 @@ abstract class _$$_AnnouncementsRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AnnouncementsRequestCopyWithImpl<$Res>
-    extends _$AnnouncementsRequestCopyWithImpl<$Res, _$_AnnouncementsRequest>
-    implements _$$_AnnouncementsRequestCopyWith<$Res> {
-  __$$_AnnouncementsRequestCopyWithImpl(_$_AnnouncementsRequest _value,
-      $Res Function(_$_AnnouncementsRequest) _then)
+class __$$AnnouncementsRequestImplCopyWithImpl<$Res>
+    extends _$AnnouncementsRequestCopyWithImpl<$Res, _$AnnouncementsRequestImpl>
+    implements _$$AnnouncementsRequestImplCopyWith<$Res> {
+  __$$AnnouncementsRequestImplCopyWithImpl(_$AnnouncementsRequestImpl _value,
+      $Res Function(_$AnnouncementsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -134,7 +134,7 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_$_AnnouncementsRequest(
+    return _then(_$AnnouncementsRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -165,8 +165,8 @@ class __$$_AnnouncementsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnnouncementsRequest implements _AnnouncementsRequest {
-  const _$_AnnouncementsRequest(
+class _$AnnouncementsRequestImpl implements _AnnouncementsRequest {
+  const _$AnnouncementsRequestImpl(
       {this.limit,
       @Deprecated("removed in Misskey 2023.9") this.withUnreads,
       this.isActive,
@@ -174,8 +174,8 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
       this.untilId,
       this.offset});
 
-  factory _$_AnnouncementsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_AnnouncementsRequestFromJson(json);
+  factory _$AnnouncementsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnnouncementsRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -201,7 +201,7 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnnouncementsRequest &&
+            other is _$AnnouncementsRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.withUnreads, withUnreads) ||
                 other.withUnreads == withUnreads) &&
@@ -220,13 +220,14 @@ class _$_AnnouncementsRequest implements _AnnouncementsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnnouncementsRequestCopyWith<_$_AnnouncementsRequest> get copyWith =>
-      __$$_AnnouncementsRequestCopyWithImpl<_$_AnnouncementsRequest>(
-          this, _$identity);
+  _$$AnnouncementsRequestImplCopyWith<_$AnnouncementsRequestImpl>
+      get copyWith =>
+          __$$AnnouncementsRequestImplCopyWithImpl<_$AnnouncementsRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnnouncementsRequestToJson(
+    return _$$AnnouncementsRequestImplToJson(
       this,
     );
   }
@@ -239,10 +240,10 @@ abstract class _AnnouncementsRequest implements AnnouncementsRequest {
       final bool? isActive,
       final String? sinceId,
       final String? untilId,
-      final int? offset}) = _$_AnnouncementsRequest;
+      final int? offset}) = _$AnnouncementsRequestImpl;
 
   factory _AnnouncementsRequest.fromJson(Map<String, dynamic> json) =
-      _$_AnnouncementsRequest.fromJson;
+      _$AnnouncementsRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -259,6 +260,6 @@ abstract class _AnnouncementsRequest implements AnnouncementsRequest {
   int? get offset;
   @override
   @JsonKey(ignore: true)
-  _$$_AnnouncementsRequestCopyWith<_$_AnnouncementsRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AnnouncementsRequestImplCopyWith<_$AnnouncementsRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

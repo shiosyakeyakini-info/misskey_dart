@@ -120,11 +120,11 @@ class _$EmojiResponseCopyWithImpl<$Res, $Val extends EmojiResponse>
 }
 
 /// @nodoc
-abstract class _$$_EmojiResponseCopyWith<$Res>
+abstract class _$$EmojiResponseImplCopyWith<$Res>
     implements $EmojiResponseCopyWith<$Res> {
-  factory _$$_EmojiResponseCopyWith(
-          _$_EmojiResponse value, $Res Function(_$_EmojiResponse) then) =
-      __$$_EmojiResponseCopyWithImpl<$Res>;
+  factory _$$EmojiResponseImplCopyWith(
+          _$EmojiResponseImpl value, $Res Function(_$EmojiResponseImpl) then) =
+      __$$EmojiResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -140,11 +140,11 @@ abstract class _$$_EmojiResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EmojiResponseCopyWithImpl<$Res>
-    extends _$EmojiResponseCopyWithImpl<$Res, _$_EmojiResponse>
-    implements _$$_EmojiResponseCopyWith<$Res> {
-  __$$_EmojiResponseCopyWithImpl(
-      _$_EmojiResponse _value, $Res Function(_$_EmojiResponse) _then)
+class __$$EmojiResponseImplCopyWithImpl<$Res>
+    extends _$EmojiResponseCopyWithImpl<$Res, _$EmojiResponseImpl>
+    implements _$$EmojiResponseImplCopyWith<$Res> {
+  __$$EmojiResponseImplCopyWithImpl(
+      _$EmojiResponseImpl _value, $Res Function(_$EmojiResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -160,7 +160,7 @@ class __$$_EmojiResponseCopyWithImpl<$Res>
     Object? isSensitive = freezed,
     Object? localOnly = freezed,
   }) {
-    return _then(_$_EmojiResponse(
+    return _then(_$EmojiResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -197,8 +197,8 @@ class __$$_EmojiResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EmojiResponse implements _EmojiResponse {
-  const _$_EmojiResponse(
+class _$EmojiResponseImpl implements _EmojiResponse {
+  const _$EmojiResponseImpl(
       {required this.id,
       final List<String> aliases = const [],
       required this.name,
@@ -210,8 +210,8 @@ class _$_EmojiResponse implements _EmojiResponse {
       this.localOnly = false})
       : _aliases = aliases;
 
-  factory _$_EmojiResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_EmojiResponseFromJson(json);
+  factory _$EmojiResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmojiResponseImplFromJson(json);
 
   @override
   final String id;
@@ -251,7 +251,7 @@ class _$_EmojiResponse implements _EmojiResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmojiResponse &&
+            other is _$EmojiResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._aliases, _aliases) &&
             (identical(other.name, name) || other.name == name) &&
@@ -282,12 +282,12 @@ class _$_EmojiResponse implements _EmojiResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmojiResponseCopyWith<_$_EmojiResponse> get copyWith =>
-      __$$_EmojiResponseCopyWithImpl<_$_EmojiResponse>(this, _$identity);
+  _$$EmojiResponseImplCopyWith<_$EmojiResponseImpl> get copyWith =>
+      __$$EmojiResponseImplCopyWithImpl<_$EmojiResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmojiResponseToJson(
+    return _$$EmojiResponseImplToJson(
       this,
     );
   }
@@ -303,10 +303,10 @@ abstract class _EmojiResponse implements EmojiResponse {
       @NullableUriConverter() required final Uri? url,
       final String? license,
       final dynamic isSensitive,
-      final dynamic localOnly}) = _$_EmojiResponse;
+      final dynamic localOnly}) = _$EmojiResponseImpl;
 
   factory _EmojiResponse.fromJson(Map<String, dynamic> json) =
-      _$_EmojiResponse.fromJson;
+      _$EmojiResponseImpl.fromJson;
 
   @override
   String get id;
@@ -329,6 +329,6 @@ abstract class _EmojiResponse implements EmojiResponse {
   dynamic get localOnly;
   @override
   @JsonKey(ignore: true)
-  _$$_EmojiResponseCopyWith<_$_EmojiResponse> get copyWith =>
+  _$$EmojiResponseImplCopyWith<_$EmojiResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

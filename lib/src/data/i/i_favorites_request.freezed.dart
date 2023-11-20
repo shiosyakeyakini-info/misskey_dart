@@ -76,11 +76,11 @@ class _$IFavoritesRequestCopyWithImpl<$Res, $Val extends IFavoritesRequest>
 }
 
 /// @nodoc
-abstract class _$$_IFavoritesRequestCopyWith<$Res>
+abstract class _$$IFavoritesRequestImplCopyWith<$Res>
     implements $IFavoritesRequestCopyWith<$Res> {
-  factory _$$_IFavoritesRequestCopyWith(_$_IFavoritesRequest value,
-          $Res Function(_$_IFavoritesRequest) then) =
-      __$$_IFavoritesRequestCopyWithImpl<$Res>;
+  factory _$$IFavoritesRequestImplCopyWith(_$IFavoritesRequestImpl value,
+          $Res Function(_$IFavoritesRequestImpl) then) =
+      __$$IFavoritesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -88,11 +88,11 @@ abstract class _$$_IFavoritesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_IFavoritesRequestCopyWithImpl<$Res>
-    extends _$IFavoritesRequestCopyWithImpl<$Res, _$_IFavoritesRequest>
-    implements _$$_IFavoritesRequestCopyWith<$Res> {
-  __$$_IFavoritesRequestCopyWithImpl(
-      _$_IFavoritesRequest _value, $Res Function(_$_IFavoritesRequest) _then)
+class __$$IFavoritesRequestImplCopyWithImpl<$Res>
+    extends _$IFavoritesRequestCopyWithImpl<$Res, _$IFavoritesRequestImpl>
+    implements _$$IFavoritesRequestImplCopyWith<$Res> {
+  __$$IFavoritesRequestImplCopyWithImpl(_$IFavoritesRequestImpl _value,
+      $Res Function(_$IFavoritesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_IFavoritesRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_IFavoritesRequest(
+    return _then(_$IFavoritesRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -121,12 +121,12 @@ class __$$_IFavoritesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IFavoritesRequest implements _IFavoritesRequest {
-  const _$_IFavoritesRequest(
+class _$IFavoritesRequestImpl implements _IFavoritesRequest {
+  const _$IFavoritesRequestImpl(
       {@Assert('limit > 0') this.limit, this.sinceId, this.untilId});
 
-  factory _$_IFavoritesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_IFavoritesRequestFromJson(json);
+  factory _$IFavoritesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IFavoritesRequestImplFromJson(json);
 
   @override
   @Assert('limit > 0')
@@ -145,7 +145,7 @@ class _$_IFavoritesRequest implements _IFavoritesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IFavoritesRequest &&
+            other is _$IFavoritesRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
@@ -158,13 +158,13 @@ class _$_IFavoritesRequest implements _IFavoritesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IFavoritesRequestCopyWith<_$_IFavoritesRequest> get copyWith =>
-      __$$_IFavoritesRequestCopyWithImpl<_$_IFavoritesRequest>(
+  _$$IFavoritesRequestImplCopyWith<_$IFavoritesRequestImpl> get copyWith =>
+      __$$IFavoritesRequestImplCopyWithImpl<_$IFavoritesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IFavoritesRequestToJson(
+    return _$$IFavoritesRequestImplToJson(
       this,
     );
   }
@@ -174,10 +174,10 @@ abstract class _IFavoritesRequest implements IFavoritesRequest {
   const factory _IFavoritesRequest(
       {@Assert('limit > 0') final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_IFavoritesRequest;
+      final String? untilId}) = _$IFavoritesRequestImpl;
 
   factory _IFavoritesRequest.fromJson(Map<String, dynamic> json) =
-      _$_IFavoritesRequest.fromJson;
+      _$IFavoritesRequestImpl.fromJson;
 
   @override
   @Assert('limit > 0')
@@ -188,6 +188,6 @@ abstract class _IFavoritesRequest implements IFavoritesRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_IFavoritesRequestCopyWith<_$_IFavoritesRequest> get copyWith =>
+  _$$IFavoritesRequestImplCopyWith<_$IFavoritesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

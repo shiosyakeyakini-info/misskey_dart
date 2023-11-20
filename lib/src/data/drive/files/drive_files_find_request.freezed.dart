@@ -70,22 +70,24 @@ class _$DriveFilesFindRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DriveFilesFindRequestCopyWith<$Res>
+abstract class _$$DriveFilesFindRequestImplCopyWith<$Res>
     implements $DriveFilesFindRequestCopyWith<$Res> {
-  factory _$$_DriveFilesFindRequestCopyWith(_$_DriveFilesFindRequest value,
-          $Res Function(_$_DriveFilesFindRequest) then) =
-      __$$_DriveFilesFindRequestCopyWithImpl<$Res>;
+  factory _$$DriveFilesFindRequestImplCopyWith(
+          _$DriveFilesFindRequestImpl value,
+          $Res Function(_$DriveFilesFindRequestImpl) then) =
+      __$$DriveFilesFindRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String? folderId});
 }
 
 /// @nodoc
-class __$$_DriveFilesFindRequestCopyWithImpl<$Res>
-    extends _$DriveFilesFindRequestCopyWithImpl<$Res, _$_DriveFilesFindRequest>
-    implements _$$_DriveFilesFindRequestCopyWith<$Res> {
-  __$$_DriveFilesFindRequestCopyWithImpl(_$_DriveFilesFindRequest _value,
-      $Res Function(_$_DriveFilesFindRequest) _then)
+class __$$DriveFilesFindRequestImplCopyWithImpl<$Res>
+    extends _$DriveFilesFindRequestCopyWithImpl<$Res,
+        _$DriveFilesFindRequestImpl>
+    implements _$$DriveFilesFindRequestImplCopyWith<$Res> {
+  __$$DriveFilesFindRequestImplCopyWithImpl(_$DriveFilesFindRequestImpl _value,
+      $Res Function(_$DriveFilesFindRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +96,7 @@ class __$$_DriveFilesFindRequestCopyWithImpl<$Res>
     Object? name = null,
     Object? folderId = freezed,
   }) {
-    return _then(_$_DriveFilesFindRequest(
+    return _then(_$DriveFilesFindRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -109,11 +111,11 @@ class __$$_DriveFilesFindRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFilesFindRequest implements _DriveFilesFindRequest {
-  const _$_DriveFilesFindRequest({required this.name, this.folderId});
+class _$DriveFilesFindRequestImpl implements _DriveFilesFindRequest {
+  const _$DriveFilesFindRequestImpl({required this.name, this.folderId});
 
-  factory _$_DriveFilesFindRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFilesFindRequestFromJson(json);
+  factory _$DriveFilesFindRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFilesFindRequestImplFromJson(json);
 
   @override
   final String name;
@@ -129,7 +131,7 @@ class _$_DriveFilesFindRequest implements _DriveFilesFindRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFilesFindRequest &&
+            other is _$DriveFilesFindRequestImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId));
@@ -142,13 +144,13 @@ class _$_DriveFilesFindRequest implements _DriveFilesFindRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFilesFindRequestCopyWith<_$_DriveFilesFindRequest> get copyWith =>
-      __$$_DriveFilesFindRequestCopyWithImpl<_$_DriveFilesFindRequest>(
-          this, _$identity);
+  _$$DriveFilesFindRequestImplCopyWith<_$DriveFilesFindRequestImpl>
+      get copyWith => __$$DriveFilesFindRequestImplCopyWithImpl<
+          _$DriveFilesFindRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFilesFindRequestToJson(
+    return _$$DriveFilesFindRequestImplToJson(
       this,
     );
   }
@@ -157,10 +159,10 @@ class _$_DriveFilesFindRequest implements _DriveFilesFindRequest {
 abstract class _DriveFilesFindRequest implements DriveFilesFindRequest {
   const factory _DriveFilesFindRequest(
       {required final String name,
-      final String? folderId}) = _$_DriveFilesFindRequest;
+      final String? folderId}) = _$DriveFilesFindRequestImpl;
 
   factory _DriveFilesFindRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriveFilesFindRequest.fromJson;
+      _$DriveFilesFindRequestImpl.fromJson;
 
   @override
   String get name;
@@ -168,6 +170,6 @@ abstract class _DriveFilesFindRequest implements DriveFilesFindRequest {
   String? get folderId;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFilesFindRequestCopyWith<_$_DriveFilesFindRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DriveFilesFindRequestImplCopyWith<_$DriveFilesFindRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

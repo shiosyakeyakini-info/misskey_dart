@@ -6,15 +6,15 @@ part of 'notes_reactions_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesReactionsCreateRequest _$$_NotesReactionsCreateRequestFromJson(
+_$NotesReactionsCreateRequestImpl _$$NotesReactionsCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesReactionsCreateRequest(
+    _$NotesReactionsCreateRequestImpl(
       noteId: json['noteId'] as String,
       reaction: json['reaction'] as String,
     );
 
-Map<String, dynamic> _$$_NotesReactionsCreateRequestToJson(
-        _$_NotesReactionsCreateRequest instance) =>
+Map<String, dynamic> _$$NotesReactionsCreateRequestImplToJson(
+        _$NotesReactionsCreateRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
       'reaction': instance.reaction,

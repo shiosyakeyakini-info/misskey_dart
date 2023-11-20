@@ -6,14 +6,16 @@ part of 'pages_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PagesShowRequest _$$_PagesShowRequestFromJson(Map<String, dynamic> json) =>
-    _$_PagesShowRequest(
+_$PagesShowRequestImpl _$$PagesShowRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PagesShowRequestImpl(
       pageId: json['pageId'] as String?,
       name: json['name'] as String?,
       username: json['username'] as String?,
     );
 
-Map<String, dynamic> _$$_PagesShowRequestToJson(_$_PagesShowRequest instance) =>
+Map<String, dynamic> _$$PagesShowRequestImplToJson(
+        _$PagesShowRequestImpl instance) =>
     <String, dynamic>{
       'pageId': instance.pageId,
       'name': instance.name,

@@ -78,23 +78,25 @@ class _$ChannelsFollowedRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsFollowedRequestCopyWith<$Res>
+abstract class _$$ChannelsFollowedRequestImplCopyWith<$Res>
     implements $ChannelsFollowedRequestCopyWith<$Res> {
-  factory _$$_ChannelsFollowedRequestCopyWith(_$_ChannelsFollowedRequest value,
-          $Res Function(_$_ChannelsFollowedRequest) then) =
-      __$$_ChannelsFollowedRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsFollowedRequestImplCopyWith(
+          _$ChannelsFollowedRequestImpl value,
+          $Res Function(_$ChannelsFollowedRequestImpl) then) =
+      __$$ChannelsFollowedRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? sinceId, String? untilId, int? limit});
 }
 
 /// @nodoc
-class __$$_ChannelsFollowedRequestCopyWithImpl<$Res>
+class __$$ChannelsFollowedRequestImplCopyWithImpl<$Res>
     extends _$ChannelsFollowedRequestCopyWithImpl<$Res,
-        _$_ChannelsFollowedRequest>
-    implements _$$_ChannelsFollowedRequestCopyWith<$Res> {
-  __$$_ChannelsFollowedRequestCopyWithImpl(_$_ChannelsFollowedRequest _value,
-      $Res Function(_$_ChannelsFollowedRequest) _then)
+        _$ChannelsFollowedRequestImpl>
+    implements _$$ChannelsFollowedRequestImplCopyWith<$Res> {
+  __$$ChannelsFollowedRequestImplCopyWithImpl(
+      _$ChannelsFollowedRequestImpl _value,
+      $Res Function(_$ChannelsFollowedRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -104,7 +106,7 @@ class __$$_ChannelsFollowedRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_ChannelsFollowedRequest(
+    return _then(_$ChannelsFollowedRequestImpl(
       sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -123,11 +125,11 @@ class __$$_ChannelsFollowedRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsFollowedRequest implements _ChannelsFollowedRequest {
-  const _$_ChannelsFollowedRequest({this.sinceId, this.untilId, this.limit});
+class _$ChannelsFollowedRequestImpl implements _ChannelsFollowedRequest {
+  const _$ChannelsFollowedRequestImpl({this.sinceId, this.untilId, this.limit});
 
-  factory _$_ChannelsFollowedRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsFollowedRequestFromJson(json);
+  factory _$ChannelsFollowedRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsFollowedRequestImplFromJson(json);
 
   @override
   final String? sinceId;
@@ -147,7 +149,7 @@ class _$_ChannelsFollowedRequest implements _ChannelsFollowedRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsFollowedRequest &&
+            other is _$ChannelsFollowedRequestImpl &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.limit, limit) || other.limit == limit));
@@ -160,14 +162,13 @@ class _$_ChannelsFollowedRequest implements _ChannelsFollowedRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsFollowedRequestCopyWith<_$_ChannelsFollowedRequest>
-      get copyWith =>
-          __$$_ChannelsFollowedRequestCopyWithImpl<_$_ChannelsFollowedRequest>(
-              this, _$identity);
+  _$$ChannelsFollowedRequestImplCopyWith<_$ChannelsFollowedRequestImpl>
+      get copyWith => __$$ChannelsFollowedRequestImplCopyWithImpl<
+          _$ChannelsFollowedRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsFollowedRequestToJson(
+    return _$$ChannelsFollowedRequestImplToJson(
       this,
     );
   }
@@ -177,10 +178,10 @@ abstract class _ChannelsFollowedRequest implements ChannelsFollowedRequest {
   const factory _ChannelsFollowedRequest(
       {final String? sinceId,
       final String? untilId,
-      final int? limit}) = _$_ChannelsFollowedRequest;
+      final int? limit}) = _$ChannelsFollowedRequestImpl;
 
   factory _ChannelsFollowedRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsFollowedRequest.fromJson;
+      _$ChannelsFollowedRequestImpl.fromJson;
 
   @override
   String? get sinceId;
@@ -192,6 +193,6 @@ abstract class _ChannelsFollowedRequest implements ChannelsFollowedRequest {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsFollowedRequestCopyWith<_$_ChannelsFollowedRequest>
+  _$$ChannelsFollowedRequestImplCopyWith<_$ChannelsFollowedRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

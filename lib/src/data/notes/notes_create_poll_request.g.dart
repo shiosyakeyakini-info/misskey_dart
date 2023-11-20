@@ -6,9 +6,9 @@ part of 'notes_create_poll_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesCreatePollRequest _$$_NotesCreatePollRequestFromJson(
+_$NotesCreatePollRequestImpl _$$NotesCreatePollRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesCreatePollRequest(
+    _$NotesCreatePollRequestImpl(
       choices:
           (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
       multiple: json['multiple'] as bool?,
@@ -18,8 +18,8 @@ _$_NotesCreatePollRequest _$$_NotesCreatePollRequestFromJson(
           .fromJson(json['expiredAfter'] as int?),
     );
 
-Map<String, dynamic> _$$_NotesCreatePollRequestToJson(
-    _$_NotesCreatePollRequest instance) {
+Map<String, dynamic> _$$NotesCreatePollRequestImplToJson(
+    _$NotesCreatePollRequestImpl instance) {
   final val = <String, dynamic>{
     'choices': instance.choices,
   };

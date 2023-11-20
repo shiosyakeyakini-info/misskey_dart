@@ -6,38 +6,40 @@ part of 'users_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersShowRequest _$$_UsersShowRequestFromJson(Map<String, dynamic> json) =>
-    _$_UsersShowRequest(
+_$UsersShowRequestImpl _$$UsersShowRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UsersShowRequestImpl(
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$_UsersShowRequestToJson(_$_UsersShowRequest instance) =>
+Map<String, dynamic> _$$UsersShowRequestImplToJson(
+        _$UsersShowRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
     };
 
-_$_UsersShowByIdsRequest _$$_UsersShowByIdsRequestFromJson(
+_$UsersShowByIdsRequestImpl _$$UsersShowByIdsRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersShowByIdsRequest(
+    _$UsersShowByIdsRequestImpl(
       userIds:
           (json['userIds'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_UsersShowByIdsRequestToJson(
-        _$_UsersShowByIdsRequest instance) =>
+Map<String, dynamic> _$$UsersShowByIdsRequestImplToJson(
+        _$UsersShowByIdsRequestImpl instance) =>
     <String, dynamic>{
       'userIds': instance.userIds,
     };
 
-_$_UsersShowByUserNameRequest _$$_UsersShowByUserNameRequestFromJson(
+_$UsersShowByUserNameRequestImpl _$$UsersShowByUserNameRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersShowByUserNameRequest(
+    _$UsersShowByUserNameRequestImpl(
       userName: json['username'] as String,
       host: json['host'] as String?,
     );
 
-Map<String, dynamic> _$$_UsersShowByUserNameRequestToJson(
-        _$_UsersShowByUserNameRequest instance) =>
+Map<String, dynamic> _$$UsersShowByUserNameRequestImplToJson(
+        _$UsersShowByUserNameRequestImpl instance) =>
     <String, dynamic>{
       'username': instance.userName,
       'host': instance.host,

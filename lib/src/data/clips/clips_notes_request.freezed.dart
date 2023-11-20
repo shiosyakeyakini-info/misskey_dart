@@ -85,11 +85,11 @@ class _$ClipsNotesRequestCopyWithImpl<$Res, $Val extends ClipsNotesRequest>
 }
 
 /// @nodoc
-abstract class _$$_ClipsNotesRequestCopyWith<$Res>
+abstract class _$$ClipsNotesRequestImplCopyWith<$Res>
     implements $ClipsNotesRequestCopyWith<$Res> {
-  factory _$$_ClipsNotesRequestCopyWith(_$_ClipsNotesRequest value,
-          $Res Function(_$_ClipsNotesRequest) then) =
-      __$$_ClipsNotesRequestCopyWithImpl<$Res>;
+  factory _$$ClipsNotesRequestImplCopyWith(_$ClipsNotesRequestImpl value,
+          $Res Function(_$ClipsNotesRequestImpl) then) =
+      __$$ClipsNotesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,11 +100,11 @@ abstract class _$$_ClipsNotesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ClipsNotesRequestCopyWithImpl<$Res>
-    extends _$ClipsNotesRequestCopyWithImpl<$Res, _$_ClipsNotesRequest>
-    implements _$$_ClipsNotesRequestCopyWith<$Res> {
-  __$$_ClipsNotesRequestCopyWithImpl(
-      _$_ClipsNotesRequest _value, $Res Function(_$_ClipsNotesRequest) _then)
+class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
+    extends _$ClipsNotesRequestCopyWithImpl<$Res, _$ClipsNotesRequestImpl>
+    implements _$$ClipsNotesRequestImplCopyWith<$Res> {
+  __$$ClipsNotesRequestImplCopyWithImpl(_$ClipsNotesRequestImpl _value,
+      $Res Function(_$ClipsNotesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +115,7 @@ class __$$_ClipsNotesRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_ClipsNotesRequest(
+    return _then(_$ClipsNotesRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -138,15 +138,15 @@ class __$$_ClipsNotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsNotesRequest implements _ClipsNotesRequest {
-  const _$_ClipsNotesRequest(
+class _$ClipsNotesRequestImpl implements _ClipsNotesRequest {
+  const _$ClipsNotesRequestImpl(
       {@Assert('limit > 0') this.limit,
       this.clipId,
       this.sinceId,
       this.untilId});
 
-  factory _$_ClipsNotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsNotesRequestFromJson(json);
+  factory _$ClipsNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsNotesRequestImplFromJson(json);
 
   @override
   @Assert('limit > 0')
@@ -167,7 +167,7 @@ class _$_ClipsNotesRequest implements _ClipsNotesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsNotesRequest &&
+            other is _$ClipsNotesRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -181,13 +181,13 @@ class _$_ClipsNotesRequest implements _ClipsNotesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsNotesRequestCopyWith<_$_ClipsNotesRequest> get copyWith =>
-      __$$_ClipsNotesRequestCopyWithImpl<_$_ClipsNotesRequest>(
+  _$$ClipsNotesRequestImplCopyWith<_$ClipsNotesRequestImpl> get copyWith =>
+      __$$ClipsNotesRequestImplCopyWithImpl<_$ClipsNotesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsNotesRequestToJson(
+    return _$$ClipsNotesRequestImplToJson(
       this,
     );
   }
@@ -198,10 +198,10 @@ abstract class _ClipsNotesRequest implements ClipsNotesRequest {
       {@Assert('limit > 0') final int? limit,
       final String? clipId,
       final String? sinceId,
-      final String? untilId}) = _$_ClipsNotesRequest;
+      final String? untilId}) = _$ClipsNotesRequestImpl;
 
   factory _ClipsNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsNotesRequest.fromJson;
+      _$ClipsNotesRequestImpl.fromJson;
 
   @override
   @Assert('limit > 0')
@@ -214,6 +214,6 @@ abstract class _ClipsNotesRequest implements ClipsNotesRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsNotesRequestCopyWith<_$_ClipsNotesRequest> get copyWith =>
+  _$$ClipsNotesRequestImplCopyWith<_$ClipsNotesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

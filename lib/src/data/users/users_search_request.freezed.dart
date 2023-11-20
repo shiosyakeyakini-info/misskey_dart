@@ -87,11 +87,11 @@ class _$UsersSearchRequestCopyWithImpl<$Res, $Val extends UsersSearchRequest>
 }
 
 /// @nodoc
-abstract class _$$_UsersSearchRequestCopyWith<$Res>
+abstract class _$$UsersSearchRequestImplCopyWith<$Res>
     implements $UsersSearchRequestCopyWith<$Res> {
-  factory _$$_UsersSearchRequestCopyWith(_$_UsersSearchRequest value,
-          $Res Function(_$_UsersSearchRequest) then) =
-      __$$_UsersSearchRequestCopyWithImpl<$Res>;
+  factory _$$UsersSearchRequestImplCopyWith(_$UsersSearchRequestImpl value,
+          $Res Function(_$UsersSearchRequestImpl) then) =
+      __$$UsersSearchRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -99,11 +99,11 @@ abstract class _$$_UsersSearchRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UsersSearchRequestCopyWithImpl<$Res>
-    extends _$UsersSearchRequestCopyWithImpl<$Res, _$_UsersSearchRequest>
-    implements _$$_UsersSearchRequestCopyWith<$Res> {
-  __$$_UsersSearchRequestCopyWithImpl(
-      _$_UsersSearchRequest _value, $Res Function(_$_UsersSearchRequest) _then)
+class __$$UsersSearchRequestImplCopyWithImpl<$Res>
+    extends _$UsersSearchRequestCopyWithImpl<$Res, _$UsersSearchRequestImpl>
+    implements _$$UsersSearchRequestImplCopyWith<$Res> {
+  __$$UsersSearchRequestImplCopyWithImpl(_$UsersSearchRequestImpl _value,
+      $Res Function(_$UsersSearchRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +115,7 @@ class __$$_UsersSearchRequestCopyWithImpl<$Res>
     Object? origin = freezed,
     Object? detail = freezed,
   }) {
-    return _then(_$_UsersSearchRequest(
+    return _then(_$UsersSearchRequestImpl(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -142,12 +142,12 @@ class __$$_UsersSearchRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersSearchRequest implements _UsersSearchRequest {
-  const _$_UsersSearchRequest(
+class _$UsersSearchRequestImpl implements _UsersSearchRequest {
+  const _$UsersSearchRequestImpl(
       {required this.query, this.offset, this.limit, this.origin, this.detail});
 
-  factory _$_UsersSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersSearchRequestFromJson(json);
+  factory _$UsersSearchRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersSearchRequestImplFromJson(json);
 
   @override
   final String query;
@@ -169,7 +169,7 @@ class _$_UsersSearchRequest implements _UsersSearchRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersSearchRequest &&
+            other is _$UsersSearchRequestImpl &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -185,13 +185,13 @@ class _$_UsersSearchRequest implements _UsersSearchRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersSearchRequestCopyWith<_$_UsersSearchRequest> get copyWith =>
-      __$$_UsersSearchRequestCopyWithImpl<_$_UsersSearchRequest>(
+  _$$UsersSearchRequestImplCopyWith<_$UsersSearchRequestImpl> get copyWith =>
+      __$$UsersSearchRequestImplCopyWithImpl<_$UsersSearchRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersSearchRequestToJson(
+    return _$$UsersSearchRequestImplToJson(
       this,
     );
   }
@@ -203,10 +203,10 @@ abstract class _UsersSearchRequest implements UsersSearchRequest {
       final int? offset,
       final int? limit,
       final Origin? origin,
-      final bool? detail}) = _$_UsersSearchRequest;
+      final bool? detail}) = _$UsersSearchRequestImpl;
 
   factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersSearchRequest.fromJson;
+      _$UsersSearchRequestImpl.fromJson;
 
   @override
   String get query;
@@ -220,6 +220,6 @@ abstract class _UsersSearchRequest implements UsersSearchRequest {
   bool? get detail;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersSearchRequestCopyWith<_$_UsersSearchRequest> get copyWith =>
+  _$$UsersSearchRequestImplCopyWith<_$UsersSearchRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

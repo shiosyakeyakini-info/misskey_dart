@@ -6,14 +6,14 @@ part of 'renote_mute_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RenoteMuteCreateRequest _$$_RenoteMuteCreateRequestFromJson(
+_$RenoteMuteCreateRequestImpl _$$RenoteMuteCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_RenoteMuteCreateRequest(
+    _$RenoteMuteCreateRequestImpl(
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$_RenoteMuteCreateRequestToJson(
-        _$_RenoteMuteCreateRequest instance) =>
+Map<String, dynamic> _$$RenoteMuteCreateRequestImplToJson(
+        _$RenoteMuteCreateRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
     };

@@ -6,9 +6,9 @@ part of 'announcements_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AnnouncementsResponse _$$_AnnouncementsResponseFromJson(
+_$AnnouncementsResponseImpl _$$AnnouncementsResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AnnouncementsResponse(
+    _$AnnouncementsResponseImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -28,8 +28,8 @@ _$_AnnouncementsResponse _$$_AnnouncementsResponseFromJson(
       userId: json['userId'] as String?,
     );
 
-Map<String, dynamic> _$$_AnnouncementsResponseToJson(
-        _$_AnnouncementsResponse instance) =>
+Map<String, dynamic> _$$AnnouncementsResponseImplToJson(
+        _$AnnouncementsResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

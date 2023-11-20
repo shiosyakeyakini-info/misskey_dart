@@ -64,24 +64,25 @@ class _$IReadAnnouncementRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_IReadAnnouncementRequestCopyWith<$Res>
+abstract class _$$IReadAnnouncementRequestImplCopyWith<$Res>
     implements $IReadAnnouncementRequestCopyWith<$Res> {
-  factory _$$_IReadAnnouncementRequestCopyWith(
-          _$_IReadAnnouncementRequest value,
-          $Res Function(_$_IReadAnnouncementRequest) then) =
-      __$$_IReadAnnouncementRequestCopyWithImpl<$Res>;
+  factory _$$IReadAnnouncementRequestImplCopyWith(
+          _$IReadAnnouncementRequestImpl value,
+          $Res Function(_$IReadAnnouncementRequestImpl) then) =
+      __$$IReadAnnouncementRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String announcementId});
 }
 
 /// @nodoc
-class __$$_IReadAnnouncementRequestCopyWithImpl<$Res>
+class __$$IReadAnnouncementRequestImplCopyWithImpl<$Res>
     extends _$IReadAnnouncementRequestCopyWithImpl<$Res,
-        _$_IReadAnnouncementRequest>
-    implements _$$_IReadAnnouncementRequestCopyWith<$Res> {
-  __$$_IReadAnnouncementRequestCopyWithImpl(_$_IReadAnnouncementRequest _value,
-      $Res Function(_$_IReadAnnouncementRequest) _then)
+        _$IReadAnnouncementRequestImpl>
+    implements _$$IReadAnnouncementRequestImplCopyWith<$Res> {
+  __$$IReadAnnouncementRequestImplCopyWithImpl(
+      _$IReadAnnouncementRequestImpl _value,
+      $Res Function(_$IReadAnnouncementRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -89,7 +90,7 @@ class __$$_IReadAnnouncementRequestCopyWithImpl<$Res>
   $Res call({
     Object? announcementId = null,
   }) {
-    return _then(_$_IReadAnnouncementRequest(
+    return _then(_$IReadAnnouncementRequestImpl(
       announcementId: null == announcementId
           ? _value.announcementId
           : announcementId // ignore: cast_nullable_to_non_nullable
@@ -100,11 +101,11 @@ class __$$_IReadAnnouncementRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IReadAnnouncementRequest implements _IReadAnnouncementRequest {
-  const _$_IReadAnnouncementRequest({required this.announcementId});
+class _$IReadAnnouncementRequestImpl implements _IReadAnnouncementRequest {
+  const _$IReadAnnouncementRequestImpl({required this.announcementId});
 
-  factory _$_IReadAnnouncementRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_IReadAnnouncementRequestFromJson(json);
+  factory _$IReadAnnouncementRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IReadAnnouncementRequestImplFromJson(json);
 
   @override
   final String announcementId;
@@ -118,7 +119,7 @@ class _$_IReadAnnouncementRequest implements _IReadAnnouncementRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IReadAnnouncementRequest &&
+            other is _$IReadAnnouncementRequestImpl &&
             (identical(other.announcementId, announcementId) ||
                 other.announcementId == announcementId));
   }
@@ -130,13 +131,13 @@ class _$_IReadAnnouncementRequest implements _IReadAnnouncementRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IReadAnnouncementRequestCopyWith<_$_IReadAnnouncementRequest>
-      get copyWith => __$$_IReadAnnouncementRequestCopyWithImpl<
-          _$_IReadAnnouncementRequest>(this, _$identity);
+  _$$IReadAnnouncementRequestImplCopyWith<_$IReadAnnouncementRequestImpl>
+      get copyWith => __$$IReadAnnouncementRequestImplCopyWithImpl<
+          _$IReadAnnouncementRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IReadAnnouncementRequestToJson(
+    return _$$IReadAnnouncementRequestImplToJson(
       this,
     );
   }
@@ -144,15 +145,15 @@ class _$_IReadAnnouncementRequest implements _IReadAnnouncementRequest {
 
 abstract class _IReadAnnouncementRequest implements IReadAnnouncementRequest {
   const factory _IReadAnnouncementRequest(
-      {required final String announcementId}) = _$_IReadAnnouncementRequest;
+      {required final String announcementId}) = _$IReadAnnouncementRequestImpl;
 
   factory _IReadAnnouncementRequest.fromJson(Map<String, dynamic> json) =
-      _$_IReadAnnouncementRequest.fromJson;
+      _$IReadAnnouncementRequestImpl.fromJson;
 
   @override
   String get announcementId;
   @override
   @JsonKey(ignore: true)
-  _$$_IReadAnnouncementRequestCopyWith<_$_IReadAnnouncementRequest>
+  _$$IReadAnnouncementRequestImplCopyWith<_$IReadAnnouncementRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

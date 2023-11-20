@@ -71,11 +71,11 @@ class _$BroadcastEventCopyWithImpl<$Res, $Val extends BroadcastEvent>
 }
 
 /// @nodoc
-abstract class _$$_BroadcastResponseCopyWith<$Res>
+abstract class _$$BroadcastResponseImplCopyWith<$Res>
     implements $BroadcastEventCopyWith<$Res> {
-  factory _$$_BroadcastResponseCopyWith(_$_BroadcastResponse value,
-          $Res Function(_$_BroadcastResponse) then) =
-      __$$_BroadcastResponseCopyWithImpl<$Res>;
+  factory _$$BroadcastResponseImplCopyWith(_$BroadcastResponseImpl value,
+          $Res Function(_$BroadcastResponseImpl) then) =
+      __$$BroadcastResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -84,11 +84,11 @@ abstract class _$$_BroadcastResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BroadcastResponseCopyWithImpl<$Res>
-    extends _$BroadcastEventCopyWithImpl<$Res, _$_BroadcastResponse>
-    implements _$$_BroadcastResponseCopyWith<$Res> {
-  __$$_BroadcastResponseCopyWithImpl(
-      _$_BroadcastResponse _value, $Res Function(_$_BroadcastResponse) _then)
+class __$$BroadcastResponseImplCopyWithImpl<$Res>
+    extends _$BroadcastEventCopyWithImpl<$Res, _$BroadcastResponseImpl>
+    implements _$$BroadcastResponseImplCopyWith<$Res> {
+  __$$BroadcastResponseImplCopyWithImpl(_$BroadcastResponseImpl _value,
+      $Res Function(_$BroadcastResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_BroadcastResponseCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$_BroadcastResponse(
+    return _then(_$BroadcastResponseImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -112,14 +112,14 @@ class __$$_BroadcastResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BroadcastResponse implements _BroadcastResponse {
-  const _$_BroadcastResponse(
+class _$BroadcastResponseImpl implements _BroadcastResponse {
+  const _$BroadcastResponseImpl(
       {@BroadcastEventTypeJsonConverter() required this.type,
       required final Map<String, dynamic> body})
       : _body = body;
 
-  factory _$_BroadcastResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_BroadcastResponseFromJson(json);
+  factory _$BroadcastResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BroadcastResponseImplFromJson(json);
 
   @override
   @BroadcastEventTypeJsonConverter()
@@ -141,7 +141,7 @@ class _$_BroadcastResponse implements _BroadcastResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BroadcastResponse &&
+            other is _$BroadcastResponseImpl &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
@@ -154,13 +154,13 @@ class _$_BroadcastResponse implements _BroadcastResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BroadcastResponseCopyWith<_$_BroadcastResponse> get copyWith =>
-      __$$_BroadcastResponseCopyWithImpl<_$_BroadcastResponse>(
+  _$$BroadcastResponseImplCopyWith<_$BroadcastResponseImpl> get copyWith =>
+      __$$BroadcastResponseImplCopyWithImpl<_$BroadcastResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BroadcastResponseToJson(
+    return _$$BroadcastResponseImplToJson(
       this,
     );
   }
@@ -170,10 +170,10 @@ abstract class _BroadcastResponse implements BroadcastEvent {
   const factory _BroadcastResponse(
       {@BroadcastEventTypeJsonConverter()
       required final BroadcastEventType type,
-      required final Map<String, dynamic> body}) = _$_BroadcastResponse;
+      required final Map<String, dynamic> body}) = _$BroadcastResponseImpl;
 
   factory _BroadcastResponse.fromJson(Map<String, dynamic> json) =
-      _$_BroadcastResponse.fromJson;
+      _$BroadcastResponseImpl.fromJson;
 
   @override
   @BroadcastEventTypeJsonConverter()
@@ -182,6 +182,6 @@ abstract class _BroadcastResponse implements BroadcastEvent {
   Map<String, dynamic> get body;
   @override
   @JsonKey(ignore: true)
-  _$$_BroadcastResponseCopyWith<_$_BroadcastResponse> get copyWith =>
+  _$$BroadcastResponseImplCopyWith<_$BroadcastResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,15 +6,15 @@ part of 'users_update_memo_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersUpdateMemoRequest _$$_UsersUpdateMemoRequestFromJson(
+_$UsersUpdateMemoRequestImpl _$$UsersUpdateMemoRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersUpdateMemoRequest(
+    _$UsersUpdateMemoRequestImpl(
       userId: json['userId'] as String,
       memo: json['memo'] as String,
     );
 
-Map<String, dynamic> _$$_UsersUpdateMemoRequestToJson(
-        _$_UsersUpdateMemoRequest instance) =>
+Map<String, dynamic> _$$UsersUpdateMemoRequestImplToJson(
+        _$UsersUpdateMemoRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'memo': instance.memo,

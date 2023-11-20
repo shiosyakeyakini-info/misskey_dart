@@ -66,25 +66,25 @@ class _$GetOnlineUsersCountResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetOnlineUsersCountResponseCopyWith<$Res>
+abstract class _$$GetOnlineUsersCountResponseImplCopyWith<$Res>
     implements $GetOnlineUsersCountResponseCopyWith<$Res> {
-  factory _$$_GetOnlineUsersCountResponseCopyWith(
-          _$_GetOnlineUsersCountResponse value,
-          $Res Function(_$_GetOnlineUsersCountResponse) then) =
-      __$$_GetOnlineUsersCountResponseCopyWithImpl<$Res>;
+  factory _$$GetOnlineUsersCountResponseImplCopyWith(
+          _$GetOnlineUsersCountResponseImpl value,
+          $Res Function(_$GetOnlineUsersCountResponseImpl) then) =
+      __$$GetOnlineUsersCountResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int count});
 }
 
 /// @nodoc
-class __$$_GetOnlineUsersCountResponseCopyWithImpl<$Res>
+class __$$GetOnlineUsersCountResponseImplCopyWithImpl<$Res>
     extends _$GetOnlineUsersCountResponseCopyWithImpl<$Res,
-        _$_GetOnlineUsersCountResponse>
-    implements _$$_GetOnlineUsersCountResponseCopyWith<$Res> {
-  __$$_GetOnlineUsersCountResponseCopyWithImpl(
-      _$_GetOnlineUsersCountResponse _value,
-      $Res Function(_$_GetOnlineUsersCountResponse) _then)
+        _$GetOnlineUsersCountResponseImpl>
+    implements _$$GetOnlineUsersCountResponseImplCopyWith<$Res> {
+  __$$GetOnlineUsersCountResponseImplCopyWithImpl(
+      _$GetOnlineUsersCountResponseImpl _value,
+      $Res Function(_$GetOnlineUsersCountResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_GetOnlineUsersCountResponseCopyWithImpl<$Res>
   $Res call({
     Object? count = null,
   }) {
-    return _then(_$_GetOnlineUsersCountResponse(
+    return _then(_$GetOnlineUsersCountResponseImpl(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -103,11 +103,13 @@ class __$$_GetOnlineUsersCountResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetOnlineUsersCountResponse implements _GetOnlineUsersCountResponse {
-  const _$_GetOnlineUsersCountResponse({required this.count});
+class _$GetOnlineUsersCountResponseImpl
+    implements _GetOnlineUsersCountResponse {
+  const _$GetOnlineUsersCountResponseImpl({required this.count});
 
-  factory _$_GetOnlineUsersCountResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_GetOnlineUsersCountResponseFromJson(json);
+  factory _$GetOnlineUsersCountResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetOnlineUsersCountResponseImplFromJson(json);
 
   @override
   final int count;
@@ -121,7 +123,7 @@ class _$_GetOnlineUsersCountResponse implements _GetOnlineUsersCountResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetOnlineUsersCountResponse &&
+            other is _$GetOnlineUsersCountResponseImpl &&
             (identical(other.count, count) || other.count == count));
   }
 
@@ -132,13 +134,13 @@ class _$_GetOnlineUsersCountResponse implements _GetOnlineUsersCountResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetOnlineUsersCountResponseCopyWith<_$_GetOnlineUsersCountResponse>
-      get copyWith => __$$_GetOnlineUsersCountResponseCopyWithImpl<
-          _$_GetOnlineUsersCountResponse>(this, _$identity);
+  _$$GetOnlineUsersCountResponseImplCopyWith<_$GetOnlineUsersCountResponseImpl>
+      get copyWith => __$$GetOnlineUsersCountResponseImplCopyWithImpl<
+          _$GetOnlineUsersCountResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetOnlineUsersCountResponseToJson(
+    return _$$GetOnlineUsersCountResponseImplToJson(
       this,
     );
   }
@@ -147,15 +149,15 @@ class _$_GetOnlineUsersCountResponse implements _GetOnlineUsersCountResponse {
 abstract class _GetOnlineUsersCountResponse
     implements GetOnlineUsersCountResponse {
   const factory _GetOnlineUsersCountResponse({required final int count}) =
-      _$_GetOnlineUsersCountResponse;
+      _$GetOnlineUsersCountResponseImpl;
 
   factory _GetOnlineUsersCountResponse.fromJson(Map<String, dynamic> json) =
-      _$_GetOnlineUsersCountResponse.fromJson;
+      _$GetOnlineUsersCountResponseImpl.fromJson;
 
   @override
   int get count;
   @override
   @JsonKey(ignore: true)
-  _$$_GetOnlineUsersCountResponseCopyWith<_$_GetOnlineUsersCountResponse>
+  _$$GetOnlineUsersCountResponseImplCopyWith<_$GetOnlineUsersCountResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

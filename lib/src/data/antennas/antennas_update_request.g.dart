@@ -6,9 +6,9 @@ part of 'antennas_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AntennasUpdateRequest _$$_AntennasUpdateRequestFromJson(
+_$AntennasUpdateRequestImpl _$$AntennasUpdateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AntennasUpdateRequest(
+    _$AntennasUpdateRequestImpl(
       antennaId: json['antennaId'] as String,
       name: json['name'] as String,
       src: $enumDecode(_$AntennaSourceEnumMap, json['src']),
@@ -27,8 +27,8 @@ _$_AntennasUpdateRequest _$$_AntennasUpdateRequestFromJson(
       localOnly: json['localOnly'] as bool?,
     );
 
-Map<String, dynamic> _$$_AntennasUpdateRequestToJson(
-        _$_AntennasUpdateRequest instance) =>
+Map<String, dynamic> _$$AntennasUpdateRequestImplToJson(
+        _$AntennasUpdateRequestImpl instance) =>
     <String, dynamic>{
       'antennaId': instance.antennaId,
       'name': instance.name,

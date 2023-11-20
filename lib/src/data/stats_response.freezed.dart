@@ -112,11 +112,11 @@ class _$StatsResponseCopyWithImpl<$Res, $Val extends StatsResponse>
 }
 
 /// @nodoc
-abstract class _$$_StatsResponseCopyWith<$Res>
+abstract class _$$StatsResponseImplCopyWith<$Res>
     implements $StatsResponseCopyWith<$Res> {
-  factory _$$_StatsResponseCopyWith(
-          _$_StatsResponse value, $Res Function(_$_StatsResponse) then) =
-      __$$_StatsResponseCopyWithImpl<$Res>;
+  factory _$$StatsResponseImplCopyWith(
+          _$StatsResponseImpl value, $Res Function(_$StatsResponseImpl) then) =
+      __$$StatsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_StatsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_StatsResponseCopyWithImpl<$Res>
-    extends _$StatsResponseCopyWithImpl<$Res, _$_StatsResponse>
-    implements _$$_StatsResponseCopyWith<$Res> {
-  __$$_StatsResponseCopyWithImpl(
-      _$_StatsResponse _value, $Res Function(_$_StatsResponse) _then)
+class __$$StatsResponseImplCopyWithImpl<$Res>
+    extends _$StatsResponseCopyWithImpl<$Res, _$StatsResponseImpl>
+    implements _$$StatsResponseImplCopyWith<$Res> {
+  __$$StatsResponseImplCopyWithImpl(
+      _$StatsResponseImpl _value, $Res Function(_$StatsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +150,7 @@ class __$$_StatsResponseCopyWithImpl<$Res>
     Object? driveUsageLocal = null,
     Object? driveUsageRemote = null,
   }) {
-    return _then(_$_StatsResponse(
+    return _then(_$StatsResponseImpl(
       notesCount: null == notesCount
           ? _value.notesCount
           : notesCount // ignore: cast_nullable_to_non_nullable
@@ -189,8 +189,8 @@ class __$$_StatsResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StatsResponse implements _StatsResponse {
-  const _$_StatsResponse(
+class _$StatsResponseImpl implements _StatsResponse {
+  const _$StatsResponseImpl(
       {required this.notesCount,
       required this.originalNotesCount,
       required this.usersCount,
@@ -200,8 +200,8 @@ class _$_StatsResponse implements _StatsResponse {
       required this.driveUsageLocal,
       required this.driveUsageRemote});
 
-  factory _$_StatsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_StatsResponseFromJson(json);
+  factory _$StatsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsResponseImplFromJson(json);
 
   @override
   final int notesCount;
@@ -229,7 +229,7 @@ class _$_StatsResponse implements _StatsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StatsResponse &&
+            other is _$StatsResponseImpl &&
             (identical(other.notesCount, notesCount) ||
                 other.notesCount == notesCount) &&
             (identical(other.originalNotesCount, originalNotesCount) ||
@@ -264,12 +264,12 @@ class _$_StatsResponse implements _StatsResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StatsResponseCopyWith<_$_StatsResponse> get copyWith =>
-      __$$_StatsResponseCopyWithImpl<_$_StatsResponse>(this, _$identity);
+  _$$StatsResponseImplCopyWith<_$StatsResponseImpl> get copyWith =>
+      __$$StatsResponseImplCopyWithImpl<_$StatsResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StatsResponseToJson(
+    return _$$StatsResponseImplToJson(
       this,
     );
   }
@@ -284,10 +284,10 @@ abstract class _StatsResponse implements StatsResponse {
       required final int reactionsCount,
       required final int instances,
       required final int driveUsageLocal,
-      required final int driveUsageRemote}) = _$_StatsResponse;
+      required final int driveUsageRemote}) = _$StatsResponseImpl;
 
   factory _StatsResponse.fromJson(Map<String, dynamic> json) =
-      _$_StatsResponse.fromJson;
+      _$StatsResponseImpl.fromJson;
 
   @override
   int get notesCount;
@@ -307,6 +307,6 @@ abstract class _StatsResponse implements StatsResponse {
   int get driveUsageRemote;
   @override
   @JsonKey(ignore: true)
-  _$$_StatsResponseCopyWith<_$_StatsResponse> get copyWith =>
+  _$$StatsResponseImplCopyWith<_$StatsResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -66,25 +66,25 @@ class _$NotesThreadMutingDeleteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesThreadMutingDeleteRequestCopyWith<$Res>
+abstract class _$$NotesThreadMutingDeleteRequestImplCopyWith<$Res>
     implements $NotesThreadMutingDeleteRequestCopyWith<$Res> {
-  factory _$$_NotesThreadMutingDeleteRequestCopyWith(
-          _$_NotesThreadMutingDeleteRequest value,
-          $Res Function(_$_NotesThreadMutingDeleteRequest) then) =
-      __$$_NotesThreadMutingDeleteRequestCopyWithImpl<$Res>;
+  factory _$$NotesThreadMutingDeleteRequestImplCopyWith(
+          _$NotesThreadMutingDeleteRequestImpl value,
+          $Res Function(_$NotesThreadMutingDeleteRequestImpl) then) =
+      __$$NotesThreadMutingDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$_NotesThreadMutingDeleteRequestCopyWithImpl<$Res>
+class __$$NotesThreadMutingDeleteRequestImplCopyWithImpl<$Res>
     extends _$NotesThreadMutingDeleteRequestCopyWithImpl<$Res,
-        _$_NotesThreadMutingDeleteRequest>
-    implements _$$_NotesThreadMutingDeleteRequestCopyWith<$Res> {
-  __$$_NotesThreadMutingDeleteRequestCopyWithImpl(
-      _$_NotesThreadMutingDeleteRequest _value,
-      $Res Function(_$_NotesThreadMutingDeleteRequest) _then)
+        _$NotesThreadMutingDeleteRequestImpl>
+    implements _$$NotesThreadMutingDeleteRequestImplCopyWith<$Res> {
+  __$$NotesThreadMutingDeleteRequestImplCopyWithImpl(
+      _$NotesThreadMutingDeleteRequestImpl _value,
+      $Res Function(_$NotesThreadMutingDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_NotesThreadMutingDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$_NotesThreadMutingDeleteRequest(
+    return _then(_$NotesThreadMutingDeleteRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -103,13 +103,13 @@ class __$$_NotesThreadMutingDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesThreadMutingDeleteRequest
+class _$NotesThreadMutingDeleteRequestImpl
     implements _NotesThreadMutingDeleteRequest {
-  const _$_NotesThreadMutingDeleteRequest({required this.noteId});
+  const _$NotesThreadMutingDeleteRequestImpl({required this.noteId});
 
-  factory _$_NotesThreadMutingDeleteRequest.fromJson(
+  factory _$NotesThreadMutingDeleteRequestImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_NotesThreadMutingDeleteRequestFromJson(json);
+      _$$NotesThreadMutingDeleteRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -123,7 +123,7 @@ class _$_NotesThreadMutingDeleteRequest
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesThreadMutingDeleteRequest &&
+            other is _$NotesThreadMutingDeleteRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
@@ -134,13 +134,14 @@ class _$_NotesThreadMutingDeleteRequest
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesThreadMutingDeleteRequestCopyWith<_$_NotesThreadMutingDeleteRequest>
-      get copyWith => __$$_NotesThreadMutingDeleteRequestCopyWithImpl<
-          _$_NotesThreadMutingDeleteRequest>(this, _$identity);
+  _$$NotesThreadMutingDeleteRequestImplCopyWith<
+          _$NotesThreadMutingDeleteRequestImpl>
+      get copyWith => __$$NotesThreadMutingDeleteRequestImplCopyWithImpl<
+          _$NotesThreadMutingDeleteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesThreadMutingDeleteRequestToJson(
+    return _$$NotesThreadMutingDeleteRequestImplToJson(
       this,
     );
   }
@@ -149,15 +150,16 @@ class _$_NotesThreadMutingDeleteRequest
 abstract class _NotesThreadMutingDeleteRequest
     implements NotesThreadMutingDeleteRequest {
   const factory _NotesThreadMutingDeleteRequest(
-      {required final String noteId}) = _$_NotesThreadMutingDeleteRequest;
+      {required final String noteId}) = _$NotesThreadMutingDeleteRequestImpl;
 
   factory _NotesThreadMutingDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesThreadMutingDeleteRequest.fromJson;
+      _$NotesThreadMutingDeleteRequestImpl.fromJson;
 
   @override
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesThreadMutingDeleteRequestCopyWith<_$_NotesThreadMutingDeleteRequest>
+  _$$NotesThreadMutingDeleteRequestImplCopyWith<
+          _$NotesThreadMutingDeleteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,8 +6,8 @@ part of 'i_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IUpdateRequest _$$_IUpdateRequestFromJson(Map<String, dynamic> json) =>
-    _$_IUpdateRequest(
+_$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
+    _$IUpdateRequestImpl(
       name: json['name'] as String?,
       description: json['description'] as String?,
       location: json['location'] as String?,
@@ -52,7 +52,8 @@ _$_IUpdateRequest _$$_IUpdateRequestFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_IUpdateRequestToJson(_$_IUpdateRequest instance) =>
+Map<String, dynamic> _$$IUpdateRequestImplToJson(
+        _$IUpdateRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,

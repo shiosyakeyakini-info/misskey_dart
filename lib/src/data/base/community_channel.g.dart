@@ -6,8 +6,9 @@ part of 'community_channel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CommunityChannel _$$_CommunityChannelFromJson(Map<String, dynamic> json) =>
-    _$_CommunityChannel(
+_$CommunityChannelImpl _$$CommunityChannelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CommunityChannelImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -34,7 +35,8 @@ _$_CommunityChannel _$$_CommunityChannelFromJson(Map<String, dynamic> json) =>
       allowRenoteToExternal: json['allowRenoteToExternal'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$$_CommunityChannelToJson(_$_CommunityChannel instance) =>
+Map<String, dynamic> _$$CommunityChannelImplToJson(
+        _$CommunityChannelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

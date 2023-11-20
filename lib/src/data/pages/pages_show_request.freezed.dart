@@ -74,22 +74,22 @@ class _$PagesShowRequestCopyWithImpl<$Res, $Val extends PagesShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_PagesShowRequestCopyWith<$Res>
+abstract class _$$PagesShowRequestImplCopyWith<$Res>
     implements $PagesShowRequestCopyWith<$Res> {
-  factory _$$_PagesShowRequestCopyWith(
-          _$_PagesShowRequest value, $Res Function(_$_PagesShowRequest) then) =
-      __$$_PagesShowRequestCopyWithImpl<$Res>;
+  factory _$$PagesShowRequestImplCopyWith(_$PagesShowRequestImpl value,
+          $Res Function(_$PagesShowRequestImpl) then) =
+      __$$PagesShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? pageId, String? name, String? username});
 }
 
 /// @nodoc
-class __$$_PagesShowRequestCopyWithImpl<$Res>
-    extends _$PagesShowRequestCopyWithImpl<$Res, _$_PagesShowRequest>
-    implements _$$_PagesShowRequestCopyWith<$Res> {
-  __$$_PagesShowRequestCopyWithImpl(
-      _$_PagesShowRequest _value, $Res Function(_$_PagesShowRequest) _then)
+class __$$PagesShowRequestImplCopyWithImpl<$Res>
+    extends _$PagesShowRequestCopyWithImpl<$Res, _$PagesShowRequestImpl>
+    implements _$$PagesShowRequestImplCopyWith<$Res> {
+  __$$PagesShowRequestImplCopyWithImpl(_$PagesShowRequestImpl _value,
+      $Res Function(_$PagesShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_PagesShowRequestCopyWithImpl<$Res>
     Object? name = freezed,
     Object? username = freezed,
   }) {
-    return _then(_$_PagesShowRequest(
+    return _then(_$PagesShowRequestImpl(
       pageId: freezed == pageId
           ? _value.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
@@ -118,11 +118,11 @@ class __$$_PagesShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PagesShowRequest implements _PagesShowRequest {
-  const _$_PagesShowRequest({this.pageId, this.name, this.username});
+class _$PagesShowRequestImpl implements _PagesShowRequest {
+  const _$PagesShowRequestImpl({this.pageId, this.name, this.username});
 
-  factory _$_PagesShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_PagesShowRequestFromJson(json);
+  factory _$PagesShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PagesShowRequestImplFromJson(json);
 
   @override
   final String? pageId;
@@ -140,7 +140,7 @@ class _$_PagesShowRequest implements _PagesShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PagesShowRequest &&
+            other is _$PagesShowRequestImpl &&
             (identical(other.pageId, pageId) || other.pageId == pageId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
@@ -154,12 +154,13 @@ class _$_PagesShowRequest implements _PagesShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PagesShowRequestCopyWith<_$_PagesShowRequest> get copyWith =>
-      __$$_PagesShowRequestCopyWithImpl<_$_PagesShowRequest>(this, _$identity);
+  _$$PagesShowRequestImplCopyWith<_$PagesShowRequestImpl> get copyWith =>
+      __$$PagesShowRequestImplCopyWithImpl<_$PagesShowRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PagesShowRequestToJson(
+    return _$$PagesShowRequestImplToJson(
       this,
     );
   }
@@ -169,10 +170,10 @@ abstract class _PagesShowRequest implements PagesShowRequest {
   const factory _PagesShowRequest(
       {final String? pageId,
       final String? name,
-      final String? username}) = _$_PagesShowRequest;
+      final String? username}) = _$PagesShowRequestImpl;
 
   factory _PagesShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_PagesShowRequest.fromJson;
+      _$PagesShowRequestImpl.fromJson;
 
   @override
   String? get pageId;
@@ -182,6 +183,6 @@ abstract class _PagesShowRequest implements PagesShowRequest {
   String? get username;
   @override
   @JsonKey(ignore: true)
-  _$$_PagesShowRequestCopyWith<_$_PagesShowRequest> get copyWith =>
+  _$$PagesShowRequestImplCopyWith<_$PagesShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

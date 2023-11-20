@@ -113,11 +113,12 @@ class _$UsersReactionsResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersReactionsResponseCopyWith<$Res>
+abstract class _$$UsersReactionsResponseImplCopyWith<$Res>
     implements $UsersReactionsResponseCopyWith<$Res> {
-  factory _$$_UsersReactionsResponseCopyWith(_$_UsersReactionsResponse value,
-          $Res Function(_$_UsersReactionsResponse) then) =
-      __$$_UsersReactionsResponseCopyWithImpl<$Res>;
+  factory _$$UsersReactionsResponseImplCopyWith(
+          _$UsersReactionsResponseImpl value,
+          $Res Function(_$UsersReactionsResponseImpl) then) =
+      __$$UsersReactionsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -134,12 +135,13 @@ abstract class _$$_UsersReactionsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UsersReactionsResponseCopyWithImpl<$Res>
+class __$$UsersReactionsResponseImplCopyWithImpl<$Res>
     extends _$UsersReactionsResponseCopyWithImpl<$Res,
-        _$_UsersReactionsResponse>
-    implements _$$_UsersReactionsResponseCopyWith<$Res> {
-  __$$_UsersReactionsResponseCopyWithImpl(_$_UsersReactionsResponse _value,
-      $Res Function(_$_UsersReactionsResponse) _then)
+        _$UsersReactionsResponseImpl>
+    implements _$$UsersReactionsResponseImplCopyWith<$Res> {
+  __$$UsersReactionsResponseImplCopyWithImpl(
+      _$UsersReactionsResponseImpl _value,
+      $Res Function(_$UsersReactionsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -151,7 +153,7 @@ class __$$_UsersReactionsResponseCopyWithImpl<$Res>
     Object? type = null,
     Object? note = null,
   }) {
-    return _then(_$_UsersReactionsResponse(
+    return _then(_$UsersReactionsResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -178,16 +180,16 @@ class __$$_UsersReactionsResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersReactionsResponse implements _UsersReactionsResponse {
-  const _$_UsersReactionsResponse(
+class _$UsersReactionsResponseImpl implements _UsersReactionsResponse {
+  const _$UsersReactionsResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.user,
       required this.type,
       required this.note});
 
-  factory _$_UsersReactionsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersReactionsResponseFromJson(json);
+  factory _$UsersReactionsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersReactionsResponseImplFromJson(json);
 
   @override
   final String id;
@@ -210,7 +212,7 @@ class _$_UsersReactionsResponse implements _UsersReactionsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersReactionsResponse &&
+            other is _$UsersReactionsResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -226,13 +228,13 @@ class _$_UsersReactionsResponse implements _UsersReactionsResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersReactionsResponseCopyWith<_$_UsersReactionsResponse> get copyWith =>
-      __$$_UsersReactionsResponseCopyWithImpl<_$_UsersReactionsResponse>(
-          this, _$identity);
+  _$$UsersReactionsResponseImplCopyWith<_$UsersReactionsResponseImpl>
+      get copyWith => __$$UsersReactionsResponseImplCopyWithImpl<
+          _$UsersReactionsResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersReactionsResponseToJson(
+    return _$$UsersReactionsResponseImplToJson(
       this,
     );
   }
@@ -244,10 +246,10 @@ abstract class _UsersReactionsResponse implements UsersReactionsResponse {
       @DateTimeConverter() required final DateTime createdAt,
       required final User user,
       required final String type,
-      required final Note note}) = _$_UsersReactionsResponse;
+      required final Note note}) = _$UsersReactionsResponseImpl;
 
   factory _UsersReactionsResponse.fromJson(Map<String, dynamic> json) =
-      _$_UsersReactionsResponse.fromJson;
+      _$UsersReactionsResponseImpl.fromJson;
 
   @override
   String get id;
@@ -262,6 +264,6 @@ abstract class _UsersReactionsResponse implements UsersReactionsResponse {
   Note get note;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersReactionsResponseCopyWith<_$_UsersReactionsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersReactionsResponseImplCopyWith<_$UsersReactionsResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

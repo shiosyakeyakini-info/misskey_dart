@@ -78,11 +78,11 @@ class _$NoteUpdatedEventCopyWithImpl<$Res, $Val extends NoteUpdatedEvent>
 }
 
 /// @nodoc
-abstract class _$$_NoteUpdatedEventCopyWith<$Res>
+abstract class _$$NoteUpdatedEventImplCopyWith<$Res>
     implements $NoteUpdatedEventCopyWith<$Res> {
-  factory _$$_NoteUpdatedEventCopyWith(
-          _$_NoteUpdatedEvent value, $Res Function(_$_NoteUpdatedEvent) then) =
-      __$$_NoteUpdatedEventCopyWithImpl<$Res>;
+  factory _$$NoteUpdatedEventImplCopyWith(_$NoteUpdatedEventImpl value,
+          $Res Function(_$NoteUpdatedEventImpl) then) =
+      __$$NoteUpdatedEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -92,11 +92,11 @@ abstract class _$$_NoteUpdatedEventCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NoteUpdatedEventCopyWithImpl<$Res>
-    extends _$NoteUpdatedEventCopyWithImpl<$Res, _$_NoteUpdatedEvent>
-    implements _$$_NoteUpdatedEventCopyWith<$Res> {
-  __$$_NoteUpdatedEventCopyWithImpl(
-      _$_NoteUpdatedEvent _value, $Res Function(_$_NoteUpdatedEvent) _then)
+class __$$NoteUpdatedEventImplCopyWithImpl<$Res>
+    extends _$NoteUpdatedEventCopyWithImpl<$Res, _$NoteUpdatedEventImpl>
+    implements _$$NoteUpdatedEventImplCopyWith<$Res> {
+  __$$NoteUpdatedEventImplCopyWithImpl(_$NoteUpdatedEventImpl _value,
+      $Res Function(_$NoteUpdatedEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_NoteUpdatedEventCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$_NoteUpdatedEvent(
+    return _then(_$NoteUpdatedEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -125,15 +125,15 @@ class __$$_NoteUpdatedEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteUpdatedEvent implements _NoteUpdatedEvent {
-  const _$_NoteUpdatedEvent(
+class _$NoteUpdatedEventImpl implements _NoteUpdatedEvent {
+  const _$NoteUpdatedEventImpl(
       {required this.id,
       @NoteUpdatedEventTypeJsonConverter() required this.type,
       required final Map<String, dynamic> body})
       : _body = body;
 
-  factory _$_NoteUpdatedEvent.fromJson(Map<String, dynamic> json) =>
-      _$$_NoteUpdatedEventFromJson(json);
+  factory _$NoteUpdatedEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteUpdatedEventImplFromJson(json);
 
   @override
   final String id;
@@ -157,7 +157,7 @@ class _$_NoteUpdatedEvent implements _NoteUpdatedEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoteUpdatedEvent &&
+            other is _$NoteUpdatedEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._body, _body));
@@ -171,12 +171,13 @@ class _$_NoteUpdatedEvent implements _NoteUpdatedEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NoteUpdatedEventCopyWith<_$_NoteUpdatedEvent> get copyWith =>
-      __$$_NoteUpdatedEventCopyWithImpl<_$_NoteUpdatedEvent>(this, _$identity);
+  _$$NoteUpdatedEventImplCopyWith<_$NoteUpdatedEventImpl> get copyWith =>
+      __$$NoteUpdatedEventImplCopyWithImpl<_$NoteUpdatedEventImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NoteUpdatedEventToJson(
+    return _$$NoteUpdatedEventImplToJson(
       this,
     );
   }
@@ -187,10 +188,10 @@ abstract class _NoteUpdatedEvent implements NoteUpdatedEvent {
       {required final String id,
       @NoteUpdatedEventTypeJsonConverter()
       required final NoteUpdatedEventType type,
-      required final Map<String, dynamic> body}) = _$_NoteUpdatedEvent;
+      required final Map<String, dynamic> body}) = _$NoteUpdatedEventImpl;
 
   factory _NoteUpdatedEvent.fromJson(Map<String, dynamic> json) =
-      _$_NoteUpdatedEvent.fromJson;
+      _$NoteUpdatedEventImpl.fromJson;
 
   @override
   String get id;
@@ -201,6 +202,6 @@ abstract class _NoteUpdatedEvent implements NoteUpdatedEvent {
   Map<String, dynamic> get body;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteUpdatedEventCopyWith<_$_NoteUpdatedEvent> get copyWith =>
+  _$$NoteUpdatedEventImplCopyWith<_$NoteUpdatedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

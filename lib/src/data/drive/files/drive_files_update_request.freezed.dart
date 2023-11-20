@@ -93,11 +93,12 @@ class _$DriveFilesUpdateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DriveFilesUpdateRequestCopyWith<$Res>
+abstract class _$$DriveFilesUpdateRequestImplCopyWith<$Res>
     implements $DriveFilesUpdateRequestCopyWith<$Res> {
-  factory _$$_DriveFilesUpdateRequestCopyWith(_$_DriveFilesUpdateRequest value,
-          $Res Function(_$_DriveFilesUpdateRequest) then) =
-      __$$_DriveFilesUpdateRequestCopyWithImpl<$Res>;
+  factory _$$DriveFilesUpdateRequestImplCopyWith(
+          _$DriveFilesUpdateRequestImpl value,
+          $Res Function(_$DriveFilesUpdateRequestImpl) then) =
+      __$$DriveFilesUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -109,12 +110,13 @@ abstract class _$$_DriveFilesUpdateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DriveFilesUpdateRequestCopyWithImpl<$Res>
+class __$$DriveFilesUpdateRequestImplCopyWithImpl<$Res>
     extends _$DriveFilesUpdateRequestCopyWithImpl<$Res,
-        _$_DriveFilesUpdateRequest>
-    implements _$$_DriveFilesUpdateRequestCopyWith<$Res> {
-  __$$_DriveFilesUpdateRequestCopyWithImpl(_$_DriveFilesUpdateRequest _value,
-      $Res Function(_$_DriveFilesUpdateRequest) _then)
+        _$DriveFilesUpdateRequestImpl>
+    implements _$$DriveFilesUpdateRequestImplCopyWith<$Res> {
+  __$$DriveFilesUpdateRequestImplCopyWithImpl(
+      _$DriveFilesUpdateRequestImpl _value,
+      $Res Function(_$DriveFilesUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +128,7 @@ class __$$_DriveFilesUpdateRequestCopyWithImpl<$Res>
     Object? isSensitive = freezed,
     Object? comment = freezed,
   }) {
-    return _then(_$_DriveFilesUpdateRequest(
+    return _then(_$DriveFilesUpdateRequestImpl(
       fileId: null == fileId
           ? _value.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
@@ -153,16 +155,16 @@ class __$$_DriveFilesUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFilesUpdateRequest implements _DriveFilesUpdateRequest {
-  const _$_DriveFilesUpdateRequest(
+class _$DriveFilesUpdateRequestImpl implements _DriveFilesUpdateRequest {
+  const _$DriveFilesUpdateRequestImpl(
       {required this.fileId,
       this.folderId,
       this.name,
       this.isSensitive,
       this.comment});
 
-  factory _$_DriveFilesUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFilesUpdateRequestFromJson(json);
+  factory _$DriveFilesUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFilesUpdateRequestImplFromJson(json);
 
   @override
   final String fileId;
@@ -184,7 +186,7 @@ class _$_DriveFilesUpdateRequest implements _DriveFilesUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFilesUpdateRequest &&
+            other is _$DriveFilesUpdateRequestImpl &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
@@ -202,14 +204,13 @@ class _$_DriveFilesUpdateRequest implements _DriveFilesUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFilesUpdateRequestCopyWith<_$_DriveFilesUpdateRequest>
-      get copyWith =>
-          __$$_DriveFilesUpdateRequestCopyWithImpl<_$_DriveFilesUpdateRequest>(
-              this, _$identity);
+  _$$DriveFilesUpdateRequestImplCopyWith<_$DriveFilesUpdateRequestImpl>
+      get copyWith => __$$DriveFilesUpdateRequestImplCopyWithImpl<
+          _$DriveFilesUpdateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFilesUpdateRequestToJson(
+    return _$$DriveFilesUpdateRequestImplToJson(
       this,
     );
   }
@@ -221,10 +222,10 @@ abstract class _DriveFilesUpdateRequest implements DriveFilesUpdateRequest {
       final String? folderId,
       final String? name,
       final bool? isSensitive,
-      final String? comment}) = _$_DriveFilesUpdateRequest;
+      final String? comment}) = _$DriveFilesUpdateRequestImpl;
 
   factory _DriveFilesUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriveFilesUpdateRequest.fromJson;
+      _$DriveFilesUpdateRequestImpl.fromJson;
 
   @override
   String get fileId;
@@ -238,6 +239,6 @@ abstract class _DriveFilesUpdateRequest implements DriveFilesUpdateRequest {
   String? get comment;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFilesUpdateRequestCopyWith<_$_DriveFilesUpdateRequest>
+  _$$DriveFilesUpdateRequestImplCopyWith<_$DriveFilesUpdateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

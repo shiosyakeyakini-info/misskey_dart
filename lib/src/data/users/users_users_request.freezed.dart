@@ -99,11 +99,11 @@ class _$UsersUsersRequestCopyWithImpl<$Res, $Val extends UsersUsersRequest>
 }
 
 /// @nodoc
-abstract class _$$_UsersUsersRequestCopyWith<$Res>
+abstract class _$$UsersUsersRequestImplCopyWith<$Res>
     implements $UsersUsersRequestCopyWith<$Res> {
-  factory _$$_UsersUsersRequestCopyWith(_$_UsersUsersRequest value,
-          $Res Function(_$_UsersUsersRequest) then) =
-      __$$_UsersUsersRequestCopyWithImpl<$Res>;
+  factory _$$UsersUsersRequestImplCopyWith(_$UsersUsersRequestImpl value,
+          $Res Function(_$UsersUsersRequestImpl) then) =
+      __$$UsersUsersRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -116,11 +116,11 @@ abstract class _$$_UsersUsersRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UsersUsersRequestCopyWithImpl<$Res>
-    extends _$UsersUsersRequestCopyWithImpl<$Res, _$_UsersUsersRequest>
-    implements _$$_UsersUsersRequestCopyWith<$Res> {
-  __$$_UsersUsersRequestCopyWithImpl(
-      _$_UsersUsersRequest _value, $Res Function(_$_UsersUsersRequest) _then)
+class __$$UsersUsersRequestImplCopyWithImpl<$Res>
+    extends _$UsersUsersRequestCopyWithImpl<$Res, _$UsersUsersRequestImpl>
+    implements _$$UsersUsersRequestImplCopyWith<$Res> {
+  __$$UsersUsersRequestImplCopyWithImpl(_$UsersUsersRequestImpl _value,
+      $Res Function(_$UsersUsersRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,7 +133,7 @@ class __$$_UsersUsersRequestCopyWithImpl<$Res>
     Object? origin = freezed,
     Object? hostname = freezed,
   }) {
-    return _then(_$_UsersUsersRequest(
+    return _then(_$UsersUsersRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -164,8 +164,8 @@ class __$$_UsersUsersRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersUsersRequest implements _UsersUsersRequest {
-  const _$_UsersUsersRequest(
+class _$UsersUsersRequestImpl implements _UsersUsersRequest {
+  const _$UsersUsersRequestImpl(
       {this.limit,
       this.offset,
       @NullableUsersSortConverter() this.sort,
@@ -173,8 +173,8 @@ class _$_UsersUsersRequest implements _UsersUsersRequest {
       this.origin,
       this.hostname});
 
-  factory _$_UsersUsersRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersUsersRequestFromJson(json);
+  factory _$UsersUsersRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersUsersRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -199,7 +199,7 @@ class _$_UsersUsersRequest implements _UsersUsersRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersUsersRequest &&
+            other is _$UsersUsersRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.sort, sort) || other.sort == sort) &&
@@ -217,13 +217,13 @@ class _$_UsersUsersRequest implements _UsersUsersRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersUsersRequestCopyWith<_$_UsersUsersRequest> get copyWith =>
-      __$$_UsersUsersRequestCopyWithImpl<_$_UsersUsersRequest>(
+  _$$UsersUsersRequestImplCopyWith<_$UsersUsersRequestImpl> get copyWith =>
+      __$$UsersUsersRequestImplCopyWithImpl<_$UsersUsersRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersUsersRequestToJson(
+    return _$$UsersUsersRequestImplToJson(
       this,
     );
   }
@@ -236,10 +236,10 @@ abstract class _UsersUsersRequest implements UsersUsersRequest {
       @NullableUsersSortConverter() final UsersSortType? sort,
       final UsersState? state,
       final Origin? origin,
-      final String? hostname}) = _$_UsersUsersRequest;
+      final String? hostname}) = _$UsersUsersRequestImpl;
 
   factory _UsersUsersRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersUsersRequest.fromJson;
+      _$UsersUsersRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -256,6 +256,6 @@ abstract class _UsersUsersRequest implements UsersUsersRequest {
   String? get hostname;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersUsersRequestCopyWith<_$_UsersUsersRequest> get copyWith =>
+  _$$UsersUsersRequestImplCopyWith<_$UsersUsersRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

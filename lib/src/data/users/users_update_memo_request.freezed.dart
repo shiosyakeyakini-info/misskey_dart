@@ -70,23 +70,25 @@ class _$UsersUpdateMemoRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersUpdateMemoRequestCopyWith<$Res>
+abstract class _$$UsersUpdateMemoRequestImplCopyWith<$Res>
     implements $UsersUpdateMemoRequestCopyWith<$Res> {
-  factory _$$_UsersUpdateMemoRequestCopyWith(_$_UsersUpdateMemoRequest value,
-          $Res Function(_$_UsersUpdateMemoRequest) then) =
-      __$$_UsersUpdateMemoRequestCopyWithImpl<$Res>;
+  factory _$$UsersUpdateMemoRequestImplCopyWith(
+          _$UsersUpdateMemoRequestImpl value,
+          $Res Function(_$UsersUpdateMemoRequestImpl) then) =
+      __$$UsersUpdateMemoRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, String memo});
 }
 
 /// @nodoc
-class __$$_UsersUpdateMemoRequestCopyWithImpl<$Res>
+class __$$UsersUpdateMemoRequestImplCopyWithImpl<$Res>
     extends _$UsersUpdateMemoRequestCopyWithImpl<$Res,
-        _$_UsersUpdateMemoRequest>
-    implements _$$_UsersUpdateMemoRequestCopyWith<$Res> {
-  __$$_UsersUpdateMemoRequestCopyWithImpl(_$_UsersUpdateMemoRequest _value,
-      $Res Function(_$_UsersUpdateMemoRequest) _then)
+        _$UsersUpdateMemoRequestImpl>
+    implements _$$UsersUpdateMemoRequestImplCopyWith<$Res> {
+  __$$UsersUpdateMemoRequestImplCopyWithImpl(
+      _$UsersUpdateMemoRequestImpl _value,
+      $Res Function(_$UsersUpdateMemoRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +97,7 @@ class __$$_UsersUpdateMemoRequestCopyWithImpl<$Res>
     Object? userId = null,
     Object? memo = null,
   }) {
-    return _then(_$_UsersUpdateMemoRequest(
+    return _then(_$UsersUpdateMemoRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -110,11 +112,12 @@ class __$$_UsersUpdateMemoRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersUpdateMemoRequest implements _UsersUpdateMemoRequest {
-  const _$_UsersUpdateMemoRequest({required this.userId, required this.memo});
+class _$UsersUpdateMemoRequestImpl implements _UsersUpdateMemoRequest {
+  const _$UsersUpdateMemoRequestImpl(
+      {required this.userId, required this.memo});
 
-  factory _$_UsersUpdateMemoRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersUpdateMemoRequestFromJson(json);
+  factory _$UsersUpdateMemoRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersUpdateMemoRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -130,7 +133,7 @@ class _$_UsersUpdateMemoRequest implements _UsersUpdateMemoRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersUpdateMemoRequest &&
+            other is _$UsersUpdateMemoRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.memo, memo) || other.memo == memo));
   }
@@ -142,13 +145,13 @@ class _$_UsersUpdateMemoRequest implements _UsersUpdateMemoRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersUpdateMemoRequestCopyWith<_$_UsersUpdateMemoRequest> get copyWith =>
-      __$$_UsersUpdateMemoRequestCopyWithImpl<_$_UsersUpdateMemoRequest>(
-          this, _$identity);
+  _$$UsersUpdateMemoRequestImplCopyWith<_$UsersUpdateMemoRequestImpl>
+      get copyWith => __$$UsersUpdateMemoRequestImplCopyWithImpl<
+          _$UsersUpdateMemoRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersUpdateMemoRequestToJson(
+    return _$$UsersUpdateMemoRequestImplToJson(
       this,
     );
   }
@@ -157,10 +160,10 @@ class _$_UsersUpdateMemoRequest implements _UsersUpdateMemoRequest {
 abstract class _UsersUpdateMemoRequest implements UsersUpdateMemoRequest {
   const factory _UsersUpdateMemoRequest(
       {required final String userId,
-      required final String memo}) = _$_UsersUpdateMemoRequest;
+      required final String memo}) = _$UsersUpdateMemoRequestImpl;
 
   factory _UsersUpdateMemoRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersUpdateMemoRequest.fromJson;
+      _$UsersUpdateMemoRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -168,6 +171,6 @@ abstract class _UsersUpdateMemoRequest implements UsersUpdateMemoRequest {
   String get memo;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersUpdateMemoRequestCopyWith<_$_UsersUpdateMemoRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersUpdateMemoRequestImplCopyWith<_$UsersUpdateMemoRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

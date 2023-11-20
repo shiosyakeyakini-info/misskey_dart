@@ -138,12 +138,12 @@ class _$NotesHybridTimelineRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesHybridTimelineRequestCopyWith<$Res>
+abstract class _$$NotesHybridTimelineRequestImplCopyWith<$Res>
     implements $NotesHybridTimelineRequestCopyWith<$Res> {
-  factory _$$_NotesHybridTimelineRequestCopyWith(
-          _$_NotesHybridTimelineRequest value,
-          $Res Function(_$_NotesHybridTimelineRequest) then) =
-      __$$_NotesHybridTimelineRequestCopyWithImpl<$Res>;
+  factory _$$NotesHybridTimelineRequestImplCopyWith(
+          _$NotesHybridTimelineRequestImpl value,
+          $Res Function(_$NotesHybridTimelineRequestImpl) then) =
+      __$$NotesHybridTimelineRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -161,13 +161,13 @@ abstract class _$$_NotesHybridTimelineRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesHybridTimelineRequestCopyWithImpl<$Res>
+class __$$NotesHybridTimelineRequestImplCopyWithImpl<$Res>
     extends _$NotesHybridTimelineRequestCopyWithImpl<$Res,
-        _$_NotesHybridTimelineRequest>
-    implements _$$_NotesHybridTimelineRequestCopyWith<$Res> {
-  __$$_NotesHybridTimelineRequestCopyWithImpl(
-      _$_NotesHybridTimelineRequest _value,
-      $Res Function(_$_NotesHybridTimelineRequest) _then)
+        _$NotesHybridTimelineRequestImpl>
+    implements _$$NotesHybridTimelineRequestImplCopyWith<$Res> {
+  __$$NotesHybridTimelineRequestImplCopyWithImpl(
+      _$NotesHybridTimelineRequestImpl _value,
+      $Res Function(_$NotesHybridTimelineRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -185,7 +185,7 @@ class __$$_NotesHybridTimelineRequestCopyWithImpl<$Res>
     Object? withReplies = freezed,
     Object? withRenotes = freezed,
   }) {
-    return _then(_$_NotesHybridTimelineRequest(
+    return _then(_$NotesHybridTimelineRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -236,8 +236,8 @@ class __$$_NotesHybridTimelineRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
-  const _$_NotesHybridTimelineRequest(
+class _$NotesHybridTimelineRequestImpl implements _NotesHybridTimelineRequest {
+  const _$NotesHybridTimelineRequestImpl(
       {this.limit,
       this.sinceId,
       this.untilId,
@@ -250,8 +250,9 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
       this.withReplies,
       this.withRenotes});
 
-  factory _$_NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesHybridTimelineRequestFromJson(json);
+  factory _$NotesHybridTimelineRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$NotesHybridTimelineRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -287,7 +288,7 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesHybridTimelineRequest &&
+            other is _$NotesHybridTimelineRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -328,13 +329,13 @@ class _$_NotesHybridTimelineRequest implements _NotesHybridTimelineRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesHybridTimelineRequestCopyWith<_$_NotesHybridTimelineRequest>
-      get copyWith => __$$_NotesHybridTimelineRequestCopyWithImpl<
-          _$_NotesHybridTimelineRequest>(this, _$identity);
+  _$$NotesHybridTimelineRequestImplCopyWith<_$NotesHybridTimelineRequestImpl>
+      get copyWith => __$$NotesHybridTimelineRequestImplCopyWithImpl<
+          _$NotesHybridTimelineRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesHybridTimelineRequestToJson(
+    return _$$NotesHybridTimelineRequestImplToJson(
       this,
     );
   }
@@ -353,10 +354,10 @@ abstract class _NotesHybridTimelineRequest
       final bool? includeLocalRenotes,
       final bool? withFiles,
       final bool? withReplies,
-      final bool? withRenotes}) = _$_NotesHybridTimelineRequest;
+      final bool? withRenotes}) = _$NotesHybridTimelineRequestImpl;
 
   factory _NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesHybridTimelineRequest.fromJson;
+      _$NotesHybridTimelineRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -384,6 +385,6 @@ abstract class _NotesHybridTimelineRequest
   bool? get withRenotes;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesHybridTimelineRequestCopyWith<_$_NotesHybridTimelineRequest>
+  _$$NotesHybridTimelineRequestImplCopyWith<_$NotesHybridTimelineRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

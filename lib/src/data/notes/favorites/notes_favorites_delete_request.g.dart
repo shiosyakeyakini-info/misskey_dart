@@ -6,14 +6,14 @@ part of 'notes_favorites_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesFavoritesDeleteRequest _$$_NotesFavoritesDeleteRequestFromJson(
+_$NotesFavoritesDeleteRequestImpl _$$NotesFavoritesDeleteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesFavoritesDeleteRequest(
+    _$NotesFavoritesDeleteRequestImpl(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$$_NotesFavoritesDeleteRequestToJson(
-        _$_NotesFavoritesDeleteRequest instance) =>
+Map<String, dynamic> _$$NotesFavoritesDeleteRequestImplToJson(
+        _$NotesFavoritesDeleteRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

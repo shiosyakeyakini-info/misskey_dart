@@ -6,14 +6,14 @@ part of 'users_lists_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersListsCreateRequest _$$_UsersListsCreateRequestFromJson(
+_$UsersListsCreateRequestImpl _$$UsersListsCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UsersListsCreateRequest(
+    _$UsersListsCreateRequestImpl(
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$_UsersListsCreateRequestToJson(
-        _$_UsersListsCreateRequest instance) =>
+Map<String, dynamic> _$$UsersListsCreateRequestImplToJson(
+        _$UsersListsCreateRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
     };

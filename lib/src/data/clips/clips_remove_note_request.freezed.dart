@@ -70,23 +70,25 @@ class _$ClipsRemoveNoteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ClipsRemoveNoteRequestCopyWith<$Res>
+abstract class _$$ClipsRemoveNoteRequestImplCopyWith<$Res>
     implements $ClipsRemoveNoteRequestCopyWith<$Res> {
-  factory _$$_ClipsRemoveNoteRequestCopyWith(_$_ClipsRemoveNoteRequest value,
-          $Res Function(_$_ClipsRemoveNoteRequest) then) =
-      __$$_ClipsRemoveNoteRequestCopyWithImpl<$Res>;
+  factory _$$ClipsRemoveNoteRequestImplCopyWith(
+          _$ClipsRemoveNoteRequestImpl value,
+          $Res Function(_$ClipsRemoveNoteRequestImpl) then) =
+      __$$ClipsRemoveNoteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String clipId, String noteId});
 }
 
 /// @nodoc
-class __$$_ClipsRemoveNoteRequestCopyWithImpl<$Res>
+class __$$ClipsRemoveNoteRequestImplCopyWithImpl<$Res>
     extends _$ClipsRemoveNoteRequestCopyWithImpl<$Res,
-        _$_ClipsRemoveNoteRequest>
-    implements _$$_ClipsRemoveNoteRequestCopyWith<$Res> {
-  __$$_ClipsRemoveNoteRequestCopyWithImpl(_$_ClipsRemoveNoteRequest _value,
-      $Res Function(_$_ClipsRemoveNoteRequest) _then)
+        _$ClipsRemoveNoteRequestImpl>
+    implements _$$ClipsRemoveNoteRequestImplCopyWith<$Res> {
+  __$$ClipsRemoveNoteRequestImplCopyWithImpl(
+      _$ClipsRemoveNoteRequestImpl _value,
+      $Res Function(_$ClipsRemoveNoteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +97,7 @@ class __$$_ClipsRemoveNoteRequestCopyWithImpl<$Res>
     Object? clipId = null,
     Object? noteId = null,
   }) {
-    return _then(_$_ClipsRemoveNoteRequest(
+    return _then(_$ClipsRemoveNoteRequestImpl(
       clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
@@ -110,11 +112,12 @@ class __$$_ClipsRemoveNoteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsRemoveNoteRequest implements _ClipsRemoveNoteRequest {
-  const _$_ClipsRemoveNoteRequest({required this.clipId, required this.noteId});
+class _$ClipsRemoveNoteRequestImpl implements _ClipsRemoveNoteRequest {
+  const _$ClipsRemoveNoteRequestImpl(
+      {required this.clipId, required this.noteId});
 
-  factory _$_ClipsRemoveNoteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsRemoveNoteRequestFromJson(json);
+  factory _$ClipsRemoveNoteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsRemoveNoteRequestImplFromJson(json);
 
   @override
   final String clipId;
@@ -130,7 +133,7 @@ class _$_ClipsRemoveNoteRequest implements _ClipsRemoveNoteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsRemoveNoteRequest &&
+            other is _$ClipsRemoveNoteRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
@@ -142,13 +145,13 @@ class _$_ClipsRemoveNoteRequest implements _ClipsRemoveNoteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsRemoveNoteRequestCopyWith<_$_ClipsRemoveNoteRequest> get copyWith =>
-      __$$_ClipsRemoveNoteRequestCopyWithImpl<_$_ClipsRemoveNoteRequest>(
-          this, _$identity);
+  _$$ClipsRemoveNoteRequestImplCopyWith<_$ClipsRemoveNoteRequestImpl>
+      get copyWith => __$$ClipsRemoveNoteRequestImplCopyWithImpl<
+          _$ClipsRemoveNoteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsRemoveNoteRequestToJson(
+    return _$$ClipsRemoveNoteRequestImplToJson(
       this,
     );
   }
@@ -157,10 +160,10 @@ class _$_ClipsRemoveNoteRequest implements _ClipsRemoveNoteRequest {
 abstract class _ClipsRemoveNoteRequest implements ClipsRemoveNoteRequest {
   const factory _ClipsRemoveNoteRequest(
       {required final String clipId,
-      required final String noteId}) = _$_ClipsRemoveNoteRequest;
+      required final String noteId}) = _$ClipsRemoveNoteRequestImpl;
 
   factory _ClipsRemoveNoteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsRemoveNoteRequest.fromJson;
+      _$ClipsRemoveNoteRequestImpl.fromJson;
 
   @override
   String get clipId;
@@ -168,6 +171,6 @@ abstract class _ClipsRemoveNoteRequest implements ClipsRemoveNoteRequest {
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsRemoveNoteRequestCopyWith<_$_ClipsRemoveNoteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ClipsRemoveNoteRequestImplCopyWith<_$ClipsRemoveNoteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

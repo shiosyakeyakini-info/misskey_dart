@@ -72,11 +72,11 @@ class _$MuteCreateRequestCopyWithImpl<$Res, $Val extends MuteCreateRequest>
 }
 
 /// @nodoc
-abstract class _$$_MuteCreateRequestCopyWith<$Res>
+abstract class _$$MuteCreateRequestImplCopyWith<$Res>
     implements $MuteCreateRequestCopyWith<$Res> {
-  factory _$$_MuteCreateRequestCopyWith(_$_MuteCreateRequest value,
-          $Res Function(_$_MuteCreateRequest) then) =
-      __$$_MuteCreateRequestCopyWithImpl<$Res>;
+  factory _$$MuteCreateRequestImplCopyWith(_$MuteCreateRequestImpl value,
+          $Res Function(_$MuteCreateRequestImpl) then) =
+      __$$MuteCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -86,11 +86,11 @@ abstract class _$$_MuteCreateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MuteCreateRequestCopyWithImpl<$Res>
-    extends _$MuteCreateRequestCopyWithImpl<$Res, _$_MuteCreateRequest>
-    implements _$$_MuteCreateRequestCopyWith<$Res> {
-  __$$_MuteCreateRequestCopyWithImpl(
-      _$_MuteCreateRequest _value, $Res Function(_$_MuteCreateRequest) _then)
+class __$$MuteCreateRequestImplCopyWithImpl<$Res>
+    extends _$MuteCreateRequestCopyWithImpl<$Res, _$MuteCreateRequestImpl>
+    implements _$$MuteCreateRequestImplCopyWith<$Res> {
+  __$$MuteCreateRequestImplCopyWithImpl(_$MuteCreateRequestImpl _value,
+      $Res Function(_$MuteCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_MuteCreateRequestCopyWithImpl<$Res>
     Object? userId = null,
     Object? expiresAt = freezed,
   }) {
-    return _then(_$_MuteCreateRequest(
+    return _then(_$MuteCreateRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -114,13 +114,13 @@ class __$$_MuteCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MuteCreateRequest implements _MuteCreateRequest {
-  const _$_MuteCreateRequest(
+class _$MuteCreateRequestImpl implements _MuteCreateRequest {
+  const _$MuteCreateRequestImpl(
       {required this.userId,
       @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt});
 
-  factory _$_MuteCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_MuteCreateRequestFromJson(json);
+  factory _$MuteCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MuteCreateRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -137,7 +137,7 @@ class _$_MuteCreateRequest implements _MuteCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MuteCreateRequest &&
+            other is _$MuteCreateRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.expiresAt, expiresAt) ||
                 other.expiresAt == expiresAt));
@@ -150,13 +150,13 @@ class _$_MuteCreateRequest implements _MuteCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MuteCreateRequestCopyWith<_$_MuteCreateRequest> get copyWith =>
-      __$$_MuteCreateRequestCopyWithImpl<_$_MuteCreateRequest>(
+  _$$MuteCreateRequestImplCopyWith<_$MuteCreateRequestImpl> get copyWith =>
+      __$$MuteCreateRequestImplCopyWithImpl<_$MuteCreateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MuteCreateRequestToJson(
+    return _$$MuteCreateRequestImplToJson(
       this,
     );
   }
@@ -166,10 +166,10 @@ abstract class _MuteCreateRequest implements MuteCreateRequest {
   const factory _MuteCreateRequest(
       {required final String userId,
       @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? expiresAt}) = _$_MuteCreateRequest;
+      final DateTime? expiresAt}) = _$MuteCreateRequestImpl;
 
   factory _MuteCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_MuteCreateRequest.fromJson;
+      _$MuteCreateRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -178,6 +178,6 @@ abstract class _MuteCreateRequest implements MuteCreateRequest {
   DateTime? get expiresAt;
   @override
   @JsonKey(ignore: true)
-  _$$_MuteCreateRequestCopyWith<_$_MuteCreateRequest> get copyWith =>
+  _$$MuteCreateRequestImplCopyWith<_$MuteCreateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

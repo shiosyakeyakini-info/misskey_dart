@@ -6,7 +6,8 @@ part of 'i_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
+_$IResponseImpl _$$IResponseImplFromJson(Map<String, dynamic> json) =>
+    _$IResponseImpl(
       id: json['id'] as String,
       name: json['name'] as String?,
       username: json['username'] as String,
@@ -112,7 +113,7 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
       policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
+Map<String, dynamic> _$$IResponseImplToJson(_$IResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -64,23 +64,25 @@ class _$ChannelsFavoriteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsFavoriteRequestCopyWith<$Res>
+abstract class _$$ChannelsFavoriteRequestImplCopyWith<$Res>
     implements $ChannelsFavoriteRequestCopyWith<$Res> {
-  factory _$$_ChannelsFavoriteRequestCopyWith(_$_ChannelsFavoriteRequest value,
-          $Res Function(_$_ChannelsFavoriteRequest) then) =
-      __$$_ChannelsFavoriteRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsFavoriteRequestImplCopyWith(
+          _$ChannelsFavoriteRequestImpl value,
+          $Res Function(_$ChannelsFavoriteRequestImpl) then) =
+      __$$ChannelsFavoriteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class __$$_ChannelsFavoriteRequestCopyWithImpl<$Res>
+class __$$ChannelsFavoriteRequestImplCopyWithImpl<$Res>
     extends _$ChannelsFavoriteRequestCopyWithImpl<$Res,
-        _$_ChannelsFavoriteRequest>
-    implements _$$_ChannelsFavoriteRequestCopyWith<$Res> {
-  __$$_ChannelsFavoriteRequestCopyWithImpl(_$_ChannelsFavoriteRequest _value,
-      $Res Function(_$_ChannelsFavoriteRequest) _then)
+        _$ChannelsFavoriteRequestImpl>
+    implements _$$ChannelsFavoriteRequestImplCopyWith<$Res> {
+  __$$ChannelsFavoriteRequestImplCopyWithImpl(
+      _$ChannelsFavoriteRequestImpl _value,
+      $Res Function(_$ChannelsFavoriteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_ChannelsFavoriteRequestCopyWithImpl<$Res>
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_$_ChannelsFavoriteRequest(
+    return _then(_$ChannelsFavoriteRequestImpl(
       channelId: null == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_ChannelsFavoriteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsFavoriteRequest implements _ChannelsFavoriteRequest {
-  const _$_ChannelsFavoriteRequest({required this.channelId});
+class _$ChannelsFavoriteRequestImpl implements _ChannelsFavoriteRequest {
+  const _$ChannelsFavoriteRequestImpl({required this.channelId});
 
-  factory _$_ChannelsFavoriteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsFavoriteRequestFromJson(json);
+  factory _$ChannelsFavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsFavoriteRequestImplFromJson(json);
 
   @override
   final String channelId;
@@ -117,7 +119,7 @@ class _$_ChannelsFavoriteRequest implements _ChannelsFavoriteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsFavoriteRequest &&
+            other is _$ChannelsFavoriteRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
@@ -129,14 +131,13 @@ class _$_ChannelsFavoriteRequest implements _ChannelsFavoriteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsFavoriteRequestCopyWith<_$_ChannelsFavoriteRequest>
-      get copyWith =>
-          __$$_ChannelsFavoriteRequestCopyWithImpl<_$_ChannelsFavoriteRequest>(
-              this, _$identity);
+  _$$ChannelsFavoriteRequestImplCopyWith<_$ChannelsFavoriteRequestImpl>
+      get copyWith => __$$ChannelsFavoriteRequestImplCopyWithImpl<
+          _$ChannelsFavoriteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsFavoriteRequestToJson(
+    return _$$ChannelsFavoriteRequestImplToJson(
       this,
     );
   }
@@ -144,15 +145,15 @@ class _$_ChannelsFavoriteRequest implements _ChannelsFavoriteRequest {
 
 abstract class _ChannelsFavoriteRequest implements ChannelsFavoriteRequest {
   const factory _ChannelsFavoriteRequest({required final String channelId}) =
-      _$_ChannelsFavoriteRequest;
+      _$ChannelsFavoriteRequestImpl;
 
   factory _ChannelsFavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsFavoriteRequest.fromJson;
+      _$ChannelsFavoriteRequestImpl.fromJson;
 
   @override
   String get channelId;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsFavoriteRequestCopyWith<_$_ChannelsFavoriteRequest>
+  _$$ChannelsFavoriteRequestImplCopyWith<_$ChannelsFavoriteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

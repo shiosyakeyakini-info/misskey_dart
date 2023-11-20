@@ -70,22 +70,24 @@ class _$UsersListsShowRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsShowRequestCopyWith<$Res>
+abstract class _$$UsersListsShowRequestImplCopyWith<$Res>
     implements $UsersListsShowRequestCopyWith<$Res> {
-  factory _$$_UsersListsShowRequestCopyWith(_$_UsersListsShowRequest value,
-          $Res Function(_$_UsersListsShowRequest) then) =
-      __$$_UsersListsShowRequestCopyWithImpl<$Res>;
+  factory _$$UsersListsShowRequestImplCopyWith(
+          _$UsersListsShowRequestImpl value,
+          $Res Function(_$UsersListsShowRequestImpl) then) =
+      __$$UsersListsShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String listId, bool? forPublic});
 }
 
 /// @nodoc
-class __$$_UsersListsShowRequestCopyWithImpl<$Res>
-    extends _$UsersListsShowRequestCopyWithImpl<$Res, _$_UsersListsShowRequest>
-    implements _$$_UsersListsShowRequestCopyWith<$Res> {
-  __$$_UsersListsShowRequestCopyWithImpl(_$_UsersListsShowRequest _value,
-      $Res Function(_$_UsersListsShowRequest) _then)
+class __$$UsersListsShowRequestImplCopyWithImpl<$Res>
+    extends _$UsersListsShowRequestCopyWithImpl<$Res,
+        _$UsersListsShowRequestImpl>
+    implements _$$UsersListsShowRequestImplCopyWith<$Res> {
+  __$$UsersListsShowRequestImplCopyWithImpl(_$UsersListsShowRequestImpl _value,
+      $Res Function(_$UsersListsShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +96,7 @@ class __$$_UsersListsShowRequestCopyWithImpl<$Res>
     Object? listId = null,
     Object? forPublic = freezed,
   }) {
-    return _then(_$_UsersListsShowRequest(
+    return _then(_$UsersListsShowRequestImpl(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
@@ -109,11 +111,11 @@ class __$$_UsersListsShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsShowRequest implements _UsersListsShowRequest {
-  const _$_UsersListsShowRequest({required this.listId, this.forPublic});
+class _$UsersListsShowRequestImpl implements _UsersListsShowRequest {
+  const _$UsersListsShowRequestImpl({required this.listId, this.forPublic});
 
-  factory _$_UsersListsShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsShowRequestFromJson(json);
+  factory _$UsersListsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsShowRequestImplFromJson(json);
 
   @override
   final String listId;
@@ -129,7 +131,7 @@ class _$_UsersListsShowRequest implements _UsersListsShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsShowRequest &&
+            other is _$UsersListsShowRequestImpl &&
             (identical(other.listId, listId) || other.listId == listId) &&
             (identical(other.forPublic, forPublic) ||
                 other.forPublic == forPublic));
@@ -142,13 +144,13 @@ class _$_UsersListsShowRequest implements _UsersListsShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsShowRequestCopyWith<_$_UsersListsShowRequest> get copyWith =>
-      __$$_UsersListsShowRequestCopyWithImpl<_$_UsersListsShowRequest>(
-          this, _$identity);
+  _$$UsersListsShowRequestImplCopyWith<_$UsersListsShowRequestImpl>
+      get copyWith => __$$UsersListsShowRequestImplCopyWithImpl<
+          _$UsersListsShowRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsShowRequestToJson(
+    return _$$UsersListsShowRequestImplToJson(
       this,
     );
   }
@@ -157,10 +159,10 @@ class _$_UsersListsShowRequest implements _UsersListsShowRequest {
 abstract class _UsersListsShowRequest implements UsersListsShowRequest {
   const factory _UsersListsShowRequest(
       {required final String listId,
-      final bool? forPublic}) = _$_UsersListsShowRequest;
+      final bool? forPublic}) = _$UsersListsShowRequestImpl;
 
   factory _UsersListsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsShowRequest.fromJson;
+      _$UsersListsShowRequestImpl.fromJson;
 
   @override
   String get listId;
@@ -168,6 +170,6 @@ abstract class _UsersListsShowRequest implements UsersListsShowRequest {
   bool? get forPublic;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsShowRequestCopyWith<_$_UsersListsShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersListsShowRequestImplCopyWith<_$UsersListsShowRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

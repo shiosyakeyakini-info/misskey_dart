@@ -136,9 +136,10 @@ class _$FlashCopyWithImpl<$Res, $Val extends Flash>
 }
 
 /// @nodoc
-abstract class _$$_FlashCopyWith<$Res> implements $FlashCopyWith<$Res> {
-  factory _$$_FlashCopyWith(_$_Flash value, $Res Function(_$_Flash) then) =
-      __$$_FlashCopyWithImpl<$Res>;
+abstract class _$$FlashImplCopyWith<$Res> implements $FlashCopyWith<$Res> {
+  factory _$$FlashImplCopyWith(
+          _$FlashImpl value, $Res Function(_$FlashImpl) then) =
+      __$$FlashImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -158,9 +159,11 @@ abstract class _$$_FlashCopyWith<$Res> implements $FlashCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FlashCopyWithImpl<$Res> extends _$FlashCopyWithImpl<$Res, _$_Flash>
-    implements _$$_FlashCopyWith<$Res> {
-  __$$_FlashCopyWithImpl(_$_Flash _value, $Res Function(_$_Flash) _then)
+class __$$FlashImplCopyWithImpl<$Res>
+    extends _$FlashCopyWithImpl<$Res, _$FlashImpl>
+    implements _$$FlashImplCopyWith<$Res> {
+  __$$FlashImplCopyWithImpl(
+      _$FlashImpl _value, $Res Function(_$FlashImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -177,7 +180,7 @@ class __$$_FlashCopyWithImpl<$Res> extends _$FlashCopyWithImpl<$Res, _$_Flash>
     Object? likedCount = freezed,
     Object? isLiked = null,
   }) {
-    return _then(_$_Flash(
+    return _then(_$FlashImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -224,8 +227,8 @@ class __$$_FlashCopyWithImpl<$Res> extends _$FlashCopyWithImpl<$Res, _$_Flash>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Flash implements _Flash {
-  const _$_Flash(
+class _$FlashImpl implements _Flash {
+  const _$FlashImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @DateTimeConverter() required this.updatedAt,
@@ -237,8 +240,8 @@ class _$_Flash implements _Flash {
       this.likedCount,
       this.isLiked = false});
 
-  factory _$_Flash.fromJson(Map<String, dynamic> json) =>
-      _$$_FlashFromJson(json);
+  factory _$FlashImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlashImplFromJson(json);
 
   @override
   final String id;
@@ -273,7 +276,7 @@ class _$_Flash implements _Flash {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Flash &&
+            other is _$FlashImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -297,12 +300,12 @@ class _$_Flash implements _Flash {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FlashCopyWith<_$_Flash> get copyWith =>
-      __$$_FlashCopyWithImpl<_$_Flash>(this, _$identity);
+  _$$FlashImplCopyWith<_$FlashImpl> get copyWith =>
+      __$$FlashImplCopyWithImpl<_$FlashImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FlashToJson(
+    return _$$FlashImplToJson(
       this,
     );
   }
@@ -319,9 +322,9 @@ abstract class _Flash implements Flash {
       required final String userId,
       required final User user,
       final int? likedCount,
-      final bool isLiked}) = _$_Flash;
+      final bool isLiked}) = _$FlashImpl;
 
-  factory _Flash.fromJson(Map<String, dynamic> json) = _$_Flash.fromJson;
+  factory _Flash.fromJson(Map<String, dynamic> json) = _$FlashImpl.fromJson;
 
   @override
   String get id;
@@ -347,6 +350,6 @@ abstract class _Flash implements Flash {
   bool get isLiked;
   @override
   @JsonKey(ignore: true)
-  _$$_FlashCopyWith<_$_Flash> get copyWith =>
+  _$$FlashImplCopyWith<_$FlashImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

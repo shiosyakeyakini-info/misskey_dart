@@ -74,22 +74,22 @@ class _$NotesUpdateRequestCopyWithImpl<$Res, $Val extends NotesUpdateRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesUpdateRequestCopyWith<$Res>
+abstract class _$$NotesUpdateRequestImplCopyWith<$Res>
     implements $NotesUpdateRequestCopyWith<$Res> {
-  factory _$$_NotesUpdateRequestCopyWith(_$_NotesUpdateRequest value,
-          $Res Function(_$_NotesUpdateRequest) then) =
-      __$$_NotesUpdateRequestCopyWithImpl<$Res>;
+  factory _$$NotesUpdateRequestImplCopyWith(_$NotesUpdateRequestImpl value,
+          $Res Function(_$NotesUpdateRequestImpl) then) =
+      __$$NotesUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId, String text, String? cw});
 }
 
 /// @nodoc
-class __$$_NotesUpdateRequestCopyWithImpl<$Res>
-    extends _$NotesUpdateRequestCopyWithImpl<$Res, _$_NotesUpdateRequest>
-    implements _$$_NotesUpdateRequestCopyWith<$Res> {
-  __$$_NotesUpdateRequestCopyWithImpl(
-      _$_NotesUpdateRequest _value, $Res Function(_$_NotesUpdateRequest) _then)
+class __$$NotesUpdateRequestImplCopyWithImpl<$Res>
+    extends _$NotesUpdateRequestCopyWithImpl<$Res, _$NotesUpdateRequestImpl>
+    implements _$$NotesUpdateRequestImplCopyWith<$Res> {
+  __$$NotesUpdateRequestImplCopyWithImpl(_$NotesUpdateRequestImpl _value,
+      $Res Function(_$NotesUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_NotesUpdateRequestCopyWithImpl<$Res>
     Object? text = null,
     Object? cw = freezed,
   }) {
-    return _then(_$_NotesUpdateRequest(
+    return _then(_$NotesUpdateRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -118,12 +118,12 @@ class __$$_NotesUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesUpdateRequest implements _NotesUpdateRequest {
-  const _$_NotesUpdateRequest(
+class _$NotesUpdateRequestImpl implements _NotesUpdateRequest {
+  const _$NotesUpdateRequestImpl(
       {required this.noteId, required this.text, this.cw});
 
-  factory _$_NotesUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesUpdateRequestFromJson(json);
+  factory _$NotesUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesUpdateRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -142,7 +142,7 @@ class _$_NotesUpdateRequest implements _NotesUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesUpdateRequest &&
+            other is _$NotesUpdateRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.cw, cw) || other.cw == cw));
@@ -155,13 +155,13 @@ class _$_NotesUpdateRequest implements _NotesUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesUpdateRequestCopyWith<_$_NotesUpdateRequest> get copyWith =>
-      __$$_NotesUpdateRequestCopyWithImpl<_$_NotesUpdateRequest>(
+  _$$NotesUpdateRequestImplCopyWith<_$NotesUpdateRequestImpl> get copyWith =>
+      __$$NotesUpdateRequestImplCopyWithImpl<_$NotesUpdateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesUpdateRequestToJson(
+    return _$$NotesUpdateRequestImplToJson(
       this,
     );
   }
@@ -171,10 +171,10 @@ abstract class _NotesUpdateRequest implements NotesUpdateRequest {
   const factory _NotesUpdateRequest(
       {required final String noteId,
       required final String text,
-      final String? cw}) = _$_NotesUpdateRequest;
+      final String? cw}) = _$NotesUpdateRequestImpl;
 
   factory _NotesUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesUpdateRequest.fromJson;
+      _$NotesUpdateRequestImpl.fromJson;
 
   @override
   String get noteId;
@@ -184,6 +184,6 @@ abstract class _NotesUpdateRequest implements NotesUpdateRequest {
   String? get cw;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesUpdateRequestCopyWith<_$_NotesUpdateRequest> get copyWith =>
+  _$$NotesUpdateRequestImplCopyWith<_$NotesUpdateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

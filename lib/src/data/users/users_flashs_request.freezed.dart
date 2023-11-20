@@ -80,22 +80,22 @@ class _$UsersFlashsRequestCopyWithImpl<$Res, $Val extends UsersFlashsRequest>
 }
 
 /// @nodoc
-abstract class _$$_UsersFlashsRequestCopyWith<$Res>
+abstract class _$$UsersFlashsRequestImplCopyWith<$Res>
     implements $UsersFlashsRequestCopyWith<$Res> {
-  factory _$$_UsersFlashsRequestCopyWith(_$_UsersFlashsRequest value,
-          $Res Function(_$_UsersFlashsRequest) then) =
-      __$$_UsersFlashsRequestCopyWithImpl<$Res>;
+  factory _$$UsersFlashsRequestImplCopyWith(_$UsersFlashsRequestImpl value,
+          $Res Function(_$UsersFlashsRequestImpl) then) =
+      __$$UsersFlashsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$_UsersFlashsRequestCopyWithImpl<$Res>
-    extends _$UsersFlashsRequestCopyWithImpl<$Res, _$_UsersFlashsRequest>
-    implements _$$_UsersFlashsRequestCopyWith<$Res> {
-  __$$_UsersFlashsRequestCopyWithImpl(
-      _$_UsersFlashsRequest _value, $Res Function(_$_UsersFlashsRequest) _then)
+class __$$UsersFlashsRequestImplCopyWithImpl<$Res>
+    extends _$UsersFlashsRequestCopyWithImpl<$Res, _$UsersFlashsRequestImpl>
+    implements _$$UsersFlashsRequestImplCopyWith<$Res> {
+  __$$UsersFlashsRequestImplCopyWithImpl(_$UsersFlashsRequestImpl _value,
+      $Res Function(_$UsersFlashsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_UsersFlashsRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_UsersFlashsRequest(
+    return _then(_$UsersFlashsRequestImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_UsersFlashsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersFlashsRequest implements _UsersFlashsRequest {
-  const _$_UsersFlashsRequest(
+class _$UsersFlashsRequestImpl implements _UsersFlashsRequest {
+  const _$UsersFlashsRequestImpl(
       {required this.userId, this.limit, this.sinceId, this.untilId});
 
-  factory _$_UsersFlashsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersFlashsRequestFromJson(json);
+  factory _$UsersFlashsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersFlashsRequestImplFromJson(json);
 
   @override
   final String userId;
@@ -154,7 +154,7 @@ class _$_UsersFlashsRequest implements _UsersFlashsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersFlashsRequest &&
+            other is _$UsersFlashsRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -168,13 +168,13 @@ class _$_UsersFlashsRequest implements _UsersFlashsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersFlashsRequestCopyWith<_$_UsersFlashsRequest> get copyWith =>
-      __$$_UsersFlashsRequestCopyWithImpl<_$_UsersFlashsRequest>(
+  _$$UsersFlashsRequestImplCopyWith<_$UsersFlashsRequestImpl> get copyWith =>
+      __$$UsersFlashsRequestImplCopyWithImpl<_$UsersFlashsRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersFlashsRequestToJson(
+    return _$$UsersFlashsRequestImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _UsersFlashsRequest implements UsersFlashsRequest {
       {required final String userId,
       final int? limit,
       final String? sinceId,
-      final String? untilId}) = _$_UsersFlashsRequest;
+      final String? untilId}) = _$UsersFlashsRequestImpl;
 
   factory _UsersFlashsRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersFlashsRequest.fromJson;
+      _$UsersFlashsRequestImpl.fromJson;
 
   @override
   String get userId;
@@ -200,6 +200,6 @@ abstract class _UsersFlashsRequest implements UsersFlashsRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersFlashsRequestCopyWith<_$_UsersFlashsRequest> get copyWith =>
+  _$$UsersFlashsRequestImplCopyWith<_$UsersFlashsRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

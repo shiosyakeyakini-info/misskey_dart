@@ -107,11 +107,12 @@ class _$ChannelsUpdateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChannelsUpdateRequestCopyWith<$Res>
+abstract class _$$ChannelsUpdateRequestImplCopyWith<$Res>
     implements $ChannelsUpdateRequestCopyWith<$Res> {
-  factory _$$_ChannelsUpdateRequestCopyWith(_$_ChannelsUpdateRequest value,
-          $Res Function(_$_ChannelsUpdateRequest) then) =
-      __$$_ChannelsUpdateRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsUpdateRequestImplCopyWith(
+          _$ChannelsUpdateRequestImpl value,
+          $Res Function(_$ChannelsUpdateRequestImpl) then) =
+      __$$ChannelsUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -125,11 +126,12 @@ abstract class _$$_ChannelsUpdateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ChannelsUpdateRequestCopyWithImpl<$Res>
-    extends _$ChannelsUpdateRequestCopyWithImpl<$Res, _$_ChannelsUpdateRequest>
-    implements _$$_ChannelsUpdateRequestCopyWith<$Res> {
-  __$$_ChannelsUpdateRequestCopyWithImpl(_$_ChannelsUpdateRequest _value,
-      $Res Function(_$_ChannelsUpdateRequest) _then)
+class __$$ChannelsUpdateRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsUpdateRequestCopyWithImpl<$Res,
+        _$ChannelsUpdateRequestImpl>
+    implements _$$ChannelsUpdateRequestImplCopyWith<$Res> {
+  __$$ChannelsUpdateRequestImplCopyWithImpl(_$ChannelsUpdateRequestImpl _value,
+      $Res Function(_$ChannelsUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,7 +145,7 @@ class __$$_ChannelsUpdateRequestCopyWithImpl<$Res>
     Object? pinnedNoteIds = freezed,
     Object? color = freezed,
   }) {
-    return _then(_$_ChannelsUpdateRequest(
+    return _then(_$ChannelsUpdateRequestImpl(
       channelId: null == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -178,8 +180,8 @@ class __$$_ChannelsUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsUpdateRequest implements _ChannelsUpdateRequest {
-  const _$_ChannelsUpdateRequest(
+class _$ChannelsUpdateRequestImpl implements _ChannelsUpdateRequest {
+  const _$ChannelsUpdateRequestImpl(
       {required this.channelId,
       this.name,
       this.description,
@@ -189,8 +191,8 @@ class _$_ChannelsUpdateRequest implements _ChannelsUpdateRequest {
       this.color})
       : _pinnedNoteIds = pinnedNoteIds;
 
-  factory _$_ChannelsUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsUpdateRequestFromJson(json);
+  factory _$ChannelsUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsUpdateRequestImplFromJson(json);
 
   @override
   final String channelId;
@@ -224,7 +226,7 @@ class _$_ChannelsUpdateRequest implements _ChannelsUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsUpdateRequest &&
+            other is _$ChannelsUpdateRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -254,13 +256,13 @@ class _$_ChannelsUpdateRequest implements _ChannelsUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsUpdateRequestCopyWith<_$_ChannelsUpdateRequest> get copyWith =>
-      __$$_ChannelsUpdateRequestCopyWithImpl<_$_ChannelsUpdateRequest>(
-          this, _$identity);
+  _$$ChannelsUpdateRequestImplCopyWith<_$ChannelsUpdateRequestImpl>
+      get copyWith => __$$ChannelsUpdateRequestImplCopyWithImpl<
+          _$ChannelsUpdateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsUpdateRequestToJson(
+    return _$$ChannelsUpdateRequestImplToJson(
       this,
     );
   }
@@ -274,10 +276,10 @@ abstract class _ChannelsUpdateRequest implements ChannelsUpdateRequest {
       final String? bannerId,
       final bool? isArchived,
       final List<String>? pinnedNoteIds,
-      final String? color}) = _$_ChannelsUpdateRequest;
+      final String? color}) = _$ChannelsUpdateRequestImpl;
 
   factory _ChannelsUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsUpdateRequest.fromJson;
+      _$ChannelsUpdateRequestImpl.fromJson;
 
   @override
   String get channelId;
@@ -295,6 +297,6 @@ abstract class _ChannelsUpdateRequest implements ChannelsUpdateRequest {
   String? get color;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsUpdateRequestCopyWith<_$_ChannelsUpdateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ChannelsUpdateRequestImplCopyWith<_$ChannelsUpdateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

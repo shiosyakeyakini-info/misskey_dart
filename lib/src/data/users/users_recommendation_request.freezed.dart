@@ -71,25 +71,25 @@ class _$UsersRecommendationRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersRecommendationRequestCopyWith<$Res>
+abstract class _$$UsersRecommendationRequestImplCopyWith<$Res>
     implements $UsersRecommendationRequestCopyWith<$Res> {
-  factory _$$_UsersRecommendationRequestCopyWith(
-          _$_UsersRecommendationRequest value,
-          $Res Function(_$_UsersRecommendationRequest) then) =
-      __$$_UsersRecommendationRequestCopyWithImpl<$Res>;
+  factory _$$UsersRecommendationRequestImplCopyWith(
+          _$UsersRecommendationRequestImpl value,
+          $Res Function(_$UsersRecommendationRequestImpl) then) =
+      __$$UsersRecommendationRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, int? offset});
 }
 
 /// @nodoc
-class __$$_UsersRecommendationRequestCopyWithImpl<$Res>
+class __$$UsersRecommendationRequestImplCopyWithImpl<$Res>
     extends _$UsersRecommendationRequestCopyWithImpl<$Res,
-        _$_UsersRecommendationRequest>
-    implements _$$_UsersRecommendationRequestCopyWith<$Res> {
-  __$$_UsersRecommendationRequestCopyWithImpl(
-      _$_UsersRecommendationRequest _value,
-      $Res Function(_$_UsersRecommendationRequest) _then)
+        _$UsersRecommendationRequestImpl>
+    implements _$$UsersRecommendationRequestImplCopyWith<$Res> {
+  __$$UsersRecommendationRequestImplCopyWithImpl(
+      _$UsersRecommendationRequestImpl _value,
+      $Res Function(_$UsersRecommendationRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$_UsersRecommendationRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_$_UsersRecommendationRequest(
+    return _then(_$UsersRecommendationRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -113,11 +113,12 @@ class __$$_UsersRecommendationRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersRecommendationRequest implements _UsersRecommendationRequest {
-  const _$_UsersRecommendationRequest({this.limit, this.offset});
+class _$UsersRecommendationRequestImpl implements _UsersRecommendationRequest {
+  const _$UsersRecommendationRequestImpl({this.limit, this.offset});
 
-  factory _$_UsersRecommendationRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersRecommendationRequestFromJson(json);
+  factory _$UsersRecommendationRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UsersRecommendationRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -133,7 +134,7 @@ class _$_UsersRecommendationRequest implements _UsersRecommendationRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersRecommendationRequest &&
+            other is _$UsersRecommendationRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset));
   }
@@ -145,13 +146,13 @@ class _$_UsersRecommendationRequest implements _UsersRecommendationRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersRecommendationRequestCopyWith<_$_UsersRecommendationRequest>
-      get copyWith => __$$_UsersRecommendationRequestCopyWithImpl<
-          _$_UsersRecommendationRequest>(this, _$identity);
+  _$$UsersRecommendationRequestImplCopyWith<_$UsersRecommendationRequestImpl>
+      get copyWith => __$$UsersRecommendationRequestImplCopyWithImpl<
+          _$UsersRecommendationRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersRecommendationRequestToJson(
+    return _$$UsersRecommendationRequestImplToJson(
       this,
     );
   }
@@ -160,10 +161,10 @@ class _$_UsersRecommendationRequest implements _UsersRecommendationRequest {
 abstract class _UsersRecommendationRequest
     implements UsersRecommendationRequest {
   const factory _UsersRecommendationRequest(
-      {final int? limit, final int? offset}) = _$_UsersRecommendationRequest;
+      {final int? limit, final int? offset}) = _$UsersRecommendationRequestImpl;
 
   factory _UsersRecommendationRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersRecommendationRequest.fromJson;
+      _$UsersRecommendationRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -171,6 +172,6 @@ abstract class _UsersRecommendationRequest
   int? get offset;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersRecommendationRequestCopyWith<_$_UsersRecommendationRequest>
+  _$$UsersRecommendationRequestImplCopyWith<_$UsersRecommendationRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

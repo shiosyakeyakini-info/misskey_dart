@@ -109,11 +109,12 @@ class _$UsersListsShowResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsShowResponseCopyWith<$Res>
+abstract class _$$UsersListsShowResponseImplCopyWith<$Res>
     implements $UsersListsShowResponseCopyWith<$Res> {
-  factory _$$_UsersListsShowResponseCopyWith(_$_UsersListsShowResponse value,
-          $Res Function(_$_UsersListsShowResponse) then) =
-      __$$_UsersListsShowResponseCopyWithImpl<$Res>;
+  factory _$$UsersListsShowResponseImplCopyWith(
+          _$UsersListsShowResponseImpl value,
+          $Res Function(_$UsersListsShowResponseImpl) then) =
+      __$$UsersListsShowResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -127,12 +128,13 @@ abstract class _$$_UsersListsShowResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UsersListsShowResponseCopyWithImpl<$Res>
+class __$$UsersListsShowResponseImplCopyWithImpl<$Res>
     extends _$UsersListsShowResponseCopyWithImpl<$Res,
-        _$_UsersListsShowResponse>
-    implements _$$_UsersListsShowResponseCopyWith<$Res> {
-  __$$_UsersListsShowResponseCopyWithImpl(_$_UsersListsShowResponse _value,
-      $Res Function(_$_UsersListsShowResponse) _then)
+        _$UsersListsShowResponseImpl>
+    implements _$$UsersListsShowResponseImplCopyWith<$Res> {
+  __$$UsersListsShowResponseImplCopyWithImpl(
+      _$UsersListsShowResponseImpl _value,
+      $Res Function(_$UsersListsShowResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -146,7 +148,7 @@ class __$$_UsersListsShowResponseCopyWithImpl<$Res>
     Object? likedCount = freezed,
     Object? isLiked = freezed,
   }) {
-    return _then(_$_UsersListsShowResponse(
+    return _then(_$UsersListsShowResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -181,8 +183,8 @@ class __$$_UsersListsShowResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsShowResponse implements _UsersListsShowResponse {
-  const _$_UsersListsShowResponse(
+class _$UsersListsShowResponseImpl implements _UsersListsShowResponse {
+  const _$UsersListsShowResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.name,
@@ -192,8 +194,8 @@ class _$_UsersListsShowResponse implements _UsersListsShowResponse {
       this.isLiked})
       : _userIds = userIds;
 
-  factory _$_UsersListsShowResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsShowResponseFromJson(json);
+  factory _$UsersListsShowResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsShowResponseImplFromJson(json);
 
   @override
   final String id;
@@ -227,7 +229,7 @@ class _$_UsersListsShowResponse implements _UsersListsShowResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsShowResponse &&
+            other is _$UsersListsShowResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -255,13 +257,13 @@ class _$_UsersListsShowResponse implements _UsersListsShowResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsShowResponseCopyWith<_$_UsersListsShowResponse> get copyWith =>
-      __$$_UsersListsShowResponseCopyWithImpl<_$_UsersListsShowResponse>(
-          this, _$identity);
+  _$$UsersListsShowResponseImplCopyWith<_$UsersListsShowResponseImpl>
+      get copyWith => __$$UsersListsShowResponseImplCopyWithImpl<
+          _$UsersListsShowResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsShowResponseToJson(
+    return _$$UsersListsShowResponseImplToJson(
       this,
     );
   }
@@ -275,10 +277,10 @@ abstract class _UsersListsShowResponse implements UsersListsShowResponse {
       required final List<String> userIds,
       final bool? isPublic,
       final int? likedCount,
-      final bool? isLiked}) = _$_UsersListsShowResponse;
+      final bool? isLiked}) = _$UsersListsShowResponseImpl;
 
   factory _UsersListsShowResponse.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsShowResponse.fromJson;
+      _$UsersListsShowResponseImpl.fromJson;
 
   @override
   String get id;
@@ -297,6 +299,6 @@ abstract class _UsersListsShowResponse implements UsersListsShowResponse {
   bool? get isLiked;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsShowResponseCopyWith<_$_UsersListsShowResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersListsShowResponseImplCopyWith<_$UsersListsShowResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -98,12 +98,12 @@ class _$GetAvatarDecorationsResponseCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetAvatarDecorationsResponseCopyWith<$Res>
+abstract class _$$GetAvatarDecorationsResponseImplCopyWith<$Res>
     implements $GetAvatarDecorationsResponseCopyWith<$Res> {
-  factory _$$_GetAvatarDecorationsResponseCopyWith(
-          _$_GetAvatarDecorationsResponse value,
-          $Res Function(_$_GetAvatarDecorationsResponse) then) =
-      __$$_GetAvatarDecorationsResponseCopyWithImpl<$Res>;
+  factory _$$GetAvatarDecorationsResponseImplCopyWith(
+          _$GetAvatarDecorationsResponseImpl value,
+          $Res Function(_$GetAvatarDecorationsResponseImpl) then) =
+      __$$GetAvatarDecorationsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,13 +115,13 @@ abstract class _$$_GetAvatarDecorationsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetAvatarDecorationsResponseCopyWithImpl<$Res>
+class __$$GetAvatarDecorationsResponseImplCopyWithImpl<$Res>
     extends _$GetAvatarDecorationsResponseCopyWithImpl<$Res,
-        _$_GetAvatarDecorationsResponse>
-    implements _$$_GetAvatarDecorationsResponseCopyWith<$Res> {
-  __$$_GetAvatarDecorationsResponseCopyWithImpl(
-      _$_GetAvatarDecorationsResponse _value,
-      $Res Function(_$_GetAvatarDecorationsResponse) _then)
+        _$GetAvatarDecorationsResponseImpl>
+    implements _$$GetAvatarDecorationsResponseImplCopyWith<$Res> {
+  __$$GetAvatarDecorationsResponseImplCopyWithImpl(
+      _$GetAvatarDecorationsResponseImpl _value,
+      $Res Function(_$GetAvatarDecorationsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,7 +133,7 @@ class __$$_GetAvatarDecorationsResponseCopyWithImpl<$Res>
     Object? url = null,
     Object? roleIdsThatCanBeUsedThisDecoration = null,
   }) {
-    return _then(_$_GetAvatarDecorationsResponse(
+    return _then(_$GetAvatarDecorationsResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -161,8 +161,9 @@ class __$$_GetAvatarDecorationsResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetAvatarDecorationsResponse implements _GetAvatarDecorationsResponse {
-  const _$_GetAvatarDecorationsResponse(
+class _$GetAvatarDecorationsResponseImpl
+    implements _GetAvatarDecorationsResponse {
+  const _$GetAvatarDecorationsResponseImpl(
       {required this.id,
       required this.name,
       required this.description,
@@ -171,8 +172,9 @@ class _$_GetAvatarDecorationsResponse implements _GetAvatarDecorationsResponse {
       : _roleIdsThatCanBeUsedThisDecoration =
             roleIdsThatCanBeUsedThisDecoration;
 
-  factory _$_GetAvatarDecorationsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_GetAvatarDecorationsResponseFromJson(json);
+  factory _$GetAvatarDecorationsResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetAvatarDecorationsResponseImplFromJson(json);
 
   @override
   final String id;
@@ -201,7 +203,7 @@ class _$_GetAvatarDecorationsResponse implements _GetAvatarDecorationsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetAvatarDecorationsResponse &&
+            other is _$GetAvatarDecorationsResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
@@ -220,13 +222,14 @@ class _$_GetAvatarDecorationsResponse implements _GetAvatarDecorationsResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetAvatarDecorationsResponseCopyWith<_$_GetAvatarDecorationsResponse>
-      get copyWith => __$$_GetAvatarDecorationsResponseCopyWithImpl<
-          _$_GetAvatarDecorationsResponse>(this, _$identity);
+  _$$GetAvatarDecorationsResponseImplCopyWith<
+          _$GetAvatarDecorationsResponseImpl>
+      get copyWith => __$$GetAvatarDecorationsResponseImplCopyWithImpl<
+          _$GetAvatarDecorationsResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetAvatarDecorationsResponseToJson(
+    return _$$GetAvatarDecorationsResponseImplToJson(
       this,
     );
   }
@@ -240,10 +243,10 @@ abstract class _GetAvatarDecorationsResponse
           required final String description,
           @UriConverter() required final Uri url,
           required final List<String> roleIdsThatCanBeUsedThisDecoration}) =
-      _$_GetAvatarDecorationsResponse;
+      _$GetAvatarDecorationsResponseImpl;
 
   factory _GetAvatarDecorationsResponse.fromJson(Map<String, dynamic> json) =
-      _$_GetAvatarDecorationsResponse.fromJson;
+      _$GetAvatarDecorationsResponseImpl.fromJson;
 
   @override
   String get id;
@@ -258,6 +261,7 @@ abstract class _GetAvatarDecorationsResponse
   List<String> get roleIdsThatCanBeUsedThisDecoration;
   @override
   @JsonKey(ignore: true)
-  _$$_GetAvatarDecorationsResponseCopyWith<_$_GetAvatarDecorationsResponse>
+  _$$GetAvatarDecorationsResponseImplCopyWith<
+          _$GetAvatarDecorationsResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

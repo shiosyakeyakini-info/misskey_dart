@@ -62,22 +62,22 @@ class _$PingResponseCopyWithImpl<$Res, $Val extends PingResponse>
 }
 
 /// @nodoc
-abstract class _$$_PingResponseCopyWith<$Res>
+abstract class _$$PingResponseImplCopyWith<$Res>
     implements $PingResponseCopyWith<$Res> {
-  factory _$$_PingResponseCopyWith(
-          _$_PingResponse value, $Res Function(_$_PingResponse) then) =
-      __$$_PingResponseCopyWithImpl<$Res>;
+  factory _$$PingResponseImplCopyWith(
+          _$PingResponseImpl value, $Res Function(_$PingResponseImpl) then) =
+      __$$PingResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int pong});
 }
 
 /// @nodoc
-class __$$_PingResponseCopyWithImpl<$Res>
-    extends _$PingResponseCopyWithImpl<$Res, _$_PingResponse>
-    implements _$$_PingResponseCopyWith<$Res> {
-  __$$_PingResponseCopyWithImpl(
-      _$_PingResponse _value, $Res Function(_$_PingResponse) _then)
+class __$$PingResponseImplCopyWithImpl<$Res>
+    extends _$PingResponseCopyWithImpl<$Res, _$PingResponseImpl>
+    implements _$$PingResponseImplCopyWith<$Res> {
+  __$$PingResponseImplCopyWithImpl(
+      _$PingResponseImpl _value, $Res Function(_$PingResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_PingResponseCopyWithImpl<$Res>
   $Res call({
     Object? pong = null,
   }) {
-    return _then(_$_PingResponse(
+    return _then(_$PingResponseImpl(
       pong: null == pong
           ? _value.pong
           : pong // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_PingResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PingResponse implements _PingResponse {
-  const _$_PingResponse({required this.pong});
+class _$PingResponseImpl implements _PingResponse {
+  const _$PingResponseImpl({required this.pong});
 
-  factory _$_PingResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_PingResponseFromJson(json);
+  factory _$PingResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PingResponseImplFromJson(json);
 
   @override
   final int pong;
@@ -114,7 +114,7 @@ class _$_PingResponse implements _PingResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PingResponse &&
+            other is _$PingResponseImpl &&
             (identical(other.pong, pong) || other.pong == pong));
   }
 
@@ -125,27 +125,27 @@ class _$_PingResponse implements _PingResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PingResponseCopyWith<_$_PingResponse> get copyWith =>
-      __$$_PingResponseCopyWithImpl<_$_PingResponse>(this, _$identity);
+  _$$PingResponseImplCopyWith<_$PingResponseImpl> get copyWith =>
+      __$$PingResponseImplCopyWithImpl<_$PingResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PingResponseToJson(
+    return _$$PingResponseImplToJson(
       this,
     );
   }
 }
 
 abstract class _PingResponse implements PingResponse {
-  const factory _PingResponse({required final int pong}) = _$_PingResponse;
+  const factory _PingResponse({required final int pong}) = _$PingResponseImpl;
 
   factory _PingResponse.fromJson(Map<String, dynamic> json) =
-      _$_PingResponse.fromJson;
+      _$PingResponseImpl.fromJson;
 
   @override
   int get pong;
   @override
   @JsonKey(ignore: true)
-  _$$_PingResponseCopyWith<_$_PingResponse> get copyWith =>
+  _$$PingResponseImplCopyWith<_$PingResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -109,11 +109,11 @@ class _$ServerInfoResponseCopyWithImpl<$Res, $Val extends ServerInfoResponse>
 }
 
 /// @nodoc
-abstract class _$$_ServerInfoResponseCopyWith<$Res>
+abstract class _$$ServerInfoResponseImplCopyWith<$Res>
     implements $ServerInfoResponseCopyWith<$Res> {
-  factory _$$_ServerInfoResponseCopyWith(_$_ServerInfoResponse value,
-          $Res Function(_$_ServerInfoResponse) then) =
-      __$$_ServerInfoResponseCopyWithImpl<$Res>;
+  factory _$$ServerInfoResponseImplCopyWith(_$ServerInfoResponseImpl value,
+          $Res Function(_$ServerInfoResponseImpl) then) =
+      __$$ServerInfoResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -128,11 +128,11 @@ abstract class _$$_ServerInfoResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ServerInfoResponseCopyWithImpl<$Res>
-    extends _$ServerInfoResponseCopyWithImpl<$Res, _$_ServerInfoResponse>
-    implements _$$_ServerInfoResponseCopyWith<$Res> {
-  __$$_ServerInfoResponseCopyWithImpl(
-      _$_ServerInfoResponse _value, $Res Function(_$_ServerInfoResponse) _then)
+class __$$ServerInfoResponseImplCopyWithImpl<$Res>
+    extends _$ServerInfoResponseCopyWithImpl<$Res, _$ServerInfoResponseImpl>
+    implements _$$ServerInfoResponseImplCopyWith<$Res> {
+  __$$ServerInfoResponseImplCopyWithImpl(_$ServerInfoResponseImpl _value,
+      $Res Function(_$ServerInfoResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,7 +143,7 @@ class __$$_ServerInfoResponseCopyWithImpl<$Res>
     Object? mem = null,
     Object? fs = null,
   }) {
-    return _then(_$_ServerInfoResponse(
+    return _then(_$ServerInfoResponseImpl(
       machine: null == machine
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
@@ -166,15 +166,15 @@ class __$$_ServerInfoResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ServerInfoResponse implements _ServerInfoResponse {
-  const _$_ServerInfoResponse(
+class _$ServerInfoResponseImpl implements _ServerInfoResponse {
+  const _$ServerInfoResponseImpl(
       {required this.machine,
       required this.cpu,
       required this.mem,
       required this.fs});
 
-  factory _$_ServerInfoResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_ServerInfoResponseFromJson(json);
+  factory _$ServerInfoResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ServerInfoResponseImplFromJson(json);
 
   @override
   final String machine;
@@ -194,7 +194,7 @@ class _$_ServerInfoResponse implements _ServerInfoResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ServerInfoResponse &&
+            other is _$ServerInfoResponseImpl &&
             (identical(other.machine, machine) || other.machine == machine) &&
             (identical(other.cpu, cpu) || other.cpu == cpu) &&
             (identical(other.mem, mem) || other.mem == mem) &&
@@ -208,13 +208,13 @@ class _$_ServerInfoResponse implements _ServerInfoResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ServerInfoResponseCopyWith<_$_ServerInfoResponse> get copyWith =>
-      __$$_ServerInfoResponseCopyWithImpl<_$_ServerInfoResponse>(
+  _$$ServerInfoResponseImplCopyWith<_$ServerInfoResponseImpl> get copyWith =>
+      __$$ServerInfoResponseImplCopyWithImpl<_$ServerInfoResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ServerInfoResponseToJson(
+    return _$$ServerInfoResponseImplToJson(
       this,
     );
   }
@@ -225,10 +225,10 @@ abstract class _ServerInfoResponse implements ServerInfoResponse {
       {required final String machine,
       required final ServerInfoCpu cpu,
       required final ServerInfoMem mem,
-      required final ServerInfoFs fs}) = _$_ServerInfoResponse;
+      required final ServerInfoFs fs}) = _$ServerInfoResponseImpl;
 
   factory _ServerInfoResponse.fromJson(Map<String, dynamic> json) =
-      _$_ServerInfoResponse.fromJson;
+      _$ServerInfoResponseImpl.fromJson;
 
   @override
   String get machine;
@@ -240,7 +240,7 @@ abstract class _ServerInfoResponse implements ServerInfoResponse {
   ServerInfoFs get fs;
   @override
   @JsonKey(ignore: true)
-  _$$_ServerInfoResponseCopyWith<_$_ServerInfoResponse> get copyWith =>
+  _$$ServerInfoResponseImplCopyWith<_$ServerInfoResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -298,22 +298,22 @@ class _$ServerInfoCpuCopyWithImpl<$Res, $Val extends ServerInfoCpu>
 }
 
 /// @nodoc
-abstract class _$$_ServerInfoCpuCopyWith<$Res>
+abstract class _$$ServerInfoCpuImplCopyWith<$Res>
     implements $ServerInfoCpuCopyWith<$Res> {
-  factory _$$_ServerInfoCpuCopyWith(
-          _$_ServerInfoCpu value, $Res Function(_$_ServerInfoCpu) then) =
-      __$$_ServerInfoCpuCopyWithImpl<$Res>;
+  factory _$$ServerInfoCpuImplCopyWith(
+          _$ServerInfoCpuImpl value, $Res Function(_$ServerInfoCpuImpl) then) =
+      __$$ServerInfoCpuImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String model, int cores});
 }
 
 /// @nodoc
-class __$$_ServerInfoCpuCopyWithImpl<$Res>
-    extends _$ServerInfoCpuCopyWithImpl<$Res, _$_ServerInfoCpu>
-    implements _$$_ServerInfoCpuCopyWith<$Res> {
-  __$$_ServerInfoCpuCopyWithImpl(
-      _$_ServerInfoCpu _value, $Res Function(_$_ServerInfoCpu) _then)
+class __$$ServerInfoCpuImplCopyWithImpl<$Res>
+    extends _$ServerInfoCpuCopyWithImpl<$Res, _$ServerInfoCpuImpl>
+    implements _$$ServerInfoCpuImplCopyWith<$Res> {
+  __$$ServerInfoCpuImplCopyWithImpl(
+      _$ServerInfoCpuImpl _value, $Res Function(_$ServerInfoCpuImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -322,7 +322,7 @@ class __$$_ServerInfoCpuCopyWithImpl<$Res>
     Object? model = null,
     Object? cores = null,
   }) {
-    return _then(_$_ServerInfoCpu(
+    return _then(_$ServerInfoCpuImpl(
       model: null == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -337,11 +337,11 @@ class __$$_ServerInfoCpuCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ServerInfoCpu implements _ServerInfoCpu {
-  const _$_ServerInfoCpu({required this.model, required this.cores});
+class _$ServerInfoCpuImpl implements _ServerInfoCpu {
+  const _$ServerInfoCpuImpl({required this.model, required this.cores});
 
-  factory _$_ServerInfoCpu.fromJson(Map<String, dynamic> json) =>
-      _$$_ServerInfoCpuFromJson(json);
+  factory _$ServerInfoCpuImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ServerInfoCpuImplFromJson(json);
 
   @override
   final String model;
@@ -357,7 +357,7 @@ class _$_ServerInfoCpu implements _ServerInfoCpu {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ServerInfoCpu &&
+            other is _$ServerInfoCpuImpl &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.cores, cores) || other.cores == cores));
   }
@@ -369,12 +369,12 @@ class _$_ServerInfoCpu implements _ServerInfoCpu {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ServerInfoCpuCopyWith<_$_ServerInfoCpu> get copyWith =>
-      __$$_ServerInfoCpuCopyWithImpl<_$_ServerInfoCpu>(this, _$identity);
+  _$$ServerInfoCpuImplCopyWith<_$ServerInfoCpuImpl> get copyWith =>
+      __$$ServerInfoCpuImplCopyWithImpl<_$ServerInfoCpuImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ServerInfoCpuToJson(
+    return _$$ServerInfoCpuImplToJson(
       this,
     );
   }
@@ -383,10 +383,10 @@ class _$_ServerInfoCpu implements _ServerInfoCpu {
 abstract class _ServerInfoCpu implements ServerInfoCpu {
   const factory _ServerInfoCpu(
       {required final String model,
-      required final int cores}) = _$_ServerInfoCpu;
+      required final int cores}) = _$ServerInfoCpuImpl;
 
   factory _ServerInfoCpu.fromJson(Map<String, dynamic> json) =
-      _$_ServerInfoCpu.fromJson;
+      _$ServerInfoCpuImpl.fromJson;
 
   @override
   String get model;
@@ -394,7 +394,7 @@ abstract class _ServerInfoCpu implements ServerInfoCpu {
   int get cores;
   @override
   @JsonKey(ignore: true)
-  _$$_ServerInfoCpuCopyWith<_$_ServerInfoCpu> get copyWith =>
+  _$$ServerInfoCpuImplCopyWith<_$ServerInfoCpuImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -446,22 +446,22 @@ class _$ServerInfoMemCopyWithImpl<$Res, $Val extends ServerInfoMem>
 }
 
 /// @nodoc
-abstract class _$$_ServerInfoMemCopyWith<$Res>
+abstract class _$$ServerInfoMemImplCopyWith<$Res>
     implements $ServerInfoMemCopyWith<$Res> {
-  factory _$$_ServerInfoMemCopyWith(
-          _$_ServerInfoMem value, $Res Function(_$_ServerInfoMem) then) =
-      __$$_ServerInfoMemCopyWithImpl<$Res>;
+  factory _$$ServerInfoMemImplCopyWith(
+          _$ServerInfoMemImpl value, $Res Function(_$ServerInfoMemImpl) then) =
+      __$$ServerInfoMemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int total});
 }
 
 /// @nodoc
-class __$$_ServerInfoMemCopyWithImpl<$Res>
-    extends _$ServerInfoMemCopyWithImpl<$Res, _$_ServerInfoMem>
-    implements _$$_ServerInfoMemCopyWith<$Res> {
-  __$$_ServerInfoMemCopyWithImpl(
-      _$_ServerInfoMem _value, $Res Function(_$_ServerInfoMem) _then)
+class __$$ServerInfoMemImplCopyWithImpl<$Res>
+    extends _$ServerInfoMemCopyWithImpl<$Res, _$ServerInfoMemImpl>
+    implements _$$ServerInfoMemImplCopyWith<$Res> {
+  __$$ServerInfoMemImplCopyWithImpl(
+      _$ServerInfoMemImpl _value, $Res Function(_$ServerInfoMemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -469,7 +469,7 @@ class __$$_ServerInfoMemCopyWithImpl<$Res>
   $Res call({
     Object? total = null,
   }) {
-    return _then(_$_ServerInfoMem(
+    return _then(_$ServerInfoMemImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -480,11 +480,11 @@ class __$$_ServerInfoMemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ServerInfoMem implements _ServerInfoMem {
-  const _$_ServerInfoMem({required this.total});
+class _$ServerInfoMemImpl implements _ServerInfoMem {
+  const _$ServerInfoMemImpl({required this.total});
 
-  factory _$_ServerInfoMem.fromJson(Map<String, dynamic> json) =>
-      _$$_ServerInfoMemFromJson(json);
+  factory _$ServerInfoMemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ServerInfoMemImplFromJson(json);
 
   @override
   final int total;
@@ -498,7 +498,7 @@ class _$_ServerInfoMem implements _ServerInfoMem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ServerInfoMem &&
+            other is _$ServerInfoMemImpl &&
             (identical(other.total, total) || other.total == total));
   }
 
@@ -509,28 +509,29 @@ class _$_ServerInfoMem implements _ServerInfoMem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ServerInfoMemCopyWith<_$_ServerInfoMem> get copyWith =>
-      __$$_ServerInfoMemCopyWithImpl<_$_ServerInfoMem>(this, _$identity);
+  _$$ServerInfoMemImplCopyWith<_$ServerInfoMemImpl> get copyWith =>
+      __$$ServerInfoMemImplCopyWithImpl<_$ServerInfoMemImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ServerInfoMemToJson(
+    return _$$ServerInfoMemImplToJson(
       this,
     );
   }
 }
 
 abstract class _ServerInfoMem implements ServerInfoMem {
-  const factory _ServerInfoMem({required final int total}) = _$_ServerInfoMem;
+  const factory _ServerInfoMem({required final int total}) =
+      _$ServerInfoMemImpl;
 
   factory _ServerInfoMem.fromJson(Map<String, dynamic> json) =
-      _$_ServerInfoMem.fromJson;
+      _$ServerInfoMemImpl.fromJson;
 
   @override
   int get total;
   @override
   @JsonKey(ignore: true)
-  _$$_ServerInfoMemCopyWith<_$_ServerInfoMem> get copyWith =>
+  _$$ServerInfoMemImplCopyWith<_$ServerInfoMemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -588,22 +589,22 @@ class _$ServerInfoFsCopyWithImpl<$Res, $Val extends ServerInfoFs>
 }
 
 /// @nodoc
-abstract class _$$_ServerInfoFsCopyWith<$Res>
+abstract class _$$ServerInfoFsImplCopyWith<$Res>
     implements $ServerInfoFsCopyWith<$Res> {
-  factory _$$_ServerInfoFsCopyWith(
-          _$_ServerInfoFs value, $Res Function(_$_ServerInfoFs) then) =
-      __$$_ServerInfoFsCopyWithImpl<$Res>;
+  factory _$$ServerInfoFsImplCopyWith(
+          _$ServerInfoFsImpl value, $Res Function(_$ServerInfoFsImpl) then) =
+      __$$ServerInfoFsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int total, int used});
 }
 
 /// @nodoc
-class __$$_ServerInfoFsCopyWithImpl<$Res>
-    extends _$ServerInfoFsCopyWithImpl<$Res, _$_ServerInfoFs>
-    implements _$$_ServerInfoFsCopyWith<$Res> {
-  __$$_ServerInfoFsCopyWithImpl(
-      _$_ServerInfoFs _value, $Res Function(_$_ServerInfoFs) _then)
+class __$$ServerInfoFsImplCopyWithImpl<$Res>
+    extends _$ServerInfoFsCopyWithImpl<$Res, _$ServerInfoFsImpl>
+    implements _$$ServerInfoFsImplCopyWith<$Res> {
+  __$$ServerInfoFsImplCopyWithImpl(
+      _$ServerInfoFsImpl _value, $Res Function(_$ServerInfoFsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -612,7 +613,7 @@ class __$$_ServerInfoFsCopyWithImpl<$Res>
     Object? total = null,
     Object? used = null,
   }) {
-    return _then(_$_ServerInfoFs(
+    return _then(_$ServerInfoFsImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -627,11 +628,11 @@ class __$$_ServerInfoFsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ServerInfoFs implements _ServerInfoFs {
-  const _$_ServerInfoFs({required this.total, required this.used});
+class _$ServerInfoFsImpl implements _ServerInfoFs {
+  const _$ServerInfoFsImpl({required this.total, required this.used});
 
-  factory _$_ServerInfoFs.fromJson(Map<String, dynamic> json) =>
-      _$$_ServerInfoFsFromJson(json);
+  factory _$ServerInfoFsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ServerInfoFsImplFromJson(json);
 
   @override
   final int total;
@@ -647,7 +648,7 @@ class _$_ServerInfoFs implements _ServerInfoFs {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ServerInfoFs &&
+            other is _$ServerInfoFsImpl &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.used, used) || other.used == used));
   }
@@ -659,12 +660,12 @@ class _$_ServerInfoFs implements _ServerInfoFs {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ServerInfoFsCopyWith<_$_ServerInfoFs> get copyWith =>
-      __$$_ServerInfoFsCopyWithImpl<_$_ServerInfoFs>(this, _$identity);
+  _$$ServerInfoFsImplCopyWith<_$ServerInfoFsImpl> get copyWith =>
+      __$$ServerInfoFsImplCopyWithImpl<_$ServerInfoFsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ServerInfoFsToJson(
+    return _$$ServerInfoFsImplToJson(
       this,
     );
   }
@@ -672,10 +673,10 @@ class _$_ServerInfoFs implements _ServerInfoFs {
 
 abstract class _ServerInfoFs implements ServerInfoFs {
   const factory _ServerInfoFs(
-      {required final int total, required final int used}) = _$_ServerInfoFs;
+      {required final int total, required final int used}) = _$ServerInfoFsImpl;
 
   factory _ServerInfoFs.fromJson(Map<String, dynamic> json) =
-      _$_ServerInfoFs.fromJson;
+      _$ServerInfoFsImpl.fromJson;
 
   @override
   int get total;
@@ -683,6 +684,6 @@ abstract class _ServerInfoFs implements ServerInfoFs {
   int get used;
   @override
   @JsonKey(ignore: true)
-  _$$_ServerInfoFsCopyWith<_$_ServerInfoFs> get copyWith =>
+  _$$ServerInfoFsImplCopyWith<_$ServerInfoFsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

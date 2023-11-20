@@ -78,11 +78,11 @@ class _$NotesStateResponseCopyWithImpl<$Res, $Val extends NotesStateResponse>
 }
 
 /// @nodoc
-abstract class _$$_NotesStateResponseCopyWith<$Res>
+abstract class _$$NotesStateResponseImplCopyWith<$Res>
     implements $NotesStateResponseCopyWith<$Res> {
-  factory _$$_NotesStateResponseCopyWith(_$_NotesStateResponse value,
-          $Res Function(_$_NotesStateResponse) then) =
-      __$$_NotesStateResponseCopyWithImpl<$Res>;
+  factory _$$NotesStateResponseImplCopyWith(_$NotesStateResponseImpl value,
+          $Res Function(_$NotesStateResponseImpl) then) =
+      __$$NotesStateResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -92,11 +92,11 @@ abstract class _$$_NotesStateResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesStateResponseCopyWithImpl<$Res>
-    extends _$NotesStateResponseCopyWithImpl<$Res, _$_NotesStateResponse>
-    implements _$$_NotesStateResponseCopyWith<$Res> {
-  __$$_NotesStateResponseCopyWithImpl(
-      _$_NotesStateResponse _value, $Res Function(_$_NotesStateResponse) _then)
+class __$$NotesStateResponseImplCopyWithImpl<$Res>
+    extends _$NotesStateResponseCopyWithImpl<$Res, _$NotesStateResponseImpl>
+    implements _$$NotesStateResponseImplCopyWith<$Res> {
+  __$$NotesStateResponseImplCopyWithImpl(_$NotesStateResponseImpl _value,
+      $Res Function(_$NotesStateResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_NotesStateResponseCopyWithImpl<$Res>
     Object? isMutedThread = null,
     Object? isWatching = freezed,
   }) {
-    return _then(_$_NotesStateResponse(
+    return _then(_$NotesStateResponseImpl(
       isFavorited: null == isFavorited
           ? _value.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
@@ -125,14 +125,14 @@ class __$$_NotesStateResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesStateResponse implements _NotesStateResponse {
-  const _$_NotesStateResponse(
+class _$NotesStateResponseImpl implements _NotesStateResponse {
+  const _$NotesStateResponseImpl(
       {required this.isFavorited,
       required this.isMutedThread,
       @Deprecated("This property is already removed") this.isWatching});
 
-  factory _$_NotesStateResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesStateResponseFromJson(json);
+  factory _$NotesStateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesStateResponseImplFromJson(json);
 
   @override
   final bool isFavorited;
@@ -151,7 +151,7 @@ class _$_NotesStateResponse implements _NotesStateResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesStateResponse &&
+            other is _$NotesStateResponseImpl &&
             (identical(other.isFavorited, isFavorited) ||
                 other.isFavorited == isFavorited) &&
             (identical(other.isMutedThread, isMutedThread) ||
@@ -168,13 +168,13 @@ class _$_NotesStateResponse implements _NotesStateResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesStateResponseCopyWith<_$_NotesStateResponse> get copyWith =>
-      __$$_NotesStateResponseCopyWithImpl<_$_NotesStateResponse>(
+  _$$NotesStateResponseImplCopyWith<_$NotesStateResponseImpl> get copyWith =>
+      __$$NotesStateResponseImplCopyWithImpl<_$NotesStateResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesStateResponseToJson(
+    return _$$NotesStateResponseImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _NotesStateResponse implements NotesStateResponse {
       {required final bool isFavorited,
       required final bool isMutedThread,
       @Deprecated("This property is already removed")
-      final bool? isWatching}) = _$_NotesStateResponse;
+      final bool? isWatching}) = _$NotesStateResponseImpl;
 
   factory _NotesStateResponse.fromJson(Map<String, dynamic> json) =
-      _$_NotesStateResponse.fromJson;
+      _$NotesStateResponseImpl.fromJson;
 
   @override
   bool get isFavorited;
@@ -199,6 +199,6 @@ abstract class _NotesStateResponse implements NotesStateResponse {
   bool? get isWatching;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesStateResponseCopyWith<_$_NotesStateResponse> get copyWith =>
+  _$$NotesStateResponseImplCopyWith<_$NotesStateResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -80,22 +80,22 @@ class _$ClipsUpdateRequestCopyWithImpl<$Res, $Val extends ClipsUpdateRequest>
 }
 
 /// @nodoc
-abstract class _$$_ClipsUpdateRequestCopyWith<$Res>
+abstract class _$$ClipsUpdateRequestImplCopyWith<$Res>
     implements $ClipsUpdateRequestCopyWith<$Res> {
-  factory _$$_ClipsUpdateRequestCopyWith(_$_ClipsUpdateRequest value,
-          $Res Function(_$_ClipsUpdateRequest) then) =
-      __$$_ClipsUpdateRequestCopyWithImpl<$Res>;
+  factory _$$ClipsUpdateRequestImplCopyWith(_$ClipsUpdateRequestImpl value,
+          $Res Function(_$ClipsUpdateRequestImpl) then) =
+      __$$ClipsUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String clipId, String name, bool? isPublic, String? description});
 }
 
 /// @nodoc
-class __$$_ClipsUpdateRequestCopyWithImpl<$Res>
-    extends _$ClipsUpdateRequestCopyWithImpl<$Res, _$_ClipsUpdateRequest>
-    implements _$$_ClipsUpdateRequestCopyWith<$Res> {
-  __$$_ClipsUpdateRequestCopyWithImpl(
-      _$_ClipsUpdateRequest _value, $Res Function(_$_ClipsUpdateRequest) _then)
+class __$$ClipsUpdateRequestImplCopyWithImpl<$Res>
+    extends _$ClipsUpdateRequestCopyWithImpl<$Res, _$ClipsUpdateRequestImpl>
+    implements _$$ClipsUpdateRequestImplCopyWith<$Res> {
+  __$$ClipsUpdateRequestImplCopyWithImpl(_$ClipsUpdateRequestImpl _value,
+      $Res Function(_$ClipsUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_ClipsUpdateRequestCopyWithImpl<$Res>
     Object? isPublic = freezed,
     Object? description = freezed,
   }) {
-    return _then(_$_ClipsUpdateRequest(
+    return _then(_$ClipsUpdateRequestImpl(
       clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
@@ -129,15 +129,15 @@ class __$$_ClipsUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsUpdateRequest implements _ClipsUpdateRequest {
-  const _$_ClipsUpdateRequest(
+class _$ClipsUpdateRequestImpl implements _ClipsUpdateRequest {
+  const _$ClipsUpdateRequestImpl(
       {required this.clipId,
       required this.name,
       this.isPublic,
       this.description});
 
-  factory _$_ClipsUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsUpdateRequestFromJson(json);
+  factory _$ClipsUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsUpdateRequestImplFromJson(json);
 
   @override
   final String clipId;
@@ -157,7 +157,7 @@ class _$_ClipsUpdateRequest implements _ClipsUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsUpdateRequest &&
+            other is _$ClipsUpdateRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.isPublic, isPublic) ||
@@ -174,13 +174,13 @@ class _$_ClipsUpdateRequest implements _ClipsUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsUpdateRequestCopyWith<_$_ClipsUpdateRequest> get copyWith =>
-      __$$_ClipsUpdateRequestCopyWithImpl<_$_ClipsUpdateRequest>(
+  _$$ClipsUpdateRequestImplCopyWith<_$ClipsUpdateRequestImpl> get copyWith =>
+      __$$ClipsUpdateRequestImplCopyWithImpl<_$ClipsUpdateRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsUpdateRequestToJson(
+    return _$$ClipsUpdateRequestImplToJson(
       this,
     );
   }
@@ -191,10 +191,10 @@ abstract class _ClipsUpdateRequest implements ClipsUpdateRequest {
       {required final String clipId,
       required final String name,
       final bool? isPublic,
-      final String? description}) = _$_ClipsUpdateRequest;
+      final String? description}) = _$ClipsUpdateRequestImpl;
 
   factory _ClipsUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsUpdateRequest.fromJson;
+      _$ClipsUpdateRequestImpl.fromJson;
 
   @override
   String get clipId;
@@ -206,6 +206,6 @@ abstract class _ClipsUpdateRequest implements ClipsUpdateRequest {
   String? get description;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsUpdateRequestCopyWith<_$_ClipsUpdateRequest> get copyWith =>
+  _$$ClipsUpdateRequestImplCopyWith<_$ClipsUpdateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -64,23 +64,25 @@ class _$DriveFilesDeleteRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DriveFilesDeleteRequestCopyWith<$Res>
+abstract class _$$DriveFilesDeleteRequestImplCopyWith<$Res>
     implements $DriveFilesDeleteRequestCopyWith<$Res> {
-  factory _$$_DriveFilesDeleteRequestCopyWith(_$_DriveFilesDeleteRequest value,
-          $Res Function(_$_DriveFilesDeleteRequest) then) =
-      __$$_DriveFilesDeleteRequestCopyWithImpl<$Res>;
+  factory _$$DriveFilesDeleteRequestImplCopyWith(
+          _$DriveFilesDeleteRequestImpl value,
+          $Res Function(_$DriveFilesDeleteRequestImpl) then) =
+      __$$DriveFilesDeleteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String fileId});
 }
 
 /// @nodoc
-class __$$_DriveFilesDeleteRequestCopyWithImpl<$Res>
+class __$$DriveFilesDeleteRequestImplCopyWithImpl<$Res>
     extends _$DriveFilesDeleteRequestCopyWithImpl<$Res,
-        _$_DriveFilesDeleteRequest>
-    implements _$$_DriveFilesDeleteRequestCopyWith<$Res> {
-  __$$_DriveFilesDeleteRequestCopyWithImpl(_$_DriveFilesDeleteRequest _value,
-      $Res Function(_$_DriveFilesDeleteRequest) _then)
+        _$DriveFilesDeleteRequestImpl>
+    implements _$$DriveFilesDeleteRequestImplCopyWith<$Res> {
+  __$$DriveFilesDeleteRequestImplCopyWithImpl(
+      _$DriveFilesDeleteRequestImpl _value,
+      $Res Function(_$DriveFilesDeleteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +90,7 @@ class __$$_DriveFilesDeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object? fileId = null,
   }) {
-    return _then(_$_DriveFilesDeleteRequest(
+    return _then(_$DriveFilesDeleteRequestImpl(
       fileId: null == fileId
           ? _value.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,11 @@ class __$$_DriveFilesDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFilesDeleteRequest implements _DriveFilesDeleteRequest {
-  const _$_DriveFilesDeleteRequest({required this.fileId});
+class _$DriveFilesDeleteRequestImpl implements _DriveFilesDeleteRequest {
+  const _$DriveFilesDeleteRequestImpl({required this.fileId});
 
-  factory _$_DriveFilesDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFilesDeleteRequestFromJson(json);
+  factory _$DriveFilesDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFilesDeleteRequestImplFromJson(json);
 
   @override
   final String fileId;
@@ -117,7 +119,7 @@ class _$_DriveFilesDeleteRequest implements _DriveFilesDeleteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFilesDeleteRequest &&
+            other is _$DriveFilesDeleteRequestImpl &&
             (identical(other.fileId, fileId) || other.fileId == fileId));
   }
 
@@ -128,14 +130,13 @@ class _$_DriveFilesDeleteRequest implements _DriveFilesDeleteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFilesDeleteRequestCopyWith<_$_DriveFilesDeleteRequest>
-      get copyWith =>
-          __$$_DriveFilesDeleteRequestCopyWithImpl<_$_DriveFilesDeleteRequest>(
-              this, _$identity);
+  _$$DriveFilesDeleteRequestImplCopyWith<_$DriveFilesDeleteRequestImpl>
+      get copyWith => __$$DriveFilesDeleteRequestImplCopyWithImpl<
+          _$DriveFilesDeleteRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFilesDeleteRequestToJson(
+    return _$$DriveFilesDeleteRequestImplToJson(
       this,
     );
   }
@@ -143,15 +144,15 @@ class _$_DriveFilesDeleteRequest implements _DriveFilesDeleteRequest {
 
 abstract class _DriveFilesDeleteRequest implements DriveFilesDeleteRequest {
   const factory _DriveFilesDeleteRequest({required final String fileId}) =
-      _$_DriveFilesDeleteRequest;
+      _$DriveFilesDeleteRequestImpl;
 
   factory _DriveFilesDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriveFilesDeleteRequest.fromJson;
+      _$DriveFilesDeleteRequestImpl.fromJson;
 
   @override
   String get fileId;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFilesDeleteRequestCopyWith<_$_DriveFilesDeleteRequest>
+  _$$DriveFilesDeleteRequestImplCopyWith<_$DriveFilesDeleteRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

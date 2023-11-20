@@ -115,11 +115,11 @@ class _$NotesTimelineRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesTimelineRequestCopyWith<$Res>
+abstract class _$$NotesTimelineRequestImplCopyWith<$Res>
     implements $NotesTimelineRequestCopyWith<$Res> {
-  factory _$$_NotesTimelineRequestCopyWith(_$_NotesTimelineRequest value,
-          $Res Function(_$_NotesTimelineRequest) then) =
-      __$$_NotesTimelineRequestCopyWithImpl<$Res>;
+  factory _$$NotesTimelineRequestImplCopyWith(_$NotesTimelineRequestImpl value,
+          $Res Function(_$NotesTimelineRequestImpl) then) =
+      __$$NotesTimelineRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -134,11 +134,11 @@ abstract class _$$_NotesTimelineRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesTimelineRequestCopyWithImpl<$Res>
-    extends _$NotesTimelineRequestCopyWithImpl<$Res, _$_NotesTimelineRequest>
-    implements _$$_NotesTimelineRequestCopyWith<$Res> {
-  __$$_NotesTimelineRequestCopyWithImpl(_$_NotesTimelineRequest _value,
-      $Res Function(_$_NotesTimelineRequest) _then)
+class __$$NotesTimelineRequestImplCopyWithImpl<$Res>
+    extends _$NotesTimelineRequestCopyWithImpl<$Res, _$NotesTimelineRequestImpl>
+    implements _$$NotesTimelineRequestImplCopyWith<$Res> {
+  __$$NotesTimelineRequestImplCopyWithImpl(_$NotesTimelineRequestImpl _value,
+      $Res Function(_$NotesTimelineRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,7 +153,7 @@ class __$$_NotesTimelineRequestCopyWithImpl<$Res>
     Object? withRenotes = freezed,
     Object? excludeNsfw = freezed,
   }) {
-    return _then(_$_NotesTimelineRequest(
+    return _then(_$NotesTimelineRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -192,8 +192,8 @@ class __$$_NotesTimelineRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesTimelineRequest implements _NotesTimelineRequest {
-  const _$_NotesTimelineRequest(
+class _$NotesTimelineRequestImpl implements _NotesTimelineRequest {
+  const _$NotesTimelineRequestImpl(
       {this.limit,
       this.sinceId,
       this.untilId,
@@ -203,8 +203,8 @@ class _$_NotesTimelineRequest implements _NotesTimelineRequest {
       this.withRenotes,
       this.excludeNsfw});
 
-  factory _$_NotesTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesTimelineRequestFromJson(json);
+  factory _$NotesTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesTimelineRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -234,7 +234,7 @@ class _$_NotesTimelineRequest implements _NotesTimelineRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesTimelineRequest &&
+            other is _$NotesTimelineRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -258,13 +258,14 @@ class _$_NotesTimelineRequest implements _NotesTimelineRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesTimelineRequestCopyWith<_$_NotesTimelineRequest> get copyWith =>
-      __$$_NotesTimelineRequestCopyWithImpl<_$_NotesTimelineRequest>(
-          this, _$identity);
+  _$$NotesTimelineRequestImplCopyWith<_$NotesTimelineRequestImpl>
+      get copyWith =>
+          __$$NotesTimelineRequestImplCopyWithImpl<_$NotesTimelineRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesTimelineRequestToJson(
+    return _$$NotesTimelineRequestImplToJson(
       this,
     );
   }
@@ -279,10 +280,10 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
       final bool? withFiles,
       final bool? withRenotes,
-      final bool? excludeNsfw}) = _$_NotesTimelineRequest;
+      final bool? excludeNsfw}) = _$NotesTimelineRequestImpl;
 
   factory _NotesTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesTimelineRequest.fromJson;
+      _$NotesTimelineRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -304,6 +305,6 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
   bool? get excludeNsfw;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesTimelineRequestCopyWith<_$_NotesTimelineRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NotesTimelineRequestImplCopyWith<_$NotesTimelineRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

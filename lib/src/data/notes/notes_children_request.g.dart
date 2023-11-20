@@ -6,17 +6,17 @@ part of 'notes_children_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesChildrenRequest _$$_NotesChildrenRequestFromJson(
+_$NotesChildrenRequestImpl _$$NotesChildrenRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesChildrenRequest(
+    _$NotesChildrenRequestImpl(
       noteId: json['noteId'] as String,
       limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$$_NotesChildrenRequestToJson(
-        _$_NotesChildrenRequest instance) =>
+Map<String, dynamic> _$$NotesChildrenRequestImplToJson(
+        _$NotesChildrenRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
       'limit': instance.limit,

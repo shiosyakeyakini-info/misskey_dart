@@ -68,22 +68,22 @@ class _$ClipsAddNoteRequestCopyWithImpl<$Res, $Val extends ClipsAddNoteRequest>
 }
 
 /// @nodoc
-abstract class _$$_ClipsAddNoteRequestCopyWith<$Res>
+abstract class _$$ClipsAddNoteRequestImplCopyWith<$Res>
     implements $ClipsAddNoteRequestCopyWith<$Res> {
-  factory _$$_ClipsAddNoteRequestCopyWith(_$_ClipsAddNoteRequest value,
-          $Res Function(_$_ClipsAddNoteRequest) then) =
-      __$$_ClipsAddNoteRequestCopyWithImpl<$Res>;
+  factory _$$ClipsAddNoteRequestImplCopyWith(_$ClipsAddNoteRequestImpl value,
+          $Res Function(_$ClipsAddNoteRequestImpl) then) =
+      __$$ClipsAddNoteRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String clipId, String noteId});
 }
 
 /// @nodoc
-class __$$_ClipsAddNoteRequestCopyWithImpl<$Res>
-    extends _$ClipsAddNoteRequestCopyWithImpl<$Res, _$_ClipsAddNoteRequest>
-    implements _$$_ClipsAddNoteRequestCopyWith<$Res> {
-  __$$_ClipsAddNoteRequestCopyWithImpl(_$_ClipsAddNoteRequest _value,
-      $Res Function(_$_ClipsAddNoteRequest) _then)
+class __$$ClipsAddNoteRequestImplCopyWithImpl<$Res>
+    extends _$ClipsAddNoteRequestCopyWithImpl<$Res, _$ClipsAddNoteRequestImpl>
+    implements _$$ClipsAddNoteRequestImplCopyWith<$Res> {
+  __$$ClipsAddNoteRequestImplCopyWithImpl(_$ClipsAddNoteRequestImpl _value,
+      $Res Function(_$ClipsAddNoteRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_ClipsAddNoteRequestCopyWithImpl<$Res>
     Object? clipId = null,
     Object? noteId = null,
   }) {
-    return _then(_$_ClipsAddNoteRequest(
+    return _then(_$ClipsAddNoteRequestImpl(
       clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_ClipsAddNoteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ClipsAddNoteRequest implements _ClipsAddNoteRequest {
-  const _$_ClipsAddNoteRequest({required this.clipId, required this.noteId});
+class _$ClipsAddNoteRequestImpl implements _ClipsAddNoteRequest {
+  const _$ClipsAddNoteRequestImpl({required this.clipId, required this.noteId});
 
-  factory _$_ClipsAddNoteRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ClipsAddNoteRequestFromJson(json);
+  factory _$ClipsAddNoteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsAddNoteRequestImplFromJson(json);
 
   @override
   final String clipId;
@@ -127,7 +127,7 @@ class _$_ClipsAddNoteRequest implements _ClipsAddNoteRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClipsAddNoteRequest &&
+            other is _$ClipsAddNoteRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
@@ -139,13 +139,13 @@ class _$_ClipsAddNoteRequest implements _ClipsAddNoteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClipsAddNoteRequestCopyWith<_$_ClipsAddNoteRequest> get copyWith =>
-      __$$_ClipsAddNoteRequestCopyWithImpl<_$_ClipsAddNoteRequest>(
+  _$$ClipsAddNoteRequestImplCopyWith<_$ClipsAddNoteRequestImpl> get copyWith =>
+      __$$ClipsAddNoteRequestImplCopyWithImpl<_$ClipsAddNoteRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClipsAddNoteRequestToJson(
+    return _$$ClipsAddNoteRequestImplToJson(
       this,
     );
   }
@@ -154,10 +154,10 @@ class _$_ClipsAddNoteRequest implements _ClipsAddNoteRequest {
 abstract class _ClipsAddNoteRequest implements ClipsAddNoteRequest {
   const factory _ClipsAddNoteRequest(
       {required final String clipId,
-      required final String noteId}) = _$_ClipsAddNoteRequest;
+      required final String noteId}) = _$ClipsAddNoteRequestImpl;
 
   factory _ClipsAddNoteRequest.fromJson(Map<String, dynamic> json) =
-      _$_ClipsAddNoteRequest.fromJson;
+      _$ClipsAddNoteRequestImpl.fromJson;
 
   @override
   String get clipId;
@@ -165,6 +165,6 @@ abstract class _ClipsAddNoteRequest implements ClipsAddNoteRequest {
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_ClipsAddNoteRequestCopyWith<_$_ClipsAddNoteRequest> get copyWith =>
+  _$$ClipsAddNoteRequestImplCopyWith<_$ClipsAddNoteRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -62,22 +62,22 @@ class _$ChannelsShowRequestCopyWithImpl<$Res, $Val extends ChannelsShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_ChannelsShowRequestCopyWith<$Res>
+abstract class _$$ChannelsShowRequestImplCopyWith<$Res>
     implements $ChannelsShowRequestCopyWith<$Res> {
-  factory _$$_ChannelsShowRequestCopyWith(_$_ChannelsShowRequest value,
-          $Res Function(_$_ChannelsShowRequest) then) =
-      __$$_ChannelsShowRequestCopyWithImpl<$Res>;
+  factory _$$ChannelsShowRequestImplCopyWith(_$ChannelsShowRequestImpl value,
+          $Res Function(_$ChannelsShowRequestImpl) then) =
+      __$$ChannelsShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class __$$_ChannelsShowRequestCopyWithImpl<$Res>
-    extends _$ChannelsShowRequestCopyWithImpl<$Res, _$_ChannelsShowRequest>
-    implements _$$_ChannelsShowRequestCopyWith<$Res> {
-  __$$_ChannelsShowRequestCopyWithImpl(_$_ChannelsShowRequest _value,
-      $Res Function(_$_ChannelsShowRequest) _then)
+class __$$ChannelsShowRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsShowRequestCopyWithImpl<$Res, _$ChannelsShowRequestImpl>
+    implements _$$ChannelsShowRequestImplCopyWith<$Res> {
+  __$$ChannelsShowRequestImplCopyWithImpl(_$ChannelsShowRequestImpl _value,
+      $Res Function(_$ChannelsShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_ChannelsShowRequestCopyWithImpl<$Res>
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_$_ChannelsShowRequest(
+    return _then(_$ChannelsShowRequestImpl(
       channelId: null == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_ChannelsShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ChannelsShowRequest implements _ChannelsShowRequest {
-  const _$_ChannelsShowRequest({required this.channelId});
+class _$ChannelsShowRequestImpl implements _ChannelsShowRequest {
+  const _$ChannelsShowRequestImpl({required this.channelId});
 
-  factory _$_ChannelsShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ChannelsShowRequestFromJson(json);
+  factory _$ChannelsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsShowRequestImplFromJson(json);
 
   @override
   final String channelId;
@@ -114,7 +114,7 @@ class _$_ChannelsShowRequest implements _ChannelsShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChannelsShowRequest &&
+            other is _$ChannelsShowRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
@@ -126,13 +126,13 @@ class _$_ChannelsShowRequest implements _ChannelsShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChannelsShowRequestCopyWith<_$_ChannelsShowRequest> get copyWith =>
-      __$$_ChannelsShowRequestCopyWithImpl<_$_ChannelsShowRequest>(
+  _$$ChannelsShowRequestImplCopyWith<_$ChannelsShowRequestImpl> get copyWith =>
+      __$$ChannelsShowRequestImplCopyWithImpl<_$ChannelsShowRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChannelsShowRequestToJson(
+    return _$$ChannelsShowRequestImplToJson(
       this,
     );
   }
@@ -140,15 +140,15 @@ class _$_ChannelsShowRequest implements _ChannelsShowRequest {
 
 abstract class _ChannelsShowRequest implements ChannelsShowRequest {
   const factory _ChannelsShowRequest({required final String channelId}) =
-      _$_ChannelsShowRequest;
+      _$ChannelsShowRequestImpl;
 
   factory _ChannelsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_ChannelsShowRequest.fromJson;
+      _$ChannelsShowRequestImpl.fromJson;
 
   @override
   String get channelId;
   @override
   @JsonKey(ignore: true)
-  _$$_ChannelsShowRequestCopyWith<_$_ChannelsShowRequest> get copyWith =>
+  _$$ChannelsShowRequestImplCopyWith<_$ChannelsShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

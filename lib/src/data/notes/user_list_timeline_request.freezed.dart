@@ -140,11 +140,12 @@ class _$UserListTimelineRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UserListTimelineRequestCopyWith<$Res>
+abstract class _$$UserListTimelineRequestImplCopyWith<$Res>
     implements $UserListTimelineRequestCopyWith<$Res> {
-  factory _$$_UserListTimelineRequestCopyWith(_$_UserListTimelineRequest value,
-          $Res Function(_$_UserListTimelineRequest) then) =
-      __$$_UserListTimelineRequestCopyWithImpl<$Res>;
+  factory _$$UserListTimelineRequestImplCopyWith(
+          _$UserListTimelineRequestImpl value,
+          $Res Function(_$UserListTimelineRequestImpl) then) =
+      __$$UserListTimelineRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -162,12 +163,13 @@ abstract class _$$_UserListTimelineRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserListTimelineRequestCopyWithImpl<$Res>
+class __$$UserListTimelineRequestImplCopyWithImpl<$Res>
     extends _$UserListTimelineRequestCopyWithImpl<$Res,
-        _$_UserListTimelineRequest>
-    implements _$$_UserListTimelineRequestCopyWith<$Res> {
-  __$$_UserListTimelineRequestCopyWithImpl(_$_UserListTimelineRequest _value,
-      $Res Function(_$_UserListTimelineRequest) _then)
+        _$UserListTimelineRequestImpl>
+    implements _$$UserListTimelineRequestImplCopyWith<$Res> {
+  __$$UserListTimelineRequestImplCopyWithImpl(
+      _$UserListTimelineRequestImpl _value,
+      $Res Function(_$UserListTimelineRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -185,7 +187,7 @@ class __$$_UserListTimelineRequestCopyWithImpl<$Res>
     Object? withRenotes = freezed,
     Object? withFiles = freezed,
   }) {
-    return _then(_$_UserListTimelineRequest(
+    return _then(_$UserListTimelineRequestImpl(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
@@ -236,8 +238,8 @@ class __$$_UserListTimelineRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserListTimelineRequest implements _UserListTimelineRequest {
-  const _$_UserListTimelineRequest(
+class _$UserListTimelineRequestImpl implements _UserListTimelineRequest {
+  const _$UserListTimelineRequestImpl(
       {required this.listId,
       @Assert('limit > 0') this.limit,
       this.sinceId,
@@ -250,8 +252,8 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
       this.withRenotes,
       this.withFiles});
 
-  factory _$_UserListTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UserListTimelineRequestFromJson(json);
+  factory _$UserListTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserListTimelineRequestImplFromJson(json);
 
   @override
   final String listId;
@@ -290,7 +292,7 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserListTimelineRequest &&
+            other is _$UserListTimelineRequestImpl &&
             (identical(other.listId, listId) || other.listId == listId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -330,14 +332,13 @@ class _$_UserListTimelineRequest implements _UserListTimelineRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserListTimelineRequestCopyWith<_$_UserListTimelineRequest>
-      get copyWith =>
-          __$$_UserListTimelineRequestCopyWithImpl<_$_UserListTimelineRequest>(
-              this, _$identity);
+  _$$UserListTimelineRequestImplCopyWith<_$UserListTimelineRequestImpl>
+      get copyWith => __$$UserListTimelineRequestImplCopyWithImpl<
+          _$UserListTimelineRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserListTimelineRequestToJson(
+    return _$$UserListTimelineRequestImplToJson(
       this,
     );
   }
@@ -355,10 +356,10 @@ abstract class _UserListTimelineRequest implements UserListTimelineRequest {
       final bool? includeRenotedMyNotes,
       final bool? includeLocalRenotes,
       final bool? withRenotes,
-      final bool? withFiles}) = _$_UserListTimelineRequest;
+      final bool? withFiles}) = _$UserListTimelineRequestImpl;
 
   factory _UserListTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$_UserListTimelineRequest.fromJson;
+      _$UserListTimelineRequestImpl.fromJson;
 
   @override
   String get listId;
@@ -389,6 +390,6 @@ abstract class _UserListTimelineRequest implements UserListTimelineRequest {
   bool? get withFiles;
   @override
   @JsonKey(ignore: true)
-  _$$_UserListTimelineRequestCopyWith<_$_UserListTimelineRequest>
+  _$$UserListTimelineRequestImplCopyWith<_$UserListTimelineRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

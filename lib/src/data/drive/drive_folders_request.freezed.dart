@@ -80,22 +80,22 @@ class _$DriveFoldersRequestCopyWithImpl<$Res, $Val extends DriveFoldersRequest>
 }
 
 /// @nodoc
-abstract class _$$_DriveFoldersRequestCopyWith<$Res>
+abstract class _$$DriveFoldersRequestImplCopyWith<$Res>
     implements $DriveFoldersRequestCopyWith<$Res> {
-  factory _$$_DriveFoldersRequestCopyWith(_$_DriveFoldersRequest value,
-          $Res Function(_$_DriveFoldersRequest) then) =
-      __$$_DriveFoldersRequestCopyWithImpl<$Res>;
+  factory _$$DriveFoldersRequestImplCopyWith(_$DriveFoldersRequestImpl value,
+          $Res Function(_$DriveFoldersRequestImpl) then) =
+      __$$DriveFoldersRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, String? sinceId, String? untilId, String? folderId});
 }
 
 /// @nodoc
-class __$$_DriveFoldersRequestCopyWithImpl<$Res>
-    extends _$DriveFoldersRequestCopyWithImpl<$Res, _$_DriveFoldersRequest>
-    implements _$$_DriveFoldersRequestCopyWith<$Res> {
-  __$$_DriveFoldersRequestCopyWithImpl(_$_DriveFoldersRequest _value,
-      $Res Function(_$_DriveFoldersRequest) _then)
+class __$$DriveFoldersRequestImplCopyWithImpl<$Res>
+    extends _$DriveFoldersRequestCopyWithImpl<$Res, _$DriveFoldersRequestImpl>
+    implements _$$DriveFoldersRequestImplCopyWith<$Res> {
+  __$$DriveFoldersRequestImplCopyWithImpl(_$DriveFoldersRequestImpl _value,
+      $Res Function(_$DriveFoldersRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_DriveFoldersRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? folderId = freezed,
   }) {
-    return _then(_$_DriveFoldersRequest(
+    return _then(_$DriveFoldersRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ class __$$_DriveFoldersRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFoldersRequest implements _DriveFoldersRequest {
-  const _$_DriveFoldersRequest(
+class _$DriveFoldersRequestImpl implements _DriveFoldersRequest {
+  const _$DriveFoldersRequestImpl(
       {this.limit, this.sinceId, this.untilId, this.folderId});
 
-  factory _$_DriveFoldersRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFoldersRequestFromJson(json);
+  factory _$DriveFoldersRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFoldersRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -154,7 +154,7 @@ class _$_DriveFoldersRequest implements _DriveFoldersRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFoldersRequest &&
+            other is _$DriveFoldersRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -170,13 +170,13 @@ class _$_DriveFoldersRequest implements _DriveFoldersRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFoldersRequestCopyWith<_$_DriveFoldersRequest> get copyWith =>
-      __$$_DriveFoldersRequestCopyWithImpl<_$_DriveFoldersRequest>(
+  _$$DriveFoldersRequestImplCopyWith<_$DriveFoldersRequestImpl> get copyWith =>
+      __$$DriveFoldersRequestImplCopyWithImpl<_$DriveFoldersRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFoldersRequestToJson(
+    return _$$DriveFoldersRequestImplToJson(
       this,
     );
   }
@@ -187,10 +187,10 @@ abstract class _DriveFoldersRequest implements DriveFoldersRequest {
       {final int? limit,
       final String? sinceId,
       final String? untilId,
-      final String? folderId}) = _$_DriveFoldersRequest;
+      final String? folderId}) = _$DriveFoldersRequestImpl;
 
   factory _DriveFoldersRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriveFoldersRequest.fromJson;
+      _$DriveFoldersRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -202,6 +202,6 @@ abstract class _DriveFoldersRequest implements DriveFoldersRequest {
   String? get folderId;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFoldersRequestCopyWith<_$_DriveFoldersRequest> get copyWith =>
+  _$$DriveFoldersRequestImplCopyWith<_$DriveFoldersRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

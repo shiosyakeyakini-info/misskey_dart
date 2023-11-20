@@ -68,22 +68,22 @@ class _$TimelineVotedCopyWithImpl<$Res, $Val extends TimelineVoted>
 }
 
 /// @nodoc
-abstract class _$$_TimelineVotedCopyWith<$Res>
+abstract class _$$TimelineVotedImplCopyWith<$Res>
     implements $TimelineVotedCopyWith<$Res> {
-  factory _$$_TimelineVotedCopyWith(
-          _$_TimelineVoted value, $Res Function(_$_TimelineVoted) then) =
-      __$$_TimelineVotedCopyWithImpl<$Res>;
+  factory _$$TimelineVotedImplCopyWith(
+          _$TimelineVotedImpl value, $Res Function(_$TimelineVotedImpl) then) =
+      __$$TimelineVotedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int choice, String userId});
 }
 
 /// @nodoc
-class __$$_TimelineVotedCopyWithImpl<$Res>
-    extends _$TimelineVotedCopyWithImpl<$Res, _$_TimelineVoted>
-    implements _$$_TimelineVotedCopyWith<$Res> {
-  __$$_TimelineVotedCopyWithImpl(
-      _$_TimelineVoted _value, $Res Function(_$_TimelineVoted) _then)
+class __$$TimelineVotedImplCopyWithImpl<$Res>
+    extends _$TimelineVotedCopyWithImpl<$Res, _$TimelineVotedImpl>
+    implements _$$TimelineVotedImplCopyWith<$Res> {
+  __$$TimelineVotedImplCopyWithImpl(
+      _$TimelineVotedImpl _value, $Res Function(_$TimelineVotedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_TimelineVotedCopyWithImpl<$Res>
     Object? choice = null,
     Object? userId = null,
   }) {
-    return _then(_$_TimelineVoted(
+    return _then(_$TimelineVotedImpl(
       choice: null == choice
           ? _value.choice
           : choice // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_TimelineVotedCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TimelineVoted implements _TimelineVoted {
-  const _$_TimelineVoted({required this.choice, required this.userId});
+class _$TimelineVotedImpl implements _TimelineVoted {
+  const _$TimelineVotedImpl({required this.choice, required this.userId});
 
-  factory _$_TimelineVoted.fromJson(Map<String, dynamic> json) =>
-      _$$_TimelineVotedFromJson(json);
+  factory _$TimelineVotedImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TimelineVotedImplFromJson(json);
 
   @override
   final int choice;
@@ -127,7 +127,7 @@ class _$_TimelineVoted implements _TimelineVoted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TimelineVoted &&
+            other is _$TimelineVotedImpl &&
             (identical(other.choice, choice) || other.choice == choice) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
@@ -139,12 +139,12 @@ class _$_TimelineVoted implements _TimelineVoted {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TimelineVotedCopyWith<_$_TimelineVoted> get copyWith =>
-      __$$_TimelineVotedCopyWithImpl<_$_TimelineVoted>(this, _$identity);
+  _$$TimelineVotedImplCopyWith<_$TimelineVotedImpl> get copyWith =>
+      __$$TimelineVotedImplCopyWithImpl<_$TimelineVotedImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TimelineVotedToJson(
+    return _$$TimelineVotedImplToJson(
       this,
     );
   }
@@ -153,10 +153,10 @@ class _$_TimelineVoted implements _TimelineVoted {
 abstract class _TimelineVoted implements TimelineVoted {
   const factory _TimelineVoted(
       {required final int choice,
-      required final String userId}) = _$_TimelineVoted;
+      required final String userId}) = _$TimelineVotedImpl;
 
   factory _TimelineVoted.fromJson(Map<String, dynamic> json) =
-      _$_TimelineVoted.fromJson;
+      _$TimelineVotedImpl.fromJson;
 
   @override
   int get choice;
@@ -164,6 +164,6 @@ abstract class _TimelineVoted implements TimelineVoted {
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_TimelineVotedCopyWith<_$_TimelineVoted> get copyWith =>
+  _$$TimelineVotedImplCopyWith<_$TimelineVotedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

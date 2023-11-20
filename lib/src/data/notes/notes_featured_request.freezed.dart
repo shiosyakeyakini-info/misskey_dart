@@ -86,11 +86,11 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesFeaturedRequestCopyWith<$Res>
+abstract class _$$NotesFeaturedRequestImplCopyWith<$Res>
     implements $NotesFeaturedRequestCopyWith<$Res> {
-  factory _$$_NotesFeaturedRequestCopyWith(_$_NotesFeaturedRequest value,
-          $Res Function(_$_NotesFeaturedRequest) then) =
-      __$$_NotesFeaturedRequestCopyWithImpl<$Res>;
+  factory _$$NotesFeaturedRequestImplCopyWith(_$NotesFeaturedRequestImpl value,
+          $Res Function(_$NotesFeaturedRequestImpl) then) =
+      __$$NotesFeaturedRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -101,11 +101,11 @@ abstract class _$$_NotesFeaturedRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesFeaturedRequestCopyWithImpl<$Res>
-    extends _$NotesFeaturedRequestCopyWithImpl<$Res, _$_NotesFeaturedRequest>
-    implements _$$_NotesFeaturedRequestCopyWith<$Res> {
-  __$$_NotesFeaturedRequestCopyWithImpl(_$_NotesFeaturedRequest _value,
-      $Res Function(_$_NotesFeaturedRequest) _then)
+class __$$NotesFeaturedRequestImplCopyWithImpl<$Res>
+    extends _$NotesFeaturedRequestCopyWithImpl<$Res, _$NotesFeaturedRequestImpl>
+    implements _$$NotesFeaturedRequestImplCopyWith<$Res> {
+  __$$NotesFeaturedRequestImplCopyWithImpl(_$NotesFeaturedRequestImpl _value,
+      $Res Function(_$NotesFeaturedRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +116,7 @@ class __$$_NotesFeaturedRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? channelId = freezed,
   }) {
-    return _then(_$_NotesFeaturedRequest(
+    return _then(_$NotesFeaturedRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -139,15 +139,15 @@ class __$$_NotesFeaturedRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
-  const _$_NotesFeaturedRequest(
+class _$NotesFeaturedRequestImpl implements _NotesFeaturedRequest {
+  const _$NotesFeaturedRequestImpl(
       {this.limit,
       @Deprecated("removed at 2023.10.0") this.offset,
       this.untilId,
       this.channelId});
 
-  factory _$_NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesFeaturedRequestFromJson(json);
+  factory _$NotesFeaturedRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesFeaturedRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -168,7 +168,7 @@ class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesFeaturedRequest &&
+            other is _$NotesFeaturedRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -184,13 +184,14 @@ class _$_NotesFeaturedRequest implements _NotesFeaturedRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesFeaturedRequestCopyWith<_$_NotesFeaturedRequest> get copyWith =>
-      __$$_NotesFeaturedRequestCopyWithImpl<_$_NotesFeaturedRequest>(
-          this, _$identity);
+  _$$NotesFeaturedRequestImplCopyWith<_$NotesFeaturedRequestImpl>
+      get copyWith =>
+          __$$NotesFeaturedRequestImplCopyWithImpl<_$NotesFeaturedRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesFeaturedRequestToJson(
+    return _$$NotesFeaturedRequestImplToJson(
       this,
     );
   }
@@ -201,10 +202,10 @@ abstract class _NotesFeaturedRequest implements NotesFeaturedRequest {
       {final int? limit,
       @Deprecated("removed at 2023.10.0") final int? offset,
       final String? untilId,
-      final String? channelId}) = _$_NotesFeaturedRequest;
+      final String? channelId}) = _$NotesFeaturedRequestImpl;
 
   factory _NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesFeaturedRequest.fromJson;
+      _$NotesFeaturedRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -217,6 +218,6 @@ abstract class _NotesFeaturedRequest implements NotesFeaturedRequest {
   String? get channelId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesFeaturedRequestCopyWith<_$_NotesFeaturedRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NotesFeaturedRequestImplCopyWith<_$NotesFeaturedRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

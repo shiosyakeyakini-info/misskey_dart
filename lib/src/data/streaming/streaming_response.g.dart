@@ -6,14 +6,15 @@ part of 'streaming_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_StreamingResponse _$$_StreamingResponseFromJson(Map<String, dynamic> json) =>
-    _$_StreamingResponse(
+_$StreamingResponseImpl _$$StreamingResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StreamingResponseImpl(
       type: $enumDecode(_$StreamingResponseTypeEnumMap, json['type']),
       body: json['body'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$$_StreamingResponseToJson(
-        _$_StreamingResponse instance) =>
+Map<String, dynamic> _$$StreamingResponseImplToJson(
+        _$StreamingResponseImpl instance) =>
     <String, dynamic>{
       'type': _$StreamingResponseTypeEnumMap[instance.type]!,
       'body': instance.body,

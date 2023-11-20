@@ -6,9 +6,9 @@ part of 'i_notifications_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_INotificationsResponse _$$_INotificationsResponseFromJson(
+_$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_INotificationsResponse(
+    _$INotificationsResponseImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -32,8 +32,8 @@ _$_INotificationsResponse _$$_INotificationsResponseFromJson(
           : Note.fromJson(json['note'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_INotificationsResponseToJson(
-        _$_INotificationsResponse instance) =>
+Map<String, dynamic> _$$INotificationsResponseImplToJson(
+        _$INotificationsResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

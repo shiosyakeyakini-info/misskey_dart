@@ -6,15 +6,16 @@ part of 'mute_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MuteCreateRequest _$$_MuteCreateRequestFromJson(Map<String, dynamic> json) =>
-    _$_MuteCreateRequest(
+_$MuteCreateRequestImpl _$$MuteCreateRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MuteCreateRequestImpl(
       userId: json['userId'] as String,
       expiresAt: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
           .fromJson(json['expiresAt'] as int?),
     );
 
-Map<String, dynamic> _$$_MuteCreateRequestToJson(
-        _$_MuteCreateRequest instance) =>
+Map<String, dynamic> _$$MuteCreateRequestImplToJson(
+        _$MuteCreateRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'expiresAt': const NullableEpocTimeDateTimeConverter.withMilliSeconds()

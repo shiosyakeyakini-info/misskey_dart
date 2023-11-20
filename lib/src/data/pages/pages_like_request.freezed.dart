@@ -62,22 +62,22 @@ class _$PagesLikeRequestCopyWithImpl<$Res, $Val extends PagesLikeRequest>
 }
 
 /// @nodoc
-abstract class _$$_PagesLikeRequestCopyWith<$Res>
+abstract class _$$PagesLikeRequestImplCopyWith<$Res>
     implements $PagesLikeRequestCopyWith<$Res> {
-  factory _$$_PagesLikeRequestCopyWith(
-          _$_PagesLikeRequest value, $Res Function(_$_PagesLikeRequest) then) =
-      __$$_PagesLikeRequestCopyWithImpl<$Res>;
+  factory _$$PagesLikeRequestImplCopyWith(_$PagesLikeRequestImpl value,
+          $Res Function(_$PagesLikeRequestImpl) then) =
+      __$$PagesLikeRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String pageId});
 }
 
 /// @nodoc
-class __$$_PagesLikeRequestCopyWithImpl<$Res>
-    extends _$PagesLikeRequestCopyWithImpl<$Res, _$_PagesLikeRequest>
-    implements _$$_PagesLikeRequestCopyWith<$Res> {
-  __$$_PagesLikeRequestCopyWithImpl(
-      _$_PagesLikeRequest _value, $Res Function(_$_PagesLikeRequest) _then)
+class __$$PagesLikeRequestImplCopyWithImpl<$Res>
+    extends _$PagesLikeRequestCopyWithImpl<$Res, _$PagesLikeRequestImpl>
+    implements _$$PagesLikeRequestImplCopyWith<$Res> {
+  __$$PagesLikeRequestImplCopyWithImpl(_$PagesLikeRequestImpl _value,
+      $Res Function(_$PagesLikeRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_PagesLikeRequestCopyWithImpl<$Res>
   $Res call({
     Object? pageId = null,
   }) {
-    return _then(_$_PagesLikeRequest(
+    return _then(_$PagesLikeRequestImpl(
       pageId: null == pageId
           ? _value.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_PagesLikeRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PagesLikeRequest implements _PagesLikeRequest {
-  const _$_PagesLikeRequest({required this.pageId});
+class _$PagesLikeRequestImpl implements _PagesLikeRequest {
+  const _$PagesLikeRequestImpl({required this.pageId});
 
-  factory _$_PagesLikeRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_PagesLikeRequestFromJson(json);
+  factory _$PagesLikeRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PagesLikeRequestImplFromJson(json);
 
   @override
   final String pageId;
@@ -114,7 +114,7 @@ class _$_PagesLikeRequest implements _PagesLikeRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PagesLikeRequest &&
+            other is _$PagesLikeRequestImpl &&
             (identical(other.pageId, pageId) || other.pageId == pageId));
   }
 
@@ -125,12 +125,13 @@ class _$_PagesLikeRequest implements _PagesLikeRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PagesLikeRequestCopyWith<_$_PagesLikeRequest> get copyWith =>
-      __$$_PagesLikeRequestCopyWithImpl<_$_PagesLikeRequest>(this, _$identity);
+  _$$PagesLikeRequestImplCopyWith<_$PagesLikeRequestImpl> get copyWith =>
+      __$$PagesLikeRequestImplCopyWithImpl<_$PagesLikeRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PagesLikeRequestToJson(
+    return _$$PagesLikeRequestImplToJson(
       this,
     );
   }
@@ -138,15 +139,15 @@ class _$_PagesLikeRequest implements _PagesLikeRequest {
 
 abstract class _PagesLikeRequest implements PagesLikeRequest {
   const factory _PagesLikeRequest({required final String pageId}) =
-      _$_PagesLikeRequest;
+      _$PagesLikeRequestImpl;
 
   factory _PagesLikeRequest.fromJson(Map<String, dynamic> json) =
-      _$_PagesLikeRequest.fromJson;
+      _$PagesLikeRequestImpl.fromJson;
 
   @override
   String get pageId;
   @override
   @JsonKey(ignore: true)
-  _$$_PagesLikeRequestCopyWith<_$_PagesLikeRequest> get copyWith =>
+  _$$PagesLikeRequestImplCopyWith<_$PagesLikeRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

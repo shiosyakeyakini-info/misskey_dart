@@ -68,22 +68,22 @@ class _$NoteEditedCopyWithImpl<$Res, $Val extends NoteEdited>
 }
 
 /// @nodoc
-abstract class _$$_NoteEditedCopyWith<$Res>
+abstract class _$$NoteEditedImplCopyWith<$Res>
     implements $NoteEditedCopyWith<$Res> {
-  factory _$$_NoteEditedCopyWith(
-          _$_NoteEdited value, $Res Function(_$_NoteEdited) then) =
-      __$$_NoteEditedCopyWithImpl<$Res>;
+  factory _$$NoteEditedImplCopyWith(
+          _$NoteEditedImpl value, $Res Function(_$NoteEditedImpl) then) =
+      __$$NoteEditedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? cw, String? text});
 }
 
 /// @nodoc
-class __$$_NoteEditedCopyWithImpl<$Res>
-    extends _$NoteEditedCopyWithImpl<$Res, _$_NoteEdited>
-    implements _$$_NoteEditedCopyWith<$Res> {
-  __$$_NoteEditedCopyWithImpl(
-      _$_NoteEdited _value, $Res Function(_$_NoteEdited) _then)
+class __$$NoteEditedImplCopyWithImpl<$Res>
+    extends _$NoteEditedCopyWithImpl<$Res, _$NoteEditedImpl>
+    implements _$$NoteEditedImplCopyWith<$Res> {
+  __$$NoteEditedImplCopyWithImpl(
+      _$NoteEditedImpl _value, $Res Function(_$NoteEditedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_NoteEditedCopyWithImpl<$Res>
     Object? cw = freezed,
     Object? text = freezed,
   }) {
-    return _then(_$_NoteEdited(
+    return _then(_$NoteEditedImpl(
       cw: freezed == cw
           ? _value.cw
           : cw // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_NoteEditedCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteEdited implements _NoteEdited {
-  const _$_NoteEdited({this.cw, this.text});
+class _$NoteEditedImpl implements _NoteEdited {
+  const _$NoteEditedImpl({this.cw, this.text});
 
-  factory _$_NoteEdited.fromJson(Map<String, dynamic> json) =>
-      _$$_NoteEditedFromJson(json);
+  factory _$NoteEditedImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteEditedImplFromJson(json);
 
   @override
   final String? cw;
@@ -127,7 +127,7 @@ class _$_NoteEdited implements _NoteEdited {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoteEdited &&
+            other is _$NoteEditedImpl &&
             (identical(other.cw, cw) || other.cw == cw) &&
             (identical(other.text, text) || other.text == text));
   }
@@ -139,12 +139,12 @@ class _$_NoteEdited implements _NoteEdited {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NoteEditedCopyWith<_$_NoteEdited> get copyWith =>
-      __$$_NoteEditedCopyWithImpl<_$_NoteEdited>(this, _$identity);
+  _$$NoteEditedImplCopyWith<_$NoteEditedImpl> get copyWith =>
+      __$$NoteEditedImplCopyWithImpl<_$NoteEditedImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NoteEditedToJson(
+    return _$$NoteEditedImplToJson(
       this,
     );
   }
@@ -152,10 +152,10 @@ class _$_NoteEdited implements _NoteEdited {
 
 abstract class _NoteEdited implements NoteEdited {
   const factory _NoteEdited({final String? cw, final String? text}) =
-      _$_NoteEdited;
+      _$NoteEditedImpl;
 
   factory _NoteEdited.fromJson(Map<String, dynamic> json) =
-      _$_NoteEdited.fromJson;
+      _$NoteEditedImpl.fromJson;
 
   @override
   String? get cw;
@@ -163,6 +163,6 @@ abstract class _NoteEdited implements NoteEdited {
   String? get text;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteEditedCopyWith<_$_NoteEdited> get copyWith =>
+  _$$NoteEditedImplCopyWith<_$NoteEditedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

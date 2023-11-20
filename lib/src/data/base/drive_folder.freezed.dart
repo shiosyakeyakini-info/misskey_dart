@@ -85,11 +85,11 @@ class _$DriveFolderCopyWithImpl<$Res, $Val extends DriveFolder>
 }
 
 /// @nodoc
-abstract class _$$_DriveFolderCopyWith<$Res>
+abstract class _$$DriveFolderImplCopyWith<$Res>
     implements $DriveFolderCopyWith<$Res> {
-  factory _$$_DriveFolderCopyWith(
-          _$_DriveFolder value, $Res Function(_$_DriveFolder) then) =
-      __$$_DriveFolderCopyWithImpl<$Res>;
+  factory _$$DriveFolderImplCopyWith(
+          _$DriveFolderImpl value, $Res Function(_$DriveFolderImpl) then) =
+      __$$DriveFolderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,11 +100,11 @@ abstract class _$$_DriveFolderCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DriveFolderCopyWithImpl<$Res>
-    extends _$DriveFolderCopyWithImpl<$Res, _$_DriveFolder>
-    implements _$$_DriveFolderCopyWith<$Res> {
-  __$$_DriveFolderCopyWithImpl(
-      _$_DriveFolder _value, $Res Function(_$_DriveFolder) _then)
+class __$$DriveFolderImplCopyWithImpl<$Res>
+    extends _$DriveFolderCopyWithImpl<$Res, _$DriveFolderImpl>
+    implements _$$DriveFolderImplCopyWith<$Res> {
+  __$$DriveFolderImplCopyWithImpl(
+      _$DriveFolderImpl _value, $Res Function(_$DriveFolderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +115,7 @@ class __$$_DriveFolderCopyWithImpl<$Res>
     Object? name = freezed,
     Object? parentId = freezed,
   }) {
-    return _then(_$_DriveFolder(
+    return _then(_$DriveFolderImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -138,15 +138,15 @@ class __$$_DriveFolderCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFolder implements _DriveFolder {
-  const _$_DriveFolder(
+class _$DriveFolderImpl implements _DriveFolder {
+  const _$DriveFolderImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       this.name,
       this.parentId});
 
-  factory _$_DriveFolder.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFolderFromJson(json);
+  factory _$DriveFolderImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFolderImplFromJson(json);
 
   @override
   final String id;
@@ -167,7 +167,7 @@ class _$_DriveFolder implements _DriveFolder {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFolder &&
+            other is _$DriveFolderImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -183,12 +183,12 @@ class _$_DriveFolder implements _DriveFolder {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFolderCopyWith<_$_DriveFolder> get copyWith =>
-      __$$_DriveFolderCopyWithImpl<_$_DriveFolder>(this, _$identity);
+  _$$DriveFolderImplCopyWith<_$DriveFolderImpl> get copyWith =>
+      __$$DriveFolderImplCopyWithImpl<_$DriveFolderImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFolderToJson(
+    return _$$DriveFolderImplToJson(
       this,
     );
   }
@@ -199,10 +199,10 @@ abstract class _DriveFolder implements DriveFolder {
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
       final String? name,
-      final String? parentId}) = _$_DriveFolder;
+      final String? parentId}) = _$DriveFolderImpl;
 
   factory _DriveFolder.fromJson(Map<String, dynamic> json) =
-      _$_DriveFolder.fromJson;
+      _$DriveFolderImpl.fromJson;
 
   @override
   String get id;
@@ -215,6 +215,6 @@ abstract class _DriveFolder implements DriveFolder {
   String? get parentId;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFolderCopyWith<_$_DriveFolder> get copyWith =>
+  _$$DriveFolderImplCopyWith<_$DriveFolderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

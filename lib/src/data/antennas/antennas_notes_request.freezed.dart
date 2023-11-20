@@ -101,11 +101,11 @@ class _$AntennasNotesRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AntennasNotesRequestCopyWith<$Res>
+abstract class _$$AntennasNotesRequestImplCopyWith<$Res>
     implements $AntennasNotesRequestCopyWith<$Res> {
-  factory _$$_AntennasNotesRequestCopyWith(_$_AntennasNotesRequest value,
-          $Res Function(_$_AntennasNotesRequest) then) =
-      __$$_AntennasNotesRequestCopyWithImpl<$Res>;
+  factory _$$AntennasNotesRequestImplCopyWith(_$AntennasNotesRequestImpl value,
+          $Res Function(_$AntennasNotesRequestImpl) then) =
+      __$$AntennasNotesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -118,11 +118,11 @@ abstract class _$$_AntennasNotesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AntennasNotesRequestCopyWithImpl<$Res>
-    extends _$AntennasNotesRequestCopyWithImpl<$Res, _$_AntennasNotesRequest>
-    implements _$$_AntennasNotesRequestCopyWith<$Res> {
-  __$$_AntennasNotesRequestCopyWithImpl(_$_AntennasNotesRequest _value,
-      $Res Function(_$_AntennasNotesRequest) _then)
+class __$$AntennasNotesRequestImplCopyWithImpl<$Res>
+    extends _$AntennasNotesRequestCopyWithImpl<$Res, _$AntennasNotesRequestImpl>
+    implements _$$AntennasNotesRequestImplCopyWith<$Res> {
+  __$$AntennasNotesRequestImplCopyWithImpl(_$AntennasNotesRequestImpl _value,
+      $Res Function(_$AntennasNotesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -135,7 +135,7 @@ class __$$_AntennasNotesRequestCopyWithImpl<$Res>
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
   }) {
-    return _then(_$_AntennasNotesRequest(
+    return _then(_$AntennasNotesRequestImpl(
       antennaId: null == antennaId
           ? _value.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
@@ -166,8 +166,8 @@ class __$$_AntennasNotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AntennasNotesRequest implements _AntennasNotesRequest {
-  const _$_AntennasNotesRequest(
+class _$AntennasNotesRequestImpl implements _AntennasNotesRequest {
+  const _$AntennasNotesRequestImpl(
       {required this.antennaId,
       this.limit,
       this.sinceId,
@@ -175,8 +175,8 @@ class _$_AntennasNotesRequest implements _AntennasNotesRequest {
       @DateTimeConverter() this.sinceDate,
       @DateTimeConverter() this.untilDate});
 
-  factory _$_AntennasNotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_AntennasNotesRequestFromJson(json);
+  factory _$AntennasNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AntennasNotesRequestImplFromJson(json);
 
   @override
   final String antennaId;
@@ -202,7 +202,7 @@ class _$_AntennasNotesRequest implements _AntennasNotesRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AntennasNotesRequest &&
+            other is _$AntennasNotesRequestImpl &&
             (identical(other.antennaId, antennaId) ||
                 other.antennaId == antennaId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -222,13 +222,14 @@ class _$_AntennasNotesRequest implements _AntennasNotesRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AntennasNotesRequestCopyWith<_$_AntennasNotesRequest> get copyWith =>
-      __$$_AntennasNotesRequestCopyWithImpl<_$_AntennasNotesRequest>(
-          this, _$identity);
+  _$$AntennasNotesRequestImplCopyWith<_$AntennasNotesRequestImpl>
+      get copyWith =>
+          __$$AntennasNotesRequestImplCopyWithImpl<_$AntennasNotesRequestImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AntennasNotesRequestToJson(
+    return _$$AntennasNotesRequestImplToJson(
       this,
     );
   }
@@ -242,10 +243,10 @@ abstract class _AntennasNotesRequest implements AntennasNotesRequest {
           final String? untilId,
           @DateTimeConverter() final DateTime? sinceDate,
           @DateTimeConverter() final DateTime? untilDate}) =
-      _$_AntennasNotesRequest;
+      _$AntennasNotesRequestImpl;
 
   factory _AntennasNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$_AntennasNotesRequest.fromJson;
+      _$AntennasNotesRequestImpl.fromJson;
 
   @override
   String get antennaId;
@@ -263,6 +264,6 @@ abstract class _AntennasNotesRequest implements AntennasNotesRequest {
   DateTime? get untilDate;
   @override
   @JsonKey(ignore: true)
-  _$$_AntennasNotesRequestCopyWith<_$_AntennasNotesRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AntennasNotesRequestImplCopyWith<_$AntennasNotesRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

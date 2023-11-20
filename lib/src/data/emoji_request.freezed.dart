@@ -62,22 +62,22 @@ class _$EmojiRequestCopyWithImpl<$Res, $Val extends EmojiRequest>
 }
 
 /// @nodoc
-abstract class _$$_EmojiRequestCopyWith<$Res>
+abstract class _$$EmojiRequestImplCopyWith<$Res>
     implements $EmojiRequestCopyWith<$Res> {
-  factory _$$_EmojiRequestCopyWith(
-          _$_EmojiRequest value, $Res Function(_$_EmojiRequest) then) =
-      __$$_EmojiRequestCopyWithImpl<$Res>;
+  factory _$$EmojiRequestImplCopyWith(
+          _$EmojiRequestImpl value, $Res Function(_$EmojiRequestImpl) then) =
+      __$$EmojiRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_EmojiRequestCopyWithImpl<$Res>
-    extends _$EmojiRequestCopyWithImpl<$Res, _$_EmojiRequest>
-    implements _$$_EmojiRequestCopyWith<$Res> {
-  __$$_EmojiRequestCopyWithImpl(
-      _$_EmojiRequest _value, $Res Function(_$_EmojiRequest) _then)
+class __$$EmojiRequestImplCopyWithImpl<$Res>
+    extends _$EmojiRequestCopyWithImpl<$Res, _$EmojiRequestImpl>
+    implements _$$EmojiRequestImplCopyWith<$Res> {
+  __$$EmojiRequestImplCopyWithImpl(
+      _$EmojiRequestImpl _value, $Res Function(_$EmojiRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_EmojiRequestCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_EmojiRequest(
+    return _then(_$EmojiRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_EmojiRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EmojiRequest implements _EmojiRequest {
-  const _$_EmojiRequest({required this.name});
+class _$EmojiRequestImpl implements _EmojiRequest {
+  const _$EmojiRequestImpl({required this.name});
 
-  factory _$_EmojiRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_EmojiRequestFromJson(json);
+  factory _$EmojiRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmojiRequestImplFromJson(json);
 
   @override
   final String name;
@@ -114,7 +114,7 @@ class _$_EmojiRequest implements _EmojiRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmojiRequest &&
+            other is _$EmojiRequestImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -125,27 +125,28 @@ class _$_EmojiRequest implements _EmojiRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmojiRequestCopyWith<_$_EmojiRequest> get copyWith =>
-      __$$_EmojiRequestCopyWithImpl<_$_EmojiRequest>(this, _$identity);
+  _$$EmojiRequestImplCopyWith<_$EmojiRequestImpl> get copyWith =>
+      __$$EmojiRequestImplCopyWithImpl<_$EmojiRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmojiRequestToJson(
+    return _$$EmojiRequestImplToJson(
       this,
     );
   }
 }
 
 abstract class _EmojiRequest implements EmojiRequest {
-  const factory _EmojiRequest({required final String name}) = _$_EmojiRequest;
+  const factory _EmojiRequest({required final String name}) =
+      _$EmojiRequestImpl;
 
   factory _EmojiRequest.fromJson(Map<String, dynamic> json) =
-      _$_EmojiRequest.fromJson;
+      _$EmojiRequestImpl.fromJson;
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_EmojiRequestCopyWith<_$_EmojiRequest> get copyWith =>
+  _$$EmojiRequestImplCopyWith<_$EmojiRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

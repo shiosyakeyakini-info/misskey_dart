@@ -72,25 +72,25 @@ class _$NotesPollsRecommendationRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesPollsRecommendationRequestCopyWith<$Res>
+abstract class _$$NotesPollsRecommendationRequestImplCopyWith<$Res>
     implements $NotesPollsRecommendationRequestCopyWith<$Res> {
-  factory _$$_NotesPollsRecommendationRequestCopyWith(
-          _$_NotesPollsRecommendationRequest value,
-          $Res Function(_$_NotesPollsRecommendationRequest) then) =
-      __$$_NotesPollsRecommendationRequestCopyWithImpl<$Res>;
+  factory _$$NotesPollsRecommendationRequestImplCopyWith(
+          _$NotesPollsRecommendationRequestImpl value,
+          $Res Function(_$NotesPollsRecommendationRequestImpl) then) =
+      __$$NotesPollsRecommendationRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, int? offset});
 }
 
 /// @nodoc
-class __$$_NotesPollsRecommendationRequestCopyWithImpl<$Res>
+class __$$NotesPollsRecommendationRequestImplCopyWithImpl<$Res>
     extends _$NotesPollsRecommendationRequestCopyWithImpl<$Res,
-        _$_NotesPollsRecommendationRequest>
-    implements _$$_NotesPollsRecommendationRequestCopyWith<$Res> {
-  __$$_NotesPollsRecommendationRequestCopyWithImpl(
-      _$_NotesPollsRecommendationRequest _value,
-      $Res Function(_$_NotesPollsRecommendationRequest) _then)
+        _$NotesPollsRecommendationRequestImpl>
+    implements _$$NotesPollsRecommendationRequestImplCopyWith<$Res> {
+  __$$NotesPollsRecommendationRequestImplCopyWithImpl(
+      _$NotesPollsRecommendationRequestImpl _value,
+      $Res Function(_$NotesPollsRecommendationRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_NotesPollsRecommendationRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_$_NotesPollsRecommendationRequest(
+    return _then(_$NotesPollsRecommendationRequestImpl(
       limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -114,13 +114,13 @@ class __$$_NotesPollsRecommendationRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesPollsRecommendationRequest
+class _$NotesPollsRecommendationRequestImpl
     implements _NotesPollsRecommendationRequest {
-  const _$_NotesPollsRecommendationRequest({this.limit, this.offset});
+  const _$NotesPollsRecommendationRequestImpl({this.limit, this.offset});
 
-  factory _$_NotesPollsRecommendationRequest.fromJson(
+  factory _$NotesPollsRecommendationRequestImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_NotesPollsRecommendationRequestFromJson(json);
+      _$$NotesPollsRecommendationRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -136,7 +136,7 @@ class _$_NotesPollsRecommendationRequest
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesPollsRecommendationRequest &&
+            other is _$NotesPollsRecommendationRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset));
   }
@@ -148,14 +148,14 @@ class _$_NotesPollsRecommendationRequest
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesPollsRecommendationRequestCopyWith<
-          _$_NotesPollsRecommendationRequest>
-      get copyWith => __$$_NotesPollsRecommendationRequestCopyWithImpl<
-          _$_NotesPollsRecommendationRequest>(this, _$identity);
+  _$$NotesPollsRecommendationRequestImplCopyWith<
+          _$NotesPollsRecommendationRequestImpl>
+      get copyWith => __$$NotesPollsRecommendationRequestImplCopyWithImpl<
+          _$NotesPollsRecommendationRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesPollsRecommendationRequestToJson(
+    return _$$NotesPollsRecommendationRequestImplToJson(
       this,
     );
   }
@@ -165,10 +165,10 @@ abstract class _NotesPollsRecommendationRequest
     implements NotesPollsRecommendationRequest {
   const factory _NotesPollsRecommendationRequest(
       {final int? limit,
-      final int? offset}) = _$_NotesPollsRecommendationRequest;
+      final int? offset}) = _$NotesPollsRecommendationRequestImpl;
 
   factory _NotesPollsRecommendationRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesPollsRecommendationRequest.fromJson;
+      _$NotesPollsRecommendationRequestImpl.fromJson;
 
   @override
   int? get limit;
@@ -176,7 +176,7 @@ abstract class _NotesPollsRecommendationRequest
   int? get offset;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesPollsRecommendationRequestCopyWith<
-          _$_NotesPollsRecommendationRequest>
+  _$$NotesPollsRecommendationRequestImplCopyWith<
+          _$NotesPollsRecommendationRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

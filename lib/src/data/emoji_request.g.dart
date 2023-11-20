@@ -6,12 +6,12 @@ part of 'emoji_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EmojiRequest _$$_EmojiRequestFromJson(Map<String, dynamic> json) =>
-    _$_EmojiRequest(
+_$EmojiRequestImpl _$$EmojiRequestImplFromJson(Map<String, dynamic> json) =>
+    _$EmojiRequestImpl(
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$_EmojiRequestToJson(_$_EmojiRequest instance) =>
+Map<String, dynamic> _$$EmojiRequestImplToJson(_$EmojiRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
     };

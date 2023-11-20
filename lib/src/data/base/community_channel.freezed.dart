@@ -171,11 +171,11 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
 }
 
 /// @nodoc
-abstract class _$$_CommunityChannelCopyWith<$Res>
+abstract class _$$CommunityChannelImplCopyWith<$Res>
     implements $CommunityChannelCopyWith<$Res> {
-  factory _$$_CommunityChannelCopyWith(
-          _$_CommunityChannel value, $Res Function(_$_CommunityChannel) then) =
-      __$$_CommunityChannelCopyWithImpl<$Res>;
+  factory _$$CommunityChannelImplCopyWith(_$CommunityChannelImpl value,
+          $Res Function(_$CommunityChannelImpl) then) =
+      __$$CommunityChannelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -198,11 +198,11 @@ abstract class _$$_CommunityChannelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CommunityChannelCopyWithImpl<$Res>
-    extends _$CommunityChannelCopyWithImpl<$Res, _$_CommunityChannel>
-    implements _$$_CommunityChannelCopyWith<$Res> {
-  __$$_CommunityChannelCopyWithImpl(
-      _$_CommunityChannel _value, $Res Function(_$_CommunityChannel) _then)
+class __$$CommunityChannelImplCopyWithImpl<$Res>
+    extends _$CommunityChannelCopyWithImpl<$Res, _$CommunityChannelImpl>
+    implements _$$CommunityChannelImplCopyWith<$Res> {
+  __$$CommunityChannelImplCopyWithImpl(_$CommunityChannelImpl _value,
+      $Res Function(_$CommunityChannelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -225,7 +225,7 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
     Object? pinnedNotes = freezed,
     Object? allowRenoteToExternal = null,
   }) {
-    return _then(_$_CommunityChannel(
+    return _then(_$CommunityChannelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -296,8 +296,8 @@ class __$$_CommunityChannelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CommunityChannel implements _CommunityChannel {
-  const _$_CommunityChannel(
+class _$CommunityChannelImpl implements _CommunityChannel {
+  const _$CommunityChannelImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NullableUriConverter() this.lastNotedAt,
@@ -317,8 +317,8 @@ class _$_CommunityChannel implements _CommunityChannel {
       : _pinnedNoteIds = pinnedNoteIds,
         _pinnedNotes = pinnedNotes;
 
-  factory _$_CommunityChannel.fromJson(Map<String, dynamic> json) =>
-      _$$_CommunityChannelFromJson(json);
+  factory _$CommunityChannelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommunityChannelImplFromJson(json);
 
   @override
   final String id;
@@ -381,7 +381,7 @@ class _$_CommunityChannel implements _CommunityChannel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CommunityChannel &&
+            other is _$CommunityChannelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -437,12 +437,13 @@ class _$_CommunityChannel implements _CommunityChannel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CommunityChannelCopyWith<_$_CommunityChannel> get copyWith =>
-      __$$_CommunityChannelCopyWithImpl<_$_CommunityChannel>(this, _$identity);
+  _$$CommunityChannelImplCopyWith<_$CommunityChannelImpl> get copyWith =>
+      __$$CommunityChannelImplCopyWithImpl<_$CommunityChannelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CommunityChannelToJson(
+    return _$$CommunityChannelImplToJson(
       this,
     );
   }
@@ -465,10 +466,10 @@ abstract class _CommunityChannel implements CommunityChannel {
       final bool? isFavorited,
       final bool? hasUnreadNote,
       required final List<Note>? pinnedNotes,
-      final bool allowRenoteToExternal}) = _$_CommunityChannel;
+      final bool allowRenoteToExternal}) = _$CommunityChannelImpl;
 
   factory _CommunityChannel.fromJson(Map<String, dynamic> json) =
-      _$_CommunityChannel.fromJson;
+      _$CommunityChannelImpl.fromJson;
 
   @override
   String get id;
@@ -507,6 +508,6 @@ abstract class _CommunityChannel implements CommunityChannel {
   bool get allowRenoteToExternal;
   @override
   @JsonKey(ignore: true)
-  _$$_CommunityChannelCopyWith<_$_CommunityChannel> get copyWith =>
+  _$$CommunityChannelImplCopyWith<_$CommunityChannelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

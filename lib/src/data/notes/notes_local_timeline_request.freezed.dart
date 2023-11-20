@@ -131,12 +131,12 @@ class _$NotesLocalTimelineRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesLocalTimelineRequestCopyWith<$Res>
+abstract class _$$NotesLocalTimelineRequestImplCopyWith<$Res>
     implements $NotesLocalTimelineRequestCopyWith<$Res> {
-  factory _$$_NotesLocalTimelineRequestCopyWith(
-          _$_NotesLocalTimelineRequest value,
-          $Res Function(_$_NotesLocalTimelineRequest) then) =
-      __$$_NotesLocalTimelineRequestCopyWithImpl<$Res>;
+  factory _$$NotesLocalTimelineRequestImplCopyWith(
+          _$NotesLocalTimelineRequestImpl value,
+          $Res Function(_$NotesLocalTimelineRequestImpl) then) =
+      __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -153,13 +153,13 @@ abstract class _$$_NotesLocalTimelineRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesLocalTimelineRequestCopyWithImpl<$Res>
+class __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>
     extends _$NotesLocalTimelineRequestCopyWithImpl<$Res,
-        _$_NotesLocalTimelineRequest>
-    implements _$$_NotesLocalTimelineRequestCopyWith<$Res> {
-  __$$_NotesLocalTimelineRequestCopyWithImpl(
-      _$_NotesLocalTimelineRequest _value,
-      $Res Function(_$_NotesLocalTimelineRequest) _then)
+        _$NotesLocalTimelineRequestImpl>
+    implements _$$NotesLocalTimelineRequestImplCopyWith<$Res> {
+  __$$NotesLocalTimelineRequestImplCopyWithImpl(
+      _$NotesLocalTimelineRequestImpl _value,
+      $Res Function(_$NotesLocalTimelineRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -176,7 +176,7 @@ class __$$_NotesLocalTimelineRequestCopyWithImpl<$Res>
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
   }) {
-    return _then(_$_NotesLocalTimelineRequest(
+    return _then(_$NotesLocalTimelineRequestImpl(
       withFiles: freezed == withFiles
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
@@ -223,8 +223,8 @@ class __$$_NotesLocalTimelineRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
-  const _$_NotesLocalTimelineRequest(
+class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
+  const _$NotesLocalTimelineRequestImpl(
       {this.withFiles,
       this.withRenotes,
       this.withReplies,
@@ -237,8 +237,8 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate})
       : _fileType = fileType;
 
-  factory _$_NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesLocalTimelineRequestFromJson(json);
+  factory _$NotesLocalTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesLocalTimelineRequestImplFromJson(json);
 
   @override
   final bool? withFiles;
@@ -281,7 +281,7 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesLocalTimelineRequest &&
+            other is _$NotesLocalTimelineRequestImpl &&
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             (identical(other.withRenotes, withRenotes) ||
@@ -318,13 +318,13 @@ class _$_NotesLocalTimelineRequest implements _NotesLocalTimelineRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesLocalTimelineRequestCopyWith<_$_NotesLocalTimelineRequest>
-      get copyWith => __$$_NotesLocalTimelineRequestCopyWithImpl<
-          _$_NotesLocalTimelineRequest>(this, _$identity);
+  _$$NotesLocalTimelineRequestImplCopyWith<_$NotesLocalTimelineRequestImpl>
+      get copyWith => __$$NotesLocalTimelineRequestImplCopyWithImpl<
+          _$NotesLocalTimelineRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesLocalTimelineRequestToJson(
+    return _$$NotesLocalTimelineRequestImplToJson(
       this,
     );
   }
@@ -342,10 +342,10 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? untilDate}) = _$_NotesLocalTimelineRequest;
+      final DateTime? untilDate}) = _$NotesLocalTimelineRequestImpl;
 
   factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesLocalTimelineRequest.fromJson;
+      _$NotesLocalTimelineRequestImpl.fromJson;
 
   @override
   bool? get withFiles;
@@ -372,6 +372,6 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   DateTime? get untilDate;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesLocalTimelineRequestCopyWith<_$_NotesLocalTimelineRequest>
+  _$$NotesLocalTimelineRequestImplCopyWith<_$NotesLocalTimelineRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -70,22 +70,24 @@ class _$UsersListsPullRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsPullRequestCopyWith<$Res>
+abstract class _$$UsersListsPullRequestImplCopyWith<$Res>
     implements $UsersListsPullRequestCopyWith<$Res> {
-  factory _$$_UsersListsPullRequestCopyWith(_$_UsersListsPullRequest value,
-          $Res Function(_$_UsersListsPullRequest) then) =
-      __$$_UsersListsPullRequestCopyWithImpl<$Res>;
+  factory _$$UsersListsPullRequestImplCopyWith(
+          _$UsersListsPullRequestImpl value,
+          $Res Function(_$UsersListsPullRequestImpl) then) =
+      __$$UsersListsPullRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String listId, String userId});
 }
 
 /// @nodoc
-class __$$_UsersListsPullRequestCopyWithImpl<$Res>
-    extends _$UsersListsPullRequestCopyWithImpl<$Res, _$_UsersListsPullRequest>
-    implements _$$_UsersListsPullRequestCopyWith<$Res> {
-  __$$_UsersListsPullRequestCopyWithImpl(_$_UsersListsPullRequest _value,
-      $Res Function(_$_UsersListsPullRequest) _then)
+class __$$UsersListsPullRequestImplCopyWithImpl<$Res>
+    extends _$UsersListsPullRequestCopyWithImpl<$Res,
+        _$UsersListsPullRequestImpl>
+    implements _$$UsersListsPullRequestImplCopyWith<$Res> {
+  __$$UsersListsPullRequestImplCopyWithImpl(_$UsersListsPullRequestImpl _value,
+      $Res Function(_$UsersListsPullRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +96,7 @@ class __$$_UsersListsPullRequestCopyWithImpl<$Res>
     Object? listId = null,
     Object? userId = null,
   }) {
-    return _then(_$_UsersListsPullRequest(
+    return _then(_$UsersListsPullRequestImpl(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
@@ -109,11 +111,12 @@ class __$$_UsersListsPullRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsPullRequest implements _UsersListsPullRequest {
-  const _$_UsersListsPullRequest({required this.listId, required this.userId});
+class _$UsersListsPullRequestImpl implements _UsersListsPullRequest {
+  const _$UsersListsPullRequestImpl(
+      {required this.listId, required this.userId});
 
-  factory _$_UsersListsPullRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsPullRequestFromJson(json);
+  factory _$UsersListsPullRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsPullRequestImplFromJson(json);
 
   @override
   final String listId;
@@ -129,7 +132,7 @@ class _$_UsersListsPullRequest implements _UsersListsPullRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsPullRequest &&
+            other is _$UsersListsPullRequestImpl &&
             (identical(other.listId, listId) || other.listId == listId) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
@@ -141,13 +144,13 @@ class _$_UsersListsPullRequest implements _UsersListsPullRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsPullRequestCopyWith<_$_UsersListsPullRequest> get copyWith =>
-      __$$_UsersListsPullRequestCopyWithImpl<_$_UsersListsPullRequest>(
-          this, _$identity);
+  _$$UsersListsPullRequestImplCopyWith<_$UsersListsPullRequestImpl>
+      get copyWith => __$$UsersListsPullRequestImplCopyWithImpl<
+          _$UsersListsPullRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsPullRequestToJson(
+    return _$$UsersListsPullRequestImplToJson(
       this,
     );
   }
@@ -156,10 +159,10 @@ class _$_UsersListsPullRequest implements _UsersListsPullRequest {
 abstract class _UsersListsPullRequest implements UsersListsPullRequest {
   const factory _UsersListsPullRequest(
       {required final String listId,
-      required final String userId}) = _$_UsersListsPullRequest;
+      required final String userId}) = _$UsersListsPullRequestImpl;
 
   factory _UsersListsPullRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsPullRequest.fromJson;
+      _$UsersListsPullRequestImpl.fromJson;
 
   @override
   String get listId;
@@ -167,6 +170,6 @@ abstract class _UsersListsPullRequest implements UsersListsPullRequest {
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsPullRequestCopyWith<_$_UsersListsPullRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersListsPullRequestImplCopyWith<_$UsersListsPullRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

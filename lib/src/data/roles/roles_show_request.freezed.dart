@@ -62,22 +62,22 @@ class _$RolesShowRequestCopyWithImpl<$Res, $Val extends RolesShowRequest>
 }
 
 /// @nodoc
-abstract class _$$_RolesShowRequestCopyWith<$Res>
+abstract class _$$RolesShowRequestImplCopyWith<$Res>
     implements $RolesShowRequestCopyWith<$Res> {
-  factory _$$_RolesShowRequestCopyWith(
-          _$_RolesShowRequest value, $Res Function(_$_RolesShowRequest) then) =
-      __$$_RolesShowRequestCopyWithImpl<$Res>;
+  factory _$$RolesShowRequestImplCopyWith(_$RolesShowRequestImpl value,
+          $Res Function(_$RolesShowRequestImpl) then) =
+      __$$RolesShowRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String roleId});
 }
 
 /// @nodoc
-class __$$_RolesShowRequestCopyWithImpl<$Res>
-    extends _$RolesShowRequestCopyWithImpl<$Res, _$_RolesShowRequest>
-    implements _$$_RolesShowRequestCopyWith<$Res> {
-  __$$_RolesShowRequestCopyWithImpl(
-      _$_RolesShowRequest _value, $Res Function(_$_RolesShowRequest) _then)
+class __$$RolesShowRequestImplCopyWithImpl<$Res>
+    extends _$RolesShowRequestCopyWithImpl<$Res, _$RolesShowRequestImpl>
+    implements _$$RolesShowRequestImplCopyWith<$Res> {
+  __$$RolesShowRequestImplCopyWithImpl(_$RolesShowRequestImpl _value,
+      $Res Function(_$RolesShowRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_RolesShowRequestCopyWithImpl<$Res>
   $Res call({
     Object? roleId = null,
   }) {
-    return _then(_$_RolesShowRequest(
+    return _then(_$RolesShowRequestImpl(
       roleId: null == roleId
           ? _value.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
@@ -96,11 +96,11 @@ class __$$_RolesShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RolesShowRequest implements _RolesShowRequest {
-  const _$_RolesShowRequest({required this.roleId});
+class _$RolesShowRequestImpl implements _RolesShowRequest {
+  const _$RolesShowRequestImpl({required this.roleId});
 
-  factory _$_RolesShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_RolesShowRequestFromJson(json);
+  factory _$RolesShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RolesShowRequestImplFromJson(json);
 
   @override
   final String roleId;
@@ -114,7 +114,7 @@ class _$_RolesShowRequest implements _RolesShowRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RolesShowRequest &&
+            other is _$RolesShowRequestImpl &&
             (identical(other.roleId, roleId) || other.roleId == roleId));
   }
 
@@ -125,12 +125,13 @@ class _$_RolesShowRequest implements _RolesShowRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RolesShowRequestCopyWith<_$_RolesShowRequest> get copyWith =>
-      __$$_RolesShowRequestCopyWithImpl<_$_RolesShowRequest>(this, _$identity);
+  _$$RolesShowRequestImplCopyWith<_$RolesShowRequestImpl> get copyWith =>
+      __$$RolesShowRequestImplCopyWithImpl<_$RolesShowRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RolesShowRequestToJson(
+    return _$$RolesShowRequestImplToJson(
       this,
     );
   }
@@ -138,15 +139,15 @@ class _$_RolesShowRequest implements _RolesShowRequest {
 
 abstract class _RolesShowRequest implements RolesShowRequest {
   const factory _RolesShowRequest({required final String roleId}) =
-      _$_RolesShowRequest;
+      _$RolesShowRequestImpl;
 
   factory _RolesShowRequest.fromJson(Map<String, dynamic> json) =
-      _$_RolesShowRequest.fromJson;
+      _$RolesShowRequestImpl.fromJson;
 
   @override
   String get roleId;
   @override
   @JsonKey(ignore: true)
-  _$$_RolesShowRequestCopyWith<_$_RolesShowRequest> get copyWith =>
+  _$$RolesShowRequestImplCopyWith<_$RolesShowRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

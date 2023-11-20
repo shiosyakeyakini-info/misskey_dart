@@ -6,13 +6,14 @@ part of 'notes_state_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesStateRequest _$$_NotesStateRequestFromJson(Map<String, dynamic> json) =>
-    _$_NotesStateRequest(
+_$NotesStateRequestImpl _$$NotesStateRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NotesStateRequestImpl(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$$_NotesStateRequestToJson(
-        _$_NotesStateRequest instance) =>
+Map<String, dynamic> _$$NotesStateRequestImplToJson(
+        _$NotesStateRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

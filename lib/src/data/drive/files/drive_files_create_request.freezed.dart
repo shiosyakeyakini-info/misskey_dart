@@ -93,11 +93,12 @@ class _$DriveFilesCreateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DriveFilesCreateRequestCopyWith<$Res>
+abstract class _$$DriveFilesCreateRequestImplCopyWith<$Res>
     implements $DriveFilesCreateRequestCopyWith<$Res> {
-  factory _$$_DriveFilesCreateRequestCopyWith(_$_DriveFilesCreateRequest value,
-          $Res Function(_$_DriveFilesCreateRequest) then) =
-      __$$_DriveFilesCreateRequestCopyWithImpl<$Res>;
+  factory _$$DriveFilesCreateRequestImplCopyWith(
+          _$DriveFilesCreateRequestImpl value,
+          $Res Function(_$DriveFilesCreateRequestImpl) then) =
+      __$$DriveFilesCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -109,12 +110,13 @@ abstract class _$$_DriveFilesCreateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DriveFilesCreateRequestCopyWithImpl<$Res>
+class __$$DriveFilesCreateRequestImplCopyWithImpl<$Res>
     extends _$DriveFilesCreateRequestCopyWithImpl<$Res,
-        _$_DriveFilesCreateRequest>
-    implements _$$_DriveFilesCreateRequestCopyWith<$Res> {
-  __$$_DriveFilesCreateRequestCopyWithImpl(_$_DriveFilesCreateRequest _value,
-      $Res Function(_$_DriveFilesCreateRequest) _then)
+        _$DriveFilesCreateRequestImpl>
+    implements _$$DriveFilesCreateRequestImplCopyWith<$Res> {
+  __$$DriveFilesCreateRequestImplCopyWithImpl(
+      _$DriveFilesCreateRequestImpl _value,
+      $Res Function(_$DriveFilesCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +128,7 @@ class __$$_DriveFilesCreateRequestCopyWithImpl<$Res>
     Object? isSensitive = freezed,
     Object? force = freezed,
   }) {
-    return _then(_$_DriveFilesCreateRequest(
+    return _then(_$DriveFilesCreateRequestImpl(
       folderId: freezed == folderId
           ? _value.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
@@ -153,12 +155,12 @@ class __$$_DriveFilesCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriveFilesCreateRequest implements _DriveFilesCreateRequest {
-  const _$_DriveFilesCreateRequest(
+class _$DriveFilesCreateRequestImpl implements _DriveFilesCreateRequest {
+  const _$DriveFilesCreateRequestImpl(
       {this.folderId, this.name, this.comment, this.isSensitive, this.force});
 
-  factory _$_DriveFilesCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriveFilesCreateRequestFromJson(json);
+  factory _$DriveFilesCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFilesCreateRequestImplFromJson(json);
 
   @override
   final String? folderId;
@@ -180,7 +182,7 @@ class _$_DriveFilesCreateRequest implements _DriveFilesCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriveFilesCreateRequest &&
+            other is _$DriveFilesCreateRequestImpl &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -198,14 +200,13 @@ class _$_DriveFilesCreateRequest implements _DriveFilesCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriveFilesCreateRequestCopyWith<_$_DriveFilesCreateRequest>
-      get copyWith =>
-          __$$_DriveFilesCreateRequestCopyWithImpl<_$_DriveFilesCreateRequest>(
-              this, _$identity);
+  _$$DriveFilesCreateRequestImplCopyWith<_$DriveFilesCreateRequestImpl>
+      get copyWith => __$$DriveFilesCreateRequestImplCopyWithImpl<
+          _$DriveFilesCreateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriveFilesCreateRequestToJson(
+    return _$$DriveFilesCreateRequestImplToJson(
       this,
     );
   }
@@ -217,10 +218,10 @@ abstract class _DriveFilesCreateRequest implements DriveFilesCreateRequest {
       final String? name,
       final String? comment,
       final bool? isSensitive,
-      final bool? force}) = _$_DriveFilesCreateRequest;
+      final bool? force}) = _$DriveFilesCreateRequestImpl;
 
   factory _DriveFilesCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriveFilesCreateRequest.fromJson;
+      _$DriveFilesCreateRequestImpl.fromJson;
 
   @override
   String? get folderId;
@@ -234,6 +235,6 @@ abstract class _DriveFilesCreateRequest implements DriveFilesCreateRequest {
   bool? get force;
   @override
   @JsonKey(ignore: true)
-  _$$_DriveFilesCreateRequestCopyWith<_$_DriveFilesCreateRequest>
+  _$$DriveFilesCreateRequestImplCopyWith<_$DriveFilesCreateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

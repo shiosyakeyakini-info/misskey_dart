@@ -76,23 +76,25 @@ class _$UsersListsUpdateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UsersListsUpdateRequestCopyWith<$Res>
+abstract class _$$UsersListsUpdateRequestImplCopyWith<$Res>
     implements $UsersListsUpdateRequestCopyWith<$Res> {
-  factory _$$_UsersListsUpdateRequestCopyWith(_$_UsersListsUpdateRequest value,
-          $Res Function(_$_UsersListsUpdateRequest) then) =
-      __$$_UsersListsUpdateRequestCopyWithImpl<$Res>;
+  factory _$$UsersListsUpdateRequestImplCopyWith(
+          _$UsersListsUpdateRequestImpl value,
+          $Res Function(_$UsersListsUpdateRequestImpl) then) =
+      __$$UsersListsUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String listId, String? name, bool? isPublic});
 }
 
 /// @nodoc
-class __$$_UsersListsUpdateRequestCopyWithImpl<$Res>
+class __$$UsersListsUpdateRequestImplCopyWithImpl<$Res>
     extends _$UsersListsUpdateRequestCopyWithImpl<$Res,
-        _$_UsersListsUpdateRequest>
-    implements _$$_UsersListsUpdateRequestCopyWith<$Res> {
-  __$$_UsersListsUpdateRequestCopyWithImpl(_$_UsersListsUpdateRequest _value,
-      $Res Function(_$_UsersListsUpdateRequest) _then)
+        _$UsersListsUpdateRequestImpl>
+    implements _$$UsersListsUpdateRequestImplCopyWith<$Res> {
+  __$$UsersListsUpdateRequestImplCopyWithImpl(
+      _$UsersListsUpdateRequestImpl _value,
+      $Res Function(_$UsersListsUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +104,7 @@ class __$$_UsersListsUpdateRequestCopyWithImpl<$Res>
     Object? name = freezed,
     Object? isPublic = freezed,
   }) {
-    return _then(_$_UsersListsUpdateRequest(
+    return _then(_$UsersListsUpdateRequestImpl(
       listId: null == listId
           ? _value.listId
           : listId // ignore: cast_nullable_to_non_nullable
@@ -121,12 +123,12 @@ class __$$_UsersListsUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
-  const _$_UsersListsUpdateRequest(
+class _$UsersListsUpdateRequestImpl implements _UsersListsUpdateRequest {
+  const _$UsersListsUpdateRequestImpl(
       {required this.listId, this.name, this.isPublic});
 
-  factory _$_UsersListsUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListsUpdateRequestFromJson(json);
+  factory _$UsersListsUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsUpdateRequestImplFromJson(json);
 
   @override
   final String listId;
@@ -144,7 +146,7 @@ class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListsUpdateRequest &&
+            other is _$UsersListsUpdateRequestImpl &&
             (identical(other.listId, listId) || other.listId == listId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.isPublic, isPublic) ||
@@ -158,14 +160,13 @@ class _$_UsersListsUpdateRequest implements _UsersListsUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UsersListsUpdateRequestCopyWith<_$_UsersListsUpdateRequest>
-      get copyWith =>
-          __$$_UsersListsUpdateRequestCopyWithImpl<_$_UsersListsUpdateRequest>(
-              this, _$identity);
+  _$$UsersListsUpdateRequestImplCopyWith<_$UsersListsUpdateRequestImpl>
+      get copyWith => __$$UsersListsUpdateRequestImplCopyWithImpl<
+          _$UsersListsUpdateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListsUpdateRequestToJson(
+    return _$$UsersListsUpdateRequestImplToJson(
       this,
     );
   }
@@ -175,10 +176,10 @@ abstract class _UsersListsUpdateRequest implements UsersListsUpdateRequest {
   const factory _UsersListsUpdateRequest(
       {required final String listId,
       final String? name,
-      final bool? isPublic}) = _$_UsersListsUpdateRequest;
+      final bool? isPublic}) = _$UsersListsUpdateRequestImpl;
 
   factory _UsersListsUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_UsersListsUpdateRequest.fromJson;
+      _$UsersListsUpdateRequestImpl.fromJson;
 
   @override
   String get listId;
@@ -188,6 +189,6 @@ abstract class _UsersListsUpdateRequest implements UsersListsUpdateRequest {
   bool? get isPublic;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListsUpdateRequestCopyWith<_$_UsersListsUpdateRequest>
+  _$$UsersListsUpdateRequestImplCopyWith<_$UsersListsUpdateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

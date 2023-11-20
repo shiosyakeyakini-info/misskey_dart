@@ -100,11 +100,12 @@ class _$NotesReactionsRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_NotesReactionsRequestCopyWith<$Res>
+abstract class _$$NotesReactionsRequestImplCopyWith<$Res>
     implements $NotesReactionsRequestCopyWith<$Res> {
-  factory _$$_NotesReactionsRequestCopyWith(_$_NotesReactionsRequest value,
-          $Res Function(_$_NotesReactionsRequest) then) =
-      __$$_NotesReactionsRequestCopyWithImpl<$Res>;
+  factory _$$NotesReactionsRequestImplCopyWith(
+          _$NotesReactionsRequestImpl value,
+          $Res Function(_$NotesReactionsRequestImpl) then) =
+      __$$NotesReactionsRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -117,11 +118,12 @@ abstract class _$$_NotesReactionsRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesReactionsRequestCopyWithImpl<$Res>
-    extends _$NotesReactionsRequestCopyWithImpl<$Res, _$_NotesReactionsRequest>
-    implements _$$_NotesReactionsRequestCopyWith<$Res> {
-  __$$_NotesReactionsRequestCopyWithImpl(_$_NotesReactionsRequest _value,
-      $Res Function(_$_NotesReactionsRequest) _then)
+class __$$NotesReactionsRequestImplCopyWithImpl<$Res>
+    extends _$NotesReactionsRequestCopyWithImpl<$Res,
+        _$NotesReactionsRequestImpl>
+    implements _$$NotesReactionsRequestImplCopyWith<$Res> {
+  __$$NotesReactionsRequestImplCopyWithImpl(_$NotesReactionsRequestImpl _value,
+      $Res Function(_$NotesReactionsRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -134,7 +136,7 @@ class __$$_NotesReactionsRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$_NotesReactionsRequest(
+    return _then(_$NotesReactionsRequestImpl(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -165,8 +167,8 @@ class __$$_NotesReactionsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesReactionsRequest implements _NotesReactionsRequest {
-  const _$_NotesReactionsRequest(
+class _$NotesReactionsRequestImpl implements _NotesReactionsRequest {
+  const _$NotesReactionsRequestImpl(
       {required this.noteId,
       this.type,
       this.limit,
@@ -174,8 +176,8 @@ class _$_NotesReactionsRequest implements _NotesReactionsRequest {
       this.sinceId,
       this.untilId});
 
-  factory _$_NotesReactionsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesReactionsRequestFromJson(json);
+  factory _$NotesReactionsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesReactionsRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -199,7 +201,7 @@ class _$_NotesReactionsRequest implements _NotesReactionsRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesReactionsRequest &&
+            other is _$NotesReactionsRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -216,13 +218,13 @@ class _$_NotesReactionsRequest implements _NotesReactionsRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesReactionsRequestCopyWith<_$_NotesReactionsRequest> get copyWith =>
-      __$$_NotesReactionsRequestCopyWithImpl<_$_NotesReactionsRequest>(
-          this, _$identity);
+  _$$NotesReactionsRequestImplCopyWith<_$NotesReactionsRequestImpl>
+      get copyWith => __$$NotesReactionsRequestImplCopyWithImpl<
+          _$NotesReactionsRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesReactionsRequestToJson(
+    return _$$NotesReactionsRequestImplToJson(
       this,
     );
   }
@@ -235,10 +237,10 @@ abstract class _NotesReactionsRequest implements NotesReactionsRequest {
       final int? limit,
       final int? offset,
       final String? sinceId,
-      final String? untilId}) = _$_NotesReactionsRequest;
+      final String? untilId}) = _$NotesReactionsRequestImpl;
 
   factory _NotesReactionsRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesReactionsRequest.fromJson;
+      _$NotesReactionsRequestImpl.fromJson;
 
   @override
   String get noteId;
@@ -254,6 +256,6 @@ abstract class _NotesReactionsRequest implements NotesReactionsRequest {
   String? get untilId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesReactionsRequestCopyWith<_$_NotesReactionsRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NotesReactionsRequestImplCopyWith<_$NotesReactionsRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

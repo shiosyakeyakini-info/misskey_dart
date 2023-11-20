@@ -6,14 +6,14 @@ part of 'following_invalidate_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FollowingInvalidateRequest _$$_FollowingInvalidateRequestFromJson(
+_$FollowingInvalidateRequestImpl _$$FollowingInvalidateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_FollowingInvalidateRequest(
+    _$FollowingInvalidateRequestImpl(
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$_FollowingInvalidateRequestToJson(
-        _$_FollowingInvalidateRequest instance) =>
+Map<String, dynamic> _$$FollowingInvalidateRequestImplToJson(
+        _$FollowingInvalidateRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
     };

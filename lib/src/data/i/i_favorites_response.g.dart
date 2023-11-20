@@ -6,9 +6,9 @@ part of 'i_favorites_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IFavoritesResponse _$$_IFavoritesResponseFromJson(
+_$IFavoritesResponseImpl _$$IFavoritesResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_IFavoritesResponse(
+    _$IFavoritesResponseImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -16,8 +16,8 @@ _$_IFavoritesResponse _$$_IFavoritesResponseFromJson(
       note: Note.fromJson(json['note'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_IFavoritesResponseToJson(
-        _$_IFavoritesResponse instance) =>
+Map<String, dynamic> _$$IFavoritesResponseImplToJson(
+        _$IFavoritesResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

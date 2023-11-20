@@ -127,11 +127,11 @@ class _$NotesSearchRequestCopyWithImpl<$Res, $Val extends NotesSearchRequest>
 }
 
 /// @nodoc
-abstract class _$$_NotesSearchRequestCopyWith<$Res>
+abstract class _$$NotesSearchRequestImplCopyWith<$Res>
     implements $NotesSearchRequestCopyWith<$Res> {
-  factory _$$_NotesSearchRequestCopyWith(_$_NotesSearchRequest value,
-          $Res Function(_$_NotesSearchRequest) then) =
-      __$$_NotesSearchRequestCopyWithImpl<$Res>;
+  factory _$$NotesSearchRequestImplCopyWith(_$NotesSearchRequestImpl value,
+          $Res Function(_$NotesSearchRequestImpl) then) =
+      __$$NotesSearchRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -146,11 +146,11 @@ abstract class _$$_NotesSearchRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NotesSearchRequestCopyWithImpl<$Res>
-    extends _$NotesSearchRequestCopyWithImpl<$Res, _$_NotesSearchRequest>
-    implements _$$_NotesSearchRequestCopyWith<$Res> {
-  __$$_NotesSearchRequestCopyWithImpl(
-      _$_NotesSearchRequest _value, $Res Function(_$_NotesSearchRequest) _then)
+class __$$NotesSearchRequestImplCopyWithImpl<$Res>
+    extends _$NotesSearchRequestCopyWithImpl<$Res, _$NotesSearchRequestImpl>
+    implements _$$NotesSearchRequestImplCopyWith<$Res> {
+  __$$NotesSearchRequestImplCopyWithImpl(_$NotesSearchRequestImpl _value,
+      $Res Function(_$NotesSearchRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -165,7 +165,7 @@ class __$$_NotesSearchRequestCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? channelId = freezed,
   }) {
-    return _then(_$_NotesSearchRequest(
+    return _then(_$NotesSearchRequestImpl(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -204,8 +204,8 @@ class __$$_NotesSearchRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotesSearchRequest implements _NotesSearchRequest {
-  const _$_NotesSearchRequest(
+class _$NotesSearchRequestImpl implements _NotesSearchRequest {
+  const _$NotesSearchRequestImpl(
       {required this.query,
       this.sinceId,
       this.untilId,
@@ -215,8 +215,8 @@ class _$_NotesSearchRequest implements _NotesSearchRequest {
       this.userId,
       this.channelId});
 
-  factory _$_NotesSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_NotesSearchRequestFromJson(json);
+  factory _$NotesSearchRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesSearchRequestImplFromJson(json);
 
   /// 検索クエリ。クエリが本文に含まれるノートを検索します。
   @override
@@ -259,7 +259,7 @@ class _$_NotesSearchRequest implements _NotesSearchRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesSearchRequest &&
+            other is _$NotesSearchRequestImpl &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -279,13 +279,13 @@ class _$_NotesSearchRequest implements _NotesSearchRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotesSearchRequestCopyWith<_$_NotesSearchRequest> get copyWith =>
-      __$$_NotesSearchRequestCopyWithImpl<_$_NotesSearchRequest>(
+  _$$NotesSearchRequestImplCopyWith<_$NotesSearchRequestImpl> get copyWith =>
+      __$$NotesSearchRequestImplCopyWithImpl<_$NotesSearchRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotesSearchRequestToJson(
+    return _$$NotesSearchRequestImplToJson(
       this,
     );
   }
@@ -300,10 +300,10 @@ abstract class _NotesSearchRequest implements NotesSearchRequest {
       final int? offset,
       final String? host,
       final String? userId,
-      final String? channelId}) = _$_NotesSearchRequest;
+      final String? channelId}) = _$NotesSearchRequestImpl;
 
   factory _NotesSearchRequest.fromJson(Map<String, dynamic> json) =
-      _$_NotesSearchRequest.fromJson;
+      _$NotesSearchRequestImpl.fromJson;
 
   @override
 
@@ -339,6 +339,6 @@ abstract class _NotesSearchRequest implements NotesSearchRequest {
   String? get channelId;
   @override
   @JsonKey(ignore: true)
-  _$$_NotesSearchRequestCopyWith<_$_NotesSearchRequest> get copyWith =>
+  _$$NotesSearchRequestImplCopyWith<_$NotesSearchRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

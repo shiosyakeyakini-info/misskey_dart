@@ -6,16 +6,16 @@ part of 'clips_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ClipsCreateRequest _$$_ClipsCreateRequestFromJson(
+_$ClipsCreateRequestImpl _$$ClipsCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ClipsCreateRequest(
+    _$ClipsCreateRequestImpl(
       name: json['name'] as String,
       isPublic: json['isPublic'] as bool?,
       description: json['description'] as String?,
     );
 
-Map<String, dynamic> _$$_ClipsCreateRequestToJson(
-        _$_ClipsCreateRequest instance) =>
+Map<String, dynamic> _$$ClipsCreateRequestImplToJson(
+        _$ClipsCreateRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'isPublic': instance.isPublic,

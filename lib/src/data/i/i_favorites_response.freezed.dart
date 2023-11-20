@@ -95,11 +95,11 @@ class _$IFavoritesResponseCopyWithImpl<$Res, $Val extends IFavoritesResponse>
 }
 
 /// @nodoc
-abstract class _$$_IFavoritesResponseCopyWith<$Res>
+abstract class _$$IFavoritesResponseImplCopyWith<$Res>
     implements $IFavoritesResponseCopyWith<$Res> {
-  factory _$$_IFavoritesResponseCopyWith(_$_IFavoritesResponse value,
-          $Res Function(_$_IFavoritesResponse) then) =
-      __$$_IFavoritesResponseCopyWithImpl<$Res>;
+  factory _$$IFavoritesResponseImplCopyWith(_$IFavoritesResponseImpl value,
+          $Res Function(_$IFavoritesResponseImpl) then) =
+      __$$IFavoritesResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -113,11 +113,11 @@ abstract class _$$_IFavoritesResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_IFavoritesResponseCopyWithImpl<$Res>
-    extends _$IFavoritesResponseCopyWithImpl<$Res, _$_IFavoritesResponse>
-    implements _$$_IFavoritesResponseCopyWith<$Res> {
-  __$$_IFavoritesResponseCopyWithImpl(
-      _$_IFavoritesResponse _value, $Res Function(_$_IFavoritesResponse) _then)
+class __$$IFavoritesResponseImplCopyWithImpl<$Res>
+    extends _$IFavoritesResponseCopyWithImpl<$Res, _$IFavoritesResponseImpl>
+    implements _$$IFavoritesResponseImplCopyWith<$Res> {
+  __$$IFavoritesResponseImplCopyWithImpl(_$IFavoritesResponseImpl _value,
+      $Res Function(_$IFavoritesResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_IFavoritesResponseCopyWithImpl<$Res>
     Object? noteId = null,
     Object? note = null,
   }) {
-    return _then(_$_IFavoritesResponse(
+    return _then(_$IFavoritesResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -151,15 +151,15 @@ class __$$_IFavoritesResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IFavoritesResponse implements _IFavoritesResponse {
-  const _$_IFavoritesResponse(
+class _$IFavoritesResponseImpl implements _IFavoritesResponse {
+  const _$IFavoritesResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.noteId,
       required this.note});
 
-  factory _$_IFavoritesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_IFavoritesResponseFromJson(json);
+  factory _$IFavoritesResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IFavoritesResponseImplFromJson(json);
 
   @override
   final String id;
@@ -180,7 +180,7 @@ class _$_IFavoritesResponse implements _IFavoritesResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IFavoritesResponse &&
+            other is _$IFavoritesResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -195,13 +195,13 @@ class _$_IFavoritesResponse implements _IFavoritesResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IFavoritesResponseCopyWith<_$_IFavoritesResponse> get copyWith =>
-      __$$_IFavoritesResponseCopyWithImpl<_$_IFavoritesResponse>(
+  _$$IFavoritesResponseImplCopyWith<_$IFavoritesResponseImpl> get copyWith =>
+      __$$IFavoritesResponseImplCopyWithImpl<_$IFavoritesResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IFavoritesResponseToJson(
+    return _$$IFavoritesResponseImplToJson(
       this,
     );
   }
@@ -212,10 +212,10 @@ abstract class _IFavoritesResponse implements IFavoritesResponse {
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
       required final String noteId,
-      required final Note note}) = _$_IFavoritesResponse;
+      required final Note note}) = _$IFavoritesResponseImpl;
 
   factory _IFavoritesResponse.fromJson(Map<String, dynamic> json) =
-      _$_IFavoritesResponse.fromJson;
+      _$IFavoritesResponseImpl.fromJson;
 
   @override
   String get id;
@@ -228,6 +228,6 @@ abstract class _IFavoritesResponse implements IFavoritesResponse {
   Note get note;
   @override
   @JsonKey(ignore: true)
-  _$$_IFavoritesResponseCopyWith<_$_IFavoritesResponse> get copyWith =>
+  _$$IFavoritesResponseImplCopyWith<_$IFavoritesResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
