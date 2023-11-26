@@ -22,7 +22,7 @@ ClipsNotesRequest _$ClipsNotesRequestFromJson(Map<String, dynamic> json) {
 mixin _$ClipsNotesRequest {
   @Assert('limit > 0')
   int? get limit => throw _privateConstructorUsedError;
-  String? get clipId => throw _privateConstructorUsedError;
+  String get clipId => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
 
@@ -40,7 +40,7 @@ abstract class $ClipsNotesRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {@Assert('limit > 0') int? limit,
-      String? clipId,
+      String clipId,
       String? sinceId,
       String? untilId});
 }
@@ -59,7 +59,7 @@ class _$ClipsNotesRequestCopyWithImpl<$Res, $Val extends ClipsNotesRequest>
   @override
   $Res call({
     Object? limit = freezed,
-    Object? clipId = freezed,
+    Object? clipId = null,
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
@@ -68,10 +68,10 @@ class _$ClipsNotesRequestCopyWithImpl<$Res, $Val extends ClipsNotesRequest>
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      clipId: freezed == clipId
+      clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -94,7 +94,7 @@ abstract class _$$ClipsNotesRequestImplCopyWith<$Res>
   @useResult
   $Res call(
       {@Assert('limit > 0') int? limit,
-      String? clipId,
+      String clipId,
       String? sinceId,
       String? untilId});
 }
@@ -111,7 +111,7 @@ class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? limit = freezed,
-    Object? clipId = freezed,
+    Object? clipId = null,
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
@@ -120,10 +120,10 @@ class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      clipId: freezed == clipId
+      clipId: null == clipId
           ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -141,7 +141,7 @@ class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
 class _$ClipsNotesRequestImpl implements _ClipsNotesRequest {
   const _$ClipsNotesRequestImpl(
       {@Assert('limit > 0') this.limit,
-      this.clipId,
+      required this.clipId,
       this.sinceId,
       this.untilId});
 
@@ -152,7 +152,7 @@ class _$ClipsNotesRequestImpl implements _ClipsNotesRequest {
   @Assert('limit > 0')
   final int? limit;
   @override
-  final String? clipId;
+  final String clipId;
   @override
   final String? sinceId;
   @override
@@ -196,7 +196,7 @@ class _$ClipsNotesRequestImpl implements _ClipsNotesRequest {
 abstract class _ClipsNotesRequest implements ClipsNotesRequest {
   const factory _ClipsNotesRequest(
       {@Assert('limit > 0') final int? limit,
-      final String? clipId,
+      required final String clipId,
       final String? sinceId,
       final String? untilId}) = _$ClipsNotesRequestImpl;
 
@@ -207,7 +207,7 @@ abstract class _ClipsNotesRequest implements ClipsNotesRequest {
   @Assert('limit > 0')
   int? get limit;
   @override
-  String? get clipId;
+  String get clipId;
   @override
   String? get sinceId;
   @override
