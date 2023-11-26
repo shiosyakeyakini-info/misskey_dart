@@ -432,7 +432,8 @@ mixin _$JoinMisskeyInstanceInfo {
   double get value => throw _privateConstructorUsedError;
   bool get banner => throw _privateConstructorUsedError;
   bool get background => throw _privateConstructorUsedError;
-  bool get icon => throw _privateConstructorUsedError;
+  bool get icon =>
+      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
   @JsonKey(name: "nodeinfo")
   JoinMisskeyNodeInfo? get nodeInfo => throw _privateConstructorUsedError;
 
@@ -685,6 +686,7 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
   @override
   @JsonKey()
   final bool icon;
+// ignore: invalid_annotation_target
   @override
   @JsonKey(name: "nodeinfo")
   final JoinMisskeyNodeInfo? nodeInfo;
@@ -779,7 +781,7 @@ abstract class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
   bool get background;
   @override
   bool get icon;
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(name: "nodeinfo")
   JoinMisskeyNodeInfo? get nodeInfo;
   @override

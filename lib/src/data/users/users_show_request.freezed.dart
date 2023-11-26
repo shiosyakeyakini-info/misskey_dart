@@ -308,6 +308,7 @@ UsersShowByUserNameRequest _$UsersShowByUserNameRequestFromJson(
 
 /// @nodoc
 mixin _$UsersShowByUserNameRequest {
+// ignore: invalid_annotation_target
   @JsonKey(name: "username")
   String get userName => throw _privateConstructorUsedError;
   String? get host => throw _privateConstructorUsedError;
@@ -409,6 +410,7 @@ class _$UsersShowByUserNameRequestImpl implements _UsersShowByUserNameRequest {
           Map<String, dynamic> json) =>
       _$$UsersShowByUserNameRequestImplFromJson(json);
 
+// ignore: invalid_annotation_target
   @override
   @JsonKey(name: "username")
   final String userName;
@@ -458,7 +460,7 @@ abstract class _UsersShowByUserNameRequest
   factory _UsersShowByUserNameRequest.fromJson(Map<String, dynamic> json) =
       _$UsersShowByUserNameRequestImpl.fromJson;
 
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(name: "username")
   String get userName;
   @override

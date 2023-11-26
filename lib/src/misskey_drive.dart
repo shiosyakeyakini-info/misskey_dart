@@ -7,10 +7,11 @@ import 'package:misskey_dart/src/services/api_service.dart';
 class MisskeyDrive {
   final MisskeyDriveFiles files;
   final MisskeyDriveFolders folders;
+  final ApiService _apiService;
 
-  MisskeyDrive(ApiService apiService)
-      : files = MisskeyDriveFiles(apiService),
-        folders = MisskeyDriveFolders(apiService);
+  MisskeyDrive(this._apiService)
+      : files = MisskeyDriveFiles(_apiService),
+        folders = MisskeyDriveFolders(_apiService);
 
   /// ドライブにあるファイルの一覧を取得します。
   Future<Iterable<DriveFile>> stream(DriveStreamRequest request) async {
