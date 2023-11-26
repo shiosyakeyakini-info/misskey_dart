@@ -1508,7 +1508,7 @@ mixin _$UserPolicies {
   bool get gtlAvailable => throw _privateConstructorUsedError;
   bool get ltlAvailable => throw _privateConstructorUsedError;
   bool get canPublicNote => throw _privateConstructorUsedError;
-  dynamic get canEditNote => throw _privateConstructorUsedError;
+  bool get canEditNote => throw _privateConstructorUsedError;
   bool get canInvite => throw _privateConstructorUsedError;
   bool get canManageCustomEmojis => throw _privateConstructorUsedError;
   bool get canHideAds => throw _privateConstructorUsedError;
@@ -1543,7 +1543,7 @@ abstract class $UserPoliciesCopyWith<$Res> {
       {bool gtlAvailable,
       bool ltlAvailable,
       bool canPublicNote,
-      dynamic canEditNote,
+      bool canEditNote,
       bool canInvite,
       bool canManageCustomEmojis,
       bool canHideAds,
@@ -1579,7 +1579,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
     Object? gtlAvailable = null,
     Object? ltlAvailable = null,
     Object? canPublicNote = null,
-    Object? canEditNote = freezed,
+    Object? canEditNote = null,
     Object? canInvite = null,
     Object? canManageCustomEmojis = null,
     Object? canHideAds = null,
@@ -1611,10 +1611,10 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
           ? _value.canPublicNote
           : canPublicNote // ignore: cast_nullable_to_non_nullable
               as bool,
-      canEditNote: freezed == canEditNote
+      canEditNote: null == canEditNote
           ? _value.canEditNote
           : canEditNote // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as bool,
       canInvite: null == canInvite
           ? _value.canInvite
           : canInvite // ignore: cast_nullable_to_non_nullable
@@ -1699,7 +1699,7 @@ abstract class _$$UserPoliciesImplCopyWith<$Res>
       {bool gtlAvailable,
       bool ltlAvailable,
       bool canPublicNote,
-      dynamic canEditNote,
+      bool canEditNote,
       bool canInvite,
       bool canManageCustomEmojis,
       bool canHideAds,
@@ -1733,7 +1733,7 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
     Object? gtlAvailable = null,
     Object? ltlAvailable = null,
     Object? canPublicNote = null,
-    Object? canEditNote = freezed,
+    Object? canEditNote = null,
     Object? canInvite = null,
     Object? canManageCustomEmojis = null,
     Object? canHideAds = null,
@@ -1765,7 +1765,10 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
           ? _value.canPublicNote
           : canPublicNote // ignore: cast_nullable_to_non_nullable
               as bool,
-      canEditNote: freezed == canEditNote ? _value.canEditNote! : canEditNote,
+      canEditNote: null == canEditNote
+          ? _value.canEditNote
+          : canEditNote // ignore: cast_nullable_to_non_nullable
+              as bool,
       canInvite: null == canInvite
           ? _value.canInvite
           : canInvite // ignore: cast_nullable_to_non_nullable
@@ -1875,7 +1878,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
   final bool canPublicNote;
   @override
   @JsonKey()
-  final dynamic canEditNote;
+  final bool canEditNote;
   @override
   final bool canInvite;
   @override
@@ -1929,8 +1932,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
                 other.ltlAvailable == ltlAvailable) &&
             (identical(other.canPublicNote, canPublicNote) ||
                 other.canPublicNote == canPublicNote) &&
-            const DeepCollectionEquality()
-                .equals(other.canEditNote, canEditNote) &&
+            (identical(other.canEditNote, canEditNote) ||
+                other.canEditNote == canEditNote) &&
             (identical(other.canInvite, canInvite) ||
                 other.canInvite == canInvite) &&
             (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
@@ -1974,7 +1977,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
         gtlAvailable,
         ltlAvailable,
         canPublicNote,
-        const DeepCollectionEquality().hash(canEditNote),
+        canEditNote,
         canInvite,
         canManageCustomEmojis,
         canHideAds,
@@ -2013,7 +2016,7 @@ abstract class _UserPolicies implements UserPolicies {
       {required final bool gtlAvailable,
       required final bool ltlAvailable,
       required final bool canPublicNote,
-      final dynamic canEditNote,
+      final bool canEditNote,
       required final bool canInvite,
       required final bool canManageCustomEmojis,
       required final bool canHideAds,
@@ -2042,7 +2045,7 @@ abstract class _UserPolicies implements UserPolicies {
   @override
   bool get canPublicNote;
   @override
-  dynamic get canEditNote;
+  bool get canEditNote;
   @override
   bool get canInvite;
   @override

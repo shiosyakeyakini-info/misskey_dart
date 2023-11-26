@@ -19,8 +19,8 @@ _$EmojiResponseImpl _$$EmojiResponseImplFromJson(Map<String, dynamic> json) =>
       url: _$JsonConverterFromJson<String, Uri?>(
           json['url'], const NullableUriConverter().fromJson),
       license: json['license'] as String?,
-      isSensitive: json['isSensitive'] ?? false,
-      localOnly: json['localOnly'] ?? false,
+      isSensitive: json['isSensitive'] as bool? ?? false,
+      localOnly: json['localOnly'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$EmojiResponseImplToJson(_$EmojiResponseImpl instance) =>

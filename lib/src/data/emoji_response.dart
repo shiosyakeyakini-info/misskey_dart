@@ -14,8 +14,8 @@ class EmojiResponse with _$EmojiResponse {
     String? host,
     @NullableUriConverter() required Uri? url,
     String? license,
-    @Default(false) isSensitive,
-    @Default(false) localOnly,
+    @Default(false) bool isSensitive,
+    @Default(false) bool localOnly,
     //TODO: roleIdsThatCanBeUsedThisEmojiAsReaction
   }) = _EmojiResponse;
 

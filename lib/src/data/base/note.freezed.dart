@@ -964,8 +964,8 @@ mixin _$NoteChannelInfo {
   String get name => throw _privateConstructorUsedError;
   @NullableColorConverter()
   int? get color => throw _privateConstructorUsedError;
-  dynamic get isSensitive => throw _privateConstructorUsedError;
-  dynamic get allowRenoteToExternal => throw _privateConstructorUsedError;
+  bool get isSensitive => throw _privateConstructorUsedError;
+  bool get allowRenoteToExternal => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -983,8 +983,8 @@ abstract class $NoteChannelInfoCopyWith<$Res> {
       {String id,
       String name,
       @NullableColorConverter() int? color,
-      dynamic isSensitive,
-      dynamic allowRenoteToExternal});
+      bool isSensitive,
+      bool allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -1003,8 +1003,8 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
     Object? id = null,
     Object? name = null,
     Object? color = freezed,
-    Object? isSensitive = freezed,
-    Object? allowRenoteToExternal = freezed,
+    Object? isSensitive = null,
+    Object? allowRenoteToExternal = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1019,14 +1019,14 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as int?,
-      isSensitive: freezed == isSensitive
+      isSensitive: null == isSensitive
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      allowRenoteToExternal: freezed == allowRenoteToExternal
+              as bool,
+      allowRenoteToExternal: null == allowRenoteToExternal
           ? _value.allowRenoteToExternal
           : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as bool,
     ) as $Val);
   }
 }
@@ -1043,8 +1043,8 @@ abstract class _$$NoteChannelInfoImplCopyWith<$Res>
       {String id,
       String name,
       @NullableColorConverter() int? color,
-      dynamic isSensitive,
-      dynamic allowRenoteToExternal});
+      bool isSensitive,
+      bool allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -1061,8 +1061,8 @@ class __$$NoteChannelInfoImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? color = freezed,
-    Object? isSensitive = freezed,
-    Object? allowRenoteToExternal = freezed,
+    Object? isSensitive = null,
+    Object? allowRenoteToExternal = null,
   }) {
     return _then(_$NoteChannelInfoImpl(
       id: null == id
@@ -1077,10 +1077,14 @@ class __$$NoteChannelInfoImplCopyWithImpl<$Res>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as int?,
-      isSensitive: freezed == isSensitive ? _value.isSensitive! : isSensitive,
-      allowRenoteToExternal: freezed == allowRenoteToExternal
-          ? _value.allowRenoteToExternal!
-          : allowRenoteToExternal,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      allowRenoteToExternal: null == allowRenoteToExternal
+          ? _value.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1107,10 +1111,10 @@ class _$NoteChannelInfoImpl implements _NoteChannelInfo {
   final int? color;
   @override
   @JsonKey()
-  final dynamic isSensitive;
+  final bool isSensitive;
   @override
   @JsonKey()
-  final dynamic allowRenoteToExternal;
+  final bool allowRenoteToExternal;
 
   @override
   String toString() {
@@ -1125,21 +1129,16 @@ class _$NoteChannelInfoImpl implements _NoteChannelInfo {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
-            const DeepCollectionEquality()
-                .equals(other.isSensitive, isSensitive) &&
-            const DeepCollectionEquality()
-                .equals(other.allowRenoteToExternal, allowRenoteToExternal));
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
+                other.allowRenoteToExternal == allowRenoteToExternal));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      color,
-      const DeepCollectionEquality().hash(isSensitive),
-      const DeepCollectionEquality().hash(allowRenoteToExternal));
+      runtimeType, id, name, color, isSensitive, allowRenoteToExternal);
 
   @JsonKey(ignore: true)
   @override
@@ -1161,8 +1160,8 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
       {required final String id,
       required final String name,
       @NullableColorConverter() final int? color,
-      final dynamic isSensitive,
-      final dynamic allowRenoteToExternal}) = _$NoteChannelInfoImpl;
+      final bool isSensitive,
+      final bool allowRenoteToExternal}) = _$NoteChannelInfoImpl;
 
   factory _NoteChannelInfo.fromJson(Map<String, dynamic> json) =
       _$NoteChannelInfoImpl.fromJson;
@@ -1175,9 +1174,9 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
   @NullableColorConverter()
   int? get color;
   @override
-  dynamic get isSensitive;
+  bool get isSensitive;
   @override
-  dynamic get allowRenoteToExternal;
+  bool get allowRenoteToExternal;
   @override
   @JsonKey(ignore: true)
   _$$NoteChannelInfoImplCopyWith<_$NoteChannelInfoImpl> get copyWith =>

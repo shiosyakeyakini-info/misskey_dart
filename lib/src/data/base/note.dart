@@ -53,8 +53,8 @@ class NoteChannelInfo with _$NoteChannelInfo {
     required String id,
     required String name,
     @NullableColorConverter() int? color,
-    @Default(false) isSensitive,
-    @Default(true) allowRenoteToExternal,
+    @Default(false) bool isSensitive,
+    @Default(true) bool allowRenoteToExternal,
   }) = _NoteChannelInfo;
 
   factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>

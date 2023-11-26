@@ -98,7 +98,7 @@ class UserPolicies with _$UserPolicies {
     required bool gtlAvailable,
     required bool ltlAvailable,
     required bool canPublicNote,
-    @Default(false) canEditNote,
+    @Default(false) bool canEditNote,
     required bool canInvite,
     required bool canManageCustomEmojis,
     required bool canHideAds,
