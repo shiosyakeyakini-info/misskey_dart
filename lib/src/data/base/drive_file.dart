@@ -16,14 +16,29 @@ class DriveFile with _$DriveFile {
     required int size,
     required bool isSensitive,
     String? blurhash,
+    required DriveFileProperties properties,
     required String url,
     String? thumbnailUrl,
     String? comment,
     String? folderId,
+    DriveFolder? folder,
     String? userId,
     User? user,
   }) = _DriveFile;
 
   factory DriveFile.fromJson(Map<String, dynamic> json) =>
       _$DriveFileFromJson(json);
+}
+
+@freezed
+class DriveFileProperties with _$DriveFileProperties {
+  const factory DriveFileProperties({
+    int? width,
+    int? height,
+    int? orientation,
+    String? avgColor,
+  }) = _DriveFileProperties;
+
+  factory DriveFileProperties.fromJson(Map<String, dynamic> json) =>
+      _$DriveFilePropertiesFromJson(json);
 }

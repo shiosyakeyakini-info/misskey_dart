@@ -8,6 +8,12 @@ import 'package:uuid/uuid.dart';
 import 'util/misskey_dart_test_util.dart';
 
 void main() async {
+  test("stream", () async {
+    final file = await userClient.createDriveFile();
+    final response = await userClient.drive.stream(DriveStreamRequest());
+    expect(response.map((e) => e.id), contains(file.id));
+  });
+
   group("files", () {
     test("create", () async {
       final dir = Directory.systemTemp;
@@ -54,13 +60,95 @@ void main() async {
           .find(DriveFilesFindRequest(name: file.name));
       expect(response.map((e) => e.id), contains(file.id));
     });
+
+    test("attached-notes", () async {
+      final file = await userClient.createDriveFile();
+      final note = await userClient.createNote(fileIds: [file.id]);
+      final response = await userClient.drive.files
+          .attachedNotes(DriveFilesAttachedNotesRequest(fileId: file.id));
+      expect(response.map((e) => e.id), contains(note.id));
+    });
+
+    test("check-existence", () async {
+      final file = await userClient.createDriveFile();
+      final response = await userClient.drive.files
+          .checkExistence(DriveFilesCheckExistenceRequest(md5: file.md5));
+      expect(response, isTrue);
+    });
+
+    test("find-by-hash", () async {
+      final file = await userClient.createDriveFile();
+      final response = await userClient.drive.files
+          .findByHash(DriveFilesFindByHashRequest(md5: file.md5));
+      expect(response.map((e) => e.id), contains(file.id));
+    });
+
+    test("show", () async {
+      final file = await userClient.createDriveFile();
+      final response = await userClient.drive.files
+          .show(DriveFilesShowRequest(fileId: file.id));
+      expect(response.user, isNotNull);
+    });
+
+    test("uploadFromUrl", () async {
+      final file = await userClient.createDriveFile();
+      await userClient.drive.files.uploadFromUrl(
+        DriveFilesUploadFromUrlRequest(
+          url: file.url,
+          force: true,
+        ),
+      );
+    });
   });
 
   group("folders", () {
     test("folders", () async {
+      final folder =
+          await userClient.drive.folders.create(DriveFoldersCreateRequest());
       final response =
           await userClient.drive.folders.folders(DriveFoldersRequest());
-      response.toList();
+      expect(response.map((e) => e.id), contains(folder.id));
+    });
+
+    test("create", () async {
+      final response = await userClient.drive.folders
+          .create(DriveFoldersCreateRequest(name: "test"));
+      expect(response.name, equals("test"));
+    });
+
+    test("delete", () async {
+      final folder =
+          await userClient.drive.folders.create(DriveFoldersCreateRequest());
+      await userClient.drive.folders
+          .delete(DriveFoldersDeleteRequest(folderId: folder.id));
+      final folders =
+          await userClient.drive.folders.folders(DriveFoldersRequest());
+      expect(folders.map((e) => e.id), isNot(contains(folder.id)));
+    });
+
+    test("find", () async {
+      final folder =
+          await userClient.drive.folders.create(DriveFoldersCreateRequest());
+      final response = await userClient.drive.folders
+          .find(DriveFoldersFindRequest(name: folder.name));
+      expect(response.map((e) => e.id), contains(folder.id));
+    });
+
+    test("show", () async {
+      final folder =
+          await userClient.drive.folders.create(DriveFoldersCreateRequest());
+      final response = await userClient.drive.folders
+          .show(DriveFoldersShowRequest(folderId: folder.id));
+      expect(response.foldersCount, isNotNull);
+    });
+
+    test("update", () async {
+      final folder =
+          await userClient.drive.folders.create(DriveFoldersCreateRequest());
+      final response = await userClient.drive.folders.update(
+        DriveFoldersUpdateRequest(folderId: folder.id, name: "updated"),
+      );
+      expect(response.name, equals("updated"));
     });
   });
 }

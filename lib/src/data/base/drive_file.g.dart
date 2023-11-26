@@ -17,10 +17,15 @@ _$DriveFileImpl _$$DriveFileImplFromJson(Map<String, dynamic> json) =>
       size: json['size'] as int,
       isSensitive: json['isSensitive'] as bool,
       blurhash: json['blurhash'] as String?,
+      properties: DriveFileProperties.fromJson(
+          json['properties'] as Map<String, dynamic>),
       url: json['url'] as String,
       thumbnailUrl: json['thumbnailUrl'] as String?,
       comment: json['comment'] as String?,
       folderId: json['folderId'] as String?,
+      folder: json['folder'] == null
+          ? null
+          : DriveFolder.fromJson(json['folder'] as Map<String, dynamic>),
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
@@ -37,10 +42,30 @@ Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>
       'size': instance.size,
       'isSensitive': instance.isSensitive,
       'blurhash': instance.blurhash,
+      'properties': instance.properties,
       'url': instance.url,
       'thumbnailUrl': instance.thumbnailUrl,
       'comment': instance.comment,
       'folderId': instance.folderId,
+      'folder': instance.folder,
       'userId': instance.userId,
       'user': instance.user,
+    };
+
+_$DriveFilePropertiesImpl _$$DriveFilePropertiesImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DriveFilePropertiesImpl(
+      width: json['width'] as int?,
+      height: json['height'] as int?,
+      orientation: json['orientation'] as int?,
+      avgColor: json['avgColor'] as String?,
+    );
+
+Map<String, dynamic> _$$DriveFilePropertiesImplToJson(
+        _$DriveFilePropertiesImpl instance) =>
+    <String, dynamic>{
+      'width': instance.width,
+      'height': instance.height,
+      'orientation': instance.orientation,
+      'avgColor': instance.avgColor,
     };

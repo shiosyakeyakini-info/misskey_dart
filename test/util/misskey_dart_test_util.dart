@@ -55,6 +55,7 @@ extension MisskeyTestExtension on Misskey {
 
   Future<Note> createNote({
     String text = "test",
+    List<String>? fileIds,
     String? replyId,
     String? renoteId,
     String? channelId,
@@ -63,6 +64,7 @@ extension MisskeyTestExtension on Misskey {
     final response =
         await apiService.post<Map<String, dynamic>>("notes/create", {
       "text": text,
+      "fileIds": fileIds,
       "replyId": replyId,
       "renoteId": renoteId,
       "channelId": channelId,
