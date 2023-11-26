@@ -9,7 +9,6 @@ import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
-import 'package:misskey_dart/src/services/streaming_service.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class SocketController {
@@ -79,8 +78,8 @@ class SocketController {
     try {
       webSocketChannel.sink.add(request);
     } catch (e) {
-      print("maybe already disconnected");
-      print(e);
+      log("maybe already disconnected");
+      log(e.toString());
       rethrow;
     } finally {
       onDisconnected?.call(id);
@@ -136,7 +135,7 @@ class SocketController {
         body: body,
       ),
     );
-    print("send[${body.id}]: $request}");
+    log("send[${body.id}]: $request}");
     webSocketChannel.sink.add(request);
   }
 }

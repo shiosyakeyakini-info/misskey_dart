@@ -11,12 +11,11 @@ services:
       - ../:/misskey-test
 
   web:
-    image: misskey/misskey:13.12.2
+    image: ${MISSKEY_IMAGE:-misskey/misskey:latest}
     restart: always
     links:
       - db
       - redis
-#     - meilisearch
     depends_on:
       db:
         condition: service_healthy

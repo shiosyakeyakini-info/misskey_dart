@@ -26,6 +26,7 @@ class UsersShowByIdsRequest with _$UsersShowByIdsRequest {
 @freezed
 class UsersShowByUserNameRequest with _$UsersShowByUserNameRequest {
   const factory UsersShowByUserNameRequest({
+    // ignore: invalid_annotation_target
     @JsonKey(name: "username") required String userName,
     String? host,
   }) = _UsersShowByUserNameRequest;

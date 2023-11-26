@@ -40,6 +40,7 @@ class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
     @Default(false) bool banner,
     @Default(false) bool background,
     @Default(false) bool icon,
+    // ignore: invalid_annotation_target
     @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
   }) = _JoinMisskeyInstanceInfo;
 

@@ -8,10 +8,8 @@ class MisskeyDrive {
   final MisskeyDriveFiles files;
   final MisskeyDriveFolders folders;
 
-  final ApiService _apiService;
   MisskeyDrive(ApiService apiService)
-      : _apiService = apiService,
-        files = MisskeyDriveFiles(apiService),
+      : files = MisskeyDriveFiles(apiService),
         folders = MisskeyDriveFolders(apiService);
 }
 

@@ -87,6 +87,7 @@ _$IResponseImpl _$$IResponseImplFromJson(Map<String, dynamic> json) =>
       hasUnreadNotification: json['hasUnreadNotification'] as bool,
       hasPendingReceivedFollowRequest:
           json['hasPendingReceivedFollowRequest'] as bool,
+      unreadNotificationsCount: json['unreadNotificationsCount'] as int?,
       unreadAnnouncements: (json['unreadAnnouncements'] as List<dynamic>?)
               ?.map((e) =>
                   AnnouncementsResponse.fromJson(e as Map<String, dynamic>))
@@ -177,6 +178,7 @@ Map<String, dynamic> _$$IResponseImplToJson(_$IResponseImpl instance) =>
       'hasUnreadNotification': instance.hasUnreadNotification,
       'hasPendingReceivedFollowRequest':
           instance.hasPendingReceivedFollowRequest,
+      'unreadNotificationsCount': instance.unreadNotificationsCount,
       'unreadAnnouncements': instance.unreadAnnouncements,
       'mutedWords':
           instance.mutedWords.map(const MuteWordsConverter().toJson).toList(),

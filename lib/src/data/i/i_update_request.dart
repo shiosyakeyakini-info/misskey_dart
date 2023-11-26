@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/mute_words_converter.dart';
-import 'package:misskey_dart/src/enums/ff_visibility.dart';
 
 part 'i_update_request.freezed.dart';
 part 'i_update_request.g.dart';

@@ -1,6 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/base/flash.dart';
-import 'package:misskey_dart/src/data/base/page.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {

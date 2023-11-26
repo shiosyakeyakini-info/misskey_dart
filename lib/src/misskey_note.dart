@@ -173,14 +173,12 @@ class MisskeyNotesReactions {
 
   /// ノートにリアクションします。
   Future<void> create(NotesReactionsCreateRequest request) async {
-    final response = await _apiService.post<void>(
-        "notes/reactions/create", request.toJson());
+    await _apiService.post<void>("notes/reactions/create", request.toJson());
   }
 
   /// ノートのリアクションを解除します。
   Future<void> delete(NotesReactionsDeleteRequest request) async {
-    final response = await _apiService.post<void>(
-        "notes/reactions/delete", request.toJson());
+    await _apiService.post<void>("notes/reactions/delete", request.toJson());
   }
 
   /// ノートのリアクションを取得します。

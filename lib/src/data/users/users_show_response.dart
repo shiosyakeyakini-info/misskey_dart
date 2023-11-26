@@ -4,7 +4,6 @@ import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/emojis_converter.dart';
 import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
-import 'package:misskey_dart/src/enums/online_status.dart';
 
 part 'users_show_response.freezed.dart';
 part 'users_show_response.g.dart';

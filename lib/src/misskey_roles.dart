@@ -21,8 +21,8 @@ class MisskeyRoles {
 
   /// ロール情報をIDから取得します。
   Future<RolesListResponse> show(RolesShowRequest request) async {
-    final response =
-        await _apiService.post<Map<String, dynamic>>("roles/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "roles/show", request.toJson());
     return RolesListResponse.fromJson(response);
   }
 
