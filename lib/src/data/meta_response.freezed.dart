@@ -24,6 +24,7 @@ mixin _$MetaResponse {
   String? get maintainerEmail => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  String? get shortName => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get uri => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -61,9 +62,14 @@ mixin _$MetaResponse {
   Uri? get backgroundImageUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get logoImageUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get impressumUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get privacyPolicyUrl => throw _privateConstructorUsedError;
   int get maxNoteTextLength =>
       throw _privateConstructorUsedError; //required List<MetaEmoji> emojis,
   List<MetaAd> get ads => throw _privateConstructorUsedError;
+  List<String> get serverRules => throw _privateConstructorUsedError;
   bool? get requireSetup => throw _privateConstructorUsedError;
   bool? get enableEmail =>
       throw _privateConstructorUsedError; //required bool enableTwitterIntegration,
@@ -93,6 +99,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       String? maintainerEmail,
       String version,
       String? name,
+      String? shortName,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
@@ -117,8 +124,11 @@ abstract class $MetaResponseCopyWith<$Res> {
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
+      @NullableUriConverter() Uri? impressumUrl,
+      @NullableUriConverter() Uri? privacyPolicyUrl,
       int maxNoteTextLength,
       List<MetaAd> ads,
+      List<String> serverRules,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
@@ -148,6 +158,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? maintainerEmail = freezed,
     Object? version = null,
     Object? name = freezed,
+    Object? shortName = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
@@ -172,8 +183,11 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? iconUrl = freezed,
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
+    Object? impressumUrl = freezed,
+    Object? privacyPolicyUrl = freezed,
     Object? maxNoteTextLength = null,
     Object? ads = null,
+    Object? serverRules = null,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
@@ -199,6 +213,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shortName: freezed == shortName
+          ? _value.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
               as String?,
       uri: null == uri
           ? _value.uri
@@ -296,6 +314,14 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.logoImageUrl
           : logoImageUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      impressumUrl: freezed == impressumUrl
+          ? _value.impressumUrl
+          : impressumUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      privacyPolicyUrl: freezed == privacyPolicyUrl
+          ? _value.privacyPolicyUrl
+          : privacyPolicyUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       maxNoteTextLength: null == maxNoteTextLength
           ? _value.maxNoteTextLength
           : maxNoteTextLength // ignore: cast_nullable_to_non_nullable
@@ -304,6 +330,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.ads
           : ads // ignore: cast_nullable_to_non_nullable
               as List<MetaAd>,
+      serverRules: null == serverRules
+          ? _value.serverRules
+          : serverRules // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
@@ -365,6 +395,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       String? maintainerEmail,
       String version,
       String? name,
+      String? shortName,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
@@ -389,8 +420,11 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
+      @NullableUriConverter() Uri? impressumUrl,
+      @NullableUriConverter() Uri? privacyPolicyUrl,
       int maxNoteTextLength,
       List<MetaAd> ads,
+      List<String> serverRules,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
@@ -419,6 +453,7 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? maintainerEmail = freezed,
     Object? version = null,
     Object? name = freezed,
+    Object? shortName = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
@@ -443,8 +478,11 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? iconUrl = freezed,
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
+    Object? impressumUrl = freezed,
+    Object? privacyPolicyUrl = freezed,
     Object? maxNoteTextLength = null,
     Object? ads = null,
+    Object? serverRules = null,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
@@ -470,6 +508,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shortName: freezed == shortName
+          ? _value.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
               as String?,
       uri: null == uri
           ? _value.uri
@@ -567,6 +609,14 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value.logoImageUrl
           : logoImageUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      impressumUrl: freezed == impressumUrl
+          ? _value.impressumUrl
+          : impressumUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      privacyPolicyUrl: freezed == privacyPolicyUrl
+          ? _value.privacyPolicyUrl
+          : privacyPolicyUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       maxNoteTextLength: null == maxNoteTextLength
           ? _value.maxNoteTextLength
           : maxNoteTextLength // ignore: cast_nullable_to_non_nullable
@@ -575,6 +625,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value._ads
           : ads // ignore: cast_nullable_to_non_nullable
               as List<MetaAd>,
+      serverRules: null == serverRules
+          ? _value._serverRules
+          : serverRules // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
@@ -619,6 +673,7 @@ class _$MetaResponseImpl implements _MetaResponse {
       this.maintainerEmail,
       required this.version,
       this.name,
+      this.shortName,
       @UriConverter() required this.uri,
       this.description,
       required final List<String> langs,
@@ -643,8 +698,11 @@ class _$MetaResponseImpl implements _MetaResponse {
       @NullableUriConverter() this.iconUrl,
       @NullableUriConverter() this.backgroundImageUrl,
       @NullableUriConverter() this.logoImageUrl,
+      @NullableUriConverter() this.impressumUrl,
+      @NullableUriConverter() this.privacyPolicyUrl,
       required this.maxNoteTextLength,
       required final List<MetaAd> ads,
+      final List<String> serverRules = const [],
       this.requireSetup,
       this.enableEmail,
       this.enableServiceWorker,
@@ -654,7 +712,8 @@ class _$MetaResponseImpl implements _MetaResponse {
       this.cacheRemoteFiles,
       this.features})
       : _langs = langs,
-        _ads = ads;
+        _ads = ads,
+        _serverRules = serverRules;
 
   factory _$MetaResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$MetaResponseImplFromJson(json);
@@ -667,6 +726,8 @@ class _$MetaResponseImpl implements _MetaResponse {
   final String version;
   @override
   final String? name;
+  @override
+  final String? shortName;
   @override
   @UriConverter()
   final Uri uri;
@@ -735,6 +796,12 @@ class _$MetaResponseImpl implements _MetaResponse {
   @NullableUriConverter()
   final Uri? logoImageUrl;
   @override
+  @NullableUriConverter()
+  final Uri? impressumUrl;
+  @override
+  @NullableUriConverter()
+  final Uri? privacyPolicyUrl;
+  @override
   final int maxNoteTextLength;
 //required List<MetaEmoji> emojis,
   final List<MetaAd> _ads;
@@ -744,6 +811,15 @@ class _$MetaResponseImpl implements _MetaResponse {
     if (_ads is EqualUnmodifiableListView) return _ads;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ads);
+  }
+
+  final List<String> _serverRules;
+  @override
+  @JsonKey()
+  List<String> get serverRules {
+    if (_serverRules is EqualUnmodifiableListView) return _serverRules;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_serverRules);
   }
 
   @override
@@ -768,7 +844,7 @@ class _$MetaResponseImpl implements _MetaResponse {
 
   @override
   String toString() {
-    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
+    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, impressumUrl: $impressumUrl, privacyPolicyUrl: $privacyPolicyUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, serverRules: $serverRules, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
   }
 
   @override
@@ -782,6 +858,8 @@ class _$MetaResponseImpl implements _MetaResponse {
                 other.maintainerEmail == maintainerEmail) &&
             (identical(other.version, version) || other.version == version) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.shortName, shortName) ||
+                other.shortName == shortName) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -826,9 +904,15 @@ class _$MetaResponseImpl implements _MetaResponse {
                 other.backgroundImageUrl == backgroundImageUrl) &&
             (identical(other.logoImageUrl, logoImageUrl) ||
                 other.logoImageUrl == logoImageUrl) &&
+            (identical(other.impressumUrl, impressumUrl) ||
+                other.impressumUrl == impressumUrl) &&
+            (identical(other.privacyPolicyUrl, privacyPolicyUrl) ||
+                other.privacyPolicyUrl == privacyPolicyUrl) &&
             (identical(other.maxNoteTextLength, maxNoteTextLength) ||
                 other.maxNoteTextLength == maxNoteTextLength) &&
             const DeepCollectionEquality().equals(other._ads, _ads) &&
+            const DeepCollectionEquality()
+                .equals(other._serverRules, _serverRules) &&
             (identical(other.requireSetup, requireSetup) ||
                 other.requireSetup == requireSetup) &&
             (identical(other.enableEmail, enableEmail) ||
@@ -855,6 +939,7 @@ class _$MetaResponseImpl implements _MetaResponse {
         maintainerEmail,
         version,
         name,
+        shortName,
         uri,
         description,
         const DeepCollectionEquality().hash(_langs),
@@ -879,8 +964,11 @@ class _$MetaResponseImpl implements _MetaResponse {
         iconUrl,
         backgroundImageUrl,
         logoImageUrl,
+        impressumUrl,
+        privacyPolicyUrl,
         maxNoteTextLength,
         const DeepCollectionEquality().hash(_ads),
+        const DeepCollectionEquality().hash(_serverRules),
         requireSetup,
         enableEmail,
         enableServiceWorker,
@@ -911,6 +999,7 @@ abstract class _MetaResponse implements MetaResponse {
       final String? maintainerEmail,
       required final String version,
       final String? name,
+      final String? shortName,
       @UriConverter() required final Uri uri,
       final String? description,
       required final List<String> langs,
@@ -935,8 +1024,11 @@ abstract class _MetaResponse implements MetaResponse {
       @NullableUriConverter() final Uri? iconUrl,
       @NullableUriConverter() final Uri? backgroundImageUrl,
       @NullableUriConverter() final Uri? logoImageUrl,
+      @NullableUriConverter() final Uri? impressumUrl,
+      @NullableUriConverter() final Uri? privacyPolicyUrl,
       required final int maxNoteTextLength,
       required final List<MetaAd> ads,
+      final List<String> serverRules,
       final bool? requireSetup,
       final bool? enableEmail,
       final bool? enableServiceWorker,
@@ -957,6 +1049,8 @@ abstract class _MetaResponse implements MetaResponse {
   String get version;
   @override
   String? get name;
+  @override
+  String? get shortName;
   @override
   @UriConverter()
   Uri get uri;
@@ -1018,9 +1112,17 @@ abstract class _MetaResponse implements MetaResponse {
   @NullableUriConverter()
   Uri? get logoImageUrl;
   @override
+  @NullableUriConverter()
+  Uri? get impressumUrl;
+  @override
+  @NullableUriConverter()
+  Uri? get privacyPolicyUrl;
+  @override
   int get maxNoteTextLength;
   @override //required List<MetaEmoji> emojis,
   List<MetaAd> get ads;
+  @override
+  List<String> get serverRules;
   @override
   bool? get requireSetup;
   @override

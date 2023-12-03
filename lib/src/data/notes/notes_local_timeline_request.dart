@@ -11,12 +11,13 @@ class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
     bool? withRenotes,
     bool? withReplies,
     @Deprecated("removed at 2023.10.0") List<String>? fileType,
-    bool? excludeNsfw,
+    @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
     int? limit,
     String? sinceId,
     String? untilId,
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+    bool? allowPartial,
   }) = _NotesLocalTimelineRequest;
 
   factory NotesLocalTimelineRequest.fromJson(Map<String, Object?> json) =>

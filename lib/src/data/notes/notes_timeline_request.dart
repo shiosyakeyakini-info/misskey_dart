@@ -14,7 +14,8 @@ class NotesTimelineRequest with _$NotesTimelineRequest {
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
     bool? withFiles,
     bool? withRenotes,
-    bool? excludeNsfw,
+    @Deprecated("removed at *") bool? excludeNsfw,
+    bool? allowPartial,
   }) = _NotesTimelineRequest;
 
   factory NotesTimelineRequest.fromJson(Map<String, Object?> json) =>

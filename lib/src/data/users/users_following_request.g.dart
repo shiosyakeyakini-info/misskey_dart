@@ -13,6 +13,8 @@ _$UsersFollowingRequestImpl _$$UsersFollowingRequestImplFromJson(
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       limit: json['limit'] as int?,
+      birthday: _$JsonConverterFromJson<String, DateTime>(
+          json['birthday'], const DateTimeConverter().fromJson),
     );
 
 Map<String, dynamic> _$$UsersFollowingRequestImplToJson(
@@ -22,4 +24,18 @@ Map<String, dynamic> _$$UsersFollowingRequestImplToJson(
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
       'limit': instance.limit,
+      'birthday': _$JsonConverterToJson<String, DateTime>(
+          instance.birthday, const DateTimeConverter().toJson),
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

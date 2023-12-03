@@ -30,6 +30,7 @@ mixin _$ChannelsTimelineRequest {
   DateTime? get sinceDate => throw _privateConstructorUsedError;
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate => throw _privateConstructorUsedError;
+  bool? get allowPartial => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +50,8 @@ abstract class $ChannelsTimelineRequestCopyWith<$Res> {
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -72,6 +74,7 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_value.copyWith(
       channelId: null == channelId
@@ -98,6 +101,10 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res,
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -117,7 +124,8 @@ abstract class _$$ChannelsTimelineRequestImplCopyWith<$Res>
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -139,6 +147,7 @@ class __$$ChannelsTimelineRequestImplCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_$ChannelsTimelineRequestImpl(
       channelId: null == channelId
@@ -165,6 +174,10 @@ class __$$ChannelsTimelineRequestImplCopyWithImpl<$Res>
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -178,7 +191,8 @@ class _$ChannelsTimelineRequestImpl implements _ChannelsTimelineRequest {
       this.sinceId,
       this.untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
+      this.allowPartial});
 
   factory _$ChannelsTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChannelsTimelineRequestImplFromJson(json);
@@ -198,10 +212,12 @@ class _$ChannelsTimelineRequestImpl implements _ChannelsTimelineRequest {
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? untilDate;
+  @override
+  final bool? allowPartial;
 
   @override
   String toString() {
-    return 'ChannelsTimelineRequest(channelId: $channelId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
+    return 'ChannelsTimelineRequest(channelId: $channelId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial)';
   }
 
   @override
@@ -217,13 +233,15 @@ class _$ChannelsTimelineRequestImpl implements _ChannelsTimelineRequest {
             (identical(other.sinceDate, sinceDate) ||
                 other.sinceDate == sinceDate) &&
             (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
+                other.untilDate == untilDate) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, channelId, limit, sinceId, untilId, sinceDate, untilDate);
+  int get hashCode => Object.hash(runtimeType, channelId, limit, sinceId,
+      untilId, sinceDate, untilDate, allowPartial);
 
   @JsonKey(ignore: true)
   @override
@@ -247,8 +265,8 @@ abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
       final String? sinceId,
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? untilDate}) = _$ChannelsTimelineRequestImpl;
+      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
+      final bool? allowPartial}) = _$ChannelsTimelineRequestImpl;
 
   factory _ChannelsTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$ChannelsTimelineRequestImpl.fromJson;
@@ -268,6 +286,8 @@ abstract class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate;
+  @override
+  bool? get allowPartial;
   @override
   @JsonKey(ignore: true)
   _$$ChannelsTimelineRequestImplCopyWith<_$ChannelsTimelineRequestImpl>

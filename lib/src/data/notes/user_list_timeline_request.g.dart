@@ -22,6 +22,7 @@ _$UserListTimelineRequestImpl _$$UserListTimelineRequestImplFromJson(
       includeLocalRenotes: json['includeLocalRenotes'] as bool?,
       withRenotes: json['withRenotes'] as bool?,
       withFiles: json['withFiles'] as bool?,
+      allowPartial: json['allowPartial'] as bool?,
     );
 
 Map<String, dynamic> _$$UserListTimelineRequestImplToJson(
@@ -40,6 +41,7 @@ Map<String, dynamic> _$$UserListTimelineRequestImplToJson(
       'includeLocalRenotes': instance.includeLocalRenotes,
       'withRenotes': instance.withRenotes,
       'withFiles': instance.withFiles,
+      'allowPartial': instance.allowPartial,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -19,6 +19,7 @@ _$NotesTimelineRequestImpl _$$NotesTimelineRequestImplFromJson(
       withFiles: json['withFiles'] as bool?,
       withRenotes: json['withRenotes'] as bool?,
       excludeNsfw: json['excludeNsfw'] as bool?,
+      allowPartial: json['allowPartial'] as bool?,
     );
 
 Map<String, dynamic> _$$NotesTimelineRequestImplToJson(
@@ -34,6 +35,7 @@ Map<String, dynamic> _$$NotesTimelineRequestImplToJson(
       'withFiles': instance.withFiles,
       'withRenotes': instance.withRenotes,
       'excludeNsfw': instance.excludeNsfw,
+      'allowPartial': instance.allowPartial,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

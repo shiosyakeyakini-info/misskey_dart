@@ -23,6 +23,7 @@ _$NotesLocalTimelineRequestImpl _$$NotesLocalTimelineRequestImplFromJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
       untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
+      allowPartial: json['allowPartial'] as bool?,
     );
 
 Map<String, dynamic> _$$NotesLocalTimelineRequestImplToJson(
@@ -40,6 +41,7 @@ Map<String, dynamic> _$$NotesLocalTimelineRequestImplToJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
       'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
           const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
+      'allowPartial': instance.allowPartial,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

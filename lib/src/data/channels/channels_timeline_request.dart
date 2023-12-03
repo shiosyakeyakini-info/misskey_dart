@@ -13,6 +13,7 @@ class ChannelsTimelineRequest with _$ChannelsTimelineRequest {
     String? untilId,
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
     @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+    bool? allowPartial,
   }) = _ChannelsTimelineRequest;
 
   factory ChannelsTimelineRequest.fromJson(Map<String, Object?> json) =>

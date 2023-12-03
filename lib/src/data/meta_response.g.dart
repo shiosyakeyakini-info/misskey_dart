@@ -12,6 +12,7 @@ _$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
       maintainerEmail: json['maintainerEmail'] as String?,
       version: json['version'] as String,
       name: json['name'] as String?,
+      shortName: json['shortName'] as String?,
       uri: const UriConverter().fromJson(json['uri'] as String),
       description: json['description'] as String?,
       langs: (json['langs'] as List<dynamic>).map((e) => e as String).toList(),
@@ -44,10 +45,18 @@ _$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
           json['backgroundImageUrl'], const NullableUriConverter().fromJson),
       logoImageUrl: _$JsonConverterFromJson<String, Uri?>(
           json['logoImageUrl'], const NullableUriConverter().fromJson),
+      impressumUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['impressumUrl'], const NullableUriConverter().fromJson),
+      privacyPolicyUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['privacyPolicyUrl'], const NullableUriConverter().fromJson),
       maxNoteTextLength: json['maxNoteTextLength'] as int,
       ads: (json['ads'] as List<dynamic>)
           .map((e) => MetaAd.fromJson(e as Map<String, dynamic>))
           .toList(),
+      serverRules: (json['serverRules'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       requireSetup: json['requireSetup'] as bool?,
       enableEmail: json['enableEmail'] as bool?,
       enableServiceWorker: json['enableServiceWorker'] as bool?,
@@ -66,6 +75,7 @@ Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
       'maintainerEmail': instance.maintainerEmail,
       'version': instance.version,
       'name': instance.name,
+      'shortName': instance.shortName,
       'uri': const UriConverter().toJson(instance.uri),
       'description': instance.description,
       'langs': instance.langs,
@@ -94,8 +104,13 @@ Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
           const NullableUriConverter().toJson(instance.backgroundImageUrl),
       'logoImageUrl':
           const NullableUriConverter().toJson(instance.logoImageUrl),
+      'impressumUrl':
+          const NullableUriConverter().toJson(instance.impressumUrl),
+      'privacyPolicyUrl':
+          const NullableUriConverter().toJson(instance.privacyPolicyUrl),
       'maxNoteTextLength': instance.maxNoteTextLength,
       'ads': instance.ads,
+      'serverRules': instance.serverRules,
       'requireSetup': instance.requireSetup,
       'enableEmail': instance.enableEmail,
       'enableServiceWorker': instance.enableServiceWorker,

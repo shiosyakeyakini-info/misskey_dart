@@ -25,6 +25,8 @@ mixin _$UsersFollowingRequest {
   String? get sinceId => throw _privateConstructorUsedError;
   String? get untilId => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime? get birthday => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +40,12 @@ abstract class $UsersFollowingRequestCopyWith<$Res> {
           $Res Function(UsersFollowingRequest) then) =
       _$UsersFollowingRequestCopyWithImpl<$Res, UsersFollowingRequest>;
   @useResult
-  $Res call({String userId, String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String userId,
+      String? sinceId,
+      String? untilId,
+      int? limit,
+      @DateTimeConverter() DateTime? birthday});
 }
 
 /// @nodoc
@@ -59,6 +66,7 @@ class _$UsersFollowingRequestCopyWithImpl<$Res,
     Object? sinceId = freezed,
     Object? untilId = freezed,
     Object? limit = freezed,
+    Object? birthday = freezed,
   }) {
     return _then(_value.copyWith(
       userId: null == userId
@@ -77,6 +85,10 @@ class _$UsersFollowingRequestCopyWithImpl<$Res,
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
+      birthday: freezed == birthday
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -90,7 +102,12 @@ abstract class _$$UsersFollowingRequestImplCopyWith<$Res>
       __$$UsersFollowingRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String userId,
+      String? sinceId,
+      String? untilId,
+      int? limit,
+      @DateTimeConverter() DateTime? birthday});
 }
 
 /// @nodoc
@@ -109,6 +126,7 @@ class __$$UsersFollowingRequestImplCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
     Object? limit = freezed,
+    Object? birthday = freezed,
   }) {
     return _then(_$UsersFollowingRequestImpl(
       userId: null == userId
@@ -127,6 +145,10 @@ class __$$UsersFollowingRequestImplCopyWithImpl<$Res>
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
+      birthday: freezed == birthday
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -135,7 +157,11 @@ class __$$UsersFollowingRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UsersFollowingRequestImpl implements _UsersFollowingRequest {
   const _$UsersFollowingRequestImpl(
-      {required this.userId, this.sinceId, this.untilId, this.limit});
+      {required this.userId,
+      this.sinceId,
+      this.untilId,
+      this.limit,
+      @DateTimeConverter() this.birthday});
 
   factory _$UsersFollowingRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$UsersFollowingRequestImplFromJson(json);
@@ -148,10 +174,13 @@ class _$UsersFollowingRequestImpl implements _UsersFollowingRequest {
   final String? untilId;
   @override
   final int? limit;
+  @override
+  @DateTimeConverter()
+  final DateTime? birthday;
 
   @override
   String toString() {
-    return 'UsersFollowingRequest(userId: $userId, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'UsersFollowingRequest(userId: $userId, sinceId: $sinceId, untilId: $untilId, limit: $limit, birthday: $birthday)';
   }
 
   @override
@@ -162,12 +191,15 @@ class _$UsersFollowingRequestImpl implements _UsersFollowingRequest {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.limit, limit) || other.limit == limit));
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.birthday, birthday) ||
+                other.birthday == birthday));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, sinceId, untilId, limit);
+  int get hashCode =>
+      Object.hash(runtimeType, userId, sinceId, untilId, limit, birthday);
 
   @JsonKey(ignore: true)
   @override
@@ -186,10 +218,12 @@ class _$UsersFollowingRequestImpl implements _UsersFollowingRequest {
 
 abstract class _UsersFollowingRequest implements UsersFollowingRequest {
   const factory _UsersFollowingRequest(
-      {required final String userId,
-      final String? sinceId,
-      final String? untilId,
-      final int? limit}) = _$UsersFollowingRequestImpl;
+          {required final String userId,
+          final String? sinceId,
+          final String? untilId,
+          final int? limit,
+          @DateTimeConverter() final DateTime? birthday}) =
+      _$UsersFollowingRequestImpl;
 
   factory _UsersFollowingRequest.fromJson(Map<String, dynamic> json) =
       _$UsersFollowingRequestImpl.fromJson;
@@ -202,6 +236,9 @@ abstract class _UsersFollowingRequest implements UsersFollowingRequest {
   String? get untilId;
   @override
   int? get limit;
+  @override
+  @DateTimeConverter()
+  DateTime? get birthday;
   @override
   @JsonKey(ignore: true)
   _$$UsersFollowingRequestImplCopyWith<_$UsersFollowingRequestImpl>

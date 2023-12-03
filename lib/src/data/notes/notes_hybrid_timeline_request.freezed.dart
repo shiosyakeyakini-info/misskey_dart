@@ -34,6 +34,7 @@ mixin _$NotesHybridTimelineRequest {
   bool? get withFiles => throw _privateConstructorUsedError;
   bool? get withReplies => throw _privateConstructorUsedError;
   bool? get withRenotes => throw _privateConstructorUsedError;
+  bool? get allowPartial => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +60,8 @@ abstract class $NotesHybridTimelineRequestCopyWith<$Res> {
       bool? includeLocalRenotes,
       bool? withFiles,
       bool? withReplies,
-      bool? withRenotes});
+      bool? withRenotes,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -87,6 +89,7 @@ class _$NotesHybridTimelineRequestCopyWithImpl<$Res,
     Object? withFiles = freezed,
     Object? withReplies = freezed,
     Object? withRenotes = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_value.copyWith(
       limit: freezed == limit
@@ -133,6 +136,10 @@ class _$NotesHybridTimelineRequestCopyWithImpl<$Res,
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -157,7 +164,8 @@ abstract class _$$NotesHybridTimelineRequestImplCopyWith<$Res>
       bool? includeLocalRenotes,
       bool? withFiles,
       bool? withReplies,
-      bool? withRenotes});
+      bool? withRenotes,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -184,6 +192,7 @@ class __$$NotesHybridTimelineRequestImplCopyWithImpl<$Res>
     Object? withFiles = freezed,
     Object? withReplies = freezed,
     Object? withRenotes = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_$NotesHybridTimelineRequestImpl(
       limit: freezed == limit
@@ -230,6 +239,10 @@ class __$$NotesHybridTimelineRequestImplCopyWithImpl<$Res>
           ? _value.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -248,7 +261,8 @@ class _$NotesHybridTimelineRequestImpl implements _NotesHybridTimelineRequest {
       this.includeLocalRenotes,
       this.withFiles,
       this.withReplies,
-      this.withRenotes});
+      this.withRenotes,
+      this.allowPartial});
 
   factory _$NotesHybridTimelineRequestImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -278,10 +292,12 @@ class _$NotesHybridTimelineRequestImpl implements _NotesHybridTimelineRequest {
   final bool? withReplies;
   @override
   final bool? withRenotes;
+  @override
+  final bool? allowPartial;
 
   @override
   String toString() {
-    return 'NotesHybridTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withReplies: $withReplies, withRenotes: $withRenotes)';
+    return 'NotesHybridTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withReplies: $withReplies, withRenotes: $withRenotes, allowPartial: $allowPartial)';
   }
 
   @override
@@ -307,7 +323,9 @@ class _$NotesHybridTimelineRequestImpl implements _NotesHybridTimelineRequest {
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies) &&
             (identical(other.withRenotes, withRenotes) ||
-                other.withRenotes == withRenotes));
+                other.withRenotes == withRenotes) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial));
   }
 
   @JsonKey(ignore: true)
@@ -324,7 +342,8 @@ class _$NotesHybridTimelineRequestImpl implements _NotesHybridTimelineRequest {
       includeLocalRenotes,
       withFiles,
       withReplies,
-      withRenotes);
+      withRenotes,
+      allowPartial);
 
   @JsonKey(ignore: true)
   @override
@@ -354,7 +373,8 @@ abstract class _NotesHybridTimelineRequest
       final bool? includeLocalRenotes,
       final bool? withFiles,
       final bool? withReplies,
-      final bool? withRenotes}) = _$NotesHybridTimelineRequestImpl;
+      final bool? withRenotes,
+      final bool? allowPartial}) = _$NotesHybridTimelineRequestImpl;
 
   factory _NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$NotesHybridTimelineRequestImpl.fromJson;
@@ -383,6 +403,8 @@ abstract class _NotesHybridTimelineRequest
   bool? get withReplies;
   @override
   bool? get withRenotes;
+  @override
+  bool? get allowPartial;
   @override
   @JsonKey(ignore: true)
   _$$NotesHybridTimelineRequestImplCopyWith<_$NotesHybridTimelineRequestImpl>

@@ -20,7 +20,8 @@ class UsersNotesRequest with _$UsersNotesRequest {
     @Deprecated("removed at 2023.11.1") bool? includeMyRenotes,
     bool? withFiles,
     List<String>? fileType,
-    bool? excludeNsfw,
+    bool? allowPartial,
+    @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
   }) = _UsersNotesRequest;
 
   factory UsersNotesRequest.fromJson(Map<String, Object?> json) =>

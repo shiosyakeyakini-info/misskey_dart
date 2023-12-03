@@ -95,6 +95,8 @@ mixin _$IResponse {
       throw _privateConstructorUsedError;
   @MuteWordsConverter()
   List<MuteWord> get mutedWords => throw _privateConstructorUsedError;
+  @MuteWordsConverter()
+  List<MuteWord> get hardMutedWords => throw _privateConstructorUsedError;
   List<String> get mutedInstances => throw _privateConstructorUsedError;
   @Deprecated("Depracted from Misskey 2023.9.2")
   List<String>? get mutingNotificationTypes =>
@@ -180,6 +182,7 @@ abstract class $IResponseCopyWith<$Res> {
       int? unreadNotificationsCount,
       List<AnnouncementsResponse> unreadAnnouncements,
       @MuteWordsConverter() List<MuteWord> mutedWords,
+      @MuteWordsConverter() List<MuteWord> hardMutedWords,
       List<String> mutedInstances,
       @Deprecated("Depracted from Misskey 2023.9.2")
       List<String>? mutingNotificationTypes,
@@ -267,6 +270,7 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
     Object? unreadNotificationsCount = freezed,
     Object? unreadAnnouncements = null,
     Object? mutedWords = null,
+    Object? hardMutedWords = null,
     Object? mutedInstances = null,
     Object? mutingNotificationTypes = freezed,
     Object? notificationRecieveConfig = freezed,
@@ -524,6 +528,10 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
               as List<MuteWord>,
+      hardMutedWords: null == hardMutedWords
+          ? _value.hardMutedWords
+          : hardMutedWords // ignore: cast_nullable_to_non_nullable
+              as List<MuteWord>,
       mutedInstances: null == mutedInstances
           ? _value.mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -635,6 +643,7 @@ abstract class _$$IResponseImplCopyWith<$Res>
       int? unreadNotificationsCount,
       List<AnnouncementsResponse> unreadAnnouncements,
       @MuteWordsConverter() List<MuteWord> mutedWords,
+      @MuteWordsConverter() List<MuteWord> hardMutedWords,
       List<String> mutedInstances,
       @Deprecated("Depracted from Misskey 2023.9.2")
       List<String>? mutingNotificationTypes,
@@ -721,6 +730,7 @@ class __$$IResponseImplCopyWithImpl<$Res>
     Object? unreadNotificationsCount = freezed,
     Object? unreadAnnouncements = null,
     Object? mutedWords = null,
+    Object? hardMutedWords = null,
     Object? mutedInstances = null,
     Object? mutingNotificationTypes = freezed,
     Object? notificationRecieveConfig = freezed,
@@ -978,6 +988,10 @@ class __$$IResponseImplCopyWithImpl<$Res>
           ? _value._mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
               as List<MuteWord>,
+      hardMutedWords: null == hardMutedWords
+          ? _value._hardMutedWords
+          : hardMutedWords // ignore: cast_nullable_to_non_nullable
+              as List<MuteWord>,
       mutedInstances: null == mutedInstances
           ? _value._mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -1076,6 +1090,7 @@ class _$IResponseImpl implements _IResponse {
       this.unreadNotificationsCount,
       final List<AnnouncementsResponse> unreadAnnouncements = const [],
       @MuteWordsConverter() required final List<MuteWord> mutedWords,
+      @MuteWordsConverter() final List<MuteWord> hardMutedWords = const [],
       required final List<String> mutedInstances,
       @Deprecated("Depracted from Misskey 2023.9.2")
       final List<String>? mutingNotificationTypes,
@@ -1092,6 +1107,7 @@ class _$IResponseImpl implements _IResponse {
         _pinnedPage = pinnedPage,
         _unreadAnnouncements = unreadAnnouncements,
         _mutedWords = mutedWords,
+        _hardMutedWords = hardMutedWords,
         _mutedInstances = mutedInstances,
         _mutingNotificationTypes = mutingNotificationTypes,
         _emailNotificationTypes = emailNotificationTypes,
@@ -1295,6 +1311,16 @@ class _$IResponseImpl implements _IResponse {
     return EqualUnmodifiableListView(_mutedWords);
   }
 
+  final List<MuteWord> _hardMutedWords;
+  @override
+  @JsonKey()
+  @MuteWordsConverter()
+  List<MuteWord> get hardMutedWords {
+    if (_hardMutedWords is EqualUnmodifiableListView) return _hardMutedWords;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_hardMutedWords);
+  }
+
   final List<String> _mutedInstances;
   @override
   List<String> get mutedInstances {
@@ -1343,7 +1369,7 @@ class _$IResponseImpl implements _IResponse {
 
   @override
   String toString() {
-    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
   }
 
   @override
@@ -1455,6 +1481,7 @@ class _$IResponseImpl implements _IResponse {
             (identical(other.unreadNotificationsCount, unreadNotificationsCount) || other.unreadNotificationsCount == unreadNotificationsCount) &&
             const DeepCollectionEquality().equals(other._unreadAnnouncements, _unreadAnnouncements) &&
             const DeepCollectionEquality().equals(other._mutedWords, _mutedWords) &&
+            const DeepCollectionEquality().equals(other._hardMutedWords, _hardMutedWords) &&
             const DeepCollectionEquality().equals(other._mutedInstances, _mutedInstances) &&
             const DeepCollectionEquality().equals(other._mutingNotificationTypes, _mutingNotificationTypes) &&
             const DeepCollectionEquality().equals(other.notificationRecieveConfig, notificationRecieveConfig) &&
@@ -1530,6 +1557,7 @@ class _$IResponseImpl implements _IResponse {
         unreadNotificationsCount,
         const DeepCollectionEquality().hash(_unreadAnnouncements),
         const DeepCollectionEquality().hash(_mutedWords),
+        const DeepCollectionEquality().hash(_hardMutedWords),
         const DeepCollectionEquality().hash(_mutedInstances),
         const DeepCollectionEquality().hash(_mutingNotificationTypes),
         const DeepCollectionEquality().hash(notificationRecieveConfig),
@@ -1617,6 +1645,7 @@ abstract class _IResponse implements IResponse {
       final int? unreadNotificationsCount,
       final List<AnnouncementsResponse> unreadAnnouncements,
       @MuteWordsConverter() required final List<MuteWord> mutedWords,
+      @MuteWordsConverter() final List<MuteWord> hardMutedWords,
       required final List<String> mutedInstances,
       @Deprecated("Depracted from Misskey 2023.9.2")
       final List<String>? mutingNotificationTypes,
@@ -1763,6 +1792,9 @@ abstract class _IResponse implements IResponse {
   @override
   @MuteWordsConverter()
   List<MuteWord> get mutedWords;
+  @override
+  @MuteWordsConverter()
+  List<MuteWord> get hardMutedWords;
   @override
   List<String> get mutedInstances;
   @override

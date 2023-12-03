@@ -22,6 +22,7 @@ _$NotesHybridTimelineRequestImpl _$$NotesHybridTimelineRequestImplFromJson(
       withFiles: json['withFiles'] as bool?,
       withReplies: json['withReplies'] as bool?,
       withRenotes: json['withRenotes'] as bool?,
+      allowPartial: json['allowPartial'] as bool?,
     );
 
 Map<String, dynamic> _$$NotesHybridTimelineRequestImplToJson(
@@ -40,6 +41,7 @@ Map<String, dynamic> _$$NotesHybridTimelineRequestImplToJson(
       'withFiles': instance.withFiles,
       'withReplies': instance.withReplies,
       'withRenotes': instance.withRenotes,
+      'allowPartial': instance.allowPartial,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

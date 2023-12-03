@@ -34,6 +34,7 @@ class IUpdateRequest with _$IUpdateRequest {
     String? pinnedPageId,
     List<String>? mutingNotificationTypes,
     @MuteWordsConverter() List<MuteWord>? mutedWords,
+    @MuteWordsConverter() List<MuteWord>? hardMutedWords,
     List<String>? mutedInstances,
     List<String>? emailNotificationTypes,
     List<String>? alsoKnownAs,

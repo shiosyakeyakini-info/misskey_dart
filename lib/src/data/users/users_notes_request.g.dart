@@ -24,6 +24,7 @@ _$UsersNotesRequestImpl _$$UsersNotesRequestImplFromJson(
       fileType: (json['fileType'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      allowPartial: json['allowPartial'] as bool?,
       excludeNsfw: json['excludeNsfw'] as bool?,
     );
 
@@ -43,5 +44,6 @@ Map<String, dynamic> _$$UsersNotesRequestImplToJson(
       'includeMyRenotes': instance.includeMyRenotes,
       'withFiles': instance.withFiles,
       'fileType': instance.fileType,
+      'allowPartial': instance.allowPartial,
       'excludeNsfw': instance.excludeNsfw,
     };

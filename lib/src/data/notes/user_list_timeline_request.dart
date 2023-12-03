@@ -20,6 +20,7 @@ class UserListTimelineRequest with _$UserListTimelineRequest {
 
     /// Only show notes that have attached files.
     bool? withFiles,
+    bool? allowPartial,
   }) = _UserListTimelineRequest;
 
   factory UserListTimelineRequest.fromJson(Map<String, dynamic> json) =>

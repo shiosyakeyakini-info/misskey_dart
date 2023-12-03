@@ -96,6 +96,10 @@ _$IResponseImpl _$$IResponseImplFromJson(Map<String, dynamic> json) =>
       mutedWords: (json['mutedWords'] as List<dynamic>)
           .map(const MuteWordsConverter().fromJson)
           .toList(),
+      hardMutedWords: (json['hardMutedWords'] as List<dynamic>?)
+              ?.map(const MuteWordsConverter().fromJson)
+              .toList() ??
+          const [],
       mutedInstances: (json['mutedInstances'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -182,6 +186,9 @@ Map<String, dynamic> _$$IResponseImplToJson(_$IResponseImpl instance) =>
       'unreadAnnouncements': instance.unreadAnnouncements,
       'mutedWords':
           instance.mutedWords.map(const MuteWordsConverter().toJson).toList(),
+      'hardMutedWords': instance.hardMutedWords
+          .map(const MuteWordsConverter().toJson)
+          .toList(),
       'mutedInstances': instance.mutedInstances,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
       'notificationRecieveConfig': instance.notificationRecieveConfig,

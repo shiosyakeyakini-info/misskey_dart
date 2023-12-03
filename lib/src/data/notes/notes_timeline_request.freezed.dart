@@ -29,7 +29,9 @@ mixin _$NotesTimelineRequest {
   DateTime? get untilDate => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
   bool? get withRenotes => throw _privateConstructorUsedError;
+  @Deprecated("removed at *")
   bool? get excludeNsfw => throw _privateConstructorUsedError;
+  bool? get allowPartial => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +53,8 @@ abstract class $NotesTimelineRequestCopyWith<$Res> {
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
       bool? withFiles,
       bool? withRenotes,
-      bool? excludeNsfw});
+      @Deprecated("removed at *") bool? excludeNsfw,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -76,6 +79,7 @@ class _$NotesTimelineRequestCopyWithImpl<$Res,
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
     Object? excludeNsfw = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_value.copyWith(
       limit: freezed == limit
@@ -110,6 +114,10 @@ class _$NotesTimelineRequestCopyWithImpl<$Res,
           ? _value.excludeNsfw
           : excludeNsfw // ignore: cast_nullable_to_non_nullable
               as bool?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -130,7 +138,8 @@ abstract class _$$NotesTimelineRequestImplCopyWith<$Res>
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
       bool? withFiles,
       bool? withRenotes,
-      bool? excludeNsfw});
+      @Deprecated("removed at *") bool? excludeNsfw,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -152,6 +161,7 @@ class __$$NotesTimelineRequestImplCopyWithImpl<$Res>
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
     Object? excludeNsfw = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_$NotesTimelineRequestImpl(
       limit: freezed == limit
@@ -186,6 +196,10 @@ class __$$NotesTimelineRequestImplCopyWithImpl<$Res>
           ? _value.excludeNsfw
           : excludeNsfw // ignore: cast_nullable_to_non_nullable
               as bool?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -201,7 +215,8 @@ class _$NotesTimelineRequestImpl implements _NotesTimelineRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
       this.withFiles,
       this.withRenotes,
-      this.excludeNsfw});
+      @Deprecated("removed at *") this.excludeNsfw,
+      this.allowPartial});
 
   factory _$NotesTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$NotesTimelineRequestImplFromJson(json);
@@ -223,11 +238,14 @@ class _$NotesTimelineRequestImpl implements _NotesTimelineRequest {
   @override
   final bool? withRenotes;
   @override
+  @Deprecated("removed at *")
   final bool? excludeNsfw;
+  @override
+  final bool? allowPartial;
 
   @override
   String toString() {
-    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, withFiles: $withFiles, withRenotes: $withRenotes, excludeNsfw: $excludeNsfw)';
+    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, withFiles: $withFiles, withRenotes: $withRenotes, excludeNsfw: $excludeNsfw, allowPartial: $allowPartial)';
   }
 
   @override
@@ -247,13 +265,15 @@ class _$NotesTimelineRequestImpl implements _NotesTimelineRequest {
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
             (identical(other.excludeNsfw, excludeNsfw) ||
-                other.excludeNsfw == excludeNsfw));
+                other.excludeNsfw == excludeNsfw) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
-      sinceDate, untilDate, withFiles, withRenotes, excludeNsfw);
+      sinceDate, untilDate, withFiles, withRenotes, excludeNsfw, allowPartial);
 
   @JsonKey(ignore: true)
   @override
@@ -280,7 +300,8 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
       final bool? withFiles,
       final bool? withRenotes,
-      final bool? excludeNsfw}) = _$NotesTimelineRequestImpl;
+      @Deprecated("removed at *") final bool? excludeNsfw,
+      final bool? allowPartial}) = _$NotesTimelineRequestImpl;
 
   factory _NotesTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$NotesTimelineRequestImpl.fromJson;
@@ -302,7 +323,10 @@ abstract class _NotesTimelineRequest implements NotesTimelineRequest {
   @override
   bool? get withRenotes;
   @override
+  @Deprecated("removed at *")
   bool? get excludeNsfw;
+  @override
+  bool? get allowPartial;
   @override
   @JsonKey(ignore: true)
   _$$NotesTimelineRequestImplCopyWith<_$NotesTimelineRequestImpl>

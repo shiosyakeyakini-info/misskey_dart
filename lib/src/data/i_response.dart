@@ -73,6 +73,7 @@ class IResponse with _$IResponse {
     int? unreadNotificationsCount,
     @Default([]) List<AnnouncementsResponse> unreadAnnouncements,
     @MuteWordsConverter() required List<MuteWord> mutedWords,
+    @MuteWordsConverter() @Default([]) List<MuteWord> hardMutedWords,
     required List<String> mutedInstances,
     @Deprecated("Depracted from Misskey 2023.9.2")
     List<String>? mutingNotificationTypes,

@@ -18,6 +18,7 @@ class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
     bool? withFiles,
     bool? withReplies,
     bool? withRenotes,
+    bool? allowPartial,
   }) = _NotesHybridTimelineRequest;
 
   factory NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =>

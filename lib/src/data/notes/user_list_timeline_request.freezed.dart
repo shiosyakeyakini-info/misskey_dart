@@ -37,6 +37,7 @@ mixin _$UserListTimelineRequest {
 
   /// Only show notes that have attached files.
   bool? get withFiles => throw _privateConstructorUsedError;
+  bool? get allowPartial => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,7 +62,8 @@ abstract class $UserListTimelineRequestCopyWith<$Res> {
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withRenotes,
-      bool? withFiles});
+      bool? withFiles,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -89,6 +91,7 @@ class _$UserListTimelineRequestCopyWithImpl<$Res,
     Object? includeLocalRenotes = freezed,
     Object? withRenotes = freezed,
     Object? withFiles = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_value.copyWith(
       listId: null == listId
@@ -135,6 +138,10 @@ class _$UserListTimelineRequestCopyWithImpl<$Res,
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -159,7 +166,8 @@ abstract class _$$UserListTimelineRequestImplCopyWith<$Res>
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withRenotes,
-      bool? withFiles});
+      bool? withFiles,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -186,6 +194,7 @@ class __$$UserListTimelineRequestImplCopyWithImpl<$Res>
     Object? includeLocalRenotes = freezed,
     Object? withRenotes = freezed,
     Object? withFiles = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_$UserListTimelineRequestImpl(
       listId: null == listId
@@ -232,6 +241,10 @@ class __$$UserListTimelineRequestImplCopyWithImpl<$Res>
           ? _value.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -250,7 +263,8 @@ class _$UserListTimelineRequestImpl implements _UserListTimelineRequest {
       this.includeRenotedMyNotes,
       this.includeLocalRenotes,
       this.withRenotes,
-      this.withFiles});
+      this.withFiles,
+      this.allowPartial});
 
   factory _$UserListTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserListTimelineRequestImplFromJson(json);
@@ -282,10 +296,12 @@ class _$UserListTimelineRequestImpl implements _UserListTimelineRequest {
   /// Only show notes that have attached files.
   @override
   final bool? withFiles;
+  @override
+  final bool? allowPartial;
 
   @override
   String toString() {
-    return 'UserListTimelineRequest(listId: $listId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withRenotes: $withRenotes, withFiles: $withFiles)';
+    return 'UserListTimelineRequest(listId: $listId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withRenotes: $withRenotes, withFiles: $withFiles, allowPartial: $allowPartial)';
   }
 
   @override
@@ -310,7 +326,9 @@ class _$UserListTimelineRequestImpl implements _UserListTimelineRequest {
             (identical(other.withRenotes, withRenotes) ||
                 other.withRenotes == withRenotes) &&
             (identical(other.withFiles, withFiles) ||
-                other.withFiles == withFiles));
+                other.withFiles == withFiles) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial));
   }
 
   @JsonKey(ignore: true)
@@ -327,7 +345,8 @@ class _$UserListTimelineRequestImpl implements _UserListTimelineRequest {
       includeRenotedMyNotes,
       includeLocalRenotes,
       withRenotes,
-      withFiles);
+      withFiles,
+      allowPartial);
 
   @JsonKey(ignore: true)
   @override
@@ -356,7 +375,8 @@ abstract class _UserListTimelineRequest implements UserListTimelineRequest {
       final bool? includeRenotedMyNotes,
       final bool? includeLocalRenotes,
       final bool? withRenotes,
-      final bool? withFiles}) = _$UserListTimelineRequestImpl;
+      final bool? withFiles,
+      final bool? allowPartial}) = _$UserListTimelineRequestImpl;
 
   factory _UserListTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$UserListTimelineRequestImpl.fromJson;
@@ -388,6 +408,8 @@ abstract class _UserListTimelineRequest implements UserListTimelineRequest {
 
   /// Only show notes that have attached files.
   bool? get withFiles;
+  @override
+  bool? get allowPartial;
   @override
   @JsonKey(ignore: true)
   _$$UserListTimelineRequestImplCopyWith<_$UserListTimelineRequestImpl>

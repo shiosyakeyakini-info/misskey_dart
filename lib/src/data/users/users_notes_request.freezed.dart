@@ -37,6 +37,8 @@ mixin _$UsersNotesRequest {
   bool? get includeMyRenotes => throw _privateConstructorUsedError;
   bool? get withFiles => throw _privateConstructorUsedError;
   List<String>? get fileType => throw _privateConstructorUsedError;
+  bool? get allowPartial => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.12.0")
   bool? get excludeNsfw => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -65,7 +67,8 @@ abstract class $UsersNotesRequestCopyWith<$Res> {
       @Deprecated("removed at 2023.11.1") bool? includeMyRenotes,
       bool? withFiles,
       List<String>? fileType,
-      bool? excludeNsfw});
+      bool? allowPartial,
+      @Deprecated("removed at 2023.12.0") bool? excludeNsfw});
 }
 
 /// @nodoc
@@ -94,6 +97,7 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
     Object? includeMyRenotes = freezed,
     Object? withFiles = freezed,
     Object? fileType = freezed,
+    Object? allowPartial = freezed,
     Object? excludeNsfw = freezed,
   }) {
     return _then(_value.copyWith(
@@ -149,6 +153,10 @@ class _$UsersNotesRequestCopyWithImpl<$Res, $Val extends UsersNotesRequest>
           ? _value.fileType
           : fileType // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
       excludeNsfw: freezed == excludeNsfw
           ? _value.excludeNsfw
           : excludeNsfw // ignore: cast_nullable_to_non_nullable
@@ -179,7 +187,8 @@ abstract class _$$UsersNotesRequestImplCopyWith<$Res>
       @Deprecated("removed at 2023.11.1") bool? includeMyRenotes,
       bool? withFiles,
       List<String>? fileType,
-      bool? excludeNsfw});
+      bool? allowPartial,
+      @Deprecated("removed at 2023.12.0") bool? excludeNsfw});
 }
 
 /// @nodoc
@@ -206,6 +215,7 @@ class __$$UsersNotesRequestImplCopyWithImpl<$Res>
     Object? includeMyRenotes = freezed,
     Object? withFiles = freezed,
     Object? fileType = freezed,
+    Object? allowPartial = freezed,
     Object? excludeNsfw = freezed,
   }) {
     return _then(_$UsersNotesRequestImpl(
@@ -261,6 +271,10 @@ class __$$UsersNotesRequestImplCopyWithImpl<$Res>
           ? _value._fileType
           : fileType // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
       excludeNsfw: freezed == excludeNsfw
           ? _value.excludeNsfw
           : excludeNsfw // ignore: cast_nullable_to_non_nullable
@@ -286,7 +300,8 @@ class _$UsersNotesRequestImpl implements _UsersNotesRequest {
       @Deprecated("removed at 2023.11.1") this.includeMyRenotes,
       this.withFiles,
       final List<String>? fileType,
-      this.excludeNsfw})
+      this.allowPartial,
+      @Deprecated("removed at 2023.12.0") this.excludeNsfw})
       : _fileType = fileType;
 
   factory _$UsersNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -331,11 +346,14 @@ class _$UsersNotesRequestImpl implements _UsersNotesRequest {
   }
 
   @override
+  final bool? allowPartial;
+  @override
+  @Deprecated("removed at 2023.12.0")
   final bool? excludeNsfw;
 
   @override
   String toString() {
-    return 'UsersNotesRequest(userId: $userId, includeReplies: $includeReplies, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, withFiles: $withFiles, fileType: $fileType, excludeNsfw: $excludeNsfw)';
+    return 'UsersNotesRequest(userId: $userId, includeReplies: $includeReplies, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, withFiles: $withFiles, fileType: $fileType, allowPartial: $allowPartial, excludeNsfw: $excludeNsfw)';
   }
 
   @override
@@ -364,6 +382,8 @@ class _$UsersNotesRequestImpl implements _UsersNotesRequest {
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             const DeepCollectionEquality().equals(other._fileType, _fileType) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial) &&
             (identical(other.excludeNsfw, excludeNsfw) ||
                 other.excludeNsfw == excludeNsfw));
   }
@@ -385,6 +405,7 @@ class _$UsersNotesRequestImpl implements _UsersNotesRequest {
       includeMyRenotes,
       withFiles,
       const DeepCollectionEquality().hash(_fileType),
+      allowPartial,
       excludeNsfw);
 
   @JsonKey(ignore: true)
@@ -404,20 +425,22 @@ class _$UsersNotesRequestImpl implements _UsersNotesRequest {
 
 abstract class _UsersNotesRequest implements UsersNotesRequest {
   const factory _UsersNotesRequest(
-      {required final String userId,
-      @Deprecated("removed at 2023.9.2") final bool? includeReplies,
-      final bool? withReplies,
-      final bool? withRenotes,
-      final bool? withChannelNotes,
-      final int? limit,
-      final String? sinceId,
-      final String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() final int? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() final int? untilDate,
-      @Deprecated("removed at 2023.11.1") final bool? includeMyRenotes,
-      final bool? withFiles,
-      final List<String>? fileType,
-      final bool? excludeNsfw}) = _$UsersNotesRequestImpl;
+          {required final String userId,
+          @Deprecated("removed at 2023.9.2") final bool? includeReplies,
+          final bool? withReplies,
+          final bool? withRenotes,
+          final bool? withChannelNotes,
+          final int? limit,
+          final String? sinceId,
+          final String? untilId,
+          @EpocTimeDateTimeConverter.withMilliSeconds() final int? sinceDate,
+          @EpocTimeDateTimeConverter.withMilliSeconds() final int? untilDate,
+          @Deprecated("removed at 2023.11.1") final bool? includeMyRenotes,
+          final bool? withFiles,
+          final List<String>? fileType,
+          final bool? allowPartial,
+          @Deprecated("removed at 2023.12.0") final bool? excludeNsfw}) =
+      _$UsersNotesRequestImpl;
 
   factory _UsersNotesRequest.fromJson(Map<String, dynamic> json) =
       _$UsersNotesRequestImpl.fromJson;
@@ -453,6 +476,9 @@ abstract class _UsersNotesRequest implements UsersNotesRequest {
   @override
   List<String>? get fileType;
   @override
+  bool? get allowPartial;
+  @override
+  @Deprecated("removed at 2023.12.0")
   bool? get excludeNsfw;
   @override
   @JsonKey(ignore: true)

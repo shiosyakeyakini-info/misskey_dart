@@ -17,6 +17,7 @@ _$ChannelsTimelineRequestImpl _$$ChannelsTimelineRequestImplFromJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
       untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
+      allowPartial: json['allowPartial'] as bool?,
     );
 
 Map<String, dynamic> _$$ChannelsTimelineRequestImplToJson(
@@ -30,6 +31,7 @@ Map<String, dynamic> _$$ChannelsTimelineRequestImplToJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
       'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
           const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
+      'allowPartial': instance.allowPartial,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

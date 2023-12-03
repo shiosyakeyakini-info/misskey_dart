@@ -41,6 +41,9 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       mutedWords: (json['mutedWords'] as List<dynamic>?)
           ?.map(const MuteWordsConverter().fromJson)
           .toList(),
+      hardMutedWords: (json['hardMutedWords'] as List<dynamic>?)
+          ?.map(const MuteWordsConverter().fromJson)
+          .toList(),
       mutedInstances: (json['mutedInstances'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -81,6 +84,9 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'mutingNotificationTypes': instance.mutingNotificationTypes,
       'mutedWords':
           instance.mutedWords?.map(const MuteWordsConverter().toJson).toList(),
+      'hardMutedWords': instance.hardMutedWords
+          ?.map(const MuteWordsConverter().toJson)
+          .toList(),
       'mutedInstances': instance.mutedInstances,
       'emailNotificationTypes': instance.emailNotificationTypes,
       'alsoKnownAs': instance.alsoKnownAs,

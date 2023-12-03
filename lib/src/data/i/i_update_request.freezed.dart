@@ -48,6 +48,8 @@ mixin _$IUpdateRequest {
       throw _privateConstructorUsedError;
   @MuteWordsConverter()
   List<MuteWord>? get mutedWords => throw _privateConstructorUsedError;
+  @MuteWordsConverter()
+  List<MuteWord>? get hardMutedWords => throw _privateConstructorUsedError;
   List<String>? get mutedInstances => throw _privateConstructorUsedError;
   List<String>? get emailNotificationTypes =>
       throw _privateConstructorUsedError;
@@ -91,6 +93,7 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
+      @MuteWordsConverter() List<MuteWord>? hardMutedWords,
       List<String>? mutedInstances,
       List<String>? emailNotificationTypes,
       List<String>? alsoKnownAs});
@@ -134,6 +137,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
+    Object? hardMutedWords = freezed,
     Object? mutedInstances = freezed,
     Object? emailNotificationTypes = freezed,
     Object? alsoKnownAs = freezed,
@@ -239,6 +243,10 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
               as List<MuteWord>?,
+      hardMutedWords: freezed == hardMutedWords
+          ? _value.hardMutedWords
+          : hardMutedWords // ignore: cast_nullable_to_non_nullable
+              as List<MuteWord>?,
       mutedInstances: freezed == mutedInstances
           ? _value.mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -289,6 +297,7 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
+      @MuteWordsConverter() List<MuteWord>? hardMutedWords,
       List<String>? mutedInstances,
       List<String>? emailNotificationTypes,
       List<String>? alsoKnownAs});
@@ -330,6 +339,7 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
+    Object? hardMutedWords = freezed,
     Object? mutedInstances = freezed,
     Object? emailNotificationTypes = freezed,
     Object? alsoKnownAs = freezed,
@@ -432,6 +442,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value._mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
               as List<MuteWord>?,
+      hardMutedWords: freezed == hardMutedWords
+          ? _value._hardMutedWords
+          : hardMutedWords // ignore: cast_nullable_to_non_nullable
+              as List<MuteWord>?,
       mutedInstances: freezed == mutedInstances
           ? _value._mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -477,12 +491,14 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       this.pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
+      @MuteWordsConverter() final List<MuteWord>? hardMutedWords,
       final List<String>? mutedInstances,
       final List<String>? emailNotificationTypes,
       final List<String>? alsoKnownAs})
       : _fields = fields,
         _mutingNotificationTypes = mutingNotificationTypes,
         _mutedWords = mutedWords,
+        _hardMutedWords = hardMutedWords,
         _mutedInstances = mutedInstances,
         _emailNotificationTypes = emailNotificationTypes,
         _alsoKnownAs = alsoKnownAs;
@@ -567,6 +583,17 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<MuteWord>? _hardMutedWords;
+  @override
+  @MuteWordsConverter()
+  List<MuteWord>? get hardMutedWords {
+    final value = _hardMutedWords;
+    if (value == null) return null;
+    if (_hardMutedWords is EqualUnmodifiableListView) return _hardMutedWords;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<String>? _mutedInstances;
   @override
   List<String>? get mutedInstances {
@@ -600,7 +627,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, ffVisibility: $ffVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, mutedInstances: $mutedInstances, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, ffVisibility: $ffVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 
   @override
@@ -654,6 +681,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
             const DeepCollectionEquality()
                 .equals(other._mutedWords, _mutedWords) &&
             const DeepCollectionEquality()
+                .equals(other._hardMutedWords, _hardMutedWords) &&
+            const DeepCollectionEquality()
                 .equals(other._mutedInstances, _mutedInstances) &&
             const DeepCollectionEquality().equals(
                 other._emailNotificationTypes, _emailNotificationTypes) &&
@@ -690,6 +719,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         pinnedPageId,
         const DeepCollectionEquality().hash(_mutingNotificationTypes),
         const DeepCollectionEquality().hash(_mutedWords),
+        const DeepCollectionEquality().hash(_hardMutedWords),
         const DeepCollectionEquality().hash(_mutedInstances),
         const DeepCollectionEquality().hash(_emailNotificationTypes),
         const DeepCollectionEquality().hash(_alsoKnownAs)
@@ -737,6 +767,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       final String? pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
+      @MuteWordsConverter() final List<MuteWord>? hardMutedWords,
       final List<String>? mutedInstances,
       final List<String>? emailNotificationTypes,
       final List<String>? alsoKnownAs}) = _$IUpdateRequestImpl;
@@ -796,6 +827,9 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   @override
   @MuteWordsConverter()
   List<MuteWord>? get mutedWords;
+  @override
+  @MuteWordsConverter()
+  List<MuteWord>? get hardMutedWords;
   @override
   List<String>? get mutedInstances;
   @override

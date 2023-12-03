@@ -26,6 +26,7 @@ mixin _$NotesLocalTimelineRequest {
   bool? get withReplies => throw _privateConstructorUsedError;
   @Deprecated("removed at 2023.10.0")
   List<String>? get fileType => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.12.0")
   bool? get excludeNsfw => throw _privateConstructorUsedError;
   int? get limit => throw _privateConstructorUsedError;
   String? get sinceId => throw _privateConstructorUsedError;
@@ -34,6 +35,7 @@ mixin _$NotesLocalTimelineRequest {
   DateTime? get sinceDate => throw _privateConstructorUsedError;
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate => throw _privateConstructorUsedError;
+  bool? get allowPartial => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,12 +54,13 @@ abstract class $NotesLocalTimelineRequestCopyWith<$Res> {
       bool? withRenotes,
       bool? withReplies,
       @Deprecated("removed at 2023.10.0") List<String>? fileType,
-      bool? excludeNsfw,
+      @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
       int? limit,
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -84,6 +87,7 @@ class _$NotesLocalTimelineRequestCopyWithImpl<$Res,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_value.copyWith(
       withFiles: freezed == withFiles
@@ -126,6 +130,10 @@ class _$NotesLocalTimelineRequestCopyWithImpl<$Res,
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -144,12 +152,13 @@ abstract class _$$NotesLocalTimelineRequestImplCopyWith<$Res>
       bool? withRenotes,
       bool? withReplies,
       @Deprecated("removed at 2023.10.0") List<String>? fileType,
-      bool? excludeNsfw,
+      @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
       int? limit,
       String? sinceId,
       String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? allowPartial});
 }
 
 /// @nodoc
@@ -175,6 +184,7 @@ class __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? allowPartial = freezed,
   }) {
     return _then(_$NotesLocalTimelineRequestImpl(
       withFiles: freezed == withFiles
@@ -217,6 +227,10 @@ class __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>
           ? _value.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      allowPartial: freezed == allowPartial
+          ? _value.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -229,12 +243,13 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
       this.withRenotes,
       this.withReplies,
       @Deprecated("removed at 2023.10.0") final List<String>? fileType,
-      this.excludeNsfw,
+      @Deprecated("removed at 2023.12.0") this.excludeNsfw,
       this.limit,
       this.sinceId,
       this.untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate})
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
+      this.allowPartial})
       : _fileType = fileType;
 
   factory _$NotesLocalTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -258,6 +273,7 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
   }
 
   @override
+  @Deprecated("removed at 2023.12.0")
   final bool? excludeNsfw;
   @override
   final int? limit;
@@ -271,10 +287,12 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? untilDate;
+  @override
+  final bool? allowPartial;
 
   @override
   String toString() {
-    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
+    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial)';
   }
 
   @override
@@ -297,7 +315,9 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
             (identical(other.sinceDate, sinceDate) ||
                 other.sinceDate == sinceDate) &&
             (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
+                other.untilDate == untilDate) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial));
   }
 
   @JsonKey(ignore: true)
@@ -313,7 +333,8 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
       sinceId,
       untilId,
       sinceDate,
-      untilDate);
+      untilDate,
+      allowPartial);
 
   @JsonKey(ignore: true)
   @override
@@ -336,13 +357,13 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
       final bool? withRenotes,
       final bool? withReplies,
       @Deprecated("removed at 2023.10.0") final List<String>? fileType,
-      final bool? excludeNsfw,
+      @Deprecated("removed at 2023.12.0") final bool? excludeNsfw,
       final int? limit,
       final String? sinceId,
       final String? untilId,
       @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds()
-      final DateTime? untilDate}) = _$NotesLocalTimelineRequestImpl;
+      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
+      final bool? allowPartial}) = _$NotesLocalTimelineRequestImpl;
 
   factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =
       _$NotesLocalTimelineRequestImpl.fromJson;
@@ -357,6 +378,7 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   @Deprecated("removed at 2023.10.0")
   List<String>? get fileType;
   @override
+  @Deprecated("removed at 2023.12.0")
   bool? get excludeNsfw;
   @override
   int? get limit;
@@ -370,6 +392,8 @@ abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
   @override
   @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate;
+  @override
+  bool? get allowPartial;
   @override
   @JsonKey(ignore: true)
   _$$NotesLocalTimelineRequestImplCopyWith<_$NotesLocalTimelineRequestImpl>
