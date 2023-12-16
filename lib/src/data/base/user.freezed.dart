@@ -473,6 +473,8 @@ mixin _$UserAvatarDecoration {
   double? get angle => throw _privateConstructorUsedError;
   bool get flipH => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
+  double get offsetX => throw _privateConstructorUsedError;
+  double get offsetY => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -486,7 +488,13 @@ abstract class $UserAvatarDecorationCopyWith<$Res> {
           $Res Function(UserAvatarDecoration) then) =
       _$UserAvatarDecorationCopyWithImpl<$Res, UserAvatarDecoration>;
   @useResult
-  $Res call({String id, double? angle, bool flipH, String url});
+  $Res call(
+      {String id,
+      double? angle,
+      bool flipH,
+      String url,
+      double offsetX,
+      double offsetY});
 }
 
 /// @nodoc
@@ -507,6 +515,8 @@ class _$UserAvatarDecorationCopyWithImpl<$Res,
     Object? angle = freezed,
     Object? flipH = null,
     Object? url = null,
+    Object? offsetX = null,
+    Object? offsetY = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -525,6 +535,14 @@ class _$UserAvatarDecorationCopyWithImpl<$Res,
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      offsetX: null == offsetX
+          ? _value.offsetX
+          : offsetX // ignore: cast_nullable_to_non_nullable
+              as double,
+      offsetY: null == offsetY
+          ? _value.offsetY
+          : offsetY // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -537,7 +555,13 @@ abstract class _$$UserAvatarDecorationImplCopyWith<$Res>
       __$$UserAvatarDecorationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, double? angle, bool flipH, String url});
+  $Res call(
+      {String id,
+      double? angle,
+      bool flipH,
+      String url,
+      double offsetX,
+      double offsetY});
 }
 
 /// @nodoc
@@ -555,6 +579,8 @@ class __$$UserAvatarDecorationImplCopyWithImpl<$Res>
     Object? angle = freezed,
     Object? flipH = null,
     Object? url = null,
+    Object? offsetX = null,
+    Object? offsetY = null,
   }) {
     return _then(_$UserAvatarDecorationImpl(
       id: null == id
@@ -573,6 +599,14 @@ class __$$UserAvatarDecorationImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      offsetX: null == offsetX
+          ? _value.offsetX
+          : offsetX // ignore: cast_nullable_to_non_nullable
+              as double,
+      offsetY: null == offsetY
+          ? _value.offsetY
+          : offsetY // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -581,7 +615,12 @@ class __$$UserAvatarDecorationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserAvatarDecorationImpl implements _UserAvatarDecoration {
   const _$UserAvatarDecorationImpl(
-      {required this.id, this.angle, this.flipH = false, required this.url});
+      {required this.id,
+      this.angle,
+      this.flipH = false,
+      required this.url,
+      this.offsetX = 0.0,
+      this.offsetY = 0.0});
 
   factory _$UserAvatarDecorationImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserAvatarDecorationImplFromJson(json);
@@ -595,10 +634,16 @@ class _$UserAvatarDecorationImpl implements _UserAvatarDecoration {
   final bool flipH;
   @override
   final String url;
+  @override
+  @JsonKey()
+  final double offsetX;
+  @override
+  @JsonKey()
+  final double offsetY;
 
   @override
   String toString() {
-    return 'UserAvatarDecoration(id: $id, angle: $angle, flipH: $flipH, url: $url)';
+    return 'UserAvatarDecoration(id: $id, angle: $angle, flipH: $flipH, url: $url, offsetX: $offsetX, offsetY: $offsetY)';
   }
 
   @override
@@ -609,12 +654,15 @@ class _$UserAvatarDecorationImpl implements _UserAvatarDecoration {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.angle, angle) || other.angle == angle) &&
             (identical(other.flipH, flipH) || other.flipH == flipH) &&
-            (identical(other.url, url) || other.url == url));
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.offsetX, offsetX) || other.offsetX == offsetX) &&
+            (identical(other.offsetY, offsetY) || other.offsetY == offsetY));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, angle, flipH, url);
+  int get hashCode =>
+      Object.hash(runtimeType, id, angle, flipH, url, offsetX, offsetY);
 
   @JsonKey(ignore: true)
   @override
@@ -637,7 +685,9 @@ abstract class _UserAvatarDecoration implements UserAvatarDecoration {
       {required final String id,
       final double? angle,
       final bool flipH,
-      required final String url}) = _$UserAvatarDecorationImpl;
+      required final String url,
+      final double offsetX,
+      final double offsetY}) = _$UserAvatarDecorationImpl;
 
   factory _UserAvatarDecoration.fromJson(Map<String, dynamic> json) =
       _$UserAvatarDecorationImpl.fromJson;
@@ -650,6 +700,10 @@ abstract class _UserAvatarDecoration implements UserAvatarDecoration {
   bool get flipH;
   @override
   String get url;
+  @override
+  double get offsetX;
+  @override
+  double get offsetY;
   @override
   @JsonKey(ignore: true)
   _$$UserAvatarDecorationImplCopyWith<_$UserAvatarDecorationImpl>
@@ -1526,6 +1580,7 @@ mixin _$UserPolicies {
   int get userListLimit => throw _privateConstructorUsedError;
   int get userEachUserListsLimit => throw _privateConstructorUsedError;
   double get rateLimitFactor => throw _privateConstructorUsedError;
+  int get avatarDecorationLimit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1560,7 +1615,8 @@ abstract class $UserPoliciesCopyWith<$Res> {
       int noteEachClipsLimit,
       int userListLimit,
       int userEachUserListsLimit,
-      double rateLimitFactor});
+      double rateLimitFactor,
+      int avatarDecorationLimit});
 }
 
 /// @nodoc
@@ -1597,6 +1653,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
     Object? userListLimit = null,
     Object? userEachUserListsLimit = null,
     Object? rateLimitFactor = null,
+    Object? avatarDecorationLimit = null,
   }) {
     return _then(_value.copyWith(
       gtlAvailable: null == gtlAvailable
@@ -1683,6 +1740,10 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
           ? _value.rateLimitFactor
           : rateLimitFactor // ignore: cast_nullable_to_non_nullable
               as double,
+      avatarDecorationLimit: null == avatarDecorationLimit
+          ? _value.avatarDecorationLimit
+          : avatarDecorationLimit // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -1716,7 +1777,8 @@ abstract class _$$UserPoliciesImplCopyWith<$Res>
       int noteEachClipsLimit,
       int userListLimit,
       int userEachUserListsLimit,
-      double rateLimitFactor});
+      double rateLimitFactor,
+      int avatarDecorationLimit});
 }
 
 /// @nodoc
@@ -1751,6 +1813,7 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
     Object? userListLimit = null,
     Object? userEachUserListsLimit = null,
     Object? rateLimitFactor = null,
+    Object? avatarDecorationLimit = null,
   }) {
     return _then(_$UserPoliciesImpl(
       gtlAvailable: null == gtlAvailable
@@ -1837,6 +1900,10 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
           ? _value.rateLimitFactor
           : rateLimitFactor // ignore: cast_nullable_to_non_nullable
               as double,
+      avatarDecorationLimit: null == avatarDecorationLimit
+          ? _value.avatarDecorationLimit
+          : avatarDecorationLimit // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1865,7 +1932,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
       required this.noteEachClipsLimit,
       required this.userListLimit,
       required this.userEachUserListsLimit,
-      required this.rateLimitFactor});
+      required this.rateLimitFactor,
+      this.avatarDecorationLimit = 1});
 
   factory _$UserPoliciesImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserPoliciesImplFromJson(json);
@@ -1915,10 +1983,13 @@ class _$UserPoliciesImpl implements _UserPolicies {
   final int userEachUserListsLimit;
   @override
   final double rateLimitFactor;
+  @override
+  @JsonKey()
+  final int avatarDecorationLimit;
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, canEditNote: $canEditNote, canInvite: $canInvite, canManageCustomEmojis: $canManageCustomEmojis, canHideAds: $canHideAds, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, driveCapacityMb: $driveCapacityMb, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, canEditNote: $canEditNote, canInvite: $canInvite, canManageCustomEmojis: $canManageCustomEmojis, canHideAds: $canHideAds, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, driveCapacityMb: $driveCapacityMb, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit)';
   }
 
   @override
@@ -1967,7 +2038,9 @@ class _$UserPoliciesImpl implements _UserPolicies {
             (identical(other.userEachUserListsLimit, userEachUserListsLimit) ||
                 other.userEachUserListsLimit == userEachUserListsLimit) &&
             (identical(other.rateLimitFactor, rateLimitFactor) ||
-                other.rateLimitFactor == rateLimitFactor));
+                other.rateLimitFactor == rateLimitFactor) &&
+            (identical(other.avatarDecorationLimit, avatarDecorationLimit) ||
+                other.avatarDecorationLimit == avatarDecorationLimit));
   }
 
   @JsonKey(ignore: true)
@@ -1994,7 +2067,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
         noteEachClipsLimit,
         userListLimit,
         userEachUserListsLimit,
-        rateLimitFactor
+        rateLimitFactor,
+        avatarDecorationLimit
       ]);
 
   @JsonKey(ignore: true)
@@ -2033,7 +2107,8 @@ abstract class _UserPolicies implements UserPolicies {
       required final int noteEachClipsLimit,
       required final int userListLimit,
       required final int userEachUserListsLimit,
-      required final double rateLimitFactor}) = _$UserPoliciesImpl;
+      required final double rateLimitFactor,
+      final int avatarDecorationLimit}) = _$UserPoliciesImpl;
 
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =
       _$UserPoliciesImpl.fromJson;
@@ -2080,6 +2155,8 @@ abstract class _UserPolicies implements UserPolicies {
   int get userEachUserListsLimit;
   @override
   double get rateLimitFactor;
+  @override
+  int get avatarDecorationLimit;
   @override
   @JsonKey(ignore: true)
   _$$UserPoliciesImplCopyWith<_$UserPoliciesImpl> get copyWith =>

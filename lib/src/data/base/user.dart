@@ -35,6 +35,8 @@ class UserAvatarDecoration with _$UserAvatarDecoration {
     double? angle,
     @Default(false) bool flipH,
     required String url,
+    @Default(0.0) double offsetX,
+    @Default(0.0) double offsetY,
   }) = _UserAvatarDecoration;
 
   factory UserAvatarDecoration.fromJson(Map<String, Object?> json) =>
@@ -116,6 +118,7 @@ class UserPolicies with _$UserPolicies {
     required int userListLimit,
     required int userEachUserListsLimit,
     required double rateLimitFactor,
+    @Default(1) int avatarDecorationLimit,
   }) = _UserPolicies;
 
   factory UserPolicies.fromJson(Map<String, Object?> json) =>

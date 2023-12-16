@@ -59,6 +59,8 @@ _$UserAvatarDecorationImpl _$$UserAvatarDecorationImplFromJson(
       angle: (json['angle'] as num?)?.toDouble(),
       flipH: json['flipH'] as bool? ?? false,
       url: json['url'] as String,
+      offsetX: (json['offsetX'] as num?)?.toDouble() ?? 0.0,
+      offsetY: (json['offsetY'] as num?)?.toDouble() ?? 0.0,
     );
 
 Map<String, dynamic> _$$UserAvatarDecorationImplToJson(
@@ -68,6 +70,8 @@ Map<String, dynamic> _$$UserAvatarDecorationImplToJson(
       'angle': instance.angle,
       'flipH': instance.flipH,
       'url': instance.url,
+      'offsetX': instance.offsetX,
+      'offsetY': instance.offsetY,
     };
 
 _$UserInstanceInfoImpl _$$UserInstanceInfoImplFromJson(
@@ -175,6 +179,7 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
       userListLimit: json['userListLimit'] as int,
       userEachUserListsLimit: json['userEachUserListsLimit'] as int,
       rateLimitFactor: (json['rateLimitFactor'] as num).toDouble(),
+      avatarDecorationLimit: json['avatarDecorationLimit'] as int? ?? 1,
     );
 
 Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
@@ -200,6 +205,7 @@ Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
       'userListLimit': instance.userListLimit,
       'userEachUserListsLimit': instance.userEachUserListsLimit,
       'rateLimitFactor': instance.rateLimitFactor,
+      'avatarDecorationLimit': instance.avatarDecorationLimit,
     };
 
 _$UserFieldImpl _$$UserFieldImplFromJson(Map<String, dynamic> json) =>
