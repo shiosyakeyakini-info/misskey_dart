@@ -57,7 +57,9 @@ _$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
+      policies: json['policies'] == null
+          ? null
+          : UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
       requireSetup: json['requireSetup'] as bool?,
       enableEmail: json['enableEmail'] as bool?,
       enableServiceWorker: json['enableServiceWorker'] as bool?,

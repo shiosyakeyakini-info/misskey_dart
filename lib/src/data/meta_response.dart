@@ -47,7 +47,7 @@ class MetaResponse with _$MetaResponse {
     //required List<MetaEmoji> emojis,
     required List<MetaAd> ads,
     @Default([]) List<String> serverRules,
-    required UserPolicies policies,
+    UserPolicies? policies,
     bool? requireSetup,
     bool? enableEmail,
     //required bool enableTwitterIntegration,

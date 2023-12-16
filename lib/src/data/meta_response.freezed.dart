@@ -70,7 +70,7 @@ mixin _$MetaResponse {
       throw _privateConstructorUsedError; //required List<MetaEmoji> emojis,
   List<MetaAd> get ads => throw _privateConstructorUsedError;
   List<String> get serverRules => throw _privateConstructorUsedError;
-  UserPolicies get policies => throw _privateConstructorUsedError;
+  UserPolicies? get policies => throw _privateConstructorUsedError;
   bool? get requireSetup => throw _privateConstructorUsedError;
   bool? get enableEmail =>
       throw _privateConstructorUsedError; //required bool enableTwitterIntegration,
@@ -130,7 +130,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       int maxNoteTextLength,
       List<MetaAd> ads,
       List<String> serverRules,
-      UserPolicies policies,
+      UserPolicies? policies,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
@@ -140,7 +140,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       bool? cacheRemoteFiles,
       MetaFeature? features});
 
-  $UserPoliciesCopyWith<$Res> get policies;
+  $UserPoliciesCopyWith<$Res>? get policies;
   $MetaFeatureCopyWith<$Res>? get features;
 }
 
@@ -191,7 +191,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? maxNoteTextLength = null,
     Object? ads = null,
     Object? serverRules = null,
-    Object? policies = null,
+    Object? policies = freezed,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
@@ -338,10 +338,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.serverRules
           : serverRules // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      policies: null == policies
+      policies: freezed == policies
           ? _value.policies
           : policies // ignore: cast_nullable_to_non_nullable
-              as UserPolicies,
+              as UserPolicies?,
       requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
@@ -379,8 +379,12 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserPoliciesCopyWith<$Res> get policies {
-    return $UserPoliciesCopyWith<$Res>(_value.policies, (value) {
+  $UserPoliciesCopyWith<$Res>? get policies {
+    if (_value.policies == null) {
+      return null;
+    }
+
+    return $UserPoliciesCopyWith<$Res>(_value.policies!, (value) {
       return _then(_value.copyWith(policies: value) as $Val);
     });
   }
@@ -441,7 +445,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       int maxNoteTextLength,
       List<MetaAd> ads,
       List<String> serverRules,
-      UserPolicies policies,
+      UserPolicies? policies,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
@@ -452,7 +456,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       MetaFeature? features});
 
   @override
-  $UserPoliciesCopyWith<$Res> get policies;
+  $UserPoliciesCopyWith<$Res>? get policies;
   @override
   $MetaFeatureCopyWith<$Res>? get features;
 }
@@ -502,7 +506,7 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? maxNoteTextLength = null,
     Object? ads = null,
     Object? serverRules = null,
-    Object? policies = null,
+    Object? policies = freezed,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
@@ -649,10 +653,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value._serverRules
           : serverRules // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      policies: null == policies
+      policies: freezed == policies
           ? _value.policies
           : policies // ignore: cast_nullable_to_non_nullable
-              as UserPolicies,
+              as UserPolicies?,
       requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
@@ -727,7 +731,7 @@ class _$MetaResponseImpl implements _MetaResponse {
       required this.maxNoteTextLength,
       required final List<MetaAd> ads,
       final List<String> serverRules = const [],
-      required this.policies,
+      this.policies,
       this.requireSetup,
       this.enableEmail,
       this.enableServiceWorker,
@@ -848,7 +852,7 @@ class _$MetaResponseImpl implements _MetaResponse {
   }
 
   @override
-  final UserPolicies policies;
+  final UserPolicies? policies;
   @override
   final bool? requireSetup;
   @override
@@ -1059,7 +1063,7 @@ abstract class _MetaResponse implements MetaResponse {
       required final int maxNoteTextLength,
       required final List<MetaAd> ads,
       final List<String> serverRules,
-      required final UserPolicies policies,
+      final UserPolicies? policies,
       final bool? requireSetup,
       final bool? enableEmail,
       final bool? enableServiceWorker,
@@ -1155,7 +1159,7 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   List<String> get serverRules;
   @override
-  UserPolicies get policies;
+  UserPolicies? get policies;
   @override
   bool? get requireSetup;
   @override
