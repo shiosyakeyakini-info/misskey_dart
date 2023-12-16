@@ -57,6 +57,7 @@ _$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
       requireSetup: json['requireSetup'] as bool?,
       enableEmail: json['enableEmail'] as bool?,
       enableServiceWorker: json['enableServiceWorker'] as bool?,
@@ -111,6 +112,7 @@ Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
       'maxNoteTextLength': instance.maxNoteTextLength,
       'ads': instance.ads,
       'serverRules': instance.serverRules,
+      'policies': instance.policies,
       'requireSetup': instance.requireSetup,
       'enableEmail': instance.enableEmail,
       'enableServiceWorker': instance.enableServiceWorker,

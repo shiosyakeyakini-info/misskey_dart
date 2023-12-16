@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'meta_response.freezed.dart';
@@ -46,6 +47,7 @@ class MetaResponse with _$MetaResponse {
     //required List<MetaEmoji> emojis,
     required List<MetaAd> ads,
     @Default([]) List<String> serverRules,
+    required UserPolicies policies,
     bool? requireSetup,
     bool? enableEmail,
     //required bool enableTwitterIntegration,

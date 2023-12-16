@@ -70,6 +70,7 @@ mixin _$MetaResponse {
       throw _privateConstructorUsedError; //required List<MetaEmoji> emojis,
   List<MetaAd> get ads => throw _privateConstructorUsedError;
   List<String> get serverRules => throw _privateConstructorUsedError;
+  UserPolicies get policies => throw _privateConstructorUsedError;
   bool? get requireSetup => throw _privateConstructorUsedError;
   bool? get enableEmail =>
       throw _privateConstructorUsedError; //required bool enableTwitterIntegration,
@@ -129,6 +130,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       int maxNoteTextLength,
       List<MetaAd> ads,
       List<String> serverRules,
+      UserPolicies policies,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
@@ -138,6 +140,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       bool? cacheRemoteFiles,
       MetaFeature? features});
 
+  $UserPoliciesCopyWith<$Res> get policies;
   $MetaFeatureCopyWith<$Res>? get features;
 }
 
@@ -188,6 +191,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? maxNoteTextLength = null,
     Object? ads = null,
     Object? serverRules = null,
+    Object? policies = null,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
@@ -334,6 +338,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.serverRules
           : serverRules // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      policies: null == policies
+          ? _value.policies
+          : policies // ignore: cast_nullable_to_non_nullable
+              as UserPolicies,
       requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
@@ -367,6 +375,14 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           : features // ignore: cast_nullable_to_non_nullable
               as MetaFeature?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserPoliciesCopyWith<$Res> get policies {
+    return $UserPoliciesCopyWith<$Res>(_value.policies, (value) {
+      return _then(_value.copyWith(policies: value) as $Val);
+    });
   }
 
   @override
@@ -425,6 +441,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       int maxNoteTextLength,
       List<MetaAd> ads,
       List<String> serverRules,
+      UserPolicies policies,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
@@ -434,6 +451,8 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       bool? cacheRemoteFiles,
       MetaFeature? features});
 
+  @override
+  $UserPoliciesCopyWith<$Res> get policies;
   @override
   $MetaFeatureCopyWith<$Res>? get features;
 }
@@ -483,6 +502,7 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? maxNoteTextLength = null,
     Object? ads = null,
     Object? serverRules = null,
+    Object? policies = null,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
@@ -629,6 +649,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value._serverRules
           : serverRules // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      policies: null == policies
+          ? _value.policies
+          : policies // ignore: cast_nullable_to_non_nullable
+              as UserPolicies,
       requireSetup: freezed == requireSetup
           ? _value.requireSetup
           : requireSetup // ignore: cast_nullable_to_non_nullable
@@ -703,6 +727,7 @@ class _$MetaResponseImpl implements _MetaResponse {
       required this.maxNoteTextLength,
       required final List<MetaAd> ads,
       final List<String> serverRules = const [],
+      required this.policies,
       this.requireSetup,
       this.enableEmail,
       this.enableServiceWorker,
@@ -823,6 +848,8 @@ class _$MetaResponseImpl implements _MetaResponse {
   }
 
   @override
+  final UserPolicies policies;
+  @override
   final bool? requireSetup;
   @override
   final bool? enableEmail;
@@ -844,7 +871,7 @@ class _$MetaResponseImpl implements _MetaResponse {
 
   @override
   String toString() {
-    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, impressumUrl: $impressumUrl, privacyPolicyUrl: $privacyPolicyUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, serverRules: $serverRules, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
+    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, impressumUrl: $impressumUrl, privacyPolicyUrl: $privacyPolicyUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, serverRules: $serverRules, policies: $policies, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
   }
 
   @override
@@ -913,6 +940,8 @@ class _$MetaResponseImpl implements _MetaResponse {
             const DeepCollectionEquality().equals(other._ads, _ads) &&
             const DeepCollectionEquality()
                 .equals(other._serverRules, _serverRules) &&
+            (identical(other.policies, policies) ||
+                other.policies == policies) &&
             (identical(other.requireSetup, requireSetup) ||
                 other.requireSetup == requireSetup) &&
             (identical(other.enableEmail, enableEmail) ||
@@ -969,6 +998,7 @@ class _$MetaResponseImpl implements _MetaResponse {
         maxNoteTextLength,
         const DeepCollectionEquality().hash(_ads),
         const DeepCollectionEquality().hash(_serverRules),
+        policies,
         requireSetup,
         enableEmail,
         enableServiceWorker,
@@ -1029,6 +1059,7 @@ abstract class _MetaResponse implements MetaResponse {
       required final int maxNoteTextLength,
       required final List<MetaAd> ads,
       final List<String> serverRules,
+      required final UserPolicies policies,
       final bool? requireSetup,
       final bool? enableEmail,
       final bool? enableServiceWorker,
@@ -1123,6 +1154,8 @@ abstract class _MetaResponse implements MetaResponse {
   List<MetaAd> get ads;
   @override
   List<String> get serverRules;
+  @override
+  UserPolicies get policies;
   @override
   bool? get requireSetup;
   @override
