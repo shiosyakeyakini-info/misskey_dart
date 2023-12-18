@@ -33,6 +33,10 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
       ffVisibility:
           $enumDecodeNullable(_$FFVisibilityEnumMap, json['ffVisibility']),
+      followingVisibility: $enumDecodeNullable(
+          _$FFVisibilityEnumMap, json['followingVisibility']),
+      followersVisibility: $enumDecodeNullable(
+          _$FFVisibilityEnumMap, json['followersVisibility']),
       pinnedPageId: json['pinnedPageId'] as String?,
       mutingNotificationTypes:
           (json['mutingNotificationTypes'] as List<dynamic>?)
@@ -80,6 +84,10 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'receiveAnnouncementEmail': instance.receiveAnnouncementEmail,
       'alwaysMarkNsfw': instance.alwaysMarkNsfw,
       'ffVisibility': _$FFVisibilityEnumMap[instance.ffVisibility],
+      'followingVisibility':
+          _$FFVisibilityEnumMap[instance.followingVisibility],
+      'followersVisibility':
+          _$FFVisibilityEnumMap[instance.followersVisibility],
       'pinnedPageId': instance.pinnedPageId,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
       'mutedWords':

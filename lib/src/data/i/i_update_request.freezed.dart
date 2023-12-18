@@ -42,7 +42,10 @@ mixin _$IUpdateRequest {
   bool? get injectFeaturedNote => throw _privateConstructorUsedError;
   bool? get receiveAnnouncementEmail => throw _privateConstructorUsedError;
   bool? get alwaysMarkNsfw => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.12.0")
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
+  FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
+  FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
   String? get pinnedPageId => throw _privateConstructorUsedError;
   List<String>? get mutingNotificationTypes =>
       throw _privateConstructorUsedError;
@@ -89,7 +92,9 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       bool? injectFeaturedNote,
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
-      FFVisibility? ffVisibility,
+      @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
+      FFVisibility? followingVisibility,
+      FFVisibility? followersVisibility,
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -134,6 +139,8 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? receiveAnnouncementEmail = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? ffVisibility = freezed,
+    Object? followingVisibility = freezed,
+    Object? followersVisibility = freezed,
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
@@ -231,6 +238,14 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.ffVisibility
           : ffVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      followingVisibility: freezed == followingVisibility
+          ? _value.followingVisibility
+          : followingVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
+      followersVisibility: freezed == followersVisibility
+          ? _value.followersVisibility
+          : followersVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
       pinnedPageId: freezed == pinnedPageId
           ? _value.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
@@ -293,7 +308,9 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       bool? injectFeaturedNote,
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
-      FFVisibility? ffVisibility,
+      @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
+      FFVisibility? followingVisibility,
+      FFVisibility? followersVisibility,
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -336,6 +353,8 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? receiveAnnouncementEmail = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? ffVisibility = freezed,
+    Object? followingVisibility = freezed,
+    Object? followersVisibility = freezed,
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
@@ -430,6 +449,14 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value.ffVisibility
           : ffVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      followingVisibility: freezed == followingVisibility
+          ? _value.followingVisibility
+          : followingVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
+      followersVisibility: freezed == followersVisibility
+          ? _value.followersVisibility
+          : followersVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
       pinnedPageId: freezed == pinnedPageId
           ? _value.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
@@ -487,7 +514,9 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       this.injectFeaturedNote,
       this.receiveAnnouncementEmail,
       this.alwaysMarkNsfw,
-      this.ffVisibility,
+      @Deprecated("removed at 2023.12.0") this.ffVisibility,
+      this.followingVisibility,
+      this.followersVisibility,
       this.pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
@@ -558,7 +587,12 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   @override
   final bool? alwaysMarkNsfw;
   @override
+  @Deprecated("removed at 2023.12.0")
   final FFVisibility? ffVisibility;
+  @override
+  final FFVisibility? followingVisibility;
+  @override
+  final FFVisibility? followersVisibility;
   @override
   final String? pinnedPageId;
   final List<String>? _mutingNotificationTypes;
@@ -627,7 +661,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, ffVisibility: $ffVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 
   @override
@@ -674,6 +708,10 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.ffVisibility, ffVisibility) ||
                 other.ffVisibility == ffVisibility) &&
+            (identical(other.followingVisibility, followingVisibility) ||
+                other.followingVisibility == followingVisibility) &&
+            (identical(other.followersVisibility, followersVisibility) ||
+                other.followersVisibility == followersVisibility) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
             const DeepCollectionEquality().equals(
@@ -716,6 +754,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         receiveAnnouncementEmail,
         alwaysMarkNsfw,
         ffVisibility,
+        followingVisibility,
+        followersVisibility,
         pinnedPageId,
         const DeepCollectionEquality().hash(_mutingNotificationTypes),
         const DeepCollectionEquality().hash(_mutedWords),
@@ -763,7 +803,9 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       final bool? injectFeaturedNote,
       final bool? receiveAnnouncementEmail,
       final bool? alwaysMarkNsfw,
-      final FFVisibility? ffVisibility,
+      @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
+      final FFVisibility? followingVisibility,
+      final FFVisibility? followersVisibility,
       final String? pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
@@ -819,7 +861,12 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   @override
   bool? get alwaysMarkNsfw;
   @override
+  @Deprecated("removed at 2023.12.0")
   FFVisibility? get ffVisibility;
+  @override
+  FFVisibility? get followingVisibility;
+  @override
+  FFVisibility? get followersVisibility;
   @override
   String? get pinnedPageId;
   @override

@@ -64,7 +64,11 @@ _$UsersShowResponseImpl _$$UsersShowResponseImplFromJson(
       pinnedPageId: json['pinnedPageId'] as String?,
       pinnedPage: json['pinnedPage'] as Map<String, dynamic>?,
       publicReactions: json['publicReactions'] as bool,
-      ffVisibility: json['ffVisibility'] as String,
+      ffVisibility: json['ffVisibility'] as String?,
+      followingVisibility: $enumDecodeNullable(
+          _$FFVisibilityEnumMap, json['followingVisibility']),
+      followersVisibility: $enumDecodeNullable(
+          _$FFVisibilityEnumMap, json['followersVisibility']),
       twoFactorEnabled: json['twoFactorEnabled'] as bool,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool,
       securityKeys: json['securityKeys'] as bool,
@@ -168,6 +172,10 @@ Map<String, dynamic> _$$UsersShowResponseImplToJson(
       'pinnedPage': instance.pinnedPage,
       'publicReactions': instance.publicReactions,
       'ffVisibility': instance.ffVisibility,
+      'followingVisibility':
+          _$FFVisibilityEnumMap[instance.followingVisibility],
+      'followersVisibility':
+          _$FFVisibilityEnumMap[instance.followersVisibility],
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -218,6 +226,12 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+const _$FFVisibilityEnumMap = {
+  FFVisibility.public: 'public',
+  FFVisibility.followers: 'followers',
+  FFVisibility.private: 'private',
+};
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,

@@ -64,7 +64,10 @@ mixin _$IResponse {
   String? get pinnedPageId => throw _privateConstructorUsedError;
   Map<String, dynamic>? get pinnedPage => throw _privateConstructorUsedError;
   bool get publicReactions => throw _privateConstructorUsedError;
-  String get ffVisibility => throw _privateConstructorUsedError;
+  @Deprecated("removed at 2023.12.0")
+  String? get ffVisibility => throw _privateConstructorUsedError;
+  FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
+  FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
   bool get twoFactorEnabled => throw _privateConstructorUsedError;
   bool get usePasswordLessLogin => throw _privateConstructorUsedError;
   bool get securityKeys => throw _privateConstructorUsedError;
@@ -154,7 +157,9 @@ abstract class $IResponseCopyWith<$Res> {
       String? pinnedPageId,
       Map<String, dynamic>? pinnedPage,
       bool publicReactions,
-      String ffVisibility,
+      @Deprecated("removed at 2023.12.0") String? ffVisibility,
+      FFVisibility? followingVisibility,
+      FFVisibility? followersVisibility,
       bool twoFactorEnabled,
       bool usePasswordLessLogin,
       bool securityKeys,
@@ -242,7 +247,9 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
     Object? pinnedPageId = freezed,
     Object? pinnedPage = freezed,
     Object? publicReactions = null,
-    Object? ffVisibility = null,
+    Object? ffVisibility = freezed,
+    Object? followingVisibility = freezed,
+    Object? followersVisibility = freezed,
     Object? twoFactorEnabled = null,
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
@@ -416,10 +423,18 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.publicReactions
           : publicReactions // ignore: cast_nullable_to_non_nullable
               as bool,
-      ffVisibility: null == ffVisibility
+      ffVisibility: freezed == ffVisibility
           ? _value.ffVisibility
           : ffVisibility // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      followingVisibility: freezed == followingVisibility
+          ? _value.followingVisibility
+          : followingVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
+      followersVisibility: freezed == followersVisibility
+          ? _value.followersVisibility
+          : followersVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
       twoFactorEnabled: null == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -615,7 +630,9 @@ abstract class _$$IResponseImplCopyWith<$Res>
       String? pinnedPageId,
       Map<String, dynamic>? pinnedPage,
       bool publicReactions,
-      String ffVisibility,
+      @Deprecated("removed at 2023.12.0") String? ffVisibility,
+      FFVisibility? followingVisibility,
+      FFVisibility? followersVisibility,
       bool twoFactorEnabled,
       bool usePasswordLessLogin,
       bool securityKeys,
@@ -702,7 +719,9 @@ class __$$IResponseImplCopyWithImpl<$Res>
     Object? pinnedPageId = freezed,
     Object? pinnedPage = freezed,
     Object? publicReactions = null,
-    Object? ffVisibility = null,
+    Object? ffVisibility = freezed,
+    Object? followingVisibility = freezed,
+    Object? followersVisibility = freezed,
     Object? twoFactorEnabled = null,
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
@@ -876,10 +895,18 @@ class __$$IResponseImplCopyWithImpl<$Res>
           ? _value.publicReactions
           : publicReactions // ignore: cast_nullable_to_non_nullable
               as bool,
-      ffVisibility: null == ffVisibility
+      ffVisibility: freezed == ffVisibility
           ? _value.ffVisibility
           : ffVisibility // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      followingVisibility: freezed == followingVisibility
+          ? _value.followingVisibility
+          : followingVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
+      followersVisibility: freezed == followersVisibility
+          ? _value.followersVisibility
+          : followersVisibility // ignore: cast_nullable_to_non_nullable
+              as FFVisibility?,
       twoFactorEnabled: null == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -1062,7 +1089,9 @@ class _$IResponseImpl implements _IResponse {
       this.pinnedPageId,
       final Map<String, dynamic>? pinnedPage,
       required this.publicReactions,
-      required this.ffVisibility,
+      @Deprecated("removed at 2023.12.0") this.ffVisibility,
+      this.followingVisibility,
+      this.followersVisibility,
       required this.twoFactorEnabled,
       required this.usePasswordLessLogin,
       required this.securityKeys,
@@ -1241,7 +1270,12 @@ class _$IResponseImpl implements _IResponse {
   @override
   final bool publicReactions;
   @override
-  final String ffVisibility;
+  @Deprecated("removed at 2023.12.0")
+  final String? ffVisibility;
+  @override
+  final FFVisibility? followingVisibility;
+  @override
+  final FFVisibility? followersVisibility;
   @override
   final bool twoFactorEnabled;
   @override
@@ -1369,7 +1403,7 @@ class _$IResponseImpl implements _IResponse {
 
   @override
   String toString() {
-    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
   }
 
   @override
@@ -1437,6 +1471,10 @@ class _$IResponseImpl implements _IResponse {
                 other.publicReactions == publicReactions) &&
             (identical(other.ffVisibility, ffVisibility) ||
                 other.ffVisibility == ffVisibility) &&
+            (identical(other.followingVisibility, followingVisibility) ||
+                other.followingVisibility == followingVisibility) &&
+            (identical(other.followersVisibility, followersVisibility) ||
+                other.followersVisibility == followersVisibility) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) ||
                 other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) ||
@@ -1468,10 +1506,8 @@ class _$IResponseImpl implements _IResponse {
                 other.isExplorable == isExplorable) &&
             (identical(other.isDeleted, isDeleted) ||
                 other.isDeleted == isDeleted) &&
-            (identical(other.hideOnlineStatus, hideOnlineStatus) ||
-                other.hideOnlineStatus == hideOnlineStatus) &&
-            (identical(other.hasUnreadSpecifiedNotes, hasUnreadSpecifiedNotes) ||
-                other.hasUnreadSpecifiedNotes == hasUnreadSpecifiedNotes) &&
+            (identical(other.hideOnlineStatus, hideOnlineStatus) || other.hideOnlineStatus == hideOnlineStatus) &&
+            (identical(other.hasUnreadSpecifiedNotes, hasUnreadSpecifiedNotes) || other.hasUnreadSpecifiedNotes == hasUnreadSpecifiedNotes) &&
             (identical(other.hasUnreadMentions, hasUnreadMentions) || other.hasUnreadMentions == hasUnreadMentions) &&
             (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) || other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
             (identical(other.hasUnreadAntenna, hasUnreadAntenna) || other.hasUnreadAntenna == hasUnreadAntenna) &&
@@ -1530,6 +1566,8 @@ class _$IResponseImpl implements _IResponse {
         const DeepCollectionEquality().hash(_pinnedPage),
         publicReactions,
         ffVisibility,
+        followingVisibility,
+        followersVisibility,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -1617,7 +1655,9 @@ abstract class _IResponse implements IResponse {
       final String? pinnedPageId,
       final Map<String, dynamic>? pinnedPage,
       required final bool publicReactions,
-      required final String ffVisibility,
+      @Deprecated("removed at 2023.12.0") final String? ffVisibility,
+      final FFVisibility? followingVisibility,
+      final FFVisibility? followersVisibility,
       required final bool twoFactorEnabled,
       required final bool usePasswordLessLogin,
       required final bool securityKeys,
@@ -1736,7 +1776,12 @@ abstract class _IResponse implements IResponse {
   @override
   bool get publicReactions;
   @override
-  String get ffVisibility;
+  @Deprecated("removed at 2023.12.0")
+  String? get ffVisibility;
+  @override
+  FFVisibility? get followingVisibility;
+  @override
+  FFVisibility? get followersVisibility;
   @override
   bool get twoFactorEnabled;
   @override
