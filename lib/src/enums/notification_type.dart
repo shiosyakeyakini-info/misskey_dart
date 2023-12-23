@@ -20,4 +20,5 @@ enum NotificationType {
   reactionGrouped,
   @JsonValue("renote:grouped")
   renoteGrouped,
+  roleAssigned,
 }

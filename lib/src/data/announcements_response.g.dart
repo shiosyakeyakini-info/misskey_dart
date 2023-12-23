@@ -26,6 +26,7 @@ _$AnnouncementsResponseImpl _$$AnnouncementsResponseImplFromJson(
       isRead: json['isRead'] as bool?,
       forExistingUsers: json['forExistingUsers'] as bool? ?? false,
       userId: json['userId'] as String?,
+      silence: json['silence'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$AnnouncementsResponseImplToJson(
@@ -45,6 +46,7 @@ Map<String, dynamic> _$$AnnouncementsResponseImplToJson(
       'isRead': instance.isRead,
       'forExistingUsers': instance.forExistingUsers,
       'userId': instance.userId,
+      'silence': instance.silence,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

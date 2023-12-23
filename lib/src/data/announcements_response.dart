@@ -23,6 +23,7 @@ class AnnouncementsResponse with _$AnnouncementsResponse {
     bool? isRead,
     @Default(false) bool forExistingUsers,
     String? userId,
+    @Default(false) bool silence,
   }) = _AnnouncementsResponse;
 
   factory AnnouncementsResponse.fromJson(Map<String, Object?> json) =>

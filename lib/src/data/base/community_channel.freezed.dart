@@ -34,6 +34,9 @@ mixin _$CommunityChannel {
   int get usersCount => throw _privateConstructorUsedError;
   int get notesCount => throw _privateConstructorUsedError;
   bool get isSensitive => throw _privateConstructorUsedError;
+  bool get isArchived => throw _privateConstructorUsedError;
+  @NullableColorConverter()
+  int? get color => throw _privateConstructorUsedError;
   bool? get isFollowing => throw _privateConstructorUsedError;
   bool? get isFavorited => throw _privateConstructorUsedError;
   bool? get hasUnreadNote => throw _privateConstructorUsedError;
@@ -64,6 +67,8 @@ abstract class $CommunityChannelCopyWith<$Res> {
       int usersCount,
       int notesCount,
       bool isSensitive,
+      bool isArchived,
+      @NullableColorConverter() int? color,
       bool? isFollowing,
       bool? isFavorited,
       bool? hasUnreadNote,
@@ -95,6 +100,8 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
     Object? usersCount = null,
     Object? notesCount = null,
     Object? isSensitive = null,
+    Object? isArchived = null,
+    Object? color = freezed,
     Object? isFollowing = freezed,
     Object? isFavorited = freezed,
     Object? hasUnreadNote = freezed,
@@ -146,6 +153,14 @@ class _$CommunityChannelCopyWithImpl<$Res, $Val extends CommunityChannel>
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
+      isArchived: null == isArchived
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int?,
       isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -190,6 +205,8 @@ abstract class _$$CommunityChannelImplCopyWith<$Res>
       int usersCount,
       int notesCount,
       bool isSensitive,
+      bool isArchived,
+      @NullableColorConverter() int? color,
       bool? isFollowing,
       bool? isFavorited,
       bool? hasUnreadNote,
@@ -219,6 +236,8 @@ class __$$CommunityChannelImplCopyWithImpl<$Res>
     Object? usersCount = null,
     Object? notesCount = null,
     Object? isSensitive = null,
+    Object? isArchived = null,
+    Object? color = freezed,
     Object? isFollowing = freezed,
     Object? isFavorited = freezed,
     Object? hasUnreadNote = freezed,
@@ -270,6 +289,14 @@ class __$$CommunityChannelImplCopyWithImpl<$Res>
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
+      isArchived: null == isArchived
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int?,
       isFollowing: freezed == isFollowing
           ? _value.isFollowing
           : isFollowing // ignore: cast_nullable_to_non_nullable
@@ -309,6 +336,8 @@ class _$CommunityChannelImpl implements _CommunityChannel {
       required this.usersCount,
       required this.notesCount,
       this.isSensitive = false,
+      this.isArchived = false,
+      @NullableColorConverter() this.color,
       this.isFollowing,
       this.isFavorited,
       this.hasUnreadNote,
@@ -353,6 +382,12 @@ class _$CommunityChannelImpl implements _CommunityChannel {
   @JsonKey()
   final bool isSensitive;
   @override
+  @JsonKey()
+  final bool isArchived;
+  @override
+  @NullableColorConverter()
+  final int? color;
+  @override
   final bool? isFollowing;
   @override
   final bool? isFavorited;
@@ -374,7 +409,7 @@ class _$CommunityChannelImpl implements _CommunityChannel {
 
   @override
   String toString() {
-    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, isFollowing: $isFollowing, isFavorited: $isFavorited, hasUnreadNote: $hasUnreadNote, pinnedNotes: $pinnedNotes, allowRenoteToExternal: $allowRenoteToExternal)';
+    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, isArchived: $isArchived, color: $color, isFollowing: $isFollowing, isFavorited: $isFavorited, hasUnreadNote: $hasUnreadNote, pinnedNotes: $pinnedNotes, allowRenoteToExternal: $allowRenoteToExternal)';
   }
 
   @override
@@ -401,6 +436,9 @@ class _$CommunityChannelImpl implements _CommunityChannel {
                 other.notesCount == notesCount) &&
             (identical(other.isSensitive, isSensitive) ||
                 other.isSensitive == isSensitive) &&
+            (identical(other.isArchived, isArchived) ||
+                other.isArchived == isArchived) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.isFollowing, isFollowing) ||
                 other.isFollowing == isFollowing) &&
             (identical(other.isFavorited, isFavorited) ||
@@ -428,6 +466,8 @@ class _$CommunityChannelImpl implements _CommunityChannel {
       usersCount,
       notesCount,
       isSensitive,
+      isArchived,
+      color,
       isFollowing,
       isFavorited,
       hasUnreadNote,
@@ -462,6 +502,8 @@ abstract class _CommunityChannel implements CommunityChannel {
       required final int usersCount,
       required final int notesCount,
       final bool isSensitive,
+      final bool isArchived,
+      @NullableColorConverter() final int? color,
       final bool? isFollowing,
       final bool? isFavorited,
       final bool? hasUnreadNote,
@@ -496,6 +538,11 @@ abstract class _CommunityChannel implements CommunityChannel {
   int get notesCount;
   @override
   bool get isSensitive;
+  @override
+  bool get isArchived;
+  @override
+  @NullableColorConverter()
+  int? get color;
   @override
   bool? get isFollowing;
   @override

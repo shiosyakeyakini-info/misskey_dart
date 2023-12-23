@@ -37,6 +37,7 @@ mixin _$AnnouncementsResponse {
   bool? get isRead => throw _privateConstructorUsedError;
   bool get forExistingUsers => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
+  bool get silence => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,7 +64,8 @@ abstract class $AnnouncementsResponseCopyWith<$Res> {
       bool? forYou,
       bool? isRead,
       bool forExistingUsers,
-      String? userId});
+      String? userId,
+      bool silence});
 }
 
 /// @nodoc
@@ -93,6 +95,7 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
     Object? isRead = freezed,
     Object? forExistingUsers = null,
     Object? userId = freezed,
+    Object? silence = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -147,6 +150,10 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
+      silence: null == silence
+          ? _value.silence
+          : silence // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -173,7 +180,8 @@ abstract class _$$AnnouncementsResponseImplCopyWith<$Res>
       bool? forYou,
       bool? isRead,
       bool forExistingUsers,
-      String? userId});
+      String? userId,
+      bool silence});
 }
 
 /// @nodoc
@@ -201,6 +209,7 @@ class __$$AnnouncementsResponseImplCopyWithImpl<$Res>
     Object? isRead = freezed,
     Object? forExistingUsers = null,
     Object? userId = freezed,
+    Object? silence = null,
   }) {
     return _then(_$AnnouncementsResponseImpl(
       id: null == id
@@ -255,6 +264,10 @@ class __$$AnnouncementsResponseImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
+      silence: null == silence
+          ? _value.silence
+          : silence // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -275,7 +288,8 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
       this.forYou,
       this.isRead,
       this.forExistingUsers = false,
-      this.userId});
+      this.userId,
+      this.silence = false});
 
   factory _$AnnouncementsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$AnnouncementsResponseImplFromJson(json);
@@ -310,10 +324,13 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
   final bool forExistingUsers;
   @override
   final String? userId;
+  @override
+  @JsonKey()
+  final bool silence;
 
   @override
   String toString() {
-    return 'AnnouncementsResponse(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, title: $title, imageUrl: $imageUrl, icon: $icon, display: $display, needConfirmationToRead: $needConfirmationToRead, forYou: $forYou, isRead: $isRead, forExistingUsers: $forExistingUsers, userId: $userId)';
+    return 'AnnouncementsResponse(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, text: $text, title: $title, imageUrl: $imageUrl, icon: $icon, display: $display, needConfirmationToRead: $needConfirmationToRead, forYou: $forYou, isRead: $isRead, forExistingUsers: $forExistingUsers, userId: $userId, silence: $silence)';
   }
 
   @override
@@ -338,7 +355,8 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
             (identical(other.isRead, isRead) || other.isRead == isRead) &&
             (identical(other.forExistingUsers, forExistingUsers) ||
                 other.forExistingUsers == forExistingUsers) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.silence, silence) || other.silence == silence));
   }
 
   @JsonKey(ignore: true)
@@ -357,7 +375,8 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
       forYou,
       isRead,
       forExistingUsers,
-      userId);
+      userId,
+      silence);
 
   @JsonKey(ignore: true)
   @override
@@ -388,7 +407,8 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
       final bool? forYou,
       final bool? isRead,
       final bool forExistingUsers,
-      final String? userId}) = _$AnnouncementsResponseImpl;
+      final String? userId,
+      final bool silence}) = _$AnnouncementsResponseImpl;
 
   factory _AnnouncementsResponse.fromJson(Map<String, dynamic> json) =
       _$AnnouncementsResponseImpl.fromJson;
@@ -422,6 +442,8 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   bool get forExistingUsers;
   @override
   String? get userId;
+  @override
+  bool get silence;
   @override
   @JsonKey(ignore: true)
   _$$AnnouncementsResponseImplCopyWith<_$AnnouncementsResponseImpl>

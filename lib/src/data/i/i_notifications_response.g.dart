@@ -70,6 +70,7 @@ const _$NotificationTypeEnumMap = {
   NotificationType.note: 'note',
   NotificationType.reactionGrouped: 'reaction:grouped',
   NotificationType.renoteGrouped: 'renote:grouped',
+  NotificationType.roleAssigned: 'roleAssigned',
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(
