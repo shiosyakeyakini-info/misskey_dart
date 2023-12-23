@@ -193,6 +193,17 @@ void main() async {
     retry: 3,
   );
 
+  test(
+    "translate",
+    () async {
+      final note = await userClient.createNote();
+      await userClient.notes.translate(
+        NotesTranslateRequest(noteId: note.id, targetLang: "en"),
+      );
+    },
+    skip: "requires DeepL API key",
+  );
+
   group("reactions", () {
     test("create", () async {
       final note = await userClient.createNote();
