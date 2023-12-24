@@ -24,6 +24,7 @@ class INotificationsResponse with _$INotificationsResponse {
     String? userId,
     User? user,
     Note? note,
+    RolesListResponse? role,
   }) = _INotificationsResponse;
 
   factory INotificationsResponse.fromJson(Map<String, Object?> json) =>

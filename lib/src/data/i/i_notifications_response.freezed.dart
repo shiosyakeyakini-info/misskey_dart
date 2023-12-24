@@ -38,6 +38,7 @@ mixin _$INotificationsResponse {
   String? get userId => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
   Note? get note => throw _privateConstructorUsedError;
+  RolesListResponse? get role => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,10 +67,12 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       String? appAccessTokenId,
       String? userId,
       User? user,
-      Note? note});
+      Note? note,
+      RolesListResponse? role});
 
   $UserCopyWith<$Res>? get user;
   $NoteCopyWith<$Res>? get note;
+  $RolesListResponseCopyWith<$Res>? get role;
 }
 
 /// @nodoc
@@ -101,6 +104,7 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     Object? userId = freezed,
     Object? user = freezed,
     Object? note = freezed,
+    Object? role = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -163,6 +167,10 @@ class _$INotificationsResponseCopyWithImpl<$Res,
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as RolesListResponse?,
     ) as $Val);
   }
 
@@ -187,6 +195,18 @@ class _$INotificationsResponseCopyWithImpl<$Res,
 
     return $NoteCopyWith<$Res>(_value.note!, (value) {
       return _then(_value.copyWith(note: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RolesListResponseCopyWith<$Res>? get role {
+    if (_value.role == null) {
+      return null;
+    }
+
+    return $RolesListResponseCopyWith<$Res>(_value.role!, (value) {
+      return _then(_value.copyWith(role: value) as $Val);
     });
   }
 }
@@ -215,12 +235,15 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       String? appAccessTokenId,
       String? userId,
       User? user,
-      Note? note});
+      Note? note,
+      RolesListResponse? role});
 
   @override
   $UserCopyWith<$Res>? get user;
   @override
   $NoteCopyWith<$Res>? get note;
+  @override
+  $RolesListResponseCopyWith<$Res>? get role;
 }
 
 /// @nodoc
@@ -251,6 +274,7 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? user = freezed,
     Object? note = freezed,
+    Object? role = freezed,
   }) {
     return _then(_$INotificationsResponseImpl(
       id: null == id
@@ -313,6 +337,10 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as RolesListResponse?,
     ));
   }
 }
@@ -335,7 +363,8 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       this.appAccessTokenId,
       this.userId,
       this.user,
-      this.note});
+      this.note,
+      this.role});
 
   factory _$INotificationsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$INotificationsResponseImplFromJson(json);
@@ -372,10 +401,12 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   final User? user;
   @override
   final Note? note;
+  @override
+  final RolesListResponse? role;
 
   @override
   String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, customBody: $customBody, customHeader: $customHeader, customIcon: $customIcon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note)';
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, customBody: $customBody, customHeader: $customHeader, customIcon: $customIcon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role)';
   }
 
   @override
@@ -405,7 +436,8 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
                 other.appAccessTokenId == appAccessTokenId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.note, note) || other.note == note));
+            (identical(other.note, note) || other.note == note) &&
+            (identical(other.role, role) || other.role == role));
   }
 
   @JsonKey(ignore: true)
@@ -426,7 +458,8 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       appAccessTokenId,
       userId,
       user,
-      note);
+      note,
+      role);
 
   @JsonKey(ignore: true)
   @override
@@ -459,7 +492,8 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       final String? appAccessTokenId,
       final String? userId,
       final User? user,
-      final Note? note}) = _$INotificationsResponseImpl;
+      final Note? note,
+      final RolesListResponse? role}) = _$INotificationsResponseImpl;
 
   factory _INotificationsResponse.fromJson(Map<String, dynamic> json) =
       _$INotificationsResponseImpl.fromJson;
@@ -496,6 +530,8 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   User? get user;
   @override
   Note? get note;
+  @override
+  RolesListResponse? get role;
   @override
   @JsonKey(ignore: true)
   _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>

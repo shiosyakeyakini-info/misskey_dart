@@ -30,6 +30,9 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       note: json['note'] == null
           ? null
           : Note.fromJson(json['note'] as Map<String, dynamic>),
+      role: json['role'] == null
+          ? null
+          : RolesListResponse.fromJson(json['role'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$INotificationsResponseImplToJson(
@@ -50,6 +53,7 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'userId': instance.userId,
       'user': instance.user,
       'note': instance.note,
+      'role': instance.role,
     };
 
 const _$NotificationTypeEnumMap = {
