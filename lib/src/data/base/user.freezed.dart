@@ -1566,21 +1566,21 @@ mixin _$UserPolicies {
   bool get canInvite => throw _privateConstructorUsedError;
   bool get canManageCustomEmojis => throw _privateConstructorUsedError;
   bool get canHideAds => throw _privateConstructorUsedError;
-  int? get inviteLimit => throw _privateConstructorUsedError;
-  int? get inviteLimitCycle => throw _privateConstructorUsedError;
+  double? get inviteLimit => throw _privateConstructorUsedError;
+  double? get inviteLimitCycle => throw _privateConstructorUsedError;
   bool get canSearchNotes => throw _privateConstructorUsedError;
   bool get canUseTranslator => throw _privateConstructorUsedError;
-  int get driveCapacityMb => throw _privateConstructorUsedError;
-  int get pinLimit => throw _privateConstructorUsedError;
-  int get antennaLimit => throw _privateConstructorUsedError;
-  int get wordMuteLimit => throw _privateConstructorUsedError;
-  int get webhookLimit => throw _privateConstructorUsedError;
-  int get clipLimit => throw _privateConstructorUsedError;
-  int get noteEachClipsLimit => throw _privateConstructorUsedError;
-  int get userListLimit => throw _privateConstructorUsedError;
-  int get userEachUserListsLimit => throw _privateConstructorUsedError;
+  double get driveCapacityMb => throw _privateConstructorUsedError;
+  double get pinLimit => throw _privateConstructorUsedError;
+  double get antennaLimit => throw _privateConstructorUsedError;
+  double get wordMuteLimit => throw _privateConstructorUsedError;
+  double get webhookLimit => throw _privateConstructorUsedError;
+  double get clipLimit => throw _privateConstructorUsedError;
+  double get noteEachClipsLimit => throw _privateConstructorUsedError;
+  double get userListLimit => throw _privateConstructorUsedError;
+  double get userEachUserListsLimit => throw _privateConstructorUsedError;
   double get rateLimitFactor => throw _privateConstructorUsedError;
-  int get avatarDecorationLimit => throw _privateConstructorUsedError;
+  double get avatarDecorationLimit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1602,21 +1602,21 @@ abstract class $UserPoliciesCopyWith<$Res> {
       bool canInvite,
       bool canManageCustomEmojis,
       bool canHideAds,
-      int? inviteLimit,
-      int? inviteLimitCycle,
+      double? inviteLimit,
+      double? inviteLimitCycle,
       bool canSearchNotes,
       bool canUseTranslator,
-      int driveCapacityMb,
-      int pinLimit,
-      int antennaLimit,
-      int wordMuteLimit,
-      int webhookLimit,
-      int clipLimit,
-      int noteEachClipsLimit,
-      int userListLimit,
-      int userEachUserListsLimit,
+      double driveCapacityMb,
+      double pinLimit,
+      double antennaLimit,
+      double wordMuteLimit,
+      double webhookLimit,
+      double clipLimit,
+      double noteEachClipsLimit,
+      double userListLimit,
+      double userEachUserListsLimit,
       double rateLimitFactor,
-      int avatarDecorationLimit});
+      double avatarDecorationLimit});
 }
 
 /// @nodoc
@@ -1687,11 +1687,11 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
       inviteLimit: freezed == inviteLimit
           ? _value.inviteLimit
           : inviteLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       inviteLimitCycle: freezed == inviteLimitCycle
           ? _value.inviteLimitCycle
           : inviteLimitCycle // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       canSearchNotes: null == canSearchNotes
           ? _value.canSearchNotes
           : canSearchNotes // ignore: cast_nullable_to_non_nullable
@@ -1703,39 +1703,39 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
       driveCapacityMb: null == driveCapacityMb
           ? _value.driveCapacityMb
           : driveCapacityMb // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pinLimit: null == pinLimit
           ? _value.pinLimit
           : pinLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       antennaLimit: null == antennaLimit
           ? _value.antennaLimit
           : antennaLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       wordMuteLimit: null == wordMuteLimit
           ? _value.wordMuteLimit
           : wordMuteLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       webhookLimit: null == webhookLimit
           ? _value.webhookLimit
           : webhookLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       clipLimit: null == clipLimit
           ? _value.clipLimit
           : clipLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       noteEachClipsLimit: null == noteEachClipsLimit
           ? _value.noteEachClipsLimit
           : noteEachClipsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       userListLimit: null == userListLimit
           ? _value.userListLimit
           : userListLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       userEachUserListsLimit: null == userEachUserListsLimit
           ? _value.userEachUserListsLimit
           : userEachUserListsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       rateLimitFactor: null == rateLimitFactor
           ? _value.rateLimitFactor
           : rateLimitFactor // ignore: cast_nullable_to_non_nullable
@@ -1743,7 +1743,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
       avatarDecorationLimit: null == avatarDecorationLimit
           ? _value.avatarDecorationLimit
           : avatarDecorationLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ) as $Val);
   }
 }
@@ -1764,21 +1764,21 @@ abstract class _$$UserPoliciesImplCopyWith<$Res>
       bool canInvite,
       bool canManageCustomEmojis,
       bool canHideAds,
-      int? inviteLimit,
-      int? inviteLimitCycle,
+      double? inviteLimit,
+      double? inviteLimitCycle,
       bool canSearchNotes,
       bool canUseTranslator,
-      int driveCapacityMb,
-      int pinLimit,
-      int antennaLimit,
-      int wordMuteLimit,
-      int webhookLimit,
-      int clipLimit,
-      int noteEachClipsLimit,
-      int userListLimit,
-      int userEachUserListsLimit,
+      double driveCapacityMb,
+      double pinLimit,
+      double antennaLimit,
+      double wordMuteLimit,
+      double webhookLimit,
+      double clipLimit,
+      double noteEachClipsLimit,
+      double userListLimit,
+      double userEachUserListsLimit,
       double rateLimitFactor,
-      int avatarDecorationLimit});
+      double avatarDecorationLimit});
 }
 
 /// @nodoc
@@ -1847,11 +1847,11 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
       inviteLimit: freezed == inviteLimit
           ? _value.inviteLimit
           : inviteLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       inviteLimitCycle: freezed == inviteLimitCycle
           ? _value.inviteLimitCycle
           : inviteLimitCycle // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       canSearchNotes: null == canSearchNotes
           ? _value.canSearchNotes
           : canSearchNotes // ignore: cast_nullable_to_non_nullable
@@ -1863,39 +1863,39 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
       driveCapacityMb: null == driveCapacityMb
           ? _value.driveCapacityMb
           : driveCapacityMb // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pinLimit: null == pinLimit
           ? _value.pinLimit
           : pinLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       antennaLimit: null == antennaLimit
           ? _value.antennaLimit
           : antennaLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       wordMuteLimit: null == wordMuteLimit
           ? _value.wordMuteLimit
           : wordMuteLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       webhookLimit: null == webhookLimit
           ? _value.webhookLimit
           : webhookLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       clipLimit: null == clipLimit
           ? _value.clipLimit
           : clipLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       noteEachClipsLimit: null == noteEachClipsLimit
           ? _value.noteEachClipsLimit
           : noteEachClipsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       userListLimit: null == userListLimit
           ? _value.userListLimit
           : userListLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       userEachUserListsLimit: null == userEachUserListsLimit
           ? _value.userEachUserListsLimit
           : userEachUserListsLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       rateLimitFactor: null == rateLimitFactor
           ? _value.rateLimitFactor
           : rateLimitFactor // ignore: cast_nullable_to_non_nullable
@@ -1903,7 +1903,7 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
       avatarDecorationLimit: null == avatarDecorationLimit
           ? _value.avatarDecorationLimit
           : avatarDecorationLimit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -1933,7 +1933,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
       required this.userListLimit,
       required this.userEachUserListsLimit,
       required this.rateLimitFactor,
-      this.avatarDecorationLimit = 1});
+      this.avatarDecorationLimit = 1.0});
 
   factory _$UserPoliciesImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserPoliciesImplFromJson(json);
@@ -1954,9 +1954,9 @@ class _$UserPoliciesImpl implements _UserPolicies {
   @override
   final bool canHideAds;
   @override
-  final int? inviteLimit;
+  final double? inviteLimit;
   @override
-  final int? inviteLimitCycle;
+  final double? inviteLimitCycle;
   @override
   @JsonKey()
   final bool canSearchNotes;
@@ -1964,28 +1964,28 @@ class _$UserPoliciesImpl implements _UserPolicies {
   @JsonKey()
   final bool canUseTranslator;
   @override
-  final int driveCapacityMb;
+  final double driveCapacityMb;
   @override
-  final int pinLimit;
+  final double pinLimit;
   @override
-  final int antennaLimit;
+  final double antennaLimit;
   @override
-  final int wordMuteLimit;
+  final double wordMuteLimit;
   @override
-  final int webhookLimit;
+  final double webhookLimit;
   @override
-  final int clipLimit;
+  final double clipLimit;
   @override
-  final int noteEachClipsLimit;
+  final double noteEachClipsLimit;
   @override
-  final int userListLimit;
+  final double userListLimit;
   @override
-  final int userEachUserListsLimit;
+  final double userEachUserListsLimit;
   @override
   final double rateLimitFactor;
   @override
   @JsonKey()
-  final int avatarDecorationLimit;
+  final double avatarDecorationLimit;
 
   @override
   String toString() {
@@ -2094,21 +2094,21 @@ abstract class _UserPolicies implements UserPolicies {
       required final bool canInvite,
       required final bool canManageCustomEmojis,
       required final bool canHideAds,
-      final int? inviteLimit,
-      final int? inviteLimitCycle,
+      final double? inviteLimit,
+      final double? inviteLimitCycle,
       final bool canSearchNotes,
       final bool canUseTranslator,
-      required final int driveCapacityMb,
-      required final int pinLimit,
-      required final int antennaLimit,
-      required final int wordMuteLimit,
-      required final int webhookLimit,
-      required final int clipLimit,
-      required final int noteEachClipsLimit,
-      required final int userListLimit,
-      required final int userEachUserListsLimit,
+      required final double driveCapacityMb,
+      required final double pinLimit,
+      required final double antennaLimit,
+      required final double wordMuteLimit,
+      required final double webhookLimit,
+      required final double clipLimit,
+      required final double noteEachClipsLimit,
+      required final double userListLimit,
+      required final double userEachUserListsLimit,
       required final double rateLimitFactor,
-      final int avatarDecorationLimit}) = _$UserPoliciesImpl;
+      final double avatarDecorationLimit}) = _$UserPoliciesImpl;
 
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =
       _$UserPoliciesImpl.fromJson;
@@ -2128,35 +2128,35 @@ abstract class _UserPolicies implements UserPolicies {
   @override
   bool get canHideAds;
   @override
-  int? get inviteLimit;
+  double? get inviteLimit;
   @override
-  int? get inviteLimitCycle;
+  double? get inviteLimitCycle;
   @override
   bool get canSearchNotes;
   @override
   bool get canUseTranslator;
   @override
-  int get driveCapacityMb;
+  double get driveCapacityMb;
   @override
-  int get pinLimit;
+  double get pinLimit;
   @override
-  int get antennaLimit;
+  double get antennaLimit;
   @override
-  int get wordMuteLimit;
+  double get wordMuteLimit;
   @override
-  int get webhookLimit;
+  double get webhookLimit;
   @override
-  int get clipLimit;
+  double get clipLimit;
   @override
-  int get noteEachClipsLimit;
+  double get noteEachClipsLimit;
   @override
-  int get userListLimit;
+  double get userListLimit;
   @override
-  int get userEachUserListsLimit;
+  double get userEachUserListsLimit;
   @override
   double get rateLimitFactor;
   @override
-  int get avatarDecorationLimit;
+  double get avatarDecorationLimit;
   @override
   @JsonKey(ignore: true)
   _$$UserPoliciesImplCopyWith<_$UserPoliciesImpl> get copyWith =>
