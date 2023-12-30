@@ -18,7 +18,7 @@ _$ClipImpl _$$ClipImplFromJson(Map<String, dynamic> json) => _$ClipImpl(
       description: json['description'] as String?,
       isPublic: json['isPublic'] as bool,
       favoritedCount: json['favoritedCount'] as int,
-      isFavorited: json['isFavorited'] as bool,
+      isFavorited: json['isFavorited'] as bool?,
     );
 
 Map<String, dynamic> _$$ClipImplToJson(_$ClipImpl instance) =>
