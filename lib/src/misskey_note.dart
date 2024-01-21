@@ -163,6 +163,17 @@ class MisskeyNotes {
   Future<void> unrenote(NotesUnrenoteRequest request) async {
     await _apiService.post<void>("notes/unrenote", request.toJson());
   }
+
+  /// ノートを翻訳します。
+  Future<NotesTranslateResponse> translate(
+    NotesTranslateRequest request,
+  ) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "notes/translate",
+      request.toJson(),
+    );
+    return NotesTranslateResponse.fromJson(response);
+  }
 }
 
 class MisskeyNotesReactions {
