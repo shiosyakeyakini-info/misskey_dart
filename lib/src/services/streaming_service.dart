@@ -36,7 +36,7 @@ class StreamingService {
 
   WebSocketChannel get webSocketChannel {
     _webSocketChannel ??= IOWebSocketChannel.connect(
-      "${streamingUrl ?? "wss://$host/streaming"}?i=$token",
+      "${streamingUrl ?? "wss://$host/streaming"}${token != null ? "?i=$token" : ""}",
       pingInterval: Duration(minutes: 1),
       connectTimeout: connectionTimeout,
     );
