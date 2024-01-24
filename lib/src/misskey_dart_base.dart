@@ -36,6 +36,8 @@ class Misskey {
   late final MisskeyAp ap;
   late final MisskeyPages pages;
   late final MisskeyFlash flash;
+  late final MisskeyReversi reversi;
+  late final MisskeyBubbleGame bubbleGame;
 
   Misskey({
     required this.token,
@@ -73,6 +75,8 @@ class Misskey {
     ap = MisskeyAp(apiService: apiService);
     pages = MisskeyPages(apiService: apiService);
     flash = MisskeyFlash(apiService: apiService);
+    bubbleGame = MisskeyBubbleGame(apiService: apiService);
+    reversi = MisskeyReversi(apiService: apiService);
   }
 
   /// サーバーからのお知らせを取得します。
