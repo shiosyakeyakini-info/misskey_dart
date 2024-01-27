@@ -12,8 +12,18 @@ class Following with _$Following {
     @DateTimeConverter() required DateTime createdAt,
     required String followeeId,
     required String followerId,
-    User? followee,
-    User? follower,
+
+    /// 以下のエンドポイントでnon-null
+    ///
+    // - [MisskeyFederation.followers]
+    // - [MisskeyFederation.following]
+    /// - [MisskeyUsers.following]
+    UserDetailed? followee,
+
+    /// 以下のエンドポイントでnon-null
+    ///
+    /// - [MisskeyUsers.followers]
+    UserDetailed? follower,
   }) = _Following;
 
   factory Following.fromJson(Map<String, dynamic> json) =>

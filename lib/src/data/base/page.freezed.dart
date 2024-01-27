@@ -26,7 +26,7 @@ mixin _$Page {
   @DateTimeConverter()
   DateTime get updatedAt => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
   @ListPageContentConverter()
   List<AbstractPageContent> get content => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get variables =>
@@ -59,7 +59,7 @@ abstract class $PageCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
       String userId,
-      User user,
+      UserLite user,
       @ListPageContentConverter() List<AbstractPageContent> content,
       List<Map<String, dynamic>> variables,
       String title,
@@ -75,7 +75,7 @@ abstract class $PageCopyWith<$Res> {
       int likedCount,
       bool? isLiked});
 
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
   $DriveFileCopyWith<$Res>? get eyeCatchingImage;
 }
 
@@ -132,7 +132,7 @@ class _$PageCopyWithImpl<$Res, $Val extends Page>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -194,8 +194,8 @@ class _$PageCopyWithImpl<$Res, $Val extends Page>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -225,7 +225,7 @@ abstract class _$$PageImplCopyWith<$Res> implements $PageCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
       String userId,
-      User user,
+      UserLite user,
       @ListPageContentConverter() List<AbstractPageContent> content,
       List<Map<String, dynamic>> variables,
       String title,
@@ -242,7 +242,7 @@ abstract class _$$PageImplCopyWith<$Res> implements $PageCopyWith<$Res> {
       bool? isLiked});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
   @override
   $DriveFileCopyWith<$Res>? get eyeCatchingImage;
 }
@@ -297,7 +297,7 @@ class __$$PageImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       content: null == content
           ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
@@ -400,7 +400,7 @@ class _$PageImpl implements _Page {
   @override
   final String userId;
   @override
-  final User user;
+  final UserLite user;
   final List<AbstractPageContent> _content;
   @override
   @ListPageContentConverter()
@@ -534,7 +534,7 @@ abstract class _Page implements Page {
       @DateTimeConverter() required final DateTime createdAt,
       @DateTimeConverter() required final DateTime updatedAt,
       required final String userId,
-      required final User user,
+      required final UserLite user,
       @ListPageContentConverter()
       required final List<AbstractPageContent> content,
       required final List<Map<String, dynamic>> variables,
@@ -564,7 +564,7 @@ abstract class _Page implements Page {
   @override
   String get userId;
   @override
-  User get user;
+  UserLite get user;
   @override
   @ListPageContentConverter()
   List<AbstractPageContent> get content;

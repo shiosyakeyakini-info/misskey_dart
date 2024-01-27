@@ -8,8 +8,8 @@ part 'follow_request.g.dart';
 class FollowRequest with _$FollowRequest {
   const factory FollowRequest({
     required String id,
-    required User followee,
-    required User follower,
+    required UserLite followee,
+    required UserLite follower,
   }) = _FollowRequest;
 
   factory FollowRequest.fromJson(Map<String, dynamic> json) =>

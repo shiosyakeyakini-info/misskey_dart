@@ -9,7 +9,7 @@ void main() async {
     await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
-    expect(userDetailed.isBlocking, isTrue);
+    expect((userDetailed as UserDetailedNotMeWithRelations).isBlocking, isTrue);
   });
 
   test("delete", () async {
@@ -19,7 +19,7 @@ void main() async {
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
-      userDetailed.isBlocking,
+      (userDetailed as UserDetailedNotMeWithRelations).isBlocking,
       isFalse,
     );
   });

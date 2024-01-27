@@ -13,7 +13,7 @@ void main() async {
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
-      userDetailed.isFollowing,
+      (userDetailed as UserDetailedNotMeWithRelations).isFollowing,
       isTrue,
     );
   });
@@ -27,7 +27,7 @@ void main() async {
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
-      userDetailed.isFollowing,
+      (userDetailed as UserDetailedNotMeWithRelations).isFollowing,
       isFalse,
     );
   });
@@ -43,7 +43,7 @@ void main() async {
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
-      userDetailed.isFollowed,
+      (userDetailed as UserDetailedNotMeWithRelations).isFollowed,
       isFalse,
     );
   });
@@ -66,7 +66,7 @@ void main() async {
       final userDetailed =
           await newClient.users.show(UsersShowRequest(userId: user.id));
       expect(
-        userDetailed.isFollowed,
+        (userDetailed as UserDetailedNotMeWithRelations).isFollowed,
         isTrue,
       );
     });

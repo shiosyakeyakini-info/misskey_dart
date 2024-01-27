@@ -18,8 +18,8 @@ _$QueueStatsLogResponseImpl _$$QueueStatsLogResponseImplFromJson(
 Map<String, dynamic> _$$QueueStatsLogResponseImplToJson(
         _$QueueStatsLogResponseImpl instance) =>
     <String, dynamic>{
-      'inbox': instance.inbox,
-      'deliver': instance.deliver,
+      'inbox': instance.inbox.toJson(),
+      'deliver': instance.deliver.toJson(),
     };
 
 _$QueueStatsLogResponseDataImpl _$$QueueStatsLogResponseDataImplFromJson(

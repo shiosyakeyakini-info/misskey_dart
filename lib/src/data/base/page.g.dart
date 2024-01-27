@@ -13,7 +13,7 @@ _$PageImpl _$$PageImplFromJson(Map<String, dynamic> json) => _$PageImpl(
       updatedAt:
           const DateTimeConverter().fromJson(json['updatedAt'] as String),
       userId: json['userId'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       content:
           const ListPageContentConverter().fromJson(json['content'] as List?),
       variables: (json['variables'] as List<dynamic>)
@@ -44,7 +44,7 @@ Map<String, dynamic> _$$PageImplToJson(_$PageImpl instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'content': const ListPageContentConverter().toJson(instance.content),
       'variables': instance.variables,
       'title': instance.title,
@@ -55,8 +55,8 @@ Map<String, dynamic> _$$PageImplToJson(_$PageImpl instance) =>
       'font': instance.font,
       'script': instance.script,
       'eyeCatchingImageId': instance.eyeCatchingImageId,
-      'eyeCatchingImage': instance.eyeCatchingImage,
-      'attachedFiles': instance.attachedFiles,
+      'eyeCatchingImage': instance.eyeCatchingImage?.toJson(),
+      'attachedFiles': instance.attachedFiles.map((e) => e.toJson()).toList(),
       'likedCount': instance.likedCount,
       'isLiked': instance.isLiked,
     };

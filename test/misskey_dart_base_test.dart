@@ -167,7 +167,7 @@ void main() async {
           });
 
           test("userAdded", () async {
-            final completer = Completer<User>();
+            final completer = Completer<UserLite>();
             final client = userClient;
             final list = await client.users.list
                 .create(UsersListsCreateRequest(name: "test"));
@@ -187,7 +187,7 @@ void main() async {
           });
 
           test("userRemoved", () async {
-            final completer = Completer<User>();
+            final completer = Completer<UserLite>();
             final client = userClient;
             final list = await client.users.list
                 .create(UsersListsCreateRequest(name: "test"));
@@ -326,7 +326,7 @@ void main() async {
           });
 
           test("follow", () async {
-            final completer = Completer<User>();
+            final completer = Completer<UserDetailedNotMe>();
             final client = userClient;
             final newUser = (await adminClient.createUser()).user;
             final controller = client.mainStream(onFollow: completer.complete);
@@ -338,7 +338,7 @@ void main() async {
           });
 
           test("followed", () async {
-            final completer = Completer<User>();
+            final completer = Completer<UserLite>();
             final client = userClient;
             final newClient = (await adminClient.createUser()).client;
             final controller =
@@ -350,8 +350,23 @@ void main() async {
             controller.disconnect();
           });
 
+          test("unfollow", () async {
+            final completer = Completer<UserDetailedNotMe>();
+            final client = userClient;
+            final newUser = (await adminClient.createUser()).user;
+            final controller =
+                client.mainStream(onUnfollow: completer.complete);
+            await client.following
+                .create(FollowingCreateRequest(userId: newUser.id));
+            await client.startStreaming();
+            await client.following
+                .delete(FollowingDeleteRequest(userId: newUser.id));
+            await completer.future;
+            controller.disconnect();
+          });
+
           test("meUpdated", () async {
-            final completer = Completer<User>();
+            final completer = Completer<MeDetailed>();
             final client = userClient;
             final controller =
                 client.mainStream(onMeUpdated: completer.complete);
@@ -437,7 +452,7 @@ void main() async {
           });
 
           test("receiveFollowRequest", () async {
-            final completer = Completer<User>();
+            final completer = Completer<UserLite>();
             final newClient = (await adminClient.createUser()).client;
             final newUser =
                 await newClient.i.update(IUpdateRequest(isLocked: true));

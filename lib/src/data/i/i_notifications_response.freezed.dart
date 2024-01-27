@@ -36,7 +36,7 @@ mixin _$INotificationsResponse {
   Uri? get customIcon => throw _privateConstructorUsedError;
   String? get appAccessTokenId => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
-  User? get user => throw _privateConstructorUsedError;
+  UserLite? get user => throw _privateConstructorUsedError;
   Note? get note => throw _privateConstructorUsedError;
   RolesListResponse? get role => throw _privateConstructorUsedError;
 
@@ -66,11 +66,11 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       @NullableUriConverter() Uri? customIcon,
       String? appAccessTokenId,
       String? userId,
-      User? user,
+      UserLite? user,
       Note? note,
       RolesListResponse? role});
 
-  $UserCopyWith<$Res>? get user;
+  $UserLiteCopyWith<$Res>? get user;
   $NoteCopyWith<$Res>? get note;
   $RolesListResponseCopyWith<$Res>? get role;
 }
@@ -162,7 +162,7 @@ class _$INotificationsResponseCopyWithImpl<$Res,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
       note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -176,12 +176,12 @@ class _$INotificationsResponseCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get user {
+  $UserLiteCopyWith<$Res>? get user {
     if (_value.user == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.user!, (value) {
+    return $UserLiteCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -234,12 +234,12 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       @NullableUriConverter() Uri? customIcon,
       String? appAccessTokenId,
       String? userId,
-      User? user,
+      UserLite? user,
       Note? note,
       RolesListResponse? role});
 
   @override
-  $UserCopyWith<$Res>? get user;
+  $UserLiteCopyWith<$Res>? get user;
   @override
   $NoteCopyWith<$Res>? get note;
   @override
@@ -332,7 +332,7 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
       note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -398,7 +398,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   @override
   final String? userId;
   @override
-  final User? user;
+  final UserLite? user;
   @override
   final Note? note;
   @override
@@ -491,7 +491,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       @NullableUriConverter() final Uri? customIcon,
       final String? appAccessTokenId,
       final String? userId,
-      final User? user,
+      final UserLite? user,
       final Note? note,
       final RolesListResponse? role}) = _$INotificationsResponseImpl;
 
@@ -527,7 +527,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @override
   String? get userId;
   @override
-  User? get user;
+  UserLite? get user;
   @override
   Note? get note;
   @override

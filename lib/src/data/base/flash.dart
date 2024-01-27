@@ -17,7 +17,7 @@ class Flash with _$Flash {
     required String summary,
     required String script,
     required String userId,
-    required User user,
+    required UserLite user,
     int? likedCount,
     @Default(false) bool isLiked,
   }) = _Flash;

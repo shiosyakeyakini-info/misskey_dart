@@ -13,7 +13,7 @@ _$ClipImpl _$$ClipImplFromJson(Map<String, dynamic> json) => _$ClipImpl(
       lastClippedAt: _$JsonConverterFromJson<String, DateTime?>(
           json['lastClippedAt'], const NullableDateTimeConverter().fromJson),
       userId: json['userId'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       name: json['name'] as String?,
       description: json['description'] as String?,
       isPublic: json['isPublic'] as bool,
@@ -28,7 +28,7 @@ Map<String, dynamic> _$$ClipImplToJson(_$ClipImpl instance) =>
       'lastClippedAt':
           const NullableDateTimeConverter().toJson(instance.lastClippedAt),
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'name': instance.name,
       'description': instance.description,
       'isPublic': instance.isPublic,

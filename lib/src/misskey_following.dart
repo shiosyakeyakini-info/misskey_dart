@@ -11,26 +11,26 @@ class MisskeyFollowing {
         requests = MisskeyFollowingRequests(apiService: apiService);
 
   /// ユーザーをフォローします。
-  Future<User> create(FollowingCreateRequest request) async {
+  Future<UserLite> create(FollowingCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "following/create", request.toJson());
-    return User.fromJson(response);
+    return UserLite.fromJson(response);
   }
 
   /// ユーザーに対するフォローを解除します。
-  Future<User> delete(FollowingDeleteRequest request) async {
+  Future<UserLite> delete(FollowingDeleteRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
         "following/delete", request.toJson());
-    return User.fromJson(response);
+    return UserLite.fromJson(response);
   }
 
   /// ユーザーからのフォローを解除します。
-  Future<User> invalidate(FollowingInvalidateRequest request) async {
+  Future<UserLite> invalidate(FollowingInvalidateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "following/invalidate",
       request.toJson(),
     );
-    return User.fromJson(response);
+    return UserLite.fromJson(response);
   }
 
   /// フォロー中のすべての人の状態を変更します。

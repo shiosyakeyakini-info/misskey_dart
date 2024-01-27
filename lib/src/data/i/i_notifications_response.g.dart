@@ -26,7 +26,7 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
       note: json['note'] == null
           ? null
           : Note.fromJson(json['note'] as Map<String, dynamic>),
@@ -51,9 +51,9 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'customIcon': const NullableUriConverter().toJson(instance.customIcon),
       'appAccessTokenId': instance.appAccessTokenId,
       'userId': instance.userId,
-      'user': instance.user,
-      'note': instance.note,
-      'role': instance.role,
+      'user': instance.user?.toJson(),
+      'note': instance.note?.toJson(),
+      'role': instance.role?.toJson(),
     };
 
 const _$NotificationTypeEnumMap = {

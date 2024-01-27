@@ -10,7 +10,7 @@ class UsersReactionsResponse with _$UsersReactionsResponse {
   const factory UsersReactionsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    required User user,
+    required UserLite user,
     required String type,
     required Note note,
   }) = _UsersReactionsResponse;

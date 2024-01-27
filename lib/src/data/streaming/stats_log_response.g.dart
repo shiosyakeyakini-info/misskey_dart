@@ -19,9 +19,9 @@ Map<String, dynamic> _$$StatsLogResponseImplToJson(
         _$StatsLogResponseImpl instance) =>
     <String, dynamic>{
       'cpu': instance.cpu,
-      'fs': instance.fs,
-      'mem': instance.mem,
-      'net': instance.net,
+      'fs': instance.fs.toJson(),
+      'mem': instance.mem.toJson(),
+      'net': instance.net.toJson(),
     };
 
 _$StatsLogFsImpl _$$StatsLogFsImplFromJson(Map<String, dynamic> json) =>

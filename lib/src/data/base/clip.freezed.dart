@@ -26,7 +26,7 @@ mixin _$Clip {
   @NullableDateTimeConverter()
   DateTime? get lastClippedAt => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   bool get isPublic => throw _privateConstructorUsedError;
@@ -48,14 +48,14 @@ abstract class $ClipCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       @NullableDateTimeConverter() DateTime? lastClippedAt,
       String userId,
-      User user,
+      UserLite user,
       String? name,
       String? description,
       bool isPublic,
       int favoritedCount,
       bool? isFavorited});
 
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ class _$ClipCopyWithImpl<$Res, $Val extends Clip>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -128,8 +128,8 @@ class _$ClipCopyWithImpl<$Res, $Val extends Clip>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -147,7 +147,7 @@ abstract class _$$ClipImplCopyWith<$Res> implements $ClipCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       @NullableDateTimeConverter() DateTime? lastClippedAt,
       String userId,
-      User user,
+      UserLite user,
       String? name,
       String? description,
       bool isPublic,
@@ -155,7 +155,7 @@ abstract class _$$ClipImplCopyWith<$Res> implements $ClipCopyWith<$Res> {
       bool? isFavorited});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -199,7 +199,7 @@ class __$$ClipImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -253,7 +253,7 @@ class _$ClipImpl implements _Clip {
   @override
   final String userId;
   @override
-  final User user;
+  final UserLite user;
   @override
   final String? name;
   @override
@@ -318,7 +318,7 @@ abstract class _Clip implements Clip {
       @DateTimeConverter() required final DateTime createdAt,
       @NullableDateTimeConverter() final DateTime? lastClippedAt,
       required final String userId,
-      required final User user,
+      required final UserLite user,
       final String? name,
       final String? description,
       required final bool isPublic,
@@ -338,7 +338,7 @@ abstract class _Clip implements Clip {
   @override
   String get userId;
   @override
-  User get user;
+  UserLite get user;
   @override
   String? get name;
   @override

@@ -15,10 +15,10 @@ _$FollowingImpl _$$FollowingImplFromJson(Map<String, dynamic> json) =>
       followerId: json['followerId'] as String,
       followee: json['followee'] == null
           ? null
-          : User.fromJson(json['followee'] as Map<String, dynamic>),
+          : UserDetailed.fromJson(json['followee'] as Map<String, dynamic>),
       follower: json['follower'] == null
           ? null
-          : User.fromJson(json['follower'] as Map<String, dynamic>),
+          : UserDetailed.fromJson(json['follower'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$FollowingImplToJson(_$FollowingImpl instance) =>
@@ -27,6 +27,6 @@ Map<String, dynamic> _$$FollowingImplToJson(_$FollowingImpl instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'followeeId': instance.followeeId,
       'followerId': instance.followerId,
-      'followee': instance.followee,
-      'follower': instance.follower,
+      'followee': instance.followee?.toJson(),
+      'follower': instance.follower?.toJson(),
     };

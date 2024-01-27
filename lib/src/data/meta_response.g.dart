@@ -112,9 +112,9 @@ Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
       'privacyPolicyUrl':
           const NullableUriConverter().toJson(instance.privacyPolicyUrl),
       'maxNoteTextLength': instance.maxNoteTextLength,
-      'ads': instance.ads,
+      'ads': instance.ads.map((e) => e.toJson()).toList(),
       'serverRules': instance.serverRules,
-      'policies': instance.policies,
+      'policies': instance.policies?.toJson(),
       'requireSetup': instance.requireSetup,
       'enableEmail': instance.enableEmail,
       'enableServiceWorker': instance.enableServiceWorker,
@@ -122,7 +122,7 @@ Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
       'proxyAccountName': instance.proxyAccountName,
       'mediaProxy': instance.mediaProxy,
       'cacheRemoteFiles': instance.cacheRemoteFiles,
-      'features': instance.features,
+      'features': instance.features?.toJson(),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

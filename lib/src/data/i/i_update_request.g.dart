@@ -69,7 +69,7 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'lang': instance.lang,
       'avatarId': instance.avatarId,
       'bannerId': instance.bannerId,
-      'fields': instance.fields,
+      'fields': instance.fields?.map((e) => e.toJson()).toList(),
       'isLocked': instance.isLocked,
       'isExplorable': instance.isExplorable,
       'hideOnlineStatus': instance.hideOnlineStatus,

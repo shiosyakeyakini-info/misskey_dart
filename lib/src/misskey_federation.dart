@@ -16,9 +16,9 @@ class MisskeyFederation {
   }
 
   /// 自身のサーバーが保持する外部サーバーにいるユーザーの一覧を取得します。
-  Future<Iterable<User>> users(FederationUsersRequest request) async {
+  Future<Iterable<UserDetailed>> users(FederationUsersRequest request) async {
     final response =
         await _apiService.post<List>("federation/users", request.toJson());
-    return response.map((e) => User.fromJson(e));
+    return response.map((e) => UserDetailed.fromJson(e));
   }
 }

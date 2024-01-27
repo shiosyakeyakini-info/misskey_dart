@@ -29,7 +29,7 @@ _$DriveFileImpl _$$DriveFileImplFromJson(Map<String, dynamic> json) =>
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>
@@ -42,14 +42,14 @@ Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>
       'size': instance.size,
       'isSensitive': instance.isSensitive,
       'blurhash': instance.blurhash,
-      'properties': instance.properties,
+      'properties': instance.properties.toJson(),
       'url': instance.url,
       'thumbnailUrl': instance.thumbnailUrl,
       'comment': instance.comment,
       'folderId': instance.folderId,
-      'folder': instance.folder,
+      'folder': instance.folder?.toJson(),
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user?.toJson(),
     };
 
 _$DriveFilePropertiesImpl _$$DriveFilePropertiesImplFromJson(

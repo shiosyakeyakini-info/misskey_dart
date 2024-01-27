@@ -24,7 +24,7 @@ mixin _$UsersReactionsResponse {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   Note get note => throw _privateConstructorUsedError;
 
@@ -43,11 +43,11 @@ abstract class $UsersReactionsResponseCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      User user,
+      UserLite user,
       String type,
       Note note});
 
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
   $NoteCopyWith<$Res> get note;
 }
 
@@ -83,7 +83,7 @@ class _$UsersReactionsResponseCopyWithImpl<$Res,
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -97,8 +97,8 @@ class _$UsersReactionsResponseCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -124,12 +124,12 @@ abstract class _$$UsersReactionsResponseImplCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      User user,
+      UserLite user,
       String type,
       Note note});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
   @override
   $NoteCopyWith<$Res> get note;
 }
@@ -165,7 +165,7 @@ class __$$UsersReactionsResponseImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -197,7 +197,7 @@ class _$UsersReactionsResponseImpl implements _UsersReactionsResponse {
   @DateTimeConverter()
   final DateTime createdAt;
   @override
-  final User user;
+  final UserLite user;
   @override
   final String type;
   @override
@@ -244,7 +244,7 @@ abstract class _UsersReactionsResponse implements UsersReactionsResponse {
   const factory _UsersReactionsResponse(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
-      required final User user,
+      required final UserLite user,
       required final String type,
       required final Note note}) = _$UsersReactionsResponseImpl;
 
@@ -257,7 +257,7 @@ abstract class _UsersReactionsResponse implements UsersReactionsResponse {
   @DateTimeConverter()
   DateTime get createdAt;
   @override
-  User get user;
+  UserLite get user;
   @override
   String get type;
   @override

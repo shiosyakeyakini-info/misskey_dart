@@ -21,8 +21,8 @@ Map<String, dynamic> _$$JoinMisskeyInstancesImplToJson(
         _$JoinMisskeyInstancesImpl instance) =>
     <String, dynamic>{
       'date': instance.date.toIso8601String(),
-      'stats': instance.stats,
-      'instancesInfos': instance.instancesInfos,
+      'stats': instance.stats.toJson(),
+      'instancesInfos': instance.instancesInfos.map((e) => e.toJson()).toList(),
     };
 
 _$JoinMisskeyStatsImpl _$$JoinMisskeyStatsImplFromJson(
@@ -73,7 +73,7 @@ Map<String, dynamic> _$$JoinMisskeyInstanceInfoImplToJson(
       'banner': instance.banner,
       'background': instance.background,
       'icon': instance.icon,
-      'nodeinfo': instance.nodeInfo,
+      'nodeinfo': instance.nodeInfo?.toJson(),
     };
 
 _$JoinMisskeyNodeInfoImpl _$$JoinMisskeyNodeInfoImplFromJson(
@@ -94,8 +94,8 @@ Map<String, dynamic> _$$JoinMisskeyNodeInfoImplToJson(
         _$JoinMisskeyNodeInfoImpl instance) =>
     <String, dynamic>{
       'version': instance.version,
-      'software': instance.software,
-      'usage': instance.usage,
+      'software': instance.software?.toJson(),
+      'usage': instance.usage?.toJson(),
     };
 
 _$JoinMisskeyNodeInfoSoftwareImpl _$$JoinMisskeyNodeInfoSoftwareImplFromJson(
@@ -126,7 +126,7 @@ _$JoinMisskeyNodeInfoUsageImpl _$$JoinMisskeyNodeInfoUsageImplFromJson(
 Map<String, dynamic> _$$JoinMisskeyNodeInfoUsageImplToJson(
         _$JoinMisskeyNodeInfoUsageImpl instance) =>
     <String, dynamic>{
-      'users': instance.users,
+      'users': instance.users?.toJson(),
       'localPosts': instance.localPosts,
       'localComments': instance.localComments,
     };

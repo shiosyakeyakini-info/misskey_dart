@@ -16,7 +16,7 @@ _$FlashImpl _$$FlashImplFromJson(Map<String, dynamic> json) => _$FlashImpl(
       summary: json['summary'] as String,
       script: json['script'] as String,
       userId: json['userId'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       likedCount: json['likedCount'] as int?,
       isLiked: json['isLiked'] as bool? ?? false,
     );
@@ -30,7 +30,7 @@ Map<String, dynamic> _$$FlashImplToJson(_$FlashImpl instance) =>
       'summary': instance.summary,
       'script': instance.script,
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user.toJson(),
       'likedCount': instance.likedCount,
       'isLiked': instance.isLiked,
     };

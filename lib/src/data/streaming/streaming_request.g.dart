@@ -17,7 +17,7 @@ Map<String, dynamic> _$$StreamingRequestImplToJson(
         _$StreamingRequestImpl instance) =>
     <String, dynamic>{
       'type': _$StreamingRequestTypeEnumMap[instance.type]!,
-      'body': instance.body,
+      'body': instance.body.toJson(),
     };
 
 const _$StreamingRequestTypeEnumMap = {

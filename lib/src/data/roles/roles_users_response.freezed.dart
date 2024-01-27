@@ -21,7 +21,7 @@ RolesUsersResponse _$RolesUsersResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RolesUsersResponse {
   String get id => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserDetailed get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,9 +35,7 @@ abstract class $RolesUsersResponseCopyWith<$Res> {
           RolesUsersResponse value, $Res Function(RolesUsersResponse) then) =
       _$RolesUsersResponseCopyWithImpl<$Res, RolesUsersResponse>;
   @useResult
-  $Res call({String id, User user});
-
-  $UserCopyWith<$Res> get user;
+  $Res call({String id, UserDetailed user});
 }
 
 /// @nodoc
@@ -64,16 +62,8 @@ class _$RolesUsersResponseCopyWithImpl<$Res, $Val extends RolesUsersResponse>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserDetailed,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
   }
 }
 
@@ -85,10 +75,7 @@ abstract class _$$RolesUsersResponseImplCopyWith<$Res>
       __$$RolesUsersResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, User user});
-
-  @override
-  $UserCopyWith<$Res> get user;
+  $Res call({String id, UserDetailed user});
 }
 
 /// @nodoc
@@ -113,7 +100,7 @@ class __$$RolesUsersResponseImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserDetailed,
     ));
   }
 }
@@ -129,7 +116,7 @@ class _$RolesUsersResponseImpl implements _RolesUsersResponse {
   @override
   final String id;
   @override
-  final User user;
+  final UserDetailed user;
 
   @override
   String toString() {
@@ -167,7 +154,7 @@ class _$RolesUsersResponseImpl implements _RolesUsersResponse {
 abstract class _RolesUsersResponse implements RolesUsersResponse {
   const factory _RolesUsersResponse(
       {required final String id,
-      required final User user}) = _$RolesUsersResponseImpl;
+      required final UserDetailed user}) = _$RolesUsersResponseImpl;
 
   factory _RolesUsersResponse.fromJson(Map<String, dynamic> json) =
       _$RolesUsersResponseImpl.fromJson;
@@ -175,7 +162,7 @@ abstract class _RolesUsersResponse implements RolesUsersResponse {
   @override
   String get id;
   @override
-  User get user;
+  UserDetailed get user;
   @override
   @JsonKey(ignore: true)
   _$$RolesUsersResponseImplCopyWith<_$RolesUsersResponseImpl> get copyWith =>
