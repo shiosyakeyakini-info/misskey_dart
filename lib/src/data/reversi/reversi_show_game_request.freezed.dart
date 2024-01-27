@@ -116,7 +116,7 @@ class _$ReversiShowGameRequestImpl implements _ReversiShowGameRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReversiShowGameRequestImpl &&

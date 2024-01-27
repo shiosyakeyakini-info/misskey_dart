@@ -130,7 +130,7 @@ class _$DriveFilesShowRequestImpl implements _DriveFilesShowRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DriveFilesShowRequestImpl &&

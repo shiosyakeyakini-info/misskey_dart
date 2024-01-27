@@ -167,7 +167,7 @@ class _$JoinMisskeyInstancesImpl implements _JoinMisskeyInstances {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyInstancesImpl &&
@@ -360,7 +360,7 @@ class _$JoinMisskeyStatsImpl implements _JoinMisskeyStats {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyStatsImpl &&
@@ -697,7 +697,7 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyInstanceInfoImpl &&
@@ -953,7 +953,7 @@ class _$JoinMisskeyNodeInfoImpl implements _JoinMisskeyNodeInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyNodeInfoImpl &&
@@ -1122,7 +1122,7 @@ class _$JoinMisskeyNodeInfoSoftwareImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyNodeInfoSoftwareImpl &&
@@ -1321,7 +1321,7 @@ class _$JoinMisskeyNodeInfoUsageImpl implements _JoinMisskeyNodeInfoUsage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyNodeInfoUsageImpl &&
@@ -1479,7 +1479,7 @@ class _$JoinMisskeyNodeInfoUsageUsersImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JoinMisskeyNodeInfoUsageUsersImpl &&

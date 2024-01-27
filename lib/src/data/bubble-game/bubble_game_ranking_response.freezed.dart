@@ -23,7 +23,7 @@ BubbleGameRankingResponse _$BubbleGameRankingResponseFromJson(
 mixin _$BubbleGameRankingResponse {
   String get id => throw _privateConstructorUsedError;
   int get score => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +37,9 @@ abstract class $BubbleGameRankingResponseCopyWith<$Res> {
           $Res Function(BubbleGameRankingResponse) then) =
       _$BubbleGameRankingResponseCopyWithImpl<$Res, BubbleGameRankingResponse>;
   @useResult
-  $Res call({String id, int score, User user});
+  $Res call({String id, int score, UserLite user});
 
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -72,14 +72,14 @@ class _$BubbleGameRankingResponseCopyWithImpl<$Res,
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -94,10 +94,10 @@ abstract class _$$BubbleGameRankingResponseImplCopyWith<$Res>
       __$$BubbleGameRankingResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, int score, User user});
+  $Res call({String id, int score, UserLite user});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -129,7 +129,7 @@ class __$$BubbleGameRankingResponseImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
     ));
   }
 }
@@ -148,7 +148,7 @@ class _$BubbleGameRankingResponseImpl implements _BubbleGameRankingResponse {
   @override
   final int score;
   @override
-  final User user;
+  final UserLite user;
 
   @override
   String toString() {
@@ -156,7 +156,7 @@ class _$BubbleGameRankingResponseImpl implements _BubbleGameRankingResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BubbleGameRankingResponseImpl &&
@@ -188,7 +188,7 @@ abstract class _BubbleGameRankingResponse implements BubbleGameRankingResponse {
   const factory _BubbleGameRankingResponse(
       {required final String id,
       required final int score,
-      required final User user}) = _$BubbleGameRankingResponseImpl;
+      required final UserLite user}) = _$BubbleGameRankingResponseImpl;
 
   factory _BubbleGameRankingResponse.fromJson(Map<String, dynamic> json) =
       _$BubbleGameRankingResponseImpl.fromJson;
@@ -198,7 +198,7 @@ abstract class _BubbleGameRankingResponse implements BubbleGameRankingResponse {
   @override
   int get score;
   @override
-  User get user;
+  UserLite get user;
   @override
   @JsonKey(ignore: true)
   _$$BubbleGameRankingResponseImplCopyWith<_$BubbleGameRankingResponseImpl>

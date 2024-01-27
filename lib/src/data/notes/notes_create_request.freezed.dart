@@ -427,7 +427,7 @@ class _$NotesCreateRequestImpl implements _NotesCreateRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotesCreateRequestImpl &&

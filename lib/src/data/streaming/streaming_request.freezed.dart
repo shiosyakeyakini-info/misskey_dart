@@ -145,7 +145,7 @@ class _$StreamingRequestImpl implements _StreamingRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StreamingRequestImpl &&
@@ -374,7 +374,7 @@ class _$StreamingRequestBodyImpl implements _StreamingRequestBody {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StreamingRequestBodyImpl &&

@@ -455,7 +455,7 @@ class _$PageImpl implements _Page {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageImpl &&
@@ -722,7 +722,7 @@ class _$PageTextImpl implements _PageText {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageTextImpl &&
@@ -928,7 +928,7 @@ class _$PageSectionImpl implements _PageSection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageSectionImpl &&
@@ -1105,7 +1105,7 @@ class _$PageImageImpl implements _PageImage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageImageImpl &&
@@ -1290,7 +1290,7 @@ class _$PageNoteImpl implements _PageNote {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageNoteImpl &&
@@ -1453,7 +1453,7 @@ class _$PageUnknownImpl implements _PageUnknown {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageUnknownImpl &&

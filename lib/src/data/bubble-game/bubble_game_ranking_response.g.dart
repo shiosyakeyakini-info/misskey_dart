@@ -11,7 +11,7 @@ _$BubbleGameRankingResponseImpl _$$BubbleGameRankingResponseImplFromJson(
     _$BubbleGameRankingResponseImpl(
       id: json['id'] as String,
       score: json['score'] as int,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$BubbleGameRankingResponseImplToJson(
@@ -19,5 +19,5 @@ Map<String, dynamic> _$$BubbleGameRankingResponseImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'score': instance.score,
-      'user': instance.user,
+      'user': instance.user.toJson(),
     };

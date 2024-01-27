@@ -117,7 +117,7 @@ class _$EmojisResponseImpl implements _EmojisResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmojisResponseImpl &&
@@ -330,7 +330,7 @@ class _$EmojiImpl implements _Emoji {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmojiImpl &&

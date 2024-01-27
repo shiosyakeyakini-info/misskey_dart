@@ -111,7 +111,7 @@ class _$UsersShowRequestImpl implements _UsersShowRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersShowRequestImpl &&
@@ -259,7 +259,7 @@ class _$UsersShowByIdsRequestImpl implements _UsersShowByIdsRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersShowByIdsRequestImpl &&
@@ -423,7 +423,7 @@ class _$UsersShowByUserNameRequestImpl implements _UsersShowByUserNameRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersShowByUserNameRequestImpl &&

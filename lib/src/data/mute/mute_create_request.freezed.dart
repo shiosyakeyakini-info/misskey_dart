@@ -134,7 +134,7 @@ class _$MuteCreateRequestImpl implements _MuteCreateRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MuteCreateRequestImpl &&

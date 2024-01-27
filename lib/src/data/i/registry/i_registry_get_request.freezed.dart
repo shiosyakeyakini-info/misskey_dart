@@ -147,7 +147,7 @@ class _$IRegistryGetRequestImpl implements _IRegistryGetRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IRegistryGetRequestImpl &&

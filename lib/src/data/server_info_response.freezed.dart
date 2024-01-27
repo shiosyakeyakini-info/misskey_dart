@@ -191,7 +191,7 @@ class _$ServerInfoResponseImpl implements _ServerInfoResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerInfoResponseImpl &&
@@ -354,7 +354,7 @@ class _$ServerInfoCpuImpl implements _ServerInfoCpu {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerInfoCpuImpl &&
@@ -495,7 +495,7 @@ class _$ServerInfoMemImpl implements _ServerInfoMem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerInfoMemImpl &&
@@ -645,7 +645,7 @@ class _$ServerInfoFsImpl implements _ServerInfoFs {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerInfoFsImpl &&

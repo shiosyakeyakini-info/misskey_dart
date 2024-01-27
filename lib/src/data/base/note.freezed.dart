@@ -740,7 +740,7 @@ class _$NoteImpl implements _Note {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoteImpl &&
@@ -1122,7 +1122,7 @@ class _$NoteChannelInfoImpl implements _NoteChannelInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoteChannelInfoImpl &&
@@ -1322,7 +1322,7 @@ class _$NotePollImpl implements _NotePoll {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotePollImpl &&
@@ -1498,7 +1498,7 @@ class _$NotePollChoiceImpl implements _NotePollChoice {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotePollChoiceImpl &&

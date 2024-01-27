@@ -355,7 +355,7 @@ class _$UserLiteImpl implements _UserLite {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLiteImpl &&
@@ -1365,7 +1365,7 @@ class _$UserDetailedNotMeImpl implements _UserDetailedNotMe {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserDetailedNotMeImpl &&
@@ -2702,7 +2702,7 @@ class _$UserDetailedNotMeWithRelationsImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserDetailedNotMeWithRelationsImpl &&
@@ -4546,7 +4546,7 @@ class _$MeDetailedImpl implements _MeDetailed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MeDetailedImpl &&
@@ -5205,7 +5205,7 @@ class _$UserAvatarDecorationImpl implements _UserAvatarDecoration {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserAvatarDecorationImpl &&
@@ -5452,7 +5452,7 @@ class _$UserInstanceInfoImpl implements _UserInstanceInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserInstanceInfoImpl &&
@@ -5633,7 +5633,7 @@ class _$UserBadgeRoleImpl implements _UserBadgeRole {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserBadgeRoleImpl &&
@@ -5876,7 +5876,7 @@ class _$UserRoleImpl implements _UserRole {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserRoleImpl &&
@@ -6063,7 +6063,7 @@ class _$UserAchievementImpl implements _UserAchievement {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserAchievementImpl &&
@@ -6551,7 +6551,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserPoliciesImpl &&
@@ -6830,7 +6830,7 @@ class _$UserFieldImpl implements _UserField {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserFieldImpl &&

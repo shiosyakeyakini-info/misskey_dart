@@ -35,8 +35,8 @@ mixin _$ReversiShowGameResponse {
   bool get user2Ready => throw _privateConstructorUsedError;
   String get user1Id => throw _privateConstructorUsedError;
   String get user2Id => throw _privateConstructorUsedError;
-  User get user1 => throw _privateConstructorUsedError;
-  User get user2 => throw _privateConstructorUsedError;
+  UserLite get user1 => throw _privateConstructorUsedError;
+  UserLite get user2 => throw _privateConstructorUsedError;
   String? get winnerId => throw _privateConstructorUsedError;
   String? get surrenderedUserId => throw _privateConstructorUsedError;
   String? get timeoutUserId => throw _privateConstructorUsedError;
@@ -75,8 +75,8 @@ abstract class $ReversiShowGameResponseCopyWith<$Res> {
       bool user2Ready,
       String user1Id,
       String user2Id,
-      User user1,
-      User user2,
+      UserLite user1,
+      UserLite user2,
       String? winnerId,
       String? surrenderedUserId,
       String? timeoutUserId,
@@ -90,8 +90,8 @@ abstract class $ReversiShowGameResponseCopyWith<$Res> {
       List<dynamic> logs,
       List<String> map});
 
-  $UserCopyWith<$Res> get user1;
-  $UserCopyWith<$Res> get user2;
+  $UserLiteCopyWith<$Res> get user1;
+  $UserLiteCopyWith<$Res> get user2;
 }
 
 /// @nodoc
@@ -181,11 +181,11 @@ class _$ReversiShowGameResponseCopyWithImpl<$Res,
       user1: null == user1
           ? _value.user1
           : user1 // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       user2: null == user2
           ? _value.user2
           : user2 // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       winnerId: freezed == winnerId
           ? _value.winnerId
           : winnerId // ignore: cast_nullable_to_non_nullable
@@ -239,16 +239,16 @@ class _$ReversiShowGameResponseCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user1 {
-    return $UserCopyWith<$Res>(_value.user1, (value) {
+  $UserLiteCopyWith<$Res> get user1 {
+    return $UserLiteCopyWith<$Res>(_value.user1, (value) {
       return _then(_value.copyWith(user1: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user2 {
-    return $UserCopyWith<$Res>(_value.user2, (value) {
+  $UserLiteCopyWith<$Res> get user2 {
+    return $UserLiteCopyWith<$Res>(_value.user2, (value) {
       return _then(_value.copyWith(user2: value) as $Val);
     });
   }
@@ -276,8 +276,8 @@ abstract class _$$ReversiShowGameResponseImplCopyWith<$Res>
       bool user2Ready,
       String user1Id,
       String user2Id,
-      User user1,
-      User user2,
+      UserLite user1,
+      UserLite user2,
       String? winnerId,
       String? surrenderedUserId,
       String? timeoutUserId,
@@ -292,9 +292,9 @@ abstract class _$$ReversiShowGameResponseImplCopyWith<$Res>
       List<String> map});
 
   @override
-  $UserCopyWith<$Res> get user1;
+  $UserLiteCopyWith<$Res> get user1;
   @override
-  $UserCopyWith<$Res> get user2;
+  $UserLiteCopyWith<$Res> get user2;
 }
 
 /// @nodoc
@@ -383,11 +383,11 @@ class __$$ReversiShowGameResponseImplCopyWithImpl<$Res>
       user1: null == user1
           ? _value.user1
           : user1 // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       user2: null == user2
           ? _value.user2
           : user2 // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite,
       winnerId: freezed == winnerId
           ? _value.winnerId
           : winnerId // ignore: cast_nullable_to_non_nullable
@@ -503,9 +503,9 @@ class _$ReversiShowGameResponseImpl implements _ReversiShowGameResponse {
   @override
   final String user2Id;
   @override
-  final User user1;
+  final UserLite user1;
   @override
-  final User user2;
+  final UserLite user2;
   @override
   final String? winnerId;
   @override
@@ -548,7 +548,7 @@ class _$ReversiShowGameResponseImpl implements _ReversiShowGameResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReversiShowGameResponseImpl &&
@@ -654,8 +654,8 @@ abstract class _ReversiShowGameResponse implements ReversiShowGameResponse {
       required final bool user2Ready,
       required final String user1Id,
       required final String user2Id,
-      required final User user1,
-      required final User user2,
+      required final UserLite user1,
+      required final UserLite user2,
       final String? winnerId,
       final String? surrenderedUserId,
       final String? timeoutUserId,
@@ -699,9 +699,9 @@ abstract class _ReversiShowGameResponse implements ReversiShowGameResponse {
   @override
   String get user2Id;
   @override
-  User get user1;
+  UserLite get user1;
   @override
-  User get user2;
+  UserLite get user2;
   @override
   String? get winnerId;
   @override

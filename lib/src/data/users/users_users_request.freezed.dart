@@ -196,7 +196,7 @@ class _$UsersUsersRequestImpl implements _UsersUsersRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersUsersRequestImpl &&

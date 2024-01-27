@@ -116,7 +116,7 @@ class _$RenoteMuteDeleteRequestImpl implements _RenoteMuteDeleteRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RenoteMuteDeleteRequestImpl &&

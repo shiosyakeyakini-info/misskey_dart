@@ -9,7 +9,7 @@ class BubbleGameRankingResponse with _$BubbleGameRankingResponse {
   const factory BubbleGameRankingResponse({
     required String id,
     required int score,
-    required User user,
+    required UserLite user,
   }) = _BubbleGameRankingResponse;
 
   factory BubbleGameRankingResponse.fromJson(Map<String, dynamic> json) =>

@@ -357,7 +357,7 @@ class _$UsersNotesRequestImpl implements _UsersNotesRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersNotesRequestImpl &&

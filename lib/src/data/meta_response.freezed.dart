@@ -879,7 +879,7 @@ class _$MetaResponseImpl implements _MetaResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaResponseImpl &&
@@ -1349,7 +1349,7 @@ class _$MetaAdImpl implements _MetaAd {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaAdImpl &&
@@ -1631,7 +1631,7 @@ class _$MetaFeatureImpl implements _MetaFeature {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaFeatureImpl &&

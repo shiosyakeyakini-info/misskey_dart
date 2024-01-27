@@ -315,7 +315,7 @@ class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AntennasUpdateRequestImpl &&

@@ -189,7 +189,7 @@ class _$StatsLogResponseImpl implements _StatsLogResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StatsLogResponseImpl &&
@@ -352,7 +352,7 @@ class _$StatsLogFsImpl implements _StatsLogFs {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StatsLogFsImpl &&
@@ -505,7 +505,7 @@ class _$StatsLogMemImpl implements _StatsLogMem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StatsLogMemImpl &&
@@ -659,7 +659,7 @@ class _$StatsLogNetImpl implements _StatsLogNet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StatsLogNetImpl &&

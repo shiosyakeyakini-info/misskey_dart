@@ -111,7 +111,7 @@ class _$NotesStateRequestImpl implements _NotesStateRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotesStateRequestImpl &&

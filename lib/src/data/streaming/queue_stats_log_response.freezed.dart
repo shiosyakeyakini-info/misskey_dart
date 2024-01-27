@@ -155,7 +155,7 @@ class _$QueueStatsLogResponseImpl implements _QueueStatsLogResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueueStatsLogResponseImpl &&
@@ -346,7 +346,7 @@ class _$QueueStatsLogResponseDataImpl implements _QueueStatsLogResponseData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QueueStatsLogResponseDataImpl &&

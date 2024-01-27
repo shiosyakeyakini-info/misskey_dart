@@ -188,7 +188,7 @@ class _$UsersListImpl implements _UsersList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersListImpl &&

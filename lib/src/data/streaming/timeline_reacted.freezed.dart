@@ -155,7 +155,7 @@ class _$TimelineReactedImpl implements _TimelineReacted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TimelineReactedImpl &&
@@ -320,7 +320,7 @@ class _$TimelineReactedEmojiDataImpl implements _TimelineReactedEmojiData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TimelineReactedEmojiDataImpl &&

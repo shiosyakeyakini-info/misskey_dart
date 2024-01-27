@@ -184,7 +184,7 @@ class _$ChannelsSearchRequestImpl implements _ChannelsSearchRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChannelsSearchRequestImpl &&
