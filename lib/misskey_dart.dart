@@ -174,6 +174,7 @@ export 'src/data/users/users_users_request.dart';
 export 'src/data/users/users_update_memo_request.dart';
 export 'src/data/users/users_pages_request.dart';
 export 'src/data/users/users_get_frequently_replied_users_request.dart';
+export 'src/data/users/users_get_frequently_replied_users_response.dart';
 export 'src/data/block/block_create_request.dart';
 export 'src/data/block/block_delete_request.dart';
 export 'src/data/renote_mute/renote_mute_create_request.dart';

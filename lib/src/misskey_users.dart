@@ -1,5 +1,6 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/users/users_get_frequently_replied_users_request.dart';
+import 'package:misskey_dart/src/data/users/users_get_frequently_replied_users_response.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
@@ -85,12 +86,14 @@ class MisskeyUsers {
   }
 
   /// 対象のユーザーがよくリプライを送る相手を返します。
-  Future<Iterable<User>> getFrequentlyRepliedUsers(
+  Future<Iterable<UsersGetFrequentlyRepliedUsersResponse>>
+      getFrequentlyRepliedUsers(
     UsersGetFrequentlyRepliedUsersRequest request,
   ) async {
     final response = await _apiService.post<List>(
         "users/get-frequently-replied-users", request.toJson());
-    return response.map((e) => User.fromJson(e));
+    return response
+        .map((e) => UsersGetFrequentlyRepliedUsersResponse.fromJson(e));
   }
 
   /// このAPIは必ずエラーを返し、動作していないようです。
