@@ -59,6 +59,7 @@ _$JoinMisskeyInstanceInfoImpl _$$JoinMisskeyInstanceInfoImplFromJson(
           ? null
           : JoinMisskeyNodeInfo.fromJson(
               json['nodeinfo'] as Map<String, dynamic>),
+      meta: json['meta'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$JoinMisskeyInstanceInfoImplToJson(
@@ -74,6 +75,7 @@ Map<String, dynamic> _$$JoinMisskeyInstanceInfoImplToJson(
       'background': instance.background,
       'icon': instance.icon,
       'nodeinfo': instance.nodeInfo?.toJson(),
+      'meta': instance.meta,
     };
 
 _$JoinMisskeyNodeInfoImpl _$$JoinMisskeyNodeInfoImplFromJson(

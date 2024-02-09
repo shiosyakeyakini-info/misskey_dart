@@ -42,6 +42,7 @@ class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
     @Default(false) bool icon,
     // ignore: invalid_annotation_target
     @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
+    Map<String, dynamic>? meta,
   }) = _JoinMisskeyInstanceInfo;
 
   factory JoinMisskeyInstanceInfo.fromJson(Map<String, dynamic> json) =>
