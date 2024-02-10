@@ -1,7 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/reversi/reversi_games_request.dart';
-import 'package:misskey_dart/src/data/reversi/reversi_games_response.dart';
-import 'package:misskey_dart/src/data/reversi/reversi_show_game_response.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyReversi {
