@@ -1,8 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_get_all_request.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_get_detail_request.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_remove_request.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_set_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {
