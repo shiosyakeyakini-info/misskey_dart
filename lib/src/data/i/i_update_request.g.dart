@@ -14,6 +14,10 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       birthday: json['birthday'],
       lang: json['lang'] as String?,
       avatarId: json['avatarId'] as String?,
+      avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
+          ?.map((e) =>
+              IUpdateAvatarDecoration.fromJson(e as Map<String, dynamic>))
+          .toList(),
       bannerId: json['bannerId'] as String?,
       fields: (json['fields'] as List<dynamic>?)
           ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
@@ -31,6 +35,7 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       injectFeaturedNote: json['injectFeaturedNote'] as bool?,
       receiveAnnouncementEmail: json['receiveAnnouncementEmail'] as bool?,
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
+      autoSensitive: json['autoSensitive'] as bool?,
       ffVisibility:
           $enumDecodeNullable(_$FFVisibilityEnumMap, json['ffVisibility']),
       followingVisibility: $enumDecodeNullable(
@@ -51,6 +56,10 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       mutedInstances: (json['mutedInstances'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      notificationRecieveConfig: json['notificationRecieveConfig'] == null
+          ? null
+          : NotificationRecieveConfigs.fromJson(
+              json['notificationRecieveConfig'] as Map<String, dynamic>),
       emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -68,6 +77,8 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'birthday': instance.birthday,
       'lang': instance.lang,
       'avatarId': instance.avatarId,
+      'avatarDecorations':
+          instance.avatarDecorations?.map((e) => e.toJson()).toList(),
       'bannerId': instance.bannerId,
       'fields': instance.fields?.map((e) => e.toJson()).toList(),
       'isLocked': instance.isLocked,
@@ -83,6 +94,7 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'injectFeaturedNote': instance.injectFeaturedNote,
       'receiveAnnouncementEmail': instance.receiveAnnouncementEmail,
       'alwaysMarkNsfw': instance.alwaysMarkNsfw,
+      'autoSensitive': instance.autoSensitive,
       'ffVisibility': _$FFVisibilityEnumMap[instance.ffVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
@@ -96,6 +108,7 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
           ?.map(const MuteWordsConverter().toJson)
           .toList(),
       'mutedInstances': instance.mutedInstances,
+      'notificationRecieveConfig': instance.notificationRecieveConfig?.toJson(),
       'emailNotificationTypes': instance.emailNotificationTypes,
       'alsoKnownAs': instance.alsoKnownAs,
     };
@@ -105,3 +118,23 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
 };
+
+_$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$IUpdateAvatarDecorationImpl(
+      id: json['id'] as String,
+      angle: (json['angle'] as num?)?.toDouble(),
+      flipH: json['flipH'] as bool? ?? false,
+      offsetX: (json['offsetX'] as num?)?.toDouble() ?? 0.0,
+      offsetY: (json['offsetY'] as num?)?.toDouble() ?? 0.0,
+    );
+
+Map<String, dynamic> _$$IUpdateAvatarDecorationImplToJson(
+        _$IUpdateAvatarDecorationImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'angle': instance.angle,
+      'flipH': instance.flipH,
+      'offsetX': instance.offsetX,
+      'offsetY': instance.offsetY,
+    };
