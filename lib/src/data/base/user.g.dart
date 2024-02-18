@@ -86,6 +86,11 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
           json['url'], const NullableUriConverter().fromJson),
       uri: _$JsonConverterFromJson<String, Uri?>(
           json['uri'], const NullableUriConverter().fromJson),
+      movedTo: _$JsonConverterFromJson<String, Uri?>(
+          json['movedTo'], const NullableUriConverter().fromJson),
+      alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       updatedAt: _$JsonConverterFromJson<String, DateTime?>(
@@ -106,6 +111,10 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
       fields: (json['fields'] as List<dynamic>?)
           ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
           .toList(),
+      verifiedLinks: (json['verifiedLinks'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       followersCount: json['followersCount'] as int,
       followingCount: json['followingCount'] as int,
       notesCount: json['notesCount'] as int,
@@ -131,6 +140,7 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
           ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
       memo: json['memo'] as String?,
+      moderationNote: json['moderationNote'] as String?,
     );
 
 Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
@@ -153,6 +163,8 @@ Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
       'badgeRoles': instance.badgeRoles.map((e) => e.toJson()).toList(),
       'url': const NullableUriConverter().toJson(instance.url),
       'uri': const NullableUriConverter().toJson(instance.uri),
+      'movedTo': const NullableUriConverter().toJson(instance.movedTo),
+      'alsoKnownAs': instance.alsoKnownAs,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
       'lastFetchedAt':
@@ -167,6 +179,7 @@ Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
       'birthday': const NullableDateTimeConverter().toJson(instance.birthday),
       'lang': instance.lang,
       'fields': instance.fields?.map((e) => e.toJson()).toList(),
+      'verifiedLinks': instance.verifiedLinks,
       'followersCount': instance.followersCount,
       'followingCount': instance.followingCount,
       'notesCount': instance.notesCount,
@@ -185,6 +198,7 @@ Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
       'securityKeys': instance.securityKeys,
       'roles': instance.roles?.map((e) => e.toJson()).toList(),
       'memo': instance.memo,
+      'moderationNote': instance.moderationNote,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -233,6 +247,11 @@ _$UserDetailedNotMeWithRelationsImpl
               json['url'], const NullableUriConverter().fromJson),
           uri: _$JsonConverterFromJson<String, Uri?>(
               json['uri'], const NullableUriConverter().fromJson),
+          movedTo: _$JsonConverterFromJson<String, Uri?>(
+              json['movedTo'], const NullableUriConverter().fromJson),
+          alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
           createdAt:
               const DateTimeConverter().fromJson(json['createdAt'] as String),
           updatedAt: _$JsonConverterFromJson<String, DateTime?>(
@@ -254,6 +273,10 @@ _$UserDetailedNotMeWithRelationsImpl
           fields: (json['fields'] as List<dynamic>?)
               ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
               .toList(),
+          verifiedLinks: (json['verifiedLinks'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
           followersCount: json['followersCount'] as int,
           followingCount: json['followingCount'] as int,
           notesCount: json['notesCount'] as int,
@@ -279,6 +302,7 @@ _$UserDetailedNotMeWithRelationsImpl
               ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
               .toList(),
           memo: json['memo'] as String?,
+          moderationNote: json['moderationNote'] as String?,
           isFollowing: json['isFollowing'] as bool,
           isFollowed: json['isFollowed'] as bool,
           hasPendingFollowRequestFromYou:
@@ -289,6 +313,8 @@ _$UserDetailedNotMeWithRelationsImpl
           isBlocked: json['isBlocked'] as bool,
           isMuted: json['isMuted'] as bool,
           isRenoteMuted: json['isRenoteMuted'] as bool,
+          notify: $enumDecodeNullable(_$NotifyEnumMap, json['notify']),
+          withReplies: json['withReplies'] as bool?,
         );
 
 Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
@@ -311,6 +337,8 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
       'badgeRoles': instance.badgeRoles.map((e) => e.toJson()).toList(),
       'url': const NullableUriConverter().toJson(instance.url),
       'uri': const NullableUriConverter().toJson(instance.uri),
+      'movedTo': const NullableUriConverter().toJson(instance.movedTo),
+      'alsoKnownAs': instance.alsoKnownAs,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
       'lastFetchedAt':
@@ -325,6 +353,7 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
       'birthday': const NullableDateTimeConverter().toJson(instance.birthday),
       'lang': instance.lang,
       'fields': instance.fields?.map((e) => e.toJson()).toList(),
+      'verifiedLinks': instance.verifiedLinks,
       'followersCount': instance.followersCount,
       'followingCount': instance.followingCount,
       'notesCount': instance.notesCount,
@@ -343,6 +372,7 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
       'securityKeys': instance.securityKeys,
       'roles': instance.roles?.map((e) => e.toJson()).toList(),
       'memo': instance.memo,
+      'moderationNote': instance.moderationNote,
       'isFollowing': instance.isFollowing,
       'isFollowed': instance.isFollowed,
       'hasPendingFollowRequestFromYou': instance.hasPendingFollowRequestFromYou,
@@ -351,7 +381,14 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
       'isBlocked': instance.isBlocked,
       'isMuted': instance.isMuted,
       'isRenoteMuted': instance.isRenoteMuted,
+      'notify': _$NotifyEnumMap[instance.notify],
+      'withReplies': instance.withReplies,
     };
+
+const _$NotifyEnumMap = {
+  Notify.normal: 'normal',
+  Notify.none: 'none',
+};
 
 _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
     _$MeDetailedImpl(
@@ -384,6 +421,11 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
           json['url'], const NullableUriConverter().fromJson),
       uri: _$JsonConverterFromJson<String, Uri?>(
           json['uri'], const NullableUriConverter().fromJson),
+      movedTo: _$JsonConverterFromJson<String, Uri?>(
+          json['movedTo'], const NullableUriConverter().fromJson),
+      alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       updatedAt: _$JsonConverterFromJson<String, DateTime?>(
@@ -404,6 +446,10 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       fields: (json['fields'] as List<dynamic>?)
           ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
           .toList(),
+      verifiedLinks: (json['verifiedLinks'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       followersCount: json['followersCount'] as int,
       followingCount: json['followingCount'] as int,
       notesCount: json['notesCount'] as int,
@@ -429,6 +475,7 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
       memo: json['memo'] as String?,
+      moderationNote: json['moderationNote'] as String?,
       avatarId: json['avatarId'] as String?,
       bannerId: json['bannerId'] as String?,
       isModerator: json['isModerator'] as bool,
@@ -439,9 +486,13 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       autoSensitive: json['autoSensitive'] as bool,
       carefulBot: json['carefulBot'] as bool,
       autoAcceptFollowed: json['autoAcceptFollowed'] as bool,
+      preventAiLearning: json['preventAiLearning'] as bool?,
       noCrawle: json['noCrawle'] as bool,
       isExplorable: json['isExplorable'] as bool,
       isDeleted: json['isDeleted'] as bool,
+      twoFactorBackupCodesStock: $enumDecodeNullable(
+          _$TwoFactorBackupCodesStockEnumMap,
+          json['twoFactorBackupCodesStock']),
       hideOnlineStatus: json['hideOnlineStatus'] as bool,
       hasUnreadSpecifiedNotes: json['hasUnreadSpecifiedNotes'] as bool,
       hasUnreadMentions: json['hasUnreadMentions'] as bool,
@@ -471,7 +522,10 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
           (json['mutingNotificationTypes'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
-      notificationRecieveConfig: json['notificationRecieveConfig'],
+      notificationRecieveConfig: json['notificationRecieveConfig'] == null
+          ? const NotificationRecieveConfigs()
+          : NotificationRecieveConfigs.fromJson(
+              json['notificationRecieveConfig'] as Map<String, dynamic>),
       emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -501,6 +555,8 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'badgeRoles': instance.badgeRoles.map((e) => e.toJson()).toList(),
       'url': const NullableUriConverter().toJson(instance.url),
       'uri': const NullableUriConverter().toJson(instance.uri),
+      'movedTo': const NullableUriConverter().toJson(instance.movedTo),
+      'alsoKnownAs': instance.alsoKnownAs,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
       'lastFetchedAt':
@@ -515,6 +571,7 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'birthday': const NullableDateTimeConverter().toJson(instance.birthday),
       'lang': instance.lang,
       'fields': instance.fields?.map((e) => e.toJson()).toList(),
+      'verifiedLinks': instance.verifiedLinks,
       'followersCount': instance.followersCount,
       'followingCount': instance.followingCount,
       'notesCount': instance.notesCount,
@@ -533,6 +590,7 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'securityKeys': instance.securityKeys,
       'roles': instance.roles?.map((e) => e.toJson()).toList(),
       'memo': instance.memo,
+      'moderationNote': instance.moderationNote,
       'avatarId': instance.avatarId,
       'bannerId': instance.bannerId,
       'isModerator': instance.isModerator,
@@ -543,9 +601,12 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'autoSensitive': instance.autoSensitive,
       'carefulBot': instance.carefulBot,
       'autoAcceptFollowed': instance.autoAcceptFollowed,
+      'preventAiLearning': instance.preventAiLearning,
       'noCrawle': instance.noCrawle,
       'isExplorable': instance.isExplorable,
       'isDeleted': instance.isDeleted,
+      'twoFactorBackupCodesStock': _$TwoFactorBackupCodesStockEnumMap[
+          instance.twoFactorBackupCodesStock],
       'hideOnlineStatus': instance.hideOnlineStatus,
       'hasUnreadSpecifiedNotes': instance.hasUnreadSpecifiedNotes,
       'hasUnreadMentions': instance.hasUnreadMentions,
@@ -565,12 +626,18 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
           .toList(),
       'mutedInstances': instance.mutedInstances,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
-      'notificationRecieveConfig': instance.notificationRecieveConfig,
+      'notificationRecieveConfig': instance.notificationRecieveConfig.toJson(),
       'emailNotificationTypes': instance.emailNotificationTypes,
       'achievements': instance.achievements.map((e) => e.toJson()).toList(),
       'loggedInDays': instance.loggedInDays,
       'policies': instance.policies.toJson(),
     };
+
+const _$TwoFactorBackupCodesStockEnumMap = {
+  TwoFactorBackupCodesStock.full: 'full',
+  TwoFactorBackupCodesStock.partial: 'partial',
+  TwoFactorBackupCodesStock.none: 'none',
+};
 
 _$UserAvatarDecorationImpl _$$UserAvatarDecorationImplFromJson(
         Map<String, dynamic> json) =>
@@ -734,4 +801,98 @@ Map<String, dynamic> _$$UserFieldImplToJson(_$UserFieldImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
+    };
+
+_$NotificationRecieveConfigsImpl _$$NotificationRecieveConfigsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NotificationRecieveConfigsImpl(
+      note: json['note'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['note'] as Map<String, dynamic>),
+      follow: json['follow'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['follow'] as Map<String, dynamic>),
+      mention: json['mention'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['mention'] as Map<String, dynamic>),
+      reply: json['reply'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['reply'] as Map<String, dynamic>),
+      renote: json['renote'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['renote'] as Map<String, dynamic>),
+      quote: json['quote'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['quote'] as Map<String, dynamic>),
+      reaction: json['reaction'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['reaction'] as Map<String, dynamic>),
+      pollEnded: json['pollEnded'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['pollEnded'] as Map<String, dynamic>),
+      receiveFollowRequest: json['receiveFollowRequest'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['receiveFollowRequest'] as Map<String, dynamic>),
+      followRequestAccepted: json['followRequestAccepted'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['followRequestAccepted'] as Map<String, dynamic>),
+      roleAssigned: json['roleAssigned'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['roleAssigned'] as Map<String, dynamic>),
+      achievementEarned: json['achievementEarned'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['achievementEarned'] as Map<String, dynamic>),
+      app: json['app'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['app'] as Map<String, dynamic>),
+      test: json['test'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['test'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$NotificationRecieveConfigsImplToJson(
+        _$NotificationRecieveConfigsImpl instance) =>
+    <String, dynamic>{
+      'note': instance.note?.toJson(),
+      'follow': instance.follow?.toJson(),
+      'mention': instance.mention?.toJson(),
+      'reply': instance.reply?.toJson(),
+      'renote': instance.renote?.toJson(),
+      'quote': instance.quote?.toJson(),
+      'reaction': instance.reaction?.toJson(),
+      'pollEnded': instance.pollEnded?.toJson(),
+      'receiveFollowRequest': instance.receiveFollowRequest?.toJson(),
+      'followRequestAccepted': instance.followRequestAccepted?.toJson(),
+      'roleAssigned': instance.roleAssigned?.toJson(),
+      'achievementEarned': instance.achievementEarned?.toJson(),
+      'app': instance.app?.toJson(),
+      'test': instance.test?.toJson(),
+    };
+
+_$NotificationRecieveConfigImpl _$$NotificationRecieveConfigImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NotificationRecieveConfigImpl(
+      type: json['type'] as String,
+      userListId: json['userListId'] as String?,
+    );
+
+Map<String, dynamic> _$$NotificationRecieveConfigImplToJson(
+        _$NotificationRecieveConfigImpl instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+      'userListId': instance.userListId,
     };

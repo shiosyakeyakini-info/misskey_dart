@@ -15,6 +15,7 @@ class IUpdateRequest with _$IUpdateRequest {
     @DateTimeConverter() birthday,
     String? lang,
     String? avatarId,
+    List<IUpdateAvatarDecoration>? avatarDecorations,
     String? bannerId,
     List<UserField>? fields,
     bool? isLocked,
@@ -30,6 +31,7 @@ class IUpdateRequest with _$IUpdateRequest {
     bool? injectFeaturedNote,
     bool? receiveAnnouncementEmail,
     bool? alwaysMarkNsfw,
+    bool? autoSensitive,
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followingVisibility,
     FFVisibility? followersVisibility,
@@ -38,10 +40,25 @@ class IUpdateRequest with _$IUpdateRequest {
     @MuteWordsConverter() List<MuteWord>? mutedWords,
     @MuteWordsConverter() List<MuteWord>? hardMutedWords,
     List<String>? mutedInstances,
+    NotificationRecieveConfigs? notificationRecieveConfig,
     List<String>? emailNotificationTypes,
     List<String>? alsoKnownAs,
   }) = _IUpdateRequest;
 
   factory IUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$IUpdateRequestFromJson(json);
+}
+
+@freezed
+class IUpdateAvatarDecoration with _$IUpdateAvatarDecoration {
+  const factory IUpdateAvatarDecoration({
+    required String id,
+    double? angle,
+    @Default(false) bool flipH,
+    @Default(0.0) double offsetX,
+    @Default(0.0) double offsetY,
+  }) = _IUpdateAvatarDecoration;
+
+  factory IUpdateAvatarDecoration.fromJson(Map<String, Object?> json) =>
+      _$IUpdateAvatarDecorationFromJson(json);
 }
