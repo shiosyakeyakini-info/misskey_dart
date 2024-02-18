@@ -39,6 +39,8 @@ abstract class User {
 abstract class UserDetailed implements User {
   Uri? get url;
   Uri? get uri;
+  Uri? get movedTo;
+  List<String>? get alsoKnownAs;
   DateTime get createdAt;
   DateTime? get updatedAt;
   DateTime? get lastFetchedAt;
@@ -52,6 +54,7 @@ abstract class UserDetailed implements User {
   DateTime? get birthday;
   String? get lang;
   List<UserField>? get fields;
+  List<String> get verifiedLinks;
   int get followersCount;
   int get followingCount;
   int get notesCount;
@@ -69,6 +72,7 @@ abstract class UserDetailed implements User {
   bool get securityKeys;
   List<UserRole>? get roles;
   String? get memo;
+  String? get moderationNote;
 
   factory UserDetailed.fromJson(Map<String, Object?> json) {
     if (json.containsKey("isFollowing")) {
@@ -126,6 +130,8 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
     @Default([]) List<UserBadgeRole> badgeRoles,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
+    @NullableUriConverter() Uri? movedTo,
+    List<String>? alsoKnownAs,
     @DateTimeConverter() required DateTime createdAt,
     @NullableDateTimeConverter() DateTime? updatedAt,
     @NullableDateTimeConverter() DateTime? lastFetchedAt,
@@ -139,6 +145,7 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
     @NullableDateTimeConverter() DateTime? birthday,
     String? lang,
     List<UserField>? fields,
+    @Default([]) List<String> verifiedLinks,
     required int followersCount,
     required int followingCount,
     required int notesCount,
@@ -155,6 +162,7 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
     required bool securityKeys,
     List<UserRole>? roles,
     String? memo,
+    String? moderationNote,
   }) = _UserDetailedNotMe;
 
   factory UserDetailedNotMe.fromJson(Map<String, Object?> json) =>
@@ -181,6 +189,8 @@ class UserDetailedNotMeWithRelations
     @Default([]) List<UserBadgeRole> badgeRoles,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
+    @NullableUriConverter() Uri? movedTo,
+    List<String>? alsoKnownAs,
     @DateTimeConverter() required DateTime createdAt,
     @NullableDateTimeConverter() DateTime? updatedAt,
     @NullableDateTimeConverter() DateTime? lastFetchedAt,
@@ -194,6 +204,7 @@ class UserDetailedNotMeWithRelations
     @NullableDateTimeConverter() DateTime? birthday,
     String? lang,
     List<UserField>? fields,
+    @Default([]) List<String> verifiedLinks,
     required int followersCount,
     required int followingCount,
     required int notesCount,
@@ -210,6 +221,7 @@ class UserDetailedNotMeWithRelations
     required bool securityKeys,
     List<UserRole>? roles,
     String? memo,
+    String? moderationNote,
     required bool isFollowing,
     required bool isFollowed,
     required bool hasPendingFollowRequestFromYou,
@@ -218,6 +230,8 @@ class UserDetailedNotMeWithRelations
     required bool isBlocked,
     required bool isMuted,
     required bool isRenoteMuted,
+    Notify? notify,
+    bool? withReplies,
   }) = _UserDetailedNotMeWithRelations;
 
   factory UserDetailedNotMeWithRelations.fromJson(Map<String, Object?> json) =>
@@ -242,6 +256,8 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     @Default([]) List<UserBadgeRole> badgeRoles,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
+    @NullableUriConverter() Uri? movedTo,
+    List<String>? alsoKnownAs,
     @DateTimeConverter() required DateTime createdAt,
     @NullableDateTimeConverter() DateTime? updatedAt,
     @NullableDateTimeConverter() DateTime? lastFetchedAt,
@@ -255,6 +271,7 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     @NullableDateTimeConverter() DateTime? birthday,
     String? lang,
     List<UserField>? fields,
+    @Default([]) List<String> verifiedLinks,
     required int followersCount,
     required int followingCount,
     required int notesCount,
@@ -271,6 +288,7 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     required bool securityKeys,
     List<UserRole>? roles,
     String? memo,
+    String? moderationNote,
     String? avatarId,
     String? bannerId,
     required bool isModerator,
@@ -281,9 +299,11 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     required bool autoSensitive,
     required bool carefulBot,
     required bool autoAcceptFollowed,
+    bool? preventAiLearning,
     required bool noCrawle,
     required bool isExplorable,
     required bool isDeleted,
+    TwoFactorBackupCodesStock? twoFactorBackupCodesStock,
     required bool hideOnlineStatus,
     required bool hasUnreadSpecifiedNotes,
     required bool hasUnreadMentions,
@@ -299,7 +319,8 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     required List<String> mutedInstances,
     @Deprecated("Deprecated in Misskey 2023.9.2")
     List<String>? mutingNotificationTypes,
-    dynamic notificationRecieveConfig,
+    @Default(NotificationRecieveConfigs())
+    NotificationRecieveConfigs notificationRecieveConfig,
     required List<String> emailNotificationTypes,
     required List<UserAchievement> achievements,
     required int loggedInDays,
@@ -416,9 +437,63 @@ class UserField with _$UserField {
       _$UserFieldFromJson(json);
 }
 
+enum Notify {
+  normal,
+  none,
+}
+
+enum TwoFactorBackupCodesStock {
+  full,
+  partial,
+  none,
+}
+
 class MuteWord {
   final String? regExp;
   final List<String>? content;
 
   const MuteWord({this.regExp, this.content});
+}
+
+@freezed
+class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
+  const factory NotificationRecieveConfigs({
+    NotificationRecieveConfig? note,
+    NotificationRecieveConfig? follow,
+    NotificationRecieveConfig? mention,
+    NotificationRecieveConfig? reply,
+    NotificationRecieveConfig? renote,
+    NotificationRecieveConfig? quote,
+    NotificationRecieveConfig? reaction,
+    NotificationRecieveConfig? pollEnded,
+    NotificationRecieveConfig? receiveFollowRequest,
+    NotificationRecieveConfig? followRequestAccepted,
+    NotificationRecieveConfig? roleAssigned,
+    NotificationRecieveConfig? achievementEarned,
+    NotificationRecieveConfig? app,
+    NotificationRecieveConfig? test,
+  }) = _NotificationRecieveConfigs;
+
+  factory NotificationRecieveConfigs.fromJson(Map<String, Object?> json) =>
+      _$NotificationRecieveConfigsFromJson(json);
+}
+
+@freezed
+class NotificationRecieveConfig with _$NotificationRecieveConfig {
+  const factory NotificationRecieveConfig({
+    required String type,
+    String? userListId,
+  }) = _NotificationRecieveConfig;
+
+  factory NotificationRecieveConfig.fromJson(Map<String, Object?> json) =>
+      _$NotificationRecieveConfigFromJson(json);
+}
+
+enum NotificationRecieveConfigType {
+  all,
+  following,
+  follower,
+  mutualFollow,
+  list,
+  never,
 }
