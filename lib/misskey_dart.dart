@@ -113,6 +113,7 @@ export 'src/data/flash/flash_my_request.dart';
 export 'src/data/flash/flash_show_request.dart';
 export 'src/data/flash/flash_unlike_request.dart';
 export 'src/data/flash/flash_update_request.dart';
+export 'src/data/i/i_notifications_grouped_request.dart';
 export 'src/data/i/i_notifications_request.dart';
 export 'src/data/i/i_notifications_response.dart';
 export 'src/data/i/i_favorites_request.dart';

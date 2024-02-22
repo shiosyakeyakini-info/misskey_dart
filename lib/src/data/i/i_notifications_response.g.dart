@@ -33,6 +33,13 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       role: json['role'] == null
           ? null
           : RolesListResponse.fromJson(json['role'] as Map<String, dynamic>),
+      reactions: (json['reactions'] as List<dynamic>?)
+          ?.map(
+              (e) => INotificationsReaction.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      users: (json['users'] as List<dynamic>?)
+          ?.map((e) => UserLite.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$INotificationsResponseImplToJson(
@@ -54,6 +61,8 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'user': instance.user?.toJson(),
       'note': instance.note?.toJson(),
       'role': instance.role?.toJson(),
+      'reactions': instance.reactions?.map((e) => e.toJson()).toList(),
+      'users': instance.users?.map((e) => e.toJson()).toList(),
     };
 
 const _$NotificationTypeEnumMap = {
@@ -82,3 +91,17 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+_$INotificationsReactionImpl _$$INotificationsReactionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$INotificationsReactionImpl(
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      reaction: json['reaction'] as String,
+    );
+
+Map<String, dynamic> _$$INotificationsReactionImplToJson(
+        _$INotificationsReactionImpl instance) =>
+    <String, dynamic>{
+      'user': instance.user.toJson(),
+      'reaction': instance.reaction,
+    };
