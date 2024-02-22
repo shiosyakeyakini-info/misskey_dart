@@ -26,6 +26,8 @@ class INotificationsResponse with _$INotificationsResponse {
     UserLite? user,
     Note? note,
     RolesListResponse? role,
+    List<INotificationsReaction>? reactions,
+    List<UserLite>? users,
     UserExportableEntities? exportedEntity,
     String? fileId,
     String? message,
@@ -33,6 +35,17 @@ class INotificationsResponse with _$INotificationsResponse {
 
   factory INotificationsResponse.fromJson(Map<String, Object?> json) =>
       _$INotificationsResponseFromJson(json);
+}
+
+@freezed
+class INotificationsReaction with _$INotificationsReaction {
+  const factory INotificationsReaction({
+    required UserLite user,
+    required String reaction,
+  }) = _INotificationsReaction;
+
+  factory INotificationsReaction.fromJson(Map<String, Object?> json) =>
+      _$INotificationsReactionFromJson(json);
 }
 
 enum UserExportableEntities {

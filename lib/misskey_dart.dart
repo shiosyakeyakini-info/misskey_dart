@@ -128,6 +128,7 @@ export 'src/data/gallery/posts/gallery_posts_like_request.dart';
 export 'src/data/gallery/posts/gallery_posts_show_request.dart';
 export 'src/data/gallery/posts/gallery_posts_unlike_request.dart';
 export 'src/data/gallery/posts/gallery_posts_update_request.dart';
+export 'src/data/i/i_notifications_grouped_request.dart';
 export 'src/data/i/i_notifications_request.dart';
 export 'src/data/i/i_notifications_response.dart';
 export 'src/data/i/i_favorites_request.dart';
