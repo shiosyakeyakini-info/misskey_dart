@@ -99,6 +99,7 @@ export 'src/data/following/requests/following_requests_reject_request.dart';
 export 'src/data/federation/federation_show_instance_request.dart';
 export 'src/data/federation/federation_show_instance_response.dart';
 export 'src/data/federation/federation_users_request.dart';
+export 'src/data/i/i_notifications_grouped_request.dart';
 export 'src/data/i/i_notifications_request.dart';
 export 'src/data/i/i_notifications_response.dart';
 export 'src/data/i/i_favorites_request.dart';
