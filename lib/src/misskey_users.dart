@@ -85,6 +85,19 @@ class MisskeyUsers {
     return response.map((e) => User.fromJson(e));
   }
 
+  /// ユーザー名とホストからユーザーを検索します。
+  ///
+  /// [UsersSearchRequest.detail] が false のとき 返り値の各要素は [UserLite]
+  /// そうでなければ [UserDetailed]
+  Future<Iterable<User>> searchByUsernameAndHost(
+      UsersSearchByUsernameAndHostRequest request) async {
+    final response = await _apiService.post<List>(
+      "users/search-by-username-and-host",
+      request.toJson(),
+    );
+    return response.map((e) => User.fromJson(e));
+  }
+
   /// 対象のユーザーがよくリプライを送る相手を返します。
   Future<Iterable<UsersGetFrequentlyRepliedUsersResponse>>
       getFrequentlyRepliedUsers(
