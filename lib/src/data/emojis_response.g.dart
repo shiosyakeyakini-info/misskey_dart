@@ -26,6 +26,10 @@ _$EmojiImpl _$$EmojiImplFromJson(Map<String, dynamic> json) => _$EmojiImpl(
       category: json['category'] as String?,
       url: const UriConverter().fromJson(json['url'] as String),
       isSensitive: json['isSensitive'] as bool? ?? false,
+      roleIdsThatCanBeUsedThisEmojiAsReaction:
+          (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
     );
 
 Map<String, dynamic> _$$EmojiImplToJson(_$EmojiImpl instance) =>
@@ -35,4 +39,6 @@ Map<String, dynamic> _$$EmojiImplToJson(_$EmojiImpl instance) =>
       'category': instance.category,
       'url': const UriConverter().toJson(instance.url),
       'isSensitive': instance.isSensitive,
+      'roleIdsThatCanBeUsedThisEmojiAsReaction':
+          instance.roleIdsThatCanBeUsedThisEmojiAsReaction,
     };

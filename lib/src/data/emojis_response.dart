@@ -22,6 +22,7 @@ class Emoji with _$Emoji {
     String? category,
     @UriConverter() required Uri url,
     @Default(false) bool isSensitive,
+    List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _Emoji;
 
   factory Emoji.fromJson(Map<String, Object?> json) => _$EmojiFromJson(json);
