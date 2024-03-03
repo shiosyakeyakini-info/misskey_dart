@@ -170,6 +170,7 @@ mixin _$Emoji {
   String? get category => throw _privateConstructorUsedError;
   @UriConverter()
   Uri get url => throw _privateConstructorUsedError;
+  bool? get localOnly => throw _privateConstructorUsedError;
   bool get isSensitive => throw _privateConstructorUsedError;
   List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction =>
       throw _privateConstructorUsedError;
@@ -189,6 +190,7 @@ abstract class $EmojiCopyWith<$Res> {
       String name,
       String? category,
       @UriConverter() Uri url,
+      bool? localOnly,
       bool isSensitive,
       List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction});
 }
@@ -210,6 +212,7 @@ class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
     Object? name = null,
     Object? category = freezed,
     Object? url = null,
+    Object? localOnly = freezed,
     Object? isSensitive = null,
     Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
   }) {
@@ -230,6 +233,10 @@ class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri,
+      localOnly: freezed == localOnly
+          ? _value.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool?,
       isSensitive: null == isSensitive
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
@@ -255,6 +262,7 @@ abstract class _$$EmojiImplCopyWith<$Res> implements $EmojiCopyWith<$Res> {
       String name,
       String? category,
       @UriConverter() Uri url,
+      bool? localOnly,
       bool isSensitive,
       List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction});
 }
@@ -274,6 +282,7 @@ class __$$EmojiImplCopyWithImpl<$Res>
     Object? name = null,
     Object? category = freezed,
     Object? url = null,
+    Object? localOnly = freezed,
     Object? isSensitive = null,
     Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
   }) {
@@ -294,6 +303,10 @@ class __$$EmojiImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri,
+      localOnly: freezed == localOnly
+          ? _value.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool?,
       isSensitive: null == isSensitive
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
@@ -315,6 +328,7 @@ class _$EmojiImpl implements _Emoji {
       required this.name,
       this.category,
       @UriConverter() required this.url,
+      this.localOnly,
       this.isSensitive = false,
       final List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction})
       : _aliases = aliases,
@@ -340,6 +354,8 @@ class _$EmojiImpl implements _Emoji {
   @UriConverter()
   final Uri url;
   @override
+  final bool? localOnly;
+  @override
   @JsonKey()
   final bool isSensitive;
   final List<String>? _roleIdsThatCanBeUsedThisEmojiAsReaction;
@@ -355,7 +371,7 @@ class _$EmojiImpl implements _Emoji {
 
   @override
   String toString() {
-    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url, isSensitive: $isSensitive, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
+    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url, localOnly: $localOnly, isSensitive: $isSensitive, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
   }
 
   @override
@@ -368,6 +384,8 @@ class _$EmojiImpl implements _Emoji {
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.url, url) || other.url == url) &&
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly) &&
             (identical(other.isSensitive, isSensitive) ||
                 other.isSensitive == isSensitive) &&
             const DeepCollectionEquality().equals(
@@ -383,6 +401,7 @@ class _$EmojiImpl implements _Emoji {
       name,
       category,
       url,
+      localOnly,
       isSensitive,
       const DeepCollectionEquality()
           .hash(_roleIdsThatCanBeUsedThisEmojiAsReaction));
@@ -407,6 +426,7 @@ abstract class _Emoji implements Emoji {
           required final String name,
           final String? category,
           @UriConverter() required final Uri url,
+          final bool? localOnly,
           final bool isSensitive,
           final List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction}) =
       _$EmojiImpl;
@@ -422,6 +442,8 @@ abstract class _Emoji implements Emoji {
   @override
   @UriConverter()
   Uri get url;
+  @override
+  bool? get localOnly;
   @override
   bool get isSensitive;
   @override
