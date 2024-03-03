@@ -16,7 +16,7 @@ class EmojiResponse with _$EmojiResponse {
     String? license,
     @Default(false) bool isSensitive,
     @Default(false) bool localOnly,
-    //TODO: roleIdsThatCanBeUsedThisEmojiAsReaction
+    List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _EmojiResponse;
 
   factory EmojiResponse.fromJson(Map<String, dynamic> json) =>
