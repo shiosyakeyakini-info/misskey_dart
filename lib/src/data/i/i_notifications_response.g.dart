@@ -18,10 +18,10 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       reaction: json['reaction'] as String?,
       choice: json['choice'] as int?,
       achievement: json['achievement'] as String?,
-      customBody: json['customBody'] as String?,
-      customHeader: json['customHeader'] as String?,
-      customIcon: _$JsonConverterFromJson<String, Uri?>(
-          json['customIcon'], const NullableUriConverter().fromJson),
+      body: json['body'] as String?,
+      header: json['header'] as String?,
+      icon: _$JsonConverterFromJson<String, Uri?>(
+          json['icon'], const NullableUriConverter().fromJson),
       appAccessTokenId: json['appAccessTokenId'] as String?,
       userId: json['userId'] as String?,
       user: json['user'] == null
@@ -46,9 +46,9 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'reaction': instance.reaction,
       'choice': instance.choice,
       'achievement': instance.achievement,
-      'customBody': instance.customBody,
-      'customHeader': instance.customHeader,
-      'customIcon': const NullableUriConverter().toJson(instance.customIcon),
+      'body': instance.body,
+      'header': instance.header,
+      'icon': const NullableUriConverter().toJson(instance.icon),
       'appAccessTokenId': instance.appAccessTokenId,
       'userId': instance.userId,
       'user': instance.user?.toJson(),

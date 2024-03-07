@@ -30,10 +30,10 @@ mixin _$INotificationsResponse {
   String? get reaction => throw _privateConstructorUsedError;
   int? get choice => throw _privateConstructorUsedError;
   String? get achievement => throw _privateConstructorUsedError;
-  String? get customBody => throw _privateConstructorUsedError;
-  String? get customHeader => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+  String? get header => throw _privateConstructorUsedError;
   @NullableUriConverter()
-  Uri? get customIcon => throw _privateConstructorUsedError;
+  Uri? get icon => throw _privateConstructorUsedError;
   String? get appAccessTokenId => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   UserLite? get user => throw _privateConstructorUsedError;
@@ -61,9 +61,9 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       String? reaction,
       int? choice,
       String? achievement,
-      String? customBody,
-      String? customHeader,
-      @NullableUriConverter() Uri? customIcon,
+      String? body,
+      String? header,
+      @NullableUriConverter() Uri? icon,
       String? appAccessTokenId,
       String? userId,
       UserLite? user,
@@ -97,9 +97,9 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     Object? reaction = freezed,
     Object? choice = freezed,
     Object? achievement = freezed,
-    Object? customBody = freezed,
-    Object? customHeader = freezed,
-    Object? customIcon = freezed,
+    Object? body = freezed,
+    Object? header = freezed,
+    Object? icon = freezed,
     Object? appAccessTokenId = freezed,
     Object? userId = freezed,
     Object? user = freezed,
@@ -139,17 +139,17 @@ class _$INotificationsResponseCopyWithImpl<$Res,
           ? _value.achievement
           : achievement // ignore: cast_nullable_to_non_nullable
               as String?,
-      customBody: freezed == customBody
-          ? _value.customBody
-          : customBody // ignore: cast_nullable_to_non_nullable
+      body: freezed == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String?,
-      customHeader: freezed == customHeader
-          ? _value.customHeader
-          : customHeader // ignore: cast_nullable_to_non_nullable
+      header: freezed == header
+          ? _value.header
+          : header // ignore: cast_nullable_to_non_nullable
               as String?,
-      customIcon: freezed == customIcon
-          ? _value.customIcon
-          : customIcon // ignore: cast_nullable_to_non_nullable
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
               as Uri?,
       appAccessTokenId: freezed == appAccessTokenId
           ? _value.appAccessTokenId
@@ -229,9 +229,9 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       String? reaction,
       int? choice,
       String? achievement,
-      String? customBody,
-      String? customHeader,
-      @NullableUriConverter() Uri? customIcon,
+      String? body,
+      String? header,
+      @NullableUriConverter() Uri? icon,
       String? appAccessTokenId,
       String? userId,
       UserLite? user,
@@ -267,9 +267,9 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
     Object? reaction = freezed,
     Object? choice = freezed,
     Object? achievement = freezed,
-    Object? customBody = freezed,
-    Object? customHeader = freezed,
-    Object? customIcon = freezed,
+    Object? body = freezed,
+    Object? header = freezed,
+    Object? icon = freezed,
     Object? appAccessTokenId = freezed,
     Object? userId = freezed,
     Object? user = freezed,
@@ -309,17 +309,17 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
           ? _value.achievement
           : achievement // ignore: cast_nullable_to_non_nullable
               as String?,
-      customBody: freezed == customBody
-          ? _value.customBody
-          : customBody // ignore: cast_nullable_to_non_nullable
+      body: freezed == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String?,
-      customHeader: freezed == customHeader
-          ? _value.customHeader
-          : customHeader // ignore: cast_nullable_to_non_nullable
+      header: freezed == header
+          ? _value.header
+          : header // ignore: cast_nullable_to_non_nullable
               as String?,
-      customIcon: freezed == customIcon
-          ? _value.customIcon
-          : customIcon // ignore: cast_nullable_to_non_nullable
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
               as Uri?,
       appAccessTokenId: freezed == appAccessTokenId
           ? _value.appAccessTokenId
@@ -357,9 +357,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       this.reaction,
       this.choice,
       this.achievement,
-      this.customBody,
-      this.customHeader,
-      @NullableUriConverter() this.customIcon,
+      this.body,
+      this.header,
+      @NullableUriConverter() this.icon,
       this.appAccessTokenId,
       this.userId,
       this.user,
@@ -387,12 +387,12 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   @override
   final String? achievement;
   @override
-  final String? customBody;
+  final String? body;
   @override
-  final String? customHeader;
+  final String? header;
   @override
   @NullableUriConverter()
-  final Uri? customIcon;
+  final Uri? icon;
   @override
   final String? appAccessTokenId;
   @override
@@ -406,7 +406,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
 
   @override
   String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, customBody: $customBody, customHeader: $customHeader, customIcon: $customIcon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role)';
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role)';
   }
 
   @override
@@ -426,12 +426,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
             (identical(other.choice, choice) || other.choice == choice) &&
             (identical(other.achievement, achievement) ||
                 other.achievement == achievement) &&
-            (identical(other.customBody, customBody) ||
-                other.customBody == customBody) &&
-            (identical(other.customHeader, customHeader) ||
-                other.customHeader == customHeader) &&
-            (identical(other.customIcon, customIcon) ||
-                other.customIcon == customIcon) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.header, header) || other.header == header) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.appAccessTokenId, appAccessTokenId) ||
                 other.appAccessTokenId == appAccessTokenId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
@@ -452,9 +449,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       reaction,
       choice,
       achievement,
-      customBody,
-      customHeader,
-      customIcon,
+      body,
+      header,
+      icon,
       appAccessTokenId,
       userId,
       user,
@@ -486,9 +483,9 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       final String? reaction,
       final int? choice,
       final String? achievement,
-      final String? customBody,
-      final String? customHeader,
-      @NullableUriConverter() final Uri? customIcon,
+      final String? body,
+      final String? header,
+      @NullableUriConverter() final Uri? icon,
       final String? appAccessTokenId,
       final String? userId,
       final UserLite? user,
@@ -516,12 +513,12 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @override
   String? get achievement;
   @override
-  String? get customBody;
+  String? get body;
   @override
-  String? get customHeader;
+  String? get header;
   @override
   @NullableUriConverter()
-  Uri? get customIcon;
+  Uri? get icon;
   @override
   String? get appAccessTokenId;
   @override
