@@ -29,4 +29,12 @@ void main() async {
       isFalse,
     );
   });
+
+  test("list", () async {
+    final newUser = (await adminClient.createUser()).user;
+    await userClient.renoteMute
+        .create(RenoteMuteCreateRequest(userId: newUser.id));
+    final response = await userClient.renoteMute.list(RenoteMuteListRequest());
+    expect(response.map((e) => e.muteeId), contains(newUser.id));
+  });
 }

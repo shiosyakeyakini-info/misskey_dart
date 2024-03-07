@@ -20,4 +20,11 @@ void main() async {
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect((userDetailed as UserDetailedNotMeWithRelations).isMuted, isFalse);
   });
+
+  test("list", () async {
+    final newUser = (await adminClient.createUser()).user;
+    await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
+    final response = await userClient.mute.list(MuteListRequest());
+    expect(response.map((e) => e.muteeId), contains(newUser.id));
+  });
 }
