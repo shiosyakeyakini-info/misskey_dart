@@ -120,6 +120,8 @@ export 'src/data/i/i_favorites_response.dart';
 export 'src/data/i/i_page_likes_request.dart';
 export 'src/data/i/i_page_likes_response.dart';
 export 'src/data/i/i_pages_request.dart';
+export 'src/data/i/i_pin_request.dart';
+export 'src/data/i/i_unpin_request.dart';
 export 'src/data/i/i_update_request.dart';
 export 'src/data/i/i_read_announcement_request.dart';
 export 'src/data/i/registry/i_registry_get_all_request.dart';
