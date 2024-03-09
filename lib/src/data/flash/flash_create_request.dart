@@ -1,0 +1,17 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'flash_create_request.freezed.dart';
+part 'flash_create_request.g.dart';
+
+@freezed
+class FlashCreateRequest with _$FlashCreateRequest {
+  const factory FlashCreateRequest({
+    required String title,
+    required String summary,
+    required String script,
+    required List<String> permissions,
+  }) = _FlashCreateRequest;
+
+  factory FlashCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$FlashCreateRequestFromJson(json);
+}

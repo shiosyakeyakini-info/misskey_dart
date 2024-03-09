@@ -148,7 +148,7 @@ void main() async {
     final flash = await userClient.createFlash();
     final response =
         await userClient.users.flashs(UsersFlashsRequest(userId: user.id));
-    expect(response.map((e) => e.id), contains(flash["id"]));
+    expect(response.map((e) => e.id), contains(flash.id));
   });
 
   test("featured-notes", () async {

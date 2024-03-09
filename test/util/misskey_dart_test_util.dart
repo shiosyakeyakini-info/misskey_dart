@@ -90,12 +90,14 @@ extension MisskeyTestExtension on Misskey {
     });
   }
 
-  Future<Map<String, dynamic>> createFlash() {
-    return apiService.post<Map<String, dynamic>>("flash/create", {
-      "title": "test",
-      "summary": "test",
-      "script": "",
-      "permissions": [],
-    });
+  Future<Flash> createFlash() {
+    return flash.create(
+      FlashCreateRequest(
+        title: "test",
+        summary: "test",
+        script: "",
+        permissions: [],
+      ),
+    );
   }
 }
