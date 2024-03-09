@@ -173,6 +173,7 @@ export 'src/data/renote_mute/renote_mute_delete_request.dart';
 export 'src/data/renote_mute/renote_mute_list_request.dart';
 export 'src/data/reversi/reversi_games_request.dart';
 export 'src/data/reversi/reversi_games_response.dart';
+export 'src/data/reversi/reversi_show_game_request.dart';
 export 'src/data/reversi/reversi_show_game_response.dart';
 export 'src/data/roles/roles_list_response.dart';
 export 'src/data/roles/roles_notes_request.dart';
