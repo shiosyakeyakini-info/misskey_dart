@@ -33,6 +33,15 @@ class MisskeyFollowing {
     return UserLite.fromJson(response);
   }
 
+  /// フォロー中のユーザーの状態を変更します。
+  Future<UserLite> update(FollowingUpdateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "following/update",
+      request.toJson(),
+    );
+    return UserLite.fromJson(response);
+  }
+
   /// フォロー中のすべての人の状態を変更します。
   Future<void> updateAll(FollowingUpdateAllRequest request) async {
     await _apiService.post<void>("following/update-all", request.toJson());

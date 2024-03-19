@@ -48,6 +48,19 @@ void main() async {
     );
   });
 
+  test("update", () async {
+    final newUser = (await adminClient.createUser()).user;
+    await userClient.following
+        .create(FollowingCreateRequest(userId: newUser.id));
+    await userClient.following.update(
+      FollowingUpdateRequest(
+        userId: newUser.id,
+        notify: FollowingUpdateAllNotifyType.normal,
+        withReplies: true,
+      ),
+    );
+  });
+
   test("update-all", () async {
     await userClient.following
         .updateAll(FollowingUpdateAllRequest(withReplies: true));
