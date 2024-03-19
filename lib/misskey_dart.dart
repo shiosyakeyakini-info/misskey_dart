@@ -92,6 +92,7 @@ export 'src/data/following/following_create_request.dart';
 export 'src/data/following/following_delete_request.dart';
 export 'src/data/following/following_invalidate_request.dart';
 export 'src/data/following/following_update_all.dart';
+export 'src/data/following/following_update_request.dart';
 export 'src/data/following/requests/following_requests_accept_request.dart';
 export 'src/data/following/requests/following_requests_cancel_request.dart';
 export 'src/data/following/requests/following_requests_list_request.dart';
