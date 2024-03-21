@@ -21,7 +21,7 @@ IRegistrySetRequest _$IRegistrySetRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$IRegistrySetRequest {
   String get key => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
+  dynamic get value => throw _privateConstructorUsedError;
   List<String> get scope => throw _privateConstructorUsedError;
   String? get domain => throw _privateConstructorUsedError;
 
@@ -37,7 +37,7 @@ abstract class $IRegistrySetRequestCopyWith<$Res> {
           IRegistrySetRequest value, $Res Function(IRegistrySetRequest) then) =
       _$IRegistrySetRequestCopyWithImpl<$Res, IRegistrySetRequest>;
   @useResult
-  $Res call({String key, String value, List<String> scope, String? domain});
+  $Res call({String key, dynamic value, List<String> scope, String? domain});
 }
 
 /// @nodoc
@@ -54,7 +54,7 @@ class _$IRegistrySetRequestCopyWithImpl<$Res, $Val extends IRegistrySetRequest>
   @override
   $Res call({
     Object? key = null,
-    Object? value = null,
+    Object? value = freezed,
     Object? scope = null,
     Object? domain = freezed,
   }) {
@@ -63,10 +63,10 @@ class _$IRegistrySetRequestCopyWithImpl<$Res, $Val extends IRegistrySetRequest>
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       scope: null == scope
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$IRegistrySetRequestImplCopyWith<$Res>
       __$$IRegistrySetRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String key, String value, List<String> scope, String? domain});
+  $Res call({String key, dynamic value, List<String> scope, String? domain});
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ class __$$IRegistrySetRequestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? key = null,
-    Object? value = null,
+    Object? value = freezed,
     Object? scope = null,
     Object? domain = freezed,
   }) {
@@ -111,10 +111,10 @@ class __$$IRegistrySetRequestImplCopyWithImpl<$Res>
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       scope: null == scope
           ? _value._scope
           : scope // ignore: cast_nullable_to_non_nullable
@@ -143,7 +143,7 @@ class _$IRegistrySetRequestImpl implements _IRegistrySetRequest {
   @override
   final String key;
   @override
-  final String value;
+  final dynamic value;
   final List<String> _scope;
   @override
   List<String> get scope {
@@ -166,15 +166,19 @@ class _$IRegistrySetRequestImpl implements _IRegistrySetRequest {
         (other.runtimeType == runtimeType &&
             other is _$IRegistrySetRequestImpl &&
             (identical(other.key, key) || other.key == key) &&
-            (identical(other.value, value) || other.value == value) &&
+            const DeepCollectionEquality().equals(other.value, value) &&
             const DeepCollectionEquality().equals(other._scope, _scope) &&
             (identical(other.domain, domain) || other.domain == domain));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, key, value,
-      const DeepCollectionEquality().hash(_scope), domain);
+  int get hashCode => Object.hash(
+      runtimeType,
+      key,
+      const DeepCollectionEquality().hash(value),
+      const DeepCollectionEquality().hash(_scope),
+      domain);
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +198,7 @@ class _$IRegistrySetRequestImpl implements _IRegistrySetRequest {
 abstract class _IRegistrySetRequest implements IRegistrySetRequest {
   const factory _IRegistrySetRequest(
       {required final String key,
-      required final String value,
+      required final dynamic value,
       required final List<String> scope,
       final String? domain}) = _$IRegistrySetRequestImpl;
 
@@ -204,7 +208,7 @@ abstract class _IRegistrySetRequest implements IRegistrySetRequest {
   @override
   String get key;
   @override
-  String get value;
+  dynamic get value;
   @override
   List<String> get scope;
   @override

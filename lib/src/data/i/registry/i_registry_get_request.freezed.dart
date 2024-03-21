@@ -120,9 +120,7 @@ class __$$IRegistryGetRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IRegistryGetRequestImpl implements _IRegistryGetRequest {
   const _$IRegistryGetRequestImpl(
-      {required this.key,
-      required final List<String> scope,
-      required this.domain})
+      {required this.key, required final List<String> scope, this.domain})
       : _scope = scope;
 
   factory _$IRegistryGetRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -180,7 +178,7 @@ abstract class _IRegistryGetRequest implements IRegistryGetRequest {
   const factory _IRegistryGetRequest(
       {required final String key,
       required final List<String> scope,
-      required final String? domain}) = _$IRegistryGetRequestImpl;
+      final String? domain}) = _$IRegistryGetRequestImpl;
 
   factory _IRegistryGetRequest.fromJson(Map<String, dynamic> json) =
       _$IRegistryGetRequestImpl.fromJson;
