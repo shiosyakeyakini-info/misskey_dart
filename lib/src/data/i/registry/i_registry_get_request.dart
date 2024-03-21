@@ -8,7 +8,7 @@ class IRegistryGetRequest with _$IRegistryGetRequest {
   const factory IRegistryGetRequest({
     required String key,
     required List<String> scope,
-    required String? domain,
+    String? domain,
   }) = _IRegistryGetRequest;
 
   factory IRegistryGetRequest.fromJson(Map<String, dynamic> json) =>

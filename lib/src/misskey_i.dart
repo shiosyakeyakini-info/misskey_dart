@@ -1,8 +1,6 @@
+import 'dart:convert';
+
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_get_all_request.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_get_detail_request.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_remove_request.dart';
-import 'package:misskey_dart/src/data/i/registry/i_registry_set_request.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {
@@ -55,7 +53,8 @@ class MisskeyIRegistry {
 
   MisskeyIRegistry({required ApiService apiService}) : _apiService = apiService;
 
-  Future<Object> getAll(IRegistryGetAllRequest request) async {
+  /// 指定したスコープの全てのキーと値を取得します。
+  Future<Map<String, dynamic>> getAll(IRegistryGetAllRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "i/registry/get-all",
       request.toJson(),
@@ -63,33 +62,72 @@ class MisskeyIRegistry {
     return response;
   }
 
-  Future<Object> getDetail(IRegistryGetDetailRequest request) async {
+  /// 指定したキーに対応した値と更新日時を取得します。
+  Future<IRegistryGetDetailResponse> getDetail(
+    IRegistryGetDetailRequest request,
+  ) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "i/registry/get-detail",
       request.toJson(),
     );
-    return response;
+    return IRegistryGetDetailResponse.fromJson(response);
   }
 
-  Future<Object> get(IRegistryGetRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
+  /// 指定したキーに対応した値を取得します。
+  Future<dynamic> get(IRegistryGetRequest request) async {
+    final response = await _apiService.post<dynamic>(
       "i/registry/get",
       request.toJson(),
     );
-    return response;
+    if (response is String) {
+      if (response.isEmpty) {
+        return null;
+      } else {
+        return jsonDecode(response);
+      }
+    } else {
+      return response;
+    }
   }
 
-  Future<void> remove(IRegistryRemoveRequest request) async {
-    await _apiService.post<Map<String, dynamic>>(
-      "i/registry/remove",
+  /// 指定したスコープの全てのキーと型を取得します。
+  Future<Map<String, String>> keysWithType(
+    IRegistryKeysWithTypeRequest request,
+  ) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "i/registry/keys-with-type",
       request.toJson(),
     );
+    return response.map((key, value) => MapEntry(key, value as String));
   }
 
+  /// 指定したスコープの全てのキーを取得します。
+  Future<Iterable<String>> keys(IRegistryKeysRequest request) async {
+    final response = await _apiService.post<List>(
+      "i/registry/keys",
+      request.toJson(),
+    );
+    return response.whereType<String>();
+  }
+
+  /// 指定したキーを削除します。
+  Future<void> remove(IRegistryRemoveRequest request) async {
+    await _apiService.post("i/registry/remove", request.toJson());
+  }
+
+  /// 全てのドメインの全てのスコープを取得します。
+  Future<Iterable<IRegistryScopesWithDomainResponse>> scopesWithDomain() async {
+    final response =
+        await _apiService.post<List>("i/registry/scopes-with-domain", {});
+    return response.map((e) => IRegistryScopesWithDomainResponse.fromJson(e));
+  }
+
+  /// 指定したキーに値を設定します。
   Future<void> set(IRegistrySetRequest request) async {
-    await _apiService.post<Map<String, dynamic>>(
+    await _apiService.post(
       "i/registry/set",
       request.toJson(),
+      excludeRemoveNullPredicate: (key, _) => key == "value",
     );
   }
 }

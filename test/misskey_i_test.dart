@@ -1,5 +1,6 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:test/test.dart';
+import 'package:uuid/uuid.dart';
 
 import 'util/misskey_dart_test_util.dart';
 
@@ -47,5 +48,185 @@ void main() async {
 
   test("update", () async {
     await userClient.i.update(IUpdateRequest());
+  });
+
+  group("registry", () {
+    test("getAll", () async {
+      final key = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [],
+        ),
+      );
+      final response =
+          await userClient.i.registry.getAll(IRegistryGetAllRequest(scope: []));
+      expect(response[key], equals("test"));
+    });
+
+    test("getDetail", () async {
+      final key = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [],
+        ),
+      );
+      final response = await userClient.i.registry
+          .getDetail(IRegistryGetDetailRequest(key: key, scope: []));
+      expect(response.value, equals("test"));
+    });
+
+    test("get", () async {
+      final key = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [],
+        ),
+      );
+      final response = await userClient.i.registry
+          .get(IRegistryGetRequest(key: key, scope: []));
+      expect(response, equals("test"));
+    });
+
+    test("keysWithType", () async {
+      final nullKey = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: nullKey,
+          value: null,
+          scope: [],
+        ),
+      );
+      final arrayKey = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: arrayKey,
+          value: [1, 2],
+          scope: [],
+        ),
+      );
+      final numberKey = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: numberKey,
+          value: 1.2,
+          scope: [],
+        ),
+      );
+      final stringKey = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: stringKey,
+          value: "test",
+          scope: [],
+        ),
+      );
+      final booleanKey = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: booleanKey,
+          value: false,
+          scope: [],
+        ),
+      );
+      final objectKey = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: objectKey,
+          value: {'key': 'value'},
+          scope: [],
+        ),
+      );
+      final response = await userClient.i.registry
+          .keysWithType(IRegistryKeysWithTypeRequest(scope: []));
+      expect(response[nullKey], equals("null"));
+      final nullValue = await userClient.i.registry
+          .get(IRegistryGetRequest(key: nullKey, scope: []));
+      // ignore: prefer_void_to_null
+      expect(nullValue, isA<Null>());
+      expect(response[arrayKey], equals("array"));
+      final arrayValue = await userClient.i.registry
+          .get(IRegistryGetRequest(key: arrayKey, scope: []));
+      expect(arrayValue, isA<List>());
+      expect(response[numberKey], equals("number"));
+      final numberValue = await userClient.i.registry
+          .get(IRegistryGetRequest(key: numberKey, scope: []));
+      expect(numberValue, isA<num>());
+      expect(response[stringKey], equals("string"));
+      final stringValue = await userClient.i.registry
+          .get(IRegistryGetRequest(key: stringKey, scope: []));
+      expect(stringValue, isA<String>());
+      expect(response[booleanKey], equals("boolean"));
+      final booleanValue = await userClient.i.registry
+          .get(IRegistryGetRequest(key: booleanKey, scope: []));
+      expect(booleanValue, isA<bool>());
+      expect(response[objectKey], equals("object"));
+      final objectValue = await userClient.i.registry
+          .get(IRegistryGetRequest(key: objectKey, scope: []));
+      expect(objectValue, isA<Map>());
+    });
+
+    test("keys", () async {
+      final key = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [],
+        ),
+      );
+      final response =
+          await userClient.i.registry.keys(IRegistryKeysRequest(scope: []));
+      expect(response, contains(key));
+    });
+
+    test("remove", () async {
+      final key = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [],
+        ),
+      );
+      await userClient.i.registry
+          .remove(IRegistryRemoveRequest(key: key, scope: []));
+      final keys =
+          await userClient.i.registry.keys(IRegistryKeysRequest(scope: []));
+      expect(keys, isNot(contains(key)));
+    });
+
+    test("scopes-with-domain", () async {
+      final key = Uuid().v4();
+      final scope = Uuid().v4().replaceAll('-', '_');
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [scope],
+        ),
+      );
+      final response = await userClient.i.registry.scopesWithDomain();
+      expect(
+        response.map((e) => e.scopes),
+        anyElement(anyElement(contains(scope))),
+      );
+    });
+
+    test("set", () async {
+      final key = Uuid().v4();
+      await userClient.i.registry.set(
+        IRegistrySetRequest(
+          key: key,
+          value: "test",
+          scope: [],
+        ),
+      );
+    });
   });
 }

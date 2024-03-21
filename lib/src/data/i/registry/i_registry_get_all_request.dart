@@ -7,7 +7,7 @@ part 'i_registry_get_all_request.g.dart';
 class IRegistryGetAllRequest with _$IRegistryGetAllRequest {
   const factory IRegistryGetAllRequest({
     required List<String> scope,
-    required String? domain,
+    String? domain,
   }) = _IRegistryGetAllRequest;
 
   factory IRegistryGetAllRequest.fromJson(Map<String, dynamic> json) =>
