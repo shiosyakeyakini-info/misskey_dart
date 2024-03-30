@@ -1,5 +1,4 @@
-import 'package:misskey_dart/src/data/mute/mute_create_request.dart';
-import 'package:misskey_dart/src/data/mute/mute_delete_request.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyMute {
@@ -15,5 +14,12 @@ class MisskeyMute {
   /// ユーザーのミュートを解除します。
   Future<void> delete(MuteDeleteRequest request) async {
     await _apiService.post("mute/delete", request.toJson());
+  }
+
+  /// ミュートしているユーザーの一覧を取得します。
+  Future<Iterable<Muting>> list(MuteListRequest request) async {
+    final response =
+        await _apiService.post<List>("mute/list", request.toJson());
+    return response.map((e) => Muting.fromJson(e));
   }
 }
