@@ -46,6 +46,39 @@ class MisskeyI {
     );
     return MeDetailed.fromJson(response);
   }
+
+  /// いいねしたページの一覧を取得します。
+  Future<Iterable<IPageLikesResponse>> pageLikes(
+    IPageLikesRequest request,
+  ) async {
+    final response =
+        await _apiService.post<List>("i/page-likes", request.toJson());
+    return response.map((e) => IPageLikesResponse.fromJson(e));
+  }
+
+  /// ログイン中のユーザーが作成したページの一覧を取得します。
+  Future<Iterable<Page>> pages(IPagesRequest request) async {
+    final response = await _apiService.post<List>("i/pages", request.toJson());
+    return response.map((e) => Page.fromJson(e));
+  }
+
+  /// ノートをピン留めします。
+  Future<MeDetailed> pin(IPinRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "i/pin",
+      request.toJson(),
+    );
+    return MeDetailed.fromJson(response);
+  }
+
+  /// ノートのピン留めを解除します。
+  Future<MeDetailed> unpin(IUnpinRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "i/unpin",
+      request.toJson(),
+    );
+    return MeDetailed.fromJson(response);
+  }
 }
 
 class MisskeyIRegistry {
