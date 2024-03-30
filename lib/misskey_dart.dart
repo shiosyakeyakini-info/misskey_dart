@@ -188,6 +188,7 @@ export 'src/data/users/users_report_abuse_request.dart';
 export 'src/data/users/users_reactions_request.dart';
 export 'src/data/users/users_reactions_response.dart';
 export 'src/data/users/users_search_request.dart';
+export 'src/data/users/users_search_by_username_and_host_request.dart';
 export 'src/data/users/users_users_request.dart';
 export 'src/data/users/users_update_memo_request.dart';
 export 'src/data/users/users_pages_request.dart';
