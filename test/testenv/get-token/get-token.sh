@@ -13,6 +13,10 @@ ADMIN_DATA=$(
 ADMIN_TOKEN=$(echo "$ADMIN_DATA" | jq -r .token)
 ADMIN_ID=$(echo "$ADMIN_DATA" | jq -r .id)
 
+curl -fsS -XPOST -H 'Content-Type: application/json'                \
+  --data '{"i": "'"${ADMIN_TOKEN}"'","disableRegistration": false}' \
+  http://web:3000/api/admin/update-meta
+
 USER_DATA=$(
   curl -fsS -XPOST -H 'Content-Type: application/json'     \
     --data '{"username":"testuser","password":"testuser"}' \
