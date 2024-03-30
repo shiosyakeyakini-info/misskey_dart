@@ -27,6 +27,8 @@ mixin _$IUpdateRequest {
   dynamic get birthday => throw _privateConstructorUsedError;
   String? get lang => throw _privateConstructorUsedError;
   String? get avatarId => throw _privateConstructorUsedError;
+  List<IUpdateAvatarDecoration>? get avatarDecorations =>
+      throw _privateConstructorUsedError;
   String? get bannerId => throw _privateConstructorUsedError;
   List<UserField>? get fields => throw _privateConstructorUsedError;
   bool? get isLocked => throw _privateConstructorUsedError;
@@ -42,6 +44,7 @@ mixin _$IUpdateRequest {
   bool? get injectFeaturedNote => throw _privateConstructorUsedError;
   bool? get receiveAnnouncementEmail => throw _privateConstructorUsedError;
   bool? get alwaysMarkNsfw => throw _privateConstructorUsedError;
+  bool? get autoSensitive => throw _privateConstructorUsedError;
   @Deprecated("removed at 2023.12.0")
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
@@ -54,6 +57,8 @@ mixin _$IUpdateRequest {
   @MuteWordsConverter()
   List<MuteWord>? get hardMutedWords => throw _privateConstructorUsedError;
   List<String>? get mutedInstances => throw _privateConstructorUsedError;
+  NotificationRecieveConfigs? get notificationRecieveConfig =>
+      throw _privateConstructorUsedError;
   List<String>? get emailNotificationTypes =>
       throw _privateConstructorUsedError;
   List<String>? get alsoKnownAs => throw _privateConstructorUsedError;
@@ -77,6 +82,7 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       @DateTimeConverter() dynamic birthday,
       String? lang,
       String? avatarId,
+      List<IUpdateAvatarDecoration>? avatarDecorations,
       String? bannerId,
       List<UserField>? fields,
       bool? isLocked,
@@ -92,6 +98,7 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       bool? injectFeaturedNote,
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
+      bool? autoSensitive,
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followingVisibility,
       FFVisibility? followersVisibility,
@@ -100,8 +107,11 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       @MuteWordsConverter() List<MuteWord>? mutedWords,
       @MuteWordsConverter() List<MuteWord>? hardMutedWords,
       List<String>? mutedInstances,
+      NotificationRecieveConfigs? notificationRecieveConfig,
       List<String>? emailNotificationTypes,
       List<String>? alsoKnownAs});
+
+  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig;
 }
 
 /// @nodoc
@@ -123,6 +133,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? birthday = freezed,
     Object? lang = freezed,
     Object? avatarId = freezed,
+    Object? avatarDecorations = freezed,
     Object? bannerId = freezed,
     Object? fields = freezed,
     Object? isLocked = freezed,
@@ -138,6 +149,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? injectFeaturedNote = freezed,
     Object? receiveAnnouncementEmail = freezed,
     Object? alwaysMarkNsfw = freezed,
+    Object? autoSensitive = freezed,
     Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
@@ -146,6 +158,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? mutedWords = freezed,
     Object? hardMutedWords = freezed,
     Object? mutedInstances = freezed,
+    Object? notificationRecieveConfig = freezed,
     Object? emailNotificationTypes = freezed,
     Object? alsoKnownAs = freezed,
   }) {
@@ -174,6 +187,10 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.avatarId
           : avatarId // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatarDecorations: freezed == avatarDecorations
+          ? _value.avatarDecorations
+          : avatarDecorations // ignore: cast_nullable_to_non_nullable
+              as List<IUpdateAvatarDecoration>?,
       bannerId: freezed == bannerId
           ? _value.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
@@ -234,6 +251,10 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
               as bool?,
+      autoSensitive: freezed == autoSensitive
+          ? _value.autoSensitive
+          : autoSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
       ffVisibility: freezed == ffVisibility
           ? _value.ffVisibility
           : ffVisibility // ignore: cast_nullable_to_non_nullable
@@ -266,6 +287,10 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      notificationRecieveConfig: freezed == notificationRecieveConfig
+          ? _value.notificationRecieveConfig
+          : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfigs?,
       emailNotificationTypes: freezed == emailNotificationTypes
           ? _value.emailNotificationTypes
           : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
@@ -275,6 +300,19 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           : alsoKnownAs // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig {
+    if (_value.notificationRecieveConfig == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigsCopyWith<$Res>(
+        _value.notificationRecieveConfig!, (value) {
+      return _then(_value.copyWith(notificationRecieveConfig: value) as $Val);
+    });
   }
 }
 
@@ -293,6 +331,7 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       @DateTimeConverter() dynamic birthday,
       String? lang,
       String? avatarId,
+      List<IUpdateAvatarDecoration>? avatarDecorations,
       String? bannerId,
       List<UserField>? fields,
       bool? isLocked,
@@ -308,6 +347,7 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       bool? injectFeaturedNote,
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
+      bool? autoSensitive,
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followingVisibility,
       FFVisibility? followersVisibility,
@@ -316,8 +356,12 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       @MuteWordsConverter() List<MuteWord>? mutedWords,
       @MuteWordsConverter() List<MuteWord>? hardMutedWords,
       List<String>? mutedInstances,
+      NotificationRecieveConfigs? notificationRecieveConfig,
       List<String>? emailNotificationTypes,
       List<String>? alsoKnownAs});
+
+  @override
+  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig;
 }
 
 /// @nodoc
@@ -337,6 +381,7 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? birthday = freezed,
     Object? lang = freezed,
     Object? avatarId = freezed,
+    Object? avatarDecorations = freezed,
     Object? bannerId = freezed,
     Object? fields = freezed,
     Object? isLocked = freezed,
@@ -352,6 +397,7 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? injectFeaturedNote = freezed,
     Object? receiveAnnouncementEmail = freezed,
     Object? alwaysMarkNsfw = freezed,
+    Object? autoSensitive = freezed,
     Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
@@ -360,6 +406,7 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? mutedWords = freezed,
     Object? hardMutedWords = freezed,
     Object? mutedInstances = freezed,
+    Object? notificationRecieveConfig = freezed,
     Object? emailNotificationTypes = freezed,
     Object? alsoKnownAs = freezed,
   }) {
@@ -385,6 +432,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value.avatarId
           : avatarId // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatarDecorations: freezed == avatarDecorations
+          ? _value._avatarDecorations
+          : avatarDecorations // ignore: cast_nullable_to_non_nullable
+              as List<IUpdateAvatarDecoration>?,
       bannerId: freezed == bannerId
           ? _value.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
@@ -445,6 +496,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
               as bool?,
+      autoSensitive: freezed == autoSensitive
+          ? _value.autoSensitive
+          : autoSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
       ffVisibility: freezed == ffVisibility
           ? _value.ffVisibility
           : ffVisibility // ignore: cast_nullable_to_non_nullable
@@ -477,6 +532,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value._mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      notificationRecieveConfig: freezed == notificationRecieveConfig
+          ? _value.notificationRecieveConfig
+          : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfigs?,
       emailNotificationTypes: freezed == emailNotificationTypes
           ? _value._emailNotificationTypes
           : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
@@ -499,6 +558,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       @DateTimeConverter() this.birthday,
       this.lang,
       this.avatarId,
+      final List<IUpdateAvatarDecoration>? avatarDecorations,
       this.bannerId,
       final List<UserField>? fields,
       this.isLocked,
@@ -514,6 +574,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       this.injectFeaturedNote,
       this.receiveAnnouncementEmail,
       this.alwaysMarkNsfw,
+      this.autoSensitive,
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followingVisibility,
       this.followersVisibility,
@@ -522,9 +583,11 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
       @MuteWordsConverter() final List<MuteWord>? hardMutedWords,
       final List<String>? mutedInstances,
+      this.notificationRecieveConfig,
       final List<String>? emailNotificationTypes,
       final List<String>? alsoKnownAs})
-      : _fields = fields,
+      : _avatarDecorations = avatarDecorations,
+        _fields = fields,
         _mutingNotificationTypes = mutingNotificationTypes,
         _mutedWords = mutedWords,
         _hardMutedWords = hardMutedWords,
@@ -548,6 +611,17 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   final String? lang;
   @override
   final String? avatarId;
+  final List<IUpdateAvatarDecoration>? _avatarDecorations;
+  @override
+  List<IUpdateAvatarDecoration>? get avatarDecorations {
+    final value = _avatarDecorations;
+    if (value == null) return null;
+    if (_avatarDecorations is EqualUnmodifiableListView)
+      return _avatarDecorations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? bannerId;
   final List<UserField>? _fields;
@@ -586,6 +660,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   final bool? receiveAnnouncementEmail;
   @override
   final bool? alwaysMarkNsfw;
+  @override
+  final bool? autoSensitive;
   @override
   @Deprecated("removed at 2023.12.0")
   final FFVisibility? ffVisibility;
@@ -638,6 +714,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  final NotificationRecieveConfigs? notificationRecieveConfig;
   final List<String>? _emailNotificationTypes;
   @override
   List<String>? get emailNotificationTypes {
@@ -661,7 +739,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 
   @override
@@ -678,6 +756,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
             (identical(other.lang, lang) || other.lang == lang) &&
             (identical(other.avatarId, avatarId) ||
                 other.avatarId == avatarId) &&
+            const DeepCollectionEquality()
+                .equals(other._avatarDecorations, _avatarDecorations) &&
             (identical(other.bannerId, bannerId) ||
                 other.bannerId == bannerId) &&
             const DeepCollectionEquality().equals(other._fields, _fields) &&
@@ -706,6 +786,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 other.receiveAnnouncementEmail == receiveAnnouncementEmail) &&
             (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
+            (identical(other.autoSensitive, autoSensitive) ||
+                other.autoSensitive == autoSensitive) &&
             (identical(other.ffVisibility, ffVisibility) ||
                 other.ffVisibility == ffVisibility) &&
             (identical(other.followingVisibility, followingVisibility) ||
@@ -722,6 +804,9 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 .equals(other._hardMutedWords, _hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other._mutedInstances, _mutedInstances) &&
+            (identical(other.notificationRecieveConfig,
+                    notificationRecieveConfig) ||
+                other.notificationRecieveConfig == notificationRecieveConfig) &&
             const DeepCollectionEquality().equals(
                 other._emailNotificationTypes, _emailNotificationTypes) &&
             const DeepCollectionEquality()
@@ -738,6 +823,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         const DeepCollectionEquality().hash(birthday),
         lang,
         avatarId,
+        const DeepCollectionEquality().hash(_avatarDecorations),
         bannerId,
         const DeepCollectionEquality().hash(_fields),
         isLocked,
@@ -753,6 +839,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         injectFeaturedNote,
         receiveAnnouncementEmail,
         alwaysMarkNsfw,
+        autoSensitive,
         ffVisibility,
         followingVisibility,
         followersVisibility,
@@ -761,6 +848,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         const DeepCollectionEquality().hash(_mutedWords),
         const DeepCollectionEquality().hash(_hardMutedWords),
         const DeepCollectionEquality().hash(_mutedInstances),
+        notificationRecieveConfig,
         const DeepCollectionEquality().hash(_emailNotificationTypes),
         const DeepCollectionEquality().hash(_alsoKnownAs)
       ]);
@@ -788,6 +876,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       @DateTimeConverter() final dynamic birthday,
       final String? lang,
       final String? avatarId,
+      final List<IUpdateAvatarDecoration>? avatarDecorations,
       final String? bannerId,
       final List<UserField>? fields,
       final bool? isLocked,
@@ -803,6 +892,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       final bool? injectFeaturedNote,
       final bool? receiveAnnouncementEmail,
       final bool? alwaysMarkNsfw,
+      final bool? autoSensitive,
       @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
       final FFVisibility? followingVisibility,
       final FFVisibility? followersVisibility,
@@ -811,6 +901,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
       @MuteWordsConverter() final List<MuteWord>? hardMutedWords,
       final List<String>? mutedInstances,
+      final NotificationRecieveConfigs? notificationRecieveConfig,
       final List<String>? emailNotificationTypes,
       final List<String>? alsoKnownAs}) = _$IUpdateRequestImpl;
 
@@ -830,6 +921,8 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   String? get lang;
   @override
   String? get avatarId;
+  @override
+  List<IUpdateAvatarDecoration>? get avatarDecorations;
   @override
   String? get bannerId;
   @override
@@ -861,6 +954,8 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   @override
   bool? get alwaysMarkNsfw;
   @override
+  bool? get autoSensitive;
+  @override
   @Deprecated("removed at 2023.12.0")
   FFVisibility? get ffVisibility;
   @override
@@ -880,6 +975,8 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   @override
   List<String>? get mutedInstances;
   @override
+  NotificationRecieveConfigs? get notificationRecieveConfig;
+  @override
   List<String>? get emailNotificationTypes;
   @override
   List<String>? get alsoKnownAs;
@@ -887,4 +984,226 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   @JsonKey(ignore: true)
   _$$IUpdateRequestImplCopyWith<_$IUpdateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+IUpdateAvatarDecoration _$IUpdateAvatarDecorationFromJson(
+    Map<String, dynamic> json) {
+  return _IUpdateAvatarDecoration.fromJson(json);
+}
+
+/// @nodoc
+mixin _$IUpdateAvatarDecoration {
+  String get id => throw _privateConstructorUsedError;
+  double? get angle => throw _privateConstructorUsedError;
+  bool get flipH => throw _privateConstructorUsedError;
+  double get offsetX => throw _privateConstructorUsedError;
+  double get offsetY => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IUpdateAvatarDecorationCopyWith<IUpdateAvatarDecoration> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IUpdateAvatarDecorationCopyWith<$Res> {
+  factory $IUpdateAvatarDecorationCopyWith(IUpdateAvatarDecoration value,
+          $Res Function(IUpdateAvatarDecoration) then) =
+      _$IUpdateAvatarDecorationCopyWithImpl<$Res, IUpdateAvatarDecoration>;
+  @useResult
+  $Res call(
+      {String id, double? angle, bool flipH, double offsetX, double offsetY});
+}
+
+/// @nodoc
+class _$IUpdateAvatarDecorationCopyWithImpl<$Res,
+        $Val extends IUpdateAvatarDecoration>
+    implements $IUpdateAvatarDecorationCopyWith<$Res> {
+  _$IUpdateAvatarDecorationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? angle = freezed,
+    Object? flipH = null,
+    Object? offsetX = null,
+    Object? offsetY = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      angle: freezed == angle
+          ? _value.angle
+          : angle // ignore: cast_nullable_to_non_nullable
+              as double?,
+      flipH: null == flipH
+          ? _value.flipH
+          : flipH // ignore: cast_nullable_to_non_nullable
+              as bool,
+      offsetX: null == offsetX
+          ? _value.offsetX
+          : offsetX // ignore: cast_nullable_to_non_nullable
+              as double,
+      offsetY: null == offsetY
+          ? _value.offsetY
+          : offsetY // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$IUpdateAvatarDecorationImplCopyWith<$Res>
+    implements $IUpdateAvatarDecorationCopyWith<$Res> {
+  factory _$$IUpdateAvatarDecorationImplCopyWith(
+          _$IUpdateAvatarDecorationImpl value,
+          $Res Function(_$IUpdateAvatarDecorationImpl) then) =
+      __$$IUpdateAvatarDecorationImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id, double? angle, bool flipH, double offsetX, double offsetY});
+}
+
+/// @nodoc
+class __$$IUpdateAvatarDecorationImplCopyWithImpl<$Res>
+    extends _$IUpdateAvatarDecorationCopyWithImpl<$Res,
+        _$IUpdateAvatarDecorationImpl>
+    implements _$$IUpdateAvatarDecorationImplCopyWith<$Res> {
+  __$$IUpdateAvatarDecorationImplCopyWithImpl(
+      _$IUpdateAvatarDecorationImpl _value,
+      $Res Function(_$IUpdateAvatarDecorationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? angle = freezed,
+    Object? flipH = null,
+    Object? offsetX = null,
+    Object? offsetY = null,
+  }) {
+    return _then(_$IUpdateAvatarDecorationImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      angle: freezed == angle
+          ? _value.angle
+          : angle // ignore: cast_nullable_to_non_nullable
+              as double?,
+      flipH: null == flipH
+          ? _value.flipH
+          : flipH // ignore: cast_nullable_to_non_nullable
+              as bool,
+      offsetX: null == offsetX
+          ? _value.offsetX
+          : offsetX // ignore: cast_nullable_to_non_nullable
+              as double,
+      offsetY: null == offsetY
+          ? _value.offsetY
+          : offsetY // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$IUpdateAvatarDecorationImpl implements _IUpdateAvatarDecoration {
+  const _$IUpdateAvatarDecorationImpl(
+      {required this.id,
+      this.angle,
+      this.flipH = false,
+      this.offsetX = 0.0,
+      this.offsetY = 0.0});
+
+  factory _$IUpdateAvatarDecorationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IUpdateAvatarDecorationImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final double? angle;
+  @override
+  @JsonKey()
+  final bool flipH;
+  @override
+  @JsonKey()
+  final double offsetX;
+  @override
+  @JsonKey()
+  final double offsetY;
+
+  @override
+  String toString() {
+    return 'IUpdateAvatarDecoration(id: $id, angle: $angle, flipH: $flipH, offsetX: $offsetX, offsetY: $offsetY)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IUpdateAvatarDecorationImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.angle, angle) || other.angle == angle) &&
+            (identical(other.flipH, flipH) || other.flipH == flipH) &&
+            (identical(other.offsetX, offsetX) || other.offsetX == offsetX) &&
+            (identical(other.offsetY, offsetY) || other.offsetY == offsetY));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, angle, flipH, offsetX, offsetY);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IUpdateAvatarDecorationImplCopyWith<_$IUpdateAvatarDecorationImpl>
+      get copyWith => __$$IUpdateAvatarDecorationImplCopyWithImpl<
+          _$IUpdateAvatarDecorationImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$IUpdateAvatarDecorationImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _IUpdateAvatarDecoration implements IUpdateAvatarDecoration {
+  const factory _IUpdateAvatarDecoration(
+      {required final String id,
+      final double? angle,
+      final bool flipH,
+      final double offsetX,
+      final double offsetY}) = _$IUpdateAvatarDecorationImpl;
+
+  factory _IUpdateAvatarDecoration.fromJson(Map<String, dynamic> json) =
+      _$IUpdateAvatarDecorationImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  double? get angle;
+  @override
+  bool get flipH;
+  @override
+  double get offsetX;
+  @override
+  double get offsetY;
+  @override
+  @JsonKey(ignore: true)
+  _$$IUpdateAvatarDecorationImplCopyWith<_$IUpdateAvatarDecorationImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
