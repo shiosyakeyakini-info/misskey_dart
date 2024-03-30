@@ -21,6 +21,10 @@ _$EmojiResponseImpl _$$EmojiResponseImplFromJson(Map<String, dynamic> json) =>
       license: json['license'] as String?,
       isSensitive: json['isSensitive'] as bool? ?? false,
       localOnly: json['localOnly'] as bool? ?? false,
+      roleIdsThatCanBeUsedThisEmojiAsReaction:
+          (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
     );
 
 Map<String, dynamic> _$$EmojiResponseImplToJson(_$EmojiResponseImpl instance) =>
@@ -34,6 +38,8 @@ Map<String, dynamic> _$$EmojiResponseImplToJson(_$EmojiResponseImpl instance) =>
       'license': instance.license,
       'isSensitive': instance.isSensitive,
       'localOnly': instance.localOnly,
+      'roleIdsThatCanBeUsedThisEmojiAsReaction':
+          instance.roleIdsThatCanBeUsedThisEmojiAsReaction,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
