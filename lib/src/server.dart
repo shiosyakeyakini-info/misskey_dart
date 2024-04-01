@@ -41,7 +41,7 @@ class MisskeyServer {
         method: "POST",
       ),
     );
-    return response.data!["token"];
+    return response.data!["i"];
   }
 
   Uri buildMiAuthURL(
