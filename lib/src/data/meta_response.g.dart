@@ -162,7 +162,7 @@ _$MetaAdImpl _$$MetaAdImplFromJson(Map<String, dynamic> json) => _$MetaAdImpl(
       id: json['id'] as String,
       place: json['place'] as String,
       url: const UriConverter().fromJson(json['url'] as String),
-      imageUrl: const UriConverter().fromJson((json['imageUrl'] as String).trim()),
+      imageUrl: const UriConverter().fromJson(json['imageUrl'] as String),
       ratio: json['ratio'] as int,
     );
 
