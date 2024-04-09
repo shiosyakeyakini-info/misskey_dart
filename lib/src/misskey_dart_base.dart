@@ -27,6 +27,7 @@ class Misskey {
   late final MisskeyAntenna antennas;
   late final MisskeyDrive drive;
   late final MisskeyFollowing following;
+  late final MisskeyGallery gallery;
   late final MisskeyBlocking blocking;
   late final MisskeyMute mute;
   late final MisskeyRenoteMute renoteMute;
@@ -66,6 +67,7 @@ class Misskey {
     antennas = MisskeyAntenna(apiService: apiService);
     drive = MisskeyDrive(apiService);
     following = MisskeyFollowing(apiService: apiService);
+    gallery = MisskeyGallery(apiService: apiService);
     blocking = MisskeyBlocking(apiService: apiService);
     mute = MisskeyMute(apiService: apiService);
     renoteMute = MisskeyRenoteMute(apiService: apiService);
