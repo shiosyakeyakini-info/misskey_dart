@@ -8,6 +8,10 @@ import 'package:uuid/uuid.dart';
 import 'util/misskey_dart_test_util.dart';
 
 void main() async {
+  test("drive", () async {
+    await userClient.drive.drive();
+  });
+
   test("stream", () async {
     final file = await userClient.createDriveFile();
     final response = await userClient.drive.stream(DriveStreamRequest());
