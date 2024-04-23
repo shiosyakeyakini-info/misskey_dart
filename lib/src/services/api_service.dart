@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 class ApiService {
   final Dio dio = Dio();
@@ -34,8 +35,21 @@ class ApiService {
           value == null &&
           (excludeRemoveNullPredicate == null ||
               !excludeRemoveNullPredicate.call(key, value)));
-    final response = await dio.request(path, data: request);
-    return response.data;
+    try {
+      final response = await dio.request(path, data: request);
+      return response.data;
+    } on DioException catch (e) {
+      Exception exception;
+      try {
+        exception = MisskeyException.fromJson(
+          (e.response?.data as Map<String, dynamic>)["error"]
+              as Map<String, dynamic>,
+        );
+      } catch (_) {
+        exception = e;
+      }
+      throw exception;
+    }
   }
 
   Future<T> postWithFile<T>(
@@ -51,13 +65,28 @@ class ApiService {
             ))
       ])
       ..removeWhere((key, value) => value == null);
-    final response = await dio.request(path,
+    try {
+      final response = await dio.request(
+        path,
         data: FormData.fromMap(request),
         options: Options(
           contentType: "multipart/form-data",
           method: "POST",
-        ));
-    return response.data;
+        ),
+      );
+      return response.data;
+    } on DioException catch (e) {
+      Exception exception;
+      try {
+        exception = MisskeyException.fromJson(
+          (e.response?.data as Map<String, dynamic>)["error"]
+              as Map<String, dynamic>,
+        );
+      } catch (_) {
+        exception = e;
+      }
+      throw exception;
+    }
   }
 
   Future<T> postWithBinary<T>(
@@ -73,12 +102,27 @@ class ApiService {
             "file", MultipartFile.fromBytes(binaryData, filename: fileName))
       ])
       ..removeWhere((key, value) => value == null);
-    final response = await dio.request(path,
+    try {
+      final response = await dio.request(
+        path,
         data: FormData.fromMap(request),
         options: Options(
           contentType: "multipart/form-data",
           method: "POST",
-        ));
-    return response.data;
+        ),
+      );
+      return response.data;
+    } on DioException catch (e) {
+      Exception exception;
+      try {
+        exception = MisskeyException.fromJson(
+          (e.response?.data as Map<String, dynamic>)["error"]
+              as Map<String, dynamic>,
+        );
+      } catch (_) {
+        exception = e;
+      }
+      throw exception;
+    }
   }
 }

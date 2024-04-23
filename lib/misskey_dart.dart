@@ -128,6 +128,7 @@ export 'src/data/i/registry/i_registry_keys_with_type_request.dart';
 export 'src/data/i/registry/i_registry_remove_request.dart';
 export 'src/data/i/registry/i_registry_scopes_with_domain_response.dart';
 export 'src/data/i/registry/i_registry_set_request.dart';
+export 'src/data/misskey_exception.dart';
 export 'src/data/notes/notes_clips_request.dart';
 export 'src/data/notes/notes_timeline_request.dart';
 export 'src/data/notes/notes_create_request.dart';
