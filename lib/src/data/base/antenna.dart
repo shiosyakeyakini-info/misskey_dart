@@ -17,7 +17,7 @@ class Antenna with _$Antenna {
     String? userListId,
     required List<String> users,
     required bool caseSensitive,
-    required bool notify,
+    @Default(false) bool notify,
     required bool withReplies,
     required bool withFile,
     required bool isActive,

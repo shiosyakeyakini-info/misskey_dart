@@ -22,7 +22,7 @@ _$AntennaImpl _$$AntennaImplFromJson(Map<String, dynamic> json) =>
       userListId: json['userListId'] as String?,
       users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),
       caseSensitive: json['caseSensitive'] as bool,
-      notify: json['notify'] as bool,
+      notify: json['notify'] as bool? ?? false,
       withReplies: json['withReplies'] as bool,
       withFile: json['withFile'] as bool,
       isActive: json['isActive'] as bool,
