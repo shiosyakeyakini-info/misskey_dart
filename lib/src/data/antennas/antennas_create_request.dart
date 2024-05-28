@@ -19,6 +19,7 @@ class AntennasCreateRequest with _$AntennasCreateRequest {
     // Removed in Misskey 2024.5.0
     bool? notify,
     bool? localOnly,
+    bool? excludeBots,
   }) = _AntennasCreateRequest;
 
   factory AntennasCreateRequest.fromJson(Map<String, Object?> json) =>

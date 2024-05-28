@@ -20,6 +20,7 @@ class AntennasUpdateRequest with _$AntennasUpdateRequest {
     // Removed in Misskey 2024.5.0
     bool? notify,
     bool? localOnly,
+    bool? excludeBots,
   }) = _AntennasUpdateRequest;
 
   factory AntennasUpdateRequest.fromJson(Map<String, Object?> json) =>
