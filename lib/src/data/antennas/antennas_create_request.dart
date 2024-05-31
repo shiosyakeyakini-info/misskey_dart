@@ -16,7 +16,8 @@ class AntennasCreateRequest with _$AntennasCreateRequest {
     required bool caseSensitive,
     required bool withReplies,
     required bool withFile,
-    required bool notify,
+    // Removed in Misskey 2024.5.0
+    bool? notify,
     bool? localOnly,
   }) = _AntennasCreateRequest;
 

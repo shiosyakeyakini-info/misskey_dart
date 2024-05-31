@@ -23,7 +23,7 @@ _$AntennasUpdateRequestImpl _$$AntennasUpdateRequestImplFromJson(
       caseSensitive: json['caseSensitive'] as bool,
       withReplies: json['withReplies'] as bool,
       withFile: json['withFile'] as bool,
-      notify: json['notify'] as bool,
+      notify: json['notify'] as bool?,
       localOnly: json['localOnly'] as bool?,
     );
 
