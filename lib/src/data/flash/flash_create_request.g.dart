@@ -15,6 +15,8 @@ _$FlashCreateRequestImpl _$$FlashCreateRequestImplFromJson(
       permissions: (json['permissions'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      visibility:
+          $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
     );
 
 Map<String, dynamic> _$$FlashCreateRequestImplToJson(
@@ -24,4 +26,10 @@ Map<String, dynamic> _$$FlashCreateRequestImplToJson(
       'summary': instance.summary,
       'script': instance.script,
       'permissions': instance.permissions,
+      'visibility': _$FlashVisibilityEnumMap[instance.visibility],
     };
+
+const _$FlashVisibilityEnumMap = {
+  FlashVisibility.public: 'public',
+  FlashVisibility.private: 'private',
+};

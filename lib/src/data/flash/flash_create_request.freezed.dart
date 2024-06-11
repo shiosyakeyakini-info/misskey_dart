@@ -24,6 +24,7 @@ mixin _$FlashCreateRequest {
   String get summary => throw _privateConstructorUsedError;
   String get script => throw _privateConstructorUsedError;
   List<String> get permissions => throw _privateConstructorUsedError;
+  FlashVisibility? get visibility => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +39,11 @@ abstract class $FlashCreateRequestCopyWith<$Res> {
       _$FlashCreateRequestCopyWithImpl<$Res, FlashCreateRequest>;
   @useResult
   $Res call(
-      {String title, String summary, String script, List<String> permissions});
+      {String title,
+      String summary,
+      String script,
+      List<String> permissions,
+      FlashVisibility? visibility});
 }
 
 /// @nodoc
@@ -58,6 +63,7 @@ class _$FlashCreateRequestCopyWithImpl<$Res, $Val extends FlashCreateRequest>
     Object? summary = null,
     Object? script = null,
     Object? permissions = null,
+    Object? visibility = freezed,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -76,6 +82,10 @@ class _$FlashCreateRequestCopyWithImpl<$Res, $Val extends FlashCreateRequest>
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      visibility: freezed == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as FlashVisibility?,
     ) as $Val);
   }
 }
@@ -89,7 +99,11 @@ abstract class _$$FlashCreateRequestImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title, String summary, String script, List<String> permissions});
+      {String title,
+      String summary,
+      String script,
+      List<String> permissions,
+      FlashVisibility? visibility});
 }
 
 /// @nodoc
@@ -107,6 +121,7 @@ class __$$FlashCreateRequestImplCopyWithImpl<$Res>
     Object? summary = null,
     Object? script = null,
     Object? permissions = null,
+    Object? visibility = freezed,
   }) {
     return _then(_$FlashCreateRequestImpl(
       title: null == title
@@ -125,6 +140,10 @@ class __$$FlashCreateRequestImplCopyWithImpl<$Res>
           ? _value._permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      visibility: freezed == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as FlashVisibility?,
     ));
   }
 }
@@ -136,7 +155,8 @@ class _$FlashCreateRequestImpl implements _FlashCreateRequest {
       {required this.title,
       required this.summary,
       required this.script,
-      required final List<String> permissions})
+      required final List<String> permissions,
+      this.visibility})
       : _permissions = permissions;
 
   factory _$FlashCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -157,8 +177,11 @@ class _$FlashCreateRequestImpl implements _FlashCreateRequest {
   }
 
   @override
+  final FlashVisibility? visibility;
+
+  @override
   String toString() {
-    return 'FlashCreateRequest(title: $title, summary: $summary, script: $script, permissions: $permissions)';
+    return 'FlashCreateRequest(title: $title, summary: $summary, script: $script, permissions: $permissions, visibility: $visibility)';
   }
 
   @override
@@ -170,13 +193,15 @@ class _$FlashCreateRequestImpl implements _FlashCreateRequest {
             (identical(other.summary, summary) || other.summary == summary) &&
             (identical(other.script, script) || other.script == script) &&
             const DeepCollectionEquality()
-                .equals(other._permissions, _permissions));
+                .equals(other._permissions, _permissions) &&
+            (identical(other.visibility, visibility) ||
+                other.visibility == visibility));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, title, summary, script,
-      const DeepCollectionEquality().hash(_permissions));
+      const DeepCollectionEquality().hash(_permissions), visibility);
 
   @JsonKey(ignore: true)
   @override
@@ -198,7 +223,8 @@ abstract class _FlashCreateRequest implements FlashCreateRequest {
       {required final String title,
       required final String summary,
       required final String script,
-      required final List<String> permissions}) = _$FlashCreateRequestImpl;
+      required final List<String> permissions,
+      final FlashVisibility? visibility}) = _$FlashCreateRequestImpl;
 
   factory _FlashCreateRequest.fromJson(Map<String, dynamic> json) =
       _$FlashCreateRequestImpl.fromJson;
@@ -211,6 +237,8 @@ abstract class _FlashCreateRequest implements FlashCreateRequest {
   String get script;
   @override
   List<String> get permissions;
+  @override
+  FlashVisibility? get visibility;
   @override
   @JsonKey(ignore: true)
   _$$FlashCreateRequestImplCopyWith<_$FlashCreateRequestImpl> get copyWith =>
