@@ -1,195 +1,200 @@
 import 'dart:async';
-import 'dart:collection';
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:collection/collection.dart';
-import 'package:misskey_dart/src/data/streaming/broadcast_event.dart';
-import 'package:misskey_dart/src/data/streaming/channel_event.dart';
-import 'package:misskey_dart/src/data/streaming/note_updated_event.dart';
+import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_response.dart';
-import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel.dart';
-import 'package:misskey_dart/src/enums/channel_event_type.dart';
-import 'package:misskey_dart/src/enums/note_updated_event_type.dart';
-import 'package:misskey_dart/src/enums/streaming_response_type.dart';
-import 'package:misskey_dart/src/services/socket_controller.dart';
+import 'package:misskey_dart/src/util/mutex.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class StreamingService {
-  final String? token;
   final String host;
-  final String? streamingUrl;
+  final int port;
+  final String? token;
+  final int maxRetryCounts;
   final Duration? connectionTimeout;
-  WebSocketChannel? _webSocketChannel;
-  final HashMap<String, SocketController> streamingChannelControllers =
-      HashMap();
-  StreamSubscription? subscription;
+  final String? streamingUrl;
 
-  StreamingService({
+  WebSocketChannel? _webSocketChannel;
+
+  final List<StreamingRequestBody> _connections = [];
+
+  StreamingService(
+    this.host, {
+    this.port = 80,
     this.token,
-    required this.host,
     this.streamingUrl,
+    this.maxRetryCounts = 1,
     this.connectionTimeout,
   });
 
-  WebSocketChannel get webSocketChannel {
-    _webSocketChannel ??= IOWebSocketChannel.connect(
-      "${streamingUrl ?? "wss://$host/streaming"}${token != null ? "?i=$token" : ""}",
-      pingInterval: Duration(minutes: 1),
+  final _controller = StreamController<StreamingResponse>.broadcast();
+  StreamSubscription? _subscription;
+
+  WebSocketChannel _createWebSocketChannel() {
+    log(
+      "connect websocket wss://$host/streaming${token != null ? "?i=$token" : ""}",
+    );
+
+    return IOWebSocketChannel.connect(
+      streamingUrl ??
+          "wss://$host/streaming${token != null ? "?i=$token" : ""}",
+      pingInterval: const Duration(minutes: 1),
       connectTimeout: connectionTimeout,
     );
-    return _webSocketChannel!;
   }
 
-  Future<void> onChannelEventReceived(
-    String id,
-    ChannelEventType type,
-    dynamic body,
-  ) async {
-    final controller = streamingChannelControllers[id];
-    if (controller == null || controller.isDisconnected) {
-      streamingChannelControllers.remove(id);
-      SocketController(
-        service: this,
-        id: id,
-        channel: Channel.main,
-      ).disconnect();
-    } else {
-      await controller.onChannelEventReceived?.call(type, body);
+  Future<Stream<StreamingResponse>> stream() async => await _stream();
+
+  Future<Stream<StreamingResponse>> _stream({int retryCounts = 0}) async {
+    if (_webSocketChannel != null &&
+        _subscription != null &&
+        !_controller.isClosed) {
+      return _controller.stream;
+    }
+
+    try {
+      await _connectWebSocket();
+    } catch (e) {
+      if (retryCounts >= maxRetryCounts) {
+        rethrow;
+      }
+      return await _stream(retryCounts: retryCounts + 1);
+    }
+
+    return _controller.stream;
+  }
+
+  final _connectWebSocketMutex = Mutex();
+
+  Future<void> _connectWebSocket() async {
+    final lock = await _connectWebSocketMutex.acquire();
+    // 排他制御によって、別の箇所からすでに作成されていたらしょ
+    if (_webSocketChannel != null) return;
+
+    try {
+      final webSocketChannel = _createWebSocketChannel();
+      _webSocketChannel = webSocketChannel;
+      await webSocketChannel.ready;
+
+      _subscription = webSocketChannel.stream.listen(
+        (message) async {
+          final responseJson = jsonDecode(message);
+          final response = StreamingResponse.fromJson(responseJson);
+          _controller.sink.add(response);
+        },
+        onError: (e, s) async {
+          print("Error happen $e ");
+          print(s);
+          // 再呼び出し
+          await _reconnect();
+        },
+        onDone: () async {
+          print("onDone Called;");
+          await _reconnect();
+        },
+        cancelOnError: true,
+      );
+    } finally {
+      lock.release();
     }
   }
 
-  Future<void> onNoteUpdatedEventReceived(
-    String id,
-    NoteUpdatedEventType type,
-    Map<String, dynamic> body,
-  ) async {
-    await Future.wait(
-      streamingChannelControllers.values
-          .where((controller) => !controller.isDisconnected)
-          .map((controller) => controller.onNoteUpdatedEventReceived)
-          .whereNotNull()
-          .map(
-            (onNoteUpdatedEventReceived) =>
-                onNoteUpdatedEventReceived(id, type, body),
-          ),
-    );
-  }
+  Future<void> reconnect() async => _reconnect();
 
-  Future<void> onBroadcastEventReceived(
-    BroadcastEventType type,
-    Map<String, dynamic> body,
-  ) async {
-    await Future.wait(
-      streamingChannelControllers.values
-          .where((controller) => !controller.isDisconnected)
-          .map((controller) => controller.onBroadcastEventReceived)
-          .whereNotNull()
-          .map(
-            (onBroadcastEventReceived) => onBroadcastEventReceived(type, body),
-          ),
-    );
-  }
-
-  Future<void> startStreaming() async {
-    await webSocketChannel.ready;
-    subscription ??= webSocketChannel.stream.listen(
-      (message) async {
-        log("received: $message");
-        final responseJson = jsonDecode(message);
-        final response = StreamingResponse.fromJson(responseJson);
-        switch (response.type) {
-          case StreamingResponseType.channel:
-            final event = ChannelEvent.fromJson(response.body);
-            await onChannelEventReceived(event.id, event.type, event.body);
-            break;
-          case StreamingResponseType.noteUpdated:
-            final event = NoteUpdatedEvent.fromJson(response.body);
-            await onNoteUpdatedEventReceived(event.id, event.type, event.body);
-            break;
-          case StreamingResponseType.emojiAdded:
-          case StreamingResponseType.emojiUpdated:
-          case StreamingResponseType.emojiDeleted:
-          case StreamingResponseType.announcementCreated:
-            final event = BroadcastEvent.fromJson(responseJson);
-            await onBroadcastEventReceived(event.type, event.body);
-            break;
-        }
-      },
-      onError: (e, s) {
-        log("Error happen $e ");
-        log(s);
-        // 再呼び出し
-        restart();
-      },
-      onDone: () {
-        log("onDone Called;");
-        // 再呼び出し
-        restart();
-      },
-      cancelOnError: true,
-    );
-  }
-
-  SocketController connect({
-    String? id,
-    required Channel channel,
-    Future<void> Function(
-      ChannelEventType type,
-      dynamic response,
-    )? onChannelEventReceived,
-    Future<void> Function(
-      String id,
-      NoteUpdatedEventType type,
-      Map<String, dynamic> response,
-    )? onNoteUpdatedEventReceived,
-    final Future<void> Function(
-      BroadcastEventType type,
-      Map<String, dynamic> response,
-    )? onBroadcastEventReceived,
-    Map<String, dynamic>? parameters,
-  }) {
-    id ??= channel.name;
-    final controller = SocketController(
-      service: this,
-      id: id,
-      channel: channel,
-      onChannelEventReceived: onChannelEventReceived,
-      onNoteUpdatedEventReceived: onNoteUpdatedEventReceived,
-      onBroadcastEventReceived: onBroadcastEventReceived,
-      parameters: parameters,
-      onDisconnected: (id) async {
-        streamingChannelControllers.remove(id);
-      },
-      onConnected: (id, controller) async {
-        streamingChannelControllers[id] = controller;
-      },
-    );
-    controller.connect();
-    return controller;
-  }
-
-  Future<void> close() async {
+  Future<void> _reconnect({int retryCounts = 0}) async {
+    await _close();
     try {
-      streamingChannelControllers.clear();
-      if (webSocketChannel.closeCode == null) {
+      await _connectWebSocket();
+      for (final connection in _connections) {
+        sendRequest(StreamingRequestType.connect, connection);
+      }
+    } catch (e) {
+      if (retryCounts < maxRetryCounts) {
+        await _reconnect(retryCounts: retryCounts + 1);
+      } else {
+        rethrow;
+      }
+    }
+  }
+
+  Future<void> _close() async {
+    try {
+      final webSocketChannel = _webSocketChannel;
+      if (webSocketChannel != null && webSocketChannel.closeCode == null) {
         /*await*/ Future.wait([
-          subscription?.cancel() ?? Future.value(),
+          _subscription?.cancel() ?? Future.value(),
           webSocketChannel.sink.close(),
         ]);
       }
     } catch (e) {
-      log(e.toString());
+      print(e);
     } finally {
-      subscription = null;
+      _subscription = null;
       _webSocketChannel = null;
     }
   }
 
-  Future<void> restart() async {
-    await close();
-    await startStreaming();
+  void sendRequest(StreamingRequestType type, StreamingRequestBody body) {
+    final webSocketChannel = _webSocketChannel;
+    if (webSocketChannel == null) {
+      throw Exception("did not establish websocket but will be send requests.");
+    }
+
+    webSocketChannel.sink
+        .add(jsonEncode(StreamingRequest(type: type, body: body)));
+  }
+
+  Stream<StreamingResponse> addChannel(
+    Channel channel,
+    Map<String, dynamic>? parameters,
+    String id,
+  ) {
+    final body =
+        StreamingRequestBody(channel: channel, id: id, params: parameters);
+    sendRequest(StreamingRequestType.connect, body);
+    _connections.add(body);
+
+    return _controller.stream.where((e) {
+      return switch (e) {
+        StreamingChannelResponse(:final body) => body.id == id,
+        StreamingChannelNoteUpdatedResponse(:final body) => body.id == id,
+        _ => false,
+      };
+    }).cast();
+  }
+
+  Future<void> removeChannel(String id) async {
+    try {
+      sendRequest(
+        StreamingRequestType.disconnect,
+        StreamingRequestBody(id: id),
+      );
+    } catch (e) {
+      print("maybe already disconnected");
+      print(e.toString());
+    } finally {
+      _connections.removeWhere((e) => e.id == id);
+      if (_connections.isEmpty) {
+        await _close();
+      }
+    }
+  }
+
+  Future<void> subNote(String noteId) async {
+    sendRequest(
+      StreamingRequestType.subNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+  }
+
+  Future<void> unsubNote(String noteId) async {
+    sendRequest(
+      StreamingRequestType.unsubNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
   }
 }
