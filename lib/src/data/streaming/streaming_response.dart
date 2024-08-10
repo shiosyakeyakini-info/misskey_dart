@@ -44,25 +44,25 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required String id,
     @ChannelEventTypeJsonConverter() required ChannelEventType type,
     required Note body,
-  }) = NoteChannel;
+  }) = NoteChannelEvent;
 
   @FreezedUnionValue("statsLog")
   const factory ChannelStreamEvent.statsLog({
     required String id,
     required List<StatsLogResponse> body,
-  }) = StatsLog;
+  }) = StatsLogChannelEvent;
 
   @FreezedUnionValue("stats")
   const factory ChannelStreamEvent.stats({
     required String id,
     required StatsLogResponse body,
-  }) = Stats;
+  }) = StatsChannelEvent;
 
   @FreezedUnionValue("queueStats")
   const factory ChannelStreamEvent.queueStats({
     required String id,
     required List<QueueStatsLogResponse> body,
-  }) = QueueStats;
+  }) = QueueStatsChannelEvent;
 
   //TODO: queueとstatsって一緒？
 
@@ -76,31 +76,31 @@ sealed class NoteUpdateStreamEvent with _$NoteUpdateStreamEvent {
   const factory NoteUpdateStreamEvent.reacted({
     required String id,
     required TimelineReacted body,
-  }) = Reacted;
+  }) = ReactedChannelEvent;
 
   @FreezedUnionValue("unreacted")
   const factory NoteUpdateStreamEvent.unreacted({
     required String id,
     required TimelineReacted body,
-  }) = Unreacted;
+  }) = UnreactedChannelEvent;
 
   @FreezedUnionValue("deleted")
   const factory NoteUpdateStreamEvent.deleted({
     required String id,
     required DateTime deletedAt,
-  }) = _Deleted;
+  }) = _DeletedChannelEvent;
 
   @FreezedUnionValue("pollVoted")
   const factory NoteUpdateStreamEvent.pollVoted({
     required String id,
     required TimelineVoted voted,
-  }) = _PollVoted;
+  }) = _PollVotedChannelEvent;
 
   @FreezedUnionValue("updated")
   const factory NoteUpdateStreamEvent.updated({
     required String id,
     required NoteEdited edited,
-  }) = Updated;
+  }) = UpdatedChannelEvent;
 
   factory NoteUpdateStreamEvent.fromJson(Map<String, dynamic> json) =>
       _$NoteUpdateStreamEventFromJson(json);
@@ -111,7 +111,7 @@ sealed class BroadcastStreamEvent with _$BroadcastStreamEvent {
   const factory BroadcastStreamEvent.broadcast({
     @BroadcastEventTypeJsonConverter() required BroadcastEventType type,
     required Map<String, dynamic> body,
-  }) = Broadcast;
+  }) = BroadcastChannelEvent;
 
   factory BroadcastStreamEvent.fromJson(Map<String, dynamic> json) =>
       _$BroadcastStreamEventFromJson(json);

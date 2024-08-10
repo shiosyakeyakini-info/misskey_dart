@@ -84,14 +84,16 @@ Map<String, dynamic> _$$StreamingChannelEmojiDeletedResponseImplToJson(
       'type': instance.$type,
     };
 
-_$NoteChannelImpl _$$NoteChannelImplFromJson(Map<String, dynamic> json) =>
-    _$NoteChannelImpl(
+_$NoteChannelEventImpl _$$NoteChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NoteChannelEventImpl(
       id: json['id'] as String,
       type: $enumDecode(_$ChannelEventTypeEnumMap, json['type']),
       body: Note.fromJson(json['body'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$NoteChannelImplToJson(_$NoteChannelImpl instance) =>
+Map<String, dynamic> _$$NoteChannelEventImplToJson(
+        _$NoteChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$ChannelEventTypeEnumMap[instance.type]!,
@@ -132,8 +134,9 @@ const _$ChannelEventTypeEnumMap = {
   ChannelEventType.receiveFollowRequest: 'receiveFollowRequest',
 };
 
-_$StatsLogImpl _$$StatsLogImplFromJson(Map<String, dynamic> json) =>
-    _$StatsLogImpl(
+_$StatsLogChannelEventImpl _$$StatsLogChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StatsLogChannelEventImpl(
       id: json['id'] as String,
       body: (json['body'] as List<dynamic>)
           .map((e) => StatsLogResponse.fromJson(e as Map<String, dynamic>))
@@ -141,28 +144,33 @@ _$StatsLogImpl _$$StatsLogImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$StatsLogImplToJson(_$StatsLogImpl instance) =>
+Map<String, dynamic> _$$StatsLogChannelEventImplToJson(
+        _$StatsLogChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'body': instance.body.map((e) => e.toJson()).toList(),
       'type': instance.$type,
     };
 
-_$StatsImpl _$$StatsImplFromJson(Map<String, dynamic> json) => _$StatsImpl(
+_$StatsChannelEventImpl _$$StatsChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StatsChannelEventImpl(
       id: json['id'] as String,
       body: StatsLogResponse.fromJson(json['body'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$StatsImplToJson(_$StatsImpl instance) =>
+Map<String, dynamic> _$$StatsChannelEventImplToJson(
+        _$StatsChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'body': instance.body.toJson(),
       'type': instance.$type,
     };
 
-_$QueueStatsImpl _$$QueueStatsImplFromJson(Map<String, dynamic> json) =>
-    _$QueueStatsImpl(
+_$QueueStatsChannelEventImpl _$$QueueStatsChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$QueueStatsChannelEventImpl(
       id: json['id'] as String,
       body: (json['body'] as List<dynamic>)
           .map((e) => QueueStatsLogResponse.fromJson(e as Map<String, dynamic>))
@@ -170,90 +178,103 @@ _$QueueStatsImpl _$$QueueStatsImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$QueueStatsImplToJson(_$QueueStatsImpl instance) =>
+Map<String, dynamic> _$$QueueStatsChannelEventImplToJson(
+        _$QueueStatsChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'body': instance.body.map((e) => e.toJson()).toList(),
       'type': instance.$type,
     };
 
-_$ReactedImpl _$$ReactedImplFromJson(Map<String, dynamic> json) =>
-    _$ReactedImpl(
+_$ReactedChannelEventImpl _$$ReactedChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ReactedChannelEventImpl(
       id: json['id'] as String,
       body: TimelineReacted.fromJson(json['body'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$ReactedImplToJson(_$ReactedImpl instance) =>
+Map<String, dynamic> _$$ReactedChannelEventImplToJson(
+        _$ReactedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'body': instance.body.toJson(),
       'type': instance.$type,
     };
 
-_$UnreactedImpl _$$UnreactedImplFromJson(Map<String, dynamic> json) =>
-    _$UnreactedImpl(
+_$UnreactedChannelEventImpl _$$UnreactedChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UnreactedChannelEventImpl(
       id: json['id'] as String,
       body: TimelineReacted.fromJson(json['body'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$UnreactedImplToJson(_$UnreactedImpl instance) =>
+Map<String, dynamic> _$$UnreactedChannelEventImplToJson(
+        _$UnreactedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'body': instance.body.toJson(),
       'type': instance.$type,
     };
 
-_$DeletedImpl _$$DeletedImplFromJson(Map<String, dynamic> json) =>
-    _$DeletedImpl(
+_$DeletedChannelEventImpl _$$DeletedChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DeletedChannelEventImpl(
       id: json['id'] as String,
       deletedAt: DateTime.parse(json['deletedAt'] as String),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$DeletedImplToJson(_$DeletedImpl instance) =>
+Map<String, dynamic> _$$DeletedChannelEventImplToJson(
+        _$DeletedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'deletedAt': instance.deletedAt.toIso8601String(),
       'type': instance.$type,
     };
 
-_$PollVotedImpl _$$PollVotedImplFromJson(Map<String, dynamic> json) =>
-    _$PollVotedImpl(
+_$PollVotedChannelEventImpl _$$PollVotedChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PollVotedChannelEventImpl(
       id: json['id'] as String,
       voted: TimelineVoted.fromJson(json['voted'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$PollVotedImplToJson(_$PollVotedImpl instance) =>
+Map<String, dynamic> _$$PollVotedChannelEventImplToJson(
+        _$PollVotedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'voted': instance.voted.toJson(),
       'type': instance.$type,
     };
 
-_$UpdatedImpl _$$UpdatedImplFromJson(Map<String, dynamic> json) =>
-    _$UpdatedImpl(
+_$UpdatedChannelEventImpl _$$UpdatedChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UpdatedChannelEventImpl(
       id: json['id'] as String,
       edited: NoteEdited.fromJson(json['edited'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$UpdatedImplToJson(_$UpdatedImpl instance) =>
+Map<String, dynamic> _$$UpdatedChannelEventImplToJson(
+        _$UpdatedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'edited': instance.edited.toJson(),
       'type': instance.$type,
     };
 
-_$BroadcastImpl _$$BroadcastImplFromJson(Map<String, dynamic> json) =>
-    _$BroadcastImpl(
+_$BroadcastChannelEventImpl _$$BroadcastChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BroadcastChannelEventImpl(
       type: $enumDecode(_$BroadcastEventTypeEnumMap, json['type']),
       body: json['body'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$$BroadcastImplToJson(_$BroadcastImpl instance) =>
+Map<String, dynamic> _$$BroadcastChannelEventImplToJson(
+        _$BroadcastChannelEventImpl instance) =>
     <String, dynamic>{
       'type': _$BroadcastEventTypeEnumMap[instance.type]!,
       'body': instance.body,

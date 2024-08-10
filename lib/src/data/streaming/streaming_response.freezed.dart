@@ -1098,13 +1098,13 @@ abstract class StreamingChannelEmojiDeletedResponse
 ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
     case 'note':
-      return NoteChannel.fromJson(json);
+      return NoteChannelEvent.fromJson(json);
     case 'statsLog':
-      return StatsLog.fromJson(json);
+      return StatsLogChannelEvent.fromJson(json);
     case 'stats':
-      return Stats.fromJson(json);
+      return StatsChannelEvent.fromJson(json);
     case 'queueStats':
-      return QueueStats.fromJson(json);
+      return QueueStatsChannelEvent.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'type', 'ChannelStreamEvent',
@@ -1150,26 +1150,26 @@ mixin _$ChannelStreamEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NoteChannel value) note,
-    required TResult Function(StatsLog value) statsLog,
-    required TResult Function(Stats value) stats,
-    required TResult Function(QueueStats value) queueStats,
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(QueueStatsChannelEvent value) queueStats,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NoteChannel value)? note,
-    TResult? Function(StatsLog value)? statsLog,
-    TResult? Function(Stats value)? stats,
-    TResult? Function(QueueStats value)? queueStats,
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(QueueStatsChannelEvent value)? queueStats,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoteChannel value)? note,
-    TResult Function(StatsLog value)? statsLog,
-    TResult Function(Stats value)? stats,
-    TResult Function(QueueStats value)? queueStats,
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(QueueStatsChannelEvent value)? queueStats,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1213,11 +1213,11 @@ class _$ChannelStreamEventCopyWithImpl<$Res, $Val extends ChannelStreamEvent>
 }
 
 /// @nodoc
-abstract class _$$NoteChannelImplCopyWith<$Res>
+abstract class _$$NoteChannelEventImplCopyWith<$Res>
     implements $ChannelStreamEventCopyWith<$Res> {
-  factory _$$NoteChannelImplCopyWith(
-          _$NoteChannelImpl value, $Res Function(_$NoteChannelImpl) then) =
-      __$$NoteChannelImplCopyWithImpl<$Res>;
+  factory _$$NoteChannelEventImplCopyWith(_$NoteChannelEventImpl value,
+          $Res Function(_$NoteChannelEventImpl) then) =
+      __$$NoteChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1229,11 +1229,11 @@ abstract class _$$NoteChannelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NoteChannelImplCopyWithImpl<$Res>
-    extends _$ChannelStreamEventCopyWithImpl<$Res, _$NoteChannelImpl>
-    implements _$$NoteChannelImplCopyWith<$Res> {
-  __$$NoteChannelImplCopyWithImpl(
-      _$NoteChannelImpl _value, $Res Function(_$NoteChannelImpl) _then)
+class __$$NoteChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$NoteChannelEventImpl>
+    implements _$$NoteChannelEventImplCopyWith<$Res> {
+  __$$NoteChannelEventImplCopyWithImpl(_$NoteChannelEventImpl _value,
+      $Res Function(_$NoteChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1243,7 +1243,7 @@ class __$$NoteChannelImplCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$NoteChannelImpl(
+    return _then(_$NoteChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1270,14 +1270,14 @@ class __$$NoteChannelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NoteChannelImpl implements NoteChannel {
-  const _$NoteChannelImpl(
+class _$NoteChannelEventImpl implements NoteChannelEvent {
+  const _$NoteChannelEventImpl(
       {required this.id,
       @ChannelEventTypeJsonConverter() required this.type,
       required this.body});
 
-  factory _$NoteChannelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NoteChannelImplFromJson(json);
+  factory _$NoteChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -1296,7 +1296,7 @@ class _$NoteChannelImpl implements NoteChannel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NoteChannelImpl &&
+            other is _$NoteChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.body, body) || other.body == body));
@@ -1309,8 +1309,9 @@ class _$NoteChannelImpl implements NoteChannel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NoteChannelImplCopyWith<_$NoteChannelImpl> get copyWith =>
-      __$$NoteChannelImplCopyWithImpl<_$NoteChannelImpl>(this, _$identity);
+  _$$NoteChannelEventImplCopyWith<_$NoteChannelEventImpl> get copyWith =>
+      __$$NoteChannelEventImplCopyWithImpl<_$NoteChannelEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1359,10 +1360,10 @@ class _$NoteChannelImpl implements NoteChannel {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NoteChannel value) note,
-    required TResult Function(StatsLog value) statsLog,
-    required TResult Function(Stats value) stats,
-    required TResult Function(QueueStats value) queueStats,
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(QueueStatsChannelEvent value) queueStats,
   }) {
     return note(this);
   }
@@ -1370,10 +1371,10 @@ class _$NoteChannelImpl implements NoteChannel {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NoteChannel value)? note,
-    TResult? Function(StatsLog value)? statsLog,
-    TResult? Function(Stats value)? stats,
-    TResult? Function(QueueStats value)? queueStats,
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(QueueStatsChannelEvent value)? queueStats,
   }) {
     return note?.call(this);
   }
@@ -1381,10 +1382,10 @@ class _$NoteChannelImpl implements NoteChannel {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoteChannel value)? note,
-    TResult Function(StatsLog value)? statsLog,
-    TResult Function(Stats value)? stats,
-    TResult Function(QueueStats value)? queueStats,
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(QueueStatsChannelEvent value)? queueStats,
     required TResult orElse(),
   }) {
     if (note != null) {
@@ -1395,20 +1396,20 @@ class _$NoteChannelImpl implements NoteChannel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$NoteChannelImplToJson(
+    return _$$NoteChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class NoteChannel implements ChannelStreamEvent {
-  const factory NoteChannel(
+abstract class NoteChannelEvent implements ChannelStreamEvent {
+  const factory NoteChannelEvent(
       {required final String id,
       @ChannelEventTypeJsonConverter() required final ChannelEventType type,
-      required final Note body}) = _$NoteChannelImpl;
+      required final Note body}) = _$NoteChannelEventImpl;
 
-  factory NoteChannel.fromJson(Map<String, dynamic> json) =
-      _$NoteChannelImpl.fromJson;
+  factory NoteChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$NoteChannelEventImpl.fromJson;
 
   @override
   String get id;
@@ -1418,27 +1419,27 @@ abstract class NoteChannel implements ChannelStreamEvent {
   Note get body;
   @override
   @JsonKey(ignore: true)
-  _$$NoteChannelImplCopyWith<_$NoteChannelImpl> get copyWith =>
+  _$$NoteChannelEventImplCopyWith<_$NoteChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StatsLogImplCopyWith<$Res>
+abstract class _$$StatsLogChannelEventImplCopyWith<$Res>
     implements $ChannelStreamEventCopyWith<$Res> {
-  factory _$$StatsLogImplCopyWith(
-          _$StatsLogImpl value, $Res Function(_$StatsLogImpl) then) =
-      __$$StatsLogImplCopyWithImpl<$Res>;
+  factory _$$StatsLogChannelEventImplCopyWith(_$StatsLogChannelEventImpl value,
+          $Res Function(_$StatsLogChannelEventImpl) then) =
+      __$$StatsLogChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, List<StatsLogResponse> body});
 }
 
 /// @nodoc
-class __$$StatsLogImplCopyWithImpl<$Res>
-    extends _$ChannelStreamEventCopyWithImpl<$Res, _$StatsLogImpl>
-    implements _$$StatsLogImplCopyWith<$Res> {
-  __$$StatsLogImplCopyWithImpl(
-      _$StatsLogImpl _value, $Res Function(_$StatsLogImpl) _then)
+class __$$StatsLogChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$StatsLogChannelEventImpl>
+    implements _$$StatsLogChannelEventImplCopyWith<$Res> {
+  __$$StatsLogChannelEventImplCopyWithImpl(_$StatsLogChannelEventImpl _value,
+      $Res Function(_$StatsLogChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1447,7 +1448,7 @@ class __$$StatsLogImplCopyWithImpl<$Res>
     Object? id = null,
     Object? body = null,
   }) {
-    return _then(_$StatsLogImpl(
+    return _then(_$StatsLogChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1462,16 +1463,16 @@ class __$$StatsLogImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StatsLogImpl implements StatsLog {
-  const _$StatsLogImpl(
+class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
+  const _$StatsLogChannelEventImpl(
       {required this.id,
       required final List<StatsLogResponse> body,
       final String? $type})
       : _body = body,
         $type = $type ?? 'statsLog';
 
-  factory _$StatsLogImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StatsLogImplFromJson(json);
+  factory _$StatsLogChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsLogChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -1495,7 +1496,7 @@ class _$StatsLogImpl implements StatsLog {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StatsLogImpl &&
+            other is _$StatsLogChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
@@ -1508,8 +1509,10 @@ class _$StatsLogImpl implements StatsLog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StatsLogImplCopyWith<_$StatsLogImpl> get copyWith =>
-      __$$StatsLogImplCopyWithImpl<_$StatsLogImpl>(this, _$identity);
+  _$$StatsLogChannelEventImplCopyWith<_$StatsLogChannelEventImpl>
+      get copyWith =>
+          __$$StatsLogChannelEventImplCopyWithImpl<_$StatsLogChannelEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1558,10 +1561,10 @@ class _$StatsLogImpl implements StatsLog {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NoteChannel value) note,
-    required TResult Function(StatsLog value) statsLog,
-    required TResult Function(Stats value) stats,
-    required TResult Function(QueueStats value) queueStats,
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(QueueStatsChannelEvent value) queueStats,
   }) {
     return statsLog(this);
   }
@@ -1569,10 +1572,10 @@ class _$StatsLogImpl implements StatsLog {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NoteChannel value)? note,
-    TResult? Function(StatsLog value)? statsLog,
-    TResult? Function(Stats value)? stats,
-    TResult? Function(QueueStats value)? queueStats,
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(QueueStatsChannelEvent value)? queueStats,
   }) {
     return statsLog?.call(this);
   }
@@ -1580,10 +1583,10 @@ class _$StatsLogImpl implements StatsLog {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoteChannel value)? note,
-    TResult Function(StatsLog value)? statsLog,
-    TResult Function(Stats value)? stats,
-    TResult Function(QueueStats value)? queueStats,
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(QueueStatsChannelEvent value)? queueStats,
     required TResult orElse(),
   }) {
     if (statsLog != null) {
@@ -1594,19 +1597,19 @@ class _$StatsLogImpl implements StatsLog {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$StatsLogImplToJson(
+    return _$$StatsLogChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class StatsLog implements ChannelStreamEvent {
-  const factory StatsLog(
+abstract class StatsLogChannelEvent implements ChannelStreamEvent {
+  const factory StatsLogChannelEvent(
       {required final String id,
-      required final List<StatsLogResponse> body}) = _$StatsLogImpl;
+      required final List<StatsLogResponse> body}) = _$StatsLogChannelEventImpl;
 
-  factory StatsLog.fromJson(Map<String, dynamic> json) =
-      _$StatsLogImpl.fromJson;
+  factory StatsLogChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$StatsLogChannelEventImpl.fromJson;
 
   @override
   String get id;
@@ -1614,16 +1617,16 @@ abstract class StatsLog implements ChannelStreamEvent {
   List<StatsLogResponse> get body;
   @override
   @JsonKey(ignore: true)
-  _$$StatsLogImplCopyWith<_$StatsLogImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$StatsLogChannelEventImplCopyWith<_$StatsLogChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StatsImplCopyWith<$Res>
+abstract class _$$StatsChannelEventImplCopyWith<$Res>
     implements $ChannelStreamEventCopyWith<$Res> {
-  factory _$$StatsImplCopyWith(
-          _$StatsImpl value, $Res Function(_$StatsImpl) then) =
-      __$$StatsImplCopyWithImpl<$Res>;
+  factory _$$StatsChannelEventImplCopyWith(_$StatsChannelEventImpl value,
+          $Res Function(_$StatsChannelEventImpl) then) =
+      __$$StatsChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, StatsLogResponse body});
@@ -1632,11 +1635,11 @@ abstract class _$$StatsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$StatsImplCopyWithImpl<$Res>
-    extends _$ChannelStreamEventCopyWithImpl<$Res, _$StatsImpl>
-    implements _$$StatsImplCopyWith<$Res> {
-  __$$StatsImplCopyWithImpl(
-      _$StatsImpl _value, $Res Function(_$StatsImpl) _then)
+class __$$StatsChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$StatsChannelEventImpl>
+    implements _$$StatsChannelEventImplCopyWith<$Res> {
+  __$$StatsChannelEventImplCopyWithImpl(_$StatsChannelEventImpl _value,
+      $Res Function(_$StatsChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1645,7 +1648,7 @@ class __$$StatsImplCopyWithImpl<$Res>
     Object? id = null,
     Object? body = null,
   }) {
-    return _then(_$StatsImpl(
+    return _then(_$StatsChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1668,12 +1671,13 @@ class __$$StatsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StatsImpl implements Stats {
-  const _$StatsImpl({required this.id, required this.body, final String? $type})
+class _$StatsChannelEventImpl implements StatsChannelEvent {
+  const _$StatsChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
       : $type = $type ?? 'stats';
 
-  factory _$StatsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StatsImplFromJson(json);
+  factory _$StatsChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatsChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -1692,7 +1696,7 @@ class _$StatsImpl implements Stats {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StatsImpl &&
+            other is _$StatsChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.body, body) || other.body == body));
   }
@@ -1704,8 +1708,9 @@ class _$StatsImpl implements Stats {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StatsImplCopyWith<_$StatsImpl> get copyWith =>
-      __$$StatsImplCopyWithImpl<_$StatsImpl>(this, _$identity);
+  _$$StatsChannelEventImplCopyWith<_$StatsChannelEventImpl> get copyWith =>
+      __$$StatsChannelEventImplCopyWithImpl<_$StatsChannelEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1754,10 +1759,10 @@ class _$StatsImpl implements Stats {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NoteChannel value) note,
-    required TResult Function(StatsLog value) statsLog,
-    required TResult Function(Stats value) stats,
-    required TResult Function(QueueStats value) queueStats,
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(QueueStatsChannelEvent value) queueStats,
   }) {
     return stats(this);
   }
@@ -1765,10 +1770,10 @@ class _$StatsImpl implements Stats {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NoteChannel value)? note,
-    TResult? Function(StatsLog value)? statsLog,
-    TResult? Function(Stats value)? stats,
-    TResult? Function(QueueStats value)? queueStats,
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(QueueStatsChannelEvent value)? queueStats,
   }) {
     return stats?.call(this);
   }
@@ -1776,10 +1781,10 @@ class _$StatsImpl implements Stats {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoteChannel value)? note,
-    TResult Function(StatsLog value)? statsLog,
-    TResult Function(Stats value)? stats,
-    TResult Function(QueueStats value)? queueStats,
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(QueueStatsChannelEvent value)? queueStats,
     required TResult orElse(),
   }) {
     if (stats != null) {
@@ -1790,18 +1795,19 @@ class _$StatsImpl implements Stats {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$StatsImplToJson(
+    return _$$StatsChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class Stats implements ChannelStreamEvent {
-  const factory Stats(
+abstract class StatsChannelEvent implements ChannelStreamEvent {
+  const factory StatsChannelEvent(
       {required final String id,
-      required final StatsLogResponse body}) = _$StatsImpl;
+      required final StatsLogResponse body}) = _$StatsChannelEventImpl;
 
-  factory Stats.fromJson(Map<String, dynamic> json) = _$StatsImpl.fromJson;
+  factory StatsChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$StatsChannelEventImpl.fromJson;
 
   @override
   String get id;
@@ -1809,27 +1815,29 @@ abstract class Stats implements ChannelStreamEvent {
   StatsLogResponse get body;
   @override
   @JsonKey(ignore: true)
-  _$$StatsImplCopyWith<_$StatsImpl> get copyWith =>
+  _$$StatsChannelEventImplCopyWith<_$StatsChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$QueueStatsImplCopyWith<$Res>
+abstract class _$$QueueStatsChannelEventImplCopyWith<$Res>
     implements $ChannelStreamEventCopyWith<$Res> {
-  factory _$$QueueStatsImplCopyWith(
-          _$QueueStatsImpl value, $Res Function(_$QueueStatsImpl) then) =
-      __$$QueueStatsImplCopyWithImpl<$Res>;
+  factory _$$QueueStatsChannelEventImplCopyWith(
+          _$QueueStatsChannelEventImpl value,
+          $Res Function(_$QueueStatsChannelEventImpl) then) =
+      __$$QueueStatsChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, List<QueueStatsLogResponse> body});
 }
 
 /// @nodoc
-class __$$QueueStatsImplCopyWithImpl<$Res>
-    extends _$ChannelStreamEventCopyWithImpl<$Res, _$QueueStatsImpl>
-    implements _$$QueueStatsImplCopyWith<$Res> {
-  __$$QueueStatsImplCopyWithImpl(
-      _$QueueStatsImpl _value, $Res Function(_$QueueStatsImpl) _then)
+class __$$QueueStatsChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$QueueStatsChannelEventImpl>
+    implements _$$QueueStatsChannelEventImplCopyWith<$Res> {
+  __$$QueueStatsChannelEventImplCopyWithImpl(
+      _$QueueStatsChannelEventImpl _value,
+      $Res Function(_$QueueStatsChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1838,7 +1846,7 @@ class __$$QueueStatsImplCopyWithImpl<$Res>
     Object? id = null,
     Object? body = null,
   }) {
-    return _then(_$QueueStatsImpl(
+    return _then(_$QueueStatsChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1853,16 +1861,16 @@ class __$$QueueStatsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$QueueStatsImpl implements QueueStats {
-  const _$QueueStatsImpl(
+class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
+  const _$QueueStatsChannelEventImpl(
       {required this.id,
       required final List<QueueStatsLogResponse> body,
       final String? $type})
       : _body = body,
         $type = $type ?? 'queueStats';
 
-  factory _$QueueStatsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QueueStatsImplFromJson(json);
+  factory _$QueueStatsChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QueueStatsChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -1886,7 +1894,7 @@ class _$QueueStatsImpl implements QueueStats {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QueueStatsImpl &&
+            other is _$QueueStatsChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
@@ -1899,8 +1907,9 @@ class _$QueueStatsImpl implements QueueStats {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QueueStatsImplCopyWith<_$QueueStatsImpl> get copyWith =>
-      __$$QueueStatsImplCopyWithImpl<_$QueueStatsImpl>(this, _$identity);
+  _$$QueueStatsChannelEventImplCopyWith<_$QueueStatsChannelEventImpl>
+      get copyWith => __$$QueueStatsChannelEventImplCopyWithImpl<
+          _$QueueStatsChannelEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1949,10 +1958,10 @@ class _$QueueStatsImpl implements QueueStats {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NoteChannel value) note,
-    required TResult Function(StatsLog value) statsLog,
-    required TResult Function(Stats value) stats,
-    required TResult Function(QueueStats value) queueStats,
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(QueueStatsChannelEvent value) queueStats,
   }) {
     return queueStats(this);
   }
@@ -1960,10 +1969,10 @@ class _$QueueStatsImpl implements QueueStats {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NoteChannel value)? note,
-    TResult? Function(StatsLog value)? statsLog,
-    TResult? Function(Stats value)? stats,
-    TResult? Function(QueueStats value)? queueStats,
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(QueueStatsChannelEvent value)? queueStats,
   }) {
     return queueStats?.call(this);
   }
@@ -1971,10 +1980,10 @@ class _$QueueStatsImpl implements QueueStats {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NoteChannel value)? note,
-    TResult Function(StatsLog value)? statsLog,
-    TResult Function(Stats value)? stats,
-    TResult Function(QueueStats value)? queueStats,
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(QueueStatsChannelEvent value)? queueStats,
     required TResult orElse(),
   }) {
     if (queueStats != null) {
@@ -1985,19 +1994,20 @@ class _$QueueStatsImpl implements QueueStats {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$QueueStatsImplToJson(
+    return _$$QueueStatsChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class QueueStats implements ChannelStreamEvent {
-  const factory QueueStats(
-      {required final String id,
-      required final List<QueueStatsLogResponse> body}) = _$QueueStatsImpl;
+abstract class QueueStatsChannelEvent implements ChannelStreamEvent {
+  const factory QueueStatsChannelEvent(
+          {required final String id,
+          required final List<QueueStatsLogResponse> body}) =
+      _$QueueStatsChannelEventImpl;
 
-  factory QueueStats.fromJson(Map<String, dynamic> json) =
-      _$QueueStatsImpl.fromJson;
+  factory QueueStatsChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$QueueStatsChannelEventImpl.fromJson;
 
   @override
   String get id;
@@ -2005,23 +2015,23 @@ abstract class QueueStats implements ChannelStreamEvent {
   List<QueueStatsLogResponse> get body;
   @override
   @JsonKey(ignore: true)
-  _$$QueueStatsImplCopyWith<_$QueueStatsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QueueStatsChannelEventImplCopyWith<_$QueueStatsChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 NoteUpdateStreamEvent _$NoteUpdateStreamEventFromJson(
     Map<String, dynamic> json) {
   switch (json['type']) {
     case 'reacted':
-      return Reacted.fromJson(json);
+      return ReactedChannelEvent.fromJson(json);
     case 'unreacted':
-      return Unreacted.fromJson(json);
+      return UnreactedChannelEvent.fromJson(json);
     case 'deleted':
-      return _Deleted.fromJson(json);
+      return _DeletedChannelEvent.fromJson(json);
     case 'pollVoted':
-      return _PollVoted.fromJson(json);
+      return _PollVotedChannelEvent.fromJson(json);
     case 'updated':
-      return Updated.fromJson(json);
+      return UpdatedChannelEvent.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'type', 'NoteUpdateStreamEvent',
@@ -2062,29 +2072,29 @@ mixin _$NoteUpdateStreamEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Reacted value) reacted,
-    required TResult Function(Unreacted value) unreacted,
-    required TResult Function(_Deleted value) deleted,
-    required TResult Function(_PollVoted value) pollVoted,
-    required TResult Function(Updated value) updated,
+    required TResult Function(ReactedChannelEvent value) reacted,
+    required TResult Function(UnreactedChannelEvent value) unreacted,
+    required TResult Function(_DeletedChannelEvent value) deleted,
+    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(UpdatedChannelEvent value) updated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Reacted value)? reacted,
-    TResult? Function(Unreacted value)? unreacted,
-    TResult? Function(_Deleted value)? deleted,
-    TResult? Function(_PollVoted value)? pollVoted,
-    TResult? Function(Updated value)? updated,
+    TResult? Function(ReactedChannelEvent value)? reacted,
+    TResult? Function(UnreactedChannelEvent value)? unreacted,
+    TResult? Function(_DeletedChannelEvent value)? deleted,
+    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(UpdatedChannelEvent value)? updated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Reacted value)? reacted,
-    TResult Function(Unreacted value)? unreacted,
-    TResult Function(_Deleted value)? deleted,
-    TResult Function(_PollVoted value)? pollVoted,
-    TResult Function(Updated value)? updated,
+    TResult Function(ReactedChannelEvent value)? reacted,
+    TResult Function(UnreactedChannelEvent value)? unreacted,
+    TResult Function(_DeletedChannelEvent value)? deleted,
+    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2129,11 +2139,11 @@ class _$NoteUpdateStreamEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ReactedImplCopyWith<$Res>
+abstract class _$$ReactedChannelEventImplCopyWith<$Res>
     implements $NoteUpdateStreamEventCopyWith<$Res> {
-  factory _$$ReactedImplCopyWith(
-          _$ReactedImpl value, $Res Function(_$ReactedImpl) then) =
-      __$$ReactedImplCopyWithImpl<$Res>;
+  factory _$$ReactedChannelEventImplCopyWith(_$ReactedChannelEventImpl value,
+          $Res Function(_$ReactedChannelEventImpl) then) =
+      __$$ReactedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, TimelineReacted body});
@@ -2142,11 +2152,11 @@ abstract class _$$ReactedImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReactedImplCopyWithImpl<$Res>
-    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$ReactedImpl>
-    implements _$$ReactedImplCopyWith<$Res> {
-  __$$ReactedImplCopyWithImpl(
-      _$ReactedImpl _value, $Res Function(_$ReactedImpl) _then)
+class __$$ReactedChannelEventImplCopyWithImpl<$Res>
+    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$ReactedChannelEventImpl>
+    implements _$$ReactedChannelEventImplCopyWith<$Res> {
+  __$$ReactedChannelEventImplCopyWithImpl(_$ReactedChannelEventImpl _value,
+      $Res Function(_$ReactedChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2155,7 +2165,7 @@ class __$$ReactedImplCopyWithImpl<$Res>
     Object? id = null,
     Object? body = null,
   }) {
-    return _then(_$ReactedImpl(
+    return _then(_$ReactedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2178,13 +2188,13 @@ class __$$ReactedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ReactedImpl implements Reacted {
-  const _$ReactedImpl(
+class _$ReactedChannelEventImpl implements ReactedChannelEvent {
+  const _$ReactedChannelEventImpl(
       {required this.id, required this.body, final String? $type})
       : $type = $type ?? 'reacted';
 
-  factory _$ReactedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReactedImplFromJson(json);
+  factory _$ReactedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReactedChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -2203,7 +2213,7 @@ class _$ReactedImpl implements Reacted {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReactedImpl &&
+            other is _$ReactedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.body, body) || other.body == body));
   }
@@ -2215,8 +2225,9 @@ class _$ReactedImpl implements Reacted {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReactedImplCopyWith<_$ReactedImpl> get copyWith =>
-      __$$ReactedImplCopyWithImpl<_$ReactedImpl>(this, _$identity);
+  _$$ReactedChannelEventImplCopyWith<_$ReactedChannelEventImpl> get copyWith =>
+      __$$ReactedChannelEventImplCopyWithImpl<_$ReactedChannelEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2261,11 +2272,11 @@ class _$ReactedImpl implements Reacted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Reacted value) reacted,
-    required TResult Function(Unreacted value) unreacted,
-    required TResult Function(_Deleted value) deleted,
-    required TResult Function(_PollVoted value) pollVoted,
-    required TResult Function(Updated value) updated,
+    required TResult Function(ReactedChannelEvent value) reacted,
+    required TResult Function(UnreactedChannelEvent value) unreacted,
+    required TResult Function(_DeletedChannelEvent value) deleted,
+    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return reacted(this);
   }
@@ -2273,11 +2284,11 @@ class _$ReactedImpl implements Reacted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Reacted value)? reacted,
-    TResult? Function(Unreacted value)? unreacted,
-    TResult? Function(_Deleted value)? deleted,
-    TResult? Function(_PollVoted value)? pollVoted,
-    TResult? Function(Updated value)? updated,
+    TResult? Function(ReactedChannelEvent value)? reacted,
+    TResult? Function(UnreactedChannelEvent value)? unreacted,
+    TResult? Function(_DeletedChannelEvent value)? deleted,
+    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return reacted?.call(this);
   }
@@ -2285,11 +2296,11 @@ class _$ReactedImpl implements Reacted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Reacted value)? reacted,
-    TResult Function(Unreacted value)? unreacted,
-    TResult Function(_Deleted value)? deleted,
-    TResult Function(_PollVoted value)? pollVoted,
-    TResult Function(Updated value)? updated,
+    TResult Function(ReactedChannelEvent value)? reacted,
+    TResult Function(UnreactedChannelEvent value)? unreacted,
+    TResult Function(_DeletedChannelEvent value)? deleted,
+    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
     if (reacted != null) {
@@ -2300,34 +2311,36 @@ class _$ReactedImpl implements Reacted {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ReactedImplToJson(
+    return _$$ReactedChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class Reacted implements NoteUpdateStreamEvent {
-  const factory Reacted(
+abstract class ReactedChannelEvent implements NoteUpdateStreamEvent {
+  const factory ReactedChannelEvent(
       {required final String id,
-      required final TimelineReacted body}) = _$ReactedImpl;
+      required final TimelineReacted body}) = _$ReactedChannelEventImpl;
 
-  factory Reacted.fromJson(Map<String, dynamic> json) = _$ReactedImpl.fromJson;
+  factory ReactedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ReactedChannelEventImpl.fromJson;
 
   @override
   String get id;
   TimelineReacted get body;
   @override
   @JsonKey(ignore: true)
-  _$$ReactedImplCopyWith<_$ReactedImpl> get copyWith =>
+  _$$ReactedChannelEventImplCopyWith<_$ReactedChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UnreactedImplCopyWith<$Res>
+abstract class _$$UnreactedChannelEventImplCopyWith<$Res>
     implements $NoteUpdateStreamEventCopyWith<$Res> {
-  factory _$$UnreactedImplCopyWith(
-          _$UnreactedImpl value, $Res Function(_$UnreactedImpl) then) =
-      __$$UnreactedImplCopyWithImpl<$Res>;
+  factory _$$UnreactedChannelEventImplCopyWith(
+          _$UnreactedChannelEventImpl value,
+          $Res Function(_$UnreactedChannelEventImpl) then) =
+      __$$UnreactedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, TimelineReacted body});
@@ -2336,11 +2349,12 @@ abstract class _$$UnreactedImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UnreactedImplCopyWithImpl<$Res>
-    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$UnreactedImpl>
-    implements _$$UnreactedImplCopyWith<$Res> {
-  __$$UnreactedImplCopyWithImpl(
-      _$UnreactedImpl _value, $Res Function(_$UnreactedImpl) _then)
+class __$$UnreactedChannelEventImplCopyWithImpl<$Res>
+    extends _$NoteUpdateStreamEventCopyWithImpl<$Res,
+        _$UnreactedChannelEventImpl>
+    implements _$$UnreactedChannelEventImplCopyWith<$Res> {
+  __$$UnreactedChannelEventImplCopyWithImpl(_$UnreactedChannelEventImpl _value,
+      $Res Function(_$UnreactedChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2349,7 +2363,7 @@ class __$$UnreactedImplCopyWithImpl<$Res>
     Object? id = null,
     Object? body = null,
   }) {
-    return _then(_$UnreactedImpl(
+    return _then(_$UnreactedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2372,13 +2386,13 @@ class __$$UnreactedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UnreactedImpl implements Unreacted {
-  const _$UnreactedImpl(
+class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
+  const _$UnreactedChannelEventImpl(
       {required this.id, required this.body, final String? $type})
       : $type = $type ?? 'unreacted';
 
-  factory _$UnreactedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UnreactedImplFromJson(json);
+  factory _$UnreactedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnreactedChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -2397,7 +2411,7 @@ class _$UnreactedImpl implements Unreacted {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UnreactedImpl &&
+            other is _$UnreactedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.body, body) || other.body == body));
   }
@@ -2409,8 +2423,9 @@ class _$UnreactedImpl implements Unreacted {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UnreactedImplCopyWith<_$UnreactedImpl> get copyWith =>
-      __$$UnreactedImplCopyWithImpl<_$UnreactedImpl>(this, _$identity);
+  _$$UnreactedChannelEventImplCopyWith<_$UnreactedChannelEventImpl>
+      get copyWith => __$$UnreactedChannelEventImplCopyWithImpl<
+          _$UnreactedChannelEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2455,11 +2470,11 @@ class _$UnreactedImpl implements Unreacted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Reacted value) reacted,
-    required TResult Function(Unreacted value) unreacted,
-    required TResult Function(_Deleted value) deleted,
-    required TResult Function(_PollVoted value) pollVoted,
-    required TResult Function(Updated value) updated,
+    required TResult Function(ReactedChannelEvent value) reacted,
+    required TResult Function(UnreactedChannelEvent value) unreacted,
+    required TResult Function(_DeletedChannelEvent value) deleted,
+    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return unreacted(this);
   }
@@ -2467,11 +2482,11 @@ class _$UnreactedImpl implements Unreacted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Reacted value)? reacted,
-    TResult? Function(Unreacted value)? unreacted,
-    TResult? Function(_Deleted value)? deleted,
-    TResult? Function(_PollVoted value)? pollVoted,
-    TResult? Function(Updated value)? updated,
+    TResult? Function(ReactedChannelEvent value)? reacted,
+    TResult? Function(UnreactedChannelEvent value)? unreacted,
+    TResult? Function(_DeletedChannelEvent value)? deleted,
+    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return unreacted?.call(this);
   }
@@ -2479,11 +2494,11 @@ class _$UnreactedImpl implements Unreacted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Reacted value)? reacted,
-    TResult Function(Unreacted value)? unreacted,
-    TResult Function(_Deleted value)? deleted,
-    TResult Function(_PollVoted value)? pollVoted,
-    TResult Function(Updated value)? updated,
+    TResult Function(ReactedChannelEvent value)? reacted,
+    TResult Function(UnreactedChannelEvent value)? unreacted,
+    TResult Function(_DeletedChannelEvent value)? deleted,
+    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
     if (unreacted != null) {
@@ -2494,46 +2509,46 @@ class _$UnreactedImpl implements Unreacted {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UnreactedImplToJson(
+    return _$$UnreactedChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class Unreacted implements NoteUpdateStreamEvent {
-  const factory Unreacted(
+abstract class UnreactedChannelEvent implements NoteUpdateStreamEvent {
+  const factory UnreactedChannelEvent(
       {required final String id,
-      required final TimelineReacted body}) = _$UnreactedImpl;
+      required final TimelineReacted body}) = _$UnreactedChannelEventImpl;
 
-  factory Unreacted.fromJson(Map<String, dynamic> json) =
-      _$UnreactedImpl.fromJson;
+  factory UnreactedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UnreactedChannelEventImpl.fromJson;
 
   @override
   String get id;
   TimelineReacted get body;
   @override
   @JsonKey(ignore: true)
-  _$$UnreactedImplCopyWith<_$UnreactedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UnreactedChannelEventImplCopyWith<_$UnreactedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeletedImplCopyWith<$Res>
+abstract class _$$DeletedChannelEventImplCopyWith<$Res>
     implements $NoteUpdateStreamEventCopyWith<$Res> {
-  factory _$$DeletedImplCopyWith(
-          _$DeletedImpl value, $Res Function(_$DeletedImpl) then) =
-      __$$DeletedImplCopyWithImpl<$Res>;
+  factory _$$DeletedChannelEventImplCopyWith(_$DeletedChannelEventImpl value,
+          $Res Function(_$DeletedChannelEventImpl) then) =
+      __$$DeletedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, DateTime deletedAt});
 }
 
 /// @nodoc
-class __$$DeletedImplCopyWithImpl<$Res>
-    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$DeletedImpl>
-    implements _$$DeletedImplCopyWith<$Res> {
-  __$$DeletedImplCopyWithImpl(
-      _$DeletedImpl _value, $Res Function(_$DeletedImpl) _then)
+class __$$DeletedChannelEventImplCopyWithImpl<$Res>
+    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$DeletedChannelEventImpl>
+    implements _$$DeletedChannelEventImplCopyWith<$Res> {
+  __$$DeletedChannelEventImplCopyWithImpl(_$DeletedChannelEventImpl _value,
+      $Res Function(_$DeletedChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2542,7 +2557,7 @@ class __$$DeletedImplCopyWithImpl<$Res>
     Object? id = null,
     Object? deletedAt = null,
   }) {
-    return _then(_$DeletedImpl(
+    return _then(_$DeletedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2557,13 +2572,13 @@ class __$$DeletedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DeletedImpl implements _Deleted {
-  const _$DeletedImpl(
+class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
+  const _$DeletedChannelEventImpl(
       {required this.id, required this.deletedAt, final String? $type})
       : $type = $type ?? 'deleted';
 
-  factory _$DeletedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeletedImplFromJson(json);
+  factory _$DeletedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DeletedChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -2582,7 +2597,7 @@ class _$DeletedImpl implements _Deleted {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeletedImpl &&
+            other is _$DeletedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.deletedAt, deletedAt) ||
                 other.deletedAt == deletedAt));
@@ -2595,8 +2610,9 @@ class _$DeletedImpl implements _Deleted {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeletedImplCopyWith<_$DeletedImpl> get copyWith =>
-      __$$DeletedImplCopyWithImpl<_$DeletedImpl>(this, _$identity);
+  _$$DeletedChannelEventImplCopyWith<_$DeletedChannelEventImpl> get copyWith =>
+      __$$DeletedChannelEventImplCopyWithImpl<_$DeletedChannelEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2641,11 +2657,11 @@ class _$DeletedImpl implements _Deleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Reacted value) reacted,
-    required TResult Function(Unreacted value) unreacted,
-    required TResult Function(_Deleted value) deleted,
-    required TResult Function(_PollVoted value) pollVoted,
-    required TResult Function(Updated value) updated,
+    required TResult Function(ReactedChannelEvent value) reacted,
+    required TResult Function(UnreactedChannelEvent value) unreacted,
+    required TResult Function(_DeletedChannelEvent value) deleted,
+    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return deleted(this);
   }
@@ -2653,11 +2669,11 @@ class _$DeletedImpl implements _Deleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Reacted value)? reacted,
-    TResult? Function(Unreacted value)? unreacted,
-    TResult? Function(_Deleted value)? deleted,
-    TResult? Function(_PollVoted value)? pollVoted,
-    TResult? Function(Updated value)? updated,
+    TResult? Function(ReactedChannelEvent value)? reacted,
+    TResult? Function(UnreactedChannelEvent value)? unreacted,
+    TResult? Function(_DeletedChannelEvent value)? deleted,
+    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return deleted?.call(this);
   }
@@ -2665,11 +2681,11 @@ class _$DeletedImpl implements _Deleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Reacted value)? reacted,
-    TResult Function(Unreacted value)? unreacted,
-    TResult Function(_Deleted value)? deleted,
-    TResult Function(_PollVoted value)? pollVoted,
-    TResult Function(Updated value)? updated,
+    TResult Function(ReactedChannelEvent value)? reacted,
+    TResult Function(UnreactedChannelEvent value)? unreacted,
+    TResult Function(_DeletedChannelEvent value)? deleted,
+    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
     if (deleted != null) {
@@ -2680,34 +2696,36 @@ class _$DeletedImpl implements _Deleted {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DeletedImplToJson(
+    return _$$DeletedChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class _Deleted implements NoteUpdateStreamEvent {
-  const factory _Deleted(
+abstract class _DeletedChannelEvent implements NoteUpdateStreamEvent {
+  const factory _DeletedChannelEvent(
       {required final String id,
-      required final DateTime deletedAt}) = _$DeletedImpl;
+      required final DateTime deletedAt}) = _$DeletedChannelEventImpl;
 
-  factory _Deleted.fromJson(Map<String, dynamic> json) = _$DeletedImpl.fromJson;
+  factory _DeletedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$DeletedChannelEventImpl.fromJson;
 
   @override
   String get id;
   DateTime get deletedAt;
   @override
   @JsonKey(ignore: true)
-  _$$DeletedImplCopyWith<_$DeletedImpl> get copyWith =>
+  _$$DeletedChannelEventImplCopyWith<_$DeletedChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PollVotedImplCopyWith<$Res>
+abstract class _$$PollVotedChannelEventImplCopyWith<$Res>
     implements $NoteUpdateStreamEventCopyWith<$Res> {
-  factory _$$PollVotedImplCopyWith(
-          _$PollVotedImpl value, $Res Function(_$PollVotedImpl) then) =
-      __$$PollVotedImplCopyWithImpl<$Res>;
+  factory _$$PollVotedChannelEventImplCopyWith(
+          _$PollVotedChannelEventImpl value,
+          $Res Function(_$PollVotedChannelEventImpl) then) =
+      __$$PollVotedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, TimelineVoted voted});
@@ -2716,11 +2734,12 @@ abstract class _$$PollVotedImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PollVotedImplCopyWithImpl<$Res>
-    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$PollVotedImpl>
-    implements _$$PollVotedImplCopyWith<$Res> {
-  __$$PollVotedImplCopyWithImpl(
-      _$PollVotedImpl _value, $Res Function(_$PollVotedImpl) _then)
+class __$$PollVotedChannelEventImplCopyWithImpl<$Res>
+    extends _$NoteUpdateStreamEventCopyWithImpl<$Res,
+        _$PollVotedChannelEventImpl>
+    implements _$$PollVotedChannelEventImplCopyWith<$Res> {
+  __$$PollVotedChannelEventImplCopyWithImpl(_$PollVotedChannelEventImpl _value,
+      $Res Function(_$PollVotedChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2729,7 +2748,7 @@ class __$$PollVotedImplCopyWithImpl<$Res>
     Object? id = null,
     Object? voted = null,
   }) {
-    return _then(_$PollVotedImpl(
+    return _then(_$PollVotedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2752,13 +2771,13 @@ class __$$PollVotedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PollVotedImpl implements _PollVoted {
-  const _$PollVotedImpl(
+class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
+  const _$PollVotedChannelEventImpl(
       {required this.id, required this.voted, final String? $type})
       : $type = $type ?? 'pollVoted';
 
-  factory _$PollVotedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PollVotedImplFromJson(json);
+  factory _$PollVotedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PollVotedChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -2777,7 +2796,7 @@ class _$PollVotedImpl implements _PollVoted {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PollVotedImpl &&
+            other is _$PollVotedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.voted, voted) || other.voted == voted));
   }
@@ -2789,8 +2808,9 @@ class _$PollVotedImpl implements _PollVoted {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PollVotedImplCopyWith<_$PollVotedImpl> get copyWith =>
-      __$$PollVotedImplCopyWithImpl<_$PollVotedImpl>(this, _$identity);
+  _$$PollVotedChannelEventImplCopyWith<_$PollVotedChannelEventImpl>
+      get copyWith => __$$PollVotedChannelEventImplCopyWithImpl<
+          _$PollVotedChannelEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2835,11 +2855,11 @@ class _$PollVotedImpl implements _PollVoted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Reacted value) reacted,
-    required TResult Function(Unreacted value) unreacted,
-    required TResult Function(_Deleted value) deleted,
-    required TResult Function(_PollVoted value) pollVoted,
-    required TResult Function(Updated value) updated,
+    required TResult Function(ReactedChannelEvent value) reacted,
+    required TResult Function(UnreactedChannelEvent value) unreacted,
+    required TResult Function(_DeletedChannelEvent value) deleted,
+    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return pollVoted(this);
   }
@@ -2847,11 +2867,11 @@ class _$PollVotedImpl implements _PollVoted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Reacted value)? reacted,
-    TResult? Function(Unreacted value)? unreacted,
-    TResult? Function(_Deleted value)? deleted,
-    TResult? Function(_PollVoted value)? pollVoted,
-    TResult? Function(Updated value)? updated,
+    TResult? Function(ReactedChannelEvent value)? reacted,
+    TResult? Function(UnreactedChannelEvent value)? unreacted,
+    TResult? Function(_DeletedChannelEvent value)? deleted,
+    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return pollVoted?.call(this);
   }
@@ -2859,11 +2879,11 @@ class _$PollVotedImpl implements _PollVoted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Reacted value)? reacted,
-    TResult Function(Unreacted value)? unreacted,
-    TResult Function(_Deleted value)? deleted,
-    TResult Function(_PollVoted value)? pollVoted,
-    TResult Function(Updated value)? updated,
+    TResult Function(ReactedChannelEvent value)? reacted,
+    TResult Function(UnreactedChannelEvent value)? unreacted,
+    TResult Function(_DeletedChannelEvent value)? deleted,
+    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
     if (pollVoted != null) {
@@ -2874,35 +2894,35 @@ class _$PollVotedImpl implements _PollVoted {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PollVotedImplToJson(
+    return _$$PollVotedChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class _PollVoted implements NoteUpdateStreamEvent {
-  const factory _PollVoted(
+abstract class _PollVotedChannelEvent implements NoteUpdateStreamEvent {
+  const factory _PollVotedChannelEvent(
       {required final String id,
-      required final TimelineVoted voted}) = _$PollVotedImpl;
+      required final TimelineVoted voted}) = _$PollVotedChannelEventImpl;
 
-  factory _PollVoted.fromJson(Map<String, dynamic> json) =
-      _$PollVotedImpl.fromJson;
+  factory _PollVotedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$PollVotedChannelEventImpl.fromJson;
 
   @override
   String get id;
   TimelineVoted get voted;
   @override
   @JsonKey(ignore: true)
-  _$$PollVotedImplCopyWith<_$PollVotedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PollVotedChannelEventImplCopyWith<_$PollVotedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdatedImplCopyWith<$Res>
+abstract class _$$UpdatedChannelEventImplCopyWith<$Res>
     implements $NoteUpdateStreamEventCopyWith<$Res> {
-  factory _$$UpdatedImplCopyWith(
-          _$UpdatedImpl value, $Res Function(_$UpdatedImpl) then) =
-      __$$UpdatedImplCopyWithImpl<$Res>;
+  factory _$$UpdatedChannelEventImplCopyWith(_$UpdatedChannelEventImpl value,
+          $Res Function(_$UpdatedChannelEventImpl) then) =
+      __$$UpdatedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, NoteEdited edited});
@@ -2911,11 +2931,11 @@ abstract class _$$UpdatedImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UpdatedImplCopyWithImpl<$Res>
-    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$UpdatedImpl>
-    implements _$$UpdatedImplCopyWith<$Res> {
-  __$$UpdatedImplCopyWithImpl(
-      _$UpdatedImpl _value, $Res Function(_$UpdatedImpl) _then)
+class __$$UpdatedChannelEventImplCopyWithImpl<$Res>
+    extends _$NoteUpdateStreamEventCopyWithImpl<$Res, _$UpdatedChannelEventImpl>
+    implements _$$UpdatedChannelEventImplCopyWith<$Res> {
+  __$$UpdatedChannelEventImplCopyWithImpl(_$UpdatedChannelEventImpl _value,
+      $Res Function(_$UpdatedChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2924,7 +2944,7 @@ class __$$UpdatedImplCopyWithImpl<$Res>
     Object? id = null,
     Object? edited = null,
   }) {
-    return _then(_$UpdatedImpl(
+    return _then(_$UpdatedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2947,13 +2967,13 @@ class __$$UpdatedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdatedImpl implements Updated {
-  const _$UpdatedImpl(
+class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
+  const _$UpdatedChannelEventImpl(
       {required this.id, required this.edited, final String? $type})
       : $type = $type ?? 'updated';
 
-  factory _$UpdatedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdatedImplFromJson(json);
+  factory _$UpdatedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdatedChannelEventImplFromJson(json);
 
   @override
   final String id;
@@ -2972,7 +2992,7 @@ class _$UpdatedImpl implements Updated {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatedImpl &&
+            other is _$UpdatedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.edited, edited) || other.edited == edited));
   }
@@ -2984,8 +3004,9 @@ class _$UpdatedImpl implements Updated {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdatedImplCopyWith<_$UpdatedImpl> get copyWith =>
-      __$$UpdatedImplCopyWithImpl<_$UpdatedImpl>(this, _$identity);
+  _$$UpdatedChannelEventImplCopyWith<_$UpdatedChannelEventImpl> get copyWith =>
+      __$$UpdatedChannelEventImplCopyWithImpl<_$UpdatedChannelEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3030,11 +3051,11 @@ class _$UpdatedImpl implements Updated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Reacted value) reacted,
-    required TResult Function(Unreacted value) unreacted,
-    required TResult Function(_Deleted value) deleted,
-    required TResult Function(_PollVoted value) pollVoted,
-    required TResult Function(Updated value) updated,
+    required TResult Function(ReactedChannelEvent value) reacted,
+    required TResult Function(UnreactedChannelEvent value) unreacted,
+    required TResult Function(_DeletedChannelEvent value) deleted,
+    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return updated(this);
   }
@@ -3042,11 +3063,11 @@ class _$UpdatedImpl implements Updated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Reacted value)? reacted,
-    TResult? Function(Unreacted value)? unreacted,
-    TResult? Function(_Deleted value)? deleted,
-    TResult? Function(_PollVoted value)? pollVoted,
-    TResult? Function(Updated value)? updated,
+    TResult? Function(ReactedChannelEvent value)? reacted,
+    TResult? Function(UnreactedChannelEvent value)? unreacted,
+    TResult? Function(_DeletedChannelEvent value)? deleted,
+    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return updated?.call(this);
   }
@@ -3054,11 +3075,11 @@ class _$UpdatedImpl implements Updated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Reacted value)? reacted,
-    TResult Function(Unreacted value)? unreacted,
-    TResult Function(_Deleted value)? deleted,
-    TResult Function(_PollVoted value)? pollVoted,
-    TResult Function(Updated value)? updated,
+    TResult Function(ReactedChannelEvent value)? reacted,
+    TResult Function(UnreactedChannelEvent value)? unreacted,
+    TResult Function(_DeletedChannelEvent value)? deleted,
+    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
     if (updated != null) {
@@ -3069,30 +3090,31 @@ class _$UpdatedImpl implements Updated {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UpdatedImplToJson(
+    return _$$UpdatedChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class Updated implements NoteUpdateStreamEvent {
-  const factory Updated(
+abstract class UpdatedChannelEvent implements NoteUpdateStreamEvent {
+  const factory UpdatedChannelEvent(
       {required final String id,
-      required final NoteEdited edited}) = _$UpdatedImpl;
+      required final NoteEdited edited}) = _$UpdatedChannelEventImpl;
 
-  factory Updated.fromJson(Map<String, dynamic> json) = _$UpdatedImpl.fromJson;
+  factory UpdatedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UpdatedChannelEventImpl.fromJson;
 
   @override
   String get id;
   NoteEdited get edited;
   @override
   @JsonKey(ignore: true)
-  _$$UpdatedImplCopyWith<_$UpdatedImpl> get copyWith =>
+  _$$UpdatedChannelEventImplCopyWith<_$UpdatedChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 BroadcastStreamEvent _$BroadcastStreamEventFromJson(Map<String, dynamic> json) {
-  return Broadcast.fromJson(json);
+  return BroadcastChannelEvent.fromJson(json);
 }
 
 /// @nodoc
@@ -3126,17 +3148,17 @@ mixin _$BroadcastStreamEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Broadcast value) broadcast,
+    required TResult Function(BroadcastChannelEvent value) broadcast,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Broadcast value)? broadcast,
+    TResult? Function(BroadcastChannelEvent value)? broadcast,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Broadcast value)? broadcast,
+    TResult Function(BroadcastChannelEvent value)? broadcast,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3188,11 +3210,12 @@ class _$BroadcastStreamEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$BroadcastImplCopyWith<$Res>
+abstract class _$$BroadcastChannelEventImplCopyWith<$Res>
     implements $BroadcastStreamEventCopyWith<$Res> {
-  factory _$$BroadcastImplCopyWith(
-          _$BroadcastImpl value, $Res Function(_$BroadcastImpl) then) =
-      __$$BroadcastImplCopyWithImpl<$Res>;
+  factory _$$BroadcastChannelEventImplCopyWith(
+          _$BroadcastChannelEventImpl value,
+          $Res Function(_$BroadcastChannelEventImpl) then) =
+      __$$BroadcastChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -3201,11 +3224,12 @@ abstract class _$$BroadcastImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BroadcastImplCopyWithImpl<$Res>
-    extends _$BroadcastStreamEventCopyWithImpl<$Res, _$BroadcastImpl>
-    implements _$$BroadcastImplCopyWith<$Res> {
-  __$$BroadcastImplCopyWithImpl(
-      _$BroadcastImpl _value, $Res Function(_$BroadcastImpl) _then)
+class __$$BroadcastChannelEventImplCopyWithImpl<$Res>
+    extends _$BroadcastStreamEventCopyWithImpl<$Res,
+        _$BroadcastChannelEventImpl>
+    implements _$$BroadcastChannelEventImplCopyWith<$Res> {
+  __$$BroadcastChannelEventImplCopyWithImpl(_$BroadcastChannelEventImpl _value,
+      $Res Function(_$BroadcastChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3214,7 +3238,7 @@ class __$$BroadcastImplCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$BroadcastImpl(
+    return _then(_$BroadcastChannelEventImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -3229,14 +3253,14 @@ class __$$BroadcastImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BroadcastImpl implements Broadcast {
-  const _$BroadcastImpl(
+class _$BroadcastChannelEventImpl implements BroadcastChannelEvent {
+  const _$BroadcastChannelEventImpl(
       {@BroadcastEventTypeJsonConverter() required this.type,
       required final Map<String, dynamic> body})
       : _body = body;
 
-  factory _$BroadcastImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BroadcastImplFromJson(json);
+  factory _$BroadcastChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BroadcastChannelEventImplFromJson(json);
 
   @override
   @BroadcastEventTypeJsonConverter()
@@ -3258,7 +3282,7 @@ class _$BroadcastImpl implements Broadcast {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BroadcastImpl &&
+            other is _$BroadcastChannelEventImpl &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
@@ -3271,8 +3295,9 @@ class _$BroadcastImpl implements Broadcast {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BroadcastImplCopyWith<_$BroadcastImpl> get copyWith =>
-      __$$BroadcastImplCopyWithImpl<_$BroadcastImpl>(this, _$identity);
+  _$$BroadcastChannelEventImplCopyWith<_$BroadcastChannelEventImpl>
+      get copyWith => __$$BroadcastChannelEventImplCopyWithImpl<
+          _$BroadcastChannelEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3313,7 +3338,7 @@ class _$BroadcastImpl implements Broadcast {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Broadcast value) broadcast,
+    required TResult Function(BroadcastChannelEvent value) broadcast,
   }) {
     return broadcast(this);
   }
@@ -3321,7 +3346,7 @@ class _$BroadcastImpl implements Broadcast {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Broadcast value)? broadcast,
+    TResult? Function(BroadcastChannelEvent value)? broadcast,
   }) {
     return broadcast?.call(this);
   }
@@ -3329,7 +3354,7 @@ class _$BroadcastImpl implements Broadcast {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Broadcast value)? broadcast,
+    TResult Function(BroadcastChannelEvent value)? broadcast,
     required TResult orElse(),
   }) {
     if (broadcast != null) {
@@ -3340,20 +3365,20 @@ class _$BroadcastImpl implements Broadcast {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BroadcastImplToJson(
+    return _$$BroadcastChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class Broadcast implements BroadcastStreamEvent {
-  const factory Broadcast(
+abstract class BroadcastChannelEvent implements BroadcastStreamEvent {
+  const factory BroadcastChannelEvent(
       {@BroadcastEventTypeJsonConverter()
       required final BroadcastEventType type,
-      required final Map<String, dynamic> body}) = _$BroadcastImpl;
+      required final Map<String, dynamic> body}) = _$BroadcastChannelEventImpl;
 
-  factory Broadcast.fromJson(Map<String, dynamic> json) =
-      _$BroadcastImpl.fromJson;
+  factory BroadcastChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$BroadcastChannelEventImpl.fromJson;
 
   @override
   @BroadcastEventTypeJsonConverter()
@@ -3362,6 +3387,6 @@ abstract class Broadcast implements BroadcastStreamEvent {
   Map<String, dynamic> get body;
   @override
   @JsonKey(ignore: true)
-  _$$BroadcastImplCopyWith<_$BroadcastImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BroadcastChannelEventImplCopyWith<_$BroadcastChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
