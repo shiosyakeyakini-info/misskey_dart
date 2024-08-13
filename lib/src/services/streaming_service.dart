@@ -2,14 +2,36 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
-import 'package:misskey_dart/src/data/streaming/streaming_response.dart';
 import 'package:misskey_dart/src/util/mutex.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-class StreamingService {
+abstract class StreamingController {
+  void sendRequest(StreamingRequestType type, StreamingRequestBody body);
+
+  Stream<StreamingResponse> addChannel(
+    Channel channel,
+    Map<String, dynamic>? parameters,
+    String id,
+  );
+
+  Future<void> removeChannel(String id);
+
+  Future<void> subNote(String noteId);
+
+  Future<void> unsubNote(String noteId);
+}
+
+abstract class WebSocketController {
+  Future<StreamingController> stream();
+  Future<void> reconnect();
+}
+
+@internal
+class StreamingService implements StreamingController, WebSocketController {
   final String host;
   final int port;
   final String? token;
@@ -46,13 +68,14 @@ class StreamingService {
     );
   }
 
-  Future<Stream<StreamingResponse>> stream() async => await _stream();
+  @override
+  Future<StreamingController> stream() async => await _stream();
 
-  Future<Stream<StreamingResponse>> _stream({int retryCounts = 0}) async {
+  Future<StreamingController> _stream({int retryCounts = 0}) async {
     if (_webSocketChannel != null &&
         _subscription != null &&
         !_controller.isClosed) {
-      return _controller.stream;
+      return this;
     }
 
     try {
@@ -64,7 +87,7 @@ class StreamingService {
       return await _stream(retryCounts: retryCounts + 1);
     }
 
-    return _controller.stream;
+    return this;
   }
 
   final _connectWebSocketMutex = Mutex();
@@ -102,6 +125,7 @@ class StreamingService {
     }
   }
 
+  @override
   Future<void> reconnect() async => _reconnect();
 
   Future<void> _reconnect({int retryCounts = 0}) async {
@@ -137,6 +161,7 @@ class StreamingService {
     }
   }
 
+  @override
   void sendRequest(StreamingRequestType type, StreamingRequestBody body) {
     final webSocketChannel = _webSocketChannel;
     if (webSocketChannel == null) {
@@ -147,6 +172,7 @@ class StreamingService {
         .add(jsonEncode(StreamingRequest(type: type, body: body)));
   }
 
+  @override
   Stream<StreamingResponse> addChannel(
     Channel channel,
     Map<String, dynamic>? parameters,
@@ -166,6 +192,7 @@ class StreamingService {
     }).cast();
   }
 
+  @override
   Future<void> removeChannel(String id) async {
     try {
       sendRequest(
@@ -183,6 +210,7 @@ class StreamingService {
     }
   }
 
+  @override
   Future<void> subNote(String noteId) async {
     sendRequest(
       StreamingRequestType.subNote,
@@ -190,6 +218,7 @@ class StreamingService {
     );
   }
 
+  @override
   Future<void> unsubNote(String noteId) async {
     sendRequest(
       StreamingRequestType.unsubNote,
