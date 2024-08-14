@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/streaming/timeline_deleted.dart';
 import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 
@@ -20,18 +21,23 @@ sealed class StreamingResponse with _$StreamingResponse {
 
   @FreezedUnionValue("emojiAdded")
   const factory StreamingResponse.emojiAdded({
-    required BroadcastStreamEvent body,
+    required EmojiAddedStreamEvent body,
   }) = StreamingChannelEmojiAddedResponse;
 
   @FreezedUnionValue("emojiUpdated")
   const factory StreamingResponse.emojiUpdated({
-    required BroadcastStreamEvent body,
+    required EmojiUpdatedStreamEvent body,
   }) = StreamingChannelEmojiUpdatedResponse;
 
   @FreezedUnionValue("emojiDeleted")
   const factory StreamingResponse.emojiDeleted({
-    required BroadcastStreamEvent body,
+    required EmojiDeletedStreamEvent body,
   }) = StreamingChannelEmojiDeletedResponse;
+
+  @FreezedUnionValue("announcementCreated")
+  const factory StreamingResponse.announcementCreated({
+    required AnnouncementCreatedStreamEvent body,
+  }) = StreamingChannelAnnouncementCreatedResponse;
 
   const factory StreamingResponse.fallback({
     required Object body,
@@ -39,6 +45,40 @@ sealed class StreamingResponse with _$StreamingResponse {
 
   factory StreamingResponse.fromJson(Map<String, Object?> json) =>
       _$StreamingResponseFromJson(json);
+}
+
+@freezed
+class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
+  const factory EmojiAddedStreamEvent({required Emoji emoji}) =
+      _EmojiAddedStreamEvent;
+  factory EmojiAddedStreamEvent.fromJson(Map<String, Object?> json) =>
+      _$EmojiAddedStreamEventFromJson(json);
+}
+
+@freezed
+class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
+  const factory EmojiUpdatedStreamEvent({required List<Emoji> emojis}) =
+      _EmojiUpdatedStreamEvent;
+  factory EmojiUpdatedStreamEvent.fromJson(Map<String, Object?> json) =>
+      _$EmojiUpdatedStreamEventFromJson(json);
+}
+
+@freezed
+class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
+  const factory EmojiDeletedStreamEvent({required List<Emoji> emojis}) =
+      _EmojiDeletedStreamEvent;
+  factory EmojiDeletedStreamEvent.fromJson(Map<String, Object?> json) =>
+      _$EmojiDeletedStreamEventFromJson(json);
+}
+
+@freezed
+class AnnouncementCreatedStreamEvent with _$AnnouncementCreatedStreamEvent {
+  const factory AnnouncementCreatedStreamEvent({
+    required AnnouncementsResponse announcement,
+  }) = _AnnouncementCreatedStreamEvent;
+
+  factory AnnouncementCreatedStreamEvent.fromJson(Map<String, Object?> json) =>
+      _$AnnouncementCreatedStreamEventFromJson(json);
 }
 
 @Freezed(unionKey: "type")
@@ -64,7 +104,6 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   }) = StatsChannelEvent;
 
   // list
-
   @FreezedUnionValue("userAdded")
   const factory ChannelStreamEvent.userAdded({
     required String id,
@@ -140,7 +179,7 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   @FreezedUnionValue("unreadMention")
   const factory ChannelStreamEvent.unreadMention({
     required String id,
-    required Note body,
+    required String body,
   }) = UnreadMentionChannelEvent;
 
   @FreezedUnionValue("readAllUnreadMentions")
@@ -149,9 +188,9 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   }) = ReadAllUnreadMentionsChannelEvent;
 
   @FreezedUnionValue("unreadSpecifiedNote")
-  const factory ChannelStreamEvent.uneradSpecifiedNote({
+  const factory ChannelStreamEvent.unreadSpecifiedNote({
     required String id,
-    required Note body,
+    required String body,
   }) = UnreadSpecifiedNoteChannelEvent;
 
   @FreezedUnionValue("readAllUnreadSpecifiedNotes")
@@ -168,7 +207,7 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   @FreezedUnionValue("readAllAnnouncements")
   const factory ChannelStreamEvent.readAllAnnouncements({
     required String id,
-  }) = ReadAllAnnouncements;
+  }) = ReadAllAnnouncementsChannelEvent;
 
   factory ChannelStreamEvent.fromJson(Map<String, dynamic> json) =>
       _$ChannelStreamEventFromJson(json);
@@ -191,7 +230,7 @@ sealed class NoteUpdateStreamEvent with _$NoteUpdateStreamEvent {
   @FreezedUnionValue("deleted")
   const factory NoteUpdateStreamEvent.deleted({
     required String id,
-    required DateTime body,
+    required TimelineDeleted body,
   }) = DeletedChannelEvent;
 
   @FreezedUnionValue("pollVoted")
@@ -208,15 +247,4 @@ sealed class NoteUpdateStreamEvent with _$NoteUpdateStreamEvent {
 
   factory NoteUpdateStreamEvent.fromJson(Map<String, dynamic> json) =>
       _$NoteUpdateStreamEventFromJson(json);
-}
-
-@Freezed(unionKey: "type")
-sealed class BroadcastStreamEvent with _$BroadcastStreamEvent {
-  const factory BroadcastStreamEvent.broadcast({
-    @BroadcastEventTypeJsonConverter() required BroadcastEventType type,
-    required Map<String, dynamic> body,
-  }) = BroadcastChannelEvent;
-
-  factory BroadcastStreamEvent.fromJson(Map<String, dynamic> json) =>
-      _$BroadcastStreamEventFromJson(json);
 }

@@ -40,7 +40,7 @@ _$StreamingChannelEmojiAddedResponseImpl
     _$$StreamingChannelEmojiAddedResponseImplFromJson(
             Map<String, dynamic> json) =>
         _$StreamingChannelEmojiAddedResponseImpl(
-          body: BroadcastStreamEvent.fromJson(
+          body: EmojiAddedStreamEvent.fromJson(
               json['body'] as Map<String, dynamic>),
           $type: json['type'] as String?,
         );
@@ -56,7 +56,7 @@ _$StreamingChannelEmojiUpdatedResponseImpl
     _$$StreamingChannelEmojiUpdatedResponseImplFromJson(
             Map<String, dynamic> json) =>
         _$StreamingChannelEmojiUpdatedResponseImpl(
-          body: BroadcastStreamEvent.fromJson(
+          body: EmojiUpdatedStreamEvent.fromJson(
               json['body'] as Map<String, dynamic>),
           $type: json['type'] as String?,
         );
@@ -72,13 +72,29 @@ _$StreamingChannelEmojiDeletedResponseImpl
     _$$StreamingChannelEmojiDeletedResponseImplFromJson(
             Map<String, dynamic> json) =>
         _$StreamingChannelEmojiDeletedResponseImpl(
-          body: BroadcastStreamEvent.fromJson(
+          body: EmojiDeletedStreamEvent.fromJson(
               json['body'] as Map<String, dynamic>),
           $type: json['type'] as String?,
         );
 
 Map<String, dynamic> _$$StreamingChannelEmojiDeletedResponseImplToJson(
         _$StreamingChannelEmojiDeletedResponseImpl instance) =>
+    <String, dynamic>{
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
+_$StreamingChannelAnnouncementCreatedResponseImpl
+    _$$StreamingChannelAnnouncementCreatedResponseImplFromJson(
+            Map<String, dynamic> json) =>
+        _$StreamingChannelAnnouncementCreatedResponseImpl(
+          body: AnnouncementCreatedStreamEvent.fromJson(
+              json['body'] as Map<String, dynamic>),
+          $type: json['type'] as String?,
+        );
+
+Map<String, dynamic> _$$StreamingChannelAnnouncementCreatedResponseImplToJson(
+        _$StreamingChannelAnnouncementCreatedResponseImpl instance) =>
     <String, dynamic>{
       'body': instance.body.toJson(),
       'type': instance.$type,
@@ -96,6 +112,59 @@ Map<String, dynamic> _$$StreamingChannelUnknownResponseImplToJson(
     <String, dynamic>{
       'body': instance.body,
       'type': instance.$type,
+    };
+
+_$EmojiAddedStreamEventImpl _$$EmojiAddedStreamEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$EmojiAddedStreamEventImpl(
+      emoji: Emoji.fromJson(json['emoji'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$EmojiAddedStreamEventImplToJson(
+        _$EmojiAddedStreamEventImpl instance) =>
+    <String, dynamic>{
+      'emoji': instance.emoji.toJson(),
+    };
+
+_$EmojiUpdatedStreamEventImpl _$$EmojiUpdatedStreamEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$EmojiUpdatedStreamEventImpl(
+      emojis: (json['emojis'] as List<dynamic>)
+          .map((e) => Emoji.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$EmojiUpdatedStreamEventImplToJson(
+        _$EmojiUpdatedStreamEventImpl instance) =>
+    <String, dynamic>{
+      'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+    };
+
+_$EmojiDeletedStreamEventImpl _$$EmojiDeletedStreamEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$EmojiDeletedStreamEventImpl(
+      emojis: (json['emojis'] as List<dynamic>)
+          .map((e) => Emoji.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$EmojiDeletedStreamEventImplToJson(
+        _$EmojiDeletedStreamEventImpl instance) =>
+    <String, dynamic>{
+      'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+    };
+
+_$AnnouncementCreatedStreamEventImpl
+    _$$AnnouncementCreatedStreamEventImplFromJson(Map<String, dynamic> json) =>
+        _$AnnouncementCreatedStreamEventImpl(
+          announcement: AnnouncementsResponse.fromJson(
+              json['announcement'] as Map<String, dynamic>),
+        );
+
+Map<String, dynamic> _$$AnnouncementCreatedStreamEventImplToJson(
+        _$AnnouncementCreatedStreamEventImpl instance) =>
+    <String, dynamic>{
+      'announcement': instance.announcement.toJson(),
     };
 
 _$NoteChannelEventImpl _$$NoteChannelEventImplFromJson(
@@ -381,7 +450,7 @@ _$UnreadMentionChannelEventImpl _$$UnreadMentionChannelEventImplFromJson(
         Map<String, dynamic> json) =>
     _$UnreadMentionChannelEventImpl(
       id: json['id'] as String,
-      body: Note.fromJson(json['body'] as Map<String, dynamic>),
+      body: json['body'] as String,
       $type: json['type'] as String?,
     );
 
@@ -389,7 +458,7 @@ Map<String, dynamic> _$$UnreadMentionChannelEventImplToJson(
         _$UnreadMentionChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'body': instance.body.toJson(),
+      'body': instance.body,
       'type': instance.$type,
     };
 
@@ -412,7 +481,7 @@ _$UnreadSpecifiedNoteChannelEventImpl
     _$$UnreadSpecifiedNoteChannelEventImplFromJson(Map<String, dynamic> json) =>
         _$UnreadSpecifiedNoteChannelEventImpl(
           id: json['id'] as String,
-          body: Note.fromJson(json['body'] as Map<String, dynamic>),
+          body: json['body'] as String,
           $type: json['type'] as String?,
         );
 
@@ -420,7 +489,7 @@ Map<String, dynamic> _$$UnreadSpecifiedNoteChannelEventImplToJson(
         _$UnreadSpecifiedNoteChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'body': instance.body.toJson(),
+      'body': instance.body,
       'type': instance.$type,
     };
 
@@ -456,15 +525,16 @@ Map<String, dynamic> _$$ReceiveFollowRequestChannelEventImplToJson(
       'type': instance.$type,
     };
 
-_$ReadAllAnnouncementsImpl _$$ReadAllAnnouncementsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ReadAllAnnouncementsImpl(
-      id: json['id'] as String,
-      $type: json['type'] as String?,
-    );
+_$ReadAllAnnouncementsChannelEventImpl
+    _$$ReadAllAnnouncementsChannelEventImplFromJson(
+            Map<String, dynamic> json) =>
+        _$ReadAllAnnouncementsChannelEventImpl(
+          id: json['id'] as String,
+          $type: json['type'] as String?,
+        );
 
-Map<String, dynamic> _$$ReadAllAnnouncementsImplToJson(
-        _$ReadAllAnnouncementsImpl instance) =>
+Map<String, dynamic> _$$ReadAllAnnouncementsChannelEventImplToJson(
+        _$ReadAllAnnouncementsChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': instance.$type,
@@ -506,7 +576,7 @@ _$DeletedChannelEventImpl _$$DeletedChannelEventImplFromJson(
         Map<String, dynamic> json) =>
     _$DeletedChannelEventImpl(
       id: json['id'] as String,
-      body: DateTime.parse(json['body'] as String),
+      body: TimelineDeleted.fromJson(json['body'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
@@ -514,7 +584,7 @@ Map<String, dynamic> _$$DeletedChannelEventImplToJson(
         _$DeletedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'body': instance.body.toIso8601String(),
+      'body': instance.body.toJson(),
       'type': instance.$type,
     };
 
@@ -549,24 +619,3 @@ Map<String, dynamic> _$$UpdatedChannelEventImplToJson(
       'body': instance.body.toJson(),
       'type': instance.$type,
     };
-
-_$BroadcastChannelEventImpl _$$BroadcastChannelEventImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BroadcastChannelEventImpl(
-      type: $enumDecode(_$BroadcastEventTypeEnumMap, json['type']),
-      body: json['body'] as Map<String, dynamic>,
-    );
-
-Map<String, dynamic> _$$BroadcastChannelEventImplToJson(
-        _$BroadcastChannelEventImpl instance) =>
-    <String, dynamic>{
-      'type': _$BroadcastEventTypeEnumMap[instance.type]!,
-      'body': instance.body,
-    };
-
-const _$BroadcastEventTypeEnumMap = {
-  BroadcastEventType.emojiAdded: 'emojiAdded',
-  BroadcastEventType.emojiUpdated: 'emojiUpdated',
-  BroadcastEventType.emojiDeleted: 'emojiDeleted',
-  BroadcastEventType.announcementCreated: 'announcementCreated',
-};

@@ -38,9 +38,7 @@ Future<void> main() async {
             .join(","));
       case StatsChannelEvent(:final body):
         print((body as ServerMetricsResponse).mem);
-      case NoteChannelEvent():
-      case UserAddedChannelEvent():
-      case UserRemovedChannelEvent():
+      case _:
     }
   });
   streamController.requestLog(id, 50);

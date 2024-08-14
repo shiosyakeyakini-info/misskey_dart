@@ -221,6 +221,7 @@ export 'src/data/reversi/reversi_games_response.dart';
 export 'src/data/reversi/reversi_show_game_response.dart';
 export 'src/data/streaming/timeline_reacted.dart';
 export 'src/data/streaming/timeline_voted.dart';
+export 'src/data/streaming/timeline_deleted.dart';
 export 'src/data/streaming/stats_log_response.dart';
 export 'src/data/streaming/note_edited.dart';
 export 'src/data/streaming/home_timeline_parameter.dart';
@@ -229,7 +230,6 @@ export 'src/data/streaming/global_timeline_parameter.dart';
 export 'src/data/streaming/hybrid_timeline_parameter.dart';
 export 'src/data/streaming/streaming_response.dart';
 export 'src/data/join_misskey_instances.dart';
-export 'src/services/streaming_service_impl.dart';
 export 'src/server.dart';
 export 'src/join_misskey.dart';
 

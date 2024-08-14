@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:test/test.dart';
+import 'package:uuid/uuid.dart';
 
 import 'util/misskey_dart_test_util.dart';
 
@@ -205,18 +206,18 @@ void main() async {
       });
 
       group(
-        "serverStats",
+        "queueStats",
         () {
           test("statsLog", () async {
-            final completer = Completer<List<ServerMetricsResponse>>();
+            final completer = Completer<List<JobQueueResponse>>();
             final client = userClient;
             final controller = await client.streamingService.stream();
             final id = DateTime.now().toIso8601String();
             final listener =
-                controller.serverStatsLogStream(id: id).listen((event) {
+                controller.queueStatsLogStream(id: id).listen((event) {
               final body = event.body;
               if (body is StatsLogChannelEvent) {
-                completer.complete(body.body.cast<ServerMetricsResponse>());
+                completer.complete(body.body.cast<JobQueueResponse>());
               }
             });
             controller.requestLog(id, 50);
@@ -225,15 +226,15 @@ void main() async {
           });
 
           test("stats", () async {
-            final completer = Completer<ServerMetricsResponse>();
+            final completer = Completer<JobQueueResponse>();
             final client = userClient;
             final controller = await client.streamingService.stream();
             final id = DateTime.now().toIso8601String();
             final listener =
-                controller.serverStatsLogStream(id: id).listen((event) {
+                controller.queueStatsLogStream(id: id).listen((event) {
               final body = event.body;
               if (body is StatsChannelEvent) {
-                completer.complete(body.body as ServerMetricsResponse);
+                completer.complete(body.body as JobQueueResponse);
               }
             });
             await completer.future;
@@ -377,7 +378,7 @@ void main() async {
           final id = DateTime.now().toIso8601String();
           final listener = controller.mainStream(id: id).listen((event) {
             final body = event.body;
-            if (body is ReadAllAnnouncements) completer.complete();
+            if (body is ReadAllNotificationsChannelEvent) completer.complete();
           });
           await client.apiService.post("notifications/mark-all-as-read", {});
           await completer.future;
@@ -399,7 +400,7 @@ void main() async {
         });
 
         test("unreadMention", () async {
-          final completer = Completer<Note>();
+          final completer = Completer<String>();
           final client = userClient;
           final controller = await client.streamingService.stream();
           final id = DateTime.now().toIso8601String();
@@ -433,7 +434,7 @@ void main() async {
         });
 
         test("unreadSpecifiedNote", () async {
-          final completer = Completer<Note>();
+          final completer = Completer<String>();
           final client = userClient;
 
           final controller = await client.streamingService.stream();
@@ -507,7 +508,7 @@ void main() async {
           final id = DateTime.now().toIso8601String();
           final listener = controller.mainStream(id: id).listen((event) {
             final body = event.body;
-            if (body is ReadAllAnnouncements) completer.complete();
+            if (body is ReadAllAnnouncementsChannelEvent) completer.complete();
           });
           await Future.wait(
             announcements.map((announcement) {
@@ -575,7 +576,7 @@ void main() async {
     });
 
     test("deleted", () async {
-      final completer = Completer<DateTime>();
+      final completer = Completer<TimelineDeleted>();
       final client = userClient;
       final note = await client.createNote();
       final controller = await client.streamingService.stream();
@@ -584,9 +585,7 @@ void main() async {
           .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
           .listen((event) {
         final body = event.body;
-        if (body is DeletedChannelEvent) {
-          completer.complete(body.body);
-        }
+        if (body is DeletedChannelEvent) completer.complete(body.body);
       });
       controller.subNote(note.id);
       await client.notes.delete(NotesDeleteRequest(noteId: note.id));
@@ -622,70 +621,95 @@ void main() async {
     });
   });
 
-  // group("broadcast", () {
-  //   test("emojiCreated", () async {
-  //     final completer = Completer<Emoji>();
-  //     final client = userClient;
-  //     final name = Uuid().v4().replaceAll("-", "_");
-  //     final file = await adminClient.createDriveFile();
-  //     final controller = client.mainStream(onEmojiAdded: completer.complete);
-  //     await client.startStreaming();
-  //     await adminClient.apiService
-  //         .post("admin/emoji/add", {"name": name, "fileId": file.id});
-  //     await completer.future;
-  //     controller.disconnect();
-  //   });
+  group("broadcast", () {
+    test("emojiCreated", () async {
+      final completer = Completer<Emoji>();
+      final client = userClient;
+      final name = Uuid().v4().replaceAll("-", "_");
+      final file = await adminClient.createDriveFile();
+      final controller = await client.streamingService.stream();
+      final id = DateTime.now().toIso8601String();
+      final listener = controller
+          .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
+          .listen((event) {
+        final body = event.body;
+        if (body is EmojiAddedStreamEvent) completer.complete(body.emoji);
+      });
+      await adminClient.apiService
+          .post("admin/emoji/add", {"name": name, "fileId": file.id});
+      await completer.future;
+      await (controller.removeChannel(id), listener.cancel()).wait;
+    });
 
-  //   test("emojiUpdated", () async {
-  //     final completer = Completer<Iterable<Emoji>>();
-  //     final client = userClient;
-  //     final file = await adminClient.createDriveFile();
-  //     final name = Uuid().v4().replaceAll("-", "_");
-  //     final response = await adminClient.apiService
-  //         .post("admin/emoji/add", {"name": name, "fileId": file.id});
-  //     await adminClient.apiService.post(
-  //       "admin/emoji/update",
-  //       {"id": response["id"], "name": name, "aliases": []},
-  //     );
-  //     final controller = client.mainStream(onEmojiUpdated: completer.complete);
-  //     await client.startStreaming();
-  //     await adminClient.apiService.post(
-  //       "admin/emoji/update",
-  //       {"id": response["id"], "name": name, "aliases": []},
-  //     );
-  //     await completer.future;
-  //     controller.disconnect();
-  //   });
+    test("emojiUpdated", () async {
+      final completer = Completer<Iterable<Emoji>>();
+      final client = userClient;
+      final file = await adminClient.createDriveFile();
+      final name = Uuid().v4().replaceAll("-", "_");
+      final response = await adminClient.apiService
+          .post("admin/emoji/add", {"name": name, "fileId": file.id});
+      await adminClient.apiService.post(
+        "admin/emoji/update",
+        {"id": response["id"], "name": name, "aliases": []},
+      );
+      final controller = await client.streamingService.stream();
+      final id = DateTime.now().toIso8601String();
+      final listener = controller
+          .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
+          .listen((event) {
+        final body = event.body;
+        if (body is EmojiUpdatedStreamEvent) completer.complete(body.emojis);
+      });
+      await adminClient.apiService.post(
+        "admin/emoji/update",
+        {"id": response["id"], "name": name, "aliases": []},
+      );
+      await completer.future;
+      await (controller.removeChannel(id), listener.cancel()).wait;
+    });
 
-  //   test("emojiDeleted", () async {
-  //     final completer = Completer<Iterable<Emoji>>();
-  //     final client = userClient;
-  //     final file = await adminClient.createDriveFile();
-  //     final name = Uuid().v4().replaceAll("-", "_");
-  //     final response = await adminClient.apiService
-  //         .post("admin/emoji/add", {"name": name, "fileId": file.id});
-  //     final controller = client.mainStream(onEmojiDeleted: completer.complete);
-  //     await client.startStreaming();
-  //     await adminClient.apiService
-  //         .post("admin/emoji/delete", {"id": response["id"]});
-  //     await completer.future;
-  //     controller.disconnect();
-  //   });
+    test("emojiDeleted", () async {
+      final completer = Completer<Iterable<Emoji>>();
+      final client = userClient;
+      final file = await adminClient.createDriveFile();
+      final name = Uuid().v4().replaceAll("-", "_");
+      final response = await adminClient.apiService
+          .post("admin/emoji/add", {"name": name, "fileId": file.id});
+      final controller = await client.streamingService.stream();
+      final id = DateTime.now().toIso8601String();
+      final listener = controller
+          .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
+          .listen((event) {
+        final body = event.body;
+        if (body is EmojiDeletedStreamEvent) completer.complete(body.emojis);
+      });
+      await adminClient.apiService
+          .post("admin/emoji/delete", {"id": response["id"]});
+      await completer.future;
+      await (controller.removeChannel(id), listener.cancel()).wait;
+    });
 
-  //   test("announcementCreated", () async {
-  //     final completer = Completer<AnnouncementsResponse>();
-  //     final client = userClient;
-  //     final controller = client.mainStream(
-  //       onAnnouncementCreated: completer.complete,
-  //     );
-  //     await client.startStreaming();
-  //     await adminClient.apiService.post("admin/announcements/create", {
-  //       "title": "title",
-  //       "text": "test",
-  //       "imageUrl": "https://example.com",
-  //     });
-  //     await completer.future;
-  //     controller.disconnect();
-  //   });
-  // });
+    test("announcementCreated", () async {
+      final completer = Completer<AnnouncementsResponse>();
+      final client = userClient;
+
+      final controller = await client.streamingService.stream();
+      final id = DateTime.now().toIso8601String();
+      final listener = controller
+          .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
+          .listen((event) {
+        final body = event.body;
+        if (body is AnnouncementCreatedStreamEvent) {
+          completer.complete(body.announcement);
+        }
+      });
+      await adminClient.apiService.post("admin/announcements/create", {
+        "title": "title",
+        "text": "test",
+        "imageUrl": "https://example.com",
+      });
+      await completer.future;
+      await (controller.removeChannel(id), listener.cancel()).wait;
+    });
+  });
 }

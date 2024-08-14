@@ -36,13 +36,13 @@ class StreamingService implements StreamingController, WebSocketController {
   StreamSubscription? _subscription;
 
   WebSocketChannel _createWebSocketChannel() {
-    log(
-      "connect websocket wss://$host/streaming${token != null ? "?i=$token" : ""}",
-    );
+    final url =
+        "${streamingUrl ?? "wss://$host${port == 80 ? "" : ":$port"}/streaming"}${token != null ? "?i=$token" : ""}";
+
+    log("connect websocket $url");
 
     return IOWebSocketChannel.connect(
-      streamingUrl ??
-          "wss://$host/streaming${token != null ? "?i=$token" : ""}",
+      url,
       pingInterval: const Duration(minutes: 1),
       connectTimeout: connectionTimeout,
     );
@@ -164,12 +164,15 @@ class StreamingService implements StreamingController, WebSocketController {
     _connections.add(body);
 
     return _controller.stream.where((e) {
+      if (e is StreamingChannelUnknownResponse) {
+        print("$e is unknown type response");
+      }
+
       return switch (e) {
         StreamingChannelResponse(:final body) => body.id == id,
-        StreamingChannelNoteUpdatedResponse(:final body) => body.id == id,
-        _ => false,
+        _ => true,
       };
-    }).cast();
+    });
   }
 
   @override
@@ -246,7 +249,7 @@ class StreamingService implements StreamingController, WebSocketController {
     String? id,
   }) =>
       addChannel(
-        Channel.roleTimeline,
+        Channel.channel,
         {"channelId": channelId},
         id ?? channelId,
       );
@@ -256,7 +259,7 @@ class StreamingService implements StreamingController, WebSocketController {
     required String listId,
     String? id,
   }) =>
-      addChannel(Channel.roleTimeline, {"listId": listId}, id ?? listId);
+      addChannel(Channel.userList, {"listId": listId}, id ?? listId);
 
   @override
   Stream<StreamingResponse> antennaStream({
@@ -264,7 +267,7 @@ class StreamingService implements StreamingController, WebSocketController {
     String? id,
   }) =>
       addChannel(
-        Channel.roleTimeline,
+        Channel.antenna,
         {"antennaId": antennaId},
         id ?? antennaId,
       );
