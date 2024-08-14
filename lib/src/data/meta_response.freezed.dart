@@ -23,6 +23,7 @@ mixin _$MetaResponse {
   String? get maintainerName => throw _privateConstructorUsedError;
   String? get maintainerEmail => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
+  bool? get providesTarball => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get shortName => throw _privateConstructorUsedError;
   @UriConverter()
@@ -31,9 +32,9 @@ mixin _$MetaResponse {
   List<String> get langs => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get tosUrl => throw _privateConstructorUsedError;
-  @UriConverter()
-  Uri get repositoryUrl => throw _privateConstructorUsedError;
-  String get feedbackUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get repositoryUrl => throw _privateConstructorUsedError;
+  String? get feedbackUrl => throw _privateConstructorUsedError;
   String? get defaultDarkTheme => throw _privateConstructorUsedError;
   String? get defaultLightTheme => throw _privateConstructorUsedError;
   bool get disableRegistration =>
@@ -44,6 +45,10 @@ mixin _$MetaResponse {
   bool get emailRequiredForSignup => throw _privateConstructorUsedError;
   bool get enableHcaptcha => throw _privateConstructorUsedError;
   String? get hcaptchaSiteKey => throw _privateConstructorUsedError;
+  bool? get enableMcaptcha => throw _privateConstructorUsedError;
+  String? get mcaptchaSiteKey => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get mcaptchaInstanceUrl => throw _privateConstructorUsedError;
   bool? get enableRecaptcha => throw _privateConstructorUsedError;
   String? get recaptchaSiteKey => throw _privateConstructorUsedError;
   bool? get enableTurnstile => throw _privateConstructorUsedError;
@@ -55,7 +60,14 @@ mixin _$MetaResponse {
   @NullableUriConverter()
   Uri? get bannerUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
-  Uri? get errorImageUrl => throw _privateConstructorUsedError;
+  Uri? get infoImageUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get errorImageUrl =>
+      throw _privateConstructorUsedError; // Removed in Misskey 13.13.2
+  @NullableUriConverter()
+  Uri? get serverErrorImageUrl => throw _privateConstructorUsedError;
+  @NullableUriConverter()
+  Uri? get notFountImageUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get iconUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -69,6 +81,7 @@ mixin _$MetaResponse {
   int get maxNoteTextLength =>
       throw _privateConstructorUsedError; //required List<MetaEmoji> emojis,
   List<MetaAd> get ads => throw _privateConstructorUsedError;
+  int? get notesPerOneAd => throw _privateConstructorUsedError;
   List<String> get serverRules => throw _privateConstructorUsedError;
   UserPolicies? get policies => throw _privateConstructorUsedError;
   bool? get requireSetup => throw _privateConstructorUsedError;
@@ -81,6 +94,7 @@ mixin _$MetaResponse {
   String? get proxyAccountName => throw _privateConstructorUsedError;
   String? get mediaProxy => throw _privateConstructorUsedError;
   bool? get cacheRemoteFiles => throw _privateConstructorUsedError;
+  bool? get cacheRemoteSensitiveFiles => throw _privateConstructorUsedError;
   MetaFeature? get features => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -99,20 +113,24 @@ abstract class $MetaResponseCopyWith<$Res> {
       {String? maintainerName,
       String? maintainerEmail,
       String version,
+      bool? providesTarball,
       String? name,
       String? shortName,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
       @NullableUriConverter() Uri? tosUrl,
-      @UriConverter() Uri repositoryUrl,
-      String feedbackUrl,
+      @NullableUriConverter() Uri? repositoryUrl,
+      String? feedbackUrl,
       String? defaultDarkTheme,
       String? defaultLightTheme,
       bool disableRegistration,
       bool emailRequiredForSignup,
       bool enableHcaptcha,
       String? hcaptchaSiteKey,
+      bool? enableMcaptcha,
+      String? mcaptchaSiteKey,
+      @NullableUriConverter() Uri? mcaptchaInstanceUrl,
       bool? enableRecaptcha,
       String? recaptchaSiteKey,
       bool? enableTurnstile,
@@ -121,7 +139,10 @@ abstract class $MetaResponseCopyWith<$Res> {
       String? themeColor,
       @NullableUriConverter() Uri? mascotImageUrl,
       @NullableUriConverter() Uri? bannerUrl,
+      @NullableUriConverter() Uri? infoImageUrl,
       @NullableUriConverter() Uri? errorImageUrl,
+      @NullableUriConverter() Uri? serverErrorImageUrl,
+      @NullableUriConverter() Uri? notFountImageUrl,
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
@@ -129,6 +150,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       @NullableUriConverter() Uri? privacyPolicyUrl,
       int maxNoteTextLength,
       List<MetaAd> ads,
+      int? notesPerOneAd,
       List<String> serverRules,
       UserPolicies? policies,
       bool? requireSetup,
@@ -138,6 +160,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       String? proxyAccountName,
       String? mediaProxy,
       bool? cacheRemoteFiles,
+      bool? cacheRemoteSensitiveFiles,
       MetaFeature? features});
 
   $UserPoliciesCopyWith<$Res>? get policies;
@@ -160,20 +183,24 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
     Object? version = null,
+    Object? providesTarball = freezed,
     Object? name = freezed,
     Object? shortName = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
     Object? tosUrl = freezed,
-    Object? repositoryUrl = null,
-    Object? feedbackUrl = null,
+    Object? repositoryUrl = freezed,
+    Object? feedbackUrl = freezed,
     Object? defaultDarkTheme = freezed,
     Object? defaultLightTheme = freezed,
     Object? disableRegistration = null,
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
     Object? hcaptchaSiteKey = freezed,
+    Object? enableMcaptcha = freezed,
+    Object? mcaptchaSiteKey = freezed,
+    Object? mcaptchaInstanceUrl = freezed,
     Object? enableRecaptcha = freezed,
     Object? recaptchaSiteKey = freezed,
     Object? enableTurnstile = freezed,
@@ -182,7 +209,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? themeColor = freezed,
     Object? mascotImageUrl = freezed,
     Object? bannerUrl = freezed,
+    Object? infoImageUrl = freezed,
     Object? errorImageUrl = freezed,
+    Object? serverErrorImageUrl = freezed,
+    Object? notFountImageUrl = freezed,
     Object? iconUrl = freezed,
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
@@ -190,6 +220,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? privacyPolicyUrl = freezed,
     Object? maxNoteTextLength = null,
     Object? ads = null,
+    Object? notesPerOneAd = freezed,
     Object? serverRules = null,
     Object? policies = freezed,
     Object? requireSetup = freezed,
@@ -199,6 +230,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = freezed,
+    Object? cacheRemoteSensitiveFiles = freezed,
     Object? features = freezed,
   }) {
     return _then(_value.copyWith(
@@ -214,6 +246,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
+      providesTarball: freezed == providesTarball
+          ? _value.providesTarball
+          : providesTarball // ignore: cast_nullable_to_non_nullable
+              as bool?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -238,14 +274,14 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.tosUrl
           : tosUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
-      repositoryUrl: null == repositoryUrl
+      repositoryUrl: freezed == repositoryUrl
           ? _value.repositoryUrl
           : repositoryUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      feedbackUrl: null == feedbackUrl
+              as Uri?,
+      feedbackUrl: freezed == feedbackUrl
           ? _value.feedbackUrl
           : feedbackUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       defaultDarkTheme: freezed == defaultDarkTheme
           ? _value.defaultDarkTheme
           : defaultDarkTheme // ignore: cast_nullable_to_non_nullable
@@ -270,6 +306,18 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.hcaptchaSiteKey
           : hcaptchaSiteKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      enableMcaptcha: freezed == enableMcaptcha
+          ? _value.enableMcaptcha
+          : enableMcaptcha // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mcaptchaSiteKey: freezed == mcaptchaSiteKey
+          ? _value.mcaptchaSiteKey
+          : mcaptchaSiteKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mcaptchaInstanceUrl: freezed == mcaptchaInstanceUrl
+          ? _value.mcaptchaInstanceUrl
+          : mcaptchaInstanceUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       enableRecaptcha: freezed == enableRecaptcha
           ? _value.enableRecaptcha
           : enableRecaptcha // ignore: cast_nullable_to_non_nullable
@@ -302,9 +350,21 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.bannerUrl
           : bannerUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      infoImageUrl: freezed == infoImageUrl
+          ? _value.infoImageUrl
+          : infoImageUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       errorImageUrl: freezed == errorImageUrl
           ? _value.errorImageUrl
           : errorImageUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      serverErrorImageUrl: freezed == serverErrorImageUrl
+          ? _value.serverErrorImageUrl
+          : serverErrorImageUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      notFountImageUrl: freezed == notFountImageUrl
+          ? _value.notFountImageUrl
+          : notFountImageUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
       iconUrl: freezed == iconUrl
           ? _value.iconUrl
@@ -334,6 +394,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.ads
           : ads // ignore: cast_nullable_to_non_nullable
               as List<MetaAd>,
+      notesPerOneAd: freezed == notesPerOneAd
+          ? _value.notesPerOneAd
+          : notesPerOneAd // ignore: cast_nullable_to_non_nullable
+              as int?,
       serverRules: null == serverRules
           ? _value.serverRules
           : serverRules // ignore: cast_nullable_to_non_nullable
@@ -369,6 +433,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
       cacheRemoteFiles: freezed == cacheRemoteFiles
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      cacheRemoteSensitiveFiles: freezed == cacheRemoteSensitiveFiles
+          ? _value.cacheRemoteSensitiveFiles
+          : cacheRemoteSensitiveFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
       features: freezed == features
           ? _value.features
@@ -414,20 +482,24 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       {String? maintainerName,
       String? maintainerEmail,
       String version,
+      bool? providesTarball,
       String? name,
       String? shortName,
       @UriConverter() Uri uri,
       String? description,
       List<String> langs,
       @NullableUriConverter() Uri? tosUrl,
-      @UriConverter() Uri repositoryUrl,
-      String feedbackUrl,
+      @NullableUriConverter() Uri? repositoryUrl,
+      String? feedbackUrl,
       String? defaultDarkTheme,
       String? defaultLightTheme,
       bool disableRegistration,
       bool emailRequiredForSignup,
       bool enableHcaptcha,
       String? hcaptchaSiteKey,
+      bool? enableMcaptcha,
+      String? mcaptchaSiteKey,
+      @NullableUriConverter() Uri? mcaptchaInstanceUrl,
       bool? enableRecaptcha,
       String? recaptchaSiteKey,
       bool? enableTurnstile,
@@ -436,7 +508,10 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       String? themeColor,
       @NullableUriConverter() Uri? mascotImageUrl,
       @NullableUriConverter() Uri? bannerUrl,
+      @NullableUriConverter() Uri? infoImageUrl,
       @NullableUriConverter() Uri? errorImageUrl,
+      @NullableUriConverter() Uri? serverErrorImageUrl,
+      @NullableUriConverter() Uri? notFountImageUrl,
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
@@ -444,6 +519,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       @NullableUriConverter() Uri? privacyPolicyUrl,
       int maxNoteTextLength,
       List<MetaAd> ads,
+      int? notesPerOneAd,
       List<String> serverRules,
       UserPolicies? policies,
       bool? requireSetup,
@@ -453,6 +529,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       String? proxyAccountName,
       String? mediaProxy,
       bool? cacheRemoteFiles,
+      bool? cacheRemoteSensitiveFiles,
       MetaFeature? features});
 
   @override
@@ -475,20 +552,24 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
     Object? version = null,
+    Object? providesTarball = freezed,
     Object? name = freezed,
     Object? shortName = freezed,
     Object? uri = null,
     Object? description = freezed,
     Object? langs = null,
     Object? tosUrl = freezed,
-    Object? repositoryUrl = null,
-    Object? feedbackUrl = null,
+    Object? repositoryUrl = freezed,
+    Object? feedbackUrl = freezed,
     Object? defaultDarkTheme = freezed,
     Object? defaultLightTheme = freezed,
     Object? disableRegistration = null,
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
     Object? hcaptchaSiteKey = freezed,
+    Object? enableMcaptcha = freezed,
+    Object? mcaptchaSiteKey = freezed,
+    Object? mcaptchaInstanceUrl = freezed,
     Object? enableRecaptcha = freezed,
     Object? recaptchaSiteKey = freezed,
     Object? enableTurnstile = freezed,
@@ -497,7 +578,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? themeColor = freezed,
     Object? mascotImageUrl = freezed,
     Object? bannerUrl = freezed,
+    Object? infoImageUrl = freezed,
     Object? errorImageUrl = freezed,
+    Object? serverErrorImageUrl = freezed,
+    Object? notFountImageUrl = freezed,
     Object? iconUrl = freezed,
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
@@ -505,6 +589,7 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? privacyPolicyUrl = freezed,
     Object? maxNoteTextLength = null,
     Object? ads = null,
+    Object? notesPerOneAd = freezed,
     Object? serverRules = null,
     Object? policies = freezed,
     Object? requireSetup = freezed,
@@ -514,6 +599,7 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
     Object? proxyAccountName = freezed,
     Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = freezed,
+    Object? cacheRemoteSensitiveFiles = freezed,
     Object? features = freezed,
   }) {
     return _then(_$MetaResponseImpl(
@@ -529,6 +615,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
+      providesTarball: freezed == providesTarball
+          ? _value.providesTarball
+          : providesTarball // ignore: cast_nullable_to_non_nullable
+              as bool?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -553,14 +643,14 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value.tosUrl
           : tosUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
-      repositoryUrl: null == repositoryUrl
+      repositoryUrl: freezed == repositoryUrl
           ? _value.repositoryUrl
           : repositoryUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      feedbackUrl: null == feedbackUrl
+              as Uri?,
+      feedbackUrl: freezed == feedbackUrl
           ? _value.feedbackUrl
           : feedbackUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       defaultDarkTheme: freezed == defaultDarkTheme
           ? _value.defaultDarkTheme
           : defaultDarkTheme // ignore: cast_nullable_to_non_nullable
@@ -585,6 +675,18 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value.hcaptchaSiteKey
           : hcaptchaSiteKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      enableMcaptcha: freezed == enableMcaptcha
+          ? _value.enableMcaptcha
+          : enableMcaptcha // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mcaptchaSiteKey: freezed == mcaptchaSiteKey
+          ? _value.mcaptchaSiteKey
+          : mcaptchaSiteKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mcaptchaInstanceUrl: freezed == mcaptchaInstanceUrl
+          ? _value.mcaptchaInstanceUrl
+          : mcaptchaInstanceUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       enableRecaptcha: freezed == enableRecaptcha
           ? _value.enableRecaptcha
           : enableRecaptcha // ignore: cast_nullable_to_non_nullable
@@ -617,9 +719,21 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value.bannerUrl
           : bannerUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
+      infoImageUrl: freezed == infoImageUrl
+          ? _value.infoImageUrl
+          : infoImageUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
       errorImageUrl: freezed == errorImageUrl
           ? _value.errorImageUrl
           : errorImageUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      serverErrorImageUrl: freezed == serverErrorImageUrl
+          ? _value.serverErrorImageUrl
+          : serverErrorImageUrl // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      notFountImageUrl: freezed == notFountImageUrl
+          ? _value.notFountImageUrl
+          : notFountImageUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
       iconUrl: freezed == iconUrl
           ? _value.iconUrl
@@ -649,6 +763,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value._ads
           : ads // ignore: cast_nullable_to_non_nullable
               as List<MetaAd>,
+      notesPerOneAd: freezed == notesPerOneAd
+          ? _value.notesPerOneAd
+          : notesPerOneAd // ignore: cast_nullable_to_non_nullable
+              as int?,
       serverRules: null == serverRules
           ? _value._serverRules
           : serverRules // ignore: cast_nullable_to_non_nullable
@@ -685,6 +803,10 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
+      cacheRemoteSensitiveFiles: freezed == cacheRemoteSensitiveFiles
+          ? _value.cacheRemoteSensitiveFiles
+          : cacheRemoteSensitiveFiles // ignore: cast_nullable_to_non_nullable
+              as bool?,
       features: freezed == features
           ? _value.features
           : features // ignore: cast_nullable_to_non_nullable
@@ -700,20 +822,24 @@ class _$MetaResponseImpl implements _MetaResponse {
       {this.maintainerName,
       this.maintainerEmail,
       required this.version,
+      this.providesTarball,
       this.name,
       this.shortName,
       @UriConverter() required this.uri,
       this.description,
       required final List<String> langs,
       @NullableUriConverter() this.tosUrl,
-      @UriConverter() required this.repositoryUrl,
-      required this.feedbackUrl,
+      @NullableUriConverter() this.repositoryUrl,
+      this.feedbackUrl,
       this.defaultDarkTheme,
       this.defaultLightTheme,
       required this.disableRegistration,
       required this.emailRequiredForSignup,
       required this.enableHcaptcha,
       this.hcaptchaSiteKey,
+      this.enableMcaptcha,
+      this.mcaptchaSiteKey,
+      @NullableUriConverter() this.mcaptchaInstanceUrl,
       this.enableRecaptcha,
       this.recaptchaSiteKey,
       this.enableTurnstile,
@@ -722,7 +848,10 @@ class _$MetaResponseImpl implements _MetaResponse {
       this.themeColor,
       @NullableUriConverter() this.mascotImageUrl,
       @NullableUriConverter() this.bannerUrl,
+      @NullableUriConverter() this.infoImageUrl,
       @NullableUriConverter() this.errorImageUrl,
+      @NullableUriConverter() this.serverErrorImageUrl,
+      @NullableUriConverter() this.notFountImageUrl,
       @NullableUriConverter() this.iconUrl,
       @NullableUriConverter() this.backgroundImageUrl,
       @NullableUriConverter() this.logoImageUrl,
@@ -730,6 +859,7 @@ class _$MetaResponseImpl implements _MetaResponse {
       @NullableUriConverter() this.privacyPolicyUrl,
       required this.maxNoteTextLength,
       required final List<MetaAd> ads,
+      this.notesPerOneAd,
       final List<String> serverRules = const [],
       this.policies,
       this.requireSetup,
@@ -739,6 +869,7 @@ class _$MetaResponseImpl implements _MetaResponse {
       this.proxyAccountName,
       this.mediaProxy,
       this.cacheRemoteFiles,
+      this.cacheRemoteSensitiveFiles,
       this.features})
       : _langs = langs,
         _ads = ads,
@@ -753,6 +884,8 @@ class _$MetaResponseImpl implements _MetaResponse {
   final String? maintainerEmail;
   @override
   final String version;
+  @override
+  final bool? providesTarball;
   @override
   final String? name;
   @override
@@ -774,10 +907,10 @@ class _$MetaResponseImpl implements _MetaResponse {
   @NullableUriConverter()
   final Uri? tosUrl;
   @override
-  @UriConverter()
-  final Uri repositoryUrl;
+  @NullableUriConverter()
+  final Uri? repositoryUrl;
   @override
-  final String feedbackUrl;
+  final String? feedbackUrl;
   @override
   final String? defaultDarkTheme;
   @override
@@ -794,6 +927,13 @@ class _$MetaResponseImpl implements _MetaResponse {
   final bool enableHcaptcha;
   @override
   final String? hcaptchaSiteKey;
+  @override
+  final bool? enableMcaptcha;
+  @override
+  final String? mcaptchaSiteKey;
+  @override
+  @NullableUriConverter()
+  final Uri? mcaptchaInstanceUrl;
   @override
   final bool? enableRecaptcha;
   @override
@@ -814,7 +954,17 @@ class _$MetaResponseImpl implements _MetaResponse {
   final Uri? bannerUrl;
   @override
   @NullableUriConverter()
+  final Uri? infoImageUrl;
+  @override
+  @NullableUriConverter()
   final Uri? errorImageUrl;
+// Removed in Misskey 13.13.2
+  @override
+  @NullableUriConverter()
+  final Uri? serverErrorImageUrl;
+  @override
+  @NullableUriConverter()
+  final Uri? notFountImageUrl;
   @override
   @NullableUriConverter()
   final Uri? iconUrl;
@@ -842,6 +992,8 @@ class _$MetaResponseImpl implements _MetaResponse {
     return EqualUnmodifiableListView(_ads);
   }
 
+  @override
+  final int? notesPerOneAd;
   final List<String> _serverRules;
   @override
   @JsonKey()
@@ -871,11 +1023,13 @@ class _$MetaResponseImpl implements _MetaResponse {
   @override
   final bool? cacheRemoteFiles;
   @override
+  final bool? cacheRemoteSensitiveFiles;
+  @override
   final MetaFeature? features;
 
   @override
   String toString() {
-    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, impressumUrl: $impressumUrl, privacyPolicyUrl: $privacyPolicyUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, serverRules: $serverRules, policies: $policies, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
+    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, providesTarball: $providesTarball, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableMcaptcha: $enableMcaptcha, mcaptchaSiteKey: $mcaptchaSiteKey, mcaptchaInstanceUrl: $mcaptchaInstanceUrl, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, infoImageUrl: $infoImageUrl, errorImageUrl: $errorImageUrl, serverErrorImageUrl: $serverErrorImageUrl, notFountImageUrl: $notFountImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, impressumUrl: $impressumUrl, privacyPolicyUrl: $privacyPolicyUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, notesPerOneAd: $notesPerOneAd, serverRules: $serverRules, policies: $policies, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, cacheRemoteSensitiveFiles: $cacheRemoteSensitiveFiles, features: $features)';
   }
 
   @override
@@ -888,6 +1042,8 @@ class _$MetaResponseImpl implements _MetaResponse {
             (identical(other.maintainerEmail, maintainerEmail) ||
                 other.maintainerEmail == maintainerEmail) &&
             (identical(other.version, version) || other.version == version) &&
+            (identical(other.providesTarball, providesTarball) ||
+                other.providesTarball == providesTarball) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.shortName, shortName) ||
                 other.shortName == shortName) &&
@@ -912,6 +1068,12 @@ class _$MetaResponseImpl implements _MetaResponse {
                 other.enableHcaptcha == enableHcaptcha) &&
             (identical(other.hcaptchaSiteKey, hcaptchaSiteKey) ||
                 other.hcaptchaSiteKey == hcaptchaSiteKey) &&
+            (identical(other.enableMcaptcha, enableMcaptcha) ||
+                other.enableMcaptcha == enableMcaptcha) &&
+            (identical(other.mcaptchaSiteKey, mcaptchaSiteKey) ||
+                other.mcaptchaSiteKey == mcaptchaSiteKey) &&
+            (identical(other.mcaptchaInstanceUrl, mcaptchaInstanceUrl) ||
+                other.mcaptchaInstanceUrl == mcaptchaInstanceUrl) &&
             (identical(other.enableRecaptcha, enableRecaptcha) ||
                 other.enableRecaptcha == enableRecaptcha) &&
             (identical(other.recaptchaSiteKey, recaptchaSiteKey) ||
@@ -928,8 +1090,14 @@ class _$MetaResponseImpl implements _MetaResponse {
                 other.mascotImageUrl == mascotImageUrl) &&
             (identical(other.bannerUrl, bannerUrl) ||
                 other.bannerUrl == bannerUrl) &&
+            (identical(other.infoImageUrl, infoImageUrl) ||
+                other.infoImageUrl == infoImageUrl) &&
             (identical(other.errorImageUrl, errorImageUrl) ||
                 other.errorImageUrl == errorImageUrl) &&
+            (identical(other.serverErrorImageUrl, serverErrorImageUrl) ||
+                other.serverErrorImageUrl == serverErrorImageUrl) &&
+            (identical(other.notFountImageUrl, notFountImageUrl) ||
+                other.notFountImageUrl == notFountImageUrl) &&
             (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl) &&
             (identical(other.backgroundImageUrl, backgroundImageUrl) ||
                 other.backgroundImageUrl == backgroundImageUrl) &&
@@ -942,6 +1110,8 @@ class _$MetaResponseImpl implements _MetaResponse {
             (identical(other.maxNoteTextLength, maxNoteTextLength) ||
                 other.maxNoteTextLength == maxNoteTextLength) &&
             const DeepCollectionEquality().equals(other._ads, _ads) &&
+            (identical(other.notesPerOneAd, notesPerOneAd) ||
+                other.notesPerOneAd == notesPerOneAd) &&
             const DeepCollectionEquality()
                 .equals(other._serverRules, _serverRules) &&
             (identical(other.policies, policies) ||
@@ -960,8 +1130,8 @@ class _$MetaResponseImpl implements _MetaResponse {
                 other.mediaProxy == mediaProxy) &&
             (identical(other.cacheRemoteFiles, cacheRemoteFiles) ||
                 other.cacheRemoteFiles == cacheRemoteFiles) &&
-            (identical(other.features, features) ||
-                other.features == features));
+            (identical(other.cacheRemoteSensitiveFiles, cacheRemoteSensitiveFiles) || other.cacheRemoteSensitiveFiles == cacheRemoteSensitiveFiles) &&
+            (identical(other.features, features) || other.features == features));
   }
 
   @JsonKey(ignore: true)
@@ -971,6 +1141,7 @@ class _$MetaResponseImpl implements _MetaResponse {
         maintainerName,
         maintainerEmail,
         version,
+        providesTarball,
         name,
         shortName,
         uri,
@@ -985,6 +1156,9 @@ class _$MetaResponseImpl implements _MetaResponse {
         emailRequiredForSignup,
         enableHcaptcha,
         hcaptchaSiteKey,
+        enableMcaptcha,
+        mcaptchaSiteKey,
+        mcaptchaInstanceUrl,
         enableRecaptcha,
         recaptchaSiteKey,
         enableTurnstile,
@@ -993,7 +1167,10 @@ class _$MetaResponseImpl implements _MetaResponse {
         themeColor,
         mascotImageUrl,
         bannerUrl,
+        infoImageUrl,
         errorImageUrl,
+        serverErrorImageUrl,
+        notFountImageUrl,
         iconUrl,
         backgroundImageUrl,
         logoImageUrl,
@@ -1001,6 +1178,7 @@ class _$MetaResponseImpl implements _MetaResponse {
         privacyPolicyUrl,
         maxNoteTextLength,
         const DeepCollectionEquality().hash(_ads),
+        notesPerOneAd,
         const DeepCollectionEquality().hash(_serverRules),
         policies,
         requireSetup,
@@ -1010,6 +1188,7 @@ class _$MetaResponseImpl implements _MetaResponse {
         proxyAccountName,
         mediaProxy,
         cacheRemoteFiles,
+        cacheRemoteSensitiveFiles,
         features
       ]);
 
@@ -1032,20 +1211,24 @@ abstract class _MetaResponse implements MetaResponse {
       {final String? maintainerName,
       final String? maintainerEmail,
       required final String version,
+      final bool? providesTarball,
       final String? name,
       final String? shortName,
       @UriConverter() required final Uri uri,
       final String? description,
       required final List<String> langs,
       @NullableUriConverter() final Uri? tosUrl,
-      @UriConverter() required final Uri repositoryUrl,
-      required final String feedbackUrl,
+      @NullableUriConverter() final Uri? repositoryUrl,
+      final String? feedbackUrl,
       final String? defaultDarkTheme,
       final String? defaultLightTheme,
       required final bool disableRegistration,
       required final bool emailRequiredForSignup,
       required final bool enableHcaptcha,
       final String? hcaptchaSiteKey,
+      final bool? enableMcaptcha,
+      final String? mcaptchaSiteKey,
+      @NullableUriConverter() final Uri? mcaptchaInstanceUrl,
       final bool? enableRecaptcha,
       final String? recaptchaSiteKey,
       final bool? enableTurnstile,
@@ -1054,7 +1237,10 @@ abstract class _MetaResponse implements MetaResponse {
       final String? themeColor,
       @NullableUriConverter() final Uri? mascotImageUrl,
       @NullableUriConverter() final Uri? bannerUrl,
+      @NullableUriConverter() final Uri? infoImageUrl,
       @NullableUriConverter() final Uri? errorImageUrl,
+      @NullableUriConverter() final Uri? serverErrorImageUrl,
+      @NullableUriConverter() final Uri? notFountImageUrl,
       @NullableUriConverter() final Uri? iconUrl,
       @NullableUriConverter() final Uri? backgroundImageUrl,
       @NullableUriConverter() final Uri? logoImageUrl,
@@ -1062,6 +1248,7 @@ abstract class _MetaResponse implements MetaResponse {
       @NullableUriConverter() final Uri? privacyPolicyUrl,
       required final int maxNoteTextLength,
       required final List<MetaAd> ads,
+      final int? notesPerOneAd,
       final List<String> serverRules,
       final UserPolicies? policies,
       final bool? requireSetup,
@@ -1071,6 +1258,7 @@ abstract class _MetaResponse implements MetaResponse {
       final String? proxyAccountName,
       final String? mediaProxy,
       final bool? cacheRemoteFiles,
+      final bool? cacheRemoteSensitiveFiles,
       final MetaFeature? features}) = _$MetaResponseImpl;
 
   factory _MetaResponse.fromJson(Map<String, dynamic> json) =
@@ -1082,6 +1270,8 @@ abstract class _MetaResponse implements MetaResponse {
   String? get maintainerEmail;
   @override
   String get version;
+  @override
+  bool? get providesTarball;
   @override
   String? get name;
   @override
@@ -1097,10 +1287,10 @@ abstract class _MetaResponse implements MetaResponse {
   @NullableUriConverter()
   Uri? get tosUrl;
   @override
-  @UriConverter()
-  Uri get repositoryUrl;
+  @NullableUriConverter()
+  Uri? get repositoryUrl;
   @override
-  String get feedbackUrl;
+  String? get feedbackUrl;
   @override
   String? get defaultDarkTheme;
   @override
@@ -1116,6 +1306,13 @@ abstract class _MetaResponse implements MetaResponse {
   bool get enableHcaptcha;
   @override
   String? get hcaptchaSiteKey;
+  @override
+  bool? get enableMcaptcha;
+  @override
+  String? get mcaptchaSiteKey;
+  @override
+  @NullableUriConverter()
+  Uri? get mcaptchaInstanceUrl;
   @override
   bool? get enableRecaptcha;
   @override
@@ -1136,7 +1333,16 @@ abstract class _MetaResponse implements MetaResponse {
   Uri? get bannerUrl;
   @override
   @NullableUriConverter()
+  Uri? get infoImageUrl;
+  @override
+  @NullableUriConverter()
   Uri? get errorImageUrl;
+  @override // Removed in Misskey 13.13.2
+  @NullableUriConverter()
+  Uri? get serverErrorImageUrl;
+  @override
+  @NullableUriConverter()
+  Uri? get notFountImageUrl;
   @override
   @NullableUriConverter()
   Uri? get iconUrl;
@@ -1157,6 +1363,8 @@ abstract class _MetaResponse implements MetaResponse {
   @override //required List<MetaEmoji> emojis,
   List<MetaAd> get ads;
   @override
+  int? get notesPerOneAd;
+  @override
   List<String> get serverRules;
   @override
   UserPolicies? get policies;
@@ -1176,6 +1384,8 @@ abstract class _MetaResponse implements MetaResponse {
   String? get mediaProxy;
   @override
   bool? get cacheRemoteFiles;
+  @override
+  bool? get cacheRemoteSensitiveFiles;
   @override
   MetaFeature? get features;
   @override

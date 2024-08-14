@@ -436,6 +436,7 @@ mixin _$JoinMisskeyInstanceInfo {
       throw _privateConstructorUsedError; // ignore: invalid_annotation_target
   @JsonKey(name: "nodeinfo")
   JoinMisskeyNodeInfo? get nodeInfo => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get meta => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -459,7 +460,8 @@ abstract class $JoinMisskeyInstanceInfoCopyWith<$Res> {
       bool banner,
       bool background,
       bool icon,
-      @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo});
+      @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
+      Map<String, dynamic>? meta});
 
   $JoinMisskeyNodeInfoCopyWith<$Res>? get nodeInfo;
 }
@@ -488,6 +490,7 @@ class _$JoinMisskeyInstanceInfoCopyWithImpl<$Res,
     Object? background = null,
     Object? icon = null,
     Object? nodeInfo = freezed,
+    Object? meta = freezed,
   }) {
     return _then(_value.copyWith(
       url: null == url
@@ -530,6 +533,10 @@ class _$JoinMisskeyInstanceInfoCopyWithImpl<$Res,
           ? _value.nodeInfo
           : nodeInfo // ignore: cast_nullable_to_non_nullable
               as JoinMisskeyNodeInfo?,
+      meta: freezed == meta
+          ? _value.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -565,7 +572,8 @@ abstract class _$$JoinMisskeyInstanceInfoImplCopyWith<$Res>
       bool banner,
       bool background,
       bool icon,
-      @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo});
+      @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
+      Map<String, dynamic>? meta});
 
   @override
   $JoinMisskeyNodeInfoCopyWith<$Res>? get nodeInfo;
@@ -594,6 +602,7 @@ class __$$JoinMisskeyInstanceInfoImplCopyWithImpl<$Res>
     Object? background = null,
     Object? icon = null,
     Object? nodeInfo = freezed,
+    Object? meta = freezed,
   }) {
     return _then(_$JoinMisskeyInstanceInfoImpl(
       url: null == url
@@ -636,6 +645,10 @@ class __$$JoinMisskeyInstanceInfoImplCopyWithImpl<$Res>
           ? _value.nodeInfo
           : nodeInfo // ignore: cast_nullable_to_non_nullable
               as JoinMisskeyNodeInfo?,
+      meta: freezed == meta
+          ? _value._meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -653,8 +666,10 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
       this.banner = false,
       this.background = false,
       this.icon = false,
-      @JsonKey(name: "nodeinfo") this.nodeInfo})
-      : _langs = langs;
+      @JsonKey(name: "nodeinfo") this.nodeInfo,
+      final Map<String, dynamic>? meta})
+      : _langs = langs,
+        _meta = meta;
 
   factory _$JoinMisskeyInstanceInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$JoinMisskeyInstanceInfoImplFromJson(json);
@@ -690,10 +705,19 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
   @override
   @JsonKey(name: "nodeinfo")
   final JoinMisskeyNodeInfo? nodeInfo;
+  final Map<String, dynamic>? _meta;
+  @override
+  Map<String, dynamic>? get meta {
+    final value = _meta;
+    if (value == null) return null;
+    if (_meta is EqualUnmodifiableMapView) return _meta;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'JoinMisskeyInstanceInfo(url: $url, name: $name, langs: $langs, description: $description, isAlive: $isAlive, value: $value, banner: $banner, background: $background, icon: $icon, nodeInfo: $nodeInfo)';
+    return 'JoinMisskeyInstanceInfo(url: $url, name: $name, langs: $langs, description: $description, isAlive: $isAlive, value: $value, banner: $banner, background: $background, icon: $icon, nodeInfo: $nodeInfo, meta: $meta)';
   }
 
   @override
@@ -713,7 +737,8 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
                 other.background == background) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.nodeInfo, nodeInfo) ||
-                other.nodeInfo == nodeInfo));
+                other.nodeInfo == nodeInfo) &&
+            const DeepCollectionEquality().equals(other._meta, _meta));
   }
 
   @JsonKey(ignore: true)
@@ -729,7 +754,8 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
       banner,
       background,
       icon,
-      nodeInfo);
+      nodeInfo,
+      const DeepCollectionEquality().hash(_meta));
 
   @JsonKey(ignore: true)
   @override
@@ -748,17 +774,17 @@ class _$JoinMisskeyInstanceInfoImpl implements _JoinMisskeyInstanceInfo {
 
 abstract class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
   const factory _JoinMisskeyInstanceInfo(
-          {required final String url,
-          required final String name,
-          required final List<String> langs,
-          required final String? description,
-          required final bool isAlive,
-          required final double value,
-          final bool banner,
-          final bool background,
-          final bool icon,
-          @JsonKey(name: "nodeinfo") final JoinMisskeyNodeInfo? nodeInfo}) =
-      _$JoinMisskeyInstanceInfoImpl;
+      {required final String url,
+      required final String name,
+      required final List<String> langs,
+      required final String? description,
+      required final bool isAlive,
+      required final double value,
+      final bool banner,
+      final bool background,
+      final bool icon,
+      @JsonKey(name: "nodeinfo") final JoinMisskeyNodeInfo? nodeInfo,
+      final Map<String, dynamic>? meta}) = _$JoinMisskeyInstanceInfoImpl;
 
   factory _JoinMisskeyInstanceInfo.fromJson(Map<String, dynamic> json) =
       _$JoinMisskeyInstanceInfoImpl.fromJson;
@@ -784,6 +810,8 @@ abstract class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
   @override // ignore: invalid_annotation_target
   @JsonKey(name: "nodeinfo")
   JoinMisskeyNodeInfo? get nodeInfo;
+  @override
+  Map<String, dynamic>? get meta;
   @override
   @JsonKey(ignore: true)
   _$$JoinMisskeyInstanceInfoImplCopyWith<_$JoinMisskeyInstanceInfoImpl>

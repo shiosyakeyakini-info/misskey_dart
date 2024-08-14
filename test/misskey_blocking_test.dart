@@ -23,4 +23,11 @@ void main() async {
       isFalse,
     );
   });
+
+  test("list", () async {
+    final newUser = (await adminClient.createUser()).user;
+    await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
+    final response = await userClient.blocking.list(BlockingListRequest());
+    expect(response.map((e) => e.blockeeId), contains(newUser.id));
+  });
 }

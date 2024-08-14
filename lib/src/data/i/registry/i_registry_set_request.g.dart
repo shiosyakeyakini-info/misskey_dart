@@ -10,7 +10,7 @@ _$IRegistrySetRequestImpl _$$IRegistrySetRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$IRegistrySetRequestImpl(
       key: json['key'] as String,
-      value: json['value'] as String,
+      value: json['value'],
       scope: (json['scope'] as List<dynamic>).map((e) => e as String).toList(),
       domain: json['domain'] as String?,
     );

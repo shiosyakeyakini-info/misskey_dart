@@ -115,6 +115,14 @@ void main() async {
     });
   });
 
+  test("search-by-username-and-host", () async {
+    final response = await userClient.users.searchByUsernameAndHost(
+      UsersSearchByUsernameAndHostRequest(username: user.username, host: "."),
+    );
+    expect(response.map((e) => e.id), contains(user.id));
+    expect(response, everyElement(isA<UserDetailed>()));
+  });
+
   test(
     "recommendation",
     () async {
@@ -148,7 +156,7 @@ void main() async {
     final flash = await userClient.createFlash();
     final response =
         await userClient.users.flashs(UsersFlashsRequest(userId: user.id));
-    expect(response.map((e) => e.id), contains(flash["id"]));
+    expect(response.map((e) => e.id), contains(flash.id));
   });
 
   test("featured-notes", () async {
