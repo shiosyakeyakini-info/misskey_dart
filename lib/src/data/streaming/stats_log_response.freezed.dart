@@ -14,123 +14,112 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-StatsLogResponse _$StatsLogResponseFromJson(Map<String, dynamic> json) {
-  return _StatsLogResponse.fromJson(json);
+StatsResponse _$StatsResponseFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'serverMetrics':
+      return ServerMetricsResponse.fromJson(json);
+    case 'jobQueue':
+      return JobQueueResponse.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'StatsResponse',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
 }
 
 /// @nodoc
-mixin _$StatsLogResponse {
-  double get cpu => throw _privateConstructorUsedError;
-  StatsLogFs get fs => throw _privateConstructorUsedError;
-  StatsLogMem get mem => throw _privateConstructorUsedError;
-  StatsLogNet get net => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StatsLogResponseCopyWith<StatsLogResponse> get copyWith =>
+mixin _$StatsResponse {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)
+        serverMetrics,
+    required TResult Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)
+        jobQueue,
+  }) =>
       throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
+        serverMetrics,
+    TResult? Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
+        jobQueue,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
+        serverMetrics,
+    TResult Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
+        jobQueue,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerMetricsResponse value) serverMetrics,
+    required TResult Function(JobQueueResponse value) jobQueue,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerMetricsResponse value)? serverMetrics,
+    TResult? Function(JobQueueResponse value)? jobQueue,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerMetricsResponse value)? serverMetrics,
+    TResult Function(JobQueueResponse value)? jobQueue,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StatsLogResponseCopyWith<$Res> {
-  factory $StatsLogResponseCopyWith(
-          StatsLogResponse value, $Res Function(StatsLogResponse) then) =
-      _$StatsLogResponseCopyWithImpl<$Res, StatsLogResponse>;
-  @useResult
-  $Res call({double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net});
-
-  $StatsLogFsCopyWith<$Res> get fs;
-  $StatsLogMemCopyWith<$Res> get mem;
-  $StatsLogNetCopyWith<$Res> get net;
+abstract class $StatsResponseCopyWith<$Res> {
+  factory $StatsResponseCopyWith(
+          StatsResponse value, $Res Function(StatsResponse) then) =
+      _$StatsResponseCopyWithImpl<$Res, StatsResponse>;
 }
 
 /// @nodoc
-class _$StatsLogResponseCopyWithImpl<$Res, $Val extends StatsLogResponse>
-    implements $StatsLogResponseCopyWith<$Res> {
-  _$StatsLogResponseCopyWithImpl(this._value, this._then);
+class _$StatsResponseCopyWithImpl<$Res, $Val extends StatsResponse>
+    implements $StatsResponseCopyWith<$Res> {
+  _$StatsResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? cpu = null,
-    Object? fs = null,
-    Object? mem = null,
-    Object? net = null,
-  }) {
-    return _then(_value.copyWith(
-      cpu: null == cpu
-          ? _value.cpu
-          : cpu // ignore: cast_nullable_to_non_nullable
-              as double,
-      fs: null == fs
-          ? _value.fs
-          : fs // ignore: cast_nullable_to_non_nullable
-              as StatsLogFs,
-      mem: null == mem
-          ? _value.mem
-          : mem // ignore: cast_nullable_to_non_nullable
-              as StatsLogMem,
-      net: null == net
-          ? _value.net
-          : net // ignore: cast_nullable_to_non_nullable
-              as StatsLogNet,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $StatsLogFsCopyWith<$Res> get fs {
-    return $StatsLogFsCopyWith<$Res>(_value.fs, (value) {
-      return _then(_value.copyWith(fs: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $StatsLogMemCopyWith<$Res> get mem {
-    return $StatsLogMemCopyWith<$Res>(_value.mem, (value) {
-      return _then(_value.copyWith(mem: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $StatsLogNetCopyWith<$Res> get net {
-    return $StatsLogNetCopyWith<$Res>(_value.net, (value) {
-      return _then(_value.copyWith(net: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$StatsLogResponseImplCopyWith<$Res>
-    implements $StatsLogResponseCopyWith<$Res> {
-  factory _$$StatsLogResponseImplCopyWith(_$StatsLogResponseImpl value,
-          $Res Function(_$StatsLogResponseImpl) then) =
-      __$$StatsLogResponseImplCopyWithImpl<$Res>;
-  @override
+abstract class _$$ServerMetricsResponseImplCopyWith<$Res> {
+  factory _$$ServerMetricsResponseImplCopyWith(
+          _$ServerMetricsResponseImpl value,
+          $Res Function(_$ServerMetricsResponseImpl) then) =
+      __$$ServerMetricsResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net});
 
-  @override
   $StatsLogFsCopyWith<$Res> get fs;
-  @override
   $StatsLogMemCopyWith<$Res> get mem;
-  @override
   $StatsLogNetCopyWith<$Res> get net;
 }
 
 /// @nodoc
-class __$$StatsLogResponseImplCopyWithImpl<$Res>
-    extends _$StatsLogResponseCopyWithImpl<$Res, _$StatsLogResponseImpl>
-    implements _$$StatsLogResponseImplCopyWith<$Res> {
-  __$$StatsLogResponseImplCopyWithImpl(_$StatsLogResponseImpl _value,
-      $Res Function(_$StatsLogResponseImpl) _then)
+class __$$ServerMetricsResponseImplCopyWithImpl<$Res>
+    extends _$StatsResponseCopyWithImpl<$Res, _$ServerMetricsResponseImpl>
+    implements _$$ServerMetricsResponseImplCopyWith<$Res> {
+  __$$ServerMetricsResponseImplCopyWithImpl(_$ServerMetricsResponseImpl _value,
+      $Res Function(_$ServerMetricsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +130,7 @@ class __$$StatsLogResponseImplCopyWithImpl<$Res>
     Object? mem = null,
     Object? net = null,
   }) {
-    return _then(_$StatsLogResponseImpl(
+    return _then(_$ServerMetricsResponseImpl(
       cpu: null == cpu
           ? _value.cpu
           : cpu // ignore: cast_nullable_to_non_nullable
@@ -160,19 +149,45 @@ class __$$StatsLogResponseImplCopyWithImpl<$Res>
               as StatsLogNet,
     ));
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatsLogFsCopyWith<$Res> get fs {
+    return $StatsLogFsCopyWith<$Res>(_value.fs, (value) {
+      return _then(_value.copyWith(fs: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatsLogMemCopyWith<$Res> get mem {
+    return $StatsLogMemCopyWith<$Res>(_value.mem, (value) {
+      return _then(_value.copyWith(mem: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StatsLogNetCopyWith<$Res> get net {
+    return $StatsLogNetCopyWith<$Res>(_value.net, (value) {
+      return _then(_value.copyWith(net: value));
+    });
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$StatsLogResponseImpl implements _StatsLogResponse {
-  const _$StatsLogResponseImpl(
+class _$ServerMetricsResponseImpl implements ServerMetricsResponse {
+  const _$ServerMetricsResponseImpl(
       {required this.cpu,
       required this.fs,
       required this.mem,
-      required this.net});
+      required this.net,
+      final String? $type})
+      : $type = $type ?? 'serverMetrics';
 
-  factory _$StatsLogResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StatsLogResponseImplFromJson(json);
+  factory _$ServerMetricsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ServerMetricsResponseImplFromJson(json);
 
   @override
   final double cpu;
@@ -183,16 +198,19 @@ class _$StatsLogResponseImpl implements _StatsLogResponse {
   @override
   final StatsLogNet net;
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   @override
   String toString() {
-    return 'StatsLogResponse(cpu: $cpu, fs: $fs, mem: $mem, net: $net)';
+    return 'StatsResponse.serverMetrics(cpu: $cpu, fs: $fs, mem: $mem, net: $net)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StatsLogResponseImpl &&
+            other is _$ServerMetricsResponseImpl &&
             (identical(other.cpu, cpu) || other.cpu == cpu) &&
             (identical(other.fs, fs) || other.fs == fs) &&
             (identical(other.mem, mem) || other.mem == mem) &&
@@ -206,39 +224,305 @@ class _$StatsLogResponseImpl implements _StatsLogResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StatsLogResponseImplCopyWith<_$StatsLogResponseImpl> get copyWith =>
-      __$$StatsLogResponseImplCopyWithImpl<_$StatsLogResponseImpl>(
-          this, _$identity);
+  _$$ServerMetricsResponseImplCopyWith<_$ServerMetricsResponseImpl>
+      get copyWith => __$$ServerMetricsResponseImplCopyWithImpl<
+          _$ServerMetricsResponseImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)
+        serverMetrics,
+    required TResult Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)
+        jobQueue,
+  }) {
+    return serverMetrics(cpu, fs, mem, net);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
+        serverMetrics,
+    TResult? Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
+        jobQueue,
+  }) {
+    return serverMetrics?.call(cpu, fs, mem, net);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
+        serverMetrics,
+    TResult Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
+        jobQueue,
+    required TResult orElse(),
+  }) {
+    if (serverMetrics != null) {
+      return serverMetrics(cpu, fs, mem, net);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerMetricsResponse value) serverMetrics,
+    required TResult Function(JobQueueResponse value) jobQueue,
+  }) {
+    return serverMetrics(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerMetricsResponse value)? serverMetrics,
+    TResult? Function(JobQueueResponse value)? jobQueue,
+  }) {
+    return serverMetrics?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerMetricsResponse value)? serverMetrics,
+    TResult Function(JobQueueResponse value)? jobQueue,
+    required TResult orElse(),
+  }) {
+    if (serverMetrics != null) {
+      return serverMetrics(this);
+    }
+    return orElse();
+  }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$StatsLogResponseImplToJson(
+    return _$$ServerMetricsResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class _StatsLogResponse implements StatsLogResponse {
-  const factory _StatsLogResponse(
+abstract class ServerMetricsResponse implements StatsResponse {
+  const factory ServerMetricsResponse(
       {required final double cpu,
       required final StatsLogFs fs,
       required final StatsLogMem mem,
-      required final StatsLogNet net}) = _$StatsLogResponseImpl;
+      required final StatsLogNet net}) = _$ServerMetricsResponseImpl;
 
-  factory _StatsLogResponse.fromJson(Map<String, dynamic> json) =
-      _$StatsLogResponseImpl.fromJson;
+  factory ServerMetricsResponse.fromJson(Map<String, dynamic> json) =
+      _$ServerMetricsResponseImpl.fromJson;
 
-  @override
   double get cpu;
-  @override
   StatsLogFs get fs;
-  @override
   StatsLogMem get mem;
-  @override
   StatsLogNet get net;
-  @override
   @JsonKey(ignore: true)
-  _$$StatsLogResponseImplCopyWith<_$StatsLogResponseImpl> get copyWith =>
+  _$$ServerMetricsResponseImplCopyWith<_$ServerMetricsResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$JobQueueResponseImplCopyWith<$Res> {
+  factory _$$JobQueueResponseImplCopyWith(_$JobQueueResponseImpl value,
+          $Res Function(_$JobQueueResponseImpl) then) =
+      __$$JobQueueResponseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver});
+
+  $QueueStatsLogResponseDataCopyWith<$Res> get inbox;
+  $QueueStatsLogResponseDataCopyWith<$Res> get deliver;
+}
+
+/// @nodoc
+class __$$JobQueueResponseImplCopyWithImpl<$Res>
+    extends _$StatsResponseCopyWithImpl<$Res, _$JobQueueResponseImpl>
+    implements _$$JobQueueResponseImplCopyWith<$Res> {
+  __$$JobQueueResponseImplCopyWithImpl(_$JobQueueResponseImpl _value,
+      $Res Function(_$JobQueueResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? inbox = null,
+    Object? deliver = null,
+  }) {
+    return _then(_$JobQueueResponseImpl(
+      inbox: null == inbox
+          ? _value.inbox
+          : inbox // ignore: cast_nullable_to_non_nullable
+              as QueueStatsLogResponseData,
+      deliver: null == deliver
+          ? _value.deliver
+          : deliver // ignore: cast_nullable_to_non_nullable
+              as QueueStatsLogResponseData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $QueueStatsLogResponseDataCopyWith<$Res> get inbox {
+    return $QueueStatsLogResponseDataCopyWith<$Res>(_value.inbox, (value) {
+      return _then(_value.copyWith(inbox: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $QueueStatsLogResponseDataCopyWith<$Res> get deliver {
+    return $QueueStatsLogResponseDataCopyWith<$Res>(_value.deliver, (value) {
+      return _then(_value.copyWith(deliver: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$JobQueueResponseImpl implements JobQueueResponse {
+  const _$JobQueueResponseImpl(
+      {required this.inbox, required this.deliver, final String? $type})
+      : $type = $type ?? 'jobQueue';
+
+  factory _$JobQueueResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$JobQueueResponseImplFromJson(json);
+
+  @override
+  final QueueStatsLogResponseData inbox;
+  @override
+  final QueueStatsLogResponseData deliver;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'StatsResponse.jobQueue(inbox: $inbox, deliver: $deliver)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$JobQueueResponseImpl &&
+            (identical(other.inbox, inbox) || other.inbox == inbox) &&
+            (identical(other.deliver, deliver) || other.deliver == deliver));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, inbox, deliver);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$JobQueueResponseImplCopyWith<_$JobQueueResponseImpl> get copyWith =>
+      __$$JobQueueResponseImplCopyWithImpl<_$JobQueueResponseImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)
+        serverMetrics,
+    required TResult Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)
+        jobQueue,
+  }) {
+    return jobQueue(inbox, deliver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
+        serverMetrics,
+    TResult? Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
+        jobQueue,
+  }) {
+    return jobQueue?.call(inbox, deliver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
+        serverMetrics,
+    TResult Function(
+            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
+        jobQueue,
+    required TResult orElse(),
+  }) {
+    if (jobQueue != null) {
+      return jobQueue(inbox, deliver);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerMetricsResponse value) serverMetrics,
+    required TResult Function(JobQueueResponse value) jobQueue,
+  }) {
+    return jobQueue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerMetricsResponse value)? serverMetrics,
+    TResult? Function(JobQueueResponse value)? jobQueue,
+  }) {
+    return jobQueue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerMetricsResponse value)? serverMetrics,
+    TResult Function(JobQueueResponse value)? jobQueue,
+    required TResult orElse(),
+  }) {
+    if (jobQueue != null) {
+      return jobQueue(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$JobQueueResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class JobQueueResponse implements StatsResponse {
+  const factory JobQueueResponse(
+          {required final QueueStatsLogResponseData inbox,
+          required final QueueStatsLogResponseData deliver}) =
+      _$JobQueueResponseImpl;
+
+  factory JobQueueResponse.fromJson(Map<String, dynamic> json) =
+      _$JobQueueResponseImpl.fromJson;
+
+  QueueStatsLogResponseData get inbox;
+  QueueStatsLogResponseData get deliver;
+  @JsonKey(ignore: true)
+  _$$JobQueueResponseImplCopyWith<_$JobQueueResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -700,4 +984,204 @@ abstract class _StatsLogNet implements StatsLogNet {
   @JsonKey(ignore: true)
   _$$StatsLogNetImplCopyWith<_$StatsLogNetImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+QueueStatsLogResponseData _$QueueStatsLogResponseDataFromJson(
+    Map<String, dynamic> json) {
+  return _QueueStatsLogResponseData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$QueueStatsLogResponseData {
+  int get activeSincePrevTick => throw _privateConstructorUsedError;
+  int get active => throw _privateConstructorUsedError;
+  int get waiting => throw _privateConstructorUsedError;
+  int get delayed => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $QueueStatsLogResponseDataCopyWith<QueueStatsLogResponseData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $QueueStatsLogResponseDataCopyWith<$Res> {
+  factory $QueueStatsLogResponseDataCopyWith(QueueStatsLogResponseData value,
+          $Res Function(QueueStatsLogResponseData) then) =
+      _$QueueStatsLogResponseDataCopyWithImpl<$Res, QueueStatsLogResponseData>;
+  @useResult
+  $Res call({int activeSincePrevTick, int active, int waiting, int delayed});
+}
+
+/// @nodoc
+class _$QueueStatsLogResponseDataCopyWithImpl<$Res,
+        $Val extends QueueStatsLogResponseData>
+    implements $QueueStatsLogResponseDataCopyWith<$Res> {
+  _$QueueStatsLogResponseDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activeSincePrevTick = null,
+    Object? active = null,
+    Object? waiting = null,
+    Object? delayed = null,
+  }) {
+    return _then(_value.copyWith(
+      activeSincePrevTick: null == activeSincePrevTick
+          ? _value.activeSincePrevTick
+          : activeSincePrevTick // ignore: cast_nullable_to_non_nullable
+              as int,
+      active: null == active
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as int,
+      waiting: null == waiting
+          ? _value.waiting
+          : waiting // ignore: cast_nullable_to_non_nullable
+              as int,
+      delayed: null == delayed
+          ? _value.delayed
+          : delayed // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$QueueStatsLogResponseDataImplCopyWith<$Res>
+    implements $QueueStatsLogResponseDataCopyWith<$Res> {
+  factory _$$QueueStatsLogResponseDataImplCopyWith(
+          _$QueueStatsLogResponseDataImpl value,
+          $Res Function(_$QueueStatsLogResponseDataImpl) then) =
+      __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int activeSincePrevTick, int active, int waiting, int delayed});
+}
+
+/// @nodoc
+class __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>
+    extends _$QueueStatsLogResponseDataCopyWithImpl<$Res,
+        _$QueueStatsLogResponseDataImpl>
+    implements _$$QueueStatsLogResponseDataImplCopyWith<$Res> {
+  __$$QueueStatsLogResponseDataImplCopyWithImpl(
+      _$QueueStatsLogResponseDataImpl _value,
+      $Res Function(_$QueueStatsLogResponseDataImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activeSincePrevTick = null,
+    Object? active = null,
+    Object? waiting = null,
+    Object? delayed = null,
+  }) {
+    return _then(_$QueueStatsLogResponseDataImpl(
+      activeSincePrevTick: null == activeSincePrevTick
+          ? _value.activeSincePrevTick
+          : activeSincePrevTick // ignore: cast_nullable_to_non_nullable
+              as int,
+      active: null == active
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as int,
+      waiting: null == waiting
+          ? _value.waiting
+          : waiting // ignore: cast_nullable_to_non_nullable
+              as int,
+      delayed: null == delayed
+          ? _value.delayed
+          : delayed // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$QueueStatsLogResponseDataImpl implements _QueueStatsLogResponseData {
+  const _$QueueStatsLogResponseDataImpl(
+      {required this.activeSincePrevTick,
+      required this.active,
+      required this.waiting,
+      required this.delayed});
+
+  factory _$QueueStatsLogResponseDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QueueStatsLogResponseDataImplFromJson(json);
+
+  @override
+  final int activeSincePrevTick;
+  @override
+  final int active;
+  @override
+  final int waiting;
+  @override
+  final int delayed;
+
+  @override
+  String toString() {
+    return 'QueueStatsLogResponseData(activeSincePrevTick: $activeSincePrevTick, active: $active, waiting: $waiting, delayed: $delayed)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueueStatsLogResponseDataImpl &&
+            (identical(other.activeSincePrevTick, activeSincePrevTick) ||
+                other.activeSincePrevTick == activeSincePrevTick) &&
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.waiting, waiting) || other.waiting == waiting) &&
+            (identical(other.delayed, delayed) || other.delayed == delayed));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, activeSincePrevTick, active, waiting, delayed);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueueStatsLogResponseDataImplCopyWith<_$QueueStatsLogResponseDataImpl>
+      get copyWith => __$$QueueStatsLogResponseDataImplCopyWithImpl<
+          _$QueueStatsLogResponseDataImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$QueueStatsLogResponseDataImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _QueueStatsLogResponseData implements QueueStatsLogResponseData {
+  const factory _QueueStatsLogResponseData(
+      {required final int activeSincePrevTick,
+      required final int active,
+      required final int waiting,
+      required final int delayed}) = _$QueueStatsLogResponseDataImpl;
+
+  factory _QueueStatsLogResponseData.fromJson(Map<String, dynamic> json) =
+      _$QueueStatsLogResponseDataImpl.fromJson;
+
+  @override
+  int get activeSincePrevTick;
+  @override
+  int get active;
+  @override
+  int get waiting;
+  @override
+  int get delayed;
+  @override
+  @JsonKey(ignore: true)
+  _$$QueueStatsLogResponseDataImplCopyWith<_$QueueStatsLogResponseDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

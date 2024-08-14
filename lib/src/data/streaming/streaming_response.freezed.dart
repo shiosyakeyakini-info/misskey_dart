@@ -28,8 +28,7 @@ StreamingResponse _$StreamingResponseFromJson(Map<String, dynamic> json) {
       return StreamingChannelEmojiDeletedResponse.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'type', 'StreamingResponse',
-          'Invalid union type "${json['type']}"!');
+      return StreamingChannelUnknownResponse.fromJson(json);
   }
 }
 
@@ -43,6 +42,7 @@ mixin _$StreamingResponse {
     required TResult Function(BroadcastStreamEvent body) emojiAdded,
     required TResult Function(BroadcastStreamEvent body) emojiUpdated,
     required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +52,7 @@ mixin _$StreamingResponse {
     TResult? Function(BroadcastStreamEvent body)? emojiAdded,
     TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +62,7 @@ mixin _$StreamingResponse {
     TResult Function(BroadcastStreamEvent body)? emojiAdded,
     TResult Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +77,7 @@ mixin _$StreamingResponse {
         emojiUpdated,
     required TResult Function(StreamingChannelEmojiDeletedResponse value)
         emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,6 +87,7 @@ mixin _$StreamingResponse {
     TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +97,7 @@ mixin _$StreamingResponse {
     TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -209,6 +214,7 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
     required TResult Function(BroadcastStreamEvent body) emojiAdded,
     required TResult Function(BroadcastStreamEvent body) emojiUpdated,
     required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
   }) {
     return channel(body);
   }
@@ -221,6 +227,7 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
     TResult? Function(BroadcastStreamEvent body)? emojiAdded,
     TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
   }) {
     return channel?.call(body);
   }
@@ -233,6 +240,7 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
     TResult Function(BroadcastStreamEvent body)? emojiAdded,
     TResult Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
     required TResult orElse(),
   }) {
     if (channel != null) {
@@ -253,6 +261,7 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
         emojiUpdated,
     required TResult Function(StreamingChannelEmojiDeletedResponse value)
         emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
   }) {
     return channel(this);
   }
@@ -265,6 +274,7 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
     TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
   }) {
     return channel?.call(this);
   }
@@ -277,6 +287,7 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
     TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
     required TResult orElse(),
   }) {
     if (channel != null) {
@@ -403,6 +414,7 @@ class _$StreamingChannelNoteUpdatedResponseImpl
     required TResult Function(BroadcastStreamEvent body) emojiAdded,
     required TResult Function(BroadcastStreamEvent body) emojiUpdated,
     required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
   }) {
     return noteUpdated(body);
   }
@@ -415,6 +427,7 @@ class _$StreamingChannelNoteUpdatedResponseImpl
     TResult? Function(BroadcastStreamEvent body)? emojiAdded,
     TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
   }) {
     return noteUpdated?.call(body);
   }
@@ -427,6 +440,7 @@ class _$StreamingChannelNoteUpdatedResponseImpl
     TResult Function(BroadcastStreamEvent body)? emojiAdded,
     TResult Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
     required TResult orElse(),
   }) {
     if (noteUpdated != null) {
@@ -447,6 +461,7 @@ class _$StreamingChannelNoteUpdatedResponseImpl
         emojiUpdated,
     required TResult Function(StreamingChannelEmojiDeletedResponse value)
         emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
   }) {
     return noteUpdated(this);
   }
@@ -459,6 +474,7 @@ class _$StreamingChannelNoteUpdatedResponseImpl
     TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
   }) {
     return noteUpdated?.call(this);
   }
@@ -471,6 +487,7 @@ class _$StreamingChannelNoteUpdatedResponseImpl
     TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
     required TResult orElse(),
   }) {
     if (noteUpdated != null) {
@@ -600,6 +617,7 @@ class _$StreamingChannelEmojiAddedResponseImpl
     required TResult Function(BroadcastStreamEvent body) emojiAdded,
     required TResult Function(BroadcastStreamEvent body) emojiUpdated,
     required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
   }) {
     return emojiAdded(body);
   }
@@ -612,6 +630,7 @@ class _$StreamingChannelEmojiAddedResponseImpl
     TResult? Function(BroadcastStreamEvent body)? emojiAdded,
     TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
   }) {
     return emojiAdded?.call(body);
   }
@@ -624,6 +643,7 @@ class _$StreamingChannelEmojiAddedResponseImpl
     TResult Function(BroadcastStreamEvent body)? emojiAdded,
     TResult Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
     required TResult orElse(),
   }) {
     if (emojiAdded != null) {
@@ -644,6 +664,7 @@ class _$StreamingChannelEmojiAddedResponseImpl
         emojiUpdated,
     required TResult Function(StreamingChannelEmojiDeletedResponse value)
         emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
   }) {
     return emojiAdded(this);
   }
@@ -656,6 +677,7 @@ class _$StreamingChannelEmojiAddedResponseImpl
     TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
   }) {
     return emojiAdded?.call(this);
   }
@@ -668,6 +690,7 @@ class _$StreamingChannelEmojiAddedResponseImpl
     TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
     required TResult orElse(),
   }) {
     if (emojiAdded != null) {
@@ -796,6 +819,7 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
     required TResult Function(BroadcastStreamEvent body) emojiAdded,
     required TResult Function(BroadcastStreamEvent body) emojiUpdated,
     required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
   }) {
     return emojiUpdated(body);
   }
@@ -808,6 +832,7 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
     TResult? Function(BroadcastStreamEvent body)? emojiAdded,
     TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
   }) {
     return emojiUpdated?.call(body);
   }
@@ -820,6 +845,7 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
     TResult Function(BroadcastStreamEvent body)? emojiAdded,
     TResult Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
     required TResult orElse(),
   }) {
     if (emojiUpdated != null) {
@@ -840,6 +866,7 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
         emojiUpdated,
     required TResult Function(StreamingChannelEmojiDeletedResponse value)
         emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
   }) {
     return emojiUpdated(this);
   }
@@ -852,6 +879,7 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
     TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
   }) {
     return emojiUpdated?.call(this);
   }
@@ -864,6 +892,7 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
     TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
     required TResult orElse(),
   }) {
     if (emojiUpdated != null) {
@@ -993,6 +1022,7 @@ class _$StreamingChannelEmojiDeletedResponseImpl
     required TResult Function(BroadcastStreamEvent body) emojiAdded,
     required TResult Function(BroadcastStreamEvent body) emojiUpdated,
     required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
   }) {
     return emojiDeleted(body);
   }
@@ -1005,6 +1035,7 @@ class _$StreamingChannelEmojiDeletedResponseImpl
     TResult? Function(BroadcastStreamEvent body)? emojiAdded,
     TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
   }) {
     return emojiDeleted?.call(body);
   }
@@ -1017,6 +1048,7 @@ class _$StreamingChannelEmojiDeletedResponseImpl
     TResult Function(BroadcastStreamEvent body)? emojiAdded,
     TResult Function(BroadcastStreamEvent body)? emojiUpdated,
     TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
     required TResult orElse(),
   }) {
     if (emojiDeleted != null) {
@@ -1037,6 +1069,7 @@ class _$StreamingChannelEmojiDeletedResponseImpl
         emojiUpdated,
     required TResult Function(StreamingChannelEmojiDeletedResponse value)
         emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
   }) {
     return emojiDeleted(this);
   }
@@ -1049,6 +1082,7 @@ class _$StreamingChannelEmojiDeletedResponseImpl
     TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
   }) {
     return emojiDeleted?.call(this);
   }
@@ -1061,6 +1095,7 @@ class _$StreamingChannelEmojiDeletedResponseImpl
     TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
     TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
     TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
     required TResult orElse(),
   }) {
     if (emojiDeleted != null) {
@@ -1095,6 +1130,194 @@ abstract class StreamingChannelEmojiDeletedResponse
       get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
+abstract class _$$StreamingChannelUnknownResponseImplCopyWith<$Res> {
+  factory _$$StreamingChannelUnknownResponseImplCopyWith(
+          _$StreamingChannelUnknownResponseImpl value,
+          $Res Function(_$StreamingChannelUnknownResponseImpl) then) =
+      __$$StreamingChannelUnknownResponseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object body});
+}
+
+/// @nodoc
+class __$$StreamingChannelUnknownResponseImplCopyWithImpl<$Res>
+    extends _$StreamingResponseCopyWithImpl<$Res,
+        _$StreamingChannelUnknownResponseImpl>
+    implements _$$StreamingChannelUnknownResponseImplCopyWith<$Res> {
+  __$$StreamingChannelUnknownResponseImplCopyWithImpl(
+      _$StreamingChannelUnknownResponseImpl _value,
+      $Res Function(_$StreamingChannelUnknownResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? body = null,
+  }) {
+    return _then(_$StreamingChannelUnknownResponseImpl(
+      body: null == body ? _value.body : body,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StreamingChannelUnknownResponseImpl
+    implements StreamingChannelUnknownResponse {
+  const _$StreamingChannelUnknownResponseImpl(
+      {required this.body, final String? $type})
+      : $type = $type ?? 'fallback';
+
+  factory _$StreamingChannelUnknownResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$StreamingChannelUnknownResponseImplFromJson(json);
+
+  @override
+  final Object body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'StreamingResponse.fallback(body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StreamingChannelUnknownResponseImpl &&
+            const DeepCollectionEquality().equals(other.body, body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(body));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StreamingChannelUnknownResponseImplCopyWith<
+          _$StreamingChannelUnknownResponseImpl>
+      get copyWith => __$$StreamingChannelUnknownResponseImplCopyWithImpl<
+          _$StreamingChannelUnknownResponseImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChannelStreamEvent body) channel,
+    required TResult Function(NoteUpdateStreamEvent body) noteUpdated,
+    required TResult Function(BroadcastStreamEvent body) emojiAdded,
+    required TResult Function(BroadcastStreamEvent body) emojiUpdated,
+    required TResult Function(BroadcastStreamEvent body) emojiDeleted,
+    required TResult Function(Object body) fallback,
+  }) {
+    return fallback(body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChannelStreamEvent body)? channel,
+    TResult? Function(NoteUpdateStreamEvent body)? noteUpdated,
+    TResult? Function(BroadcastStreamEvent body)? emojiAdded,
+    TResult? Function(BroadcastStreamEvent body)? emojiUpdated,
+    TResult? Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult? Function(Object body)? fallback,
+  }) {
+    return fallback?.call(body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChannelStreamEvent body)? channel,
+    TResult Function(NoteUpdateStreamEvent body)? noteUpdated,
+    TResult Function(BroadcastStreamEvent body)? emojiAdded,
+    TResult Function(BroadcastStreamEvent body)? emojiUpdated,
+    TResult Function(BroadcastStreamEvent body)? emojiDeleted,
+    TResult Function(Object body)? fallback,
+    required TResult orElse(),
+  }) {
+    if (fallback != null) {
+      return fallback(body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StreamingChannelResponse value) channel,
+    required TResult Function(StreamingChannelNoteUpdatedResponse value)
+        noteUpdated,
+    required TResult Function(StreamingChannelEmojiAddedResponse value)
+        emojiAdded,
+    required TResult Function(StreamingChannelEmojiUpdatedResponse value)
+        emojiUpdated,
+    required TResult Function(StreamingChannelEmojiDeletedResponse value)
+        emojiDeleted,
+    required TResult Function(StreamingChannelUnknownResponse value) fallback,
+  }) {
+    return fallback(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StreamingChannelResponse value)? channel,
+    TResult? Function(StreamingChannelNoteUpdatedResponse value)? noteUpdated,
+    TResult? Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
+    TResult? Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
+    TResult? Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult? Function(StreamingChannelUnknownResponse value)? fallback,
+  }) {
+    return fallback?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StreamingChannelResponse value)? channel,
+    TResult Function(StreamingChannelNoteUpdatedResponse value)? noteUpdated,
+    TResult Function(StreamingChannelEmojiAddedResponse value)? emojiAdded,
+    TResult Function(StreamingChannelEmojiUpdatedResponse value)? emojiUpdated,
+    TResult Function(StreamingChannelEmojiDeletedResponse value)? emojiDeleted,
+    TResult Function(StreamingChannelUnknownResponse value)? fallback,
+    required TResult orElse(),
+  }) {
+    if (fallback != null) {
+      return fallback(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StreamingChannelUnknownResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class StreamingChannelUnknownResponse implements StreamingResponse {
+  const factory StreamingChannelUnknownResponse({required final Object body}) =
+      _$StreamingChannelUnknownResponseImpl;
+
+  factory StreamingChannelUnknownResponse.fromJson(Map<String, dynamic> json) =
+      _$StreamingChannelUnknownResponseImpl.fromJson;
+
+  @override
+  Object get body;
+  @JsonKey(ignore: true)
+  _$$StreamingChannelUnknownResponseImplCopyWith<
+          _$StreamingChannelUnknownResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
     case 'note':
@@ -1103,8 +1326,42 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
       return StatsLogChannelEvent.fromJson(json);
     case 'stats':
       return StatsChannelEvent.fromJson(json);
-    case 'queueStats':
-      return QueueStatsChannelEvent.fromJson(json);
+    case 'userAdded':
+      return UserAddedChannelEvent.fromJson(json);
+    case 'userRemoved':
+      return UserRemovedChannelEvent.fromJson(json);
+    case 'notification':
+      return NotificationChannelEvent.fromJson(json);
+    case 'mention':
+      return MentionChannelEvent.fromJson(json);
+    case 'reply':
+      return ReplyChannelEvent.fromJson(json);
+    case 'renote':
+      return RenoteChannelEvent.fromJson(json);
+    case 'follow':
+      return FollowChannelEvent.fromJson(json);
+    case 'followed':
+      return FollowedChannelEvent.fromJson(json);
+    case 'unfollow':
+      return UnfollowChannelEvent.fromJson(json);
+    case 'meUpdated':
+      return MeUpdatedChannelEvent.fromJson(json);
+    case 'readAllNotifications':
+      return ReadAllNotificationsChannelEvent.fromJson(json);
+    case 'unreadNotification':
+      return UnreadNotificationChannelEvent.fromJson(json);
+    case 'unreadMention':
+      return UnreadMentionChannelEvent.fromJson(json);
+    case 'readAllUnreadMentions':
+      return ReadAllUnreadMentionsChannelEvent.fromJson(json);
+    case 'unreadSpecifiedNote':
+      return UnreadSpecifiedNoteChannelEvent.fromJson(json);
+    case 'readAllUnreadSpecifiedNotes':
+      return ReadAllUnreadSpecifiedNotesChannelEvent.fromJson(json);
+    case 'receiveFollowRequest':
+      return ReceiveFollowRequestChannelEvent.fromJson(json);
+    case 'readAllAnnouncements':
+      return ReadAllAnnouncements.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'type', 'ChannelStreamEvent',
@@ -1115,16 +1372,37 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ChannelStreamEvent {
   String get id => throw _privateConstructorUsedError;
-  Object get body => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
-    required TResult Function(String id, List<StatsLogResponse> body) statsLog,
-    required TResult Function(String id, StatsLogResponse body) stats,
-    required TResult Function(String id, List<QueueStatsLogResponse> body)
-        queueStats,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1132,9 +1410,30 @@ mixin _$ChannelStreamEvent {
     TResult? Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult? Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult? Function(String id, StatsLogResponse body)? stats,
-    TResult? Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1142,9 +1441,30 @@ mixin _$ChannelStreamEvent {
     TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult Function(String id, StatsLogResponse body)? stats,
-    TResult Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1153,7 +1473,30 @@ mixin _$ChannelStreamEvent {
     required TResult Function(NoteChannelEvent value) note,
     required TResult Function(StatsLogChannelEvent value) statsLog,
     required TResult Function(StatsChannelEvent value) stats,
-    required TResult Function(QueueStatsChannelEvent value) queueStats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1161,7 +1504,29 @@ mixin _$ChannelStreamEvent {
     TResult? Function(NoteChannelEvent value)? note,
     TResult? Function(StatsLogChannelEvent value)? statsLog,
     TResult? Function(StatsChannelEvent value)? stats,
-    TResult? Function(QueueStatsChannelEvent value)? queueStats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1169,7 +1534,29 @@ mixin _$ChannelStreamEvent {
     TResult Function(NoteChannelEvent value)? note,
     TResult Function(StatsLogChannelEvent value)? statsLog,
     TResult Function(StatsChannelEvent value)? stats,
-    TResult Function(QueueStatsChannelEvent value)? queueStats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1319,10 +1706,32 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
-    required TResult Function(String id, List<StatsLogResponse> body) statsLog,
-    required TResult Function(String id, StatsLogResponse body) stats,
-    required TResult Function(String id, List<QueueStatsLogResponse> body)
-        queueStats,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
   }) {
     return note(id, type, body);
   }
@@ -1333,9 +1742,30 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult? Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult? Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult? Function(String id, StatsLogResponse body)? stats,
-    TResult? Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
   }) {
     return note?.call(id, type, body);
   }
@@ -1346,9 +1776,30 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult Function(String id, StatsLogResponse body)? stats,
-    TResult Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
     required TResult orElse(),
   }) {
     if (note != null) {
@@ -1363,7 +1814,30 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(NoteChannelEvent value) note,
     required TResult Function(StatsLogChannelEvent value) statsLog,
     required TResult Function(StatsChannelEvent value) stats,
-    required TResult Function(QueueStatsChannelEvent value) queueStats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
   }) {
     return note(this);
   }
@@ -1374,7 +1848,29 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult? Function(NoteChannelEvent value)? note,
     TResult? Function(StatsLogChannelEvent value)? statsLog,
     TResult? Function(StatsChannelEvent value)? stats,
-    TResult? Function(QueueStatsChannelEvent value)? queueStats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
   }) {
     return note?.call(this);
   }
@@ -1385,7 +1881,29 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult Function(NoteChannelEvent value)? note,
     TResult Function(StatsLogChannelEvent value)? statsLog,
     TResult Function(StatsChannelEvent value)? stats,
-    TResult Function(QueueStatsChannelEvent value)? queueStats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
     required TResult orElse(),
   }) {
     if (note != null) {
@@ -1415,7 +1933,6 @@ abstract class NoteChannelEvent implements ChannelStreamEvent {
   String get id;
   @ChannelEventTypeJsonConverter()
   ChannelEventType get type;
-  @override
   Note get body;
   @override
   @JsonKey(ignore: true)
@@ -1431,7 +1948,7 @@ abstract class _$$StatsLogChannelEventImplCopyWith<$Res>
       __$$StatsLogChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, List<StatsLogResponse> body});
+  $Res call({String id, @StatsResponseConverter() List<StatsResponse> body});
 }
 
 /// @nodoc
@@ -1456,7 +1973,7 @@ class __$$StatsLogChannelEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
-              as List<StatsLogResponse>,
+              as List<StatsResponse>,
     ));
   }
 }
@@ -1466,7 +1983,7 @@ class __$$StatsLogChannelEventImplCopyWithImpl<$Res>
 class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
   const _$StatsLogChannelEventImpl(
       {required this.id,
-      required final List<StatsLogResponse> body,
+      @StatsResponseConverter() required final List<StatsResponse> body,
       final String? $type})
       : _body = body,
         $type = $type ?? 'statsLog';
@@ -1476,9 +1993,10 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
 
   @override
   final String id;
-  final List<StatsLogResponse> _body;
+  final List<StatsResponse> _body;
   @override
-  List<StatsLogResponse> get body {
+  @StatsResponseConverter()
+  List<StatsResponse> get body {
     if (_body is EqualUnmodifiableListView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_body);
@@ -1520,10 +2038,32 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
-    required TResult Function(String id, List<StatsLogResponse> body) statsLog,
-    required TResult Function(String id, StatsLogResponse body) stats,
-    required TResult Function(String id, List<QueueStatsLogResponse> body)
-        queueStats,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
   }) {
     return statsLog(id, body);
   }
@@ -1534,9 +2074,30 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult? Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult? Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult? Function(String id, StatsLogResponse body)? stats,
-    TResult? Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
   }) {
     return statsLog?.call(id, body);
   }
@@ -1547,9 +2108,30 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult Function(String id, StatsLogResponse body)? stats,
-    TResult Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
     required TResult orElse(),
   }) {
     if (statsLog != null) {
@@ -1564,7 +2146,30 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(NoteChannelEvent value) note,
     required TResult Function(StatsLogChannelEvent value) statsLog,
     required TResult Function(StatsChannelEvent value) stats,
-    required TResult Function(QueueStatsChannelEvent value) queueStats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
   }) {
     return statsLog(this);
   }
@@ -1575,7 +2180,29 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult? Function(NoteChannelEvent value)? note,
     TResult? Function(StatsLogChannelEvent value)? statsLog,
     TResult? Function(StatsChannelEvent value)? stats,
-    TResult? Function(QueueStatsChannelEvent value)? queueStats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
   }) {
     return statsLog?.call(this);
   }
@@ -1586,7 +2213,29 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult Function(NoteChannelEvent value)? note,
     TResult Function(StatsLogChannelEvent value)? statsLog,
     TResult Function(StatsChannelEvent value)? stats,
-    TResult Function(QueueStatsChannelEvent value)? queueStats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
     required TResult orElse(),
   }) {
     if (statsLog != null) {
@@ -1605,16 +2254,17 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
 
 abstract class StatsLogChannelEvent implements ChannelStreamEvent {
   const factory StatsLogChannelEvent(
-      {required final String id,
-      required final List<StatsLogResponse> body}) = _$StatsLogChannelEventImpl;
+          {required final String id,
+          @StatsResponseConverter() required final List<StatsResponse> body}) =
+      _$StatsLogChannelEventImpl;
 
   factory StatsLogChannelEvent.fromJson(Map<String, dynamic> json) =
       _$StatsLogChannelEventImpl.fromJson;
 
   @override
   String get id;
-  @override
-  List<StatsLogResponse> get body;
+  @StatsResponseConverter()
+  List<StatsResponse> get body;
   @override
   @JsonKey(ignore: true)
   _$$StatsLogChannelEventImplCopyWith<_$StatsLogChannelEventImpl>
@@ -1629,9 +2279,9 @@ abstract class _$$StatsChannelEventImplCopyWith<$Res>
       __$$StatsChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, StatsLogResponse body});
+  $Res call({String id, @StatsResponseConverter() StatsResponse body});
 
-  $StatsLogResponseCopyWith<$Res> get body;
+  $StatsResponseCopyWith<$Res> get body;
 }
 
 /// @nodoc
@@ -1656,14 +2306,14 @@ class __$$StatsChannelEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as StatsLogResponse,
+              as StatsResponse,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $StatsLogResponseCopyWith<$Res> get body {
-    return $StatsLogResponseCopyWith<$Res>(_value.body, (value) {
+  $StatsResponseCopyWith<$Res> get body {
+    return $StatsResponseCopyWith<$Res>(_value.body, (value) {
       return _then(_value.copyWith(body: value));
     });
   }
@@ -1673,7 +2323,9 @@ class __$$StatsChannelEventImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StatsChannelEventImpl implements StatsChannelEvent {
   const _$StatsChannelEventImpl(
-      {required this.id, required this.body, final String? $type})
+      {required this.id,
+      @StatsResponseConverter() required this.body,
+      final String? $type})
       : $type = $type ?? 'stats';
 
   factory _$StatsChannelEventImpl.fromJson(Map<String, dynamic> json) =>
@@ -1682,7 +2334,8 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
   @override
   final String id;
   @override
-  final StatsLogResponse body;
+  @StatsResponseConverter()
+  final StatsResponse body;
 
   @JsonKey(name: 'type')
   final String $type;
@@ -1718,10 +2371,32 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
-    required TResult Function(String id, List<StatsLogResponse> body) statsLog,
-    required TResult Function(String id, StatsLogResponse body) stats,
-    required TResult Function(String id, List<QueueStatsLogResponse> body)
-        queueStats,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
   }) {
     return stats(id, body);
   }
@@ -1732,9 +2407,30 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult? Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult? Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult? Function(String id, StatsLogResponse body)? stats,
-    TResult? Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
   }) {
     return stats?.call(id, body);
   }
@@ -1745,9 +2441,30 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult Function(String id, StatsLogResponse body)? stats,
-    TResult Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
     required TResult orElse(),
   }) {
     if (stats != null) {
@@ -1762,7 +2479,30 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(NoteChannelEvent value) note,
     required TResult Function(StatsLogChannelEvent value) statsLog,
     required TResult Function(StatsChannelEvent value) stats,
-    required TResult Function(QueueStatsChannelEvent value) queueStats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
   }) {
     return stats(this);
   }
@@ -1773,7 +2513,29 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult? Function(NoteChannelEvent value)? note,
     TResult? Function(StatsLogChannelEvent value)? statsLog,
     TResult? Function(StatsChannelEvent value)? stats,
-    TResult? Function(QueueStatsChannelEvent value)? queueStats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
   }) {
     return stats?.call(this);
   }
@@ -1784,7 +2546,29 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult Function(NoteChannelEvent value)? note,
     TResult Function(StatsLogChannelEvent value)? statsLog,
     TResult Function(StatsChannelEvent value)? stats,
-    TResult Function(QueueStatsChannelEvent value)? queueStats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
     required TResult orElse(),
   }) {
     if (stats != null) {
@@ -1803,16 +2587,17 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
 
 abstract class StatsChannelEvent implements ChannelStreamEvent {
   const factory StatsChannelEvent(
-      {required final String id,
-      required final StatsLogResponse body}) = _$StatsChannelEventImpl;
+          {required final String id,
+          @StatsResponseConverter() required final StatsResponse body}) =
+      _$StatsChannelEventImpl;
 
   factory StatsChannelEvent.fromJson(Map<String, dynamic> json) =
       _$StatsChannelEventImpl.fromJson;
 
   @override
   String get id;
-  @override
-  StatsLogResponse get body;
+  @StatsResponseConverter()
+  StatsResponse get body;
   @override
   @JsonKey(ignore: true)
   _$$StatsChannelEventImplCopyWith<_$StatsChannelEventImpl> get copyWith =>
@@ -1820,24 +2605,25 @@ abstract class StatsChannelEvent implements ChannelStreamEvent {
 }
 
 /// @nodoc
-abstract class _$$QueueStatsChannelEventImplCopyWith<$Res>
+abstract class _$$UserAddedChannelEventImplCopyWith<$Res>
     implements $ChannelStreamEventCopyWith<$Res> {
-  factory _$$QueueStatsChannelEventImplCopyWith(
-          _$QueueStatsChannelEventImpl value,
-          $Res Function(_$QueueStatsChannelEventImpl) then) =
-      __$$QueueStatsChannelEventImplCopyWithImpl<$Res>;
+  factory _$$UserAddedChannelEventImplCopyWith(
+          _$UserAddedChannelEventImpl value,
+          $Res Function(_$UserAddedChannelEventImpl) then) =
+      __$$UserAddedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, List<QueueStatsLogResponse> body});
+  $Res call({String id, UserLite body});
+
+  $UserLiteCopyWith<$Res> get body;
 }
 
 /// @nodoc
-class __$$QueueStatsChannelEventImplCopyWithImpl<$Res>
-    extends _$ChannelStreamEventCopyWithImpl<$Res, _$QueueStatsChannelEventImpl>
-    implements _$$QueueStatsChannelEventImplCopyWith<$Res> {
-  __$$QueueStatsChannelEventImplCopyWithImpl(
-      _$QueueStatsChannelEventImpl _value,
-      $Res Function(_$QueueStatsChannelEventImpl) _then)
+class __$$UserAddedChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$UserAddedChannelEventImpl>
+    implements _$$UserAddedChannelEventImplCopyWith<$Res> {
+  __$$UserAddedChannelEventImplCopyWithImpl(_$UserAddedChannelEventImpl _value,
+      $Res Function(_$UserAddedChannelEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1846,70 +2632,69 @@ class __$$QueueStatsChannelEventImplCopyWithImpl<$Res>
     Object? id = null,
     Object? body = null,
   }) {
-    return _then(_$QueueStatsChannelEventImpl(
+    return _then(_$UserAddedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       body: null == body
-          ? _value._body
+          ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as List<QueueStatsLogResponse>,
+              as UserLite,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res> get body {
+    return $UserLiteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
-  const _$QueueStatsChannelEventImpl(
-      {required this.id,
-      required final List<QueueStatsLogResponse> body,
-      final String? $type})
-      : _body = body,
-        $type = $type ?? 'queueStats';
+class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
+  const _$UserAddedChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'userAdded';
 
-  factory _$QueueStatsChannelEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QueueStatsChannelEventImplFromJson(json);
+  factory _$UserAddedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserAddedChannelEventImplFromJson(json);
 
   @override
   final String id;
-  final List<QueueStatsLogResponse> _body;
   @override
-  List<QueueStatsLogResponse> get body {
-    if (_body is EqualUnmodifiableListView) return _body;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_body);
-  }
+  final UserLite body;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'ChannelStreamEvent.queueStats(id: $id, body: $body)';
+    return 'ChannelStreamEvent.userAdded(id: $id, body: $body)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QueueStatsChannelEventImpl &&
+            other is _$UserAddedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._body, _body));
+            (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, const DeepCollectionEquality().hash(_body));
+  int get hashCode => Object.hash(runtimeType, id, body);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QueueStatsChannelEventImplCopyWith<_$QueueStatsChannelEventImpl>
-      get copyWith => __$$QueueStatsChannelEventImplCopyWithImpl<
-          _$QueueStatsChannelEventImpl>(this, _$identity);
+  _$$UserAddedChannelEventImplCopyWith<_$UserAddedChannelEventImpl>
+      get copyWith => __$$UserAddedChannelEventImplCopyWithImpl<
+          _$UserAddedChannelEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1917,12 +2702,34 @@ class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
     required TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
-    required TResult Function(String id, List<StatsLogResponse> body) statsLog,
-    required TResult Function(String id, StatsLogResponse body) stats,
-    required TResult Function(String id, List<QueueStatsLogResponse> body)
-        queueStats,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
   }) {
-    return queueStats(id, body);
+    return userAdded(id, body);
   }
 
   @override
@@ -1931,11 +2738,32 @@ class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
     TResult? Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult? Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult? Function(String id, StatsLogResponse body)? stats,
-    TResult? Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
   }) {
-    return queueStats?.call(id, body);
+    return userAdded?.call(id, body);
   }
 
   @override
@@ -1944,13 +2772,34 @@ class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
     TResult Function(String id,
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
-    TResult Function(String id, List<StatsLogResponse> body)? statsLog,
-    TResult Function(String id, StatsLogResponse body)? stats,
-    TResult Function(String id, List<QueueStatsLogResponse> body)? queueStats,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
     required TResult orElse(),
   }) {
-    if (queueStats != null) {
-      return queueStats(id, body);
+    if (userAdded != null) {
+      return userAdded(id, body);
     }
     return orElse();
   }
@@ -1961,9 +2810,32 @@ class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
     required TResult Function(NoteChannelEvent value) note,
     required TResult Function(StatsLogChannelEvent value) statsLog,
     required TResult Function(StatsChannelEvent value) stats,
-    required TResult Function(QueueStatsChannelEvent value) queueStats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
   }) {
-    return queueStats(this);
+    return userAdded(this);
   }
 
   @override
@@ -1972,9 +2844,31 @@ class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
     TResult? Function(NoteChannelEvent value)? note,
     TResult? Function(StatsLogChannelEvent value)? statsLog,
     TResult? Function(StatsChannelEvent value)? stats,
-    TResult? Function(QueueStatsChannelEvent value)? queueStats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
   }) {
-    return queueStats?.call(this);
+    return userAdded?.call(this);
   }
 
   @override
@@ -1983,39 +2877,5616 @@ class _$QueueStatsChannelEventImpl implements QueueStatsChannelEvent {
     TResult Function(NoteChannelEvent value)? note,
     TResult Function(StatsLogChannelEvent value)? statsLog,
     TResult Function(StatsChannelEvent value)? stats,
-    TResult Function(QueueStatsChannelEvent value)? queueStats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
     required TResult orElse(),
   }) {
-    if (queueStats != null) {
-      return queueStats(this);
+    if (userAdded != null) {
+      return userAdded(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$QueueStatsChannelEventImplToJson(
+    return _$$UserAddedChannelEventImplToJson(
       this,
     );
   }
 }
 
-abstract class QueueStatsChannelEvent implements ChannelStreamEvent {
-  const factory QueueStatsChannelEvent(
-          {required final String id,
-          required final List<QueueStatsLogResponse> body}) =
-      _$QueueStatsChannelEventImpl;
+abstract class UserAddedChannelEvent implements ChannelStreamEvent {
+  const factory UserAddedChannelEvent(
+      {required final String id,
+      required final UserLite body}) = _$UserAddedChannelEventImpl;
 
-  factory QueueStatsChannelEvent.fromJson(Map<String, dynamic> json) =
-      _$QueueStatsChannelEventImpl.fromJson;
+  factory UserAddedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UserAddedChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  UserLite get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$UserAddedChannelEventImplCopyWith<_$UserAddedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserRemovedChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$UserRemovedChannelEventImplCopyWith(
+          _$UserRemovedChannelEventImpl value,
+          $Res Function(_$UserRemovedChannelEventImpl) then) =
+      __$$UserRemovedChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, UserLite body});
+
+  $UserLiteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$UserRemovedChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$UserRemovedChannelEventImpl>
+    implements _$$UserRemovedChannelEventImplCopyWith<$Res> {
+  __$$UserRemovedChannelEventImplCopyWithImpl(
+      _$UserRemovedChannelEventImpl _value,
+      $Res Function(_$UserRemovedChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$UserRemovedChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res> get body {
+    return $UserLiteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
+  const _$UserRemovedChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'userRemoved';
+
+  factory _$UserRemovedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserRemovedChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final UserLite body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.userRemoved(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserRemovedChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserRemovedChannelEventImplCopyWith<_$UserRemovedChannelEventImpl>
+      get copyWith => __$$UserRemovedChannelEventImplCopyWithImpl<
+          _$UserRemovedChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return userRemoved(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return userRemoved?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (userRemoved != null) {
+      return userRemoved(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return userRemoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return userRemoved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (userRemoved != null) {
+      return userRemoved(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserRemovedChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UserRemovedChannelEvent implements ChannelStreamEvent {
+  const factory UserRemovedChannelEvent(
+      {required final String id,
+      required final UserLite body}) = _$UserRemovedChannelEventImpl;
+
+  factory UserRemovedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UserRemovedChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  UserLite get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$UserRemovedChannelEventImplCopyWith<_$UserRemovedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotificationChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$NotificationChannelEventImplCopyWith(
+          _$NotificationChannelEventImpl value,
+          $Res Function(_$NotificationChannelEventImpl) then) =
+      __$$NotificationChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, INotificationsResponse body});
+
+  $INotificationsResponseCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$NotificationChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$NotificationChannelEventImpl>
+    implements _$$NotificationChannelEventImplCopyWith<$Res> {
+  __$$NotificationChannelEventImplCopyWithImpl(
+      _$NotificationChannelEventImpl _value,
+      $Res Function(_$NotificationChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$NotificationChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as INotificationsResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $INotificationsResponseCopyWith<$Res> get body {
+    return $INotificationsResponseCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$NotificationChannelEventImpl implements NotificationChannelEvent {
+  const _$NotificationChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'notification';
+
+  factory _$NotificationChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotificationChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final INotificationsResponse body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.notification(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationChannelEventImplCopyWith<_$NotificationChannelEventImpl>
+      get copyWith => __$$NotificationChannelEventImplCopyWithImpl<
+          _$NotificationChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return notification(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return notification?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (notification != null) {
+      return notification(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return notification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return notification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (notification != null) {
+      return notification(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NotificationChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class NotificationChannelEvent implements ChannelStreamEvent {
+  const factory NotificationChannelEvent(
+          {required final String id,
+          required final INotificationsResponse body}) =
+      _$NotificationChannelEventImpl;
+
+  factory NotificationChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$NotificationChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  INotificationsResponse get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotificationChannelEventImplCopyWith<_$NotificationChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MentionChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$MentionChannelEventImplCopyWith(_$MentionChannelEventImpl value,
+          $Res Function(_$MentionChannelEventImpl) then) =
+      __$$MentionChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, Note body});
+
+  $NoteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$MentionChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$MentionChannelEventImpl>
+    implements _$$MentionChannelEventImplCopyWith<$Res> {
+  __$$MentionChannelEventImplCopyWithImpl(_$MentionChannelEventImpl _value,
+      $Res Function(_$MentionChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$MentionChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get body {
+    return $NoteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MentionChannelEventImpl implements MentionChannelEvent {
+  const _$MentionChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'mention';
+
+  factory _$MentionChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MentionChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final Note body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.mention(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MentionChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MentionChannelEventImplCopyWith<_$MentionChannelEventImpl> get copyWith =>
+      __$$MentionChannelEventImplCopyWithImpl<_$MentionChannelEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return mention(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return mention?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (mention != null) {
+      return mention(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return mention(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return mention?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (mention != null) {
+      return mention(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MentionChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class MentionChannelEvent implements ChannelStreamEvent {
+  const factory MentionChannelEvent(
+      {required final String id,
+      required final Note body}) = _$MentionChannelEventImpl;
+
+  factory MentionChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$MentionChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  Note get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$MentionChannelEventImplCopyWith<_$MentionChannelEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReplyChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ReplyChannelEventImplCopyWith(_$ReplyChannelEventImpl value,
+          $Res Function(_$ReplyChannelEventImpl) then) =
+      __$$ReplyChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, Note body});
+
+  $NoteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$ReplyChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$ReplyChannelEventImpl>
+    implements _$$ReplyChannelEventImplCopyWith<$Res> {
+  __$$ReplyChannelEventImplCopyWithImpl(_$ReplyChannelEventImpl _value,
+      $Res Function(_$ReplyChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$ReplyChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get body {
+    return $NoteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReplyChannelEventImpl implements ReplyChannelEvent {
+  const _$ReplyChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'reply';
+
+  factory _$ReplyChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReplyChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final Note body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.reply(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReplyChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReplyChannelEventImplCopyWith<_$ReplyChannelEventImpl> get copyWith =>
+      __$$ReplyChannelEventImplCopyWithImpl<_$ReplyChannelEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return reply(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return reply?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (reply != null) {
+      return reply(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return reply(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return reply?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (reply != null) {
+      return reply(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReplyChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ReplyChannelEvent implements ChannelStreamEvent {
+  const factory ReplyChannelEvent(
+      {required final String id,
+      required final Note body}) = _$ReplyChannelEventImpl;
+
+  factory ReplyChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ReplyChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  Note get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$ReplyChannelEventImplCopyWith<_$ReplyChannelEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RenoteChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$RenoteChannelEventImplCopyWith(_$RenoteChannelEventImpl value,
+          $Res Function(_$RenoteChannelEventImpl) then) =
+      __$$RenoteChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, Note body});
+
+  $NoteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$RenoteChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$RenoteChannelEventImpl>
+    implements _$$RenoteChannelEventImplCopyWith<$Res> {
+  __$$RenoteChannelEventImplCopyWithImpl(_$RenoteChannelEventImpl _value,
+      $Res Function(_$RenoteChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$RenoteChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get body {
+    return $NoteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$RenoteChannelEventImpl implements RenoteChannelEvent {
+  const _$RenoteChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'renote';
+
+  factory _$RenoteChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RenoteChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final Note body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.renote(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RenoteChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RenoteChannelEventImplCopyWith<_$RenoteChannelEventImpl> get copyWith =>
+      __$$RenoteChannelEventImplCopyWithImpl<_$RenoteChannelEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return renote(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return renote?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (renote != null) {
+      return renote(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return renote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return renote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (renote != null) {
+      return renote(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RenoteChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class RenoteChannelEvent implements ChannelStreamEvent {
+  const factory RenoteChannelEvent(
+      {required final String id,
+      required final Note body}) = _$RenoteChannelEventImpl;
+
+  factory RenoteChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$RenoteChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  Note get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$RenoteChannelEventImplCopyWith<_$RenoteChannelEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FollowChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$FollowChannelEventImplCopyWith(_$FollowChannelEventImpl value,
+          $Res Function(_$FollowChannelEventImpl) then) =
+      __$$FollowChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, UserDetailedNotMe body});
+
+  $UserDetailedNotMeCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$FollowChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$FollowChannelEventImpl>
+    implements _$$FollowChannelEventImplCopyWith<$Res> {
+  __$$FollowChannelEventImplCopyWithImpl(_$FollowChannelEventImpl _value,
+      $Res Function(_$FollowChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$FollowChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as UserDetailedNotMe,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res> get body {
+    return $UserDetailedNotMeCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FollowChannelEventImpl implements FollowChannelEvent {
+  const _$FollowChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'follow';
+
+  factory _$FollowChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final UserDetailedNotMe body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.follow(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FollowChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FollowChannelEventImplCopyWith<_$FollowChannelEventImpl> get copyWith =>
+      __$$FollowChannelEventImplCopyWithImpl<_$FollowChannelEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return follow(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return follow?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (follow != null) {
+      return follow(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return follow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return follow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (follow != null) {
+      return follow(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class FollowChannelEvent implements ChannelStreamEvent {
+  const factory FollowChannelEvent(
+      {required final String id,
+      required final UserDetailedNotMe body}) = _$FollowChannelEventImpl;
+
+  factory FollowChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$FollowChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  UserDetailedNotMe get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$FollowChannelEventImplCopyWith<_$FollowChannelEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FollowedChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$FollowedChannelEventImplCopyWith(_$FollowedChannelEventImpl value,
+          $Res Function(_$FollowedChannelEventImpl) then) =
+      __$$FollowedChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, UserLite body});
+
+  $UserLiteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$FollowedChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$FollowedChannelEventImpl>
+    implements _$$FollowedChannelEventImplCopyWith<$Res> {
+  __$$FollowedChannelEventImplCopyWithImpl(_$FollowedChannelEventImpl _value,
+      $Res Function(_$FollowedChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$FollowedChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res> get body {
+    return $UserLiteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FollowedChannelEventImpl implements FollowedChannelEvent {
+  const _$FollowedChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'followed';
+
+  factory _$FollowedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowedChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final UserLite body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.followed(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FollowedChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FollowedChannelEventImplCopyWith<_$FollowedChannelEventImpl>
+      get copyWith =>
+          __$$FollowedChannelEventImplCopyWithImpl<_$FollowedChannelEventImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return followed(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return followed?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (followed != null) {
+      return followed(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return followed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return followed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (followed != null) {
+      return followed(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowedChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class FollowedChannelEvent implements ChannelStreamEvent {
+  const factory FollowedChannelEvent(
+      {required final String id,
+      required final UserLite body}) = _$FollowedChannelEventImpl;
+
+  factory FollowedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$FollowedChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  UserLite get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$FollowedChannelEventImplCopyWith<_$FollowedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnfollowChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$UnfollowChannelEventImplCopyWith(_$UnfollowChannelEventImpl value,
+          $Res Function(_$UnfollowChannelEventImpl) then) =
+      __$$UnfollowChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, UserDetailedNotMe body});
+
+  $UserDetailedNotMeCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$UnfollowChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$UnfollowChannelEventImpl>
+    implements _$$UnfollowChannelEventImplCopyWith<$Res> {
+  __$$UnfollowChannelEventImplCopyWithImpl(_$UnfollowChannelEventImpl _value,
+      $Res Function(_$UnfollowChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$UnfollowChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as UserDetailedNotMe,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res> get body {
+    return $UserDetailedNotMeCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
+  const _$UnfollowChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'unfollow';
+
+  factory _$UnfollowChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnfollowChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final UserDetailedNotMe body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.unfollow(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnfollowChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnfollowChannelEventImplCopyWith<_$UnfollowChannelEventImpl>
+      get copyWith =>
+          __$$UnfollowChannelEventImplCopyWithImpl<_$UnfollowChannelEventImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return unfollow(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return unfollow?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (unfollow != null) {
+      return unfollow(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return unfollow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return unfollow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (unfollow != null) {
+      return unfollow(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnfollowChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UnfollowChannelEvent implements ChannelStreamEvent {
+  const factory UnfollowChannelEvent(
+      {required final String id,
+      required final UserDetailedNotMe body}) = _$UnfollowChannelEventImpl;
+
+  factory UnfollowChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UnfollowChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  UserDetailedNotMe get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$UnfollowChannelEventImplCopyWith<_$UnfollowChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MeUpdatedChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$MeUpdatedChannelEventImplCopyWith(
+          _$MeUpdatedChannelEventImpl value,
+          $Res Function(_$MeUpdatedChannelEventImpl) then) =
+      __$$MeUpdatedChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, MeDetailed body});
+
+  $MeDetailedCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$MeUpdatedChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$MeUpdatedChannelEventImpl>
+    implements _$$MeUpdatedChannelEventImplCopyWith<$Res> {
+  __$$MeUpdatedChannelEventImplCopyWithImpl(_$MeUpdatedChannelEventImpl _value,
+      $Res Function(_$MeUpdatedChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$MeUpdatedChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as MeDetailed,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MeDetailedCopyWith<$Res> get body {
+    return $MeDetailedCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
+  const _$MeUpdatedChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'meUpdated';
+
+  factory _$MeUpdatedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MeUpdatedChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final MeDetailed body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.meUpdated(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MeUpdatedChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MeUpdatedChannelEventImplCopyWith<_$MeUpdatedChannelEventImpl>
+      get copyWith => __$$MeUpdatedChannelEventImplCopyWithImpl<
+          _$MeUpdatedChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return meUpdated(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return meUpdated?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (meUpdated != null) {
+      return meUpdated(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return meUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return meUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (meUpdated != null) {
+      return meUpdated(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MeUpdatedChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class MeUpdatedChannelEvent implements ChannelStreamEvent {
+  const factory MeUpdatedChannelEvent(
+      {required final String id,
+      required final MeDetailed body}) = _$MeUpdatedChannelEventImpl;
+
+  factory MeUpdatedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$MeUpdatedChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  MeDetailed get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$MeUpdatedChannelEventImplCopyWith<_$MeUpdatedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReadAllNotificationsChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ReadAllNotificationsChannelEventImplCopyWith(
+          _$ReadAllNotificationsChannelEventImpl value,
+          $Res Function(_$ReadAllNotificationsChannelEventImpl) then) =
+      __$$ReadAllNotificationsChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$ReadAllNotificationsChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ReadAllNotificationsChannelEventImpl>
+    implements _$$ReadAllNotificationsChannelEventImplCopyWith<$Res> {
+  __$$ReadAllNotificationsChannelEventImplCopyWithImpl(
+      _$ReadAllNotificationsChannelEventImpl _value,
+      $Res Function(_$ReadAllNotificationsChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$ReadAllNotificationsChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReadAllNotificationsChannelEventImpl
+    implements ReadAllNotificationsChannelEvent {
+  const _$ReadAllNotificationsChannelEventImpl(
+      {required this.id, final String? $type})
+      : $type = $type ?? 'readAllNotifications';
+
+  factory _$ReadAllNotificationsChannelEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ReadAllNotificationsChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.readAllNotifications(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReadAllNotificationsChannelEventImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReadAllNotificationsChannelEventImplCopyWith<
+          _$ReadAllNotificationsChannelEventImpl>
+      get copyWith => __$$ReadAllNotificationsChannelEventImplCopyWithImpl<
+          _$ReadAllNotificationsChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return readAllNotifications(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return readAllNotifications?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllNotifications != null) {
+      return readAllNotifications(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return readAllNotifications(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return readAllNotifications?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllNotifications != null) {
+      return readAllNotifications(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReadAllNotificationsChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ReadAllNotificationsChannelEvent implements ChannelStreamEvent {
+  const factory ReadAllNotificationsChannelEvent({required final String id}) =
+      _$ReadAllNotificationsChannelEventImpl;
+
+  factory ReadAllNotificationsChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ReadAllNotificationsChannelEventImpl.fromJson;
 
   @override
   String get id;
   @override
-  List<QueueStatsLogResponse> get body;
+  @JsonKey(ignore: true)
+  _$$ReadAllNotificationsChannelEventImplCopyWith<
+          _$ReadAllNotificationsChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnreadNotificationChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$UnreadNotificationChannelEventImplCopyWith(
+          _$UnreadNotificationChannelEventImpl value,
+          $Res Function(_$UnreadNotificationChannelEventImpl) then) =
+      __$$UnreadNotificationChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, INotificationsResponse body});
+
+  $INotificationsResponseCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$UnreadNotificationChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$UnreadNotificationChannelEventImpl>
+    implements _$$UnreadNotificationChannelEventImplCopyWith<$Res> {
+  __$$UnreadNotificationChannelEventImplCopyWithImpl(
+      _$UnreadNotificationChannelEventImpl _value,
+      $Res Function(_$UnreadNotificationChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$UnreadNotificationChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as INotificationsResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $INotificationsResponseCopyWith<$Res> get body {
+    return $INotificationsResponseCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UnreadNotificationChannelEventImpl
+    implements UnreadNotificationChannelEvent {
+  const _$UnreadNotificationChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'unreadNotification';
+
+  factory _$UnreadNotificationChannelEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UnreadNotificationChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final INotificationsResponse body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.unreadNotification(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnreadNotificationChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnreadNotificationChannelEventImplCopyWith<
+          _$UnreadNotificationChannelEventImpl>
+      get copyWith => __$$UnreadNotificationChannelEventImplCopyWithImpl<
+          _$UnreadNotificationChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return unreadNotification(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return unreadNotification?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (unreadNotification != null) {
+      return unreadNotification(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return unreadNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return unreadNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (unreadNotification != null) {
+      return unreadNotification(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnreadNotificationChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UnreadNotificationChannelEvent implements ChannelStreamEvent {
+  const factory UnreadNotificationChannelEvent(
+          {required final String id,
+          required final INotificationsResponse body}) =
+      _$UnreadNotificationChannelEventImpl;
+
+  factory UnreadNotificationChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UnreadNotificationChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  INotificationsResponse get body;
   @override
   @JsonKey(ignore: true)
-  _$$QueueStatsChannelEventImplCopyWith<_$QueueStatsChannelEventImpl>
+  _$$UnreadNotificationChannelEventImplCopyWith<
+          _$UnreadNotificationChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnreadMentionChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$UnreadMentionChannelEventImplCopyWith(
+          _$UnreadMentionChannelEventImpl value,
+          $Res Function(_$UnreadMentionChannelEventImpl) then) =
+      __$$UnreadMentionChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, Note body});
+
+  $NoteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$UnreadMentionChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$UnreadMentionChannelEventImpl>
+    implements _$$UnreadMentionChannelEventImplCopyWith<$Res> {
+  __$$UnreadMentionChannelEventImplCopyWithImpl(
+      _$UnreadMentionChannelEventImpl _value,
+      $Res Function(_$UnreadMentionChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$UnreadMentionChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get body {
+    return $NoteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
+  const _$UnreadMentionChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'unreadMention';
+
+  factory _$UnreadMentionChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnreadMentionChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final Note body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.unreadMention(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnreadMentionChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnreadMentionChannelEventImplCopyWith<_$UnreadMentionChannelEventImpl>
+      get copyWith => __$$UnreadMentionChannelEventImplCopyWithImpl<
+          _$UnreadMentionChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return unreadMention(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return unreadMention?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (unreadMention != null) {
+      return unreadMention(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return unreadMention(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return unreadMention?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (unreadMention != null) {
+      return unreadMention(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnreadMentionChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UnreadMentionChannelEvent implements ChannelStreamEvent {
+  const factory UnreadMentionChannelEvent(
+      {required final String id,
+      required final Note body}) = _$UnreadMentionChannelEventImpl;
+
+  factory UnreadMentionChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UnreadMentionChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  Note get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$UnreadMentionChannelEventImplCopyWith<_$UnreadMentionChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReadAllUnreadMentionsChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ReadAllUnreadMentionsChannelEventImplCopyWith(
+          _$ReadAllUnreadMentionsChannelEventImpl value,
+          $Res Function(_$ReadAllUnreadMentionsChannelEventImpl) then) =
+      __$$ReadAllUnreadMentionsChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$ReadAllUnreadMentionsChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ReadAllUnreadMentionsChannelEventImpl>
+    implements _$$ReadAllUnreadMentionsChannelEventImplCopyWith<$Res> {
+  __$$ReadAllUnreadMentionsChannelEventImplCopyWithImpl(
+      _$ReadAllUnreadMentionsChannelEventImpl _value,
+      $Res Function(_$ReadAllUnreadMentionsChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$ReadAllUnreadMentionsChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReadAllUnreadMentionsChannelEventImpl
+    implements ReadAllUnreadMentionsChannelEvent {
+  const _$ReadAllUnreadMentionsChannelEventImpl(
+      {required this.id, final String? $type})
+      : $type = $type ?? 'readAllUnreadMentions';
+
+  factory _$ReadAllUnreadMentionsChannelEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ReadAllUnreadMentionsChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.readAllUnreadMentions(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReadAllUnreadMentionsChannelEventImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReadAllUnreadMentionsChannelEventImplCopyWith<
+          _$ReadAllUnreadMentionsChannelEventImpl>
+      get copyWith => __$$ReadAllUnreadMentionsChannelEventImplCopyWithImpl<
+          _$ReadAllUnreadMentionsChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return readAllUnreadMentions(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return readAllUnreadMentions?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllUnreadMentions != null) {
+      return readAllUnreadMentions(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return readAllUnreadMentions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return readAllUnreadMentions?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllUnreadMentions != null) {
+      return readAllUnreadMentions(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReadAllUnreadMentionsChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ReadAllUnreadMentionsChannelEvent implements ChannelStreamEvent {
+  const factory ReadAllUnreadMentionsChannelEvent({required final String id}) =
+      _$ReadAllUnreadMentionsChannelEventImpl;
+
+  factory ReadAllUnreadMentionsChannelEvent.fromJson(
+          Map<String, dynamic> json) =
+      _$ReadAllUnreadMentionsChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$ReadAllUnreadMentionsChannelEventImplCopyWith<
+          _$ReadAllUnreadMentionsChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnreadSpecifiedNoteChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$UnreadSpecifiedNoteChannelEventImplCopyWith(
+          _$UnreadSpecifiedNoteChannelEventImpl value,
+          $Res Function(_$UnreadSpecifiedNoteChannelEventImpl) then) =
+      __$$UnreadSpecifiedNoteChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, Note body});
+
+  $NoteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$UnreadSpecifiedNoteChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$UnreadSpecifiedNoteChannelEventImpl>
+    implements _$$UnreadSpecifiedNoteChannelEventImplCopyWith<$Res> {
+  __$$UnreadSpecifiedNoteChannelEventImplCopyWithImpl(
+      _$UnreadSpecifiedNoteChannelEventImpl _value,
+      $Res Function(_$UnreadSpecifiedNoteChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$UnreadSpecifiedNoteChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get body {
+    return $NoteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UnreadSpecifiedNoteChannelEventImpl
+    implements UnreadSpecifiedNoteChannelEvent {
+  const _$UnreadSpecifiedNoteChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'unreadSpecifiedNote';
+
+  factory _$UnreadSpecifiedNoteChannelEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UnreadSpecifiedNoteChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final Note body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.uneradSpecifiedNote(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnreadSpecifiedNoteChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnreadSpecifiedNoteChannelEventImplCopyWith<
+          _$UnreadSpecifiedNoteChannelEventImpl>
+      get copyWith => __$$UnreadSpecifiedNoteChannelEventImplCopyWithImpl<
+          _$UnreadSpecifiedNoteChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return uneradSpecifiedNote(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return uneradSpecifiedNote?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (uneradSpecifiedNote != null) {
+      return uneradSpecifiedNote(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return uneradSpecifiedNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return uneradSpecifiedNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (uneradSpecifiedNote != null) {
+      return uneradSpecifiedNote(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnreadSpecifiedNoteChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UnreadSpecifiedNoteChannelEvent implements ChannelStreamEvent {
+  const factory UnreadSpecifiedNoteChannelEvent(
+      {required final String id,
+      required final Note body}) = _$UnreadSpecifiedNoteChannelEventImpl;
+
+  factory UnreadSpecifiedNoteChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$UnreadSpecifiedNoteChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  Note get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$UnreadSpecifiedNoteChannelEventImplCopyWith<
+          _$UnreadSpecifiedNoteChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith(
+          _$ReadAllUnreadSpecifiedNotesChannelEventImpl value,
+          $Res Function(_$ReadAllUnreadSpecifiedNotesChannelEventImpl) then) =
+      __$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ReadAllUnreadSpecifiedNotesChannelEventImpl>
+    implements _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith<$Res> {
+  __$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWithImpl(
+      _$ReadAllUnreadSpecifiedNotesChannelEventImpl _value,
+      $Res Function(_$ReadAllUnreadSpecifiedNotesChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$ReadAllUnreadSpecifiedNotesChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
+    implements ReadAllUnreadSpecifiedNotesChannelEvent {
+  const _$ReadAllUnreadSpecifiedNotesChannelEventImpl(
+      {required this.id, final String? $type})
+      : $type = $type ?? 'readAllUnreadSpecifiedNotes';
+
+  factory _$ReadAllUnreadSpecifiedNotesChannelEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ReadAllUnreadSpecifiedNotesChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.readAllUnreadSpecifiedNotes(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReadAllUnreadSpecifiedNotesChannelEventImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith<
+          _$ReadAllUnreadSpecifiedNotesChannelEventImpl>
+      get copyWith =>
+          __$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWithImpl<
+              _$ReadAllUnreadSpecifiedNotesChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return readAllUnreadSpecifiedNotes(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return readAllUnreadSpecifiedNotes?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllUnreadSpecifiedNotes != null) {
+      return readAllUnreadSpecifiedNotes(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return readAllUnreadSpecifiedNotes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return readAllUnreadSpecifiedNotes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllUnreadSpecifiedNotes != null) {
+      return readAllUnreadSpecifiedNotes(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReadAllUnreadSpecifiedNotesChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ReadAllUnreadSpecifiedNotesChannelEvent
+    implements ChannelStreamEvent {
+  const factory ReadAllUnreadSpecifiedNotesChannelEvent(
+          {required final String id}) =
+      _$ReadAllUnreadSpecifiedNotesChannelEventImpl;
+
+  factory ReadAllUnreadSpecifiedNotesChannelEvent.fromJson(
+          Map<String, dynamic> json) =
+      _$ReadAllUnreadSpecifiedNotesChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith<
+          _$ReadAllUnreadSpecifiedNotesChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReceiveFollowRequestChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ReceiveFollowRequestChannelEventImplCopyWith(
+          _$ReceiveFollowRequestChannelEventImpl value,
+          $Res Function(_$ReceiveFollowRequestChannelEventImpl) then) =
+      __$$ReceiveFollowRequestChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, UserLite body});
+
+  $UserLiteCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$ReceiveFollowRequestChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ReceiveFollowRequestChannelEventImpl>
+    implements _$$ReceiveFollowRequestChannelEventImplCopyWith<$Res> {
+  __$$ReceiveFollowRequestChannelEventImplCopyWithImpl(
+      _$ReceiveFollowRequestChannelEventImpl _value,
+      $Res Function(_$ReceiveFollowRequestChannelEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$ReceiveFollowRequestChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res> get body {
+    return $UserLiteCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReceiveFollowRequestChannelEventImpl
+    implements ReceiveFollowRequestChannelEvent {
+  const _$ReceiveFollowRequestChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'receiveFollowRequest';
+
+  factory _$ReceiveFollowRequestChannelEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ReceiveFollowRequestChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final UserLite body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.receiveFollowRequest(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReceiveFollowRequestChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReceiveFollowRequestChannelEventImplCopyWith<
+          _$ReceiveFollowRequestChannelEventImpl>
+      get copyWith => __$$ReceiveFollowRequestChannelEventImplCopyWithImpl<
+          _$ReceiveFollowRequestChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return receiveFollowRequest(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return receiveFollowRequest?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (receiveFollowRequest != null) {
+      return receiveFollowRequest(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return receiveFollowRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return receiveFollowRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (receiveFollowRequest != null) {
+      return receiveFollowRequest(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReceiveFollowRequestChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ReceiveFollowRequestChannelEvent implements ChannelStreamEvent {
+  const factory ReceiveFollowRequestChannelEvent(
+      {required final String id,
+      required final UserLite body}) = _$ReceiveFollowRequestChannelEventImpl;
+
+  factory ReceiveFollowRequestChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ReceiveFollowRequestChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  UserLite get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$ReceiveFollowRequestChannelEventImplCopyWith<
+          _$ReceiveFollowRequestChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReadAllAnnouncementsImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ReadAllAnnouncementsImplCopyWith(_$ReadAllAnnouncementsImpl value,
+          $Res Function(_$ReadAllAnnouncementsImpl) then) =
+      __$$ReadAllAnnouncementsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$ReadAllAnnouncementsImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$ReadAllAnnouncementsImpl>
+    implements _$$ReadAllAnnouncementsImplCopyWith<$Res> {
+  __$$ReadAllAnnouncementsImplCopyWithImpl(_$ReadAllAnnouncementsImpl _value,
+      $Res Function(_$ReadAllAnnouncementsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$ReadAllAnnouncementsImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReadAllAnnouncementsImpl implements ReadAllAnnouncements {
+  const _$ReadAllAnnouncementsImpl({required this.id, final String? $type})
+      : $type = $type ?? 'readAllAnnouncements';
+
+  factory _$ReadAllAnnouncementsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReadAllAnnouncementsImplFromJson(json);
+
+  @override
+  final String id;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.readAllAnnouncements(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReadAllAnnouncementsImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReadAllAnnouncementsImplCopyWith<_$ReadAllAnnouncementsImpl>
+      get copyWith =>
+          __$$ReadAllAnnouncementsImplCopyWithImpl<_$ReadAllAnnouncementsImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)
+        statsLog,
+    required TResult Function(
+            String id, @StatsResponseConverter() StatsResponse body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, Note body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id, Note body) uneradSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id) readAllAnnouncements,
+  }) {
+    return readAllAnnouncements(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, Note body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id, Note body)? uneradSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id)? readAllAnnouncements,
+  }) {
+    return readAllAnnouncements?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StatsResponseConverter() List<StatsResponse> body)?
+        statsLog,
+    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, Note body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id, Note body)? uneradSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllAnnouncements != null) {
+      return readAllAnnouncements(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        uneradSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(ReadAllAnnouncements value) readAllAnnouncements,
+  }) {
+    return readAllAnnouncements(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(ReadAllAnnouncements value)? readAllAnnouncements,
+  }) {
+    return readAllAnnouncements?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        uneradSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(ReadAllAnnouncements value)? readAllAnnouncements,
+    required TResult orElse(),
+  }) {
+    if (readAllAnnouncements != null) {
+      return readAllAnnouncements(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReadAllAnnouncementsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ReadAllAnnouncements implements ChannelStreamEvent {
+  const factory ReadAllAnnouncements({required final String id}) =
+      _$ReadAllAnnouncementsImpl;
+
+  factory ReadAllAnnouncements.fromJson(Map<String, dynamic> json) =
+      _$ReadAllAnnouncementsImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$ReadAllAnnouncementsImplCopyWith<_$ReadAllAnnouncementsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2027,9 +8498,9 @@ NoteUpdateStreamEvent _$NoteUpdateStreamEventFromJson(
     case 'unreacted':
       return UnreactedChannelEvent.fromJson(json);
     case 'deleted':
-      return _DeletedChannelEvent.fromJson(json);
+      return DeletedChannelEvent.fromJson(json);
     case 'pollVoted':
-      return _PollVotedChannelEvent.fromJson(json);
+      return PollVotedChannelEvent.fromJson(json);
     case 'updated':
       return UpdatedChannelEvent.fromJson(json);
 
@@ -2042,31 +8513,32 @@ NoteUpdateStreamEvent _$NoteUpdateStreamEventFromJson(
 /// @nodoc
 mixin _$NoteUpdateStreamEvent {
   String get id => throw _privateConstructorUsedError;
+  Object get body => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, TimelineReacted body) reacted,
     required TResult Function(String id, TimelineReacted body) unreacted,
-    required TResult Function(String id, DateTime deletedAt) deleted,
-    required TResult Function(String id, TimelineVoted voted) pollVoted,
-    required TResult Function(String id, NoteEdited edited) updated,
+    required TResult Function(String id, DateTime body) deleted,
+    required TResult Function(String id, TimelineVoted body) pollVoted,
+    required TResult Function(String id, NoteEdited body) updated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, TimelineReacted body)? reacted,
     TResult? Function(String id, TimelineReacted body)? unreacted,
-    TResult? Function(String id, DateTime deletedAt)? deleted,
-    TResult? Function(String id, TimelineVoted voted)? pollVoted,
-    TResult? Function(String id, NoteEdited edited)? updated,
+    TResult? Function(String id, DateTime body)? deleted,
+    TResult? Function(String id, TimelineVoted body)? pollVoted,
+    TResult? Function(String id, NoteEdited body)? updated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, TimelineReacted body)? reacted,
     TResult Function(String id, TimelineReacted body)? unreacted,
-    TResult Function(String id, DateTime deletedAt)? deleted,
-    TResult Function(String id, TimelineVoted voted)? pollVoted,
-    TResult Function(String id, NoteEdited edited)? updated,
+    TResult Function(String id, DateTime body)? deleted,
+    TResult Function(String id, TimelineVoted body)? pollVoted,
+    TResult Function(String id, NoteEdited body)? updated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2074,8 +8546,8 @@ mixin _$NoteUpdateStreamEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ReactedChannelEvent value) reacted,
     required TResult Function(UnreactedChannelEvent value) unreacted,
-    required TResult Function(_DeletedChannelEvent value) deleted,
-    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(DeletedChannelEvent value) deleted,
+    required TResult Function(PollVotedChannelEvent value) pollVoted,
     required TResult Function(UpdatedChannelEvent value) updated,
   }) =>
       throw _privateConstructorUsedError;
@@ -2083,8 +8555,8 @@ mixin _$NoteUpdateStreamEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ReactedChannelEvent value)? reacted,
     TResult? Function(UnreactedChannelEvent value)? unreacted,
-    TResult? Function(_DeletedChannelEvent value)? deleted,
-    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(DeletedChannelEvent value)? deleted,
+    TResult? Function(PollVotedChannelEvent value)? pollVoted,
     TResult? Function(UpdatedChannelEvent value)? updated,
   }) =>
       throw _privateConstructorUsedError;
@@ -2092,8 +8564,8 @@ mixin _$NoteUpdateStreamEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReactedChannelEvent value)? reacted,
     TResult Function(UnreactedChannelEvent value)? unreacted,
-    TResult Function(_DeletedChannelEvent value)? deleted,
-    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(DeletedChannelEvent value)? deleted,
+    TResult Function(PollVotedChannelEvent value)? pollVoted,
     TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) =>
@@ -2234,9 +8706,9 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String id, TimelineReacted body) reacted,
     required TResult Function(String id, TimelineReacted body) unreacted,
-    required TResult Function(String id, DateTime deletedAt) deleted,
-    required TResult Function(String id, TimelineVoted voted) pollVoted,
-    required TResult Function(String id, NoteEdited edited) updated,
+    required TResult Function(String id, DateTime body) deleted,
+    required TResult Function(String id, TimelineVoted body) pollVoted,
+    required TResult Function(String id, NoteEdited body) updated,
   }) {
     return reacted(id, body);
   }
@@ -2246,9 +8718,9 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, TimelineReacted body)? reacted,
     TResult? Function(String id, TimelineReacted body)? unreacted,
-    TResult? Function(String id, DateTime deletedAt)? deleted,
-    TResult? Function(String id, TimelineVoted voted)? pollVoted,
-    TResult? Function(String id, NoteEdited edited)? updated,
+    TResult? Function(String id, DateTime body)? deleted,
+    TResult? Function(String id, TimelineVoted body)? pollVoted,
+    TResult? Function(String id, NoteEdited body)? updated,
   }) {
     return reacted?.call(id, body);
   }
@@ -2258,9 +8730,9 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, TimelineReacted body)? reacted,
     TResult Function(String id, TimelineReacted body)? unreacted,
-    TResult Function(String id, DateTime deletedAt)? deleted,
-    TResult Function(String id, TimelineVoted voted)? pollVoted,
-    TResult Function(String id, NoteEdited edited)? updated,
+    TResult Function(String id, DateTime body)? deleted,
+    TResult Function(String id, TimelineVoted body)? pollVoted,
+    TResult Function(String id, NoteEdited body)? updated,
     required TResult orElse(),
   }) {
     if (reacted != null) {
@@ -2274,8 +8746,8 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ReactedChannelEvent value) reacted,
     required TResult Function(UnreactedChannelEvent value) unreacted,
-    required TResult Function(_DeletedChannelEvent value) deleted,
-    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(DeletedChannelEvent value) deleted,
+    required TResult Function(PollVotedChannelEvent value) pollVoted,
     required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return reacted(this);
@@ -2286,8 +8758,8 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ReactedChannelEvent value)? reacted,
     TResult? Function(UnreactedChannelEvent value)? unreacted,
-    TResult? Function(_DeletedChannelEvent value)? deleted,
-    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(DeletedChannelEvent value)? deleted,
+    TResult? Function(PollVotedChannelEvent value)? pollVoted,
     TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return reacted?.call(this);
@@ -2298,8 +8770,8 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReactedChannelEvent value)? reacted,
     TResult Function(UnreactedChannelEvent value)? unreacted,
-    TResult Function(_DeletedChannelEvent value)? deleted,
-    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(DeletedChannelEvent value)? deleted,
+    TResult Function(PollVotedChannelEvent value)? pollVoted,
     TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
@@ -2327,6 +8799,7 @@ abstract class ReactedChannelEvent implements NoteUpdateStreamEvent {
 
   @override
   String get id;
+  @override
   TimelineReacted get body;
   @override
   @JsonKey(ignore: true)
@@ -2432,9 +8905,9 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String id, TimelineReacted body) reacted,
     required TResult Function(String id, TimelineReacted body) unreacted,
-    required TResult Function(String id, DateTime deletedAt) deleted,
-    required TResult Function(String id, TimelineVoted voted) pollVoted,
-    required TResult Function(String id, NoteEdited edited) updated,
+    required TResult Function(String id, DateTime body) deleted,
+    required TResult Function(String id, TimelineVoted body) pollVoted,
+    required TResult Function(String id, NoteEdited body) updated,
   }) {
     return unreacted(id, body);
   }
@@ -2444,9 +8917,9 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, TimelineReacted body)? reacted,
     TResult? Function(String id, TimelineReacted body)? unreacted,
-    TResult? Function(String id, DateTime deletedAt)? deleted,
-    TResult? Function(String id, TimelineVoted voted)? pollVoted,
-    TResult? Function(String id, NoteEdited edited)? updated,
+    TResult? Function(String id, DateTime body)? deleted,
+    TResult? Function(String id, TimelineVoted body)? pollVoted,
+    TResult? Function(String id, NoteEdited body)? updated,
   }) {
     return unreacted?.call(id, body);
   }
@@ -2456,9 +8929,9 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, TimelineReacted body)? reacted,
     TResult Function(String id, TimelineReacted body)? unreacted,
-    TResult Function(String id, DateTime deletedAt)? deleted,
-    TResult Function(String id, TimelineVoted voted)? pollVoted,
-    TResult Function(String id, NoteEdited edited)? updated,
+    TResult Function(String id, DateTime body)? deleted,
+    TResult Function(String id, TimelineVoted body)? pollVoted,
+    TResult Function(String id, NoteEdited body)? updated,
     required TResult orElse(),
   }) {
     if (unreacted != null) {
@@ -2472,8 +8945,8 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ReactedChannelEvent value) reacted,
     required TResult Function(UnreactedChannelEvent value) unreacted,
-    required TResult Function(_DeletedChannelEvent value) deleted,
-    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(DeletedChannelEvent value) deleted,
+    required TResult Function(PollVotedChannelEvent value) pollVoted,
     required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return unreacted(this);
@@ -2484,8 +8957,8 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ReactedChannelEvent value)? reacted,
     TResult? Function(UnreactedChannelEvent value)? unreacted,
-    TResult? Function(_DeletedChannelEvent value)? deleted,
-    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(DeletedChannelEvent value)? deleted,
+    TResult? Function(PollVotedChannelEvent value)? pollVoted,
     TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return unreacted?.call(this);
@@ -2496,8 +8969,8 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReactedChannelEvent value)? reacted,
     TResult Function(UnreactedChannelEvent value)? unreacted,
-    TResult Function(_DeletedChannelEvent value)? deleted,
-    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(DeletedChannelEvent value)? deleted,
+    TResult Function(PollVotedChannelEvent value)? pollVoted,
     TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
@@ -2525,6 +8998,7 @@ abstract class UnreactedChannelEvent implements NoteUpdateStreamEvent {
 
   @override
   String get id;
+  @override
   TimelineReacted get body;
   @override
   @JsonKey(ignore: true)
@@ -2540,7 +9014,7 @@ abstract class _$$DeletedChannelEventImplCopyWith<$Res>
       __$$DeletedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, DateTime deletedAt});
+  $Res call({String id, DateTime body});
 }
 
 /// @nodoc
@@ -2555,16 +9029,16 @@ class __$$DeletedChannelEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? deletedAt = null,
+    Object? body = null,
   }) {
     return _then(_$DeletedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      deletedAt: null == deletedAt
-          ? _value.deletedAt
-          : deletedAt // ignore: cast_nullable_to_non_nullable
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -2572,9 +9046,9 @@ class __$$DeletedChannelEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
+class _$DeletedChannelEventImpl implements DeletedChannelEvent {
   const _$DeletedChannelEventImpl(
-      {required this.id, required this.deletedAt, final String? $type})
+      {required this.id, required this.body, final String? $type})
       : $type = $type ?? 'deleted';
 
   factory _$DeletedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
@@ -2583,14 +9057,14 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   @override
   final String id;
   @override
-  final DateTime deletedAt;
+  final DateTime body;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'NoteUpdateStreamEvent.deleted(id: $id, deletedAt: $deletedAt)';
+    return 'NoteUpdateStreamEvent.deleted(id: $id, body: $body)';
   }
 
   @override
@@ -2599,13 +9073,12 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
         (other.runtimeType == runtimeType &&
             other is _$DeletedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.deletedAt, deletedAt) ||
-                other.deletedAt == deletedAt));
+            (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, deletedAt);
+  int get hashCode => Object.hash(runtimeType, id, body);
 
   @JsonKey(ignore: true)
   @override
@@ -2619,11 +9092,11 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String id, TimelineReacted body) reacted,
     required TResult Function(String id, TimelineReacted body) unreacted,
-    required TResult Function(String id, DateTime deletedAt) deleted,
-    required TResult Function(String id, TimelineVoted voted) pollVoted,
-    required TResult Function(String id, NoteEdited edited) updated,
+    required TResult Function(String id, DateTime body) deleted,
+    required TResult Function(String id, TimelineVoted body) pollVoted,
+    required TResult Function(String id, NoteEdited body) updated,
   }) {
-    return deleted(id, deletedAt);
+    return deleted(id, body);
   }
 
   @override
@@ -2631,11 +9104,11 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, TimelineReacted body)? reacted,
     TResult? Function(String id, TimelineReacted body)? unreacted,
-    TResult? Function(String id, DateTime deletedAt)? deleted,
-    TResult? Function(String id, TimelineVoted voted)? pollVoted,
-    TResult? Function(String id, NoteEdited edited)? updated,
+    TResult? Function(String id, DateTime body)? deleted,
+    TResult? Function(String id, TimelineVoted body)? pollVoted,
+    TResult? Function(String id, NoteEdited body)? updated,
   }) {
-    return deleted?.call(id, deletedAt);
+    return deleted?.call(id, body);
   }
 
   @override
@@ -2643,13 +9116,13 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, TimelineReacted body)? reacted,
     TResult Function(String id, TimelineReacted body)? unreacted,
-    TResult Function(String id, DateTime deletedAt)? deleted,
-    TResult Function(String id, TimelineVoted voted)? pollVoted,
-    TResult Function(String id, NoteEdited edited)? updated,
+    TResult Function(String id, DateTime body)? deleted,
+    TResult Function(String id, TimelineVoted body)? pollVoted,
+    TResult Function(String id, NoteEdited body)? updated,
     required TResult orElse(),
   }) {
     if (deleted != null) {
-      return deleted(id, deletedAt);
+      return deleted(id, body);
     }
     return orElse();
   }
@@ -2659,8 +9132,8 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ReactedChannelEvent value) reacted,
     required TResult Function(UnreactedChannelEvent value) unreacted,
-    required TResult Function(_DeletedChannelEvent value) deleted,
-    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(DeletedChannelEvent value) deleted,
+    required TResult Function(PollVotedChannelEvent value) pollVoted,
     required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return deleted(this);
@@ -2671,8 +9144,8 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ReactedChannelEvent value)? reacted,
     TResult? Function(UnreactedChannelEvent value)? unreacted,
-    TResult? Function(_DeletedChannelEvent value)? deleted,
-    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(DeletedChannelEvent value)? deleted,
+    TResult? Function(PollVotedChannelEvent value)? pollVoted,
     TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return deleted?.call(this);
@@ -2683,8 +9156,8 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReactedChannelEvent value)? reacted,
     TResult Function(UnreactedChannelEvent value)? unreacted,
-    TResult Function(_DeletedChannelEvent value)? deleted,
-    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(DeletedChannelEvent value)? deleted,
+    TResult Function(PollVotedChannelEvent value)? pollVoted,
     TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
@@ -2702,17 +9175,18 @@ class _$DeletedChannelEventImpl implements _DeletedChannelEvent {
   }
 }
 
-abstract class _DeletedChannelEvent implements NoteUpdateStreamEvent {
-  const factory _DeletedChannelEvent(
+abstract class DeletedChannelEvent implements NoteUpdateStreamEvent {
+  const factory DeletedChannelEvent(
       {required final String id,
-      required final DateTime deletedAt}) = _$DeletedChannelEventImpl;
+      required final DateTime body}) = _$DeletedChannelEventImpl;
 
-  factory _DeletedChannelEvent.fromJson(Map<String, dynamic> json) =
+  factory DeletedChannelEvent.fromJson(Map<String, dynamic> json) =
       _$DeletedChannelEventImpl.fromJson;
 
   @override
   String get id;
-  DateTime get deletedAt;
+  @override
+  DateTime get body;
   @override
   @JsonKey(ignore: true)
   _$$DeletedChannelEventImplCopyWith<_$DeletedChannelEventImpl> get copyWith =>
@@ -2728,9 +9202,9 @@ abstract class _$$PollVotedChannelEventImplCopyWith<$Res>
       __$$PollVotedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, TimelineVoted voted});
+  $Res call({String id, TimelineVoted body});
 
-  $TimelineVotedCopyWith<$Res> get voted;
+  $TimelineVotedCopyWith<$Res> get body;
 }
 
 /// @nodoc
@@ -2746,34 +9220,34 @@ class __$$PollVotedChannelEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? voted = null,
+    Object? body = null,
   }) {
     return _then(_$PollVotedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      voted: null == voted
-          ? _value.voted
-          : voted // ignore: cast_nullable_to_non_nullable
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as TimelineVoted,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TimelineVotedCopyWith<$Res> get voted {
-    return $TimelineVotedCopyWith<$Res>(_value.voted, (value) {
-      return _then(_value.copyWith(voted: value));
+  $TimelineVotedCopyWith<$Res> get body {
+    return $TimelineVotedCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
     });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
+class _$PollVotedChannelEventImpl implements PollVotedChannelEvent {
   const _$PollVotedChannelEventImpl(
-      {required this.id, required this.voted, final String? $type})
+      {required this.id, required this.body, final String? $type})
       : $type = $type ?? 'pollVoted';
 
   factory _$PollVotedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
@@ -2782,14 +9256,14 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   @override
   final String id;
   @override
-  final TimelineVoted voted;
+  final TimelineVoted body;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'NoteUpdateStreamEvent.pollVoted(id: $id, voted: $voted)';
+    return 'NoteUpdateStreamEvent.pollVoted(id: $id, body: $body)';
   }
 
   @override
@@ -2798,12 +9272,12 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
         (other.runtimeType == runtimeType &&
             other is _$PollVotedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.voted, voted) || other.voted == voted));
+            (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, voted);
+  int get hashCode => Object.hash(runtimeType, id, body);
 
   @JsonKey(ignore: true)
   @override
@@ -2817,11 +9291,11 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String id, TimelineReacted body) reacted,
     required TResult Function(String id, TimelineReacted body) unreacted,
-    required TResult Function(String id, DateTime deletedAt) deleted,
-    required TResult Function(String id, TimelineVoted voted) pollVoted,
-    required TResult Function(String id, NoteEdited edited) updated,
+    required TResult Function(String id, DateTime body) deleted,
+    required TResult Function(String id, TimelineVoted body) pollVoted,
+    required TResult Function(String id, NoteEdited body) updated,
   }) {
-    return pollVoted(id, voted);
+    return pollVoted(id, body);
   }
 
   @override
@@ -2829,11 +9303,11 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, TimelineReacted body)? reacted,
     TResult? Function(String id, TimelineReacted body)? unreacted,
-    TResult? Function(String id, DateTime deletedAt)? deleted,
-    TResult? Function(String id, TimelineVoted voted)? pollVoted,
-    TResult? Function(String id, NoteEdited edited)? updated,
+    TResult? Function(String id, DateTime body)? deleted,
+    TResult? Function(String id, TimelineVoted body)? pollVoted,
+    TResult? Function(String id, NoteEdited body)? updated,
   }) {
-    return pollVoted?.call(id, voted);
+    return pollVoted?.call(id, body);
   }
 
   @override
@@ -2841,13 +9315,13 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, TimelineReacted body)? reacted,
     TResult Function(String id, TimelineReacted body)? unreacted,
-    TResult Function(String id, DateTime deletedAt)? deleted,
-    TResult Function(String id, TimelineVoted voted)? pollVoted,
-    TResult Function(String id, NoteEdited edited)? updated,
+    TResult Function(String id, DateTime body)? deleted,
+    TResult Function(String id, TimelineVoted body)? pollVoted,
+    TResult Function(String id, NoteEdited body)? updated,
     required TResult orElse(),
   }) {
     if (pollVoted != null) {
-      return pollVoted(id, voted);
+      return pollVoted(id, body);
     }
     return orElse();
   }
@@ -2857,8 +9331,8 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ReactedChannelEvent value) reacted,
     required TResult Function(UnreactedChannelEvent value) unreacted,
-    required TResult Function(_DeletedChannelEvent value) deleted,
-    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(DeletedChannelEvent value) deleted,
+    required TResult Function(PollVotedChannelEvent value) pollVoted,
     required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return pollVoted(this);
@@ -2869,8 +9343,8 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ReactedChannelEvent value)? reacted,
     TResult? Function(UnreactedChannelEvent value)? unreacted,
-    TResult? Function(_DeletedChannelEvent value)? deleted,
-    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(DeletedChannelEvent value)? deleted,
+    TResult? Function(PollVotedChannelEvent value)? pollVoted,
     TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return pollVoted?.call(this);
@@ -2881,8 +9355,8 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReactedChannelEvent value)? reacted,
     TResult Function(UnreactedChannelEvent value)? unreacted,
-    TResult Function(_DeletedChannelEvent value)? deleted,
-    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(DeletedChannelEvent value)? deleted,
+    TResult Function(PollVotedChannelEvent value)? pollVoted,
     TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
@@ -2900,17 +9374,18 @@ class _$PollVotedChannelEventImpl implements _PollVotedChannelEvent {
   }
 }
 
-abstract class _PollVotedChannelEvent implements NoteUpdateStreamEvent {
-  const factory _PollVotedChannelEvent(
+abstract class PollVotedChannelEvent implements NoteUpdateStreamEvent {
+  const factory PollVotedChannelEvent(
       {required final String id,
-      required final TimelineVoted voted}) = _$PollVotedChannelEventImpl;
+      required final TimelineVoted body}) = _$PollVotedChannelEventImpl;
 
-  factory _PollVotedChannelEvent.fromJson(Map<String, dynamic> json) =
+  factory PollVotedChannelEvent.fromJson(Map<String, dynamic> json) =
       _$PollVotedChannelEventImpl.fromJson;
 
   @override
   String get id;
-  TimelineVoted get voted;
+  @override
+  TimelineVoted get body;
   @override
   @JsonKey(ignore: true)
   _$$PollVotedChannelEventImplCopyWith<_$PollVotedChannelEventImpl>
@@ -2925,9 +9400,9 @@ abstract class _$$UpdatedChannelEventImplCopyWith<$Res>
       __$$UpdatedChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, NoteEdited edited});
+  $Res call({String id, NoteEdited body});
 
-  $NoteEditedCopyWith<$Res> get edited;
+  $NoteEditedCopyWith<$Res> get body;
 }
 
 /// @nodoc
@@ -2942,25 +9417,25 @@ class __$$UpdatedChannelEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? edited = null,
+    Object? body = null,
   }) {
     return _then(_$UpdatedChannelEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      edited: null == edited
-          ? _value.edited
-          : edited // ignore: cast_nullable_to_non_nullable
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as NoteEdited,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NoteEditedCopyWith<$Res> get edited {
-    return $NoteEditedCopyWith<$Res>(_value.edited, (value) {
-      return _then(_value.copyWith(edited: value));
+  $NoteEditedCopyWith<$Res> get body {
+    return $NoteEditedCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
     });
   }
 }
@@ -2969,7 +9444,7 @@ class __$$UpdatedChannelEventImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   const _$UpdatedChannelEventImpl(
-      {required this.id, required this.edited, final String? $type})
+      {required this.id, required this.body, final String? $type})
       : $type = $type ?? 'updated';
 
   factory _$UpdatedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
@@ -2978,14 +9453,14 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   @override
   final String id;
   @override
-  final NoteEdited edited;
+  final NoteEdited body;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'NoteUpdateStreamEvent.updated(id: $id, edited: $edited)';
+    return 'NoteUpdateStreamEvent.updated(id: $id, body: $body)';
   }
 
   @override
@@ -2994,12 +9469,12 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
         (other.runtimeType == runtimeType &&
             other is _$UpdatedChannelEventImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.edited, edited) || other.edited == edited));
+            (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, edited);
+  int get hashCode => Object.hash(runtimeType, id, body);
 
   @JsonKey(ignore: true)
   @override
@@ -3013,11 +9488,11 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String id, TimelineReacted body) reacted,
     required TResult Function(String id, TimelineReacted body) unreacted,
-    required TResult Function(String id, DateTime deletedAt) deleted,
-    required TResult Function(String id, TimelineVoted voted) pollVoted,
-    required TResult Function(String id, NoteEdited edited) updated,
+    required TResult Function(String id, DateTime body) deleted,
+    required TResult Function(String id, TimelineVoted body) pollVoted,
+    required TResult Function(String id, NoteEdited body) updated,
   }) {
-    return updated(id, edited);
+    return updated(id, body);
   }
 
   @override
@@ -3025,11 +9500,11 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, TimelineReacted body)? reacted,
     TResult? Function(String id, TimelineReacted body)? unreacted,
-    TResult? Function(String id, DateTime deletedAt)? deleted,
-    TResult? Function(String id, TimelineVoted voted)? pollVoted,
-    TResult? Function(String id, NoteEdited edited)? updated,
+    TResult? Function(String id, DateTime body)? deleted,
+    TResult? Function(String id, TimelineVoted body)? pollVoted,
+    TResult? Function(String id, NoteEdited body)? updated,
   }) {
-    return updated?.call(id, edited);
+    return updated?.call(id, body);
   }
 
   @override
@@ -3037,13 +9512,13 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, TimelineReacted body)? reacted,
     TResult Function(String id, TimelineReacted body)? unreacted,
-    TResult Function(String id, DateTime deletedAt)? deleted,
-    TResult Function(String id, TimelineVoted voted)? pollVoted,
-    TResult Function(String id, NoteEdited edited)? updated,
+    TResult Function(String id, DateTime body)? deleted,
+    TResult Function(String id, TimelineVoted body)? pollVoted,
+    TResult Function(String id, NoteEdited body)? updated,
     required TResult orElse(),
   }) {
     if (updated != null) {
-      return updated(id, edited);
+      return updated(id, body);
     }
     return orElse();
   }
@@ -3053,8 +9528,8 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ReactedChannelEvent value) reacted,
     required TResult Function(UnreactedChannelEvent value) unreacted,
-    required TResult Function(_DeletedChannelEvent value) deleted,
-    required TResult Function(_PollVotedChannelEvent value) pollVoted,
+    required TResult Function(DeletedChannelEvent value) deleted,
+    required TResult Function(PollVotedChannelEvent value) pollVoted,
     required TResult Function(UpdatedChannelEvent value) updated,
   }) {
     return updated(this);
@@ -3065,8 +9540,8 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ReactedChannelEvent value)? reacted,
     TResult? Function(UnreactedChannelEvent value)? unreacted,
-    TResult? Function(_DeletedChannelEvent value)? deleted,
-    TResult? Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult? Function(DeletedChannelEvent value)? deleted,
+    TResult? Function(PollVotedChannelEvent value)? pollVoted,
     TResult? Function(UpdatedChannelEvent value)? updated,
   }) {
     return updated?.call(this);
@@ -3077,8 +9552,8 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ReactedChannelEvent value)? reacted,
     TResult Function(UnreactedChannelEvent value)? unreacted,
-    TResult Function(_DeletedChannelEvent value)? deleted,
-    TResult Function(_PollVotedChannelEvent value)? pollVoted,
+    TResult Function(DeletedChannelEvent value)? deleted,
+    TResult Function(PollVotedChannelEvent value)? pollVoted,
     TResult Function(UpdatedChannelEvent value)? updated,
     required TResult orElse(),
   }) {
@@ -3099,14 +9574,15 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
 abstract class UpdatedChannelEvent implements NoteUpdateStreamEvent {
   const factory UpdatedChannelEvent(
       {required final String id,
-      required final NoteEdited edited}) = _$UpdatedChannelEventImpl;
+      required final NoteEdited body}) = _$UpdatedChannelEventImpl;
 
   factory UpdatedChannelEvent.fromJson(Map<String, dynamic> json) =
       _$UpdatedChannelEventImpl.fromJson;
 
   @override
   String get id;
-  NoteEdited get edited;
+  @override
+  NoteEdited get body;
   @override
   @JsonKey(ignore: true)
   _$$UpdatedChannelEventImplCopyWith<_$UpdatedChannelEventImpl> get copyWith =>

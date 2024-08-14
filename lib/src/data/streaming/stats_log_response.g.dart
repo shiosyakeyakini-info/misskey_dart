@@ -6,22 +6,42 @@ part of 'stats_log_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StatsLogResponseImpl _$$StatsLogResponseImplFromJson(
+_$ServerMetricsResponseImpl _$$ServerMetricsResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$StatsLogResponseImpl(
+    _$ServerMetricsResponseImpl(
       cpu: (json['cpu'] as num).toDouble(),
       fs: StatsLogFs.fromJson(json['fs'] as Map<String, dynamic>),
       mem: StatsLogMem.fromJson(json['mem'] as Map<String, dynamic>),
       net: StatsLogNet.fromJson(json['net'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$StatsLogResponseImplToJson(
-        _$StatsLogResponseImpl instance) =>
+Map<String, dynamic> _$$ServerMetricsResponseImplToJson(
+        _$ServerMetricsResponseImpl instance) =>
     <String, dynamic>{
       'cpu': instance.cpu,
       'fs': instance.fs.toJson(),
       'mem': instance.mem.toJson(),
       'net': instance.net.toJson(),
+      'runtimeType': instance.$type,
+    };
+
+_$JobQueueResponseImpl _$$JobQueueResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$JobQueueResponseImpl(
+      inbox: QueueStatsLogResponseData.fromJson(
+          json['inbox'] as Map<String, dynamic>),
+      deliver: QueueStatsLogResponseData.fromJson(
+          json['deliver'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$JobQueueResponseImplToJson(
+        _$JobQueueResponseImpl instance) =>
+    <String, dynamic>{
+      'inbox': instance.inbox.toJson(),
+      'deliver': instance.deliver.toJson(),
+      'runtimeType': instance.$type,
     };
 
 _$StatsLogFsImpl _$$StatsLogFsImplFromJson(Map<String, dynamic> json) =>
@@ -58,4 +78,22 @@ Map<String, dynamic> _$$StatsLogNetImplToJson(_$StatsLogNetImpl instance) =>
     <String, dynamic>{
       'rx': instance.rx,
       'tx': instance.tx,
+    };
+
+_$QueueStatsLogResponseDataImpl _$$QueueStatsLogResponseDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$QueueStatsLogResponseDataImpl(
+      activeSincePrevTick: json['activeSincePrevTick'] as int,
+      active: json['active'] as int,
+      waiting: json['waiting'] as int,
+      delayed: json['delayed'] as int,
+    );
+
+Map<String, dynamic> _$$QueueStatsLogResponseDataImplToJson(
+        _$QueueStatsLogResponseDataImpl instance) =>
+    <String, dynamic>{
+      'activeSincePrevTick': instance.activeSincePrevTick,
+      'active': instance.active,
+      'waiting': instance.waiting,
+      'delayed': instance.delayed,
     };

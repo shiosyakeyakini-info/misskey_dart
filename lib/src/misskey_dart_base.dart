@@ -5,6 +5,7 @@ import 'package:misskey_dart/src/data/ping_response.dart';
 import 'package:misskey_dart/src/data/stats_response.dart';
 import 'package:misskey_dart/src/misskey_flash.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
+import 'package:misskey_dart/src/services/streaming_service.dart';
 
 class Misskey {
   final String? token;
@@ -108,9 +109,9 @@ class Misskey {
   }
 
   /// サーバー全体の統計情報を取得します。
-  Future<StatsResponse> stats() async {
+  Future<ServerMetricsResponse> stats() async {
     final response = await apiService.post<Map<String, dynamic>>("stats", {});
-    return StatsResponse.fromJson(response);
+    return ServerMetricsResponse.fromJson(response);
   }
 
   /// サーバーへの応答時間を取得します。
@@ -145,98 +146,4 @@ class Misskey {
     final response = await apiService.post<List>("pinned-users", {});
     return response.map((e) => UserDetailed.fromJson(e));
   }
-
-  /// ホームタイムラインに接続します。
-  Future<Stream<StreamingResponse>> homeTimelineStream({
-    required HomeTimelineParameter parameter,
-    required String id,
-  }) async =>
-      (await streamingService.stream())
-          .addChannel(Channel.homeTimeline, parameter.toJson(), id);
-
-  /// ローカルタイムラインに接続します。
-  Future<Stream<StreamingResponse>> localTimelineStream({
-    required LocalTimelineParameter parameter,
-    required String id,
-  }) async =>
-      (await streamingService.stream()).addChannel(
-        Channel.localTimeline,
-        parameter.toJson(),
-        id,
-      );
-
-  /// グローバルタイムラインに接続します。
-  Future<Stream<StreamingResponse>> globalTimelineStream({
-    required GlobalTimelineParameter parameter,
-    required String id,
-  }) async =>
-      (await streamingService.stream()).addChannel(
-        Channel.globalTimeline,
-        parameter.toJson(),
-        id,
-      );
-
-  /// ソーシャルタイムラインに接続します。
-  Future<Stream<StreamingResponse>> hybridTimelineStream({
-    required HybridTimelineParameter parameter,
-    required String id,
-  }) async =>
-      (await streamingService.stream()).addChannel(
-        Channel.hybridTimeline,
-        parameter.toJson(),
-        id,
-      );
-
-  /// ロールタイムラインに接続します。
-  Future<Stream<StreamingResponse>> roleTimelineStream({
-    required String roleId,
-    String? id,
-  }) async =>
-      (await streamingService.stream())
-          .addChannel(Channel.roleTimeline, {"roleId": roleId}, id ?? roleId);
-
-  /// チャンネル（トピック毎の機能の方）に接続します。
-  Future<Stream<StreamingResponse>> channelStream({
-    required String channelId,
-    String? id,
-  }) async =>
-      (await streamingService.stream()).addChannel(
-        Channel.roleTimeline,
-        {"channelId": channelId},
-        id ?? channelId,
-      );
-
-  /// リストのストリームに接続します。
-  Future<Stream<StreamingResponse>> userListStream({
-    required String listId,
-    String? id,
-  }) async =>
-      (await streamingService.stream())
-          .addChannel(Channel.roleTimeline, {"listId": listId}, id ?? listId);
-
-  /// アンテナのストリームに接続します。
-  Future<Stream<StreamingResponse>> antennaStream({
-    required String antennaId,
-    String? id,
-  }) async =>
-      (await streamingService.stream()).addChannel(
-          Channel.roleTimeline, {"antennaId": antennaId}, id ?? antennaId);
-
-  /// メモリ使用率・CPU使用率の統計情報のストリームに接続します。
-  Future<Stream<StreamingResponse>> serverStatsLogStream({
-    required String id,
-  }) async =>
-      (await streamingService.stream()).addChannel(Channel.serverStats, {}, id);
-
-  /// ジョブキューの統計情報のストリームに接続します。
-  Future<Stream<StreamingResponse>> queueStatsLogStream({
-    required String id,
-  }) async =>
-      (await streamingService.stream()).addChannel(Channel.queueStats, {}, id);
-
-  /// メインのストリームに接続します。
-  Future<Stream<StreamingResponse>> mainStream({
-    required String id,
-  }) async =>
-      (await streamingService.stream()).addChannel(Channel.main, {}, id);
 }
