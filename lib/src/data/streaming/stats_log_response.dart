@@ -3,12 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'stats_log_response.freezed.dart';
 part 'stats_log_response.g.dart';
 
-class StatsResponseConverter
-    implements JsonConverter<StatsResponse, Map<String, dynamic>> {
-  const StatsResponseConverter();
+class StreamingStatsConverter
+    implements JsonConverter<StreamingStats, Map<String, dynamic>> {
+  const StreamingStatsConverter();
 
   @override
-  StatsResponse fromJson(Map<String, dynamic> json) {
+  StreamingStats fromJson(Map<String, dynamic> json) {
     if (json.containsKey("inbox")) {
       return JobQueueResponse.fromJson(json);
     }
@@ -19,25 +19,25 @@ class StatsResponseConverter
   }
 
   @override
-  Map<String, dynamic> toJson(StatsResponse data) => data.toJson();
+  Map<String, dynamic> toJson(StreamingStats data) => data.toJson();
 }
 
 @freezed
-sealed class StatsResponse with _$StatsResponse {
-  const factory StatsResponse.serverMetrics({
+sealed class StreamingStats with _$StreamingStats {
+  const factory StreamingStats.serverMetrics({
     required double cpu,
     required StatsLogFs fs,
     required StatsLogMem mem,
     required StatsLogNet net,
   }) = ServerMetricsResponse;
 
-  const factory StatsResponse.jobQueue({
+  const factory StreamingStats.jobQueue({
     required QueueStatsLogResponseData inbox,
     required QueueStatsLogResponseData deliver,
   }) = JobQueueResponse;
 
-  factory StatsResponse.fromJson(Map<String, dynamic> json) =>
-      _$StatsResponseFromJson(json);
+  factory StreamingStats.fromJson(Map<String, dynamic> json) =>
+      _$StreamingStatsFromJson(json);
 }
 
 @freezed

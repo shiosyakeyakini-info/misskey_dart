@@ -2288,10 +2288,10 @@ mixin _$ChannelStreamEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -2321,9 +2321,10 @@ mixin _$ChannelStreamEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -2352,9 +2353,9 @@ mixin _$ChannelStreamEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -2620,10 +2621,10 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -2656,9 +2657,10 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -2690,9 +2692,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -2864,7 +2866,7 @@ abstract class _$$StatsLogChannelEventImplCopyWith<$Res>
       __$$StatsLogChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, @StatsResponseConverter() List<StatsResponse> body});
+  $Res call({String id, @StreamingStatsConverter() List<StreamingStats> body});
 }
 
 /// @nodoc
@@ -2889,7 +2891,7 @@ class __$$StatsLogChannelEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
-              as List<StatsResponse>,
+              as List<StreamingStats>,
     ));
   }
 }
@@ -2899,7 +2901,7 @@ class __$$StatsLogChannelEventImplCopyWithImpl<$Res>
 class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
   const _$StatsLogChannelEventImpl(
       {required this.id,
-      @StatsResponseConverter() required final List<StatsResponse> body,
+      @StreamingStatsConverter() required final List<StreamingStats> body,
       final String? $type})
       : _body = body,
         $type = $type ?? 'statsLog';
@@ -2909,10 +2911,10 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
 
   @override
   final String id;
-  final List<StatsResponse> _body;
+  final List<StreamingStats> _body;
   @override
-  @StatsResponseConverter()
-  List<StatsResponse> get body {
+  @StreamingStatsConverter()
+  List<StreamingStats> get body {
     if (_body is EqualUnmodifiableListView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_body);
@@ -2955,10 +2957,10 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -2991,9 +2993,10 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -3025,9 +3028,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -3173,17 +3176,17 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
 
 abstract class StatsLogChannelEvent implements ChannelStreamEvent {
   const factory StatsLogChannelEvent(
-          {required final String id,
-          @StatsResponseConverter() required final List<StatsResponse> body}) =
-      _$StatsLogChannelEventImpl;
+      {required final String id,
+      @StreamingStatsConverter()
+      required final List<StreamingStats> body}) = _$StatsLogChannelEventImpl;
 
   factory StatsLogChannelEvent.fromJson(Map<String, dynamic> json) =
       _$StatsLogChannelEventImpl.fromJson;
 
   @override
   String get id;
-  @StatsResponseConverter()
-  List<StatsResponse> get body;
+  @StreamingStatsConverter()
+  List<StreamingStats> get body;
   @override
   @JsonKey(ignore: true)
   _$$StatsLogChannelEventImplCopyWith<_$StatsLogChannelEventImpl>
@@ -3198,9 +3201,9 @@ abstract class _$$StatsChannelEventImplCopyWith<$Res>
       __$$StatsChannelEventImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, @StatsResponseConverter() StatsResponse body});
+  $Res call({String id, @StreamingStatsConverter() StreamingStats body});
 
-  $StatsResponseCopyWith<$Res> get body;
+  $StreamingStatsCopyWith<$Res> get body;
 }
 
 /// @nodoc
@@ -3225,14 +3228,14 @@ class __$$StatsChannelEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as StatsResponse,
+              as StreamingStats,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $StatsResponseCopyWith<$Res> get body {
-    return $StatsResponseCopyWith<$Res>(_value.body, (value) {
+  $StreamingStatsCopyWith<$Res> get body {
+    return $StreamingStatsCopyWith<$Res>(_value.body, (value) {
       return _then(_value.copyWith(body: value));
     });
   }
@@ -3243,7 +3246,7 @@ class __$$StatsChannelEventImplCopyWithImpl<$Res>
 class _$StatsChannelEventImpl implements StatsChannelEvent {
   const _$StatsChannelEventImpl(
       {required this.id,
-      @StatsResponseConverter() required this.body,
+      @StreamingStatsConverter() required this.body,
       final String? $type})
       : $type = $type ?? 'stats';
 
@@ -3253,8 +3256,8 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
   @override
   final String id;
   @override
-  @StatsResponseConverter()
-  final StatsResponse body;
+  @StreamingStatsConverter()
+  final StreamingStats body;
 
   @JsonKey(name: 'type')
   final String $type;
@@ -3291,10 +3294,10 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -3327,9 +3330,10 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -3361,9 +3365,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -3510,7 +3514,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
 abstract class StatsChannelEvent implements ChannelStreamEvent {
   const factory StatsChannelEvent(
           {required final String id,
-          @StatsResponseConverter() required final StatsResponse body}) =
+          @StreamingStatsConverter() required final StreamingStats body}) =
       _$StatsChannelEventImpl;
 
   factory StatsChannelEvent.fromJson(Map<String, dynamic> json) =
@@ -3518,8 +3522,8 @@ abstract class StatsChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
-  @StatsResponseConverter()
-  StatsResponse get body;
+  @StreamingStatsConverter()
+  StreamingStats get body;
   @override
   @JsonKey(ignore: true)
   _$$StatsChannelEventImplCopyWith<_$StatsChannelEventImpl> get copyWith =>
@@ -3625,10 +3629,10 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -3661,9 +3665,10 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -3695,9 +3700,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -3959,10 +3964,10 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -3995,9 +4000,10 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -4029,9 +4035,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -4293,10 +4299,10 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -4329,9 +4335,10 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -4363,9 +4370,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -4625,10 +4632,10 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -4661,9 +4668,10 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -4695,9 +4703,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -4956,10 +4964,10 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -4992,9 +5000,10 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -5026,9 +5035,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -5287,10 +5296,10 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -5323,9 +5332,10 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -5357,9 +5367,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -5618,10 +5628,10 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -5654,9 +5664,10 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -5688,9 +5699,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -5950,10 +5961,10 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -5986,9 +5997,10 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -6020,9 +6032,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -6282,10 +6294,10 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -6318,9 +6330,10 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -6352,9 +6365,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -6614,10 +6627,10 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -6650,9 +6663,10 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -6684,9 +6698,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -6933,10 +6947,10 @@ class _$ReadAllNotificationsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -6969,9 +6983,10 @@ class _$ReadAllNotificationsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -7003,9 +7018,9 @@ class _$ReadAllNotificationsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -7269,10 +7284,10 @@ class _$UnreadNotificationChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -7305,9 +7320,10 @@ class _$UnreadNotificationChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -7339,9 +7355,9 @@ class _$UnreadNotificationChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -7595,10 +7611,10 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -7631,9 +7647,10 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -7665,9 +7682,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -7914,10 +7931,10 @@ class _$ReadAllUnreadMentionsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -7950,9 +7967,10 @@ class _$ReadAllUnreadMentionsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -7984,9 +8002,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -8241,10 +8259,10 @@ class _$UnreadSpecifiedNoteChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -8277,9 +8295,10 @@ class _$UnreadSpecifiedNoteChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -8311,9 +8330,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -8562,10 +8581,10 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -8598,9 +8617,10 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -8632,9 +8652,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -8901,10 +8921,10 @@ class _$ReceiveFollowRequestChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -8937,9 +8957,10 @@ class _$ReceiveFollowRequestChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -8971,9 +8992,9 @@ class _$ReceiveFollowRequestChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,
@@ -9221,10 +9242,10 @@ class _$ReadAllAnnouncementsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
         note,
     required TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
         statsLog,
     required TResult Function(
-            String id, @StatsResponseConverter() StatsResponse body)
+            String id, @StreamingStatsConverter() StreamingStats body)
         stats,
     required TResult Function(String id, UserLite body) userAdded,
     required TResult Function(String id, UserLite body) userRemoved,
@@ -9257,9 +9278,10 @@ class _$ReadAllAnnouncementsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult? Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult? Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult? Function(String id, UserLite body)? userAdded,
     TResult? Function(String id, UserLite body)? userRemoved,
@@ -9291,9 +9313,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
             @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
         note,
     TResult Function(
-            String id, @StatsResponseConverter() List<StatsResponse> body)?
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
         statsLog,
-    TResult Function(String id, @StatsResponseConverter() StatsResponse body)?
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
         stats,
     TResult Function(String id, UserLite body)? userAdded,
     TResult Function(String id, UserLite body)? userRemoved,

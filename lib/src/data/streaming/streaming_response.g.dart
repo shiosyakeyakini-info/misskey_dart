@@ -222,7 +222,7 @@ _$StatsLogChannelEventImpl _$$StatsLogChannelEventImplFromJson(
     _$StatsLogChannelEventImpl(
       id: json['id'] as String,
       body: (json['body'] as List<dynamic>)
-          .map((e) => const StatsResponseConverter()
+          .map((e) => const StreamingStatsConverter()
               .fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['type'] as String?,
@@ -232,7 +232,8 @@ Map<String, dynamic> _$$StatsLogChannelEventImplToJson(
         _$StatsLogChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'body': instance.body.map(const StatsResponseConverter().toJson).toList(),
+      'body':
+          instance.body.map(const StreamingStatsConverter().toJson).toList(),
       'type': instance.$type,
     };
 
@@ -240,7 +241,7 @@ _$StatsChannelEventImpl _$$StatsChannelEventImplFromJson(
         Map<String, dynamic> json) =>
     _$StatsChannelEventImpl(
       id: json['id'] as String,
-      body: const StatsResponseConverter()
+      body: const StreamingStatsConverter()
           .fromJson(json['body'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
@@ -249,7 +250,7 @@ Map<String, dynamic> _$$StatsChannelEventImplToJson(
         _$StatsChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'body': const StatsResponseConverter().toJson(instance.body),
+      'body': const StreamingStatsConverter().toJson(instance.body),
       'type': instance.$type,
     };
 

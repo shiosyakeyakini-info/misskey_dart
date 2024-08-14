@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/ping_response.dart';
-import 'package:misskey_dart/src/misskey_flash.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/streaming_service.dart';
 import 'package:misskey_dart/src/services/streaming_service_impl.dart';
@@ -109,9 +107,9 @@ class Misskey {
   }
 
   /// サーバー全体の統計情報を取得します。
-  Future<ServerMetricsResponse> stats() async {
+  Future<StatsResponse> stats() async {
     final response = await apiService.post<Map<String, dynamic>>("stats", {});
-    return ServerMetricsResponse.fromJson(response);
+    return StatsResponse.fromJson(response);
   }
 
   /// サーバーへの応答時間を取得します。

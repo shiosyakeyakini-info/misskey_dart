@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-StatsResponse _$StatsResponseFromJson(Map<String, dynamic> json) {
+StreamingStats _$StreamingStatsFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'serverMetrics':
       return ServerMetricsResponse.fromJson(json);
@@ -22,13 +22,13 @@ StatsResponse _$StatsResponseFromJson(Map<String, dynamic> json) {
       return JobQueueResponse.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'StatsResponse',
+      throw CheckedFromJsonException(json, 'runtimeType', 'StreamingStats',
           'Invalid union type "${json['runtimeType']}"!');
   }
 }
 
 /// @nodoc
-mixin _$StatsResponse {
+mixin _$StreamingStats {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -83,16 +83,16 @@ mixin _$StatsResponse {
 }
 
 /// @nodoc
-abstract class $StatsResponseCopyWith<$Res> {
-  factory $StatsResponseCopyWith(
-          StatsResponse value, $Res Function(StatsResponse) then) =
-      _$StatsResponseCopyWithImpl<$Res, StatsResponse>;
+abstract class $StreamingStatsCopyWith<$Res> {
+  factory $StreamingStatsCopyWith(
+          StreamingStats value, $Res Function(StreamingStats) then) =
+      _$StreamingStatsCopyWithImpl<$Res, StreamingStats>;
 }
 
 /// @nodoc
-class _$StatsResponseCopyWithImpl<$Res, $Val extends StatsResponse>
-    implements $StatsResponseCopyWith<$Res> {
-  _$StatsResponseCopyWithImpl(this._value, this._then);
+class _$StreamingStatsCopyWithImpl<$Res, $Val extends StreamingStats>
+    implements $StreamingStatsCopyWith<$Res> {
+  _$StreamingStatsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -116,7 +116,7 @@ abstract class _$$ServerMetricsResponseImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ServerMetricsResponseImplCopyWithImpl<$Res>
-    extends _$StatsResponseCopyWithImpl<$Res, _$ServerMetricsResponseImpl>
+    extends _$StreamingStatsCopyWithImpl<$Res, _$ServerMetricsResponseImpl>
     implements _$$ServerMetricsResponseImplCopyWith<$Res> {
   __$$ServerMetricsResponseImplCopyWithImpl(_$ServerMetricsResponseImpl _value,
       $Res Function(_$ServerMetricsResponseImpl) _then)
@@ -203,7 +203,7 @@ class _$ServerMetricsResponseImpl implements ServerMetricsResponse {
 
   @override
   String toString() {
-    return 'StatsResponse.serverMetrics(cpu: $cpu, fs: $fs, mem: $mem, net: $net)';
+    return 'StreamingStats.serverMetrics(cpu: $cpu, fs: $fs, mem: $mem, net: $net)';
   }
 
   @override
@@ -310,7 +310,7 @@ class _$ServerMetricsResponseImpl implements ServerMetricsResponse {
   }
 }
 
-abstract class ServerMetricsResponse implements StatsResponse {
+abstract class ServerMetricsResponse implements StreamingStats {
   const factory ServerMetricsResponse(
       {required final double cpu,
       required final StatsLogFs fs,
@@ -344,7 +344,7 @@ abstract class _$$JobQueueResponseImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$JobQueueResponseImplCopyWithImpl<$Res>
-    extends _$StatsResponseCopyWithImpl<$Res, _$JobQueueResponseImpl>
+    extends _$StreamingStatsCopyWithImpl<$Res, _$JobQueueResponseImpl>
     implements _$$JobQueueResponseImplCopyWith<$Res> {
   __$$JobQueueResponseImplCopyWithImpl(_$JobQueueResponseImpl _value,
       $Res Function(_$JobQueueResponseImpl) _then)
@@ -405,7 +405,7 @@ class _$JobQueueResponseImpl implements JobQueueResponse {
 
   @override
   String toString() {
-    return 'StatsResponse.jobQueue(inbox: $inbox, deliver: $deliver)';
+    return 'StreamingStats.jobQueue(inbox: $inbox, deliver: $deliver)';
   }
 
   @override
@@ -510,7 +510,7 @@ class _$JobQueueResponseImpl implements JobQueueResponse {
   }
 }
 
-abstract class JobQueueResponse implements StatsResponse {
+abstract class JobQueueResponse implements StreamingStats {
   const factory JobQueueResponse(
           {required final QueueStatsLogResponseData inbox,
           required final QueueStatsLogResponseData deliver}) =

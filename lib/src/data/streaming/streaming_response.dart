@@ -94,13 +94,13 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   @FreezedUnionValue("statsLog")
   const factory ChannelStreamEvent.statsLog({
     required String id,
-    @StatsResponseConverter() required List<StatsResponse> body,
+    @StreamingStatsConverter() required List<StreamingStats> body,
   }) = StatsLogChannelEvent;
 
   @FreezedUnionValue("stats")
   const factory ChannelStreamEvent.stats({
     required String id,
-    @StatsResponseConverter() required StatsResponse body,
+    @StreamingStatsConverter() required StreamingStats body,
   }) = StatsChannelEvent;
 
   // list
