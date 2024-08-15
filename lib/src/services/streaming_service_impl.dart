@@ -190,12 +190,13 @@ class StreamingService implements StreamingController, WebSocketController {
       _activeStreams--;
       if (_activeStreams == 0) {
         final lock = await _connectWebSocketMutex.acquire();
-        if (_connections.isNotEmpty) return;
-        log("attempt $host streaming closed...");
-        try {
-          await _close();
-        } finally {
-          lock.release();
+        if (_connections.isEmpty) {
+          log("attempt $host streaming closed...");
+          try {
+            await _close();
+          } finally {
+            lock.release();
+          }
         }
       }
     }
