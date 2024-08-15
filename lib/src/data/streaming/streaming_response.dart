@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/streaming/timeline_deleted.dart';
-import 'package:misskey_dart/src/enums/broadcast_event_type.dart';
 import 'package:misskey_dart/src/enums/channel_event_type.dart';
 
 part 'streaming_response.freezed.dart';
@@ -81,7 +79,7 @@ class AnnouncementCreatedStreamEvent with _$AnnouncementCreatedStreamEvent {
       _$AnnouncementCreatedStreamEventFromJson(json);
 }
 
-@Freezed(unionKey: "type")
+@Freezed(unionKey: "type", fallbackUnion: "fallback")
 sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   @FreezedUnionValue("note")
   const factory ChannelStreamEvent.note({
@@ -165,6 +163,18 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required MeDetailed body,
   }) = MeUpdatedChannelEvent;
 
+  @FreezedUnionValue("pageEvent")
+  const factory ChannelStreamEvent.pageEvent({
+    required String id,
+    required PageEvent body,
+  }) = PageEventChannelEvent;
+
+  @FreezedUnionValue("urlUploadFinished")
+  const factory ChannelStreamEvent.urlUploadFinished({
+    required String id,
+    required UrlUploadFinishedEvent body,
+  }) = UrlUploadFinishedChannelEvent;
+
   @FreezedUnionValue("readAllNotifications")
   const factory ChannelStreamEvent.readAllNotifications({
     required String id,
@@ -187,6 +197,11 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required String id,
   }) = ReadAllUnreadMentionsChannelEvent;
 
+  @FreezedUnionValue("notificationFlushed")
+  const factory ChannelStreamEvent.notificationFlushed({
+    required String id,
+  }) = NotificationFlushedChannelEvent;
+
   @FreezedUnionValue("unreadSpecifiedNote")
   const factory ChannelStreamEvent.unreadSpecifiedNote({
     required String id,
@@ -198,16 +213,67 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required String id,
   }) = ReadAllUnreadSpecifiedNotesChannelEvent;
 
+  @FreezedUnionValue("readAllAntennas")
+  const factory ChannelStreamEvent.readAllAntennas({
+    required String id,
+  }) = ReadAllAntennasChannelEvent;
+
+  @FreezedUnionValue("unreadAntenna")
+  const factory ChannelStreamEvent.unreadAntenna({
+    required String id,
+    required Antenna body,
+  }) = UnreadAntennaChannelEvent;
+
+  @FreezedUnionValue("readAllAnnouncements")
+  const factory ChannelStreamEvent.readAllAnnouncements({
+    required String id,
+  }) = ReadAllAnnouncementsChannelEvent;
+
+  @FreezedUnionValue("myTokenRegenerated")
+  const factory ChannelStreamEvent.myTokenRegenerated({
+    required String id,
+  }) = MyTokenRegeneratedChannelEvent;
+
+  @FreezedUnionValue("signin")
+  const factory ChannelStreamEvent.signin({
+    required String id,
+    required Signin body,
+  }) = SigninChannelEvent;
+
+  @FreezedUnionValue("registryUpdated")
+  const factory ChannelStreamEvent.registryUpdated({
+    required String id,
+    required RegistryUpdated body,
+  }) = RegistryUpdatedChannelEvent;
+
+  @FreezedUnionValue("driveFileCreated")
+  const factory ChannelStreamEvent.driveFileCreated({
+    required String id,
+    required DriveFile driveFileCreated,
+  }) = DriveFileCreatedChannelEvent;
+
+  @FreezedUnionValue("readAntenna")
+  const factory ChannelStreamEvent.readAntenna({
+    required String id,
+    required Antenna body,
+  }) = ReadAntennaChannelEvent;
+
   @FreezedUnionValue("receiveFollowRequest")
   const factory ChannelStreamEvent.receiveFollowRequest({
     required String id,
     required UserLite body,
   }) = ReceiveFollowRequestChannelEvent;
 
-  @FreezedUnionValue("readAllAnnouncements")
-  const factory ChannelStreamEvent.readAllAnnouncements({
+  @FreezedUnionValue("announcementCreated")
+  const factory ChannelStreamEvent.announcementCreated({
     required String id,
-  }) = ReadAllAnnouncementsChannelEvent;
+    required AnnouncementCreatedStreamEvent body,
+  }) = AnnouncementCreatedChannelEvent;
+
+  const factory ChannelStreamEvent.fallback({
+    required String id,
+    required Object? body,
+  }) = FallbackChannelEvent;
 
   factory ChannelStreamEvent.fromJson(Map<String, dynamic> json) =>
       _$ChannelStreamEventFromJson(json);

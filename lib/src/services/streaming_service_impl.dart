@@ -23,6 +23,10 @@ class StreamingService implements StreamingController, WebSocketController {
 
   final List<StreamingRequestBody> _connections = [];
 
+  final _controller = StreamController<StreamingResponse>.broadcast();
+  StreamSubscription? _subscription;
+  int _activeStreams = 0;
+
   StreamingService(
     this.host, {
     this.port = 80,
@@ -31,9 +35,6 @@ class StreamingService implements StreamingController, WebSocketController {
     this.maxRetryCounts = 1,
     this.connectionTimeout,
   });
-
-  final _controller = StreamController<StreamingResponse>.broadcast();
-  StreamSubscription? _subscription;
 
   WebSocketChannel _createWebSocketChannel() {
     final url =
@@ -52,19 +53,23 @@ class StreamingService implements StreamingController, WebSocketController {
   Future<StreamingController> stream() async => await _stream();
 
   Future<StreamingController> _stream({int retryCounts = 0}) async {
-    if (_webSocketChannel != null &&
-        _subscription != null &&
-        !_controller.isClosed) {
-      return this;
-    }
+    _activeStreams++;
+    final lock = await _connectWebSocketMutex.acquire();
 
     try {
+      if (_webSocketChannel != null &&
+          _subscription != null &&
+          !_controller.isClosed) {
+        return this;
+      }
       await _connectWebSocket();
     } catch (e) {
       if (retryCounts >= maxRetryCounts) {
         rethrow;
       }
       return await _stream(retryCounts: retryCounts + 1);
+    } finally {
+      lock.release();
     }
 
     return this;
@@ -73,36 +78,29 @@ class StreamingService implements StreamingController, WebSocketController {
   final _connectWebSocketMutex = Mutex();
 
   Future<void> _connectWebSocket() async {
-    final lock = await _connectWebSocketMutex.acquire();
-    // 排他制御によって、別の箇所からすでに作成されていたらしょ
-    if (_webSocketChannel != null) return;
+    final webSocketChannel = _createWebSocketChannel();
+    _webSocketChannel = webSocketChannel;
+    await webSocketChannel.ready;
 
-    try {
-      final webSocketChannel = _createWebSocketChannel();
-      _webSocketChannel = webSocketChannel;
-      await webSocketChannel.ready;
-
-      _subscription = webSocketChannel.stream.listen(
-        (message) async {
-          final responseJson = jsonDecode(message);
-          final response = StreamingResponse.fromJson(responseJson);
-          _controller.sink.add(response);
-        },
-        onError: (e, s) async {
-          print("Error happen $e ");
-          print(s);
-          // 再呼び出し
-          await _reconnect();
-        },
-        onDone: () async {
-          print("onDone Called;");
-          await _reconnect();
-        },
-        cancelOnError: true,
-      );
-    } finally {
-      lock.release();
-    }
+    _subscription = webSocketChannel.stream.listen(
+      (message) async {
+        log("receive Response $message");
+        final responseJson = jsonDecode(message);
+        final response = StreamingResponse.fromJson(responseJson);
+        _controller.sink.add(response);
+      },
+      onError: (e, s) async {
+        print("Error happen $e ");
+        print(s);
+        // 再呼び出し
+        await _reconnect();
+      },
+      onDone: () async {
+        print("onDone Called;");
+        await _reconnect();
+      },
+      cancelOnError: true,
+    );
   }
 
   @override
@@ -147,9 +145,11 @@ class StreamingService implements StreamingController, WebSocketController {
     if (webSocketChannel == null) {
       throw Exception("did not establish websocket but will be send requests.");
     }
+    final request = jsonEncode(StreamingRequest(type: type, body: body));
 
-    webSocketChannel.sink
-        .add(jsonEncode(StreamingRequest(type: type, body: body)));
+    log("send Request $request");
+
+    webSocketChannel.sink.add(request);
   }
 
   @override
@@ -162,6 +162,7 @@ class StreamingService implements StreamingController, WebSocketController {
         StreamingRequestBody(channel: channel, id: id, params: parameters);
     sendRequest(StreamingRequestType.connect, body);
     _connections.add(body);
+    if (_connections.length > 1) _activeStreams++;
 
     return _controller.stream.where((e) {
       if (e is StreamingChannelUnknownResponse) {
@@ -187,8 +188,16 @@ class StreamingService implements StreamingController, WebSocketController {
       print(e.toString());
     } finally {
       _connections.removeWhere((e) => e.id == id);
-      if (_connections.isEmpty) {
-        await _close();
+      _activeStreams--;
+      if (_activeStreams == 0) {
+        final lock = await _connectWebSocketMutex.acquire();
+        if (_connections.isNotEmpty) return;
+        print("attempt $host streaming closed...");
+        try {
+          await _close();
+        } finally {
+          lock.release();
+        }
       }
     }
   }
