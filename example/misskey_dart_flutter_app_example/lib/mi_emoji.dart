@@ -27,7 +27,8 @@ class MiEmoji extends HookConsumerWidget {
   });
 
   String? emojiUrl(List<Emoji> value) {
-    if (userHost == null) {
+    if ((userHost != null && code.contains("@.")) ||
+        (userHost == null && (code.contains("@.") || !code.contains("@")))) {
       return value
           .firstWhereOrNull(
               (e) => e.name == code.replaceAll(":", "").replaceAll("@.", ""))
@@ -53,7 +54,10 @@ class MiEmoji extends HookConsumerWidget {
     return switch (emoji) {
       AsyncData(:final value) => HookBuilder(
           builder: (context) {
-            final url = useMemoized(() => emojiUrl(value));
+            final url = useMemoized(
+              () => emojiUrl(value),
+              [code, userHost, anotherServerEmojis],
+            );
 
             if (url == null) return Text(code);
             return Image.network(

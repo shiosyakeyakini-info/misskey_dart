@@ -502,7 +502,7 @@ void main() async {
             "imageUrl": "https://example.com",
           });
           final announcements =
-              await newClient.announcements(AnnouncementsRequest());
+              await newClient.announcements(AnnouncementsRequest(limit: 100));
 
           final controller = await newClient.streamingService.stream();
           final id = DateTime.now().toIso8601String();

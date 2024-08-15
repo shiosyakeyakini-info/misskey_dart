@@ -20,24 +20,36 @@ class StreamingPage extends HookConsumerWidget {
 
   const StreamingPage({super.key, required this.channel});
 
-  Note addOrReplaceReaction(Note note, String newReaction) {
-    if (note.reactions.containsKey(newReaction)) {
+  Note addOrReplaceReaction(Note note, TimelineReacted body) {
+    final emoji = body.emoji;
+    final reactionEmojis =
+        emoji == null || note.reactionEmojis.containsKey(body.reaction)
+            ? note.reactionEmojis
+            : Map.fromEntries(
+                [
+                  ...note.reactionEmojis.entries,
+                  MapEntry(emoji.name, emoji.url),
+                ],
+              );
+    if (note.reactions.containsKey(body.reaction)) {
       return note.copyWith(
         reactions: Map.fromEntries(
           [
             for (final reaction in note.reactions.entries)
-              if (reaction.key == newReaction)
+              if (reaction.key == body.reaction)
                 MapEntry(reaction.key, reaction.value + 1)
               else
                 reaction
           ],
         ),
+        reactionEmojis: reactionEmojis,
       );
     }
     return note.copyWith(
       reactions: Map.fromEntries(
-        [...note.reactions.entries, MapEntry(newReaction, 1)],
+        [...note.reactions.entries, MapEntry(body.reaction, 1)],
       ),
+      reactionEmojis: reactionEmojis,
     );
   }
 
@@ -99,6 +111,7 @@ class StreamingPage extends HookConsumerWidget {
         notes.value = [];
 
         final listener = controller.addChannel(channel, {}, id).listen((event) {
+          // ストリーミングを受信したときの処理を記述します。
           switch (event) {
             case StreamingChannelResponse(:final body):
               switch (body) {
@@ -115,11 +128,11 @@ class StreamingPage extends HookConsumerWidget {
                   notes.value = [
                     for (final note in notes.value)
                       if (note.id == id)
-                        addOrReplaceReaction(note, body.reaction)
+                        addOrReplaceReaction(note, body)
                       else if (note.renote != null && note.renote!.id == id)
-                        addOrReplaceReaction(note.renote!, body.reaction)
+                        addOrReplaceReaction(note.renote!, body)
                       else if (note.reply != null && note.reply!.id == id)
-                        addOrReplaceReaction(note.reply!, body.reaction)
+                        addOrReplaceReaction(note.reply!, body)
                       else
                         note
                   ];

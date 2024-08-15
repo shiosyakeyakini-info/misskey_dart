@@ -84,19 +84,18 @@ class StreamingService implements StreamingController, WebSocketController {
 
     _subscription = webSocketChannel.stream.listen(
       (message) async {
-        log("receive Response $message");
         final responseJson = jsonDecode(message);
         final response = StreamingResponse.fromJson(responseJson);
         _controller.sink.add(response);
       },
       onError: (e, s) async {
-        print("Error happen $e ");
-        print(s);
+        log("Error happen $e ");
+        log(s);
         // 再呼び出し
         await _reconnect();
       },
       onDone: () async {
-        print("onDone Called;");
+        log("onDone Called;");
         await _reconnect();
       },
       cancelOnError: true,
@@ -166,7 +165,7 @@ class StreamingService implements StreamingController, WebSocketController {
 
     return _controller.stream.where((e) {
       if (e is StreamingChannelUnknownResponse) {
-        print("$e is unknown type response");
+        log("$e is unknown type response");
       }
 
       return switch (e) {
@@ -192,7 +191,7 @@ class StreamingService implements StreamingController, WebSocketController {
       if (_activeStreams == 0) {
         final lock = await _connectWebSocketMutex.acquire();
         if (_connections.isNotEmpty) return;
-        print("attempt $host streaming closed...");
+        log("attempt $host streaming closed...");
         try {
           await _close();
         } finally {
