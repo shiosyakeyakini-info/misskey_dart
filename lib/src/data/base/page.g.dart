@@ -65,7 +65,7 @@ _$PageTextImpl _$$PageTextImplFromJson(Map<String, dynamic> json) =>
     _$PageTextImpl(
       id: json['id'] as String,
       type: $enumDecodeNullable(_$PageContentTypeEnumMap, json['type']),
-      text: json['text'] as String,
+      text: json['text'] as String?,
     );
 
 Map<String, dynamic> _$$PageTextImplToJson(_$PageTextImpl instance) =>
@@ -116,7 +116,7 @@ _$PageImageImpl _$$PageImageImplFromJson(Map<String, dynamic> json) =>
     _$PageImageImpl(
       id: json['id'] as String,
       type: $enumDecodeNullable(_$PageContentTypeEnumMap, json['type']),
-      fileId: json['fileId'] as String,
+      fileId: json['fileId'] as String?,
     );
 
 Map<String, dynamic> _$$PageImageImplToJson(_$PageImageImpl instance) =>
@@ -130,7 +130,7 @@ _$PageNoteImpl _$$PageNoteImplFromJson(Map<String, dynamic> json) =>
     _$PageNoteImpl(
       id: json['id'] as String,
       type: $enumDecodeNullable(_$PageContentTypeEnumMap, json['type']),
-      note: json['note'] as String,
+      note: json['note'] as String?,
       detailed: json['detailed'] as bool? ?? false,
     );
 
