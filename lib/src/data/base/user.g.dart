@@ -315,6 +315,7 @@ _$UserDetailedNotMeWithRelationsImpl
           isRenoteMuted: json['isRenoteMuted'] as bool,
           notify: $enumDecodeNullable(_$NotifyEnumMap, json['notify']),
           withReplies: json['withReplies'] as bool?,
+          followedMessage: json['followedMessage'] as String?,
         );
 
 Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
@@ -383,6 +384,7 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
       'isRenoteMuted': instance.isRenoteMuted,
       'notify': _$NotifyEnumMap[instance.notify],
       'withReplies': instance.withReplies,
+      'followedMessage': instance.followedMessage,
     };
 
 const _$NotifyEnumMap = {
@@ -478,6 +480,7 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       moderationNote: json['moderationNote'] as String?,
       avatarId: json['avatarId'] as String?,
       bannerId: json['bannerId'] as String?,
+      followedMessage: json['followedMessage'] as String?,
       isModerator: json['isModerator'] as bool,
       isAdmin: json['isAdmin'] as bool,
       injectFeaturedNote: json['injectFeaturedNote'] as bool,
@@ -593,6 +596,7 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'moderationNote': instance.moderationNote,
       'avatarId': instance.avatarId,
       'bannerId': instance.bannerId,
+      'followedMessage': instance.followedMessage,
       'isModerator': instance.isModerator,
       'isAdmin': instance.isAdmin,
       'injectFeaturedNote': instance.injectFeaturedNote,

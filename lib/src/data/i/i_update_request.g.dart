@@ -10,6 +10,7 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
     _$IUpdateRequestImpl(
       name: json['name'] as String?,
       description: json['description'] as String?,
+      followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
       birthday: json['birthday'],
       lang: json['lang'] as String?,
@@ -73,6 +74,7 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
+      'followedMessage': instance.followedMessage,
       'location': instance.location,
       'birthday': instance.birthday,
       'lang': instance.lang,
