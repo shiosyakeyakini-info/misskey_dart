@@ -27,6 +27,7 @@ class INotificationsResponse with _$INotificationsResponse {
     RolesListResponse? role,
     UserExportableEntities? exportedEntity,
     String? fileId,
+    String? message,
   }) = _INotificationsResponse;
 
   factory INotificationsResponse.fromJson(Map<String, Object?> json) =>

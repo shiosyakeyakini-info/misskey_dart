@@ -36,6 +36,7 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       exportedEntity: $enumDecodeNullable(
           _$UserExportableEntitiesEnumMap, json['exportedEntity']),
       fileId: json['fileId'] as String?,
+      message: json['message'] as String?,
     );
 
 Map<String, dynamic> _$$INotificationsResponseImplToJson(
@@ -60,6 +61,7 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'exportedEntity':
           _$UserExportableEntitiesEnumMap[instance.exportedEntity],
       'fileId': instance.fileId,
+      'message': instance.message,
     };
 
 const _$NotificationTypeEnumMap = {
