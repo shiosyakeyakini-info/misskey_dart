@@ -39,6 +39,9 @@ mixin _$INotificationsResponse {
   UserLite? get user => throw _privateConstructorUsedError;
   Note? get note => throw _privateConstructorUsedError;
   RolesListResponse? get role => throw _privateConstructorUsedError;
+  UserExportableEntities? get exportedEntity =>
+      throw _privateConstructorUsedError;
+  String? get fileId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -68,7 +71,9 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       String? userId,
       UserLite? user,
       Note? note,
-      RolesListResponse? role});
+      RolesListResponse? role,
+      UserExportableEntities? exportedEntity,
+      String? fileId});
 
   $UserLiteCopyWith<$Res>? get user;
   $NoteCopyWith<$Res>? get note;
@@ -105,6 +110,8 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     Object? user = freezed,
     Object? note = freezed,
     Object? role = freezed,
+    Object? exportedEntity = freezed,
+    Object? fileId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -171,6 +178,14 @@ class _$INotificationsResponseCopyWithImpl<$Res,
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as RolesListResponse?,
+      exportedEntity: freezed == exportedEntity
+          ? _value.exportedEntity
+          : exportedEntity // ignore: cast_nullable_to_non_nullable
+              as UserExportableEntities?,
+      fileId: freezed == fileId
+          ? _value.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -236,7 +251,9 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       String? userId,
       UserLite? user,
       Note? note,
-      RolesListResponse? role});
+      RolesListResponse? role,
+      UserExportableEntities? exportedEntity,
+      String? fileId});
 
   @override
   $UserLiteCopyWith<$Res>? get user;
@@ -275,6 +292,8 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? note = freezed,
     Object? role = freezed,
+    Object? exportedEntity = freezed,
+    Object? fileId = freezed,
   }) {
     return _then(_$INotificationsResponseImpl(
       id: null == id
@@ -341,6 +360,14 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as RolesListResponse?,
+      exportedEntity: freezed == exportedEntity
+          ? _value.exportedEntity
+          : exportedEntity // ignore: cast_nullable_to_non_nullable
+              as UserExportableEntities?,
+      fileId: freezed == fileId
+          ? _value.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -364,7 +391,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       this.userId,
       this.user,
       this.note,
-      this.role});
+      this.role,
+      this.exportedEntity,
+      this.fileId});
 
   factory _$INotificationsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$INotificationsResponseImplFromJson(json);
@@ -403,10 +432,14 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   final Note? note;
   @override
   final RolesListResponse? role;
+  @override
+  final UserExportableEntities? exportedEntity;
+  @override
+  final String? fileId;
 
   @override
   String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role)';
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role, exportedEntity: $exportedEntity, fileId: $fileId)';
   }
 
   @override
@@ -434,7 +467,10 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.note, note) || other.note == note) &&
-            (identical(other.role, role) || other.role == role));
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.exportedEntity, exportedEntity) ||
+                other.exportedEntity == exportedEntity) &&
+            (identical(other.fileId, fileId) || other.fileId == fileId));
   }
 
   @JsonKey(ignore: true)
@@ -456,7 +492,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       userId,
       user,
       note,
-      role);
+      role,
+      exportedEntity,
+      fileId);
 
   @JsonKey(ignore: true)
   @override
@@ -490,7 +528,9 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       final String? userId,
       final UserLite? user,
       final Note? note,
-      final RolesListResponse? role}) = _$INotificationsResponseImpl;
+      final RolesListResponse? role,
+      final UserExportableEntities? exportedEntity,
+      final String? fileId}) = _$INotificationsResponseImpl;
 
   factory _INotificationsResponse.fromJson(Map<String, dynamic> json) =
       _$INotificationsResponseImpl.fromJson;
@@ -529,6 +569,10 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   Note? get note;
   @override
   RolesListResponse? get role;
+  @override
+  UserExportableEntities? get exportedEntity;
+  @override
+  String? get fileId;
   @override
   @JsonKey(ignore: true)
   _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>

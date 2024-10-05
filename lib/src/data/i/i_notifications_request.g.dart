@@ -59,4 +59,5 @@ const _$NotificationTypeEnumMap = {
   NotificationType.reactionGrouped: 'reaction:grouped',
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
+  NotificationType.exportCompleted: 'exportCompleted',
 };
