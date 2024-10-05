@@ -84,6 +84,7 @@ const _$NotificationTypeEnumMap = {
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
   NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.login: 'login',
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(

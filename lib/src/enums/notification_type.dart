@@ -22,4 +22,5 @@ enum NotificationType {
   renoteGrouped,
   roleAssigned,
   exportCompleted,
+  login,
 }
