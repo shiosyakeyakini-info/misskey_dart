@@ -67,9 +67,9 @@ abstract class UserDetailed implements User {
   FFVisibility? get ffVisibility;
   FFVisibility? get followersVisibility;
   FFVisibility? get followingVisibility;
-  bool get twoFactorEnabled;
-  bool get usePasswordLessLogin;
-  bool get securityKeys;
+  bool? get twoFactorEnabled;
+  bool? get usePasswordLessLogin;
+  bool? get securityKeys;
   List<UserRole>? get roles;
   String? get memo;
   String? get moderationNote;
@@ -157,9 +157,9 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
-    required bool twoFactorEnabled,
-    required bool usePasswordLessLogin,
-    required bool securityKeys,
+    bool? twoFactorEnabled,
+    bool? usePasswordLessLogin,
+    bool? securityKeys,
     List<UserRole>? roles,
     String? memo,
     String? moderationNote,
@@ -216,9 +216,9 @@ class UserDetailedNotMeWithRelations
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
-    required bool twoFactorEnabled,
-    required bool usePasswordLessLogin,
-    required bool securityKeys,
+    bool? twoFactorEnabled,
+    bool? usePasswordLessLogin,
+    bool? securityKeys,
     List<UserRole>? roles,
     String? memo,
     String? moderationNote,

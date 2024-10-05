@@ -528,9 +528,9 @@ mixin _$UserDetailedNotMe {
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
-  bool get twoFactorEnabled => throw _privateConstructorUsedError;
-  bool get usePasswordLessLogin => throw _privateConstructorUsedError;
-  bool get securityKeys => throw _privateConstructorUsedError;
+  bool? get twoFactorEnabled => throw _privateConstructorUsedError;
+  bool? get usePasswordLessLogin => throw _privateConstructorUsedError;
+  bool? get securityKeys => throw _privateConstructorUsedError;
   List<UserRole>? get roles => throw _privateConstructorUsedError;
   String? get memo => throw _privateConstructorUsedError;
   String? get moderationNote => throw _privateConstructorUsedError;
@@ -590,9 +590,9 @@ abstract class $UserDetailedNotMeCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote});
@@ -655,9 +655,9 @@ class _$UserDetailedNotMeCopyWithImpl<$Res, $Val extends UserDetailedNotMe>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -831,18 +831,18 @@ class _$UserDetailedNotMeCopyWithImpl<$Res, $Val extends UserDetailedNotMe>
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -922,9 +922,9 @@ abstract class _$$UserDetailedNotMeImplCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote});
@@ -986,9 +986,9 @@ class __$$UserDetailedNotMeImplCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -1162,18 +1162,18 @@ class __$$UserDetailedNotMeImplCopyWithImpl<$Res>
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -1236,9 +1236,9 @@ class _$UserDetailedNotMeImpl implements _UserDetailedNotMe {
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
-      required this.twoFactorEnabled,
-      required this.usePasswordLessLogin,
-      required this.securityKeys,
+      this.twoFactorEnabled,
+      this.usePasswordLessLogin,
+      this.securityKeys,
       final List<UserRole>? roles,
       this.memo,
       this.moderationNote})
@@ -1422,11 +1422,11 @@ class _$UserDetailedNotMeImpl implements _UserDetailedNotMe {
   @override
   final FFVisibility? followingVisibility;
   @override
-  final bool twoFactorEnabled;
+  final bool? twoFactorEnabled;
   @override
-  final bool usePasswordLessLogin;
+  final bool? usePasswordLessLogin;
   @override
-  final bool securityKeys;
+  final bool? securityKeys;
   final List<UserRole>? _roles;
   @override
   List<UserRole>? get roles {
@@ -1650,9 +1650,9 @@ abstract class _UserDetailedNotMe implements UserDetailedNotMe {
       @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
       final FFVisibility? followersVisibility,
       final FFVisibility? followingVisibility,
-      required final bool twoFactorEnabled,
-      required final bool usePasswordLessLogin,
-      required final bool securityKeys,
+      final bool? twoFactorEnabled,
+      final bool? usePasswordLessLogin,
+      final bool? securityKeys,
       final List<UserRole>? roles,
       final String? memo,
       final String? moderationNote}) = _$UserDetailedNotMeImpl;
@@ -1757,11 +1757,11 @@ abstract class _UserDetailedNotMe implements UserDetailedNotMe {
   @override
   FFVisibility? get followingVisibility;
   @override
-  bool get twoFactorEnabled;
+  bool? get twoFactorEnabled;
   @override
-  bool get usePasswordLessLogin;
+  bool? get usePasswordLessLogin;
   @override
-  bool get securityKeys;
+  bool? get securityKeys;
   @override
   List<UserRole>? get roles;
   @override
@@ -1836,9 +1836,9 @@ mixin _$UserDetailedNotMeWithRelations {
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
-  bool get twoFactorEnabled => throw _privateConstructorUsedError;
-  bool get usePasswordLessLogin => throw _privateConstructorUsedError;
-  bool get securityKeys => throw _privateConstructorUsedError;
+  bool? get twoFactorEnabled => throw _privateConstructorUsedError;
+  bool? get usePasswordLessLogin => throw _privateConstructorUsedError;
+  bool? get securityKeys => throw _privateConstructorUsedError;
   List<UserRole>? get roles => throw _privateConstructorUsedError;
   String? get memo => throw _privateConstructorUsedError;
   String? get moderationNote => throw _privateConstructorUsedError;
@@ -1910,9 +1910,9 @@ abstract class $UserDetailedNotMeWithRelationsCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote,
@@ -1986,9 +1986,9 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res,
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -2172,18 +2172,18 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res,
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -2304,9 +2304,9 @@ abstract class _$$UserDetailedNotMeWithRelationsImplCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote,
@@ -2380,9 +2380,9 @@ class __$$UserDetailedNotMeWithRelationsImplCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -2566,18 +2566,18 @@ class __$$UserDetailedNotMeWithRelationsImplCopyWithImpl<$Res>
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -2681,9 +2681,9 @@ class _$UserDetailedNotMeWithRelationsImpl
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
-      required this.twoFactorEnabled,
-      required this.usePasswordLessLogin,
-      required this.securityKeys,
+      this.twoFactorEnabled,
+      this.usePasswordLessLogin,
+      this.securityKeys,
       final List<UserRole>? roles,
       this.memo,
       this.moderationNote,
@@ -2878,11 +2878,11 @@ class _$UserDetailedNotMeWithRelationsImpl
   @override
   final FFVisibility? followingVisibility;
   @override
-  final bool twoFactorEnabled;
+  final bool? twoFactorEnabled;
   @override
-  final bool usePasswordLessLogin;
+  final bool? usePasswordLessLogin;
   @override
-  final bool securityKeys;
+  final bool? securityKeys;
   final List<UserRole>? _roles;
   @override
   List<UserRole>? get roles {
@@ -3156,9 +3156,9 @@ abstract class _UserDetailedNotMeWithRelations
       @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
       final FFVisibility? followersVisibility,
       final FFVisibility? followingVisibility,
-      required final bool twoFactorEnabled,
-      required final bool usePasswordLessLogin,
-      required final bool securityKeys,
+      final bool? twoFactorEnabled,
+      final bool? usePasswordLessLogin,
+      final bool? securityKeys,
       final List<UserRole>? roles,
       final String? memo,
       final String? moderationNote,
@@ -3273,11 +3273,11 @@ abstract class _UserDetailedNotMeWithRelations
   @override
   FFVisibility? get followingVisibility;
   @override
-  bool get twoFactorEnabled;
+  bool? get twoFactorEnabled;
   @override
-  bool get usePasswordLessLogin;
+  bool? get usePasswordLessLogin;
   @override
-  bool get securityKeys;
+  bool? get securityKeys;
   @override
   List<UserRole>? get roles;
   @override
