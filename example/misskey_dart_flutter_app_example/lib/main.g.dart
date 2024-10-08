@@ -8,7 +8,10 @@ part of 'main.dart';
 
 String _$hostHash() => r'7a0de90020bf0559f8fb54c293d4459c20da1844';
 
-/// See also [host].
+/// 入力したホストを管理します。
+/// 引数のリレーをする必要があるため、Scoped Providerを使用します。
+///
+/// Copied from [host].
 @ProviderFor(host)
 final hostProvider = AutoDisposeProvider<String>.internal(
   host,

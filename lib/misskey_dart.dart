@@ -251,3 +251,4 @@ export 'src/misskey_users.dart';
 export 'src/misskey_bubble_game.dart';
 export 'src/misskey_reversi.dart';
 export 'src/misskey_flash.dart';
+export 'src/services/streaming_service.dart';
