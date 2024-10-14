@@ -5,7 +5,6 @@ import 'dart:developer';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
-import 'package:misskey_dart/src/services/streaming_service.dart';
 import 'package:misskey_dart/src/util/mutex.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -115,7 +114,8 @@ class StreamingService implements StreamingController, WebSocketController {
       for (final connection in _connections) {
         sendRequest(StreamingRequestType.connect, connection);
       }
-      for (final subscriptedNotes in _subNotes) {
+      final subNotes = _subNotes;
+      for (final subscriptedNotes in subNotes) {
         subNote(subscriptedNotes);
       }
     } catch (e) {
