@@ -18,6 +18,8 @@ class StreamingService implements StreamingController, WebSocketController {
   final int maxRetryCounts;
   final Duration? connectionTimeout;
   final String? streamingUrl;
+  @override
+  bool isClosed = false;
 
   WebSocketChannel? _webSocketChannel;
 
@@ -122,6 +124,7 @@ class StreamingService implements StreamingController, WebSocketController {
   }
 
   Future<void> _close() async {
+    isClosed = true;
     try {
       final webSocketChannel = _webSocketChannel;
       if (webSocketChannel != null && webSocketChannel.closeCode == null) {

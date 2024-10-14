@@ -80,6 +80,12 @@ abstract class StreamingController {
 }
 
 abstract class WebSocketController {
+  /// ストリーミングを取得する
   Future<StreamingController> stream();
+
+  /// 再接続
   Future<void> reconnect();
+
+  /// 接続が閉じられたかどうか
+  bool get isClosed;
 }
