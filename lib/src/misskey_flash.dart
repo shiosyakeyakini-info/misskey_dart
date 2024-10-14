@@ -21,8 +21,9 @@ class MisskeyFlash {
   }
 
   /// 人気なPlayの一覧を取得します。
-  Future<Iterable<Flash>> featured() async {
-    final response = await _apiService.post<List>("flash/featured", {});
+  Future<Iterable<Flash>> featured(FlashFeaturedRequest request) async {
+    final response =
+        await _apiService.post<List>("flash/featured", request.toJson());
     return response.map((e) => Flash.fromJson(e));
   }
 
