@@ -608,7 +608,7 @@ PageText _$PageTextFromJson(Map<String, dynamic> json) {
 mixin _$PageText {
   String get id => throw _privateConstructorUsedError;
   PageContentType? get type => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
+  String? get text => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -621,7 +621,7 @@ abstract class $PageTextCopyWith<$Res> {
   factory $PageTextCopyWith(PageText value, $Res Function(PageText) then) =
       _$PageTextCopyWithImpl<$Res, PageText>;
   @useResult
-  $Res call({String id, PageContentType? type, String text});
+  $Res call({String id, PageContentType? type, String? text});
 }
 
 /// @nodoc
@@ -639,7 +639,7 @@ class _$PageTextCopyWithImpl<$Res, $Val extends PageText>
   $Res call({
     Object? id = null,
     Object? type = freezed,
-    Object? text = null,
+    Object? text = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -650,10 +650,10 @@ class _$PageTextCopyWithImpl<$Res, $Val extends PageText>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PageContentType?,
-      text: null == text
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -666,7 +666,7 @@ abstract class _$$PageTextImplCopyWith<$Res>
       __$$PageTextImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, PageContentType? type, String text});
+  $Res call({String id, PageContentType? type, String? text});
 }
 
 /// @nodoc
@@ -682,7 +682,7 @@ class __$$PageTextImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? type = freezed,
-    Object? text = null,
+    Object? text = freezed,
   }) {
     return _then(_$PageTextImpl(
       id: null == id
@@ -693,10 +693,10 @@ class __$$PageTextImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PageContentType?,
-      text: null == text
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -704,7 +704,7 @@ class __$$PageTextImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PageTextImpl implements _PageText {
-  const _$PageTextImpl({required this.id, this.type, required this.text});
+  const _$PageTextImpl({required this.id, this.type, this.text});
 
   factory _$PageTextImpl.fromJson(Map<String, dynamic> json) =>
       _$$PageTextImplFromJson(json);
@@ -714,7 +714,7 @@ class _$PageTextImpl implements _PageText {
   @override
   final PageContentType? type;
   @override
-  final String text;
+  final String? text;
 
   @override
   String toString() {
@@ -753,7 +753,7 @@ abstract class _PageText implements PageText {
   const factory _PageText(
       {required final String id,
       final PageContentType? type,
-      required final String text}) = _$PageTextImpl;
+      final String? text}) = _$PageTextImpl;
 
   factory _PageText.fromJson(Map<String, dynamic> json) =
       _$PageTextImpl.fromJson;
@@ -763,7 +763,7 @@ abstract class _PageText implements PageText {
   @override
   PageContentType? get type;
   @override
-  String get text;
+  String? get text;
   @override
   @JsonKey(ignore: true)
   _$$PageTextImplCopyWith<_$PageTextImpl> get copyWith =>
@@ -991,7 +991,7 @@ PageImage _$PageImageFromJson(Map<String, dynamic> json) {
 mixin _$PageImage {
   String get id => throw _privateConstructorUsedError;
   PageContentType? get type => throw _privateConstructorUsedError;
-  String get fileId => throw _privateConstructorUsedError;
+  String? get fileId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1004,7 +1004,7 @@ abstract class $PageImageCopyWith<$Res> {
   factory $PageImageCopyWith(PageImage value, $Res Function(PageImage) then) =
       _$PageImageCopyWithImpl<$Res, PageImage>;
   @useResult
-  $Res call({String id, PageContentType? type, String fileId});
+  $Res call({String id, PageContentType? type, String? fileId});
 }
 
 /// @nodoc
@@ -1022,7 +1022,7 @@ class _$PageImageCopyWithImpl<$Res, $Val extends PageImage>
   $Res call({
     Object? id = null,
     Object? type = freezed,
-    Object? fileId = null,
+    Object? fileId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1033,10 +1033,10 @@ class _$PageImageCopyWithImpl<$Res, $Val extends PageImage>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PageContentType?,
-      fileId: null == fileId
+      fileId: freezed == fileId
           ? _value.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -1049,7 +1049,7 @@ abstract class _$$PageImageImplCopyWith<$Res>
       __$$PageImageImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, PageContentType? type, String fileId});
+  $Res call({String id, PageContentType? type, String? fileId});
 }
 
 /// @nodoc
@@ -1065,7 +1065,7 @@ class __$$PageImageImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? type = freezed,
-    Object? fileId = null,
+    Object? fileId = freezed,
   }) {
     return _then(_$PageImageImpl(
       id: null == id
@@ -1076,10 +1076,10 @@ class __$$PageImageImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PageContentType?,
-      fileId: null == fileId
+      fileId: freezed == fileId
           ? _value.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1087,7 +1087,7 @@ class __$$PageImageImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PageImageImpl implements _PageImage {
-  const _$PageImageImpl({required this.id, this.type, required this.fileId});
+  const _$PageImageImpl({required this.id, this.type, this.fileId});
 
   factory _$PageImageImpl.fromJson(Map<String, dynamic> json) =>
       _$$PageImageImplFromJson(json);
@@ -1097,7 +1097,7 @@ class _$PageImageImpl implements _PageImage {
   @override
   final PageContentType? type;
   @override
-  final String fileId;
+  final String? fileId;
 
   @override
   String toString() {
@@ -1136,7 +1136,7 @@ abstract class _PageImage implements PageImage {
   const factory _PageImage(
       {required final String id,
       final PageContentType? type,
-      required final String fileId}) = _$PageImageImpl;
+      final String? fileId}) = _$PageImageImpl;
 
   factory _PageImage.fromJson(Map<String, dynamic> json) =
       _$PageImageImpl.fromJson;
@@ -1146,7 +1146,7 @@ abstract class _PageImage implements PageImage {
   @override
   PageContentType? get type;
   @override
-  String get fileId;
+  String? get fileId;
   @override
   @JsonKey(ignore: true)
   _$$PageImageImplCopyWith<_$PageImageImpl> get copyWith =>
@@ -1161,7 +1161,7 @@ PageNote _$PageNoteFromJson(Map<String, dynamic> json) {
 mixin _$PageNote {
   String get id => throw _privateConstructorUsedError;
   PageContentType? get type => throw _privateConstructorUsedError;
-  String get note => throw _privateConstructorUsedError;
+  String? get note => throw _privateConstructorUsedError;
   bool get detailed => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1175,7 +1175,7 @@ abstract class $PageNoteCopyWith<$Res> {
   factory $PageNoteCopyWith(PageNote value, $Res Function(PageNote) then) =
       _$PageNoteCopyWithImpl<$Res, PageNote>;
   @useResult
-  $Res call({String id, PageContentType? type, String note, bool detailed});
+  $Res call({String id, PageContentType? type, String? note, bool detailed});
 }
 
 /// @nodoc
@@ -1193,7 +1193,7 @@ class _$PageNoteCopyWithImpl<$Res, $Val extends PageNote>
   $Res call({
     Object? id = null,
     Object? type = freezed,
-    Object? note = null,
+    Object? note = freezed,
     Object? detailed = null,
   }) {
     return _then(_value.copyWith(
@@ -1205,10 +1205,10 @@ class _$PageNoteCopyWithImpl<$Res, $Val extends PageNote>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PageContentType?,
-      note: null == note
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       detailed: null == detailed
           ? _value.detailed
           : detailed // ignore: cast_nullable_to_non_nullable
@@ -1225,7 +1225,7 @@ abstract class _$$PageNoteImplCopyWith<$Res>
       __$$PageNoteImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, PageContentType? type, String note, bool detailed});
+  $Res call({String id, PageContentType? type, String? note, bool detailed});
 }
 
 /// @nodoc
@@ -1241,7 +1241,7 @@ class __$$PageNoteImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? type = freezed,
-    Object? note = null,
+    Object? note = freezed,
     Object? detailed = null,
   }) {
     return _then(_$PageNoteImpl(
@@ -1253,10 +1253,10 @@ class __$$PageNoteImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PageContentType?,
-      note: null == note
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       detailed: null == detailed
           ? _value.detailed
           : detailed // ignore: cast_nullable_to_non_nullable
@@ -1269,7 +1269,7 @@ class __$$PageNoteImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PageNoteImpl implements _PageNote {
   const _$PageNoteImpl(
-      {required this.id, this.type, required this.note, this.detailed = false});
+      {required this.id, this.type, this.note, this.detailed = false});
 
   factory _$PageNoteImpl.fromJson(Map<String, dynamic> json) =>
       _$$PageNoteImplFromJson(json);
@@ -1279,7 +1279,7 @@ class _$PageNoteImpl implements _PageNote {
   @override
   final PageContentType? type;
   @override
-  final String note;
+  final String? note;
   @override
   @JsonKey()
   final bool detailed;
@@ -1323,7 +1323,7 @@ abstract class _PageNote implements PageNote {
   const factory _PageNote(
       {required final String id,
       final PageContentType? type,
-      required final String note,
+      final String? note,
       final bool detailed}) = _$PageNoteImpl;
 
   factory _PageNote.fromJson(Map<String, dynamic> json) =
@@ -1334,7 +1334,7 @@ abstract class _PageNote implements PageNote {
   @override
   PageContentType? get type;
   @override
-  String get note;
+  String? get note;
   @override
   bool get detailed;
   @override

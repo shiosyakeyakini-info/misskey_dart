@@ -70,7 +70,7 @@ abstract class AbstractPageContent {
 }
 
 abstract class AbstractPageText extends AbstractPageContent {
-  String get text;
+  String? get text;
 }
 
 @freezed
@@ -78,7 +78,7 @@ class PageText with _$PageText implements AbstractPageText {
   const factory PageText({
     required String id,
     PageContentType? type,
-    required String text,
+    String? text,
   }) = _PageText;
 
   factory PageText.fromJson(Map<String, dynamic> json) =>
@@ -104,7 +104,7 @@ class PageSection with _$PageSection implements AbstractPageSection {
 }
 
 abstract class AbstractPageImage extends AbstractPageContent {
-  String get fileId;
+  String? get fileId;
 }
 
 @freezed
@@ -112,7 +112,7 @@ class PageImage with _$PageImage implements AbstractPageImage {
   const factory PageImage({
     required String id,
     PageContentType? type,
-    required String fileId,
+    String? fileId,
   }) = _PageImage;
 
   factory PageImage.fromJson(Map<String, dynamic> json) =>
@@ -120,7 +120,7 @@ class PageImage with _$PageImage implements AbstractPageImage {
 }
 
 abstract class AbstractPageNote extends AbstractPageContent {
-  String get note;
+  String? get note;
   bool get detailed;
 }
 
@@ -129,7 +129,7 @@ class PageNote with _$PageNote implements AbstractPageNote {
   const factory PageNote({
     required String id,
     PageContentType? type,
-    required String note,
+    String? note,
     @Default(false) bool detailed,
   }) = _PageNote;
 
