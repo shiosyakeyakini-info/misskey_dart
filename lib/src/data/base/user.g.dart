@@ -133,9 +133,9 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
-      twoFactorEnabled: json['twoFactorEnabled'] as bool,
-      usePasswordLessLogin: json['usePasswordLessLogin'] as bool,
-      securityKeys: json['securityKeys'] as bool,
+      twoFactorEnabled: json['twoFactorEnabled'] as bool?,
+      usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
+      securityKeys: json['securityKeys'] as bool?,
       roles: (json['roles'] as List<dynamic>?)
           ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -295,9 +295,9 @@ _$UserDetailedNotMeWithRelationsImpl
               _$FFVisibilityEnumMap, json['followersVisibility']),
           followingVisibility: $enumDecodeNullable(
               _$FFVisibilityEnumMap, json['followingVisibility']),
-          twoFactorEnabled: json['twoFactorEnabled'] as bool,
-          usePasswordLessLogin: json['usePasswordLessLogin'] as bool,
-          securityKeys: json['securityKeys'] as bool,
+          twoFactorEnabled: json['twoFactorEnabled'] as bool?,
+          usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
+          securityKeys: json['securityKeys'] as bool?,
           roles: (json['roles'] as List<dynamic>?)
               ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
               .toList(),
