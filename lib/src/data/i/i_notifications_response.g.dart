@@ -33,6 +33,10 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       role: json['role'] == null
           ? null
           : RolesListResponse.fromJson(json['role'] as Map<String, dynamic>),
+      exportedEntity: $enumDecodeNullable(
+          _$UserExportableEntitiesEnumMap, json['exportedEntity']),
+      fileId: json['fileId'] as String?,
+      message: json['message'] as String?,
     );
 
 Map<String, dynamic> _$$INotificationsResponseImplToJson(
@@ -54,6 +58,10 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'user': instance.user?.toJson(),
       'note': instance.note?.toJson(),
       'role': instance.role?.toJson(),
+      'exportedEntity':
+          _$UserExportableEntitiesEnumMap[instance.exportedEntity],
+      'fileId': instance.fileId,
+      'message': instance.message,
     };
 
 const _$NotificationTypeEnumMap = {
@@ -75,6 +83,8 @@ const _$NotificationTypeEnumMap = {
   NotificationType.reactionGrouped: 'reaction:grouped',
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
+  NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.login: 'login',
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -82,3 +92,15 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+const _$UserExportableEntitiesEnumMap = {
+  UserExportableEntities.note: 'note',
+  UserExportableEntities.antenna: 'antenna',
+  UserExportableEntities.blocking: 'blocking',
+  UserExportableEntities.clip: 'clip',
+  UserExportableEntities.customEmoji: 'customEmoji',
+  UserExportableEntities.favorite: 'favorite',
+  UserExportableEntities.following: 'following',
+  UserExportableEntities.muting: 'muting',
+  UserExportableEntities.userList: 'userList',
+};
