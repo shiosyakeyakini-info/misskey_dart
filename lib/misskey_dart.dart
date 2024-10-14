@@ -109,6 +109,7 @@ export 'src/data/federation/federation_show_instance_response.dart';
 export 'src/data/federation/federation_users_request.dart';
 export 'src/data/flash/flash_create_request.dart';
 export 'src/data/flash/flash_delete_request.dart';
+export 'src/data/flash/flash_featured_request.dart';
 export 'src/data/flash/flash_like_request.dart';
 export 'src/data/flash/flash_my_likes_request.dart';
 export 'src/data/flash/flash_my_likes_response.dart';

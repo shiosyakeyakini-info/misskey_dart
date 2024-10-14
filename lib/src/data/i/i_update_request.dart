@@ -11,6 +11,7 @@ class IUpdateRequest with _$IUpdateRequest {
   const factory IUpdateRequest({
     String? name,
     String? description,
+    String? followedMessage,
     String? location,
     @DateTimeConverter() birthday,
     String? lang,

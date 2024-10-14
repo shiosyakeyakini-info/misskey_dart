@@ -22,6 +22,7 @@ IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) {
 mixin _$IUpdateRequest {
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  String? get followedMessage => throw _privateConstructorUsedError;
   String? get location => throw _privateConstructorUsedError;
   @DateTimeConverter()
   dynamic get birthday => throw _privateConstructorUsedError;
@@ -78,6 +79,7 @@ abstract class $IUpdateRequestCopyWith<$Res> {
   $Res call(
       {String? name,
       String? description,
+      String? followedMessage,
       String? location,
       @DateTimeConverter() dynamic birthday,
       String? lang,
@@ -129,6 +131,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
   $Res call({
     Object? name = freezed,
     Object? description = freezed,
+    Object? followedMessage = freezed,
     Object? location = freezed,
     Object? birthday = freezed,
     Object? lang = freezed,
@@ -170,6 +173,10 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      followedMessage: freezed == followedMessage
+          ? _value.followedMessage
+          : followedMessage // ignore: cast_nullable_to_non_nullable
               as String?,
       location: freezed == location
           ? _value.location
@@ -327,6 +334,7 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
   $Res call(
       {String? name,
       String? description,
+      String? followedMessage,
       String? location,
       @DateTimeConverter() dynamic birthday,
       String? lang,
@@ -377,6 +385,7 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? description = freezed,
+    Object? followedMessage = freezed,
     Object? location = freezed,
     Object? birthday = freezed,
     Object? lang = freezed,
@@ -418,6 +427,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      followedMessage: freezed == followedMessage
+          ? _value.followedMessage
+          : followedMessage // ignore: cast_nullable_to_non_nullable
               as String?,
       location: freezed == location
           ? _value.location
@@ -554,6 +567,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   const _$IUpdateRequestImpl(
       {this.name,
       this.description,
+      this.followedMessage,
       this.location,
       @DateTimeConverter() this.birthday,
       this.lang,
@@ -602,6 +616,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   final String? name;
   @override
   final String? description;
+  @override
+  final String? followedMessage;
   @override
   final String? location;
   @override
@@ -739,7 +755,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 
   @override
@@ -750,6 +766,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.followedMessage, followedMessage) ||
+                other.followedMessage == followedMessage) &&
             (identical(other.location, location) ||
                 other.location == location) &&
             const DeepCollectionEquality().equals(other.birthday, birthday) &&
@@ -819,6 +837,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         runtimeType,
         name,
         description,
+        followedMessage,
         location,
         const DeepCollectionEquality().hash(birthday),
         lang,
@@ -872,6 +891,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   const factory _IUpdateRequest(
       {final String? name,
       final String? description,
+      final String? followedMessage,
       final String? location,
       @DateTimeConverter() final dynamic birthday,
       final String? lang,
@@ -912,6 +932,8 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   String? get name;
   @override
   String? get description;
+  @override
+  String? get followedMessage;
   @override
   String? get location;
   @override

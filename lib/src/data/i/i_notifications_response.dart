@@ -25,8 +25,23 @@ class INotificationsResponse with _$INotificationsResponse {
     UserLite? user,
     Note? note,
     RolesListResponse? role,
+    UserExportableEntities? exportedEntity,
+    String? fileId,
+    String? message,
   }) = _INotificationsResponse;
 
   factory INotificationsResponse.fromJson(Map<String, Object?> json) =>
       _$INotificationsResponseFromJson(json);
+}
+
+enum UserExportableEntities {
+  note,
+  antenna,
+  blocking,
+  clip,
+  customEmoji,
+  favorite,
+  following,
+  muting,
+  userList
 }

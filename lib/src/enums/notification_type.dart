@@ -21,4 +21,6 @@ enum NotificationType {
   @JsonValue("renote:grouped")
   renoteGrouped,
   roleAssigned,
+  exportCompleted,
+  login,
 }

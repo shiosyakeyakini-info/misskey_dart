@@ -528,9 +528,9 @@ mixin _$UserDetailedNotMe {
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
-  bool get twoFactorEnabled => throw _privateConstructorUsedError;
-  bool get usePasswordLessLogin => throw _privateConstructorUsedError;
-  bool get securityKeys => throw _privateConstructorUsedError;
+  bool? get twoFactorEnabled => throw _privateConstructorUsedError;
+  bool? get usePasswordLessLogin => throw _privateConstructorUsedError;
+  bool? get securityKeys => throw _privateConstructorUsedError;
   List<UserRole>? get roles => throw _privateConstructorUsedError;
   String? get memo => throw _privateConstructorUsedError;
   String? get moderationNote => throw _privateConstructorUsedError;
@@ -590,9 +590,9 @@ abstract class $UserDetailedNotMeCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote});
@@ -655,9 +655,9 @@ class _$UserDetailedNotMeCopyWithImpl<$Res, $Val extends UserDetailedNotMe>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -831,18 +831,18 @@ class _$UserDetailedNotMeCopyWithImpl<$Res, $Val extends UserDetailedNotMe>
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -922,9 +922,9 @@ abstract class _$$UserDetailedNotMeImplCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote});
@@ -986,9 +986,9 @@ class __$$UserDetailedNotMeImplCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -1162,18 +1162,18 @@ class __$$UserDetailedNotMeImplCopyWithImpl<$Res>
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -1236,9 +1236,9 @@ class _$UserDetailedNotMeImpl implements _UserDetailedNotMe {
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
-      required this.twoFactorEnabled,
-      required this.usePasswordLessLogin,
-      required this.securityKeys,
+      this.twoFactorEnabled,
+      this.usePasswordLessLogin,
+      this.securityKeys,
       final List<UserRole>? roles,
       this.memo,
       this.moderationNote})
@@ -1422,11 +1422,11 @@ class _$UserDetailedNotMeImpl implements _UserDetailedNotMe {
   @override
   final FFVisibility? followingVisibility;
   @override
-  final bool twoFactorEnabled;
+  final bool? twoFactorEnabled;
   @override
-  final bool usePasswordLessLogin;
+  final bool? usePasswordLessLogin;
   @override
-  final bool securityKeys;
+  final bool? securityKeys;
   final List<UserRole>? _roles;
   @override
   List<UserRole>? get roles {
@@ -1650,9 +1650,9 @@ abstract class _UserDetailedNotMe implements UserDetailedNotMe {
       @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
       final FFVisibility? followersVisibility,
       final FFVisibility? followingVisibility,
-      required final bool twoFactorEnabled,
-      required final bool usePasswordLessLogin,
-      required final bool securityKeys,
+      final bool? twoFactorEnabled,
+      final bool? usePasswordLessLogin,
+      final bool? securityKeys,
       final List<UserRole>? roles,
       final String? memo,
       final String? moderationNote}) = _$UserDetailedNotMeImpl;
@@ -1757,11 +1757,11 @@ abstract class _UserDetailedNotMe implements UserDetailedNotMe {
   @override
   FFVisibility? get followingVisibility;
   @override
-  bool get twoFactorEnabled;
+  bool? get twoFactorEnabled;
   @override
-  bool get usePasswordLessLogin;
+  bool? get usePasswordLessLogin;
   @override
-  bool get securityKeys;
+  bool? get securityKeys;
   @override
   List<UserRole>? get roles;
   @override
@@ -1836,9 +1836,9 @@ mixin _$UserDetailedNotMeWithRelations {
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
-  bool get twoFactorEnabled => throw _privateConstructorUsedError;
-  bool get usePasswordLessLogin => throw _privateConstructorUsedError;
-  bool get securityKeys => throw _privateConstructorUsedError;
+  bool? get twoFactorEnabled => throw _privateConstructorUsedError;
+  bool? get usePasswordLessLogin => throw _privateConstructorUsedError;
+  bool? get securityKeys => throw _privateConstructorUsedError;
   List<UserRole>? get roles => throw _privateConstructorUsedError;
   String? get memo => throw _privateConstructorUsedError;
   String? get moderationNote => throw _privateConstructorUsedError;
@@ -1852,6 +1852,7 @@ mixin _$UserDetailedNotMeWithRelations {
   bool get isRenoteMuted => throw _privateConstructorUsedError;
   Notify? get notify => throw _privateConstructorUsedError;
   bool? get withReplies => throw _privateConstructorUsedError;
+  String? get followedMessage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1910,9 +1911,9 @@ abstract class $UserDetailedNotMeWithRelationsCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote,
@@ -1925,7 +1926,8 @@ abstract class $UserDetailedNotMeWithRelationsCopyWith<$Res> {
       bool isMuted,
       bool isRenoteMuted,
       Notify? notify,
-      bool? withReplies});
+      bool? withReplies,
+      String? followedMessage});
 
   $UserInstanceInfoCopyWith<$Res>? get instance;
 }
@@ -1986,9 +1988,9 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res,
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -2002,6 +2004,7 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res,
     Object? isRenoteMuted = null,
     Object? notify = freezed,
     Object? withReplies = freezed,
+    Object? followedMessage = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -2172,18 +2175,18 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res,
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -2236,6 +2239,10 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res,
           ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
+      followedMessage: freezed == followedMessage
+          ? _value.followedMessage
+          : followedMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -2304,9 +2311,9 @@ abstract class _$$UserDetailedNotMeWithRelationsImplCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
-      bool twoFactorEnabled,
-      bool usePasswordLessLogin,
-      bool securityKeys,
+      bool? twoFactorEnabled,
+      bool? usePasswordLessLogin,
+      bool? securityKeys,
       List<UserRole>? roles,
       String? memo,
       String? moderationNote,
@@ -2319,7 +2326,8 @@ abstract class _$$UserDetailedNotMeWithRelationsImplCopyWith<$Res>
       bool isMuted,
       bool isRenoteMuted,
       Notify? notify,
-      bool? withReplies});
+      bool? withReplies,
+      String? followedMessage});
 
   @override
   $UserInstanceInfoCopyWith<$Res>? get instance;
@@ -2380,9 +2388,9 @@ class __$$UserDetailedNotMeWithRelationsImplCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
-    Object? twoFactorEnabled = null,
-    Object? usePasswordLessLogin = null,
-    Object? securityKeys = null,
+    Object? twoFactorEnabled = freezed,
+    Object? usePasswordLessLogin = freezed,
+    Object? securityKeys = freezed,
     Object? roles = freezed,
     Object? memo = freezed,
     Object? moderationNote = freezed,
@@ -2396,6 +2404,7 @@ class __$$UserDetailedNotMeWithRelationsImplCopyWithImpl<$Res>
     Object? isRenoteMuted = null,
     Object? notify = freezed,
     Object? withReplies = freezed,
+    Object? followedMessage = freezed,
   }) {
     return _then(_$UserDetailedNotMeWithRelationsImpl(
       id: null == id
@@ -2566,18 +2575,18 @@ class __$$UserDetailedNotMeWithRelationsImplCopyWithImpl<$Res>
           ? _value.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
-      twoFactorEnabled: null == twoFactorEnabled
+      twoFactorEnabled: freezed == twoFactorEnabled
           ? _value.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      usePasswordLessLogin: null == usePasswordLessLogin
+              as bool?,
+      usePasswordLessLogin: freezed == usePasswordLessLogin
           ? _value.usePasswordLessLogin
           : usePasswordLessLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      securityKeys: null == securityKeys
+              as bool?,
+      securityKeys: freezed == securityKeys
           ? _value.securityKeys
           : securityKeys // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       roles: freezed == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
@@ -2630,6 +2639,10 @@ class __$$UserDetailedNotMeWithRelationsImplCopyWithImpl<$Res>
           ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
+      followedMessage: freezed == followedMessage
+          ? _value.followedMessage
+          : followedMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2681,9 +2694,9 @@ class _$UserDetailedNotMeWithRelationsImpl
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
-      required this.twoFactorEnabled,
-      required this.usePasswordLessLogin,
-      required this.securityKeys,
+      this.twoFactorEnabled,
+      this.usePasswordLessLogin,
+      this.securityKeys,
       final List<UserRole>? roles,
       this.memo,
       this.moderationNote,
@@ -2696,7 +2709,8 @@ class _$UserDetailedNotMeWithRelationsImpl
       required this.isMuted,
       required this.isRenoteMuted,
       this.notify,
-      this.withReplies})
+      this.withReplies,
+      this.followedMessage})
       : _avatarDecorations = avatarDecorations,
         _emojis = emojis,
         _badgeRoles = badgeRoles,
@@ -2878,11 +2892,11 @@ class _$UserDetailedNotMeWithRelationsImpl
   @override
   final FFVisibility? followingVisibility;
   @override
-  final bool twoFactorEnabled;
+  final bool? twoFactorEnabled;
   @override
-  final bool usePasswordLessLogin;
+  final bool? usePasswordLessLogin;
   @override
-  final bool securityKeys;
+  final bool? securityKeys;
   final List<UserRole>? _roles;
   @override
   List<UserRole>? get roles {
@@ -2917,10 +2931,12 @@ class _$UserDetailedNotMeWithRelationsImpl
   final Notify? notify;
   @override
   final bool? withReplies;
+  @override
+  final String? followedMessage;
 
   @override
   String toString() {
-    return 'UserDetailedNotMeWithRelations(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted, notify: $notify, withReplies: $withReplies)';
+    return 'UserDetailedNotMeWithRelations(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted, notify: $notify, withReplies: $withReplies, followedMessage: $followedMessage)';
   }
 
   @override
@@ -3028,7 +3044,8 @@ class _$UserDetailedNotMeWithRelationsImpl
             (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
             (identical(other.isRenoteMuted, isRenoteMuted) || other.isRenoteMuted == isRenoteMuted) &&
             (identical(other.notify, notify) || other.notify == notify) &&
-            (identical(other.withReplies, withReplies) || other.withReplies == withReplies));
+            (identical(other.withReplies, withReplies) || other.withReplies == withReplies) &&
+            (identical(other.followedMessage, followedMessage) || other.followedMessage == followedMessage));
   }
 
   @JsonKey(ignore: true)
@@ -3092,7 +3109,8 @@ class _$UserDetailedNotMeWithRelationsImpl
         isMuted,
         isRenoteMuted,
         notify,
-        withReplies
+        withReplies,
+        followedMessage
       ]);
 
   @JsonKey(ignore: true)
@@ -3156,9 +3174,9 @@ abstract class _UserDetailedNotMeWithRelations
       @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
       final FFVisibility? followersVisibility,
       final FFVisibility? followingVisibility,
-      required final bool twoFactorEnabled,
-      required final bool usePasswordLessLogin,
-      required final bool securityKeys,
+      final bool? twoFactorEnabled,
+      final bool? usePasswordLessLogin,
+      final bool? securityKeys,
       final List<UserRole>? roles,
       final String? memo,
       final String? moderationNote,
@@ -3171,7 +3189,8 @@ abstract class _UserDetailedNotMeWithRelations
       required final bool isMuted,
       required final bool isRenoteMuted,
       final Notify? notify,
-      final bool? withReplies}) = _$UserDetailedNotMeWithRelationsImpl;
+      final bool? withReplies,
+      final String? followedMessage}) = _$UserDetailedNotMeWithRelationsImpl;
 
   factory _UserDetailedNotMeWithRelations.fromJson(Map<String, dynamic> json) =
       _$UserDetailedNotMeWithRelationsImpl.fromJson;
@@ -3273,11 +3292,11 @@ abstract class _UserDetailedNotMeWithRelations
   @override
   FFVisibility? get followingVisibility;
   @override
-  bool get twoFactorEnabled;
+  bool? get twoFactorEnabled;
   @override
-  bool get usePasswordLessLogin;
+  bool? get usePasswordLessLogin;
   @override
-  bool get securityKeys;
+  bool? get securityKeys;
   @override
   List<UserRole>? get roles;
   @override
@@ -3304,6 +3323,8 @@ abstract class _UserDetailedNotMeWithRelations
   Notify? get notify;
   @override
   bool? get withReplies;
+  @override
+  String? get followedMessage;
   @override
   @JsonKey(ignore: true)
   _$$UserDetailedNotMeWithRelationsImplCopyWith<
@@ -3380,6 +3401,7 @@ mixin _$MeDetailed {
   String? get moderationNote => throw _privateConstructorUsedError;
   String? get avatarId => throw _privateConstructorUsedError;
   String? get bannerId => throw _privateConstructorUsedError;
+  String? get followedMessage => throw _privateConstructorUsedError;
   bool get isModerator => throw _privateConstructorUsedError;
   bool get isAdmin => throw _privateConstructorUsedError;
   bool get injectFeaturedNote => throw _privateConstructorUsedError;
@@ -3484,6 +3506,7 @@ abstract class $MeDetailedCopyWith<$Res> {
       String? moderationNote,
       String? avatarId,
       String? bannerId,
+      String? followedMessage,
       bool isModerator,
       bool isAdmin,
       bool injectFeaturedNote,
@@ -3586,6 +3609,7 @@ class _$MeDetailedCopyWithImpl<$Res, $Val extends MeDetailed>
     Object? moderationNote = freezed,
     Object? avatarId = freezed,
     Object? bannerId = freezed,
+    Object? followedMessage = freezed,
     Object? isModerator = null,
     Object? isAdmin = null,
     Object? injectFeaturedNote = null,
@@ -3820,6 +3844,10 @@ class _$MeDetailedCopyWithImpl<$Res, $Val extends MeDetailed>
           ? _value.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      followedMessage: freezed == followedMessage
+          ? _value.followedMessage
+          : followedMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
       isModerator: null == isModerator
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
@@ -4040,6 +4068,7 @@ abstract class _$$MeDetailedImplCopyWith<$Res>
       String? moderationNote,
       String? avatarId,
       String? bannerId,
+      String? followedMessage,
       bool isModerator,
       bool isAdmin,
       bool injectFeaturedNote,
@@ -4143,6 +4172,7 @@ class __$$MeDetailedImplCopyWithImpl<$Res>
     Object? moderationNote = freezed,
     Object? avatarId = freezed,
     Object? bannerId = freezed,
+    Object? followedMessage = freezed,
     Object? isModerator = null,
     Object? isAdmin = null,
     Object? injectFeaturedNote = null,
@@ -4377,6 +4407,10 @@ class __$$MeDetailedImplCopyWithImpl<$Res>
           ? _value.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      followedMessage: freezed == followedMessage
+          ? _value.followedMessage
+          : followedMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
       isModerator: null == isModerator
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
@@ -4563,6 +4597,7 @@ class _$MeDetailedImpl implements _MeDetailed {
       this.moderationNote,
       this.avatarId,
       this.bannerId,
+      this.followedMessage,
       required this.isModerator,
       required this.isAdmin,
       required this.injectFeaturedNote,
@@ -4807,6 +4842,8 @@ class _$MeDetailedImpl implements _MeDetailed {
   @override
   final String? bannerId;
   @override
+  final String? followedMessage;
+  @override
   final bool isModerator;
   @override
   final bool isAdmin;
@@ -4926,7 +4963,7 @@ class _$MeDetailedImpl implements _MeDetailed {
 
   @override
   String toString() {
-    return 'MeDetailed(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, preventAiLearning: $preventAiLearning, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, twoFactorBackupCodesStock: $twoFactorBackupCodesStock, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'MeDetailed(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, avatarId: $avatarId, bannerId: $bannerId, followedMessage: $followedMessage, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, preventAiLearning: $preventAiLearning, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, twoFactorBackupCodesStock: $twoFactorBackupCodesStock, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
   }
 
   @override
@@ -5021,6 +5058,8 @@ class _$MeDetailedImpl implements _MeDetailed {
                 other.avatarId == avatarId) &&
             (identical(other.bannerId, bannerId) ||
                 other.bannerId == bannerId) &&
+            (identical(other.followedMessage, followedMessage) ||
+                other.followedMessage == followedMessage) &&
             (identical(other.isModerator, isModerator) ||
                 other.isModerator == isModerator) &&
             (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
@@ -5032,8 +5071,7 @@ class _$MeDetailedImpl implements _MeDetailed {
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.autoSensitive, autoSensitive) ||
                 other.autoSensitive == autoSensitive) &&
-            (identical(other.carefulBot, carefulBot) ||
-                other.carefulBot == carefulBot) &&
+            (identical(other.carefulBot, carefulBot) || other.carefulBot == carefulBot) &&
             (identical(other.autoAcceptFollowed, autoAcceptFollowed) || other.autoAcceptFollowed == autoAcceptFollowed) &&
             (identical(other.preventAiLearning, preventAiLearning) || other.preventAiLearning == preventAiLearning) &&
             (identical(other.noCrawle, noCrawle) || other.noCrawle == noCrawle) &&
@@ -5115,6 +5153,7 @@ class _$MeDetailedImpl implements _MeDetailed {
         moderationNote,
         avatarId,
         bannerId,
+        followedMessage,
         isModerator,
         isAdmin,
         injectFeaturedNote,
@@ -5215,6 +5254,7 @@ abstract class _MeDetailed implements MeDetailed {
       final String? moderationNote,
       final String? avatarId,
       final String? bannerId,
+      final String? followedMessage,
       required final bool isModerator,
       required final bool isAdmin,
       required final bool injectFeaturedNote,
@@ -5364,6 +5404,8 @@ abstract class _MeDetailed implements MeDetailed {
   String? get avatarId;
   @override
   String? get bannerId;
+  @override
+  String? get followedMessage;
   @override
   bool get isModerator;
   @override
