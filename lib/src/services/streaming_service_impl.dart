@@ -116,7 +116,10 @@ class StreamingService implements StreamingController, WebSocketController {
       }
       final subNotes = _subNotes;
       for (final subscriptedNotes in subNotes) {
-        subNote(subscriptedNotes);
+        sendRequest(
+          StreamingRequestType.subNote,
+          StreamingRequestBody(id: subscriptedNotes, params: {}),
+        );
       }
     } catch (e) {
       if (retryCounts < maxRetryCounts) {
