@@ -24,6 +24,7 @@ class StreamingService implements StreamingController, WebSocketController {
   WebSocketChannel? _webSocketChannel;
 
   final List<StreamingRequestBody> _connections = [];
+  final List<String> _subNotes = [];
 
   final _controller = StreamController<StreamingResponse>.broadcast();
   StreamSubscription? _subscription;
@@ -113,6 +114,9 @@ class StreamingService implements StreamingController, WebSocketController {
       await _connectWebSocket();
       for (final connection in _connections) {
         sendRequest(StreamingRequestType.connect, connection);
+      }
+      for (final subscriptedNotes in _subNotes) {
+        subNote(subscriptedNotes);
       }
     } catch (e) {
       if (retryCounts < maxRetryCounts) {
@@ -206,16 +210,22 @@ class StreamingService implements StreamingController, WebSocketController {
   }
 
   @override
-  void subNote(String noteId) => sendRequest(
-        StreamingRequestType.subNote,
-        StreamingRequestBody(id: noteId, params: {}),
-      );
+  void subNote(String noteId) {
+    sendRequest(
+      StreamingRequestType.subNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+    _subNotes.add(noteId);
+  }
 
   @override
-  void unsubNote(String noteId) => sendRequest(
-        StreamingRequestType.unsubNote,
-        StreamingRequestBody(id: noteId, params: {}),
-      );
+  void unsubNote(String noteId) {
+    sendRequest(
+      StreamingRequestType.unsubNote,
+      StreamingRequestBody(id: noteId, params: {}),
+    );
+    _subNotes.remove(noteId);
+  }
 
   @override
   void requestLog(String id, int length) => sendRequest(
