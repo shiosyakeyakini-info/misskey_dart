@@ -13,6 +13,12 @@ class MisskeyDrive {
       : files = MisskeyDriveFiles(_apiService),
         folders = MisskeyDriveFolders(_apiService);
 
+  /// ドライブの容量と使用量を取得します。
+  Future<DriveResponse> drive() async {
+    final response = await _apiService.post<Map<String, dynamic>>("drive", {});
+    return DriveResponse.fromJson(response);
+  }
+
   /// ドライブにあるファイルの一覧を取得します。
   Future<Iterable<DriveFile>> stream(DriveStreamRequest request) async {
     final response =

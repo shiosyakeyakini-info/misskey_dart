@@ -80,6 +80,7 @@ export 'src/data/clips/clips_unfavorite_request.dart';
 export 'src/data/clips/clips_update_request.dart';
 export 'src/data/drive/drive_files_request.dart';
 export 'src/data/drive/drive_folders_request.dart';
+export 'src/data/drive/drive_response.dart';
 export 'src/data/drive/drive_stream_request.dart';
 export 'src/data/drive/files/drive_files_attached_notes_request.dart';
 export 'src/data/drive/files/drive_files_check_existence_request.dart';
