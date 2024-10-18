@@ -125,6 +125,12 @@ class StreamingService implements StreamingController, WebSocketController {
       if (retryCounts < maxRetryCounts) {
         await _reconnect(retryCounts: retryCounts + 1);
       } else {
+        _subNotes.clear();
+        try {
+          await _close();
+        } catch (e) {
+          print(e);
+        }
         rethrow;
       }
     }
@@ -145,6 +151,7 @@ class StreamingService implements StreamingController, WebSocketController {
     } finally {
       _subscription = null;
       _webSocketChannel = null;
+      _subNotes.clear();
     }
   }
 
