@@ -19,7 +19,7 @@ class UriConverter extends JsonConverter<Uri, String> {
 
   @override
   Uri fromJson(String json) {
-    return Uri.parse(json);
+    return Uri.parse(json.trim());
   }
 
   @override
