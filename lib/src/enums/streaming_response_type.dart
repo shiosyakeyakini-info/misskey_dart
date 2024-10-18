@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum StreamingResponseType {
@@ -7,6 +8,7 @@ enum StreamingResponseType {
   emojiUpdated,
   emojiDeleted,
   announcementCreated,
+  unknown,
 }
 
 class StreamingResponseTypeJsonConverter
@@ -15,7 +17,8 @@ class StreamingResponseTypeJsonConverter
 
   @override
   StreamingResponseType? fromJson(String json) =>
-      StreamingResponseType.values.firstWhere((e) => e.name == json);
+      StreamingResponseType.values.firstWhereOrNull((e) => e.name == json) ??
+      StreamingResponseType.unknown;
 
   @override
   String toJson(StreamingResponseType? object) => object?.name ?? "";

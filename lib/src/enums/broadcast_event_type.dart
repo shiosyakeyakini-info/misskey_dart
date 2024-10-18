@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum BroadcastEventType {
@@ -5,6 +6,7 @@ enum BroadcastEventType {
   emojiUpdated,
   emojiDeleted,
   announcementCreated,
+  unknown,
 }
 
 class BroadcastEventTypeJsonConverter
@@ -13,7 +15,8 @@ class BroadcastEventTypeJsonConverter
 
   @override
   BroadcastEventType? fromJson(String json) =>
-      BroadcastEventType.values.firstWhere((e) => e.name == json);
+      BroadcastEventType.values.firstWhereOrNull((e) => e.name == json) ??
+      BroadcastEventType.unknown;
 
   @override
   String toJson(BroadcastEventType? object) => object?.name ?? "";

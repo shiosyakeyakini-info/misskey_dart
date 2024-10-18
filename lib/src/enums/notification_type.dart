@@ -23,4 +23,5 @@ enum NotificationType {
   roleAssigned,
   exportCompleted,
   login,
+  unknown,
 }

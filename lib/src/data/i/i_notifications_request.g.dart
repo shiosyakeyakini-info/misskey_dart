@@ -61,4 +61,5 @@ const _$NotificationTypeEnumMap = {
   NotificationType.roleAssigned: 'roleAssigned',
   NotificationType.exportCompleted: 'exportCompleted',
   NotificationType.login: 'login',
+  NotificationType.unknown: 'unknown',
 };

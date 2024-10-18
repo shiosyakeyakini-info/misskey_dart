@@ -24,6 +24,7 @@ mixin _$INotificationsResponse {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: NotificationType.unknown)
   NotificationType get type => throw _privateConstructorUsedError;
   String? get noteId => throw _privateConstructorUsedError;
   String? get followRequestId => throw _privateConstructorUsedError;
@@ -59,6 +60,7 @@ abstract class $INotificationsResponseCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType type,
       String? noteId,
       String? followRequestId,
@@ -245,6 +247,7 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType type,
       String? noteId,
       String? followRequestId,
@@ -391,7 +394,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   const _$INotificationsResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
-      required this.type,
+      @JsonKey(unknownEnumValue: NotificationType.unknown) required this.type,
       this.noteId,
       this.followRequestId,
       this.reaction,
@@ -418,6 +421,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   @DateTimeConverter()
   final DateTime createdAt;
   @override
+  @JsonKey(unknownEnumValue: NotificationType.unknown)
   final NotificationType type;
   @override
   final String? noteId;
@@ -534,6 +538,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   const factory _INotificationsResponse(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
       required final NotificationType type,
       final String? noteId,
       final String? followRequestId,
@@ -561,6 +566,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @DateTimeConverter()
   DateTime get createdAt;
   @override
+  @JsonKey(unknownEnumValue: NotificationType.unknown)
   NotificationType get type;
   @override
   String? get noteId;

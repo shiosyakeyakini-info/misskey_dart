@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum NoteUpdatedEventType {
@@ -6,6 +7,7 @@ enum NoteUpdatedEventType {
   deleted,
   pollVoted,
   updated,
+  unknown,
 }
 
 class NoteUpdatedEventTypeJsonConverter
@@ -14,7 +16,8 @@ class NoteUpdatedEventTypeJsonConverter
 
   @override
   NoteUpdatedEventType? fromJson(String json) =>
-      NoteUpdatedEventType.values.firstWhere((e) => e.name == json);
+      NoteUpdatedEventType.values.firstWhereOrNull((e) => e.name == json) ??
+      NoteUpdatedEventType.unknown;
 
   @override
   String toJson(NoteUpdatedEventType? object) => object?.name ?? "";
