@@ -289,7 +289,7 @@ class _$AntennaImpl implements _Antenna {
       this.userListId,
       required final List<String> users,
       required this.caseSensitive,
-      required this.notify,
+      this.notify = false,
       required this.withReplies,
       required this.withFile,
       required this.isActive,
@@ -340,6 +340,7 @@ class _$AntennaImpl implements _Antenna {
   @override
   final bool caseSensitive;
   @override
+  @JsonKey()
   final bool notify;
   @override
   final bool withReplies;
@@ -433,7 +434,7 @@ abstract class _Antenna implements Antenna {
       final String? userListId,
       required final List<String> users,
       required final bool caseSensitive,
-      required final bool notify,
+      final bool notify,
       required final bool withReplies,
       required final bool withFile,
       required final bool isActive,
