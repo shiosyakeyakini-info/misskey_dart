@@ -19,6 +19,7 @@ _$ClipImpl _$$ClipImplFromJson(Map<String, dynamic> json) => _$ClipImpl(
       isPublic: json['isPublic'] as bool,
       favoritedCount: json['favoritedCount'] as int,
       isFavorited: json['isFavorited'] as bool?,
+      notesCount: json['notesCount'] as int?,
     );
 
 Map<String, dynamic> _$$ClipImplToJson(_$ClipImpl instance) =>
@@ -34,6 +35,7 @@ Map<String, dynamic> _$$ClipImplToJson(_$ClipImpl instance) =>
       'isPublic': instance.isPublic,
       'favoritedCount': instance.favoritedCount,
       'isFavorited': instance.isFavorited,
+      'notesCount': instance.notesCount,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

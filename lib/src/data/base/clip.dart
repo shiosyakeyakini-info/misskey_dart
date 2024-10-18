@@ -18,6 +18,7 @@ class Clip with _$Clip {
     required bool isPublic,
     required int favoritedCount,
     bool? isFavorited,
+    int? notesCount,
   }) = _Clip;
 
   factory Clip.fromJson(Map<String, Object?> json) => _$ClipFromJson(json);
