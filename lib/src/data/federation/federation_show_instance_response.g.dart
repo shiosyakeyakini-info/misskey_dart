@@ -25,7 +25,7 @@ _$FederationShowInstanceResponseImpl
           softwareVersion: json['softwareVersion'] as String?,
           openRegistrations: json['openRegistrations'] as bool?,
           name: json['name'] as String,
-          description: json['description'] as String,
+          description: json['description'] as String?,
           maintainerName: json['maintainerName'] as String?,
           maintainerEmail: json['maintainerEmail'] as String?,
           iconUrl: _$JsonConverterFromJson<String, Uri?>(

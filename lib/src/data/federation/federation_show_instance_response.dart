@@ -24,7 +24,7 @@ class FederationShowInstanceResponse with _$FederationShowInstanceResponse {
     String? softwareVersion,
     bool? openRegistrations,
     required String name,
-    required String description,
+    String? description,
     String? maintainerName,
     String? maintainerEmail,
     @NullableUriConverter() Uri? iconUrl,
