@@ -15,6 +15,8 @@ _$FlashImpl _$$FlashImplFromJson(Map<String, dynamic> json) => _$FlashImpl(
       title: json['title'] as String,
       summary: json['summary'] as String,
       script: json['script'] as String,
+      visibility:
+          $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
       userId: json['userId'] as String,
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       likedCount: json['likedCount'] as int?,
@@ -29,8 +31,14 @@ Map<String, dynamic> _$$FlashImplToJson(_$FlashImpl instance) =>
       'title': instance.title,
       'summary': instance.summary,
       'script': instance.script,
+      'visibility': _$FlashVisibilityEnumMap[instance.visibility],
       'userId': instance.userId,
       'user': instance.user.toJson(),
       'likedCount': instance.likedCount,
       'isLiked': instance.isLiked,
     };
+
+const _$FlashVisibilityEnumMap = {
+  FlashVisibility.public: 'public',
+  FlashVisibility.private: 'private',
+};
