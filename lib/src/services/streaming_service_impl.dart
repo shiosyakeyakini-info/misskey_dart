@@ -23,7 +23,8 @@ class StreamingService implements StreamingController, WebSocketController {
   WebSocketChannel? _webSocketChannel;
 
   final List<StreamingRequestBody> _connections = [];
-  final List<String> _subNotes = [];
+  final Map<String, bool> _subNotes = {};
+  final Map<String, bool> _disconnectIds = {};
 
   final _controller = StreamController<StreamingResponse>.broadcast();
   StreamSubscription? _subscription;
@@ -87,6 +88,14 @@ class StreamingService implements StreamingController, WebSocketController {
     _subscription = webSocketChannel.stream.listen(
       (message) async {
         final responseJson = jsonDecode(message);
+
+        // remove channel if already disconnected
+        final id = responseJson["body"]?["id"];
+        if (id is String && _disconnectIds.containsKey(id)) {
+          removeChannel(id);
+          return;
+        }
+
         final response = StreamingResponse.fromJson(responseJson);
         _controller.sink.add(response);
       },
@@ -115,10 +124,10 @@ class StreamingService implements StreamingController, WebSocketController {
         sendRequest(StreamingRequestType.connect, connection);
       }
       final subNotes = _subNotes;
-      for (final subscriptedNotes in subNotes) {
+      for (final subscriptedNotes in subNotes.entries) {
         sendRequest(
           StreamingRequestType.subNote,
-          StreamingRequestBody(id: subscriptedNotes, params: {}),
+          StreamingRequestBody(id: subscriptedNotes.key, params: {}),
         );
       }
     } catch (e) {
@@ -151,7 +160,6 @@ class StreamingService implements StreamingController, WebSocketController {
     } finally {
       _subscription = null;
       _webSocketChannel = null;
-      _subNotes.clear();
     }
   }
 
@@ -195,6 +203,7 @@ class StreamingService implements StreamingController, WebSocketController {
   @override
   Future<void> removeChannel(String id) async {
     try {
+      _disconnectIds.putIfAbsent(id, () => false);
       sendRequest(
         StreamingRequestType.disconnect,
         StreamingRequestBody(id: id),
@@ -226,7 +235,7 @@ class StreamingService implements StreamingController, WebSocketController {
       StreamingRequestType.subNote,
       StreamingRequestBody(id: noteId, params: {}),
     );
-    _subNotes.add(noteId);
+    _subNotes.putIfAbsent(noteId, () => true);
   }
 
   @override
