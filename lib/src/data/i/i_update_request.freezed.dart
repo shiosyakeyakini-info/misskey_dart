@@ -40,6 +40,12 @@ mixin _$IUpdateRequest {
   bool? get autoAcceptFollowed => throw _privateConstructorUsedError;
   bool? get noCrawle => throw _privateConstructorUsedError;
   bool? get preventAiLearning => throw _privateConstructorUsedError;
+  bool? get requireSigninToViewContents => throw _privateConstructorUsedError;
+  @HideBeforeConverter()
+  HideBefore? get makeNotesFollowersOnlyBefore =>
+      throw _privateConstructorUsedError;
+  @HideBeforeConverter()
+  HideBefore? get makeNotesHiddenBefore => throw _privateConstructorUsedError;
   bool? get isBot => throw _privateConstructorUsedError;
   bool? get isCat => throw _privateConstructorUsedError;
   bool? get injectFeaturedNote => throw _privateConstructorUsedError;
@@ -95,6 +101,9 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       bool? autoAcceptFollowed,
       bool? noCrawle,
       bool? preventAiLearning,
+      bool? requireSigninToViewContents,
+      @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
+      @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
       bool? isBot,
       bool? isCat,
       bool? injectFeaturedNote,
@@ -147,6 +156,9 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? autoAcceptFollowed = freezed,
     Object? noCrawle = freezed,
     Object? preventAiLearning = freezed,
+    Object? requireSigninToViewContents = freezed,
+    Object? makeNotesFollowersOnlyBefore = freezed,
+    Object? makeNotesHiddenBefore = freezed,
     Object? isBot = freezed,
     Object? isCat = freezed,
     Object? injectFeaturedNote = freezed,
@@ -238,6 +250,18 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.preventAiLearning
           : preventAiLearning // ignore: cast_nullable_to_non_nullable
               as bool?,
+      requireSigninToViewContents: freezed == requireSigninToViewContents
+          ? _value.requireSigninToViewContents
+          : requireSigninToViewContents // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      makeNotesFollowersOnlyBefore: freezed == makeNotesFollowersOnlyBefore
+          ? _value.makeNotesFollowersOnlyBefore
+          : makeNotesFollowersOnlyBefore // ignore: cast_nullable_to_non_nullable
+              as HideBefore?,
+      makeNotesHiddenBefore: freezed == makeNotesHiddenBefore
+          ? _value.makeNotesHiddenBefore
+          : makeNotesHiddenBefore // ignore: cast_nullable_to_non_nullable
+              as HideBefore?,
       isBot: freezed == isBot
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
@@ -350,6 +374,9 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       bool? autoAcceptFollowed,
       bool? noCrawle,
       bool? preventAiLearning,
+      bool? requireSigninToViewContents,
+      @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
+      @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
       bool? isBot,
       bool? isCat,
       bool? injectFeaturedNote,
@@ -401,6 +428,9 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? autoAcceptFollowed = freezed,
     Object? noCrawle = freezed,
     Object? preventAiLearning = freezed,
+    Object? requireSigninToViewContents = freezed,
+    Object? makeNotesFollowersOnlyBefore = freezed,
+    Object? makeNotesHiddenBefore = freezed,
     Object? isBot = freezed,
     Object? isCat = freezed,
     Object? injectFeaturedNote = freezed,
@@ -489,6 +519,18 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value.preventAiLearning
           : preventAiLearning // ignore: cast_nullable_to_non_nullable
               as bool?,
+      requireSigninToViewContents: freezed == requireSigninToViewContents
+          ? _value.requireSigninToViewContents
+          : requireSigninToViewContents // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      makeNotesFollowersOnlyBefore: freezed == makeNotesFollowersOnlyBefore
+          ? _value.makeNotesFollowersOnlyBefore
+          : makeNotesFollowersOnlyBefore // ignore: cast_nullable_to_non_nullable
+              as HideBefore?,
+      makeNotesHiddenBefore: freezed == makeNotesHiddenBefore
+          ? _value.makeNotesHiddenBefore
+          : makeNotesHiddenBefore // ignore: cast_nullable_to_non_nullable
+              as HideBefore?,
       isBot: freezed == isBot
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
@@ -583,6 +625,9 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       this.autoAcceptFollowed,
       this.noCrawle,
       this.preventAiLearning,
+      this.requireSigninToViewContents,
+      @HideBeforeConverter() this.makeNotesFollowersOnlyBefore,
+      @HideBeforeConverter() this.makeNotesHiddenBefore,
       this.isBot,
       this.isCat,
       this.injectFeaturedNote,
@@ -666,6 +711,14 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   final bool? noCrawle;
   @override
   final bool? preventAiLearning;
+  @override
+  final bool? requireSigninToViewContents;
+  @override
+  @HideBeforeConverter()
+  final HideBefore? makeNotesFollowersOnlyBefore;
+  @override
+  @HideBeforeConverter()
+  final HideBefore? makeNotesHiddenBefore;
   @override
   final bool? isBot;
   @override
@@ -755,7 +808,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 
   @override
@@ -795,12 +848,19 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 other.noCrawle == noCrawle) &&
             (identical(other.preventAiLearning, preventAiLearning) ||
                 other.preventAiLearning == preventAiLearning) &&
+            (identical(other.requireSigninToViewContents, requireSigninToViewContents) ||
+                other.requireSigninToViewContents ==
+                    requireSigninToViewContents) &&
+            (identical(other.makeNotesFollowersOnlyBefore, makeNotesFollowersOnlyBefore) ||
+                other.makeNotesFollowersOnlyBefore ==
+                    makeNotesFollowersOnlyBefore) &&
+            (identical(other.makeNotesHiddenBefore, makeNotesHiddenBefore) ||
+                other.makeNotesHiddenBefore == makeNotesHiddenBefore) &&
             (identical(other.isBot, isBot) || other.isBot == isBot) &&
             (identical(other.isCat, isCat) || other.isCat == isCat) &&
             (identical(other.injectFeaturedNote, injectFeaturedNote) ||
                 other.injectFeaturedNote == injectFeaturedNote) &&
-            (identical(
-                    other.receiveAnnouncementEmail, receiveAnnouncementEmail) ||
+            (identical(other.receiveAnnouncementEmail, receiveAnnouncementEmail) ||
                 other.receiveAnnouncementEmail == receiveAnnouncementEmail) &&
             (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
@@ -822,13 +882,10 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 .equals(other._hardMutedWords, _hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other._mutedInstances, _mutedInstances) &&
-            (identical(other.notificationRecieveConfig,
-                    notificationRecieveConfig) ||
+            (identical(other.notificationRecieveConfig, notificationRecieveConfig) ||
                 other.notificationRecieveConfig == notificationRecieveConfig) &&
-            const DeepCollectionEquality().equals(
-                other._emailNotificationTypes, _emailNotificationTypes) &&
-            const DeepCollectionEquality()
-                .equals(other._alsoKnownAs, _alsoKnownAs));
+            const DeepCollectionEquality().equals(other._emailNotificationTypes, _emailNotificationTypes) &&
+            const DeepCollectionEquality().equals(other._alsoKnownAs, _alsoKnownAs));
   }
 
   @JsonKey(ignore: true)
@@ -853,6 +910,9 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         autoAcceptFollowed,
         noCrawle,
         preventAiLearning,
+        requireSigninToViewContents,
+        makeNotesFollowersOnlyBefore,
+        makeNotesHiddenBefore,
         isBot,
         isCat,
         injectFeaturedNote,
@@ -907,6 +967,9 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       final bool? autoAcceptFollowed,
       final bool? noCrawle,
       final bool? preventAiLearning,
+      final bool? requireSigninToViewContents,
+      @HideBeforeConverter() final HideBefore? makeNotesFollowersOnlyBefore,
+      @HideBeforeConverter() final HideBefore? makeNotesHiddenBefore,
       final bool? isBot,
       final bool? isCat,
       final bool? injectFeaturedNote,
@@ -965,6 +1028,14 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   bool? get noCrawle;
   @override
   bool? get preventAiLearning;
+  @override
+  bool? get requireSigninToViewContents;
+  @override
+  @HideBeforeConverter()
+  HideBefore? get makeNotesFollowersOnlyBefore;
+  @override
+  @HideBeforeConverter()
+  HideBefore? get makeNotesHiddenBefore;
   @override
   bool? get isBot;
   @override

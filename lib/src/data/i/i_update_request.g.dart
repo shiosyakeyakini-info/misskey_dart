@@ -31,6 +31,12 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       autoAcceptFollowed: json['autoAcceptFollowed'] as bool?,
       noCrawle: json['noCrawle'] as bool?,
       preventAiLearning: json['preventAiLearning'] as bool?,
+      requireSigninToViewContents: json['requireSigninToViewContents'] as bool?,
+      makeNotesFollowersOnlyBefore: _$JsonConverterFromJson<int, HideBefore>(
+          json['makeNotesFollowersOnlyBefore'],
+          const HideBeforeConverter().fromJson),
+      makeNotesHiddenBefore: _$JsonConverterFromJson<int, HideBefore>(
+          json['makeNotesHiddenBefore'], const HideBeforeConverter().fromJson),
       isBot: json['isBot'] as bool?,
       isCat: json['isCat'] as bool?,
       injectFeaturedNote: json['injectFeaturedNote'] as bool?,
@@ -91,6 +97,12 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'autoAcceptFollowed': instance.autoAcceptFollowed,
       'noCrawle': instance.noCrawle,
       'preventAiLearning': instance.preventAiLearning,
+      'requireSigninToViewContents': instance.requireSigninToViewContents,
+      'makeNotesFollowersOnlyBefore': _$JsonConverterToJson<int, HideBefore>(
+          instance.makeNotesFollowersOnlyBefore,
+          const HideBeforeConverter().toJson),
+      'makeNotesHiddenBefore': _$JsonConverterToJson<int, HideBefore>(
+          instance.makeNotesHiddenBefore, const HideBeforeConverter().toJson),
       'isBot': instance.isBot,
       'isCat': instance.isCat,
       'injectFeaturedNote': instance.injectFeaturedNote,
@@ -115,11 +127,23 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'alsoKnownAs': instance.alsoKnownAs,
     };
 
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
 const _$FFVisibilityEnumMap = {
   FFVisibility.public: 'public',
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
 };
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 _$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
         Map<String, dynamic> json) =>
