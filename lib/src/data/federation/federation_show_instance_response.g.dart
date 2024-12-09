@@ -19,23 +19,31 @@ _$FederationShowInstanceResponseImpl
           followersCount: json['followersCount'] as int?,
           isNotResponding: json['isNotResponding'] as bool,
           isSuspended: json['isSuspended'] as bool,
+          suspensionState: $enumDecodeNullable(
+              _$SuspensionStateEnumMap, json['suspensionState'],
+              unknownValue: JsonKey.nullForUndefinedEnumValue),
           isBlocked: json['isBlocked'] as bool,
-          isSilenced: json['isSilenced'] as bool?,
           softwareName: json['softwareName'] as String?,
           softwareVersion: json['softwareVersion'] as String?,
           openRegistrations: json['openRegistrations'] as bool?,
-          name: json['name'] as String,
+          name: json['name'] as String?,
           description: json['description'] as String?,
           maintainerName: json['maintainerName'] as String?,
           maintainerEmail: json['maintainerEmail'] as String?,
+          isSilenced: json['isSilenced'] as bool?,
+          isMediaSilenced: json['isMediaSilenced'] as bool?,
           iconUrl: _$JsonConverterFromJson<String, Uri?>(
               json['iconUrl'], const NullableUriConverter().fromJson),
           faviconUrl: _$JsonConverterFromJson<String, Uri?>(
               json['faviconUrl'], const NullableUriConverter().fromJson),
           themeColor: const NullableColorConverter()
               .fromJson(json['themeColor'] as String?),
-          infoUpdatedAt: const DateTimeConverter()
-              .fromJson(json['infoUpdatedAt'] as String),
+          infoUpdatedAt: _$JsonConverterFromJson<String, DateTime>(
+              json['infoUpdatedAt'], const DateTimeConverter().fromJson),
+          latestRequestReceivedAt: _$JsonConverterFromJson<String, DateTime>(
+              json['latestRequestReceivedAt'],
+              const DateTimeConverter().fromJson),
+          moderationNote: json['moderationNote'] as String?,
         );
 
 Map<String, dynamic> _$$FederationShowInstanceResponseImplToJson(
@@ -51,8 +59,8 @@ Map<String, dynamic> _$$FederationShowInstanceResponseImplToJson(
       'followersCount': instance.followersCount,
       'isNotResponding': instance.isNotResponding,
       'isSuspended': instance.isSuspended,
+      'suspensionState': _$SuspensionStateEnumMap[instance.suspensionState],
       'isBlocked': instance.isBlocked,
-      'isSilenced': instance.isSilenced,
       'softwareName': instance.softwareName,
       'softwareVersion': instance.softwareVersion,
       'openRegistrations': instance.openRegistrations,
@@ -60,14 +68,34 @@ Map<String, dynamic> _$$FederationShowInstanceResponseImplToJson(
       'description': instance.description,
       'maintainerName': instance.maintainerName,
       'maintainerEmail': instance.maintainerEmail,
+      'isSilenced': instance.isSilenced,
+      'isMediaSilenced': instance.isMediaSilenced,
       'iconUrl': const NullableUriConverter().toJson(instance.iconUrl),
       'faviconUrl': const NullableUriConverter().toJson(instance.faviconUrl),
       'themeColor': const NullableColorConverter().toJson(instance.themeColor),
-      'infoUpdatedAt': const DateTimeConverter().toJson(instance.infoUpdatedAt),
+      'infoUpdatedAt': _$JsonConverterToJson<String, DateTime>(
+          instance.infoUpdatedAt, const DateTimeConverter().toJson),
+      'latestRequestReceivedAt': _$JsonConverterToJson<String, DateTime>(
+          instance.latestRequestReceivedAt, const DateTimeConverter().toJson),
+      'moderationNote': instance.moderationNote,
     };
+
+const _$SuspensionStateEnumMap = {
+  SuspensionState.none: 'none',
+  SuspensionState.manuallySuspended: 'manuallySuspended',
+  SuspensionState.goneSuspended: 'goneSuspended',
+  SuspensionState.autoSuspendedForNotResponding:
+      'autoSuspendedForNotResponding',
+};
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
