@@ -123,5 +123,17 @@ void main() async {
           .list(FollowingRequestsListRequest());
       expect(requests.map((e) => e.follower.id), isNot(contains(user.id)));
     });
+
+    test("sent", () async {
+      final clientAndUser = await adminClient.createUser();
+      final newClient = clientAndUser.client;
+      final newUser = clientAndUser.user;
+      await newClient.i.update(IUpdateRequest(isLocked: true));
+      await userClient.following
+          .create(FollowingCreateRequest(userId: newUser.id));
+      final requests = await userClient.following.requests
+          .sent(FollowingRequestsSentRequest());
+      expect(requests.map((e) => e.followee.id), contains(newUser.id));
+    });
   });
 }
