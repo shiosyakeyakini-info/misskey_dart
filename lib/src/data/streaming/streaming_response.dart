@@ -249,7 +249,7 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   @FreezedUnionValue("driveFileCreated")
   const factory ChannelStreamEvent.driveFileCreated({
     required String id,
-    required DriveFile driveFileCreated,
+    required DriveFile body,
   }) = DriveFileCreatedChannelEvent;
 
   @FreezedUnionValue("readAntenna")

@@ -523,6 +523,23 @@ void main() async {
           await completer.future;
           await (controller.removeChannel(id), listener.cancel()).wait;
         });
+
+        test("driveFileCreated", () async {
+          final completer = Completer<DriveFile>();
+          final client = userClient;
+
+          final controller = await client.streamingService.stream();
+          final id = DateTime.now().toIso8601String();
+          final listener = controller.mainStream(id: id).listen((event) {
+            final body = event.body;
+            if (body is DriveFileCreatedChannelEvent) {
+              completer.complete(body.body);
+            }
+          });
+          await client.createDriveFile();
+          await completer.future;
+          await (controller.removeChannel(id), listener.cancel()).wait;
+        });
       });
     },
     retry: 3,
