@@ -508,7 +508,11 @@ void main() async {
           final id = DateTime.now().toIso8601String();
           final listener = controller.mainStream(id: id).listen((event) {
             final body = event.body;
-            if (body is ReadAllAnnouncementsChannelEvent) completer.complete();
+            if (body is ReadAllAnnouncementsChannelEvent) {
+              if (!completer.isCompleted) {
+                completer.complete();
+              }
+            }
           });
           await Future.wait(
             announcements.map((announcement) {
