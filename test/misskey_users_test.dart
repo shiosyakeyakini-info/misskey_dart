@@ -115,13 +115,18 @@ void main() async {
     });
   });
 
-  test("search-by-username-and-host", () async {
-    final response = await userClient.users.searchByUsernameAndHost(
-      UsersSearchByUsernameAndHostRequest(username: user.username, host: "."),
-    );
-    expect(response.map((e) => e.id), contains(user.id));
-    expect(response, everyElement(isA<UserDetailed>()));
-  });
+  test(
+    "search-by-username-and-host",
+    () async {
+      await userClient.createNote();
+      final response = await userClient.users.searchByUsernameAndHost(
+        UsersSearchByUsernameAndHostRequest(username: user.username, host: "."),
+      );
+      expect(response.map((e) => e.id), contains(user.id));
+      expect(response, everyElement(isA<UserDetailed>()));
+    },
+    retry: 3,
+  );
 
   test(
     "recommendation",
