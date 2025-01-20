@@ -626,7 +626,7 @@ void main() async {
       final completer = Completer<Emoji>();
       final client = userClient;
       final name = Uuid().v4().replaceAll("-", "_");
-      final file = await adminClient.createDriveFile();
+      final file = await adminClient.createImageDriveFile();
       final controller = await client.streamingService.stream();
       final id = DateTime.now().toIso8601String();
       final listener = controller
@@ -644,7 +644,7 @@ void main() async {
     test("emojiUpdated", () async {
       final completer = Completer<Iterable<Emoji>>();
       final client = userClient;
-      final file = await adminClient.createDriveFile();
+      final file = await adminClient.createImageDriveFile();
       final name = Uuid().v4().replaceAll("-", "_");
       final response = await adminClient.apiService
           .post("admin/emoji/add", {"name": name, "fileId": file.id});
@@ -671,7 +671,7 @@ void main() async {
     test("emojiDeleted", () async {
       final completer = Completer<Iterable<Emoji>>();
       final client = userClient;
-      final file = await adminClient.createDriveFile();
+      final file = await adminClient.createImageDriveFile();
       final name = Uuid().v4().replaceAll("-", "_");
       final response = await adminClient.apiService
           .post("admin/emoji/add", {"name": name, "fileId": file.id});

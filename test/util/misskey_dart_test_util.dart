@@ -80,6 +80,22 @@ extension MisskeyTestExtension on Misskey {
     );
   }
 
+  Future<DriveFile> createImageDriveFile() async {
+    return drive.files.createAsBinary(
+      DriveFilesCreateRequest(force: true),
+      Uint8List.fromList(
+        [
+          // header
+          ..."GIF89a".codeUnits, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+          // image block
+          0x2c, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00,
+          // trailer
+          0x3b,
+        ],
+      ),
+    );
+  }
+
   Future<Map<String, dynamic>> createPage() {
     return apiService.post<Map<String, dynamic>>("pages/create", {
       "title": "test",
