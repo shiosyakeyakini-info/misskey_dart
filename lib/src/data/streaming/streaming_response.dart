@@ -186,12 +186,14 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required INotificationsResponse body,
   }) = UnreadNotificationChannelEvent;
 
+  /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("unreadMention")
   const factory ChannelStreamEvent.unreadMention({
     required String id,
     required String body,
   }) = UnreadMentionChannelEvent;
 
+  /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("readAllUnreadMentions")
   const factory ChannelStreamEvent.readAllUnreadMentions({
     required String id,
@@ -202,17 +204,20 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required String id,
   }) = NotificationFlushedChannelEvent;
 
+  /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("unreadSpecifiedNote")
   const factory ChannelStreamEvent.unreadSpecifiedNote({
     required String id,
     required String body,
   }) = UnreadSpecifiedNoteChannelEvent;
 
+  /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("readAllUnreadSpecifiedNotes")
   const factory ChannelStreamEvent.readAllUnreadSpecifiedNotes({
     required String id,
   }) = ReadAllUnreadSpecifiedNotesChannelEvent;
 
+  /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("readAllAntennas")
   const factory ChannelStreamEvent.readAllAntennas({
     required String id,
