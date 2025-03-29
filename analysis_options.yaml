@@ -6,3 +6,6 @@ analyzer:
     - "example/misskey_dart_flutter_app_example/**"
   errors:
     invalid_annotation_target: false
+linter:
+  rules:
+    - directives_ordering
