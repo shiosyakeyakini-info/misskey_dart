@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/data/notes/notes_create_poll_request.dart';
-import 'package:misskey_dart/src/enums/reaction_acceptance.dart';
 import 'package:misskey_dart/src/enums/note_visibility.dart';
+import 'package:misskey_dart/src/enums/reaction_acceptance.dart';
 
 part 'notes_create_request.freezed.dart';
 part 'notes_create_request.g.dart';
