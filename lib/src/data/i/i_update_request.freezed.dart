@@ -25,7 +25,7 @@ mixin _$IUpdateRequest {
   String? get followedMessage => throw _privateConstructorUsedError;
   String? get location => throw _privateConstructorUsedError;
   @DateTimeConverter()
-  dynamic get birthday => throw _privateConstructorUsedError;
+  DateTime? get birthday => throw _privateConstructorUsedError;
   String? get lang => throw _privateConstructorUsedError;
   String? get avatarId => throw _privateConstructorUsedError;
   List<IUpdateAvatarDecoration>? get avatarDecorations =>
@@ -81,7 +81,7 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       String? description,
       String? followedMessage,
       String? location,
-      @DateTimeConverter() dynamic birthday,
+      @DateTimeConverter() DateTime? birthday,
       String? lang,
       String? avatarId,
       List<IUpdateAvatarDecoration>? avatarDecorations,
@@ -185,7 +185,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
       birthday: freezed == birthday
           ? _value.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as DateTime?,
       lang: freezed == lang
           ? _value.lang
           : lang // ignore: cast_nullable_to_non_nullable
@@ -336,7 +336,7 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       String? description,
       String? followedMessage,
       String? location,
-      @DateTimeConverter() dynamic birthday,
+      @DateTimeConverter() DateTime? birthday,
       String? lang,
       String? avatarId,
       List<IUpdateAvatarDecoration>? avatarDecorations,
@@ -436,7 +436,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String?,
-      birthday: freezed == birthday ? _value.birthday! : birthday,
+      birthday: freezed == birthday
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       lang: freezed == lang
           ? _value.lang
           : lang // ignore: cast_nullable_to_non_nullable
@@ -622,7 +625,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   final String? location;
   @override
   @DateTimeConverter()
-  final dynamic birthday;
+  final DateTime? birthday;
   @override
   final String? lang;
   @override
@@ -770,7 +773,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 other.followedMessage == followedMessage) &&
             (identical(other.location, location) ||
                 other.location == location) &&
-            const DeepCollectionEquality().equals(other.birthday, birthday) &&
+            (identical(other.birthday, birthday) ||
+                other.birthday == birthday) &&
             (identical(other.lang, lang) || other.lang == lang) &&
             (identical(other.avatarId, avatarId) ||
                 other.avatarId == avatarId) &&
@@ -839,7 +843,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         description,
         followedMessage,
         location,
-        const DeepCollectionEquality().hash(birthday),
+        birthday,
         lang,
         avatarId,
         const DeepCollectionEquality().hash(_avatarDecorations),
@@ -893,7 +897,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       final String? description,
       final String? followedMessage,
       final String? location,
-      @DateTimeConverter() final dynamic birthday,
+      @DateTimeConverter() final DateTime? birthday,
       final String? lang,
       final String? avatarId,
       final List<IUpdateAvatarDecoration>? avatarDecorations,
@@ -938,7 +942,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   String? get location;
   @override
   @DateTimeConverter()
-  dynamic get birthday;
+  DateTime? get birthday;
   @override
   String? get lang;
   @override

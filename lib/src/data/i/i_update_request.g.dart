@@ -12,7 +12,8 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
-      birthday: json['birthday'],
+      birthday: _$JsonConverterFromJson<String, DateTime>(
+          json['birthday'], const DateTimeConverter().fromJson),
       lang: json['lang'] as String?,
       avatarId: json['avatarId'] as String?,
       avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
@@ -76,7 +77,8 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'description': instance.description,
       'followedMessage': instance.followedMessage,
       'location': instance.location,
-      'birthday': instance.birthday,
+      'birthday': _$JsonConverterToJson<String, DateTime>(
+          instance.birthday, const DateTimeConverter().toJson),
       'lang': instance.lang,
       'avatarId': instance.avatarId,
       'avatarDecorations':
@@ -115,11 +117,23 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
       'alsoKnownAs': instance.alsoKnownAs,
     };
 
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
 const _$FFVisibilityEnumMap = {
   FFVisibility.public: 'public',
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
 };
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 _$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
         Map<String, dynamic> json) =>

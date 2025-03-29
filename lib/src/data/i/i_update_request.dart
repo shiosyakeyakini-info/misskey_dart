@@ -13,7 +13,7 @@ class IUpdateRequest with _$IUpdateRequest {
     String? description,
     String? followedMessage,
     String? location,
-    @DateTimeConverter() birthday,
+    @DateTimeConverter() DateTime? birthday,
     String? lang,
     String? avatarId,
     List<IUpdateAvatarDecoration>? avatarDecorations,
