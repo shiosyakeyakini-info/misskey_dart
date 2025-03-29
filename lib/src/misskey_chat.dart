@@ -1,5 +1,3 @@
-import 'package:misskey_dart/chat_messages_unreact_request.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/data/chat/chat_history_request.dart';
 import 'package:misskey_dart/src/data/chat/chat_joinning.dart';
 import 'package:misskey_dart/src/data/chat/chat_message.dart';
@@ -10,6 +8,7 @@ import 'package:misskey_dart/src/data/chat/chat_messages_react_request.dart';
 import 'package:misskey_dart/src/data/chat/chat_messages_room_timeline_request.dart';
 import 'package:misskey_dart/src/data/chat/chat_messages_search_request.dart';
 import 'package:misskey_dart/src/data/chat/chat_messages_show_request.dart';
+import 'package:misskey_dart/src/data/chat/chat_messages_unreact_request.dart';
 import 'package:misskey_dart/src/data/chat/chat_messages_user_timeline_request.dart';
 import 'package:misskey_dart/src/data/chat/chat_room.dart';
 import 'package:misskey_dart/src/data/chat/chat_rooms_create_request.dart';
@@ -31,12 +30,18 @@ import 'package:misskey_dart/src/services/api_service.dart';
 class MisskeyChat {
   final ApiService _apiService;
 
-  MisskeyChat({required ApiService apiService}) : _apiService = apiService;
+  final MisskeyChatMessages messages;
+  final MisskeyChatRooms rooms;
 
-  Future<Iterable<Clip>> history(ChatHistoryRequest request) async {
+  MisskeyChat({required ApiService apiService})
+      : _apiService = apiService,
+        messages = MisskeyChatMessages(apiService: apiService),
+        rooms = MisskeyChatRooms(apiService: apiService);
+
+  Future<Iterable<ChatMessage>> history(ChatHistoryRequest request) async {
     final response =
         await _apiService.post<List>("chat/history", request.toJson());
-    return response.map((e) => Clip.fromJson(e));
+    return response.map((e) => ChatMessage.fromJson(e));
   }
 }
 
@@ -103,7 +108,11 @@ class MisskeyChatMessages {
 class MisskeyChatRooms {
   final ApiService _apiService;
 
-  MisskeyChatRooms({required ApiService apiService}) : _apiService = apiService;
+  final MisskeyChatRoomsInvitations invitations;
+
+  MisskeyChatRooms({required ApiService apiService})
+      : _apiService = apiService,
+        invitations = MisskeyChatRoomsInvitations(apiService: apiService);
 
   Future<ChatRoom> create(ChatRoomsCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
