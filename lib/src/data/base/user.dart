@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/emojis_converter.dart';
+import 'package:misskey_dart/src/converters/hide_before_converter.dart';
 import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 
@@ -22,6 +23,9 @@ abstract class User {
   bool get isCat;
   bool get isBot;
   Map<String, String> get emojis;
+  bool? get requireSigninToViewContents;
+  HideBefore? get makeNotesFollowersOnlyBefore;
+  HideBefore? get makeNotesHiddenBefore;
 
   factory User.fromJson(Map<String, Object?> json) {
     if (json.containsKey("url")) {
@@ -106,6 +110,9 @@ class UserLite with _$UserLite implements User {
     @EmojisConverter() @Default({}) Map<String, String> emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
+    bool? requireSigninToViewContents,
+    @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
+    @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
   }) = _UserLite;
 
   factory UserLite.fromJson(Map<String, Object?> json) =>
@@ -128,6 +135,9 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
     @EmojisConverter() @Default({}) Map<String, String> emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
+    bool? requireSigninToViewContents,
+    @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
+    @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
     @NullableUriConverter() Uri? movedTo,
@@ -187,6 +197,9 @@ class UserDetailedNotMeWithRelations
     @EmojisConverter() @Default({}) Map<String, String> emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
+    bool? requireSigninToViewContents,
+    @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
+    @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
     @NullableUriConverter() Uri? movedTo,
@@ -255,6 +268,9 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     @EmojisConverter() @Default({}) Map<String, String> emojis,
     @OnlineStatusJsonConverter() OnlineStatus? onlineStatus,
     @Default([]) List<UserBadgeRole> badgeRoles,
+    bool? requireSigninToViewContents,
+    @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
+    @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
     @NullableUriConverter() Uri? movedTo,
@@ -371,6 +387,20 @@ class UserBadgeRole with _$UserBadgeRole {
   }) = _UserBadgeRole;
   factory UserBadgeRole.fromJson(Map<String, Object?> json) =>
       _$UserBadgeRoleFromJson(json);
+}
+
+sealed class HideBefore {}
+
+class HideBeforeDuration implements HideBefore {
+  const HideBeforeDuration(this.duration);
+
+  final Duration duration;
+}
+
+class HideBeforeDateTime implements HideBefore {
+  const HideBeforeDateTime(this.date);
+
+  final DateTime date;
 }
 
 @freezed

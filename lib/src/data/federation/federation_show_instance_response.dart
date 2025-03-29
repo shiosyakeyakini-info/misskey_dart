@@ -18,21 +18,33 @@ class FederationShowInstanceResponse with _$FederationShowInstanceResponse {
     int? followersCount,
     required bool isNotResponding,
     required bool isSuspended,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    SuspensionState? suspensionState,
     required bool isBlocked,
-    bool? isSilenced,
     String? softwareName,
     String? softwareVersion,
     bool? openRegistrations,
-    required String name,
+    String? name,
     String? description,
     String? maintainerName,
     String? maintainerEmail,
+    bool? isSilenced,
+    bool? isMediaSilenced,
     @NullableUriConverter() Uri? iconUrl,
     @NullableUriConverter() Uri? faviconUrl,
     @NullableColorConverter() int? themeColor,
-    @DateTimeConverter() required DateTime infoUpdatedAt,
+    @DateTimeConverter() DateTime? infoUpdatedAt,
+    @DateTimeConverter() DateTime? latestRequestReceivedAt,
+    String? moderationNote,
   }) = _FederationShowInstanceResponse;
 
   factory FederationShowInstanceResponse.fromJson(Map<String, dynamic> json) =>
       _$FederationShowInstanceResponseFromJson(json);
+}
+
+enum SuspensionState {
+  none,
+  manuallySuspended,
+  goneSuspended,
+  autoSuspendedForNotResponding,
 }

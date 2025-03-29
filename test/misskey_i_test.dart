@@ -75,6 +75,34 @@ void main() async {
     await userClient.i.unpin(IUnpinRequest(noteId: note.id));
   });
 
+  group("gallery", () {
+    test("likes", () async {
+      final file = await adminClient.createDriveFile();
+      final post = await adminClient.gallery.posts.create(
+        GalleryPostsCreateRequest(
+          title: "test",
+          fileIds: [file.id],
+        ),
+      );
+      await userClient.gallery.posts
+          .like(GalleryPostsLikeRequest(postId: post.id));
+      final response = await userClient.i.gallery.likes(IGalleryLikesRequest());
+      expect(response.map((e) => e.post.id), contains(post.id));
+    });
+
+    test("posts", () async {
+      final file = await userClient.createDriveFile();
+      final post = await userClient.gallery.posts.create(
+        GalleryPostsCreateRequest(
+          title: "test",
+          fileIds: [file.id],
+        ),
+      );
+      final response = await userClient.i.gallery.posts(IGalleryPostsRequest());
+      expect(response.map((e) => e.id), contains(post.id));
+    });
+  });
+
   group("registry", () {
     test("getAll", () async {
       final key = Uuid().v4();

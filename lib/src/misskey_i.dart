@@ -5,10 +5,12 @@ import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {
   final ApiService _apiService;
+  final MisskeyIGallery gallery;
   final MisskeyIRegistry registry;
 
   MisskeyI({required ApiService apiService})
       : _apiService = apiService,
+        gallery = MisskeyIGallery(apiService: apiService),
         registry = MisskeyIRegistry(apiService: apiService);
 
   /// 自分自身の情報を取得します。
@@ -78,6 +80,28 @@ class MisskeyI {
       request.toJson(),
     );
     return MeDetailed.fromJson(response);
+  }
+}
+
+class MisskeyIGallery {
+  final ApiService _apiService;
+
+  MisskeyIGallery({required ApiService apiService}) : _apiService = apiService;
+
+  /// ギャラリーの投稿の一覧を取得します。
+  Future<Iterable<IGalleryLikesResponse>> likes(
+    IGalleryLikesRequest request,
+  ) async {
+    final response =
+        await _apiService.post<List>("i/gallery/likes", request.toJson());
+    return response.map((e) => IGalleryLikesResponse.fromJson(e));
+  }
+
+  /// ギャラリーの投稿の一覧を取得します。
+  Future<Iterable<GalleryPost>> posts(IGalleryPostsRequest request) async {
+    final response =
+        await _apiService.post<List>("i/gallery/posts", request.toJson());
+    return response.map((e) => GalleryPost.fromJson(e));
   }
 }
 

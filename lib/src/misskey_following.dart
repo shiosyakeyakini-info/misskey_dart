@@ -78,4 +78,15 @@ class MisskeyFollowingRequests {
   Future<void> reject(FollowingRequestsRejectRequest request) async {
     await _apiService.post("following/requests/reject", request.toJson());
   }
+
+  /// 送信したフォローリクエストの一覧を取得します。
+  Future<Iterable<FollowRequest>> sent(
+    FollowingRequestsSentRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "following/requests/sent",
+      request.toJson(),
+    );
+    return response.map((e) => FollowRequest.fromJson(e));
+  }
 }

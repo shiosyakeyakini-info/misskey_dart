@@ -31,15 +31,18 @@ mixin _$FederationShowInstanceResponse {
   int? get followersCount => throw _privateConstructorUsedError;
   bool get isNotResponding => throw _privateConstructorUsedError;
   bool get isSuspended => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+  SuspensionState? get suspensionState => throw _privateConstructorUsedError;
   bool get isBlocked => throw _privateConstructorUsedError;
-  bool? get isSilenced => throw _privateConstructorUsedError;
   String? get softwareName => throw _privateConstructorUsedError;
   String? get softwareVersion => throw _privateConstructorUsedError;
   bool? get openRegistrations => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get maintainerName => throw _privateConstructorUsedError;
   String? get maintainerEmail => throw _privateConstructorUsedError;
+  bool? get isSilenced => throw _privateConstructorUsedError;
+  bool? get isMediaSilenced => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get iconUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -47,7 +50,10 @@ mixin _$FederationShowInstanceResponse {
   @NullableColorConverter()
   int? get themeColor => throw _privateConstructorUsedError;
   @DateTimeConverter()
-  DateTime get infoUpdatedAt => throw _privateConstructorUsedError;
+  DateTime? get infoUpdatedAt => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime? get latestRequestReceivedAt => throw _privateConstructorUsedError;
+  String? get moderationNote => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,19 +79,24 @@ abstract class $FederationShowInstanceResponseCopyWith<$Res> {
       int? followersCount,
       bool isNotResponding,
       bool isSuspended,
+      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+      SuspensionState? suspensionState,
       bool isBlocked,
-      bool? isSilenced,
       String? softwareName,
       String? softwareVersion,
       bool? openRegistrations,
-      String name,
+      String? name,
       String? description,
       String? maintainerName,
       String? maintainerEmail,
+      bool? isSilenced,
+      bool? isMediaSilenced,
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? faviconUrl,
       @NullableColorConverter() int? themeColor,
-      @DateTimeConverter() DateTime infoUpdatedAt});
+      @DateTimeConverter() DateTime? infoUpdatedAt,
+      @DateTimeConverter() DateTime? latestRequestReceivedAt,
+      String? moderationNote});
 }
 
 /// @nodoc
@@ -111,19 +122,23 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
     Object? followersCount = freezed,
     Object? isNotResponding = null,
     Object? isSuspended = null,
+    Object? suspensionState = freezed,
     Object? isBlocked = null,
-    Object? isSilenced = freezed,
     Object? softwareName = freezed,
     Object? softwareVersion = freezed,
     Object? openRegistrations = freezed,
-    Object? name = null,
+    Object? name = freezed,
     Object? description = freezed,
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
+    Object? isSilenced = freezed,
+    Object? isMediaSilenced = freezed,
     Object? iconUrl = freezed,
     Object? faviconUrl = freezed,
     Object? themeColor = freezed,
-    Object? infoUpdatedAt = null,
+    Object? infoUpdatedAt = freezed,
+    Object? latestRequestReceivedAt = freezed,
+    Object? moderationNote = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -162,14 +177,14 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
           ? _value.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool,
+      suspensionState: freezed == suspensionState
+          ? _value.suspensionState
+          : suspensionState // ignore: cast_nullable_to_non_nullable
+              as SuspensionState?,
       isBlocked: null == isBlocked
           ? _value.isBlocked
           : isBlocked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSilenced: freezed == isSilenced
-          ? _value.isSilenced
-          : isSilenced // ignore: cast_nullable_to_non_nullable
-              as bool?,
       softwareName: freezed == softwareName
           ? _value.softwareName
           : softwareName // ignore: cast_nullable_to_non_nullable
@@ -182,10 +197,10 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
           ? _value.openRegistrations
           : openRegistrations // ignore: cast_nullable_to_non_nullable
               as bool?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -198,6 +213,14 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
           ? _value.maintainerEmail
           : maintainerEmail // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSilenced: freezed == isSilenced
+          ? _value.isSilenced
+          : isSilenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isMediaSilenced: freezed == isMediaSilenced
+          ? _value.isMediaSilenced
+          : isMediaSilenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
       iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
@@ -210,10 +233,18 @@ class _$FederationShowInstanceResponseCopyWithImpl<$Res,
           ? _value.themeColor
           : themeColor // ignore: cast_nullable_to_non_nullable
               as int?,
-      infoUpdatedAt: null == infoUpdatedAt
+      infoUpdatedAt: freezed == infoUpdatedAt
           ? _value.infoUpdatedAt
           : infoUpdatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
+      latestRequestReceivedAt: freezed == latestRequestReceivedAt
+          ? _value.latestRequestReceivedAt
+          : latestRequestReceivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      moderationNote: freezed == moderationNote
+          ? _value.moderationNote
+          : moderationNote // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -237,19 +268,24 @@ abstract class _$$FederationShowInstanceResponseImplCopyWith<$Res>
       int? followersCount,
       bool isNotResponding,
       bool isSuspended,
+      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+      SuspensionState? suspensionState,
       bool isBlocked,
-      bool? isSilenced,
       String? softwareName,
       String? softwareVersion,
       bool? openRegistrations,
-      String name,
+      String? name,
       String? description,
       String? maintainerName,
       String? maintainerEmail,
+      bool? isSilenced,
+      bool? isMediaSilenced,
       @NullableUriConverter() Uri? iconUrl,
       @NullableUriConverter() Uri? faviconUrl,
       @NullableColorConverter() int? themeColor,
-      @DateTimeConverter() DateTime infoUpdatedAt});
+      @DateTimeConverter() DateTime? infoUpdatedAt,
+      @DateTimeConverter() DateTime? latestRequestReceivedAt,
+      String? moderationNote});
 }
 
 /// @nodoc
@@ -274,19 +310,23 @@ class __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>
     Object? followersCount = freezed,
     Object? isNotResponding = null,
     Object? isSuspended = null,
+    Object? suspensionState = freezed,
     Object? isBlocked = null,
-    Object? isSilenced = freezed,
     Object? softwareName = freezed,
     Object? softwareVersion = freezed,
     Object? openRegistrations = freezed,
-    Object? name = null,
+    Object? name = freezed,
     Object? description = freezed,
     Object? maintainerName = freezed,
     Object? maintainerEmail = freezed,
+    Object? isSilenced = freezed,
+    Object? isMediaSilenced = freezed,
     Object? iconUrl = freezed,
     Object? faviconUrl = freezed,
     Object? themeColor = freezed,
-    Object? infoUpdatedAt = null,
+    Object? infoUpdatedAt = freezed,
+    Object? latestRequestReceivedAt = freezed,
+    Object? moderationNote = freezed,
   }) {
     return _then(_$FederationShowInstanceResponseImpl(
       id: null == id
@@ -325,14 +365,14 @@ class __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>
           ? _value.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool,
+      suspensionState: freezed == suspensionState
+          ? _value.suspensionState
+          : suspensionState // ignore: cast_nullable_to_non_nullable
+              as SuspensionState?,
       isBlocked: null == isBlocked
           ? _value.isBlocked
           : isBlocked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSilenced: freezed == isSilenced
-          ? _value.isSilenced
-          : isSilenced // ignore: cast_nullable_to_non_nullable
-              as bool?,
       softwareName: freezed == softwareName
           ? _value.softwareName
           : softwareName // ignore: cast_nullable_to_non_nullable
@@ -345,10 +385,10 @@ class __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>
           ? _value.openRegistrations
           : openRegistrations // ignore: cast_nullable_to_non_nullable
               as bool?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -361,6 +401,14 @@ class __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>
           ? _value.maintainerEmail
           : maintainerEmail // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSilenced: freezed == isSilenced
+          ? _value.isSilenced
+          : isSilenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isMediaSilenced: freezed == isMediaSilenced
+          ? _value.isMediaSilenced
+          : isMediaSilenced // ignore: cast_nullable_to_non_nullable
+              as bool?,
       iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
@@ -373,10 +421,18 @@ class __$$FederationShowInstanceResponseImplCopyWithImpl<$Res>
           ? _value.themeColor
           : themeColor // ignore: cast_nullable_to_non_nullable
               as int?,
-      infoUpdatedAt: null == infoUpdatedAt
+      infoUpdatedAt: freezed == infoUpdatedAt
           ? _value.infoUpdatedAt
           : infoUpdatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
+      latestRequestReceivedAt: freezed == latestRequestReceivedAt
+          ? _value.latestRequestReceivedAt
+          : latestRequestReceivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      moderationNote: freezed == moderationNote
+          ? _value.moderationNote
+          : moderationNote // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -395,19 +451,24 @@ class _$FederationShowInstanceResponseImpl
       this.followersCount,
       required this.isNotResponding,
       required this.isSuspended,
+      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+      this.suspensionState,
       required this.isBlocked,
-      this.isSilenced,
       this.softwareName,
       this.softwareVersion,
       this.openRegistrations,
-      required this.name,
+      this.name,
       this.description,
       this.maintainerName,
       this.maintainerEmail,
+      this.isSilenced,
+      this.isMediaSilenced,
       @NullableUriConverter() this.iconUrl,
       @NullableUriConverter() this.faviconUrl,
       @NullableColorConverter() this.themeColor,
-      @DateTimeConverter() required this.infoUpdatedAt});
+      @DateTimeConverter() this.infoUpdatedAt,
+      @DateTimeConverter() this.latestRequestReceivedAt,
+      this.moderationNote});
 
   factory _$FederationShowInstanceResponseImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -433,9 +494,10 @@ class _$FederationShowInstanceResponseImpl
   @override
   final bool isSuspended;
   @override
-  final bool isBlocked;
+  @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+  final SuspensionState? suspensionState;
   @override
-  final bool? isSilenced;
+  final bool isBlocked;
   @override
   final String? softwareName;
   @override
@@ -443,13 +505,17 @@ class _$FederationShowInstanceResponseImpl
   @override
   final bool? openRegistrations;
   @override
-  final String name;
+  final String? name;
   @override
   final String? description;
   @override
   final String? maintainerName;
   @override
   final String? maintainerEmail;
+  @override
+  final bool? isSilenced;
+  @override
+  final bool? isMediaSilenced;
   @override
   @NullableUriConverter()
   final Uri? iconUrl;
@@ -461,11 +527,16 @@ class _$FederationShowInstanceResponseImpl
   final int? themeColor;
   @override
   @DateTimeConverter()
-  final DateTime infoUpdatedAt;
+  final DateTime? infoUpdatedAt;
+  @override
+  @DateTimeConverter()
+  final DateTime? latestRequestReceivedAt;
+  @override
+  final String? moderationNote;
 
   @override
   String toString() {
-    return 'FederationShowInstanceResponse(id: $id, firstRetrievedAt: $firstRetrievedAt, host: $host, usersCount: $usersCount, notesCount: $notesCount, followingCount: $followingCount, followersCount: $followersCount, isNotResponding: $isNotResponding, isSuspended: $isSuspended, isBlocked: $isBlocked, isSilenced: $isSilenced, softwareName: $softwareName, softwareVersion: $softwareVersion, openRegistrations: $openRegistrations, name: $name, description: $description, maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, iconUrl: $iconUrl, faviconUrl: $faviconUrl, themeColor: $themeColor, infoUpdatedAt: $infoUpdatedAt)';
+    return 'FederationShowInstanceResponse(id: $id, firstRetrievedAt: $firstRetrievedAt, host: $host, usersCount: $usersCount, notesCount: $notesCount, followingCount: $followingCount, followersCount: $followersCount, isNotResponding: $isNotResponding, isSuspended: $isSuspended, suspensionState: $suspensionState, isBlocked: $isBlocked, softwareName: $softwareName, softwareVersion: $softwareVersion, openRegistrations: $openRegistrations, name: $name, description: $description, maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, isSilenced: $isSilenced, isMediaSilenced: $isMediaSilenced, iconUrl: $iconUrl, faviconUrl: $faviconUrl, themeColor: $themeColor, infoUpdatedAt: $infoUpdatedAt, latestRequestReceivedAt: $latestRequestReceivedAt, moderationNote: $moderationNote)';
   }
 
   @override
@@ -489,10 +560,10 @@ class _$FederationShowInstanceResponseImpl
                 other.isNotResponding == isNotResponding) &&
             (identical(other.isSuspended, isSuspended) ||
                 other.isSuspended == isSuspended) &&
+            (identical(other.suspensionState, suspensionState) ||
+                other.suspensionState == suspensionState) &&
             (identical(other.isBlocked, isBlocked) ||
                 other.isBlocked == isBlocked) &&
-            (identical(other.isSilenced, isSilenced) ||
-                other.isSilenced == isSilenced) &&
             (identical(other.softwareName, softwareName) ||
                 other.softwareName == softwareName) &&
             (identical(other.softwareVersion, softwareVersion) ||
@@ -506,13 +577,22 @@ class _$FederationShowInstanceResponseImpl
                 other.maintainerName == maintainerName) &&
             (identical(other.maintainerEmail, maintainerEmail) ||
                 other.maintainerEmail == maintainerEmail) &&
+            (identical(other.isSilenced, isSilenced) ||
+                other.isSilenced == isSilenced) &&
+            (identical(other.isMediaSilenced, isMediaSilenced) ||
+                other.isMediaSilenced == isMediaSilenced) &&
             (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl) &&
             (identical(other.faviconUrl, faviconUrl) ||
                 other.faviconUrl == faviconUrl) &&
             (identical(other.themeColor, themeColor) ||
                 other.themeColor == themeColor) &&
             (identical(other.infoUpdatedAt, infoUpdatedAt) ||
-                other.infoUpdatedAt == infoUpdatedAt));
+                other.infoUpdatedAt == infoUpdatedAt) &&
+            (identical(
+                    other.latestRequestReceivedAt, latestRequestReceivedAt) ||
+                other.latestRequestReceivedAt == latestRequestReceivedAt) &&
+            (identical(other.moderationNote, moderationNote) ||
+                other.moderationNote == moderationNote));
   }
 
   @JsonKey(ignore: true)
@@ -528,8 +608,8 @@ class _$FederationShowInstanceResponseImpl
         followersCount,
         isNotResponding,
         isSuspended,
+        suspensionState,
         isBlocked,
-        isSilenced,
         softwareName,
         softwareVersion,
         openRegistrations,
@@ -537,10 +617,14 @@ class _$FederationShowInstanceResponseImpl
         description,
         maintainerName,
         maintainerEmail,
+        isSilenced,
+        isMediaSilenced,
         iconUrl,
         faviconUrl,
         themeColor,
-        infoUpdatedAt
+        infoUpdatedAt,
+        latestRequestReceivedAt,
+        moderationNote
       ]);
 
   @JsonKey(ignore: true)
@@ -562,29 +646,33 @@ class _$FederationShowInstanceResponseImpl
 abstract class _FederationShowInstanceResponse
     implements FederationShowInstanceResponse {
   const factory _FederationShowInstanceResponse(
-          {required final String id,
-          @DateTimeConverter() required final DateTime firstRetrievedAt,
-          required final String host,
-          final int? usersCount,
-          final int? notesCount,
-          final int? followingCount,
-          final int? followersCount,
-          required final bool isNotResponding,
-          required final bool isSuspended,
-          required final bool isBlocked,
-          final bool? isSilenced,
-          final String? softwareName,
-          final String? softwareVersion,
-          final bool? openRegistrations,
-          required final String name,
-          final String? description,
-          final String? maintainerName,
-          final String? maintainerEmail,
-          @NullableUriConverter() final Uri? iconUrl,
-          @NullableUriConverter() final Uri? faviconUrl,
-          @NullableColorConverter() final int? themeColor,
-          @DateTimeConverter() required final DateTime infoUpdatedAt}) =
-      _$FederationShowInstanceResponseImpl;
+      {required final String id,
+      @DateTimeConverter() required final DateTime firstRetrievedAt,
+      required final String host,
+      final int? usersCount,
+      final int? notesCount,
+      final int? followingCount,
+      final int? followersCount,
+      required final bool isNotResponding,
+      required final bool isSuspended,
+      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+      final SuspensionState? suspensionState,
+      required final bool isBlocked,
+      final String? softwareName,
+      final String? softwareVersion,
+      final bool? openRegistrations,
+      final String? name,
+      final String? description,
+      final String? maintainerName,
+      final String? maintainerEmail,
+      final bool? isSilenced,
+      final bool? isMediaSilenced,
+      @NullableUriConverter() final Uri? iconUrl,
+      @NullableUriConverter() final Uri? faviconUrl,
+      @NullableColorConverter() final int? themeColor,
+      @DateTimeConverter() final DateTime? infoUpdatedAt,
+      @DateTimeConverter() final DateTime? latestRequestReceivedAt,
+      final String? moderationNote}) = _$FederationShowInstanceResponseImpl;
 
   factory _FederationShowInstanceResponse.fromJson(Map<String, dynamic> json) =
       _$FederationShowInstanceResponseImpl.fromJson;
@@ -609,9 +697,10 @@ abstract class _FederationShowInstanceResponse
   @override
   bool get isSuspended;
   @override
-  bool get isBlocked;
+  @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+  SuspensionState? get suspensionState;
   @override
-  bool? get isSilenced;
+  bool get isBlocked;
   @override
   String? get softwareName;
   @override
@@ -619,13 +708,17 @@ abstract class _FederationShowInstanceResponse
   @override
   bool? get openRegistrations;
   @override
-  String get name;
+  String? get name;
   @override
   String? get description;
   @override
   String? get maintainerName;
   @override
   String? get maintainerEmail;
+  @override
+  bool? get isSilenced;
+  @override
+  bool? get isMediaSilenced;
   @override
   @NullableUriConverter()
   Uri? get iconUrl;
@@ -637,7 +730,12 @@ abstract class _FederationShowInstanceResponse
   int? get themeColor;
   @override
   @DateTimeConverter()
-  DateTime get infoUpdatedAt;
+  DateTime? get infoUpdatedAt;
+  @override
+  @DateTimeConverter()
+  DateTime? get latestRequestReceivedAt;
+  @override
+  String? get moderationNote;
   @override
   @JsonKey(ignore: true)
   _$$FederationShowInstanceResponseImplCopyWith<
