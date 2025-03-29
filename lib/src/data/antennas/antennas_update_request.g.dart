@@ -25,6 +25,7 @@ _$AntennasUpdateRequestImpl _$$AntennasUpdateRequestImplFromJson(
       withFile: json['withFile'] as bool,
       notify: json['notify'] as bool?,
       localOnly: json['localOnly'] as bool?,
+      excludeBots: json['excludeBots'] as bool?,
     );
 
 Map<String, dynamic> _$$AntennasUpdateRequestImplToJson(
@@ -42,6 +43,7 @@ Map<String, dynamic> _$$AntennasUpdateRequestImplToJson(
       'withFile': instance.withFile,
       'notify': instance.notify,
       'localOnly': instance.localOnly,
+      'excludeBots': instance.excludeBots,
     };
 
 const _$AntennaSourceEnumMap = {

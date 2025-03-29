@@ -24,6 +24,7 @@ _$AntennasCreateRequestImpl _$$AntennasCreateRequestImplFromJson(
       withFile: json['withFile'] as bool,
       notify: json['notify'] as bool?,
       localOnly: json['localOnly'] as bool?,
+      excludeBots: json['excludeBots'] as bool?,
     );
 
 Map<String, dynamic> _$$AntennasCreateRequestImplToJson(
@@ -40,6 +41,7 @@ Map<String, dynamic> _$$AntennasCreateRequestImplToJson(
       'withFile': instance.withFile,
       'notify': instance.notify,
       'localOnly': instance.localOnly,
+      'excludeBots': instance.excludeBots,
     };
 
 const _$AntennaSourceEnumMap = {
