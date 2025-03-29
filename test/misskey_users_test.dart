@@ -177,6 +177,21 @@ void main() async {
     expect(response.map((e) => e.id), contains(page["id"]));
   });
 
+  group("gallery", () {
+    test("posts", () async {
+      final file = await userClient.createDriveFile();
+      final post = await userClient.gallery.posts.create(
+        GalleryPostsCreateRequest(
+          title: "test",
+          fileIds: [file.id],
+        ),
+      );
+      final response = await userClient.users.gallery
+          .posts(UsersGalleryPostsRequest(userId: user.id));
+      expect(response.map((e) => e.id), contains(post.id));
+    });
+  });
+
   group("lists", () {
     test("create", () async {
       final list = await userClient.users.list
