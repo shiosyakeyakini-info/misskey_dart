@@ -6,8 +6,8 @@ part of 'i_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
-    _$IUpdateRequestImpl(
+_IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
+    _IUpdateRequest(
       name: json['name'] as String?,
       description: json['description'] as String?,
       followedMessage: json['followedMessage'] as String?,
@@ -76,8 +76,7 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$IUpdateRequestImplToJson(
-        _$IUpdateRequestImpl instance) =>
+Map<String, dynamic> _$IUpdateRequestToJson(_IUpdateRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
@@ -147,9 +146,9 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
+_IUpdateAvatarDecoration _$IUpdateAvatarDecorationFromJson(
         Map<String, dynamic> json) =>
-    _$IUpdateAvatarDecorationImpl(
+    _IUpdateAvatarDecoration(
       id: json['id'] as String,
       angle: (json['angle'] as num?)?.toDouble(),
       flipH: json['flipH'] as bool? ?? false,
@@ -157,8 +156,8 @@ _$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
       offsetY: (json['offsetY'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$$IUpdateAvatarDecorationImplToJson(
-        _$IUpdateAvatarDecorationImpl instance) =>
+Map<String, dynamic> _$IUpdateAvatarDecorationToJson(
+        _IUpdateAvatarDecoration instance) =>
     <String, dynamic>{
       'id': instance.id,
       'angle': instance.angle,

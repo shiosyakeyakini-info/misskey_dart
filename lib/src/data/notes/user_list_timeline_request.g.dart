@@ -6,11 +6,11 @@ part of 'user_list_timeline_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserListTimelineRequestImpl _$$UserListTimelineRequestImplFromJson(
+_UserListTimelineRequest _$UserListTimelineRequestFromJson(
         Map<String, dynamic> json) =>
-    _$UserListTimelineRequestImpl(
+    _UserListTimelineRequest(
       listId: json['listId'] as String,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -25,8 +25,8 @@ _$UserListTimelineRequestImpl _$$UserListTimelineRequestImplFromJson(
       allowPartial: json['allowPartial'] as bool?,
     );
 
-Map<String, dynamic> _$$UserListTimelineRequestImplToJson(
-        _$UserListTimelineRequestImpl instance) =>
+Map<String, dynamic> _$UserListTimelineRequestToJson(
+        _UserListTimelineRequest instance) =>
     <String, dynamic>{
       'listId': instance.listId,
       'limit': instance.limit,

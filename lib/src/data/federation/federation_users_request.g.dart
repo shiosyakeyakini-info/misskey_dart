@@ -6,17 +6,17 @@ part of 'federation_users_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FederationUsersRequestImpl _$$FederationUsersRequestImplFromJson(
+_FederationUsersRequest _$FederationUsersRequestFromJson(
         Map<String, dynamic> json) =>
-    _$FederationUsersRequestImpl(
+    _FederationUsersRequest(
       host: json['host'] as String,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$FederationUsersRequestImplToJson(
-        _$FederationUsersRequestImpl instance) =>
+Map<String, dynamic> _$FederationUsersRequestToJson(
+        _FederationUsersRequest instance) =>
     <String, dynamic>{
       'host': instance.host,
       'sinceId': instance.sinceId,

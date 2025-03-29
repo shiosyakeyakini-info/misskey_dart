@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,103 +10,71 @@ part of 'users_search_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersSearchRequest _$UsersSearchRequestFromJson(Map<String, dynamic> json) {
-  return _UsersSearchRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersSearchRequest {
-  String get query => throw _privateConstructorUsedError;
-  int? get offset => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  Origin? get origin => throw _privateConstructorUsedError;
-  bool? get detail => throw _privateConstructorUsedError;
+  String get query;
+  int? get offset;
+  int? get limit;
+  Origin? get origin;
+  bool? get detail;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UsersSearchRequestCopyWith<UsersSearchRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsersSearchRequestCopyWith<$Res> {
-  factory $UsersSearchRequestCopyWith(
-          UsersSearchRequest value, $Res Function(UsersSearchRequest) then) =
-      _$UsersSearchRequestCopyWithImpl<$Res, UsersSearchRequest>;
-  @useResult
-  $Res call(
-      {String query, int? offset, int? limit, Origin? origin, bool? detail});
-}
-
-/// @nodoc
-class _$UsersSearchRequestCopyWithImpl<$Res, $Val extends UsersSearchRequest>
-    implements $UsersSearchRequestCopyWith<$Res> {
-  _$UsersSearchRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UsersSearchRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UsersSearchRequestCopyWith<UsersSearchRequest> get copyWith =>
+      _$UsersSearchRequestCopyWithImpl<UsersSearchRequest>(
+          this as UsersSearchRequest, _$identity);
+
+  /// Serializes this UsersSearchRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? query = null,
-    Object? offset = freezed,
-    Object? limit = freezed,
-    Object? origin = freezed,
-    Object? detail = freezed,
-  }) {
-    return _then(_value.copyWith(
-      query: null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-      offset: freezed == offset
-          ? _value.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      origin: freezed == origin
-          ? _value.origin
-          : origin // ignore: cast_nullable_to_non_nullable
-              as Origin?,
-      detail: freezed == detail
-          ? _value.detail
-          : detail // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersSearchRequest &&
+            (identical(other.query, query) || other.query == query) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.origin, origin) || other.origin == origin) &&
+            (identical(other.detail, detail) || other.detail == detail));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, query, offset, limit, origin, detail);
+
+  @override
+  String toString() {
+    return 'UsersSearchRequest(query: $query, offset: $offset, limit: $limit, origin: $origin, detail: $detail)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersSearchRequestImplCopyWith<$Res>
-    implements $UsersSearchRequestCopyWith<$Res> {
-  factory _$$UsersSearchRequestImplCopyWith(_$UsersSearchRequestImpl value,
-          $Res Function(_$UsersSearchRequestImpl) then) =
-      __$$UsersSearchRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersSearchRequestCopyWith<$Res> {
+  factory $UsersSearchRequestCopyWith(
+          UsersSearchRequest value, $Res Function(UsersSearchRequest) _then) =
+      _$UsersSearchRequestCopyWithImpl;
   @useResult
   $Res call(
       {String query, int? offset, int? limit, Origin? origin, bool? detail});
 }
 
 /// @nodoc
-class __$$UsersSearchRequestImplCopyWithImpl<$Res>
-    extends _$UsersSearchRequestCopyWithImpl<$Res, _$UsersSearchRequestImpl>
-    implements _$$UsersSearchRequestImplCopyWith<$Res> {
-  __$$UsersSearchRequestImplCopyWithImpl(_$UsersSearchRequestImpl _value,
-      $Res Function(_$UsersSearchRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersSearchRequestCopyWithImpl<$Res>
+    implements $UsersSearchRequestCopyWith<$Res> {
+  _$UsersSearchRequestCopyWithImpl(this._self, this._then);
 
+  final UsersSearchRequest _self;
+  final $Res Function(UsersSearchRequest) _then;
+
+  /// Create a copy of UsersSearchRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -115,25 +84,25 @@ class __$$UsersSearchRequestImplCopyWithImpl<$Res>
     Object? origin = freezed,
     Object? detail = freezed,
   }) {
-    return _then(_$UsersSearchRequestImpl(
+    return _then(_self.copyWith(
       query: null == query
-          ? _value.query
+          ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
       offset: freezed == offset
-          ? _value.offset
+          ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       origin: freezed == origin
-          ? _value.origin
+          ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as Origin?,
       detail: freezed == detail
-          ? _value.detail
+          ? _self.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -142,12 +111,11 @@ class __$$UsersSearchRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersSearchRequestImpl implements _UsersSearchRequest {
-  const _$UsersSearchRequestImpl(
+class _UsersSearchRequest implements UsersSearchRequest {
+  const _UsersSearchRequest(
       {required this.query, this.offset, this.limit, this.origin, this.detail});
-
-  factory _$UsersSearchRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersSearchRequestImplFromJson(json);
+  factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersSearchRequestFromJson(json);
 
   @override
   final String query;
@@ -160,16 +128,26 @@ class _$UsersSearchRequestImpl implements _UsersSearchRequest {
   @override
   final bool? detail;
 
+  /// Create a copy of UsersSearchRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersSearchRequest(query: $query, offset: $offset, limit: $limit, origin: $origin, detail: $detail)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersSearchRequestCopyWith<_UsersSearchRequest> get copyWith =>
+      __$UsersSearchRequestCopyWithImpl<_UsersSearchRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersSearchRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersSearchRequestImpl &&
+            other is _UsersSearchRequest &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -177,49 +155,71 @@ class _$UsersSearchRequestImpl implements _UsersSearchRequest {
             (identical(other.detail, detail) || other.detail == detail));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, query, offset, limit, origin, detail);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersSearchRequestImplCopyWith<_$UsersSearchRequestImpl> get copyWith =>
-      __$$UsersSearchRequestImplCopyWithImpl<_$UsersSearchRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersSearchRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersSearchRequest(query: $query, offset: $offset, limit: $limit, origin: $origin, detail: $detail)';
   }
 }
 
-abstract class _UsersSearchRequest implements UsersSearchRequest {
-  const factory _UsersSearchRequest(
-      {required final String query,
-      final int? offset,
-      final int? limit,
-      final Origin? origin,
-      final bool? detail}) = _$UsersSearchRequestImpl;
-
-  factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =
-      _$UsersSearchRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersSearchRequestCopyWith<$Res>
+    implements $UsersSearchRequestCopyWith<$Res> {
+  factory _$UsersSearchRequestCopyWith(
+          _UsersSearchRequest value, $Res Function(_UsersSearchRequest) _then) =
+      __$UsersSearchRequestCopyWithImpl;
   @override
-  String get query;
-  @override
-  int? get offset;
-  @override
-  int? get limit;
-  @override
-  Origin? get origin;
-  @override
-  bool? get detail;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersSearchRequestImplCopyWith<_$UsersSearchRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String query, int? offset, int? limit, Origin? origin, bool? detail});
 }
+
+/// @nodoc
+class __$UsersSearchRequestCopyWithImpl<$Res>
+    implements _$UsersSearchRequestCopyWith<$Res> {
+  __$UsersSearchRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersSearchRequest _self;
+  final $Res Function(_UsersSearchRequest) _then;
+
+  /// Create a copy of UsersSearchRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? query = null,
+    Object? offset = freezed,
+    Object? limit = freezed,
+    Object? origin = freezed,
+    Object? detail = freezed,
+  }) {
+    return _then(_UsersSearchRequest(
+      query: null == query
+          ? _self.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+      offset: freezed == offset
+          ? _self.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      origin: freezed == origin
+          ? _self.origin
+          : origin // ignore: cast_nullable_to_non_nullable
+              as Origin?,
+      detail: freezed == detail
+          ? _self.detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

@@ -6,14 +6,13 @@ part of 'ap_show_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ApShowResponseImpl _$$ApShowResponseImplFromJson(Map<String, dynamic> json) =>
-    _$ApShowResponseImpl(
+_ApShowResponse _$ApShowResponseFromJson(Map<String, dynamic> json) =>
+    _ApShowResponse(
       type: json['type'] as String,
       object: json['object'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$$ApShowResponseImplToJson(
-        _$ApShowResponseImpl instance) =>
+Map<String, dynamic> _$ApShowResponseToJson(_ApShowResponse instance) =>
     <String, dynamic>{
       'type': instance.type,
       'object': instance.object,

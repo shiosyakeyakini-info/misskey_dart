@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,70 @@ part of 'channels_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-ChannelsShowRequest _$ChannelsShowRequestFromJson(Map<String, dynamic> json) {
-  return _ChannelsShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChannelsShowRequest {
-  String get channelId => throw _privateConstructorUsedError;
+  String get channelId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ChannelsShowRequestCopyWith<ChannelsShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChannelsShowRequestCopyWith<$Res> {
-  factory $ChannelsShowRequestCopyWith(
-          ChannelsShowRequest value, $Res Function(ChannelsShowRequest) then) =
-      _$ChannelsShowRequestCopyWithImpl<$Res, ChannelsShowRequest>;
-  @useResult
-  $Res call({String channelId});
-}
-
-/// @nodoc
-class _$ChannelsShowRequestCopyWithImpl<$Res, $Val extends ChannelsShowRequest>
-    implements $ChannelsShowRequestCopyWith<$Res> {
-  _$ChannelsShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ChannelsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ChannelsShowRequestCopyWith<ChannelsShowRequest> get copyWith =>
+      _$ChannelsShowRequestCopyWithImpl<ChannelsShowRequest>(
+          this as ChannelsShowRequest, _$identity);
+
+  /// Serializes this ChannelsShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? channelId = null,
-  }) {
-    return _then(_value.copyWith(
-      channelId: null == channelId
-          ? _value.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChannelsShowRequest &&
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, channelId);
+
+  @override
+  String toString() {
+    return 'ChannelsShowRequest(channelId: $channelId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChannelsShowRequestImplCopyWith<$Res>
-    implements $ChannelsShowRequestCopyWith<$Res> {
-  factory _$$ChannelsShowRequestImplCopyWith(_$ChannelsShowRequestImpl value,
-          $Res Function(_$ChannelsShowRequestImpl) then) =
-      __$$ChannelsShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChannelsShowRequestCopyWith<$Res> {
+  factory $ChannelsShowRequestCopyWith(
+          ChannelsShowRequest value, $Res Function(ChannelsShowRequest) _then) =
+      _$ChannelsShowRequestCopyWithImpl;
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class __$$ChannelsShowRequestImplCopyWithImpl<$Res>
-    extends _$ChannelsShowRequestCopyWithImpl<$Res, _$ChannelsShowRequestImpl>
-    implements _$$ChannelsShowRequestImplCopyWith<$Res> {
-  __$$ChannelsShowRequestImplCopyWithImpl(_$ChannelsShowRequestImpl _value,
-      $Res Function(_$ChannelsShowRequestImpl) _then)
-      : super(_value, _then);
+class _$ChannelsShowRequestCopyWithImpl<$Res>
+    implements $ChannelsShowRequestCopyWith<$Res> {
+  _$ChannelsShowRequestCopyWithImpl(this._self, this._then);
 
+  final ChannelsShowRequest _self;
+  final $Res Function(ChannelsShowRequest) _then;
+
+  /// Create a copy of ChannelsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_$ChannelsShowRequestImpl(
+    return _then(_self.copyWith(
       channelId: null == channelId
-          ? _value.channelId
+          ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -96,59 +82,82 @@ class __$$ChannelsShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChannelsShowRequestImpl implements _ChannelsShowRequest {
-  const _$ChannelsShowRequestImpl({required this.channelId});
-
-  factory _$ChannelsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChannelsShowRequestImplFromJson(json);
+class _ChannelsShowRequest implements ChannelsShowRequest {
+  const _ChannelsShowRequest({required this.channelId});
+  factory _ChannelsShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChannelsShowRequestFromJson(json);
 
   @override
   final String channelId;
 
+  /// Create a copy of ChannelsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChannelsShowRequest(channelId: $channelId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChannelsShowRequestCopyWith<_ChannelsShowRequest> get copyWith =>
+      __$ChannelsShowRequestCopyWithImpl<_ChannelsShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChannelsShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChannelsShowRequestImpl &&
+            other is _ChannelsShowRequest &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, channelId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChannelsShowRequestImplCopyWith<_$ChannelsShowRequestImpl> get copyWith =>
-      __$$ChannelsShowRequestImplCopyWithImpl<_$ChannelsShowRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChannelsShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChannelsShowRequest(channelId: $channelId)';
   }
 }
 
-abstract class _ChannelsShowRequest implements ChannelsShowRequest {
-  const factory _ChannelsShowRequest({required final String channelId}) =
-      _$ChannelsShowRequestImpl;
-
-  factory _ChannelsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$ChannelsShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChannelsShowRequestCopyWith<$Res>
+    implements $ChannelsShowRequestCopyWith<$Res> {
+  factory _$ChannelsShowRequestCopyWith(_ChannelsShowRequest value,
+          $Res Function(_ChannelsShowRequest) _then) =
+      __$ChannelsShowRequestCopyWithImpl;
   @override
-  String get channelId;
-  @override
-  @JsonKey(ignore: true)
-  _$$ChannelsShowRequestImplCopyWith<_$ChannelsShowRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String channelId});
 }
+
+/// @nodoc
+class __$ChannelsShowRequestCopyWithImpl<$Res>
+    implements _$ChannelsShowRequestCopyWith<$Res> {
+  __$ChannelsShowRequestCopyWithImpl(this._self, this._then);
+
+  final _ChannelsShowRequest _self;
+  final $Res Function(_ChannelsShowRequest) _then;
+
+  /// Create a copy of ChannelsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? channelId = null,
+  }) {
+    return _then(_ChannelsShowRequest(
+      channelId: null == channelId
+          ? _self.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

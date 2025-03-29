@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,69 @@ part of 'block_delete_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-BlockDeleteRequest _$BlockDeleteRequestFromJson(Map<String, dynamic> json) {
-  return _BlockDeleteRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BlockDeleteRequest {
-  String get userId => throw _privateConstructorUsedError;
+  String get userId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BlockDeleteRequestCopyWith<BlockDeleteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BlockDeleteRequestCopyWith<$Res> {
-  factory $BlockDeleteRequestCopyWith(
-          BlockDeleteRequest value, $Res Function(BlockDeleteRequest) then) =
-      _$BlockDeleteRequestCopyWithImpl<$Res, BlockDeleteRequest>;
-  @useResult
-  $Res call({String userId});
-}
-
-/// @nodoc
-class _$BlockDeleteRequestCopyWithImpl<$Res, $Val extends BlockDeleteRequest>
-    implements $BlockDeleteRequestCopyWith<$Res> {
-  _$BlockDeleteRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BlockDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BlockDeleteRequestCopyWith<BlockDeleteRequest> get copyWith =>
+      _$BlockDeleteRequestCopyWithImpl<BlockDeleteRequest>(
+          this as BlockDeleteRequest, _$identity);
+
+  /// Serializes this BlockDeleteRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? userId = null,
-  }) {
-    return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockDeleteRequest &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId);
+
+  @override
+  String toString() {
+    return 'BlockDeleteRequest(userId: $userId)';
   }
 }
 
 /// @nodoc
-abstract class _$$BlockDeleteRequestImplCopyWith<$Res>
-    implements $BlockDeleteRequestCopyWith<$Res> {
-  factory _$$BlockDeleteRequestImplCopyWith(_$BlockDeleteRequestImpl value,
-          $Res Function(_$BlockDeleteRequestImpl) then) =
-      __$$BlockDeleteRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BlockDeleteRequestCopyWith<$Res> {
+  factory $BlockDeleteRequestCopyWith(
+          BlockDeleteRequest value, $Res Function(BlockDeleteRequest) _then) =
+      _$BlockDeleteRequestCopyWithImpl;
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$$BlockDeleteRequestImplCopyWithImpl<$Res>
-    extends _$BlockDeleteRequestCopyWithImpl<$Res, _$BlockDeleteRequestImpl>
-    implements _$$BlockDeleteRequestImplCopyWith<$Res> {
-  __$$BlockDeleteRequestImplCopyWithImpl(_$BlockDeleteRequestImpl _value,
-      $Res Function(_$BlockDeleteRequestImpl) _then)
-      : super(_value, _then);
+class _$BlockDeleteRequestCopyWithImpl<$Res>
+    implements $BlockDeleteRequestCopyWith<$Res> {
+  _$BlockDeleteRequestCopyWithImpl(this._self, this._then);
 
+  final BlockDeleteRequest _self;
+  final $Res Function(BlockDeleteRequest) _then;
+
+  /// Create a copy of BlockDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_$BlockDeleteRequestImpl(
+    return _then(_self.copyWith(
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -96,58 +81,80 @@ class __$$BlockDeleteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BlockDeleteRequestImpl implements _BlockDeleteRequest {
-  const _$BlockDeleteRequestImpl({required this.userId});
-
-  factory _$BlockDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BlockDeleteRequestImplFromJson(json);
+class _BlockDeleteRequest implements BlockDeleteRequest {
+  const _BlockDeleteRequest({required this.userId});
+  factory _BlockDeleteRequest.fromJson(Map<String, dynamic> json) =>
+      _$BlockDeleteRequestFromJson(json);
 
   @override
   final String userId;
 
+  /// Create a copy of BlockDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BlockDeleteRequest(userId: $userId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BlockDeleteRequestCopyWith<_BlockDeleteRequest> get copyWith =>
+      __$BlockDeleteRequestCopyWithImpl<_BlockDeleteRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BlockDeleteRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BlockDeleteRequestImpl &&
+            other is _BlockDeleteRequest &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, userId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BlockDeleteRequestImplCopyWith<_$BlockDeleteRequestImpl> get copyWith =>
-      __$$BlockDeleteRequestImplCopyWithImpl<_$BlockDeleteRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BlockDeleteRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BlockDeleteRequest(userId: $userId)';
   }
 }
 
-abstract class _BlockDeleteRequest implements BlockDeleteRequest {
-  const factory _BlockDeleteRequest({required final String userId}) =
-      _$BlockDeleteRequestImpl;
-
-  factory _BlockDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$BlockDeleteRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BlockDeleteRequestCopyWith<$Res>
+    implements $BlockDeleteRequestCopyWith<$Res> {
+  factory _$BlockDeleteRequestCopyWith(
+          _BlockDeleteRequest value, $Res Function(_BlockDeleteRequest) _then) =
+      __$BlockDeleteRequestCopyWithImpl;
   @override
-  String get userId;
-  @override
-  @JsonKey(ignore: true)
-  _$$BlockDeleteRequestImplCopyWith<_$BlockDeleteRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String userId});
 }
+
+/// @nodoc
+class __$BlockDeleteRequestCopyWithImpl<$Res>
+    implements _$BlockDeleteRequestCopyWith<$Res> {
+  __$BlockDeleteRequestCopyWithImpl(this._self, this._then);
+
+  final _BlockDeleteRequest _self;
+  final $Res Function(_BlockDeleteRequest) _then;
+
+  /// Create a copy of BlockDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_BlockDeleteRequest(
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

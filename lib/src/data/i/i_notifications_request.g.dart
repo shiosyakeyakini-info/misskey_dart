@@ -6,10 +6,10 @@ part of 'i_notifications_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$INotificationRequestImpl _$$INotificationRequestImplFromJson(
+_INotificationRequest _$INotificationRequestFromJson(
         Map<String, dynamic> json) =>
-    _$INotificationRequestImpl(
-      limit: json['limit'] as int?,
+    _INotificationRequest(
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       following: json['following'] as bool?,
@@ -23,8 +23,8 @@ _$INotificationRequestImpl _$$INotificationRequestImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$INotificationRequestImplToJson(
-        _$INotificationRequestImpl instance) =>
+Map<String, dynamic> _$INotificationRequestToJson(
+        _INotificationRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

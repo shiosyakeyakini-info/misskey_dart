@@ -6,12 +6,12 @@ part of 'ping_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PingResponseImpl _$$PingResponseImplFromJson(Map<String, dynamic> json) =>
-    _$PingResponseImpl(
-      pong: json['pong'] as int,
+_PingResponse _$PingResponseFromJson(Map<String, dynamic> json) =>
+    _PingResponse(
+      pong: (json['pong'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$PingResponseImplToJson(_$PingResponseImpl instance) =>
+Map<String, dynamic> _$PingResponseToJson(_PingResponse instance) =>
     <String, dynamic>{
       'pong': instance.pong,
     };

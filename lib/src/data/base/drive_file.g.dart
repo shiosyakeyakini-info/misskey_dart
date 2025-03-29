@@ -6,15 +6,14 @@ part of 'drive_file.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFileImpl _$$DriveFileImplFromJson(Map<String, dynamic> json) =>
-    _$DriveFileImpl(
+_DriveFile _$DriveFileFromJson(Map<String, dynamic> json) => _DriveFile(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       name: json['name'] as String,
       type: json['type'] as String,
       md5: json['md5'] as String,
-      size: json['size'] as int,
+      size: (json['size'] as num).toInt(),
       isSensitive: json['isSensitive'] as bool,
       blurhash: json['blurhash'] as String?,
       properties: DriveFileProperties.fromJson(
@@ -32,7 +31,7 @@ _$DriveFileImpl _$$DriveFileImplFromJson(Map<String, dynamic> json) =>
           : UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>
+Map<String, dynamic> _$DriveFileToJson(_DriveFile instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
@@ -52,17 +51,16 @@ Map<String, dynamic> _$$DriveFileImplToJson(_$DriveFileImpl instance) =>
       'user': instance.user?.toJson(),
     };
 
-_$DriveFilePropertiesImpl _$$DriveFilePropertiesImplFromJson(
-        Map<String, dynamic> json) =>
-    _$DriveFilePropertiesImpl(
-      width: json['width'] as int?,
-      height: json['height'] as int?,
-      orientation: json['orientation'] as int?,
+_DriveFileProperties _$DriveFilePropertiesFromJson(Map<String, dynamic> json) =>
+    _DriveFileProperties(
+      width: (json['width'] as num?)?.toInt(),
+      height: (json['height'] as num?)?.toInt(),
+      orientation: (json['orientation'] as num?)?.toInt(),
       avgColor: json['avgColor'] as String?,
     );
 
-Map<String, dynamic> _$$DriveFilePropertiesImplToJson(
-        _$DriveFilePropertiesImpl instance) =>
+Map<String, dynamic> _$DriveFilePropertiesToJson(
+        _DriveFileProperties instance) =>
     <String, dynamic>{
       'width': instance.width,
       'height': instance.height,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,103 +10,71 @@ part of 'users_search_by_username_and_host_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersSearchByUsernameAndHostRequest
-    _$UsersSearchByUsernameAndHostRequestFromJson(Map<String, dynamic> json) {
-  return _UsersSearchByUsernameAndHostRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersSearchByUsernameAndHostRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  bool? get detail => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
-  String? get host => throw _privateConstructorUsedError;
+  int? get limit;
+  bool? get detail;
+  String? get username;
+  String? get host;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of UsersSearchByUsernameAndHostRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $UsersSearchByUsernameAndHostRequestCopyWith<
           UsersSearchByUsernameAndHostRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$UsersSearchByUsernameAndHostRequestCopyWithImpl<
+              UsersSearchByUsernameAndHostRequest>(
+          this as UsersSearchByUsernameAndHostRequest, _$identity);
 
-/// @nodoc
-abstract class $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
-  factory $UsersSearchByUsernameAndHostRequestCopyWith(
-          UsersSearchByUsernameAndHostRequest value,
-          $Res Function(UsersSearchByUsernameAndHostRequest) then) =
-      _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res,
-          UsersSearchByUsernameAndHostRequest>;
-  @useResult
-  $Res call({int? limit, bool? detail, String? username, String? host});
-}
+  /// Serializes this UsersSearchByUsernameAndHostRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res,
-        $Val extends UsersSearchByUsernameAndHostRequest>
-    implements $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
-  _$UsersSearchByUsernameAndHostRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? detail = freezed,
-    Object? username = freezed,
-    Object? host = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      detail: freezed == detail
-          ? _value.detail
-          : detail // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      username: freezed == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      host: freezed == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersSearchByUsernameAndHostRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.detail, detail) || other.detail == detail) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, detail, username, host);
+
+  @override
+  String toString() {
+    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail, username: $username, host: $host)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersSearchByUsernameAndHostRequestImplCopyWith<$Res>
-    implements $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
-  factory _$$UsersSearchByUsernameAndHostRequestImplCopyWith(
-          _$UsersSearchByUsernameAndHostRequestImpl value,
-          $Res Function(_$UsersSearchByUsernameAndHostRequestImpl) then) =
-      __$$UsersSearchByUsernameAndHostRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
+  factory $UsersSearchByUsernameAndHostRequestCopyWith(
+          UsersSearchByUsernameAndHostRequest value,
+          $Res Function(UsersSearchByUsernameAndHostRequest) _then) =
+      _$UsersSearchByUsernameAndHostRequestCopyWithImpl;
   @useResult
   $Res call({int? limit, bool? detail, String? username, String? host});
 }
 
 /// @nodoc
-class __$$UsersSearchByUsernameAndHostRequestImplCopyWithImpl<$Res>
-    extends _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res,
-        _$UsersSearchByUsernameAndHostRequestImpl>
-    implements _$$UsersSearchByUsernameAndHostRequestImplCopyWith<$Res> {
-  __$$UsersSearchByUsernameAndHostRequestImplCopyWithImpl(
-      _$UsersSearchByUsernameAndHostRequestImpl _value,
-      $Res Function(_$UsersSearchByUsernameAndHostRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
+    implements $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
+  _$UsersSearchByUsernameAndHostRequestCopyWithImpl(this._self, this._then);
 
+  final UsersSearchByUsernameAndHostRequest _self;
+  final $Res Function(UsersSearchByUsernameAndHostRequest) _then;
+
+  /// Create a copy of UsersSearchByUsernameAndHostRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,21 +83,21 @@ class __$$UsersSearchByUsernameAndHostRequestImplCopyWithImpl<$Res>
     Object? username = freezed,
     Object? host = freezed,
   }) {
-    return _then(_$UsersSearchByUsernameAndHostRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       detail: freezed == detail
-          ? _value.detail
+          ? _self.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as bool?,
       username: freezed == username
-          ? _value.username
+          ? _self.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
       host: freezed == host
-          ? _value.host
+          ? _self.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -137,14 +106,13 @@ class __$$UsersSearchByUsernameAndHostRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersSearchByUsernameAndHostRequestImpl
-    implements _UsersSearchByUsernameAndHostRequest {
-  const _$UsersSearchByUsernameAndHostRequestImpl(
+class _UsersSearchByUsernameAndHostRequest
+    implements UsersSearchByUsernameAndHostRequest {
+  const _UsersSearchByUsernameAndHostRequest(
       {this.limit, this.detail, this.username, this.host});
-
-  factory _$UsersSearchByUsernameAndHostRequestImpl.fromJson(
+  factory _UsersSearchByUsernameAndHostRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$UsersSearchByUsernameAndHostRequestImplFromJson(json);
+      _$UsersSearchByUsernameAndHostRequestFromJson(json);
 
   @override
   final int? limit;
@@ -155,16 +123,28 @@ class _$UsersSearchByUsernameAndHostRequestImpl
   @override
   final String? host;
 
+  /// Create a copy of UsersSearchByUsernameAndHostRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail, username: $username, host: $host)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersSearchByUsernameAndHostRequestCopyWith<
+          _UsersSearchByUsernameAndHostRequest>
+      get copyWith => __$UsersSearchByUsernameAndHostRequestCopyWithImpl<
+          _UsersSearchByUsernameAndHostRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersSearchByUsernameAndHostRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersSearchByUsernameAndHostRequestImpl &&
+            other is _UsersSearchByUsernameAndHostRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.detail, detail) || other.detail == detail) &&
             (identical(other.username, username) ||
@@ -172,49 +152,65 @@ class _$UsersSearchByUsernameAndHostRequestImpl
             (identical(other.host, host) || other.host == host));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, detail, username, host);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersSearchByUsernameAndHostRequestImplCopyWith<
-          _$UsersSearchByUsernameAndHostRequestImpl>
-      get copyWith => __$$UsersSearchByUsernameAndHostRequestImplCopyWithImpl<
-          _$UsersSearchByUsernameAndHostRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersSearchByUsernameAndHostRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail, username: $username, host: $host)';
   }
 }
 
-abstract class _UsersSearchByUsernameAndHostRequest
-    implements UsersSearchByUsernameAndHostRequest {
-  const factory _UsersSearchByUsernameAndHostRequest(
-      {final int? limit,
-      final bool? detail,
-      final String? username,
-      final String? host}) = _$UsersSearchByUsernameAndHostRequestImpl;
-
-  factory _UsersSearchByUsernameAndHostRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$UsersSearchByUsernameAndHostRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersSearchByUsernameAndHostRequestCopyWith<$Res>
+    implements $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
+  factory _$UsersSearchByUsernameAndHostRequestCopyWith(
+          _UsersSearchByUsernameAndHostRequest value,
+          $Res Function(_UsersSearchByUsernameAndHostRequest) _then) =
+      __$UsersSearchByUsernameAndHostRequestCopyWithImpl;
   @override
-  int? get limit;
-  @override
-  bool? get detail;
-  @override
-  String? get username;
-  @override
-  String? get host;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersSearchByUsernameAndHostRequestImplCopyWith<
-          _$UsersSearchByUsernameAndHostRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int? limit, bool? detail, String? username, String? host});
 }
+
+/// @nodoc
+class __$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
+    implements _$UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
+  __$UsersSearchByUsernameAndHostRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersSearchByUsernameAndHostRequest _self;
+  final $Res Function(_UsersSearchByUsernameAndHostRequest) _then;
+
+  /// Create a copy of UsersSearchByUsernameAndHostRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? detail = freezed,
+    Object? username = freezed,
+    Object? host = freezed,
+  }) {
+    return _then(_UsersSearchByUsernameAndHostRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      detail: freezed == detail
+          ? _self.detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on
