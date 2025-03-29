@@ -49,6 +49,11 @@ void main() async {
         );
       });
     });
+
+    test("exception", () async {
+      final future = userClient.notes.create(NotesCreateRequest());
+      await expectLater(future, throwsA(isA<MisskeyException>()));
+    });
   });
 
   test(
