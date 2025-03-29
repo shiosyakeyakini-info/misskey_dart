@@ -6,8 +6,8 @@ part of 'meta_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MetaResponse _$MetaResponseFromJson(Map<String, dynamic> json) =>
-    _MetaResponse(
+_$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
+    _$MetaResponseImpl(
       maintainerName: json['maintainerName'] as String?,
       maintainerEmail: json['maintainerEmail'] as String?,
       version: json['version'] as String,
@@ -60,11 +60,11 @@ _MetaResponse _$MetaResponseFromJson(Map<String, dynamic> json) =>
           json['impressumUrl'], const NullableUriConverter().fromJson),
       privacyPolicyUrl: _$JsonConverterFromJson<String, Uri?>(
           json['privacyPolicyUrl'], const NullableUriConverter().fromJson),
-      maxNoteTextLength: (json['maxNoteTextLength'] as num).toInt(),
+      maxNoteTextLength: json['maxNoteTextLength'] as int,
       ads: (json['ads'] as List<dynamic>)
           .map((e) => MetaAd.fromJson(e as Map<String, dynamic>))
           .toList(),
-      notesPerOneAd: (json['notesPerOneAd'] as num?)?.toInt(),
+      notesPerOneAd: json['notesPerOneAd'] as int?,
       serverRules: (json['serverRules'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -85,7 +85,7 @@ _MetaResponse _$MetaResponseFromJson(Map<String, dynamic> json) =>
           : MetaFeature.fromJson(json['features'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MetaResponseToJson(_MetaResponse instance) =>
+Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
     <String, dynamic>{
       'maintainerName': instance.maintainerName,
       'maintainerEmail': instance.maintainerEmail,
@@ -158,15 +158,16 @@ Value? _$JsonConverterFromJson<Json, Value>(
 ) =>
     json == null ? null : fromJson(json as Json);
 
-_MetaAd _$MetaAdFromJson(Map<String, dynamic> json) => _MetaAd(
+_$MetaAdImpl _$$MetaAdImplFromJson(Map<String, dynamic> json) => _$MetaAdImpl(
       id: json['id'] as String,
       place: json['place'] as String,
       url: const UriConverter().fromJson(json['url'] as String),
       imageUrl: const UriConverter().fromJson(json['imageUrl'] as String),
-      ratio: (json['ratio'] as num).toInt(),
+      ratio: json['ratio'] as int,
     );
 
-Map<String, dynamic> _$MetaAdToJson(_MetaAd instance) => <String, dynamic>{
+Map<String, dynamic> _$$MetaAdImplToJson(_$MetaAdImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'place': instance.place,
       'url': const UriConverter().toJson(instance.url),
@@ -174,7 +175,8 @@ Map<String, dynamic> _$MetaAdToJson(_MetaAd instance) => <String, dynamic>{
       'ratio': instance.ratio,
     };
 
-_MetaFeature _$MetaFeatureFromJson(Map<String, dynamic> json) => _MetaFeature(
+_$MetaFeatureImpl _$$MetaFeatureImplFromJson(Map<String, dynamic> json) =>
+    _$MetaFeatureImpl(
       registration: json['registration'] as bool,
       emailRequiredForSignup: json['emailRequiredForSignup'] as bool,
       hcaptcha: json['hcaptcha'] as bool,
@@ -185,7 +187,7 @@ _MetaFeature _$MetaFeatureFromJson(Map<String, dynamic> json) => _MetaFeature(
       miauth: json['miauth'] as bool,
     );
 
-Map<String, dynamic> _$MetaFeatureToJson(_MetaFeature instance) =>
+Map<String, dynamic> _$$MetaFeatureImplToJson(_$MetaFeatureImpl instance) =>
     <String, dynamic>{
       'registration': instance.registration,
       'emailRequiredForSignup': instance.emailRequiredForSignup,

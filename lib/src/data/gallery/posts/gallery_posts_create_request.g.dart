@@ -6,9 +6,9 @@ part of 'gallery_posts_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GalleryPostsCreateRequest _$GalleryPostsCreateRequestFromJson(
+_$GalleryPostsCreateRequestImpl _$$GalleryPostsCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _GalleryPostsCreateRequest(
+    _$GalleryPostsCreateRequestImpl(
       title: json['title'] as String,
       description: json['description'] as String?,
       fileIds:
@@ -16,8 +16,8 @@ _GalleryPostsCreateRequest _$GalleryPostsCreateRequestFromJson(
       isSensitive: json['isSensitive'] as bool?,
     );
 
-Map<String, dynamic> _$GalleryPostsCreateRequestToJson(
-        _GalleryPostsCreateRequest instance) =>
+Map<String, dynamic> _$$GalleryPostsCreateRequestImplToJson(
+        _$GalleryPostsCreateRequestImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'description': instance.description,

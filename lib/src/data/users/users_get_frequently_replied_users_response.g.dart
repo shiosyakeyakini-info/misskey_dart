@@ -6,16 +6,16 @@ part of 'users_get_frequently_replied_users_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersGetFrequentlyRepliedUsersResponse
-    _$UsersGetFrequentlyRepliedUsersResponseFromJson(
+_$UsersGetFrequentlyRepliedUsersResponseImpl
+    _$$UsersGetFrequentlyRepliedUsersResponseImplFromJson(
             Map<String, dynamic> json) =>
-        _UsersGetFrequentlyRepliedUsersResponse(
+        _$UsersGetFrequentlyRepliedUsersResponseImpl(
           user: User.fromJson(json['user'] as Map<String, dynamic>),
           weight: (json['weight'] as num).toDouble(),
         );
 
-Map<String, dynamic> _$UsersGetFrequentlyRepliedUsersResponseToJson(
-        _UsersGetFrequentlyRepliedUsersResponse instance) =>
+Map<String, dynamic> _$$UsersGetFrequentlyRepliedUsersResponseImplToJson(
+        _$UsersGetFrequentlyRepliedUsersResponseImpl instance) =>
     <String, dynamic>{
       'user': instance.user.toJson(),
       'weight': instance.weight,

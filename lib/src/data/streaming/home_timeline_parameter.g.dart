@@ -6,15 +6,15 @@ part of 'home_timeline_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HomeTimelineParameter _$HomeTimelineParameterFromJson(
+_$HomeTimelineParameterImpl _$$HomeTimelineParameterImplFromJson(
         Map<String, dynamic> json) =>
-    _HomeTimelineParameter(
+    _$HomeTimelineParameterImpl(
       withRenotes: json['withRenotes'] as bool?,
       withFiles: json['withFiles'] as bool?,
     );
 
-Map<String, dynamic> _$HomeTimelineParameterToJson(
-        _HomeTimelineParameter instance) =>
+Map<String, dynamic> _$$HomeTimelineParameterImplToJson(
+        _$HomeTimelineParameterImpl instance) =>
     <String, dynamic>{
       'withRenotes': instance.withRenotes,
       'withFiles': instance.withFiles,

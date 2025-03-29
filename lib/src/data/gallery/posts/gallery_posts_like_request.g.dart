@@ -6,14 +6,14 @@ part of 'gallery_posts_like_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GalleryPostsLikeRequest _$GalleryPostsLikeRequestFromJson(
+_$GalleryPostsLikeRequestImpl _$$GalleryPostsLikeRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _GalleryPostsLikeRequest(
+    _$GalleryPostsLikeRequestImpl(
       postId: json['postId'] as String,
     );
 
-Map<String, dynamic> _$GalleryPostsLikeRequestToJson(
-        _GalleryPostsLikeRequest instance) =>
+Map<String, dynamic> _$$GalleryPostsLikeRequestImplToJson(
+        _$GalleryPostsLikeRequestImpl instance) =>
     <String, dynamic>{
       'postId': instance.postId,
     };

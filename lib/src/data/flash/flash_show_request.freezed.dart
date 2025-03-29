@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,69 +9,85 @@ part of 'flash_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$FlashShowRequest {
-  String get flashId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of FlashShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $FlashShowRequestCopyWith<FlashShowRequest> get copyWith =>
-      _$FlashShowRequestCopyWithImpl<FlashShowRequest>(
-          this as FlashShowRequest, _$identity);
-
-  /// Serializes this FlashShowRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is FlashShowRequest &&
-            (identical(other.flashId, flashId) || other.flashId == flashId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, flashId);
-
-  @override
-  String toString() {
-    return 'FlashShowRequest(flashId: $flashId)';
-  }
+FlashShowRequest _$FlashShowRequestFromJson(Map<String, dynamic> json) {
+  return _FlashShowRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $FlashShowRequestCopyWith<$Res> {
+mixin _$FlashShowRequest {
+  String get flashId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlashShowRequestCopyWith<FlashShowRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FlashShowRequestCopyWith<$Res> {
   factory $FlashShowRequestCopyWith(
-          FlashShowRequest value, $Res Function(FlashShowRequest) _then) =
-      _$FlashShowRequestCopyWithImpl;
+          FlashShowRequest value, $Res Function(FlashShowRequest) then) =
+      _$FlashShowRequestCopyWithImpl<$Res, FlashShowRequest>;
   @useResult
   $Res call({String flashId});
 }
 
 /// @nodoc
-class _$FlashShowRequestCopyWithImpl<$Res>
+class _$FlashShowRequestCopyWithImpl<$Res, $Val extends FlashShowRequest>
     implements $FlashShowRequestCopyWith<$Res> {
-  _$FlashShowRequestCopyWithImpl(this._self, this._then);
+  _$FlashShowRequestCopyWithImpl(this._value, this._then);
 
-  final FlashShowRequest _self;
-  final $Res Function(FlashShowRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of FlashShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? flashId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       flashId: null == flashId
-          ? _self.flashId
+          ? _value.flashId
+          : flashId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FlashShowRequestImplCopyWith<$Res>
+    implements $FlashShowRequestCopyWith<$Res> {
+  factory _$$FlashShowRequestImplCopyWith(_$FlashShowRequestImpl value,
+          $Res Function(_$FlashShowRequestImpl) then) =
+      __$$FlashShowRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String flashId});
+}
+
+/// @nodoc
+class __$$FlashShowRequestImplCopyWithImpl<$Res>
+    extends _$FlashShowRequestCopyWithImpl<$Res, _$FlashShowRequestImpl>
+    implements _$$FlashShowRequestImplCopyWith<$Res> {
+  __$$FlashShowRequestImplCopyWithImpl(_$FlashShowRequestImpl _value,
+      $Res Function(_$FlashShowRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? flashId = null,
+  }) {
+    return _then(_$FlashShowRequestImpl(
+      flashId: null == flashId
+          ? _value.flashId
           : flashId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -81,80 +96,58 @@ class _$FlashShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _FlashShowRequest implements FlashShowRequest {
-  const _FlashShowRequest({required this.flashId});
-  factory _FlashShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$FlashShowRequestFromJson(json);
+class _$FlashShowRequestImpl implements _FlashShowRequest {
+  const _$FlashShowRequestImpl({required this.flashId});
+
+  factory _$FlashShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlashShowRequestImplFromJson(json);
 
   @override
   final String flashId;
 
-  /// Create a copy of FlashShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$FlashShowRequestCopyWith<_FlashShowRequest> get copyWith =>
-      __$FlashShowRequestCopyWithImpl<_FlashShowRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$FlashShowRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'FlashShowRequest(flashId: $flashId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FlashShowRequest &&
+            other is _$FlashShowRequestImpl &&
             (identical(other.flashId, flashId) || other.flashId == flashId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, flashId);
 
-  @override
-  String toString() {
-    return 'FlashShowRequest(flashId: $flashId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$FlashShowRequestCopyWith<$Res>
-    implements $FlashShowRequestCopyWith<$Res> {
-  factory _$FlashShowRequestCopyWith(
-          _FlashShowRequest value, $Res Function(_FlashShowRequest) _then) =
-      __$FlashShowRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String flashId});
-}
-
-/// @nodoc
-class __$FlashShowRequestCopyWithImpl<$Res>
-    implements _$FlashShowRequestCopyWith<$Res> {
-  __$FlashShowRequestCopyWithImpl(this._self, this._then);
-
-  final _FlashShowRequest _self;
-  final $Res Function(_FlashShowRequest) _then;
-
-  /// Create a copy of FlashShowRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? flashId = null,
-  }) {
-    return _then(_FlashShowRequest(
-      flashId: null == flashId
-          ? _self.flashId
-          : flashId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$FlashShowRequestImplCopyWith<_$FlashShowRequestImpl> get copyWith =>
+      __$$FlashShowRequestImplCopyWithImpl<_$FlashShowRequestImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FlashShowRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _FlashShowRequest implements FlashShowRequest {
+  const factory _FlashShowRequest({required final String flashId}) =
+      _$FlashShowRequestImpl;
+
+  factory _FlashShowRequest.fromJson(Map<String, dynamic> json) =
+      _$FlashShowRequestImpl.fromJson;
+
+  @override
+  String get flashId;
+  @override
+  @JsonKey(ignore: true)
+  _$$FlashShowRequestImplCopyWith<_$FlashShowRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -6,17 +6,17 @@ part of 'notes_featured_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesFeaturedRequest _$NotesFeaturedRequestFromJson(
+_$NotesFeaturedRequestImpl _$$NotesFeaturedRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _NotesFeaturedRequest(
-      limit: (json['limit'] as num?)?.toInt(),
-      offset: (json['offset'] as num?)?.toInt(),
+    _$NotesFeaturedRequestImpl(
+      limit: json['limit'] as int?,
+      offset: json['offset'] as int?,
       untilId: json['untilId'] as String?,
       channelId: json['channelId'] as String?,
     );
 
-Map<String, dynamic> _$NotesFeaturedRequestToJson(
-        _NotesFeaturedRequest instance) =>
+Map<String, dynamic> _$$NotesFeaturedRequestImplToJson(
+        _$NotesFeaturedRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,

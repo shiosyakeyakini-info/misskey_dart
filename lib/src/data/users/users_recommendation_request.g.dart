@@ -6,15 +6,15 @@ part of 'users_recommendation_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersRecommendationRequest _$UsersRecommendationRequestFromJson(
+_$UsersRecommendationRequestImpl _$$UsersRecommendationRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _UsersRecommendationRequest(
-      limit: (json['limit'] as num?)?.toInt(),
-      offset: (json['offset'] as num?)?.toInt(),
+    _$UsersRecommendationRequestImpl(
+      limit: json['limit'] as int?,
+      offset: json['offset'] as int?,
     );
 
-Map<String, dynamic> _$UsersRecommendationRequestToJson(
-        _UsersRecommendationRequest instance) =>
+Map<String, dynamic> _$$UsersRecommendationRequestImplToJson(
+        _$UsersRecommendationRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,

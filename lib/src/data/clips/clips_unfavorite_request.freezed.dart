@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,69 +9,90 @@ part of 'clips_unfavorite_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$ClipsUnfavoriteRequest {
-  String get clipId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of ClipsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ClipsUnfavoriteRequestCopyWith<ClipsUnfavoriteRequest> get copyWith =>
-      _$ClipsUnfavoriteRequestCopyWithImpl<ClipsUnfavoriteRequest>(
-          this as ClipsUnfavoriteRequest, _$identity);
-
-  /// Serializes this ClipsUnfavoriteRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ClipsUnfavoriteRequest &&
-            (identical(other.clipId, clipId) || other.clipId == clipId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, clipId);
-
-  @override
-  String toString() {
-    return 'ClipsUnfavoriteRequest(clipId: $clipId)';
-  }
+ClipsUnfavoriteRequest _$ClipsUnfavoriteRequestFromJson(
+    Map<String, dynamic> json) {
+  return _ClipsUnfavoriteRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $ClipsUnfavoriteRequestCopyWith<$Res> {
+mixin _$ClipsUnfavoriteRequest {
+  String get clipId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ClipsUnfavoriteRequestCopyWith<ClipsUnfavoriteRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ClipsUnfavoriteRequestCopyWith<$Res> {
   factory $ClipsUnfavoriteRequestCopyWith(ClipsUnfavoriteRequest value,
-          $Res Function(ClipsUnfavoriteRequest) _then) =
-      _$ClipsUnfavoriteRequestCopyWithImpl;
+          $Res Function(ClipsUnfavoriteRequest) then) =
+      _$ClipsUnfavoriteRequestCopyWithImpl<$Res, ClipsUnfavoriteRequest>;
   @useResult
   $Res call({String clipId});
 }
 
 /// @nodoc
-class _$ClipsUnfavoriteRequestCopyWithImpl<$Res>
+class _$ClipsUnfavoriteRequestCopyWithImpl<$Res,
+        $Val extends ClipsUnfavoriteRequest>
     implements $ClipsUnfavoriteRequestCopyWith<$Res> {
-  _$ClipsUnfavoriteRequestCopyWithImpl(this._self, this._then);
+  _$ClipsUnfavoriteRequestCopyWithImpl(this._value, this._then);
 
-  final ClipsUnfavoriteRequest _self;
-  final $Res Function(ClipsUnfavoriteRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of ClipsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? clipId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       clipId: null == clipId
-          ? _self.clipId
+          ? _value.clipId
+          : clipId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ClipsUnfavoriteRequestImplCopyWith<$Res>
+    implements $ClipsUnfavoriteRequestCopyWith<$Res> {
+  factory _$$ClipsUnfavoriteRequestImplCopyWith(
+          _$ClipsUnfavoriteRequestImpl value,
+          $Res Function(_$ClipsUnfavoriteRequestImpl) then) =
+      __$$ClipsUnfavoriteRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String clipId});
+}
+
+/// @nodoc
+class __$$ClipsUnfavoriteRequestImplCopyWithImpl<$Res>
+    extends _$ClipsUnfavoriteRequestCopyWithImpl<$Res,
+        _$ClipsUnfavoriteRequestImpl>
+    implements _$$ClipsUnfavoriteRequestImplCopyWith<$Res> {
+  __$$ClipsUnfavoriteRequestImplCopyWithImpl(
+      _$ClipsUnfavoriteRequestImpl _value,
+      $Res Function(_$ClipsUnfavoriteRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? clipId = null,
+  }) {
+    return _then(_$ClipsUnfavoriteRequestImpl(
+      clipId: null == clipId
+          ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -81,81 +101,58 @@ class _$ClipsUnfavoriteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ClipsUnfavoriteRequest implements ClipsUnfavoriteRequest {
-  const _ClipsUnfavoriteRequest({required this.clipId});
-  factory _ClipsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
-      _$ClipsUnfavoriteRequestFromJson(json);
+class _$ClipsUnfavoriteRequestImpl implements _ClipsUnfavoriteRequest {
+  const _$ClipsUnfavoriteRequestImpl({required this.clipId});
+
+  factory _$ClipsUnfavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsUnfavoriteRequestImplFromJson(json);
 
   @override
   final String clipId;
 
-  /// Create a copy of ClipsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ClipsUnfavoriteRequestCopyWith<_ClipsUnfavoriteRequest> get copyWith =>
-      __$ClipsUnfavoriteRequestCopyWithImpl<_ClipsUnfavoriteRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ClipsUnfavoriteRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'ClipsUnfavoriteRequest(clipId: $clipId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ClipsUnfavoriteRequest &&
+            other is _$ClipsUnfavoriteRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, clipId);
 
-  @override
-  String toString() {
-    return 'ClipsUnfavoriteRequest(clipId: $clipId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ClipsUnfavoriteRequestCopyWith<$Res>
-    implements $ClipsUnfavoriteRequestCopyWith<$Res> {
-  factory _$ClipsUnfavoriteRequestCopyWith(_ClipsUnfavoriteRequest value,
-          $Res Function(_ClipsUnfavoriteRequest) _then) =
-      __$ClipsUnfavoriteRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String clipId});
-}
-
-/// @nodoc
-class __$ClipsUnfavoriteRequestCopyWithImpl<$Res>
-    implements _$ClipsUnfavoriteRequestCopyWith<$Res> {
-  __$ClipsUnfavoriteRequestCopyWithImpl(this._self, this._then);
-
-  final _ClipsUnfavoriteRequest _self;
-  final $Res Function(_ClipsUnfavoriteRequest) _then;
-
-  /// Create a copy of ClipsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? clipId = null,
-  }) {
-    return _then(_ClipsUnfavoriteRequest(
-      clipId: null == clipId
-          ? _self.clipId
-          : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$ClipsUnfavoriteRequestImplCopyWith<_$ClipsUnfavoriteRequestImpl>
+      get copyWith => __$$ClipsUnfavoriteRequestImplCopyWithImpl<
+          _$ClipsUnfavoriteRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ClipsUnfavoriteRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _ClipsUnfavoriteRequest implements ClipsUnfavoriteRequest {
+  const factory _ClipsUnfavoriteRequest({required final String clipId}) =
+      _$ClipsUnfavoriteRequestImpl;
+
+  factory _ClipsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =
+      _$ClipsUnfavoriteRequestImpl.fromJson;
+
+  @override
+  String get clipId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ClipsUnfavoriteRequestImplCopyWith<_$ClipsUnfavoriteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

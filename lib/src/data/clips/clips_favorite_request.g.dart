@@ -6,14 +6,14 @@ part of 'clips_favorite_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ClipsFavoriteRequest _$ClipsFavoriteRequestFromJson(
+_$ClipsFavoriteRequestImpl _$$ClipsFavoriteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _ClipsFavoriteRequest(
+    _$ClipsFavoriteRequestImpl(
       clipId: json['clipId'] as String,
     );
 
-Map<String, dynamic> _$ClipsFavoriteRequestToJson(
-        _ClipsFavoriteRequest instance) =>
+Map<String, dynamic> _$$ClipsFavoriteRequestImplToJson(
+        _$ClipsFavoriteRequestImpl instance) =>
     <String, dynamic>{
       'clipId': instance.clipId,
     };

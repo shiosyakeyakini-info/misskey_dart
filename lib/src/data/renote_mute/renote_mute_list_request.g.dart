@@ -6,16 +6,16 @@ part of 'renote_mute_list_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RenoteMuteListRequest _$RenoteMuteListRequestFromJson(
+_$RenoteMuteListRequestImpl _$$RenoteMuteListRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _RenoteMuteListRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _$RenoteMuteListRequestImpl(
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$RenoteMuteListRequestToJson(
-        _RenoteMuteListRequest instance) =>
+Map<String, dynamic> _$$RenoteMuteListRequestImplToJson(
+        _$RenoteMuteListRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

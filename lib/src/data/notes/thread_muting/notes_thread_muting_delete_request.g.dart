@@ -6,14 +6,14 @@ part of 'notes_thread_muting_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesThreadMutingDeleteRequest _$NotesThreadMutingDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _NotesThreadMutingDeleteRequest(
-      noteId: json['noteId'] as String,
-    );
+_$NotesThreadMutingDeleteRequestImpl
+    _$$NotesThreadMutingDeleteRequestImplFromJson(Map<String, dynamic> json) =>
+        _$NotesThreadMutingDeleteRequestImpl(
+          noteId: json['noteId'] as String,
+        );
 
-Map<String, dynamic> _$NotesThreadMutingDeleteRequestToJson(
-        _NotesThreadMutingDeleteRequest instance) =>
+Map<String, dynamic> _$$NotesThreadMutingDeleteRequestImplToJson(
+        _$NotesThreadMutingDeleteRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

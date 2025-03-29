@@ -6,11 +6,11 @@ part of 'antennas_notes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AntennasNotesRequest _$AntennasNotesRequestFromJson(
+_$AntennasNotesRequestImpl _$$AntennasNotesRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _AntennasNotesRequest(
+    _$AntennasNotesRequestImpl(
       antennaId: json['antennaId'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<String, DateTime>(
@@ -19,8 +19,8 @@ _AntennasNotesRequest _$AntennasNotesRequestFromJson(
           json['untilDate'], const DateTimeConverter().fromJson),
     );
 
-Map<String, dynamic> _$AntennasNotesRequestToJson(
-        _AntennasNotesRequest instance) =>
+Map<String, dynamic> _$$AntennasNotesRequestImplToJson(
+        _$AntennasNotesRequestImpl instance) =>
     <String, dynamic>{
       'antennaId': instance.antennaId,
       'limit': instance.limit,

@@ -6,8 +6,9 @@ part of 'community_channel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
-    _CommunityChannel(
+_$CommunityChannelImpl _$$CommunityChannelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CommunityChannelImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -22,8 +23,8 @@ _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
       pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      usersCount: (json['usersCount'] as num).toInt(),
-      notesCount: (json['notesCount'] as num).toInt(),
+      usersCount: json['usersCount'] as int,
+      notesCount: json['notesCount'] as int,
       isSensitive: json['isSensitive'] as bool? ?? false,
       isArchived: json['isArchived'] as bool? ?? false,
       color: const NullableColorConverter().fromJson(json['color'] as String?),
@@ -36,7 +37,8 @@ _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
       allowRenoteToExternal: json['allowRenoteToExternal'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$CommunityChannelToJson(_CommunityChannel instance) =>
+Map<String, dynamic> _$$CommunityChannelImplToJson(
+        _$CommunityChannelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

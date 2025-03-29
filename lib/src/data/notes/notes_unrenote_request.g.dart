@@ -6,14 +6,14 @@ part of 'notes_unrenote_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesUnrenoteRequest _$NotesUnrenoteRequestFromJson(
+_$NotesUnrenoteRequestImpl _$$NotesUnrenoteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _NotesUnrenoteRequest(
+    _$NotesUnrenoteRequestImpl(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$NotesUnrenoteRequestToJson(
-        _NotesUnrenoteRequest instance) =>
+Map<String, dynamic> _$$NotesUnrenoteRequestImplToJson(
+        _$NotesUnrenoteRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

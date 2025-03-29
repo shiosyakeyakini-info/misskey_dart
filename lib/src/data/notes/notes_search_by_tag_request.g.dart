@@ -6,9 +6,9 @@ part of 'notes_search_by_tag_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesSearchByTagRequest _$NotesSearchByTagRequestFromJson(
+_$NotesSearchByTagRequestImpl _$$NotesSearchByTagRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _NotesSearchByTagRequest(
+    _$NotesSearchByTagRequestImpl(
       tag: json['tag'] as String,
       reply: json['reply'] as bool?,
       renote: json['renote'] as bool?,
@@ -16,11 +16,11 @@ _NotesSearchByTagRequest _$NotesSearchByTagRequestFromJson(
       poll: json['poll'] as bool?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
     );
 
-Map<String, dynamic> _$NotesSearchByTagRequestToJson(
-        _NotesSearchByTagRequest instance) =>
+Map<String, dynamic> _$$NotesSearchByTagRequestImplToJson(
+        _$NotesSearchByTagRequestImpl instance) =>
     <String, dynamic>{
       'tag': instance.tag,
       'reply': instance.reply,

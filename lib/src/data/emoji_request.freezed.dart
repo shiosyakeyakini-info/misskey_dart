@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,68 +9,85 @@ part of 'emoji_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$EmojiRequest {
-  String get name;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of EmojiRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $EmojiRequestCopyWith<EmojiRequest> get copyWith =>
-      _$EmojiRequestCopyWithImpl<EmojiRequest>(
-          this as EmojiRequest, _$identity);
-
-  /// Serializes this EmojiRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is EmojiRequest &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name);
-
-  @override
-  String toString() {
-    return 'EmojiRequest(name: $name)';
-  }
+EmojiRequest _$EmojiRequestFromJson(Map<String, dynamic> json) {
+  return _EmojiRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $EmojiRequestCopyWith<$Res> {
+mixin _$EmojiRequest {
+  String get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmojiRequestCopyWith<EmojiRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EmojiRequestCopyWith<$Res> {
   factory $EmojiRequestCopyWith(
-          EmojiRequest value, $Res Function(EmojiRequest) _then) =
-      _$EmojiRequestCopyWithImpl;
+          EmojiRequest value, $Res Function(EmojiRequest) then) =
+      _$EmojiRequestCopyWithImpl<$Res, EmojiRequest>;
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class _$EmojiRequestCopyWithImpl<$Res> implements $EmojiRequestCopyWith<$Res> {
-  _$EmojiRequestCopyWithImpl(this._self, this._then);
+class _$EmojiRequestCopyWithImpl<$Res, $Val extends EmojiRequest>
+    implements $EmojiRequestCopyWith<$Res> {
+  _$EmojiRequestCopyWithImpl(this._value, this._then);
 
-  final EmojiRequest _self;
-  final $Res Function(EmojiRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of EmojiRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? name = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       name: null == name
-          ? _self.name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$EmojiRequestImplCopyWith<$Res>
+    implements $EmojiRequestCopyWith<$Res> {
+  factory _$$EmojiRequestImplCopyWith(
+          _$EmojiRequestImpl value, $Res Function(_$EmojiRequestImpl) then) =
+      __$$EmojiRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$EmojiRequestImplCopyWithImpl<$Res>
+    extends _$EmojiRequestCopyWithImpl<$Res, _$EmojiRequestImpl>
+    implements _$$EmojiRequestImplCopyWith<$Res> {
+  __$$EmojiRequestImplCopyWithImpl(
+      _$EmojiRequestImpl _value, $Res Function(_$EmojiRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$EmojiRequestImpl(
+      name: null == name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -80,80 +96,57 @@ class _$EmojiRequestCopyWithImpl<$Res> implements $EmojiRequestCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _EmojiRequest implements EmojiRequest {
-  const _EmojiRequest({required this.name});
-  factory _EmojiRequest.fromJson(Map<String, dynamic> json) =>
-      _$EmojiRequestFromJson(json);
+class _$EmojiRequestImpl implements _EmojiRequest {
+  const _$EmojiRequestImpl({required this.name});
+
+  factory _$EmojiRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmojiRequestImplFromJson(json);
 
   @override
   final String name;
 
-  /// Create a copy of EmojiRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$EmojiRequestCopyWith<_EmojiRequest> get copyWith =>
-      __$EmojiRequestCopyWithImpl<_EmojiRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$EmojiRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'EmojiRequest(name: $name)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmojiRequest &&
+            other is _$EmojiRequestImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name);
 
-  @override
-  String toString() {
-    return 'EmojiRequest(name: $name)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$EmojiRequestCopyWith<$Res>
-    implements $EmojiRequestCopyWith<$Res> {
-  factory _$EmojiRequestCopyWith(
-          _EmojiRequest value, $Res Function(_EmojiRequest) _then) =
-      __$EmojiRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String name});
-}
-
-/// @nodoc
-class __$EmojiRequestCopyWithImpl<$Res>
-    implements _$EmojiRequestCopyWith<$Res> {
-  __$EmojiRequestCopyWithImpl(this._self, this._then);
-
-  final _EmojiRequest _self;
-  final $Res Function(_EmojiRequest) _then;
-
-  /// Create a copy of EmojiRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_EmojiRequest(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$EmojiRequestImplCopyWith<_$EmojiRequestImpl> get copyWith =>
+      __$$EmojiRequestImplCopyWithImpl<_$EmojiRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$EmojiRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _EmojiRequest implements EmojiRequest {
+  const factory _EmojiRequest({required final String name}) =
+      _$EmojiRequestImpl;
+
+  factory _EmojiRequest.fromJson(Map<String, dynamic> json) =
+      _$EmojiRequestImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$EmojiRequestImplCopyWith<_$EmojiRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

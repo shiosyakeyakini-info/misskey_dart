@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,67 +9,85 @@ part of 'i_pin_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$IPinRequest {
-  String get noteId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of IPinRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IPinRequestCopyWith<IPinRequest> get copyWith =>
-      _$IPinRequestCopyWithImpl<IPinRequest>(this as IPinRequest, _$identity);
-
-  /// Serializes this IPinRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IPinRequest &&
-            (identical(other.noteId, noteId) || other.noteId == noteId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, noteId);
-
-  @override
-  String toString() {
-    return 'IPinRequest(noteId: $noteId)';
-  }
+IPinRequest _$IPinRequestFromJson(Map<String, dynamic> json) {
+  return _IPinRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $IPinRequestCopyWith<$Res> {
+mixin _$IPinRequest {
+  String get noteId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IPinRequestCopyWith<IPinRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IPinRequestCopyWith<$Res> {
   factory $IPinRequestCopyWith(
-          IPinRequest value, $Res Function(IPinRequest) _then) =
-      _$IPinRequestCopyWithImpl;
+          IPinRequest value, $Res Function(IPinRequest) then) =
+      _$IPinRequestCopyWithImpl<$Res, IPinRequest>;
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class _$IPinRequestCopyWithImpl<$Res> implements $IPinRequestCopyWith<$Res> {
-  _$IPinRequestCopyWithImpl(this._self, this._then);
+class _$IPinRequestCopyWithImpl<$Res, $Val extends IPinRequest>
+    implements $IPinRequestCopyWith<$Res> {
+  _$IPinRequestCopyWithImpl(this._value, this._then);
 
-  final IPinRequest _self;
-  final $Res Function(IPinRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of IPinRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       noteId: null == noteId
-          ? _self.noteId
+          ? _value.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$IPinRequestImplCopyWith<$Res>
+    implements $IPinRequestCopyWith<$Res> {
+  factory _$$IPinRequestImplCopyWith(
+          _$IPinRequestImpl value, $Res Function(_$IPinRequestImpl) then) =
+      __$$IPinRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String noteId});
+}
+
+/// @nodoc
+class __$$IPinRequestImplCopyWithImpl<$Res>
+    extends _$IPinRequestCopyWithImpl<$Res, _$IPinRequestImpl>
+    implements _$$IPinRequestImplCopyWith<$Res> {
+  __$$IPinRequestImplCopyWithImpl(
+      _$IPinRequestImpl _value, $Res Function(_$IPinRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? noteId = null,
+  }) {
+    return _then(_$IPinRequestImpl(
+      noteId: null == noteId
+          ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -79,79 +96,57 @@ class _$IPinRequestCopyWithImpl<$Res> implements $IPinRequestCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _IPinRequest implements IPinRequest {
-  const _IPinRequest({required this.noteId});
-  factory _IPinRequest.fromJson(Map<String, dynamic> json) =>
-      _$IPinRequestFromJson(json);
+class _$IPinRequestImpl implements _IPinRequest {
+  const _$IPinRequestImpl({required this.noteId});
+
+  factory _$IPinRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IPinRequestImplFromJson(json);
 
   @override
   final String noteId;
 
-  /// Create a copy of IPinRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IPinRequestCopyWith<_IPinRequest> get copyWith =>
-      __$IPinRequestCopyWithImpl<_IPinRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IPinRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'IPinRequest(noteId: $noteId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IPinRequest &&
+            other is _$IPinRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, noteId);
 
-  @override
-  String toString() {
-    return 'IPinRequest(noteId: $noteId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IPinRequestCopyWith<$Res>
-    implements $IPinRequestCopyWith<$Res> {
-  factory _$IPinRequestCopyWith(
-          _IPinRequest value, $Res Function(_IPinRequest) _then) =
-      __$IPinRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String noteId});
-}
-
-/// @nodoc
-class __$IPinRequestCopyWithImpl<$Res> implements _$IPinRequestCopyWith<$Res> {
-  __$IPinRequestCopyWithImpl(this._self, this._then);
-
-  final _IPinRequest _self;
-  final $Res Function(_IPinRequest) _then;
-
-  /// Create a copy of IPinRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? noteId = null,
-  }) {
-    return _then(_IPinRequest(
-      noteId: null == noteId
-          ? _self.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$IPinRequestImplCopyWith<_$IPinRequestImpl> get copyWith =>
+      __$$IPinRequestImplCopyWithImpl<_$IPinRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$IPinRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _IPinRequest implements IPinRequest {
+  const factory _IPinRequest({required final String noteId}) =
+      _$IPinRequestImpl;
+
+  factory _IPinRequest.fromJson(Map<String, dynamic> json) =
+      _$IPinRequestImpl.fromJson;
+
+  @override
+  String get noteId;
+  @override
+  @JsonKey(ignore: true)
+  _$$IPinRequestImplCopyWith<_$IPinRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

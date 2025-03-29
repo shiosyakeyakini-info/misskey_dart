@@ -6,14 +6,14 @@ part of 'reversi_show_game_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReversiShowGameRequest _$ReversiShowGameRequestFromJson(
+_$ReversiShowGameRequestImpl _$$ReversiShowGameRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _ReversiShowGameRequest(
+    _$ReversiShowGameRequestImpl(
       gameId: json['gameId'] as String,
     );
 
-Map<String, dynamic> _$ReversiShowGameRequestToJson(
-        _ReversiShowGameRequest instance) =>
+Map<String, dynamic> _$$ReversiShowGameRequestImplToJson(
+        _$ReversiShowGameRequestImpl instance) =>
     <String, dynamic>{
       'gameId': instance.gameId,
     };

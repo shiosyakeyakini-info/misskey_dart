@@ -6,13 +6,15 @@ part of 'roles_users_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RolesUsersResponse _$RolesUsersResponseFromJson(Map<String, dynamic> json) =>
-    _RolesUsersResponse(
+_$RolesUsersResponseImpl _$$RolesUsersResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RolesUsersResponseImpl(
       id: json['id'] as String,
       user: UserDetailed.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$RolesUsersResponseToJson(_RolesUsersResponse instance) =>
+Map<String, dynamic> _$$RolesUsersResponseImplToJson(
+        _$RolesUsersResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'user': instance.user.toJson(),

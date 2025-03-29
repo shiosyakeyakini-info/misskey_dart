@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,70 +9,86 @@ part of 'ap_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+ApShowRequest _$ApShowRequestFromJson(Map<String, dynamic> json) {
+  return _ApShowRequest.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ApShowRequest {
   @UriConverter()
-  Uri get uri;
+  Uri get uri => throw _privateConstructorUsedError;
 
-  /// Create a copy of ApShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ApShowRequestCopyWith<ApShowRequest> get copyWith =>
-      _$ApShowRequestCopyWithImpl<ApShowRequest>(
-          this as ApShowRequest, _$identity);
-
-  /// Serializes this ApShowRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ApShowRequest &&
-            (identical(other.uri, uri) || other.uri == uri));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, uri);
-
-  @override
-  String toString() {
-    return 'ApShowRequest(uri: $uri)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ApShowRequestCopyWith<$Res> {
+abstract class $ApShowRequestCopyWith<$Res> {
   factory $ApShowRequestCopyWith(
-          ApShowRequest value, $Res Function(ApShowRequest) _then) =
-      _$ApShowRequestCopyWithImpl;
+          ApShowRequest value, $Res Function(ApShowRequest) then) =
+      _$ApShowRequestCopyWithImpl<$Res, ApShowRequest>;
   @useResult
   $Res call({@UriConverter() Uri uri});
 }
 
 /// @nodoc
-class _$ApShowRequestCopyWithImpl<$Res>
+class _$ApShowRequestCopyWithImpl<$Res, $Val extends ApShowRequest>
     implements $ApShowRequestCopyWith<$Res> {
-  _$ApShowRequestCopyWithImpl(this._self, this._then);
+  _$ApShowRequestCopyWithImpl(this._value, this._then);
 
-  final ApShowRequest _self;
-  final $Res Function(ApShowRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of ApShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? uri = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       uri: null == uri
-          ? _self.uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as Uri,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ApShowRequestImplCopyWith<$Res>
+    implements $ApShowRequestCopyWith<$Res> {
+  factory _$$ApShowRequestImplCopyWith(
+          _$ApShowRequestImpl value, $Res Function(_$ApShowRequestImpl) then) =
+      __$$ApShowRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@UriConverter() Uri uri});
+}
+
+/// @nodoc
+class __$$ApShowRequestImplCopyWithImpl<$Res>
+    extends _$ApShowRequestCopyWithImpl<$Res, _$ApShowRequestImpl>
+    implements _$$ApShowRequestImplCopyWith<$Res> {
+  __$$ApShowRequestImplCopyWithImpl(
+      _$ApShowRequestImpl _value, $Res Function(_$ApShowRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uri = null,
+  }) {
+    return _then(_$ApShowRequestImpl(
+      uri: null == uri
+          ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as Uri,
     ));
@@ -82,81 +97,59 @@ class _$ApShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ApShowRequest implements ApShowRequest {
-  const _ApShowRequest({@UriConverter() required this.uri});
-  factory _ApShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$ApShowRequestFromJson(json);
+class _$ApShowRequestImpl implements _ApShowRequest {
+  const _$ApShowRequestImpl({@UriConverter() required this.uri});
+
+  factory _$ApShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApShowRequestImplFromJson(json);
 
   @override
   @UriConverter()
   final Uri uri;
 
-  /// Create a copy of ApShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ApShowRequestCopyWith<_ApShowRequest> get copyWith =>
-      __$ApShowRequestCopyWithImpl<_ApShowRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ApShowRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'ApShowRequest(uri: $uri)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ApShowRequest &&
+            other is _$ApShowRequestImpl &&
             (identical(other.uri, uri) || other.uri == uri));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, uri);
 
-  @override
-  String toString() {
-    return 'ApShowRequest(uri: $uri)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ApShowRequestCopyWith<$Res>
-    implements $ApShowRequestCopyWith<$Res> {
-  factory _$ApShowRequestCopyWith(
-          _ApShowRequest value, $Res Function(_ApShowRequest) _then) =
-      __$ApShowRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({@UriConverter() Uri uri});
-}
-
-/// @nodoc
-class __$ApShowRequestCopyWithImpl<$Res>
-    implements _$ApShowRequestCopyWith<$Res> {
-  __$ApShowRequestCopyWithImpl(this._self, this._then);
-
-  final _ApShowRequest _self;
-  final $Res Function(_ApShowRequest) _then;
-
-  /// Create a copy of ApShowRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? uri = null,
-  }) {
-    return _then(_ApShowRequest(
-      uri: null == uri
-          ? _self.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as Uri,
-    ));
+  _$$ApShowRequestImplCopyWith<_$ApShowRequestImpl> get copyWith =>
+      __$$ApShowRequestImplCopyWithImpl<_$ApShowRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ApShowRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _ApShowRequest implements ApShowRequest {
+  const factory _ApShowRequest({@UriConverter() required final Uri uri}) =
+      _$ApShowRequestImpl;
+
+  factory _ApShowRequest.fromJson(Map<String, dynamic> json) =
+      _$ApShowRequestImpl.fromJson;
+
+  @override
+  @UriConverter()
+  Uri get uri;
+  @override
+  @JsonKey(ignore: true)
+  _$$ApShowRequestImplCopyWith<_$ApShowRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -6,19 +6,19 @@ part of 'notes_mentions_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesMentionsRequest _$NotesMentionsRequestFromJson(
+_$NotesMentionsRequestImpl _$$NotesMentionsRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _NotesMentionsRequest(
+    _$NotesMentionsRequestImpl(
       following: json['following'] as bool?,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       visibility:
           $enumDecodeNullable(_$NoteVisibilityEnumMap, json['visibility']),
     );
 
-Map<String, dynamic> _$NotesMentionsRequestToJson(
-        _NotesMentionsRequest instance) =>
+Map<String, dynamic> _$$NotesMentionsRequestImplToJson(
+        _$NotesMentionsRequestImpl instance) =>
     <String, dynamic>{
       'following': instance.following,
       'limit': instance.limit,

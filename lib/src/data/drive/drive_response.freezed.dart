@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,77 +9,96 @@ part of 'drive_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$DriveResponse {
-  int get capacity;
-  int get usage;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of DriveResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $DriveResponseCopyWith<DriveResponse> get copyWith =>
-      _$DriveResponseCopyWithImpl<DriveResponse>(
-          this as DriveResponse, _$identity);
-
-  /// Serializes this DriveResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is DriveResponse &&
-            (identical(other.capacity, capacity) ||
-                other.capacity == capacity) &&
-            (identical(other.usage, usage) || other.usage == usage));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, capacity, usage);
-
-  @override
-  String toString() {
-    return 'DriveResponse(capacity: $capacity, usage: $usage)';
-  }
+DriveResponse _$DriveResponseFromJson(Map<String, dynamic> json) {
+  return _DriveResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $DriveResponseCopyWith<$Res> {
+mixin _$DriveResponse {
+  int get capacity => throw _privateConstructorUsedError;
+  int get usage => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DriveResponseCopyWith<DriveResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DriveResponseCopyWith<$Res> {
   factory $DriveResponseCopyWith(
-          DriveResponse value, $Res Function(DriveResponse) _then) =
-      _$DriveResponseCopyWithImpl;
+          DriveResponse value, $Res Function(DriveResponse) then) =
+      _$DriveResponseCopyWithImpl<$Res, DriveResponse>;
   @useResult
   $Res call({int capacity, int usage});
 }
 
 /// @nodoc
-class _$DriveResponseCopyWithImpl<$Res>
+class _$DriveResponseCopyWithImpl<$Res, $Val extends DriveResponse>
     implements $DriveResponseCopyWith<$Res> {
-  _$DriveResponseCopyWithImpl(this._self, this._then);
+  _$DriveResponseCopyWithImpl(this._value, this._then);
 
-  final DriveResponse _self;
-  final $Res Function(DriveResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of DriveResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? capacity = null,
     Object? usage = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       capacity: null == capacity
-          ? _self.capacity
+          ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
               as int,
       usage: null == usage
-          ? _self.usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DriveResponseImplCopyWith<$Res>
+    implements $DriveResponseCopyWith<$Res> {
+  factory _$$DriveResponseImplCopyWith(
+          _$DriveResponseImpl value, $Res Function(_$DriveResponseImpl) then) =
+      __$$DriveResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int capacity, int usage});
+}
+
+/// @nodoc
+class __$$DriveResponseImplCopyWithImpl<$Res>
+    extends _$DriveResponseCopyWithImpl<$Res, _$DriveResponseImpl>
+    implements _$$DriveResponseImplCopyWith<$Res> {
+  __$$DriveResponseImplCopyWithImpl(
+      _$DriveResponseImpl _value, $Res Function(_$DriveResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? capacity = null,
+    Object? usage = null,
+  }) {
+    return _then(_$DriveResponseImpl(
+      capacity: null == capacity
+          ? _value.capacity
+          : capacity // ignore: cast_nullable_to_non_nullable
+              as int,
+      usage: null == usage
+          ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -89,89 +107,64 @@ class _$DriveResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _DriveResponse implements DriveResponse {
-  const _DriveResponse({required this.capacity, required this.usage});
-  factory _DriveResponse.fromJson(Map<String, dynamic> json) =>
-      _$DriveResponseFromJson(json);
+class _$DriveResponseImpl implements _DriveResponse {
+  const _$DriveResponseImpl({required this.capacity, required this.usage});
+
+  factory _$DriveResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveResponseImplFromJson(json);
 
   @override
   final int capacity;
   @override
   final int usage;
 
-  /// Create a copy of DriveResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$DriveResponseCopyWith<_DriveResponse> get copyWith =>
-      __$DriveResponseCopyWithImpl<_DriveResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$DriveResponseToJson(
-      this,
-    );
+  String toString() {
+    return 'DriveResponse(capacity: $capacity, usage: $usage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DriveResponse &&
+            other is _$DriveResponseImpl &&
             (identical(other.capacity, capacity) ||
                 other.capacity == capacity) &&
             (identical(other.usage, usage) || other.usage == usage));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, capacity, usage);
 
-  @override
-  String toString() {
-    return 'DriveResponse(capacity: $capacity, usage: $usage)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$DriveResponseCopyWith<$Res>
-    implements $DriveResponseCopyWith<$Res> {
-  factory _$DriveResponseCopyWith(
-          _DriveResponse value, $Res Function(_DriveResponse) _then) =
-      __$DriveResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call({int capacity, int usage});
-}
-
-/// @nodoc
-class __$DriveResponseCopyWithImpl<$Res>
-    implements _$DriveResponseCopyWith<$Res> {
-  __$DriveResponseCopyWithImpl(this._self, this._then);
-
-  final _DriveResponse _self;
-  final $Res Function(_DriveResponse) _then;
-
-  /// Create a copy of DriveResponse
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? capacity = null,
-    Object? usage = null,
-  }) {
-    return _then(_DriveResponse(
-      capacity: null == capacity
-          ? _self.capacity
-          : capacity // ignore: cast_nullable_to_non_nullable
-              as int,
-      usage: null == usage
-          ? _self.usage
-          : usage // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  _$$DriveResponseImplCopyWith<_$DriveResponseImpl> get copyWith =>
+      __$$DriveResponseImplCopyWithImpl<_$DriveResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DriveResponseImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _DriveResponse implements DriveResponse {
+  const factory _DriveResponse(
+      {required final int capacity,
+      required final int usage}) = _$DriveResponseImpl;
+
+  factory _DriveResponse.fromJson(Map<String, dynamic> json) =
+      _$DriveResponseImpl.fromJson;
+
+  @override
+  int get capacity;
+  @override
+  int get usage;
+  @override
+  @JsonKey(ignore: true)
+  _$$DriveResponseImplCopyWith<_$DriveResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

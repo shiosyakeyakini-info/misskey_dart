@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,57 +9,36 @@ part of 'users_reactions_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$UsersReactionsResponse {
-  String get id;
-  @DateTimeConverter()
-  DateTime get createdAt;
-  UserLite get user;
-  String get type;
-  Note get note;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $UsersReactionsResponseCopyWith<UsersReactionsResponse> get copyWith =>
-      _$UsersReactionsResponseCopyWithImpl<UsersReactionsResponse>(
-          this as UsersReactionsResponse, _$identity);
-
-  /// Serializes this UsersReactionsResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UsersReactionsResponse &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.note, note) || other.note == note));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, user, type, note);
-
-  @override
-  String toString() {
-    return 'UsersReactionsResponse(id: $id, createdAt: $createdAt, user: $user, type: $type, note: $note)';
-  }
+UsersReactionsResponse _$UsersReactionsResponseFromJson(
+    Map<String, dynamic> json) {
+  return _UsersReactionsResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $UsersReactionsResponseCopyWith<$Res> {
+mixin _$UsersReactionsResponse {
+  String get id => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  Note get note => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsersReactionsResponseCopyWith<UsersReactionsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsersReactionsResponseCopyWith<$Res> {
   factory $UsersReactionsResponseCopyWith(UsersReactionsResponse value,
-          $Res Function(UsersReactionsResponse) _then) =
-      _$UsersReactionsResponseCopyWithImpl;
+          $Res Function(UsersReactionsResponse) then) =
+      _$UsersReactionsResponseCopyWithImpl<$Res, UsersReactionsResponse>;
   @useResult
   $Res call(
       {String id,
@@ -74,15 +52,16 @@ abstract mixin class $UsersReactionsResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UsersReactionsResponseCopyWithImpl<$Res>
+class _$UsersReactionsResponseCopyWithImpl<$Res,
+        $Val extends UsersReactionsResponse>
     implements $UsersReactionsResponseCopyWith<$Res> {
-  _$UsersReactionsResponseCopyWithImpl(this._self, this._then);
+  _$UsersReactionsResponseCopyWithImpl(this._value, this._then);
 
-  final UsersReactionsResponse _self;
-  final $Res Function(UsersReactionsResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,62 +71,125 @@ class _$UsersReactionsResponseCopyWithImpl<$Res>
     Object? type = null,
     Object? note = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       user: null == user
-          ? _self.user
+          ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserLite,
       type: null == type
-          ? _self.type
+          ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       note: null == note
-          ? _self.note
+          ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note,
-    ));
+    ) as $Val);
   }
 
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_self.note, (value) {
-      return _then(_self.copyWith(note: value));
+    return $NoteCopyWith<$Res>(_value.note, (value) {
+      return _then(_value.copyWith(note: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$UsersReactionsResponseImplCopyWith<$Res>
+    implements $UsersReactionsResponseCopyWith<$Res> {
+  factory _$$UsersReactionsResponseImplCopyWith(
+          _$UsersReactionsResponseImpl value,
+          $Res Function(_$UsersReactionsResponseImpl) then) =
+      __$$UsersReactionsResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      UserLite user,
+      String type,
+      Note note});
+
+  @override
+  $UserLiteCopyWith<$Res> get user;
+  @override
+  $NoteCopyWith<$Res> get note;
+}
+
+/// @nodoc
+class __$$UsersReactionsResponseImplCopyWithImpl<$Res>
+    extends _$UsersReactionsResponseCopyWithImpl<$Res,
+        _$UsersReactionsResponseImpl>
+    implements _$$UsersReactionsResponseImplCopyWith<$Res> {
+  __$$UsersReactionsResponseImplCopyWithImpl(
+      _$UsersReactionsResponseImpl _value,
+      $Res Function(_$UsersReactionsResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? user = null,
+    Object? type = null,
+    Object? note = null,
+  }) {
+    return _then(_$UsersReactionsResponseImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _UsersReactionsResponse implements UsersReactionsResponse {
-  const _UsersReactionsResponse(
+class _$UsersReactionsResponseImpl implements _UsersReactionsResponse {
+  const _$UsersReactionsResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.user,
       required this.type,
       required this.note});
-  factory _UsersReactionsResponse.fromJson(Map<String, dynamic> json) =>
-      _$UsersReactionsResponseFromJson(json);
+
+  factory _$UsersReactionsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersReactionsResponseImplFromJson(json);
 
   @override
   final String id;
@@ -161,27 +203,16 @@ class _UsersReactionsResponse implements UsersReactionsResponse {
   @override
   final Note note;
 
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$UsersReactionsResponseCopyWith<_UsersReactionsResponse> get copyWith =>
-      __$UsersReactionsResponseCopyWithImpl<_UsersReactionsResponse>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$UsersReactionsResponseToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersReactionsResponse(id: $id, createdAt: $createdAt, user: $user, type: $type, note: $note)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersReactionsResponse &&
+            other is _$UsersReactionsResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -190,99 +221,49 @@ class _UsersReactionsResponse implements UsersReactionsResponse {
             (identical(other.note, note) || other.note == note));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, user, type, note);
 
+  @JsonKey(ignore: true)
   @override
-  String toString() {
-    return 'UsersReactionsResponse(id: $id, createdAt: $createdAt, user: $user, type: $type, note: $note)';
+  @pragma('vm:prefer-inline')
+  _$$UsersReactionsResponseImplCopyWith<_$UsersReactionsResponseImpl>
+      get copyWith => __$$UsersReactionsResponseImplCopyWithImpl<
+          _$UsersReactionsResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UsersReactionsResponseImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$UsersReactionsResponseCopyWith<$Res>
-    implements $UsersReactionsResponseCopyWith<$Res> {
-  factory _$UsersReactionsResponseCopyWith(_UsersReactionsResponse value,
-          $Res Function(_UsersReactionsResponse) _then) =
-      __$UsersReactionsResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      UserLite user,
-      String type,
-      Note note});
+abstract class _UsersReactionsResponse implements UsersReactionsResponse {
+  const factory _UsersReactionsResponse(
+      {required final String id,
+      @DateTimeConverter() required final DateTime createdAt,
+      required final UserLite user,
+      required final String type,
+      required final Note note}) = _$UsersReactionsResponseImpl;
+
+  factory _UsersReactionsResponse.fromJson(Map<String, dynamic> json) =
+      _$UsersReactionsResponseImpl.fromJson;
 
   @override
-  $UserLiteCopyWith<$Res> get user;
+  String get id;
   @override
-  $NoteCopyWith<$Res> get note;
+  @DateTimeConverter()
+  DateTime get createdAt;
+  @override
+  UserLite get user;
+  @override
+  String get type;
+  @override
+  Note get note;
+  @override
+  @JsonKey(ignore: true)
+  _$$UsersReactionsResponseImplCopyWith<_$UsersReactionsResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class __$UsersReactionsResponseCopyWithImpl<$Res>
-    implements _$UsersReactionsResponseCopyWith<$Res> {
-  __$UsersReactionsResponseCopyWithImpl(this._self, this._then);
-
-  final _UsersReactionsResponse _self;
-  final $Res Function(_UsersReactionsResponse) _then;
-
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? user = null,
-    Object? type = null,
-    Object? note = null,
-  }) {
-    return _then(_UsersReactionsResponse(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      user: null == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      note: null == note
-          ? _self.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
-    ));
-  }
-
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
-
-  /// Create a copy of UsersReactionsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_self.note, (value) {
-      return _then(_self.copyWith(note: value));
-    });
-  }
-}
-
-// dart format on

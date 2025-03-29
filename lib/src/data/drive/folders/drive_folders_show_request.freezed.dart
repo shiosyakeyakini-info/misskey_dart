@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,70 +9,90 @@ part of 'drive_folders_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$DriveFoldersShowRequest {
-  String get folderId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of DriveFoldersShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $DriveFoldersShowRequestCopyWith<DriveFoldersShowRequest> get copyWith =>
-      _$DriveFoldersShowRequestCopyWithImpl<DriveFoldersShowRequest>(
-          this as DriveFoldersShowRequest, _$identity);
-
-  /// Serializes this DriveFoldersShowRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is DriveFoldersShowRequest &&
-            (identical(other.folderId, folderId) ||
-                other.folderId == folderId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, folderId);
-
-  @override
-  String toString() {
-    return 'DriveFoldersShowRequest(folderId: $folderId)';
-  }
+DriveFoldersShowRequest _$DriveFoldersShowRequestFromJson(
+    Map<String, dynamic> json) {
+  return _DriveFoldersShowRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $DriveFoldersShowRequestCopyWith<$Res> {
+mixin _$DriveFoldersShowRequest {
+  String get folderId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DriveFoldersShowRequestCopyWith<DriveFoldersShowRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DriveFoldersShowRequestCopyWith<$Res> {
   factory $DriveFoldersShowRequestCopyWith(DriveFoldersShowRequest value,
-          $Res Function(DriveFoldersShowRequest) _then) =
-      _$DriveFoldersShowRequestCopyWithImpl;
+          $Res Function(DriveFoldersShowRequest) then) =
+      _$DriveFoldersShowRequestCopyWithImpl<$Res, DriveFoldersShowRequest>;
   @useResult
   $Res call({String folderId});
 }
 
 /// @nodoc
-class _$DriveFoldersShowRequestCopyWithImpl<$Res>
+class _$DriveFoldersShowRequestCopyWithImpl<$Res,
+        $Val extends DriveFoldersShowRequest>
     implements $DriveFoldersShowRequestCopyWith<$Res> {
-  _$DriveFoldersShowRequestCopyWithImpl(this._self, this._then);
+  _$DriveFoldersShowRequestCopyWithImpl(this._value, this._then);
 
-  final DriveFoldersShowRequest _self;
-  final $Res Function(DriveFoldersShowRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of DriveFoldersShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? folderId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       folderId: null == folderId
-          ? _self.folderId
+          ? _value.folderId
+          : folderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DriveFoldersShowRequestImplCopyWith<$Res>
+    implements $DriveFoldersShowRequestCopyWith<$Res> {
+  factory _$$DriveFoldersShowRequestImplCopyWith(
+          _$DriveFoldersShowRequestImpl value,
+          $Res Function(_$DriveFoldersShowRequestImpl) then) =
+      __$$DriveFoldersShowRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String folderId});
+}
+
+/// @nodoc
+class __$$DriveFoldersShowRequestImplCopyWithImpl<$Res>
+    extends _$DriveFoldersShowRequestCopyWithImpl<$Res,
+        _$DriveFoldersShowRequestImpl>
+    implements _$$DriveFoldersShowRequestImplCopyWith<$Res> {
+  __$$DriveFoldersShowRequestImplCopyWithImpl(
+      _$DriveFoldersShowRequestImpl _value,
+      $Res Function(_$DriveFoldersShowRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? folderId = null,
+  }) {
+    return _then(_$DriveFoldersShowRequestImpl(
+      folderId: null == folderId
+          ? _value.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -82,82 +101,59 @@ class _$DriveFoldersShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _DriveFoldersShowRequest implements DriveFoldersShowRequest {
-  const _DriveFoldersShowRequest({required this.folderId});
-  factory _DriveFoldersShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$DriveFoldersShowRequestFromJson(json);
+class _$DriveFoldersShowRequestImpl implements _DriveFoldersShowRequest {
+  const _$DriveFoldersShowRequestImpl({required this.folderId});
+
+  factory _$DriveFoldersShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriveFoldersShowRequestImplFromJson(json);
 
   @override
   final String folderId;
 
-  /// Create a copy of DriveFoldersShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$DriveFoldersShowRequestCopyWith<_DriveFoldersShowRequest> get copyWith =>
-      __$DriveFoldersShowRequestCopyWithImpl<_DriveFoldersShowRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$DriveFoldersShowRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'DriveFoldersShowRequest(folderId: $folderId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DriveFoldersShowRequest &&
+            other is _$DriveFoldersShowRequestImpl &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, folderId);
 
-  @override
-  String toString() {
-    return 'DriveFoldersShowRequest(folderId: $folderId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$DriveFoldersShowRequestCopyWith<$Res>
-    implements $DriveFoldersShowRequestCopyWith<$Res> {
-  factory _$DriveFoldersShowRequestCopyWith(_DriveFoldersShowRequest value,
-          $Res Function(_DriveFoldersShowRequest) _then) =
-      __$DriveFoldersShowRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String folderId});
-}
-
-/// @nodoc
-class __$DriveFoldersShowRequestCopyWithImpl<$Res>
-    implements _$DriveFoldersShowRequestCopyWith<$Res> {
-  __$DriveFoldersShowRequestCopyWithImpl(this._self, this._then);
-
-  final _DriveFoldersShowRequest _self;
-  final $Res Function(_DriveFoldersShowRequest) _then;
-
-  /// Create a copy of DriveFoldersShowRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? folderId = null,
-  }) {
-    return _then(_DriveFoldersShowRequest(
-      folderId: null == folderId
-          ? _self.folderId
-          : folderId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$DriveFoldersShowRequestImplCopyWith<_$DriveFoldersShowRequestImpl>
+      get copyWith => __$$DriveFoldersShowRequestImplCopyWithImpl<
+          _$DriveFoldersShowRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DriveFoldersShowRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _DriveFoldersShowRequest implements DriveFoldersShowRequest {
+  const factory _DriveFoldersShowRequest({required final String folderId}) =
+      _$DriveFoldersShowRequestImpl;
+
+  factory _DriveFoldersShowRequest.fromJson(Map<String, dynamic> json) =
+      _$DriveFoldersShowRequestImpl.fromJson;
+
+  @override
+  String get folderId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DriveFoldersShowRequestImplCopyWith<_$DriveFoldersShowRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,8 +9,11 @@ part of 'i_notifications_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 INotificationsRequest _$INotificationsRequestFromJson(
     Map<String, dynamic> json) {
   return _INotificationRequest.fromJson(json);
@@ -20,70 +22,28 @@ INotificationsRequest _$INotificationsRequestFromJson(
 /// @nodoc
 mixin _$INotificationsRequest {
   @Assert('limit > 0')
-  int? get limit;
-  String? get sinceId;
-  String? get untilId;
-  bool? get following;
-  bool? get unreadOnly;
-  bool? get markAsRead;
-  List<NotificationType>? get includeTypes;
-  List<NotificationType>? get excludeTypes;
+  int? get limit => throw _privateConstructorUsedError;
+  String? get sinceId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
+  bool? get following => throw _privateConstructorUsedError;
+  bool? get unreadOnly => throw _privateConstructorUsedError;
+  bool? get markAsRead => throw _privateConstructorUsedError;
+  List<NotificationType>? get includeTypes =>
+      throw _privateConstructorUsedError;
+  List<NotificationType>? get excludeTypes =>
+      throw _privateConstructorUsedError;
 
-  /// Create a copy of INotificationsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $INotificationsRequestCopyWith<INotificationsRequest> get copyWith =>
-      _$INotificationsRequestCopyWithImpl<INotificationsRequest>(
-          this as INotificationsRequest, _$identity);
-
-  /// Serializes this INotificationsRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is INotificationsRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.following, following) ||
-                other.following == following) &&
-            (identical(other.unreadOnly, unreadOnly) ||
-                other.unreadOnly == unreadOnly) &&
-            (identical(other.markAsRead, markAsRead) ||
-                other.markAsRead == markAsRead) &&
-            const DeepCollectionEquality()
-                .equals(other.includeTypes, includeTypes) &&
-            const DeepCollectionEquality()
-                .equals(other.excludeTypes, excludeTypes));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      limit,
-      sinceId,
-      untilId,
-      following,
-      unreadOnly,
-      markAsRead,
-      const DeepCollectionEquality().hash(includeTypes),
-      const DeepCollectionEquality().hash(excludeTypes));
-
-  @override
-  String toString() {
-    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, following: $following, unreadOnly: $unreadOnly, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $INotificationsRequestCopyWith<$Res> {
+abstract class $INotificationsRequestCopyWith<$Res> {
   factory $INotificationsRequestCopyWith(INotificationsRequest value,
-          $Res Function(INotificationsRequest) _then) =
-      _$INotificationsRequestCopyWithImpl;
+          $Res Function(INotificationsRequest) then) =
+      _$INotificationsRequestCopyWithImpl<$Res, INotificationsRequest>;
   @useResult
   $Res call(
       {@Assert('limit > 0') int? limit,
@@ -97,15 +57,16 @@ abstract mixin class $INotificationsRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$INotificationsRequestCopyWithImpl<$Res>
+class _$INotificationsRequestCopyWithImpl<$Res,
+        $Val extends INotificationsRequest>
     implements $INotificationsRequestCopyWith<$Res> {
-  _$INotificationsRequestCopyWithImpl(this._self, this._then);
+  _$INotificationsRequestCopyWithImpl(this._value, this._then);
 
-  final INotificationsRequest _self;
-  final $Res Function(INotificationsRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of INotificationsRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,37 +79,114 @@ class _$INotificationsRequestCopyWithImpl<$Res>
     Object? includeTypes = freezed,
     Object? excludeTypes = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       limit: freezed == limit
-          ? _self.limit
+          ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _self.sinceId
+          ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _self.untilId
+          ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       following: freezed == following
-          ? _self.following
+          ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
               as bool?,
       unreadOnly: freezed == unreadOnly
-          ? _self.unreadOnly
+          ? _value.unreadOnly
           : unreadOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
       markAsRead: freezed == markAsRead
-          ? _self.markAsRead
+          ? _value.markAsRead
           : markAsRead // ignore: cast_nullable_to_non_nullable
               as bool?,
       includeTypes: freezed == includeTypes
-          ? _self.includeTypes
+          ? _value.includeTypes
           : includeTypes // ignore: cast_nullable_to_non_nullable
               as List<NotificationType>?,
       excludeTypes: freezed == excludeTypes
-          ? _self.excludeTypes
+          ? _value.excludeTypes
+          : excludeTypes // ignore: cast_nullable_to_non_nullable
+              as List<NotificationType>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$INotificationRequestImplCopyWith<$Res>
+    implements $INotificationsRequestCopyWith<$Res> {
+  factory _$$INotificationRequestImplCopyWith(_$INotificationRequestImpl value,
+          $Res Function(_$INotificationRequestImpl) then) =
+      __$$INotificationRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@Assert('limit > 0') int? limit,
+      String? sinceId,
+      String? untilId,
+      bool? following,
+      bool? unreadOnly,
+      bool? markAsRead,
+      List<NotificationType>? includeTypes,
+      List<NotificationType>? excludeTypes});
+}
+
+/// @nodoc
+class __$$INotificationRequestImplCopyWithImpl<$Res>
+    extends _$INotificationsRequestCopyWithImpl<$Res,
+        _$INotificationRequestImpl>
+    implements _$$INotificationRequestImplCopyWith<$Res> {
+  __$$INotificationRequestImplCopyWithImpl(_$INotificationRequestImpl _value,
+      $Res Function(_$INotificationRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+    Object? following = freezed,
+    Object? unreadOnly = freezed,
+    Object? markAsRead = freezed,
+    Object? includeTypes = freezed,
+    Object? excludeTypes = freezed,
+  }) {
+    return _then(_$INotificationRequestImpl(
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _value.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      following: freezed == following
+          ? _value.following
+          : following // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      unreadOnly: freezed == unreadOnly
+          ? _value.unreadOnly
+          : unreadOnly // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      markAsRead: freezed == markAsRead
+          ? _value.markAsRead
+          : markAsRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      includeTypes: freezed == includeTypes
+          ? _value._includeTypes
+          : includeTypes // ignore: cast_nullable_to_non_nullable
+              as List<NotificationType>?,
+      excludeTypes: freezed == excludeTypes
+          ? _value._excludeTypes
           : excludeTypes // ignore: cast_nullable_to_non_nullable
               as List<NotificationType>?,
     ));
@@ -157,8 +195,8 @@ class _$INotificationsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _INotificationRequest implements INotificationsRequest {
-  const _INotificationRequest(
+class _$INotificationRequestImpl implements _INotificationRequest {
+  const _$INotificationRequestImpl(
       {@Assert('limit > 0') this.limit,
       this.sinceId,
       this.untilId,
@@ -169,8 +207,9 @@ class _INotificationRequest implements INotificationsRequest {
       final List<NotificationType>? excludeTypes})
       : _includeTypes = includeTypes,
         _excludeTypes = excludeTypes;
-  factory _INotificationRequest.fromJson(Map<String, dynamic> json) =>
-      _$INotificationRequestFromJson(json);
+
+  factory _$INotificationRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$INotificationRequestImplFromJson(json);
 
   @override
   @Assert('limit > 0')
@@ -205,27 +244,16 @@ class _INotificationRequest implements INotificationsRequest {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of INotificationsRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$INotificationRequestCopyWith<_INotificationRequest> get copyWith =>
-      __$INotificationRequestCopyWithImpl<_INotificationRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$INotificationRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, following: $following, unreadOnly: $unreadOnly, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _INotificationRequest &&
+            other is _$INotificationRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -241,7 +269,7 @@ class _INotificationRequest implements INotificationsRequest {
                 .equals(other._excludeTypes, _excludeTypes));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -254,88 +282,55 @@ class _INotificationRequest implements INotificationsRequest {
       const DeepCollectionEquality().hash(_includeTypes),
       const DeepCollectionEquality().hash(_excludeTypes));
 
-  @override
-  String toString() {
-    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, following: $following, unreadOnly: $unreadOnly, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$INotificationRequestCopyWith<$Res>
-    implements $INotificationsRequestCopyWith<$Res> {
-  factory _$INotificationRequestCopyWith(_INotificationRequest value,
-          $Res Function(_INotificationRequest) _then) =
-      __$INotificationRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@Assert('limit > 0') int? limit,
-      String? sinceId,
-      String? untilId,
-      bool? following,
-      bool? unreadOnly,
-      bool? markAsRead,
-      List<NotificationType>? includeTypes,
-      List<NotificationType>? excludeTypes});
-}
-
-/// @nodoc
-class __$INotificationRequestCopyWithImpl<$Res>
-    implements _$INotificationRequestCopyWith<$Res> {
-  __$INotificationRequestCopyWithImpl(this._self, this._then);
-
-  final _INotificationRequest _self;
-  final $Res Function(_INotificationRequest) _then;
-
-  /// Create a copy of INotificationsRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? following = freezed,
-    Object? unreadOnly = freezed,
-    Object? markAsRead = freezed,
-    Object? includeTypes = freezed,
-    Object? excludeTypes = freezed,
-  }) {
-    return _then(_INotificationRequest(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      following: freezed == following
-          ? _self.following
-          : following // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      unreadOnly: freezed == unreadOnly
-          ? _self.unreadOnly
-          : unreadOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      markAsRead: freezed == markAsRead
-          ? _self.markAsRead
-          : markAsRead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      includeTypes: freezed == includeTypes
-          ? _self._includeTypes
-          : includeTypes // ignore: cast_nullable_to_non_nullable
-              as List<NotificationType>?,
-      excludeTypes: freezed == excludeTypes
-          ? _self._excludeTypes
-          : excludeTypes // ignore: cast_nullable_to_non_nullable
-              as List<NotificationType>?,
-    ));
+  _$$INotificationRequestImplCopyWith<_$INotificationRequestImpl>
+      get copyWith =>
+          __$$INotificationRequestImplCopyWithImpl<_$INotificationRequestImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$INotificationRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _INotificationRequest implements INotificationsRequest {
+  const factory _INotificationRequest(
+      {@Assert('limit > 0') final int? limit,
+      final String? sinceId,
+      final String? untilId,
+      final bool? following,
+      final bool? unreadOnly,
+      final bool? markAsRead,
+      final List<NotificationType>? includeTypes,
+      final List<NotificationType>? excludeTypes}) = _$INotificationRequestImpl;
+
+  factory _INotificationRequest.fromJson(Map<String, dynamic> json) =
+      _$INotificationRequestImpl.fromJson;
+
+  @override
+  @Assert('limit > 0')
+  int? get limit;
+  @override
+  String? get sinceId;
+  @override
+  String? get untilId;
+  @override
+  bool? get following;
+  @override
+  bool? get unreadOnly;
+  @override
+  bool? get markAsRead;
+  @override
+  List<NotificationType>? get includeTypes;
+  @override
+  List<NotificationType>? get excludeTypes;
+  @override
+  @JsonKey(ignore: true)
+  _$$INotificationRequestImplCopyWith<_$INotificationRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

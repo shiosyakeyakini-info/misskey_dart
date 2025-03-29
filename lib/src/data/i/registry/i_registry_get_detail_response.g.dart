@@ -6,15 +6,15 @@ part of 'i_registry_get_detail_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IRegistryGetDetailResponse _$IRegistryGetDetailResponseFromJson(
+_$IRegistryGetDetailResponseImpl _$$IRegistryGetDetailResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _IRegistryGetDetailResponse(
+    _$IRegistryGetDetailResponseImpl(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       value: json['value'],
     );
 
-Map<String, dynamic> _$IRegistryGetDetailResponseToJson(
-        _IRegistryGetDetailResponse instance) =>
+Map<String, dynamic> _$$IRegistryGetDetailResponseImplToJson(
+        _$IRegistryGetDetailResponseImpl instance) =>
     <String, dynamic>{
       'updatedAt': instance.updatedAt.toIso8601String(),
       'value': instance.value,

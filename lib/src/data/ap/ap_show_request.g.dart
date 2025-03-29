@@ -6,12 +6,12 @@ part of 'ap_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ApShowRequest _$ApShowRequestFromJson(Map<String, dynamic> json) =>
-    _ApShowRequest(
+_$ApShowRequestImpl _$$ApShowRequestImplFromJson(Map<String, dynamic> json) =>
+    _$ApShowRequestImpl(
       uri: const UriConverter().fromJson(json['uri'] as String),
     );
 
-Map<String, dynamic> _$ApShowRequestToJson(_ApShowRequest instance) =>
+Map<String, dynamic> _$$ApShowRequestImplToJson(_$ApShowRequestImpl instance) =>
     <String, dynamic>{
       'uri': const UriConverter().toJson(instance.uri),
     };

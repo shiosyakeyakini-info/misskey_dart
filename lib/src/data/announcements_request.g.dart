@@ -6,19 +6,19 @@ part of 'announcements_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AnnouncementsRequest _$AnnouncementsRequestFromJson(
+_$AnnouncementsRequestImpl _$$AnnouncementsRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _AnnouncementsRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _$AnnouncementsRequestImpl(
+      limit: json['limit'] as int?,
       withUnreads: json['withUnreads'] as bool?,
       isActive: json['isActive'] as bool?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      offset: (json['offset'] as num?)?.toInt(),
+      offset: json['offset'] as int?,
     );
 
-Map<String, dynamic> _$AnnouncementsRequestToJson(
-        _AnnouncementsRequest instance) =>
+Map<String, dynamic> _$$AnnouncementsRequestImplToJson(
+        _$AnnouncementsRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'withUnreads': instance.withUnreads,

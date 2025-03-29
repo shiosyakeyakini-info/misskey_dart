@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,70 +9,90 @@ part of 'channels_unfollow_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$ChannelsUnfollowRequest {
-  String get channelId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of ChannelsUnfollowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChannelsUnfollowRequestCopyWith<ChannelsUnfollowRequest> get copyWith =>
-      _$ChannelsUnfollowRequestCopyWithImpl<ChannelsUnfollowRequest>(
-          this as ChannelsUnfollowRequest, _$identity);
-
-  /// Serializes this ChannelsUnfollowRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChannelsUnfollowRequest &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, channelId);
-
-  @override
-  String toString() {
-    return 'ChannelsUnfollowRequest(channelId: $channelId)';
-  }
+ChannelsUnfollowRequest _$ChannelsUnfollowRequestFromJson(
+    Map<String, dynamic> json) {
+  return _ChannelsUnfollowRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $ChannelsUnfollowRequestCopyWith<$Res> {
+mixin _$ChannelsUnfollowRequest {
+  String get channelId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChannelsUnfollowRequestCopyWith<ChannelsUnfollowRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChannelsUnfollowRequestCopyWith<$Res> {
   factory $ChannelsUnfollowRequestCopyWith(ChannelsUnfollowRequest value,
-          $Res Function(ChannelsUnfollowRequest) _then) =
-      _$ChannelsUnfollowRequestCopyWithImpl;
+          $Res Function(ChannelsUnfollowRequest) then) =
+      _$ChannelsUnfollowRequestCopyWithImpl<$Res, ChannelsUnfollowRequest>;
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class _$ChannelsUnfollowRequestCopyWithImpl<$Res>
+class _$ChannelsUnfollowRequestCopyWithImpl<$Res,
+        $Val extends ChannelsUnfollowRequest>
     implements $ChannelsUnfollowRequestCopyWith<$Res> {
-  _$ChannelsUnfollowRequestCopyWithImpl(this._self, this._then);
+  _$ChannelsUnfollowRequestCopyWithImpl(this._value, this._then);
 
-  final ChannelsUnfollowRequest _self;
-  final $Res Function(ChannelsUnfollowRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of ChannelsUnfollowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       channelId: null == channelId
-          ? _self.channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ChannelsUnfollowRequestImplCopyWith<$Res>
+    implements $ChannelsUnfollowRequestCopyWith<$Res> {
+  factory _$$ChannelsUnfollowRequestImplCopyWith(
+          _$ChannelsUnfollowRequestImpl value,
+          $Res Function(_$ChannelsUnfollowRequestImpl) then) =
+      __$$ChannelsUnfollowRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String channelId});
+}
+
+/// @nodoc
+class __$$ChannelsUnfollowRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsUnfollowRequestCopyWithImpl<$Res,
+        _$ChannelsUnfollowRequestImpl>
+    implements _$$ChannelsUnfollowRequestImplCopyWith<$Res> {
+  __$$ChannelsUnfollowRequestImplCopyWithImpl(
+      _$ChannelsUnfollowRequestImpl _value,
+      $Res Function(_$ChannelsUnfollowRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? channelId = null,
+  }) {
+    return _then(_$ChannelsUnfollowRequestImpl(
+      channelId: null == channelId
+          ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -82,82 +101,59 @@ class _$ChannelsUnfollowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ChannelsUnfollowRequest implements ChannelsUnfollowRequest {
-  const _ChannelsUnfollowRequest({required this.channelId});
-  factory _ChannelsUnfollowRequest.fromJson(Map<String, dynamic> json) =>
-      _$ChannelsUnfollowRequestFromJson(json);
+class _$ChannelsUnfollowRequestImpl implements _ChannelsUnfollowRequest {
+  const _$ChannelsUnfollowRequestImpl({required this.channelId});
+
+  factory _$ChannelsUnfollowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsUnfollowRequestImplFromJson(json);
 
   @override
   final String channelId;
 
-  /// Create a copy of ChannelsUnfollowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChannelsUnfollowRequestCopyWith<_ChannelsUnfollowRequest> get copyWith =>
-      __$ChannelsUnfollowRequestCopyWithImpl<_ChannelsUnfollowRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChannelsUnfollowRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'ChannelsUnfollowRequest(channelId: $channelId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChannelsUnfollowRequest &&
+            other is _$ChannelsUnfollowRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, channelId);
 
-  @override
-  String toString() {
-    return 'ChannelsUnfollowRequest(channelId: $channelId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ChannelsUnfollowRequestCopyWith<$Res>
-    implements $ChannelsUnfollowRequestCopyWith<$Res> {
-  factory _$ChannelsUnfollowRequestCopyWith(_ChannelsUnfollowRequest value,
-          $Res Function(_ChannelsUnfollowRequest) _then) =
-      __$ChannelsUnfollowRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String channelId});
-}
-
-/// @nodoc
-class __$ChannelsUnfollowRequestCopyWithImpl<$Res>
-    implements _$ChannelsUnfollowRequestCopyWith<$Res> {
-  __$ChannelsUnfollowRequestCopyWithImpl(this._self, this._then);
-
-  final _ChannelsUnfollowRequest _self;
-  final $Res Function(_ChannelsUnfollowRequest) _then;
-
-  /// Create a copy of ChannelsUnfollowRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? channelId = null,
-  }) {
-    return _then(_ChannelsUnfollowRequest(
-      channelId: null == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$ChannelsUnfollowRequestImplCopyWith<_$ChannelsUnfollowRequestImpl>
+      get copyWith => __$$ChannelsUnfollowRequestImplCopyWithImpl<
+          _$ChannelsUnfollowRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChannelsUnfollowRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _ChannelsUnfollowRequest implements ChannelsUnfollowRequest {
+  const factory _ChannelsUnfollowRequest({required final String channelId}) =
+      _$ChannelsUnfollowRequestImpl;
+
+  factory _ChannelsUnfollowRequest.fromJson(Map<String, dynamic> json) =
+      _$ChannelsUnfollowRequestImpl.fromJson;
+
+  @override
+  String get channelId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChannelsUnfollowRequestImplCopyWith<_$ChannelsUnfollowRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

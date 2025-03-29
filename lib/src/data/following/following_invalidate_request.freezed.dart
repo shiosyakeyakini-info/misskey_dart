@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,70 +9,91 @@ part of 'following_invalidate_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$FollowingInvalidateRequest {
-  String get userId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of FollowingInvalidateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $FollowingInvalidateRequestCopyWith<FollowingInvalidateRequest>
-      get copyWith =>
-          _$FollowingInvalidateRequestCopyWithImpl<FollowingInvalidateRequest>(
-              this as FollowingInvalidateRequest, _$identity);
-
-  /// Serializes this FollowingInvalidateRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is FollowingInvalidateRequest &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, userId);
-
-  @override
-  String toString() {
-    return 'FollowingInvalidateRequest(userId: $userId)';
-  }
+FollowingInvalidateRequest _$FollowingInvalidateRequestFromJson(
+    Map<String, dynamic> json) {
+  return _FollowingInvalidateRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $FollowingInvalidateRequestCopyWith<$Res> {
+mixin _$FollowingInvalidateRequest {
+  String get userId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FollowingInvalidateRequestCopyWith<FollowingInvalidateRequest>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FollowingInvalidateRequestCopyWith<$Res> {
   factory $FollowingInvalidateRequestCopyWith(FollowingInvalidateRequest value,
-          $Res Function(FollowingInvalidateRequest) _then) =
-      _$FollowingInvalidateRequestCopyWithImpl;
+          $Res Function(FollowingInvalidateRequest) then) =
+      _$FollowingInvalidateRequestCopyWithImpl<$Res,
+          FollowingInvalidateRequest>;
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class _$FollowingInvalidateRequestCopyWithImpl<$Res>
+class _$FollowingInvalidateRequestCopyWithImpl<$Res,
+        $Val extends FollowingInvalidateRequest>
     implements $FollowingInvalidateRequestCopyWith<$Res> {
-  _$FollowingInvalidateRequestCopyWithImpl(this._self, this._then);
+  _$FollowingInvalidateRequestCopyWithImpl(this._value, this._then);
 
-  final FollowingInvalidateRequest _self;
-  final $Res Function(FollowingInvalidateRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of FollowingInvalidateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       userId: null == userId
-          ? _self.userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FollowingInvalidateRequestImplCopyWith<$Res>
+    implements $FollowingInvalidateRequestCopyWith<$Res> {
+  factory _$$FollowingInvalidateRequestImplCopyWith(
+          _$FollowingInvalidateRequestImpl value,
+          $Res Function(_$FollowingInvalidateRequestImpl) then) =
+      __$$FollowingInvalidateRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String userId});
+}
+
+/// @nodoc
+class __$$FollowingInvalidateRequestImplCopyWithImpl<$Res>
+    extends _$FollowingInvalidateRequestCopyWithImpl<$Res,
+        _$FollowingInvalidateRequestImpl>
+    implements _$$FollowingInvalidateRequestImplCopyWith<$Res> {
+  __$$FollowingInvalidateRequestImplCopyWithImpl(
+      _$FollowingInvalidateRequestImpl _value,
+      $Res Function(_$FollowingInvalidateRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$FollowingInvalidateRequestImpl(
+      userId: null == userId
+          ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -82,82 +102,60 @@ class _$FollowingInvalidateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _FollowingInvalidateRequest implements FollowingInvalidateRequest {
-  const _FollowingInvalidateRequest({required this.userId});
-  factory _FollowingInvalidateRequest.fromJson(Map<String, dynamic> json) =>
-      _$FollowingInvalidateRequestFromJson(json);
+class _$FollowingInvalidateRequestImpl implements _FollowingInvalidateRequest {
+  const _$FollowingInvalidateRequestImpl({required this.userId});
+
+  factory _$FollowingInvalidateRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$FollowingInvalidateRequestImplFromJson(json);
 
   @override
   final String userId;
 
-  /// Create a copy of FollowingInvalidateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$FollowingInvalidateRequestCopyWith<_FollowingInvalidateRequest>
-      get copyWith => __$FollowingInvalidateRequestCopyWithImpl<
-          _FollowingInvalidateRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$FollowingInvalidateRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'FollowingInvalidateRequest(userId: $userId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FollowingInvalidateRequest &&
+            other is _$FollowingInvalidateRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, userId);
 
-  @override
-  String toString() {
-    return 'FollowingInvalidateRequest(userId: $userId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$FollowingInvalidateRequestCopyWith<$Res>
-    implements $FollowingInvalidateRequestCopyWith<$Res> {
-  factory _$FollowingInvalidateRequestCopyWith(
-          _FollowingInvalidateRequest value,
-          $Res Function(_FollowingInvalidateRequest) _then) =
-      __$FollowingInvalidateRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String userId});
-}
-
-/// @nodoc
-class __$FollowingInvalidateRequestCopyWithImpl<$Res>
-    implements _$FollowingInvalidateRequestCopyWith<$Res> {
-  __$FollowingInvalidateRequestCopyWithImpl(this._self, this._then);
-
-  final _FollowingInvalidateRequest _self;
-  final $Res Function(_FollowingInvalidateRequest) _then;
-
-  /// Create a copy of FollowingInvalidateRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? userId = null,
-  }) {
-    return _then(_FollowingInvalidateRequest(
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$FollowingInvalidateRequestImplCopyWith<_$FollowingInvalidateRequestImpl>
+      get copyWith => __$$FollowingInvalidateRequestImplCopyWithImpl<
+          _$FollowingInvalidateRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowingInvalidateRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _FollowingInvalidateRequest
+    implements FollowingInvalidateRequest {
+  const factory _FollowingInvalidateRequest({required final String userId}) =
+      _$FollowingInvalidateRequestImpl;
+
+  factory _FollowingInvalidateRequest.fromJson(Map<String, dynamic> json) =
+      _$FollowingInvalidateRequestImpl.fromJson;
+
+  @override
+  String get userId;
+  @override
+  @JsonKey(ignore: true)
+  _$$FollowingInvalidateRequestImplCopyWith<_$FollowingInvalidateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

@@ -6,14 +6,14 @@ part of 'channels_follow_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ChannelsFollowRequest _$ChannelsFollowRequestFromJson(
+_$ChannelsFollowRequestImpl _$$ChannelsFollowRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _ChannelsFollowRequest(
+    _$ChannelsFollowRequestImpl(
       channelId: json['channelId'] as String,
     );
 
-Map<String, dynamic> _$ChannelsFollowRequestToJson(
-        _ChannelsFollowRequest instance) =>
+Map<String, dynamic> _$$ChannelsFollowRequestImplToJson(
+        _$ChannelsFollowRequestImpl instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
     };

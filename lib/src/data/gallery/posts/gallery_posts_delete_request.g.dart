@@ -6,14 +6,14 @@ part of 'gallery_posts_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GalleryPostsDeleteRequest _$GalleryPostsDeleteRequestFromJson(
+_$GalleryPostsDeleteRequestImpl _$$GalleryPostsDeleteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _GalleryPostsDeleteRequest(
+    _$GalleryPostsDeleteRequestImpl(
       postId: json['postId'] as String,
     );
 
-Map<String, dynamic> _$GalleryPostsDeleteRequestToJson(
-        _GalleryPostsDeleteRequest instance) =>
+Map<String, dynamic> _$$GalleryPostsDeleteRequestImplToJson(
+        _$GalleryPostsDeleteRequestImpl instance) =>
     <String, dynamic>{
       'postId': instance.postId,
     };

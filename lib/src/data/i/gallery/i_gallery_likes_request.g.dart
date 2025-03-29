@@ -6,16 +6,16 @@ part of 'i_gallery_likes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IGalleryLikesRequest _$IGalleryLikesRequestFromJson(
+_$IGalleryLikesRequestImpl _$$IGalleryLikesRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _IGalleryLikesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _$IGalleryLikesRequestImpl(
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$IGalleryLikesRequestToJson(
-        _IGalleryLikesRequest instance) =>
+Map<String, dynamic> _$$IGalleryLikesRequestImplToJson(
+        _$IGalleryLikesRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

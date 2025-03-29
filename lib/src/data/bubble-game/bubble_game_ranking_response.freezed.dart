@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,51 +9,33 @@ part of 'bubble_game_ranking_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$BubbleGameRankingResponse {
-  String get id;
-  int get score;
-  UserLite get user;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of BubbleGameRankingResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $BubbleGameRankingResponseCopyWith<BubbleGameRankingResponse> get copyWith =>
-      _$BubbleGameRankingResponseCopyWithImpl<BubbleGameRankingResponse>(
-          this as BubbleGameRankingResponse, _$identity);
-
-  /// Serializes this BubbleGameRankingResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is BubbleGameRankingResponse &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.score, score) || other.score == score) &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, score, user);
-
-  @override
-  String toString() {
-    return 'BubbleGameRankingResponse(id: $id, score: $score, user: $user)';
-  }
+BubbleGameRankingResponse _$BubbleGameRankingResponseFromJson(
+    Map<String, dynamic> json) {
+  return _BubbleGameRankingResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $BubbleGameRankingResponseCopyWith<$Res> {
+mixin _$BubbleGameRankingResponse {
+  String get id => throw _privateConstructorUsedError;
+  int get score => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BubbleGameRankingResponseCopyWith<BubbleGameRankingResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BubbleGameRankingResponseCopyWith<$Res> {
   factory $BubbleGameRankingResponseCopyWith(BubbleGameRankingResponse value,
-          $Res Function(BubbleGameRankingResponse) _then) =
-      _$BubbleGameRankingResponseCopyWithImpl;
+          $Res Function(BubbleGameRankingResponse) then) =
+      _$BubbleGameRankingResponseCopyWithImpl<$Res, BubbleGameRankingResponse>;
   @useResult
   $Res call({String id, int score, UserLite user});
 
@@ -62,15 +43,16 @@ abstract mixin class $BubbleGameRankingResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BubbleGameRankingResponseCopyWithImpl<$Res>
+class _$BubbleGameRankingResponseCopyWithImpl<$Res,
+        $Val extends BubbleGameRankingResponse>
     implements $BubbleGameRankingResponseCopyWith<$Res> {
-  _$BubbleGameRankingResponseCopyWithImpl(this._self, this._then);
+  _$BubbleGameRankingResponseCopyWithImpl(this._value, this._then);
 
-  final BubbleGameRankingResponse _self;
-  final $Res Function(BubbleGameRankingResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of BubbleGameRankingResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -78,40 +60,88 @@ class _$BubbleGameRankingResponseCopyWithImpl<$Res>
     Object? score = null,
     Object? user = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       score: null == score
-          ? _self.score
+          ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int,
       user: null == user
-          ? _self.user
+          ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserLite,
-    ));
+    ) as $Val);
   }
 
-  /// Create a copy of BubbleGameRankingResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$BubbleGameRankingResponseImplCopyWith<$Res>
+    implements $BubbleGameRankingResponseCopyWith<$Res> {
+  factory _$$BubbleGameRankingResponseImplCopyWith(
+          _$BubbleGameRankingResponseImpl value,
+          $Res Function(_$BubbleGameRankingResponseImpl) then) =
+      __$$BubbleGameRankingResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, int score, UserLite user});
+
+  @override
+  $UserLiteCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$BubbleGameRankingResponseImplCopyWithImpl<$Res>
+    extends _$BubbleGameRankingResponseCopyWithImpl<$Res,
+        _$BubbleGameRankingResponseImpl>
+    implements _$$BubbleGameRankingResponseImplCopyWith<$Res> {
+  __$$BubbleGameRankingResponseImplCopyWithImpl(
+      _$BubbleGameRankingResponseImpl _value,
+      $Res Function(_$BubbleGameRankingResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? score = null,
+    Object? user = null,
+  }) {
+    return _then(_$BubbleGameRankingResponseImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      score: null == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as int,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _BubbleGameRankingResponse implements BubbleGameRankingResponse {
-  const _BubbleGameRankingResponse(
+class _$BubbleGameRankingResponseImpl implements _BubbleGameRankingResponse {
+  const _$BubbleGameRankingResponseImpl(
       {required this.id, required this.score, required this.user});
-  factory _BubbleGameRankingResponse.fromJson(Map<String, dynamic> json) =>
-      _$BubbleGameRankingResponseFromJson(json);
+
+  factory _$BubbleGameRankingResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BubbleGameRankingResponseImplFromJson(json);
 
   @override
   final String id;
@@ -120,99 +150,57 @@ class _BubbleGameRankingResponse implements BubbleGameRankingResponse {
   @override
   final UserLite user;
 
-  /// Create a copy of BubbleGameRankingResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$BubbleGameRankingResponseCopyWith<_BubbleGameRankingResponse>
-      get copyWith =>
-          __$BubbleGameRankingResponseCopyWithImpl<_BubbleGameRankingResponse>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$BubbleGameRankingResponseToJson(
-      this,
-    );
+  String toString() {
+    return 'BubbleGameRankingResponse(id: $id, score: $score, user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BubbleGameRankingResponse &&
+            other is _$BubbleGameRankingResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.user, user) || other.user == user));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, score, user);
 
-  @override
-  String toString() {
-    return 'BubbleGameRankingResponse(id: $id, score: $score, user: $user)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$BubbleGameRankingResponseCopyWith<$Res>
-    implements $BubbleGameRankingResponseCopyWith<$Res> {
-  factory _$BubbleGameRankingResponseCopyWith(_BubbleGameRankingResponse value,
-          $Res Function(_BubbleGameRankingResponse) _then) =
-      __$BubbleGameRankingResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String id, int score, UserLite user});
-
-  @override
-  $UserLiteCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class __$BubbleGameRankingResponseCopyWithImpl<$Res>
-    implements _$BubbleGameRankingResponseCopyWith<$Res> {
-  __$BubbleGameRankingResponseCopyWithImpl(this._self, this._then);
-
-  final _BubbleGameRankingResponse _self;
-  final $Res Function(_BubbleGameRankingResponse) _then;
-
-  /// Create a copy of BubbleGameRankingResponse
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? score = null,
-    Object? user = null,
-  }) {
-    return _then(_BubbleGameRankingResponse(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      score: null == score
-          ? _self.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as int,
-      user: null == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
-    ));
-  }
+  _$$BubbleGameRankingResponseImplCopyWith<_$BubbleGameRankingResponseImpl>
+      get copyWith => __$$BubbleGameRankingResponseImplCopyWithImpl<
+          _$BubbleGameRankingResponseImpl>(this, _$identity);
 
-  /// Create a copy of BubbleGameRankingResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
-    });
+  Map<String, dynamic> toJson() {
+    return _$$BubbleGameRankingResponseImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _BubbleGameRankingResponse implements BubbleGameRankingResponse {
+  const factory _BubbleGameRankingResponse(
+      {required final String id,
+      required final int score,
+      required final UserLite user}) = _$BubbleGameRankingResponseImpl;
+
+  factory _BubbleGameRankingResponse.fromJson(Map<String, dynamic> json) =
+      _$BubbleGameRankingResponseImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  int get score;
+  @override
+  UserLite get user;
+  @override
+  @JsonKey(ignore: true)
+  _$$BubbleGameRankingResponseImplCopyWith<_$BubbleGameRankingResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

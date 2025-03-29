@@ -6,16 +6,16 @@ part of 'i_registry_remove_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IRegistryRemoveRequest _$IRegistryRemoveRequestFromJson(
+_$IRegistryRemoveRequestImpl _$$IRegistryRemoveRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _IRegistryRemoveRequest(
+    _$IRegistryRemoveRequestImpl(
       key: json['key'] as String,
       scope: (json['scope'] as List<dynamic>).map((e) => e as String).toList(),
       domain: json['domain'] as String?,
     );
 
-Map<String, dynamic> _$IRegistryRemoveRequestToJson(
-        _IRegistryRemoveRequest instance) =>
+Map<String, dynamic> _$$IRegistryRemoveRequestImplToJson(
+        _$IRegistryRemoveRequestImpl instance) =>
     <String, dynamic>{
       'key': instance.key,
       'scope': instance.scope,

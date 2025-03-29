@@ -6,7 +6,7 @@ part of 'flash.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Flash _$FlashFromJson(Map<String, dynamic> json) => _Flash(
+_$FlashImpl _$$FlashImplFromJson(Map<String, dynamic> json) => _$FlashImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -19,11 +19,12 @@ _Flash _$FlashFromJson(Map<String, dynamic> json) => _Flash(
           $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
       userId: json['userId'] as String,
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
-      likedCount: (json['likedCount'] as num?)?.toInt(),
+      likedCount: json['likedCount'] as int?,
       isLiked: json['isLiked'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$FlashToJson(_Flash instance) => <String, dynamic>{
+Map<String, dynamic> _$$FlashImplToJson(_$FlashImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),

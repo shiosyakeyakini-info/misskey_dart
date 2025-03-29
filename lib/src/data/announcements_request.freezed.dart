@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,61 +9,36 @@ part of 'announcements_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$AnnouncementsRequest {
-  int? get limit;
-  @Deprecated("removed in Misskey 2023.9")
-  bool? get withUnreads;
-  bool? get isActive;
-  String? get sinceId;
-  String? get untilId; // ioはこれで動く
-  int? get offset;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of AnnouncementsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AnnouncementsRequestCopyWith<AnnouncementsRequest> get copyWith =>
-      _$AnnouncementsRequestCopyWithImpl<AnnouncementsRequest>(
-          this as AnnouncementsRequest, _$identity);
-
-  /// Serializes this AnnouncementsRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AnnouncementsRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.withUnreads, withUnreads) ||
-                other.withUnreads == withUnreads) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.offset, offset) || other.offset == offset));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, limit, withUnreads, isActive, sinceId, untilId, offset);
-
-  @override
-  String toString() {
-    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, isActive: $isActive, sinceId: $sinceId, untilId: $untilId, offset: $offset)';
-  }
+AnnouncementsRequest _$AnnouncementsRequestFromJson(Map<String, dynamic> json) {
+  return _AnnouncementsRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $AnnouncementsRequestCopyWith<$Res> {
+mixin _$AnnouncementsRequest {
+  int? get limit => throw _privateConstructorUsedError;
+  @Deprecated("removed in Misskey 2023.9")
+  bool? get withUnreads => throw _privateConstructorUsedError;
+  bool? get isActive => throw _privateConstructorUsedError;
+  String? get sinceId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError; // ioはこれで動く
+  int? get offset => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AnnouncementsRequestCopyWith<AnnouncementsRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnnouncementsRequestCopyWith<$Res> {
   factory $AnnouncementsRequestCopyWith(AnnouncementsRequest value,
-          $Res Function(AnnouncementsRequest) _then) =
-      _$AnnouncementsRequestCopyWithImpl;
+          $Res Function(AnnouncementsRequest) then) =
+      _$AnnouncementsRequestCopyWithImpl<$Res, AnnouncementsRequest>;
   @useResult
   $Res call(
       {int? limit,
@@ -76,15 +50,16 @@ abstract mixin class $AnnouncementsRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnnouncementsRequestCopyWithImpl<$Res>
+class _$AnnouncementsRequestCopyWithImpl<$Res,
+        $Val extends AnnouncementsRequest>
     implements $AnnouncementsRequestCopyWith<$Res> {
-  _$AnnouncementsRequestCopyWithImpl(this._self, this._then);
+  _$AnnouncementsRequestCopyWithImpl(this._value, this._then);
 
-  final AnnouncementsRequest _self;
-  final $Res Function(AnnouncementsRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of AnnouncementsRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,29 +70,93 @@ class _$AnnouncementsRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       limit: freezed == limit
-          ? _self.limit
+          ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       withUnreads: freezed == withUnreads
-          ? _self.withUnreads
+          ? _value.withUnreads
           : withUnreads // ignore: cast_nullable_to_non_nullable
               as bool?,
       isActive: freezed == isActive
-          ? _self.isActive
+          ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool?,
       sinceId: freezed == sinceId
-          ? _self.sinceId
+          ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _self.untilId
+          ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       offset: freezed == offset
-          ? _self.offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AnnouncementsRequestImplCopyWith<$Res>
+    implements $AnnouncementsRequestCopyWith<$Res> {
+  factory _$$AnnouncementsRequestImplCopyWith(_$AnnouncementsRequestImpl value,
+          $Res Function(_$AnnouncementsRequestImpl) then) =
+      __$$AnnouncementsRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int? limit,
+      @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
+      bool? isActive,
+      String? sinceId,
+      String? untilId,
+      int? offset});
+}
+
+/// @nodoc
+class __$$AnnouncementsRequestImplCopyWithImpl<$Res>
+    extends _$AnnouncementsRequestCopyWithImpl<$Res, _$AnnouncementsRequestImpl>
+    implements _$$AnnouncementsRequestImplCopyWith<$Res> {
+  __$$AnnouncementsRequestImplCopyWithImpl(_$AnnouncementsRequestImpl _value,
+      $Res Function(_$AnnouncementsRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? withUnreads = freezed,
+    Object? isActive = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+    Object? offset = freezed,
+  }) {
+    return _then(_$AnnouncementsRequestImpl(
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      withUnreads: freezed == withUnreads
+          ? _value.withUnreads
+          : withUnreads // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isActive: freezed == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      sinceId: freezed == sinceId
+          ? _value.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      offset: freezed == offset
+          ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -126,16 +165,17 @@ class _$AnnouncementsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _AnnouncementsRequest implements AnnouncementsRequest {
-  const _AnnouncementsRequest(
+class _$AnnouncementsRequestImpl implements _AnnouncementsRequest {
+  const _$AnnouncementsRequestImpl(
       {this.limit,
       @Deprecated("removed in Misskey 2023.9") this.withUnreads,
       this.isActive,
       this.sinceId,
       this.untilId,
       this.offset});
-  factory _AnnouncementsRequest.fromJson(Map<String, dynamic> json) =>
-      _$AnnouncementsRequestFromJson(json);
+
+  factory _$AnnouncementsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnnouncementsRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -152,27 +192,16 @@ class _AnnouncementsRequest implements AnnouncementsRequest {
   @override
   final int? offset;
 
-  /// Create a copy of AnnouncementsRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AnnouncementsRequestCopyWith<_AnnouncementsRequest> get copyWith =>
-      __$AnnouncementsRequestCopyWithImpl<_AnnouncementsRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AnnouncementsRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, isActive: $isActive, sinceId: $sinceId, untilId: $untilId, offset: $offset)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AnnouncementsRequest &&
+            other is _$AnnouncementsRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.withUnreads, withUnreads) ||
                 other.withUnreads == withUnreads) &&
@@ -183,81 +212,54 @@ class _AnnouncementsRequest implements AnnouncementsRequest {
             (identical(other.offset, offset) || other.offset == offset));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, limit, withUnreads, isActive, sinceId, untilId, offset);
 
-  @override
-  String toString() {
-    return 'AnnouncementsRequest(limit: $limit, withUnreads: $withUnreads, isActive: $isActive, sinceId: $sinceId, untilId: $untilId, offset: $offset)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$AnnouncementsRequestCopyWith<$Res>
-    implements $AnnouncementsRequestCopyWith<$Res> {
-  factory _$AnnouncementsRequestCopyWith(_AnnouncementsRequest value,
-          $Res Function(_AnnouncementsRequest) _then) =
-      __$AnnouncementsRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {int? limit,
-      @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
-      bool? isActive,
-      String? sinceId,
-      String? untilId,
-      int? offset});
-}
-
-/// @nodoc
-class __$AnnouncementsRequestCopyWithImpl<$Res>
-    implements _$AnnouncementsRequestCopyWith<$Res> {
-  __$AnnouncementsRequestCopyWithImpl(this._self, this._then);
-
-  final _AnnouncementsRequest _self;
-  final $Res Function(_AnnouncementsRequest) _then;
-
-  /// Create a copy of AnnouncementsRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? withUnreads = freezed,
-    Object? isActive = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? offset = freezed,
-  }) {
-    return _then(_AnnouncementsRequest(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      withUnreads: freezed == withUnreads
-          ? _self.withUnreads
-          : withUnreads // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isActive: freezed == isActive
-          ? _self.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  _$$AnnouncementsRequestImplCopyWith<_$AnnouncementsRequestImpl>
+      get copyWith =>
+          __$$AnnouncementsRequestImplCopyWithImpl<_$AnnouncementsRequestImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AnnouncementsRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _AnnouncementsRequest implements AnnouncementsRequest {
+  const factory _AnnouncementsRequest(
+      {final int? limit,
+      @Deprecated("removed in Misskey 2023.9") final bool? withUnreads,
+      final bool? isActive,
+      final String? sinceId,
+      final String? untilId,
+      final int? offset}) = _$AnnouncementsRequestImpl;
+
+  factory _AnnouncementsRequest.fromJson(Map<String, dynamic> json) =
+      _$AnnouncementsRequestImpl.fromJson;
+
+  @override
+  int? get limit;
+  @override
+  @Deprecated("removed in Misskey 2023.9")
+  bool? get withUnreads;
+  @override
+  bool? get isActive;
+  @override
+  String? get sinceId;
+  @override
+  String? get untilId;
+  @override // ioはこれで動く
+  int? get offset;
+  @override
+  @JsonKey(ignore: true)
+  _$$AnnouncementsRequestImplCopyWith<_$AnnouncementsRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

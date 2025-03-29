@@ -6,15 +6,15 @@ part of 'channels_my_favorite_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ChannelsMyFavoriteRequest _$ChannelsMyFavoriteRequestFromJson(
+_$ChannelsMyFavoriteRequestImpl _$$ChannelsMyFavoriteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _ChannelsMyFavoriteRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _$ChannelsMyFavoriteRequestImpl(
+      limit: json['limit'] as int?,
       noPaging: json['noPaging'] as bool?,
     );
 
-Map<String, dynamic> _$ChannelsMyFavoriteRequestToJson(
-        _ChannelsMyFavoriteRequest instance) =>
+Map<String, dynamic> _$$ChannelsMyFavoriteRequestImplToJson(
+        _$ChannelsMyFavoriteRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'noPaging': instance.noPaging,

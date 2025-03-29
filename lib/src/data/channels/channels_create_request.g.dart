@@ -6,17 +6,17 @@ part of 'channels_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ChannelsCreateRequest _$ChannelsCreateRequestFromJson(
+_$ChannelsCreateRequestImpl _$$ChannelsCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _ChannelsCreateRequest(
+    _$ChannelsCreateRequestImpl(
       name: json['name'] as String,
       description: json['description'] as String?,
       bannerId: json['bannerId'] as String?,
       color: json['color'] as String?,
     );
 
-Map<String, dynamic> _$ChannelsCreateRequestToJson(
-        _ChannelsCreateRequest instance) =>
+Map<String, dynamic> _$$ChannelsCreateRequestImplToJson(
+        _$ChannelsCreateRequestImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,

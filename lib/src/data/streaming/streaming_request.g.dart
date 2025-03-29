@@ -6,13 +6,15 @@ part of 'streaming_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StreamingRequest _$StreamingRequestFromJson(Map<String, dynamic> json) =>
-    _StreamingRequest(
+_$StreamingRequestImpl _$$StreamingRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StreamingRequestImpl(
       type: $enumDecode(_$StreamingRequestTypeEnumMap, json['type']),
       body: StreamingRequestBody.fromJson(json['body'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$StreamingRequestToJson(_StreamingRequest instance) =>
+Map<String, dynamic> _$$StreamingRequestImplToJson(
+        _$StreamingRequestImpl instance) =>
     <String, dynamic>{
       'type': _$StreamingRequestTypeEnumMap[instance.type]!,
       'body': instance.body.toJson(),
@@ -30,9 +32,9 @@ const _$StreamingRequestTypeEnumMap = {
   StreamingRequestType.ch: 'ch',
 };
 
-_StreamingRequestBody _$StreamingRequestBodyFromJson(
+_$StreamingRequestBodyImpl _$$StreamingRequestBodyImplFromJson(
         Map<String, dynamic> json) =>
-    _StreamingRequestBody(
+    _$StreamingRequestBodyImpl(
       channel: $enumDecodeNullable(_$ChannelEnumMap, json['channel']),
       id: json['id'] as String,
       params: json['params'] as Map<String, dynamic>?,
@@ -40,8 +42,8 @@ _StreamingRequestBody _$StreamingRequestBodyFromJson(
       body: json['body'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$StreamingRequestBodyToJson(
-        _StreamingRequestBody instance) =>
+Map<String, dynamic> _$$StreamingRequestBodyImplToJson(
+        _$StreamingRequestBodyImpl instance) =>
     <String, dynamic>{
       'channel': _$ChannelEnumMap[instance.channel],
       'id': instance.id,

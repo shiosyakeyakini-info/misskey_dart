@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,65 +9,47 @@ part of 'i_gallery_likes_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$IGalleryLikesRequest {
-  int? get limit;
-  String? get sinceId;
-  String? get untilId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of IGalleryLikesRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IGalleryLikesRequestCopyWith<IGalleryLikesRequest> get copyWith =>
-      _$IGalleryLikesRequestCopyWithImpl<IGalleryLikesRequest>(
-          this as IGalleryLikesRequest, _$identity);
-
-  /// Serializes this IGalleryLikesRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IGalleryLikesRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
-
-  @override
-  String toString() {
-    return 'IGalleryLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
-  }
+IGalleryLikesRequest _$IGalleryLikesRequestFromJson(Map<String, dynamic> json) {
+  return _IGalleryLikesRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $IGalleryLikesRequestCopyWith<$Res> {
+mixin _$IGalleryLikesRequest {
+  int? get limit => throw _privateConstructorUsedError;
+  String? get sinceId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IGalleryLikesRequestCopyWith<IGalleryLikesRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IGalleryLikesRequestCopyWith<$Res> {
   factory $IGalleryLikesRequestCopyWith(IGalleryLikesRequest value,
-          $Res Function(IGalleryLikesRequest) _then) =
-      _$IGalleryLikesRequestCopyWithImpl;
+          $Res Function(IGalleryLikesRequest) then) =
+      _$IGalleryLikesRequestCopyWithImpl<$Res, IGalleryLikesRequest>;
   @useResult
   $Res call({int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class _$IGalleryLikesRequestCopyWithImpl<$Res>
+class _$IGalleryLikesRequestCopyWithImpl<$Res,
+        $Val extends IGalleryLikesRequest>
     implements $IGalleryLikesRequestCopyWith<$Res> {
-  _$IGalleryLikesRequestCopyWithImpl(this._self, this._then);
+  _$IGalleryLikesRequestCopyWithImpl(this._value, this._then);
 
-  final IGalleryLikesRequest _self;
-  final $Res Function(IGalleryLikesRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of IGalleryLikesRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -76,17 +57,60 @@ class _$IGalleryLikesRequestCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       limit: freezed == limit
-          ? _self.limit
+          ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _self.sinceId
+          ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _self.untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$IGalleryLikesRequestImplCopyWith<$Res>
+    implements $IGalleryLikesRequestCopyWith<$Res> {
+  factory _$$IGalleryLikesRequestImplCopyWith(_$IGalleryLikesRequestImpl value,
+          $Res Function(_$IGalleryLikesRequestImpl) then) =
+      __$$IGalleryLikesRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
+
+/// @nodoc
+class __$$IGalleryLikesRequestImplCopyWithImpl<$Res>
+    extends _$IGalleryLikesRequestCopyWithImpl<$Res, _$IGalleryLikesRequestImpl>
+    implements _$$IGalleryLikesRequestImplCopyWith<$Res> {
+  __$$IGalleryLikesRequestImplCopyWithImpl(_$IGalleryLikesRequestImpl _value,
+      $Res Function(_$IGalleryLikesRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_$IGalleryLikesRequestImpl(
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _value.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -95,10 +119,11 @@ class _$IGalleryLikesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _IGalleryLikesRequest implements IGalleryLikesRequest {
-  const _IGalleryLikesRequest({this.limit, this.sinceId, this.untilId});
-  factory _IGalleryLikesRequest.fromJson(Map<String, dynamic> json) =>
-      _$IGalleryLikesRequestFromJson(json);
+class _$IGalleryLikesRequestImpl implements _IGalleryLikesRequest {
+  const _$IGalleryLikesRequestImpl({this.limit, this.sinceId, this.untilId});
+
+  factory _$IGalleryLikesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IGalleryLikesRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -107,85 +132,58 @@ class _IGalleryLikesRequest implements IGalleryLikesRequest {
   @override
   final String? untilId;
 
-  /// Create a copy of IGalleryLikesRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IGalleryLikesRequestCopyWith<_IGalleryLikesRequest> get copyWith =>
-      __$IGalleryLikesRequestCopyWithImpl<_IGalleryLikesRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IGalleryLikesRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'IGalleryLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IGalleryLikesRequest &&
+            other is _$IGalleryLikesRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
 
-  @override
-  String toString() {
-    return 'IGalleryLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IGalleryLikesRequestCopyWith<$Res>
-    implements $IGalleryLikesRequestCopyWith<$Res> {
-  factory _$IGalleryLikesRequestCopyWith(_IGalleryLikesRequest value,
-          $Res Function(_IGalleryLikesRequest) _then) =
-      __$IGalleryLikesRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class __$IGalleryLikesRequestCopyWithImpl<$Res>
-    implements _$IGalleryLikesRequestCopyWith<$Res> {
-  __$IGalleryLikesRequestCopyWithImpl(this._self, this._then);
-
-  final _IGalleryLikesRequest _self;
-  final $Res Function(_IGalleryLikesRequest) _then;
-
-  /// Create a copy of IGalleryLikesRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_IGalleryLikesRequest(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  _$$IGalleryLikesRequestImplCopyWith<_$IGalleryLikesRequestImpl>
+      get copyWith =>
+          __$$IGalleryLikesRequestImplCopyWithImpl<_$IGalleryLikesRequestImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$IGalleryLikesRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _IGalleryLikesRequest implements IGalleryLikesRequest {
+  const factory _IGalleryLikesRequest(
+      {final int? limit,
+      final String? sinceId,
+      final String? untilId}) = _$IGalleryLikesRequestImpl;
+
+  factory _IGalleryLikesRequest.fromJson(Map<String, dynamic> json) =
+      _$IGalleryLikesRequestImpl.fromJson;
+
+  @override
+  int? get limit;
+  @override
+  String? get sinceId;
+  @override
+  String? get untilId;
+  @override
+  @JsonKey(ignore: true)
+  _$$IGalleryLikesRequestImplCopyWith<_$IGalleryLikesRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

@@ -6,7 +6,7 @@ part of 'muting.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Muting _$MutingFromJson(Map<String, dynamic> json) => _Muting(
+_$MutingImpl _$$MutingImplFromJson(Map<String, dynamic> json) => _$MutingImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -16,7 +16,8 @@ _Muting _$MutingFromJson(Map<String, dynamic> json) => _Muting(
       mutee: UserDetailedNotMe.fromJson(json['mutee'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MutingToJson(_Muting instance) => <String, dynamic>{
+Map<String, dynamic> _$$MutingImplToJson(_$MutingImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'expiresAt': const NullableDateTimeConverter().toJson(instance.expiresAt),

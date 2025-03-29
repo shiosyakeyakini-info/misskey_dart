@@ -6,14 +6,15 @@ part of 'flash_my_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FlashMyRequest _$FlashMyRequestFromJson(Map<String, dynamic> json) =>
-    _FlashMyRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+_$FlashMyRequestImpl _$$FlashMyRequestImplFromJson(Map<String, dynamic> json) =>
+    _$FlashMyRequestImpl(
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$FlashMyRequestToJson(_FlashMyRequest instance) =>
+Map<String, dynamic> _$$FlashMyRequestImplToJson(
+        _$FlashMyRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

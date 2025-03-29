@@ -6,14 +6,15 @@ part of 'users_notes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersNotesRequest _$UsersNotesRequestFromJson(Map<String, dynamic> json) =>
-    _UsersNotesRequest(
+_$UsersNotesRequestImpl _$$UsersNotesRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UsersNotesRequestImpl(
       userId: json['userId'] as String,
       includeReplies: json['includeReplies'] as bool?,
       withReplies: json['withReplies'] as bool?,
       withRenotes: json['withRenotes'] as bool?,
       withChannelNotes: json['withChannelNotes'] as bool?,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -29,7 +30,8 @@ _UsersNotesRequest _$UsersNotesRequestFromJson(Map<String, dynamic> json) =>
       excludeNsfw: json['excludeNsfw'] as bool?,
     );
 
-Map<String, dynamic> _$UsersNotesRequestToJson(_UsersNotesRequest instance) =>
+Map<String, dynamic> _$$UsersNotesRequestImplToJson(
+        _$UsersNotesRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'includeReplies': instance.includeReplies,

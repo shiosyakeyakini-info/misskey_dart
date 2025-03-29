@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,77 +9,101 @@ part of 'i_registry_get_all_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$IRegistryGetAllRequest {
-  List<String> get scope;
-  String? get domain;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of IRegistryGetAllRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IRegistryGetAllRequestCopyWith<IRegistryGetAllRequest> get copyWith =>
-      _$IRegistryGetAllRequestCopyWithImpl<IRegistryGetAllRequest>(
-          this as IRegistryGetAllRequest, _$identity);
-
-  /// Serializes this IRegistryGetAllRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IRegistryGetAllRequest &&
-            const DeepCollectionEquality().equals(other.scope, scope) &&
-            (identical(other.domain, domain) || other.domain == domain));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(scope), domain);
-
-  @override
-  String toString() {
-    return 'IRegistryGetAllRequest(scope: $scope, domain: $domain)';
-  }
+IRegistryGetAllRequest _$IRegistryGetAllRequestFromJson(
+    Map<String, dynamic> json) {
+  return _IRegistryGetAllRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $IRegistryGetAllRequestCopyWith<$Res> {
+mixin _$IRegistryGetAllRequest {
+  List<String> get scope => throw _privateConstructorUsedError;
+  String? get domain => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IRegistryGetAllRequestCopyWith<IRegistryGetAllRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IRegistryGetAllRequestCopyWith<$Res> {
   factory $IRegistryGetAllRequestCopyWith(IRegistryGetAllRequest value,
-          $Res Function(IRegistryGetAllRequest) _then) =
-      _$IRegistryGetAllRequestCopyWithImpl;
+          $Res Function(IRegistryGetAllRequest) then) =
+      _$IRegistryGetAllRequestCopyWithImpl<$Res, IRegistryGetAllRequest>;
   @useResult
   $Res call({List<String> scope, String? domain});
 }
 
 /// @nodoc
-class _$IRegistryGetAllRequestCopyWithImpl<$Res>
+class _$IRegistryGetAllRequestCopyWithImpl<$Res,
+        $Val extends IRegistryGetAllRequest>
     implements $IRegistryGetAllRequestCopyWith<$Res> {
-  _$IRegistryGetAllRequestCopyWithImpl(this._self, this._then);
+  _$IRegistryGetAllRequestCopyWithImpl(this._value, this._then);
 
-  final IRegistryGetAllRequest _self;
-  final $Res Function(IRegistryGetAllRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of IRegistryGetAllRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? scope = null,
     Object? domain = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       scope: null == scope
-          ? _self.scope
+          ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
               as List<String>,
       domain: freezed == domain
-          ? _self.domain
+          ? _value.domain
+          : domain // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$IRegistryGetAllRequestImplCopyWith<$Res>
+    implements $IRegistryGetAllRequestCopyWith<$Res> {
+  factory _$$IRegistryGetAllRequestImplCopyWith(
+          _$IRegistryGetAllRequestImpl value,
+          $Res Function(_$IRegistryGetAllRequestImpl) then) =
+      __$$IRegistryGetAllRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<String> scope, String? domain});
+}
+
+/// @nodoc
+class __$$IRegistryGetAllRequestImplCopyWithImpl<$Res>
+    extends _$IRegistryGetAllRequestCopyWithImpl<$Res,
+        _$IRegistryGetAllRequestImpl>
+    implements _$$IRegistryGetAllRequestImplCopyWith<$Res> {
+  __$$IRegistryGetAllRequestImplCopyWithImpl(
+      _$IRegistryGetAllRequestImpl _value,
+      $Res Function(_$IRegistryGetAllRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scope = null,
+    Object? domain = freezed,
+  }) {
+    return _then(_$IRegistryGetAllRequestImpl(
+      scope: null == scope
+          ? _value._scope
+          : scope // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      domain: freezed == domain
+          ? _value.domain
           : domain // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -89,12 +112,13 @@ class _$IRegistryGetAllRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _IRegistryGetAllRequest implements IRegistryGetAllRequest {
-  const _IRegistryGetAllRequest(
+class _$IRegistryGetAllRequestImpl implements _IRegistryGetAllRequest {
+  const _$IRegistryGetAllRequestImpl(
       {required final List<String> scope, this.domain})
       : _scope = scope;
-  factory _IRegistryGetAllRequest.fromJson(Map<String, dynamic> json) =>
-      _$IRegistryGetAllRequestFromJson(json);
+
+  factory _$IRegistryGetAllRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IRegistryGetAllRequestImplFromJson(json);
 
   final List<String> _scope;
   @override
@@ -107,80 +131,54 @@ class _IRegistryGetAllRequest implements IRegistryGetAllRequest {
   @override
   final String? domain;
 
-  /// Create a copy of IRegistryGetAllRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IRegistryGetAllRequestCopyWith<_IRegistryGetAllRequest> get copyWith =>
-      __$IRegistryGetAllRequestCopyWithImpl<_IRegistryGetAllRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IRegistryGetAllRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'IRegistryGetAllRequest(scope: $scope, domain: $domain)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IRegistryGetAllRequest &&
+            other is _$IRegistryGetAllRequestImpl &&
             const DeepCollectionEquality().equals(other._scope, _scope) &&
             (identical(other.domain, domain) || other.domain == domain));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_scope), domain);
 
-  @override
-  String toString() {
-    return 'IRegistryGetAllRequest(scope: $scope, domain: $domain)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IRegistryGetAllRequestCopyWith<$Res>
-    implements $IRegistryGetAllRequestCopyWith<$Res> {
-  factory _$IRegistryGetAllRequestCopyWith(_IRegistryGetAllRequest value,
-          $Res Function(_IRegistryGetAllRequest) _then) =
-      __$IRegistryGetAllRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({List<String> scope, String? domain});
-}
-
-/// @nodoc
-class __$IRegistryGetAllRequestCopyWithImpl<$Res>
-    implements _$IRegistryGetAllRequestCopyWith<$Res> {
-  __$IRegistryGetAllRequestCopyWithImpl(this._self, this._then);
-
-  final _IRegistryGetAllRequest _self;
-  final $Res Function(_IRegistryGetAllRequest) _then;
-
-  /// Create a copy of IRegistryGetAllRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? scope = null,
-    Object? domain = freezed,
-  }) {
-    return _then(_IRegistryGetAllRequest(
-      scope: null == scope
-          ? _self._scope
-          : scope // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  _$$IRegistryGetAllRequestImplCopyWith<_$IRegistryGetAllRequestImpl>
+      get copyWith => __$$IRegistryGetAllRequestImplCopyWithImpl<
+          _$IRegistryGetAllRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$IRegistryGetAllRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _IRegistryGetAllRequest implements IRegistryGetAllRequest {
+  const factory _IRegistryGetAllRequest(
+      {required final List<String> scope,
+      final String? domain}) = _$IRegistryGetAllRequestImpl;
+
+  factory _IRegistryGetAllRequest.fromJson(Map<String, dynamic> json) =
+      _$IRegistryGetAllRequestImpl.fromJson;
+
+  @override
+  List<String> get scope;
+  @override
+  String? get domain;
+  @override
+  @JsonKey(ignore: true)
+  _$$IRegistryGetAllRequestImplCopyWith<_$IRegistryGetAllRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

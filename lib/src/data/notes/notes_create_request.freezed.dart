@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,120 +9,65 @@ part of 'notes_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) {
+  return _NotesCreateRequest.fromJson(json);
+}
 
 /// @nodoc
 mixin _$NotesCreateRequest {
   /// ノートの公開範囲。
   @NoteVisibilityJsonConverter()
-  NoteVisibility? get visibility;
+  NoteVisibility? get visibility => throw _privateConstructorUsedError;
 
   /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
-  List<String>? get visibleUserIds;
+  List<String>? get visibleUserIds => throw _privateConstructorUsedError;
 
   /// ノートの本文。
-  String? get text;
+  String? get text => throw _privateConstructorUsedError;
 
   /// ノートのCW。
-  String? get cw;
+  String? get cw => throw _privateConstructorUsedError;
 
   /// trueにすると、ローカルのみに投稿されます。
-  bool? get localOnly;
-  ReactionAcceptance? get reactionAcceptance;
+  bool? get localOnly => throw _privateConstructorUsedError;
+  ReactionAcceptance? get reactionAcceptance =>
+      throw _privateConstructorUsedError;
 
   /// trueにすると、本文からメンションを展開しません。
-  bool? get noExtractMentions;
+  bool? get noExtractMentions => throw _privateConstructorUsedError;
 
   /// trueにすると、本文からハッシュタグを展開しません。
-  bool? get noExtractHashtags;
+  bool? get noExtractHashtags => throw _privateConstructorUsedError;
 
   /// trueにすると、本文から絵文字を展開しません。
-  bool? get noExtractEmojis;
+  bool? get noExtractEmojis => throw _privateConstructorUsedError;
 
   /// 添付するファイルのid。
-  List<String>? get fileIds;
+  List<String>? get fileIds => throw _privateConstructorUsedError;
 
   /// fileIds を使用してください。fileIds と mediaIds が指定された場合、 mediaIds は無視されます。
-  List<String>? get mediaIds;
-  String? get replyId;
-  String? get renoteId;
-  String? get channelId;
-  NotesCreatePollRequest? get poll;
+  List<String>? get mediaIds => throw _privateConstructorUsedError;
+  String? get replyId => throw _privateConstructorUsedError;
+  String? get renoteId => throw _privateConstructorUsedError;
+  String? get channelId => throw _privateConstructorUsedError;
+  NotesCreatePollRequest? get poll => throw _privateConstructorUsedError;
 
-  /// Create a copy of NotesCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $NotesCreateRequestCopyWith<NotesCreateRequest> get copyWith =>
-      _$NotesCreateRequestCopyWithImpl<NotesCreateRequest>(
-          this as NotesCreateRequest, _$identity);
-
-  /// Serializes this NotesCreateRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesCreateRequest &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility) &&
-            const DeepCollectionEquality()
-                .equals(other.visibleUserIds, visibleUserIds) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.cw, cw) || other.cw == cw) &&
-            (identical(other.localOnly, localOnly) ||
-                other.localOnly == localOnly) &&
-            (identical(other.reactionAcceptance, reactionAcceptance) ||
-                other.reactionAcceptance == reactionAcceptance) &&
-            (identical(other.noExtractMentions, noExtractMentions) ||
-                other.noExtractMentions == noExtractMentions) &&
-            (identical(other.noExtractHashtags, noExtractHashtags) ||
-                other.noExtractHashtags == noExtractHashtags) &&
-            (identical(other.noExtractEmojis, noExtractEmojis) ||
-                other.noExtractEmojis == noExtractEmojis) &&
-            const DeepCollectionEquality().equals(other.fileIds, fileIds) &&
-            const DeepCollectionEquality().equals(other.mediaIds, mediaIds) &&
-            (identical(other.replyId, replyId) || other.replyId == replyId) &&
-            (identical(other.renoteId, renoteId) ||
-                other.renoteId == renoteId) &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId) &&
-            (identical(other.poll, poll) || other.poll == poll));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      visibility,
-      const DeepCollectionEquality().hash(visibleUserIds),
-      text,
-      cw,
-      localOnly,
-      reactionAcceptance,
-      noExtractMentions,
-      noExtractHashtags,
-      noExtractEmojis,
-      const DeepCollectionEquality().hash(fileIds),
-      const DeepCollectionEquality().hash(mediaIds),
-      replyId,
-      renoteId,
-      channelId,
-      poll);
-
-  @override
-  String toString() {
-    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExtractMentions: $noExtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, poll: $poll)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $NotesCreateRequestCopyWith<$Res> {
+abstract class $NotesCreateRequestCopyWith<$Res> {
   factory $NotesCreateRequestCopyWith(
-          NotesCreateRequest value, $Res Function(NotesCreateRequest) _then) =
-      _$NotesCreateRequestCopyWithImpl;
+          NotesCreateRequest value, $Res Function(NotesCreateRequest) then) =
+      _$NotesCreateRequestCopyWithImpl<$Res, NotesCreateRequest>;
   @useResult
   $Res call(
       {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
@@ -146,15 +90,15 @@ abstract mixin class $NotesCreateRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotesCreateRequestCopyWithImpl<$Res>
+class _$NotesCreateRequestCopyWithImpl<$Res, $Val extends NotesCreateRequest>
     implements $NotesCreateRequestCopyWith<$Res> {
-  _$NotesCreateRequestCopyWithImpl(this._self, this._then);
+  _$NotesCreateRequestCopyWithImpl(this._value, this._then);
 
-  final NotesCreateRequest _self;
-  final $Res Function(NotesCreateRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of NotesCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -174,89 +118,208 @@ class _$NotesCreateRequestCopyWithImpl<$Res>
     Object? channelId = freezed,
     Object? poll = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       visibility: freezed == visibility
-          ? _self.visibility
+          ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
-          ? _self.visibleUserIds
+          ? _value.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       text: freezed == text
-          ? _self.text
+          ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
       cw: freezed == cw
-          ? _self.cw
+          ? _value.cw
           : cw // ignore: cast_nullable_to_non_nullable
               as String?,
       localOnly: freezed == localOnly
-          ? _self.localOnly
+          ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
       reactionAcceptance: freezed == reactionAcceptance
-          ? _self.reactionAcceptance
+          ? _value.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
               as ReactionAcceptance?,
       noExtractMentions: freezed == noExtractMentions
-          ? _self.noExtractMentions
+          ? _value.noExtractMentions
           : noExtractMentions // ignore: cast_nullable_to_non_nullable
               as bool?,
       noExtractHashtags: freezed == noExtractHashtags
-          ? _self.noExtractHashtags
+          ? _value.noExtractHashtags
           : noExtractHashtags // ignore: cast_nullable_to_non_nullable
               as bool?,
       noExtractEmojis: freezed == noExtractEmojis
-          ? _self.noExtractEmojis
+          ? _value.noExtractEmojis
           : noExtractEmojis // ignore: cast_nullable_to_non_nullable
               as bool?,
       fileIds: freezed == fileIds
-          ? _self.fileIds
+          ? _value.fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       mediaIds: freezed == mediaIds
-          ? _self.mediaIds
+          ? _value.mediaIds
           : mediaIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       replyId: freezed == replyId
-          ? _self.replyId
+          ? _value.replyId
           : replyId // ignore: cast_nullable_to_non_nullable
               as String?,
       renoteId: freezed == renoteId
-          ? _self.renoteId
+          ? _value.renoteId
           : renoteId // ignore: cast_nullable_to_non_nullable
               as String?,
       channelId: freezed == channelId
-          ? _self.channelId
+          ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
       poll: freezed == poll
-          ? _self.poll
+          ? _value.poll
           : poll // ignore: cast_nullable_to_non_nullable
               as NotesCreatePollRequest?,
-    ));
+    ) as $Val);
   }
 
-  /// Create a copy of NotesCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NotesCreatePollRequestCopyWith<$Res>? get poll {
-    if (_self.poll == null) {
+    if (_value.poll == null) {
       return null;
     }
 
-    return $NotesCreatePollRequestCopyWith<$Res>(_self.poll!, (value) {
-      return _then(_self.copyWith(poll: value));
+    return $NotesCreatePollRequestCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$NotesCreateRequestImplCopyWith<$Res>
+    implements $NotesCreateRequestCopyWith<$Res> {
+  factory _$$NotesCreateRequestImplCopyWith(_$NotesCreateRequestImpl value,
+          $Res Function(_$NotesCreateRequestImpl) then) =
+      __$$NotesCreateRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
+      List<String>? visibleUserIds,
+      String? text,
+      String? cw,
+      bool? localOnly,
+      ReactionAcceptance? reactionAcceptance,
+      bool? noExtractMentions,
+      bool? noExtractHashtags,
+      bool? noExtractEmojis,
+      List<String>? fileIds,
+      List<String>? mediaIds,
+      String? replyId,
+      String? renoteId,
+      String? channelId,
+      NotesCreatePollRequest? poll});
+
+  @override
+  $NotesCreatePollRequestCopyWith<$Res>? get poll;
+}
+
+/// @nodoc
+class __$$NotesCreateRequestImplCopyWithImpl<$Res>
+    extends _$NotesCreateRequestCopyWithImpl<$Res, _$NotesCreateRequestImpl>
+    implements _$$NotesCreateRequestImplCopyWith<$Res> {
+  __$$NotesCreateRequestImplCopyWithImpl(_$NotesCreateRequestImpl _value,
+      $Res Function(_$NotesCreateRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? visibility = freezed,
+    Object? visibleUserIds = freezed,
+    Object? text = freezed,
+    Object? cw = freezed,
+    Object? localOnly = freezed,
+    Object? reactionAcceptance = freezed,
+    Object? noExtractMentions = freezed,
+    Object? noExtractHashtags = freezed,
+    Object? noExtractEmojis = freezed,
+    Object? fileIds = freezed,
+    Object? mediaIds = freezed,
+    Object? replyId = freezed,
+    Object? renoteId = freezed,
+    Object? channelId = freezed,
+    Object? poll = freezed,
+  }) {
+    return _then(_$NotesCreateRequestImpl(
+      visibility: freezed == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as NoteVisibility?,
+      visibleUserIds: freezed == visibleUserIds
+          ? _value._visibleUserIds
+          : visibleUserIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      text: freezed == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cw: freezed == cw
+          ? _value.cw
+          : cw // ignore: cast_nullable_to_non_nullable
+              as String?,
+      localOnly: freezed == localOnly
+          ? _value.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      reactionAcceptance: freezed == reactionAcceptance
+          ? _value.reactionAcceptance
+          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+              as ReactionAcceptance?,
+      noExtractMentions: freezed == noExtractMentions
+          ? _value.noExtractMentions
+          : noExtractMentions // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      noExtractHashtags: freezed == noExtractHashtags
+          ? _value.noExtractHashtags
+          : noExtractHashtags // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      noExtractEmojis: freezed == noExtractEmojis
+          ? _value.noExtractEmojis
+          : noExtractEmojis // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      fileIds: freezed == fileIds
+          ? _value._fileIds
+          : fileIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mediaIds: freezed == mediaIds
+          ? _value._mediaIds
+          : mediaIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      replyId: freezed == replyId
+          ? _value.replyId
+          : replyId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      renoteId: freezed == renoteId
+          ? _value.renoteId
+          : renoteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      channelId: freezed == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as NotesCreatePollRequest?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _NotesCreateRequest implements NotesCreateRequest {
-  const _NotesCreateRequest(
+class _$NotesCreateRequestImpl implements _NotesCreateRequest {
+  const _$NotesCreateRequestImpl(
       {@NoteVisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
       this.text,
@@ -275,8 +338,9 @@ class _NotesCreateRequest implements NotesCreateRequest {
       : _visibleUserIds = visibleUserIds,
         _fileIds = fileIds,
         _mediaIds = mediaIds;
-  factory _NotesCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesCreateRequestFromJson(json);
+
+  factory _$NotesCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesCreateRequestImplFromJson(json);
 
   /// ノートの公開範囲。
   @override
@@ -357,26 +421,16 @@ class _NotesCreateRequest implements NotesCreateRequest {
   @override
   final NotesCreatePollRequest? poll;
 
-  /// Create a copy of NotesCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesCreateRequestCopyWith<_NotesCreateRequest> get copyWith =>
-      __$NotesCreateRequestCopyWithImpl<_NotesCreateRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesCreateRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExtractMentions: $noExtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, poll: $poll)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotesCreateRequest &&
+            other is _$NotesCreateRequestImpl &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility) &&
             const DeepCollectionEquality()
@@ -403,7 +457,7 @@ class _NotesCreateRequest implements NotesCreateRequest {
             (identical(other.poll, poll) || other.poll == poll));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -423,147 +477,95 @@ class _NotesCreateRequest implements NotesCreateRequest {
       channelId,
       poll);
 
-  @override
-  String toString() {
-    return 'NotesCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, noExtractMentions: $noExtractMentions, noExtractHashtags: $noExtractHashtags, noExtractEmojis: $noExtractEmojis, fileIds: $fileIds, mediaIds: $mediaIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, poll: $poll)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$NotesCreateRequestCopyWith<$Res>
-    implements $NotesCreateRequestCopyWith<$Res> {
-  factory _$NotesCreateRequestCopyWith(
-          _NotesCreateRequest value, $Res Function(_NotesCreateRequest) _then) =
-      __$NotesCreateRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@NoteVisibilityJsonConverter() NoteVisibility? visibility,
-      List<String>? visibleUserIds,
-      String? text,
-      String? cw,
-      bool? localOnly,
-      ReactionAcceptance? reactionAcceptance,
-      bool? noExtractMentions,
-      bool? noExtractHashtags,
-      bool? noExtractEmojis,
-      List<String>? fileIds,
-      List<String>? mediaIds,
-      String? replyId,
-      String? renoteId,
-      String? channelId,
-      NotesCreatePollRequest? poll});
-
-  @override
-  $NotesCreatePollRequestCopyWith<$Res>? get poll;
-}
-
-/// @nodoc
-class __$NotesCreateRequestCopyWithImpl<$Res>
-    implements _$NotesCreateRequestCopyWith<$Res> {
-  __$NotesCreateRequestCopyWithImpl(this._self, this._then);
-
-  final _NotesCreateRequest _self;
-  final $Res Function(_NotesCreateRequest) _then;
-
-  /// Create a copy of NotesCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? visibility = freezed,
-    Object? visibleUserIds = freezed,
-    Object? text = freezed,
-    Object? cw = freezed,
-    Object? localOnly = freezed,
-    Object? reactionAcceptance = freezed,
-    Object? noExtractMentions = freezed,
-    Object? noExtractHashtags = freezed,
-    Object? noExtractEmojis = freezed,
-    Object? fileIds = freezed,
-    Object? mediaIds = freezed,
-    Object? replyId = freezed,
-    Object? renoteId = freezed,
-    Object? channelId = freezed,
-    Object? poll = freezed,
-  }) {
-    return _then(_NotesCreateRequest(
-      visibility: freezed == visibility
-          ? _self.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
-      visibleUserIds: freezed == visibleUserIds
-          ? _self._visibleUserIds
-          : visibleUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cw: freezed == cw
-          ? _self.cw
-          : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-      localOnly: freezed == localOnly
-          ? _self.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      reactionAcceptance: freezed == reactionAcceptance
-          ? _self.reactionAcceptance
-          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-              as ReactionAcceptance?,
-      noExtractMentions: freezed == noExtractMentions
-          ? _self.noExtractMentions
-          : noExtractMentions // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      noExtractHashtags: freezed == noExtractHashtags
-          ? _self.noExtractHashtags
-          : noExtractHashtags // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      noExtractEmojis: freezed == noExtractEmojis
-          ? _self.noExtractEmojis
-          : noExtractEmojis // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      fileIds: freezed == fileIds
-          ? _self._fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mediaIds: freezed == mediaIds
-          ? _self._mediaIds
-          : mediaIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      replyId: freezed == replyId
-          ? _self.replyId
-          : replyId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      renoteId: freezed == renoteId
-          ? _self.renoteId
-          : renoteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      poll: freezed == poll
-          ? _self.poll
-          : poll // ignore: cast_nullable_to_non_nullable
-              as NotesCreatePollRequest?,
-    ));
-  }
+  _$$NotesCreateRequestImplCopyWith<_$NotesCreateRequestImpl> get copyWith =>
+      __$$NotesCreateRequestImplCopyWithImpl<_$NotesCreateRequestImpl>(
+          this, _$identity);
 
-  /// Create a copy of NotesCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $NotesCreatePollRequestCopyWith<$Res>? get poll {
-    if (_self.poll == null) {
-      return null;
-    }
-
-    return $NotesCreatePollRequestCopyWith<$Res>(_self.poll!, (value) {
-      return _then(_self.copyWith(poll: value));
-    });
+  Map<String, dynamic> toJson() {
+    return _$$NotesCreateRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _NotesCreateRequest implements NotesCreateRequest {
+  const factory _NotesCreateRequest(
+      {@NoteVisibilityJsonConverter() final NoteVisibility? visibility,
+      final List<String>? visibleUserIds,
+      final String? text,
+      final String? cw,
+      final bool? localOnly,
+      final ReactionAcceptance? reactionAcceptance,
+      final bool? noExtractMentions,
+      final bool? noExtractHashtags,
+      final bool? noExtractEmojis,
+      final List<String>? fileIds,
+      final List<String>? mediaIds,
+      final String? replyId,
+      final String? renoteId,
+      final String? channelId,
+      final NotesCreatePollRequest? poll}) = _$NotesCreateRequestImpl;
+
+  factory _NotesCreateRequest.fromJson(Map<String, dynamic> json) =
+      _$NotesCreateRequestImpl.fromJson;
+
+  @override
+
+  /// ノートの公開範囲。
+  @NoteVisibilityJsonConverter()
+  NoteVisibility? get visibility;
+  @override
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
+  List<String>? get visibleUserIds;
+  @override
+
+  /// ノートの本文。
+  String? get text;
+  @override
+
+  /// ノートのCW。
+  String? get cw;
+  @override
+
+  /// trueにすると、ローカルのみに投稿されます。
+  bool? get localOnly;
+  @override
+  ReactionAcceptance? get reactionAcceptance;
+  @override
+
+  /// trueにすると、本文からメンションを展開しません。
+  bool? get noExtractMentions;
+  @override
+
+  /// trueにすると、本文からハッシュタグを展開しません。
+  bool? get noExtractHashtags;
+  @override
+
+  /// trueにすると、本文から絵文字を展開しません。
+  bool? get noExtractEmojis;
+  @override
+
+  /// 添付するファイルのid。
+  List<String>? get fileIds;
+  @override
+
+  /// fileIds を使用してください。fileIds と mediaIds が指定された場合、 mediaIds は無視されます。
+  List<String>? get mediaIds;
+  @override
+  String? get replyId;
+  @override
+  String? get renoteId;
+  @override
+  String? get channelId;
+  @override
+  NotesCreatePollRequest? get poll;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotesCreateRequestImplCopyWith<_$NotesCreateRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

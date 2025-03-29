@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,58 +9,34 @@ part of 'flash_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$FlashCreateRequest {
-  String get title;
-  String get summary;
-  String get script;
-  List<String> get permissions;
-  FlashVisibility? get visibility;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of FlashCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $FlashCreateRequestCopyWith<FlashCreateRequest> get copyWith =>
-      _$FlashCreateRequestCopyWithImpl<FlashCreateRequest>(
-          this as FlashCreateRequest, _$identity);
-
-  /// Serializes this FlashCreateRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is FlashCreateRequest &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.summary, summary) || other.summary == summary) &&
-            (identical(other.script, script) || other.script == script) &&
-            const DeepCollectionEquality()
-                .equals(other.permissions, permissions) &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, title, summary, script,
-      const DeepCollectionEquality().hash(permissions), visibility);
-
-  @override
-  String toString() {
-    return 'FlashCreateRequest(title: $title, summary: $summary, script: $script, permissions: $permissions, visibility: $visibility)';
-  }
+FlashCreateRequest _$FlashCreateRequestFromJson(Map<String, dynamic> json) {
+  return _FlashCreateRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $FlashCreateRequestCopyWith<$Res> {
+mixin _$FlashCreateRequest {
+  String get title => throw _privateConstructorUsedError;
+  String get summary => throw _privateConstructorUsedError;
+  String get script => throw _privateConstructorUsedError;
+  List<String> get permissions => throw _privateConstructorUsedError;
+  FlashVisibility? get visibility => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlashCreateRequestCopyWith<FlashCreateRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FlashCreateRequestCopyWith<$Res> {
   factory $FlashCreateRequestCopyWith(
-          FlashCreateRequest value, $Res Function(FlashCreateRequest) _then) =
-      _$FlashCreateRequestCopyWithImpl;
+          FlashCreateRequest value, $Res Function(FlashCreateRequest) then) =
+      _$FlashCreateRequestCopyWithImpl<$Res, FlashCreateRequest>;
   @useResult
   $Res call(
       {String title,
@@ -72,15 +47,15 @@ abstract mixin class $FlashCreateRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FlashCreateRequestCopyWithImpl<$Res>
+class _$FlashCreateRequestCopyWithImpl<$Res, $Val extends FlashCreateRequest>
     implements $FlashCreateRequestCopyWith<$Res> {
-  _$FlashCreateRequestCopyWithImpl(this._self, this._then);
+  _$FlashCreateRequestCopyWithImpl(this._value, this._then);
 
-  final FlashCreateRequest _self;
-  final $Res Function(FlashCreateRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of FlashCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -90,25 +65,83 @@ class _$FlashCreateRequestCopyWithImpl<$Res>
     Object? permissions = null,
     Object? visibility = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       title: null == title
-          ? _self.title
+          ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       summary: null == summary
-          ? _self.summary
+          ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String,
       script: null == script
-          ? _self.script
+          ? _value.script
           : script // ignore: cast_nullable_to_non_nullable
               as String,
       permissions: null == permissions
-          ? _self.permissions
+          ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as List<String>,
       visibility: freezed == visibility
-          ? _self.visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as FlashVisibility?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FlashCreateRequestImplCopyWith<$Res>
+    implements $FlashCreateRequestCopyWith<$Res> {
+  factory _$$FlashCreateRequestImplCopyWith(_$FlashCreateRequestImpl value,
+          $Res Function(_$FlashCreateRequestImpl) then) =
+      __$$FlashCreateRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String title,
+      String summary,
+      String script,
+      List<String> permissions,
+      FlashVisibility? visibility});
+}
+
+/// @nodoc
+class __$$FlashCreateRequestImplCopyWithImpl<$Res>
+    extends _$FlashCreateRequestCopyWithImpl<$Res, _$FlashCreateRequestImpl>
+    implements _$$FlashCreateRequestImplCopyWith<$Res> {
+  __$$FlashCreateRequestImplCopyWithImpl(_$FlashCreateRequestImpl _value,
+      $Res Function(_$FlashCreateRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? summary = null,
+    Object? script = null,
+    Object? permissions = null,
+    Object? visibility = freezed,
+  }) {
+    return _then(_$FlashCreateRequestImpl(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      summary: null == summary
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as String,
+      script: null == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String,
+      permissions: null == permissions
+          ? _value._permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      visibility: freezed == visibility
+          ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as FlashVisibility?,
     ));
@@ -117,16 +150,17 @@ class _$FlashCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _FlashCreateRequest implements FlashCreateRequest {
-  const _FlashCreateRequest(
+class _$FlashCreateRequestImpl implements _FlashCreateRequest {
+  const _$FlashCreateRequestImpl(
       {required this.title,
       required this.summary,
       required this.script,
       required final List<String> permissions,
       this.visibility})
       : _permissions = permissions;
-  factory _FlashCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$FlashCreateRequestFromJson(json);
+
+  factory _$FlashCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlashCreateRequestImplFromJson(json);
 
   @override
   final String title;
@@ -145,26 +179,16 @@ class _FlashCreateRequest implements FlashCreateRequest {
   @override
   final FlashVisibility? visibility;
 
-  /// Create a copy of FlashCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$FlashCreateRequestCopyWith<_FlashCreateRequest> get copyWith =>
-      __$FlashCreateRequestCopyWithImpl<_FlashCreateRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$FlashCreateRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'FlashCreateRequest(title: $title, summary: $summary, script: $script, permissions: $permissions, visibility: $visibility)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FlashCreateRequest &&
+            other is _$FlashCreateRequestImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.summary, summary) || other.summary == summary) &&
             (identical(other.script, script) || other.script == script) &&
@@ -174,75 +198,49 @@ class _FlashCreateRequest implements FlashCreateRequest {
                 other.visibility == visibility));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, title, summary, script,
       const DeepCollectionEquality().hash(_permissions), visibility);
 
-  @override
-  String toString() {
-    return 'FlashCreateRequest(title: $title, summary: $summary, script: $script, permissions: $permissions, visibility: $visibility)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$FlashCreateRequestCopyWith<$Res>
-    implements $FlashCreateRequestCopyWith<$Res> {
-  factory _$FlashCreateRequestCopyWith(
-          _FlashCreateRequest value, $Res Function(_FlashCreateRequest) _then) =
-      __$FlashCreateRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String title,
-      String summary,
-      String script,
-      List<String> permissions,
-      FlashVisibility? visibility});
-}
-
-/// @nodoc
-class __$FlashCreateRequestCopyWithImpl<$Res>
-    implements _$FlashCreateRequestCopyWith<$Res> {
-  __$FlashCreateRequestCopyWithImpl(this._self, this._then);
-
-  final _FlashCreateRequest _self;
-  final $Res Function(_FlashCreateRequest) _then;
-
-  /// Create a copy of FlashCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? title = null,
-    Object? summary = null,
-    Object? script = null,
-    Object? permissions = null,
-    Object? visibility = freezed,
-  }) {
-    return _then(_FlashCreateRequest(
-      title: null == title
-          ? _self.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      summary: null == summary
-          ? _self.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String,
-      script: null == script
-          ? _self.script
-          : script // ignore: cast_nullable_to_non_nullable
-              as String,
-      permissions: null == permissions
-          ? _self._permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      visibility: freezed == visibility
-          ? _self.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashVisibility?,
-    ));
+  _$$FlashCreateRequestImplCopyWith<_$FlashCreateRequestImpl> get copyWith =>
+      __$$FlashCreateRequestImplCopyWithImpl<_$FlashCreateRequestImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FlashCreateRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _FlashCreateRequest implements FlashCreateRequest {
+  const factory _FlashCreateRequest(
+      {required final String title,
+      required final String summary,
+      required final String script,
+      required final List<String> permissions,
+      final FlashVisibility? visibility}) = _$FlashCreateRequestImpl;
+
+  factory _FlashCreateRequest.fromJson(Map<String, dynamic> json) =
+      _$FlashCreateRequestImpl.fromJson;
+
+  @override
+  String get title;
+  @override
+  String get summary;
+  @override
+  String get script;
+  @override
+  List<String> get permissions;
+  @override
+  FlashVisibility? get visibility;
+  @override
+  @JsonKey(ignore: true)
+  _$$FlashCreateRequestImplCopyWith<_$FlashCreateRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

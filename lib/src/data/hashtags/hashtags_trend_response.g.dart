@@ -6,18 +6,16 @@ part of 'hashtags_trend_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HashtagsTrendResponse _$HashtagsTrendResponseFromJson(
+_$HashtagsTrendResponseImpl _$$HashtagsTrendResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _HashtagsTrendResponse(
+    _$HashtagsTrendResponseImpl(
       tag: json['tag'] as String,
-      chart: (json['chart'] as List<dynamic>)
-          .map((e) => (e as num).toInt())
-          .toList(),
-      usersCount: (json['usersCount'] as num).toInt(),
+      chart: (json['chart'] as List<dynamic>).map((e) => e as int).toList(),
+      usersCount: json['usersCount'] as int,
     );
 
-Map<String, dynamic> _$HashtagsTrendResponseToJson(
-        _HashtagsTrendResponse instance) =>
+Map<String, dynamic> _$$HashtagsTrendResponseImplToJson(
+        _$HashtagsTrendResponseImpl instance) =>
     <String, dynamic>{
       'tag': instance.tag,
       'chart': instance.chart,

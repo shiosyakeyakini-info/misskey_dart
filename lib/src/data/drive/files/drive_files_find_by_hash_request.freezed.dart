@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,71 +9,92 @@ part of 'drive_files_find_by_hash_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$DriveFilesFindByHashRequest {
-  String get md5;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of DriveFilesFindByHashRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $DriveFilesFindByHashRequestCopyWith<DriveFilesFindByHashRequest>
-      get copyWith => _$DriveFilesFindByHashRequestCopyWithImpl<
-              DriveFilesFindByHashRequest>(
-          this as DriveFilesFindByHashRequest, _$identity);
-
-  /// Serializes this DriveFilesFindByHashRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is DriveFilesFindByHashRequest &&
-            (identical(other.md5, md5) || other.md5 == md5));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, md5);
-
-  @override
-  String toString() {
-    return 'DriveFilesFindByHashRequest(md5: $md5)';
-  }
+DriveFilesFindByHashRequest _$DriveFilesFindByHashRequestFromJson(
+    Map<String, dynamic> json) {
+  return _DriveFilesFindByHashRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $DriveFilesFindByHashRequestCopyWith<$Res> {
+mixin _$DriveFilesFindByHashRequest {
+  String get md5 => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DriveFilesFindByHashRequestCopyWith<DriveFilesFindByHashRequest>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DriveFilesFindByHashRequestCopyWith<$Res> {
   factory $DriveFilesFindByHashRequestCopyWith(
           DriveFilesFindByHashRequest value,
-          $Res Function(DriveFilesFindByHashRequest) _then) =
-      _$DriveFilesFindByHashRequestCopyWithImpl;
+          $Res Function(DriveFilesFindByHashRequest) then) =
+      _$DriveFilesFindByHashRequestCopyWithImpl<$Res,
+          DriveFilesFindByHashRequest>;
   @useResult
   $Res call({String md5});
 }
 
 /// @nodoc
-class _$DriveFilesFindByHashRequestCopyWithImpl<$Res>
+class _$DriveFilesFindByHashRequestCopyWithImpl<$Res,
+        $Val extends DriveFilesFindByHashRequest>
     implements $DriveFilesFindByHashRequestCopyWith<$Res> {
-  _$DriveFilesFindByHashRequestCopyWithImpl(this._self, this._then);
+  _$DriveFilesFindByHashRequestCopyWithImpl(this._value, this._then);
 
-  final DriveFilesFindByHashRequest _self;
-  final $Res Function(DriveFilesFindByHashRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of DriveFilesFindByHashRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? md5 = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       md5: null == md5
-          ? _self.md5
+          ? _value.md5
+          : md5 // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DriveFilesFindByHashRequestImplCopyWith<$Res>
+    implements $DriveFilesFindByHashRequestCopyWith<$Res> {
+  factory _$$DriveFilesFindByHashRequestImplCopyWith(
+          _$DriveFilesFindByHashRequestImpl value,
+          $Res Function(_$DriveFilesFindByHashRequestImpl) then) =
+      __$$DriveFilesFindByHashRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String md5});
+}
+
+/// @nodoc
+class __$$DriveFilesFindByHashRequestImplCopyWithImpl<$Res>
+    extends _$DriveFilesFindByHashRequestCopyWithImpl<$Res,
+        _$DriveFilesFindByHashRequestImpl>
+    implements _$$DriveFilesFindByHashRequestImplCopyWith<$Res> {
+  __$$DriveFilesFindByHashRequestImplCopyWithImpl(
+      _$DriveFilesFindByHashRequestImpl _value,
+      $Res Function(_$DriveFilesFindByHashRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? md5 = null,
+  }) {
+    return _then(_$DriveFilesFindByHashRequestImpl(
+      md5: null == md5
+          ? _value.md5
           : md5 // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -83,82 +103,61 @@ class _$DriveFilesFindByHashRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _DriveFilesFindByHashRequest implements DriveFilesFindByHashRequest {
-  const _DriveFilesFindByHashRequest({required this.md5});
-  factory _DriveFilesFindByHashRequest.fromJson(Map<String, dynamic> json) =>
-      _$DriveFilesFindByHashRequestFromJson(json);
+class _$DriveFilesFindByHashRequestImpl
+    implements _DriveFilesFindByHashRequest {
+  const _$DriveFilesFindByHashRequestImpl({required this.md5});
+
+  factory _$DriveFilesFindByHashRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$DriveFilesFindByHashRequestImplFromJson(json);
 
   @override
   final String md5;
 
-  /// Create a copy of DriveFilesFindByHashRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$DriveFilesFindByHashRequestCopyWith<_DriveFilesFindByHashRequest>
-      get copyWith => __$DriveFilesFindByHashRequestCopyWithImpl<
-          _DriveFilesFindByHashRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$DriveFilesFindByHashRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'DriveFilesFindByHashRequest(md5: $md5)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DriveFilesFindByHashRequest &&
+            other is _$DriveFilesFindByHashRequestImpl &&
             (identical(other.md5, md5) || other.md5 == md5));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, md5);
 
-  @override
-  String toString() {
-    return 'DriveFilesFindByHashRequest(md5: $md5)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$DriveFilesFindByHashRequestCopyWith<$Res>
-    implements $DriveFilesFindByHashRequestCopyWith<$Res> {
-  factory _$DriveFilesFindByHashRequestCopyWith(
-          _DriveFilesFindByHashRequest value,
-          $Res Function(_DriveFilesFindByHashRequest) _then) =
-      __$DriveFilesFindByHashRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String md5});
-}
-
-/// @nodoc
-class __$DriveFilesFindByHashRequestCopyWithImpl<$Res>
-    implements _$DriveFilesFindByHashRequestCopyWith<$Res> {
-  __$DriveFilesFindByHashRequestCopyWithImpl(this._self, this._then);
-
-  final _DriveFilesFindByHashRequest _self;
-  final $Res Function(_DriveFilesFindByHashRequest) _then;
-
-  /// Create a copy of DriveFilesFindByHashRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? md5 = null,
-  }) {
-    return _then(_DriveFilesFindByHashRequest(
-      md5: null == md5
-          ? _self.md5
-          : md5 // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$DriveFilesFindByHashRequestImplCopyWith<_$DriveFilesFindByHashRequestImpl>
+      get copyWith => __$$DriveFilesFindByHashRequestImplCopyWithImpl<
+          _$DriveFilesFindByHashRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DriveFilesFindByHashRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _DriveFilesFindByHashRequest
+    implements DriveFilesFindByHashRequest {
+  const factory _DriveFilesFindByHashRequest({required final String md5}) =
+      _$DriveFilesFindByHashRequestImpl;
+
+  factory _DriveFilesFindByHashRequest.fromJson(Map<String, dynamic> json) =
+      _$DriveFilesFindByHashRequestImpl.fromJson;
+
+  @override
+  String get md5;
+  @override
+  @JsonKey(ignore: true)
+  _$$DriveFilesFindByHashRequestImplCopyWith<_$DriveFilesFindByHashRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

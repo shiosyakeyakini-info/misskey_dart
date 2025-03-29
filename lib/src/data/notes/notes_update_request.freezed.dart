@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,65 +9,46 @@ part of 'notes_update_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$NotesUpdateRequest {
-  String get noteId; // ここが必須なのはバグな気がする
-  String get text;
-  String? get cw;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of NotesUpdateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesUpdateRequestCopyWith<NotesUpdateRequest> get copyWith =>
-      _$NotesUpdateRequestCopyWithImpl<NotesUpdateRequest>(
-          this as NotesUpdateRequest, _$identity);
-
-  /// Serializes this NotesUpdateRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesUpdateRequest &&
-            (identical(other.noteId, noteId) || other.noteId == noteId) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.cw, cw) || other.cw == cw));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, noteId, text, cw);
-
-  @override
-  String toString() {
-    return 'NotesUpdateRequest(noteId: $noteId, text: $text, cw: $cw)';
-  }
+NotesUpdateRequest _$NotesUpdateRequestFromJson(Map<String, dynamic> json) {
+  return _NotesUpdateRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $NotesUpdateRequestCopyWith<$Res> {
+mixin _$NotesUpdateRequest {
+  String get noteId => throw _privateConstructorUsedError; // ここが必須なのはバグな気がする
+  String get text => throw _privateConstructorUsedError;
+  String? get cw => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotesUpdateRequestCopyWith<NotesUpdateRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotesUpdateRequestCopyWith<$Res> {
   factory $NotesUpdateRequestCopyWith(
-          NotesUpdateRequest value, $Res Function(NotesUpdateRequest) _then) =
-      _$NotesUpdateRequestCopyWithImpl;
+          NotesUpdateRequest value, $Res Function(NotesUpdateRequest) then) =
+      _$NotesUpdateRequestCopyWithImpl<$Res, NotesUpdateRequest>;
   @useResult
   $Res call({String noteId, String text, String? cw});
 }
 
 /// @nodoc
-class _$NotesUpdateRequestCopyWithImpl<$Res>
+class _$NotesUpdateRequestCopyWithImpl<$Res, $Val extends NotesUpdateRequest>
     implements $NotesUpdateRequestCopyWith<$Res> {
-  _$NotesUpdateRequestCopyWithImpl(this._self, this._then);
+  _$NotesUpdateRequestCopyWithImpl(this._value, this._then);
 
-  final NotesUpdateRequest _self;
-  final $Res Function(NotesUpdateRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of NotesUpdateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -76,17 +56,60 @@ class _$NotesUpdateRequestCopyWithImpl<$Res>
     Object? text = null,
     Object? cw = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       noteId: null == noteId
-          ? _self.noteId
+          ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
               as String,
       text: null == text
-          ? _self.text
+          ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
       cw: freezed == cw
-          ? _self.cw
+          ? _value.cw
+          : cw // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$NotesUpdateRequestImplCopyWith<$Res>
+    implements $NotesUpdateRequestCopyWith<$Res> {
+  factory _$$NotesUpdateRequestImplCopyWith(_$NotesUpdateRequestImpl value,
+          $Res Function(_$NotesUpdateRequestImpl) then) =
+      __$$NotesUpdateRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String noteId, String text, String? cw});
+}
+
+/// @nodoc
+class __$$NotesUpdateRequestImplCopyWithImpl<$Res>
+    extends _$NotesUpdateRequestCopyWithImpl<$Res, _$NotesUpdateRequestImpl>
+    implements _$$NotesUpdateRequestImplCopyWith<$Res> {
+  __$$NotesUpdateRequestImplCopyWithImpl(_$NotesUpdateRequestImpl _value,
+      $Res Function(_$NotesUpdateRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? noteId = null,
+    Object? text = null,
+    Object? cw = freezed,
+  }) {
+    return _then(_$NotesUpdateRequestImpl(
+      noteId: null == noteId
+          ? _value.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String,
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      cw: freezed == cw
+          ? _value.cw
           : cw // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -95,11 +118,12 @@ class _$NotesUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _NotesUpdateRequest implements NotesUpdateRequest {
-  const _NotesUpdateRequest(
+class _$NotesUpdateRequestImpl implements _NotesUpdateRequest {
+  const _$NotesUpdateRequestImpl(
       {required this.noteId, required this.text, this.cw});
-  factory _NotesUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesUpdateRequestFromJson(json);
+
+  factory _$NotesUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesUpdateRequestImplFromJson(json);
 
   @override
   final String noteId;
@@ -109,84 +133,57 @@ class _NotesUpdateRequest implements NotesUpdateRequest {
   @override
   final String? cw;
 
-  /// Create a copy of NotesUpdateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesUpdateRequestCopyWith<_NotesUpdateRequest> get copyWith =>
-      __$NotesUpdateRequestCopyWithImpl<_NotesUpdateRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesUpdateRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesUpdateRequest(noteId: $noteId, text: $text, cw: $cw)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotesUpdateRequest &&
+            other is _$NotesUpdateRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.cw, cw) || other.cw == cw));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, noteId, text, cw);
 
-  @override
-  String toString() {
-    return 'NotesUpdateRequest(noteId: $noteId, text: $text, cw: $cw)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$NotesUpdateRequestCopyWith<$Res>
-    implements $NotesUpdateRequestCopyWith<$Res> {
-  factory _$NotesUpdateRequestCopyWith(
-          _NotesUpdateRequest value, $Res Function(_NotesUpdateRequest) _then) =
-      __$NotesUpdateRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String noteId, String text, String? cw});
-}
-
-/// @nodoc
-class __$NotesUpdateRequestCopyWithImpl<$Res>
-    implements _$NotesUpdateRequestCopyWith<$Res> {
-  __$NotesUpdateRequestCopyWithImpl(this._self, this._then);
-
-  final _NotesUpdateRequest _self;
-  final $Res Function(_NotesUpdateRequest) _then;
-
-  /// Create a copy of NotesUpdateRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? noteId = null,
-    Object? text = null,
-    Object? cw = freezed,
-  }) {
-    return _then(_NotesUpdateRequest(
-      noteId: null == noteId
-          ? _self.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-      text: null == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      cw: freezed == cw
-          ? _self.cw
-          : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  _$$NotesUpdateRequestImplCopyWith<_$NotesUpdateRequestImpl> get copyWith =>
+      __$$NotesUpdateRequestImplCopyWithImpl<_$NotesUpdateRequestImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NotesUpdateRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _NotesUpdateRequest implements NotesUpdateRequest {
+  const factory _NotesUpdateRequest(
+      {required final String noteId,
+      required final String text,
+      final String? cw}) = _$NotesUpdateRequestImpl;
+
+  factory _NotesUpdateRequest.fromJson(Map<String, dynamic> json) =
+      _$NotesUpdateRequestImpl.fromJson;
+
+  @override
+  String get noteId;
+  @override // ここが必須なのはバグな気がする
+  String get text;
+  @override
+  String? get cw;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotesUpdateRequestImplCopyWith<_$NotesUpdateRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

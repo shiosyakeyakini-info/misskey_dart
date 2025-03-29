@@ -6,16 +6,16 @@ part of 'users_featured_notes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersFeaturedNotesRequest _$UsersFeaturedNotesRequestFromJson(
+_$UsersFeaturedNotesRequestImpl _$$UsersFeaturedNotesRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _UsersFeaturedNotesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _$UsersFeaturedNotesRequestImpl(
+      limit: json['limit'] as int?,
       untilId: json['untilId'] as String?,
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$UsersFeaturedNotesRequestToJson(
-        _UsersFeaturedNotesRequest instance) =>
+Map<String, dynamic> _$$UsersFeaturedNotesRequestImplToJson(
+        _$UsersFeaturedNotesRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'untilId': instance.untilId,

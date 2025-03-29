@@ -6,19 +6,19 @@ part of 'notes_reactions_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesReactionsRequest _$NotesReactionsRequestFromJson(
+_$NotesReactionsRequestImpl _$$NotesReactionsRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _NotesReactionsRequest(
+    _$NotesReactionsRequestImpl(
       noteId: json['noteId'] as String,
       type: json['type'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
-      offset: (json['offset'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
+      offset: json['offset'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$NotesReactionsRequestToJson(
-        _NotesReactionsRequest instance) =>
+Map<String, dynamic> _$$NotesReactionsRequestImplToJson(
+        _$NotesReactionsRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
       'type': instance.type,

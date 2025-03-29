@@ -6,9 +6,9 @@ part of 'users_lists_show_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersListsShowResponse _$UsersListsShowResponseFromJson(
+_$UsersListsShowResponseImpl _$$UsersListsShowResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _UsersListsShowResponse(
+    _$UsersListsShowResponseImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -16,12 +16,12 @@ _UsersListsShowResponse _$UsersListsShowResponseFromJson(
       userIds:
           (json['userIds'] as List<dynamic>).map((e) => e as String).toList(),
       isPublic: json['isPublic'] as bool?,
-      likedCount: (json['likedCount'] as num?)?.toInt(),
+      likedCount: json['likedCount'] as int?,
       isLiked: json['isLiked'] as bool?,
     );
 
-Map<String, dynamic> _$UsersListsShowResponseToJson(
-        _UsersListsShowResponse instance) =>
+Map<String, dynamic> _$$UsersListsShowResponseImplToJson(
+        _$UsersListsShowResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

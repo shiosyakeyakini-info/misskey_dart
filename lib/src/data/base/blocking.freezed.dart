@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,55 +9,33 @@ part of 'blocking.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$Blocking {
-  String get id;
-  @DateTimeConverter()
-  DateTime get createdAt;
-  String get blockeeId;
-  UserDetailedNotMe get blockee;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of Blocking
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $BlockingCopyWith<Blocking> get copyWith =>
-      _$BlockingCopyWithImpl<Blocking>(this as Blocking, _$identity);
-
-  /// Serializes this Blocking to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Blocking &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.blockeeId, blockeeId) ||
-                other.blockeeId == blockeeId) &&
-            (identical(other.blockee, blockee) || other.blockee == blockee));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, createdAt, blockeeId, blockee);
-
-  @override
-  String toString() {
-    return 'Blocking(id: $id, createdAt: $createdAt, blockeeId: $blockeeId, blockee: $blockee)';
-  }
+Blocking _$BlockingFromJson(Map<String, dynamic> json) {
+  return _Blocking.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $BlockingCopyWith<$Res> {
-  factory $BlockingCopyWith(Blocking value, $Res Function(Blocking) _then) =
-      _$BlockingCopyWithImpl;
+mixin _$Blocking {
+  String get id => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get blockeeId => throw _privateConstructorUsedError;
+  UserDetailedNotMe get blockee => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BlockingCopyWith<Blocking> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockingCopyWith<$Res> {
+  factory $BlockingCopyWith(Blocking value, $Res Function(Blocking) then) =
+      _$BlockingCopyWithImpl<$Res, Blocking>;
   @useResult
   $Res call(
       {String id,
@@ -70,14 +47,15 @@ abstract mixin class $BlockingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BlockingCopyWithImpl<$Res> implements $BlockingCopyWith<$Res> {
-  _$BlockingCopyWithImpl(this._self, this._then);
+class _$BlockingCopyWithImpl<$Res, $Val extends Blocking>
+    implements $BlockingCopyWith<$Res> {
+  _$BlockingCopyWithImpl(this._value, this._then);
 
-  final Blocking _self;
-  final $Res Function(Blocking) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of Blocking
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,47 +64,101 @@ class _$BlockingCopyWithImpl<$Res> implements $BlockingCopyWith<$Res> {
     Object? blockeeId = null,
     Object? blockee = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       blockeeId: null == blockeeId
-          ? _self.blockeeId
+          ? _value.blockeeId
           : blockeeId // ignore: cast_nullable_to_non_nullable
               as String,
       blockee: null == blockee
-          ? _self.blockee
+          ? _value.blockee
           : blockee // ignore: cast_nullable_to_non_nullable
               as UserDetailedNotMe,
-    ));
+    ) as $Val);
   }
 
-  /// Create a copy of Blocking
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserDetailedNotMeCopyWith<$Res> get blockee {
-    return $UserDetailedNotMeCopyWith<$Res>(_self.blockee, (value) {
-      return _then(_self.copyWith(blockee: value));
+    return $UserDetailedNotMeCopyWith<$Res>(_value.blockee, (value) {
+      return _then(_value.copyWith(blockee: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$BlockingImplCopyWith<$Res>
+    implements $BlockingCopyWith<$Res> {
+  factory _$$BlockingImplCopyWith(
+          _$BlockingImpl value, $Res Function(_$BlockingImpl) then) =
+      __$$BlockingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String blockeeId,
+      UserDetailedNotMe blockee});
+
+  @override
+  $UserDetailedNotMeCopyWith<$Res> get blockee;
+}
+
+/// @nodoc
+class __$$BlockingImplCopyWithImpl<$Res>
+    extends _$BlockingCopyWithImpl<$Res, _$BlockingImpl>
+    implements _$$BlockingImplCopyWith<$Res> {
+  __$$BlockingImplCopyWithImpl(
+      _$BlockingImpl _value, $Res Function(_$BlockingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? blockeeId = null,
+    Object? blockee = null,
+  }) {
+    return _then(_$BlockingImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      blockeeId: null == blockeeId
+          ? _value.blockeeId
+          : blockeeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockee: null == blockee
+          ? _value.blockee
+          : blockee // ignore: cast_nullable_to_non_nullable
+              as UserDetailedNotMe,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _Blocking implements Blocking {
-  const _Blocking(
+class _$BlockingImpl implements _Blocking {
+  const _$BlockingImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.blockeeId,
       required this.blockee});
-  factory _Blocking.fromJson(Map<String, dynamic> json) =>
-      _$BlockingFromJson(json);
+
+  factory _$BlockingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BlockingImplFromJson(json);
 
   @override
   final String id;
@@ -138,26 +170,16 @@ class _Blocking implements Blocking {
   @override
   final UserDetailedNotMe blockee;
 
-  /// Create a copy of Blocking
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$BlockingCopyWith<_Blocking> get copyWith =>
-      __$BlockingCopyWithImpl<_Blocking>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$BlockingToJson(
-      this,
-    );
+  String toString() {
+    return 'Blocking(id: $id, createdAt: $createdAt, blockeeId: $blockeeId, blockee: $blockee)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Blocking &&
+            other is _$BlockingImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -166,80 +188,46 @@ class _Blocking implements Blocking {
             (identical(other.blockee, blockee) || other.blockee == blockee));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, createdAt, blockeeId, blockee);
 
-  @override
-  String toString() {
-    return 'Blocking(id: $id, createdAt: $createdAt, blockeeId: $blockeeId, blockee: $blockee)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$BlockingCopyWith<$Res>
-    implements $BlockingCopyWith<$Res> {
-  factory _$BlockingCopyWith(_Blocking value, $Res Function(_Blocking) _then) =
-      __$BlockingCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String blockeeId,
-      UserDetailedNotMe blockee});
-
-  @override
-  $UserDetailedNotMeCopyWith<$Res> get blockee;
-}
-
-/// @nodoc
-class __$BlockingCopyWithImpl<$Res> implements _$BlockingCopyWith<$Res> {
-  __$BlockingCopyWithImpl(this._self, this._then);
-
-  final _Blocking _self;
-  final $Res Function(_Blocking) _then;
-
-  /// Create a copy of Blocking
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? blockeeId = null,
-    Object? blockee = null,
-  }) {
-    return _then(_Blocking(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      blockeeId: null == blockeeId
-          ? _self.blockeeId
-          : blockeeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      blockee: null == blockee
-          ? _self.blockee
-          : blockee // ignore: cast_nullable_to_non_nullable
-              as UserDetailedNotMe,
-    ));
-  }
+  _$$BlockingImplCopyWith<_$BlockingImpl> get copyWith =>
+      __$$BlockingImplCopyWithImpl<_$BlockingImpl>(this, _$identity);
 
-  /// Create a copy of Blocking
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $UserDetailedNotMeCopyWith<$Res> get blockee {
-    return $UserDetailedNotMeCopyWith<$Res>(_self.blockee, (value) {
-      return _then(_self.copyWith(blockee: value));
-    });
+  Map<String, dynamic> toJson() {
+    return _$$BlockingImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _Blocking implements Blocking {
+  const factory _Blocking(
+      {required final String id,
+      @DateTimeConverter() required final DateTime createdAt,
+      required final String blockeeId,
+      required final UserDetailedNotMe blockee}) = _$BlockingImpl;
+
+  factory _Blocking.fromJson(Map<String, dynamic> json) =
+      _$BlockingImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @DateTimeConverter()
+  DateTime get createdAt;
+  @override
+  String get blockeeId;
+  @override
+  UserDetailedNotMe get blockee;
+  @override
+  @JsonKey(ignore: true)
+  _$$BlockingImplCopyWith<_$BlockingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

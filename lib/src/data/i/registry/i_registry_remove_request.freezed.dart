@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,66 +9,48 @@ part of 'i_registry_remove_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$IRegistryRemoveRequest {
-  String get key;
-  List<String> get scope;
-  String? get domain;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of IRegistryRemoveRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IRegistryRemoveRequestCopyWith<IRegistryRemoveRequest> get copyWith =>
-      _$IRegistryRemoveRequestCopyWithImpl<IRegistryRemoveRequest>(
-          this as IRegistryRemoveRequest, _$identity);
-
-  /// Serializes this IRegistryRemoveRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IRegistryRemoveRequest &&
-            (identical(other.key, key) || other.key == key) &&
-            const DeepCollectionEquality().equals(other.scope, scope) &&
-            (identical(other.domain, domain) || other.domain == domain));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, key, const DeepCollectionEquality().hash(scope), domain);
-
-  @override
-  String toString() {
-    return 'IRegistryRemoveRequest(key: $key, scope: $scope, domain: $domain)';
-  }
+IRegistryRemoveRequest _$IRegistryRemoveRequestFromJson(
+    Map<String, dynamic> json) {
+  return _IRegistryRemoveRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $IRegistryRemoveRequestCopyWith<$Res> {
+mixin _$IRegistryRemoveRequest {
+  String get key => throw _privateConstructorUsedError;
+  List<String> get scope => throw _privateConstructorUsedError;
+  String? get domain => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IRegistryRemoveRequestCopyWith<IRegistryRemoveRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IRegistryRemoveRequestCopyWith<$Res> {
   factory $IRegistryRemoveRequestCopyWith(IRegistryRemoveRequest value,
-          $Res Function(IRegistryRemoveRequest) _then) =
-      _$IRegistryRemoveRequestCopyWithImpl;
+          $Res Function(IRegistryRemoveRequest) then) =
+      _$IRegistryRemoveRequestCopyWithImpl<$Res, IRegistryRemoveRequest>;
   @useResult
   $Res call({String key, List<String> scope, String? domain});
 }
 
 /// @nodoc
-class _$IRegistryRemoveRequestCopyWithImpl<$Res>
+class _$IRegistryRemoveRequestCopyWithImpl<$Res,
+        $Val extends IRegistryRemoveRequest>
     implements $IRegistryRemoveRequestCopyWith<$Res> {
-  _$IRegistryRemoveRequestCopyWithImpl(this._self, this._then);
+  _$IRegistryRemoveRequestCopyWithImpl(this._value, this._then);
 
-  final IRegistryRemoveRequest _self;
-  final $Res Function(IRegistryRemoveRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of IRegistryRemoveRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -77,17 +58,63 @@ class _$IRegistryRemoveRequestCopyWithImpl<$Res>
     Object? scope = null,
     Object? domain = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       key: null == key
-          ? _self.key
+          ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
       scope: null == scope
-          ? _self.scope
+          ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
               as List<String>,
       domain: freezed == domain
-          ? _self.domain
+          ? _value.domain
+          : domain // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$IRegistryRemoveRequestImplCopyWith<$Res>
+    implements $IRegistryRemoveRequestCopyWith<$Res> {
+  factory _$$IRegistryRemoveRequestImplCopyWith(
+          _$IRegistryRemoveRequestImpl value,
+          $Res Function(_$IRegistryRemoveRequestImpl) then) =
+      __$$IRegistryRemoveRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String key, List<String> scope, String? domain});
+}
+
+/// @nodoc
+class __$$IRegistryRemoveRequestImplCopyWithImpl<$Res>
+    extends _$IRegistryRemoveRequestCopyWithImpl<$Res,
+        _$IRegistryRemoveRequestImpl>
+    implements _$$IRegistryRemoveRequestImplCopyWith<$Res> {
+  __$$IRegistryRemoveRequestImplCopyWithImpl(
+      _$IRegistryRemoveRequestImpl _value,
+      $Res Function(_$IRegistryRemoveRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? key = null,
+    Object? scope = null,
+    Object? domain = freezed,
+  }) {
+    return _then(_$IRegistryRemoveRequestImpl(
+      key: null == key
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      scope: null == scope
+          ? _value._scope
+          : scope // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      domain: freezed == domain
+          ? _value.domain
           : domain // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -96,12 +123,13 @@ class _$IRegistryRemoveRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _IRegistryRemoveRequest implements IRegistryRemoveRequest {
-  const _IRegistryRemoveRequest(
+class _$IRegistryRemoveRequestImpl implements _IRegistryRemoveRequest {
+  const _$IRegistryRemoveRequestImpl(
       {required this.key, required final List<String> scope, this.domain})
       : _scope = scope;
-  factory _IRegistryRemoveRequest.fromJson(Map<String, dynamic> json) =>
-      _$IRegistryRemoveRequestFromJson(json);
+
+  factory _$IRegistryRemoveRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IRegistryRemoveRequestImplFromJson(json);
 
   @override
   final String key;
@@ -116,86 +144,58 @@ class _IRegistryRemoveRequest implements IRegistryRemoveRequest {
   @override
   final String? domain;
 
-  /// Create a copy of IRegistryRemoveRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IRegistryRemoveRequestCopyWith<_IRegistryRemoveRequest> get copyWith =>
-      __$IRegistryRemoveRequestCopyWithImpl<_IRegistryRemoveRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IRegistryRemoveRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'IRegistryRemoveRequest(key: $key, scope: $scope, domain: $domain)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IRegistryRemoveRequest &&
+            other is _$IRegistryRemoveRequestImpl &&
             (identical(other.key, key) || other.key == key) &&
             const DeepCollectionEquality().equals(other._scope, _scope) &&
             (identical(other.domain, domain) || other.domain == domain));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, key, const DeepCollectionEquality().hash(_scope), domain);
 
-  @override
-  String toString() {
-    return 'IRegistryRemoveRequest(key: $key, scope: $scope, domain: $domain)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IRegistryRemoveRequestCopyWith<$Res>
-    implements $IRegistryRemoveRequestCopyWith<$Res> {
-  factory _$IRegistryRemoveRequestCopyWith(_IRegistryRemoveRequest value,
-          $Res Function(_IRegistryRemoveRequest) _then) =
-      __$IRegistryRemoveRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String key, List<String> scope, String? domain});
-}
-
-/// @nodoc
-class __$IRegistryRemoveRequestCopyWithImpl<$Res>
-    implements _$IRegistryRemoveRequestCopyWith<$Res> {
-  __$IRegistryRemoveRequestCopyWithImpl(this._self, this._then);
-
-  final _IRegistryRemoveRequest _self;
-  final $Res Function(_IRegistryRemoveRequest) _then;
-
-  /// Create a copy of IRegistryRemoveRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? key = null,
-    Object? scope = null,
-    Object? domain = freezed,
-  }) {
-    return _then(_IRegistryRemoveRequest(
-      key: null == key
-          ? _self.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
-      scope: null == scope
-          ? _self._scope
-          : scope // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      domain: freezed == domain
-          ? _self.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  _$$IRegistryRemoveRequestImplCopyWith<_$IRegistryRemoveRequestImpl>
+      get copyWith => __$$IRegistryRemoveRequestImplCopyWithImpl<
+          _$IRegistryRemoveRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$IRegistryRemoveRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _IRegistryRemoveRequest implements IRegistryRemoveRequest {
+  const factory _IRegistryRemoveRequest(
+      {required final String key,
+      required final List<String> scope,
+      final String? domain}) = _$IRegistryRemoveRequestImpl;
+
+  factory _IRegistryRemoveRequest.fromJson(Map<String, dynamic> json) =
+      _$IRegistryRemoveRequestImpl.fromJson;
+
+  @override
+  String get key;
+  @override
+  List<String> get scope;
+  @override
+  String? get domain;
+  @override
+  @JsonKey(ignore: true)
+  _$$IRegistryRemoveRequestImplCopyWith<_$IRegistryRemoveRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

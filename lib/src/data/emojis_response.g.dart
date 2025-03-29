@@ -6,19 +6,20 @@ part of 'emojis_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EmojisResponse _$EmojisResponseFromJson(Map<String, dynamic> json) =>
-    _EmojisResponse(
+_$EmojisResponseImpl _$$EmojisResponseImplFromJson(Map<String, dynamic> json) =>
+    _$EmojisResponseImpl(
       emojis: (json['emojis'] as List<dynamic>)
           .map((e) => Emoji.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$EmojisResponseToJson(_EmojisResponse instance) =>
+Map<String, dynamic> _$$EmojisResponseImplToJson(
+        _$EmojisResponseImpl instance) =>
     <String, dynamic>{
       'emojis': instance.emojis.map((e) => e.toJson()).toList(),
     };
 
-_Emoji _$EmojiFromJson(Map<String, dynamic> json) => _Emoji(
+_$EmojiImpl _$$EmojiImplFromJson(Map<String, dynamic> json) => _$EmojiImpl(
       aliases:
           (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
       name: json['name'] as String,
@@ -32,7 +33,8 @@ _Emoji _$EmojiFromJson(Map<String, dynamic> json) => _Emoji(
               .toList(),
     );
 
-Map<String, dynamic> _$EmojiToJson(_Emoji instance) => <String, dynamic>{
+Map<String, dynamic> _$$EmojiImplToJson(_$EmojiImpl instance) =>
+    <String, dynamic>{
       'aliases': instance.aliases,
       'name': instance.name,
       'category': instance.category,

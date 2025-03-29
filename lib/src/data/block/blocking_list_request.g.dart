@@ -6,15 +6,16 @@ part of 'blocking_list_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_BlockingListRequest _$BlockingListRequestFromJson(Map<String, dynamic> json) =>
-    _BlockingListRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+_$BlockingListRequestImpl _$$BlockingListRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BlockingListRequestImpl(
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$BlockingListRequestToJson(
-        _BlockingListRequest instance) =>
+Map<String, dynamic> _$$BlockingListRequestImplToJson(
+        _$BlockingListRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

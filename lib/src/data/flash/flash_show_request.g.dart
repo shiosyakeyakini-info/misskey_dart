@@ -6,12 +6,14 @@ part of 'flash_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FlashShowRequest _$FlashShowRequestFromJson(Map<String, dynamic> json) =>
-    _FlashShowRequest(
+_$FlashShowRequestImpl _$$FlashShowRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FlashShowRequestImpl(
       flashId: json['flashId'] as String,
     );
 
-Map<String, dynamic> _$FlashShowRequestToJson(_FlashShowRequest instance) =>
+Map<String, dynamic> _$$FlashShowRequestImplToJson(
+        _$FlashShowRequestImpl instance) =>
     <String, dynamic>{
       'flashId': instance.flashId,
     };

@@ -6,13 +6,14 @@ part of 'hashtags_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HashtagsShowRequest _$HashtagsShowRequestFromJson(Map<String, dynamic> json) =>
-    _HashtagsShowRequest(
+_$HashtagsShowRequestImpl _$$HashtagsShowRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$HashtagsShowRequestImpl(
       tag: json['tag'] as String,
     );
 
-Map<String, dynamic> _$HashtagsShowRequestToJson(
-        _HashtagsShowRequest instance) =>
+Map<String, dynamic> _$$HashtagsShowRequestImplToJson(
+        _$HashtagsShowRequestImpl instance) =>
     <String, dynamic>{
       'tag': instance.tag,
     };

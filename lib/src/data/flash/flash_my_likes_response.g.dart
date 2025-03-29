@@ -6,15 +6,15 @@ part of 'flash_my_likes_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FlashMyLikesResponse _$FlashMyLikesResponseFromJson(
+_$FlashMyLikesResponseImpl _$$FlashMyLikesResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _FlashMyLikesResponse(
+    _$FlashMyLikesResponseImpl(
       id: json['id'] as String,
       flash: Flash.fromJson(json['flash'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$FlashMyLikesResponseToJson(
-        _FlashMyLikesResponse instance) =>
+Map<String, dynamic> _$$FlashMyLikesResponseImplToJson(
+        _$FlashMyLikesResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'flash': instance.flash.toJson(),

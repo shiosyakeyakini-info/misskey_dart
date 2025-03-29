@@ -6,9 +6,9 @@ part of 'join_misskey_instances.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_JoinMisskeyInstances _$JoinMisskeyInstancesFromJson(
+_$JoinMisskeyInstancesImpl _$$JoinMisskeyInstancesImplFromJson(
         Map<String, dynamic> json) =>
-    _JoinMisskeyInstances(
+    _$JoinMisskeyInstancesImpl(
       date: DateTime.parse(json['date'] as String),
       stats: JoinMisskeyStats.fromJson(json['stats'] as Map<String, dynamic>),
       instancesInfos: (json['instancesInfos'] as List<dynamic>)
@@ -17,23 +17,25 @@ _JoinMisskeyInstances _$JoinMisskeyInstancesFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$JoinMisskeyInstancesToJson(
-        _JoinMisskeyInstances instance) =>
+Map<String, dynamic> _$$JoinMisskeyInstancesImplToJson(
+        _$JoinMisskeyInstancesImpl instance) =>
     <String, dynamic>{
       'date': instance.date.toIso8601String(),
       'stats': instance.stats.toJson(),
       'instancesInfos': instance.instancesInfos.map((e) => e.toJson()).toList(),
     };
 
-_JoinMisskeyStats _$JoinMisskeyStatsFromJson(Map<String, dynamic> json) =>
-    _JoinMisskeyStats(
-      notesCount: (json['notesCount'] as num).toInt(),
-      usersCount: (json['usersCount'] as num).toInt(),
-      mau: (json['mau'] as num).toInt(),
-      instancesCount: (json['instancesCount'] as num).toInt(),
+_$JoinMisskeyStatsImpl _$$JoinMisskeyStatsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$JoinMisskeyStatsImpl(
+      notesCount: json['notesCount'] as int,
+      usersCount: json['usersCount'] as int,
+      mau: json['mau'] as int,
+      instancesCount: json['instancesCount'] as int,
     );
 
-Map<String, dynamic> _$JoinMisskeyStatsToJson(_JoinMisskeyStats instance) =>
+Map<String, dynamic> _$$JoinMisskeyStatsImplToJson(
+        _$JoinMisskeyStatsImpl instance) =>
     <String, dynamic>{
       'notesCount': instance.notesCount,
       'usersCount': instance.usersCount,
@@ -41,9 +43,9 @@ Map<String, dynamic> _$JoinMisskeyStatsToJson(_JoinMisskeyStats instance) =>
       'instancesCount': instance.instancesCount,
     };
 
-_JoinMisskeyInstanceInfo _$JoinMisskeyInstanceInfoFromJson(
+_$JoinMisskeyInstanceInfoImpl _$$JoinMisskeyInstanceInfoImplFromJson(
         Map<String, dynamic> json) =>
-    _JoinMisskeyInstanceInfo(
+    _$JoinMisskeyInstanceInfoImpl(
       url: json['url'] as String,
       name: json['name'] as String,
       langs: (json['langs'] as List<dynamic>).map((e) => e as String).toList(),
@@ -60,8 +62,8 @@ _JoinMisskeyInstanceInfo _$JoinMisskeyInstanceInfoFromJson(
       meta: json['meta'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$JoinMisskeyInstanceInfoToJson(
-        _JoinMisskeyInstanceInfo instance) =>
+Map<String, dynamic> _$$JoinMisskeyInstanceInfoImplToJson(
+        _$JoinMisskeyInstanceInfoImpl instance) =>
     <String, dynamic>{
       'url': instance.url,
       'name': instance.name,
@@ -76,8 +78,9 @@ Map<String, dynamic> _$JoinMisskeyInstanceInfoToJson(
       'meta': instance.meta,
     };
 
-_JoinMisskeyNodeInfo _$JoinMisskeyNodeInfoFromJson(Map<String, dynamic> json) =>
-    _JoinMisskeyNodeInfo(
+_$JoinMisskeyNodeInfoImpl _$$JoinMisskeyNodeInfoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$JoinMisskeyNodeInfoImpl(
       version: json['version'] as String?,
       software: json['software'] == null
           ? null
@@ -89,55 +92,55 @@ _JoinMisskeyNodeInfo _$JoinMisskeyNodeInfoFromJson(Map<String, dynamic> json) =>
               json['usage'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$JoinMisskeyNodeInfoToJson(
-        _JoinMisskeyNodeInfo instance) =>
+Map<String, dynamic> _$$JoinMisskeyNodeInfoImplToJson(
+        _$JoinMisskeyNodeInfoImpl instance) =>
     <String, dynamic>{
       'version': instance.version,
       'software': instance.software?.toJson(),
       'usage': instance.usage?.toJson(),
     };
 
-_JoinMisskeyNodeInfoSoftware _$JoinMisskeyNodeInfoSoftwareFromJson(
+_$JoinMisskeyNodeInfoSoftwareImpl _$$JoinMisskeyNodeInfoSoftwareImplFromJson(
         Map<String, dynamic> json) =>
-    _JoinMisskeyNodeInfoSoftware(
+    _$JoinMisskeyNodeInfoSoftwareImpl(
       name: json['name'] as String?,
       version: json['version'] as String?,
     );
 
-Map<String, dynamic> _$JoinMisskeyNodeInfoSoftwareToJson(
-        _JoinMisskeyNodeInfoSoftware instance) =>
+Map<String, dynamic> _$$JoinMisskeyNodeInfoSoftwareImplToJson(
+        _$JoinMisskeyNodeInfoSoftwareImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'version': instance.version,
     };
 
-_JoinMisskeyNodeInfoUsage _$JoinMisskeyNodeInfoUsageFromJson(
+_$JoinMisskeyNodeInfoUsageImpl _$$JoinMisskeyNodeInfoUsageImplFromJson(
         Map<String, dynamic> json) =>
-    _JoinMisskeyNodeInfoUsage(
+    _$JoinMisskeyNodeInfoUsageImpl(
       users: json['users'] == null
           ? null
           : JoinMisskeyNodeInfoUsageUsers.fromJson(
               json['users'] as Map<String, dynamic>),
-      localPosts: (json['localPosts'] as num?)?.toInt(),
-      localComments: (json['localComments'] as num?)?.toInt(),
+      localPosts: json['localPosts'] as int?,
+      localComments: json['localComments'] as int?,
     );
 
-Map<String, dynamic> _$JoinMisskeyNodeInfoUsageToJson(
-        _JoinMisskeyNodeInfoUsage instance) =>
+Map<String, dynamic> _$$JoinMisskeyNodeInfoUsageImplToJson(
+        _$JoinMisskeyNodeInfoUsageImpl instance) =>
     <String, dynamic>{
       'users': instance.users?.toJson(),
       'localPosts': instance.localPosts,
       'localComments': instance.localComments,
     };
 
-_JoinMisskeyNodeInfoUsageUsers _$JoinMisskeyNodeInfoUsageUsersFromJson(
-        Map<String, dynamic> json) =>
-    _JoinMisskeyNodeInfoUsageUsers(
-      total: (json['total'] as num?)?.toInt(),
-    );
+_$JoinMisskeyNodeInfoUsageUsersImpl
+    _$$JoinMisskeyNodeInfoUsageUsersImplFromJson(Map<String, dynamic> json) =>
+        _$JoinMisskeyNodeInfoUsageUsersImpl(
+          total: json['total'] as int?,
+        );
 
-Map<String, dynamic> _$JoinMisskeyNodeInfoUsageUsersToJson(
-        _JoinMisskeyNodeInfoUsageUsers instance) =>
+Map<String, dynamic> _$$JoinMisskeyNodeInfoUsageUsersImplToJson(
+        _$JoinMisskeyNodeInfoUsageUsersImpl instance) =>
     <String, dynamic>{
       'total': instance.total,
     };

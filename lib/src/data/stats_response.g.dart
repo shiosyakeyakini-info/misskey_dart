@@ -6,19 +6,19 @@ part of 'stats_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StatsResponse _$StatsResponseFromJson(Map<String, dynamic> json) =>
-    _StatsResponse(
-      notesCount: (json['notesCount'] as num).toInt(),
-      originalNotesCount: (json['originalNotesCount'] as num).toInt(),
-      usersCount: (json['usersCount'] as num).toInt(),
-      originalUsersCount: (json['originalUsersCount'] as num).toInt(),
-      reactionsCount: (json['reactionsCount'] as num).toInt(),
-      instances: (json['instances'] as num).toInt(),
-      driveUsageLocal: (json['driveUsageLocal'] as num).toInt(),
-      driveUsageRemote: (json['driveUsageRemote'] as num).toInt(),
+_$StatsResponseImpl _$$StatsResponseImplFromJson(Map<String, dynamic> json) =>
+    _$StatsResponseImpl(
+      notesCount: json['notesCount'] as int,
+      originalNotesCount: json['originalNotesCount'] as int,
+      usersCount: json['usersCount'] as int,
+      originalUsersCount: json['originalUsersCount'] as int,
+      reactionsCount: json['reactionsCount'] as int,
+      instances: json['instances'] as int,
+      driveUsageLocal: json['driveUsageLocal'] as int,
+      driveUsageRemote: json['driveUsageRemote'] as int,
     );
 
-Map<String, dynamic> _$StatsResponseToJson(_StatsResponse instance) =>
+Map<String, dynamic> _$$StatsResponseImplToJson(_$StatsResponseImpl instance) =>
     <String, dynamic>{
       'notesCount': instance.notesCount,
       'originalNotesCount': instance.originalNotesCount,

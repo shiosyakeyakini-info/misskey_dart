@@ -6,17 +6,17 @@ part of 'users_followeres_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersFollowersRequest _$UsersFollowersRequestFromJson(
+_$UsersFollowersRequestImpl _$$UsersFollowersRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _UsersFollowersRequest(
+    _$UsersFollowersRequestImpl(
       userId: json['userId'] as String,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
     );
 
-Map<String, dynamic> _$UsersFollowersRequestToJson(
-        _UsersFollowersRequest instance) =>
+Map<String, dynamic> _$$UsersFollowersRequestImplToJson(
+        _$UsersFollowersRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'sinceId': instance.sinceId,

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,69 +9,90 @@ part of 'users_lists_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$UsersListsCreateRequest {
-  String get name;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of UsersListsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $UsersListsCreateRequestCopyWith<UsersListsCreateRequest> get copyWith =>
-      _$UsersListsCreateRequestCopyWithImpl<UsersListsCreateRequest>(
-          this as UsersListsCreateRequest, _$identity);
-
-  /// Serializes this UsersListsCreateRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UsersListsCreateRequest &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name);
-
-  @override
-  String toString() {
-    return 'UsersListsCreateRequest(name: $name)';
-  }
+UsersListsCreateRequest _$UsersListsCreateRequestFromJson(
+    Map<String, dynamic> json) {
+  return _UsersListsCreateRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $UsersListsCreateRequestCopyWith<$Res> {
+mixin _$UsersListsCreateRequest {
+  String get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsersListsCreateRequestCopyWith<UsersListsCreateRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsersListsCreateRequestCopyWith<$Res> {
   factory $UsersListsCreateRequestCopyWith(UsersListsCreateRequest value,
-          $Res Function(UsersListsCreateRequest) _then) =
-      _$UsersListsCreateRequestCopyWithImpl;
+          $Res Function(UsersListsCreateRequest) then) =
+      _$UsersListsCreateRequestCopyWithImpl<$Res, UsersListsCreateRequest>;
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class _$UsersListsCreateRequestCopyWithImpl<$Res>
+class _$UsersListsCreateRequestCopyWithImpl<$Res,
+        $Val extends UsersListsCreateRequest>
     implements $UsersListsCreateRequestCopyWith<$Res> {
-  _$UsersListsCreateRequestCopyWithImpl(this._self, this._then);
+  _$UsersListsCreateRequestCopyWithImpl(this._value, this._then);
 
-  final UsersListsCreateRequest _self;
-  final $Res Function(UsersListsCreateRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of UsersListsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? name = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       name: null == name
-          ? _self.name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UsersListsCreateRequestImplCopyWith<$Res>
+    implements $UsersListsCreateRequestCopyWith<$Res> {
+  factory _$$UsersListsCreateRequestImplCopyWith(
+          _$UsersListsCreateRequestImpl value,
+          $Res Function(_$UsersListsCreateRequestImpl) then) =
+      __$$UsersListsCreateRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$UsersListsCreateRequestImplCopyWithImpl<$Res>
+    extends _$UsersListsCreateRequestCopyWithImpl<$Res,
+        _$UsersListsCreateRequestImpl>
+    implements _$$UsersListsCreateRequestImplCopyWith<$Res> {
+  __$$UsersListsCreateRequestImplCopyWithImpl(
+      _$UsersListsCreateRequestImpl _value,
+      $Res Function(_$UsersListsCreateRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$UsersListsCreateRequestImpl(
+      name: null == name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -81,81 +101,58 @@ class _$UsersListsCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _UsersListsCreateRequest implements UsersListsCreateRequest {
-  const _UsersListsCreateRequest({required this.name});
-  factory _UsersListsCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$UsersListsCreateRequestFromJson(json);
+class _$UsersListsCreateRequestImpl implements _UsersListsCreateRequest {
+  const _$UsersListsCreateRequestImpl({required this.name});
+
+  factory _$UsersListsCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListsCreateRequestImplFromJson(json);
 
   @override
   final String name;
 
-  /// Create a copy of UsersListsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$UsersListsCreateRequestCopyWith<_UsersListsCreateRequest> get copyWith =>
-      __$UsersListsCreateRequestCopyWithImpl<_UsersListsCreateRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$UsersListsCreateRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersListsCreateRequest(name: $name)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersListsCreateRequest &&
+            other is _$UsersListsCreateRequestImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name);
 
-  @override
-  String toString() {
-    return 'UsersListsCreateRequest(name: $name)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$UsersListsCreateRequestCopyWith<$Res>
-    implements $UsersListsCreateRequestCopyWith<$Res> {
-  factory _$UsersListsCreateRequestCopyWith(_UsersListsCreateRequest value,
-          $Res Function(_UsersListsCreateRequest) _then) =
-      __$UsersListsCreateRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String name});
-}
-
-/// @nodoc
-class __$UsersListsCreateRequestCopyWithImpl<$Res>
-    implements _$UsersListsCreateRequestCopyWith<$Res> {
-  __$UsersListsCreateRequestCopyWithImpl(this._self, this._then);
-
-  final _UsersListsCreateRequest _self;
-  final $Res Function(_UsersListsCreateRequest) _then;
-
-  /// Create a copy of UsersListsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_UsersListsCreateRequest(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$UsersListsCreateRequestImplCopyWith<_$UsersListsCreateRequestImpl>
+      get copyWith => __$$UsersListsCreateRequestImplCopyWithImpl<
+          _$UsersListsCreateRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UsersListsCreateRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _UsersListsCreateRequest implements UsersListsCreateRequest {
+  const factory _UsersListsCreateRequest({required final String name}) =
+      _$UsersListsCreateRequestImpl;
+
+  factory _UsersListsCreateRequest.fromJson(Map<String, dynamic> json) =
+      _$UsersListsCreateRequestImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$UsersListsCreateRequestImplCopyWith<_$UsersListsCreateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

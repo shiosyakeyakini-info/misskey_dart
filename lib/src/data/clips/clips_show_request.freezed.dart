@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,69 +9,85 @@ part of 'clips_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$ClipsShowRequest {
-  String get clipId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of ClipsShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ClipsShowRequestCopyWith<ClipsShowRequest> get copyWith =>
-      _$ClipsShowRequestCopyWithImpl<ClipsShowRequest>(
-          this as ClipsShowRequest, _$identity);
-
-  /// Serializes this ClipsShowRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ClipsShowRequest &&
-            (identical(other.clipId, clipId) || other.clipId == clipId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, clipId);
-
-  @override
-  String toString() {
-    return 'ClipsShowRequest(clipId: $clipId)';
-  }
+ClipsShowRequest _$ClipsShowRequestFromJson(Map<String, dynamic> json) {
+  return _ClipsShowRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $ClipsShowRequestCopyWith<$Res> {
+mixin _$ClipsShowRequest {
+  String get clipId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ClipsShowRequestCopyWith<ClipsShowRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ClipsShowRequestCopyWith<$Res> {
   factory $ClipsShowRequestCopyWith(
-          ClipsShowRequest value, $Res Function(ClipsShowRequest) _then) =
-      _$ClipsShowRequestCopyWithImpl;
+          ClipsShowRequest value, $Res Function(ClipsShowRequest) then) =
+      _$ClipsShowRequestCopyWithImpl<$Res, ClipsShowRequest>;
   @useResult
   $Res call({String clipId});
 }
 
 /// @nodoc
-class _$ClipsShowRequestCopyWithImpl<$Res>
+class _$ClipsShowRequestCopyWithImpl<$Res, $Val extends ClipsShowRequest>
     implements $ClipsShowRequestCopyWith<$Res> {
-  _$ClipsShowRequestCopyWithImpl(this._self, this._then);
+  _$ClipsShowRequestCopyWithImpl(this._value, this._then);
 
-  final ClipsShowRequest _self;
-  final $Res Function(ClipsShowRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of ClipsShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? clipId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       clipId: null == clipId
-          ? _self.clipId
+          ? _value.clipId
+          : clipId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ClipsShowRequestImplCopyWith<$Res>
+    implements $ClipsShowRequestCopyWith<$Res> {
+  factory _$$ClipsShowRequestImplCopyWith(_$ClipsShowRequestImpl value,
+          $Res Function(_$ClipsShowRequestImpl) then) =
+      __$$ClipsShowRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String clipId});
+}
+
+/// @nodoc
+class __$$ClipsShowRequestImplCopyWithImpl<$Res>
+    extends _$ClipsShowRequestCopyWithImpl<$Res, _$ClipsShowRequestImpl>
+    implements _$$ClipsShowRequestImplCopyWith<$Res> {
+  __$$ClipsShowRequestImplCopyWithImpl(_$ClipsShowRequestImpl _value,
+      $Res Function(_$ClipsShowRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? clipId = null,
+  }) {
+    return _then(_$ClipsShowRequestImpl(
+      clipId: null == clipId
+          ? _value.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -81,80 +96,58 @@ class _$ClipsShowRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ClipsShowRequest implements ClipsShowRequest {
-  const _ClipsShowRequest({required this.clipId});
-  factory _ClipsShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$ClipsShowRequestFromJson(json);
+class _$ClipsShowRequestImpl implements _ClipsShowRequest {
+  const _$ClipsShowRequestImpl({required this.clipId});
+
+  factory _$ClipsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipsShowRequestImplFromJson(json);
 
   @override
   final String clipId;
 
-  /// Create a copy of ClipsShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ClipsShowRequestCopyWith<_ClipsShowRequest> get copyWith =>
-      __$ClipsShowRequestCopyWithImpl<_ClipsShowRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ClipsShowRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'ClipsShowRequest(clipId: $clipId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ClipsShowRequest &&
+            other is _$ClipsShowRequestImpl &&
             (identical(other.clipId, clipId) || other.clipId == clipId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, clipId);
 
-  @override
-  String toString() {
-    return 'ClipsShowRequest(clipId: $clipId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ClipsShowRequestCopyWith<$Res>
-    implements $ClipsShowRequestCopyWith<$Res> {
-  factory _$ClipsShowRequestCopyWith(
-          _ClipsShowRequest value, $Res Function(_ClipsShowRequest) _then) =
-      __$ClipsShowRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String clipId});
-}
-
-/// @nodoc
-class __$ClipsShowRequestCopyWithImpl<$Res>
-    implements _$ClipsShowRequestCopyWith<$Res> {
-  __$ClipsShowRequestCopyWithImpl(this._self, this._then);
-
-  final _ClipsShowRequest _self;
-  final $Res Function(_ClipsShowRequest) _then;
-
-  /// Create a copy of ClipsShowRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? clipId = null,
-  }) {
-    return _then(_ClipsShowRequest(
-      clipId: null == clipId
-          ? _self.clipId
-          : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$ClipsShowRequestImplCopyWith<_$ClipsShowRequestImpl> get copyWith =>
+      __$$ClipsShowRequestImplCopyWithImpl<_$ClipsShowRequestImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ClipsShowRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _ClipsShowRequest implements ClipsShowRequest {
+  const factory _ClipsShowRequest({required final String clipId}) =
+      _$ClipsShowRequestImpl;
+
+  factory _ClipsShowRequest.fromJson(Map<String, dynamic> json) =
+      _$ClipsShowRequestImpl.fromJson;
+
+  @override
+  String get clipId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ClipsShowRequestImplCopyWith<_$ClipsShowRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

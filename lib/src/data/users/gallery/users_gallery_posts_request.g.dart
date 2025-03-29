@@ -6,17 +6,17 @@ part of 'users_gallery_posts_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersGalleryPostsRequest _$UsersGalleryPostsRequestFromJson(
+_$UsersGalleryPostsRequestImpl _$$UsersGalleryPostsRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _UsersGalleryPostsRequest(
+    _$UsersGalleryPostsRequestImpl(
       userId: json['userId'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$UsersGalleryPostsRequestToJson(
-        _UsersGalleryPostsRequest instance) =>
+Map<String, dynamic> _$$UsersGalleryPostsRequestImplToJson(
+        _$UsersGalleryPostsRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'limit': instance.limit,

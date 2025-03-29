@@ -6,13 +6,13 @@ part of 'drive_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DriveResponse _$DriveResponseFromJson(Map<String, dynamic> json) =>
-    _DriveResponse(
-      capacity: (json['capacity'] as num).toInt(),
-      usage: (json['usage'] as num).toInt(),
+_$DriveResponseImpl _$$DriveResponseImplFromJson(Map<String, dynamic> json) =>
+    _$DriveResponseImpl(
+      capacity: json['capacity'] as int,
+      usage: json['usage'] as int,
     );
 
-Map<String, dynamic> _$DriveResponseToJson(_DriveResponse instance) =>
+Map<String, dynamic> _$$DriveResponseImplToJson(_$DriveResponseImpl instance) =>
     <String, dynamic>{
       'capacity': instance.capacity,
       'usage': instance.usage,

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,56 +9,33 @@ part of 'notes_state_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$NotesStateResponse {
-  bool get isFavorited;
-  bool get isMutedThread;
-  @Deprecated("This property is already removed")
-  bool? get isWatching;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of NotesStateResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesStateResponseCopyWith<NotesStateResponse> get copyWith =>
-      _$NotesStateResponseCopyWithImpl<NotesStateResponse>(
-          this as NotesStateResponse, _$identity);
-
-  /// Serializes this NotesStateResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesStateResponse &&
-            (identical(other.isFavorited, isFavorited) ||
-                other.isFavorited == isFavorited) &&
-            (identical(other.isMutedThread, isMutedThread) ||
-                other.isMutedThread == isMutedThread) &&
-            (identical(other.isWatching, isWatching) ||
-                other.isWatching == isWatching));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, isFavorited, isMutedThread, isWatching);
-
-  @override
-  String toString() {
-    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread, isWatching: $isWatching)';
-  }
+NotesStateResponse _$NotesStateResponseFromJson(Map<String, dynamic> json) {
+  return _NotesStateResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $NotesStateResponseCopyWith<$Res> {
+mixin _$NotesStateResponse {
+  bool get isFavorited => throw _privateConstructorUsedError;
+  bool get isMutedThread => throw _privateConstructorUsedError;
+  @Deprecated("This property is already removed")
+  bool? get isWatching => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotesStateResponseCopyWith<NotesStateResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotesStateResponseCopyWith<$Res> {
   factory $NotesStateResponseCopyWith(
-          NotesStateResponse value, $Res Function(NotesStateResponse) _then) =
-      _$NotesStateResponseCopyWithImpl;
+          NotesStateResponse value, $Res Function(NotesStateResponse) then) =
+      _$NotesStateResponseCopyWithImpl<$Res, NotesStateResponse>;
   @useResult
   $Res call(
       {bool isFavorited,
@@ -68,15 +44,15 @@ abstract mixin class $NotesStateResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotesStateResponseCopyWithImpl<$Res>
+class _$NotesStateResponseCopyWithImpl<$Res, $Val extends NotesStateResponse>
     implements $NotesStateResponseCopyWith<$Res> {
-  _$NotesStateResponseCopyWithImpl(this._self, this._then);
+  _$NotesStateResponseCopyWithImpl(this._value, this._then);
 
-  final NotesStateResponse _self;
-  final $Res Function(NotesStateResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of NotesStateResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -84,17 +60,63 @@ class _$NotesStateResponseCopyWithImpl<$Res>
     Object? isMutedThread = null,
     Object? isWatching = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       isFavorited: null == isFavorited
-          ? _self.isFavorited
+          ? _value.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
               as bool,
       isMutedThread: null == isMutedThread
-          ? _self.isMutedThread
+          ? _value.isMutedThread
           : isMutedThread // ignore: cast_nullable_to_non_nullable
               as bool,
       isWatching: freezed == isWatching
-          ? _self.isWatching
+          ? _value.isWatching
+          : isWatching // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$NotesStateResponseImplCopyWith<$Res>
+    implements $NotesStateResponseCopyWith<$Res> {
+  factory _$$NotesStateResponseImplCopyWith(_$NotesStateResponseImpl value,
+          $Res Function(_$NotesStateResponseImpl) then) =
+      __$$NotesStateResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool isFavorited,
+      bool isMutedThread,
+      @Deprecated("This property is already removed") bool? isWatching});
+}
+
+/// @nodoc
+class __$$NotesStateResponseImplCopyWithImpl<$Res>
+    extends _$NotesStateResponseCopyWithImpl<$Res, _$NotesStateResponseImpl>
+    implements _$$NotesStateResponseImplCopyWith<$Res> {
+  __$$NotesStateResponseImplCopyWithImpl(_$NotesStateResponseImpl _value,
+      $Res Function(_$NotesStateResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isFavorited = null,
+    Object? isMutedThread = null,
+    Object? isWatching = freezed,
+  }) {
+    return _then(_$NotesStateResponseImpl(
+      isFavorited: null == isFavorited
+          ? _value.isFavorited
+          : isFavorited // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMutedThread: null == isMutedThread
+          ? _value.isMutedThread
+          : isMutedThread // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isWatching: freezed == isWatching
+          ? _value.isWatching
           : isWatching // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -103,13 +125,14 @@ class _$NotesStateResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _NotesStateResponse implements NotesStateResponse {
-  const _NotesStateResponse(
+class _$NotesStateResponseImpl implements _NotesStateResponse {
+  const _$NotesStateResponseImpl(
       {required this.isFavorited,
       required this.isMutedThread,
       @Deprecated("This property is already removed") this.isWatching});
-  factory _NotesStateResponse.fromJson(Map<String, dynamic> json) =>
-      _$NotesStateResponseFromJson(json);
+
+  factory _$NotesStateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesStateResponseImplFromJson(json);
 
   @override
   final bool isFavorited;
@@ -119,26 +142,16 @@ class _NotesStateResponse implements NotesStateResponse {
   @Deprecated("This property is already removed")
   final bool? isWatching;
 
-  /// Create a copy of NotesStateResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesStateResponseCopyWith<_NotesStateResponse> get copyWith =>
-      __$NotesStateResponseCopyWithImpl<_NotesStateResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesStateResponseToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread, isWatching: $isWatching)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotesStateResponse &&
+            other is _$NotesStateResponseImpl &&
             (identical(other.isFavorited, isFavorited) ||
                 other.isFavorited == isFavorited) &&
             (identical(other.isMutedThread, isMutedThread) ||
@@ -147,63 +160,45 @@ class _NotesStateResponse implements NotesStateResponse {
                 other.isWatching == isWatching));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, isFavorited, isMutedThread, isWatching);
 
-  @override
-  String toString() {
-    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread, isWatching: $isWatching)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$NotesStateResponseCopyWith<$Res>
-    implements $NotesStateResponseCopyWith<$Res> {
-  factory _$NotesStateResponseCopyWith(
-          _NotesStateResponse value, $Res Function(_NotesStateResponse) _then) =
-      __$NotesStateResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {bool isFavorited,
-      bool isMutedThread,
-      @Deprecated("This property is already removed") bool? isWatching});
-}
-
-/// @nodoc
-class __$NotesStateResponseCopyWithImpl<$Res>
-    implements _$NotesStateResponseCopyWith<$Res> {
-  __$NotesStateResponseCopyWithImpl(this._self, this._then);
-
-  final _NotesStateResponse _self;
-  final $Res Function(_NotesStateResponse) _then;
-
-  /// Create a copy of NotesStateResponse
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? isFavorited = null,
-    Object? isMutedThread = null,
-    Object? isWatching = freezed,
-  }) {
-    return _then(_NotesStateResponse(
-      isFavorited: null == isFavorited
-          ? _self.isFavorited
-          : isFavorited // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isMutedThread: null == isMutedThread
-          ? _self.isMutedThread
-          : isMutedThread // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isWatching: freezed == isWatching
-          ? _self.isWatching
-          : isWatching // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+  _$$NotesStateResponseImplCopyWith<_$NotesStateResponseImpl> get copyWith =>
+      __$$NotesStateResponseImplCopyWithImpl<_$NotesStateResponseImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NotesStateResponseImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _NotesStateResponse implements NotesStateResponse {
+  const factory _NotesStateResponse(
+      {required final bool isFavorited,
+      required final bool isMutedThread,
+      @Deprecated("This property is already removed")
+      final bool? isWatching}) = _$NotesStateResponseImpl;
+
+  factory _NotesStateResponse.fromJson(Map<String, dynamic> json) =
+      _$NotesStateResponseImpl.fromJson;
+
+  @override
+  bool get isFavorited;
+  @override
+  bool get isMutedThread;
+  @override
+  @Deprecated("This property is already removed")
+  bool? get isWatching;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotesStateResponseImplCopyWith<_$NotesStateResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

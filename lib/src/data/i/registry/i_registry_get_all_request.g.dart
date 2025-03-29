@@ -6,15 +6,15 @@ part of 'i_registry_get_all_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IRegistryGetAllRequest _$IRegistryGetAllRequestFromJson(
+_$IRegistryGetAllRequestImpl _$$IRegistryGetAllRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _IRegistryGetAllRequest(
+    _$IRegistryGetAllRequestImpl(
       scope: (json['scope'] as List<dynamic>).map((e) => e as String).toList(),
       domain: json['domain'] as String?,
     );
 
-Map<String, dynamic> _$IRegistryGetAllRequestToJson(
-        _IRegistryGetAllRequest instance) =>
+Map<String, dynamic> _$$IRegistryGetAllRequestImplToJson(
+        _$IRegistryGetAllRequestImpl instance) =>
     <String, dynamic>{
       'scope': instance.scope,
       'domain': instance.domain,

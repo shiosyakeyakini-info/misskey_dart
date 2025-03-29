@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,69 +9,90 @@ part of 'gallery_posts_like_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$GalleryPostsLikeRequest {
-  String get postId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of GalleryPostsLikeRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $GalleryPostsLikeRequestCopyWith<GalleryPostsLikeRequest> get copyWith =>
-      _$GalleryPostsLikeRequestCopyWithImpl<GalleryPostsLikeRequest>(
-          this as GalleryPostsLikeRequest, _$identity);
-
-  /// Serializes this GalleryPostsLikeRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GalleryPostsLikeRequest &&
-            (identical(other.postId, postId) || other.postId == postId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, postId);
-
-  @override
-  String toString() {
-    return 'GalleryPostsLikeRequest(postId: $postId)';
-  }
+GalleryPostsLikeRequest _$GalleryPostsLikeRequestFromJson(
+    Map<String, dynamic> json) {
+  return _GalleryPostsLikeRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $GalleryPostsLikeRequestCopyWith<$Res> {
+mixin _$GalleryPostsLikeRequest {
+  String get postId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GalleryPostsLikeRequestCopyWith<GalleryPostsLikeRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GalleryPostsLikeRequestCopyWith<$Res> {
   factory $GalleryPostsLikeRequestCopyWith(GalleryPostsLikeRequest value,
-          $Res Function(GalleryPostsLikeRequest) _then) =
-      _$GalleryPostsLikeRequestCopyWithImpl;
+          $Res Function(GalleryPostsLikeRequest) then) =
+      _$GalleryPostsLikeRequestCopyWithImpl<$Res, GalleryPostsLikeRequest>;
   @useResult
   $Res call({String postId});
 }
 
 /// @nodoc
-class _$GalleryPostsLikeRequestCopyWithImpl<$Res>
+class _$GalleryPostsLikeRequestCopyWithImpl<$Res,
+        $Val extends GalleryPostsLikeRequest>
     implements $GalleryPostsLikeRequestCopyWith<$Res> {
-  _$GalleryPostsLikeRequestCopyWithImpl(this._self, this._then);
+  _$GalleryPostsLikeRequestCopyWithImpl(this._value, this._then);
 
-  final GalleryPostsLikeRequest _self;
-  final $Res Function(GalleryPostsLikeRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of GalleryPostsLikeRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? postId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       postId: null == postId
-          ? _self.postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GalleryPostsLikeRequestImplCopyWith<$Res>
+    implements $GalleryPostsLikeRequestCopyWith<$Res> {
+  factory _$$GalleryPostsLikeRequestImplCopyWith(
+          _$GalleryPostsLikeRequestImpl value,
+          $Res Function(_$GalleryPostsLikeRequestImpl) then) =
+      __$$GalleryPostsLikeRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String postId});
+}
+
+/// @nodoc
+class __$$GalleryPostsLikeRequestImplCopyWithImpl<$Res>
+    extends _$GalleryPostsLikeRequestCopyWithImpl<$Res,
+        _$GalleryPostsLikeRequestImpl>
+    implements _$$GalleryPostsLikeRequestImplCopyWith<$Res> {
+  __$$GalleryPostsLikeRequestImplCopyWithImpl(
+      _$GalleryPostsLikeRequestImpl _value,
+      $Res Function(_$GalleryPostsLikeRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postId = null,
+  }) {
+    return _then(_$GalleryPostsLikeRequestImpl(
+      postId: null == postId
+          ? _value.postId
           : postId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -81,81 +101,58 @@ class _$GalleryPostsLikeRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _GalleryPostsLikeRequest implements GalleryPostsLikeRequest {
-  const _GalleryPostsLikeRequest({required this.postId});
-  factory _GalleryPostsLikeRequest.fromJson(Map<String, dynamic> json) =>
-      _$GalleryPostsLikeRequestFromJson(json);
+class _$GalleryPostsLikeRequestImpl implements _GalleryPostsLikeRequest {
+  const _$GalleryPostsLikeRequestImpl({required this.postId});
+
+  factory _$GalleryPostsLikeRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GalleryPostsLikeRequestImplFromJson(json);
 
   @override
   final String postId;
 
-  /// Create a copy of GalleryPostsLikeRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$GalleryPostsLikeRequestCopyWith<_GalleryPostsLikeRequest> get copyWith =>
-      __$GalleryPostsLikeRequestCopyWithImpl<_GalleryPostsLikeRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$GalleryPostsLikeRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'GalleryPostsLikeRequest(postId: $postId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GalleryPostsLikeRequest &&
+            other is _$GalleryPostsLikeRequestImpl &&
             (identical(other.postId, postId) || other.postId == postId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, postId);
 
-  @override
-  String toString() {
-    return 'GalleryPostsLikeRequest(postId: $postId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$GalleryPostsLikeRequestCopyWith<$Res>
-    implements $GalleryPostsLikeRequestCopyWith<$Res> {
-  factory _$GalleryPostsLikeRequestCopyWith(_GalleryPostsLikeRequest value,
-          $Res Function(_GalleryPostsLikeRequest) _then) =
-      __$GalleryPostsLikeRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String postId});
-}
-
-/// @nodoc
-class __$GalleryPostsLikeRequestCopyWithImpl<$Res>
-    implements _$GalleryPostsLikeRequestCopyWith<$Res> {
-  __$GalleryPostsLikeRequestCopyWithImpl(this._self, this._then);
-
-  final _GalleryPostsLikeRequest _self;
-  final $Res Function(_GalleryPostsLikeRequest) _then;
-
-  /// Create a copy of GalleryPostsLikeRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? postId = null,
-  }) {
-    return _then(_GalleryPostsLikeRequest(
-      postId: null == postId
-          ? _self.postId
-          : postId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$GalleryPostsLikeRequestImplCopyWith<_$GalleryPostsLikeRequestImpl>
+      get copyWith => __$$GalleryPostsLikeRequestImplCopyWithImpl<
+          _$GalleryPostsLikeRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GalleryPostsLikeRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _GalleryPostsLikeRequest implements GalleryPostsLikeRequest {
+  const factory _GalleryPostsLikeRequest({required final String postId}) =
+      _$GalleryPostsLikeRequestImpl;
+
+  factory _GalleryPostsLikeRequest.fromJson(Map<String, dynamic> json) =
+      _$GalleryPostsLikeRequestImpl.fromJson;
+
+  @override
+  String get postId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GalleryPostsLikeRequestImplCopyWith<_$GalleryPostsLikeRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

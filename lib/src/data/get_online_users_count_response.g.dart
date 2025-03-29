@@ -6,14 +6,14 @@ part of 'get_online_users_count_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GetOnlineUsersCountResponse _$GetOnlineUsersCountResponseFromJson(
+_$GetOnlineUsersCountResponseImpl _$$GetOnlineUsersCountResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _GetOnlineUsersCountResponse(
-      count: (json['count'] as num).toInt(),
+    _$GetOnlineUsersCountResponseImpl(
+      count: json['count'] as int,
     );
 
-Map<String, dynamic> _$GetOnlineUsersCountResponseToJson(
-        _GetOnlineUsersCountResponse instance) =>
+Map<String, dynamic> _$$GetOnlineUsersCountResponseImplToJson(
+        _$GetOnlineUsersCountResponseImpl instance) =>
     <String, dynamic>{
       'count': instance.count,
     };

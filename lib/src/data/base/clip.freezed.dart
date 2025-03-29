@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,86 +9,40 @@ part of 'clip.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$Clip {
-  String get id;
-  @DateTimeConverter()
-  DateTime get createdAt;
-  @NullableDateTimeConverter()
-  DateTime? get lastClippedAt;
-  String get userId;
-  UserLite get user;
-  String? get name;
-  String? get description;
-  bool get isPublic;
-  int get favoritedCount;
-  bool? get isFavorited;
-  int? get notesCount;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of Clip
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ClipCopyWith<Clip> get copyWith =>
-      _$ClipCopyWithImpl<Clip>(this as Clip, _$identity);
-
-  /// Serializes this Clip to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Clip &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.lastClippedAt, lastClippedAt) ||
-                other.lastClippedAt == lastClippedAt) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.isPublic, isPublic) ||
-                other.isPublic == isPublic) &&
-            (identical(other.favoritedCount, favoritedCount) ||
-                other.favoritedCount == favoritedCount) &&
-            (identical(other.isFavorited, isFavorited) ||
-                other.isFavorited == isFavorited) &&
-            (identical(other.notesCount, notesCount) ||
-                other.notesCount == notesCount));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      createdAt,
-      lastClippedAt,
-      userId,
-      user,
-      name,
-      description,
-      isPublic,
-      favoritedCount,
-      isFavorited,
-      notesCount);
-
-  @override
-  String toString() {
-    return 'Clip(id: $id, createdAt: $createdAt, lastClippedAt: $lastClippedAt, userId: $userId, user: $user, name: $name, description: $description, isPublic: $isPublic, favoritedCount: $favoritedCount, isFavorited: $isFavorited, notesCount: $notesCount)';
-  }
+Clip _$ClipFromJson(Map<String, dynamic> json) {
+  return _Clip.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $ClipCopyWith<$Res> {
-  factory $ClipCopyWith(Clip value, $Res Function(Clip) _then) =
-      _$ClipCopyWithImpl;
+mixin _$Clip {
+  String get id => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  @NullableDateTimeConverter()
+  DateTime? get lastClippedAt => throw _privateConstructorUsedError;
+  String get userId => throw _privateConstructorUsedError;
+  UserLite get user => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  bool get isPublic => throw _privateConstructorUsedError;
+  int get favoritedCount => throw _privateConstructorUsedError;
+  bool? get isFavorited => throw _privateConstructorUsedError;
+  int? get notesCount => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ClipCopyWith<Clip> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ClipCopyWith<$Res> {
+  factory $ClipCopyWith(Clip value, $Res Function(Clip) then) =
+      _$ClipCopyWithImpl<$Res, Clip>;
   @useResult
   $Res call(
       {String id,
@@ -108,14 +61,15 @@ abstract mixin class $ClipCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ClipCopyWithImpl<$Res> implements $ClipCopyWith<$Res> {
-  _$ClipCopyWithImpl(this._self, this._then);
+class _$ClipCopyWithImpl<$Res, $Val extends Clip>
+    implements $ClipCopyWith<$Res> {
+  _$ClipCopyWithImpl(this._value, this._then);
 
-  final Clip _self;
-  final $Res Function(Clip) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of Clip
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,69 +85,162 @@ class _$ClipCopyWithImpl<$Res> implements $ClipCopyWith<$Res> {
     Object? isFavorited = freezed,
     Object? notesCount = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       lastClippedAt: freezed == lastClippedAt
-          ? _self.lastClippedAt
+          ? _value.lastClippedAt
           : lastClippedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       userId: null == userId
-          ? _self.userId
+          ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
       user: null == user
-          ? _self.user
+          ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserLite,
       name: freezed == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
-          ? _self.description
+          ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       isPublic: null == isPublic
-          ? _self.isPublic
+          ? _value.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
       favoritedCount: null == favoritedCount
-          ? _self.favoritedCount
+          ? _value.favoritedCount
           : favoritedCount // ignore: cast_nullable_to_non_nullable
               as int,
       isFavorited: freezed == isFavorited
-          ? _self.isFavorited
+          ? _value.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
               as bool?,
       notesCount: freezed == notesCount
-          ? _self.notesCount
+          ? _value.notesCount
           : notesCount // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 
-  /// Create a copy of Clip
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$ClipImplCopyWith<$Res> implements $ClipCopyWith<$Res> {
+  factory _$$ClipImplCopyWith(
+          _$ClipImpl value, $Res Function(_$ClipImpl) then) =
+      __$$ClipImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      @NullableDateTimeConverter() DateTime? lastClippedAt,
+      String userId,
+      UserLite user,
+      String? name,
+      String? description,
+      bool isPublic,
+      int favoritedCount,
+      bool? isFavorited,
+      int? notesCount});
+
+  @override
+  $UserLiteCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$ClipImplCopyWithImpl<$Res>
+    extends _$ClipCopyWithImpl<$Res, _$ClipImpl>
+    implements _$$ClipImplCopyWith<$Res> {
+  __$$ClipImplCopyWithImpl(_$ClipImpl _value, $Res Function(_$ClipImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? lastClippedAt = freezed,
+    Object? userId = null,
+    Object? user = null,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? isPublic = null,
+    Object? favoritedCount = null,
+    Object? isFavorited = freezed,
+    Object? notesCount = freezed,
+  }) {
+    return _then(_$ClipImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lastClippedAt: freezed == lastClippedAt
+          ? _value.lastClippedAt
+          : lastClippedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPublic: null == isPublic
+          ? _value.isPublic
+          : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool,
+      favoritedCount: null == favoritedCount
+          ? _value.favoritedCount
+          : favoritedCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      isFavorited: freezed == isFavorited
+          ? _value.isFavorited
+          : isFavorited // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notesCount: freezed == notesCount
+          ? _value.notesCount
+          : notesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _Clip implements Clip {
-  const _Clip(
+class _$ClipImpl implements _Clip {
+  const _$ClipImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NullableDateTimeConverter() this.lastClippedAt,
@@ -205,7 +252,9 @@ class _Clip implements Clip {
       required this.favoritedCount,
       this.isFavorited,
       this.notesCount});
-  factory _Clip.fromJson(Map<String, dynamic> json) => _$ClipFromJson(json);
+
+  factory _$ClipImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClipImplFromJson(json);
 
   @override
   final String id;
@@ -232,26 +281,16 @@ class _Clip implements Clip {
   @override
   final int? notesCount;
 
-  /// Create a copy of Clip
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ClipCopyWith<_Clip> get copyWith =>
-      __$ClipCopyWithImpl<_Clip>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ClipToJson(
-      this,
-    );
+  String toString() {
+    return 'Clip(id: $id, createdAt: $createdAt, lastClippedAt: $lastClippedAt, userId: $userId, user: $user, name: $name, description: $description, isPublic: $isPublic, favoritedCount: $favoritedCount, isFavorited: $isFavorited, notesCount: $notesCount)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Clip &&
+            other is _$ClipImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -272,7 +311,7 @@ class _Clip implements Clip {
                 other.notesCount == notesCount));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -288,116 +327,62 @@ class _Clip implements Clip {
       isFavorited,
       notesCount);
 
-  @override
-  String toString() {
-    return 'Clip(id: $id, createdAt: $createdAt, lastClippedAt: $lastClippedAt, userId: $userId, user: $user, name: $name, description: $description, isPublic: $isPublic, favoritedCount: $favoritedCount, isFavorited: $isFavorited, notesCount: $notesCount)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ClipCopyWith<$Res> implements $ClipCopyWith<$Res> {
-  factory _$ClipCopyWith(_Clip value, $Res Function(_Clip) _then) =
-      __$ClipCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      @NullableDateTimeConverter() DateTime? lastClippedAt,
-      String userId,
-      UserLite user,
-      String? name,
-      String? description,
-      bool isPublic,
-      int favoritedCount,
-      bool? isFavorited,
-      int? notesCount});
-
-  @override
-  $UserLiteCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class __$ClipCopyWithImpl<$Res> implements _$ClipCopyWith<$Res> {
-  __$ClipCopyWithImpl(this._self, this._then);
-
-  final _Clip _self;
-  final $Res Function(_Clip) _then;
-
-  /// Create a copy of Clip
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? lastClippedAt = freezed,
-    Object? userId = null,
-    Object? user = null,
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? isPublic = null,
-    Object? favoritedCount = null,
-    Object? isFavorited = freezed,
-    Object? notesCount = freezed,
-  }) {
-    return _then(_Clip(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      lastClippedAt: freezed == lastClippedAt
-          ? _self.lastClippedAt
-          : lastClippedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _self.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isPublic: null == isPublic
-          ? _self.isPublic
-          : isPublic // ignore: cast_nullable_to_non_nullable
-              as bool,
-      favoritedCount: null == favoritedCount
-          ? _self.favoritedCount
-          : favoritedCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      isFavorited: freezed == isFavorited
-          ? _self.isFavorited
-          : isFavorited // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notesCount: freezed == notesCount
-          ? _self.notesCount
-          : notesCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+  _$$ClipImplCopyWith<_$ClipImpl> get copyWith =>
+      __$$ClipImplCopyWithImpl<_$ClipImpl>(this, _$identity);
 
-  /// Create a copy of Clip
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
-    });
+  Map<String, dynamic> toJson() {
+    return _$$ClipImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _Clip implements Clip {
+  const factory _Clip(
+      {required final String id,
+      @DateTimeConverter() required final DateTime createdAt,
+      @NullableDateTimeConverter() final DateTime? lastClippedAt,
+      required final String userId,
+      required final UserLite user,
+      final String? name,
+      final String? description,
+      required final bool isPublic,
+      required final int favoritedCount,
+      final bool? isFavorited,
+      final int? notesCount}) = _$ClipImpl;
+
+  factory _Clip.fromJson(Map<String, dynamic> json) = _$ClipImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @DateTimeConverter()
+  DateTime get createdAt;
+  @override
+  @NullableDateTimeConverter()
+  DateTime? get lastClippedAt;
+  @override
+  String get userId;
+  @override
+  UserLite get user;
+  @override
+  String? get name;
+  @override
+  String? get description;
+  @override
+  bool get isPublic;
+  @override
+  int get favoritedCount;
+  @override
+  bool? get isFavorited;
+  @override
+  int? get notesCount;
+  @override
+  @JsonKey(ignore: true)
+  _$$ClipImplCopyWith<_$ClipImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

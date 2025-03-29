@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,75 +9,34 @@ part of 'hashtag.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$Hashtag {
-  String get tag;
-  int get mentionedUsersCount;
-  int get mentionedLocalUsersCount;
-  int get mentionedRemoteUsersCount;
-  int get attachedUsersCount;
-  int get attachedLocalUsersCount;
-  int get attachedRemoteUsersCount;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of Hashtag
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $HashtagCopyWith<Hashtag> get copyWith =>
-      _$HashtagCopyWithImpl<Hashtag>(this as Hashtag, _$identity);
-
-  /// Serializes this Hashtag to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Hashtag &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.mentionedUsersCount, mentionedUsersCount) ||
-                other.mentionedUsersCount == mentionedUsersCount) &&
-            (identical(
-                    other.mentionedLocalUsersCount, mentionedLocalUsersCount) ||
-                other.mentionedLocalUsersCount == mentionedLocalUsersCount) &&
-            (identical(other.mentionedRemoteUsersCount,
-                    mentionedRemoteUsersCount) ||
-                other.mentionedRemoteUsersCount == mentionedRemoteUsersCount) &&
-            (identical(other.attachedUsersCount, attachedUsersCount) ||
-                other.attachedUsersCount == attachedUsersCount) &&
-            (identical(
-                    other.attachedLocalUsersCount, attachedLocalUsersCount) ||
-                other.attachedLocalUsersCount == attachedLocalUsersCount) &&
-            (identical(
-                    other.attachedRemoteUsersCount, attachedRemoteUsersCount) ||
-                other.attachedRemoteUsersCount == attachedRemoteUsersCount));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      tag,
-      mentionedUsersCount,
-      mentionedLocalUsersCount,
-      mentionedRemoteUsersCount,
-      attachedUsersCount,
-      attachedLocalUsersCount,
-      attachedRemoteUsersCount);
-
-  @override
-  String toString() {
-    return 'Hashtag(tag: $tag, mentionedUsersCount: $mentionedUsersCount, mentionedLocalUsersCount: $mentionedLocalUsersCount, mentionedRemoteUsersCount: $mentionedRemoteUsersCount, attachedUsersCount: $attachedUsersCount, attachedLocalUsersCount: $attachedLocalUsersCount, attachedRemoteUsersCount: $attachedRemoteUsersCount)';
-  }
+Hashtag _$HashtagFromJson(Map<String, dynamic> json) {
+  return _Hashtag.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $HashtagCopyWith<$Res> {
-  factory $HashtagCopyWith(Hashtag value, $Res Function(Hashtag) _then) =
-      _$HashtagCopyWithImpl;
+mixin _$Hashtag {
+  String get tag => throw _privateConstructorUsedError;
+  int get mentionedUsersCount => throw _privateConstructorUsedError;
+  int get mentionedLocalUsersCount => throw _privateConstructorUsedError;
+  int get mentionedRemoteUsersCount => throw _privateConstructorUsedError;
+  int get attachedUsersCount => throw _privateConstructorUsedError;
+  int get attachedLocalUsersCount => throw _privateConstructorUsedError;
+  int get attachedRemoteUsersCount => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $HashtagCopyWith<Hashtag> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $HashtagCopyWith<$Res> {
+  factory $HashtagCopyWith(Hashtag value, $Res Function(Hashtag) then) =
+      _$HashtagCopyWithImpl<$Res, Hashtag>;
   @useResult
   $Res call(
       {String tag,
@@ -91,14 +49,15 @@ abstract mixin class $HashtagCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HashtagCopyWithImpl<$Res> implements $HashtagCopyWith<$Res> {
-  _$HashtagCopyWithImpl(this._self, this._then);
+class _$HashtagCopyWithImpl<$Res, $Val extends Hashtag>
+    implements $HashtagCopyWith<$Res> {
+  _$HashtagCopyWithImpl(this._value, this._then);
 
-  final Hashtag _self;
-  final $Res Function(Hashtag) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of Hashtag
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,33 +69,102 @@ class _$HashtagCopyWithImpl<$Res> implements $HashtagCopyWith<$Res> {
     Object? attachedLocalUsersCount = null,
     Object? attachedRemoteUsersCount = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       tag: null == tag
-          ? _self.tag
+          ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
               as String,
       mentionedUsersCount: null == mentionedUsersCount
-          ? _self.mentionedUsersCount
+          ? _value.mentionedUsersCount
           : mentionedUsersCount // ignore: cast_nullable_to_non_nullable
               as int,
       mentionedLocalUsersCount: null == mentionedLocalUsersCount
-          ? _self.mentionedLocalUsersCount
+          ? _value.mentionedLocalUsersCount
           : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
               as int,
       mentionedRemoteUsersCount: null == mentionedRemoteUsersCount
-          ? _self.mentionedRemoteUsersCount
+          ? _value.mentionedRemoteUsersCount
           : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
               as int,
       attachedUsersCount: null == attachedUsersCount
-          ? _self.attachedUsersCount
+          ? _value.attachedUsersCount
           : attachedUsersCount // ignore: cast_nullable_to_non_nullable
               as int,
       attachedLocalUsersCount: null == attachedLocalUsersCount
-          ? _self.attachedLocalUsersCount
+          ? _value.attachedLocalUsersCount
           : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
               as int,
       attachedRemoteUsersCount: null == attachedRemoteUsersCount
-          ? _self.attachedRemoteUsersCount
+          ? _value.attachedRemoteUsersCount
+          : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$HashtagImplCopyWith<$Res> implements $HashtagCopyWith<$Res> {
+  factory _$$HashtagImplCopyWith(
+          _$HashtagImpl value, $Res Function(_$HashtagImpl) then) =
+      __$$HashtagImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String tag,
+      int mentionedUsersCount,
+      int mentionedLocalUsersCount,
+      int mentionedRemoteUsersCount,
+      int attachedUsersCount,
+      int attachedLocalUsersCount,
+      int attachedRemoteUsersCount});
+}
+
+/// @nodoc
+class __$$HashtagImplCopyWithImpl<$Res>
+    extends _$HashtagCopyWithImpl<$Res, _$HashtagImpl>
+    implements _$$HashtagImplCopyWith<$Res> {
+  __$$HashtagImplCopyWithImpl(
+      _$HashtagImpl _value, $Res Function(_$HashtagImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tag = null,
+    Object? mentionedUsersCount = null,
+    Object? mentionedLocalUsersCount = null,
+    Object? mentionedRemoteUsersCount = null,
+    Object? attachedUsersCount = null,
+    Object? attachedLocalUsersCount = null,
+    Object? attachedRemoteUsersCount = null,
+  }) {
+    return _then(_$HashtagImpl(
+      tag: null == tag
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String,
+      mentionedUsersCount: null == mentionedUsersCount
+          ? _value.mentionedUsersCount
+          : mentionedUsersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      mentionedLocalUsersCount: null == mentionedLocalUsersCount
+          ? _value.mentionedLocalUsersCount
+          : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      mentionedRemoteUsersCount: null == mentionedRemoteUsersCount
+          ? _value.mentionedRemoteUsersCount
+          : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      attachedUsersCount: null == attachedUsersCount
+          ? _value.attachedUsersCount
+          : attachedUsersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      attachedLocalUsersCount: null == attachedLocalUsersCount
+          ? _value.attachedLocalUsersCount
+          : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      attachedRemoteUsersCount: null == attachedRemoteUsersCount
+          ? _value.attachedRemoteUsersCount
           : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -145,8 +173,8 @@ class _$HashtagCopyWithImpl<$Res> implements $HashtagCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Hashtag implements Hashtag {
-  const _Hashtag(
+class _$HashtagImpl implements _Hashtag {
+  const _$HashtagImpl(
       {required this.tag,
       required this.mentionedUsersCount,
       required this.mentionedLocalUsersCount,
@@ -154,8 +182,9 @@ class _Hashtag implements Hashtag {
       required this.attachedUsersCount,
       required this.attachedLocalUsersCount,
       required this.attachedRemoteUsersCount});
-  factory _Hashtag.fromJson(Map<String, dynamic> json) =>
-      _$HashtagFromJson(json);
+
+  factory _$HashtagImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HashtagImplFromJson(json);
 
   @override
   final String tag;
@@ -172,26 +201,16 @@ class _Hashtag implements Hashtag {
   @override
   final int attachedRemoteUsersCount;
 
-  /// Create a copy of Hashtag
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$HashtagCopyWith<_Hashtag> get copyWith =>
-      __$HashtagCopyWithImpl<_Hashtag>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$HashtagToJson(
-      this,
-    );
+  String toString() {
+    return 'Hashtag(tag: $tag, mentionedUsersCount: $mentionedUsersCount, mentionedLocalUsersCount: $mentionedLocalUsersCount, mentionedRemoteUsersCount: $mentionedRemoteUsersCount, attachedUsersCount: $attachedUsersCount, attachedLocalUsersCount: $attachedLocalUsersCount, attachedRemoteUsersCount: $attachedRemoteUsersCount)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Hashtag &&
+            other is _$HashtagImpl &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.mentionedUsersCount, mentionedUsersCount) ||
                 other.mentionedUsersCount == mentionedUsersCount) &&
@@ -211,7 +230,7 @@ class _Hashtag implements Hashtag {
                 other.attachedRemoteUsersCount == attachedRemoteUsersCount));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -223,79 +242,48 @@ class _Hashtag implements Hashtag {
       attachedLocalUsersCount,
       attachedRemoteUsersCount);
 
-  @override
-  String toString() {
-    return 'Hashtag(tag: $tag, mentionedUsersCount: $mentionedUsersCount, mentionedLocalUsersCount: $mentionedLocalUsersCount, mentionedRemoteUsersCount: $mentionedRemoteUsersCount, attachedUsersCount: $attachedUsersCount, attachedLocalUsersCount: $attachedLocalUsersCount, attachedRemoteUsersCount: $attachedRemoteUsersCount)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$HashtagCopyWith<$Res> implements $HashtagCopyWith<$Res> {
-  factory _$HashtagCopyWith(_Hashtag value, $Res Function(_Hashtag) _then) =
-      __$HashtagCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String tag,
-      int mentionedUsersCount,
-      int mentionedLocalUsersCount,
-      int mentionedRemoteUsersCount,
-      int attachedUsersCount,
-      int attachedLocalUsersCount,
-      int attachedRemoteUsersCount});
-}
-
-/// @nodoc
-class __$HashtagCopyWithImpl<$Res> implements _$HashtagCopyWith<$Res> {
-  __$HashtagCopyWithImpl(this._self, this._then);
-
-  final _Hashtag _self;
-  final $Res Function(_Hashtag) _then;
-
-  /// Create a copy of Hashtag
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tag = null,
-    Object? mentionedUsersCount = null,
-    Object? mentionedLocalUsersCount = null,
-    Object? mentionedRemoteUsersCount = null,
-    Object? attachedUsersCount = null,
-    Object? attachedLocalUsersCount = null,
-    Object? attachedRemoteUsersCount = null,
-  }) {
-    return _then(_Hashtag(
-      tag: null == tag
-          ? _self.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      mentionedUsersCount: null == mentionedUsersCount
-          ? _self.mentionedUsersCount
-          : mentionedUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      mentionedLocalUsersCount: null == mentionedLocalUsersCount
-          ? _self.mentionedLocalUsersCount
-          : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      mentionedRemoteUsersCount: null == mentionedRemoteUsersCount
-          ? _self.mentionedRemoteUsersCount
-          : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      attachedUsersCount: null == attachedUsersCount
-          ? _self.attachedUsersCount
-          : attachedUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      attachedLocalUsersCount: null == attachedLocalUsersCount
-          ? _self.attachedLocalUsersCount
-          : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      attachedRemoteUsersCount: null == attachedRemoteUsersCount
-          ? _self.attachedRemoteUsersCount
-          : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  _$$HashtagImplCopyWith<_$HashtagImpl> get copyWith =>
+      __$$HashtagImplCopyWithImpl<_$HashtagImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$HashtagImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _Hashtag implements Hashtag {
+  const factory _Hashtag(
+      {required final String tag,
+      required final int mentionedUsersCount,
+      required final int mentionedLocalUsersCount,
+      required final int mentionedRemoteUsersCount,
+      required final int attachedUsersCount,
+      required final int attachedLocalUsersCount,
+      required final int attachedRemoteUsersCount}) = _$HashtagImpl;
+
+  factory _Hashtag.fromJson(Map<String, dynamic> json) = _$HashtagImpl.fromJson;
+
+  @override
+  String get tag;
+  @override
+  int get mentionedUsersCount;
+  @override
+  int get mentionedLocalUsersCount;
+  @override
+  int get mentionedRemoteUsersCount;
+  @override
+  int get attachedUsersCount;
+  @override
+  int get attachedLocalUsersCount;
+  @override
+  int get attachedRemoteUsersCount;
+  @override
+  @JsonKey(ignore: true)
+  _$$HashtagImplCopyWith<_$HashtagImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,55 +9,34 @@ part of 'i_favorites_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$IFavoritesResponse {
-  String get id;
-  @DateTimeConverter()
-  DateTime get createdAt;
-  String get noteId;
-  Note get note;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of IFavoritesResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IFavoritesResponseCopyWith<IFavoritesResponse> get copyWith =>
-      _$IFavoritesResponseCopyWithImpl<IFavoritesResponse>(
-          this as IFavoritesResponse, _$identity);
-
-  /// Serializes this IFavoritesResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IFavoritesResponse &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.noteId, noteId) || other.noteId == noteId) &&
-            (identical(other.note, note) || other.note == note));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, noteId, note);
-
-  @override
-  String toString() {
-    return 'IFavoritesResponse(id: $id, createdAt: $createdAt, noteId: $noteId, note: $note)';
-  }
+IFavoritesResponse _$IFavoritesResponseFromJson(Map<String, dynamic> json) {
+  return _IFavoritesResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $IFavoritesResponseCopyWith<$Res> {
+mixin _$IFavoritesResponse {
+  String get id => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get noteId => throw _privateConstructorUsedError;
+  Note get note => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IFavoritesResponseCopyWith<IFavoritesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IFavoritesResponseCopyWith<$Res> {
   factory $IFavoritesResponseCopyWith(
-          IFavoritesResponse value, $Res Function(IFavoritesResponse) _then) =
-      _$IFavoritesResponseCopyWithImpl;
+          IFavoritesResponse value, $Res Function(IFavoritesResponse) then) =
+      _$IFavoritesResponseCopyWithImpl<$Res, IFavoritesResponse>;
   @useResult
   $Res call(
       {String id,
@@ -70,15 +48,15 @@ abstract mixin class $IFavoritesResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$IFavoritesResponseCopyWithImpl<$Res>
+class _$IFavoritesResponseCopyWithImpl<$Res, $Val extends IFavoritesResponse>
     implements $IFavoritesResponseCopyWith<$Res> {
-  _$IFavoritesResponseCopyWithImpl(this._self, this._then);
+  _$IFavoritesResponseCopyWithImpl(this._value, this._then);
 
-  final IFavoritesResponse _self;
-  final $Res Function(IFavoritesResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of IFavoritesResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,47 +65,101 @@ class _$IFavoritesResponseCopyWithImpl<$Res>
     Object? noteId = null,
     Object? note = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       noteId: null == noteId
-          ? _self.noteId
+          ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
               as String,
       note: null == note
-          ? _self.note
+          ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note,
-    ));
+    ) as $Val);
   }
 
-  /// Create a copy of IFavoritesResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_self.note, (value) {
-      return _then(_self.copyWith(note: value));
+    return $NoteCopyWith<$Res>(_value.note, (value) {
+      return _then(_value.copyWith(note: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$IFavoritesResponseImplCopyWith<$Res>
+    implements $IFavoritesResponseCopyWith<$Res> {
+  factory _$$IFavoritesResponseImplCopyWith(_$IFavoritesResponseImpl value,
+          $Res Function(_$IFavoritesResponseImpl) then) =
+      __$$IFavoritesResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String noteId,
+      Note note});
+
+  @override
+  $NoteCopyWith<$Res> get note;
+}
+
+/// @nodoc
+class __$$IFavoritesResponseImplCopyWithImpl<$Res>
+    extends _$IFavoritesResponseCopyWithImpl<$Res, _$IFavoritesResponseImpl>
+    implements _$$IFavoritesResponseImplCopyWith<$Res> {
+  __$$IFavoritesResponseImplCopyWithImpl(_$IFavoritesResponseImpl _value,
+      $Res Function(_$IFavoritesResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? noteId = null,
+    Object? note = null,
+  }) {
+    return _then(_$IFavoritesResponseImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      noteId: null == noteId
+          ? _value.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _IFavoritesResponse implements IFavoritesResponse {
-  const _IFavoritesResponse(
+class _$IFavoritesResponseImpl implements _IFavoritesResponse {
+  const _$IFavoritesResponseImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.noteId,
       required this.note});
-  factory _IFavoritesResponse.fromJson(Map<String, dynamic> json) =>
-      _$IFavoritesResponseFromJson(json);
+
+  factory _$IFavoritesResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IFavoritesResponseImplFromJson(json);
 
   @override
   final String id;
@@ -139,26 +171,16 @@ class _IFavoritesResponse implements IFavoritesResponse {
   @override
   final Note note;
 
-  /// Create a copy of IFavoritesResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IFavoritesResponseCopyWith<_IFavoritesResponse> get copyWith =>
-      __$IFavoritesResponseCopyWithImpl<_IFavoritesResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IFavoritesResponseToJson(
-      this,
-    );
+  String toString() {
+    return 'IFavoritesResponse(id: $id, createdAt: $createdAt, noteId: $noteId, note: $note)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IFavoritesResponse &&
+            other is _$IFavoritesResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -166,81 +188,46 @@ class _IFavoritesResponse implements IFavoritesResponse {
             (identical(other.note, note) || other.note == note));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, noteId, note);
 
-  @override
-  String toString() {
-    return 'IFavoritesResponse(id: $id, createdAt: $createdAt, noteId: $noteId, note: $note)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IFavoritesResponseCopyWith<$Res>
-    implements $IFavoritesResponseCopyWith<$Res> {
-  factory _$IFavoritesResponseCopyWith(
-          _IFavoritesResponse value, $Res Function(_IFavoritesResponse) _then) =
-      __$IFavoritesResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String noteId,
-      Note note});
-
-  @override
-  $NoteCopyWith<$Res> get note;
-}
-
-/// @nodoc
-class __$IFavoritesResponseCopyWithImpl<$Res>
-    implements _$IFavoritesResponseCopyWith<$Res> {
-  __$IFavoritesResponseCopyWithImpl(this._self, this._then);
-
-  final _IFavoritesResponse _self;
-  final $Res Function(_IFavoritesResponse) _then;
-
-  /// Create a copy of IFavoritesResponse
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? noteId = null,
-    Object? note = null,
-  }) {
-    return _then(_IFavoritesResponse(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      noteId: null == noteId
-          ? _self.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-      note: null == note
-          ? _self.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
-    ));
-  }
+  _$$IFavoritesResponseImplCopyWith<_$IFavoritesResponseImpl> get copyWith =>
+      __$$IFavoritesResponseImplCopyWithImpl<_$IFavoritesResponseImpl>(
+          this, _$identity);
 
-  /// Create a copy of IFavoritesResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_self.note, (value) {
-      return _then(_self.copyWith(note: value));
-    });
+  Map<String, dynamic> toJson() {
+    return _$$IFavoritesResponseImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _IFavoritesResponse implements IFavoritesResponse {
+  const factory _IFavoritesResponse(
+      {required final String id,
+      @DateTimeConverter() required final DateTime createdAt,
+      required final String noteId,
+      required final Note note}) = _$IFavoritesResponseImpl;
+
+  factory _IFavoritesResponse.fromJson(Map<String, dynamic> json) =
+      _$IFavoritesResponseImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @DateTimeConverter()
+  DateTime get createdAt;
+  @override
+  String get noteId;
+  @override
+  Note get note;
+  @override
+  @JsonKey(ignore: true)
+  _$$IFavoritesResponseImplCopyWith<_$IFavoritesResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,65 +9,48 @@ part of 'users_featured_notes_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$UsersFeaturedNotesRequest {
-  int? get limit;
-  String? get untilId;
-  String get userId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of UsersFeaturedNotesRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $UsersFeaturedNotesRequestCopyWith<UsersFeaturedNotesRequest> get copyWith =>
-      _$UsersFeaturedNotesRequestCopyWithImpl<UsersFeaturedNotesRequest>(
-          this as UsersFeaturedNotesRequest, _$identity);
-
-  /// Serializes this UsersFeaturedNotesRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UsersFeaturedNotesRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, untilId, userId);
-
-  @override
-  String toString() {
-    return 'UsersFeaturedNotesRequest(limit: $limit, untilId: $untilId, userId: $userId)';
-  }
+UsersFeaturedNotesRequest _$UsersFeaturedNotesRequestFromJson(
+    Map<String, dynamic> json) {
+  return _UsersFeaturedNotesRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $UsersFeaturedNotesRequestCopyWith<$Res> {
+mixin _$UsersFeaturedNotesRequest {
+  int? get limit => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
+  String get userId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsersFeaturedNotesRequestCopyWith<UsersFeaturedNotesRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsersFeaturedNotesRequestCopyWith<$Res> {
   factory $UsersFeaturedNotesRequestCopyWith(UsersFeaturedNotesRequest value,
-          $Res Function(UsersFeaturedNotesRequest) _then) =
-      _$UsersFeaturedNotesRequestCopyWithImpl;
+          $Res Function(UsersFeaturedNotesRequest) then) =
+      _$UsersFeaturedNotesRequestCopyWithImpl<$Res, UsersFeaturedNotesRequest>;
   @useResult
   $Res call({int? limit, String? untilId, String userId});
 }
 
 /// @nodoc
-class _$UsersFeaturedNotesRequestCopyWithImpl<$Res>
+class _$UsersFeaturedNotesRequestCopyWithImpl<$Res,
+        $Val extends UsersFeaturedNotesRequest>
     implements $UsersFeaturedNotesRequestCopyWith<$Res> {
-  _$UsersFeaturedNotesRequestCopyWithImpl(this._self, this._then);
+  _$UsersFeaturedNotesRequestCopyWithImpl(this._value, this._then);
 
-  final UsersFeaturedNotesRequest _self;
-  final $Res Function(UsersFeaturedNotesRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of UsersFeaturedNotesRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -76,17 +58,63 @@ class _$UsersFeaturedNotesRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? userId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       limit: freezed == limit
-          ? _self.limit
+          ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       untilId: freezed == untilId
-          ? _self.untilId
+          ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       userId: null == userId
-          ? _self.userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UsersFeaturedNotesRequestImplCopyWith<$Res>
+    implements $UsersFeaturedNotesRequestCopyWith<$Res> {
+  factory _$$UsersFeaturedNotesRequestImplCopyWith(
+          _$UsersFeaturedNotesRequestImpl value,
+          $Res Function(_$UsersFeaturedNotesRequestImpl) then) =
+      __$$UsersFeaturedNotesRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? limit, String? untilId, String userId});
+}
+
+/// @nodoc
+class __$$UsersFeaturedNotesRequestImplCopyWithImpl<$Res>
+    extends _$UsersFeaturedNotesRequestCopyWithImpl<$Res,
+        _$UsersFeaturedNotesRequestImpl>
+    implements _$$UsersFeaturedNotesRequestImplCopyWith<$Res> {
+  __$$UsersFeaturedNotesRequestImplCopyWithImpl(
+      _$UsersFeaturedNotesRequestImpl _value,
+      $Res Function(_$UsersFeaturedNotesRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? untilId = freezed,
+    Object? userId = null,
+  }) {
+    return _then(_$UsersFeaturedNotesRequestImpl(
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: null == userId
+          ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -95,11 +123,12 @@ class _$UsersFeaturedNotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _UsersFeaturedNotesRequest implements UsersFeaturedNotesRequest {
-  const _UsersFeaturedNotesRequest(
+class _$UsersFeaturedNotesRequestImpl implements _UsersFeaturedNotesRequest {
+  const _$UsersFeaturedNotesRequestImpl(
       {this.limit, this.untilId, required this.userId});
-  factory _UsersFeaturedNotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$UsersFeaturedNotesRequestFromJson(json);
+
+  factory _$UsersFeaturedNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersFeaturedNotesRequestImplFromJson(json);
 
   @override
   final int? limit;
@@ -108,86 +137,57 @@ class _UsersFeaturedNotesRequest implements UsersFeaturedNotesRequest {
   @override
   final String userId;
 
-  /// Create a copy of UsersFeaturedNotesRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$UsersFeaturedNotesRequestCopyWith<_UsersFeaturedNotesRequest>
-      get copyWith =>
-          __$UsersFeaturedNotesRequestCopyWithImpl<_UsersFeaturedNotesRequest>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$UsersFeaturedNotesRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersFeaturedNotesRequest(limit: $limit, untilId: $untilId, userId: $userId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersFeaturedNotesRequest &&
+            other is _$UsersFeaturedNotesRequestImpl &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, limit, untilId, userId);
 
-  @override
-  String toString() {
-    return 'UsersFeaturedNotesRequest(limit: $limit, untilId: $untilId, userId: $userId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$UsersFeaturedNotesRequestCopyWith<$Res>
-    implements $UsersFeaturedNotesRequestCopyWith<$Res> {
-  factory _$UsersFeaturedNotesRequestCopyWith(_UsersFeaturedNotesRequest value,
-          $Res Function(_UsersFeaturedNotesRequest) _then) =
-      __$UsersFeaturedNotesRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({int? limit, String? untilId, String userId});
-}
-
-/// @nodoc
-class __$UsersFeaturedNotesRequestCopyWithImpl<$Res>
-    implements _$UsersFeaturedNotesRequestCopyWith<$Res> {
-  __$UsersFeaturedNotesRequestCopyWithImpl(this._self, this._then);
-
-  final _UsersFeaturedNotesRequest _self;
-  final $Res Function(_UsersFeaturedNotesRequest) _then;
-
-  /// Create a copy of UsersFeaturedNotesRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? untilId = freezed,
-    Object? userId = null,
-  }) {
-    return _then(_UsersFeaturedNotesRequest(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$UsersFeaturedNotesRequestImplCopyWith<_$UsersFeaturedNotesRequestImpl>
+      get copyWith => __$$UsersFeaturedNotesRequestImplCopyWithImpl<
+          _$UsersFeaturedNotesRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UsersFeaturedNotesRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _UsersFeaturedNotesRequest implements UsersFeaturedNotesRequest {
+  const factory _UsersFeaturedNotesRequest(
+      {final int? limit,
+      final String? untilId,
+      required final String userId}) = _$UsersFeaturedNotesRequestImpl;
+
+  factory _UsersFeaturedNotesRequest.fromJson(Map<String, dynamic> json) =
+      _$UsersFeaturedNotesRequestImpl.fromJson;
+
+  @override
+  int? get limit;
+  @override
+  String? get untilId;
+  @override
+  String get userId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UsersFeaturedNotesRequestImplCopyWith<_$UsersFeaturedNotesRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

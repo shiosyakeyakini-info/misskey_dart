@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,79 +9,102 @@ part of 'i_registry_get_detail_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$IRegistryGetDetailResponse {
-  DateTime get updatedAt;
-  dynamic get value;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of IRegistryGetDetailResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IRegistryGetDetailResponseCopyWith<IRegistryGetDetailResponse>
-      get copyWith =>
-          _$IRegistryGetDetailResponseCopyWithImpl<IRegistryGetDetailResponse>(
-              this as IRegistryGetDetailResponse, _$identity);
-
-  /// Serializes this IRegistryGetDetailResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IRegistryGetDetailResponse &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            const DeepCollectionEquality().equals(other.value, value));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, updatedAt, const DeepCollectionEquality().hash(value));
-
-  @override
-  String toString() {
-    return 'IRegistryGetDetailResponse(updatedAt: $updatedAt, value: $value)';
-  }
+IRegistryGetDetailResponse _$IRegistryGetDetailResponseFromJson(
+    Map<String, dynamic> json) {
+  return _IRegistryGetDetailResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $IRegistryGetDetailResponseCopyWith<$Res> {
+mixin _$IRegistryGetDetailResponse {
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  dynamic get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IRegistryGetDetailResponseCopyWith<IRegistryGetDetailResponse>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IRegistryGetDetailResponseCopyWith<$Res> {
   factory $IRegistryGetDetailResponseCopyWith(IRegistryGetDetailResponse value,
-          $Res Function(IRegistryGetDetailResponse) _then) =
-      _$IRegistryGetDetailResponseCopyWithImpl;
+          $Res Function(IRegistryGetDetailResponse) then) =
+      _$IRegistryGetDetailResponseCopyWithImpl<$Res,
+          IRegistryGetDetailResponse>;
   @useResult
   $Res call({DateTime updatedAt, dynamic value});
 }
 
 /// @nodoc
-class _$IRegistryGetDetailResponseCopyWithImpl<$Res>
+class _$IRegistryGetDetailResponseCopyWithImpl<$Res,
+        $Val extends IRegistryGetDetailResponse>
     implements $IRegistryGetDetailResponseCopyWith<$Res> {
-  _$IRegistryGetDetailResponseCopyWithImpl(this._self, this._then);
+  _$IRegistryGetDetailResponseCopyWithImpl(this._value, this._then);
 
-  final IRegistryGetDetailResponse _self;
-  final $Res Function(IRegistryGetDetailResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of IRegistryGetDetailResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? updatedAt = null,
     Object? value = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       updatedAt: null == updatedAt
-          ? _self.updatedAt
+          ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       value: freezed == value
-          ? _self.value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$IRegistryGetDetailResponseImplCopyWith<$Res>
+    implements $IRegistryGetDetailResponseCopyWith<$Res> {
+  factory _$$IRegistryGetDetailResponseImplCopyWith(
+          _$IRegistryGetDetailResponseImpl value,
+          $Res Function(_$IRegistryGetDetailResponseImpl) then) =
+      __$$IRegistryGetDetailResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({DateTime updatedAt, dynamic value});
+}
+
+/// @nodoc
+class __$$IRegistryGetDetailResponseImplCopyWithImpl<$Res>
+    extends _$IRegistryGetDetailResponseCopyWithImpl<$Res,
+        _$IRegistryGetDetailResponseImpl>
+    implements _$$IRegistryGetDetailResponseImplCopyWith<$Res> {
+  __$$IRegistryGetDetailResponseImplCopyWithImpl(
+      _$IRegistryGetDetailResponseImpl _value,
+      $Res Function(_$IRegistryGetDetailResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? updatedAt = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$IRegistryGetDetailResponseImpl(
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      value: freezed == value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
@@ -91,93 +113,69 @@ class _$IRegistryGetDetailResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _IRegistryGetDetailResponse implements IRegistryGetDetailResponse {
-  const _IRegistryGetDetailResponse(
+class _$IRegistryGetDetailResponseImpl implements _IRegistryGetDetailResponse {
+  const _$IRegistryGetDetailResponseImpl(
       {required this.updatedAt, required this.value});
-  factory _IRegistryGetDetailResponse.fromJson(Map<String, dynamic> json) =>
-      _$IRegistryGetDetailResponseFromJson(json);
+
+  factory _$IRegistryGetDetailResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$IRegistryGetDetailResponseImplFromJson(json);
 
   @override
   final DateTime updatedAt;
   @override
   final dynamic value;
 
-  /// Create a copy of IRegistryGetDetailResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IRegistryGetDetailResponseCopyWith<_IRegistryGetDetailResponse>
-      get copyWith => __$IRegistryGetDetailResponseCopyWithImpl<
-          _IRegistryGetDetailResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IRegistryGetDetailResponseToJson(
-      this,
-    );
+  String toString() {
+    return 'IRegistryGetDetailResponse(updatedAt: $updatedAt, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IRegistryGetDetailResponse &&
+            other is _$IRegistryGetDetailResponseImpl &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, updatedAt, const DeepCollectionEquality().hash(value));
 
-  @override
-  String toString() {
-    return 'IRegistryGetDetailResponse(updatedAt: $updatedAt, value: $value)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IRegistryGetDetailResponseCopyWith<$Res>
-    implements $IRegistryGetDetailResponseCopyWith<$Res> {
-  factory _$IRegistryGetDetailResponseCopyWith(
-          _IRegistryGetDetailResponse value,
-          $Res Function(_IRegistryGetDetailResponse) _then) =
-      __$IRegistryGetDetailResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call({DateTime updatedAt, dynamic value});
-}
-
-/// @nodoc
-class __$IRegistryGetDetailResponseCopyWithImpl<$Res>
-    implements _$IRegistryGetDetailResponseCopyWith<$Res> {
-  __$IRegistryGetDetailResponseCopyWithImpl(this._self, this._then);
-
-  final _IRegistryGetDetailResponse _self;
-  final $Res Function(_IRegistryGetDetailResponse) _then;
-
-  /// Create a copy of IRegistryGetDetailResponse
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? updatedAt = null,
-    Object? value = freezed,
-  }) {
-    return _then(_IRegistryGetDetailResponse(
-      updatedAt: null == updatedAt
-          ? _self.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
+  _$$IRegistryGetDetailResponseImplCopyWith<_$IRegistryGetDetailResponseImpl>
+      get copyWith => __$$IRegistryGetDetailResponseImplCopyWithImpl<
+          _$IRegistryGetDetailResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$IRegistryGetDetailResponseImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _IRegistryGetDetailResponse
+    implements IRegistryGetDetailResponse {
+  const factory _IRegistryGetDetailResponse(
+      {required final DateTime updatedAt,
+      required final dynamic value}) = _$IRegistryGetDetailResponseImpl;
+
+  factory _IRegistryGetDetailResponse.fromJson(Map<String, dynamic> json) =
+      _$IRegistryGetDetailResponseImpl.fromJson;
+
+  @override
+  DateTime get updatedAt;
+  @override
+  dynamic get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$IRegistryGetDetailResponseImplCopyWith<_$IRegistryGetDetailResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

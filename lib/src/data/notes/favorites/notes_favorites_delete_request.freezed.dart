@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,71 +9,92 @@ part of 'notes_favorites_delete_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$NotesFavoritesDeleteRequest {
-  String get noteId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of NotesFavoritesDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesFavoritesDeleteRequestCopyWith<NotesFavoritesDeleteRequest>
-      get copyWith => _$NotesFavoritesDeleteRequestCopyWithImpl<
-              NotesFavoritesDeleteRequest>(
-          this as NotesFavoritesDeleteRequest, _$identity);
-
-  /// Serializes this NotesFavoritesDeleteRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesFavoritesDeleteRequest &&
-            (identical(other.noteId, noteId) || other.noteId == noteId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, noteId);
-
-  @override
-  String toString() {
-    return 'NotesFavoritesDeleteRequest(noteId: $noteId)';
-  }
+NotesFavoritesDeleteRequest _$NotesFavoritesDeleteRequestFromJson(
+    Map<String, dynamic> json) {
+  return _NotesFavoritesDeleteRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $NotesFavoritesDeleteRequestCopyWith<$Res> {
+mixin _$NotesFavoritesDeleteRequest {
+  String get noteId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotesFavoritesDeleteRequestCopyWith<NotesFavoritesDeleteRequest>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotesFavoritesDeleteRequestCopyWith<$Res> {
   factory $NotesFavoritesDeleteRequestCopyWith(
           NotesFavoritesDeleteRequest value,
-          $Res Function(NotesFavoritesDeleteRequest) _then) =
-      _$NotesFavoritesDeleteRequestCopyWithImpl;
+          $Res Function(NotesFavoritesDeleteRequest) then) =
+      _$NotesFavoritesDeleteRequestCopyWithImpl<$Res,
+          NotesFavoritesDeleteRequest>;
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class _$NotesFavoritesDeleteRequestCopyWithImpl<$Res>
+class _$NotesFavoritesDeleteRequestCopyWithImpl<$Res,
+        $Val extends NotesFavoritesDeleteRequest>
     implements $NotesFavoritesDeleteRequestCopyWith<$Res> {
-  _$NotesFavoritesDeleteRequestCopyWithImpl(this._self, this._then);
+  _$NotesFavoritesDeleteRequestCopyWithImpl(this._value, this._then);
 
-  final NotesFavoritesDeleteRequest _self;
-  final $Res Function(NotesFavoritesDeleteRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of NotesFavoritesDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       noteId: null == noteId
-          ? _self.noteId
+          ? _value.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$NotesFavoritesDeleteRequestImplCopyWith<$Res>
+    implements $NotesFavoritesDeleteRequestCopyWith<$Res> {
+  factory _$$NotesFavoritesDeleteRequestImplCopyWith(
+          _$NotesFavoritesDeleteRequestImpl value,
+          $Res Function(_$NotesFavoritesDeleteRequestImpl) then) =
+      __$$NotesFavoritesDeleteRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String noteId});
+}
+
+/// @nodoc
+class __$$NotesFavoritesDeleteRequestImplCopyWithImpl<$Res>
+    extends _$NotesFavoritesDeleteRequestCopyWithImpl<$Res,
+        _$NotesFavoritesDeleteRequestImpl>
+    implements _$$NotesFavoritesDeleteRequestImplCopyWith<$Res> {
+  __$$NotesFavoritesDeleteRequestImplCopyWithImpl(
+      _$NotesFavoritesDeleteRequestImpl _value,
+      $Res Function(_$NotesFavoritesDeleteRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? noteId = null,
+  }) {
+    return _then(_$NotesFavoritesDeleteRequestImpl(
+      noteId: null == noteId
+          ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -83,82 +103,61 @@ class _$NotesFavoritesDeleteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _NotesFavoritesDeleteRequest implements NotesFavoritesDeleteRequest {
-  const _NotesFavoritesDeleteRequest({required this.noteId});
-  factory _NotesFavoritesDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesFavoritesDeleteRequestFromJson(json);
+class _$NotesFavoritesDeleteRequestImpl
+    implements _NotesFavoritesDeleteRequest {
+  const _$NotesFavoritesDeleteRequestImpl({required this.noteId});
+
+  factory _$NotesFavoritesDeleteRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$NotesFavoritesDeleteRequestImplFromJson(json);
 
   @override
   final String noteId;
 
-  /// Create a copy of NotesFavoritesDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesFavoritesDeleteRequestCopyWith<_NotesFavoritesDeleteRequest>
-      get copyWith => __$NotesFavoritesDeleteRequestCopyWithImpl<
-          _NotesFavoritesDeleteRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesFavoritesDeleteRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesFavoritesDeleteRequest(noteId: $noteId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotesFavoritesDeleteRequest &&
+            other is _$NotesFavoritesDeleteRequestImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, noteId);
 
-  @override
-  String toString() {
-    return 'NotesFavoritesDeleteRequest(noteId: $noteId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$NotesFavoritesDeleteRequestCopyWith<$Res>
-    implements $NotesFavoritesDeleteRequestCopyWith<$Res> {
-  factory _$NotesFavoritesDeleteRequestCopyWith(
-          _NotesFavoritesDeleteRequest value,
-          $Res Function(_NotesFavoritesDeleteRequest) _then) =
-      __$NotesFavoritesDeleteRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String noteId});
-}
-
-/// @nodoc
-class __$NotesFavoritesDeleteRequestCopyWithImpl<$Res>
-    implements _$NotesFavoritesDeleteRequestCopyWith<$Res> {
-  __$NotesFavoritesDeleteRequestCopyWithImpl(this._self, this._then);
-
-  final _NotesFavoritesDeleteRequest _self;
-  final $Res Function(_NotesFavoritesDeleteRequest) _then;
-
-  /// Create a copy of NotesFavoritesDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? noteId = null,
-  }) {
-    return _then(_NotesFavoritesDeleteRequest(
-      noteId: null == noteId
-          ? _self.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$NotesFavoritesDeleteRequestImplCopyWith<_$NotesFavoritesDeleteRequestImpl>
+      get copyWith => __$$NotesFavoritesDeleteRequestImplCopyWithImpl<
+          _$NotesFavoritesDeleteRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NotesFavoritesDeleteRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _NotesFavoritesDeleteRequest
+    implements NotesFavoritesDeleteRequest {
+  const factory _NotesFavoritesDeleteRequest({required final String noteId}) =
+      _$NotesFavoritesDeleteRequestImpl;
+
+  factory _NotesFavoritesDeleteRequest.fromJson(Map<String, dynamic> json) =
+      _$NotesFavoritesDeleteRequestImpl.fromJson;
+
+  @override
+  String get noteId;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotesFavoritesDeleteRequestImplCopyWith<_$NotesFavoritesDeleteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

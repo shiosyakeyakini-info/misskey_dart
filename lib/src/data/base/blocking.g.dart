@@ -6,7 +6,8 @@ part of 'blocking.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Blocking _$BlockingFromJson(Map<String, dynamic> json) => _Blocking(
+_$BlockingImpl _$$BlockingImplFromJson(Map<String, dynamic> json) =>
+    _$BlockingImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -15,7 +16,8 @@ _Blocking _$BlockingFromJson(Map<String, dynamic> json) => _Blocking(
           UserDetailedNotMe.fromJson(json['blockee'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$BlockingToJson(_Blocking instance) => <String, dynamic>{
+Map<String, dynamic> _$$BlockingImplToJson(_$BlockingImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'blockeeId': instance.blockeeId,

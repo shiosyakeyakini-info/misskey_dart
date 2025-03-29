@@ -6,14 +6,15 @@ part of 'clips_add_note_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ClipsAddNoteRequest _$ClipsAddNoteRequestFromJson(Map<String, dynamic> json) =>
-    _ClipsAddNoteRequest(
+_$ClipsAddNoteRequestImpl _$$ClipsAddNoteRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ClipsAddNoteRequestImpl(
       clipId: json['clipId'] as String,
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$ClipsAddNoteRequestToJson(
-        _ClipsAddNoteRequest instance) =>
+Map<String, dynamic> _$$ClipsAddNoteRequestImplToJson(
+        _$ClipsAddNoteRequestImpl instance) =>
     <String, dynamic>{
       'clipId': instance.clipId,
       'noteId': instance.noteId,

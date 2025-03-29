@@ -6,16 +6,16 @@ part of 'hybrid_timeline_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HybridTimelineParameter _$HybridTimelineParameterFromJson(
+_$HybridTimelineParameterImpl _$$HybridTimelineParameterImplFromJson(
         Map<String, dynamic> json) =>
-    _HybridTimelineParameter(
+    _$HybridTimelineParameterImpl(
       withRenotes: json['withRenotes'] as bool?,
       withReplies: json['withReplies'] as bool?,
       withFiles: json['withFiles'] as bool?,
     );
 
-Map<String, dynamic> _$HybridTimelineParameterToJson(
-        _HybridTimelineParameter instance) =>
+Map<String, dynamic> _$$HybridTimelineParameterImplToJson(
+        _$HybridTimelineParameterImpl instance) =>
     <String, dynamic>{
       'withRenotes': instance.withRenotes,
       'withReplies': instance.withReplies,

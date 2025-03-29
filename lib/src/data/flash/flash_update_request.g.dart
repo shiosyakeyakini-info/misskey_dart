@@ -6,8 +6,9 @@ part of 'flash_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FlashUpdateRequest _$FlashUpdateRequestFromJson(Map<String, dynamic> json) =>
-    _FlashUpdateRequest(
+_$FlashUpdateRequestImpl _$$FlashUpdateRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FlashUpdateRequestImpl(
       flashId: json['flashId'] as String,
       title: json['title'] as String?,
       summary: json['summary'] as String?,
@@ -19,7 +20,8 @@ _FlashUpdateRequest _$FlashUpdateRequestFromJson(Map<String, dynamic> json) =>
           $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
     );
 
-Map<String, dynamic> _$FlashUpdateRequestToJson(_FlashUpdateRequest instance) =>
+Map<String, dynamic> _$$FlashUpdateRequestImplToJson(
+        _$FlashUpdateRequestImpl instance) =>
     <String, dynamic>{
       'flashId': instance.flashId,
       'title': instance.title,

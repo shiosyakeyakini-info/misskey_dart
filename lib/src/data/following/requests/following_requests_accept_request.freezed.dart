@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,71 +9,92 @@ part of 'following_requests_accept_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$FollowingRequestsAcceptRequest {
-  String get userId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of FollowingRequestsAcceptRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $FollowingRequestsAcceptRequestCopyWith<FollowingRequestsAcceptRequest>
-      get copyWith => _$FollowingRequestsAcceptRequestCopyWithImpl<
-              FollowingRequestsAcceptRequest>(
-          this as FollowingRequestsAcceptRequest, _$identity);
-
-  /// Serializes this FollowingRequestsAcceptRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is FollowingRequestsAcceptRequest &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, userId);
-
-  @override
-  String toString() {
-    return 'FollowingRequestsAcceptRequest(userId: $userId)';
-  }
+FollowingRequestsAcceptRequest _$FollowingRequestsAcceptRequestFromJson(
+    Map<String, dynamic> json) {
+  return _FollowingRequestsAcceptRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $FollowingRequestsAcceptRequestCopyWith<$Res> {
+mixin _$FollowingRequestsAcceptRequest {
+  String get userId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FollowingRequestsAcceptRequestCopyWith<FollowingRequestsAcceptRequest>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FollowingRequestsAcceptRequestCopyWith<$Res> {
   factory $FollowingRequestsAcceptRequestCopyWith(
           FollowingRequestsAcceptRequest value,
-          $Res Function(FollowingRequestsAcceptRequest) _then) =
-      _$FollowingRequestsAcceptRequestCopyWithImpl;
+          $Res Function(FollowingRequestsAcceptRequest) then) =
+      _$FollowingRequestsAcceptRequestCopyWithImpl<$Res,
+          FollowingRequestsAcceptRequest>;
   @useResult
   $Res call({String userId});
 }
 
 /// @nodoc
-class _$FollowingRequestsAcceptRequestCopyWithImpl<$Res>
+class _$FollowingRequestsAcceptRequestCopyWithImpl<$Res,
+        $Val extends FollowingRequestsAcceptRequest>
     implements $FollowingRequestsAcceptRequestCopyWith<$Res> {
-  _$FollowingRequestsAcceptRequestCopyWithImpl(this._self, this._then);
+  _$FollowingRequestsAcceptRequestCopyWithImpl(this._value, this._then);
 
-  final FollowingRequestsAcceptRequest _self;
-  final $Res Function(FollowingRequestsAcceptRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of FollowingRequestsAcceptRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       userId: null == userId
-          ? _self.userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FollowingRequestsAcceptRequestImplCopyWith<$Res>
+    implements $FollowingRequestsAcceptRequestCopyWith<$Res> {
+  factory _$$FollowingRequestsAcceptRequestImplCopyWith(
+          _$FollowingRequestsAcceptRequestImpl value,
+          $Res Function(_$FollowingRequestsAcceptRequestImpl) then) =
+      __$$FollowingRequestsAcceptRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String userId});
+}
+
+/// @nodoc
+class __$$FollowingRequestsAcceptRequestImplCopyWithImpl<$Res>
+    extends _$FollowingRequestsAcceptRequestCopyWithImpl<$Res,
+        _$FollowingRequestsAcceptRequestImpl>
+    implements _$$FollowingRequestsAcceptRequestImplCopyWith<$Res> {
+  __$$FollowingRequestsAcceptRequestImplCopyWithImpl(
+      _$FollowingRequestsAcceptRequestImpl _value,
+      $Res Function(_$FollowingRequestsAcceptRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$FollowingRequestsAcceptRequestImpl(
+      userId: null == userId
+          ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -83,83 +103,63 @@ class _$FollowingRequestsAcceptRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _FollowingRequestsAcceptRequest
-    implements FollowingRequestsAcceptRequest {
-  const _FollowingRequestsAcceptRequest({required this.userId});
-  factory _FollowingRequestsAcceptRequest.fromJson(Map<String, dynamic> json) =>
-      _$FollowingRequestsAcceptRequestFromJson(json);
+class _$FollowingRequestsAcceptRequestImpl
+    implements _FollowingRequestsAcceptRequest {
+  const _$FollowingRequestsAcceptRequestImpl({required this.userId});
+
+  factory _$FollowingRequestsAcceptRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$FollowingRequestsAcceptRequestImplFromJson(json);
 
   @override
   final String userId;
 
-  /// Create a copy of FollowingRequestsAcceptRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$FollowingRequestsAcceptRequestCopyWith<_FollowingRequestsAcceptRequest>
-      get copyWith => __$FollowingRequestsAcceptRequestCopyWithImpl<
-          _FollowingRequestsAcceptRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$FollowingRequestsAcceptRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'FollowingRequestsAcceptRequest(userId: $userId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FollowingRequestsAcceptRequest &&
+            other is _$FollowingRequestsAcceptRequestImpl &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, userId);
 
-  @override
-  String toString() {
-    return 'FollowingRequestsAcceptRequest(userId: $userId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$FollowingRequestsAcceptRequestCopyWith<$Res>
-    implements $FollowingRequestsAcceptRequestCopyWith<$Res> {
-  factory _$FollowingRequestsAcceptRequestCopyWith(
-          _FollowingRequestsAcceptRequest value,
-          $Res Function(_FollowingRequestsAcceptRequest) _then) =
-      __$FollowingRequestsAcceptRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String userId});
-}
-
-/// @nodoc
-class __$FollowingRequestsAcceptRequestCopyWithImpl<$Res>
-    implements _$FollowingRequestsAcceptRequestCopyWith<$Res> {
-  __$FollowingRequestsAcceptRequestCopyWithImpl(this._self, this._then);
-
-  final _FollowingRequestsAcceptRequest _self;
-  final $Res Function(_FollowingRequestsAcceptRequest) _then;
-
-  /// Create a copy of FollowingRequestsAcceptRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? userId = null,
-  }) {
-    return _then(_FollowingRequestsAcceptRequest(
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$FollowingRequestsAcceptRequestImplCopyWith<
+          _$FollowingRequestsAcceptRequestImpl>
+      get copyWith => __$$FollowingRequestsAcceptRequestImplCopyWithImpl<
+          _$FollowingRequestsAcceptRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowingRequestsAcceptRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _FollowingRequestsAcceptRequest
+    implements FollowingRequestsAcceptRequest {
+  const factory _FollowingRequestsAcceptRequest(
+      {required final String userId}) = _$FollowingRequestsAcceptRequestImpl;
+
+  factory _FollowingRequestsAcceptRequest.fromJson(Map<String, dynamic> json) =
+      _$FollowingRequestsAcceptRequestImpl.fromJson;
+
+  @override
+  String get userId;
+  @override
+  @JsonKey(ignore: true)
+  _$$FollowingRequestsAcceptRequestImplCopyWith<
+          _$FollowingRequestsAcceptRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

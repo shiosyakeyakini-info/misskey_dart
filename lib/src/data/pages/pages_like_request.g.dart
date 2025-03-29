@@ -6,12 +6,14 @@ part of 'pages_like_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_PagesLikeRequest _$PagesLikeRequestFromJson(Map<String, dynamic> json) =>
-    _PagesLikeRequest(
+_$PagesLikeRequestImpl _$$PagesLikeRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PagesLikeRequestImpl(
       pageId: json['pageId'] as String,
     );
 
-Map<String, dynamic> _$PagesLikeRequestToJson(_PagesLikeRequest instance) =>
+Map<String, dynamic> _$$PagesLikeRequestImplToJson(
+        _$PagesLikeRequestImpl instance) =>
     <String, dynamic>{
       'pageId': instance.pageId,
     };

@@ -6,16 +6,16 @@ part of 'following_requests_sent_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FollowingRequestsSentRequest _$FollowingRequestsSentRequestFromJson(
+_$FollowingRequestsSentRequestImpl _$$FollowingRequestsSentRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _FollowingRequestsSentRequest(
+    _$FollowingRequestsSentRequestImpl(
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
     );
 
-Map<String, dynamic> _$FollowingRequestsSentRequestToJson(
-        _FollowingRequestsSentRequest instance) =>
+Map<String, dynamic> _$$FollowingRequestsSentRequestImplToJson(
+        _$FollowingRequestsSentRequestImpl instance) =>
     <String, dynamic>{
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,

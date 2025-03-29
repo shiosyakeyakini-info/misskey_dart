@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,70 +9,85 @@ part of 'emojis_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$EmojisResponse {
-  List<Emoji> get emojis;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of EmojisResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $EmojisResponseCopyWith<EmojisResponse> get copyWith =>
-      _$EmojisResponseCopyWithImpl<EmojisResponse>(
-          this as EmojisResponse, _$identity);
-
-  /// Serializes this EmojisResponse to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is EmojisResponse &&
-            const DeepCollectionEquality().equals(other.emojis, emojis));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(emojis));
-
-  @override
-  String toString() {
-    return 'EmojisResponse(emojis: $emojis)';
-  }
+EmojisResponse _$EmojisResponseFromJson(Map<String, dynamic> json) {
+  return _EmojisResponse.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $EmojisResponseCopyWith<$Res> {
+mixin _$EmojisResponse {
+  List<Emoji> get emojis => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmojisResponseCopyWith<EmojisResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EmojisResponseCopyWith<$Res> {
   factory $EmojisResponseCopyWith(
-          EmojisResponse value, $Res Function(EmojisResponse) _then) =
-      _$EmojisResponseCopyWithImpl;
+          EmojisResponse value, $Res Function(EmojisResponse) then) =
+      _$EmojisResponseCopyWithImpl<$Res, EmojisResponse>;
   @useResult
   $Res call({List<Emoji> emojis});
 }
 
 /// @nodoc
-class _$EmojisResponseCopyWithImpl<$Res>
+class _$EmojisResponseCopyWithImpl<$Res, $Val extends EmojisResponse>
     implements $EmojisResponseCopyWith<$Res> {
-  _$EmojisResponseCopyWithImpl(this._self, this._then);
+  _$EmojisResponseCopyWithImpl(this._value, this._then);
 
-  final EmojisResponse _self;
-  final $Res Function(EmojisResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of EmojisResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? emojis = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       emojis: null == emojis
-          ? _self.emojis
+          ? _value.emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as List<Emoji>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$EmojisResponseImplCopyWith<$Res>
+    implements $EmojisResponseCopyWith<$Res> {
+  factory _$$EmojisResponseImplCopyWith(_$EmojisResponseImpl value,
+          $Res Function(_$EmojisResponseImpl) then) =
+      __$$EmojisResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Emoji> emojis});
+}
+
+/// @nodoc
+class __$$EmojisResponseImplCopyWithImpl<$Res>
+    extends _$EmojisResponseCopyWithImpl<$Res, _$EmojisResponseImpl>
+    implements _$$EmojisResponseImplCopyWith<$Res> {
+  __$$EmojisResponseImplCopyWithImpl(
+      _$EmojisResponseImpl _value, $Res Function(_$EmojisResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? emojis = null,
+  }) {
+    return _then(_$EmojisResponseImpl(
+      emojis: null == emojis
+          ? _value._emojis
           : emojis // ignore: cast_nullable_to_non_nullable
               as List<Emoji>,
     ));
@@ -82,10 +96,12 @@ class _$EmojisResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _EmojisResponse implements EmojisResponse {
-  const _EmojisResponse({required final List<Emoji> emojis}) : _emojis = emojis;
-  factory _EmojisResponse.fromJson(Map<String, dynamic> json) =>
-      _$EmojisResponseFromJson(json);
+class _$EmojisResponseImpl implements _EmojisResponse {
+  const _$EmojisResponseImpl({required final List<Emoji> emojis})
+      : _emojis = emojis;
+
+  factory _$EmojisResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmojisResponseImplFromJson(json);
 
   final List<Emoji> _emojis;
   @override
@@ -95,138 +111,79 @@ class _EmojisResponse implements EmojisResponse {
     return EqualUnmodifiableListView(_emojis);
   }
 
-  /// Create a copy of EmojisResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$EmojisResponseCopyWith<_EmojisResponse> get copyWith =>
-      __$EmojisResponseCopyWithImpl<_EmojisResponse>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$EmojisResponseToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _EmojisResponse &&
-            const DeepCollectionEquality().equals(other._emojis, _emojis));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_emojis));
-
   @override
   String toString() {
     return 'EmojisResponse(emojis: $emojis)';
   }
-}
-
-/// @nodoc
-abstract mixin class _$EmojisResponseCopyWith<$Res>
-    implements $EmojisResponseCopyWith<$Res> {
-  factory _$EmojisResponseCopyWith(
-          _EmojisResponse value, $Res Function(_EmojisResponse) _then) =
-      __$EmojisResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call({List<Emoji> emojis});
-}
-
-/// @nodoc
-class __$EmojisResponseCopyWithImpl<$Res>
-    implements _$EmojisResponseCopyWith<$Res> {
-  __$EmojisResponseCopyWithImpl(this._self, this._then);
-
-  final _EmojisResponse _self;
-  final $Res Function(_EmojisResponse) _then;
-
-  /// Create a copy of EmojisResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? emojis = null,
-  }) {
-    return _then(_EmojisResponse(
-      emojis: null == emojis
-          ? _self._emojis
-          : emojis // ignore: cast_nullable_to_non_nullable
-              as List<Emoji>,
-    ));
-  }
-}
-
-/// @nodoc
-mixin _$Emoji {
-  List<String> get aliases;
-  String get name;
-  String? get category;
-  @UriConverter()
-  Uri get url;
-  bool? get localOnly;
-  bool get isSensitive;
-  List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction;
-
-  /// Create a copy of Emoji
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $EmojiCopyWith<Emoji> get copyWith =>
-      _$EmojiCopyWithImpl<Emoji>(this as Emoji, _$identity);
-
-  /// Serializes this Emoji to a JSON map.
-  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Emoji &&
-            const DeepCollectionEquality().equals(other.aliases, aliases) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.localOnly, localOnly) ||
-                other.localOnly == localOnly) &&
-            (identical(other.isSensitive, isSensitive) ||
-                other.isSensitive == isSensitive) &&
-            const DeepCollectionEquality().equals(
-                other.roleIdsThatCanBeUsedThisEmojiAsReaction,
-                roleIdsThatCanBeUsedThisEmojiAsReaction));
+            other is _$EmojisResponseImpl &&
+            const DeepCollectionEquality().equals(other._emojis, _emojis));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(aliases),
-      name,
-      category,
-      url,
-      localOnly,
-      isSensitive,
-      const DeepCollectionEquality()
-          .hash(roleIdsThatCanBeUsedThisEmojiAsReaction));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_emojis));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmojisResponseImplCopyWith<_$EmojisResponseImpl> get copyWith =>
+      __$$EmojisResponseImplCopyWithImpl<_$EmojisResponseImpl>(
+          this, _$identity);
 
   @override
-  String toString() {
-    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url, localOnly: $localOnly, isSensitive: $isSensitive, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
+  Map<String, dynamic> toJson() {
+    return _$$EmojisResponseImplToJson(
+      this,
+    );
   }
 }
 
+abstract class _EmojisResponse implements EmojisResponse {
+  const factory _EmojisResponse({required final List<Emoji> emojis}) =
+      _$EmojisResponseImpl;
+
+  factory _EmojisResponse.fromJson(Map<String, dynamic> json) =
+      _$EmojisResponseImpl.fromJson;
+
+  @override
+  List<Emoji> get emojis;
+  @override
+  @JsonKey(ignore: true)
+  _$$EmojisResponseImplCopyWith<_$EmojisResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Emoji _$EmojiFromJson(Map<String, dynamic> json) {
+  return _Emoji.fromJson(json);
+}
+
 /// @nodoc
-abstract mixin class $EmojiCopyWith<$Res> {
-  factory $EmojiCopyWith(Emoji value, $Res Function(Emoji) _then) =
-      _$EmojiCopyWithImpl;
+mixin _$Emoji {
+  List<String> get aliases => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
+  @UriConverter()
+  Uri get url => throw _privateConstructorUsedError;
+  bool? get localOnly => throw _privateConstructorUsedError;
+  bool get isSensitive => throw _privateConstructorUsedError;
+  List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmojiCopyWith<Emoji> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EmojiCopyWith<$Res> {
+  factory $EmojiCopyWith(Emoji value, $Res Function(Emoji) then) =
+      _$EmojiCopyWithImpl<$Res, Emoji>;
   @useResult
   $Res call(
       {List<String> aliases,
@@ -239,14 +196,15 @@ abstract mixin class $EmojiCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EmojiCopyWithImpl<$Res> implements $EmojiCopyWith<$Res> {
-  _$EmojiCopyWithImpl(this._self, this._then);
+class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
+    implements $EmojiCopyWith<$Res> {
+  _$EmojiCopyWithImpl(this._value, this._then);
 
-  final Emoji _self;
-  final $Res Function(Emoji) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of Emoji
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -258,34 +216,104 @@ class _$EmojiCopyWithImpl<$Res> implements $EmojiCopyWith<$Res> {
     Object? isSensitive = null,
     Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       aliases: null == aliases
-          ? _self.aliases
+          ? _value.aliases
           : aliases // ignore: cast_nullable_to_non_nullable
               as List<String>,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       category: freezed == category
-          ? _self.category
+          ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
       url: null == url
-          ? _self.url
+          ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as Uri,
       localOnly: freezed == localOnly
-          ? _self.localOnly
+          ? _value.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
       isSensitive: null == isSensitive
-          ? _self.isSensitive
+          ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
       roleIdsThatCanBeUsedThisEmojiAsReaction: freezed ==
               roleIdsThatCanBeUsedThisEmojiAsReaction
-          ? _self.roleIdsThatCanBeUsedThisEmojiAsReaction
+          ? _value.roleIdsThatCanBeUsedThisEmojiAsReaction
+          : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$EmojiImplCopyWith<$Res> implements $EmojiCopyWith<$Res> {
+  factory _$$EmojiImplCopyWith(
+          _$EmojiImpl value, $Res Function(_$EmojiImpl) then) =
+      __$$EmojiImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<String> aliases,
+      String name,
+      String? category,
+      @UriConverter() Uri url,
+      bool? localOnly,
+      bool isSensitive,
+      List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction});
+}
+
+/// @nodoc
+class __$$EmojiImplCopyWithImpl<$Res>
+    extends _$EmojiCopyWithImpl<$Res, _$EmojiImpl>
+    implements _$$EmojiImplCopyWith<$Res> {
+  __$$EmojiImplCopyWithImpl(
+      _$EmojiImpl _value, $Res Function(_$EmojiImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? aliases = null,
+    Object? name = null,
+    Object? category = freezed,
+    Object? url = null,
+    Object? localOnly = freezed,
+    Object? isSensitive = null,
+    Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
+  }) {
+    return _then(_$EmojiImpl(
+      aliases: null == aliases
+          ? _value._aliases
+          : aliases // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as Uri,
+      localOnly: freezed == localOnly
+          ? _value.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isSensitive: null == isSensitive
+          ? _value.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      roleIdsThatCanBeUsedThisEmojiAsReaction: freezed ==
+              roleIdsThatCanBeUsedThisEmojiAsReaction
+          ? _value._roleIdsThatCanBeUsedThisEmojiAsReaction
           : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -294,8 +322,8 @@ class _$EmojiCopyWithImpl<$Res> implements $EmojiCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Emoji implements Emoji {
-  const _Emoji(
+class _$EmojiImpl implements _Emoji {
+  const _$EmojiImpl(
       {required final List<String> aliases,
       required this.name,
       this.category,
@@ -306,7 +334,9 @@ class _Emoji implements Emoji {
       : _aliases = aliases,
         _roleIdsThatCanBeUsedThisEmojiAsReaction =
             roleIdsThatCanBeUsedThisEmojiAsReaction;
-  factory _Emoji.fromJson(Map<String, dynamic> json) => _$EmojiFromJson(json);
+
+  factory _$EmojiImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmojiImplFromJson(json);
 
   final List<String> _aliases;
   @override
@@ -339,26 +369,16 @@ class _Emoji implements Emoji {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of Emoji
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$EmojiCopyWith<_Emoji> get copyWith =>
-      __$EmojiCopyWithImpl<_Emoji>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$EmojiToJson(
-      this,
-    );
+  String toString() {
+    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url, localOnly: $localOnly, isSensitive: $isSensitive, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Emoji &&
+            other is _$EmojiImpl &&
             const DeepCollectionEquality().equals(other._aliases, _aliases) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.category, category) ||
@@ -373,7 +393,7 @@ class _Emoji implements Emoji {
                 _roleIdsThatCanBeUsedThisEmojiAsReaction));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -386,80 +406,50 @@ class _Emoji implements Emoji {
       const DeepCollectionEquality()
           .hash(_roleIdsThatCanBeUsedThisEmojiAsReaction));
 
-  @override
-  String toString() {
-    return 'Emoji(aliases: $aliases, name: $name, category: $category, url: $url, localOnly: $localOnly, isSensitive: $isSensitive, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$EmojiCopyWith<$Res> implements $EmojiCopyWith<$Res> {
-  factory _$EmojiCopyWith(_Emoji value, $Res Function(_Emoji) _then) =
-      __$EmojiCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {List<String> aliases,
-      String name,
-      String? category,
-      @UriConverter() Uri url,
-      bool? localOnly,
-      bool isSensitive,
-      List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction});
-}
-
-/// @nodoc
-class __$EmojiCopyWithImpl<$Res> implements _$EmojiCopyWith<$Res> {
-  __$EmojiCopyWithImpl(this._self, this._then);
-
-  final _Emoji _self;
-  final $Res Function(_Emoji) _then;
-
-  /// Create a copy of Emoji
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? aliases = null,
-    Object? name = null,
-    Object? category = freezed,
-    Object? url = null,
-    Object? localOnly = freezed,
-    Object? isSensitive = null,
-    Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
-  }) {
-    return _then(_Emoji(
-      aliases: null == aliases
-          ? _self._aliases
-          : aliases // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: freezed == category
-          ? _self.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      localOnly: freezed == localOnly
-          ? _self.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isSensitive: null == isSensitive
-          ? _self.isSensitive
-          : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      roleIdsThatCanBeUsedThisEmojiAsReaction: freezed ==
-              roleIdsThatCanBeUsedThisEmojiAsReaction
-          ? _self._roleIdsThatCanBeUsedThisEmojiAsReaction
-          : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+  _$$EmojiImplCopyWith<_$EmojiImpl> get copyWith =>
+      __$$EmojiImplCopyWithImpl<_$EmojiImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$EmojiImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _Emoji implements Emoji {
+  const factory _Emoji(
+          {required final List<String> aliases,
+          required final String name,
+          final String? category,
+          @UriConverter() required final Uri url,
+          final bool? localOnly,
+          final bool isSensitive,
+          final List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction}) =
+      _$EmojiImpl;
+
+  factory _Emoji.fromJson(Map<String, dynamic> json) = _$EmojiImpl.fromJson;
+
+  @override
+  List<String> get aliases;
+  @override
+  String get name;
+  @override
+  String? get category;
+  @override
+  @UriConverter()
+  Uri get url;
+  @override
+  bool? get localOnly;
+  @override
+  bool get isSensitive;
+  @override
+  List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction;
+  @override
+  @JsonKey(ignore: true)
+  _$$EmojiImplCopyWith<_$EmojiImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

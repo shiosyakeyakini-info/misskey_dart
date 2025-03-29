@@ -6,14 +6,16 @@ part of 'i_favorites_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IFavoritesRequest _$IFavoritesRequestFromJson(Map<String, dynamic> json) =>
-    _IFavoritesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+_$IFavoritesRequestImpl _$$IFavoritesRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$IFavoritesRequestImpl(
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$IFavoritesRequestToJson(_IFavoritesRequest instance) =>
+Map<String, dynamic> _$$IFavoritesRequestImplToJson(
+        _$IFavoritesRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

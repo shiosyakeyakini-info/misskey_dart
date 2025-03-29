@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,72 +9,45 @@ part of 'following.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+Following _$FollowingFromJson(Map<String, dynamic> json) {
+  return _Following.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Following {
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
-  DateTime get createdAt;
-  String get followeeId;
-  String get followerId;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get followeeId => throw _privateConstructorUsedError;
+  String get followerId => throw _privateConstructorUsedError;
 
   /// 以下のエンドポイントでnon-null
   ///
 // - [MisskeyFederation.followers]
 // - [MisskeyFederation.following]
   /// - [MisskeyUsers.following]
-  UserDetailed? get followee;
+  UserDetailed? get followee => throw _privateConstructorUsedError;
 
   /// 以下のエンドポイントでnon-null
   ///
   /// - [MisskeyUsers.followers]
-  UserDetailed? get follower;
+  UserDetailed? get follower => throw _privateConstructorUsedError;
 
-  /// Create a copy of Following
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $FollowingCopyWith<Following> get copyWith =>
-      _$FollowingCopyWithImpl<Following>(this as Following, _$identity);
-
-  /// Serializes this Following to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Following &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.followeeId, followeeId) ||
-                other.followeeId == followeeId) &&
-            (identical(other.followerId, followerId) ||
-                other.followerId == followerId) &&
-            (identical(other.followee, followee) ||
-                other.followee == followee) &&
-            (identical(other.follower, follower) ||
-                other.follower == follower));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, id, createdAt, followeeId, followerId, followee, follower);
-
-  @override
-  String toString() {
-    return 'Following(id: $id, createdAt: $createdAt, followeeId: $followeeId, followerId: $followerId, followee: $followee, follower: $follower)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $FollowingCopyWith<$Res> {
-  factory $FollowingCopyWith(Following value, $Res Function(Following) _then) =
-      _$FollowingCopyWithImpl;
+abstract class $FollowingCopyWith<$Res> {
+  factory $FollowingCopyWith(Following value, $Res Function(Following) then) =
+      _$FollowingCopyWithImpl<$Res, Following>;
   @useResult
   $Res call(
       {String id,
@@ -87,14 +59,15 @@ abstract mixin class $FollowingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FollowingCopyWithImpl<$Res> implements $FollowingCopyWith<$Res> {
-  _$FollowingCopyWithImpl(this._self, this._then);
+class _$FollowingCopyWithImpl<$Res, $Val extends Following>
+    implements $FollowingCopyWith<$Res> {
+  _$FollowingCopyWithImpl(this._value, this._then);
 
-  final Following _self;
-  final $Res Function(Following) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of Following
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -105,29 +78,93 @@ class _$FollowingCopyWithImpl<$Res> implements $FollowingCopyWith<$Res> {
     Object? followee = freezed,
     Object? follower = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       followeeId: null == followeeId
-          ? _self.followeeId
+          ? _value.followeeId
           : followeeId // ignore: cast_nullable_to_non_nullable
               as String,
       followerId: null == followerId
-          ? _self.followerId
+          ? _value.followerId
           : followerId // ignore: cast_nullable_to_non_nullable
               as String,
       followee: freezed == followee
-          ? _self.followee
+          ? _value.followee
           : followee // ignore: cast_nullable_to_non_nullable
               as UserDetailed?,
       follower: freezed == follower
-          ? _self.follower
+          ? _value.follower
+          : follower // ignore: cast_nullable_to_non_nullable
+              as UserDetailed?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FollowingImplCopyWith<$Res>
+    implements $FollowingCopyWith<$Res> {
+  factory _$$FollowingImplCopyWith(
+          _$FollowingImpl value, $Res Function(_$FollowingImpl) then) =
+      __$$FollowingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String followeeId,
+      String followerId,
+      UserDetailed? followee,
+      UserDetailed? follower});
+}
+
+/// @nodoc
+class __$$FollowingImplCopyWithImpl<$Res>
+    extends _$FollowingCopyWithImpl<$Res, _$FollowingImpl>
+    implements _$$FollowingImplCopyWith<$Res> {
+  __$$FollowingImplCopyWithImpl(
+      _$FollowingImpl _value, $Res Function(_$FollowingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? followeeId = null,
+    Object? followerId = null,
+    Object? followee = freezed,
+    Object? follower = freezed,
+  }) {
+    return _then(_$FollowingImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      followeeId: null == followeeId
+          ? _value.followeeId
+          : followeeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      followerId: null == followerId
+          ? _value.followerId
+          : followerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      followee: freezed == followee
+          ? _value.followee
+          : followee // ignore: cast_nullable_to_non_nullable
+              as UserDetailed?,
+      follower: freezed == follower
+          ? _value.follower
           : follower // ignore: cast_nullable_to_non_nullable
               as UserDetailed?,
     ));
@@ -136,16 +173,17 @@ class _$FollowingCopyWithImpl<$Res> implements $FollowingCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Following implements Following {
-  const _Following(
+class _$FollowingImpl implements _Following {
+  const _$FollowingImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.followeeId,
       required this.followerId,
       this.followee,
       this.follower});
-  factory _Following.fromJson(Map<String, dynamic> json) =>
-      _$FollowingFromJson(json);
+
+  factory _$FollowingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowingImplFromJson(json);
 
   @override
   final String id;
@@ -171,26 +209,16 @@ class _Following implements Following {
   @override
   final UserDetailed? follower;
 
-  /// Create a copy of Following
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$FollowingCopyWith<_Following> get copyWith =>
-      __$FollowingCopyWithImpl<_Following>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$FollowingToJson(
-      this,
-    );
+  String toString() {
+    return 'Following(id: $id, createdAt: $createdAt, followeeId: $followeeId, followerId: $followerId, followee: $followee, follower: $follower)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Following &&
+            other is _$FollowingImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -204,80 +232,62 @@ class _Following implements Following {
                 other.follower == follower));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, createdAt, followeeId, followerId, followee, follower);
 
-  @override
-  String toString() {
-    return 'Following(id: $id, createdAt: $createdAt, followeeId: $followeeId, followerId: $followerId, followee: $followee, follower: $follower)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$FollowingCopyWith<$Res>
-    implements $FollowingCopyWith<$Res> {
-  factory _$FollowingCopyWith(
-          _Following value, $Res Function(_Following) _then) =
-      __$FollowingCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String followeeId,
-      String followerId,
-      UserDetailed? followee,
-      UserDetailed? follower});
-}
-
-/// @nodoc
-class __$FollowingCopyWithImpl<$Res> implements _$FollowingCopyWith<$Res> {
-  __$FollowingCopyWithImpl(this._self, this._then);
-
-  final _Following _self;
-  final $Res Function(_Following) _then;
-
-  /// Create a copy of Following
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? followeeId = null,
-    Object? followerId = null,
-    Object? followee = freezed,
-    Object? follower = freezed,
-  }) {
-    return _then(_Following(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      followeeId: null == followeeId
-          ? _self.followeeId
-          : followeeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      followerId: null == followerId
-          ? _self.followerId
-          : followerId // ignore: cast_nullable_to_non_nullable
-              as String,
-      followee: freezed == followee
-          ? _self.followee
-          : followee // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
-      follower: freezed == follower
-          ? _self.follower
-          : follower // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
-    ));
+  _$$FollowingImplCopyWith<_$FollowingImpl> get copyWith =>
+      __$$FollowingImplCopyWithImpl<_$FollowingImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowingImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _Following implements Following {
+  const factory _Following(
+      {required final String id,
+      @DateTimeConverter() required final DateTime createdAt,
+      required final String followeeId,
+      required final String followerId,
+      final UserDetailed? followee,
+      final UserDetailed? follower}) = _$FollowingImpl;
+
+  factory _Following.fromJson(Map<String, dynamic> json) =
+      _$FollowingImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @DateTimeConverter()
+  DateTime get createdAt;
+  @override
+  String get followeeId;
+  @override
+  String get followerId;
+  @override
+
+  /// 以下のエンドポイントでnon-null
+  ///
+// - [MisskeyFederation.followers]
+// - [MisskeyFederation.following]
+  /// - [MisskeyUsers.following]
+  UserDetailed? get followee;
+  @override
+
+  /// 以下のエンドポイントでnon-null
+  ///
+  /// - [MisskeyUsers.followers]
+  UserDetailed? get follower;
+  @override
+  @JsonKey(ignore: true)
+  _$$FollowingImplCopyWith<_$FollowingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

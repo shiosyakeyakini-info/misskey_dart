@@ -6,10 +6,11 @@ part of 'roles_notes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RolesNotesRequest _$RolesNotesRequestFromJson(Map<String, dynamic> json) =>
-    _RolesNotesRequest(
+_$RolesNotesRequestImpl _$$RolesNotesRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RolesNotesRequestImpl(
       roleId: json['roleId'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -18,7 +19,8 @@ _RolesNotesRequest _$RolesNotesRequestFromJson(Map<String, dynamic> json) =>
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
     );
 
-Map<String, dynamic> _$RolesNotesRequestToJson(_RolesNotesRequest instance) =>
+Map<String, dynamic> _$$RolesNotesRequestImplToJson(
+        _$RolesNotesRequestImpl instance) =>
     <String, dynamic>{
       'roleId': instance.roleId,
       'limit': instance.limit,

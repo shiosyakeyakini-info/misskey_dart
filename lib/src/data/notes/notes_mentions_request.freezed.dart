@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,58 +9,34 @@ part of 'notes_mentions_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$NotesMentionsRequest {
-  bool? get following;
-  int? get limit;
-  String? get sinceId;
-  String? get untilId;
-  NoteVisibility? get visibility;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of NotesMentionsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesMentionsRequestCopyWith<NotesMentionsRequest> get copyWith =>
-      _$NotesMentionsRequestCopyWithImpl<NotesMentionsRequest>(
-          this as NotesMentionsRequest, _$identity);
-
-  /// Serializes this NotesMentionsRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesMentionsRequest &&
-            (identical(other.following, following) ||
-                other.following == following) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, following, limit, sinceId, untilId, visibility);
-
-  @override
-  String toString() {
-    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, visibility: $visibility)';
-  }
+NotesMentionsRequest _$NotesMentionsRequestFromJson(Map<String, dynamic> json) {
+  return _NotesMentionsRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $NotesMentionsRequestCopyWith<$Res> {
+mixin _$NotesMentionsRequest {
+  bool? get following => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  String? get sinceId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
+  NoteVisibility? get visibility => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotesMentionsRequestCopyWith<NotesMentionsRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotesMentionsRequestCopyWith<$Res> {
   factory $NotesMentionsRequestCopyWith(NotesMentionsRequest value,
-          $Res Function(NotesMentionsRequest) _then) =
-      _$NotesMentionsRequestCopyWithImpl;
+          $Res Function(NotesMentionsRequest) then) =
+      _$NotesMentionsRequestCopyWithImpl<$Res, NotesMentionsRequest>;
   @useResult
   $Res call(
       {bool? following,
@@ -72,15 +47,16 @@ abstract mixin class $NotesMentionsRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotesMentionsRequestCopyWithImpl<$Res>
+class _$NotesMentionsRequestCopyWithImpl<$Res,
+        $Val extends NotesMentionsRequest>
     implements $NotesMentionsRequestCopyWith<$Res> {
-  _$NotesMentionsRequestCopyWithImpl(this._self, this._then);
+  _$NotesMentionsRequestCopyWithImpl(this._value, this._then);
 
-  final NotesMentionsRequest _self;
-  final $Res Function(NotesMentionsRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of NotesMentionsRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -90,25 +66,83 @@ class _$NotesMentionsRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? visibility = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       following: freezed == following
-          ? _self.following
+          ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
               as bool?,
       limit: freezed == limit
-          ? _self.limit
+          ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _self.sinceId
+          ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _self.untilId
+          ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       visibility: freezed == visibility
-          ? _self.visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as NoteVisibility?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$NotesMentionsRequestImplCopyWith<$Res>
+    implements $NotesMentionsRequestCopyWith<$Res> {
+  factory _$$NotesMentionsRequestImplCopyWith(_$NotesMentionsRequestImpl value,
+          $Res Function(_$NotesMentionsRequestImpl) then) =
+      __$$NotesMentionsRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool? following,
+      int? limit,
+      String? sinceId,
+      String? untilId,
+      NoteVisibility? visibility});
+}
+
+/// @nodoc
+class __$$NotesMentionsRequestImplCopyWithImpl<$Res>
+    extends _$NotesMentionsRequestCopyWithImpl<$Res, _$NotesMentionsRequestImpl>
+    implements _$$NotesMentionsRequestImplCopyWith<$Res> {
+  __$$NotesMentionsRequestImplCopyWithImpl(_$NotesMentionsRequestImpl _value,
+      $Res Function(_$NotesMentionsRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? following = freezed,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+    Object? visibility = freezed,
+  }) {
+    return _then(_$NotesMentionsRequestImpl(
+      following: freezed == following
+          ? _value.following
+          : following // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      limit: freezed == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _value.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visibility: freezed == visibility
+          ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as NoteVisibility?,
     ));
@@ -117,15 +151,16 @@ class _$NotesMentionsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _NotesMentionsRequest implements NotesMentionsRequest {
-  const _NotesMentionsRequest(
+class _$NotesMentionsRequestImpl implements _NotesMentionsRequest {
+  const _$NotesMentionsRequestImpl(
       {this.following,
       this.limit,
       this.sinceId,
       this.untilId,
       this.visibility});
-  factory _NotesMentionsRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesMentionsRequestFromJson(json);
+
+  factory _$NotesMentionsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotesMentionsRequestImplFromJson(json);
 
   @override
   final bool? following;
@@ -138,27 +173,16 @@ class _NotesMentionsRequest implements NotesMentionsRequest {
   @override
   final NoteVisibility? visibility;
 
-  /// Create a copy of NotesMentionsRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesMentionsRequestCopyWith<_NotesMentionsRequest> get copyWith =>
-      __$NotesMentionsRequestCopyWithImpl<_NotesMentionsRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesMentionsRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, visibility: $visibility)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotesMentionsRequest &&
+            other is _$NotesMentionsRequestImpl &&
             (identical(other.following, following) ||
                 other.following == following) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -168,75 +192,50 @@ class _NotesMentionsRequest implements NotesMentionsRequest {
                 other.visibility == visibility));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, following, limit, sinceId, untilId, visibility);
 
-  @override
-  String toString() {
-    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, visibility: $visibility)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$NotesMentionsRequestCopyWith<$Res>
-    implements $NotesMentionsRequestCopyWith<$Res> {
-  factory _$NotesMentionsRequestCopyWith(_NotesMentionsRequest value,
-          $Res Function(_NotesMentionsRequest) _then) =
-      __$NotesMentionsRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {bool? following,
-      int? limit,
-      String? sinceId,
-      String? untilId,
-      NoteVisibility? visibility});
-}
-
-/// @nodoc
-class __$NotesMentionsRequestCopyWithImpl<$Res>
-    implements _$NotesMentionsRequestCopyWith<$Res> {
-  __$NotesMentionsRequestCopyWithImpl(this._self, this._then);
-
-  final _NotesMentionsRequest _self;
-  final $Res Function(_NotesMentionsRequest) _then;
-
-  /// Create a copy of NotesMentionsRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? following = freezed,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? visibility = freezed,
-  }) {
-    return _then(_NotesMentionsRequest(
-      following: freezed == following
-          ? _self.following
-          : following // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      visibility: freezed == visibility
-          ? _self.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
-    ));
+  _$$NotesMentionsRequestImplCopyWith<_$NotesMentionsRequestImpl>
+      get copyWith =>
+          __$$NotesMentionsRequestImplCopyWithImpl<_$NotesMentionsRequestImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NotesMentionsRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _NotesMentionsRequest implements NotesMentionsRequest {
+  const factory _NotesMentionsRequest(
+      {final bool? following,
+      final int? limit,
+      final String? sinceId,
+      final String? untilId,
+      final NoteVisibility? visibility}) = _$NotesMentionsRequestImpl;
+
+  factory _NotesMentionsRequest.fromJson(Map<String, dynamic> json) =
+      _$NotesMentionsRequestImpl.fromJson;
+
+  @override
+  bool? get following;
+  @override
+  int? get limit;
+  @override
+  String? get sinceId;
+  @override
+  String? get untilId;
+  @override
+  NoteVisibility? get visibility;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotesMentionsRequestImplCopyWith<_$NotesMentionsRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

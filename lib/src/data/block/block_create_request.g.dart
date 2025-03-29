@@ -6,12 +6,14 @@ part of 'block_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_BlockCreateRequest _$BlockCreateRequestFromJson(Map<String, dynamic> json) =>
-    _BlockCreateRequest(
+_$BlockCreateRequestImpl _$$BlockCreateRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BlockCreateRequestImpl(
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$BlockCreateRequestToJson(_BlockCreateRequest instance) =>
+Map<String, dynamic> _$$BlockCreateRequestImplToJson(
+        _$BlockCreateRequestImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
     };

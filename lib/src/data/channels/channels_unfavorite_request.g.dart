@@ -6,14 +6,14 @@ part of 'channels_unfavorite_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ChannelsUnfavoriteRequest _$ChannelsUnfavoriteRequestFromJson(
+_$ChannelsUnfavoriteRequestImpl _$$ChannelsUnfavoriteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _ChannelsUnfavoriteRequest(
+    _$ChannelsUnfavoriteRequestImpl(
       channelId: json['channelId'] as String,
     );
 
-Map<String, dynamic> _$ChannelsUnfavoriteRequestToJson(
-        _ChannelsUnfavoriteRequest instance) =>
+Map<String, dynamic> _$$ChannelsUnfavoriteRequestImplToJson(
+        _$ChannelsUnfavoriteRequestImpl instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
     };

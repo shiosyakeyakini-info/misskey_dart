@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,67 +9,50 @@ part of 'channels_followed_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$ChannelsFollowedRequest {
-  String? get sinceId;
-  String? get untilId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// minimum: 1, maximum: 100, default: 5 [misskey-dev/misskey:58c3fc6]
-  int? get limit;
-
-  /// Create a copy of ChannelsFollowedRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChannelsFollowedRequestCopyWith<ChannelsFollowedRequest> get copyWith =>
-      _$ChannelsFollowedRequestCopyWithImpl<ChannelsFollowedRequest>(
-          this as ChannelsFollowedRequest, _$identity);
-
-  /// Serializes this ChannelsFollowedRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChannelsFollowedRequest &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.limit, limit) || other.limit == limit));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, sinceId, untilId, limit);
-
-  @override
-  String toString() {
-    return 'ChannelsFollowedRequest(sinceId: $sinceId, untilId: $untilId, limit: $limit)';
-  }
+ChannelsFollowedRequest _$ChannelsFollowedRequestFromJson(
+    Map<String, dynamic> json) {
+  return _ChannelsFollowedRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $ChannelsFollowedRequestCopyWith<$Res> {
+mixin _$ChannelsFollowedRequest {
+  String? get sinceId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
+
+  /// minimum: 1, maximum: 100, default: 5 [misskey-dev/misskey:58c3fc6]
+  int? get limit => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChannelsFollowedRequestCopyWith<ChannelsFollowedRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChannelsFollowedRequestCopyWith<$Res> {
   factory $ChannelsFollowedRequestCopyWith(ChannelsFollowedRequest value,
-          $Res Function(ChannelsFollowedRequest) _then) =
-      _$ChannelsFollowedRequestCopyWithImpl;
+          $Res Function(ChannelsFollowedRequest) then) =
+      _$ChannelsFollowedRequestCopyWithImpl<$Res, ChannelsFollowedRequest>;
   @useResult
   $Res call({String? sinceId, String? untilId, int? limit});
 }
 
 /// @nodoc
-class _$ChannelsFollowedRequestCopyWithImpl<$Res>
+class _$ChannelsFollowedRequestCopyWithImpl<$Res,
+        $Val extends ChannelsFollowedRequest>
     implements $ChannelsFollowedRequestCopyWith<$Res> {
-  _$ChannelsFollowedRequestCopyWithImpl(this._self, this._then);
+  _$ChannelsFollowedRequestCopyWithImpl(this._value, this._then);
 
-  final ChannelsFollowedRequest _self;
-  final $Res Function(ChannelsFollowedRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of ChannelsFollowedRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -78,17 +60,63 @@ class _$ChannelsFollowedRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       sinceId: freezed == sinceId
-          ? _self.sinceId
+          ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _self.untilId
+          ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       limit: freezed == limit
-          ? _self.limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ChannelsFollowedRequestImplCopyWith<$Res>
+    implements $ChannelsFollowedRequestCopyWith<$Res> {
+  factory _$$ChannelsFollowedRequestImplCopyWith(
+          _$ChannelsFollowedRequestImpl value,
+          $Res Function(_$ChannelsFollowedRequestImpl) then) =
+      __$$ChannelsFollowedRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? sinceId, String? untilId, int? limit});
+}
+
+/// @nodoc
+class __$$ChannelsFollowedRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsFollowedRequestCopyWithImpl<$Res,
+        _$ChannelsFollowedRequestImpl>
+    implements _$$ChannelsFollowedRequestImplCopyWith<$Res> {
+  __$$ChannelsFollowedRequestImplCopyWithImpl(
+      _$ChannelsFollowedRequestImpl _value,
+      $Res Function(_$ChannelsFollowedRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+    Object? limit = freezed,
+  }) {
+    return _then(_$ChannelsFollowedRequestImpl(
+      sinceId: freezed == sinceId
+          ? _value.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _value.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: freezed == limit
+          ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -97,10 +125,11 @@ class _$ChannelsFollowedRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ChannelsFollowedRequest implements ChannelsFollowedRequest {
-  const _ChannelsFollowedRequest({this.sinceId, this.untilId, this.limit});
-  factory _ChannelsFollowedRequest.fromJson(Map<String, dynamic> json) =>
-      _$ChannelsFollowedRequestFromJson(json);
+class _$ChannelsFollowedRequestImpl implements _ChannelsFollowedRequest {
+  const _$ChannelsFollowedRequestImpl({this.sinceId, this.untilId, this.limit});
+
+  factory _$ChannelsFollowedRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsFollowedRequestImplFromJson(json);
 
   @override
   final String? sinceId;
@@ -111,85 +140,59 @@ class _ChannelsFollowedRequest implements ChannelsFollowedRequest {
   @override
   final int? limit;
 
-  /// Create a copy of ChannelsFollowedRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChannelsFollowedRequestCopyWith<_ChannelsFollowedRequest> get copyWith =>
-      __$ChannelsFollowedRequestCopyWithImpl<_ChannelsFollowedRequest>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChannelsFollowedRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'ChannelsFollowedRequest(sinceId: $sinceId, untilId: $untilId, limit: $limit)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChannelsFollowedRequest &&
+            other is _$ChannelsFollowedRequestImpl &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, sinceId, untilId, limit);
 
-  @override
-  String toString() {
-    return 'ChannelsFollowedRequest(sinceId: $sinceId, untilId: $untilId, limit: $limit)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ChannelsFollowedRequestCopyWith<$Res>
-    implements $ChannelsFollowedRequestCopyWith<$Res> {
-  factory _$ChannelsFollowedRequestCopyWith(_ChannelsFollowedRequest value,
-          $Res Function(_ChannelsFollowedRequest) _then) =
-      __$ChannelsFollowedRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String? sinceId, String? untilId, int? limit});
-}
-
-/// @nodoc
-class __$ChannelsFollowedRequestCopyWithImpl<$Res>
-    implements _$ChannelsFollowedRequestCopyWith<$Res> {
-  __$ChannelsFollowedRequestCopyWithImpl(this._self, this._then);
-
-  final _ChannelsFollowedRequest _self;
-  final $Res Function(_ChannelsFollowedRequest) _then;
-
-  /// Create a copy of ChannelsFollowedRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? limit = freezed,
-  }) {
-    return _then(_ChannelsFollowedRequest(
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  _$$ChannelsFollowedRequestImplCopyWith<_$ChannelsFollowedRequestImpl>
+      get copyWith => __$$ChannelsFollowedRequestImplCopyWithImpl<
+          _$ChannelsFollowedRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChannelsFollowedRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _ChannelsFollowedRequest implements ChannelsFollowedRequest {
+  const factory _ChannelsFollowedRequest(
+      {final String? sinceId,
+      final String? untilId,
+      final int? limit}) = _$ChannelsFollowedRequestImpl;
+
+  factory _ChannelsFollowedRequest.fromJson(Map<String, dynamic> json) =
+      _$ChannelsFollowedRequestImpl.fromJson;
+
+  @override
+  String? get sinceId;
+  @override
+  String? get untilId;
+  @override
+
+  /// minimum: 1, maximum: 100, default: 5 [misskey-dev/misskey:58c3fc6]
+  int? get limit;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChannelsFollowedRequestImplCopyWith<_$ChannelsFollowedRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

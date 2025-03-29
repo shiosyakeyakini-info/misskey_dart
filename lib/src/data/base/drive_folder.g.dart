@@ -6,7 +6,8 @@ part of 'drive_folder.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DriveFolder _$DriveFolderFromJson(Map<String, dynamic> json) => _DriveFolder(
+_$DriveFolderImpl _$$DriveFolderImplFromJson(Map<String, dynamic> json) =>
+    _$DriveFolderImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -15,11 +16,11 @@ _DriveFolder _$DriveFolderFromJson(Map<String, dynamic> json) => _DriveFolder(
       parent: json['parent'] == null
           ? null
           : DriveFolder.fromJson(json['parent'] as Map<String, dynamic>),
-      foldersCount: (json['foldersCount'] as num?)?.toInt(),
-      filesCount: (json['filesCount'] as num?)?.toInt(),
+      foldersCount: json['foldersCount'] as int?,
+      filesCount: json['filesCount'] as int?,
     );
 
-Map<String, dynamic> _$DriveFolderToJson(_DriveFolder instance) =>
+Map<String, dynamic> _$$DriveFolderImplToJson(_$DriveFolderImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

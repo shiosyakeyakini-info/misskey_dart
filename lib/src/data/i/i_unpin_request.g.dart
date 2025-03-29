@@ -6,12 +6,12 @@ part of 'i_unpin_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IUnpinRequest _$IUnpinRequestFromJson(Map<String, dynamic> json) =>
-    _IUnpinRequest(
+_$IUnpinRequestImpl _$$IUnpinRequestImplFromJson(Map<String, dynamic> json) =>
+    _$IUnpinRequestImpl(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$IUnpinRequestToJson(_IUnpinRequest instance) =>
+Map<String, dynamic> _$$IUnpinRequestImplToJson(_$IUnpinRequestImpl instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

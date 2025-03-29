@@ -6,14 +6,14 @@ part of 'users_lists_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersListsDeleteRequest _$UsersListsDeleteRequestFromJson(
+_$UsersListsDeleteRequestImpl _$$UsersListsDeleteRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _UsersListsDeleteRequest(
+    _$UsersListsDeleteRequestImpl(
       listId: json['listId'] as String,
     );
 
-Map<String, dynamic> _$UsersListsDeleteRequestToJson(
-        _UsersListsDeleteRequest instance) =>
+Map<String, dynamic> _$$UsersListsDeleteRequestImplToJson(
+        _$UsersListsDeleteRequestImpl instance) =>
     <String, dynamic>{
       'listId': instance.listId,
     };

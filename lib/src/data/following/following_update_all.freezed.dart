@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,77 +9,102 @@ part of 'following_update_all.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$FollowingUpdateAllRequest {
-  FollowingUpdateAllNotifyType? get notify;
-  bool? get withReplies;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of FollowingUpdateAllRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $FollowingUpdateAllRequestCopyWith<FollowingUpdateAllRequest> get copyWith =>
-      _$FollowingUpdateAllRequestCopyWithImpl<FollowingUpdateAllRequest>(
-          this as FollowingUpdateAllRequest, _$identity);
-
-  /// Serializes this FollowingUpdateAllRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is FollowingUpdateAllRequest &&
-            (identical(other.notify, notify) || other.notify == notify) &&
-            (identical(other.withReplies, withReplies) ||
-                other.withReplies == withReplies));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, notify, withReplies);
-
-  @override
-  String toString() {
-    return 'FollowingUpdateAllRequest(notify: $notify, withReplies: $withReplies)';
-  }
+FollowingUpdateAllRequest _$FollowingUpdateAllRequestFromJson(
+    Map<String, dynamic> json) {
+  return _FollowingUpdateAllRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $FollowingUpdateAllRequestCopyWith<$Res> {
+mixin _$FollowingUpdateAllRequest {
+  FollowingUpdateAllNotifyType? get notify =>
+      throw _privateConstructorUsedError;
+  bool? get withReplies => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FollowingUpdateAllRequestCopyWith<FollowingUpdateAllRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FollowingUpdateAllRequestCopyWith<$Res> {
   factory $FollowingUpdateAllRequestCopyWith(FollowingUpdateAllRequest value,
-          $Res Function(FollowingUpdateAllRequest) _then) =
-      _$FollowingUpdateAllRequestCopyWithImpl;
+          $Res Function(FollowingUpdateAllRequest) then) =
+      _$FollowingUpdateAllRequestCopyWithImpl<$Res, FollowingUpdateAllRequest>;
   @useResult
   $Res call({FollowingUpdateAllNotifyType? notify, bool? withReplies});
 }
 
 /// @nodoc
-class _$FollowingUpdateAllRequestCopyWithImpl<$Res>
+class _$FollowingUpdateAllRequestCopyWithImpl<$Res,
+        $Val extends FollowingUpdateAllRequest>
     implements $FollowingUpdateAllRequestCopyWith<$Res> {
-  _$FollowingUpdateAllRequestCopyWithImpl(this._self, this._then);
+  _$FollowingUpdateAllRequestCopyWithImpl(this._value, this._then);
 
-  final FollowingUpdateAllRequest _self;
-  final $Res Function(FollowingUpdateAllRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of FollowingUpdateAllRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? notify = freezed,
     Object? withReplies = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       notify: freezed == notify
-          ? _self.notify
+          ? _value.notify
           : notify // ignore: cast_nullable_to_non_nullable
               as FollowingUpdateAllNotifyType?,
       withReplies: freezed == withReplies
-          ? _self.withReplies
+          ? _value.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FollowingUpdateAllRequestImplCopyWith<$Res>
+    implements $FollowingUpdateAllRequestCopyWith<$Res> {
+  factory _$$FollowingUpdateAllRequestImplCopyWith(
+          _$FollowingUpdateAllRequestImpl value,
+          $Res Function(_$FollowingUpdateAllRequestImpl) then) =
+      __$$FollowingUpdateAllRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({FollowingUpdateAllNotifyType? notify, bool? withReplies});
+}
+
+/// @nodoc
+class __$$FollowingUpdateAllRequestImplCopyWithImpl<$Res>
+    extends _$FollowingUpdateAllRequestCopyWithImpl<$Res,
+        _$FollowingUpdateAllRequestImpl>
+    implements _$$FollowingUpdateAllRequestImplCopyWith<$Res> {
+  __$$FollowingUpdateAllRequestImplCopyWithImpl(
+      _$FollowingUpdateAllRequestImpl _value,
+      $Res Function(_$FollowingUpdateAllRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notify = freezed,
+    Object? withReplies = freezed,
+  }) {
+    return _then(_$FollowingUpdateAllRequestImpl(
+      notify: freezed == notify
+          ? _value.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as FollowingUpdateAllNotifyType?,
+      withReplies: freezed == withReplies
+          ? _value.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -89,91 +113,65 @@ class _$FollowingUpdateAllRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _FollowingUpdateAllRequest implements FollowingUpdateAllRequest {
-  const _FollowingUpdateAllRequest({this.notify, this.withReplies});
-  factory _FollowingUpdateAllRequest.fromJson(Map<String, dynamic> json) =>
-      _$FollowingUpdateAllRequestFromJson(json);
+class _$FollowingUpdateAllRequestImpl implements _FollowingUpdateAllRequest {
+  const _$FollowingUpdateAllRequestImpl({this.notify, this.withReplies});
+
+  factory _$FollowingUpdateAllRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowingUpdateAllRequestImplFromJson(json);
 
   @override
   final FollowingUpdateAllNotifyType? notify;
   @override
   final bool? withReplies;
 
-  /// Create a copy of FollowingUpdateAllRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$FollowingUpdateAllRequestCopyWith<_FollowingUpdateAllRequest>
-      get copyWith =>
-          __$FollowingUpdateAllRequestCopyWithImpl<_FollowingUpdateAllRequest>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$FollowingUpdateAllRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'FollowingUpdateAllRequest(notify: $notify, withReplies: $withReplies)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FollowingUpdateAllRequest &&
+            other is _$FollowingUpdateAllRequestImpl &&
             (identical(other.notify, notify) || other.notify == notify) &&
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, notify, withReplies);
 
-  @override
-  String toString() {
-    return 'FollowingUpdateAllRequest(notify: $notify, withReplies: $withReplies)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$FollowingUpdateAllRequestCopyWith<$Res>
-    implements $FollowingUpdateAllRequestCopyWith<$Res> {
-  factory _$FollowingUpdateAllRequestCopyWith(_FollowingUpdateAllRequest value,
-          $Res Function(_FollowingUpdateAllRequest) _then) =
-      __$FollowingUpdateAllRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({FollowingUpdateAllNotifyType? notify, bool? withReplies});
-}
-
-/// @nodoc
-class __$FollowingUpdateAllRequestCopyWithImpl<$Res>
-    implements _$FollowingUpdateAllRequestCopyWith<$Res> {
-  __$FollowingUpdateAllRequestCopyWithImpl(this._self, this._then);
-
-  final _FollowingUpdateAllRequest _self;
-  final $Res Function(_FollowingUpdateAllRequest) _then;
-
-  /// Create a copy of FollowingUpdateAllRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? notify = freezed,
-    Object? withReplies = freezed,
-  }) {
-    return _then(_FollowingUpdateAllRequest(
-      notify: freezed == notify
-          ? _self.notify
-          : notify // ignore: cast_nullable_to_non_nullable
-              as FollowingUpdateAllNotifyType?,
-      withReplies: freezed == withReplies
-          ? _self.withReplies
-          : withReplies // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+  _$$FollowingUpdateAllRequestImplCopyWith<_$FollowingUpdateAllRequestImpl>
+      get copyWith => __$$FollowingUpdateAllRequestImplCopyWithImpl<
+          _$FollowingUpdateAllRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowingUpdateAllRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _FollowingUpdateAllRequest implements FollowingUpdateAllRequest {
+  const factory _FollowingUpdateAllRequest(
+      {final FollowingUpdateAllNotifyType? notify,
+      final bool? withReplies}) = _$FollowingUpdateAllRequestImpl;
+
+  factory _FollowingUpdateAllRequest.fromJson(Map<String, dynamic> json) =
+      _$FollowingUpdateAllRequestImpl.fromJson;
+
+  @override
+  FollowingUpdateAllNotifyType? get notify;
+  @override
+  bool? get withReplies;
+  @override
+  @JsonKey(ignore: true)
+  _$$FollowingUpdateAllRequestImplCopyWith<_$FollowingUpdateAllRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

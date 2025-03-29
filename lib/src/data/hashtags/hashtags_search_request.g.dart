@@ -6,16 +6,16 @@ part of 'hashtags_search_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HashtagsSearchRequest _$HashtagsSearchRequestFromJson(
+_$HashtagsSearchRequestImpl _$$HashtagsSearchRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _HashtagsSearchRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _$HashtagsSearchRequestImpl(
+      limit: json['limit'] as int?,
       query: json['query'] as String,
-      offset: (json['offset'] as num?)?.toInt(),
+      offset: json['offset'] as int?,
     );
 
-Map<String, dynamic> _$HashtagsSearchRequestToJson(
-        _HashtagsSearchRequest instance) =>
+Map<String, dynamic> _$$HashtagsSearchRequestImplToJson(
+        _$HashtagsSearchRequestImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'query': instance.query,

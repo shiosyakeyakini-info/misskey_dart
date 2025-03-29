@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,57 +9,35 @@ part of 'user_list.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$UsersList {
-  String get id;
-  @DateTimeConverter()
-  DateTime get createdAt;
-  String? get name;
-  List<String> get userIds; // Misskey 13.13.0 で追加. 後方互換性のためnullable
-  bool? get isPublic;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of UsersList
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $UsersListCopyWith<UsersList> get copyWith =>
-      _$UsersListCopyWithImpl<UsersList>(this as UsersList, _$identity);
-
-  /// Serializes this UsersList to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UsersList &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.userIds, userIds) &&
-            (identical(other.isPublic, isPublic) ||
-                other.isPublic == isPublic));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      const DeepCollectionEquality().hash(userIds), isPublic);
-
-  @override
-  String toString() {
-    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
-  }
+UsersList _$UsersListFromJson(Map<String, dynamic> json) {
+  return _UsersList.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $UsersListCopyWith<$Res> {
-  factory $UsersListCopyWith(UsersList value, $Res Function(UsersList) _then) =
-      _$UsersListCopyWithImpl;
+mixin _$UsersList {
+  String get id => throw _privateConstructorUsedError;
+  @DateTimeConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  List<String> get userIds =>
+      throw _privateConstructorUsedError; // Misskey 13.13.0 で追加. 後方互換性のためnullable
+  bool? get isPublic => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsersListCopyWith<UsersList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsersListCopyWith<$Res> {
+  factory $UsersListCopyWith(UsersList value, $Res Function(UsersList) then) =
+      _$UsersListCopyWithImpl<$Res, UsersList>;
   @useResult
   $Res call(
       {String id,
@@ -71,14 +48,15 @@ abstract mixin class $UsersListCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UsersListCopyWithImpl<$Res> implements $UsersListCopyWith<$Res> {
-  _$UsersListCopyWithImpl(this._self, this._then);
+class _$UsersListCopyWithImpl<$Res, $Val extends UsersList>
+    implements $UsersListCopyWith<$Res> {
+  _$UsersListCopyWithImpl(this._value, this._then);
 
-  final UsersList _self;
-  final $Res Function(UsersList) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of UsersList
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,25 +66,83 @@ class _$UsersListCopyWithImpl<$Res> implements $UsersListCopyWith<$Res> {
     Object? userIds = null,
     Object? isPublic = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       name: freezed == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       userIds: null == userIds
-          ? _self.userIds
+          ? _value.userIds
           : userIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       isPublic: freezed == isPublic
-          ? _self.isPublic
+          ? _value.isPublic
+          : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UsersListImplCopyWith<$Res>
+    implements $UsersListCopyWith<$Res> {
+  factory _$$UsersListImplCopyWith(
+          _$UsersListImpl value, $Res Function(_$UsersListImpl) then) =
+      __$$UsersListImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String? name,
+      List<String> userIds,
+      bool? isPublic});
+}
+
+/// @nodoc
+class __$$UsersListImplCopyWithImpl<$Res>
+    extends _$UsersListCopyWithImpl<$Res, _$UsersListImpl>
+    implements _$$UsersListImplCopyWith<$Res> {
+  __$$UsersListImplCopyWithImpl(
+      _$UsersListImpl _value, $Res Function(_$UsersListImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? name = freezed,
+    Object? userIds = null,
+    Object? isPublic = freezed,
+  }) {
+    return _then(_$UsersListImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userIds: null == userIds
+          ? _value._userIds
+          : userIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      isPublic: freezed == isPublic
+          ? _value.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -115,16 +151,17 @@ class _$UsersListCopyWithImpl<$Res> implements $UsersListCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _UsersList implements UsersList {
-  const _UsersList(
+class _$UsersListImpl implements _UsersList {
+  const _$UsersListImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       this.name,
       required final List<String> userIds,
       this.isPublic})
       : _userIds = userIds;
-  factory _UsersList.fromJson(Map<String, dynamic> json) =>
-      _$UsersListFromJson(json);
+
+  factory _$UsersListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersListImplFromJson(json);
 
   @override
   final String id;
@@ -145,26 +182,16 @@ class _UsersList implements UsersList {
   @override
   final bool? isPublic;
 
-  /// Create a copy of UsersList
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$UsersListCopyWith<_UsersList> get copyWith =>
-      __$UsersListCopyWithImpl<_UsersList>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$UsersListToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersList &&
+            other is _$UsersListImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -174,74 +201,49 @@ class _UsersList implements UsersList {
                 other.isPublic == isPublic));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, name,
       const DeepCollectionEquality().hash(_userIds), isPublic);
 
-  @override
-  String toString() {
-    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$UsersListCopyWith<$Res>
-    implements $UsersListCopyWith<$Res> {
-  factory _$UsersListCopyWith(
-          _UsersList value, $Res Function(_UsersList) _then) =
-      __$UsersListCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String? name,
-      List<String> userIds,
-      bool? isPublic});
-}
-
-/// @nodoc
-class __$UsersListCopyWithImpl<$Res> implements _$UsersListCopyWith<$Res> {
-  __$UsersListCopyWithImpl(this._self, this._then);
-
-  final _UsersList _self;
-  final $Res Function(_UsersList) _then;
-
-  /// Create a copy of UsersList
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? name = freezed,
-    Object? userIds = null,
-    Object? isPublic = freezed,
-  }) {
-    return _then(_UsersList(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userIds: null == userIds
-          ? _self._userIds
-          : userIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      isPublic: freezed == isPublic
-          ? _self.isPublic
-          : isPublic // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+  _$$UsersListImplCopyWith<_$UsersListImpl> get copyWith =>
+      __$$UsersListImplCopyWithImpl<_$UsersListImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UsersListImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _UsersList implements UsersList {
+  const factory _UsersList(
+      {required final String id,
+      @DateTimeConverter() required final DateTime createdAt,
+      final String? name,
+      required final List<String> userIds,
+      final bool? isPublic}) = _$UsersListImpl;
+
+  factory _UsersList.fromJson(Map<String, dynamic> json) =
+      _$UsersListImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @DateTimeConverter()
+  DateTime get createdAt;
+  @override
+  String? get name;
+  @override
+  List<String> get userIds;
+  @override // Misskey 13.13.0 で追加. 後方互換性のためnullable
+  bool? get isPublic;
+  @override
+  @JsonKey(ignore: true)
+  _$$UsersListImplCopyWith<_$UsersListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

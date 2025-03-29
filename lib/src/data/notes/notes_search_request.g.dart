@@ -6,19 +6,21 @@ part of 'notes_search_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotesSearchRequest _$NotesSearchRequestFromJson(Map<String, dynamic> json) =>
-    _NotesSearchRequest(
+_$NotesSearchRequestImpl _$$NotesSearchRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NotesSearchRequestImpl(
       query: json['query'] as String,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
-      offset: (json['offset'] as num?)?.toInt(),
+      limit: json['limit'] as int?,
+      offset: json['offset'] as int?,
       host: json['host'] as String?,
       userId: json['userId'] as String?,
       channelId: json['channelId'] as String?,
     );
 
-Map<String, dynamic> _$NotesSearchRequestToJson(_NotesSearchRequest instance) =>
+Map<String, dynamic> _$$NotesSearchRequestImplToJson(
+        _$NotesSearchRequestImpl instance) =>
     <String, dynamic>{
       'query': instance.query,
       'sinceId': instance.sinceId,

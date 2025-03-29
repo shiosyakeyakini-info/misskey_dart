@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,70 +9,90 @@ part of 'channels_unfavorite_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
 
-/// @nodoc
-mixin _$ChannelsUnfavoriteRequest {
-  String get channelId;
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-  /// Create a copy of ChannelsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChannelsUnfavoriteRequestCopyWith<ChannelsUnfavoriteRequest> get copyWith =>
-      _$ChannelsUnfavoriteRequestCopyWithImpl<ChannelsUnfavoriteRequest>(
-          this as ChannelsUnfavoriteRequest, _$identity);
-
-  /// Serializes this ChannelsUnfavoriteRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChannelsUnfavoriteRequest &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, channelId);
-
-  @override
-  String toString() {
-    return 'ChannelsUnfavoriteRequest(channelId: $channelId)';
-  }
+ChannelsUnfavoriteRequest _$ChannelsUnfavoriteRequestFromJson(
+    Map<String, dynamic> json) {
+  return _ChannelsUnfavoriteRequest.fromJson(json);
 }
 
 /// @nodoc
-abstract mixin class $ChannelsUnfavoriteRequestCopyWith<$Res> {
+mixin _$ChannelsUnfavoriteRequest {
+  String get channelId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChannelsUnfavoriteRequestCopyWith<ChannelsUnfavoriteRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChannelsUnfavoriteRequestCopyWith<$Res> {
   factory $ChannelsUnfavoriteRequestCopyWith(ChannelsUnfavoriteRequest value,
-          $Res Function(ChannelsUnfavoriteRequest) _then) =
-      _$ChannelsUnfavoriteRequestCopyWithImpl;
+          $Res Function(ChannelsUnfavoriteRequest) then) =
+      _$ChannelsUnfavoriteRequestCopyWithImpl<$Res, ChannelsUnfavoriteRequest>;
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class _$ChannelsUnfavoriteRequestCopyWithImpl<$Res>
+class _$ChannelsUnfavoriteRequestCopyWithImpl<$Res,
+        $Val extends ChannelsUnfavoriteRequest>
     implements $ChannelsUnfavoriteRequestCopyWith<$Res> {
-  _$ChannelsUnfavoriteRequestCopyWithImpl(this._self, this._then);
+  _$ChannelsUnfavoriteRequestCopyWithImpl(this._value, this._then);
 
-  final ChannelsUnfavoriteRequest _self;
-  final $Res Function(ChannelsUnfavoriteRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-  /// Create a copy of ChannelsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       channelId: null == channelId
-          ? _self.channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ChannelsUnfavoriteRequestImplCopyWith<$Res>
+    implements $ChannelsUnfavoriteRequestCopyWith<$Res> {
+  factory _$$ChannelsUnfavoriteRequestImplCopyWith(
+          _$ChannelsUnfavoriteRequestImpl value,
+          $Res Function(_$ChannelsUnfavoriteRequestImpl) then) =
+      __$$ChannelsUnfavoriteRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String channelId});
+}
+
+/// @nodoc
+class __$$ChannelsUnfavoriteRequestImplCopyWithImpl<$Res>
+    extends _$ChannelsUnfavoriteRequestCopyWithImpl<$Res,
+        _$ChannelsUnfavoriteRequestImpl>
+    implements _$$ChannelsUnfavoriteRequestImplCopyWith<$Res> {
+  __$$ChannelsUnfavoriteRequestImplCopyWithImpl(
+      _$ChannelsUnfavoriteRequestImpl _value,
+      $Res Function(_$ChannelsUnfavoriteRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? channelId = null,
+  }) {
+    return _then(_$ChannelsUnfavoriteRequestImpl(
+      channelId: null == channelId
+          ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -82,83 +101,59 @@ class _$ChannelsUnfavoriteRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ChannelsUnfavoriteRequest implements ChannelsUnfavoriteRequest {
-  const _ChannelsUnfavoriteRequest({required this.channelId});
-  factory _ChannelsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
-      _$ChannelsUnfavoriteRequestFromJson(json);
+class _$ChannelsUnfavoriteRequestImpl implements _ChannelsUnfavoriteRequest {
+  const _$ChannelsUnfavoriteRequestImpl({required this.channelId});
+
+  factory _$ChannelsUnfavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChannelsUnfavoriteRequestImplFromJson(json);
 
   @override
   final String channelId;
 
-  /// Create a copy of ChannelsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChannelsUnfavoriteRequestCopyWith<_ChannelsUnfavoriteRequest>
-      get copyWith =>
-          __$ChannelsUnfavoriteRequestCopyWithImpl<_ChannelsUnfavoriteRequest>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChannelsUnfavoriteRequestToJson(
-      this,
-    );
+  String toString() {
+    return 'ChannelsUnfavoriteRequest(channelId: $channelId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChannelsUnfavoriteRequest &&
+            other is _$ChannelsUnfavoriteRequestImpl &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, channelId);
 
-  @override
-  String toString() {
-    return 'ChannelsUnfavoriteRequest(channelId: $channelId)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$ChannelsUnfavoriteRequestCopyWith<$Res>
-    implements $ChannelsUnfavoriteRequestCopyWith<$Res> {
-  factory _$ChannelsUnfavoriteRequestCopyWith(_ChannelsUnfavoriteRequest value,
-          $Res Function(_ChannelsUnfavoriteRequest) _then) =
-      __$ChannelsUnfavoriteRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String channelId});
-}
-
-/// @nodoc
-class __$ChannelsUnfavoriteRequestCopyWithImpl<$Res>
-    implements _$ChannelsUnfavoriteRequestCopyWith<$Res> {
-  __$ChannelsUnfavoriteRequestCopyWithImpl(this._self, this._then);
-
-  final _ChannelsUnfavoriteRequest _self;
-  final $Res Function(_ChannelsUnfavoriteRequest) _then;
-
-  /// Create a copy of ChannelsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  $Res call({
-    Object? channelId = null,
-  }) {
-    return _then(_ChannelsUnfavoriteRequest(
-      channelId: null == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  _$$ChannelsUnfavoriteRequestImplCopyWith<_$ChannelsUnfavoriteRequestImpl>
+      get copyWith => __$$ChannelsUnfavoriteRequestImplCopyWithImpl<
+          _$ChannelsUnfavoriteRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChannelsUnfavoriteRequestImplToJson(
+      this,
+    );
   }
 }
 
-// dart format on
+abstract class _ChannelsUnfavoriteRequest implements ChannelsUnfavoriteRequest {
+  const factory _ChannelsUnfavoriteRequest({required final String channelId}) =
+      _$ChannelsUnfavoriteRequestImpl;
+
+  factory _ChannelsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =
+      _$ChannelsUnfavoriteRequestImpl.fromJson;
+
+  @override
+  String get channelId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChannelsUnfavoriteRequestImplCopyWith<_$ChannelsUnfavoriteRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
