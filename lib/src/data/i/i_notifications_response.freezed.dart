@@ -40,6 +40,9 @@ mixin _$INotificationsResponse {
   UserLite? get user => throw _privateConstructorUsedError;
   Note? get note => throw _privateConstructorUsedError;
   RolesListResponse? get role => throw _privateConstructorUsedError;
+  List<INotificationsReaction>? get reactions =>
+      throw _privateConstructorUsedError;
+  List<UserLite>? get users => throw _privateConstructorUsedError;
   UserExportableEntities? get exportedEntity =>
       throw _privateConstructorUsedError;
   String? get fileId => throw _privateConstructorUsedError;
@@ -75,6 +78,8 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       UserLite? user,
       Note? note,
       RolesListResponse? role,
+      List<INotificationsReaction>? reactions,
+      List<UserLite>? users,
       UserExportableEntities? exportedEntity,
       String? fileId,
       String? message});
@@ -114,6 +119,8 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     Object? user = freezed,
     Object? note = freezed,
     Object? role = freezed,
+    Object? reactions = freezed,
+    Object? users = freezed,
     Object? exportedEntity = freezed,
     Object? fileId = freezed,
     Object? message = freezed,
@@ -183,6 +190,14 @@ class _$INotificationsResponseCopyWithImpl<$Res,
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as RolesListResponse?,
+      reactions: freezed == reactions
+          ? _value.reactions
+          : reactions // ignore: cast_nullable_to_non_nullable
+              as List<INotificationsReaction>?,
+      users: freezed == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserLite>?,
       exportedEntity: freezed == exportedEntity
           ? _value.exportedEntity
           : exportedEntity // ignore: cast_nullable_to_non_nullable
@@ -262,6 +277,8 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       UserLite? user,
       Note? note,
       RolesListResponse? role,
+      List<INotificationsReaction>? reactions,
+      List<UserLite>? users,
       UserExportableEntities? exportedEntity,
       String? fileId,
       String? message});
@@ -303,6 +320,8 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? note = freezed,
     Object? role = freezed,
+    Object? reactions = freezed,
+    Object? users = freezed,
     Object? exportedEntity = freezed,
     Object? fileId = freezed,
     Object? message = freezed,
@@ -372,6 +391,14 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as RolesListResponse?,
+      reactions: freezed == reactions
+          ? _value._reactions
+          : reactions // ignore: cast_nullable_to_non_nullable
+              as List<INotificationsReaction>?,
+      users: freezed == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserLite>?,
       exportedEntity: freezed == exportedEntity
           ? _value.exportedEntity
           : exportedEntity // ignore: cast_nullable_to_non_nullable
@@ -408,9 +435,13 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       this.user,
       this.note,
       this.role,
+      final List<INotificationsReaction>? reactions,
+      final List<UserLite>? users,
       this.exportedEntity,
       this.fileId,
-      this.message});
+      this.message})
+      : _reactions = reactions,
+        _users = users;
 
   factory _$INotificationsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$INotificationsResponseImplFromJson(json);
@@ -450,6 +481,26 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   final Note? note;
   @override
   final RolesListResponse? role;
+  final List<INotificationsReaction>? _reactions;
+  @override
+  List<INotificationsReaction>? get reactions {
+    final value = _reactions;
+    if (value == null) return null;
+    if (_reactions is EqualUnmodifiableListView) return _reactions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<UserLite>? _users;
+  @override
+  List<UserLite>? get users {
+    final value = _users;
+    if (value == null) return null;
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final UserExportableEntities? exportedEntity;
   @override
@@ -459,7 +510,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
 
   @override
   String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role, reactions: $reactions, users: $users, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
   }
 
   @override
@@ -488,6 +539,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
             (identical(other.user, user) || other.user == user) &&
             (identical(other.note, note) || other.note == note) &&
             (identical(other.role, role) || other.role == role) &&
+            const DeepCollectionEquality()
+                .equals(other._reactions, _reactions) &&
+            const DeepCollectionEquality().equals(other._users, _users) &&
             (identical(other.exportedEntity, exportedEntity) ||
                 other.exportedEntity == exportedEntity) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
@@ -514,6 +568,8 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
         user,
         note,
         role,
+        const DeepCollectionEquality().hash(_reactions),
+        const DeepCollectionEquality().hash(_users),
         exportedEntity,
         fileId,
         message
@@ -553,6 +609,8 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       final UserLite? user,
       final Note? note,
       final RolesListResponse? role,
+      final List<INotificationsReaction>? reactions,
+      final List<UserLite>? users,
       final UserExportableEntities? exportedEntity,
       final String? fileId,
       final String? message}) = _$INotificationsResponseImpl;
@@ -596,6 +654,10 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @override
   RolesListResponse? get role;
   @override
+  List<INotificationsReaction>? get reactions;
+  @override
+  List<UserLite>? get users;
+  @override
   UserExportableEntities? get exportedEntity;
   @override
   String? get fileId;
@@ -604,5 +666,180 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @override
   @JsonKey(ignore: true)
   _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+INotificationsReaction _$INotificationsReactionFromJson(
+    Map<String, dynamic> json) {
+  return _INotificationsReaction.fromJson(json);
+}
+
+/// @nodoc
+mixin _$INotificationsReaction {
+  UserLite get user => throw _privateConstructorUsedError;
+  String get reaction => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $INotificationsReactionCopyWith<INotificationsReaction> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $INotificationsReactionCopyWith<$Res> {
+  factory $INotificationsReactionCopyWith(INotificationsReaction value,
+          $Res Function(INotificationsReaction) then) =
+      _$INotificationsReactionCopyWithImpl<$Res, INotificationsReaction>;
+  @useResult
+  $Res call({UserLite user, String reaction});
+
+  $UserLiteCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$INotificationsReactionCopyWithImpl<$Res,
+        $Val extends INotificationsReaction>
+    implements $INotificationsReactionCopyWith<$Res> {
+  _$INotificationsReactionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? reaction = null,
+  }) {
+    return _then(_value.copyWith(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+      reaction: null == reaction
+          ? _value.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res> get user {
+    return $UserLiteCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$INotificationsReactionImplCopyWith<$Res>
+    implements $INotificationsReactionCopyWith<$Res> {
+  factory _$$INotificationsReactionImplCopyWith(
+          _$INotificationsReactionImpl value,
+          $Res Function(_$INotificationsReactionImpl) then) =
+      __$$INotificationsReactionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserLite user, String reaction});
+
+  @override
+  $UserLiteCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$INotificationsReactionImplCopyWithImpl<$Res>
+    extends _$INotificationsReactionCopyWithImpl<$Res,
+        _$INotificationsReactionImpl>
+    implements _$$INotificationsReactionImplCopyWith<$Res> {
+  __$$INotificationsReactionImplCopyWithImpl(
+      _$INotificationsReactionImpl _value,
+      $Res Function(_$INotificationsReactionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? reaction = null,
+  }) {
+    return _then(_$INotificationsReactionImpl(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+      reaction: null == reaction
+          ? _value.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$INotificationsReactionImpl implements _INotificationsReaction {
+  const _$INotificationsReactionImpl(
+      {required this.user, required this.reaction});
+
+  factory _$INotificationsReactionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$INotificationsReactionImplFromJson(json);
+
+  @override
+  final UserLite user;
+  @override
+  final String reaction;
+
+  @override
+  String toString() {
+    return 'INotificationsReaction(user: $user, reaction: $reaction)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$INotificationsReactionImpl &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, user, reaction);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$INotificationsReactionImplCopyWith<_$INotificationsReactionImpl>
+      get copyWith => __$$INotificationsReactionImplCopyWithImpl<
+          _$INotificationsReactionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$INotificationsReactionImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _INotificationsReaction implements INotificationsReaction {
+  const factory _INotificationsReaction(
+      {required final UserLite user,
+      required final String reaction}) = _$INotificationsReactionImpl;
+
+  factory _INotificationsReaction.fromJson(Map<String, dynamic> json) =
+      _$INotificationsReactionImpl.fromJson;
+
+  @override
+  UserLite get user;
+  @override
+  String get reaction;
+  @override
+  @JsonKey(ignore: true)
+  _$$INotificationsReactionImplCopyWith<_$INotificationsReactionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

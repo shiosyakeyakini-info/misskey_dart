@@ -119,6 +119,7 @@ export 'src/data/i/gallery/i_gallery_likes_response.dart';
 export 'src/data/i/gallery/i_gallery_posts_request.dart';
 export 'src/data/i/i_favorites_request.dart';
 export 'src/data/i/i_favorites_response.dart';
+export 'src/data/i/i_notifications_grouped_request.dart';
 export 'src/data/i/i_notifications_request.dart';
 export 'src/data/i/i_notifications_response.dart';
 export 'src/data/i/i_page_likes_request.dart';
