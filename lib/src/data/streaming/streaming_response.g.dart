@@ -652,8 +652,7 @@ _$DriveFileCreatedChannelEventImpl _$$DriveFileCreatedChannelEventImplFromJson(
         Map<String, dynamic> json) =>
     _$DriveFileCreatedChannelEventImpl(
       id: json['id'] as String,
-      driveFileCreated:
-          DriveFile.fromJson(json['driveFileCreated'] as Map<String, dynamic>),
+      body: DriveFile.fromJson(json['body'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
@@ -661,7 +660,7 @@ Map<String, dynamic> _$$DriveFileCreatedChannelEventImplToJson(
         _$DriveFileCreatedChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'driveFileCreated': instance.driveFileCreated.toJson(),
+      'body': instance.body.toJson(),
       'type': instance.$type,
     };
 

@@ -524,7 +524,11 @@ void main() async {
           final id = DateTime.now().toIso8601String();
           final listener = controller.mainStream(id: id).listen((event) {
             final body = event.body;
-            if (body is ReadAllAnnouncementsChannelEvent) completer.complete();
+            if (body is ReadAllAnnouncementsChannelEvent) {
+              if (!completer.isCompleted) {
+                completer.complete();
+              }
+            }
           });
           await Future.wait(
             announcements.map((announcement) {
@@ -536,6 +540,23 @@ void main() async {
               return Future.value();
             }),
           );
+          await completer.future;
+          await (controller.removeChannel(id), listener.cancel()).wait;
+        });
+
+        test("driveFileCreated", () async {
+          final completer = Completer<DriveFile>();
+          final client = userClient;
+
+          final controller = await client.streamingService.stream();
+          final id = DateTime.now().toIso8601String();
+          final listener = controller.mainStream(id: id).listen((event) {
+            final body = event.body;
+            if (body is DriveFileCreatedChannelEvent) {
+              completer.complete(body.body);
+            }
+          });
+          await client.createDriveFile();
           await completer.future;
           await (controller.removeChannel(id), listener.cancel()).wait;
         });
