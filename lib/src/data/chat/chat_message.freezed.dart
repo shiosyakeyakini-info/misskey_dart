@@ -23,14 +23,13 @@ mixin _$ChatMessage {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   String get fromUserId => throw _privateConstructorUsedError;
   User get fromUser => throw _privateConstructorUsedError;
   String? get toUserId => throw _privateConstructorUsedError;
   User? get toUser => throw _privateConstructorUsedError;
   String? get toRoomId => throw _privateConstructorUsedError;
-  ChatRoom get toRoom => throw _privateConstructorUsedError;
+  ChatRoom? get toRoom => throw _privateConstructorUsedError;
   List<ChatMessageReaction> get reactions => throw _privateConstructorUsedError;
 
   /// Serializes this ChatMessage to a JSON map.
@@ -52,17 +51,16 @@ abstract class $ChatMessageCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String userId,
       String text,
       String fromUserId,
       User fromUser,
       String? toUserId,
       User? toUser,
       String? toRoomId,
-      ChatRoom toRoom,
+      ChatRoom? toRoom,
       List<ChatMessageReaction> reactions});
 
-  $ChatRoomCopyWith<$Res> get toRoom;
+  $ChatRoomCopyWith<$Res>? get toRoom;
 }
 
 /// @nodoc
@@ -82,14 +80,13 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? userId = null,
     Object? text = null,
     Object? fromUserId = null,
     Object? fromUser = null,
     Object? toUserId = freezed,
     Object? toUser = freezed,
     Object? toRoomId = freezed,
-    Object? toRoom = null,
+    Object? toRoom = freezed,
     Object? reactions = null,
   }) {
     return _then(_value.copyWith(
@@ -101,10 +98,6 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -129,10 +122,10 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
           ? _value.toRoomId
           : toRoomId // ignore: cast_nullable_to_non_nullable
               as String?,
-      toRoom: null == toRoom
+      toRoom: freezed == toRoom
           ? _value.toRoom
           : toRoom // ignore: cast_nullable_to_non_nullable
-              as ChatRoom,
+              as ChatRoom?,
       reactions: null == reactions
           ? _value.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
@@ -144,8 +137,12 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ChatRoomCopyWith<$Res> get toRoom {
-    return $ChatRoomCopyWith<$Res>(_value.toRoom, (value) {
+  $ChatRoomCopyWith<$Res>? get toRoom {
+    if (_value.toRoom == null) {
+      return null;
+    }
+
+    return $ChatRoomCopyWith<$Res>(_value.toRoom!, (value) {
       return _then(_value.copyWith(toRoom: value) as $Val);
     });
   }
@@ -162,18 +159,17 @@ abstract class _$$ChatMessageImplCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String userId,
       String text,
       String fromUserId,
       User fromUser,
       String? toUserId,
       User? toUser,
       String? toRoomId,
-      ChatRoom toRoom,
+      ChatRoom? toRoom,
       List<ChatMessageReaction> reactions});
 
   @override
-  $ChatRoomCopyWith<$Res> get toRoom;
+  $ChatRoomCopyWith<$Res>? get toRoom;
 }
 
 /// @nodoc
@@ -191,14 +187,13 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? userId = null,
     Object? text = null,
     Object? fromUserId = null,
     Object? fromUser = null,
     Object? toUserId = freezed,
     Object? toUser = freezed,
     Object? toRoomId = freezed,
-    Object? toRoom = null,
+    Object? toRoom = freezed,
     Object? reactions = null,
   }) {
     return _then(_$ChatMessageImpl(
@@ -210,10 +205,6 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -238,10 +229,10 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
           ? _value.toRoomId
           : toRoomId // ignore: cast_nullable_to_non_nullable
               as String?,
-      toRoom: null == toRoom
+      toRoom: freezed == toRoom
           ? _value.toRoom
           : toRoom // ignore: cast_nullable_to_non_nullable
-              as ChatRoom,
+              as ChatRoom?,
       reactions: null == reactions
           ? _value._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
@@ -256,14 +247,13 @@ class _$ChatMessageImpl implements _ChatMessage {
   const _$ChatMessageImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
-      required this.userId,
       required this.text,
       required this.fromUserId,
       required this.fromUser,
-      required this.toUserId,
-      required this.toUser,
-      required this.toRoomId,
-      required this.toRoom,
+      this.toUserId,
+      this.toUser,
+      this.toRoomId,
+      this.toRoom,
       required final List<ChatMessageReaction> reactions})
       : _reactions = reactions;
 
@@ -275,8 +265,6 @@ class _$ChatMessageImpl implements _ChatMessage {
   @override
   @DateTimeConverter()
   final DateTime createdAt;
-  @override
-  final String userId;
   @override
   final String text;
   @override
@@ -290,7 +278,7 @@ class _$ChatMessageImpl implements _ChatMessage {
   @override
   final String? toRoomId;
   @override
-  final ChatRoom toRoom;
+  final ChatRoom? toRoom;
   final List<ChatMessageReaction> _reactions;
   @override
   List<ChatMessageReaction> get reactions {
@@ -301,7 +289,7 @@ class _$ChatMessageImpl implements _ChatMessage {
 
   @override
   String toString() {
-    return 'ChatMessage(id: $id, createdAt: $createdAt, userId: $userId, text: $text, fromUserId: $fromUserId, fromUser: $fromUser, toUserId: $toUserId, toUser: $toUser, toRoomId: $toRoomId, toRoom: $toRoom, reactions: $reactions)';
+    return 'ChatMessage(id: $id, createdAt: $createdAt, text: $text, fromUserId: $fromUserId, fromUser: $fromUser, toUserId: $toUserId, toUser: $toUser, toRoomId: $toRoomId, toRoom: $toRoom, reactions: $reactions)';
   }
 
   @override
@@ -312,7 +300,6 @@ class _$ChatMessageImpl implements _ChatMessage {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.fromUserId, fromUserId) ||
                 other.fromUserId == fromUserId) &&
@@ -334,7 +321,6 @@ class _$ChatMessageImpl implements _ChatMessage {
       runtimeType,
       id,
       createdAt,
-      userId,
       text,
       fromUserId,
       fromUser,
@@ -364,14 +350,13 @@ abstract class _ChatMessage implements ChatMessage {
   const factory _ChatMessage(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
-      required final String userId,
       required final String text,
       required final String fromUserId,
       required final User fromUser,
-      required final String? toUserId,
-      required final User? toUser,
-      required final String? toRoomId,
-      required final ChatRoom toRoom,
+      final String? toUserId,
+      final User? toUser,
+      final String? toRoomId,
+      final ChatRoom? toRoom,
       required final List<ChatMessageReaction> reactions}) = _$ChatMessageImpl;
 
   factory _ChatMessage.fromJson(Map<String, dynamic> json) =
@@ -382,8 +367,6 @@ abstract class _ChatMessage implements ChatMessage {
   @override
   @DateTimeConverter()
   DateTime get createdAt;
-  @override
-  String get userId;
   @override
   String get text;
   @override
@@ -397,7 +380,7 @@ abstract class _ChatMessage implements ChatMessage {
   @override
   String? get toRoomId;
   @override
-  ChatRoom get toRoom;
+  ChatRoom? get toRoom;
   @override
   List<ChatMessageReaction> get reactions;
 

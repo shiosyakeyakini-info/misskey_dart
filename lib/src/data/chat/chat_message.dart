@@ -10,14 +10,13 @@ class ChatMessage with _$ChatMessage {
   const factory ChatMessage({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    required String userId,
     required String text,
     required String fromUserId,
     required User fromUser,
-    required String? toUserId,
-    required User? toUser,
-    required String? toRoomId,
-    required ChatRoom toRoom,
+    String? toUserId,
+    User? toUser,
+    String? toRoomId,
+    ChatRoom? toRoom,
     required List<ChatMessageReaction> reactions,
   }) = _ChatMessage;
 
