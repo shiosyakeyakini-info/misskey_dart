@@ -105,6 +105,7 @@ export 'src/data/following/requests/following_requests_accept_request.dart';
 export 'src/data/following/requests/following_requests_cancel_request.dart';
 export 'src/data/following/requests/following_requests_list_request.dart';
 export 'src/data/following/requests/following_requests_reject_request.dart';
+export 'src/data/following/requests/following_requests_sent_request.dart';
 export 'src/data/federation/federation_show_instance_request.dart';
 export 'src/data/federation/federation_show_instance_response.dart';
 export 'src/data/federation/federation_users_request.dart';
