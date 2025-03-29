@@ -399,79 +399,95 @@ void main() async {
           await (controller.removeChannel(id), listener.cancel()).wait;
         });
 
-        test("unreadMention", () async {
-          final completer = Completer<String>();
-          final client = userClient;
-          final controller = await client.streamingService.stream();
-          final id = DateTime.now().toIso8601String();
-          final listener = controller.mainStream(id: id).listen((event) {
-            final body = event.body;
-            if (body is UnreadMentionChannelEvent) {
-              completer.complete(body.body);
-            }
-          });
-          await adminClient.notes
-              .create(NotesCreateRequest(text: "@${user.username}"));
-          await completer.future;
-          await (controller.removeChannel(id), listener.cancel()).wait;
-        });
+        test(
+          "unreadMention",
+          () async {
+            final completer = Completer<String>();
+            final client = userClient;
+            final controller = await client.streamingService.stream();
+            final id = DateTime.now().toIso8601String();
+            final listener = controller.mainStream(id: id).listen((event) {
+              final body = event.body;
+              if (body is UnreadMentionChannelEvent) {
+                completer.complete(body.body);
+              }
+            });
+            await adminClient.notes
+                .create(NotesCreateRequest(text: "@${user.username}"));
+            await completer.future;
+            await (controller.removeChannel(id), listener.cancel()).wait;
+          },
+          skip: "removed in Misskey 2025.3.2-beta.10",
+        );
 
-        test("readAllUnreadMentions", () async {
-          final completer = Completer<void>();
-          final client = userClient;
+        test(
+          "readAllUnreadMentions",
+          () async {
+            final completer = Completer<void>();
+            final client = userClient;
 
-          final controller = await client.streamingService.stream();
-          final id = DateTime.now().toIso8601String();
-          final listener = controller.mainStream(id: id).listen((event) {
-            final body = event.body;
-            if (body is ReadAllUnreadMentionsChannelEvent) {
-              completer.complete();
-            }
-          });
-          await client.apiService.post("i/read-all-unread-notes", {});
-          await completer.future;
-          await (controller.removeChannel(id), listener.cancel()).wait;
-        });
+            final controller = await client.streamingService.stream();
+            final id = DateTime.now().toIso8601String();
+            final listener = controller.mainStream(id: id).listen((event) {
+              final body = event.body;
+              if (body is ReadAllUnreadMentionsChannelEvent) {
+                completer.complete();
+              }
+            });
+            await client.apiService.post("i/read-all-unread-notes", {});
+            await completer.future;
+            await (controller.removeChannel(id), listener.cancel()).wait;
+          },
+          skip: "removed in Misskey 2025.3.2-beta.10",
+        );
 
-        test("unreadSpecifiedNote", () async {
-          final completer = Completer<String>();
-          final client = userClient;
+        test(
+          "unreadSpecifiedNote",
+          () async {
+            final completer = Completer<String>();
+            final client = userClient;
 
-          final controller = await client.streamingService.stream();
-          final id = DateTime.now().toIso8601String();
-          final listener = controller.mainStream(id: id).listen((event) {
-            final body = event.body;
-            if (body is UnreadSpecifiedNoteChannelEvent) {
-              completer.complete(body.body);
-            }
-          });
-          await adminClient.notes.create(
-            NotesCreateRequest(
-              visibility: NoteVisibility.specified,
-              visibleUserIds: [user.id],
-              text: "specified note",
-            ),
-          );
-          await completer.future;
-          await (controller.removeChannel(id), listener.cancel()).wait;
-        });
+            final controller = await client.streamingService.stream();
+            final id = DateTime.now().toIso8601String();
+            final listener = controller.mainStream(id: id).listen((event) {
+              final body = event.body;
+              if (body is UnreadSpecifiedNoteChannelEvent) {
+                completer.complete(body.body);
+              }
+            });
+            await adminClient.notes.create(
+              NotesCreateRequest(
+                visibility: NoteVisibility.specified,
+                visibleUserIds: [user.id],
+                text: "specified note",
+              ),
+            );
+            await completer.future;
+            await (controller.removeChannel(id), listener.cancel()).wait;
+          },
+          skip: "removed in Misskey 2025.3.2-beta.10",
+        );
 
-        test("readAllUnreadSpecifiedNotes", () async {
-          final completer = Completer<void>();
-          final client = userClient;
+        test(
+          "readAllUnreadSpecifiedNotes",
+          () async {
+            final completer = Completer<void>();
+            final client = userClient;
 
-          final controller = await client.streamingService.stream();
-          final id = DateTime.now().toIso8601String();
-          final listener = controller.mainStream(id: id).listen((event) {
-            final body = event.body;
-            if (body is ReadAllUnreadSpecifiedNotesChannelEvent) {
-              completer.complete();
-            }
-          });
-          await client.apiService.post("i/read-all-unread-notes", {});
-          await completer.future;
-          await (controller.removeChannel(id), listener.cancel()).wait;
-        });
+            final controller = await client.streamingService.stream();
+            final id = DateTime.now().toIso8601String();
+            final listener = controller.mainStream(id: id).listen((event) {
+              final body = event.body;
+              if (body is ReadAllUnreadSpecifiedNotesChannelEvent) {
+                completer.complete();
+              }
+            });
+            await client.apiService.post("i/read-all-unread-notes", {});
+            await completer.future;
+            await (controller.removeChannel(id), listener.cancel()).wait;
+          },
+          skip: "removed in Misskey 2025.3.2-beta.10",
+        );
 
         test("receiveFollowRequest", () async {
           final completer = Completer<UserLite>();
