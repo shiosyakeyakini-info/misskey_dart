@@ -65,6 +65,8 @@ const _$ChannelEnumMap = {
   Channel.drive: 'drive',
   Channel.serverStats: 'serverStats',
   Channel.queueStats: 'queueStats',
+  Channel.chatRoom: 'chatRoom',
+  Channel.chatUser: 'chatUser',
   Channel.admin: 'admin',
   Channel.main: 'main',
 };
