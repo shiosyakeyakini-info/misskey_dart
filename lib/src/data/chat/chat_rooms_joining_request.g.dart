@@ -9,9 +9,9 @@ part of 'chat_rooms_joining_request.dart';
 _$ChatRoomsJoiningRequestImpl _$$ChatRoomsJoiningRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$ChatRoomsJoiningRequestImpl(
-      limit: (json['limit'] as num).toInt(),
-      sinceId: json['sinceId'] as String,
-      untilId: json['untilId'] as String,
+      limit: (json['limit'] as num?)?.toInt(),
+      sinceId: json['sinceId'] as String?,
+      untilId: json['untilId'] as String?,
     );
 
 Map<String, dynamic> _$$ChatRoomsJoiningRequestImplToJson(

@@ -21,9 +21,9 @@ ChatRoomsJoiningRequest _$ChatRoomsJoiningRequestFromJson(
 
 /// @nodoc
 mixin _$ChatRoomsJoiningRequest {
-  int get limit => throw _privateConstructorUsedError;
-  String get sinceId => throw _privateConstructorUsedError;
-  String get untilId => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  String? get sinceId => throw _privateConstructorUsedError;
+  String? get untilId => throw _privateConstructorUsedError;
 
   /// Serializes this ChatRoomsJoiningRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $ChatRoomsJoiningRequestCopyWith<$Res> {
           $Res Function(ChatRoomsJoiningRequest) then) =
       _$ChatRoomsJoiningRequestCopyWithImpl<$Res, ChatRoomsJoiningRequest>;
   @useResult
-  $Res call({int limit, String sinceId, String untilId});
+  $Res call({int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
@@ -60,23 +60,23 @@ class _$ChatRoomsJoiningRequestCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? limit = null,
-    Object? sinceId = null,
-    Object? untilId = null,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
   }) {
     return _then(_value.copyWith(
-      limit: null == limit
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      sinceId: null == sinceId
+              as int?,
+      sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
-              as String,
-      untilId: null == untilId
+              as String?,
+      untilId: freezed == untilId
           ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -90,7 +90,7 @@ abstract class _$$ChatRoomsJoiningRequestImplCopyWith<$Res>
       __$$ChatRoomsJoiningRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int limit, String sinceId, String untilId});
+  $Res call({int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
@@ -108,23 +108,23 @@ class __$$ChatRoomsJoiningRequestImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? limit = null,
-    Object? sinceId = null,
-    Object? untilId = null,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
   }) {
     return _then(_$ChatRoomsJoiningRequestImpl(
-      limit: null == limit
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      sinceId: null == sinceId
+              as int?,
+      sinceId: freezed == sinceId
           ? _value.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
-              as String,
-      untilId: null == untilId
+              as String?,
+      untilId: freezed == untilId
           ? _value.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -132,18 +132,17 @@ class __$$ChatRoomsJoiningRequestImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ChatRoomsJoiningRequestImpl implements _ChatRoomsJoiningRequest {
-  const _$ChatRoomsJoiningRequestImpl(
-      {required this.limit, required this.sinceId, required this.untilId});
+  const _$ChatRoomsJoiningRequestImpl({this.limit, this.sinceId, this.untilId});
 
   factory _$ChatRoomsJoiningRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChatRoomsJoiningRequestImplFromJson(json);
 
   @override
-  final int limit;
+  final int? limit;
   @override
-  final String sinceId;
+  final String? sinceId;
   @override
-  final String untilId;
+  final String? untilId;
 
   @override
   String toString() {
@@ -183,19 +182,19 @@ class _$ChatRoomsJoiningRequestImpl implements _ChatRoomsJoiningRequest {
 
 abstract class _ChatRoomsJoiningRequest implements ChatRoomsJoiningRequest {
   const factory _ChatRoomsJoiningRequest(
-      {required final int limit,
-      required final String sinceId,
-      required final String untilId}) = _$ChatRoomsJoiningRequestImpl;
+      {final int? limit,
+      final String? sinceId,
+      final String? untilId}) = _$ChatRoomsJoiningRequestImpl;
 
   factory _ChatRoomsJoiningRequest.fromJson(Map<String, dynamic> json) =
       _$ChatRoomsJoiningRequestImpl.fromJson;
 
   @override
-  int get limit;
+  int? get limit;
   @override
-  String get sinceId;
+  String? get sinceId;
   @override
-  String get untilId;
+  String? get untilId;
 
   /// Create a copy of ChatRoomsJoiningRequest
   /// with the given fields replaced by the non-null parameter values.
