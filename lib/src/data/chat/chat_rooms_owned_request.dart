@@ -6,9 +6,9 @@ part 'chat_rooms_owned_request.g.dart';
 @freezed
 class ChatRoomsOwnedRequest with _$ChatRoomsOwnedRequest {
   const factory ChatRoomsOwnedRequest({
-    required int? limit,
-    required String? sinceId,
-    required String? untilId,
+    int? limit,
+    String? sinceId,
+    String? untilId,
   }) = _ChatRoomsOwnedRequest;
 
   factory ChatRoomsOwnedRequest.fromJson(Map<String, dynamic> json) =>

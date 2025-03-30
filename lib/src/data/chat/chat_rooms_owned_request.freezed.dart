@@ -131,8 +131,7 @@ class __$$ChatRoomsOwnedRequestImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ChatRoomsOwnedRequestImpl implements _ChatRoomsOwnedRequest {
-  const _$ChatRoomsOwnedRequestImpl(
-      {required this.limit, required this.sinceId, required this.untilId});
+  const _$ChatRoomsOwnedRequestImpl({this.limit, this.sinceId, this.untilId});
 
   factory _$ChatRoomsOwnedRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChatRoomsOwnedRequestImplFromJson(json);
@@ -182,9 +181,9 @@ class _$ChatRoomsOwnedRequestImpl implements _ChatRoomsOwnedRequest {
 
 abstract class _ChatRoomsOwnedRequest implements ChatRoomsOwnedRequest {
   const factory _ChatRoomsOwnedRequest(
-      {required final int? limit,
-      required final String? sinceId,
-      required final String? untilId}) = _$ChatRoomsOwnedRequestImpl;
+      {final int? limit,
+      final String? sinceId,
+      final String? untilId}) = _$ChatRoomsOwnedRequestImpl;
 
   factory _ChatRoomsOwnedRequest.fromJson(Map<String, dynamic> json) =
       _$ChatRoomsOwnedRequestImpl.fromJson;
