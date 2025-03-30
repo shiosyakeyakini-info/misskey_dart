@@ -11,7 +11,7 @@ _$ChatMessageImpl _$$ChatMessageImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
-      text: json['text'] as String,
+      text: json['text'] as String?,
       fromUserId: json['fromUserId'] as String,
       fromUser: User.fromJson(json['fromUser'] as Map<String, dynamic>),
       toUserId: json['toUserId'] as String?,

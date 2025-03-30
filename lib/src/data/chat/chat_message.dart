@@ -10,7 +10,7 @@ class ChatMessage with _$ChatMessage {
   const factory ChatMessage({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    required String text,
+    String? text,
     required String fromUserId,
     required User fromUser,
     String? toUserId,
