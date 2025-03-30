@@ -1,4 +1,6 @@
 import 'package:misskey_dart/misskey_dart.dart';
+import 'package:misskey_dart/src/data/streaming/chat_room_parameter.dart';
+import 'package:misskey_dart/src/data/streaming/chat_user_parameter.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
 
 abstract class StreamingController {
@@ -75,6 +77,18 @@ abstract class StreamingController {
   /// ホームタイムラインに接続します。
   Stream<StreamingResponse> homeTimelineStream({
     required HomeTimelineParameter parameter,
+    required String id,
+  });
+
+  /// チャット（ユーザー）のストリームに接続します。
+  Stream<StreamingResponse> chatUserStream({
+    required ChatUserParameter parameter,
+    required String id,
+  });
+
+  /// チャット（ルーム）のストリームに接続します。
+  Stream<StreamingResponse> chatRoomStream({
+    required ChatRoomParameter parameter,
     required String id,
   });
 }

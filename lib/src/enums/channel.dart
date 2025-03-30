@@ -37,6 +37,12 @@ enum Channel {
   /// ジョブキュー統計情報（inbox, outbox）
   queueStats,
 
+  /// チャット（ルーム）
+  chatRoom,
+
+  /// チャット（一対一）
+  chatUser,
+
   /// 管理者用のなにか？
   admin,
   main
