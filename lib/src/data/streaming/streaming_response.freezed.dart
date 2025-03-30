@@ -12,7 +12,7 @@ part of 'streaming_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StreamingResponse _$StreamingResponseFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
@@ -113,6 +113,8 @@ mixin _$StreamingResponse {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this StreamingResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -132,6 +134,9 @@ class _$StreamingResponseCopyWithImpl<$Res, $Val extends StreamingResponse>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -156,6 +161,8 @@ class __$$StreamingChannelResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -169,6 +176,8 @@ class __$$StreamingChannelResponseImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ChannelStreamEventCopyWith<$Res> get body {
@@ -207,11 +216,13 @@ class _$StreamingChannelResponseImpl implements StreamingChannelResponse {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelResponseImplCopyWith<_$StreamingChannelResponseImpl>
@@ -336,7 +347,10 @@ abstract class StreamingChannelResponse implements StreamingResponse {
 
   @override
   ChannelStreamEvent get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelResponseImplCopyWith<_$StreamingChannelResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -363,6 +377,8 @@ class __$$StreamingChannelNoteUpdatedResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelNoteUpdatedResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -376,6 +392,8 @@ class __$$StreamingChannelNoteUpdatedResponseImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteUpdateStreamEventCopyWith<$Res> get body {
@@ -416,11 +434,13 @@ class _$StreamingChannelNoteUpdatedResponseImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelNoteUpdatedResponseImplCopyWith<
@@ -548,7 +568,10 @@ abstract class StreamingChannelNoteUpdatedResponse
 
   @override
   NoteUpdateStreamEvent get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelNoteUpdatedResponseImplCopyWith<
           _$StreamingChannelNoteUpdatedResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -576,6 +599,8 @@ class __$$StreamingChannelEmojiAddedResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelEmojiAddedResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -589,6 +614,8 @@ class __$$StreamingChannelEmojiAddedResponseImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmojiAddedStreamEventCopyWith<$Res> get body {
@@ -629,11 +656,13 @@ class _$StreamingChannelEmojiAddedResponseImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelEmojiAddedResponseImplCopyWith<
@@ -760,7 +789,10 @@ abstract class StreamingChannelEmojiAddedResponse implements StreamingResponse {
 
   @override
   EmojiAddedStreamEvent get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelEmojiAddedResponseImplCopyWith<
           _$StreamingChannelEmojiAddedResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -788,6 +820,8 @@ class __$$StreamingChannelEmojiUpdatedResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelEmojiUpdatedResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -801,6 +835,8 @@ class __$$StreamingChannelEmojiUpdatedResponseImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmojiUpdatedStreamEventCopyWith<$Res> get body {
@@ -841,11 +877,13 @@ class _$StreamingChannelEmojiUpdatedResponseImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelEmojiUpdatedResponseImplCopyWith<
@@ -973,7 +1011,10 @@ abstract class StreamingChannelEmojiUpdatedResponse
 
   @override
   EmojiUpdatedStreamEvent get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelEmojiUpdatedResponseImplCopyWith<
           _$StreamingChannelEmojiUpdatedResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1001,6 +1042,8 @@ class __$$StreamingChannelEmojiDeletedResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelEmojiDeletedResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1014,6 +1057,8 @@ class __$$StreamingChannelEmojiDeletedResponseImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmojiDeletedStreamEventCopyWith<$Res> get body {
@@ -1054,11 +1099,13 @@ class _$StreamingChannelEmojiDeletedResponseImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelEmojiDeletedResponseImplCopyWith<
@@ -1186,7 +1233,10 @@ abstract class StreamingChannelEmojiDeletedResponse
 
   @override
   EmojiDeletedStreamEvent get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelEmojiDeletedResponseImplCopyWith<
           _$StreamingChannelEmojiDeletedResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1217,6 +1267,8 @@ class __$$StreamingChannelAnnouncementCreatedResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelAnnouncementCreatedResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1230,6 +1282,8 @@ class __$$StreamingChannelAnnouncementCreatedResponseImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AnnouncementCreatedStreamEventCopyWith<$Res> get body {
@@ -1270,11 +1324,13 @@ class _$StreamingChannelAnnouncementCreatedResponseImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelAnnouncementCreatedResponseImplCopyWith<
@@ -1404,7 +1460,10 @@ abstract class StreamingChannelAnnouncementCreatedResponse
 
   @override
   AnnouncementCreatedStreamEvent get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelAnnouncementCreatedResponseImplCopyWith<
           _$StreamingChannelAnnouncementCreatedResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1430,6 +1489,8 @@ class __$$StreamingChannelUnknownResponseImplCopyWithImpl<$Res>
       $Res Function(_$StreamingChannelUnknownResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1472,12 +1533,14 @@ class _$StreamingChannelUnknownResponseImpl
             const DeepCollectionEquality().equals(other.body, body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(body));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingChannelUnknownResponseImplCopyWith<
@@ -1602,7 +1665,10 @@ abstract class StreamingChannelUnknownResponse implements StreamingResponse {
 
   @override
   Object get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingChannelUnknownResponseImplCopyWith<
           _$StreamingChannelUnknownResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1617,8 +1683,12 @@ EmojiAddedStreamEvent _$EmojiAddedStreamEventFromJson(
 mixin _$EmojiAddedStreamEvent {
   Emoji get emoji => throw _privateConstructorUsedError;
 
+  /// Serializes this EmojiAddedStreamEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EmojiAddedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmojiAddedStreamEventCopyWith<EmojiAddedStreamEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1645,6 +1715,8 @@ class _$EmojiAddedStreamEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmojiAddedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1658,6 +1730,8 @@ class _$EmojiAddedStreamEventCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of EmojiAddedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmojiCopyWith<$Res> get emoji {
@@ -1691,6 +1765,8 @@ class __$$EmojiAddedStreamEventImplCopyWithImpl<$Res>
       $Res Function(_$EmojiAddedStreamEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmojiAddedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1729,11 +1805,13 @@ class _$EmojiAddedStreamEventImpl implements _EmojiAddedStreamEvent {
             (identical(other.emoji, emoji) || other.emoji == emoji));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, emoji);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmojiAddedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmojiAddedStreamEventImplCopyWith<_$EmojiAddedStreamEventImpl>
@@ -1757,8 +1835,11 @@ abstract class _EmojiAddedStreamEvent implements EmojiAddedStreamEvent {
 
   @override
   Emoji get emoji;
+
+  /// Create a copy of EmojiAddedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmojiAddedStreamEventImplCopyWith<_$EmojiAddedStreamEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1772,8 +1853,12 @@ EmojiUpdatedStreamEvent _$EmojiUpdatedStreamEventFromJson(
 mixin _$EmojiUpdatedStreamEvent {
   List<Emoji> get emojis => throw _privateConstructorUsedError;
 
+  /// Serializes this EmojiUpdatedStreamEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EmojiUpdatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmojiUpdatedStreamEventCopyWith<EmojiUpdatedStreamEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1798,6 +1883,8 @@ class _$EmojiUpdatedStreamEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmojiUpdatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1834,6 +1921,8 @@ class __$$EmojiUpdatedStreamEventImplCopyWithImpl<$Res>
       $Res Function(_$EmojiUpdatedStreamEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmojiUpdatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1878,12 +1967,14 @@ class _$EmojiUpdatedStreamEventImpl implements _EmojiUpdatedStreamEvent {
             const DeepCollectionEquality().equals(other._emojis, _emojis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_emojis));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmojiUpdatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmojiUpdatedStreamEventImplCopyWith<_$EmojiUpdatedStreamEventImpl>
@@ -1907,8 +1998,11 @@ abstract class _EmojiUpdatedStreamEvent implements EmojiUpdatedStreamEvent {
 
   @override
   List<Emoji> get emojis;
+
+  /// Create a copy of EmojiUpdatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmojiUpdatedStreamEventImplCopyWith<_$EmojiUpdatedStreamEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1922,8 +2016,12 @@ EmojiDeletedStreamEvent _$EmojiDeletedStreamEventFromJson(
 mixin _$EmojiDeletedStreamEvent {
   List<Emoji> get emojis => throw _privateConstructorUsedError;
 
+  /// Serializes this EmojiDeletedStreamEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EmojiDeletedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmojiDeletedStreamEventCopyWith<EmojiDeletedStreamEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1948,6 +2046,8 @@ class _$EmojiDeletedStreamEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmojiDeletedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1984,6 +2084,8 @@ class __$$EmojiDeletedStreamEventImplCopyWithImpl<$Res>
       $Res Function(_$EmojiDeletedStreamEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmojiDeletedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2028,12 +2130,14 @@ class _$EmojiDeletedStreamEventImpl implements _EmojiDeletedStreamEvent {
             const DeepCollectionEquality().equals(other._emojis, _emojis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_emojis));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmojiDeletedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmojiDeletedStreamEventImplCopyWith<_$EmojiDeletedStreamEventImpl>
@@ -2057,8 +2161,11 @@ abstract class _EmojiDeletedStreamEvent implements EmojiDeletedStreamEvent {
 
   @override
   List<Emoji> get emojis;
+
+  /// Create a copy of EmojiDeletedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmojiDeletedStreamEventImplCopyWith<_$EmojiDeletedStreamEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2072,8 +2179,12 @@ AnnouncementCreatedStreamEvent _$AnnouncementCreatedStreamEventFromJson(
 mixin _$AnnouncementCreatedStreamEvent {
   AnnouncementsResponse get announcement => throw _privateConstructorUsedError;
 
+  /// Serializes this AnnouncementCreatedStreamEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AnnouncementCreatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AnnouncementCreatedStreamEventCopyWith<AnnouncementCreatedStreamEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2102,6 +2213,8 @@ class _$AnnouncementCreatedStreamEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AnnouncementCreatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2115,6 +2228,8 @@ class _$AnnouncementCreatedStreamEventCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of AnnouncementCreatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AnnouncementsResponseCopyWith<$Res> get announcement {
@@ -2149,6 +2264,8 @@ class __$$AnnouncementCreatedStreamEventImplCopyWithImpl<$Res>
       $Res Function(_$AnnouncementCreatedStreamEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AnnouncementCreatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2190,11 +2307,13 @@ class _$AnnouncementCreatedStreamEventImpl
                 other.announcement == announcement));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, announcement);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AnnouncementCreatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AnnouncementCreatedStreamEventImplCopyWith<
@@ -2221,8 +2340,11 @@ abstract class _AnnouncementCreatedStreamEvent
 
   @override
   AnnouncementsResponse get announcement;
+
+  /// Create a copy of AnnouncementCreatedStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AnnouncementCreatedStreamEventImplCopyWith<
           _$AnnouncementCreatedStreamEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2294,6 +2416,8 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
       return ReceiveFollowRequestChannelEvent.fromJson(json);
     case 'announcementCreated':
       return AnnouncementCreatedChannelEvent.fromJson(json);
+    case 'message':
+      return ChatMessageChannelEvent.fromJson(json);
 
     default:
       return FallbackChannelEvent.fromJson(json);
@@ -2347,6 +2471,7 @@ mixin _$ChannelStreamEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2393,6 +2518,7 @@ mixin _$ChannelStreamEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2437,6 +2563,7 @@ mixin _$ChannelStreamEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) =>
@@ -2489,6 +2616,7 @@ mixin _$ChannelStreamEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2534,6 +2662,7 @@ mixin _$ChannelStreamEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2579,12 +2708,18 @@ mixin _$ChannelStreamEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this ChannelStreamEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChannelStreamEventCopyWith<ChannelStreamEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2608,6 +2743,8 @@ class _$ChannelStreamEventCopyWithImpl<$Res, $Val extends ChannelStreamEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2646,6 +2783,8 @@ class __$$NoteChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$NoteChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2669,6 +2808,8 @@ class __$$NoteChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get body {
@@ -2712,11 +2853,13 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, type, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoteChannelEventImplCopyWith<_$NoteChannelEventImpl> get copyWith =>
@@ -2768,6 +2911,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return note(id, type, body);
@@ -2817,6 +2961,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return note?.call(id, type, body);
@@ -2864,6 +3009,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -2922,6 +3068,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return note(this);
@@ -2970,6 +3117,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return note?.call(this);
@@ -3018,6 +3166,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -3049,8 +3198,11 @@ abstract class NoteChannelEvent implements ChannelStreamEvent {
   @ChannelEventTypeJsonConverter()
   ChannelEventType get type;
   Note get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoteChannelEventImplCopyWith<_$NoteChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3074,6 +3226,8 @@ class __$$StatsLogChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$StatsLogChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3134,12 +3288,14 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
             const DeepCollectionEquality().equals(other._body, _body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, const DeepCollectionEquality().hash(_body));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatsLogChannelEventImplCopyWith<_$StatsLogChannelEventImpl>
@@ -3192,6 +3348,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return statsLog(id, body);
@@ -3241,6 +3398,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return statsLog?.call(id, body);
@@ -3288,6 +3446,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -3346,6 +3505,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return statsLog(this);
@@ -3394,6 +3554,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return statsLog?.call(this);
@@ -3442,6 +3603,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -3472,8 +3634,11 @@ abstract class StatsLogChannelEvent implements ChannelStreamEvent {
   String get id;
   @StreamingStatsConverter()
   List<StreamingStats> get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatsLogChannelEventImplCopyWith<_$StatsLogChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3499,6 +3664,8 @@ class __$$StatsChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$StatsChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3517,6 +3684,8 @@ class __$$StatsChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StreamingStatsCopyWith<$Res> get body {
@@ -3561,11 +3730,13 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatsChannelEventImplCopyWith<_$StatsChannelEventImpl> get copyWith =>
@@ -3617,6 +3788,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return stats(id, body);
@@ -3666,6 +3838,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return stats?.call(id, body);
@@ -3713,6 +3886,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -3771,6 +3945,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return stats(this);
@@ -3819,6 +3994,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return stats?.call(this);
@@ -3867,6 +4043,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -3897,8 +4074,11 @@ abstract class StatsChannelEvent implements ChannelStreamEvent {
   String get id;
   @StreamingStatsConverter()
   StreamingStats get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatsChannelEventImplCopyWith<_$StatsChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3925,6 +4105,8 @@ class __$$UserAddedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UserAddedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3943,6 +4125,8 @@ class __$$UserAddedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get body {
@@ -3984,11 +4168,13 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserAddedChannelEventImplCopyWith<_$UserAddedChannelEventImpl>
@@ -4040,6 +4226,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return userAdded(id, body);
@@ -4089,6 +4276,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return userAdded?.call(id, body);
@@ -4136,6 +4324,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -4194,6 +4383,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return userAdded(this);
@@ -4242,6 +4432,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return userAdded?.call(this);
@@ -4290,6 +4481,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -4318,8 +4510,11 @@ abstract class UserAddedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UserLite get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserAddedChannelEventImplCopyWith<_$UserAddedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4348,6 +4543,8 @@ class __$$UserRemovedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UserRemovedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4366,6 +4563,8 @@ class __$$UserRemovedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get body {
@@ -4407,11 +4606,13 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserRemovedChannelEventImplCopyWith<_$UserRemovedChannelEventImpl>
@@ -4463,6 +4664,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return userRemoved(id, body);
@@ -4512,6 +4714,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return userRemoved?.call(id, body);
@@ -4559,6 +4762,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -4617,6 +4821,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return userRemoved(this);
@@ -4665,6 +4870,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return userRemoved?.call(this);
@@ -4713,6 +4919,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -4741,8 +4948,11 @@ abstract class UserRemovedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UserLite get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserRemovedChannelEventImplCopyWith<_$UserRemovedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4771,6 +4981,8 @@ class __$$NotificationChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$NotificationChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4789,6 +5001,8 @@ class __$$NotificationChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $INotificationsResponseCopyWith<$Res> get body {
@@ -4830,11 +5044,13 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotificationChannelEventImplCopyWith<_$NotificationChannelEventImpl>
@@ -4886,6 +5102,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return notification(id, body);
@@ -4935,6 +5152,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return notification?.call(id, body);
@@ -4982,6 +5200,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -5040,6 +5259,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return notification(this);
@@ -5088,6 +5308,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return notification?.call(this);
@@ -5136,6 +5357,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -5165,8 +5387,11 @@ abstract class NotificationChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   INotificationsResponse get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotificationChannelEventImplCopyWith<_$NotificationChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5192,6 +5417,8 @@ class __$$MentionChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$MentionChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5210,6 +5437,8 @@ class __$$MentionChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get body {
@@ -5251,11 +5480,13 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MentionChannelEventImplCopyWith<_$MentionChannelEventImpl> get copyWith =>
@@ -5307,6 +5538,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return mention(id, body);
@@ -5356,6 +5588,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return mention?.call(id, body);
@@ -5403,6 +5636,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -5461,6 +5695,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return mention(this);
@@ -5509,6 +5744,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return mention?.call(this);
@@ -5557,6 +5793,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -5585,8 +5822,11 @@ abstract class MentionChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Note get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MentionChannelEventImplCopyWith<_$MentionChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5612,6 +5852,8 @@ class __$$ReplyChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReplyChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5630,6 +5872,8 @@ class __$$ReplyChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get body {
@@ -5671,11 +5915,13 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReplyChannelEventImplCopyWith<_$ReplyChannelEventImpl> get copyWith =>
@@ -5727,6 +5973,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return reply(id, body);
@@ -5776,6 +6023,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return reply?.call(id, body);
@@ -5823,6 +6071,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -5881,6 +6130,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return reply(this);
@@ -5929,6 +6179,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return reply?.call(this);
@@ -5977,6 +6228,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -6005,8 +6257,11 @@ abstract class ReplyChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Note get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReplyChannelEventImplCopyWith<_$ReplyChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6032,6 +6287,8 @@ class __$$RenoteChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$RenoteChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6050,6 +6307,8 @@ class __$$RenoteChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get body {
@@ -6091,11 +6350,13 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RenoteChannelEventImplCopyWith<_$RenoteChannelEventImpl> get copyWith =>
@@ -6147,6 +6408,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return renote(id, body);
@@ -6196,6 +6458,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return renote?.call(id, body);
@@ -6243,6 +6506,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -6301,6 +6565,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return renote(this);
@@ -6349,6 +6614,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return renote?.call(this);
@@ -6397,6 +6663,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -6425,8 +6692,11 @@ abstract class RenoteChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Note get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RenoteChannelEventImplCopyWith<_$RenoteChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6452,6 +6722,8 @@ class __$$FollowChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$FollowChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6470,6 +6742,8 @@ class __$$FollowChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserDetailedNotMeCopyWith<$Res> get body {
@@ -6511,11 +6785,13 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FollowChannelEventImplCopyWith<_$FollowChannelEventImpl> get copyWith =>
@@ -6567,6 +6843,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return follow(id, body);
@@ -6616,6 +6893,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return follow?.call(id, body);
@@ -6663,6 +6941,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -6721,6 +7000,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return follow(this);
@@ -6769,6 +7049,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return follow?.call(this);
@@ -6817,6 +7098,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -6845,8 +7127,11 @@ abstract class FollowChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UserDetailedNotMe get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FollowChannelEventImplCopyWith<_$FollowChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6872,6 +7157,8 @@ class __$$FollowedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$FollowedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6890,6 +7177,8 @@ class __$$FollowedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get body {
@@ -6931,11 +7220,13 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FollowedChannelEventImplCopyWith<_$FollowedChannelEventImpl>
@@ -6988,6 +7279,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return followed(id, body);
@@ -7037,6 +7329,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return followed?.call(id, body);
@@ -7084,6 +7377,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -7142,6 +7436,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return followed(this);
@@ -7190,6 +7485,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return followed?.call(this);
@@ -7238,6 +7534,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -7266,8 +7563,11 @@ abstract class FollowedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UserLite get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FollowedChannelEventImplCopyWith<_$FollowedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -7293,6 +7593,8 @@ class __$$UnfollowChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UnfollowChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7311,6 +7613,8 @@ class __$$UnfollowChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserDetailedNotMeCopyWith<$Res> get body {
@@ -7352,11 +7656,13 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnfollowChannelEventImplCopyWith<_$UnfollowChannelEventImpl>
@@ -7409,6 +7715,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unfollow(id, body);
@@ -7458,6 +7765,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unfollow?.call(id, body);
@@ -7505,6 +7813,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -7563,6 +7872,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unfollow(this);
@@ -7611,6 +7921,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unfollow?.call(this);
@@ -7659,6 +7970,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -7687,8 +7999,11 @@ abstract class UnfollowChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UserDetailedNotMe get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnfollowChannelEventImplCopyWith<_$UnfollowChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -7715,6 +8030,8 @@ class __$$MeUpdatedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$MeUpdatedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7733,6 +8050,8 @@ class __$$MeUpdatedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MeDetailedCopyWith<$Res> get body {
@@ -7774,11 +8093,13 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MeUpdatedChannelEventImplCopyWith<_$MeUpdatedChannelEventImpl>
@@ -7830,6 +8151,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return meUpdated(id, body);
@@ -7879,6 +8201,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return meUpdated?.call(id, body);
@@ -7926,6 +8249,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -7984,6 +8308,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return meUpdated(this);
@@ -8032,6 +8357,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return meUpdated?.call(this);
@@ -8080,6 +8406,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -8108,8 +8435,11 @@ abstract class MeUpdatedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   MeDetailed get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MeUpdatedChannelEventImplCopyWith<_$MeUpdatedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -8136,6 +8466,8 @@ class __$$PageEventChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$PageEventChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8154,6 +8486,8 @@ class __$$PageEventChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PageEventCopyWith<$Res> get body {
@@ -8195,11 +8529,13 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PageEventChannelEventImplCopyWith<_$PageEventChannelEventImpl>
@@ -8251,6 +8587,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return pageEvent(id, body);
@@ -8300,6 +8637,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return pageEvent?.call(id, body);
@@ -8347,6 +8685,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -8405,6 +8744,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return pageEvent(this);
@@ -8453,6 +8793,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return pageEvent?.call(this);
@@ -8501,6 +8842,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -8529,8 +8871,11 @@ abstract class PageEventChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   PageEvent get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PageEventChannelEventImplCopyWith<_$PageEventChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -8559,6 +8904,8 @@ class __$$UrlUploadFinishedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UrlUploadFinishedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8577,6 +8924,8 @@ class __$$UrlUploadFinishedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UrlUploadFinishedEventCopyWith<$Res> get body {
@@ -8620,11 +8969,13 @@ class _$UrlUploadFinishedChannelEventImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UrlUploadFinishedChannelEventImplCopyWith<
@@ -8677,6 +9028,7 @@ class _$UrlUploadFinishedChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return urlUploadFinished(id, body);
@@ -8726,6 +9078,7 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return urlUploadFinished?.call(id, body);
@@ -8773,6 +9126,7 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -8831,6 +9185,7 @@ class _$UrlUploadFinishedChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return urlUploadFinished(this);
@@ -8879,6 +9234,7 @@ class _$UrlUploadFinishedChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return urlUploadFinished?.call(this);
@@ -8927,6 +9283,7 @@ class _$UrlUploadFinishedChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -8956,8 +9313,11 @@ abstract class UrlUploadFinishedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UrlUploadFinishedEvent get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UrlUploadFinishedChannelEventImplCopyWith<
           _$UrlUploadFinishedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -8985,6 +9345,8 @@ class __$$ReadAllNotificationsChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReadAllNotificationsChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9030,11 +9392,13 @@ class _$ReadAllNotificationsChannelEventImpl
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReadAllNotificationsChannelEventImplCopyWith<
@@ -9087,6 +9451,7 @@ class _$ReadAllNotificationsChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllNotifications(id);
@@ -9136,6 +9501,7 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllNotifications?.call(id);
@@ -9183,6 +9549,7 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -9241,6 +9608,7 @@ class _$ReadAllNotificationsChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllNotifications(this);
@@ -9289,6 +9657,7 @@ class _$ReadAllNotificationsChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllNotifications?.call(this);
@@ -9337,6 +9706,7 @@ class _$ReadAllNotificationsChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -9363,8 +9733,11 @@ abstract class ReadAllNotificationsChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReadAllNotificationsChannelEventImplCopyWith<
           _$ReadAllNotificationsChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -9394,6 +9767,8 @@ class __$$UnreadNotificationChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UnreadNotificationChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9412,6 +9787,8 @@ class __$$UnreadNotificationChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $INotificationsResponseCopyWith<$Res> get body {
@@ -9455,11 +9832,13 @@ class _$UnreadNotificationChannelEventImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnreadNotificationChannelEventImplCopyWith<
@@ -9512,6 +9891,7 @@ class _$UnreadNotificationChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadNotification(id, body);
@@ -9561,6 +9941,7 @@ class _$UnreadNotificationChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadNotification?.call(id, body);
@@ -9608,6 +9989,7 @@ class _$UnreadNotificationChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -9666,6 +10048,7 @@ class _$UnreadNotificationChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadNotification(this);
@@ -9714,6 +10097,7 @@ class _$UnreadNotificationChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadNotification?.call(this);
@@ -9762,6 +10146,7 @@ class _$UnreadNotificationChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -9791,8 +10176,11 @@ abstract class UnreadNotificationChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   INotificationsResponse get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnreadNotificationChannelEventImplCopyWith<
           _$UnreadNotificationChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -9820,6 +10208,8 @@ class __$$UnreadMentionChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UnreadMentionChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9871,11 +10261,13 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnreadMentionChannelEventImplCopyWith<_$UnreadMentionChannelEventImpl>
@@ -9927,6 +10319,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadMention(id, body);
@@ -9976,6 +10369,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadMention?.call(id, body);
@@ -10023,6 +10417,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -10081,6 +10476,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadMention(this);
@@ -10129,6 +10525,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadMention?.call(this);
@@ -10177,6 +10574,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -10205,8 +10603,11 @@ abstract class UnreadMentionChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   String get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnreadMentionChannelEventImplCopyWith<_$UnreadMentionChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -10233,6 +10634,8 @@ class __$$ReadAllUnreadMentionsChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReadAllUnreadMentionsChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10278,11 +10681,13 @@ class _$ReadAllUnreadMentionsChannelEventImpl
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReadAllUnreadMentionsChannelEventImplCopyWith<
@@ -10335,6 +10740,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllUnreadMentions(id);
@@ -10384,6 +10790,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllUnreadMentions?.call(id);
@@ -10431,6 +10838,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -10489,6 +10897,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllUnreadMentions(this);
@@ -10537,6 +10946,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllUnreadMentions?.call(this);
@@ -10585,6 +10995,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -10612,8 +11023,11 @@ abstract class ReadAllUnreadMentionsChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReadAllUnreadMentionsChannelEventImplCopyWith<
           _$ReadAllUnreadMentionsChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -10641,6 +11055,8 @@ class __$$NotificationFlushedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$NotificationFlushedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10686,11 +11102,13 @@ class _$NotificationFlushedChannelEventImpl
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotificationFlushedChannelEventImplCopyWith<
@@ -10743,6 +11161,7 @@ class _$NotificationFlushedChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return notificationFlushed(id);
@@ -10792,6 +11211,7 @@ class _$NotificationFlushedChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return notificationFlushed?.call(id);
@@ -10839,6 +11259,7 @@ class _$NotificationFlushedChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -10897,6 +11318,7 @@ class _$NotificationFlushedChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return notificationFlushed(this);
@@ -10945,6 +11367,7 @@ class _$NotificationFlushedChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return notificationFlushed?.call(this);
@@ -10993,6 +11416,7 @@ class _$NotificationFlushedChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -11019,8 +11443,11 @@ abstract class NotificationFlushedChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotificationFlushedChannelEventImplCopyWith<
           _$NotificationFlushedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -11048,6 +11475,8 @@ class __$$UnreadSpecifiedNoteChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UnreadSpecifiedNoteChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11101,11 +11530,13 @@ class _$UnreadSpecifiedNoteChannelEventImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnreadSpecifiedNoteChannelEventImplCopyWith<
@@ -11158,6 +11589,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadSpecifiedNote(id, body);
@@ -11207,6 +11639,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadSpecifiedNote?.call(id, body);
@@ -11254,6 +11687,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -11312,6 +11746,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadSpecifiedNote(this);
@@ -11360,6 +11795,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadSpecifiedNote?.call(this);
@@ -11408,6 +11844,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -11436,8 +11873,11 @@ abstract class UnreadSpecifiedNoteChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   String get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnreadSpecifiedNoteChannelEventImplCopyWith<
           _$UnreadSpecifiedNoteChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -11465,6 +11905,8 @@ class __$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReadAllUnreadSpecifiedNotesChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11510,11 +11952,13 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith<
@@ -11568,6 +12012,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllUnreadSpecifiedNotes(id);
@@ -11617,6 +12062,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllUnreadSpecifiedNotes?.call(id);
@@ -11664,6 +12110,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -11722,6 +12169,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllUnreadSpecifiedNotes(this);
@@ -11770,6 +12218,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllUnreadSpecifiedNotes?.call(this);
@@ -11818,6 +12267,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -11847,8 +12297,11 @@ abstract class ReadAllUnreadSpecifiedNotesChannelEvent
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReadAllUnreadSpecifiedNotesChannelEventImplCopyWith<
           _$ReadAllUnreadSpecifiedNotesChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -11876,6 +12329,8 @@ class __$$ReadAllAntennasChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReadAllAntennasChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11920,11 +12375,13 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReadAllAntennasChannelEventImplCopyWith<_$ReadAllAntennasChannelEventImpl>
@@ -11976,6 +12433,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllAntennas(id);
@@ -12025,6 +12483,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllAntennas?.call(id);
@@ -12072,6 +12531,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -12130,6 +12590,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllAntennas(this);
@@ -12178,6 +12639,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllAntennas?.call(this);
@@ -12226,6 +12688,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -12252,8 +12715,11 @@ abstract class ReadAllAntennasChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReadAllAntennasChannelEventImplCopyWith<_$ReadAllAntennasChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -12282,6 +12748,8 @@ class __$$UnreadAntennaChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UnreadAntennaChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12300,6 +12768,8 @@ class __$$UnreadAntennaChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AntennaCopyWith<$Res> get body {
@@ -12341,11 +12811,13 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnreadAntennaChannelEventImplCopyWith<_$UnreadAntennaChannelEventImpl>
@@ -12397,6 +12869,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadAntenna(id, body);
@@ -12446,6 +12919,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadAntenna?.call(id, body);
@@ -12493,6 +12967,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -12551,6 +13026,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadAntenna(this);
@@ -12599,6 +13075,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadAntenna?.call(this);
@@ -12647,6 +13124,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -12675,8 +13153,11 @@ abstract class UnreadAntennaChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Antenna get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnreadAntennaChannelEventImplCopyWith<_$UnreadAntennaChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -12703,6 +13184,8 @@ class __$$ReadAllAnnouncementsChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReadAllAnnouncementsChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12748,11 +13231,13 @@ class _$ReadAllAnnouncementsChannelEventImpl
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReadAllAnnouncementsChannelEventImplCopyWith<
@@ -12805,6 +13290,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllAnnouncements(id);
@@ -12854,6 +13340,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllAnnouncements?.call(id);
@@ -12901,6 +13388,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -12959,6 +13447,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllAnnouncements(this);
@@ -13007,6 +13496,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllAnnouncements?.call(this);
@@ -13055,6 +13545,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -13081,8 +13572,11 @@ abstract class ReadAllAnnouncementsChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReadAllAnnouncementsChannelEventImplCopyWith<
           _$ReadAllAnnouncementsChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -13110,6 +13604,8 @@ class __$$MyTokenRegeneratedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$MyTokenRegeneratedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13155,11 +13651,13 @@ class _$MyTokenRegeneratedChannelEventImpl
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MyTokenRegeneratedChannelEventImplCopyWith<
@@ -13212,6 +13710,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return myTokenRegenerated(id);
@@ -13261,6 +13760,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return myTokenRegenerated?.call(id);
@@ -13308,6 +13808,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -13366,6 +13867,7 @@ class _$MyTokenRegeneratedChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return myTokenRegenerated(this);
@@ -13414,6 +13916,7 @@ class _$MyTokenRegeneratedChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return myTokenRegenerated?.call(this);
@@ -13462,6 +13965,7 @@ class _$MyTokenRegeneratedChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -13488,8 +13992,11 @@ abstract class MyTokenRegeneratedChannelEvent implements ChannelStreamEvent {
 
   @override
   String get id;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MyTokenRegeneratedChannelEventImplCopyWith<
           _$MyTokenRegeneratedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -13516,6 +14023,8 @@ class __$$SigninChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$SigninChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13534,6 +14043,8 @@ class __$$SigninChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SigninCopyWith<$Res> get body {
@@ -13575,11 +14086,13 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SigninChannelEventImplCopyWith<_$SigninChannelEventImpl> get copyWith =>
@@ -13631,6 +14144,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return signin(id, body);
@@ -13680,6 +14194,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return signin?.call(id, body);
@@ -13727,6 +14242,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -13785,6 +14301,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return signin(this);
@@ -13833,6 +14350,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return signin?.call(this);
@@ -13881,6 +14399,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -13909,8 +14428,11 @@ abstract class SigninChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Signin get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SigninChannelEventImplCopyWith<_$SigninChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -13939,6 +14461,8 @@ class __$$RegistryUpdatedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$RegistryUpdatedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13957,6 +14481,8 @@ class __$$RegistryUpdatedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RegistryUpdatedCopyWith<$Res> get body {
@@ -13999,11 +14525,13 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RegistryUpdatedChannelEventImplCopyWith<_$RegistryUpdatedChannelEventImpl>
@@ -14055,6 +14583,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return registryUpdated(id, body);
@@ -14104,6 +14633,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return registryUpdated?.call(id, body);
@@ -14151,6 +14681,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -14209,6 +14740,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return registryUpdated(this);
@@ -14257,6 +14789,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return registryUpdated?.call(this);
@@ -14305,6 +14838,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -14333,8 +14867,11 @@ abstract class RegistryUpdatedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   RegistryUpdated get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RegistryUpdatedChannelEventImplCopyWith<_$RegistryUpdatedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -14363,6 +14900,8 @@ class __$$DriveFileCreatedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$DriveFileCreatedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -14381,6 +14920,8 @@ class __$$DriveFileCreatedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DriveFileCopyWith<$Res> get body {
@@ -14424,11 +14965,13 @@ class _$DriveFileCreatedChannelEventImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DriveFileCreatedChannelEventImplCopyWith<
@@ -14481,6 +15024,7 @@ class _$DriveFileCreatedChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return driveFileCreated(id, body);
@@ -14530,6 +15074,7 @@ class _$DriveFileCreatedChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return driveFileCreated?.call(id, body);
@@ -14577,6 +15122,7 @@ class _$DriveFileCreatedChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -14635,6 +15181,7 @@ class _$DriveFileCreatedChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return driveFileCreated(this);
@@ -14683,6 +15230,7 @@ class _$DriveFileCreatedChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return driveFileCreated?.call(this);
@@ -14731,6 +15279,7 @@ class _$DriveFileCreatedChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -14759,8 +15308,11 @@ abstract class DriveFileCreatedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   DriveFile get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DriveFileCreatedChannelEventImplCopyWith<
           _$DriveFileCreatedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -14790,6 +15342,8 @@ class __$$ReadAntennaChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReadAntennaChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -14808,6 +15362,8 @@ class __$$ReadAntennaChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AntennaCopyWith<$Res> get body {
@@ -14849,11 +15405,13 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReadAntennaChannelEventImplCopyWith<_$ReadAntennaChannelEventImpl>
@@ -14905,6 +15463,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAntenna(id, body);
@@ -14954,6 +15513,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAntenna?.call(id, body);
@@ -15001,6 +15561,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -15059,6 +15620,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAntenna(this);
@@ -15107,6 +15669,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAntenna?.call(this);
@@ -15155,6 +15718,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -15183,8 +15747,11 @@ abstract class ReadAntennaChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Antenna get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReadAntennaChannelEventImplCopyWith<_$ReadAntennaChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -15213,6 +15780,8 @@ class __$$ReceiveFollowRequestChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReceiveFollowRequestChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -15231,6 +15800,8 @@ class __$$ReceiveFollowRequestChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get body {
@@ -15274,11 +15845,13 @@ class _$ReceiveFollowRequestChannelEventImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReceiveFollowRequestChannelEventImplCopyWith<
@@ -15331,6 +15904,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return receiveFollowRequest(id, body);
@@ -15380,6 +15954,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return receiveFollowRequest?.call(id, body);
@@ -15427,6 +16002,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -15485,6 +16061,7 @@ class _$ReceiveFollowRequestChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return receiveFollowRequest(this);
@@ -15533,6 +16110,7 @@ class _$ReceiveFollowRequestChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return receiveFollowRequest?.call(this);
@@ -15581,6 +16159,7 @@ class _$ReceiveFollowRequestChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -15609,8 +16188,11 @@ abstract class ReceiveFollowRequestChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   UserLite get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReceiveFollowRequestChannelEventImplCopyWith<
           _$ReceiveFollowRequestChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -15640,6 +16222,8 @@ class __$$AnnouncementCreatedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$AnnouncementCreatedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -15658,6 +16242,8 @@ class __$$AnnouncementCreatedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AnnouncementCreatedStreamEventCopyWith<$Res> get body {
@@ -15701,11 +16287,13 @@ class _$AnnouncementCreatedChannelEventImpl
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AnnouncementCreatedChannelEventImplCopyWith<
@@ -15758,6 +16346,7 @@ class _$AnnouncementCreatedChannelEventImpl
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return announcementCreated(id, body);
@@ -15807,6 +16396,7 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return announcementCreated?.call(id, body);
@@ -15854,6 +16444,7 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -15912,6 +16503,7 @@ class _$AnnouncementCreatedChannelEventImpl
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return announcementCreated(this);
@@ -15960,6 +16552,7 @@ class _$AnnouncementCreatedChannelEventImpl
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return announcementCreated?.call(this);
@@ -16008,6 +16601,7 @@ class _$AnnouncementCreatedChannelEventImpl
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -16037,10 +16631,451 @@ abstract class AnnouncementCreatedChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   AnnouncementCreatedStreamEvent get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AnnouncementCreatedChannelEventImplCopyWith<
           _$AnnouncementCreatedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChatMessageChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ChatMessageChannelEventImplCopyWith(
+          _$ChatMessageChannelEventImpl value,
+          $Res Function(_$ChatMessageChannelEventImpl) then) =
+      __$$ChatMessageChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, ChatMessage body});
+
+  $ChatMessageCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$ChatMessageChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ChatMessageChannelEventImpl>
+    implements _$$ChatMessageChannelEventImplCopyWith<$Res> {
+  __$$ChatMessageChannelEventImplCopyWithImpl(
+      _$ChatMessageChannelEventImpl _value,
+      $Res Function(_$ChatMessageChannelEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$ChatMessageChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatMessage,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatMessageCopyWith<$Res> get body {
+    return $ChatMessageCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
+  const _$ChatMessageChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'message';
+
+  factory _$ChatMessageChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChatMessageChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final ChatMessage body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatMessage(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatMessageChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatMessageChannelEventImplCopyWith<_$ChatMessageChannelEventImpl>
+      get copyWith => __$$ChatMessageChannelEventImplCopyWithImpl<
+          _$ChatMessageChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
+        statsLog,
+    required TResult Function(
+            String id, @StreamingStatsConverter() StreamingStats body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id, PageEvent body) pageEvent,
+    required TResult Function(String id, UrlUploadFinishedEvent body)
+        urlUploadFinished,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, String body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id) notificationFlushed,
+    required TResult Function(String id, String body) unreadSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id) readAllAntennas,
+    required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id) readAllAnnouncements,
+    required TResult Function(String id) myTokenRegenerated,
+    required TResult Function(String id, Signin body) signin,
+    required TResult Function(String id, RegistryUpdated body) registryUpdated,
+    required TResult Function(String id, DriveFile body) driveFileCreated,
+    required TResult Function(String id, Antenna body) readAntenna,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id, AnnouncementCreatedStreamEvent body)
+        announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, Object? body) fallback,
+  }) {
+    return chatMessage(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id, PageEvent body)? pageEvent,
+    TResult? Function(String id, UrlUploadFinishedEvent body)?
+        urlUploadFinished,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, String body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id)? notificationFlushed,
+    TResult? Function(String id, String body)? unreadSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id)? readAllAntennas,
+    TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id)? readAllAnnouncements,
+    TResult? Function(String id)? myTokenRegenerated,
+    TResult? Function(String id, Signin body)? signin,
+    TResult? Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult? Function(String id, DriveFile body)? driveFileCreated,
+    TResult? Function(String id, Antenna body)? readAntenna,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, Object? body)? fallback,
+  }) {
+    return chatMessage?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id, PageEvent body)? pageEvent,
+    TResult Function(String id, UrlUploadFinishedEvent body)? urlUploadFinished,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, String body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id)? notificationFlushed,
+    TResult Function(String id, String body)? unreadSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id)? readAllAntennas,
+    TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id)? readAllAnnouncements,
+    TResult Function(String id)? myTokenRegenerated,
+    TResult Function(String id, Signin body)? signin,
+    TResult Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult Function(String id, DriveFile body)? driveFileCreated,
+    TResult Function(String id, Antenna body)? readAntenna,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, Object? body)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatMessage != null) {
+      return chatMessage(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(PageEventChannelEvent value) pageEvent,
+    required TResult Function(UrlUploadFinishedChannelEvent value)
+        urlUploadFinished,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(NotificationFlushedChannelEvent value)
+        notificationFlushed,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        unreadSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReadAllAntennasChannelEvent value)
+        readAllAntennas,
+    required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(ReadAllAnnouncementsChannelEvent value)
+        readAllAnnouncements,
+    required TResult Function(MyTokenRegeneratedChannelEvent value)
+        myTokenRegenerated,
+    required TResult Function(SigninChannelEvent value) signin,
+    required TResult Function(RegistryUpdatedChannelEvent value)
+        registryUpdated,
+    required TResult Function(DriveFileCreatedChannelEvent value)
+        driveFileCreated,
+    required TResult Function(ReadAntennaChannelEvent value) readAntenna,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(AnnouncementCreatedChannelEvent value)
+        announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(FallbackChannelEvent value) fallback,
+  }) {
+    return chatMessage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(PageEventChannelEvent value)? pageEvent,
+    TResult? Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult? Function(SigninChannelEvent value)? signin,
+    TResult? Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult? Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult? Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(FallbackChannelEvent value)? fallback,
+  }) {
+    return chatMessage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(PageEventChannelEvent value)? pageEvent,
+    TResult Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult Function(SigninChannelEvent value)? signin,
+    TResult Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(FallbackChannelEvent value)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatMessage != null) {
+      return chatMessage(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatMessageChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ChatMessageChannelEvent implements ChannelStreamEvent {
+  const factory ChatMessageChannelEvent(
+      {required final String id,
+      required final ChatMessage body}) = _$ChatMessageChannelEventImpl;
+
+  factory ChatMessageChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ChatMessageChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  ChatMessage get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChatMessageChannelEventImplCopyWith<_$ChatMessageChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -16063,6 +17098,8 @@ class __$$FallbackChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$FallbackChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -16111,12 +17148,14 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
             const DeepCollectionEquality().equals(other.body, body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, const DeepCollectionEquality().hash(body));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FallbackChannelEventImplCopyWith<_$FallbackChannelEventImpl>
@@ -16169,6 +17208,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     required TResult Function(String id, UserLite body) receiveFollowRequest,
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return fallback(id, body);
@@ -16218,6 +17258,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult? Function(String id, UserLite body)? receiveFollowRequest,
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return fallback?.call(id, body);
@@ -16265,6 +17306,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult Function(String id, UserLite body)? receiveFollowRequest,
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -16323,6 +17365,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
         receiveFollowRequest,
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return fallback(this);
@@ -16371,6 +17414,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
         receiveFollowRequest,
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return fallback?.call(this);
@@ -16419,6 +17463,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
         receiveFollowRequest,
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -16447,8 +17492,11 @@ abstract class FallbackChannelEvent implements ChannelStreamEvent {
   @override
   String get id;
   Object? get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FallbackChannelEventImplCopyWith<_$FallbackChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -16533,8 +17581,13 @@ mixin _$NoteUpdateStreamEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this NoteUpdateStreamEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NoteUpdateStreamEventCopyWith<NoteUpdateStreamEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -16559,6 +17612,8 @@ class _$NoteUpdateStreamEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -16594,6 +17649,8 @@ class __$$ReactedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$ReactedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -16612,6 +17669,8 @@ class __$$ReactedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TimelineReactedCopyWith<$Res> get body {
@@ -16653,11 +17712,13 @@ class _$ReactedChannelEventImpl implements ReactedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReactedChannelEventImplCopyWith<_$ReactedChannelEventImpl> get copyWith =>
@@ -16764,8 +17825,11 @@ abstract class ReactedChannelEvent implements NoteUpdateStreamEvent {
   String get id;
   @override
   TimelineReacted get body;
+
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReactedChannelEventImplCopyWith<_$ReactedChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -16793,6 +17857,8 @@ class __$$UnreactedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UnreactedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -16811,6 +17877,8 @@ class __$$UnreactedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TimelineReactedCopyWith<$Res> get body {
@@ -16852,11 +17920,13 @@ class _$UnreactedChannelEventImpl implements UnreactedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnreactedChannelEventImplCopyWith<_$UnreactedChannelEventImpl>
@@ -16963,8 +18033,11 @@ abstract class UnreactedChannelEvent implements NoteUpdateStreamEvent {
   String get id;
   @override
   TimelineReacted get body;
+
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnreactedChannelEventImplCopyWith<_$UnreactedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -16990,6 +18063,8 @@ class __$$DeletedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$DeletedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -17008,6 +18083,8 @@ class __$$DeletedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TimelineDeletedCopyWith<$Res> get body {
@@ -17049,11 +18126,13 @@ class _$DeletedChannelEventImpl implements DeletedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeletedChannelEventImplCopyWith<_$DeletedChannelEventImpl> get copyWith =>
@@ -17160,8 +18239,11 @@ abstract class DeletedChannelEvent implements NoteUpdateStreamEvent {
   String get id;
   @override
   TimelineDeleted get body;
+
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeletedChannelEventImplCopyWith<_$DeletedChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -17189,6 +18271,8 @@ class __$$PollVotedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$PollVotedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -17207,6 +18291,8 @@ class __$$PollVotedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TimelineVotedCopyWith<$Res> get body {
@@ -17248,11 +18334,13 @@ class _$PollVotedChannelEventImpl implements PollVotedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PollVotedChannelEventImplCopyWith<_$PollVotedChannelEventImpl>
@@ -17359,8 +18447,11 @@ abstract class PollVotedChannelEvent implements NoteUpdateStreamEvent {
   String get id;
   @override
   TimelineVoted get body;
+
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PollVotedChannelEventImplCopyWith<_$PollVotedChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -17386,6 +18477,8 @@ class __$$UpdatedChannelEventImplCopyWithImpl<$Res>
       $Res Function(_$UpdatedChannelEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -17404,6 +18497,8 @@ class __$$UpdatedChannelEventImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteEditedCopyWith<$Res> get body {
@@ -17445,11 +18540,13 @@ class _$UpdatedChannelEventImpl implements UpdatedChannelEvent {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdatedChannelEventImplCopyWith<_$UpdatedChannelEventImpl> get copyWith =>
@@ -17556,8 +18653,11 @@ abstract class UpdatedChannelEvent implements NoteUpdateStreamEvent {
   String get id;
   @override
   NoteEdited get body;
+
+  /// Create a copy of NoteUpdateStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdatedChannelEventImplCopyWith<_$UpdatedChannelEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
