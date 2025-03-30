@@ -11,7 +11,7 @@ class ChatJoining with _$ChatJoining {
   const factory ChatJoining({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    required String userId,
+    String? userId,
     UserLite? user,
     required String roomId,
     ChatRoom? room,
