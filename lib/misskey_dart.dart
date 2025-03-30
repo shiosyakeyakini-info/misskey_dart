@@ -228,6 +228,8 @@ export 'src/data/roles/roles_users_request.dart';
 export 'src/data/roles/roles_users_response.dart';
 export 'src/data/server_info_response.dart';
 export 'src/data/stats_response.dart';
+export 'src/data/streaming/chat_room_parameter.dart';
+export 'src/data/streaming/chat_user_parameter.dart';
 export 'src/data/streaming/global_timeline_parameter.dart';
 export 'src/data/streaming/home_timeline_parameter.dart';
 export 'src/data/streaming/hybrid_timeline_parameter.dart';
