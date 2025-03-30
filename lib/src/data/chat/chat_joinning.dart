@@ -12,9 +12,9 @@ class ChatJoining with _$ChatJoining {
     required String id,
     @DateTimeConverter() required DateTime createdAt,
     required String userId,
-    required UserLite user,
+    UserLite? user,
     required String roomId,
-    required ChatRoom room,
+    ChatRoom? room,
   }) = _ChatJoining;
 
   factory ChatJoining.fromJson(Map<String, dynamic> json) =>

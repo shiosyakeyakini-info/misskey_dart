@@ -1,6 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/data/streaming/chat_room_parameter.dart';
-import 'package:misskey_dart/src/data/streaming/chat_user_parameter.dart';
 import 'package:misskey_dart/src/data/streaming/streaming_request.dart';
 
 abstract class StreamingController {

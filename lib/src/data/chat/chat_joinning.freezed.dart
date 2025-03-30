@@ -24,9 +24,9 @@ mixin _$ChatJoining {
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
-  UserLite get user => throw _privateConstructorUsedError;
+  UserLite? get user => throw _privateConstructorUsedError;
   String get roomId => throw _privateConstructorUsedError;
-  ChatRoom get room => throw _privateConstructorUsedError;
+  ChatRoom? get room => throw _privateConstructorUsedError;
 
   /// Serializes this ChatJoining to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,12 +48,12 @@ abstract class $ChatJoiningCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String userId,
-      UserLite user,
+      UserLite? user,
       String roomId,
-      ChatRoom room});
+      ChatRoom? room});
 
-  $UserLiteCopyWith<$Res> get user;
-  $ChatRoomCopyWith<$Res> get room;
+  $UserLiteCopyWith<$Res>? get user;
+  $ChatRoomCopyWith<$Res>? get room;
 }
 
 /// @nodoc
@@ -74,9 +74,9 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
     Object? id = null,
     Object? createdAt = null,
     Object? userId = null,
-    Object? user = null,
+    Object? user = freezed,
     Object? roomId = null,
-    Object? room = null,
+    Object? room = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -91,18 +91,18 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
+              as UserLite?,
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
-      room: null == room
+      room: freezed == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
-              as ChatRoom,
+              as ChatRoom?,
     ) as $Val);
   }
 
@@ -110,8 +110,12 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res> get user {
-    return $UserLiteCopyWith<$Res>(_value.user, (value) {
+  $UserLiteCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -120,8 +124,12 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ChatRoomCopyWith<$Res> get room {
-    return $ChatRoomCopyWith<$Res>(_value.room, (value) {
+  $ChatRoomCopyWith<$Res>? get room {
+    if (_value.room == null) {
+      return null;
+    }
+
+    return $ChatRoomCopyWith<$Res>(_value.room!, (value) {
       return _then(_value.copyWith(room: value) as $Val);
     });
   }
@@ -139,14 +147,14 @@ abstract class _$$ChatJoiningImplCopyWith<$Res>
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String userId,
-      UserLite user,
+      UserLite? user,
       String roomId,
-      ChatRoom room});
+      ChatRoom? room});
 
   @override
-  $UserLiteCopyWith<$Res> get user;
+  $UserLiteCopyWith<$Res>? get user;
   @override
-  $ChatRoomCopyWith<$Res> get room;
+  $ChatRoomCopyWith<$Res>? get room;
 }
 
 /// @nodoc
@@ -165,9 +173,9 @@ class __$$ChatJoiningImplCopyWithImpl<$Res>
     Object? id = null,
     Object? createdAt = null,
     Object? userId = null,
-    Object? user = null,
+    Object? user = freezed,
     Object? roomId = null,
-    Object? room = null,
+    Object? room = freezed,
   }) {
     return _then(_$ChatJoiningImpl(
       id: null == id
@@ -182,18 +190,18 @@ class __$$ChatJoiningImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
+              as UserLite?,
       roomId: null == roomId
           ? _value.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
-      room: null == room
+      room: freezed == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
-              as ChatRoom,
+              as ChatRoom?,
     ));
   }
 }
@@ -205,9 +213,9 @@ class _$ChatJoiningImpl implements _ChatJoining {
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.userId,
-      required this.user,
+      this.user,
       required this.roomId,
-      required this.room});
+      this.room});
 
   factory _$ChatJoiningImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChatJoiningImplFromJson(json);
@@ -220,11 +228,11 @@ class _$ChatJoiningImpl implements _ChatJoining {
   @override
   final String userId;
   @override
-  final UserLite user;
+  final UserLite? user;
   @override
   final String roomId;
   @override
-  final ChatRoom room;
+  final ChatRoom? room;
 
   @override
   String toString() {
@@ -271,9 +279,9 @@ abstract class _ChatJoining implements ChatJoining {
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
       required final String userId,
-      required final UserLite user,
+      final UserLite? user,
       required final String roomId,
-      required final ChatRoom room}) = _$ChatJoiningImpl;
+      final ChatRoom? room}) = _$ChatJoiningImpl;
 
   factory _ChatJoining.fromJson(Map<String, dynamic> json) =
       _$ChatJoiningImpl.fromJson;
@@ -286,11 +294,11 @@ abstract class _ChatJoining implements ChatJoining {
   @override
   String get userId;
   @override
-  UserLite get user;
+  UserLite? get user;
   @override
   String get roomId;
   @override
-  ChatRoom get room;
+  ChatRoom? get room;
 
   /// Create a copy of ChatJoining
   /// with the given fields replaced by the non-null parameter values.
