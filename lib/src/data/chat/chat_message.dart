@@ -12,7 +12,7 @@ class ChatMessage with _$ChatMessage {
     @DateTimeConverter() required DateTime createdAt,
     String? text,
     required String fromUserId,
-    required User fromUser,
+    User? fromUser,
     String? toUserId,
     User? toUser,
     String? toRoomId,

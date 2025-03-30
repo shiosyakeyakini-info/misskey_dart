@@ -25,7 +25,7 @@ mixin _$ChatMessage {
   DateTime get createdAt => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   String get fromUserId => throw _privateConstructorUsedError;
-  User get fromUser => throw _privateConstructorUsedError;
+  User? get fromUser => throw _privateConstructorUsedError;
   String? get toUserId => throw _privateConstructorUsedError;
   User? get toUser => throw _privateConstructorUsedError;
   String? get toRoomId => throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ abstract class $ChatMessageCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String? text,
       String fromUserId,
-      User fromUser,
+      User? fromUser,
       String? toUserId,
       User? toUser,
       String? toRoomId,
@@ -82,7 +82,7 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
     Object? createdAt = null,
     Object? text = freezed,
     Object? fromUserId = null,
-    Object? fromUser = null,
+    Object? fromUser = freezed,
     Object? toUserId = freezed,
     Object? toUser = freezed,
     Object? toRoomId = freezed,
@@ -106,10 +106,10 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
           ? _value.fromUserId
           : fromUserId // ignore: cast_nullable_to_non_nullable
               as String,
-      fromUser: null == fromUser
+      fromUser: freezed == fromUser
           ? _value.fromUser
           : fromUser // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       toUserId: freezed == toUserId
           ? _value.toUserId
           : toUserId // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ abstract class _$$ChatMessageImplCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String? text,
       String fromUserId,
-      User fromUser,
+      User? fromUser,
       String? toUserId,
       User? toUser,
       String? toRoomId,
@@ -189,7 +189,7 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? text = freezed,
     Object? fromUserId = null,
-    Object? fromUser = null,
+    Object? fromUser = freezed,
     Object? toUserId = freezed,
     Object? toUser = freezed,
     Object? toRoomId = freezed,
@@ -213,10 +213,10 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
           ? _value.fromUserId
           : fromUserId // ignore: cast_nullable_to_non_nullable
               as String,
-      fromUser: null == fromUser
+      fromUser: freezed == fromUser
           ? _value.fromUser
           : fromUser // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       toUserId: freezed == toUserId
           ? _value.toUserId
           : toUserId // ignore: cast_nullable_to_non_nullable
@@ -249,7 +249,7 @@ class _$ChatMessageImpl implements _ChatMessage {
       @DateTimeConverter() required this.createdAt,
       this.text,
       required this.fromUserId,
-      required this.fromUser,
+      this.fromUser,
       this.toUserId,
       this.toUser,
       this.toRoomId,
@@ -270,7 +270,7 @@ class _$ChatMessageImpl implements _ChatMessage {
   @override
   final String fromUserId;
   @override
-  final User fromUser;
+  final User? fromUser;
   @override
   final String? toUserId;
   @override
@@ -352,7 +352,7 @@ abstract class _ChatMessage implements ChatMessage {
       @DateTimeConverter() required final DateTime createdAt,
       final String? text,
       required final String fromUserId,
-      required final User fromUser,
+      final User? fromUser,
       final String? toUserId,
       final User? toUser,
       final String? toRoomId,
@@ -372,7 +372,7 @@ abstract class _ChatMessage implements ChatMessage {
   @override
   String get fromUserId;
   @override
-  User get fromUser;
+  User? get fromUser;
   @override
   String? get toUserId;
   @override

@@ -13,7 +13,9 @@ _$ChatMessageImpl _$$ChatMessageImplFromJson(Map<String, dynamic> json) =>
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       text: json['text'] as String?,
       fromUserId: json['fromUserId'] as String,
-      fromUser: User.fromJson(json['fromUser'] as Map<String, dynamic>),
+      fromUser: json['fromUser'] == null
+          ? null
+          : User.fromJson(json['fromUser'] as Map<String, dynamic>),
       toUserId: json['toUserId'] as String?,
       toUser: json['toUser'] == null
           ? null
@@ -33,7 +35,7 @@ Map<String, dynamic> _$$ChatMessageImplToJson(_$ChatMessageImpl instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'text': instance.text,
       'fromUserId': instance.fromUserId,
-      'fromUser': instance.fromUser.toJson(),
+      'fromUser': instance.fromUser?.toJson(),
       'toUserId': instance.toUserId,
       'toUser': instance.toUser?.toJson(),
       'toRoomId': instance.toRoomId,
