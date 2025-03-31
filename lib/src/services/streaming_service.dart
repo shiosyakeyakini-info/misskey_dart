@@ -77,6 +77,18 @@ abstract class StreamingController {
     required HomeTimelineParameter parameter,
     required String id,
   });
+
+  /// チャット（ユーザー）のストリームに接続します。
+  Stream<StreamingResponse> chatUserStream({
+    required ChatUserParameter parameter,
+    required String id,
+  });
+
+  /// チャット（ルーム）のストリームに接続します。
+  Stream<StreamingResponse> chatRoomStream({
+    required ChatRoomParameter parameter,
+    required String id,
+  });
 }
 
 abstract class WebSocketController {

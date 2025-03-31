@@ -714,6 +714,22 @@ Map<String, dynamic> _$$AnnouncementCreatedChannelEventImplToJson(
       'type': instance.$type,
     };
 
+_$ChatMessageChannelEventImpl _$$ChatMessageChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChatMessageChannelEventImpl(
+      id: json['id'] as String,
+      body: ChatMessage.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$ChatMessageChannelEventImplToJson(
+        _$ChatMessageChannelEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
 _$FallbackChannelEventImpl _$$FallbackChannelEventImplFromJson(
         Map<String, dynamic> json) =>
     _$FallbackChannelEventImpl(

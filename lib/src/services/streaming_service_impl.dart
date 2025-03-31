@@ -332,4 +332,18 @@ class StreamingService implements StreamingController, WebSocketController {
     required String id,
   }) =>
       addChannel(Channel.homeTimeline, parameter.toJson(), id);
+
+  @override
+  Stream<StreamingResponse> chatRoomStream({
+    required ChatRoomParameter parameter,
+    required String id,
+  }) =>
+      addChannel(Channel.chatRoom, parameter.toJson(), id);
+
+  @override
+  Stream<StreamingResponse> chatUserStream({
+    required ChatUserParameter parameter,
+    required String id,
+  }) =>
+      addChannel(Channel.chatUser, parameter.toJson(), id);
 }

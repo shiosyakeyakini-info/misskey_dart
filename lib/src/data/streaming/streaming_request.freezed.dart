@@ -12,7 +12,7 @@ part of 'streaming_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StreamingRequest _$StreamingRequestFromJson(Map<String, dynamic> json) {
   return _StreamingRequest.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$StreamingRequest {
   StreamingRequestType get type => throw _privateConstructorUsedError;
   StreamingRequestBody get body => throw _privateConstructorUsedError;
 
+  /// Serializes this StreamingRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StreamingRequestCopyWith<StreamingRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +57,8 @@ class _$StreamingRequestCopyWithImpl<$Res, $Val extends StreamingRequest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StreamingRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -71,6 +77,8 @@ class _$StreamingRequestCopyWithImpl<$Res, $Val extends StreamingRequest>
     ) as $Val);
   }
 
+  /// Create a copy of StreamingRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StreamingRequestBodyCopyWith<$Res> get body {
@@ -104,6 +112,8 @@ class __$$StreamingRequestImplCopyWithImpl<$Res>
       $Res Function(_$StreamingRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,11 +163,13 @@ class _$StreamingRequestImpl implements _StreamingRequest {
             (identical(other.body, body) || other.body == body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingRequestImplCopyWith<_$StreamingRequestImpl> get copyWith =>
@@ -186,8 +198,11 @@ abstract class _StreamingRequest implements StreamingRequest {
   StreamingRequestType get type;
   @override
   StreamingRequestBody get body;
+
+  /// Create a copy of StreamingRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingRequestImplCopyWith<_$StreamingRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -204,8 +219,12 @@ mixin _$StreamingRequestBody {
   String? get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get body => throw _privateConstructorUsedError;
 
+  /// Serializes this StreamingRequestBody to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StreamingRequestBodyCopyWith<StreamingRequestBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -235,6 +254,8 @@ class _$StreamingRequestBodyCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -293,6 +314,8 @@ class __$$StreamingRequestBodyImplCopyWithImpl<$Res>
       $Res Function(_$StreamingRequestBodyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -385,7 +408,7 @@ class _$StreamingRequestBodyImpl implements _StreamingRequestBody {
             const DeepCollectionEquality().equals(other._body, _body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -395,7 +418,9 @@ class _$StreamingRequestBodyImpl implements _StreamingRequestBody {
       type,
       const DeepCollectionEquality().hash(_body));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StreamingRequestBodyImplCopyWith<_$StreamingRequestBodyImpl>
@@ -432,8 +457,11 @@ abstract class _StreamingRequestBody implements StreamingRequestBody {
   String? get type;
   @override
   Map<String, dynamic>? get body;
+
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StreamingRequestBodyImplCopyWith<_$StreamingRequestBodyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

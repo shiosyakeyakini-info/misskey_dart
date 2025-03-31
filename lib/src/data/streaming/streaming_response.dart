@@ -275,6 +275,12 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required AnnouncementCreatedStreamEvent body,
   }) = AnnouncementCreatedChannelEvent;
 
+  @FreezedUnionValue("message")
+  const factory ChannelStreamEvent.chatMessage({
+    required String id,
+    required ChatMessage body,
+  }) = ChatMessageChannelEvent;
+
   const factory ChannelStreamEvent.fallback({
     required String id,
     required Object? body,
