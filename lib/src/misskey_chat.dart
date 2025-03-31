@@ -138,10 +138,10 @@ class MisskeyChatRooms {
     await _apiService.post("chat/rooms/leave", request.toJson());
   }
 
-  Future<ChatJoining> members(ChatRoomsMembersRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/members", request.toJson());
-    return ChatJoining.fromJson(response);
+  Future<Iterable<ChatJoining>> members(ChatRoomsMembersRequest request) async {
+    final response =
+        await _apiService.post<List>("chat/rooms/members", request.toJson());
+    return response.map((e) => ChatJoining.fromJson(e));
   }
 
   Future<void> mute(ChatRoomsMuteRequest request) async {
