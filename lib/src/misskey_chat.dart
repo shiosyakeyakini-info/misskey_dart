@@ -145,10 +145,10 @@ class MisskeyChatRooms {
   }
 
   /// 参加中のチャットルームを取得します
-  Future<List<ChatJoining>> joining(ChatRoomsJoiningRequest request) async {
+  Future<Iterable<ChatJoining>> joining(ChatRoomsJoiningRequest request) async {
     final response =
         await _apiService.post<List>("chat/rooms/joining", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e)).toList();
+    return response.map((e) => ChatJoining.fromJson(e));
   }
 
   /// チャットルームを退室します
