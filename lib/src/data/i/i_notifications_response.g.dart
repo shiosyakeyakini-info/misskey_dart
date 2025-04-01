@@ -89,7 +89,9 @@ const _$NotificationTypeEnumMap = {
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
   NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.createToken: 'createToken',
   NotificationType.login: 'login',
+  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
   NotificationType.unknown: 'unknown',
 };
 
