@@ -23,5 +23,6 @@ enum NotificationType {
   roleAssigned,
   exportCompleted,
   login,
+  chatRoomInvitationReceived,
   unknown,
 }
