@@ -208,9 +208,13 @@ class MisskeyChatRoomsInvitations {
     await _apiService.post("chat/rooms/invitations/delete", request.toJson());
   }
 
-  /// チャットルームへの招待を受理します
-  Future<void> inbox(ChatRoomsInvitationsInboxRequest request) async {
-    await _apiService.post("chat/rooms/invitations/inbox", request.toJson());
+  /// 自分に来ているチャットの招待リストを取得します
+  Future<Iterable<ChatJoining>> inbox(
+    ChatRoomsInvitationsInboxRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+        "chat/rooms/invitations/inbox", request.toJson());
+    return response.map((e) => ChatJoining.fromJson(e));
   }
 
   /// チャットルームへ招待中のユーザーを取得します
