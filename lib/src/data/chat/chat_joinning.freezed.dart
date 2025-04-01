@@ -23,7 +23,7 @@ mixin _$ChatJoining {
   String get id => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
+  String get userId => throw _privateConstructorUsedError;
   UserLite? get user => throw _privateConstructorUsedError;
   String get roomId => throw _privateConstructorUsedError;
   ChatRoom? get room => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $ChatJoiningCopyWith<$Res> {
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String? userId,
+      String userId,
       UserLite? user,
       String roomId,
       ChatRoom? room});
@@ -73,7 +73,7 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? userId = freezed,
+    Object? userId = null,
     Object? user = freezed,
     Object? roomId = null,
     Object? room = freezed,
@@ -87,10 +87,10 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      userId: freezed == userId
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -146,7 +146,7 @@ abstract class _$$ChatJoiningImplCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String? userId,
+      String userId,
       UserLite? user,
       String roomId,
       ChatRoom? room});
@@ -172,7 +172,7 @@ class __$$ChatJoiningImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? userId = freezed,
+    Object? userId = null,
     Object? user = freezed,
     Object? roomId = null,
     Object? room = freezed,
@@ -186,10 +186,10 @@ class __$$ChatJoiningImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      userId: freezed == userId
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -212,7 +212,7 @@ class _$ChatJoiningImpl implements _ChatJoining {
   const _$ChatJoiningImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
-      this.userId,
+      required this.userId,
       this.user,
       required this.roomId,
       this.room});
@@ -226,7 +226,7 @@ class _$ChatJoiningImpl implements _ChatJoining {
   @DateTimeConverter()
   final DateTime createdAt;
   @override
-  final String? userId;
+  final String userId;
   @override
   final UserLite? user;
   @override
@@ -278,7 +278,7 @@ abstract class _ChatJoining implements ChatJoining {
   const factory _ChatJoining(
       {required final String id,
       @DateTimeConverter() required final DateTime createdAt,
-      final String? userId,
+      required final String userId,
       final UserLite? user,
       required final String roomId,
       final ChatRoom? room}) = _$ChatJoiningImpl;
@@ -292,7 +292,7 @@ abstract class _ChatJoining implements ChatJoining {
   @DateTimeConverter()
   DateTime get createdAt;
   @override
-  String? get userId;
+  String get userId;
   @override
   UserLite? get user;
   @override
