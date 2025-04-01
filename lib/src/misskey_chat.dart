@@ -205,7 +205,7 @@ class MisskeyChatRoomsInvitations {
 
   /// チャットルームへの招待を無視します
   Future<void> ignore(ChatRoomsInvitationsIgnoreRequest request) async {
-    await _apiService.post("chat/rooms/invitations/delete", request.toJson());
+    await _apiService.post("chat/rooms/invitations/ignore", request.toJson());
   }
 
   /// 自分に来ているチャットの招待リストを取得します
