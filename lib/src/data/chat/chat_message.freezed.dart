@@ -25,11 +25,14 @@ mixin _$ChatMessage {
   DateTime get createdAt => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   String get fromUserId => throw _privateConstructorUsedError;
-  User? get fromUser => throw _privateConstructorUsedError;
+  UserLite? get fromUser => throw _privateConstructorUsedError;
   String? get toUserId => throw _privateConstructorUsedError;
-  User? get toUser => throw _privateConstructorUsedError;
+  UserLite? get toUser => throw _privateConstructorUsedError;
   String? get toRoomId => throw _privateConstructorUsedError;
   ChatRoom? get toRoom => throw _privateConstructorUsedError;
+  String? get fileId => throw _privateConstructorUsedError;
+  DriveFile? get file => throw _privateConstructorUsedError;
+  bool? get isRead => throw _privateConstructorUsedError;
   List<ChatMessageReaction> get reactions => throw _privateConstructorUsedError;
 
   /// Serializes this ChatMessage to a JSON map.
@@ -53,14 +56,20 @@ abstract class $ChatMessageCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String? text,
       String fromUserId,
-      User? fromUser,
+      UserLite? fromUser,
       String? toUserId,
-      User? toUser,
+      UserLite? toUser,
       String? toRoomId,
       ChatRoom? toRoom,
+      String? fileId,
+      DriveFile? file,
+      bool? isRead,
       List<ChatMessageReaction> reactions});
 
+  $UserLiteCopyWith<$Res>? get fromUser;
+  $UserLiteCopyWith<$Res>? get toUser;
   $ChatRoomCopyWith<$Res>? get toRoom;
+  $DriveFileCopyWith<$Res>? get file;
 }
 
 /// @nodoc
@@ -87,6 +96,9 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
     Object? toUser = freezed,
     Object? toRoomId = freezed,
     Object? toRoom = freezed,
+    Object? fileId = freezed,
+    Object? file = freezed,
+    Object? isRead = freezed,
     Object? reactions = null,
   }) {
     return _then(_value.copyWith(
@@ -109,7 +121,7 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
       fromUser: freezed == fromUser
           ? _value.fromUser
           : fromUser // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
       toUserId: freezed == toUserId
           ? _value.toUserId
           : toUserId // ignore: cast_nullable_to_non_nullable
@@ -117,7 +129,7 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
       toUser: freezed == toUser
           ? _value.toUser
           : toUser // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
       toRoomId: freezed == toRoomId
           ? _value.toRoomId
           : toRoomId // ignore: cast_nullable_to_non_nullable
@@ -126,11 +138,51 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
           ? _value.toRoom
           : toRoom // ignore: cast_nullable_to_non_nullable
               as ChatRoom?,
+      fileId: freezed == fileId
+          ? _value.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      file: freezed == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as DriveFile?,
+      isRead: freezed == isRead
+          ? _value.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
       reactions: null == reactions
           ? _value.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<ChatMessageReaction>,
     ) as $Val);
+  }
+
+  /// Create a copy of ChatMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get fromUser {
+    if (_value.fromUser == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_value.fromUser!, (value) {
+      return _then(_value.copyWith(fromUser: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ChatMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get toUser {
+    if (_value.toUser == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_value.toUser!, (value) {
+      return _then(_value.copyWith(toUser: value) as $Val);
+    });
   }
 
   /// Create a copy of ChatMessage
@@ -144,6 +196,20 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
 
     return $ChatRoomCopyWith<$Res>(_value.toRoom!, (value) {
       return _then(_value.copyWith(toRoom: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ChatMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DriveFileCopyWith<$Res>? get file {
+    if (_value.file == null) {
+      return null;
+    }
+
+    return $DriveFileCopyWith<$Res>(_value.file!, (value) {
+      return _then(_value.copyWith(file: value) as $Val);
     });
   }
 }
@@ -161,15 +227,24 @@ abstract class _$$ChatMessageImplCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String? text,
       String fromUserId,
-      User? fromUser,
+      UserLite? fromUser,
       String? toUserId,
-      User? toUser,
+      UserLite? toUser,
       String? toRoomId,
       ChatRoom? toRoom,
+      String? fileId,
+      DriveFile? file,
+      bool? isRead,
       List<ChatMessageReaction> reactions});
 
   @override
+  $UserLiteCopyWith<$Res>? get fromUser;
+  @override
+  $UserLiteCopyWith<$Res>? get toUser;
+  @override
   $ChatRoomCopyWith<$Res>? get toRoom;
+  @override
+  $DriveFileCopyWith<$Res>? get file;
 }
 
 /// @nodoc
@@ -194,6 +269,9 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
     Object? toUser = freezed,
     Object? toRoomId = freezed,
     Object? toRoom = freezed,
+    Object? fileId = freezed,
+    Object? file = freezed,
+    Object? isRead = freezed,
     Object? reactions = null,
   }) {
     return _then(_$ChatMessageImpl(
@@ -216,7 +294,7 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
       fromUser: freezed == fromUser
           ? _value.fromUser
           : fromUser // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
       toUserId: freezed == toUserId
           ? _value.toUserId
           : toUserId // ignore: cast_nullable_to_non_nullable
@@ -224,7 +302,7 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
       toUser: freezed == toUser
           ? _value.toUser
           : toUser // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserLite?,
       toRoomId: freezed == toRoomId
           ? _value.toRoomId
           : toRoomId // ignore: cast_nullable_to_non_nullable
@@ -233,6 +311,18 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
           ? _value.toRoom
           : toRoom // ignore: cast_nullable_to_non_nullable
               as ChatRoom?,
+      fileId: freezed == fileId
+          ? _value.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      file: freezed == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as DriveFile?,
+      isRead: freezed == isRead
+          ? _value.isRead
+          : isRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
       reactions: null == reactions
           ? _value._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
@@ -254,6 +344,9 @@ class _$ChatMessageImpl implements _ChatMessage {
       this.toUser,
       this.toRoomId,
       this.toRoom,
+      this.fileId,
+      this.file,
+      this.isRead,
       required final List<ChatMessageReaction> reactions})
       : _reactions = reactions;
 
@@ -270,15 +363,21 @@ class _$ChatMessageImpl implements _ChatMessage {
   @override
   final String fromUserId;
   @override
-  final User? fromUser;
+  final UserLite? fromUser;
   @override
   final String? toUserId;
   @override
-  final User? toUser;
+  final UserLite? toUser;
   @override
   final String? toRoomId;
   @override
   final ChatRoom? toRoom;
+  @override
+  final String? fileId;
+  @override
+  final DriveFile? file;
+  @override
+  final bool? isRead;
   final List<ChatMessageReaction> _reactions;
   @override
   List<ChatMessageReaction> get reactions {
@@ -289,7 +388,7 @@ class _$ChatMessageImpl implements _ChatMessage {
 
   @override
   String toString() {
-    return 'ChatMessage(id: $id, createdAt: $createdAt, text: $text, fromUserId: $fromUserId, fromUser: $fromUser, toUserId: $toUserId, toUser: $toUser, toRoomId: $toRoomId, toRoom: $toRoom, reactions: $reactions)';
+    return 'ChatMessage(id: $id, createdAt: $createdAt, text: $text, fromUserId: $fromUserId, fromUser: $fromUser, toUserId: $toUserId, toUser: $toUser, toRoomId: $toRoomId, toRoom: $toRoom, fileId: $fileId, file: $file, isRead: $isRead, reactions: $reactions)';
   }
 
   @override
@@ -311,6 +410,9 @@ class _$ChatMessageImpl implements _ChatMessage {
             (identical(other.toRoomId, toRoomId) ||
                 other.toRoomId == toRoomId) &&
             (identical(other.toRoom, toRoom) || other.toRoom == toRoom) &&
+            (identical(other.fileId, fileId) || other.fileId == fileId) &&
+            (identical(other.file, file) || other.file == file) &&
+            (identical(other.isRead, isRead) || other.isRead == isRead) &&
             const DeepCollectionEquality()
                 .equals(other._reactions, _reactions));
   }
@@ -328,6 +430,9 @@ class _$ChatMessageImpl implements _ChatMessage {
       toUser,
       toRoomId,
       toRoom,
+      fileId,
+      file,
+      isRead,
       const DeepCollectionEquality().hash(_reactions));
 
   /// Create a copy of ChatMessage
@@ -352,11 +457,14 @@ abstract class _ChatMessage implements ChatMessage {
       @DateTimeConverter() required final DateTime createdAt,
       final String? text,
       required final String fromUserId,
-      final User? fromUser,
+      final UserLite? fromUser,
       final String? toUserId,
-      final User? toUser,
+      final UserLite? toUser,
       final String? toRoomId,
       final ChatRoom? toRoom,
+      final String? fileId,
+      final DriveFile? file,
+      final bool? isRead,
       required final List<ChatMessageReaction> reactions}) = _$ChatMessageImpl;
 
   factory _ChatMessage.fromJson(Map<String, dynamic> json) =
@@ -372,15 +480,21 @@ abstract class _ChatMessage implements ChatMessage {
   @override
   String get fromUserId;
   @override
-  User? get fromUser;
+  UserLite? get fromUser;
   @override
   String? get toUserId;
   @override
-  User? get toUser;
+  UserLite? get toUser;
   @override
   String? get toRoomId;
   @override
   ChatRoom? get toRoom;
+  @override
+  String? get fileId;
+  @override
+  DriveFile? get file;
+  @override
+  bool? get isRead;
   @override
   List<ChatMessageReaction> get reactions;
 
@@ -399,7 +513,7 @@ ChatMessageReaction _$ChatMessageReactionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ChatMessageReaction {
   String get reaction => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  UserLite? get user => throw _privateConstructorUsedError;
 
   /// Serializes this ChatMessageReaction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -417,7 +531,9 @@ abstract class $ChatMessageReactionCopyWith<$Res> {
           ChatMessageReaction value, $Res Function(ChatMessageReaction) then) =
       _$ChatMessageReactionCopyWithImpl<$Res, ChatMessageReaction>;
   @useResult
-  $Res call({String reaction, User user});
+  $Res call({String reaction, UserLite? user});
+
+  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -436,18 +552,32 @@ class _$ChatMessageReactionCopyWithImpl<$Res, $Val extends ChatMessageReaction>
   @override
   $Res call({
     Object? reaction = null,
-    Object? user = null,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       reaction: null == reaction
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite?,
     ) as $Val);
+  }
+
+  /// Create a copy of ChatMessageReaction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -459,7 +589,10 @@ abstract class _$$ChatMessageReactionImplCopyWith<$Res>
       __$$ChatMessageReactionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String reaction, User user});
+  $Res call({String reaction, UserLite? user});
+
+  @override
+  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -476,17 +609,17 @@ class __$$ChatMessageReactionImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? reaction = null,
-    Object? user = null,
+    Object? user = freezed,
   }) {
     return _then(_$ChatMessageReactionImpl(
       reaction: null == reaction
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserLite?,
     ));
   }
 }
@@ -494,7 +627,7 @@ class __$$ChatMessageReactionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ChatMessageReactionImpl implements _ChatMessageReaction {
-  const _$ChatMessageReactionImpl({required this.reaction, required this.user});
+  const _$ChatMessageReactionImpl({required this.reaction, this.user});
 
   factory _$ChatMessageReactionImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChatMessageReactionImplFromJson(json);
@@ -502,7 +635,7 @@ class _$ChatMessageReactionImpl implements _ChatMessageReaction {
   @override
   final String reaction;
   @override
-  final User user;
+  final UserLite? user;
 
   @override
   String toString() {
@@ -543,7 +676,7 @@ class _$ChatMessageReactionImpl implements _ChatMessageReaction {
 abstract class _ChatMessageReaction implements ChatMessageReaction {
   const factory _ChatMessageReaction(
       {required final String reaction,
-      required final User user}) = _$ChatMessageReactionImpl;
+      final UserLite? user}) = _$ChatMessageReactionImpl;
 
   factory _ChatMessageReaction.fromJson(Map<String, dynamic> json) =
       _$ChatMessageReactionImpl.fromJson;
@@ -551,7 +684,7 @@ abstract class _ChatMessageReaction implements ChatMessageReaction {
   @override
   String get reaction;
   @override
-  User get user;
+  UserLite? get user;
 
   /// Create a copy of ChatMessageReaction
   /// with the given fields replaced by the non-null parameter values.
