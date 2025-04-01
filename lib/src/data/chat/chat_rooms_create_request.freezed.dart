@@ -22,7 +22,7 @@ ChatRoomsCreateRequest _$ChatRoomsCreateRequestFromJson(
 /// @nodoc
 mixin _$ChatRoomsCreateRequest {
   String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
 
   /// Serializes this ChatRoomsCreateRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $ChatRoomsCreateRequestCopyWith<$Res> {
           $Res Function(ChatRoomsCreateRequest) then) =
       _$ChatRoomsCreateRequestCopyWithImpl<$Res, ChatRoomsCreateRequest>;
   @useResult
-  $Res call({String name, String description});
+  $Res call({String name, String? description});
 }
 
 /// @nodoc
@@ -60,17 +60,17 @@ class _$ChatRoomsCreateRequestCopyWithImpl<$Res,
   @override
   $Res call({
     Object? name = null,
-    Object? description = null,
+    Object? description = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -84,7 +84,7 @@ abstract class _$$ChatRoomsCreateRequestImplCopyWith<$Res>
       __$$ChatRoomsCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String description});
+  $Res call({String name, String? description});
 }
 
 /// @nodoc
@@ -103,17 +103,17 @@ class __$$ChatRoomsCreateRequestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? description = null,
+    Object? description = freezed,
   }) {
     return _then(_$ChatRoomsCreateRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -121,8 +121,7 @@ class __$$ChatRoomsCreateRequestImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ChatRoomsCreateRequestImpl implements _ChatRoomsCreateRequest {
-  const _$ChatRoomsCreateRequestImpl(
-      {required this.name, required this.description});
+  const _$ChatRoomsCreateRequestImpl({required this.name, this.description});
 
   factory _$ChatRoomsCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChatRoomsCreateRequestImplFromJson(json);
@@ -130,7 +129,7 @@ class _$ChatRoomsCreateRequestImpl implements _ChatRoomsCreateRequest {
   @override
   final String name;
   @override
-  final String description;
+  final String? description;
 
   @override
   String toString() {
@@ -171,7 +170,7 @@ class _$ChatRoomsCreateRequestImpl implements _ChatRoomsCreateRequest {
 abstract class _ChatRoomsCreateRequest implements ChatRoomsCreateRequest {
   const factory _ChatRoomsCreateRequest(
       {required final String name,
-      required final String description}) = _$ChatRoomsCreateRequestImpl;
+      final String? description}) = _$ChatRoomsCreateRequestImpl;
 
   factory _ChatRoomsCreateRequest.fromJson(Map<String, dynamic> json) =
       _$ChatRoomsCreateRequestImpl.fromJson;
@@ -179,7 +178,7 @@ abstract class _ChatRoomsCreateRequest implements ChatRoomsCreateRequest {
   @override
   String get name;
   @override
-  String get description;
+  String? get description;
 
   /// Create a copy of ChatRoomsCreateRequest
   /// with the given fields replaced by the non-null parameter values.

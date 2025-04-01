@@ -10,7 +10,7 @@ _$ChatRoomsCreateRequestImpl _$$ChatRoomsCreateRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$ChatRoomsCreateRequestImpl(
       name: json['name'] as String,
-      description: json['description'] as String,
+      description: json['description'] as String?,
     );
 
 Map<String, dynamic> _$$ChatRoomsCreateRequestImplToJson(

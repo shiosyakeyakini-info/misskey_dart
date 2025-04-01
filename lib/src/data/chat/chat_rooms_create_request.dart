@@ -7,7 +7,7 @@ part 'chat_rooms_create_request.g.dart';
 class ChatRoomsCreateRequest with _$ChatRoomsCreateRequest {
   const factory ChatRoomsCreateRequest({
     required String name,
-    required String description,
+    String? description,
   }) = _ChatRoomsCreateRequest;
 
   factory ChatRoomsCreateRequest.fromJson(Map<String, dynamic> json) =>
