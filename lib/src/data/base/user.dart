@@ -70,7 +70,8 @@ abstract class UserDetailed implements User {
   // Deleted in Misskey 2023.12.0
   FFVisibility? get ffVisibility;
   FFVisibility? get followersVisibility;
-  FFVisibility? get followingVisibility;
+  ChatScope? get chatScope;
+  bool? get canChat;
   bool? get twoFactorEnabled;
   bool? get usePasswordLessLogin;
   bool? get securityKeys;
@@ -167,6 +168,8 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
+    ChatScope? chatScope,
+    bool? canChat,
     bool? twoFactorEnabled,
     bool? usePasswordLessLogin,
     bool? securityKeys,
@@ -229,6 +232,8 @@ class UserDetailedNotMeWithRelations
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
+    ChatScope? chatScope,
+    bool? canChat,
     bool? twoFactorEnabled,
     bool? usePasswordLessLogin,
     bool? securityKeys,
@@ -300,6 +305,8 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
+    ChatScope? chatScope,
+    bool? canChat,
     required bool twoFactorEnabled,
     required bool usePasswordLessLogin,
     required bool securityKeys,
@@ -328,6 +335,7 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
     required bool hasUnreadAnnouncement,
     required bool hasUnreadAntenna,
     required bool hasUnreadChannel,
+    bool? hasUnreadChatMessages,
     required bool hasUnreadNotification,
     required bool hasPendingReceivedFollowRequest,
     int? unreadNotificationsCount,
@@ -469,6 +477,14 @@ class UserField with _$UserField {
       _$UserFieldFromJson(json);
 }
 
+enum ChatScope {
+  everyone,
+  followers,
+  following,
+  mutual,
+  none,
+}
+
 enum Notify {
   normal,
   none,
@@ -501,6 +517,7 @@ class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
     NotificationRecieveConfig? receiveFollowRequest,
     NotificationRecieveConfig? followRequestAccepted,
     NotificationRecieveConfig? roleAssigned,
+    NotificationRecieveConfig? chatRoomInvitationReceived,
     NotificationRecieveConfig? achievementEarned,
     NotificationRecieveConfig? app,
     NotificationRecieveConfig? test,
