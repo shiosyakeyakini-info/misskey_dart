@@ -229,6 +229,11 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required Antenna body,
   }) = UnreadAntennaChannelEvent;
 
+  const factory ChannelStreamEvent.newChatMessage({
+    required String id,
+    required ChatMessage body,
+  }) = NewChatMessageEvent;
+
   @FreezedUnionValue("readAllAnnouncements")
   const factory ChannelStreamEvent.readAllAnnouncements({
     required String id,

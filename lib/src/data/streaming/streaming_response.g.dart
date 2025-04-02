@@ -587,6 +587,22 @@ Map<String, dynamic> _$$UnreadAntennaChannelEventImplToJson(
       'type': instance.$type,
     };
 
+_$NewChatMessageEventImpl _$$NewChatMessageEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NewChatMessageEventImpl(
+      id: json['id'] as String,
+      body: ChatMessage.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$NewChatMessageEventImplToJson(
+        _$NewChatMessageEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
 _$ReadAllAnnouncementsChannelEventImpl
     _$$ReadAllAnnouncementsChannelEventImplFromJson(
             Map<String, dynamic> json) =>
