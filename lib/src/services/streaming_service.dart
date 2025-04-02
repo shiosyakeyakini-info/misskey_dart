@@ -21,6 +21,9 @@ abstract class StreamingController {
   /// ログをリクエストします。
   void requestLog(String id, int length);
 
+  /// チャットを既読にします。
+  void read(String id);
+
   /// ローカルタイムラインに接続します。
   Stream<StreamingResponse> localTimelineStream({
     required LocalTimelineParameter parameter,
