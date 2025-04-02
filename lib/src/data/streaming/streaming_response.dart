@@ -275,11 +275,30 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required AnnouncementCreatedStreamEvent body,
   }) = AnnouncementCreatedChannelEvent;
 
+  // chat
   @FreezedUnionValue("message")
   const factory ChannelStreamEvent.chatMessage({
     required String id,
     required ChatMessage body,
   }) = ChatMessageChannelEvent;
+
+  @FreezedUnionValue("deleted")
+  const factory ChannelStreamEvent.chatDeleted({
+    required String id,
+    required String body,
+  }) = ChatDeletedChannelEvent;
+
+  @FreezedUnionValue("react")
+  const factory ChannelStreamEvent.chatReact({
+    required String id,
+    required ChatReact body,
+  }) = ChatReactChannelEvent;
+
+  @FreezedUnionValue("unreact")
+  const factory ChannelStreamEvent.chatUnreact({
+    required String id,
+    required ChatReact body,
+  }) = ChatUnreactChannelEvent;
 
   const factory ChannelStreamEvent.fallback({
     required String id,
