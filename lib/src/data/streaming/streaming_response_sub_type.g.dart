@@ -75,7 +75,7 @@ Map<String, dynamic> _$$SigninImplToJson(_$SigninImpl instance) =>
 
 _$TimelineVotedImpl _$$TimelineVotedImplFromJson(Map<String, dynamic> json) =>
     _$TimelineVotedImpl(
-      choice: json['choice'] as int,
+      choice: (json['choice'] as num).toInt(),
       userId: json['userId'] as String,
     );
 
@@ -208,10 +208,10 @@ Map<String, dynamic> _$$StatsLogNetImplToJson(_$StatsLogNetImpl instance) =>
 _$QueueStatsLogResponseDataImpl _$$QueueStatsLogResponseDataImplFromJson(
         Map<String, dynamic> json) =>
     _$QueueStatsLogResponseDataImpl(
-      activeSincePrevTick: json['activeSincePrevTick'] as int,
-      active: json['active'] as int,
-      waiting: json['waiting'] as int,
-      delayed: json['delayed'] as int,
+      activeSincePrevTick: (json['activeSincePrevTick'] as num).toInt(),
+      active: (json['active'] as num).toInt(),
+      waiting: (json['waiting'] as num).toInt(),
+      delayed: (json['delayed'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$QueueStatsLogResponseDataImplToJson(
@@ -221,4 +221,20 @@ Map<String, dynamic> _$$QueueStatsLogResponseDataImplToJson(
       'active': instance.active,
       'waiting': instance.waiting,
       'delayed': instance.delayed,
+    };
+
+_$ChatReactImpl _$$ChatReactImplFromJson(Map<String, dynamic> json) =>
+    _$ChatReactImpl(
+      reaction: json['reaction'] as String,
+      user: json['user'] == null
+          ? null
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      messageId: json['messageId'] as String,
+    );
+
+Map<String, dynamic> _$$ChatReactImplToJson(_$ChatReactImpl instance) =>
+    <String, dynamic>{
+      'reaction': instance.reaction,
+      'user': instance.user?.toJson(),
+      'messageId': instance.messageId,
     };
