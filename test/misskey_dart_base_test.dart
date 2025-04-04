@@ -10,6 +10,14 @@ void main() async {
       response.toList();
     });
 
+    test("endpoint", () async {
+      final response = await userClient.endpoint(
+        EndpointRequest(endpoint: 'notes/show'),
+      );
+      expect(response.params.single.name, 'noteId');
+      expect(response.params.single.type, 'String');
+    });
+
     test("endpoints", () async {
       await userClient.endpoints();
     });

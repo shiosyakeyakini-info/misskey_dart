@@ -76,6 +76,8 @@ export 'src/data/drive/folders/drive_folders_update_request.dart';
 export 'src/data/emoji_request.dart';
 export 'src/data/emoji_response.dart';
 export 'src/data/emojis_response.dart';
+export 'src/data/endpoint_request.dart';
+export 'src/data/endpoint_response.dart';
 export 'src/data/federation/federation_show_instance_request.dart';
 export 'src/data/federation/federation_show_instance_response.dart';
 export 'src/data/federation/federation_users_request.dart';
