@@ -24,6 +24,7 @@ class Antenna with _$Antenna {
     required bool hasUnreadNote,
     bool? localOnly,
     bool? excludeBots,
+    bool? excludeNotesInSensitiveChannel,
   }) = _Antenna;
 
   factory Antenna.fromJson(Map<String, dynamic> json) =>
