@@ -29,6 +29,7 @@ _$AntennaImpl _$$AntennaImplFromJson(Map<String, dynamic> json) =>
       hasUnreadNote: json['hasUnreadNote'] as bool,
       localOnly: json['localOnly'] as bool?,
       excludeBots: json['excludeBots'] as bool?,
+      hideNotesInSensitiveChannel: json['hideNotesInSensitiveChannel'] as bool?,
     );
 
 Map<String, dynamic> _$$AntennaImplToJson(_$AntennaImpl instance) =>
@@ -49,6 +50,7 @@ Map<String, dynamic> _$$AntennaImplToJson(_$AntennaImpl instance) =>
       'hasUnreadNote': instance.hasUnreadNote,
       'localOnly': instance.localOnly,
       'excludeBots': instance.excludeBots,
+      'hideNotesInSensitiveChannel': instance.hideNotesInSensitiveChannel,
     };
 
 const _$AntennaSourceEnumMap = {

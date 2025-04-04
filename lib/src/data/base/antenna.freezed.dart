@@ -12,7 +12,7 @@ part of 'antenna.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Antenna _$AntennaFromJson(Map<String, dynamic> json) {
   return _Antenna.fromJson(json);
@@ -37,9 +37,14 @@ mixin _$Antenna {
   bool get hasUnreadNote => throw _privateConstructorUsedError;
   bool? get localOnly => throw _privateConstructorUsedError;
   bool? get excludeBots => throw _privateConstructorUsedError;
+  bool? get hideNotesInSensitiveChannel => throw _privateConstructorUsedError;
 
+  /// Serializes this Antenna to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Antenna
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AntennaCopyWith<Antenna> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -64,7 +69,8 @@ abstract class $AntennaCopyWith<$Res> {
       bool isActive,
       bool hasUnreadNote,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? hideNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -77,6 +83,8 @@ class _$AntennaCopyWithImpl<$Res, $Val extends Antenna>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Antenna
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -96,6 +104,7 @@ class _$AntennaCopyWithImpl<$Res, $Val extends Antenna>
     Object? hasUnreadNote = null,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? hideNotesInSensitiveChannel = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -162,6 +171,10 @@ class _$AntennaCopyWithImpl<$Res, $Val extends Antenna>
           ? _value.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hideNotesInSensitiveChannel: freezed == hideNotesInSensitiveChannel
+          ? _value.hideNotesInSensitiveChannel
+          : hideNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -189,7 +202,8 @@ abstract class _$$AntennaImplCopyWith<$Res> implements $AntennaCopyWith<$Res> {
       bool isActive,
       bool hasUnreadNote,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? hideNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -200,6 +214,8 @@ class __$$AntennaImplCopyWithImpl<$Res>
       _$AntennaImpl _value, $Res Function(_$AntennaImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Antenna
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -219,6 +235,7 @@ class __$$AntennaImplCopyWithImpl<$Res>
     Object? hasUnreadNote = null,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? hideNotesInSensitiveChannel = freezed,
   }) {
     return _then(_$AntennaImpl(
       id: null == id
@@ -285,6 +302,10 @@ class __$$AntennaImplCopyWithImpl<$Res>
           ? _value.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hideNotesInSensitiveChannel: freezed == hideNotesInSensitiveChannel
+          ? _value.hideNotesInSensitiveChannel
+          : hideNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -308,7 +329,8 @@ class _$AntennaImpl implements _Antenna {
       required this.isActive,
       required this.hasUnreadNote,
       this.localOnly,
-      this.excludeBots})
+      this.excludeBots,
+      this.hideNotesInSensitiveChannel})
       : _keywords = keywords,
         _excludeKeywords = excludeKeywords,
         _users = users;
@@ -368,10 +390,12 @@ class _$AntennaImpl implements _Antenna {
   final bool? localOnly;
   @override
   final bool? excludeBots;
+  @override
+  final bool? hideNotesInSensitiveChannel;
 
   @override
   String toString() {
-    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots, hideNotesInSensitiveChannel: $hideNotesInSensitiveChannel)';
   }
 
   @override
@@ -404,10 +428,14 @@ class _$AntennaImpl implements _Antenna {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.hideNotesInSensitiveChannel,
+                    hideNotesInSensitiveChannel) ||
+                other.hideNotesInSensitiveChannel ==
+                    hideNotesInSensitiveChannel));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -426,9 +454,12 @@ class _$AntennaImpl implements _Antenna {
       isActive,
       hasUnreadNote,
       localOnly,
-      excludeBots);
+      excludeBots,
+      hideNotesInSensitiveChannel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Antenna
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AntennaImplCopyWith<_$AntennaImpl> get copyWith =>
@@ -459,7 +490,8 @@ abstract class _Antenna implements Antenna {
       required final bool isActive,
       required final bool hasUnreadNote,
       final bool? localOnly,
-      final bool? excludeBots}) = _$AntennaImpl;
+      final bool? excludeBots,
+      final bool? hideNotesInSensitiveChannel}) = _$AntennaImpl;
 
   factory _Antenna.fromJson(Map<String, dynamic> json) = _$AntennaImpl.fromJson;
 
@@ -497,7 +529,12 @@ abstract class _Antenna implements Antenna {
   @override
   bool? get excludeBots;
   @override
-  @JsonKey(ignore: true)
+  bool? get hideNotesInSensitiveChannel;
+
+  /// Create a copy of Antenna
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AntennaImplCopyWith<_$AntennaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -25,6 +25,7 @@ _$AntennasCreateRequestImpl _$$AntennasCreateRequestImplFromJson(
       notify: json['notify'] as bool?,
       localOnly: json['localOnly'] as bool?,
       excludeBots: json['excludeBots'] as bool?,
+      hideNotesInSensitiveChannel: json['hideNotesInSensitiveChannel'] as bool?,
     );
 
 Map<String, dynamic> _$$AntennasCreateRequestImplToJson(
@@ -42,6 +43,7 @@ Map<String, dynamic> _$$AntennasCreateRequestImplToJson(
       'notify': instance.notify,
       'localOnly': instance.localOnly,
       'excludeBots': instance.excludeBots,
+      'hideNotesInSensitiveChannel': instance.hideNotesInSensitiveChannel,
     };
 
 const _$AntennaSourceEnumMap = {

@@ -21,6 +21,7 @@ class AntennasUpdateRequest with _$AntennasUpdateRequest {
     bool? notify,
     bool? localOnly,
     bool? excludeBots,
+    bool? hideNotesInSensitiveChannel,
   }) = _AntennasUpdateRequest;
 
   factory AntennasUpdateRequest.fromJson(Map<String, Object?> json) =>
