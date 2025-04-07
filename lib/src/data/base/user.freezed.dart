@@ -6994,7 +6994,7 @@ mixin _$UserPolicies {
   bool? get canImportFollowing => throw _privateConstructorUsedError;
   bool? get canImportMuting => throw _privateConstructorUsedError;
   bool? get canImportUserLists => throw _privateConstructorUsedError;
-  bool? get canChat => throw _privateConstructorUsedError;
+  ChatAvailability? get chatAvailability => throw _privateConstructorUsedError;
 
   /// Serializes this UserPolicies to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -7045,7 +7045,7 @@ abstract class $UserPoliciesCopyWith<$Res> {
       bool? canImportFollowing,
       bool? canImportMuting,
       bool? canImportUserLists,
-      bool? canChat});
+      ChatAvailability? chatAvailability});
 }
 
 /// @nodoc
@@ -7095,7 +7095,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
     Object? canImportFollowing = freezed,
     Object? canImportMuting = freezed,
     Object? canImportUserLists = freezed,
-    Object? canChat = freezed,
+    Object? chatAvailability = freezed,
   }) {
     return _then(_value.copyWith(
       gtlAvailable: null == gtlAvailable
@@ -7226,10 +7226,10 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
           ? _value.canImportUserLists
           : canImportUserLists // ignore: cast_nullable_to_non_nullable
               as bool?,
-      canChat: freezed == canChat
-          ? _value.canChat
-          : canChat // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      chatAvailability: freezed == chatAvailability
+          ? _value.chatAvailability
+          : chatAvailability // ignore: cast_nullable_to_non_nullable
+              as ChatAvailability?,
     ) as $Val);
   }
 }
@@ -7275,7 +7275,7 @@ abstract class _$$UserPoliciesImplCopyWith<$Res>
       bool? canImportFollowing,
       bool? canImportMuting,
       bool? canImportUserLists,
-      bool? canChat});
+      ChatAvailability? chatAvailability});
 }
 
 /// @nodoc
@@ -7323,7 +7323,7 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
     Object? canImportFollowing = freezed,
     Object? canImportMuting = freezed,
     Object? canImportUserLists = freezed,
-    Object? canChat = freezed,
+    Object? chatAvailability = freezed,
   }) {
     return _then(_$UserPoliciesImpl(
       gtlAvailable: null == gtlAvailable
@@ -7454,10 +7454,10 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
           ? _value.canImportUserLists
           : canImportUserLists // ignore: cast_nullable_to_non_nullable
               as bool?,
-      canChat: freezed == canChat
-          ? _value.canChat
-          : canChat // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      chatAvailability: freezed == chatAvailability
+          ? _value.chatAvailability
+          : chatAvailability // ignore: cast_nullable_to_non_nullable
+              as ChatAvailability?,
     ));
   }
 }
@@ -7498,7 +7498,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
       this.canImportFollowing,
       this.canImportMuting,
       this.canImportUserLists,
-      this.canChat});
+      this.chatAvailability});
 
   factory _$UserPoliciesImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserPoliciesImplFromJson(json);
@@ -7572,11 +7572,11 @@ class _$UserPoliciesImpl implements _UserPolicies {
   @override
   final bool? canImportUserLists;
   @override
-  final bool? canChat;
+  final ChatAvailability? chatAvailability;
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, canChat: $canChat)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
   }
 
   @override
@@ -7650,7 +7650,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
                 other.canImportMuting == canImportMuting) &&
             (identical(other.canImportUserLists, canImportUserLists) ||
                 other.canImportUserLists == canImportUserLists) &&
-            (identical(other.canChat, canChat) || other.canChat == canChat));
+            (identical(other.chatAvailability, chatAvailability) ||
+                other.chatAvailability == chatAvailability));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7689,7 +7690,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
         canImportFollowing,
         canImportMuting,
         canImportUserLists,
-        canChat
+        chatAvailability
       ]);
 
   /// Create a copy of UserPolicies
@@ -7742,7 +7743,7 @@ abstract class _UserPolicies implements UserPolicies {
       final bool? canImportFollowing,
       final bool? canImportMuting,
       final bool? canImportUserLists,
-      final bool? canChat}) = _$UserPoliciesImpl;
+      final ChatAvailability? chatAvailability}) = _$UserPoliciesImpl;
 
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =
       _$UserPoliciesImpl.fromJson;
@@ -7812,7 +7813,7 @@ abstract class _UserPolicies implements UserPolicies {
   @override
   bool? get canImportUserLists;
   @override
-  bool? get canChat;
+  ChatAvailability? get chatAvailability;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
