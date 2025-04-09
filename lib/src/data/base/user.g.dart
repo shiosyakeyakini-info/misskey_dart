@@ -835,7 +835,8 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
       canImportFollowing: json['canImportFollowing'] as bool?,
       canImportMuting: json['canImportMuting'] as bool?,
       canImportUserLists: json['canImportUserLists'] as bool?,
-      canChat: json['canChat'] as bool?,
+      chatAvailability: $enumDecodeNullable(
+          _$ChatAvailabilityEnumMap, json['chatAvailability']),
     );
 
 Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
@@ -872,8 +873,14 @@ Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
       'canImportFollowing': instance.canImportFollowing,
       'canImportMuting': instance.canImportMuting,
       'canImportUserLists': instance.canImportUserLists,
-      'canChat': instance.canChat,
+      'chatAvailability': _$ChatAvailabilityEnumMap[instance.chatAvailability],
     };
+
+const _$ChatAvailabilityEnumMap = {
+  ChatAvailability.available: 'available',
+  ChatAvailability.readOnly: 'readOnly',
+  ChatAvailability.unavailable: 'unavailable',
+};
 
 _$UserFieldImpl _$$UserFieldImplFromJson(Map<String, dynamic> json) =>
     _$UserFieldImpl(

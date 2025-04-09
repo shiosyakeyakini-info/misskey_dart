@@ -464,7 +464,7 @@ class UserPolicies with _$UserPolicies {
     bool? canImportFollowing,
     bool? canImportMuting,
     bool? canImportUserLists,
-    bool? canChat,
+    ChatAvailability? chatAvailability,
   }) = _UserPolicies;
 
   factory UserPolicies.fromJson(Map<String, Object?> json) =>
@@ -540,3 +540,5 @@ enum NotificationRecieveConfigType {
   list,
   never,
 }
+
+enum ChatAvailability { available, readOnly, unavailable }
