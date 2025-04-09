@@ -82,6 +82,15 @@ class Misskey {
     return response.map((e) => AnnouncementsResponse.fromJson(e));
   }
 
+  /// エンドポイントのパラメータを取得します。
+  Future<EndpointResponse> endpoint(EndpointRequest request) async {
+    final response = await apiService.post<Map<String, dynamic>>(
+      "endpoint",
+      request.toJson(),
+    );
+    return EndpointResponse.fromJson(response);
+  }
+
   /// サーバーが持つエンドポイントの一覧を取得します。
   Future<List<String>> endpoints() async {
     final response = await apiService.post<List>("endpoints", {});
