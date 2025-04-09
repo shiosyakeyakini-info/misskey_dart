@@ -12,7 +12,7 @@ part of 'antennas_update_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AntennasUpdateRequest _$AntennasUpdateRequestFromJson(
     Map<String, dynamic> json) {
@@ -35,9 +35,15 @@ mixin _$AntennasUpdateRequest {
   bool? get notify => throw _privateConstructorUsedError;
   bool? get localOnly => throw _privateConstructorUsedError;
   bool? get excludeBots => throw _privateConstructorUsedError;
+  bool? get excludeNotesInSensitiveChannel =>
+      throw _privateConstructorUsedError;
 
+  /// Serializes this AntennasUpdateRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AntennasUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AntennasUpdateRequestCopyWith<AntennasUpdateRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,7 +67,8 @@ abstract class $AntennasUpdateRequestCopyWith<$Res> {
       bool withFile,
       bool? notify,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -75,6 +82,8 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AntennasUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,6 +100,7 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res,
     Object? notify = freezed,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_value.copyWith(
       antennaId: null == antennaId
@@ -145,6 +155,10 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res,
           ? _value.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _value.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -171,7 +185,8 @@ abstract class _$$AntennasUpdateRequestImplCopyWith<$Res>
       bool withFile,
       bool? notify,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -183,6 +198,8 @@ class __$$AntennasUpdateRequestImplCopyWithImpl<$Res>
       $Res Function(_$AntennasUpdateRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AntennasUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -199,6 +216,7 @@ class __$$AntennasUpdateRequestImplCopyWithImpl<$Res>
     Object? notify = freezed,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_$AntennasUpdateRequestImpl(
       antennaId: null == antennaId
@@ -253,6 +271,10 @@ class __$$AntennasUpdateRequestImplCopyWithImpl<$Res>
           ? _value.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _value.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -273,7 +295,8 @@ class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
       required this.withFile,
       this.notify,
       this.localOnly,
-      this.excludeBots})
+      this.excludeBots,
+      this.excludeNotesInSensitiveChannel})
       : _keywords = keywords,
         _excludeKeywords = excludeKeywords,
         _users = users;
@@ -326,10 +349,12 @@ class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
   final bool? localOnly;
   @override
   final bool? excludeBots;
+  @override
+  final bool? excludeNotesInSensitiveChannel;
 
   @override
   String toString() {
-    return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 
   @override
@@ -357,10 +382,14 @@ class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -376,9 +405,12 @@ class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
       withFile,
       notify,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AntennasUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AntennasUpdateRequestImplCopyWith<_$AntennasUpdateRequestImpl>
@@ -395,19 +427,21 @@ class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
 
 abstract class _AntennasUpdateRequest implements AntennasUpdateRequest {
   const factory _AntennasUpdateRequest(
-      {required final String antennaId,
-      required final String name,
-      required final AntennaSource src,
-      final String? userListId,
-      required final List<List<String>> keywords,
-      required final List<List<String>> excludeKeywords,
-      required final List<String> users,
-      required final bool caseSensitive,
-      required final bool withReplies,
-      required final bool withFile,
-      final bool? notify,
-      final bool? localOnly,
-      final bool? excludeBots}) = _$AntennasUpdateRequestImpl;
+          {required final String antennaId,
+          required final String name,
+          required final AntennaSource src,
+          final String? userListId,
+          required final List<List<String>> keywords,
+          required final List<List<String>> excludeKeywords,
+          required final List<String> users,
+          required final bool caseSensitive,
+          required final bool withReplies,
+          required final bool withFile,
+          final bool? notify,
+          final bool? localOnly,
+          final bool? excludeBots,
+          final bool? excludeNotesInSensitiveChannel}) =
+      _$AntennasUpdateRequestImpl;
 
   factory _AntennasUpdateRequest.fromJson(Map<String, dynamic> json) =
       _$AntennasUpdateRequestImpl.fromJson;
@@ -431,15 +465,20 @@ abstract class _AntennasUpdateRequest implements AntennasUpdateRequest {
   @override
   bool get withReplies;
   @override
-  bool get withFile;
-  @override // Removed in Misskey 2024.5.0
+  bool get withFile; // Removed in Misskey 2024.5.0
+  @override
   bool? get notify;
   @override
   bool? get localOnly;
   @override
   bool? get excludeBots;
   @override
-  @JsonKey(ignore: true)
+  bool? get excludeNotesInSensitiveChannel;
+
+  /// Create a copy of AntennasUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AntennasUpdateRequestImplCopyWith<_$AntennasUpdateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

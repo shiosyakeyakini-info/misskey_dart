@@ -20,6 +20,7 @@ class AntennasCreateRequest with _$AntennasCreateRequest {
     bool? notify,
     bool? localOnly,
     bool? excludeBots,
+    bool? excludeNotesInSensitiveChannel,
   }) = _AntennasCreateRequest;
 
   factory AntennasCreateRequest.fromJson(Map<String, Object?> json) =>
