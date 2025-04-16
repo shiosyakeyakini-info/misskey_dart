@@ -4,12 +4,13 @@ import 'package:test/test.dart';
 import 'util/misskey_dart_test_util.dart';
 
 void main() async {
-  final admin = await adminClient.i.i();
-  final user = await userClient.i.i();
-  adminClient.i.update(IUpdateRequest(chatScope: ChatScope.everyone));
-  userClient.i.update(IUpdateRequest(chatScope: ChatScope.everyone));
+  setUp(() async {
+    await adminClient.i.update(IUpdateRequest(chatScope: ChatScope.everyone));
+    await userClient.i.update(IUpdateRequest(chatScope: ChatScope.everyone));
+  });
 
   test("history", () async {
+    final admin = await adminClient.i.i();
     final message = await userClient.chat.messages.createToUser(
       ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
     );
@@ -19,8 +20,9 @@ void main() async {
 
   group("messages", () {
     test("createToRoom", () async {
-      final room = await userClient.chat.rooms
-          .create(ChatRoomsCreateRequest(name: "test"));
+      final room = await userClient.chat.rooms.create(
+        ChatRoomsCreateRequest(name: "test"),
+      );
       final response = await userClient.chat.messages.createToRoom(
         ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "text"),
       );
@@ -28,6 +30,7 @@ void main() async {
     });
 
     test("createToUser", () async {
+      final admin = await adminClient.i.i();
       final response = await userClient.chat.messages.createToUser(
         ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "text"),
       );
@@ -35,6 +38,7 @@ void main() async {
     });
 
     test("delete", () async {
+      final admin = await adminClient.i.i();
       final message = await userClient.chat.messages.createToUser(
         ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
       );
@@ -62,6 +66,7 @@ void main() async {
     });
 
     test("unreact", () async {
+      final user = await userClient.i.i();
       final message = await adminClient.chat.messages.createToUser(
         ChatMessagesCreateToUserRequest(toUserId: user.id, text: "test"),
       );
@@ -78,8 +83,9 @@ void main() async {
     });
 
     test("roomTimeline", () async {
-      final room = await userClient.chat.rooms
-          .create(ChatRoomsCreateRequest(name: "test"));
+      final room = await userClient.chat.rooms.create(
+        ChatRoomsCreateRequest(name: "test"),
+      );
       final message = await userClient.chat.messages.createToRoom(
         ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "text"),
       );
@@ -90,6 +96,7 @@ void main() async {
     });
 
     test("search", () async {
+      final admin = await adminClient.i.i();
       final message = await userClient.chat.messages.createToUser(
         ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
       );
@@ -100,6 +107,7 @@ void main() async {
     });
 
     test("show", () async {
+      final admin = await adminClient.i.i();
       final message = await userClient.chat.messages.createToUser(
         ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
       );
@@ -110,6 +118,7 @@ void main() async {
     });
 
     test("userTimeline", () async {
+      final admin = await adminClient.i.i();
       final message = await userClient.chat.messages.createToUser(
         ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
       );
@@ -140,6 +149,7 @@ void main() async {
     });
 
     test("join", () async {
+      final user = await userClient.i.i();
       final newClient = (await adminClient.createUser()).client;
       final room = await newClient.chat.rooms.create(
         ChatRoomsCreateRequest(name: "test"),
@@ -151,6 +161,7 @@ void main() async {
     });
 
     test("joining", () async {
+      final user = await userClient.i.i();
       final newClient = (await adminClient.createUser()).client;
       final room = await newClient.chat.rooms.create(
         ChatRoomsCreateRequest(name: "test"),
@@ -159,12 +170,14 @@ void main() async {
         ChatRoomsInvitationsCreateRequest(roomId: room.id, userId: user.id),
       );
       await userClient.chat.rooms.join(ChatRoomsJoinRequest(roomId: room.id));
-      final response =
-          await userClient.chat.rooms.joining(ChatRoomsJoiningRequest());
+      final response = await userClient.chat.rooms.joining(
+        ChatRoomsJoiningRequest(),
+      );
       expect(response.map((e) => e.roomId), contains(room.id));
     });
 
     test("leave", () async {
+      final user = await userClient.i.i();
       final newClient = (await adminClient.createUser()).client;
       final room = await newClient.chat.rooms.create(
         ChatRoomsCreateRequest(name: "test"),
@@ -173,15 +186,15 @@ void main() async {
         ChatRoomsInvitationsCreateRequest(roomId: room.id, userId: user.id),
       );
       await userClient.chat.rooms.join(ChatRoomsJoinRequest(roomId: room.id));
-      await userClient.chat.rooms.leave(
-        ChatRoomsLeaveRequest(roomId: room.id),
+      await userClient.chat.rooms.leave(ChatRoomsLeaveRequest(roomId: room.id));
+      final response = await userClient.chat.rooms.joining(
+        ChatRoomsJoiningRequest(),
       );
-      final response =
-          await userClient.chat.rooms.joining(ChatRoomsJoiningRequest());
       expect(response.map((e) => e.roomId), isNot(contains(room.id)));
     });
 
     test("mute", () async {
+      final user = await userClient.i.i();
       final newClient = (await adminClient.createUser()).client;
       final room = await newClient.chat.rooms.create(
         ChatRoomsCreateRequest(name: "test"),
@@ -210,8 +223,9 @@ void main() async {
       final room = await userClient.chat.rooms.create(
         ChatRoomsCreateRequest(name: "test"),
       );
-      final response =
-          await userClient.chat.rooms.owned(ChatRoomsOwnedRequest());
+      final response = await userClient.chat.rooms.owned(
+        ChatRoomsOwnedRequest(),
+      );
       expect(response.map((e) => e.id), contains(room.id));
     });
 
@@ -251,6 +265,7 @@ void main() async {
       });
 
       test("ignore", () async {
+        final user = await userClient.i.i();
         final newClient = (await adminClient.createUser()).client;
         final room = await newClient.chat.rooms.create(
           ChatRoomsCreateRequest(name: "test"),
@@ -268,6 +283,7 @@ void main() async {
       });
 
       test("inbox", () async {
+        final user = await userClient.i.i();
         final newClient = (await adminClient.createUser()).client;
         final room = await newClient.chat.rooms.create(
           ChatRoomsCreateRequest(name: "test"),
