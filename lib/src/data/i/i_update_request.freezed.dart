@@ -12,7 +12,7 @@ part of 'i_update_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) {
   return _IUpdateRequest.fromJson(json);
@@ -56,6 +56,7 @@ mixin _$IUpdateRequest {
   FFVisibility? get ffVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followingVisibility => throw _privateConstructorUsedError;
   FFVisibility? get followersVisibility => throw _privateConstructorUsedError;
+  ChatScope? get chatScope => throw _privateConstructorUsedError;
   String? get pinnedPageId => throw _privateConstructorUsedError;
   List<String>? get mutingNotificationTypes =>
       throw _privateConstructorUsedError;
@@ -70,8 +71,12 @@ mixin _$IUpdateRequest {
       throw _privateConstructorUsedError;
   List<String>? get alsoKnownAs => throw _privateConstructorUsedError;
 
+  /// Serializes this IUpdateRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IUpdateRequestCopyWith<IUpdateRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -113,6 +118,7 @@ abstract class $IUpdateRequestCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followingVisibility,
       FFVisibility? followersVisibility,
+      ChatScope? chatScope,
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -135,6 +141,8 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -168,6 +176,7 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
+    Object? chatScope = freezed,
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
@@ -298,6 +307,10 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
           ? _value.followersVisibility
           : followersVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _value.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _value.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
@@ -333,6 +346,8 @@ class _$IUpdateRequestCopyWithImpl<$Res, $Val extends IUpdateRequest>
     ) as $Val);
   }
 
+  /// Create a copy of IUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig {
@@ -386,6 +401,7 @@ abstract class _$$IUpdateRequestImplCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followingVisibility,
       FFVisibility? followersVisibility,
+      ChatScope? chatScope,
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -407,6 +423,8 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
       _$IUpdateRequestImpl _value, $Res Function(_$IUpdateRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -440,6 +458,7 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
+    Object? chatScope = freezed,
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
@@ -570,6 +589,10 @@ class __$$IUpdateRequestImplCopyWithImpl<$Res>
           ? _value.followersVisibility
           : followersVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _value.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _value.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
@@ -640,6 +663,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followingVisibility,
       this.followersVisibility,
+      this.chatScope,
       this.pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
@@ -742,6 +766,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
   @override
   final FFVisibility? followersVisibility;
   @override
+  final ChatScope? chatScope;
+  @override
   final String? pinnedPageId;
   final List<String>? _mutingNotificationTypes;
   @override
@@ -811,7 +837,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 
   @override
@@ -876,6 +902,8 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 other.followingVisibility == followingVisibility) &&
             (identical(other.followersVisibility, followersVisibility) ||
                 other.followersVisibility == followersVisibility) &&
+            (identical(other.chatScope, chatScope) ||
+                other.chatScope == chatScope) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
             const DeepCollectionEquality().equals(
@@ -886,13 +914,12 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
                 .equals(other._hardMutedWords, _hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other._mutedInstances, _mutedInstances) &&
-            (identical(other.notificationRecieveConfig, notificationRecieveConfig) ||
-                other.notificationRecieveConfig == notificationRecieveConfig) &&
+            (identical(other.notificationRecieveConfig, notificationRecieveConfig) || other.notificationRecieveConfig == notificationRecieveConfig) &&
             const DeepCollectionEquality().equals(other._emailNotificationTypes, _emailNotificationTypes) &&
             const DeepCollectionEquality().equals(other._alsoKnownAs, _alsoKnownAs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -926,6 +953,7 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         ffVisibility,
         followingVisibility,
         followersVisibility,
+        chatScope,
         pinnedPageId,
         const DeepCollectionEquality().hash(_mutingNotificationTypes),
         const DeepCollectionEquality().hash(_mutedWords),
@@ -936,7 +964,9 @@ class _$IUpdateRequestImpl implements _IUpdateRequest {
         const DeepCollectionEquality().hash(_alsoKnownAs)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IUpdateRequestImplCopyWith<_$IUpdateRequestImpl> get copyWith =>
@@ -983,6 +1013,7 @@ abstract class _IUpdateRequest implements IUpdateRequest {
       @Deprecated("removed at 2023.12.0") final FFVisibility? ffVisibility,
       final FFVisibility? followingVisibility,
       final FFVisibility? followersVisibility,
+      final ChatScope? chatScope,
       final String? pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
@@ -1060,6 +1091,8 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   @override
   FFVisibility? get followersVisibility;
   @override
+  ChatScope? get chatScope;
+  @override
   String? get pinnedPageId;
   @override
   List<String>? get mutingNotificationTypes;
@@ -1077,8 +1110,11 @@ abstract class _IUpdateRequest implements IUpdateRequest {
   List<String>? get emailNotificationTypes;
   @override
   List<String>? get alsoKnownAs;
+
+  /// Create a copy of IUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IUpdateRequestImplCopyWith<_$IUpdateRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1096,8 +1132,12 @@ mixin _$IUpdateAvatarDecoration {
   double get offsetX => throw _privateConstructorUsedError;
   double get offsetY => throw _privateConstructorUsedError;
 
+  /// Serializes this IUpdateAvatarDecoration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IUpdateAvatarDecoration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IUpdateAvatarDecorationCopyWith<IUpdateAvatarDecoration> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1123,6 +1163,8 @@ class _$IUpdateAvatarDecorationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IUpdateAvatarDecoration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1180,6 +1222,8 @@ class __$$IUpdateAvatarDecorationImplCopyWithImpl<$Res>
       $Res Function(_$IUpdateAvatarDecorationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IUpdateAvatarDecoration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1258,12 +1302,14 @@ class _$IUpdateAvatarDecorationImpl implements _IUpdateAvatarDecoration {
             (identical(other.offsetY, offsetY) || other.offsetY == offsetY));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, angle, flipH, offsetX, offsetY);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IUpdateAvatarDecoration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IUpdateAvatarDecorationImplCopyWith<_$IUpdateAvatarDecorationImpl>
@@ -1299,8 +1345,11 @@ abstract class _IUpdateAvatarDecoration implements IUpdateAvatarDecoration {
   double get offsetX;
   @override
   double get offsetY;
+
+  /// Create a copy of IUpdateAvatarDecoration
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IUpdateAvatarDecorationImplCopyWith<_$IUpdateAvatarDecorationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

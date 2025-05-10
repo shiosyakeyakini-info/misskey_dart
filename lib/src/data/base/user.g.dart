@@ -163,6 +163,8 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool?,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
       securityKeys: json['securityKeys'] as bool?,
@@ -229,6 +231,8 @@ Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -241,6 +245,14 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.public: 'public',
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
+};
+
+const _$ChatScopeEnumMap = {
+  ChatScope.everyone: 'everyone',
+  ChatScope.followers: 'followers',
+  ChatScope.following: 'following',
+  ChatScope.mutual: 'mutual',
+  ChatScope.none: 'none',
 };
 
 _$UserDetailedNotMeWithRelationsImpl
@@ -334,6 +346,8 @@ _$UserDetailedNotMeWithRelationsImpl
               _$FFVisibilityEnumMap, json['followersVisibility']),
           followingVisibility: $enumDecodeNullable(
               _$FFVisibilityEnumMap, json['followingVisibility']),
+          chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+          canChat: json['canChat'] as bool?,
           twoFactorEnabled: json['twoFactorEnabled'] as bool?,
           usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
           securityKeys: json['securityKeys'] as bool?,
@@ -413,6 +427,8 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -521,6 +537,8 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool,
       securityKeys: json['securityKeys'] as bool,
@@ -553,6 +571,7 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       hasUnreadAnnouncement: json['hasUnreadAnnouncement'] as bool,
       hasUnreadAntenna: json['hasUnreadAntenna'] as bool,
       hasUnreadChannel: json['hasUnreadChannel'] as bool,
+      hasUnreadChatMessages: json['hasUnreadChatMessages'] as bool?,
       hasUnreadNotification: json['hasUnreadNotification'] as bool,
       hasPendingReceivedFollowRequest:
           json['hasPendingReceivedFollowRequest'] as bool,
@@ -646,6 +665,8 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -675,6 +696,7 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'hasUnreadAnnouncement': instance.hasUnreadAnnouncement,
       'hasUnreadAntenna': instance.hasUnreadAntenna,
       'hasUnreadChannel': instance.hasUnreadChannel,
+      'hasUnreadChatMessages': instance.hasUnreadChatMessages,
       'hasUnreadNotification': instance.hasUnreadNotification,
       'hasPendingReceivedFollowRequest':
           instance.hasPendingReceivedFollowRequest,
@@ -941,6 +963,10 @@ _$NotificationRecieveConfigsImpl _$$NotificationRecieveConfigsImplFromJson(
           ? null
           : NotificationRecieveConfig.fromJson(
               json['roleAssigned'] as Map<String, dynamic>),
+      chatRoomInvitationReceived: json['chatRoomInvitationReceived'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['chatRoomInvitationReceived'] as Map<String, dynamic>),
       achievementEarned: json['achievementEarned'] == null
           ? null
           : NotificationRecieveConfig.fromJson(
@@ -969,6 +995,8 @@ Map<String, dynamic> _$$NotificationRecieveConfigsImplToJson(
       'receiveFollowRequest': instance.receiveFollowRequest?.toJson(),
       'followRequestAccepted': instance.followRequestAccepted?.toJson(),
       'roleAssigned': instance.roleAssigned?.toJson(),
+      'chatRoomInvitationReceived':
+          instance.chatRoomInvitationReceived?.toJson(),
       'achievementEarned': instance.achievementEarned?.toJson(),
       'app': instance.app?.toJson(),
       'test': instance.test?.toJson(),

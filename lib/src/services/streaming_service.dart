@@ -21,6 +21,9 @@ abstract class StreamingController {
   /// ログをリクエストします。
   void requestLog(String id, int length);
 
+  /// チャットを既読にします。
+  void read(String id);
+
   /// ローカルタイムラインに接続します。
   Stream<StreamingResponse> localTimelineStream({
     required LocalTimelineParameter parameter,
@@ -75,6 +78,18 @@ abstract class StreamingController {
   /// ホームタイムラインに接続します。
   Stream<StreamingResponse> homeTimelineStream({
     required HomeTimelineParameter parameter,
+    required String id,
+  });
+
+  /// チャット（ユーザー）のストリームに接続します。
+  Stream<StreamingResponse> chatUserStream({
+    required ChatUserParameter parameter,
+    required String id,
+  });
+
+  /// チャット（ルーム）のストリームに接続します。
+  Stream<StreamingResponse> chatRoomStream({
+    required ChatRoomParameter parameter,
     required String id,
   });
 }

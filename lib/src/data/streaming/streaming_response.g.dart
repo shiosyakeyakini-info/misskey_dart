@@ -587,6 +587,22 @@ Map<String, dynamic> _$$UnreadAntennaChannelEventImplToJson(
       'type': instance.$type,
     };
 
+_$NewChatMessageEventImpl _$$NewChatMessageEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NewChatMessageEventImpl(
+      id: json['id'] as String,
+      body: ChatMessage.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$NewChatMessageEventImplToJson(
+        _$NewChatMessageEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
 _$ReadAllAnnouncementsChannelEventImpl
     _$$ReadAllAnnouncementsChannelEventImplFromJson(
             Map<String, dynamic> json) =>
@@ -708,6 +724,70 @@ _$AnnouncementCreatedChannelEventImpl
 
 Map<String, dynamic> _$$AnnouncementCreatedChannelEventImplToJson(
         _$AnnouncementCreatedChannelEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
+_$ChatMessageChannelEventImpl _$$ChatMessageChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChatMessageChannelEventImpl(
+      id: json['id'] as String,
+      body: ChatMessage.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$ChatMessageChannelEventImplToJson(
+        _$ChatMessageChannelEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
+_$ChatDeletedChannelEventImpl _$$ChatDeletedChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChatDeletedChannelEventImpl(
+      id: json['id'] as String,
+      body: json['body'] as String,
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$ChatDeletedChannelEventImplToJson(
+        _$ChatDeletedChannelEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body,
+      'type': instance.$type,
+    };
+
+_$ChatReactChannelEventImpl _$$ChatReactChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChatReactChannelEventImpl(
+      id: json['id'] as String,
+      body: ChatReact.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$ChatReactChannelEventImplToJson(
+        _$ChatReactChannelEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'body': instance.body.toJson(),
+      'type': instance.$type,
+    };
+
+_$ChatUnreactChannelEventImpl _$$ChatUnreactChannelEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChatUnreactChannelEventImpl(
+      id: json['id'] as String,
+      body: ChatReact.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$ChatUnreactChannelEventImplToJson(
+        _$ChatUnreactChannelEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'body': instance.body.toJson(),

@@ -17,13 +17,16 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       noteId: json['noteId'] as String?,
       followRequestId: json['followRequestId'] as String?,
       reaction: json['reaction'] as String?,
-      choice: json['choice'] as int?,
+      choice: (json['choice'] as num?)?.toInt(),
       achievement: json['achievement'] as String?,
       body: json['body'] as String?,
       header: json['header'] as String?,
       icon: _$JsonConverterFromJson<String, Uri?>(
           json['icon'], const NullableUriConverter().fromJson),
       appAccessTokenId: json['appAccessTokenId'] as String?,
+      invitation: json['invitation'] == null
+          ? null
+          : ChatJoining.fromJson(json['invitation'] as Map<String, dynamic>),
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
@@ -62,6 +65,7 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'header': instance.header,
       'icon': const NullableUriConverter().toJson(instance.icon),
       'appAccessTokenId': instance.appAccessTokenId,
+      'invitation': instance.invitation?.toJson(),
       'userId': instance.userId,
       'user': instance.user?.toJson(),
       'note': instance.note?.toJson(),
@@ -94,7 +98,9 @@ const _$NotificationTypeEnumMap = {
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
   NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.createToken: 'createToken',
   NotificationType.login: 'login',
+  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
   NotificationType.unknown: 'unknown',
 };
 

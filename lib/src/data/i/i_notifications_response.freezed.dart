@@ -12,7 +12,7 @@ part of 'i_notifications_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 INotificationsResponse _$INotificationsResponseFromJson(
     Map<String, dynamic> json) {
@@ -36,6 +36,7 @@ mixin _$INotificationsResponse {
   @NullableUriConverter()
   Uri? get icon => throw _privateConstructorUsedError;
   String? get appAccessTokenId => throw _privateConstructorUsedError;
+  ChatJoining? get invitation => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   UserLite? get user => throw _privateConstructorUsedError;
   Note? get note => throw _privateConstructorUsedError;
@@ -48,8 +49,12 @@ mixin _$INotificationsResponse {
   String? get fileId => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this INotificationsResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $INotificationsResponseCopyWith<INotificationsResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,6 +79,7 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       String? header,
       @NullableUriConverter() Uri? icon,
       String? appAccessTokenId,
+      ChatJoining? invitation,
       String? userId,
       UserLite? user,
       Note? note,
@@ -84,6 +90,7 @@ abstract class $INotificationsResponseCopyWith<$Res> {
       String? fileId,
       String? message});
 
+  $ChatJoiningCopyWith<$Res>? get invitation;
   $UserLiteCopyWith<$Res>? get user;
   $NoteCopyWith<$Res>? get note;
   $RolesListResponseCopyWith<$Res>? get role;
@@ -100,6 +107,8 @@ class _$INotificationsResponseCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -115,6 +124,7 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     Object? header = freezed,
     Object? icon = freezed,
     Object? appAccessTokenId = freezed,
+    Object? invitation = freezed,
     Object? userId = freezed,
     Object? user = freezed,
     Object? note = freezed,
@@ -174,6 +184,10 @@ class _$INotificationsResponseCopyWithImpl<$Res,
           ? _value.appAccessTokenId
           : appAccessTokenId // ignore: cast_nullable_to_non_nullable
               as String?,
+      invitation: freezed == invitation
+          ? _value.invitation
+          : invitation // ignore: cast_nullable_to_non_nullable
+              as ChatJoining?,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -213,6 +227,22 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatJoiningCopyWith<$Res>? get invitation {
+    if (_value.invitation == null) {
+      return null;
+    }
+
+    return $ChatJoiningCopyWith<$Res>(_value.invitation!, (value) {
+      return _then(_value.copyWith(invitation: value) as $Val);
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res>? get user {
@@ -225,6 +255,8 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res>? get note {
@@ -237,6 +269,8 @@ class _$INotificationsResponseCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RolesListResponseCopyWith<$Res>? get role {
@@ -273,6 +307,7 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       String? header,
       @NullableUriConverter() Uri? icon,
       String? appAccessTokenId,
+      ChatJoining? invitation,
       String? userId,
       UserLite? user,
       Note? note,
@@ -283,6 +318,8 @@ abstract class _$$INotificationsResponseImplCopyWith<$Res>
       String? fileId,
       String? message});
 
+  @override
+  $ChatJoiningCopyWith<$Res>? get invitation;
   @override
   $UserLiteCopyWith<$Res>? get user;
   @override
@@ -301,6 +338,8 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
       $Res Function(_$INotificationsResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -316,6 +355,7 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
     Object? header = freezed,
     Object? icon = freezed,
     Object? appAccessTokenId = freezed,
+    Object? invitation = freezed,
     Object? userId = freezed,
     Object? user = freezed,
     Object? note = freezed,
@@ -375,6 +415,10 @@ class __$$INotificationsResponseImplCopyWithImpl<$Res>
           ? _value.appAccessTokenId
           : appAccessTokenId // ignore: cast_nullable_to_non_nullable
               as String?,
+      invitation: freezed == invitation
+          ? _value.invitation
+          : invitation // ignore: cast_nullable_to_non_nullable
+              as ChatJoining?,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -431,6 +475,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
       this.header,
       @NullableUriConverter() this.icon,
       this.appAccessTokenId,
+      this.invitation,
       this.userId,
       this.user,
       this.note,
@@ -474,6 +519,8 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
   @override
   final String? appAccessTokenId;
   @override
+  final ChatJoining? invitation;
+  @override
   final String? userId;
   @override
   final UserLite? user;
@@ -510,7 +557,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
 
   @override
   String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, userId: $userId, user: $user, note: $note, role: $role, reactions: $reactions, users: $users, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, invitation: $invitation, userId: $userId, user: $user, note: $note, role: $role, reactions: $reactions, users: $users, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
   }
 
   @override
@@ -535,6 +582,8 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.appAccessTokenId, appAccessTokenId) ||
                 other.appAccessTokenId == appAccessTokenId) &&
+            (identical(other.invitation, invitation) ||
+                other.invitation == invitation) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.note, note) || other.note == note) &&
@@ -548,7 +597,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -564,6 +613,7 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
         header,
         icon,
         appAccessTokenId,
+        invitation,
         userId,
         user,
         note,
@@ -575,7 +625,9 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
         message
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
@@ -605,6 +657,7 @@ abstract class _INotificationsResponse implements INotificationsResponse {
       final String? header,
       @NullableUriConverter() final Uri? icon,
       final String? appAccessTokenId,
+      final ChatJoining? invitation,
       final String? userId,
       final UserLite? user,
       final Note? note,
@@ -646,6 +699,8 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   @override
   String? get appAccessTokenId;
   @override
+  ChatJoining? get invitation;
+  @override
   String? get userId;
   @override
   UserLite? get user;
@@ -663,8 +718,11 @@ abstract class _INotificationsResponse implements INotificationsResponse {
   String? get fileId;
   @override
   String? get message;
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -679,8 +737,12 @@ mixin _$INotificationsReaction {
   UserLite get user => throw _privateConstructorUsedError;
   String get reaction => throw _privateConstructorUsedError;
 
+  /// Serializes this INotificationsReaction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of INotificationsReaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $INotificationsReactionCopyWith<INotificationsReaction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -707,6 +769,8 @@ class _$INotificationsReactionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of INotificationsReaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -725,6 +789,8 @@ class _$INotificationsReactionCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of INotificationsReaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get user {
@@ -759,6 +825,8 @@ class __$$INotificationsReactionImplCopyWithImpl<$Res>
       $Res Function(_$INotificationsReactionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of INotificationsReaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -807,11 +875,13 @@ class _$INotificationsReactionImpl implements _INotificationsReaction {
                 other.reaction == reaction));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, user, reaction);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of INotificationsReaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$INotificationsReactionImplCopyWith<_$INotificationsReactionImpl>
@@ -838,8 +908,11 @@ abstract class _INotificationsReaction implements INotificationsReaction {
   UserLite get user;
   @override
   String get reaction;
+
+  /// Create a copy of INotificationsReaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$INotificationsReactionImplCopyWith<_$INotificationsReactionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

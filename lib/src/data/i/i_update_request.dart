@@ -40,6 +40,7 @@ class IUpdateRequest with _$IUpdateRequest {
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followingVisibility,
     FFVisibility? followersVisibility,
+    ChatScope? chatScope,
     String? pinnedPageId,
     List<String>? mutingNotificationTypes,
     @MuteWordsConverter() List<MuteWord>? mutedWords,
