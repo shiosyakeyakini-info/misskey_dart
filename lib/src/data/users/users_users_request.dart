@@ -8,7 +8,7 @@ part 'users_users_request.freezed.dart';
 part 'users_users_request.g.dart';
 
 @freezed
-class UsersUsersRequest with _$UsersUsersRequest {
+abstract class UsersUsersRequest with _$UsersUsersRequest {
   const factory UsersUsersRequest({
     int? limit,
     int? offset,

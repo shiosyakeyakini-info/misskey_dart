@@ -6,7 +6,7 @@ part 'clip.freezed.dart';
 part 'clip.g.dart';
 
 @freezed
-class Clip with _$Clip {
+abstract class Clip with _$Clip {
   const factory Clip({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

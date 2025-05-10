@@ -6,15 +6,15 @@ part of 'users_lists_pull_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersListsPullRequestImpl _$$UsersListsPullRequestImplFromJson(
+_UsersListsPullRequest _$UsersListsPullRequestFromJson(
         Map<String, dynamic> json) =>
-    _$UsersListsPullRequestImpl(
+    _UsersListsPullRequest(
       listId: json['listId'] as String,
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$UsersListsPullRequestImplToJson(
-        _$UsersListsPullRequestImpl instance) =>
+Map<String, dynamic> _$UsersListsPullRequestToJson(
+        _UsersListsPullRequest instance) =>
     <String, dynamic>{
       'listId': instance.listId,
       'userId': instance.userId,

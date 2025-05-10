@@ -4,7 +4,7 @@ part 'pages_unlike_request.freezed.dart';
 part 'pages_unlike_request.g.dart';
 
 @freezed
-class PagesUnlikeRequest with _$PagesUnlikeRequest {
+abstract class PagesUnlikeRequest with _$PagesUnlikeRequest {
   const factory PagesUnlikeRequest({
     required String pageId,
   }) = _PagesUnlikeRequest;

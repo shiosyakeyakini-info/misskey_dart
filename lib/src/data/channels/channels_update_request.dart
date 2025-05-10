@@ -4,7 +4,7 @@ part 'channels_update_request.freezed.dart';
 part 'channels_update_request.g.dart';
 
 @freezed
-class ChannelsUpdateRequest with _$ChannelsUpdateRequest {
+abstract class ChannelsUpdateRequest with _$ChannelsUpdateRequest {
   const factory ChannelsUpdateRequest({
     required String channelId,
     String? name,

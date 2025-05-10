@@ -6,9 +6,9 @@ part of 'reversi_show_game_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReversiShowGameResponseImpl _$$ReversiShowGameResponseImplFromJson(
+_ReversiShowGameResponse _$ReversiShowGameResponseFromJson(
         Map<String, dynamic> json) =>
-    _$ReversiShowGameResponseImpl(
+    _ReversiShowGameResponse(
       id: json['id'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       startedAt: _$JsonConverterFromJson<String, DateTime?>(
@@ -28,19 +28,19 @@ _$ReversiShowGameResponseImpl _$$ReversiShowGameResponseImplFromJson(
       winnerId: json['winnerId'] as String?,
       surrenderedUserId: json['surrenderedUserId'] as String?,
       timeoutUserId: json['timeoutUserId'] as String?,
-      black: json['black'] as int?,
+      black: (json['black'] as num?)?.toInt(),
       bw: json['bw'] as String,
       noIrregularRules: json['noIrregularRules'] as bool,
       isLlotheo: json['isLlotheo'] as bool,
       canPutEverywhere: json['canPutEverywhere'] as bool,
       loopedBoard: json['loopedBoard'] as bool,
-      timeLimitForEachTurn: json['timeLimitForEachTurn'] as int,
+      timeLimitForEachTurn: (json['timeLimitForEachTurn'] as num).toInt(),
       logs: json['logs'] as List<dynamic>,
       map: (json['map'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$ReversiShowGameResponseImplToJson(
-        _$ReversiShowGameResponseImpl instance) =>
+Map<String, dynamic> _$ReversiShowGameResponseToJson(
+        _ReversiShowGameResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': instance.createdAt.toIso8601String(),

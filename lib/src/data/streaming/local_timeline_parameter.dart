@@ -4,7 +4,7 @@ part 'local_timeline_parameter.freezed.dart';
 part 'local_timeline_parameter.g.dart';
 
 @freezed
-class LocalTimelineParameter with _$LocalTimelineParameter {
+abstract class LocalTimelineParameter with _$LocalTimelineParameter {
   const factory LocalTimelineParameter({
     bool? withRenotes,
     bool? withReplies,

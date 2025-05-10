@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,96 +10,56 @@ part of 'hashtags_users_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-HashtagsUsersRequest _$HashtagsUsersRequestFromJson(Map<String, dynamic> json) {
-  return _HashtagsUsersRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$HashtagsUsersRequest {
-  String get tag => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
+  String get tag;
+  int? get limit;
   @UsersSortConverter()
-  UsersSortType get sort => throw _privateConstructorUsedError;
-  UsersState? get state => throw _privateConstructorUsedError;
-  Origin? get origin => throw _privateConstructorUsedError;
+  UsersSortType get sort;
+  UsersState? get state;
+  Origin? get origin;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $HashtagsUsersRequestCopyWith<HashtagsUsersRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HashtagsUsersRequestCopyWith<$Res> {
-  factory $HashtagsUsersRequestCopyWith(HashtagsUsersRequest value,
-          $Res Function(HashtagsUsersRequest) then) =
-      _$HashtagsUsersRequestCopyWithImpl<$Res, HashtagsUsersRequest>;
-  @useResult
-  $Res call(
-      {String tag,
-      int? limit,
-      @UsersSortConverter() UsersSortType sort,
-      UsersState? state,
-      Origin? origin});
-}
-
-/// @nodoc
-class _$HashtagsUsersRequestCopyWithImpl<$Res,
-        $Val extends HashtagsUsersRequest>
-    implements $HashtagsUsersRequestCopyWith<$Res> {
-  _$HashtagsUsersRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of HashtagsUsersRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $HashtagsUsersRequestCopyWith<HashtagsUsersRequest> get copyWith =>
+      _$HashtagsUsersRequestCopyWithImpl<HashtagsUsersRequest>(
+          this as HashtagsUsersRequest, _$identity);
+
+  /// Serializes this HashtagsUsersRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? tag = null,
-    Object? limit = freezed,
-    Object? sort = null,
-    Object? state = freezed,
-    Object? origin = freezed,
-  }) {
-    return _then(_value.copyWith(
-      tag: null == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: null == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as UsersSortType,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as UsersState?,
-      origin: freezed == origin
-          ? _value.origin
-          : origin // ignore: cast_nullable_to_non_nullable
-              as Origin?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HashtagsUsersRequest &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sort, sort) || other.sort == sort) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.origin, origin) || other.origin == origin));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, tag, limit, sort, state, origin);
+
+  @override
+  String toString() {
+    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, sort: $sort, state: $state, origin: $origin)';
   }
 }
 
 /// @nodoc
-abstract class _$$HashtagsUsersRequestImplCopyWith<$Res>
-    implements $HashtagsUsersRequestCopyWith<$Res> {
-  factory _$$HashtagsUsersRequestImplCopyWith(_$HashtagsUsersRequestImpl value,
-          $Res Function(_$HashtagsUsersRequestImpl) then) =
-      __$$HashtagsUsersRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $HashtagsUsersRequestCopyWith<$Res> {
+  factory $HashtagsUsersRequestCopyWith(HashtagsUsersRequest value,
+          $Res Function(HashtagsUsersRequest) _then) =
+      _$HashtagsUsersRequestCopyWithImpl;
   @useResult
   $Res call(
       {String tag,
@@ -109,13 +70,15 @@ abstract class _$$HashtagsUsersRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HashtagsUsersRequestImplCopyWithImpl<$Res>
-    extends _$HashtagsUsersRequestCopyWithImpl<$Res, _$HashtagsUsersRequestImpl>
-    implements _$$HashtagsUsersRequestImplCopyWith<$Res> {
-  __$$HashtagsUsersRequestImplCopyWithImpl(_$HashtagsUsersRequestImpl _value,
-      $Res Function(_$HashtagsUsersRequestImpl) _then)
-      : super(_value, _then);
+class _$HashtagsUsersRequestCopyWithImpl<$Res>
+    implements $HashtagsUsersRequestCopyWith<$Res> {
+  _$HashtagsUsersRequestCopyWithImpl(this._self, this._then);
 
+  final HashtagsUsersRequest _self;
+  final $Res Function(HashtagsUsersRequest) _then;
+
+  /// Create a copy of HashtagsUsersRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -125,25 +88,25 @@ class __$$HashtagsUsersRequestImplCopyWithImpl<$Res>
     Object? state = freezed,
     Object? origin = freezed,
   }) {
-    return _then(_$HashtagsUsersRequestImpl(
+    return _then(_self.copyWith(
       tag: null == tag
-          ? _value.tag
+          ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
               as String,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sort: null == sort
-          ? _value.sort
+          ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
               as UsersSortType,
       state: freezed == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as UsersState?,
       origin: freezed == origin
-          ? _value.origin
+          ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as Origin?,
     ));
@@ -152,16 +115,15 @@ class __$$HashtagsUsersRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HashtagsUsersRequestImpl implements _HashtagsUsersRequest {
-  const _$HashtagsUsersRequestImpl(
+class _HashtagsUsersRequest implements HashtagsUsersRequest {
+  const _HashtagsUsersRequest(
       {required this.tag,
       this.limit,
       @UsersSortConverter() required this.sort,
       this.state,
       this.origin});
-
-  factory _$HashtagsUsersRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HashtagsUsersRequestImplFromJson(json);
+  factory _HashtagsUsersRequest.fromJson(Map<String, dynamic> json) =>
+      _$HashtagsUsersRequestFromJson(json);
 
   @override
   final String tag;
@@ -175,16 +137,27 @@ class _$HashtagsUsersRequestImpl implements _HashtagsUsersRequest {
   @override
   final Origin? origin;
 
+  /// Create a copy of HashtagsUsersRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, sort: $sort, state: $state, origin: $origin)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HashtagsUsersRequestCopyWith<_HashtagsUsersRequest> get copyWith =>
+      __$HashtagsUsersRequestCopyWithImpl<_HashtagsUsersRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HashtagsUsersRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HashtagsUsersRequestImpl &&
+            other is _HashtagsUsersRequest &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sort, sort) || other.sort == sort) &&
@@ -192,50 +165,74 @@ class _$HashtagsUsersRequestImpl implements _HashtagsUsersRequest {
             (identical(other.origin, origin) || other.origin == origin));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, tag, limit, sort, state, origin);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$HashtagsUsersRequestImplCopyWith<_$HashtagsUsersRequestImpl>
-      get copyWith =>
-          __$$HashtagsUsersRequestImplCopyWithImpl<_$HashtagsUsersRequestImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HashtagsUsersRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, sort: $sort, state: $state, origin: $origin)';
   }
 }
 
-abstract class _HashtagsUsersRequest implements HashtagsUsersRequest {
-  const factory _HashtagsUsersRequest(
-      {required final String tag,
-      final int? limit,
-      @UsersSortConverter() required final UsersSortType sort,
-      final UsersState? state,
-      final Origin? origin}) = _$HashtagsUsersRequestImpl;
-
-  factory _HashtagsUsersRequest.fromJson(Map<String, dynamic> json) =
-      _$HashtagsUsersRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$HashtagsUsersRequestCopyWith<$Res>
+    implements $HashtagsUsersRequestCopyWith<$Res> {
+  factory _$HashtagsUsersRequestCopyWith(_HashtagsUsersRequest value,
+          $Res Function(_HashtagsUsersRequest) _then) =
+      __$HashtagsUsersRequestCopyWithImpl;
   @override
-  String get tag;
-  @override
-  int? get limit;
-  @override
-  @UsersSortConverter()
-  UsersSortType get sort;
-  @override
-  UsersState? get state;
-  @override
-  Origin? get origin;
-  @override
-  @JsonKey(ignore: true)
-  _$$HashtagsUsersRequestImplCopyWith<_$HashtagsUsersRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String tag,
+      int? limit,
+      @UsersSortConverter() UsersSortType sort,
+      UsersState? state,
+      Origin? origin});
 }
+
+/// @nodoc
+class __$HashtagsUsersRequestCopyWithImpl<$Res>
+    implements _$HashtagsUsersRequestCopyWith<$Res> {
+  __$HashtagsUsersRequestCopyWithImpl(this._self, this._then);
+
+  final _HashtagsUsersRequest _self;
+  final $Res Function(_HashtagsUsersRequest) _then;
+
+  /// Create a copy of HashtagsUsersRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? tag = null,
+    Object? limit = freezed,
+    Object? sort = null,
+    Object? state = freezed,
+    Object? origin = freezed,
+  }) {
+    return _then(_HashtagsUsersRequest(
+      tag: null == tag
+          ? _self.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sort: null == sort
+          ? _self.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as UsersSortType,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as UsersState?,
+      origin: freezed == origin
+          ? _self.origin
+          : origin // ignore: cast_nullable_to_non_nullable
+              as Origin?,
+    ));
+  }
+}
+
+// dart format on

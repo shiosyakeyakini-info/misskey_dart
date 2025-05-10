@@ -4,7 +4,7 @@ part 'notes_state_response.freezed.dart';
 part 'notes_state_response.g.dart';
 
 @freezed
-class NotesStateResponse with _$NotesStateResponse {
+abstract class NotesStateResponse with _$NotesStateResponse {
   const factory NotesStateResponse({
     required bool isFavorited,
     required bool isMutedThread,

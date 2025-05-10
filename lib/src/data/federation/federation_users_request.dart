@@ -4,7 +4,7 @@ part 'federation_users_request.freezed.dart';
 part 'federation_users_request.g.dart';
 
 @freezed
-class FederationUsersRequest with _$FederationUsersRequest {
+abstract class FederationUsersRequest with _$FederationUsersRequest {
   const factory FederationUsersRequest({
     required String host,
     String? sinceId,

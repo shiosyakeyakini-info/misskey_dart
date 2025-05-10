@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,139 +10,30 @@ part of 'chat_rooms_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsCreateRequest _$ChatRoomsCreateRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsCreateRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsCreateRequest {
-  String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsCreateRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get name;
+  String get description;
 
   /// Create a copy of ChatRoomsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatRoomsCreateRequestCopyWith<ChatRoomsCreateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ChatRoomsCreateRequestCopyWithImpl<ChatRoomsCreateRequest>(
+          this as ChatRoomsCreateRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatRoomsCreateRequestCopyWith<$Res> {
-  factory $ChatRoomsCreateRequestCopyWith(ChatRoomsCreateRequest value,
-          $Res Function(ChatRoomsCreateRequest) then) =
-      _$ChatRoomsCreateRequestCopyWithImpl<$Res, ChatRoomsCreateRequest>;
-  @useResult
-  $Res call({String name, String description});
-}
-
-/// @nodoc
-class _$ChatRoomsCreateRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsCreateRequest>
-    implements $ChatRoomsCreateRequestCopyWith<$Res> {
-  _$ChatRoomsCreateRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? description = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatRoomsCreateRequestImplCopyWith<$Res>
-    implements $ChatRoomsCreateRequestCopyWith<$Res> {
-  factory _$$ChatRoomsCreateRequestImplCopyWith(
-          _$ChatRoomsCreateRequestImpl value,
-          $Res Function(_$ChatRoomsCreateRequestImpl) then) =
-      __$$ChatRoomsCreateRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String description});
-}
-
-/// @nodoc
-class __$$ChatRoomsCreateRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsCreateRequestCopyWithImpl<$Res,
-        _$ChatRoomsCreateRequestImpl>
-    implements _$$ChatRoomsCreateRequestImplCopyWith<$Res> {
-  __$$ChatRoomsCreateRequestImplCopyWithImpl(
-      _$ChatRoomsCreateRequestImpl _value,
-      $Res Function(_$ChatRoomsCreateRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatRoomsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? description = null,
-  }) {
-    return _then(_$ChatRoomsCreateRequestImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatRoomsCreateRequestImpl implements _ChatRoomsCreateRequest {
-  const _$ChatRoomsCreateRequestImpl(
-      {required this.name, required this.description});
-
-  factory _$ChatRoomsCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomsCreateRequestImplFromJson(json);
-
-  @override
-  final String name;
-  @override
-  final String description;
-
-  @override
-  String toString() {
-    return 'ChatRoomsCreateRequest(name: $name, description: $description)';
-  }
+  /// Serializes this ChatRoomsCreateRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsCreateRequestImpl &&
+            other is ChatRoomsCreateRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description));
@@ -151,40 +43,137 @@ class _$ChatRoomsCreateRequestImpl implements _ChatRoomsCreateRequest {
   @override
   int get hashCode => Object.hash(runtimeType, name, description);
 
-  /// Create a copy of ChatRoomsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsCreateRequestImplCopyWith<_$ChatRoomsCreateRequestImpl>
-      get copyWith => __$$ChatRoomsCreateRequestImplCopyWithImpl<
-          _$ChatRoomsCreateRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsCreateRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsCreateRequest(name: $name, description: $description)';
   }
 }
 
-abstract class _ChatRoomsCreateRequest implements ChatRoomsCreateRequest {
-  const factory _ChatRoomsCreateRequest(
-      {required final String name,
-      required final String description}) = _$ChatRoomsCreateRequestImpl;
+/// @nodoc
+abstract mixin class $ChatRoomsCreateRequestCopyWith<$Res> {
+  factory $ChatRoomsCreateRequestCopyWith(ChatRoomsCreateRequest value,
+          $Res Function(ChatRoomsCreateRequest) _then) =
+      _$ChatRoomsCreateRequestCopyWithImpl;
+  @useResult
+  $Res call({String name, String description});
+}
 
-  factory _ChatRoomsCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsCreateRequestImpl.fromJson;
+/// @nodoc
+class _$ChatRoomsCreateRequestCopyWithImpl<$Res>
+    implements $ChatRoomsCreateRequestCopyWith<$Res> {
+  _$ChatRoomsCreateRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsCreateRequest _self;
+  final $Res Function(ChatRoomsCreateRequest) _then;
+
+  /// Create a copy of ChatRoomsCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? description = null,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatRoomsCreateRequest implements ChatRoomsCreateRequest {
+  const _ChatRoomsCreateRequest(
+      {required this.name, required this.description});
+  factory _ChatRoomsCreateRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsCreateRequestFromJson(json);
 
   @override
-  String get name;
+  final String name;
   @override
-  String get description;
+  final String description;
 
   /// Create a copy of ChatRoomsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsCreateRequestImplCopyWith<_$ChatRoomsCreateRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsCreateRequestCopyWith<_ChatRoomsCreateRequest> get copyWith =>
+      __$ChatRoomsCreateRequestCopyWithImpl<_ChatRoomsCreateRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsCreateRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatRoomsCreateRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, description);
+
+  @override
+  String toString() {
+    return 'ChatRoomsCreateRequest(name: $name, description: $description)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatRoomsCreateRequestCopyWith<$Res>
+    implements $ChatRoomsCreateRequestCopyWith<$Res> {
+  factory _$ChatRoomsCreateRequestCopyWith(_ChatRoomsCreateRequest value,
+          $Res Function(_ChatRoomsCreateRequest) _then) =
+      __$ChatRoomsCreateRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String description});
+}
+
+/// @nodoc
+class __$ChatRoomsCreateRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsCreateRequestCopyWith<$Res> {
+  __$ChatRoomsCreateRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsCreateRequest _self;
+  final $Res Function(_ChatRoomsCreateRequest) _then;
+
+  /// Create a copy of ChatRoomsCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? description = null,
+  }) {
+    return _then(_ChatRoomsCreateRequest(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

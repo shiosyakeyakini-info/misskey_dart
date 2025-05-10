@@ -6,14 +6,13 @@ part of 'antennas_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AntennasShowRequestImpl _$$AntennasShowRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AntennasShowRequestImpl(
+_AntennasShowRequest _$AntennasShowRequestFromJson(Map<String, dynamic> json) =>
+    _AntennasShowRequest(
       antennaId: json['antennaId'] as String,
     );
 
-Map<String, dynamic> _$$AntennasShowRequestImplToJson(
-        _$AntennasShowRequestImpl instance) =>
+Map<String, dynamic> _$AntennasShowRequestToJson(
+        _AntennasShowRequest instance) =>
     <String, dynamic>{
       'antennaId': instance.antennaId,
     };

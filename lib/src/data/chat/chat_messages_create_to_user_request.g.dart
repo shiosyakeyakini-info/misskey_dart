@@ -6,16 +6,16 @@ part of 'chat_messages_create_to_user_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatMessagesCreateToUserRequestImpl
-    _$$ChatMessagesCreateToUserRequestImplFromJson(Map<String, dynamic> json) =>
-        _$ChatMessagesCreateToUserRequestImpl(
-          toUserId: json['toUserId'] as String,
-          text: json['text'] as String?,
-          fileId: json['fileId'] as String?,
-        );
+_ChatMessagesCreateToUserRequest _$ChatMessagesCreateToUserRequestFromJson(
+        Map<String, dynamic> json) =>
+    _ChatMessagesCreateToUserRequest(
+      toUserId: json['toUserId'] as String,
+      text: json['text'] as String?,
+      fileId: json['fileId'] as String?,
+    );
 
-Map<String, dynamic> _$$ChatMessagesCreateToUserRequestImplToJson(
-        _$ChatMessagesCreateToUserRequestImpl instance) =>
+Map<String, dynamic> _$ChatMessagesCreateToUserRequestToJson(
+        _ChatMessagesCreateToUserRequest instance) =>
     <String, dynamic>{
       'toUserId': instance.toUserId,
       'text': instance.text,

@@ -4,7 +4,7 @@ part 'users_lists_update_request.freezed.dart';
 part 'users_lists_update_request.g.dart';
 
 @freezed
-class UsersListsUpdateRequest with _$UsersListsUpdateRequest {
+abstract class UsersListsUpdateRequest with _$UsersListsUpdateRequest {
   const factory UsersListsUpdateRequest({
     required String listId,
     String? name,

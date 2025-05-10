@@ -4,7 +4,7 @@ part 'drive_folders_update_request.freezed.dart';
 part 'drive_folders_update_request.g.dart';
 
 @freezed
-class DriveFoldersUpdateRequest with _$DriveFoldersUpdateRequest {
+abstract class DriveFoldersUpdateRequest with _$DriveFoldersUpdateRequest {
   const factory DriveFoldersUpdateRequest({
     required String folderId,
     String? name,

@@ -4,7 +4,7 @@ part 'drive_files_show_request.freezed.dart';
 part 'drive_files_show_request.g.dart';
 
 @freezed
-class DriveFilesShowRequest with _$DriveFilesShowRequest {
+abstract class DriveFilesShowRequest with _$DriveFilesShowRequest {
   const factory DriveFilesShowRequest({
     // どちらか必須
     String? fileId,

@@ -5,7 +5,7 @@ part 'users_reactions_request.freezed.dart';
 part 'users_reactions_request.g.dart';
 
 @freezed
-class UsersReactionsRequest with _$UsersReactionsRequest {
+abstract class UsersReactionsRequest with _$UsersReactionsRequest {
   const factory UsersReactionsRequest({
     required String userId,
     int? limit,

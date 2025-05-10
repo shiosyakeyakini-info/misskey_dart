@@ -4,7 +4,7 @@ part 'clips_show_request.freezed.dart';
 part 'clips_show_request.g.dart';
 
 @freezed
-class ClipsShowRequest with _$ClipsShowRequest {
+abstract class ClipsShowRequest with _$ClipsShowRequest {
   const factory ClipsShowRequest({
     required String clipId,
   }) = _ClipsShowRequest;

@@ -6,8 +6,7 @@ part of 'user_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersListImpl _$$UsersListImplFromJson(Map<String, dynamic> json) =>
-    _$UsersListImpl(
+_UsersList _$UsersListFromJson(Map<String, dynamic> json) => _UsersList(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -17,7 +16,7 @@ _$UsersListImpl _$$UsersListImplFromJson(Map<String, dynamic> json) =>
       isPublic: json['isPublic'] as bool?,
     );
 
-Map<String, dynamic> _$$UsersListImplToJson(_$UsersListImpl instance) =>
+Map<String, dynamic> _$UsersListToJson(_UsersList instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

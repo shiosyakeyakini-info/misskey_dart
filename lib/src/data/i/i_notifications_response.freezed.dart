@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,511 +10,51 @@ part of 'i_notifications_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-INotificationsResponse _$INotificationsResponseFromJson(
-    Map<String, dynamic> json) {
-  return _INotificationsResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$INotificationsResponse {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
   @JsonKey(unknownEnumValue: NotificationType.unknown)
-  NotificationType get type => throw _privateConstructorUsedError;
-  String? get noteId => throw _privateConstructorUsedError;
-  String? get followRequestId => throw _privateConstructorUsedError;
-  String? get reaction => throw _privateConstructorUsedError;
-  int? get choice => throw _privateConstructorUsedError;
-  String? get achievement => throw _privateConstructorUsedError;
-  String? get body => throw _privateConstructorUsedError;
-  String? get header => throw _privateConstructorUsedError;
+  NotificationType get type;
+  String? get noteId;
+  String? get followRequestId;
+  String? get reaction;
+  int? get choice;
+  String? get achievement;
+  String? get body;
+  String? get header;
   @NullableUriConverter()
-  Uri? get icon => throw _privateConstructorUsedError;
-  String? get appAccessTokenId => throw _privateConstructorUsedError;
-  ChatJoining? get invitation => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
-  UserLite? get user => throw _privateConstructorUsedError;
-  Note? get note => throw _privateConstructorUsedError;
-  RolesListResponse? get role => throw _privateConstructorUsedError;
-  UserExportableEntities? get exportedEntity =>
-      throw _privateConstructorUsedError;
-  String? get fileId => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-
-  /// Serializes this INotificationsResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Uri? get icon;
+  String? get appAccessTokenId;
+  ChatJoining? get invitation;
+  String? get userId;
+  UserLite? get user;
+  Note? get note;
+  RolesListResponse? get role;
+  UserExportableEntities? get exportedEntity;
+  String? get fileId;
+  String? get message;
 
   /// Create a copy of INotificationsResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $INotificationsResponseCopyWith<INotificationsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$INotificationsResponseCopyWithImpl<INotificationsResponse>(
+          this as INotificationsResponse, _$identity);
 
-/// @nodoc
-abstract class $INotificationsResponseCopyWith<$Res> {
-  factory $INotificationsResponseCopyWith(INotificationsResponse value,
-          $Res Function(INotificationsResponse) then) =
-      _$INotificationsResponseCopyWithImpl<$Res, INotificationsResponse>;
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      @JsonKey(unknownEnumValue: NotificationType.unknown)
-      NotificationType type,
-      String? noteId,
-      String? followRequestId,
-      String? reaction,
-      int? choice,
-      String? achievement,
-      String? body,
-      String? header,
-      @NullableUriConverter() Uri? icon,
-      String? appAccessTokenId,
-      ChatJoining? invitation,
-      String? userId,
-      UserLite? user,
-      Note? note,
-      RolesListResponse? role,
-      UserExportableEntities? exportedEntity,
-      String? fileId,
-      String? message});
-
-  $ChatJoiningCopyWith<$Res>? get invitation;
-  $UserLiteCopyWith<$Res>? get user;
-  $NoteCopyWith<$Res>? get note;
-  $RolesListResponseCopyWith<$Res>? get role;
-}
-
-/// @nodoc
-class _$INotificationsResponseCopyWithImpl<$Res,
-        $Val extends INotificationsResponse>
-    implements $INotificationsResponseCopyWith<$Res> {
-  _$INotificationsResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? type = null,
-    Object? noteId = freezed,
-    Object? followRequestId = freezed,
-    Object? reaction = freezed,
-    Object? choice = freezed,
-    Object? achievement = freezed,
-    Object? body = freezed,
-    Object? header = freezed,
-    Object? icon = freezed,
-    Object? appAccessTokenId = freezed,
-    Object? invitation = freezed,
-    Object? userId = freezed,
-    Object? user = freezed,
-    Object? note = freezed,
-    Object? role = freezed,
-    Object? exportedEntity = freezed,
-    Object? fileId = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      noteId: freezed == noteId
-          ? _value.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      followRequestId: freezed == followRequestId
-          ? _value.followRequestId
-          : followRequestId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reaction: freezed == reaction
-          ? _value.reaction
-          : reaction // ignore: cast_nullable_to_non_nullable
-              as String?,
-      choice: freezed == choice
-          ? _value.choice
-          : choice // ignore: cast_nullable_to_non_nullable
-              as int?,
-      achievement: freezed == achievement
-          ? _value.achievement
-          : achievement // ignore: cast_nullable_to_non_nullable
-              as String?,
-      body: freezed == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String?,
-      header: freezed == header
-          ? _value.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as Uri?,
-      appAccessTokenId: freezed == appAccessTokenId
-          ? _value.appAccessTokenId
-          : appAccessTokenId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invitation: freezed == invitation
-          ? _value.invitation
-          : invitation // ignore: cast_nullable_to_non_nullable
-              as ChatJoining?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
-      note: freezed == note
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note?,
-      role: freezed == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as RolesListResponse?,
-      exportedEntity: freezed == exportedEntity
-          ? _value.exportedEntity
-          : exportedEntity // ignore: cast_nullable_to_non_nullable
-              as UserExportableEntities?,
-      fileId: freezed == fileId
-          ? _value.fileId
-          : fileId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatJoiningCopyWith<$Res>? get invitation {
-    if (_value.invitation == null) {
-      return null;
-    }
-
-    return $ChatJoiningCopyWith<$Res>(_value.invitation!, (value) {
-      return _then(_value.copyWith(invitation: value) as $Val);
-    });
-  }
-
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_value.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
-
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NoteCopyWith<$Res>? get note {
-    if (_value.note == null) {
-      return null;
-    }
-
-    return $NoteCopyWith<$Res>(_value.note!, (value) {
-      return _then(_value.copyWith(note: value) as $Val);
-    });
-  }
-
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RolesListResponseCopyWith<$Res>? get role {
-    if (_value.role == null) {
-      return null;
-    }
-
-    return $RolesListResponseCopyWith<$Res>(_value.role!, (value) {
-      return _then(_value.copyWith(role: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$INotificationsResponseImplCopyWith<$Res>
-    implements $INotificationsResponseCopyWith<$Res> {
-  factory _$$INotificationsResponseImplCopyWith(
-          _$INotificationsResponseImpl value,
-          $Res Function(_$INotificationsResponseImpl) then) =
-      __$$INotificationsResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      @JsonKey(unknownEnumValue: NotificationType.unknown)
-      NotificationType type,
-      String? noteId,
-      String? followRequestId,
-      String? reaction,
-      int? choice,
-      String? achievement,
-      String? body,
-      String? header,
-      @NullableUriConverter() Uri? icon,
-      String? appAccessTokenId,
-      ChatJoining? invitation,
-      String? userId,
-      UserLite? user,
-      Note? note,
-      RolesListResponse? role,
-      UserExportableEntities? exportedEntity,
-      String? fileId,
-      String? message});
-
-  @override
-  $ChatJoiningCopyWith<$Res>? get invitation;
-  @override
-  $UserLiteCopyWith<$Res>? get user;
-  @override
-  $NoteCopyWith<$Res>? get note;
-  @override
-  $RolesListResponseCopyWith<$Res>? get role;
-}
-
-/// @nodoc
-class __$$INotificationsResponseImplCopyWithImpl<$Res>
-    extends _$INotificationsResponseCopyWithImpl<$Res,
-        _$INotificationsResponseImpl>
-    implements _$$INotificationsResponseImplCopyWith<$Res> {
-  __$$INotificationsResponseImplCopyWithImpl(
-      _$INotificationsResponseImpl _value,
-      $Res Function(_$INotificationsResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? type = null,
-    Object? noteId = freezed,
-    Object? followRequestId = freezed,
-    Object? reaction = freezed,
-    Object? choice = freezed,
-    Object? achievement = freezed,
-    Object? body = freezed,
-    Object? header = freezed,
-    Object? icon = freezed,
-    Object? appAccessTokenId = freezed,
-    Object? invitation = freezed,
-    Object? userId = freezed,
-    Object? user = freezed,
-    Object? note = freezed,
-    Object? role = freezed,
-    Object? exportedEntity = freezed,
-    Object? fileId = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_$INotificationsResponseImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      noteId: freezed == noteId
-          ? _value.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      followRequestId: freezed == followRequestId
-          ? _value.followRequestId
-          : followRequestId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reaction: freezed == reaction
-          ? _value.reaction
-          : reaction // ignore: cast_nullable_to_non_nullable
-              as String?,
-      choice: freezed == choice
-          ? _value.choice
-          : choice // ignore: cast_nullable_to_non_nullable
-              as int?,
-      achievement: freezed == achievement
-          ? _value.achievement
-          : achievement // ignore: cast_nullable_to_non_nullable
-              as String?,
-      body: freezed == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String?,
-      header: freezed == header
-          ? _value.header
-          : header // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as Uri?,
-      appAccessTokenId: freezed == appAccessTokenId
-          ? _value.appAccessTokenId
-          : appAccessTokenId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invitation: freezed == invitation
-          ? _value.invitation
-          : invitation // ignore: cast_nullable_to_non_nullable
-              as ChatJoining?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
-      note: freezed == note
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note?,
-      role: freezed == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as RolesListResponse?,
-      exportedEntity: freezed == exportedEntity
-          ? _value.exportedEntity
-          : exportedEntity // ignore: cast_nullable_to_non_nullable
-              as UserExportableEntities?,
-      fileId: freezed == fileId
-          ? _value.fileId
-          : fileId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$INotificationsResponseImpl implements _INotificationsResponse {
-  const _$INotificationsResponseImpl(
-      {required this.id,
-      @DateTimeConverter() required this.createdAt,
-      @JsonKey(unknownEnumValue: NotificationType.unknown) required this.type,
-      this.noteId,
-      this.followRequestId,
-      this.reaction,
-      this.choice,
-      this.achievement,
-      this.body,
-      this.header,
-      @NullableUriConverter() this.icon,
-      this.appAccessTokenId,
-      this.invitation,
-      this.userId,
-      this.user,
-      this.note,
-      this.role,
-      this.exportedEntity,
-      this.fileId,
-      this.message});
-
-  factory _$INotificationsResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$INotificationsResponseImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @DateTimeConverter()
-  final DateTime createdAt;
-  @override
-  @JsonKey(unknownEnumValue: NotificationType.unknown)
-  final NotificationType type;
-  @override
-  final String? noteId;
-  @override
-  final String? followRequestId;
-  @override
-  final String? reaction;
-  @override
-  final int? choice;
-  @override
-  final String? achievement;
-  @override
-  final String? body;
-  @override
-  final String? header;
-  @override
-  @NullableUriConverter()
-  final Uri? icon;
-  @override
-  final String? appAccessTokenId;
-  @override
-  final ChatJoining? invitation;
-  @override
-  final String? userId;
-  @override
-  final UserLite? user;
-  @override
-  final Note? note;
-  @override
-  final RolesListResponse? role;
-  @override
-  final UserExportableEntities? exportedEntity;
-  @override
-  final String? fileId;
-  @override
-  final String? message;
-
-  @override
-  String toString() {
-    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, invitation: $invitation, userId: $userId, user: $user, note: $note, role: $role, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
-  }
+  /// Serializes this INotificationsResponse to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$INotificationsResponseImpl &&
+            other is INotificationsResponse &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -569,98 +110,589 @@ class _$INotificationsResponseImpl implements _INotificationsResponse {
         message
       ]);
 
-  /// Create a copy of INotificationsResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
-      get copyWith => __$$INotificationsResponseImplCopyWithImpl<
-          _$INotificationsResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$INotificationsResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, invitation: $invitation, userId: $userId, user: $user, note: $note, role: $role, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
   }
 }
 
-abstract class _INotificationsResponse implements INotificationsResponse {
-  const factory _INotificationsResponse(
-      {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
+/// @nodoc
+abstract mixin class $INotificationsResponseCopyWith<$Res> {
+  factory $INotificationsResponseCopyWith(INotificationsResponse value,
+          $Res Function(INotificationsResponse) _then) =
+      _$INotificationsResponseCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
       @JsonKey(unknownEnumValue: NotificationType.unknown)
-      required final NotificationType type,
-      final String? noteId,
-      final String? followRequestId,
-      final String? reaction,
-      final int? choice,
-      final String? achievement,
-      final String? body,
-      final String? header,
-      @NullableUriConverter() final Uri? icon,
-      final String? appAccessTokenId,
-      final ChatJoining? invitation,
-      final String? userId,
-      final UserLite? user,
-      final Note? note,
-      final RolesListResponse? role,
-      final UserExportableEntities? exportedEntity,
-      final String? fileId,
-      final String? message}) = _$INotificationsResponseImpl;
+      NotificationType type,
+      String? noteId,
+      String? followRequestId,
+      String? reaction,
+      int? choice,
+      String? achievement,
+      String? body,
+      String? header,
+      @NullableUriConverter() Uri? icon,
+      String? appAccessTokenId,
+      ChatJoining? invitation,
+      String? userId,
+      UserLite? user,
+      Note? note,
+      RolesListResponse? role,
+      UserExportableEntities? exportedEntity,
+      String? fileId,
+      String? message});
 
-  factory _INotificationsResponse.fromJson(Map<String, dynamic> json) =
-      _$INotificationsResponseImpl.fromJson;
+  $ChatJoiningCopyWith<$Res>? get invitation;
+  $UserLiteCopyWith<$Res>? get user;
+  $NoteCopyWith<$Res>? get note;
+  $RolesListResponseCopyWith<$Res>? get role;
+}
+
+/// @nodoc
+class _$INotificationsResponseCopyWithImpl<$Res>
+    implements $INotificationsResponseCopyWith<$Res> {
+  _$INotificationsResponseCopyWithImpl(this._self, this._then);
+
+  final INotificationsResponse _self;
+  final $Res Function(INotificationsResponse) _then;
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? type = null,
+    Object? noteId = freezed,
+    Object? followRequestId = freezed,
+    Object? reaction = freezed,
+    Object? choice = freezed,
+    Object? achievement = freezed,
+    Object? body = freezed,
+    Object? header = freezed,
+    Object? icon = freezed,
+    Object? appAccessTokenId = freezed,
+    Object? invitation = freezed,
+    Object? userId = freezed,
+    Object? user = freezed,
+    Object? note = freezed,
+    Object? role = freezed,
+    Object? exportedEntity = freezed,
+    Object? fileId = freezed,
+    Object? message = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as NotificationType,
+      noteId: freezed == noteId
+          ? _self.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      followRequestId: freezed == followRequestId
+          ? _self.followRequestId
+          : followRequestId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reaction: freezed == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      choice: freezed == choice
+          ? _self.choice
+          : choice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      achievement: freezed == achievement
+          ? _self.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      header: freezed == header
+          ? _self.header
+          : header // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      appAccessTokenId: freezed == appAccessTokenId
+          ? _self.appAccessTokenId
+          : appAccessTokenId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitation: freezed == invitation
+          ? _self.invitation
+          : invitation // ignore: cast_nullable_to_non_nullable
+              as ChatJoining?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      note: freezed == note
+          ? _self.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note?,
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as RolesListResponse?,
+      exportedEntity: freezed == exportedEntity
+          ? _self.exportedEntity
+          : exportedEntity // ignore: cast_nullable_to_non_nullable
+              as UserExportableEntities?,
+      fileId: freezed == fileId
+          ? _self.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      message: freezed == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatJoiningCopyWith<$Res>? get invitation {
+    if (_self.invitation == null) {
+      return null;
+    }
+
+    return $ChatJoiningCopyWith<$Res>(_self.invitation!, (value) {
+      return _then(_self.copyWith(invitation: value));
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res>? get note {
+    if (_self.note == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_self.note!, (value) {
+      return _then(_self.copyWith(note: value));
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RolesListResponseCopyWith<$Res>? get role {
+    if (_self.role == null) {
+      return null;
+    }
+
+    return $RolesListResponseCopyWith<$Res>(_self.role!, (value) {
+      return _then(_self.copyWith(role: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _INotificationsResponse implements INotificationsResponse {
+  const _INotificationsResponse(
+      {required this.id,
+      @DateTimeConverter() required this.createdAt,
+      @JsonKey(unknownEnumValue: NotificationType.unknown) required this.type,
+      this.noteId,
+      this.followRequestId,
+      this.reaction,
+      this.choice,
+      this.achievement,
+      this.body,
+      this.header,
+      @NullableUriConverter() this.icon,
+      this.appAccessTokenId,
+      this.invitation,
+      this.userId,
+      this.user,
+      this.note,
+      this.role,
+      this.exportedEntity,
+      this.fileId,
+      this.message});
+  factory _INotificationsResponse.fromJson(Map<String, dynamic> json) =>
+      _$INotificationsResponseFromJson(json);
 
   @override
-  String get id;
+  final String id;
   @override
   @DateTimeConverter()
-  DateTime get createdAt;
+  final DateTime createdAt;
   @override
   @JsonKey(unknownEnumValue: NotificationType.unknown)
-  NotificationType get type;
+  final NotificationType type;
   @override
-  String? get noteId;
+  final String? noteId;
   @override
-  String? get followRequestId;
+  final String? followRequestId;
   @override
-  String? get reaction;
+  final String? reaction;
   @override
-  int? get choice;
+  final int? choice;
   @override
-  String? get achievement;
+  final String? achievement;
   @override
-  String? get body;
+  final String? body;
   @override
-  String? get header;
+  final String? header;
   @override
   @NullableUriConverter()
-  Uri? get icon;
+  final Uri? icon;
   @override
-  String? get appAccessTokenId;
+  final String? appAccessTokenId;
   @override
-  ChatJoining? get invitation;
+  final ChatJoining? invitation;
   @override
-  String? get userId;
+  final String? userId;
   @override
-  UserLite? get user;
+  final UserLite? user;
   @override
-  Note? get note;
+  final Note? note;
   @override
-  RolesListResponse? get role;
+  final RolesListResponse? role;
   @override
-  UserExportableEntities? get exportedEntity;
+  final UserExportableEntities? exportedEntity;
   @override
-  String? get fileId;
+  final String? fileId;
   @override
-  String? get message;
+  final String? message;
 
   /// Create a copy of INotificationsResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$INotificationsResponseImplCopyWith<_$INotificationsResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$INotificationsResponseCopyWith<_INotificationsResponse> get copyWith =>
+      __$INotificationsResponseCopyWithImpl<_INotificationsResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$INotificationsResponseToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _INotificationsResponse &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.noteId, noteId) || other.noteId == noteId) &&
+            (identical(other.followRequestId, followRequestId) ||
+                other.followRequestId == followRequestId) &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.choice, choice) || other.choice == choice) &&
+            (identical(other.achievement, achievement) ||
+                other.achievement == achievement) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.header, header) || other.header == header) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.appAccessTokenId, appAccessTokenId) ||
+                other.appAccessTokenId == appAccessTokenId) &&
+            (identical(other.invitation, invitation) ||
+                other.invitation == invitation) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.note, note) || other.note == note) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.exportedEntity, exportedEntity) ||
+                other.exportedEntity == exportedEntity) &&
+            (identical(other.fileId, fileId) || other.fileId == fileId) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        createdAt,
+        type,
+        noteId,
+        followRequestId,
+        reaction,
+        choice,
+        achievement,
+        body,
+        header,
+        icon,
+        appAccessTokenId,
+        invitation,
+        userId,
+        user,
+        note,
+        role,
+        exportedEntity,
+        fileId,
+        message
+      ]);
+
+  @override
+  String toString() {
+    return 'INotificationsResponse(id: $id, createdAt: $createdAt, type: $type, noteId: $noteId, followRequestId: $followRequestId, reaction: $reaction, choice: $choice, achievement: $achievement, body: $body, header: $header, icon: $icon, appAccessTokenId: $appAccessTokenId, invitation: $invitation, userId: $userId, user: $user, note: $note, role: $role, exportedEntity: $exportedEntity, fileId: $fileId, message: $message)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$INotificationsResponseCopyWith<$Res>
+    implements $INotificationsResponseCopyWith<$Res> {
+  factory _$INotificationsResponseCopyWith(_INotificationsResponse value,
+          $Res Function(_INotificationsResponse) _then) =
+      __$INotificationsResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
+      NotificationType type,
+      String? noteId,
+      String? followRequestId,
+      String? reaction,
+      int? choice,
+      String? achievement,
+      String? body,
+      String? header,
+      @NullableUriConverter() Uri? icon,
+      String? appAccessTokenId,
+      ChatJoining? invitation,
+      String? userId,
+      UserLite? user,
+      Note? note,
+      RolesListResponse? role,
+      UserExportableEntities? exportedEntity,
+      String? fileId,
+      String? message});
+
+  @override
+  $ChatJoiningCopyWith<$Res>? get invitation;
+  @override
+  $UserLiteCopyWith<$Res>? get user;
+  @override
+  $NoteCopyWith<$Res>? get note;
+  @override
+  $RolesListResponseCopyWith<$Res>? get role;
+}
+
+/// @nodoc
+class __$INotificationsResponseCopyWithImpl<$Res>
+    implements _$INotificationsResponseCopyWith<$Res> {
+  __$INotificationsResponseCopyWithImpl(this._self, this._then);
+
+  final _INotificationsResponse _self;
+  final $Res Function(_INotificationsResponse) _then;
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? type = null,
+    Object? noteId = freezed,
+    Object? followRequestId = freezed,
+    Object? reaction = freezed,
+    Object? choice = freezed,
+    Object? achievement = freezed,
+    Object? body = freezed,
+    Object? header = freezed,
+    Object? icon = freezed,
+    Object? appAccessTokenId = freezed,
+    Object? invitation = freezed,
+    Object? userId = freezed,
+    Object? user = freezed,
+    Object? note = freezed,
+    Object? role = freezed,
+    Object? exportedEntity = freezed,
+    Object? fileId = freezed,
+    Object? message = freezed,
+  }) {
+    return _then(_INotificationsResponse(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as NotificationType,
+      noteId: freezed == noteId
+          ? _self.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      followRequestId: freezed == followRequestId
+          ? _self.followRequestId
+          : followRequestId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reaction: freezed == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String?,
+      choice: freezed == choice
+          ? _self.choice
+          : choice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      achievement: freezed == achievement
+          ? _self.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      header: freezed == header
+          ? _self.header
+          : header // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as Uri?,
+      appAccessTokenId: freezed == appAccessTokenId
+          ? _self.appAccessTokenId
+          : appAccessTokenId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitation: freezed == invitation
+          ? _self.invitation
+          : invitation // ignore: cast_nullable_to_non_nullable
+              as ChatJoining?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      note: freezed == note
+          ? _self.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note?,
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as RolesListResponse?,
+      exportedEntity: freezed == exportedEntity
+          ? _self.exportedEntity
+          : exportedEntity // ignore: cast_nullable_to_non_nullable
+              as UserExportableEntities?,
+      fileId: freezed == fileId
+          ? _self.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      message: freezed == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatJoiningCopyWith<$Res>? get invitation {
+    if (_self.invitation == null) {
+      return null;
+    }
+
+    return $ChatJoiningCopyWith<$Res>(_self.invitation!, (value) {
+      return _then(_self.copyWith(invitation: value));
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res>? get note {
+    if (_self.note == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_self.note!, (value) {
+      return _then(_self.copyWith(note: value));
+    });
+  }
+
+  /// Create a copy of INotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RolesListResponseCopyWith<$Res>? get role {
+    if (_self.role == null) {
+      return null;
+    }
+
+    return $RolesListResponseCopyWith<$Res>(_self.role!, (value) {
+      return _then(_self.copyWith(role: value));
+    });
+  }
+}
+
+// dart format on

@@ -4,7 +4,7 @@ part 'home_timeline_parameter.freezed.dart';
 part 'home_timeline_parameter.g.dart';
 
 @freezed
-class HomeTimelineParameter with _$HomeTimelineParameter {
+abstract class HomeTimelineParameter with _$HomeTimelineParameter {
   const factory HomeTimelineParameter({
     bool? withRenotes,
     bool? withFiles,

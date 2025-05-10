@@ -6,11 +6,11 @@ part of 'users_reactions_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersReactionsRequestImpl _$$UsersReactionsRequestImplFromJson(
+_UsersReactionsRequest _$UsersReactionsRequestFromJson(
         Map<String, dynamic> json) =>
-    _$UsersReactionsRequestImpl(
+    _UsersReactionsRequest(
       userId: json['userId'] as String,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -19,8 +19,8 @@ _$UsersReactionsRequestImpl _$$UsersReactionsRequestImplFromJson(
           const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
     );
 
-Map<String, dynamic> _$$UsersReactionsRequestImplToJson(
-        _$UsersReactionsRequestImpl instance) =>
+Map<String, dynamic> _$UsersReactionsRequestToJson(
+        _UsersReactionsRequest instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'limit': instance.limit,

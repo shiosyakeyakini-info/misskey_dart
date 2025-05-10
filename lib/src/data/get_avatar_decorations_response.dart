@@ -5,7 +5,8 @@ part 'get_avatar_decorations_response.freezed.dart';
 part 'get_avatar_decorations_response.g.dart';
 
 @freezed
-class GetAvatarDecorationsResponse with _$GetAvatarDecorationsResponse {
+abstract class GetAvatarDecorationsResponse
+    with _$GetAvatarDecorationsResponse {
   const factory GetAvatarDecorationsResponse({
     required String id,
     required String name,

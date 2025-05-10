@@ -6,14 +6,14 @@ part of 'chat_rooms_favorite_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatRoomsFavoriteRequestImpl _$$ChatRoomsFavoriteRequestImplFromJson(
+_ChatRoomsFavoriteRequest _$ChatRoomsFavoriteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChatRoomsFavoriteRequestImpl(
+    _ChatRoomsFavoriteRequest(
       roomId: json['roomId'] as String,
     );
 
-Map<String, dynamic> _$$ChatRoomsFavoriteRequestImplToJson(
-        _$ChatRoomsFavoriteRequestImpl instance) =>
+Map<String, dynamic> _$ChatRoomsFavoriteRequestToJson(
+        _ChatRoomsFavoriteRequest instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
     };

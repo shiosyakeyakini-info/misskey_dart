@@ -8,7 +8,7 @@ part 'community_channel.freezed.dart';
 part 'community_channel.g.dart';
 
 @freezed
-class CommunityChannel with _$CommunityChannel {
+abstract class CommunityChannel with _$CommunityChannel {
   const factory CommunityChannel({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

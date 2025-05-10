@@ -4,7 +4,7 @@ part 'chat_rooms_invitations_ignore_request.freezed.dart';
 part 'chat_rooms_invitations_ignore_request.g.dart';
 
 @freezed
-class ChatRoomsInvitationsIgnoreRequest
+abstract class ChatRoomsInvitationsIgnoreRequest
     with _$ChatRoomsInvitationsIgnoreRequest {
   const factory ChatRoomsInvitationsIgnoreRequest({
     required String roomId,

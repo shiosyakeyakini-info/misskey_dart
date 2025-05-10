@@ -4,7 +4,8 @@ part 'drive_files_upload_from_url_request.freezed.dart';
 part 'drive_files_upload_from_url_request.g.dart';
 
 @freezed
-class DriveFilesUploadFromUrlRequest with _$DriveFilesUploadFromUrlRequest {
+abstract class DriveFilesUploadFromUrlRequest
+    with _$DriveFilesUploadFromUrlRequest {
   const factory DriveFilesUploadFromUrlRequest({
     required String url,
     String? folderId,

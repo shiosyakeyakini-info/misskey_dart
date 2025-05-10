@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,86 +10,58 @@ part of 'chat_rooms_leave_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsLeaveRequest _$ChatRoomsLeaveRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsLeaveRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsLeaveRequest {
-  String get roomId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsLeaveRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
 
   /// Create a copy of ChatRoomsLeaveRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatRoomsLeaveRequestCopyWith<ChatRoomsLeaveRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChatRoomsLeaveRequestCopyWith<$Res> {
-  factory $ChatRoomsLeaveRequestCopyWith(ChatRoomsLeaveRequest value,
-          $Res Function(ChatRoomsLeaveRequest) then) =
-      _$ChatRoomsLeaveRequestCopyWithImpl<$Res, ChatRoomsLeaveRequest>;
-  @useResult
-  $Res call({String roomId});
-}
-
-/// @nodoc
-class _$ChatRoomsLeaveRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsLeaveRequest>
-    implements $ChatRoomsLeaveRequestCopyWith<$Res> {
-  _$ChatRoomsLeaveRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsLeaveRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ChatRoomsLeaveRequestCopyWith<ChatRoomsLeaveRequest> get copyWith =>
+      _$ChatRoomsLeaveRequestCopyWithImpl<ChatRoomsLeaveRequest>(
+          this as ChatRoomsLeaveRequest, _$identity);
+
+  /// Serializes this ChatRoomsLeaveRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roomId = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatRoomsLeaveRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsLeaveRequest(roomId: $roomId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChatRoomsLeaveRequestImplCopyWith<$Res>
-    implements $ChatRoomsLeaveRequestCopyWith<$Res> {
-  factory _$$ChatRoomsLeaveRequestImplCopyWith(
-          _$ChatRoomsLeaveRequestImpl value,
-          $Res Function(_$ChatRoomsLeaveRequestImpl) then) =
-      __$$ChatRoomsLeaveRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChatRoomsLeaveRequestCopyWith<$Res> {
+  factory $ChatRoomsLeaveRequestCopyWith(ChatRoomsLeaveRequest value,
+          $Res Function(ChatRoomsLeaveRequest) _then) =
+      _$ChatRoomsLeaveRequestCopyWithImpl;
   @useResult
   $Res call({String roomId});
 }
 
 /// @nodoc
-class __$$ChatRoomsLeaveRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsLeaveRequestCopyWithImpl<$Res,
-        _$ChatRoomsLeaveRequestImpl>
-    implements _$$ChatRoomsLeaveRequestImplCopyWith<$Res> {
-  __$$ChatRoomsLeaveRequestImplCopyWithImpl(_$ChatRoomsLeaveRequestImpl _value,
-      $Res Function(_$ChatRoomsLeaveRequestImpl) _then)
-      : super(_value, _then);
+class _$ChatRoomsLeaveRequestCopyWithImpl<$Res>
+    implements $ChatRoomsLeaveRequestCopyWith<$Res> {
+  _$ChatRoomsLeaveRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsLeaveRequest _self;
+  final $Res Function(ChatRoomsLeaveRequest) _then;
 
   /// Create a copy of ChatRoomsLeaveRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -97,9 +70,9 @@ class __$$ChatRoomsLeaveRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? roomId = null,
   }) {
-    return _then(_$ChatRoomsLeaveRequestImpl(
+    return _then(_self.copyWith(
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -108,25 +81,35 @@ class __$$ChatRoomsLeaveRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatRoomsLeaveRequestImpl implements _ChatRoomsLeaveRequest {
-  const _$ChatRoomsLeaveRequestImpl({required this.roomId});
-
-  factory _$ChatRoomsLeaveRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomsLeaveRequestImplFromJson(json);
+class _ChatRoomsLeaveRequest implements ChatRoomsLeaveRequest {
+  const _ChatRoomsLeaveRequest({required this.roomId});
+  factory _ChatRoomsLeaveRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsLeaveRequestFromJson(json);
 
   @override
   final String roomId;
 
+  /// Create a copy of ChatRoomsLeaveRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatRoomsLeaveRequest(roomId: $roomId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsLeaveRequestCopyWith<_ChatRoomsLeaveRequest> get copyWith =>
+      __$ChatRoomsLeaveRequestCopyWithImpl<_ChatRoomsLeaveRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsLeaveRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsLeaveRequestImpl &&
+            other is _ChatRoomsLeaveRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
@@ -134,37 +117,45 @@ class _$ChatRoomsLeaveRequestImpl implements _ChatRoomsLeaveRequest {
   @override
   int get hashCode => Object.hash(runtimeType, roomId);
 
-  /// Create a copy of ChatRoomsLeaveRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsLeaveRequestImplCopyWith<_$ChatRoomsLeaveRequestImpl>
-      get copyWith => __$$ChatRoomsLeaveRequestImplCopyWithImpl<
-          _$ChatRoomsLeaveRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsLeaveRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsLeaveRequest(roomId: $roomId)';
   }
 }
 
-abstract class _ChatRoomsLeaveRequest implements ChatRoomsLeaveRequest {
-  const factory _ChatRoomsLeaveRequest({required final String roomId}) =
-      _$ChatRoomsLeaveRequestImpl;
-
-  factory _ChatRoomsLeaveRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsLeaveRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChatRoomsLeaveRequestCopyWith<$Res>
+    implements $ChatRoomsLeaveRequestCopyWith<$Res> {
+  factory _$ChatRoomsLeaveRequestCopyWith(_ChatRoomsLeaveRequest value,
+          $Res Function(_ChatRoomsLeaveRequest) _then) =
+      __$ChatRoomsLeaveRequestCopyWithImpl;
   @override
-  String get roomId;
+  @useResult
+  $Res call({String roomId});
+}
+
+/// @nodoc
+class __$ChatRoomsLeaveRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsLeaveRequestCopyWith<$Res> {
+  __$ChatRoomsLeaveRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsLeaveRequest _self;
+  final $Res Function(_ChatRoomsLeaveRequest) _then;
 
   /// Create a copy of ChatRoomsLeaveRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsLeaveRequestImplCopyWith<_$ChatRoomsLeaveRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+  }) {
+    return _then(_ChatRoomsLeaveRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

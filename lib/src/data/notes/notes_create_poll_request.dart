@@ -6,7 +6,7 @@ part 'notes_create_poll_request.freezed.dart';
 part 'notes_create_poll_request.g.dart';
 
 @freezed
-class NotesCreatePollRequest with _$NotesCreatePollRequest {
+abstract class NotesCreatePollRequest with _$NotesCreatePollRequest {
   @JsonSerializable(includeIfNull: false) // ignore: invalid_annotation_target
   const factory NotesCreatePollRequest({
     required List<String> choices,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,187 +10,33 @@ part of 'chat_message_lite.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatMessageLite _$ChatMessageLiteFromJson(Map<String, dynamic> json) {
-  return _ChatMessageLite.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatMessageLite {
-  String get id => throw _privateConstructorUsedError;
-  String get createdAt => throw _privateConstructorUsedError;
-  String? get text => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
-  String? get roomId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatMessageLite to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get createdAt;
+  String? get text;
+  String? get userId;
+  String? get roomId;
 
   /// Create a copy of ChatMessageLite
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatMessageLiteCopyWith<ChatMessageLite> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ChatMessageLiteCopyWithImpl<ChatMessageLite>(
+          this as ChatMessageLite, _$identity);
 
-/// @nodoc
-abstract class $ChatMessageLiteCopyWith<$Res> {
-  factory $ChatMessageLiteCopyWith(
-          ChatMessageLite value, $Res Function(ChatMessageLite) then) =
-      _$ChatMessageLiteCopyWithImpl<$Res, ChatMessageLite>;
-  @useResult
-  $Res call(
-      {String id,
-      String createdAt,
-      String? text,
-      String? userId,
-      String? roomId});
-}
-
-/// @nodoc
-class _$ChatMessageLiteCopyWithImpl<$Res, $Val extends ChatMessageLite>
-    implements $ChatMessageLiteCopyWith<$Res> {
-  _$ChatMessageLiteCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatMessageLite
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? text = freezed,
-    Object? userId = freezed,
-    Object? roomId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      text: freezed == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roomId: freezed == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatMessageLiteImplCopyWith<$Res>
-    implements $ChatMessageLiteCopyWith<$Res> {
-  factory _$$ChatMessageLiteImplCopyWith(_$ChatMessageLiteImpl value,
-          $Res Function(_$ChatMessageLiteImpl) then) =
-      __$$ChatMessageLiteImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String createdAt,
-      String? text,
-      String? userId,
-      String? roomId});
-}
-
-/// @nodoc
-class __$$ChatMessageLiteImplCopyWithImpl<$Res>
-    extends _$ChatMessageLiteCopyWithImpl<$Res, _$ChatMessageLiteImpl>
-    implements _$$ChatMessageLiteImplCopyWith<$Res> {
-  __$$ChatMessageLiteImplCopyWithImpl(
-      _$ChatMessageLiteImpl _value, $Res Function(_$ChatMessageLiteImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatMessageLite
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? text = freezed,
-    Object? userId = freezed,
-    Object? roomId = freezed,
-  }) {
-    return _then(_$ChatMessageLiteImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      text: freezed == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roomId: freezed == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatMessageLiteImpl implements _ChatMessageLite {
-  const _$ChatMessageLiteImpl(
-      {required this.id,
-      required this.createdAt,
-      this.text,
-      this.userId,
-      this.roomId});
-
-  factory _$ChatMessageLiteImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatMessageLiteImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String createdAt;
-  @override
-  final String? text;
-  @override
-  final String? userId;
-  @override
-  final String? roomId;
-
-  @override
-  String toString() {
-    return 'ChatMessageLite(id: $id, createdAt: $createdAt, text: $text, userId: $userId, roomId: $roomId)';
-  }
+  /// Serializes this ChatMessageLite to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatMessageLiteImpl &&
+            other is ChatMessageLite &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -203,49 +50,190 @@ class _$ChatMessageLiteImpl implements _ChatMessageLite {
   int get hashCode =>
       Object.hash(runtimeType, id, createdAt, text, userId, roomId);
 
-  /// Create a copy of ChatMessageLite
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatMessageLiteImplCopyWith<_$ChatMessageLiteImpl> get copyWith =>
-      __$$ChatMessageLiteImplCopyWithImpl<_$ChatMessageLiteImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatMessageLiteImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatMessageLite(id: $id, createdAt: $createdAt, text: $text, userId: $userId, roomId: $roomId)';
   }
 }
 
-abstract class _ChatMessageLite implements ChatMessageLite {
-  const factory _ChatMessageLite(
-      {required final String id,
-      required final String createdAt,
-      final String? text,
-      final String? userId,
-      final String? roomId}) = _$ChatMessageLiteImpl;
+/// @nodoc
+abstract mixin class $ChatMessageLiteCopyWith<$Res> {
+  factory $ChatMessageLiteCopyWith(
+          ChatMessageLite value, $Res Function(ChatMessageLite) _then) =
+      _$ChatMessageLiteCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String createdAt,
+      String? text,
+      String? userId,
+      String? roomId});
+}
 
-  factory _ChatMessageLite.fromJson(Map<String, dynamic> json) =
-      _$ChatMessageLiteImpl.fromJson;
+/// @nodoc
+class _$ChatMessageLiteCopyWithImpl<$Res>
+    implements $ChatMessageLiteCopyWith<$Res> {
+  _$ChatMessageLiteCopyWithImpl(this._self, this._then);
+
+  final ChatMessageLite _self;
+  final $Res Function(ChatMessageLite) _then;
+
+  /// Create a copy of ChatMessageLite
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? text = freezed,
+    Object? userId = freezed,
+    Object? roomId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roomId: freezed == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatMessageLite implements ChatMessageLite {
+  const _ChatMessageLite(
+      {required this.id,
+      required this.createdAt,
+      this.text,
+      this.userId,
+      this.roomId});
+  factory _ChatMessageLite.fromJson(Map<String, dynamic> json) =>
+      _$ChatMessageLiteFromJson(json);
 
   @override
-  String get id;
+  final String id;
   @override
-  String get createdAt;
+  final String createdAt;
   @override
-  String? get text;
+  final String? text;
   @override
-  String? get userId;
+  final String? userId;
   @override
-  String? get roomId;
+  final String? roomId;
 
   /// Create a copy of ChatMessageLite
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatMessageLiteImplCopyWith<_$ChatMessageLiteImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatMessageLiteCopyWith<_ChatMessageLite> get copyWith =>
+      __$ChatMessageLiteCopyWithImpl<_ChatMessageLite>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatMessageLiteToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatMessageLite &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, createdAt, text, userId, roomId);
+
+  @override
+  String toString() {
+    return 'ChatMessageLite(id: $id, createdAt: $createdAt, text: $text, userId: $userId, roomId: $roomId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatMessageLiteCopyWith<$Res>
+    implements $ChatMessageLiteCopyWith<$Res> {
+  factory _$ChatMessageLiteCopyWith(
+          _ChatMessageLite value, $Res Function(_ChatMessageLite) _then) =
+      __$ChatMessageLiteCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String createdAt,
+      String? text,
+      String? userId,
+      String? roomId});
+}
+
+/// @nodoc
+class __$ChatMessageLiteCopyWithImpl<$Res>
+    implements _$ChatMessageLiteCopyWith<$Res> {
+  __$ChatMessageLiteCopyWithImpl(this._self, this._then);
+
+  final _ChatMessageLite _self;
+  final $Res Function(_ChatMessageLite) _then;
+
+  /// Create a copy of ChatMessageLite
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? text = freezed,
+    Object? userId = freezed,
+    Object? roomId = freezed,
+  }) {
+    return _then(_ChatMessageLite(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roomId: freezed == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,69 @@ part of 'roles_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-RolesShowRequest _$RolesShowRequestFromJson(Map<String, dynamic> json) {
-  return _RolesShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RolesShowRequest {
-  String get roleId => throw _privateConstructorUsedError;
+  String get roleId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RolesShowRequestCopyWith<RolesShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RolesShowRequestCopyWith<$Res> {
-  factory $RolesShowRequestCopyWith(
-          RolesShowRequest value, $Res Function(RolesShowRequest) then) =
-      _$RolesShowRequestCopyWithImpl<$Res, RolesShowRequest>;
-  @useResult
-  $Res call({String roleId});
-}
-
-/// @nodoc
-class _$RolesShowRequestCopyWithImpl<$Res, $Val extends RolesShowRequest>
-    implements $RolesShowRequestCopyWith<$Res> {
-  _$RolesShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of RolesShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $RolesShowRequestCopyWith<RolesShowRequest> get copyWith =>
+      _$RolesShowRequestCopyWithImpl<RolesShowRequest>(
+          this as RolesShowRequest, _$identity);
+
+  /// Serializes this RolesShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roleId = null,
-  }) {
-    return _then(_value.copyWith(
-      roleId: null == roleId
-          ? _value.roleId
-          : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RolesShowRequest &&
+            (identical(other.roleId, roleId) || other.roleId == roleId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roleId);
+
+  @override
+  String toString() {
+    return 'RolesShowRequest(roleId: $roleId)';
   }
 }
 
 /// @nodoc
-abstract class _$$RolesShowRequestImplCopyWith<$Res>
-    implements $RolesShowRequestCopyWith<$Res> {
-  factory _$$RolesShowRequestImplCopyWith(_$RolesShowRequestImpl value,
-          $Res Function(_$RolesShowRequestImpl) then) =
-      __$$RolesShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RolesShowRequestCopyWith<$Res> {
+  factory $RolesShowRequestCopyWith(
+          RolesShowRequest value, $Res Function(RolesShowRequest) _then) =
+      _$RolesShowRequestCopyWithImpl;
   @useResult
   $Res call({String roleId});
 }
 
 /// @nodoc
-class __$$RolesShowRequestImplCopyWithImpl<$Res>
-    extends _$RolesShowRequestCopyWithImpl<$Res, _$RolesShowRequestImpl>
-    implements _$$RolesShowRequestImplCopyWith<$Res> {
-  __$$RolesShowRequestImplCopyWithImpl(_$RolesShowRequestImpl _value,
-      $Res Function(_$RolesShowRequestImpl) _then)
-      : super(_value, _then);
+class _$RolesShowRequestCopyWithImpl<$Res>
+    implements $RolesShowRequestCopyWith<$Res> {
+  _$RolesShowRequestCopyWithImpl(this._self, this._then);
 
+  final RolesShowRequest _self;
+  final $Res Function(RolesShowRequest) _then;
+
+  /// Create a copy of RolesShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? roleId = null,
   }) {
-    return _then(_$RolesShowRequestImpl(
+    return _then(_self.copyWith(
       roleId: null == roleId
-          ? _value.roleId
+          ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -96,58 +81,80 @@ class __$$RolesShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RolesShowRequestImpl implements _RolesShowRequest {
-  const _$RolesShowRequestImpl({required this.roleId});
-
-  factory _$RolesShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RolesShowRequestImplFromJson(json);
+class _RolesShowRequest implements RolesShowRequest {
+  const _RolesShowRequest({required this.roleId});
+  factory _RolesShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$RolesShowRequestFromJson(json);
 
   @override
   final String roleId;
 
+  /// Create a copy of RolesShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RolesShowRequest(roleId: $roleId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RolesShowRequestCopyWith<_RolesShowRequest> get copyWith =>
+      __$RolesShowRequestCopyWithImpl<_RolesShowRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RolesShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RolesShowRequestImpl &&
+            other is _RolesShowRequest &&
             (identical(other.roleId, roleId) || other.roleId == roleId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, roleId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RolesShowRequestImplCopyWith<_$RolesShowRequestImpl> get copyWith =>
-      __$$RolesShowRequestImplCopyWithImpl<_$RolesShowRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RolesShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RolesShowRequest(roleId: $roleId)';
   }
 }
 
-abstract class _RolesShowRequest implements RolesShowRequest {
-  const factory _RolesShowRequest({required final String roleId}) =
-      _$RolesShowRequestImpl;
-
-  factory _RolesShowRequest.fromJson(Map<String, dynamic> json) =
-      _$RolesShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RolesShowRequestCopyWith<$Res>
+    implements $RolesShowRequestCopyWith<$Res> {
+  factory _$RolesShowRequestCopyWith(
+          _RolesShowRequest value, $Res Function(_RolesShowRequest) _then) =
+      __$RolesShowRequestCopyWithImpl;
   @override
-  String get roleId;
-  @override
-  @JsonKey(ignore: true)
-  _$$RolesShowRequestImplCopyWith<_$RolesShowRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String roleId});
 }
+
+/// @nodoc
+class __$RolesShowRequestCopyWithImpl<$Res>
+    implements _$RolesShowRequestCopyWith<$Res> {
+  __$RolesShowRequestCopyWithImpl(this._self, this._then);
+
+  final _RolesShowRequest _self;
+  final $Res Function(_RolesShowRequest) _then;
+
+  /// Create a copy of RolesShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roleId = null,
+  }) {
+    return _then(_RolesShowRequest(
+      roleId: null == roleId
+          ? _self.roleId
+          : roleId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

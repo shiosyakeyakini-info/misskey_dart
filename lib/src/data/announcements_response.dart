@@ -8,7 +8,7 @@ part 'announcements_response.freezed.dart';
 part 'announcements_response.g.dart';
 
 @freezed
-class AnnouncementsResponse with _$AnnouncementsResponse {
+abstract class AnnouncementsResponse with _$AnnouncementsResponse {
   const factory AnnouncementsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

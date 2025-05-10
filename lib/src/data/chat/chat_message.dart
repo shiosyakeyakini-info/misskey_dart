@@ -6,7 +6,7 @@ part 'chat_message.freezed.dart';
 part 'chat_message.g.dart';
 
 @freezed
-class ChatMessage with _$ChatMessage {
+abstract class ChatMessage with _$ChatMessage {
   const factory ChatMessage({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -25,7 +25,7 @@ class ChatMessage with _$ChatMessage {
 }
 
 @freezed
-class ChatMessageReaction with _$ChatMessageReaction {
+abstract class ChatMessageReaction with _$ChatMessageReaction {
   const factory ChatMessageReaction({
     required String reaction,
     required User user,

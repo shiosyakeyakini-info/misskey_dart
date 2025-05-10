@@ -5,7 +5,7 @@ part 'ap_show_request.freezed.dart';
 part 'ap_show_request.g.dart';
 
 @freezed
-class ApShowRequest with _$ApShowRequest {
+abstract class ApShowRequest with _$ApShowRequest {
   const factory ApShowRequest({
     @UriConverter() required Uri uri,
   }) = _ApShowRequest;

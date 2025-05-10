@@ -4,7 +4,7 @@ part 'users_report_abuse_request.freezed.dart';
 part 'users_report_abuse_request.g.dart';
 
 @freezed
-class UsersReportAbuseRequest with _$UsersReportAbuseRequest {
+abstract class UsersReportAbuseRequest with _$UsersReportAbuseRequest {
   const factory UsersReportAbuseRequest({
     required String userId,
     required String comment,

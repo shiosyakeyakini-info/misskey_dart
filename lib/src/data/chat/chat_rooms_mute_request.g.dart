@@ -6,15 +6,15 @@ part of 'chat_rooms_mute_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatRoomsMuteRequestImpl _$$ChatRoomsMuteRequestImplFromJson(
+_ChatRoomsMuteRequest _$ChatRoomsMuteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChatRoomsMuteRequestImpl(
+    _ChatRoomsMuteRequest(
       roomId: json['roomId'] as String,
       mute: json['mute'] as bool,
     );
 
-Map<String, dynamic> _$$ChatRoomsMuteRequestImplToJson(
-        _$ChatRoomsMuteRequestImpl instance) =>
+Map<String, dynamic> _$ChatRoomsMuteRequestToJson(
+        _ChatRoomsMuteRequest instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
       'mute': instance.mute,

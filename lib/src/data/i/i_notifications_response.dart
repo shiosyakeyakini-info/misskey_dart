@@ -7,7 +7,7 @@ part 'i_notifications_response.freezed.dart';
 part 'i_notifications_response.g.dart';
 
 @freezed
-class INotificationsResponse with _$INotificationsResponse {
+abstract class INotificationsResponse with _$INotificationsResponse {
   const factory INotificationsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

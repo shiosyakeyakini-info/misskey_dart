@@ -4,7 +4,7 @@ part 'ap_show_response.freezed.dart';
 part 'ap_show_response.g.dart';
 
 @freezed
-class ApShowResponse with _$ApShowResponse {
+abstract class ApShowResponse with _$ApShowResponse {
   const factory ApShowResponse({
     required String type,
     required Map<String, dynamic> object,

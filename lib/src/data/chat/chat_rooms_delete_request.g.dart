@@ -6,14 +6,14 @@ part of 'chat_rooms_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatRoomsDeleteRequestImpl _$$ChatRoomsDeleteRequestImplFromJson(
+_ChatRoomsDeleteRequest _$ChatRoomsDeleteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChatRoomsDeleteRequestImpl(
+    _ChatRoomsDeleteRequest(
       roomId: json['roomId'] as String,
     );
 
-Map<String, dynamic> _$$ChatRoomsDeleteRequestImplToJson(
-        _$ChatRoomsDeleteRequestImpl instance) =>
+Map<String, dynamic> _$ChatRoomsDeleteRequestToJson(
+        _ChatRoomsDeleteRequest instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
     };

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,92 +10,71 @@ part of 'users_lists_unfavorite_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersListsUnfavoriteRequest _$UsersListsUnfavoriteRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UsersListsUnfavoriteRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersListsUnfavoriteRequest {
-  String get listId => throw _privateConstructorUsedError;
+  String get listId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UsersListsUnfavoriteRequestCopyWith<UsersListsUnfavoriteRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsersListsUnfavoriteRequestCopyWith<$Res> {
-  factory $UsersListsUnfavoriteRequestCopyWith(
-          UsersListsUnfavoriteRequest value,
-          $Res Function(UsersListsUnfavoriteRequest) then) =
-      _$UsersListsUnfavoriteRequestCopyWithImpl<$Res,
-          UsersListsUnfavoriteRequest>;
-  @useResult
-  $Res call({String listId});
-}
-
-/// @nodoc
-class _$UsersListsUnfavoriteRequestCopyWithImpl<$Res,
-        $Val extends UsersListsUnfavoriteRequest>
-    implements $UsersListsUnfavoriteRequestCopyWith<$Res> {
-  _$UsersListsUnfavoriteRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UsersListsUnfavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UsersListsUnfavoriteRequestCopyWith<UsersListsUnfavoriteRequest>
+      get copyWith => _$UsersListsUnfavoriteRequestCopyWithImpl<
+              UsersListsUnfavoriteRequest>(
+          this as UsersListsUnfavoriteRequest, _$identity);
+
+  /// Serializes this UsersListsUnfavoriteRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? listId = null,
-  }) {
-    return _then(_value.copyWith(
-      listId: null == listId
-          ? _value.listId
-          : listId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersListsUnfavoriteRequest &&
+            (identical(other.listId, listId) || other.listId == listId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, listId);
+
+  @override
+  String toString() {
+    return 'UsersListsUnfavoriteRequest(listId: $listId)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersListsUnfavoriteRequestImplCopyWith<$Res>
-    implements $UsersListsUnfavoriteRequestCopyWith<$Res> {
-  factory _$$UsersListsUnfavoriteRequestImplCopyWith(
-          _$UsersListsUnfavoriteRequestImpl value,
-          $Res Function(_$UsersListsUnfavoriteRequestImpl) then) =
-      __$$UsersListsUnfavoriteRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersListsUnfavoriteRequestCopyWith<$Res> {
+  factory $UsersListsUnfavoriteRequestCopyWith(
+          UsersListsUnfavoriteRequest value,
+          $Res Function(UsersListsUnfavoriteRequest) _then) =
+      _$UsersListsUnfavoriteRequestCopyWithImpl;
   @useResult
   $Res call({String listId});
 }
 
 /// @nodoc
-class __$$UsersListsUnfavoriteRequestImplCopyWithImpl<$Res>
-    extends _$UsersListsUnfavoriteRequestCopyWithImpl<$Res,
-        _$UsersListsUnfavoriteRequestImpl>
-    implements _$$UsersListsUnfavoriteRequestImplCopyWith<$Res> {
-  __$$UsersListsUnfavoriteRequestImplCopyWithImpl(
-      _$UsersListsUnfavoriteRequestImpl _value,
-      $Res Function(_$UsersListsUnfavoriteRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersListsUnfavoriteRequestCopyWithImpl<$Res>
+    implements $UsersListsUnfavoriteRequestCopyWith<$Res> {
+  _$UsersListsUnfavoriteRequestCopyWithImpl(this._self, this._then);
 
+  final UsersListsUnfavoriteRequest _self;
+  final $Res Function(UsersListsUnfavoriteRequest) _then;
+
+  /// Create a copy of UsersListsUnfavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listId = null,
   }) {
-    return _then(_$UsersListsUnfavoriteRequestImpl(
+    return _then(_self.copyWith(
       listId: null == listId
-          ? _value.listId
+          ? _self.listId
           : listId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -103,61 +83,82 @@ class __$$UsersListsUnfavoriteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersListsUnfavoriteRequestImpl
-    implements _UsersListsUnfavoriteRequest {
-  const _$UsersListsUnfavoriteRequestImpl({required this.listId});
-
-  factory _$UsersListsUnfavoriteRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$UsersListsUnfavoriteRequestImplFromJson(json);
+class _UsersListsUnfavoriteRequest implements UsersListsUnfavoriteRequest {
+  const _UsersListsUnfavoriteRequest({required this.listId});
+  factory _UsersListsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersListsUnfavoriteRequestFromJson(json);
 
   @override
   final String listId;
 
+  /// Create a copy of UsersListsUnfavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersListsUnfavoriteRequest(listId: $listId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersListsUnfavoriteRequestCopyWith<_UsersListsUnfavoriteRequest>
+      get copyWith => __$UsersListsUnfavoriteRequestCopyWithImpl<
+          _UsersListsUnfavoriteRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersListsUnfavoriteRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersListsUnfavoriteRequestImpl &&
+            other is _UsersListsUnfavoriteRequest &&
             (identical(other.listId, listId) || other.listId == listId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, listId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersListsUnfavoriteRequestImplCopyWith<_$UsersListsUnfavoriteRequestImpl>
-      get copyWith => __$$UsersListsUnfavoriteRequestImplCopyWithImpl<
-          _$UsersListsUnfavoriteRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersListsUnfavoriteRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersListsUnfavoriteRequest(listId: $listId)';
   }
 }
 
-abstract class _UsersListsUnfavoriteRequest
-    implements UsersListsUnfavoriteRequest {
-  const factory _UsersListsUnfavoriteRequest({required final String listId}) =
-      _$UsersListsUnfavoriteRequestImpl;
-
-  factory _UsersListsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$UsersListsUnfavoriteRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersListsUnfavoriteRequestCopyWith<$Res>
+    implements $UsersListsUnfavoriteRequestCopyWith<$Res> {
+  factory _$UsersListsUnfavoriteRequestCopyWith(
+          _UsersListsUnfavoriteRequest value,
+          $Res Function(_UsersListsUnfavoriteRequest) _then) =
+      __$UsersListsUnfavoriteRequestCopyWithImpl;
   @override
-  String get listId;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersListsUnfavoriteRequestImplCopyWith<_$UsersListsUnfavoriteRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String listId});
 }
+
+/// @nodoc
+class __$UsersListsUnfavoriteRequestCopyWithImpl<$Res>
+    implements _$UsersListsUnfavoriteRequestCopyWith<$Res> {
+  __$UsersListsUnfavoriteRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersListsUnfavoriteRequest _self;
+  final $Res Function(_UsersListsUnfavoriteRequest) _then;
+
+  /// Create a copy of UsersListsUnfavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? listId = null,
+  }) {
+    return _then(_UsersListsUnfavoriteRequest(
+      listId: null == listId
+          ? _self.listId
+          : listId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

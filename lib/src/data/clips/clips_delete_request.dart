@@ -4,7 +4,7 @@ part 'clips_delete_request.freezed.dart';
 part 'clips_delete_request.g.dart';
 
 @freezed
-class ClipsDeleteRequest with _$ClipsDeleteRequest {
+abstract class ClipsDeleteRequest with _$ClipsDeleteRequest {
   const factory ClipsDeleteRequest({
     required String clipId,
   }) = _ClipsDeleteRequest;

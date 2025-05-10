@@ -5,7 +5,7 @@ part 'flash_update_request.freezed.dart';
 part 'flash_update_request.g.dart';
 
 @freezed
-class FlashUpdateRequest with _$FlashUpdateRequest {
+abstract class FlashUpdateRequest with _$FlashUpdateRequest {
   const factory FlashUpdateRequest({
     required String flashId,
     String? title,

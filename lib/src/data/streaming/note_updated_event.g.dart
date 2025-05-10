@@ -6,16 +6,14 @@ part of 'note_updated_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NoteUpdatedEventImpl _$$NoteUpdatedEventImplFromJson(
-        Map<String, dynamic> json) =>
-    _$NoteUpdatedEventImpl(
+_NoteUpdatedEvent _$NoteUpdatedEventFromJson(Map<String, dynamic> json) =>
+    _NoteUpdatedEvent(
       id: json['id'] as String,
       type: $enumDecode(_$NoteUpdatedEventTypeEnumMap, json['type']),
       body: json['body'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$$NoteUpdatedEventImplToJson(
-        _$NoteUpdatedEventImpl instance) =>
+Map<String, dynamic> _$NoteUpdatedEventToJson(_NoteUpdatedEvent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$NoteUpdatedEventTypeEnumMap[instance.type]!,

@@ -6,15 +6,15 @@ part of 'notes_translate_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesTranslateResponseImpl _$$NotesTranslateResponseImplFromJson(
+_NotesTranslateResponse _$NotesTranslateResponseFromJson(
         Map<String, dynamic> json) =>
-    _$NotesTranslateResponseImpl(
+    _NotesTranslateResponse(
       sourceLang: json['sourceLang'] as String,
       text: json['text'] as String,
     );
 
-Map<String, dynamic> _$$NotesTranslateResponseImplToJson(
-        _$NotesTranslateResponseImpl instance) =>
+Map<String, dynamic> _$NotesTranslateResponseToJson(
+        _NotesTranslateResponse instance) =>
     <String, dynamic>{
       'sourceLang': instance.sourceLang,
       'text': instance.text,

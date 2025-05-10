@@ -6,14 +6,12 @@ part of 'chat_room_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatRoomParameterImpl _$$ChatRoomParameterImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ChatRoomParameterImpl(
+_ChatRoomParameter _$ChatRoomParameterFromJson(Map<String, dynamic> json) =>
+    _ChatRoomParameter(
       roomId: json['roomId'] as String,
     );
 
-Map<String, dynamic> _$$ChatRoomParameterImplToJson(
-        _$ChatRoomParameterImpl instance) =>
+Map<String, dynamic> _$ChatRoomParameterToJson(_ChatRoomParameter instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
     };

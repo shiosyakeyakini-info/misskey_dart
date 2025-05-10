@@ -6,14 +6,14 @@ part of 'drive_files_check_existence_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFilesCheckExistenceRequestImpl
-    _$$DriveFilesCheckExistenceRequestImplFromJson(Map<String, dynamic> json) =>
-        _$DriveFilesCheckExistenceRequestImpl(
-          md5: json['md5'] as String,
-        );
+_DriveFilesCheckExistenceRequest _$DriveFilesCheckExistenceRequestFromJson(
+        Map<String, dynamic> json) =>
+    _DriveFilesCheckExistenceRequest(
+      md5: json['md5'] as String,
+    );
 
-Map<String, dynamic> _$$DriveFilesCheckExistenceRequestImplToJson(
-        _$DriveFilesCheckExistenceRequestImpl instance) =>
+Map<String, dynamic> _$DriveFilesCheckExistenceRequestToJson(
+        _DriveFilesCheckExistenceRequest instance) =>
     <String, dynamic>{
       'md5': instance.md5,
     };

@@ -6,7 +6,7 @@ part "streaming_response_sub_type.freezed.dart";
 part "streaming_response_sub_type.g.dart";
 
 @freezed
-class PageEvent with _$PageEvent {
+abstract class PageEvent with _$PageEvent {
   const factory PageEvent({
     required String pageId,
     required String event,
@@ -20,7 +20,7 @@ class PageEvent with _$PageEvent {
 }
 
 @freezed
-class UrlUploadFinishedEvent with _$UrlUploadFinishedEvent {
+abstract class UrlUploadFinishedEvent with _$UrlUploadFinishedEvent {
   const factory UrlUploadFinishedEvent({
     required String marker,
     required DriveFile file,
@@ -31,7 +31,7 @@ class UrlUploadFinishedEvent with _$UrlUploadFinishedEvent {
 }
 
 @freezed
-class RegistryUpdated with _$RegistryUpdated {
+abstract class RegistryUpdated with _$RegistryUpdated {
   const factory RegistryUpdated({
     List<String>? scope,
     required String key,
@@ -43,7 +43,7 @@ class RegistryUpdated with _$RegistryUpdated {
 }
 
 @freezed
-class Signin with _$Signin {
+abstract class Signin with _$Signin {
   const factory Signin({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -56,7 +56,7 @@ class Signin with _$Signin {
 }
 
 @freezed
-class TimelineVoted with _$TimelineVoted {
+abstract class TimelineVoted with _$TimelineVoted {
   const factory TimelineVoted({
     required int choice,
     required String userId,
@@ -67,7 +67,7 @@ class TimelineVoted with _$TimelineVoted {
 }
 
 @freezed
-class TimelineReacted with _$TimelineReacted {
+abstract class TimelineReacted with _$TimelineReacted {
   const factory TimelineReacted({
     required String reaction,
     required TimelineReactedEmojiData? emoji,
@@ -79,7 +79,7 @@ class TimelineReacted with _$TimelineReacted {
 }
 
 @freezed
-class TimelineReactedEmojiData with _$TimelineReactedEmojiData {
+abstract class TimelineReactedEmojiData with _$TimelineReactedEmojiData {
   const factory TimelineReactedEmojiData({
     required String name,
     required String url,
@@ -90,7 +90,7 @@ class TimelineReactedEmojiData with _$TimelineReactedEmojiData {
 }
 
 @freezed
-class TimelineDeleted with _$TimelineDeleted {
+abstract class TimelineDeleted with _$TimelineDeleted {
   const factory TimelineDeleted({
     @DateTimeConverter() required DateTime deletedAt,
   }) = _TimelineDeleted;
@@ -137,7 +137,7 @@ sealed class StreamingStats with _$StreamingStats {
 }
 
 @freezed
-class StatsLogFs with _$StatsLogFs {
+abstract class StatsLogFs with _$StatsLogFs {
   const factory StatsLogFs({
     required double r,
     required double w,
@@ -148,7 +148,7 @@ class StatsLogFs with _$StatsLogFs {
 }
 
 @freezed
-class StatsLogMem with _$StatsLogMem {
+abstract class StatsLogMem with _$StatsLogMem {
   const factory StatsLogMem({
     required double used,
     required double active,
@@ -159,7 +159,7 @@ class StatsLogMem with _$StatsLogMem {
 }
 
 @freezed
-class StatsLogNet with _$StatsLogNet {
+abstract class StatsLogNet with _$StatsLogNet {
   const factory StatsLogNet({
     required double rx,
     required double tx,
@@ -170,7 +170,7 @@ class StatsLogNet with _$StatsLogNet {
 }
 
 @freezed
-class QueueStatsLogResponseData with _$QueueStatsLogResponseData {
+abstract class QueueStatsLogResponseData with _$QueueStatsLogResponseData {
   const factory QueueStatsLogResponseData({
     required int activeSincePrevTick,
     required int active,
