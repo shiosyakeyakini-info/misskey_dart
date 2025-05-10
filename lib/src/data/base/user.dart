@@ -70,7 +70,8 @@ abstract class UserDetailed implements User {
   // Deleted in Misskey 2023.12.0
   FFVisibility? get ffVisibility;
   FFVisibility? get followersVisibility;
-  FFVisibility? get followingVisibility;
+  ChatScope? get chatScope;
+  bool? get canChat;
   bool? get twoFactorEnabled;
   bool? get usePasswordLessLogin;
   bool? get securityKeys;
@@ -169,6 +170,8 @@ abstract class UserDetailedNotMe
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
+    ChatScope? chatScope,
+    bool? canChat,
     bool? twoFactorEnabled,
     bool? usePasswordLessLogin,
     bool? securityKeys,
@@ -231,6 +234,8 @@ abstract class UserDetailedNotMeWithRelations
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
+    ChatScope? chatScope,
+    bool? canChat,
     bool? twoFactorEnabled,
     bool? usePasswordLessLogin,
     bool? securityKeys,
@@ -302,6 +307,8 @@ abstract class MeDetailed with _$MeDetailed implements UserDetailed {
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followersVisibility,
     FFVisibility? followingVisibility,
+    ChatScope? chatScope,
+    bool? canChat,
     required bool twoFactorEnabled,
     required bool usePasswordLessLogin,
     required bool securityKeys,
@@ -330,6 +337,7 @@ abstract class MeDetailed with _$MeDetailed implements UserDetailed {
     required bool hasUnreadAnnouncement,
     required bool hasUnreadAntenna,
     required bool hasUnreadChannel,
+    bool? hasUnreadChatMessages,
     required bool hasUnreadNotification,
     required bool hasPendingReceivedFollowRequest,
     int? unreadNotificationsCount,
@@ -437,15 +445,20 @@ abstract class UserPolicies with _$UserPolicies {
     required bool gtlAvailable,
     required bool ltlAvailable,
     required bool canPublicNote,
+    int? mentionLimit,
     @Default(false) bool canEditNote,
     required bool canInvite,
-    required bool canManageCustomEmojis,
-    required bool canHideAds,
     double? inviteLimit,
     double? inviteLimitCycle,
+    int? inviteExpirationTime,
+    required bool canManageCustomEmojis,
+    bool? canManageAvatarDecorations,
     @Default(false) bool canSearchNotes,
     @Default(false) bool canUseTranslator,
+    required bool canHideAds,
     required double driveCapacityMb,
+    bool? alwaysMarkNsfw,
+    bool? canUpdateBioMedia,
     required double pinLimit,
     required double antennaLimit,
     required double wordMuteLimit,
@@ -456,6 +469,12 @@ abstract class UserPolicies with _$UserPolicies {
     required double userEachUserListsLimit,
     required double rateLimitFactor,
     @Default(1.0) double avatarDecorationLimit,
+    bool? canImportAntennas,
+    bool? canImportBlocking,
+    bool? canImportFollowing,
+    bool? canImportMuting,
+    bool? canImportUserLists,
+    ChatAvailability? chatAvailability,
   }) = _UserPolicies;
 
   factory UserPolicies.fromJson(Map<String, Object?> json) =>
@@ -469,6 +488,14 @@ abstract class UserField with _$UserField {
 
   factory UserField.fromJson(Map<String, Object?> json) =>
       _$UserFieldFromJson(json);
+}
+
+enum ChatScope {
+  everyone,
+  followers,
+  following,
+  mutual,
+  none,
 }
 
 enum Notify {
@@ -503,6 +530,7 @@ abstract class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
     NotificationRecieveConfig? receiveFollowRequest,
     NotificationRecieveConfig? followRequestAccepted,
     NotificationRecieveConfig? roleAssigned,
+    NotificationRecieveConfig? chatRoomInvitationReceived,
     NotificationRecieveConfig? achievementEarned,
     NotificationRecieveConfig? app,
     NotificationRecieveConfig? test,
@@ -531,3 +559,5 @@ enum NotificationRecieveConfigType {
   list,
   never,
 }
+
+enum ChatAvailability { available, readOnly, unavailable }

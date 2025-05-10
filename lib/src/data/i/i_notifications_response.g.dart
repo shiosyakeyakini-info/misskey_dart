@@ -37,6 +37,13 @@ _INotificationsResponse _$INotificationsResponseFromJson(
       role: json['role'] == null
           ? null
           : RolesListResponse.fromJson(json['role'] as Map<String, dynamic>),
+      reactions: (json['reactions'] as List<dynamic>?)
+          ?.map(
+              (e) => INotificationsReaction.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      users: (json['users'] as List<dynamic>?)
+          ?.map((e) => UserLite.fromJson(e as Map<String, dynamic>))
+          .toList(),
       exportedEntity: $enumDecodeNullable(
           _$UserExportableEntitiesEnumMap, json['exportedEntity']),
       fileId: json['fileId'] as String?,
@@ -63,6 +70,8 @@ Map<String, dynamic> _$INotificationsResponseToJson(
       'user': instance.user?.toJson(),
       'note': instance.note?.toJson(),
       'role': instance.role?.toJson(),
+      'reactions': instance.reactions?.map((e) => e.toJson()).toList(),
+      'users': instance.users?.map((e) => e.toJson()).toList(),
       'exportedEntity':
           _$UserExportableEntitiesEnumMap[instance.exportedEntity],
       'fileId': instance.fileId,
@@ -112,3 +121,17 @@ const _$UserExportableEntitiesEnumMap = {
   UserExportableEntities.muting: 'muting',
   UserExportableEntities.userList: 'userList',
 };
+
+_INotificationsReaction _$INotificationsReactionFromJson(
+        Map<String, dynamic> json) =>
+    _INotificationsReaction(
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      reaction: json['reaction'] as String,
+    );
+
+Map<String, dynamic> _$INotificationsReactionToJson(
+        _INotificationsReaction instance) =>
+    <String, dynamic>{
+      'user': instance.user.toJson(),
+      'reaction': instance.reaction,
+    };

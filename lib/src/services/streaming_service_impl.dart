@@ -258,6 +258,12 @@ class StreamingService implements StreamingController, WebSocketController {
       );
 
   @override
+  void read(String id) => sendRequest(
+        StreamingRequestType.ch,
+        StreamingRequestBody(id: id, type: "read"),
+      );
+
+  @override
   Stream<StreamingResponse> localTimelineStream({
     required LocalTimelineParameter parameter,
     required String id,

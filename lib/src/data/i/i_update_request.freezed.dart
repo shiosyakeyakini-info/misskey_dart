@@ -49,6 +49,7 @@ mixin _$IUpdateRequest {
   FFVisibility? get ffVisibility;
   FFVisibility? get followingVisibility;
   FFVisibility? get followersVisibility;
+  ChatScope? get chatScope;
   String? get pinnedPageId;
   List<String>? get mutingNotificationTypes;
   @MuteWordsConverter()
@@ -133,6 +134,8 @@ mixin _$IUpdateRequest {
                 other.followingVisibility == followingVisibility) &&
             (identical(other.followersVisibility, followersVisibility) ||
                 other.followersVisibility == followersVisibility) &&
+            (identical(other.chatScope, chatScope) ||
+                other.chatScope == chatScope) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
             const DeepCollectionEquality().equals(
@@ -143,8 +146,7 @@ mixin _$IUpdateRequest {
                 .equals(other.hardMutedWords, hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other.mutedInstances, mutedInstances) &&
-            (identical(other.notificationRecieveConfig, notificationRecieveConfig) ||
-                other.notificationRecieveConfig == notificationRecieveConfig) &&
+            (identical(other.notificationRecieveConfig, notificationRecieveConfig) || other.notificationRecieveConfig == notificationRecieveConfig) &&
             const DeepCollectionEquality().equals(other.emailNotificationTypes, emailNotificationTypes) &&
             const DeepCollectionEquality().equals(other.alsoKnownAs, alsoKnownAs));
   }
@@ -183,6 +185,7 @@ mixin _$IUpdateRequest {
         ffVisibility,
         followingVisibility,
         followersVisibility,
+        chatScope,
         pinnedPageId,
         const DeepCollectionEquality().hash(mutingNotificationTypes),
         const DeepCollectionEquality().hash(mutedWords),
@@ -195,7 +198,7 @@ mixin _$IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 }
 
@@ -236,6 +239,7 @@ abstract mixin class $IUpdateRequestCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followingVisibility,
       FFVisibility? followersVisibility,
+      ChatScope? chatScope,
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -291,6 +295,7 @@ class _$IUpdateRequestCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
+    Object? chatScope = freezed,
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
@@ -421,6 +426,10 @@ class _$IUpdateRequestCopyWithImpl<$Res>
           ? _self.followersVisibility
           : followersVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _self.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
@@ -506,6 +515,7 @@ class _IUpdateRequest implements IUpdateRequest {
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followingVisibility,
       this.followersVisibility,
+      this.chatScope,
       this.pinnedPageId,
       final List<String>? mutingNotificationTypes,
       @MuteWordsConverter() final List<MuteWord>? mutedWords,
@@ -606,6 +616,8 @@ class _IUpdateRequest implements IUpdateRequest {
   final FFVisibility? followingVisibility;
   @override
   final FFVisibility? followersVisibility;
+  @override
+  final ChatScope? chatScope;
   @override
   final String? pinnedPageId;
   final List<String>? _mutingNotificationTypes;
@@ -751,6 +763,8 @@ class _IUpdateRequest implements IUpdateRequest {
                 other.followingVisibility == followingVisibility) &&
             (identical(other.followersVisibility, followersVisibility) ||
                 other.followersVisibility == followersVisibility) &&
+            (identical(other.chatScope, chatScope) ||
+                other.chatScope == chatScope) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
             const DeepCollectionEquality().equals(
@@ -761,8 +775,7 @@ class _IUpdateRequest implements IUpdateRequest {
                 .equals(other._hardMutedWords, _hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other._mutedInstances, _mutedInstances) &&
-            (identical(other.notificationRecieveConfig, notificationRecieveConfig) ||
-                other.notificationRecieveConfig == notificationRecieveConfig) &&
+            (identical(other.notificationRecieveConfig, notificationRecieveConfig) || other.notificationRecieveConfig == notificationRecieveConfig) &&
             const DeepCollectionEquality().equals(other._emailNotificationTypes, _emailNotificationTypes) &&
             const DeepCollectionEquality().equals(other._alsoKnownAs, _alsoKnownAs));
   }
@@ -801,6 +814,7 @@ class _IUpdateRequest implements IUpdateRequest {
         ffVisibility,
         followingVisibility,
         followersVisibility,
+        chatScope,
         pinnedPageId,
         const DeepCollectionEquality().hash(_mutingNotificationTypes),
         const DeepCollectionEquality().hash(_mutedWords),
@@ -813,7 +827,7 @@ class _IUpdateRequest implements IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 }
 
@@ -856,6 +870,7 @@ abstract mixin class _$IUpdateRequestCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followingVisibility,
       FFVisibility? followersVisibility,
+      ChatScope? chatScope,
       String? pinnedPageId,
       List<String>? mutingNotificationTypes,
       @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -912,6 +927,7 @@ class __$IUpdateRequestCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
+    Object? chatScope = freezed,
     Object? pinnedPageId = freezed,
     Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
@@ -1042,6 +1058,10 @@ class __$IUpdateRequestCopyWithImpl<$Res>
           ? _self.followersVisibility
           : followersVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _self.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable

@@ -12,11 +12,14 @@ abstract class ChatMessage with _$ChatMessage {
     @DateTimeConverter() required DateTime createdAt,
     String? text,
     required String fromUserId,
-    User? fromUser,
+    UserLite? fromUser,
     String? toUserId,
-    User? toUser,
+    UserLite? toUser,
     String? toRoomId,
     ChatRoom? toRoom,
+    String? fileId,
+    DriveFile? file,
+    bool? isRead,
     required List<ChatMessageReaction> reactions,
   }) = _ChatMessage;
 
@@ -28,7 +31,7 @@ abstract class ChatMessage with _$ChatMessage {
 abstract class ChatMessageReaction with _$ChatMessageReaction {
   const factory ChatMessageReaction({
     required String reaction,
-    required User user,
+    UserLite? user,
   }) = _ChatMessageReaction;
 
   factory ChatMessageReaction.fromJson(Map<String, dynamic> json) =>

@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ChatRoomsCreateRequest {
   String get name;
-  String get description;
+  String? get description;
 
   /// Create a copy of ChatRoomsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -55,7 +55,7 @@ abstract mixin class $ChatRoomsCreateRequestCopyWith<$Res> {
           $Res Function(ChatRoomsCreateRequest) _then) =
       _$ChatRoomsCreateRequestCopyWithImpl;
   @useResult
-  $Res call({String name, String description});
+  $Res call({String name, String? description});
 }
 
 /// @nodoc
@@ -72,17 +72,17 @@ class _$ChatRoomsCreateRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? description = null,
+    Object? description = freezed,
   }) {
     return _then(_self.copyWith(
       name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -90,15 +90,14 @@ class _$ChatRoomsCreateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatRoomsCreateRequest implements ChatRoomsCreateRequest {
-  const _ChatRoomsCreateRequest(
-      {required this.name, required this.description});
+  const _ChatRoomsCreateRequest({required this.name, this.description});
   factory _ChatRoomsCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsCreateRequestFromJson(json);
 
   @override
   final String name;
   @override
-  final String description;
+  final String? description;
 
   /// Create a copy of ChatRoomsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -144,7 +143,7 @@ abstract mixin class _$ChatRoomsCreateRequestCopyWith<$Res>
       __$ChatRoomsCreateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String name, String description});
+  $Res call({String name, String? description});
 }
 
 /// @nodoc
@@ -161,17 +160,17 @@ class __$ChatRoomsCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? name = null,
-    Object? description = null,
+    Object? description = freezed,
   }) {
     return _then(_ChatRoomsCreateRequest(
       name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

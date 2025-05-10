@@ -50,6 +50,7 @@ _IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
           _$FFVisibilityEnumMap, json['followingVisibility']),
       followersVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followersVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
       pinnedPageId: json['pinnedPageId'] as String?,
       mutingNotificationTypes:
           (json['mutingNotificationTypes'] as List<dynamic>?)
@@ -115,6 +116,7 @@ Map<String, dynamic> _$IUpdateRequestToJson(_IUpdateRequest instance) =>
           _$FFVisibilityEnumMap[instance.followingVisibility],
       'followersVisibility':
           _$FFVisibilityEnumMap[instance.followersVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
       'pinnedPageId': instance.pinnedPageId,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
       'mutedWords':
@@ -138,6 +140,14 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.public: 'public',
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
+};
+
+const _$ChatScopeEnumMap = {
+  ChatScope.everyone: 'everyone',
+  ChatScope.followers: 'followers',
+  ChatScope.following: 'following',
+  ChatScope.mutual: 'mutual',
+  ChatScope.none: 'none',
 };
 
 Json? _$JsonConverterToJson<Json, Value>(

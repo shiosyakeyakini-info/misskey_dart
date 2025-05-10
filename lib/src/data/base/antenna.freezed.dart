@@ -32,6 +32,7 @@ mixin _$Antenna {
   bool get hasUnreadNote;
   bool? get localOnly;
   bool? get excludeBots;
+  bool? get excludeNotesInSensitiveChannel;
 
   /// Create a copy of Antenna
   /// with the given fields replaced by the non-null parameter values.
@@ -73,7 +74,11 @@ mixin _$Antenna {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -95,11 +100,12 @@ mixin _$Antenna {
       isActive,
       hasUnreadNote,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -124,7 +130,8 @@ abstract mixin class $AntennaCopyWith<$Res> {
       bool isActive,
       bool hasUnreadNote,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -155,6 +162,7 @@ class _$AntennaCopyWithImpl<$Res> implements $AntennaCopyWith<$Res> {
     Object? hasUnreadNote = null,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -221,6 +229,10 @@ class _$AntennaCopyWithImpl<$Res> implements $AntennaCopyWith<$Res> {
           ? _self.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _self.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -244,7 +256,8 @@ class _Antenna implements Antenna {
       required this.isActive,
       required this.hasUnreadNote,
       this.localOnly,
-      this.excludeBots})
+      this.excludeBots,
+      this.excludeNotesInSensitiveChannel})
       : _keywords = keywords,
         _excludeKeywords = excludeKeywords,
         _users = users;
@@ -303,6 +316,8 @@ class _Antenna implements Antenna {
   final bool? localOnly;
   @override
   final bool? excludeBots;
+  @override
+  final bool? excludeNotesInSensitiveChannel;
 
   /// Create a copy of Antenna
   /// with the given fields replaced by the non-null parameter values.
@@ -349,7 +364,11 @@ class _Antenna implements Antenna {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -371,11 +390,12 @@ class _Antenna implements Antenna {
       isActive,
       hasUnreadNote,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -401,7 +421,8 @@ abstract mixin class _$AntennaCopyWith<$Res> implements $AntennaCopyWith<$Res> {
       bool isActive,
       bool hasUnreadNote,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -432,6 +453,7 @@ class __$AntennaCopyWithImpl<$Res> implements _$AntennaCopyWith<$Res> {
     Object? hasUnreadNote = null,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_Antenna(
       id: null == id
@@ -497,6 +519,10 @@ class __$AntennaCopyWithImpl<$Res> implements _$AntennaCopyWith<$Res> {
       excludeBots: freezed == excludeBots
           ? _self.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _self.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }

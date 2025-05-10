@@ -618,6 +618,8 @@ mixin _$UserDetailedNotMe {
   FFVisibility? get ffVisibility;
   FFVisibility? get followersVisibility;
   FFVisibility? get followingVisibility;
+  ChatScope? get chatScope;
+  bool? get canChat;
   bool? get twoFactorEnabled;
   bool? get usePasswordLessLogin;
   bool? get securityKeys;
@@ -716,6 +718,8 @@ mixin _$UserDetailedNotMe {
             (identical(other.ffVisibility, ffVisibility) || other.ffVisibility == ffVisibility) &&
             (identical(other.followersVisibility, followersVisibility) || other.followersVisibility == followersVisibility) &&
             (identical(other.followingVisibility, followingVisibility) || other.followingVisibility == followingVisibility) &&
+            (identical(other.chatScope, chatScope) || other.chatScope == chatScope) &&
+            (identical(other.canChat, canChat) || other.canChat == canChat) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) || other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) || other.usePasswordLessLogin == usePasswordLessLogin) &&
             (identical(other.securityKeys, securityKeys) || other.securityKeys == securityKeys) &&
@@ -773,6 +777,8 @@ mixin _$UserDetailedNotMe {
         ffVisibility,
         followersVisibility,
         followingVisibility,
+        chatScope,
+        canChat,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -783,7 +789,7 @@ mixin _$UserDetailedNotMe {
 
   @override
   String toString() {
-    return 'UserDetailedNotMe(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote)';
+    return 'UserDetailedNotMe(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, chatScope: $chatScope, canChat: $canChat, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote)';
   }
 }
 
@@ -839,6 +845,8 @@ abstract mixin class $UserDetailedNotMeCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
+      ChatScope? chatScope,
+      bool? canChat,
       bool? twoFactorEnabled,
       bool? usePasswordLessLogin,
       bool? securityKeys,
@@ -907,6 +915,8 @@ class _$UserDetailedNotMeCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
+    Object? chatScope = freezed,
+    Object? canChat = freezed,
     Object? twoFactorEnabled = freezed,
     Object? usePasswordLessLogin = freezed,
     Object? securityKeys = freezed,
@@ -1095,6 +1105,14 @@ class _$UserDetailedNotMeCopyWithImpl<$Res>
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
+      canChat: freezed == canChat
+          ? _self.canChat
+          : canChat // ignore: cast_nullable_to_non_nullable
+              as bool?,
       twoFactorEnabled: freezed == twoFactorEnabled
           ? _self.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -1186,6 +1204,8 @@ class _UserDetailedNotMe implements UserDetailedNotMe {
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
+      this.chatScope,
+      this.canChat,
       this.twoFactorEnabled,
       this.usePasswordLessLogin,
       this.securityKeys,
@@ -1379,6 +1399,10 @@ class _UserDetailedNotMe implements UserDetailedNotMe {
   @override
   final FFVisibility? followingVisibility;
   @override
+  final ChatScope? chatScope;
+  @override
+  final bool? canChat;
+  @override
   final bool? twoFactorEnabled;
   @override
   final bool? usePasswordLessLogin;
@@ -1494,6 +1518,8 @@ class _UserDetailedNotMe implements UserDetailedNotMe {
             (identical(other.ffVisibility, ffVisibility) || other.ffVisibility == ffVisibility) &&
             (identical(other.followersVisibility, followersVisibility) || other.followersVisibility == followersVisibility) &&
             (identical(other.followingVisibility, followingVisibility) || other.followingVisibility == followingVisibility) &&
+            (identical(other.chatScope, chatScope) || other.chatScope == chatScope) &&
+            (identical(other.canChat, canChat) || other.canChat == canChat) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) || other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) || other.usePasswordLessLogin == usePasswordLessLogin) &&
             (identical(other.securityKeys, securityKeys) || other.securityKeys == securityKeys) &&
@@ -1551,6 +1577,8 @@ class _UserDetailedNotMe implements UserDetailedNotMe {
         ffVisibility,
         followersVisibility,
         followingVisibility,
+        chatScope,
+        canChat,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -1561,7 +1589,7 @@ class _UserDetailedNotMe implements UserDetailedNotMe {
 
   @override
   String toString() {
-    return 'UserDetailedNotMe(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote)';
+    return 'UserDetailedNotMe(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, chatScope: $chatScope, canChat: $canChat, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote)';
   }
 }
 
@@ -1619,6 +1647,8 @@ abstract mixin class _$UserDetailedNotMeCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
+      ChatScope? chatScope,
+      bool? canChat,
       bool? twoFactorEnabled,
       bool? usePasswordLessLogin,
       bool? securityKeys,
@@ -1688,6 +1718,8 @@ class __$UserDetailedNotMeCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
+    Object? chatScope = freezed,
+    Object? canChat = freezed,
     Object? twoFactorEnabled = freezed,
     Object? usePasswordLessLogin = freezed,
     Object? securityKeys = freezed,
@@ -1876,6 +1908,14 @@ class __$UserDetailedNotMeCopyWithImpl<$Res>
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
+      canChat: freezed == canChat
+          ? _self.canChat
+          : canChat // ignore: cast_nullable_to_non_nullable
+              as bool?,
       twoFactorEnabled: freezed == twoFactorEnabled
           ? _self.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -1979,6 +2019,8 @@ mixin _$UserDetailedNotMeWithRelations {
   FFVisibility? get ffVisibility;
   FFVisibility? get followersVisibility;
   FFVisibility? get followingVisibility;
+  ChatScope? get chatScope;
+  bool? get canChat;
   bool? get twoFactorEnabled;
   bool? get usePasswordLessLogin;
   bool? get securityKeys;
@@ -2089,6 +2131,8 @@ mixin _$UserDetailedNotMeWithRelations {
             (identical(other.ffVisibility, ffVisibility) || other.ffVisibility == ffVisibility) &&
             (identical(other.followersVisibility, followersVisibility) || other.followersVisibility == followersVisibility) &&
             (identical(other.followingVisibility, followingVisibility) || other.followingVisibility == followingVisibility) &&
+            (identical(other.chatScope, chatScope) || other.chatScope == chatScope) &&
+            (identical(other.canChat, canChat) || other.canChat == canChat) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) || other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) || other.usePasswordLessLogin == usePasswordLessLogin) &&
             (identical(other.securityKeys, securityKeys) || other.securityKeys == securityKeys) &&
@@ -2157,6 +2201,8 @@ mixin _$UserDetailedNotMeWithRelations {
         ffVisibility,
         followersVisibility,
         followingVisibility,
+        chatScope,
+        canChat,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -2178,7 +2224,7 @@ mixin _$UserDetailedNotMeWithRelations {
 
   @override
   String toString() {
-    return 'UserDetailedNotMeWithRelations(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted, notify: $notify, withReplies: $withReplies, followedMessage: $followedMessage)';
+    return 'UserDetailedNotMeWithRelations(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, chatScope: $chatScope, canChat: $canChat, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted, notify: $notify, withReplies: $withReplies, followedMessage: $followedMessage)';
   }
 }
 
@@ -2235,6 +2281,8 @@ abstract mixin class $UserDetailedNotMeWithRelationsCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
+      ChatScope? chatScope,
+      bool? canChat,
       bool? twoFactorEnabled,
       bool? usePasswordLessLogin,
       bool? securityKeys,
@@ -2314,6 +2362,8 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
+    Object? chatScope = freezed,
+    Object? canChat = freezed,
     Object? twoFactorEnabled = freezed,
     Object? usePasswordLessLogin = freezed,
     Object? securityKeys = freezed,
@@ -2513,6 +2563,14 @@ class _$UserDetailedNotMeWithRelationsCopyWithImpl<$Res>
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
+      canChat: freezed == canChat
+          ? _self.canChat
+          : canChat // ignore: cast_nullable_to_non_nullable
+              as bool?,
       twoFactorEnabled: freezed == twoFactorEnabled
           ? _self.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -2649,6 +2707,8 @@ class _UserDetailedNotMeWithRelations
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
+      this.chatScope,
+      this.canChat,
       this.twoFactorEnabled,
       this.usePasswordLessLogin,
       this.securityKeys,
@@ -2853,6 +2913,10 @@ class _UserDetailedNotMeWithRelations
   @override
   final FFVisibility? followingVisibility;
   @override
+  final ChatScope? chatScope;
+  @override
+  final bool? canChat;
+  @override
   final bool? twoFactorEnabled;
   @override
   final bool? usePasswordLessLogin;
@@ -2991,6 +3055,8 @@ class _UserDetailedNotMeWithRelations
             (identical(other.ffVisibility, ffVisibility) || other.ffVisibility == ffVisibility) &&
             (identical(other.followersVisibility, followersVisibility) || other.followersVisibility == followersVisibility) &&
             (identical(other.followingVisibility, followingVisibility) || other.followingVisibility == followingVisibility) &&
+            (identical(other.chatScope, chatScope) || other.chatScope == chatScope) &&
+            (identical(other.canChat, canChat) || other.canChat == canChat) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) || other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) || other.usePasswordLessLogin == usePasswordLessLogin) &&
             (identical(other.securityKeys, securityKeys) || other.securityKeys == securityKeys) &&
@@ -3059,6 +3125,8 @@ class _UserDetailedNotMeWithRelations
         ffVisibility,
         followersVisibility,
         followingVisibility,
+        chatScope,
+        canChat,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -3080,7 +3148,7 @@ class _UserDetailedNotMeWithRelations
 
   @override
   String toString() {
-    return 'UserDetailedNotMeWithRelations(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted, notify: $notify, withReplies: $withReplies, followedMessage: $followedMessage)';
+    return 'UserDetailedNotMeWithRelations(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, chatScope: $chatScope, canChat: $canChat, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, isFollowing: $isFollowing, isFollowed: $isFollowed, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted, notify: $notify, withReplies: $withReplies, followedMessage: $followedMessage)';
   }
 }
 
@@ -3139,6 +3207,8 @@ abstract mixin class _$UserDetailedNotMeWithRelationsCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
+      ChatScope? chatScope,
+      bool? canChat,
       bool? twoFactorEnabled,
       bool? usePasswordLessLogin,
       bool? securityKeys,
@@ -3219,6 +3289,8 @@ class __$UserDetailedNotMeWithRelationsCopyWithImpl<$Res>
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
+    Object? chatScope = freezed,
+    Object? canChat = freezed,
     Object? twoFactorEnabled = freezed,
     Object? usePasswordLessLogin = freezed,
     Object? securityKeys = freezed,
@@ -3418,6 +3490,14 @@ class __$UserDetailedNotMeWithRelationsCopyWithImpl<$Res>
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
+      canChat: freezed == canChat
+          ? _self.canChat
+          : canChat // ignore: cast_nullable_to_non_nullable
+              as bool?,
       twoFactorEnabled: freezed == twoFactorEnabled
           ? _self.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -3565,6 +3645,8 @@ mixin _$MeDetailed {
   FFVisibility? get ffVisibility;
   FFVisibility? get followersVisibility;
   FFVisibility? get followingVisibility;
+  ChatScope? get chatScope;
+  bool? get canChat;
   bool get twoFactorEnabled;
   bool get usePasswordLessLogin;
   bool get securityKeys;
@@ -3593,6 +3675,7 @@ mixin _$MeDetailed {
   bool get hasUnreadAnnouncement;
   bool get hasUnreadAntenna;
   bool get hasUnreadChannel;
+  bool? get hasUnreadChatMessages;
   bool get hasUnreadNotification;
   bool get hasPendingReceivedFollowRequest;
   int? get unreadNotificationsCount;
@@ -3700,6 +3783,8 @@ mixin _$MeDetailed {
             (identical(other.ffVisibility, ffVisibility) || other.ffVisibility == ffVisibility) &&
             (identical(other.followersVisibility, followersVisibility) || other.followersVisibility == followersVisibility) &&
             (identical(other.followingVisibility, followingVisibility) || other.followingVisibility == followingVisibility) &&
+            (identical(other.chatScope, chatScope) || other.chatScope == chatScope) &&
+            (identical(other.canChat, canChat) || other.canChat == canChat) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) || other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) || other.usePasswordLessLogin == usePasswordLessLogin) &&
             (identical(other.securityKeys, securityKeys) || other.securityKeys == securityKeys) &&
@@ -3728,6 +3813,7 @@ mixin _$MeDetailed {
             (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) || other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
             (identical(other.hasUnreadAntenna, hasUnreadAntenna) || other.hasUnreadAntenna == hasUnreadAntenna) &&
             (identical(other.hasUnreadChannel, hasUnreadChannel) || other.hasUnreadChannel == hasUnreadChannel) &&
+            (identical(other.hasUnreadChatMessages, hasUnreadChatMessages) || other.hasUnreadChatMessages == hasUnreadChatMessages) &&
             (identical(other.hasUnreadNotification, hasUnreadNotification) || other.hasUnreadNotification == hasUnreadNotification) &&
             (identical(other.hasPendingReceivedFollowRequest, hasPendingReceivedFollowRequest) || other.hasPendingReceivedFollowRequest == hasPendingReceivedFollowRequest) &&
             (identical(other.unreadNotificationsCount, unreadNotificationsCount) || other.unreadNotificationsCount == unreadNotificationsCount) &&
@@ -3792,6 +3878,8 @@ mixin _$MeDetailed {
         ffVisibility,
         followersVisibility,
         followingVisibility,
+        chatScope,
+        canChat,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -3820,6 +3908,7 @@ mixin _$MeDetailed {
         hasUnreadAnnouncement,
         hasUnreadAntenna,
         hasUnreadChannel,
+        hasUnreadChatMessages,
         hasUnreadNotification,
         hasPendingReceivedFollowRequest,
         unreadNotificationsCount,
@@ -3837,7 +3926,7 @@ mixin _$MeDetailed {
 
   @override
   String toString() {
-    return 'MeDetailed(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, avatarId: $avatarId, bannerId: $bannerId, followedMessage: $followedMessage, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, preventAiLearning: $preventAiLearning, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, twoFactorBackupCodesStock: $twoFactorBackupCodesStock, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'MeDetailed(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, chatScope: $chatScope, canChat: $canChat, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, avatarId: $avatarId, bannerId: $bannerId, followedMessage: $followedMessage, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, preventAiLearning: $preventAiLearning, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, twoFactorBackupCodesStock: $twoFactorBackupCodesStock, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadChatMessages: $hasUnreadChatMessages, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
   }
 }
 
@@ -3893,6 +3982,8 @@ abstract mixin class $MeDetailedCopyWith<$Res> {
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
+      ChatScope? chatScope,
+      bool? canChat,
       bool twoFactorEnabled,
       bool usePasswordLessLogin,
       bool securityKeys,
@@ -3921,6 +4012,7 @@ abstract mixin class $MeDetailedCopyWith<$Res> {
       bool hasUnreadAnnouncement,
       bool hasUnreadAntenna,
       bool hasUnreadChannel,
+      bool? hasUnreadChatMessages,
       bool hasUnreadNotification,
       bool hasPendingReceivedFollowRequest,
       int? unreadNotificationsCount,
@@ -3998,6 +4090,8 @@ class _$MeDetailedCopyWithImpl<$Res> implements $MeDetailedCopyWith<$Res> {
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
+    Object? chatScope = freezed,
+    Object? canChat = freezed,
     Object? twoFactorEnabled = null,
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
@@ -4026,6 +4120,7 @@ class _$MeDetailedCopyWithImpl<$Res> implements $MeDetailedCopyWith<$Res> {
     Object? hasUnreadAnnouncement = null,
     Object? hasUnreadAntenna = null,
     Object? hasUnreadChannel = null,
+    Object? hasUnreadChatMessages = freezed,
     Object? hasUnreadNotification = null,
     Object? hasPendingReceivedFollowRequest = null,
     Object? unreadNotificationsCount = freezed,
@@ -4221,6 +4316,14 @@ class _$MeDetailedCopyWithImpl<$Res> implements $MeDetailedCopyWith<$Res> {
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
+      canChat: freezed == canChat
+          ? _self.canChat
+          : canChat // ignore: cast_nullable_to_non_nullable
+              as bool?,
       twoFactorEnabled: null == twoFactorEnabled
           ? _self.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -4333,6 +4436,10 @@ class _$MeDetailedCopyWithImpl<$Res> implements $MeDetailedCopyWith<$Res> {
           ? _self.hasUnreadChannel
           : hasUnreadChannel // ignore: cast_nullable_to_non_nullable
               as bool,
+      hasUnreadChatMessages: freezed == hasUnreadChatMessages
+          ? _self.hasUnreadChatMessages
+          : hasUnreadChatMessages // ignore: cast_nullable_to_non_nullable
+              as bool?,
       hasUnreadNotification: null == hasUnreadNotification
           ? _self.hasUnreadNotification
           : hasUnreadNotification // ignore: cast_nullable_to_non_nullable
@@ -4473,6 +4580,8 @@ class _MeDetailed implements MeDetailed {
       @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followersVisibility,
       this.followingVisibility,
+      this.chatScope,
+      this.canChat,
       required this.twoFactorEnabled,
       required this.usePasswordLessLogin,
       required this.securityKeys,
@@ -4501,6 +4610,7 @@ class _MeDetailed implements MeDetailed {
       required this.hasUnreadAnnouncement,
       required this.hasUnreadAntenna,
       required this.hasUnreadChannel,
+      this.hasUnreadChatMessages,
       required this.hasUnreadNotification,
       required this.hasPendingReceivedFollowRequest,
       this.unreadNotificationsCount,
@@ -4709,6 +4819,10 @@ class _MeDetailed implements MeDetailed {
   @override
   final FFVisibility? followingVisibility;
   @override
+  final ChatScope? chatScope;
+  @override
+  final bool? canChat;
+  @override
   final bool twoFactorEnabled;
   @override
   final bool usePasswordLessLogin;
@@ -4772,6 +4886,8 @@ class _MeDetailed implements MeDetailed {
   final bool hasUnreadAntenna;
   @override
   final bool hasUnreadChannel;
+  @override
+  final bool? hasUnreadChatMessages;
   @override
   final bool hasUnreadNotification;
   @override
@@ -4947,6 +5063,8 @@ class _MeDetailed implements MeDetailed {
             (identical(other.ffVisibility, ffVisibility) || other.ffVisibility == ffVisibility) &&
             (identical(other.followersVisibility, followersVisibility) || other.followersVisibility == followersVisibility) &&
             (identical(other.followingVisibility, followingVisibility) || other.followingVisibility == followingVisibility) &&
+            (identical(other.chatScope, chatScope) || other.chatScope == chatScope) &&
+            (identical(other.canChat, canChat) || other.canChat == canChat) &&
             (identical(other.twoFactorEnabled, twoFactorEnabled) || other.twoFactorEnabled == twoFactorEnabled) &&
             (identical(other.usePasswordLessLogin, usePasswordLessLogin) || other.usePasswordLessLogin == usePasswordLessLogin) &&
             (identical(other.securityKeys, securityKeys) || other.securityKeys == securityKeys) &&
@@ -4975,6 +5093,7 @@ class _MeDetailed implements MeDetailed {
             (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) || other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
             (identical(other.hasUnreadAntenna, hasUnreadAntenna) || other.hasUnreadAntenna == hasUnreadAntenna) &&
             (identical(other.hasUnreadChannel, hasUnreadChannel) || other.hasUnreadChannel == hasUnreadChannel) &&
+            (identical(other.hasUnreadChatMessages, hasUnreadChatMessages) || other.hasUnreadChatMessages == hasUnreadChatMessages) &&
             (identical(other.hasUnreadNotification, hasUnreadNotification) || other.hasUnreadNotification == hasUnreadNotification) &&
             (identical(other.hasPendingReceivedFollowRequest, hasPendingReceivedFollowRequest) || other.hasPendingReceivedFollowRequest == hasPendingReceivedFollowRequest) &&
             (identical(other.unreadNotificationsCount, unreadNotificationsCount) || other.unreadNotificationsCount == unreadNotificationsCount) &&
@@ -5039,6 +5158,8 @@ class _MeDetailed implements MeDetailed {
         ffVisibility,
         followersVisibility,
         followingVisibility,
+        chatScope,
+        canChat,
         twoFactorEnabled,
         usePasswordLessLogin,
         securityKeys,
@@ -5067,6 +5188,7 @@ class _MeDetailed implements MeDetailed {
         hasUnreadAnnouncement,
         hasUnreadAntenna,
         hasUnreadChannel,
+        hasUnreadChatMessages,
         hasUnreadNotification,
         hasPendingReceivedFollowRequest,
         unreadNotificationsCount,
@@ -5084,7 +5206,7 @@ class _MeDetailed implements MeDetailed {
 
   @override
   String toString() {
-    return 'MeDetailed(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, avatarId: $avatarId, bannerId: $bannerId, followedMessage: $followedMessage, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, preventAiLearning: $preventAiLearning, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, twoFactorBackupCodesStock: $twoFactorBackupCodesStock, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'MeDetailed(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, avatarDecorations: $avatarDecorations, isBot: $isBot, isCat: $isCat, instance: $instance, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, url: $url, uri: $uri, movedTo: $movedTo, alsoKnownAs: $alsoKnownAs, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, verifiedLinks: $verifiedLinks, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedNotes: $pinnedNotes, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, followersVisibility: $followersVisibility, followingVisibility: $followingVisibility, chatScope: $chatScope, canChat: $canChat, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, roles: $roles, memo: $memo, moderationNote: $moderationNote, avatarId: $avatarId, bannerId: $bannerId, followedMessage: $followedMessage, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, preventAiLearning: $preventAiLearning, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, twoFactorBackupCodesStock: $twoFactorBackupCodesStock, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadChatMessages: $hasUnreadChatMessages, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadNotificationsCount: $unreadNotificationsCount, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
   }
 }
 
@@ -5142,6 +5264,8 @@ abstract mixin class _$MeDetailedCopyWith<$Res>
       @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
       FFVisibility? followersVisibility,
       FFVisibility? followingVisibility,
+      ChatScope? chatScope,
+      bool? canChat,
       bool twoFactorEnabled,
       bool usePasswordLessLogin,
       bool securityKeys,
@@ -5170,6 +5294,7 @@ abstract mixin class _$MeDetailedCopyWith<$Res>
       bool hasUnreadAnnouncement,
       bool hasUnreadAntenna,
       bool hasUnreadChannel,
+      bool? hasUnreadChatMessages,
       bool hasUnreadNotification,
       bool hasPendingReceivedFollowRequest,
       int? unreadNotificationsCount,
@@ -5250,6 +5375,8 @@ class __$MeDetailedCopyWithImpl<$Res> implements _$MeDetailedCopyWith<$Res> {
     Object? ffVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? followingVisibility = freezed,
+    Object? chatScope = freezed,
+    Object? canChat = freezed,
     Object? twoFactorEnabled = null,
     Object? usePasswordLessLogin = null,
     Object? securityKeys = null,
@@ -5278,6 +5405,7 @@ class __$MeDetailedCopyWithImpl<$Res> implements _$MeDetailedCopyWith<$Res> {
     Object? hasUnreadAnnouncement = null,
     Object? hasUnreadAntenna = null,
     Object? hasUnreadChannel = null,
+    Object? hasUnreadChatMessages = freezed,
     Object? hasUnreadNotification = null,
     Object? hasPendingReceivedFollowRequest = null,
     Object? unreadNotificationsCount = freezed,
@@ -5473,6 +5601,14 @@ class __$MeDetailedCopyWithImpl<$Res> implements _$MeDetailedCopyWith<$Res> {
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
               as FFVisibility?,
+      chatScope: freezed == chatScope
+          ? _self.chatScope
+          : chatScope // ignore: cast_nullable_to_non_nullable
+              as ChatScope?,
+      canChat: freezed == canChat
+          ? _self.canChat
+          : canChat // ignore: cast_nullable_to_non_nullable
+              as bool?,
       twoFactorEnabled: null == twoFactorEnabled
           ? _self.twoFactorEnabled
           : twoFactorEnabled // ignore: cast_nullable_to_non_nullable
@@ -5585,6 +5721,10 @@ class __$MeDetailedCopyWithImpl<$Res> implements _$MeDetailedCopyWith<$Res> {
           ? _self.hasUnreadChannel
           : hasUnreadChannel // ignore: cast_nullable_to_non_nullable
               as bool,
+      hasUnreadChatMessages: freezed == hasUnreadChatMessages
+          ? _self.hasUnreadChatMessages
+          : hasUnreadChatMessages // ignore: cast_nullable_to_non_nullable
+              as bool?,
       hasUnreadNotification: null == hasUnreadNotification
           ? _self.hasUnreadNotification
           : hasUnreadNotification // ignore: cast_nullable_to_non_nullable
@@ -6766,15 +6906,20 @@ mixin _$UserPolicies {
   bool get gtlAvailable;
   bool get ltlAvailable;
   bool get canPublicNote;
+  int? get mentionLimit;
   bool get canEditNote;
   bool get canInvite;
-  bool get canManageCustomEmojis;
-  bool get canHideAds;
   double? get inviteLimit;
   double? get inviteLimitCycle;
+  int? get inviteExpirationTime;
+  bool get canManageCustomEmojis;
+  bool? get canManageAvatarDecorations;
   bool get canSearchNotes;
   bool get canUseTranslator;
+  bool get canHideAds;
   double get driveCapacityMb;
+  bool? get alwaysMarkNsfw;
+  bool? get canUpdateBioMedia;
   double get pinLimit;
   double get antennaLimit;
   double get wordMuteLimit;
@@ -6785,6 +6930,12 @@ mixin _$UserPolicies {
   double get userEachUserListsLimit;
   double get rateLimitFactor;
   double get avatarDecorationLimit;
+  bool? get canImportAntennas;
+  bool? get canImportBlocking;
+  bool? get canImportFollowing;
+  bool? get canImportMuting;
+  bool? get canImportUserLists;
+  ChatAvailability? get chatAvailability;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -6808,24 +6959,36 @@ mixin _$UserPolicies {
                 other.ltlAvailable == ltlAvailable) &&
             (identical(other.canPublicNote, canPublicNote) ||
                 other.canPublicNote == canPublicNote) &&
+            (identical(other.mentionLimit, mentionLimit) ||
+                other.mentionLimit == mentionLimit) &&
             (identical(other.canEditNote, canEditNote) ||
                 other.canEditNote == canEditNote) &&
             (identical(other.canInvite, canInvite) ||
                 other.canInvite == canInvite) &&
-            (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
-                other.canManageCustomEmojis == canManageCustomEmojis) &&
-            (identical(other.canHideAds, canHideAds) ||
-                other.canHideAds == canHideAds) &&
             (identical(other.inviteLimit, inviteLimit) ||
                 other.inviteLimit == inviteLimit) &&
             (identical(other.inviteLimitCycle, inviteLimitCycle) ||
                 other.inviteLimitCycle == inviteLimitCycle) &&
+            (identical(other.inviteExpirationTime, inviteExpirationTime) ||
+                other.inviteExpirationTime == inviteExpirationTime) &&
+            (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
+                other.canManageCustomEmojis == canManageCustomEmojis) &&
+            (identical(other.canManageAvatarDecorations,
+                    canManageAvatarDecorations) ||
+                other.canManageAvatarDecorations ==
+                    canManageAvatarDecorations) &&
             (identical(other.canSearchNotes, canSearchNotes) ||
                 other.canSearchNotes == canSearchNotes) &&
             (identical(other.canUseTranslator, canUseTranslator) ||
                 other.canUseTranslator == canUseTranslator) &&
+            (identical(other.canHideAds, canHideAds) ||
+                other.canHideAds == canHideAds) &&
             (identical(other.driveCapacityMb, driveCapacityMb) ||
                 other.driveCapacityMb == driveCapacityMb) &&
+            (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
+                other.alwaysMarkNsfw == alwaysMarkNsfw) &&
+            (identical(other.canUpdateBioMedia, canUpdateBioMedia) ||
+                other.canUpdateBioMedia == canUpdateBioMedia) &&
             (identical(other.pinLimit, pinLimit) ||
                 other.pinLimit == pinLimit) &&
             (identical(other.antennaLimit, antennaLimit) ||
@@ -6845,7 +7008,19 @@ mixin _$UserPolicies {
             (identical(other.rateLimitFactor, rateLimitFactor) ||
                 other.rateLimitFactor == rateLimitFactor) &&
             (identical(other.avatarDecorationLimit, avatarDecorationLimit) ||
-                other.avatarDecorationLimit == avatarDecorationLimit));
+                other.avatarDecorationLimit == avatarDecorationLimit) &&
+            (identical(other.canImportAntennas, canImportAntennas) ||
+                other.canImportAntennas == canImportAntennas) &&
+            (identical(other.canImportBlocking, canImportBlocking) ||
+                other.canImportBlocking == canImportBlocking) &&
+            (identical(other.canImportFollowing, canImportFollowing) ||
+                other.canImportFollowing == canImportFollowing) &&
+            (identical(other.canImportMuting, canImportMuting) ||
+                other.canImportMuting == canImportMuting) &&
+            (identical(other.canImportUserLists, canImportUserLists) ||
+                other.canImportUserLists == canImportUserLists) &&
+            (identical(other.chatAvailability, chatAvailability) ||
+                other.chatAvailability == chatAvailability));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -6855,15 +7030,20 @@ mixin _$UserPolicies {
         gtlAvailable,
         ltlAvailable,
         canPublicNote,
+        mentionLimit,
         canEditNote,
         canInvite,
-        canManageCustomEmojis,
-        canHideAds,
         inviteLimit,
         inviteLimitCycle,
+        inviteExpirationTime,
+        canManageCustomEmojis,
+        canManageAvatarDecorations,
         canSearchNotes,
         canUseTranslator,
+        canHideAds,
         driveCapacityMb,
+        alwaysMarkNsfw,
+        canUpdateBioMedia,
         pinLimit,
         antennaLimit,
         wordMuteLimit,
@@ -6873,12 +7053,18 @@ mixin _$UserPolicies {
         userListLimit,
         userEachUserListsLimit,
         rateLimitFactor,
-        avatarDecorationLimit
+        avatarDecorationLimit,
+        canImportAntennas,
+        canImportBlocking,
+        canImportFollowing,
+        canImportMuting,
+        canImportUserLists,
+        chatAvailability
       ]);
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, canEditNote: $canEditNote, canInvite: $canInvite, canManageCustomEmojis: $canManageCustomEmojis, canHideAds: $canHideAds, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, driveCapacityMb: $driveCapacityMb, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
   }
 }
 
@@ -6892,15 +7078,20 @@ abstract mixin class $UserPoliciesCopyWith<$Res> {
       {bool gtlAvailable,
       bool ltlAvailable,
       bool canPublicNote,
+      int? mentionLimit,
       bool canEditNote,
       bool canInvite,
-      bool canManageCustomEmojis,
-      bool canHideAds,
       double? inviteLimit,
       double? inviteLimitCycle,
+      int? inviteExpirationTime,
+      bool canManageCustomEmojis,
+      bool? canManageAvatarDecorations,
       bool canSearchNotes,
       bool canUseTranslator,
+      bool canHideAds,
       double driveCapacityMb,
+      bool? alwaysMarkNsfw,
+      bool? canUpdateBioMedia,
       double pinLimit,
       double antennaLimit,
       double wordMuteLimit,
@@ -6910,7 +7101,13 @@ abstract mixin class $UserPoliciesCopyWith<$Res> {
       double userListLimit,
       double userEachUserListsLimit,
       double rateLimitFactor,
-      double avatarDecorationLimit});
+      double avatarDecorationLimit,
+      bool? canImportAntennas,
+      bool? canImportBlocking,
+      bool? canImportFollowing,
+      bool? canImportMuting,
+      bool? canImportUserLists,
+      ChatAvailability? chatAvailability});
 }
 
 /// @nodoc
@@ -6928,15 +7125,20 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
     Object? gtlAvailable = null,
     Object? ltlAvailable = null,
     Object? canPublicNote = null,
+    Object? mentionLimit = freezed,
     Object? canEditNote = null,
     Object? canInvite = null,
-    Object? canManageCustomEmojis = null,
-    Object? canHideAds = null,
     Object? inviteLimit = freezed,
     Object? inviteLimitCycle = freezed,
+    Object? inviteExpirationTime = freezed,
+    Object? canManageCustomEmojis = null,
+    Object? canManageAvatarDecorations = freezed,
     Object? canSearchNotes = null,
     Object? canUseTranslator = null,
+    Object? canHideAds = null,
     Object? driveCapacityMb = null,
+    Object? alwaysMarkNsfw = freezed,
+    Object? canUpdateBioMedia = freezed,
     Object? pinLimit = null,
     Object? antennaLimit = null,
     Object? wordMuteLimit = null,
@@ -6947,6 +7149,12 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
     Object? userEachUserListsLimit = null,
     Object? rateLimitFactor = null,
     Object? avatarDecorationLimit = null,
+    Object? canImportAntennas = freezed,
+    Object? canImportBlocking = freezed,
+    Object? canImportFollowing = freezed,
+    Object? canImportMuting = freezed,
+    Object? canImportUserLists = freezed,
+    Object? chatAvailability = freezed,
   }) {
     return _then(_self.copyWith(
       gtlAvailable: null == gtlAvailable
@@ -6961,6 +7169,10 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
           ? _self.canPublicNote
           : canPublicNote // ignore: cast_nullable_to_non_nullable
               as bool,
+      mentionLimit: freezed == mentionLimit
+          ? _self.mentionLimit
+          : mentionLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
       canEditNote: null == canEditNote
           ? _self.canEditNote
           : canEditNote // ignore: cast_nullable_to_non_nullable
@@ -6968,14 +7180,6 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
       canInvite: null == canInvite
           ? _self.canInvite
           : canInvite // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canManageCustomEmojis: null == canManageCustomEmojis
-          ? _self.canManageCustomEmojis
-          : canManageCustomEmojis // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canHideAds: null == canHideAds
-          ? _self.canHideAds
-          : canHideAds // ignore: cast_nullable_to_non_nullable
               as bool,
       inviteLimit: freezed == inviteLimit
           ? _self.inviteLimit
@@ -6985,6 +7189,18 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
           ? _self.inviteLimitCycle
           : inviteLimitCycle // ignore: cast_nullable_to_non_nullable
               as double?,
+      inviteExpirationTime: freezed == inviteExpirationTime
+          ? _self.inviteExpirationTime
+          : inviteExpirationTime // ignore: cast_nullable_to_non_nullable
+              as int?,
+      canManageCustomEmojis: null == canManageCustomEmojis
+          ? _self.canManageCustomEmojis
+          : canManageCustomEmojis // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canManageAvatarDecorations: freezed == canManageAvatarDecorations
+          ? _self.canManageAvatarDecorations
+          : canManageAvatarDecorations // ignore: cast_nullable_to_non_nullable
+              as bool?,
       canSearchNotes: null == canSearchNotes
           ? _self.canSearchNotes
           : canSearchNotes // ignore: cast_nullable_to_non_nullable
@@ -6993,10 +7209,22 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
           ? _self.canUseTranslator
           : canUseTranslator // ignore: cast_nullable_to_non_nullable
               as bool,
+      canHideAds: null == canHideAds
+          ? _self.canHideAds
+          : canHideAds // ignore: cast_nullable_to_non_nullable
+              as bool,
       driveCapacityMb: null == driveCapacityMb
           ? _self.driveCapacityMb
           : driveCapacityMb // ignore: cast_nullable_to_non_nullable
               as double,
+      alwaysMarkNsfw: freezed == alwaysMarkNsfw
+          ? _self.alwaysMarkNsfw
+          : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canUpdateBioMedia: freezed == canUpdateBioMedia
+          ? _self.canUpdateBioMedia
+          : canUpdateBioMedia // ignore: cast_nullable_to_non_nullable
+              as bool?,
       pinLimit: null == pinLimit
           ? _self.pinLimit
           : pinLimit // ignore: cast_nullable_to_non_nullable
@@ -7037,6 +7265,30 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
           ? _self.avatarDecorationLimit
           : avatarDecorationLimit // ignore: cast_nullable_to_non_nullable
               as double,
+      canImportAntennas: freezed == canImportAntennas
+          ? _self.canImportAntennas
+          : canImportAntennas // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportBlocking: freezed == canImportBlocking
+          ? _self.canImportBlocking
+          : canImportBlocking // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportFollowing: freezed == canImportFollowing
+          ? _self.canImportFollowing
+          : canImportFollowing // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportMuting: freezed == canImportMuting
+          ? _self.canImportMuting
+          : canImportMuting // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportUserLists: freezed == canImportUserLists
+          ? _self.canImportUserLists
+          : canImportUserLists // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      chatAvailability: freezed == chatAvailability
+          ? _self.chatAvailability
+          : chatAvailability // ignore: cast_nullable_to_non_nullable
+              as ChatAvailability?,
     ));
   }
 }
@@ -7048,15 +7300,20 @@ class _UserPolicies implements UserPolicies {
       {required this.gtlAvailable,
       required this.ltlAvailable,
       required this.canPublicNote,
+      this.mentionLimit,
       this.canEditNote = false,
       required this.canInvite,
-      required this.canManageCustomEmojis,
-      required this.canHideAds,
       this.inviteLimit,
       this.inviteLimitCycle,
+      this.inviteExpirationTime,
+      required this.canManageCustomEmojis,
+      this.canManageAvatarDecorations,
       this.canSearchNotes = false,
       this.canUseTranslator = false,
+      required this.canHideAds,
       required this.driveCapacityMb,
+      this.alwaysMarkNsfw,
+      this.canUpdateBioMedia,
       required this.pinLimit,
       required this.antennaLimit,
       required this.wordMuteLimit,
@@ -7066,7 +7323,13 @@ class _UserPolicies implements UserPolicies {
       required this.userListLimit,
       required this.userEachUserListsLimit,
       required this.rateLimitFactor,
-      this.avatarDecorationLimit = 1.0});
+      this.avatarDecorationLimit = 1.0,
+      this.canImportAntennas,
+      this.canImportBlocking,
+      this.canImportFollowing,
+      this.canImportMuting,
+      this.canImportUserLists,
+      this.chatAvailability});
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =>
       _$UserPoliciesFromJson(json);
 
@@ -7077,18 +7340,22 @@ class _UserPolicies implements UserPolicies {
   @override
   final bool canPublicNote;
   @override
+  final int? mentionLimit;
+  @override
   @JsonKey()
   final bool canEditNote;
   @override
   final bool canInvite;
   @override
-  final bool canManageCustomEmojis;
-  @override
-  final bool canHideAds;
-  @override
   final double? inviteLimit;
   @override
   final double? inviteLimitCycle;
+  @override
+  final int? inviteExpirationTime;
+  @override
+  final bool canManageCustomEmojis;
+  @override
+  final bool? canManageAvatarDecorations;
   @override
   @JsonKey()
   final bool canSearchNotes;
@@ -7096,7 +7363,13 @@ class _UserPolicies implements UserPolicies {
   @JsonKey()
   final bool canUseTranslator;
   @override
+  final bool canHideAds;
+  @override
   final double driveCapacityMb;
+  @override
+  final bool? alwaysMarkNsfw;
+  @override
+  final bool? canUpdateBioMedia;
   @override
   final double pinLimit;
   @override
@@ -7118,6 +7391,18 @@ class _UserPolicies implements UserPolicies {
   @override
   @JsonKey()
   final double avatarDecorationLimit;
+  @override
+  final bool? canImportAntennas;
+  @override
+  final bool? canImportBlocking;
+  @override
+  final bool? canImportFollowing;
+  @override
+  final bool? canImportMuting;
+  @override
+  final bool? canImportUserLists;
+  @override
+  final ChatAvailability? chatAvailability;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -7145,24 +7430,36 @@ class _UserPolicies implements UserPolicies {
                 other.ltlAvailable == ltlAvailable) &&
             (identical(other.canPublicNote, canPublicNote) ||
                 other.canPublicNote == canPublicNote) &&
+            (identical(other.mentionLimit, mentionLimit) ||
+                other.mentionLimit == mentionLimit) &&
             (identical(other.canEditNote, canEditNote) ||
                 other.canEditNote == canEditNote) &&
             (identical(other.canInvite, canInvite) ||
                 other.canInvite == canInvite) &&
-            (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
-                other.canManageCustomEmojis == canManageCustomEmojis) &&
-            (identical(other.canHideAds, canHideAds) ||
-                other.canHideAds == canHideAds) &&
             (identical(other.inviteLimit, inviteLimit) ||
                 other.inviteLimit == inviteLimit) &&
             (identical(other.inviteLimitCycle, inviteLimitCycle) ||
                 other.inviteLimitCycle == inviteLimitCycle) &&
+            (identical(other.inviteExpirationTime, inviteExpirationTime) ||
+                other.inviteExpirationTime == inviteExpirationTime) &&
+            (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
+                other.canManageCustomEmojis == canManageCustomEmojis) &&
+            (identical(other.canManageAvatarDecorations,
+                    canManageAvatarDecorations) ||
+                other.canManageAvatarDecorations ==
+                    canManageAvatarDecorations) &&
             (identical(other.canSearchNotes, canSearchNotes) ||
                 other.canSearchNotes == canSearchNotes) &&
             (identical(other.canUseTranslator, canUseTranslator) ||
                 other.canUseTranslator == canUseTranslator) &&
+            (identical(other.canHideAds, canHideAds) ||
+                other.canHideAds == canHideAds) &&
             (identical(other.driveCapacityMb, driveCapacityMb) ||
                 other.driveCapacityMb == driveCapacityMb) &&
+            (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
+                other.alwaysMarkNsfw == alwaysMarkNsfw) &&
+            (identical(other.canUpdateBioMedia, canUpdateBioMedia) ||
+                other.canUpdateBioMedia == canUpdateBioMedia) &&
             (identical(other.pinLimit, pinLimit) ||
                 other.pinLimit == pinLimit) &&
             (identical(other.antennaLimit, antennaLimit) ||
@@ -7182,7 +7479,19 @@ class _UserPolicies implements UserPolicies {
             (identical(other.rateLimitFactor, rateLimitFactor) ||
                 other.rateLimitFactor == rateLimitFactor) &&
             (identical(other.avatarDecorationLimit, avatarDecorationLimit) ||
-                other.avatarDecorationLimit == avatarDecorationLimit));
+                other.avatarDecorationLimit == avatarDecorationLimit) &&
+            (identical(other.canImportAntennas, canImportAntennas) ||
+                other.canImportAntennas == canImportAntennas) &&
+            (identical(other.canImportBlocking, canImportBlocking) ||
+                other.canImportBlocking == canImportBlocking) &&
+            (identical(other.canImportFollowing, canImportFollowing) ||
+                other.canImportFollowing == canImportFollowing) &&
+            (identical(other.canImportMuting, canImportMuting) ||
+                other.canImportMuting == canImportMuting) &&
+            (identical(other.canImportUserLists, canImportUserLists) ||
+                other.canImportUserLists == canImportUserLists) &&
+            (identical(other.chatAvailability, chatAvailability) ||
+                other.chatAvailability == chatAvailability));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7192,15 +7501,20 @@ class _UserPolicies implements UserPolicies {
         gtlAvailable,
         ltlAvailable,
         canPublicNote,
+        mentionLimit,
         canEditNote,
         canInvite,
-        canManageCustomEmojis,
-        canHideAds,
         inviteLimit,
         inviteLimitCycle,
+        inviteExpirationTime,
+        canManageCustomEmojis,
+        canManageAvatarDecorations,
         canSearchNotes,
         canUseTranslator,
+        canHideAds,
         driveCapacityMb,
+        alwaysMarkNsfw,
+        canUpdateBioMedia,
         pinLimit,
         antennaLimit,
         wordMuteLimit,
@@ -7210,12 +7524,18 @@ class _UserPolicies implements UserPolicies {
         userListLimit,
         userEachUserListsLimit,
         rateLimitFactor,
-        avatarDecorationLimit
+        avatarDecorationLimit,
+        canImportAntennas,
+        canImportBlocking,
+        canImportFollowing,
+        canImportMuting,
+        canImportUserLists,
+        chatAvailability
       ]);
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, canEditNote: $canEditNote, canInvite: $canInvite, canManageCustomEmojis: $canManageCustomEmojis, canHideAds: $canHideAds, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, driveCapacityMb: $driveCapacityMb, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
   }
 }
 
@@ -7231,15 +7551,20 @@ abstract mixin class _$UserPoliciesCopyWith<$Res>
       {bool gtlAvailable,
       bool ltlAvailable,
       bool canPublicNote,
+      int? mentionLimit,
       bool canEditNote,
       bool canInvite,
-      bool canManageCustomEmojis,
-      bool canHideAds,
       double? inviteLimit,
       double? inviteLimitCycle,
+      int? inviteExpirationTime,
+      bool canManageCustomEmojis,
+      bool? canManageAvatarDecorations,
       bool canSearchNotes,
       bool canUseTranslator,
+      bool canHideAds,
       double driveCapacityMb,
+      bool? alwaysMarkNsfw,
+      bool? canUpdateBioMedia,
       double pinLimit,
       double antennaLimit,
       double wordMuteLimit,
@@ -7249,7 +7574,13 @@ abstract mixin class _$UserPoliciesCopyWith<$Res>
       double userListLimit,
       double userEachUserListsLimit,
       double rateLimitFactor,
-      double avatarDecorationLimit});
+      double avatarDecorationLimit,
+      bool? canImportAntennas,
+      bool? canImportBlocking,
+      bool? canImportFollowing,
+      bool? canImportMuting,
+      bool? canImportUserLists,
+      ChatAvailability? chatAvailability});
 }
 
 /// @nodoc
@@ -7268,15 +7599,20 @@ class __$UserPoliciesCopyWithImpl<$Res>
     Object? gtlAvailable = null,
     Object? ltlAvailable = null,
     Object? canPublicNote = null,
+    Object? mentionLimit = freezed,
     Object? canEditNote = null,
     Object? canInvite = null,
-    Object? canManageCustomEmojis = null,
-    Object? canHideAds = null,
     Object? inviteLimit = freezed,
     Object? inviteLimitCycle = freezed,
+    Object? inviteExpirationTime = freezed,
+    Object? canManageCustomEmojis = null,
+    Object? canManageAvatarDecorations = freezed,
     Object? canSearchNotes = null,
     Object? canUseTranslator = null,
+    Object? canHideAds = null,
     Object? driveCapacityMb = null,
+    Object? alwaysMarkNsfw = freezed,
+    Object? canUpdateBioMedia = freezed,
     Object? pinLimit = null,
     Object? antennaLimit = null,
     Object? wordMuteLimit = null,
@@ -7287,6 +7623,12 @@ class __$UserPoliciesCopyWithImpl<$Res>
     Object? userEachUserListsLimit = null,
     Object? rateLimitFactor = null,
     Object? avatarDecorationLimit = null,
+    Object? canImportAntennas = freezed,
+    Object? canImportBlocking = freezed,
+    Object? canImportFollowing = freezed,
+    Object? canImportMuting = freezed,
+    Object? canImportUserLists = freezed,
+    Object? chatAvailability = freezed,
   }) {
     return _then(_UserPolicies(
       gtlAvailable: null == gtlAvailable
@@ -7301,6 +7643,10 @@ class __$UserPoliciesCopyWithImpl<$Res>
           ? _self.canPublicNote
           : canPublicNote // ignore: cast_nullable_to_non_nullable
               as bool,
+      mentionLimit: freezed == mentionLimit
+          ? _self.mentionLimit
+          : mentionLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
       canEditNote: null == canEditNote
           ? _self.canEditNote
           : canEditNote // ignore: cast_nullable_to_non_nullable
@@ -7308,14 +7654,6 @@ class __$UserPoliciesCopyWithImpl<$Res>
       canInvite: null == canInvite
           ? _self.canInvite
           : canInvite // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canManageCustomEmojis: null == canManageCustomEmojis
-          ? _self.canManageCustomEmojis
-          : canManageCustomEmojis // ignore: cast_nullable_to_non_nullable
-              as bool,
-      canHideAds: null == canHideAds
-          ? _self.canHideAds
-          : canHideAds // ignore: cast_nullable_to_non_nullable
               as bool,
       inviteLimit: freezed == inviteLimit
           ? _self.inviteLimit
@@ -7325,6 +7663,18 @@ class __$UserPoliciesCopyWithImpl<$Res>
           ? _self.inviteLimitCycle
           : inviteLimitCycle // ignore: cast_nullable_to_non_nullable
               as double?,
+      inviteExpirationTime: freezed == inviteExpirationTime
+          ? _self.inviteExpirationTime
+          : inviteExpirationTime // ignore: cast_nullable_to_non_nullable
+              as int?,
+      canManageCustomEmojis: null == canManageCustomEmojis
+          ? _self.canManageCustomEmojis
+          : canManageCustomEmojis // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canManageAvatarDecorations: freezed == canManageAvatarDecorations
+          ? _self.canManageAvatarDecorations
+          : canManageAvatarDecorations // ignore: cast_nullable_to_non_nullable
+              as bool?,
       canSearchNotes: null == canSearchNotes
           ? _self.canSearchNotes
           : canSearchNotes // ignore: cast_nullable_to_non_nullable
@@ -7333,10 +7683,22 @@ class __$UserPoliciesCopyWithImpl<$Res>
           ? _self.canUseTranslator
           : canUseTranslator // ignore: cast_nullable_to_non_nullable
               as bool,
+      canHideAds: null == canHideAds
+          ? _self.canHideAds
+          : canHideAds // ignore: cast_nullable_to_non_nullable
+              as bool,
       driveCapacityMb: null == driveCapacityMb
           ? _self.driveCapacityMb
           : driveCapacityMb // ignore: cast_nullable_to_non_nullable
               as double,
+      alwaysMarkNsfw: freezed == alwaysMarkNsfw
+          ? _self.alwaysMarkNsfw
+          : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canUpdateBioMedia: freezed == canUpdateBioMedia
+          ? _self.canUpdateBioMedia
+          : canUpdateBioMedia // ignore: cast_nullable_to_non_nullable
+              as bool?,
       pinLimit: null == pinLimit
           ? _self.pinLimit
           : pinLimit // ignore: cast_nullable_to_non_nullable
@@ -7377,6 +7739,30 @@ class __$UserPoliciesCopyWithImpl<$Res>
           ? _self.avatarDecorationLimit
           : avatarDecorationLimit // ignore: cast_nullable_to_non_nullable
               as double,
+      canImportAntennas: freezed == canImportAntennas
+          ? _self.canImportAntennas
+          : canImportAntennas // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportBlocking: freezed == canImportBlocking
+          ? _self.canImportBlocking
+          : canImportBlocking // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportFollowing: freezed == canImportFollowing
+          ? _self.canImportFollowing
+          : canImportFollowing // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportMuting: freezed == canImportMuting
+          ? _self.canImportMuting
+          : canImportMuting // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      canImportUserLists: freezed == canImportUserLists
+          ? _self.canImportUserLists
+          : canImportUserLists // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      chatAvailability: freezed == chatAvailability
+          ? _self.chatAvailability
+          : chatAvailability // ignore: cast_nullable_to_non_nullable
+              as ChatAvailability?,
     ));
   }
 }
@@ -7549,6 +7935,7 @@ mixin _$NotificationRecieveConfigs {
   NotificationRecieveConfig? get receiveFollowRequest;
   NotificationRecieveConfig? get followRequestAccepted;
   NotificationRecieveConfig? get roleAssigned;
+  NotificationRecieveConfig? get chatRoomInvitationReceived;
   NotificationRecieveConfig? get achievementEarned;
   NotificationRecieveConfig? get app;
   NotificationRecieveConfig? get test;
@@ -7586,6 +7973,10 @@ mixin _$NotificationRecieveConfigs {
                 other.followRequestAccepted == followRequestAccepted) &&
             (identical(other.roleAssigned, roleAssigned) ||
                 other.roleAssigned == roleAssigned) &&
+            (identical(other.chatRoomInvitationReceived,
+                    chatRoomInvitationReceived) ||
+                other.chatRoomInvitationReceived ==
+                    chatRoomInvitationReceived) &&
             (identical(other.achievementEarned, achievementEarned) ||
                 other.achievementEarned == achievementEarned) &&
             (identical(other.app, app) || other.app == app) &&
@@ -7607,13 +7998,14 @@ mixin _$NotificationRecieveConfigs {
       receiveFollowRequest,
       followRequestAccepted,
       roleAssigned,
+      chatRoomInvitationReceived,
       achievementEarned,
       app,
       test);
 
   @override
   String toString() {
-    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, achievementEarned: $achievementEarned, app: $app, test: $test)';
+    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
   }
 }
 
@@ -7635,6 +8027,7 @@ abstract mixin class $NotificationRecieveConfigsCopyWith<$Res> {
       NotificationRecieveConfig? receiveFollowRequest,
       NotificationRecieveConfig? followRequestAccepted,
       NotificationRecieveConfig? roleAssigned,
+      NotificationRecieveConfig? chatRoomInvitationReceived,
       NotificationRecieveConfig? achievementEarned,
       NotificationRecieveConfig? app,
       NotificationRecieveConfig? test});
@@ -7650,6 +8043,7 @@ abstract mixin class $NotificationRecieveConfigsCopyWith<$Res> {
   $NotificationRecieveConfigCopyWith<$Res>? get receiveFollowRequest;
   $NotificationRecieveConfigCopyWith<$Res>? get followRequestAccepted;
   $NotificationRecieveConfigCopyWith<$Res>? get roleAssigned;
+  $NotificationRecieveConfigCopyWith<$Res>? get chatRoomInvitationReceived;
   $NotificationRecieveConfigCopyWith<$Res>? get achievementEarned;
   $NotificationRecieveConfigCopyWith<$Res>? get app;
   $NotificationRecieveConfigCopyWith<$Res>? get test;
@@ -7679,6 +8073,7 @@ class _$NotificationRecieveConfigsCopyWithImpl<$Res>
     Object? receiveFollowRequest = freezed,
     Object? followRequestAccepted = freezed,
     Object? roleAssigned = freezed,
+    Object? chatRoomInvitationReceived = freezed,
     Object? achievementEarned = freezed,
     Object? app = freezed,
     Object? test = freezed,
@@ -7727,6 +8122,10 @@ class _$NotificationRecieveConfigsCopyWithImpl<$Res>
       roleAssigned: freezed == roleAssigned
           ? _self.roleAssigned
           : roleAssigned // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfig?,
+      chatRoomInvitationReceived: freezed == chatRoomInvitationReceived
+          ? _self.chatRoomInvitationReceived
+          : chatRoomInvitationReceived // ignore: cast_nullable_to_non_nullable
               as NotificationRecieveConfig?,
       achievementEarned: freezed == achievementEarned
           ? _self.achievementEarned
@@ -7897,6 +8296,21 @@ class _$NotificationRecieveConfigsCopyWithImpl<$Res>
     return $NotificationRecieveConfigCopyWith<$Res>(_self.roleAssigned!,
         (value) {
       return _then(_self.copyWith(roleAssigned: value));
+    });
+  }
+
+  /// Create a copy of NotificationRecieveConfigs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigCopyWith<$Res>? get chatRoomInvitationReceived {
+    if (_self.chatRoomInvitationReceived == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigCopyWith<$Res>(
+        _self.chatRoomInvitationReceived!, (value) {
+      return _then(_self.copyWith(chatRoomInvitationReceived: value));
     });
   }
 
@@ -7959,6 +8373,7 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
       this.receiveFollowRequest,
       this.followRequestAccepted,
       this.roleAssigned,
+      this.chatRoomInvitationReceived,
       this.achievementEarned,
       this.app,
       this.test});
@@ -7987,6 +8402,8 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
   final NotificationRecieveConfig? followRequestAccepted;
   @override
   final NotificationRecieveConfig? roleAssigned;
+  @override
+  final NotificationRecieveConfig? chatRoomInvitationReceived;
   @override
   final NotificationRecieveConfig? achievementEarned;
   @override
@@ -8031,6 +8448,10 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
                 other.followRequestAccepted == followRequestAccepted) &&
             (identical(other.roleAssigned, roleAssigned) ||
                 other.roleAssigned == roleAssigned) &&
+            (identical(other.chatRoomInvitationReceived,
+                    chatRoomInvitationReceived) ||
+                other.chatRoomInvitationReceived ==
+                    chatRoomInvitationReceived) &&
             (identical(other.achievementEarned, achievementEarned) ||
                 other.achievementEarned == achievementEarned) &&
             (identical(other.app, app) || other.app == app) &&
@@ -8052,13 +8473,14 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
       receiveFollowRequest,
       followRequestAccepted,
       roleAssigned,
+      chatRoomInvitationReceived,
       achievementEarned,
       app,
       test);
 
   @override
   String toString() {
-    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, achievementEarned: $achievementEarned, app: $app, test: $test)';
+    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
   }
 }
 
@@ -8083,6 +8505,7 @@ abstract mixin class _$NotificationRecieveConfigsCopyWith<$Res>
       NotificationRecieveConfig? receiveFollowRequest,
       NotificationRecieveConfig? followRequestAccepted,
       NotificationRecieveConfig? roleAssigned,
+      NotificationRecieveConfig? chatRoomInvitationReceived,
       NotificationRecieveConfig? achievementEarned,
       NotificationRecieveConfig? app,
       NotificationRecieveConfig? test});
@@ -8109,6 +8532,8 @@ abstract mixin class _$NotificationRecieveConfigsCopyWith<$Res>
   $NotificationRecieveConfigCopyWith<$Res>? get followRequestAccepted;
   @override
   $NotificationRecieveConfigCopyWith<$Res>? get roleAssigned;
+  @override
+  $NotificationRecieveConfigCopyWith<$Res>? get chatRoomInvitationReceived;
   @override
   $NotificationRecieveConfigCopyWith<$Res>? get achievementEarned;
   @override
@@ -8141,6 +8566,7 @@ class __$NotificationRecieveConfigsCopyWithImpl<$Res>
     Object? receiveFollowRequest = freezed,
     Object? followRequestAccepted = freezed,
     Object? roleAssigned = freezed,
+    Object? chatRoomInvitationReceived = freezed,
     Object? achievementEarned = freezed,
     Object? app = freezed,
     Object? test = freezed,
@@ -8189,6 +8615,10 @@ class __$NotificationRecieveConfigsCopyWithImpl<$Res>
       roleAssigned: freezed == roleAssigned
           ? _self.roleAssigned
           : roleAssigned // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfig?,
+      chatRoomInvitationReceived: freezed == chatRoomInvitationReceived
+          ? _self.chatRoomInvitationReceived
+          : chatRoomInvitationReceived // ignore: cast_nullable_to_non_nullable
               as NotificationRecieveConfig?,
       achievementEarned: freezed == achievementEarned
           ? _self.achievementEarned
@@ -8359,6 +8789,21 @@ class __$NotificationRecieveConfigsCopyWithImpl<$Res>
     return $NotificationRecieveConfigCopyWith<$Res>(_self.roleAssigned!,
         (value) {
       return _then(_self.copyWith(roleAssigned: value));
+    });
+  }
+
+  /// Create a copy of NotificationRecieveConfigs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigCopyWith<$Res>? get chatRoomInvitationReceived {
+    if (_self.chatRoomInvitationReceived == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigCopyWith<$Res>(
+        _self.chatRoomInvitationReceived!, (value) {
+      return _then(_self.copyWith(chatRoomInvitationReceived: value));
     });
   }
 

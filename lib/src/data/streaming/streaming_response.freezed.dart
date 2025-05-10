@@ -1419,6 +1419,8 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
       return ReadAllAntennasChannelEvent.fromJson(json);
     case 'unreadAntenna':
       return UnreadAntennaChannelEvent.fromJson(json);
+    case 'newChatMessage':
+      return NewChatMessageEvent.fromJson(json);
     case 'readAllAnnouncements':
       return ReadAllAnnouncementsChannelEvent.fromJson(json);
     case 'myTokenRegenerated':
@@ -1437,6 +1439,12 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
       return AnnouncementCreatedChannelEvent.fromJson(json);
     case 'message':
       return ChatMessageChannelEvent.fromJson(json);
+    case 'deleted':
+      return ChatDeletedChannelEvent.fromJson(json);
+    case 'react':
+      return ChatReactChannelEvent.fromJson(json);
+    case 'unreact':
+      return ChatUnreactChannelEvent.fromJson(json);
 
     default:
       return FallbackChannelEvent.fromJson(json);
@@ -3878,6 +3886,108 @@ class _$UnreadAntennaChannelEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+class NewChatMessageEvent implements ChannelStreamEvent {
+  const NewChatMessageEvent(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'newChatMessage';
+  factory NewChatMessageEvent.fromJson(Map<String, dynamic> json) =>
+      _$NewChatMessageEventFromJson(json);
+
+  @override
+  final String id;
+  final ChatMessage body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $NewChatMessageEventCopyWith<NewChatMessageEvent> get copyWith =>
+      _$NewChatMessageEventCopyWithImpl<NewChatMessageEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NewChatMessageEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NewChatMessageEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.newChatMessage(id: $id, body: $body)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $NewChatMessageEventCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory $NewChatMessageEventCopyWith(
+          NewChatMessageEvent value, $Res Function(NewChatMessageEvent) _then) =
+      _$NewChatMessageEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, ChatMessage body});
+
+  $ChatMessageCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class _$NewChatMessageEventCopyWithImpl<$Res>
+    implements $NewChatMessageEventCopyWith<$Res> {
+  _$NewChatMessageEventCopyWithImpl(this._self, this._then);
+
+  final NewChatMessageEvent _self;
+  final $Res Function(NewChatMessageEvent) _then;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(NewChatMessageEvent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatMessage,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatMessageCopyWith<$Res> get body {
+    return $ChatMessageCopyWith<$Res>(_self.body, (value) {
+      return _then(_self.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
 class ReadAllAnnouncementsChannelEvent implements ChannelStreamEvent {
   const ReadAllAnnouncementsChannelEvent(
       {required this.id, final String? $type})
@@ -4766,6 +4876,303 @@ class _$ChatMessageChannelEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $ChatMessageCopyWith<$Res> get body {
     return $ChatMessageCopyWith<$Res>(_self.body, (value) {
+      return _then(_self.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class ChatDeletedChannelEvent implements ChannelStreamEvent {
+  const ChatDeletedChannelEvent(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'deleted';
+  factory ChatDeletedChannelEvent.fromJson(Map<String, dynamic> json) =>
+      _$ChatDeletedChannelEventFromJson(json);
+
+  @override
+  final String id;
+  final String body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ChatDeletedChannelEventCopyWith<ChatDeletedChannelEvent> get copyWith =>
+      _$ChatDeletedChannelEventCopyWithImpl<ChatDeletedChannelEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatDeletedChannelEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatDeletedChannelEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatDeleted(id: $id, body: $body)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ChatDeletedChannelEventCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory $ChatDeletedChannelEventCopyWith(ChatDeletedChannelEvent value,
+          $Res Function(ChatDeletedChannelEvent) _then) =
+      _$ChatDeletedChannelEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, String body});
+}
+
+/// @nodoc
+class _$ChatDeletedChannelEventCopyWithImpl<$Res>
+    implements $ChatDeletedChannelEventCopyWith<$Res> {
+  _$ChatDeletedChannelEventCopyWithImpl(this._self, this._then);
+
+  final ChatDeletedChannelEvent _self;
+  final $Res Function(ChatDeletedChannelEvent) _then;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(ChatDeletedChannelEvent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class ChatReactChannelEvent implements ChannelStreamEvent {
+  const ChatReactChannelEvent(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'react';
+  factory ChatReactChannelEvent.fromJson(Map<String, dynamic> json) =>
+      _$ChatReactChannelEventFromJson(json);
+
+  @override
+  final String id;
+  final ChatReact body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ChatReactChannelEventCopyWith<ChatReactChannelEvent> get copyWith =>
+      _$ChatReactChannelEventCopyWithImpl<ChatReactChannelEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatReactChannelEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatReactChannelEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatReact(id: $id, body: $body)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ChatReactChannelEventCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory $ChatReactChannelEventCopyWith(ChatReactChannelEvent value,
+          $Res Function(ChatReactChannelEvent) _then) =
+      _$ChatReactChannelEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, ChatReact body});
+
+  $ChatReactCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class _$ChatReactChannelEventCopyWithImpl<$Res>
+    implements $ChatReactChannelEventCopyWith<$Res> {
+  _$ChatReactChannelEventCopyWithImpl(this._self, this._then);
+
+  final ChatReactChannelEvent _self;
+  final $Res Function(ChatReactChannelEvent) _then;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(ChatReactChannelEvent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatReact,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatReactCopyWith<$Res> get body {
+    return $ChatReactCopyWith<$Res>(_self.body, (value) {
+      return _then(_self.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class ChatUnreactChannelEvent implements ChannelStreamEvent {
+  const ChatUnreactChannelEvent(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'unreact';
+  factory ChatUnreactChannelEvent.fromJson(Map<String, dynamic> json) =>
+      _$ChatUnreactChannelEventFromJson(json);
+
+  @override
+  final String id;
+  final ChatReact body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ChatUnreactChannelEventCopyWith<ChatUnreactChannelEvent> get copyWith =>
+      _$ChatUnreactChannelEventCopyWithImpl<ChatUnreactChannelEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatUnreactChannelEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatUnreactChannelEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatUnreact(id: $id, body: $body)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ChatUnreactChannelEventCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory $ChatUnreactChannelEventCopyWith(ChatUnreactChannelEvent value,
+          $Res Function(ChatUnreactChannelEvent) _then) =
+      _$ChatUnreactChannelEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, ChatReact body});
+
+  $ChatReactCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class _$ChatUnreactChannelEventCopyWithImpl<$Res>
+    implements $ChatUnreactChannelEventCopyWith<$Res> {
+  _$ChatUnreactChannelEventCopyWithImpl(this._self, this._then);
+
+  final ChatUnreactChannelEvent _self;
+  final $Res Function(ChatUnreactChannelEvent) _then;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(ChatUnreactChannelEvent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatReact,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatReactCopyWith<$Res> get body {
+    return $ChatReactCopyWith<$Res>(_self.body, (value) {
       return _then(_self.copyWith(body: value));
     });
   }

@@ -244,6 +244,303 @@ void main() async {
         skip: "disabled by default since Misskey 13.14.0",
       );
 
+      group("chatUser", () {
+        setUp(() async {
+          await adminClient.i.update(
+            IUpdateRequest(chatScope: ChatScope.everyone),
+          );
+          await userClient.i.update(
+            IUpdateRequest(chatScope: ChatScope.everyone),
+          );
+        });
+
+        test("message", () async {
+          final completer = Completer<ChatMessage>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final admin = await adminClient.i.i();
+          final listener = controller
+              .chatUserStream(
+            parameter: ChatUserParameter(otherId: admin.id),
+            id: admin.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatMessageChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.createToUser(
+            ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
+          );
+          await completer.future;
+          await (controller.removeChannel(admin.id), listener.cancel()).wait;
+        });
+
+        test("deleted", () async {
+          final completer = Completer<String>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final admin = await adminClient.i.i();
+          final message = await client.chat.messages.createToUser(
+            ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
+          );
+          final listener = controller
+              .chatUserStream(
+            parameter: ChatUserParameter(otherId: admin.id),
+            id: admin.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatDeletedChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.delete(
+            ChatMessagesDeleteRequest(messageId: message.id),
+          );
+          await completer.future;
+          await (controller.removeChannel(admin.id), listener.cancel()).wait;
+        });
+
+        test("react", () async {
+          final completer = Completer<ChatReact>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final admin = await adminClient.i.i();
+          final message = await adminClient.chat.messages.createToUser(
+            ChatMessagesCreateToUserRequest(toUserId: user.id, text: "test"),
+          );
+          final listener = controller
+              .chatUserStream(
+            parameter: ChatUserParameter(otherId: admin.id),
+            id: admin.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatReactChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.react(
+            ChatMessagesReactRequest(messageId: message.id, reaction: "👍"),
+          );
+          await completer.future;
+          await (controller.removeChannel(admin.id), listener.cancel()).wait;
+        });
+
+        test("unreact", () async {
+          final completer = Completer<ChatReact>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final admin = await adminClient.i.i();
+          final message = await adminClient.chat.messages.createToUser(
+            ChatMessagesCreateToUserRequest(toUserId: user.id, text: "test"),
+          );
+          await client.chat.messages.react(
+            ChatMessagesReactRequest(messageId: message.id, reaction: "👍"),
+          );
+          final listener = controller
+              .chatUserStream(
+            parameter: ChatUserParameter(otherId: admin.id),
+            id: admin.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatUnreactChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.unreact(
+            ChatMessagesUnreactRequest(messageId: message.id, reaction: "👍"),
+          );
+          await completer.future;
+          await (controller.removeChannel(admin.id), listener.cancel()).wait;
+        });
+
+        test("read", () async {
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final CreateUserResponse(user: newUser, client: newClient) =
+              await adminClient.createUser();
+          final message = await newClient.chat.messages.createToUser(
+            ChatMessagesCreateToUserRequest(toUserId: user.id, text: "test"),
+          );
+          final history = await client.chat.history(ChatHistoryRequest());
+          expect(history.firstWhere((e) => e.id == message.id).isRead, isFalse);
+          final listener = controller
+              .chatUserStream(
+                parameter: ChatUserParameter(otherId: newUser.id),
+                id: newUser.id,
+              )
+              .listen((_) {});
+          controller.read(newUser.id);
+          final updated = await client.chat.history(ChatHistoryRequest());
+          expect(updated.firstWhere((e) => e.id == message.id).isRead, isTrue);
+          await (controller.removeChannel(newUser.id), listener.cancel()).wait;
+        });
+      });
+
+      group("chatRoom", () {
+        test("message", () async {
+          final completer = Completer<ChatMessage>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final room = await client.chat.rooms.create(
+            ChatRoomsCreateRequest(name: "test"),
+          );
+          final listener = controller
+              .chatRoomStream(
+            parameter: ChatRoomParameter(roomId: room.id),
+            id: room.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatMessageChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.createToRoom(
+            ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "test"),
+          );
+          await completer.future;
+          await (controller.removeChannel(room.id), listener.cancel()).wait;
+        });
+
+        test("deleted", () async {
+          final completer = Completer<String>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final room = await client.chat.rooms.create(
+            ChatRoomsCreateRequest(name: "test"),
+          );
+          final message = await client.chat.messages.createToRoom(
+            ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "test"),
+          );
+          final listener = controller
+              .chatRoomStream(
+            parameter: ChatRoomParameter(roomId: room.id),
+            id: room.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatDeletedChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.delete(
+            ChatMessagesDeleteRequest(messageId: message.id),
+          );
+          await completer.future;
+          await (controller.removeChannel(room.id), listener.cancel()).wait;
+        });
+
+        test("react", () async {
+          final completer = Completer<ChatReact>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final room = await client.chat.rooms.create(
+            ChatRoomsCreateRequest(name: "test"),
+          );
+          final admin = await adminClient.i.i();
+          await client.chat.rooms.invitations.create(
+            ChatRoomsInvitationsCreateRequest(
+              roomId: room.id,
+              userId: admin.id,
+            ),
+          );
+          await adminClient.chat.rooms.join(
+            ChatRoomsJoinRequest(roomId: room.id),
+          );
+          final message = await adminClient.chat.messages.createToRoom(
+            ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "test"),
+          );
+          final listener = controller
+              .chatRoomStream(
+            parameter: ChatRoomParameter(roomId: room.id),
+            id: room.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatReactChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.react(
+            ChatMessagesReactRequest(messageId: message.id, reaction: "👍"),
+          );
+          await completer.future;
+          await (controller.removeChannel(room.id), listener.cancel()).wait;
+        });
+
+        test("unreact", () async {
+          final completer = Completer<ChatReact>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final room = await client.chat.rooms.create(
+            ChatRoomsCreateRequest(name: "test"),
+          );
+          final admin = await adminClient.i.i();
+          await client.chat.rooms.invitations.create(
+            ChatRoomsInvitationsCreateRequest(
+              roomId: room.id,
+              userId: admin.id,
+            ),
+          );
+          await adminClient.chat.rooms.join(
+            ChatRoomsJoinRequest(roomId: room.id),
+          );
+          final message = await adminClient.chat.messages.createToRoom(
+            ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "test"),
+          );
+          await client.chat.messages.react(
+            ChatMessagesReactRequest(messageId: message.id, reaction: "👍"),
+          );
+          final listener = controller
+              .chatRoomStream(
+            parameter: ChatRoomParameter(roomId: room.id),
+            id: room.id,
+          )
+              .listen((event) {
+            if (event.body case final ChatUnreactChannelEvent body) {
+              completer.complete(body.body);
+            }
+          });
+          await client.chat.messages.unreact(
+            ChatMessagesUnreactRequest(messageId: message.id, reaction: "👍"),
+          );
+          await completer.future;
+          await (controller.removeChannel(room.id), listener.cancel()).wait;
+        });
+
+        test("read", () async {
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          final room = await adminClient.chat.rooms.create(
+            ChatRoomsCreateRequest(name: "test"),
+          );
+          await adminClient.chat.rooms.invitations.create(
+            ChatRoomsInvitationsCreateRequest(
+              roomId: room.id,
+              userId: user.id,
+            ),
+          );
+          await client.chat.rooms.join(ChatRoomsJoinRequest(roomId: room.id));
+          final message = await adminClient.chat.messages.createToRoom(
+            ChatMessagesCreateToRoomRequest(toRoomId: room.id, text: "test"),
+          );
+          final history = await client.chat.history(
+            ChatHistoryRequest(room: true),
+          );
+          expect(history.firstWhere((e) => e.id == message.id).isRead, isFalse);
+          final listener = controller
+              .chatRoomStream(
+                parameter: ChatRoomParameter(roomId: room.id),
+                id: room.id,
+              )
+              .listen((_) {});
+          controller.read(room.id);
+          final updated = await client.chat.history(
+            ChatHistoryRequest(room: true),
+          );
+          expect(updated.firstWhere((e) => e.id == message.id).isRead, isTrue);
+          await (controller.removeChannel(room.id), listener.cancel()).wait;
+        });
+      });
+
       group("main", () {
         test("notification", () async {
           final completer = Completer<INotificationsResponse>();
@@ -540,6 +837,27 @@ void main() async {
               return Future.value();
             }),
           );
+          await completer.future;
+          await (controller.removeChannel(id), listener.cancel()).wait;
+        });
+
+        test("newChatMessage", () async {
+          final completer = Completer<ChatMessage>();
+          final client = userClient;
+          final controller = await client.streamingService.stream();
+          await client.i.update(
+            IUpdateRequest(chatScope: ChatScope.everyone),
+          );
+          await adminClient.chat.messages.createToUser(
+            ChatMessagesCreateToUserRequest(toUserId: user.id, text: "test"),
+          );
+          final id = DateTime.now().toIso8601String();
+          final listener = controller.mainStream(id: id).listen((event) {
+            final body = event.body;
+            if (body is NewChatMessageEvent) {
+              completer.complete(body.body);
+            }
+          });
           await completer.future;
           await (controller.removeChannel(id), listener.cancel()).wait;
         });

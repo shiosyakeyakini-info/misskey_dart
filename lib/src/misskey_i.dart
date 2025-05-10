@@ -27,6 +27,17 @@ class MisskeyI {
     return response.map((e) => INotificationsResponse.fromJson(e));
   }
 
+  /// グルーピングされた通知を取得します。
+  Future<Iterable<INotificationsResponse>> notificationsGrouped(
+    INotificationsGroupedRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "i/notifications-grouped",
+      request.toJson(),
+    );
+    return response.map((e) => INotificationsResponse.fromJson(e));
+  }
+
   /// お知らせを既読にします。
   Future<void> readAnnouncement(IReadAnnouncementRequest request) async {
     await _apiService.post("i/read-announcement", request.toJson());

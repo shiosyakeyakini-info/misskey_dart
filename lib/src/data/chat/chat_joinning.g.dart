@@ -10,7 +10,7 @@ _ChatJoining _$ChatJoiningFromJson(Map<String, dynamic> json) => _ChatJoining(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
-      userId: json['userId'] as String?,
+      userId: json['userId'] as String,
       user: json['user'] == null
           ? null
           : UserLite.fromJson(json['user'] as Map<String, dynamic>),

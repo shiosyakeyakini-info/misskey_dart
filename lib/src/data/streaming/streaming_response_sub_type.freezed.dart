@@ -2431,4 +2431,212 @@ class __$QueueStatsLogResponseDataCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
+mixin _$ChatReact {
+  String get reaction;
+  UserLite? get user;
+  String get messageId;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ChatReactCopyWith<ChatReact> get copyWith =>
+      _$ChatReactCopyWithImpl<ChatReact>(this as ChatReact, _$identity);
+
+  /// Serializes this ChatReact to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatReact &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.messageId, messageId) ||
+                other.messageId == messageId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reaction, user, messageId);
+
+  @override
+  String toString() {
+    return 'ChatReact(reaction: $reaction, user: $user, messageId: $messageId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ChatReactCopyWith<$Res> {
+  factory $ChatReactCopyWith(ChatReact value, $Res Function(ChatReact) _then) =
+      _$ChatReactCopyWithImpl;
+  @useResult
+  $Res call({String reaction, UserLite? user, String messageId});
+
+  $UserLiteCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class _$ChatReactCopyWithImpl<$Res> implements $ChatReactCopyWith<$Res> {
+  _$ChatReactCopyWithImpl(this._self, this._then);
+
+  final ChatReact _self;
+  final $Res Function(ChatReact) _then;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reaction = null,
+    Object? user = freezed,
+    Object? messageId = null,
+  }) {
+    return _then(_self.copyWith(
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatReact implements ChatReact {
+  const _ChatReact(
+      {required this.reaction, this.user, required this.messageId});
+  factory _ChatReact.fromJson(Map<String, dynamic> json) =>
+      _$ChatReactFromJson(json);
+
+  @override
+  final String reaction;
+  @override
+  final UserLite? user;
+  @override
+  final String messageId;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatReactCopyWith<_ChatReact> get copyWith =>
+      __$ChatReactCopyWithImpl<_ChatReact>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatReactToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatReact &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.messageId, messageId) ||
+                other.messageId == messageId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reaction, user, messageId);
+
+  @override
+  String toString() {
+    return 'ChatReact(reaction: $reaction, user: $user, messageId: $messageId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ChatReactCopyWith<$Res>
+    implements $ChatReactCopyWith<$Res> {
+  factory _$ChatReactCopyWith(
+          _ChatReact value, $Res Function(_ChatReact) _then) =
+      __$ChatReactCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String reaction, UserLite? user, String messageId});
+
+  @override
+  $UserLiteCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$ChatReactCopyWithImpl<$Res> implements _$ChatReactCopyWith<$Res> {
+  __$ChatReactCopyWithImpl(this._self, this._then);
+
+  final _ChatReact _self;
+  final $Res Function(_ChatReact) _then;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reaction = null,
+    Object? user = freezed,
+    Object? messageId = null,
+  }) {
+    return _then(_ChatReact(
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+}
+
 // dart format on

@@ -28,6 +28,7 @@ mixin _$AntennasUpdateRequest {
   bool? get notify;
   bool? get localOnly;
   bool? get excludeBots;
+  bool? get excludeNotesInSensitiveChannel;
 
   /// Create a copy of AntennasUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -65,7 +66,11 @@ mixin _$AntennasUpdateRequest {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -84,11 +89,12 @@ mixin _$AntennasUpdateRequest {
       withFile,
       notify,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -111,7 +117,8 @@ abstract mixin class $AntennasUpdateRequestCopyWith<$Res> {
       bool withFile,
       bool? notify,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -140,6 +147,7 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res>
     Object? notify = freezed,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_self.copyWith(
       antennaId: null == antennaId
@@ -194,6 +202,10 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res>
           ? _self.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _self.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -214,7 +226,8 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
       required this.withFile,
       this.notify,
       this.localOnly,
-      this.excludeBots})
+      this.excludeBots,
+      this.excludeNotesInSensitiveChannel})
       : _keywords = keywords,
         _excludeKeywords = excludeKeywords,
         _users = users;
@@ -266,6 +279,8 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
   final bool? localOnly;
   @override
   final bool? excludeBots;
+  @override
+  final bool? excludeNotesInSensitiveChannel;
 
   /// Create a copy of AntennasUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -308,7 +323,11 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -327,11 +346,12 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
       withFile,
       notify,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -356,7 +376,8 @@ abstract mixin class _$AntennasUpdateRequestCopyWith<$Res>
       bool withFile,
       bool? notify,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -385,6 +406,7 @@ class __$AntennasUpdateRequestCopyWithImpl<$Res>
     Object? notify = freezed,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_AntennasUpdateRequest(
       antennaId: null == antennaId
@@ -438,6 +460,10 @@ class __$AntennasUpdateRequestCopyWithImpl<$Res>
       excludeBots: freezed == excludeBots
           ? _self.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _self.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }

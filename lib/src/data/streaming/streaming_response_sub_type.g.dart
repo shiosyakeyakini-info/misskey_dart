@@ -209,3 +209,18 @@ Map<String, dynamic> _$QueueStatsLogResponseDataToJson(
       'waiting': instance.waiting,
       'delayed': instance.delayed,
     };
+
+_ChatReact _$ChatReactFromJson(Map<String, dynamic> json) => _ChatReact(
+      reaction: json['reaction'] as String,
+      user: json['user'] == null
+          ? null
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      messageId: json['messageId'] as String,
+    );
+
+Map<String, dynamic> _$ChatReactToJson(_ChatReact instance) =>
+    <String, dynamic>{
+      'reaction': instance.reaction,
+      'user': instance.user?.toJson(),
+      'messageId': instance.messageId,
+    };

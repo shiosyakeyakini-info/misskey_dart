@@ -14,15 +14,20 @@ _ChatMessage _$ChatMessageFromJson(Map<String, dynamic> json) => _ChatMessage(
       fromUserId: json['fromUserId'] as String,
       fromUser: json['fromUser'] == null
           ? null
-          : User.fromJson(json['fromUser'] as Map<String, dynamic>),
+          : UserLite.fromJson(json['fromUser'] as Map<String, dynamic>),
       toUserId: json['toUserId'] as String?,
       toUser: json['toUser'] == null
           ? null
-          : User.fromJson(json['toUser'] as Map<String, dynamic>),
+          : UserLite.fromJson(json['toUser'] as Map<String, dynamic>),
       toRoomId: json['toRoomId'] as String?,
       toRoom: json['toRoom'] == null
           ? null
           : ChatRoom.fromJson(json['toRoom'] as Map<String, dynamic>),
+      fileId: json['fileId'] as String?,
+      file: json['file'] == null
+          ? null
+          : DriveFile.fromJson(json['file'] as Map<String, dynamic>),
+      isRead: json['isRead'] as bool?,
       reactions: (json['reactions'] as List<dynamic>)
           .map((e) => ChatMessageReaction.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -39,18 +44,23 @@ Map<String, dynamic> _$ChatMessageToJson(_ChatMessage instance) =>
       'toUser': instance.toUser?.toJson(),
       'toRoomId': instance.toRoomId,
       'toRoom': instance.toRoom?.toJson(),
+      'fileId': instance.fileId,
+      'file': instance.file?.toJson(),
+      'isRead': instance.isRead,
       'reactions': instance.reactions.map((e) => e.toJson()).toList(),
     };
 
 _ChatMessageReaction _$ChatMessageReactionFromJson(Map<String, dynamic> json) =>
     _ChatMessageReaction(
       reaction: json['reaction'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] == null
+          ? null
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ChatMessageReactionToJson(
         _ChatMessageReaction instance) =>
     <String, dynamic>{
       'reaction': instance.reaction,
-      'user': instance.user.toJson(),
+      'user': instance.user?.toJson(),
     };

@@ -27,6 +27,7 @@ mixin _$AntennasCreateRequest {
   bool? get notify;
   bool? get localOnly;
   bool? get excludeBots;
+  bool? get excludeNotesInSensitiveChannel;
 
   /// Create a copy of AntennasCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -62,7 +63,11 @@ mixin _$AntennasCreateRequest {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -80,11 +85,12 @@ mixin _$AntennasCreateRequest {
       withFile,
       notify,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'AntennasCreateRequest(name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'AntennasCreateRequest(name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -106,7 +112,8 @@ abstract mixin class $AntennasCreateRequestCopyWith<$Res> {
       bool withFile,
       bool? notify,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -134,6 +141,7 @@ class _$AntennasCreateRequestCopyWithImpl<$Res>
     Object? notify = freezed,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_self.copyWith(
       name: null == name
@@ -184,6 +192,10 @@ class _$AntennasCreateRequestCopyWithImpl<$Res>
           ? _self.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _self.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -203,7 +215,8 @@ class _AntennasCreateRequest implements AntennasCreateRequest {
       required this.withFile,
       this.notify,
       this.localOnly,
-      this.excludeBots})
+      this.excludeBots,
+      this.excludeNotesInSensitiveChannel})
       : _keywords = keywords,
         _excludeKeywords = excludeKeywords,
         _users = users;
@@ -253,6 +266,8 @@ class _AntennasCreateRequest implements AntennasCreateRequest {
   final bool? localOnly;
   @override
   final bool? excludeBots;
+  @override
+  final bool? excludeNotesInSensitiveChannel;
 
   /// Create a copy of AntennasCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -293,7 +308,11 @@ class _AntennasCreateRequest implements AntennasCreateRequest {
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots));
+                other.excludeBots == excludeBots) &&
+            (identical(other.excludeNotesInSensitiveChannel,
+                    excludeNotesInSensitiveChannel) ||
+                other.excludeNotesInSensitiveChannel ==
+                    excludeNotesInSensitiveChannel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -311,11 +330,12 @@ class _AntennasCreateRequest implements AntennasCreateRequest {
       withFile,
       notify,
       localOnly,
-      excludeBots);
+      excludeBots,
+      excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'AntennasCreateRequest(name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots)';
+    return 'AntennasCreateRequest(name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, withReplies: $withReplies, withFile: $withFile, notify: $notify, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -339,7 +359,8 @@ abstract mixin class _$AntennasCreateRequestCopyWith<$Res>
       bool withFile,
       bool? notify,
       bool? localOnly,
-      bool? excludeBots});
+      bool? excludeBots,
+      bool? excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -367,6 +388,7 @@ class __$AntennasCreateRequestCopyWithImpl<$Res>
     Object? notify = freezed,
     Object? localOnly = freezed,
     Object? excludeBots = freezed,
+    Object? excludeNotesInSensitiveChannel = freezed,
   }) {
     return _then(_AntennasCreateRequest(
       name: null == name
@@ -416,6 +438,10 @@ class __$AntennasCreateRequestCopyWithImpl<$Res>
       excludeBots: freezed == excludeBots
           ? _self.excludeBots
           : excludeBots // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+          ? _self.excludeNotesInSensitiveChannel
+          : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }

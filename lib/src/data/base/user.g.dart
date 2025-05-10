@@ -160,6 +160,8 @@ _UserDetailedNotMe _$UserDetailedNotMeFromJson(Map<String, dynamic> json) =>
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool?,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
       securityKeys: json['securityKeys'] as bool?,
@@ -225,6 +227,8 @@ Map<String, dynamic> _$UserDetailedNotMeToJson(_UserDetailedNotMe instance) =>
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -237,6 +241,14 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.public: 'public',
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
+};
+
+const _$ChatScopeEnumMap = {
+  ChatScope.everyone: 'everyone',
+  ChatScope.followers: 'followers',
+  ChatScope.following: 'following',
+  ChatScope.mutual: 'mutual',
+  ChatScope.none: 'none',
 };
 
 _UserDetailedNotMeWithRelations _$UserDetailedNotMeWithRelationsFromJson(
@@ -324,6 +336,8 @@ _UserDetailedNotMeWithRelations _$UserDetailedNotMeWithRelationsFromJson(
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool?,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
       securityKeys: json['securityKeys'] as bool?,
@@ -403,6 +417,8 @@ Map<String, dynamic> _$UserDetailedNotMeWithRelationsToJson(
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -510,6 +526,8 @@ _MeDetailed _$MeDetailedFromJson(Map<String, dynamic> json) => _MeDetailed(
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool,
       securityKeys: json['securityKeys'] as bool,
@@ -542,6 +560,7 @@ _MeDetailed _$MeDetailedFromJson(Map<String, dynamic> json) => _MeDetailed(
       hasUnreadAnnouncement: json['hasUnreadAnnouncement'] as bool,
       hasUnreadAntenna: json['hasUnreadAntenna'] as bool,
       hasUnreadChannel: json['hasUnreadChannel'] as bool,
+      hasUnreadChatMessages: json['hasUnreadChatMessages'] as bool?,
       hasUnreadNotification: json['hasUnreadNotification'] as bool,
       hasPendingReceivedFollowRequest:
           json['hasPendingReceivedFollowRequest'] as bool,
@@ -635,6 +654,8 @@ Map<String, dynamic> _$MeDetailedToJson(_MeDetailed instance) =>
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -664,6 +685,7 @@ Map<String, dynamic> _$MeDetailedToJson(_MeDetailed instance) =>
       'hasUnreadAnnouncement': instance.hasUnreadAnnouncement,
       'hasUnreadAntenna': instance.hasUnreadAntenna,
       'hasUnreadChannel': instance.hasUnreadChannel,
+      'hasUnreadChatMessages': instance.hasUnreadChatMessages,
       'hasUnreadNotification': instance.hasUnreadNotification,
       'hasPendingReceivedFollowRequest':
           instance.hasPendingReceivedFollowRequest,
@@ -787,15 +809,20 @@ _UserPolicies _$UserPoliciesFromJson(Map<String, dynamic> json) =>
       gtlAvailable: json['gtlAvailable'] as bool,
       ltlAvailable: json['ltlAvailable'] as bool,
       canPublicNote: json['canPublicNote'] as bool,
+      mentionLimit: (json['mentionLimit'] as num?)?.toInt(),
       canEditNote: json['canEditNote'] as bool? ?? false,
       canInvite: json['canInvite'] as bool,
-      canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
-      canHideAds: json['canHideAds'] as bool,
       inviteLimit: (json['inviteLimit'] as num?)?.toDouble(),
       inviteLimitCycle: (json['inviteLimitCycle'] as num?)?.toDouble(),
+      inviteExpirationTime: (json['inviteExpirationTime'] as num?)?.toInt(),
+      canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
+      canManageAvatarDecorations: json['canManageAvatarDecorations'] as bool?,
       canSearchNotes: json['canSearchNotes'] as bool? ?? false,
       canUseTranslator: json['canUseTranslator'] as bool? ?? false,
+      canHideAds: json['canHideAds'] as bool,
       driveCapacityMb: (json['driveCapacityMb'] as num).toDouble(),
+      alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
+      canUpdateBioMedia: json['canUpdateBioMedia'] as bool?,
       pinLimit: (json['pinLimit'] as num).toDouble(),
       antennaLimit: (json['antennaLimit'] as num).toDouble(),
       wordMuteLimit: (json['wordMuteLimit'] as num).toDouble(),
@@ -808,6 +835,13 @@ _UserPolicies _$UserPoliciesFromJson(Map<String, dynamic> json) =>
       rateLimitFactor: (json['rateLimitFactor'] as num).toDouble(),
       avatarDecorationLimit:
           (json['avatarDecorationLimit'] as num?)?.toDouble() ?? 1.0,
+      canImportAntennas: json['canImportAntennas'] as bool?,
+      canImportBlocking: json['canImportBlocking'] as bool?,
+      canImportFollowing: json['canImportFollowing'] as bool?,
+      canImportMuting: json['canImportMuting'] as bool?,
+      canImportUserLists: json['canImportUserLists'] as bool?,
+      chatAvailability: $enumDecodeNullable(
+          _$ChatAvailabilityEnumMap, json['chatAvailability']),
     );
 
 Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
@@ -815,15 +849,20 @@ Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
       'gtlAvailable': instance.gtlAvailable,
       'ltlAvailable': instance.ltlAvailable,
       'canPublicNote': instance.canPublicNote,
+      'mentionLimit': instance.mentionLimit,
       'canEditNote': instance.canEditNote,
       'canInvite': instance.canInvite,
-      'canManageCustomEmojis': instance.canManageCustomEmojis,
-      'canHideAds': instance.canHideAds,
       'inviteLimit': instance.inviteLimit,
       'inviteLimitCycle': instance.inviteLimitCycle,
+      'inviteExpirationTime': instance.inviteExpirationTime,
+      'canManageCustomEmojis': instance.canManageCustomEmojis,
+      'canManageAvatarDecorations': instance.canManageAvatarDecorations,
       'canSearchNotes': instance.canSearchNotes,
       'canUseTranslator': instance.canUseTranslator,
+      'canHideAds': instance.canHideAds,
       'driveCapacityMb': instance.driveCapacityMb,
+      'alwaysMarkNsfw': instance.alwaysMarkNsfw,
+      'canUpdateBioMedia': instance.canUpdateBioMedia,
       'pinLimit': instance.pinLimit,
       'antennaLimit': instance.antennaLimit,
       'wordMuteLimit': instance.wordMuteLimit,
@@ -834,7 +873,19 @@ Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
       'userEachUserListsLimit': instance.userEachUserListsLimit,
       'rateLimitFactor': instance.rateLimitFactor,
       'avatarDecorationLimit': instance.avatarDecorationLimit,
+      'canImportAntennas': instance.canImportAntennas,
+      'canImportBlocking': instance.canImportBlocking,
+      'canImportFollowing': instance.canImportFollowing,
+      'canImportMuting': instance.canImportMuting,
+      'canImportUserLists': instance.canImportUserLists,
+      'chatAvailability': _$ChatAvailabilityEnumMap[instance.chatAvailability],
     };
+
+const _$ChatAvailabilityEnumMap = {
+  ChatAvailability.available: 'available',
+  ChatAvailability.readOnly: 'readOnly',
+  ChatAvailability.unavailable: 'unavailable',
+};
 
 _UserField _$UserFieldFromJson(Map<String, dynamic> json) => _UserField(
       name: json['name'] as String,
@@ -894,6 +945,10 @@ _NotificationRecieveConfigs _$NotificationRecieveConfigsFromJson(
           ? null
           : NotificationRecieveConfig.fromJson(
               json['roleAssigned'] as Map<String, dynamic>),
+      chatRoomInvitationReceived: json['chatRoomInvitationReceived'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['chatRoomInvitationReceived'] as Map<String, dynamic>),
       achievementEarned: json['achievementEarned'] == null
           ? null
           : NotificationRecieveConfig.fromJson(
@@ -922,6 +977,8 @@ Map<String, dynamic> _$NotificationRecieveConfigsToJson(
       'receiveFollowRequest': instance.receiveFollowRequest?.toJson(),
       'followRequestAccepted': instance.followRequestAccepted?.toJson(),
       'roleAssigned': instance.roleAssigned?.toJson(),
+      'chatRoomInvitationReceived':
+          instance.chatRoomInvitationReceived?.toJson(),
       'achievementEarned': instance.achievementEarned?.toJson(),
       'app': instance.app?.toJson(),
       'test': instance.test?.toJson(),
