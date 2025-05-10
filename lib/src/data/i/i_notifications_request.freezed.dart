@@ -12,7 +12,7 @@ part of 'i_notifications_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 INotificationsRequest _$INotificationsRequestFromJson(
     Map<String, dynamic> json) {
@@ -33,8 +33,12 @@ mixin _$INotificationsRequest {
   List<NotificationType>? get excludeTypes =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this INotificationsRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of INotificationsRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $INotificationsRequestCopyWith<INotificationsRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -67,6 +71,8 @@ class _$INotificationsRequestCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of INotificationsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,6 +150,8 @@ class __$$INotificationRequestImplCopyWithImpl<$Res>
       $Res Function(_$INotificationRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of INotificationsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -269,7 +277,7 @@ class _$INotificationRequestImpl implements _INotificationRequest {
                 .equals(other._excludeTypes, _excludeTypes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -282,7 +290,9 @@ class _$INotificationRequestImpl implements _INotificationRequest {
       const DeepCollectionEquality().hash(_includeTypes),
       const DeepCollectionEquality().hash(_excludeTypes));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of INotificationsRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$INotificationRequestImplCopyWith<_$INotificationRequestImpl>
@@ -329,8 +339,11 @@ abstract class _INotificationRequest implements INotificationsRequest {
   List<NotificationType>? get includeTypes;
   @override
   List<NotificationType>? get excludeTypes;
+
+  /// Create a copy of INotificationsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$INotificationRequestImplCopyWith<_$INotificationRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

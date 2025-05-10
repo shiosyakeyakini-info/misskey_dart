@@ -9,7 +9,7 @@ part of 'i_notifications_request.dart';
 _$INotificationRequestImpl _$$INotificationRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$INotificationRequestImpl(
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       following: json['following'] as bool?,
