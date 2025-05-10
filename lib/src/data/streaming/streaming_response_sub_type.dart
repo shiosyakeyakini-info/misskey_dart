@@ -183,7 +183,7 @@ abstract class QueueStatsLogResponseData with _$QueueStatsLogResponseData {
 }
 
 @freezed
-class ChatReact with _$ChatReact {
+abstract class ChatReact with _$ChatReact {
   const factory ChatReact({
     required String reaction,
     UserLite? user,

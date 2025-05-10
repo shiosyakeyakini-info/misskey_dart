@@ -39,7 +39,7 @@ abstract class INotificationsResponse with _$INotificationsResponse {
 }
 
 @freezed
-class INotificationsReaction with _$INotificationsReaction {
+abstract class INotificationsReaction with _$INotificationsReaction {
   const factory INotificationsReaction({
     required UserLite user,
     required String reaction,
