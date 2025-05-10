@@ -18,6 +18,19 @@ void main() async {
     );
   });
 
+  test("notifications-grouped", () async {
+    final note = await userClient.createNote();
+    await adminClient.notes.create(NotesCreateRequest(renoteId: note.id));
+    await adminClient.notes.create(NotesCreateRequest(renoteId: note.id));
+    await adminClient.notes.create(NotesCreateRequest(renoteId: note.id));
+    final response =
+        await userClient.i.notificationsGrouped(INotificationsGroupedRequest());
+    expect(
+      response.map((e) => e.type),
+      contains(NotificationType.renoteGrouped),
+    );
+  });
+
   test("read-announcement", () async {
     final announcement = await adminClient.apiService.post(
       "admin/announcements/create",

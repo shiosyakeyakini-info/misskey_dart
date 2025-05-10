@@ -145,9 +145,9 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      followersCount: json['followersCount'] as int,
-      followingCount: json['followingCount'] as int,
-      notesCount: json['notesCount'] as int,
+      followersCount: (json['followersCount'] as num).toInt(),
+      followingCount: (json['followingCount'] as num).toInt(),
+      notesCount: (json['notesCount'] as num).toInt(),
       pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -316,9 +316,9 @@ _$UserDetailedNotMeWithRelationsImpl
                   ?.map((e) => e as String)
                   .toList() ??
               const [],
-          followersCount: json['followersCount'] as int,
-          followingCount: json['followingCount'] as int,
-          notesCount: json['notesCount'] as int,
+          followersCount: (json['followersCount'] as num).toInt(),
+          followingCount: (json['followingCount'] as num).toInt(),
+          notesCount: (json['notesCount'] as num).toInt(),
           pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
@@ -503,9 +503,9 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      followersCount: json['followersCount'] as int,
-      followingCount: json['followingCount'] as int,
-      notesCount: json['notesCount'] as int,
+      followersCount: (json['followersCount'] as num).toInt(),
+      followingCount: (json['followingCount'] as num).toInt(),
+      notesCount: (json['notesCount'] as num).toInt(),
       pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -556,7 +556,8 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       hasUnreadNotification: json['hasUnreadNotification'] as bool,
       hasPendingReceivedFollowRequest:
           json['hasPendingReceivedFollowRequest'] as bool,
-      unreadNotificationsCount: json['unreadNotificationsCount'] as int?,
+      unreadNotificationsCount:
+          (json['unreadNotificationsCount'] as num?)?.toInt(),
       unreadAnnouncements: (json['unreadAnnouncements'] as List<dynamic>?)
               ?.map((e) =>
                   AnnouncementsResponse.fromJson(e as Map<String, dynamic>))
@@ -586,7 +587,7 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       achievements: (json['achievements'] as List<dynamic>)
           .map((e) => UserAchievement.fromJson(e as Map<String, dynamic>))
           .toList(),
-      loggedInDays: json['loggedInDays'] as int,
+      loggedInDays: (json['loggedInDays'] as num).toInt(),
       policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
     );
 
@@ -787,7 +788,7 @@ _$UserAchievementImpl _$$UserAchievementImplFromJson(
     _$UserAchievementImpl(
       name: json['name'] as String,
       unlockedAt: const EpocTimeDateTimeConverter.withMilliSeconds()
-          .fromJson(json['unlockedAt'] as int),
+          .fromJson((json['unlockedAt'] as num).toInt()),
     );
 
 Map<String, dynamic> _$$UserAchievementImplToJson(
@@ -803,15 +804,20 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
       gtlAvailable: json['gtlAvailable'] as bool,
       ltlAvailable: json['ltlAvailable'] as bool,
       canPublicNote: json['canPublicNote'] as bool,
+      mentionLimit: (json['mentionLimit'] as num?)?.toInt(),
       canEditNote: json['canEditNote'] as bool? ?? false,
       canInvite: json['canInvite'] as bool,
-      canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
-      canHideAds: json['canHideAds'] as bool,
       inviteLimit: (json['inviteLimit'] as num?)?.toDouble(),
       inviteLimitCycle: (json['inviteLimitCycle'] as num?)?.toDouble(),
+      inviteExpirationTime: (json['inviteExpirationTime'] as num?)?.toInt(),
+      canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
+      canManageAvatarDecorations: json['canManageAvatarDecorations'] as bool?,
       canSearchNotes: json['canSearchNotes'] as bool? ?? false,
       canUseTranslator: json['canUseTranslator'] as bool? ?? false,
+      canHideAds: json['canHideAds'] as bool,
       driveCapacityMb: (json['driveCapacityMb'] as num).toDouble(),
+      alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
+      canUpdateBioMedia: json['canUpdateBioMedia'] as bool?,
       pinLimit: (json['pinLimit'] as num).toDouble(),
       antennaLimit: (json['antennaLimit'] as num).toDouble(),
       wordMuteLimit: (json['wordMuteLimit'] as num).toDouble(),
@@ -824,6 +830,13 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
       rateLimitFactor: (json['rateLimitFactor'] as num).toDouble(),
       avatarDecorationLimit:
           (json['avatarDecorationLimit'] as num?)?.toDouble() ?? 1.0,
+      canImportAntennas: json['canImportAntennas'] as bool?,
+      canImportBlocking: json['canImportBlocking'] as bool?,
+      canImportFollowing: json['canImportFollowing'] as bool?,
+      canImportMuting: json['canImportMuting'] as bool?,
+      canImportUserLists: json['canImportUserLists'] as bool?,
+      chatAvailability: $enumDecodeNullable(
+          _$ChatAvailabilityEnumMap, json['chatAvailability']),
     );
 
 Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
@@ -831,15 +844,20 @@ Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
       'gtlAvailable': instance.gtlAvailable,
       'ltlAvailable': instance.ltlAvailable,
       'canPublicNote': instance.canPublicNote,
+      'mentionLimit': instance.mentionLimit,
       'canEditNote': instance.canEditNote,
       'canInvite': instance.canInvite,
-      'canManageCustomEmojis': instance.canManageCustomEmojis,
-      'canHideAds': instance.canHideAds,
       'inviteLimit': instance.inviteLimit,
       'inviteLimitCycle': instance.inviteLimitCycle,
+      'inviteExpirationTime': instance.inviteExpirationTime,
+      'canManageCustomEmojis': instance.canManageCustomEmojis,
+      'canManageAvatarDecorations': instance.canManageAvatarDecorations,
       'canSearchNotes': instance.canSearchNotes,
       'canUseTranslator': instance.canUseTranslator,
+      'canHideAds': instance.canHideAds,
       'driveCapacityMb': instance.driveCapacityMb,
+      'alwaysMarkNsfw': instance.alwaysMarkNsfw,
+      'canUpdateBioMedia': instance.canUpdateBioMedia,
       'pinLimit': instance.pinLimit,
       'antennaLimit': instance.antennaLimit,
       'wordMuteLimit': instance.wordMuteLimit,
@@ -850,7 +868,19 @@ Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
       'userEachUserListsLimit': instance.userEachUserListsLimit,
       'rateLimitFactor': instance.rateLimitFactor,
       'avatarDecorationLimit': instance.avatarDecorationLimit,
+      'canImportAntennas': instance.canImportAntennas,
+      'canImportBlocking': instance.canImportBlocking,
+      'canImportFollowing': instance.canImportFollowing,
+      'canImportMuting': instance.canImportMuting,
+      'canImportUserLists': instance.canImportUserLists,
+      'chatAvailability': _$ChatAvailabilityEnumMap[instance.chatAvailability],
     };
+
+const _$ChatAvailabilityEnumMap = {
+  ChatAvailability.available: 'available',
+  ChatAvailability.readOnly: 'readOnly',
+  ChatAvailability.unavailable: 'unavailable',
+};
 
 _$UserFieldImpl _$$UserFieldImplFromJson(Map<String, dynamic> json) =>
     _$UserFieldImpl(
