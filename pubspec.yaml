@@ -11,13 +11,13 @@ dev_dependencies:
   dotenv: ^4.1.0
   freezed: ^3.0.0
   json_serializable: ^6.6.1
-  lints: ^2.0.0
+  lints: ^5.1.1
   test: ^1.16.0
-  uuid: ^3.0.7
+  uuid: ^4.5.1
 dependencies:
   collection: ^1.16.0
   dio: ^5.1.1
   freezed_annotation: ^3.0.0
   json_annotation: ^4.8.0
   path: ^1.8.2
-  web_socket_channel: ^2.3.0
+  web_socket_channel: ^3.0.3
