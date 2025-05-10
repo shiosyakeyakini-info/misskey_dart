@@ -145,10 +145,10 @@ class MisskeyChatRooms {
   }
 
   /// 参加中のチャットルームを取得します
-  Future<List<ChatJoining>> joining(ChatRoomsJoiningRequest request) async {
+  Future<Iterable<ChatJoining>> joining(ChatRoomsJoiningRequest request) async {
     final response =
         await _apiService.post<List>("chat/rooms/joining", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e)).toList();
+    return response.map((e) => ChatJoining.fromJson(e));
   }
 
   /// チャットルームを退室します
@@ -169,10 +169,10 @@ class MisskeyChatRooms {
   }
 
   /// 自身が所有しているチャットルームを取得します
-  Future<Iterable<ChatJoining>> owned(ChatRoomsOwnedRequest request) async {
+  Future<Iterable<ChatRoom>> owned(ChatRoomsOwnedRequest request) async {
     final response =
         await _apiService.post<List>("chat/rooms/owned", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e));
+    return response.map((e) => ChatRoom.fromJson(e));
   }
 
   /// チャットルームの情報を取得します

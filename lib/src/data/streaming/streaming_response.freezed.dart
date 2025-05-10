@@ -2400,6 +2400,8 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
       return ReadAllAntennasChannelEvent.fromJson(json);
     case 'unreadAntenna':
       return UnreadAntennaChannelEvent.fromJson(json);
+    case 'newChatMessage':
+      return NewChatMessageEvent.fromJson(json);
     case 'readAllAnnouncements':
       return ReadAllAnnouncementsChannelEvent.fromJson(json);
     case 'myTokenRegenerated':
@@ -2418,6 +2420,12 @@ ChannelStreamEvent _$ChannelStreamEventFromJson(Map<String, dynamic> json) {
       return AnnouncementCreatedChannelEvent.fromJson(json);
     case 'message':
       return ChatMessageChannelEvent.fromJson(json);
+    case 'deleted':
+      return ChatDeletedChannelEvent.fromJson(json);
+    case 'react':
+      return ChatReactChannelEvent.fromJson(json);
+    case 'unreact':
+      return ChatUnreactChannelEvent.fromJson(json);
 
     default:
       return FallbackChannelEvent.fromJson(json);
@@ -2462,6 +2470,7 @@ mixin _$ChannelStreamEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -2472,6 +2481,9 @@ mixin _$ChannelStreamEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2509,6 +2521,7 @@ mixin _$ChannelStreamEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -2519,6 +2532,9 @@ mixin _$ChannelStreamEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2554,6 +2570,7 @@ mixin _$ChannelStreamEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -2564,6 +2581,9 @@ mixin _$ChannelStreamEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) =>
@@ -2602,6 +2622,7 @@ mixin _$ChannelStreamEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -2617,6 +2638,9 @@ mixin _$ChannelStreamEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2651,6 +2675,7 @@ mixin _$ChannelStreamEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -2663,6 +2688,9 @@ mixin _$ChannelStreamEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) =>
       throw _privateConstructorUsedError;
@@ -2697,6 +2725,7 @@ mixin _$ChannelStreamEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -2709,6 +2738,9 @@ mixin _$ChannelStreamEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) =>
@@ -2902,6 +2934,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -2912,6 +2945,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return note(id, type, body);
@@ -2952,6 +2988,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -2962,6 +2999,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return note?.call(id, type, body);
@@ -3000,6 +3040,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -3010,6 +3051,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -3054,6 +3098,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -3069,6 +3114,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return note(this);
@@ -3106,6 +3154,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -3118,6 +3167,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return note?.call(this);
@@ -3155,6 +3207,7 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -3167,6 +3220,9 @@ class _$NoteChannelEventImpl implements NoteChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -3339,6 +3395,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -3349,6 +3406,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return statsLog(id, body);
@@ -3389,6 +3449,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -3399,6 +3460,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return statsLog?.call(id, body);
@@ -3437,6 +3501,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -3447,6 +3512,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -3491,6 +3559,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -3506,6 +3575,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return statsLog(this);
@@ -3543,6 +3615,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -3555,6 +3628,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return statsLog?.call(this);
@@ -3592,6 +3668,7 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -3604,6 +3681,9 @@ class _$StatsLogChannelEventImpl implements StatsLogChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -3779,6 +3859,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -3789,6 +3870,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return stats(id, body);
@@ -3829,6 +3913,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -3839,6 +3924,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return stats?.call(id, body);
@@ -3877,6 +3965,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -3887,6 +3976,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -3931,6 +4023,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -3946,6 +4039,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return stats(this);
@@ -3983,6 +4079,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -3995,6 +4092,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return stats?.call(this);
@@ -4032,6 +4132,7 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -4044,6 +4145,9 @@ class _$StatsChannelEventImpl implements StatsChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -4217,6 +4321,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -4227,6 +4332,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return userAdded(id, body);
@@ -4267,6 +4375,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -4277,6 +4386,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return userAdded?.call(id, body);
@@ -4315,6 +4427,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -4325,6 +4438,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -4369,6 +4485,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -4384,6 +4501,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return userAdded(this);
@@ -4421,6 +4541,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -4433,6 +4554,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return userAdded?.call(this);
@@ -4470,6 +4594,7 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -4482,6 +4607,9 @@ class _$UserAddedChannelEventImpl implements UserAddedChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -4655,6 +4783,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -4665,6 +4794,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return userRemoved(id, body);
@@ -4705,6 +4837,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -4715,6 +4848,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return userRemoved?.call(id, body);
@@ -4753,6 +4889,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -4763,6 +4900,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -4807,6 +4947,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -4822,6 +4963,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return userRemoved(this);
@@ -4859,6 +5003,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -4871,6 +5016,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return userRemoved?.call(this);
@@ -4908,6 +5056,7 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -4920,6 +5069,9 @@ class _$UserRemovedChannelEventImpl implements UserRemovedChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -5093,6 +5245,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -5103,6 +5256,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return notification(id, body);
@@ -5143,6 +5299,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -5153,6 +5310,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return notification?.call(id, body);
@@ -5191,6 +5351,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -5201,6 +5362,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -5245,6 +5409,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -5260,6 +5425,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return notification(this);
@@ -5297,6 +5465,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -5309,6 +5478,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return notification?.call(this);
@@ -5346,6 +5518,7 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -5358,6 +5531,9 @@ class _$NotificationChannelEventImpl implements NotificationChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -5529,6 +5705,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -5539,6 +5716,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return mention(id, body);
@@ -5579,6 +5759,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -5589,6 +5770,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return mention?.call(id, body);
@@ -5627,6 +5811,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -5637,6 +5822,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -5681,6 +5869,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -5696,6 +5885,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return mention(this);
@@ -5733,6 +5925,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -5745,6 +5938,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return mention?.call(this);
@@ -5782,6 +5978,7 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -5794,6 +5991,9 @@ class _$MentionChannelEventImpl implements MentionChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -5964,6 +6164,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -5974,6 +6175,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return reply(id, body);
@@ -6014,6 +6218,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -6024,6 +6229,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return reply?.call(id, body);
@@ -6062,6 +6270,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -6072,6 +6281,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -6116,6 +6328,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -6131,6 +6344,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return reply(this);
@@ -6168,6 +6384,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -6180,6 +6397,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return reply?.call(this);
@@ -6217,6 +6437,7 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -6229,6 +6450,9 @@ class _$ReplyChannelEventImpl implements ReplyChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -6399,6 +6623,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -6409,6 +6634,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return renote(id, body);
@@ -6449,6 +6677,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -6459,6 +6688,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return renote?.call(id, body);
@@ -6497,6 +6729,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -6507,6 +6740,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -6551,6 +6787,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -6566,6 +6803,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return renote(this);
@@ -6603,6 +6843,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -6615,6 +6856,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return renote?.call(this);
@@ -6652,6 +6896,7 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -6664,6 +6909,9 @@ class _$RenoteChannelEventImpl implements RenoteChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -6834,6 +7082,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -6844,6 +7093,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return follow(id, body);
@@ -6884,6 +7136,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -6894,6 +7147,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return follow?.call(id, body);
@@ -6932,6 +7188,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -6942,6 +7199,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -6986,6 +7246,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -7001,6 +7262,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return follow(this);
@@ -7038,6 +7302,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -7050,6 +7315,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return follow?.call(this);
@@ -7087,6 +7355,7 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -7099,6 +7368,9 @@ class _$FollowChannelEventImpl implements FollowChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -7270,6 +7542,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -7280,6 +7553,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return followed(id, body);
@@ -7320,6 +7596,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -7330,6 +7607,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return followed?.call(id, body);
@@ -7368,6 +7648,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -7378,6 +7659,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -7422,6 +7706,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -7437,6 +7722,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return followed(this);
@@ -7474,6 +7762,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -7486,6 +7775,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return followed?.call(this);
@@ -7523,6 +7815,7 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -7535,6 +7828,9 @@ class _$FollowedChannelEventImpl implements FollowedChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -7706,6 +8002,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -7716,6 +8013,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unfollow(id, body);
@@ -7756,6 +8056,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -7766,6 +8067,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unfollow?.call(id, body);
@@ -7804,6 +8108,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -7814,6 +8119,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -7858,6 +8166,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -7873,6 +8182,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unfollow(this);
@@ -7910,6 +8222,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -7922,6 +8235,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unfollow?.call(this);
@@ -7959,6 +8275,7 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -7971,6 +8288,9 @@ class _$UnfollowChannelEventImpl implements UnfollowChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -8142,6 +8462,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -8152,6 +8473,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return meUpdated(id, body);
@@ -8192,6 +8516,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -8202,6 +8527,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return meUpdated?.call(id, body);
@@ -8240,6 +8568,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -8250,6 +8579,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -8294,6 +8626,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -8309,6 +8642,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return meUpdated(this);
@@ -8346,6 +8682,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -8358,6 +8695,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return meUpdated?.call(this);
@@ -8395,6 +8735,7 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -8407,6 +8748,9 @@ class _$MeUpdatedChannelEventImpl implements MeUpdatedChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -8578,6 +8922,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -8588,6 +8933,9 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return pageEvent(id, body);
@@ -8628,6 +8976,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -8638,6 +8987,9 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return pageEvent?.call(id, body);
@@ -8676,6 +9028,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -8686,6 +9039,9 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -8730,6 +9086,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -8745,6 +9102,9 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return pageEvent(this);
@@ -8782,6 +9142,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -8794,6 +9155,9 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return pageEvent?.call(this);
@@ -8831,6 +9195,7 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -8843,6 +9208,9 @@ class _$PageEventChannelEventImpl implements PageEventChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -9019,6 +9387,7 @@ class _$UrlUploadFinishedChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -9029,6 +9398,9 @@ class _$UrlUploadFinishedChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return urlUploadFinished(id, body);
@@ -9069,6 +9441,7 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -9079,6 +9452,9 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return urlUploadFinished?.call(id, body);
@@ -9117,6 +9493,7 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -9127,6 +9504,9 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -9171,6 +9551,7 @@ class _$UrlUploadFinishedChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -9186,6 +9567,9 @@ class _$UrlUploadFinishedChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return urlUploadFinished(this);
@@ -9223,6 +9607,7 @@ class _$UrlUploadFinishedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -9235,6 +9620,9 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return urlUploadFinished?.call(this);
@@ -9272,6 +9660,7 @@ class _$UrlUploadFinishedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -9284,6 +9673,9 @@ class _$UrlUploadFinishedChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -9442,6 +9834,7 @@ class _$ReadAllNotificationsChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -9452,6 +9845,9 @@ class _$ReadAllNotificationsChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllNotifications(id);
@@ -9492,6 +9888,7 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -9502,6 +9899,9 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllNotifications?.call(id);
@@ -9540,6 +9940,7 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -9550,6 +9951,9 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -9594,6 +9998,7 @@ class _$ReadAllNotificationsChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -9609,6 +10014,9 @@ class _$ReadAllNotificationsChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllNotifications(this);
@@ -9646,6 +10054,7 @@ class _$ReadAllNotificationsChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -9658,6 +10067,9 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllNotifications?.call(this);
@@ -9695,6 +10107,7 @@ class _$ReadAllNotificationsChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -9707,6 +10120,9 @@ class _$ReadAllNotificationsChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -9882,6 +10298,7 @@ class _$UnreadNotificationChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -9892,6 +10309,9 @@ class _$UnreadNotificationChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadNotification(id, body);
@@ -9932,6 +10352,7 @@ class _$UnreadNotificationChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -9942,6 +10363,9 @@ class _$UnreadNotificationChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadNotification?.call(id, body);
@@ -9980,6 +10404,7 @@ class _$UnreadNotificationChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -9990,6 +10415,9 @@ class _$UnreadNotificationChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -10034,6 +10462,7 @@ class _$UnreadNotificationChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -10049,6 +10478,9 @@ class _$UnreadNotificationChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadNotification(this);
@@ -10086,6 +10518,7 @@ class _$UnreadNotificationChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -10098,6 +10531,9 @@ class _$UnreadNotificationChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadNotification?.call(this);
@@ -10135,6 +10571,7 @@ class _$UnreadNotificationChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -10147,6 +10584,9 @@ class _$UnreadNotificationChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -10310,6 +10750,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -10320,6 +10761,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadMention(id, body);
@@ -10360,6 +10804,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -10370,6 +10815,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadMention?.call(id, body);
@@ -10408,6 +10856,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -10418,6 +10867,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -10462,6 +10914,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -10477,6 +10930,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadMention(this);
@@ -10514,6 +10970,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -10526,6 +10983,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadMention?.call(this);
@@ -10563,6 +11023,7 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -10575,6 +11036,9 @@ class _$UnreadMentionChannelEventImpl implements UnreadMentionChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -10731,6 +11195,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -10741,6 +11206,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllUnreadMentions(id);
@@ -10781,6 +11249,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -10791,6 +11260,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllUnreadMentions?.call(id);
@@ -10829,6 +11301,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -10839,6 +11312,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -10883,6 +11359,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -10898,6 +11375,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllUnreadMentions(this);
@@ -10935,6 +11415,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -10947,6 +11428,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllUnreadMentions?.call(this);
@@ -10984,6 +11468,7 @@ class _$ReadAllUnreadMentionsChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -10996,6 +11481,9 @@ class _$ReadAllUnreadMentionsChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -11152,6 +11640,7 @@ class _$NotificationFlushedChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -11162,6 +11651,9 @@ class _$NotificationFlushedChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return notificationFlushed(id);
@@ -11202,6 +11694,7 @@ class _$NotificationFlushedChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -11212,6 +11705,9 @@ class _$NotificationFlushedChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return notificationFlushed?.call(id);
@@ -11250,6 +11746,7 @@ class _$NotificationFlushedChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -11260,6 +11757,9 @@ class _$NotificationFlushedChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -11304,6 +11804,7 @@ class _$NotificationFlushedChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -11319,6 +11820,9 @@ class _$NotificationFlushedChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return notificationFlushed(this);
@@ -11356,6 +11860,7 @@ class _$NotificationFlushedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -11368,6 +11873,9 @@ class _$NotificationFlushedChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return notificationFlushed?.call(this);
@@ -11405,6 +11913,7 @@ class _$NotificationFlushedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -11417,6 +11926,9 @@ class _$NotificationFlushedChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -11580,6 +12092,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -11590,6 +12103,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadSpecifiedNote(id, body);
@@ -11630,6 +12146,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -11640,6 +12157,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadSpecifiedNote?.call(id, body);
@@ -11678,6 +12198,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -11688,6 +12209,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -11732,6 +12256,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -11747,6 +12272,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadSpecifiedNote(this);
@@ -11784,6 +12312,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -11796,6 +12325,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadSpecifiedNote?.call(this);
@@ -11833,6 +12365,7 @@ class _$UnreadSpecifiedNoteChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -11845,6 +12378,9 @@ class _$UnreadSpecifiedNoteChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -12003,6 +12539,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -12013,6 +12550,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllUnreadSpecifiedNotes(id);
@@ -12053,6 +12593,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -12063,6 +12604,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllUnreadSpecifiedNotes?.call(id);
@@ -12101,6 +12645,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -12111,6 +12656,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -12155,6 +12703,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -12170,6 +12719,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllUnreadSpecifiedNotes(this);
@@ -12207,6 +12759,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -12219,6 +12772,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllUnreadSpecifiedNotes?.call(this);
@@ -12256,6 +12812,7 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -12268,6 +12825,9 @@ class _$ReadAllUnreadSpecifiedNotesChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -12424,6 +12984,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -12434,6 +12995,9 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllAntennas(id);
@@ -12474,6 +13038,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -12484,6 +13049,9 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllAntennas?.call(id);
@@ -12522,6 +13090,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -12532,6 +13101,9 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -12576,6 +13148,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -12591,6 +13164,9 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllAntennas(this);
@@ -12628,6 +13204,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -12640,6 +13217,9 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllAntennas?.call(this);
@@ -12677,6 +13257,7 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -12689,6 +13270,9 @@ class _$ReadAllAntennasChannelEventImpl implements ReadAllAntennasChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -12860,6 +13444,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -12870,6 +13455,9 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return unreadAntenna(id, body);
@@ -12910,6 +13498,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -12920,6 +13509,9 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return unreadAntenna?.call(id, body);
@@ -12958,6 +13550,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -12968,6 +13561,9 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -13012,6 +13608,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -13027,6 +13624,9 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return unreadAntenna(this);
@@ -13064,6 +13664,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -13076,6 +13677,9 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return unreadAntenna?.call(this);
@@ -13113,6 +13717,7 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -13125,6 +13730,9 @@ class _$UnreadAntennaChannelEventImpl implements UnreadAntennaChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -13160,6 +13768,465 @@ abstract class UnreadAntennaChannelEvent implements ChannelStreamEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnreadAntennaChannelEventImplCopyWith<_$UnreadAntennaChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NewChatMessageEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$NewChatMessageEventImplCopyWith(_$NewChatMessageEventImpl value,
+          $Res Function(_$NewChatMessageEventImpl) then) =
+      __$$NewChatMessageEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, ChatMessage body});
+
+  $ChatMessageCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$NewChatMessageEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$NewChatMessageEventImpl>
+    implements _$$NewChatMessageEventImplCopyWith<$Res> {
+  __$$NewChatMessageEventImplCopyWithImpl(_$NewChatMessageEventImpl _value,
+      $Res Function(_$NewChatMessageEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$NewChatMessageEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatMessage,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatMessageCopyWith<$Res> get body {
+    return $ChatMessageCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$NewChatMessageEventImpl implements NewChatMessageEvent {
+  const _$NewChatMessageEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'newChatMessage';
+
+  factory _$NewChatMessageEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NewChatMessageEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final ChatMessage body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.newChatMessage(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NewChatMessageEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewChatMessageEventImplCopyWith<_$NewChatMessageEventImpl> get copyWith =>
+      __$$NewChatMessageEventImplCopyWithImpl<_$NewChatMessageEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
+        statsLog,
+    required TResult Function(
+            String id, @StreamingStatsConverter() StreamingStats body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id, PageEvent body) pageEvent,
+    required TResult Function(String id, UrlUploadFinishedEvent body)
+        urlUploadFinished,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, String body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id) notificationFlushed,
+    required TResult Function(String id, String body) unreadSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id) readAllAntennas,
+    required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
+    required TResult Function(String id) readAllAnnouncements,
+    required TResult Function(String id) myTokenRegenerated,
+    required TResult Function(String id, Signin body) signin,
+    required TResult Function(String id, RegistryUpdated body) registryUpdated,
+    required TResult Function(String id, DriveFile body) driveFileCreated,
+    required TResult Function(String id, Antenna body) readAntenna,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id, AnnouncementCreatedStreamEvent body)
+        announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
+    required TResult Function(String id, Object? body) fallback,
+  }) {
+    return newChatMessage(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id, PageEvent body)? pageEvent,
+    TResult? Function(String id, UrlUploadFinishedEvent body)?
+        urlUploadFinished,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, String body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id)? notificationFlushed,
+    TResult? Function(String id, String body)? unreadSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id)? readAllAntennas,
+    TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
+    TResult? Function(String id)? readAllAnnouncements,
+    TResult? Function(String id)? myTokenRegenerated,
+    TResult? Function(String id, Signin body)? signin,
+    TResult? Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult? Function(String id, DriveFile body)? driveFileCreated,
+    TResult? Function(String id, Antenna body)? readAntenna,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
+    TResult? Function(String id, Object? body)? fallback,
+  }) {
+    return newChatMessage?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id, PageEvent body)? pageEvent,
+    TResult Function(String id, UrlUploadFinishedEvent body)? urlUploadFinished,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, String body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id)? notificationFlushed,
+    TResult Function(String id, String body)? unreadSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id)? readAllAntennas,
+    TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
+    TResult Function(String id)? readAllAnnouncements,
+    TResult Function(String id)? myTokenRegenerated,
+    TResult Function(String id, Signin body)? signin,
+    TResult Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult Function(String id, DriveFile body)? driveFileCreated,
+    TResult Function(String id, Antenna body)? readAntenna,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
+    TResult Function(String id, Object? body)? fallback,
+    required TResult orElse(),
+  }) {
+    if (newChatMessage != null) {
+      return newChatMessage(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(PageEventChannelEvent value) pageEvent,
+    required TResult Function(UrlUploadFinishedChannelEvent value)
+        urlUploadFinished,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(NotificationFlushedChannelEvent value)
+        notificationFlushed,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        unreadSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReadAllAntennasChannelEvent value)
+        readAllAntennas,
+    required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
+    required TResult Function(ReadAllAnnouncementsChannelEvent value)
+        readAllAnnouncements,
+    required TResult Function(MyTokenRegeneratedChannelEvent value)
+        myTokenRegenerated,
+    required TResult Function(SigninChannelEvent value) signin,
+    required TResult Function(RegistryUpdatedChannelEvent value)
+        registryUpdated,
+    required TResult Function(DriveFileCreatedChannelEvent value)
+        driveFileCreated,
+    required TResult Function(ReadAntennaChannelEvent value) readAntenna,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(AnnouncementCreatedChannelEvent value)
+        announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
+    required TResult Function(FallbackChannelEvent value) fallback,
+  }) {
+    return newChatMessage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(PageEventChannelEvent value)? pageEvent,
+    TResult? Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
+    TResult? Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult? Function(SigninChannelEvent value)? signin,
+    TResult? Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult? Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult? Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult? Function(FallbackChannelEvent value)? fallback,
+  }) {
+    return newChatMessage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(PageEventChannelEvent value)? pageEvent,
+    TResult Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
+    TResult Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult Function(SigninChannelEvent value)? signin,
+    TResult Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult Function(FallbackChannelEvent value)? fallback,
+    required TResult orElse(),
+  }) {
+    if (newChatMessage != null) {
+      return newChatMessage(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NewChatMessageEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class NewChatMessageEvent implements ChannelStreamEvent {
+  const factory NewChatMessageEvent(
+      {required final String id,
+      required final ChatMessage body}) = _$NewChatMessageEventImpl;
+
+  factory NewChatMessageEvent.fromJson(Map<String, dynamic> json) =
+      _$NewChatMessageEventImpl.fromJson;
+
+  @override
+  String get id;
+  ChatMessage get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NewChatMessageEventImplCopyWith<_$NewChatMessageEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -13281,6 +14348,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -13291,6 +14359,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAllAnnouncements(id);
@@ -13331,6 +14402,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -13341,6 +14413,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAllAnnouncements?.call(id);
@@ -13379,6 +14454,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -13389,6 +14465,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -13433,6 +14512,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -13448,6 +14528,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAllAnnouncements(this);
@@ -13485,6 +14568,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -13497,6 +14581,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAllAnnouncements?.call(this);
@@ -13534,6 +14621,7 @@ class _$ReadAllAnnouncementsChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -13546,6 +14634,9 @@ class _$ReadAllAnnouncementsChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -13701,6 +14792,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -13711,6 +14803,9 @@ class _$MyTokenRegeneratedChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return myTokenRegenerated(id);
@@ -13751,6 +14846,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -13761,6 +14857,9 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return myTokenRegenerated?.call(id);
@@ -13799,6 +14898,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -13809,6 +14909,9 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -13853,6 +14956,7 @@ class _$MyTokenRegeneratedChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -13868,6 +14972,9 @@ class _$MyTokenRegeneratedChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return myTokenRegenerated(this);
@@ -13905,6 +15012,7 @@ class _$MyTokenRegeneratedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -13917,6 +15025,9 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return myTokenRegenerated?.call(this);
@@ -13954,6 +15065,7 @@ class _$MyTokenRegeneratedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -13966,6 +15078,9 @@ class _$MyTokenRegeneratedChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -14135,6 +15250,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -14145,6 +15261,9 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return signin(id, body);
@@ -14185,6 +15304,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -14195,6 +15315,9 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return signin?.call(id, body);
@@ -14233,6 +15356,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -14243,6 +15367,9 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -14287,6 +15414,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -14302,6 +15430,9 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return signin(this);
@@ -14339,6 +15470,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -14351,6 +15483,9 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return signin?.call(this);
@@ -14388,6 +15523,7 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -14400,6 +15536,9 @@ class _$SigninChannelEventImpl implements SigninChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -14574,6 +15713,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -14584,6 +15724,9 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return registryUpdated(id, body);
@@ -14624,6 +15767,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -14634,6 +15778,9 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return registryUpdated?.call(id, body);
@@ -14672,6 +15819,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -14682,6 +15830,9 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -14726,6 +15877,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -14741,6 +15893,9 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return registryUpdated(this);
@@ -14778,6 +15933,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -14790,6 +15946,9 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return registryUpdated?.call(this);
@@ -14827,6 +15986,7 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -14839,6 +15999,9 @@ class _$RegistryUpdatedChannelEventImpl implements RegistryUpdatedChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -15015,6 +16178,7 @@ class _$DriveFileCreatedChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -15025,6 +16189,9 @@ class _$DriveFileCreatedChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return driveFileCreated(id, body);
@@ -15065,6 +16232,7 @@ class _$DriveFileCreatedChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -15075,6 +16243,9 @@ class _$DriveFileCreatedChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return driveFileCreated?.call(id, body);
@@ -15113,6 +16284,7 @@ class _$DriveFileCreatedChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -15123,6 +16295,9 @@ class _$DriveFileCreatedChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -15167,6 +16342,7 @@ class _$DriveFileCreatedChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -15182,6 +16358,9 @@ class _$DriveFileCreatedChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return driveFileCreated(this);
@@ -15219,6 +16398,7 @@ class _$DriveFileCreatedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -15231,6 +16411,9 @@ class _$DriveFileCreatedChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return driveFileCreated?.call(this);
@@ -15268,6 +16451,7 @@ class _$DriveFileCreatedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -15280,6 +16464,9 @@ class _$DriveFileCreatedChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -15454,6 +16641,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -15464,6 +16652,9 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return readAntenna(id, body);
@@ -15504,6 +16695,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -15514,6 +16706,9 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return readAntenna?.call(id, body);
@@ -15552,6 +16747,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -15562,6 +16758,9 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -15606,6 +16805,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -15621,6 +16821,9 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return readAntenna(this);
@@ -15658,6 +16861,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -15670,6 +16874,9 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return readAntenna?.call(this);
@@ -15707,6 +16914,7 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -15719,6 +16927,9 @@ class _$ReadAntennaChannelEventImpl implements ReadAntennaChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -15895,6 +17106,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -15905,6 +17117,9 @@ class _$ReceiveFollowRequestChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return receiveFollowRequest(id, body);
@@ -15945,6 +17160,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -15955,6 +17171,9 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return receiveFollowRequest?.call(id, body);
@@ -15993,6 +17212,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -16003,6 +17223,9 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -16047,6 +17270,7 @@ class _$ReceiveFollowRequestChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -16062,6 +17286,9 @@ class _$ReceiveFollowRequestChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return receiveFollowRequest(this);
@@ -16099,6 +17326,7 @@ class _$ReceiveFollowRequestChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -16111,6 +17339,9 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return receiveFollowRequest?.call(this);
@@ -16148,6 +17379,7 @@ class _$ReceiveFollowRequestChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -16160,6 +17392,9 @@ class _$ReceiveFollowRequestChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -16337,6 +17572,7 @@ class _$AnnouncementCreatedChannelEventImpl
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -16347,6 +17583,9 @@ class _$AnnouncementCreatedChannelEventImpl
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return announcementCreated(id, body);
@@ -16387,6 +17626,7 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -16397,6 +17637,9 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return announcementCreated?.call(id, body);
@@ -16435,6 +17678,7 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -16445,6 +17689,9 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -16489,6 +17736,7 @@ class _$AnnouncementCreatedChannelEventImpl
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -16504,6 +17752,9 @@ class _$AnnouncementCreatedChannelEventImpl
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return announcementCreated(this);
@@ -16541,6 +17792,7 @@ class _$AnnouncementCreatedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -16553,6 +17805,9 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return announcementCreated?.call(this);
@@ -16590,6 +17845,7 @@ class _$AnnouncementCreatedChannelEventImpl
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -16602,6 +17858,9 @@ class _$AnnouncementCreatedChannelEventImpl
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -16777,6 +18036,7 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -16787,6 +18047,9 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return chatMessage(id, body);
@@ -16827,6 +18090,7 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -16837,6 +18101,9 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return chatMessage?.call(id, body);
@@ -16875,6 +18142,7 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -16885,6 +18153,9 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -16929,6 +18200,7 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -16944,6 +18216,9 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return chatMessage(this);
@@ -16981,6 +18256,7 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -16993,6 +18269,9 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return chatMessage?.call(this);
@@ -17030,6 +18309,7 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -17042,6 +18322,9 @@ class _$ChatMessageChannelEventImpl implements ChatMessageChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
@@ -17076,6 +18359,1378 @@ abstract class ChatMessageChannelEvent implements ChannelStreamEvent {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChatMessageChannelEventImplCopyWith<_$ChatMessageChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChatDeletedChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ChatDeletedChannelEventImplCopyWith(
+          _$ChatDeletedChannelEventImpl value,
+          $Res Function(_$ChatDeletedChannelEventImpl) then) =
+      __$$ChatDeletedChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String body});
+}
+
+/// @nodoc
+class __$$ChatDeletedChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ChatDeletedChannelEventImpl>
+    implements _$$ChatDeletedChannelEventImplCopyWith<$Res> {
+  __$$ChatDeletedChannelEventImplCopyWithImpl(
+      _$ChatDeletedChannelEventImpl _value,
+      $Res Function(_$ChatDeletedChannelEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$ChatDeletedChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChatDeletedChannelEventImpl implements ChatDeletedChannelEvent {
+  const _$ChatDeletedChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'deleted';
+
+  factory _$ChatDeletedChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChatDeletedChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatDeleted(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatDeletedChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatDeletedChannelEventImplCopyWith<_$ChatDeletedChannelEventImpl>
+      get copyWith => __$$ChatDeletedChannelEventImplCopyWithImpl<
+          _$ChatDeletedChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
+        statsLog,
+    required TResult Function(
+            String id, @StreamingStatsConverter() StreamingStats body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id, PageEvent body) pageEvent,
+    required TResult Function(String id, UrlUploadFinishedEvent body)
+        urlUploadFinished,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, String body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id) notificationFlushed,
+    required TResult Function(String id, String body) unreadSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id) readAllAntennas,
+    required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
+    required TResult Function(String id) readAllAnnouncements,
+    required TResult Function(String id) myTokenRegenerated,
+    required TResult Function(String id, Signin body) signin,
+    required TResult Function(String id, RegistryUpdated body) registryUpdated,
+    required TResult Function(String id, DriveFile body) driveFileCreated,
+    required TResult Function(String id, Antenna body) readAntenna,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id, AnnouncementCreatedStreamEvent body)
+        announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
+    required TResult Function(String id, Object? body) fallback,
+  }) {
+    return chatDeleted(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id, PageEvent body)? pageEvent,
+    TResult? Function(String id, UrlUploadFinishedEvent body)?
+        urlUploadFinished,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, String body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id)? notificationFlushed,
+    TResult? Function(String id, String body)? unreadSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id)? readAllAntennas,
+    TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
+    TResult? Function(String id)? readAllAnnouncements,
+    TResult? Function(String id)? myTokenRegenerated,
+    TResult? Function(String id, Signin body)? signin,
+    TResult? Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult? Function(String id, DriveFile body)? driveFileCreated,
+    TResult? Function(String id, Antenna body)? readAntenna,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
+    TResult? Function(String id, Object? body)? fallback,
+  }) {
+    return chatDeleted?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id, PageEvent body)? pageEvent,
+    TResult Function(String id, UrlUploadFinishedEvent body)? urlUploadFinished,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, String body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id)? notificationFlushed,
+    TResult Function(String id, String body)? unreadSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id)? readAllAntennas,
+    TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
+    TResult Function(String id)? readAllAnnouncements,
+    TResult Function(String id)? myTokenRegenerated,
+    TResult Function(String id, Signin body)? signin,
+    TResult Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult Function(String id, DriveFile body)? driveFileCreated,
+    TResult Function(String id, Antenna body)? readAntenna,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
+    TResult Function(String id, Object? body)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatDeleted != null) {
+      return chatDeleted(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(PageEventChannelEvent value) pageEvent,
+    required TResult Function(UrlUploadFinishedChannelEvent value)
+        urlUploadFinished,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(NotificationFlushedChannelEvent value)
+        notificationFlushed,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        unreadSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReadAllAntennasChannelEvent value)
+        readAllAntennas,
+    required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
+    required TResult Function(ReadAllAnnouncementsChannelEvent value)
+        readAllAnnouncements,
+    required TResult Function(MyTokenRegeneratedChannelEvent value)
+        myTokenRegenerated,
+    required TResult Function(SigninChannelEvent value) signin,
+    required TResult Function(RegistryUpdatedChannelEvent value)
+        registryUpdated,
+    required TResult Function(DriveFileCreatedChannelEvent value)
+        driveFileCreated,
+    required TResult Function(ReadAntennaChannelEvent value) readAntenna,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(AnnouncementCreatedChannelEvent value)
+        announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
+    required TResult Function(FallbackChannelEvent value) fallback,
+  }) {
+    return chatDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(PageEventChannelEvent value)? pageEvent,
+    TResult? Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
+    TResult? Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult? Function(SigninChannelEvent value)? signin,
+    TResult? Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult? Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult? Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult? Function(FallbackChannelEvent value)? fallback,
+  }) {
+    return chatDeleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(PageEventChannelEvent value)? pageEvent,
+    TResult Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
+    TResult Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult Function(SigninChannelEvent value)? signin,
+    TResult Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult Function(FallbackChannelEvent value)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatDeleted != null) {
+      return chatDeleted(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatDeletedChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ChatDeletedChannelEvent implements ChannelStreamEvent {
+  const factory ChatDeletedChannelEvent(
+      {required final String id,
+      required final String body}) = _$ChatDeletedChannelEventImpl;
+
+  factory ChatDeletedChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ChatDeletedChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  String get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChatDeletedChannelEventImplCopyWith<_$ChatDeletedChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChatReactChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ChatReactChannelEventImplCopyWith(
+          _$ChatReactChannelEventImpl value,
+          $Res Function(_$ChatReactChannelEventImpl) then) =
+      __$$ChatReactChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, ChatReact body});
+
+  $ChatReactCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$ChatReactChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res, _$ChatReactChannelEventImpl>
+    implements _$$ChatReactChannelEventImplCopyWith<$Res> {
+  __$$ChatReactChannelEventImplCopyWithImpl(_$ChatReactChannelEventImpl _value,
+      $Res Function(_$ChatReactChannelEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$ChatReactChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatReact,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatReactCopyWith<$Res> get body {
+    return $ChatReactCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChatReactChannelEventImpl implements ChatReactChannelEvent {
+  const _$ChatReactChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'react';
+
+  factory _$ChatReactChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChatReactChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final ChatReact body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatReact(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatReactChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatReactChannelEventImplCopyWith<_$ChatReactChannelEventImpl>
+      get copyWith => __$$ChatReactChannelEventImplCopyWithImpl<
+          _$ChatReactChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
+        statsLog,
+    required TResult Function(
+            String id, @StreamingStatsConverter() StreamingStats body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id, PageEvent body) pageEvent,
+    required TResult Function(String id, UrlUploadFinishedEvent body)
+        urlUploadFinished,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, String body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id) notificationFlushed,
+    required TResult Function(String id, String body) unreadSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id) readAllAntennas,
+    required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
+    required TResult Function(String id) readAllAnnouncements,
+    required TResult Function(String id) myTokenRegenerated,
+    required TResult Function(String id, Signin body) signin,
+    required TResult Function(String id, RegistryUpdated body) registryUpdated,
+    required TResult Function(String id, DriveFile body) driveFileCreated,
+    required TResult Function(String id, Antenna body) readAntenna,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id, AnnouncementCreatedStreamEvent body)
+        announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
+    required TResult Function(String id, Object? body) fallback,
+  }) {
+    return chatReact(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id, PageEvent body)? pageEvent,
+    TResult? Function(String id, UrlUploadFinishedEvent body)?
+        urlUploadFinished,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, String body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id)? notificationFlushed,
+    TResult? Function(String id, String body)? unreadSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id)? readAllAntennas,
+    TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
+    TResult? Function(String id)? readAllAnnouncements,
+    TResult? Function(String id)? myTokenRegenerated,
+    TResult? Function(String id, Signin body)? signin,
+    TResult? Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult? Function(String id, DriveFile body)? driveFileCreated,
+    TResult? Function(String id, Antenna body)? readAntenna,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
+    TResult? Function(String id, Object? body)? fallback,
+  }) {
+    return chatReact?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id, PageEvent body)? pageEvent,
+    TResult Function(String id, UrlUploadFinishedEvent body)? urlUploadFinished,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, String body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id)? notificationFlushed,
+    TResult Function(String id, String body)? unreadSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id)? readAllAntennas,
+    TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
+    TResult Function(String id)? readAllAnnouncements,
+    TResult Function(String id)? myTokenRegenerated,
+    TResult Function(String id, Signin body)? signin,
+    TResult Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult Function(String id, DriveFile body)? driveFileCreated,
+    TResult Function(String id, Antenna body)? readAntenna,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
+    TResult Function(String id, Object? body)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatReact != null) {
+      return chatReact(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(PageEventChannelEvent value) pageEvent,
+    required TResult Function(UrlUploadFinishedChannelEvent value)
+        urlUploadFinished,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(NotificationFlushedChannelEvent value)
+        notificationFlushed,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        unreadSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReadAllAntennasChannelEvent value)
+        readAllAntennas,
+    required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
+    required TResult Function(ReadAllAnnouncementsChannelEvent value)
+        readAllAnnouncements,
+    required TResult Function(MyTokenRegeneratedChannelEvent value)
+        myTokenRegenerated,
+    required TResult Function(SigninChannelEvent value) signin,
+    required TResult Function(RegistryUpdatedChannelEvent value)
+        registryUpdated,
+    required TResult Function(DriveFileCreatedChannelEvent value)
+        driveFileCreated,
+    required TResult Function(ReadAntennaChannelEvent value) readAntenna,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(AnnouncementCreatedChannelEvent value)
+        announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
+    required TResult Function(FallbackChannelEvent value) fallback,
+  }) {
+    return chatReact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(PageEventChannelEvent value)? pageEvent,
+    TResult? Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
+    TResult? Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult? Function(SigninChannelEvent value)? signin,
+    TResult? Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult? Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult? Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult? Function(FallbackChannelEvent value)? fallback,
+  }) {
+    return chatReact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(PageEventChannelEvent value)? pageEvent,
+    TResult Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
+    TResult Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult Function(SigninChannelEvent value)? signin,
+    TResult Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult Function(FallbackChannelEvent value)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatReact != null) {
+      return chatReact(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatReactChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ChatReactChannelEvent implements ChannelStreamEvent {
+  const factory ChatReactChannelEvent(
+      {required final String id,
+      required final ChatReact body}) = _$ChatReactChannelEventImpl;
+
+  factory ChatReactChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ChatReactChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  ChatReact get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChatReactChannelEventImplCopyWith<_$ChatReactChannelEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChatUnreactChannelEventImplCopyWith<$Res>
+    implements $ChannelStreamEventCopyWith<$Res> {
+  factory _$$ChatUnreactChannelEventImplCopyWith(
+          _$ChatUnreactChannelEventImpl value,
+          $Res Function(_$ChatUnreactChannelEventImpl) then) =
+      __$$ChatUnreactChannelEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, ChatReact body});
+
+  $ChatReactCopyWith<$Res> get body;
+}
+
+/// @nodoc
+class __$$ChatUnreactChannelEventImplCopyWithImpl<$Res>
+    extends _$ChannelStreamEventCopyWithImpl<$Res,
+        _$ChatUnreactChannelEventImpl>
+    implements _$$ChatUnreactChannelEventImplCopyWith<$Res> {
+  __$$ChatUnreactChannelEventImplCopyWithImpl(
+      _$ChatUnreactChannelEventImpl _value,
+      $Res Function(_$ChatUnreactChannelEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? body = null,
+  }) {
+    return _then(_$ChatUnreactChannelEventImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as ChatReact,
+    ));
+  }
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatReactCopyWith<$Res> get body {
+    return $ChatReactCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChatUnreactChannelEventImpl implements ChatUnreactChannelEvent {
+  const _$ChatUnreactChannelEventImpl(
+      {required this.id, required this.body, final String? $type})
+      : $type = $type ?? 'unreact';
+
+  factory _$ChatUnreactChannelEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChatUnreactChannelEventImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final ChatReact body;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ChannelStreamEvent.chatUnreact(id: $id, body: $body)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatUnreactChannelEventImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, body);
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatUnreactChannelEventImplCopyWith<_$ChatUnreactChannelEventImpl>
+      get copyWith => __$$ChatUnreactChannelEventImplCopyWithImpl<
+          _$ChatUnreactChannelEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)
+        note,
+    required TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)
+        statsLog,
+    required TResult Function(
+            String id, @StreamingStatsConverter() StreamingStats body)
+        stats,
+    required TResult Function(String id, UserLite body) userAdded,
+    required TResult Function(String id, UserLite body) userRemoved,
+    required TResult Function(String id, INotificationsResponse body)
+        notification,
+    required TResult Function(String id, Note body) mention,
+    required TResult Function(String id, Note body) reply,
+    required TResult Function(String id, Note body) renote,
+    required TResult Function(String id, UserDetailedNotMe body) follow,
+    required TResult Function(String id, UserLite body) followed,
+    required TResult Function(String id, UserDetailedNotMe body) unfollow,
+    required TResult Function(String id, MeDetailed body) meUpdated,
+    required TResult Function(String id, PageEvent body) pageEvent,
+    required TResult Function(String id, UrlUploadFinishedEvent body)
+        urlUploadFinished,
+    required TResult Function(String id) readAllNotifications,
+    required TResult Function(String id, INotificationsResponse body)
+        unreadNotification,
+    required TResult Function(String id, String body) unreadMention,
+    required TResult Function(String id) readAllUnreadMentions,
+    required TResult Function(String id) notificationFlushed,
+    required TResult Function(String id, String body) unreadSpecifiedNote,
+    required TResult Function(String id) readAllUnreadSpecifiedNotes,
+    required TResult Function(String id) readAllAntennas,
+    required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
+    required TResult Function(String id) readAllAnnouncements,
+    required TResult Function(String id) myTokenRegenerated,
+    required TResult Function(String id, Signin body) signin,
+    required TResult Function(String id, RegistryUpdated body) registryUpdated,
+    required TResult Function(String id, DriveFile body) driveFileCreated,
+    required TResult Function(String id, Antenna body) readAntenna,
+    required TResult Function(String id, UserLite body) receiveFollowRequest,
+    required TResult Function(String id, AnnouncementCreatedStreamEvent body)
+        announcementCreated,
+    required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
+    required TResult Function(String id, Object? body) fallback,
+  }) {
+    return chatUnreact(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult? Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult? Function(
+            String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult? Function(String id, UserLite body)? userAdded,
+    TResult? Function(String id, UserLite body)? userRemoved,
+    TResult? Function(String id, INotificationsResponse body)? notification,
+    TResult? Function(String id, Note body)? mention,
+    TResult? Function(String id, Note body)? reply,
+    TResult? Function(String id, Note body)? renote,
+    TResult? Function(String id, UserDetailedNotMe body)? follow,
+    TResult? Function(String id, UserLite body)? followed,
+    TResult? Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult? Function(String id, MeDetailed body)? meUpdated,
+    TResult? Function(String id, PageEvent body)? pageEvent,
+    TResult? Function(String id, UrlUploadFinishedEvent body)?
+        urlUploadFinished,
+    TResult? Function(String id)? readAllNotifications,
+    TResult? Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult? Function(String id, String body)? unreadMention,
+    TResult? Function(String id)? readAllUnreadMentions,
+    TResult? Function(String id)? notificationFlushed,
+    TResult? Function(String id, String body)? unreadSpecifiedNote,
+    TResult? Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult? Function(String id)? readAllAntennas,
+    TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
+    TResult? Function(String id)? readAllAnnouncements,
+    TResult? Function(String id)? myTokenRegenerated,
+    TResult? Function(String id, Signin body)? signin,
+    TResult? Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult? Function(String id, DriveFile body)? driveFileCreated,
+    TResult? Function(String id, Antenna body)? readAntenna,
+    TResult? Function(String id, UserLite body)? receiveFollowRequest,
+    TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
+    TResult? Function(String id, Object? body)? fallback,
+  }) {
+    return chatUnreact?.call(id, body);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id,
+            @ChannelEventTypeJsonConverter() ChannelEventType type, Note body)?
+        note,
+    TResult Function(
+            String id, @StreamingStatsConverter() List<StreamingStats> body)?
+        statsLog,
+    TResult Function(String id, @StreamingStatsConverter() StreamingStats body)?
+        stats,
+    TResult Function(String id, UserLite body)? userAdded,
+    TResult Function(String id, UserLite body)? userRemoved,
+    TResult Function(String id, INotificationsResponse body)? notification,
+    TResult Function(String id, Note body)? mention,
+    TResult Function(String id, Note body)? reply,
+    TResult Function(String id, Note body)? renote,
+    TResult Function(String id, UserDetailedNotMe body)? follow,
+    TResult Function(String id, UserLite body)? followed,
+    TResult Function(String id, UserDetailedNotMe body)? unfollow,
+    TResult Function(String id, MeDetailed body)? meUpdated,
+    TResult Function(String id, PageEvent body)? pageEvent,
+    TResult Function(String id, UrlUploadFinishedEvent body)? urlUploadFinished,
+    TResult Function(String id)? readAllNotifications,
+    TResult Function(String id, INotificationsResponse body)?
+        unreadNotification,
+    TResult Function(String id, String body)? unreadMention,
+    TResult Function(String id)? readAllUnreadMentions,
+    TResult Function(String id)? notificationFlushed,
+    TResult Function(String id, String body)? unreadSpecifiedNote,
+    TResult Function(String id)? readAllUnreadSpecifiedNotes,
+    TResult Function(String id)? readAllAntennas,
+    TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
+    TResult Function(String id)? readAllAnnouncements,
+    TResult Function(String id)? myTokenRegenerated,
+    TResult Function(String id, Signin body)? signin,
+    TResult Function(String id, RegistryUpdated body)? registryUpdated,
+    TResult Function(String id, DriveFile body)? driveFileCreated,
+    TResult Function(String id, Antenna body)? readAntenna,
+    TResult Function(String id, UserLite body)? receiveFollowRequest,
+    TResult Function(String id, AnnouncementCreatedStreamEvent body)?
+        announcementCreated,
+    TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
+    TResult Function(String id, Object? body)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatUnreact != null) {
+      return chatUnreact(id, body);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoteChannelEvent value) note,
+    required TResult Function(StatsLogChannelEvent value) statsLog,
+    required TResult Function(StatsChannelEvent value) stats,
+    required TResult Function(UserAddedChannelEvent value) userAdded,
+    required TResult Function(UserRemovedChannelEvent value) userRemoved,
+    required TResult Function(NotificationChannelEvent value) notification,
+    required TResult Function(MentionChannelEvent value) mention,
+    required TResult Function(ReplyChannelEvent value) reply,
+    required TResult Function(RenoteChannelEvent value) renote,
+    required TResult Function(FollowChannelEvent value) follow,
+    required TResult Function(FollowedChannelEvent value) followed,
+    required TResult Function(UnfollowChannelEvent value) unfollow,
+    required TResult Function(MeUpdatedChannelEvent value) meUpdated,
+    required TResult Function(PageEventChannelEvent value) pageEvent,
+    required TResult Function(UrlUploadFinishedChannelEvent value)
+        urlUploadFinished,
+    required TResult Function(ReadAllNotificationsChannelEvent value)
+        readAllNotifications,
+    required TResult Function(UnreadNotificationChannelEvent value)
+        unreadNotification,
+    required TResult Function(UnreadMentionChannelEvent value) unreadMention,
+    required TResult Function(ReadAllUnreadMentionsChannelEvent value)
+        readAllUnreadMentions,
+    required TResult Function(NotificationFlushedChannelEvent value)
+        notificationFlushed,
+    required TResult Function(UnreadSpecifiedNoteChannelEvent value)
+        unreadSpecifiedNote,
+    required TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)
+        readAllUnreadSpecifiedNotes,
+    required TResult Function(ReadAllAntennasChannelEvent value)
+        readAllAntennas,
+    required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
+    required TResult Function(ReadAllAnnouncementsChannelEvent value)
+        readAllAnnouncements,
+    required TResult Function(MyTokenRegeneratedChannelEvent value)
+        myTokenRegenerated,
+    required TResult Function(SigninChannelEvent value) signin,
+    required TResult Function(RegistryUpdatedChannelEvent value)
+        registryUpdated,
+    required TResult Function(DriveFileCreatedChannelEvent value)
+        driveFileCreated,
+    required TResult Function(ReadAntennaChannelEvent value) readAntenna,
+    required TResult Function(ReceiveFollowRequestChannelEvent value)
+        receiveFollowRequest,
+    required TResult Function(AnnouncementCreatedChannelEvent value)
+        announcementCreated,
+    required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
+    required TResult Function(FallbackChannelEvent value) fallback,
+  }) {
+    return chatUnreact(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoteChannelEvent value)? note,
+    TResult? Function(StatsLogChannelEvent value)? statsLog,
+    TResult? Function(StatsChannelEvent value)? stats,
+    TResult? Function(UserAddedChannelEvent value)? userAdded,
+    TResult? Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult? Function(NotificationChannelEvent value)? notification,
+    TResult? Function(MentionChannelEvent value)? mention,
+    TResult? Function(ReplyChannelEvent value)? reply,
+    TResult? Function(RenoteChannelEvent value)? renote,
+    TResult? Function(FollowChannelEvent value)? follow,
+    TResult? Function(FollowedChannelEvent value)? followed,
+    TResult? Function(UnfollowChannelEvent value)? unfollow,
+    TResult? Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult? Function(PageEventChannelEvent value)? pageEvent,
+    TResult? Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult? Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult? Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult? Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult? Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult? Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult? Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult? Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
+    TResult? Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult? Function(SigninChannelEvent value)? signin,
+    TResult? Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult? Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult? Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult? Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult? Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult? Function(FallbackChannelEvent value)? fallback,
+  }) {
+    return chatUnreact?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoteChannelEvent value)? note,
+    TResult Function(StatsLogChannelEvent value)? statsLog,
+    TResult Function(StatsChannelEvent value)? stats,
+    TResult Function(UserAddedChannelEvent value)? userAdded,
+    TResult Function(UserRemovedChannelEvent value)? userRemoved,
+    TResult Function(NotificationChannelEvent value)? notification,
+    TResult Function(MentionChannelEvent value)? mention,
+    TResult Function(ReplyChannelEvent value)? reply,
+    TResult Function(RenoteChannelEvent value)? renote,
+    TResult Function(FollowChannelEvent value)? follow,
+    TResult Function(FollowedChannelEvent value)? followed,
+    TResult Function(UnfollowChannelEvent value)? unfollow,
+    TResult Function(MeUpdatedChannelEvent value)? meUpdated,
+    TResult Function(PageEventChannelEvent value)? pageEvent,
+    TResult Function(UrlUploadFinishedChannelEvent value)? urlUploadFinished,
+    TResult Function(ReadAllNotificationsChannelEvent value)?
+        readAllNotifications,
+    TResult Function(UnreadNotificationChannelEvent value)? unreadNotification,
+    TResult Function(UnreadMentionChannelEvent value)? unreadMention,
+    TResult Function(ReadAllUnreadMentionsChannelEvent value)?
+        readAllUnreadMentions,
+    TResult Function(NotificationFlushedChannelEvent value)?
+        notificationFlushed,
+    TResult Function(UnreadSpecifiedNoteChannelEvent value)?
+        unreadSpecifiedNote,
+    TResult Function(ReadAllUnreadSpecifiedNotesChannelEvent value)?
+        readAllUnreadSpecifiedNotes,
+    TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
+    TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
+    TResult Function(ReadAllAnnouncementsChannelEvent value)?
+        readAllAnnouncements,
+    TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
+    TResult Function(SigninChannelEvent value)? signin,
+    TResult Function(RegistryUpdatedChannelEvent value)? registryUpdated,
+    TResult Function(DriveFileCreatedChannelEvent value)? driveFileCreated,
+    TResult Function(ReadAntennaChannelEvent value)? readAntenna,
+    TResult Function(ReceiveFollowRequestChannelEvent value)?
+        receiveFollowRequest,
+    TResult Function(AnnouncementCreatedChannelEvent value)?
+        announcementCreated,
+    TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
+    TResult Function(FallbackChannelEvent value)? fallback,
+    required TResult orElse(),
+  }) {
+    if (chatUnreact != null) {
+      return chatUnreact(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatUnreactChannelEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ChatUnreactChannelEvent implements ChannelStreamEvent {
+  const factory ChatUnreactChannelEvent(
+      {required final String id,
+      required final ChatReact body}) = _$ChatUnreactChannelEventImpl;
+
+  factory ChatUnreactChannelEvent.fromJson(Map<String, dynamic> json) =
+      _$ChatUnreactChannelEventImpl.fromJson;
+
+  @override
+  String get id;
+  ChatReact get body;
+
+  /// Create a copy of ChannelStreamEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChatUnreactChannelEventImplCopyWith<_$ChatUnreactChannelEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -17199,6 +19854,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     required TResult Function(String id) readAllUnreadSpecifiedNotes,
     required TResult Function(String id) readAllAntennas,
     required TResult Function(String id, Antenna body) unreadAntenna,
+    required TResult Function(String id, ChatMessage body) newChatMessage,
     required TResult Function(String id) readAllAnnouncements,
     required TResult Function(String id) myTokenRegenerated,
     required TResult Function(String id, Signin body) signin,
@@ -17209,6 +19865,9 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     required TResult Function(String id, AnnouncementCreatedStreamEvent body)
         announcementCreated,
     required TResult Function(String id, ChatMessage body) chatMessage,
+    required TResult Function(String id, String body) chatDeleted,
+    required TResult Function(String id, ChatReact body) chatReact,
+    required TResult Function(String id, ChatReact body) chatUnreact,
     required TResult Function(String id, Object? body) fallback,
   }) {
     return fallback(id, body);
@@ -17249,6 +19908,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult? Function(String id)? readAllUnreadSpecifiedNotes,
     TResult? Function(String id)? readAllAntennas,
     TResult? Function(String id, Antenna body)? unreadAntenna,
+    TResult? Function(String id, ChatMessage body)? newChatMessage,
     TResult? Function(String id)? readAllAnnouncements,
     TResult? Function(String id)? myTokenRegenerated,
     TResult? Function(String id, Signin body)? signin,
@@ -17259,6 +19919,9 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult? Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult? Function(String id, ChatMessage body)? chatMessage,
+    TResult? Function(String id, String body)? chatDeleted,
+    TResult? Function(String id, ChatReact body)? chatReact,
+    TResult? Function(String id, ChatReact body)? chatUnreact,
     TResult? Function(String id, Object? body)? fallback,
   }) {
     return fallback?.call(id, body);
@@ -17297,6 +19960,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult Function(String id)? readAllUnreadSpecifiedNotes,
     TResult Function(String id)? readAllAntennas,
     TResult Function(String id, Antenna body)? unreadAntenna,
+    TResult Function(String id, ChatMessage body)? newChatMessage,
     TResult Function(String id)? readAllAnnouncements,
     TResult Function(String id)? myTokenRegenerated,
     TResult Function(String id, Signin body)? signin,
@@ -17307,6 +19971,9 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult Function(String id, AnnouncementCreatedStreamEvent body)?
         announcementCreated,
     TResult Function(String id, ChatMessage body)? chatMessage,
+    TResult Function(String id, String body)? chatDeleted,
+    TResult Function(String id, ChatReact body)? chatReact,
+    TResult Function(String id, ChatReact body)? chatUnreact,
     TResult Function(String id, Object? body)? fallback,
     required TResult orElse(),
   }) {
@@ -17351,6 +20018,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     required TResult Function(ReadAllAntennasChannelEvent value)
         readAllAntennas,
     required TResult Function(UnreadAntennaChannelEvent value) unreadAntenna,
+    required TResult Function(NewChatMessageEvent value) newChatMessage,
     required TResult Function(ReadAllAnnouncementsChannelEvent value)
         readAllAnnouncements,
     required TResult Function(MyTokenRegeneratedChannelEvent value)
@@ -17366,6 +20034,9 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     required TResult Function(AnnouncementCreatedChannelEvent value)
         announcementCreated,
     required TResult Function(ChatMessageChannelEvent value) chatMessage,
+    required TResult Function(ChatDeletedChannelEvent value) chatDeleted,
+    required TResult Function(ChatReactChannelEvent value) chatReact,
+    required TResult Function(ChatUnreactChannelEvent value) chatUnreact,
     required TResult Function(FallbackChannelEvent value) fallback,
   }) {
     return fallback(this);
@@ -17403,6 +20074,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult? Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult? Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult? Function(NewChatMessageEvent value)? newChatMessage,
     TResult? Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult? Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -17415,6 +20087,9 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult? Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult? Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult? Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult? Function(ChatReactChannelEvent value)? chatReact,
+    TResult? Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult? Function(FallbackChannelEvent value)? fallback,
   }) {
     return fallback?.call(this);
@@ -17452,6 +20127,7 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
         readAllUnreadSpecifiedNotes,
     TResult Function(ReadAllAntennasChannelEvent value)? readAllAntennas,
     TResult Function(UnreadAntennaChannelEvent value)? unreadAntenna,
+    TResult Function(NewChatMessageEvent value)? newChatMessage,
     TResult Function(ReadAllAnnouncementsChannelEvent value)?
         readAllAnnouncements,
     TResult Function(MyTokenRegeneratedChannelEvent value)? myTokenRegenerated,
@@ -17464,6 +20140,9 @@ class _$FallbackChannelEventImpl implements FallbackChannelEvent {
     TResult Function(AnnouncementCreatedChannelEvent value)?
         announcementCreated,
     TResult Function(ChatMessageChannelEvent value)? chatMessage,
+    TResult Function(ChatDeletedChannelEvent value)? chatDeleted,
+    TResult Function(ChatReactChannelEvent value)? chatReact,
+    TResult Function(ChatUnreactChannelEvent value)? chatUnreact,
     TResult Function(FallbackChannelEvent value)? fallback,
     required TResult orElse(),
   }) {
