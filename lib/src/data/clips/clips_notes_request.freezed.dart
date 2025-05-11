@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,88 +10,54 @@ part of 'clips_notes_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-ClipsNotesRequest _$ClipsNotesRequestFromJson(Map<String, dynamic> json) {
-  return _ClipsNotesRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ClipsNotesRequest {
   @Assert('limit > 0')
-  int? get limit => throw _privateConstructorUsedError;
-  String get clipId => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  int? get limit;
+  String get clipId;
+  String? get sinceId;
+  String? get untilId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ClipsNotesRequestCopyWith<ClipsNotesRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ClipsNotesRequestCopyWith<$Res> {
-  factory $ClipsNotesRequestCopyWith(
-          ClipsNotesRequest value, $Res Function(ClipsNotesRequest) then) =
-      _$ClipsNotesRequestCopyWithImpl<$Res, ClipsNotesRequest>;
-  @useResult
-  $Res call(
-      {@Assert('limit > 0') int? limit,
-      String clipId,
-      String? sinceId,
-      String? untilId});
-}
-
-/// @nodoc
-class _$ClipsNotesRequestCopyWithImpl<$Res, $Val extends ClipsNotesRequest>
-    implements $ClipsNotesRequestCopyWith<$Res> {
-  _$ClipsNotesRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ClipsNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ClipsNotesRequestCopyWith<ClipsNotesRequest> get copyWith =>
+      _$ClipsNotesRequestCopyWithImpl<ClipsNotesRequest>(
+          this as ClipsNotesRequest, _$identity);
+
+  /// Serializes this ClipsNotesRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? clipId = null,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      clipId: null == clipId
-          ? _value.clipId
-          : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ClipsNotesRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.clipId, clipId) || other.clipId == clipId) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, clipId, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'ClipsNotesRequest(limit: $limit, clipId: $clipId, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ClipsNotesRequestImplCopyWith<$Res>
-    implements $ClipsNotesRequestCopyWith<$Res> {
-  factory _$$ClipsNotesRequestImplCopyWith(_$ClipsNotesRequestImpl value,
-          $Res Function(_$ClipsNotesRequestImpl) then) =
-      __$$ClipsNotesRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ClipsNotesRequestCopyWith<$Res> {
+  factory $ClipsNotesRequestCopyWith(
+          ClipsNotesRequest value, $Res Function(ClipsNotesRequest) _then) =
+      _$ClipsNotesRequestCopyWithImpl;
   @useResult
   $Res call(
       {@Assert('limit > 0') int? limit,
@@ -100,13 +67,15 @@ abstract class _$$ClipsNotesRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
-    extends _$ClipsNotesRequestCopyWithImpl<$Res, _$ClipsNotesRequestImpl>
-    implements _$$ClipsNotesRequestImplCopyWith<$Res> {
-  __$$ClipsNotesRequestImplCopyWithImpl(_$ClipsNotesRequestImpl _value,
-      $Res Function(_$ClipsNotesRequestImpl) _then)
-      : super(_value, _then);
+class _$ClipsNotesRequestCopyWithImpl<$Res>
+    implements $ClipsNotesRequestCopyWith<$Res> {
+  _$ClipsNotesRequestCopyWithImpl(this._self, this._then);
 
+  final ClipsNotesRequest _self;
+  final $Res Function(ClipsNotesRequest) _then;
+
+  /// Create a copy of ClipsNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -115,21 +84,21 @@ class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$ClipsNotesRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       clipId: null == clipId
-          ? _value.clipId
+          ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
               as String,
       sinceId: freezed == sinceId
-          ? _value.sinceId
+          ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -138,15 +107,14 @@ class __$$ClipsNotesRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ClipsNotesRequestImpl implements _ClipsNotesRequest {
-  const _$ClipsNotesRequestImpl(
+class _ClipsNotesRequest implements ClipsNotesRequest {
+  const _ClipsNotesRequest(
       {@Assert('limit > 0') this.limit,
       required this.clipId,
       this.sinceId,
       this.untilId});
-
-  factory _$ClipsNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ClipsNotesRequestImplFromJson(json);
+  factory _ClipsNotesRequest.fromJson(Map<String, dynamic> json) =>
+      _$ClipsNotesRequestFromJson(json);
 
   @override
   @Assert('limit > 0')
@@ -158,62 +126,94 @@ class _$ClipsNotesRequestImpl implements _ClipsNotesRequest {
   @override
   final String? untilId;
 
+  /// Create a copy of ClipsNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ClipsNotesRequest(limit: $limit, clipId: $clipId, sinceId: $sinceId, untilId: $untilId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ClipsNotesRequestCopyWith<_ClipsNotesRequest> get copyWith =>
+      __$ClipsNotesRequestCopyWithImpl<_ClipsNotesRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ClipsNotesRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClipsNotesRequestImpl &&
+            other is _ClipsNotesRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, clipId, sinceId, untilId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ClipsNotesRequestImplCopyWith<_$ClipsNotesRequestImpl> get copyWith =>
-      __$$ClipsNotesRequestImplCopyWithImpl<_$ClipsNotesRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ClipsNotesRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ClipsNotesRequest(limit: $limit, clipId: $clipId, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _ClipsNotesRequest implements ClipsNotesRequest {
-  const factory _ClipsNotesRequest(
-      {@Assert('limit > 0') final int? limit,
-      required final String clipId,
-      final String? sinceId,
-      final String? untilId}) = _$ClipsNotesRequestImpl;
-
-  factory _ClipsNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$ClipsNotesRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ClipsNotesRequestCopyWith<$Res>
+    implements $ClipsNotesRequestCopyWith<$Res> {
+  factory _$ClipsNotesRequestCopyWith(
+          _ClipsNotesRequest value, $Res Function(_ClipsNotesRequest) _then) =
+      __$ClipsNotesRequestCopyWithImpl;
   @override
-  @Assert('limit > 0')
-  int? get limit;
-  @override
-  String get clipId;
-  @override
-  String? get sinceId;
-  @override
-  String? get untilId;
-  @override
-  @JsonKey(ignore: true)
-  _$$ClipsNotesRequestImplCopyWith<_$ClipsNotesRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {@Assert('limit > 0') int? limit,
+      String clipId,
+      String? sinceId,
+      String? untilId});
 }
+
+/// @nodoc
+class __$ClipsNotesRequestCopyWithImpl<$Res>
+    implements _$ClipsNotesRequestCopyWith<$Res> {
+  __$ClipsNotesRequestCopyWithImpl(this._self, this._then);
+
+  final _ClipsNotesRequest _self;
+  final $Res Function(_ClipsNotesRequest) _then;
+
+  /// Create a copy of ClipsNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? clipId = null,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_ClipsNotesRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      clipId: null == clipId
+          ? _self.clipId
+          : clipId // ignore: cast_nullable_to_non_nullable
+              as String,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -4,7 +4,7 @@ part 'users_lists_favorite_request.freezed.dart';
 part 'users_lists_favorite_request.g.dart';
 
 @freezed
-class UsersListsFavoriteRequest with _$UsersListsFavoriteRequest {
+abstract class UsersListsFavoriteRequest with _$UsersListsFavoriteRequest {
   const factory UsersListsFavoriteRequest({
     required String listId,
   }) = _UsersListsFavoriteRequest;

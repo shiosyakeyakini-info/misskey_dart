@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,103 +10,69 @@ part of 'drive_files_attached_notes_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-DriveFilesAttachedNotesRequest _$DriveFilesAttachedNotesRequestFromJson(
-    Map<String, dynamic> json) {
-  return _DriveFilesAttachedNotesRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DriveFilesAttachedNotesRequest {
-  String get fileId =>
-      throw _privateConstructorUsedError; // 以下 Misskey 2023.10.0 で追加
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  String get fileId; // 以下 Misskey 2023.10.0 で追加
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DriveFilesAttachedNotesRequestCopyWith<DriveFilesAttachedNotesRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DriveFilesAttachedNotesRequestCopyWith<$Res> {
-  factory $DriveFilesAttachedNotesRequestCopyWith(
-          DriveFilesAttachedNotesRequest value,
-          $Res Function(DriveFilesAttachedNotesRequest) then) =
-      _$DriveFilesAttachedNotesRequestCopyWithImpl<$Res,
-          DriveFilesAttachedNotesRequest>;
-  @useResult
-  $Res call({String fileId, int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$DriveFilesAttachedNotesRequestCopyWithImpl<$Res,
-        $Val extends DriveFilesAttachedNotesRequest>
-    implements $DriveFilesAttachedNotesRequestCopyWith<$Res> {
-  _$DriveFilesAttachedNotesRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of DriveFilesAttachedNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $DriveFilesAttachedNotesRequestCopyWith<DriveFilesAttachedNotesRequest>
+      get copyWith => _$DriveFilesAttachedNotesRequestCopyWithImpl<
+              DriveFilesAttachedNotesRequest>(
+          this as DriveFilesAttachedNotesRequest, _$identity);
+
+  /// Serializes this DriveFilesAttachedNotesRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? fileId = null,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      fileId: null == fileId
-          ? _value.fileId
-          : fileId // ignore: cast_nullable_to_non_nullable
-              as String,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DriveFilesAttachedNotesRequest &&
+            (identical(other.fileId, fileId) || other.fileId == fileId) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, fileId, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'DriveFilesAttachedNotesRequest(fileId: $fileId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
 /// @nodoc
-abstract class _$$DriveFilesAttachedNotesRequestImplCopyWith<$Res>
-    implements $DriveFilesAttachedNotesRequestCopyWith<$Res> {
-  factory _$$DriveFilesAttachedNotesRequestImplCopyWith(
-          _$DriveFilesAttachedNotesRequestImpl value,
-          $Res Function(_$DriveFilesAttachedNotesRequestImpl) then) =
-      __$$DriveFilesAttachedNotesRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DriveFilesAttachedNotesRequestCopyWith<$Res> {
+  factory $DriveFilesAttachedNotesRequestCopyWith(
+          DriveFilesAttachedNotesRequest value,
+          $Res Function(DriveFilesAttachedNotesRequest) _then) =
+      _$DriveFilesAttachedNotesRequestCopyWithImpl;
   @useResult
   $Res call({String fileId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$DriveFilesAttachedNotesRequestImplCopyWithImpl<$Res>
-    extends _$DriveFilesAttachedNotesRequestCopyWithImpl<$Res,
-        _$DriveFilesAttachedNotesRequestImpl>
-    implements _$$DriveFilesAttachedNotesRequestImplCopyWith<$Res> {
-  __$$DriveFilesAttachedNotesRequestImplCopyWithImpl(
-      _$DriveFilesAttachedNotesRequestImpl _value,
-      $Res Function(_$DriveFilesAttachedNotesRequestImpl) _then)
-      : super(_value, _then);
+class _$DriveFilesAttachedNotesRequestCopyWithImpl<$Res>
+    implements $DriveFilesAttachedNotesRequestCopyWith<$Res> {
+  _$DriveFilesAttachedNotesRequestCopyWithImpl(this._self, this._then);
 
+  final DriveFilesAttachedNotesRequest _self;
+  final $Res Function(DriveFilesAttachedNotesRequest) _then;
+
+  /// Create a copy of DriveFilesAttachedNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,21 +81,21 @@ class __$$DriveFilesAttachedNotesRequestImplCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$DriveFilesAttachedNotesRequestImpl(
+    return _then(_self.copyWith(
       fileId: null == fileId
-          ? _value.fileId
+          ? _self.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
               as String,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _value.sinceId
+          ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -137,14 +104,12 @@ class __$$DriveFilesAttachedNotesRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DriveFilesAttachedNotesRequestImpl
-    implements _DriveFilesAttachedNotesRequest {
-  const _$DriveFilesAttachedNotesRequestImpl(
+class _DriveFilesAttachedNotesRequest
+    implements DriveFilesAttachedNotesRequest {
+  const _DriveFilesAttachedNotesRequest(
       {required this.fileId, this.limit, this.sinceId, this.untilId});
-
-  factory _$DriveFilesAttachedNotesRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$DriveFilesAttachedNotesRequestImplFromJson(json);
+  factory _DriveFilesAttachedNotesRequest.fromJson(Map<String, dynamic> json) =>
+      _$DriveFilesAttachedNotesRequestFromJson(json);
 
   @override
   final String fileId;
@@ -156,64 +121,92 @@ class _$DriveFilesAttachedNotesRequestImpl
   @override
   final String? untilId;
 
+  /// Create a copy of DriveFilesAttachedNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DriveFilesAttachedNotesRequest(fileId: $fileId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DriveFilesAttachedNotesRequestCopyWith<_DriveFilesAttachedNotesRequest>
+      get copyWith => __$DriveFilesAttachedNotesRequestCopyWithImpl<
+          _DriveFilesAttachedNotesRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DriveFilesAttachedNotesRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DriveFilesAttachedNotesRequestImpl &&
+            other is _DriveFilesAttachedNotesRequest &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, fileId, limit, sinceId, untilId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DriveFilesAttachedNotesRequestImplCopyWith<
-          _$DriveFilesAttachedNotesRequestImpl>
-      get copyWith => __$$DriveFilesAttachedNotesRequestImplCopyWithImpl<
-          _$DriveFilesAttachedNotesRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DriveFilesAttachedNotesRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DriveFilesAttachedNotesRequest(fileId: $fileId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _DriveFilesAttachedNotesRequest
-    implements DriveFilesAttachedNotesRequest {
-  const factory _DriveFilesAttachedNotesRequest(
-      {required final String fileId,
-      final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$DriveFilesAttachedNotesRequestImpl;
-
-  factory _DriveFilesAttachedNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$DriveFilesAttachedNotesRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$DriveFilesAttachedNotesRequestCopyWith<$Res>
+    implements $DriveFilesAttachedNotesRequestCopyWith<$Res> {
+  factory _$DriveFilesAttachedNotesRequestCopyWith(
+          _DriveFilesAttachedNotesRequest value,
+          $Res Function(_DriveFilesAttachedNotesRequest) _then) =
+      __$DriveFilesAttachedNotesRequestCopyWithImpl;
   @override
-  String get fileId;
-  @override // 以下 Misskey 2023.10.0 で追加
-  int? get limit;
-  @override
-  String? get sinceId;
-  @override
-  String? get untilId;
-  @override
-  @JsonKey(ignore: true)
-  _$$DriveFilesAttachedNotesRequestImplCopyWith<
-          _$DriveFilesAttachedNotesRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String fileId, int? limit, String? sinceId, String? untilId});
 }
+
+/// @nodoc
+class __$DriveFilesAttachedNotesRequestCopyWithImpl<$Res>
+    implements _$DriveFilesAttachedNotesRequestCopyWith<$Res> {
+  __$DriveFilesAttachedNotesRequestCopyWithImpl(this._self, this._then);
+
+  final _DriveFilesAttachedNotesRequest _self;
+  final $Res Function(_DriveFilesAttachedNotesRequest) _then;
+
+  /// Create a copy of DriveFilesAttachedNotesRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? fileId = null,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_DriveFilesAttachedNotesRequest(
+      fileId: null == fileId
+          ? _self.fileId
+          : fileId // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

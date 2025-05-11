@@ -4,7 +4,7 @@ part 'renote_mute_create_request.freezed.dart';
 part 'renote_mute_create_request.g.dart';
 
 @freezed
-class RenoteMuteCreateRequest with _$RenoteMuteCreateRequest {
+abstract class RenoteMuteCreateRequest with _$RenoteMuteCreateRequest {
   const factory RenoteMuteCreateRequest({
     required String userId,
   }) = _RenoteMuteCreateRequest;

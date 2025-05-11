@@ -6,14 +6,12 @@ part of 'chat_user_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatUserParameterImpl _$$ChatUserParameterImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ChatUserParameterImpl(
+_ChatUserParameter _$ChatUserParameterFromJson(Map<String, dynamic> json) =>
+    _ChatUserParameter(
       otherId: json['otherId'] as String,
     );
 
-Map<String, dynamic> _$$ChatUserParameterImplToJson(
-        _$ChatUserParameterImpl instance) =>
+Map<String, dynamic> _$ChatUserParameterToJson(_ChatUserParameter instance) =>
     <String, dynamic>{
       'otherId': instance.otherId,
     };

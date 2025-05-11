@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,106 +10,62 @@ part of 'drive_files_upload_from_url_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-DriveFilesUploadFromUrlRequest _$DriveFilesUploadFromUrlRequestFromJson(
-    Map<String, dynamic> json) {
-  return _DriveFilesUploadFromUrlRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DriveFilesUploadFromUrlRequest {
-  String get url => throw _privateConstructorUsedError;
-  String? get folderId => throw _privateConstructorUsedError;
-  bool? get isSensitive => throw _privateConstructorUsedError;
-  String? get comment => throw _privateConstructorUsedError;
-  String? get marker => throw _privateConstructorUsedError;
-  bool? get force => throw _privateConstructorUsedError;
+  String get url;
+  String? get folderId;
+  bool? get isSensitive;
+  String? get comment;
+  String? get marker;
+  bool? get force;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DriveFilesUploadFromUrlRequestCopyWith<DriveFilesUploadFromUrlRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DriveFilesUploadFromUrlRequestCopyWith<$Res> {
-  factory $DriveFilesUploadFromUrlRequestCopyWith(
-          DriveFilesUploadFromUrlRequest value,
-          $Res Function(DriveFilesUploadFromUrlRequest) then) =
-      _$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res,
-          DriveFilesUploadFromUrlRequest>;
-  @useResult
-  $Res call(
-      {String url,
-      String? folderId,
-      bool? isSensitive,
-      String? comment,
-      String? marker,
-      bool? force});
-}
-
-/// @nodoc
-class _$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res,
-        $Val extends DriveFilesUploadFromUrlRequest>
-    implements $DriveFilesUploadFromUrlRequestCopyWith<$Res> {
-  _$DriveFilesUploadFromUrlRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of DriveFilesUploadFromUrlRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $DriveFilesUploadFromUrlRequestCopyWith<DriveFilesUploadFromUrlRequest>
+      get copyWith => _$DriveFilesUploadFromUrlRequestCopyWithImpl<
+              DriveFilesUploadFromUrlRequest>(
+          this as DriveFilesUploadFromUrlRequest, _$identity);
+
+  /// Serializes this DriveFilesUploadFromUrlRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? url = null,
-    Object? folderId = freezed,
-    Object? isSensitive = freezed,
-    Object? comment = freezed,
-    Object? marker = freezed,
-    Object? force = freezed,
-  }) {
-    return _then(_value.copyWith(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      folderId: freezed == folderId
-          ? _value.folderId
-          : folderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isSensitive: freezed == isSensitive
-          ? _value.isSensitive
-          : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      comment: freezed == comment
-          ? _value.comment
-          : comment // ignore: cast_nullable_to_non_nullable
-              as String?,
-      marker: freezed == marker
-          ? _value.marker
-          : marker // ignore: cast_nullable_to_non_nullable
-              as String?,
-      force: freezed == force
-          ? _value.force
-          : force // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DriveFilesUploadFromUrlRequest &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.folderId, folderId) ||
+                other.folderId == folderId) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.comment, comment) || other.comment == comment) &&
+            (identical(other.marker, marker) || other.marker == marker) &&
+            (identical(other.force, force) || other.force == force));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, url, folderId, isSensitive, comment, marker, force);
+
+  @override
+  String toString() {
+    return 'DriveFilesUploadFromUrlRequest(url: $url, folderId: $folderId, isSensitive: $isSensitive, comment: $comment, marker: $marker, force: $force)';
   }
 }
 
 /// @nodoc
-abstract class _$$DriveFilesUploadFromUrlRequestImplCopyWith<$Res>
-    implements $DriveFilesUploadFromUrlRequestCopyWith<$Res> {
-  factory _$$DriveFilesUploadFromUrlRequestImplCopyWith(
-          _$DriveFilesUploadFromUrlRequestImpl value,
-          $Res Function(_$DriveFilesUploadFromUrlRequestImpl) then) =
-      __$$DriveFilesUploadFromUrlRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DriveFilesUploadFromUrlRequestCopyWith<$Res> {
+  factory $DriveFilesUploadFromUrlRequestCopyWith(
+          DriveFilesUploadFromUrlRequest value,
+          $Res Function(DriveFilesUploadFromUrlRequest) _then) =
+      _$DriveFilesUploadFromUrlRequestCopyWithImpl;
   @useResult
   $Res call(
       {String url,
@@ -120,15 +77,15 @@ abstract class _$$DriveFilesUploadFromUrlRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DriveFilesUploadFromUrlRequestImplCopyWithImpl<$Res>
-    extends _$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res,
-        _$DriveFilesUploadFromUrlRequestImpl>
-    implements _$$DriveFilesUploadFromUrlRequestImplCopyWith<$Res> {
-  __$$DriveFilesUploadFromUrlRequestImplCopyWithImpl(
-      _$DriveFilesUploadFromUrlRequestImpl _value,
-      $Res Function(_$DriveFilesUploadFromUrlRequestImpl) _then)
-      : super(_value, _then);
+class _$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res>
+    implements $DriveFilesUploadFromUrlRequestCopyWith<$Res> {
+  _$DriveFilesUploadFromUrlRequestCopyWithImpl(this._self, this._then);
 
+  final DriveFilesUploadFromUrlRequest _self;
+  final $Res Function(DriveFilesUploadFromUrlRequest) _then;
+
+  /// Create a copy of DriveFilesUploadFromUrlRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,29 +96,29 @@ class __$$DriveFilesUploadFromUrlRequestImplCopyWithImpl<$Res>
     Object? marker = freezed,
     Object? force = freezed,
   }) {
-    return _then(_$DriveFilesUploadFromUrlRequestImpl(
+    return _then(_self.copyWith(
       url: null == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
       folderId: freezed == folderId
-          ? _value.folderId
+          ? _self.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
               as String?,
       isSensitive: freezed == isSensitive
-          ? _value.isSensitive
+          ? _self.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
               as bool?,
       comment: freezed == comment
-          ? _value.comment
+          ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
       marker: freezed == marker
-          ? _value.marker
+          ? _self.marker
           : marker // ignore: cast_nullable_to_non_nullable
               as String?,
       force: freezed == force
-          ? _value.force
+          ? _self.force
           : force // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -170,19 +127,17 @@ class __$$DriveFilesUploadFromUrlRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DriveFilesUploadFromUrlRequestImpl
-    implements _DriveFilesUploadFromUrlRequest {
-  const _$DriveFilesUploadFromUrlRequestImpl(
+class _DriveFilesUploadFromUrlRequest
+    implements DriveFilesUploadFromUrlRequest {
+  const _DriveFilesUploadFromUrlRequest(
       {required this.url,
       this.folderId,
       this.isSensitive,
       this.comment,
       this.marker,
       this.force});
-
-  factory _$DriveFilesUploadFromUrlRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$DriveFilesUploadFromUrlRequestImplFromJson(json);
+  factory _DriveFilesUploadFromUrlRequest.fromJson(Map<String, dynamic> json) =>
+      _$DriveFilesUploadFromUrlRequestFromJson(json);
 
   @override
   final String url;
@@ -197,16 +152,27 @@ class _$DriveFilesUploadFromUrlRequestImpl
   @override
   final bool? force;
 
+  /// Create a copy of DriveFilesUploadFromUrlRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DriveFilesUploadFromUrlRequest(url: $url, folderId: $folderId, isSensitive: $isSensitive, comment: $comment, marker: $marker, force: $force)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DriveFilesUploadFromUrlRequestCopyWith<_DriveFilesUploadFromUrlRequest>
+      get copyWith => __$DriveFilesUploadFromUrlRequestCopyWithImpl<
+          _DriveFilesUploadFromUrlRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DriveFilesUploadFromUrlRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DriveFilesUploadFromUrlRequestImpl &&
+            other is _DriveFilesUploadFromUrlRequest &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
@@ -217,55 +183,82 @@ class _$DriveFilesUploadFromUrlRequestImpl
             (identical(other.force, force) || other.force == force));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, url, folderId, isSensitive, comment, marker, force);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DriveFilesUploadFromUrlRequestImplCopyWith<
-          _$DriveFilesUploadFromUrlRequestImpl>
-      get copyWith => __$$DriveFilesUploadFromUrlRequestImplCopyWithImpl<
-          _$DriveFilesUploadFromUrlRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DriveFilesUploadFromUrlRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DriveFilesUploadFromUrlRequest(url: $url, folderId: $folderId, isSensitive: $isSensitive, comment: $comment, marker: $marker, force: $force)';
   }
 }
 
-abstract class _DriveFilesUploadFromUrlRequest
-    implements DriveFilesUploadFromUrlRequest {
-  const factory _DriveFilesUploadFromUrlRequest(
-      {required final String url,
-      final String? folderId,
-      final bool? isSensitive,
-      final String? comment,
-      final String? marker,
-      final bool? force}) = _$DriveFilesUploadFromUrlRequestImpl;
-
-  factory _DriveFilesUploadFromUrlRequest.fromJson(Map<String, dynamic> json) =
-      _$DriveFilesUploadFromUrlRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$DriveFilesUploadFromUrlRequestCopyWith<$Res>
+    implements $DriveFilesUploadFromUrlRequestCopyWith<$Res> {
+  factory _$DriveFilesUploadFromUrlRequestCopyWith(
+          _DriveFilesUploadFromUrlRequest value,
+          $Res Function(_DriveFilesUploadFromUrlRequest) _then) =
+      __$DriveFilesUploadFromUrlRequestCopyWithImpl;
   @override
-  String get url;
-  @override
-  String? get folderId;
-  @override
-  bool? get isSensitive;
-  @override
-  String? get comment;
-  @override
-  String? get marker;
-  @override
-  bool? get force;
-  @override
-  @JsonKey(ignore: true)
-  _$$DriveFilesUploadFromUrlRequestImplCopyWith<
-          _$DriveFilesUploadFromUrlRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String url,
+      String? folderId,
+      bool? isSensitive,
+      String? comment,
+      String? marker,
+      bool? force});
 }
+
+/// @nodoc
+class __$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res>
+    implements _$DriveFilesUploadFromUrlRequestCopyWith<$Res> {
+  __$DriveFilesUploadFromUrlRequestCopyWithImpl(this._self, this._then);
+
+  final _DriveFilesUploadFromUrlRequest _self;
+  final $Res Function(_DriveFilesUploadFromUrlRequest) _then;
+
+  /// Create a copy of DriveFilesUploadFromUrlRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? url = null,
+    Object? folderId = freezed,
+    Object? isSensitive = freezed,
+    Object? comment = freezed,
+    Object? marker = freezed,
+    Object? force = freezed,
+  }) {
+    return _then(_DriveFilesUploadFromUrlRequest(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      folderId: freezed == folderId
+          ? _self.folderId
+          : folderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isSensitive: freezed == isSensitive
+          ? _self.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      comment: freezed == comment
+          ? _self.comment
+          : comment // ignore: cast_nullable_to_non_nullable
+              as String?,
+      marker: freezed == marker
+          ? _self.marker
+          : marker // ignore: cast_nullable_to_non_nullable
+              as String?,
+      force: freezed == force
+          ? _self.force
+          : force // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

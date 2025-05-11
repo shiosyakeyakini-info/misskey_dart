@@ -4,7 +4,7 @@ part 'users_show_request.freezed.dart';
 part 'users_show_request.g.dart';
 
 @freezed
-class UsersShowRequest with _$UsersShowRequest {
+abstract class UsersShowRequest with _$UsersShowRequest {
   const factory UsersShowRequest({
     required String userId,
   }) = _UsersShowRequest;
@@ -14,7 +14,7 @@ class UsersShowRequest with _$UsersShowRequest {
 }
 
 @freezed
-class UsersShowByIdsRequest with _$UsersShowByIdsRequest {
+abstract class UsersShowByIdsRequest with _$UsersShowByIdsRequest {
   const factory UsersShowByIdsRequest({
     required List<String> userIds,
   }) = _UsersShowByIdsRequest;
@@ -24,7 +24,7 @@ class UsersShowByIdsRequest with _$UsersShowByIdsRequest {
 }
 
 @freezed
-class UsersShowByUserNameRequest with _$UsersShowByUserNameRequest {
+abstract class UsersShowByUserNameRequest with _$UsersShowByUserNameRequest {
   const factory UsersShowByUserNameRequest({
     // ignore: invalid_annotation_target
     @JsonKey(name: "username") required String userName,

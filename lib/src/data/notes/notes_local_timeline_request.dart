@@ -5,7 +5,7 @@ part 'notes_local_timeline_request.freezed.dart';
 part 'notes_local_timeline_request.g.dart';
 
 @freezed
-class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
+abstract class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
   const factory NotesLocalTimelineRequest({
     bool? withFiles,
     bool? withRenotes,

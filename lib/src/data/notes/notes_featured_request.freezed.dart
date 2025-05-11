@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,56 @@ part of 'notes_featured_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-NotesFeaturedRequest _$NotesFeaturedRequestFromJson(Map<String, dynamic> json) {
-  return _NotesFeaturedRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotesFeaturedRequest {
-  int? get limit => throw _privateConstructorUsedError;
+  int? get limit;
   @Deprecated("removed at 2023.10.0")
-  int? get offset => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
-  String? get channelId => throw _privateConstructorUsedError;
+  int? get offset;
+  String? get untilId;
+  String? get channelId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NotesFeaturedRequestCopyWith<NotesFeaturedRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotesFeaturedRequestCopyWith<$Res> {
-  factory $NotesFeaturedRequestCopyWith(NotesFeaturedRequest value,
-          $Res Function(NotesFeaturedRequest) then) =
-      _$NotesFeaturedRequestCopyWithImpl<$Res, NotesFeaturedRequest>;
-  @useResult
-  $Res call(
-      {int? limit,
-      @Deprecated("removed at 2023.10.0") int? offset,
-      String? untilId,
-      String? channelId});
-}
-
-/// @nodoc
-class _$NotesFeaturedRequestCopyWithImpl<$Res,
-        $Val extends NotesFeaturedRequest>
-    implements $NotesFeaturedRequestCopyWith<$Res> {
-  _$NotesFeaturedRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of NotesFeaturedRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $NotesFeaturedRequestCopyWith<NotesFeaturedRequest> get copyWith =>
+      _$NotesFeaturedRequestCopyWithImpl<NotesFeaturedRequest>(
+          this as NotesFeaturedRequest, _$identity);
+
+  /// Serializes this NotesFeaturedRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? untilId = freezed,
-    Object? channelId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _value.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _value.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NotesFeaturedRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, limit, offset, untilId, channelId);
+
+  @override
+  String toString() {
+    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, untilId: $untilId, channelId: $channelId)';
   }
 }
 
 /// @nodoc
-abstract class _$$NotesFeaturedRequestImplCopyWith<$Res>
-    implements $NotesFeaturedRequestCopyWith<$Res> {
-  factory _$$NotesFeaturedRequestImplCopyWith(_$NotesFeaturedRequestImpl value,
-          $Res Function(_$NotesFeaturedRequestImpl) then) =
-      __$$NotesFeaturedRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NotesFeaturedRequestCopyWith<$Res> {
+  factory $NotesFeaturedRequestCopyWith(NotesFeaturedRequest value,
+          $Res Function(NotesFeaturedRequest) _then) =
+      _$NotesFeaturedRequestCopyWithImpl;
   @useResult
   $Res call(
       {int? limit,
@@ -101,13 +69,15 @@ abstract class _$$NotesFeaturedRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NotesFeaturedRequestImplCopyWithImpl<$Res>
-    extends _$NotesFeaturedRequestCopyWithImpl<$Res, _$NotesFeaturedRequestImpl>
-    implements _$$NotesFeaturedRequestImplCopyWith<$Res> {
-  __$$NotesFeaturedRequestImplCopyWithImpl(_$NotesFeaturedRequestImpl _value,
-      $Res Function(_$NotesFeaturedRequestImpl) _then)
-      : super(_value, _then);
+class _$NotesFeaturedRequestCopyWithImpl<$Res>
+    implements $NotesFeaturedRequestCopyWith<$Res> {
+  _$NotesFeaturedRequestCopyWithImpl(this._self, this._then);
 
+  final NotesFeaturedRequest _self;
+  final $Res Function(NotesFeaturedRequest) _then;
+
+  /// Create a copy of NotesFeaturedRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,21 +86,21 @@ class __$$NotesFeaturedRequestImplCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? channelId = freezed,
   }) {
-    return _then(_$NotesFeaturedRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       offset: freezed == offset
-          ? _value.offset
+          ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       channelId: freezed == channelId
-          ? _value.channelId
+          ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -139,15 +109,14 @@ class __$$NotesFeaturedRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotesFeaturedRequestImpl implements _NotesFeaturedRequest {
-  const _$NotesFeaturedRequestImpl(
+class _NotesFeaturedRequest implements NotesFeaturedRequest {
+  const _NotesFeaturedRequest(
       {this.limit,
       @Deprecated("removed at 2023.10.0") this.offset,
       this.untilId,
       this.channelId});
-
-  factory _$NotesFeaturedRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotesFeaturedRequestImplFromJson(json);
+  factory _NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =>
+      _$NotesFeaturedRequestFromJson(json);
 
   @override
   final int? limit;
@@ -159,16 +128,27 @@ class _$NotesFeaturedRequestImpl implements _NotesFeaturedRequest {
   @override
   final String? channelId;
 
+  /// Create a copy of NotesFeaturedRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, untilId: $untilId, channelId: $channelId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotesFeaturedRequestCopyWith<_NotesFeaturedRequest> get copyWith =>
+      __$NotesFeaturedRequestCopyWithImpl<_NotesFeaturedRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotesFeaturedRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotesFeaturedRequestImpl &&
+            other is _NotesFeaturedRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
@@ -176,48 +156,69 @@ class _$NotesFeaturedRequestImpl implements _NotesFeaturedRequest {
                 other.channelId == channelId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, limit, offset, untilId, channelId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotesFeaturedRequestImplCopyWith<_$NotesFeaturedRequestImpl>
-      get copyWith =>
-          __$$NotesFeaturedRequestImplCopyWithImpl<_$NotesFeaturedRequestImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotesFeaturedRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, untilId: $untilId, channelId: $channelId)';
   }
 }
 
-abstract class _NotesFeaturedRequest implements NotesFeaturedRequest {
-  const factory _NotesFeaturedRequest(
-      {final int? limit,
-      @Deprecated("removed at 2023.10.0") final int? offset,
-      final String? untilId,
-      final String? channelId}) = _$NotesFeaturedRequestImpl;
-
-  factory _NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =
-      _$NotesFeaturedRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$NotesFeaturedRequestCopyWith<$Res>
+    implements $NotesFeaturedRequestCopyWith<$Res> {
+  factory _$NotesFeaturedRequestCopyWith(_NotesFeaturedRequest value,
+          $Res Function(_NotesFeaturedRequest) _then) =
+      __$NotesFeaturedRequestCopyWithImpl;
   @override
-  int? get limit;
-  @override
-  @Deprecated("removed at 2023.10.0")
-  int? get offset;
-  @override
-  String? get untilId;
-  @override
-  String? get channelId;
-  @override
-  @JsonKey(ignore: true)
-  _$$NotesFeaturedRequestImplCopyWith<_$NotesFeaturedRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {int? limit,
+      @Deprecated("removed at 2023.10.0") int? offset,
+      String? untilId,
+      String? channelId});
 }
+
+/// @nodoc
+class __$NotesFeaturedRequestCopyWithImpl<$Res>
+    implements _$NotesFeaturedRequestCopyWith<$Res> {
+  __$NotesFeaturedRequestCopyWithImpl(this._self, this._then);
+
+  final _NotesFeaturedRequest _self;
+  final $Res Function(_NotesFeaturedRequest) _then;
+
+  /// Create a copy of NotesFeaturedRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? offset = freezed,
+    Object? untilId = freezed,
+    Object? channelId = freezed,
+  }) {
+    return _then(_NotesFeaturedRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      offset: freezed == offset
+          ? _self.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      channelId: freezed == channelId
+          ? _self.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

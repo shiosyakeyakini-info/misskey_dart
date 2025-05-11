@@ -4,7 +4,7 @@ part 'users_clips_request.freezed.dart';
 part 'users_clips_request.g.dart';
 
 @freezed
-class UsersClipsRequest with _$UsersClipsRequest {
+abstract class UsersClipsRequest with _$UsersClipsRequest {
   const factory UsersClipsRequest({
     required String userId,
     int? limit,

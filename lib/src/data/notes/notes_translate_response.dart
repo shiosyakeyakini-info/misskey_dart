@@ -4,7 +4,7 @@ part 'notes_translate_response.freezed.dart';
 part 'notes_translate_response.g.dart';
 
 @freezed
-class NotesTranslateResponse with _$NotesTranslateResponse {
+abstract class NotesTranslateResponse with _$NotesTranslateResponse {
   const factory NotesTranslateResponse({
     required String sourceLang,
     required String text,

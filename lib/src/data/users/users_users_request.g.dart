@@ -6,11 +6,10 @@ part of 'users_users_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersUsersRequestImpl _$$UsersUsersRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UsersUsersRequestImpl(
-      limit: json['limit'] as int?,
-      offset: json['offset'] as int?,
+_UsersUsersRequest _$UsersUsersRequestFromJson(Map<String, dynamic> json) =>
+    _UsersUsersRequest(
+      limit: (json['limit'] as num?)?.toInt(),
+      offset: (json['offset'] as num?)?.toInt(),
       sort:
           const NullableUsersSortConverter().fromJson(json['sort'] as String?),
       state: $enumDecodeNullable(_$UsersStateEnumMap, json['state']),
@@ -18,8 +17,7 @@ _$UsersUsersRequestImpl _$$UsersUsersRequestImplFromJson(
       hostname: json['hostname'] as String?,
     );
 
-Map<String, dynamic> _$$UsersUsersRequestImplToJson(
-        _$UsersUsersRequestImpl instance) =>
+Map<String, dynamic> _$UsersUsersRequestToJson(_UsersUsersRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,

@@ -4,7 +4,7 @@ part 'notes_request.freezed.dart';
 part 'notes_request.g.dart';
 
 @freezed
-class NotesRequest with _$NotesRequest {
+abstract class NotesRequest with _$NotesRequest {
   const factory NotesRequest({
     bool? local,
     bool? reply,

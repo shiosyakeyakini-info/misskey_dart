@@ -6,15 +6,13 @@ part of 'chat_history_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatHistoryRequestImpl _$$ChatHistoryRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ChatHistoryRequestImpl(
+_ChatHistoryRequest _$ChatHistoryRequestFromJson(Map<String, dynamic> json) =>
+    _ChatHistoryRequest(
       limit: (json['limit'] as num?)?.toInt(),
       room: json['room'] as bool?,
     );
 
-Map<String, dynamic> _$$ChatHistoryRequestImplToJson(
-        _$ChatHistoryRequestImpl instance) =>
+Map<String, dynamic> _$ChatHistoryRequestToJson(_ChatHistoryRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'room': instance.room,

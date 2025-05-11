@@ -46,7 +46,7 @@ sealed class StreamingResponse with _$StreamingResponse {
 }
 
 @freezed
-class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
+abstract class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
   const factory EmojiAddedStreamEvent({required Emoji emoji}) =
       _EmojiAddedStreamEvent;
   factory EmojiAddedStreamEvent.fromJson(Map<String, Object?> json) =>
@@ -54,7 +54,7 @@ class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
 }
 
 @freezed
-class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
+abstract class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
   const factory EmojiUpdatedStreamEvent({required List<Emoji> emojis}) =
       _EmojiUpdatedStreamEvent;
   factory EmojiUpdatedStreamEvent.fromJson(Map<String, Object?> json) =>
@@ -62,7 +62,7 @@ class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
 }
 
 @freezed
-class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
+abstract class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
   const factory EmojiDeletedStreamEvent({required List<Emoji> emojis}) =
       _EmojiDeletedStreamEvent;
   factory EmojiDeletedStreamEvent.fromJson(Map<String, Object?> json) =>
@@ -70,7 +70,8 @@ class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
 }
 
 @freezed
-class AnnouncementCreatedStreamEvent with _$AnnouncementCreatedStreamEvent {
+abstract class AnnouncementCreatedStreamEvent
+    with _$AnnouncementCreatedStreamEvent {
   const factory AnnouncementCreatedStreamEvent({
     required AnnouncementsResponse announcement,
   }) = _AnnouncementCreatedStreamEvent;

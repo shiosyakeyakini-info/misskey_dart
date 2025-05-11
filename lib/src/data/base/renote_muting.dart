@@ -6,7 +6,7 @@ part 'renote_muting.freezed.dart';
 part 'renote_muting.g.dart';
 
 @freezed
-class RenoteMuting with _$RenoteMuting {
+abstract class RenoteMuting with _$RenoteMuting {
   const factory RenoteMuting({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

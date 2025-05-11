@@ -5,7 +5,8 @@ part 'i_notifications_grouped_request.freezed.dart';
 part 'i_notifications_grouped_request.g.dart';
 
 @freezed
-class INotificationsGroupedRequest with _$INotificationsGroupedRequest {
+abstract class INotificationsGroupedRequest
+    with _$INotificationsGroupedRequest {
   const factory INotificationsGroupedRequest({
     int? limit,
     String? sinceId,

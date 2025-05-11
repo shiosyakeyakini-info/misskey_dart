@@ -5,7 +5,7 @@ part 'notes_global_timeline_request.freezed.dart';
 part 'notes_global_timeline_request.g.dart';
 
 @freezed
-class NotesGlobalTimelineRequest with _$NotesGlobalTimelineRequest {
+abstract class NotesGlobalTimelineRequest with _$NotesGlobalTimelineRequest {
   const factory NotesGlobalTimelineRequest({
     int? limit,
     String? sinceId,

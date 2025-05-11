@@ -4,7 +4,7 @@ part 'chat_rooms_join_request.freezed.dart';
 part 'chat_rooms_join_request.g.dart';
 
 @freezed
-class ChatRoomsJoinRequest with _$ChatRoomsJoinRequest {
+abstract class ChatRoomsJoinRequest with _$ChatRoomsJoinRequest {
   const factory ChatRoomsJoinRequest({
     required String roomId,
   }) = _ChatRoomsJoinRequest;

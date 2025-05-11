@@ -6,14 +6,12 @@ part of 'block_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BlockDeleteRequestImpl _$$BlockDeleteRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BlockDeleteRequestImpl(
+_BlockDeleteRequest _$BlockDeleteRequestFromJson(Map<String, dynamic> json) =>
+    _BlockDeleteRequest(
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$BlockDeleteRequestImplToJson(
-        _$BlockDeleteRequestImpl instance) =>
+Map<String, dynamic> _$BlockDeleteRequestToJson(_BlockDeleteRequest instance) =>
     <String, dynamic>{
       'userId': instance.userId,
     };

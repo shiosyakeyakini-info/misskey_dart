@@ -4,7 +4,7 @@ part 'drive_stream_request.freezed.dart';
 part 'drive_stream_request.g.dart';
 
 @freezed
-class DriveStreamRequest with _$DriveStreamRequest {
+abstract class DriveStreamRequest with _$DriveStreamRequest {
   const factory DriveStreamRequest({
     int? limit,
     String? sinceId,

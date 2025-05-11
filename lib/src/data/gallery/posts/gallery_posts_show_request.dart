@@ -4,7 +4,7 @@ part 'gallery_posts_show_request.freezed.dart';
 part 'gallery_posts_show_request.g.dart';
 
 @freezed
-class GalleryPostsShowRequest with _$GalleryPostsShowRequest {
+abstract class GalleryPostsShowRequest with _$GalleryPostsShowRequest {
   const factory GalleryPostsShowRequest({
     required String postId,
   }) = _GalleryPostsShowRequest;

@@ -4,7 +4,7 @@ part 'chat_user_parameter.freezed.dart';
 part 'chat_user_parameter.g.dart';
 
 @freezed
-class ChatUserParameter with _$ChatUserParameter {
+abstract class ChatUserParameter with _$ChatUserParameter {
   const factory ChatUserParameter({
     required String otherId,
   }) = _ChatUserParameter;

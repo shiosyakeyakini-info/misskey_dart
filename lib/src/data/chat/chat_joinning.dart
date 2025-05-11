@@ -7,7 +7,7 @@ part 'chat_joinning.freezed.dart';
 part 'chat_joinning.g.dart';
 
 @freezed
-class ChatJoining with _$ChatJoining {
+abstract class ChatJoining with _$ChatJoining {
   const factory ChatJoining({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

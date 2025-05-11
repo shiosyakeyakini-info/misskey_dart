@@ -4,7 +4,7 @@ part 'notes_featured_request.freezed.dart';
 part 'notes_featured_request.g.dart';
 
 @freezed
-class NotesFeaturedRequest with _$NotesFeaturedRequest {
+abstract class NotesFeaturedRequest with _$NotesFeaturedRequest {
   const factory NotesFeaturedRequest({
     int? limit,
     @Deprecated("removed at 2023.10.0") int? offset,

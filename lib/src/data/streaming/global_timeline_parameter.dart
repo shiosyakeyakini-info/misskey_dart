@@ -4,7 +4,7 @@ part 'global_timeline_parameter.freezed.dart';
 part 'global_timeline_parameter.g.dart';
 
 @freezed
-class GlobalTimelineParameter with _$GlobalTimelineParameter {
+abstract class GlobalTimelineParameter with _$GlobalTimelineParameter {
   const factory GlobalTimelineParameter({
     bool? withRenotes,
     bool? withFiles,

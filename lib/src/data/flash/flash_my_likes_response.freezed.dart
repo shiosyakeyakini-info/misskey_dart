@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,31 +10,49 @@ part of 'flash_my_likes_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-FlashMyLikesResponse _$FlashMyLikesResponseFromJson(Map<String, dynamic> json) {
-  return _FlashMyLikesResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$FlashMyLikesResponse {
-  String get id => throw _privateConstructorUsedError;
-  Flash get flash => throw _privateConstructorUsedError;
+  String get id;
+  Flash get flash;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of FlashMyLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $FlashMyLikesResponseCopyWith<FlashMyLikesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$FlashMyLikesResponseCopyWithImpl<FlashMyLikesResponse>(
+          this as FlashMyLikesResponse, _$identity);
+
+  /// Serializes this FlashMyLikesResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FlashMyLikesResponse &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.flash, flash) || other.flash == flash));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, flash);
+
+  @override
+  String toString() {
+    return 'FlashMyLikesResponse(id: $id, flash: $flash)';
+  }
 }
 
 /// @nodoc
-abstract class $FlashMyLikesResponseCopyWith<$Res> {
+abstract mixin class $FlashMyLikesResponseCopyWith<$Res> {
   factory $FlashMyLikesResponseCopyWith(FlashMyLikesResponse value,
-          $Res Function(FlashMyLikesResponse) then) =
-      _$FlashMyLikesResponseCopyWithImpl<$Res, FlashMyLikesResponse>;
+          $Res Function(FlashMyLikesResponse) _then) =
+      _$FlashMyLikesResponseCopyWithImpl;
   @useResult
   $Res call({String id, Flash flash});
 
@@ -41,145 +60,142 @@ abstract class $FlashMyLikesResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FlashMyLikesResponseCopyWithImpl<$Res,
-        $Val extends FlashMyLikesResponse>
+class _$FlashMyLikesResponseCopyWithImpl<$Res>
     implements $FlashMyLikesResponseCopyWith<$Res> {
-  _$FlashMyLikesResponseCopyWithImpl(this._value, this._then);
+  _$FlashMyLikesResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final FlashMyLikesResponse _self;
+  final $Res Function(FlashMyLikesResponse) _then;
 
+  /// Create a copy of FlashMyLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? flash = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       flash: null == flash
-          ? _value.flash
+          ? _self.flash
           : flash // ignore: cast_nullable_to_non_nullable
               as Flash,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of FlashMyLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FlashCopyWith<$Res> get flash {
-    return $FlashCopyWith<$Res>(_value.flash, (value) {
-      return _then(_value.copyWith(flash: value) as $Val);
+    return $FlashCopyWith<$Res>(_self.flash, (value) {
+      return _then(_self.copyWith(flash: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$FlashMyLikesResponseImplCopyWith<$Res>
-    implements $FlashMyLikesResponseCopyWith<$Res> {
-  factory _$$FlashMyLikesResponseImplCopyWith(_$FlashMyLikesResponseImpl value,
-          $Res Function(_$FlashMyLikesResponseImpl) then) =
-      __$$FlashMyLikesResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, Flash flash});
-
-  @override
-  $FlashCopyWith<$Res> get flash;
-}
-
-/// @nodoc
-class __$$FlashMyLikesResponseImplCopyWithImpl<$Res>
-    extends _$FlashMyLikesResponseCopyWithImpl<$Res, _$FlashMyLikesResponseImpl>
-    implements _$$FlashMyLikesResponseImplCopyWith<$Res> {
-  __$$FlashMyLikesResponseImplCopyWithImpl(_$FlashMyLikesResponseImpl _value,
-      $Res Function(_$FlashMyLikesResponseImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? flash = null,
-  }) {
-    return _then(_$FlashMyLikesResponseImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      flash: null == flash
-          ? _value.flash
-          : flash // ignore: cast_nullable_to_non_nullable
-              as Flash,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$FlashMyLikesResponseImpl implements _FlashMyLikesResponse {
-  const _$FlashMyLikesResponseImpl({required this.id, required this.flash});
-
-  factory _$FlashMyLikesResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlashMyLikesResponseImplFromJson(json);
+class _FlashMyLikesResponse implements FlashMyLikesResponse {
+  const _FlashMyLikesResponse({required this.id, required this.flash});
+  factory _FlashMyLikesResponse.fromJson(Map<String, dynamic> json) =>
+      _$FlashMyLikesResponseFromJson(json);
 
   @override
   final String id;
   @override
   final Flash flash;
 
+  /// Create a copy of FlashMyLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FlashMyLikesResponse(id: $id, flash: $flash)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FlashMyLikesResponseCopyWith<_FlashMyLikesResponse> get copyWith =>
+      __$FlashMyLikesResponseCopyWithImpl<_FlashMyLikesResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlashMyLikesResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlashMyLikesResponseImpl &&
+            other is _FlashMyLikesResponse &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.flash, flash) || other.flash == flash));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, flash);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FlashMyLikesResponseImplCopyWith<_$FlashMyLikesResponseImpl>
-      get copyWith =>
-          __$$FlashMyLikesResponseImplCopyWithImpl<_$FlashMyLikesResponseImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlashMyLikesResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FlashMyLikesResponse(id: $id, flash: $flash)';
   }
 }
 
-abstract class _FlashMyLikesResponse implements FlashMyLikesResponse {
-  const factory _FlashMyLikesResponse(
-      {required final String id,
-      required final Flash flash}) = _$FlashMyLikesResponseImpl;
+/// @nodoc
+abstract mixin class _$FlashMyLikesResponseCopyWith<$Res>
+    implements $FlashMyLikesResponseCopyWith<$Res> {
+  factory _$FlashMyLikesResponseCopyWith(_FlashMyLikesResponse value,
+          $Res Function(_FlashMyLikesResponse) _then) =
+      __$FlashMyLikesResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, Flash flash});
 
-  factory _FlashMyLikesResponse.fromJson(Map<String, dynamic> json) =
-      _$FlashMyLikesResponseImpl.fromJson;
-
   @override
-  String get id;
-  @override
-  Flash get flash;
-  @override
-  @JsonKey(ignore: true)
-  _$$FlashMyLikesResponseImplCopyWith<_$FlashMyLikesResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  $FlashCopyWith<$Res> get flash;
 }
+
+/// @nodoc
+class __$FlashMyLikesResponseCopyWithImpl<$Res>
+    implements _$FlashMyLikesResponseCopyWith<$Res> {
+  __$FlashMyLikesResponseCopyWithImpl(this._self, this._then);
+
+  final _FlashMyLikesResponse _self;
+  final $Res Function(_FlashMyLikesResponse) _then;
+
+  /// Create a copy of FlashMyLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? flash = null,
+  }) {
+    return _then(_FlashMyLikesResponse(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      flash: null == flash
+          ? _self.flash
+          : flash // ignore: cast_nullable_to_non_nullable
+              as Flash,
+    ));
+  }
+
+  /// Create a copy of FlashMyLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FlashCopyWith<$Res> get flash {
+    return $FlashCopyWith<$Res>(_self.flash, (value) {
+      return _then(_self.copyWith(flash: value));
+    });
+  }
+}
+
+// dart format on

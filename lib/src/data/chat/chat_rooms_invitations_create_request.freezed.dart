@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,31 @@ part of 'chat_rooms_invitations_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsInvitationsCreateRequest _$ChatRoomsInvitationsCreateRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsInvitationsCreateRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsInvitationsCreateRequest {
-  String get roomId => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsInvitationsCreateRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
+  String get userId;
 
   /// Create a copy of ChatRoomsInvitationsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatRoomsInvitationsCreateRequestCopyWith<ChatRoomsInvitationsCreateRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$ChatRoomsInvitationsCreateRequestCopyWithImpl<
+              ChatRoomsInvitationsCreateRequest>(
+          this as ChatRoomsInvitationsCreateRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
-  factory $ChatRoomsInvitationsCreateRequestCopyWith(
-          ChatRoomsInvitationsCreateRequest value,
-          $Res Function(ChatRoomsInvitationsCreateRequest) then) =
-      _$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res,
-          ChatRoomsInvitationsCreateRequest>;
-  @useResult
-  $Res call({String roomId, String userId});
-}
-
-/// @nodoc
-class _$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsInvitationsCreateRequest>
-    implements $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
-  _$ChatRoomsInvitationsCreateRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsInvitationsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? roomId = null,
-    Object? userId = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatRoomsInvitationsCreateRequestImplCopyWith<$Res>
-    implements $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
-  factory _$$ChatRoomsInvitationsCreateRequestImplCopyWith(
-          _$ChatRoomsInvitationsCreateRequestImpl value,
-          $Res Function(_$ChatRoomsInvitationsCreateRequestImpl) then) =
-      __$$ChatRoomsInvitationsCreateRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String roomId, String userId});
-}
-
-/// @nodoc
-class __$$ChatRoomsInvitationsCreateRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res,
-        _$ChatRoomsInvitationsCreateRequestImpl>
-    implements _$$ChatRoomsInvitationsCreateRequestImplCopyWith<$Res> {
-  __$$ChatRoomsInvitationsCreateRequestImplCopyWithImpl(
-      _$ChatRoomsInvitationsCreateRequestImpl _value,
-      $Res Function(_$ChatRoomsInvitationsCreateRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatRoomsInvitationsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? roomId = null,
-    Object? userId = null,
-  }) {
-    return _then(_$ChatRoomsInvitationsCreateRequestImpl(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatRoomsInvitationsCreateRequestImpl
-    implements _ChatRoomsInvitationsCreateRequest {
-  const _$ChatRoomsInvitationsCreateRequestImpl(
-      {required this.roomId, required this.userId});
-
-  factory _$ChatRoomsInvitationsCreateRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ChatRoomsInvitationsCreateRequestImplFromJson(json);
-
-  @override
-  final String roomId;
-  @override
-  final String userId;
-
-  @override
-  String toString() {
-    return 'ChatRoomsInvitationsCreateRequest(roomId: $roomId, userId: $userId)';
-  }
+  /// Serializes this ChatRoomsInvitationsCreateRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsInvitationsCreateRequestImpl &&
+            other is ChatRoomsInvitationsCreateRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
@@ -154,44 +43,141 @@ class _$ChatRoomsInvitationsCreateRequestImpl
   @override
   int get hashCode => Object.hash(runtimeType, roomId, userId);
 
-  /// Create a copy of ChatRoomsInvitationsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsInvitationsCreateRequestImplCopyWith<
-          _$ChatRoomsInvitationsCreateRequestImpl>
-      get copyWith => __$$ChatRoomsInvitationsCreateRequestImplCopyWithImpl<
-          _$ChatRoomsInvitationsCreateRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsInvitationsCreateRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsInvitationsCreateRequest(roomId: $roomId, userId: $userId)';
   }
 }
 
-abstract class _ChatRoomsInvitationsCreateRequest
+/// @nodoc
+abstract mixin class $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
+  factory $ChatRoomsInvitationsCreateRequestCopyWith(
+          ChatRoomsInvitationsCreateRequest value,
+          $Res Function(ChatRoomsInvitationsCreateRequest) _then) =
+      _$ChatRoomsInvitationsCreateRequestCopyWithImpl;
+  @useResult
+  $Res call({String roomId, String userId});
+}
+
+/// @nodoc
+class _$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res>
+    implements $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
+  _$ChatRoomsInvitationsCreateRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsInvitationsCreateRequest _self;
+  final $Res Function(ChatRoomsInvitationsCreateRequest) _then;
+
+  /// Create a copy of ChatRoomsInvitationsCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? roomId = null,
+    Object? userId = null,
+  }) {
+    return _then(_self.copyWith(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatRoomsInvitationsCreateRequest
     implements ChatRoomsInvitationsCreateRequest {
-  const factory _ChatRoomsInvitationsCreateRequest(
-      {required final String roomId,
-      required final String userId}) = _$ChatRoomsInvitationsCreateRequestImpl;
-
+  const _ChatRoomsInvitationsCreateRequest(
+      {required this.roomId, required this.userId});
   factory _ChatRoomsInvitationsCreateRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$ChatRoomsInvitationsCreateRequestImpl.fromJson;
+          Map<String, dynamic> json) =>
+      _$ChatRoomsInvitationsCreateRequestFromJson(json);
 
   @override
-  String get roomId;
+  final String roomId;
   @override
-  String get userId;
+  final String userId;
 
   /// Create a copy of ChatRoomsInvitationsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsInvitationsCreateRequestImplCopyWith<
-          _$ChatRoomsInvitationsCreateRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsInvitationsCreateRequestCopyWith<
+          _ChatRoomsInvitationsCreateRequest>
+      get copyWith => __$ChatRoomsInvitationsCreateRequestCopyWithImpl<
+          _ChatRoomsInvitationsCreateRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsInvitationsCreateRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatRoomsInvitationsCreateRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId, userId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsInvitationsCreateRequest(roomId: $roomId, userId: $userId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatRoomsInvitationsCreateRequestCopyWith<$Res>
+    implements $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
+  factory _$ChatRoomsInvitationsCreateRequestCopyWith(
+          _ChatRoomsInvitationsCreateRequest value,
+          $Res Function(_ChatRoomsInvitationsCreateRequest) _then) =
+      __$ChatRoomsInvitationsCreateRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String roomId, String userId});
+}
+
+/// @nodoc
+class __$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
+  __$ChatRoomsInvitationsCreateRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsInvitationsCreateRequest _self;
+  final $Res Function(_ChatRoomsInvitationsCreateRequest) _then;
+
+  /// Create a copy of ChatRoomsInvitationsCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+    Object? userId = null,
+  }) {
+    return _then(_ChatRoomsInvitationsCreateRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

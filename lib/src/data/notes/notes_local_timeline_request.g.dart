@@ -6,9 +6,9 @@ part of 'notes_local_timeline_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesLocalTimelineRequestImpl _$$NotesLocalTimelineRequestImplFromJson(
+_NotesLocalTimelineRequest _$NotesLocalTimelineRequestFromJson(
         Map<String, dynamic> json) =>
-    _$NotesLocalTimelineRequestImpl(
+    _NotesLocalTimelineRequest(
       withFiles: json['withFiles'] as bool?,
       withRenotes: json['withRenotes'] as bool?,
       withReplies: json['withReplies'] as bool?,
@@ -16,7 +16,7 @@ _$NotesLocalTimelineRequestImpl _$$NotesLocalTimelineRequestImplFromJson(
           ?.map((e) => e as String)
           .toList(),
       excludeNsfw: json['excludeNsfw'] as bool?,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -26,8 +26,8 @@ _$NotesLocalTimelineRequestImpl _$$NotesLocalTimelineRequestImplFromJson(
       allowPartial: json['allowPartial'] as bool?,
     );
 
-Map<String, dynamic> _$$NotesLocalTimelineRequestImplToJson(
-        _$NotesLocalTimelineRequestImpl instance) =>
+Map<String, dynamic> _$NotesLocalTimelineRequestToJson(
+        _NotesLocalTimelineRequest instance) =>
     <String, dynamic>{
       'withFiles': instance.withFiles,
       'withRenotes': instance.withRenotes,

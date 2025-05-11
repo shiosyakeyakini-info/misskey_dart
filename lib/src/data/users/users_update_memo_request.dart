@@ -4,7 +4,7 @@ part 'users_update_memo_request.freezed.dart';
 part 'users_update_memo_request.g.dart';
 
 @freezed
-class UsersUpdateMemoRequest with _$UsersUpdateMemoRequest {
+abstract class UsersUpdateMemoRequest with _$UsersUpdateMemoRequest {
   const factory UsersUpdateMemoRequest({
     required String userId,
     required String memo,

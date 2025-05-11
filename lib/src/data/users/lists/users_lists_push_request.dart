@@ -4,7 +4,7 @@ part 'users_lists_push_request.freezed.dart';
 part 'users_lists_push_request.g.dart';
 
 @freezed
-class UsersListsPushRequest with _$UsersListsPushRequest {
+abstract class UsersListsPushRequest with _$UsersListsPushRequest {
   const factory UsersListsPushRequest({
     required String listId,
     required String userId,

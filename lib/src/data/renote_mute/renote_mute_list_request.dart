@@ -4,7 +4,7 @@ part 'renote_mute_list_request.freezed.dart';
 part 'renote_mute_list_request.g.dart';
 
 @freezed
-class RenoteMuteListRequest with _$RenoteMuteListRequest {
+abstract class RenoteMuteListRequest with _$RenoteMuteListRequest {
   const factory RenoteMuteListRequest({
     int? limit,
     String? sinceId,

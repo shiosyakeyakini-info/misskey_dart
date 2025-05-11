@@ -4,7 +4,7 @@ part 'mute_delete_request.freezed.dart';
 part 'mute_delete_request.g.dart';
 
 @freezed
-class MuteDeleteRequest with _$MuteDeleteRequest {
+abstract class MuteDeleteRequest with _$MuteDeleteRequest {
   const factory MuteDeleteRequest({
     required String userId,
   }) = _MuteDeleteRequest;

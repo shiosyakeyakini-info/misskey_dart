@@ -4,7 +4,7 @@ part 'flash_my_likes_request.freezed.dart';
 part 'flash_my_likes_request.g.dart';
 
 @freezed
-class FlashMyLikesRequest with _$FlashMyLikesRequest {
+abstract class FlashMyLikesRequest with _$FlashMyLikesRequest {
   const factory FlashMyLikesRequest({
     int? limit,
     String? sinceId,

@@ -7,7 +7,7 @@ part 'page.freezed.dart';
 part 'page.g.dart';
 
 @freezed
-class Page with _$Page {
+abstract class Page with _$Page {
   const factory Page({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -74,7 +74,7 @@ abstract class AbstractPageText extends AbstractPageContent {
 }
 
 @freezed
-class PageText with _$PageText implements AbstractPageText {
+abstract class PageText with _$PageText implements AbstractPageText {
   const factory PageText({
     required String id,
     PageContentType? type,
@@ -91,7 +91,7 @@ abstract class AbstractPageSection extends AbstractPageContent {
 }
 
 @freezed
-class PageSection with _$PageSection implements AbstractPageSection {
+abstract class PageSection with _$PageSection implements AbstractPageSection {
   const factory PageSection({
     required String id,
     PageContentType? type,
@@ -108,7 +108,7 @@ abstract class AbstractPageImage extends AbstractPageContent {
 }
 
 @freezed
-class PageImage with _$PageImage implements AbstractPageImage {
+abstract class PageImage with _$PageImage implements AbstractPageImage {
   const factory PageImage({
     required String id,
     PageContentType? type,
@@ -125,7 +125,7 @@ abstract class AbstractPageNote extends AbstractPageContent {
 }
 
 @freezed
-class PageNote with _$PageNote implements AbstractPageNote {
+abstract class PageNote with _$PageNote implements AbstractPageNote {
   const factory PageNote({
     required String id,
     PageContentType? type,
@@ -140,7 +140,7 @@ class PageNote with _$PageNote implements AbstractPageNote {
 abstract class AbstractPageUnknown extends AbstractPageContent {}
 
 @freezed
-class PageUnknown with _$PageUnknown implements AbstractPageUnknown {
+abstract class PageUnknown with _$PageUnknown implements AbstractPageUnknown {
   const factory PageUnknown({
     required String id,
     PageContentType? type,

@@ -4,7 +4,7 @@ part 'emoji_request.freezed.dart';
 part 'emoji_request.g.dart';
 
 @freezed
-class EmojiRequest with _$EmojiRequest {
+abstract class EmojiRequest with _$EmojiRequest {
   const factory EmojiRequest({
     required String name,
   }) = _EmojiRequest;

@@ -5,7 +5,7 @@ part 'roles_users_response.freezed.dart';
 part 'roles_users_response.g.dart';
 
 @freezed
-class RolesUsersResponse with _$RolesUsersResponse {
+abstract class RolesUsersResponse with _$RolesUsersResponse {
   const factory RolesUsersResponse({
     required String id,
     required UserDetailed user,

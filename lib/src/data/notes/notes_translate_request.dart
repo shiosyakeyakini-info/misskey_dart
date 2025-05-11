@@ -4,7 +4,7 @@ part 'notes_translate_request.freezed.dart';
 part 'notes_translate_request.g.dart';
 
 @freezed
-class NotesTranslateRequest with _$NotesTranslateRequest {
+abstract class NotesTranslateRequest with _$NotesTranslateRequest {
   const factory NotesTranslateRequest({
     required String noteId,
     required String targetLang,

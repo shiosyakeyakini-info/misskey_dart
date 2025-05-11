@@ -4,7 +4,7 @@ part 'notes_polls_vote_request.freezed.dart';
 part 'notes_polls_vote_request.g.dart';
 
 @freezed
-class NotesPollsVoteRequest with _$NotesPollsVoteRequest {
+abstract class NotesPollsVoteRequest with _$NotesPollsVoteRequest {
   const factory NotesPollsVoteRequest({
     required String noteId,
     required int choice,

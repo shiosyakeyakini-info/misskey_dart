@@ -6,17 +6,15 @@ part of 'roles_users_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RolesUsersRequestImpl _$$RolesUsersRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RolesUsersRequestImpl(
+_RolesUsersRequest _$RolesUsersRequestFromJson(Map<String, dynamic> json) =>
+    _RolesUsersRequest(
       roleId: json['roleId'] as String,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RolesUsersRequestImplToJson(
-        _$RolesUsersRequestImpl instance) =>
+Map<String, dynamic> _$RolesUsersRequestToJson(_RolesUsersRequest instance) =>
     <String, dynamic>{
       'roleId': instance.roleId,
       'sinceId': instance.sinceId,

@@ -5,7 +5,7 @@ part 'users_following_request.freezed.dart';
 part 'users_following_request.g.dart';
 
 @freezed
-class UsersFollowingRequest with _$UsersFollowingRequest {
+abstract class UsersFollowingRequest with _$UsersFollowingRequest {
   const factory UsersFollowingRequest({
     required String userId,
     String? sinceId,

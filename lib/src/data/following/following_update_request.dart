@@ -5,7 +5,7 @@ part 'following_update_request.freezed.dart';
 part 'following_update_request.g.dart';
 
 @freezed
-class FollowingUpdateRequest with _$FollowingUpdateRequest {
+abstract class FollowingUpdateRequest with _$FollowingUpdateRequest {
   const factory FollowingUpdateRequest({
     required String userId,
     FollowingUpdateAllNotifyType? notify,

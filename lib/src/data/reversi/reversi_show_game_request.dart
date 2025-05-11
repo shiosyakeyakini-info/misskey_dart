@@ -4,7 +4,7 @@ part 'reversi_show_game_request.freezed.dart';
 part 'reversi_show_game_request.g.dart';
 
 @freezed
-class ReversiShowGameRequest with _$ReversiShowGameRequest {
+abstract class ReversiShowGameRequest with _$ReversiShowGameRequest {
   const factory ReversiShowGameRequest({
     required String gameId,
   }) = _ReversiShowGameRequest;

@@ -6,14 +6,12 @@ part of 'flash_unlike_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlashUnlikeRequestImpl _$$FlashUnlikeRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FlashUnlikeRequestImpl(
+_FlashUnlikeRequest _$FlashUnlikeRequestFromJson(Map<String, dynamic> json) =>
+    _FlashUnlikeRequest(
       flashId: json['flashId'] as String,
     );
 
-Map<String, dynamic> _$$FlashUnlikeRequestImplToJson(
-        _$FlashUnlikeRequestImpl instance) =>
+Map<String, dynamic> _$FlashUnlikeRequestToJson(_FlashUnlikeRequest instance) =>
     <String, dynamic>{
       'flashId': instance.flashId,
     };

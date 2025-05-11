@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,151 +10,31 @@ part of 'chat_rooms_history_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsHistoryRequest _$ChatRoomsHistoryRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsHistoryRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsHistoryRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsHistoryRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
   /// Create a copy of ChatRoomsHistoryRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatRoomsHistoryRequestCopyWith<ChatRoomsHistoryRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ChatRoomsHistoryRequestCopyWithImpl<ChatRoomsHistoryRequest>(
+          this as ChatRoomsHistoryRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatRoomsHistoryRequestCopyWith<$Res> {
-  factory $ChatRoomsHistoryRequestCopyWith(ChatRoomsHistoryRequest value,
-          $Res Function(ChatRoomsHistoryRequest) then) =
-      _$ChatRoomsHistoryRequestCopyWithImpl<$Res, ChatRoomsHistoryRequest>;
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$ChatRoomsHistoryRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsHistoryRequest>
-    implements $ChatRoomsHistoryRequestCopyWith<$Res> {
-  _$ChatRoomsHistoryRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsHistoryRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatRoomsHistoryRequestImplCopyWith<$Res>
-    implements $ChatRoomsHistoryRequestCopyWith<$Res> {
-  factory _$$ChatRoomsHistoryRequestImplCopyWith(
-          _$ChatRoomsHistoryRequestImpl value,
-          $Res Function(_$ChatRoomsHistoryRequestImpl) then) =
-      __$$ChatRoomsHistoryRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class __$$ChatRoomsHistoryRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsHistoryRequestCopyWithImpl<$Res,
-        _$ChatRoomsHistoryRequestImpl>
-    implements _$$ChatRoomsHistoryRequestImplCopyWith<$Res> {
-  __$$ChatRoomsHistoryRequestImplCopyWithImpl(
-      _$ChatRoomsHistoryRequestImpl _value,
-      $Res Function(_$ChatRoomsHistoryRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatRoomsHistoryRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_$ChatRoomsHistoryRequestImpl(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatRoomsHistoryRequestImpl implements _ChatRoomsHistoryRequest {
-  const _$ChatRoomsHistoryRequestImpl({this.limit, this.sinceId, this.untilId});
-
-  factory _$ChatRoomsHistoryRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomsHistoryRequestImplFromJson(json);
-
-  @override
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-
-  @override
-  String toString() {
-    return 'ChatRoomsHistoryRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
-  }
+  /// Serializes this ChatRoomsHistoryRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsHistoryRequestImpl &&
+            other is ChatRoomsHistoryRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
@@ -163,43 +44,148 @@ class _$ChatRoomsHistoryRequestImpl implements _ChatRoomsHistoryRequest {
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
 
-  /// Create a copy of ChatRoomsHistoryRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsHistoryRequestImplCopyWith<_$ChatRoomsHistoryRequestImpl>
-      get copyWith => __$$ChatRoomsHistoryRequestImplCopyWithImpl<
-          _$ChatRoomsHistoryRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsHistoryRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsHistoryRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _ChatRoomsHistoryRequest implements ChatRoomsHistoryRequest {
-  const factory _ChatRoomsHistoryRequest(
-      {final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$ChatRoomsHistoryRequestImpl;
+/// @nodoc
+abstract mixin class $ChatRoomsHistoryRequestCopyWith<$Res> {
+  factory $ChatRoomsHistoryRequestCopyWith(ChatRoomsHistoryRequest value,
+          $Res Function(ChatRoomsHistoryRequest) _then) =
+      _$ChatRoomsHistoryRequestCopyWithImpl;
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
 
-  factory _ChatRoomsHistoryRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsHistoryRequestImpl.fromJson;
+/// @nodoc
+class _$ChatRoomsHistoryRequestCopyWithImpl<$Res>
+    implements $ChatRoomsHistoryRequestCopyWith<$Res> {
+  _$ChatRoomsHistoryRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsHistoryRequest _self;
+  final $Res Function(ChatRoomsHistoryRequest) _then;
+
+  /// Create a copy of ChatRoomsHistoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatRoomsHistoryRequest implements ChatRoomsHistoryRequest {
+  const _ChatRoomsHistoryRequest({this.limit, this.sinceId, this.untilId});
+  factory _ChatRoomsHistoryRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsHistoryRequestFromJson(json);
 
   @override
-  int? get limit;
+  final int? limit;
   @override
-  String? get sinceId;
+  final String? sinceId;
   @override
-  String? get untilId;
+  final String? untilId;
 
   /// Create a copy of ChatRoomsHistoryRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsHistoryRequestImplCopyWith<_$ChatRoomsHistoryRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsHistoryRequestCopyWith<_ChatRoomsHistoryRequest> get copyWith =>
+      __$ChatRoomsHistoryRequestCopyWithImpl<_ChatRoomsHistoryRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsHistoryRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatRoomsHistoryRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsHistoryRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatRoomsHistoryRequestCopyWith<$Res>
+    implements $ChatRoomsHistoryRequestCopyWith<$Res> {
+  factory _$ChatRoomsHistoryRequestCopyWith(_ChatRoomsHistoryRequest value,
+          $Res Function(_ChatRoomsHistoryRequest) _then) =
+      __$ChatRoomsHistoryRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
+
+/// @nodoc
+class __$ChatRoomsHistoryRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsHistoryRequestCopyWith<$Res> {
+  __$ChatRoomsHistoryRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsHistoryRequest _self;
+  final $Res Function(_ChatRoomsHistoryRequest) _then;
+
+  /// Create a copy of ChatRoomsHistoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_ChatRoomsHistoryRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

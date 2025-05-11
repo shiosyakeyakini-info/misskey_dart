@@ -6,14 +6,14 @@ part of 'drive_files_find_by_hash_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFilesFindByHashRequestImpl _$$DriveFilesFindByHashRequestImplFromJson(
+_DriveFilesFindByHashRequest _$DriveFilesFindByHashRequestFromJson(
         Map<String, dynamic> json) =>
-    _$DriveFilesFindByHashRequestImpl(
+    _DriveFilesFindByHashRequest(
       md5: json['md5'] as String,
     );
 
-Map<String, dynamic> _$$DriveFilesFindByHashRequestImplToJson(
-        _$DriveFilesFindByHashRequestImpl instance) =>
+Map<String, dynamic> _$DriveFilesFindByHashRequestToJson(
+        _DriveFilesFindByHashRequest instance) =>
     <String, dynamic>{
       'md5': instance.md5,
     };

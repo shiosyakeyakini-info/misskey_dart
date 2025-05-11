@@ -7,7 +7,7 @@ part 'roles_list_response.freezed.dart';
 part 'roles_list_response.g.dart';
 
 @freezed
-class RolesListResponse with _$RolesListResponse {
+abstract class RolesListResponse with _$RolesListResponse {
   const factory RolesListResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

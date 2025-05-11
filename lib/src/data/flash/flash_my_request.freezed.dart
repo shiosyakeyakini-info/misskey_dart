@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,65 @@ part of 'flash_my_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-FlashMyRequest _$FlashMyRequestFromJson(Map<String, dynamic> json) {
-  return _FlashMyRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$FlashMyRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $FlashMyRequestCopyWith<FlashMyRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlashMyRequestCopyWith<$Res> {
-  factory $FlashMyRequestCopyWith(
-          FlashMyRequest value, $Res Function(FlashMyRequest) then) =
-      _$FlashMyRequestCopyWithImpl<$Res, FlashMyRequest>;
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$FlashMyRequestCopyWithImpl<$Res, $Val extends FlashMyRequest>
-    implements $FlashMyRequestCopyWith<$Res> {
-  _$FlashMyRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of FlashMyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $FlashMyRequestCopyWith<FlashMyRequest> get copyWith =>
+      _$FlashMyRequestCopyWithImpl<FlashMyRequest>(
+          this as FlashMyRequest, _$identity);
+
+  /// Serializes this FlashMyRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FlashMyRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
 /// @nodoc
-abstract class _$$FlashMyRequestImplCopyWith<$Res>
-    implements $FlashMyRequestCopyWith<$Res> {
-  factory _$$FlashMyRequestImplCopyWith(_$FlashMyRequestImpl value,
-          $Res Function(_$FlashMyRequestImpl) then) =
-      __$$FlashMyRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FlashMyRequestCopyWith<$Res> {
+  factory $FlashMyRequestCopyWith(
+          FlashMyRequest value, $Res Function(FlashMyRequest) _then) =
+      _$FlashMyRequestCopyWithImpl;
   @useResult
   $Res call({int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$FlashMyRequestImplCopyWithImpl<$Res>
-    extends _$FlashMyRequestCopyWithImpl<$Res, _$FlashMyRequestImpl>
-    implements _$$FlashMyRequestImplCopyWith<$Res> {
-  __$$FlashMyRequestImplCopyWithImpl(
-      _$FlashMyRequestImpl _value, $Res Function(_$FlashMyRequestImpl) _then)
-      : super(_value, _then);
+class _$FlashMyRequestCopyWithImpl<$Res>
+    implements $FlashMyRequestCopyWith<$Res> {
+  _$FlashMyRequestCopyWithImpl(this._self, this._then);
 
+  final FlashMyRequest _self;
+  final $Res Function(FlashMyRequest) _then;
+
+  /// Create a copy of FlashMyRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,17 +76,17 @@ class __$$FlashMyRequestImplCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$FlashMyRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _value.sinceId
+          ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -118,11 +95,10 @@ class __$$FlashMyRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlashMyRequestImpl implements _FlashMyRequest {
-  const _$FlashMyRequestImpl({this.limit, this.sinceId, this.untilId});
-
-  factory _$FlashMyRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlashMyRequestImplFromJson(json);
+class _FlashMyRequest implements FlashMyRequest {
+  const _FlashMyRequest({this.limit, this.sinceId, this.untilId});
+  factory _FlashMyRequest.fromJson(Map<String, dynamic> json) =>
+      _$FlashMyRequestFromJson(json);
 
   @override
   final int? limit;
@@ -131,57 +107,84 @@ class _$FlashMyRequestImpl implements _FlashMyRequest {
   @override
   final String? untilId;
 
+  /// Create a copy of FlashMyRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FlashMyRequestCopyWith<_FlashMyRequest> get copyWith =>
+      __$FlashMyRequestCopyWithImpl<_FlashMyRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlashMyRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlashMyRequestImpl &&
+            other is _FlashMyRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FlashMyRequestImplCopyWith<_$FlashMyRequestImpl> get copyWith =>
-      __$$FlashMyRequestImplCopyWithImpl<_$FlashMyRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlashMyRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _FlashMyRequest implements FlashMyRequest {
-  const factory _FlashMyRequest(
-      {final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$FlashMyRequestImpl;
-
-  factory _FlashMyRequest.fromJson(Map<String, dynamic> json) =
-      _$FlashMyRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$FlashMyRequestCopyWith<$Res>
+    implements $FlashMyRequestCopyWith<$Res> {
+  factory _$FlashMyRequestCopyWith(
+          _FlashMyRequest value, $Res Function(_FlashMyRequest) _then) =
+      __$FlashMyRequestCopyWithImpl;
   @override
-  int? get limit;
-  @override
-  String? get sinceId;
-  @override
-  String? get untilId;
-  @override
-  @JsonKey(ignore: true)
-  _$$FlashMyRequestImplCopyWith<_$FlashMyRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
 }
+
+/// @nodoc
+class __$FlashMyRequestCopyWithImpl<$Res>
+    implements _$FlashMyRequestCopyWith<$Res> {
+  __$FlashMyRequestCopyWithImpl(this._self, this._then);
+
+  final _FlashMyRequest _self;
+  final $Res Function(_FlashMyRequest) _then;
+
+  /// Create a copy of FlashMyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_FlashMyRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

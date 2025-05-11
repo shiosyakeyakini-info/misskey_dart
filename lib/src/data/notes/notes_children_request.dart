@@ -4,7 +4,7 @@ part 'notes_children_request.freezed.dart';
 part 'notes_children_request.g.dart';
 
 @freezed
-class NotesChildrenRequest with _$NotesChildrenRequest {
+abstract class NotesChildrenRequest with _$NotesChildrenRequest {
   const factory NotesChildrenRequest({
     required String noteId,
     int? limit,

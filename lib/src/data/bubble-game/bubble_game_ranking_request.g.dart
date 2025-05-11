@@ -6,14 +6,14 @@ part of 'bubble_game_ranking_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BubbleGameRankingRequestImpl _$$BubbleGameRankingRequestImplFromJson(
+_BubbleGameRankingRequest _$BubbleGameRankingRequestFromJson(
         Map<String, dynamic> json) =>
-    _$BubbleGameRankingRequestImpl(
+    _BubbleGameRankingRequest(
       gameMode: json['gameMode'] as String,
     );
 
-Map<String, dynamic> _$$BubbleGameRankingRequestImplToJson(
-        _$BubbleGameRankingRequestImpl instance) =>
+Map<String, dynamic> _$BubbleGameRankingRequestToJson(
+        _BubbleGameRankingRequest instance) =>
     <String, dynamic>{
       'gameMode': instance.gameMode,
     };

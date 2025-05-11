@@ -4,7 +4,7 @@ part 'following_invalidate_request.freezed.dart';
 part 'following_invalidate_request.g.dart';
 
 @freezed
-class FollowingInvalidateRequest with _$FollowingInvalidateRequest {
+abstract class FollowingInvalidateRequest with _$FollowingInvalidateRequest {
   const factory FollowingInvalidateRequest({
     required String userId,
   }) = _FollowingInvalidateRequest;

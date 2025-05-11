@@ -6,14 +6,14 @@ part of 'chat_messages_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatMessagesShowRequestImpl _$$ChatMessagesShowRequestImplFromJson(
+_ChatMessagesShowRequest _$ChatMessagesShowRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChatMessagesShowRequestImpl(
+    _ChatMessagesShowRequest(
       messageId: json['messageId'] as String,
     );
 
-Map<String, dynamic> _$$ChatMessagesShowRequestImplToJson(
-        _$ChatMessagesShowRequestImpl instance) =>
+Map<String, dynamic> _$ChatMessagesShowRequestToJson(
+        _ChatMessagesShowRequest instance) =>
     <String, dynamic>{
       'messageId': instance.messageId,
     };

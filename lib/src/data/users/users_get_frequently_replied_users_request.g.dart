@@ -6,16 +6,16 @@ part of 'users_get_frequently_replied_users_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersGetFrequentlyRepliedUsersRequestImpl
-    _$$UsersGetFrequentlyRepliedUsersRequestImplFromJson(
+_UsersGetFrequentlyRepliedUsersRequest
+    _$UsersGetFrequentlyRepliedUsersRequestFromJson(
             Map<String, dynamic> json) =>
-        _$UsersGetFrequentlyRepliedUsersRequestImpl(
+        _UsersGetFrequentlyRepliedUsersRequest(
           userId: json['userId'] as String,
-          limit: json['limit'] as int?,
+          limit: (json['limit'] as num?)?.toInt(),
         );
 
-Map<String, dynamic> _$$UsersGetFrequentlyRepliedUsersRequestImplToJson(
-        _$UsersGetFrequentlyRepliedUsersRequestImpl instance) =>
+Map<String, dynamic> _$UsersGetFrequentlyRepliedUsersRequestToJson(
+        _UsersGetFrequentlyRepliedUsersRequest instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'limit': instance.limit,

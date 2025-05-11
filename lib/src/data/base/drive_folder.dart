@@ -5,7 +5,7 @@ part 'drive_folder.freezed.dart';
 part 'drive_folder.g.dart';
 
 @freezed
-class DriveFolder with _$DriveFolder {
+abstract class DriveFolder with _$DriveFolder {
   const factory DriveFolder({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

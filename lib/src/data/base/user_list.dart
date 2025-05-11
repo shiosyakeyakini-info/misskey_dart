@@ -5,7 +5,7 @@ part 'user_list.freezed.dart';
 part 'user_list.g.dart';
 
 @freezed
-class UsersList with _$UsersList {
+abstract class UsersList with _$UsersList {
   const factory UsersList({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

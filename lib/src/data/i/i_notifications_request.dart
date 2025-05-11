@@ -5,7 +5,7 @@ part 'i_notifications_request.freezed.dart';
 part 'i_notifications_request.g.dart';
 
 @freezed
-class INotificationsRequest with _$INotificationsRequest {
+abstract class INotificationsRequest with _$INotificationsRequest {
   const factory INotificationsRequest({
     @Assert('limit > 0') int? limit,
     String? sinceId,

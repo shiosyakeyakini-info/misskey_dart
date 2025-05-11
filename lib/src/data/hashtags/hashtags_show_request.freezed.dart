@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,69 @@ part of 'hashtags_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-HashtagsShowRequest _$HashtagsShowRequestFromJson(Map<String, dynamic> json) {
-  return _HashtagsShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$HashtagsShowRequest {
-  String get tag => throw _privateConstructorUsedError;
+  String get tag;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $HashtagsShowRequestCopyWith<HashtagsShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HashtagsShowRequestCopyWith<$Res> {
-  factory $HashtagsShowRequestCopyWith(
-          HashtagsShowRequest value, $Res Function(HashtagsShowRequest) then) =
-      _$HashtagsShowRequestCopyWithImpl<$Res, HashtagsShowRequest>;
-  @useResult
-  $Res call({String tag});
-}
-
-/// @nodoc
-class _$HashtagsShowRequestCopyWithImpl<$Res, $Val extends HashtagsShowRequest>
-    implements $HashtagsShowRequestCopyWith<$Res> {
-  _$HashtagsShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of HashtagsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $HashtagsShowRequestCopyWith<HashtagsShowRequest> get copyWith =>
+      _$HashtagsShowRequestCopyWithImpl<HashtagsShowRequest>(
+          this as HashtagsShowRequest, _$identity);
+
+  /// Serializes this HashtagsShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? tag = null,
-  }) {
-    return _then(_value.copyWith(
-      tag: null == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HashtagsShowRequest &&
+            (identical(other.tag, tag) || other.tag == tag));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, tag);
+
+  @override
+  String toString() {
+    return 'HashtagsShowRequest(tag: $tag)';
   }
 }
 
 /// @nodoc
-abstract class _$$HashtagsShowRequestImplCopyWith<$Res>
-    implements $HashtagsShowRequestCopyWith<$Res> {
-  factory _$$HashtagsShowRequestImplCopyWith(_$HashtagsShowRequestImpl value,
-          $Res Function(_$HashtagsShowRequestImpl) then) =
-      __$$HashtagsShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $HashtagsShowRequestCopyWith<$Res> {
+  factory $HashtagsShowRequestCopyWith(
+          HashtagsShowRequest value, $Res Function(HashtagsShowRequest) _then) =
+      _$HashtagsShowRequestCopyWithImpl;
   @useResult
   $Res call({String tag});
 }
 
 /// @nodoc
-class __$$HashtagsShowRequestImplCopyWithImpl<$Res>
-    extends _$HashtagsShowRequestCopyWithImpl<$Res, _$HashtagsShowRequestImpl>
-    implements _$$HashtagsShowRequestImplCopyWith<$Res> {
-  __$$HashtagsShowRequestImplCopyWithImpl(_$HashtagsShowRequestImpl _value,
-      $Res Function(_$HashtagsShowRequestImpl) _then)
-      : super(_value, _then);
+class _$HashtagsShowRequestCopyWithImpl<$Res>
+    implements $HashtagsShowRequestCopyWith<$Res> {
+  _$HashtagsShowRequestCopyWithImpl(this._self, this._then);
 
+  final HashtagsShowRequest _self;
+  final $Res Function(HashtagsShowRequest) _then;
+
+  /// Create a copy of HashtagsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? tag = null,
   }) {
-    return _then(_$HashtagsShowRequestImpl(
+    return _then(_self.copyWith(
       tag: null == tag
-          ? _value.tag
+          ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -96,58 +81,81 @@ class __$$HashtagsShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HashtagsShowRequestImpl implements _HashtagsShowRequest {
-  const _$HashtagsShowRequestImpl({required this.tag});
-
-  factory _$HashtagsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HashtagsShowRequestImplFromJson(json);
+class _HashtagsShowRequest implements HashtagsShowRequest {
+  const _HashtagsShowRequest({required this.tag});
+  factory _HashtagsShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$HashtagsShowRequestFromJson(json);
 
   @override
   final String tag;
 
+  /// Create a copy of HashtagsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'HashtagsShowRequest(tag: $tag)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HashtagsShowRequestCopyWith<_HashtagsShowRequest> get copyWith =>
+      __$HashtagsShowRequestCopyWithImpl<_HashtagsShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HashtagsShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HashtagsShowRequestImpl &&
+            other is _HashtagsShowRequest &&
             (identical(other.tag, tag) || other.tag == tag));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, tag);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$HashtagsShowRequestImplCopyWith<_$HashtagsShowRequestImpl> get copyWith =>
-      __$$HashtagsShowRequestImplCopyWithImpl<_$HashtagsShowRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HashtagsShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'HashtagsShowRequest(tag: $tag)';
   }
 }
 
-abstract class _HashtagsShowRequest implements HashtagsShowRequest {
-  const factory _HashtagsShowRequest({required final String tag}) =
-      _$HashtagsShowRequestImpl;
-
-  factory _HashtagsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$HashtagsShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$HashtagsShowRequestCopyWith<$Res>
+    implements $HashtagsShowRequestCopyWith<$Res> {
+  factory _$HashtagsShowRequestCopyWith(_HashtagsShowRequest value,
+          $Res Function(_HashtagsShowRequest) _then) =
+      __$HashtagsShowRequestCopyWithImpl;
   @override
-  String get tag;
-  @override
-  @JsonKey(ignore: true)
-  _$$HashtagsShowRequestImplCopyWith<_$HashtagsShowRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String tag});
 }
+
+/// @nodoc
+class __$HashtagsShowRequestCopyWithImpl<$Res>
+    implements _$HashtagsShowRequestCopyWith<$Res> {
+  __$HashtagsShowRequestCopyWithImpl(this._self, this._then);
+
+  final _HashtagsShowRequest _self;
+  final $Res Function(_HashtagsShowRequest) _then;
+
+  /// Create a copy of HashtagsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? tag = null,
+  }) {
+    return _then(_HashtagsShowRequest(
+      tag: null == tag
+          ? _self.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

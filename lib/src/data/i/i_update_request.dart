@@ -8,7 +8,7 @@ part 'i_update_request.freezed.dart';
 part 'i_update_request.g.dart';
 
 @freezed
-class IUpdateRequest with _$IUpdateRequest {
+abstract class IUpdateRequest with _$IUpdateRequest {
   const factory IUpdateRequest({
     String? name,
     String? description,
@@ -56,7 +56,7 @@ class IUpdateRequest with _$IUpdateRequest {
 }
 
 @freezed
-class IUpdateAvatarDecoration with _$IUpdateAvatarDecoration {
+abstract class IUpdateAvatarDecoration with _$IUpdateAvatarDecoration {
   const factory IUpdateAvatarDecoration({
     required String id,
     double? angle,

@@ -4,7 +4,7 @@ part 'users_pages_request.freezed.dart';
 part 'users_pages_request.g.dart';
 
 @freezed
-class UsersPagesRequest with _$UsersPagesRequest {
+abstract class UsersPagesRequest with _$UsersPagesRequest {
   const factory UsersPagesRequest({
     required String userId,
     int? limit,

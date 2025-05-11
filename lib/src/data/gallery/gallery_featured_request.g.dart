@@ -6,15 +6,15 @@ part of 'gallery_featured_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GalleryFeaturedRequestImpl _$$GalleryFeaturedRequestImplFromJson(
+_GalleryFeaturedRequest _$GalleryFeaturedRequestFromJson(
         Map<String, dynamic> json) =>
-    _$GalleryFeaturedRequestImpl(
-      limit: json['limit'] as int?,
+    _GalleryFeaturedRequest(
+      limit: (json['limit'] as num?)?.toInt(),
       untilId: json['untilId'] as String?,
     );
 
-Map<String, dynamic> _$$GalleryFeaturedRequestImplToJson(
-        _$GalleryFeaturedRequestImpl instance) =>
+Map<String, dynamic> _$GalleryFeaturedRequestToJson(
+        _GalleryFeaturedRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'untilId': instance.untilId,

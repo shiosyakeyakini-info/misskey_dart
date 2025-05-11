@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,70 @@ part of 'channels_follow_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-ChannelsFollowRequest _$ChannelsFollowRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChannelsFollowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChannelsFollowRequest {
-  String get channelId => throw _privateConstructorUsedError;
+  String get channelId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ChannelsFollowRequestCopyWith<ChannelsFollowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChannelsFollowRequestCopyWith<$Res> {
-  factory $ChannelsFollowRequestCopyWith(ChannelsFollowRequest value,
-          $Res Function(ChannelsFollowRequest) then) =
-      _$ChannelsFollowRequestCopyWithImpl<$Res, ChannelsFollowRequest>;
-  @useResult
-  $Res call({String channelId});
-}
-
-/// @nodoc
-class _$ChannelsFollowRequestCopyWithImpl<$Res,
-        $Val extends ChannelsFollowRequest>
-    implements $ChannelsFollowRequestCopyWith<$Res> {
-  _$ChannelsFollowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ChannelsFollowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ChannelsFollowRequestCopyWith<ChannelsFollowRequest> get copyWith =>
+      _$ChannelsFollowRequestCopyWithImpl<ChannelsFollowRequest>(
+          this as ChannelsFollowRequest, _$identity);
+
+  /// Serializes this ChannelsFollowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? channelId = null,
-  }) {
-    return _then(_value.copyWith(
-      channelId: null == channelId
-          ? _value.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChannelsFollowRequest &&
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, channelId);
+
+  @override
+  String toString() {
+    return 'ChannelsFollowRequest(channelId: $channelId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChannelsFollowRequestImplCopyWith<$Res>
-    implements $ChannelsFollowRequestCopyWith<$Res> {
-  factory _$$ChannelsFollowRequestImplCopyWith(
-          _$ChannelsFollowRequestImpl value,
-          $Res Function(_$ChannelsFollowRequestImpl) then) =
-      __$$ChannelsFollowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChannelsFollowRequestCopyWith<$Res> {
+  factory $ChannelsFollowRequestCopyWith(ChannelsFollowRequest value,
+          $Res Function(ChannelsFollowRequest) _then) =
+      _$ChannelsFollowRequestCopyWithImpl;
   @useResult
   $Res call({String channelId});
 }
 
 /// @nodoc
-class __$$ChannelsFollowRequestImplCopyWithImpl<$Res>
-    extends _$ChannelsFollowRequestCopyWithImpl<$Res,
-        _$ChannelsFollowRequestImpl>
-    implements _$$ChannelsFollowRequestImplCopyWith<$Res> {
-  __$$ChannelsFollowRequestImplCopyWithImpl(_$ChannelsFollowRequestImpl _value,
-      $Res Function(_$ChannelsFollowRequestImpl) _then)
-      : super(_value, _then);
+class _$ChannelsFollowRequestCopyWithImpl<$Res>
+    implements $ChannelsFollowRequestCopyWith<$Res> {
+  _$ChannelsFollowRequestCopyWithImpl(this._self, this._then);
 
+  final ChannelsFollowRequest _self;
+  final $Res Function(ChannelsFollowRequest) _then;
+
+  /// Create a copy of ChannelsFollowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? channelId = null,
   }) {
-    return _then(_$ChannelsFollowRequestImpl(
+    return _then(_self.copyWith(
       channelId: null == channelId
-          ? _value.channelId
+          ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -100,59 +82,82 @@ class __$$ChannelsFollowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChannelsFollowRequestImpl implements _ChannelsFollowRequest {
-  const _$ChannelsFollowRequestImpl({required this.channelId});
-
-  factory _$ChannelsFollowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChannelsFollowRequestImplFromJson(json);
+class _ChannelsFollowRequest implements ChannelsFollowRequest {
+  const _ChannelsFollowRequest({required this.channelId});
+  factory _ChannelsFollowRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChannelsFollowRequestFromJson(json);
 
   @override
   final String channelId;
 
+  /// Create a copy of ChannelsFollowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChannelsFollowRequest(channelId: $channelId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChannelsFollowRequestCopyWith<_ChannelsFollowRequest> get copyWith =>
+      __$ChannelsFollowRequestCopyWithImpl<_ChannelsFollowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChannelsFollowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChannelsFollowRequestImpl &&
+            other is _ChannelsFollowRequest &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, channelId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChannelsFollowRequestImplCopyWith<_$ChannelsFollowRequestImpl>
-      get copyWith => __$$ChannelsFollowRequestImplCopyWithImpl<
-          _$ChannelsFollowRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChannelsFollowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChannelsFollowRequest(channelId: $channelId)';
   }
 }
 
-abstract class _ChannelsFollowRequest implements ChannelsFollowRequest {
-  const factory _ChannelsFollowRequest({required final String channelId}) =
-      _$ChannelsFollowRequestImpl;
-
-  factory _ChannelsFollowRequest.fromJson(Map<String, dynamic> json) =
-      _$ChannelsFollowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChannelsFollowRequestCopyWith<$Res>
+    implements $ChannelsFollowRequestCopyWith<$Res> {
+  factory _$ChannelsFollowRequestCopyWith(_ChannelsFollowRequest value,
+          $Res Function(_ChannelsFollowRequest) _then) =
+      __$ChannelsFollowRequestCopyWithImpl;
   @override
-  String get channelId;
-  @override
-  @JsonKey(ignore: true)
-  _$$ChannelsFollowRequestImplCopyWith<_$ChannelsFollowRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String channelId});
 }
+
+/// @nodoc
+class __$ChannelsFollowRequestCopyWithImpl<$Res>
+    implements _$ChannelsFollowRequestCopyWith<$Res> {
+  __$ChannelsFollowRequestCopyWithImpl(this._self, this._then);
+
+  final _ChannelsFollowRequest _self;
+  final $Res Function(_ChannelsFollowRequest) _then;
+
+  /// Create a copy of ChannelsFollowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? channelId = null,
+  }) {
+    return _then(_ChannelsFollowRequest(
+      channelId: null == channelId
+          ? _self.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

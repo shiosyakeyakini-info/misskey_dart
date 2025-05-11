@@ -4,7 +4,7 @@ part 'following_create_request.freezed.dart';
 part 'following_create_request.g.dart';
 
 @freezed
-class FollowingCreateRequest with _$FollowingCreateRequest {
+abstract class FollowingCreateRequest with _$FollowingCreateRequest {
   const factory FollowingCreateRequest({
     required String userId,
     bool? withReplies,

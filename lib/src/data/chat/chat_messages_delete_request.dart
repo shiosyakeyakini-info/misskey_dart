@@ -4,7 +4,7 @@ part 'chat_messages_delete_request.freezed.dart';
 part 'chat_messages_delete_request.g.dart';
 
 @freezed
-class ChatMessagesDeleteRequest with _$ChatMessagesDeleteRequest {
+abstract class ChatMessagesDeleteRequest with _$ChatMessagesDeleteRequest {
   const factory ChatMessagesDeleteRequest({
     required String messageId,
   }) = _ChatMessagesDeleteRequest;

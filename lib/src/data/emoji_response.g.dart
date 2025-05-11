@@ -6,8 +6,8 @@ part of 'emoji_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EmojiResponseImpl _$$EmojiResponseImplFromJson(Map<String, dynamic> json) =>
-    _$EmojiResponseImpl(
+_EmojiResponse _$EmojiResponseFromJson(Map<String, dynamic> json) =>
+    _EmojiResponse(
       id: json['id'] as String,
       aliases: (json['aliases'] as List<dynamic>?)
               ?.map((e) => e as String)
@@ -27,7 +27,7 @@ _$EmojiResponseImpl _$$EmojiResponseImplFromJson(Map<String, dynamic> json) =>
               .toList(),
     );
 
-Map<String, dynamic> _$$EmojiResponseImplToJson(_$EmojiResponseImpl instance) =>
+Map<String, dynamic> _$EmojiResponseToJson(_EmojiResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'aliases': instance.aliases,

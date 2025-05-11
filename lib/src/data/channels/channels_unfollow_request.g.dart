@@ -6,14 +6,14 @@ part of 'channels_unfollow_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChannelsUnfollowRequestImpl _$$ChannelsUnfollowRequestImplFromJson(
+_ChannelsUnfollowRequest _$ChannelsUnfollowRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChannelsUnfollowRequestImpl(
+    _ChannelsUnfollowRequest(
       channelId: json['channelId'] as String,
     );
 
-Map<String, dynamic> _$$ChannelsUnfollowRequestImplToJson(
-        _$ChannelsUnfollowRequestImpl instance) =>
+Map<String, dynamic> _$ChannelsUnfollowRequestToJson(
+        _ChannelsUnfollowRequest instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
     };

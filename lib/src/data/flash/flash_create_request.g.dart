@@ -6,9 +6,8 @@ part of 'flash_create_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlashCreateRequestImpl _$$FlashCreateRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FlashCreateRequestImpl(
+_FlashCreateRequest _$FlashCreateRequestFromJson(Map<String, dynamic> json) =>
+    _FlashCreateRequest(
       title: json['title'] as String,
       summary: json['summary'] as String,
       script: json['script'] as String,
@@ -19,8 +18,7 @@ _$FlashCreateRequestImpl _$$FlashCreateRequestImplFromJson(
           $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
     );
 
-Map<String, dynamic> _$$FlashCreateRequestImplToJson(
-        _$FlashCreateRequestImpl instance) =>
+Map<String, dynamic> _$FlashCreateRequestToJson(_FlashCreateRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
       'summary': instance.summary,

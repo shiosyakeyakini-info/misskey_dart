@@ -5,7 +5,7 @@ part 'i_gallery_likes_response.freezed.dart';
 part 'i_gallery_likes_response.g.dart';
 
 @freezed
-class IGalleryLikesResponse with _$IGalleryLikesResponse {
+abstract class IGalleryLikesResponse with _$IGalleryLikesResponse {
   const factory IGalleryLikesResponse({
     required String id,
     required GalleryPost post,

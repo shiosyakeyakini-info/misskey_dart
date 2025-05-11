@@ -4,7 +4,7 @@ part 'drive_folders_request.freezed.dart';
 part 'drive_folders_request.g.dart';
 
 @freezed
-class DriveFoldersRequest with _$DriveFoldersRequest {
+abstract class DriveFoldersRequest with _$DriveFoldersRequest {
   const factory DriveFoldersRequest({
     int? limit,
     String? sinceId,

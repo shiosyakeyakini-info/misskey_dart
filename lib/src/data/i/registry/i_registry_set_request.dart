@@ -4,7 +4,7 @@ part 'i_registry_set_request.freezed.dart';
 part 'i_registry_set_request.g.dart';
 
 @freezed
-class IRegistrySetRequest with _$IRegistrySetRequest {
+abstract class IRegistrySetRequest with _$IRegistrySetRequest {
   const factory IRegistrySetRequest({
     required String key,
     required dynamic value,

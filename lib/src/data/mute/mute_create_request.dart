@@ -5,7 +5,7 @@ part 'mute_create_request.freezed.dart';
 part 'mute_create_request.g.dart';
 
 @freezed
-class MuteCreateRequest with _$MuteCreateRequest {
+abstract class MuteCreateRequest with _$MuteCreateRequest {
   const factory MuteCreateRequest({
     required String userId,
     @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,

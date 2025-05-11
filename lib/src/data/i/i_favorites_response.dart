@@ -6,7 +6,7 @@ part 'i_favorites_response.freezed.dart';
 part 'i_favorites_response.g.dart';
 
 @freezed
-class IFavoritesResponse with _$IFavoritesResponse {
+abstract class IFavoritesResponse with _$IFavoritesResponse {
   const factory IFavoritesResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

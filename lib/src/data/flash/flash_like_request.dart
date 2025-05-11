@@ -4,7 +4,7 @@ part 'flash_like_request.freezed.dart';
 part 'flash_like_request.g.dart';
 
 @freezed
-class FlashLikeRequest with _$FlashLikeRequest {
+abstract class FlashLikeRequest with _$FlashLikeRequest {
   const factory FlashLikeRequest({
     required String flashId,
   }) = _FlashLikeRequest;

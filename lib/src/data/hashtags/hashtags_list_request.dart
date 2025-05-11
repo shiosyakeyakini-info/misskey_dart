@@ -6,7 +6,7 @@ part 'hashtags_list_request.freezed.dart';
 part 'hashtags_list_request.g.dart';
 
 @freezed
-class HashtagsListRequest with _$HashtagsListRequest {
+abstract class HashtagsListRequest with _$HashtagsListRequest {
   const factory HashtagsListRequest({
     int? limit,
     bool? attachedToUserOnly,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,88 +10,59 @@ part of 'chat_rooms_unfavorite_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsUnfavoriteRequest _$ChatRoomsUnfavoriteRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsUnfavoriteRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsUnfavoriteRequest {
-  String get roomId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsUnfavoriteRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
 
   /// Create a copy of ChatRoomsUnfavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatRoomsUnfavoriteRequestCopyWith<ChatRoomsUnfavoriteRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChatRoomsUnfavoriteRequestCopyWith<$Res> {
-  factory $ChatRoomsUnfavoriteRequestCopyWith(ChatRoomsUnfavoriteRequest value,
-          $Res Function(ChatRoomsUnfavoriteRequest) then) =
-      _$ChatRoomsUnfavoriteRequestCopyWithImpl<$Res,
-          ChatRoomsUnfavoriteRequest>;
-  @useResult
-  $Res call({String roomId});
-}
-
-/// @nodoc
-class _$ChatRoomsUnfavoriteRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsUnfavoriteRequest>
-    implements $ChatRoomsUnfavoriteRequestCopyWith<$Res> {
-  _$ChatRoomsUnfavoriteRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ChatRoomsUnfavoriteRequestCopyWith<ChatRoomsUnfavoriteRequest>
+      get copyWith =>
+          _$ChatRoomsUnfavoriteRequestCopyWithImpl<ChatRoomsUnfavoriteRequest>(
+              this as ChatRoomsUnfavoriteRequest, _$identity);
+
+  /// Serializes this ChatRoomsUnfavoriteRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roomId = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatRoomsUnfavoriteRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsUnfavoriteRequest(roomId: $roomId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChatRoomsUnfavoriteRequestImplCopyWith<$Res>
-    implements $ChatRoomsUnfavoriteRequestCopyWith<$Res> {
-  factory _$$ChatRoomsUnfavoriteRequestImplCopyWith(
-          _$ChatRoomsUnfavoriteRequestImpl value,
-          $Res Function(_$ChatRoomsUnfavoriteRequestImpl) then) =
-      __$$ChatRoomsUnfavoriteRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChatRoomsUnfavoriteRequestCopyWith<$Res> {
+  factory $ChatRoomsUnfavoriteRequestCopyWith(ChatRoomsUnfavoriteRequest value,
+          $Res Function(ChatRoomsUnfavoriteRequest) _then) =
+      _$ChatRoomsUnfavoriteRequestCopyWithImpl;
   @useResult
   $Res call({String roomId});
 }
 
 /// @nodoc
-class __$$ChatRoomsUnfavoriteRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsUnfavoriteRequestCopyWithImpl<$Res,
-        _$ChatRoomsUnfavoriteRequestImpl>
-    implements _$$ChatRoomsUnfavoriteRequestImplCopyWith<$Res> {
-  __$$ChatRoomsUnfavoriteRequestImplCopyWithImpl(
-      _$ChatRoomsUnfavoriteRequestImpl _value,
-      $Res Function(_$ChatRoomsUnfavoriteRequestImpl) _then)
-      : super(_value, _then);
+class _$ChatRoomsUnfavoriteRequestCopyWithImpl<$Res>
+    implements $ChatRoomsUnfavoriteRequestCopyWith<$Res> {
+  _$ChatRoomsUnfavoriteRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsUnfavoriteRequest _self;
+  final $Res Function(ChatRoomsUnfavoriteRequest) _then;
 
   /// Create a copy of ChatRoomsUnfavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -99,9 +71,9 @@ class __$$ChatRoomsUnfavoriteRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? roomId = null,
   }) {
-    return _then(_$ChatRoomsUnfavoriteRequestImpl(
+    return _then(_self.copyWith(
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -110,26 +82,35 @@ class __$$ChatRoomsUnfavoriteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatRoomsUnfavoriteRequestImpl implements _ChatRoomsUnfavoriteRequest {
-  const _$ChatRoomsUnfavoriteRequestImpl({required this.roomId});
-
-  factory _$ChatRoomsUnfavoriteRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ChatRoomsUnfavoriteRequestImplFromJson(json);
+class _ChatRoomsUnfavoriteRequest implements ChatRoomsUnfavoriteRequest {
+  const _ChatRoomsUnfavoriteRequest({required this.roomId});
+  factory _ChatRoomsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsUnfavoriteRequestFromJson(json);
 
   @override
   final String roomId;
 
+  /// Create a copy of ChatRoomsUnfavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatRoomsUnfavoriteRequest(roomId: $roomId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsUnfavoriteRequestCopyWith<_ChatRoomsUnfavoriteRequest>
+      get copyWith => __$ChatRoomsUnfavoriteRequestCopyWithImpl<
+          _ChatRoomsUnfavoriteRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsUnfavoriteRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsUnfavoriteRequestImpl &&
+            other is _ChatRoomsUnfavoriteRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
@@ -137,38 +118,46 @@ class _$ChatRoomsUnfavoriteRequestImpl implements _ChatRoomsUnfavoriteRequest {
   @override
   int get hashCode => Object.hash(runtimeType, roomId);
 
-  /// Create a copy of ChatRoomsUnfavoriteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsUnfavoriteRequestImplCopyWith<_$ChatRoomsUnfavoriteRequestImpl>
-      get copyWith => __$$ChatRoomsUnfavoriteRequestImplCopyWithImpl<
-          _$ChatRoomsUnfavoriteRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsUnfavoriteRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsUnfavoriteRequest(roomId: $roomId)';
   }
 }
 
-abstract class _ChatRoomsUnfavoriteRequest
-    implements ChatRoomsUnfavoriteRequest {
-  const factory _ChatRoomsUnfavoriteRequest({required final String roomId}) =
-      _$ChatRoomsUnfavoriteRequestImpl;
-
-  factory _ChatRoomsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsUnfavoriteRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChatRoomsUnfavoriteRequestCopyWith<$Res>
+    implements $ChatRoomsUnfavoriteRequestCopyWith<$Res> {
+  factory _$ChatRoomsUnfavoriteRequestCopyWith(
+          _ChatRoomsUnfavoriteRequest value,
+          $Res Function(_ChatRoomsUnfavoriteRequest) _then) =
+      __$ChatRoomsUnfavoriteRequestCopyWithImpl;
   @override
-  String get roomId;
+  @useResult
+  $Res call({String roomId});
+}
+
+/// @nodoc
+class __$ChatRoomsUnfavoriteRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsUnfavoriteRequestCopyWith<$Res> {
+  __$ChatRoomsUnfavoriteRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsUnfavoriteRequest _self;
+  final $Res Function(_ChatRoomsUnfavoriteRequest) _then;
 
   /// Create a copy of ChatRoomsUnfavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsUnfavoriteRequestImplCopyWith<_$ChatRoomsUnfavoriteRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+  }) {
+    return _then(_ChatRoomsUnfavoriteRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

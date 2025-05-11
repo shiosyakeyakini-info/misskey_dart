@@ -4,7 +4,7 @@ part 'hashtags_search_request.freezed.dart';
 part 'hashtags_search_request.g.dart';
 
 @freezed
-class HashtagsSearchRequest with _$HashtagsSearchRequest {
+abstract class HashtagsSearchRequest with _$HashtagsSearchRequest {
   const factory HashtagsSearchRequest({
     int? limit,
     required String query,

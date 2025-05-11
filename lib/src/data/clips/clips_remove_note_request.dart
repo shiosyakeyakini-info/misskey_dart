@@ -4,7 +4,7 @@ part 'clips_remove_note_request.freezed.dart';
 part 'clips_remove_note_request.g.dart';
 
 @freezed
-class ClipsRemoveNoteRequest with _$ClipsRemoveNoteRequest {
+abstract class ClipsRemoveNoteRequest with _$ClipsRemoveNoteRequest {
   const factory ClipsRemoveNoteRequest({
     required String clipId,
     required String noteId,

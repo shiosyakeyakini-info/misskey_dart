@@ -4,7 +4,7 @@ part 'chat_rooms_delete_request.freezed.dart';
 part 'chat_rooms_delete_request.g.dart';
 
 @freezed
-class ChatRoomsDeleteRequest with _$ChatRoomsDeleteRequest {
+abstract class ChatRoomsDeleteRequest with _$ChatRoomsDeleteRequest {
   const factory ChatRoomsDeleteRequest({
     required String roomId,
   }) = _ChatRoomsDeleteRequest;

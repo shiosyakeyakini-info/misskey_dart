@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,90 +10,69 @@ part of 'users_lists_delete_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersListsDeleteRequest _$UsersListsDeleteRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UsersListsDeleteRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersListsDeleteRequest {
-  String get listId => throw _privateConstructorUsedError;
+  String get listId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UsersListsDeleteRequestCopyWith<UsersListsDeleteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsersListsDeleteRequestCopyWith<$Res> {
-  factory $UsersListsDeleteRequestCopyWith(UsersListsDeleteRequest value,
-          $Res Function(UsersListsDeleteRequest) then) =
-      _$UsersListsDeleteRequestCopyWithImpl<$Res, UsersListsDeleteRequest>;
-  @useResult
-  $Res call({String listId});
-}
-
-/// @nodoc
-class _$UsersListsDeleteRequestCopyWithImpl<$Res,
-        $Val extends UsersListsDeleteRequest>
-    implements $UsersListsDeleteRequestCopyWith<$Res> {
-  _$UsersListsDeleteRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UsersListsDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UsersListsDeleteRequestCopyWith<UsersListsDeleteRequest> get copyWith =>
+      _$UsersListsDeleteRequestCopyWithImpl<UsersListsDeleteRequest>(
+          this as UsersListsDeleteRequest, _$identity);
+
+  /// Serializes this UsersListsDeleteRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? listId = null,
-  }) {
-    return _then(_value.copyWith(
-      listId: null == listId
-          ? _value.listId
-          : listId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersListsDeleteRequest &&
+            (identical(other.listId, listId) || other.listId == listId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, listId);
+
+  @override
+  String toString() {
+    return 'UsersListsDeleteRequest(listId: $listId)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersListsDeleteRequestImplCopyWith<$Res>
-    implements $UsersListsDeleteRequestCopyWith<$Res> {
-  factory _$$UsersListsDeleteRequestImplCopyWith(
-          _$UsersListsDeleteRequestImpl value,
-          $Res Function(_$UsersListsDeleteRequestImpl) then) =
-      __$$UsersListsDeleteRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersListsDeleteRequestCopyWith<$Res> {
+  factory $UsersListsDeleteRequestCopyWith(UsersListsDeleteRequest value,
+          $Res Function(UsersListsDeleteRequest) _then) =
+      _$UsersListsDeleteRequestCopyWithImpl;
   @useResult
   $Res call({String listId});
 }
 
 /// @nodoc
-class __$$UsersListsDeleteRequestImplCopyWithImpl<$Res>
-    extends _$UsersListsDeleteRequestCopyWithImpl<$Res,
-        _$UsersListsDeleteRequestImpl>
-    implements _$$UsersListsDeleteRequestImplCopyWith<$Res> {
-  __$$UsersListsDeleteRequestImplCopyWithImpl(
-      _$UsersListsDeleteRequestImpl _value,
-      $Res Function(_$UsersListsDeleteRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersListsDeleteRequestCopyWithImpl<$Res>
+    implements $UsersListsDeleteRequestCopyWith<$Res> {
+  _$UsersListsDeleteRequestCopyWithImpl(this._self, this._then);
 
+  final UsersListsDeleteRequest _self;
+  final $Res Function(UsersListsDeleteRequest) _then;
+
+  /// Create a copy of UsersListsDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listId = null,
   }) {
-    return _then(_$UsersListsDeleteRequestImpl(
+    return _then(_self.copyWith(
       listId: null == listId
-          ? _value.listId
+          ? _self.listId
           : listId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -101,58 +81,81 @@ class __$$UsersListsDeleteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersListsDeleteRequestImpl implements _UsersListsDeleteRequest {
-  const _$UsersListsDeleteRequestImpl({required this.listId});
-
-  factory _$UsersListsDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersListsDeleteRequestImplFromJson(json);
+class _UsersListsDeleteRequest implements UsersListsDeleteRequest {
+  const _UsersListsDeleteRequest({required this.listId});
+  factory _UsersListsDeleteRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersListsDeleteRequestFromJson(json);
 
   @override
   final String listId;
 
+  /// Create a copy of UsersListsDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersListsDeleteRequest(listId: $listId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersListsDeleteRequestCopyWith<_UsersListsDeleteRequest> get copyWith =>
+      __$UsersListsDeleteRequestCopyWithImpl<_UsersListsDeleteRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersListsDeleteRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersListsDeleteRequestImpl &&
+            other is _UsersListsDeleteRequest &&
             (identical(other.listId, listId) || other.listId == listId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, listId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersListsDeleteRequestImplCopyWith<_$UsersListsDeleteRequestImpl>
-      get copyWith => __$$UsersListsDeleteRequestImplCopyWithImpl<
-          _$UsersListsDeleteRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersListsDeleteRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersListsDeleteRequest(listId: $listId)';
   }
 }
 
-abstract class _UsersListsDeleteRequest implements UsersListsDeleteRequest {
-  const factory _UsersListsDeleteRequest({required final String listId}) =
-      _$UsersListsDeleteRequestImpl;
-
-  factory _UsersListsDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$UsersListsDeleteRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersListsDeleteRequestCopyWith<$Res>
+    implements $UsersListsDeleteRequestCopyWith<$Res> {
+  factory _$UsersListsDeleteRequestCopyWith(_UsersListsDeleteRequest value,
+          $Res Function(_UsersListsDeleteRequest) _then) =
+      __$UsersListsDeleteRequestCopyWithImpl;
   @override
-  String get listId;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersListsDeleteRequestImplCopyWith<_$UsersListsDeleteRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String listId});
 }
+
+/// @nodoc
+class __$UsersListsDeleteRequestCopyWithImpl<$Res>
+    implements _$UsersListsDeleteRequestCopyWith<$Res> {
+  __$UsersListsDeleteRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersListsDeleteRequest _self;
+  final $Res Function(_UsersListsDeleteRequest) _then;
+
+  /// Create a copy of UsersListsDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? listId = null,
+  }) {
+    return _then(_UsersListsDeleteRequest(
+      listId: null == listId
+          ? _self.listId
+          : listId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

@@ -6,14 +6,13 @@ part of 'chat_room_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatRoomShowRequestImpl _$$ChatRoomShowRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ChatRoomShowRequestImpl(
+_ChatRoomShowRequest _$ChatRoomShowRequestFromJson(Map<String, dynamic> json) =>
+    _ChatRoomShowRequest(
       roomId: json['roomId'] as String,
     );
 
-Map<String, dynamic> _$$ChatRoomShowRequestImplToJson(
-        _$ChatRoomShowRequestImpl instance) =>
+Map<String, dynamic> _$ChatRoomShowRequestToJson(
+        _ChatRoomShowRequest instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
     };

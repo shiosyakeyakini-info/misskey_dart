@@ -4,7 +4,7 @@ part 'chat_rooms_invitations_outbox_request.freezed.dart';
 part 'chat_rooms_invitations_outbox_request.g.dart';
 
 @freezed
-class ChatRoomsInvitationsOutboxRequest
+abstract class ChatRoomsInvitationsOutboxRequest
     with _$ChatRoomsInvitationsOutboxRequest {
   const factory ChatRoomsInvitationsOutboxRequest({
     required String roomId,

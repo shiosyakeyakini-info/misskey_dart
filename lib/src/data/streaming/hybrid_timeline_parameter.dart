@@ -4,7 +4,7 @@ part 'hybrid_timeline_parameter.freezed.dart';
 part 'hybrid_timeline_parameter.g.dart';
 
 @freezed
-class HybridTimelineParameter with _$HybridTimelineParameter {
+abstract class HybridTimelineParameter with _$HybridTimelineParameter {
   const factory HybridTimelineParameter({
     bool? withRenotes,
     bool? withReplies,

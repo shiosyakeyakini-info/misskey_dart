@@ -6,7 +6,7 @@ part 'chat_room.freezed.dart';
 part 'chat_room.g.dart';
 
 @freezed
-class ChatRoom with _$ChatRoom {
+abstract class ChatRoom with _$ChatRoom {
   const factory ChatRoom({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

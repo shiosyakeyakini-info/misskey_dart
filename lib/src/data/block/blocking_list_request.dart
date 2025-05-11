@@ -4,7 +4,7 @@ part 'blocking_list_request.freezed.dart';
 part 'blocking_list_request.g.dart';
 
 @freezed
-class BlockingListRequest with _$BlockingListRequest {
+abstract class BlockingListRequest with _$BlockingListRequest {
   const factory BlockingListRequest({
     int? limit,
     String? sinceId,

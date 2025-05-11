@@ -4,7 +4,7 @@ part 'following_delete_request.freezed.dart';
 part 'following_delete_request.g.dart';
 
 @freezed
-class FollowingDeleteRequest with _$FollowingDeleteRequest {
+abstract class FollowingDeleteRequest with _$FollowingDeleteRequest {
   const factory FollowingDeleteRequest({
     required String userId,
   }) = _FollowingDeleteRequest;

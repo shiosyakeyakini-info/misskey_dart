@@ -4,7 +4,7 @@ part 'chat_rooms_owned_request.freezed.dart';
 part 'chat_rooms_owned_request.g.dart';
 
 @freezed
-class ChatRoomsOwnedRequest with _$ChatRoomsOwnedRequest {
+abstract class ChatRoomsOwnedRequest with _$ChatRoomsOwnedRequest {
   const factory ChatRoomsOwnedRequest({
     int? limit,
     String? sinceId,

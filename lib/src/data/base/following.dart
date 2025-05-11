@@ -6,7 +6,7 @@ part 'following.freezed.dart';
 part 'following.g.dart';
 
 @freezed
-class Following with _$Following {
+abstract class Following with _$Following {
   const factory Following({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

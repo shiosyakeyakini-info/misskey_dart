@@ -4,7 +4,7 @@ part 'chat_room_parameter.freezed.dart';
 part 'chat_room_parameter.g.dart';
 
 @freezed
-class ChatRoomParameter with _$ChatRoomParameter {
+abstract class ChatRoomParameter with _$ChatRoomParameter {
   const factory ChatRoomParameter({
     required String roomId,
   }) = _ChatRoomParameter;

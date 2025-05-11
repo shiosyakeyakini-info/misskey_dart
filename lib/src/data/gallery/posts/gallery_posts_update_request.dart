@@ -4,7 +4,7 @@ part 'gallery_posts_update_request.freezed.dart';
 part 'gallery_posts_update_request.g.dart';
 
 @freezed
-class GalleryPostsUpdateRequest with _$GalleryPostsUpdateRequest {
+abstract class GalleryPostsUpdateRequest with _$GalleryPostsUpdateRequest {
   const factory GalleryPostsUpdateRequest({
     required String postId,
     required String title,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,82 +10,59 @@ part of 'endpoint_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EndpointResponse _$EndpointResponseFromJson(Map<String, dynamic> json) {
-  return _EndpointResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EndpointResponse {
-  List<EndpointParameter> get params => throw _privateConstructorUsedError;
-
-  /// Serializes this EndpointResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<EndpointParameter> get params;
 
   /// Create a copy of EndpointResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $EndpointResponseCopyWith<EndpointResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EndpointResponseCopyWith<$Res> {
-  factory $EndpointResponseCopyWith(
-          EndpointResponse value, $Res Function(EndpointResponse) then) =
-      _$EndpointResponseCopyWithImpl<$Res, EndpointResponse>;
-  @useResult
-  $Res call({List<EndpointParameter> params});
-}
-
-/// @nodoc
-class _$EndpointResponseCopyWithImpl<$Res, $Val extends EndpointResponse>
-    implements $EndpointResponseCopyWith<$Res> {
-  _$EndpointResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EndpointResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $EndpointResponseCopyWith<EndpointResponse> get copyWith =>
+      _$EndpointResponseCopyWithImpl<EndpointResponse>(
+          this as EndpointResponse, _$identity);
+
+  /// Serializes this EndpointResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? params = null,
-  }) {
-    return _then(_value.copyWith(
-      params: null == params
-          ? _value.params
-          : params // ignore: cast_nullable_to_non_nullable
-              as List<EndpointParameter>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EndpointResponse &&
+            const DeepCollectionEquality().equals(other.params, params));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(params));
+
+  @override
+  String toString() {
+    return 'EndpointResponse(params: $params)';
   }
 }
 
 /// @nodoc
-abstract class _$$EndpointResponseImplCopyWith<$Res>
-    implements $EndpointResponseCopyWith<$Res> {
-  factory _$$EndpointResponseImplCopyWith(_$EndpointResponseImpl value,
-          $Res Function(_$EndpointResponseImpl) then) =
-      __$$EndpointResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $EndpointResponseCopyWith<$Res> {
+  factory $EndpointResponseCopyWith(
+          EndpointResponse value, $Res Function(EndpointResponse) _then) =
+      _$EndpointResponseCopyWithImpl;
   @useResult
   $Res call({List<EndpointParameter> params});
 }
 
 /// @nodoc
-class __$$EndpointResponseImplCopyWithImpl<$Res>
-    extends _$EndpointResponseCopyWithImpl<$Res, _$EndpointResponseImpl>
-    implements _$$EndpointResponseImplCopyWith<$Res> {
-  __$$EndpointResponseImplCopyWithImpl(_$EndpointResponseImpl _value,
-      $Res Function(_$EndpointResponseImpl) _then)
-      : super(_value, _then);
+class _$EndpointResponseCopyWithImpl<$Res>
+    implements $EndpointResponseCopyWith<$Res> {
+  _$EndpointResponseCopyWithImpl(this._self, this._then);
+
+  final EndpointResponse _self;
+  final $Res Function(EndpointResponse) _then;
 
   /// Create a copy of EndpointResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -93,9 +71,9 @@ class __$$EndpointResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? params = null,
   }) {
-    return _then(_$EndpointResponseImpl(
+    return _then(_self.copyWith(
       params: null == params
-          ? _value._params
+          ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
               as List<EndpointParameter>,
     ));
@@ -104,12 +82,11 @@ class __$$EndpointResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointResponseImpl implements _EndpointResponse {
-  const _$EndpointResponseImpl({required final List<EndpointParameter> params})
+class _EndpointResponse implements EndpointResponse {
+  const _EndpointResponse({required final List<EndpointParameter> params})
       : _params = params;
-
-  factory _$EndpointResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointResponseImplFromJson(json);
+  factory _EndpointResponse.fromJson(Map<String, dynamic> json) =>
+      _$EndpointResponseFromJson(json);
 
   final List<EndpointParameter> _params;
   @override
@@ -119,16 +96,26 @@ class _$EndpointResponseImpl implements _EndpointResponse {
     return EqualUnmodifiableListView(_params);
   }
 
+  /// Create a copy of EndpointResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'EndpointResponse(params: $params)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EndpointResponseCopyWith<_EndpointResponse> get copyWith =>
+      __$EndpointResponseCopyWithImpl<_EndpointResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointResponseImpl &&
+            other is _EndpointResponse &&
             const DeepCollectionEquality().equals(other._params, _params));
   }
 
@@ -137,163 +124,68 @@ class _$EndpointResponseImpl implements _EndpointResponse {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_params));
 
-  /// Create a copy of EndpointResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointResponseImplCopyWith<_$EndpointResponseImpl> get copyWith =>
-      __$$EndpointResponseImplCopyWithImpl<_$EndpointResponseImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointResponseImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _EndpointResponse implements EndpointResponse {
-  const factory _EndpointResponse(
-      {required final List<EndpointParameter> params}) = _$EndpointResponseImpl;
-
-  factory _EndpointResponse.fromJson(Map<String, dynamic> json) =
-      _$EndpointResponseImpl.fromJson;
-
-  @override
-  List<EndpointParameter> get params;
-
-  /// Create a copy of EndpointResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointResponseImplCopyWith<_$EndpointResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-EndpointParameter _$EndpointParameterFromJson(Map<String, dynamic> json) {
-  return _EndpointParameter.fromJson(json);
-}
-
-/// @nodoc
-mixin _$EndpointParameter {
-  String get name => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-
-  /// Serializes this EndpointParameter to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of EndpointParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $EndpointParameterCopyWith<EndpointParameter> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EndpointParameterCopyWith<$Res> {
-  factory $EndpointParameterCopyWith(
-          EndpointParameter value, $Res Function(EndpointParameter) then) =
-      _$EndpointParameterCopyWithImpl<$Res, EndpointParameter>;
-  @useResult
-  $Res call({String name, String type});
-}
-
-/// @nodoc
-class _$EndpointParameterCopyWithImpl<$Res, $Val extends EndpointParameter>
-    implements $EndpointParameterCopyWith<$Res> {
-  _$EndpointParameterCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EndpointParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? type = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  String toString() {
+    return 'EndpointResponse(params: $params)';
   }
 }
 
 /// @nodoc
-abstract class _$$EndpointParameterImplCopyWith<$Res>
-    implements $EndpointParameterCopyWith<$Res> {
-  factory _$$EndpointParameterImplCopyWith(_$EndpointParameterImpl value,
-          $Res Function(_$EndpointParameterImpl) then) =
-      __$$EndpointParameterImplCopyWithImpl<$Res>;
+abstract mixin class _$EndpointResponseCopyWith<$Res>
+    implements $EndpointResponseCopyWith<$Res> {
+  factory _$EndpointResponseCopyWith(
+          _EndpointResponse value, $Res Function(_EndpointResponse) _then) =
+      __$EndpointResponseCopyWithImpl;
   @override
   @useResult
-  $Res call({String name, String type});
+  $Res call({List<EndpointParameter> params});
 }
 
 /// @nodoc
-class __$$EndpointParameterImplCopyWithImpl<$Res>
-    extends _$EndpointParameterCopyWithImpl<$Res, _$EndpointParameterImpl>
-    implements _$$EndpointParameterImplCopyWith<$Res> {
-  __$$EndpointParameterImplCopyWithImpl(_$EndpointParameterImpl _value,
-      $Res Function(_$EndpointParameterImpl) _then)
-      : super(_value, _then);
+class __$EndpointResponseCopyWithImpl<$Res>
+    implements _$EndpointResponseCopyWith<$Res> {
+  __$EndpointResponseCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of EndpointParameter
+  final _EndpointResponse _self;
+  final $Res Function(_EndpointResponse) _then;
+
+  /// Create a copy of EndpointResponse
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
-    Object? type = null,
+    Object? params = null,
   }) {
-    return _then(_$EndpointParameterImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_EndpointResponse(
+      params: null == params
+          ? _self._params
+          : params // ignore: cast_nullable_to_non_nullable
+              as List<EndpointParameter>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$EndpointParameterImpl implements _EndpointParameter {
-  const _$EndpointParameterImpl({required this.name, required this.type});
+mixin _$EndpointParameter {
+  String get name;
+  String get type;
 
-  factory _$EndpointParameterImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointParameterImplFromJson(json);
+  /// Create a copy of EndpointParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EndpointParameterCopyWith<EndpointParameter> get copyWith =>
+      _$EndpointParameterCopyWithImpl<EndpointParameter>(
+          this as EndpointParameter, _$identity);
 
-  @override
-  final String name;
-  @override
-  final String type;
-
-  @override
-  String toString() {
-    return 'EndpointParameter(name: $name, type: $type)';
-  }
+  /// Serializes this EndpointParameter to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointParameterImpl &&
+            other is EndpointParameter &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type));
   }
@@ -302,40 +194,134 @@ class _$EndpointParameterImpl implements _EndpointParameter {
   @override
   int get hashCode => Object.hash(runtimeType, name, type);
 
-  /// Create a copy of EndpointParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointParameterImplCopyWith<_$EndpointParameterImpl> get copyWith =>
-      __$$EndpointParameterImplCopyWithImpl<_$EndpointParameterImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointParameterImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EndpointParameter(name: $name, type: $type)';
   }
 }
 
-abstract class _EndpointParameter implements EndpointParameter {
-  const factory _EndpointParameter(
-      {required final String name,
-      required final String type}) = _$EndpointParameterImpl;
+/// @nodoc
+abstract mixin class $EndpointParameterCopyWith<$Res> {
+  factory $EndpointParameterCopyWith(
+          EndpointParameter value, $Res Function(EndpointParameter) _then) =
+      _$EndpointParameterCopyWithImpl;
+  @useResult
+  $Res call({String name, String type});
+}
 
-  factory _EndpointParameter.fromJson(Map<String, dynamic> json) =
-      _$EndpointParameterImpl.fromJson;
+/// @nodoc
+class _$EndpointParameterCopyWithImpl<$Res>
+    implements $EndpointParameterCopyWith<$Res> {
+  _$EndpointParameterCopyWithImpl(this._self, this._then);
+
+  final EndpointParameter _self;
+  final $Res Function(EndpointParameter) _then;
+
+  /// Create a copy of EndpointParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? type = null,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _EndpointParameter implements EndpointParameter {
+  const _EndpointParameter({required this.name, required this.type});
+  factory _EndpointParameter.fromJson(Map<String, dynamic> json) =>
+      _$EndpointParameterFromJson(json);
 
   @override
-  String get name;
+  final String name;
   @override
-  String get type;
+  final String type;
 
   /// Create a copy of EndpointParameter
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointParameterImplCopyWith<_$EndpointParameterImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$EndpointParameterCopyWith<_EndpointParameter> get copyWith =>
+      __$EndpointParameterCopyWithImpl<_EndpointParameter>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointParameterToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _EndpointParameter &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, type);
+
+  @override
+  String toString() {
+    return 'EndpointParameter(name: $name, type: $type)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$EndpointParameterCopyWith<$Res>
+    implements $EndpointParameterCopyWith<$Res> {
+  factory _$EndpointParameterCopyWith(
+          _EndpointParameter value, $Res Function(_EndpointParameter) _then) =
+      __$EndpointParameterCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String type});
+}
+
+/// @nodoc
+class __$EndpointParameterCopyWithImpl<$Res>
+    implements _$EndpointParameterCopyWith<$Res> {
+  __$EndpointParameterCopyWithImpl(this._self, this._then);
+
+  final _EndpointParameter _self;
+  final $Res Function(_EndpointParameter) _then;
+
+  /// Create a copy of EndpointParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? type = null,
+  }) {
+    return _then(_EndpointParameter(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

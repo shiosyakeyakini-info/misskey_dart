@@ -4,7 +4,8 @@ part 'chat_messages_user_timeline_request.freezed.dart';
 part 'chat_messages_user_timeline_request.g.dart';
 
 @freezed
-class ChatMessagesUserTimelineRequest with _$ChatMessagesUserTimelineRequest {
+abstract class ChatMessagesUserTimelineRequest
+    with _$ChatMessagesUserTimelineRequest {
   const factory ChatMessagesUserTimelineRequest({
     required String userId,
     int? limit,

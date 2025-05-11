@@ -6,16 +6,16 @@ part of 'notes_conversation_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesConversationRequestImpl _$$NotesConversationRequestImplFromJson(
+_NotesConversationRequest _$NotesConversationRequestFromJson(
         Map<String, dynamic> json) =>
-    _$NotesConversationRequestImpl(
+    _NotesConversationRequest(
       noteId: json['noteId'] as String,
-      limit: json['limit'] as int?,
-      offset: json['offset'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
+      offset: (json['offset'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$NotesConversationRequestImplToJson(
-        _$NotesConversationRequestImpl instance) =>
+Map<String, dynamic> _$NotesConversationRequestToJson(
+        _NotesConversationRequest instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
       'limit': instance.limit,

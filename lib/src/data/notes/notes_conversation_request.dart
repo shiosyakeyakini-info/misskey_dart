@@ -4,7 +4,7 @@ part 'notes_conversation_request.freezed.dart';
 part 'notes_conversation_request.g.dart';
 
 @freezed
-class NotesConversationRequest with _$NotesConversationRequest {
+abstract class NotesConversationRequest with _$NotesConversationRequest {
   const factory NotesConversationRequest({
     required String noteId,
     int? limit,

@@ -4,7 +4,7 @@ part 'users_get_frequently_replied_users_request.freezed.dart';
 part 'users_get_frequently_replied_users_request.g.dart';
 
 @freezed
-class UsersGetFrequentlyRepliedUsersRequest
+abstract class UsersGetFrequentlyRepliedUsersRequest
     with _$UsersGetFrequentlyRepliedUsersRequest {
   const factory UsersGetFrequentlyRepliedUsersRequest({
     required String userId,

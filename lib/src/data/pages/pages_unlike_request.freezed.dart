@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,69 @@ part of 'pages_unlike_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-PagesUnlikeRequest _$PagesUnlikeRequestFromJson(Map<String, dynamic> json) {
-  return _PagesUnlikeRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$PagesUnlikeRequest {
-  String get pageId => throw _privateConstructorUsedError;
+  String get pageId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PagesUnlikeRequestCopyWith<PagesUnlikeRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PagesUnlikeRequestCopyWith<$Res> {
-  factory $PagesUnlikeRequestCopyWith(
-          PagesUnlikeRequest value, $Res Function(PagesUnlikeRequest) then) =
-      _$PagesUnlikeRequestCopyWithImpl<$Res, PagesUnlikeRequest>;
-  @useResult
-  $Res call({String pageId});
-}
-
-/// @nodoc
-class _$PagesUnlikeRequestCopyWithImpl<$Res, $Val extends PagesUnlikeRequest>
-    implements $PagesUnlikeRequestCopyWith<$Res> {
-  _$PagesUnlikeRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of PagesUnlikeRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $PagesUnlikeRequestCopyWith<PagesUnlikeRequest> get copyWith =>
+      _$PagesUnlikeRequestCopyWithImpl<PagesUnlikeRequest>(
+          this as PagesUnlikeRequest, _$identity);
+
+  /// Serializes this PagesUnlikeRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? pageId = null,
-  }) {
-    return _then(_value.copyWith(
-      pageId: null == pageId
-          ? _value.pageId
-          : pageId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PagesUnlikeRequest &&
+            (identical(other.pageId, pageId) || other.pageId == pageId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, pageId);
+
+  @override
+  String toString() {
+    return 'PagesUnlikeRequest(pageId: $pageId)';
   }
 }
 
 /// @nodoc
-abstract class _$$PagesUnlikeRequestImplCopyWith<$Res>
-    implements $PagesUnlikeRequestCopyWith<$Res> {
-  factory _$$PagesUnlikeRequestImplCopyWith(_$PagesUnlikeRequestImpl value,
-          $Res Function(_$PagesUnlikeRequestImpl) then) =
-      __$$PagesUnlikeRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PagesUnlikeRequestCopyWith<$Res> {
+  factory $PagesUnlikeRequestCopyWith(
+          PagesUnlikeRequest value, $Res Function(PagesUnlikeRequest) _then) =
+      _$PagesUnlikeRequestCopyWithImpl;
   @useResult
   $Res call({String pageId});
 }
 
 /// @nodoc
-class __$$PagesUnlikeRequestImplCopyWithImpl<$Res>
-    extends _$PagesUnlikeRequestCopyWithImpl<$Res, _$PagesUnlikeRequestImpl>
-    implements _$$PagesUnlikeRequestImplCopyWith<$Res> {
-  __$$PagesUnlikeRequestImplCopyWithImpl(_$PagesUnlikeRequestImpl _value,
-      $Res Function(_$PagesUnlikeRequestImpl) _then)
-      : super(_value, _then);
+class _$PagesUnlikeRequestCopyWithImpl<$Res>
+    implements $PagesUnlikeRequestCopyWith<$Res> {
+  _$PagesUnlikeRequestCopyWithImpl(this._self, this._then);
 
+  final PagesUnlikeRequest _self;
+  final $Res Function(PagesUnlikeRequest) _then;
+
+  /// Create a copy of PagesUnlikeRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? pageId = null,
   }) {
-    return _then(_$PagesUnlikeRequestImpl(
+    return _then(_self.copyWith(
       pageId: null == pageId
-          ? _value.pageId
+          ? _self.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -96,58 +81,80 @@ class __$$PagesUnlikeRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PagesUnlikeRequestImpl implements _PagesUnlikeRequest {
-  const _$PagesUnlikeRequestImpl({required this.pageId});
-
-  factory _$PagesUnlikeRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PagesUnlikeRequestImplFromJson(json);
+class _PagesUnlikeRequest implements PagesUnlikeRequest {
+  const _PagesUnlikeRequest({required this.pageId});
+  factory _PagesUnlikeRequest.fromJson(Map<String, dynamic> json) =>
+      _$PagesUnlikeRequestFromJson(json);
 
   @override
   final String pageId;
 
+  /// Create a copy of PagesUnlikeRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PagesUnlikeRequest(pageId: $pageId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PagesUnlikeRequestCopyWith<_PagesUnlikeRequest> get copyWith =>
+      __$PagesUnlikeRequestCopyWithImpl<_PagesUnlikeRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PagesUnlikeRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PagesUnlikeRequestImpl &&
+            other is _PagesUnlikeRequest &&
             (identical(other.pageId, pageId) || other.pageId == pageId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, pageId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PagesUnlikeRequestImplCopyWith<_$PagesUnlikeRequestImpl> get copyWith =>
-      __$$PagesUnlikeRequestImplCopyWithImpl<_$PagesUnlikeRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PagesUnlikeRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PagesUnlikeRequest(pageId: $pageId)';
   }
 }
 
-abstract class _PagesUnlikeRequest implements PagesUnlikeRequest {
-  const factory _PagesUnlikeRequest({required final String pageId}) =
-      _$PagesUnlikeRequestImpl;
-
-  factory _PagesUnlikeRequest.fromJson(Map<String, dynamic> json) =
-      _$PagesUnlikeRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$PagesUnlikeRequestCopyWith<$Res>
+    implements $PagesUnlikeRequestCopyWith<$Res> {
+  factory _$PagesUnlikeRequestCopyWith(
+          _PagesUnlikeRequest value, $Res Function(_PagesUnlikeRequest) _then) =
+      __$PagesUnlikeRequestCopyWithImpl;
   @override
-  String get pageId;
-  @override
-  @JsonKey(ignore: true)
-  _$$PagesUnlikeRequestImplCopyWith<_$PagesUnlikeRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String pageId});
 }
+
+/// @nodoc
+class __$PagesUnlikeRequestCopyWithImpl<$Res>
+    implements _$PagesUnlikeRequestCopyWith<$Res> {
+  __$PagesUnlikeRequestCopyWithImpl(this._self, this._then);
+
+  final _PagesUnlikeRequest _self;
+  final $Res Function(_PagesUnlikeRequest) _then;
+
+  /// Create a copy of PagesUnlikeRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? pageId = null,
+  }) {
+    return _then(_PagesUnlikeRequest(
+      pageId: null == pageId
+          ? _self.pageId
+          : pageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

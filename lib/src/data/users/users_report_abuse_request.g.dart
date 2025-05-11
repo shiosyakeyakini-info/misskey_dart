@@ -6,15 +6,13 @@ part of 'users_report_abuse_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersReportAbuseImpl _$$UsersReportAbuseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UsersReportAbuseImpl(
+_UsersReportAbuse _$UsersReportAbuseFromJson(Map<String, dynamic> json) =>
+    _UsersReportAbuse(
       userId: json['userId'] as String,
       comment: json['comment'] as String,
     );
 
-Map<String, dynamic> _$$UsersReportAbuseImplToJson(
-        _$UsersReportAbuseImpl instance) =>
+Map<String, dynamic> _$UsersReportAbuseToJson(_UsersReportAbuse instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'comment': instance.comment,

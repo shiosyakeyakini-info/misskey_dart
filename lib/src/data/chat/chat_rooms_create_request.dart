@@ -4,7 +4,7 @@ part 'chat_rooms_create_request.freezed.dart';
 part 'chat_rooms_create_request.g.dart';
 
 @freezed
-class ChatRoomsCreateRequest with _$ChatRoomsCreateRequest {
+abstract class ChatRoomsCreateRequest with _$ChatRoomsCreateRequest {
   const factory ChatRoomsCreateRequest({
     required String name,
     String? description,

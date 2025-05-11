@@ -4,7 +4,7 @@ part 'drive_files_create_request.freezed.dart';
 part 'drive_files_create_request.g.dart';
 
 @freezed
-class DriveFilesCreateRequest with _$DriveFilesCreateRequest {
+abstract class DriveFilesCreateRequest with _$DriveFilesCreateRequest {
   const factory DriveFilesCreateRequest({
     String? folderId,
     String? name,

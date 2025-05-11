@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,165 +10,32 @@ part of 'chat_rooms_members_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsMembersRequest _$ChatRoomsMembersRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsMembersRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsMembersRequest {
-  String get roomId => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsMembersRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
   /// Create a copy of ChatRoomsMembersRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatRoomsMembersRequestCopyWith<ChatRoomsMembersRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ChatRoomsMembersRequestCopyWithImpl<ChatRoomsMembersRequest>(
+          this as ChatRoomsMembersRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatRoomsMembersRequestCopyWith<$Res> {
-  factory $ChatRoomsMembersRequestCopyWith(ChatRoomsMembersRequest value,
-          $Res Function(ChatRoomsMembersRequest) then) =
-      _$ChatRoomsMembersRequestCopyWithImpl<$Res, ChatRoomsMembersRequest>;
-  @useResult
-  $Res call({String roomId, int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$ChatRoomsMembersRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsMembersRequest>
-    implements $ChatRoomsMembersRequestCopyWith<$Res> {
-  _$ChatRoomsMembersRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsMembersRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? roomId = null,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatRoomsMembersRequestImplCopyWith<$Res>
-    implements $ChatRoomsMembersRequestCopyWith<$Res> {
-  factory _$$ChatRoomsMembersRequestImplCopyWith(
-          _$ChatRoomsMembersRequestImpl value,
-          $Res Function(_$ChatRoomsMembersRequestImpl) then) =
-      __$$ChatRoomsMembersRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String roomId, int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class __$$ChatRoomsMembersRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsMembersRequestCopyWithImpl<$Res,
-        _$ChatRoomsMembersRequestImpl>
-    implements _$$ChatRoomsMembersRequestImplCopyWith<$Res> {
-  __$$ChatRoomsMembersRequestImplCopyWithImpl(
-      _$ChatRoomsMembersRequestImpl _value,
-      $Res Function(_$ChatRoomsMembersRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatRoomsMembersRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? roomId = null,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_$ChatRoomsMembersRequestImpl(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatRoomsMembersRequestImpl implements _ChatRoomsMembersRequest {
-  const _$ChatRoomsMembersRequestImpl(
-      {required this.roomId, this.limit, this.sinceId, this.untilId});
-
-  factory _$ChatRoomsMembersRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomsMembersRequestImplFromJson(json);
-
-  @override
-  final String roomId;
-  @override
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-
-  @override
-  String toString() {
-    return 'ChatRoomsMembersRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
-  }
+  /// Serializes this ChatRoomsMembersRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsMembersRequestImpl &&
+            other is ChatRoomsMembersRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
@@ -178,46 +46,162 @@ class _$ChatRoomsMembersRequestImpl implements _ChatRoomsMembersRequest {
   @override
   int get hashCode => Object.hash(runtimeType, roomId, limit, sinceId, untilId);
 
-  /// Create a copy of ChatRoomsMembersRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsMembersRequestImplCopyWith<_$ChatRoomsMembersRequestImpl>
-      get copyWith => __$$ChatRoomsMembersRequestImplCopyWithImpl<
-          _$ChatRoomsMembersRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsMembersRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsMembersRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _ChatRoomsMembersRequest implements ChatRoomsMembersRequest {
-  const factory _ChatRoomsMembersRequest(
-      {required final String roomId,
-      final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$ChatRoomsMembersRequestImpl;
+/// @nodoc
+abstract mixin class $ChatRoomsMembersRequestCopyWith<$Res> {
+  factory $ChatRoomsMembersRequestCopyWith(ChatRoomsMembersRequest value,
+          $Res Function(ChatRoomsMembersRequest) _then) =
+      _$ChatRoomsMembersRequestCopyWithImpl;
+  @useResult
+  $Res call({String roomId, int? limit, String? sinceId, String? untilId});
+}
 
-  factory _ChatRoomsMembersRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsMembersRequestImpl.fromJson;
+/// @nodoc
+class _$ChatRoomsMembersRequestCopyWithImpl<$Res>
+    implements $ChatRoomsMembersRequestCopyWith<$Res> {
+  _$ChatRoomsMembersRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsMembersRequest _self;
+  final $Res Function(ChatRoomsMembersRequest) _then;
+
+  /// Create a copy of ChatRoomsMembersRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? roomId = null,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatRoomsMembersRequest implements ChatRoomsMembersRequest {
+  const _ChatRoomsMembersRequest(
+      {required this.roomId, this.limit, this.sinceId, this.untilId});
+  factory _ChatRoomsMembersRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsMembersRequestFromJson(json);
 
   @override
-  String get roomId;
+  final String roomId;
   @override
-  int? get limit;
+  final int? limit;
   @override
-  String? get sinceId;
+  final String? sinceId;
   @override
-  String? get untilId;
+  final String? untilId;
 
   /// Create a copy of ChatRoomsMembersRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsMembersRequestImplCopyWith<_$ChatRoomsMembersRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsMembersRequestCopyWith<_ChatRoomsMembersRequest> get copyWith =>
+      __$ChatRoomsMembersRequestCopyWithImpl<_ChatRoomsMembersRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsMembersRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatRoomsMembersRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsMembersRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatRoomsMembersRequestCopyWith<$Res>
+    implements $ChatRoomsMembersRequestCopyWith<$Res> {
+  factory _$ChatRoomsMembersRequestCopyWith(_ChatRoomsMembersRequest value,
+          $Res Function(_ChatRoomsMembersRequest) _then) =
+      __$ChatRoomsMembersRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String roomId, int? limit, String? sinceId, String? untilId});
+}
+
+/// @nodoc
+class __$ChatRoomsMembersRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsMembersRequestCopyWith<$Res> {
+  __$ChatRoomsMembersRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsMembersRequest _self;
+  final $Res Function(_ChatRoomsMembersRequest) _then;
+
+  /// Create a copy of ChatRoomsMembersRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_ChatRoomsMembersRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

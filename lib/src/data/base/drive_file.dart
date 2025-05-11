@@ -6,7 +6,7 @@ part 'drive_file.freezed.dart';
 part 'drive_file.g.dart';
 
 @freezed
-class DriveFile with _$DriveFile {
+abstract class DriveFile with _$DriveFile {
   const factory DriveFile({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -31,7 +31,7 @@ class DriveFile with _$DriveFile {
 }
 
 @freezed
-class DriveFileProperties with _$DriveFileProperties {
+abstract class DriveFileProperties with _$DriveFileProperties {
   const factory DriveFileProperties({
     int? width,
     int? height,

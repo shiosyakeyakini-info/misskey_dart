@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,87 +10,58 @@ part of 'chat_rooms_delete_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsDeleteRequest _$ChatRoomsDeleteRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsDeleteRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsDeleteRequest {
-  String get roomId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsDeleteRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
 
   /// Create a copy of ChatRoomsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatRoomsDeleteRequestCopyWith<ChatRoomsDeleteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChatRoomsDeleteRequestCopyWith<$Res> {
-  factory $ChatRoomsDeleteRequestCopyWith(ChatRoomsDeleteRequest value,
-          $Res Function(ChatRoomsDeleteRequest) then) =
-      _$ChatRoomsDeleteRequestCopyWithImpl<$Res, ChatRoomsDeleteRequest>;
-  @useResult
-  $Res call({String roomId});
-}
-
-/// @nodoc
-class _$ChatRoomsDeleteRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsDeleteRequest>
-    implements $ChatRoomsDeleteRequestCopyWith<$Res> {
-  _$ChatRoomsDeleteRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ChatRoomsDeleteRequestCopyWith<ChatRoomsDeleteRequest> get copyWith =>
+      _$ChatRoomsDeleteRequestCopyWithImpl<ChatRoomsDeleteRequest>(
+          this as ChatRoomsDeleteRequest, _$identity);
+
+  /// Serializes this ChatRoomsDeleteRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roomId = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatRoomsDeleteRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsDeleteRequest(roomId: $roomId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChatRoomsDeleteRequestImplCopyWith<$Res>
-    implements $ChatRoomsDeleteRequestCopyWith<$Res> {
-  factory _$$ChatRoomsDeleteRequestImplCopyWith(
-          _$ChatRoomsDeleteRequestImpl value,
-          $Res Function(_$ChatRoomsDeleteRequestImpl) then) =
-      __$$ChatRoomsDeleteRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChatRoomsDeleteRequestCopyWith<$Res> {
+  factory $ChatRoomsDeleteRequestCopyWith(ChatRoomsDeleteRequest value,
+          $Res Function(ChatRoomsDeleteRequest) _then) =
+      _$ChatRoomsDeleteRequestCopyWithImpl;
   @useResult
   $Res call({String roomId});
 }
 
 /// @nodoc
-class __$$ChatRoomsDeleteRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsDeleteRequestCopyWithImpl<$Res,
-        _$ChatRoomsDeleteRequestImpl>
-    implements _$$ChatRoomsDeleteRequestImplCopyWith<$Res> {
-  __$$ChatRoomsDeleteRequestImplCopyWithImpl(
-      _$ChatRoomsDeleteRequestImpl _value,
-      $Res Function(_$ChatRoomsDeleteRequestImpl) _then)
-      : super(_value, _then);
+class _$ChatRoomsDeleteRequestCopyWithImpl<$Res>
+    implements $ChatRoomsDeleteRequestCopyWith<$Res> {
+  _$ChatRoomsDeleteRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsDeleteRequest _self;
+  final $Res Function(ChatRoomsDeleteRequest) _then;
 
   /// Create a copy of ChatRoomsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -98,9 +70,9 @@ class __$$ChatRoomsDeleteRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? roomId = null,
   }) {
-    return _then(_$ChatRoomsDeleteRequestImpl(
+    return _then(_self.copyWith(
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -109,25 +81,35 @@ class __$$ChatRoomsDeleteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatRoomsDeleteRequestImpl implements _ChatRoomsDeleteRequest {
-  const _$ChatRoomsDeleteRequestImpl({required this.roomId});
-
-  factory _$ChatRoomsDeleteRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomsDeleteRequestImplFromJson(json);
+class _ChatRoomsDeleteRequest implements ChatRoomsDeleteRequest {
+  const _ChatRoomsDeleteRequest({required this.roomId});
+  factory _ChatRoomsDeleteRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsDeleteRequestFromJson(json);
 
   @override
   final String roomId;
 
+  /// Create a copy of ChatRoomsDeleteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatRoomsDeleteRequest(roomId: $roomId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsDeleteRequestCopyWith<_ChatRoomsDeleteRequest> get copyWith =>
+      __$ChatRoomsDeleteRequestCopyWithImpl<_ChatRoomsDeleteRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsDeleteRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsDeleteRequestImpl &&
+            other is _ChatRoomsDeleteRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
@@ -135,37 +117,45 @@ class _$ChatRoomsDeleteRequestImpl implements _ChatRoomsDeleteRequest {
   @override
   int get hashCode => Object.hash(runtimeType, roomId);
 
-  /// Create a copy of ChatRoomsDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsDeleteRequestImplCopyWith<_$ChatRoomsDeleteRequestImpl>
-      get copyWith => __$$ChatRoomsDeleteRequestImplCopyWithImpl<
-          _$ChatRoomsDeleteRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsDeleteRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsDeleteRequest(roomId: $roomId)';
   }
 }
 
-abstract class _ChatRoomsDeleteRequest implements ChatRoomsDeleteRequest {
-  const factory _ChatRoomsDeleteRequest({required final String roomId}) =
-      _$ChatRoomsDeleteRequestImpl;
-
-  factory _ChatRoomsDeleteRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsDeleteRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChatRoomsDeleteRequestCopyWith<$Res>
+    implements $ChatRoomsDeleteRequestCopyWith<$Res> {
+  factory _$ChatRoomsDeleteRequestCopyWith(_ChatRoomsDeleteRequest value,
+          $Res Function(_ChatRoomsDeleteRequest) _then) =
+      __$ChatRoomsDeleteRequestCopyWithImpl;
   @override
-  String get roomId;
+  @useResult
+  $Res call({String roomId});
+}
+
+/// @nodoc
+class __$ChatRoomsDeleteRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsDeleteRequestCopyWith<$Res> {
+  __$ChatRoomsDeleteRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsDeleteRequest _self;
+  final $Res Function(_ChatRoomsDeleteRequest) _then;
 
   /// Create a copy of ChatRoomsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsDeleteRequestImplCopyWith<_$ChatRoomsDeleteRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+  }) {
+    return _then(_ChatRoomsDeleteRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

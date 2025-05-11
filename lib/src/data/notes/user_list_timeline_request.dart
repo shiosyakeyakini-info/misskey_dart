@@ -5,7 +5,7 @@ part 'user_list_timeline_request.freezed.dart';
 part 'user_list_timeline_request.g.dart';
 
 @freezed
-class UserListTimelineRequest with _$UserListTimelineRequest {
+abstract class UserListTimelineRequest with _$UserListTimelineRequest {
   const factory UserListTimelineRequest({
     required String listId,
     @Assert('limit > 0') int? limit,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,70 @@ part of 'antennas_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-AntennasShowRequest _$AntennasShowRequestFromJson(Map<String, dynamic> json) {
-  return _AntennasShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AntennasShowRequest {
-  String get antennaId => throw _privateConstructorUsedError;
+  String get antennaId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AntennasShowRequestCopyWith<AntennasShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AntennasShowRequestCopyWith<$Res> {
-  factory $AntennasShowRequestCopyWith(
-          AntennasShowRequest value, $Res Function(AntennasShowRequest) then) =
-      _$AntennasShowRequestCopyWithImpl<$Res, AntennasShowRequest>;
-  @useResult
-  $Res call({String antennaId});
-}
-
-/// @nodoc
-class _$AntennasShowRequestCopyWithImpl<$Res, $Val extends AntennasShowRequest>
-    implements $AntennasShowRequestCopyWith<$Res> {
-  _$AntennasShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of AntennasShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $AntennasShowRequestCopyWith<AntennasShowRequest> get copyWith =>
+      _$AntennasShowRequestCopyWithImpl<AntennasShowRequest>(
+          this as AntennasShowRequest, _$identity);
+
+  /// Serializes this AntennasShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? antennaId = null,
-  }) {
-    return _then(_value.copyWith(
-      antennaId: null == antennaId
-          ? _value.antennaId
-          : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AntennasShowRequest &&
+            (identical(other.antennaId, antennaId) ||
+                other.antennaId == antennaId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, antennaId);
+
+  @override
+  String toString() {
+    return 'AntennasShowRequest(antennaId: $antennaId)';
   }
 }
 
 /// @nodoc
-abstract class _$$AntennasShowRequestImplCopyWith<$Res>
-    implements $AntennasShowRequestCopyWith<$Res> {
-  factory _$$AntennasShowRequestImplCopyWith(_$AntennasShowRequestImpl value,
-          $Res Function(_$AntennasShowRequestImpl) then) =
-      __$$AntennasShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AntennasShowRequestCopyWith<$Res> {
+  factory $AntennasShowRequestCopyWith(
+          AntennasShowRequest value, $Res Function(AntennasShowRequest) _then) =
+      _$AntennasShowRequestCopyWithImpl;
   @useResult
   $Res call({String antennaId});
 }
 
 /// @nodoc
-class __$$AntennasShowRequestImplCopyWithImpl<$Res>
-    extends _$AntennasShowRequestCopyWithImpl<$Res, _$AntennasShowRequestImpl>
-    implements _$$AntennasShowRequestImplCopyWith<$Res> {
-  __$$AntennasShowRequestImplCopyWithImpl(_$AntennasShowRequestImpl _value,
-      $Res Function(_$AntennasShowRequestImpl) _then)
-      : super(_value, _then);
+class _$AntennasShowRequestCopyWithImpl<$Res>
+    implements $AntennasShowRequestCopyWith<$Res> {
+  _$AntennasShowRequestCopyWithImpl(this._self, this._then);
 
+  final AntennasShowRequest _self;
+  final $Res Function(AntennasShowRequest) _then;
+
+  /// Create a copy of AntennasShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? antennaId = null,
   }) {
-    return _then(_$AntennasShowRequestImpl(
+    return _then(_self.copyWith(
       antennaId: null == antennaId
-          ? _value.antennaId
+          ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -96,59 +82,82 @@ class __$$AntennasShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AntennasShowRequestImpl implements _AntennasShowRequest {
-  const _$AntennasShowRequestImpl({required this.antennaId});
-
-  factory _$AntennasShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AntennasShowRequestImplFromJson(json);
+class _AntennasShowRequest implements AntennasShowRequest {
+  const _AntennasShowRequest({required this.antennaId});
+  factory _AntennasShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$AntennasShowRequestFromJson(json);
 
   @override
   final String antennaId;
 
+  /// Create a copy of AntennasShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AntennasShowRequest(antennaId: $antennaId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AntennasShowRequestCopyWith<_AntennasShowRequest> get copyWith =>
+      __$AntennasShowRequestCopyWithImpl<_AntennasShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AntennasShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AntennasShowRequestImpl &&
+            other is _AntennasShowRequest &&
             (identical(other.antennaId, antennaId) ||
                 other.antennaId == antennaId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, antennaId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AntennasShowRequestImplCopyWith<_$AntennasShowRequestImpl> get copyWith =>
-      __$$AntennasShowRequestImplCopyWithImpl<_$AntennasShowRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AntennasShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AntennasShowRequest(antennaId: $antennaId)';
   }
 }
 
-abstract class _AntennasShowRequest implements AntennasShowRequest {
-  const factory _AntennasShowRequest({required final String antennaId}) =
-      _$AntennasShowRequestImpl;
-
-  factory _AntennasShowRequest.fromJson(Map<String, dynamic> json) =
-      _$AntennasShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$AntennasShowRequestCopyWith<$Res>
+    implements $AntennasShowRequestCopyWith<$Res> {
+  factory _$AntennasShowRequestCopyWith(_AntennasShowRequest value,
+          $Res Function(_AntennasShowRequest) _then) =
+      __$AntennasShowRequestCopyWithImpl;
   @override
-  String get antennaId;
-  @override
-  @JsonKey(ignore: true)
-  _$$AntennasShowRequestImplCopyWith<_$AntennasShowRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String antennaId});
 }
+
+/// @nodoc
+class __$AntennasShowRequestCopyWithImpl<$Res>
+    implements _$AntennasShowRequestCopyWith<$Res> {
+  __$AntennasShowRequestCopyWithImpl(this._self, this._then);
+
+  final _AntennasShowRequest _self;
+  final $Res Function(_AntennasShowRequest) _then;
+
+  /// Create a copy of AntennasShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? antennaId = null,
+  }) {
+    return _then(_AntennasShowRequest(
+      antennaId: null == antennaId
+          ? _self.antennaId
+          : antennaId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

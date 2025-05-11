@@ -5,7 +5,7 @@ part 'antennas_update_request.freezed.dart';
 part 'antennas_update_request.g.dart';
 
 @freezed
-class AntennasUpdateRequest with _$AntennasUpdateRequest {
+abstract class AntennasUpdateRequest with _$AntennasUpdateRequest {
   const factory AntennasUpdateRequest({
     required String antennaId,
     required String name,

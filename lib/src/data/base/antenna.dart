@@ -6,7 +6,7 @@ part 'antenna.freezed.dart';
 part 'antenna.g.dart';
 
 @freezed
-class Antenna with _$Antenna {
+abstract class Antenna with _$Antenna {
   const factory Antenna({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

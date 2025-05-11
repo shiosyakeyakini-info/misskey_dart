@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,31 +10,49 @@ part of 'i_page_likes_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-IPageLikesResponse _$IPageLikesResponseFromJson(Map<String, dynamic> json) {
-  return _IPageLikesResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$IPageLikesResponse {
-  String get id => throw _privateConstructorUsedError;
-  Page get page => throw _privateConstructorUsedError;
+  String get id;
+  Page get page;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of IPageLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $IPageLikesResponseCopyWith<IPageLikesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$IPageLikesResponseCopyWithImpl<IPageLikesResponse>(
+          this as IPageLikesResponse, _$identity);
+
+  /// Serializes this IPageLikesResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is IPageLikesResponse &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.page, page) || other.page == page));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, page);
+
+  @override
+  String toString() {
+    return 'IPageLikesResponse(id: $id, page: $page)';
+  }
 }
 
 /// @nodoc
-abstract class $IPageLikesResponseCopyWith<$Res> {
+abstract mixin class $IPageLikesResponseCopyWith<$Res> {
   factory $IPageLikesResponseCopyWith(
-          IPageLikesResponse value, $Res Function(IPageLikesResponse) then) =
-      _$IPageLikesResponseCopyWithImpl<$Res, IPageLikesResponse>;
+          IPageLikesResponse value, $Res Function(IPageLikesResponse) _then) =
+      _$IPageLikesResponseCopyWithImpl;
   @useResult
   $Res call({String id, Page page});
 
@@ -41,143 +60,141 @@ abstract class $IPageLikesResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$IPageLikesResponseCopyWithImpl<$Res, $Val extends IPageLikesResponse>
+class _$IPageLikesResponseCopyWithImpl<$Res>
     implements $IPageLikesResponseCopyWith<$Res> {
-  _$IPageLikesResponseCopyWithImpl(this._value, this._then);
+  _$IPageLikesResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final IPageLikesResponse _self;
+  final $Res Function(IPageLikesResponse) _then;
 
+  /// Create a copy of IPageLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? page = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       page: null == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as Page,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of IPageLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PageCopyWith<$Res> get page {
-    return $PageCopyWith<$Res>(_value.page, (value) {
-      return _then(_value.copyWith(page: value) as $Val);
+    return $PageCopyWith<$Res>(_self.page, (value) {
+      return _then(_self.copyWith(page: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$IPageLikesResponseImplCopyWith<$Res>
-    implements $IPageLikesResponseCopyWith<$Res> {
-  factory _$$IPageLikesResponseImplCopyWith(_$IPageLikesResponseImpl value,
-          $Res Function(_$IPageLikesResponseImpl) then) =
-      __$$IPageLikesResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, Page page});
-
-  @override
-  $PageCopyWith<$Res> get page;
-}
-
-/// @nodoc
-class __$$IPageLikesResponseImplCopyWithImpl<$Res>
-    extends _$IPageLikesResponseCopyWithImpl<$Res, _$IPageLikesResponseImpl>
-    implements _$$IPageLikesResponseImplCopyWith<$Res> {
-  __$$IPageLikesResponseImplCopyWithImpl(_$IPageLikesResponseImpl _value,
-      $Res Function(_$IPageLikesResponseImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? page = null,
-  }) {
-    return _then(_$IPageLikesResponseImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as Page,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$IPageLikesResponseImpl implements _IPageLikesResponse {
-  const _$IPageLikesResponseImpl({required this.id, required this.page});
-
-  factory _$IPageLikesResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$IPageLikesResponseImplFromJson(json);
+class _IPageLikesResponse implements IPageLikesResponse {
+  const _IPageLikesResponse({required this.id, required this.page});
+  factory _IPageLikesResponse.fromJson(Map<String, dynamic> json) =>
+      _$IPageLikesResponseFromJson(json);
 
   @override
   final String id;
   @override
   final Page page;
 
+  /// Create a copy of IPageLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'IPageLikesResponse(id: $id, page: $page)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$IPageLikesResponseCopyWith<_IPageLikesResponse> get copyWith =>
+      __$IPageLikesResponseCopyWithImpl<_IPageLikesResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$IPageLikesResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$IPageLikesResponseImpl &&
+            other is _IPageLikesResponse &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.page, page) || other.page == page));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, page);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$IPageLikesResponseImplCopyWith<_$IPageLikesResponseImpl> get copyWith =>
-      __$$IPageLikesResponseImplCopyWithImpl<_$IPageLikesResponseImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$IPageLikesResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'IPageLikesResponse(id: $id, page: $page)';
   }
 }
 
-abstract class _IPageLikesResponse implements IPageLikesResponse {
-  const factory _IPageLikesResponse(
-      {required final String id,
-      required final Page page}) = _$IPageLikesResponseImpl;
+/// @nodoc
+abstract mixin class _$IPageLikesResponseCopyWith<$Res>
+    implements $IPageLikesResponseCopyWith<$Res> {
+  factory _$IPageLikesResponseCopyWith(
+          _IPageLikesResponse value, $Res Function(_IPageLikesResponse) _then) =
+      __$IPageLikesResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, Page page});
 
-  factory _IPageLikesResponse.fromJson(Map<String, dynamic> json) =
-      _$IPageLikesResponseImpl.fromJson;
-
   @override
-  String get id;
-  @override
-  Page get page;
-  @override
-  @JsonKey(ignore: true)
-  _$$IPageLikesResponseImplCopyWith<_$IPageLikesResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PageCopyWith<$Res> get page;
 }
+
+/// @nodoc
+class __$IPageLikesResponseCopyWithImpl<$Res>
+    implements _$IPageLikesResponseCopyWith<$Res> {
+  __$IPageLikesResponseCopyWithImpl(this._self, this._then);
+
+  final _IPageLikesResponse _self;
+  final $Res Function(_IPageLikesResponse) _then;
+
+  /// Create a copy of IPageLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? page = null,
+  }) {
+    return _then(_IPageLikesResponse(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: null == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as Page,
+    ));
+  }
+
+  /// Create a copy of IPageLikesResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageCopyWith<$Res> get page {
+    return $PageCopyWith<$Res>(_self.page, (value) {
+      return _then(_self.copyWith(page: value));
+    });
+  }
+}
+
+// dart format on

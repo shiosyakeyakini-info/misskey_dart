@@ -4,7 +4,7 @@ part 'users_lists_show_request.freezed.dart';
 part 'users_lists_show_request.g.dart';
 
 @freezed
-class UsersListsShowRequest with _$UsersListsShowRequest {
+abstract class UsersListsShowRequest with _$UsersListsShowRequest {
   const factory UsersListsShowRequest({
     required String listId,
     bool? forPublic,

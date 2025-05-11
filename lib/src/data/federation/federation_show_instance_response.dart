@@ -7,7 +7,8 @@ part 'federation_show_instance_response.freezed.dart';
 part 'federation_show_instance_response.g.dart';
 
 @freezed
-class FederationShowInstanceResponse with _$FederationShowInstanceResponse {
+abstract class FederationShowInstanceResponse
+    with _$FederationShowInstanceResponse {
   const factory FederationShowInstanceResponse({
     required String id,
     @DateTimeConverter() required DateTime firstRetrievedAt,

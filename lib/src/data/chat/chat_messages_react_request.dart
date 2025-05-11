@@ -4,7 +4,7 @@ part 'chat_messages_react_request.freezed.dart';
 part 'chat_messages_react_request.g.dart';
 
 @freezed
-class ChatMessagesReactRequest with _$ChatMessagesReactRequest {
+abstract class ChatMessagesReactRequest with _$ChatMessagesReactRequest {
   const factory ChatMessagesReactRequest({
     required String messageId,
     required String reaction,

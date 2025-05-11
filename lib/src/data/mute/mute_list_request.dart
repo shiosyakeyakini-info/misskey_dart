@@ -4,7 +4,7 @@ part 'mute_list_request.freezed.dart';
 part 'mute_list_request.g.dart';
 
 @freezed
-class MuteListRequest with _$MuteListRequest {
+abstract class MuteListRequest with _$MuteListRequest {
   const factory MuteListRequest({
     int? limit,
     String? sinceId,

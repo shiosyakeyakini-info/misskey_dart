@@ -6,10 +6,10 @@ part of 'notes_global_timeline_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesGlobalTimelineRequestImpl _$$NotesGlobalTimelineRequestImplFromJson(
+_NotesGlobalTimelineRequest _$NotesGlobalTimelineRequestFromJson(
         Map<String, dynamic> json) =>
-    _$NotesGlobalTimelineRequestImpl(
-      limit: json['limit'] as int?,
+    _NotesGlobalTimelineRequest(
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -21,8 +21,8 @@ _$NotesGlobalTimelineRequestImpl _$$NotesGlobalTimelineRequestImplFromJson(
       withReplies: json['withReplies'] as bool?,
     );
 
-Map<String, dynamic> _$$NotesGlobalTimelineRequestImplToJson(
-        _$NotesGlobalTimelineRequestImpl instance) =>
+Map<String, dynamic> _$NotesGlobalTimelineRequestToJson(
+        _NotesGlobalTimelineRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

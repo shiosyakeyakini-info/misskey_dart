@@ -4,7 +4,7 @@ part 'users_followeres_request.freezed.dart';
 part 'users_followeres_request.g.dart';
 
 @freezed
-class UsersFollowersRequest with _$UsersFollowersRequest {
+abstract class UsersFollowersRequest with _$UsersFollowersRequest {
   const factory UsersFollowersRequest({
     required String userId,
     String? sinceId,

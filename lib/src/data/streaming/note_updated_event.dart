@@ -5,7 +5,7 @@ part 'note_updated_event.freezed.dart';
 part 'note_updated_event.g.dart';
 
 @freezed
-class NoteUpdatedEvent with _$NoteUpdatedEvent {
+abstract class NoteUpdatedEvent with _$NoteUpdatedEvent {
   const factory NoteUpdatedEvent({
     required String id,
     @NoteUpdatedEventTypeJsonConverter() required NoteUpdatedEventType type,

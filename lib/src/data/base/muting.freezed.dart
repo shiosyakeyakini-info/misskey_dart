@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,34 +10,58 @@ part of 'muting.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-Muting _$MutingFromJson(Map<String, dynamic> json) {
-  return _Muting.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Muting {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
   @NullableDateTimeConverter()
-  DateTime? get expiresAt => throw _privateConstructorUsedError;
-  String get muteeId => throw _privateConstructorUsedError;
-  UserDetailedNotMe get mutee => throw _privateConstructorUsedError;
+  DateTime? get expiresAt;
+  String get muteeId;
+  UserDetailedNotMe get mutee;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MutingCopyWith<Muting> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of Muting
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MutingCopyWith<Muting> get copyWith =>
+      _$MutingCopyWithImpl<Muting>(this as Muting, _$identity);
+
+  /// Serializes this Muting to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Muting &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            (identical(other.muteeId, muteeId) || other.muteeId == muteeId) &&
+            (identical(other.mutee, mutee) || other.mutee == mutee));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, createdAt, expiresAt, muteeId, mutee);
+
+  @override
+  String toString() {
+    return 'Muting(id: $id, createdAt: $createdAt, expiresAt: $expiresAt, muteeId: $muteeId, mutee: $mutee)';
+  }
 }
 
 /// @nodoc
-abstract class $MutingCopyWith<$Res> {
-  factory $MutingCopyWith(Muting value, $Res Function(Muting) then) =
-      _$MutingCopyWithImpl<$Res, Muting>;
+abstract mixin class $MutingCopyWith<$Res> {
+  factory $MutingCopyWith(Muting value, $Res Function(Muting) _then) =
+      _$MutingCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -49,15 +74,14 @@ abstract class $MutingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MutingCopyWithImpl<$Res, $Val extends Muting>
-    implements $MutingCopyWith<$Res> {
-  _$MutingCopyWithImpl(this._value, this._then);
+class _$MutingCopyWithImpl<$Res> implements $MutingCopyWith<$Res> {
+  _$MutingCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Muting _self;
+  final $Res Function(Muting) _then;
 
+  /// Create a copy of Muting
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -67,111 +91,51 @@ class _$MutingCopyWithImpl<$Res, $Val extends Muting>
     Object? muteeId = null,
     Object? mutee = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       expiresAt: freezed == expiresAt
-          ? _value.expiresAt
+          ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       muteeId: null == muteeId
-          ? _value.muteeId
+          ? _self.muteeId
           : muteeId // ignore: cast_nullable_to_non_nullable
               as String,
       mutee: null == mutee
-          ? _value.mutee
+          ? _self.mutee
           : mutee // ignore: cast_nullable_to_non_nullable
               as UserDetailedNotMe,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of Muting
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserDetailedNotMeCopyWith<$Res> get mutee {
-    return $UserDetailedNotMeCopyWith<$Res>(_value.mutee, (value) {
-      return _then(_value.copyWith(mutee: value) as $Val);
+    return $UserDetailedNotMeCopyWith<$Res>(_self.mutee, (value) {
+      return _then(_self.copyWith(mutee: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$MutingImplCopyWith<$Res> implements $MutingCopyWith<$Res> {
-  factory _$$MutingImplCopyWith(
-          _$MutingImpl value, $Res Function(_$MutingImpl) then) =
-      __$$MutingImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      @NullableDateTimeConverter() DateTime? expiresAt,
-      String muteeId,
-      UserDetailedNotMe mutee});
-
-  @override
-  $UserDetailedNotMeCopyWith<$Res> get mutee;
-}
-
-/// @nodoc
-class __$$MutingImplCopyWithImpl<$Res>
-    extends _$MutingCopyWithImpl<$Res, _$MutingImpl>
-    implements _$$MutingImplCopyWith<$Res> {
-  __$$MutingImplCopyWithImpl(
-      _$MutingImpl _value, $Res Function(_$MutingImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? expiresAt = freezed,
-    Object? muteeId = null,
-    Object? mutee = null,
-  }) {
-    return _then(_$MutingImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      expiresAt: freezed == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      muteeId: null == muteeId
-          ? _value.muteeId
-          : muteeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      mutee: null == mutee
-          ? _value.mutee
-          : mutee // ignore: cast_nullable_to_non_nullable
-              as UserDetailedNotMe,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$MutingImpl implements _Muting {
-  const _$MutingImpl(
+class _Muting implements Muting {
+  const _Muting(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NullableDateTimeConverter() this.expiresAt,
       required this.muteeId,
       required this.mutee});
-
-  factory _$MutingImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MutingImplFromJson(json);
+  factory _Muting.fromJson(Map<String, dynamic> json) => _$MutingFromJson(json);
 
   @override
   final String id;
@@ -186,16 +150,26 @@ class _$MutingImpl implements _Muting {
   @override
   final UserDetailedNotMe mutee;
 
+  /// Create a copy of Muting
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Muting(id: $id, createdAt: $createdAt, expiresAt: $expiresAt, muteeId: $muteeId, mutee: $mutee)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MutingCopyWith<_Muting> get copyWith =>
+      __$MutingCopyWithImpl<_Muting>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MutingToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MutingImpl &&
+            other is _Muting &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -205,49 +179,85 @@ class _$MutingImpl implements _Muting {
             (identical(other.mutee, mutee) || other.mutee == mutee));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, createdAt, expiresAt, muteeId, mutee);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MutingImplCopyWith<_$MutingImpl> get copyWith =>
-      __$$MutingImplCopyWithImpl<_$MutingImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MutingImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Muting(id: $id, createdAt: $createdAt, expiresAt: $expiresAt, muteeId: $muteeId, mutee: $mutee)';
   }
 }
 
-abstract class _Muting implements Muting {
-  const factory _Muting(
-      {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
-      @NullableDateTimeConverter() final DateTime? expiresAt,
-      required final String muteeId,
-      required final UserDetailedNotMe mutee}) = _$MutingImpl;
+/// @nodoc
+abstract mixin class _$MutingCopyWith<$Res> implements $MutingCopyWith<$Res> {
+  factory _$MutingCopyWith(_Muting value, $Res Function(_Muting) _then) =
+      __$MutingCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      @NullableDateTimeConverter() DateTime? expiresAt,
+      String muteeId,
+      UserDetailedNotMe mutee});
 
-  factory _Muting.fromJson(Map<String, dynamic> json) = _$MutingImpl.fromJson;
-
   @override
-  String get id;
-  @override
-  @DateTimeConverter()
-  DateTime get createdAt;
-  @override
-  @NullableDateTimeConverter()
-  DateTime? get expiresAt;
-  @override
-  String get muteeId;
-  @override
-  UserDetailedNotMe get mutee;
-  @override
-  @JsonKey(ignore: true)
-  _$$MutingImplCopyWith<_$MutingImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserDetailedNotMeCopyWith<$Res> get mutee;
 }
+
+/// @nodoc
+class __$MutingCopyWithImpl<$Res> implements _$MutingCopyWith<$Res> {
+  __$MutingCopyWithImpl(this._self, this._then);
+
+  final _Muting _self;
+  final $Res Function(_Muting) _then;
+
+  /// Create a copy of Muting
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? expiresAt = freezed,
+    Object? muteeId = null,
+    Object? mutee = null,
+  }) {
+    return _then(_Muting(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresAt: freezed == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      muteeId: null == muteeId
+          ? _self.muteeId
+          : muteeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      mutee: null == mutee
+          ? _self.mutee
+          : mutee // ignore: cast_nullable_to_non_nullable
+              as UserDetailedNotMe,
+    ));
+  }
+
+  /// Create a copy of Muting
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res> get mutee {
+    return $UserDetailedNotMeCopyWith<$Res>(_self.mutee, (value) {
+      return _then(_self.copyWith(mutee: value));
+    });
+  }
+}
+
+// dart format on

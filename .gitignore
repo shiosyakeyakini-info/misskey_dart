@@ -12,3 +12,6 @@ pubspec.lock
 test/.env
 .DS_Store
 .idea/
+
+# FVM Version Cache
+.fvm/

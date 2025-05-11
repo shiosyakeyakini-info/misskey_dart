@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,94 +10,56 @@ part of 'misskey_exception.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-MisskeyException _$MisskeyExceptionFromJson(Map<String, dynamic> json) {
-  return _MisskeyException.fromJson(json);
-}
 
 /// @nodoc
 mixin _$MisskeyException {
-  String get id => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
-  MisskeyExceptionKind get kind => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get info => throw _privateConstructorUsedError;
+  String get id;
+  String get code;
+  String get message;
+  MisskeyExceptionKind get kind;
+  Map<String, dynamic>? get info;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MisskeyExceptionCopyWith<MisskeyException> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MisskeyExceptionCopyWith<$Res> {
-  factory $MisskeyExceptionCopyWith(
-          MisskeyException value, $Res Function(MisskeyException) then) =
-      _$MisskeyExceptionCopyWithImpl<$Res, MisskeyException>;
-  @useResult
-  $Res call(
-      {String id,
-      String code,
-      String message,
-      MisskeyExceptionKind kind,
-      Map<String, dynamic>? info});
-}
-
-/// @nodoc
-class _$MisskeyExceptionCopyWithImpl<$Res, $Val extends MisskeyException>
-    implements $MisskeyExceptionCopyWith<$Res> {
-  _$MisskeyExceptionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of MisskeyException
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $MisskeyExceptionCopyWith<MisskeyException> get copyWith =>
+      _$MisskeyExceptionCopyWithImpl<MisskeyException>(
+          this as MisskeyException, _$identity);
+
+  /// Serializes this MisskeyException to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? code = null,
-    Object? message = null,
-    Object? kind = null,
-    Object? info = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as MisskeyExceptionKind,
-      info: freezed == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MisskeyException &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            const DeepCollectionEquality().equals(other.info, info));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, code, message, kind,
+      const DeepCollectionEquality().hash(info));
+
+  @override
+  String toString() {
+    return 'MisskeyException(id: $id, code: $code, message: $message, kind: $kind, info: $info)';
   }
 }
 
 /// @nodoc
-abstract class _$$MisskeyExceptionImplCopyWith<$Res>
-    implements $MisskeyExceptionCopyWith<$Res> {
-  factory _$$MisskeyExceptionImplCopyWith(_$MisskeyExceptionImpl value,
-          $Res Function(_$MisskeyExceptionImpl) then) =
-      __$$MisskeyExceptionImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MisskeyExceptionCopyWith<$Res> {
+  factory $MisskeyExceptionCopyWith(
+          MisskeyException value, $Res Function(MisskeyException) _then) =
+      _$MisskeyExceptionCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -107,13 +70,15 @@ abstract class _$$MisskeyExceptionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MisskeyExceptionImplCopyWithImpl<$Res>
-    extends _$MisskeyExceptionCopyWithImpl<$Res, _$MisskeyExceptionImpl>
-    implements _$$MisskeyExceptionImplCopyWith<$Res> {
-  __$$MisskeyExceptionImplCopyWithImpl(_$MisskeyExceptionImpl _value,
-      $Res Function(_$MisskeyExceptionImpl) _then)
-      : super(_value, _then);
+class _$MisskeyExceptionCopyWithImpl<$Res>
+    implements $MisskeyExceptionCopyWith<$Res> {
+  _$MisskeyExceptionCopyWithImpl(this._self, this._then);
 
+  final MisskeyException _self;
+  final $Res Function(MisskeyException) _then;
+
+  /// Create a copy of MisskeyException
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,25 +88,25 @@ class __$$MisskeyExceptionImplCopyWithImpl<$Res>
     Object? kind = null,
     Object? info = freezed,
   }) {
-    return _then(_$MisskeyExceptionImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       message: null == message
-          ? _value.message
+          ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
       kind: null == kind
-          ? _value.kind
+          ? _self.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as MisskeyExceptionKind,
       info: freezed == info
-          ? _value._info
+          ? _self.info
           : info // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -150,17 +115,16 @@ class __$$MisskeyExceptionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MisskeyExceptionImpl implements _MisskeyException {
-  const _$MisskeyExceptionImpl(
+class _MisskeyException implements MisskeyException {
+  const _MisskeyException(
       {required this.id,
       required this.code,
       required this.message,
       required this.kind,
       final Map<String, dynamic>? info})
       : _info = info;
-
-  factory _$MisskeyExceptionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MisskeyExceptionImplFromJson(json);
+  factory _MisskeyException.fromJson(Map<String, dynamic> json) =>
+      _$MisskeyExceptionFromJson(json);
 
   @override
   final String id;
@@ -180,16 +144,26 @@ class _$MisskeyExceptionImpl implements _MisskeyException {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of MisskeyException
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MisskeyException(id: $id, code: $code, message: $message, kind: $kind, info: $info)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MisskeyExceptionCopyWith<_MisskeyException> get copyWith =>
+      __$MisskeyExceptionCopyWithImpl<_MisskeyException>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MisskeyExceptionToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MisskeyExceptionImpl &&
+            other is _MisskeyException &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.message, message) || other.message == message) &&
@@ -197,49 +171,75 @@ class _$MisskeyExceptionImpl implements _MisskeyException {
             const DeepCollectionEquality().equals(other._info, _info));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, code, message, kind,
       const DeepCollectionEquality().hash(_info));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MisskeyExceptionImplCopyWith<_$MisskeyExceptionImpl> get copyWith =>
-      __$$MisskeyExceptionImplCopyWithImpl<_$MisskeyExceptionImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MisskeyExceptionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MisskeyException(id: $id, code: $code, message: $message, kind: $kind, info: $info)';
   }
 }
 
-abstract class _MisskeyException implements MisskeyException {
-  const factory _MisskeyException(
-      {required final String id,
-      required final String code,
-      required final String message,
-      required final MisskeyExceptionKind kind,
-      final Map<String, dynamic>? info}) = _$MisskeyExceptionImpl;
-
-  factory _MisskeyException.fromJson(Map<String, dynamic> json) =
-      _$MisskeyExceptionImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$MisskeyExceptionCopyWith<$Res>
+    implements $MisskeyExceptionCopyWith<$Res> {
+  factory _$MisskeyExceptionCopyWith(
+          _MisskeyException value, $Res Function(_MisskeyException) _then) =
+      __$MisskeyExceptionCopyWithImpl;
   @override
-  String get id;
-  @override
-  String get code;
-  @override
-  String get message;
-  @override
-  MisskeyExceptionKind get kind;
-  @override
-  Map<String, dynamic>? get info;
-  @override
-  @JsonKey(ignore: true)
-  _$$MisskeyExceptionImplCopyWith<_$MisskeyExceptionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String message,
+      MisskeyExceptionKind kind,
+      Map<String, dynamic>? info});
 }
+
+/// @nodoc
+class __$MisskeyExceptionCopyWithImpl<$Res>
+    implements _$MisskeyExceptionCopyWith<$Res> {
+  __$MisskeyExceptionCopyWithImpl(this._self, this._then);
+
+  final _MisskeyException _self;
+  final $Res Function(_MisskeyException) _then;
+
+  /// Create a copy of MisskeyException
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? message = null,
+    Object? kind = null,
+    Object? info = freezed,
+  }) {
+    return _then(_MisskeyException(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as MisskeyExceptionKind,
+      info: freezed == info
+          ? _self._info
+          : info // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+// dart format on

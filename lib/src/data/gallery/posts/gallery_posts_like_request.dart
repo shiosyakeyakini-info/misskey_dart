@@ -4,7 +4,7 @@ part 'gallery_posts_like_request.freezed.dart';
 part 'gallery_posts_like_request.g.dart';
 
 @freezed
-class GalleryPostsLikeRequest with _$GalleryPostsLikeRequest {
+abstract class GalleryPostsLikeRequest with _$GalleryPostsLikeRequest {
   const factory GalleryPostsLikeRequest({
     required String postId,
   }) = _GalleryPostsLikeRequest;

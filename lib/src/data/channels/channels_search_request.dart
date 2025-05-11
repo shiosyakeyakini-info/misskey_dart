@@ -5,7 +5,7 @@ part 'channels_search_request.freezed.dart';
 part 'channels_search_request.g.dart';
 
 @freezed
-class ChannelsSearchRequest with _$ChannelsSearchRequest {
+abstract class ChannelsSearchRequest with _$ChannelsSearchRequest {
   const factory ChannelsSearchRequest({
     required String query,
     ChannelSearchType? type,

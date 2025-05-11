@@ -4,7 +4,7 @@ part 'channels_followed_request.freezed.dart';
 part 'channels_followed_request.g.dart';
 
 @freezed
-class ChannelsFollowedRequest with _$ChannelsFollowedRequest {
+abstract class ChannelsFollowedRequest with _$ChannelsFollowedRequest {
   const factory ChannelsFollowedRequest({
     String? sinceId,
     String? untilId,

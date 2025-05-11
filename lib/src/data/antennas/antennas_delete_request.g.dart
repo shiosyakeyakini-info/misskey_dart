@@ -6,14 +6,14 @@ part of 'antennas_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AntennasDeleteRequestImpl _$$AntennasDeleteRequestImplFromJson(
+_AntennasDeleteRequest _$AntennasDeleteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$AntennasDeleteRequestImpl(
+    _AntennasDeleteRequest(
       antennaId: json['antennaId'] as String,
     );
 
-Map<String, dynamic> _$$AntennasDeleteRequestImplToJson(
-        _$AntennasDeleteRequestImpl instance) =>
+Map<String, dynamic> _$AntennasDeleteRequestToJson(
+        _AntennasDeleteRequest instance) =>
     <String, dynamic>{
       'antennaId': instance.antennaId,
     };

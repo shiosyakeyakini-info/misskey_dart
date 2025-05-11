@@ -6,17 +6,16 @@ part of 'reversi_games_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReversiGamesRequestImpl _$$ReversiGamesRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ReversiGamesRequestImpl(
-      limit: json['limit'] as int?,
+_ReversiGamesRequest _$ReversiGamesRequestFromJson(Map<String, dynamic> json) =>
+    _ReversiGamesRequest(
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       my: json['my'] as bool?,
     );
 
-Map<String, dynamic> _$$ReversiGamesRequestImplToJson(
-        _$ReversiGamesRequestImpl instance) =>
+Map<String, dynamic> _$ReversiGamesRequestToJson(
+        _ReversiGamesRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,

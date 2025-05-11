@@ -4,7 +4,7 @@ part 'clips_create_request.freezed.dart';
 part 'clips_create_request.g.dart';
 
 @freezed
-class ClipsCreateRequest with _$ClipsCreateRequest {
+abstract class ClipsCreateRequest with _$ClipsCreateRequest {
   const factory ClipsCreateRequest({
     required String name,
     bool? isPublic,

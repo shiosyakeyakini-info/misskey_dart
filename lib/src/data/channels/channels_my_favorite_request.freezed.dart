@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,101 +10,77 @@ part of 'channels_my_favorite_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-ChannelsMyFavoriteRequest _$ChannelsMyFavoriteRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChannelsMyFavoriteRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChannelsMyFavoriteRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  bool? get noPaging => throw _privateConstructorUsedError;
+  int? get limit;
+  bool? get noPaging;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ChannelsMyFavoriteRequestCopyWith<ChannelsMyFavoriteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChannelsMyFavoriteRequestCopyWith<$Res> {
-  factory $ChannelsMyFavoriteRequestCopyWith(ChannelsMyFavoriteRequest value,
-          $Res Function(ChannelsMyFavoriteRequest) then) =
-      _$ChannelsMyFavoriteRequestCopyWithImpl<$Res, ChannelsMyFavoriteRequest>;
-  @useResult
-  $Res call({int? limit, bool? noPaging});
-}
-
-/// @nodoc
-class _$ChannelsMyFavoriteRequestCopyWithImpl<$Res,
-        $Val extends ChannelsMyFavoriteRequest>
-    implements $ChannelsMyFavoriteRequestCopyWith<$Res> {
-  _$ChannelsMyFavoriteRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ChannelsMyFavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ChannelsMyFavoriteRequestCopyWith<ChannelsMyFavoriteRequest> get copyWith =>
+      _$ChannelsMyFavoriteRequestCopyWithImpl<ChannelsMyFavoriteRequest>(
+          this as ChannelsMyFavoriteRequest, _$identity);
+
+  /// Serializes this ChannelsMyFavoriteRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? noPaging = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      noPaging: freezed == noPaging
-          ? _value.noPaging
-          : noPaging // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChannelsMyFavoriteRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.noPaging, noPaging) ||
+                other.noPaging == noPaging));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, noPaging);
+
+  @override
+  String toString() {
+    return 'ChannelsMyFavoriteRequest(limit: $limit, noPaging: $noPaging)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChannelsMyFavoriteRequestImplCopyWith<$Res>
-    implements $ChannelsMyFavoriteRequestCopyWith<$Res> {
-  factory _$$ChannelsMyFavoriteRequestImplCopyWith(
-          _$ChannelsMyFavoriteRequestImpl value,
-          $Res Function(_$ChannelsMyFavoriteRequestImpl) then) =
-      __$$ChannelsMyFavoriteRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChannelsMyFavoriteRequestCopyWith<$Res> {
+  factory $ChannelsMyFavoriteRequestCopyWith(ChannelsMyFavoriteRequest value,
+          $Res Function(ChannelsMyFavoriteRequest) _then) =
+      _$ChannelsMyFavoriteRequestCopyWithImpl;
   @useResult
   $Res call({int? limit, bool? noPaging});
 }
 
 /// @nodoc
-class __$$ChannelsMyFavoriteRequestImplCopyWithImpl<$Res>
-    extends _$ChannelsMyFavoriteRequestCopyWithImpl<$Res,
-        _$ChannelsMyFavoriteRequestImpl>
-    implements _$$ChannelsMyFavoriteRequestImplCopyWith<$Res> {
-  __$$ChannelsMyFavoriteRequestImplCopyWithImpl(
-      _$ChannelsMyFavoriteRequestImpl _value,
-      $Res Function(_$ChannelsMyFavoriteRequestImpl) _then)
-      : super(_value, _then);
+class _$ChannelsMyFavoriteRequestCopyWithImpl<$Res>
+    implements $ChannelsMyFavoriteRequestCopyWith<$Res> {
+  _$ChannelsMyFavoriteRequestCopyWithImpl(this._self, this._then);
 
+  final ChannelsMyFavoriteRequest _self;
+  final $Res Function(ChannelsMyFavoriteRequest) _then;
+
+  /// Create a copy of ChannelsMyFavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? limit = freezed,
     Object? noPaging = freezed,
   }) {
-    return _then(_$ChannelsMyFavoriteRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       noPaging: freezed == noPaging
-          ? _value.noPaging
+          ? _self.noPaging
           : noPaging // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -112,65 +89,91 @@ class __$$ChannelsMyFavoriteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChannelsMyFavoriteRequestImpl implements _ChannelsMyFavoriteRequest {
-  const _$ChannelsMyFavoriteRequestImpl({this.limit, this.noPaging});
-
-  factory _$ChannelsMyFavoriteRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChannelsMyFavoriteRequestImplFromJson(json);
+class _ChannelsMyFavoriteRequest implements ChannelsMyFavoriteRequest {
+  const _ChannelsMyFavoriteRequest({this.limit, this.noPaging});
+  factory _ChannelsMyFavoriteRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChannelsMyFavoriteRequestFromJson(json);
 
   @override
   final int? limit;
   @override
   final bool? noPaging;
 
+  /// Create a copy of ChannelsMyFavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChannelsMyFavoriteRequest(limit: $limit, noPaging: $noPaging)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChannelsMyFavoriteRequestCopyWith<_ChannelsMyFavoriteRequest>
+      get copyWith =>
+          __$ChannelsMyFavoriteRequestCopyWithImpl<_ChannelsMyFavoriteRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChannelsMyFavoriteRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChannelsMyFavoriteRequestImpl &&
+            other is _ChannelsMyFavoriteRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.noPaging, noPaging) ||
                 other.noPaging == noPaging));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, noPaging);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChannelsMyFavoriteRequestImplCopyWith<_$ChannelsMyFavoriteRequestImpl>
-      get copyWith => __$$ChannelsMyFavoriteRequestImplCopyWithImpl<
-          _$ChannelsMyFavoriteRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChannelsMyFavoriteRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChannelsMyFavoriteRequest(limit: $limit, noPaging: $noPaging)';
   }
 }
 
-abstract class _ChannelsMyFavoriteRequest implements ChannelsMyFavoriteRequest {
-  const factory _ChannelsMyFavoriteRequest(
-      {final int? limit,
-      final bool? noPaging}) = _$ChannelsMyFavoriteRequestImpl;
-
-  factory _ChannelsMyFavoriteRequest.fromJson(Map<String, dynamic> json) =
-      _$ChannelsMyFavoriteRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChannelsMyFavoriteRequestCopyWith<$Res>
+    implements $ChannelsMyFavoriteRequestCopyWith<$Res> {
+  factory _$ChannelsMyFavoriteRequestCopyWith(_ChannelsMyFavoriteRequest value,
+          $Res Function(_ChannelsMyFavoriteRequest) _then) =
+      __$ChannelsMyFavoriteRequestCopyWithImpl;
   @override
-  int? get limit;
-  @override
-  bool? get noPaging;
-  @override
-  @JsonKey(ignore: true)
-  _$$ChannelsMyFavoriteRequestImplCopyWith<_$ChannelsMyFavoriteRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int? limit, bool? noPaging});
 }
+
+/// @nodoc
+class __$ChannelsMyFavoriteRequestCopyWithImpl<$Res>
+    implements _$ChannelsMyFavoriteRequestCopyWith<$Res> {
+  __$ChannelsMyFavoriteRequestCopyWithImpl(this._self, this._then);
+
+  final _ChannelsMyFavoriteRequest _self;
+  final $Res Function(_ChannelsMyFavoriteRequest) _then;
+
+  /// Create a copy of ChannelsMyFavoriteRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? noPaging = freezed,
+  }) {
+    return _then(_ChannelsMyFavoriteRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noPaging: freezed == noPaging
+          ? _self.noPaging
+          : noPaging // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

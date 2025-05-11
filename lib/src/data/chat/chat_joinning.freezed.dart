@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,40 +10,59 @@ part of 'chat_joinning.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatJoining _$ChatJoiningFromJson(Map<String, dynamic> json) {
-  return _ChatJoining.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatJoining {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-  UserLite? get user => throw _privateConstructorUsedError;
-  String get roomId => throw _privateConstructorUsedError;
-  ChatRoom? get room => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatJoining to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime get createdAt;
+  String get userId;
+  UserLite? get user;
+  String get roomId;
+  ChatRoom? get room;
 
   /// Create a copy of ChatJoining
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatJoiningCopyWith<ChatJoining> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ChatJoiningCopyWithImpl<ChatJoining>(this as ChatJoining, _$identity);
+
+  /// Serializes this ChatJoining to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatJoining &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.roomId, roomId) || other.roomId == roomId) &&
+            (identical(other.room, room) || other.room == room));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, createdAt, userId, user, roomId, room);
+
+  @override
+  String toString() {
+    return 'ChatJoining(id: $id, createdAt: $createdAt, userId: $userId, user: $user, roomId: $roomId, room: $room)';
+  }
 }
 
 /// @nodoc
-abstract class $ChatJoiningCopyWith<$Res> {
+abstract mixin class $ChatJoiningCopyWith<$Res> {
   factory $ChatJoiningCopyWith(
-          ChatJoining value, $Res Function(ChatJoining) then) =
-      _$ChatJoiningCopyWithImpl<$Res, ChatJoining>;
+          ChatJoining value, $Res Function(ChatJoining) _then) =
+      _$ChatJoiningCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -57,14 +77,11 @@ abstract class $ChatJoiningCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
-    implements $ChatJoiningCopyWith<$Res> {
-  _$ChatJoiningCopyWithImpl(this._value, this._then);
+class _$ChatJoiningCopyWithImpl<$Res> implements $ChatJoiningCopyWith<$Res> {
+  _$ChatJoiningCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChatJoining _self;
+  final $Res Function(ChatJoining) _then;
 
   /// Create a copy of ChatJoining
   /// with the given fields replaced by the non-null parameter values.
@@ -78,32 +95,32 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
     Object? roomId = null,
     Object? room = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
       user: freezed == user
-          ? _value.user
+          ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserLite?,
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
       room: freezed == room
-          ? _value.room
+          ? _self.room
           : room // ignore: cast_nullable_to_non_nullable
               as ChatRoom?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of ChatJoining
@@ -111,12 +128,12 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res>? get user {
-    if (_value.user == null) {
+    if (_self.user == null) {
       return null;
     }
 
-    return $UserLiteCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
     });
   }
 
@@ -125,100 +142,28 @@ class _$ChatJoiningCopyWithImpl<$Res, $Val extends ChatJoining>
   @override
   @pragma('vm:prefer-inline')
   $ChatRoomCopyWith<$Res>? get room {
-    if (_value.room == null) {
+    if (_self.room == null) {
       return null;
     }
 
-    return $ChatRoomCopyWith<$Res>(_value.room!, (value) {
-      return _then(_value.copyWith(room: value) as $Val);
+    return $ChatRoomCopyWith<$Res>(_self.room!, (value) {
+      return _then(_self.copyWith(room: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ChatJoiningImplCopyWith<$Res>
-    implements $ChatJoiningCopyWith<$Res> {
-  factory _$$ChatJoiningImplCopyWith(
-          _$ChatJoiningImpl value, $Res Function(_$ChatJoiningImpl) then) =
-      __$$ChatJoiningImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String userId,
-      UserLite? user,
-      String roomId,
-      ChatRoom? room});
-
-  @override
-  $UserLiteCopyWith<$Res>? get user;
-  @override
-  $ChatRoomCopyWith<$Res>? get room;
-}
-
-/// @nodoc
-class __$$ChatJoiningImplCopyWithImpl<$Res>
-    extends _$ChatJoiningCopyWithImpl<$Res, _$ChatJoiningImpl>
-    implements _$$ChatJoiningImplCopyWith<$Res> {
-  __$$ChatJoiningImplCopyWithImpl(
-      _$ChatJoiningImpl _value, $Res Function(_$ChatJoiningImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatJoining
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? userId = null,
-    Object? user = freezed,
-    Object? roomId = null,
-    Object? room = freezed,
-  }) {
-    return _then(_$ChatJoiningImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      room: freezed == room
-          ? _value.room
-          : room // ignore: cast_nullable_to_non_nullable
-              as ChatRoom?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$ChatJoiningImpl implements _ChatJoining {
-  const _$ChatJoiningImpl(
+class _ChatJoining implements ChatJoining {
+  const _ChatJoining(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.userId,
       this.user,
       required this.roomId,
       this.room});
-
-  factory _$ChatJoiningImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatJoiningImplFromJson(json);
+  factory _ChatJoining.fromJson(Map<String, dynamic> json) =>
+      _$ChatJoiningFromJson(json);
 
   @override
   final String id;
@@ -234,16 +179,26 @@ class _$ChatJoiningImpl implements _ChatJoining {
   @override
   final ChatRoom? room;
 
+  /// Create a copy of ChatJoining
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatJoining(id: $id, createdAt: $createdAt, userId: $userId, user: $user, roomId: $roomId, room: $room)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatJoiningCopyWith<_ChatJoining> get copyWith =>
+      __$ChatJoiningCopyWithImpl<_ChatJoining>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatJoiningToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatJoiningImpl &&
+            other is _ChatJoining &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -258,52 +213,108 @@ class _$ChatJoiningImpl implements _ChatJoining {
   int get hashCode =>
       Object.hash(runtimeType, id, createdAt, userId, user, roomId, room);
 
-  /// Create a copy of ChatJoining
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatJoiningImplCopyWith<_$ChatJoiningImpl> get copyWith =>
-      __$$ChatJoiningImplCopyWithImpl<_$ChatJoiningImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatJoiningImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatJoining(id: $id, createdAt: $createdAt, userId: $userId, user: $user, roomId: $roomId, room: $room)';
   }
 }
 
-abstract class _ChatJoining implements ChatJoining {
-  const factory _ChatJoining(
-      {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
-      required final String userId,
-      final UserLite? user,
-      required final String roomId,
-      final ChatRoom? room}) = _$ChatJoiningImpl;
+/// @nodoc
+abstract mixin class _$ChatJoiningCopyWith<$Res>
+    implements $ChatJoiningCopyWith<$Res> {
+  factory _$ChatJoiningCopyWith(
+          _ChatJoining value, $Res Function(_ChatJoining) _then) =
+      __$ChatJoiningCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String userId,
+      UserLite? user,
+      String roomId,
+      ChatRoom? room});
 
-  factory _ChatJoining.fromJson(Map<String, dynamic> json) =
-      _$ChatJoiningImpl.fromJson;
+  @override
+  $UserLiteCopyWith<$Res>? get user;
+  @override
+  $ChatRoomCopyWith<$Res>? get room;
+}
 
-  @override
-  String get id;
-  @override
-  @DateTimeConverter()
-  DateTime get createdAt;
-  @override
-  String get userId;
-  @override
-  UserLite? get user;
-  @override
-  String get roomId;
-  @override
-  ChatRoom? get room;
+/// @nodoc
+class __$ChatJoiningCopyWithImpl<$Res> implements _$ChatJoiningCopyWith<$Res> {
+  __$ChatJoiningCopyWithImpl(this._self, this._then);
+
+  final _ChatJoining _self;
+  final $Res Function(_ChatJoining) _then;
 
   /// Create a copy of ChatJoining
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatJoiningImplCopyWith<_$ChatJoiningImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? userId = null,
+    Object? user = freezed,
+    Object? roomId = null,
+    Object? room = freezed,
+  }) {
+    return _then(_ChatJoining(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      room: freezed == room
+          ? _self.room
+          : room // ignore: cast_nullable_to_non_nullable
+              as ChatRoom?,
+    ));
+  }
+
+  /// Create a copy of ChatJoining
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of ChatJoining
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatRoomCopyWith<$Res>? get room {
+    if (_self.room == null) {
+      return null;
+    }
+
+    return $ChatRoomCopyWith<$Res>(_self.room!, (value) {
+      return _then(_self.copyWith(room: value));
+    });
+  }
 }
+
+// dart format on

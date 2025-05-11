@@ -4,7 +4,7 @@ part 'channels_unfollow_request.freezed.dart';
 part 'channels_unfollow_request.g.dart';
 
 @freezed
-class ChannelsUnfollowRequest with _$ChannelsUnfollowRequest {
+abstract class ChannelsUnfollowRequest with _$ChannelsUnfollowRequest {
   const factory ChannelsUnfollowRequest({
     required String channelId,
   }) = _ChannelsUnfollowRequest;

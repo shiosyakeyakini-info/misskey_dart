@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,82 +10,58 @@ part of 'chat_room_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomShowRequest _$ChatRoomShowRequestFromJson(Map<String, dynamic> json) {
-  return _ChatRoomShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomShowRequest {
-  String get roomId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomShowRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
 
   /// Create a copy of ChatRoomShowRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatRoomShowRequestCopyWith<ChatRoomShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChatRoomShowRequestCopyWith<$Res> {
-  factory $ChatRoomShowRequestCopyWith(
-          ChatRoomShowRequest value, $Res Function(ChatRoomShowRequest) then) =
-      _$ChatRoomShowRequestCopyWithImpl<$Res, ChatRoomShowRequest>;
-  @useResult
-  $Res call({String roomId});
-}
-
-/// @nodoc
-class _$ChatRoomShowRequestCopyWithImpl<$Res, $Val extends ChatRoomShowRequest>
-    implements $ChatRoomShowRequestCopyWith<$Res> {
-  _$ChatRoomShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomShowRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ChatRoomShowRequestCopyWith<ChatRoomShowRequest> get copyWith =>
+      _$ChatRoomShowRequestCopyWithImpl<ChatRoomShowRequest>(
+          this as ChatRoomShowRequest, _$identity);
+
+  /// Serializes this ChatRoomShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roomId = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatRoomShowRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId);
+
+  @override
+  String toString() {
+    return 'ChatRoomShowRequest(roomId: $roomId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChatRoomShowRequestImplCopyWith<$Res>
-    implements $ChatRoomShowRequestCopyWith<$Res> {
-  factory _$$ChatRoomShowRequestImplCopyWith(_$ChatRoomShowRequestImpl value,
-          $Res Function(_$ChatRoomShowRequestImpl) then) =
-      __$$ChatRoomShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChatRoomShowRequestCopyWith<$Res> {
+  factory $ChatRoomShowRequestCopyWith(
+          ChatRoomShowRequest value, $Res Function(ChatRoomShowRequest) _then) =
+      _$ChatRoomShowRequestCopyWithImpl;
   @useResult
   $Res call({String roomId});
 }
 
 /// @nodoc
-class __$$ChatRoomShowRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomShowRequestCopyWithImpl<$Res, _$ChatRoomShowRequestImpl>
-    implements _$$ChatRoomShowRequestImplCopyWith<$Res> {
-  __$$ChatRoomShowRequestImplCopyWithImpl(_$ChatRoomShowRequestImpl _value,
-      $Res Function(_$ChatRoomShowRequestImpl) _then)
-      : super(_value, _then);
+class _$ChatRoomShowRequestCopyWithImpl<$Res>
+    implements $ChatRoomShowRequestCopyWith<$Res> {
+  _$ChatRoomShowRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomShowRequest _self;
+  final $Res Function(ChatRoomShowRequest) _then;
 
   /// Create a copy of ChatRoomShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -93,9 +70,9 @@ class __$$ChatRoomShowRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? roomId = null,
   }) {
-    return _then(_$ChatRoomShowRequestImpl(
+    return _then(_self.copyWith(
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -104,25 +81,35 @@ class __$$ChatRoomShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatRoomShowRequestImpl implements _ChatRoomShowRequest {
-  const _$ChatRoomShowRequestImpl({required this.roomId});
-
-  factory _$ChatRoomShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomShowRequestImplFromJson(json);
+class _ChatRoomShowRequest implements ChatRoomShowRequest {
+  const _ChatRoomShowRequest({required this.roomId});
+  factory _ChatRoomShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomShowRequestFromJson(json);
 
   @override
   final String roomId;
 
+  /// Create a copy of ChatRoomShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatRoomShowRequest(roomId: $roomId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatRoomShowRequestCopyWith<_ChatRoomShowRequest> get copyWith =>
+      __$ChatRoomShowRequestCopyWithImpl<_ChatRoomShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomShowRequestImpl &&
+            other is _ChatRoomShowRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
@@ -130,37 +117,45 @@ class _$ChatRoomShowRequestImpl implements _ChatRoomShowRequest {
   @override
   int get hashCode => Object.hash(runtimeType, roomId);
 
-  /// Create a copy of ChatRoomShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomShowRequestImplCopyWith<_$ChatRoomShowRequestImpl> get copyWith =>
-      __$$ChatRoomShowRequestImplCopyWithImpl<_$ChatRoomShowRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomShowRequest(roomId: $roomId)';
   }
 }
 
-abstract class _ChatRoomShowRequest implements ChatRoomShowRequest {
-  const factory _ChatRoomShowRequest({required final String roomId}) =
-      _$ChatRoomShowRequestImpl;
-
-  factory _ChatRoomShowRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChatRoomShowRequestCopyWith<$Res>
+    implements $ChatRoomShowRequestCopyWith<$Res> {
+  factory _$ChatRoomShowRequestCopyWith(_ChatRoomShowRequest value,
+          $Res Function(_ChatRoomShowRequest) _then) =
+      __$ChatRoomShowRequestCopyWithImpl;
   @override
-  String get roomId;
+  @useResult
+  $Res call({String roomId});
+}
+
+/// @nodoc
+class __$ChatRoomShowRequestCopyWithImpl<$Res>
+    implements _$ChatRoomShowRequestCopyWith<$Res> {
+  __$ChatRoomShowRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomShowRequest _self;
+  final $Res Function(_ChatRoomShowRequest) _then;
 
   /// Create a copy of ChatRoomShowRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomShowRequestImplCopyWith<_$ChatRoomShowRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+  }) {
+    return _then(_ChatRoomShowRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

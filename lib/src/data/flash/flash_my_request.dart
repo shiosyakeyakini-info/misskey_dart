@@ -4,7 +4,7 @@ part 'flash_my_request.freezed.dart';
 part 'flash_my_request.g.dart';
 
 @freezed
-class FlashMyRequest with _$FlashMyRequest {
+abstract class FlashMyRequest with _$FlashMyRequest {
   const factory FlashMyRequest({
     int? limit,
     String? sinceId,

@@ -4,7 +4,7 @@ part 'clips_update_request.freezed.dart';
 part 'clips_update_request.g.dart';
 
 @freezed
-class ClipsUpdateRequest with _$ClipsUpdateRequest {
+abstract class ClipsUpdateRequest with _$ClipsUpdateRequest {
   const factory ClipsUpdateRequest({
     required String clipId,
     required String name,

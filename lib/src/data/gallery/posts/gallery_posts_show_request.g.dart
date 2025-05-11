@@ -6,14 +6,14 @@ part of 'gallery_posts_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GalleryPostsShowRequestImpl _$$GalleryPostsShowRequestImplFromJson(
+_GalleryPostsShowRequest _$GalleryPostsShowRequestFromJson(
         Map<String, dynamic> json) =>
-    _$GalleryPostsShowRequestImpl(
+    _GalleryPostsShowRequest(
       postId: json['postId'] as String,
     );
 
-Map<String, dynamic> _$$GalleryPostsShowRequestImplToJson(
-        _$GalleryPostsShowRequestImpl instance) =>
+Map<String, dynamic> _$GalleryPostsShowRequestToJson(
+        _GalleryPostsShowRequest instance) =>
     <String, dynamic>{
       'postId': instance.postId,
     };

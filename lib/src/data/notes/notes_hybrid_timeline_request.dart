@@ -5,7 +5,7 @@ part 'notes_hybrid_timeline_request.freezed.dart';
 part 'notes_hybrid_timeline_request.g.dart';
 
 @freezed
-class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
+abstract class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
   const factory NotesHybridTimelineRequest({
     int? limit,
     String? sinceId,

@@ -4,7 +4,7 @@ part 'drive_folders_find_request.freezed.dart';
 part 'drive_folders_find_request.g.dart';
 
 @freezed
-class DriveFoldersFindRequest with _$DriveFoldersFindRequest {
+abstract class DriveFoldersFindRequest with _$DriveFoldersFindRequest {
   const factory DriveFoldersFindRequest({
     required String name,
     String? parentId,

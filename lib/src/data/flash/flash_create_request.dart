@@ -5,7 +5,7 @@ part 'flash_create_request.freezed.dart';
 part 'flash_create_request.g.dart';
 
 @freezed
-class FlashCreateRequest with _$FlashCreateRequest {
+abstract class FlashCreateRequest with _$FlashCreateRequest {
   const factory FlashCreateRequest({
     required String title,
     required String summary,

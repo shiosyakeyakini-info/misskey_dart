@@ -6,9 +6,9 @@ part of 'drive_files_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFilesUpdateRequestImpl _$$DriveFilesUpdateRequestImplFromJson(
+_DriveFilesUpdateRequest _$DriveFilesUpdateRequestFromJson(
         Map<String, dynamic> json) =>
-    _$DriveFilesUpdateRequestImpl(
+    _DriveFilesUpdateRequest(
       fileId: json['fileId'] as String,
       folderId: json['folderId'] as String?,
       name: json['name'] as String?,
@@ -16,8 +16,8 @@ _$DriveFilesUpdateRequestImpl _$$DriveFilesUpdateRequestImplFromJson(
       comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$$DriveFilesUpdateRequestImplToJson(
-        _$DriveFilesUpdateRequestImpl instance) =>
+Map<String, dynamic> _$DriveFilesUpdateRequestToJson(
+        _DriveFilesUpdateRequest instance) =>
     <String, dynamic>{
       'fileId': instance.fileId,
       'folderId': instance.folderId,

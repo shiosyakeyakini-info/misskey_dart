@@ -6,14 +6,14 @@ part of 'notes_reactions_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesReactionsDeleteRequestImpl _$$NotesReactionsDeleteRequestImplFromJson(
+_NotesReactionsDeleteRequest _$NotesReactionsDeleteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$NotesReactionsDeleteRequestImpl(
+    _NotesReactionsDeleteRequest(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$$NotesReactionsDeleteRequestImplToJson(
-        _$NotesReactionsDeleteRequestImpl instance) =>
+Map<String, dynamic> _$NotesReactionsDeleteRequestToJson(
+        _NotesReactionsDeleteRequest instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

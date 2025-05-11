@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,33 +10,53 @@ part of 'server_info_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-ServerInfoResponse _$ServerInfoResponseFromJson(Map<String, dynamic> json) {
-  return _ServerInfoResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ServerInfoResponse {
-  String get machine => throw _privateConstructorUsedError;
-  ServerInfoCpu get cpu => throw _privateConstructorUsedError;
-  ServerInfoMem get mem => throw _privateConstructorUsedError;
-  ServerInfoFs get fs => throw _privateConstructorUsedError;
+  String get machine;
+  ServerInfoCpu get cpu;
+  ServerInfoMem get mem;
+  ServerInfoFs get fs;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ServerInfoResponseCopyWith<ServerInfoResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ServerInfoResponseCopyWithImpl<ServerInfoResponse>(
+          this as ServerInfoResponse, _$identity);
+
+  /// Serializes this ServerInfoResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ServerInfoResponse &&
+            (identical(other.machine, machine) || other.machine == machine) &&
+            (identical(other.cpu, cpu) || other.cpu == cpu) &&
+            (identical(other.mem, mem) || other.mem == mem) &&
+            (identical(other.fs, fs) || other.fs == fs));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, machine, cpu, mem, fs);
+
+  @override
+  String toString() {
+    return 'ServerInfoResponse(machine: $machine, cpu: $cpu, mem: $mem, fs: $fs)';
+  }
 }
 
 /// @nodoc
-abstract class $ServerInfoResponseCopyWith<$Res> {
+abstract mixin class $ServerInfoResponseCopyWith<$Res> {
   factory $ServerInfoResponseCopyWith(
-          ServerInfoResponse value, $Res Function(ServerInfoResponse) then) =
-      _$ServerInfoResponseCopyWithImpl<$Res, ServerInfoResponse>;
+          ServerInfoResponse value, $Res Function(ServerInfoResponse) _then) =
+      _$ServerInfoResponseCopyWithImpl;
   @useResult
   $Res call(
       {String machine, ServerInfoCpu cpu, ServerInfoMem mem, ServerInfoFs fs});
@@ -46,15 +67,15 @@ abstract class $ServerInfoResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ServerInfoResponseCopyWithImpl<$Res, $Val extends ServerInfoResponse>
+class _$ServerInfoResponseCopyWithImpl<$Res>
     implements $ServerInfoResponseCopyWith<$Res> {
-  _$ServerInfoResponseCopyWithImpl(this._value, this._then);
+  _$ServerInfoResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ServerInfoResponse _self;
+  final $Res Function(ServerInfoResponse) _then;
 
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -63,118 +84,67 @@ class _$ServerInfoResponseCopyWithImpl<$Res, $Val extends ServerInfoResponse>
     Object? mem = null,
     Object? fs = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       machine: null == machine
-          ? _value.machine
+          ? _self.machine
           : machine // ignore: cast_nullable_to_non_nullable
               as String,
       cpu: null == cpu
-          ? _value.cpu
+          ? _self.cpu
           : cpu // ignore: cast_nullable_to_non_nullable
               as ServerInfoCpu,
       mem: null == mem
-          ? _value.mem
+          ? _self.mem
           : mem // ignore: cast_nullable_to_non_nullable
               as ServerInfoMem,
       fs: null == fs
-          ? _value.fs
-          : fs // ignore: cast_nullable_to_non_nullable
-              as ServerInfoFs,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ServerInfoCpuCopyWith<$Res> get cpu {
-    return $ServerInfoCpuCopyWith<$Res>(_value.cpu, (value) {
-      return _then(_value.copyWith(cpu: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ServerInfoMemCopyWith<$Res> get mem {
-    return $ServerInfoMemCopyWith<$Res>(_value.mem, (value) {
-      return _then(_value.copyWith(mem: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ServerInfoFsCopyWith<$Res> get fs {
-    return $ServerInfoFsCopyWith<$Res>(_value.fs, (value) {
-      return _then(_value.copyWith(fs: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ServerInfoResponseImplCopyWith<$Res>
-    implements $ServerInfoResponseCopyWith<$Res> {
-  factory _$$ServerInfoResponseImplCopyWith(_$ServerInfoResponseImpl value,
-          $Res Function(_$ServerInfoResponseImpl) then) =
-      __$$ServerInfoResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String machine, ServerInfoCpu cpu, ServerInfoMem mem, ServerInfoFs fs});
-
-  @override
-  $ServerInfoCpuCopyWith<$Res> get cpu;
-  @override
-  $ServerInfoMemCopyWith<$Res> get mem;
-  @override
-  $ServerInfoFsCopyWith<$Res> get fs;
-}
-
-/// @nodoc
-class __$$ServerInfoResponseImplCopyWithImpl<$Res>
-    extends _$ServerInfoResponseCopyWithImpl<$Res, _$ServerInfoResponseImpl>
-    implements _$$ServerInfoResponseImplCopyWith<$Res> {
-  __$$ServerInfoResponseImplCopyWithImpl(_$ServerInfoResponseImpl _value,
-      $Res Function(_$ServerInfoResponseImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? machine = null,
-    Object? cpu = null,
-    Object? mem = null,
-    Object? fs = null,
-  }) {
-    return _then(_$ServerInfoResponseImpl(
-      machine: null == machine
-          ? _value.machine
-          : machine // ignore: cast_nullable_to_non_nullable
-              as String,
-      cpu: null == cpu
-          ? _value.cpu
-          : cpu // ignore: cast_nullable_to_non_nullable
-              as ServerInfoCpu,
-      mem: null == mem
-          ? _value.mem
-          : mem // ignore: cast_nullable_to_non_nullable
-              as ServerInfoMem,
-      fs: null == fs
-          ? _value.fs
+          ? _self.fs
           : fs // ignore: cast_nullable_to_non_nullable
               as ServerInfoFs,
     ));
+  }
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ServerInfoCpuCopyWith<$Res> get cpu {
+    return $ServerInfoCpuCopyWith<$Res>(_self.cpu, (value) {
+      return _then(_self.copyWith(cpu: value));
+    });
+  }
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ServerInfoMemCopyWith<$Res> get mem {
+    return $ServerInfoMemCopyWith<$Res>(_self.mem, (value) {
+      return _then(_self.copyWith(mem: value));
+    });
+  }
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ServerInfoFsCopyWith<$Res> get fs {
+    return $ServerInfoFsCopyWith<$Res>(_self.fs, (value) {
+      return _then(_self.copyWith(fs: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ServerInfoResponseImpl implements _ServerInfoResponse {
-  const _$ServerInfoResponseImpl(
+class _ServerInfoResponse implements ServerInfoResponse {
+  const _ServerInfoResponse(
       {required this.machine,
       required this.cpu,
       required this.mem,
       required this.fs});
-
-  factory _$ServerInfoResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServerInfoResponseImplFromJson(json);
+  factory _ServerInfoResponse.fromJson(Map<String, dynamic> json) =>
+      _$ServerInfoResponseFromJson(json);
 
   @override
   final String machine;
@@ -185,150 +155,197 @@ class _$ServerInfoResponseImpl implements _ServerInfoResponse {
   @override
   final ServerInfoFs fs;
 
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ServerInfoResponse(machine: $machine, cpu: $cpu, mem: $mem, fs: $fs)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ServerInfoResponseCopyWith<_ServerInfoResponse> get copyWith =>
+      __$ServerInfoResponseCopyWithImpl<_ServerInfoResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ServerInfoResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServerInfoResponseImpl &&
+            other is _ServerInfoResponse &&
             (identical(other.machine, machine) || other.machine == machine) &&
             (identical(other.cpu, cpu) || other.cpu == cpu) &&
             (identical(other.mem, mem) || other.mem == mem) &&
             (identical(other.fs, fs) || other.fs == fs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, machine, cpu, mem, fs);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ServerInfoResponseImplCopyWith<_$ServerInfoResponseImpl> get copyWith =>
-      __$$ServerInfoResponseImplCopyWithImpl<_$ServerInfoResponseImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ServerInfoResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ServerInfoResponse(machine: $machine, cpu: $cpu, mem: $mem, fs: $fs)';
   }
 }
 
-abstract class _ServerInfoResponse implements ServerInfoResponse {
-  const factory _ServerInfoResponse(
-      {required final String machine,
-      required final ServerInfoCpu cpu,
-      required final ServerInfoMem mem,
-      required final ServerInfoFs fs}) = _$ServerInfoResponseImpl;
+/// @nodoc
+abstract mixin class _$ServerInfoResponseCopyWith<$Res>
+    implements $ServerInfoResponseCopyWith<$Res> {
+  factory _$ServerInfoResponseCopyWith(
+          _ServerInfoResponse value, $Res Function(_ServerInfoResponse) _then) =
+      __$ServerInfoResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String machine, ServerInfoCpu cpu, ServerInfoMem mem, ServerInfoFs fs});
 
-  factory _ServerInfoResponse.fromJson(Map<String, dynamic> json) =
-      _$ServerInfoResponseImpl.fromJson;
-
   @override
-  String get machine;
+  $ServerInfoCpuCopyWith<$Res> get cpu;
   @override
-  ServerInfoCpu get cpu;
+  $ServerInfoMemCopyWith<$Res> get mem;
   @override
-  ServerInfoMem get mem;
-  @override
-  ServerInfoFs get fs;
-  @override
-  @JsonKey(ignore: true)
-  _$$ServerInfoResponseImplCopyWith<_$ServerInfoResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ServerInfoFsCopyWith<$Res> get fs;
 }
 
-ServerInfoCpu _$ServerInfoCpuFromJson(Map<String, dynamic> json) {
-  return _ServerInfoCpu.fromJson(json);
+/// @nodoc
+class __$ServerInfoResponseCopyWithImpl<$Res>
+    implements _$ServerInfoResponseCopyWith<$Res> {
+  __$ServerInfoResponseCopyWithImpl(this._self, this._then);
+
+  final _ServerInfoResponse _self;
+  final $Res Function(_ServerInfoResponse) _then;
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? machine = null,
+    Object? cpu = null,
+    Object? mem = null,
+    Object? fs = null,
+  }) {
+    return _then(_ServerInfoResponse(
+      machine: null == machine
+          ? _self.machine
+          : machine // ignore: cast_nullable_to_non_nullable
+              as String,
+      cpu: null == cpu
+          ? _self.cpu
+          : cpu // ignore: cast_nullable_to_non_nullable
+              as ServerInfoCpu,
+      mem: null == mem
+          ? _self.mem
+          : mem // ignore: cast_nullable_to_non_nullable
+              as ServerInfoMem,
+      fs: null == fs
+          ? _self.fs
+          : fs // ignore: cast_nullable_to_non_nullable
+              as ServerInfoFs,
+    ));
+  }
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ServerInfoCpuCopyWith<$Res> get cpu {
+    return $ServerInfoCpuCopyWith<$Res>(_self.cpu, (value) {
+      return _then(_self.copyWith(cpu: value));
+    });
+  }
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ServerInfoMemCopyWith<$Res> get mem {
+    return $ServerInfoMemCopyWith<$Res>(_self.mem, (value) {
+      return _then(_self.copyWith(mem: value));
+    });
+  }
+
+  /// Create a copy of ServerInfoResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ServerInfoFsCopyWith<$Res> get fs {
+    return $ServerInfoFsCopyWith<$Res>(_self.fs, (value) {
+      return _then(_self.copyWith(fs: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$ServerInfoCpu {
-  String get model => throw _privateConstructorUsedError;
-  int get cores => throw _privateConstructorUsedError;
+  String get model;
+  int get cores;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ServerInfoCpuCopyWith<ServerInfoCpu> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ServerInfoCpuCopyWith<$Res> {
-  factory $ServerInfoCpuCopyWith(
-          ServerInfoCpu value, $Res Function(ServerInfoCpu) then) =
-      _$ServerInfoCpuCopyWithImpl<$Res, ServerInfoCpu>;
-  @useResult
-  $Res call({String model, int cores});
-}
-
-/// @nodoc
-class _$ServerInfoCpuCopyWithImpl<$Res, $Val extends ServerInfoCpu>
-    implements $ServerInfoCpuCopyWith<$Res> {
-  _$ServerInfoCpuCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ServerInfoCpu
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ServerInfoCpuCopyWith<ServerInfoCpu> get copyWith =>
+      _$ServerInfoCpuCopyWithImpl<ServerInfoCpu>(
+          this as ServerInfoCpu, _$identity);
+
+  /// Serializes this ServerInfoCpu to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? model = null,
-    Object? cores = null,
-  }) {
-    return _then(_value.copyWith(
-      model: null == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as String,
-      cores: null == cores
-          ? _value.cores
-          : cores // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ServerInfoCpu &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.cores, cores) || other.cores == cores));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, model, cores);
+
+  @override
+  String toString() {
+    return 'ServerInfoCpu(model: $model, cores: $cores)';
   }
 }
 
 /// @nodoc
-abstract class _$$ServerInfoCpuImplCopyWith<$Res>
-    implements $ServerInfoCpuCopyWith<$Res> {
-  factory _$$ServerInfoCpuImplCopyWith(
-          _$ServerInfoCpuImpl value, $Res Function(_$ServerInfoCpuImpl) then) =
-      __$$ServerInfoCpuImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ServerInfoCpuCopyWith<$Res> {
+  factory $ServerInfoCpuCopyWith(
+          ServerInfoCpu value, $Res Function(ServerInfoCpu) _then) =
+      _$ServerInfoCpuCopyWithImpl;
   @useResult
   $Res call({String model, int cores});
 }
 
 /// @nodoc
-class __$$ServerInfoCpuImplCopyWithImpl<$Res>
-    extends _$ServerInfoCpuCopyWithImpl<$Res, _$ServerInfoCpuImpl>
-    implements _$$ServerInfoCpuImplCopyWith<$Res> {
-  __$$ServerInfoCpuImplCopyWithImpl(
-      _$ServerInfoCpuImpl _value, $Res Function(_$ServerInfoCpuImpl) _then)
-      : super(_value, _then);
+class _$ServerInfoCpuCopyWithImpl<$Res>
+    implements $ServerInfoCpuCopyWith<$Res> {
+  _$ServerInfoCpuCopyWithImpl(this._self, this._then);
 
+  final ServerInfoCpu _self;
+  final $Res Function(ServerInfoCpu) _then;
+
+  /// Create a copy of ServerInfoCpu
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? model = null,
     Object? cores = null,
   }) {
-    return _then(_$ServerInfoCpuImpl(
+    return _then(_self.copyWith(
       model: null == model
-          ? _value.model
+          ? _self.model
           : model // ignore: cast_nullable_to_non_nullable
               as String,
       cores: null == cores
-          ? _value.cores
+          ? _self.cores
           : cores // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -337,289 +354,300 @@ class __$$ServerInfoCpuImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ServerInfoCpuImpl implements _ServerInfoCpu {
-  const _$ServerInfoCpuImpl({required this.model, required this.cores});
-
-  factory _$ServerInfoCpuImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServerInfoCpuImplFromJson(json);
+class _ServerInfoCpu implements ServerInfoCpu {
+  const _ServerInfoCpu({required this.model, required this.cores});
+  factory _ServerInfoCpu.fromJson(Map<String, dynamic> json) =>
+      _$ServerInfoCpuFromJson(json);
 
   @override
   final String model;
   @override
   final int cores;
 
+  /// Create a copy of ServerInfoCpu
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ServerInfoCpu(model: $model, cores: $cores)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ServerInfoCpuCopyWith<_ServerInfoCpu> get copyWith =>
+      __$ServerInfoCpuCopyWithImpl<_ServerInfoCpu>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ServerInfoCpuToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServerInfoCpuImpl &&
+            other is _ServerInfoCpu &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.cores, cores) || other.cores == cores));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, model, cores);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ServerInfoCpuImplCopyWith<_$ServerInfoCpuImpl> get copyWith =>
-      __$$ServerInfoCpuImplCopyWithImpl<_$ServerInfoCpuImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ServerInfoCpuImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ServerInfoCpu implements ServerInfoCpu {
-  const factory _ServerInfoCpu(
-      {required final String model,
-      required final int cores}) = _$ServerInfoCpuImpl;
-
-  factory _ServerInfoCpu.fromJson(Map<String, dynamic> json) =
-      _$ServerInfoCpuImpl.fromJson;
-
-  @override
-  String get model;
-  @override
-  int get cores;
-  @override
-  @JsonKey(ignore: true)
-  _$$ServerInfoCpuImplCopyWith<_$ServerInfoCpuImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ServerInfoMem _$ServerInfoMemFromJson(Map<String, dynamic> json) {
-  return _ServerInfoMem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ServerInfoMem {
-  int get total => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ServerInfoMemCopyWith<ServerInfoMem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ServerInfoMemCopyWith<$Res> {
-  factory $ServerInfoMemCopyWith(
-          ServerInfoMem value, $Res Function(ServerInfoMem) then) =
-      _$ServerInfoMemCopyWithImpl<$Res, ServerInfoMem>;
-  @useResult
-  $Res call({int total});
-}
-
-/// @nodoc
-class _$ServerInfoMemCopyWithImpl<$Res, $Val extends ServerInfoMem>
-    implements $ServerInfoMemCopyWith<$Res> {
-  _$ServerInfoMemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? total = null,
-  }) {
-    return _then(_value.copyWith(
-      total: null == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  String toString() {
+    return 'ServerInfoCpu(model: $model, cores: $cores)';
   }
 }
 
 /// @nodoc
-abstract class _$$ServerInfoMemImplCopyWith<$Res>
-    implements $ServerInfoMemCopyWith<$Res> {
-  factory _$$ServerInfoMemImplCopyWith(
-          _$ServerInfoMemImpl value, $Res Function(_$ServerInfoMemImpl) then) =
-      __$$ServerInfoMemImplCopyWithImpl<$Res>;
+abstract mixin class _$ServerInfoCpuCopyWith<$Res>
+    implements $ServerInfoCpuCopyWith<$Res> {
+  factory _$ServerInfoCpuCopyWith(
+          _ServerInfoCpu value, $Res Function(_ServerInfoCpu) _then) =
+      __$ServerInfoCpuCopyWithImpl;
   @override
   @useResult
-  $Res call({int total});
+  $Res call({String model, int cores});
 }
 
 /// @nodoc
-class __$$ServerInfoMemImplCopyWithImpl<$Res>
-    extends _$ServerInfoMemCopyWithImpl<$Res, _$ServerInfoMemImpl>
-    implements _$$ServerInfoMemImplCopyWith<$Res> {
-  __$$ServerInfoMemImplCopyWithImpl(
-      _$ServerInfoMemImpl _value, $Res Function(_$ServerInfoMemImpl) _then)
-      : super(_value, _then);
+class __$ServerInfoCpuCopyWithImpl<$Res>
+    implements _$ServerInfoCpuCopyWith<$Res> {
+  __$ServerInfoCpuCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _ServerInfoCpu _self;
+  final $Res Function(_ServerInfoCpu) _then;
+
+  /// Create a copy of ServerInfoCpu
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? total = null,
+    Object? model = null,
+    Object? cores = null,
   }) {
-    return _then(_$ServerInfoMemImpl(
-      total: null == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
+    return _then(_ServerInfoCpu(
+      model: null == model
+          ? _self.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      cores: null == cores
+          ? _self.cores
+          : cores // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$ServerInfoMemImpl implements _ServerInfoMem {
-  const _$ServerInfoMemImpl({required this.total});
+mixin _$ServerInfoMem {
+  int get total;
 
-  factory _$ServerInfoMemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServerInfoMemImplFromJson(json);
+  /// Create a copy of ServerInfoMem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ServerInfoMemCopyWith<ServerInfoMem> get copyWith =>
+      _$ServerInfoMemCopyWithImpl<ServerInfoMem>(
+          this as ServerInfoMem, _$identity);
+
+  /// Serializes this ServerInfoMem to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
-  final int total;
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ServerInfoMem &&
+            (identical(other.total, total) || other.total == total));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, total);
 
   @override
   String toString() {
     return 'ServerInfoMem(total: $total)';
   }
+}
+
+/// @nodoc
+abstract mixin class $ServerInfoMemCopyWith<$Res> {
+  factory $ServerInfoMemCopyWith(
+          ServerInfoMem value, $Res Function(ServerInfoMem) _then) =
+      _$ServerInfoMemCopyWithImpl;
+  @useResult
+  $Res call({int total});
+}
+
+/// @nodoc
+class _$ServerInfoMemCopyWithImpl<$Res>
+    implements $ServerInfoMemCopyWith<$Res> {
+  _$ServerInfoMemCopyWithImpl(this._self, this._then);
+
+  final ServerInfoMem _self;
+  final $Res Function(ServerInfoMem) _then;
+
+  /// Create a copy of ServerInfoMem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? total = null,
+  }) {
+    return _then(_self.copyWith(
+      total: null == total
+          ? _self.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ServerInfoMem implements ServerInfoMem {
+  const _ServerInfoMem({required this.total});
+  factory _ServerInfoMem.fromJson(Map<String, dynamic> json) =>
+      _$ServerInfoMemFromJson(json);
+
+  @override
+  final int total;
+
+  /// Create a copy of ServerInfoMem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ServerInfoMemCopyWith<_ServerInfoMem> get copyWith =>
+      __$ServerInfoMemCopyWithImpl<_ServerInfoMem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ServerInfoMemToJson(
+      this,
+    );
+  }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServerInfoMemImpl &&
+            other is _ServerInfoMem &&
             (identical(other.total, total) || other.total == total));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, total);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ServerInfoMemImplCopyWith<_$ServerInfoMemImpl> get copyWith =>
-      __$$ServerInfoMemImplCopyWithImpl<_$ServerInfoMemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ServerInfoMemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ServerInfoMem(total: $total)';
   }
 }
 
-abstract class _ServerInfoMem implements ServerInfoMem {
-  const factory _ServerInfoMem({required final int total}) =
-      _$ServerInfoMemImpl;
-
-  factory _ServerInfoMem.fromJson(Map<String, dynamic> json) =
-      _$ServerInfoMemImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ServerInfoMemCopyWith<$Res>
+    implements $ServerInfoMemCopyWith<$Res> {
+  factory _$ServerInfoMemCopyWith(
+          _ServerInfoMem value, $Res Function(_ServerInfoMem) _then) =
+      __$ServerInfoMemCopyWithImpl;
   @override
-  int get total;
-  @override
-  @JsonKey(ignore: true)
-  _$$ServerInfoMemImplCopyWith<_$ServerInfoMemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int total});
 }
 
-ServerInfoFs _$ServerInfoFsFromJson(Map<String, dynamic> json) {
-  return _ServerInfoFs.fromJson(json);
+/// @nodoc
+class __$ServerInfoMemCopyWithImpl<$Res>
+    implements _$ServerInfoMemCopyWith<$Res> {
+  __$ServerInfoMemCopyWithImpl(this._self, this._then);
+
+  final _ServerInfoMem _self;
+  final $Res Function(_ServerInfoMem) _then;
+
+  /// Create a copy of ServerInfoMem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? total = null,
+  }) {
+    return _then(_ServerInfoMem(
+      total: null == total
+          ? _self.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ServerInfoFs {
-  int get total => throw _privateConstructorUsedError;
-  int get used => throw _privateConstructorUsedError;
+  int get total;
+  int get used;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ServerInfoFsCopyWith<ServerInfoFs> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ServerInfoFsCopyWith<$Res> {
-  factory $ServerInfoFsCopyWith(
-          ServerInfoFs value, $Res Function(ServerInfoFs) then) =
-      _$ServerInfoFsCopyWithImpl<$Res, ServerInfoFs>;
-  @useResult
-  $Res call({int total, int used});
-}
-
-/// @nodoc
-class _$ServerInfoFsCopyWithImpl<$Res, $Val extends ServerInfoFs>
-    implements $ServerInfoFsCopyWith<$Res> {
-  _$ServerInfoFsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ServerInfoFs
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ServerInfoFsCopyWith<ServerInfoFs> get copyWith =>
+      _$ServerInfoFsCopyWithImpl<ServerInfoFs>(
+          this as ServerInfoFs, _$identity);
+
+  /// Serializes this ServerInfoFs to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? total = null,
-    Object? used = null,
-  }) {
-    return _then(_value.copyWith(
-      total: null == total
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
-              as int,
-      used: null == used
-          ? _value.used
-          : used // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ServerInfoFs &&
+            (identical(other.total, total) || other.total == total) &&
+            (identical(other.used, used) || other.used == used));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, total, used);
+
+  @override
+  String toString() {
+    return 'ServerInfoFs(total: $total, used: $used)';
   }
 }
 
 /// @nodoc
-abstract class _$$ServerInfoFsImplCopyWith<$Res>
-    implements $ServerInfoFsCopyWith<$Res> {
-  factory _$$ServerInfoFsImplCopyWith(
-          _$ServerInfoFsImpl value, $Res Function(_$ServerInfoFsImpl) then) =
-      __$$ServerInfoFsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ServerInfoFsCopyWith<$Res> {
+  factory $ServerInfoFsCopyWith(
+          ServerInfoFs value, $Res Function(ServerInfoFs) _then) =
+      _$ServerInfoFsCopyWithImpl;
   @useResult
   $Res call({int total, int used});
 }
 
 /// @nodoc
-class __$$ServerInfoFsImplCopyWithImpl<$Res>
-    extends _$ServerInfoFsCopyWithImpl<$Res, _$ServerInfoFsImpl>
-    implements _$$ServerInfoFsImplCopyWith<$Res> {
-  __$$ServerInfoFsImplCopyWithImpl(
-      _$ServerInfoFsImpl _value, $Res Function(_$ServerInfoFsImpl) _then)
-      : super(_value, _then);
+class _$ServerInfoFsCopyWithImpl<$Res> implements $ServerInfoFsCopyWith<$Res> {
+  _$ServerInfoFsCopyWithImpl(this._self, this._then);
 
+  final ServerInfoFs _self;
+  final $Res Function(ServerInfoFs) _then;
+
+  /// Create a copy of ServerInfoFs
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? total = null,
     Object? used = null,
   }) {
-    return _then(_$ServerInfoFsImpl(
+    return _then(_self.copyWith(
       total: null == total
-          ? _value.total
+          ? _self.total
           : total // ignore: cast_nullable_to_non_nullable
               as int,
       used: null == used
-          ? _value.used
+          ? _self.used
           : used // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -628,62 +656,88 @@ class __$$ServerInfoFsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ServerInfoFsImpl implements _ServerInfoFs {
-  const _$ServerInfoFsImpl({required this.total, required this.used});
-
-  factory _$ServerInfoFsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServerInfoFsImplFromJson(json);
+class _ServerInfoFs implements ServerInfoFs {
+  const _ServerInfoFs({required this.total, required this.used});
+  factory _ServerInfoFs.fromJson(Map<String, dynamic> json) =>
+      _$ServerInfoFsFromJson(json);
 
   @override
   final int total;
   @override
   final int used;
 
+  /// Create a copy of ServerInfoFs
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ServerInfoFs(total: $total, used: $used)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ServerInfoFsCopyWith<_ServerInfoFs> get copyWith =>
+      __$ServerInfoFsCopyWithImpl<_ServerInfoFs>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ServerInfoFsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServerInfoFsImpl &&
+            other is _ServerInfoFs &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.used, used) || other.used == used));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, total, used);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ServerInfoFsImplCopyWith<_$ServerInfoFsImpl> get copyWith =>
-      __$$ServerInfoFsImplCopyWithImpl<_$ServerInfoFsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ServerInfoFsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ServerInfoFs(total: $total, used: $used)';
   }
 }
 
-abstract class _ServerInfoFs implements ServerInfoFs {
-  const factory _ServerInfoFs(
-      {required final int total, required final int used}) = _$ServerInfoFsImpl;
-
-  factory _ServerInfoFs.fromJson(Map<String, dynamic> json) =
-      _$ServerInfoFsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ServerInfoFsCopyWith<$Res>
+    implements $ServerInfoFsCopyWith<$Res> {
+  factory _$ServerInfoFsCopyWith(
+          _ServerInfoFs value, $Res Function(_ServerInfoFs) _then) =
+      __$ServerInfoFsCopyWithImpl;
   @override
-  int get total;
-  @override
-  int get used;
-  @override
-  @JsonKey(ignore: true)
-  _$$ServerInfoFsImplCopyWith<_$ServerInfoFsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int total, int used});
 }
+
+/// @nodoc
+class __$ServerInfoFsCopyWithImpl<$Res>
+    implements _$ServerInfoFsCopyWith<$Res> {
+  __$ServerInfoFsCopyWithImpl(this._self, this._then);
+
+  final _ServerInfoFs _self;
+  final $Res Function(_ServerInfoFs) _then;
+
+  /// Create a copy of ServerInfoFs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? total = null,
+    Object? used = null,
+  }) {
+    return _then(_ServerInfoFs(
+      total: null == total
+          ? _self.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      used: null == used
+          ? _self.used
+          : used // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

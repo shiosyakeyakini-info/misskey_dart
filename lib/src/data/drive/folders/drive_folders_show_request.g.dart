@@ -6,14 +6,14 @@ part of 'drive_folders_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFoldersShowRequestImpl _$$DriveFoldersShowRequestImplFromJson(
+_DriveFoldersShowRequest _$DriveFoldersShowRequestFromJson(
         Map<String, dynamic> json) =>
-    _$DriveFoldersShowRequestImpl(
+    _DriveFoldersShowRequest(
       folderId: json['folderId'] as String,
     );
 
-Map<String, dynamic> _$$DriveFoldersShowRequestImplToJson(
-        _$DriveFoldersShowRequestImpl instance) =>
+Map<String, dynamic> _$DriveFoldersShowRequestToJson(
+        _DriveFoldersShowRequest instance) =>
     <String, dynamic>{
       'folderId': instance.folderId,
     };

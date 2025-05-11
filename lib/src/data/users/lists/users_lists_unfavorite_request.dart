@@ -4,7 +4,7 @@ part 'users_lists_unfavorite_request.freezed.dart';
 part 'users_lists_unfavorite_request.g.dart';
 
 @freezed
-class UsersListsUnfavoriteRequest with _$UsersListsUnfavoriteRequest {
+abstract class UsersListsUnfavoriteRequest with _$UsersListsUnfavoriteRequest {
   const factory UsersListsUnfavoriteRequest({
     required String listId,
   }) = _UsersListsUnfavoriteRequest;

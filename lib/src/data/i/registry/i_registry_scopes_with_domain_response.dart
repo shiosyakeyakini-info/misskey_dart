@@ -4,7 +4,7 @@ part 'i_registry_scopes_with_domain_response.freezed.dart';
 part 'i_registry_scopes_with_domain_response.g.dart';
 
 @freezed
-class IRegistryScopesWithDomainResponse
+abstract class IRegistryScopesWithDomainResponse
     with _$IRegistryScopesWithDomainResponse {
   const factory IRegistryScopesWithDomainResponse({
     required List<List<String>> scopes,

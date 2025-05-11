@@ -6,15 +6,15 @@ part of 'users_lists_push_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersListsPushRequestImpl _$$UsersListsPushRequestImplFromJson(
+_UsersListsPushRequest _$UsersListsPushRequestFromJson(
         Map<String, dynamic> json) =>
-    _$UsersListsPushRequestImpl(
+    _UsersListsPushRequest(
       listId: json['listId'] as String,
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$UsersListsPushRequestImplToJson(
-        _$UsersListsPushRequestImpl instance) =>
+Map<String, dynamic> _$UsersListsPushRequestToJson(
+        _UsersListsPushRequest instance) =>
     <String, dynamic>{
       'listId': instance.listId,
       'userId': instance.userId,

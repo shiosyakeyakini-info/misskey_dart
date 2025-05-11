@@ -4,7 +4,7 @@ part 'ping_response.freezed.dart';
 part 'ping_response.g.dart';
 
 @freezed
-class PingResponse with _$PingResponse {
+abstract class PingResponse with _$PingResponse {
   const factory PingResponse({
     required int pong,
   }) = _PingResponse;

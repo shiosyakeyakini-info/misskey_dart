@@ -4,7 +4,7 @@ part 'notes_search_request.freezed.dart';
 part 'notes_search_request.g.dart';
 
 @freezed
-class NotesSearchRequest with _$NotesSearchRequest {
+abstract class NotesSearchRequest with _$NotesSearchRequest {
   const factory NotesSearchRequest({
     /// 検索クエリ。クエリが本文に含まれるノートを検索します。
     required String query,

@@ -4,7 +4,7 @@ part 'chat_message_lite.freezed.dart';
 part 'chat_message_lite.g.dart';
 
 @freezed
-class ChatMessageLite with _$ChatMessageLite {
+abstract class ChatMessageLite with _$ChatMessageLite {
   const factory ChatMessageLite({
     required String id,
     required String createdAt,

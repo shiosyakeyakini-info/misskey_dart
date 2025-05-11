@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,95 +10,67 @@ part of 'users_flashs_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersFlashsRequest _$UsersFlashsRequestFromJson(Map<String, dynamic> json) {
-  return _UsersFlashsRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersFlashsRequest {
-  String get userId => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  String get userId;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UsersFlashsRequestCopyWith<UsersFlashsRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsersFlashsRequestCopyWith<$Res> {
-  factory $UsersFlashsRequestCopyWith(
-          UsersFlashsRequest value, $Res Function(UsersFlashsRequest) then) =
-      _$UsersFlashsRequestCopyWithImpl<$Res, UsersFlashsRequest>;
-  @useResult
-  $Res call({String userId, int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$UsersFlashsRequestCopyWithImpl<$Res, $Val extends UsersFlashsRequest>
-    implements $UsersFlashsRequestCopyWith<$Res> {
-  _$UsersFlashsRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UsersFlashsRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UsersFlashsRequestCopyWith<UsersFlashsRequest> get copyWith =>
+      _$UsersFlashsRequestCopyWithImpl<UsersFlashsRequest>(
+          this as UsersFlashsRequest, _$identity);
+
+  /// Serializes this UsersFlashsRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? userId = null,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersFlashsRequest &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'UsersFlashsRequest(userId: $userId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersFlashsRequestImplCopyWith<$Res>
-    implements $UsersFlashsRequestCopyWith<$Res> {
-  factory _$$UsersFlashsRequestImplCopyWith(_$UsersFlashsRequestImpl value,
-          $Res Function(_$UsersFlashsRequestImpl) then) =
-      __$$UsersFlashsRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersFlashsRequestCopyWith<$Res> {
+  factory $UsersFlashsRequestCopyWith(
+          UsersFlashsRequest value, $Res Function(UsersFlashsRequest) _then) =
+      _$UsersFlashsRequestCopyWithImpl;
   @useResult
   $Res call({String userId, int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$UsersFlashsRequestImplCopyWithImpl<$Res>
-    extends _$UsersFlashsRequestCopyWithImpl<$Res, _$UsersFlashsRequestImpl>
-    implements _$$UsersFlashsRequestImplCopyWith<$Res> {
-  __$$UsersFlashsRequestImplCopyWithImpl(_$UsersFlashsRequestImpl _value,
-      $Res Function(_$UsersFlashsRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersFlashsRequestCopyWithImpl<$Res>
+    implements $UsersFlashsRequestCopyWith<$Res> {
+  _$UsersFlashsRequestCopyWithImpl(this._self, this._then);
 
+  final UsersFlashsRequest _self;
+  final $Res Function(UsersFlashsRequest) _then;
+
+  /// Create a copy of UsersFlashsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,21 +79,21 @@ class __$$UsersFlashsRequestImplCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$UsersFlashsRequestImpl(
+    return _then(_self.copyWith(
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _value.sinceId
+          ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -129,12 +102,11 @@ class __$$UsersFlashsRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersFlashsRequestImpl implements _UsersFlashsRequest {
-  const _$UsersFlashsRequestImpl(
+class _UsersFlashsRequest implements UsersFlashsRequest {
+  const _UsersFlashsRequest(
       {required this.userId, this.limit, this.sinceId, this.untilId});
-
-  factory _$UsersFlashsRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersFlashsRequestImplFromJson(json);
+  factory _UsersFlashsRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersFlashsRequestFromJson(json);
 
   @override
   final String userId;
@@ -145,61 +117,90 @@ class _$UsersFlashsRequestImpl implements _UsersFlashsRequest {
   @override
   final String? untilId;
 
+  /// Create a copy of UsersFlashsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersFlashsRequest(userId: $userId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersFlashsRequestCopyWith<_UsersFlashsRequest> get copyWith =>
+      __$UsersFlashsRequestCopyWithImpl<_UsersFlashsRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersFlashsRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersFlashsRequestImpl &&
+            other is _UsersFlashsRequest &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, userId, limit, sinceId, untilId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersFlashsRequestImplCopyWith<_$UsersFlashsRequestImpl> get copyWith =>
-      __$$UsersFlashsRequestImplCopyWithImpl<_$UsersFlashsRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersFlashsRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersFlashsRequest(userId: $userId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _UsersFlashsRequest implements UsersFlashsRequest {
-  const factory _UsersFlashsRequest(
-      {required final String userId,
-      final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$UsersFlashsRequestImpl;
-
-  factory _UsersFlashsRequest.fromJson(Map<String, dynamic> json) =
-      _$UsersFlashsRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersFlashsRequestCopyWith<$Res>
+    implements $UsersFlashsRequestCopyWith<$Res> {
+  factory _$UsersFlashsRequestCopyWith(
+          _UsersFlashsRequest value, $Res Function(_UsersFlashsRequest) _then) =
+      __$UsersFlashsRequestCopyWithImpl;
   @override
-  String get userId;
-  @override
-  int? get limit;
-  @override
-  String? get sinceId;
-  @override
-  String? get untilId;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersFlashsRequestImplCopyWith<_$UsersFlashsRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String userId, int? limit, String? sinceId, String? untilId});
 }
+
+/// @nodoc
+class __$UsersFlashsRequestCopyWithImpl<$Res>
+    implements _$UsersFlashsRequestCopyWith<$Res> {
+  __$UsersFlashsRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersFlashsRequest _self;
+  final $Res Function(_UsersFlashsRequest) _then;
+
+  /// Create a copy of UsersFlashsRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? userId = null,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_UsersFlashsRequest(
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

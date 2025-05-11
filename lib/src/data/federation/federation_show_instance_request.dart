@@ -4,7 +4,8 @@ part 'federation_show_instance_request.freezed.dart';
 part 'federation_show_instance_request.g.dart';
 
 @freezed
-class FederationShowInstanceRequest with _$FederationShowInstanceRequest {
+abstract class FederationShowInstanceRequest
+    with _$FederationShowInstanceRequest {
   const factory FederationShowInstanceRequest({
     required String host,
     bool? blocked,

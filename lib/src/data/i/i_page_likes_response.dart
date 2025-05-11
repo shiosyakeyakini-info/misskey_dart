@@ -5,7 +5,7 @@ part 'i_page_likes_response.freezed.dart';
 part 'i_page_likes_response.g.dart';
 
 @freezed
-class IPageLikesResponse with _$IPageLikesResponse {
+abstract class IPageLikesResponse with _$IPageLikesResponse {
   const factory IPageLikesResponse({
     required String id,
     required Page page,

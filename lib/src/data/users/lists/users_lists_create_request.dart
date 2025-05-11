@@ -4,7 +4,7 @@ part 'users_lists_create_request.freezed.dart';
 part 'users_lists_create_request.g.dart';
 
 @freezed
-class UsersListsCreateRequest with _$UsersListsCreateRequest {
+abstract class UsersListsCreateRequest with _$UsersListsCreateRequest {
   const factory UsersListsCreateRequest({
     required String name,
   }) = _UsersListsCreateRequest;

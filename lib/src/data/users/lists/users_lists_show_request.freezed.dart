@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,100 +10,77 @@ part of 'users_lists_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersListsShowRequest _$UsersListsShowRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UsersListsShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersListsShowRequest {
-  String get listId => throw _privateConstructorUsedError;
-  bool? get forPublic => throw _privateConstructorUsedError;
+  String get listId;
+  bool? get forPublic;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UsersListsShowRequestCopyWith<UsersListsShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsersListsShowRequestCopyWith<$Res> {
-  factory $UsersListsShowRequestCopyWith(UsersListsShowRequest value,
-          $Res Function(UsersListsShowRequest) then) =
-      _$UsersListsShowRequestCopyWithImpl<$Res, UsersListsShowRequest>;
-  @useResult
-  $Res call({String listId, bool? forPublic});
-}
-
-/// @nodoc
-class _$UsersListsShowRequestCopyWithImpl<$Res,
-        $Val extends UsersListsShowRequest>
-    implements $UsersListsShowRequestCopyWith<$Res> {
-  _$UsersListsShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UsersListsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UsersListsShowRequestCopyWith<UsersListsShowRequest> get copyWith =>
+      _$UsersListsShowRequestCopyWithImpl<UsersListsShowRequest>(
+          this as UsersListsShowRequest, _$identity);
+
+  /// Serializes this UsersListsShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? listId = null,
-    Object? forPublic = freezed,
-  }) {
-    return _then(_value.copyWith(
-      listId: null == listId
-          ? _value.listId
-          : listId // ignore: cast_nullable_to_non_nullable
-              as String,
-      forPublic: freezed == forPublic
-          ? _value.forPublic
-          : forPublic // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersListsShowRequest &&
+            (identical(other.listId, listId) || other.listId == listId) &&
+            (identical(other.forPublic, forPublic) ||
+                other.forPublic == forPublic));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, listId, forPublic);
+
+  @override
+  String toString() {
+    return 'UsersListsShowRequest(listId: $listId, forPublic: $forPublic)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersListsShowRequestImplCopyWith<$Res>
-    implements $UsersListsShowRequestCopyWith<$Res> {
-  factory _$$UsersListsShowRequestImplCopyWith(
-          _$UsersListsShowRequestImpl value,
-          $Res Function(_$UsersListsShowRequestImpl) then) =
-      __$$UsersListsShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersListsShowRequestCopyWith<$Res> {
+  factory $UsersListsShowRequestCopyWith(UsersListsShowRequest value,
+          $Res Function(UsersListsShowRequest) _then) =
+      _$UsersListsShowRequestCopyWithImpl;
   @useResult
   $Res call({String listId, bool? forPublic});
 }
 
 /// @nodoc
-class __$$UsersListsShowRequestImplCopyWithImpl<$Res>
-    extends _$UsersListsShowRequestCopyWithImpl<$Res,
-        _$UsersListsShowRequestImpl>
-    implements _$$UsersListsShowRequestImplCopyWith<$Res> {
-  __$$UsersListsShowRequestImplCopyWithImpl(_$UsersListsShowRequestImpl _value,
-      $Res Function(_$UsersListsShowRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersListsShowRequestCopyWithImpl<$Res>
+    implements $UsersListsShowRequestCopyWith<$Res> {
+  _$UsersListsShowRequestCopyWithImpl(this._self, this._then);
 
+  final UsersListsShowRequest _self;
+  final $Res Function(UsersListsShowRequest) _then;
+
+  /// Create a copy of UsersListsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listId = null,
     Object? forPublic = freezed,
   }) {
-    return _then(_$UsersListsShowRequestImpl(
+    return _then(_self.copyWith(
       listId: null == listId
-          ? _value.listId
+          ? _self.listId
           : listId // ignore: cast_nullable_to_non_nullable
               as String,
       forPublic: freezed == forPublic
-          ? _value.forPublic
+          ? _self.forPublic
           : forPublic // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -111,65 +89,90 @@ class __$$UsersListsShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersListsShowRequestImpl implements _UsersListsShowRequest {
-  const _$UsersListsShowRequestImpl({required this.listId, this.forPublic});
-
-  factory _$UsersListsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersListsShowRequestImplFromJson(json);
+class _UsersListsShowRequest implements UsersListsShowRequest {
+  const _UsersListsShowRequest({required this.listId, this.forPublic});
+  factory _UsersListsShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersListsShowRequestFromJson(json);
 
   @override
   final String listId;
   @override
   final bool? forPublic;
 
+  /// Create a copy of UsersListsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersListsShowRequest(listId: $listId, forPublic: $forPublic)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersListsShowRequestCopyWith<_UsersListsShowRequest> get copyWith =>
+      __$UsersListsShowRequestCopyWithImpl<_UsersListsShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersListsShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersListsShowRequestImpl &&
+            other is _UsersListsShowRequest &&
             (identical(other.listId, listId) || other.listId == listId) &&
             (identical(other.forPublic, forPublic) ||
                 other.forPublic == forPublic));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, listId, forPublic);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersListsShowRequestImplCopyWith<_$UsersListsShowRequestImpl>
-      get copyWith => __$$UsersListsShowRequestImplCopyWithImpl<
-          _$UsersListsShowRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersListsShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersListsShowRequest(listId: $listId, forPublic: $forPublic)';
   }
 }
 
-abstract class _UsersListsShowRequest implements UsersListsShowRequest {
-  const factory _UsersListsShowRequest(
-      {required final String listId,
-      final bool? forPublic}) = _$UsersListsShowRequestImpl;
-
-  factory _UsersListsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$UsersListsShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersListsShowRequestCopyWith<$Res>
+    implements $UsersListsShowRequestCopyWith<$Res> {
+  factory _$UsersListsShowRequestCopyWith(_UsersListsShowRequest value,
+          $Res Function(_UsersListsShowRequest) _then) =
+      __$UsersListsShowRequestCopyWithImpl;
   @override
-  String get listId;
-  @override
-  bool? get forPublic;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersListsShowRequestImplCopyWith<_$UsersListsShowRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String listId, bool? forPublic});
 }
+
+/// @nodoc
+class __$UsersListsShowRequestCopyWithImpl<$Res>
+    implements _$UsersListsShowRequestCopyWith<$Res> {
+  __$UsersListsShowRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersListsShowRequest _self;
+  final $Res Function(_UsersListsShowRequest) _then;
+
+  /// Create a copy of UsersListsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? listId = null,
+    Object? forPublic = freezed,
+  }) {
+    return _then(_UsersListsShowRequest(
+      listId: null == listId
+          ? _self.listId
+          : listId // ignore: cast_nullable_to_non_nullable
+              as String,
+      forPublic: freezed == forPublic
+          ? _self.forPublic
+          : forPublic // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

@@ -4,7 +4,8 @@ part 'notes_thread_muting_delete_request.freezed.dart';
 part 'notes_thread_muting_delete_request.g.dart';
 
 @freezed
-class NotesThreadMutingDeleteRequest with _$NotesThreadMutingDeleteRequest {
+abstract class NotesThreadMutingDeleteRequest
+    with _$NotesThreadMutingDeleteRequest {
   const factory NotesThreadMutingDeleteRequest({
     required String noteId,
   }) = _NotesThreadMutingDeleteRequest;
