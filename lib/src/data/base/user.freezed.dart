@@ -7124,6 +7124,7 @@ mixin _$UserPolicies {
   bool get canUseTranslator => throw _privateConstructorUsedError;
   bool get canHideAds => throw _privateConstructorUsedError;
   double get driveCapacityMb => throw _privateConstructorUsedError;
+  int? get maxFileSizeMb => throw _privateConstructorUsedError;
   bool? get alwaysMarkNsfw => throw _privateConstructorUsedError;
   bool? get canUpdateBioMedia => throw _privateConstructorUsedError;
   double get pinLimit => throw _privateConstructorUsedError;
@@ -7175,6 +7176,7 @@ abstract class $UserPoliciesCopyWith<$Res> {
       bool canUseTranslator,
       bool canHideAds,
       double driveCapacityMb,
+      int? maxFileSizeMb,
       bool? alwaysMarkNsfw,
       bool? canUpdateBioMedia,
       double pinLimit,
@@ -7225,6 +7227,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
     Object? canUseTranslator = null,
     Object? canHideAds = null,
     Object? driveCapacityMb = null,
+    Object? maxFileSizeMb = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? canUpdateBioMedia = freezed,
     Object? pinLimit = null,
@@ -7305,6 +7308,10 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
           ? _value.driveCapacityMb
           : driveCapacityMb // ignore: cast_nullable_to_non_nullable
               as double,
+      maxFileSizeMb: freezed == maxFileSizeMb
+          ? _value.maxFileSizeMb
+          : maxFileSizeMb // ignore: cast_nullable_to_non_nullable
+              as int?,
       alwaysMarkNsfw: freezed == alwaysMarkNsfw
           ? _value.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
@@ -7405,6 +7412,7 @@ abstract class _$$UserPoliciesImplCopyWith<$Res>
       bool canUseTranslator,
       bool canHideAds,
       double driveCapacityMb,
+      int? maxFileSizeMb,
       bool? alwaysMarkNsfw,
       bool? canUpdateBioMedia,
       double pinLimit,
@@ -7453,6 +7461,7 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
     Object? canUseTranslator = null,
     Object? canHideAds = null,
     Object? driveCapacityMb = null,
+    Object? maxFileSizeMb = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? canUpdateBioMedia = freezed,
     Object? pinLimit = null,
@@ -7533,6 +7542,10 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
           ? _value.driveCapacityMb
           : driveCapacityMb // ignore: cast_nullable_to_non_nullable
               as double,
+      maxFileSizeMb: freezed == maxFileSizeMb
+          ? _value.maxFileSizeMb
+          : maxFileSizeMb // ignore: cast_nullable_to_non_nullable
+              as int?,
       alwaysMarkNsfw: freezed == alwaysMarkNsfw
           ? _value.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
@@ -7628,6 +7641,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
       this.canUseTranslator = false,
       required this.canHideAds,
       required this.driveCapacityMb,
+      this.maxFileSizeMb,
       this.alwaysMarkNsfw,
       this.canUpdateBioMedia,
       required this.pinLimit,
@@ -7684,6 +7698,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
   @override
   final double driveCapacityMb;
   @override
+  final int? maxFileSizeMb;
+  @override
   final bool? alwaysMarkNsfw;
   @override
   final bool? canUpdateBioMedia;
@@ -7723,7 +7739,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
   }
 
   @override
@@ -7751,8 +7767,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
                 other.inviteExpirationTime == inviteExpirationTime) &&
             (identical(other.canManageCustomEmojis, canManageCustomEmojis) ||
                 other.canManageCustomEmojis == canManageCustomEmojis) &&
-            (identical(other.canManageAvatarDecorations,
-                    canManageAvatarDecorations) ||
+            (identical(other.canManageAvatarDecorations, canManageAvatarDecorations) ||
                 other.canManageAvatarDecorations ==
                     canManageAvatarDecorations) &&
             (identical(other.canSearchNotes, canSearchNotes) ||
@@ -7763,6 +7778,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
                 other.canHideAds == canHideAds) &&
             (identical(other.driveCapacityMb, driveCapacityMb) ||
                 other.driveCapacityMb == driveCapacityMb) &&
+            (identical(other.maxFileSizeMb, maxFileSizeMb) ||
+                other.maxFileSizeMb == maxFileSizeMb) &&
             (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.canUpdateBioMedia, canUpdateBioMedia) ||
@@ -7820,6 +7837,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
         canUseTranslator,
         canHideAds,
         driveCapacityMb,
+        maxFileSizeMb,
         alwaysMarkNsfw,
         canUpdateBioMedia,
         pinLimit,
@@ -7873,6 +7891,7 @@ abstract class _UserPolicies implements UserPolicies {
       final bool canUseTranslator,
       required final bool canHideAds,
       required final double driveCapacityMb,
+      final int? maxFileSizeMb,
       final bool? alwaysMarkNsfw,
       final bool? canUpdateBioMedia,
       required final double pinLimit,
@@ -7925,6 +7944,8 @@ abstract class _UserPolicies implements UserPolicies {
   bool get canHideAds;
   @override
   double get driveCapacityMb;
+  @override
+  int? get maxFileSizeMb;
   @override
   bool? get alwaysMarkNsfw;
   @override
