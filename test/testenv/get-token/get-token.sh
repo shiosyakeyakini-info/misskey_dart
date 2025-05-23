@@ -49,6 +49,11 @@ USER_ID=$(echo "$USER_DATA" | jq -r .id)
             "priority": 0,
             "useDefault": false
           },
+          "uploadableFileTypes": {
+            "value": ["*/*"],
+            "priority": 0,
+            "useDefault": false
+          },
           "pinLimit": {
             "value": 1000,
             "priority": 0,
