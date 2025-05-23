@@ -456,6 +456,7 @@ class UserPolicies with _$UserPolicies {
     required bool canHideAds,
     required double driveCapacityMb,
     int? maxFileSizeMb,
+    List<String>? uploadableFileTypes,
     bool? alwaysMarkNsfw,
     bool? canUpdateBioMedia,
     required double pinLimit,

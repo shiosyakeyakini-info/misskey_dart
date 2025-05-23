@@ -7125,6 +7125,7 @@ mixin _$UserPolicies {
   bool get canHideAds => throw _privateConstructorUsedError;
   double get driveCapacityMb => throw _privateConstructorUsedError;
   int? get maxFileSizeMb => throw _privateConstructorUsedError;
+  List<String>? get uploadableFileTypes => throw _privateConstructorUsedError;
   bool? get alwaysMarkNsfw => throw _privateConstructorUsedError;
   bool? get canUpdateBioMedia => throw _privateConstructorUsedError;
   double get pinLimit => throw _privateConstructorUsedError;
@@ -7177,6 +7178,7 @@ abstract class $UserPoliciesCopyWith<$Res> {
       bool canHideAds,
       double driveCapacityMb,
       int? maxFileSizeMb,
+      List<String>? uploadableFileTypes,
       bool? alwaysMarkNsfw,
       bool? canUpdateBioMedia,
       double pinLimit,
@@ -7228,6 +7230,7 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
     Object? canHideAds = null,
     Object? driveCapacityMb = null,
     Object? maxFileSizeMb = freezed,
+    Object? uploadableFileTypes = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? canUpdateBioMedia = freezed,
     Object? pinLimit = null,
@@ -7312,6 +7315,10 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
           ? _value.maxFileSizeMb
           : maxFileSizeMb // ignore: cast_nullable_to_non_nullable
               as int?,
+      uploadableFileTypes: freezed == uploadableFileTypes
+          ? _value.uploadableFileTypes
+          : uploadableFileTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       alwaysMarkNsfw: freezed == alwaysMarkNsfw
           ? _value.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
@@ -7413,6 +7420,7 @@ abstract class _$$UserPoliciesImplCopyWith<$Res>
       bool canHideAds,
       double driveCapacityMb,
       int? maxFileSizeMb,
+      List<String>? uploadableFileTypes,
       bool? alwaysMarkNsfw,
       bool? canUpdateBioMedia,
       double pinLimit,
@@ -7462,6 +7470,7 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
     Object? canHideAds = null,
     Object? driveCapacityMb = null,
     Object? maxFileSizeMb = freezed,
+    Object? uploadableFileTypes = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? canUpdateBioMedia = freezed,
     Object? pinLimit = null,
@@ -7546,6 +7555,10 @@ class __$$UserPoliciesImplCopyWithImpl<$Res>
           ? _value.maxFileSizeMb
           : maxFileSizeMb // ignore: cast_nullable_to_non_nullable
               as int?,
+      uploadableFileTypes: freezed == uploadableFileTypes
+          ? _value._uploadableFileTypes
+          : uploadableFileTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       alwaysMarkNsfw: freezed == alwaysMarkNsfw
           ? _value.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
@@ -7642,6 +7655,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
       required this.canHideAds,
       required this.driveCapacityMb,
       this.maxFileSizeMb,
+      final List<String>? uploadableFileTypes,
       this.alwaysMarkNsfw,
       this.canUpdateBioMedia,
       required this.pinLimit,
@@ -7659,7 +7673,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
       this.canImportFollowing,
       this.canImportMuting,
       this.canImportUserLists,
-      this.chatAvailability});
+      this.chatAvailability})
+      : _uploadableFileTypes = uploadableFileTypes;
 
   factory _$UserPoliciesImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserPoliciesImplFromJson(json);
@@ -7699,6 +7714,17 @@ class _$UserPoliciesImpl implements _UserPolicies {
   final double driveCapacityMb;
   @override
   final int? maxFileSizeMb;
+  final List<String>? _uploadableFileTypes;
+  @override
+  List<String>? get uploadableFileTypes {
+    final value = _uploadableFileTypes;
+    if (value == null) return null;
+    if (_uploadableFileTypes is EqualUnmodifiableListView)
+      return _uploadableFileTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final bool? alwaysMarkNsfw;
   @override
@@ -7739,7 +7765,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
   }
 
   @override
@@ -7780,6 +7806,8 @@ class _$UserPoliciesImpl implements _UserPolicies {
                 other.driveCapacityMb == driveCapacityMb) &&
             (identical(other.maxFileSizeMb, maxFileSizeMb) ||
                 other.maxFileSizeMb == maxFileSizeMb) &&
+            const DeepCollectionEquality()
+                .equals(other._uploadableFileTypes, _uploadableFileTypes) &&
             (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.canUpdateBioMedia, canUpdateBioMedia) ||
@@ -7838,6 +7866,7 @@ class _$UserPoliciesImpl implements _UserPolicies {
         canHideAds,
         driveCapacityMb,
         maxFileSizeMb,
+        const DeepCollectionEquality().hash(_uploadableFileTypes),
         alwaysMarkNsfw,
         canUpdateBioMedia,
         pinLimit,
@@ -7892,6 +7921,7 @@ abstract class _UserPolicies implements UserPolicies {
       required final bool canHideAds,
       required final double driveCapacityMb,
       final int? maxFileSizeMb,
+      final List<String>? uploadableFileTypes,
       final bool? alwaysMarkNsfw,
       final bool? canUpdateBioMedia,
       required final double pinLimit,
@@ -7946,6 +7976,8 @@ abstract class _UserPolicies implements UserPolicies {
   double get driveCapacityMb;
   @override
   int? get maxFileSizeMb;
+  @override
+  List<String>? get uploadableFileTypes;
   @override
   bool? get alwaysMarkNsfw;
   @override
