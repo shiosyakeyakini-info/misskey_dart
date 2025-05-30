@@ -97,6 +97,7 @@ export 'src/data/drive/files/drive_files_create_request.dart';
 export 'src/data/drive/files/drive_files_delete_request.dart';
 export 'src/data/drive/files/drive_files_find_by_hash_request.dart';
 export 'src/data/drive/files/drive_files_find_request.dart';
+export 'src/data/drive/files/drive_files_move_bulk_request.dart';
 export 'src/data/drive/files/drive_files_show_request.dart';
 export 'src/data/drive/files/drive_files_update_request.dart';
 export 'src/data/drive/files/drive_files_upload_from_url_request.dart';

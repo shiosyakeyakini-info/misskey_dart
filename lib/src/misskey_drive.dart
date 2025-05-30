@@ -104,6 +104,11 @@ class MisskeyDriveFiles {
     return response.map((e) => DriveFile.fromJson(e));
   }
 
+  /// ファイルを一括で移動させます。
+  Future<void> moveBulk(DriveFilesMoveBulkRequest request) async {
+    await _apiService.post("drive/files/move-bulk", request.toJson());
+  }
+
   /// ドライブのファイルの情報を取得します。
   Future<DriveFile> show(DriveFilesShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
