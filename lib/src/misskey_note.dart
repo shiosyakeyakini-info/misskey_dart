@@ -4,6 +4,7 @@ import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyNotes {
   final MisskeyNotesReactions reactions;
+  final MisskeyNotesDrafts drafts;
   final MisskeyNotesFavorites favorites;
   final MisskeyNotesPolls polls;
   final MisskeyNotesThreadMuting threadMuting;
@@ -13,6 +14,7 @@ class MisskeyNotes {
   MisskeyNotes({required apiService})
       : _apiService = apiService,
         reactions = MisskeyNotesReactions(apiService: apiService),
+        drafts = MisskeyNotesDrafts(apiService: apiService),
         favorites = MisskeyNotesFavorites(apiService: apiService),
         polls = MisskeyNotesPolls(apiService: apiService),
         threadMuting = MisskeyNotesThreadMuting(apiService: apiService);
@@ -197,6 +199,54 @@ class MisskeyNotesReactions {
     final response =
         await _apiService.post<List>("notes/reactions", request.toJson());
     return response.map((e) => NotesReactionsResponse.fromJson(e));
+  }
+}
+
+class MisskeyNotesDrafts {
+  const MisskeyNotesDrafts({required ApiService apiService})
+      : _apiService = apiService;
+
+  final ApiService _apiService;
+
+  /// ノートの下書きの数を取得します。
+  Future<int> count() {
+    return _apiService.post<int>("notes/drafts/count", {});
+  }
+
+  /// ノートの下書きを作成します。
+  Future<NotesDraftsCreateResponse> create(
+    NotesDraftsCreateRequest request,
+  ) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "notes/drafts/create",
+      request.toJson(),
+    );
+    return NotesDraftsCreateResponse.fromJson(response);
+  }
+
+  /// ノートの下書きを削除します。
+  Future<void> delete(NotesDraftsDeleteRequest request) async {
+    await _apiService.post<void>("notes/drafts/delete", request.toJson());
+  }
+
+  /// ノートの下書きの一覧を取得します。
+  Future<Iterable<NoteDraft>> list(NotesDraftsListRequest request) async {
+    final response = await _apiService.post<List>(
+      "notes/drafts/list",
+      request.toJson(),
+    );
+    return response.map((e) => NoteDraft.fromJson(e));
+  }
+
+  /// ノートの下書きを更新します。
+  Future<NotesDraftsUpdateResponse> update(
+    NotesDraftsUpdateRequest request,
+  ) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "notes/drafts/update",
+      request.toJson(),
+    );
+    return NotesDraftsUpdateResponse.fromJson(response);
   }
 }
 

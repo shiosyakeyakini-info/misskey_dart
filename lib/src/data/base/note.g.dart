@@ -19,8 +19,8 @@ _$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
       visibility: const NoteVisibilityJsonConverter()
           .fromJson(json['visibility'] as String),
       localOnly: json['localOnly'] as bool,
-      renoteCount: json['renoteCount'] as int,
-      repliesCount: json['repliesCount'] as int,
+      renoteCount: (json['renoteCount'] as num).toInt(),
+      repliesCount: (json['repliesCount'] as num).toInt(),
       reactions: Map<String, int>.from(json['reactions'] as Map),
       reactionEmojis: const EmojisConverter().fromJson(json['reactionEmojis']),
       emojis: json['emojis'] == null
@@ -66,7 +66,7 @@ _$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
       poll: json['poll'] == null
           ? null
           : NotePoll.fromJson(json['poll'] as Map<String, dynamic>),
-      clippedCount: json['clippedCount'] as int?,
+      clippedCount: (json['clippedCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
@@ -128,6 +128,7 @@ _$NoteChannelInfoImpl _$$NoteChannelInfoImplFromJson(
       color: const NullableColorConverter().fromJson(json['color'] as String?),
       isSensitive: json['isSensitive'] as bool? ?? false,
       allowRenoteToExternal: json['allowRenoteToExternal'] as bool? ?? true,
+      userId: json['userId'] as String?,
     );
 
 Map<String, dynamic> _$$NoteChannelInfoImplToJson(
@@ -138,6 +139,7 @@ Map<String, dynamic> _$$NoteChannelInfoImplToJson(
       'color': const NullableColorConverter().toJson(instance.color),
       'isSensitive': instance.isSensitive,
       'allowRenoteToExternal': instance.allowRenoteToExternal,
+      'userId': instance.userId,
     };
 
 _$NotePollImpl _$$NotePollImplFromJson(Map<String, dynamic> json) =>
@@ -167,7 +169,7 @@ Json? _$JsonConverterToJson<Json, Value>(
 _$NotePollChoiceImpl _$$NotePollChoiceImplFromJson(Map<String, dynamic> json) =>
     _$NotePollChoiceImpl(
       text: json['text'] as String,
-      votes: json['votes'] as int,
+      votes: (json['votes'] as num).toInt(),
       isVoted: json['isVoted'] as bool,
     );
 

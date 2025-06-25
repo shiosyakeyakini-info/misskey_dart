@@ -12,7 +12,7 @@ part of 'note.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Note _$NoteFromJson(Map<String, dynamic> json) {
   return _Note.fromJson(json);
@@ -61,8 +61,12 @@ mixin _$Note {
   NotePoll? get poll => throw _privateConstructorUsedError;
   int? get clippedCount => throw _privateConstructorUsedError;
 
+  /// Serializes this Note to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NoteCopyWith<Note> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -121,6 +125,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,6 +290,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     ) as $Val);
   }
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get user {
@@ -292,6 +300,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     });
   }
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res>? get renote {
@@ -304,6 +314,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     });
   }
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res>? get reply {
@@ -316,6 +328,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     });
   }
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NoteChannelInfoCopyWith<$Res>? get channel {
@@ -328,6 +342,8 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     });
   }
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NotePollCopyWith<$Res>? get poll {
@@ -400,6 +416,8 @@ class __$$NoteImplCopyWithImpl<$Res>
   __$$NoteImplCopyWithImpl(_$NoteImpl _value, $Res Function(_$NoteImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -792,7 +810,7 @@ class _$NoteImpl implements _Note {
                 other.clippedCount == clippedCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -829,7 +847,9 @@ class _$NoteImpl implements _Note {
         clippedCount
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>
@@ -948,8 +968,11 @@ abstract class _Note implements Note {
   NotePoll? get poll;
   @override
   int? get clippedCount;
+
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -966,9 +989,14 @@ mixin _$NoteChannelInfo {
   int? get color => throw _privateConstructorUsedError;
   bool get isSensitive => throw _privateConstructorUsedError;
   bool get allowRenoteToExternal => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
 
+  /// Serializes this NoteChannelInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NoteChannelInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NoteChannelInfoCopyWith<NoteChannelInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -984,7 +1012,8 @@ abstract class $NoteChannelInfoCopyWith<$Res> {
       String name,
       @NullableColorConverter() int? color,
       bool isSensitive,
-      bool allowRenoteToExternal});
+      bool allowRenoteToExternal,
+      String? userId});
 }
 
 /// @nodoc
@@ -997,6 +1026,8 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NoteChannelInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1005,6 +1036,7 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
     Object? color = freezed,
     Object? isSensitive = null,
     Object? allowRenoteToExternal = null,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1027,6 +1059,10 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
           ? _value.allowRenoteToExternal
           : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
               as bool,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -1044,7 +1080,8 @@ abstract class _$$NoteChannelInfoImplCopyWith<$Res>
       String name,
       @NullableColorConverter() int? color,
       bool isSensitive,
-      bool allowRenoteToExternal});
+      bool allowRenoteToExternal,
+      String? userId});
 }
 
 /// @nodoc
@@ -1055,6 +1092,8 @@ class __$$NoteChannelInfoImplCopyWithImpl<$Res>
       _$NoteChannelInfoImpl _value, $Res Function(_$NoteChannelInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoteChannelInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1063,6 +1102,7 @@ class __$$NoteChannelInfoImplCopyWithImpl<$Res>
     Object? color = freezed,
     Object? isSensitive = null,
     Object? allowRenoteToExternal = null,
+    Object? userId = freezed,
   }) {
     return _then(_$NoteChannelInfoImpl(
       id: null == id
@@ -1085,6 +1125,10 @@ class __$$NoteChannelInfoImplCopyWithImpl<$Res>
           ? _value.allowRenoteToExternal
           : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
               as bool,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1097,7 +1141,8 @@ class _$NoteChannelInfoImpl implements _NoteChannelInfo {
       required this.name,
       @NullableColorConverter() this.color,
       this.isSensitive = false,
-      this.allowRenoteToExternal = true});
+      this.allowRenoteToExternal = true,
+      this.userId});
 
   factory _$NoteChannelInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$NoteChannelInfoImplFromJson(json);
@@ -1115,10 +1160,12 @@ class _$NoteChannelInfoImpl implements _NoteChannelInfo {
   @override
   @JsonKey()
   final bool allowRenoteToExternal;
+  @override
+  final String? userId;
 
   @override
   String toString() {
-    return 'NoteChannelInfo(id: $id, name: $name, color: $color, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal)';
+    return 'NoteChannelInfo(id: $id, name: $name, color: $color, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal, userId: $userId)';
   }
 
   @override
@@ -1132,15 +1179,18 @@ class _$NoteChannelInfoImpl implements _NoteChannelInfo {
             (identical(other.isSensitive, isSensitive) ||
                 other.isSensitive == isSensitive) &&
             (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
-                other.allowRenoteToExternal == allowRenoteToExternal));
+                other.allowRenoteToExternal == allowRenoteToExternal) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, color, isSensitive, allowRenoteToExternal);
+      runtimeType, id, name, color, isSensitive, allowRenoteToExternal, userId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoteChannelInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoteChannelInfoImplCopyWith<_$NoteChannelInfoImpl> get copyWith =>
@@ -1161,7 +1211,8 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
       required final String name,
       @NullableColorConverter() final int? color,
       final bool isSensitive,
-      final bool allowRenoteToExternal}) = _$NoteChannelInfoImpl;
+      final bool allowRenoteToExternal,
+      final String? userId}) = _$NoteChannelInfoImpl;
 
   factory _NoteChannelInfo.fromJson(Map<String, dynamic> json) =
       _$NoteChannelInfoImpl.fromJson;
@@ -1178,7 +1229,12 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
   @override
   bool get allowRenoteToExternal;
   @override
-  @JsonKey(ignore: true)
+  String? get userId;
+
+  /// Create a copy of NoteChannelInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoteChannelInfoImplCopyWith<_$NoteChannelInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1194,8 +1250,12 @@ mixin _$NotePoll {
   DateTime? get expiresAt => throw _privateConstructorUsedError;
   List<NotePollChoice> get choices => throw _privateConstructorUsedError;
 
+  /// Serializes this NotePoll to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NotePoll
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NotePollCopyWith<NotePoll> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1221,6 +1281,8 @@ class _$NotePollCopyWithImpl<$Res, $Val extends NotePoll>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NotePoll
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1267,6 +1329,8 @@ class __$$NotePollImplCopyWithImpl<$Res>
       _$NotePollImpl _value, $Res Function(_$NotePollImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NotePoll
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1333,12 +1397,14 @@ class _$NotePollImpl implements _NotePoll {
             const DeepCollectionEquality().equals(other._choices, _choices));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, multiple, expiresAt,
       const DeepCollectionEquality().hash(_choices));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NotePoll
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotePollImplCopyWith<_$NotePollImpl> get copyWith =>
@@ -1368,8 +1434,11 @@ abstract class _NotePoll implements NotePoll {
   DateTime? get expiresAt;
   @override
   List<NotePollChoice> get choices;
+
+  /// Create a copy of NotePoll
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotePollImplCopyWith<_$NotePollImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1384,8 +1453,12 @@ mixin _$NotePollChoice {
   int get votes => throw _privateConstructorUsedError;
   bool get isVoted => throw _privateConstructorUsedError;
 
+  /// Serializes this NotePollChoice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NotePollChoice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NotePollChoiceCopyWith<NotePollChoice> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1409,6 +1482,8 @@ class _$NotePollChoiceCopyWithImpl<$Res, $Val extends NotePollChoice>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NotePollChoice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1452,6 +1527,8 @@ class __$$NotePollChoiceImplCopyWithImpl<$Res>
       _$NotePollChoiceImpl _value, $Res Function(_$NotePollChoiceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NotePollChoice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1507,11 +1584,13 @@ class _$NotePollChoiceImpl implements _NotePollChoice {
             (identical(other.isVoted, isVoted) || other.isVoted == isVoted));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, text, votes, isVoted);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NotePollChoice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotePollChoiceImplCopyWith<_$NotePollChoiceImpl> get copyWith =>
@@ -1541,8 +1620,11 @@ abstract class _NotePollChoice implements NotePollChoice {
   int get votes;
   @override
   bool get isVoted;
+
+  /// Create a copy of NotePollChoice
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotePollChoiceImplCopyWith<_$NotePollChoiceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
