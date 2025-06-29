@@ -33,7 +33,8 @@ const _$StreamingRequestTypeEnumMap = {
 _StreamingRequestBody _$StreamingRequestBodyFromJson(
         Map<String, dynamic> json) =>
     _StreamingRequestBody(
-      channel: $enumDecodeNullable(_$ChannelEnumMap, json['channel']),
+      channel: _$JsonConverterFromJson<String, Channel>(
+          json['channel'], const ChannelJsonConverter().fromJson),
       id: json['id'] as String,
       params: json['params'] as Map<String, dynamic>?,
       type: json['type'] as String?,
@@ -43,28 +44,22 @@ _StreamingRequestBody _$StreamingRequestBodyFromJson(
 Map<String, dynamic> _$StreamingRequestBodyToJson(
         _StreamingRequestBody instance) =>
     <String, dynamic>{
-      'channel': _$ChannelEnumMap[instance.channel],
+      'channel': _$JsonConverterToJson<String, Channel>(
+          instance.channel, const ChannelJsonConverter().toJson),
       'id': instance.id,
       'params': instance.params,
       'type': instance.type,
       'body': instance.body,
     };
 
-const _$ChannelEnumMap = {
-  Channel.homeTimeline: 'homeTimeline',
-  Channel.localTimeline: 'localTimeline',
-  Channel.globalTimeline: 'globalTimeline',
-  Channel.hybridTimeline: 'hybridTimeline',
-  Channel.roleTimeline: 'roleTimeline',
-  Channel.channel: 'channel',
-  Channel.userList: 'userList',
-  Channel.hashtag: 'hashtag',
-  Channel.antenna: 'antenna',
-  Channel.drive: 'drive',
-  Channel.serverStats: 'serverStats',
-  Channel.queueStats: 'queueStats',
-  Channel.chatRoom: 'chatRoom',
-  Channel.chatUser: 'chatUser',
-  Channel.admin: 'admin',
-  Channel.main: 'main',
-};
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
