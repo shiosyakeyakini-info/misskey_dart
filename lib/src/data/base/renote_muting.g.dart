@@ -6,8 +6,8 @@ part of 'renote_muting.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RenoteMutingImpl _$$RenoteMutingImplFromJson(Map<String, dynamic> json) =>
-    _$RenoteMutingImpl(
+_RenoteMuting _$RenoteMutingFromJson(Map<String, dynamic> json) =>
+    _RenoteMuting(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -15,7 +15,7 @@ _$RenoteMutingImpl _$$RenoteMutingImplFromJson(Map<String, dynamic> json) =>
       mutee: UserDetailedNotMe.fromJson(json['mutee'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RenoteMutingImplToJson(_$RenoteMutingImpl instance) =>
+Map<String, dynamic> _$RenoteMutingToJson(_RenoteMuting instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

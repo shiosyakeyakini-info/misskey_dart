@@ -5,7 +5,7 @@ part 'flash_my_likes_response.freezed.dart';
 part 'flash_my_likes_response.g.dart';
 
 @freezed
-class FlashMyLikesResponse with _$FlashMyLikesResponse {
+abstract class FlashMyLikesResponse with _$FlashMyLikesResponse {
   const factory FlashMyLikesResponse({
     required String id,
     required Flash flash,

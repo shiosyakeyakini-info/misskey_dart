@@ -8,7 +8,7 @@ part 'hashtags_users_request.freezed.dart';
 part 'hashtags_users_request.g.dart';
 
 @freezed
-class HashtagsUsersRequest with _$HashtagsUsersRequest {
+abstract class HashtagsUsersRequest with _$HashtagsUsersRequest {
   const factory HashtagsUsersRequest({
     required String tag,
     int? limit,

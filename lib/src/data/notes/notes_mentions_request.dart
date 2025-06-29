@@ -5,7 +5,7 @@ part 'notes_mentions_request.freezed.dart';
 part 'notes_mentions_request.g.dart';
 
 @freezed
-class NotesMentionsRequest with _$NotesMentionsRequest {
+abstract class NotesMentionsRequest with _$NotesMentionsRequest {
   const factory NotesMentionsRequest({
     bool? following,
     int? limit,

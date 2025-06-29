@@ -4,7 +4,7 @@ part 'chat_rooms_mute_request.freezed.dart';
 part 'chat_rooms_mute_request.g.dart';
 
 @freezed
-class ChatRoomsMuteRequest with _$ChatRoomsMuteRequest {
+abstract class ChatRoomsMuteRequest with _$ChatRoomsMuteRequest {
   const factory ChatRoomsMuteRequest({
     required String roomId,
     required bool mute,

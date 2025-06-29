@@ -4,7 +4,7 @@ part 'notes_favorites_delete_request.freezed.dart';
 part 'notes_favorites_delete_request.g.dart';
 
 @freezed
-class NotesFavoritesDeleteRequest with _$NotesFavoritesDeleteRequest {
+abstract class NotesFavoritesDeleteRequest with _$NotesFavoritesDeleteRequest {
   const factory NotesFavoritesDeleteRequest({
     required String noteId,
   }) = _NotesFavoritesDeleteRequest;

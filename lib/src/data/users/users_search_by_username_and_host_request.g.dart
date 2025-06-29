@@ -6,18 +6,17 @@ part of 'users_search_by_username_and_host_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersSearchByUsernameAndHostRequestImpl
-    _$$UsersSearchByUsernameAndHostRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        _$UsersSearchByUsernameAndHostRequestImpl(
-          limit: json['limit'] as int?,
+_UsersSearchByUsernameAndHostRequest
+    _$UsersSearchByUsernameAndHostRequestFromJson(Map<String, dynamic> json) =>
+        _UsersSearchByUsernameAndHostRequest(
+          limit: (json['limit'] as num?)?.toInt(),
           detail: json['detail'] as bool?,
           username: json['username'] as String?,
           host: json['host'] as String?,
         );
 
-Map<String, dynamic> _$$UsersSearchByUsernameAndHostRequestImplToJson(
-        _$UsersSearchByUsernameAndHostRequestImpl instance) =>
+Map<String, dynamic> _$UsersSearchByUsernameAndHostRequestToJson(
+        _UsersSearchByUsernameAndHostRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'detail': instance.detail,

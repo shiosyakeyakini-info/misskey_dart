@@ -4,7 +4,7 @@ part 'i_read_announcement_request.freezed.dart';
 part 'i_read_announcement_request.g.dart';
 
 @freezed
-class IReadAnnouncementRequest with _$IReadAnnouncementRequest {
+abstract class IReadAnnouncementRequest with _$IReadAnnouncementRequest {
   const factory IReadAnnouncementRequest({
     required String announcementId,
   }) = _IReadAnnouncementRequest;

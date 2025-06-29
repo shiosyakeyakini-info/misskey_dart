@@ -4,7 +4,7 @@ part 'i_pin_request.freezed.dart';
 part 'i_pin_request.g.dart';
 
 @freezed
-class IPinRequest with _$IPinRequest {
+abstract class IPinRequest with _$IPinRequest {
   const factory IPinRequest({
     required String noteId,
   }) = _IPinRequest;

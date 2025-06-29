@@ -4,7 +4,7 @@ part 'pages_show_request.freezed.dart';
 part 'pages_show_request.g.dart';
 
 @freezed
-class PagesShowRequest with _$PagesShowRequest {
+abstract class PagesShowRequest with _$PagesShowRequest {
   const factory PagesShowRequest({
     String? pageId,
     String? name,

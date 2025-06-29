@@ -4,7 +4,7 @@ part 'i_pages_request.freezed.dart';
 part 'i_pages_request.g.dart';
 
 @freezed
-class IPagesRequest with _$IPagesRequest {
+abstract class IPagesRequest with _$IPagesRequest {
   const factory IPagesRequest({
     int? limit,
     String? sinceId,

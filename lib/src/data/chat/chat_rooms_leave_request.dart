@@ -4,7 +4,7 @@ part 'chat_rooms_leave_request.freezed.dart';
 part 'chat_rooms_leave_request.g.dart';
 
 @freezed
-class ChatRoomsLeaveRequest with _$ChatRoomsLeaveRequest {
+abstract class ChatRoomsLeaveRequest with _$ChatRoomsLeaveRequest {
   const factory ChatRoomsLeaveRequest({
     required String roomId,
   }) = _ChatRoomsLeaveRequest;

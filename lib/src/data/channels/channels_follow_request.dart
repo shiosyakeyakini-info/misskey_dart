@@ -4,7 +4,7 @@ part 'channels_follow_request.freezed.dart';
 part 'channels_follow_request.g.dart';
 
 @freezed
-class ChannelsFollowRequest with _$ChannelsFollowRequest {
+abstract class ChannelsFollowRequest with _$ChannelsFollowRequest {
   const factory ChannelsFollowRequest({
     required String channelId,
   }) = _ChannelsFollowRequest;

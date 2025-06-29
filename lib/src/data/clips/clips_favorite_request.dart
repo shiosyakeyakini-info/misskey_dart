@@ -4,7 +4,7 @@ part 'clips_favorite_request.freezed.dart';
 part 'clips_favorite_request.g.dart';
 
 @freezed
-class ClipsFavoriteRequest with _$ClipsFavoriteRequest {
+abstract class ClipsFavoriteRequest with _$ClipsFavoriteRequest {
   const factory ClipsFavoriteRequest({
     required String clipId,
   }) = _ClipsFavoriteRequest;

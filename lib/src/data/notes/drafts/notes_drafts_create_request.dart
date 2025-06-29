@@ -5,7 +5,7 @@ part 'notes_drafts_create_request.freezed.dart';
 part 'notes_drafts_create_request.g.dart';
 
 @freezed
-class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
+abstract class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
   const factory NotesDraftsCreateRequest({
     @NoteVisibilityJsonConverter() NoteVisibility? visibility,
     List<String>? visibleUserIds,

@@ -4,7 +4,7 @@ part 'chat_room_show_request.freezed.dart';
 part 'chat_room_show_request.g.dart';
 
 @freezed
-class ChatRoomShowRequest with _$ChatRoomShowRequest {
+abstract class ChatRoomShowRequest with _$ChatRoomShowRequest {
   const factory ChatRoomShowRequest({
     required String roomId,
   }) = _ChatRoomShowRequest;

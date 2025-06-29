@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,90 @@ part of 'notes_local_timeline_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-NotesLocalTimelineRequest _$NotesLocalTimelineRequestFromJson(
-    Map<String, dynamic> json) {
-  return _NotesLocalTimelineRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotesLocalTimelineRequest {
-  bool? get withFiles => throw _privateConstructorUsedError;
-  bool? get withRenotes => throw _privateConstructorUsedError;
-  bool? get withReplies => throw _privateConstructorUsedError;
+  bool? get withFiles;
+  bool? get withRenotes;
+  bool? get withReplies;
   @Deprecated("removed at 2023.10.0")
-  List<String>? get fileType => throw _privateConstructorUsedError;
+  List<String>? get fileType;
   @Deprecated("removed at 2023.12.0")
-  bool? get excludeNsfw => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  bool? get excludeNsfw;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
   @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate => throw _privateConstructorUsedError;
+  DateTime? get sinceDate;
   @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate => throw _privateConstructorUsedError;
-  bool? get allowPartial => throw _privateConstructorUsedError;
+  DateTime? get untilDate;
+  bool? get allowPartial;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NotesLocalTimelineRequestCopyWith<NotesLocalTimelineRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotesLocalTimelineRequestCopyWith<$Res> {
-  factory $NotesLocalTimelineRequestCopyWith(NotesLocalTimelineRequest value,
-          $Res Function(NotesLocalTimelineRequest) then) =
-      _$NotesLocalTimelineRequestCopyWithImpl<$Res, NotesLocalTimelineRequest>;
-  @useResult
-  $Res call(
-      {bool? withFiles,
-      bool? withRenotes,
-      bool? withReplies,
-      @Deprecated("removed at 2023.10.0") List<String>? fileType,
-      @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
-      int? limit,
-      String? sinceId,
-      String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
-      bool? allowPartial});
-}
-
-/// @nodoc
-class _$NotesLocalTimelineRequestCopyWithImpl<$Res,
-        $Val extends NotesLocalTimelineRequest>
-    implements $NotesLocalTimelineRequestCopyWith<$Res> {
-  _$NotesLocalTimelineRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of NotesLocalTimelineRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $NotesLocalTimelineRequestCopyWith<NotesLocalTimelineRequest> get copyWith =>
+      _$NotesLocalTimelineRequestCopyWithImpl<NotesLocalTimelineRequest>(
+          this as NotesLocalTimelineRequest, _$identity);
+
+  /// Serializes this NotesLocalTimelineRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? withFiles = freezed,
-    Object? withRenotes = freezed,
-    Object? withReplies = freezed,
-    Object? fileType = freezed,
-    Object? excludeNsfw = freezed,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-    Object? allowPartial = freezed,
-  }) {
-    return _then(_value.copyWith(
-      withFiles: freezed == withFiles
-          ? _value.withFiles
-          : withFiles // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      withRenotes: freezed == withRenotes
-          ? _value.withRenotes
-          : withRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      withReplies: freezed == withReplies
-          ? _value.withReplies
-          : withReplies // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      fileType: freezed == fileType
-          ? _value.fileType
-          : fileType // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      excludeNsfw: freezed == excludeNsfw
-          ? _value.excludeNsfw
-          : excludeNsfw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sinceDate: freezed == sinceDate
-          ? _value.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      untilDate: freezed == untilDate
-          ? _value.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      allowPartial: freezed == allowPartial
-          ? _value.allowPartial
-          : allowPartial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NotesLocalTimelineRequest &&
+            (identical(other.withFiles, withFiles) ||
+                other.withFiles == withFiles) &&
+            (identical(other.withRenotes, withRenotes) ||
+                other.withRenotes == withRenotes) &&
+            (identical(other.withReplies, withReplies) ||
+                other.withReplies == withReplies) &&
+            const DeepCollectionEquality().equals(other.fileType, fileType) &&
+            (identical(other.excludeNsfw, excludeNsfw) ||
+                other.excludeNsfw == excludeNsfw) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      withFiles,
+      withRenotes,
+      withReplies,
+      const DeepCollectionEquality().hash(fileType),
+      excludeNsfw,
+      limit,
+      sinceId,
+      untilId,
+      sinceDate,
+      untilDate,
+      allowPartial);
+
+  @override
+  String toString() {
+    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial)';
   }
 }
 
 /// @nodoc
-abstract class _$$NotesLocalTimelineRequestImplCopyWith<$Res>
-    implements $NotesLocalTimelineRequestCopyWith<$Res> {
-  factory _$$NotesLocalTimelineRequestImplCopyWith(
-          _$NotesLocalTimelineRequestImpl value,
-          $Res Function(_$NotesLocalTimelineRequestImpl) then) =
-      __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NotesLocalTimelineRequestCopyWith<$Res> {
+  factory $NotesLocalTimelineRequestCopyWith(NotesLocalTimelineRequest value,
+          $Res Function(NotesLocalTimelineRequest) _then) =
+      _$NotesLocalTimelineRequestCopyWithImpl;
   @useResult
   $Res call(
       {bool? withFiles,
@@ -162,15 +110,15 @@ abstract class _$$NotesLocalTimelineRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>
-    extends _$NotesLocalTimelineRequestCopyWithImpl<$Res,
-        _$NotesLocalTimelineRequestImpl>
-    implements _$$NotesLocalTimelineRequestImplCopyWith<$Res> {
-  __$$NotesLocalTimelineRequestImplCopyWithImpl(
-      _$NotesLocalTimelineRequestImpl _value,
-      $Res Function(_$NotesLocalTimelineRequestImpl) _then)
-      : super(_value, _then);
+class _$NotesLocalTimelineRequestCopyWithImpl<$Res>
+    implements $NotesLocalTimelineRequestCopyWith<$Res> {
+  _$NotesLocalTimelineRequestCopyWithImpl(this._self, this._then);
 
+  final NotesLocalTimelineRequest _self;
+  final $Res Function(NotesLocalTimelineRequest) _then;
+
+  /// Create a copy of NotesLocalTimelineRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -186,49 +134,49 @@ class __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>
     Object? untilDate = freezed,
     Object? allowPartial = freezed,
   }) {
-    return _then(_$NotesLocalTimelineRequestImpl(
+    return _then(_self.copyWith(
       withFiles: freezed == withFiles
-          ? _value.withFiles
+          ? _self.withFiles
           : withFiles // ignore: cast_nullable_to_non_nullable
               as bool?,
       withRenotes: freezed == withRenotes
-          ? _value.withRenotes
+          ? _self.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
       withReplies: freezed == withReplies
-          ? _value.withReplies
+          ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
       fileType: freezed == fileType
-          ? _value._fileType
+          ? _self.fileType
           : fileType // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       excludeNsfw: freezed == excludeNsfw
-          ? _value.excludeNsfw
+          ? _self.excludeNsfw
           : excludeNsfw // ignore: cast_nullable_to_non_nullable
               as bool?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _value.sinceId
+          ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
       sinceDate: freezed == sinceDate
-          ? _value.sinceDate
+          ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       untilDate: freezed == untilDate
-          ? _value.untilDate
+          ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       allowPartial: freezed == allowPartial
-          ? _value.allowPartial
+          ? _self.allowPartial
           : allowPartial // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -237,8 +185,8 @@ class __$$NotesLocalTimelineRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
-  const _$NotesLocalTimelineRequestImpl(
+class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
+  const _NotesLocalTimelineRequest(
       {this.withFiles,
       this.withRenotes,
       this.withReplies,
@@ -251,9 +199,8 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
       @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
       this.allowPartial})
       : _fileType = fileType;
-
-  factory _$NotesLocalTimelineRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotesLocalTimelineRequestImplFromJson(json);
+  factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =>
+      _$NotesLocalTimelineRequestFromJson(json);
 
   @override
   final bool? withFiles;
@@ -290,16 +237,28 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
   @override
   final bool? allowPartial;
 
+  /// Create a copy of NotesLocalTimelineRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotesLocalTimelineRequestCopyWith<_NotesLocalTimelineRequest>
+      get copyWith =>
+          __$NotesLocalTimelineRequestCopyWithImpl<_NotesLocalTimelineRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotesLocalTimelineRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotesLocalTimelineRequestImpl &&
+            other is _NotesLocalTimelineRequest &&
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             (identical(other.withRenotes, withRenotes) ||
@@ -320,7 +279,7 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
                 other.allowPartial == allowPartial));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -336,66 +295,106 @@ class _$NotesLocalTimelineRequestImpl implements _NotesLocalTimelineRequest {
       untilDate,
       allowPartial);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotesLocalTimelineRequestImplCopyWith<_$NotesLocalTimelineRequestImpl>
-      get copyWith => __$$NotesLocalTimelineRequestImplCopyWithImpl<
-          _$NotesLocalTimelineRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotesLocalTimelineRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, fileType: $fileType, excludeNsfw: $excludeNsfw, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial)';
   }
 }
 
-abstract class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
-  const factory _NotesLocalTimelineRequest(
-      {final bool? withFiles,
-      final bool? withRenotes,
-      final bool? withReplies,
-      @Deprecated("removed at 2023.10.0") final List<String>? fileType,
-      @Deprecated("removed at 2023.12.0") final bool? excludeNsfw,
-      final int? limit,
-      final String? sinceId,
-      final String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() final DateTime? untilDate,
-      final bool? allowPartial}) = _$NotesLocalTimelineRequestImpl;
-
-  factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =
-      _$NotesLocalTimelineRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$NotesLocalTimelineRequestCopyWith<$Res>
+    implements $NotesLocalTimelineRequestCopyWith<$Res> {
+  factory _$NotesLocalTimelineRequestCopyWith(_NotesLocalTimelineRequest value,
+          $Res Function(_NotesLocalTimelineRequest) _then) =
+      __$NotesLocalTimelineRequestCopyWithImpl;
   @override
-  bool? get withFiles;
-  @override
-  bool? get withRenotes;
-  @override
-  bool? get withReplies;
-  @override
-  @Deprecated("removed at 2023.10.0")
-  List<String>? get fileType;
-  @override
-  @Deprecated("removed at 2023.12.0")
-  bool? get excludeNsfw;
-  @override
-  int? get limit;
-  @override
-  String? get sinceId;
-  @override
-  String? get untilId;
-  @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
-  @override
-  bool? get allowPartial;
-  @override
-  @JsonKey(ignore: true)
-  _$$NotesLocalTimelineRequestImplCopyWith<_$NotesLocalTimelineRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {bool? withFiles,
+      bool? withRenotes,
+      bool? withReplies,
+      @Deprecated("removed at 2023.10.0") List<String>? fileType,
+      @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
+      int? limit,
+      String? sinceId,
+      String? untilId,
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      bool? allowPartial});
 }
+
+/// @nodoc
+class __$NotesLocalTimelineRequestCopyWithImpl<$Res>
+    implements _$NotesLocalTimelineRequestCopyWith<$Res> {
+  __$NotesLocalTimelineRequestCopyWithImpl(this._self, this._then);
+
+  final _NotesLocalTimelineRequest _self;
+  final $Res Function(_NotesLocalTimelineRequest) _then;
+
+  /// Create a copy of NotesLocalTimelineRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? withFiles = freezed,
+    Object? withRenotes = freezed,
+    Object? withReplies = freezed,
+    Object? fileType = freezed,
+    Object? excludeNsfw = freezed,
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? allowPartial = freezed,
+  }) {
+    return _then(_NotesLocalTimelineRequest(
+      withFiles: freezed == withFiles
+          ? _self.withFiles
+          : withFiles // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withRenotes: freezed == withRenotes
+          ? _self.withRenotes
+          : withRenotes // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      withReplies: freezed == withReplies
+          ? _self.withReplies
+          : withReplies // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      fileType: freezed == fileType
+          ? _self._fileType
+          : fileType // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      excludeNsfw: freezed == excludeNsfw
+          ? _self.excludeNsfw
+          : excludeNsfw // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      allowPartial: freezed == allowPartial
+          ? _self.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

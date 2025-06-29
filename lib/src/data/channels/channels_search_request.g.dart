@@ -6,18 +6,18 @@ part of 'channels_search_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChannelsSearchRequestImpl _$$ChannelsSearchRequestImplFromJson(
+_ChannelsSearchRequest _$ChannelsSearchRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChannelsSearchRequestImpl(
+    _ChannelsSearchRequest(
       query: json['query'] as String,
       type: $enumDecodeNullable(_$ChannelSearchTypeEnumMap, json['type']),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$ChannelsSearchRequestImplToJson(
-        _$ChannelsSearchRequestImpl instance) =>
+Map<String, dynamic> _$ChannelsSearchRequestToJson(
+        _ChannelsSearchRequest instance) =>
     <String, dynamic>{
       'query': instance.query,
       'type': _$ChannelSearchTypeEnumMap[instance.type],

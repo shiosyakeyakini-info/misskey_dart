@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,81 +10,53 @@ part of 'note_updated_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-NoteUpdatedEvent _$NoteUpdatedEventFromJson(Map<String, dynamic> json) {
-  return _NoteUpdatedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NoteUpdatedEvent {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @NoteUpdatedEventTypeJsonConverter()
-  NoteUpdatedEventType get type => throw _privateConstructorUsedError;
-  Map<String, dynamic> get body => throw _privateConstructorUsedError;
+  NoteUpdatedEventType get type;
+  Map<String, dynamic> get body;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NoteUpdatedEventCopyWith<NoteUpdatedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NoteUpdatedEventCopyWith<$Res> {
-  factory $NoteUpdatedEventCopyWith(
-          NoteUpdatedEvent value, $Res Function(NoteUpdatedEvent) then) =
-      _$NoteUpdatedEventCopyWithImpl<$Res, NoteUpdatedEvent>;
-  @useResult
-  $Res call(
-      {String id,
-      @NoteUpdatedEventTypeJsonConverter() NoteUpdatedEventType type,
-      Map<String, dynamic> body});
-}
-
-/// @nodoc
-class _$NoteUpdatedEventCopyWithImpl<$Res, $Val extends NoteUpdatedEvent>
-    implements $NoteUpdatedEventCopyWith<$Res> {
-  _$NoteUpdatedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of NoteUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $NoteUpdatedEventCopyWith<NoteUpdatedEvent> get copyWith =>
+      _$NoteUpdatedEventCopyWithImpl<NoteUpdatedEvent>(
+          this as NoteUpdatedEvent, _$identity);
+
+  /// Serializes this NoteUpdatedEvent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? type = null,
-    Object? body = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NoteUpdatedEventType,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NoteUpdatedEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.body, body));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, type, const DeepCollectionEquality().hash(body));
+
+  @override
+  String toString() {
+    return 'NoteUpdatedEvent(id: $id, type: $type, body: $body)';
   }
 }
 
 /// @nodoc
-abstract class _$$NoteUpdatedEventImplCopyWith<$Res>
-    implements $NoteUpdatedEventCopyWith<$Res> {
-  factory _$$NoteUpdatedEventImplCopyWith(_$NoteUpdatedEventImpl value,
-          $Res Function(_$NoteUpdatedEventImpl) then) =
-      __$$NoteUpdatedEventImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NoteUpdatedEventCopyWith<$Res> {
+  factory $NoteUpdatedEventCopyWith(
+          NoteUpdatedEvent value, $Res Function(NoteUpdatedEvent) _then) =
+      _$NoteUpdatedEventCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -92,13 +65,15 @@ abstract class _$$NoteUpdatedEventImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NoteUpdatedEventImplCopyWithImpl<$Res>
-    extends _$NoteUpdatedEventCopyWithImpl<$Res, _$NoteUpdatedEventImpl>
-    implements _$$NoteUpdatedEventImplCopyWith<$Res> {
-  __$$NoteUpdatedEventImplCopyWithImpl(_$NoteUpdatedEventImpl _value,
-      $Res Function(_$NoteUpdatedEventImpl) _then)
-      : super(_value, _then);
+class _$NoteUpdatedEventCopyWithImpl<$Res>
+    implements $NoteUpdatedEventCopyWith<$Res> {
+  _$NoteUpdatedEventCopyWithImpl(this._self, this._then);
 
+  final NoteUpdatedEvent _self;
+  final $Res Function(NoteUpdatedEvent) _then;
+
+  /// Create a copy of NoteUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,17 +81,17 @@ class __$$NoteUpdatedEventImplCopyWithImpl<$Res>
     Object? type = null,
     Object? body = null,
   }) {
-    return _then(_$NoteUpdatedEventImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as NoteUpdatedEventType,
       body: null == body
-          ? _value._body
+          ? _self.body
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
@@ -125,15 +100,14 @@ class __$$NoteUpdatedEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NoteUpdatedEventImpl implements _NoteUpdatedEvent {
-  const _$NoteUpdatedEventImpl(
+class _NoteUpdatedEvent implements NoteUpdatedEvent {
+  const _NoteUpdatedEvent(
       {required this.id,
       @NoteUpdatedEventTypeJsonConverter() required this.type,
       required final Map<String, dynamic> body})
       : _body = body;
-
-  factory _$NoteUpdatedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NoteUpdatedEventImplFromJson(json);
+  factory _NoteUpdatedEvent.fromJson(Map<String, dynamic> json) =>
+      _$NoteUpdatedEventFromJson(json);
 
   @override
   final String id;
@@ -148,60 +122,88 @@ class _$NoteUpdatedEventImpl implements _NoteUpdatedEvent {
     return EqualUnmodifiableMapView(_body);
   }
 
+  /// Create a copy of NoteUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NoteUpdatedEvent(id: $id, type: $type, body: $body)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NoteUpdatedEventCopyWith<_NoteUpdatedEvent> get copyWith =>
+      __$NoteUpdatedEventCopyWithImpl<_NoteUpdatedEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NoteUpdatedEventToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NoteUpdatedEventImpl &&
+            other is _NoteUpdatedEvent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, type, const DeepCollectionEquality().hash(_body));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NoteUpdatedEventImplCopyWith<_$NoteUpdatedEventImpl> get copyWith =>
-      __$$NoteUpdatedEventImplCopyWithImpl<_$NoteUpdatedEventImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NoteUpdatedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NoteUpdatedEvent(id: $id, type: $type, body: $body)';
   }
 }
 
-abstract class _NoteUpdatedEvent implements NoteUpdatedEvent {
-  const factory _NoteUpdatedEvent(
-      {required final String id,
-      @NoteUpdatedEventTypeJsonConverter()
-      required final NoteUpdatedEventType type,
-      required final Map<String, dynamic> body}) = _$NoteUpdatedEventImpl;
-
-  factory _NoteUpdatedEvent.fromJson(Map<String, dynamic> json) =
-      _$NoteUpdatedEventImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$NoteUpdatedEventCopyWith<$Res>
+    implements $NoteUpdatedEventCopyWith<$Res> {
+  factory _$NoteUpdatedEventCopyWith(
+          _NoteUpdatedEvent value, $Res Function(_NoteUpdatedEvent) _then) =
+      __$NoteUpdatedEventCopyWithImpl;
   @override
-  String get id;
-  @override
-  @NoteUpdatedEventTypeJsonConverter()
-  NoteUpdatedEventType get type;
-  @override
-  Map<String, dynamic> get body;
-  @override
-  @JsonKey(ignore: true)
-  _$$NoteUpdatedEventImplCopyWith<_$NoteUpdatedEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      @NoteUpdatedEventTypeJsonConverter() NoteUpdatedEventType type,
+      Map<String, dynamic> body});
 }
+
+/// @nodoc
+class __$NoteUpdatedEventCopyWithImpl<$Res>
+    implements _$NoteUpdatedEventCopyWith<$Res> {
+  __$NoteUpdatedEventCopyWithImpl(this._self, this._then);
+
+  final _NoteUpdatedEvent _self;
+  final $Res Function(_NoteUpdatedEvent) _then;
+
+  /// Create a copy of NoteUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? type = null,
+    Object? body = null,
+  }) {
+    return _then(_NoteUpdatedEvent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as NoteUpdatedEventType,
+      body: null == body
+          ? _self._body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+// dart format on

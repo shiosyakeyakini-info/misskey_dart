@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,60 @@ part of 'chat_rooms_invitations_ignore_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsInvitationsIgnoreRequest _$ChatRoomsInvitationsIgnoreRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsInvitationsIgnoreRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsInvitationsIgnoreRequest {
-  String get roomId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsInvitationsIgnoreRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get roomId;
 
   /// Create a copy of ChatRoomsInvitationsIgnoreRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatRoomsInvitationsIgnoreRequestCopyWith<ChatRoomsInvitationsIgnoreRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
-  factory $ChatRoomsInvitationsIgnoreRequestCopyWith(
-          ChatRoomsInvitationsIgnoreRequest value,
-          $Res Function(ChatRoomsInvitationsIgnoreRequest) then) =
-      _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res,
-          ChatRoomsInvitationsIgnoreRequest>;
-  @useResult
-  $Res call({String roomId});
-}
-
-/// @nodoc
-class _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsInvitationsIgnoreRequest>
-    implements $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
-  _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsInvitationsIgnoreRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ChatRoomsInvitationsIgnoreRequestCopyWith<ChatRoomsInvitationsIgnoreRequest>
+      get copyWith => _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<
+              ChatRoomsInvitationsIgnoreRequest>(
+          this as ChatRoomsInvitationsIgnoreRequest, _$identity);
+
+  /// Serializes this ChatRoomsInvitationsIgnoreRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? roomId = null,
-  }) {
-    return _then(_value.copyWith(
-      roomId: null == roomId
-          ? _value.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatRoomsInvitationsIgnoreRequest &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, roomId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsInvitationsIgnoreRequest(roomId: $roomId)';
   }
 }
 
 /// @nodoc
-abstract class _$$ChatRoomsInvitationsIgnoreRequestImplCopyWith<$Res>
-    implements $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
-  factory _$$ChatRoomsInvitationsIgnoreRequestImplCopyWith(
-          _$ChatRoomsInvitationsIgnoreRequestImpl value,
-          $Res Function(_$ChatRoomsInvitationsIgnoreRequestImpl) then) =
-      __$$ChatRoomsInvitationsIgnoreRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
+  factory $ChatRoomsInvitationsIgnoreRequestCopyWith(
+          ChatRoomsInvitationsIgnoreRequest value,
+          $Res Function(ChatRoomsInvitationsIgnoreRequest) _then) =
+      _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl;
   @useResult
   $Res call({String roomId});
 }
 
 /// @nodoc
-class __$$ChatRoomsInvitationsIgnoreRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res,
-        _$ChatRoomsInvitationsIgnoreRequestImpl>
-    implements _$$ChatRoomsInvitationsIgnoreRequestImplCopyWith<$Res> {
-  __$$ChatRoomsInvitationsIgnoreRequestImplCopyWithImpl(
-      _$ChatRoomsInvitationsIgnoreRequestImpl _value,
-      $Res Function(_$ChatRoomsInvitationsIgnoreRequestImpl) _then)
-      : super(_value, _then);
+class _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res>
+    implements $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
+  _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsInvitationsIgnoreRequest _self;
+  final $Res Function(ChatRoomsInvitationsIgnoreRequest) _then;
 
   /// Create a copy of ChatRoomsInvitationsIgnoreRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -100,9 +72,9 @@ class __$$ChatRoomsInvitationsIgnoreRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? roomId = null,
   }) {
-    return _then(_$ChatRoomsInvitationsIgnoreRequestImpl(
+    return _then(_self.copyWith(
       roomId: null == roomId
-          ? _value.roomId
+          ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -111,27 +83,38 @@ class __$$ChatRoomsInvitationsIgnoreRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatRoomsInvitationsIgnoreRequestImpl
-    implements _ChatRoomsInvitationsIgnoreRequest {
-  const _$ChatRoomsInvitationsIgnoreRequestImpl({required this.roomId});
-
-  factory _$ChatRoomsInvitationsIgnoreRequestImpl.fromJson(
+class _ChatRoomsInvitationsIgnoreRequest
+    implements ChatRoomsInvitationsIgnoreRequest {
+  const _ChatRoomsInvitationsIgnoreRequest({required this.roomId});
+  factory _ChatRoomsInvitationsIgnoreRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$ChatRoomsInvitationsIgnoreRequestImplFromJson(json);
+      _$ChatRoomsInvitationsIgnoreRequestFromJson(json);
 
   @override
   final String roomId;
 
+  /// Create a copy of ChatRoomsInvitationsIgnoreRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatRoomsInvitationsIgnoreRequest(roomId: $roomId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsInvitationsIgnoreRequestCopyWith<
+          _ChatRoomsInvitationsIgnoreRequest>
+      get copyWith => __$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<
+          _ChatRoomsInvitationsIgnoreRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsInvitationsIgnoreRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsInvitationsIgnoreRequestImpl &&
+            other is _ChatRoomsInvitationsIgnoreRequest &&
             (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
@@ -139,41 +122,46 @@ class _$ChatRoomsInvitationsIgnoreRequestImpl
   @override
   int get hashCode => Object.hash(runtimeType, roomId);
 
-  /// Create a copy of ChatRoomsInvitationsIgnoreRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsInvitationsIgnoreRequestImplCopyWith<
-          _$ChatRoomsInvitationsIgnoreRequestImpl>
-      get copyWith => __$$ChatRoomsInvitationsIgnoreRequestImplCopyWithImpl<
-          _$ChatRoomsInvitationsIgnoreRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsInvitationsIgnoreRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsInvitationsIgnoreRequest(roomId: $roomId)';
   }
 }
 
-abstract class _ChatRoomsInvitationsIgnoreRequest
-    implements ChatRoomsInvitationsIgnoreRequest {
-  const factory _ChatRoomsInvitationsIgnoreRequest(
-      {required final String roomId}) = _$ChatRoomsInvitationsIgnoreRequestImpl;
-
-  factory _ChatRoomsInvitationsIgnoreRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$ChatRoomsInvitationsIgnoreRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ChatRoomsInvitationsIgnoreRequestCopyWith<$Res>
+    implements $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
+  factory _$ChatRoomsInvitationsIgnoreRequestCopyWith(
+          _ChatRoomsInvitationsIgnoreRequest value,
+          $Res Function(_ChatRoomsInvitationsIgnoreRequest) _then) =
+      __$ChatRoomsInvitationsIgnoreRequestCopyWithImpl;
   @override
-  String get roomId;
+  @useResult
+  $Res call({String roomId});
+}
+
+/// @nodoc
+class __$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
+  __$ChatRoomsInvitationsIgnoreRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsInvitationsIgnoreRequest _self;
+  final $Res Function(_ChatRoomsInvitationsIgnoreRequest) _then;
 
   /// Create a copy of ChatRoomsInvitationsIgnoreRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsInvitationsIgnoreRequestImplCopyWith<
-          _$ChatRoomsInvitationsIgnoreRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? roomId = null,
+  }) {
+    return _then(_ChatRoomsInvitationsIgnoreRequest(
+      roomId: null == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

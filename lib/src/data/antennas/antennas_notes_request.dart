@@ -5,7 +5,7 @@ part 'antennas_notes_request.freezed.dart';
 part 'antennas_notes_request.g.dart';
 
 @freezed
-class AntennasNotesRequest with _$AntennasNotesRequest {
+abstract class AntennasNotesRequest with _$AntennasNotesRequest {
   const factory AntennasNotesRequest({
     required String antennaId,
     int? limit,

@@ -5,7 +5,7 @@ part 'users_search_request.freezed.dart';
 part 'users_search_request.g.dart';
 
 @freezed
-class UsersSearchRequest with _$UsersSearchRequest {
+abstract class UsersSearchRequest with _$UsersSearchRequest {
   const factory UsersSearchRequest({
     required String query,
     int? offset,

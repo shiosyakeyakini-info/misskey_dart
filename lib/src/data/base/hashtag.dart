@@ -4,7 +4,7 @@ part 'hashtag.freezed.dart';
 part 'hashtag.g.dart';
 
 @freezed
-class Hashtag with _$Hashtag {
+abstract class Hashtag with _$Hashtag {
   const factory Hashtag({
     required String tag,
     required int mentionedUsersCount,

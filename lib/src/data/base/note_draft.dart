@@ -7,7 +7,7 @@ part 'note_draft.freezed.dart';
 part 'note_draft.g.dart';
 
 @freezed
-class NoteDraft with _$NoteDraft {
+abstract class NoteDraft with _$NoteDraft {
   const factory NoteDraft({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -36,7 +36,7 @@ class NoteDraft with _$NoteDraft {
 }
 
 @freezed
-class NoteDraftPoll with _$NoteDraftPoll {
+abstract class NoteDraftPoll with _$NoteDraftPoll {
   const factory NoteDraftPoll({
     @DateTimeConverter() DateTime? expiresAt,
     @NullableDurationConverter() Duration? expiredAfter,

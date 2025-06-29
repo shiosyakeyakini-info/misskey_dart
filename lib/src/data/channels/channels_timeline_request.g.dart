@@ -6,11 +6,11 @@ part of 'channels_timeline_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChannelsTimelineRequestImpl _$$ChannelsTimelineRequestImplFromJson(
+_ChannelsTimelineRequest _$ChannelsTimelineRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChannelsTimelineRequestImpl(
+    _ChannelsTimelineRequest(
       channelId: json['channelId'] as String,
-      limit: json['limit'] as int?,
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
@@ -20,8 +20,8 @@ _$ChannelsTimelineRequestImpl _$$ChannelsTimelineRequestImplFromJson(
       allowPartial: json['allowPartial'] as bool?,
     );
 
-Map<String, dynamic> _$$ChannelsTimelineRequestImplToJson(
-        _$ChannelsTimelineRequestImpl instance) =>
+Map<String, dynamic> _$ChannelsTimelineRequestToJson(
+        _ChannelsTimelineRequest instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
       'limit': instance.limit,

@@ -6,7 +6,7 @@ part 'blocking.freezed.dart';
 part 'blocking.g.dart';
 
 @freezed
-class Blocking with _$Blocking {
+abstract class Blocking with _$Blocking {
   const factory Blocking({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

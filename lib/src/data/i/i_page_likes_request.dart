@@ -4,7 +4,7 @@ part 'i_page_likes_request.freezed.dart';
 part 'i_page_likes_request.g.dart';
 
 @freezed
-class IPageLikesRequest with _$IPageLikesRequest {
+abstract class IPageLikesRequest with _$IPageLikesRequest {
   const factory IPageLikesRequest({
     int? limit,
     String? sinceId,

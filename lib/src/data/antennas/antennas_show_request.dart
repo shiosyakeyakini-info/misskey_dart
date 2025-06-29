@@ -4,7 +4,7 @@ part 'antennas_show_request.freezed.dart';
 part 'antennas_show_request.g.dart';
 
 @freezed
-class AntennasShowRequest with _$AntennasShowRequest {
+abstract class AntennasShowRequest with _$AntennasShowRequest {
   const factory AntennasShowRequest({
     required String antennaId,
   }) = _AntennasShowRequest;

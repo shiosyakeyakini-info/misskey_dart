@@ -6,16 +6,16 @@ part of 'drive_files_move_bulk_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFilesMoveBulkRequestImpl _$$DriveFilesMoveBulkRequestImplFromJson(
+_DriveFilesMoveBulkRequest _$DriveFilesMoveBulkRequestFromJson(
         Map<String, dynamic> json) =>
-    _$DriveFilesMoveBulkRequestImpl(
+    _DriveFilesMoveBulkRequest(
       fileIds:
           (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
       folderId: json['folderId'] as String?,
     );
 
-Map<String, dynamic> _$$DriveFilesMoveBulkRequestImplToJson(
-        _$DriveFilesMoveBulkRequestImpl instance) =>
+Map<String, dynamic> _$DriveFilesMoveBulkRequestToJson(
+        _DriveFilesMoveBulkRequest instance) =>
     <String, dynamic>{
       'fileIds': instance.fileIds,
       'folderId': instance.folderId,

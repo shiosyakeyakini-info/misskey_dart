@@ -8,7 +8,7 @@ part 'flash.g.dart';
 @freezed
 
 /// Playのエンティティ
-class Flash with _$Flash {
+abstract class Flash with _$Flash {
   const factory Flash({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

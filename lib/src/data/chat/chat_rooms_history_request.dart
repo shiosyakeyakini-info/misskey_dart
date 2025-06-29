@@ -4,7 +4,7 @@ part 'chat_rooms_history_request.freezed.dart';
 part 'chat_rooms_history_request.g.dart';
 
 @freezed
-class ChatRoomsHistoryRequest with _$ChatRoomsHistoryRequest {
+abstract class ChatRoomsHistoryRequest with _$ChatRoomsHistoryRequest {
   const factory ChatRoomsHistoryRequest({
     int? limit,
     String? sinceId,

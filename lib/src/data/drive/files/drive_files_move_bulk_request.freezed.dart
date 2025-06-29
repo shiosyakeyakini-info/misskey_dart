@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,93 +10,62 @@ part of 'drive_files_move_bulk_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-DriveFilesMoveBulkRequest _$DriveFilesMoveBulkRequestFromJson(
-    Map<String, dynamic> json) {
-  return _DriveFilesMoveBulkRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DriveFilesMoveBulkRequest {
-  List<String> get fileIds => throw _privateConstructorUsedError;
-  String? get folderId => throw _privateConstructorUsedError;
-
-  /// Serializes this DriveFilesMoveBulkRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get fileIds;
+  String? get folderId;
 
   /// Create a copy of DriveFilesMoveBulkRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DriveFilesMoveBulkRequestCopyWith<DriveFilesMoveBulkRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DriveFilesMoveBulkRequestCopyWith<$Res> {
-  factory $DriveFilesMoveBulkRequestCopyWith(DriveFilesMoveBulkRequest value,
-          $Res Function(DriveFilesMoveBulkRequest) then) =
-      _$DriveFilesMoveBulkRequestCopyWithImpl<$Res, DriveFilesMoveBulkRequest>;
-  @useResult
-  $Res call({List<String> fileIds, String? folderId});
-}
-
-/// @nodoc
-class _$DriveFilesMoveBulkRequestCopyWithImpl<$Res,
-        $Val extends DriveFilesMoveBulkRequest>
-    implements $DriveFilesMoveBulkRequestCopyWith<$Res> {
-  _$DriveFilesMoveBulkRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DriveFilesMoveBulkRequest
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $DriveFilesMoveBulkRequestCopyWith<DriveFilesMoveBulkRequest> get copyWith =>
+      _$DriveFilesMoveBulkRequestCopyWithImpl<DriveFilesMoveBulkRequest>(
+          this as DriveFilesMoveBulkRequest, _$identity);
+
+  /// Serializes this DriveFilesMoveBulkRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? fileIds = null,
-    Object? folderId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      fileIds: null == fileIds
-          ? _value.fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      folderId: freezed == folderId
-          ? _value.folderId
-          : folderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DriveFilesMoveBulkRequest &&
+            const DeepCollectionEquality().equals(other.fileIds, fileIds) &&
+            (identical(other.folderId, folderId) ||
+                other.folderId == folderId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(fileIds), folderId);
+
+  @override
+  String toString() {
+    return 'DriveFilesMoveBulkRequest(fileIds: $fileIds, folderId: $folderId)';
   }
 }
 
 /// @nodoc
-abstract class _$$DriveFilesMoveBulkRequestImplCopyWith<$Res>
-    implements $DriveFilesMoveBulkRequestCopyWith<$Res> {
-  factory _$$DriveFilesMoveBulkRequestImplCopyWith(
-          _$DriveFilesMoveBulkRequestImpl value,
-          $Res Function(_$DriveFilesMoveBulkRequestImpl) then) =
-      __$$DriveFilesMoveBulkRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DriveFilesMoveBulkRequestCopyWith<$Res> {
+  factory $DriveFilesMoveBulkRequestCopyWith(DriveFilesMoveBulkRequest value,
+          $Res Function(DriveFilesMoveBulkRequest) _then) =
+      _$DriveFilesMoveBulkRequestCopyWithImpl;
   @useResult
   $Res call({List<String> fileIds, String? folderId});
 }
 
 /// @nodoc
-class __$$DriveFilesMoveBulkRequestImplCopyWithImpl<$Res>
-    extends _$DriveFilesMoveBulkRequestCopyWithImpl<$Res,
-        _$DriveFilesMoveBulkRequestImpl>
-    implements _$$DriveFilesMoveBulkRequestImplCopyWith<$Res> {
-  __$$DriveFilesMoveBulkRequestImplCopyWithImpl(
-      _$DriveFilesMoveBulkRequestImpl _value,
-      $Res Function(_$DriveFilesMoveBulkRequestImpl) _then)
-      : super(_value, _then);
+class _$DriveFilesMoveBulkRequestCopyWithImpl<$Res>
+    implements $DriveFilesMoveBulkRequestCopyWith<$Res> {
+  _$DriveFilesMoveBulkRequestCopyWithImpl(this._self, this._then);
+
+  final DriveFilesMoveBulkRequest _self;
+  final $Res Function(DriveFilesMoveBulkRequest) _then;
 
   /// Create a copy of DriveFilesMoveBulkRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -105,13 +75,13 @@ class __$$DriveFilesMoveBulkRequestImplCopyWithImpl<$Res>
     Object? fileIds = null,
     Object? folderId = freezed,
   }) {
-    return _then(_$DriveFilesMoveBulkRequestImpl(
+    return _then(_self.copyWith(
       fileIds: null == fileIds
-          ? _value._fileIds
+          ? _self.fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       folderId: freezed == folderId
-          ? _value.folderId
+          ? _self.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -120,13 +90,12 @@ class __$$DriveFilesMoveBulkRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DriveFilesMoveBulkRequestImpl implements _DriveFilesMoveBulkRequest {
-  const _$DriveFilesMoveBulkRequestImpl(
+class _DriveFilesMoveBulkRequest implements DriveFilesMoveBulkRequest {
+  const _DriveFilesMoveBulkRequest(
       {required final List<String> fileIds, this.folderId})
       : _fileIds = fileIds;
-
-  factory _$DriveFilesMoveBulkRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DriveFilesMoveBulkRequestImplFromJson(json);
+  factory _DriveFilesMoveBulkRequest.fromJson(Map<String, dynamic> json) =>
+      _$DriveFilesMoveBulkRequestFromJson(json);
 
   final List<String> _fileIds;
   @override
@@ -139,16 +108,28 @@ class _$DriveFilesMoveBulkRequestImpl implements _DriveFilesMoveBulkRequest {
   @override
   final String? folderId;
 
+  /// Create a copy of DriveFilesMoveBulkRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DriveFilesMoveBulkRequest(fileIds: $fileIds, folderId: $folderId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DriveFilesMoveBulkRequestCopyWith<_DriveFilesMoveBulkRequest>
+      get copyWith =>
+          __$DriveFilesMoveBulkRequestCopyWithImpl<_DriveFilesMoveBulkRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DriveFilesMoveBulkRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DriveFilesMoveBulkRequestImpl &&
+            other is _DriveFilesMoveBulkRequest &&
             const DeepCollectionEquality().equals(other._fileIds, _fileIds) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId));
@@ -159,40 +140,50 @@ class _$DriveFilesMoveBulkRequestImpl implements _DriveFilesMoveBulkRequest {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_fileIds), folderId);
 
-  /// Create a copy of DriveFilesMoveBulkRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DriveFilesMoveBulkRequestImplCopyWith<_$DriveFilesMoveBulkRequestImpl>
-      get copyWith => __$$DriveFilesMoveBulkRequestImplCopyWithImpl<
-          _$DriveFilesMoveBulkRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DriveFilesMoveBulkRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DriveFilesMoveBulkRequest(fileIds: $fileIds, folderId: $folderId)';
   }
 }
 
-abstract class _DriveFilesMoveBulkRequest implements DriveFilesMoveBulkRequest {
-  const factory _DriveFilesMoveBulkRequest(
-      {required final List<String> fileIds,
-      final String? folderId}) = _$DriveFilesMoveBulkRequestImpl;
-
-  factory _DriveFilesMoveBulkRequest.fromJson(Map<String, dynamic> json) =
-      _$DriveFilesMoveBulkRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$DriveFilesMoveBulkRequestCopyWith<$Res>
+    implements $DriveFilesMoveBulkRequestCopyWith<$Res> {
+  factory _$DriveFilesMoveBulkRequestCopyWith(_DriveFilesMoveBulkRequest value,
+          $Res Function(_DriveFilesMoveBulkRequest) _then) =
+      __$DriveFilesMoveBulkRequestCopyWithImpl;
   @override
-  List<String> get fileIds;
-  @override
-  String? get folderId;
+  @useResult
+  $Res call({List<String> fileIds, String? folderId});
+}
+
+/// @nodoc
+class __$DriveFilesMoveBulkRequestCopyWithImpl<$Res>
+    implements _$DriveFilesMoveBulkRequestCopyWith<$Res> {
+  __$DriveFilesMoveBulkRequestCopyWithImpl(this._self, this._then);
+
+  final _DriveFilesMoveBulkRequest _self;
+  final $Res Function(_DriveFilesMoveBulkRequest) _then;
 
   /// Create a copy of DriveFilesMoveBulkRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DriveFilesMoveBulkRequestImplCopyWith<_$DriveFilesMoveBulkRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? fileIds = null,
+    Object? folderId = freezed,
+  }) {
+    return _then(_DriveFilesMoveBulkRequest(
+      fileIds: null == fileIds
+          ? _self._fileIds
+          : fileIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      folderId: freezed == folderId
+          ? _self.folderId
+          : folderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
+
+// dart format on

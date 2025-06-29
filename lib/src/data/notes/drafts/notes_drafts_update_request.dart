@@ -5,7 +5,7 @@ part 'notes_drafts_update_request.freezed.dart';
 part 'notes_drafts_update_request.g.dart';
 
 @freezed
-class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
+abstract class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
   const factory NotesDraftsUpdateRequest({
     required String draftId,
     @NoteVisibilityJsonConverter() NoteVisibility? visibility,

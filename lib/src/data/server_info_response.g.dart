@@ -6,17 +6,15 @@ part of 'server_info_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ServerInfoResponseImpl _$$ServerInfoResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ServerInfoResponseImpl(
+_ServerInfoResponse _$ServerInfoResponseFromJson(Map<String, dynamic> json) =>
+    _ServerInfoResponse(
       machine: json['machine'] as String,
       cpu: ServerInfoCpu.fromJson(json['cpu'] as Map<String, dynamic>),
       mem: ServerInfoMem.fromJson(json['mem'] as Map<String, dynamic>),
       fs: ServerInfoFs.fromJson(json['fs'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ServerInfoResponseImplToJson(
-        _$ServerInfoResponseImpl instance) =>
+Map<String, dynamic> _$ServerInfoResponseToJson(_ServerInfoResponse instance) =>
     <String, dynamic>{
       'machine': instance.machine,
       'cpu': instance.cpu.toJson(),
@@ -24,35 +22,35 @@ Map<String, dynamic> _$$ServerInfoResponseImplToJson(
       'fs': instance.fs.toJson(),
     };
 
-_$ServerInfoCpuImpl _$$ServerInfoCpuImplFromJson(Map<String, dynamic> json) =>
-    _$ServerInfoCpuImpl(
+_ServerInfoCpu _$ServerInfoCpuFromJson(Map<String, dynamic> json) =>
+    _ServerInfoCpu(
       model: json['model'] as String,
-      cores: json['cores'] as int,
+      cores: (json['cores'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$ServerInfoCpuImplToJson(_$ServerInfoCpuImpl instance) =>
+Map<String, dynamic> _$ServerInfoCpuToJson(_ServerInfoCpu instance) =>
     <String, dynamic>{
       'model': instance.model,
       'cores': instance.cores,
     };
 
-_$ServerInfoMemImpl _$$ServerInfoMemImplFromJson(Map<String, dynamic> json) =>
-    _$ServerInfoMemImpl(
-      total: json['total'] as int,
+_ServerInfoMem _$ServerInfoMemFromJson(Map<String, dynamic> json) =>
+    _ServerInfoMem(
+      total: (json['total'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$ServerInfoMemImplToJson(_$ServerInfoMemImpl instance) =>
+Map<String, dynamic> _$ServerInfoMemToJson(_ServerInfoMem instance) =>
     <String, dynamic>{
       'total': instance.total,
     };
 
-_$ServerInfoFsImpl _$$ServerInfoFsImplFromJson(Map<String, dynamic> json) =>
-    _$ServerInfoFsImpl(
-      total: json['total'] as int,
-      used: json['used'] as int,
+_ServerInfoFs _$ServerInfoFsFromJson(Map<String, dynamic> json) =>
+    _ServerInfoFs(
+      total: (json['total'] as num).toInt(),
+      used: (json['used'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$ServerInfoFsImplToJson(_$ServerInfoFsImpl instance) =>
+Map<String, dynamic> _$ServerInfoFsToJson(_ServerInfoFs instance) =>
     <String, dynamic>{
       'total': instance.total,
       'used': instance.used,

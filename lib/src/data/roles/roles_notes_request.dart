@@ -5,7 +5,7 @@ part 'roles_notes_request.freezed.dart';
 part 'roles_notes_request.g.dart';
 
 @freezed
-class RolesNotesRequest with _$RolesNotesRequest {
+abstract class RolesNotesRequest with _$RolesNotesRequest {
   const factory RolesNotesRequest({
     required String roleId,
     int? limit,

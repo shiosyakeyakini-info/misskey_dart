@@ -4,7 +4,7 @@ part 'notes_search_by_tag_request.freezed.dart';
 part 'notes_search_by_tag_request.g.dart';
 
 @freezed
-class NotesSearchByTagRequest with _$NotesSearchByTagRequest {
+abstract class NotesSearchByTagRequest with _$NotesSearchByTagRequest {
   const factory NotesSearchByTagRequest({
     required String tag,
     bool? reply,

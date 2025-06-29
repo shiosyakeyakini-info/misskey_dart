@@ -6,8 +6,7 @@ part of 'note_draft.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NoteDraftImpl _$$NoteDraftImplFromJson(Map<String, dynamic> json) =>
-    _$NoteDraftImpl(
+_NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -46,7 +45,7 @@ _$NoteDraftImpl _$$NoteDraftImplFromJson(Map<String, dynamic> json) =>
           _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
     );
 
-Map<String, dynamic> _$$NoteDraftImplToJson(_$NoteDraftImpl instance) =>
+Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
@@ -80,8 +79,8 @@ const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnly: 'likeOnly',
 };
 
-_$NoteDraftPollImpl _$$NoteDraftPollImplFromJson(Map<String, dynamic> json) =>
-    _$NoteDraftPollImpl(
+_NoteDraftPoll _$NoteDraftPollFromJson(Map<String, dynamic> json) =>
+    _NoteDraftPoll(
       expiresAt: _$JsonConverterFromJson<String, DateTime>(
           json['expiresAt'], const DateTimeConverter().fromJson),
       expiredAfter: const NullableDurationConverter()
@@ -91,7 +90,7 @@ _$NoteDraftPollImpl _$$NoteDraftPollImplFromJson(Map<String, dynamic> json) =>
           (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$NoteDraftPollImplToJson(_$NoteDraftPollImpl instance) =>
+Map<String, dynamic> _$NoteDraftPollToJson(_NoteDraftPoll instance) =>
     <String, dynamic>{
       'expiresAt': _$JsonConverterToJson<String, DateTime>(
           instance.expiresAt, const DateTimeConverter().toJson),

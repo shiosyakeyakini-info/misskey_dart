@@ -6,36 +6,28 @@ part of 'notes_create_poll_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesCreatePollRequestImpl _$$NotesCreatePollRequestImplFromJson(
+_NotesCreatePollRequest _$NotesCreatePollRequestFromJson(
         Map<String, dynamic> json) =>
-    _$NotesCreatePollRequestImpl(
+    _NotesCreatePollRequest(
       choices:
           (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
       multiple: json['multiple'] as bool?,
       expiresAt: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
-          .fromJson(json['expiresAt'] as int?),
+          .fromJson((json['expiresAt'] as num?)?.toInt()),
       expiredAfter: const NullableDurationConverter()
-          .fromJson(json['expiredAfter'] as int?),
+          .fromJson((json['expiredAfter'] as num?)?.toInt()),
     );
 
-Map<String, dynamic> _$$NotesCreatePollRequestImplToJson(
-    _$NotesCreatePollRequestImpl instance) {
-  final val = <String, dynamic>{
-    'choices': instance.choices,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('multiple', instance.multiple);
-  writeNotNull(
-      'expiresAt',
-      const NullableEpocTimeDateTimeConverter.withMilliSeconds()
-          .toJson(instance.expiresAt));
-  writeNotNull('expiredAfter',
-      const NullableDurationConverter().toJson(instance.expiredAfter));
-  return val;
-}
+Map<String, dynamic> _$NotesCreatePollRequestToJson(
+        _NotesCreatePollRequest instance) =>
+    <String, dynamic>{
+      'choices': instance.choices,
+      if (instance.multiple case final value?) 'multiple': value,
+      if (const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+              .toJson(instance.expiresAt)
+          case final value?)
+        'expiresAt': value,
+      if (const NullableDurationConverter().toJson(instance.expiredAfter)
+          case final value?)
+        'expiredAfter': value,
+    };

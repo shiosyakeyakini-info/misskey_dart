@@ -4,7 +4,7 @@ part 'notes_reactions_request.freezed.dart';
 part 'notes_reactions_request.g.dart';
 
 @freezed
-class NotesReactionsRequest with _$NotesReactionsRequest {
+abstract class NotesReactionsRequest with _$NotesReactionsRequest {
   const factory NotesReactionsRequest({
     required String noteId,
     String? type,

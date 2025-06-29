@@ -5,7 +5,7 @@ part 'notes_drafts_create_response.freezed.dart';
 part 'notes_drafts_create_response.g.dart';
 
 @freezed
-class NotesDraftsCreateResponse with _$NotesDraftsCreateResponse {
+abstract class NotesDraftsCreateResponse with _$NotesDraftsCreateResponse {
   const factory NotesDraftsCreateResponse({
     required NoteDraft createdDraft,
   }) = _NotesDraftsCreateResponse;

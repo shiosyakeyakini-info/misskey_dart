@@ -6,14 +6,14 @@ part of 'chat_rooms_leave_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChatRoomsLeaveRequestImpl _$$ChatRoomsLeaveRequestImplFromJson(
+_ChatRoomsLeaveRequest _$ChatRoomsLeaveRequestFromJson(
         Map<String, dynamic> json) =>
-    _$ChatRoomsLeaveRequestImpl(
+    _ChatRoomsLeaveRequest(
       roomId: json['roomId'] as String,
     );
 
-Map<String, dynamic> _$$ChatRoomsLeaveRequestImplToJson(
-        _$ChatRoomsLeaveRequestImpl instance) =>
+Map<String, dynamic> _$ChatRoomsLeaveRequestToJson(
+        _ChatRoomsLeaveRequest instance) =>
     <String, dynamic>{
       'roomId': instance.roomId,
     };

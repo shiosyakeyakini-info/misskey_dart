@@ -4,7 +4,7 @@ part 'i_registry_get_detail_request.freezed.dart';
 part 'i_registry_get_detail_request.g.dart';
 
 @freezed
-class IRegistryGetDetailRequest with _$IRegistryGetDetailRequest {
+abstract class IRegistryGetDetailRequest with _$IRegistryGetDetailRequest {
   const factory IRegistryGetDetailRequest({
     required String key,
     required List<String> scope,

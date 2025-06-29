@@ -6,7 +6,7 @@ part of 'note.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
+_Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -69,8 +69,7 @@ _$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
       clippedCount: (json['clippedCount'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
@@ -120,9 +119,8 @@ const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnly: 'likeOnly',
 };
 
-_$NoteChannelInfoImpl _$$NoteChannelInfoImplFromJson(
-        Map<String, dynamic> json) =>
-    _$NoteChannelInfoImpl(
+_NoteChannelInfo _$NoteChannelInfoFromJson(Map<String, dynamic> json) =>
+    _NoteChannelInfo(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const NullableColorConverter().fromJson(json['color'] as String?),
@@ -131,8 +129,7 @@ _$NoteChannelInfoImpl _$$NoteChannelInfoImplFromJson(
       userId: json['userId'] as String?,
     );
 
-Map<String, dynamic> _$$NoteChannelInfoImplToJson(
-        _$NoteChannelInfoImpl instance) =>
+Map<String, dynamic> _$NoteChannelInfoToJson(_NoteChannelInfo instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -142,8 +139,7 @@ Map<String, dynamic> _$$NoteChannelInfoImplToJson(
       'userId': instance.userId,
     };
 
-_$NotePollImpl _$$NotePollImplFromJson(Map<String, dynamic> json) =>
-    _$NotePollImpl(
+_NotePoll _$NotePollFromJson(Map<String, dynamic> json) => _NotePoll(
       multiple: json['multiple'] as bool,
       expiresAt: _$JsonConverterFromJson<String, DateTime>(
           json['expiresAt'], const DateTimeConverter().fromJson),
@@ -152,8 +148,7 @@ _$NotePollImpl _$$NotePollImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$NotePollImplToJson(_$NotePollImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$NotePollToJson(_NotePoll instance) => <String, dynamic>{
       'multiple': instance.multiple,
       'expiresAt': _$JsonConverterToJson<String, DateTime>(
           instance.expiresAt, const DateTimeConverter().toJson),
@@ -166,15 +161,14 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$NotePollChoiceImpl _$$NotePollChoiceImplFromJson(Map<String, dynamic> json) =>
-    _$NotePollChoiceImpl(
+_NotePollChoice _$NotePollChoiceFromJson(Map<String, dynamic> json) =>
+    _NotePollChoice(
       text: json['text'] as String,
       votes: (json['votes'] as num).toInt(),
       isVoted: json['isVoted'] as bool,
     );
 
-Map<String, dynamic> _$$NotePollChoiceImplToJson(
-        _$NotePollChoiceImpl instance) =>
+Map<String, dynamic> _$NotePollChoiceToJson(_NotePollChoice instance) =>
     <String, dynamic>{
       'text': instance.text,
       'votes': instance.votes,

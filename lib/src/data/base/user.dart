@@ -96,7 +96,7 @@ abstract class UserDetailed implements User {
 }
 
 @freezed
-class UserLite with _$UserLite implements User {
+abstract class UserLite with _$UserLite implements User {
   const factory UserLite({
     required String id,
     String? name,
@@ -121,7 +121,9 @@ class UserLite with _$UserLite implements User {
 }
 
 @freezed
-class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
+abstract class UserDetailedNotMe
+    with _$UserDetailedNotMe
+    implements UserDetailed {
   const factory UserDetailedNotMe({
     required String id,
     String? name,
@@ -183,7 +185,7 @@ class UserDetailedNotMe with _$UserDetailedNotMe implements UserDetailed {
 }
 
 @freezed
-class UserDetailedNotMeWithRelations
+abstract class UserDetailedNotMeWithRelations
     with _$UserDetailedNotMeWithRelations
     implements UserDetailed {
   const factory UserDetailedNotMeWithRelations({
@@ -258,7 +260,7 @@ class UserDetailedNotMeWithRelations
 }
 
 @freezed
-class MeDetailed with _$MeDetailed implements UserDetailed {
+abstract class MeDetailed with _$MeDetailed implements UserDetailed {
   const factory MeDetailed({
     required String id,
     String? name,
@@ -358,7 +360,7 @@ class MeDetailed with _$MeDetailed implements UserDetailed {
 }
 
 @freezed
-class UserAvatarDecoration with _$UserAvatarDecoration {
+abstract class UserAvatarDecoration with _$UserAvatarDecoration {
   const factory UserAvatarDecoration({
     required String id,
     double? angle,
@@ -373,7 +375,7 @@ class UserAvatarDecoration with _$UserAvatarDecoration {
 }
 
 @freezed
-class UserInstanceInfo with _$UserInstanceInfo {
+abstract class UserInstanceInfo with _$UserInstanceInfo {
   const factory UserInstanceInfo({
     String? name,
     String? softwareVersion,
@@ -388,7 +390,7 @@ class UserInstanceInfo with _$UserInstanceInfo {
 }
 
 @freezed
-class UserBadgeRole with _$UserBadgeRole {
+abstract class UserBadgeRole with _$UserBadgeRole {
   const factory UserBadgeRole({
     required String name,
     @NullableUriConverter() required Uri? iconUrl,
@@ -412,7 +414,7 @@ class HideBeforeDateTime implements HideBefore {
 }
 
 @freezed
-class UserRole with _$UserRole {
+abstract class UserRole with _$UserRole {
   const factory UserRole({
     required String id,
     required String name,
@@ -427,7 +429,7 @@ class UserRole with _$UserRole {
 }
 
 @freezed
-class UserAchievement with _$UserAchievement {
+abstract class UserAchievement with _$UserAchievement {
   const factory UserAchievement({
     required String name,
     @EpocTimeDateTimeConverter.withMilliSeconds() required DateTime unlockedAt,
@@ -438,7 +440,7 @@ class UserAchievement with _$UserAchievement {
 }
 
 @freezed
-class UserPolicies with _$UserPolicies {
+abstract class UserPolicies with _$UserPolicies {
   const factory UserPolicies({
     required bool gtlAvailable,
     required bool ltlAvailable,
@@ -482,7 +484,7 @@ class UserPolicies with _$UserPolicies {
 }
 
 @freezed
-class UserField with _$UserField {
+abstract class UserField with _$UserField {
   const factory UserField({required String name, required String value}) =
       _UserField;
 
@@ -517,7 +519,7 @@ class MuteWord {
 }
 
 @freezed
-class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
+abstract class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
   const factory NotificationRecieveConfigs({
     NotificationRecieveConfig? note,
     NotificationRecieveConfig? follow,
@@ -541,7 +543,7 @@ class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
 }
 
 @freezed
-class NotificationRecieveConfig with _$NotificationRecieveConfig {
+abstract class NotificationRecieveConfig with _$NotificationRecieveConfig {
   const factory NotificationRecieveConfig({
     required String type,
     String? userListId,

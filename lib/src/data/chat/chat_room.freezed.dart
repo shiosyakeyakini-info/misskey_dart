@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,40 +10,61 @@ part of 'chat_room.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoom _$ChatRoomFromJson(Map<String, dynamic> json) {
-  return _ChatRoom.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoom {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String get ownerId => throw _privateConstructorUsedError;
-  UserLite get owner => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  bool? get isMuted => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoom to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime get createdAt;
+  String get ownerId;
+  UserLite get owner;
+  String get name;
+  String get description;
+  bool? get isMuted;
 
   /// Create a copy of ChatRoom
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatRoomCopyWith<ChatRoom> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ChatRoomCopyWithImpl<ChatRoom>(this as ChatRoom, _$identity);
+
+  /// Serializes this ChatRoom to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatRoom &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.isMuted, isMuted) || other.isMuted == isMuted));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, createdAt, ownerId, owner, name, description, isMuted);
+
+  @override
+  String toString() {
+    return 'ChatRoom(id: $id, createdAt: $createdAt, ownerId: $ownerId, owner: $owner, name: $name, description: $description, isMuted: $isMuted)';
+  }
 }
 
 /// @nodoc
-abstract class $ChatRoomCopyWith<$Res> {
-  factory $ChatRoomCopyWith(ChatRoom value, $Res Function(ChatRoom) then) =
-      _$ChatRoomCopyWithImpl<$Res, ChatRoom>;
+abstract mixin class $ChatRoomCopyWith<$Res> {
+  factory $ChatRoomCopyWith(ChatRoom value, $Res Function(ChatRoom) _then) =
+      _$ChatRoomCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -57,14 +79,11 @@ abstract class $ChatRoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChatRoomCopyWithImpl<$Res, $Val extends ChatRoom>
-    implements $ChatRoomCopyWith<$Res> {
-  _$ChatRoomCopyWithImpl(this._value, this._then);
+class _$ChatRoomCopyWithImpl<$Res> implements $ChatRoomCopyWith<$Res> {
+  _$ChatRoomCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChatRoom _self;
+  final $Res Function(ChatRoom) _then;
 
   /// Create a copy of ChatRoom
   /// with the given fields replaced by the non-null parameter values.
@@ -79,36 +98,36 @@ class _$ChatRoomCopyWithImpl<$Res, $Val extends ChatRoom>
     Object? description = null,
     Object? isMuted = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       ownerId: null == ownerId
-          ? _value.ownerId
+          ? _self.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
       owner: null == owner
-          ? _value.owner
+          ? _self.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as UserLite,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       isMuted: freezed == isMuted
-          ? _value.isMuted
+          ? _self.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of ChatRoom
@@ -116,91 +135,16 @@ class _$ChatRoomCopyWithImpl<$Res, $Val extends ChatRoom>
   @override
   @pragma('vm:prefer-inline')
   $UserLiteCopyWith<$Res> get owner {
-    return $UserLiteCopyWith<$Res>(_value.owner, (value) {
-      return _then(_value.copyWith(owner: value) as $Val);
+    return $UserLiteCopyWith<$Res>(_self.owner, (value) {
+      return _then(_self.copyWith(owner: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ChatRoomImplCopyWith<$Res>
-    implements $ChatRoomCopyWith<$Res> {
-  factory _$$ChatRoomImplCopyWith(
-          _$ChatRoomImpl value, $Res Function(_$ChatRoomImpl) then) =
-      __$$ChatRoomImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String ownerId,
-      UserLite owner,
-      String name,
-      String description,
-      bool? isMuted});
-
-  @override
-  $UserLiteCopyWith<$Res> get owner;
-}
-
-/// @nodoc
-class __$$ChatRoomImplCopyWithImpl<$Res>
-    extends _$ChatRoomCopyWithImpl<$Res, _$ChatRoomImpl>
-    implements _$$ChatRoomImplCopyWith<$Res> {
-  __$$ChatRoomImplCopyWithImpl(
-      _$ChatRoomImpl _value, $Res Function(_$ChatRoomImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatRoom
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? ownerId = null,
-    Object? owner = null,
-    Object? name = null,
-    Object? description = null,
-    Object? isMuted = freezed,
-  }) {
-    return _then(_$ChatRoomImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      ownerId: null == ownerId
-          ? _value.ownerId
-          : ownerId // ignore: cast_nullable_to_non_nullable
-              as String,
-      owner: null == owner
-          ? _value.owner
-          : owner // ignore: cast_nullable_to_non_nullable
-              as UserLite,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      isMuted: freezed == isMuted
-          ? _value.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$ChatRoomImpl implements _ChatRoom {
-  const _$ChatRoomImpl(
+class _ChatRoom implements ChatRoom {
+  const _ChatRoom(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.ownerId,
@@ -208,9 +152,8 @@ class _$ChatRoomImpl implements _ChatRoom {
       required this.name,
       required this.description,
       this.isMuted});
-
-  factory _$ChatRoomImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomImplFromJson(json);
+  factory _ChatRoom.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomFromJson(json);
 
   @override
   final String id;
@@ -228,16 +171,26 @@ class _$ChatRoomImpl implements _ChatRoom {
   @override
   final bool? isMuted;
 
+  /// Create a copy of ChatRoom
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ChatRoom(id: $id, createdAt: $createdAt, ownerId: $ownerId, owner: $owner, name: $name, description: $description, isMuted: $isMuted)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatRoomCopyWith<_ChatRoom> get copyWith =>
+      __$ChatRoomCopyWithImpl<_ChatRoom>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomImpl &&
+            other is _ChatRoom &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -254,55 +207,93 @@ class _$ChatRoomImpl implements _ChatRoom {
   int get hashCode => Object.hash(
       runtimeType, id, createdAt, ownerId, owner, name, description, isMuted);
 
-  /// Create a copy of ChatRoom
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomImplCopyWith<_$ChatRoomImpl> get copyWith =>
-      __$$ChatRoomImplCopyWithImpl<_$ChatRoomImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoom(id: $id, createdAt: $createdAt, ownerId: $ownerId, owner: $owner, name: $name, description: $description, isMuted: $isMuted)';
   }
 }
 
-abstract class _ChatRoom implements ChatRoom {
-  const factory _ChatRoom(
-      {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
-      required final String ownerId,
-      required final UserLite owner,
-      required final String name,
-      required final String description,
-      final bool? isMuted}) = _$ChatRoomImpl;
+/// @nodoc
+abstract mixin class _$ChatRoomCopyWith<$Res>
+    implements $ChatRoomCopyWith<$Res> {
+  factory _$ChatRoomCopyWith(_ChatRoom value, $Res Function(_ChatRoom) _then) =
+      __$ChatRoomCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String ownerId,
+      UserLite owner,
+      String name,
+      String description,
+      bool? isMuted});
 
-  factory _ChatRoom.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomImpl.fromJson;
+  @override
+  $UserLiteCopyWith<$Res> get owner;
+}
 
-  @override
-  String get id;
-  @override
-  @DateTimeConverter()
-  DateTime get createdAt;
-  @override
-  String get ownerId;
-  @override
-  UserLite get owner;
-  @override
-  String get name;
-  @override
-  String get description;
-  @override
-  bool? get isMuted;
+/// @nodoc
+class __$ChatRoomCopyWithImpl<$Res> implements _$ChatRoomCopyWith<$Res> {
+  __$ChatRoomCopyWithImpl(this._self, this._then);
+
+  final _ChatRoom _self;
+  final $Res Function(_ChatRoom) _then;
 
   /// Create a copy of ChatRoom
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomImplCopyWith<_$ChatRoomImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? ownerId = null,
+    Object? owner = null,
+    Object? name = null,
+    Object? description = null,
+    Object? isMuted = freezed,
+  }) {
+    return _then(_ChatRoom(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      ownerId: null == ownerId
+          ? _self.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      owner: null == owner
+          ? _self.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as UserLite,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      isMuted: freezed == isMuted
+          ? _self.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+
+  /// Create a copy of ChatRoom
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res> get owner {
+    return $UserLiteCopyWith<$Res>(_self.owner, (value) {
+      return _then(_self.copyWith(owner: value));
+    });
+  }
 }
+
+// dart format on

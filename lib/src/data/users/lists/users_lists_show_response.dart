@@ -5,7 +5,7 @@ part 'users_lists_show_response.freezed.dart';
 part 'users_lists_show_response.g.dart';
 
 @freezed
-class UsersListsShowResponse with _$UsersListsShowResponse {
+abstract class UsersListsShowResponse with _$UsersListsShowResponse {
   const factory UsersListsShowResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

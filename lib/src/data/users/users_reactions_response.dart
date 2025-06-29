@@ -6,7 +6,7 @@ part 'users_reactions_response.freezed.dart';
 part 'users_reactions_response.g.dart';
 
 @freezed
-class UsersReactionsResponse with _$UsersReactionsResponse {
+abstract class UsersReactionsResponse with _$UsersReactionsResponse {
   const factory UsersReactionsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

@@ -6,14 +6,12 @@ part of 'clips_delete_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ClipsDeleteRequestImpl _$$ClipsDeleteRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ClipsDeleteRequestImpl(
+_ClipsDeleteRequest _$ClipsDeleteRequestFromJson(Map<String, dynamic> json) =>
+    _ClipsDeleteRequest(
       clipId: json['clipId'] as String,
     );
 
-Map<String, dynamic> _$$ClipsDeleteRequestImplToJson(
-        _$ClipsDeleteRequestImpl instance) =>
+Map<String, dynamic> _$ClipsDeleteRequestToJson(_ClipsDeleteRequest instance) =>
     <String, dynamic>{
       'clipId': instance.clipId,
     };

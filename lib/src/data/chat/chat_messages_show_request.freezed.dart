@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,125 +10,29 @@ part of 'chat_messages_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatMessagesShowRequest _$ChatMessagesShowRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatMessagesShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatMessagesShowRequest {
-  String get messageId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatMessagesShowRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get messageId;
 
   /// Create a copy of ChatMessagesShowRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatMessagesShowRequestCopyWith<ChatMessagesShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ChatMessagesShowRequestCopyWithImpl<ChatMessagesShowRequest>(
+          this as ChatMessagesShowRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatMessagesShowRequestCopyWith<$Res> {
-  factory $ChatMessagesShowRequestCopyWith(ChatMessagesShowRequest value,
-          $Res Function(ChatMessagesShowRequest) then) =
-      _$ChatMessagesShowRequestCopyWithImpl<$Res, ChatMessagesShowRequest>;
-  @useResult
-  $Res call({String messageId});
-}
-
-/// @nodoc
-class _$ChatMessagesShowRequestCopyWithImpl<$Res,
-        $Val extends ChatMessagesShowRequest>
-    implements $ChatMessagesShowRequestCopyWith<$Res> {
-  _$ChatMessagesShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatMessagesShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? messageId = null,
-  }) {
-    return _then(_value.copyWith(
-      messageId: null == messageId
-          ? _value.messageId
-          : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatMessagesShowRequestImplCopyWith<$Res>
-    implements $ChatMessagesShowRequestCopyWith<$Res> {
-  factory _$$ChatMessagesShowRequestImplCopyWith(
-          _$ChatMessagesShowRequestImpl value,
-          $Res Function(_$ChatMessagesShowRequestImpl) then) =
-      __$$ChatMessagesShowRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String messageId});
-}
-
-/// @nodoc
-class __$$ChatMessagesShowRequestImplCopyWithImpl<$Res>
-    extends _$ChatMessagesShowRequestCopyWithImpl<$Res,
-        _$ChatMessagesShowRequestImpl>
-    implements _$$ChatMessagesShowRequestImplCopyWith<$Res> {
-  __$$ChatMessagesShowRequestImplCopyWithImpl(
-      _$ChatMessagesShowRequestImpl _value,
-      $Res Function(_$ChatMessagesShowRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatMessagesShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? messageId = null,
-  }) {
-    return _then(_$ChatMessagesShowRequestImpl(
-      messageId: null == messageId
-          ? _value.messageId
-          : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatMessagesShowRequestImpl implements _ChatMessagesShowRequest {
-  const _$ChatMessagesShowRequestImpl({required this.messageId});
-
-  factory _$ChatMessagesShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatMessagesShowRequestImplFromJson(json);
-
-  @override
-  final String messageId;
-
-  @override
-  String toString() {
-    return 'ChatMessagesShowRequest(messageId: $messageId)';
-  }
+  /// Serializes this ChatMessagesShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatMessagesShowRequestImpl &&
+            other is ChatMessagesShowRequest &&
             (identical(other.messageId, messageId) ||
                 other.messageId == messageId));
   }
@@ -136,37 +41,123 @@ class _$ChatMessagesShowRequestImpl implements _ChatMessagesShowRequest {
   @override
   int get hashCode => Object.hash(runtimeType, messageId);
 
-  /// Create a copy of ChatMessagesShowRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatMessagesShowRequestImplCopyWith<_$ChatMessagesShowRequestImpl>
-      get copyWith => __$$ChatMessagesShowRequestImplCopyWithImpl<
-          _$ChatMessagesShowRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatMessagesShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatMessagesShowRequest(messageId: $messageId)';
   }
 }
 
-abstract class _ChatMessagesShowRequest implements ChatMessagesShowRequest {
-  const factory _ChatMessagesShowRequest({required final String messageId}) =
-      _$ChatMessagesShowRequestImpl;
+/// @nodoc
+abstract mixin class $ChatMessagesShowRequestCopyWith<$Res> {
+  factory $ChatMessagesShowRequestCopyWith(ChatMessagesShowRequest value,
+          $Res Function(ChatMessagesShowRequest) _then) =
+      _$ChatMessagesShowRequestCopyWithImpl;
+  @useResult
+  $Res call({String messageId});
+}
 
-  factory _ChatMessagesShowRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatMessagesShowRequestImpl.fromJson;
+/// @nodoc
+class _$ChatMessagesShowRequestCopyWithImpl<$Res>
+    implements $ChatMessagesShowRequestCopyWith<$Res> {
+  _$ChatMessagesShowRequestCopyWithImpl(this._self, this._then);
+
+  final ChatMessagesShowRequest _self;
+  final $Res Function(ChatMessagesShowRequest) _then;
+
+  /// Create a copy of ChatMessagesShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? messageId = null,
+  }) {
+    return _then(_self.copyWith(
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatMessagesShowRequest implements ChatMessagesShowRequest {
+  const _ChatMessagesShowRequest({required this.messageId});
+  factory _ChatMessagesShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatMessagesShowRequestFromJson(json);
 
   @override
-  String get messageId;
+  final String messageId;
 
   /// Create a copy of ChatMessagesShowRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatMessagesShowRequestImplCopyWith<_$ChatMessagesShowRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatMessagesShowRequestCopyWith<_ChatMessagesShowRequest> get copyWith =>
+      __$ChatMessagesShowRequestCopyWithImpl<_ChatMessagesShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatMessagesShowRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatMessagesShowRequest &&
+            (identical(other.messageId, messageId) ||
+                other.messageId == messageId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, messageId);
+
+  @override
+  String toString() {
+    return 'ChatMessagesShowRequest(messageId: $messageId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatMessagesShowRequestCopyWith<$Res>
+    implements $ChatMessagesShowRequestCopyWith<$Res> {
+  factory _$ChatMessagesShowRequestCopyWith(_ChatMessagesShowRequest value,
+          $Res Function(_ChatMessagesShowRequest) _then) =
+      __$ChatMessagesShowRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String messageId});
+}
+
+/// @nodoc
+class __$ChatMessagesShowRequestCopyWithImpl<$Res>
+    implements _$ChatMessagesShowRequestCopyWith<$Res> {
+  __$ChatMessagesShowRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatMessagesShowRequest _self;
+  final $Res Function(_ChatMessagesShowRequest) _then;
+
+  /// Create a copy of ChatMessagesShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? messageId = null,
+  }) {
+    return _then(_ChatMessagesShowRequest(
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

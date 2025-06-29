@@ -4,7 +4,7 @@ part 'users_lists_create_from_public_request.freezed.dart';
 part 'users_lists_create_from_public_request.g.dart';
 
 @freezed
-class UsersListsCreateFromPublicRequest
+abstract class UsersListsCreateFromPublicRequest
     with _$UsersListsCreateFromPublicRequest {
   const factory UsersListsCreateFromPublicRequest({
     required String name,

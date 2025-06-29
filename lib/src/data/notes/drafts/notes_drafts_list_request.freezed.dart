@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,151 +10,31 @@ part of 'notes_drafts_list_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-NotesDraftsListRequest _$NotesDraftsListRequestFromJson(
-    Map<String, dynamic> json) {
-  return _NotesDraftsListRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotesDraftsListRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
-
-  /// Serializes this NotesDraftsListRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
   /// Create a copy of NotesDraftsListRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $NotesDraftsListRequestCopyWith<NotesDraftsListRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$NotesDraftsListRequestCopyWithImpl<NotesDraftsListRequest>(
+          this as NotesDraftsListRequest, _$identity);
 
-/// @nodoc
-abstract class $NotesDraftsListRequestCopyWith<$Res> {
-  factory $NotesDraftsListRequestCopyWith(NotesDraftsListRequest value,
-          $Res Function(NotesDraftsListRequest) then) =
-      _$NotesDraftsListRequestCopyWithImpl<$Res, NotesDraftsListRequest>;
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$NotesDraftsListRequestCopyWithImpl<$Res,
-        $Val extends NotesDraftsListRequest>
-    implements $NotesDraftsListRequestCopyWith<$Res> {
-  _$NotesDraftsListRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of NotesDraftsListRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$NotesDraftsListRequestImplCopyWith<$Res>
-    implements $NotesDraftsListRequestCopyWith<$Res> {
-  factory _$$NotesDraftsListRequestImplCopyWith(
-          _$NotesDraftsListRequestImpl value,
-          $Res Function(_$NotesDraftsListRequestImpl) then) =
-      __$$NotesDraftsListRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class __$$NotesDraftsListRequestImplCopyWithImpl<$Res>
-    extends _$NotesDraftsListRequestCopyWithImpl<$Res,
-        _$NotesDraftsListRequestImpl>
-    implements _$$NotesDraftsListRequestImplCopyWith<$Res> {
-  __$$NotesDraftsListRequestImplCopyWithImpl(
-      _$NotesDraftsListRequestImpl _value,
-      $Res Function(_$NotesDraftsListRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of NotesDraftsListRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_$NotesDraftsListRequestImpl(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$NotesDraftsListRequestImpl implements _NotesDraftsListRequest {
-  const _$NotesDraftsListRequestImpl({this.limit, this.sinceId, this.untilId});
-
-  factory _$NotesDraftsListRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotesDraftsListRequestImplFromJson(json);
-
-  @override
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-
-  @override
-  String toString() {
-    return 'NotesDraftsListRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
-  }
+  /// Serializes this NotesDraftsListRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotesDraftsListRequestImpl &&
+            other is NotesDraftsListRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
@@ -163,43 +44,148 @@ class _$NotesDraftsListRequestImpl implements _NotesDraftsListRequest {
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
 
-  /// Create a copy of NotesDraftsListRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotesDraftsListRequestImplCopyWith<_$NotesDraftsListRequestImpl>
-      get copyWith => __$$NotesDraftsListRequestImplCopyWithImpl<
-          _$NotesDraftsListRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotesDraftsListRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesDraftsListRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _NotesDraftsListRequest implements NotesDraftsListRequest {
-  const factory _NotesDraftsListRequest(
-      {final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$NotesDraftsListRequestImpl;
+/// @nodoc
+abstract mixin class $NotesDraftsListRequestCopyWith<$Res> {
+  factory $NotesDraftsListRequestCopyWith(NotesDraftsListRequest value,
+          $Res Function(NotesDraftsListRequest) _then) =
+      _$NotesDraftsListRequestCopyWithImpl;
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
 
-  factory _NotesDraftsListRequest.fromJson(Map<String, dynamic> json) =
-      _$NotesDraftsListRequestImpl.fromJson;
+/// @nodoc
+class _$NotesDraftsListRequestCopyWithImpl<$Res>
+    implements $NotesDraftsListRequestCopyWith<$Res> {
+  _$NotesDraftsListRequestCopyWithImpl(this._self, this._then);
+
+  final NotesDraftsListRequest _self;
+  final $Res Function(NotesDraftsListRequest) _then;
+
+  /// Create a copy of NotesDraftsListRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _NotesDraftsListRequest implements NotesDraftsListRequest {
+  const _NotesDraftsListRequest({this.limit, this.sinceId, this.untilId});
+  factory _NotesDraftsListRequest.fromJson(Map<String, dynamic> json) =>
+      _$NotesDraftsListRequestFromJson(json);
 
   @override
-  int? get limit;
+  final int? limit;
   @override
-  String? get sinceId;
+  final String? sinceId;
   @override
-  String? get untilId;
+  final String? untilId;
 
   /// Create a copy of NotesDraftsListRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NotesDraftsListRequestImplCopyWith<_$NotesDraftsListRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$NotesDraftsListRequestCopyWith<_NotesDraftsListRequest> get copyWith =>
+      __$NotesDraftsListRequestCopyWithImpl<_NotesDraftsListRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotesDraftsListRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _NotesDraftsListRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'NotesDraftsListRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$NotesDraftsListRequestCopyWith<$Res>
+    implements $NotesDraftsListRequestCopyWith<$Res> {
+  factory _$NotesDraftsListRequestCopyWith(_NotesDraftsListRequest value,
+          $Res Function(_NotesDraftsListRequest) _then) =
+      __$NotesDraftsListRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
+
+/// @nodoc
+class __$NotesDraftsListRequestCopyWithImpl<$Res>
+    implements _$NotesDraftsListRequestCopyWith<$Res> {
+  __$NotesDraftsListRequestCopyWithImpl(this._self, this._then);
+
+  final _NotesDraftsListRequest _self;
+  final $Res Function(_NotesDraftsListRequest) _then;
+
+  /// Create a copy of NotesDraftsListRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_NotesDraftsListRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -6,15 +6,15 @@ part of 'notes_polls_recommendation_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesPollsRecommendationRequestImpl
-    _$$NotesPollsRecommendationRequestImplFromJson(Map<String, dynamic> json) =>
-        _$NotesPollsRecommendationRequestImpl(
-          limit: json['limit'] as int?,
-          offset: json['offset'] as int?,
-        );
+_NotesPollsRecommendationRequest _$NotesPollsRecommendationRequestFromJson(
+        Map<String, dynamic> json) =>
+    _NotesPollsRecommendationRequest(
+      limit: (json['limit'] as num?)?.toInt(),
+      offset: (json['offset'] as num?)?.toInt(),
+    );
 
-Map<String, dynamic> _$$NotesPollsRecommendationRequestImplToJson(
-        _$NotesPollsRecommendationRequestImpl instance) =>
+Map<String, dynamic> _$NotesPollsRecommendationRequestToJson(
+        _NotesPollsRecommendationRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,

@@ -4,7 +4,7 @@ part 'notes_clips_request.freezed.dart';
 part 'notes_clips_request.g.dart';
 
 @freezed
-class NotesClipsRequest with _$NotesClipsRequest {
+abstract class NotesClipsRequest with _$NotesClipsRequest {
   const factory NotesClipsRequest({
     required String noteId,
   }) = _NotesClipsRequest;

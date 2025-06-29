@@ -6,9 +6,9 @@ part of 'notes_drafts_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesDraftsUpdateRequestImpl _$$NotesDraftsUpdateRequestImplFromJson(
+_NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
         Map<String, dynamic> json) =>
-    _$NotesDraftsUpdateRequestImpl(
+    _NotesDraftsUpdateRequest(
       draftId: json['draftId'] as String,
       visibility: _$JsonConverterFromJson<String, NoteVisibility>(
           json['visibility'], const NoteVisibilityJsonConverter().fromJson),
@@ -32,8 +32,8 @@ _$NotesDraftsUpdateRequestImpl _$$NotesDraftsUpdateRequestImplFromJson(
               json['poll'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$NotesDraftsUpdateRequestImplToJson(
-        _$NotesDraftsUpdateRequestImpl instance) =>
+Map<String, dynamic> _$NotesDraftsUpdateRequestToJson(
+        _NotesDraftsUpdateRequest instance) =>
     <String, dynamic>{
       'draftId': instance.draftId,
       'visibility': _$JsonConverterToJson<String, NoteVisibility>(

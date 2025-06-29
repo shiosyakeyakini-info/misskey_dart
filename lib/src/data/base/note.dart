@@ -9,7 +9,7 @@ part 'note.freezed.dart';
 part 'note.g.dart';
 
 @freezed
-class Note with _$Note {
+abstract class Note with _$Note {
   const factory Note({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -48,7 +48,7 @@ class Note with _$Note {
 }
 
 @freezed
-class NoteChannelInfo with _$NoteChannelInfo {
+abstract class NoteChannelInfo with _$NoteChannelInfo {
   const factory NoteChannelInfo({
     required String id,
     required String name,
@@ -63,7 +63,7 @@ class NoteChannelInfo with _$NoteChannelInfo {
 }
 
 @freezed
-class NotePoll with _$NotePoll {
+abstract class NotePoll with _$NotePoll {
   const factory NotePoll({
     required bool multiple,
     @DateTimeConverter() DateTime? expiresAt,
@@ -75,7 +75,7 @@ class NotePoll with _$NotePoll {
 }
 
 @freezed
-class NotePollChoice with _$NotePollChoice {
+abstract class NotePollChoice with _$NotePollChoice {
   const factory NotePollChoice({
     required String text,
     required int votes,

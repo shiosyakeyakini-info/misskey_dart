@@ -4,7 +4,7 @@ part 'stats_response.freezed.dart';
 part 'stats_response.g.dart';
 
 @freezed
-class StatsResponse with _$StatsResponse {
+abstract class StatsResponse with _$StatsResponse {
   const factory StatsResponse({
     required int notesCount,
     required int originalNotesCount,

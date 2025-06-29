@@ -5,7 +5,7 @@ part 'follow_request.freezed.dart';
 part 'follow_request.g.dart';
 
 @freezed
-class FollowRequest with _$FollowRequest {
+abstract class FollowRequest with _$FollowRequest {
   const factory FollowRequest({
     required String id,
     required UserLite followee,

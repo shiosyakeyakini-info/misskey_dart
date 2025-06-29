@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,102 +10,77 @@ part of 'users_recommendation_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersRecommendationRequest _$UsersRecommendationRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UsersRecommendationRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersRecommendationRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  int? get offset => throw _privateConstructorUsedError;
+  int? get limit;
+  int? get offset;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UsersRecommendationRequestCopyWith<UsersRecommendationRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsersRecommendationRequestCopyWith<$Res> {
-  factory $UsersRecommendationRequestCopyWith(UsersRecommendationRequest value,
-          $Res Function(UsersRecommendationRequest) then) =
-      _$UsersRecommendationRequestCopyWithImpl<$Res,
-          UsersRecommendationRequest>;
-  @useResult
-  $Res call({int? limit, int? offset});
-}
-
-/// @nodoc
-class _$UsersRecommendationRequestCopyWithImpl<$Res,
-        $Val extends UsersRecommendationRequest>
-    implements $UsersRecommendationRequestCopyWith<$Res> {
-  _$UsersRecommendationRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UsersRecommendationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UsersRecommendationRequestCopyWith<UsersRecommendationRequest>
+      get copyWith =>
+          _$UsersRecommendationRequestCopyWithImpl<UsersRecommendationRequest>(
+              this as UsersRecommendationRequest, _$identity);
+
+  /// Serializes this UsersRecommendationRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? offset = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _value.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersRecommendationRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.offset, offset) || other.offset == offset));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, offset);
+
+  @override
+  String toString() {
+    return 'UsersRecommendationRequest(limit: $limit, offset: $offset)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersRecommendationRequestImplCopyWith<$Res>
-    implements $UsersRecommendationRequestCopyWith<$Res> {
-  factory _$$UsersRecommendationRequestImplCopyWith(
-          _$UsersRecommendationRequestImpl value,
-          $Res Function(_$UsersRecommendationRequestImpl) then) =
-      __$$UsersRecommendationRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersRecommendationRequestCopyWith<$Res> {
+  factory $UsersRecommendationRequestCopyWith(UsersRecommendationRequest value,
+          $Res Function(UsersRecommendationRequest) _then) =
+      _$UsersRecommendationRequestCopyWithImpl;
   @useResult
   $Res call({int? limit, int? offset});
 }
 
 /// @nodoc
-class __$$UsersRecommendationRequestImplCopyWithImpl<$Res>
-    extends _$UsersRecommendationRequestCopyWithImpl<$Res,
-        _$UsersRecommendationRequestImpl>
-    implements _$$UsersRecommendationRequestImplCopyWith<$Res> {
-  __$$UsersRecommendationRequestImplCopyWithImpl(
-      _$UsersRecommendationRequestImpl _value,
-      $Res Function(_$UsersRecommendationRequestImpl) _then)
-      : super(_value, _then);
+class _$UsersRecommendationRequestCopyWithImpl<$Res>
+    implements $UsersRecommendationRequestCopyWith<$Res> {
+  _$UsersRecommendationRequestCopyWithImpl(this._self, this._then);
 
+  final UsersRecommendationRequest _self;
+  final $Res Function(UsersRecommendationRequest) _then;
+
+  /// Create a copy of UsersRecommendationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? limit = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_$UsersRecommendationRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       offset: freezed == offset
-          ? _value.offset
+          ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -113,65 +89,90 @@ class __$$UsersRecommendationRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersRecommendationRequestImpl implements _UsersRecommendationRequest {
-  const _$UsersRecommendationRequestImpl({this.limit, this.offset});
-
-  factory _$UsersRecommendationRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$UsersRecommendationRequestImplFromJson(json);
+class _UsersRecommendationRequest implements UsersRecommendationRequest {
+  const _UsersRecommendationRequest({this.limit, this.offset});
+  factory _UsersRecommendationRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersRecommendationRequestFromJson(json);
 
   @override
   final int? limit;
   @override
   final int? offset;
 
+  /// Create a copy of UsersRecommendationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersRecommendationRequest(limit: $limit, offset: $offset)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersRecommendationRequestCopyWith<_UsersRecommendationRequest>
+      get copyWith => __$UsersRecommendationRequestCopyWithImpl<
+          _UsersRecommendationRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersRecommendationRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersRecommendationRequestImpl &&
+            other is _UsersRecommendationRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, offset);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersRecommendationRequestImplCopyWith<_$UsersRecommendationRequestImpl>
-      get copyWith => __$$UsersRecommendationRequestImplCopyWithImpl<
-          _$UsersRecommendationRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersRecommendationRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersRecommendationRequest(limit: $limit, offset: $offset)';
   }
 }
 
-abstract class _UsersRecommendationRequest
-    implements UsersRecommendationRequest {
-  const factory _UsersRecommendationRequest(
-      {final int? limit, final int? offset}) = _$UsersRecommendationRequestImpl;
-
-  factory _UsersRecommendationRequest.fromJson(Map<String, dynamic> json) =
-      _$UsersRecommendationRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersRecommendationRequestCopyWith<$Res>
+    implements $UsersRecommendationRequestCopyWith<$Res> {
+  factory _$UsersRecommendationRequestCopyWith(
+          _UsersRecommendationRequest value,
+          $Res Function(_UsersRecommendationRequest) _then) =
+      __$UsersRecommendationRequestCopyWithImpl;
   @override
-  int? get limit;
-  @override
-  int? get offset;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersRecommendationRequestImplCopyWith<_$UsersRecommendationRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int? limit, int? offset});
 }
+
+/// @nodoc
+class __$UsersRecommendationRequestCopyWithImpl<$Res>
+    implements _$UsersRecommendationRequestCopyWith<$Res> {
+  __$UsersRecommendationRequestCopyWithImpl(this._self, this._then);
+
+  final _UsersRecommendationRequest _self;
+  final $Res Function(_UsersRecommendationRequest) _then;
+
+  /// Create a copy of UsersRecommendationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? offset = freezed,
+  }) {
+    return _then(_UsersRecommendationRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      offset: freezed == offset
+          ? _self.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+// dart format on

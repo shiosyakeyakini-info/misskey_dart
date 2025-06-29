@@ -6,9 +6,9 @@ part of 'i_notifications_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
+_INotificationsResponse _$INotificationsResponseFromJson(
         Map<String, dynamic> json) =>
-    _$INotificationsResponseImpl(
+    _INotificationsResponse(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -50,8 +50,8 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$INotificationsResponseImplToJson(
-        _$INotificationsResponseImpl instance) =>
+Map<String, dynamic> _$INotificationsResponseToJson(
+        _INotificationsResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
@@ -122,15 +122,15 @@ const _$UserExportableEntitiesEnumMap = {
   UserExportableEntities.userList: 'userList',
 };
 
-_$INotificationsReactionImpl _$$INotificationsReactionImplFromJson(
+_INotificationsReaction _$INotificationsReactionFromJson(
         Map<String, dynamic> json) =>
-    _$INotificationsReactionImpl(
+    _INotificationsReaction(
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       reaction: json['reaction'] as String,
     );
 
-Map<String, dynamic> _$$INotificationsReactionImplToJson(
-        _$INotificationsReactionImpl instance) =>
+Map<String, dynamic> _$INotificationsReactionToJson(
+        _INotificationsReaction instance) =>
     <String, dynamic>{
       'user': instance.user.toJson(),
       'reaction': instance.reaction,

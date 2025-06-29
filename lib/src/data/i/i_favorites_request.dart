@@ -3,7 +3,7 @@ part 'i_favorites_request.freezed.dart';
 part 'i_favorites_request.g.dart';
 
 @freezed
-class IFavoritesRequest with _$IFavoritesRequest {
+abstract class IFavoritesRequest with _$IFavoritesRequest {
   const factory IFavoritesRequest({
     @Assert('limit > 0') int? limit,
     String? sinceId,

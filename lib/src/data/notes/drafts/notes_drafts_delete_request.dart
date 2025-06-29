@@ -4,7 +4,7 @@ part 'notes_drafts_delete_request.freezed.dart';
 part 'notes_drafts_delete_request.g.dart';
 
 @freezed
-class NotesDraftsDeleteRequest with _$NotesDraftsDeleteRequest {
+abstract class NotesDraftsDeleteRequest with _$NotesDraftsDeleteRequest {
   const factory NotesDraftsDeleteRequest({
     required String draftId,
   }) = _NotesDraftsDeleteRequest;

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,141 +10,31 @@ part of 'chat_messages_unreact_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatMessagesUnreactRequest _$ChatMessagesUnreactRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatMessagesUnreactRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatMessagesUnreactRequest {
-  String get messageId => throw _privateConstructorUsedError;
-  String get reaction => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatMessagesUnreactRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get messageId;
+  String get reaction;
 
   /// Create a copy of ChatMessagesUnreactRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatMessagesUnreactRequestCopyWith<ChatMessagesUnreactRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith =>
+          _$ChatMessagesUnreactRequestCopyWithImpl<ChatMessagesUnreactRequest>(
+              this as ChatMessagesUnreactRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatMessagesUnreactRequestCopyWith<$Res> {
-  factory $ChatMessagesUnreactRequestCopyWith(ChatMessagesUnreactRequest value,
-          $Res Function(ChatMessagesUnreactRequest) then) =
-      _$ChatMessagesUnreactRequestCopyWithImpl<$Res,
-          ChatMessagesUnreactRequest>;
-  @useResult
-  $Res call({String messageId, String reaction});
-}
-
-/// @nodoc
-class _$ChatMessagesUnreactRequestCopyWithImpl<$Res,
-        $Val extends ChatMessagesUnreactRequest>
-    implements $ChatMessagesUnreactRequestCopyWith<$Res> {
-  _$ChatMessagesUnreactRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatMessagesUnreactRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? messageId = null,
-    Object? reaction = null,
-  }) {
-    return _then(_value.copyWith(
-      messageId: null == messageId
-          ? _value.messageId
-          : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
-      reaction: null == reaction
-          ? _value.reaction
-          : reaction // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatMessagesUnreactRequestImplCopyWith<$Res>
-    implements $ChatMessagesUnreactRequestCopyWith<$Res> {
-  factory _$$ChatMessagesUnreactRequestImplCopyWith(
-          _$ChatMessagesUnreactRequestImpl value,
-          $Res Function(_$ChatMessagesUnreactRequestImpl) then) =
-      __$$ChatMessagesUnreactRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String messageId, String reaction});
-}
-
-/// @nodoc
-class __$$ChatMessagesUnreactRequestImplCopyWithImpl<$Res>
-    extends _$ChatMessagesUnreactRequestCopyWithImpl<$Res,
-        _$ChatMessagesUnreactRequestImpl>
-    implements _$$ChatMessagesUnreactRequestImplCopyWith<$Res> {
-  __$$ChatMessagesUnreactRequestImplCopyWithImpl(
-      _$ChatMessagesUnreactRequestImpl _value,
-      $Res Function(_$ChatMessagesUnreactRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatMessagesUnreactRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? messageId = null,
-    Object? reaction = null,
-  }) {
-    return _then(_$ChatMessagesUnreactRequestImpl(
-      messageId: null == messageId
-          ? _value.messageId
-          : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
-      reaction: null == reaction
-          ? _value.reaction
-          : reaction // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatMessagesUnreactRequestImpl implements _ChatMessagesUnreactRequest {
-  const _$ChatMessagesUnreactRequestImpl(
-      {required this.messageId, required this.reaction});
-
-  factory _$ChatMessagesUnreactRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ChatMessagesUnreactRequestImplFromJson(json);
-
-  @override
-  final String messageId;
-  @override
-  final String reaction;
-
-  @override
-  String toString() {
-    return 'ChatMessagesUnreactRequest(messageId: $messageId, reaction: $reaction)';
-  }
+  /// Serializes this ChatMessagesUnreactRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatMessagesUnreactRequestImpl &&
+            other is ChatMessagesUnreactRequest &&
             (identical(other.messageId, messageId) ||
                 other.messageId == messageId) &&
             (identical(other.reaction, reaction) ||
@@ -154,41 +45,139 @@ class _$ChatMessagesUnreactRequestImpl implements _ChatMessagesUnreactRequest {
   @override
   int get hashCode => Object.hash(runtimeType, messageId, reaction);
 
-  /// Create a copy of ChatMessagesUnreactRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatMessagesUnreactRequestImplCopyWith<_$ChatMessagesUnreactRequestImpl>
-      get copyWith => __$$ChatMessagesUnreactRequestImplCopyWithImpl<
-          _$ChatMessagesUnreactRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatMessagesUnreactRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatMessagesUnreactRequest(messageId: $messageId, reaction: $reaction)';
   }
 }
 
-abstract class _ChatMessagesUnreactRequest
-    implements ChatMessagesUnreactRequest {
-  const factory _ChatMessagesUnreactRequest(
-      {required final String messageId,
-      required final String reaction}) = _$ChatMessagesUnreactRequestImpl;
+/// @nodoc
+abstract mixin class $ChatMessagesUnreactRequestCopyWith<$Res> {
+  factory $ChatMessagesUnreactRequestCopyWith(ChatMessagesUnreactRequest value,
+          $Res Function(ChatMessagesUnreactRequest) _then) =
+      _$ChatMessagesUnreactRequestCopyWithImpl;
+  @useResult
+  $Res call({String messageId, String reaction});
+}
 
-  factory _ChatMessagesUnreactRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatMessagesUnreactRequestImpl.fromJson;
+/// @nodoc
+class _$ChatMessagesUnreactRequestCopyWithImpl<$Res>
+    implements $ChatMessagesUnreactRequestCopyWith<$Res> {
+  _$ChatMessagesUnreactRequestCopyWithImpl(this._self, this._then);
+
+  final ChatMessagesUnreactRequest _self;
+  final $Res Function(ChatMessagesUnreactRequest) _then;
+
+  /// Create a copy of ChatMessagesUnreactRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? messageId = null,
+    Object? reaction = null,
+  }) {
+    return _then(_self.copyWith(
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatMessagesUnreactRequest implements ChatMessagesUnreactRequest {
+  const _ChatMessagesUnreactRequest(
+      {required this.messageId, required this.reaction});
+  factory _ChatMessagesUnreactRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatMessagesUnreactRequestFromJson(json);
 
   @override
-  String get messageId;
+  final String messageId;
   @override
-  String get reaction;
+  final String reaction;
 
   /// Create a copy of ChatMessagesUnreactRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatMessagesUnreactRequestImplCopyWith<_$ChatMessagesUnreactRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatMessagesUnreactRequestCopyWith<_ChatMessagesUnreactRequest>
+      get copyWith => __$ChatMessagesUnreactRequestCopyWithImpl<
+          _ChatMessagesUnreactRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatMessagesUnreactRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatMessagesUnreactRequest &&
+            (identical(other.messageId, messageId) ||
+                other.messageId == messageId) &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, messageId, reaction);
+
+  @override
+  String toString() {
+    return 'ChatMessagesUnreactRequest(messageId: $messageId, reaction: $reaction)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatMessagesUnreactRequestCopyWith<$Res>
+    implements $ChatMessagesUnreactRequestCopyWith<$Res> {
+  factory _$ChatMessagesUnreactRequestCopyWith(
+          _ChatMessagesUnreactRequest value,
+          $Res Function(_ChatMessagesUnreactRequest) _then) =
+      __$ChatMessagesUnreactRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String messageId, String reaction});
+}
+
+/// @nodoc
+class __$ChatMessagesUnreactRequestCopyWithImpl<$Res>
+    implements _$ChatMessagesUnreactRequestCopyWith<$Res> {
+  __$ChatMessagesUnreactRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatMessagesUnreactRequest _self;
+  final $Res Function(_ChatMessagesUnreactRequest) _then;
+
+  /// Create a copy of ChatMessagesUnreactRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? messageId = null,
+    Object? reaction = null,
+  }) {
+    return _then(_ChatMessagesUnreactRequest(
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

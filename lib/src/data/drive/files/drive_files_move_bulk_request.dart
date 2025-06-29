@@ -4,7 +4,7 @@ part 'drive_files_move_bulk_request.freezed.dart';
 part 'drive_files_move_bulk_request.g.dart';
 
 @freezed
-class DriveFilesMoveBulkRequest with _$DriveFilesMoveBulkRequest {
+abstract class DriveFilesMoveBulkRequest with _$DriveFilesMoveBulkRequest {
   const factory DriveFilesMoveBulkRequest({
     required List<String> fileIds,
     String? folderId,

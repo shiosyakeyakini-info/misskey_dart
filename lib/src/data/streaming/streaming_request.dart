@@ -6,7 +6,7 @@ part 'streaming_request.freezed.dart';
 part 'streaming_request.g.dart';
 
 @freezed
-class StreamingRequest with _$StreamingRequest {
+abstract class StreamingRequest with _$StreamingRequest {
   const factory StreamingRequest({
     @StreamingRequestTypeJsonConverter() required StreamingRequestType type,
     required StreamingRequestBody body,
@@ -17,7 +17,7 @@ class StreamingRequest with _$StreamingRequest {
 }
 
 @freezed
-class StreamingRequestBody with _$StreamingRequestBody {
+abstract class StreamingRequestBody with _$StreamingRequestBody {
   const factory StreamingRequestBody({
     Channel? channel,
     required String id,

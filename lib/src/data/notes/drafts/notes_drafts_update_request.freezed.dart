@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,49 +10,92 @@ part of 'notes_drafts_update_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
-    Map<String, dynamic> json) {
-  return _NotesDraftsUpdateRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotesDraftsUpdateRequest {
-  String get draftId => throw _privateConstructorUsedError;
+  String get draftId;
   @NoteVisibilityJsonConverter()
-  NoteVisibility? get visibility => throw _privateConstructorUsedError;
-  List<String>? get visibleUserIds => throw _privateConstructorUsedError;
-  String? get cw => throw _privateConstructorUsedError;
-  String? get hashtag => throw _privateConstructorUsedError;
-  bool? get localOnly => throw _privateConstructorUsedError;
-  ReactionAcceptance? get reactionAcceptance =>
-      throw _privateConstructorUsedError;
-  String? get replyId => throw _privateConstructorUsedError;
-  String? get renoteId => throw _privateConstructorUsedError;
-  String? get channelId => throw _privateConstructorUsedError;
-  String? get text => throw _privateConstructorUsedError;
-  List<String>? get fileIds => throw _privateConstructorUsedError;
-  NotesCreatePollRequest? get poll => throw _privateConstructorUsedError;
-
-  /// Serializes this NotesDraftsUpdateRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  NoteVisibility? get visibility;
+  List<String>? get visibleUserIds;
+  String? get cw;
+  String? get hashtag;
+  bool? get localOnly;
+  ReactionAcceptance? get reactionAcceptance;
+  String? get replyId;
+  String? get renoteId;
+  String? get channelId;
+  String? get text;
+  List<String>? get fileIds;
+  NotesCreatePollRequest? get poll;
 
   /// Create a copy of NotesDraftsUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $NotesDraftsUpdateRequestCopyWith<NotesDraftsUpdateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$NotesDraftsUpdateRequestCopyWithImpl<NotesDraftsUpdateRequest>(
+          this as NotesDraftsUpdateRequest, _$identity);
+
+  /// Serializes this NotesDraftsUpdateRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NotesDraftsUpdateRequest &&
+            (identical(other.draftId, draftId) || other.draftId == draftId) &&
+            (identical(other.visibility, visibility) ||
+                other.visibility == visibility) &&
+            const DeepCollectionEquality()
+                .equals(other.visibleUserIds, visibleUserIds) &&
+            (identical(other.cw, cw) || other.cw == cw) &&
+            (identical(other.hashtag, hashtag) || other.hashtag == hashtag) &&
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly) &&
+            (identical(other.reactionAcceptance, reactionAcceptance) ||
+                other.reactionAcceptance == reactionAcceptance) &&
+            (identical(other.replyId, replyId) || other.replyId == replyId) &&
+            (identical(other.renoteId, renoteId) ||
+                other.renoteId == renoteId) &&
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId) &&
+            (identical(other.text, text) || other.text == text) &&
+            const DeepCollectionEquality().equals(other.fileIds, fileIds) &&
+            (identical(other.poll, poll) || other.poll == poll));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      draftId,
+      visibility,
+      const DeepCollectionEquality().hash(visibleUserIds),
+      cw,
+      hashtag,
+      localOnly,
+      reactionAcceptance,
+      replyId,
+      renoteId,
+      channelId,
+      text,
+      const DeepCollectionEquality().hash(fileIds),
+      poll);
+
+  @override
+  String toString() {
+    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll)';
+  }
 }
 
 /// @nodoc
-abstract class $NotesDraftsUpdateRequestCopyWith<$Res> {
+abstract mixin class $NotesDraftsUpdateRequestCopyWith<$Res> {
   factory $NotesDraftsUpdateRequestCopyWith(NotesDraftsUpdateRequest value,
-          $Res Function(NotesDraftsUpdateRequest) then) =
-      _$NotesDraftsUpdateRequestCopyWithImpl<$Res, NotesDraftsUpdateRequest>;
+          $Res Function(NotesDraftsUpdateRequest) _then) =
+      _$NotesDraftsUpdateRequestCopyWithImpl;
   @useResult
   $Res call(
       {String draftId,
@@ -72,15 +116,12 @@ abstract class $NotesDraftsUpdateRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotesDraftsUpdateRequestCopyWithImpl<$Res,
-        $Val extends NotesDraftsUpdateRequest>
+class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
     implements $NotesDraftsUpdateRequestCopyWith<$Res> {
-  _$NotesDraftsUpdateRequestCopyWithImpl(this._value, this._then);
+  _$NotesDraftsUpdateRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final NotesDraftsUpdateRequest _self;
+  final $Res Function(NotesDraftsUpdateRequest) _then;
 
   /// Create a copy of NotesDraftsUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -101,60 +142,60 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res,
     Object? fileIds = freezed,
     Object? poll = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       draftId: null == draftId
-          ? _value.draftId
+          ? _self.draftId
           : draftId // ignore: cast_nullable_to_non_nullable
               as String,
       visibility: freezed == visibility
-          ? _value.visibility
+          ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
-          ? _value.visibleUserIds
+          ? _self.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       cw: freezed == cw
-          ? _value.cw
+          ? _self.cw
           : cw // ignore: cast_nullable_to_non_nullable
               as String?,
       hashtag: freezed == hashtag
-          ? _value.hashtag
+          ? _self.hashtag
           : hashtag // ignore: cast_nullable_to_non_nullable
               as String?,
       localOnly: freezed == localOnly
-          ? _value.localOnly
+          ? _self.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
       reactionAcceptance: freezed == reactionAcceptance
-          ? _value.reactionAcceptance
+          ? _self.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
               as ReactionAcceptance?,
       replyId: freezed == replyId
-          ? _value.replyId
+          ? _self.replyId
           : replyId // ignore: cast_nullable_to_non_nullable
               as String?,
       renoteId: freezed == renoteId
-          ? _value.renoteId
+          ? _self.renoteId
           : renoteId // ignore: cast_nullable_to_non_nullable
               as String?,
       channelId: freezed == channelId
-          ? _value.channelId
+          ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
       text: freezed == text
-          ? _value.text
+          ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
       fileIds: freezed == fileIds
-          ? _value.fileIds
+          ? _self.fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       poll: freezed == poll
-          ? _value.poll
+          ? _self.poll
           : poll // ignore: cast_nullable_to_non_nullable
               as NotesCreatePollRequest?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of NotesDraftsUpdateRequest
@@ -162,134 +203,20 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $NotesCreatePollRequestCopyWith<$Res>? get poll {
-    if (_value.poll == null) {
+    if (_self.poll == null) {
       return null;
     }
 
-    return $NotesCreatePollRequestCopyWith<$Res>(_value.poll!, (value) {
-      return _then(_value.copyWith(poll: value) as $Val);
+    return $NotesCreatePollRequestCopyWith<$Res>(_self.poll!, (value) {
+      return _then(_self.copyWith(poll: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$NotesDraftsUpdateRequestImplCopyWith<$Res>
-    implements $NotesDraftsUpdateRequestCopyWith<$Res> {
-  factory _$$NotesDraftsUpdateRequestImplCopyWith(
-          _$NotesDraftsUpdateRequestImpl value,
-          $Res Function(_$NotesDraftsUpdateRequestImpl) then) =
-      __$$NotesDraftsUpdateRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String draftId,
-      @NoteVisibilityJsonConverter() NoteVisibility? visibility,
-      List<String>? visibleUserIds,
-      String? cw,
-      String? hashtag,
-      bool? localOnly,
-      ReactionAcceptance? reactionAcceptance,
-      String? replyId,
-      String? renoteId,
-      String? channelId,
-      String? text,
-      List<String>? fileIds,
-      NotesCreatePollRequest? poll});
-
-  @override
-  $NotesCreatePollRequestCopyWith<$Res>? get poll;
-}
-
-/// @nodoc
-class __$$NotesDraftsUpdateRequestImplCopyWithImpl<$Res>
-    extends _$NotesDraftsUpdateRequestCopyWithImpl<$Res,
-        _$NotesDraftsUpdateRequestImpl>
-    implements _$$NotesDraftsUpdateRequestImplCopyWith<$Res> {
-  __$$NotesDraftsUpdateRequestImplCopyWithImpl(
-      _$NotesDraftsUpdateRequestImpl _value,
-      $Res Function(_$NotesDraftsUpdateRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of NotesDraftsUpdateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? draftId = null,
-    Object? visibility = freezed,
-    Object? visibleUserIds = freezed,
-    Object? cw = freezed,
-    Object? hashtag = freezed,
-    Object? localOnly = freezed,
-    Object? reactionAcceptance = freezed,
-    Object? replyId = freezed,
-    Object? renoteId = freezed,
-    Object? channelId = freezed,
-    Object? text = freezed,
-    Object? fileIds = freezed,
-    Object? poll = freezed,
-  }) {
-    return _then(_$NotesDraftsUpdateRequestImpl(
-      draftId: null == draftId
-          ? _value.draftId
-          : draftId // ignore: cast_nullable_to_non_nullable
-              as String,
-      visibility: freezed == visibility
-          ? _value.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
-      visibleUserIds: freezed == visibleUserIds
-          ? _value._visibleUserIds
-          : visibleUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      cw: freezed == cw
-          ? _value.cw
-          : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hashtag: freezed == hashtag
-          ? _value.hashtag
-          : hashtag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      localOnly: freezed == localOnly
-          ? _value.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      reactionAcceptance: freezed == reactionAcceptance
-          ? _value.reactionAcceptance
-          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-              as ReactionAcceptance?,
-      replyId: freezed == replyId
-          ? _value.replyId
-          : replyId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      renoteId: freezed == renoteId
-          ? _value.renoteId
-          : renoteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _value.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      text: freezed == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fileIds: freezed == fileIds
-          ? _value._fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      poll: freezed == poll
-          ? _value.poll
-          : poll // ignore: cast_nullable_to_non_nullable
-              as NotesCreatePollRequest?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$NotesDraftsUpdateRequestImpl implements _NotesDraftsUpdateRequest {
-  const _$NotesDraftsUpdateRequestImpl(
+class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
+  const _NotesDraftsUpdateRequest(
       {required this.draftId,
       @NoteVisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
@@ -305,9 +232,8 @@ class _$NotesDraftsUpdateRequestImpl implements _NotesDraftsUpdateRequest {
       this.poll})
       : _visibleUserIds = visibleUserIds,
         _fileIds = fileIds;
-
-  factory _$NotesDraftsUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotesDraftsUpdateRequestImplFromJson(json);
+  factory _NotesDraftsUpdateRequest.fromJson(Map<String, dynamic> json) =>
+      _$NotesDraftsUpdateRequestFromJson(json);
 
   @override
   final String draftId;
@@ -353,16 +279,27 @@ class _$NotesDraftsUpdateRequestImpl implements _NotesDraftsUpdateRequest {
   @override
   final NotesCreatePollRequest? poll;
 
+  /// Create a copy of NotesDraftsUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotesDraftsUpdateRequestCopyWith<_NotesDraftsUpdateRequest> get copyWith =>
+      __$NotesDraftsUpdateRequestCopyWithImpl<_NotesDraftsUpdateRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotesDraftsUpdateRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotesDraftsUpdateRequestImpl &&
+            other is _NotesDraftsUpdateRequest &&
             (identical(other.draftId, draftId) || other.draftId == draftId) &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility) &&
@@ -402,74 +339,135 @@ class _$NotesDraftsUpdateRequestImpl implements _NotesDraftsUpdateRequest {
       const DeepCollectionEquality().hash(_fileIds),
       poll);
 
-  /// Create a copy of NotesDraftsUpdateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotesDraftsUpdateRequestImplCopyWith<_$NotesDraftsUpdateRequestImpl>
-      get copyWith => __$$NotesDraftsUpdateRequestImplCopyWithImpl<
-          _$NotesDraftsUpdateRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotesDraftsUpdateRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll)';
   }
 }
 
-abstract class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
-  const factory _NotesDraftsUpdateRequest(
-      {required final String draftId,
-      @NoteVisibilityJsonConverter() final NoteVisibility? visibility,
-      final List<String>? visibleUserIds,
-      final String? cw,
-      final String? hashtag,
-      final bool? localOnly,
-      final ReactionAcceptance? reactionAcceptance,
-      final String? replyId,
-      final String? renoteId,
-      final String? channelId,
-      final String? text,
-      final List<String>? fileIds,
-      final NotesCreatePollRequest? poll}) = _$NotesDraftsUpdateRequestImpl;
+/// @nodoc
+abstract mixin class _$NotesDraftsUpdateRequestCopyWith<$Res>
+    implements $NotesDraftsUpdateRequestCopyWith<$Res> {
+  factory _$NotesDraftsUpdateRequestCopyWith(_NotesDraftsUpdateRequest value,
+          $Res Function(_NotesDraftsUpdateRequest) _then) =
+      __$NotesDraftsUpdateRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String draftId,
+      @NoteVisibilityJsonConverter() NoteVisibility? visibility,
+      List<String>? visibleUserIds,
+      String? cw,
+      String? hashtag,
+      bool? localOnly,
+      ReactionAcceptance? reactionAcceptance,
+      String? replyId,
+      String? renoteId,
+      String? channelId,
+      String? text,
+      List<String>? fileIds,
+      NotesCreatePollRequest? poll});
 
-  factory _NotesDraftsUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$NotesDraftsUpdateRequestImpl.fromJson;
+  @override
+  $NotesCreatePollRequestCopyWith<$Res>? get poll;
+}
 
-  @override
-  String get draftId;
-  @override
-  @NoteVisibilityJsonConverter()
-  NoteVisibility? get visibility;
-  @override
-  List<String>? get visibleUserIds;
-  @override
-  String? get cw;
-  @override
-  String? get hashtag;
-  @override
-  bool? get localOnly;
-  @override
-  ReactionAcceptance? get reactionAcceptance;
-  @override
-  String? get replyId;
-  @override
-  String? get renoteId;
-  @override
-  String? get channelId;
-  @override
-  String? get text;
-  @override
-  List<String>? get fileIds;
-  @override
-  NotesCreatePollRequest? get poll;
+/// @nodoc
+class __$NotesDraftsUpdateRequestCopyWithImpl<$Res>
+    implements _$NotesDraftsUpdateRequestCopyWith<$Res> {
+  __$NotesDraftsUpdateRequestCopyWithImpl(this._self, this._then);
+
+  final _NotesDraftsUpdateRequest _self;
+  final $Res Function(_NotesDraftsUpdateRequest) _then;
 
   /// Create a copy of NotesDraftsUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NotesDraftsUpdateRequestImplCopyWith<_$NotesDraftsUpdateRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? draftId = null,
+    Object? visibility = freezed,
+    Object? visibleUserIds = freezed,
+    Object? cw = freezed,
+    Object? hashtag = freezed,
+    Object? localOnly = freezed,
+    Object? reactionAcceptance = freezed,
+    Object? replyId = freezed,
+    Object? renoteId = freezed,
+    Object? channelId = freezed,
+    Object? text = freezed,
+    Object? fileIds = freezed,
+    Object? poll = freezed,
+  }) {
+    return _then(_NotesDraftsUpdateRequest(
+      draftId: null == draftId
+          ? _self.draftId
+          : draftId // ignore: cast_nullable_to_non_nullable
+              as String,
+      visibility: freezed == visibility
+          ? _self.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as NoteVisibility?,
+      visibleUserIds: freezed == visibleUserIds
+          ? _self._visibleUserIds
+          : visibleUserIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      cw: freezed == cw
+          ? _self.cw
+          : cw // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hashtag: freezed == hashtag
+          ? _self.hashtag
+          : hashtag // ignore: cast_nullable_to_non_nullable
+              as String?,
+      localOnly: freezed == localOnly
+          ? _self.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      reactionAcceptance: freezed == reactionAcceptance
+          ? _self.reactionAcceptance
+          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+              as ReactionAcceptance?,
+      replyId: freezed == replyId
+          ? _self.replyId
+          : replyId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      renoteId: freezed == renoteId
+          ? _self.renoteId
+          : renoteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      channelId: freezed == channelId
+          ? _self.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fileIds: freezed == fileIds
+          ? _self._fileIds
+          : fileIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      poll: freezed == poll
+          ? _self.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as NotesCreatePollRequest?,
+    ));
+  }
+
+  /// Create a copy of NotesDraftsUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotesCreatePollRequestCopyWith<$Res>? get poll {
+    if (_self.poll == null) {
+      return null;
+    }
+
+    return $NotesCreatePollRequestCopyWith<$Res>(_self.poll!, (value) {
+      return _then(_self.copyWith(poll: value));
+    });
+  }
 }
+
+// dart format on

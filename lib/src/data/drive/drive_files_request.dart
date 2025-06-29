@@ -4,7 +4,7 @@ part 'drive_files_request.freezed.dart';
 part 'drive_files_request.g.dart';
 
 @freezed
-class DriveFilesRequest with _$DriveFilesRequest {
+abstract class DriveFilesRequest with _$DriveFilesRequest {
   const factory DriveFilesRequest({
     int? limit,
     String? sinceId,

@@ -7,7 +7,7 @@ part 'notes_create_request.freezed.dart';
 part 'notes_create_request.g.dart';
 
 @freezed
-class NotesCreateRequest with _$NotesCreateRequest {
+abstract class NotesCreateRequest with _$NotesCreateRequest {
   const factory NotesCreateRequest({
     /// ノートの公開範囲。
     @NoteVisibilityJsonConverter() NoteVisibility? visibility,

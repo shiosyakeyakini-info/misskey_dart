@@ -4,7 +4,7 @@ part 'chat_rooms_unfavorite_request.freezed.dart';
 part 'chat_rooms_unfavorite_request.g.dart';
 
 @freezed
-class ChatRoomsUnfavoriteRequest with _$ChatRoomsUnfavoriteRequest {
+abstract class ChatRoomsUnfavoriteRequest with _$ChatRoomsUnfavoriteRequest {
   const factory ChatRoomsUnfavoriteRequest({
     required String roomId,
   }) = _ChatRoomsUnfavoriteRequest;

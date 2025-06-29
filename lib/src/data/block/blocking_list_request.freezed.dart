@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,65 @@ part of 'blocking_list_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-BlockingListRequest _$BlockingListRequestFromJson(Map<String, dynamic> json) {
-  return _BlockingListRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BlockingListRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BlockingListRequestCopyWith<BlockingListRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BlockingListRequestCopyWith<$Res> {
-  factory $BlockingListRequestCopyWith(
-          BlockingListRequest value, $Res Function(BlockingListRequest) then) =
-      _$BlockingListRequestCopyWithImpl<$Res, BlockingListRequest>;
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$BlockingListRequestCopyWithImpl<$Res, $Val extends BlockingListRequest>
-    implements $BlockingListRequestCopyWith<$Res> {
-  _$BlockingListRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BlockingListRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BlockingListRequestCopyWith<BlockingListRequest> get copyWith =>
+      _$BlockingListRequestCopyWithImpl<BlockingListRequest>(
+          this as BlockingListRequest, _$identity);
+
+  /// Serializes this BlockingListRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockingListRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'BlockingListRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
 /// @nodoc
-abstract class _$$BlockingListRequestImplCopyWith<$Res>
-    implements $BlockingListRequestCopyWith<$Res> {
-  factory _$$BlockingListRequestImplCopyWith(_$BlockingListRequestImpl value,
-          $Res Function(_$BlockingListRequestImpl) then) =
-      __$$BlockingListRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BlockingListRequestCopyWith<$Res> {
+  factory $BlockingListRequestCopyWith(
+          BlockingListRequest value, $Res Function(BlockingListRequest) _then) =
+      _$BlockingListRequestCopyWithImpl;
   @useResult
   $Res call({int? limit, String? sinceId, String? untilId});
 }
 
 /// @nodoc
-class __$$BlockingListRequestImplCopyWithImpl<$Res>
-    extends _$BlockingListRequestCopyWithImpl<$Res, _$BlockingListRequestImpl>
-    implements _$$BlockingListRequestImplCopyWith<$Res> {
-  __$$BlockingListRequestImplCopyWithImpl(_$BlockingListRequestImpl _value,
-      $Res Function(_$BlockingListRequestImpl) _then)
-      : super(_value, _then);
+class _$BlockingListRequestCopyWithImpl<$Res>
+    implements $BlockingListRequestCopyWith<$Res> {
+  _$BlockingListRequestCopyWithImpl(this._self, this._then);
 
+  final BlockingListRequest _self;
+  final $Res Function(BlockingListRequest) _then;
+
+  /// Create a copy of BlockingListRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,17 +76,17 @@ class __$$BlockingListRequestImplCopyWithImpl<$Res>
     Object? sinceId = freezed,
     Object? untilId = freezed,
   }) {
-    return _then(_$BlockingListRequestImpl(
+    return _then(_self.copyWith(
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
-          ? _value.sinceId
+          ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
               as String?,
       untilId: freezed == untilId
-          ? _value.untilId
+          ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -118,11 +95,10 @@ class __$$BlockingListRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BlockingListRequestImpl implements _BlockingListRequest {
-  const _$BlockingListRequestImpl({this.limit, this.sinceId, this.untilId});
-
-  factory _$BlockingListRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BlockingListRequestImplFromJson(json);
+class _BlockingListRequest implements BlockingListRequest {
+  const _BlockingListRequest({this.limit, this.sinceId, this.untilId});
+  factory _BlockingListRequest.fromJson(Map<String, dynamic> json) =>
+      _$BlockingListRequestFromJson(json);
 
   @override
   final int? limit;
@@ -131,57 +107,85 @@ class _$BlockingListRequestImpl implements _BlockingListRequest {
   @override
   final String? untilId;
 
+  /// Create a copy of BlockingListRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BlockingListRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BlockingListRequestCopyWith<_BlockingListRequest> get copyWith =>
+      __$BlockingListRequestCopyWithImpl<_BlockingListRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BlockingListRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BlockingListRequestImpl &&
+            other is _BlockingListRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BlockingListRequestImplCopyWith<_$BlockingListRequestImpl> get copyWith =>
-      __$$BlockingListRequestImplCopyWithImpl<_$BlockingListRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BlockingListRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BlockingListRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _BlockingListRequest implements BlockingListRequest {
-  const factory _BlockingListRequest(
-      {final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$BlockingListRequestImpl;
-
-  factory _BlockingListRequest.fromJson(Map<String, dynamic> json) =
-      _$BlockingListRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BlockingListRequestCopyWith<$Res>
+    implements $BlockingListRequestCopyWith<$Res> {
+  factory _$BlockingListRequestCopyWith(_BlockingListRequest value,
+          $Res Function(_BlockingListRequest) _then) =
+      __$BlockingListRequestCopyWithImpl;
   @override
-  int? get limit;
-  @override
-  String? get sinceId;
-  @override
-  String? get untilId;
-  @override
-  @JsonKey(ignore: true)
-  _$$BlockingListRequestImplCopyWith<_$BlockingListRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
 }
+
+/// @nodoc
+class __$BlockingListRequestCopyWithImpl<$Res>
+    implements _$BlockingListRequestCopyWith<$Res> {
+  __$BlockingListRequestCopyWithImpl(this._self, this._then);
+
+  final _BlockingListRequest _self;
+  final $Res Function(_BlockingListRequest) _then;
+
+  /// Create a copy of BlockingListRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_BlockingListRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -4,7 +4,7 @@ part 'notes_drafts_list_request.freezed.dart';
 part 'notes_drafts_list_request.g.dart';
 
 @freezed
-class NotesDraftsListRequest with _$NotesDraftsListRequest {
+abstract class NotesDraftsListRequest with _$NotesDraftsListRequest {
   const factory NotesDraftsListRequest({
     int? limit,
     String? sinceId,

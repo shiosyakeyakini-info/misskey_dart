@@ -6,10 +6,10 @@ part of 'i_notifications_grouped_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$INotificationRequestImpl _$$INotificationRequestImplFromJson(
+_INotificationRequest _$INotificationRequestFromJson(
         Map<String, dynamic> json) =>
-    _$INotificationRequestImpl(
-      limit: json['limit'] as int?,
+    _INotificationRequest(
+      limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       markAsRead: json['markAsRead'] as bool?,
@@ -21,8 +21,8 @@ _$INotificationRequestImpl _$$INotificationRequestImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$INotificationRequestImplToJson(
-        _$INotificationRequestImpl instance) =>
+Map<String, dynamic> _$INotificationRequestToJson(
+        _INotificationRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,
@@ -56,5 +56,8 @@ const _$NotificationTypeEnumMap = {
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
   NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.createToken: 'createToken',
   NotificationType.login: 'login',
+  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
+  NotificationType.unknown: 'unknown',
 };

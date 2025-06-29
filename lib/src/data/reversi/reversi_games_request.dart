@@ -4,7 +4,7 @@ part 'reversi_games_request.freezed.dart';
 part 'reversi_games_request.g.dart';
 
 @freezed
-class ReversiGamesRequest with _$ReversiGamesRequest {
+abstract class ReversiGamesRequest with _$ReversiGamesRequest {
   const factory ReversiGamesRequest({
     int? limit,
     String? sinceId,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,140 +10,29 @@ part of 'notes_drafts_create_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-NotesDraftsCreateResponse _$NotesDraftsCreateResponseFromJson(
-    Map<String, dynamic> json) {
-  return _NotesDraftsCreateResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotesDraftsCreateResponse {
-  NoteDraft get createdDraft => throw _privateConstructorUsedError;
-
-  /// Serializes this NotesDraftsCreateResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  NoteDraft get createdDraft;
 
   /// Create a copy of NotesDraftsCreateResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $NotesDraftsCreateResponseCopyWith<NotesDraftsCreateResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$NotesDraftsCreateResponseCopyWithImpl<NotesDraftsCreateResponse>(
+          this as NotesDraftsCreateResponse, _$identity);
 
-/// @nodoc
-abstract class $NotesDraftsCreateResponseCopyWith<$Res> {
-  factory $NotesDraftsCreateResponseCopyWith(NotesDraftsCreateResponse value,
-          $Res Function(NotesDraftsCreateResponse) then) =
-      _$NotesDraftsCreateResponseCopyWithImpl<$Res, NotesDraftsCreateResponse>;
-  @useResult
-  $Res call({NoteDraft createdDraft});
-
-  $NoteDraftCopyWith<$Res> get createdDraft;
-}
-
-/// @nodoc
-class _$NotesDraftsCreateResponseCopyWithImpl<$Res,
-        $Val extends NotesDraftsCreateResponse>
-    implements $NotesDraftsCreateResponseCopyWith<$Res> {
-  _$NotesDraftsCreateResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of NotesDraftsCreateResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdDraft = null,
-  }) {
-    return _then(_value.copyWith(
-      createdDraft: null == createdDraft
-          ? _value.createdDraft
-          : createdDraft // ignore: cast_nullable_to_non_nullable
-              as NoteDraft,
-    ) as $Val);
-  }
-
-  /// Create a copy of NotesDraftsCreateResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NoteDraftCopyWith<$Res> get createdDraft {
-    return $NoteDraftCopyWith<$Res>(_value.createdDraft, (value) {
-      return _then(_value.copyWith(createdDraft: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$NotesDraftsCreateResponseImplCopyWith<$Res>
-    implements $NotesDraftsCreateResponseCopyWith<$Res> {
-  factory _$$NotesDraftsCreateResponseImplCopyWith(
-          _$NotesDraftsCreateResponseImpl value,
-          $Res Function(_$NotesDraftsCreateResponseImpl) then) =
-      __$$NotesDraftsCreateResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({NoteDraft createdDraft});
-
-  @override
-  $NoteDraftCopyWith<$Res> get createdDraft;
-}
-
-/// @nodoc
-class __$$NotesDraftsCreateResponseImplCopyWithImpl<$Res>
-    extends _$NotesDraftsCreateResponseCopyWithImpl<$Res,
-        _$NotesDraftsCreateResponseImpl>
-    implements _$$NotesDraftsCreateResponseImplCopyWith<$Res> {
-  __$$NotesDraftsCreateResponseImplCopyWithImpl(
-      _$NotesDraftsCreateResponseImpl _value,
-      $Res Function(_$NotesDraftsCreateResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of NotesDraftsCreateResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdDraft = null,
-  }) {
-    return _then(_$NotesDraftsCreateResponseImpl(
-      createdDraft: null == createdDraft
-          ? _value.createdDraft
-          : createdDraft // ignore: cast_nullable_to_non_nullable
-              as NoteDraft,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$NotesDraftsCreateResponseImpl implements _NotesDraftsCreateResponse {
-  const _$NotesDraftsCreateResponseImpl({required this.createdDraft});
-
-  factory _$NotesDraftsCreateResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotesDraftsCreateResponseImplFromJson(json);
-
-  @override
-  final NoteDraft createdDraft;
-
-  @override
-  String toString() {
-    return 'NotesDraftsCreateResponse(createdDraft: $createdDraft)';
-  }
+  /// Serializes this NotesDraftsCreateResponse to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotesDraftsCreateResponseImpl &&
+            other is NotesDraftsCreateResponse &&
             (identical(other.createdDraft, createdDraft) ||
                 other.createdDraft == createdDraft));
   }
@@ -151,38 +41,149 @@ class _$NotesDraftsCreateResponseImpl implements _NotesDraftsCreateResponse {
   @override
   int get hashCode => Object.hash(runtimeType, createdDraft);
 
-  /// Create a copy of NotesDraftsCreateResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotesDraftsCreateResponseImplCopyWith<_$NotesDraftsCreateResponseImpl>
-      get copyWith => __$$NotesDraftsCreateResponseImplCopyWithImpl<
-          _$NotesDraftsCreateResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotesDraftsCreateResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesDraftsCreateResponse(createdDraft: $createdDraft)';
   }
 }
 
-abstract class _NotesDraftsCreateResponse implements NotesDraftsCreateResponse {
-  const factory _NotesDraftsCreateResponse(
-          {required final NoteDraft createdDraft}) =
-      _$NotesDraftsCreateResponseImpl;
+/// @nodoc
+abstract mixin class $NotesDraftsCreateResponseCopyWith<$Res> {
+  factory $NotesDraftsCreateResponseCopyWith(NotesDraftsCreateResponse value,
+          $Res Function(NotesDraftsCreateResponse) _then) =
+      _$NotesDraftsCreateResponseCopyWithImpl;
+  @useResult
+  $Res call({NoteDraft createdDraft});
 
-  factory _NotesDraftsCreateResponse.fromJson(Map<String, dynamic> json) =
-      _$NotesDraftsCreateResponseImpl.fromJson;
+  $NoteDraftCopyWith<$Res> get createdDraft;
+}
+
+/// @nodoc
+class _$NotesDraftsCreateResponseCopyWithImpl<$Res>
+    implements $NotesDraftsCreateResponseCopyWith<$Res> {
+  _$NotesDraftsCreateResponseCopyWithImpl(this._self, this._then);
+
+  final NotesDraftsCreateResponse _self;
+  final $Res Function(NotesDraftsCreateResponse) _then;
+
+  /// Create a copy of NotesDraftsCreateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? createdDraft = null,
+  }) {
+    return _then(_self.copyWith(
+      createdDraft: null == createdDraft
+          ? _self.createdDraft
+          : createdDraft // ignore: cast_nullable_to_non_nullable
+              as NoteDraft,
+    ));
+  }
+
+  /// Create a copy of NotesDraftsCreateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteDraftCopyWith<$Res> get createdDraft {
+    return $NoteDraftCopyWith<$Res>(_self.createdDraft, (value) {
+      return _then(_self.copyWith(createdDraft: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _NotesDraftsCreateResponse implements NotesDraftsCreateResponse {
+  const _NotesDraftsCreateResponse({required this.createdDraft});
+  factory _NotesDraftsCreateResponse.fromJson(Map<String, dynamic> json) =>
+      _$NotesDraftsCreateResponseFromJson(json);
 
   @override
-  NoteDraft get createdDraft;
+  final NoteDraft createdDraft;
 
   /// Create a copy of NotesDraftsCreateResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NotesDraftsCreateResponseImplCopyWith<_$NotesDraftsCreateResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$NotesDraftsCreateResponseCopyWith<_NotesDraftsCreateResponse>
+      get copyWith =>
+          __$NotesDraftsCreateResponseCopyWithImpl<_NotesDraftsCreateResponse>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotesDraftsCreateResponseToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _NotesDraftsCreateResponse &&
+            (identical(other.createdDraft, createdDraft) ||
+                other.createdDraft == createdDraft));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, createdDraft);
+
+  @override
+  String toString() {
+    return 'NotesDraftsCreateResponse(createdDraft: $createdDraft)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$NotesDraftsCreateResponseCopyWith<$Res>
+    implements $NotesDraftsCreateResponseCopyWith<$Res> {
+  factory _$NotesDraftsCreateResponseCopyWith(_NotesDraftsCreateResponse value,
+          $Res Function(_NotesDraftsCreateResponse) _then) =
+      __$NotesDraftsCreateResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({NoteDraft createdDraft});
+
+  @override
+  $NoteDraftCopyWith<$Res> get createdDraft;
+}
+
+/// @nodoc
+class __$NotesDraftsCreateResponseCopyWithImpl<$Res>
+    implements _$NotesDraftsCreateResponseCopyWith<$Res> {
+  __$NotesDraftsCreateResponseCopyWithImpl(this._self, this._then);
+
+  final _NotesDraftsCreateResponse _self;
+  final $Res Function(_NotesDraftsCreateResponse) _then;
+
+  /// Create a copy of NotesDraftsCreateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? createdDraft = null,
+  }) {
+    return _then(_NotesDraftsCreateResponse(
+      createdDraft: null == createdDraft
+          ? _self.createdDraft
+          : createdDraft // ignore: cast_nullable_to_non_nullable
+              as NoteDraft,
+    ));
+  }
+
+  /// Create a copy of NotesDraftsCreateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteDraftCopyWith<$Res> get createdDraft {
+    return $NoteDraftCopyWith<$Res>(_self.createdDraft, (value) {
+      return _then(_self.copyWith(createdDraft: value));
+    });
+  }
+}
+
+// dart format on

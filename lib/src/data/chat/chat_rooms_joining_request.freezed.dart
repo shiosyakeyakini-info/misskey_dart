@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,151 +10,31 @@ part of 'chat_rooms_joining_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ChatRoomsJoiningRequest _$ChatRoomsJoiningRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ChatRoomsJoiningRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ChatRoomsJoiningRequest {
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sinceId => throw _privateConstructorUsedError;
-  String? get untilId => throw _privateConstructorUsedError;
-
-  /// Serializes this ChatRoomsJoiningRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get limit;
+  String? get sinceId;
+  String? get untilId;
 
   /// Create a copy of ChatRoomsJoiningRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ChatRoomsJoiningRequestCopyWith<ChatRoomsJoiningRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ChatRoomsJoiningRequestCopyWithImpl<ChatRoomsJoiningRequest>(
+          this as ChatRoomsJoiningRequest, _$identity);
 
-/// @nodoc
-abstract class $ChatRoomsJoiningRequestCopyWith<$Res> {
-  factory $ChatRoomsJoiningRequestCopyWith(ChatRoomsJoiningRequest value,
-          $Res Function(ChatRoomsJoiningRequest) then) =
-      _$ChatRoomsJoiningRequestCopyWithImpl<$Res, ChatRoomsJoiningRequest>;
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class _$ChatRoomsJoiningRequestCopyWithImpl<$Res,
-        $Val extends ChatRoomsJoiningRequest>
-    implements $ChatRoomsJoiningRequestCopyWith<$Res> {
-  _$ChatRoomsJoiningRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ChatRoomsJoiningRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ChatRoomsJoiningRequestImplCopyWith<$Res>
-    implements $ChatRoomsJoiningRequestCopyWith<$Res> {
-  factory _$$ChatRoomsJoiningRequestImplCopyWith(
-          _$ChatRoomsJoiningRequestImpl value,
-          $Res Function(_$ChatRoomsJoiningRequestImpl) then) =
-      __$$ChatRoomsJoiningRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
-}
-
-/// @nodoc
-class __$$ChatRoomsJoiningRequestImplCopyWithImpl<$Res>
-    extends _$ChatRoomsJoiningRequestCopyWithImpl<$Res,
-        _$ChatRoomsJoiningRequestImpl>
-    implements _$$ChatRoomsJoiningRequestImplCopyWith<$Res> {
-  __$$ChatRoomsJoiningRequestImplCopyWithImpl(
-      _$ChatRoomsJoiningRequestImpl _value,
-      $Res Function(_$ChatRoomsJoiningRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChatRoomsJoiningRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-  }) {
-    return _then(_$ChatRoomsJoiningRequestImpl(
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _value.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _value.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatRoomsJoiningRequestImpl implements _ChatRoomsJoiningRequest {
-  const _$ChatRoomsJoiningRequestImpl({this.limit, this.sinceId, this.untilId});
-
-  factory _$ChatRoomsJoiningRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChatRoomsJoiningRequestImplFromJson(json);
-
-  @override
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-
-  @override
-  String toString() {
-    return 'ChatRoomsJoiningRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
-  }
+  /// Serializes this ChatRoomsJoiningRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChatRoomsJoiningRequestImpl &&
+            other is ChatRoomsJoiningRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId));
@@ -163,43 +44,148 @@ class _$ChatRoomsJoiningRequestImpl implements _ChatRoomsJoiningRequest {
   @override
   int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
 
-  /// Create a copy of ChatRoomsJoiningRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ChatRoomsJoiningRequestImplCopyWith<_$ChatRoomsJoiningRequestImpl>
-      get copyWith => __$$ChatRoomsJoiningRequestImplCopyWithImpl<
-          _$ChatRoomsJoiningRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatRoomsJoiningRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ChatRoomsJoiningRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
   }
 }
 
-abstract class _ChatRoomsJoiningRequest implements ChatRoomsJoiningRequest {
-  const factory _ChatRoomsJoiningRequest(
-      {final int? limit,
-      final String? sinceId,
-      final String? untilId}) = _$ChatRoomsJoiningRequestImpl;
+/// @nodoc
+abstract mixin class $ChatRoomsJoiningRequestCopyWith<$Res> {
+  factory $ChatRoomsJoiningRequestCopyWith(ChatRoomsJoiningRequest value,
+          $Res Function(ChatRoomsJoiningRequest) _then) =
+      _$ChatRoomsJoiningRequestCopyWithImpl;
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
 
-  factory _ChatRoomsJoiningRequest.fromJson(Map<String, dynamic> json) =
-      _$ChatRoomsJoiningRequestImpl.fromJson;
+/// @nodoc
+class _$ChatRoomsJoiningRequestCopyWithImpl<$Res>
+    implements $ChatRoomsJoiningRequestCopyWith<$Res> {
+  _$ChatRoomsJoiningRequestCopyWithImpl(this._self, this._then);
+
+  final ChatRoomsJoiningRequest _self;
+  final $Res Function(ChatRoomsJoiningRequest) _then;
+
+  /// Create a copy of ChatRoomsJoiningRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatRoomsJoiningRequest implements ChatRoomsJoiningRequest {
+  const _ChatRoomsJoiningRequest({this.limit, this.sinceId, this.untilId});
+  factory _ChatRoomsJoiningRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChatRoomsJoiningRequestFromJson(json);
 
   @override
-  int? get limit;
+  final int? limit;
   @override
-  String? get sinceId;
+  final String? sinceId;
   @override
-  String? get untilId;
+  final String? untilId;
 
   /// Create a copy of ChatRoomsJoiningRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatRoomsJoiningRequestImplCopyWith<_$ChatRoomsJoiningRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ChatRoomsJoiningRequestCopyWith<_ChatRoomsJoiningRequest> get copyWith =>
+      __$ChatRoomsJoiningRequestCopyWithImpl<_ChatRoomsJoiningRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatRoomsJoiningRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatRoomsJoiningRequest &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
+            (identical(other.untilId, untilId) || other.untilId == untilId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+
+  @override
+  String toString() {
+    return 'ChatRoomsJoiningRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ChatRoomsJoiningRequestCopyWith<$Res>
+    implements $ChatRoomsJoiningRequestCopyWith<$Res> {
+  factory _$ChatRoomsJoiningRequestCopyWith(_ChatRoomsJoiningRequest value,
+          $Res Function(_ChatRoomsJoiningRequest) _then) =
+      __$ChatRoomsJoiningRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int? limit, String? sinceId, String? untilId});
+}
+
+/// @nodoc
+class __$ChatRoomsJoiningRequestCopyWithImpl<$Res>
+    implements _$ChatRoomsJoiningRequestCopyWith<$Res> {
+  __$ChatRoomsJoiningRequestCopyWithImpl(this._self, this._then);
+
+  final _ChatRoomsJoiningRequest _self;
+  final $Res Function(_ChatRoomsJoiningRequest) _then;
+
+  /// Create a copy of ChatRoomsJoiningRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? limit = freezed,
+    Object? sinceId = freezed,
+    Object? untilId = freezed,
+  }) {
+    return _then(_ChatRoomsJoiningRequest(
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sinceId: freezed == sinceId
+          ? _self.sinceId
+          : sinceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      untilId: freezed == untilId
+          ? _self.untilId
+          : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on
