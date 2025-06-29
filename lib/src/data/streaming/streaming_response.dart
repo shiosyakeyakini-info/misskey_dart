@@ -230,6 +230,7 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required Antenna body,
   }) = UnreadAntennaChannelEvent;
 
+  @FreezedUnionValue("newChatMessage")
   const factory ChannelStreamEvent.newChatMessage({
     required String id,
     required ChatMessage body,
