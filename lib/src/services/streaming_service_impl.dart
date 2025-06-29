@@ -289,7 +289,8 @@ class StreamingService implements StreamingController, WebSocketController {
     required String roleId,
     String? id,
   }) =>
-      addChannel(const Channel.roleTimeline(), {"roleId": roleId}, id ?? roleId);
+      addChannel(
+          const Channel.roleTimeline(), {"roleId": roleId}, id ?? roleId);
 
   @override
   Stream<StreamingResponse> channelStream({
