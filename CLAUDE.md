@@ -10,25 +10,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # 依存関係のインストール
-dart pub get
+fvm dart pub get
 
 # コード生成（freezedとjson_serializable）- 必須
-dart run build_runner build
+fvm dart run build_runner build
 
 # コード生成（変更監視モード）
-dart run build_runner watch
+fvm dart run build_runner watch
 
 # テスト実行
-dart test
+./test/testenv/setup.sh 
+fvm dart test
 
 # 特定のテストファイルを実行
-dart test test/[ファイル名]
+fvm dart test test/[ファイル名]
 
 # 静的解析
-dart analyze
+fvm dart analyze
 
 # コード生成のクリーンアップ
-dart run build_runner clean
+fvm dart run build_runner clean
 ```
 
 ## アーキテクチャ
