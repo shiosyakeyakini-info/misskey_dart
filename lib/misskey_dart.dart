@@ -1,7 +1,3 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-
 export 'src/data/announcements_request.dart';
 export 'src/data/announcements_response.dart';
 export 'src/data/antennas/antennas_create_request.dart';
