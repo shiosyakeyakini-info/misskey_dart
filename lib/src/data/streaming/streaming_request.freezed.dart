@@ -207,6 +207,7 @@ class __$StreamingRequestCopyWithImpl<$Res>
 
 /// @nodoc
 mixin _$StreamingRequestBody {
+  @ChannelJsonConverter()
   Channel? get channel;
   String get id;
   Map<String, dynamic>? get params;
@@ -259,11 +260,13 @@ abstract mixin class $StreamingRequestBodyCopyWith<$Res> {
       _$StreamingRequestBodyCopyWithImpl;
   @useResult
   $Res call(
-      {Channel? channel,
+      {@ChannelJsonConverter() Channel? channel,
       String id,
       Map<String, dynamic>? params,
       String? type,
       Map<String, dynamic>? body});
+
+  $ChannelCopyWith<$Res>? get channel;
 }
 
 /// @nodoc
@@ -308,13 +311,27 @@ class _$StreamingRequestBodyCopyWithImpl<$Res>
               as Map<String, dynamic>?,
     ));
   }
+
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChannelCopyWith<$Res>? get channel {
+    if (_self.channel == null) {
+      return null;
+    }
+
+    return $ChannelCopyWith<$Res>(_self.channel!, (value) {
+      return _then(_self.copyWith(channel: value));
+    });
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _StreamingRequestBody implements StreamingRequestBody {
   const _StreamingRequestBody(
-      {this.channel,
+      {@ChannelJsonConverter() this.channel,
       required this.id,
       final Map<String, dynamic>? params,
       this.type,
@@ -325,6 +342,7 @@ class _StreamingRequestBody implements StreamingRequestBody {
       _$StreamingRequestBodyFromJson(json);
 
   @override
+  @ChannelJsonConverter()
   final Channel? channel;
   @override
   final String id;
@@ -403,11 +421,14 @@ abstract mixin class _$StreamingRequestBodyCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Channel? channel,
+      {@ChannelJsonConverter() Channel? channel,
       String id,
       Map<String, dynamic>? params,
       String? type,
       Map<String, dynamic>? body});
+
+  @override
+  $ChannelCopyWith<$Res>? get channel;
 }
 
 /// @nodoc
@@ -451,6 +472,20 @@ class __$StreamingRequestBodyCopyWithImpl<$Res>
           : body // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
+  }
+
+  /// Create a copy of StreamingRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChannelCopyWith<$Res>? get channel {
+    if (_self.channel == null) {
+      return null;
+    }
+
+    return $ChannelCopyWith<$Res>(_self.channel!, (value) {
+      return _then(_self.copyWith(channel: value));
+    });
   }
 }
 

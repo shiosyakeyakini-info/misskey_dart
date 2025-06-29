@@ -19,7 +19,7 @@ abstract class StreamingRequest with _$StreamingRequest {
 @freezed
 abstract class StreamingRequestBody with _$StreamingRequestBody {
   const factory StreamingRequestBody({
-    Channel? channel,
+    @ChannelJsonConverter() Channel? channel,
     required String id,
     Map<String, dynamic>? params,
     String? type,
