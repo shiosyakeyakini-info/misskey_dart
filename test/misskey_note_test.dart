@@ -240,6 +240,57 @@ void main() async {
     });
   });
 
+  group("drafts", () {
+    test("count", () async {
+      await userClient.notes.drafts.create(NotesDraftsCreateRequest());
+      final response = await userClient.notes.drafts.count();
+      expect(response, greaterThan(0));
+    });
+
+    test("create", () async {
+      final response = await userClient.notes.drafts.create(
+        NotesDraftsCreateRequest(text: "test"),
+      );
+      expect(response.createdDraft.text, "test");
+    });
+
+    test("delete", () async {
+      final draft = await userClient.notes.drafts.create(
+        NotesDraftsCreateRequest(),
+      );
+      await userClient.notes.drafts.delete(
+        NotesDraftsDeleteRequest(draftId: draft.createdDraft.id),
+      );
+      final drafts = await userClient.notes.drafts.list(
+        NotesDraftsListRequest(),
+      );
+      expect(drafts.map((e) => e.id), isNot(contains(draft.createdDraft.id)));
+    });
+
+    test("list", () async {
+      final draft = await userClient.notes.drafts.create(
+        NotesDraftsCreateRequest(),
+      );
+      final drafts = await userClient.notes.drafts.list(
+        NotesDraftsListRequest(),
+      );
+      expect(drafts.map((e) => e.id), contains(draft.createdDraft.id));
+    });
+
+    test("update", () async {
+      final draft = await userClient.notes.drafts.create(
+        NotesDraftsCreateRequest(),
+      );
+      final response = await userClient.notes.drafts.update(
+        NotesDraftsUpdateRequest(
+          draftId: draft.createdDraft.id,
+          text: "updated",
+        ),
+      );
+      expect(response.updatedDraft.text, "updated");
+    });
+  });
+
   group("favorites", () {
     test("create", () async {
       final note = await userClient.createNote();

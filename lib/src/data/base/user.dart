@@ -457,6 +457,8 @@ abstract class UserPolicies with _$UserPolicies {
     @Default(false) bool canUseTranslator,
     required bool canHideAds,
     required double driveCapacityMb,
+    int? maxFileSizeMb,
+    List<String>? uploadableFileTypes,
     bool? alwaysMarkNsfw,
     bool? canUpdateBioMedia,
     required double pinLimit,

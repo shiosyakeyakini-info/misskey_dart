@@ -821,6 +821,10 @@ _UserPolicies _$UserPoliciesFromJson(Map<String, dynamic> json) =>
       canUseTranslator: json['canUseTranslator'] as bool? ?? false,
       canHideAds: json['canHideAds'] as bool,
       driveCapacityMb: (json['driveCapacityMb'] as num).toDouble(),
+      maxFileSizeMb: (json['maxFileSizeMb'] as num?)?.toInt(),
+      uploadableFileTypes: (json['uploadableFileTypes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
       canUpdateBioMedia: json['canUpdateBioMedia'] as bool?,
       pinLimit: (json['pinLimit'] as num).toDouble(),
@@ -861,6 +865,8 @@ Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
       'canUseTranslator': instance.canUseTranslator,
       'canHideAds': instance.canHideAds,
       'driveCapacityMb': instance.driveCapacityMb,
+      'maxFileSizeMb': instance.maxFileSizeMb,
+      'uploadableFileTypes': instance.uploadableFileTypes,
       'alwaysMarkNsfw': instance.alwaysMarkNsfw,
       'canUpdateBioMedia': instance.canUpdateBioMedia,
       'pinLimit': instance.pinLimit,
