@@ -62,3 +62,17 @@ class NullableEpocTimeDateTimeConverter extends JsonConverter<DateTime?, int?> {
           ? object.microsecondsSinceEpoch
           : object.millisecondsSinceEpoch;
 }
+
+class BirthdayConverter extends JsonConverter<DateTime?, String?> {
+  const BirthdayConverter();
+
+  @override
+  DateTime? fromJson(String? json) => json == null ? null : DateTime.tryParse(json);
+
+  @override
+  String? toJson(DateTime? object) {
+    if (object == null) return null;
+    // YYYY-MM-DD形式で出力（Misskeyのバリデーション要件に合わせる）
+    return '${object.year.toString().padLeft(4, '0')}-${object.month.toString().padLeft(2, '0')}-${object.day.toString().padLeft(2, '0')}';
+  }
+}
