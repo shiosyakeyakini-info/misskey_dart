@@ -14,7 +14,7 @@ abstract class IUpdateRequest with _$IUpdateRequest {
     String? description,
     String? followedMessage,
     String? location,
-    @DateTimeConverter() DateTime? birthday,
+    @BirthdayConverter() DateTime? birthday,
     String? lang,
     String? avatarId,
     List<IUpdateAvatarDecoration>? avatarDecorations,
