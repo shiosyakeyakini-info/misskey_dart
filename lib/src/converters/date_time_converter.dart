@@ -67,7 +67,8 @@ class BirthdayConverter extends JsonConverter<DateTime?, String?> {
   const BirthdayConverter();
 
   @override
-  DateTime? fromJson(String? json) => json == null ? null : DateTime.tryParse(json);
+  DateTime? fromJson(String? json) =>
+      json == null ? null : DateTime.tryParse(json);
 
   @override
   String? toJson(DateTime? object) {
