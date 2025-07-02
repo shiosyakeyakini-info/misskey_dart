@@ -12,8 +12,7 @@ _IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
-      birthday: _$JsonConverterFromJson<String, DateTime>(
-          json['birthday'], const DateTimeConverter().fromJson),
+      birthday: const BirthdayConverter().fromJson(json['birthday'] as String?),
       lang: json['lang'] as String?,
       avatarId: json['avatarId'] as String?,
       avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
@@ -83,8 +82,7 @@ Map<String, dynamic> _$IUpdateRequestToJson(_IUpdateRequest instance) =>
       'description': instance.description,
       'followedMessage': instance.followedMessage,
       'location': instance.location,
-      'birthday': _$JsonConverterToJson<String, DateTime>(
-          instance.birthday, const DateTimeConverter().toJson),
+      'birthday': const BirthdayConverter().toJson(instance.birthday),
       'lang': instance.lang,
       'avatarId': instance.avatarId,
       'avatarDecorations':

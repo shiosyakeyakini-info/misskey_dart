@@ -19,7 +19,7 @@ mixin _$IUpdateRequest {
   String? get description;
   String? get followedMessage;
   String? get location;
-  @DateTimeConverter()
+  @BirthdayConverter()
   DateTime? get birthday;
   String? get lang;
   String? get avatarId;
@@ -213,7 +213,7 @@ abstract mixin class $IUpdateRequestCopyWith<$Res> {
       String? description,
       String? followedMessage,
       String? location,
-      @DateTimeConverter() DateTime? birthday,
+      @BirthdayConverter() DateTime? birthday,
       String? lang,
       String? avatarId,
       List<IUpdateAvatarDecoration>? avatarDecorations,
@@ -489,7 +489,7 @@ class _IUpdateRequest implements IUpdateRequest {
       this.description,
       this.followedMessage,
       this.location,
-      @DateTimeConverter() this.birthday,
+      @BirthdayConverter() this.birthday,
       this.lang,
       this.avatarId,
       final List<IUpdateAvatarDecoration>? avatarDecorations,
@@ -544,7 +544,7 @@ class _IUpdateRequest implements IUpdateRequest {
   @override
   final String? location;
   @override
-  @DateTimeConverter()
+  @BirthdayConverter()
   final DateTime? birthday;
   @override
   final String? lang;
@@ -844,7 +844,7 @@ abstract mixin class _$IUpdateRequestCopyWith<$Res>
       String? description,
       String? followedMessage,
       String? location,
-      @DateTimeConverter() DateTime? birthday,
+      @BirthdayConverter() DateTime? birthday,
       String? lang,
       String? avatarId,
       List<IUpdateAvatarDecoration>? avatarDecorations,
