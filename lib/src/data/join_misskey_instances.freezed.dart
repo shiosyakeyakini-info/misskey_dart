@@ -235,8 +235,11 @@ class __$JoinMisskeyInstancesCopyWithImpl<$Res>
 /// @nodoc
 mixin _$JoinMisskeyStats {
   int get notesCount;
-  int get usersCount;
-  int get mau;
+  int get usersCount; // Removed in joinmisskey/api 3.1.0
+  int? get mau;
+  int? get npd15;
+  int? get druYesterday;
+  int? get dru15;
   int get instancesCount;
 
   /// Create a copy of JoinMisskeyStats
@@ -260,18 +263,22 @@ mixin _$JoinMisskeyStats {
             (identical(other.usersCount, usersCount) ||
                 other.usersCount == usersCount) &&
             (identical(other.mau, mau) || other.mau == mau) &&
+            (identical(other.npd15, npd15) || other.npd15 == npd15) &&
+            (identical(other.druYesterday, druYesterday) ||
+                other.druYesterday == druYesterday) &&
+            (identical(other.dru15, dru15) || other.dru15 == dru15) &&
             (identical(other.instancesCount, instancesCount) ||
                 other.instancesCount == instancesCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, notesCount, usersCount, mau, instancesCount);
+  int get hashCode => Object.hash(runtimeType, notesCount, usersCount, mau,
+      npd15, druYesterday, dru15, instancesCount);
 
   @override
   String toString() {
-    return 'JoinMisskeyStats(notesCount: $notesCount, usersCount: $usersCount, mau: $mau, instancesCount: $instancesCount)';
+    return 'JoinMisskeyStats(notesCount: $notesCount, usersCount: $usersCount, mau: $mau, npd15: $npd15, druYesterday: $druYesterday, dru15: $dru15, instancesCount: $instancesCount)';
   }
 }
 
@@ -281,7 +288,14 @@ abstract mixin class $JoinMisskeyStatsCopyWith<$Res> {
           JoinMisskeyStats value, $Res Function(JoinMisskeyStats) _then) =
       _$JoinMisskeyStatsCopyWithImpl;
   @useResult
-  $Res call({int notesCount, int usersCount, int mau, int instancesCount});
+  $Res call(
+      {int notesCount,
+      int usersCount,
+      int? mau,
+      int? npd15,
+      int? druYesterday,
+      int? dru15,
+      int instancesCount});
 }
 
 /// @nodoc
@@ -299,7 +313,10 @@ class _$JoinMisskeyStatsCopyWithImpl<$Res>
   $Res call({
     Object? notesCount = null,
     Object? usersCount = null,
-    Object? mau = null,
+    Object? mau = freezed,
+    Object? npd15 = freezed,
+    Object? druYesterday = freezed,
+    Object? dru15 = freezed,
     Object? instancesCount = null,
   }) {
     return _then(_self.copyWith(
@@ -311,10 +328,22 @@ class _$JoinMisskeyStatsCopyWithImpl<$Res>
           ? _self.usersCount
           : usersCount // ignore: cast_nullable_to_non_nullable
               as int,
-      mau: null == mau
+      mau: freezed == mau
           ? _self.mau
           : mau // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      npd15: freezed == npd15
+          ? _self.npd15
+          : npd15 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      druYesterday: freezed == druYesterday
+          ? _self.druYesterday
+          : druYesterday // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dru15: freezed == dru15
+          ? _self.dru15
+          : dru15 // ignore: cast_nullable_to_non_nullable
+              as int?,
       instancesCount: null == instancesCount
           ? _self.instancesCount
           : instancesCount // ignore: cast_nullable_to_non_nullable
@@ -329,7 +358,10 @@ class _JoinMisskeyStats implements JoinMisskeyStats {
   const _JoinMisskeyStats(
       {required this.notesCount,
       required this.usersCount,
-      required this.mau,
+      this.mau,
+      this.npd15,
+      this.druYesterday,
+      this.dru15,
       required this.instancesCount});
   factory _JoinMisskeyStats.fromJson(Map<String, dynamic> json) =>
       _$JoinMisskeyStatsFromJson(json);
@@ -338,8 +370,15 @@ class _JoinMisskeyStats implements JoinMisskeyStats {
   final int notesCount;
   @override
   final int usersCount;
+// Removed in joinmisskey/api 3.1.0
   @override
-  final int mau;
+  final int? mau;
+  @override
+  final int? npd15;
+  @override
+  final int? druYesterday;
+  @override
+  final int? dru15;
   @override
   final int instancesCount;
 
@@ -368,18 +407,22 @@ class _JoinMisskeyStats implements JoinMisskeyStats {
             (identical(other.usersCount, usersCount) ||
                 other.usersCount == usersCount) &&
             (identical(other.mau, mau) || other.mau == mau) &&
+            (identical(other.npd15, npd15) || other.npd15 == npd15) &&
+            (identical(other.druYesterday, druYesterday) ||
+                other.druYesterday == druYesterday) &&
+            (identical(other.dru15, dru15) || other.dru15 == dru15) &&
             (identical(other.instancesCount, instancesCount) ||
                 other.instancesCount == instancesCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, notesCount, usersCount, mau, instancesCount);
+  int get hashCode => Object.hash(runtimeType, notesCount, usersCount, mau,
+      npd15, druYesterday, dru15, instancesCount);
 
   @override
   String toString() {
-    return 'JoinMisskeyStats(notesCount: $notesCount, usersCount: $usersCount, mau: $mau, instancesCount: $instancesCount)';
+    return 'JoinMisskeyStats(notesCount: $notesCount, usersCount: $usersCount, mau: $mau, npd15: $npd15, druYesterday: $druYesterday, dru15: $dru15, instancesCount: $instancesCount)';
   }
 }
 
@@ -391,7 +434,14 @@ abstract mixin class _$JoinMisskeyStatsCopyWith<$Res>
       __$JoinMisskeyStatsCopyWithImpl;
   @override
   @useResult
-  $Res call({int notesCount, int usersCount, int mau, int instancesCount});
+  $Res call(
+      {int notesCount,
+      int usersCount,
+      int? mau,
+      int? npd15,
+      int? druYesterday,
+      int? dru15,
+      int instancesCount});
 }
 
 /// @nodoc
@@ -409,7 +459,10 @@ class __$JoinMisskeyStatsCopyWithImpl<$Res>
   $Res call({
     Object? notesCount = null,
     Object? usersCount = null,
-    Object? mau = null,
+    Object? mau = freezed,
+    Object? npd15 = freezed,
+    Object? druYesterday = freezed,
+    Object? dru15 = freezed,
     Object? instancesCount = null,
   }) {
     return _then(_JoinMisskeyStats(
@@ -421,10 +474,22 @@ class __$JoinMisskeyStatsCopyWithImpl<$Res>
           ? _self.usersCount
           : usersCount // ignore: cast_nullable_to_non_nullable
               as int,
-      mau: null == mau
+      mau: freezed == mau
           ? _self.mau
           : mau // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      npd15: freezed == npd15
+          ? _self.npd15
+          : npd15 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      druYesterday: freezed == druYesterday
+          ? _self.druYesterday
+          : druYesterday // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dru15: freezed == dru15
+          ? _self.dru15
+          : dru15 // ignore: cast_nullable_to_non_nullable
+              as int?,
       instancesCount: null == instancesCount
           ? _self.instancesCount
           : instancesCount // ignore: cast_nullable_to_non_nullable
@@ -447,6 +512,9 @@ mixin _$JoinMisskeyInstanceInfo {
   @JsonKey(name: "nodeinfo")
   JoinMisskeyNodeInfo? get nodeInfo;
   Map<String, dynamic>? get meta;
+  int? get npd15;
+  int? get druYesterday;
+  int? get dru15;
 
   /// Create a copy of JoinMisskeyInstanceInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -477,7 +545,11 @@ mixin _$JoinMisskeyInstanceInfo {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.nodeInfo, nodeInfo) ||
                 other.nodeInfo == nodeInfo) &&
-            const DeepCollectionEquality().equals(other.meta, meta));
+            const DeepCollectionEquality().equals(other.meta, meta) &&
+            (identical(other.npd15, npd15) || other.npd15 == npd15) &&
+            (identical(other.druYesterday, druYesterday) ||
+                other.druYesterday == druYesterday) &&
+            (identical(other.dru15, dru15) || other.dru15 == dru15));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -494,11 +566,14 @@ mixin _$JoinMisskeyInstanceInfo {
       background,
       icon,
       nodeInfo,
-      const DeepCollectionEquality().hash(meta));
+      const DeepCollectionEquality().hash(meta),
+      npd15,
+      druYesterday,
+      dru15);
 
   @override
   String toString() {
-    return 'JoinMisskeyInstanceInfo(url: $url, name: $name, langs: $langs, description: $description, isAlive: $isAlive, value: $value, banner: $banner, background: $background, icon: $icon, nodeInfo: $nodeInfo, meta: $meta)';
+    return 'JoinMisskeyInstanceInfo(url: $url, name: $name, langs: $langs, description: $description, isAlive: $isAlive, value: $value, banner: $banner, background: $background, icon: $icon, nodeInfo: $nodeInfo, meta: $meta, npd15: $npd15, druYesterday: $druYesterday, dru15: $dru15)';
   }
 }
 
@@ -519,7 +594,10 @@ abstract mixin class $JoinMisskeyInstanceInfoCopyWith<$Res> {
       bool background,
       bool icon,
       @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
-      Map<String, dynamic>? meta});
+      Map<String, dynamic>? meta,
+      int? npd15,
+      int? druYesterday,
+      int? dru15});
 
   $JoinMisskeyNodeInfoCopyWith<$Res>? get nodeInfo;
 }
@@ -548,6 +626,9 @@ class _$JoinMisskeyInstanceInfoCopyWithImpl<$Res>
     Object? icon = null,
     Object? nodeInfo = freezed,
     Object? meta = freezed,
+    Object? npd15 = freezed,
+    Object? druYesterday = freezed,
+    Object? dru15 = freezed,
   }) {
     return _then(_self.copyWith(
       url: null == url
@@ -594,6 +675,18 @@ class _$JoinMisskeyInstanceInfoCopyWithImpl<$Res>
           ? _self.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      npd15: freezed == npd15
+          ? _self.npd15
+          : npd15 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      druYesterday: freezed == druYesterday
+          ? _self.druYesterday
+          : druYesterday // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dru15: freezed == dru15
+          ? _self.dru15
+          : dru15 // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 
@@ -626,7 +719,10 @@ class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
       this.background = false,
       this.icon = false,
       @JsonKey(name: "nodeinfo") this.nodeInfo,
-      final Map<String, dynamic>? meta})
+      final Map<String, dynamic>? meta,
+      this.npd15,
+      this.druYesterday,
+      this.dru15})
       : _langs = langs,
         _meta = meta;
   factory _JoinMisskeyInstanceInfo.fromJson(Map<String, dynamic> json) =>
@@ -673,6 +769,13 @@ class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
     return EqualUnmodifiableMapView(value);
   }
 
+  @override
+  final int? npd15;
+  @override
+  final int? druYesterday;
+  @override
+  final int? dru15;
+
   /// Create a copy of JoinMisskeyInstanceInfo
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -707,7 +810,11 @@ class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.nodeInfo, nodeInfo) ||
                 other.nodeInfo == nodeInfo) &&
-            const DeepCollectionEquality().equals(other._meta, _meta));
+            const DeepCollectionEquality().equals(other._meta, _meta) &&
+            (identical(other.npd15, npd15) || other.npd15 == npd15) &&
+            (identical(other.druYesterday, druYesterday) ||
+                other.druYesterday == druYesterday) &&
+            (identical(other.dru15, dru15) || other.dru15 == dru15));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -724,11 +831,14 @@ class _JoinMisskeyInstanceInfo implements JoinMisskeyInstanceInfo {
       background,
       icon,
       nodeInfo,
-      const DeepCollectionEquality().hash(_meta));
+      const DeepCollectionEquality().hash(_meta),
+      npd15,
+      druYesterday,
+      dru15);
 
   @override
   String toString() {
-    return 'JoinMisskeyInstanceInfo(url: $url, name: $name, langs: $langs, description: $description, isAlive: $isAlive, value: $value, banner: $banner, background: $background, icon: $icon, nodeInfo: $nodeInfo, meta: $meta)';
+    return 'JoinMisskeyInstanceInfo(url: $url, name: $name, langs: $langs, description: $description, isAlive: $isAlive, value: $value, banner: $banner, background: $background, icon: $icon, nodeInfo: $nodeInfo, meta: $meta, npd15: $npd15, druYesterday: $druYesterday, dru15: $dru15)';
   }
 }
 
@@ -751,7 +861,10 @@ abstract mixin class _$JoinMisskeyInstanceInfoCopyWith<$Res>
       bool background,
       bool icon,
       @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
-      Map<String, dynamic>? meta});
+      Map<String, dynamic>? meta,
+      int? npd15,
+      int? druYesterday,
+      int? dru15});
 
   @override
   $JoinMisskeyNodeInfoCopyWith<$Res>? get nodeInfo;
@@ -781,6 +894,9 @@ class __$JoinMisskeyInstanceInfoCopyWithImpl<$Res>
     Object? icon = null,
     Object? nodeInfo = freezed,
     Object? meta = freezed,
+    Object? npd15 = freezed,
+    Object? druYesterday = freezed,
+    Object? dru15 = freezed,
   }) {
     return _then(_JoinMisskeyInstanceInfo(
       url: null == url
@@ -827,6 +943,18 @@ class __$JoinMisskeyInstanceInfoCopyWithImpl<$Res>
           ? _self._meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      npd15: freezed == npd15
+          ? _self.npd15
+          : npd15 // ignore: cast_nullable_to_non_nullable
+              as int?,
+      druYesterday: freezed == druYesterday
+          ? _self.druYesterday
+          : druYesterday // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dru15: freezed == dru15
+          ? _self.dru15
+          : dru15 // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 
