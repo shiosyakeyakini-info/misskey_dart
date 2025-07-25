@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
@@ -26,6 +27,8 @@ class StreamingService implements StreamingController, WebSocketController {
   final List<StreamingRequestBody> _connections = [];
   final Map<String, bool> _subNotes = {};
   final Map<String, bool> _disconnectIds = {};
+
+  final List<int> _disconnectTimestamps = [];
 
   final _controller = StreamController<StreamingResponse>.broadcast();
   StreamSubscription? _subscription;
@@ -144,7 +147,8 @@ class StreamingService implements StreamingController, WebSocketController {
       onError: (e, s) async {
         log("Error happen $e ");
         log(s);
-        await Future.delayed(const Duration(seconds: 1));
+        _disconnectTimestamps.add(DateTime.now().millisecondsSinceEpoch);
+        await Future.delayed(Duration(seconds: _calcReconnectInterval()));
         // 再呼び出し
         await _reconnect();
       },
@@ -160,11 +164,26 @@ class StreamingService implements StreamingController, WebSocketController {
           }
           return;
         }
-        await Future.delayed(const Duration(seconds: 1));
+        _disconnectTimestamps.add(DateTime.now().millisecondsSinceEpoch);
+        await Future.delayed(Duration(seconds: _calcReconnectInterval()));
         await _reconnect();
       },
       cancelOnError: true,
     );
+  }
+
+  int _calcReconnectInterval() {
+    var seconds = 0;
+    for (int i = _disconnectTimestamps.length - 1; i > 0; i--) {
+      final diff = _disconnectTimestamps[i] - _disconnectTimestamps[i - 1];
+      if (diff <= 5 * 1000) {
+        seconds += 1;
+      } else {
+        _disconnectTimestamps.removeRange(0, i);
+        break;
+      }
+    }
+    return math.min(seconds, 5);
   }
 
   @override
