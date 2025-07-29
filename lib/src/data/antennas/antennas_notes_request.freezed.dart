@@ -19,9 +19,9 @@ mixin _$AntennasNotesRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @DateTimeConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get sinceDate;
-  @DateTimeConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   DateTime? get untilDate;
 
   /// Create a copy of AntennasNotesRequest
@@ -73,8 +73,8 @@ abstract mixin class $AntennasNotesRequestCopyWith<$Res> {
       int? limit,
       String? sinceId,
       String? untilId,
-      @DateTimeConverter() DateTime? sinceDate,
-      @DateTimeConverter() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
 }
 
 /// @nodoc
@@ -134,8 +134,8 @@ class _AntennasNotesRequest implements AntennasNotesRequest {
       this.limit,
       this.sinceId,
       this.untilId,
-      @DateTimeConverter() this.sinceDate,
-      @DateTimeConverter() this.untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
   factory _AntennasNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$AntennasNotesRequestFromJson(json);
 
@@ -148,10 +148,10 @@ class _AntennasNotesRequest implements AntennasNotesRequest {
   @override
   final String? untilId;
   @override
-  @DateTimeConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? sinceDate;
   @override
-  @DateTimeConverter()
+  @EpocTimeDateTimeConverter.withMilliSeconds()
   final DateTime? untilDate;
 
   /// Create a copy of AntennasNotesRequest
@@ -210,8 +210,8 @@ abstract mixin class _$AntennasNotesRequestCopyWith<$Res>
       int? limit,
       String? sinceId,
       String? untilId,
-      @DateTimeConverter() DateTime? sinceDate,
-      @DateTimeConverter() DateTime? untilDate});
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
 }
 
 /// @nodoc

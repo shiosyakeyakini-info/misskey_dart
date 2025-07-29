@@ -11,8 +11,8 @@ abstract class AntennasNotesRequest with _$AntennasNotesRequest {
     int? limit,
     String? sinceId,
     String? untilId,
-    @DateTimeConverter() DateTime? sinceDate,
-    @DateTimeConverter() DateTime? untilDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
   }) = _AntennasNotesRequest;
 
   factory AntennasNotesRequest.fromJson(Map<String, dynamic> json) =>
