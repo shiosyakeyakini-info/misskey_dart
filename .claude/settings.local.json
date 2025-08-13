@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:misskey-hub.net)",
+      "WebFetch(domain:uneune.one)",
+      "Bash(dart analyze:*)",
+      "Bash(fvm dart:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
