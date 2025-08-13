@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,90 +10,69 @@ part of 'gallery_posts_show_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-GalleryPostsShowRequest _$GalleryPostsShowRequestFromJson(
-    Map<String, dynamic> json) {
-  return _GalleryPostsShowRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GalleryPostsShowRequest {
-  String get postId => throw _privateConstructorUsedError;
+  String get postId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $GalleryPostsShowRequestCopyWith<GalleryPostsShowRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GalleryPostsShowRequestCopyWith<$Res> {
-  factory $GalleryPostsShowRequestCopyWith(GalleryPostsShowRequest value,
-          $Res Function(GalleryPostsShowRequest) then) =
-      _$GalleryPostsShowRequestCopyWithImpl<$Res, GalleryPostsShowRequest>;
-  @useResult
-  $Res call({String postId});
-}
-
-/// @nodoc
-class _$GalleryPostsShowRequestCopyWithImpl<$Res,
-        $Val extends GalleryPostsShowRequest>
-    implements $GalleryPostsShowRequestCopyWith<$Res> {
-  _$GalleryPostsShowRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of GalleryPostsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $GalleryPostsShowRequestCopyWith<GalleryPostsShowRequest> get copyWith =>
+      _$GalleryPostsShowRequestCopyWithImpl<GalleryPostsShowRequest>(
+          this as GalleryPostsShowRequest, _$identity);
+
+  /// Serializes this GalleryPostsShowRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? postId = null,
-  }) {
-    return _then(_value.copyWith(
-      postId: null == postId
-          ? _value.postId
-          : postId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GalleryPostsShowRequest &&
+            (identical(other.postId, postId) || other.postId == postId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, postId);
+
+  @override
+  String toString() {
+    return 'GalleryPostsShowRequest(postId: $postId)';
   }
 }
 
 /// @nodoc
-abstract class _$$GalleryPostsShowRequestImplCopyWith<$Res>
-    implements $GalleryPostsShowRequestCopyWith<$Res> {
-  factory _$$GalleryPostsShowRequestImplCopyWith(
-          _$GalleryPostsShowRequestImpl value,
-          $Res Function(_$GalleryPostsShowRequestImpl) then) =
-      __$$GalleryPostsShowRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GalleryPostsShowRequestCopyWith<$Res> {
+  factory $GalleryPostsShowRequestCopyWith(GalleryPostsShowRequest value,
+          $Res Function(GalleryPostsShowRequest) _then) =
+      _$GalleryPostsShowRequestCopyWithImpl;
   @useResult
   $Res call({String postId});
 }
 
 /// @nodoc
-class __$$GalleryPostsShowRequestImplCopyWithImpl<$Res>
-    extends _$GalleryPostsShowRequestCopyWithImpl<$Res,
-        _$GalleryPostsShowRequestImpl>
-    implements _$$GalleryPostsShowRequestImplCopyWith<$Res> {
-  __$$GalleryPostsShowRequestImplCopyWithImpl(
-      _$GalleryPostsShowRequestImpl _value,
-      $Res Function(_$GalleryPostsShowRequestImpl) _then)
-      : super(_value, _then);
+class _$GalleryPostsShowRequestCopyWithImpl<$Res>
+    implements $GalleryPostsShowRequestCopyWith<$Res> {
+  _$GalleryPostsShowRequestCopyWithImpl(this._self, this._then);
 
+  final GalleryPostsShowRequest _self;
+  final $Res Function(GalleryPostsShowRequest) _then;
+
+  /// Create a copy of GalleryPostsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? postId = null,
   }) {
-    return _then(_$GalleryPostsShowRequestImpl(
+    return _then(_self.copyWith(
       postId: null == postId
-          ? _value.postId
+          ? _self.postId
           : postId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -101,58 +81,81 @@ class __$$GalleryPostsShowRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GalleryPostsShowRequestImpl implements _GalleryPostsShowRequest {
-  const _$GalleryPostsShowRequestImpl({required this.postId});
-
-  factory _$GalleryPostsShowRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GalleryPostsShowRequestImplFromJson(json);
+class _GalleryPostsShowRequest implements GalleryPostsShowRequest {
+  const _GalleryPostsShowRequest({required this.postId});
+  factory _GalleryPostsShowRequest.fromJson(Map<String, dynamic> json) =>
+      _$GalleryPostsShowRequestFromJson(json);
 
   @override
   final String postId;
 
+  /// Create a copy of GalleryPostsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GalleryPostsShowRequest(postId: $postId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GalleryPostsShowRequestCopyWith<_GalleryPostsShowRequest> get copyWith =>
+      __$GalleryPostsShowRequestCopyWithImpl<_GalleryPostsShowRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GalleryPostsShowRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GalleryPostsShowRequestImpl &&
+            other is _GalleryPostsShowRequest &&
             (identical(other.postId, postId) || other.postId == postId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, postId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GalleryPostsShowRequestImplCopyWith<_$GalleryPostsShowRequestImpl>
-      get copyWith => __$$GalleryPostsShowRequestImplCopyWithImpl<
-          _$GalleryPostsShowRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GalleryPostsShowRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GalleryPostsShowRequest(postId: $postId)';
   }
 }
 
-abstract class _GalleryPostsShowRequest implements GalleryPostsShowRequest {
-  const factory _GalleryPostsShowRequest({required final String postId}) =
-      _$GalleryPostsShowRequestImpl;
-
-  factory _GalleryPostsShowRequest.fromJson(Map<String, dynamic> json) =
-      _$GalleryPostsShowRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GalleryPostsShowRequestCopyWith<$Res>
+    implements $GalleryPostsShowRequestCopyWith<$Res> {
+  factory _$GalleryPostsShowRequestCopyWith(_GalleryPostsShowRequest value,
+          $Res Function(_GalleryPostsShowRequest) _then) =
+      __$GalleryPostsShowRequestCopyWithImpl;
   @override
-  String get postId;
-  @override
-  @JsonKey(ignore: true)
-  _$$GalleryPostsShowRequestImplCopyWith<_$GalleryPostsShowRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String postId});
 }
+
+/// @nodoc
+class __$GalleryPostsShowRequestCopyWithImpl<$Res>
+    implements _$GalleryPostsShowRequestCopyWith<$Res> {
+  __$GalleryPostsShowRequestCopyWithImpl(this._self, this._then);
+
+  final _GalleryPostsShowRequest _self;
+  final $Res Function(_GalleryPostsShowRequest) _then;
+
+  /// Create a copy of GalleryPostsShowRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? postId = null,
+  }) {
+    return _then(_GalleryPostsShowRequest(
+      postId: null == postId
+          ? _self.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

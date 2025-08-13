@@ -7,7 +7,7 @@ part 'i_notifications_response.freezed.dart';
 part 'i_notifications_response.g.dart';
 
 @freezed
-class INotificationsResponse with _$INotificationsResponse {
+abstract class INotificationsResponse with _$INotificationsResponse {
   const factory INotificationsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -22,6 +22,7 @@ class INotificationsResponse with _$INotificationsResponse {
     String? header,
     @NullableUriConverter() Uri? icon,
     String? appAccessTokenId,
+    ChatJoining? invitation,
     String? userId,
     UserLite? user,
     Note? note,
@@ -38,7 +39,7 @@ class INotificationsResponse with _$INotificationsResponse {
 }
 
 @freezed
-class INotificationsReaction with _$INotificationsReaction {
+abstract class INotificationsReaction with _$INotificationsReaction {
   const factory INotificationsReaction({
     required UserLite user,
     required String reaction,

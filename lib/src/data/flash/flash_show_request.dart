@@ -4,7 +4,7 @@ part 'flash_show_request.freezed.dart';
 part 'flash_show_request.g.dart';
 
 @freezed
-class FlashShowRequest with _$FlashShowRequest {
+abstract class FlashShowRequest with _$FlashShowRequest {
   const factory FlashShowRequest({
     required String flashId,
   }) = _FlashShowRequest;

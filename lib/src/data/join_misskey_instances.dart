@@ -4,7 +4,7 @@ part 'join_misskey_instances.freezed.dart';
 part 'join_misskey_instances.g.dart';
 
 @freezed
-class JoinMisskeyInstances with _$JoinMisskeyInstances {
+abstract class JoinMisskeyInstances with _$JoinMisskeyInstances {
   const factory JoinMisskeyInstances({
     required DateTime date,
     required JoinMisskeyStats stats,
@@ -16,11 +16,15 @@ class JoinMisskeyInstances with _$JoinMisskeyInstances {
 }
 
 @freezed
-class JoinMisskeyStats with _$JoinMisskeyStats {
+abstract class JoinMisskeyStats with _$JoinMisskeyStats {
   const factory JoinMisskeyStats({
     required int notesCount,
     required int usersCount,
-    required int mau,
+    // Removed in joinmisskey/api 3.1.0
+    int? mau,
+    int? npd15,
+    int? druYesterday,
+    int? dru15,
     required int instancesCount,
   }) = _JoinMisskeyStats;
 
@@ -29,7 +33,7 @@ class JoinMisskeyStats with _$JoinMisskeyStats {
 }
 
 @freezed
-class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
+abstract class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
   const factory JoinMisskeyInstanceInfo({
     required String url,
     required String name,
@@ -43,6 +47,9 @@ class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
     // ignore: invalid_annotation_target
     @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
     Map<String, dynamic>? meta,
+    int? npd15,
+    int? druYesterday,
+    int? dru15,
   }) = _JoinMisskeyInstanceInfo;
 
   factory JoinMisskeyInstanceInfo.fromJson(Map<String, dynamic> json) =>
@@ -50,7 +57,7 @@ class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
 }
 
 @freezed
-class JoinMisskeyNodeInfo with _$JoinMisskeyNodeInfo {
+abstract class JoinMisskeyNodeInfo with _$JoinMisskeyNodeInfo {
   const factory JoinMisskeyNodeInfo({
     String? version,
     JoinMisskeyNodeInfoSoftware? software,
@@ -62,7 +69,7 @@ class JoinMisskeyNodeInfo with _$JoinMisskeyNodeInfo {
 }
 
 @freezed
-class JoinMisskeyNodeInfoSoftware with _$JoinMisskeyNodeInfoSoftware {
+abstract class JoinMisskeyNodeInfoSoftware with _$JoinMisskeyNodeInfoSoftware {
   const factory JoinMisskeyNodeInfoSoftware({
     String? name,
     String? version,
@@ -73,7 +80,7 @@ class JoinMisskeyNodeInfoSoftware with _$JoinMisskeyNodeInfoSoftware {
 }
 
 @freezed
-class JoinMisskeyNodeInfoUsage with _$JoinMisskeyNodeInfoUsage {
+abstract class JoinMisskeyNodeInfoUsage with _$JoinMisskeyNodeInfoUsage {
   const factory JoinMisskeyNodeInfoUsage({
     JoinMisskeyNodeInfoUsageUsers? users,
     int? localPosts,
@@ -85,7 +92,8 @@ class JoinMisskeyNodeInfoUsage with _$JoinMisskeyNodeInfoUsage {
 }
 
 @freezed
-class JoinMisskeyNodeInfoUsageUsers with _$JoinMisskeyNodeInfoUsageUsers {
+abstract class JoinMisskeyNodeInfoUsageUsers
+    with _$JoinMisskeyNodeInfoUsageUsers {
   const factory JoinMisskeyNodeInfoUsageUsers({
     int? total,
   }) = _JoinMisskeyNodeInfoUsageUsers;

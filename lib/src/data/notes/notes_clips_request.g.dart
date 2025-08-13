@@ -6,14 +6,12 @@ part of 'notes_clips_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotesClipsRequestImpl _$$NotesClipsRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$NotesClipsRequestImpl(
+_NotesClipsRequest _$NotesClipsRequestFromJson(Map<String, dynamic> json) =>
+    _NotesClipsRequest(
       noteId: json['noteId'] as String,
     );
 
-Map<String, dynamic> _$$NotesClipsRequestImplToJson(
-        _$NotesClipsRequestImpl instance) =>
+Map<String, dynamic> _$NotesClipsRequestToJson(_NotesClipsRequest instance) =>
     <String, dynamic>{
       'noteId': instance.noteId,
     };

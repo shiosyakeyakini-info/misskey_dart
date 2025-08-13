@@ -6,15 +6,15 @@ part of 'global_timeline_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GlobalTimelineParameterImpl _$$GlobalTimelineParameterImplFromJson(
+_GlobalTimelineParameter _$GlobalTimelineParameterFromJson(
         Map<String, dynamic> json) =>
-    _$GlobalTimelineParameterImpl(
+    _GlobalTimelineParameter(
       withRenotes: json['withRenotes'] as bool?,
       withFiles: json['withFiles'] as bool?,
     );
 
-Map<String, dynamic> _$$GlobalTimelineParameterImplToJson(
-        _$GlobalTimelineParameterImpl instance) =>
+Map<String, dynamic> _$GlobalTimelineParameterToJson(
+        _GlobalTimelineParameter instance) =>
     <String, dynamic>{
       'withRenotes': instance.withRenotes,
       'withFiles': instance.withFiles,

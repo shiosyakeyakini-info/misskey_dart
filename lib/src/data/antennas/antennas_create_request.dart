@@ -5,7 +5,7 @@ part 'antennas_create_request.freezed.dart';
 part 'antennas_create_request.g.dart';
 
 @freezed
-class AntennasCreateRequest with _$AntennasCreateRequest {
+abstract class AntennasCreateRequest with _$AntennasCreateRequest {
   const factory AntennasCreateRequest({
     required String name,
     required AntennaSource src,

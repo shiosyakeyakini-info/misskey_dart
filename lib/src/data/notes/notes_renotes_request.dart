@@ -4,7 +4,7 @@ part 'notes_renotes_request.freezed.dart';
 part 'notes_renotes_request.g.dart';
 
 @freezed
-class NotesRenoteRequest with _$NotesRenoteRequest {
+abstract class NotesRenoteRequest with _$NotesRenoteRequest {
   const factory NotesRenoteRequest({
     required String noteId,
     int? limit,

@@ -4,7 +4,7 @@ part 'notes_show_request.freezed.dart';
 part 'notes_show_request.g.dart';
 
 @freezed
-class NotesShowRequest with _$NotesShowRequest {
+abstract class NotesShowRequest with _$NotesShowRequest {
   const factory NotesShowRequest({
     required String noteId,
   }) = _NotesShowRequest;

@@ -5,7 +5,7 @@ part 'gallery_post.freezed.dart';
 part 'gallery_post.g.dart';
 
 @freezed
-class GalleryPost with _$GalleryPost {
+abstract class GalleryPost with _$GalleryPost {
   const factory GalleryPost({
     required String id,
     required DateTime createdAt,

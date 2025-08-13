@@ -6,7 +6,7 @@ part 'reversi_show_game_response.freezed.dart';
 part 'reversi_show_game_response.g.dart';
 
 @freezed
-class ReversiShowGameResponse with _$ReversiShowGameResponse {
+abstract class ReversiShowGameResponse with _$ReversiShowGameResponse {
   const factory ReversiShowGameResponse({
     required String id,
     required DateTime createdAt,

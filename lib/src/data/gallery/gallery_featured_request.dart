@@ -4,7 +4,7 @@ part 'gallery_featured_request.freezed.dart';
 part 'gallery_featured_request.g.dart';
 
 @freezed
-class GalleryFeaturedRequest with _$GalleryFeaturedRequest {
+abstract class GalleryFeaturedRequest with _$GalleryFeaturedRequest {
   const factory GalleryFeaturedRequest({
     int? limit,
     String? untilId,

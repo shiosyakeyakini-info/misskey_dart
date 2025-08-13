@@ -8,13 +8,13 @@ part 'i_update_request.freezed.dart';
 part 'i_update_request.g.dart';
 
 @freezed
-class IUpdateRequest with _$IUpdateRequest {
+abstract class IUpdateRequest with _$IUpdateRequest {
   const factory IUpdateRequest({
     String? name,
     String? description,
     String? followedMessage,
     String? location,
-    @DateTimeConverter() DateTime? birthday,
+    @BirthdayConverter() DateTime? birthday,
     String? lang,
     String? avatarId,
     List<IUpdateAvatarDecoration>? avatarDecorations,
@@ -40,6 +40,7 @@ class IUpdateRequest with _$IUpdateRequest {
     @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
     FFVisibility? followingVisibility,
     FFVisibility? followersVisibility,
+    ChatScope? chatScope,
     String? pinnedPageId,
     List<String>? mutingNotificationTypes,
     @MuteWordsConverter() List<MuteWord>? mutedWords,
@@ -55,7 +56,7 @@ class IUpdateRequest with _$IUpdateRequest {
 }
 
 @freezed
-class IUpdateAvatarDecoration with _$IUpdateAvatarDecoration {
+abstract class IUpdateAvatarDecoration with _$IUpdateAvatarDecoration {
   const factory IUpdateAvatarDecoration({
     required String id,
     double? angle,

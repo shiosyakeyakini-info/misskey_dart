@@ -4,7 +4,7 @@ part 'drive_response.freezed.dart';
 part 'drive_response.g.dart';
 
 @freezed
-class DriveResponse with _$DriveResponse {
+abstract class DriveResponse with _$DriveResponse {
   const factory DriveResponse({
     required int capacity,
     required int usage,

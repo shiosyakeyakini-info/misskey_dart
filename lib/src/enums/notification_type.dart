@@ -22,6 +22,8 @@ enum NotificationType {
   renoteGrouped,
   roleAssigned,
   exportCompleted,
+  createToken,
   login,
+  chatRoomInvitationReceived,
   unknown,
 }

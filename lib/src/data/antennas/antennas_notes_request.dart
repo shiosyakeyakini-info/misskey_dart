@@ -5,14 +5,14 @@ part 'antennas_notes_request.freezed.dart';
 part 'antennas_notes_request.g.dart';
 
 @freezed
-class AntennasNotesRequest with _$AntennasNotesRequest {
+abstract class AntennasNotesRequest with _$AntennasNotesRequest {
   const factory AntennasNotesRequest({
     required String antennaId,
     int? limit,
     String? sinceId,
     String? untilId,
-    @DateTimeConverter() DateTime? sinceDate,
-    @DateTimeConverter() DateTime? untilDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
   }) = _AntennasNotesRequest;
 
   factory AntennasNotesRequest.fromJson(Map<String, dynamic> json) =>

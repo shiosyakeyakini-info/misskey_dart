@@ -4,7 +4,7 @@ part 'i_gallery_likes_request.freezed.dart';
 part 'i_gallery_likes_request.g.dart';
 
 @freezed
-class IGalleryLikesRequest with _$IGalleryLikesRequest {
+abstract class IGalleryLikesRequest with _$IGalleryLikesRequest {
   const factory IGalleryLikesRequest({
     int? limit,
     String? sinceId,

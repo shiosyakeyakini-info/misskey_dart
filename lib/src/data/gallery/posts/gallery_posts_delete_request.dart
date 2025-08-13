@@ -4,7 +4,7 @@ part 'gallery_posts_delete_request.freezed.dart';
 part 'gallery_posts_delete_request.g.dart';
 
 @freezed
-class GalleryPostsDeleteRequest with _$GalleryPostsDeleteRequest {
+abstract class GalleryPostsDeleteRequest with _$GalleryPostsDeleteRequest {
   const factory GalleryPostsDeleteRequest({
     required String postId,
   }) = _GalleryPostsDeleteRequest;

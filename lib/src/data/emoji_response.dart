@@ -5,7 +5,7 @@ part 'emoji_response.freezed.dart';
 part 'emoji_response.g.dart';
 
 @freezed
-class EmojiResponse with _$EmojiResponse {
+abstract class EmojiResponse with _$EmojiResponse {
   const factory EmojiResponse({
     required String id,
     @Default([]) List<String> aliases,

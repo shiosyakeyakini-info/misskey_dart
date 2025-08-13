@@ -4,7 +4,7 @@ part 'channels_create_request.freezed.dart';
 part 'channels_create_request.g.dart';
 
 @freezed
-class ChannelsCreateRequest with _$ChannelsCreateRequest {
+abstract class ChannelsCreateRequest with _$ChannelsCreateRequest {
   const factory ChannelsCreateRequest({
     required String name,
     String? description,

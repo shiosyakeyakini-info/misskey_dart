@@ -240,6 +240,77 @@ void main() async {
     });
   });
 
+  group("drafts", () {
+    test(
+      "count",
+      () async {
+        await userClient.notes.drafts.create(NotesDraftsCreateRequest());
+        final response = await userClient.notes.drafts.count();
+        expect(response, greaterThan(0));
+      },
+      skip: "draft API not available in current Misskey version",
+    );
+
+    test(
+      "create",
+      () async {
+        final response = await userClient.notes.drafts.create(
+          NotesDraftsCreateRequest(text: "test"),
+        );
+        expect(response.createdDraft.text, "test");
+      },
+      skip: "draft API not available in current Misskey version",
+    );
+
+    test(
+      "delete",
+      () async {
+        final draft = await userClient.notes.drafts.create(
+          NotesDraftsCreateRequest(),
+        );
+        await userClient.notes.drafts.delete(
+          NotesDraftsDeleteRequest(draftId: draft.createdDraft.id),
+        );
+        final drafts = await userClient.notes.drafts.list(
+          NotesDraftsListRequest(),
+        );
+        expect(drafts.map((e) => e.id), isNot(contains(draft.createdDraft.id)));
+      },
+      skip: "draft API not available in current Misskey version",
+    );
+
+    test(
+      "list",
+      () async {
+        final draft = await userClient.notes.drafts.create(
+          NotesDraftsCreateRequest(),
+        );
+        final drafts = await userClient.notes.drafts.list(
+          NotesDraftsListRequest(),
+        );
+        expect(drafts.map((e) => e.id), contains(draft.createdDraft.id));
+      },
+      skip: "draft API not available in current Misskey version",
+    );
+
+    test(
+      "update",
+      () async {
+        final draft = await userClient.notes.drafts.create(
+          NotesDraftsCreateRequest(),
+        );
+        final response = await userClient.notes.drafts.update(
+          NotesDraftsUpdateRequest(
+            draftId: draft.createdDraft.id,
+            text: "updated",
+          ),
+        );
+        expect(response.updatedDraft.text, "updated");
+      },
+      skip: "draft API not available in current Misskey version",
+    );
+  });
+
   group("favorites", () {
     test("create", () async {
       final note = await userClient.createNote();

@@ -6,7 +6,7 @@ part 'notes_reactions_response.freezed.dart';
 part 'notes_reactions_response.g.dart';
 
 @freezed
-class NotesReactionsResponse with _$NotesReactionsResponse {
+abstract class NotesReactionsResponse with _$NotesReactionsResponse {
   const factory NotesReactionsResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

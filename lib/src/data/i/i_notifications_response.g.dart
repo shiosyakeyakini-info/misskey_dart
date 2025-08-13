@@ -6,9 +6,9 @@ part of 'i_notifications_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
+_INotificationsResponse _$INotificationsResponseFromJson(
         Map<String, dynamic> json) =>
-    _$INotificationsResponseImpl(
+    _INotificationsResponse(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -17,13 +17,16 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       noteId: json['noteId'] as String?,
       followRequestId: json['followRequestId'] as String?,
       reaction: json['reaction'] as String?,
-      choice: json['choice'] as int?,
+      choice: (json['choice'] as num?)?.toInt(),
       achievement: json['achievement'] as String?,
       body: json['body'] as String?,
       header: json['header'] as String?,
       icon: _$JsonConverterFromJson<String, Uri?>(
           json['icon'], const NullableUriConverter().fromJson),
       appAccessTokenId: json['appAccessTokenId'] as String?,
+      invitation: json['invitation'] == null
+          ? null
+          : ChatJoining.fromJson(json['invitation'] as Map<String, dynamic>),
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null
@@ -47,8 +50,8 @@ _$INotificationsResponseImpl _$$INotificationsResponseImplFromJson(
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$INotificationsResponseImplToJson(
-        _$INotificationsResponseImpl instance) =>
+Map<String, dynamic> _$INotificationsResponseToJson(
+        _INotificationsResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
@@ -62,6 +65,7 @@ Map<String, dynamic> _$$INotificationsResponseImplToJson(
       'header': instance.header,
       'icon': const NullableUriConverter().toJson(instance.icon),
       'appAccessTokenId': instance.appAccessTokenId,
+      'invitation': instance.invitation?.toJson(),
       'userId': instance.userId,
       'user': instance.user?.toJson(),
       'note': instance.note?.toJson(),
@@ -94,7 +98,9 @@ const _$NotificationTypeEnumMap = {
   NotificationType.renoteGrouped: 'renote:grouped',
   NotificationType.roleAssigned: 'roleAssigned',
   NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.createToken: 'createToken',
   NotificationType.login: 'login',
+  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
   NotificationType.unknown: 'unknown',
 };
 
@@ -116,15 +122,15 @@ const _$UserExportableEntitiesEnumMap = {
   UserExportableEntities.userList: 'userList',
 };
 
-_$INotificationsReactionImpl _$$INotificationsReactionImplFromJson(
+_INotificationsReaction _$INotificationsReactionFromJson(
         Map<String, dynamic> json) =>
-    _$INotificationsReactionImpl(
+    _INotificationsReaction(
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       reaction: json['reaction'] as String,
     );
 
-Map<String, dynamic> _$$INotificationsReactionImplToJson(
-        _$INotificationsReactionImpl instance) =>
+Map<String, dynamic> _$INotificationsReactionToJson(
+        _INotificationsReaction instance) =>
     <String, dynamic>{
       'user': instance.user.toJson(),
       'reaction': instance.reaction,

@@ -4,7 +4,7 @@ part 'server_info_response.freezed.dart';
 part 'server_info_response.g.dart';
 
 @freezed
-class ServerInfoResponse with _$ServerInfoResponse {
+abstract class ServerInfoResponse with _$ServerInfoResponse {
   const factory ServerInfoResponse({
     required String machine,
     required ServerInfoCpu cpu,
@@ -17,7 +17,7 @@ class ServerInfoResponse with _$ServerInfoResponse {
 }
 
 @freezed
-class ServerInfoCpu with _$ServerInfoCpu {
+abstract class ServerInfoCpu with _$ServerInfoCpu {
   const factory ServerInfoCpu({
     required String model,
     required int cores,
@@ -28,7 +28,7 @@ class ServerInfoCpu with _$ServerInfoCpu {
 }
 
 @freezed
-class ServerInfoMem with _$ServerInfoMem {
+abstract class ServerInfoMem with _$ServerInfoMem {
   const factory ServerInfoMem({
     required int total,
   }) = _ServerInfoMem;
@@ -38,7 +38,7 @@ class ServerInfoMem with _$ServerInfoMem {
 }
 
 @freezed
-class ServerInfoFs with _$ServerInfoFs {
+abstract class ServerInfoFs with _$ServerInfoFs {
   const factory ServerInfoFs({
     required int total,
     required int used,

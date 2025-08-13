@@ -5,7 +5,7 @@ part 'users_notes_request.freezed.dart';
 part 'users_notes_request.g.dart';
 
 @freezed
-class UsersNotesRequest with _$UsersNotesRequest {
+abstract class UsersNotesRequest with _$UsersNotesRequest {
   const factory UsersNotesRequest({
     required String userId,
     @Deprecated("removed at 2023.9.2") bool? includeReplies,

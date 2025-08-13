@@ -6,8 +6,7 @@ part of 'streaming_response_sub_type.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PageEventImpl _$$PageEventImplFromJson(Map<String, dynamic> json) =>
-    _$PageEventImpl(
+_PageEvent _$PageEventFromJson(Map<String, dynamic> json) => _PageEvent(
       pageId: json['pageId'] as String,
       event: json['event'] as String,
       variable: json['variable'] as Object,
@@ -15,7 +14,7 @@ _$PageEventImpl _$$PageEventImplFromJson(Map<String, dynamic> json) =>
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$PageEventImplToJson(_$PageEventImpl instance) =>
+Map<String, dynamic> _$PageEventToJson(_PageEvent instance) =>
     <String, dynamic>{
       'pageId': instance.pageId,
       'event': instance.event,
@@ -24,38 +23,36 @@ Map<String, dynamic> _$$PageEventImplToJson(_$PageEventImpl instance) =>
       'userId': instance.userId,
     };
 
-_$UrlUploadFinishedEventImpl _$$UrlUploadFinishedEventImplFromJson(
+_UrlUploadFinishedEvent _$UrlUploadFinishedEventFromJson(
         Map<String, dynamic> json) =>
-    _$UrlUploadFinishedEventImpl(
+    _UrlUploadFinishedEvent(
       marker: json['marker'] as String,
       file: DriveFile.fromJson(json['file'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$UrlUploadFinishedEventImplToJson(
-        _$UrlUploadFinishedEventImpl instance) =>
+Map<String, dynamic> _$UrlUploadFinishedEventToJson(
+        _UrlUploadFinishedEvent instance) =>
     <String, dynamic>{
       'marker': instance.marker,
       'file': instance.file.toJson(),
     };
 
-_$RegistryUpdatedImpl _$$RegistryUpdatedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RegistryUpdatedImpl(
+_RegistryUpdated _$RegistryUpdatedFromJson(Map<String, dynamic> json) =>
+    _RegistryUpdated(
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList(),
       key: json['key'] as String,
       value: json['value'],
     );
 
-Map<String, dynamic> _$$RegistryUpdatedImplToJson(
-        _$RegistryUpdatedImpl instance) =>
+Map<String, dynamic> _$RegistryUpdatedToJson(_RegistryUpdated instance) =>
     <String, dynamic>{
       'scope': instance.scope,
       'key': instance.key,
       'value': instance.value,
     };
 
-_$SigninImpl _$$SigninImplFromJson(Map<String, dynamic> json) => _$SigninImpl(
+_Signin _$SigninFromJson(Map<String, dynamic> json) => _Signin(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -64,8 +61,7 @@ _$SigninImpl _$$SigninImplFromJson(Map<String, dynamic> json) => _$SigninImpl(
       success: json['success'] as bool,
     );
 
-Map<String, dynamic> _$$SigninImplToJson(_$SigninImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$SigninToJson(_Signin instance) => <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'ip': instance.ip,
@@ -73,21 +69,20 @@ Map<String, dynamic> _$$SigninImplToJson(_$SigninImpl instance) =>
       'success': instance.success,
     };
 
-_$TimelineVotedImpl _$$TimelineVotedImplFromJson(Map<String, dynamic> json) =>
-    _$TimelineVotedImpl(
-      choice: json['choice'] as int,
+_TimelineVoted _$TimelineVotedFromJson(Map<String, dynamic> json) =>
+    _TimelineVoted(
+      choice: (json['choice'] as num).toInt(),
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$TimelineVotedImplToJson(_$TimelineVotedImpl instance) =>
+Map<String, dynamic> _$TimelineVotedToJson(_TimelineVoted instance) =>
     <String, dynamic>{
       'choice': instance.choice,
       'userId': instance.userId,
     };
 
-_$TimelineReactedImpl _$$TimelineReactedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TimelineReactedImpl(
+_TimelineReacted _$TimelineReactedFromJson(Map<String, dynamic> json) =>
+    _TimelineReacted(
       reaction: json['reaction'] as String,
       emoji: json['emoji'] == null
           ? null
@@ -96,44 +91,41 @@ _$TimelineReactedImpl _$$TimelineReactedImplFromJson(
       userId: json['userId'] as String,
     );
 
-Map<String, dynamic> _$$TimelineReactedImplToJson(
-        _$TimelineReactedImpl instance) =>
+Map<String, dynamic> _$TimelineReactedToJson(_TimelineReacted instance) =>
     <String, dynamic>{
       'reaction': instance.reaction,
       'emoji': instance.emoji?.toJson(),
       'userId': instance.userId,
     };
 
-_$TimelineReactedEmojiDataImpl _$$TimelineReactedEmojiDataImplFromJson(
+_TimelineReactedEmojiData _$TimelineReactedEmojiDataFromJson(
         Map<String, dynamic> json) =>
-    _$TimelineReactedEmojiDataImpl(
+    _TimelineReactedEmojiData(
       name: json['name'] as String,
       url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$TimelineReactedEmojiDataImplToJson(
-        _$TimelineReactedEmojiDataImpl instance) =>
+Map<String, dynamic> _$TimelineReactedEmojiDataToJson(
+        _TimelineReactedEmojiData instance) =>
     <String, dynamic>{
       'name': instance.name,
       'url': instance.url,
     };
 
-_$TimelineDeletedImpl _$$TimelineDeletedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TimelineDeletedImpl(
+_TimelineDeleted _$TimelineDeletedFromJson(Map<String, dynamic> json) =>
+    _TimelineDeleted(
       deletedAt:
           const DateTimeConverter().fromJson(json['deletedAt'] as String),
     );
 
-Map<String, dynamic> _$$TimelineDeletedImplToJson(
-        _$TimelineDeletedImpl instance) =>
+Map<String, dynamic> _$TimelineDeletedToJson(_TimelineDeleted instance) =>
     <String, dynamic>{
       'deletedAt': const DateTimeConverter().toJson(instance.deletedAt),
     };
 
-_$ServerMetricsResponseImpl _$$ServerMetricsResponseImplFromJson(
+ServerMetricsResponse _$ServerMetricsResponseFromJson(
         Map<String, dynamic> json) =>
-    _$ServerMetricsResponseImpl(
+    ServerMetricsResponse(
       cpu: (json['cpu'] as num).toDouble(),
       fs: StatsLogFs.fromJson(json['fs'] as Map<String, dynamic>),
       mem: StatsLogMem.fromJson(json['mem'] as Map<String, dynamic>),
@@ -141,8 +133,8 @@ _$ServerMetricsResponseImpl _$$ServerMetricsResponseImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ServerMetricsResponseImplToJson(
-        _$ServerMetricsResponseImpl instance) =>
+Map<String, dynamic> _$ServerMetricsResponseToJson(
+        ServerMetricsResponse instance) =>
     <String, dynamic>{
       'cpu': instance.cpu,
       'fs': instance.fs.toJson(),
@@ -151,9 +143,8 @@ Map<String, dynamic> _$$ServerMetricsResponseImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$JobQueueResponseImpl _$$JobQueueResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$JobQueueResponseImpl(
+JobQueueResponse _$JobQueueResponseFromJson(Map<String, dynamic> json) =>
+    JobQueueResponse(
       inbox: QueueStatsLogResponseData.fromJson(
           json['inbox'] as Map<String, dynamic>),
       deliver: QueueStatsLogResponseData.fromJson(
@@ -161,64 +152,75 @@ _$JobQueueResponseImpl _$$JobQueueResponseImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$JobQueueResponseImplToJson(
-        _$JobQueueResponseImpl instance) =>
+Map<String, dynamic> _$JobQueueResponseToJson(JobQueueResponse instance) =>
     <String, dynamic>{
       'inbox': instance.inbox.toJson(),
       'deliver': instance.deliver.toJson(),
       'runtimeType': instance.$type,
     };
 
-_$StatsLogFsImpl _$$StatsLogFsImplFromJson(Map<String, dynamic> json) =>
-    _$StatsLogFsImpl(
+_StatsLogFs _$StatsLogFsFromJson(Map<String, dynamic> json) => _StatsLogFs(
       r: (json['r'] as num).toDouble(),
       w: (json['w'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$StatsLogFsImplToJson(_$StatsLogFsImpl instance) =>
+Map<String, dynamic> _$StatsLogFsToJson(_StatsLogFs instance) =>
     <String, dynamic>{
       'r': instance.r,
       'w': instance.w,
     };
 
-_$StatsLogMemImpl _$$StatsLogMemImplFromJson(Map<String, dynamic> json) =>
-    _$StatsLogMemImpl(
+_StatsLogMem _$StatsLogMemFromJson(Map<String, dynamic> json) => _StatsLogMem(
       used: (json['used'] as num).toDouble(),
       active: (json['active'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$StatsLogMemImplToJson(_$StatsLogMemImpl instance) =>
+Map<String, dynamic> _$StatsLogMemToJson(_StatsLogMem instance) =>
     <String, dynamic>{
       'used': instance.used,
       'active': instance.active,
     };
 
-_$StatsLogNetImpl _$$StatsLogNetImplFromJson(Map<String, dynamic> json) =>
-    _$StatsLogNetImpl(
+_StatsLogNet _$StatsLogNetFromJson(Map<String, dynamic> json) => _StatsLogNet(
       rx: (json['rx'] as num).toDouble(),
       tx: (json['tx'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$StatsLogNetImplToJson(_$StatsLogNetImpl instance) =>
+Map<String, dynamic> _$StatsLogNetToJson(_StatsLogNet instance) =>
     <String, dynamic>{
       'rx': instance.rx,
       'tx': instance.tx,
     };
 
-_$QueueStatsLogResponseDataImpl _$$QueueStatsLogResponseDataImplFromJson(
+_QueueStatsLogResponseData _$QueueStatsLogResponseDataFromJson(
         Map<String, dynamic> json) =>
-    _$QueueStatsLogResponseDataImpl(
-      activeSincePrevTick: json['activeSincePrevTick'] as int,
-      active: json['active'] as int,
-      waiting: json['waiting'] as int,
-      delayed: json['delayed'] as int,
+    _QueueStatsLogResponseData(
+      activeSincePrevTick: (json['activeSincePrevTick'] as num).toInt(),
+      active: (json['active'] as num).toInt(),
+      waiting: (json['waiting'] as num).toInt(),
+      delayed: (json['delayed'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$QueueStatsLogResponseDataImplToJson(
-        _$QueueStatsLogResponseDataImpl instance) =>
+Map<String, dynamic> _$QueueStatsLogResponseDataToJson(
+        _QueueStatsLogResponseData instance) =>
     <String, dynamic>{
       'activeSincePrevTick': instance.activeSincePrevTick,
       'active': instance.active,
       'waiting': instance.waiting,
       'delayed': instance.delayed,
+    };
+
+_ChatReact _$ChatReactFromJson(Map<String, dynamic> json) => _ChatReact(
+      reaction: json['reaction'] as String,
+      user: json['user'] == null
+          ? null
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      messageId: json['messageId'] as String,
+    );
+
+Map<String, dynamic> _$ChatReactToJson(_ChatReact instance) =>
+    <String, dynamic>{
+      'reaction': instance.reaction,
+      'user': instance.user?.toJson(),
+      'messageId': instance.messageId,
     };

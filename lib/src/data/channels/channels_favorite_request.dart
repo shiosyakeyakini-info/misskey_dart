@@ -4,7 +4,7 @@ part 'channels_favorite_request.freezed.dart';
 part 'channels_favorite_request.g.dart';
 
 @freezed
-class ChannelsFavoriteRequest with _$ChannelsFavoriteRequest {
+abstract class ChannelsFavoriteRequest with _$ChannelsFavoriteRequest {
   const factory ChannelsFavoriteRequest({
     required String channelId,
   }) = _ChannelsFavoriteRequest;

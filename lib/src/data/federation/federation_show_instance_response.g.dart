@@ -6,48 +6,47 @@ part of 'federation_show_instance_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FederationShowInstanceResponseImpl
-    _$$FederationShowInstanceResponseImplFromJson(Map<String, dynamic> json) =>
-        _$FederationShowInstanceResponseImpl(
-          id: json['id'] as String,
-          firstRetrievedAt: const DateTimeConverter()
-              .fromJson(json['firstRetrievedAt'] as String),
-          host: json['host'] as String,
-          usersCount: json['usersCount'] as int?,
-          notesCount: json['notesCount'] as int?,
-          followingCount: json['followingCount'] as int?,
-          followersCount: json['followersCount'] as int?,
-          isNotResponding: json['isNotResponding'] as bool,
-          isSuspended: json['isSuspended'] as bool,
-          suspensionState: $enumDecodeNullable(
-              _$SuspensionStateEnumMap, json['suspensionState'],
-              unknownValue: JsonKey.nullForUndefinedEnumValue),
-          isBlocked: json['isBlocked'] as bool,
-          softwareName: json['softwareName'] as String?,
-          softwareVersion: json['softwareVersion'] as String?,
-          openRegistrations: json['openRegistrations'] as bool?,
-          name: json['name'] as String?,
-          description: json['description'] as String?,
-          maintainerName: json['maintainerName'] as String?,
-          maintainerEmail: json['maintainerEmail'] as String?,
-          isSilenced: json['isSilenced'] as bool?,
-          isMediaSilenced: json['isMediaSilenced'] as bool?,
-          iconUrl: _$JsonConverterFromJson<String, Uri?>(
-              json['iconUrl'], const NullableUriConverter().fromJson),
-          faviconUrl: _$JsonConverterFromJson<String, Uri?>(
-              json['faviconUrl'], const NullableUriConverter().fromJson),
-          themeColor: const NullableColorConverter()
-              .fromJson(json['themeColor'] as String?),
-          infoUpdatedAt: _$JsonConverterFromJson<String, DateTime>(
-              json['infoUpdatedAt'], const DateTimeConverter().fromJson),
-          latestRequestReceivedAt: _$JsonConverterFromJson<String, DateTime>(
-              json['latestRequestReceivedAt'],
-              const DateTimeConverter().fromJson),
-          moderationNote: json['moderationNote'] as String?,
-        );
+_FederationShowInstanceResponse _$FederationShowInstanceResponseFromJson(
+        Map<String, dynamic> json) =>
+    _FederationShowInstanceResponse(
+      id: json['id'] as String,
+      firstRetrievedAt: const DateTimeConverter()
+          .fromJson(json['firstRetrievedAt'] as String),
+      host: json['host'] as String,
+      usersCount: (json['usersCount'] as num?)?.toInt(),
+      notesCount: (json['notesCount'] as num?)?.toInt(),
+      followingCount: (json['followingCount'] as num?)?.toInt(),
+      followersCount: (json['followersCount'] as num?)?.toInt(),
+      isNotResponding: json['isNotResponding'] as bool,
+      isSuspended: json['isSuspended'] as bool,
+      suspensionState: $enumDecodeNullable(
+          _$SuspensionStateEnumMap, json['suspensionState'],
+          unknownValue: JsonKey.nullForUndefinedEnumValue),
+      isBlocked: json['isBlocked'] as bool,
+      softwareName: json['softwareName'] as String?,
+      softwareVersion: json['softwareVersion'] as String?,
+      openRegistrations: json['openRegistrations'] as bool?,
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      maintainerName: json['maintainerName'] as String?,
+      maintainerEmail: json['maintainerEmail'] as String?,
+      isSilenced: json['isSilenced'] as bool?,
+      isMediaSilenced: json['isMediaSilenced'] as bool?,
+      iconUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['iconUrl'], const NullableUriConverter().fromJson),
+      faviconUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['faviconUrl'], const NullableUriConverter().fromJson),
+      themeColor: const NullableColorConverter()
+          .fromJson(json['themeColor'] as String?),
+      infoUpdatedAt: _$JsonConverterFromJson<String, DateTime>(
+          json['infoUpdatedAt'], const DateTimeConverter().fromJson),
+      latestRequestReceivedAt: _$JsonConverterFromJson<String, DateTime>(
+          json['latestRequestReceivedAt'], const DateTimeConverter().fromJson),
+      moderationNote: json['moderationNote'] as String?,
+    );
 
-Map<String, dynamic> _$$FederationShowInstanceResponseImplToJson(
-        _$FederationShowInstanceResponseImpl instance) =>
+Map<String, dynamic> _$FederationShowInstanceResponseToJson(
+        _FederationShowInstanceResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'firstRetrievedAt':

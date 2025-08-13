@@ -4,7 +4,7 @@ part 'antennas_delete_request.freezed.dart';
 part 'antennas_delete_request.g.dart';
 
 @freezed
-class AntennasDeleteRequest with _$AntennasDeleteRequest {
+abstract class AntennasDeleteRequest with _$AntennasDeleteRequest {
   const factory AntennasDeleteRequest({
     required String antennaId,
   }) = _AntennasDeleteRequest;

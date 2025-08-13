@@ -5,7 +5,7 @@ part 'users_get_frequently_replied_users_response.freezed.dart';
 part 'users_get_frequently_replied_users_response.g.dart';
 
 @freezed
-class UsersGetFrequentlyRepliedUsersResponse
+abstract class UsersGetFrequentlyRepliedUsersResponse
     with _$UsersGetFrequentlyRepliedUsersResponse {
   const factory UsersGetFrequentlyRepliedUsersResponse({
     required User user,

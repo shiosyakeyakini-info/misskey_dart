@@ -4,7 +4,7 @@ part 'hashtags_trend_response.freezed.dart';
 part 'hashtags_trend_response.g.dart';
 
 @freezed
-class HashtagsTrendResponse with _$HashtagsTrendResponse {
+abstract class HashtagsTrendResponse with _$HashtagsTrendResponse {
   const factory HashtagsTrendResponse({
     required String tag,
     required List<int> chart,

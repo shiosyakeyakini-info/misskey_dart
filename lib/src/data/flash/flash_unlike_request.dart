@@ -4,7 +4,7 @@ part 'flash_unlike_request.freezed.dart';
 part 'flash_unlike_request.g.dart';
 
 @freezed
-class FlashUnlikeRequest with _$FlashUnlikeRequest {
+abstract class FlashUnlikeRequest with _$FlashUnlikeRequest {
   const factory FlashUnlikeRequest({
     required String flashId,
   }) = _FlashUnlikeRequest;

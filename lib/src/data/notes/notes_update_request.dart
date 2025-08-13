@@ -4,7 +4,7 @@ part 'notes_update_request.freezed.dart';
 part 'notes_update_request.g.dart';
 
 @freezed
-class NotesUpdateRequest with _$NotesUpdateRequest {
+abstract class NotesUpdateRequest with _$NotesUpdateRequest {
   const factory NotesUpdateRequest({
     required String noteId,
     // ここが必須なのはバグな気がする

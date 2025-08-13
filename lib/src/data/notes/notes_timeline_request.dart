@@ -5,7 +5,7 @@ part 'notes_timeline_request.freezed.dart';
 part 'notes_timeline_request.g.dart';
 
 @freezed
-class NotesTimelineRequest with _$NotesTimelineRequest {
+abstract class NotesTimelineRequest with _$NotesTimelineRequest {
   const factory NotesTimelineRequest({
     int? limit,
     String? sinceId,

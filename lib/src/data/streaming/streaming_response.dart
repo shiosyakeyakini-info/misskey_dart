@@ -46,7 +46,7 @@ sealed class StreamingResponse with _$StreamingResponse {
 }
 
 @freezed
-class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
+abstract class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
   const factory EmojiAddedStreamEvent({required Emoji emoji}) =
       _EmojiAddedStreamEvent;
   factory EmojiAddedStreamEvent.fromJson(Map<String, Object?> json) =>
@@ -54,7 +54,7 @@ class EmojiAddedStreamEvent with _$EmojiAddedStreamEvent {
 }
 
 @freezed
-class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
+abstract class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
   const factory EmojiUpdatedStreamEvent({required List<Emoji> emojis}) =
       _EmojiUpdatedStreamEvent;
   factory EmojiUpdatedStreamEvent.fromJson(Map<String, Object?> json) =>
@@ -62,7 +62,7 @@ class EmojiUpdatedStreamEvent with _$EmojiUpdatedStreamEvent {
 }
 
 @freezed
-class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
+abstract class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
   const factory EmojiDeletedStreamEvent({required List<Emoji> emojis}) =
       _EmojiDeletedStreamEvent;
   factory EmojiDeletedStreamEvent.fromJson(Map<String, Object?> json) =>
@@ -70,7 +70,8 @@ class EmojiDeletedStreamEvent with _$EmojiDeletedStreamEvent {
 }
 
 @freezed
-class AnnouncementCreatedStreamEvent with _$AnnouncementCreatedStreamEvent {
+abstract class AnnouncementCreatedStreamEvent
+    with _$AnnouncementCreatedStreamEvent {
   const factory AnnouncementCreatedStreamEvent({
     required AnnouncementsResponse announcement,
   }) = _AnnouncementCreatedStreamEvent;
@@ -229,6 +230,12 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required Antenna body,
   }) = UnreadAntennaChannelEvent;
 
+  @FreezedUnionValue("newChatMessage")
+  const factory ChannelStreamEvent.newChatMessage({
+    required String id,
+    required ChatMessage body,
+  }) = NewChatMessageEvent;
+
   @FreezedUnionValue("readAllAnnouncements")
   const factory ChannelStreamEvent.readAllAnnouncements({
     required String id,
@@ -274,6 +281,31 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required String id,
     required AnnouncementCreatedStreamEvent body,
   }) = AnnouncementCreatedChannelEvent;
+
+  // chat
+  @FreezedUnionValue("message")
+  const factory ChannelStreamEvent.chatMessage({
+    required String id,
+    required ChatMessage body,
+  }) = ChatMessageChannelEvent;
+
+  @FreezedUnionValue("deleted")
+  const factory ChannelStreamEvent.chatDeleted({
+    required String id,
+    required String body,
+  }) = ChatDeletedChannelEvent;
+
+  @FreezedUnionValue("react")
+  const factory ChannelStreamEvent.chatReact({
+    required String id,
+    required ChatReact body,
+  }) = ChatReactChannelEvent;
+
+  @FreezedUnionValue("unreact")
+  const factory ChannelStreamEvent.chatUnreact({
+    required String id,
+    required ChatReact body,
+  }) = ChatUnreactChannelEvent;
 
   const factory ChannelStreamEvent.fallback({
     required String id,

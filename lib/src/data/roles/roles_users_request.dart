@@ -4,7 +4,7 @@ part 'roles_users_request.freezed.dart';
 part 'roles_users_request.g.dart';
 
 @freezed
-class RolesUsersRequest with _$RolesUsersRequest {
+abstract class RolesUsersRequest with _$RolesUsersRequest {
   const factory RolesUsersRequest({
     required String roleId,
     String? sinceId,

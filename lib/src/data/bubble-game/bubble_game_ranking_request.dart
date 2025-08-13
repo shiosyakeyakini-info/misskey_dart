@@ -4,7 +4,7 @@ part 'bubble_game_ranking_request.freezed.dart';
 part 'bubble_game_ranking_request.g.dart';
 
 @freezed
-class BubbleGameRankingRequest with _$BubbleGameRankingRequest {
+abstract class BubbleGameRankingRequest with _$BubbleGameRankingRequest {
   const factory BubbleGameRankingRequest({
     required String gameMode,
   }) = _BubbleGameRankingRequest;

@@ -6,7 +6,7 @@ part 'muting.freezed.dart';
 part 'muting.g.dart';
 
 @freezed
-class Muting with _$Muting {
+abstract class Muting with _$Muting {
   const factory Muting({
     required String id,
     @DateTimeConverter() required DateTime createdAt,

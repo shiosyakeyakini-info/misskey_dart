@@ -6,16 +6,16 @@ part of 'bubble_game_ranking_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BubbleGameRankingResponseImpl _$$BubbleGameRankingResponseImplFromJson(
+_BubbleGameRankingResponse _$BubbleGameRankingResponseFromJson(
         Map<String, dynamic> json) =>
-    _$BubbleGameRankingResponseImpl(
+    _BubbleGameRankingResponse(
       id: json['id'] as String,
-      score: json['score'] as int,
+      score: (json['score'] as num).toInt(),
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$BubbleGameRankingResponseImplToJson(
-        _$BubbleGameRankingResponseImpl instance) =>
+Map<String, dynamic> _$BubbleGameRankingResponseToJson(
+        _BubbleGameRankingResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'score': instance.score,

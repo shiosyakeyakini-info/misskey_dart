@@ -4,7 +4,7 @@ part 'users_flashs_request.freezed.dart';
 part 'users_flashs_request.g.dart';
 
 @freezed
-class UsersFlashsRequest with _$UsersFlashsRequest {
+abstract class UsersFlashsRequest with _$UsersFlashsRequest {
   const factory UsersFlashsRequest({
     required String userId,
     int? limit,

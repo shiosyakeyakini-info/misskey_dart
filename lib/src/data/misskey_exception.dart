@@ -4,7 +4,7 @@ part 'misskey_exception.freezed.dart';
 part 'misskey_exception.g.dart';
 
 @freezed
-class MisskeyException with _$MisskeyException implements Exception {
+abstract class MisskeyException with _$MisskeyException implements Exception {
   const factory MisskeyException({
     required String id,
     required String code,

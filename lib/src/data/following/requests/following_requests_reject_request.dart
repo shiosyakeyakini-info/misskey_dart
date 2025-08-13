@@ -4,7 +4,8 @@ part 'following_requests_reject_request.freezed.dart';
 part 'following_requests_reject_request.g.dart';
 
 @freezed
-class FollowingRequestsRejectRequest with _$FollowingRequestsRejectRequest {
+abstract class FollowingRequestsRejectRequest
+    with _$FollowingRequestsRejectRequest {
   const factory FollowingRequestsRejectRequest({
     required String userId,
   }) = _FollowingRequestsRejectRequest;

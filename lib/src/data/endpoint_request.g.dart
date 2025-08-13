@@ -6,14 +6,12 @@ part of 'endpoint_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EndpointRequestImpl _$$EndpointRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$EndpointRequestImpl(
+_EndpointRequest _$EndpointRequestFromJson(Map<String, dynamic> json) =>
+    _EndpointRequest(
       endpoint: json['endpoint'] as String,
     );
 
-Map<String, dynamic> _$$EndpointRequestImplToJson(
-        _$EndpointRequestImpl instance) =>
+Map<String, dynamic> _$EndpointRequestToJson(_EndpointRequest instance) =>
     <String, dynamic>{
       'endpoint': instance.endpoint,
     };

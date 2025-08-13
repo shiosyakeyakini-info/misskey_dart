@@ -6,8 +6,7 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserLiteImpl _$$UserLiteImplFromJson(Map<String, dynamic> json) =>
-    _$UserLiteImpl(
+_UserLite _$UserLiteFromJson(Map<String, dynamic> json) => _UserLite(
       id: json['id'] as String,
       name: json['name'] as String?,
       username: json['username'] as String,
@@ -41,8 +40,7 @@ _$UserLiteImpl _$$UserLiteImplFromJson(Map<String, dynamic> json) =>
           json['makeNotesHiddenBefore'], const HideBeforeConverter().fromJson),
     );
 
-Map<String, dynamic> _$$UserLiteImplToJson(_$UserLiteImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserLiteToJson(_UserLite instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'username': instance.username,
@@ -78,9 +76,8 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UserDetailedNotMeImpl(
+_UserDetailedNotMe _$UserDetailedNotMeFromJson(Map<String, dynamic> json) =>
+    _UserDetailedNotMe(
       id: json['id'] as String,
       name: json['name'] as String?,
       username: json['username'] as String,
@@ -163,6 +160,8 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool?,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
       securityKeys: json['securityKeys'] as bool?,
@@ -173,8 +172,7 @@ _$UserDetailedNotMeImpl _$$UserDetailedNotMeImplFromJson(
       moderationNote: json['moderationNote'] as String?,
     );
 
-Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
-        _$UserDetailedNotMeImpl instance) =>
+Map<String, dynamic> _$UserDetailedNotMeToJson(_UserDetailedNotMe instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -229,6 +227,8 @@ Map<String, dynamic> _$$UserDetailedNotMeImplToJson(
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -243,122 +243,126 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.private: 'private',
 };
 
-_$UserDetailedNotMeWithRelationsImpl
-    _$$UserDetailedNotMeWithRelationsImplFromJson(Map<String, dynamic> json) =>
-        _$UserDetailedNotMeWithRelationsImpl(
-          id: json['id'] as String,
-          name: json['name'] as String?,
-          username: json['username'] as String,
-          host: json['host'] as String?,
-          avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
-          avatarBlurhash: json['avatarBlurhash'] as String?,
-          avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
-                  ?.map((e) =>
-                      UserAvatarDecoration.fromJson(e as Map<String, dynamic>))
-                  .toList() ??
-              const [],
-          isBot: json['isBot'] as bool,
-          isCat: json['isCat'] as bool,
-          instance: json['instance'] == null
-              ? null
-              : UserInstanceInfo.fromJson(
-                  json['instance'] as Map<String, dynamic>),
-          emojis: json['emojis'] == null
-              ? const {}
-              : const EmojisConverter().fromJson(json['emojis']),
-          onlineStatus: const OnlineStatusJsonConverter()
-              .fromJson(json['onlineStatus'] as String?),
-          badgeRoles: (json['badgeRoles'] as List<dynamic>?)
-                  ?.map(
-                      (e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
-                  .toList() ??
-              const [],
-          requireSigninToViewContents:
-              json['requireSigninToViewContents'] as bool?,
-          makeNotesFollowersOnlyBefore:
-              _$JsonConverterFromJson<int, HideBefore>(
-                  json['makeNotesFollowersOnlyBefore'],
-                  const HideBeforeConverter().fromJson),
-          makeNotesHiddenBefore: _$JsonConverterFromJson<int, HideBefore>(
-              json['makeNotesHiddenBefore'],
-              const HideBeforeConverter().fromJson),
-          url: _$JsonConverterFromJson<String, Uri?>(
-              json['url'], const NullableUriConverter().fromJson),
-          uri: _$JsonConverterFromJson<String, Uri?>(
-              json['uri'], const NullableUriConverter().fromJson),
-          movedTo: _$JsonConverterFromJson<String, Uri?>(
-              json['movedTo'], const NullableUriConverter().fromJson),
-          alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-          createdAt:
-              const DateTimeConverter().fromJson(json['createdAt'] as String),
-          updatedAt: _$JsonConverterFromJson<String, DateTime?>(
-              json['updatedAt'], const NullableDateTimeConverter().fromJson),
-          lastFetchedAt: _$JsonConverterFromJson<String, DateTime?>(
-              json['lastFetchedAt'],
-              const NullableDateTimeConverter().fromJson),
-          bannerUrl: _$JsonConverterFromJson<String, Uri?>(
-              json['bannerUrl'], const NullableUriConverter().fromJson),
-          bannerBlurhash: json['bannerBlurhash'] as String?,
-          isLocked: json['isLocked'] as bool,
-          isSilenced: json['isSilenced'] as bool,
-          isSuspended: json['isSuspended'] as bool,
-          description: json['description'] as String?,
-          location: json['location'] as String?,
-          birthday: _$JsonConverterFromJson<String, DateTime?>(
-              json['birthday'], const NullableDateTimeConverter().fromJson),
-          lang: json['lang'] as String?,
-          fields: (json['fields'] as List<dynamic>?)
-              ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          verifiedLinks: (json['verifiedLinks'] as List<dynamic>?)
-                  ?.map((e) => e as String)
-                  .toList() ??
-              const [],
-          followersCount: (json['followersCount'] as num).toInt(),
-          followingCount: (json['followingCount'] as num).toInt(),
-          notesCount: (json['notesCount'] as num).toInt(),
-          pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-          pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
-              ?.map((e) => Note.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          pinnedPageId: json['pinnedPageId'] as String?,
-          pinnedPage: json['pinnedPage'] as Map<String, dynamic>?,
-          publicReactions: json['publicReactions'] as bool,
-          ffVisibility:
-              $enumDecodeNullable(_$FFVisibilityEnumMap, json['ffVisibility']),
-          followersVisibility: $enumDecodeNullable(
-              _$FFVisibilityEnumMap, json['followersVisibility']),
-          followingVisibility: $enumDecodeNullable(
-              _$FFVisibilityEnumMap, json['followingVisibility']),
-          twoFactorEnabled: json['twoFactorEnabled'] as bool?,
-          usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
-          securityKeys: json['securityKeys'] as bool?,
-          roles: (json['roles'] as List<dynamic>?)
-              ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          memo: json['memo'] as String?,
-          moderationNote: json['moderationNote'] as String?,
-          isFollowing: json['isFollowing'] as bool,
-          isFollowed: json['isFollowed'] as bool,
-          hasPendingFollowRequestFromYou:
-              json['hasPendingFollowRequestFromYou'] as bool,
-          hasPendingFollowRequestToYou:
-              json['hasPendingFollowRequestToYou'] as bool,
-          isBlocking: json['isBlocking'] as bool,
-          isBlocked: json['isBlocked'] as bool,
-          isMuted: json['isMuted'] as bool,
-          isRenoteMuted: json['isRenoteMuted'] as bool,
-          notify: $enumDecodeNullable(_$NotifyEnumMap, json['notify']),
-          withReplies: json['withReplies'] as bool?,
-          followedMessage: json['followedMessage'] as String?,
-        );
+const _$ChatScopeEnumMap = {
+  ChatScope.everyone: 'everyone',
+  ChatScope.followers: 'followers',
+  ChatScope.following: 'following',
+  ChatScope.mutual: 'mutual',
+  ChatScope.none: 'none',
+};
 
-Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
-        _$UserDetailedNotMeWithRelationsImpl instance) =>
+_UserDetailedNotMeWithRelations _$UserDetailedNotMeWithRelationsFromJson(
+        Map<String, dynamic> json) =>
+    _UserDetailedNotMeWithRelations(
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      username: json['username'] as String,
+      host: json['host'] as String?,
+      avatarUrl: const UriConverter().fromJson(json['avatarUrl'] as String),
+      avatarBlurhash: json['avatarBlurhash'] as String?,
+      avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
+              ?.map((e) =>
+                  UserAvatarDecoration.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      isBot: json['isBot'] as bool,
+      isCat: json['isCat'] as bool,
+      instance: json['instance'] == null
+          ? null
+          : UserInstanceInfo.fromJson(json['instance'] as Map<String, dynamic>),
+      emojis: json['emojis'] == null
+          ? const {}
+          : const EmojisConverter().fromJson(json['emojis']),
+      onlineStatus: const OnlineStatusJsonConverter()
+          .fromJson(json['onlineStatus'] as String?),
+      badgeRoles: (json['badgeRoles'] as List<dynamic>?)
+              ?.map((e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      requireSigninToViewContents: json['requireSigninToViewContents'] as bool?,
+      makeNotesFollowersOnlyBefore: _$JsonConverterFromJson<int, HideBefore>(
+          json['makeNotesFollowersOnlyBefore'],
+          const HideBeforeConverter().fromJson),
+      makeNotesHiddenBefore: _$JsonConverterFromJson<int, HideBefore>(
+          json['makeNotesHiddenBefore'], const HideBeforeConverter().fromJson),
+      url: _$JsonConverterFromJson<String, Uri?>(
+          json['url'], const NullableUriConverter().fromJson),
+      uri: _$JsonConverterFromJson<String, Uri?>(
+          json['uri'], const NullableUriConverter().fromJson),
+      movedTo: _$JsonConverterFromJson<String, Uri?>(
+          json['movedTo'], const NullableUriConverter().fromJson),
+      alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      createdAt:
+          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      updatedAt: _$JsonConverterFromJson<String, DateTime?>(
+          json['updatedAt'], const NullableDateTimeConverter().fromJson),
+      lastFetchedAt: _$JsonConverterFromJson<String, DateTime?>(
+          json['lastFetchedAt'], const NullableDateTimeConverter().fromJson),
+      bannerUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['bannerUrl'], const NullableUriConverter().fromJson),
+      bannerBlurhash: json['bannerBlurhash'] as String?,
+      isLocked: json['isLocked'] as bool,
+      isSilenced: json['isSilenced'] as bool,
+      isSuspended: json['isSuspended'] as bool,
+      description: json['description'] as String?,
+      location: json['location'] as String?,
+      birthday: _$JsonConverterFromJson<String, DateTime?>(
+          json['birthday'], const NullableDateTimeConverter().fromJson),
+      lang: json['lang'] as String?,
+      fields: (json['fields'] as List<dynamic>?)
+          ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      verifiedLinks: (json['verifiedLinks'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      followersCount: (json['followersCount'] as num).toInt(),
+      followingCount: (json['followingCount'] as num).toInt(),
+      notesCount: (json['notesCount'] as num).toInt(),
+      pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
+          ?.map((e) => Note.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      pinnedPageId: json['pinnedPageId'] as String?,
+      pinnedPage: json['pinnedPage'] as Map<String, dynamic>?,
+      publicReactions: json['publicReactions'] as bool,
+      ffVisibility:
+          $enumDecodeNullable(_$FFVisibilityEnumMap, json['ffVisibility']),
+      followersVisibility: $enumDecodeNullable(
+          _$FFVisibilityEnumMap, json['followersVisibility']),
+      followingVisibility: $enumDecodeNullable(
+          _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
+      twoFactorEnabled: json['twoFactorEnabled'] as bool?,
+      usePasswordLessLogin: json['usePasswordLessLogin'] as bool?,
+      securityKeys: json['securityKeys'] as bool?,
+      roles: (json['roles'] as List<dynamic>?)
+          ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      memo: json['memo'] as String?,
+      moderationNote: json['moderationNote'] as String?,
+      isFollowing: json['isFollowing'] as bool,
+      isFollowed: json['isFollowed'] as bool,
+      hasPendingFollowRequestFromYou:
+          json['hasPendingFollowRequestFromYou'] as bool,
+      hasPendingFollowRequestToYou:
+          json['hasPendingFollowRequestToYou'] as bool,
+      isBlocking: json['isBlocking'] as bool,
+      isBlocked: json['isBlocked'] as bool,
+      isMuted: json['isMuted'] as bool,
+      isRenoteMuted: json['isRenoteMuted'] as bool,
+      notify: $enumDecodeNullable(_$NotifyEnumMap, json['notify']),
+      withReplies: json['withReplies'] as bool?,
+      followedMessage: json['followedMessage'] as String?,
+    );
+
+Map<String, dynamic> _$UserDetailedNotMeWithRelationsToJson(
+        _UserDetailedNotMeWithRelations instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -413,6 +417,8 @@ Map<String, dynamic> _$$UserDetailedNotMeWithRelationsImplToJson(
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -437,8 +443,7 @@ const _$NotifyEnumMap = {
   Notify.none: 'none',
 };
 
-_$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
-    _$MeDetailedImpl(
+_MeDetailed _$MeDetailedFromJson(Map<String, dynamic> json) => _MeDetailed(
       id: json['id'] as String,
       name: json['name'] as String?,
       username: json['username'] as String,
@@ -521,6 +526,8 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
           _$FFVisibilityEnumMap, json['followersVisibility']),
       followingVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followingVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+      canChat: json['canChat'] as bool?,
       twoFactorEnabled: json['twoFactorEnabled'] as bool,
       usePasswordLessLogin: json['usePasswordLessLogin'] as bool,
       securityKeys: json['securityKeys'] as bool,
@@ -553,6 +560,7 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       hasUnreadAnnouncement: json['hasUnreadAnnouncement'] as bool,
       hasUnreadAntenna: json['hasUnreadAntenna'] as bool,
       hasUnreadChannel: json['hasUnreadChannel'] as bool,
+      hasUnreadChatMessages: json['hasUnreadChatMessages'] as bool?,
       hasUnreadNotification: json['hasUnreadNotification'] as bool,
       hasPendingReceivedFollowRequest:
           json['hasPendingReceivedFollowRequest'] as bool,
@@ -591,7 +599,7 @@ _$MeDetailedImpl _$$MeDetailedImplFromJson(Map<String, dynamic> json) =>
       policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
+Map<String, dynamic> _$MeDetailedToJson(_MeDetailed instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -646,6 +654,8 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
           _$FFVisibilityEnumMap[instance.followersVisibility],
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+      'canChat': instance.canChat,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'usePasswordLessLogin': instance.usePasswordLessLogin,
       'securityKeys': instance.securityKeys,
@@ -675,6 +685,7 @@ Map<String, dynamic> _$$MeDetailedImplToJson(_$MeDetailedImpl instance) =>
       'hasUnreadAnnouncement': instance.hasUnreadAnnouncement,
       'hasUnreadAntenna': instance.hasUnreadAntenna,
       'hasUnreadChannel': instance.hasUnreadChannel,
+      'hasUnreadChatMessages': instance.hasUnreadChatMessages,
       'hasUnreadNotification': instance.hasUnreadNotification,
       'hasPendingReceivedFollowRequest':
           instance.hasPendingReceivedFollowRequest,
@@ -701,9 +712,9 @@ const _$TwoFactorBackupCodesStockEnumMap = {
   TwoFactorBackupCodesStock.none: 'none',
 };
 
-_$UserAvatarDecorationImpl _$$UserAvatarDecorationImplFromJson(
+_UserAvatarDecoration _$UserAvatarDecorationFromJson(
         Map<String, dynamic> json) =>
-    _$UserAvatarDecorationImpl(
+    _UserAvatarDecoration(
       id: json['id'] as String,
       angle: (json['angle'] as num?)?.toDouble(),
       flipH: json['flipH'] as bool? ?? false,
@@ -712,8 +723,8 @@ _$UserAvatarDecorationImpl _$$UserAvatarDecorationImplFromJson(
       offsetY: (json['offsetY'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$$UserAvatarDecorationImplToJson(
-        _$UserAvatarDecorationImpl instance) =>
+Map<String, dynamic> _$UserAvatarDecorationToJson(
+        _UserAvatarDecoration instance) =>
     <String, dynamic>{
       'id': instance.id,
       'angle': instance.angle,
@@ -723,9 +734,8 @@ Map<String, dynamic> _$$UserAvatarDecorationImplToJson(
       'offsetY': instance.offsetY,
     };
 
-_$UserInstanceInfoImpl _$$UserInstanceInfoImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UserInstanceInfoImpl(
+_UserInstanceInfo _$UserInstanceInfoFromJson(Map<String, dynamic> json) =>
+    _UserInstanceInfo(
       name: json['name'] as String?,
       softwareVersion: json['softwareVersion'] as String?,
       softwareName: json['softwareName'] as String?,
@@ -736,8 +746,7 @@ _$UserInstanceInfoImpl _$$UserInstanceInfoImplFromJson(
       themeColor: json['themeColor'] as String?,
     );
 
-Map<String, dynamic> _$$UserInstanceInfoImplToJson(
-        _$UserInstanceInfoImpl instance) =>
+Map<String, dynamic> _$UserInstanceInfoToJson(_UserInstanceInfo instance) =>
     <String, dynamic>{
       'name': instance.name,
       'softwareVersion': instance.softwareVersion,
@@ -747,21 +756,20 @@ Map<String, dynamic> _$$UserInstanceInfoImplToJson(
       'themeColor': instance.themeColor,
     };
 
-_$UserBadgeRoleImpl _$$UserBadgeRoleImplFromJson(Map<String, dynamic> json) =>
-    _$UserBadgeRoleImpl(
+_UserBadgeRole _$UserBadgeRoleFromJson(Map<String, dynamic> json) =>
+    _UserBadgeRole(
       name: json['name'] as String,
       iconUrl: _$JsonConverterFromJson<String, Uri?>(
           json['iconUrl'], const NullableUriConverter().fromJson),
     );
 
-Map<String, dynamic> _$$UserBadgeRoleImplToJson(_$UserBadgeRoleImpl instance) =>
+Map<String, dynamic> _$UserBadgeRoleToJson(_UserBadgeRole instance) =>
     <String, dynamic>{
       'name': instance.name,
       'iconUrl': const NullableUriConverter().toJson(instance.iconUrl),
     };
 
-_$UserRoleImpl _$$UserRoleImplFromJson(Map<String, dynamic> json) =>
-    _$UserRoleImpl(
+_UserRole _$UserRoleFromJson(Map<String, dynamic> json) => _UserRole(
       id: json['id'] as String,
       name: json['name'] as String,
       color: json['color'] as String?,
@@ -772,8 +780,7 @@ _$UserRoleImpl _$$UserRoleImplFromJson(Map<String, dynamic> json) =>
       isAdministrator: json['isAdministrator'] as bool,
     );
 
-Map<String, dynamic> _$$UserRoleImplToJson(_$UserRoleImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserRoleToJson(_UserRole instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'color': instance.color,
@@ -783,24 +790,22 @@ Map<String, dynamic> _$$UserRoleImplToJson(_$UserRoleImpl instance) =>
       'isAdministrator': instance.isAdministrator,
     };
 
-_$UserAchievementImpl _$$UserAchievementImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UserAchievementImpl(
+_UserAchievement _$UserAchievementFromJson(Map<String, dynamic> json) =>
+    _UserAchievement(
       name: json['name'] as String,
       unlockedAt: const EpocTimeDateTimeConverter.withMilliSeconds()
           .fromJson((json['unlockedAt'] as num).toInt()),
     );
 
-Map<String, dynamic> _$$UserAchievementImplToJson(
-        _$UserAchievementImpl instance) =>
+Map<String, dynamic> _$UserAchievementToJson(_UserAchievement instance) =>
     <String, dynamic>{
       'name': instance.name,
       'unlockedAt': const EpocTimeDateTimeConverter.withMilliSeconds()
           .toJson(instance.unlockedAt),
     };
 
-_$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
-    _$UserPoliciesImpl(
+_UserPolicies _$UserPoliciesFromJson(Map<String, dynamic> json) =>
+    _UserPolicies(
       gtlAvailable: json['gtlAvailable'] as bool,
       ltlAvailable: json['ltlAvailable'] as bool,
       canPublicNote: json['canPublicNote'] as bool,
@@ -816,6 +821,10 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
       canUseTranslator: json['canUseTranslator'] as bool? ?? false,
       canHideAds: json['canHideAds'] as bool,
       driveCapacityMb: (json['driveCapacityMb'] as num).toDouble(),
+      maxFileSizeMb: (json['maxFileSizeMb'] as num?)?.toInt(),
+      uploadableFileTypes: (json['uploadableFileTypes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
       canUpdateBioMedia: json['canUpdateBioMedia'] as bool?,
       pinLimit: (json['pinLimit'] as num).toDouble(),
@@ -839,7 +848,7 @@ _$UserPoliciesImpl _$$UserPoliciesImplFromJson(Map<String, dynamic> json) =>
           _$ChatAvailabilityEnumMap, json['chatAvailability']),
     );
 
-Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
+Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
     <String, dynamic>{
       'gtlAvailable': instance.gtlAvailable,
       'ltlAvailable': instance.ltlAvailable,
@@ -856,6 +865,8 @@ Map<String, dynamic> _$$UserPoliciesImplToJson(_$UserPoliciesImpl instance) =>
       'canUseTranslator': instance.canUseTranslator,
       'canHideAds': instance.canHideAds,
       'driveCapacityMb': instance.driveCapacityMb,
+      'maxFileSizeMb': instance.maxFileSizeMb,
+      'uploadableFileTypes': instance.uploadableFileTypes,
       'alwaysMarkNsfw': instance.alwaysMarkNsfw,
       'canUpdateBioMedia': instance.canUpdateBioMedia,
       'pinLimit': instance.pinLimit,
@@ -882,21 +893,20 @@ const _$ChatAvailabilityEnumMap = {
   ChatAvailability.unavailable: 'unavailable',
 };
 
-_$UserFieldImpl _$$UserFieldImplFromJson(Map<String, dynamic> json) =>
-    _$UserFieldImpl(
+_UserField _$UserFieldFromJson(Map<String, dynamic> json) => _UserField(
       name: json['name'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$UserFieldImplToJson(_$UserFieldImpl instance) =>
+Map<String, dynamic> _$UserFieldToJson(_UserField instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$NotificationRecieveConfigsImpl _$$NotificationRecieveConfigsImplFromJson(
+_NotificationRecieveConfigs _$NotificationRecieveConfigsFromJson(
         Map<String, dynamic> json) =>
-    _$NotificationRecieveConfigsImpl(
+    _NotificationRecieveConfigs(
       note: json['note'] == null
           ? null
           : NotificationRecieveConfig.fromJson(
@@ -941,6 +951,10 @@ _$NotificationRecieveConfigsImpl _$$NotificationRecieveConfigsImplFromJson(
           ? null
           : NotificationRecieveConfig.fromJson(
               json['roleAssigned'] as Map<String, dynamic>),
+      chatRoomInvitationReceived: json['chatRoomInvitationReceived'] == null
+          ? null
+          : NotificationRecieveConfig.fromJson(
+              json['chatRoomInvitationReceived'] as Map<String, dynamic>),
       achievementEarned: json['achievementEarned'] == null
           ? null
           : NotificationRecieveConfig.fromJson(
@@ -955,8 +969,8 @@ _$NotificationRecieveConfigsImpl _$$NotificationRecieveConfigsImplFromJson(
               json['test'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$NotificationRecieveConfigsImplToJson(
-        _$NotificationRecieveConfigsImpl instance) =>
+Map<String, dynamic> _$NotificationRecieveConfigsToJson(
+        _NotificationRecieveConfigs instance) =>
     <String, dynamic>{
       'note': instance.note?.toJson(),
       'follow': instance.follow?.toJson(),
@@ -969,20 +983,22 @@ Map<String, dynamic> _$$NotificationRecieveConfigsImplToJson(
       'receiveFollowRequest': instance.receiveFollowRequest?.toJson(),
       'followRequestAccepted': instance.followRequestAccepted?.toJson(),
       'roleAssigned': instance.roleAssigned?.toJson(),
+      'chatRoomInvitationReceived':
+          instance.chatRoomInvitationReceived?.toJson(),
       'achievementEarned': instance.achievementEarned?.toJson(),
       'app': instance.app?.toJson(),
       'test': instance.test?.toJson(),
     };
 
-_$NotificationRecieveConfigImpl _$$NotificationRecieveConfigImplFromJson(
+_NotificationRecieveConfig _$NotificationRecieveConfigFromJson(
         Map<String, dynamic> json) =>
-    _$NotificationRecieveConfigImpl(
+    _NotificationRecieveConfig(
       type: json['type'] as String,
       userListId: json['userListId'] as String?,
     );
 
-Map<String, dynamic> _$$NotificationRecieveConfigImplToJson(
-        _$NotificationRecieveConfigImpl instance) =>
+Map<String, dynamic> _$NotificationRecieveConfigToJson(
+        _NotificationRecieveConfig instance) =>
     <String, dynamic>{
       'type': instance.type,
       'userListId': instance.userListId,

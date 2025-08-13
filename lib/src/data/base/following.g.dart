@@ -6,8 +6,7 @@ part of 'following.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FollowingImpl _$$FollowingImplFromJson(Map<String, dynamic> json) =>
-    _$FollowingImpl(
+_Following _$FollowingFromJson(Map<String, dynamic> json) => _Following(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -21,7 +20,7 @@ _$FollowingImpl _$$FollowingImplFromJson(Map<String, dynamic> json) =>
           : UserDetailed.fromJson(json['follower'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$FollowingImplToJson(_$FollowingImpl instance) =>
+Map<String, dynamic> _$FollowingToJson(_Following instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

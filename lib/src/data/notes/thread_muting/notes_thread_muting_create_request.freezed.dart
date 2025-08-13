@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,92 +10,71 @@ part of 'notes_thread_muting_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-NotesThreadMutingCreateRequest _$NotesThreadMutingCreateRequestFromJson(
-    Map<String, dynamic> json) {
-  return _NotesThreadMutingCreateRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NotesThreadMutingCreateRequest {
-  String get noteId => throw _privateConstructorUsedError;
+  String get noteId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NotesThreadMutingCreateRequestCopyWith<NotesThreadMutingCreateRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotesThreadMutingCreateRequestCopyWith<$Res> {
-  factory $NotesThreadMutingCreateRequestCopyWith(
-          NotesThreadMutingCreateRequest value,
-          $Res Function(NotesThreadMutingCreateRequest) then) =
-      _$NotesThreadMutingCreateRequestCopyWithImpl<$Res,
-          NotesThreadMutingCreateRequest>;
-  @useResult
-  $Res call({String noteId});
-}
-
-/// @nodoc
-class _$NotesThreadMutingCreateRequestCopyWithImpl<$Res,
-        $Val extends NotesThreadMutingCreateRequest>
-    implements $NotesThreadMutingCreateRequestCopyWith<$Res> {
-  _$NotesThreadMutingCreateRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of NotesThreadMutingCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $NotesThreadMutingCreateRequestCopyWith<NotesThreadMutingCreateRequest>
+      get copyWith => _$NotesThreadMutingCreateRequestCopyWithImpl<
+              NotesThreadMutingCreateRequest>(
+          this as NotesThreadMutingCreateRequest, _$identity);
+
+  /// Serializes this NotesThreadMutingCreateRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? noteId = null,
-  }) {
-    return _then(_value.copyWith(
-      noteId: null == noteId
-          ? _value.noteId
-          : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NotesThreadMutingCreateRequest &&
+            (identical(other.noteId, noteId) || other.noteId == noteId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, noteId);
+
+  @override
+  String toString() {
+    return 'NotesThreadMutingCreateRequest(noteId: $noteId)';
   }
 }
 
 /// @nodoc
-abstract class _$$NotesThreadMutingCreateRequestImplCopyWith<$Res>
-    implements $NotesThreadMutingCreateRequestCopyWith<$Res> {
-  factory _$$NotesThreadMutingCreateRequestImplCopyWith(
-          _$NotesThreadMutingCreateRequestImpl value,
-          $Res Function(_$NotesThreadMutingCreateRequestImpl) then) =
-      __$$NotesThreadMutingCreateRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NotesThreadMutingCreateRequestCopyWith<$Res> {
+  factory $NotesThreadMutingCreateRequestCopyWith(
+          NotesThreadMutingCreateRequest value,
+          $Res Function(NotesThreadMutingCreateRequest) _then) =
+      _$NotesThreadMutingCreateRequestCopyWithImpl;
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$NotesThreadMutingCreateRequestImplCopyWithImpl<$Res>
-    extends _$NotesThreadMutingCreateRequestCopyWithImpl<$Res,
-        _$NotesThreadMutingCreateRequestImpl>
-    implements _$$NotesThreadMutingCreateRequestImplCopyWith<$Res> {
-  __$$NotesThreadMutingCreateRequestImplCopyWithImpl(
-      _$NotesThreadMutingCreateRequestImpl _value,
-      $Res Function(_$NotesThreadMutingCreateRequestImpl) _then)
-      : super(_value, _then);
+class _$NotesThreadMutingCreateRequestCopyWithImpl<$Res>
+    implements $NotesThreadMutingCreateRequestCopyWith<$Res> {
+  _$NotesThreadMutingCreateRequestCopyWithImpl(this._self, this._then);
 
+  final NotesThreadMutingCreateRequest _self;
+  final $Res Function(NotesThreadMutingCreateRequest) _then;
+
+  /// Create a copy of NotesThreadMutingCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$NotesThreadMutingCreateRequestImpl(
+    return _then(_self.copyWith(
       noteId: null == noteId
-          ? _value.noteId
+          ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -103,63 +83,83 @@ class __$$NotesThreadMutingCreateRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotesThreadMutingCreateRequestImpl
-    implements _NotesThreadMutingCreateRequest {
-  const _$NotesThreadMutingCreateRequestImpl({required this.noteId});
-
-  factory _$NotesThreadMutingCreateRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$NotesThreadMutingCreateRequestImplFromJson(json);
+class _NotesThreadMutingCreateRequest
+    implements NotesThreadMutingCreateRequest {
+  const _NotesThreadMutingCreateRequest({required this.noteId});
+  factory _NotesThreadMutingCreateRequest.fromJson(Map<String, dynamic> json) =>
+      _$NotesThreadMutingCreateRequestFromJson(json);
 
   @override
   final String noteId;
 
+  /// Create a copy of NotesThreadMutingCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NotesThreadMutingCreateRequest(noteId: $noteId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotesThreadMutingCreateRequestCopyWith<_NotesThreadMutingCreateRequest>
+      get copyWith => __$NotesThreadMutingCreateRequestCopyWithImpl<
+          _NotesThreadMutingCreateRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotesThreadMutingCreateRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotesThreadMutingCreateRequestImpl &&
+            other is _NotesThreadMutingCreateRequest &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, noteId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NotesThreadMutingCreateRequestImplCopyWith<
-          _$NotesThreadMutingCreateRequestImpl>
-      get copyWith => __$$NotesThreadMutingCreateRequestImplCopyWithImpl<
-          _$NotesThreadMutingCreateRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotesThreadMutingCreateRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotesThreadMutingCreateRequest(noteId: $noteId)';
   }
 }
 
-abstract class _NotesThreadMutingCreateRequest
-    implements NotesThreadMutingCreateRequest {
-  const factory _NotesThreadMutingCreateRequest(
-      {required final String noteId}) = _$NotesThreadMutingCreateRequestImpl;
-
-  factory _NotesThreadMutingCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$NotesThreadMutingCreateRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$NotesThreadMutingCreateRequestCopyWith<$Res>
+    implements $NotesThreadMutingCreateRequestCopyWith<$Res> {
+  factory _$NotesThreadMutingCreateRequestCopyWith(
+          _NotesThreadMutingCreateRequest value,
+          $Res Function(_NotesThreadMutingCreateRequest) _then) =
+      __$NotesThreadMutingCreateRequestCopyWithImpl;
   @override
-  String get noteId;
-  @override
-  @JsonKey(ignore: true)
-  _$$NotesThreadMutingCreateRequestImplCopyWith<
-          _$NotesThreadMutingCreateRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String noteId});
 }
+
+/// @nodoc
+class __$NotesThreadMutingCreateRequestCopyWithImpl<$Res>
+    implements _$NotesThreadMutingCreateRequestCopyWith<$Res> {
+  __$NotesThreadMutingCreateRequestCopyWithImpl(this._self, this._then);
+
+  final _NotesThreadMutingCreateRequest _self;
+  final $Res Function(_NotesThreadMutingCreateRequest) _then;
+
+  /// Create a copy of NotesThreadMutingCreateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? noteId = null,
+  }) {
+    return _then(_NotesThreadMutingCreateRequest(
+      noteId: null == noteId
+          ? _self.noteId
+          : noteId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

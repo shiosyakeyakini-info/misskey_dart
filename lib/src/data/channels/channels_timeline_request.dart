@@ -5,7 +5,7 @@ part 'channels_timeline_request.freezed.dart';
 part 'channels_timeline_request.g.dart';
 
 @freezed
-class ChannelsTimelineRequest with _$ChannelsTimelineRequest {
+abstract class ChannelsTimelineRequest with _$ChannelsTimelineRequest {
   const factory ChannelsTimelineRequest({
     required String channelId,
     @Assert('limit > 0') int? limit,

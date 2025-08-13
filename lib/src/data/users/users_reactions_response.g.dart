@@ -6,9 +6,9 @@ part of 'users_reactions_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UsersReactionsResponseImpl _$$UsersReactionsResponseImplFromJson(
+_UsersReactionsResponse _$UsersReactionsResponseFromJson(
         Map<String, dynamic> json) =>
-    _$UsersReactionsResponseImpl(
+    _UsersReactionsResponse(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -17,8 +17,8 @@ _$UsersReactionsResponseImpl _$$UsersReactionsResponseImplFromJson(
       note: Note.fromJson(json['note'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$UsersReactionsResponseImplToJson(
-        _$UsersReactionsResponseImpl instance) =>
+Map<String, dynamic> _$UsersReactionsResponseToJson(
+        _UsersReactionsResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

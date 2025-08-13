@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,105 +10,79 @@ part of 'users_get_frequently_replied_users_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-UsersGetFrequentlyRepliedUsersResponse
-    _$UsersGetFrequentlyRepliedUsersResponseFromJson(
-        Map<String, dynamic> json) {
-  return _UsersGetFrequentlyRepliedUsersResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersGetFrequentlyRepliedUsersResponse {
-  User get user => throw _privateConstructorUsedError;
-  double get weight => throw _privateConstructorUsedError;
+  User get user;
+  double get weight;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of UsersGetFrequentlyRepliedUsersResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $UsersGetFrequentlyRepliedUsersResponseCopyWith<
           UsersGetFrequentlyRepliedUsersResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<
+              UsersGetFrequentlyRepliedUsersResponse>(
+          this as UsersGetFrequentlyRepliedUsersResponse, _$identity);
 
-/// @nodoc
-abstract class $UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
-  factory $UsersGetFrequentlyRepliedUsersResponseCopyWith(
-          UsersGetFrequentlyRepliedUsersResponse value,
-          $Res Function(UsersGetFrequentlyRepliedUsersResponse) then) =
-      _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<$Res,
-          UsersGetFrequentlyRepliedUsersResponse>;
-  @useResult
-  $Res call({User user, double weight});
-}
+  /// Serializes this UsersGetFrequentlyRepliedUsersResponse to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<$Res,
-        $Val extends UsersGetFrequentlyRepliedUsersResponse>
-    implements $UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
-  _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? user = null,
-    Object? weight = null,
-  }) {
-    return _then(_value.copyWith(
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      weight: null == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsersGetFrequentlyRepliedUsersResponse &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.weight, weight) || other.weight == weight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, user, weight);
+
+  @override
+  String toString() {
+    return 'UsersGetFrequentlyRepliedUsersResponse(user: $user, weight: $weight)';
   }
 }
 
 /// @nodoc
-abstract class _$$UsersGetFrequentlyRepliedUsersResponseImplCopyWith<$Res>
-    implements $UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
-  factory _$$UsersGetFrequentlyRepliedUsersResponseImplCopyWith(
-          _$UsersGetFrequentlyRepliedUsersResponseImpl value,
-          $Res Function(_$UsersGetFrequentlyRepliedUsersResponseImpl) then) =
-      __$$UsersGetFrequentlyRepliedUsersResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
+  factory $UsersGetFrequentlyRepliedUsersResponseCopyWith(
+          UsersGetFrequentlyRepliedUsersResponse value,
+          $Res Function(UsersGetFrequentlyRepliedUsersResponse) _then) =
+      _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl;
   @useResult
   $Res call({User user, double weight});
 }
 
 /// @nodoc
-class __$$UsersGetFrequentlyRepliedUsersResponseImplCopyWithImpl<$Res>
-    extends _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<$Res,
-        _$UsersGetFrequentlyRepliedUsersResponseImpl>
-    implements _$$UsersGetFrequentlyRepliedUsersResponseImplCopyWith<$Res> {
-  __$$UsersGetFrequentlyRepliedUsersResponseImplCopyWithImpl(
-      _$UsersGetFrequentlyRepliedUsersResponseImpl _value,
-      $Res Function(_$UsersGetFrequentlyRepliedUsersResponseImpl) _then)
-      : super(_value, _then);
+class _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<$Res>
+    implements $UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
+  _$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl(this._self, this._then);
 
+  final UsersGetFrequentlyRepliedUsersResponse _self;
+  final $Res Function(UsersGetFrequentlyRepliedUsersResponse) _then;
+
+  /// Create a copy of UsersGetFrequentlyRepliedUsersResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = null,
     Object? weight = null,
   }) {
-    return _then(_$UsersGetFrequentlyRepliedUsersResponseImpl(
+    return _then(_self.copyWith(
       user: null == user
-          ? _value.user
+          ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
       weight: null == weight
-          ? _value.weight
+          ? _self.weight
           : weight // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -116,72 +91,94 @@ class __$$UsersGetFrequentlyRepliedUsersResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersGetFrequentlyRepliedUsersResponseImpl
-    implements _UsersGetFrequentlyRepliedUsersResponse {
-  const _$UsersGetFrequentlyRepliedUsersResponseImpl(
+class _UsersGetFrequentlyRepliedUsersResponse
+    implements UsersGetFrequentlyRepliedUsersResponse {
+  const _UsersGetFrequentlyRepliedUsersResponse(
       {required this.user, required this.weight});
-
-  factory _$UsersGetFrequentlyRepliedUsersResponseImpl.fromJson(
+  factory _UsersGetFrequentlyRepliedUsersResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$$UsersGetFrequentlyRepliedUsersResponseImplFromJson(json);
+      _$UsersGetFrequentlyRepliedUsersResponseFromJson(json);
 
   @override
   final User user;
   @override
   final double weight;
 
+  /// Create a copy of UsersGetFrequentlyRepliedUsersResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UsersGetFrequentlyRepliedUsersResponse(user: $user, weight: $weight)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UsersGetFrequentlyRepliedUsersResponseCopyWith<
+          _UsersGetFrequentlyRepliedUsersResponse>
+      get copyWith => __$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<
+          _UsersGetFrequentlyRepliedUsersResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UsersGetFrequentlyRepliedUsersResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersGetFrequentlyRepliedUsersResponseImpl &&
+            other is _UsersGetFrequentlyRepliedUsersResponse &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.weight, weight) || other.weight == weight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, user, weight);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UsersGetFrequentlyRepliedUsersResponseImplCopyWith<
-          _$UsersGetFrequentlyRepliedUsersResponseImpl>
-      get copyWith =>
-          __$$UsersGetFrequentlyRepliedUsersResponseImplCopyWithImpl<
-              _$UsersGetFrequentlyRepliedUsersResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UsersGetFrequentlyRepliedUsersResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UsersGetFrequentlyRepliedUsersResponse(user: $user, weight: $weight)';
   }
 }
 
-abstract class _UsersGetFrequentlyRepliedUsersResponse
-    implements UsersGetFrequentlyRepliedUsersResponse {
-  const factory _UsersGetFrequentlyRepliedUsersResponse(
-          {required final User user, required final double weight}) =
-      _$UsersGetFrequentlyRepliedUsersResponseImpl;
-
-  factory _UsersGetFrequentlyRepliedUsersResponse.fromJson(
-          Map<String, dynamic> json) =
-      _$UsersGetFrequentlyRepliedUsersResponseImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res>
+    implements $UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
+  factory _$UsersGetFrequentlyRepliedUsersResponseCopyWith(
+          _UsersGetFrequentlyRepliedUsersResponse value,
+          $Res Function(_UsersGetFrequentlyRepliedUsersResponse) _then) =
+      __$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl;
   @override
-  User get user;
-  @override
-  double get weight;
-  @override
-  @JsonKey(ignore: true)
-  _$$UsersGetFrequentlyRepliedUsersResponseImplCopyWith<
-          _$UsersGetFrequentlyRepliedUsersResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({User user, double weight});
 }
+
+/// @nodoc
+class __$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl<$Res>
+    implements _$UsersGetFrequentlyRepliedUsersResponseCopyWith<$Res> {
+  __$UsersGetFrequentlyRepliedUsersResponseCopyWithImpl(this._self, this._then);
+
+  final _UsersGetFrequentlyRepliedUsersResponse _self;
+  final $Res Function(_UsersGetFrequentlyRepliedUsersResponse) _then;
+
+  /// Create a copy of UsersGetFrequentlyRepliedUsersResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? user = null,
+    Object? weight = null,
+  }) {
+    return _then(_UsersGetFrequentlyRepliedUsersResponse(
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      weight: null == weight
+          ? _self.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+// dart format on

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,99 +10,68 @@ part of 'streaming_response_sub_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-PageEvent _$PageEventFromJson(Map<String, dynamic> json) {
-  return _PageEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$PageEvent {
-  String get pageId => throw _privateConstructorUsedError;
-  String get event => throw _privateConstructorUsedError;
-  Object get variable => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
+  String get pageId;
+  String get event;
+  Object get variable;
+  User get user;
+  String get userId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PageEventCopyWith<PageEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PageEventCopyWith<$Res> {
-  factory $PageEventCopyWith(PageEvent value, $Res Function(PageEvent) then) =
-      _$PageEventCopyWithImpl<$Res, PageEvent>;
-  @useResult
-  $Res call(
-      {String pageId, String event, Object variable, User user, String userId});
-}
-
-/// @nodoc
-class _$PageEventCopyWithImpl<$Res, $Val extends PageEvent>
-    implements $PageEventCopyWith<$Res> {
-  _$PageEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of PageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $PageEventCopyWith<PageEvent> get copyWith =>
+      _$PageEventCopyWithImpl<PageEvent>(this as PageEvent, _$identity);
+
+  /// Serializes this PageEvent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? pageId = null,
-    Object? event = null,
-    Object? variable = null,
-    Object? user = null,
-    Object? userId = null,
-  }) {
-    return _then(_value.copyWith(
-      pageId: null == pageId
-          ? _value.pageId
-          : pageId // ignore: cast_nullable_to_non_nullable
-              as String,
-      event: null == event
-          ? _value.event
-          : event // ignore: cast_nullable_to_non_nullable
-              as String,
-      variable: null == variable ? _value.variable : variable,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PageEvent &&
+            (identical(other.pageId, pageId) || other.pageId == pageId) &&
+            (identical(other.event, event) || other.event == event) &&
+            const DeepCollectionEquality().equals(other.variable, variable) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, pageId, event,
+      const DeepCollectionEquality().hash(variable), user, userId);
+
+  @override
+  String toString() {
+    return 'PageEvent(pageId: $pageId, event: $event, variable: $variable, user: $user, userId: $userId)';
   }
 }
 
 /// @nodoc
-abstract class _$$PageEventImplCopyWith<$Res>
-    implements $PageEventCopyWith<$Res> {
-  factory _$$PageEventImplCopyWith(
-          _$PageEventImpl value, $Res Function(_$PageEventImpl) then) =
-      __$$PageEventImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PageEventCopyWith<$Res> {
+  factory $PageEventCopyWith(PageEvent value, $Res Function(PageEvent) _then) =
+      _$PageEventCopyWithImpl;
   @useResult
   $Res call(
       {String pageId, String event, Object variable, User user, String userId});
 }
 
 /// @nodoc
-class __$$PageEventImplCopyWithImpl<$Res>
-    extends _$PageEventCopyWithImpl<$Res, _$PageEventImpl>
-    implements _$$PageEventImplCopyWith<$Res> {
-  __$$PageEventImplCopyWithImpl(
-      _$PageEventImpl _value, $Res Function(_$PageEventImpl) _then)
-      : super(_value, _then);
+class _$PageEventCopyWithImpl<$Res> implements $PageEventCopyWith<$Res> {
+  _$PageEventCopyWithImpl(this._self, this._then);
 
+  final PageEvent _self;
+  final $Res Function(PageEvent) _then;
+
+  /// Create a copy of PageEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -111,22 +81,22 @@ class __$$PageEventImplCopyWithImpl<$Res>
     Object? user = null,
     Object? userId = null,
   }) {
-    return _then(_$PageEventImpl(
+    return _then(_self.copyWith(
       pageId: null == pageId
-          ? _value.pageId
+          ? _self.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
               as String,
       event: null == event
-          ? _value.event
+          ? _self.event
           : event // ignore: cast_nullable_to_non_nullable
               as String,
-      variable: null == variable ? _value.variable : variable,
+      variable: null == variable ? _self.variable : variable,
       user: null == user
-          ? _value.user
+          ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -135,16 +105,15 @@ class __$$PageEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PageEventImpl implements _PageEvent {
-  const _$PageEventImpl(
+class _PageEvent implements PageEvent {
+  const _PageEvent(
       {required this.pageId,
       required this.event,
       required this.variable,
       required this.user,
       required this.userId});
-
-  factory _$PageEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PageEventImplFromJson(json);
+  factory _PageEvent.fromJson(Map<String, dynamic> json) =>
+      _$PageEventFromJson(json);
 
   @override
   final String pageId;
@@ -157,16 +126,26 @@ class _$PageEventImpl implements _PageEvent {
   @override
   final String userId;
 
+  /// Create a copy of PageEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PageEvent(pageId: $pageId, event: $event, variable: $variable, user: $user, userId: $userId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PageEventCopyWith<_PageEvent> get copyWith =>
+      __$PageEventCopyWithImpl<_PageEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PageEventToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PageEventImpl &&
+            other is _PageEvent &&
             (identical(other.pageId, pageId) || other.pageId == pageId) &&
             (identical(other.event, event) || other.event == event) &&
             const DeepCollectionEquality().equals(other.variable, variable) &&
@@ -174,301 +153,314 @@ class _$PageEventImpl implements _PageEvent {
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, pageId, event,
       const DeepCollectionEquality().hash(variable), user, userId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PageEventImplCopyWith<_$PageEventImpl> get copyWith =>
-      __$$PageEventImplCopyWithImpl<_$PageEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PageEventImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _PageEvent implements PageEvent {
-  const factory _PageEvent(
-      {required final String pageId,
-      required final String event,
-      required final Object variable,
-      required final User user,
-      required final String userId}) = _$PageEventImpl;
-
-  factory _PageEvent.fromJson(Map<String, dynamic> json) =
-      _$PageEventImpl.fromJson;
-
-  @override
-  String get pageId;
-  @override
-  String get event;
-  @override
-  Object get variable;
-  @override
-  User get user;
-  @override
-  String get userId;
-  @override
-  @JsonKey(ignore: true)
-  _$$PageEventImplCopyWith<_$PageEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-UrlUploadFinishedEvent _$UrlUploadFinishedEventFromJson(
-    Map<String, dynamic> json) {
-  return _UrlUploadFinishedEvent.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UrlUploadFinishedEvent {
-  String get marker => throw _privateConstructorUsedError;
-  DriveFile get file => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UrlUploadFinishedEventCopyWith<UrlUploadFinishedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UrlUploadFinishedEventCopyWith<$Res> {
-  factory $UrlUploadFinishedEventCopyWith(UrlUploadFinishedEvent value,
-          $Res Function(UrlUploadFinishedEvent) then) =
-      _$UrlUploadFinishedEventCopyWithImpl<$Res, UrlUploadFinishedEvent>;
-  @useResult
-  $Res call({String marker, DriveFile file});
-
-  $DriveFileCopyWith<$Res> get file;
-}
-
-/// @nodoc
-class _$UrlUploadFinishedEventCopyWithImpl<$Res,
-        $Val extends UrlUploadFinishedEvent>
-    implements $UrlUploadFinishedEventCopyWith<$Res> {
-  _$UrlUploadFinishedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? marker = null,
-    Object? file = null,
-  }) {
-    return _then(_value.copyWith(
-      marker: null == marker
-          ? _value.marker
-          : marker // ignore: cast_nullable_to_non_nullable
-              as String,
-      file: null == file
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as DriveFile,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFileCopyWith<$Res> get file {
-    return $DriveFileCopyWith<$Res>(_value.file, (value) {
-      return _then(_value.copyWith(file: value) as $Val);
-    });
+  String toString() {
+    return 'PageEvent(pageId: $pageId, event: $event, variable: $variable, user: $user, userId: $userId)';
   }
 }
 
 /// @nodoc
-abstract class _$$UrlUploadFinishedEventImplCopyWith<$Res>
-    implements $UrlUploadFinishedEventCopyWith<$Res> {
-  factory _$$UrlUploadFinishedEventImplCopyWith(
-          _$UrlUploadFinishedEventImpl value,
-          $Res Function(_$UrlUploadFinishedEventImpl) then) =
-      __$$UrlUploadFinishedEventImplCopyWithImpl<$Res>;
+abstract mixin class _$PageEventCopyWith<$Res>
+    implements $PageEventCopyWith<$Res> {
+  factory _$PageEventCopyWith(
+          _PageEvent value, $Res Function(_PageEvent) _then) =
+      __$PageEventCopyWithImpl;
   @override
   @useResult
-  $Res call({String marker, DriveFile file});
-
-  @override
-  $DriveFileCopyWith<$Res> get file;
+  $Res call(
+      {String pageId, String event, Object variable, User user, String userId});
 }
 
 /// @nodoc
-class __$$UrlUploadFinishedEventImplCopyWithImpl<$Res>
-    extends _$UrlUploadFinishedEventCopyWithImpl<$Res,
-        _$UrlUploadFinishedEventImpl>
-    implements _$$UrlUploadFinishedEventImplCopyWith<$Res> {
-  __$$UrlUploadFinishedEventImplCopyWithImpl(
-      _$UrlUploadFinishedEventImpl _value,
-      $Res Function(_$UrlUploadFinishedEventImpl) _then)
-      : super(_value, _then);
+class __$PageEventCopyWithImpl<$Res> implements _$PageEventCopyWith<$Res> {
+  __$PageEventCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _PageEvent _self;
+  final $Res Function(_PageEvent) _then;
+
+  /// Create a copy of PageEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? marker = null,
-    Object? file = null,
+    Object? pageId = null,
+    Object? event = null,
+    Object? variable = null,
+    Object? user = null,
+    Object? userId = null,
   }) {
-    return _then(_$UrlUploadFinishedEventImpl(
-      marker: null == marker
-          ? _value.marker
-          : marker // ignore: cast_nullable_to_non_nullable
+    return _then(_PageEvent(
+      pageId: null == pageId
+          ? _self.pageId
+          : pageId // ignore: cast_nullable_to_non_nullable
               as String,
-      file: null == file
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as DriveFile,
+      event: null == event
+          ? _self.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as String,
+      variable: null == variable ? _self.variable : variable,
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$UrlUploadFinishedEventImpl implements _UrlUploadFinishedEvent {
-  const _$UrlUploadFinishedEventImpl(
-      {required this.marker, required this.file});
+mixin _$UrlUploadFinishedEvent {
+  String get marker;
+  DriveFile get file;
 
-  factory _$UrlUploadFinishedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UrlUploadFinishedEventImplFromJson(json);
+  /// Create a copy of UrlUploadFinishedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UrlUploadFinishedEventCopyWith<UrlUploadFinishedEvent> get copyWith =>
+      _$UrlUploadFinishedEventCopyWithImpl<UrlUploadFinishedEvent>(
+          this as UrlUploadFinishedEvent, _$identity);
+
+  /// Serializes this UrlUploadFinishedEvent to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UrlUploadFinishedEvent &&
+            (identical(other.marker, marker) || other.marker == marker) &&
+            (identical(other.file, file) || other.file == file));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, marker, file);
+
+  @override
+  String toString() {
+    return 'UrlUploadFinishedEvent(marker: $marker, file: $file)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UrlUploadFinishedEventCopyWith<$Res> {
+  factory $UrlUploadFinishedEventCopyWith(UrlUploadFinishedEvent value,
+          $Res Function(UrlUploadFinishedEvent) _then) =
+      _$UrlUploadFinishedEventCopyWithImpl;
+  @useResult
+  $Res call({String marker, DriveFile file});
+
+  $DriveFileCopyWith<$Res> get file;
+}
+
+/// @nodoc
+class _$UrlUploadFinishedEventCopyWithImpl<$Res>
+    implements $UrlUploadFinishedEventCopyWith<$Res> {
+  _$UrlUploadFinishedEventCopyWithImpl(this._self, this._then);
+
+  final UrlUploadFinishedEvent _self;
+  final $Res Function(UrlUploadFinishedEvent) _then;
+
+  /// Create a copy of UrlUploadFinishedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? marker = null,
+    Object? file = null,
+  }) {
+    return _then(_self.copyWith(
+      marker: null == marker
+          ? _self.marker
+          : marker // ignore: cast_nullable_to_non_nullable
+              as String,
+      file: null == file
+          ? _self.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as DriveFile,
+    ));
+  }
+
+  /// Create a copy of UrlUploadFinishedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DriveFileCopyWith<$Res> get file {
+    return $DriveFileCopyWith<$Res>(_self.file, (value) {
+      return _then(_self.copyWith(file: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _UrlUploadFinishedEvent implements UrlUploadFinishedEvent {
+  const _UrlUploadFinishedEvent({required this.marker, required this.file});
+  factory _UrlUploadFinishedEvent.fromJson(Map<String, dynamic> json) =>
+      _$UrlUploadFinishedEventFromJson(json);
 
   @override
   final String marker;
   @override
   final DriveFile file;
 
+  /// Create a copy of UrlUploadFinishedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UrlUploadFinishedEvent(marker: $marker, file: $file)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UrlUploadFinishedEventCopyWith<_UrlUploadFinishedEvent> get copyWith =>
+      __$UrlUploadFinishedEventCopyWithImpl<_UrlUploadFinishedEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UrlUploadFinishedEventToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UrlUploadFinishedEventImpl &&
+            other is _UrlUploadFinishedEvent &&
             (identical(other.marker, marker) || other.marker == marker) &&
             (identical(other.file, file) || other.file == file));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, marker, file);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UrlUploadFinishedEventImplCopyWith<_$UrlUploadFinishedEventImpl>
-      get copyWith => __$$UrlUploadFinishedEventImplCopyWithImpl<
-          _$UrlUploadFinishedEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UrlUploadFinishedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UrlUploadFinishedEvent(marker: $marker, file: $file)';
   }
 }
 
-abstract class _UrlUploadFinishedEvent implements UrlUploadFinishedEvent {
-  const factory _UrlUploadFinishedEvent(
-      {required final String marker,
-      required final DriveFile file}) = _$UrlUploadFinishedEventImpl;
+/// @nodoc
+abstract mixin class _$UrlUploadFinishedEventCopyWith<$Res>
+    implements $UrlUploadFinishedEventCopyWith<$Res> {
+  factory _$UrlUploadFinishedEventCopyWith(_UrlUploadFinishedEvent value,
+          $Res Function(_UrlUploadFinishedEvent) _then) =
+      __$UrlUploadFinishedEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String marker, DriveFile file});
 
-  factory _UrlUploadFinishedEvent.fromJson(Map<String, dynamic> json) =
-      _$UrlUploadFinishedEventImpl.fromJson;
-
   @override
-  String get marker;
-  @override
-  DriveFile get file;
-  @override
-  @JsonKey(ignore: true)
-  _$$UrlUploadFinishedEventImplCopyWith<_$UrlUploadFinishedEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  $DriveFileCopyWith<$Res> get file;
 }
 
-RegistryUpdated _$RegistryUpdatedFromJson(Map<String, dynamic> json) {
-  return _RegistryUpdated.fromJson(json);
+/// @nodoc
+class __$UrlUploadFinishedEventCopyWithImpl<$Res>
+    implements _$UrlUploadFinishedEventCopyWith<$Res> {
+  __$UrlUploadFinishedEventCopyWithImpl(this._self, this._then);
+
+  final _UrlUploadFinishedEvent _self;
+  final $Res Function(_UrlUploadFinishedEvent) _then;
+
+  /// Create a copy of UrlUploadFinishedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? marker = null,
+    Object? file = null,
+  }) {
+    return _then(_UrlUploadFinishedEvent(
+      marker: null == marker
+          ? _self.marker
+          : marker // ignore: cast_nullable_to_non_nullable
+              as String,
+      file: null == file
+          ? _self.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as DriveFile,
+    ));
+  }
+
+  /// Create a copy of UrlUploadFinishedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DriveFileCopyWith<$Res> get file {
+    return $DriveFileCopyWith<$Res>(_self.file, (value) {
+      return _then(_self.copyWith(file: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RegistryUpdated {
-  List<String>? get scope => throw _privateConstructorUsedError;
-  String get key => throw _privateConstructorUsedError;
-  Object? get value => throw _privateConstructorUsedError;
+  List<String>? get scope;
+  String get key;
+  Object? get value;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RegistryUpdatedCopyWith<RegistryUpdated> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RegistryUpdatedCopyWith<$Res> {
-  factory $RegistryUpdatedCopyWith(
-          RegistryUpdated value, $Res Function(RegistryUpdated) then) =
-      _$RegistryUpdatedCopyWithImpl<$Res, RegistryUpdated>;
-  @useResult
-  $Res call({List<String>? scope, String key, Object? value});
-}
-
-/// @nodoc
-class _$RegistryUpdatedCopyWithImpl<$Res, $Val extends RegistryUpdated>
-    implements $RegistryUpdatedCopyWith<$Res> {
-  _$RegistryUpdatedCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of RegistryUpdated
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $RegistryUpdatedCopyWith<RegistryUpdated> get copyWith =>
+      _$RegistryUpdatedCopyWithImpl<RegistryUpdated>(
+          this as RegistryUpdated, _$identity);
+
+  /// Serializes this RegistryUpdated to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? scope = freezed,
-    Object? key = null,
-    Object? value = freezed,
-  }) {
-    return _then(_value.copyWith(
-      scope: freezed == scope
-          ? _value.scope
-          : scope // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      key: null == key
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: freezed == value ? _value.value : value,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RegistryUpdated &&
+            const DeepCollectionEquality().equals(other.scope, scope) &&
+            (identical(other.key, key) || other.key == key) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(scope),
+      key,
+      const DeepCollectionEquality().hash(value));
+
+  @override
+  String toString() {
+    return 'RegistryUpdated(scope: $scope, key: $key, value: $value)';
   }
 }
 
 /// @nodoc
-abstract class _$$RegistryUpdatedImplCopyWith<$Res>
-    implements $RegistryUpdatedCopyWith<$Res> {
-  factory _$$RegistryUpdatedImplCopyWith(_$RegistryUpdatedImpl value,
-          $Res Function(_$RegistryUpdatedImpl) then) =
-      __$$RegistryUpdatedImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RegistryUpdatedCopyWith<$Res> {
+  factory $RegistryUpdatedCopyWith(
+          RegistryUpdated value, $Res Function(RegistryUpdated) _then) =
+      _$RegistryUpdatedCopyWithImpl;
   @useResult
   $Res call({List<String>? scope, String key, Object? value});
 }
 
 /// @nodoc
-class __$$RegistryUpdatedImplCopyWithImpl<$Res>
-    extends _$RegistryUpdatedCopyWithImpl<$Res, _$RegistryUpdatedImpl>
-    implements _$$RegistryUpdatedImplCopyWith<$Res> {
-  __$$RegistryUpdatedImplCopyWithImpl(
-      _$RegistryUpdatedImpl _value, $Res Function(_$RegistryUpdatedImpl) _then)
-      : super(_value, _then);
+class _$RegistryUpdatedCopyWithImpl<$Res>
+    implements $RegistryUpdatedCopyWith<$Res> {
+  _$RegistryUpdatedCopyWithImpl(this._self, this._then);
 
+  final RegistryUpdated _self;
+  final $Res Function(RegistryUpdated) _then;
+
+  /// Create a copy of RegistryUpdated
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -476,29 +468,28 @@ class __$$RegistryUpdatedImplCopyWithImpl<$Res>
     Object? key = null,
     Object? value = freezed,
   }) {
-    return _then(_$RegistryUpdatedImpl(
+    return _then(_self.copyWith(
       scope: freezed == scope
-          ? _value._scope
+          ? _self.scope
           : scope // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       key: null == key
-          ? _value.key
+          ? _self.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      value: freezed == value ? _value.value : value,
+      value: freezed == value ? _self.value : value,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$RegistryUpdatedImpl implements _RegistryUpdated {
-  const _$RegistryUpdatedImpl(
+class _RegistryUpdated implements RegistryUpdated {
+  const _RegistryUpdated(
       {final List<String>? scope, required this.key, required this.value})
       : _scope = scope;
-
-  factory _$RegistryUpdatedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RegistryUpdatedImplFromJson(json);
+  factory _RegistryUpdated.fromJson(Map<String, dynamic> json) =>
+      _$RegistryUpdatedFromJson(json);
 
   final List<String>? _scope;
   @override
@@ -515,22 +506,32 @@ class _$RegistryUpdatedImpl implements _RegistryUpdated {
   @override
   final Object? value;
 
+  /// Create a copy of RegistryUpdated
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RegistryUpdated(scope: $scope, key: $key, value: $value)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RegistryUpdatedCopyWith<_RegistryUpdated> get copyWith =>
+      __$RegistryUpdatedCopyWithImpl<_RegistryUpdated>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RegistryUpdatedToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegistryUpdatedImpl &&
+            other is _RegistryUpdated &&
             const DeepCollectionEquality().equals(other._scope, _scope) &&
             (identical(other.key, key) || other.key == key) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -538,120 +539,101 @@ class _$RegistryUpdatedImpl implements _RegistryUpdated {
       key,
       const DeepCollectionEquality().hash(value));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RegistryUpdatedImplCopyWith<_$RegistryUpdatedImpl> get copyWith =>
-      __$$RegistryUpdatedImplCopyWithImpl<_$RegistryUpdatedImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RegistryUpdatedImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RegistryUpdated(scope: $scope, key: $key, value: $value)';
   }
 }
 
-abstract class _RegistryUpdated implements RegistryUpdated {
-  const factory _RegistryUpdated(
-      {final List<String>? scope,
-      required final String key,
-      required final Object? value}) = _$RegistryUpdatedImpl;
-
-  factory _RegistryUpdated.fromJson(Map<String, dynamic> json) =
-      _$RegistryUpdatedImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RegistryUpdatedCopyWith<$Res>
+    implements $RegistryUpdatedCopyWith<$Res> {
+  factory _$RegistryUpdatedCopyWith(
+          _RegistryUpdated value, $Res Function(_RegistryUpdated) _then) =
+      __$RegistryUpdatedCopyWithImpl;
   @override
-  List<String>? get scope;
-  @override
-  String get key;
-  @override
-  Object? get value;
-  @override
-  @JsonKey(ignore: true)
-  _$$RegistryUpdatedImplCopyWith<_$RegistryUpdatedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({List<String>? scope, String key, Object? value});
 }
 
-Signin _$SigninFromJson(Map<String, dynamic> json) {
-  return _Signin.fromJson(json);
+/// @nodoc
+class __$RegistryUpdatedCopyWithImpl<$Res>
+    implements _$RegistryUpdatedCopyWith<$Res> {
+  __$RegistryUpdatedCopyWithImpl(this._self, this._then);
+
+  final _RegistryUpdated _self;
+  final $Res Function(_RegistryUpdated) _then;
+
+  /// Create a copy of RegistryUpdated
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? scope = freezed,
+    Object? key = null,
+    Object? value = freezed,
+  }) {
+    return _then(_RegistryUpdated(
+      scope: freezed == scope
+          ? _self._scope
+          : scope // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      key: null == key
+          ? _self.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: freezed == value ? _self.value : value,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$Signin {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @DateTimeConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String get ip => throw _privateConstructorUsedError;
-  Object? get headers => throw _privateConstructorUsedError;
-  bool get success => throw _privateConstructorUsedError;
+  DateTime get createdAt;
+  String get ip;
+  Object? get headers;
+  bool get success;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SigninCopyWith<Signin> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SigninCopyWith<$Res> {
-  factory $SigninCopyWith(Signin value, $Res Function(Signin) then) =
-      _$SigninCopyWithImpl<$Res, Signin>;
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      String ip,
-      Object? headers,
-      bool success});
-}
-
-/// @nodoc
-class _$SigninCopyWithImpl<$Res, $Val extends Signin>
-    implements $SigninCopyWith<$Res> {
-  _$SigninCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Signin
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SigninCopyWith<Signin> get copyWith =>
+      _$SigninCopyWithImpl<Signin>(this as Signin, _$identity);
+
+  /// Serializes this Signin to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? ip = null,
-    Object? headers = freezed,
-    Object? success = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      ip: null == ip
-          ? _value.ip
-          : ip // ignore: cast_nullable_to_non_nullable
-              as String,
-      headers: freezed == headers ? _value.headers : headers,
-      success: null == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Signin &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.ip, ip) || other.ip == ip) &&
+            const DeepCollectionEquality().equals(other.headers, headers) &&
+            (identical(other.success, success) || other.success == success));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, createdAt, ip,
+      const DeepCollectionEquality().hash(headers), success);
+
+  @override
+  String toString() {
+    return 'Signin(id: $id, createdAt: $createdAt, ip: $ip, headers: $headers, success: $success)';
   }
 }
 
 /// @nodoc
-abstract class _$$SigninImplCopyWith<$Res> implements $SigninCopyWith<$Res> {
-  factory _$$SigninImplCopyWith(
-          _$SigninImpl value, $Res Function(_$SigninImpl) then) =
-      __$$SigninImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SigninCopyWith<$Res> {
+  factory $SigninCopyWith(Signin value, $Res Function(Signin) _then) =
+      _$SigninCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -662,13 +644,14 @@ abstract class _$$SigninImplCopyWith<$Res> implements $SigninCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SigninImplCopyWithImpl<$Res>
-    extends _$SigninCopyWithImpl<$Res, _$SigninImpl>
-    implements _$$SigninImplCopyWith<$Res> {
-  __$$SigninImplCopyWithImpl(
-      _$SigninImpl _value, $Res Function(_$SigninImpl) _then)
-      : super(_value, _then);
+class _$SigninCopyWithImpl<$Res> implements $SigninCopyWith<$Res> {
+  _$SigninCopyWithImpl(this._self, this._then);
 
+  final Signin _self;
+  final $Res Function(Signin) _then;
+
+  /// Create a copy of Signin
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -678,22 +661,22 @@ class __$$SigninImplCopyWithImpl<$Res>
     Object? headers = freezed,
     Object? success = null,
   }) {
-    return _then(_$SigninImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       ip: null == ip
-          ? _value.ip
+          ? _self.ip
           : ip // ignore: cast_nullable_to_non_nullable
               as String,
-      headers: freezed == headers ? _value.headers : headers,
+      headers: freezed == headers ? _self.headers : headers,
       success: null == success
-          ? _value.success
+          ? _self.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -702,16 +685,14 @@ class __$$SigninImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SigninImpl implements _Signin {
-  const _$SigninImpl(
+class _Signin implements Signin {
+  const _Signin(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.ip,
       this.headers,
       required this.success});
-
-  factory _$SigninImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SigninImplFromJson(json);
+  factory _Signin.fromJson(Map<String, dynamic> json) => _$SigninFromJson(json);
 
   @override
   final String id;
@@ -725,16 +706,26 @@ class _$SigninImpl implements _Signin {
   @override
   final bool success;
 
+  /// Create a copy of Signin
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Signin(id: $id, createdAt: $createdAt, ip: $ip, headers: $headers, success: $success)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SigninCopyWith<_Signin> get copyWith =>
+      __$SigninCopyWithImpl<_Signin>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SigninToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SigninImpl &&
+            other is _Signin &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -743,137 +734,138 @@ class _$SigninImpl implements _Signin {
             (identical(other.success, success) || other.success == success));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, ip,
       const DeepCollectionEquality().hash(headers), success);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SigninImplCopyWith<_$SigninImpl> get copyWith =>
-      __$$SigninImplCopyWithImpl<_$SigninImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SigninImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Signin(id: $id, createdAt: $createdAt, ip: $ip, headers: $headers, success: $success)';
   }
 }
 
-abstract class _Signin implements Signin {
-  const factory _Signin(
-      {required final String id,
-      @DateTimeConverter() required final DateTime createdAt,
-      required final String ip,
-      final Object? headers,
-      required final bool success}) = _$SigninImpl;
-
-  factory _Signin.fromJson(Map<String, dynamic> json) = _$SigninImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SigninCopyWith<$Res> implements $SigninCopyWith<$Res> {
+  factory _$SigninCopyWith(_Signin value, $Res Function(_Signin) _then) =
+      __$SigninCopyWithImpl;
   @override
-  String get id;
-  @override
-  @DateTimeConverter()
-  DateTime get createdAt;
-  @override
-  String get ip;
-  @override
-  Object? get headers;
-  @override
-  bool get success;
-  @override
-  @JsonKey(ignore: true)
-  _$$SigninImplCopyWith<_$SigninImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      @DateTimeConverter() DateTime createdAt,
+      String ip,
+      Object? headers,
+      bool success});
 }
 
-TimelineVoted _$TimelineVotedFromJson(Map<String, dynamic> json) {
-  return _TimelineVoted.fromJson(json);
+/// @nodoc
+class __$SigninCopyWithImpl<$Res> implements _$SigninCopyWith<$Res> {
+  __$SigninCopyWithImpl(this._self, this._then);
+
+  final _Signin _self;
+  final $Res Function(_Signin) _then;
+
+  /// Create a copy of Signin
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? createdAt = null,
+    Object? ip = null,
+    Object? headers = freezed,
+    Object? success = null,
+  }) {
+    return _then(_Signin(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      ip: null == ip
+          ? _self.ip
+          : ip // ignore: cast_nullable_to_non_nullable
+              as String,
+      headers: freezed == headers ? _self.headers : headers,
+      success: null == success
+          ? _self.success
+          : success // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$TimelineVoted {
-  int get choice => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
+  int get choice;
+  String get userId;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TimelineVotedCopyWith<TimelineVoted> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimelineVotedCopyWith<$Res> {
-  factory $TimelineVotedCopyWith(
-          TimelineVoted value, $Res Function(TimelineVoted) then) =
-      _$TimelineVotedCopyWithImpl<$Res, TimelineVoted>;
-  @useResult
-  $Res call({int choice, String userId});
-}
-
-/// @nodoc
-class _$TimelineVotedCopyWithImpl<$Res, $Val extends TimelineVoted>
-    implements $TimelineVotedCopyWith<$Res> {
-  _$TimelineVotedCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of TimelineVoted
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $TimelineVotedCopyWith<TimelineVoted> get copyWith =>
+      _$TimelineVotedCopyWithImpl<TimelineVoted>(
+          this as TimelineVoted, _$identity);
+
+  /// Serializes this TimelineVoted to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? choice = null,
-    Object? userId = null,
-  }) {
-    return _then(_value.copyWith(
-      choice: null == choice
-          ? _value.choice
-          : choice // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TimelineVoted &&
+            (identical(other.choice, choice) || other.choice == choice) &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, choice, userId);
+
+  @override
+  String toString() {
+    return 'TimelineVoted(choice: $choice, userId: $userId)';
   }
 }
 
 /// @nodoc
-abstract class _$$TimelineVotedImplCopyWith<$Res>
-    implements $TimelineVotedCopyWith<$Res> {
-  factory _$$TimelineVotedImplCopyWith(
-          _$TimelineVotedImpl value, $Res Function(_$TimelineVotedImpl) then) =
-      __$$TimelineVotedImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TimelineVotedCopyWith<$Res> {
+  factory $TimelineVotedCopyWith(
+          TimelineVoted value, $Res Function(TimelineVoted) _then) =
+      _$TimelineVotedCopyWithImpl;
   @useResult
   $Res call({int choice, String userId});
 }
 
 /// @nodoc
-class __$$TimelineVotedImplCopyWithImpl<$Res>
-    extends _$TimelineVotedCopyWithImpl<$Res, _$TimelineVotedImpl>
-    implements _$$TimelineVotedImplCopyWith<$Res> {
-  __$$TimelineVotedImplCopyWithImpl(
-      _$TimelineVotedImpl _value, $Res Function(_$TimelineVotedImpl) _then)
-      : super(_value, _then);
+class _$TimelineVotedCopyWithImpl<$Res>
+    implements $TimelineVotedCopyWith<$Res> {
+  _$TimelineVotedCopyWithImpl(this._self, this._then);
 
+  final TimelineVoted _self;
+  final $Res Function(TimelineVoted) _then;
+
+  /// Create a copy of TimelineVoted
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? choice = null,
     Object? userId = null,
   }) {
-    return _then(_$TimelineVotedImpl(
+    return _then(_self.copyWith(
       choice: null == choice
-          ? _value.choice
+          ? _self.choice
           : choice // ignore: cast_nullable_to_non_nullable
               as int,
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -882,180 +874,84 @@ class __$$TimelineVotedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TimelineVotedImpl implements _TimelineVoted {
-  const _$TimelineVotedImpl({required this.choice, required this.userId});
-
-  factory _$TimelineVotedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimelineVotedImplFromJson(json);
+class _TimelineVoted implements TimelineVoted {
+  const _TimelineVoted({required this.choice, required this.userId});
+  factory _TimelineVoted.fromJson(Map<String, dynamic> json) =>
+      _$TimelineVotedFromJson(json);
 
   @override
   final int choice;
   @override
   final String userId;
 
+  /// Create a copy of TimelineVoted
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TimelineVoted(choice: $choice, userId: $userId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TimelineVotedCopyWith<_TimelineVoted> get copyWith =>
+      __$TimelineVotedCopyWithImpl<_TimelineVoted>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TimelineVotedToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimelineVotedImpl &&
+            other is _TimelineVoted &&
             (identical(other.choice, choice) || other.choice == choice) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, choice, userId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TimelineVotedImplCopyWith<_$TimelineVotedImpl> get copyWith =>
-      __$$TimelineVotedImplCopyWithImpl<_$TimelineVotedImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TimelineVotedImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TimelineVoted implements TimelineVoted {
-  const factory _TimelineVoted(
-      {required final int choice,
-      required final String userId}) = _$TimelineVotedImpl;
-
-  factory _TimelineVoted.fromJson(Map<String, dynamic> json) =
-      _$TimelineVotedImpl.fromJson;
-
-  @override
-  int get choice;
-  @override
-  String get userId;
-  @override
-  @JsonKey(ignore: true)
-  _$$TimelineVotedImplCopyWith<_$TimelineVotedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TimelineReacted _$TimelineReactedFromJson(Map<String, dynamic> json) {
-  return _TimelineReacted.fromJson(json);
-}
-
-/// @nodoc
-mixin _$TimelineReacted {
-  String get reaction => throw _privateConstructorUsedError;
-  TimelineReactedEmojiData? get emoji => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TimelineReactedCopyWith<TimelineReacted> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimelineReactedCopyWith<$Res> {
-  factory $TimelineReactedCopyWith(
-          TimelineReacted value, $Res Function(TimelineReacted) then) =
-      _$TimelineReactedCopyWithImpl<$Res, TimelineReacted>;
-  @useResult
-  $Res call({String reaction, TimelineReactedEmojiData? emoji, String userId});
-
-  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji;
-}
-
-/// @nodoc
-class _$TimelineReactedCopyWithImpl<$Res, $Val extends TimelineReacted>
-    implements $TimelineReactedCopyWith<$Res> {
-  _$TimelineReactedCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? reaction = null,
-    Object? emoji = freezed,
-    Object? userId = null,
-  }) {
-    return _then(_value.copyWith(
-      reaction: null == reaction
-          ? _value.reaction
-          : reaction // ignore: cast_nullable_to_non_nullable
-              as String,
-      emoji: freezed == emoji
-          ? _value.emoji
-          : emoji // ignore: cast_nullable_to_non_nullable
-              as TimelineReactedEmojiData?,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji {
-    if (_value.emoji == null) {
-      return null;
-    }
-
-    return $TimelineReactedEmojiDataCopyWith<$Res>(_value.emoji!, (value) {
-      return _then(_value.copyWith(emoji: value) as $Val);
-    });
+  String toString() {
+    return 'TimelineVoted(choice: $choice, userId: $userId)';
   }
 }
 
 /// @nodoc
-abstract class _$$TimelineReactedImplCopyWith<$Res>
-    implements $TimelineReactedCopyWith<$Res> {
-  factory _$$TimelineReactedImplCopyWith(_$TimelineReactedImpl value,
-          $Res Function(_$TimelineReactedImpl) then) =
-      __$$TimelineReactedImplCopyWithImpl<$Res>;
+abstract mixin class _$TimelineVotedCopyWith<$Res>
+    implements $TimelineVotedCopyWith<$Res> {
+  factory _$TimelineVotedCopyWith(
+          _TimelineVoted value, $Res Function(_TimelineVoted) _then) =
+      __$TimelineVotedCopyWithImpl;
   @override
   @useResult
-  $Res call({String reaction, TimelineReactedEmojiData? emoji, String userId});
-
-  @override
-  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji;
+  $Res call({int choice, String userId});
 }
 
 /// @nodoc
-class __$$TimelineReactedImplCopyWithImpl<$Res>
-    extends _$TimelineReactedCopyWithImpl<$Res, _$TimelineReactedImpl>
-    implements _$$TimelineReactedImplCopyWith<$Res> {
-  __$$TimelineReactedImplCopyWithImpl(
-      _$TimelineReactedImpl _value, $Res Function(_$TimelineReactedImpl) _then)
-      : super(_value, _then);
+class __$TimelineVotedCopyWithImpl<$Res>
+    implements _$TimelineVotedCopyWith<$Res> {
+  __$TimelineVotedCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _TimelineVoted _self;
+  final $Res Function(_TimelineVoted) _then;
+
+  /// Create a copy of TimelineVoted
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? reaction = null,
-    Object? emoji = freezed,
+    Object? choice = null,
     Object? userId = null,
   }) {
-    return _then(_$TimelineReactedImpl(
-      reaction: null == reaction
-          ? _value.reaction
-          : reaction // ignore: cast_nullable_to_non_nullable
-              as String,
-      emoji: freezed == emoji
-          ? _value.emoji
-          : emoji // ignore: cast_nullable_to_non_nullable
-              as TimelineReactedEmojiData?,
+    return _then(_TimelineVoted(
+      choice: null == choice
+          ? _self.choice
+          : choice // ignore: cast_nullable_to_non_nullable
+              as int,
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1063,13 +959,109 @@ class __$$TimelineReactedImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$TimelineReactedImpl implements _TimelineReacted {
-  const _$TimelineReactedImpl(
-      {required this.reaction, required this.emoji, required this.userId});
+mixin _$TimelineReacted {
+  String get reaction;
+  TimelineReactedEmojiData? get emoji;
+  String get userId;
 
-  factory _$TimelineReactedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimelineReactedImplFromJson(json);
+  /// Create a copy of TimelineReacted
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TimelineReactedCopyWith<TimelineReacted> get copyWith =>
+      _$TimelineReactedCopyWithImpl<TimelineReacted>(
+          this as TimelineReacted, _$identity);
+
+  /// Serializes this TimelineReacted to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TimelineReacted &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.emoji, emoji) || other.emoji == emoji) &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reaction, emoji, userId);
+
+  @override
+  String toString() {
+    return 'TimelineReacted(reaction: $reaction, emoji: $emoji, userId: $userId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TimelineReactedCopyWith<$Res> {
+  factory $TimelineReactedCopyWith(
+          TimelineReacted value, $Res Function(TimelineReacted) _then) =
+      _$TimelineReactedCopyWithImpl;
+  @useResult
+  $Res call({String reaction, TimelineReactedEmojiData? emoji, String userId});
+
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji;
+}
+
+/// @nodoc
+class _$TimelineReactedCopyWithImpl<$Res>
+    implements $TimelineReactedCopyWith<$Res> {
+  _$TimelineReactedCopyWithImpl(this._self, this._then);
+
+  final TimelineReacted _self;
+  final $Res Function(TimelineReacted) _then;
+
+  /// Create a copy of TimelineReacted
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reaction = null,
+    Object? emoji = freezed,
+    Object? userId = null,
+  }) {
+    return _then(_self.copyWith(
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      emoji: freezed == emoji
+          ? _self.emoji
+          : emoji // ignore: cast_nullable_to_non_nullable
+              as TimelineReactedEmojiData?,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of TimelineReacted
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji {
+    if (_self.emoji == null) {
+      return null;
+    }
+
+    return $TimelineReactedEmojiDataCopyWith<$Res>(_self.emoji!, (value) {
+      return _then(_self.copyWith(emoji: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TimelineReacted implements TimelineReacted {
+  const _TimelineReacted(
+      {required this.reaction, required this.emoji, required this.userId});
+  factory _TimelineReacted.fromJson(Map<String, dynamic> json) =>
+      _$TimelineReactedFromJson(json);
 
   @override
   final String reaction;
@@ -1078,152 +1070,171 @@ class _$TimelineReactedImpl implements _TimelineReacted {
   @override
   final String userId;
 
+  /// Create a copy of TimelineReacted
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TimelineReacted(reaction: $reaction, emoji: $emoji, userId: $userId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TimelineReactedCopyWith<_TimelineReacted> get copyWith =>
+      __$TimelineReactedCopyWithImpl<_TimelineReacted>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TimelineReactedToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimelineReactedImpl &&
+            other is _TimelineReacted &&
             (identical(other.reaction, reaction) ||
                 other.reaction == reaction) &&
             (identical(other.emoji, emoji) || other.emoji == emoji) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reaction, emoji, userId);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TimelineReactedImplCopyWith<_$TimelineReactedImpl> get copyWith =>
-      __$$TimelineReactedImplCopyWithImpl<_$TimelineReactedImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TimelineReactedImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TimelineReacted(reaction: $reaction, emoji: $emoji, userId: $userId)';
   }
 }
 
-abstract class _TimelineReacted implements TimelineReacted {
-  const factory _TimelineReacted(
-      {required final String reaction,
-      required final TimelineReactedEmojiData? emoji,
-      required final String userId}) = _$TimelineReactedImpl;
+/// @nodoc
+abstract mixin class _$TimelineReactedCopyWith<$Res>
+    implements $TimelineReactedCopyWith<$Res> {
+  factory _$TimelineReactedCopyWith(
+          _TimelineReacted value, $Res Function(_TimelineReacted) _then) =
+      __$TimelineReactedCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String reaction, TimelineReactedEmojiData? emoji, String userId});
 
-  factory _TimelineReacted.fromJson(Map<String, dynamic> json) =
-      _$TimelineReactedImpl.fromJson;
-
   @override
-  String get reaction;
-  @override
-  TimelineReactedEmojiData? get emoji;
-  @override
-  String get userId;
-  @override
-  @JsonKey(ignore: true)
-  _$$TimelineReactedImplCopyWith<_$TimelineReactedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji;
 }
 
-TimelineReactedEmojiData _$TimelineReactedEmojiDataFromJson(
-    Map<String, dynamic> json) {
-  return _TimelineReactedEmojiData.fromJson(json);
+/// @nodoc
+class __$TimelineReactedCopyWithImpl<$Res>
+    implements _$TimelineReactedCopyWith<$Res> {
+  __$TimelineReactedCopyWithImpl(this._self, this._then);
+
+  final _TimelineReacted _self;
+  final $Res Function(_TimelineReacted) _then;
+
+  /// Create a copy of TimelineReacted
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reaction = null,
+    Object? emoji = freezed,
+    Object? userId = null,
+  }) {
+    return _then(_TimelineReacted(
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      emoji: freezed == emoji
+          ? _self.emoji
+          : emoji // ignore: cast_nullable_to_non_nullable
+              as TimelineReactedEmojiData?,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of TimelineReacted
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TimelineReactedEmojiDataCopyWith<$Res>? get emoji {
+    if (_self.emoji == null) {
+      return null;
+    }
+
+    return $TimelineReactedEmojiDataCopyWith<$Res>(_self.emoji!, (value) {
+      return _then(_self.copyWith(emoji: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$TimelineReactedEmojiData {
-  String get name => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String get name;
+  String get url;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TimelineReactedEmojiDataCopyWith<TimelineReactedEmojiData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimelineReactedEmojiDataCopyWith<$Res> {
-  factory $TimelineReactedEmojiDataCopyWith(TimelineReactedEmojiData value,
-          $Res Function(TimelineReactedEmojiData) then) =
-      _$TimelineReactedEmojiDataCopyWithImpl<$Res, TimelineReactedEmojiData>;
-  @useResult
-  $Res call({String name, String url});
-}
-
-/// @nodoc
-class _$TimelineReactedEmojiDataCopyWithImpl<$Res,
-        $Val extends TimelineReactedEmojiData>
-    implements $TimelineReactedEmojiDataCopyWith<$Res> {
-  _$TimelineReactedEmojiDataCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of TimelineReactedEmojiData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $TimelineReactedEmojiDataCopyWith<TimelineReactedEmojiData> get copyWith =>
+      _$TimelineReactedEmojiDataCopyWithImpl<TimelineReactedEmojiData>(
+          this as TimelineReactedEmojiData, _$identity);
+
+  /// Serializes this TimelineReactedEmojiData to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = null,
-    Object? url = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TimelineReactedEmojiData &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, url);
+
+  @override
+  String toString() {
+    return 'TimelineReactedEmojiData(name: $name, url: $url)';
   }
 }
 
 /// @nodoc
-abstract class _$$TimelineReactedEmojiDataImplCopyWith<$Res>
-    implements $TimelineReactedEmojiDataCopyWith<$Res> {
-  factory _$$TimelineReactedEmojiDataImplCopyWith(
-          _$TimelineReactedEmojiDataImpl value,
-          $Res Function(_$TimelineReactedEmojiDataImpl) then) =
-      __$$TimelineReactedEmojiDataImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TimelineReactedEmojiDataCopyWith<$Res> {
+  factory $TimelineReactedEmojiDataCopyWith(TimelineReactedEmojiData value,
+          $Res Function(TimelineReactedEmojiData) _then) =
+      _$TimelineReactedEmojiDataCopyWithImpl;
   @useResult
   $Res call({String name, String url});
 }
 
 /// @nodoc
-class __$$TimelineReactedEmojiDataImplCopyWithImpl<$Res>
-    extends _$TimelineReactedEmojiDataCopyWithImpl<$Res,
-        _$TimelineReactedEmojiDataImpl>
-    implements _$$TimelineReactedEmojiDataImplCopyWith<$Res> {
-  __$$TimelineReactedEmojiDataImplCopyWithImpl(
-      _$TimelineReactedEmojiDataImpl _value,
-      $Res Function(_$TimelineReactedEmojiDataImpl) _then)
-      : super(_value, _then);
+class _$TimelineReactedEmojiDataCopyWithImpl<$Res>
+    implements $TimelineReactedEmojiDataCopyWith<$Res> {
+  _$TimelineReactedEmojiDataCopyWithImpl(this._self, this._then);
 
+  final TimelineReactedEmojiData _self;
+  final $Res Function(TimelineReactedEmojiData) _then;
+
+  /// Create a copy of TimelineReactedEmojiData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? name = null,
     Object? url = null,
   }) {
-    return _then(_$TimelineReactedEmojiDataImpl(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       url: null == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1232,143 +1243,153 @@ class __$$TimelineReactedEmojiDataImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TimelineReactedEmojiDataImpl implements _TimelineReactedEmojiData {
-  const _$TimelineReactedEmojiDataImpl({required this.name, required this.url});
-
-  factory _$TimelineReactedEmojiDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimelineReactedEmojiDataImplFromJson(json);
+class _TimelineReactedEmojiData implements TimelineReactedEmojiData {
+  const _TimelineReactedEmojiData({required this.name, required this.url});
+  factory _TimelineReactedEmojiData.fromJson(Map<String, dynamic> json) =>
+      _$TimelineReactedEmojiDataFromJson(json);
 
   @override
   final String name;
   @override
   final String url;
 
+  /// Create a copy of TimelineReactedEmojiData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TimelineReactedEmojiData(name: $name, url: $url)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TimelineReactedEmojiDataCopyWith<_TimelineReactedEmojiData> get copyWith =>
+      __$TimelineReactedEmojiDataCopyWithImpl<_TimelineReactedEmojiData>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TimelineReactedEmojiDataToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimelineReactedEmojiDataImpl &&
+            other is _TimelineReactedEmojiData &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, url);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TimelineReactedEmojiDataImplCopyWith<_$TimelineReactedEmojiDataImpl>
-      get copyWith => __$$TimelineReactedEmojiDataImplCopyWithImpl<
-          _$TimelineReactedEmojiDataImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TimelineReactedEmojiDataImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TimelineReactedEmojiData(name: $name, url: $url)';
   }
 }
 
-abstract class _TimelineReactedEmojiData implements TimelineReactedEmojiData {
-  const factory _TimelineReactedEmojiData(
-      {required final String name,
-      required final String url}) = _$TimelineReactedEmojiDataImpl;
-
-  factory _TimelineReactedEmojiData.fromJson(Map<String, dynamic> json) =
-      _$TimelineReactedEmojiDataImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$TimelineReactedEmojiDataCopyWith<$Res>
+    implements $TimelineReactedEmojiDataCopyWith<$Res> {
+  factory _$TimelineReactedEmojiDataCopyWith(_TimelineReactedEmojiData value,
+          $Res Function(_TimelineReactedEmojiData) _then) =
+      __$TimelineReactedEmojiDataCopyWithImpl;
   @override
-  String get name;
-  @override
-  String get url;
-  @override
-  @JsonKey(ignore: true)
-  _$$TimelineReactedEmojiDataImplCopyWith<_$TimelineReactedEmojiDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String name, String url});
 }
 
-TimelineDeleted _$TimelineDeletedFromJson(Map<String, dynamic> json) {
-  return _TimelineDeleted.fromJson(json);
+/// @nodoc
+class __$TimelineReactedEmojiDataCopyWithImpl<$Res>
+    implements _$TimelineReactedEmojiDataCopyWith<$Res> {
+  __$TimelineReactedEmojiDataCopyWithImpl(this._self, this._then);
+
+  final _TimelineReactedEmojiData _self;
+  final $Res Function(_TimelineReactedEmojiData) _then;
+
+  /// Create a copy of TimelineReactedEmojiData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? url = null,
+  }) {
+    return _then(_TimelineReactedEmojiData(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$TimelineDeleted {
   @DateTimeConverter()
-  DateTime get deletedAt => throw _privateConstructorUsedError;
+  DateTime get deletedAt;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TimelineDeletedCopyWith<TimelineDeleted> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimelineDeletedCopyWith<$Res> {
-  factory $TimelineDeletedCopyWith(
-          TimelineDeleted value, $Res Function(TimelineDeleted) then) =
-      _$TimelineDeletedCopyWithImpl<$Res, TimelineDeleted>;
-  @useResult
-  $Res call({@DateTimeConverter() DateTime deletedAt});
-}
-
-/// @nodoc
-class _$TimelineDeletedCopyWithImpl<$Res, $Val extends TimelineDeleted>
-    implements $TimelineDeletedCopyWith<$Res> {
-  _$TimelineDeletedCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of TimelineDeleted
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $TimelineDeletedCopyWith<TimelineDeleted> get copyWith =>
+      _$TimelineDeletedCopyWithImpl<TimelineDeleted>(
+          this as TimelineDeleted, _$identity);
+
+  /// Serializes this TimelineDeleted to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? deletedAt = null,
-  }) {
-    return _then(_value.copyWith(
-      deletedAt: null == deletedAt
-          ? _value.deletedAt
-          : deletedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TimelineDeleted &&
+            (identical(other.deletedAt, deletedAt) ||
+                other.deletedAt == deletedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, deletedAt);
+
+  @override
+  String toString() {
+    return 'TimelineDeleted(deletedAt: $deletedAt)';
   }
 }
 
 /// @nodoc
-abstract class _$$TimelineDeletedImplCopyWith<$Res>
-    implements $TimelineDeletedCopyWith<$Res> {
-  factory _$$TimelineDeletedImplCopyWith(_$TimelineDeletedImpl value,
-          $Res Function(_$TimelineDeletedImpl) then) =
-      __$$TimelineDeletedImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TimelineDeletedCopyWith<$Res> {
+  factory $TimelineDeletedCopyWith(
+          TimelineDeleted value, $Res Function(TimelineDeleted) _then) =
+      _$TimelineDeletedCopyWithImpl;
   @useResult
   $Res call({@DateTimeConverter() DateTime deletedAt});
 }
 
 /// @nodoc
-class __$$TimelineDeletedImplCopyWithImpl<$Res>
-    extends _$TimelineDeletedCopyWithImpl<$Res, _$TimelineDeletedImpl>
-    implements _$$TimelineDeletedImplCopyWith<$Res> {
-  __$$TimelineDeletedImplCopyWithImpl(
-      _$TimelineDeletedImpl _value, $Res Function(_$TimelineDeletedImpl) _then)
-      : super(_value, _then);
+class _$TimelineDeletedCopyWithImpl<$Res>
+    implements $TimelineDeletedCopyWith<$Res> {
+  _$TimelineDeletedCopyWithImpl(this._self, this._then);
 
+  final TimelineDeleted _self;
+  final $Res Function(TimelineDeleted) _then;
+
+  /// Create a copy of TimelineDeleted
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? deletedAt = null,
   }) {
-    return _then(_$TimelineDeletedImpl(
+    return _then(_self.copyWith(
       deletedAt: null == deletedAt
-          ? _value.deletedAt
+          ? _self.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
@@ -1377,64 +1398,82 @@ class __$$TimelineDeletedImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TimelineDeletedImpl implements _TimelineDeleted {
-  const _$TimelineDeletedImpl({@DateTimeConverter() required this.deletedAt});
-
-  factory _$TimelineDeletedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimelineDeletedImplFromJson(json);
+class _TimelineDeleted implements TimelineDeleted {
+  const _TimelineDeleted({@DateTimeConverter() required this.deletedAt});
+  factory _TimelineDeleted.fromJson(Map<String, dynamic> json) =>
+      _$TimelineDeletedFromJson(json);
 
   @override
   @DateTimeConverter()
   final DateTime deletedAt;
 
+  /// Create a copy of TimelineDeleted
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TimelineDeleted(deletedAt: $deletedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TimelineDeletedCopyWith<_TimelineDeleted> get copyWith =>
+      __$TimelineDeletedCopyWithImpl<_TimelineDeleted>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TimelineDeletedToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimelineDeletedImpl &&
+            other is _TimelineDeleted &&
             (identical(other.deletedAt, deletedAt) ||
                 other.deletedAt == deletedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, deletedAt);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TimelineDeletedImplCopyWith<_$TimelineDeletedImpl> get copyWith =>
-      __$$TimelineDeletedImplCopyWithImpl<_$TimelineDeletedImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TimelineDeletedImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TimelineDeleted(deletedAt: $deletedAt)';
   }
 }
 
-abstract class _TimelineDeleted implements TimelineDeleted {
-  const factory _TimelineDeleted(
-          {@DateTimeConverter() required final DateTime deletedAt}) =
-      _$TimelineDeletedImpl;
-
-  factory _TimelineDeleted.fromJson(Map<String, dynamic> json) =
-      _$TimelineDeletedImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$TimelineDeletedCopyWith<$Res>
+    implements $TimelineDeletedCopyWith<$Res> {
+  factory _$TimelineDeletedCopyWith(
+          _TimelineDeleted value, $Res Function(_TimelineDeleted) _then) =
+      __$TimelineDeletedCopyWithImpl;
   @override
-  @DateTimeConverter()
-  DateTime get deletedAt;
+  @useResult
+  $Res call({@DateTimeConverter() DateTime deletedAt});
+}
+
+/// @nodoc
+class __$TimelineDeletedCopyWithImpl<$Res>
+    implements _$TimelineDeletedCopyWith<$Res> {
+  __$TimelineDeletedCopyWithImpl(this._self, this._then);
+
+  final _TimelineDeleted _self;
+  final $Res Function(_TimelineDeleted) _then;
+
+  /// Create a copy of TimelineDeleted
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$TimelineDeletedImplCopyWith<_$TimelineDeletedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? deletedAt = null,
+  }) {
+    return _then(_TimelineDeleted(
+      deletedAt: null == deletedAt
+          ? _self.deletedAt
+          : deletedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
 
 StreamingStats _$StreamingStatsFromJson(Map<String, dynamic> json) {
@@ -1452,83 +1491,93 @@ StreamingStats _$StreamingStatsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StreamingStats {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)
-        serverMetrics,
-    required TResult Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)
-        jobQueue,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
-        serverMetrics,
-    TResult? Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
-        jobQueue,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
-        serverMetrics,
-    TResult Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
-        jobQueue,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerMetricsResponse value) serverMetrics,
-    required TResult Function(JobQueueResponse value) jobQueue,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ServerMetricsResponse value)? serverMetrics,
-    TResult? Function(JobQueueResponse value)? jobQueue,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerMetricsResponse value)? serverMetrics,
-    TResult Function(JobQueueResponse value)? jobQueue,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  /// Serializes this StreamingStats to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is StreamingStats);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'StreamingStats()';
+  }
 }
 
 /// @nodoc
-abstract class $StreamingStatsCopyWith<$Res> {
-  factory $StreamingStatsCopyWith(
-          StreamingStats value, $Res Function(StreamingStats) then) =
-      _$StreamingStatsCopyWithImpl<$Res, StreamingStats>;
+class $StreamingStatsCopyWith<$Res> {
+  $StreamingStatsCopyWith(StreamingStats _, $Res Function(StreamingStats) __);
 }
 
 /// @nodoc
-class _$StreamingStatsCopyWithImpl<$Res, $Val extends StreamingStats>
+@JsonSerializable()
+class ServerMetricsResponse implements StreamingStats {
+  const ServerMetricsResponse(
+      {required this.cpu,
+      required this.fs,
+      required this.mem,
+      required this.net,
+      final String? $type})
+      : $type = $type ?? 'serverMetrics';
+  factory ServerMetricsResponse.fromJson(Map<String, dynamic> json) =>
+      _$ServerMetricsResponseFromJson(json);
+
+  final double cpu;
+  final StatsLogFs fs;
+  final StatsLogMem mem;
+  final StatsLogNet net;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ServerMetricsResponseCopyWith<ServerMetricsResponse> get copyWith =>
+      _$ServerMetricsResponseCopyWithImpl<ServerMetricsResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ServerMetricsResponseToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ServerMetricsResponse &&
+            (identical(other.cpu, cpu) || other.cpu == cpu) &&
+            (identical(other.fs, fs) || other.fs == fs) &&
+            (identical(other.mem, mem) || other.mem == mem) &&
+            (identical(other.net, net) || other.net == net));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, cpu, fs, mem, net);
+
+  @override
+  String toString() {
+    return 'StreamingStats.serverMetrics(cpu: $cpu, fs: $fs, mem: $mem, net: $net)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ServerMetricsResponseCopyWith<$Res>
     implements $StreamingStatsCopyWith<$Res> {
-  _$StreamingStatsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$ServerMetricsResponseImplCopyWith<$Res> {
-  factory _$$ServerMetricsResponseImplCopyWith(
-          _$ServerMetricsResponseImpl value,
-          $Res Function(_$ServerMetricsResponseImpl) then) =
-      __$$ServerMetricsResponseImplCopyWithImpl<$Res>;
+  factory $ServerMetricsResponseCopyWith(ServerMetricsResponse value,
+          $Res Function(ServerMetricsResponse) _then) =
+      _$ServerMetricsResponseCopyWithImpl;
   @useResult
   $Res call({double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net});
 
@@ -1538,225 +1587,127 @@ abstract class _$$ServerMetricsResponseImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ServerMetricsResponseImplCopyWithImpl<$Res>
-    extends _$StreamingStatsCopyWithImpl<$Res, _$ServerMetricsResponseImpl>
-    implements _$$ServerMetricsResponseImplCopyWith<$Res> {
-  __$$ServerMetricsResponseImplCopyWithImpl(_$ServerMetricsResponseImpl _value,
-      $Res Function(_$ServerMetricsResponseImpl) _then)
-      : super(_value, _then);
+class _$ServerMetricsResponseCopyWithImpl<$Res>
+    implements $ServerMetricsResponseCopyWith<$Res> {
+  _$ServerMetricsResponseCopyWithImpl(this._self, this._then);
 
+  final ServerMetricsResponse _self;
+  final $Res Function(ServerMetricsResponse) _then;
+
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? cpu = null,
     Object? fs = null,
     Object? mem = null,
     Object? net = null,
   }) {
-    return _then(_$ServerMetricsResponseImpl(
+    return _then(ServerMetricsResponse(
       cpu: null == cpu
-          ? _value.cpu
+          ? _self.cpu
           : cpu // ignore: cast_nullable_to_non_nullable
               as double,
       fs: null == fs
-          ? _value.fs
+          ? _self.fs
           : fs // ignore: cast_nullable_to_non_nullable
               as StatsLogFs,
       mem: null == mem
-          ? _value.mem
+          ? _self.mem
           : mem // ignore: cast_nullable_to_non_nullable
               as StatsLogMem,
       net: null == net
-          ? _value.net
+          ? _self.net
           : net // ignore: cast_nullable_to_non_nullable
               as StatsLogNet,
     ));
   }
 
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatsLogFsCopyWith<$Res> get fs {
-    return $StatsLogFsCopyWith<$Res>(_value.fs, (value) {
-      return _then(_value.copyWith(fs: value));
+    return $StatsLogFsCopyWith<$Res>(_self.fs, (value) {
+      return _then(_self.copyWith(fs: value));
     });
   }
 
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatsLogMemCopyWith<$Res> get mem {
-    return $StatsLogMemCopyWith<$Res>(_value.mem, (value) {
-      return _then(_value.copyWith(mem: value));
+    return $StatsLogMemCopyWith<$Res>(_self.mem, (value) {
+      return _then(_self.copyWith(mem: value));
     });
   }
 
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatsLogNetCopyWith<$Res> get net {
-    return $StatsLogNetCopyWith<$Res>(_value.net, (value) {
-      return _then(_value.copyWith(net: value));
+    return $StatsLogNetCopyWith<$Res>(_self.net, (value) {
+      return _then(_self.copyWith(net: value));
     });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ServerMetricsResponseImpl implements ServerMetricsResponse {
-  const _$ServerMetricsResponseImpl(
-      {required this.cpu,
-      required this.fs,
-      required this.mem,
-      required this.net,
-      final String? $type})
-      : $type = $type ?? 'serverMetrics';
+class JobQueueResponse implements StreamingStats {
+  const JobQueueResponse(
+      {required this.inbox, required this.deliver, final String? $type})
+      : $type = $type ?? 'jobQueue';
+  factory JobQueueResponse.fromJson(Map<String, dynamic> json) =>
+      _$JobQueueResponseFromJson(json);
 
-  factory _$ServerMetricsResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServerMetricsResponseImplFromJson(json);
-
-  @override
-  final double cpu;
-  @override
-  final StatsLogFs fs;
-  @override
-  final StatsLogMem mem;
-  @override
-  final StatsLogNet net;
+  final QueueStatsLogResponseData inbox;
+  final QueueStatsLogResponseData deliver;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $JobQueueResponseCopyWith<JobQueueResponse> get copyWith =>
+      _$JobQueueResponseCopyWithImpl<JobQueueResponse>(this, _$identity);
+
   @override
-  String toString() {
-    return 'StreamingStats.serverMetrics(cpu: $cpu, fs: $fs, mem: $mem, net: $net)';
+  Map<String, dynamic> toJson() {
+    return _$JobQueueResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServerMetricsResponseImpl &&
-            (identical(other.cpu, cpu) || other.cpu == cpu) &&
-            (identical(other.fs, fs) || other.fs == fs) &&
-            (identical(other.mem, mem) || other.mem == mem) &&
-            (identical(other.net, net) || other.net == net));
+            other is JobQueueResponse &&
+            (identical(other.inbox, inbox) || other.inbox == inbox) &&
+            (identical(other.deliver, deliver) || other.deliver == deliver));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, cpu, fs, mem, net);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ServerMetricsResponseImplCopyWith<_$ServerMetricsResponseImpl>
-      get copyWith => __$$ServerMetricsResponseImplCopyWithImpl<
-          _$ServerMetricsResponseImpl>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, inbox, deliver);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)
-        serverMetrics,
-    required TResult Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)
-        jobQueue,
-  }) {
-    return serverMetrics(cpu, fs, mem, net);
+  String toString() {
+    return 'StreamingStats.jobQueue(inbox: $inbox, deliver: $deliver)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
-        serverMetrics,
-    TResult? Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
-        jobQueue,
-  }) {
-    return serverMetrics?.call(cpu, fs, mem, net);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
-        serverMetrics,
-    TResult Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
-        jobQueue,
-    required TResult orElse(),
-  }) {
-    if (serverMetrics != null) {
-      return serverMetrics(cpu, fs, mem, net);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerMetricsResponse value) serverMetrics,
-    required TResult Function(JobQueueResponse value) jobQueue,
-  }) {
-    return serverMetrics(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ServerMetricsResponse value)? serverMetrics,
-    TResult? Function(JobQueueResponse value)? jobQueue,
-  }) {
-    return serverMetrics?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerMetricsResponse value)? serverMetrics,
-    TResult Function(JobQueueResponse value)? jobQueue,
-    required TResult orElse(),
-  }) {
-    if (serverMetrics != null) {
-      return serverMetrics(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ServerMetricsResponseImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class ServerMetricsResponse implements StreamingStats {
-  const factory ServerMetricsResponse(
-      {required final double cpu,
-      required final StatsLogFs fs,
-      required final StatsLogMem mem,
-      required final StatsLogNet net}) = _$ServerMetricsResponseImpl;
-
-  factory ServerMetricsResponse.fromJson(Map<String, dynamic> json) =
-      _$ServerMetricsResponseImpl.fromJson;
-
-  double get cpu;
-  StatsLogFs get fs;
-  StatsLogMem get mem;
-  StatsLogNet get net;
-  @JsonKey(ignore: true)
-  _$$ServerMetricsResponseImplCopyWith<_$ServerMetricsResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$JobQueueResponseImplCopyWith<$Res> {
-  factory _$$JobQueueResponseImplCopyWith(_$JobQueueResponseImpl value,
-          $Res Function(_$JobQueueResponseImpl) then) =
-      __$$JobQueueResponseImplCopyWithImpl<$Res>;
+abstract mixin class $JobQueueResponseCopyWith<$Res>
+    implements $StreamingStatsCopyWith<$Res> {
+  factory $JobQueueResponseCopyWith(
+          JobQueueResponse value, $Res Function(JobQueueResponse) _then) =
+      _$JobQueueResponseCopyWithImpl;
   @useResult
   $Res call(
       {QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver});
@@ -1766,274 +1717,118 @@ abstract class _$$JobQueueResponseImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$JobQueueResponseImplCopyWithImpl<$Res>
-    extends _$StreamingStatsCopyWithImpl<$Res, _$JobQueueResponseImpl>
-    implements _$$JobQueueResponseImplCopyWith<$Res> {
-  __$$JobQueueResponseImplCopyWithImpl(_$JobQueueResponseImpl _value,
-      $Res Function(_$JobQueueResponseImpl) _then)
-      : super(_value, _then);
+class _$JobQueueResponseCopyWithImpl<$Res>
+    implements $JobQueueResponseCopyWith<$Res> {
+  _$JobQueueResponseCopyWithImpl(this._self, this._then);
 
+  final JobQueueResponse _self;
+  final $Res Function(JobQueueResponse) _then;
+
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? inbox = null,
     Object? deliver = null,
   }) {
-    return _then(_$JobQueueResponseImpl(
+    return _then(JobQueueResponse(
       inbox: null == inbox
-          ? _value.inbox
+          ? _self.inbox
           : inbox // ignore: cast_nullable_to_non_nullable
               as QueueStatsLogResponseData,
       deliver: null == deliver
-          ? _value.deliver
+          ? _self.deliver
           : deliver // ignore: cast_nullable_to_non_nullable
               as QueueStatsLogResponseData,
     ));
   }
 
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QueueStatsLogResponseDataCopyWith<$Res> get inbox {
-    return $QueueStatsLogResponseDataCopyWith<$Res>(_value.inbox, (value) {
-      return _then(_value.copyWith(inbox: value));
+    return $QueueStatsLogResponseDataCopyWith<$Res>(_self.inbox, (value) {
+      return _then(_self.copyWith(inbox: value));
     });
   }
 
+  /// Create a copy of StreamingStats
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QueueStatsLogResponseDataCopyWith<$Res> get deliver {
-    return $QueueStatsLogResponseDataCopyWith<$Res>(_value.deliver, (value) {
-      return _then(_value.copyWith(deliver: value));
+    return $QueueStatsLogResponseDataCopyWith<$Res>(_self.deliver, (value) {
+      return _then(_self.copyWith(deliver: value));
     });
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$JobQueueResponseImpl implements JobQueueResponse {
-  const _$JobQueueResponseImpl(
-      {required this.inbox, required this.deliver, final String? $type})
-      : $type = $type ?? 'jobQueue';
+mixin _$StatsLogFs {
+  double get r;
+  double get w;
 
-  factory _$JobQueueResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$JobQueueResponseImplFromJson(json);
+  /// Create a copy of StatsLogFs
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $StatsLogFsCopyWith<StatsLogFs> get copyWith =>
+      _$StatsLogFsCopyWithImpl<StatsLogFs>(this as StatsLogFs, _$identity);
 
-  @override
-  final QueueStatsLogResponseData inbox;
-  @override
-  final QueueStatsLogResponseData deliver;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'StreamingStats.jobQueue(inbox: $inbox, deliver: $deliver)';
-  }
+  /// Serializes this StatsLogFs to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$JobQueueResponseImpl &&
-            (identical(other.inbox, inbox) || other.inbox == inbox) &&
-            (identical(other.deliver, deliver) || other.deliver == deliver));
+            other is StatsLogFs &&
+            (identical(other.r, r) || other.r == r) &&
+            (identical(other.w, w) || other.w == w));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, inbox, deliver);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$JobQueueResponseImplCopyWith<_$JobQueueResponseImpl> get copyWith =>
-      __$$JobQueueResponseImplCopyWithImpl<_$JobQueueResponseImpl>(
-          this, _$identity);
+  int get hashCode => Object.hash(runtimeType, r, w);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)
-        serverMetrics,
-    required TResult Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)
-        jobQueue,
-  }) {
-    return jobQueue(inbox, deliver);
+  String toString() {
+    return 'StatsLogFs(r: $r, w: $w)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
-        serverMetrics,
-    TResult? Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
-        jobQueue,
-  }) {
-    return jobQueue?.call(inbox, deliver);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            double cpu, StatsLogFs fs, StatsLogMem mem, StatsLogNet net)?
-        serverMetrics,
-    TResult Function(
-            QueueStatsLogResponseData inbox, QueueStatsLogResponseData deliver)?
-        jobQueue,
-    required TResult orElse(),
-  }) {
-    if (jobQueue != null) {
-      return jobQueue(inbox, deliver);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerMetricsResponse value) serverMetrics,
-    required TResult Function(JobQueueResponse value) jobQueue,
-  }) {
-    return jobQueue(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ServerMetricsResponse value)? serverMetrics,
-    TResult? Function(JobQueueResponse value)? jobQueue,
-  }) {
-    return jobQueue?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerMetricsResponse value)? serverMetrics,
-    TResult Function(JobQueueResponse value)? jobQueue,
-    required TResult orElse(),
-  }) {
-    if (jobQueue != null) {
-      return jobQueue(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$JobQueueResponseImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class JobQueueResponse implements StreamingStats {
-  const factory JobQueueResponse(
-          {required final QueueStatsLogResponseData inbox,
-          required final QueueStatsLogResponseData deliver}) =
-      _$JobQueueResponseImpl;
-
-  factory JobQueueResponse.fromJson(Map<String, dynamic> json) =
-      _$JobQueueResponseImpl.fromJson;
-
-  QueueStatsLogResponseData get inbox;
-  QueueStatsLogResponseData get deliver;
-  @JsonKey(ignore: true)
-  _$$JobQueueResponseImplCopyWith<_$JobQueueResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-StatsLogFs _$StatsLogFsFromJson(Map<String, dynamic> json) {
-  return _StatsLogFs.fromJson(json);
 }
 
 /// @nodoc
-mixin _$StatsLogFs {
-  double get r => throw _privateConstructorUsedError;
-  double get w => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StatsLogFsCopyWith<StatsLogFs> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StatsLogFsCopyWith<$Res> {
+abstract mixin class $StatsLogFsCopyWith<$Res> {
   factory $StatsLogFsCopyWith(
-          StatsLogFs value, $Res Function(StatsLogFs) then) =
-      _$StatsLogFsCopyWithImpl<$Res, StatsLogFs>;
+          StatsLogFs value, $Res Function(StatsLogFs) _then) =
+      _$StatsLogFsCopyWithImpl;
   @useResult
   $Res call({double r, double w});
 }
 
 /// @nodoc
-class _$StatsLogFsCopyWithImpl<$Res, $Val extends StatsLogFs>
-    implements $StatsLogFsCopyWith<$Res> {
-  _$StatsLogFsCopyWithImpl(this._value, this._then);
+class _$StatsLogFsCopyWithImpl<$Res> implements $StatsLogFsCopyWith<$Res> {
+  _$StatsLogFsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final StatsLogFs _self;
+  final $Res Function(StatsLogFs) _then;
 
+  /// Create a copy of StatsLogFs
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? r = null,
     Object? w = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       r: null == r
-          ? _value.r
+          ? _self.r
           : r // ignore: cast_nullable_to_non_nullable
               as double,
       w: null == w
-          ? _value.w
-          : w // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$StatsLogFsImplCopyWith<$Res>
-    implements $StatsLogFsCopyWith<$Res> {
-  factory _$$StatsLogFsImplCopyWith(
-          _$StatsLogFsImpl value, $Res Function(_$StatsLogFsImpl) then) =
-      __$$StatsLogFsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({double r, double w});
-}
-
-/// @nodoc
-class __$$StatsLogFsImplCopyWithImpl<$Res>
-    extends _$StatsLogFsCopyWithImpl<$Res, _$StatsLogFsImpl>
-    implements _$$StatsLogFsImplCopyWith<$Res> {
-  __$$StatsLogFsImplCopyWithImpl(
-      _$StatsLogFsImpl _value, $Res Function(_$StatsLogFsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? r = null,
-    Object? w = null,
-  }) {
-    return _then(_$StatsLogFsImpl(
-      r: null == r
-          ? _value.r
-          : r // ignore: cast_nullable_to_non_nullable
-              as double,
-      w: null == w
-          ? _value.w
+          ? _self.w
           : w // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -2042,151 +1837,154 @@ class __$$StatsLogFsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StatsLogFsImpl implements _StatsLogFs {
-  const _$StatsLogFsImpl({required this.r, required this.w});
-
-  factory _$StatsLogFsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StatsLogFsImplFromJson(json);
+class _StatsLogFs implements StatsLogFs {
+  const _StatsLogFs({required this.r, required this.w});
+  factory _StatsLogFs.fromJson(Map<String, dynamic> json) =>
+      _$StatsLogFsFromJson(json);
 
   @override
   final double r;
   @override
   final double w;
 
+  /// Create a copy of StatsLogFs
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StatsLogFs(r: $r, w: $w)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StatsLogFsCopyWith<_StatsLogFs> get copyWith =>
+      __$StatsLogFsCopyWithImpl<_StatsLogFs>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StatsLogFsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StatsLogFsImpl &&
+            other is _StatsLogFs &&
             (identical(other.r, r) || other.r == r) &&
             (identical(other.w, w) || other.w == w));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, r, w);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StatsLogFsImplCopyWith<_$StatsLogFsImpl> get copyWith =>
-      __$$StatsLogFsImplCopyWithImpl<_$StatsLogFsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StatsLogFsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StatsLogFs(r: $r, w: $w)';
   }
 }
 
-abstract class _StatsLogFs implements StatsLogFs {
-  const factory _StatsLogFs(
-      {required final double r, required final double w}) = _$StatsLogFsImpl;
-
-  factory _StatsLogFs.fromJson(Map<String, dynamic> json) =
-      _$StatsLogFsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$StatsLogFsCopyWith<$Res>
+    implements $StatsLogFsCopyWith<$Res> {
+  factory _$StatsLogFsCopyWith(
+          _StatsLogFs value, $Res Function(_StatsLogFs) _then) =
+      __$StatsLogFsCopyWithImpl;
   @override
-  double get r;
-  @override
-  double get w;
-  @override
-  @JsonKey(ignore: true)
-  _$$StatsLogFsImplCopyWith<_$StatsLogFsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({double r, double w});
 }
 
-StatsLogMem _$StatsLogMemFromJson(Map<String, dynamic> json) {
-  return _StatsLogMem.fromJson(json);
+/// @nodoc
+class __$StatsLogFsCopyWithImpl<$Res> implements _$StatsLogFsCopyWith<$Res> {
+  __$StatsLogFsCopyWithImpl(this._self, this._then);
+
+  final _StatsLogFs _self;
+  final $Res Function(_StatsLogFs) _then;
+
+  /// Create a copy of StatsLogFs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? r = null,
+    Object? w = null,
+  }) {
+    return _then(_StatsLogFs(
+      r: null == r
+          ? _self.r
+          : r // ignore: cast_nullable_to_non_nullable
+              as double,
+      w: null == w
+          ? _self.w
+          : w // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$StatsLogMem {
-  double get used => throw _privateConstructorUsedError;
-  double get active => throw _privateConstructorUsedError;
+  double get used;
+  double get active;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StatsLogMemCopyWith<StatsLogMem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StatsLogMemCopyWith<$Res> {
-  factory $StatsLogMemCopyWith(
-          StatsLogMem value, $Res Function(StatsLogMem) then) =
-      _$StatsLogMemCopyWithImpl<$Res, StatsLogMem>;
-  @useResult
-  $Res call({double used, double active});
-}
-
-/// @nodoc
-class _$StatsLogMemCopyWithImpl<$Res, $Val extends StatsLogMem>
-    implements $StatsLogMemCopyWith<$Res> {
-  _$StatsLogMemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of StatsLogMem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $StatsLogMemCopyWith<StatsLogMem> get copyWith =>
+      _$StatsLogMemCopyWithImpl<StatsLogMem>(this as StatsLogMem, _$identity);
+
+  /// Serializes this StatsLogMem to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? used = null,
-    Object? active = null,
-  }) {
-    return _then(_value.copyWith(
-      used: null == used
-          ? _value.used
-          : used // ignore: cast_nullable_to_non_nullable
-              as double,
-      active: null == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StatsLogMem &&
+            (identical(other.used, used) || other.used == used) &&
+            (identical(other.active, active) || other.active == active));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, used, active);
+
+  @override
+  String toString() {
+    return 'StatsLogMem(used: $used, active: $active)';
   }
 }
 
 /// @nodoc
-abstract class _$$StatsLogMemImplCopyWith<$Res>
-    implements $StatsLogMemCopyWith<$Res> {
-  factory _$$StatsLogMemImplCopyWith(
-          _$StatsLogMemImpl value, $Res Function(_$StatsLogMemImpl) then) =
-      __$$StatsLogMemImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $StatsLogMemCopyWith<$Res> {
+  factory $StatsLogMemCopyWith(
+          StatsLogMem value, $Res Function(StatsLogMem) _then) =
+      _$StatsLogMemCopyWithImpl;
   @useResult
   $Res call({double used, double active});
 }
 
 /// @nodoc
-class __$$StatsLogMemImplCopyWithImpl<$Res>
-    extends _$StatsLogMemCopyWithImpl<$Res, _$StatsLogMemImpl>
-    implements _$$StatsLogMemImplCopyWith<$Res> {
-  __$$StatsLogMemImplCopyWithImpl(
-      _$StatsLogMemImpl _value, $Res Function(_$StatsLogMemImpl) _then)
-      : super(_value, _then);
+class _$StatsLogMemCopyWithImpl<$Res> implements $StatsLogMemCopyWith<$Res> {
+  _$StatsLogMemCopyWithImpl(this._self, this._then);
 
+  final StatsLogMem _self;
+  final $Res Function(StatsLogMem) _then;
+
+  /// Create a copy of StatsLogMem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? used = null,
     Object? active = null,
   }) {
-    return _then(_$StatsLogMemImpl(
+    return _then(_self.copyWith(
       used: null == used
-          ? _value.used
+          ? _self.used
           : used // ignore: cast_nullable_to_non_nullable
               as double,
       active: null == active
-          ? _value.active
+          ? _self.active
           : active // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -2195,152 +1993,154 @@ class __$$StatsLogMemImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StatsLogMemImpl implements _StatsLogMem {
-  const _$StatsLogMemImpl({required this.used, required this.active});
-
-  factory _$StatsLogMemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StatsLogMemImplFromJson(json);
+class _StatsLogMem implements StatsLogMem {
+  const _StatsLogMem({required this.used, required this.active});
+  factory _StatsLogMem.fromJson(Map<String, dynamic> json) =>
+      _$StatsLogMemFromJson(json);
 
   @override
   final double used;
   @override
   final double active;
 
+  /// Create a copy of StatsLogMem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StatsLogMem(used: $used, active: $active)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StatsLogMemCopyWith<_StatsLogMem> get copyWith =>
+      __$StatsLogMemCopyWithImpl<_StatsLogMem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StatsLogMemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StatsLogMemImpl &&
+            other is _StatsLogMem &&
             (identical(other.used, used) || other.used == used) &&
             (identical(other.active, active) || other.active == active));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, used, active);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StatsLogMemImplCopyWith<_$StatsLogMemImpl> get copyWith =>
-      __$$StatsLogMemImplCopyWithImpl<_$StatsLogMemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StatsLogMemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StatsLogMem(used: $used, active: $active)';
   }
 }
 
-abstract class _StatsLogMem implements StatsLogMem {
-  const factory _StatsLogMem(
-      {required final double used,
-      required final double active}) = _$StatsLogMemImpl;
-
-  factory _StatsLogMem.fromJson(Map<String, dynamic> json) =
-      _$StatsLogMemImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$StatsLogMemCopyWith<$Res>
+    implements $StatsLogMemCopyWith<$Res> {
+  factory _$StatsLogMemCopyWith(
+          _StatsLogMem value, $Res Function(_StatsLogMem) _then) =
+      __$StatsLogMemCopyWithImpl;
   @override
-  double get used;
-  @override
-  double get active;
-  @override
-  @JsonKey(ignore: true)
-  _$$StatsLogMemImplCopyWith<_$StatsLogMemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({double used, double active});
 }
 
-StatsLogNet _$StatsLogNetFromJson(Map<String, dynamic> json) {
-  return _StatsLogNet.fromJson(json);
+/// @nodoc
+class __$StatsLogMemCopyWithImpl<$Res> implements _$StatsLogMemCopyWith<$Res> {
+  __$StatsLogMemCopyWithImpl(this._self, this._then);
+
+  final _StatsLogMem _self;
+  final $Res Function(_StatsLogMem) _then;
+
+  /// Create a copy of StatsLogMem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? used = null,
+    Object? active = null,
+  }) {
+    return _then(_StatsLogMem(
+      used: null == used
+          ? _self.used
+          : used // ignore: cast_nullable_to_non_nullable
+              as double,
+      active: null == active
+          ? _self.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$StatsLogNet {
-  double get rx => throw _privateConstructorUsedError;
-  double get tx => throw _privateConstructorUsedError;
+  double get rx;
+  double get tx;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StatsLogNetCopyWith<StatsLogNet> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StatsLogNetCopyWith<$Res> {
-  factory $StatsLogNetCopyWith(
-          StatsLogNet value, $Res Function(StatsLogNet) then) =
-      _$StatsLogNetCopyWithImpl<$Res, StatsLogNet>;
-  @useResult
-  $Res call({double rx, double tx});
-}
-
-/// @nodoc
-class _$StatsLogNetCopyWithImpl<$Res, $Val extends StatsLogNet>
-    implements $StatsLogNetCopyWith<$Res> {
-  _$StatsLogNetCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of StatsLogNet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $StatsLogNetCopyWith<StatsLogNet> get copyWith =>
+      _$StatsLogNetCopyWithImpl<StatsLogNet>(this as StatsLogNet, _$identity);
+
+  /// Serializes this StatsLogNet to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? rx = null,
-    Object? tx = null,
-  }) {
-    return _then(_value.copyWith(
-      rx: null == rx
-          ? _value.rx
-          : rx // ignore: cast_nullable_to_non_nullable
-              as double,
-      tx: null == tx
-          ? _value.tx
-          : tx // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StatsLogNet &&
+            (identical(other.rx, rx) || other.rx == rx) &&
+            (identical(other.tx, tx) || other.tx == tx));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, rx, tx);
+
+  @override
+  String toString() {
+    return 'StatsLogNet(rx: $rx, tx: $tx)';
   }
 }
 
 /// @nodoc
-abstract class _$$StatsLogNetImplCopyWith<$Res>
-    implements $StatsLogNetCopyWith<$Res> {
-  factory _$$StatsLogNetImplCopyWith(
-          _$StatsLogNetImpl value, $Res Function(_$StatsLogNetImpl) then) =
-      __$$StatsLogNetImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $StatsLogNetCopyWith<$Res> {
+  factory $StatsLogNetCopyWith(
+          StatsLogNet value, $Res Function(StatsLogNet) _then) =
+      _$StatsLogNetCopyWithImpl;
   @useResult
   $Res call({double rx, double tx});
 }
 
 /// @nodoc
-class __$$StatsLogNetImplCopyWithImpl<$Res>
-    extends _$StatsLogNetCopyWithImpl<$Res, _$StatsLogNetImpl>
-    implements _$$StatsLogNetImplCopyWith<$Res> {
-  __$$StatsLogNetImplCopyWithImpl(
-      _$StatsLogNetImpl _value, $Res Function(_$StatsLogNetImpl) _then)
-      : super(_value, _then);
+class _$StatsLogNetCopyWithImpl<$Res> implements $StatsLogNetCopyWith<$Res> {
+  _$StatsLogNetCopyWithImpl(this._self, this._then);
 
+  final StatsLogNet _self;
+  final $Res Function(StatsLogNet) _then;
+
+  /// Create a copy of StatsLogNet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? rx = null,
     Object? tx = null,
   }) {
-    return _then(_$StatsLogNetImpl(
+    return _then(_self.copyWith(
       rx: null == rx
-          ? _value.rx
+          ? _self.rx
           : rx // ignore: cast_nullable_to_non_nullable
               as double,
       tx: null == tx
-          ? _value.tx
+          ? _self.tx
           : tx // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -2349,155 +2149,149 @@ class __$$StatsLogNetImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StatsLogNetImpl implements _StatsLogNet {
-  const _$StatsLogNetImpl({required this.rx, required this.tx});
-
-  factory _$StatsLogNetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StatsLogNetImplFromJson(json);
+class _StatsLogNet implements StatsLogNet {
+  const _StatsLogNet({required this.rx, required this.tx});
+  factory _StatsLogNet.fromJson(Map<String, dynamic> json) =>
+      _$StatsLogNetFromJson(json);
 
   @override
   final double rx;
   @override
   final double tx;
 
+  /// Create a copy of StatsLogNet
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StatsLogNet(rx: $rx, tx: $tx)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StatsLogNetCopyWith<_StatsLogNet> get copyWith =>
+      __$StatsLogNetCopyWithImpl<_StatsLogNet>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StatsLogNetToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StatsLogNetImpl &&
+            other is _StatsLogNet &&
             (identical(other.rx, rx) || other.rx == rx) &&
             (identical(other.tx, tx) || other.tx == tx));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, rx, tx);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StatsLogNetImplCopyWith<_$StatsLogNetImpl> get copyWith =>
-      __$$StatsLogNetImplCopyWithImpl<_$StatsLogNetImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StatsLogNetImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StatsLogNet(rx: $rx, tx: $tx)';
   }
 }
 
-abstract class _StatsLogNet implements StatsLogNet {
-  const factory _StatsLogNet(
-      {required final double rx, required final double tx}) = _$StatsLogNetImpl;
-
-  factory _StatsLogNet.fromJson(Map<String, dynamic> json) =
-      _$StatsLogNetImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$StatsLogNetCopyWith<$Res>
+    implements $StatsLogNetCopyWith<$Res> {
+  factory _$StatsLogNetCopyWith(
+          _StatsLogNet value, $Res Function(_StatsLogNet) _then) =
+      __$StatsLogNetCopyWithImpl;
   @override
-  double get rx;
-  @override
-  double get tx;
-  @override
-  @JsonKey(ignore: true)
-  _$$StatsLogNetImplCopyWith<_$StatsLogNetImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({double rx, double tx});
 }
 
-QueueStatsLogResponseData _$QueueStatsLogResponseDataFromJson(
-    Map<String, dynamic> json) {
-  return _QueueStatsLogResponseData.fromJson(json);
+/// @nodoc
+class __$StatsLogNetCopyWithImpl<$Res> implements _$StatsLogNetCopyWith<$Res> {
+  __$StatsLogNetCopyWithImpl(this._self, this._then);
+
+  final _StatsLogNet _self;
+  final $Res Function(_StatsLogNet) _then;
+
+  /// Create a copy of StatsLogNet
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? rx = null,
+    Object? tx = null,
+  }) {
+    return _then(_StatsLogNet(
+      rx: null == rx
+          ? _self.rx
+          : rx // ignore: cast_nullable_to_non_nullable
+              as double,
+      tx: null == tx
+          ? _self.tx
+          : tx // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$QueueStatsLogResponseData {
-  int get activeSincePrevTick => throw _privateConstructorUsedError;
-  int get active => throw _privateConstructorUsedError;
-  int get waiting => throw _privateConstructorUsedError;
-  int get delayed => throw _privateConstructorUsedError;
+  int get activeSincePrevTick;
+  int get active;
+  int get waiting;
+  int get delayed;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $QueueStatsLogResponseDataCopyWith<QueueStatsLogResponseData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $QueueStatsLogResponseDataCopyWith<$Res> {
-  factory $QueueStatsLogResponseDataCopyWith(QueueStatsLogResponseData value,
-          $Res Function(QueueStatsLogResponseData) then) =
-      _$QueueStatsLogResponseDataCopyWithImpl<$Res, QueueStatsLogResponseData>;
-  @useResult
-  $Res call({int activeSincePrevTick, int active, int waiting, int delayed});
-}
-
-/// @nodoc
-class _$QueueStatsLogResponseDataCopyWithImpl<$Res,
-        $Val extends QueueStatsLogResponseData>
-    implements $QueueStatsLogResponseDataCopyWith<$Res> {
-  _$QueueStatsLogResponseDataCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of QueueStatsLogResponseData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $QueueStatsLogResponseDataCopyWith<QueueStatsLogResponseData> get copyWith =>
+      _$QueueStatsLogResponseDataCopyWithImpl<QueueStatsLogResponseData>(
+          this as QueueStatsLogResponseData, _$identity);
+
+  /// Serializes this QueueStatsLogResponseData to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? activeSincePrevTick = null,
-    Object? active = null,
-    Object? waiting = null,
-    Object? delayed = null,
-  }) {
-    return _then(_value.copyWith(
-      activeSincePrevTick: null == activeSincePrevTick
-          ? _value.activeSincePrevTick
-          : activeSincePrevTick // ignore: cast_nullable_to_non_nullable
-              as int,
-      active: null == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as int,
-      waiting: null == waiting
-          ? _value.waiting
-          : waiting // ignore: cast_nullable_to_non_nullable
-              as int,
-      delayed: null == delayed
-          ? _value.delayed
-          : delayed // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is QueueStatsLogResponseData &&
+            (identical(other.activeSincePrevTick, activeSincePrevTick) ||
+                other.activeSincePrevTick == activeSincePrevTick) &&
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.waiting, waiting) || other.waiting == waiting) &&
+            (identical(other.delayed, delayed) || other.delayed == delayed));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, activeSincePrevTick, active, waiting, delayed);
+
+  @override
+  String toString() {
+    return 'QueueStatsLogResponseData(activeSincePrevTick: $activeSincePrevTick, active: $active, waiting: $waiting, delayed: $delayed)';
   }
 }
 
 /// @nodoc
-abstract class _$$QueueStatsLogResponseDataImplCopyWith<$Res>
-    implements $QueueStatsLogResponseDataCopyWith<$Res> {
-  factory _$$QueueStatsLogResponseDataImplCopyWith(
-          _$QueueStatsLogResponseDataImpl value,
-          $Res Function(_$QueueStatsLogResponseDataImpl) then) =
-      __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $QueueStatsLogResponseDataCopyWith<$Res> {
+  factory $QueueStatsLogResponseDataCopyWith(QueueStatsLogResponseData value,
+          $Res Function(QueueStatsLogResponseData) _then) =
+      _$QueueStatsLogResponseDataCopyWithImpl;
   @useResult
   $Res call({int activeSincePrevTick, int active, int waiting, int delayed});
 }
 
 /// @nodoc
-class __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>
-    extends _$QueueStatsLogResponseDataCopyWithImpl<$Res,
-        _$QueueStatsLogResponseDataImpl>
-    implements _$$QueueStatsLogResponseDataImplCopyWith<$Res> {
-  __$$QueueStatsLogResponseDataImplCopyWithImpl(
-      _$QueueStatsLogResponseDataImpl _value,
-      $Res Function(_$QueueStatsLogResponseDataImpl) _then)
-      : super(_value, _then);
+class _$QueueStatsLogResponseDataCopyWithImpl<$Res>
+    implements $QueueStatsLogResponseDataCopyWith<$Res> {
+  _$QueueStatsLogResponseDataCopyWithImpl(this._self, this._then);
 
+  final QueueStatsLogResponseData _self;
+  final $Res Function(QueueStatsLogResponseData) _then;
+
+  /// Create a copy of QueueStatsLogResponseData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2506,21 +2300,21 @@ class __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>
     Object? waiting = null,
     Object? delayed = null,
   }) {
-    return _then(_$QueueStatsLogResponseDataImpl(
+    return _then(_self.copyWith(
       activeSincePrevTick: null == activeSincePrevTick
-          ? _value.activeSincePrevTick
+          ? _self.activeSincePrevTick
           : activeSincePrevTick // ignore: cast_nullable_to_non_nullable
               as int,
       active: null == active
-          ? _value.active
+          ? _self.active
           : active // ignore: cast_nullable_to_non_nullable
               as int,
       waiting: null == waiting
-          ? _value.waiting
+          ? _self.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
               as int,
       delayed: null == delayed
-          ? _value.delayed
+          ? _self.delayed
           : delayed // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -2529,15 +2323,14 @@ class __$$QueueStatsLogResponseDataImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$QueueStatsLogResponseDataImpl implements _QueueStatsLogResponseData {
-  const _$QueueStatsLogResponseDataImpl(
+class _QueueStatsLogResponseData implements QueueStatsLogResponseData {
+  const _QueueStatsLogResponseData(
       {required this.activeSincePrevTick,
       required this.active,
       required this.waiting,
       required this.delayed});
-
-  factory _$QueueStatsLogResponseDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QueueStatsLogResponseDataImplFromJson(json);
+  factory _QueueStatsLogResponseData.fromJson(Map<String, dynamic> json) =>
+      _$QueueStatsLogResponseDataFromJson(json);
 
   @override
   final int activeSincePrevTick;
@@ -2548,16 +2341,28 @@ class _$QueueStatsLogResponseDataImpl implements _QueueStatsLogResponseData {
   @override
   final int delayed;
 
+  /// Create a copy of QueueStatsLogResponseData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'QueueStatsLogResponseData(activeSincePrevTick: $activeSincePrevTick, active: $active, waiting: $waiting, delayed: $delayed)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$QueueStatsLogResponseDataCopyWith<_QueueStatsLogResponseData>
+      get copyWith =>
+          __$QueueStatsLogResponseDataCopyWithImpl<_QueueStatsLogResponseData>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$QueueStatsLogResponseDataToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QueueStatsLogResponseDataImpl &&
+            other is _QueueStatsLogResponseData &&
             (identical(other.activeSincePrevTick, activeSincePrevTick) ||
                 other.activeSincePrevTick == activeSincePrevTick) &&
             (identical(other.active, active) || other.active == active) &&
@@ -2565,46 +2370,273 @@ class _$QueueStatsLogResponseDataImpl implements _QueueStatsLogResponseData {
             (identical(other.delayed, delayed) || other.delayed == delayed));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, activeSincePrevTick, active, waiting, delayed);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$QueueStatsLogResponseDataImplCopyWith<_$QueueStatsLogResponseDataImpl>
-      get copyWith => __$$QueueStatsLogResponseDataImplCopyWithImpl<
-          _$QueueStatsLogResponseDataImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QueueStatsLogResponseDataImplToJson(
-      this,
-    );
+  String toString() {
+    return 'QueueStatsLogResponseData(activeSincePrevTick: $activeSincePrevTick, active: $active, waiting: $waiting, delayed: $delayed)';
   }
 }
 
-abstract class _QueueStatsLogResponseData implements QueueStatsLogResponseData {
-  const factory _QueueStatsLogResponseData(
-      {required final int activeSincePrevTick,
-      required final int active,
-      required final int waiting,
-      required final int delayed}) = _$QueueStatsLogResponseDataImpl;
-
-  factory _QueueStatsLogResponseData.fromJson(Map<String, dynamic> json) =
-      _$QueueStatsLogResponseDataImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$QueueStatsLogResponseDataCopyWith<$Res>
+    implements $QueueStatsLogResponseDataCopyWith<$Res> {
+  factory _$QueueStatsLogResponseDataCopyWith(_QueueStatsLogResponseData value,
+          $Res Function(_QueueStatsLogResponseData) _then) =
+      __$QueueStatsLogResponseDataCopyWithImpl;
   @override
-  int get activeSincePrevTick;
-  @override
-  int get active;
-  @override
-  int get waiting;
-  @override
-  int get delayed;
-  @override
-  @JsonKey(ignore: true)
-  _$$QueueStatsLogResponseDataImplCopyWith<_$QueueStatsLogResponseDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({int activeSincePrevTick, int active, int waiting, int delayed});
 }
+
+/// @nodoc
+class __$QueueStatsLogResponseDataCopyWithImpl<$Res>
+    implements _$QueueStatsLogResponseDataCopyWith<$Res> {
+  __$QueueStatsLogResponseDataCopyWithImpl(this._self, this._then);
+
+  final _QueueStatsLogResponseData _self;
+  final $Res Function(_QueueStatsLogResponseData) _then;
+
+  /// Create a copy of QueueStatsLogResponseData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? activeSincePrevTick = null,
+    Object? active = null,
+    Object? waiting = null,
+    Object? delayed = null,
+  }) {
+    return _then(_QueueStatsLogResponseData(
+      activeSincePrevTick: null == activeSincePrevTick
+          ? _self.activeSincePrevTick
+          : activeSincePrevTick // ignore: cast_nullable_to_non_nullable
+              as int,
+      active: null == active
+          ? _self.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as int,
+      waiting: null == waiting
+          ? _self.waiting
+          : waiting // ignore: cast_nullable_to_non_nullable
+              as int,
+      delayed: null == delayed
+          ? _self.delayed
+          : delayed // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ChatReact {
+  String get reaction;
+  UserLite? get user;
+  String get messageId;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ChatReactCopyWith<ChatReact> get copyWith =>
+      _$ChatReactCopyWithImpl<ChatReact>(this as ChatReact, _$identity);
+
+  /// Serializes this ChatReact to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChatReact &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.messageId, messageId) ||
+                other.messageId == messageId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reaction, user, messageId);
+
+  @override
+  String toString() {
+    return 'ChatReact(reaction: $reaction, user: $user, messageId: $messageId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ChatReactCopyWith<$Res> {
+  factory $ChatReactCopyWith(ChatReact value, $Res Function(ChatReact) _then) =
+      _$ChatReactCopyWithImpl;
+  @useResult
+  $Res call({String reaction, UserLite? user, String messageId});
+
+  $UserLiteCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class _$ChatReactCopyWithImpl<$Res> implements $ChatReactCopyWith<$Res> {
+  _$ChatReactCopyWithImpl(this._self, this._then);
+
+  final ChatReact _self;
+  final $Res Function(ChatReact) _then;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reaction = null,
+    Object? user = freezed,
+    Object? messageId = null,
+  }) {
+    return _then(_self.copyWith(
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ChatReact implements ChatReact {
+  const _ChatReact(
+      {required this.reaction, this.user, required this.messageId});
+  factory _ChatReact.fromJson(Map<String, dynamic> json) =>
+      _$ChatReactFromJson(json);
+
+  @override
+  final String reaction;
+  @override
+  final UserLite? user;
+  @override
+  final String messageId;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChatReactCopyWith<_ChatReact> get copyWith =>
+      __$ChatReactCopyWithImpl<_ChatReact>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ChatReactToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChatReact &&
+            (identical(other.reaction, reaction) ||
+                other.reaction == reaction) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.messageId, messageId) ||
+                other.messageId == messageId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reaction, user, messageId);
+
+  @override
+  String toString() {
+    return 'ChatReact(reaction: $reaction, user: $user, messageId: $messageId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ChatReactCopyWith<$Res>
+    implements $ChatReactCopyWith<$Res> {
+  factory _$ChatReactCopyWith(
+          _ChatReact value, $Res Function(_ChatReact) _then) =
+      __$ChatReactCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String reaction, UserLite? user, String messageId});
+
+  @override
+  $UserLiteCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$ChatReactCopyWithImpl<$Res> implements _$ChatReactCopyWith<$Res> {
+  __$ChatReactCopyWithImpl(this._self, this._then);
+
+  final _ChatReact _self;
+  final $Res Function(_ChatReact) _then;
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reaction = null,
+    Object? user = freezed,
+    Object? messageId = null,
+  }) {
+    return _then(_ChatReact(
+      reaction: null == reaction
+          ? _self.reaction
+          : reaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: freezed == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite?,
+      messageId: null == messageId
+          ? _self.messageId
+          : messageId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of ChatReact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+}
+
+// dart format on

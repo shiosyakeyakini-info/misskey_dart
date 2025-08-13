@@ -6,14 +6,13 @@ part of 'i_update_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
-    _$IUpdateRequestImpl(
+_IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
+    _IUpdateRequest(
       name: json['name'] as String?,
       description: json['description'] as String?,
       followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
-      birthday: _$JsonConverterFromJson<String, DateTime>(
-          json['birthday'], const DateTimeConverter().fromJson),
+      birthday: const BirthdayConverter().fromJson(json['birthday'] as String?),
       lang: json['lang'] as String?,
       avatarId: json['avatarId'] as String?,
       avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
@@ -50,6 +49,7 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
           _$FFVisibilityEnumMap, json['followingVisibility']),
       followersVisibility: $enumDecodeNullable(
           _$FFVisibilityEnumMap, json['followersVisibility']),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
       pinnedPageId: json['pinnedPageId'] as String?,
       mutingNotificationTypes:
           (json['mutingNotificationTypes'] as List<dynamic>?)
@@ -76,15 +76,13 @@ _$IUpdateRequestImpl _$$IUpdateRequestImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$IUpdateRequestImplToJson(
-        _$IUpdateRequestImpl instance) =>
+Map<String, dynamic> _$IUpdateRequestToJson(_IUpdateRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
       'followedMessage': instance.followedMessage,
       'location': instance.location,
-      'birthday': _$JsonConverterToJson<String, DateTime>(
-          instance.birthday, const DateTimeConverter().toJson),
+      'birthday': const BirthdayConverter().toJson(instance.birthday),
       'lang': instance.lang,
       'avatarId': instance.avatarId,
       'avatarDecorations':
@@ -116,6 +114,7 @@ Map<String, dynamic> _$$IUpdateRequestImplToJson(
           _$FFVisibilityEnumMap[instance.followingVisibility],
       'followersVisibility':
           _$FFVisibilityEnumMap[instance.followersVisibility],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
       'pinnedPageId': instance.pinnedPageId,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
       'mutedWords':
@@ -141,15 +140,23 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.private: 'private',
 };
 
+const _$ChatScopeEnumMap = {
+  ChatScope.everyone: 'everyone',
+  ChatScope.followers: 'followers',
+  ChatScope.following: 'following',
+  ChatScope.mutual: 'mutual',
+  ChatScope.none: 'none',
+};
+
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
 ) =>
     value == null ? null : toJson(value);
 
-_$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
+_IUpdateAvatarDecoration _$IUpdateAvatarDecorationFromJson(
         Map<String, dynamic> json) =>
-    _$IUpdateAvatarDecorationImpl(
+    _IUpdateAvatarDecoration(
       id: json['id'] as String,
       angle: (json['angle'] as num?)?.toDouble(),
       flipH: json['flipH'] as bool? ?? false,
@@ -157,8 +164,8 @@ _$IUpdateAvatarDecorationImpl _$$IUpdateAvatarDecorationImplFromJson(
       offsetY: (json['offsetY'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$$IUpdateAvatarDecorationImplToJson(
-        _$IUpdateAvatarDecorationImpl instance) =>
+Map<String, dynamic> _$IUpdateAvatarDecorationToJson(
+        _IUpdateAvatarDecoration instance) =>
     <String, dynamic>{
       'id': instance.id,
       'angle': instance.angle,

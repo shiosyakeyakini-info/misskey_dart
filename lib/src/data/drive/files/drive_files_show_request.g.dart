@@ -6,15 +6,15 @@ part of 'drive_files_show_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DriveFilesShowRequestImpl _$$DriveFilesShowRequestImplFromJson(
+_DriveFilesShowRequest _$DriveFilesShowRequestFromJson(
         Map<String, dynamic> json) =>
-    _$DriveFilesShowRequestImpl(
+    _DriveFilesShowRequest(
       fileId: json['fileId'] as String?,
       url: json['url'] as String?,
     );
 
-Map<String, dynamic> _$$DriveFilesShowRequestImplToJson(
-        _$DriveFilesShowRequestImpl instance) =>
+Map<String, dynamic> _$DriveFilesShowRequestToJson(
+        _DriveFilesShowRequest instance) =>
     <String, dynamic>{
       'fileId': instance.fileId,
       'url': instance.url,

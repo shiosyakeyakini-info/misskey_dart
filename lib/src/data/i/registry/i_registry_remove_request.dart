@@ -4,7 +4,7 @@ part 'i_registry_remove_request.freezed.dart';
 part 'i_registry_remove_request.g.dart';
 
 @freezed
-class IRegistryRemoveRequest with _$IRegistryRemoveRequest {
+abstract class IRegistryRemoveRequest with _$IRegistryRemoveRequest {
   const factory IRegistryRemoveRequest({
     required String key,
     required List<String> scope,
