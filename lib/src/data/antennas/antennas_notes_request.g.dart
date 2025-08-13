@@ -13,10 +13,10 @@ _AntennasNotesRequest _$AntennasNotesRequestFromJson(
       limit: (json['limit'] as num?)?.toInt(),
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      sinceDate: _$JsonConverterFromJson<String, DateTime>(
-          json['sinceDate'], const DateTimeConverter().fromJson),
-      untilDate: _$JsonConverterFromJson<String, DateTime>(
-          json['untilDate'], const DateTimeConverter().fromJson),
+      sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
+          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
+      untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
+          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
     );
 
 Map<String, dynamic> _$AntennasNotesRequestToJson(
@@ -26,10 +26,10 @@ Map<String, dynamic> _$AntennasNotesRequestToJson(
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'sinceDate': _$JsonConverterToJson<String, DateTime>(
-          instance.sinceDate, const DateTimeConverter().toJson),
-      'untilDate': _$JsonConverterToJson<String, DateTime>(
-          instance.untilDate, const DateTimeConverter().toJson),
+      'sinceDate': _$JsonConverterToJson<int, DateTime>(instance.sinceDate,
+          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
+      'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
+          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
