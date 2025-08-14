@@ -63,6 +63,14 @@ void main() async {
     expect(likes.map((e) => e.flash.id), isNot(contains(flash.id)));
   });
 
+  test("search", () async {
+    final flash = await userClient.createFlash();
+    final response = await userClient.flash.search(
+      FlashSearchRequest(query: flash.title),
+    );
+    expect(response.map((e) => e.id), contains(flash.id));
+  });
+
   test("update", () async {
     final flash = await userClient.createFlash();
     await userClient.flash.update(

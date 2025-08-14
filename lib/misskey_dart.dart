@@ -115,6 +115,7 @@ export 'src/data/flash/flash_like_request.dart';
 export 'src/data/flash/flash_my_likes_request.dart';
 export 'src/data/flash/flash_my_likes_response.dart';
 export 'src/data/flash/flash_my_request.dart';
+export 'src/data/flash/flash_search_request.dart';
 export 'src/data/flash/flash_show_request.dart';
 export 'src/data/flash/flash_unlike_request.dart';
 export 'src/data/flash/flash_update_request.dart';

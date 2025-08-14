@@ -70,4 +70,13 @@ class MisskeyFlash {
   Future<void> update(FlashUpdateRequest request) async {
     await _apiService.post("flash/update", request.toJson());
   }
+
+  /// Playを検索します。
+  Future<Iterable<Flash>> search(FlashSearchRequest request) async {
+    final response = await _apiService.post<List>(
+      "flash/search",
+      request.toJson(),
+    );
+    return response.map((e) => Flash.fromJson(e));
+  }
 }
