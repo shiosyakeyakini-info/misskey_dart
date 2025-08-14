@@ -7,6 +7,7 @@ class MisskeyNotes {
   final MisskeyNotesFavorites favorites;
   final MisskeyNotesPolls polls;
   final MisskeyNotesThreadMuting threadMuting;
+  final MisskeyNotesDrafts drafts;
 
   final ApiService _apiService;
 
@@ -15,7 +16,8 @@ class MisskeyNotes {
         reactions = MisskeyNotesReactions(apiService: apiService),
         favorites = MisskeyNotesFavorites(apiService: apiService),
         polls = MisskeyNotesPolls(apiService: apiService),
-        threadMuting = MisskeyNotesThreadMuting(apiService: apiService);
+        threadMuting = MisskeyNotesThreadMuting(apiService: apiService),
+        drafts = MisskeyNotesDrafts(apiService: apiService);
 
   /// ノートを投稿します。
   Future<void> create(NotesCreateRequest request) async {
@@ -258,5 +260,56 @@ class MisskeyNotesThreadMuting {
       "notes/thread-muting/delete",
       request.toJson(),
     );
+  }
+}
+
+class MisskeyNotesDrafts {
+  final ApiService _apiService;
+
+  MisskeyNotesDrafts({required ApiService apiService})
+      : _apiService = apiService;
+
+  /// 下書きを作成します。
+  Future<NotesDraftsCreateResponse> create(
+      NotesDraftsCreateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "notes/drafts/create",
+      request.toJson(),
+    );
+    return NotesDraftsCreateResponse.fromJson(response);
+  }
+
+  /// 下書きの一覧を取得します。
+  Future<Iterable<NoteDraft>> list(NotesDraftsListRequest request) async {
+    final response = await _apiService.post<List>(
+      "notes/drafts/list",
+      request.toJson(),
+    );
+    return response.map((e) => NoteDraft.fromJson(e));
+  }
+
+  /// 下書きを更新します。
+  Future<void> update(NotesDraftsUpdateRequest request) async {
+    await _apiService.post<void>(
+      "notes/drafts/update",
+      request.toJson(),
+    );
+  }
+
+  /// 下書きを削除します。
+  Future<void> delete(NotesDraftsDeleteRequest request) async {
+    await _apiService.post<void>(
+      "notes/drafts/delete",
+      request.toJson(),
+    );
+  }
+
+  /// 下書きの数を取得します。
+  Future<NotesDraftsCountResponse> count() async {
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "notes/drafts/count",
+      {},
+    );
+    return NotesDraftsCountResponse.fromJson(response);
   }
 }
