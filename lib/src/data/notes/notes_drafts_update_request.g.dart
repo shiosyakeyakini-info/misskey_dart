@@ -10,22 +10,21 @@ _NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesDraftsUpdateRequest(
       draftId: json['draftId'] as String,
-      visibility:
-          $enumDecodeNullable(_$NoteVisibilityEnumMap, json['visibility']),
+      visibility: _$JsonConverterFromJson<String, NoteVisibility>(
+          json['visibility'], const NoteVisibilityJsonConverter().fromJson),
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      text: json['text'] as String?,
       cw: json['cw'] as String?,
-      hashtag: json['hashtag'] as String?,
       localOnly: json['localOnly'] as bool?,
       reactionAcceptance: $enumDecodeNullable(
           _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
+      fileIds:
+          (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
       replyId: json['replyId'] as String?,
       renoteId: json['renoteId'] as String?,
       channelId: json['channelId'] as String?,
-      text: json['text'] as String?,
-      fileIds:
-          (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
       poll: json['poll'] == null
           ? null
           : NotesDraftsUpdatePoll.fromJson(
@@ -36,27 +35,26 @@ Map<String, dynamic> _$NotesDraftsUpdateRequestToJson(
         _NotesDraftsUpdateRequest instance) =>
     <String, dynamic>{
       'draftId': instance.draftId,
-      'visibility': _$NoteVisibilityEnumMap[instance.visibility],
+      'visibility': _$JsonConverterToJson<String, NoteVisibility>(
+          instance.visibility, const NoteVisibilityJsonConverter().toJson),
       'visibleUserIds': instance.visibleUserIds,
+      'text': instance.text,
       'cw': instance.cw,
-      'hashtag': instance.hashtag,
       'localOnly': instance.localOnly,
       'reactionAcceptance':
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
+      'fileIds': instance.fileIds,
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
-      'text': instance.text,
-      'fileIds': instance.fileIds,
       'poll': instance.poll?.toJson(),
     };
 
-const _$NoteVisibilityEnumMap = {
-  NoteVisibility.public: 'public',
-  NoteVisibility.home: 'home',
-  NoteVisibility.followers: 'followers',
-  NoteVisibility.specified: 'specified',
-};
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
 
 const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
@@ -66,21 +64,34 @@ const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnly: 'likeOnly',
 };
 
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
+
 _NotesDraftsUpdatePoll _$NotesDraftsUpdatePollFromJson(
         Map<String, dynamic> json) =>
     _NotesDraftsUpdatePoll(
       choices:
           (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
-      multiple: json['multiple'] as bool? ?? false,
-      expiresAt: (json['expiresAt'] as num?)?.toInt(),
-      expiredAfter: (json['expiredAfter'] as num?)?.toInt(),
+      multiple: json['multiple'] as bool?,
+      expiresAt: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson((json['expiresAt'] as num?)?.toInt()),
+      expiredAfter: const NullableDurationConverter()
+          .fromJson((json['expiredAfter'] as num?)?.toInt()),
     );
 
 Map<String, dynamic> _$NotesDraftsUpdatePollToJson(
         _NotesDraftsUpdatePoll instance) =>
     <String, dynamic>{
       'choices': instance.choices,
-      'multiple': instance.multiple,
-      'expiresAt': instance.expiresAt,
-      'expiredAfter': instance.expiredAfter,
+      if (instance.multiple case final value?) 'multiple': value,
+      if (const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+              .toJson(instance.expiresAt)
+          case final value?)
+        'expiresAt': value,
+      if (const NullableDurationConverter().toJson(instance.expiredAfter)
+          case final value?)
+        'expiredAfter': value,
     };

@@ -21,7 +21,8 @@ _NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
       renote: json['renote'] == null
           ? null
           : Note.fromJson(json['renote'] as Map<String, dynamic>),
-      visibility: $enumDecode(_$NoteVisibilityEnumMap, json['visibility']),
+      visibility: const NoteVisibilityJsonConverter()
+          .fromJson(json['visibility'] as String),
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -55,7 +56,8 @@ Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>
       'renoteId': instance.renoteId,
       'reply': instance.reply?.toJson(),
       'renote': instance.renote?.toJson(),
-      'visibility': _$NoteVisibilityEnumMap[instance.visibility]!,
+      'visibility':
+          const NoteVisibilityJsonConverter().toJson(instance.visibility),
       'visibleUserIds': instance.visibleUserIds,
       'fileIds': instance.fileIds,
       'files': instance.files?.map((e) => e.toJson()).toList(),
@@ -68,13 +70,6 @@ Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
     };
 
-const _$NoteVisibilityEnumMap = {
-  NoteVisibility.public: 'public',
-  NoteVisibility.home: 'home',
-  NoteVisibility.followers: 'followers',
-  NoteVisibility.specified: 'specified',
-};
-
 const _$ReactionAcceptanceEnumMap = {
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
   ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
@@ -85,21 +80,26 @@ const _$ReactionAcceptanceEnumMap = {
 
 _NoteDraftPoll _$NoteDraftPollFromJson(Map<String, dynamic> json) =>
     _NoteDraftPoll(
-      expiresAt: json['expiresAt'] == null
-          ? null
-          : DateTime.parse(json['expiresAt'] as String),
-      expiredAfter: (json['expiredAfter'] as num?)?.toInt(),
-      multiple: json['multiple'] as bool,
       choices:
           (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
+      multiple: json['multiple'] as bool?,
+      expiresAt: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson((json['expiresAt'] as num?)?.toInt()),
+      expiredAfter: const NullableDurationConverter()
+          .fromJson((json['expiredAfter'] as num?)?.toInt()),
     );
 
 Map<String, dynamic> _$NoteDraftPollToJson(_NoteDraftPoll instance) =>
     <String, dynamic>{
-      'expiresAt': instance.expiresAt?.toIso8601String(),
-      'expiredAfter': instance.expiredAfter,
-      'multiple': instance.multiple,
       'choices': instance.choices,
+      if (instance.multiple case final value?) 'multiple': value,
+      if (const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+              .toJson(instance.expiresAt)
+          case final value?)
+        'expiresAt': value,
+      if (const NullableDurationConverter().toJson(instance.expiredAfter)
+          case final value?)
+        'expiredAfter': value,
     };
 
 _NoteDraftChannel _$NoteDraftChannelFromJson(Map<String, dynamic> json) =>

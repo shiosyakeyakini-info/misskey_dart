@@ -16,17 +16,29 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesDraftsUpdateRequest {
   String get draftId;
+
+  /// ノートの公開範囲。
+  @NoteVisibilityJsonConverter()
   NoteVisibility? get visibility;
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   List<String>? get visibleUserIds;
+
+  /// ノートの本文。
+  String? get text;
+
+  /// ノートのCW。
   String? get cw;
-  String? get hashtag;
+
+  /// trueにすると、ローカルのみに投稿されます。
   bool? get localOnly;
   ReactionAcceptance? get reactionAcceptance;
+
+  /// 添付するファイルのid。
+  List<String>? get fileIds;
   String? get replyId;
   String? get renoteId;
   String? get channelId;
-  String? get text;
-  List<String>? get fileIds;
   NotesDraftsUpdatePoll? get poll;
 
   /// Create a copy of NotesDraftsUpdateRequest
@@ -50,19 +62,18 @@ mixin _$NotesDraftsUpdateRequest {
                 other.visibility == visibility) &&
             const DeepCollectionEquality()
                 .equals(other.visibleUserIds, visibleUserIds) &&
+            (identical(other.text, text) || other.text == text) &&
             (identical(other.cw, cw) || other.cw == cw) &&
-            (identical(other.hashtag, hashtag) || other.hashtag == hashtag) &&
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.reactionAcceptance, reactionAcceptance) ||
                 other.reactionAcceptance == reactionAcceptance) &&
+            const DeepCollectionEquality().equals(other.fileIds, fileIds) &&
             (identical(other.replyId, replyId) || other.replyId == replyId) &&
             (identical(other.renoteId, renoteId) ||
                 other.renoteId == renoteId) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId) &&
-            (identical(other.text, text) || other.text == text) &&
-            const DeepCollectionEquality().equals(other.fileIds, fileIds) &&
             (identical(other.poll, poll) || other.poll == poll));
   }
 
@@ -73,20 +84,19 @@ mixin _$NotesDraftsUpdateRequest {
       draftId,
       visibility,
       const DeepCollectionEquality().hash(visibleUserIds),
+      text,
       cw,
-      hashtag,
       localOnly,
       reactionAcceptance,
+      const DeepCollectionEquality().hash(fileIds),
       replyId,
       renoteId,
       channelId,
-      text,
-      const DeepCollectionEquality().hash(fileIds),
       poll);
 
   @override
   String toString() {
-    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll)';
+    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, fileIds: $fileIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, poll: $poll)';
   }
 }
 
@@ -98,17 +108,16 @@ abstract mixin class $NotesDraftsUpdateRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String draftId,
-      NoteVisibility? visibility,
+      @NoteVisibilityJsonConverter() NoteVisibility? visibility,
       List<String>? visibleUserIds,
+      String? text,
       String? cw,
-      String? hashtag,
       bool? localOnly,
       ReactionAcceptance? reactionAcceptance,
+      List<String>? fileIds,
       String? replyId,
       String? renoteId,
       String? channelId,
-      String? text,
-      List<String>? fileIds,
       NotesDraftsUpdatePoll? poll});
 
   $NotesDraftsUpdatePollCopyWith<$Res>? get poll;
@@ -130,15 +139,14 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
     Object? draftId = null,
     Object? visibility = freezed,
     Object? visibleUserIds = freezed,
+    Object? text = freezed,
     Object? cw = freezed,
-    Object? hashtag = freezed,
     Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
+    Object? fileIds = freezed,
     Object? replyId = freezed,
     Object? renoteId = freezed,
     Object? channelId = freezed,
-    Object? text = freezed,
-    Object? fileIds = freezed,
     Object? poll = freezed,
   }) {
     return _then(_self.copyWith(
@@ -154,13 +162,13 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
           ? _self.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
       cw: freezed == cw
           ? _self.cw
           : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hashtag: freezed == hashtag
-          ? _self.hashtag
-          : hashtag // ignore: cast_nullable_to_non_nullable
               as String?,
       localOnly: freezed == localOnly
           ? _self.localOnly
@@ -170,6 +178,10 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
           ? _self.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
               as ReactionAcceptance?,
+      fileIds: freezed == fileIds
+          ? _self.fileIds
+          : fileIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       replyId: freezed == replyId
           ? _self.replyId
           : replyId // ignore: cast_nullable_to_non_nullable
@@ -182,14 +194,6 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fileIds: freezed == fileIds
-          ? _self.fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       poll: freezed == poll
           ? _self.poll
           : poll // ignore: cast_nullable_to_non_nullable
@@ -217,17 +221,16 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
 class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
   const _NotesDraftsUpdateRequest(
       {required this.draftId,
-      this.visibility,
+      @NoteVisibilityJsonConverter() this.visibility,
       final List<String>? visibleUserIds,
+      this.text,
       this.cw,
-      this.hashtag,
       this.localOnly,
       this.reactionAcceptance,
+      final List<String>? fileIds,
       this.replyId,
       this.renoteId,
       this.channelId,
-      this.text,
-      final List<String>? fileIds,
       this.poll})
       : _visibleUserIds = visibleUserIds,
         _fileIds = fileIds;
@@ -236,9 +239,16 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
 
   @override
   final String draftId;
+
+  /// ノートの公開範囲。
   @override
+  @NoteVisibilityJsonConverter()
   final NoteVisibility? visibility;
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   final List<String>? _visibleUserIds;
+
+  /// ノートを閲覧可能なユーザーのidのリスト。visibilityがspecifiedの場合のみ適用されます。
   @override
   List<String>? get visibleUserIds {
     final value = _visibleUserIds;
@@ -248,23 +258,24 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  /// ノートの本文。
+  @override
+  final String? text;
+
+  /// ノートのCW。
   @override
   final String? cw;
-  @override
-  final String? hashtag;
+
+  /// trueにすると、ローカルのみに投稿されます。
   @override
   final bool? localOnly;
   @override
   final ReactionAcceptance? reactionAcceptance;
-  @override
-  final String? replyId;
-  @override
-  final String? renoteId;
-  @override
-  final String? channelId;
-  @override
-  final String? text;
+
+  /// 添付するファイルのid。
   final List<String>? _fileIds;
+
+  /// 添付するファイルのid。
   @override
   List<String>? get fileIds {
     final value = _fileIds;
@@ -274,6 +285,12 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  final String? replyId;
+  @override
+  final String? renoteId;
+  @override
+  final String? channelId;
   @override
   final NotesDraftsUpdatePoll? poll;
 
@@ -303,19 +320,18 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
                 other.visibility == visibility) &&
             const DeepCollectionEquality()
                 .equals(other._visibleUserIds, _visibleUserIds) &&
+            (identical(other.text, text) || other.text == text) &&
             (identical(other.cw, cw) || other.cw == cw) &&
-            (identical(other.hashtag, hashtag) || other.hashtag == hashtag) &&
             (identical(other.localOnly, localOnly) ||
                 other.localOnly == localOnly) &&
             (identical(other.reactionAcceptance, reactionAcceptance) ||
                 other.reactionAcceptance == reactionAcceptance) &&
+            const DeepCollectionEquality().equals(other._fileIds, _fileIds) &&
             (identical(other.replyId, replyId) || other.replyId == replyId) &&
             (identical(other.renoteId, renoteId) ||
                 other.renoteId == renoteId) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId) &&
-            (identical(other.text, text) || other.text == text) &&
-            const DeepCollectionEquality().equals(other._fileIds, _fileIds) &&
             (identical(other.poll, poll) || other.poll == poll));
   }
 
@@ -326,20 +342,19 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
       draftId,
       visibility,
       const DeepCollectionEquality().hash(_visibleUserIds),
+      text,
       cw,
-      hashtag,
       localOnly,
       reactionAcceptance,
+      const DeepCollectionEquality().hash(_fileIds),
       replyId,
       renoteId,
       channelId,
-      text,
-      const DeepCollectionEquality().hash(_fileIds),
       poll);
 
   @override
   String toString() {
-    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll)';
+    return 'NotesDraftsUpdateRequest(draftId: $draftId, visibility: $visibility, visibleUserIds: $visibleUserIds, text: $text, cw: $cw, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, fileIds: $fileIds, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, poll: $poll)';
   }
 }
 
@@ -353,17 +368,16 @@ abstract mixin class _$NotesDraftsUpdateRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String draftId,
-      NoteVisibility? visibility,
+      @NoteVisibilityJsonConverter() NoteVisibility? visibility,
       List<String>? visibleUserIds,
+      String? text,
       String? cw,
-      String? hashtag,
       bool? localOnly,
       ReactionAcceptance? reactionAcceptance,
+      List<String>? fileIds,
       String? replyId,
       String? renoteId,
       String? channelId,
-      String? text,
-      List<String>? fileIds,
       NotesDraftsUpdatePoll? poll});
 
   @override
@@ -386,15 +400,14 @@ class __$NotesDraftsUpdateRequestCopyWithImpl<$Res>
     Object? draftId = null,
     Object? visibility = freezed,
     Object? visibleUserIds = freezed,
+    Object? text = freezed,
     Object? cw = freezed,
-    Object? hashtag = freezed,
     Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
+    Object? fileIds = freezed,
     Object? replyId = freezed,
     Object? renoteId = freezed,
     Object? channelId = freezed,
-    Object? text = freezed,
-    Object? fileIds = freezed,
     Object? poll = freezed,
   }) {
     return _then(_NotesDraftsUpdateRequest(
@@ -410,13 +423,13 @@ class __$NotesDraftsUpdateRequestCopyWithImpl<$Res>
           ? _self._visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
       cw: freezed == cw
           ? _self.cw
           : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hashtag: freezed == hashtag
-          ? _self.hashtag
-          : hashtag // ignore: cast_nullable_to_non_nullable
               as String?,
       localOnly: freezed == localOnly
           ? _self.localOnly
@@ -426,6 +439,10 @@ class __$NotesDraftsUpdateRequestCopyWithImpl<$Res>
           ? _self.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
               as ReactionAcceptance?,
+      fileIds: freezed == fileIds
+          ? _self._fileIds
+          : fileIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       replyId: freezed == replyId
           ? _self.replyId
           : replyId // ignore: cast_nullable_to_non_nullable
@@ -438,14 +455,6 @@ class __$NotesDraftsUpdateRequestCopyWithImpl<$Res>
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
               as String?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fileIds: freezed == fileIds
-          ? _self._fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       poll: freezed == poll
           ? _self.poll
           : poll // ignore: cast_nullable_to_non_nullable
@@ -471,9 +480,11 @@ class __$NotesDraftsUpdateRequestCopyWithImpl<$Res>
 /// @nodoc
 mixin _$NotesDraftsUpdatePoll {
   List<String> get choices;
-  bool get multiple;
-  int? get expiresAt;
-  int? get expiredAfter;
+  bool? get multiple;
+  @NullableEpocTimeDateTimeConverter.withMilliSeconds()
+  DateTime? get expiresAt;
+  @NullableDurationConverter()
+  Duration? get expiredAfter;
 
   /// Create a copy of NotesDraftsUpdatePoll
   /// with the given fields replaced by the non-null parameter values.
@@ -522,7 +533,10 @@ abstract mixin class $NotesDraftsUpdatePollCopyWith<$Res> {
       _$NotesDraftsUpdatePollCopyWithImpl;
   @useResult
   $Res call(
-      {List<String> choices, bool multiple, int? expiresAt, int? expiredAfter});
+      {List<String> choices,
+      bool? multiple,
+      @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,
+      @NullableDurationConverter() Duration? expiredAfter});
 }
 
 /// @nodoc
@@ -539,7 +553,7 @@ class _$NotesDraftsUpdatePollCopyWithImpl<$Res>
   @override
   $Res call({
     Object? choices = null,
-    Object? multiple = null,
+    Object? multiple = freezed,
     Object? expiresAt = freezed,
     Object? expiredAfter = freezed,
   }) {
@@ -548,30 +562,31 @@ class _$NotesDraftsUpdatePollCopyWithImpl<$Res>
           ? _self.choices
           : choices // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      multiple: null == multiple
+      multiple: freezed == multiple
           ? _self.multiple
           : multiple // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       expiresAt: freezed == expiresAt
           ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       expiredAfter: freezed == expiredAfter
           ? _self.expiredAfter
           : expiredAfter // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Duration?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(includeIfNull: false)
 class _NotesDraftsUpdatePoll implements NotesDraftsUpdatePoll {
   const _NotesDraftsUpdatePoll(
       {required final List<String> choices,
-      this.multiple = false,
-      this.expiresAt,
-      this.expiredAfter})
+      this.multiple,
+      @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt,
+      @NullableDurationConverter() this.expiredAfter})
       : _choices = choices;
   factory _NotesDraftsUpdatePoll.fromJson(Map<String, dynamic> json) =>
       _$NotesDraftsUpdatePollFromJson(json);
@@ -585,12 +600,13 @@ class _NotesDraftsUpdatePoll implements NotesDraftsUpdatePoll {
   }
 
   @override
-  @JsonKey()
-  final bool multiple;
+  final bool? multiple;
   @override
-  final int? expiresAt;
+  @NullableEpocTimeDateTimeConverter.withMilliSeconds()
+  final DateTime? expiresAt;
   @override
-  final int? expiredAfter;
+  @NullableDurationConverter()
+  final Duration? expiredAfter;
 
   /// Create a copy of NotesDraftsUpdatePoll
   /// with the given fields replaced by the non-null parameter values.
@@ -646,7 +662,10 @@ abstract mixin class _$NotesDraftsUpdatePollCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<String> choices, bool multiple, int? expiresAt, int? expiredAfter});
+      {List<String> choices,
+      bool? multiple,
+      @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,
+      @NullableDurationConverter() Duration? expiredAfter});
 }
 
 /// @nodoc
@@ -663,7 +682,7 @@ class __$NotesDraftsUpdatePollCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? choices = null,
-    Object? multiple = null,
+    Object? multiple = freezed,
     Object? expiresAt = freezed,
     Object? expiredAfter = freezed,
   }) {
@@ -672,18 +691,18 @@ class __$NotesDraftsUpdatePollCopyWithImpl<$Res>
           ? _self._choices
           : choices // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      multiple: null == multiple
+      multiple: freezed == multiple
           ? _self.multiple
           : multiple // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       expiresAt: freezed == expiresAt
           ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       expiredAfter: freezed == expiredAfter
           ? _self.expiredAfter
           : expiredAfter // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Duration?,
     ));
   }
 }

@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/src/converters/duration_converter.dart';
 import 'package:misskey_dart/src/data/base/drive_file.dart';
 import 'package:misskey_dart/src/data/base/note.dart';
 import 'package:misskey_dart/src/data/base/user.dart';
@@ -21,7 +23,7 @@ abstract class NoteDraft with _$NoteDraft {
     String? renoteId,
     Note? reply,
     Note? renote,
-    required NoteVisibility visibility,
+    @NoteVisibilityJsonConverter() required NoteVisibility visibility,
     List<String>? visibleUserIds,
     List<String>? fileIds,
     List<DriveFile>? files,
@@ -39,11 +41,12 @@ abstract class NoteDraft with _$NoteDraft {
 
 @freezed
 abstract class NoteDraftPoll with _$NoteDraftPoll {
+  @JsonSerializable(includeIfNull: false) // ignore: invalid_annotation_target
   const factory NoteDraftPoll({
-    DateTime? expiresAt,
-    int? expiredAfter,
-    required bool multiple,
     required List<String> choices,
+    bool? multiple,
+    @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,
+    @NullableDurationConverter() Duration? expiredAfter,
   }) = _NoteDraftPoll;
 
   factory NoteDraftPoll.fromJson(Map<String, Object?> json) =>

@@ -25,6 +25,7 @@ mixin _$NoteDraft {
   String? get renoteId;
   Note? get reply;
   Note? get renote;
+  @NoteVisibilityJsonConverter()
   NoteVisibility get visibility;
   List<String>? get visibleUserIds;
   List<String>? get fileIds;
@@ -128,7 +129,7 @@ abstract mixin class $NoteDraftCopyWith<$Res> {
       String? renoteId,
       Note? reply,
       Note? renote,
-      NoteVisibility visibility,
+      @NoteVisibilityJsonConverter() NoteVisibility visibility,
       List<String>? visibleUserIds,
       List<String>? fileIds,
       List<DriveFile>? files,
@@ -344,7 +345,7 @@ class _NoteDraft implements NoteDraft {
       this.renoteId,
       this.reply,
       this.renote,
-      required this.visibility,
+      @NoteVisibilityJsonConverter() required this.visibility,
       final List<String>? visibleUserIds,
       final List<String>? fileIds,
       final List<DriveFile>? files,
@@ -381,6 +382,7 @@ class _NoteDraft implements NoteDraft {
   @override
   final Note? renote;
   @override
+  @NoteVisibilityJsonConverter()
   final NoteVisibility visibility;
   final List<String>? _visibleUserIds;
   @override
@@ -526,7 +528,7 @@ abstract mixin class _$NoteDraftCopyWith<$Res>
       String? renoteId,
       Note? reply,
       Note? renote,
-      NoteVisibility visibility,
+      @NoteVisibilityJsonConverter() NoteVisibility visibility,
       List<String>? visibleUserIds,
       List<String>? fileIds,
       List<DriveFile>? files,
@@ -735,10 +737,12 @@ class __$NoteDraftCopyWithImpl<$Res> implements _$NoteDraftCopyWith<$Res> {
 
 /// @nodoc
 mixin _$NoteDraftPoll {
-  DateTime? get expiresAt;
-  int? get expiredAfter;
-  bool get multiple;
   List<String> get choices;
+  bool? get multiple;
+  @NullableEpocTimeDateTimeConverter.withMilliSeconds()
+  DateTime? get expiresAt;
+  @NullableDurationConverter()
+  Duration? get expiredAfter;
 
   /// Create a copy of NoteDraftPoll
   /// with the given fields replaced by the non-null parameter values.
@@ -756,23 +760,27 @@ mixin _$NoteDraftPoll {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NoteDraftPoll &&
+            const DeepCollectionEquality().equals(other.choices, choices) &&
+            (identical(other.multiple, multiple) ||
+                other.multiple == multiple) &&
             (identical(other.expiresAt, expiresAt) ||
                 other.expiresAt == expiresAt) &&
             (identical(other.expiredAfter, expiredAfter) ||
-                other.expiredAfter == expiredAfter) &&
-            (identical(other.multiple, multiple) ||
-                other.multiple == multiple) &&
-            const DeepCollectionEquality().equals(other.choices, choices));
+                other.expiredAfter == expiredAfter));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, expiresAt, expiredAfter,
-      multiple, const DeepCollectionEquality().hash(choices));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(choices),
+      multiple,
+      expiresAt,
+      expiredAfter);
 
   @override
   String toString() {
-    return 'NoteDraftPoll(expiresAt: $expiresAt, expiredAfter: $expiredAfter, multiple: $multiple, choices: $choices)';
+    return 'NoteDraftPoll(choices: $choices, multiple: $multiple, expiresAt: $expiresAt, expiredAfter: $expiredAfter)';
   }
 }
 
@@ -783,10 +791,10 @@ abstract mixin class $NoteDraftPollCopyWith<$Res> {
       _$NoteDraftPollCopyWithImpl;
   @useResult
   $Res call(
-      {DateTime? expiresAt,
-      int? expiredAfter,
-      bool multiple,
-      List<String> choices});
+      {List<String> choices,
+      bool? multiple,
+      @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,
+      @NullableDurationConverter() Duration? expiredAfter});
 }
 
 /// @nodoc
@@ -802,12 +810,20 @@ class _$NoteDraftPollCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? choices = null,
+    Object? multiple = freezed,
     Object? expiresAt = freezed,
     Object? expiredAfter = freezed,
-    Object? multiple = null,
-    Object? choices = null,
   }) {
     return _then(_self.copyWith(
+      choices: null == choices
+          ? _self.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      multiple: freezed == multiple
+          ? _self.multiple
+          : multiple // ignore: cast_nullable_to_non_nullable
+              as bool?,
       expiresAt: freezed == expiresAt
           ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -815,37 +831,24 @@ class _$NoteDraftPollCopyWithImpl<$Res>
       expiredAfter: freezed == expiredAfter
           ? _self.expiredAfter
           : expiredAfter // ignore: cast_nullable_to_non_nullable
-              as int?,
-      multiple: null == multiple
-          ? _self.multiple
-          : multiple // ignore: cast_nullable_to_non_nullable
-              as bool,
-      choices: null == choices
-          ? _self.choices
-          : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Duration?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(includeIfNull: false)
 class _NoteDraftPoll implements NoteDraftPoll {
   const _NoteDraftPoll(
-      {this.expiresAt,
-      this.expiredAfter,
-      required this.multiple,
-      required final List<String> choices})
+      {required final List<String> choices,
+      this.multiple,
+      @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt,
+      @NullableDurationConverter() this.expiredAfter})
       : _choices = choices;
   factory _NoteDraftPoll.fromJson(Map<String, dynamic> json) =>
       _$NoteDraftPollFromJson(json);
 
-  @override
-  final DateTime? expiresAt;
-  @override
-  final int? expiredAfter;
-  @override
-  final bool multiple;
   final List<String> _choices;
   @override
   List<String> get choices {
@@ -853,6 +856,15 @@ class _NoteDraftPoll implements NoteDraftPoll {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_choices);
   }
+
+  @override
+  final bool? multiple;
+  @override
+  @NullableEpocTimeDateTimeConverter.withMilliSeconds()
+  final DateTime? expiresAt;
+  @override
+  @NullableDurationConverter()
+  final Duration? expiredAfter;
 
   /// Create a copy of NoteDraftPoll
   /// with the given fields replaced by the non-null parameter values.
@@ -874,23 +886,27 @@ class _NoteDraftPoll implements NoteDraftPoll {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _NoteDraftPoll &&
+            const DeepCollectionEquality().equals(other._choices, _choices) &&
+            (identical(other.multiple, multiple) ||
+                other.multiple == multiple) &&
             (identical(other.expiresAt, expiresAt) ||
                 other.expiresAt == expiresAt) &&
             (identical(other.expiredAfter, expiredAfter) ||
-                other.expiredAfter == expiredAfter) &&
-            (identical(other.multiple, multiple) ||
-                other.multiple == multiple) &&
-            const DeepCollectionEquality().equals(other._choices, _choices));
+                other.expiredAfter == expiredAfter));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, expiresAt, expiredAfter,
-      multiple, const DeepCollectionEquality().hash(_choices));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_choices),
+      multiple,
+      expiresAt,
+      expiredAfter);
 
   @override
   String toString() {
-    return 'NoteDraftPoll(expiresAt: $expiresAt, expiredAfter: $expiredAfter, multiple: $multiple, choices: $choices)';
+    return 'NoteDraftPoll(choices: $choices, multiple: $multiple, expiresAt: $expiresAt, expiredAfter: $expiredAfter)';
   }
 }
 
@@ -903,10 +919,10 @@ abstract mixin class _$NoteDraftPollCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? expiresAt,
-      int? expiredAfter,
-      bool multiple,
-      List<String> choices});
+      {List<String> choices,
+      bool? multiple,
+      @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,
+      @NullableDurationConverter() Duration? expiredAfter});
 }
 
 /// @nodoc
@@ -922,12 +938,20 @@ class __$NoteDraftPollCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? choices = null,
+    Object? multiple = freezed,
     Object? expiresAt = freezed,
     Object? expiredAfter = freezed,
-    Object? multiple = null,
-    Object? choices = null,
   }) {
     return _then(_NoteDraftPoll(
+      choices: null == choices
+          ? _self._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      multiple: freezed == multiple
+          ? _self.multiple
+          : multiple // ignore: cast_nullable_to_non_nullable
+              as bool?,
       expiresAt: freezed == expiresAt
           ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -935,15 +959,7 @@ class __$NoteDraftPollCopyWithImpl<$Res>
       expiredAfter: freezed == expiredAfter
           ? _self.expiredAfter
           : expiredAfter // ignore: cast_nullable_to_non_nullable
-              as int?,
-      multiple: null == multiple
-          ? _self.multiple
-          : multiple // ignore: cast_nullable_to_non_nullable
-              as bool,
-      choices: null == choices
-          ? _self._choices
-          : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Duration?,
     ));
   }
 }
