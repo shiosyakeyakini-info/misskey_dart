@@ -289,11 +289,12 @@ class MisskeyNotesDrafts {
   }
 
   /// 下書きを更新します。
-  Future<void> update(NotesDraftsUpdateRequest request) async {
-    await _apiService.post<void>(
+  Future<NoteDraft> update(NotesDraftsUpdateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>(
       "notes/drafts/update",
       request.toJson(),
     );
+    return NoteDraft.fromJson(response);
   }
 
   /// 下書きを削除します。
