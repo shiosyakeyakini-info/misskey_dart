@@ -846,6 +846,7 @@ _UserPolicies _$UserPoliciesFromJson(Map<String, dynamic> json) =>
       canImportUserLists: json['canImportUserLists'] as bool?,
       chatAvailability: $enumDecodeNullable(
           _$ChatAvailabilityEnumMap, json['chatAvailability']),
+      noteDraftLimit: (json['noteDraftLimit'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
@@ -885,6 +886,7 @@ Map<String, dynamic> _$UserPoliciesToJson(_UserPolicies instance) =>
       'canImportMuting': instance.canImportMuting,
       'canImportUserLists': instance.canImportUserLists,
       'chatAvailability': _$ChatAvailabilityEnumMap[instance.chatAvailability],
+      'noteDraftLimit': instance.noteDraftLimit,
     };
 
 const _$ChatAvailabilityEnumMap = {

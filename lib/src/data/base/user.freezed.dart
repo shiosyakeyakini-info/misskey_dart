@@ -6938,6 +6938,7 @@ mixin _$UserPolicies {
   bool? get canImportMuting;
   bool? get canImportUserLists;
   ChatAvailability? get chatAvailability;
+  int? get noteDraftLimit;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -7025,7 +7026,8 @@ mixin _$UserPolicies {
             (identical(other.canImportUserLists, canImportUserLists) ||
                 other.canImportUserLists == canImportUserLists) &&
             (identical(other.chatAvailability, chatAvailability) ||
-                other.chatAvailability == chatAvailability));
+                other.chatAvailability == chatAvailability) &&
+            (identical(other.noteDraftLimit, noteDraftLimit) || other.noteDraftLimit == noteDraftLimit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7066,12 +7068,13 @@ mixin _$UserPolicies {
         canImportFollowing,
         canImportMuting,
         canImportUserLists,
-        chatAvailability
+        chatAvailability,
+        noteDraftLimit
       ]);
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, noteDraftLimit: $noteDraftLimit)';
   }
 }
 
@@ -7116,7 +7119,8 @@ abstract mixin class $UserPoliciesCopyWith<$Res> {
       bool? canImportFollowing,
       bool? canImportMuting,
       bool? canImportUserLists,
-      ChatAvailability? chatAvailability});
+      ChatAvailability? chatAvailability,
+      int? noteDraftLimit});
 }
 
 /// @nodoc
@@ -7166,6 +7170,7 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
     Object? canImportMuting = freezed,
     Object? canImportUserLists = freezed,
     Object? chatAvailability = freezed,
+    Object? noteDraftLimit = freezed,
   }) {
     return _then(_self.copyWith(
       gtlAvailable: null == gtlAvailable
@@ -7308,6 +7313,10 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
           ? _self.chatAvailability
           : chatAvailability // ignore: cast_nullable_to_non_nullable
               as ChatAvailability?,
+      noteDraftLimit: freezed == noteDraftLimit
+          ? _self.noteDraftLimit
+          : noteDraftLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -7350,7 +7359,8 @@ class _UserPolicies implements UserPolicies {
       this.canImportFollowing,
       this.canImportMuting,
       this.canImportUserLists,
-      this.chatAvailability})
+      this.chatAvailability,
+      this.noteDraftLimit})
       : _uploadableFileTypes = uploadableFileTypes;
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =>
       _$UserPoliciesFromJson(json);
@@ -7438,6 +7448,8 @@ class _UserPolicies implements UserPolicies {
   final bool? canImportUserLists;
   @override
   final ChatAvailability? chatAvailability;
+  @override
+  final int? noteDraftLimit;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -7529,7 +7541,8 @@ class _UserPolicies implements UserPolicies {
             (identical(other.canImportUserLists, canImportUserLists) ||
                 other.canImportUserLists == canImportUserLists) &&
             (identical(other.chatAvailability, chatAvailability) ||
-                other.chatAvailability == chatAvailability));
+                other.chatAvailability == chatAvailability) &&
+            (identical(other.noteDraftLimit, noteDraftLimit) || other.noteDraftLimit == noteDraftLimit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7570,12 +7583,13 @@ class _UserPolicies implements UserPolicies {
         canImportFollowing,
         canImportMuting,
         canImportUserLists,
-        chatAvailability
+        chatAvailability,
+        noteDraftLimit
       ]);
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, noteDraftLimit: $noteDraftLimit)';
   }
 }
 
@@ -7622,7 +7636,8 @@ abstract mixin class _$UserPoliciesCopyWith<$Res>
       bool? canImportFollowing,
       bool? canImportMuting,
       bool? canImportUserLists,
-      ChatAvailability? chatAvailability});
+      ChatAvailability? chatAvailability,
+      int? noteDraftLimit});
 }
 
 /// @nodoc
@@ -7673,6 +7688,7 @@ class __$UserPoliciesCopyWithImpl<$Res>
     Object? canImportMuting = freezed,
     Object? canImportUserLists = freezed,
     Object? chatAvailability = freezed,
+    Object? noteDraftLimit = freezed,
   }) {
     return _then(_UserPolicies(
       gtlAvailable: null == gtlAvailable
@@ -7815,6 +7831,10 @@ class __$UserPoliciesCopyWithImpl<$Res>
           ? _self.chatAvailability
           : chatAvailability // ignore: cast_nullable_to_non_nullable
               as ChatAvailability?,
+      noteDraftLimit: freezed == noteDraftLimit
+          ? _self.noteDraftLimit
+          : noteDraftLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }

@@ -477,6 +477,7 @@ abstract class UserPolicies with _$UserPolicies {
     bool? canImportMuting,
     bool? canImportUserLists,
     ChatAvailability? chatAvailability,
+    int? noteDraftLimit,
   }) = _UserPolicies;
 
   factory UserPolicies.fromJson(Map<String, Object?> json) =>
