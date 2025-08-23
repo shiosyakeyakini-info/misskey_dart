@@ -7,8 +7,11 @@ class MisskeyClips {
   MisskeyClips({required ApiService apiService}) : _apiService = apiService;
 
   /// ログイン中のユーザーが作成したクリップの一覧を取得します。
-  Future<Iterable<Clip>> list() async {
-    final response = await _apiService.post<List>("clips/list", {});
+  Future<Iterable<Clip>> list(ClipsListRequest request) async {
+    final response = await _apiService.post<List>(
+      "clips/list",
+      request.toJson(),
+    );
     return response.map((e) => Clip.fromJson(e));
   }
 
