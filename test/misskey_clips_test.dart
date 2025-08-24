@@ -7,7 +7,7 @@ void main() async {
   test("list", () async {
     final clip =
         await userClient.clips.create(ClipsCreateRequest(name: "test"));
-    final response = await userClient.clips.list();
+    final response = await userClient.clips.list(ClipsListRequest());
     expect(response.map((e) => e.id), contains(clip.id));
   });
 
@@ -66,7 +66,7 @@ void main() async {
     final clip =
         await userClient.clips.create(ClipsCreateRequest(name: "test"));
     await userClient.clips.delete(ClipsDeleteRequest(clipId: clip.id));
-    final clips = await userClient.clips.list();
+    final clips = await userClient.clips.list(ClipsListRequest());
     expect(clips.map((e) => e.id), isNot(contains(clip.id)));
   });
 
