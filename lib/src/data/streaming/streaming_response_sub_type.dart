@@ -22,7 +22,7 @@ abstract class PageEvent with _$PageEvent {
 @freezed
 abstract class UrlUploadFinishedEvent with _$UrlUploadFinishedEvent {
   const factory UrlUploadFinishedEvent({
-    required String marker,
+    String? marker,
     required DriveFile file,
   }) = _UrlUploadFinishedEvent;
 
