@@ -16,8 +16,11 @@ class MisskeyClips {
   }
 
   /// ログイン中のユーザーがお気に入りしたクリップの一覧を取得します。
-  Future<Iterable<Clip>> myFavorites() async {
-    final response = await _apiService.post<List>("clips/my-favorites", {});
+  Future<Iterable<Clip>> myFavorites(ClipsMyFavoritesRequest request) async {
+    final response = await _apiService.post<List>(
+      "clips/my-favorites",
+      request.toJson(),
+    );
     return response.map((e) => Clip.fromJson(e));
   }
 

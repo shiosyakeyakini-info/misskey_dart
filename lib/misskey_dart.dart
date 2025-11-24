@@ -79,6 +79,7 @@ export 'src/data/clips/clips_create_request.dart';
 export 'src/data/clips/clips_delete_request.dart';
 export 'src/data/clips/clips_favorite_request.dart';
 export 'src/data/clips/clips_list_request.dart';
+export 'src/data/clips/clips_my_favorites_request.dart';
 export 'src/data/clips/clips_notes_request.dart';
 export 'src/data/clips/clips_remove_note_request.dart';
 export 'src/data/clips/clips_show_request.dart';

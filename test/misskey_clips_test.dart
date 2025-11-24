@@ -19,7 +19,9 @@ void main() async {
       ),
     );
     await userClient.clips.favorite(ClipsFavoriteRequest(clipId: clip.id));
-    final response = await userClient.clips.myFavorites();
+    final response = await userClient.clips.myFavorites(
+      ClipsMyFavoritesRequest(),
+    );
     expect(response.map((e) => e.id), contains(clip.id));
   });
 
@@ -115,7 +117,7 @@ void main() async {
     );
     await userClient.clips.favorite(ClipsFavoriteRequest(clipId: clip.id));
     await userClient.clips.unfavorite(ClipsUnfavoriteRequest(clipId: clip.id));
-    final clips = await userClient.clips.myFavorites();
+    final clips = await userClient.clips.myFavorites(ClipsMyFavoritesRequest());
     expect(clips.map((e) => e.id), isNot(contains(clip.id)));
   });
 }
