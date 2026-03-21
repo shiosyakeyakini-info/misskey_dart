@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AntennasShowRequest {
-  String get antennaId;
+  String? get antennaId;
 
   /// Create a copy of AntennasShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $AntennasShowRequestCopyWith<$Res> {
           AntennasShowRequest value, $Res Function(AntennasShowRequest) _then) =
       _$AntennasShowRequestCopyWithImpl;
   @useResult
-  $Res call({String antennaId});
+  $Res call({String? antennaId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$AntennasShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? antennaId = null,
+    Object? antennaId = freezed,
   }) {
     return _then(_self.copyWith(
-      antennaId: null == antennaId
+      antennaId: freezed == antennaId
           ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$AntennasShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AntennasShowRequest implements AntennasShowRequest {
-  const _AntennasShowRequest({required this.antennaId});
+  const _AntennasShowRequest({this.antennaId});
   factory _AntennasShowRequest.fromJson(Map<String, dynamic> json) =>
       _$AntennasShowRequestFromJson(json);
 
   @override
-  final String antennaId;
+  final String? antennaId;
 
   /// Create a copy of AntennasShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$AntennasShowRequestCopyWith<$Res>
       __$AntennasShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String antennaId});
+  $Res call({String? antennaId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$AntennasShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? antennaId = null,
+    Object? antennaId = freezed,
   }) {
     return _then(_AntennasShowRequest(
-      antennaId: null == antennaId
+      antennaId: freezed == antennaId
           ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

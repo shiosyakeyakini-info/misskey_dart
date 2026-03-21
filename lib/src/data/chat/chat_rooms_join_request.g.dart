@@ -9,7 +9,7 @@ part of 'chat_rooms_join_request.dart';
 _ChatRoomsJoinRequest _$ChatRoomsJoinRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatRoomsJoinRequest(
-      roomId: json['roomId'] as String,
+      roomId: json['roomId'] as String?,
     );
 
 Map<String, dynamic> _$ChatRoomsJoinRequestToJson(

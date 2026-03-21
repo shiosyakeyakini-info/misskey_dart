@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsUnfavoriteRequest {
-  String get clipId;
+  String? get clipId;
 
   /// Create a copy of ClipsUnfavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $ClipsUnfavoriteRequestCopyWith<$Res> {
           $Res Function(ClipsUnfavoriteRequest) _then) =
       _$ClipsUnfavoriteRequestCopyWithImpl;
   @useResult
-  $Res call({String clipId});
+  $Res call({String? clipId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$ClipsUnfavoriteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clipId = null,
+    Object? clipId = freezed,
   }) {
     return _then(_self.copyWith(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$ClipsUnfavoriteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ClipsUnfavoriteRequest implements ClipsUnfavoriteRequest {
-  const _ClipsUnfavoriteRequest({required this.clipId});
+  const _ClipsUnfavoriteRequest({this.clipId});
   factory _ClipsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsUnfavoriteRequestFromJson(json);
 
   @override
-  final String clipId;
+  final String? clipId;
 
   /// Create a copy of ClipsUnfavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +131,7 @@ abstract mixin class _$ClipsUnfavoriteRequestCopyWith<$Res>
       __$ClipsUnfavoriteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String clipId});
+  $Res call({String? clipId});
 }
 
 /// @nodoc
@@ -147,13 +147,13 @@ class __$ClipsUnfavoriteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? clipId = null,
+    Object? clipId = freezed,
   }) {
     return _then(_ClipsUnfavoriteRequest(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

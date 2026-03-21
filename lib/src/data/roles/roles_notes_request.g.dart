@@ -8,14 +8,12 @@ part of 'roles_notes_request.dart';
 
 _RolesNotesRequest _$RolesNotesRequestFromJson(Map<String, dynamic> json) =>
     _RolesNotesRequest(
-      roleId: json['roleId'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
+      roleId: json['roleId'] as String?,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
-          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
-      untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
-          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$RolesNotesRequestToJson(_RolesNotesRequest instance) =>
@@ -24,20 +22,6 @@ Map<String, dynamic> _$RolesNotesRequestToJson(_RolesNotesRequest instance) =>
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'sinceDate': _$JsonConverterToJson<int, DateTime>(instance.sinceDate,
-          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
-      'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
-          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

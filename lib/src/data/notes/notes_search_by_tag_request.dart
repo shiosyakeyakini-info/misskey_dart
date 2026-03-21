@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_search_by_tag_request.freezed.dart';
 part 'notes_search_by_tag_request.g.dart';
@@ -6,16 +7,16 @@ part 'notes_search_by_tag_request.g.dart';
 @freezed
 abstract class NotesSearchByTagRequest with _$NotesSearchByTagRequest {
   const factory NotesSearchByTagRequest({
-    required String tag,
-    bool? reply,
-    bool? renote,
-    bool? withFiles,
-    bool? poll,
+    @Default(null) bool? reply,
+    @Default(null) bool? renote,
+    @Default(false) bool? withFiles,
+    @Default(null) bool? poll,
     String? sinceId,
     String? untilId,
-    int? limit,
+    int? sinceDate,
+    int? untilDate,
+    @Default(10) int? limit,
   }) = _NotesSearchByTagRequest;
 
-  factory NotesSearchByTagRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesSearchByTagRequestFromJson(json);
+  factory NotesSearchByTagRequest.fromJson(Map<String, Object?> json) => _$NotesSearchByTagRequestFromJson(json);
 }

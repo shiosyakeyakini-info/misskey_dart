@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IReadAnnouncementRequest {
-  String get announcementId;
+  String? get announcementId;
 
   /// Create a copy of IReadAnnouncementRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $IReadAnnouncementRequestCopyWith<$Res> {
           $Res Function(IReadAnnouncementRequest) _then) =
       _$IReadAnnouncementRequestCopyWithImpl;
   @useResult
-  $Res call({String announcementId});
+  $Res call({String? announcementId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$IReadAnnouncementRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? announcementId = null,
+    Object? announcementId = freezed,
   }) {
     return _then(_self.copyWith(
-      announcementId: null == announcementId
+      announcementId: freezed == announcementId
           ? _self.announcementId
           : announcementId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$IReadAnnouncementRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _IReadAnnouncementRequest implements IReadAnnouncementRequest {
-  const _IReadAnnouncementRequest({required this.announcementId});
+  const _IReadAnnouncementRequest({this.announcementId});
   factory _IReadAnnouncementRequest.fromJson(Map<String, dynamic> json) =>
       _$IReadAnnouncementRequestFromJson(json);
 
   @override
-  final String announcementId;
+  final String? announcementId;
 
   /// Create a copy of IReadAnnouncementRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$IReadAnnouncementRequestCopyWith<$Res>
       __$IReadAnnouncementRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String announcementId});
+  $Res call({String? announcementId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$IReadAnnouncementRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? announcementId = null,
+    Object? announcementId = freezed,
   }) {
     return _then(_IReadAnnouncementRequest(
-      announcementId: null == announcementId
+      announcementId: freezed == announcementId
           ? _self.announcementId
           : announcementId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

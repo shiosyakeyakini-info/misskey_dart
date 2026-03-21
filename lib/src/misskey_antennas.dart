@@ -1,45 +1,46 @@
 import 'package:misskey_dart/misskey_dart.dart';
 import 'package:misskey_dart/src/services/api_service.dart';
 
-class MisskeyAntenna {
+class MisskeyAntennas {
+
   final ApiService _apiService;
 
-  MisskeyAntenna({required ApiService apiService}) : _apiService = apiService;
+  MisskeyAntennas({required ApiService apiService})
+      : _apiService = apiService;
 
-  /// アンテナを作成します。
+  /// antennas/create
   Future<Antenna> create(AntennasCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "antennas/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("antennas/create", request.toJson());
     return Antenna.fromJson(response);
   }
 
-  /// アンテナを削除します。
+  /// antennas/delete
   Future<void> delete(AntennasDeleteRequest request) async {
-    await _apiService.post("antennas/delete", request.toJson());
+    await _apiService.post<void>("antennas/delete", request.toJson());
   }
 
-  /// ログイン中のユーザーが作成したアンテナのリストを返します。
+  /// antennas/list
   Future<Iterable<Antenna>> list() async {
     final response = await _apiService.post<List>("antennas/list", {});
-    return response.map((e) => Antenna.fromJson(e));
+    return response.map((e) => Antenna.fromJson(e as Map<String, dynamic>));
   }
 
-  /// アンテナに引っかかったノートを返します。
+  /// antennas/notes
   Future<Iterable<Note>> notes(AntennasNotesRequest request) async {
-    final response =
-        await _apiService.post<List>("antennas/notes", request.toJson());
-    return response.map((e) => Note.fromJson(e));
+    final response = await _apiService.post<List>("antennas/notes", request.toJson());
+    return response.map((e) => Note.fromJson(e as Map<String, dynamic>));
   }
 
-  /// アンテナ情報をIDから取得します。
+  /// antennas/show
   Future<Antenna> show(AntennasShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "antennas/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("antennas/show", request.toJson());
     return Antenna.fromJson(response);
   }
 
-  /// アンテナを更新します。
-  Future<void> update(AntennasUpdateRequest request) async {
-    await _apiService.post("antennas/update", request.toJson());
+  /// antennas/update
+  Future<Antenna> update(AntennasUpdateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("antennas/update", request.toJson());
+    return Antenna.fromJson(response);
   }
+
 }

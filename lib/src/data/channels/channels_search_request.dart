@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/channel_search_type.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_search_request.freezed.dart';
 part 'channels_search_request.g.dart';
@@ -7,13 +7,14 @@ part 'channels_search_request.g.dart';
 @freezed
 abstract class ChannelsSearchRequest with _$ChannelsSearchRequest {
   const factory ChannelsSearchRequest({
-    required String query,
-    ChannelSearchType? type,
+    String? query,
+    @Default(ChannelsSearchType.nameAndDescription) ChannelsSearchType? type,
     String? sinceId,
     String? untilId,
-    @Assert('limit > 0') int? limit,
+    int? sinceDate,
+    int? untilDate,
+    @Default(5) int? limit,
   }) = _ChannelsSearchRequest;
 
-  factory ChannelsSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$ChannelsSearchRequestFromJson(json);
+  factory ChannelsSearchRequest.fromJson(Map<String, Object?> json) => _$ChannelsSearchRequestFromJson(json);
 }

@@ -15,15 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsTimelineRequest {
-  String get channelId;
-  @Assert('limit > 0')
+  String? get channelId;
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
+  int? get sinceDate;
+  int? get untilDate;
   bool? get allowPartial;
 
   /// Create a copy of ChannelsTimelineRequest
@@ -73,12 +70,12 @@ abstract mixin class $ChannelsTimelineRequestCopyWith<$Res> {
       _$ChannelsTimelineRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String channelId,
-      @Assert('limit > 0') int? limit,
+      {String? channelId,
+      int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      int? sinceDate,
+      int? untilDate,
       bool? allowPartial});
 }
 
@@ -95,7 +92,7 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -104,10 +101,10 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res>
     Object? allowPartial = freezed,
   }) {
     return _then(_self.copyWith(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -123,11 +120,11 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       allowPartial: freezed == allowPartial
           ? _self.allowPartial
           : allowPartial // ignore: cast_nullable_to_non_nullable
@@ -140,32 +137,31 @@ class _$ChannelsTimelineRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChannelsTimelineRequest implements ChannelsTimelineRequest {
   const _ChannelsTimelineRequest(
-      {required this.channelId,
-      @Assert('limit > 0') this.limit,
+      {this.channelId,
+      this.limit = 10,
       this.sinceId,
       this.untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
-      this.allowPartial});
+      this.sinceDate,
+      this.untilDate,
+      this.allowPartial = false});
   factory _ChannelsTimelineRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsTimelineRequestFromJson(json);
 
   @override
-  final String channelId;
+  final String? channelId;
   @override
-  @Assert('limit > 0')
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? sinceDate;
+  final int? sinceDate;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? untilDate;
+  final int? untilDate;
   @override
+  @JsonKey()
   final bool? allowPartial;
 
   /// Create a copy of ChannelsTimelineRequest
@@ -222,12 +218,12 @@ abstract mixin class _$ChannelsTimelineRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String channelId,
-      @Assert('limit > 0') int? limit,
+      {String? channelId,
+      int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      int? sinceDate,
+      int? untilDate,
       bool? allowPartial});
 }
 
@@ -244,7 +240,7 @@ class __$ChannelsTimelineRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -253,10 +249,10 @@ class __$ChannelsTimelineRequestCopyWithImpl<$Res>
     Object? allowPartial = freezed,
   }) {
     return _then(_ChannelsTimelineRequest(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -272,11 +268,11 @@ class __$ChannelsTimelineRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       allowPartial: freezed == allowPartial
           ? _self.allowPartial
           : allowPartial // ignore: cast_nullable_to_non_nullable

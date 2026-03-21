@@ -9,7 +9,7 @@ part of 'channels_favorite_request.dart';
 _ChannelsFavoriteRequest _$ChannelsFavoriteRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsFavoriteRequest(
-      channelId: json['channelId'] as String,
+      channelId: json['channelId'] as String?,
     );
 
 Map<String, dynamic> _$ChannelsFavoriteRequestToJson(

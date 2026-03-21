@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsAddNoteRequest {
-  String get clipId;
-  String get noteId;
+  String? get clipId;
+  String? get noteId;
 
   /// Create a copy of ClipsAddNoteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -54,7 +54,7 @@ abstract mixin class $ClipsAddNoteRequestCopyWith<$Res> {
           ClipsAddNoteRequest value, $Res Function(ClipsAddNoteRequest) _then) =
       _$ClipsAddNoteRequestCopyWithImpl;
   @useResult
-  $Res call({String clipId, String noteId});
+  $Res call({String? clipId, String? noteId});
 }
 
 /// @nodoc
@@ -70,18 +70,18 @@ class _$ClipsAddNoteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clipId = null,
-    Object? noteId = null,
+    Object? clipId = freezed,
+    Object? noteId = freezed,
   }) {
     return _then(_self.copyWith(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-      noteId: null == noteId
+              as String?,
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -89,14 +89,14 @@ class _$ClipsAddNoteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ClipsAddNoteRequest implements ClipsAddNoteRequest {
-  const _ClipsAddNoteRequest({required this.clipId, required this.noteId});
+  const _ClipsAddNoteRequest({this.clipId, this.noteId});
   factory _ClipsAddNoteRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsAddNoteRequestFromJson(json);
 
   @override
-  final String clipId;
+  final String? clipId;
   @override
-  final String noteId;
+  final String? noteId;
 
   /// Create a copy of ClipsAddNoteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -141,7 +141,7 @@ abstract mixin class _$ClipsAddNoteRequestCopyWith<$Res>
       __$ClipsAddNoteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String clipId, String noteId});
+  $Res call({String? clipId, String? noteId});
 }
 
 /// @nodoc
@@ -157,18 +157,18 @@ class __$ClipsAddNoteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? clipId = null,
-    Object? noteId = null,
+    Object? clipId = freezed,
+    Object? noteId = freezed,
   }) {
     return _then(_ClipsAddNoteRequest(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-      noteId: null == noteId
+              as String?,
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

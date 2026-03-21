@@ -9,9 +9,9 @@ part of 'users_featured_notes_request.dart';
 _UsersFeaturedNotesRequest _$UsersFeaturedNotesRequestFromJson(
         Map<String, dynamic> json) =>
     _UsersFeaturedNotesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       untilId: json['untilId'] as String?,
-      userId: json['userId'] as String,
+      userId: json['userId'] as String?,
     );
 
 Map<String, dynamic> _$UsersFeaturedNotesRequestToJson(

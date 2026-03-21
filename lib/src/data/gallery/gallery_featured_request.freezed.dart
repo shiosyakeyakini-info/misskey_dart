@@ -89,11 +89,12 @@ class _$GalleryFeaturedRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _GalleryFeaturedRequest implements GalleryFeaturedRequest {
-  const _GalleryFeaturedRequest({this.limit, this.untilId});
+  const _GalleryFeaturedRequest({this.limit = 10, this.untilId});
   factory _GalleryFeaturedRequest.fromJson(Map<String, dynamic> json) =>
       _$GalleryFeaturedRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? untilId;

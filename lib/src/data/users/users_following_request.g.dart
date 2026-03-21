@@ -9,33 +9,21 @@ part of 'users_following_request.dart';
 _UsersFollowingRequest _$UsersFollowingRequestFromJson(
         Map<String, dynamic> json) =>
     _UsersFollowingRequest(
-      userId: json['userId'] as String,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
-      birthday: _$JsonConverterFromJson<String, DateTime>(
-          json['birthday'], const DateTimeConverter().fromJson),
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
+      birthday: json['birthday'] as String?,
     );
 
 Map<String, dynamic> _$UsersFollowingRequestToJson(
         _UsersFollowingRequest instance) =>
     <String, dynamic>{
-      'userId': instance.userId,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'limit': instance.limit,
-      'birthday': _$JsonConverterToJson<String, DateTime>(
-          instance.birthday, const DateTimeConverter().toJson),
+      'birthday': instance.birthday,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

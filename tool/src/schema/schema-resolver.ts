@@ -69,7 +69,8 @@ export class SchemaResolver {
 
     this.resolving.add(name);
     const resolved = this.resolveSchema(raw, name);
-    resolved.name = name;
+    // Apply schema name override if configured (e.g., Channel → CommunityChannel)
+    resolved.name = this.nameOverrides[name] ?? name;
     resolved.originalName = name;
     this.resolving.delete(name);
 

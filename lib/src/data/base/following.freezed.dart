@@ -20,18 +20,8 @@ mixin _$Following {
   DateTime get createdAt;
   String get followeeId;
   String get followerId;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-// - [MisskeyFederation.followers]
-// - [MisskeyFederation.following]
-  /// - [MisskeyUsers.following]
-  UserDetailed? get followee;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-  /// - [MisskeyUsers.followers]
-  UserDetailed? get follower;
+  UserDetailedNotMe? get followee;
+  UserDetailedNotMe? get follower;
 
   /// Create a copy of Following
   /// with the given fields replaced by the non-null parameter values.
@@ -82,8 +72,11 @@ abstract mixin class $FollowingCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      UserDetailed? followee,
-      UserDetailed? follower});
+      UserDetailedNotMe? followee,
+      UserDetailedNotMe? follower});
+
+  $UserDetailedNotMeCopyWith<$Res>? get followee;
+  $UserDetailedNotMeCopyWith<$Res>? get follower;
 }
 
 /// @nodoc
@@ -125,12 +118,40 @@ class _$FollowingCopyWithImpl<$Res> implements $FollowingCopyWith<$Res> {
       followee: freezed == followee
           ? _self.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as UserDetailedNotMe?,
       follower: freezed == follower
           ? _self.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as UserDetailedNotMe?,
     ));
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get followee {
+    if (_self.followee == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.followee!, (value) {
+      return _then(_self.copyWith(followee: value));
+    });
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get follower {
+    if (_self.follower == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.follower!, (value) {
+      return _then(_self.copyWith(follower: value));
+    });
   }
 }
 
@@ -156,20 +177,10 @@ class _Following implements Following {
   final String followeeId;
   @override
   final String followerId;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-// - [MisskeyFederation.followers]
-// - [MisskeyFederation.following]
-  /// - [MisskeyUsers.following]
   @override
-  final UserDetailed? followee;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-  /// - [MisskeyUsers.followers]
+  final UserDetailedNotMe? followee;
   @override
-  final UserDetailed? follower;
+  final UserDetailedNotMe? follower;
 
   /// Create a copy of Following
   /// with the given fields replaced by the non-null parameter values.
@@ -228,8 +239,13 @@ abstract mixin class _$FollowingCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      UserDetailed? followee,
-      UserDetailed? follower});
+      UserDetailedNotMe? followee,
+      UserDetailedNotMe? follower});
+
+  @override
+  $UserDetailedNotMeCopyWith<$Res>? get followee;
+  @override
+  $UserDetailedNotMeCopyWith<$Res>? get follower;
 }
 
 /// @nodoc
@@ -271,12 +287,40 @@ class __$FollowingCopyWithImpl<$Res> implements _$FollowingCopyWith<$Res> {
       followee: freezed == followee
           ? _self.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as UserDetailedNotMe?,
       follower: freezed == follower
           ? _self.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as UserDetailedNotMe?,
     ));
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get followee {
+    if (_self.followee == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.followee!, (value) {
+      return _then(_self.copyWith(followee: value));
+    });
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get follower {
+    if (_self.follower == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.follower!, (value) {
+      return _then(_self.copyWith(follower: value));
+    });
   }
 }
 

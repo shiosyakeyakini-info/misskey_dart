@@ -15,12 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FlashUpdateRequest {
-  String get flashId;
+  String? get flashId;
   String? get title;
   String? get summary;
   String? get script;
   List<String>? get permissions;
-  FlashVisibility? get visibility;
+  FlashUpdateVisibility? get visibility;
 
   /// Create a copy of FlashUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -66,12 +66,12 @@ abstract mixin class $FlashUpdateRequestCopyWith<$Res> {
       _$FlashUpdateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String flashId,
+      {String? flashId,
       String? title,
       String? summary,
       String? script,
       List<String>? permissions,
-      FlashVisibility? visibility});
+      FlashUpdateVisibility? visibility});
 }
 
 /// @nodoc
@@ -87,7 +87,7 @@ class _$FlashUpdateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? flashId = null,
+    Object? flashId = freezed,
     Object? title = freezed,
     Object? summary = freezed,
     Object? script = freezed,
@@ -95,10 +95,10 @@ class _$FlashUpdateRequestCopyWithImpl<$Res>
     Object? visibility = freezed,
   }) {
     return _then(_self.copyWith(
-      flashId: null == flashId
+      flashId: freezed == flashId
           ? _self.flashId
           : flashId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: freezed == title
           ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -118,7 +118,7 @@ class _$FlashUpdateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashVisibility?,
+              as FlashUpdateVisibility?,
     ));
   }
 }
@@ -127,7 +127,7 @@ class _$FlashUpdateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _FlashUpdateRequest implements FlashUpdateRequest {
   const _FlashUpdateRequest(
-      {required this.flashId,
+      {this.flashId,
       this.title,
       this.summary,
       this.script,
@@ -138,7 +138,7 @@ class _FlashUpdateRequest implements FlashUpdateRequest {
       _$FlashUpdateRequestFromJson(json);
 
   @override
-  final String flashId;
+  final String? flashId;
   @override
   final String? title;
   @override
@@ -156,7 +156,7 @@ class _FlashUpdateRequest implements FlashUpdateRequest {
   }
 
   @override
-  final FlashVisibility? visibility;
+  final FlashUpdateVisibility? visibility;
 
   /// Create a copy of FlashUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -208,12 +208,12 @@ abstract mixin class _$FlashUpdateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String flashId,
+      {String? flashId,
       String? title,
       String? summary,
       String? script,
       List<String>? permissions,
-      FlashVisibility? visibility});
+      FlashUpdateVisibility? visibility});
 }
 
 /// @nodoc
@@ -229,7 +229,7 @@ class __$FlashUpdateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? flashId = null,
+    Object? flashId = freezed,
     Object? title = freezed,
     Object? summary = freezed,
     Object? script = freezed,
@@ -237,10 +237,10 @@ class __$FlashUpdateRequestCopyWithImpl<$Res>
     Object? visibility = freezed,
   }) {
     return _then(_FlashUpdateRequest(
-      flashId: null == flashId
+      flashId: freezed == flashId
           ? _self.flashId
           : flashId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: freezed == title
           ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -260,7 +260,7 @@ class __$FlashUpdateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashVisibility?,
+              as FlashUpdateVisibility?,
     ));
   }
 }

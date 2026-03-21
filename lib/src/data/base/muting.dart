@@ -15,5 +15,5 @@ abstract class Muting with _$Muting {
     required UserDetailedNotMe mutee,
   }) = _Muting;
 
-  factory Muting.fromJson(Map<String, dynamic> json) => _$MutingFromJson(json);
+  factory Muting.fromJson(Map<String, Object?> json) => _$MutingFromJson(json);
 }

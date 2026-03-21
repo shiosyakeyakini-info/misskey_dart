@@ -8,15 +8,16 @@ part of 'hashtag.dart';
 
 _Hashtag _$HashtagFromJson(Map<String, dynamic> json) => _Hashtag(
       tag: json['tag'] as String,
-      mentionedUsersCount: (json['mentionedUsersCount'] as num).toInt(),
+      mentionedUsersCount: (json['mentionedUsersCount'] as num).toDouble(),
       mentionedLocalUsersCount:
-          (json['mentionedLocalUsersCount'] as num).toInt(),
+          (json['mentionedLocalUsersCount'] as num).toDouble(),
       mentionedRemoteUsersCount:
-          (json['mentionedRemoteUsersCount'] as num).toInt(),
-      attachedUsersCount: (json['attachedUsersCount'] as num).toInt(),
-      attachedLocalUsersCount: (json['attachedLocalUsersCount'] as num).toInt(),
+          (json['mentionedRemoteUsersCount'] as num).toDouble(),
+      attachedUsersCount: (json['attachedUsersCount'] as num).toDouble(),
+      attachedLocalUsersCount:
+          (json['attachedLocalUsersCount'] as num).toDouble(),
       attachedRemoteUsersCount:
-          (json['attachedRemoteUsersCount'] as num).toInt(),
+          (json['attachedRemoteUsersCount'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$HashtagToJson(_Hashtag instance) => <String, dynamic>{

@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsInvitationsCreateRequest {
-  String get roomId;
-  String get userId;
+  String? get roomId;
+  String? get userId;
 
   /// Create a copy of ChatRoomsInvitationsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -56,7 +56,7 @@ abstract mixin class $ChatRoomsInvitationsCreateRequestCopyWith<$Res> {
           $Res Function(ChatRoomsInvitationsCreateRequest) _then) =
       _$ChatRoomsInvitationsCreateRequestCopyWithImpl;
   @useResult
-  $Res call({String roomId, String userId});
+  $Res call({String? roomId, String? userId});
 }
 
 /// @nodoc
@@ -72,18 +72,18 @@ class _$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roomId = null,
-    Object? userId = null,
+    Object? roomId = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
+              as String?,
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -92,16 +92,15 @@ class _$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChatRoomsInvitationsCreateRequest
     implements ChatRoomsInvitationsCreateRequest {
-  const _ChatRoomsInvitationsCreateRequest(
-      {required this.roomId, required this.userId});
+  const _ChatRoomsInvitationsCreateRequest({this.roomId, this.userId});
   factory _ChatRoomsInvitationsCreateRequest.fromJson(
           Map<String, dynamic> json) =>
       _$ChatRoomsInvitationsCreateRequestFromJson(json);
 
   @override
-  final String roomId;
+  final String? roomId;
   @override
-  final String userId;
+  final String? userId;
 
   /// Create a copy of ChatRoomsInvitationsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -148,7 +147,7 @@ abstract mixin class _$ChatRoomsInvitationsCreateRequestCopyWith<$Res>
       __$ChatRoomsInvitationsCreateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roomId, String userId});
+  $Res call({String? roomId, String? userId});
 }
 
 /// @nodoc
@@ -164,18 +163,18 @@ class __$ChatRoomsInvitationsCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roomId = null,
-    Object? userId = null,
+    Object? roomId = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_ChatRoomsInvitationsCreateRequest(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
+              as String?,
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

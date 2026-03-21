@@ -7,14 +7,6 @@ part of 'role.dart';
 // **************************************************************************
 
 _Role _$RoleFromJson(Map<String, dynamic> json) => _Role(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      color: json['color'] as String?,
-      iconUrl: json['iconUrl'] as String?,
-      description: json['description'] as String,
-      isModerator: json['isModerator'] as bool,
-      isAdministrator: json['isAdministrator'] as bool,
-      displayOrder: (json['displayOrder'] as num).toInt(),
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       updatedAt:
@@ -33,14 +25,6 @@ _Role _$RoleFromJson(Map<String, dynamic> json) => _Role(
     );
 
 Map<String, dynamic> _$RoleToJson(_Role instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'color': instance.color,
-      'iconUrl': instance.iconUrl,
-      'description': instance.description,
-      'isModerator': instance.isModerator,
-      'isAdministrator': instance.isAdministrator,
-      'displayOrder': instance.displayOrder,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),
       'target': _$RoleTargetEnumMap[instance.target]!,

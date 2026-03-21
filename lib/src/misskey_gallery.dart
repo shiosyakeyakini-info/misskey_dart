@@ -10,74 +10,64 @@ class MisskeyGallery {
       : _apiService = apiService,
         posts = MisskeyGalleryPosts(apiService: apiService);
 
-  /// 人気なギャラリーの投稿の一覧を取得します。
-  Future<Iterable<GalleryPost>> featured(
-    GalleryFeaturedRequest request,
-  ) async {
-    final response =
-        await _apiService.post<List>("gallery/featured", request.toJson());
-    return response.map((e) => GalleryPost.fromJson(e));
+  /// gallery/featured
+  Future<Iterable<GalleryPost>> featured(GalleryFeaturedRequest request) async {
+    final response = await _apiService.post<List>("gallery/featured", request.toJson());
+    return response.map((e) => GalleryPost.fromJson(e as Map<String, dynamic>));
   }
 
-  /// いいねの多いギャラリーの投稿の一覧を取得します。
+  /// gallery/popular
   Future<Iterable<GalleryPost>> popular() async {
     final response = await _apiService.post<List>("gallery/popular", {});
-    return response.map((e) => GalleryPost.fromJson(e));
+    return response.map((e) => GalleryPost.fromJson(e as Map<String, dynamic>));
   }
+
+  /// gallery/posts
+  Future<Iterable<GalleryPost>> postsList(GalleryPostsRequest request) async {
+    final response = await _apiService.post<List>("gallery/posts", request.toJson());
+    return response.map((e) => GalleryPost.fromJson(e as Map<String, dynamic>));
+  }
+
 }
 
 class MisskeyGalleryPosts {
+
   final ApiService _apiService;
 
   MisskeyGalleryPosts({required ApiService apiService})
       : _apiService = apiService;
 
-  /// ギャラリーの投稿を作成します。
+  /// gallery/posts/create
   Future<GalleryPost> create(GalleryPostsCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "gallery/posts/create",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("gallery/posts/create", request.toJson());
     return GalleryPost.fromJson(response);
   }
 
-  /// ギャラリーの投稿を削除します。
+  /// gallery/posts/delete
   Future<void> delete(GalleryPostsDeleteRequest request) async {
-    await _apiService.post("gallery/posts/delete", request.toJson());
+    await _apiService.post<void>("gallery/posts/delete", request.toJson());
   }
 
-  /// ギャラリーの投稿をいいねします。
+  /// gallery/posts/like
   Future<void> like(GalleryPostsLikeRequest request) async {
-    await _apiService.post("gallery/posts/like", request.toJson());
+    await _apiService.post<void>("gallery/posts/like", request.toJson());
   }
 
-  /// ギャラリーの投稿の一覧を取得します。
-  Future<Iterable<GalleryPost>> posts(GalleryPostsRequest request) async {
-    final response =
-        await _apiService.post<List>("gallery/posts", request.toJson());
-    return response.map((e) => GalleryPost.fromJson(e));
-  }
-
-  /// ギャラリーの投稿の情報を取得します。
+  /// gallery/posts/show
   Future<GalleryPost> show(GalleryPostsShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "gallery/posts/show",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("gallery/posts/show", request.toJson());
     return GalleryPost.fromJson(response);
   }
 
-  /// ギャラリーの投稿のいいねを解除します。
+  /// gallery/posts/unlike
   Future<void> unlike(GalleryPostsUnlikeRequest request) async {
-    await _apiService.post("gallery/posts/unlike", request.toJson());
+    await _apiService.post<void>("gallery/posts/unlike", request.toJson());
   }
 
-  /// ギャラリーの投稿を更新します。
+  /// gallery/posts/update
   Future<GalleryPost> update(GalleryPostsUpdateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "gallery/posts/update",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("gallery/posts/update", request.toJson());
     return GalleryPost.fromJson(response);
   }
+
 }

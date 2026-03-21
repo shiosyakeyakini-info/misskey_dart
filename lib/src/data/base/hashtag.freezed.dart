@@ -16,12 +16,12 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Hashtag {
   String get tag;
-  int get mentionedUsersCount;
-  int get mentionedLocalUsersCount;
-  int get mentionedRemoteUsersCount;
-  int get attachedUsersCount;
-  int get attachedLocalUsersCount;
-  int get attachedRemoteUsersCount;
+  double get mentionedUsersCount;
+  double get mentionedLocalUsersCount;
+  double get mentionedRemoteUsersCount;
+  double get attachedUsersCount;
+  double get attachedLocalUsersCount;
+  double get attachedRemoteUsersCount;
 
   /// Create a copy of Hashtag
   /// with the given fields replaced by the non-null parameter values.
@@ -82,12 +82,12 @@ abstract mixin class $HashtagCopyWith<$Res> {
   @useResult
   $Res call(
       {String tag,
-      int mentionedUsersCount,
-      int mentionedLocalUsersCount,
-      int mentionedRemoteUsersCount,
-      int attachedUsersCount,
-      int attachedLocalUsersCount,
-      int attachedRemoteUsersCount});
+      double mentionedUsersCount,
+      double mentionedLocalUsersCount,
+      double mentionedRemoteUsersCount,
+      double attachedUsersCount,
+      double attachedLocalUsersCount,
+      double attachedRemoteUsersCount});
 }
 
 /// @nodoc
@@ -118,27 +118,27 @@ class _$HashtagCopyWithImpl<$Res> implements $HashtagCopyWith<$Res> {
       mentionedUsersCount: null == mentionedUsersCount
           ? _self.mentionedUsersCount
           : mentionedUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       mentionedLocalUsersCount: null == mentionedLocalUsersCount
           ? _self.mentionedLocalUsersCount
           : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       mentionedRemoteUsersCount: null == mentionedRemoteUsersCount
           ? _self.mentionedRemoteUsersCount
           : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       attachedUsersCount: null == attachedUsersCount
           ? _self.attachedUsersCount
           : attachedUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       attachedLocalUsersCount: null == attachedLocalUsersCount
           ? _self.attachedLocalUsersCount
           : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       attachedRemoteUsersCount: null == attachedRemoteUsersCount
           ? _self.attachedRemoteUsersCount
           : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -160,17 +160,17 @@ class _Hashtag implements Hashtag {
   @override
   final String tag;
   @override
-  final int mentionedUsersCount;
+  final double mentionedUsersCount;
   @override
-  final int mentionedLocalUsersCount;
+  final double mentionedLocalUsersCount;
   @override
-  final int mentionedRemoteUsersCount;
+  final double mentionedRemoteUsersCount;
   @override
-  final int attachedUsersCount;
+  final double attachedUsersCount;
   @override
-  final int attachedLocalUsersCount;
+  final double attachedLocalUsersCount;
   @override
-  final int attachedRemoteUsersCount;
+  final double attachedRemoteUsersCount;
 
   /// Create a copy of Hashtag
   /// with the given fields replaced by the non-null parameter values.
@@ -237,12 +237,12 @@ abstract mixin class _$HashtagCopyWith<$Res> implements $HashtagCopyWith<$Res> {
   @useResult
   $Res call(
       {String tag,
-      int mentionedUsersCount,
-      int mentionedLocalUsersCount,
-      int mentionedRemoteUsersCount,
-      int attachedUsersCount,
-      int attachedLocalUsersCount,
-      int attachedRemoteUsersCount});
+      double mentionedUsersCount,
+      double mentionedLocalUsersCount,
+      double mentionedRemoteUsersCount,
+      double attachedUsersCount,
+      double attachedLocalUsersCount,
+      double attachedRemoteUsersCount});
 }
 
 /// @nodoc
@@ -273,27 +273,27 @@ class __$HashtagCopyWithImpl<$Res> implements _$HashtagCopyWith<$Res> {
       mentionedUsersCount: null == mentionedUsersCount
           ? _self.mentionedUsersCount
           : mentionedUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       mentionedLocalUsersCount: null == mentionedLocalUsersCount
           ? _self.mentionedLocalUsersCount
           : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       mentionedRemoteUsersCount: null == mentionedRemoteUsersCount
           ? _self.mentionedRemoteUsersCount
           : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       attachedUsersCount: null == attachedUsersCount
           ? _self.attachedUsersCount
           : attachedUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       attachedLocalUsersCount: null == attachedLocalUsersCount
           ? _self.attachedLocalUsersCount
           : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       attachedRemoteUsersCount: null == attachedRemoteUsersCount
           ? _self.attachedRemoteUsersCount
           : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }

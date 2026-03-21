@@ -30,6 +30,7 @@ Map<String, dynamic> _$UsersUsersRequestToJson(_UsersUsersRequest instance) =>
 const _$UsersStateEnumMap = {
   UsersState.all: 'all',
   UsersState.alive: 'alive',
+  UsersState.unknown: 'unknown',
 };
 
 const _$OriginEnumMap = {

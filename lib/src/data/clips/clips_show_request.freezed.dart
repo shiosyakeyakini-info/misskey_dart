@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsShowRequest {
-  String get clipId;
+  String? get clipId;
 
   /// Create a copy of ClipsShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $ClipsShowRequestCopyWith<$Res> {
           ClipsShowRequest value, $Res Function(ClipsShowRequest) _then) =
       _$ClipsShowRequestCopyWithImpl;
   @useResult
-  $Res call({String clipId});
+  $Res call({String? clipId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$ClipsShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clipId = null,
+    Object? clipId = freezed,
   }) {
     return _then(_self.copyWith(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$ClipsShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ClipsShowRequest implements ClipsShowRequest {
-  const _ClipsShowRequest({required this.clipId});
+  const _ClipsShowRequest({this.clipId});
   factory _ClipsShowRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsShowRequestFromJson(json);
 
   @override
-  final String clipId;
+  final String? clipId;
 
   /// Create a copy of ClipsShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$ClipsShowRequestCopyWith<$Res>
       __$ClipsShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String clipId});
+  $Res call({String? clipId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$ClipsShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? clipId = null,
+    Object? clipId = freezed,
   }) {
     return _then(_ClipsShowRequest(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

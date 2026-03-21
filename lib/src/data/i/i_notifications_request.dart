@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/notification_type.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_notifications_request.freezed.dart';
 part 'i_notifications_request.g.dart';
@@ -7,16 +7,15 @@ part 'i_notifications_request.g.dart';
 @freezed
 abstract class INotificationsRequest with _$INotificationsRequest {
   const factory INotificationsRequest({
-    @Assert('limit > 0') int? limit,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    bool? following,
-    bool? unreadOnly,
-    bool? markAsRead,
-    List<NotificationType>? includeTypes,
-    List<NotificationType>? excludeTypes,
-  }) = _INotificationRequest;
+    int? sinceDate,
+    int? untilDate,
+    @Default(true) bool? markAsRead,
+    List<INotificationsIncludeTypesItem>? includeTypes,
+    List<INotificationsExcludeTypesItem>? excludeTypes,
+  }) = _INotificationsRequest;
 
-  factory INotificationsRequest.fromJson(Map<String, Object?> json) =>
-      _$INotificationsRequestFromJson(json);
+  factory INotificationsRequest.fromJson(Map<String, Object?> json) => _$INotificationsRequestFromJson(json);
 }

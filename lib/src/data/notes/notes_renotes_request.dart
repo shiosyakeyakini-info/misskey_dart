@@ -1,17 +1,19 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_renotes_request.freezed.dart';
 part 'notes_renotes_request.g.dart';
 
 @freezed
-abstract class NotesRenoteRequest with _$NotesRenoteRequest {
-  const factory NotesRenoteRequest({
-    required String noteId,
-    int? limit,
+abstract class NotesRenotesRequest with _$NotesRenotesRequest {
+  const factory NotesRenotesRequest({
+    String? noteId,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-  }) = _NotesRenoteRequest;
+    int? sinceDate,
+    int? untilDate,
+  }) = _NotesRenotesRequest;
 
-  factory NotesRenoteRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesRenoteRequestFromJson(json);
+  factory NotesRenotesRequest.fromJson(Map<String, Object?> json) => _$NotesRenotesRequestFromJson(json);
 }

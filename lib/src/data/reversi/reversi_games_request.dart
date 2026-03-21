@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'reversi_games_request.freezed.dart';
 part 'reversi_games_request.g.dart';
@@ -6,12 +7,13 @@ part 'reversi_games_request.g.dart';
 @freezed
 abstract class ReversiGamesRequest with _$ReversiGamesRequest {
   const factory ReversiGamesRequest({
-    int? limit,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    bool? my,
+    int? sinceDate,
+    int? untilDate,
+    @Default(false) bool? my,
   }) = _ReversiGamesRequest;
 
-  factory ReversiGamesRequest.fromJson(Map<String, dynamic> json) =>
-      _$ReversiGamesRequestFromJson(json);
+  factory ReversiGamesRequest.fromJson(Map<String, Object?> json) => _$ReversiGamesRequestFromJson(json);
 }

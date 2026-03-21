@@ -9,7 +9,7 @@ part of 'following_create_request.dart';
 _FollowingCreateRequest _$FollowingCreateRequestFromJson(
         Map<String, dynamic> json) =>
     _FollowingCreateRequest(
-      userId: json['userId'] as String,
+      userId: json['userId'] as String?,
       withReplies: json['withReplies'] as bool?,
     );
 

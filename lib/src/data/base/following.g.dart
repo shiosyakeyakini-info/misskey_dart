@@ -14,10 +14,12 @@ _Following _$FollowingFromJson(Map<String, dynamic> json) => _Following(
       followerId: json['followerId'] as String,
       followee: json['followee'] == null
           ? null
-          : UserDetailed.fromJson(json['followee'] as Map<String, dynamic>),
+          : UserDetailedNotMe.fromJson(
+              json['followee'] as Map<String, dynamic>),
       follower: json['follower'] == null
           ? null
-          : UserDetailed.fromJson(json['follower'] as Map<String, dynamic>),
+          : UserDetailedNotMe.fromJson(
+              json['follower'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FollowingToJson(_Following instance) =>

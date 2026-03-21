@@ -39,6 +39,7 @@ const _$UsersSortEnumMap = {
 const _$UsersStateEnumMap = {
   UsersState.all: 'all',
   UsersState.alive: 'alive',
+  UsersState.unknown: 'unknown',
 };
 
 const _$UsersOriginEnumMap = {

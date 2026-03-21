@@ -22,10 +22,10 @@ mixin _$Clip {
   DateTime? get lastClippedAt;
   String get userId;
   UserLite get user;
-  String? get name;
+  String get name;
   String? get description;
   bool get isPublic;
-  int get favoritedCount;
+  double get favoritedCount;
   bool? get isFavorited;
   int? get notesCount;
 
@@ -97,10 +97,10 @@ abstract mixin class $ClipCopyWith<$Res> {
       @NullableDateTimeConverter() DateTime? lastClippedAt,
       String userId,
       UserLite user,
-      String? name,
+      String name,
       String? description,
       bool isPublic,
-      int favoritedCount,
+      double favoritedCount,
       bool? isFavorited,
       int? notesCount});
 
@@ -124,7 +124,7 @@ class _$ClipCopyWithImpl<$Res> implements $ClipCopyWith<$Res> {
     Object? lastClippedAt = freezed,
     Object? userId = null,
     Object? user = null,
-    Object? name = freezed,
+    Object? name = null,
     Object? description = freezed,
     Object? isPublic = null,
     Object? favoritedCount = null,
@@ -152,10 +152,10 @@ class _$ClipCopyWithImpl<$Res> implements $ClipCopyWith<$Res> {
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserLite,
-      name: freezed == name
+      name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -167,7 +167,7 @@ class _$ClipCopyWithImpl<$Res> implements $ClipCopyWith<$Res> {
       favoritedCount: null == favoritedCount
           ? _self.favoritedCount
           : favoritedCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isFavorited: freezed == isFavorited
           ? _self.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
@@ -199,7 +199,7 @@ class _Clip implements Clip {
       @NullableDateTimeConverter() this.lastClippedAt,
       required this.userId,
       required this.user,
-      this.name,
+      required this.name,
       this.description,
       required this.isPublic,
       required this.favoritedCount,
@@ -220,13 +220,13 @@ class _Clip implements Clip {
   @override
   final UserLite user;
   @override
-  final String? name;
+  final String name;
   @override
   final String? description;
   @override
   final bool isPublic;
   @override
-  final int favoritedCount;
+  final double favoritedCount;
   @override
   final bool? isFavorited;
   @override
@@ -306,10 +306,10 @@ abstract mixin class _$ClipCopyWith<$Res> implements $ClipCopyWith<$Res> {
       @NullableDateTimeConverter() DateTime? lastClippedAt,
       String userId,
       UserLite user,
-      String? name,
+      String name,
       String? description,
       bool isPublic,
-      int favoritedCount,
+      double favoritedCount,
       bool? isFavorited,
       int? notesCount});
 
@@ -334,7 +334,7 @@ class __$ClipCopyWithImpl<$Res> implements _$ClipCopyWith<$Res> {
     Object? lastClippedAt = freezed,
     Object? userId = null,
     Object? user = null,
-    Object? name = freezed,
+    Object? name = null,
     Object? description = freezed,
     Object? isPublic = null,
     Object? favoritedCount = null,
@@ -362,10 +362,10 @@ class __$ClipCopyWithImpl<$Res> implements _$ClipCopyWith<$Res> {
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserLite,
-      name: freezed == name
+      name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -377,7 +377,7 @@ class __$ClipCopyWithImpl<$Res> implements _$ClipCopyWith<$Res> {
       favoritedCount: null == favoritedCount
           ? _self.favoritedCount
           : favoritedCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isFavorited: freezed == isFavorited
           ? _self.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable

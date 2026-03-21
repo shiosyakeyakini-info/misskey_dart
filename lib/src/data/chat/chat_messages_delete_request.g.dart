@@ -9,7 +9,7 @@ part of 'chat_messages_delete_request.dart';
 _ChatMessagesDeleteRequest _$ChatMessagesDeleteRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatMessagesDeleteRequest(
-      messageId: json['messageId'] as String,
+      messageId: json['messageId'] as String?,
     );
 
 Map<String, dynamic> _$ChatMessagesDeleteRequestToJson(

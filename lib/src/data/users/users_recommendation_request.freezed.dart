@@ -90,13 +90,15 @@ class _$UsersRecommendationRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _UsersRecommendationRequest implements UsersRecommendationRequest {
-  const _UsersRecommendationRequest({this.limit, this.offset});
+  const _UsersRecommendationRequest({this.limit = 10, this.offset = 0});
   factory _UsersRecommendationRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersRecommendationRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
+  @JsonKey()
   final int? offset;
 
   /// Create a copy of UsersRecommendationRequest

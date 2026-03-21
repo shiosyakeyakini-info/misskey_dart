@@ -1,19 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_search_by_username_and_host_request.freezed.dart';
 part 'users_search_by_username_and_host_request.g.dart';
 
 @freezed
-abstract class UsersSearchByUsernameAndHostRequest
-    with _$UsersSearchByUsernameAndHostRequest {
+abstract class UsersSearchByUsernameAndHostRequest with _$UsersSearchByUsernameAndHostRequest {
   const factory UsersSearchByUsernameAndHostRequest({
-    int? limit,
-    bool? detail,
-    String? username,
-    String? host,
+    @Default(10) int? limit,
+    @Default(true) bool? detail,
   }) = _UsersSearchByUsernameAndHostRequest;
 
-  factory UsersSearchByUsernameAndHostRequest.fromJson(
-          Map<String, dynamic> json) =>
-      _$UsersSearchByUsernameAndHostRequestFromJson(json);
+  factory UsersSearchByUsernameAndHostRequest.fromJson(Map<String, Object?> json) => _$UsersSearchByUsernameAndHostRequestFromJson(json);
 }

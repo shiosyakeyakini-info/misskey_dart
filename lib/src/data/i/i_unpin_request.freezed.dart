@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUnpinRequest {
-  String get noteId;
+  String? get noteId;
 
   /// Create a copy of IUnpinRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $IUnpinRequestCopyWith<$Res> {
           IUnpinRequest value, $Res Function(IUnpinRequest) _then) =
       _$IUnpinRequestCopyWithImpl;
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$IUnpinRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$IUnpinRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _IUnpinRequest implements IUnpinRequest {
-  const _IUnpinRequest({required this.noteId});
+  const _IUnpinRequest({this.noteId});
   factory _IUnpinRequest.fromJson(Map<String, dynamic> json) =>
       _$IUnpinRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
 
   /// Create a copy of IUnpinRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$IUnpinRequestCopyWith<$Res>
       __$IUnpinRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$IUnpinRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_IUnpinRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

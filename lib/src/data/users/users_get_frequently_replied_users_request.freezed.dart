@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersGetFrequentlyRepliedUsersRequest {
-  String get userId;
+  String? get userId;
   int? get limit;
 
   /// Create a copy of UsersGetFrequentlyRepliedUsersRequest
@@ -57,7 +57,7 @@ abstract mixin class $UsersGetFrequentlyRepliedUsersRequestCopyWith<$Res> {
           $Res Function(UsersGetFrequentlyRepliedUsersRequest) _then) =
       _$UsersGetFrequentlyRepliedUsersRequestCopyWithImpl;
   @useResult
-  $Res call({String userId, int? limit});
+  $Res call({String? userId, int? limit});
 }
 
 /// @nodoc
@@ -73,14 +73,14 @@ class _$UsersGetFrequentlyRepliedUsersRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -93,15 +93,15 @@ class _$UsersGetFrequentlyRepliedUsersRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _UsersGetFrequentlyRepliedUsersRequest
     implements UsersGetFrequentlyRepliedUsersRequest {
-  const _UsersGetFrequentlyRepliedUsersRequest(
-      {required this.userId, this.limit});
+  const _UsersGetFrequentlyRepliedUsersRequest({this.userId, this.limit = 10});
   factory _UsersGetFrequentlyRepliedUsersRequest.fromJson(
           Map<String, dynamic> json) =>
       _$UsersGetFrequentlyRepliedUsersRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of UsersGetFrequentlyRepliedUsersRequest
@@ -149,7 +149,7 @@ abstract mixin class _$UsersGetFrequentlyRepliedUsersRequestCopyWith<$Res>
       __$UsersGetFrequentlyRepliedUsersRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId, int? limit});
+  $Res call({String? userId, int? limit});
 }
 
 /// @nodoc
@@ -165,14 +165,14 @@ class __$UsersGetFrequentlyRepliedUsersRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? limit = freezed,
   }) {
     return _then(_UsersGetFrequentlyRepliedUsersRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

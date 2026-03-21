@@ -15,11 +15,13 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsNotesRequest {
-  @Assert('limit > 0')
+  String? get clipId;
   int? get limit;
-  String get clipId;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
+  String? get search;
 
   /// Create a copy of ClipsNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -37,19 +39,25 @@ mixin _$ClipsNotesRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ClipsNotesRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.search, search) || other.search == search));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, clipId, sinceId, untilId);
+  int get hashCode => Object.hash(runtimeType, clipId, limit, sinceId, untilId,
+      sinceDate, untilDate, search);
 
   @override
   String toString() {
-    return 'ClipsNotesRequest(limit: $limit, clipId: $clipId, sinceId: $sinceId, untilId: $untilId)';
+    return 'ClipsNotesRequest(clipId: $clipId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, search: $search)';
   }
 }
 
@@ -60,10 +68,13 @@ abstract mixin class $ClipsNotesRequestCopyWith<$Res> {
       _$ClipsNotesRequestCopyWithImpl;
   @useResult
   $Res call(
-      {@Assert('limit > 0') int? limit,
-      String clipId,
+      {String? clipId,
+      int? limit,
       String? sinceId,
-      String? untilId});
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? search});
 }
 
 /// @nodoc
@@ -79,20 +90,23 @@ class _$ClipsNotesRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? clipId = freezed,
     Object? limit = freezed,
-    Object? clipId = null,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? search = freezed,
   }) {
     return _then(_self.copyWith(
+      clipId: freezed == clipId
+          ? _self.clipId
+          : clipId // ignore: cast_nullable_to_non_nullable
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      clipId: null == clipId
-          ? _self.clipId
-          : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -100,6 +114,18 @@ class _$ClipsNotesRequestCopyWithImpl<$Res>
       untilId: freezed == untilId
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      search: freezed == search
+          ? _self.search
+          : search // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -109,22 +135,31 @@ class _$ClipsNotesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ClipsNotesRequest implements ClipsNotesRequest {
   const _ClipsNotesRequest(
-      {@Assert('limit > 0') this.limit,
-      required this.clipId,
+      {this.clipId,
+      this.limit = 10,
       this.sinceId,
-      this.untilId});
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.search});
   factory _ClipsNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsNotesRequestFromJson(json);
 
   @override
-  @Assert('limit > 0')
-  final int? limit;
+  final String? clipId;
   @override
-  final String clipId;
+  @JsonKey()
+  final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  final String? search;
 
   /// Create a copy of ClipsNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -146,19 +181,25 @@ class _ClipsNotesRequest implements ClipsNotesRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ClipsNotesRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.clipId, clipId) || other.clipId == clipId) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.search, search) || other.search == search));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, clipId, sinceId, untilId);
+  int get hashCode => Object.hash(runtimeType, clipId, limit, sinceId, untilId,
+      sinceDate, untilDate, search);
 
   @override
   String toString() {
-    return 'ClipsNotesRequest(limit: $limit, clipId: $clipId, sinceId: $sinceId, untilId: $untilId)';
+    return 'ClipsNotesRequest(clipId: $clipId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, search: $search)';
   }
 }
 
@@ -171,10 +212,13 @@ abstract mixin class _$ClipsNotesRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@Assert('limit > 0') int? limit,
-      String clipId,
+      {String? clipId,
+      int? limit,
       String? sinceId,
-      String? untilId});
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? search});
 }
 
 /// @nodoc
@@ -190,20 +234,23 @@ class __$ClipsNotesRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? clipId = freezed,
     Object? limit = freezed,
-    Object? clipId = null,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? search = freezed,
   }) {
     return _then(_ClipsNotesRequest(
+      clipId: freezed == clipId
+          ? _self.clipId
+          : clipId // ignore: cast_nullable_to_non_nullable
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      clipId: null == clipId
-          ? _self.clipId
-          : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -211,6 +258,18 @@ class __$ClipsNotesRequestCopyWithImpl<$Res>
       untilId: freezed == untilId
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      search: freezed == search
+          ? _self.search
+          : search // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }

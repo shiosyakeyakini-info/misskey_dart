@@ -72,8 +72,10 @@ field_overrides:
       dart_type: "List<MuteWord>"
       default: "[]"
 
-# Schema name overrides for inline schemas
+# Schema name overrides for inline schemas and component schemas
 schema_name_overrides:
+  # Component schema renames (avoid name conflicts)
+  "Channel": CommunityChannel
   # Inline objects
   "Note.properties.poll": NotePoll
   "Note.properties.poll.properties.choices.items": NotePollChoice
@@ -140,13 +142,51 @@ endpoint_overrides:
   "/notes/update":
     extra_options:
       excludeRemoveNullPredicate: "(key, _) => key == \"cw\""
+  # oneOf response types that need manual return type specification
+  "/users/relation":
+    return_type: void
+  "/users/show":
+    return_type: void
 
 # Manual files (skip generation entirely - not even generated to output)
 manual_files:
+  # Core infrastructure (hand-maintained)
   - "lib/src/services/"
   - "lib/src/converters/"
   - "lib/src/data/streaming/"
   - "lib/src/util/"
+  # Enums with custom logic (priority, value property, custom JsonConverter)
+  - "lib/src/enums/note_visibility.dart"
+  - "lib/src/enums/permissions.dart"
+  - "lib/src/enums/online_status.dart"
+  - "lib/src/enums/users_sort_type.dart"
+  - "lib/src/enums/hashtags_list_sort_type.dart"
+  - "lib/src/enums/notification_type.dart"
+  # Streaming-only enums (not in api.json)
+  - "lib/src/enums/streaming_request_type.dart"
+  - "lib/src/enums/streaming_response_type.dart"
+  - "lib/src/enums/note_updated_event_type.dart"
+  - "lib/src/enums/channel_event_type.dart"
+  - "lib/src/enums/broadcast_event_type.dart"
+  - "lib/src/enums/channel.dart"
+  # Prevent auto-generated duplicates of manual enums in data/base/
+  - "lib/src/data/base/note_visibility.dart"
+  - "lib/src/data/base/online_status.dart"
+  - "lib/src/data/base/notification_type.dart"
+  # Main class (contains StreamingService initialization)
+  - "lib/src/misskey_dart_base.dart"
+  # User hierarchy (abstract classes + complex fromJson, generator can't fully produce)
+  - "lib/src/data/base/user.dart"
+  # Types defined inline in user.dart (prevent duplicate generation)
+  - "lib/src/data/base/user_avatar_decoration.dart"
+  - "lib/src/data/base/user_badge_role.dart"
+  - "lib/src/data/base/user_instance_info.dart"
+  - "lib/src/data/base/chat_scope.dart"
+  - "lib/src/data/base/notify.dart"
+  - "lib/src/data/base/two_factor_backup_codes_stock.dart"
+  - "lib/src/data/base/chat_availability.dart"
+  # Page content hierarchy (uses custom converter)
+  - "lib/src/data/base/page.dart"
 
 # number type fields that should be int
 number_as_int:

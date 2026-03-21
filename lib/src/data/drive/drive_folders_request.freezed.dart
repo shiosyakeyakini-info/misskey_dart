@@ -18,6 +18,8 @@ mixin _$DriveFoldersRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   String? get folderId;
 
   /// Create a copy of DriveFoldersRequest
@@ -39,18 +41,22 @@ mixin _$DriveFoldersRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, folderId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, folderId);
 
   @override
   String toString() {
-    return 'DriveFoldersRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, folderId: $folderId)';
+    return 'DriveFoldersRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, folderId: $folderId)';
   }
 }
 
@@ -60,7 +66,13 @@ abstract mixin class $DriveFoldersRequestCopyWith<$Res> {
           DriveFoldersRequest value, $Res Function(DriveFoldersRequest) _then) =
       _$DriveFoldersRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId, String? folderId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? folderId});
 }
 
 /// @nodoc
@@ -79,6 +91,8 @@ class _$DriveFoldersRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? folderId = freezed,
   }) {
     return _then(_self.copyWith(
@@ -94,6 +108,14 @@ class _$DriveFoldersRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       folderId: freezed == folderId
           ? _self.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
@@ -106,17 +128,28 @@ class _$DriveFoldersRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _DriveFoldersRequest implements DriveFoldersRequest {
   const _DriveFoldersRequest(
-      {this.limit, this.sinceId, this.untilId, this.folderId});
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.folderId = null});
   factory _DriveFoldersRequest.fromJson(Map<String, dynamic> json) =>
       _$DriveFoldersRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final String? folderId;
 
   /// Create a copy of DriveFoldersRequest
@@ -143,18 +176,22 @@ class _DriveFoldersRequest implements DriveFoldersRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, folderId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, folderId);
 
   @override
   String toString() {
-    return 'DriveFoldersRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, folderId: $folderId)';
+    return 'DriveFoldersRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, folderId: $folderId)';
   }
 }
 
@@ -166,7 +203,13 @@ abstract mixin class _$DriveFoldersRequestCopyWith<$Res>
       __$DriveFoldersRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId, String? folderId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? folderId});
 }
 
 /// @nodoc
@@ -185,6 +228,8 @@ class __$DriveFoldersRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? folderId = freezed,
   }) {
     return _then(_DriveFoldersRequest(
@@ -200,6 +245,14 @@ class __$DriveFoldersRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       folderId: freezed == folderId
           ? _self.folderId
           : folderId // ignore: cast_nullable_to_non_nullable

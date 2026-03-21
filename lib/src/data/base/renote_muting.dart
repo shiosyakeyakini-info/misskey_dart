@@ -14,6 +14,5 @@ abstract class RenoteMuting with _$RenoteMuting {
     required UserDetailedNotMe mutee,
   }) = _RenoteMuting;
 
-  factory RenoteMuting.fromJson(Map<String, dynamic> json) =>
-      _$RenoteMutingFromJson(json);
+  factory RenoteMuting.fromJson(Map<String, Object?> json) => _$RenoteMutingFromJson(json);
 }

@@ -9,7 +9,7 @@ part of 'chat_rooms_update_request.dart';
 _ChatRoomsUpdateRequest _$ChatRoomsUpdateRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatRoomsUpdateRequest(
-      roomId: json['roomId'] as String,
+      roomId: json['roomId'] as String?,
       name: json['name'] as String?,
       description: json['description'] as String?,
     );

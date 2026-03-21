@@ -15,13 +15,15 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsUpdateRequest {
-  String get channelId;
+  String? get channelId;
   String? get name;
   String? get description;
   String? get bannerId;
   bool? get isArchived;
   List<String>? get pinnedNoteIds;
   String? get color;
+  bool? get isSensitive;
+  bool? get allowRenoteToExternal;
 
   /// Create a copy of ChannelsUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -50,7 +52,11 @@ mixin _$ChannelsUpdateRequest {
                 other.isArchived == isArchived) &&
             const DeepCollectionEquality()
                 .equals(other.pinnedNoteIds, pinnedNoteIds) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
+                other.allowRenoteToExternal == allowRenoteToExternal));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -63,11 +69,13 @@ mixin _$ChannelsUpdateRequest {
       bannerId,
       isArchived,
       const DeepCollectionEquality().hash(pinnedNoteIds),
-      color);
+      color,
+      isSensitive,
+      allowRenoteToExternal);
 
   @override
   String toString() {
-    return 'ChannelsUpdateRequest(channelId: $channelId, name: $name, description: $description, bannerId: $bannerId, isArchived: $isArchived, pinnedNoteIds: $pinnedNoteIds, color: $color)';
+    return 'ChannelsUpdateRequest(channelId: $channelId, name: $name, description: $description, bannerId: $bannerId, isArchived: $isArchived, pinnedNoteIds: $pinnedNoteIds, color: $color, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal)';
   }
 }
 
@@ -78,13 +86,15 @@ abstract mixin class $ChannelsUpdateRequestCopyWith<$Res> {
       _$ChannelsUpdateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String channelId,
+      {String? channelId,
       String? name,
       String? description,
       String? bannerId,
       bool? isArchived,
       List<String>? pinnedNoteIds,
-      String? color});
+      String? color,
+      bool? isSensitive,
+      bool? allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -100,19 +110,21 @@ class _$ChannelsUpdateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
     Object? name = freezed,
     Object? description = freezed,
     Object? bannerId = freezed,
     Object? isArchived = freezed,
     Object? pinnedNoteIds = freezed,
     Object? color = freezed,
+    Object? isSensitive = freezed,
+    Object? allowRenoteToExternal = freezed,
   }) {
     return _then(_self.copyWith(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -137,6 +149,14 @@ class _$ChannelsUpdateRequestCopyWithImpl<$Res>
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSensitive: freezed == isSensitive
+          ? _self.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowRenoteToExternal: freezed == allowRenoteToExternal
+          ? _self.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -145,19 +165,21 @@ class _$ChannelsUpdateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChannelsUpdateRequest implements ChannelsUpdateRequest {
   const _ChannelsUpdateRequest(
-      {required this.channelId,
+      {this.channelId,
       this.name,
       this.description,
       this.bannerId,
       this.isArchived,
       final List<String>? pinnedNoteIds,
-      this.color})
+      this.color,
+      this.isSensitive,
+      this.allowRenoteToExternal})
       : _pinnedNoteIds = pinnedNoteIds;
   factory _ChannelsUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsUpdateRequestFromJson(json);
 
   @override
-  final String channelId;
+  final String? channelId;
   @override
   final String? name;
   @override
@@ -178,6 +200,10 @@ class _ChannelsUpdateRequest implements ChannelsUpdateRequest {
 
   @override
   final String? color;
+  @override
+  final bool? isSensitive;
+  @override
+  final bool? allowRenoteToExternal;
 
   /// Create a copy of ChannelsUpdateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -211,7 +237,11 @@ class _ChannelsUpdateRequest implements ChannelsUpdateRequest {
                 other.isArchived == isArchived) &&
             const DeepCollectionEquality()
                 .equals(other._pinnedNoteIds, _pinnedNoteIds) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
+                other.allowRenoteToExternal == allowRenoteToExternal));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -224,11 +254,13 @@ class _ChannelsUpdateRequest implements ChannelsUpdateRequest {
       bannerId,
       isArchived,
       const DeepCollectionEquality().hash(_pinnedNoteIds),
-      color);
+      color,
+      isSensitive,
+      allowRenoteToExternal);
 
   @override
   String toString() {
-    return 'ChannelsUpdateRequest(channelId: $channelId, name: $name, description: $description, bannerId: $bannerId, isArchived: $isArchived, pinnedNoteIds: $pinnedNoteIds, color: $color)';
+    return 'ChannelsUpdateRequest(channelId: $channelId, name: $name, description: $description, bannerId: $bannerId, isArchived: $isArchived, pinnedNoteIds: $pinnedNoteIds, color: $color, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal)';
   }
 }
 
@@ -241,13 +273,15 @@ abstract mixin class _$ChannelsUpdateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String channelId,
+      {String? channelId,
       String? name,
       String? description,
       String? bannerId,
       bool? isArchived,
       List<String>? pinnedNoteIds,
-      String? color});
+      String? color,
+      bool? isSensitive,
+      bool? allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -263,19 +297,21 @@ class __$ChannelsUpdateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
     Object? name = freezed,
     Object? description = freezed,
     Object? bannerId = freezed,
     Object? isArchived = freezed,
     Object? pinnedNoteIds = freezed,
     Object? color = freezed,
+    Object? isSensitive = freezed,
+    Object? allowRenoteToExternal = freezed,
   }) {
     return _then(_ChannelsUpdateRequest(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -300,6 +336,14 @@ class __$ChannelsUpdateRequestCopyWithImpl<$Res>
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSensitive: freezed == isSensitive
+          ? _self.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowRenoteToExternal: freezed == allowRenoteToExternal
+          ? _self.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }

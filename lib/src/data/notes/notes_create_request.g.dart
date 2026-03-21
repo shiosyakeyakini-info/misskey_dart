@@ -8,70 +8,68 @@ part of 'notes_create_request.dart';
 
 _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
     _NotesCreateRequest(
-      visibility: _$JsonConverterFromJson<String, NoteVisibility>(
-          json['visibility'], const NoteVisibilityJsonConverter().fromJson),
+      visibility: $enumDecodeNullable(
+              _$NotesCreateVisibilityEnumMap, json['visibility']) ??
+          NotesCreateVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      text: json['text'] as String?,
       cw: json['cw'] as String?,
-      localOnly: json['localOnly'] as bool?,
+      localOnly: json['localOnly'] as bool? ?? false,
       reactionAcceptance: $enumDecodeNullable(
-          _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
-      noExtractMentions: json['noExtractMentions'] as bool?,
-      noExtractHashtags: json['noExtractHashtags'] as bool?,
-      noExtractEmojis: json['noExtractEmojis'] as bool?,
+              _$NotesCreateReactionAcceptanceEnumMap,
+              json['reactionAcceptance']) ??
+          null,
+      noExtractMentions: json['noExtractMentions'] as bool? ?? false,
+      noExtractHashtags: json['noExtractHashtags'] as bool? ?? false,
+      noExtractEmojis: json['noExtractEmojis'] as bool? ?? false,
+      replyId: json['replyId'] as String?,
+      renoteId: json['renoteId'] as String?,
+      channelId: json['channelId'] as String?,
+      text: json['text'] as String?,
       fileIds:
           (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
       mediaIds: (json['mediaIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      replyId: json['replyId'] as String?,
-      renoteId: json['renoteId'] as String?,
-      channelId: json['channelId'] as String?,
       poll: json['poll'] == null
           ? null
-          : NotesCreatePollRequest.fromJson(
-              json['poll'] as Map<String, dynamic>),
+          : NotesCreatePoll.fromJson(json['poll'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$NotesCreateRequestToJson(_NotesCreateRequest instance) =>
     <String, dynamic>{
-      'visibility': _$JsonConverterToJson<String, NoteVisibility>(
-          instance.visibility, const NoteVisibilityJsonConverter().toJson),
+      'visibility': _$NotesCreateVisibilityEnumMap[instance.visibility],
       'visibleUserIds': instance.visibleUserIds,
-      'text': instance.text,
       'cw': instance.cw,
       'localOnly': instance.localOnly,
       'reactionAcceptance':
-          _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
+          _$NotesCreateReactionAcceptanceEnumMap[instance.reactionAcceptance],
       'noExtractMentions': instance.noExtractMentions,
       'noExtractHashtags': instance.noExtractHashtags,
       'noExtractEmojis': instance.noExtractEmojis,
-      'fileIds': instance.fileIds,
-      'mediaIds': instance.mediaIds,
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
       'channelId': instance.channelId,
+      'text': instance.text,
+      'fileIds': instance.fileIds,
+      'mediaIds': instance.mediaIds,
       'poll': instance.poll?.toJson(),
     };
 
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-const _$ReactionAcceptanceEnumMap = {
-  ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
-  ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
-  ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
-      'nonSensitiveOnlyForLocalLikeOnlyForRemote',
-  ReactionAcceptance.likeOnly: 'likeOnly',
+const _$NotesCreateVisibilityEnumMap = {
+  NotesCreateVisibility.public: 'public',
+  NotesCreateVisibility.home: 'home',
+  NotesCreateVisibility.followers: 'followers',
+  NotesCreateVisibility.specified: 'specified',
+  NotesCreateVisibility.unknown: 'unknown',
 };
 
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);
+const _$NotesCreateReactionAcceptanceEnumMap = {
+  NotesCreateReactionAcceptance.likeOnly: 'likeOnly',
+  NotesCreateReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+  NotesCreateReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
+  NotesCreateReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
+      'nonSensitiveOnlyForLocalLikeOnlyForRemote',
+  NotesCreateReactionAcceptance.unknown: 'unknown',
+};

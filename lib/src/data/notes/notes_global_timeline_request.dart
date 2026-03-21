@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_global_timeline_request.freezed.dart';
 part 'notes_global_timeline_request.g.dart';
@@ -7,16 +7,14 @@ part 'notes_global_timeline_request.g.dart';
 @freezed
 abstract class NotesGlobalTimelineRequest with _$NotesGlobalTimelineRequest {
   const factory NotesGlobalTimelineRequest({
-    int? limit,
+    @Default(false) bool? withFiles,
+    @Default(true) bool? withRenotes,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
-    bool? withFiles,
-    bool? withRenotes,
-    @Deprecated("removed at 2023.10.0") bool? withReplies,
+    int? sinceDate,
+    int? untilDate,
   }) = _NotesGlobalTimelineRequest;
 
-  factory NotesGlobalTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesGlobalTimelineRequestFromJson(json);
+  factory NotesGlobalTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesGlobalTimelineRequestFromJson(json);
 }

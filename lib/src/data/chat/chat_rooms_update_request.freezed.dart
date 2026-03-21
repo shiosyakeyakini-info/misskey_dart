@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsUpdateRequest {
-  String get roomId;
+  String? get roomId;
   String? get name;
   String? get description;
 
@@ -57,7 +57,7 @@ abstract mixin class $ChatRoomsUpdateRequestCopyWith<$Res> {
           $Res Function(ChatRoomsUpdateRequest) _then) =
       _$ChatRoomsUpdateRequestCopyWithImpl;
   @useResult
-  $Res call({String roomId, String? name, String? description});
+  $Res call({String? roomId, String? name, String? description});
 }
 
 /// @nodoc
@@ -73,15 +73,15 @@ class _$ChatRoomsUpdateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
     Object? name = freezed,
     Object? description = freezed,
   }) {
     return _then(_self.copyWith(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -97,13 +97,12 @@ class _$ChatRoomsUpdateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatRoomsUpdateRequest implements ChatRoomsUpdateRequest {
-  const _ChatRoomsUpdateRequest(
-      {required this.roomId, this.name, this.description});
+  const _ChatRoomsUpdateRequest({this.roomId, this.name, this.description});
   factory _ChatRoomsUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsUpdateRequestFromJson(json);
 
   @override
-  final String roomId;
+  final String? roomId;
   @override
   final String? name;
   @override
@@ -154,7 +153,7 @@ abstract mixin class _$ChatRoomsUpdateRequestCopyWith<$Res>
       __$ChatRoomsUpdateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roomId, String? name, String? description});
+  $Res call({String? roomId, String? name, String? description});
 }
 
 /// @nodoc
@@ -170,15 +169,15 @@ class __$ChatRoomsUpdateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
     Object? name = freezed,
     Object? description = freezed,
   }) {
     return _then(_ChatRoomsUpdateRequest(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable

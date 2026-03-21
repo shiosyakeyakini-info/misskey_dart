@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesShowRequest {
-  String get noteId;
+  String? get noteId;
 
   /// Create a copy of NotesShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $NotesShowRequestCopyWith<$Res> {
           NotesShowRequest value, $Res Function(NotesShowRequest) _then) =
       _$NotesShowRequestCopyWithImpl;
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$NotesShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$NotesShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _NotesShowRequest implements NotesShowRequest {
-  const _NotesShowRequest({required this.noteId});
+  const _NotesShowRequest({this.noteId});
   factory _NotesShowRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesShowRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
 
   /// Create a copy of NotesShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$NotesShowRequestCopyWith<$Res>
       __$NotesShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$NotesShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_NotesShowRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

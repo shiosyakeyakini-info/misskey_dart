@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FollowingCreateRequest {
-  String get userId;
+  String? get userId;
   bool? get withReplies;
 
   /// Create a copy of FollowingCreateRequest
@@ -55,7 +55,7 @@ abstract mixin class $FollowingCreateRequestCopyWith<$Res> {
           $Res Function(FollowingCreateRequest) _then) =
       _$FollowingCreateRequestCopyWithImpl;
   @useResult
-  $Res call({String userId, bool? withReplies});
+  $Res call({String? userId, bool? withReplies});
 }
 
 /// @nodoc
@@ -71,14 +71,14 @@ class _$FollowingCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? withReplies = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       withReplies: freezed == withReplies
           ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
@@ -90,12 +90,12 @@ class _$FollowingCreateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingCreateRequest implements FollowingCreateRequest {
-  const _FollowingCreateRequest({required this.userId, this.withReplies});
+  const _FollowingCreateRequest({this.userId, this.withReplies});
   factory _FollowingCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$FollowingCreateRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
   final bool? withReplies;
 
@@ -143,7 +143,7 @@ abstract mixin class _$FollowingCreateRequestCopyWith<$Res>
       __$FollowingCreateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId, bool? withReplies});
+  $Res call({String? userId, bool? withReplies});
 }
 
 /// @nodoc
@@ -159,14 +159,14 @@ class __$FollowingCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? withReplies = freezed,
   }) {
     return _then(_FollowingCreateRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       withReplies: freezed == withReplies
           ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesClipsRequest {
-  String get noteId;
+  String? get noteId;
 
   /// Create a copy of NotesClipsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $NotesClipsRequestCopyWith<$Res> {
           NotesClipsRequest value, $Res Function(NotesClipsRequest) _then) =
       _$NotesClipsRequestCopyWithImpl;
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$NotesClipsRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$NotesClipsRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _NotesClipsRequest implements NotesClipsRequest {
-  const _NotesClipsRequest({required this.noteId});
+  const _NotesClipsRequest({this.noteId});
   factory _NotesClipsRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesClipsRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
 
   /// Create a copy of NotesClipsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$NotesClipsRequestCopyWith<$Res>
       __$NotesClipsRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$NotesClipsRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_NotesClipsRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

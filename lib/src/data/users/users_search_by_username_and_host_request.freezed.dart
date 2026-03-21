@@ -17,8 +17,6 @@ T _$identity<T>(T value) => value;
 mixin _$UsersSearchByUsernameAndHostRequest {
   int? get limit;
   bool? get detail;
-  String? get username;
-  String? get host;
 
   /// Create a copy of UsersSearchByUsernameAndHostRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -39,19 +37,16 @@ mixin _$UsersSearchByUsernameAndHostRequest {
         (other.runtimeType == runtimeType &&
             other is UsersSearchByUsernameAndHostRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.detail, detail) || other.detail == detail) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.host, host) || other.host == host));
+            (identical(other.detail, detail) || other.detail == detail));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, detail, username, host);
+  int get hashCode => Object.hash(runtimeType, limit, detail);
 
   @override
   String toString() {
-    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail, username: $username, host: $host)';
+    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail)';
   }
 }
 
@@ -62,7 +57,7 @@ abstract mixin class $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
           $Res Function(UsersSearchByUsernameAndHostRequest) _then) =
       _$UsersSearchByUsernameAndHostRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, bool? detail, String? username, String? host});
+  $Res call({int? limit, bool? detail});
 }
 
 /// @nodoc
@@ -80,8 +75,6 @@ class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
   $Res call({
     Object? limit = freezed,
     Object? detail = freezed,
-    Object? username = freezed,
-    Object? host = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -92,14 +85,6 @@ class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
           ? _self.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as bool?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -109,19 +94,17 @@ class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
 class _UsersSearchByUsernameAndHostRequest
     implements UsersSearchByUsernameAndHostRequest {
   const _UsersSearchByUsernameAndHostRequest(
-      {this.limit, this.detail, this.username, this.host});
+      {this.limit = 10, this.detail = true});
   factory _UsersSearchByUsernameAndHostRequest.fromJson(
           Map<String, dynamic> json) =>
       _$UsersSearchByUsernameAndHostRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
+  @JsonKey()
   final bool? detail;
-  @override
-  final String? username;
-  @override
-  final String? host;
 
   /// Create a copy of UsersSearchByUsernameAndHostRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -146,19 +129,16 @@ class _UsersSearchByUsernameAndHostRequest
         (other.runtimeType == runtimeType &&
             other is _UsersSearchByUsernameAndHostRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.detail, detail) || other.detail == detail) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.host, host) || other.host == host));
+            (identical(other.detail, detail) || other.detail == detail));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, detail, username, host);
+  int get hashCode => Object.hash(runtimeType, limit, detail);
 
   @override
   String toString() {
-    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail, username: $username, host: $host)';
+    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail)';
   }
 }
 
@@ -171,7 +151,7 @@ abstract mixin class _$UsersSearchByUsernameAndHostRequestCopyWith<$Res>
       __$UsersSearchByUsernameAndHostRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, bool? detail, String? username, String? host});
+  $Res call({int? limit, bool? detail});
 }
 
 /// @nodoc
@@ -189,8 +169,6 @@ class __$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
   $Res call({
     Object? limit = freezed,
     Object? detail = freezed,
-    Object? username = freezed,
-    Object? host = freezed,
   }) {
     return _then(_UsersSearchByUsernameAndHostRequest(
       limit: freezed == limit
@@ -201,14 +179,6 @@ class __$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
           ? _self.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as bool?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }

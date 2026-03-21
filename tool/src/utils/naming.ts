@@ -82,7 +82,8 @@ export function pathToMethodName(path: string): string {
 export function pathToModuleFieldName(pathPrefix: string): string {
   const segments = pathPrefix.replace(/^\//, "").split("/");
   const last = segments[segments.length - 1];
-  return toCamelCase(last.replace(/-/g, "_"));
+  const name = toCamelCase(last.replace(/-/g, "_"));
+  return escapeDartIdentifier(name);
 }
 
 /**
@@ -256,11 +257,15 @@ const DART_RESERVED_WORDS = new Set([
 ]);
 
 /**
- * Escape a Dart identifier if it's a reserved word.
+ * Escape a Dart identifier if it's a reserved word or starts with a digit.
  */
 export function escapeDartIdentifier(name: string): string {
   if (DART_RESERVED_WORDS.has(name)) {
     return name + "_";
+  }
+  // Dart identifiers can't start with a digit
+  if (/^\d/.test(name)) {
+    return "$" + name;
   }
   return name;
 }

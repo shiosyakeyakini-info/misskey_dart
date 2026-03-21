@@ -91,10 +91,17 @@ function generateModuleClass(
   }
   lines.push("");
 
+  // Collect sub-module field names to avoid conflicts
+  const subModuleFieldNames = new Set(module.subModules.map((s) => s.fieldName));
+
   // Methods
   for (const ep of module.endpoints) {
     const override = config.endpoint_overrides?.[ep.path];
-    const methodName = override?.method_name ?? pathToMethodName(ep.path);
+    let methodName = override?.method_name ?? pathToMethodName(ep.path);
+    // Avoid name conflict with sub-module fields
+    if (subModuleFieldNames.has(methodName)) {
+      methodName = methodName + "List";
+    }
 
     const methodLines = generateMethod(
       methodName,
@@ -228,6 +235,14 @@ function generateMethod(
   return lines;
 }
 
+/**
+ * Resolve a $ref target to its (possibly overridden) Dart class name.
+ */
+function resolveRefName(refTarget: string, parsed: ParsedApi): string {
+  const schema = parsed.componentSchemas.get(refTarget);
+  return schema?.name ?? refTarget;
+}
+
 function resolveResponseType(
   endpoint: EndpointInfo,
   parsed: ParsedApi
@@ -236,11 +251,11 @@ function resolveResponseType(
   if (!schema) return "dynamic";
 
   if (schema.type === "ref" && schema.refTarget) {
-    return schema.refTarget;
+    return resolveRefName(schema.refTarget, parsed);
   }
   if (schema.type === "array" && schema.items) {
     if (schema.items.type === "ref" && schema.items.refTarget) {
-      return schema.items.refTarget;
+      return resolveRefName(schema.items.refTarget, parsed);
     }
     // Handle primitive array items
     switch (schema.items.type) {
@@ -266,7 +281,7 @@ function resolveResponseType(
     if (schema.allOf) {
       for (const part of schema.allOf) {
         if (part.type === "ref" && part.refTarget) {
-          return part.refTarget;
+          return resolveRefName(part.refTarget, parsed);
         }
       }
     }

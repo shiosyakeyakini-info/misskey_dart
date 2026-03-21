@@ -52,23 +52,6 @@ Map<String, dynamic> _$RegistryUpdatedToJson(_RegistryUpdated instance) =>
       'value': instance.value,
     };
 
-_Signin _$SigninFromJson(Map<String, dynamic> json) => _Signin(
-      id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      ip: json['ip'] as String,
-      headers: json['headers'],
-      success: json['success'] as bool,
-    );
-
-Map<String, dynamic> _$SigninToJson(_Signin instance) => <String, dynamic>{
-      'id': instance.id,
-      'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-      'ip': instance.ip,
-      'headers': instance.headers,
-      'success': instance.success,
-    };
-
 _TimelineVoted _$TimelineVotedFromJson(Map<String, dynamic> json) =>
     _TimelineVoted(
       choice: (json['choice'] as num).toInt(),

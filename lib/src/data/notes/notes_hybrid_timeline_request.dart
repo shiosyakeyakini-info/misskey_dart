@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_hybrid_timeline_request.freezed.dart';
 part 'notes_hybrid_timeline_request.g.dart';
@@ -7,20 +7,19 @@ part 'notes_hybrid_timeline_request.g.dart';
 @freezed
 abstract class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
   const factory NotesHybridTimelineRequest({
-    int? limit,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
-    bool? includeMyRenotes,
-    bool? includeRenotedMyNotes,
-    bool? includeLocalRenotes,
-    bool? withFiles,
-    bool? withReplies,
-    bool? withRenotes,
-    bool? allowPartial,
+    int? sinceDate,
+    int? untilDate,
+    @Default(false) bool? allowPartial,
+    @Default(true) bool? includeMyRenotes,
+    @Default(true) bool? includeRenotedMyNotes,
+    @Default(true) bool? includeLocalRenotes,
+    @Default(false) bool? withFiles,
+    @Default(true) bool? withRenotes,
+    @Default(false) bool? withReplies,
   }) = _NotesHybridTimelineRequest;
 
-  factory NotesHybridTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesHybridTimelineRequestFromJson(json);
+  factory NotesHybridTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesHybridTimelineRequestFromJson(json);
 }

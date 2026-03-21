@@ -19,13 +19,12 @@ mixin _$IUpdateRequest {
   String? get description;
   String? get followedMessage;
   String? get location;
-  @BirthdayConverter()
-  DateTime? get birthday;
-  String? get lang;
+  String? get birthday;
+  IUpdateLang? get lang;
   String? get avatarId;
-  List<IUpdateAvatarDecoration>? get avatarDecorations;
+  List<IUpdateAvatarDecorationsItem>? get avatarDecorations;
   String? get bannerId;
-  List<UserField>? get fields;
+  List<IUpdateFieldsItem>? get fields;
   bool? get isLocked;
   bool? get isExplorable;
   bool? get hideOnlineStatus;
@@ -35,29 +34,22 @@ mixin _$IUpdateRequest {
   bool? get noCrawle;
   bool? get preventAiLearning;
   bool? get requireSigninToViewContents;
-  @HideBeforeConverter()
-  HideBefore? get makeNotesFollowersOnlyBefore;
-  @HideBeforeConverter()
-  HideBefore? get makeNotesHiddenBefore;
+  int? get makeNotesFollowersOnlyBefore;
+  int? get makeNotesHiddenBefore;
   bool? get isBot;
   bool? get isCat;
   bool? get injectFeaturedNote;
   bool? get receiveAnnouncementEmail;
   bool? get alwaysMarkNsfw;
   bool? get autoSensitive;
-  @Deprecated("removed at 2023.12.0")
-  FFVisibility? get ffVisibility;
-  FFVisibility? get followingVisibility;
-  FFVisibility? get followersVisibility;
-  ChatScope? get chatScope;
+  IUpdateFollowingVisibility? get followingVisibility;
+  IUpdateFollowersVisibility? get followersVisibility;
+  IUpdateChatScope? get chatScope;
   String? get pinnedPageId;
-  List<String>? get mutingNotificationTypes;
-  @MuteWordsConverter()
-  List<MuteWord>? get mutedWords;
-  @MuteWordsConverter()
-  List<MuteWord>? get hardMutedWords;
+  List<dynamic>? get mutedWords;
+  List<dynamic>? get hardMutedWords;
   List<String>? get mutedInstances;
-  NotificationRecieveConfigs? get notificationRecieveConfig;
+  IUpdateNotificationRecieveConfig? get notificationRecieveConfig;
   List<String>? get emailNotificationTypes;
   List<String>? get alsoKnownAs;
 
@@ -128,8 +120,6 @@ mixin _$IUpdateRequest {
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.autoSensitive, autoSensitive) ||
                 other.autoSensitive == autoSensitive) &&
-            (identical(other.ffVisibility, ffVisibility) ||
-                other.ffVisibility == ffVisibility) &&
             (identical(other.followingVisibility, followingVisibility) ||
                 other.followingVisibility == followingVisibility) &&
             (identical(other.followersVisibility, followersVisibility) ||
@@ -138,17 +128,18 @@ mixin _$IUpdateRequest {
                 other.chatScope == chatScope) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
-            const DeepCollectionEquality().equals(
-                other.mutingNotificationTypes, mutingNotificationTypes) &&
             const DeepCollectionEquality()
                 .equals(other.mutedWords, mutedWords) &&
             const DeepCollectionEquality()
                 .equals(other.hardMutedWords, hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other.mutedInstances, mutedInstances) &&
-            (identical(other.notificationRecieveConfig, notificationRecieveConfig) || other.notificationRecieveConfig == notificationRecieveConfig) &&
-            const DeepCollectionEquality().equals(other.emailNotificationTypes, emailNotificationTypes) &&
-            const DeepCollectionEquality().equals(other.alsoKnownAs, alsoKnownAs));
+            (identical(other.notificationRecieveConfig, notificationRecieveConfig) ||
+                other.notificationRecieveConfig == notificationRecieveConfig) &&
+            const DeepCollectionEquality()
+                .equals(other.emailNotificationTypes, emailNotificationTypes) &&
+            const DeepCollectionEquality()
+                .equals(other.alsoKnownAs, alsoKnownAs));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -182,12 +173,10 @@ mixin _$IUpdateRequest {
         receiveAnnouncementEmail,
         alwaysMarkNsfw,
         autoSensitive,
-        ffVisibility,
         followingVisibility,
         followersVisibility,
         chatScope,
         pinnedPageId,
-        const DeepCollectionEquality().hash(mutingNotificationTypes),
         const DeepCollectionEquality().hash(mutedWords),
         const DeepCollectionEquality().hash(hardMutedWords),
         const DeepCollectionEquality().hash(mutedInstances),
@@ -198,7 +187,7 @@ mixin _$IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 }
 
@@ -213,12 +202,12 @@ abstract mixin class $IUpdateRequestCopyWith<$Res> {
       String? description,
       String? followedMessage,
       String? location,
-      @BirthdayConverter() DateTime? birthday,
-      String? lang,
+      String? birthday,
+      IUpdateLang? lang,
       String? avatarId,
-      List<IUpdateAvatarDecoration>? avatarDecorations,
+      List<IUpdateAvatarDecorationsItem>? avatarDecorations,
       String? bannerId,
-      List<UserField>? fields,
+      List<IUpdateFieldsItem>? fields,
       bool? isLocked,
       bool? isExplorable,
       bool? hideOnlineStatus,
@@ -228,28 +217,27 @@ abstract mixin class $IUpdateRequestCopyWith<$Res> {
       bool? noCrawle,
       bool? preventAiLearning,
       bool? requireSigninToViewContents,
-      @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
-      @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
+      int? makeNotesFollowersOnlyBefore,
+      int? makeNotesHiddenBefore,
       bool? isBot,
       bool? isCat,
       bool? injectFeaturedNote,
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
       bool? autoSensitive,
-      @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
-      FFVisibility? followingVisibility,
-      FFVisibility? followersVisibility,
-      ChatScope? chatScope,
+      IUpdateFollowingVisibility? followingVisibility,
+      IUpdateFollowersVisibility? followersVisibility,
+      IUpdateChatScope? chatScope,
       String? pinnedPageId,
-      List<String>? mutingNotificationTypes,
-      @MuteWordsConverter() List<MuteWord>? mutedWords,
-      @MuteWordsConverter() List<MuteWord>? hardMutedWords,
+      List<dynamic>? mutedWords,
+      List<dynamic>? hardMutedWords,
       List<String>? mutedInstances,
-      NotificationRecieveConfigs? notificationRecieveConfig,
+      IUpdateNotificationRecieveConfig? notificationRecieveConfig,
       List<String>? emailNotificationTypes,
       List<String>? alsoKnownAs});
 
-  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig;
+  $IUpdateNotificationRecieveConfigCopyWith<$Res>?
+      get notificationRecieveConfig;
 }
 
 /// @nodoc
@@ -292,12 +280,10 @@ class _$IUpdateRequestCopyWithImpl<$Res>
     Object? receiveAnnouncementEmail = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? autoSensitive = freezed,
-    Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? chatScope = freezed,
     Object? pinnedPageId = freezed,
-    Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
     Object? hardMutedWords = freezed,
     Object? mutedInstances = freezed,
@@ -325,11 +311,11 @@ class _$IUpdateRequestCopyWithImpl<$Res>
       birthday: freezed == birthday
           ? _self.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       lang: freezed == lang
           ? _self.lang
           : lang // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as IUpdateLang?,
       avatarId: freezed == avatarId
           ? _self.avatarId
           : avatarId // ignore: cast_nullable_to_non_nullable
@@ -337,7 +323,7 @@ class _$IUpdateRequestCopyWithImpl<$Res>
       avatarDecorations: freezed == avatarDecorations
           ? _self.avatarDecorations
           : avatarDecorations // ignore: cast_nullable_to_non_nullable
-              as List<IUpdateAvatarDecoration>?,
+              as List<IUpdateAvatarDecorationsItem>?,
       bannerId: freezed == bannerId
           ? _self.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
@@ -345,7 +331,7 @@ class _$IUpdateRequestCopyWithImpl<$Res>
       fields: freezed == fields
           ? _self.fields
           : fields // ignore: cast_nullable_to_non_nullable
-              as List<UserField>?,
+              as List<IUpdateFieldsItem>?,
       isLocked: freezed == isLocked
           ? _self.isLocked
           : isLocked // ignore: cast_nullable_to_non_nullable
@@ -385,11 +371,11 @@ class _$IUpdateRequestCopyWithImpl<$Res>
       makeNotesFollowersOnlyBefore: freezed == makeNotesFollowersOnlyBefore
           ? _self.makeNotesFollowersOnlyBefore
           : makeNotesFollowersOnlyBefore // ignore: cast_nullable_to_non_nullable
-              as HideBefore?,
+              as int?,
       makeNotesHiddenBefore: freezed == makeNotesHiddenBefore
           ? _self.makeNotesHiddenBefore
           : makeNotesHiddenBefore // ignore: cast_nullable_to_non_nullable
-              as HideBefore?,
+              as int?,
       isBot: freezed == isBot
           ? _self.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
@@ -414,38 +400,30 @@ class _$IUpdateRequestCopyWithImpl<$Res>
           ? _self.autoSensitive
           : autoSensitive // ignore: cast_nullable_to_non_nullable
               as bool?,
-      ffVisibility: freezed == ffVisibility
-          ? _self.ffVisibility
-          : ffVisibility // ignore: cast_nullable_to_non_nullable
-              as FFVisibility?,
       followingVisibility: freezed == followingVisibility
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
-              as FFVisibility?,
+              as IUpdateFollowingVisibility?,
       followersVisibility: freezed == followersVisibility
           ? _self.followersVisibility
           : followersVisibility // ignore: cast_nullable_to_non_nullable
-              as FFVisibility?,
+              as IUpdateFollowersVisibility?,
       chatScope: freezed == chatScope
           ? _self.chatScope
           : chatScope // ignore: cast_nullable_to_non_nullable
-              as ChatScope?,
+              as IUpdateChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _self.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
               as String?,
-      mutingNotificationTypes: freezed == mutingNotificationTypes
-          ? _self.mutingNotificationTypes
-          : mutingNotificationTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       mutedWords: freezed == mutedWords
           ? _self.mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
-              as List<MuteWord>?,
+              as List<dynamic>?,
       hardMutedWords: freezed == hardMutedWords
           ? _self.hardMutedWords
           : hardMutedWords // ignore: cast_nullable_to_non_nullable
-              as List<MuteWord>?,
+              as List<dynamic>?,
       mutedInstances: freezed == mutedInstances
           ? _self.mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -453,7 +431,7 @@ class _$IUpdateRequestCopyWithImpl<$Res>
       notificationRecieveConfig: freezed == notificationRecieveConfig
           ? _self.notificationRecieveConfig
           : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
-              as NotificationRecieveConfigs?,
+              as IUpdateNotificationRecieveConfig?,
       emailNotificationTypes: freezed == emailNotificationTypes
           ? _self.emailNotificationTypes
           : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
@@ -469,12 +447,13 @@ class _$IUpdateRequestCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig {
+  $IUpdateNotificationRecieveConfigCopyWith<$Res>?
+      get notificationRecieveConfig {
     if (_self.notificationRecieveConfig == null) {
       return null;
     }
 
-    return $NotificationRecieveConfigsCopyWith<$Res>(
+    return $IUpdateNotificationRecieveConfigCopyWith<$Res>(
         _self.notificationRecieveConfig!, (value) {
       return _then(_self.copyWith(notificationRecieveConfig: value));
     });
@@ -489,12 +468,12 @@ class _IUpdateRequest implements IUpdateRequest {
       this.description,
       this.followedMessage,
       this.location,
-      @BirthdayConverter() this.birthday,
+      this.birthday,
       this.lang,
       this.avatarId,
-      final List<IUpdateAvatarDecoration>? avatarDecorations,
+      final List<IUpdateAvatarDecorationsItem>? avatarDecorations,
       this.bannerId,
-      final List<UserField>? fields,
+      final List<IUpdateFieldsItem>? fields,
       this.isLocked,
       this.isExplorable,
       this.hideOnlineStatus,
@@ -504,29 +483,26 @@ class _IUpdateRequest implements IUpdateRequest {
       this.noCrawle,
       this.preventAiLearning,
       this.requireSigninToViewContents,
-      @HideBeforeConverter() this.makeNotesFollowersOnlyBefore,
-      @HideBeforeConverter() this.makeNotesHiddenBefore,
+      this.makeNotesFollowersOnlyBefore,
+      this.makeNotesHiddenBefore,
       this.isBot,
       this.isCat,
       this.injectFeaturedNote,
       this.receiveAnnouncementEmail,
       this.alwaysMarkNsfw,
       this.autoSensitive,
-      @Deprecated("removed at 2023.12.0") this.ffVisibility,
       this.followingVisibility,
       this.followersVisibility,
       this.chatScope,
       this.pinnedPageId,
-      final List<String>? mutingNotificationTypes,
-      @MuteWordsConverter() final List<MuteWord>? mutedWords,
-      @MuteWordsConverter() final List<MuteWord>? hardMutedWords,
+      final List<dynamic>? mutedWords,
+      final List<dynamic>? hardMutedWords,
       final List<String>? mutedInstances,
       this.notificationRecieveConfig,
       final List<String>? emailNotificationTypes,
       final List<String>? alsoKnownAs})
       : _avatarDecorations = avatarDecorations,
         _fields = fields,
-        _mutingNotificationTypes = mutingNotificationTypes,
         _mutedWords = mutedWords,
         _hardMutedWords = hardMutedWords,
         _mutedInstances = mutedInstances,
@@ -544,15 +520,14 @@ class _IUpdateRequest implements IUpdateRequest {
   @override
   final String? location;
   @override
-  @BirthdayConverter()
-  final DateTime? birthday;
+  final String? birthday;
   @override
-  final String? lang;
+  final IUpdateLang? lang;
   @override
   final String? avatarId;
-  final List<IUpdateAvatarDecoration>? _avatarDecorations;
+  final List<IUpdateAvatarDecorationsItem>? _avatarDecorations;
   @override
-  List<IUpdateAvatarDecoration>? get avatarDecorations {
+  List<IUpdateAvatarDecorationsItem>? get avatarDecorations {
     final value = _avatarDecorations;
     if (value == null) return null;
     if (_avatarDecorations is EqualUnmodifiableListView)
@@ -563,9 +538,9 @@ class _IUpdateRequest implements IUpdateRequest {
 
   @override
   final String? bannerId;
-  final List<UserField>? _fields;
+  final List<IUpdateFieldsItem>? _fields;
   @override
-  List<UserField>? get fields {
+  List<IUpdateFieldsItem>? get fields {
     final value = _fields;
     if (value == null) return null;
     if (_fields is EqualUnmodifiableListView) return _fields;
@@ -592,11 +567,9 @@ class _IUpdateRequest implements IUpdateRequest {
   @override
   final bool? requireSigninToViewContents;
   @override
-  @HideBeforeConverter()
-  final HideBefore? makeNotesFollowersOnlyBefore;
+  final int? makeNotesFollowersOnlyBefore;
   @override
-  @HideBeforeConverter()
-  final HideBefore? makeNotesHiddenBefore;
+  final int? makeNotesHiddenBefore;
   @override
   final bool? isBot;
   @override
@@ -610,31 +583,16 @@ class _IUpdateRequest implements IUpdateRequest {
   @override
   final bool? autoSensitive;
   @override
-  @Deprecated("removed at 2023.12.0")
-  final FFVisibility? ffVisibility;
+  final IUpdateFollowingVisibility? followingVisibility;
   @override
-  final FFVisibility? followingVisibility;
+  final IUpdateFollowersVisibility? followersVisibility;
   @override
-  final FFVisibility? followersVisibility;
-  @override
-  final ChatScope? chatScope;
+  final IUpdateChatScope? chatScope;
   @override
   final String? pinnedPageId;
-  final List<String>? _mutingNotificationTypes;
+  final List<dynamic>? _mutedWords;
   @override
-  List<String>? get mutingNotificationTypes {
-    final value = _mutingNotificationTypes;
-    if (value == null) return null;
-    if (_mutingNotificationTypes is EqualUnmodifiableListView)
-      return _mutingNotificationTypes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<MuteWord>? _mutedWords;
-  @override
-  @MuteWordsConverter()
-  List<MuteWord>? get mutedWords {
+  List<dynamic>? get mutedWords {
     final value = _mutedWords;
     if (value == null) return null;
     if (_mutedWords is EqualUnmodifiableListView) return _mutedWords;
@@ -642,10 +600,9 @@ class _IUpdateRequest implements IUpdateRequest {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<MuteWord>? _hardMutedWords;
+  final List<dynamic>? _hardMutedWords;
   @override
-  @MuteWordsConverter()
-  List<MuteWord>? get hardMutedWords {
+  List<dynamic>? get hardMutedWords {
     final value = _hardMutedWords;
     if (value == null) return null;
     if (_hardMutedWords is EqualUnmodifiableListView) return _hardMutedWords;
@@ -664,7 +621,7 @@ class _IUpdateRequest implements IUpdateRequest {
   }
 
   @override
-  final NotificationRecieveConfigs? notificationRecieveConfig;
+  final IUpdateNotificationRecieveConfig? notificationRecieveConfig;
   final List<String>? _emailNotificationTypes;
   @override
   List<String>? get emailNotificationTypes {
@@ -757,8 +714,6 @@ class _IUpdateRequest implements IUpdateRequest {
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.autoSensitive, autoSensitive) ||
                 other.autoSensitive == autoSensitive) &&
-            (identical(other.ffVisibility, ffVisibility) ||
-                other.ffVisibility == ffVisibility) &&
             (identical(other.followingVisibility, followingVisibility) ||
                 other.followingVisibility == followingVisibility) &&
             (identical(other.followersVisibility, followersVisibility) ||
@@ -767,16 +722,16 @@ class _IUpdateRequest implements IUpdateRequest {
                 other.chatScope == chatScope) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
-            const DeepCollectionEquality().equals(
-                other._mutingNotificationTypes, _mutingNotificationTypes) &&
             const DeepCollectionEquality()
                 .equals(other._mutedWords, _mutedWords) &&
             const DeepCollectionEquality()
                 .equals(other._hardMutedWords, _hardMutedWords) &&
             const DeepCollectionEquality()
                 .equals(other._mutedInstances, _mutedInstances) &&
-            (identical(other.notificationRecieveConfig, notificationRecieveConfig) || other.notificationRecieveConfig == notificationRecieveConfig) &&
-            const DeepCollectionEquality().equals(other._emailNotificationTypes, _emailNotificationTypes) &&
+            (identical(other.notificationRecieveConfig, notificationRecieveConfig) ||
+                other.notificationRecieveConfig == notificationRecieveConfig) &&
+            const DeepCollectionEquality().equals(
+                other._emailNotificationTypes, _emailNotificationTypes) &&
             const DeepCollectionEquality().equals(other._alsoKnownAs, _alsoKnownAs));
   }
 
@@ -811,12 +766,10 @@ class _IUpdateRequest implements IUpdateRequest {
         receiveAnnouncementEmail,
         alwaysMarkNsfw,
         autoSensitive,
-        ffVisibility,
         followingVisibility,
         followersVisibility,
         chatScope,
         pinnedPageId,
-        const DeepCollectionEquality().hash(_mutingNotificationTypes),
         const DeepCollectionEquality().hash(_mutedWords),
         const DeepCollectionEquality().hash(_hardMutedWords),
         const DeepCollectionEquality().hash(_mutedInstances),
@@ -827,7 +780,7 @@ class _IUpdateRequest implements IUpdateRequest {
 
   @override
   String toString() {
-    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, ffVisibility: $ffVisibility, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutingNotificationTypes: $mutingNotificationTypes, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
+    return 'IUpdateRequest(name: $name, description: $description, followedMessage: $followedMessage, location: $location, birthday: $birthday, lang: $lang, avatarId: $avatarId, avatarDecorations: $avatarDecorations, bannerId: $bannerId, fields: $fields, isLocked: $isLocked, isExplorable: $isExplorable, hideOnlineStatus: $hideOnlineStatus, publicReactions: $publicReactions, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, preventAiLearning: $preventAiLearning, requireSigninToViewContents: $requireSigninToViewContents, makeNotesFollowersOnlyBefore: $makeNotesFollowersOnlyBefore, makeNotesHiddenBefore: $makeNotesHiddenBefore, isBot: $isBot, isCat: $isCat, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, followingVisibility: $followingVisibility, followersVisibility: $followersVisibility, chatScope: $chatScope, pinnedPageId: $pinnedPageId, mutedWords: $mutedWords, hardMutedWords: $hardMutedWords, mutedInstances: $mutedInstances, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, alsoKnownAs: $alsoKnownAs)';
   }
 }
 
@@ -844,12 +797,12 @@ abstract mixin class _$IUpdateRequestCopyWith<$Res>
       String? description,
       String? followedMessage,
       String? location,
-      @BirthdayConverter() DateTime? birthday,
-      String? lang,
+      String? birthday,
+      IUpdateLang? lang,
       String? avatarId,
-      List<IUpdateAvatarDecoration>? avatarDecorations,
+      List<IUpdateAvatarDecorationsItem>? avatarDecorations,
       String? bannerId,
-      List<UserField>? fields,
+      List<IUpdateFieldsItem>? fields,
       bool? isLocked,
       bool? isExplorable,
       bool? hideOnlineStatus,
@@ -859,29 +812,28 @@ abstract mixin class _$IUpdateRequestCopyWith<$Res>
       bool? noCrawle,
       bool? preventAiLearning,
       bool? requireSigninToViewContents,
-      @HideBeforeConverter() HideBefore? makeNotesFollowersOnlyBefore,
-      @HideBeforeConverter() HideBefore? makeNotesHiddenBefore,
+      int? makeNotesFollowersOnlyBefore,
+      int? makeNotesHiddenBefore,
       bool? isBot,
       bool? isCat,
       bool? injectFeaturedNote,
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
       bool? autoSensitive,
-      @Deprecated("removed at 2023.12.0") FFVisibility? ffVisibility,
-      FFVisibility? followingVisibility,
-      FFVisibility? followersVisibility,
-      ChatScope? chatScope,
+      IUpdateFollowingVisibility? followingVisibility,
+      IUpdateFollowersVisibility? followersVisibility,
+      IUpdateChatScope? chatScope,
       String? pinnedPageId,
-      List<String>? mutingNotificationTypes,
-      @MuteWordsConverter() List<MuteWord>? mutedWords,
-      @MuteWordsConverter() List<MuteWord>? hardMutedWords,
+      List<dynamic>? mutedWords,
+      List<dynamic>? hardMutedWords,
       List<String>? mutedInstances,
-      NotificationRecieveConfigs? notificationRecieveConfig,
+      IUpdateNotificationRecieveConfig? notificationRecieveConfig,
       List<String>? emailNotificationTypes,
       List<String>? alsoKnownAs});
 
   @override
-  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig;
+  $IUpdateNotificationRecieveConfigCopyWith<$Res>?
+      get notificationRecieveConfig;
 }
 
 /// @nodoc
@@ -924,12 +876,10 @@ class __$IUpdateRequestCopyWithImpl<$Res>
     Object? receiveAnnouncementEmail = freezed,
     Object? alwaysMarkNsfw = freezed,
     Object? autoSensitive = freezed,
-    Object? ffVisibility = freezed,
     Object? followingVisibility = freezed,
     Object? followersVisibility = freezed,
     Object? chatScope = freezed,
     Object? pinnedPageId = freezed,
-    Object? mutingNotificationTypes = freezed,
     Object? mutedWords = freezed,
     Object? hardMutedWords = freezed,
     Object? mutedInstances = freezed,
@@ -957,11 +907,11 @@ class __$IUpdateRequestCopyWithImpl<$Res>
       birthday: freezed == birthday
           ? _self.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       lang: freezed == lang
           ? _self.lang
           : lang // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as IUpdateLang?,
       avatarId: freezed == avatarId
           ? _self.avatarId
           : avatarId // ignore: cast_nullable_to_non_nullable
@@ -969,7 +919,7 @@ class __$IUpdateRequestCopyWithImpl<$Res>
       avatarDecorations: freezed == avatarDecorations
           ? _self._avatarDecorations
           : avatarDecorations // ignore: cast_nullable_to_non_nullable
-              as List<IUpdateAvatarDecoration>?,
+              as List<IUpdateAvatarDecorationsItem>?,
       bannerId: freezed == bannerId
           ? _self.bannerId
           : bannerId // ignore: cast_nullable_to_non_nullable
@@ -977,7 +927,7 @@ class __$IUpdateRequestCopyWithImpl<$Res>
       fields: freezed == fields
           ? _self._fields
           : fields // ignore: cast_nullable_to_non_nullable
-              as List<UserField>?,
+              as List<IUpdateFieldsItem>?,
       isLocked: freezed == isLocked
           ? _self.isLocked
           : isLocked // ignore: cast_nullable_to_non_nullable
@@ -1017,11 +967,11 @@ class __$IUpdateRequestCopyWithImpl<$Res>
       makeNotesFollowersOnlyBefore: freezed == makeNotesFollowersOnlyBefore
           ? _self.makeNotesFollowersOnlyBefore
           : makeNotesFollowersOnlyBefore // ignore: cast_nullable_to_non_nullable
-              as HideBefore?,
+              as int?,
       makeNotesHiddenBefore: freezed == makeNotesHiddenBefore
           ? _self.makeNotesHiddenBefore
           : makeNotesHiddenBefore // ignore: cast_nullable_to_non_nullable
-              as HideBefore?,
+              as int?,
       isBot: freezed == isBot
           ? _self.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
@@ -1046,38 +996,30 @@ class __$IUpdateRequestCopyWithImpl<$Res>
           ? _self.autoSensitive
           : autoSensitive // ignore: cast_nullable_to_non_nullable
               as bool?,
-      ffVisibility: freezed == ffVisibility
-          ? _self.ffVisibility
-          : ffVisibility // ignore: cast_nullable_to_non_nullable
-              as FFVisibility?,
       followingVisibility: freezed == followingVisibility
           ? _self.followingVisibility
           : followingVisibility // ignore: cast_nullable_to_non_nullable
-              as FFVisibility?,
+              as IUpdateFollowingVisibility?,
       followersVisibility: freezed == followersVisibility
           ? _self.followersVisibility
           : followersVisibility // ignore: cast_nullable_to_non_nullable
-              as FFVisibility?,
+              as IUpdateFollowersVisibility?,
       chatScope: freezed == chatScope
           ? _self.chatScope
           : chatScope // ignore: cast_nullable_to_non_nullable
-              as ChatScope?,
+              as IUpdateChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _self.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
               as String?,
-      mutingNotificationTypes: freezed == mutingNotificationTypes
-          ? _self._mutingNotificationTypes
-          : mutingNotificationTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       mutedWords: freezed == mutedWords
           ? _self._mutedWords
           : mutedWords // ignore: cast_nullable_to_non_nullable
-              as List<MuteWord>?,
+              as List<dynamic>?,
       hardMutedWords: freezed == hardMutedWords
           ? _self._hardMutedWords
           : hardMutedWords // ignore: cast_nullable_to_non_nullable
-              as List<MuteWord>?,
+              as List<dynamic>?,
       mutedInstances: freezed == mutedInstances
           ? _self._mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
@@ -1085,7 +1027,7 @@ class __$IUpdateRequestCopyWithImpl<$Res>
       notificationRecieveConfig: freezed == notificationRecieveConfig
           ? _self.notificationRecieveConfig
           : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
-              as NotificationRecieveConfigs?,
+              as IUpdateNotificationRecieveConfig?,
       emailNotificationTypes: freezed == emailNotificationTypes
           ? _self._emailNotificationTypes
           : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
@@ -1101,232 +1043,16 @@ class __$IUpdateRequestCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $NotificationRecieveConfigsCopyWith<$Res>? get notificationRecieveConfig {
+  $IUpdateNotificationRecieveConfigCopyWith<$Res>?
+      get notificationRecieveConfig {
     if (_self.notificationRecieveConfig == null) {
       return null;
     }
 
-    return $NotificationRecieveConfigsCopyWith<$Res>(
+    return $IUpdateNotificationRecieveConfigCopyWith<$Res>(
         _self.notificationRecieveConfig!, (value) {
       return _then(_self.copyWith(notificationRecieveConfig: value));
     });
-  }
-}
-
-/// @nodoc
-mixin _$IUpdateAvatarDecoration {
-  String get id;
-  double? get angle;
-  bool get flipH;
-  double get offsetX;
-  double get offsetY;
-
-  /// Create a copy of IUpdateAvatarDecoration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IUpdateAvatarDecorationCopyWith<IUpdateAvatarDecoration> get copyWith =>
-      _$IUpdateAvatarDecorationCopyWithImpl<IUpdateAvatarDecoration>(
-          this as IUpdateAvatarDecoration, _$identity);
-
-  /// Serializes this IUpdateAvatarDecoration to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IUpdateAvatarDecoration &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.angle, angle) || other.angle == angle) &&
-            (identical(other.flipH, flipH) || other.flipH == flipH) &&
-            (identical(other.offsetX, offsetX) || other.offsetX == offsetX) &&
-            (identical(other.offsetY, offsetY) || other.offsetY == offsetY));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, angle, flipH, offsetX, offsetY);
-
-  @override
-  String toString() {
-    return 'IUpdateAvatarDecoration(id: $id, angle: $angle, flipH: $flipH, offsetX: $offsetX, offsetY: $offsetY)';
-  }
-}
-
-/// @nodoc
-abstract mixin class $IUpdateAvatarDecorationCopyWith<$Res> {
-  factory $IUpdateAvatarDecorationCopyWith(IUpdateAvatarDecoration value,
-          $Res Function(IUpdateAvatarDecoration) _then) =
-      _$IUpdateAvatarDecorationCopyWithImpl;
-  @useResult
-  $Res call(
-      {String id, double? angle, bool flipH, double offsetX, double offsetY});
-}
-
-/// @nodoc
-class _$IUpdateAvatarDecorationCopyWithImpl<$Res>
-    implements $IUpdateAvatarDecorationCopyWith<$Res> {
-  _$IUpdateAvatarDecorationCopyWithImpl(this._self, this._then);
-
-  final IUpdateAvatarDecoration _self;
-  final $Res Function(IUpdateAvatarDecoration) _then;
-
-  /// Create a copy of IUpdateAvatarDecoration
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? angle = freezed,
-    Object? flipH = null,
-    Object? offsetX = null,
-    Object? offsetY = null,
-  }) {
-    return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      angle: freezed == angle
-          ? _self.angle
-          : angle // ignore: cast_nullable_to_non_nullable
-              as double?,
-      flipH: null == flipH
-          ? _self.flipH
-          : flipH // ignore: cast_nullable_to_non_nullable
-              as bool,
-      offsetX: null == offsetX
-          ? _self.offsetX
-          : offsetX // ignore: cast_nullable_to_non_nullable
-              as double,
-      offsetY: null == offsetY
-          ? _self.offsetY
-          : offsetY // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _IUpdateAvatarDecoration implements IUpdateAvatarDecoration {
-  const _IUpdateAvatarDecoration(
-      {required this.id,
-      this.angle,
-      this.flipH = false,
-      this.offsetX = 0.0,
-      this.offsetY = 0.0});
-  factory _IUpdateAvatarDecoration.fromJson(Map<String, dynamic> json) =>
-      _$IUpdateAvatarDecorationFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final double? angle;
-  @override
-  @JsonKey()
-  final bool flipH;
-  @override
-  @JsonKey()
-  final double offsetX;
-  @override
-  @JsonKey()
-  final double offsetY;
-
-  /// Create a copy of IUpdateAvatarDecoration
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IUpdateAvatarDecorationCopyWith<_IUpdateAvatarDecoration> get copyWith =>
-      __$IUpdateAvatarDecorationCopyWithImpl<_IUpdateAvatarDecoration>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IUpdateAvatarDecorationToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _IUpdateAvatarDecoration &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.angle, angle) || other.angle == angle) &&
-            (identical(other.flipH, flipH) || other.flipH == flipH) &&
-            (identical(other.offsetX, offsetX) || other.offsetX == offsetX) &&
-            (identical(other.offsetY, offsetY) || other.offsetY == offsetY));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, angle, flipH, offsetX, offsetY);
-
-  @override
-  String toString() {
-    return 'IUpdateAvatarDecoration(id: $id, angle: $angle, flipH: $flipH, offsetX: $offsetX, offsetY: $offsetY)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$IUpdateAvatarDecorationCopyWith<$Res>
-    implements $IUpdateAvatarDecorationCopyWith<$Res> {
-  factory _$IUpdateAvatarDecorationCopyWith(_IUpdateAvatarDecoration value,
-          $Res Function(_IUpdateAvatarDecoration) _then) =
-      __$IUpdateAvatarDecorationCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id, double? angle, bool flipH, double offsetX, double offsetY});
-}
-
-/// @nodoc
-class __$IUpdateAvatarDecorationCopyWithImpl<$Res>
-    implements _$IUpdateAvatarDecorationCopyWith<$Res> {
-  __$IUpdateAvatarDecorationCopyWithImpl(this._self, this._then);
-
-  final _IUpdateAvatarDecoration _self;
-  final $Res Function(_IUpdateAvatarDecoration) _then;
-
-  /// Create a copy of IUpdateAvatarDecoration
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? angle = freezed,
-    Object? flipH = null,
-    Object? offsetX = null,
-    Object? offsetY = null,
-  }) {
-    return _then(_IUpdateAvatarDecoration(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      angle: freezed == angle
-          ? _self.angle
-          : angle // ignore: cast_nullable_to_non_nullable
-              as double?,
-      flipH: null == flipH
-          ? _self.flipH
-          : flipH // ignore: cast_nullable_to_non_nullable
-              as bool,
-      offsetX: null == offsetX
-          ? _self.offsetX
-          : offsetX // ignore: cast_nullable_to_non_nullable
-              as double,
-      offsetY: null == offsetY
-          ? _self.offsetY
-          : offsetY // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
   }
 }
 

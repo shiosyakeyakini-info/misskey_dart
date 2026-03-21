@@ -7,11 +7,10 @@ part 'following_update_request.g.dart';
 @freezed
 abstract class FollowingUpdateRequest with _$FollowingUpdateRequest {
   const factory FollowingUpdateRequest({
-    required String userId,
-    FollowingUpdateAllNotifyType? notify,
+    String? userId,
+    FollowingUpdateNotify? notify,
     bool? withReplies,
   }) = _FollowingUpdateRequest;
 
-  factory FollowingUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$FollowingUpdateRequestFromJson(json);
+  factory FollowingUpdateRequest.fromJson(Map<String, Object?> json) => _$FollowingUpdateRequestFromJson(json);
 }

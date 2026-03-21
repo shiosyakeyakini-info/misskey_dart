@@ -18,8 +18,11 @@ mixin _$DriveFilesRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   String? get folderId;
   String? get type;
+  DriveFilesSort? get sort;
 
   /// Create a copy of DriveFilesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -40,19 +43,24 @@ mixin _$DriveFilesRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.sort, sort) || other.sort == sort));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, folderId, type);
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
+      sinceDate, untilDate, folderId, type, sort);
 
   @override
   String toString() {
-    return 'DriveFilesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, folderId: $folderId, type: $type)';
+    return 'DriveFilesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, folderId: $folderId, type: $type, sort: $sort)';
   }
 }
 
@@ -66,8 +74,11 @@ abstract mixin class $DriveFilesRequestCopyWith<$Res> {
       {int? limit,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       String? folderId,
-      String? type});
+      String? type,
+      DriveFilesSort? sort});
 }
 
 /// @nodoc
@@ -86,8 +97,11 @@ class _$DriveFilesRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? folderId = freezed,
     Object? type = freezed,
+    Object? sort = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -102,6 +116,14 @@ class _$DriveFilesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       folderId: freezed == folderId
           ? _self.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
@@ -110,6 +132,10 @@ class _$DriveFilesRequestCopyWithImpl<$Res>
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
+      sort: freezed == sort
+          ? _self.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as DriveFilesSort?,
     ));
   }
 }
@@ -118,20 +144,35 @@ class _$DriveFilesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _DriveFilesRequest implements DriveFilesRequest {
   const _DriveFilesRequest(
-      {this.limit, this.sinceId, this.untilId, this.folderId, this.type});
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.folderId = null,
+      this.type,
+      this.sort});
   factory _DriveFilesRequest.fromJson(Map<String, dynamic> json) =>
       _$DriveFilesRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final String? folderId;
   @override
   final String? type;
+  @override
+  final DriveFilesSort? sort;
 
   /// Create a copy of DriveFilesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -156,19 +197,24 @@ class _DriveFilesRequest implements DriveFilesRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.sort, sort) || other.sort == sort));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, folderId, type);
+  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
+      sinceDate, untilDate, folderId, type, sort);
 
   @override
   String toString() {
-    return 'DriveFilesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, folderId: $folderId, type: $type)';
+    return 'DriveFilesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, folderId: $folderId, type: $type, sort: $sort)';
   }
 }
 
@@ -184,8 +230,11 @@ abstract mixin class _$DriveFilesRequestCopyWith<$Res>
       {int? limit,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       String? folderId,
-      String? type});
+      String? type,
+      DriveFilesSort? sort});
 }
 
 /// @nodoc
@@ -204,8 +253,11 @@ class __$DriveFilesRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? folderId = freezed,
     Object? type = freezed,
+    Object? sort = freezed,
   }) {
     return _then(_DriveFilesRequest(
       limit: freezed == limit
@@ -220,6 +272,14 @@ class __$DriveFilesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       folderId: freezed == folderId
           ? _self.folderId
           : folderId // ignore: cast_nullable_to_non_nullable
@@ -228,6 +288,10 @@ class __$DriveFilesRequestCopyWithImpl<$Res>
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
+      sort: freezed == sort
+          ? _self.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as DriveFilesSort?,
     ));
   }
 }

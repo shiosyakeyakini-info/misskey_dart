@@ -9,8 +9,8 @@ part of 'notes_translate_request.dart';
 _NotesTranslateRequest _$NotesTranslateRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesTranslateRequest(
-      noteId: json['noteId'] as String,
-      targetLang: json['targetLang'] as String,
+      noteId: json['noteId'] as String?,
+      targetLang: json['targetLang'] as String?,
     );
 
 Map<String, dynamic> _$NotesTranslateRequestToJson(

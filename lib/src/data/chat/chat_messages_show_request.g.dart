@@ -9,7 +9,7 @@ part of 'chat_messages_show_request.dart';
 _ChatMessagesShowRequest _$ChatMessagesShowRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatMessagesShowRequest(
-      messageId: json['messageId'] as String,
+      messageId: json['messageId'] as String?,
     );
 
 Map<String, dynamic> _$ChatMessagesShowRequestToJson(

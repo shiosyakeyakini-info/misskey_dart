@@ -1,21 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/notification_type.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_notifications_grouped_request.freezed.dart';
 part 'i_notifications_grouped_request.g.dart';
 
 @freezed
-abstract class INotificationsGroupedRequest
-    with _$INotificationsGroupedRequest {
+abstract class INotificationsGroupedRequest with _$INotificationsGroupedRequest {
   const factory INotificationsGroupedRequest({
-    int? limit,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    bool? markAsRead,
-    List<NotificationType>? includeTypes,
-    List<NotificationType>? excludeTypes,
-  }) = _INotificationRequest;
+    int? sinceDate,
+    int? untilDate,
+    @Default(true) bool? markAsRead,
+    List<INotificationsGroupedIncludeTypesItem>? includeTypes,
+    List<INotificationsGroupedExcludeTypesItem>? excludeTypes,
+  }) = _INotificationsGroupedRequest;
 
-  factory INotificationsGroupedRequest.fromJson(Map<String, Object?> json) =>
-      _$INotificationsGroupedRequestFromJson(json);
+  factory INotificationsGroupedRequest.fromJson(Map<String, Object?> json) => _$INotificationsGroupedRequestFromJson(json);
 }

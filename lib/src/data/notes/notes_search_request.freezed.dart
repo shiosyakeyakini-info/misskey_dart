@@ -15,28 +15,15 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesSearchRequest {
-  /// 検索クエリ。クエリが本文に含まれるノートを検索します。
-  String get query;
-
-  /// 指定すると、idがその値よりも大きいノートを返します。
+  String? get query;
   String? get sinceId;
-
-  /// 指定すると、idがその値よりも小さいノートを返します。
   String? get untilId;
-
-  /// 取得するノートの最大数。
+  int? get sinceDate;
+  int? get untilDate;
   int? get limit;
-
-  /// 検索結果の先頭offset個をスキップします。
   int? get offset;
-
-  /// The local host is represented with `null`.
   String? get host;
-
-  /// 指定すると、そのユーザが作成したノートを検索します。
   String? get userId;
-
-  /// 指定すると、そのチャンネルに属するノートを検索します。userIdと併せて指定した場合、channelIdは無視されます。
   String? get channelId;
 
   /// Create a copy of NotesSearchRequest
@@ -58,6 +45,10 @@ mixin _$NotesSearchRequest {
             (identical(other.query, query) || other.query == query) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.host, host) || other.host == host) &&
@@ -68,12 +59,12 @@ mixin _$NotesSearchRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, query, sinceId, untilId, limit,
-      offset, host, userId, channelId);
+  int get hashCode => Object.hash(runtimeType, query, sinceId, untilId,
+      sinceDate, untilDate, limit, offset, host, userId, channelId);
 
   @override
   String toString() {
-    return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
+    return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
   }
 }
 
@@ -84,9 +75,11 @@ abstract mixin class $NotesSearchRequestCopyWith<$Res> {
       _$NotesSearchRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String query,
+      {String? query,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       int? limit,
       int? offset,
       String? host,
@@ -107,9 +100,11 @@ class _$NotesSearchRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
     Object? offset = freezed,
     Object? host = freezed,
@@ -117,10 +112,10 @@ class _$NotesSearchRequestCopyWithImpl<$Res>
     Object? channelId = freezed,
   }) {
     return _then(_self.copyWith(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -129,6 +124,14 @@ class _$NotesSearchRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -157,47 +160,42 @@ class _$NotesSearchRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesSearchRequest implements NotesSearchRequest {
   const _NotesSearchRequest(
-      {required this.query,
+      {this.query,
       this.sinceId,
       this.untilId,
-      this.limit,
-      this.offset,
+      this.sinceDate,
+      this.untilDate,
+      this.limit = 10,
+      this.offset = 0,
       this.host,
-      this.userId,
-      this.channelId});
+      this.userId = null,
+      this.channelId = null});
   factory _NotesSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesSearchRequestFromJson(json);
 
-  /// 検索クエリ。クエリが本文に含まれるノートを検索します。
   @override
-  final String query;
-
-  /// 指定すると、idがその値よりも大きいノートを返します。
+  final String? query;
   @override
   final String? sinceId;
-
-  /// 指定すると、idがその値よりも小さいノートを返します。
   @override
   final String? untilId;
-
-  /// 取得するノートの最大数。
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final int? limit;
-
-  /// 検索結果の先頭offset個をスキップします。
   @override
+  @JsonKey()
   final int? offset;
-
-  /// The local host is represented with `null`.
   @override
   final String? host;
-
-  /// 指定すると、そのユーザが作成したノートを検索します。
   @override
+  @JsonKey()
   final String? userId;
-
-  /// 指定すると、そのチャンネルに属するノートを検索します。userIdと併せて指定した場合、channelIdは無視されます。
   @override
+  @JsonKey()
   final String? channelId;
 
   /// Create a copy of NotesSearchRequest
@@ -223,6 +221,10 @@ class _NotesSearchRequest implements NotesSearchRequest {
             (identical(other.query, query) || other.query == query) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.host, host) || other.host == host) &&
@@ -233,12 +235,12 @@ class _NotesSearchRequest implements NotesSearchRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, query, sinceId, untilId, limit,
-      offset, host, userId, channelId);
+  int get hashCode => Object.hash(runtimeType, query, sinceId, untilId,
+      sinceDate, untilDate, limit, offset, host, userId, channelId);
 
   @override
   String toString() {
-    return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
+    return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
   }
 }
 
@@ -251,9 +253,11 @@ abstract mixin class _$NotesSearchRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String query,
+      {String? query,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       int? limit,
       int? offset,
       String? host,
@@ -274,9 +278,11 @@ class __$NotesSearchRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
     Object? offset = freezed,
     Object? host = freezed,
@@ -284,10 +290,10 @@ class __$NotesSearchRequestCopyWithImpl<$Res>
     Object? channelId = freezed,
   }) {
     return _then(_NotesSearchRequest(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -296,6 +302,14 @@ class __$NotesSearchRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

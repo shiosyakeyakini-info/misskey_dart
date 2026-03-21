@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsMuteRequest {
-  String get roomId;
-  bool get mute;
+  String? get roomId;
+  bool? get mute;
 
   /// Create a copy of ChatRoomsMuteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -54,7 +54,7 @@ abstract mixin class $ChatRoomsMuteRequestCopyWith<$Res> {
           $Res Function(ChatRoomsMuteRequest) _then) =
       _$ChatRoomsMuteRequestCopyWithImpl;
   @useResult
-  $Res call({String roomId, bool mute});
+  $Res call({String? roomId, bool? mute});
 }
 
 /// @nodoc
@@ -70,18 +70,18 @@ class _$ChatRoomsMuteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roomId = null,
-    Object? mute = null,
+    Object? roomId = freezed,
+    Object? mute = freezed,
   }) {
     return _then(_self.copyWith(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      mute: null == mute
+              as String?,
+      mute: freezed == mute
           ? _self.mute
           : mute // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -89,14 +89,14 @@ class _$ChatRoomsMuteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatRoomsMuteRequest implements ChatRoomsMuteRequest {
-  const _ChatRoomsMuteRequest({required this.roomId, required this.mute});
+  const _ChatRoomsMuteRequest({this.roomId, this.mute});
   factory _ChatRoomsMuteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsMuteRequestFromJson(json);
 
   @override
-  final String roomId;
+  final String? roomId;
   @override
-  final bool mute;
+  final bool? mute;
 
   /// Create a copy of ChatRoomsMuteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -141,7 +141,7 @@ abstract mixin class _$ChatRoomsMuteRequestCopyWith<$Res>
       __$ChatRoomsMuteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roomId, bool mute});
+  $Res call({String? roomId, bool? mute});
 }
 
 /// @nodoc
@@ -157,18 +157,18 @@ class __$ChatRoomsMuteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roomId = null,
-    Object? mute = null,
+    Object? roomId = freezed,
+    Object? mute = freezed,
   }) {
     return _then(_ChatRoomsMuteRequest(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      mute: null == mute
+              as String?,
+      mute: freezed == mute
           ? _self.mute
           : mute // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }

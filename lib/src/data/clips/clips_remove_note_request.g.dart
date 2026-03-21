@@ -9,8 +9,8 @@ part of 'clips_remove_note_request.dart';
 _ClipsRemoveNoteRequest _$ClipsRemoveNoteRequestFromJson(
         Map<String, dynamic> json) =>
     _ClipsRemoveNoteRequest(
-      clipId: json['clipId'] as String,
-      noteId: json['noteId'] as String,
+      clipId: json['clipId'] as String?,
+      noteId: json['noteId'] as String?,
     );
 
 Map<String, dynamic> _$ClipsRemoveNoteRequestToJson(

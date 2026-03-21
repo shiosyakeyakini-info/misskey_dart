@@ -6,87 +6,74 @@ class MisskeyFollowing {
 
   final ApiService _apiService;
 
-  MisskeyFollowing({required apiService})
+  MisskeyFollowing({required ApiService apiService})
       : _apiService = apiService,
         requests = MisskeyFollowingRequests(apiService: apiService);
 
-  /// ユーザーをフォローします。
+  /// following/create
   Future<UserLite> create(FollowingCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/create", request.toJson());
     return UserLite.fromJson(response);
   }
 
-  /// ユーザーに対するフォローを解除します。
+  /// following/delete
   Future<UserLite> delete(FollowingDeleteRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/delete", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/delete", request.toJson());
     return UserLite.fromJson(response);
   }
 
-  /// ユーザーからのフォローを解除します。
+  /// following/invalidate
   Future<UserLite> invalidate(FollowingInvalidateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "following/invalidate",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("following/invalidate", request.toJson());
     return UserLite.fromJson(response);
   }
 
-  /// フォロー中のユーザーの状態を変更します。
+  /// following/update
   Future<UserLite> update(FollowingUpdateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "following/update",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("following/update", request.toJson());
     return UserLite.fromJson(response);
   }
 
-  /// フォロー中のすべての人の状態を変更します。
+  /// following/update-all
   Future<void> updateAll(FollowingUpdateAllRequest request) async {
     await _apiService.post<void>("following/update-all", request.toJson());
   }
+
 }
 
 class MisskeyFollowingRequests {
+
   final ApiService _apiService;
 
-  MisskeyFollowingRequests({required apiService}) : _apiService = apiService;
+  MisskeyFollowingRequests({required ApiService apiService})
+      : _apiService = apiService;
 
-  /// ユーザーからのフォローリクエストを承認します。
+  /// following/requests/accept
   Future<void> accept(FollowingRequestsAcceptRequest request) async {
-    await _apiService.post("following/requests/accept", request.toJson());
+    await _apiService.post<void>("following/requests/accept", request.toJson());
   }
 
-  /// ユーザーに対して送信したフォローリクエストを取り消します。
-  Future<void> cancel(FollowingRequestsCancelRequest request) async {
-    await _apiService.post("following/requests/cancel", request.toJson());
+  /// following/requests/cancel
+  Future<UserLite> cancel(FollowingRequestsCancelRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("following/requests/cancel", request.toJson());
+    return UserLite.fromJson(response);
   }
 
-  /// 受け取ったフォローリクエストの一覧を取得します。
-  Future<Iterable<FollowRequest>> list(
-    FollowingRequestsListRequest request,
-  ) async {
-    final response = await _apiService.post<List>(
-      "following/requests/list",
-      request.toJson(),
-    );
-    return response.map((e) => FollowRequest.fromJson(e));
+  /// following/requests/list
+  Future<Iterable<FollowingRequestsListItem>> list(FollowingRequestsListRequest request) async {
+    final response = await _apiService.post<List>("following/requests/list", request.toJson());
+    return response.map((e) => FollowingRequestsListItem.fromJson(e as Map<String, dynamic>));
   }
 
-  /// ユーザーからのフォローリクエストを拒否します。
+  /// following/requests/reject
   Future<void> reject(FollowingRequestsRejectRequest request) async {
-    await _apiService.post("following/requests/reject", request.toJson());
+    await _apiService.post<void>("following/requests/reject", request.toJson());
   }
 
-  /// 送信したフォローリクエストの一覧を取得します。
-  Future<Iterable<FollowRequest>> sent(
-    FollowingRequestsSentRequest request,
-  ) async {
-    final response = await _apiService.post<List>(
-      "following/requests/sent",
-      request.toJson(),
-    );
-    return response.map((e) => FollowRequest.fromJson(e));
+  /// following/requests/sent
+  Future<Iterable<FollowingRequestsSentItem>> sent(FollowingRequestsSentRequest request) async {
+    final response = await _apiService.post<List>("following/requests/sent", request.toJson());
+    return response.map((e) => FollowingRequestsSentItem.fromJson(e as Map<String, dynamic>));
   }
+
 }

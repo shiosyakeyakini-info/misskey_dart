@@ -8,9 +8,11 @@ part of 'i_favorites_request.dart';
 
 _IFavoritesRequest _$IFavoritesRequestFromJson(Map<String, dynamic> json) =>
     _IFavoritesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$IFavoritesRequestToJson(_IFavoritesRequest instance) =>
@@ -18,4 +20,6 @@ Map<String, dynamic> _$IFavoritesRequestToJson(_IFavoritesRequest instance) =>
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
     };

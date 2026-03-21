@@ -22,13 +22,12 @@ _NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
       renote: json['renote'] == null
           ? null
           : Note.fromJson(json['renote'] as Map<String, dynamic>),
-      visibility: const NoteVisibilityJsonConverter()
-          .fromJson(json['visibility'] as String),
-      visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
+      visibility: $enumDecode(_$NoteVisibilityEnumMap, json['visibility']),
+      visibleUserIds: (json['visibleUserIds'] as List<dynamic>)
+          .map((e) => e as String)
           .toList(),
       fileIds:
-          (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+          (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
       files: (json['files'] as List<dynamic>?)
           ?.map((e) => DriveFile.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -39,10 +38,12 @@ _NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
       channelId: json['channelId'] as String?,
       channel: json['channel'] == null
           ? null
-          : NoteChannelInfo.fromJson(json['channel'] as Map<String, dynamic>),
-      localOnly: json['localOnly'] as bool?,
+          : NoteDraftChannel.fromJson(json['channel'] as Map<String, dynamic>),
+      localOnly: json['localOnly'] as bool,
       reactionAcceptance: $enumDecodeNullable(
           _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
+      scheduledAt: (json['scheduledAt'] as num?)?.toDouble(),
+      isActuallyScheduled: json['isActuallyScheduled'] as bool,
     );
 
 Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>
@@ -57,8 +58,7 @@ Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>
       'renoteId': instance.renoteId,
       'reply': instance.reply?.toJson(),
       'renote': instance.renote?.toJson(),
-      'visibility':
-          const NoteVisibilityJsonConverter().toJson(instance.visibility),
+      'visibility': _$NoteVisibilityEnumMap[instance.visibility]!,
       'visibleUserIds': instance.visibleUserIds,
       'fileIds': instance.fileIds,
       'files': instance.files?.map((e) => e.toJson()).toList(),
@@ -69,45 +69,22 @@ Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>
       'localOnly': instance.localOnly,
       'reactionAcceptance':
           _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
+      'scheduledAt': instance.scheduledAt,
+      'isActuallyScheduled': instance.isActuallyScheduled,
     };
 
+const _$NoteVisibilityEnumMap = {
+  NoteVisibility.public: 'public',
+  NoteVisibility.home: 'home',
+  NoteVisibility.followers: 'followers',
+  NoteVisibility.specified: 'specified',
+};
+
 const _$ReactionAcceptanceEnumMap = {
+  ReactionAcceptance.likeOnly: 'likeOnly',
   ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
   ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
   ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
-  ReactionAcceptance.likeOnly: 'likeOnly',
+  ReactionAcceptance.unknown: 'unknown',
 };
-
-_NoteDraftPoll _$NoteDraftPollFromJson(Map<String, dynamic> json) =>
-    _NoteDraftPoll(
-      expiresAt: _$JsonConverterFromJson<String, DateTime>(
-          json['expiresAt'], const DateTimeConverter().fromJson),
-      expiredAfter: const NullableDurationConverter()
-          .fromJson((json['expiredAfter'] as num?)?.toInt()),
-      multiple: json['multiple'] as bool,
-      choices:
-          (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
-    );
-
-Map<String, dynamic> _$NoteDraftPollToJson(_NoteDraftPoll instance) =>
-    <String, dynamic>{
-      'expiresAt': _$JsonConverterToJson<String, DateTime>(
-          instance.expiresAt, const DateTimeConverter().toJson),
-      'expiredAfter':
-          const NullableDurationConverter().toJson(instance.expiredAfter),
-      'multiple': instance.multiple,
-      'choices': instance.choices,
-    };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

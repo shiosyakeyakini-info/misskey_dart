@@ -8,11 +8,12 @@ part of 'users_search_request.dart';
 
 _UsersSearchRequest _$UsersSearchRequestFromJson(Map<String, dynamic> json) =>
     _UsersSearchRequest(
-      query: json['query'] as String,
-      offset: (json['offset'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt(),
-      origin: $enumDecodeNullable(_$OriginEnumMap, json['origin']),
-      detail: json['detail'] as bool?,
+      query: json['query'] as String?,
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
+      origin: $enumDecodeNullable(_$UsersSearchOriginEnumMap, json['origin']) ??
+          UsersSearchOrigin.combined,
+      detail: json['detail'] as bool? ?? true,
     );
 
 Map<String, dynamic> _$UsersSearchRequestToJson(_UsersSearchRequest instance) =>
@@ -20,12 +21,13 @@ Map<String, dynamic> _$UsersSearchRequestToJson(_UsersSearchRequest instance) =>
       'query': instance.query,
       'offset': instance.offset,
       'limit': instance.limit,
-      'origin': _$OriginEnumMap[instance.origin],
+      'origin': _$UsersSearchOriginEnumMap[instance.origin],
       'detail': instance.detail,
     };
 
-const _$OriginEnumMap = {
-  Origin.local: 'local',
-  Origin.remote: 'remote',
-  Origin.combined: 'combined',
+const _$UsersSearchOriginEnumMap = {
+  UsersSearchOrigin.local: 'local',
+  UsersSearchOrigin.remote: 'remote',
+  UsersSearchOrigin.combined: 'combined',
+  UsersSearchOrigin.unknown: 'unknown',
 };

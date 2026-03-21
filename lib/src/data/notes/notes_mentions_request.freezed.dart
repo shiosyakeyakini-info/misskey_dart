@@ -19,7 +19,9 @@ mixin _$NotesMentionsRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  NoteVisibility? get visibility;
+  int? get sinceDate;
+  int? get untilDate;
+  String? get visibility;
 
   /// Create a copy of NotesMentionsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -42,18 +44,22 @@ mixin _$NotesMentionsRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, following, limit, sinceId, untilId, visibility);
+  int get hashCode => Object.hash(runtimeType, following, limit, sinceId,
+      untilId, sinceDate, untilDate, visibility);
 
   @override
   String toString() {
-    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, visibility: $visibility)';
+    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, visibility: $visibility)';
   }
 }
 
@@ -68,7 +74,9 @@ abstract mixin class $NotesMentionsRequestCopyWith<$Res> {
       int? limit,
       String? sinceId,
       String? untilId,
-      NoteVisibility? visibility});
+      int? sinceDate,
+      int? untilDate,
+      String? visibility});
 }
 
 /// @nodoc
@@ -88,6 +96,8 @@ class _$NotesMentionsRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? visibility = freezed,
   }) {
     return _then(_self.copyWith(
@@ -107,10 +117,18 @@ class _$NotesMentionsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
+              as String?,
     ));
   }
 }
@@ -119,24 +137,32 @@ class _$NotesMentionsRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesMentionsRequest implements NotesMentionsRequest {
   const _NotesMentionsRequest(
-      {this.following,
-      this.limit,
+      {this.following = false,
+      this.limit = 10,
       this.sinceId,
       this.untilId,
+      this.sinceDate,
+      this.untilDate,
       this.visibility});
   factory _NotesMentionsRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesMentionsRequestFromJson(json);
 
   @override
+  @JsonKey()
   final bool? following;
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  final NoteVisibility? visibility;
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  final String? visibility;
 
   /// Create a copy of NotesMentionsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -164,18 +190,22 @@ class _NotesMentionsRequest implements NotesMentionsRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, following, limit, sinceId, untilId, visibility);
+  int get hashCode => Object.hash(runtimeType, following, limit, sinceId,
+      untilId, sinceDate, untilDate, visibility);
 
   @override
   String toString() {
-    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, visibility: $visibility)';
+    return 'NotesMentionsRequest(following: $following, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, visibility: $visibility)';
   }
 }
 
@@ -192,7 +222,9 @@ abstract mixin class _$NotesMentionsRequestCopyWith<$Res>
       int? limit,
       String? sinceId,
       String? untilId,
-      NoteVisibility? visibility});
+      int? sinceDate,
+      int? untilDate,
+      String? visibility});
 }
 
 /// @nodoc
@@ -212,6 +244,8 @@ class __$NotesMentionsRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? visibility = freezed,
   }) {
     return _then(_NotesMentionsRequest(
@@ -231,10 +265,18 @@ class __$NotesMentionsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
+              as String?,
     ));
   }
 }

@@ -9,7 +9,7 @@ part of 'channels_unfollow_request.dart';
 _ChannelsUnfollowRequest _$ChannelsUnfollowRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsUnfollowRequest(
-      channelId: json['channelId'] as String,
+      channelId: json['channelId'] as String?,
     );
 
 Map<String, dynamic> _$ChannelsUnfollowRequestToJson(

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/color_converter.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 
@@ -12,24 +11,24 @@ abstract class CommunityChannel with _$CommunityChannel {
   const factory CommunityChannel({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    @NullableUriConverter() DateTime? lastNotedAt,
+    @NullableDateTimeConverter() DateTime? lastNotedAt,
     required String name,
     String? description,
     String? userId,
     @NullableUriConverter() Uri? bannerUrl,
+    String? bannerId,
     required List<String> pinnedNoteIds,
+    required String color,
+    required bool isArchived,
     required int usersCount,
     required int notesCount,
-    @Default(false) bool isSensitive,
-    @Default(false) bool isArchived,
-    @NullableColorConverter() int? color,
+    required bool isSensitive,
+    required bool allowRenoteToExternal,
     bool? isFollowing,
     bool? isFavorited,
-    bool? hasUnreadNote,
-    required List<Note>? pinnedNotes,
-    @Default(true) bool allowRenoteToExternal,
+    bool? isMuting,
+    List<Note>? pinnedNotes,
   }) = _CommunityChannel;
 
-  factory CommunityChannel.fromJson(Map<String, Object?> json) =>
-      _$CommunityChannelFromJson(json);
+  factory CommunityChannel.fromJson(Map<String, Object?> json) => _$CommunityChannelFromJson(json);
 }

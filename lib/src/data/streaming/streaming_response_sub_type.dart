@@ -42,18 +42,7 @@ abstract class RegistryUpdated with _$RegistryUpdated {
       _$RegistryUpdatedFromJson(json);
 }
 
-@freezed
-abstract class Signin with _$Signin {
-  const factory Signin({
-    required String id,
-    @DateTimeConverter() required DateTime createdAt,
-    required String ip,
-    Object? headers,
-    required bool success,
-  }) = _Signin;
-
-  factory Signin.fromJson(Map<String, dynamic> json) => _$SigninFromJson(json);
-}
+// Signin class is now generated in data/base/signin.dart
 
 @freezed
 abstract class TimelineVoted with _$TimelineVoted {

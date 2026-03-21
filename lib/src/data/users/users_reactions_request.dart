@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_reactions_request.freezed.dart';
 part 'users_reactions_request.g.dart';
@@ -7,14 +7,13 @@ part 'users_reactions_request.g.dart';
 @freezed
 abstract class UsersReactionsRequest with _$UsersReactionsRequest {
   const factory UsersReactionsRequest({
-    required String userId,
-    int? limit,
+    String? userId,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+    int? sinceDate,
+    int? untilDate,
   }) = _UsersReactionsRequest;
 
-  factory UsersReactionsRequest.fromJson(Map<String, dynamic> json) =>
-      _$UsersReactionsRequestFromJson(json);
+  factory UsersReactionsRequest.fromJson(Map<String, Object?> json) => _$UsersReactionsRequestFromJson(json);
 }

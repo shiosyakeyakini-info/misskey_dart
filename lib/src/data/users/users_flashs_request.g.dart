@@ -8,10 +8,12 @@ part of 'users_flashs_request.dart';
 
 _UsersFlashsRequest _$UsersFlashsRequestFromJson(Map<String, dynamic> json) =>
     _UsersFlashsRequest(
-      userId: json['userId'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
+      userId: json['userId'] as String?,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$UsersFlashsRequestToJson(_UsersFlashsRequest instance) =>
@@ -20,4 +22,6 @@ Map<String, dynamic> _$UsersFlashsRequestToJson(_UsersFlashsRequest instance) =>
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
     };

@@ -20,14 +20,14 @@ mixin _$Flash {
   DateTime get createdAt;
   @DateTimeConverter()
   DateTime get updatedAt;
+  String get userId;
+  UserLite get user;
   String get title;
   String get summary;
   String get script;
-  FlashVisibility? get visibility;
-  String get userId;
-  UserLite get user;
-  int? get likedCount;
-  bool get isLiked;
+  FlashVisibility get visibility;
+  double get likedCount;
+  bool? get isLiked;
 
   /// Create a copy of Flash
   /// with the given fields replaced by the non-null parameter values.
@@ -49,13 +49,13 @@ mixin _$Flash {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.summary, summary) || other.summary == summary) &&
             (identical(other.script, script) || other.script == script) &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.likedCount, likedCount) ||
                 other.likedCount == likedCount) &&
             (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
@@ -63,12 +63,12 @@ mixin _$Flash {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, title,
-      summary, script, visibility, userId, user, likedCount, isLiked);
+  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, userId,
+      user, title, summary, script, visibility, likedCount, isLiked);
 
   @override
   String toString() {
-    return 'Flash(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, title: $title, summary: $summary, script: $script, visibility: $visibility, userId: $userId, user: $user, likedCount: $likedCount, isLiked: $isLiked)';
+    return 'Flash(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, userId: $userId, user: $user, title: $title, summary: $summary, script: $script, visibility: $visibility, likedCount: $likedCount, isLiked: $isLiked)';
   }
 }
 
@@ -81,14 +81,14 @@ abstract mixin class $FlashCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
+      String userId,
+      UserLite user,
       String title,
       String summary,
       String script,
-      FlashVisibility? visibility,
-      String userId,
-      UserLite user,
-      int? likedCount,
-      bool isLiked});
+      FlashVisibility visibility,
+      double likedCount,
+      bool? isLiked});
 
   $UserLiteCopyWith<$Res> get user;
 }
@@ -108,14 +108,14 @@ class _$FlashCopyWithImpl<$Res> implements $FlashCopyWith<$Res> {
     Object? id = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? userId = null,
+    Object? user = null,
     Object? title = null,
     Object? summary = null,
     Object? script = null,
-    Object? visibility = freezed,
-    Object? userId = null,
-    Object? user = null,
-    Object? likedCount = freezed,
-    Object? isLiked = null,
+    Object? visibility = null,
+    Object? likedCount = null,
+    Object? isLiked = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -130,6 +130,14 @@ class _$FlashCopyWithImpl<$Res> implements $FlashCopyWith<$Res> {
           ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
       title: null == title
           ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -142,26 +150,18 @@ class _$FlashCopyWithImpl<$Res> implements $FlashCopyWith<$Res> {
           ? _self.script
           : script // ignore: cast_nullable_to_non_nullable
               as String,
-      visibility: freezed == visibility
+      visibility: null == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashVisibility?,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
-      likedCount: freezed == likedCount
+              as FlashVisibility,
+      likedCount: null == likedCount
           ? _self.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isLiked: null == isLiked
+              as double,
+      isLiked: freezed == isLiked
           ? _self.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 
@@ -183,14 +183,14 @@ class _Flash implements Flash {
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @DateTimeConverter() required this.updatedAt,
+      required this.userId,
+      required this.user,
       required this.title,
       required this.summary,
       required this.script,
-      this.visibility,
-      required this.userId,
-      required this.user,
-      this.likedCount,
-      this.isLiked = false});
+      required this.visibility,
+      required this.likedCount,
+      this.isLiked});
   factory _Flash.fromJson(Map<String, dynamic> json) => _$FlashFromJson(json);
 
   @override
@@ -202,22 +202,21 @@ class _Flash implements Flash {
   @DateTimeConverter()
   final DateTime updatedAt;
   @override
+  final String userId;
+  @override
+  final UserLite user;
+  @override
   final String title;
   @override
   final String summary;
   @override
   final String script;
   @override
-  final FlashVisibility? visibility;
+  final FlashVisibility visibility;
   @override
-  final String userId;
+  final double likedCount;
   @override
-  final UserLite user;
-  @override
-  final int? likedCount;
-  @override
-  @JsonKey()
-  final bool isLiked;
+  final bool? isLiked;
 
   /// Create a copy of Flash
   /// with the given fields replaced by the non-null parameter values.
@@ -244,13 +243,13 @@ class _Flash implements Flash {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.summary, summary) || other.summary == summary) &&
             (identical(other.script, script) || other.script == script) &&
             (identical(other.visibility, visibility) ||
                 other.visibility == visibility) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.likedCount, likedCount) ||
                 other.likedCount == likedCount) &&
             (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
@@ -258,12 +257,12 @@ class _Flash implements Flash {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, title,
-      summary, script, visibility, userId, user, likedCount, isLiked);
+  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, userId,
+      user, title, summary, script, visibility, likedCount, isLiked);
 
   @override
   String toString() {
-    return 'Flash(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, title: $title, summary: $summary, script: $script, visibility: $visibility, userId: $userId, user: $user, likedCount: $likedCount, isLiked: $isLiked)';
+    return 'Flash(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, userId: $userId, user: $user, title: $title, summary: $summary, script: $script, visibility: $visibility, likedCount: $likedCount, isLiked: $isLiked)';
   }
 }
 
@@ -277,14 +276,14 @@ abstract mixin class _$FlashCopyWith<$Res> implements $FlashCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
+      String userId,
+      UserLite user,
       String title,
       String summary,
       String script,
-      FlashVisibility? visibility,
-      String userId,
-      UserLite user,
-      int? likedCount,
-      bool isLiked});
+      FlashVisibility visibility,
+      double likedCount,
+      bool? isLiked});
 
   @override
   $UserLiteCopyWith<$Res> get user;
@@ -305,14 +304,14 @@ class __$FlashCopyWithImpl<$Res> implements _$FlashCopyWith<$Res> {
     Object? id = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? userId = null,
+    Object? user = null,
     Object? title = null,
     Object? summary = null,
     Object? script = null,
-    Object? visibility = freezed,
-    Object? userId = null,
-    Object? user = null,
-    Object? likedCount = freezed,
-    Object? isLiked = null,
+    Object? visibility = null,
+    Object? likedCount = null,
+    Object? isLiked = freezed,
   }) {
     return _then(_Flash(
       id: null == id
@@ -327,6 +326,14 @@ class __$FlashCopyWithImpl<$Res> implements _$FlashCopyWith<$Res> {
           ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserLite,
       title: null == title
           ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -339,26 +346,18 @@ class __$FlashCopyWithImpl<$Res> implements _$FlashCopyWith<$Res> {
           ? _self.script
           : script // ignore: cast_nullable_to_non_nullable
               as String,
-      visibility: freezed == visibility
+      visibility: null == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashVisibility?,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserLite,
-      likedCount: freezed == likedCount
+              as FlashVisibility,
+      likedCount: null == likedCount
           ? _self.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isLiked: null == isLiked
+              as double,
+      isLiked: freezed == isLiked
           ? _self.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 

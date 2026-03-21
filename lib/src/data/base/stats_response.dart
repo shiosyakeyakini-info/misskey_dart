@@ -1,0 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
+
+part 'stats_response.freezed.dart';
+part 'stats_response.g.dart';
+
+@freezed
+abstract class StatsResponse with _$StatsResponse {
+  const factory StatsResponse({
+    required int notesCount,
+    required int originalNotesCount,
+    required int usersCount,
+    required int originalUsersCount,
+    required int instances,
+    required int driveUsageLocal,
+    required int driveUsageRemote,
+  }) = _StatsResponse;
+
+  factory StatsResponse.fromJson(Map<String, Object?> json) => _$StatsResponseFromJson(json);
+}

@@ -13,10 +13,10 @@ abstract class Clip with _$Clip {
     @NullableDateTimeConverter() DateTime? lastClippedAt,
     required String userId,
     required UserLite user,
-    String? name,
+    required String name,
     String? description,
     required bool isPublic,
-    required int favoritedCount,
+    required double favoritedCount,
     bool? isFavorited,
     int? notesCount,
   }) = _Clip;

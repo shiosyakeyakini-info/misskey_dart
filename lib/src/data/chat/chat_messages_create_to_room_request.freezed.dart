@@ -15,9 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatMessagesCreateToRoomRequest {
-  String get toRoomId;
   String? get text;
   String? get fileId;
+  String? get toRoomId;
 
   /// Create a copy of ChatMessagesCreateToRoomRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -36,19 +36,19 @@ mixin _$ChatMessagesCreateToRoomRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ChatMessagesCreateToRoomRequest &&
-            (identical(other.toRoomId, toRoomId) ||
-                other.toRoomId == toRoomId) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.fileId, fileId) || other.fileId == fileId));
+            (identical(other.fileId, fileId) || other.fileId == fileId) &&
+            (identical(other.toRoomId, toRoomId) ||
+                other.toRoomId == toRoomId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, toRoomId, text, fileId);
+  int get hashCode => Object.hash(runtimeType, text, fileId, toRoomId);
 
   @override
   String toString() {
-    return 'ChatMessagesCreateToRoomRequest(toRoomId: $toRoomId, text: $text, fileId: $fileId)';
+    return 'ChatMessagesCreateToRoomRequest(text: $text, fileId: $fileId, toRoomId: $toRoomId)';
   }
 }
 
@@ -59,7 +59,7 @@ abstract mixin class $ChatMessagesCreateToRoomRequestCopyWith<$Res> {
           $Res Function(ChatMessagesCreateToRoomRequest) _then) =
       _$ChatMessagesCreateToRoomRequestCopyWithImpl;
   @useResult
-  $Res call({String toRoomId, String? text, String? fileId});
+  $Res call({String? text, String? fileId, String? toRoomId});
 }
 
 /// @nodoc
@@ -75,15 +75,11 @@ class _$ChatMessagesCreateToRoomRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? toRoomId = null,
     Object? text = freezed,
     Object? fileId = freezed,
+    Object? toRoomId = freezed,
   }) {
     return _then(_self.copyWith(
-      toRoomId: null == toRoomId
-          ? _self.toRoomId
-          : toRoomId // ignore: cast_nullable_to_non_nullable
-              as String,
       text: freezed == text
           ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -91,6 +87,10 @@ class _$ChatMessagesCreateToRoomRequestCopyWithImpl<$Res>
       fileId: freezed == fileId
           ? _self.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toRoomId: freezed == toRoomId
+          ? _self.toRoomId
+          : toRoomId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -101,17 +101,17 @@ class _$ChatMessagesCreateToRoomRequestCopyWithImpl<$Res>
 class _ChatMessagesCreateToRoomRequest
     implements ChatMessagesCreateToRoomRequest {
   const _ChatMessagesCreateToRoomRequest(
-      {required this.toRoomId, this.text, this.fileId});
+      {this.text, this.fileId, this.toRoomId});
   factory _ChatMessagesCreateToRoomRequest.fromJson(
           Map<String, dynamic> json) =>
       _$ChatMessagesCreateToRoomRequestFromJson(json);
 
   @override
-  final String toRoomId;
-  @override
   final String? text;
   @override
   final String? fileId;
+  @override
+  final String? toRoomId;
 
   /// Create a copy of ChatMessagesCreateToRoomRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -134,19 +134,19 @@ class _ChatMessagesCreateToRoomRequest
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ChatMessagesCreateToRoomRequest &&
-            (identical(other.toRoomId, toRoomId) ||
-                other.toRoomId == toRoomId) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.fileId, fileId) || other.fileId == fileId));
+            (identical(other.fileId, fileId) || other.fileId == fileId) &&
+            (identical(other.toRoomId, toRoomId) ||
+                other.toRoomId == toRoomId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, toRoomId, text, fileId);
+  int get hashCode => Object.hash(runtimeType, text, fileId, toRoomId);
 
   @override
   String toString() {
-    return 'ChatMessagesCreateToRoomRequest(toRoomId: $toRoomId, text: $text, fileId: $fileId)';
+    return 'ChatMessagesCreateToRoomRequest(text: $text, fileId: $fileId, toRoomId: $toRoomId)';
   }
 }
 
@@ -159,7 +159,7 @@ abstract mixin class _$ChatMessagesCreateToRoomRequestCopyWith<$Res>
       __$ChatMessagesCreateToRoomRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String toRoomId, String? text, String? fileId});
+  $Res call({String? text, String? fileId, String? toRoomId});
 }
 
 /// @nodoc
@@ -175,15 +175,11 @@ class __$ChatMessagesCreateToRoomRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? toRoomId = null,
     Object? text = freezed,
     Object? fileId = freezed,
+    Object? toRoomId = freezed,
   }) {
     return _then(_ChatMessagesCreateToRoomRequest(
-      toRoomId: null == toRoomId
-          ? _self.toRoomId
-          : toRoomId // ignore: cast_nullable_to_non_nullable
-              as String,
       text: freezed == text
           ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -191,6 +187,10 @@ class __$ChatMessagesCreateToRoomRequestCopyWithImpl<$Res>
       fileId: freezed == fileId
           ? _self.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toRoomId: freezed == toRoomId
+          ? _self.toRoomId
+          : toRoomId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }

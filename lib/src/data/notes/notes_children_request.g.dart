@@ -9,10 +9,12 @@ part of 'notes_children_request.dart';
 _NotesChildrenRequest _$NotesChildrenRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesChildrenRequest(
-      noteId: json['noteId'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
+      noteId: json['noteId'] as String?,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$NotesChildrenRequestToJson(
@@ -22,4 +24,6 @@ Map<String, dynamic> _$NotesChildrenRequestToJson(
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
     };

@@ -8,14 +8,6 @@ part 'role.g.dart';
 @freezed
 abstract class Role with _$Role {
   const factory Role({
-    required String id,
-    required String name,
-    String? color,
-    String? iconUrl,
-    required String description,
-    required bool isModerator,
-    required bool isAdministrator,
-    required int displayOrder,
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverter() required DateTime updatedAt,
     required RoleTarget target,

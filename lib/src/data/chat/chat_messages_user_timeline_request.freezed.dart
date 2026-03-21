@@ -15,10 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatMessagesUserTimelineRequest {
-  String get userId;
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
+  String? get userId;
 
   /// Create a copy of ChatMessagesUserTimelineRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -37,19 +39,24 @@ mixin _$ChatMessagesUserTimelineRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ChatMessagesUserTimelineRequest &&
-            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, limit, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, userId);
 
   @override
   String toString() {
-    return 'ChatMessagesUserTimelineRequest(userId: $userId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'ChatMessagesUserTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, userId: $userId)';
   }
 }
 
@@ -60,7 +67,13 @@ abstract mixin class $ChatMessagesUserTimelineRequestCopyWith<$Res> {
           $Res Function(ChatMessagesUserTimelineRequest) _then) =
       _$ChatMessagesUserTimelineRequestCopyWithImpl;
   @useResult
-  $Res call({String userId, int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? userId});
 }
 
 /// @nodoc
@@ -76,16 +89,14 @@ class _$ChatMessagesUserTimelineRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -98,6 +109,18 @@ class _$ChatMessagesUserTimelineRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -107,19 +130,29 @@ class _$ChatMessagesUserTimelineRequestCopyWithImpl<$Res>
 class _ChatMessagesUserTimelineRequest
     implements ChatMessagesUserTimelineRequest {
   const _ChatMessagesUserTimelineRequest(
-      {required this.userId, this.limit, this.sinceId, this.untilId});
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.userId});
   factory _ChatMessagesUserTimelineRequest.fromJson(
           Map<String, dynamic> json) =>
       _$ChatMessagesUserTimelineRequestFromJson(json);
 
   @override
-  final String userId;
-  @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  final String? userId;
 
   /// Create a copy of ChatMessagesUserTimelineRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -142,19 +175,24 @@ class _ChatMessagesUserTimelineRequest
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ChatMessagesUserTimelineRequest &&
-            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, limit, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, userId);
 
   @override
   String toString() {
-    return 'ChatMessagesUserTimelineRequest(userId: $userId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'ChatMessagesUserTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, userId: $userId)';
   }
 }
 
@@ -167,7 +205,13 @@ abstract mixin class _$ChatMessagesUserTimelineRequestCopyWith<$Res>
       __$ChatMessagesUserTimelineRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId, int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? userId});
 }
 
 /// @nodoc
@@ -183,16 +227,14 @@ class __$ChatMessagesUserTimelineRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_ChatMessagesUserTimelineRequest(
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -204,6 +246,18 @@ class __$ChatMessagesUserTimelineRequestCopyWithImpl<$Res>
       untilId: freezed == untilId
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }

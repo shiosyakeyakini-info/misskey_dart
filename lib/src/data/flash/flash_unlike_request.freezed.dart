@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FlashUnlikeRequest {
-  String get flashId;
+  String? get flashId;
 
   /// Create a copy of FlashUnlikeRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $FlashUnlikeRequestCopyWith<$Res> {
           FlashUnlikeRequest value, $Res Function(FlashUnlikeRequest) _then) =
       _$FlashUnlikeRequestCopyWithImpl;
   @useResult
-  $Res call({String flashId});
+  $Res call({String? flashId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$FlashUnlikeRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? flashId = null,
+    Object? flashId = freezed,
   }) {
     return _then(_self.copyWith(
-      flashId: null == flashId
+      flashId: freezed == flashId
           ? _self.flashId
           : flashId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$FlashUnlikeRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FlashUnlikeRequest implements FlashUnlikeRequest {
-  const _FlashUnlikeRequest({required this.flashId});
+  const _FlashUnlikeRequest({this.flashId});
   factory _FlashUnlikeRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashUnlikeRequestFromJson(json);
 
   @override
-  final String flashId;
+  final String? flashId;
 
   /// Create a copy of FlashUnlikeRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$FlashUnlikeRequestCopyWith<$Res>
       __$FlashUnlikeRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String flashId});
+  $Res call({String? flashId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$FlashUnlikeRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? flashId = null,
+    Object? flashId = freezed,
   }) {
     return _then(_FlashUnlikeRequest(
-      flashId: null == flashId
+      flashId: freezed == flashId
           ? _self.flashId
           : flashId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

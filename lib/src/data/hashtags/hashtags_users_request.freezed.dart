@@ -15,12 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$HashtagsUsersRequest {
-  String get tag;
+  String? get tag;
   int? get limit;
-  @UsersSortConverter()
-  UsersSortType get sort;
-  UsersState? get state;
-  Origin? get origin;
+  int? get offset;
+  HashtagsUsersSort? get sort;
+  HashtagsUsersState? get state;
+  HashtagsUsersOrigin? get origin;
 
   /// Create a copy of HashtagsUsersRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -40,6 +40,7 @@ mixin _$HashtagsUsersRequest {
             other is HashtagsUsersRequest &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.origin, origin) || other.origin == origin));
@@ -47,11 +48,12 @@ mixin _$HashtagsUsersRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tag, limit, sort, state, origin);
+  int get hashCode =>
+      Object.hash(runtimeType, tag, limit, offset, sort, state, origin);
 
   @override
   String toString() {
-    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, sort: $sort, state: $state, origin: $origin)';
+    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, offset: $offset, sort: $sort, state: $state, origin: $origin)';
   }
 }
 
@@ -62,11 +64,12 @@ abstract mixin class $HashtagsUsersRequestCopyWith<$Res> {
       _$HashtagsUsersRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String tag,
+      {String? tag,
       int? limit,
-      @UsersSortConverter() UsersSortType sort,
-      UsersState? state,
-      Origin? origin});
+      int? offset,
+      HashtagsUsersSort? sort,
+      HashtagsUsersState? state,
+      HashtagsUsersOrigin? origin});
 }
 
 /// @nodoc
@@ -82,33 +85,38 @@ class _$HashtagsUsersRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tag = null,
+    Object? tag = freezed,
     Object? limit = freezed,
-    Object? sort = null,
+    Object? offset = freezed,
+    Object? sort = freezed,
     Object? state = freezed,
     Object? origin = freezed,
   }) {
     return _then(_self.copyWith(
-      tag: null == tag
+      tag: freezed == tag
           ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      sort: null == sort
+      offset: freezed == offset
+          ? _self.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as UsersSortType,
+              as HashtagsUsersSort?,
       state: freezed == state
           ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
-              as UsersState?,
+              as HashtagsUsersState?,
       origin: freezed == origin
           ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as Origin?,
+              as HashtagsUsersOrigin?,
     ));
   }
 }
@@ -117,25 +125,31 @@ class _$HashtagsUsersRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _HashtagsUsersRequest implements HashtagsUsersRequest {
   const _HashtagsUsersRequest(
-      {required this.tag,
-      this.limit,
-      @UsersSortConverter() required this.sort,
-      this.state,
-      this.origin});
+      {this.tag,
+      this.limit = 10,
+      this.offset = 0,
+      this.sort,
+      this.state = HashtagsUsersState.all,
+      this.origin = HashtagsUsersOrigin.local});
   factory _HashtagsUsersRequest.fromJson(Map<String, dynamic> json) =>
       _$HashtagsUsersRequestFromJson(json);
 
   @override
-  final String tag;
+  final String? tag;
   @override
+  @JsonKey()
   final int? limit;
   @override
-  @UsersSortConverter()
-  final UsersSortType sort;
+  @JsonKey()
+  final int? offset;
   @override
-  final UsersState? state;
+  final HashtagsUsersSort? sort;
   @override
-  final Origin? origin;
+  @JsonKey()
+  final HashtagsUsersState? state;
+  @override
+  @JsonKey()
+  final HashtagsUsersOrigin? origin;
 
   /// Create a copy of HashtagsUsersRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -160,6 +174,7 @@ class _HashtagsUsersRequest implements HashtagsUsersRequest {
             other is _HashtagsUsersRequest &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.origin, origin) || other.origin == origin));
@@ -167,11 +182,12 @@ class _HashtagsUsersRequest implements HashtagsUsersRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tag, limit, sort, state, origin);
+  int get hashCode =>
+      Object.hash(runtimeType, tag, limit, offset, sort, state, origin);
 
   @override
   String toString() {
-    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, sort: $sort, state: $state, origin: $origin)';
+    return 'HashtagsUsersRequest(tag: $tag, limit: $limit, offset: $offset, sort: $sort, state: $state, origin: $origin)';
   }
 }
 
@@ -184,11 +200,12 @@ abstract mixin class _$HashtagsUsersRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String tag,
+      {String? tag,
       int? limit,
-      @UsersSortConverter() UsersSortType sort,
-      UsersState? state,
-      Origin? origin});
+      int? offset,
+      HashtagsUsersSort? sort,
+      HashtagsUsersState? state,
+      HashtagsUsersOrigin? origin});
 }
 
 /// @nodoc
@@ -204,33 +221,38 @@ class __$HashtagsUsersRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? tag = null,
+    Object? tag = freezed,
     Object? limit = freezed,
-    Object? sort = null,
+    Object? offset = freezed,
+    Object? sort = freezed,
     Object? state = freezed,
     Object? origin = freezed,
   }) {
     return _then(_HashtagsUsersRequest(
-      tag: null == tag
+      tag: freezed == tag
           ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      sort: null == sort
+      offset: freezed == offset
+          ? _self.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as UsersSortType,
+              as HashtagsUsersSort?,
       state: freezed == state
           ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
-              as UsersState?,
+              as HashtagsUsersState?,
       origin: freezed == origin
           ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as Origin?,
+              as HashtagsUsersOrigin?,
     ));
   }
 }

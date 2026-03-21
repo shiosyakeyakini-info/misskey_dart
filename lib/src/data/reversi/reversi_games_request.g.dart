@@ -8,10 +8,12 @@ part of 'reversi_games_request.dart';
 
 _ReversiGamesRequest _$ReversiGamesRequestFromJson(Map<String, dynamic> json) =>
     _ReversiGamesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      my: json['my'] as bool?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      my: json['my'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$ReversiGamesRequestToJson(
@@ -20,5 +22,7 @@ Map<String, dynamic> _$ReversiGamesRequestToJson(
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'my': instance.my,
     };

@@ -1,0 +1,14 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
+
+part 'users_lists_unfavorite_request.freezed.dart';
+part 'users_lists_unfavorite_request.g.dart';
+
+@freezed
+abstract class UsersListsUnfavoriteRequest with _$UsersListsUnfavoriteRequest {
+  const factory UsersListsUnfavoriteRequest({
+    String? listId,
+  }) = _UsersListsUnfavoriteRequest;
+
+  factory UsersListsUnfavoriteRequest.fromJson(Map<String, Object?> json) => _$UsersListsUnfavoriteRequestFromJson(json);
+}

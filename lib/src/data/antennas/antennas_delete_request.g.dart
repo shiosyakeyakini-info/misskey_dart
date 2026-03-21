@@ -9,7 +9,7 @@ part of 'antennas_delete_request.dart';
 _AntennasDeleteRequest _$AntennasDeleteRequestFromJson(
         Map<String, dynamic> json) =>
     _AntennasDeleteRequest(
-      antennaId: json['antennaId'] as String,
+      antennaId: json['antennaId'] as String?,
     );
 
 Map<String, dynamic> _$AntennasDeleteRequestToJson(

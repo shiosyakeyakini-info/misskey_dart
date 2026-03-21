@@ -15,14 +15,6 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$Role {
-  String get id;
-  String get name;
-  String? get color;
-  String? get iconUrl;
-  String get description;
-  bool get isModerator;
-  bool get isAdministrator;
-  int get displayOrder;
   @DateTimeConverter()
   DateTime get createdAt;
   @DateTimeConverter()
@@ -52,18 +44,6 @@ mixin _$Role {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Role &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.color, color) || other.color == color) &&
-            (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.isModerator, isModerator) ||
-                other.isModerator == isModerator) &&
-            (identical(other.isAdministrator, isAdministrator) ||
-                other.isAdministrator == isAdministrator) &&
-            (identical(other.displayOrder, displayOrder) ||
-                other.displayOrder == displayOrder) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -90,32 +70,23 @@ mixin _$Role {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        color,
-        iconUrl,
-        description,
-        isModerator,
-        isAdministrator,
-        displayOrder,
-        createdAt,
-        updatedAt,
-        target,
-        condFormula,
-        isPublic,
-        isExplorable,
-        asBadge,
-        preserveAssignmentOnMoveAccount,
-        canEditMembersByModerator,
-        const DeepCollectionEquality().hash(policies),
-        usersCount
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      createdAt,
+      updatedAt,
+      target,
+      condFormula,
+      isPublic,
+      isExplorable,
+      asBadge,
+      preserveAssignmentOnMoveAccount,
+      canEditMembersByModerator,
+      const DeepCollectionEquality().hash(policies),
+      usersCount);
 
   @override
   String toString() {
-    return 'Role(id: $id, name: $name, color: $color, iconUrl: $iconUrl, description: $description, isModerator: $isModerator, isAdministrator: $isAdministrator, displayOrder: $displayOrder, createdAt: $createdAt, updatedAt: $updatedAt, target: $target, condFormula: $condFormula, isPublic: $isPublic, isExplorable: $isExplorable, asBadge: $asBadge, preserveAssignmentOnMoveAccount: $preserveAssignmentOnMoveAccount, canEditMembersByModerator: $canEditMembersByModerator, policies: $policies, usersCount: $usersCount)';
+    return 'Role(createdAt: $createdAt, updatedAt: $updatedAt, target: $target, condFormula: $condFormula, isPublic: $isPublic, isExplorable: $isExplorable, asBadge: $asBadge, preserveAssignmentOnMoveAccount: $preserveAssignmentOnMoveAccount, canEditMembersByModerator: $canEditMembersByModerator, policies: $policies, usersCount: $usersCount)';
   }
 }
 
@@ -125,15 +96,7 @@ abstract mixin class $RoleCopyWith<$Res> {
       _$RoleCopyWithImpl;
   @useResult
   $Res call(
-      {String id,
-      String name,
-      String? color,
-      String? iconUrl,
-      String description,
-      bool isModerator,
-      bool isAdministrator,
-      int displayOrder,
-      @DateTimeConverter() DateTime createdAt,
+      {@DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
       RoleTarget target,
       RoleCondFormulaValue condFormula,
@@ -160,14 +123,6 @@ class _$RoleCopyWithImpl<$Res> implements $RoleCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? color = freezed,
-    Object? iconUrl = freezed,
-    Object? description = null,
-    Object? isModerator = null,
-    Object? isAdministrator = null,
-    Object? displayOrder = null,
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? target = null,
@@ -181,38 +136,6 @@ class _$RoleCopyWithImpl<$Res> implements $RoleCopyWith<$Res> {
     Object? usersCount = null,
   }) {
     return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: freezed == color
-          ? _self.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
-      iconUrl: freezed == iconUrl
-          ? _self.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: null == description
-          ? _self.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      isModerator: null == isModerator
-          ? _self.isModerator
-          : isModerator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isAdministrator: null == isAdministrator
-          ? _self.isAdministrator
-          : isAdministrator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      displayOrder: null == displayOrder
-          ? _self.displayOrder
-          : displayOrder // ignore: cast_nullable_to_non_nullable
-              as int,
       createdAt: null == createdAt
           ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -275,15 +198,7 @@ class _$RoleCopyWithImpl<$Res> implements $RoleCopyWith<$Res> {
 @JsonSerializable()
 class _Role implements Role {
   const _Role(
-      {required this.id,
-      required this.name,
-      this.color,
-      this.iconUrl,
-      required this.description,
-      required this.isModerator,
-      required this.isAdministrator,
-      required this.displayOrder,
-      @DateTimeConverter() required this.createdAt,
+      {@DateTimeConverter() required this.createdAt,
       @DateTimeConverter() required this.updatedAt,
       required this.target,
       required this.condFormula,
@@ -297,22 +212,6 @@ class _Role implements Role {
       : _policies = policies;
   factory _Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final String? color;
-  @override
-  final String? iconUrl;
-  @override
-  final String description;
-  @override
-  final bool isModerator;
-  @override
-  final bool isAdministrator;
-  @override
-  final int displayOrder;
   @override
   @DateTimeConverter()
   final DateTime createdAt;
@@ -364,18 +263,6 @@ class _Role implements Role {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Role &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.color, color) || other.color == color) &&
-            (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.isModerator, isModerator) ||
-                other.isModerator == isModerator) &&
-            (identical(other.isAdministrator, isAdministrator) ||
-                other.isAdministrator == isAdministrator) &&
-            (identical(other.displayOrder, displayOrder) ||
-                other.displayOrder == displayOrder) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -402,32 +289,23 @@ class _Role implements Role {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        color,
-        iconUrl,
-        description,
-        isModerator,
-        isAdministrator,
-        displayOrder,
-        createdAt,
-        updatedAt,
-        target,
-        condFormula,
-        isPublic,
-        isExplorable,
-        asBadge,
-        preserveAssignmentOnMoveAccount,
-        canEditMembersByModerator,
-        const DeepCollectionEquality().hash(_policies),
-        usersCount
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      createdAt,
+      updatedAt,
+      target,
+      condFormula,
+      isPublic,
+      isExplorable,
+      asBadge,
+      preserveAssignmentOnMoveAccount,
+      canEditMembersByModerator,
+      const DeepCollectionEquality().hash(_policies),
+      usersCount);
 
   @override
   String toString() {
-    return 'Role(id: $id, name: $name, color: $color, iconUrl: $iconUrl, description: $description, isModerator: $isModerator, isAdministrator: $isAdministrator, displayOrder: $displayOrder, createdAt: $createdAt, updatedAt: $updatedAt, target: $target, condFormula: $condFormula, isPublic: $isPublic, isExplorable: $isExplorable, asBadge: $asBadge, preserveAssignmentOnMoveAccount: $preserveAssignmentOnMoveAccount, canEditMembersByModerator: $canEditMembersByModerator, policies: $policies, usersCount: $usersCount)';
+    return 'Role(createdAt: $createdAt, updatedAt: $updatedAt, target: $target, condFormula: $condFormula, isPublic: $isPublic, isExplorable: $isExplorable, asBadge: $asBadge, preserveAssignmentOnMoveAccount: $preserveAssignmentOnMoveAccount, canEditMembersByModerator: $canEditMembersByModerator, policies: $policies, usersCount: $usersCount)';
   }
 }
 
@@ -438,15 +316,7 @@ abstract mixin class _$RoleCopyWith<$Res> implements $RoleCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String name,
-      String? color,
-      String? iconUrl,
-      String description,
-      bool isModerator,
-      bool isAdministrator,
-      int displayOrder,
-      @DateTimeConverter() DateTime createdAt,
+      {@DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
       RoleTarget target,
       RoleCondFormulaValue condFormula,
@@ -474,14 +344,6 @@ class __$RoleCopyWithImpl<$Res> implements _$RoleCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? color = freezed,
-    Object? iconUrl = freezed,
-    Object? description = null,
-    Object? isModerator = null,
-    Object? isAdministrator = null,
-    Object? displayOrder = null,
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? target = null,
@@ -495,38 +357,6 @@ class __$RoleCopyWithImpl<$Res> implements _$RoleCopyWith<$Res> {
     Object? usersCount = null,
   }) {
     return _then(_Role(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: freezed == color
-          ? _self.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
-      iconUrl: freezed == iconUrl
-          ? _self.iconUrl
-          : iconUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: null == description
-          ? _self.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      isModerator: null == isModerator
-          ? _self.isModerator
-          : isModerator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isAdministrator: null == isAdministrator
-          ? _self.isAdministrator
-          : isAdministrator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      displayOrder: null == displayOrder
-          ? _self.displayOrder
-          : displayOrder // ignore: cast_nullable_to_non_nullable
-              as int,
       createdAt: null == createdAt
           ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable

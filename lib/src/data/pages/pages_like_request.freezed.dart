@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$PagesLikeRequest {
-  String get pageId;
+  String? get pageId;
 
   /// Create a copy of PagesLikeRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $PagesLikeRequestCopyWith<$Res> {
           PagesLikeRequest value, $Res Function(PagesLikeRequest) _then) =
       _$PagesLikeRequestCopyWithImpl;
   @useResult
-  $Res call({String pageId});
+  $Res call({String? pageId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$PagesLikeRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pageId = null,
+    Object? pageId = freezed,
   }) {
     return _then(_self.copyWith(
-      pageId: null == pageId
+      pageId: freezed == pageId
           ? _self.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$PagesLikeRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _PagesLikeRequest implements PagesLikeRequest {
-  const _PagesLikeRequest({required this.pageId});
+  const _PagesLikeRequest({this.pageId});
   factory _PagesLikeRequest.fromJson(Map<String, dynamic> json) =>
       _$PagesLikeRequestFromJson(json);
 
   @override
-  final String pageId;
+  final String? pageId;
 
   /// Create a copy of PagesLikeRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$PagesLikeRequestCopyWith<$Res>
       __$PagesLikeRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String pageId});
+  $Res call({String? pageId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$PagesLikeRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? pageId = null,
+    Object? pageId = freezed,
   }) {
     return _then(_PagesLikeRequest(
-      pageId: null == pageId
+      pageId: freezed == pageId
           ? _self.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

@@ -19,20 +19,20 @@ mixin _$Antenna {
   @DateTimeConverter()
   DateTime get createdAt;
   String get name;
-  List<List<String>> get keywords;
-  List<List<String>> get excludeKeywords;
+  List<dynamic> get keywords;
+  List<dynamic> get excludeKeywords;
   AntennaSource get src;
   String? get userListId;
   List<String> get users;
   bool get caseSensitive;
-  bool get notify;
+  bool get localOnly;
+  bool get excludeBots;
   bool get withReplies;
   bool get withFile;
   bool get isActive;
   bool get hasUnreadNote;
-  bool? get localOnly;
-  bool? get excludeBots;
-  bool? get excludeNotesInSensitiveChannel;
+  bool get notify;
+  bool get excludeNotesInSensitiveChannel;
 
   /// Create a copy of Antenna
   /// with the given fields replaced by the non-null parameter values.
@@ -62,7 +62,10 @@ mixin _$Antenna {
             const DeepCollectionEquality().equals(other.users, users) &&
             (identical(other.caseSensitive, caseSensitive) ||
                 other.caseSensitive == caseSensitive) &&
-            (identical(other.notify, notify) || other.notify == notify) &&
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly) &&
+            (identical(other.excludeBots, excludeBots) ||
+                other.excludeBots == excludeBots) &&
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies) &&
             (identical(other.withFile, withFile) ||
@@ -71,10 +74,7 @@ mixin _$Antenna {
                 other.isActive == isActive) &&
             (identical(other.hasUnreadNote, hasUnreadNote) ||
                 other.hasUnreadNote == hasUnreadNote) &&
-            (identical(other.localOnly, localOnly) ||
-                other.localOnly == localOnly) &&
-            (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots) &&
+            (identical(other.notify, notify) || other.notify == notify) &&
             (identical(other.excludeNotesInSensitiveChannel,
                     excludeNotesInSensitiveChannel) ||
                 other.excludeNotesInSensitiveChannel ==
@@ -94,18 +94,18 @@ mixin _$Antenna {
       userListId,
       const DeepCollectionEquality().hash(users),
       caseSensitive,
-      notify,
+      localOnly,
+      excludeBots,
       withReplies,
       withFile,
       isActive,
       hasUnreadNote,
-      localOnly,
-      excludeBots,
+      notify,
       excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
+    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, localOnly: $localOnly, excludeBots: $excludeBots, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, notify: $notify, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -118,20 +118,20 @@ abstract mixin class $AntennaCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String name,
-      List<List<String>> keywords,
-      List<List<String>> excludeKeywords,
+      List<dynamic> keywords,
+      List<dynamic> excludeKeywords,
       AntennaSource src,
       String? userListId,
       List<String> users,
       bool caseSensitive,
-      bool notify,
+      bool localOnly,
+      bool excludeBots,
       bool withReplies,
       bool withFile,
       bool isActive,
       bool hasUnreadNote,
-      bool? localOnly,
-      bool? excludeBots,
-      bool? excludeNotesInSensitiveChannel});
+      bool notify,
+      bool excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -155,14 +155,14 @@ class _$AntennaCopyWithImpl<$Res> implements $AntennaCopyWith<$Res> {
     Object? userListId = freezed,
     Object? users = null,
     Object? caseSensitive = null,
-    Object? notify = null,
+    Object? localOnly = null,
+    Object? excludeBots = null,
     Object? withReplies = null,
     Object? withFile = null,
     Object? isActive = null,
     Object? hasUnreadNote = null,
-    Object? localOnly = freezed,
-    Object? excludeBots = freezed,
-    Object? excludeNotesInSensitiveChannel = freezed,
+    Object? notify = null,
+    Object? excludeNotesInSensitiveChannel = null,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -180,11 +180,11 @@ class _$AntennaCopyWithImpl<$Res> implements $AntennaCopyWith<$Res> {
       keywords: null == keywords
           ? _self.keywords
           : keywords // ignore: cast_nullable_to_non_nullable
-              as List<List<String>>,
+              as List<dynamic>,
       excludeKeywords: null == excludeKeywords
           ? _self.excludeKeywords
           : excludeKeywords // ignore: cast_nullable_to_non_nullable
-              as List<List<String>>,
+              as List<dynamic>,
       src: null == src
           ? _self.src
           : src // ignore: cast_nullable_to_non_nullable
@@ -201,9 +201,13 @@ class _$AntennaCopyWithImpl<$Res> implements $AntennaCopyWith<$Res> {
           ? _self.caseSensitive
           : caseSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
-      notify: null == notify
-          ? _self.notify
-          : notify // ignore: cast_nullable_to_non_nullable
+      localOnly: null == localOnly
+          ? _self.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool,
+      excludeBots: null == excludeBots
+          ? _self.excludeBots
+          : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool,
       withReplies: null == withReplies
           ? _self.withReplies
@@ -221,18 +225,14 @@ class _$AntennaCopyWithImpl<$Res> implements $AntennaCopyWith<$Res> {
           ? _self.hasUnreadNote
           : hasUnreadNote // ignore: cast_nullable_to_non_nullable
               as bool,
-      localOnly: freezed == localOnly
-          ? _self.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      excludeBots: freezed == excludeBots
-          ? _self.excludeBots
-          : excludeBots // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+      notify: null == notify
+          ? _self.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as bool,
+      excludeNotesInSensitiveChannel: null == excludeNotesInSensitiveChannel
           ? _self.excludeNotesInSensitiveChannel
           : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -244,20 +244,20 @@ class _Antenna implements Antenna {
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.name,
-      required final List<List<String>> keywords,
-      required final List<List<String>> excludeKeywords,
+      required final List<dynamic> keywords,
+      required final List<dynamic> excludeKeywords,
       required this.src,
       this.userListId,
       required final List<String> users,
-      required this.caseSensitive,
-      this.notify = false,
-      required this.withReplies,
+      this.caseSensitive = false,
+      this.localOnly = false,
+      this.excludeBots = false,
+      this.withReplies = false,
       required this.withFile,
       required this.isActive,
-      required this.hasUnreadNote,
-      this.localOnly,
-      this.excludeBots,
-      this.excludeNotesInSensitiveChannel})
+      this.hasUnreadNote = false,
+      this.notify = false,
+      this.excludeNotesInSensitiveChannel = false})
       : _keywords = keywords,
         _excludeKeywords = excludeKeywords,
         _users = users;
@@ -271,17 +271,17 @@ class _Antenna implements Antenna {
   final DateTime createdAt;
   @override
   final String name;
-  final List<List<String>> _keywords;
+  final List<dynamic> _keywords;
   @override
-  List<List<String>> get keywords {
+  List<dynamic> get keywords {
     if (_keywords is EqualUnmodifiableListView) return _keywords;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_keywords);
   }
 
-  final List<List<String>> _excludeKeywords;
+  final List<dynamic> _excludeKeywords;
   @override
-  List<List<String>> get excludeKeywords {
+  List<dynamic> get excludeKeywords {
     if (_excludeKeywords is EqualUnmodifiableListView) return _excludeKeywords;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_excludeKeywords);
@@ -300,24 +300,30 @@ class _Antenna implements Antenna {
   }
 
   @override
+  @JsonKey()
   final bool caseSensitive;
   @override
   @JsonKey()
-  final bool notify;
+  final bool localOnly;
   @override
+  @JsonKey()
+  final bool excludeBots;
+  @override
+  @JsonKey()
   final bool withReplies;
   @override
   final bool withFile;
   @override
   final bool isActive;
   @override
+  @JsonKey()
   final bool hasUnreadNote;
   @override
-  final bool? localOnly;
+  @JsonKey()
+  final bool notify;
   @override
-  final bool? excludeBots;
-  @override
-  final bool? excludeNotesInSensitiveChannel;
+  @JsonKey()
+  final bool excludeNotesInSensitiveChannel;
 
   /// Create a copy of Antenna
   /// with the given fields replaced by the non-null parameter values.
@@ -352,7 +358,10 @@ class _Antenna implements Antenna {
             const DeepCollectionEquality().equals(other._users, _users) &&
             (identical(other.caseSensitive, caseSensitive) ||
                 other.caseSensitive == caseSensitive) &&
-            (identical(other.notify, notify) || other.notify == notify) &&
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly) &&
+            (identical(other.excludeBots, excludeBots) ||
+                other.excludeBots == excludeBots) &&
             (identical(other.withReplies, withReplies) ||
                 other.withReplies == withReplies) &&
             (identical(other.withFile, withFile) ||
@@ -361,10 +370,7 @@ class _Antenna implements Antenna {
                 other.isActive == isActive) &&
             (identical(other.hasUnreadNote, hasUnreadNote) ||
                 other.hasUnreadNote == hasUnreadNote) &&
-            (identical(other.localOnly, localOnly) ||
-                other.localOnly == localOnly) &&
-            (identical(other.excludeBots, excludeBots) ||
-                other.excludeBots == excludeBots) &&
+            (identical(other.notify, notify) || other.notify == notify) &&
             (identical(other.excludeNotesInSensitiveChannel,
                     excludeNotesInSensitiveChannel) ||
                 other.excludeNotesInSensitiveChannel ==
@@ -384,18 +390,18 @@ class _Antenna implements Antenna {
       userListId,
       const DeepCollectionEquality().hash(_users),
       caseSensitive,
-      notify,
+      localOnly,
+      excludeBots,
       withReplies,
       withFile,
       isActive,
       hasUnreadNote,
-      localOnly,
-      excludeBots,
+      notify,
       excludeNotesInSensitiveChannel);
 
   @override
   String toString() {
-    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, notify: $notify, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, localOnly: $localOnly, excludeBots: $excludeBots, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
+    return 'Antenna(id: $id, createdAt: $createdAt, name: $name, keywords: $keywords, excludeKeywords: $excludeKeywords, src: $src, userListId: $userListId, users: $users, caseSensitive: $caseSensitive, localOnly: $localOnly, excludeBots: $excludeBots, withReplies: $withReplies, withFile: $withFile, isActive: $isActive, hasUnreadNote: $hasUnreadNote, notify: $notify, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
   }
 }
 
@@ -409,20 +415,20 @@ abstract mixin class _$AntennaCopyWith<$Res> implements $AntennaCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String name,
-      List<List<String>> keywords,
-      List<List<String>> excludeKeywords,
+      List<dynamic> keywords,
+      List<dynamic> excludeKeywords,
       AntennaSource src,
       String? userListId,
       List<String> users,
       bool caseSensitive,
-      bool notify,
+      bool localOnly,
+      bool excludeBots,
       bool withReplies,
       bool withFile,
       bool isActive,
       bool hasUnreadNote,
-      bool? localOnly,
-      bool? excludeBots,
-      bool? excludeNotesInSensitiveChannel});
+      bool notify,
+      bool excludeNotesInSensitiveChannel});
 }
 
 /// @nodoc
@@ -446,14 +452,14 @@ class __$AntennaCopyWithImpl<$Res> implements _$AntennaCopyWith<$Res> {
     Object? userListId = freezed,
     Object? users = null,
     Object? caseSensitive = null,
-    Object? notify = null,
+    Object? localOnly = null,
+    Object? excludeBots = null,
     Object? withReplies = null,
     Object? withFile = null,
     Object? isActive = null,
     Object? hasUnreadNote = null,
-    Object? localOnly = freezed,
-    Object? excludeBots = freezed,
-    Object? excludeNotesInSensitiveChannel = freezed,
+    Object? notify = null,
+    Object? excludeNotesInSensitiveChannel = null,
   }) {
     return _then(_Antenna(
       id: null == id
@@ -471,11 +477,11 @@ class __$AntennaCopyWithImpl<$Res> implements _$AntennaCopyWith<$Res> {
       keywords: null == keywords
           ? _self._keywords
           : keywords // ignore: cast_nullable_to_non_nullable
-              as List<List<String>>,
+              as List<dynamic>,
       excludeKeywords: null == excludeKeywords
           ? _self._excludeKeywords
           : excludeKeywords // ignore: cast_nullable_to_non_nullable
-              as List<List<String>>,
+              as List<dynamic>,
       src: null == src
           ? _self.src
           : src // ignore: cast_nullable_to_non_nullable
@@ -492,9 +498,13 @@ class __$AntennaCopyWithImpl<$Res> implements _$AntennaCopyWith<$Res> {
           ? _self.caseSensitive
           : caseSensitive // ignore: cast_nullable_to_non_nullable
               as bool,
-      notify: null == notify
-          ? _self.notify
-          : notify // ignore: cast_nullable_to_non_nullable
+      localOnly: null == localOnly
+          ? _self.localOnly
+          : localOnly // ignore: cast_nullable_to_non_nullable
+              as bool,
+      excludeBots: null == excludeBots
+          ? _self.excludeBots
+          : excludeBots // ignore: cast_nullable_to_non_nullable
               as bool,
       withReplies: null == withReplies
           ? _self.withReplies
@@ -512,18 +522,14 @@ class __$AntennaCopyWithImpl<$Res> implements _$AntennaCopyWith<$Res> {
           ? _self.hasUnreadNote
           : hasUnreadNote // ignore: cast_nullable_to_non_nullable
               as bool,
-      localOnly: freezed == localOnly
-          ? _self.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      excludeBots: freezed == excludeBots
-          ? _self.excludeBots
-          : excludeBots // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel
+      notify: null == notify
+          ? _self.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as bool,
+      excludeNotesInSensitiveChannel: null == excludeNotesInSensitiveChannel
           ? _self.excludeNotesInSensitiveChannel
           : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }

@@ -9,24 +9,30 @@ part of 'channels_search_request.dart';
 _ChannelsSearchRequest _$ChannelsSearchRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsSearchRequest(
-      query: json['query'] as String,
-      type: $enumDecodeNullable(_$ChannelSearchTypeEnumMap, json['type']),
+      query: json['query'] as String?,
+      type: $enumDecodeNullable(_$ChannelsSearchTypeEnumMap, json['type']) ??
+          ChannelsSearchType.nameAndDescription,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 5,
     );
 
 Map<String, dynamic> _$ChannelsSearchRequestToJson(
         _ChannelsSearchRequest instance) =>
     <String, dynamic>{
       'query': instance.query,
-      'type': _$ChannelSearchTypeEnumMap[instance.type],
+      'type': _$ChannelsSearchTypeEnumMap[instance.type],
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'limit': instance.limit,
     };
 
-const _$ChannelSearchTypeEnumMap = {
-  ChannelSearchType.nameAndDescription: 'nameAndDescription',
-  ChannelSearchType.nameOnly: 'nameOnly',
+const _$ChannelsSearchTypeEnumMap = {
+  ChannelsSearchType.nameAndDescription: 'nameAndDescription',
+  ChannelsSearchType.nameOnly: 'nameOnly',
+  ChannelsSearchType.unknown: 'unknown',
 };

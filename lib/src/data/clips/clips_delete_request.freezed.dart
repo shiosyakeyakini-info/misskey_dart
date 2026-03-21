@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsDeleteRequest {
-  String get clipId;
+  String? get clipId;
 
   /// Create a copy of ClipsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $ClipsDeleteRequestCopyWith<$Res> {
           ClipsDeleteRequest value, $Res Function(ClipsDeleteRequest) _then) =
       _$ClipsDeleteRequestCopyWithImpl;
   @useResult
-  $Res call({String clipId});
+  $Res call({String? clipId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$ClipsDeleteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clipId = null,
+    Object? clipId = freezed,
   }) {
     return _then(_self.copyWith(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$ClipsDeleteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ClipsDeleteRequest implements ClipsDeleteRequest {
-  const _ClipsDeleteRequest({required this.clipId});
+  const _ClipsDeleteRequest({this.clipId});
   factory _ClipsDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsDeleteRequestFromJson(json);
 
   @override
-  final String clipId;
+  final String? clipId;
 
   /// Create a copy of ClipsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$ClipsDeleteRequestCopyWith<$Res>
       __$ClipsDeleteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String clipId});
+  $Res call({String? clipId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$ClipsDeleteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? clipId = null,
+    Object? clipId = freezed,
   }) {
     return _then(_ClipsDeleteRequest(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

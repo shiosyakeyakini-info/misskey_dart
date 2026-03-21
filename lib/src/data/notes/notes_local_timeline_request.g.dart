@@ -9,21 +9,15 @@ part of 'notes_local_timeline_request.dart';
 _NotesLocalTimelineRequest _$NotesLocalTimelineRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesLocalTimelineRequest(
-      withFiles: json['withFiles'] as bool?,
-      withRenotes: json['withRenotes'] as bool?,
-      withReplies: json['withReplies'] as bool?,
-      fileType: (json['fileType'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      excludeNsfw: json['excludeNsfw'] as bool?,
-      limit: (json['limit'] as num?)?.toInt(),
+      withFiles: json['withFiles'] as bool? ?? false,
+      withRenotes: json['withRenotes'] as bool? ?? true,
+      withReplies: json['withReplies'] as bool? ?? false,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
-          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
-      untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
-          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
-      allowPartial: json['allowPartial'] as bool?,
+      allowPartial: json['allowPartial'] as bool? ?? false,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$NotesLocalTimelineRequestToJson(
@@ -32,26 +26,10 @@ Map<String, dynamic> _$NotesLocalTimelineRequestToJson(
       'withFiles': instance.withFiles,
       'withRenotes': instance.withRenotes,
       'withReplies': instance.withReplies,
-      'fileType': instance.fileType,
-      'excludeNsfw': instance.excludeNsfw,
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'sinceDate': _$JsonConverterToJson<int, DateTime>(instance.sinceDate,
-          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
-      'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
-          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
       'allowPartial': instance.allowPartial,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

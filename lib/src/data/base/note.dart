@@ -1,9 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/color_converter.dart';
 import 'package:misskey_dart/src/converters/date_time_converter.dart';
 import 'package:misskey_dart/src/converters/emojis_converter.dart';
-import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'note.freezed.dart';
 part 'note.g.dart';
@@ -13,75 +11,40 @@ abstract class Note with _$Note {
   const factory Note({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    @NullableDateTimeConverter() DateTime? updatedAt,
+    @NullableDateTimeConverter() DateTime? deletedAt,
     String? text,
     String? cw,
-    required UserLite user,
     required String userId,
-    @NoteVisibilityJsonConverter() required NoteVisibility visibility,
-    required bool localOnly,
-    required int renoteCount,
-    required int repliesCount,
-    required Map<String, int> reactions,
-    @EmojisConverter() required Map<String, String> reactionEmojis,
-    @EmojisConverter() @Default({}) Map<String, String> emojis,
-    required List<String> fileIds,
-    required List<DriveFile> files,
+    required UserLite user,
     String? replyId,
     String? renoteId,
-    String? channelId,
-    ReactionAcceptance? reactionAcceptance,
-    Note? renote,
     Note? reply,
-    @Default([]) List<String> visibleUserIds,
-    @Default([]) List<String> mentions,
-    String? myReaction,
-    NoteChannelInfo? channel,
-    @NullableUriConverter() Uri? uri,
-    @NullableUriConverter() Uri? url,
-    @Default([]) List<String> reactionAndUserPairCache,
+    Note? renote,
+    bool? isHidden,
+    required NoteVisibility visibility,
+    @Default([]) List<String>? mentions,
+    @Default([]) List<String>? visibleUserIds,
+    List<String>? fileIds,
+    List<DriveFile>? files,
+    List<String>? tags,
     NotePoll? poll,
+    @EmojisConverter() @Default({}) Map<String, String> emojis,
+    String? channelId,
+    NoteChannelInfo? channel,
+    bool? localOnly,
+    ReactionAcceptance? reactionAcceptance,
+    @EmojisConverter() required Map<String, String> reactionEmojis,
+    required Map<String, dynamic> reactions,
+    required int reactionCount,
+    required int renoteCount,
+    required int repliesCount,
+    String? uri,
+    String? url,
+    @Default([]) List<String>? reactionAndUserPairCache,
     int? clippedCount,
+    bool? hasPoll,
+    String? myReaction,
   }) = _Note;
 
   factory Note.fromJson(Map<String, Object?> json) => _$NoteFromJson(json);
-}
-
-@freezed
-abstract class NoteChannelInfo with _$NoteChannelInfo {
-  const factory NoteChannelInfo({
-    required String id,
-    required String name,
-    @NullableColorConverter() int? color,
-    @Default(false) bool isSensitive,
-    @Default(true) bool allowRenoteToExternal,
-    String? userId,
-  }) = _NoteChannelInfo;
-
-  factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>
-      _$NoteChannelInfoFromJson(json);
-}
-
-@freezed
-abstract class NotePoll with _$NotePoll {
-  const factory NotePoll({
-    required bool multiple,
-    @DateTimeConverter() DateTime? expiresAt,
-    required List<NotePollChoice> choices,
-  }) = _NotePoll;
-
-  factory NotePoll.fromJson(Map<String, dynamic> json) =>
-      _$NotePollFromJson(json);
-}
-
-@freezed
-abstract class NotePollChoice with _$NotePollChoice {
-  const factory NotePollChoice({
-    required String text,
-    required int votes,
-    required bool isVoted,
-  }) = _NotePollChoice;
-
-  factory NotePollChoice.fromJson(Map<String, dynamic> json) =>
-      _$NotePollChoiceFromJson(json);
 }

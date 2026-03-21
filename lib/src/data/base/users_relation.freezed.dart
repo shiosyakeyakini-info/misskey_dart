@@ -15,15 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersRelation {
-  String get id;
-  bool get isFollowing;
-  bool get hasPendingFollowRequestFromYou;
-  bool get hasPendingFollowRequestToYou;
-  bool get isFollowed;
-  bool get isBlocking;
-  bool get isBlocked;
-  bool get isMuted;
-  bool get isRenoteMuted;
+  dynamic get userId;
 
   /// Create a copy of UsersRelation
   /// with the given fields replaced by the non-null parameter values.
@@ -41,45 +33,17 @@ mixin _$UsersRelation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UsersRelation &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.isFollowing, isFollowing) ||
-                other.isFollowing == isFollowing) &&
-            (identical(other.hasPendingFollowRequestFromYou,
-                    hasPendingFollowRequestFromYou) ||
-                other.hasPendingFollowRequestFromYou ==
-                    hasPendingFollowRequestFromYou) &&
-            (identical(other.hasPendingFollowRequestToYou,
-                    hasPendingFollowRequestToYou) ||
-                other.hasPendingFollowRequestToYou ==
-                    hasPendingFollowRequestToYou) &&
-            (identical(other.isFollowed, isFollowed) ||
-                other.isFollowed == isFollowed) &&
-            (identical(other.isBlocking, isBlocking) ||
-                other.isBlocking == isBlocking) &&
-            (identical(other.isBlocked, isBlocked) ||
-                other.isBlocked == isBlocked) &&
-            (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
-            (identical(other.isRenoteMuted, isRenoteMuted) ||
-                other.isRenoteMuted == isRenoteMuted));
+            const DeepCollectionEquality().equals(other.userId, userId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      isFollowing,
-      hasPendingFollowRequestFromYou,
-      hasPendingFollowRequestToYou,
-      isFollowed,
-      isBlocking,
-      isBlocked,
-      isMuted,
-      isRenoteMuted);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(userId));
 
   @override
   String toString() {
-    return 'UsersRelation(id: $id, isFollowing: $isFollowing, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isFollowed: $isFollowed, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted)';
+    return 'UsersRelation(userId: $userId)';
   }
 }
 
@@ -89,16 +53,7 @@ abstract mixin class $UsersRelationCopyWith<$Res> {
           UsersRelation value, $Res Function(UsersRelation) _then) =
       _$UsersRelationCopyWithImpl;
   @useResult
-  $Res call(
-      {String id,
-      bool isFollowing,
-      bool hasPendingFollowRequestFromYou,
-      bool hasPendingFollowRequestToYou,
-      bool isFollowed,
-      bool isBlocking,
-      bool isBlocked,
-      bool isMuted,
-      bool isRenoteMuted});
+  $Res call({dynamic userId});
 }
 
 /// @nodoc
@@ -114,53 +69,13 @@ class _$UsersRelationCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? isFollowing = null,
-    Object? hasPendingFollowRequestFromYou = null,
-    Object? hasPendingFollowRequestToYou = null,
-    Object? isFollowed = null,
-    Object? isBlocking = null,
-    Object? isBlocked = null,
-    Object? isMuted = null,
-    Object? isRenoteMuted = null,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      isFollowing: null == isFollowing
-          ? _self.isFollowing
-          : isFollowing // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPendingFollowRequestFromYou: null == hasPendingFollowRequestFromYou
-          ? _self.hasPendingFollowRequestFromYou
-          : hasPendingFollowRequestFromYou // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPendingFollowRequestToYou: null == hasPendingFollowRequestToYou
-          ? _self.hasPendingFollowRequestToYou
-          : hasPendingFollowRequestToYou // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isFollowed: null == isFollowed
-          ? _self.isFollowed
-          : isFollowed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isBlocking: null == isBlocking
-          ? _self.isBlocking
-          : isBlocking // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isBlocked: null == isBlocked
-          ? _self.isBlocked
-          : isBlocked // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isMuted: null == isMuted
-          ? _self.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isRenoteMuted: null == isRenoteMuted
-          ? _self.isRenoteMuted
-          : isRenoteMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -168,37 +83,12 @@ class _$UsersRelationCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _UsersRelation implements UsersRelation {
-  const _UsersRelation(
-      {required this.id,
-      required this.isFollowing,
-      required this.hasPendingFollowRequestFromYou,
-      required this.hasPendingFollowRequestToYou,
-      required this.isFollowed,
-      required this.isBlocking,
-      required this.isBlocked,
-      required this.isMuted,
-      required this.isRenoteMuted});
+  const _UsersRelation({required this.userId});
   factory _UsersRelation.fromJson(Map<String, dynamic> json) =>
       _$UsersRelationFromJson(json);
 
   @override
-  final String id;
-  @override
-  final bool isFollowing;
-  @override
-  final bool hasPendingFollowRequestFromYou;
-  @override
-  final bool hasPendingFollowRequestToYou;
-  @override
-  final bool isFollowed;
-  @override
-  final bool isBlocking;
-  @override
-  final bool isBlocked;
-  @override
-  final bool isMuted;
-  @override
-  final bool isRenoteMuted;
+  final dynamic userId;
 
   /// Create a copy of UsersRelation
   /// with the given fields replaced by the non-null parameter values.
@@ -220,45 +110,17 @@ class _UsersRelation implements UsersRelation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _UsersRelation &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.isFollowing, isFollowing) ||
-                other.isFollowing == isFollowing) &&
-            (identical(other.hasPendingFollowRequestFromYou,
-                    hasPendingFollowRequestFromYou) ||
-                other.hasPendingFollowRequestFromYou ==
-                    hasPendingFollowRequestFromYou) &&
-            (identical(other.hasPendingFollowRequestToYou,
-                    hasPendingFollowRequestToYou) ||
-                other.hasPendingFollowRequestToYou ==
-                    hasPendingFollowRequestToYou) &&
-            (identical(other.isFollowed, isFollowed) ||
-                other.isFollowed == isFollowed) &&
-            (identical(other.isBlocking, isBlocking) ||
-                other.isBlocking == isBlocking) &&
-            (identical(other.isBlocked, isBlocked) ||
-                other.isBlocked == isBlocked) &&
-            (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
-            (identical(other.isRenoteMuted, isRenoteMuted) ||
-                other.isRenoteMuted == isRenoteMuted));
+            const DeepCollectionEquality().equals(other.userId, userId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      isFollowing,
-      hasPendingFollowRequestFromYou,
-      hasPendingFollowRequestToYou,
-      isFollowed,
-      isBlocking,
-      isBlocked,
-      isMuted,
-      isRenoteMuted);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(userId));
 
   @override
   String toString() {
-    return 'UsersRelation(id: $id, isFollowing: $isFollowing, hasPendingFollowRequestFromYou: $hasPendingFollowRequestFromYou, hasPendingFollowRequestToYou: $hasPendingFollowRequestToYou, isFollowed: $isFollowed, isBlocking: $isBlocking, isBlocked: $isBlocked, isMuted: $isMuted, isRenoteMuted: $isRenoteMuted)';
+    return 'UsersRelation(userId: $userId)';
   }
 }
 
@@ -270,16 +132,7 @@ abstract mixin class _$UsersRelationCopyWith<$Res>
       __$UsersRelationCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String id,
-      bool isFollowing,
-      bool hasPendingFollowRequestFromYou,
-      bool hasPendingFollowRequestToYou,
-      bool isFollowed,
-      bool isBlocking,
-      bool isBlocked,
-      bool isMuted,
-      bool isRenoteMuted});
+  $Res call({dynamic userId});
 }
 
 /// @nodoc
@@ -295,53 +148,13 @@ class __$UsersRelationCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? id = null,
-    Object? isFollowing = null,
-    Object? hasPendingFollowRequestFromYou = null,
-    Object? hasPendingFollowRequestToYou = null,
-    Object? isFollowed = null,
-    Object? isBlocking = null,
-    Object? isBlocked = null,
-    Object? isMuted = null,
-    Object? isRenoteMuted = null,
+    Object? userId = freezed,
   }) {
     return _then(_UsersRelation(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      isFollowing: null == isFollowing
-          ? _self.isFollowing
-          : isFollowing // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPendingFollowRequestFromYou: null == hasPendingFollowRequestFromYou
-          ? _self.hasPendingFollowRequestFromYou
-          : hasPendingFollowRequestFromYou // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPendingFollowRequestToYou: null == hasPendingFollowRequestToYou
-          ? _self.hasPendingFollowRequestToYou
-          : hasPendingFollowRequestToYou // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isFollowed: null == isFollowed
-          ? _self.isFollowed
-          : isFollowed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isBlocking: null == isBlocking
-          ? _self.isBlocking
-          : isBlocking // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isBlocked: null == isBlocked
-          ? _self.isBlocked
-          : isBlocked // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isMuted: null == isMuted
-          ? _self.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isRenoteMuted: null == isRenoteMuted
-          ? _self.isRenoteMuted
-          : isRenoteMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }

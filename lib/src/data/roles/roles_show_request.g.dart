@@ -8,7 +8,7 @@ part of 'roles_show_request.dart';
 
 _RolesShowRequest _$RolesShowRequestFromJson(Map<String, dynamic> json) =>
     _RolesShowRequest(
-      roleId: json['roleId'] as String,
+      roleId: json['roleId'] as String?,
     );
 
 Map<String, dynamic> _$RolesShowRequestToJson(_RolesShowRequest instance) =>

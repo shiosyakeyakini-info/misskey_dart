@@ -15,10 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatMessagesSearchRequest {
-  String get query;
+  String? get query;
   int? get limit;
-  String? get roomId;
   String? get userId;
+  String? get roomId;
 
   /// Create a copy of ChatMessagesSearchRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -38,17 +38,17 @@ mixin _$ChatMessagesSearchRequest {
             other is ChatMessagesSearchRequest &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.roomId, roomId) || other.roomId == roomId) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, query, limit, roomId, userId);
+  int get hashCode => Object.hash(runtimeType, query, limit, userId, roomId);
 
   @override
   String toString() {
-    return 'ChatMessagesSearchRequest(query: $query, limit: $limit, roomId: $roomId, userId: $userId)';
+    return 'ChatMessagesSearchRequest(query: $query, limit: $limit, userId: $userId, roomId: $roomId)';
   }
 }
 
@@ -58,7 +58,7 @@ abstract mixin class $ChatMessagesSearchRequestCopyWith<$Res> {
           $Res Function(ChatMessagesSearchRequest) _then) =
       _$ChatMessagesSearchRequestCopyWithImpl;
   @useResult
-  $Res call({String query, int? limit, String? roomId, String? userId});
+  $Res call({String? query, int? limit, String? userId, String? roomId});
 }
 
 /// @nodoc
@@ -74,27 +74,27 @@ class _$ChatMessagesSearchRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? limit = freezed,
-    Object? roomId = freezed,
     Object? userId = freezed,
+    Object? roomId = freezed,
   }) {
     return _then(_self.copyWith(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      roomId: freezed == roomId
-          ? _self.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String?,
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roomId: freezed == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -104,18 +104,19 @@ class _$ChatMessagesSearchRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChatMessagesSearchRequest implements ChatMessagesSearchRequest {
   const _ChatMessagesSearchRequest(
-      {required this.query, this.limit, this.roomId, this.userId});
+      {this.query, this.limit = 10, this.userId, this.roomId});
   factory _ChatMessagesSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatMessagesSearchRequestFromJson(json);
 
   @override
-  final String query;
+  final String? query;
   @override
+  @JsonKey()
   final int? limit;
   @override
-  final String? roomId;
-  @override
   final String? userId;
+  @override
+  final String? roomId;
 
   /// Create a copy of ChatMessagesSearchRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -141,17 +142,17 @@ class _ChatMessagesSearchRequest implements ChatMessagesSearchRequest {
             other is _ChatMessagesSearchRequest &&
             (identical(other.query, query) || other.query == query) &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.roomId, roomId) || other.roomId == roomId) &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.roomId, roomId) || other.roomId == roomId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, query, limit, roomId, userId);
+  int get hashCode => Object.hash(runtimeType, query, limit, userId, roomId);
 
   @override
   String toString() {
-    return 'ChatMessagesSearchRequest(query: $query, limit: $limit, roomId: $roomId, userId: $userId)';
+    return 'ChatMessagesSearchRequest(query: $query, limit: $limit, userId: $userId, roomId: $roomId)';
   }
 }
 
@@ -163,7 +164,7 @@ abstract mixin class _$ChatMessagesSearchRequestCopyWith<$Res>
       __$ChatMessagesSearchRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String query, int? limit, String? roomId, String? userId});
+  $Res call({String? query, int? limit, String? userId, String? roomId});
 }
 
 /// @nodoc
@@ -179,27 +180,27 @@ class __$ChatMessagesSearchRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? limit = freezed,
-    Object? roomId = freezed,
     Object? userId = freezed,
+    Object? roomId = freezed,
   }) {
     return _then(_ChatMessagesSearchRequest(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      roomId: freezed == roomId
-          ? _self.roomId
-          : roomId // ignore: cast_nullable_to_non_nullable
-              as String?,
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roomId: freezed == roomId
+          ? _self.roomId
+          : roomId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }

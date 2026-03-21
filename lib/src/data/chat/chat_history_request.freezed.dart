@@ -89,13 +89,15 @@ class _$ChatHistoryRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatHistoryRequest implements ChatHistoryRequest {
-  const _ChatHistoryRequest({this.limit, this.room});
+  const _ChatHistoryRequest({this.limit = 10, this.room = false});
   factory _ChatHistoryRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatHistoryRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
+  @JsonKey()
   final bool? room;
 
   /// Create a copy of ChatHistoryRequest

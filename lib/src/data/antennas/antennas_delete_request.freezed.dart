@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AntennasDeleteRequest {
-  String get antennaId;
+  String? get antennaId;
 
   /// Create a copy of AntennasDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $AntennasDeleteRequestCopyWith<$Res> {
           $Res Function(AntennasDeleteRequest) _then) =
       _$AntennasDeleteRequestCopyWithImpl;
   @useResult
-  $Res call({String antennaId});
+  $Res call({String? antennaId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$AntennasDeleteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? antennaId = null,
+    Object? antennaId = freezed,
   }) {
     return _then(_self.copyWith(
-      antennaId: null == antennaId
+      antennaId: freezed == antennaId
           ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$AntennasDeleteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AntennasDeleteRequest implements AntennasDeleteRequest {
-  const _AntennasDeleteRequest({required this.antennaId});
+  const _AntennasDeleteRequest({this.antennaId});
   factory _AntennasDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$AntennasDeleteRequestFromJson(json);
 
   @override
-  final String antennaId;
+  final String? antennaId;
 
   /// Create a copy of AntennasDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$AntennasDeleteRequestCopyWith<$Res>
       __$AntennasDeleteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String antennaId});
+  $Res call({String? antennaId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$AntennasDeleteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? antennaId = null,
+    Object? antennaId = freezed,
   }) {
     return _then(_AntennasDeleteRequest(
-      antennaId: null == antennaId
+      antennaId: freezed == antennaId
           ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

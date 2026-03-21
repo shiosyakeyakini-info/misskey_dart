@@ -148,6 +148,7 @@ const _$FFVisibilityEnumMap = {
   FFVisibility.public: 'public',
   FFVisibility.followers: 'followers',
   FFVisibility.private: 'private',
+  FFVisibility.unknown: 'unknown',
 };
 
 const _$ChatScopeEnumMap = {

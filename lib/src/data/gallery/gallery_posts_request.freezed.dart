@@ -18,6 +18,8 @@ mixin _$GalleryPostsRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of GalleryPostsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -37,16 +39,21 @@ mixin _$GalleryPostsRequest {
             other is GalleryPostsRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+  int get hashCode =>
+      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'GalleryPostsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'GalleryPostsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -56,7 +63,12 @@ abstract mixin class $GalleryPostsRequestCopyWith<$Res> {
           GalleryPostsRequest value, $Res Function(GalleryPostsRequest) _then) =
       _$GalleryPostsRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -75,6 +87,8 @@ class _$GalleryPostsRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -89,6 +103,14 @@ class _$GalleryPostsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -96,16 +118,26 @@ class _$GalleryPostsRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _GalleryPostsRequest implements GalleryPostsRequest {
-  const _GalleryPostsRequest({this.limit, this.sinceId, this.untilId});
+  const _GalleryPostsRequest(
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate});
   factory _GalleryPostsRequest.fromJson(Map<String, dynamic> json) =>
       _$GalleryPostsRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
 
   /// Create a copy of GalleryPostsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,16 +162,21 @@ class _GalleryPostsRequest implements GalleryPostsRequest {
             other is _GalleryPostsRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+  int get hashCode =>
+      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'GalleryPostsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'GalleryPostsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -151,7 +188,12 @@ abstract mixin class _$GalleryPostsRequestCopyWith<$Res>
       __$GalleryPostsRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -170,6 +212,8 @@ class __$GalleryPostsRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_GalleryPostsRequest(
       limit: freezed == limit
@@ -184,6 +228,14 @@ class __$GalleryPostsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }

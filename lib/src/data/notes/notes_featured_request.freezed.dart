@@ -16,8 +16,6 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesFeaturedRequest {
   int? get limit;
-  @Deprecated("removed at 2023.10.0")
-  int? get offset;
   String? get untilId;
   String? get channelId;
 
@@ -38,7 +36,6 @@ mixin _$NotesFeaturedRequest {
         (other.runtimeType == runtimeType &&
             other is NotesFeaturedRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
@@ -46,12 +43,11 @@ mixin _$NotesFeaturedRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, offset, untilId, channelId);
+  int get hashCode => Object.hash(runtimeType, limit, untilId, channelId);
 
   @override
   String toString() {
-    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, untilId: $untilId, channelId: $channelId)';
+    return 'NotesFeaturedRequest(limit: $limit, untilId: $untilId, channelId: $channelId)';
   }
 }
 
@@ -61,11 +57,7 @@ abstract mixin class $NotesFeaturedRequestCopyWith<$Res> {
           $Res Function(NotesFeaturedRequest) _then) =
       _$NotesFeaturedRequestCopyWithImpl;
   @useResult
-  $Res call(
-      {int? limit,
-      @Deprecated("removed at 2023.10.0") int? offset,
-      String? untilId,
-      String? channelId});
+  $Res call({int? limit, String? untilId, String? channelId});
 }
 
 /// @nodoc
@@ -82,7 +74,6 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? limit = freezed,
-    Object? offset = freezed,
     Object? untilId = freezed,
     Object? channelId = freezed,
   }) {
@@ -90,10 +81,6 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res>
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
               as int?,
       untilId: freezed == untilId
           ? _self.untilId
@@ -110,19 +97,13 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _NotesFeaturedRequest implements NotesFeaturedRequest {
-  const _NotesFeaturedRequest(
-      {this.limit,
-      @Deprecated("removed at 2023.10.0") this.offset,
-      this.untilId,
-      this.channelId});
+  const _NotesFeaturedRequest({this.limit = 10, this.untilId, this.channelId});
   factory _NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesFeaturedRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
-  @override
-  @Deprecated("removed at 2023.10.0")
-  final int? offset;
   @override
   final String? untilId;
   @override
@@ -150,7 +131,6 @@ class _NotesFeaturedRequest implements NotesFeaturedRequest {
         (other.runtimeType == runtimeType &&
             other is _NotesFeaturedRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId));
@@ -158,12 +138,11 @@ class _NotesFeaturedRequest implements NotesFeaturedRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, offset, untilId, channelId);
+  int get hashCode => Object.hash(runtimeType, limit, untilId, channelId);
 
   @override
   String toString() {
-    return 'NotesFeaturedRequest(limit: $limit, offset: $offset, untilId: $untilId, channelId: $channelId)';
+    return 'NotesFeaturedRequest(limit: $limit, untilId: $untilId, channelId: $channelId)';
   }
 }
 
@@ -175,11 +154,7 @@ abstract mixin class _$NotesFeaturedRequestCopyWith<$Res>
       __$NotesFeaturedRequestCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {int? limit,
-      @Deprecated("removed at 2023.10.0") int? offset,
-      String? untilId,
-      String? channelId});
+  $Res call({int? limit, String? untilId, String? channelId});
 }
 
 /// @nodoc
@@ -196,7 +171,6 @@ class __$NotesFeaturedRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? limit = freezed,
-    Object? offset = freezed,
     Object? untilId = freezed,
     Object? channelId = freezed,
   }) {
@@ -204,10 +178,6 @@ class __$NotesFeaturedRequestCopyWithImpl<$Res>
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
               as int?,
       untilId: freezed == untilId
           ? _self.untilId

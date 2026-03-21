@@ -15,14 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RolesNotesRequest {
-  String get roleId;
+  String? get roleId;
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of RolesNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -68,12 +66,12 @@ abstract mixin class $RolesNotesRequestCopyWith<$Res> {
       _$RolesNotesRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String roleId,
+      {String? roleId,
       int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -89,7 +87,7 @@ class _$RolesNotesRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roleId = null,
+    Object? roleId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -97,10 +95,10 @@ class _$RolesNotesRequestCopyWithImpl<$Res>
     Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
-      roleId: null == roleId
+      roleId: freezed == roleId
           ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -116,11 +114,11 @@ class _$RolesNotesRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }
@@ -129,29 +127,28 @@ class _$RolesNotesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _RolesNotesRequest implements RolesNotesRequest {
   const _RolesNotesRequest(
-      {required this.roleId,
-      this.limit,
+      {this.roleId,
+      this.limit = 10,
       this.sinceId,
       this.untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
+      this.sinceDate,
+      this.untilDate});
   factory _RolesNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$RolesNotesRequestFromJson(json);
 
   @override
-  final String roleId;
+  final String? roleId;
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? sinceDate;
+  final int? sinceDate;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? untilDate;
+  final int? untilDate;
 
   /// Create a copy of RolesNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -203,12 +200,12 @@ abstract mixin class _$RolesNotesRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String roleId,
+      {String? roleId,
       int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -224,7 +221,7 @@ class __$RolesNotesRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roleId = null,
+    Object? roleId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -232,10 +229,10 @@ class __$RolesNotesRequestCopyWithImpl<$Res>
     Object? untilDate = freezed,
   }) {
     return _then(_RolesNotesRequest(
-      roleId: null == roleId
+      roleId: freezed == roleId
           ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -251,11 +248,11 @@ class __$RolesNotesRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }

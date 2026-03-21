@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_notes_request.freezed.dart';
 part 'users_notes_request.g.dart';
@@ -7,23 +7,18 @@ part 'users_notes_request.g.dart';
 @freezed
 abstract class UsersNotesRequest with _$UsersNotesRequest {
   const factory UsersNotesRequest({
-    required String userId,
-    @Deprecated("removed at 2023.9.2") bool? includeReplies,
-    bool? withReplies,
-    bool? withRenotes,
-    bool? withChannelNotes,
-    int? limit,
+    String? userId,
+    @Default(false) bool? withReplies,
+    @Default(true) bool? withRenotes,
+    @Default(false) bool? withChannelNotes,
+    @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
-    @Deprecated("removed at 2023.11.1") bool? includeMyRenotes,
-    bool? withFiles,
-    List<String>? fileType,
-    bool? allowPartial,
-    @Deprecated("removed at 2023.12.0") bool? excludeNsfw,
+    int? sinceDate,
+    int? untilDate,
+    @Default(false) bool? allowPartial,
+    @Default(false) bool? withFiles,
   }) = _UsersNotesRequest;
 
-  factory UsersNotesRequest.fromJson(Map<String, Object?> json) =>
-      _$UsersNotesRequestFromJson(json);
+  factory UsersNotesRequest.fromJson(Map<String, Object?> json) => _$UsersNotesRequestFromJson(json);
 }

@@ -1,118 +1,77 @@
 /**
  * Generates the barrel export file (misskey_dart.dart).
+ * Scans all .dart files in the output directory (lib/src/) to produce
+ * a comprehensive export including generated files, manual files, and
+ * existing files that haven't been replaced yet.
  */
 
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync, readdirSync, statSync } from "node:fs";
 import type { GeneratedFile, OverrideConfig } from "../config/types.js";
-import { relative, dirname, resolve, join } from "node:path";
-
-/**
- * Extract class/enum/mixin/sealed class names from a Dart file.
- */
-function extractClassNames(filePath: string): Set<string> {
-  const names = new Set<string>();
-  if (!existsSync(filePath)) return names;
-
-  const content = readFileSync(filePath, "utf-8");
-  const pattern = /^\s*(?:abstract\s+)?(?:sealed\s+)?(?:class|enum|mixin)\s+(\w+)/gm;
-  let match;
-  while ((match = pattern.exec(content)) !== null) {
-    names.add(match[1]);
-  }
-  return names;
-}
+import { relative, dirname, join } from "node:path";
 
 /**
  * Generate the barrel export file that re-exports all public types.
- * Merges with existing exports if the file already exists.
- * Detects class name conflicts between existing and new files.
+ * Scans the entire outputDir (lib/src/) for .dart files.
  */
 export function generateExportFile(
   generatedFiles: GeneratedFile[],
   config: OverrideConfig,
   outputDir: string
 ): string | null {
-  const exportPath = resolve(outputDir, "..", "misskey_dart.dart");
   const libDir = dirname(outputDir); // outputDir is lib/src, dirname is lib/
+  const allExports = new Set<string>();
 
-  // Collect existing exports if file exists
-  const existingExports = new Set<string>();
-  if (existsSync(exportPath)) {
-    const existing = readFileSync(exportPath, "utf-8");
-    for (const line of existing.split("\n")) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith("export ")) {
-        existingExports.add(trimmed);
-      }
-    }
+  // Scan all .dart files in lib/src/ (includes generated, manual, and legacy files)
+  if (existsSync(outputDir)) {
+    scanDartFiles(outputDir, libDir, allExports);
   }
 
-  // Build a set of all class names defined in existing exported files
-  const existingClassNames = new Set<string>();
-  for (const exp of existingExports) {
-    const match = exp.match(/export\s+'([^']+)'/);
-    if (match) {
-      const fullPath = join(libDir, match[1]);
-      const names = extractClassNames(fullPath);
-      for (const name of names) {
-        existingClassNames.add(name);
-      }
-    }
-  }
-
-  // Build mapping of new files to their class names
-  const newFileClassNames = new Map<string, Set<string>>();
-  for (const file of generatedFiles) {
-    if (!file.path.endsWith(".dart")) continue;
-    // Extract class names from file content (not reading from disk, use content)
-    const names = new Set<string>();
-    const pattern = /^\s*(?:abstract\s+)?(?:sealed\s+)?(?:class|enum|mixin)\s+(\w+)/gm;
-    let match;
-    while ((match = pattern.exec(file.content)) !== null) {
-      names.add(match[1]);
-    }
-    newFileClassNames.set(file.path, names);
-  }
-
-  // Add new exports for generated files, skipping those with conflicting class names
-  const newExports = new Set<string>();
-  const skippedConflicts: string[] = [];
+  // Also include exports from generated files that may be outside outputDir
   for (const file of generatedFiles) {
     if (!file.path.endsWith(".dart")) continue;
     const relPath = relative(libDir, file.path).replace(/\\/g, "/");
-    const exportLine = `export '${relPath}';`;
-
-    // Skip if exact export already exists
-    if (existingExports.has(exportLine)) continue;
-
-    // Check if any class names in this file conflict with existing exports
-    const fileClasses = newFileClassNames.get(file.path) ?? new Set();
-    let hasConflict = false;
-    for (const className of fileClasses) {
-      if (existingClassNames.has(className)) {
-        hasConflict = true;
-        skippedConflicts.push(`${relPath} (conflicts: ${className})`);
-        break;
-      }
-    }
-
-    if (hasConflict) continue;
-    newExports.add(exportLine);
+    allExports.add(`export '${relPath}';`);
   }
 
-  if (skippedConflicts.length > 0) {
-    console.log(`  Skipped ${skippedConflicts.length} exports due to class name conflicts`);
-  }
-
-  // Merge: existing + filtered new
-  const allExports = new Set([...existingExports, ...newExports]);
   const sortedExports = [...allExports].sort();
-
   const lines: string[] = [];
   for (const exp of sortedExports) {
     lines.push(exp);
   }
   lines.push("");
 
+  console.log(`  Export file: ${sortedExports.length} exports total`);
+
   return lines.join("\n");
+}
+
+/**
+ * Recursively scan a directory for .dart files and add export lines.
+ * Skips .freezed.dart and .g.dart files.
+ */
+function scanDartFiles(
+  dir: string,
+  libDir: string,
+  exports: Set<string>
+): void {
+  if (!existsSync(dir)) return;
+
+  for (const entry of readdirSync(dir)) {
+    const fullPath = join(dir, entry);
+    try {
+      const stat = statSync(fullPath);
+      if (stat.isDirectory()) {
+        scanDartFiles(fullPath, libDir, exports);
+      } else if (
+        entry.endsWith(".dart") &&
+        !entry.endsWith(".freezed.dart") &&
+        !entry.endsWith(".g.dart")
+      ) {
+        const relPath = relative(libDir, fullPath).replace(/\\/g, "/");
+        exports.add(`export '${relPath}';`);
+      }
+    } catch {
+      // Skip unreadable files
+    }
+  }
 }

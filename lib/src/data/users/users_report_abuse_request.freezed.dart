@@ -12,15 +12,11 @@ part of 'users_report_abuse_request.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-UsersReportAbuseRequest _$UsersReportAbuseRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UsersReportAbuse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UsersReportAbuseRequest {
-  String get userId;
-  String get comment;
+  String? get userId;
+  String? get comment;
 
   /// Create a copy of UsersReportAbuseRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -58,7 +54,7 @@ abstract mixin class $UsersReportAbuseRequestCopyWith<$Res> {
           $Res Function(UsersReportAbuseRequest) _then) =
       _$UsersReportAbuseRequestCopyWithImpl;
   @useResult
-  $Res call({String userId, String comment});
+  $Res call({String? userId, String? comment});
 }
 
 /// @nodoc
@@ -74,45 +70,46 @@ class _$UsersReportAbuseRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
-    Object? comment = null,
+    Object? userId = freezed,
+    Object? comment = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      comment: null == comment
+              as String?,
+      comment: freezed == comment
           ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _UsersReportAbuse implements UsersReportAbuseRequest {
-  const _UsersReportAbuse({required this.userId, required this.comment});
-  factory _UsersReportAbuse.fromJson(Map<String, dynamic> json) =>
-      _$UsersReportAbuseFromJson(json);
+class _UsersReportAbuseRequest implements UsersReportAbuseRequest {
+  const _UsersReportAbuseRequest({this.userId, this.comment});
+  factory _UsersReportAbuseRequest.fromJson(Map<String, dynamic> json) =>
+      _$UsersReportAbuseRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
-  final String comment;
+  final String? comment;
 
   /// Create a copy of UsersReportAbuseRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$UsersReportAbuseCopyWith<_UsersReportAbuse> get copyWith =>
-      __$UsersReportAbuseCopyWithImpl<_UsersReportAbuse>(this, _$identity);
+  _$UsersReportAbuseRequestCopyWith<_UsersReportAbuseRequest> get copyWith =>
+      __$UsersReportAbuseRequestCopyWithImpl<_UsersReportAbuseRequest>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$UsersReportAbuseToJson(
+    return _$UsersReportAbuseRequestToJson(
       this,
     );
   }
@@ -121,7 +118,7 @@ class _UsersReportAbuse implements UsersReportAbuseRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersReportAbuse &&
+            other is _UsersReportAbuseRequest &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.comment, comment) || other.comment == comment));
   }
@@ -137,41 +134,41 @@ class _UsersReportAbuse implements UsersReportAbuseRequest {
 }
 
 /// @nodoc
-abstract mixin class _$UsersReportAbuseCopyWith<$Res>
+abstract mixin class _$UsersReportAbuseRequestCopyWith<$Res>
     implements $UsersReportAbuseRequestCopyWith<$Res> {
-  factory _$UsersReportAbuseCopyWith(
-          _UsersReportAbuse value, $Res Function(_UsersReportAbuse) _then) =
-      __$UsersReportAbuseCopyWithImpl;
+  factory _$UsersReportAbuseRequestCopyWith(_UsersReportAbuseRequest value,
+          $Res Function(_UsersReportAbuseRequest) _then) =
+      __$UsersReportAbuseRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId, String comment});
+  $Res call({String? userId, String? comment});
 }
 
 /// @nodoc
-class __$UsersReportAbuseCopyWithImpl<$Res>
-    implements _$UsersReportAbuseCopyWith<$Res> {
-  __$UsersReportAbuseCopyWithImpl(this._self, this._then);
+class __$UsersReportAbuseRequestCopyWithImpl<$Res>
+    implements _$UsersReportAbuseRequestCopyWith<$Res> {
+  __$UsersReportAbuseRequestCopyWithImpl(this._self, this._then);
 
-  final _UsersReportAbuse _self;
-  final $Res Function(_UsersReportAbuse) _then;
+  final _UsersReportAbuseRequest _self;
+  final $Res Function(_UsersReportAbuseRequest) _then;
 
   /// Create a copy of UsersReportAbuseRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
-    Object? comment = null,
+    Object? userId = freezed,
+    Object? comment = freezed,
   }) {
-    return _then(_UsersReportAbuse(
-      userId: null == userId
+    return _then(_UsersReportAbuseRequest(
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      comment: null == comment
+              as String?,
+      comment: freezed == comment
           ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

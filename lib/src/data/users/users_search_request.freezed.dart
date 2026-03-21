@@ -15,10 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersSearchRequest {
-  String get query;
+  String? get query;
   int? get offset;
   int? get limit;
-  Origin? get origin;
+  UsersSearchOrigin? get origin;
   bool? get detail;
 
   /// Create a copy of UsersSearchRequest
@@ -62,7 +62,11 @@ abstract mixin class $UsersSearchRequestCopyWith<$Res> {
       _$UsersSearchRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String query, int? offset, int? limit, Origin? origin, bool? detail});
+      {String? query,
+      int? offset,
+      int? limit,
+      UsersSearchOrigin? origin,
+      bool? detail});
 }
 
 /// @nodoc
@@ -78,17 +82,17 @@ class _$UsersSearchRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? offset = freezed,
     Object? limit = freezed,
     Object? origin = freezed,
     Object? detail = freezed,
   }) {
     return _then(_self.copyWith(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       offset: freezed == offset
           ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable
@@ -100,7 +104,7 @@ class _$UsersSearchRequestCopyWithImpl<$Res>
       origin: freezed == origin
           ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as Origin?,
+              as UsersSearchOrigin?,
       detail: freezed == detail
           ? _self.detail
           : detail // ignore: cast_nullable_to_non_nullable
@@ -113,19 +117,27 @@ class _$UsersSearchRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _UsersSearchRequest implements UsersSearchRequest {
   const _UsersSearchRequest(
-      {required this.query, this.offset, this.limit, this.origin, this.detail});
+      {this.query,
+      this.offset = 0,
+      this.limit = 10,
+      this.origin = UsersSearchOrigin.combined,
+      this.detail = true});
   factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersSearchRequestFromJson(json);
 
   @override
-  final String query;
+  final String? query;
   @override
+  @JsonKey()
   final int? offset;
   @override
+  @JsonKey()
   final int? limit;
   @override
-  final Origin? origin;
+  @JsonKey()
+  final UsersSearchOrigin? origin;
   @override
+  @JsonKey()
   final bool? detail;
 
   /// Create a copy of UsersSearchRequest
@@ -175,7 +187,11 @@ abstract mixin class _$UsersSearchRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String query, int? offset, int? limit, Origin? origin, bool? detail});
+      {String? query,
+      int? offset,
+      int? limit,
+      UsersSearchOrigin? origin,
+      bool? detail});
 }
 
 /// @nodoc
@@ -191,17 +207,17 @@ class __$UsersSearchRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? offset = freezed,
     Object? limit = freezed,
     Object? origin = freezed,
     Object? detail = freezed,
   }) {
     return _then(_UsersSearchRequest(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       offset: freezed == offset
           ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable
@@ -213,7 +229,7 @@ class __$UsersSearchRequestCopyWithImpl<$Res>
       origin: freezed == origin
           ? _self.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as Origin?,
+              as UsersSearchOrigin?,
       detail: freezed == detail
           ? _self.detail
           : detail // ignore: cast_nullable_to_non_nullable

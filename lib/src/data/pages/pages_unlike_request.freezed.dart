@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$PagesUnlikeRequest {
-  String get pageId;
+  String? get pageId;
 
   /// Create a copy of PagesUnlikeRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $PagesUnlikeRequestCopyWith<$Res> {
           PagesUnlikeRequest value, $Res Function(PagesUnlikeRequest) _then) =
       _$PagesUnlikeRequestCopyWithImpl;
   @useResult
-  $Res call({String pageId});
+  $Res call({String? pageId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$PagesUnlikeRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pageId = null,
+    Object? pageId = freezed,
   }) {
     return _then(_self.copyWith(
-      pageId: null == pageId
+      pageId: freezed == pageId
           ? _self.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$PagesUnlikeRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _PagesUnlikeRequest implements PagesUnlikeRequest {
-  const _PagesUnlikeRequest({required this.pageId});
+  const _PagesUnlikeRequest({this.pageId});
   factory _PagesUnlikeRequest.fromJson(Map<String, dynamic> json) =>
       _$PagesUnlikeRequestFromJson(json);
 
   @override
-  final String pageId;
+  final String? pageId;
 
   /// Create a copy of PagesUnlikeRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$PagesUnlikeRequestCopyWith<$Res>
       __$PagesUnlikeRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String pageId});
+  $Res call({String? pageId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$PagesUnlikeRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? pageId = null,
+    Object? pageId = freezed,
   }) {
     return _then(_PagesUnlikeRequest(
-      pageId: null == pageId
+      pageId: freezed == pageId
           ? _self.pageId
           : pageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

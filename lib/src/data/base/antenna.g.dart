@@ -11,25 +11,21 @@ _Antenna _$AntennaFromJson(Map<String, dynamic> json) => _Antenna(
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       name: json['name'] as String,
-      keywords: (json['keywords'] as List<dynamic>)
-          .map((e) => (e as List<dynamic>).map((e) => e as String).toList())
-          .toList(),
-      excludeKeywords: (json['excludeKeywords'] as List<dynamic>)
-          .map((e) => (e as List<dynamic>).map((e) => e as String).toList())
-          .toList(),
+      keywords: json['keywords'] as List<dynamic>,
+      excludeKeywords: json['excludeKeywords'] as List<dynamic>,
       src: $enumDecode(_$AntennaSourceEnumMap, json['src']),
       userListId: json['userListId'] as String?,
       users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),
-      caseSensitive: json['caseSensitive'] as bool,
-      notify: json['notify'] as bool? ?? false,
-      withReplies: json['withReplies'] as bool,
+      caseSensitive: json['caseSensitive'] as bool? ?? false,
+      localOnly: json['localOnly'] as bool? ?? false,
+      excludeBots: json['excludeBots'] as bool? ?? false,
+      withReplies: json['withReplies'] as bool? ?? false,
       withFile: json['withFile'] as bool,
       isActive: json['isActive'] as bool,
-      hasUnreadNote: json['hasUnreadNote'] as bool,
-      localOnly: json['localOnly'] as bool?,
-      excludeBots: json['excludeBots'] as bool?,
+      hasUnreadNote: json['hasUnreadNote'] as bool? ?? false,
+      notify: json['notify'] as bool? ?? false,
       excludeNotesInSensitiveChannel:
-          json['excludeNotesInSensitiveChannel'] as bool?,
+          json['excludeNotesInSensitiveChannel'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$AntennaToJson(_Antenna instance) => <String, dynamic>{
@@ -42,13 +38,13 @@ Map<String, dynamic> _$AntennaToJson(_Antenna instance) => <String, dynamic>{
       'userListId': instance.userListId,
       'users': instance.users,
       'caseSensitive': instance.caseSensitive,
-      'notify': instance.notify,
+      'localOnly': instance.localOnly,
+      'excludeBots': instance.excludeBots,
       'withReplies': instance.withReplies,
       'withFile': instance.withFile,
       'isActive': instance.isActive,
       'hasUnreadNote': instance.hasUnreadNote,
-      'localOnly': instance.localOnly,
-      'excludeBots': instance.excludeBots,
+      'notify': instance.notify,
       'excludeNotesInSensitiveChannel': instance.excludeNotesInSensitiveChannel,
     };
 
@@ -56,6 +52,7 @@ const _$AntennaSourceEnumMap = {
   AntennaSource.home: 'home',
   AntennaSource.all: 'all',
   AntennaSource.users: 'users',
-  AntennaSource.usersBlackList: 'users_blacklist',
   AntennaSource.list: 'list',
+  AntennaSource.usersBlacklist: 'users_blacklist',
+  AntennaSource.unknown: 'unknown',
 };

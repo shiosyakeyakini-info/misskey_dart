@@ -6,22 +6,20 @@ part 'flash.freezed.dart';
 part 'flash.g.dart';
 
 @freezed
-
-/// Playのエンティティ
 abstract class Flash with _$Flash {
   const factory Flash({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverter() required DateTime updatedAt,
+    required String userId,
+    required UserLite user,
     required String title,
     required String summary,
     required String script,
-    FlashVisibility? visibility,
-    required String userId,
-    required UserLite user,
-    int? likedCount,
-    @Default(false) bool isLiked,
+    required FlashVisibility visibility,
+    required double likedCount,
+    bool? isLiked,
   }) = _Flash;
 
-  factory Flash.fromJson(Map<String, dynamic> json) => _$FlashFromJson(json);
+  factory Flash.fromJson(Map<String, Object?> json) => _$FlashFromJson(json);
 }

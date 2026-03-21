@@ -15,9 +15,11 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RolesUsersRequest {
-  String get roleId;
+  String? get roleId;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   int? get limit;
 
   /// Create a copy of RolesUsersRequest
@@ -39,16 +41,21 @@ mixin _$RolesUsersRequest {
             (identical(other.roleId, roleId) || other.roleId == roleId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, roleId, sinceId, untilId, limit);
+  int get hashCode => Object.hash(
+      runtimeType, roleId, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'RolesUsersRequest(roleId: $roleId, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'RolesUsersRequest(roleId: $roleId, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -58,7 +65,13 @@ abstract mixin class $RolesUsersRequestCopyWith<$Res> {
           RolesUsersRequest value, $Res Function(RolesUsersRequest) _then) =
       _$RolesUsersRequestCopyWithImpl;
   @useResult
-  $Res call({String roleId, String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String? roleId,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -74,16 +87,18 @@ class _$RolesUsersRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roleId = null,
+    Object? roleId = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
-      roleId: null == roleId
+      roleId: freezed == roleId
           ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -92,6 +107,14 @@ class _$RolesUsersRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -104,17 +127,27 @@ class _$RolesUsersRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _RolesUsersRequest implements RolesUsersRequest {
   const _RolesUsersRequest(
-      {required this.roleId, this.sinceId, this.untilId, this.limit});
+      {this.roleId,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.limit = 10});
   factory _RolesUsersRequest.fromJson(Map<String, dynamic> json) =>
       _$RolesUsersRequestFromJson(json);
 
   @override
-  final String roleId;
+  final String? roleId;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of RolesUsersRequest
@@ -140,16 +173,21 @@ class _RolesUsersRequest implements RolesUsersRequest {
             (identical(other.roleId, roleId) || other.roleId == roleId) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, roleId, sinceId, untilId, limit);
+  int get hashCode => Object.hash(
+      runtimeType, roleId, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'RolesUsersRequest(roleId: $roleId, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'RolesUsersRequest(roleId: $roleId, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -161,7 +199,13 @@ abstract mixin class _$RolesUsersRequestCopyWith<$Res>
       __$RolesUsersRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roleId, String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String? roleId,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -177,16 +221,18 @@ class __$RolesUsersRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roleId = null,
+    Object? roleId = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_RolesUsersRequest(
-      roleId: null == roleId
+      roleId: freezed == roleId
           ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -195,6 +241,14 @@ class __$RolesUsersRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

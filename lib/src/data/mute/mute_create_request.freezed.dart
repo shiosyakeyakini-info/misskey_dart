@@ -15,9 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MuteCreateRequest {
-  String get userId;
-  @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get expiresAt;
+  String? get userId;
+  int? get expiresAt;
 
   /// Create a copy of MuteCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -56,10 +55,7 @@ abstract mixin class $MuteCreateRequestCopyWith<$Res> {
           MuteCreateRequest value, $Res Function(MuteCreateRequest) _then) =
       _$MuteCreateRequestCopyWithImpl;
   @useResult
-  $Res call(
-      {String userId,
-      @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-      DateTime? expiresAt});
+  $Res call({String? userId, int? expiresAt});
 }
 
 /// @nodoc
@@ -75,18 +71,18 @@ class _$MuteCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? expiresAt = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       expiresAt: freezed == expiresAt
           ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }
@@ -94,17 +90,14 @@ class _$MuteCreateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _MuteCreateRequest implements MuteCreateRequest {
-  const _MuteCreateRequest(
-      {required this.userId,
-      @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt});
+  const _MuteCreateRequest({this.userId, this.expiresAt});
   factory _MuteCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$MuteCreateRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
-  @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? expiresAt;
+  final int? expiresAt;
 
   /// Create a copy of MuteCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -149,10 +142,7 @@ abstract mixin class _$MuteCreateRequestCopyWith<$Res>
       __$MuteCreateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String userId,
-      @NullableEpocTimeDateTimeConverter.withMilliSeconds()
-      DateTime? expiresAt});
+  $Res call({String? userId, int? expiresAt});
 }
 
 /// @nodoc
@@ -168,18 +158,18 @@ class __$MuteCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? expiresAt = freezed,
   }) {
     return _then(_MuteCreateRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       expiresAt: freezed == expiresAt
           ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }

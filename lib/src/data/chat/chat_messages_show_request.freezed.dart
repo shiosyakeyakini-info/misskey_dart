@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatMessagesShowRequest {
-  String get messageId;
+  String? get messageId;
 
   /// Create a copy of ChatMessagesShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $ChatMessagesShowRequestCopyWith<$Res> {
           $Res Function(ChatMessagesShowRequest) _then) =
       _$ChatMessagesShowRequestCopyWithImpl;
   @useResult
-  $Res call({String messageId});
+  $Res call({String? messageId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$ChatMessagesShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messageId = null,
+    Object? messageId = freezed,
   }) {
     return _then(_self.copyWith(
-      messageId: null == messageId
+      messageId: freezed == messageId
           ? _self.messageId
           : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$ChatMessagesShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatMessagesShowRequest implements ChatMessagesShowRequest {
-  const _ChatMessagesShowRequest({required this.messageId});
+  const _ChatMessagesShowRequest({this.messageId});
   factory _ChatMessagesShowRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatMessagesShowRequestFromJson(json);
 
   @override
-  final String messageId;
+  final String? messageId;
 
   /// Create a copy of ChatMessagesShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$ChatMessagesShowRequestCopyWith<$Res>
       __$ChatMessagesShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String messageId});
+  $Res call({String? messageId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$ChatMessagesShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? messageId = null,
+    Object? messageId = freezed,
   }) {
     return _then(_ChatMessagesShowRequest(
-      messageId: null == messageId
+      messageId: freezed == messageId
           ? _self.messageId
           : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
