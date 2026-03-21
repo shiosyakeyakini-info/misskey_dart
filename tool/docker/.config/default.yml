@@ -1,0 +1,16 @@
+url: http://localhost:3000
+port: 3000
+
+db:
+  host: db
+  port: 5432
+  db: misskey
+  user: collector
+  pass: collector
+
+redis:
+  host: redis
+  port: 6379
+
+id: 'aid'
+signToActivityPubGet: true

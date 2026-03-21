@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  web:
+    image: misskey/misskey:${MISSKEY_VERSION:-latest}
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    networks:
+      - internal_network
+      - external_network
+    volumes:
+      - ./.config:/misskey/.config
+    environment:
+      - NODE_ENV=production
+
+  redis:
+    image: redis:7-alpine
+    restart: "no"
+    networks:
+      - internal_network
+    healthcheck:
+      test: "redis-cli ping"
+      interval: 5s
+      retries: 20
+
+  db:
+    image: postgres:15-alpine
+    restart: "no"
+    networks:
+      - internal_network
+    environment:
+      - POSTGRES_PASSWORD=collector
+      - POSTGRES_USER=collector
+      - POSTGRES_DB=misskey
+    healthcheck:
+      test: "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"
+      interval: 5s
+      retries: 20
+
+networks:
+  internal_network:
+    internal: true
+  external_network:

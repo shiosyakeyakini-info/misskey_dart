@@ -69,23 +69,10 @@ async function collectApiJson(version: string, outputPath: string) {
   } catch {}
 
   // Start containers with the specified Misskey version
+  // Misskey auto-initializes the database on first start, so no separate init step is needed.
   console.log(`  Starting Misskey ${version}...`);
   exec(
     `MISSKEY_VERSION=${version} docker compose up -d`,
-    DOCKER_DIR
-  );
-
-  // Initialize the database
-  console.log("  Initializing database...");
-  exec(
-    `MISSKEY_VERSION=${version} docker compose run --rm web pnpm run init`,
-    DOCKER_DIR
-  );
-
-  // Start web service
-  console.log("  Starting web server...");
-  exec(
-    `MISSKEY_VERSION=${version} docker compose up -d web`,
     DOCKER_DIR
   );
 
@@ -109,10 +96,13 @@ async function collectApiJson(version: string, outputPath: string) {
 async function waitForServer(): Promise<void> {
   for (let i = 0; i < MAX_RETRIES; i++) {
     try {
-      const result = execSync("curl -sf http://localhost:3000/api/ping", {
-        timeout: 5000,
-        encoding: "utf-8",
-      });
+      const result = execSync(
+        'curl -sf -X POST -H "Content-Type: application/json" -d "{}" http://localhost:3000/api/ping',
+        {
+          timeout: 5000,
+          encoding: "utf-8",
+        }
+      );
       if (result.includes("pong")) {
         console.log("  Server is ready!");
         return;
