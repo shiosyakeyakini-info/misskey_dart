@@ -10,7 +10,8 @@ _AntennasCreateRequest _$AntennasCreateRequestFromJson(
         Map<String, dynamic> json) =>
     _AntennasCreateRequest(
       name: json['name'] as String?,
-      src: $enumDecodeNullable(_$AntennasCreateSrcEnumMap, json['src']),
+      src: $enumDecodeNullable(_$AntennasCreateSrcEnumMap, json['src'],
+          unknownValue: AntennasCreateSrc.unknown),
       userListId: json['userListId'] as String?,
       keywords: json['keywords'] as List<dynamic>?,
       excludeKeywords: json['excludeKeywords'] as List<dynamic>?,

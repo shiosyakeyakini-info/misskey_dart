@@ -16,11 +16,13 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesDraftsUpdateRequest {
   String? get draftId;
+  @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
   NotesDraftsUpdateVisibility? get visibility;
   List<String>? get visibleUserIds;
   String? get cw;
   String? get hashtag;
   bool? get localOnly;
+  @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
   NotesDraftsUpdateReactionAcceptance? get reactionAcceptance;
   String? get replyId;
   String? get renoteId;
@@ -106,11 +108,13 @@ abstract mixin class $NotesDraftsUpdateRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String? draftId,
+      @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
       NotesDraftsUpdateVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       String? hashtag,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
       NotesDraftsUpdateReactionAcceptance? reactionAcceptance,
       String? replyId,
       String? renoteId,
@@ -237,11 +241,13 @@ class _$NotesDraftsUpdateRequestCopyWithImpl<$Res>
 class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
   const _NotesDraftsUpdateRequest(
       {this.draftId,
+      @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
       this.visibility,
       final List<String>? visibleUserIds,
       this.cw,
       this.hashtag,
       this.localOnly,
+      @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
       this.reactionAcceptance,
       this.replyId,
       this.renoteId,
@@ -259,6 +265,7 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
   @override
   final String? draftId;
   @override
+  @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
   final NotesDraftsUpdateVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
@@ -277,6 +284,7 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
   @override
   final bool? localOnly;
   @override
+  @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
   final NotesDraftsUpdateReactionAcceptance? reactionAcceptance;
   @override
   final String? replyId;
@@ -385,11 +393,13 @@ abstract mixin class _$NotesDraftsUpdateRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String? draftId,
+      @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
       NotesDraftsUpdateVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       String? hashtag,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
       NotesDraftsUpdateReactionAcceptance? reactionAcceptance,
       String? replyId,
       String? renoteId,

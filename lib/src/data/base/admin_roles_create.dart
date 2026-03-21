@@ -11,7 +11,7 @@ abstract class AdminRolesCreate with _$AdminRolesCreate {
     required String description,
     String? color,
     String? iconUrl,
-    required AdminRolesCreateTarget target,
+    @JsonKey(unknownEnumValue: AdminRolesCreateTarget.unknown) required AdminRolesCreateTarget target,
     required Map<String, dynamic> condFormula,
     required bool isPublic,
     required bool isModerator,

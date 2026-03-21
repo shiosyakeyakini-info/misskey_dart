@@ -22,6 +22,7 @@ mixin _$I2faRegisterKey {
   double? get timeout;
   List<I2faRegisterKeyExcludeCredentialsItem>? get excludeCredentials;
   I2faRegisterKeyAuthenticatorSelection? get authenticatorSelection;
+  @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)
   I2faRegisterKeyAttestation? get attestation;
   I2faRegisterKeyExtensions? get extensions;
 
@@ -92,6 +93,7 @@ abstract mixin class $I2faRegisterKeyCopyWith<$Res> {
       double? timeout,
       List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,
       I2faRegisterKeyAuthenticatorSelection? authenticatorSelection,
+      @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)
       I2faRegisterKeyAttestation? attestation,
       I2faRegisterKeyExtensions? extensions});
 
@@ -227,6 +229,7 @@ class _I2faRegisterKey implements I2faRegisterKey {
       this.timeout,
       final List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,
       this.authenticatorSelection,
+      @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)
       this.attestation,
       this.extensions})
       : _pubKeyCredParams = pubKeyCredParams,
@@ -265,6 +268,7 @@ class _I2faRegisterKey implements I2faRegisterKey {
   @override
   final I2faRegisterKeyAuthenticatorSelection? authenticatorSelection;
   @override
+  @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)
   final I2faRegisterKeyAttestation? attestation;
   @override
   final I2faRegisterKeyExtensions? extensions;
@@ -342,6 +346,7 @@ abstract mixin class _$I2faRegisterKeyCopyWith<$Res>
       double? timeout,
       List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,
       I2faRegisterKeyAuthenticatorSelection? authenticatorSelection,
+      @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)
       I2faRegisterKeyAttestation? attestation,
       I2faRegisterKeyExtensions? extensions});
 

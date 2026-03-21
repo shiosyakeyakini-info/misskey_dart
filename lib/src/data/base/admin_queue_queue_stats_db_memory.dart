@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_queue_queue_stats_db_memory.freezed.dart';
 part 'admin_queue_queue_stats_db_memory.g.dart';

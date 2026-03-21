@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_reply.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigReply with _$IUpdateNotificationRecieveConfigReply {
   const factory IUpdateNotificationRecieveConfigReply({
-    required IUpdateNotificationRecieveConfigReplyType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigReplyType.unknown) required IUpdateNotificationRecieveConfigReplyType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigReply;
 

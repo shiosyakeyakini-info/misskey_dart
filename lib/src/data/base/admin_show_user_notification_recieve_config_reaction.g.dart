@@ -12,7 +12,9 @@ _AdminShowUserNotificationRecieveConfigReaction
         _AdminShowUserNotificationRecieveConfigReaction(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigReactionTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigReactionType.unknown),
           userListId: json['userListId'] as String,
         );
 

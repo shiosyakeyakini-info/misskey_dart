@@ -17,7 +17,9 @@ T _$identity<T>(T value) => value;
 mixin _$AdminInviteListRequest {
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: AdminInviteListType.unknown)
   AdminInviteListType? get type;
+  @JsonKey(unknownEnumValue: AdminInviteListSort.unknown)
   AdminInviteListSort? get sort;
 
   /// Create a copy of AdminInviteListRequest
@@ -61,7 +63,9 @@ abstract mixin class $AdminInviteListRequestCopyWith<$Res> {
   $Res call(
       {int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: AdminInviteListType.unknown)
       AdminInviteListType? type,
+      @JsonKey(unknownEnumValue: AdminInviteListSort.unknown)
       AdminInviteListSort? sort});
 }
 
@@ -110,8 +114,9 @@ class _AdminInviteListRequest implements AdminInviteListRequest {
   const _AdminInviteListRequest(
       {this.limit = 30,
       this.offset = 0,
+      @JsonKey(unknownEnumValue: AdminInviteListType.unknown)
       this.type = AdminInviteListType.all,
-      this.sort});
+      @JsonKey(unknownEnumValue: AdminInviteListSort.unknown) this.sort});
   factory _AdminInviteListRequest.fromJson(Map<String, dynamic> json) =>
       _$AdminInviteListRequestFromJson(json);
 
@@ -122,9 +127,10 @@ class _AdminInviteListRequest implements AdminInviteListRequest {
   @JsonKey()
   final int? offset;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminInviteListType.unknown)
   final AdminInviteListType? type;
   @override
+  @JsonKey(unknownEnumValue: AdminInviteListSort.unknown)
   final AdminInviteListSort? sort;
 
   /// Create a copy of AdminInviteListRequest
@@ -175,7 +181,9 @@ abstract mixin class _$AdminInviteListRequestCopyWith<$Res>
   $Res call(
       {int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: AdminInviteListType.unknown)
       AdminInviteListType? type,
+      @JsonKey(unknownEnumValue: AdminInviteListSort.unknown)
       AdminInviteListSort? sort});
 }
 

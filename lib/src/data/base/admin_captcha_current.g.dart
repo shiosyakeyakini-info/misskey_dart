@@ -8,8 +8,9 @@ part of 'admin_captcha_current.dart';
 
 _AdminCaptchaCurrent _$AdminCaptchaCurrentFromJson(Map<String, dynamic> json) =>
     _AdminCaptchaCurrent(
-      provider:
-          $enumDecode(_$AdminCaptchaCurrentProviderEnumMap, json['provider']),
+      provider: $enumDecode(
+          _$AdminCaptchaCurrentProviderEnumMap, json['provider'],
+          unknownValue: AdminCaptchaCurrentProvider.unknown),
       hcaptcha: AdminCaptchaCurrentHcaptcha.fromJson(
           json['hcaptcha'] as Map<String, dynamic>),
       mcaptcha: AdminCaptchaCurrentMcaptcha.fromJson(

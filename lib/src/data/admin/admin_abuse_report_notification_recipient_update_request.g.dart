@@ -15,7 +15,9 @@ _AdminAbuseReportNotificationRecipientUpdateRequest
           name: json['name'] as String?,
           method: $enumDecodeNullable(
               _$AdminAbuseReportNotificationRecipientUpdateMethodEnumMap,
-              json['method']),
+              json['method'],
+              unknownValue:
+                  AdminAbuseReportNotificationRecipientUpdateMethod.unknown),
           userId: json['userId'] as String?,
           systemWebhookId: json['systemWebhookId'] as String?,
         );

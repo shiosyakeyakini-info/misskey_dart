@@ -20,6 +20,7 @@ mixin _$AbuseReportNotificationRecipient {
   @DateTimeConverter()
   DateTime get updatedAt;
   String get name;
+  @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
   AbuseReportNotificationRecipientMethod get method;
   String? get userId;
   UserLite? get user;
@@ -81,6 +82,7 @@ abstract mixin class $AbuseReportNotificationRecipientCopyWith<$Res> {
       bool isActive,
       @DateTimeConverter() DateTime updatedAt,
       String name,
+      @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
       AbuseReportNotificationRecipientMethod method,
       String? userId,
       UserLite? user,
@@ -192,6 +194,7 @@ class _AbuseReportNotificationRecipient
       required this.isActive,
       @DateTimeConverter() required this.updatedAt,
       required this.name,
+      @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
       required this.method,
       this.userId,
       this.user,
@@ -211,6 +214,7 @@ class _AbuseReportNotificationRecipient
   @override
   final String name;
   @override
+  @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
   final AbuseReportNotificationRecipientMethod method;
   @override
   final String? userId;
@@ -282,6 +286,7 @@ abstract mixin class _$AbuseReportNotificationRecipientCopyWith<$Res>
       bool isActive,
       @DateTimeConverter() DateTime updatedAt,
       String name,
+      @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
       AbuseReportNotificationRecipientMethod method,
       String? userId,
       UserLite? user,

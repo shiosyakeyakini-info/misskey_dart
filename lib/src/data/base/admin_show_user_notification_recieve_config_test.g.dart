@@ -12,7 +12,9 @@ _AdminShowUserNotificationRecieveConfigTest
         _AdminShowUserNotificationRecieveConfigTest(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigTestTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigTestType.unknown),
           userListId: json['userListId'] as String,
         );
 

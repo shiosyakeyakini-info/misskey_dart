@@ -7,7 +7,7 @@ part 'sw_register_response.g.dart';
 @freezed
 abstract class SwRegisterResponse with _$SwRegisterResponse {
   const factory SwRegisterResponse({
-    SwRegisterState? state,
+    @JsonKey(unknownEnumValue: SwRegisterState.unknown) SwRegisterState? state,
     String? key,
     required String userId,
     required String endpoint,

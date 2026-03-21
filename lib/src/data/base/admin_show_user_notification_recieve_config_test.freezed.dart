@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigTest {
+  @JsonKey(
+      unknownEnumValue: AdminShowUserNotificationRecieveConfigTestType.unknown)
   AdminShowUserNotificationRecieveConfigTestType get type;
   String get userListId;
 
@@ -59,7 +61,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigTestCopyWith<$Res> {
       _$AdminShowUserNotificationRecieveConfigTestCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigTestType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigTestType.unknown)
+      AdminShowUserNotificationRecieveConfigTestType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -97,12 +103,18 @@ class _$AdminShowUserNotificationRecieveConfigTestCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigTest
     implements AdminShowUserNotificationRecieveConfigTest {
   const _AdminShowUserNotificationRecieveConfigTest(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigTestType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigTest.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigTestFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: AdminShowUserNotificationRecieveConfigTestType.unknown)
   final AdminShowUserNotificationRecieveConfigTestType type;
   @override
   final String userListId;
@@ -154,7 +166,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigTestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigTestType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigTestType.unknown)
+      AdminShowUserNotificationRecieveConfigTestType type,
+      String userListId});
 }
 
 /// @nodoc

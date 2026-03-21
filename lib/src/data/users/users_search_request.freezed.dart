@@ -18,6 +18,7 @@ mixin _$UsersSearchRequest {
   String? get query;
   int? get offset;
   int? get limit;
+  @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)
   UsersSearchOrigin? get origin;
   bool? get detail;
 
@@ -65,6 +66,7 @@ abstract mixin class $UsersSearchRequestCopyWith<$Res> {
       {String? query,
       int? offset,
       int? limit,
+      @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)
       UsersSearchOrigin? origin,
       bool? detail});
 }
@@ -120,6 +122,7 @@ class _UsersSearchRequest implements UsersSearchRequest {
       {this.query,
       this.offset = 0,
       this.limit = 10,
+      @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)
       this.origin = UsersSearchOrigin.combined,
       this.detail = true});
   factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) =>
@@ -134,7 +137,7 @@ class _UsersSearchRequest implements UsersSearchRequest {
   @JsonKey()
   final int? limit;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)
   final UsersSearchOrigin? origin;
   @override
   @JsonKey()
@@ -190,6 +193,7 @@ abstract mixin class _$UsersSearchRequestCopyWith<$Res>
       {String? query,
       int? offset,
       int? limit,
+      @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)
       UsersSearchOrigin? origin,
       bool? detail});
 }

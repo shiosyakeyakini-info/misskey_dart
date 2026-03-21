@@ -20,6 +20,7 @@ mixin _$FlashUpdateRequest {
   String? get summary;
   String? get script;
   List<String>? get permissions;
+  @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
   FlashUpdateVisibility? get visibility;
 
   /// Create a copy of FlashUpdateRequest
@@ -71,6 +72,7 @@ abstract mixin class $FlashUpdateRequestCopyWith<$Res> {
       String? summary,
       String? script,
       List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
       FlashUpdateVisibility? visibility});
 }
 
@@ -132,6 +134,7 @@ class _FlashUpdateRequest implements FlashUpdateRequest {
       this.summary,
       this.script,
       final List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
       this.visibility})
       : _permissions = permissions;
   factory _FlashUpdateRequest.fromJson(Map<String, dynamic> json) =>
@@ -156,6 +159,7 @@ class _FlashUpdateRequest implements FlashUpdateRequest {
   }
 
   @override
+  @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
   final FlashUpdateVisibility? visibility;
 
   /// Create a copy of FlashUpdateRequest
@@ -213,6 +217,7 @@ abstract mixin class _$FlashUpdateRequestCopyWith<$Res>
       String? summary,
       String? script,
       List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
       FlashUpdateVisibility? visibility});
 }
 

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'antenna.freezed.dart';
 part 'antenna.g.dart';
@@ -13,7 +12,7 @@ abstract class Antenna with _$Antenna {
     required String name,
     required List<dynamic> keywords,
     required List<dynamic> excludeKeywords,
-    required AntennaSource src,
+    @JsonKey(unknownEnumValue: AntennaSource.unknown) required AntennaSource src,
     String? userListId,
     required List<String> users,
     @Default(false) bool caseSensitive,

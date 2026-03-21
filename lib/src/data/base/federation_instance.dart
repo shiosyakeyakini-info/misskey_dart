@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
-import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'federation_instance.freezed.dart';
 part 'federation_instance.g.dart';
@@ -18,7 +16,7 @@ abstract class FederationInstance with _$FederationInstance {
     required int followersCount,
     required bool isNotResponding,
     required bool isSuspended,
-    required FederationSuspensionState suspensionState,
+    @JsonKey(unknownEnumValue: FederationSuspensionState.unknown) required FederationSuspensionState suspensionState,
     required bool isBlocked,
     String? softwareName,
     String? softwareVersion,

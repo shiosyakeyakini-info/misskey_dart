@@ -8,7 +8,8 @@ part of 'page_block.dart';
 
 _PageBlock _$PageBlockFromJson(Map<String, dynamic> json) => _PageBlock(
       id: json['id'] as String,
-      type: $enumDecode(_$PageBlockTypeEnumMap, json['type']),
+      type: $enumDecode(_$PageBlockTypeEnumMap, json['type'],
+          unknownValue: PageBlockType.unknown),
       detailed: json['detailed'] as bool,
       note: json['note'] as String?,
     );

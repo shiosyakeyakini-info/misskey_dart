@@ -7,7 +7,7 @@ part 'charts_drive_request.g.dart';
 @freezed
 abstract class ChartsDriveRequest with _$ChartsDriveRequest {
   const factory ChartsDriveRequest({
-    ChartsDriveSpan? span,
+    @JsonKey(unknownEnumValue: ChartsDriveSpan.unknown) ChartsDriveSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
   }) = _ChartsDriveRequest;

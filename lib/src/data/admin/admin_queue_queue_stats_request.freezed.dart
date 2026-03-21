@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueQueueStatsRequest {
+  @JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown)
   AdminQueueQueueStatsQueue? get queue;
 
   /// Create a copy of AdminQueueQueueStatsRequest
@@ -54,7 +55,9 @@ abstract mixin class $AdminQueueQueueStatsRequestCopyWith<$Res> {
           $Res Function(AdminQueueQueueStatsRequest) _then) =
       _$AdminQueueQueueStatsRequestCopyWithImpl;
   @useResult
-  $Res call({AdminQueueQueueStatsQueue? queue});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown)
+      AdminQueueQueueStatsQueue? queue});
 }
 
 /// @nodoc
@@ -84,11 +87,14 @@ class _$AdminQueueQueueStatsRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminQueueQueueStatsRequest implements AdminQueueQueueStatsRequest {
-  const _AdminQueueQueueStatsRequest({this.queue});
+  const _AdminQueueQueueStatsRequest(
+      {@JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown)
+      this.queue});
   factory _AdminQueueQueueStatsRequest.fromJson(Map<String, dynamic> json) =>
       _$AdminQueueQueueStatsRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown)
   final AdminQueueQueueStatsQueue? queue;
 
   /// Create a copy of AdminQueueQueueStatsRequest
@@ -134,7 +140,9 @@ abstract mixin class _$AdminQueueQueueStatsRequestCopyWith<$Res>
       __$AdminQueueQueueStatsRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({AdminQueueQueueStatsQueue? queue});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown)
+      AdminQueueQueueStatsQueue? queue});
 }
 
 /// @nodoc

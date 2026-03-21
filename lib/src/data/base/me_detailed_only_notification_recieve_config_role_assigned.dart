@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_role_assigned.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigRoleAssigned with _$MeDetailedOnlyNotificationRecieveConfigRoleAssigned {
   const factory MeDetailedOnlyNotificationRecieveConfigRoleAssigned({
-    required MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigRoleAssignedType.unknown) required MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigRoleAssigned;
 

@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_test.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigTest with _$MeDetailedOnlyNotificationRecieveConfigTest {
   const factory MeDetailedOnlyNotificationRecieveConfigTest({
-    required MeDetailedOnlyNotificationRecieveConfigTestType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigTestType.unknown) required MeDetailedOnlyNotificationRecieveConfigTestType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigTest;
 

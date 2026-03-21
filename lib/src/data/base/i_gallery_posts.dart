@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_gallery_posts.freezed.dart';
 part 'i_gallery_posts.g.dart';

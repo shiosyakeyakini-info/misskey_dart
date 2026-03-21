@@ -9,7 +9,8 @@ part of 'following_update_all.dart';
 _FollowingUpdateAll _$FollowingUpdateAllFromJson(Map<String, dynamic> json) =>
     _FollowingUpdateAll(
       notify: $enumDecodeNullable(
-          _$FollowingUpdateAllNotifyEnumMap, json['notify']),
+          _$FollowingUpdateAllNotifyEnumMap, json['notify'],
+          unknownValue: FollowingUpdateAllNotify.unknown),
       withReplies: json['withReplies'] as bool?,
     );
 

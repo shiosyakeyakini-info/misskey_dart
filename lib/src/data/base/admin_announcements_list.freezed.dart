@@ -21,6 +21,7 @@ mixin _$AdminAnnouncementsList {
   int? get sinceDate;
   int? get untilDate;
   String? get userId;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsListStatus.unknown)
   AdminAnnouncementsListStatus? get status;
 
   /// Create a copy of AdminAnnouncementsList
@@ -74,6 +75,7 @@ abstract mixin class $AdminAnnouncementsListCopyWith<$Res> {
       int? sinceDate,
       int? untilDate,
       String? userId,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListStatus.unknown)
       AdminAnnouncementsListStatus? status});
 }
 
@@ -141,6 +143,7 @@ class _AdminAnnouncementsList implements AdminAnnouncementsList {
       this.sinceDate,
       this.untilDate,
       this.userId,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListStatus.unknown)
       this.status = AdminAnnouncementsListStatus.active});
   factory _AdminAnnouncementsList.fromJson(Map<String, dynamic> json) =>
       _$AdminAnnouncementsListFromJson(json);
@@ -159,7 +162,7 @@ class _AdminAnnouncementsList implements AdminAnnouncementsList {
   @override
   final String? userId;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminAnnouncementsListStatus.unknown)
   final AdminAnnouncementsListStatus? status;
 
   /// Create a copy of AdminAnnouncementsList
@@ -220,6 +223,7 @@ abstract mixin class _$AdminAnnouncementsListCopyWith<$Res>
       int? sinceDate,
       int? untilDate,
       String? userId,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListStatus.unknown)
       AdminAnnouncementsListStatus? status});
 }
 

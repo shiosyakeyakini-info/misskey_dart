@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigReaction {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigReactionType.unknown)
   MeDetailedOnlyNotificationRecieveConfigReactionType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigReactionCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigReactionCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigReactionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigReactionType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigReactionType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigReactionCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigReaction
     implements MeDetailedOnlyNotificationRecieveConfigReaction {
   const _MeDetailedOnlyNotificationRecieveConfigReaction(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigReactionType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigReaction.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigReactionFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigReactionType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigReactionType type;
   @override
   final String userListId;
@@ -161,7 +174,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigReactionCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigReactionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigReactionType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigReactionType type,
       String userListId});
 }
 

@@ -10,7 +10,8 @@ _AdminQueuePromoteJobsRequest _$AdminQueuePromoteJobsRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueuePromoteJobsRequest(
       queue: $enumDecodeNullable(
-          _$AdminQueuePromoteJobsQueueEnumMap, json['queue']),
+          _$AdminQueuePromoteJobsQueueEnumMap, json['queue'],
+          unknownValue: AdminQueuePromoteJobsQueue.unknown),
     );
 
 Map<String, dynamic> _$AdminQueuePromoteJobsRequestToJson(

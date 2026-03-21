@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigNote {
+  @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigNoteType.unknown)
   IUpdateNotificationRecieveConfigNoteType get type;
   String get userListId;
 
@@ -58,7 +59,11 @@ abstract mixin class $IUpdateNotificationRecieveConfigNoteCopyWith<$Res> {
           $Res Function(IUpdateNotificationRecieveConfigNote) _then) =
       _$IUpdateNotificationRecieveConfigNoteCopyWithImpl;
   @useResult
-  $Res call({IUpdateNotificationRecieveConfigNoteType type, String userListId});
+  $Res call(
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigNoteType.unknown)
+      IUpdateNotificationRecieveConfigNoteType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -95,12 +100,16 @@ class _$IUpdateNotificationRecieveConfigNoteCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigNote
     implements IUpdateNotificationRecieveConfigNote {
   const _IUpdateNotificationRecieveConfigNote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigNoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigNote.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigNoteFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigNoteType.unknown)
   final IUpdateNotificationRecieveConfigNoteType type;
   @override
   final String userListId;
@@ -151,7 +160,11 @@ abstract mixin class _$IUpdateNotificationRecieveConfigNoteCopyWith<$Res>
       __$IUpdateNotificationRecieveConfigNoteCopyWithImpl;
   @override
   @useResult
-  $Res call({IUpdateNotificationRecieveConfigNoteType type, String userListId});
+  $Res call(
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigNoteType.unknown)
+      IUpdateNotificationRecieveConfigNoteType type,
+      String userListId});
 }
 
 /// @nodoc

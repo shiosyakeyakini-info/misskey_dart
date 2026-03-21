@@ -9,8 +9,9 @@ part of 'following_update.dart';
 _FollowingUpdate _$FollowingUpdateFromJson(Map<String, dynamic> json) =>
     _FollowingUpdate(
       userId: json['userId'] as String,
-      notify:
-          $enumDecodeNullable(_$FollowingUpdateNotifyEnumMap, json['notify']),
+      notify: $enumDecodeNullable(
+          _$FollowingUpdateNotifyEnumMap, json['notify'],
+          unknownValue: FollowingUpdateNotify.unknown),
       withReplies: json['withReplies'] as bool?,
     );
 

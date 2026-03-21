@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyFollowing {
   final MisskeyFollowingRequests requests;
@@ -7,7 +6,7 @@ class MisskeyFollowing {
   final ApiService _apiService;
 
   MisskeyFollowing({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         requests = MisskeyFollowingRequests(apiService: apiService);
 
   /// following/create

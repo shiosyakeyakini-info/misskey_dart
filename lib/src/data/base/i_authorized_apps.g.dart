@@ -10,7 +10,8 @@ _IAuthorizedApps _$IAuthorizedAppsFromJson(Map<String, dynamic> json) =>
     _IAuthorizedApps(
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$IAuthorizedAppsSortEnumMap, json['sort']) ??
+      sort: $enumDecodeNullable(_$IAuthorizedAppsSortEnumMap, json['sort'],
+              unknownValue: IAuthorizedAppsSort.unknown) ??
           IAuthorizedAppsSort.desc,
     );
 

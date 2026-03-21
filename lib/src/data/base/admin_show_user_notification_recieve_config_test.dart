@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_test.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigTest with _$AdminShowUserNotificationRecieveConfigTest {
   const factory AdminShowUserNotificationRecieveConfigTest({
-    required AdminShowUserNotificationRecieveConfigTestType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigTestType.unknown) required AdminShowUserNotificationRecieveConfigTestType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigTest;
 

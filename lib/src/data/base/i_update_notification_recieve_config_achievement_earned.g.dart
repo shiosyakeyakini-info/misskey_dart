@@ -12,7 +12,10 @@ _IUpdateNotificationRecieveConfigAchievementEarned
         _IUpdateNotificationRecieveConfigAchievementEarned(
           type: $enumDecode(
               _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  IUpdateNotificationRecieveConfigAchievementEarnedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

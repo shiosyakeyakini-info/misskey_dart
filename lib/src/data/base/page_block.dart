@@ -8,7 +8,7 @@ part 'page_block.g.dart';
 abstract class PageBlock with _$PageBlock {
   const factory PageBlock({
     required String id,
-    required PageBlockType type,
+    @JsonKey(unknownEnumValue: PageBlockType.unknown) required PageBlockType type,
     required bool detailed,
     String? note,
   }) = _PageBlock;

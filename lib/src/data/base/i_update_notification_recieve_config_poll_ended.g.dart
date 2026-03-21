@@ -12,7 +12,9 @@ _IUpdateNotificationRecieveConfigPollEnded
         _IUpdateNotificationRecieveConfigPollEnded(
           type: $enumDecode(
               _$IUpdateNotificationRecieveConfigPollEndedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  IUpdateNotificationRecieveConfigPollEndedType.unknown),
           userListId: json['userListId'] as String,
         );
 

@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyAdmin {
   final MisskeyAdminAbuseReport abuseReport;
@@ -21,7 +20,7 @@ class MisskeyAdmin {
   final ApiService _apiService;
 
   MisskeyAdmin({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         abuseReport = MisskeyAdminAbuseReport(apiService: apiService),
         accounts = MisskeyAdminAccounts(apiService: apiService),
         ad = MisskeyAdminAd(apiService: apiService),
@@ -169,11 +168,8 @@ class MisskeyAdmin {
 class MisskeyAdminAbuseReport {
   final MisskeyAdminAbuseReportNotificationRecipient notificationRecipient;
 
-  final ApiService _apiService;
-
   MisskeyAdminAbuseReport({required ApiService apiService})
-      : _apiService = apiService,
-        notificationRecipient = MisskeyAdminAbuseReportNotificationRecipient(apiService: apiService);
+      :         notificationRecipient = MisskeyAdminAbuseReportNotificationRecipient(apiService: apiService);
 
 }
 

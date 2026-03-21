@@ -7,12 +7,12 @@ part 'notes_drafts_create_request.g.dart';
 @freezed
 abstract class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
   const factory NotesDraftsCreateRequest({
-    @Default(NotesDraftsCreateVisibility.public) NotesDraftsCreateVisibility? visibility,
+    @JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown) @Default(NotesDraftsCreateVisibility.public) NotesDraftsCreateVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     String? hashtag,
     @Default(false) bool? localOnly,
-    @Default(null) NotesDraftsCreateReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) @Default(null) NotesDraftsCreateReactionAcceptance? reactionAcceptance,
     String? replyId,
     String? renoteId,
     String? channelId,

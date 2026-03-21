@@ -8,7 +8,8 @@ part of 'admin_queue_show_job.dart';
 
 _AdminQueueShowJob _$AdminQueueShowJobFromJson(Map<String, dynamic> json) =>
     _AdminQueueShowJob(
-      queue: $enumDecode(_$AdminQueueShowJobQueueEnumMap, json['queue']),
+      queue: $enumDecode(_$AdminQueueShowJobQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueShowJobQueue.unknown),
       jobId: json['jobId'] as String,
     );
 

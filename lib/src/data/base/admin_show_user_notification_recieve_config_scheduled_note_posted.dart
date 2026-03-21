@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_scheduled_note_posted.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigScheduledNotePosted with _$AdminShowUserNotificationRecieveConfigScheduledNotePosted {
   const factory AdminShowUserNotificationRecieveConfigScheduledNotePosted({
-    required AdminShowUserNotificationRecieveConfigScheduledNotePostedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigScheduledNotePostedType.unknown) required AdminShowUserNotificationRecieveConfigScheduledNotePostedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigScheduledNotePosted;
 

@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminResolveAbuseUserReportRequest {
   String? get reportId;
+  @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
   AdminResolveAbuseUserReportResolvedAs? get resolvedAs;
 
   /// Create a copy of AdminResolveAbuseUserReportRequest
@@ -60,7 +61,9 @@ abstract mixin class $AdminResolveAbuseUserReportRequestCopyWith<$Res> {
       _$AdminResolveAbuseUserReportRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String? reportId, AdminResolveAbuseUserReportResolvedAs? resolvedAs});
+      {String? reportId,
+      @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
+      AdminResolveAbuseUserReportResolvedAs? resolvedAs});
 }
 
 /// @nodoc
@@ -96,7 +99,10 @@ class _$AdminResolveAbuseUserReportRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminResolveAbuseUserReportRequest
     implements AdminResolveAbuseUserReportRequest {
-  const _AdminResolveAbuseUserReportRequest({this.reportId, this.resolvedAs});
+  const _AdminResolveAbuseUserReportRequest(
+      {this.reportId,
+      @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
+      this.resolvedAs});
   factory _AdminResolveAbuseUserReportRequest.fromJson(
           Map<String, dynamic> json) =>
       _$AdminResolveAbuseUserReportRequestFromJson(json);
@@ -104,6 +110,7 @@ class _AdminResolveAbuseUserReportRequest
   @override
   final String? reportId;
   @override
+  @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
   final AdminResolveAbuseUserReportResolvedAs? resolvedAs;
 
   /// Create a copy of AdminResolveAbuseUserReportRequest
@@ -154,7 +161,9 @@ abstract mixin class _$AdminResolveAbuseUserReportRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? reportId, AdminResolveAbuseUserReportResolvedAs? resolvedAs});
+      {String? reportId,
+      @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
+      AdminResolveAbuseUserReportResolvedAs? resolvedAs});
 }
 
 /// @nodoc

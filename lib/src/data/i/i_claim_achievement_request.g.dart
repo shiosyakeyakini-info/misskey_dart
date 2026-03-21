@@ -9,7 +9,8 @@ part of 'i_claim_achievement_request.dart';
 _IClaimAchievementRequest _$IClaimAchievementRequestFromJson(
         Map<String, dynamic> json) =>
     _IClaimAchievementRequest(
-      name: $enumDecodeNullable(_$IClaimAchievementNameEnumMap, json['name']),
+      name: $enumDecodeNullable(_$IClaimAchievementNameEnumMap, json['name'],
+          unknownValue: IClaimAchievementName.unknown),
     );
 
 Map<String, dynamic> _$IClaimAchievementRequestToJson(

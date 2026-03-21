@@ -25,6 +25,7 @@ mixin _$Flash {
   String get title;
   String get summary;
   String get script;
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
   FlashVisibility get visibility;
   double get likedCount;
   bool? get isLiked;
@@ -86,6 +87,7 @@ abstract mixin class $FlashCopyWith<$Res> {
       String title,
       String summary,
       String script,
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       FlashVisibility visibility,
       double likedCount,
       bool? isLiked});
@@ -188,6 +190,7 @@ class _Flash implements Flash {
       required this.title,
       required this.summary,
       required this.script,
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       required this.visibility,
       required this.likedCount,
       this.isLiked});
@@ -212,6 +215,7 @@ class _Flash implements Flash {
   @override
   final String script;
   @override
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
   final FlashVisibility visibility;
   @override
   final double likedCount;
@@ -281,6 +285,7 @@ abstract mixin class _$FlashCopyWith<$Res> implements $FlashCopyWith<$Res> {
       String title,
       String summary,
       String script,
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       FlashVisibility visibility,
       double likedCount,
       bool? isLiked});

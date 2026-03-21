@@ -41,7 +41,8 @@ _NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
           : NoteDraftChannel.fromJson(json['channel'] as Map<String, dynamic>),
       localOnly: json['localOnly'] as bool,
       reactionAcceptance: $enumDecodeNullable(
-          _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
+          _$ReactionAcceptanceEnumMap, json['reactionAcceptance'],
+          unknownValue: ReactionAcceptance.unknown),
       scheduledAt: (json['scheduledAt'] as num?)?.toDouble(),
       isActuallyScheduled: json['isActuallyScheduled'] as bool,
     );

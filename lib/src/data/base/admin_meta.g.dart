@@ -71,10 +71,12 @@ _AdminMeta _$AdminMetaFromJson(Map<String, dynamic> json) => _AdminMeta(
       turnstileSecretKey: json['turnstileSecretKey'] as String?,
       sensitiveMediaDetection: $enumDecode(
           _$AdminMetaSensitiveMediaDetectionEnumMap,
-          json['sensitiveMediaDetection']),
+          json['sensitiveMediaDetection'],
+          unknownValue: AdminMetaSensitiveMediaDetection.unknown),
       sensitiveMediaDetectionSensitivity: $enumDecode(
           _$AdminMetaSensitiveMediaDetectionSensitivityEnumMap,
-          json['sensitiveMediaDetectionSensitivity']),
+          json['sensitiveMediaDetectionSensitivity'],
+          unknownValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown),
       setSensitiveFlagAutomatically:
           json['setSensitiveFlagAutomatically'] as bool,
       enableSensitiveMediaDetectionForVideos:
@@ -162,7 +164,8 @@ _AdminMeta _$AdminMetaFromJson(Map<String, dynamic> json) => _AdminMeta(
           json['urlPreviewRequireContentLength'] as bool,
       urlPreviewUserAgent: json['urlPreviewUserAgent'] as String?,
       urlPreviewSummaryProxyUrl: json['urlPreviewSummaryProxyUrl'] as String?,
-      federation: $enumDecode(_$AdminMetaFederationEnumMap, json['federation']),
+      federation: $enumDecode(_$AdminMetaFederationEnumMap, json['federation'],
+          unknownValue: AdminMetaFederation.unknown),
       federationHosts: (json['federationHosts'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -174,7 +177,8 @@ _AdminMeta _$AdminMetaFromJson(Map<String, dynamic> json) => _AdminMeta(
       singleUserMode: json['singleUserMode'] as bool,
       ugcVisibilityForVisitor: $enumDecode(
           _$AdminMetaUgcVisibilityForVisitorEnumMap,
-          json['ugcVisibilityForVisitor']),
+          json['ugcVisibilityForVisitor'],
+          unknownValue: AdminMetaUgcVisibilityForVisitor.unknown),
       proxyRemoteFiles: json['proxyRemoteFiles'] as bool,
       signToActivityPubGet: json['signToActivityPubGet'] as bool,
       allowExternalApRedirect: json['allowExternalApRedirect'] as bool,

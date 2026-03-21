@@ -10,8 +10,9 @@ _FollowingUpdateRequest _$FollowingUpdateRequestFromJson(
         Map<String, dynamic> json) =>
     _FollowingUpdateRequest(
       userId: json['userId'] as String?,
-      notify:
-          $enumDecodeNullable(_$FollowingUpdateNotifyEnumMap, json['notify']),
+      notify: $enumDecodeNullable(
+          _$FollowingUpdateNotifyEnumMap, json['notify'],
+          unknownValue: FollowingUpdateNotify.unknown),
       withReplies: json['withReplies'] as bool?,
     );
 

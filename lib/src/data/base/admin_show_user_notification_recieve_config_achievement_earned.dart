@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_achievement_earned.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigAchievementEarned with _$AdminShowUserNotificationRecieveConfigAchievementEarned {
   const factory AdminShowUserNotificationRecieveConfigAchievementEarned({
-    required AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigAchievementEarnedType.unknown) required AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigAchievementEarned;
 

@@ -12,7 +12,10 @@ _IUpdateNotificationRecieveConfigScheduledNotePosted
         _IUpdateNotificationRecieveConfigScheduledNotePosted(
           type: $enumDecode(
               _$IUpdateNotificationRecieveConfigScheduledNotePostedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  IUpdateNotificationRecieveConfigScheduledNotePostedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

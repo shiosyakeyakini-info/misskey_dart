@@ -11,7 +11,8 @@ _IUpdateNotificationRecieveConfigReply
             Map<String, dynamic> json) =>
         _IUpdateNotificationRecieveConfigReply(
           type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigReplyTypeEnumMap, json['type']),
+              _$IUpdateNotificationRecieveConfigReplyTypeEnumMap, json['type'],
+              unknownValue: IUpdateNotificationRecieveConfigReplyType.unknown),
           userListId: json['userListId'] as String,
         );
 

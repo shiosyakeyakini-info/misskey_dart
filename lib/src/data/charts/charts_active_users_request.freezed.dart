@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsActiveUsersRequest {
+  @JsonKey(unknownEnumValue: ChartsActiveUsersSpan.unknown)
   ChartsActiveUsersSpan? get span;
   int? get limit;
   int? get offset;
@@ -56,7 +57,11 @@ abstract mixin class $ChartsActiveUsersRequestCopyWith<$Res> {
           $Res Function(ChartsActiveUsersRequest) _then) =
       _$ChartsActiveUsersRequestCopyWithImpl;
   @useResult
-  $Res call({ChartsActiveUsersSpan? span, int? limit, int? offset});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsActiveUsersSpan.unknown)
+      ChartsActiveUsersSpan? span,
+      int? limit,
+      int? offset});
 }
 
 /// @nodoc
@@ -97,11 +102,14 @@ class _$ChartsActiveUsersRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChartsActiveUsersRequest implements ChartsActiveUsersRequest {
   const _ChartsActiveUsersRequest(
-      {this.span, this.limit = 30, this.offset = null});
+      {@JsonKey(unknownEnumValue: ChartsActiveUsersSpan.unknown) this.span,
+      this.limit = 30,
+      this.offset = null});
   factory _ChartsActiveUsersRequest.fromJson(Map<String, dynamic> json) =>
       _$ChartsActiveUsersRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: ChartsActiveUsersSpan.unknown)
   final ChartsActiveUsersSpan? span;
   @override
   @JsonKey()
@@ -154,7 +162,11 @@ abstract mixin class _$ChartsActiveUsersRequestCopyWith<$Res>
       __$ChartsActiveUsersRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({ChartsActiveUsersSpan? span, int? limit, int? offset});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsActiveUsersSpan.unknown)
+      ChartsActiveUsersSpan? span,
+      int? limit,
+      int? offset});
 }
 
 /// @nodoc

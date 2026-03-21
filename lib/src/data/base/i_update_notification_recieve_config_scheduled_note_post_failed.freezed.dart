@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigScheduledNotePostFailed {
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown)
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType get type;
   String get userListId;
 
@@ -63,7 +66,11 @@ abstract mixin class $IUpdateNotificationRecieveConfigScheduledNotePostFailedCop
       _$IUpdateNotificationRecieveConfigScheduledNotePostFailedCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigScheduledNotePostFailedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      IUpdateNotificationRecieveConfigScheduledNotePostFailedType type,
       String userListId});
 }
 
@@ -105,12 +112,20 @@ class _$IUpdateNotificationRecieveConfigScheduledNotePostFailedCopyWithImpl<
 class _IUpdateNotificationRecieveConfigScheduledNotePostFailed
     implements IUpdateNotificationRecieveConfigScheduledNotePostFailed {
   const _IUpdateNotificationRecieveConfigScheduledNotePostFailed(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigScheduledNotePostFailed.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigScheduledNotePostFailedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown)
   final IUpdateNotificationRecieveConfigScheduledNotePostFailedType type;
   @override
   final String userListId;
@@ -168,7 +183,11 @@ abstract mixin class _$IUpdateNotificationRecieveConfigScheduledNotePostFailedCo
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigScheduledNotePostFailedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      IUpdateNotificationRecieveConfigScheduledNotePostFailedType type,
       String userListId});
 }
 

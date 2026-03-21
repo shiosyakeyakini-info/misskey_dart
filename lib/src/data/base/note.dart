@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
-import 'package:misskey_dart/src/converters/emojis_converter.dart';
 
 part 'note.freezed.dart';
 part 'note.g.dart';
@@ -32,7 +30,7 @@ abstract class Note with _$Note {
     String? channelId,
     NoteChannelInfo? channel,
     bool? localOnly,
-    ReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,
     @EmojisConverter() required Map<String, String> reactionEmojis,
     required Map<String, dynamic> reactions,
     required int reactionCount,

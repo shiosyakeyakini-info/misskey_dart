@@ -8,7 +8,8 @@ part of 'i_apps_request.dart';
 
 _IAppsRequest _$IAppsRequestFromJson(Map<String, dynamic> json) =>
     _IAppsRequest(
-      sort: $enumDecodeNullable(_$IAppsSortEnumMap, json['sort']),
+      sort: $enumDecodeNullable(_$IAppsSortEnumMap, json['sort'],
+          unknownValue: IAppsSort.unknown),
     );
 
 Map<String, dynamic> _$IAppsRequestToJson(_IAppsRequest instance) =>

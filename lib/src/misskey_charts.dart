@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyCharts {
   final MisskeyChartsUser user;
@@ -7,7 +6,7 @@ class MisskeyCharts {
   final ApiService _apiService;
 
   MisskeyCharts({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         user = MisskeyChartsUser(apiService: apiService);
 
   /// charts/active-users

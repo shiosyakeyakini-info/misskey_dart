@@ -11,9 +11,9 @@ _AdminRelaysAddResponse _$AdminRelaysAddResponseFromJson(
     _AdminRelaysAddResponse(
       id: json['id'] as String,
       inbox: const UriConverter().fromJson(json['inbox'] as String),
-      status:
-          $enumDecodeNullable(_$AdminRelaysAddStatusEnumMap, json['status']) ??
-              AdminRelaysAddStatus.requesting,
+      status: $enumDecodeNullable(_$AdminRelaysAddStatusEnumMap, json['status'],
+              unknownValue: AdminRelaysAddStatus.unknown) ??
+          AdminRelaysAddStatus.requesting,
     );
 
 Map<String, dynamic> _$AdminRelaysAddResponseToJson(

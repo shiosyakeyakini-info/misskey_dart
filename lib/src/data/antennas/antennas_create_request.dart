@@ -8,7 +8,7 @@ part 'antennas_create_request.g.dart';
 abstract class AntennasCreateRequest with _$AntennasCreateRequest {
   const factory AntennasCreateRequest({
     String? name,
-    AntennasCreateSrc? src,
+    @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown) AntennasCreateSrc? src,
     String? userListId,
     List<dynamic>? keywords,
     List<dynamic>? excludeKeywords,

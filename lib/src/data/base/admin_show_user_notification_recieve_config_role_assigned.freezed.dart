@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigRoleAssigned {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown)
   AdminShowUserNotificationRecieveConfigRoleAssignedType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigRoleAssignedCopyWith
       _$AdminShowUserNotificationRecieveConfigRoleAssignedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigRoleAssignedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown)
+      AdminShowUserNotificationRecieveConfigRoleAssignedType type,
       String userListId});
 }
 
@@ -103,12 +109,19 @@ class _$AdminShowUserNotificationRecieveConfigRoleAssignedCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigRoleAssigned
     implements AdminShowUserNotificationRecieveConfigRoleAssigned {
   const _AdminShowUserNotificationRecieveConfigRoleAssigned(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigRoleAssigned.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigRoleAssignedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown)
   final AdminShowUserNotificationRecieveConfigRoleAssignedType type;
   @override
   final String userListId;
@@ -165,7 +178,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigRoleAssignedCopyWit
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigRoleAssignedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown)
+      AdminShowUserNotificationRecieveConfigRoleAssignedType type,
       String userListId});
 }
 

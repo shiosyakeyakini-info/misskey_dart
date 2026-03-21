@@ -10,7 +10,8 @@ _AdminQueueShowJobLogsRequest _$AdminQueueShowJobLogsRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueShowJobLogsRequest(
       queue: $enumDecodeNullable(
-          _$AdminQueueShowJobLogsQueueEnumMap, json['queue']),
+          _$AdminQueueShowJobLogsQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueShowJobLogsQueue.unknown),
       jobId: json['jobId'] as String?,
     );
 

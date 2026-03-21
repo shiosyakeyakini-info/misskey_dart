@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IAppsRequest {
+  @JsonKey(unknownEnumValue: IAppsSort.unknown)
   IAppsSort? get sort;
 
   /// Create a copy of IAppsRequest
@@ -52,7 +53,7 @@ abstract mixin class $IAppsRequestCopyWith<$Res> {
           IAppsRequest value, $Res Function(IAppsRequest) _then) =
       _$IAppsRequestCopyWithImpl;
   @useResult
-  $Res call({IAppsSort? sort});
+  $Res call({@JsonKey(unknownEnumValue: IAppsSort.unknown) IAppsSort? sort});
 }
 
 /// @nodoc
@@ -81,11 +82,13 @@ class _$IAppsRequestCopyWithImpl<$Res> implements $IAppsRequestCopyWith<$Res> {
 /// @nodoc
 @JsonSerializable()
 class _IAppsRequest implements IAppsRequest {
-  const _IAppsRequest({this.sort});
+  const _IAppsRequest(
+      {@JsonKey(unknownEnumValue: IAppsSort.unknown) this.sort});
   factory _IAppsRequest.fromJson(Map<String, dynamic> json) =>
       _$IAppsRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: IAppsSort.unknown)
   final IAppsSort? sort;
 
   /// Create a copy of IAppsRequest
@@ -129,7 +132,7 @@ abstract mixin class _$IAppsRequestCopyWith<$Res>
       __$IAppsRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({IAppsSort? sort});
+  $Res call({@JsonKey(unknownEnumValue: IAppsSort.unknown) IAppsSort? sort});
 }
 
 /// @nodoc

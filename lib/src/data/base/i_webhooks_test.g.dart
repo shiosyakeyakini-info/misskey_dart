@@ -9,7 +9,8 @@ part of 'i_webhooks_test.dart';
 _IWebhooksTest _$IWebhooksTestFromJson(Map<String, dynamic> json) =>
     _IWebhooksTest(
       webhookId: json['webhookId'] as String,
-      type: $enumDecode(_$IWebhooksTestTypeEnumMap, json['type']),
+      type: $enumDecode(_$IWebhooksTestTypeEnumMap, json['type'],
+          unknownValue: IWebhooksTestType.unknown),
       override_: json['override'] == null
           ? null
           : IWebhooksTestOverride.fromJson(

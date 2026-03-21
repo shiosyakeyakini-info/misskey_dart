@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigScheduledNotePosted {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigScheduledNotePostedType.unknown)
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType get type;
   String get userListId;
 
@@ -65,7 +68,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigScheduledNotePostedC
       _$AdminShowUserNotificationRecieveConfigScheduledNotePostedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigScheduledNotePostedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigScheduledNotePostedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigScheduledNotePostedType type,
       String userListId});
 }
 
@@ -108,12 +115,20 @@ class _$AdminShowUserNotificationRecieveConfigScheduledNotePostedCopyWithImpl<
 class _AdminShowUserNotificationRecieveConfigScheduledNotePosted
     implements AdminShowUserNotificationRecieveConfigScheduledNotePosted {
   const _AdminShowUserNotificationRecieveConfigScheduledNotePosted(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigScheduledNotePostedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigScheduledNotePosted.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigScheduledNotePostedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigScheduledNotePostedType.unknown)
   final AdminShowUserNotificationRecieveConfigScheduledNotePostedType type;
   @override
   final String userListId;
@@ -173,7 +188,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigScheduledNotePosted
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigScheduledNotePostedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigScheduledNotePostedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigScheduledNotePostedType type,
       String userListId});
 }
 

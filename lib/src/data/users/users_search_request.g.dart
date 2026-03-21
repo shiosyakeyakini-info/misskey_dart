@@ -11,7 +11,8 @@ _UsersSearchRequest _$UsersSearchRequestFromJson(Map<String, dynamic> json) =>
       query: json['query'] as String?,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
       limit: (json['limit'] as num?)?.toInt() ?? 10,
-      origin: $enumDecodeNullable(_$UsersSearchOriginEnumMap, json['origin']) ??
+      origin: $enumDecodeNullable(_$UsersSearchOriginEnumMap, json['origin'],
+              unknownValue: UsersSearchOrigin.unknown) ??
           UsersSearchOrigin.combined,
       detail: json['detail'] as bool? ?? true,
     );

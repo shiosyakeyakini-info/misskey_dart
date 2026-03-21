@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigAchievementEarned {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigAchievementEarnedType.unknown)
   AdminShowUserNotificationRecieveConfigAchievementEarnedType get type;
   String get userListId;
 
@@ -63,7 +66,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigAchievementEarnedCop
       _$AdminShowUserNotificationRecieveConfigAchievementEarnedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigAchievementEarnedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
       String userListId});
 }
 
@@ -105,12 +112,20 @@ class _$AdminShowUserNotificationRecieveConfigAchievementEarnedCopyWithImpl<
 class _AdminShowUserNotificationRecieveConfigAchievementEarned
     implements AdminShowUserNotificationRecieveConfigAchievementEarned {
   const _AdminShowUserNotificationRecieveConfigAchievementEarned(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigAchievementEarnedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigAchievementEarned.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigAchievementEarnedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigAchievementEarnedType.unknown)
   final AdminShowUserNotificationRecieveConfigAchievementEarnedType type;
   @override
   final String userListId;
@@ -168,7 +183,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigAchievementEarnedCo
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigAchievementEarnedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
       String userListId});
 }
 

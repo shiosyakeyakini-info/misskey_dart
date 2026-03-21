@@ -15,7 +15,7 @@ abstract class PagesUpdateRequest with _$PagesUpdateRequest {
     List<dynamic>? variables,
     String? script,
     String? eyeCatchingImageId,
-    PagesUpdateFont? font,
+    @JsonKey(unknownEnumValue: PagesUpdateFont.unknown) PagesUpdateFont? font,
     bool? alignCenter,
     bool? hideTitleWhenPinned,
   }) = _PagesUpdateRequest;

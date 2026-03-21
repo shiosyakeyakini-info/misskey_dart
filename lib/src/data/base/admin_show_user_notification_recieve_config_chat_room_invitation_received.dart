@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_chat_room_invitation_received.
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived with _$AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived {
   const factory AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived({
-    required AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType.unknown) required AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived;
 

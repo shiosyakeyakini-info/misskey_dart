@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigAchievementEarned {
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigAchievementEarnedType.unknown)
   IUpdateNotificationRecieveConfigAchievementEarnedType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $IUpdateNotificationRecieveConfigAchievementEarnedCopyWith<
       _$IUpdateNotificationRecieveConfigAchievementEarnedCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigAchievementEarnedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigAchievementEarnedType.unknown)
+      IUpdateNotificationRecieveConfigAchievementEarnedType type,
       String userListId});
 }
 
@@ -103,12 +109,19 @@ class _$IUpdateNotificationRecieveConfigAchievementEarnedCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigAchievementEarned
     implements IUpdateNotificationRecieveConfigAchievementEarned {
   const _IUpdateNotificationRecieveConfigAchievementEarned(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigAchievementEarnedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigAchievementEarned.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigAchievementEarnedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigAchievementEarnedType.unknown)
   final IUpdateNotificationRecieveConfigAchievementEarnedType type;
   @override
   final String userListId;
@@ -165,7 +178,10 @@ abstract mixin class _$IUpdateNotificationRecieveConfigAchievementEarnedCopyWith
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigAchievementEarnedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigAchievementEarnedType.unknown)
+      IUpdateNotificationRecieveConfigAchievementEarnedType type,
       String userListId});
 }
 

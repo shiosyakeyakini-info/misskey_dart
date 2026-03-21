@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigCreateToken {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown)
   MeDetailedOnlyNotificationRecieveConfigCreateTokenType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigCreateTokenCopyWith
       _$MeDetailedOnlyNotificationRecieveConfigCreateTokenCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
       String userListId});
 }
 
@@ -103,12 +109,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigCreateTokenCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigCreateToken
     implements MeDetailedOnlyNotificationRecieveConfigCreateToken {
   const _MeDetailedOnlyNotificationRecieveConfigCreateToken(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigCreateToken.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigCreateTokenFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigCreateTokenType type;
   @override
   final String userListId;
@@ -165,7 +178,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigCreateTokenCopyWit
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
       String userListId});
 }
 

@@ -10,7 +10,8 @@ _AdminQueueQueueStatsRequest _$AdminQueueQueueStatsRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueQueueStatsRequest(
       queue: $enumDecodeNullable(
-          _$AdminQueueQueueStatsQueueEnumMap, json['queue']),
+          _$AdminQueueQueueStatsQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueQueueStatsQueue.unknown),
     );
 
 Map<String, dynamic> _$AdminQueueQueueStatsRequestToJson(

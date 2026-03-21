@@ -15,7 +15,8 @@ _PagesCreateRequest _$PagesCreateRequestFromJson(Map<String, dynamic> json) =>
       variables: json['variables'] as List<dynamic>?,
       script: json['script'] as String?,
       eyeCatchingImageId: json['eyeCatchingImageId'] as String?,
-      font: $enumDecodeNullable(_$PagesCreateFontEnumMap, json['font']) ??
+      font: $enumDecodeNullable(_$PagesCreateFontEnumMap, json['font'],
+              unknownValue: PagesCreateFont.unknown) ??
           PagesCreateFont.sansSerif,
       alignCenter: json['alignCenter'] as bool? ?? false,
       hideTitleWhenPinned: json['hideTitleWhenPinned'] as bool? ?? false,

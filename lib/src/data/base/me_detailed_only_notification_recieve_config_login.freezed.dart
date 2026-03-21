@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigLogin {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
   MeDetailedOnlyNotificationRecieveConfigLoginType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigLoginCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigLoginCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigLoginType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigLoginType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigLoginCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigLogin
     implements MeDetailedOnlyNotificationRecieveConfigLogin {
   const _MeDetailedOnlyNotificationRecieveConfigLogin(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigLogin.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigLoginFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigLoginType type;
   @override
   final String userListId;
@@ -159,7 +172,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigLoginCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigLoginType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigLoginType type,
       String userListId});
 }
 

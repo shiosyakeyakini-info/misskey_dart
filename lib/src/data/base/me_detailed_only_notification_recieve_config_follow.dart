@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_follow.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigFollow with _$MeDetailedOnlyNotificationRecieveConfigFollow {
   const factory MeDetailedOnlyNotificationRecieveConfigFollow({
-    required MeDetailedOnlyNotificationRecieveConfigFollowType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigFollowType.unknown) required MeDetailedOnlyNotificationRecieveConfigFollowType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigFollow;
 

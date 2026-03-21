@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigMention {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigMentionType.unknown)
   AdminShowUserNotificationRecieveConfigMentionType get type;
   String get userListId;
 
@@ -62,7 +65,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigMentionCopyWith<
       _$AdminShowUserNotificationRecieveConfigMentionCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigMentionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigMentionType.unknown)
+      AdminShowUserNotificationRecieveConfigMentionType type,
       String userListId});
 }
 
@@ -101,12 +107,19 @@ class _$AdminShowUserNotificationRecieveConfigMentionCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigMention
     implements AdminShowUserNotificationRecieveConfigMention {
   const _AdminShowUserNotificationRecieveConfigMention(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigMentionType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigMention.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigMentionFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigMentionType.unknown)
   final AdminShowUserNotificationRecieveConfigMentionType type;
   @override
   final String userListId;
@@ -160,7 +173,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigMentionCopyWith<
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigMentionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigMentionType.unknown)
+      AdminShowUserNotificationRecieveConfigMentionType type,
       String userListId});
 }
 

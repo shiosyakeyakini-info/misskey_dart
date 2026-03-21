@@ -15,10 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesCreateRequest {
+  @JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
   NotesCreateVisibility? get visibility;
   List<String>? get visibleUserIds;
   String? get cw;
   bool? get localOnly;
+  @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
   NotesCreateReactionAcceptance? get reactionAcceptance;
   bool? get noExtractMentions;
   bool? get noExtractHashtags;
@@ -106,10 +108,12 @@ abstract mixin class $NotesCreateRequestCopyWith<$Res> {
       _$NotesCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {NotesCreateVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
+      NotesCreateVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
       NotesCreateReactionAcceptance? reactionAcceptance,
       bool? noExtractMentions,
       bool? noExtractHashtags,
@@ -237,10 +241,12 @@ class _$NotesCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesCreateRequest implements NotesCreateRequest {
   const _NotesCreateRequest(
-      {this.visibility = NotesCreateVisibility.public,
+      {@JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
+      this.visibility = NotesCreateVisibility.public,
       final List<String>? visibleUserIds,
       this.cw,
       this.localOnly = false,
+      @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
       this.reactionAcceptance = null,
       this.noExtractMentions = false,
       this.noExtractHashtags = false,
@@ -259,7 +265,7 @@ class _NotesCreateRequest implements NotesCreateRequest {
       _$NotesCreateRequestFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
   final NotesCreateVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
@@ -277,7 +283,7 @@ class _NotesCreateRequest implements NotesCreateRequest {
   @JsonKey()
   final bool? localOnly;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
   final NotesCreateReactionAcceptance? reactionAcceptance;
   @override
   @JsonKey()
@@ -400,10 +406,12 @@ abstract mixin class _$NotesCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {NotesCreateVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
+      NotesCreateVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
       NotesCreateReactionAcceptance? reactionAcceptance,
       bool? noExtractMentions,
       bool? noExtractHashtags,

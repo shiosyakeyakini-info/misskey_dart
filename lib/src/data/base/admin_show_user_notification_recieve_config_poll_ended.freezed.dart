@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigPollEnded {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigPollEndedType.unknown)
   AdminShowUserNotificationRecieveConfigPollEndedType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigPollEndedCopyWith<
       _$AdminShowUserNotificationRecieveConfigPollEndedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigPollEndedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigPollEndedType.unknown)
+      AdminShowUserNotificationRecieveConfigPollEndedType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$AdminShowUserNotificationRecieveConfigPollEndedCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigPollEnded
     implements AdminShowUserNotificationRecieveConfigPollEnded {
   const _AdminShowUserNotificationRecieveConfigPollEnded(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigPollEndedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigPollEnded.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigPollEndedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigPollEndedType.unknown)
   final AdminShowUserNotificationRecieveConfigPollEndedType type;
   @override
   final String userListId;
@@ -161,7 +174,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigPollEndedCopyWith<
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigPollEndedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigPollEndedType.unknown)
+      AdminShowUserNotificationRecieveConfigPollEndedType type,
       String userListId});
 }
 

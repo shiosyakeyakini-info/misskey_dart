@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_follow_request_accepted.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigFollowRequestAccepted with _$IUpdateNotificationRecieveConfigFollowRequestAccepted {
   const factory IUpdateNotificationRecieveConfigFollowRequestAccepted({
-    required IUpdateNotificationRecieveConfigFollowRequestAcceptedType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigFollowRequestAcceptedType.unknown) required IUpdateNotificationRecieveConfigFollowRequestAcceptedType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigFollowRequestAccepted;
 

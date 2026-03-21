@@ -23,6 +23,7 @@ mixin _$PagesUpdate {
   List<dynamic>? get variables;
   String? get script;
   String? get eyeCatchingImageId;
+  @JsonKey(unknownEnumValue: PagesUpdateFont.unknown)
   PagesUpdateFont? get font;
   bool? get alignCenter;
   bool? get hideTitleWhenPinned;
@@ -95,7 +96,7 @@ abstract mixin class $PagesUpdateCopyWith<$Res> {
       List<dynamic>? variables,
       String? script,
       String? eyeCatchingImageId,
-      PagesUpdateFont? font,
+      @JsonKey(unknownEnumValue: PagesUpdateFont.unknown) PagesUpdateFont? font,
       bool? alignCenter,
       bool? hideTitleWhenPinned});
 }
@@ -185,7 +186,7 @@ class _PagesUpdate implements PagesUpdate {
       final List<dynamic>? variables,
       this.script,
       this.eyeCatchingImageId,
-      this.font,
+      @JsonKey(unknownEnumValue: PagesUpdateFont.unknown) this.font,
       this.alignCenter,
       this.hideTitleWhenPinned})
       : _content = content,
@@ -226,6 +227,7 @@ class _PagesUpdate implements PagesUpdate {
   @override
   final String? eyeCatchingImageId;
   @override
+  @JsonKey(unknownEnumValue: PagesUpdateFont.unknown)
   final PagesUpdateFont? font;
   @override
   final bool? alignCenter;
@@ -308,7 +310,7 @@ abstract mixin class _$PagesUpdateCopyWith<$Res>
       List<dynamic>? variables,
       String? script,
       String? eyeCatchingImageId,
-      PagesUpdateFont? font,
+      @JsonKey(unknownEnumValue: PagesUpdateFont.unknown) PagesUpdateFont? font,
       bool? alignCenter,
       bool? hideTitleWhenPinned});
 }

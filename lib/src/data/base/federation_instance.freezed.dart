@@ -25,6 +25,7 @@ mixin _$FederationInstance {
   int get followersCount;
   bool get isNotResponding;
   bool get isSuspended;
+  @JsonKey(unknownEnumValue: FederationSuspensionState.unknown)
   FederationSuspensionState get suspensionState;
   bool get isBlocked;
   String? get softwareName;
@@ -168,6 +169,7 @@ abstract mixin class $FederationInstanceCopyWith<$Res> {
       int followersCount,
       bool isNotResponding,
       bool isSuspended,
+      @JsonKey(unknownEnumValue: FederationSuspensionState.unknown)
       FederationSuspensionState suspensionState,
       bool isBlocked,
       String? softwareName,
@@ -349,6 +351,7 @@ class _FederationInstance implements FederationInstance {
       required this.followersCount,
       required this.isNotResponding,
       required this.isSuspended,
+      @JsonKey(unknownEnumValue: FederationSuspensionState.unknown)
       required this.suspensionState,
       required this.isBlocked,
       this.softwareName,
@@ -389,6 +392,7 @@ class _FederationInstance implements FederationInstance {
   @override
   final bool isSuspended;
   @override
+  @JsonKey(unknownEnumValue: FederationSuspensionState.unknown)
   final FederationSuspensionState suspensionState;
   @override
   final bool isBlocked;
@@ -554,6 +558,7 @@ abstract mixin class _$FederationInstanceCopyWith<$Res>
       int followersCount,
       bool isNotResponding,
       bool isSuspended,
+      @JsonKey(unknownEnumValue: FederationSuspensionState.unknown)
       FederationSuspensionState suspensionState,
       bool isBlocked,
       String? softwareName,

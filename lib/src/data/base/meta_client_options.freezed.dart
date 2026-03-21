@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MetaClientOptions {
+  @JsonKey(unknownEnumValue: MetaClientOptionsEntrancePageStyle.unknown)
   MetaClientOptionsEntrancePageStyle get entrancePageStyle;
   bool get showTimelineForVisitor;
   bool get showActivitiesForVisitor;
@@ -62,7 +63,8 @@ abstract mixin class $MetaClientOptionsCopyWith<$Res> {
       _$MetaClientOptionsCopyWithImpl;
   @useResult
   $Res call(
-      {MetaClientOptionsEntrancePageStyle entrancePageStyle,
+      {@JsonKey(unknownEnumValue: MetaClientOptionsEntrancePageStyle.unknown)
+      MetaClientOptionsEntrancePageStyle entrancePageStyle,
       bool showTimelineForVisitor,
       bool showActivitiesForVisitor});
 }
@@ -105,13 +107,15 @@ class _$MetaClientOptionsCopyWithImpl<$Res>
 @JsonSerializable()
 class _MetaClientOptions implements MetaClientOptions {
   const _MetaClientOptions(
-      {required this.entrancePageStyle,
+      {@JsonKey(unknownEnumValue: MetaClientOptionsEntrancePageStyle.unknown)
+      required this.entrancePageStyle,
       required this.showTimelineForVisitor,
       required this.showActivitiesForVisitor});
   factory _MetaClientOptions.fromJson(Map<String, dynamic> json) =>
       _$MetaClientOptionsFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: MetaClientOptionsEntrancePageStyle.unknown)
   final MetaClientOptionsEntrancePageStyle entrancePageStyle;
   @override
   final bool showTimelineForVisitor;
@@ -167,7 +171,8 @@ abstract mixin class _$MetaClientOptionsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {MetaClientOptionsEntrancePageStyle entrancePageStyle,
+      {@JsonKey(unknownEnumValue: MetaClientOptionsEntrancePageStyle.unknown)
+      MetaClientOptionsEntrancePageStyle entrancePageStyle,
       bool showTimelineForVisitor,
       bool showActivitiesForVisitor});
 }

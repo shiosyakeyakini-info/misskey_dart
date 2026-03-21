@@ -7,7 +7,7 @@ part 'i_apps.g.dart';
 @freezed
 abstract class IApps with _$IApps {
   const factory IApps({
-    IAppsSort? sort,
+    @JsonKey(unknownEnumValue: IAppsSort.unknown) IAppsSort? sort,
   }) = _IApps;
 
   factory IApps.fromJson(Map<String, Object?> json) => _$IAppsFromJson(json);

@@ -19,6 +19,7 @@ mixin _$FlashCreateRequest {
   String? get summary;
   String? get script;
   List<String>? get permissions;
+  @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
   FlashCreateVisibility? get visibility;
 
   /// Create a copy of FlashCreateRequest
@@ -68,6 +69,7 @@ abstract mixin class $FlashCreateRequestCopyWith<$Res> {
       String? summary,
       String? script,
       List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
       FlashCreateVisibility? visibility});
 }
 
@@ -123,6 +125,7 @@ class _FlashCreateRequest implements FlashCreateRequest {
       this.summary,
       this.script,
       final List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
       this.visibility = FlashCreateVisibility.public})
       : _permissions = permissions;
   factory _FlashCreateRequest.fromJson(Map<String, dynamic> json) =>
@@ -145,7 +148,7 @@ class _FlashCreateRequest implements FlashCreateRequest {
   }
 
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
   final FlashCreateVisibility? visibility;
 
   /// Create a copy of FlashCreateRequest
@@ -201,6 +204,7 @@ abstract mixin class _$FlashCreateRequestCopyWith<$Res>
       String? summary,
       String? script,
       List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
       FlashCreateVisibility? visibility});
 }
 

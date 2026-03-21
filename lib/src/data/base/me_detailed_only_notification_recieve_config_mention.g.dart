@@ -12,7 +12,9 @@ _MeDetailedOnlyNotificationRecieveConfigMention
         _MeDetailedOnlyNotificationRecieveConfigMention(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigMentionTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigMentionType.unknown),
           userListId: json['userListId'] as String,
         );
 

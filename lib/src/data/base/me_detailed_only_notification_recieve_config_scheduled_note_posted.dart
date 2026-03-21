@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_scheduled_note_posted.g.dart'
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted {
   const factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted({
-    required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.unknown) required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted;
 

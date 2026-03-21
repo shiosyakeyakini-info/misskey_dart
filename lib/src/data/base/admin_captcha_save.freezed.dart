@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminCaptchaSave {
+  @JsonKey(unknownEnumValue: AdminCaptchaSaveProvider.unknown)
   AdminCaptchaSaveProvider get provider;
   String? get captchaResult;
   String? get sitekey;
@@ -65,7 +66,8 @@ abstract mixin class $AdminCaptchaSaveCopyWith<$Res> {
       _$AdminCaptchaSaveCopyWithImpl;
   @useResult
   $Res call(
-      {AdminCaptchaSaveProvider provider,
+      {@JsonKey(unknownEnumValue: AdminCaptchaSaveProvider.unknown)
+      AdminCaptchaSaveProvider provider,
       String? captchaResult,
       String? sitekey,
       String? secret,
@@ -120,7 +122,8 @@ class _$AdminCaptchaSaveCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminCaptchaSave implements AdminCaptchaSave {
   const _AdminCaptchaSave(
-      {required this.provider,
+      {@JsonKey(unknownEnumValue: AdminCaptchaSaveProvider.unknown)
+      required this.provider,
       this.captchaResult,
       this.sitekey,
       this.secret,
@@ -129,6 +132,7 @@ class _AdminCaptchaSave implements AdminCaptchaSave {
       _$AdminCaptchaSaveFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminCaptchaSaveProvider.unknown)
   final AdminCaptchaSaveProvider provider;
   @override
   final String? captchaResult;
@@ -189,7 +193,8 @@ abstract mixin class _$AdminCaptchaSaveCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminCaptchaSaveProvider provider,
+      {@JsonKey(unknownEnumValue: AdminCaptchaSaveProvider.unknown)
+      AdminCaptchaSaveProvider provider,
       String? captchaResult,
       String? sitekey,
       String? secret,

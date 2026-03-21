@@ -9,7 +9,8 @@ part of 'charts_active_users_request.dart';
 _ChartsActiveUsersRequest _$ChartsActiveUsersRequestFromJson(
         Map<String, dynamic> json) =>
     _ChartsActiveUsersRequest(
-      span: $enumDecodeNullable(_$ChartsActiveUsersSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsActiveUsersSpanEnumMap, json['span'],
+          unknownValue: ChartsActiveUsersSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
     );

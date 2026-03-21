@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigQuote {
+  @JsonKey(
+      unknownEnumValue: AdminShowUserNotificationRecieveConfigQuoteType.unknown)
   AdminShowUserNotificationRecieveConfigQuoteType get type;
   String get userListId;
 
@@ -60,7 +62,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigQuoteCopyWith<
       _$AdminShowUserNotificationRecieveConfigQuoteCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigQuoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigQuoteType.unknown)
+      AdminShowUserNotificationRecieveConfigQuoteType type,
       String userListId});
 }
 
@@ -99,12 +104,18 @@ class _$AdminShowUserNotificationRecieveConfigQuoteCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigQuote
     implements AdminShowUserNotificationRecieveConfigQuote {
   const _AdminShowUserNotificationRecieveConfigQuote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigQuoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigQuote.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigQuoteFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: AdminShowUserNotificationRecieveConfigQuoteType.unknown)
   final AdminShowUserNotificationRecieveConfigQuoteType type;
   @override
   final String userListId;
@@ -157,7 +168,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigQuoteCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigQuoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigQuoteType.unknown)
+      AdminShowUserNotificationRecieveConfigQuoteType type,
       String userListId});
 }
 

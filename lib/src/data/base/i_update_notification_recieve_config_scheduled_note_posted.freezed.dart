@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigScheduledNotePosted {
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown)
   IUpdateNotificationRecieveConfigScheduledNotePostedType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $IUpdateNotificationRecieveConfigScheduledNotePostedCopyWit
       _$IUpdateNotificationRecieveConfigScheduledNotePostedCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigScheduledNotePostedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown)
+      IUpdateNotificationRecieveConfigScheduledNotePostedType type,
       String userListId});
 }
 
@@ -104,12 +110,19 @@ class _$IUpdateNotificationRecieveConfigScheduledNotePostedCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigScheduledNotePosted
     implements IUpdateNotificationRecieveConfigScheduledNotePosted {
   const _IUpdateNotificationRecieveConfigScheduledNotePosted(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigScheduledNotePosted.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigScheduledNotePostedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown)
   final IUpdateNotificationRecieveConfigScheduledNotePostedType type;
   @override
   final String userListId;
@@ -166,7 +179,10 @@ abstract mixin class _$IUpdateNotificationRecieveConfigScheduledNotePostedCopyWi
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigScheduledNotePostedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown)
+      IUpdateNotificationRecieveConfigScheduledNotePostedType type,
       String userListId});
 }
 

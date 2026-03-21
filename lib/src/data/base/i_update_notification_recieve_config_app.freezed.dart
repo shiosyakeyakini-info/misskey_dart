@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigApp {
+  @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigAppType.unknown)
   IUpdateNotificationRecieveConfigAppType get type;
   String get userListId;
 
@@ -58,7 +59,11 @@ abstract mixin class $IUpdateNotificationRecieveConfigAppCopyWith<$Res> {
           $Res Function(IUpdateNotificationRecieveConfigApp) _then) =
       _$IUpdateNotificationRecieveConfigAppCopyWithImpl;
   @useResult
-  $Res call({IUpdateNotificationRecieveConfigAppType type, String userListId});
+  $Res call(
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigAppType.unknown)
+      IUpdateNotificationRecieveConfigAppType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -95,12 +100,16 @@ class _$IUpdateNotificationRecieveConfigAppCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigApp
     implements IUpdateNotificationRecieveConfigApp {
   const _IUpdateNotificationRecieveConfigApp(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigAppType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigApp.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigAppFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigAppType.unknown)
   final IUpdateNotificationRecieveConfigAppType type;
   @override
   final String userListId;
@@ -151,7 +160,11 @@ abstract mixin class _$IUpdateNotificationRecieveConfigAppCopyWith<$Res>
       __$IUpdateNotificationRecieveConfigAppCopyWithImpl;
   @override
   @useResult
-  $Res call({IUpdateNotificationRecieveConfigAppType type, String userListId});
+  $Res call(
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigAppType.unknown)
+      IUpdateNotificationRecieveConfigAppType type,
+      String userListId});
 }
 
 /// @nodoc

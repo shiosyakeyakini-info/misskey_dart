@@ -9,8 +9,8 @@ abstract class AdminInviteList with _$AdminInviteList {
   const factory AdminInviteList({
     @Default(30) int? limit,
     @Default(0) int? offset,
-    @Default(AdminInviteListType.all) AdminInviteListType? type,
-    AdminInviteListSort? sort,
+    @JsonKey(unknownEnumValue: AdminInviteListType.unknown) @Default(AdminInviteListType.all) AdminInviteListType? type,
+    @JsonKey(unknownEnumValue: AdminInviteListSort.unknown) AdminInviteListSort? sort,
   }) = _AdminInviteList;
 
   factory AdminInviteList.fromJson(Map<String, Object?> json) => _$AdminInviteListFromJson(json);

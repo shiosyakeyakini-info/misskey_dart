@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigRenote {
+  @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigRenoteType.unknown)
   IUpdateNotificationRecieveConfigRenoteType get type;
   String get userListId;
 
@@ -59,7 +60,10 @@ abstract mixin class $IUpdateNotificationRecieveConfigRenoteCopyWith<$Res> {
       _$IUpdateNotificationRecieveConfigRenoteCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigRenoteType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigRenoteType.unknown)
+      IUpdateNotificationRecieveConfigRenoteType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -96,12 +100,16 @@ class _$IUpdateNotificationRecieveConfigRenoteCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigRenote
     implements IUpdateNotificationRecieveConfigRenote {
   const _IUpdateNotificationRecieveConfigRenote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigRenoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigRenote.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigRenoteFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigRenoteType.unknown)
   final IUpdateNotificationRecieveConfigRenoteType type;
   @override
   final String userListId;
@@ -153,7 +161,10 @@ abstract mixin class _$IUpdateNotificationRecieveConfigRenoteCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigRenoteType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue: IUpdateNotificationRecieveConfigRenoteType.unknown)
+      IUpdateNotificationRecieveConfigRenoteType type,
+      String userListId});
 }
 
 /// @nodoc

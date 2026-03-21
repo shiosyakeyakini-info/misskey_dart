@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyNotes {
   final MisskeyNotesDrafts drafts;
@@ -11,7 +10,7 @@ class MisskeyNotes {
   final ApiService _apiService;
 
   MisskeyNotes({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         drafts = MisskeyNotesDrafts(apiService: apiService),
         favorites = MisskeyNotesFavorites(apiService: apiService),
         polls = MisskeyNotesPolls(apiService: apiService),

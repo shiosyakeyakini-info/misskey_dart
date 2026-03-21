@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'i_webhooks_create.freezed.dart';
 part 'i_webhooks_create.g.dart';

@@ -18,7 +18,9 @@ mixin _$AdminAnnouncementsCreateRequest {
   String? get title;
   String? get text;
   String? get imageUrl;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsCreateIcon.unknown)
   AdminAnnouncementsCreateIcon? get icon;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsCreateDisplay.unknown)
   AdminAnnouncementsCreateDisplay? get display;
   bool? get forExistingUsers;
   bool? get silence;
@@ -78,7 +80,9 @@ abstract mixin class $AdminAnnouncementsCreateRequestCopyWith<$Res> {
       {String? title,
       String? text,
       String? imageUrl,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsCreateIcon.unknown)
       AdminAnnouncementsCreateIcon? icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsCreateDisplay.unknown)
       AdminAnnouncementsCreateDisplay? display,
       bool? forExistingUsers,
       bool? silence,
@@ -158,7 +162,9 @@ class _AdminAnnouncementsCreateRequest
       {this.title,
       this.text,
       this.imageUrl,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsCreateIcon.unknown)
       this.icon = AdminAnnouncementsCreateIcon.info,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsCreateDisplay.unknown)
       this.display = AdminAnnouncementsCreateDisplay.normal,
       this.forExistingUsers = false,
       this.silence = false,
@@ -175,10 +181,10 @@ class _AdminAnnouncementsCreateRequest
   @override
   final String? imageUrl;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminAnnouncementsCreateIcon.unknown)
   final AdminAnnouncementsCreateIcon? icon;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminAnnouncementsCreateDisplay.unknown)
   final AdminAnnouncementsCreateDisplay? display;
   @override
   @JsonKey()
@@ -252,7 +258,9 @@ abstract mixin class _$AdminAnnouncementsCreateRequestCopyWith<$Res>
       {String? title,
       String? text,
       String? imageUrl,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsCreateIcon.unknown)
       AdminAnnouncementsCreateIcon? icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsCreateDisplay.unknown)
       AdminAnnouncementsCreateDisplay? display,
       bool? forExistingUsers,
       bool? silence,

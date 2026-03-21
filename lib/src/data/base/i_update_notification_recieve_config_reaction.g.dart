@@ -12,7 +12,9 @@ _IUpdateNotificationRecieveConfigReaction
         _IUpdateNotificationRecieveConfigReaction(
           type: $enumDecode(
               _$IUpdateNotificationRecieveConfigReactionTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  IUpdateNotificationRecieveConfigReactionType.unknown),
           userListId: json['userListId'] as String,
         );
 

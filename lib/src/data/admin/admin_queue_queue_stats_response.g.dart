@@ -9,7 +9,8 @@ part of 'admin_queue_queue_stats_response.dart';
 _AdminQueueQueueStatsResponse _$AdminQueueQueueStatsResponseFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueQueueStatsResponse(
-      name: $enumDecode(_$AdminQueueQueueStatsNameEnumMap, json['name']),
+      name: $enumDecode(_$AdminQueueQueueStatsNameEnumMap, json['name'],
+          unknownValue: AdminQueueQueueStatsName.unknown),
       qualifiedName: json['qualifiedName'] as String,
       counts: (json['counts'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, (e as num).toDouble()),

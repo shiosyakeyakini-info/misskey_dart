@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'meta_lite.freezed.dart';
 part 'meta_lite.g.dart';
@@ -60,9 +59,9 @@ abstract class MetaLite with _$MetaLite {
     required List<String> serverRules,
     String? themeColor,
     required RolePolicies policies,
-    @Default(NoteSearchableScope.local) NoteSearchableScope noteSearchableScope,
+    @JsonKey(unknownEnumValue: NoteSearchableScope.unknown) @Default(NoteSearchableScope.local) NoteSearchableScope noteSearchableScope,
     required double maxFileSize,
-    required FederationScope federation,
+    @JsonKey(unknownEnumValue: FederationScope.unknown) required FederationScope federation,
   }) = _MetaLite;
 
   factory MetaLite.fromJson(Map<String, Object?> json) => _$MetaLiteFromJson(json);

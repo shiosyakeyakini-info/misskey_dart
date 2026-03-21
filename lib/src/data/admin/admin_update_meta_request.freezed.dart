@@ -57,7 +57,11 @@ mixin _$AdminUpdateMetaRequest {
   String? get turnstileSecretKey;
   bool? get enableTestcaptcha;
   String? get googleAnalyticsMeasurementId;
+  @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown)
   AdminUpdateMetaSensitiveMediaDetection? get sensitiveMediaDetection;
+  @JsonKey(
+      unknownEnumValue:
+          AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown)
   AdminUpdateMetaSensitiveMediaDetectionSensitivity?
       get sensitiveMediaDetectionSensitivity;
   bool? get setSensitiveFlagAutomatically;
@@ -130,11 +134,13 @@ mixin _$AdminUpdateMetaRequest {
   bool? get urlPreviewRequireContentLength;
   String? get urlPreviewUserAgent;
   String? get urlPreviewSummaryProxyUrl;
+  @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
   AdminUpdateMetaFederation? get federation;
   List<String>? get federationHosts;
   List<AdminUpdateMetaDeliverSuspendedSoftwareItem>?
       get deliverSuspendedSoftware;
   bool? get singleUserMode;
+  @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown)
   AdminUpdateMetaUgcVisibilityForVisitor? get ugcVisibilityForVisitor;
   bool? get proxyRemoteFiles;
   bool? get signToActivityPubGet;
@@ -517,7 +523,11 @@ abstract mixin class $AdminUpdateMetaRequestCopyWith<$Res> {
       String? turnstileSecretKey,
       bool? enableTestcaptcha,
       String? googleAnalyticsMeasurementId,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown)
       AdminUpdateMetaSensitiveMediaDetection? sensitiveMediaDetection,
+      @JsonKey(
+          unknownEnumValue:
+              AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown)
       AdminUpdateMetaSensitiveMediaDetectionSensitivity?
           sensitiveMediaDetectionSensitivity,
       bool? setSensitiveFlagAutomatically,
@@ -590,11 +600,13 @@ abstract mixin class $AdminUpdateMetaRequestCopyWith<$Res> {
       bool? urlPreviewRequireContentLength,
       String? urlPreviewUserAgent,
       String? urlPreviewSummaryProxyUrl,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
       AdminUpdateMetaFederation? federation,
       List<String>? federationHosts,
       List<AdminUpdateMetaDeliverSuspendedSoftwareItem>?
           deliverSuspendedSoftware,
       bool? singleUserMode,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown)
       AdminUpdateMetaUgcVisibilityForVisitor? ugcVisibilityForVisitor,
       bool? proxyRemoteFiles,
       bool? signToActivityPubGet,
@@ -1325,7 +1337,11 @@ class _AdminUpdateMetaRequest implements AdminUpdateMetaRequest {
       this.turnstileSecretKey,
       this.enableTestcaptcha,
       this.googleAnalyticsMeasurementId,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown)
       this.sensitiveMediaDetection,
+      @JsonKey(
+          unknownEnumValue:
+              AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown)
       this.sensitiveMediaDetectionSensitivity,
       this.setSensitiveFlagAutomatically,
       this.enableSensitiveMediaDetectionForVideos,
@@ -1397,11 +1413,13 @@ class _AdminUpdateMetaRequest implements AdminUpdateMetaRequest {
       this.urlPreviewRequireContentLength,
       this.urlPreviewUserAgent,
       this.urlPreviewSummaryProxyUrl,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
       this.federation,
       final List<String>? federationHosts,
       final List<AdminUpdateMetaDeliverSuspendedSoftwareItem>?
           deliverSuspendedSoftware,
       this.singleUserMode,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown)
       this.ugcVisibilityForVisitor,
       this.proxyRemoteFiles,
       this.signToActivityPubGet,
@@ -1561,8 +1579,12 @@ class _AdminUpdateMetaRequest implements AdminUpdateMetaRequest {
   @override
   final String? googleAnalyticsMeasurementId;
   @override
+  @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown)
   final AdminUpdateMetaSensitiveMediaDetection? sensitiveMediaDetection;
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown)
   final AdminUpdateMetaSensitiveMediaDetectionSensitivity?
       sensitiveMediaDetectionSensitivity;
   @override
@@ -1757,6 +1779,7 @@ class _AdminUpdateMetaRequest implements AdminUpdateMetaRequest {
   @override
   final String? urlPreviewSummaryProxyUrl;
   @override
+  @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
   final AdminUpdateMetaFederation? federation;
   final List<String>? _federationHosts;
   @override
@@ -1784,6 +1807,7 @@ class _AdminUpdateMetaRequest implements AdminUpdateMetaRequest {
   @override
   final bool? singleUserMode;
   @override
+  @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown)
   final AdminUpdateMetaUgcVisibilityForVisitor? ugcVisibilityForVisitor;
   @override
   final bool? proxyRemoteFiles;
@@ -2180,7 +2204,11 @@ abstract mixin class _$AdminUpdateMetaRequestCopyWith<$Res>
       String? turnstileSecretKey,
       bool? enableTestcaptcha,
       String? googleAnalyticsMeasurementId,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown)
       AdminUpdateMetaSensitiveMediaDetection? sensitiveMediaDetection,
+      @JsonKey(
+          unknownEnumValue:
+              AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown)
       AdminUpdateMetaSensitiveMediaDetectionSensitivity?
           sensitiveMediaDetectionSensitivity,
       bool? setSensitiveFlagAutomatically,
@@ -2253,11 +2281,13 @@ abstract mixin class _$AdminUpdateMetaRequestCopyWith<$Res>
       bool? urlPreviewRequireContentLength,
       String? urlPreviewUserAgent,
       String? urlPreviewSummaryProxyUrl,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
       AdminUpdateMetaFederation? federation,
       List<String>? federationHosts,
       List<AdminUpdateMetaDeliverSuspendedSoftwareItem>?
           deliverSuspendedSoftware,
       bool? singleUserMode,
+      @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown)
       AdminUpdateMetaUgcVisibilityForVisitor? ugcVisibilityForVisitor,
       bool? proxyRemoteFiles,
       bool? signToActivityPubGet,

@@ -22,7 +22,9 @@ mixin _$AdminAnnouncementsListItem {
   DateTime? get updatedAt;
   String get text;
   String get title;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsListIcon.unknown)
   AdminAnnouncementsListIcon get icon;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsListDisplay.unknown)
   AdminAnnouncementsListDisplay get display;
   bool get isActive;
   bool get forExistingUsers;
@@ -108,7 +110,9 @@ abstract mixin class $AdminAnnouncementsListItemCopyWith<$Res> {
       @NullableDateTimeConverter() DateTime? updatedAt,
       String text,
       String title,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListIcon.unknown)
       AdminAnnouncementsListIcon icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListDisplay.unknown)
       AdminAnnouncementsListDisplay display,
       bool isActive,
       bool forExistingUsers,
@@ -217,7 +221,9 @@ class _AdminAnnouncementsListItem implements AdminAnnouncementsListItem {
       @NullableDateTimeConverter() this.updatedAt,
       required this.text,
       required this.title,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListIcon.unknown)
       required this.icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListDisplay.unknown)
       required this.display,
       required this.isActive,
       required this.forExistingUsers,
@@ -242,8 +248,10 @@ class _AdminAnnouncementsListItem implements AdminAnnouncementsListItem {
   @override
   final String title;
   @override
+  @JsonKey(unknownEnumValue: AdminAnnouncementsListIcon.unknown)
   final AdminAnnouncementsListIcon icon;
   @override
+  @JsonKey(unknownEnumValue: AdminAnnouncementsListDisplay.unknown)
   final AdminAnnouncementsListDisplay display;
   @override
   final bool isActive;
@@ -343,7 +351,9 @@ abstract mixin class _$AdminAnnouncementsListItemCopyWith<$Res>
       @NullableDateTimeConverter() DateTime? updatedAt,
       String text,
       String title,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListIcon.unknown)
       AdminAnnouncementsListIcon icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsListDisplay.unknown)
       AdminAnnouncementsListDisplay display,
       bool isActive,
       bool forExistingUsers,

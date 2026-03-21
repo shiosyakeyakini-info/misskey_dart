@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigApp {
+  @JsonKey(
+      unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigAppType.unknown)
   MeDetailedOnlyNotificationRecieveConfigAppType get type;
   String get userListId;
 
@@ -59,7 +61,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigAppCopyWith<$Res> {
       _$MeDetailedOnlyNotificationRecieveConfigAppCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigAppType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigAppType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigAppType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -97,12 +103,18 @@ class _$MeDetailedOnlyNotificationRecieveConfigAppCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigApp
     implements MeDetailedOnlyNotificationRecieveConfigApp {
   const _MeDetailedOnlyNotificationRecieveConfigApp(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigAppType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigApp.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigAppFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigAppType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigAppType type;
   @override
   final String userListId;
@@ -154,7 +166,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigAppCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigAppType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigAppType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigAppType type,
+      String userListId});
 }
 
 /// @nodoc

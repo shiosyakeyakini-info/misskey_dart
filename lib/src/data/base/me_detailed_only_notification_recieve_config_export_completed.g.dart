@@ -12,7 +12,10 @@ _MeDetailedOnlyNotificationRecieveConfigExportCompleted
         _MeDetailedOnlyNotificationRecieveConfigExportCompleted(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigExportCompletedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

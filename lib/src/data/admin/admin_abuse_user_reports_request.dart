@@ -13,8 +13,8 @@ abstract class AdminAbuseUserReportsRequest with _$AdminAbuseUserReportsRequest 
     int? sinceDate,
     int? untilDate,
     @Default(null) String? state,
-    @Default(AdminAbuseUserReportsReporterOrigin.combined) AdminAbuseUserReportsReporterOrigin? reporterOrigin,
-    @Default(AdminAbuseUserReportsTargetUserOrigin.combined) AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin,
+    @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown) @Default(AdminAbuseUserReportsReporterOrigin.combined) AdminAbuseUserReportsReporterOrigin? reporterOrigin,
+    @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown) @Default(AdminAbuseUserReportsTargetUserOrigin.combined) AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin,
   }) = _AdminAbuseUserReportsRequest;
 
   factory AdminAbuseUserReportsRequest.fromJson(Map<String, Object?> json) => _$AdminAbuseUserReportsRequestFromJson(json);

@@ -7,11 +7,11 @@ part 'notes_create_request.g.dart';
 @freezed
 abstract class NotesCreateRequest with _$NotesCreateRequest {
   const factory NotesCreateRequest({
-    @Default(NotesCreateVisibility.public) NotesCreateVisibility? visibility,
+    @JsonKey(unknownEnumValue: NotesCreateVisibility.unknown) @Default(NotesCreateVisibility.public) NotesCreateVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     @Default(false) bool? localOnly,
-    @Default(null) NotesCreateReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) @Default(null) NotesCreateReactionAcceptance? reactionAcceptance,
     @Default(false) bool? noExtractMentions,
     @Default(false) bool? noExtractHashtags,
     @Default(false) bool? noExtractEmojis,

@@ -7,7 +7,7 @@ part 'admin_queue_remove_job.g.dart';
 @freezed
 abstract class AdminQueueRemoveJob with _$AdminQueueRemoveJob {
   const factory AdminQueueRemoveJob({
-    required AdminQueueRemoveJobQueue queue,
+    @JsonKey(unknownEnumValue: AdminQueueRemoveJobQueue.unknown) required AdminQueueRemoveJobQueue queue,
     required String jobId,
   }) = _AdminQueueRemoveJob;
 

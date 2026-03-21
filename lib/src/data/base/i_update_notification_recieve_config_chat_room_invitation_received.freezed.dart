@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigChatRoomInvitationReceived {
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown)
   IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType get type;
   String get userListId;
 
@@ -66,7 +70,11 @@ abstract mixin class $IUpdateNotificationRecieveConfigChatRoomInvitationReceived
       _$IUpdateNotificationRecieveConfigChatRoomInvitationReceivedCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType type,
       String userListId});
 }
 
@@ -109,13 +117,22 @@ class _$IUpdateNotificationRecieveConfigChatRoomInvitationReceivedCopyWithImpl<
 class _IUpdateNotificationRecieveConfigChatRoomInvitationReceived
     implements IUpdateNotificationRecieveConfigChatRoomInvitationReceived {
   const _IUpdateNotificationRecieveConfigChatRoomInvitationReceived(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigChatRoomInvitationReceived.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigChatRoomInvitationReceivedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown)
   final IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType type;
   @override
   final String userListId;
@@ -175,7 +192,11 @@ abstract mixin class _$IUpdateNotificationRecieveConfigChatRoomInvitationReceive
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType type,
       String userListId});
 }
 

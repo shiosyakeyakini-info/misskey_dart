@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_scheduled_note_post_failed.g.
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed {
   const factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed({
-    required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.unknown) required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed;
 

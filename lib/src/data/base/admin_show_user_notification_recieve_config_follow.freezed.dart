@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigFollow {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigFollowType.unknown)
   AdminShowUserNotificationRecieveConfigFollowType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigFollowCopyWith<
       _$AdminShowUserNotificationRecieveConfigFollowCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigFollowType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigFollowType.unknown)
+      AdminShowUserNotificationRecieveConfigFollowType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$AdminShowUserNotificationRecieveConfigFollowCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigFollow
     implements AdminShowUserNotificationRecieveConfigFollow {
   const _AdminShowUserNotificationRecieveConfigFollow(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigFollowType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigFollow.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigFollowFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigFollowType.unknown)
   final AdminShowUserNotificationRecieveConfigFollowType type;
   @override
   final String userListId;
@@ -159,7 +172,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigFollowCopyWith<
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigFollowType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigFollowType.unknown)
+      AdminShowUserNotificationRecieveConfigFollowType type,
       String userListId});
 }
 

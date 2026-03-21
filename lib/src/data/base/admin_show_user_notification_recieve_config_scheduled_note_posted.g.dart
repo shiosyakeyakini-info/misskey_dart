@@ -12,7 +12,10 @@ _AdminShowUserNotificationRecieveConfigScheduledNotePosted
         _AdminShowUserNotificationRecieveConfigScheduledNotePosted(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigScheduledNotePostedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

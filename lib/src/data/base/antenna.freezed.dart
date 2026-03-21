@@ -21,6 +21,7 @@ mixin _$Antenna {
   String get name;
   List<dynamic> get keywords;
   List<dynamic> get excludeKeywords;
+  @JsonKey(unknownEnumValue: AntennaSource.unknown)
   AntennaSource get src;
   String? get userListId;
   List<String> get users;
@@ -120,7 +121,7 @@ abstract mixin class $AntennaCopyWith<$Res> {
       String name,
       List<dynamic> keywords,
       List<dynamic> excludeKeywords,
-      AntennaSource src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource src,
       String? userListId,
       List<String> users,
       bool caseSensitive,
@@ -246,7 +247,7 @@ class _Antenna implements Antenna {
       required this.name,
       required final List<dynamic> keywords,
       required final List<dynamic> excludeKeywords,
-      required this.src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) required this.src,
       this.userListId,
       required final List<String> users,
       this.caseSensitive = false,
@@ -288,6 +289,7 @@ class _Antenna implements Antenna {
   }
 
   @override
+  @JsonKey(unknownEnumValue: AntennaSource.unknown)
   final AntennaSource src;
   @override
   final String? userListId;
@@ -417,7 +419,7 @@ abstract mixin class _$AntennaCopyWith<$Res> implements $AntennaCopyWith<$Res> {
       String name,
       List<dynamic> keywords,
       List<dynamic> excludeKeywords,
-      AntennaSource src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource src,
       String? userListId,
       List<String> users,
       bool caseSensitive,

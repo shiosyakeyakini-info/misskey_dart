@@ -22,6 +22,7 @@ mixin _$DriveFiles {
   int? get untilDate;
   String? get folderId;
   String? get type;
+  @JsonKey(unknownEnumValue: DriveFilesSort.unknown)
   DriveFilesSort? get sort;
 
   /// Create a copy of DriveFiles
@@ -77,7 +78,7 @@ abstract mixin class $DriveFilesCopyWith<$Res> {
       int? untilDate,
       String? folderId,
       String? type,
-      DriveFilesSort? sort});
+      @JsonKey(unknownEnumValue: DriveFilesSort.unknown) DriveFilesSort? sort});
 }
 
 /// @nodoc
@@ -149,7 +150,7 @@ class _DriveFiles implements DriveFiles {
       this.untilDate,
       this.folderId = null,
       this.type,
-      this.sort});
+      @JsonKey(unknownEnumValue: DriveFilesSort.unknown) this.sort});
   factory _DriveFiles.fromJson(Map<String, dynamic> json) =>
       _$DriveFilesFromJson(json);
 
@@ -170,6 +171,7 @@ class _DriveFiles implements DriveFiles {
   @override
   final String? type;
   @override
+  @JsonKey(unknownEnumValue: DriveFilesSort.unknown)
   final DriveFilesSort? sort;
 
   /// Create a copy of DriveFiles
@@ -232,7 +234,7 @@ abstract mixin class _$DriveFilesCopyWith<$Res>
       int? untilDate,
       String? folderId,
       String? type,
-      DriveFilesSort? sort});
+      @JsonKey(unknownEnumValue: DriveFilesSort.unknown) DriveFilesSort? sort});
 }
 
 /// @nodoc

@@ -7,7 +7,7 @@ part 'charts_user_notes_request.g.dart';
 @freezed
 abstract class ChartsUserNotesRequest with _$ChartsUserNotesRequest {
   const factory ChartsUserNotesRequest({
-    ChartsUserNotesSpan? span,
+    @JsonKey(unknownEnumValue: ChartsUserNotesSpan.unknown) ChartsUserNotesSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
     String? userId,

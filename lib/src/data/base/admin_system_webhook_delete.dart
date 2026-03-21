@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_system_webhook_delete.freezed.dart';
 part 'admin_system_webhook_delete.g.dart';

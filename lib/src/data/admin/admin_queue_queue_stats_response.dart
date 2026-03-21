@@ -7,7 +7,7 @@ part 'admin_queue_queue_stats_response.g.dart';
 @freezed
 abstract class AdminQueueQueueStatsResponse with _$AdminQueueQueueStatsResponse {
   const factory AdminQueueQueueStatsResponse({
-    required AdminQueueQueueStatsName name,
+    @JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown) required AdminQueueQueueStatsName name,
     required String qualifiedName,
     required Map<String, double> counts,
     required bool isPaused,

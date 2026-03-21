@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigReceiveFollowRequest {
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown)
   IUpdateNotificationRecieveConfigReceiveFollowRequestType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $IUpdateNotificationRecieveConfigReceiveFollowRequestCopyWi
       _$IUpdateNotificationRecieveConfigReceiveFollowRequestCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigReceiveFollowRequestType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown)
+      IUpdateNotificationRecieveConfigReceiveFollowRequestType type,
       String userListId});
 }
 
@@ -104,12 +110,19 @@ class _$IUpdateNotificationRecieveConfigReceiveFollowRequestCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigReceiveFollowRequest
     implements IUpdateNotificationRecieveConfigReceiveFollowRequest {
   const _IUpdateNotificationRecieveConfigReceiveFollowRequest(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigReceiveFollowRequest.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigReceiveFollowRequestFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown)
   final IUpdateNotificationRecieveConfigReceiveFollowRequestType type;
   @override
   final String userListId;
@@ -166,7 +179,10 @@ abstract mixin class _$IUpdateNotificationRecieveConfigReceiveFollowRequestCopyW
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigReceiveFollowRequestType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown)
+      IUpdateNotificationRecieveConfigReceiveFollowRequestType type,
       String userListId});
 }
 

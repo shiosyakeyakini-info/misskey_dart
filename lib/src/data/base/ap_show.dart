@@ -7,7 +7,7 @@ part 'ap_show.g.dart';
 @freezed
 abstract class ApShow with _$ApShow {
   const factory ApShow({
-    required ApShowType type,
+    @JsonKey(unknownEnumValue: ApShowType.unknown) required ApShowType type,
     required Note object,
   }) = _ApShow;
 

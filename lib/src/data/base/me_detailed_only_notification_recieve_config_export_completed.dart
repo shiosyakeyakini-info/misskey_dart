@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_export_completed.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigExportCompleted with _$MeDetailedOnlyNotificationRecieveConfigExportCompleted {
   const factory MeDetailedOnlyNotificationRecieveConfigExportCompleted({
-    required MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown) required MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigExportCompleted;
 

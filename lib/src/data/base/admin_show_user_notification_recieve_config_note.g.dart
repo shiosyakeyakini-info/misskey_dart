@@ -12,7 +12,9 @@ _AdminShowUserNotificationRecieveConfigNote
         _AdminShowUserNotificationRecieveConfigNote(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigNoteTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigNoteType.unknown),
           userListId: json['userListId'] as String,
         );
 

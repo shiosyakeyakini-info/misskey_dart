@@ -11,7 +11,8 @@ _Role _$RoleFromJson(Map<String, dynamic> json) => _Role(
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       updatedAt:
           const DateTimeConverter().fromJson(json['updatedAt'] as String),
-      target: $enumDecode(_$RoleTargetEnumMap, json['target']),
+      target: $enumDecode(_$RoleTargetEnumMap, json['target'],
+          unknownValue: RoleTarget.unknown),
       condFormula: RoleCondFormulaValue.fromJson(
           json['condFormula'] as Map<String, dynamic>),
       isPublic: json['isPublic'] as bool,

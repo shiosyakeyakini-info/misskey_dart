@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigRenote {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown)
   MeDetailedOnlyNotificationRecieveConfigRenoteType get type;
   String get userListId;
 
@@ -62,7 +65,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigRenoteCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigRenoteCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigRenoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigRenoteType type,
       String userListId});
 }
 
@@ -101,12 +107,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigRenoteCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigRenote
     implements MeDetailedOnlyNotificationRecieveConfigRenote {
   const _MeDetailedOnlyNotificationRecieveConfigRenote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigRenote.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigRenoteFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigRenoteType type;
   @override
   final String userListId;
@@ -160,7 +173,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigRenoteCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigRenoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigRenoteType type,
       String userListId});
 }
 

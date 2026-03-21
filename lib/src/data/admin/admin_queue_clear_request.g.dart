@@ -9,8 +9,10 @@ part of 'admin_queue_clear_request.dart';
 _AdminQueueClearRequest _$AdminQueueClearRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueClearRequest(
-      queue: $enumDecodeNullable(_$AdminQueueClearQueueEnumMap, json['queue']),
-      state: $enumDecodeNullable(_$AdminQueueClearStateEnumMap, json['state']),
+      queue: $enumDecodeNullable(_$AdminQueueClearQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueClearQueue.unknown),
+      state: $enumDecodeNullable(_$AdminQueueClearStateEnumMap, json['state'],
+          unknownValue: AdminQueueClearState.unknown),
     );
 
 Map<String, dynamic> _$AdminQueueClearRequestToJson(

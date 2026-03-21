@@ -55,7 +55,10 @@ mixin _$AdminMetaResponse {
   String? get mcaptchaSecretKey;
   String? get recaptchaSecretKey;
   String? get turnstileSecretKey;
+  @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown)
   AdminMetaSensitiveMediaDetection get sensitiveMediaDetection;
+  @JsonKey(
+      unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown)
   AdminMetaSensitiveMediaDetectionSensitivity
       get sensitiveMediaDetectionSensitivity;
   bool get setSensitiveFlagAutomatically;
@@ -133,10 +136,12 @@ mixin _$AdminMetaResponse {
   bool get urlPreviewRequireContentLength;
   String? get urlPreviewUserAgent;
   String? get urlPreviewSummaryProxyUrl;
+  @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
   AdminMetaFederation get federation;
   List<String> get federationHosts;
   List<AdminMetaDeliverSuspendedSoftwareItem> get deliverSuspendedSoftware;
   bool get singleUserMode;
+  @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown)
   AdminMetaUgcVisibilityForVisitor get ugcVisibilityForVisitor;
   bool get proxyRemoteFiles;
   bool get signToActivityPubGet;
@@ -510,7 +515,10 @@ abstract mixin class $AdminMetaResponseCopyWith<$Res> {
       String? mcaptchaSecretKey,
       String? recaptchaSecretKey,
       String? turnstileSecretKey,
+      @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown)
       AdminMetaSensitiveMediaDetection sensitiveMediaDetection,
+      @JsonKey(
+          unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown)
       AdminMetaSensitiveMediaDetectionSensitivity
           sensitiveMediaDetectionSensitivity,
       bool setSensitiveFlagAutomatically,
@@ -587,10 +595,12 @@ abstract mixin class $AdminMetaResponseCopyWith<$Res> {
       bool urlPreviewRequireContentLength,
       String? urlPreviewUserAgent,
       String? urlPreviewSummaryProxyUrl,
+      @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
       AdminMetaFederation federation,
       List<String> federationHosts,
       List<AdminMetaDeliverSuspendedSoftwareItem> deliverSuspendedSoftware,
       bool singleUserMode,
+      @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown)
       AdminMetaUgcVisibilityForVisitor ugcVisibilityForVisitor,
       bool proxyRemoteFiles,
       bool signToActivityPubGet,
@@ -1322,7 +1332,10 @@ class _AdminMetaResponse implements AdminMetaResponse {
       this.mcaptchaSecretKey,
       this.recaptchaSecretKey,
       this.turnstileSecretKey,
+      @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown)
       required this.sensitiveMediaDetection,
+      @JsonKey(
+          unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown)
       required this.sensitiveMediaDetectionSensitivity,
       required this.setSensitiveFlagAutomatically,
       required this.enableSensitiveMediaDetectionForVideos,
@@ -1398,11 +1411,13 @@ class _AdminMetaResponse implements AdminMetaResponse {
       required this.urlPreviewRequireContentLength,
       this.urlPreviewUserAgent,
       this.urlPreviewSummaryProxyUrl,
+      @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
       required this.federation,
       required final List<String> federationHosts,
       required final List<AdminMetaDeliverSuspendedSoftwareItem>
           deliverSuspendedSoftware,
       required this.singleUserMode,
+      @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown)
       required this.ugcVisibilityForVisitor,
       required this.proxyRemoteFiles,
       required this.signToActivityPubGet,
@@ -1577,8 +1592,11 @@ class _AdminMetaResponse implements AdminMetaResponse {
   @override
   final String? turnstileSecretKey;
   @override
+  @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown)
   final AdminMetaSensitiveMediaDetection sensitiveMediaDetection;
   @override
+  @JsonKey(
+      unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown)
   final AdminMetaSensitiveMediaDetectionSensitivity
       sensitiveMediaDetectionSensitivity;
   @override
@@ -1737,6 +1755,7 @@ class _AdminMetaResponse implements AdminMetaResponse {
   @override
   final String? urlPreviewSummaryProxyUrl;
   @override
+  @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
   final AdminMetaFederation federation;
   final List<String> _federationHosts;
   @override
@@ -1758,6 +1777,7 @@ class _AdminMetaResponse implements AdminMetaResponse {
   @override
   final bool singleUserMode;
   @override
+  @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown)
   final AdminMetaUgcVisibilityForVisitor ugcVisibilityForVisitor;
   @override
   final bool proxyRemoteFiles;
@@ -2144,7 +2164,10 @@ abstract mixin class _$AdminMetaResponseCopyWith<$Res>
       String? mcaptchaSecretKey,
       String? recaptchaSecretKey,
       String? turnstileSecretKey,
+      @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown)
       AdminMetaSensitiveMediaDetection sensitiveMediaDetection,
+      @JsonKey(
+          unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown)
       AdminMetaSensitiveMediaDetectionSensitivity
           sensitiveMediaDetectionSensitivity,
       bool setSensitiveFlagAutomatically,
@@ -2221,10 +2244,12 @@ abstract mixin class _$AdminMetaResponseCopyWith<$Res>
       bool urlPreviewRequireContentLength,
       String? urlPreviewUserAgent,
       String? urlPreviewSummaryProxyUrl,
+      @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
       AdminMetaFederation federation,
       List<String> federationHosts,
       List<AdminMetaDeliverSuspendedSoftwareItem> deliverSuspendedSoftware,
       bool singleUserMode,
+      @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown)
       AdminMetaUgcVisibilityForVisitor ugcVisibilityForVisitor,
       bool proxyRemoteFiles,
       bool signToActivityPubGet,

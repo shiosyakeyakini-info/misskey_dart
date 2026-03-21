@@ -8,7 +8,7 @@ part 'channels_search_request.g.dart';
 abstract class ChannelsSearchRequest with _$ChannelsSearchRequest {
   const factory ChannelsSearchRequest({
     String? query,
-    @Default(ChannelsSearchType.nameAndDescription) ChannelsSearchType? type,
+    @JsonKey(unknownEnumValue: ChannelsSearchType.unknown) @Default(ChannelsSearchType.nameAndDescription) ChannelsSearchType? type,
     String? sinceId,
     String? untilId,
     int? sinceDate,

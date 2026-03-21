@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+              .unknown)
   MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType get type;
   String get userListId;
 
@@ -66,7 +70,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted
       _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
       String userListId});
 }
 
@@ -109,13 +117,22 @@ class _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedCopyWithImpl<
 class _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted
     implements MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted {
   const _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+              .unknown)
   final MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type;
   @override
   final String userListId;
@@ -175,7 +192,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePoste
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
       String userListId});
 }
 

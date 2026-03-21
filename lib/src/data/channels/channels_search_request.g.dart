@@ -10,7 +10,8 @@ _ChannelsSearchRequest _$ChannelsSearchRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsSearchRequest(
       query: json['query'] as String?,
-      type: $enumDecodeNullable(_$ChannelsSearchTypeEnumMap, json['type']) ??
+      type: $enumDecodeNullable(_$ChannelsSearchTypeEnumMap, json['type'],
+              unknownValue: ChannelsSearchType.unknown) ??
           ChannelsSearchType.nameAndDescription,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,

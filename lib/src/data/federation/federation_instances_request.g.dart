@@ -19,7 +19,8 @@ _FederationInstancesRequest _$FederationInstancesRequestFromJson(
       publishing: json['publishing'] as bool?,
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$FederationInstancesSortEnumMap, json['sort']),
+      sort: $enumDecodeNullable(_$FederationInstancesSortEnumMap, json['sort'],
+          unknownValue: FederationInstancesSort.unknown),
     );
 
 Map<String, dynamic> _$FederationInstancesRequestToJson(

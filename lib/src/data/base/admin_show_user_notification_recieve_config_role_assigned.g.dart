@@ -12,7 +12,10 @@ _AdminShowUserNotificationRecieveConfigRoleAssigned
         _AdminShowUserNotificationRecieveConfigRoleAssigned(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigRoleAssignedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

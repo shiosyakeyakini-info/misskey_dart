@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigReaction {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigReactionType.unknown)
   AdminShowUserNotificationRecieveConfigReactionType get type;
   String get userListId;
 
@@ -62,7 +65,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigReactionCopyWith<
       _$AdminShowUserNotificationRecieveConfigReactionCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigReactionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigReactionType.unknown)
+      AdminShowUserNotificationRecieveConfigReactionType type,
       String userListId});
 }
 
@@ -101,12 +107,19 @@ class _$AdminShowUserNotificationRecieveConfigReactionCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigReaction
     implements AdminShowUserNotificationRecieveConfigReaction {
   const _AdminShowUserNotificationRecieveConfigReaction(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigReactionType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigReaction.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigReactionFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigReactionType.unknown)
   final AdminShowUserNotificationRecieveConfigReactionType type;
   @override
   final String userListId;
@@ -162,7 +175,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigReactionCopyWith<
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigReactionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigReactionType.unknown)
+      AdminShowUserNotificationRecieveConfigReactionType type,
       String userListId});
 }
 

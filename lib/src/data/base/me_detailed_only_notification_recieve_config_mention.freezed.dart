@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigMention {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigMentionType.unknown)
   MeDetailedOnlyNotificationRecieveConfigMentionType get type;
   String get userListId;
 
@@ -62,7 +65,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigMentionCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigMentionCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigMentionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigMentionType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigMentionType type,
       String userListId});
 }
 
@@ -101,12 +107,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigMentionCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigMention
     implements MeDetailedOnlyNotificationRecieveConfigMention {
   const _MeDetailedOnlyNotificationRecieveConfigMention(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigMentionType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigMention.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigMentionFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigMentionType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigMentionType type;
   @override
   final String userListId;
@@ -162,7 +175,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigMentionCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigMentionType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigMentionType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigMentionType type,
       String userListId});
 }
 

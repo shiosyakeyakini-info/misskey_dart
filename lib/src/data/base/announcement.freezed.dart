@@ -23,7 +23,9 @@ mixin _$Announcement {
   String get text;
   String get title;
   String? get imageUrl;
+  @JsonKey(unknownEnumValue: AnnouncementIcon.unknown)
   AnnouncementIcon get icon;
+  @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown)
   AnnouncementDisplay get display;
   bool get needConfirmationToRead;
   bool get silence;
@@ -100,7 +102,9 @@ abstract mixin class $AnnouncementCopyWith<$Res> {
       String text,
       String title,
       String? imageUrl,
+      @JsonKey(unknownEnumValue: AnnouncementIcon.unknown)
       AnnouncementIcon icon,
+      @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown)
       AnnouncementDisplay display,
       bool needConfirmationToRead,
       bool silence,
@@ -196,7 +200,8 @@ class _Announcement implements Announcement {
       required this.text,
       required this.title,
       this.imageUrl,
-      required this.icon,
+      @JsonKey(unknownEnumValue: AnnouncementIcon.unknown) required this.icon,
+      @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown)
       required this.display,
       required this.needConfirmationToRead,
       required this.silence,
@@ -220,8 +225,10 @@ class _Announcement implements Announcement {
   @override
   final String? imageUrl;
   @override
+  @JsonKey(unknownEnumValue: AnnouncementIcon.unknown)
   final AnnouncementIcon icon;
   @override
+  @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown)
   final AnnouncementDisplay display;
   @override
   final bool needConfirmationToRead;
@@ -308,7 +315,9 @@ abstract mixin class _$AnnouncementCopyWith<$Res>
       String text,
       String title,
       String? imageUrl,
+      @JsonKey(unknownEnumValue: AnnouncementIcon.unknown)
       AnnouncementIcon icon,
+      @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown)
       AnnouncementDisplay display,
       bool needConfirmationToRead,
       bool silence,

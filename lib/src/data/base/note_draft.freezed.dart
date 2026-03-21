@@ -35,6 +35,7 @@ mixin _$NoteDraft {
   String? get channelId;
   NoteDraftChannel? get channel;
   bool get localOnly;
+  @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
   ReactionAcceptance? get reactionAcceptance;
   double? get scheduledAt;
   bool get isActuallyScheduled;
@@ -146,6 +147,7 @@ abstract mixin class $NoteDraftCopyWith<$Res> {
       String? channelId,
       NoteDraftChannel? channel,
       bool localOnly,
+      @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       ReactionAcceptance? reactionAcceptance,
       double? scheduledAt,
       bool isActuallyScheduled});
@@ -374,6 +376,7 @@ class _NoteDraft implements NoteDraft {
       this.channelId,
       this.channel,
       required this.localOnly,
+      @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       this.reactionAcceptance,
       this.scheduledAt,
       required this.isActuallyScheduled})
@@ -443,6 +446,7 @@ class _NoteDraft implements NoteDraft {
   @override
   final bool localOnly;
   @override
+  @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
   final ReactionAcceptance? reactionAcceptance;
   @override
   final double? scheduledAt;
@@ -564,6 +568,7 @@ abstract mixin class _$NoteDraftCopyWith<$Res>
       String? channelId,
       NoteDraftChannel? channel,
       bool localOnly,
+      @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       ReactionAcceptance? reactionAcceptance,
       double? scheduledAt,
       bool isActuallyScheduled});

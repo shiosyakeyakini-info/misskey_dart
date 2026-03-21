@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ApShow {
+  @JsonKey(unknownEnumValue: ApShowType.unknown)
   ApShowType get type;
   Note get object;
 
@@ -52,7 +53,9 @@ abstract mixin class $ApShowCopyWith<$Res> {
   factory $ApShowCopyWith(ApShow value, $Res Function(ApShow) _then) =
       _$ApShowCopyWithImpl;
   @useResult
-  $Res call({ApShowType type, Note object});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ApShowType.unknown) ApShowType type,
+      Note object});
 
   $NoteCopyWith<$Res> get object;
 }
@@ -98,10 +101,13 @@ class _$ApShowCopyWithImpl<$Res> implements $ApShowCopyWith<$Res> {
 /// @nodoc
 @JsonSerializable()
 class _ApShow implements ApShow {
-  const _ApShow({required this.type, required this.object});
+  const _ApShow(
+      {@JsonKey(unknownEnumValue: ApShowType.unknown) required this.type,
+      required this.object});
   factory _ApShow.fromJson(Map<String, dynamic> json) => _$ApShowFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: ApShowType.unknown)
   final ApShowType type;
   @override
   final Note object;
@@ -146,7 +152,9 @@ abstract mixin class _$ApShowCopyWith<$Res> implements $ApShowCopyWith<$Res> {
       __$ApShowCopyWithImpl;
   @override
   @useResult
-  $Res call({ApShowType type, Note object});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ApShowType.unknown) ApShowType type,
+      Note object});
 
   @override
   $NoteCopyWith<$Res> get object;

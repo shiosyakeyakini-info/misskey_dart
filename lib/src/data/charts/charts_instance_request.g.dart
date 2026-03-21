@@ -9,7 +9,8 @@ part of 'charts_instance_request.dart';
 _ChartsInstanceRequest _$ChartsInstanceRequestFromJson(
         Map<String, dynamic> json) =>
     _ChartsInstanceRequest(
-      span: $enumDecodeNullable(_$ChartsInstanceSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsInstanceSpanEnumMap, json['span'],
+          unknownValue: ChartsInstanceSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
       host: json['host'] as String?,

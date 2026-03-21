@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsDriveRequest {
+  @JsonKey(unknownEnumValue: ChartsDriveSpan.unknown)
   ChartsDriveSpan? get span;
   int? get limit;
   int? get offset;
@@ -56,7 +57,11 @@ abstract mixin class $ChartsDriveRequestCopyWith<$Res> {
           ChartsDriveRequest value, $Res Function(ChartsDriveRequest) _then) =
       _$ChartsDriveRequestCopyWithImpl;
   @useResult
-  $Res call({ChartsDriveSpan? span, int? limit, int? offset});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsDriveSpan.unknown)
+      ChartsDriveSpan? span,
+      int? limit,
+      int? offset});
 }
 
 /// @nodoc
@@ -96,11 +101,15 @@ class _$ChartsDriveRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChartsDriveRequest implements ChartsDriveRequest {
-  const _ChartsDriveRequest({this.span, this.limit = 30, this.offset = null});
+  const _ChartsDriveRequest(
+      {@JsonKey(unknownEnumValue: ChartsDriveSpan.unknown) this.span,
+      this.limit = 30,
+      this.offset = null});
   factory _ChartsDriveRequest.fromJson(Map<String, dynamic> json) =>
       _$ChartsDriveRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: ChartsDriveSpan.unknown)
   final ChartsDriveSpan? span;
   @override
   @JsonKey()
@@ -152,7 +161,11 @@ abstract mixin class _$ChartsDriveRequestCopyWith<$Res>
       __$ChartsDriveRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({ChartsDriveSpan? span, int? limit, int? offset});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsDriveSpan.unknown)
+      ChartsDriveSpan? span,
+      int? limit,
+      int? offset});
 }
 
 /// @nodoc

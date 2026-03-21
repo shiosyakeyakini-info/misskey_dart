@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyChat {
   final MisskeyChatMessages messages;
@@ -8,7 +7,7 @@ class MisskeyChat {
   final ApiService _apiService;
 
   MisskeyChat({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         messages = MisskeyChatMessages(apiService: apiService),
         rooms = MisskeyChatRooms(apiService: apiService);
 
@@ -91,7 +90,7 @@ class MisskeyChatRooms {
   final ApiService _apiService;
 
   MisskeyChatRooms({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         invitations = MisskeyChatRoomsInvitations(apiService: apiService);
 
   /// chat/rooms/create

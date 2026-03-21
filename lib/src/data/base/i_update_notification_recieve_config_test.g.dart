@@ -10,7 +10,8 @@ _IUpdateNotificationRecieveConfigTest
     _$IUpdateNotificationRecieveConfigTestFromJson(Map<String, dynamic> json) =>
         _IUpdateNotificationRecieveConfigTest(
           type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigTestTypeEnumMap, json['type']),
+              _$IUpdateNotificationRecieveConfigTestTypeEnumMap, json['type'],
+              unknownValue: IUpdateNotificationRecieveConfigTestType.unknown),
           userListId: json['userListId'] as String,
         );
 

@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_note.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigNote with _$MeDetailedOnlyNotificationRecieveConfigNote {
   const factory MeDetailedOnlyNotificationRecieveConfigNote({
-    required MeDetailedOnlyNotificationRecieveConfigNoteType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigNoteType.unknown) required MeDetailedOnlyNotificationRecieveConfigNoteType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigNote;
 

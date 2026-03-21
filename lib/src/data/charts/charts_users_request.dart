@@ -7,7 +7,7 @@ part 'charts_users_request.g.dart';
 @freezed
 abstract class ChartsUsersRequest with _$ChartsUsersRequest {
   const factory ChartsUsersRequest({
-    ChartsUsersSpan? span,
+    @JsonKey(unknownEnumValue: ChartsUsersSpan.unknown) ChartsUsersSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
   }) = _ChartsUsersRequest;

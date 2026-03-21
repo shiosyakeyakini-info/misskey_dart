@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailed {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+              .unknown)
   AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType get type;
   String get userListId;
 
@@ -66,7 +70,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigScheduledNotePostFai
       _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
       String userListId});
 }
 
@@ -109,13 +117,22 @@ class _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedCopyWithImp
 class _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed
     implements AdminShowUserNotificationRecieveConfigScheduledNotePostFailed {
   const _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+              .unknown)
   final AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type;
   @override
   final String userListId;
@@ -175,7 +192,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigScheduledNotePostFa
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
       String userListId});
 }
 

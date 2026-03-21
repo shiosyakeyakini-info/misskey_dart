@@ -15,9 +15,15 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$I2faRegisterKeyAuthenticatorSelection {
+  @JsonKey(
+      unknownEnumValue:
+          I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment.unknown)
   I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
       get authenticatorAttachment;
   bool get requireResidentKey;
+  @JsonKey(
+      unknownEnumValue:
+          I2faRegisterKeyAuthenticatorSelectionUserVerification.unknown)
   I2faRegisterKeyAuthenticatorSelectionUserVerification get userVerification;
 
   /// Create a copy of I2faRegisterKeyAuthenticatorSelection
@@ -66,9 +72,16 @@ abstract mixin class $I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res> {
       _$I2faRegisterKeyAuthenticatorSelectionCopyWithImpl;
   @useResult
   $Res call(
-      {I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
+      {@JsonKey(
+          unknownEnumValue:
+              I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
+                  .unknown)
+      I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
           authenticatorAttachment,
       bool requireResidentKey,
+      @JsonKey(
+          unknownEnumValue:
+              I2faRegisterKeyAuthenticatorSelectionUserVerification.unknown)
       I2faRegisterKeyAuthenticatorSelectionUserVerification userVerification});
 }
 
@@ -111,19 +124,32 @@ class _$I2faRegisterKeyAuthenticatorSelectionCopyWithImpl<$Res>
 class _I2faRegisterKeyAuthenticatorSelection
     implements I2faRegisterKeyAuthenticatorSelection {
   const _I2faRegisterKeyAuthenticatorSelection(
-      {required this.authenticatorAttachment,
+      {@JsonKey(
+          unknownEnumValue:
+              I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
+                  .unknown)
+      required this.authenticatorAttachment,
       required this.requireResidentKey,
+      @JsonKey(
+          unknownEnumValue:
+              I2faRegisterKeyAuthenticatorSelectionUserVerification.unknown)
       required this.userVerification});
   factory _I2faRegisterKeyAuthenticatorSelection.fromJson(
           Map<String, dynamic> json) =>
       _$I2faRegisterKeyAuthenticatorSelectionFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment.unknown)
   final I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
       authenticatorAttachment;
   @override
   final bool requireResidentKey;
   @override
+  @JsonKey(
+      unknownEnumValue:
+          I2faRegisterKeyAuthenticatorSelectionUserVerification.unknown)
   final I2faRegisterKeyAuthenticatorSelectionUserVerification userVerification;
 
   /// Create a copy of I2faRegisterKeyAuthenticatorSelection
@@ -178,9 +204,16 @@ abstract mixin class _$I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
+      {@JsonKey(
+          unknownEnumValue:
+              I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
+                  .unknown)
+      I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
           authenticatorAttachment,
       bool requireResidentKey,
+      @JsonKey(
+          unknownEnumValue:
+              I2faRegisterKeyAuthenticatorSelectionUserVerification.unknown)
       I2faRegisterKeyAuthenticatorSelectionUserVerification userVerification});
 }
 

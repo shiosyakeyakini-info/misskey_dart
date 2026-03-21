@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_poll_ended.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigPollEnded with _$AdminShowUserNotificationRecieveConfigPollEnded {
   const factory AdminShowUserNotificationRecieveConfigPollEnded({
-    required AdminShowUserNotificationRecieveConfigPollEndedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigPollEndedType.unknown) required AdminShowUserNotificationRecieveConfigPollEndedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigPollEnded;
 

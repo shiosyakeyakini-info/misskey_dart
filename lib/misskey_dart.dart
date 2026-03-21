@@ -1388,5 +1388,4 @@ export 'src/misskey_verify_email.dart';
 export 'src/server.dart';
 export 'src/services/api_service.dart';
 export 'src/services/streaming_service.dart';
-export 'src/services/streaming_service_impl.dart';
 export 'src/util/mutex.dart';

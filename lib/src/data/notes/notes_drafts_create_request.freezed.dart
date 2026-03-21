@@ -15,11 +15,13 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesDraftsCreateRequest {
+  @JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
   NotesDraftsCreateVisibility? get visibility;
   List<String>? get visibleUserIds;
   String? get cw;
   String? get hashtag;
   bool? get localOnly;
+  @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
   NotesDraftsCreateReactionAcceptance? get reactionAcceptance;
   String? get replyId;
   String? get renoteId;
@@ -102,11 +104,13 @@ abstract mixin class $NotesDraftsCreateRequestCopyWith<$Res> {
       _$NotesDraftsCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {NotesDraftsCreateVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
+      NotesDraftsCreateVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       String? hashtag,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
       NotesDraftsCreateReactionAcceptance? reactionAcceptance,
       String? replyId,
       String? renoteId,
@@ -227,11 +231,13 @@ class _$NotesDraftsCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
   const _NotesDraftsCreateRequest(
-      {this.visibility = NotesDraftsCreateVisibility.public,
+      {@JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
+      this.visibility = NotesDraftsCreateVisibility.public,
       final List<String>? visibleUserIds,
       this.cw,
       this.hashtag,
       this.localOnly = false,
+      @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
       this.reactionAcceptance = null,
       this.replyId,
       this.renoteId,
@@ -247,7 +253,7 @@ class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
       _$NotesDraftsCreateRequestFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
   final NotesDraftsCreateVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
@@ -267,7 +273,7 @@ class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
   @JsonKey()
   final bool? localOnly;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
   final NotesDraftsCreateReactionAcceptance? reactionAcceptance;
   @override
   final String? replyId;
@@ -374,11 +380,13 @@ abstract mixin class _$NotesDraftsCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {NotesDraftsCreateVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
+      NotesDraftsCreateVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       String? hashtag,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
       NotesDraftsCreateReactionAcceptance? reactionAcceptance,
       String? replyId,
       String? renoteId,

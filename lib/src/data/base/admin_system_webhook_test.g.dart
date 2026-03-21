@@ -10,7 +10,8 @@ _AdminSystemWebhookTest _$AdminSystemWebhookTestFromJson(
         Map<String, dynamic> json) =>
     _AdminSystemWebhookTest(
       webhookId: json['webhookId'] as String,
-      type: $enumDecode(_$AdminSystemWebhookTestTypeEnumMap, json['type']),
+      type: $enumDecode(_$AdminSystemWebhookTestTypeEnumMap, json['type'],
+          unknownValue: AdminSystemWebhookTestType.unknown),
       override_: json['override'] == null
           ? null
           : AdminSystemWebhookTestOverride.fromJson(

@@ -12,7 +12,10 @@ _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted
         _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

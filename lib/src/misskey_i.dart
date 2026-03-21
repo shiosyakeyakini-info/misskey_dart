@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyI {
   final MisskeyI2fa $2fa;
@@ -10,7 +9,7 @@ class MisskeyI {
   final ApiService _apiService;
 
   MisskeyI({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         $2fa = MisskeyI2fa(apiService: apiService),
         gallery = MisskeyIGallery(apiService: apiService),
         registry = MisskeyIRegistry(apiService: apiService),

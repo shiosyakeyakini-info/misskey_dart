@@ -10,7 +10,8 @@ _AdminQueueQueueStatsDb _$AdminQueueQueueStatsDbFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueQueueStatsDb(
       version: json['version'] as String,
-      mode: $enumDecode(_$AdminQueueQueueStatsDbModeEnumMap, json['mode']),
+      mode: $enumDecode(_$AdminQueueQueueStatsDbModeEnumMap, json['mode'],
+          unknownValue: AdminQueueQueueStatsDbMode.unknown),
       runId: json['runId'] as String,
       processId: json['processId'] as String,
       port: (json['port'] as num).toDouble(),

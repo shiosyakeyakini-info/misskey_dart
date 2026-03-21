@@ -14,7 +14,8 @@ _HashtagsList _$HashtagsListFromJson(Map<String, dynamic> json) =>
           json['attachedToLocalUserOnly'] as bool? ?? false,
       attachedToRemoteUserOnly:
           json['attachedToRemoteUserOnly'] as bool? ?? false,
-      sort: $enumDecode(_$HashtagsListSortEnumMap, json['sort']),
+      sort: $enumDecode(_$HashtagsListSortEnumMap, json['sort'],
+          unknownValue: HashtagsListSort.unknown),
     );
 
 Map<String, dynamic> _$HashtagsListToJson(_HashtagsList instance) =>

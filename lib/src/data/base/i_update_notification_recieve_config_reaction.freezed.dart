@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigReaction {
+  @JsonKey(
+      unknownEnumValue: IUpdateNotificationRecieveConfigReactionType.unknown)
   IUpdateNotificationRecieveConfigReactionType get type;
   String get userListId;
 
@@ -59,7 +61,11 @@ abstract mixin class $IUpdateNotificationRecieveConfigReactionCopyWith<$Res> {
       _$IUpdateNotificationRecieveConfigReactionCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigReactionType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigReactionType.unknown)
+      IUpdateNotificationRecieveConfigReactionType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -97,12 +103,18 @@ class _$IUpdateNotificationRecieveConfigReactionCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigReaction
     implements IUpdateNotificationRecieveConfigReaction {
   const _IUpdateNotificationRecieveConfigReaction(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigReactionType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigReaction.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigReactionFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: IUpdateNotificationRecieveConfigReactionType.unknown)
   final IUpdateNotificationRecieveConfigReactionType type;
   @override
   final String userListId;
@@ -154,7 +166,11 @@ abstract mixin class _$IUpdateNotificationRecieveConfigReactionCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigReactionType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigReactionType.unknown)
+      IUpdateNotificationRecieveConfigReactionType type,
+      String userListId});
 }
 
 /// @nodoc

@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_follow_request_accepted.g.dar
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted with _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted {
   const factory MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted({
-    required MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.unknown) required MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted;
 

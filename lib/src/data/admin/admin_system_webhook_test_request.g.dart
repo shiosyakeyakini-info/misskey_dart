@@ -11,7 +11,8 @@ _AdminSystemWebhookTestRequest _$AdminSystemWebhookTestRequestFromJson(
     _AdminSystemWebhookTestRequest(
       webhookId: json['webhookId'] as String?,
       type: $enumDecodeNullable(
-          _$AdminSystemWebhookTestTypeEnumMap, json['type']),
+          _$AdminSystemWebhookTestTypeEnumMap, json['type'],
+          unknownValue: AdminSystemWebhookTestType.unknown),
       override_: json['override'] == null
           ? null
           : AdminSystemWebhookTestOverride.fromJson(

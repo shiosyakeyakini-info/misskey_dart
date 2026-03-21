@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueQueuesItem {
+  @JsonKey(unknownEnumValue: AdminQueueQueuesName.unknown)
   AdminQueueQueuesName get name;
   Map<String, double> get counts;
   bool get isPaused;
@@ -61,7 +62,8 @@ abstract mixin class $AdminQueueQueuesItemCopyWith<$Res> {
       _$AdminQueueQueuesItemCopyWithImpl;
   @useResult
   $Res call(
-      {AdminQueueQueuesName name,
+      {@JsonKey(unknownEnumValue: AdminQueueQueuesName.unknown)
+      AdminQueueQueuesName name,
       Map<String, double> counts,
       bool isPaused,
       AdminQueueQueuesMetrics metrics});
@@ -122,7 +124,8 @@ class _$AdminQueueQueuesItemCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminQueueQueuesItem implements AdminQueueQueuesItem {
   const _AdminQueueQueuesItem(
-      {required this.name,
+      {@JsonKey(unknownEnumValue: AdminQueueQueuesName.unknown)
+      required this.name,
       required final Map<String, double> counts,
       required this.isPaused,
       required this.metrics})
@@ -131,6 +134,7 @@ class _AdminQueueQueuesItem implements AdminQueueQueuesItem {
       _$AdminQueueQueuesItemFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueQueuesName.unknown)
   final AdminQueueQueuesName name;
   final Map<String, double> _counts;
   @override
@@ -193,7 +197,8 @@ abstract mixin class _$AdminQueueQueuesItemCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminQueueQueuesName name,
+      {@JsonKey(unknownEnumValue: AdminQueueQueuesName.unknown)
+      AdminQueueQueuesName name,
       Map<String, double> counts,
       bool isPaused,
       AdminQueueQueuesMetrics metrics});

@@ -15,23 +15,23 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfig {
-  dynamic? get note;
-  dynamic? get follow;
-  dynamic? get mention;
-  dynamic? get reply;
-  dynamic? get renote;
-  dynamic? get quote;
-  dynamic? get reaction;
-  dynamic? get pollEnded;
-  dynamic? get scheduledNotePosted;
-  dynamic? get scheduledNotePostFailed;
-  dynamic? get receiveFollowRequest;
-  dynamic? get followRequestAccepted;
-  dynamic? get roleAssigned;
-  dynamic? get chatRoomInvitationReceived;
-  dynamic? get achievementEarned;
-  dynamic? get app;
-  dynamic? get test;
+  dynamic get note;
+  dynamic get follow;
+  dynamic get mention;
+  dynamic get reply;
+  dynamic get renote;
+  dynamic get quote;
+  dynamic get reaction;
+  dynamic get pollEnded;
+  dynamic get scheduledNotePosted;
+  dynamic get scheduledNotePostFailed;
+  dynamic get receiveFollowRequest;
+  dynamic get followRequestAccepted;
+  dynamic get roleAssigned;
+  dynamic get chatRoomInvitationReceived;
+  dynamic get achievementEarned;
+  dynamic get app;
+  dynamic get test;
 
   /// Create a copy of AdminShowUserNotificationRecieveConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -113,23 +113,23 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigCopyWith<$Res> {
       _$AdminShowUserNotificationRecieveConfigCopyWithImpl;
   @useResult
   $Res call(
-      {dynamic? note,
-      dynamic? follow,
-      dynamic? mention,
-      dynamic? reply,
-      dynamic? renote,
-      dynamic? quote,
-      dynamic? reaction,
-      dynamic? pollEnded,
-      dynamic? scheduledNotePosted,
-      dynamic? scheduledNotePostFailed,
-      dynamic? receiveFollowRequest,
-      dynamic? followRequestAccepted,
-      dynamic? roleAssigned,
-      dynamic? chatRoomInvitationReceived,
-      dynamic? achievementEarned,
-      dynamic? app,
-      dynamic? test});
+      {dynamic note,
+      dynamic follow,
+      dynamic mention,
+      dynamic reply,
+      dynamic renote,
+      dynamic quote,
+      dynamic reaction,
+      dynamic pollEnded,
+      dynamic scheduledNotePosted,
+      dynamic scheduledNotePostFailed,
+      dynamic receiveFollowRequest,
+      dynamic followRequestAccepted,
+      dynamic roleAssigned,
+      dynamic chatRoomInvitationReceived,
+      dynamic achievementEarned,
+      dynamic app,
+      dynamic test});
 }
 
 /// @nodoc
@@ -167,71 +167,71 @@ class _$AdminShowUserNotificationRecieveConfigCopyWithImpl<$Res>
       note: freezed == note
           ? _self.note
           : note // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       follow: freezed == follow
           ? _self.follow
           : follow // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       mention: freezed == mention
           ? _self.mention
           : mention // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       reply: freezed == reply
           ? _self.reply
           : reply // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       renote: freezed == renote
           ? _self.renote
           : renote // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       quote: freezed == quote
           ? _self.quote
           : quote // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       reaction: freezed == reaction
           ? _self.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       pollEnded: freezed == pollEnded
           ? _self.pollEnded
           : pollEnded // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       scheduledNotePosted: freezed == scheduledNotePosted
           ? _self.scheduledNotePosted
           : scheduledNotePosted // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       scheduledNotePostFailed: freezed == scheduledNotePostFailed
           ? _self.scheduledNotePostFailed
           : scheduledNotePostFailed // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       receiveFollowRequest: freezed == receiveFollowRequest
           ? _self.receiveFollowRequest
           : receiveFollowRequest // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       followRequestAccepted: freezed == followRequestAccepted
           ? _self.followRequestAccepted
           : followRequestAccepted // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       roleAssigned: freezed == roleAssigned
           ? _self.roleAssigned
           : roleAssigned // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       chatRoomInvitationReceived: freezed == chatRoomInvitationReceived
           ? _self.chatRoomInvitationReceived
           : chatRoomInvitationReceived // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       achievementEarned: freezed == achievementEarned
           ? _self.achievementEarned
           : achievementEarned // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       app: freezed == app
           ? _self.app
           : app // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       test: freezed == test
           ? _self.test
           : test // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }
@@ -263,39 +263,39 @@ class _AdminShowUserNotificationRecieveConfig
       _$AdminShowUserNotificationRecieveConfigFromJson(json);
 
   @override
-  final dynamic? note;
+  final dynamic note;
   @override
-  final dynamic? follow;
+  final dynamic follow;
   @override
-  final dynamic? mention;
+  final dynamic mention;
   @override
-  final dynamic? reply;
+  final dynamic reply;
   @override
-  final dynamic? renote;
+  final dynamic renote;
   @override
-  final dynamic? quote;
+  final dynamic quote;
   @override
-  final dynamic? reaction;
+  final dynamic reaction;
   @override
-  final dynamic? pollEnded;
+  final dynamic pollEnded;
   @override
-  final dynamic? scheduledNotePosted;
+  final dynamic scheduledNotePosted;
   @override
-  final dynamic? scheduledNotePostFailed;
+  final dynamic scheduledNotePostFailed;
   @override
-  final dynamic? receiveFollowRequest;
+  final dynamic receiveFollowRequest;
   @override
-  final dynamic? followRequestAccepted;
+  final dynamic followRequestAccepted;
   @override
-  final dynamic? roleAssigned;
+  final dynamic roleAssigned;
   @override
-  final dynamic? chatRoomInvitationReceived;
+  final dynamic chatRoomInvitationReceived;
   @override
-  final dynamic? achievementEarned;
+  final dynamic achievementEarned;
   @override
-  final dynamic? app;
+  final dynamic app;
   @override
-  final dynamic? test;
+  final dynamic test;
 
   /// Create a copy of AdminShowUserNotificationRecieveConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -383,23 +383,23 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? note,
-      dynamic? follow,
-      dynamic? mention,
-      dynamic? reply,
-      dynamic? renote,
-      dynamic? quote,
-      dynamic? reaction,
-      dynamic? pollEnded,
-      dynamic? scheduledNotePosted,
-      dynamic? scheduledNotePostFailed,
-      dynamic? receiveFollowRequest,
-      dynamic? followRequestAccepted,
-      dynamic? roleAssigned,
-      dynamic? chatRoomInvitationReceived,
-      dynamic? achievementEarned,
-      dynamic? app,
-      dynamic? test});
+      {dynamic note,
+      dynamic follow,
+      dynamic mention,
+      dynamic reply,
+      dynamic renote,
+      dynamic quote,
+      dynamic reaction,
+      dynamic pollEnded,
+      dynamic scheduledNotePosted,
+      dynamic scheduledNotePostFailed,
+      dynamic receiveFollowRequest,
+      dynamic followRequestAccepted,
+      dynamic roleAssigned,
+      dynamic chatRoomInvitationReceived,
+      dynamic achievementEarned,
+      dynamic app,
+      dynamic test});
 }
 
 /// @nodoc
@@ -437,71 +437,71 @@ class __$AdminShowUserNotificationRecieveConfigCopyWithImpl<$Res>
       note: freezed == note
           ? _self.note
           : note // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       follow: freezed == follow
           ? _self.follow
           : follow // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       mention: freezed == mention
           ? _self.mention
           : mention // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       reply: freezed == reply
           ? _self.reply
           : reply // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       renote: freezed == renote
           ? _self.renote
           : renote // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       quote: freezed == quote
           ? _self.quote
           : quote // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       reaction: freezed == reaction
           ? _self.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       pollEnded: freezed == pollEnded
           ? _self.pollEnded
           : pollEnded // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       scheduledNotePosted: freezed == scheduledNotePosted
           ? _self.scheduledNotePosted
           : scheduledNotePosted // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       scheduledNotePostFailed: freezed == scheduledNotePostFailed
           ? _self.scheduledNotePostFailed
           : scheduledNotePostFailed // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       receiveFollowRequest: freezed == receiveFollowRequest
           ? _self.receiveFollowRequest
           : receiveFollowRequest // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       followRequestAccepted: freezed == followRequestAccepted
           ? _self.followRequestAccepted
           : followRequestAccepted // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       roleAssigned: freezed == roleAssigned
           ? _self.roleAssigned
           : roleAssigned // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       chatRoomInvitationReceived: freezed == chatRoomInvitationReceived
           ? _self.chatRoomInvitationReceived
           : chatRoomInvitationReceived // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       achievementEarned: freezed == achievementEarned
           ? _self.achievementEarned
           : achievementEarned // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       app: freezed == app
           ? _self.app
           : app // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       test: freezed == test
           ? _self.test
           : test // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }

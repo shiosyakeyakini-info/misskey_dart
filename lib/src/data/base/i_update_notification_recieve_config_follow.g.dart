@@ -10,8 +10,9 @@ _IUpdateNotificationRecieveConfigFollow
     _$IUpdateNotificationRecieveConfigFollowFromJson(
             Map<String, dynamic> json) =>
         _IUpdateNotificationRecieveConfigFollow(
-          type: $enumDecode(_$IUpdateNotificationRecieveConfigFollowTypeEnumMap,
-              json['type']),
+          type: $enumDecode(
+              _$IUpdateNotificationRecieveConfigFollowTypeEnumMap, json['type'],
+              unknownValue: IUpdateNotificationRecieveConfigFollowType.unknown),
           userListId: json['userListId'] as String,
         );
 

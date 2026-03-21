@@ -9,8 +9,9 @@ part of 'admin_captcha_current_response.dart';
 _AdminCaptchaCurrentResponse _$AdminCaptchaCurrentResponseFromJson(
         Map<String, dynamic> json) =>
     _AdminCaptchaCurrentResponse(
-      provider:
-          $enumDecode(_$AdminCaptchaCurrentProviderEnumMap, json['provider']),
+      provider: $enumDecode(
+          _$AdminCaptchaCurrentProviderEnumMap, json['provider'],
+          unknownValue: AdminCaptchaCurrentProvider.unknown),
       hcaptcha: AdminCaptchaCurrentHcaptcha.fromJson(
           json['hcaptcha'] as Map<String, dynamic>),
       mcaptcha: AdminCaptchaCurrentMcaptcha.fromJson(

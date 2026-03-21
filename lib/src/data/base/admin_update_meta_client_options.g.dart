@@ -11,7 +11,8 @@ _AdminUpdateMetaClientOptions _$AdminUpdateMetaClientOptionsFromJson(
     _AdminUpdateMetaClientOptions(
       entrancePageStyle: $enumDecodeNullable(
           _$AdminUpdateMetaClientOptionsEntrancePageStyleEnumMap,
-          json['entrancePageStyle']),
+          json['entrancePageStyle'],
+          unknownValue: AdminUpdateMetaClientOptionsEntrancePageStyle.unknown),
       showTimelineForVisitor: json['showTimelineForVisitor'] as bool?,
       showActivitiesForVisitor: json['showActivitiesForVisitor'] as bool?,
     );

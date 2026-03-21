@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigAchievementEarned {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.unknown)
   MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType get type;
   String get userListId;
 
@@ -64,7 +67,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigAchievementEarnedCo
       _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type,
       String userListId});
 }
 
@@ -107,12 +114,20 @@ class _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedCopyWithImpl<
 class _MeDetailedOnlyNotificationRecieveConfigAchievementEarned
     implements MeDetailedOnlyNotificationRecieveConfigAchievementEarned {
   const _MeDetailedOnlyNotificationRecieveConfigAchievementEarned(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigAchievementEarned.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type;
   @override
   final String userListId;
@@ -172,7 +187,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedC
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type,
       String userListId});
 }
 

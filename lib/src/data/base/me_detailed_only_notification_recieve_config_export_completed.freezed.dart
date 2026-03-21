@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigExportCompleted {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown)
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType get type;
   String get userListId;
 
@@ -63,7 +66,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigExportCompletedCopy
       _$MeDetailedOnlyNotificationRecieveConfigExportCompletedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigExportCompletedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
       String userListId});
 }
 
@@ -104,12 +111,20 @@ class _$MeDetailedOnlyNotificationRecieveConfigExportCompletedCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigExportCompleted
     implements MeDetailedOnlyNotificationRecieveConfigExportCompleted {
   const _MeDetailedOnlyNotificationRecieveConfigExportCompleted(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigExportCompletedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigExportCompleted.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigExportCompletedType type;
   @override
   final String userListId;
@@ -166,7 +181,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigExportCompletedCop
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigExportCompletedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
       String userListId});
 }
 

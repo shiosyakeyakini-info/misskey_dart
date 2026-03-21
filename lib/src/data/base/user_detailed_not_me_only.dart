@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
-import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'user_detailed_not_me_only.freezed.dart';
 part 'user_detailed_not_me_only.g.dart';
@@ -35,8 +33,8 @@ abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
     String? pinnedPageId,
     Page? pinnedPage,
     required bool publicReactions,
-    required FFVisibility followingVisibility,
-    required FFVisibility followersVisibility,
+    @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followingVisibility,
+    @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followersVisibility,
     required ChatScope chatScope,
     required bool canChat,
     required List<RoleLite> roles,

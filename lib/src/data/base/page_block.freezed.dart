@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PageBlock {
   String get id;
+  @JsonKey(unknownEnumValue: PageBlockType.unknown)
   PageBlockType get type;
   bool get detailed;
   String? get note;
@@ -57,7 +58,11 @@ abstract mixin class $PageBlockCopyWith<$Res> {
   factory $PageBlockCopyWith(PageBlock value, $Res Function(PageBlock) _then) =
       _$PageBlockCopyWithImpl;
   @useResult
-  $Res call({String id, PageBlockType type, bool detailed, String? note});
+  $Res call(
+      {String id,
+      @JsonKey(unknownEnumValue: PageBlockType.unknown) PageBlockType type,
+      bool detailed,
+      String? note});
 }
 
 /// @nodoc
@@ -103,7 +108,7 @@ class _$PageBlockCopyWithImpl<$Res> implements $PageBlockCopyWith<$Res> {
 class _PageBlock implements PageBlock {
   const _PageBlock(
       {required this.id,
-      required this.type,
+      @JsonKey(unknownEnumValue: PageBlockType.unknown) required this.type,
       required this.detailed,
       this.note});
   factory _PageBlock.fromJson(Map<String, dynamic> json) =>
@@ -112,6 +117,7 @@ class _PageBlock implements PageBlock {
   @override
   final String id;
   @override
+  @JsonKey(unknownEnumValue: PageBlockType.unknown)
   final PageBlockType type;
   @override
   final bool detailed;
@@ -163,7 +169,11 @@ abstract mixin class _$PageBlockCopyWith<$Res>
       __$PageBlockCopyWithImpl;
   @override
   @useResult
-  $Res call({String id, PageBlockType type, bool detailed, String? note});
+  $Res call(
+      {String id,
+      @JsonKey(unknownEnumValue: PageBlockType.unknown) PageBlockType type,
+      bool detailed,
+      String? note});
 }
 
 /// @nodoc

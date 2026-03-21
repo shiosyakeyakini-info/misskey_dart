@@ -12,7 +12,9 @@ _AdminShowUserNotificationRecieveConfigFollow
         _AdminShowUserNotificationRecieveConfigFollow(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigFollowTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigFollowType.unknown),
           userListId: json['userListId'] as String,
         );
 

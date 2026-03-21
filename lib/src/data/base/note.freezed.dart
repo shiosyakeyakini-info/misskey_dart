@@ -41,6 +41,7 @@ mixin _$Note {
   String? get channelId;
   NoteChannelInfo? get channel;
   bool? get localOnly;
+  @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
   ReactionAcceptance? get reactionAcceptance;
   @EmojisConverter()
   Map<String, String> get reactionEmojis;
@@ -199,6 +200,7 @@ abstract mixin class $NoteCopyWith<$Res> {
       String? channelId,
       NoteChannelInfo? channel,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       ReactionAcceptance? reactionAcceptance,
       @EmojisConverter() Map<String, String> reactionEmojis,
       Map<String, dynamic> reactions,
@@ -505,6 +507,7 @@ class _Note implements Note {
       this.channelId,
       this.channel,
       this.localOnly,
+      @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       this.reactionAcceptance,
       @EmojisConverter() required final Map<String, String> reactionEmojis,
       required final Map<String, dynamic> reactions,
@@ -627,6 +630,7 @@ class _Note implements Note {
   @override
   final bool? localOnly;
   @override
+  @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
   final ReactionAcceptance? reactionAcceptance;
   final Map<String, String> _reactionEmojis;
   @override
@@ -825,6 +829,7 @@ abstract mixin class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       String? channelId,
       NoteChannelInfo? channel,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       ReactionAcceptance? reactionAcceptance,
       @EmojisConverter() Map<String, String> reactionEmojis,
       Map<String, dynamic> reactions,

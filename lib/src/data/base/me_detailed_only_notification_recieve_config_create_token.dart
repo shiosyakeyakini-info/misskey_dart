@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_create_token.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigCreateToken with _$MeDetailedOnlyNotificationRecieveConfigCreateToken {
   const factory MeDetailedOnlyNotificationRecieveConfigCreateToken({
-    required MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown) required MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigCreateToken;
 

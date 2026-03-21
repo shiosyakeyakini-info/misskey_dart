@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_note.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigNote with _$AdminShowUserNotificationRecieveConfigNote {
   const factory AdminShowUserNotificationRecieveConfigNote({
-    required AdminShowUserNotificationRecieveConfigNoteType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigNoteType.unknown) required AdminShowUserNotificationRecieveConfigNoteType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigNote;
 

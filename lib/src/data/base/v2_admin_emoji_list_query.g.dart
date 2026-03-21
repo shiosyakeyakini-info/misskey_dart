@@ -23,7 +23,8 @@ _V2AdminEmojiListQuery _$V2AdminEmojiListQueryFromJson(
       isSensitive: json['isSensitive'] as bool?,
       localOnly: json['localOnly'] as bool?,
       hostType: $enumDecodeNullable(
-              _$V2AdminEmojiListQueryHostTypeEnumMap, json['hostType']) ??
+              _$V2AdminEmojiListQueryHostTypeEnumMap, json['hostType'],
+              unknownValue: V2AdminEmojiListQueryHostType.unknown) ??
           V2AdminEmojiListQueryHostType.all,
       roleIds:
           (json['roleIds'] as List<dynamic>?)?.map((e) => e as String).toList(),

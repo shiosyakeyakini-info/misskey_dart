@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/mute_words_converter.dart';
 
 part 'me_detailed_only.freezed.dart';
 part 'me_detailed_only.g.dart';

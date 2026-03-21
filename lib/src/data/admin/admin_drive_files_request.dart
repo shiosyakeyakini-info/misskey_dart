@@ -14,7 +14,7 @@ abstract class AdminDriveFilesRequest with _$AdminDriveFilesRequest {
     int? untilDate,
     String? userId,
     String? type,
-    @Default(AdminDriveFilesOrigin.local) AdminDriveFilesOrigin? origin,
+    @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown) @Default(AdminDriveFilesOrigin.local) AdminDriveFilesOrigin? origin,
     @Default(null) String? hostname,
   }) = _AdminDriveFilesRequest;
 

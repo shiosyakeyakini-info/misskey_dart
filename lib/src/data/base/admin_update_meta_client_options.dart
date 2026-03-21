@@ -7,7 +7,7 @@ part 'admin_update_meta_client_options.g.dart';
 @freezed
 abstract class AdminUpdateMetaClientOptions with _$AdminUpdateMetaClientOptions {
   const factory AdminUpdateMetaClientOptions({
-    AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle,
+    @JsonKey(unknownEnumValue: AdminUpdateMetaClientOptionsEntrancePageStyle.unknown) AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle,
     bool? showTimelineForVisitor,
     bool? showActivitiesForVisitor,
   }) = _AdminUpdateMetaClientOptions;

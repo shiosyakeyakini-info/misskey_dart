@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigFollowRequestAccepted {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType
+              .unknown)
   AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType get type;
   String get userListId;
 
@@ -66,7 +70,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigFollowRequestAccepte
       _$AdminShowUserNotificationRecieveConfigFollowRequestAcceptedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType type,
       String userListId});
 }
 
@@ -109,13 +117,22 @@ class _$AdminShowUserNotificationRecieveConfigFollowRequestAcceptedCopyWithImpl<
 class _AdminShowUserNotificationRecieveConfigFollowRequestAccepted
     implements AdminShowUserNotificationRecieveConfigFollowRequestAccepted {
   const _AdminShowUserNotificationRecieveConfigFollowRequestAccepted(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigFollowRequestAccepted.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigFollowRequestAcceptedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType
+              .unknown)
   final AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType type;
   @override
   final String userListId;
@@ -175,7 +192,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigFollowRequestAccept
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigFollowRequestAcceptedType type,
       String userListId});
 }
 

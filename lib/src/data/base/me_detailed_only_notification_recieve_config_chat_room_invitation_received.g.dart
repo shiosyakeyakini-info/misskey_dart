@@ -12,7 +12,10 @@ _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived
         _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

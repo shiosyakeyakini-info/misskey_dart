@@ -19,6 +19,7 @@ mixin _$Role {
   DateTime get createdAt;
   @DateTimeConverter()
   DateTime get updatedAt;
+  @JsonKey(unknownEnumValue: RoleTarget.unknown)
   RoleTarget get target;
   RoleCondFormulaValue get condFormula;
   bool get isPublic;
@@ -98,7 +99,7 @@ abstract mixin class $RoleCopyWith<$Res> {
   $Res call(
       {@DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
-      RoleTarget target,
+      @JsonKey(unknownEnumValue: RoleTarget.unknown) RoleTarget target,
       RoleCondFormulaValue condFormula,
       bool isPublic,
       bool isExplorable,
@@ -200,7 +201,7 @@ class _Role implements Role {
   const _Role(
       {@DateTimeConverter() required this.createdAt,
       @DateTimeConverter() required this.updatedAt,
-      required this.target,
+      @JsonKey(unknownEnumValue: RoleTarget.unknown) required this.target,
       required this.condFormula,
       required this.isPublic,
       required this.isExplorable,
@@ -219,6 +220,7 @@ class _Role implements Role {
   @DateTimeConverter()
   final DateTime updatedAt;
   @override
+  @JsonKey(unknownEnumValue: RoleTarget.unknown)
   final RoleTarget target;
   @override
   final RoleCondFormulaValue condFormula;
@@ -318,7 +320,7 @@ abstract mixin class _$RoleCopyWith<$Res> implements $RoleCopyWith<$Res> {
   $Res call(
       {@DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime updatedAt,
-      RoleTarget target,
+      @JsonKey(unknownEnumValue: RoleTarget.unknown) RoleTarget target,
       RoleCondFormulaValue condFormula,
       bool isPublic,
       bool isExplorable,

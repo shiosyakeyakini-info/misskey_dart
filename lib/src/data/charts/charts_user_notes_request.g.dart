@@ -9,7 +9,8 @@ part of 'charts_user_notes_request.dart';
 _ChartsUserNotesRequest _$ChartsUserNotesRequestFromJson(
         Map<String, dynamic> json) =>
     _ChartsUserNotesRequest(
-      span: $enumDecodeNullable(_$ChartsUserNotesSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsUserNotesSpanEnumMap, json['span'],
+          unknownValue: ChartsUserNotesSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
       userId: json['userId'] as String?,

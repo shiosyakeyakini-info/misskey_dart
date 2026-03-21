@@ -12,7 +12,9 @@ _IUpdateNotificationRecieveConfigRoleAssigned
         _IUpdateNotificationRecieveConfigRoleAssigned(
           type: $enumDecode(
               _$IUpdateNotificationRecieveConfigRoleAssignedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  IUpdateNotificationRecieveConfigRoleAssignedType.unknown),
           userListId: json['userListId'] as String,
         );
 

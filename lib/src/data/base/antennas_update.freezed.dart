@@ -17,6 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$AntennasUpdate {
   String get antennaId;
   String? get name;
+  @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
   AntennasUpdateSrc? get src;
   String? get userListId;
   List<dynamic>? get keywords;
@@ -104,6 +105,7 @@ abstract mixin class $AntennasUpdateCopyWith<$Res> {
   $Res call(
       {String antennaId,
       String? name,
+      @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
       AntennasUpdateSrc? src,
       String? userListId,
       List<dynamic>? keywords,
@@ -207,7 +209,7 @@ class _AntennasUpdate implements AntennasUpdate {
   const _AntennasUpdate(
       {required this.antennaId,
       this.name,
-      this.src,
+      @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown) this.src,
       this.userListId,
       final List<dynamic>? keywords,
       final List<dynamic>? excludeKeywords,
@@ -229,6 +231,7 @@ class _AntennasUpdate implements AntennasUpdate {
   @override
   final String? name;
   @override
+  @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
   final AntennasUpdateSrc? src;
   @override
   final String? userListId;
@@ -356,6 +359,7 @@ abstract mixin class _$AntennasUpdateCopyWith<$Res>
   $Res call(
       {String antennaId,
       String? name,
+      @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
       AntennasUpdateSrc? src,
       String? userListId,
       List<dynamic>? keywords,

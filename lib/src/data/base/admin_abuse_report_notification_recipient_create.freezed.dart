@@ -17,6 +17,9 @@ T _$identity<T>(T value) => value;
 mixin _$AdminAbuseReportNotificationRecipientCreate {
   bool get isActive;
   String get name;
+  @JsonKey(
+      unknownEnumValue:
+          AdminAbuseReportNotificationRecipientCreateMethod.unknown)
   AdminAbuseReportNotificationRecipientCreateMethod get method;
   String? get userId;
   String? get systemWebhookId;
@@ -70,6 +73,9 @@ abstract mixin class $AdminAbuseReportNotificationRecipientCreateCopyWith<
   $Res call(
       {bool isActive,
       String name,
+      @JsonKey(
+          unknownEnumValue:
+              AdminAbuseReportNotificationRecipientCreateMethod.unknown)
       AdminAbuseReportNotificationRecipientCreateMethod method,
       String? userId,
       String? systemWebhookId});
@@ -127,6 +133,9 @@ class _AdminAbuseReportNotificationRecipientCreate
   const _AdminAbuseReportNotificationRecipientCreate(
       {required this.isActive,
       required this.name,
+      @JsonKey(
+          unknownEnumValue:
+              AdminAbuseReportNotificationRecipientCreateMethod.unknown)
       required this.method,
       this.userId,
       this.systemWebhookId});
@@ -139,6 +148,9 @@ class _AdminAbuseReportNotificationRecipientCreate
   @override
   final String name;
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminAbuseReportNotificationRecipientCreateMethod.unknown)
   final AdminAbuseReportNotificationRecipientCreateMethod method;
   @override
   final String? userId;
@@ -200,6 +212,9 @@ abstract mixin class _$AdminAbuseReportNotificationRecipientCreateCopyWith<$Res>
   $Res call(
       {bool isActive,
       String name,
+      @JsonKey(
+          unknownEnumValue:
+              AdminAbuseReportNotificationRecipientCreateMethod.unknown)
       AdminAbuseReportNotificationRecipientCreateMethod method,
       String? userId,
       String? systemWebhookId});

@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_scheduled_note_post_failed.g.d
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigScheduledNotePostFailed with _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailed {
   const factory AdminShowUserNotificationRecieveConfigScheduledNotePostFailed({
-    required AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.unknown) required AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed;
 

@@ -9,7 +9,8 @@ part of 'admin_queue_promote_jobs.dart';
 _AdminQueuePromoteJobs _$AdminQueuePromoteJobsFromJson(
         Map<String, dynamic> json) =>
     _AdminQueuePromoteJobs(
-      queue: $enumDecode(_$AdminQueuePromoteJobsQueueEnumMap, json['queue']),
+      queue: $enumDecode(_$AdminQueuePromoteJobsQueueEnumMap, json['queue'],
+          unknownValue: AdminQueuePromoteJobsQueue.unknown),
     );
 
 Map<String, dynamic> _$AdminQueuePromoteJobsToJson(

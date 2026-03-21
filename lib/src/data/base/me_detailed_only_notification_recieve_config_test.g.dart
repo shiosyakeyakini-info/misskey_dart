@@ -12,7 +12,9 @@ _MeDetailedOnlyNotificationRecieveConfigTest
         _MeDetailedOnlyNotificationRecieveConfigTest(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigTestTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigTestType.unknown),
           userListId: json['userListId'] as String,
         );
 

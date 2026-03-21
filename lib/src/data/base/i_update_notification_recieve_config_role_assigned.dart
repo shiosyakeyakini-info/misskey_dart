@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_role_assigned.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigRoleAssigned with _$IUpdateNotificationRecieveConfigRoleAssigned {
   const factory IUpdateNotificationRecieveConfigRoleAssigned({
-    required IUpdateNotificationRecieveConfigRoleAssignedType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigRoleAssignedType.unknown) required IUpdateNotificationRecieveConfigRoleAssignedType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigRoleAssigned;
 

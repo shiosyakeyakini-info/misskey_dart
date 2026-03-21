@@ -17,8 +17,11 @@ T _$identity<T>(T value) => value;
 mixin _$AdminShowUsersRequest {
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown)
   AdminShowUsersSort? get sort;
+  @JsonKey(unknownEnumValue: AdminShowUsersState.unknown)
   AdminShowUsersState? get state;
+  @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown)
   AdminShowUsersOrigin? get origin;
   String? get username;
   String? get hostname;
@@ -70,8 +73,11 @@ abstract mixin class $AdminShowUsersRequestCopyWith<$Res> {
   $Res call(
       {int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown)
       AdminShowUsersSort? sort,
+      @JsonKey(unknownEnumValue: AdminShowUsersState.unknown)
       AdminShowUsersState? state,
+      @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown)
       AdminShowUsersOrigin? origin,
       String? username,
       String? hostname});
@@ -137,8 +143,10 @@ class _AdminShowUsersRequest implements AdminShowUsersRequest {
   const _AdminShowUsersRequest(
       {this.limit = 10,
       this.offset = 0,
-      this.sort,
+      @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown) this.sort,
+      @JsonKey(unknownEnumValue: AdminShowUsersState.unknown)
       this.state = AdminShowUsersState.all,
+      @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown)
       this.origin = AdminShowUsersOrigin.combined,
       this.username = null,
       this.hostname = null});
@@ -152,12 +160,13 @@ class _AdminShowUsersRequest implements AdminShowUsersRequest {
   @JsonKey()
   final int? offset;
   @override
+  @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown)
   final AdminShowUsersSort? sort;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminShowUsersState.unknown)
   final AdminShowUsersState? state;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown)
   final AdminShowUsersOrigin? origin;
   @override
   @JsonKey()
@@ -220,8 +229,11 @@ abstract mixin class _$AdminShowUsersRequestCopyWith<$Res>
   $Res call(
       {int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown)
       AdminShowUsersSort? sort,
+      @JsonKey(unknownEnumValue: AdminShowUsersState.unknown)
       AdminShowUsersState? state,
+      @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown)
       AdminShowUsersOrigin? origin,
       String? username,
       String? hostname});

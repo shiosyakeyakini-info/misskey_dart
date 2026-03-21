@@ -9,7 +9,7 @@ abstract class IAuthorizedAppsRequest with _$IAuthorizedAppsRequest {
   const factory IAuthorizedAppsRequest({
     @Default(10) int? limit,
     @Default(0) int? offset,
-    @Default(IAuthorizedAppsSort.desc) IAuthorizedAppsSort? sort,
+    @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) @Default(IAuthorizedAppsSort.desc) IAuthorizedAppsSort? sort,
   }) = _IAuthorizedAppsRequest;
 
   factory IAuthorizedAppsRequest.fromJson(Map<String, Object?> json) => _$IAuthorizedAppsRequestFromJson(json);

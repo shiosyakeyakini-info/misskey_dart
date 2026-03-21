@@ -8,7 +8,8 @@ part of 'i_claim_achievement.dart';
 
 _IClaimAchievement _$IClaimAchievementFromJson(Map<String, dynamic> json) =>
     _IClaimAchievement(
-      name: $enumDecode(_$IClaimAchievementNameEnumMap, json['name']),
+      name: $enumDecode(_$IClaimAchievementNameEnumMap, json['name'],
+          unknownValue: IClaimAchievementName.unknown),
     );
 
 Map<String, dynamic> _$IClaimAchievementToJson(_IClaimAchievement instance) =>

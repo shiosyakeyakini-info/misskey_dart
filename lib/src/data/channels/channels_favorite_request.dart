@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_favorite_request.freezed.dart';
 part 'channels_favorite_request.g.dart';

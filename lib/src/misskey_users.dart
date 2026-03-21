@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyUsers {
   final MisskeyUsersGallery gallery;
@@ -8,7 +7,7 @@ class MisskeyUsers {
   final ApiService _apiService;
 
   MisskeyUsers({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         gallery = MisskeyUsersGallery(apiService: apiService),
         lists = MisskeyUsersLists(apiService: apiService);
 
@@ -113,8 +112,9 @@ class MisskeyUsers {
   }
 
   /// users/show
-  Future<void> show(UsersShowRequest request) async {
-    await _apiService.post<void>("users/show", request.toJson());
+  Future<UserDetailed> show(UsersShowRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("users/show", request.toJson());
+    return UserDetailed.fromJson(response);
   }
 
   /// users/update-memo

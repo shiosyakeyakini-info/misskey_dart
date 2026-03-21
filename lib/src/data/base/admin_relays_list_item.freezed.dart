@@ -18,6 +18,7 @@ mixin _$AdminRelaysListItem {
   String get id;
   @UriConverter()
   Uri get inbox;
+  @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown)
   AdminRelaysListStatus get status;
 
   /// Create a copy of AdminRelaysListItem
@@ -58,7 +59,10 @@ abstract mixin class $AdminRelaysListItemCopyWith<$Res> {
       _$AdminRelaysListItemCopyWithImpl;
   @useResult
   $Res call(
-      {String id, @UriConverter() Uri inbox, AdminRelaysListStatus status});
+      {String id,
+      @UriConverter() Uri inbox,
+      @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown)
+      AdminRelaysListStatus status});
 }
 
 /// @nodoc
@@ -101,6 +105,7 @@ class _AdminRelaysListItem implements AdminRelaysListItem {
   const _AdminRelaysListItem(
       {required this.id,
       @UriConverter() required this.inbox,
+      @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown)
       this.status = AdminRelaysListStatus.requesting});
   factory _AdminRelaysListItem.fromJson(Map<String, dynamic> json) =>
       _$AdminRelaysListItemFromJson(json);
@@ -111,7 +116,7 @@ class _AdminRelaysListItem implements AdminRelaysListItem {
   @UriConverter()
   final Uri inbox;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown)
   final AdminRelaysListStatus status;
 
   /// Create a copy of AdminRelaysListItem
@@ -159,7 +164,10 @@ abstract mixin class _$AdminRelaysListItemCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id, @UriConverter() Uri inbox, AdminRelaysListStatus status});
+      {String id,
+      @UriConverter() Uri inbox,
+      @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown)
+      AdminRelaysListStatus status});
 }
 
 /// @nodoc

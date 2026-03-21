@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueRemoveJobRequest {
+  @JsonKey(unknownEnumValue: AdminQueueRemoveJobQueue.unknown)
   AdminQueueRemoveJobQueue? get queue;
   String? get jobId;
 
@@ -55,7 +56,10 @@ abstract mixin class $AdminQueueRemoveJobRequestCopyWith<$Res> {
           $Res Function(AdminQueueRemoveJobRequest) _then) =
       _$AdminQueueRemoveJobRequestCopyWithImpl;
   @useResult
-  $Res call({AdminQueueRemoveJobQueue? queue, String? jobId});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueRemoveJobQueue.unknown)
+      AdminQueueRemoveJobQueue? queue,
+      String? jobId});
 }
 
 /// @nodoc
@@ -90,11 +94,14 @@ class _$AdminQueueRemoveJobRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminQueueRemoveJobRequest implements AdminQueueRemoveJobRequest {
-  const _AdminQueueRemoveJobRequest({this.queue, this.jobId});
+  const _AdminQueueRemoveJobRequest(
+      {@JsonKey(unknownEnumValue: AdminQueueRemoveJobQueue.unknown) this.queue,
+      this.jobId});
   factory _AdminQueueRemoveJobRequest.fromJson(Map<String, dynamic> json) =>
       _$AdminQueueRemoveJobRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueRemoveJobQueue.unknown)
   final AdminQueueRemoveJobQueue? queue;
   @override
   final String? jobId;
@@ -143,7 +150,10 @@ abstract mixin class _$AdminQueueRemoveJobRequestCopyWith<$Res>
       __$AdminQueueRemoveJobRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({AdminQueueRemoveJobQueue? queue, String? jobId});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueRemoveJobQueue.unknown)
+      AdminQueueRemoveJobQueue? queue,
+      String? jobId});
 }
 
 /// @nodoc

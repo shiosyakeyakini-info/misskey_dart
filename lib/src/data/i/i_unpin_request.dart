@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_unpin_request.freezed.dart';
 part 'i_unpin_request.g.dart';

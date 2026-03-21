@@ -9,7 +9,7 @@ abstract class AntennasUpdate with _$AntennasUpdate {
   const factory AntennasUpdate({
     required String antennaId,
     String? name,
-    AntennasUpdateSrc? src,
+    @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown) AntennasUpdateSrc? src,
     String? userListId,
     List<dynamic>? keywords,
     List<dynamic>? excludeKeywords,

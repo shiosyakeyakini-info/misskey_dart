@@ -12,7 +12,7 @@ abstract class FlashUpdateRequest with _$FlashUpdateRequest {
     String? summary,
     String? script,
     List<String>? permissions,
-    FlashUpdateVisibility? visibility,
+    @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown) FlashUpdateVisibility? visibility,
   }) = _FlashUpdateRequest;
 
   factory FlashUpdateRequest.fromJson(Map<String, Object?> json) => _$FlashUpdateRequestFromJson(json);

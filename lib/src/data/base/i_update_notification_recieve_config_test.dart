@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_test.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigTest with _$IUpdateNotificationRecieveConfigTest {
   const factory IUpdateNotificationRecieveConfigTest({
-    required IUpdateNotificationRecieveConfigTestType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigTestType.unknown) required IUpdateNotificationRecieveConfigTestType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigTest;
 

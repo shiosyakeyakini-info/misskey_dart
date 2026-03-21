@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueJobs {
+  @JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown)
   AdminQueueJobsQueue get queue;
   List<AdminQueueJobsStateItem> get state;
   String? get search;
@@ -58,7 +59,8 @@ abstract mixin class $AdminQueueJobsCopyWith<$Res> {
       _$AdminQueueJobsCopyWithImpl;
   @useResult
   $Res call(
-      {AdminQueueJobsQueue queue,
+      {@JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown)
+      AdminQueueJobsQueue queue,
       List<AdminQueueJobsStateItem> state,
       String? search});
 }
@@ -101,7 +103,8 @@ class _$AdminQueueJobsCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminQueueJobs implements AdminQueueJobs {
   const _AdminQueueJobs(
-      {required this.queue,
+      {@JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown)
+      required this.queue,
       required final List<AdminQueueJobsStateItem> state,
       this.search})
       : _state = state;
@@ -109,6 +112,7 @@ class _AdminQueueJobs implements AdminQueueJobs {
       _$AdminQueueJobsFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown)
   final AdminQueueJobsQueue queue;
   final List<AdminQueueJobsStateItem> _state;
   @override
@@ -166,7 +170,8 @@ abstract mixin class _$AdminQueueJobsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminQueueJobsQueue queue,
+      {@JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown)
+      AdminQueueJobsQueue queue,
       List<AdminQueueJobsStateItem> state,
       String? search});
 }

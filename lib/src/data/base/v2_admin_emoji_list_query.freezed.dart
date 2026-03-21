@@ -28,6 +28,7 @@ mixin _$V2AdminEmojiListQuery {
   String? get license;
   bool? get isSensitive;
   bool? get localOnly;
+  @JsonKey(unknownEnumValue: V2AdminEmojiListQueryHostType.unknown)
   V2AdminEmojiListQueryHostType? get hostType;
   List<String>? get roleIds;
 
@@ -118,6 +119,7 @@ abstract mixin class $V2AdminEmojiListQueryCopyWith<$Res> {
       String? license,
       bool? isSensitive,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: V2AdminEmojiListQueryHostType.unknown)
       V2AdminEmojiListQueryHostType? hostType,
       List<String>? roleIds});
 }
@@ -233,6 +235,7 @@ class _V2AdminEmojiListQuery implements V2AdminEmojiListQuery {
       this.license,
       this.isSensitive,
       this.localOnly,
+      @JsonKey(unknownEnumValue: V2AdminEmojiListQueryHostType.unknown)
       this.hostType = V2AdminEmojiListQueryHostType.all,
       final List<String>? roleIds})
       : _roleIds = roleIds;
@@ -266,7 +269,7 @@ class _V2AdminEmojiListQuery implements V2AdminEmojiListQuery {
   @override
   final bool? localOnly;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: V2AdminEmojiListQueryHostType.unknown)
   final V2AdminEmojiListQueryHostType? hostType;
   final List<String>? _roleIds;
   @override
@@ -372,6 +375,7 @@ abstract mixin class _$V2AdminEmojiListQueryCopyWith<$Res>
       String? license,
       bool? isSensitive,
       bool? localOnly,
+      @JsonKey(unknownEnumValue: V2AdminEmojiListQueryHostType.unknown)
       V2AdminEmojiListQueryHostType? hostType,
       List<String>? roleIds});
 }

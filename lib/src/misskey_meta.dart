@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyMeta {
 
@@ -9,9 +8,9 @@ class MisskeyMeta {
       : _apiService = apiService;
 
   /// meta
-  Future<MetaResponse> meta(MetaRequest request) async {
+  Future<MetaLite> meta(MetaRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>("meta", request.toJson());
-    return MetaResponse.fromJson(response);
+    return MetaLite.fromJson(response);
   }
 
 }

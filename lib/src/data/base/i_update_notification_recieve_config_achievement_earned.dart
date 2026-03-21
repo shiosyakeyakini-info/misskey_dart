@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_achievement_earned.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigAchievementEarned with _$IUpdateNotificationRecieveConfigAchievementEarned {
   const factory IUpdateNotificationRecieveConfigAchievementEarned({
-    required IUpdateNotificationRecieveConfigAchievementEarnedType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigAchievementEarnedType.unknown) required IUpdateNotificationRecieveConfigAchievementEarnedType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigAchievementEarned;
 

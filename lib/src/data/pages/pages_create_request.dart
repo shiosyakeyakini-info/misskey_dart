@@ -14,7 +14,7 @@ abstract class PagesCreateRequest with _$PagesCreateRequest {
     List<dynamic>? variables,
     String? script,
     String? eyeCatchingImageId,
-    @Default(PagesCreateFont.sansSerif) PagesCreateFont? font,
+    @JsonKey(unknownEnumValue: PagesCreateFont.unknown) @Default(PagesCreateFont.sansSerif) PagesCreateFont? font,
     @Default(false) bool? alignCenter,
     @Default(false) bool? hideTitleWhenPinned,
   }) = _PagesCreateRequest;

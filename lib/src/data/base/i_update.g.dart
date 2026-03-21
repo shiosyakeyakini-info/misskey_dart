@@ -12,7 +12,8 @@ _IUpdate _$IUpdateFromJson(Map<String, dynamic> json) => _IUpdate(
       followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
       birthday: json['birthday'] as String?,
-      lang: $enumDecodeNullable(_$IUpdateLangEnumMap, json['lang']),
+      lang: $enumDecodeNullable(_$IUpdateLangEnumMap, json['lang'],
+          unknownValue: IUpdateLang.unknown),
       avatarId: json['avatarId'] as String?,
       avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
           ?.map((e) =>
@@ -41,11 +42,14 @@ _IUpdate _$IUpdateFromJson(Map<String, dynamic> json) => _IUpdate(
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
       autoSensitive: json['autoSensitive'] as bool?,
       followingVisibility: $enumDecodeNullable(
-          _$IUpdateFollowingVisibilityEnumMap, json['followingVisibility']),
+          _$IUpdateFollowingVisibilityEnumMap, json['followingVisibility'],
+          unknownValue: IUpdateFollowingVisibility.unknown),
       followersVisibility: $enumDecodeNullable(
-          _$IUpdateFollowersVisibilityEnumMap, json['followersVisibility']),
-      chatScope:
-          $enumDecodeNullable(_$IUpdateChatScopeEnumMap, json['chatScope']),
+          _$IUpdateFollowersVisibilityEnumMap, json['followersVisibility'],
+          unknownValue: IUpdateFollowersVisibility.unknown),
+      chatScope: $enumDecodeNullable(
+          _$IUpdateChatScopeEnumMap, json['chatScope'],
+          unknownValue: IUpdateChatScope.unknown),
       pinnedPageId: json['pinnedPageId'] as String?,
       mutedWords: json['mutedWords'] as List<dynamic>?,
       hardMutedWords: json['hardMutedWords'] as List<dynamic>?,

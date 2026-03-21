@@ -27,7 +27,8 @@ _AdminAbuseUserReportsItem _$AdminAbuseUserReportsItemFromJson(
               json['assignee'] as Map<String, dynamic>),
       forwarded: json['forwarded'] as bool,
       resolvedAs: $enumDecodeNullable(
-          _$AdminAbuseUserReportsResolvedAsEnumMap, json['resolvedAs']),
+          _$AdminAbuseUserReportsResolvedAsEnumMap, json['resolvedAs'],
+          unknownValue: AdminAbuseUserReportsResolvedAs.unknown),
       moderationNote: json['moderationNote'] as String,
     );
 

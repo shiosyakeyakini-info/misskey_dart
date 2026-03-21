@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigPollEnded {
+  @JsonKey(
+      unknownEnumValue: IUpdateNotificationRecieveConfigPollEndedType.unknown)
   IUpdateNotificationRecieveConfigPollEndedType get type;
   String get userListId;
 
@@ -59,7 +61,11 @@ abstract mixin class $IUpdateNotificationRecieveConfigPollEndedCopyWith<$Res> {
       _$IUpdateNotificationRecieveConfigPollEndedCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigPollEndedType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigPollEndedType.unknown)
+      IUpdateNotificationRecieveConfigPollEndedType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -97,12 +103,18 @@ class _$IUpdateNotificationRecieveConfigPollEndedCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigPollEnded
     implements IUpdateNotificationRecieveConfigPollEnded {
   const _IUpdateNotificationRecieveConfigPollEnded(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigPollEndedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigPollEnded.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigPollEndedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: IUpdateNotificationRecieveConfigPollEndedType.unknown)
   final IUpdateNotificationRecieveConfigPollEndedType type;
   @override
   final String userListId;
@@ -154,7 +166,11 @@ abstract mixin class _$IUpdateNotificationRecieveConfigPollEndedCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigPollEndedType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigPollEndedType.unknown)
+      IUpdateNotificationRecieveConfigPollEndedType type,
+      String userListId});
 }
 
 /// @nodoc

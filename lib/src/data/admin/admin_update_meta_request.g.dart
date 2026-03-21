@@ -70,10 +70,13 @@ _AdminUpdateMetaRequest _$AdminUpdateMetaRequestFromJson(
           json['googleAnalyticsMeasurementId'] as String?,
       sensitiveMediaDetection: $enumDecodeNullable(
           _$AdminUpdateMetaSensitiveMediaDetectionEnumMap,
-          json['sensitiveMediaDetection']),
+          json['sensitiveMediaDetection'],
+          unknownValue: AdminUpdateMetaSensitiveMediaDetection.unknown),
       sensitiveMediaDetectionSensitivity: $enumDecodeNullable(
           _$AdminUpdateMetaSensitiveMediaDetectionSensitivityEnumMap,
-          json['sensitiveMediaDetectionSensitivity']),
+          json['sensitiveMediaDetectionSensitivity'],
+          unknownValue:
+              AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown),
       setSensitiveFlagAutomatically:
           json['setSensitiveFlagAutomatically'] as bool?,
       enableSensitiveMediaDetectionForVideos:
@@ -168,7 +171,8 @@ _AdminUpdateMetaRequest _$AdminUpdateMetaRequestFromJson(
       urlPreviewUserAgent: json['urlPreviewUserAgent'] as String?,
       urlPreviewSummaryProxyUrl: json['urlPreviewSummaryProxyUrl'] as String?,
       federation: $enumDecodeNullable(
-          _$AdminUpdateMetaFederationEnumMap, json['federation']),
+          _$AdminUpdateMetaFederationEnumMap, json['federation'],
+          unknownValue: AdminUpdateMetaFederation.unknown),
       federationHosts: (json['federationHosts'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -180,7 +184,8 @@ _AdminUpdateMetaRequest _$AdminUpdateMetaRequestFromJson(
       singleUserMode: json['singleUserMode'] as bool?,
       ugcVisibilityForVisitor: $enumDecodeNullable(
           _$AdminUpdateMetaUgcVisibilityForVisitorEnumMap,
-          json['ugcVisibilityForVisitor']),
+          json['ugcVisibilityForVisitor'],
+          unknownValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown),
       proxyRemoteFiles: json['proxyRemoteFiles'] as bool?,
       signToActivityPubGet: json['signToActivityPubGet'] as bool?,
       allowExternalApRedirect: json['allowExternalApRedirect'] as bool?,

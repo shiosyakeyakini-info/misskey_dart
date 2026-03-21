@@ -10,7 +10,7 @@ abstract class UsersSearch with _$UsersSearch {
     required String query,
     @Default(0) int? offset,
     @Default(10) int? limit,
-    @Default(UsersSearchOrigin.combined) UsersSearchOrigin? origin,
+    @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) @Default(UsersSearchOrigin.combined) UsersSearchOrigin? origin,
     @Default(true) bool? detail,
   }) = _UsersSearch;
 

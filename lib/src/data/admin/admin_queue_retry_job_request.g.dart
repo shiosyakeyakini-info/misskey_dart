@@ -9,8 +9,9 @@ part of 'admin_queue_retry_job_request.dart';
 _AdminQueueRetryJobRequest _$AdminQueueRetryJobRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueRetryJobRequest(
-      queue:
-          $enumDecodeNullable(_$AdminQueueRetryJobQueueEnumMap, json['queue']),
+      queue: $enumDecodeNullable(
+          _$AdminQueueRetryJobQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueRetryJobQueue.unknown),
       jobId: json['jobId'] as String?,
     );
 

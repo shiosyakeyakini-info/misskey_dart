@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersRelationRequest {
-  dynamic? get userId;
+  dynamic get userId;
 
   /// Create a copy of UsersRelationRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $UsersRelationRequestCopyWith<$Res> {
           $Res Function(UsersRelationRequest) _then) =
       _$UsersRelationRequestCopyWithImpl;
   @useResult
-  $Res call({dynamic? userId});
+  $Res call({dynamic userId});
 }
 
 /// @nodoc
@@ -75,7 +75,7 @@ class _$UsersRelationRequestCopyWithImpl<$Res>
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }
@@ -88,7 +88,7 @@ class _UsersRelationRequest implements UsersRelationRequest {
       _$UsersRelationRequestFromJson(json);
 
   @override
-  final dynamic? userId;
+  final dynamic userId;
 
   /// Create a copy of UsersRelationRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$UsersRelationRequestCopyWith<$Res>
       __$UsersRelationRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({dynamic? userId});
+  $Res call({dynamic userId});
 }
 
 /// @nodoc
@@ -155,7 +155,7 @@ class __$UsersRelationRequestCopyWithImpl<$Res>
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }

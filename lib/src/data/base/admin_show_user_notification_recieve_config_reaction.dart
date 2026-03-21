@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_reaction.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigReaction with _$AdminShowUserNotificationRecieveConfigReaction {
   const factory AdminShowUserNotificationRecieveConfigReaction({
-    required AdminShowUserNotificationRecieveConfigReactionType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigReactionType.unknown) required AdminShowUserNotificationRecieveConfigReactionType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigReaction;
 

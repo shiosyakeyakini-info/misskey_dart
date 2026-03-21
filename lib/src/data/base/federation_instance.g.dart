@@ -19,7 +19,8 @@ _FederationInstance _$FederationInstanceFromJson(Map<String, dynamic> json) =>
       isNotResponding: json['isNotResponding'] as bool,
       isSuspended: json['isSuspended'] as bool,
       suspensionState: $enumDecode(
-          _$FederationSuspensionStateEnumMap, json['suspensionState']),
+          _$FederationSuspensionStateEnumMap, json['suspensionState'],
+          unknownValue: FederationSuspensionState.unknown),
       isBlocked: json['isBlocked'] as bool,
       softwareName: json['softwareName'] as String?,
       softwareVersion: json['softwareVersion'] as String?,

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_federation_update_instance_request.freezed.dart';
 part 'admin_federation_update_instance_request.g.dart';

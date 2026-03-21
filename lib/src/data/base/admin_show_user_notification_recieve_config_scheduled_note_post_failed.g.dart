@@ -12,7 +12,10 @@ _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed
         _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

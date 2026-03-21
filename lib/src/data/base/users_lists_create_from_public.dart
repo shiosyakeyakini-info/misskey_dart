@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_lists_create_from_public.freezed.dart';
 part 'users_lists_create_from_public.g.dart';

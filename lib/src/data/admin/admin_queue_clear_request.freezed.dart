@@ -15,7 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueClearRequest {
+  @JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
   AdminQueueClearQueue? get queue;
+  @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
   AdminQueueClearState? get state;
 
   /// Create a copy of AdminQueueClearRequest
@@ -54,7 +56,11 @@ abstract mixin class $AdminQueueClearRequestCopyWith<$Res> {
           $Res Function(AdminQueueClearRequest) _then) =
       _$AdminQueueClearRequestCopyWithImpl;
   @useResult
-  $Res call({AdminQueueClearQueue? queue, AdminQueueClearState? state});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
+      AdminQueueClearQueue? queue,
+      @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
+      AdminQueueClearState? state});
 }
 
 /// @nodoc
@@ -89,13 +95,17 @@ class _$AdminQueueClearRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminQueueClearRequest implements AdminQueueClearRequest {
-  const _AdminQueueClearRequest({this.queue, this.state});
+  const _AdminQueueClearRequest(
+      {@JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown) this.queue,
+      @JsonKey(unknownEnumValue: AdminQueueClearState.unknown) this.state});
   factory _AdminQueueClearRequest.fromJson(Map<String, dynamic> json) =>
       _$AdminQueueClearRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
   final AdminQueueClearQueue? queue;
   @override
+  @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
   final AdminQueueClearState? state;
 
   /// Create a copy of AdminQueueClearRequest
@@ -141,7 +151,11 @@ abstract mixin class _$AdminQueueClearRequestCopyWith<$Res>
       __$AdminQueueClearRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({AdminQueueClearQueue? queue, AdminQueueClearState? state});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
+      AdminQueueClearQueue? queue,
+      @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
+      AdminQueueClearState? state});
 }
 
 /// @nodoc

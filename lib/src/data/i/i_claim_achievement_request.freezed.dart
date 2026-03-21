@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IClaimAchievementRequest {
+  @JsonKey(unknownEnumValue: IClaimAchievementName.unknown)
   IClaimAchievementName? get name;
 
   /// Create a copy of IClaimAchievementRequest
@@ -52,7 +53,9 @@ abstract mixin class $IClaimAchievementRequestCopyWith<$Res> {
           $Res Function(IClaimAchievementRequest) _then) =
       _$IClaimAchievementRequestCopyWithImpl;
   @useResult
-  $Res call({IClaimAchievementName? name});
+  $Res call(
+      {@JsonKey(unknownEnumValue: IClaimAchievementName.unknown)
+      IClaimAchievementName? name});
 }
 
 /// @nodoc
@@ -82,11 +85,13 @@ class _$IClaimAchievementRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _IClaimAchievementRequest implements IClaimAchievementRequest {
-  const _IClaimAchievementRequest({this.name});
+  const _IClaimAchievementRequest(
+      {@JsonKey(unknownEnumValue: IClaimAchievementName.unknown) this.name});
   factory _IClaimAchievementRequest.fromJson(Map<String, dynamic> json) =>
       _$IClaimAchievementRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: IClaimAchievementName.unknown)
   final IClaimAchievementName? name;
 
   /// Create a copy of IClaimAchievementRequest
@@ -131,7 +136,9 @@ abstract mixin class _$IClaimAchievementRequestCopyWith<$Res>
       __$IClaimAchievementRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({IClaimAchievementName? name});
+  $Res call(
+      {@JsonKey(unknownEnumValue: IClaimAchievementName.unknown)
+      IClaimAchievementName? name});
 }
 
 /// @nodoc

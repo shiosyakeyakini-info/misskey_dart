@@ -16,9 +16,11 @@ _AdminAnnouncementsListItem _$AdminAnnouncementsListItemFromJson(
           json['updatedAt'], const NullableDateTimeConverter().fromJson),
       text: json['text'] as String,
       title: json['title'] as String,
-      icon: $enumDecode(_$AdminAnnouncementsListIconEnumMap, json['icon']),
-      display:
-          $enumDecode(_$AdminAnnouncementsListDisplayEnumMap, json['display']),
+      icon: $enumDecode(_$AdminAnnouncementsListIconEnumMap, json['icon'],
+          unknownValue: AdminAnnouncementsListIcon.unknown),
+      display: $enumDecode(
+          _$AdminAnnouncementsListDisplayEnumMap, json['display'],
+          unknownValue: AdminAnnouncementsListDisplay.unknown),
       isActive: json['isActive'] as bool,
       forExistingUsers: json['forExistingUsers'] as bool,
       silence: json['silence'] as bool,

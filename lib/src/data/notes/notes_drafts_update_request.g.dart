@@ -11,7 +11,8 @@ _NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
     _NotesDraftsUpdateRequest(
       draftId: json['draftId'] as String?,
       visibility: $enumDecodeNullable(
-          _$NotesDraftsUpdateVisibilityEnumMap, json['visibility']),
+          _$NotesDraftsUpdateVisibilityEnumMap, json['visibility'],
+          unknownValue: NotesDraftsUpdateVisibility.unknown),
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -20,7 +21,8 @@ _NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
       localOnly: json['localOnly'] as bool?,
       reactionAcceptance: $enumDecodeNullable(
           _$NotesDraftsUpdateReactionAcceptanceEnumMap,
-          json['reactionAcceptance']),
+          json['reactionAcceptance'],
+          unknownValue: NotesDraftsUpdateReactionAcceptance.unknown),
       replyId: json['replyId'] as String?,
       renoteId: json['renoteId'] as String?,
       channelId: json['channelId'] as String?,

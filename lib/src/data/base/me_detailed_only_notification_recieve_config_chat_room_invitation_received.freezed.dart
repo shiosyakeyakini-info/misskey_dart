@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown)
   MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
       get type;
   String get userListId;
@@ -67,7 +71,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationR
       _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
           type,
       String userListId});
 }
@@ -112,13 +120,22 @@ class _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived
     implements
         MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived {
   const _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown)
   final MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
       type;
   @override
@@ -179,7 +196,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitation
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
           type,
       String userListId});
 }

@@ -14,7 +14,7 @@ abstract class DriveFiles with _$DriveFiles {
     int? untilDate,
     @Default(null) String? folderId,
     String? type,
-    DriveFilesSort? sort,
+    @JsonKey(unknownEnumValue: DriveFilesSort.unknown) DriveFilesSort? sort,
   }) = _DriveFiles;
 
   factory DriveFiles.fromJson(Map<String, Object?> json) => _$DriveFilesFromJson(json);

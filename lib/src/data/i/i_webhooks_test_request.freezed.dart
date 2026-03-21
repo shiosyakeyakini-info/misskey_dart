@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$IWebhooksTestRequest {
   String? get webhookId;
+  @JsonKey(unknownEnumValue: IWebhooksTestType.unknown)
   IWebhooksTestType? get type;
   @JsonKey(name: 'override')
   IWebhooksTestOverride? get override_;
@@ -61,6 +62,7 @@ abstract mixin class $IWebhooksTestRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String? webhookId,
+      @JsonKey(unknownEnumValue: IWebhooksTestType.unknown)
       IWebhooksTestType? type,
       @JsonKey(name: 'override') IWebhooksTestOverride? override_});
 
@@ -119,13 +121,16 @@ class _$IWebhooksTestRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _IWebhooksTestRequest implements IWebhooksTestRequest {
   const _IWebhooksTestRequest(
-      {this.webhookId, this.type, @JsonKey(name: 'override') this.override_});
+      {this.webhookId,
+      @JsonKey(unknownEnumValue: IWebhooksTestType.unknown) this.type,
+      @JsonKey(name: 'override') this.override_});
   factory _IWebhooksTestRequest.fromJson(Map<String, dynamic> json) =>
       _$IWebhooksTestRequestFromJson(json);
 
   @override
   final String? webhookId;
   @override
+  @JsonKey(unknownEnumValue: IWebhooksTestType.unknown)
   final IWebhooksTestType? type;
   @override
   @JsonKey(name: 'override')
@@ -179,6 +184,7 @@ abstract mixin class _$IWebhooksTestRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String? webhookId,
+      @JsonKey(unknownEnumValue: IWebhooksTestType.unknown)
       IWebhooksTestType? type,
       @JsonKey(name: 'override') IWebhooksTestOverride? override_});
 

@@ -9,7 +9,8 @@ part of 'charts_user_drive_request.dart';
 _ChartsUserDriveRequest _$ChartsUserDriveRequestFromJson(
         Map<String, dynamic> json) =>
     _ChartsUserDriveRequest(
-      span: $enumDecodeNullable(_$ChartsUserDriveSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsUserDriveSpanEnumMap, json['span'],
+          unknownValue: ChartsUserDriveSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
       userId: json['userId'] as String?,

@@ -21,6 +21,7 @@ import type { VersionedApi } from "./differ/schema-differ.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TOOL_ROOT = resolve(__dirname, "..");
 const PROJECT_ROOT = resolve(TOOL_ROOT, "..");
+const PROJECT_SRC_DIR = resolve(PROJECT_ROOT, "lib", "src");
 
 async function main() {
   const args = process.argv.slice(2);
@@ -63,7 +64,7 @@ async function runSingleVersion(
 
   // Generate code
   console.log("Generating Dart code...");
-  const files = generateAll(parsed, config, outputDir);
+  const files = generateAll(parsed, config, outputDir, PROJECT_SRC_DIR);
   console.log(`  Generated ${files.length} files`);
 
   console.log("\nDone!");
@@ -142,7 +143,7 @@ async function runMultiVersion(
   const latestApi = versionedApis[versionedApis.length - 1];
   console.log(`\nGenerating code from latest (${latestApi.version}) with compatibility...`);
 
-  const files = generateAll(latestApi.parsed, config, outputDir);
+  const files = generateAll(latestApi.parsed, config, outputDir, PROJECT_SRC_DIR);
   console.log(`  Generated ${files.length} files`);
 
   console.log("\nDone!");

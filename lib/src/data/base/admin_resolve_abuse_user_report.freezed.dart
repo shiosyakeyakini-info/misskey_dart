@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminResolveAbuseUserReport {
   String get reportId;
+  @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
   AdminResolveAbuseUserReportResolvedAs? get resolvedAs;
 
   /// Create a copy of AdminResolveAbuseUserReport
@@ -59,7 +60,9 @@ abstract mixin class $AdminResolveAbuseUserReportCopyWith<$Res> {
       _$AdminResolveAbuseUserReportCopyWithImpl;
   @useResult
   $Res call(
-      {String reportId, AdminResolveAbuseUserReportResolvedAs? resolvedAs});
+      {String reportId,
+      @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
+      AdminResolveAbuseUserReportResolvedAs? resolvedAs});
 }
 
 /// @nodoc
@@ -94,13 +97,17 @@ class _$AdminResolveAbuseUserReportCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminResolveAbuseUserReport implements AdminResolveAbuseUserReport {
-  const _AdminResolveAbuseUserReport({required this.reportId, this.resolvedAs});
+  const _AdminResolveAbuseUserReport(
+      {required this.reportId,
+      @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
+      this.resolvedAs});
   factory _AdminResolveAbuseUserReport.fromJson(Map<String, dynamic> json) =>
       _$AdminResolveAbuseUserReportFromJson(json);
 
   @override
   final String reportId;
   @override
+  @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
   final AdminResolveAbuseUserReportResolvedAs? resolvedAs;
 
   /// Create a copy of AdminResolveAbuseUserReport
@@ -150,7 +157,9 @@ abstract mixin class _$AdminResolveAbuseUserReportCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String reportId, AdminResolveAbuseUserReportResolvedAs? resolvedAs});
+      {String reportId,
+      @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown)
+      AdminResolveAbuseUserReportResolvedAs? resolvedAs});
 }
 
 /// @nodoc

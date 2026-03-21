@@ -7,7 +7,7 @@ part 'admin_captcha_save_request.g.dart';
 @freezed
 abstract class AdminCaptchaSaveRequest with _$AdminCaptchaSaveRequest {
   const factory AdminCaptchaSaveRequest({
-    AdminCaptchaSaveProvider? provider,
+    @JsonKey(unknownEnumValue: AdminCaptchaSaveProvider.unknown) AdminCaptchaSaveProvider? provider,
     String? captchaResult,
     String? sitekey,
     String? secret,

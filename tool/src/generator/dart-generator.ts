@@ -36,7 +36,8 @@ import {
 export function generateAll(
   parsed: ParsedApi,
   config: OverrideConfig,
-  outputDir: string
+  outputDir: string,
+  projectSrcDir?: string
 ): GeneratedFile[] {
   const files: GeneratedFile[] = [];
 
@@ -78,7 +79,7 @@ export function generateAll(
 
   // 5. Generate export file (always written - merges with existing)
   console.log("  Generating exports...");
-  const exportFile = generateExports(files, config, outputDir);
+  const exportFile = generateExports(files, config, outputDir, projectSrcDir);
   if (exportFile) {
     mkdirSync(dirname(exportFile.path), { recursive: true });
     writeFileSync(exportFile.path, exportFile.content, "utf-8");
@@ -366,10 +367,11 @@ function generateMainClass(
 function generateExports(
   generatedFiles: GeneratedFile[],
   config: OverrideConfig,
-  outputDir: string
+  outputDir: string,
+  projectSrcDir?: string
 ): GeneratedFile | null {
   const exportPath = resolve(outputDir, "..", "misskey_dart.dart");
-  const content = generateExportFile(generatedFiles, config, outputDir);
+  const content = generateExportFile(generatedFiles, config, outputDir, projectSrcDir);
   if (!content) return null;
   return { path: exportPath, content };
 }

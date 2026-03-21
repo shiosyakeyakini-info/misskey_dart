@@ -10,7 +10,8 @@ _MetaClientOptions _$MetaClientOptionsFromJson(Map<String, dynamic> json) =>
     _MetaClientOptions(
       entrancePageStyle: $enumDecode(
           _$MetaClientOptionsEntrancePageStyleEnumMap,
-          json['entrancePageStyle']),
+          json['entrancePageStyle'],
+          unknownValue: MetaClientOptionsEntrancePageStyle.unknown),
       showTimelineForVisitor: json['showTimelineForVisitor'] as bool,
       showActivitiesForVisitor: json['showActivitiesForVisitor'] as bool,
     );

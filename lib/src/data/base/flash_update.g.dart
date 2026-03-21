@@ -15,7 +15,8 @@ _FlashUpdate _$FlashUpdateFromJson(Map<String, dynamic> json) => _FlashUpdate(
           ?.map((e) => e as String)
           .toList(),
       visibility: $enumDecodeNullable(
-          _$FlashUpdateVisibilityEnumMap, json['visibility']),
+          _$FlashUpdateVisibilityEnumMap, json['visibility'],
+          unknownValue: FlashUpdateVisibility.unknown),
     );
 
 Map<String, dynamic> _$FlashUpdateToJson(_FlashUpdate instance) =>

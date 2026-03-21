@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminCaptchaCurrent {
+  @JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown)
   AdminCaptchaCurrentProvider get provider;
   AdminCaptchaCurrentHcaptcha get hcaptcha;
   AdminCaptchaCurrentMcaptcha get mcaptcha;
@@ -67,7 +68,8 @@ abstract mixin class $AdminCaptchaCurrentCopyWith<$Res> {
       _$AdminCaptchaCurrentCopyWithImpl;
   @useResult
   $Res call(
-      {AdminCaptchaCurrentProvider provider,
+      {@JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown)
+      AdminCaptchaCurrentProvider provider,
       AdminCaptchaCurrentHcaptcha hcaptcha,
       AdminCaptchaCurrentMcaptcha mcaptcha,
       AdminCaptchaCurrentRecaptcha recaptcha,
@@ -169,7 +171,8 @@ class _$AdminCaptchaCurrentCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminCaptchaCurrent implements AdminCaptchaCurrent {
   const _AdminCaptchaCurrent(
-      {required this.provider,
+      {@JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown)
+      required this.provider,
       required this.hcaptcha,
       required this.mcaptcha,
       required this.recaptcha,
@@ -178,6 +181,7 @@ class _AdminCaptchaCurrent implements AdminCaptchaCurrent {
       _$AdminCaptchaCurrentFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown)
   final AdminCaptchaCurrentProvider provider;
   @override
   final AdminCaptchaCurrentHcaptcha hcaptcha;
@@ -241,7 +245,8 @@ abstract mixin class _$AdminCaptchaCurrentCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminCaptchaCurrentProvider provider,
+      {@JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown)
+      AdminCaptchaCurrentProvider provider,
       AdminCaptchaCurrentHcaptcha hcaptcha,
       AdminCaptchaCurrentMcaptcha mcaptcha,
       AdminCaptchaCurrentRecaptcha recaptcha,

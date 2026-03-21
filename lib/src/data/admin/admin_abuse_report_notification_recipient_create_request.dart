@@ -9,7 +9,7 @@ abstract class AdminAbuseReportNotificationRecipientCreateRequest with _$AdminAb
   const factory AdminAbuseReportNotificationRecipientCreateRequest({
     bool? isActive,
     String? name,
-    AdminAbuseReportNotificationRecipientCreateMethod? method,
+    @JsonKey(unknownEnumValue: AdminAbuseReportNotificationRecipientCreateMethod.unknown) AdminAbuseReportNotificationRecipientCreateMethod? method,
     String? userId,
     String? systemWebhookId,
   }) = _AdminAbuseReportNotificationRecipientCreateRequest;

@@ -1,25 +1,18 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyV2 {
   final MisskeyV2Admin admin;
 
-  final ApiService _apiService;
-
   MisskeyV2({required ApiService apiService})
-      : _apiService = apiService,
-        admin = MisskeyV2Admin(apiService: apiService);
+      :         admin = MisskeyV2Admin(apiService: apiService);
 
 }
 
 class MisskeyV2Admin {
   final MisskeyV2AdminEmoji emoji;
 
-  final ApiService _apiService;
-
   MisskeyV2Admin({required ApiService apiService})
-      : _apiService = apiService,
-        emoji = MisskeyV2AdminEmoji(apiService: apiService);
+      :         emoji = MisskeyV2AdminEmoji(apiService: apiService);
 
 }
 

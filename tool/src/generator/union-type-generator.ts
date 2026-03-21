@@ -40,21 +40,28 @@ export function generateUnionTypeFile(
 
   const imports = new Set<string>();
   imports.add("import 'package:freezed_annotation/freezed_annotation.dart';");
-  imports.add("import 'package:misskey_dart/misskey_dart.dart';");
+
+  let needsBarrelImport = false;
 
   lines.push(`part '${fileName}.freezed.dart';`);
   lines.push(`part '${fileName}.g.dart';`);
   lines.push("");
 
   if (strategy === "sealed") {
-    lines.push(...generateSealedClass(
+    const result = generateSealedClass(
       targetClass,
       schema,
       discriminatorField,
       config,
       parsed,
       imports
-    ));
+    );
+    lines.push(...result.lines);
+    needsBarrelImport = result.needsBarrelImport;
+  }
+
+  if (needsBarrelImport) {
+    imports.add("import 'package:misskey_dart/misskey_dart.dart';");
   }
 
   // Prepend imports
@@ -65,6 +72,11 @@ export function generateUnionTypeFile(
 /**
  * Generate a Freezed sealed class with union variants.
  */
+interface SealedClassResult {
+  lines: string[];
+  needsBarrelImport: boolean;
+}
+
 function generateSealedClass(
   className: string,
   schema: ResolvedSchema,
@@ -72,8 +84,9 @@ function generateSealedClass(
   config: OverrideConfig,
   parsed: ParsedApi,
   imports: Set<string>
-): string[] {
+): SealedClassResult {
   const lines: string[] = [];
+  let needsBarrelImport = false;
 
   lines.push(`@Freezed(unionKey: "${discriminatorField}", fallbackUnion: "unknown")`);
   lines.push(`sealed class ${className} with _\$${className} {`);
@@ -150,7 +163,9 @@ function generateSealedClass(
         if (propName === discriminatorField) continue;
 
         const dartType = resolveDartType(prop, config, className);
+        if (isExternalDartType(dartType, className)) needsBarrelImport = true;
         const annotations = resolveDartAnnotations(prop, config, className, imports);
+        if (annotations) needsBarrelImport = true;
 
         if (prop.isRequired && !prop.isNullable) {
           fields.push(`    ${annotations}required ${dartType} ${prop.dartName},`);
@@ -191,7 +206,9 @@ function generateSealedClass(
         if (propName === discriminatorField) continue;
 
         const dartType = resolveDartType(prop, config, className);
+        if (isExternalDartType(dartType, className)) needsBarrelImport = true;
         const annotations = resolveDartAnnotations(prop, config, className, imports);
+        if (annotations) needsBarrelImport = true;
 
         if (prop.isRequired && !prop.isNullable) {
           fields.push(`    ${annotations}required ${dartType} ${prop.dartName},`);
@@ -221,7 +238,9 @@ function generateSealedClass(
   const commonFields = findCommonFields(resolvedVariants, discriminatorField);
   for (const [propName, prop] of commonFields) {
     const dartType = resolveDartType(prop, config, className);
+    if (isExternalDartType(dartType, className)) needsBarrelImport = true;
     const annotations = resolveDartAnnotations(prop, config, className, imports);
+    if (annotations) needsBarrelImport = true;
     if (prop.isRequired && !prop.isNullable) {
       lines.push(`    ${annotations}required ${dartType} ${prop.dartName},`);
     } else {
@@ -237,7 +256,7 @@ function generateSealedClass(
   );
   lines.push("}");
 
-  return lines;
+  return { lines, needsBarrelImport };
 }
 
 /**
@@ -299,6 +318,22 @@ function resolveDartType(
     `${schemaName}.${prop.name}`
   );
   return mapping.dartType;
+}
+
+/**
+ * Check if a Dart type name references an external (non-primitive) type.
+ * Self-references (to the current class) are not external.
+ */
+function isExternalDartType(dartType: string, selfClassName?: string): boolean {
+  const bare = dartType.replace(/[?]$/, "");
+  const primitives = new Set(["String", "int", "double", "bool", "dynamic", "num", "Object"]);
+  if (selfClassName) primitives.add(selfClassName);
+  // Check for List<T>, Map<K,V> with non-primitive type args
+  if (bare.startsWith("List<") || bare.startsWith("Map<")) {
+    const inner = bare.slice(bare.indexOf("<") + 1, bare.lastIndexOf(">"));
+    return inner.split(",").some(t => !primitives.has(t.trim().replace(/[?]$/, "")));
+  }
+  return !primitives.has(bare);
 }
 
 /**

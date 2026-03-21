@@ -12,7 +12,10 @@ _IUpdateNotificationRecieveConfigReceiveFollowRequest
         _IUpdateNotificationRecieveConfigReceiveFollowRequest(
           type: $enumDecode(
               _$IUpdateNotificationRecieveConfigReceiveFollowRequestTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  IUpdateNotificationRecieveConfigReceiveFollowRequestType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

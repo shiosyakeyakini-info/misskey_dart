@@ -11,7 +11,8 @@ _AntennasUpdateRequest _$AntennasUpdateRequestFromJson(
     _AntennasUpdateRequest(
       antennaId: json['antennaId'] as String?,
       name: json['name'] as String?,
-      src: $enumDecodeNullable(_$AntennasUpdateSrcEnumMap, json['src']),
+      src: $enumDecodeNullable(_$AntennasUpdateSrcEnumMap, json['src'],
+          unknownValue: AntennasUpdateSrc.unknown),
       userListId: json['userListId'] as String?,
       keywords: json['keywords'] as List<dynamic>?,
       excludeKeywords: json['excludeKeywords'] as List<dynamic>?,

@@ -27,9 +27,6 @@ export function generateApiModuleFile(
 
   const imports = new Set<string>();
   imports.add("import 'package:misskey_dart/misskey_dart.dart';");
-  imports.add(
-    "import 'package:misskey_dart/src/services/api_service.dart';"
-  );
 
   // Generate sub-module classes first, then main module
   const allClasses: string[] = [];
@@ -61,6 +58,7 @@ function generateModuleClass(
   imports: Set<string>
 ): string[] {
   const lines: string[] = [];
+  const hasDirectEndpoints = module.endpoints.length > 0;
 
   lines.push(`class ${module.name} {`);
 
@@ -69,25 +67,34 @@ function generateModuleClass(
     lines.push(`  final ${sub.name} ${sub.fieldName};`);
   }
 
-  // ApiService field
-  lines.push("");
-  lines.push("  final ApiService _apiService;");
+  // ApiService field - only if this module has direct endpoints
+  if (hasDirectEndpoints) {
+    lines.push("");
+    lines.push("  final ApiService _apiService;");
+  }
   lines.push("");
 
   // Constructor
   if (module.subModules.length === 0) {
     lines.push(`  ${module.name}({required ApiService apiService})`);
-    lines.push(`      : _apiService = apiService;`);
+    if (hasDirectEndpoints) {
+      lines.push(`      : _apiService = apiService;`);
+    } else {
+      // No endpoints, no _apiService — but still accept apiService for sub-modules
+      lines.push(`      ;`);
+    }
   } else {
     lines.push(`  ${module.name}({required ApiService apiService})`);
-    lines.push(`      : _apiService = apiService,`);
-    for (let i = 0; i < module.subModules.length; i++) {
-      const sub = module.subModules[i];
-      const end = i < module.subModules.length - 1 ? "," : ";";
-      lines.push(
-        `        ${sub.fieldName} = ${sub.name}(apiService: apiService)${end}`
+    const initList: string[] = [];
+    if (hasDirectEndpoints) {
+      initList.push(`        _apiService = apiService`);
+    }
+    for (const sub of module.subModules) {
+      initList.push(
+        `        ${sub.fieldName} = ${sub.name}(apiService: apiService)`
       );
     }
+    lines.push(`      : ${initList.join(",\n")};`);
   }
   lines.push("");
 
@@ -289,6 +296,26 @@ function resolveResponseType(
       return "Map<String, dynamic>";
     }
     return pathToResponseClassName(endpoint.path);
+  }
+  if (schema.type === "union" && schema.oneOf) {
+    // For union response types, resolve to the non-array $ref variant
+    const refs = schema.oneOf.filter(
+      (v) => v.type === "ref" && v.refTarget
+    );
+    if (refs.length === 1) {
+      return resolveRefName(refs[0].refTarget!, parsed);
+    }
+    if (refs.length > 1) {
+      return resolveRefName(refs[0].refTarget!, parsed);
+    }
+    // Check for inline objects
+    const objects = schema.oneOf.filter(
+      (v) => v.type === "object" && v.properties.size > 0
+    );
+    if (objects.length > 0) {
+      return pathToResponseClassName(endpoint.path);
+    }
+    return "dynamic";
   }
   if (schema.type === "union") {
     return pathToResponseClassName(endpoint.path);

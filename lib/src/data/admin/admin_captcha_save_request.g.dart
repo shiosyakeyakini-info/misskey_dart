@@ -10,7 +10,8 @@ _AdminCaptchaSaveRequest _$AdminCaptchaSaveRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminCaptchaSaveRequest(
       provider: $enumDecodeNullable(
-          _$AdminCaptchaSaveProviderEnumMap, json['provider']),
+          _$AdminCaptchaSaveProviderEnumMap, json['provider'],
+          unknownValue: AdminCaptchaSaveProvider.unknown),
       captchaResult: json['captchaResult'] as String?,
       sitekey: json['sitekey'] as String?,
       secret: json['secret'] as String?,

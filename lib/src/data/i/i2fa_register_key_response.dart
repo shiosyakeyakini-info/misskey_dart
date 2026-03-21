@@ -14,7 +14,7 @@ abstract class I2faRegisterKeyResponse with _$I2faRegisterKeyResponse {
     double? timeout,
     List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,
     I2faRegisterKeyAuthenticatorSelection? authenticatorSelection,
-    I2faRegisterKeyAttestation? attestation,
+    @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) I2faRegisterKeyAttestation? attestation,
     I2faRegisterKeyExtensions? extensions,
   }) = _I2faRegisterKeyResponse;
 

@@ -10,7 +10,7 @@ abstract class AdminAbuseReportNotificationRecipientUpdateRequest with _$AdminAb
     String? id,
     bool? isActive,
     String? name,
-    AdminAbuseReportNotificationRecipientUpdateMethod? method,
+    @JsonKey(unknownEnumValue: AdminAbuseReportNotificationRecipientUpdateMethod.unknown) AdminAbuseReportNotificationRecipientUpdateMethod? method,
     String? userId,
     String? systemWebhookId,
   }) = _AdminAbuseReportNotificationRecipientUpdateRequest;

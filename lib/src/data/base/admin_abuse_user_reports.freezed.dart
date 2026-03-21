@@ -21,7 +21,9 @@ mixin _$AdminAbuseUserReports {
   int? get sinceDate;
   int? get untilDate;
   String? get state;
+  @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
   AdminAbuseUserReportsReporterOrigin? get reporterOrigin;
+  @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
   AdminAbuseUserReportsTargetUserOrigin? get targetUserOrigin;
 
   /// Create a copy of AdminAbuseUserReports
@@ -78,7 +80,9 @@ abstract mixin class $AdminAbuseUserReportsCopyWith<$Res> {
       int? sinceDate,
       int? untilDate,
       String? state,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
       AdminAbuseUserReportsReporterOrigin? reporterOrigin,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
       AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin});
 }
 
@@ -151,7 +155,9 @@ class _AdminAbuseUserReports implements AdminAbuseUserReports {
       this.sinceDate,
       this.untilDate,
       this.state = null,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
       this.reporterOrigin = AdminAbuseUserReportsReporterOrigin.combined,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
       this.targetUserOrigin = AdminAbuseUserReportsTargetUserOrigin.combined});
   factory _AdminAbuseUserReports.fromJson(Map<String, dynamic> json) =>
       _$AdminAbuseUserReportsFromJson(json);
@@ -171,10 +177,10 @@ class _AdminAbuseUserReports implements AdminAbuseUserReports {
   @JsonKey()
   final String? state;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
   final AdminAbuseUserReportsReporterOrigin? reporterOrigin;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
   final AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin;
 
   /// Create a copy of AdminAbuseUserReports
@@ -238,7 +244,9 @@ abstract mixin class _$AdminAbuseUserReportsCopyWith<$Res>
       int? sinceDate,
       int? untilDate,
       String? state,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
       AdminAbuseUserReportsReporterOrigin? reporterOrigin,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
       AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin});
 }
 

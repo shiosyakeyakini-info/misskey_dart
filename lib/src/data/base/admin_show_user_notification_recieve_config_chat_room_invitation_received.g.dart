@@ -12,7 +12,10 @@ _AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived
         _AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

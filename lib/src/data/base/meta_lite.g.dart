@@ -71,10 +71,12 @@ _MetaLite _$MetaLiteFromJson(Map<String, dynamic> json) => _MetaLite(
       themeColor: json['themeColor'] as String?,
       policies: RolePolicies.fromJson(json['policies'] as Map<String, dynamic>),
       noteSearchableScope: $enumDecodeNullable(
-              _$NoteSearchableScopeEnumMap, json['noteSearchableScope']) ??
+              _$NoteSearchableScopeEnumMap, json['noteSearchableScope'],
+              unknownValue: NoteSearchableScope.unknown) ??
           NoteSearchableScope.local,
       maxFileSize: (json['maxFileSize'] as num).toDouble(),
-      federation: $enumDecode(_$FederationScopeEnumMap, json['federation']),
+      federation: $enumDecode(_$FederationScopeEnumMap, json['federation'],
+          unknownValue: FederationScope.unknown),
     );
 
 Map<String, dynamic> _$MetaLiteToJson(_MetaLite instance) => <String, dynamic>{

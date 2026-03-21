@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsFederationRequest {
+  @JsonKey(unknownEnumValue: ChartsFederationSpan.unknown)
   ChartsFederationSpan? get span;
   int? get limit;
   int? get offset;
@@ -56,7 +57,11 @@ abstract mixin class $ChartsFederationRequestCopyWith<$Res> {
           $Res Function(ChartsFederationRequest) _then) =
       _$ChartsFederationRequestCopyWithImpl;
   @useResult
-  $Res call({ChartsFederationSpan? span, int? limit, int? offset});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsFederationSpan.unknown)
+      ChartsFederationSpan? span,
+      int? limit,
+      int? offset});
 }
 
 /// @nodoc
@@ -97,11 +102,14 @@ class _$ChartsFederationRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChartsFederationRequest implements ChartsFederationRequest {
   const _ChartsFederationRequest(
-      {this.span, this.limit = 30, this.offset = null});
+      {@JsonKey(unknownEnumValue: ChartsFederationSpan.unknown) this.span,
+      this.limit = 30,
+      this.offset = null});
   factory _ChartsFederationRequest.fromJson(Map<String, dynamic> json) =>
       _$ChartsFederationRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: ChartsFederationSpan.unknown)
   final ChartsFederationSpan? span;
   @override
   @JsonKey()
@@ -154,7 +162,11 @@ abstract mixin class _$ChartsFederationRequestCopyWith<$Res>
       __$ChartsFederationRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({ChartsFederationSpan? span, int? limit, int? offset});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsFederationSpan.unknown)
+      ChartsFederationSpan? span,
+      int? limit,
+      int? offset});
 }
 
 /// @nodoc

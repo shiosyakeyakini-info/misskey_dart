@@ -8,7 +8,8 @@ part of 'charts_drive_request.dart';
 
 _ChartsDriveRequest _$ChartsDriveRequestFromJson(Map<String, dynamic> json) =>
     _ChartsDriveRequest(
-      span: $enumDecodeNullable(_$ChartsDriveSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsDriveSpanEnumMap, json['span'],
+          unknownValue: ChartsDriveSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
     );

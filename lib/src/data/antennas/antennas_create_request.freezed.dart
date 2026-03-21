@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AntennasCreateRequest {
   String? get name;
+  @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
   AntennasCreateSrc? get src;
   String? get userListId;
   List<dynamic>? get keywords;
@@ -99,6 +100,7 @@ abstract mixin class $AntennasCreateRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String? name,
+      @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
       AntennasCreateSrc? src,
       String? userListId,
       List<dynamic>? keywords,
@@ -196,7 +198,7 @@ class _$AntennasCreateRequestCopyWithImpl<$Res>
 class _AntennasCreateRequest implements AntennasCreateRequest {
   const _AntennasCreateRequest(
       {this.name,
-      this.src,
+      @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown) this.src,
       this.userListId,
       final List<dynamic>? keywords,
       final List<dynamic>? excludeKeywords,
@@ -216,6 +218,7 @@ class _AntennasCreateRequest implements AntennasCreateRequest {
   @override
   final String? name;
   @override
+  @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
   final AntennasCreateSrc? src;
   @override
   final String? userListId;
@@ -340,6 +343,7 @@ abstract mixin class _$AntennasCreateRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String? name,
+      @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
       AntennasCreateSrc? src,
       String? userListId,
       List<dynamic>? keywords,

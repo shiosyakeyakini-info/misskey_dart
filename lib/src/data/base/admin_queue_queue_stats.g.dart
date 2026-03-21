@@ -9,7 +9,8 @@ part of 'admin_queue_queue_stats.dart';
 _AdminQueueQueueStats _$AdminQueueQueueStatsFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueQueueStats(
-      name: $enumDecode(_$AdminQueueQueueStatsNameEnumMap, json['name']),
+      name: $enumDecode(_$AdminQueueQueueStatsNameEnumMap, json['name'],
+          unknownValue: AdminQueueQueueStatsName.unknown),
       qualifiedName: json['qualifiedName'] as String,
       counts: (json['counts'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, (e as num).toDouble()),

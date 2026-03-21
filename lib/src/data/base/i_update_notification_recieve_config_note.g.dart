@@ -10,7 +10,8 @@ _IUpdateNotificationRecieveConfigNote
     _$IUpdateNotificationRecieveConfigNoteFromJson(Map<String, dynamic> json) =>
         _IUpdateNotificationRecieveConfigNote(
           type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigNoteTypeEnumMap, json['type']),
+              _$IUpdateNotificationRecieveConfigNoteTypeEnumMap, json['type'],
+              unknownValue: IUpdateNotificationRecieveConfigNoteType.unknown),
           userListId: json['userListId'] as String,
         );
 

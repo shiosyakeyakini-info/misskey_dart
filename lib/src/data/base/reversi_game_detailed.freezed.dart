@@ -37,6 +37,7 @@ mixin _$ReversiGameDetailed {
   String? get surrenderedUserId;
   String? get timeoutUserId;
   double? get black;
+  @JsonKey(unknownEnumValue: ReversiBw.unknown)
   ReversiBw get bw;
   bool get noIrregularRules;
   bool get isLlotheo;
@@ -169,7 +170,7 @@ abstract mixin class $ReversiGameDetailedCopyWith<$Res> {
       String? surrenderedUserId,
       String? timeoutUserId,
       double? black,
-      ReversiBw bw,
+      @JsonKey(unknownEnumValue: ReversiBw.unknown) ReversiBw bw,
       bool noIrregularRules,
       bool isLlotheo,
       bool canPutEverywhere,
@@ -394,7 +395,7 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
       this.surrenderedUserId,
       this.timeoutUserId,
       this.black,
-      required this.bw,
+      @JsonKey(unknownEnumValue: ReversiBw.unknown) required this.bw,
       required this.noIrregularRules,
       required this.isLlotheo,
       required this.canPutEverywhere,
@@ -467,6 +468,7 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
   @override
   final double? black;
   @override
+  @JsonKey(unknownEnumValue: ReversiBw.unknown)
   final ReversiBw bw;
   @override
   final bool noIrregularRules;
@@ -624,7 +626,7 @@ abstract mixin class _$ReversiGameDetailedCopyWith<$Res>
       String? surrenderedUserId,
       String? timeoutUserId,
       double? black,
-      ReversiBw bw,
+      @JsonKey(unknownEnumValue: ReversiBw.unknown) ReversiBw bw,
       bool noIrregularRules,
       bool isLlotheo,
       bool canPutEverywhere,

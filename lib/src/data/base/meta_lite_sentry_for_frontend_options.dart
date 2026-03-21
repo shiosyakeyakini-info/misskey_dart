@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'meta_lite_sentry_for_frontend_options.freezed.dart';
 part 'meta_lite_sentry_for_frontend_options.g.dart';

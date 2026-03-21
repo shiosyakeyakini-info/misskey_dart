@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$SwRegisterResponse {
+  @JsonKey(unknownEnumValue: SwRegisterState.unknown)
   SwRegisterState? get state;
   String? get key;
   String get userId;
@@ -64,7 +65,8 @@ abstract mixin class $SwRegisterResponseCopyWith<$Res> {
       _$SwRegisterResponseCopyWithImpl;
   @useResult
   $Res call(
-      {SwRegisterState? state,
+      {@JsonKey(unknownEnumValue: SwRegisterState.unknown)
+      SwRegisterState? state,
       String? key,
       String userId,
       String endpoint,
@@ -119,7 +121,7 @@ class _$SwRegisterResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _SwRegisterResponse implements SwRegisterResponse {
   const _SwRegisterResponse(
-      {this.state,
+      {@JsonKey(unknownEnumValue: SwRegisterState.unknown) this.state,
       this.key,
       required this.userId,
       required this.endpoint,
@@ -128,6 +130,7 @@ class _SwRegisterResponse implements SwRegisterResponse {
       _$SwRegisterResponseFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: SwRegisterState.unknown)
   final SwRegisterState? state;
   @override
   final String? key;
@@ -187,7 +190,8 @@ abstract mixin class _$SwRegisterResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {SwRegisterState? state,
+      {@JsonKey(unknownEnumValue: SwRegisterState.unknown)
+      SwRegisterState? state,
       String? key,
       String userId,
       String endpoint,

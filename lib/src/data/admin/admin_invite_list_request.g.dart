@@ -11,9 +11,11 @@ _AdminInviteListRequest _$AdminInviteListRequestFromJson(
     _AdminInviteListRequest(
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      type: $enumDecodeNullable(_$AdminInviteListTypeEnumMap, json['type']) ??
+      type: $enumDecodeNullable(_$AdminInviteListTypeEnumMap, json['type'],
+              unknownValue: AdminInviteListType.unknown) ??
           AdminInviteListType.all,
-      sort: $enumDecodeNullable(_$AdminInviteListSortEnumMap, json['sort']),
+      sort: $enumDecodeNullable(_$AdminInviteListSortEnumMap, json['sort'],
+          unknownValue: AdminInviteListSort.unknown),
     );
 
 Map<String, dynamic> _$AdminInviteListRequestToJson(

@@ -46,7 +46,9 @@ mixin _$UserDetailedNotMeOnly {
   String? get pinnedPageId;
   Page? get pinnedPage;
   bool get publicReactions;
+  @JsonKey(unknownEnumValue: FFVisibility.unknown)
   FFVisibility get followingVisibility;
+  @JsonKey(unknownEnumValue: FFVisibility.unknown)
   FFVisibility get followersVisibility;
   ChatScope get chatScope;
   bool get canChat;
@@ -265,7 +267,9 @@ abstract mixin class $UserDetailedNotMeOnlyCopyWith<$Res> {
       String? pinnedPageId,
       Page? pinnedPage,
       bool publicReactions,
+      @JsonKey(unknownEnumValue: FFVisibility.unknown)
       FFVisibility followingVisibility,
+      @JsonKey(unknownEnumValue: FFVisibility.unknown)
       FFVisibility followersVisibility,
       ChatScope chatScope,
       bool canChat,
@@ -588,7 +592,9 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
       this.pinnedPageId,
       this.pinnedPage,
       required this.publicReactions,
+      @JsonKey(unknownEnumValue: FFVisibility.unknown)
       required this.followingVisibility,
+      @JsonKey(unknownEnumValue: FFVisibility.unknown)
       required this.followersVisibility,
       required this.chatScope,
       required this.canChat,
@@ -708,8 +714,10 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
   @override
   final bool publicReactions;
   @override
+  @JsonKey(unknownEnumValue: FFVisibility.unknown)
   final FFVisibility followingVisibility;
   @override
+  @JsonKey(unknownEnumValue: FFVisibility.unknown)
   final FFVisibility followersVisibility;
   @override
   final ChatScope chatScope;
@@ -960,7 +968,9 @@ abstract mixin class _$UserDetailedNotMeOnlyCopyWith<$Res>
       String? pinnedPageId,
       Page? pinnedPage,
       bool publicReactions,
+      @JsonKey(unknownEnumValue: FFVisibility.unknown)
       FFVisibility followingVisibility,
+      @JsonKey(unknownEnumValue: FFVisibility.unknown)
       FFVisibility followersVisibility,
       ChatScope chatScope,
       bool canChat,

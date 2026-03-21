@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueuePromoteJobs {
+  @JsonKey(unknownEnumValue: AdminQueuePromoteJobsQueue.unknown)
   AdminQueuePromoteJobsQueue get queue;
 
   /// Create a copy of AdminQueuePromoteJobs
@@ -52,7 +53,9 @@ abstract mixin class $AdminQueuePromoteJobsCopyWith<$Res> {
           $Res Function(AdminQueuePromoteJobs) _then) =
       _$AdminQueuePromoteJobsCopyWithImpl;
   @useResult
-  $Res call({AdminQueuePromoteJobsQueue queue});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueuePromoteJobsQueue.unknown)
+      AdminQueuePromoteJobsQueue queue});
 }
 
 /// @nodoc
@@ -82,11 +85,14 @@ class _$AdminQueuePromoteJobsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminQueuePromoteJobs implements AdminQueuePromoteJobs {
-  const _AdminQueuePromoteJobs({required this.queue});
+  const _AdminQueuePromoteJobs(
+      {@JsonKey(unknownEnumValue: AdminQueuePromoteJobsQueue.unknown)
+      required this.queue});
   factory _AdminQueuePromoteJobs.fromJson(Map<String, dynamic> json) =>
       _$AdminQueuePromoteJobsFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueuePromoteJobsQueue.unknown)
   final AdminQueuePromoteJobsQueue queue;
 
   /// Create a copy of AdminQueuePromoteJobs
@@ -131,7 +137,9 @@ abstract mixin class _$AdminQueuePromoteJobsCopyWith<$Res>
       __$AdminQueuePromoteJobsCopyWithImpl;
   @override
   @useResult
-  $Res call({AdminQueuePromoteJobsQueue queue});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueuePromoteJobsQueue.unknown)
+      AdminQueuePromoteJobsQueue queue});
 }
 
 /// @nodoc

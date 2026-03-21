@@ -142,10 +142,9 @@ endpoint_overrides:
   "/notes/update":
     extra_options:
       excludeRemoveNullPredicate: "(key, _) => key == \"cw\""
-  # oneOf response types that need manual return type specification
+
+  # oneOf response with inline object (no generated response class)
   "/users/relation":
-    return_type: void
-  "/users/show":
     return_type: void
 
 # Manual files (skip generation entirely - not even generated to output)

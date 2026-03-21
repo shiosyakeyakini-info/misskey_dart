@@ -20,6 +20,7 @@ mixin _$IUpdate {
   String? get followedMessage;
   String? get location;
   String? get birthday;
+  @JsonKey(unknownEnumValue: IUpdateLang.unknown)
   IUpdateLang? get lang;
   String? get avatarId;
   List<IUpdateAvatarDecorationsItem>? get avatarDecorations;
@@ -42,8 +43,11 @@ mixin _$IUpdate {
   bool? get receiveAnnouncementEmail;
   bool? get alwaysMarkNsfw;
   bool? get autoSensitive;
+  @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown)
   IUpdateFollowingVisibility? get followingVisibility;
+  @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
   IUpdateFollowersVisibility? get followersVisibility;
+  @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
   IUpdateChatScope? get chatScope;
   String? get pinnedPageId;
   List<dynamic>? get mutedWords;
@@ -201,7 +205,7 @@ abstract mixin class $IUpdateCopyWith<$Res> {
       String? followedMessage,
       String? location,
       String? birthday,
-      IUpdateLang? lang,
+      @JsonKey(unknownEnumValue: IUpdateLang.unknown) IUpdateLang? lang,
       String? avatarId,
       List<IUpdateAvatarDecorationsItem>? avatarDecorations,
       String? bannerId,
@@ -223,8 +227,11 @@ abstract mixin class $IUpdateCopyWith<$Res> {
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
       bool? autoSensitive,
+      @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown)
       IUpdateFollowingVisibility? followingVisibility,
+      @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
       IUpdateFollowersVisibility? followersVisibility,
+      @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
       IUpdateChatScope? chatScope,
       String? pinnedPageId,
       List<dynamic>? mutedWords,
@@ -466,7 +473,7 @@ class _IUpdate implements IUpdate {
       this.followedMessage,
       this.location,
       this.birthday,
-      this.lang,
+      @JsonKey(unknownEnumValue: IUpdateLang.unknown) this.lang,
       this.avatarId,
       final List<IUpdateAvatarDecorationsItem>? avatarDecorations,
       this.bannerId,
@@ -488,9 +495,11 @@ class _IUpdate implements IUpdate {
       this.receiveAnnouncementEmail,
       this.alwaysMarkNsfw,
       this.autoSensitive,
+      @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown)
       this.followingVisibility,
+      @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
       this.followersVisibility,
-      this.chatScope,
+      @JsonKey(unknownEnumValue: IUpdateChatScope.unknown) this.chatScope,
       this.pinnedPageId,
       final List<dynamic>? mutedWords,
       final List<dynamic>? hardMutedWords,
@@ -519,6 +528,7 @@ class _IUpdate implements IUpdate {
   @override
   final String? birthday;
   @override
+  @JsonKey(unknownEnumValue: IUpdateLang.unknown)
   final IUpdateLang? lang;
   @override
   final String? avatarId;
@@ -580,10 +590,13 @@ class _IUpdate implements IUpdate {
   @override
   final bool? autoSensitive;
   @override
+  @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown)
   final IUpdateFollowingVisibility? followingVisibility;
   @override
+  @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
   final IUpdateFollowersVisibility? followersVisibility;
   @override
+  @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
   final IUpdateChatScope? chatScope;
   @override
   final String? pinnedPageId;
@@ -793,7 +806,7 @@ abstract mixin class _$IUpdateCopyWith<$Res> implements $IUpdateCopyWith<$Res> {
       String? followedMessage,
       String? location,
       String? birthday,
-      IUpdateLang? lang,
+      @JsonKey(unknownEnumValue: IUpdateLang.unknown) IUpdateLang? lang,
       String? avatarId,
       List<IUpdateAvatarDecorationsItem>? avatarDecorations,
       String? bannerId,
@@ -815,8 +828,11 @@ abstract mixin class _$IUpdateCopyWith<$Res> implements $IUpdateCopyWith<$Res> {
       bool? receiveAnnouncementEmail,
       bool? alwaysMarkNsfw,
       bool? autoSensitive,
+      @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown)
       IUpdateFollowingVisibility? followingVisibility,
+      @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
       IUpdateFollowersVisibility? followersVisibility,
+      @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
       IUpdateChatScope? chatScope,
       String? pinnedPageId,
       List<dynamic>? mutedWords,

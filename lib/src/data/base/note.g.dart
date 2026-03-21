@@ -52,7 +52,8 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
           : NoteChannelInfo.fromJson(json['channel'] as Map<String, dynamic>),
       localOnly: json['localOnly'] as bool?,
       reactionAcceptance: $enumDecodeNullable(
-          _$ReactionAcceptanceEnumMap, json['reactionAcceptance']),
+          _$ReactionAcceptanceEnumMap, json['reactionAcceptance'],
+          unknownValue: ReactionAcceptance.unknown),
       reactionEmojis: const EmojisConverter().fromJson(json['reactionEmojis']),
       reactions: json['reactions'] as Map<String, dynamic>,
       reactionCount: (json['reactionCount'] as num).toInt(),

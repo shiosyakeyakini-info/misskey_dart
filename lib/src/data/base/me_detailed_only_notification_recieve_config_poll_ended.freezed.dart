@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigPollEnded {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown)
   MeDetailedOnlyNotificationRecieveConfigPollEndedType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigPollEndedCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigPollEndedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigPollEndedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigPollEndedType type,
       String userListId});
 }
 
@@ -102,12 +108,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigPollEndedCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigPollEnded
     implements MeDetailedOnlyNotificationRecieveConfigPollEnded {
   const _MeDetailedOnlyNotificationRecieveConfigPollEnded(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigPollEnded.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigPollEndedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigPollEndedType type;
   @override
   final String userListId;
@@ -163,7 +176,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigPollEndedCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigPollEndedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigPollEndedType type,
       String userListId});
 }
 

@@ -7,7 +7,7 @@ part 'charts_user_following_request.g.dart';
 @freezed
 abstract class ChartsUserFollowingRequest with _$ChartsUserFollowingRequest {
   const factory ChartsUserFollowingRequest({
-    ChartsUserFollowingSpan? span,
+    @JsonKey(unknownEnumValue: ChartsUserFollowingSpan.unknown) ChartsUserFollowingSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
     String? userId,

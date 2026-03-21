@@ -15,7 +15,8 @@ _AbuseReportNotificationRecipient _$AbuseReportNotificationRecipientFromJson(
           const DateTimeConverter().fromJson(json['updatedAt'] as String),
       name: json['name'] as String,
       method: $enumDecode(
-          _$AbuseReportNotificationRecipientMethodEnumMap, json['method']),
+          _$AbuseReportNotificationRecipientMethodEnumMap, json['method'],
+          unknownValue: AbuseReportNotificationRecipientMethod.unknown),
       userId: json['userId'] as String?,
       user: json['user'] == null
           ? null

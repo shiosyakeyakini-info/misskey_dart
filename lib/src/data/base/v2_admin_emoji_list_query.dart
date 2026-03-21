@@ -20,7 +20,7 @@ abstract class V2AdminEmojiListQuery with _$V2AdminEmojiListQuery {
     String? license,
     bool? isSensitive,
     bool? localOnly,
-    @Default(V2AdminEmojiListQueryHostType.all) V2AdminEmojiListQueryHostType? hostType,
+    @JsonKey(unknownEnumValue: V2AdminEmojiListQueryHostType.unknown) @Default(V2AdminEmojiListQueryHostType.all) V2AdminEmojiListQueryHostType? hostType,
     List<String>? roleIds,
   }) = _V2AdminEmojiListQuery;
 

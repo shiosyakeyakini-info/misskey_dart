@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notifications_create_request.freezed.dart';
 part 'notifications_create_request.g.dart';

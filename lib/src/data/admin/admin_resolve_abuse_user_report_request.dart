@@ -8,7 +8,7 @@ part 'admin_resolve_abuse_user_report_request.g.dart';
 abstract class AdminResolveAbuseUserReportRequest with _$AdminResolveAbuseUserReportRequest {
   const factory AdminResolveAbuseUserReportRequest({
     String? reportId,
-    AdminResolveAbuseUserReportResolvedAs? resolvedAs,
+    @JsonKey(unknownEnumValue: AdminResolveAbuseUserReportResolvedAs.unknown) AdminResolveAbuseUserReportResolvedAs? resolvedAs,
   }) = _AdminResolveAbuseUserReportRequest;
 
   factory AdminResolveAbuseUserReportRequest.fromJson(Map<String, Object?> json) => _$AdminResolveAbuseUserReportRequestFromJson(json);

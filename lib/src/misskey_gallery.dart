@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyGallery {
   final MisskeyGalleryPosts posts;
@@ -7,7 +6,7 @@ class MisskeyGallery {
   final ApiService _apiService;
 
   MisskeyGallery({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         posts = MisskeyGalleryPosts(apiService: apiService);
 
   /// gallery/featured

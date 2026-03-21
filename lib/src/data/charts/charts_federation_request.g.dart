@@ -9,7 +9,8 @@ part of 'charts_federation_request.dart';
 _ChartsFederationRequest _$ChartsFederationRequestFromJson(
         Map<String, dynamic> json) =>
     _ChartsFederationRequest(
-      span: $enumDecodeNullable(_$ChartsFederationSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsFederationSpanEnumMap, json['span'],
+          unknownValue: ChartsFederationSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
     );

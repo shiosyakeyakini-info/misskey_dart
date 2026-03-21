@@ -9,9 +9,9 @@ abstract class Users with _$Users {
   const factory Users({
     @Default(10) int? limit,
     @Default(0) int? offset,
-    UsersSort? sort,
-    @Default(UsersState.all) UsersState? state,
-    @Default(UsersOrigin.local) UsersOrigin? origin,
+    @JsonKey(unknownEnumValue: UsersSort.unknown) UsersSort? sort,
+    @JsonKey(unknownEnumValue: UsersState.unknown) @Default(UsersState.all) UsersState? state,
+    @JsonKey(unknownEnumValue: UsersOrigin.unknown) @Default(UsersOrigin.local) UsersOrigin? origin,
     @Default(null) String? hostname,
   }) = _Users;
 

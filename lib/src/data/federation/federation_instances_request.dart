@@ -17,7 +17,7 @@ abstract class FederationInstancesRequest with _$FederationInstancesRequest {
     bool? publishing,
     @Default(30) int? limit,
     @Default(0) int? offset,
-    FederationInstancesSort? sort,
+    @JsonKey(unknownEnumValue: FederationInstancesSort.unknown) FederationInstancesSort? sort,
   }) = _FederationInstancesRequest;
 
   factory FederationInstancesRequest.fromJson(Map<String, Object?> json) => _$FederationInstancesRequestFromJson(json);

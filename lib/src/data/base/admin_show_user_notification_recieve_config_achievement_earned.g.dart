@@ -12,7 +12,10 @@ _AdminShowUserNotificationRecieveConfigAchievementEarned
         _AdminShowUserNotificationRecieveConfigAchievementEarned(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigAchievementEarnedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigAchievementEarnedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

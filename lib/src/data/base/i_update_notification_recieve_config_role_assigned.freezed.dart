@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IUpdateNotificationRecieveConfigRoleAssigned {
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigRoleAssignedType.unknown)
   IUpdateNotificationRecieveConfigRoleAssignedType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $IUpdateNotificationRecieveConfigRoleAssignedCopyWith<
       _$IUpdateNotificationRecieveConfigRoleAssignedCopyWithImpl;
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigRoleAssignedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigRoleAssignedType.unknown)
+      IUpdateNotificationRecieveConfigRoleAssignedType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$IUpdateNotificationRecieveConfigRoleAssignedCopyWithImpl<$Res>
 class _IUpdateNotificationRecieveConfigRoleAssigned
     implements IUpdateNotificationRecieveConfigRoleAssigned {
   const _IUpdateNotificationRecieveConfigRoleAssigned(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigRoleAssignedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _IUpdateNotificationRecieveConfigRoleAssigned.fromJson(
           Map<String, dynamic> json) =>
       _$IUpdateNotificationRecieveConfigRoleAssignedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigRoleAssignedType.unknown)
   final IUpdateNotificationRecieveConfigRoleAssignedType type;
   @override
   final String userListId;
@@ -159,7 +172,10 @@ abstract mixin class _$IUpdateNotificationRecieveConfigRoleAssignedCopyWith<
   @override
   @useResult
   $Res call(
-      {IUpdateNotificationRecieveConfigRoleAssignedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              IUpdateNotificationRecieveConfigRoleAssignedType.unknown)
+      IUpdateNotificationRecieveConfigRoleAssignedType type,
       String userListId});
 }
 

@@ -8,7 +8,7 @@ part 'following_update_request.g.dart';
 abstract class FollowingUpdateRequest with _$FollowingUpdateRequest {
   const factory FollowingUpdateRequest({
     String? userId,
-    FollowingUpdateNotify? notify,
+    @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown) FollowingUpdateNotify? notify,
     bool? withReplies,
   }) = _FollowingUpdateRequest;
 

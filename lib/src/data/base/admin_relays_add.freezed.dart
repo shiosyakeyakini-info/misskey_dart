@@ -18,6 +18,7 @@ mixin _$AdminRelaysAdd {
   String get id;
   @UriConverter()
   Uri get inbox;
+  @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
   AdminRelaysAddStatus get status;
 
   /// Create a copy of AdminRelaysAdd
@@ -58,7 +59,10 @@ abstract mixin class $AdminRelaysAddCopyWith<$Res> {
       _$AdminRelaysAddCopyWithImpl;
   @useResult
   $Res call(
-      {String id, @UriConverter() Uri inbox, AdminRelaysAddStatus status});
+      {String id,
+      @UriConverter() Uri inbox,
+      @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
+      AdminRelaysAddStatus status});
 }
 
 /// @nodoc
@@ -101,6 +105,7 @@ class _AdminRelaysAdd implements AdminRelaysAdd {
   const _AdminRelaysAdd(
       {required this.id,
       @UriConverter() required this.inbox,
+      @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
       this.status = AdminRelaysAddStatus.requesting});
   factory _AdminRelaysAdd.fromJson(Map<String, dynamic> json) =>
       _$AdminRelaysAddFromJson(json);
@@ -111,7 +116,7 @@ class _AdminRelaysAdd implements AdminRelaysAdd {
   @UriConverter()
   final Uri inbox;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
   final AdminRelaysAddStatus status;
 
   /// Create a copy of AdminRelaysAdd
@@ -158,7 +163,10 @@ abstract mixin class _$AdminRelaysAddCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id, @UriConverter() Uri inbox, AdminRelaysAddStatus status});
+      {String id,
+      @UriConverter() Uri inbox,
+      @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
+      AdminRelaysAddStatus status});
 }
 
 /// @nodoc

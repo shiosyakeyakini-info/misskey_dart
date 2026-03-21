@@ -15,7 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueClear {
+  @JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
   AdminQueueClearQueue get queue;
+  @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
   AdminQueueClearState get state;
 
   /// Create a copy of AdminQueueClear
@@ -54,7 +56,11 @@ abstract mixin class $AdminQueueClearCopyWith<$Res> {
           AdminQueueClear value, $Res Function(AdminQueueClear) _then) =
       _$AdminQueueClearCopyWithImpl;
   @useResult
-  $Res call({AdminQueueClearQueue queue, AdminQueueClearState state});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
+      AdminQueueClearQueue queue,
+      @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
+      AdminQueueClearState state});
 }
 
 /// @nodoc
@@ -89,13 +95,19 @@ class _$AdminQueueClearCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminQueueClear implements AdminQueueClear {
-  const _AdminQueueClear({required this.queue, required this.state});
+  const _AdminQueueClear(
+      {@JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
+      required this.queue,
+      @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
+      required this.state});
   factory _AdminQueueClear.fromJson(Map<String, dynamic> json) =>
       _$AdminQueueClearFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
   final AdminQueueClearQueue queue;
   @override
+  @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
   final AdminQueueClearState state;
 
   /// Create a copy of AdminQueueClear
@@ -140,7 +152,11 @@ abstract mixin class _$AdminQueueClearCopyWith<$Res>
       __$AdminQueueClearCopyWithImpl;
   @override
   @useResult
-  $Res call({AdminQueueClearQueue queue, AdminQueueClearState state});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown)
+      AdminQueueClearQueue queue,
+      @JsonKey(unknownEnumValue: AdminQueueClearState.unknown)
+      AdminQueueClearState state});
 }
 
 /// @nodoc

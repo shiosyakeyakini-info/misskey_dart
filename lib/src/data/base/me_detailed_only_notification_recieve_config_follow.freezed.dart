@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigFollow {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigFollowType.unknown)
   MeDetailedOnlyNotificationRecieveConfigFollowType get type;
   String get userListId;
 
@@ -62,7 +65,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigFollowCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigFollowCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigFollowType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigFollowType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigFollowType type,
       String userListId});
 }
 
@@ -101,12 +107,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigFollowCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigFollow
     implements MeDetailedOnlyNotificationRecieveConfigFollow {
   const _MeDetailedOnlyNotificationRecieveConfigFollow(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigFollowType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigFollow.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigFollowFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigFollowType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigFollowType type;
   @override
   final String userListId;
@@ -160,7 +173,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigFollowCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigFollowType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigFollowType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigFollowType type,
       String userListId});
 }
 

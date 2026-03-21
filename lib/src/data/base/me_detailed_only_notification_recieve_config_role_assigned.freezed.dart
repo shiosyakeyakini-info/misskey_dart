@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigRoleAssigned {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigRoleAssignedType.unknown)
   MeDetailedOnlyNotificationRecieveConfigRoleAssignedType get type;
   String get userListId;
 
@@ -63,7 +66,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigRoleAssignedCopyWit
       _$MeDetailedOnlyNotificationRecieveConfigRoleAssignedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigRoleAssignedType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type,
       String userListId});
 }
 
@@ -104,12 +110,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigRoleAssignedCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigRoleAssigned
     implements MeDetailedOnlyNotificationRecieveConfigRoleAssigned {
   const _MeDetailedOnlyNotificationRecieveConfigRoleAssigned(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigRoleAssignedType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigRoleAssigned.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigRoleAssignedFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigRoleAssignedType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type;
   @override
   final String userListId;
@@ -166,7 +179,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigRoleAssignedCopyWi
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigRoleAssignedType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigRoleAssignedType type,
       String userListId});
 }
 

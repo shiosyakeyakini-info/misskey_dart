@@ -27,6 +27,7 @@ mixin _$AdminAbuseUserReportsItem {
   UserDetailedNotMe get targetUser;
   UserDetailedNotMe? get assignee;
   bool get forwarded;
+  @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown)
   AdminAbuseUserReportsResolvedAs? get resolvedAs;
   String get moderationNote;
 
@@ -114,6 +115,7 @@ abstract mixin class $AdminAbuseUserReportsItemCopyWith<$Res> {
       UserDetailedNotMe targetUser,
       UserDetailedNotMe? assignee,
       bool forwarded,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown)
       AdminAbuseUserReportsResolvedAs? resolvedAs,
       String moderationNote});
 
@@ -255,6 +257,7 @@ class _AdminAbuseUserReportsItem implements AdminAbuseUserReportsItem {
       required this.targetUser,
       this.assignee,
       required this.forwarded,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown)
       this.resolvedAs,
       required this.moderationNote});
   factory _AdminAbuseUserReportsItem.fromJson(Map<String, dynamic> json) =>
@@ -284,6 +287,7 @@ class _AdminAbuseUserReportsItem implements AdminAbuseUserReportsItem {
   @override
   final bool forwarded;
   @override
+  @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown)
   final AdminAbuseUserReportsResolvedAs? resolvedAs;
   @override
   final String moderationNote;
@@ -380,6 +384,7 @@ abstract mixin class _$AdminAbuseUserReportsItemCopyWith<$Res>
       UserDetailedNotMe targetUser,
       UserDetailedNotMe? assignee,
       bool forwarded,
+      @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown)
       AdminAbuseUserReportsResolvedAs? resolvedAs,
       String moderationNote});
 

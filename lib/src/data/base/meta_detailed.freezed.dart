@@ -68,8 +68,10 @@ mixin _$MetaDetailed {
   List<String> get serverRules;
   String? get themeColor;
   RolePolicies get policies;
+  @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
   NoteSearchableScope get noteSearchableScope;
   double get maxFileSize;
+  @JsonKey(unknownEnumValue: FederationScope.unknown)
   FederationScope get federation;
   MetaDetailedOnlyFeatures? get features;
   String? get proxyAccountName;
@@ -327,8 +329,10 @@ abstract mixin class $MetaDetailedCopyWith<$Res> {
       List<String> serverRules,
       String? themeColor,
       RolePolicies policies,
+      @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
       NoteSearchableScope noteSearchableScope,
       double maxFileSize,
+      @JsonKey(unknownEnumValue: FederationScope.unknown)
       FederationScope federation,
       MetaDetailedOnlyFeatures? features,
       String? proxyAccountName,
@@ -765,8 +769,10 @@ class _MetaDetailed implements MetaDetailed {
       required final List<String> serverRules,
       this.themeColor,
       required this.policies,
+      @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
       this.noteSearchableScope = NoteSearchableScope.local,
       required this.maxFileSize,
+      @JsonKey(unknownEnumValue: FederationScope.unknown)
       required this.federation,
       this.features,
       this.proxyAccountName,
@@ -907,11 +913,12 @@ class _MetaDetailed implements MetaDetailed {
   @override
   final RolePolicies policies;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
   final NoteSearchableScope noteSearchableScope;
   @override
   final double maxFileSize;
   @override
+  @JsonKey(unknownEnumValue: FederationScope.unknown)
   final FederationScope federation;
   @override
   final MetaDetailedOnlyFeatures? features;
@@ -1180,8 +1187,10 @@ abstract mixin class _$MetaDetailedCopyWith<$Res>
       List<String> serverRules,
       String? themeColor,
       RolePolicies policies,
+      @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
       NoteSearchableScope noteSearchableScope,
       double maxFileSize,
+      @JsonKey(unknownEnumValue: FederationScope.unknown)
       FederationScope federation,
       MetaDetailedOnlyFeatures? features,
       String? proxyAccountName,

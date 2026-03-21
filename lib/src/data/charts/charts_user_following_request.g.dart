@@ -9,7 +9,8 @@ part of 'charts_user_following_request.dart';
 _ChartsUserFollowingRequest _$ChartsUserFollowingRequestFromJson(
         Map<String, dynamic> json) =>
     _ChartsUserFollowingRequest(
-      span: $enumDecodeNullable(_$ChartsUserFollowingSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsUserFollowingSpanEnumMap, json['span'],
+          unknownValue: ChartsUserFollowingSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
       userId: json['userId'] as String?,

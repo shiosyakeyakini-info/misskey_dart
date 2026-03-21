@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FollowingUpdate {
   String get userId;
+  @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
   FollowingUpdateNotify? get notify;
   bool? get withReplies;
 
@@ -57,7 +58,11 @@ abstract mixin class $FollowingUpdateCopyWith<$Res> {
           FollowingUpdate value, $Res Function(FollowingUpdate) _then) =
       _$FollowingUpdateCopyWithImpl;
   @useResult
-  $Res call({String userId, FollowingUpdateNotify? notify, bool? withReplies});
+  $Res call(
+      {String userId,
+      @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
+      FollowingUpdateNotify? notify,
+      bool? withReplies});
 }
 
 /// @nodoc
@@ -97,13 +102,17 @@ class _$FollowingUpdateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingUpdate implements FollowingUpdate {
-  const _FollowingUpdate({required this.userId, this.notify, this.withReplies});
+  const _FollowingUpdate(
+      {required this.userId,
+      @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown) this.notify,
+      this.withReplies});
   factory _FollowingUpdate.fromJson(Map<String, dynamic> json) =>
       _$FollowingUpdateFromJson(json);
 
   @override
   final String userId;
   @override
+  @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
   final FollowingUpdateNotify? notify;
   @override
   final bool? withReplies;
@@ -152,7 +161,11 @@ abstract mixin class _$FollowingUpdateCopyWith<$Res>
       __$FollowingUpdateCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId, FollowingUpdateNotify? notify, bool? withReplies});
+  $Res call(
+      {String userId,
+      @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
+      FollowingUpdateNotify? notify,
+      bool? withReplies});
 }
 
 /// @nodoc

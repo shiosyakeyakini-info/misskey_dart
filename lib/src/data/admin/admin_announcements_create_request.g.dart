@@ -13,10 +13,12 @@ _AdminAnnouncementsCreateRequest _$AdminAnnouncementsCreateRequestFromJson(
       text: json['text'] as String?,
       imageUrl: json['imageUrl'] as String?,
       icon: $enumDecodeNullable(
-              _$AdminAnnouncementsCreateIconEnumMap, json['icon']) ??
+              _$AdminAnnouncementsCreateIconEnumMap, json['icon'],
+              unknownValue: AdminAnnouncementsCreateIcon.unknown) ??
           AdminAnnouncementsCreateIcon.info,
       display: $enumDecodeNullable(
-              _$AdminAnnouncementsCreateDisplayEnumMap, json['display']) ??
+              _$AdminAnnouncementsCreateDisplayEnumMap, json['display'],
+              unknownValue: AdminAnnouncementsCreateDisplay.unknown) ??
           AdminAnnouncementsCreateDisplay.normal,
       forExistingUsers: json['forExistingUsers'] as bool? ?? false,
       silence: json['silence'] as bool? ?? false,

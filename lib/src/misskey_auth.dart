@@ -1,5 +1,4 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyAuth {
   final MisskeyAuthSession session;
@@ -7,7 +6,7 @@ class MisskeyAuth {
   final ApiService _apiService;
 
   MisskeyAuth({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         session = MisskeyAuthSession(apiService: apiService);
 
   /// auth/accept

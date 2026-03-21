@@ -9,7 +9,8 @@ part of 'antennas_create.dart';
 _AntennasCreate _$AntennasCreateFromJson(Map<String, dynamic> json) =>
     _AntennasCreate(
       name: json['name'] as String,
-      src: $enumDecode(_$AntennasCreateSrcEnumMap, json['src']),
+      src: $enumDecode(_$AntennasCreateSrcEnumMap, json['src'],
+          unknownValue: AntennasCreateSrc.unknown),
       userListId: json['userListId'] as String?,
       keywords: json['keywords'] as List<dynamic>,
       excludeKeywords: json['excludeKeywords'] as List<dynamic>,

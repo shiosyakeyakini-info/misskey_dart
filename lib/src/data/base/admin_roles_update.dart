@@ -12,7 +12,7 @@ abstract class AdminRolesUpdate with _$AdminRolesUpdate {
     String? description,
     String? color,
     String? iconUrl,
-    AdminRolesUpdateTarget? target,
+    @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown) AdminRolesUpdateTarget? target,
     Map<String, dynamic>? condFormula,
     bool? isPublic,
     bool? isModerator,

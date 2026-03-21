@@ -9,8 +9,8 @@ part of 'admin_queue_show_job_request.dart';
 _AdminQueueShowJobRequest _$AdminQueueShowJobRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueShowJobRequest(
-      queue:
-          $enumDecodeNullable(_$AdminQueueShowJobQueueEnumMap, json['queue']),
+      queue: $enumDecodeNullable(_$AdminQueueShowJobQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueShowJobQueue.unknown),
       jobId: json['jobId'] as String?,
     );
 

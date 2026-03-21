@@ -10,12 +10,14 @@ _AdminShowUsers _$AdminShowUsersFromJson(Map<String, dynamic> json) =>
     _AdminShowUsers(
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$AdminShowUsersSortEnumMap, json['sort']),
-      state: $enumDecodeNullable(_$AdminShowUsersStateEnumMap, json['state']) ??
+      sort: $enumDecodeNullable(_$AdminShowUsersSortEnumMap, json['sort'],
+          unknownValue: AdminShowUsersSort.unknown),
+      state: $enumDecodeNullable(_$AdminShowUsersStateEnumMap, json['state'],
+              unknownValue: AdminShowUsersState.unknown) ??
           AdminShowUsersState.all,
-      origin:
-          $enumDecodeNullable(_$AdminShowUsersOriginEnumMap, json['origin']) ??
-              AdminShowUsersOrigin.combined,
+      origin: $enumDecodeNullable(_$AdminShowUsersOriginEnumMap, json['origin'],
+              unknownValue: AdminShowUsersOrigin.unknown) ??
+          AdminShowUsersOrigin.combined,
       username: json['username'] as String? ?? null,
       hostname: json['hostname'] as String? ?? null,
     );

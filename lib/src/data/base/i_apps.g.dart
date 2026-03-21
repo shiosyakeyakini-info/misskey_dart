@@ -7,7 +7,8 @@ part of 'i_apps.dart';
 // **************************************************************************
 
 _IApps _$IAppsFromJson(Map<String, dynamic> json) => _IApps(
-      sort: $enumDecodeNullable(_$IAppsSortEnumMap, json['sort']),
+      sort: $enumDecodeNullable(_$IAppsSortEnumMap, json['sort'],
+          unknownValue: IAppsSort.unknown),
     );
 
 Map<String, dynamic> _$IAppsToJson(_IApps instance) => <String, dynamic>{

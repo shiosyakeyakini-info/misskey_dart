@@ -18,6 +18,9 @@ mixin _$AdminAbuseReportNotificationRecipientUpdateRequest {
   String? get id;
   bool? get isActive;
   String? get name;
+  @JsonKey(
+      unknownEnumValue:
+          AdminAbuseReportNotificationRecipientUpdateMethod.unknown)
   AdminAbuseReportNotificationRecipientUpdateMethod? get method;
   String? get userId;
   String? get systemWebhookId;
@@ -76,6 +79,9 @@ abstract mixin class $AdminAbuseReportNotificationRecipientUpdateRequestCopyWith
       {String? id,
       bool? isActive,
       String? name,
+      @JsonKey(
+          unknownEnumValue:
+              AdminAbuseReportNotificationRecipientUpdateMethod.unknown)
       AdminAbuseReportNotificationRecipientUpdateMethod? method,
       String? userId,
       String? systemWebhookId});
@@ -140,6 +146,9 @@ class _AdminAbuseReportNotificationRecipientUpdateRequest
       {this.id,
       this.isActive,
       this.name,
+      @JsonKey(
+          unknownEnumValue:
+              AdminAbuseReportNotificationRecipientUpdateMethod.unknown)
       this.method,
       this.userId,
       this.systemWebhookId});
@@ -154,6 +163,9 @@ class _AdminAbuseReportNotificationRecipientUpdateRequest
   @override
   final String? name;
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminAbuseReportNotificationRecipientUpdateMethod.unknown)
   final AdminAbuseReportNotificationRecipientUpdateMethod? method;
   @override
   final String? userId;
@@ -221,6 +233,9 @@ abstract mixin class _$AdminAbuseReportNotificationRecipientUpdateRequestCopyWit
       {String? id,
       bool? isActive,
       String? name,
+      @JsonKey(
+          unknownEnumValue:
+              AdminAbuseReportNotificationRecipientUpdateMethod.unknown)
       AdminAbuseReportNotificationRecipientUpdateMethod? method,
       String? userId,
       String? systemWebhookId});

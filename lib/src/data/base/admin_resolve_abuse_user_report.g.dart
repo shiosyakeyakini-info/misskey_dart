@@ -11,7 +11,8 @@ _AdminResolveAbuseUserReport _$AdminResolveAbuseUserReportFromJson(
     _AdminResolveAbuseUserReport(
       reportId: json['reportId'] as String,
       resolvedAs: $enumDecodeNullable(
-          _$AdminResolveAbuseUserReportResolvedAsEnumMap, json['resolvedAs']),
+          _$AdminResolveAbuseUserReportResolvedAsEnumMap, json['resolvedAs'],
+          unknownValue: AdminResolveAbuseUserReportResolvedAs.unknown),
     );
 
 Map<String, dynamic> _$AdminResolveAbuseUserReportToJson(

@@ -68,8 +68,10 @@ mixin _$MetaLite {
   List<String> get serverRules;
   String? get themeColor;
   RolePolicies get policies;
+  @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
   NoteSearchableScope get noteSearchableScope;
   double get maxFileSize;
+  @JsonKey(unknownEnumValue: FederationScope.unknown)
   FederationScope get federation;
 
   /// Create a copy of MetaLite
@@ -310,8 +312,10 @@ abstract mixin class $MetaLiteCopyWith<$Res> {
       List<String> serverRules,
       String? themeColor,
       RolePolicies policies,
+      @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
       NoteSearchableScope noteSearchableScope,
       double maxFileSize,
+      @JsonKey(unknownEnumValue: FederationScope.unknown)
       FederationScope federation});
 
   $MetaClientOptionsCopyWith<$Res> get clientOptions;
@@ -703,8 +707,10 @@ class _MetaLite implements MetaLite {
       required final List<String> serverRules,
       this.themeColor,
       required this.policies,
+      @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
       this.noteSearchableScope = NoteSearchableScope.local,
       required this.maxFileSize,
+      @JsonKey(unknownEnumValue: FederationScope.unknown)
       required this.federation})
       : _langs = langs,
         _ads = ads,
@@ -840,11 +846,12 @@ class _MetaLite implements MetaLite {
   @override
   final RolePolicies policies;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
   final NoteSearchableScope noteSearchableScope;
   @override
   final double maxFileSize;
   @override
+  @JsonKey(unknownEnumValue: FederationScope.unknown)
   final FederationScope federation;
 
   /// Create a copy of MetaLite
@@ -1092,8 +1099,10 @@ abstract mixin class _$MetaLiteCopyWith<$Res>
       List<String> serverRules,
       String? themeColor,
       RolePolicies policies,
+      @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
       NoteSearchableScope noteSearchableScope,
       double maxFileSize,
+      @JsonKey(unknownEnumValue: FederationScope.unknown)
       FederationScope federation});
 
   @override

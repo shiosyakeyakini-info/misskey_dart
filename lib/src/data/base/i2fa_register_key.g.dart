@@ -25,7 +25,8 @@ _I2faRegisterKey _$I2faRegisterKeyFromJson(Map<String, dynamic> json) =>
           : I2faRegisterKeyAuthenticatorSelection.fromJson(
               json['authenticatorSelection'] as Map<String, dynamic>),
       attestation: $enumDecodeNullable(
-          _$I2faRegisterKeyAttestationEnumMap, json['attestation']),
+          _$I2faRegisterKeyAttestationEnumMap, json['attestation'],
+          unknownValue: I2faRegisterKeyAttestation.unknown),
       extensions: json['extensions'] == null
           ? null
           : I2faRegisterKeyExtensions.fromJson(

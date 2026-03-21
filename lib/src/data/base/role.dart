@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'role.freezed.dart';
 part 'role.g.dart';
@@ -10,7 +9,7 @@ abstract class Role with _$Role {
   const factory Role({
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverter() required DateTime updatedAt,
-    required RoleTarget target,
+    @JsonKey(unknownEnumValue: RoleTarget.unknown) required RoleTarget target,
     required RoleCondFormulaValue condFormula,
     required bool isPublic,
     required bool isExplorable,

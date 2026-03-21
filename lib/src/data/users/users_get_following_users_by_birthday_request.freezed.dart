@@ -17,7 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$UsersGetFollowingUsersByBirthdayRequest {
   int? get limit;
   int? get offset;
-  dynamic? get birthday;
+  dynamic get birthday;
 
   /// Create a copy of UsersGetFollowingUsersByBirthdayRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -60,7 +60,7 @@ abstract mixin class $UsersGetFollowingUsersByBirthdayRequestCopyWith<$Res> {
           $Res Function(UsersGetFollowingUsersByBirthdayRequest) _then) =
       _$UsersGetFollowingUsersByBirthdayRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, int? offset, dynamic? birthday});
+  $Res call({int? limit, int? offset, dynamic birthday});
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ class _$UsersGetFollowingUsersByBirthdayRequestCopyWithImpl<$Res>
       birthday: freezed == birthday
           ? _self.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }
@@ -114,7 +114,7 @@ class _UsersGetFollowingUsersByBirthdayRequest
   @JsonKey()
   final int? offset;
   @override
-  final dynamic? birthday;
+  final dynamic birthday;
 
   /// Create a copy of UsersGetFollowingUsersByBirthdayRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -163,7 +163,7 @@ abstract mixin class _$UsersGetFollowingUsersByBirthdayRequestCopyWith<$Res>
       __$UsersGetFollowingUsersByBirthdayRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, int? offset, dynamic? birthday});
+  $Res call({int? limit, int? offset, dynamic birthday});
 }
 
 /// @nodoc
@@ -196,7 +196,7 @@ class __$UsersGetFollowingUsersByBirthdayRequestCopyWithImpl<$Res>
       birthday: freezed == birthday
           ? _self.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }

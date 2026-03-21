@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigRenote {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigRenoteType.unknown)
   AdminShowUserNotificationRecieveConfigRenoteType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigRenoteCopyWith<
       _$AdminShowUserNotificationRecieveConfigRenoteCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigRenoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigRenoteType.unknown)
+      AdminShowUserNotificationRecieveConfigRenoteType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$AdminShowUserNotificationRecieveConfigRenoteCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigRenote
     implements AdminShowUserNotificationRecieveConfigRenote {
   const _AdminShowUserNotificationRecieveConfigRenote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigRenoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigRenote.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigRenoteFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigRenoteType.unknown)
   final AdminShowUserNotificationRecieveConfigRenoteType type;
   @override
   final String userListId;
@@ -159,7 +172,10 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigRenoteCopyWith<
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigRenoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigRenoteType.unknown)
+      AdminShowUserNotificationRecieveConfigRenoteType type,
       String userListId});
 }
 

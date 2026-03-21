@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminQueueQueueStatsDb {
   String get version;
+  @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown)
   AdminQueueQueueStatsDbMode get mode;
   String get runId;
   String get processId;
@@ -72,6 +73,7 @@ abstract mixin class $AdminQueueQueueStatsDbCopyWith<$Res> {
   @useResult
   $Res call(
       {String version,
+      @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown)
       AdminQueueQueueStatsDbMode mode,
       String runId,
       String processId,
@@ -174,6 +176,7 @@ class _$AdminQueueQueueStatsDbCopyWithImpl<$Res>
 class _AdminQueueQueueStatsDb implements AdminQueueQueueStatsDb {
   const _AdminQueueQueueStatsDb(
       {required this.version,
+      @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown)
       required this.mode,
       required this.runId,
       required this.processId,
@@ -188,6 +191,7 @@ class _AdminQueueQueueStatsDb implements AdminQueueQueueStatsDb {
   @override
   final String version;
   @override
+  @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown)
   final AdminQueueQueueStatsDbMode mode;
   @override
   final String runId;
@@ -258,6 +262,7 @@ abstract mixin class _$AdminQueueQueueStatsDbCopyWith<$Res>
   @useResult
   $Res call(
       {String version,
+      @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown)
       AdminQueueQueueStatsDbMode mode,
       String runId,
       String processId,

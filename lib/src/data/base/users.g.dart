@@ -9,10 +9,13 @@ part of 'users.dart';
 _Users _$UsersFromJson(Map<String, dynamic> json) => _Users(
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$UsersSortEnumMap, json['sort']),
-      state: $enumDecodeNullable(_$UsersStateEnumMap, json['state']) ??
+      sort: $enumDecodeNullable(_$UsersSortEnumMap, json['sort'],
+          unknownValue: UsersSort.unknown),
+      state: $enumDecodeNullable(_$UsersStateEnumMap, json['state'],
+              unknownValue: UsersState.unknown) ??
           UsersState.all,
-      origin: $enumDecodeNullable(_$UsersOriginEnumMap, json['origin']) ??
+      origin: $enumDecodeNullable(_$UsersOriginEnumMap, json['origin'],
+              unknownValue: UsersOrigin.unknown) ??
           UsersOrigin.local,
       hostname: json['hostname'] as String? ?? null,
     );

@@ -9,8 +9,9 @@ part of 'admin_queue_remove_job_request.dart';
 _AdminQueueRemoveJobRequest _$AdminQueueRemoveJobRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminQueueRemoveJobRequest(
-      queue:
-          $enumDecodeNullable(_$AdminQueueRemoveJobQueueEnumMap, json['queue']),
+      queue: $enumDecodeNullable(
+          _$AdminQueueRemoveJobQueueEnumMap, json['queue'],
+          unknownValue: AdminQueueRemoveJobQueue.unknown),
       jobId: json['jobId'] as String?,
     );
 

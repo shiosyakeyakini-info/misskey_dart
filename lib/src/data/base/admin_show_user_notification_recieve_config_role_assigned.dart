@@ -7,7 +7,7 @@ part 'admin_show_user_notification_recieve_config_role_assigned.g.dart';
 @freezed
 abstract class AdminShowUserNotificationRecieveConfigRoleAssigned with _$AdminShowUserNotificationRecieveConfigRoleAssigned {
   const factory AdminShowUserNotificationRecieveConfigRoleAssigned({
-    required AdminShowUserNotificationRecieveConfigRoleAssignedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown) required AdminShowUserNotificationRecieveConfigRoleAssignedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigRoleAssigned;
 

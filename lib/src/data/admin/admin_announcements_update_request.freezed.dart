@@ -19,7 +19,9 @@ mixin _$AdminAnnouncementsUpdateRequest {
   String? get title;
   String? get text;
   String? get imageUrl;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown)
   AdminAnnouncementsUpdateIcon? get icon;
+  @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown)
   AdminAnnouncementsUpdateDisplay? get display;
   bool? get forExistingUsers;
   bool? get silence;
@@ -82,7 +84,9 @@ abstract mixin class $AdminAnnouncementsUpdateRequestCopyWith<$Res> {
       String? title,
       String? text,
       String? imageUrl,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown)
       AdminAnnouncementsUpdateIcon? icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown)
       AdminAnnouncementsUpdateDisplay? display,
       bool? forExistingUsers,
       bool? silence,
@@ -168,7 +172,9 @@ class _AdminAnnouncementsUpdateRequest
       this.title,
       this.text,
       this.imageUrl,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown)
       this.icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown)
       this.display,
       this.forExistingUsers,
       this.silence,
@@ -187,8 +193,10 @@ class _AdminAnnouncementsUpdateRequest
   @override
   final String? imageUrl;
   @override
+  @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown)
   final AdminAnnouncementsUpdateIcon? icon;
   @override
+  @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown)
   final AdminAnnouncementsUpdateDisplay? display;
   @override
   final bool? forExistingUsers;
@@ -261,7 +269,9 @@ abstract mixin class _$AdminAnnouncementsUpdateRequestCopyWith<$Res>
       String? title,
       String? text,
       String? imageUrl,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown)
       AdminAnnouncementsUpdateIcon? icon,
+      @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown)
       AdminAnnouncementsUpdateDisplay? display,
       bool? forExistingUsers,
       bool? silence,

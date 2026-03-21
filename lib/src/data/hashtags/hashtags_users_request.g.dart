@@ -12,12 +12,14 @@ _HashtagsUsersRequest _$HashtagsUsersRequestFromJson(
       tag: json['tag'] as String?,
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$HashtagsUsersSortEnumMap, json['sort']),
-      state: $enumDecodeNullable(_$HashtagsUsersStateEnumMap, json['state']) ??
+      sort: $enumDecodeNullable(_$HashtagsUsersSortEnumMap, json['sort'],
+          unknownValue: HashtagsUsersSort.unknown),
+      state: $enumDecodeNullable(_$HashtagsUsersStateEnumMap, json['state'],
+              unknownValue: HashtagsUsersState.unknown) ??
           HashtagsUsersState.all,
-      origin:
-          $enumDecodeNullable(_$HashtagsUsersOriginEnumMap, json['origin']) ??
-              HashtagsUsersOrigin.local,
+      origin: $enumDecodeNullable(_$HashtagsUsersOriginEnumMap, json['origin'],
+              unknownValue: HashtagsUsersOrigin.unknown) ??
+          HashtagsUsersOrigin.local,
     );
 
 Map<String, dynamic> _$HashtagsUsersRequestToJson(

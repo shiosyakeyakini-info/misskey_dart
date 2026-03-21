@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_quote.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigQuote with _$IUpdateNotificationRecieveConfigQuote {
   const factory IUpdateNotificationRecieveConfigQuote({
-    required IUpdateNotificationRecieveConfigQuoteType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigQuoteType.unknown) required IUpdateNotificationRecieveConfigQuoteType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigQuote;
 

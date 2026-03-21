@@ -17,6 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$IAuthorizedAppsRequest {
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
   IAuthorizedAppsSort? get sort;
 
   /// Create a copy of IAuthorizedAppsRequest
@@ -56,7 +57,11 @@ abstract mixin class $IAuthorizedAppsRequestCopyWith<$Res> {
           $Res Function(IAuthorizedAppsRequest) _then) =
       _$IAuthorizedAppsRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, int? offset, IAuthorizedAppsSort? sort});
+  $Res call(
+      {int? limit,
+      int? offset,
+      @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
+      IAuthorizedAppsSort? sort});
 }
 
 /// @nodoc
@@ -97,7 +102,10 @@ class _$IAuthorizedAppsRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _IAuthorizedAppsRequest implements IAuthorizedAppsRequest {
   const _IAuthorizedAppsRequest(
-      {this.limit = 10, this.offset = 0, this.sort = IAuthorizedAppsSort.desc});
+      {this.limit = 10,
+      this.offset = 0,
+      @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
+      this.sort = IAuthorizedAppsSort.desc});
   factory _IAuthorizedAppsRequest.fromJson(Map<String, dynamic> json) =>
       _$IAuthorizedAppsRequestFromJson(json);
 
@@ -108,7 +116,7 @@ class _IAuthorizedAppsRequest implements IAuthorizedAppsRequest {
   @JsonKey()
   final int? offset;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
   final IAuthorizedAppsSort? sort;
 
   /// Create a copy of IAuthorizedAppsRequest
@@ -155,7 +163,11 @@ abstract mixin class _$IAuthorizedAppsRequestCopyWith<$Res>
       __$IAuthorizedAppsRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, int? offset, IAuthorizedAppsSort? sort});
+  $Res call(
+      {int? limit,
+      int? offset,
+      @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
+      IAuthorizedAppsSort? sort});
 }
 
 /// @nodoc

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'reversi_game_detailed.freezed.dart';
 part 'reversi_game_detailed.g.dart';
@@ -27,7 +26,7 @@ abstract class ReversiGameDetailed with _$ReversiGameDetailed {
     String? surrenderedUserId,
     String? timeoutUserId,
     double? black,
-    required ReversiBw bw,
+    @JsonKey(unknownEnumValue: ReversiBw.unknown) required ReversiBw bw,
     required bool noIrregularRules,
     required bool isLlotheo,
     required bool canPutEverywhere,

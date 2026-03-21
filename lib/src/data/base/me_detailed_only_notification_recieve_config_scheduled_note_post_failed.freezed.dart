@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+              .unknown)
   MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType get type;
   String get userListId;
 
@@ -66,7 +70,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFa
       _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
       String userListId});
 }
 
@@ -109,13 +117,22 @@ class _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedCopyWithIm
 class _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed
     implements MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed {
   const _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+              .unknown)
   final MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type;
   @override
   final String userListId;
@@ -175,7 +192,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostF
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
       String userListId});
 }
 

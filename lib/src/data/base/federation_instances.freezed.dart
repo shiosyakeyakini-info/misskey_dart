@@ -25,6 +25,7 @@ mixin _$FederationInstances {
   bool? get publishing;
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: FederationInstancesSort.unknown)
   FederationInstancesSort? get sort;
 
   /// Create a copy of FederationInstances
@@ -101,6 +102,7 @@ abstract mixin class $FederationInstancesCopyWith<$Res> {
       bool? publishing,
       int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: FederationInstancesSort.unknown)
       FederationInstancesSort? sort});
 }
 
@@ -192,7 +194,7 @@ class _FederationInstances implements FederationInstances {
       this.publishing,
       this.limit = 30,
       this.offset = 0,
-      this.sort});
+      @JsonKey(unknownEnumValue: FederationInstancesSort.unknown) this.sort});
   factory _FederationInstances.fromJson(Map<String, dynamic> json) =>
       _$FederationInstancesFromJson(json);
 
@@ -219,6 +221,7 @@ class _FederationInstances implements FederationInstances {
   @JsonKey()
   final int? offset;
   @override
+  @JsonKey(unknownEnumValue: FederationInstancesSort.unknown)
   final FederationInstancesSort? sort;
 
   /// Create a copy of FederationInstances
@@ -302,6 +305,7 @@ abstract mixin class _$FederationInstancesCopyWith<$Res>
       bool? publishing,
       int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: FederationInstancesSort.unknown)
       FederationInstancesSort? sort});
 }
 

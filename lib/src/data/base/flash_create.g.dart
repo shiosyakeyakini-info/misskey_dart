@@ -14,7 +14,8 @@ _FlashCreate _$FlashCreateFromJson(Map<String, dynamic> json) => _FlashCreate(
           .map((e) => e as String)
           .toList(),
       visibility: $enumDecodeNullable(
-              _$FlashCreateVisibilityEnumMap, json['visibility']) ??
+              _$FlashCreateVisibilityEnumMap, json['visibility'],
+              unknownValue: FlashCreateVisibility.unknown) ??
           FlashCreateVisibility.public,
     );
 

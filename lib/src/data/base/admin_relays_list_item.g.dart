@@ -10,9 +10,10 @@ _AdminRelaysListItem _$AdminRelaysListItemFromJson(Map<String, dynamic> json) =>
     _AdminRelaysListItem(
       id: json['id'] as String,
       inbox: const UriConverter().fromJson(json['inbox'] as String),
-      status:
-          $enumDecodeNullable(_$AdminRelaysListStatusEnumMap, json['status']) ??
-              AdminRelaysListStatus.requesting,
+      status: $enumDecodeNullable(
+              _$AdminRelaysListStatusEnumMap, json['status'],
+              unknownValue: AdminRelaysListStatus.unknown) ??
+          AdminRelaysListStatus.requesting,
     );
 
 Map<String, dynamic> _$AdminRelaysListItemToJson(

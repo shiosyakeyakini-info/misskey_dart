@@ -1,5 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 enum AdminQueueQueueStatsName {
   system,
   endedPollNotification,

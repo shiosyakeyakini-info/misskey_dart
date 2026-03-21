@@ -12,11 +12,17 @@ _I2faRegisterKeyAuthenticatorSelection
         _I2faRegisterKeyAuthenticatorSelection(
           authenticatorAttachment: $enumDecode(
               _$I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachmentEnumMap,
-              json['authenticatorAttachment']),
+              json['authenticatorAttachment'],
+              unknownValue:
+                  I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
+                      .unknown),
           requireResidentKey: json['requireResidentKey'] as bool,
           userVerification: $enumDecode(
               _$I2faRegisterKeyAuthenticatorSelectionUserVerificationEnumMap,
-              json['userVerification']),
+              json['userVerification'],
+              unknownValue:
+                  I2faRegisterKeyAuthenticatorSelectionUserVerification
+                      .unknown),
         );
 
 Map<String, dynamic> _$I2faRegisterKeyAuthenticatorSelectionToJson(

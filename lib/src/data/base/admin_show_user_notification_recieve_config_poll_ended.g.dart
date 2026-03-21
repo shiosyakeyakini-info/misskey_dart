@@ -12,7 +12,9 @@ _AdminShowUserNotificationRecieveConfigPollEnded
         _AdminShowUserNotificationRecieveConfigPollEnded(
           type: $enumDecode(
               _$AdminShowUserNotificationRecieveConfigPollEndedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  AdminShowUserNotificationRecieveConfigPollEndedType.unknown),
           userListId: json['userListId'] as String,
         );
 

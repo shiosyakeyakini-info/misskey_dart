@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminUpdateMetaClientOptions {
+  @JsonKey(
+      unknownEnumValue: AdminUpdateMetaClientOptionsEntrancePageStyle.unknown)
   AdminUpdateMetaClientOptionsEntrancePageStyle? get entrancePageStyle;
   bool? get showTimelineForVisitor;
   bool? get showActivitiesForVisitor;
@@ -64,7 +66,10 @@ abstract mixin class $AdminUpdateMetaClientOptionsCopyWith<$Res> {
       _$AdminUpdateMetaClientOptionsCopyWithImpl;
   @useResult
   $Res call(
-      {AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminUpdateMetaClientOptionsEntrancePageStyle.unknown)
+      AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle,
       bool? showTimelineForVisitor,
       bool? showActivitiesForVisitor});
 }
@@ -107,13 +112,18 @@ class _$AdminUpdateMetaClientOptionsCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminUpdateMetaClientOptions implements AdminUpdateMetaClientOptions {
   const _AdminUpdateMetaClientOptions(
-      {this.entrancePageStyle,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminUpdateMetaClientOptionsEntrancePageStyle.unknown)
+      this.entrancePageStyle,
       this.showTimelineForVisitor,
       this.showActivitiesForVisitor});
   factory _AdminUpdateMetaClientOptions.fromJson(Map<String, dynamic> json) =>
       _$AdminUpdateMetaClientOptionsFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: AdminUpdateMetaClientOptionsEntrancePageStyle.unknown)
   final AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle;
   @override
   final bool? showTimelineForVisitor;
@@ -171,7 +181,10 @@ abstract mixin class _$AdminUpdateMetaClientOptionsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminUpdateMetaClientOptionsEntrancePageStyle.unknown)
+      AdminUpdateMetaClientOptionsEntrancePageStyle? entrancePageStyle,
       bool? showTimelineForVisitor,
       bool? showActivitiesForVisitor});
 }

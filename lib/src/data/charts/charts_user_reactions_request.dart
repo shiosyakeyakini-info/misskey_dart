@@ -7,7 +7,7 @@ part 'charts_user_reactions_request.g.dart';
 @freezed
 abstract class ChartsUserReactionsRequest with _$ChartsUserReactionsRequest {
   const factory ChartsUserReactionsRequest({
-    ChartsUserReactionsSpan? span,
+    @JsonKey(unknownEnumValue: ChartsUserReactionsSpan.unknown) ChartsUserReactionsSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
     String? userId,

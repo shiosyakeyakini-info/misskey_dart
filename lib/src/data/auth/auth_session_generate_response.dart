@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'auth_session_generate_response.freezed.dart';
 part 'auth_session_generate_response.g.dart';

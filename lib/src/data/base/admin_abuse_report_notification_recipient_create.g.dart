@@ -14,7 +14,9 @@ _AdminAbuseReportNotificationRecipientCreate
           name: json['name'] as String,
           method: $enumDecode(
               _$AdminAbuseReportNotificationRecipientCreateMethodEnumMap,
-              json['method']),
+              json['method'],
+              unknownValue:
+                  AdminAbuseReportNotificationRecipientCreateMethod.unknown),
           userId: json['userId'] as String?,
           systemWebhookId: json['systemWebhookId'] as String?,
         );

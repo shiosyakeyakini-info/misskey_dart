@@ -10,9 +10,9 @@ abstract class HashtagsUsers with _$HashtagsUsers {
     required String tag,
     @Default(10) int? limit,
     @Default(0) int? offset,
-    required HashtagsUsersSort sort,
-    @Default(HashtagsUsersState.all) HashtagsUsersState? state,
-    @Default(HashtagsUsersOrigin.local) HashtagsUsersOrigin? origin,
+    @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown) required HashtagsUsersSort sort,
+    @JsonKey(unknownEnumValue: HashtagsUsersState.unknown) @Default(HashtagsUsersState.all) HashtagsUsersState? state,
+    @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown) @Default(HashtagsUsersOrigin.local) HashtagsUsersOrigin? origin,
   }) = _HashtagsUsers;
 
   factory HashtagsUsers.fromJson(Map<String, Object?> json) => _$HashtagsUsersFromJson(json);

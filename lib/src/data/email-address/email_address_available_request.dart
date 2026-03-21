@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'email_address_available_request.freezed.dart';
 part 'email_address_available_request.g.dart';

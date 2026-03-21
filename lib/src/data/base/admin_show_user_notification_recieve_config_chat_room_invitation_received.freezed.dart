@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived {
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown)
   AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType get type;
   String get userListId;
 
@@ -66,8 +70,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigChatRoomInvitationRe
       _$AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
-          type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType type,
       String userListId});
 }
 
@@ -111,13 +118,22 @@ class _AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived
     implements
         AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived {
   const _AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigChatRoomInvitationReceived.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown)
   final AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
       type;
   @override
@@ -178,8 +194,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigChatRoomInvitationR
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
-          type,
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType
+                  .unknown)
+      AdminShowUserNotificationRecieveConfigChatRoomInvitationReceivedType type,
       String userListId});
 }
 

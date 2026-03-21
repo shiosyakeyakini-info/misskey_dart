@@ -7,8 +7,8 @@ part 'admin_queue_clear_request.g.dart';
 @freezed
 abstract class AdminQueueClearRequest with _$AdminQueueClearRequest {
   const factory AdminQueueClearRequest({
-    AdminQueueClearQueue? queue,
-    AdminQueueClearState? state,
+    @JsonKey(unknownEnumValue: AdminQueueClearQueue.unknown) AdminQueueClearQueue? queue,
+    @JsonKey(unknownEnumValue: AdminQueueClearState.unknown) AdminQueueClearState? state,
   }) = _AdminQueueClearRequest;
 
   factory AdminQueueClearRequest.fromJson(Map<String, Object?> json) => _$AdminQueueClearRequestFromJson(json);

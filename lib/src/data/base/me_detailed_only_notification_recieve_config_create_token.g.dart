@@ -12,7 +12,10 @@ _MeDetailedOnlyNotificationRecieveConfigCreateToken
         _MeDetailedOnlyNotificationRecieveConfigCreateToken(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigCreateTokenTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigCreateTokenType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

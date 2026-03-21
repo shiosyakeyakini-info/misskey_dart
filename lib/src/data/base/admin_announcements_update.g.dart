@@ -14,9 +14,11 @@ _AdminAnnouncementsUpdate _$AdminAnnouncementsUpdateFromJson(
       text: json['text'] as String?,
       imageUrl: json['imageUrl'] as String?,
       icon: $enumDecodeNullable(
-          _$AdminAnnouncementsUpdateIconEnumMap, json['icon']),
+          _$AdminAnnouncementsUpdateIconEnumMap, json['icon'],
+          unknownValue: AdminAnnouncementsUpdateIcon.unknown),
       display: $enumDecodeNullable(
-          _$AdminAnnouncementsUpdateDisplayEnumMap, json['display']),
+          _$AdminAnnouncementsUpdateDisplayEnumMap, json['display'],
+          unknownValue: AdminAnnouncementsUpdateDisplay.unknown),
       forExistingUsers: json['forExistingUsers'] as bool?,
       silence: json['silence'] as bool?,
       needConfirmationToRead: json['needConfirmationToRead'] as bool?,

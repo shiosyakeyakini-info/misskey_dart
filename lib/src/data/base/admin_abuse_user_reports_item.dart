@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'admin_abuse_user_reports_item.freezed.dart';
 part 'admin_abuse_user_reports_item.g.dart';
@@ -19,7 +18,7 @@ abstract class AdminAbuseUserReportsItem with _$AdminAbuseUserReportsItem {
     required UserDetailedNotMe targetUser,
     UserDetailedNotMe? assignee,
     required bool forwarded,
-    AdminAbuseUserReportsResolvedAs? resolvedAs,
+    @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown) AdminAbuseUserReportsResolvedAs? resolvedAs,
     required String moderationNote,
   }) = _AdminAbuseUserReportsItem;
 

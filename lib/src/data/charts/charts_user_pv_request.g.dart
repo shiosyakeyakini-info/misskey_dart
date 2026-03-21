@@ -8,7 +8,8 @@ part of 'charts_user_pv_request.dart';
 
 _ChartsUserPvRequest _$ChartsUserPvRequestFromJson(Map<String, dynamic> json) =>
     _ChartsUserPvRequest(
-      span: $enumDecodeNullable(_$ChartsUserPvSpanEnumMap, json['span']),
+      span: $enumDecodeNullable(_$ChartsUserPvSpanEnumMap, json['span'],
+          unknownValue: ChartsUserPvSpan.unknown),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
       userId: json['userId'] as String?,

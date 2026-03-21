@@ -9,7 +9,8 @@ part of 'notes_create_request.dart';
 _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
     _NotesCreateRequest(
       visibility: $enumDecodeNullable(
-              _$NotesCreateVisibilityEnumMap, json['visibility']) ??
+              _$NotesCreateVisibilityEnumMap, json['visibility'],
+              unknownValue: NotesCreateVisibility.unknown) ??
           NotesCreateVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -18,7 +19,8 @@ _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
       localOnly: json['localOnly'] as bool? ?? false,
       reactionAcceptance: $enumDecodeNullable(
               _$NotesCreateReactionAcceptanceEnumMap,
-              json['reactionAcceptance']) ??
+              json['reactionAcceptance'],
+              unknownValue: NotesCreateReactionAcceptance.unknown) ??
           null,
       noExtractMentions: json['noExtractMentions'] as bool? ?? false,
       noExtractHashtags: json['noExtractHashtags'] as bool? ?? false,

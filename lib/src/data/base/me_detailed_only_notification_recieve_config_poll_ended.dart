@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_poll_ended.g.dart';
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigPollEnded with _$MeDetailedOnlyNotificationRecieveConfigPollEnded {
   const factory MeDetailedOnlyNotificationRecieveConfigPollEnded({
-    required MeDetailedOnlyNotificationRecieveConfigPollEndedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown) required MeDetailedOnlyNotificationRecieveConfigPollEndedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigPollEnded;
 

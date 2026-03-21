@@ -7,7 +7,7 @@ part 'charts_user_pv_request.g.dart';
 @freezed
 abstract class ChartsUserPvRequest with _$ChartsUserPvRequest {
   const factory ChartsUserPvRequest({
-    ChartsUserPvSpan? span,
+    @JsonKey(unknownEnumValue: ChartsUserPvSpan.unknown) ChartsUserPvSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
     String? userId,

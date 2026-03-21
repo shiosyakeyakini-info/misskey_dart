@@ -10,7 +10,8 @@ _IWebhooksTestRequest _$IWebhooksTestRequestFromJson(
         Map<String, dynamic> json) =>
     _IWebhooksTestRequest(
       webhookId: json['webhookId'] as String?,
-      type: $enumDecodeNullable(_$IWebhooksTestTypeEnumMap, json['type']),
+      type: $enumDecodeNullable(_$IWebhooksTestTypeEnumMap, json['type'],
+          unknownValue: IWebhooksTestType.unknown),
       override_: json['override'] == null
           ? null
           : IWebhooksTestOverride.fromJson(

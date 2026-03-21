@@ -14,8 +14,9 @@ _AdminRolesUpdateRequest _$AdminRolesUpdateRequestFromJson(
       description: json['description'] as String?,
       color: json['color'] as String?,
       iconUrl: json['iconUrl'] as String?,
-      target:
-          $enumDecodeNullable(_$AdminRolesUpdateTargetEnumMap, json['target']),
+      target: $enumDecodeNullable(
+          _$AdminRolesUpdateTargetEnumMap, json['target'],
+          unknownValue: AdminRolesUpdateTarget.unknown),
       condFormula: json['condFormula'] as Map<String, dynamic>?,
       isPublic: json['isPublic'] as bool?,
       isModerator: json['isModerator'] as bool?,

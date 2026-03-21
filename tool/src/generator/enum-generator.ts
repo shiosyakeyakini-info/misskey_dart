@@ -23,10 +23,25 @@ export function generateEnumFile(
   }
 
   const fileName = classNameToFileName(name);
+  const DART_KEYWORDS = new Set(["null", "true", "false", "default", "class", "enum", "void", "var", "final", "const", "is", "in", "new", "this", "super", "return", "if", "else", "for", "while", "do", "switch", "case", "break", "continue", "try", "catch", "throw", "assert", "with", "as", "abstract", "static", "dynamic", "import", "export", "library", "part", "typedef", "extension", "mixin", "late", "required", "sealed"]);
+
+  // Check if any value needs @JsonValue annotation
+  let needsJsonValueImport = false;
+  for (const value of schema.enumValues) {
+    if (value === "null" || value === null as any) continue;
+    const dartName = enumValueToDartName(value);
+    if (DART_KEYWORDS.has(dartName) || needsJsonValueAnnotation(value)) {
+      needsJsonValueImport = true;
+      break;
+    }
+  }
+
   const lines: string[] = [];
 
-  lines.push("import 'package:freezed_annotation/freezed_annotation.dart';");
-  lines.push("");
+  if (needsJsonValueImport) {
+    lines.push("import 'package:freezed_annotation/freezed_annotation.dart';");
+    lines.push("");
+  }
 
   lines.push(`enum ${name} {`);
 
@@ -36,8 +51,6 @@ export function generateEnumFile(
 
     let dartName = enumValueToDartName(value);
 
-    // Escape Dart reserved words
-    const DART_KEYWORDS = new Set(["null", "true", "false", "default", "class", "enum", "void", "var", "final", "const", "is", "in", "new", "this", "super", "return", "if", "else", "for", "while", "do", "switch", "case", "break", "continue", "try", "catch", "throw", "assert", "with", "as", "abstract", "static", "dynamic", "import", "export", "library", "part", "typedef", "extension", "mixin", "late", "required", "sealed"]);
     if (DART_KEYWORDS.has(dartName)) {
       lines.push(`  @JsonValue("${value}")`);
       dartName = `${dartName}_`;

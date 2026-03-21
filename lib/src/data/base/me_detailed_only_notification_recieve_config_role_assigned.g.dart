@@ -12,7 +12,10 @@ _MeDetailedOnlyNotificationRecieveConfigRoleAssigned
         _MeDetailedOnlyNotificationRecieveConfigRoleAssigned(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigRoleAssignedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigRoleAssignedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 

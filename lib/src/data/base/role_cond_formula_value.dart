@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'role_cond_formula_value.freezed.dart';
 part 'role_cond_formula_value.g.dart';

@@ -15,6 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+              .unknown)
   MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType get type;
   String get userListId;
 
@@ -66,7 +70,11 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigFollowRequestAccept
       _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
       String userListId});
 }
 
@@ -109,13 +117,22 @@ class _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedCopyWithImpl
 class _MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted
     implements MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted {
   const _MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+                  .unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedFromJson(
           json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+              .unknown)
   final MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type;
   @override
   final String userListId;
@@ -175,7 +192,11 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAccep
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+                  .unknown)
+      MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
       String userListId});
 }
 

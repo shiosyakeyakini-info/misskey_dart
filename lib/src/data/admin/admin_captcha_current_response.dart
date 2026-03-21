@@ -7,7 +7,7 @@ part 'admin_captcha_current_response.g.dart';
 @freezed
 abstract class AdminCaptchaCurrentResponse with _$AdminCaptchaCurrentResponse {
   const factory AdminCaptchaCurrentResponse({
-    required AdminCaptchaCurrentProvider provider,
+    @JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown) required AdminCaptchaCurrentProvider provider,
     required AdminCaptchaCurrentHcaptcha hcaptcha,
     required AdminCaptchaCurrentMcaptcha mcaptcha,
     required AdminCaptchaCurrentRecaptcha recaptcha,

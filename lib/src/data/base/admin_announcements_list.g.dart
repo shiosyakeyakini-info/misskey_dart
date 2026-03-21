@@ -16,7 +16,8 @@ _AdminAnnouncementsList _$AdminAnnouncementsListFromJson(
       untilDate: (json['untilDate'] as num?)?.toInt(),
       userId: json['userId'] as String?,
       status: $enumDecodeNullable(
-              _$AdminAnnouncementsListStatusEnumMap, json['status']) ??
+              _$AdminAnnouncementsListStatusEnumMap, json['status'],
+              unknownValue: AdminAnnouncementsListStatus.unknown) ??
           AdminAnnouncementsListStatus.active,
     );
 

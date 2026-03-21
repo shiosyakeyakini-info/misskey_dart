@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'note_channel_info.freezed.dart';
 part 'note_channel_info.g.dart';

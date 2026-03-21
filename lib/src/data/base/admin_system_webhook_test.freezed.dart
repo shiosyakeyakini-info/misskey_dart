@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminSystemWebhookTest {
   String get webhookId;
+  @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
   AdminSystemWebhookTestType get type;
   @JsonKey(name: 'override')
   AdminSystemWebhookTestOverride? get override_;
@@ -61,6 +62,7 @@ abstract mixin class $AdminSystemWebhookTestCopyWith<$Res> {
   @useResult
   $Res call(
       {String webhookId,
+      @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
       AdminSystemWebhookTestType type,
       @JsonKey(name: 'override') AdminSystemWebhookTestOverride? override_});
 
@@ -121,6 +123,7 @@ class _$AdminSystemWebhookTestCopyWithImpl<$Res>
 class _AdminSystemWebhookTest implements AdminSystemWebhookTest {
   const _AdminSystemWebhookTest(
       {required this.webhookId,
+      @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
       required this.type,
       @JsonKey(name: 'override') this.override_});
   factory _AdminSystemWebhookTest.fromJson(Map<String, dynamic> json) =>
@@ -129,6 +132,7 @@ class _AdminSystemWebhookTest implements AdminSystemWebhookTest {
   @override
   final String webhookId;
   @override
+  @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
   final AdminSystemWebhookTestType type;
   @override
   @JsonKey(name: 'override')
@@ -182,6 +186,7 @@ abstract mixin class _$AdminSystemWebhookTestCopyWith<$Res>
   @useResult
   $Res call(
       {String webhookId,
+      @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
       AdminSystemWebhookTestType type,
       @JsonKey(name: 'override') AdminSystemWebhookTestOverride? override_});
 

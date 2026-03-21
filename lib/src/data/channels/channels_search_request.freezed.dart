@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ChannelsSearchRequest {
   String? get query;
+  @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
   ChannelsSearchType? get type;
   String? get sinceId;
   String? get untilId;
@@ -69,6 +70,7 @@ abstract mixin class $ChannelsSearchRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String? query,
+      @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
       ChannelsSearchType? type,
       String? sinceId,
       String? untilId,
@@ -136,6 +138,7 @@ class _$ChannelsSearchRequestCopyWithImpl<$Res>
 class _ChannelsSearchRequest implements ChannelsSearchRequest {
   const _ChannelsSearchRequest(
       {this.query,
+      @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
       this.type = ChannelsSearchType.nameAndDescription,
       this.sinceId,
       this.untilId,
@@ -148,7 +151,7 @@ class _ChannelsSearchRequest implements ChannelsSearchRequest {
   @override
   final String? query;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
   final ChannelsSearchType? type;
   @override
   final String? sinceId;
@@ -215,6 +218,7 @@ abstract mixin class _$ChannelsSearchRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String? query,
+      @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
       ChannelsSearchType? type,
       String? sinceId,
       String? untilId,

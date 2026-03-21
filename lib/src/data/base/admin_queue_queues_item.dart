@@ -7,7 +7,7 @@ part 'admin_queue_queues_item.g.dart';
 @freezed
 abstract class AdminQueueQueuesItem with _$AdminQueueQueuesItem {
   const factory AdminQueueQueuesItem({
-    required AdminQueueQueuesName name,
+    @JsonKey(unknownEnumValue: AdminQueueQueuesName.unknown) required AdminQueueQueuesName name,
     required Map<String, double> counts,
     required bool isPaused,
     required AdminQueueQueuesMetrics metrics,

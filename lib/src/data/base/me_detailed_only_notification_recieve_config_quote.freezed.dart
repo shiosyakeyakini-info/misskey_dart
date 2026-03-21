@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MeDetailedOnlyNotificationRecieveConfigQuote {
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigQuoteType.unknown)
   MeDetailedOnlyNotificationRecieveConfigQuoteType get type;
   String get userListId;
 
@@ -61,7 +64,10 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigQuoteCopyWith<
       _$MeDetailedOnlyNotificationRecieveConfigQuoteCopyWithImpl;
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigQuoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigQuoteType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigQuoteType type,
       String userListId});
 }
 
@@ -100,12 +106,19 @@ class _$MeDetailedOnlyNotificationRecieveConfigQuoteCopyWithImpl<$Res>
 class _MeDetailedOnlyNotificationRecieveConfigQuote
     implements MeDetailedOnlyNotificationRecieveConfigQuote {
   const _MeDetailedOnlyNotificationRecieveConfigQuote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigQuoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _MeDetailedOnlyNotificationRecieveConfigQuote.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigQuoteFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigQuoteType.unknown)
   final MeDetailedOnlyNotificationRecieveConfigQuoteType type;
   @override
   final String userListId;
@@ -159,7 +172,10 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigQuoteCopyWith<
   @override
   @useResult
   $Res call(
-      {MeDetailedOnlyNotificationRecieveConfigQuoteType type,
+      {@JsonKey(
+          unknownEnumValue:
+              MeDetailedOnlyNotificationRecieveConfigQuoteType.unknown)
+      MeDetailedOnlyNotificationRecieveConfigQuoteType type,
       String userListId});
 }
 

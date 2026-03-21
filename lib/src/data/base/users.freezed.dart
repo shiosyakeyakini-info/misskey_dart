@@ -17,8 +17,11 @@ T _$identity<T>(T value) => value;
 mixin _$Users {
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: UsersSort.unknown)
   UsersSort? get sort;
+  @JsonKey(unknownEnumValue: UsersState.unknown)
   UsersState? get state;
+  @JsonKey(unknownEnumValue: UsersOrigin.unknown)
   UsersOrigin? get origin;
   String? get hostname;
 
@@ -65,9 +68,9 @@ abstract mixin class $UsersCopyWith<$Res> {
   $Res call(
       {int? limit,
       int? offset,
-      UsersSort? sort,
-      UsersState? state,
-      UsersOrigin? origin,
+      @JsonKey(unknownEnumValue: UsersSort.unknown) UsersSort? sort,
+      @JsonKey(unknownEnumValue: UsersState.unknown) UsersState? state,
+      @JsonKey(unknownEnumValue: UsersOrigin.unknown) UsersOrigin? origin,
       String? hostname});
 }
 
@@ -125,8 +128,10 @@ class _Users implements Users {
   const _Users(
       {this.limit = 10,
       this.offset = 0,
-      this.sort,
+      @JsonKey(unknownEnumValue: UsersSort.unknown) this.sort,
+      @JsonKey(unknownEnumValue: UsersState.unknown)
       this.state = UsersState.all,
+      @JsonKey(unknownEnumValue: UsersOrigin.unknown)
       this.origin = UsersOrigin.local,
       this.hostname = null});
   factory _Users.fromJson(Map<String, dynamic> json) => _$UsersFromJson(json);
@@ -138,12 +143,13 @@ class _Users implements Users {
   @JsonKey()
   final int? offset;
   @override
+  @JsonKey(unknownEnumValue: UsersSort.unknown)
   final UsersSort? sort;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: UsersState.unknown)
   final UsersState? state;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: UsersOrigin.unknown)
   final UsersOrigin? origin;
   @override
   @JsonKey()
@@ -198,9 +204,9 @@ abstract mixin class _$UsersCopyWith<$Res> implements $UsersCopyWith<$Res> {
   $Res call(
       {int? limit,
       int? offset,
-      UsersSort? sort,
-      UsersState? state,
-      UsersOrigin? origin,
+      @JsonKey(unknownEnumValue: UsersSort.unknown) UsersSort? sort,
+      @JsonKey(unknownEnumValue: UsersState.unknown) UsersState? state,
+      @JsonKey(unknownEnumValue: UsersOrigin.unknown) UsersOrigin? origin,
       String? hostname});
 }
 

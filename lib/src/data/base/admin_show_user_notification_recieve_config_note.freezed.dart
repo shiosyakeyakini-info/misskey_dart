@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminShowUserNotificationRecieveConfigNote {
+  @JsonKey(
+      unknownEnumValue: AdminShowUserNotificationRecieveConfigNoteType.unknown)
   AdminShowUserNotificationRecieveConfigNoteType get type;
   String get userListId;
 
@@ -59,7 +61,11 @@ abstract mixin class $AdminShowUserNotificationRecieveConfigNoteCopyWith<$Res> {
       _$AdminShowUserNotificationRecieveConfigNoteCopyWithImpl;
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigNoteType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigNoteType.unknown)
+      AdminShowUserNotificationRecieveConfigNoteType type,
+      String userListId});
 }
 
 /// @nodoc
@@ -97,12 +103,18 @@ class _$AdminShowUserNotificationRecieveConfigNoteCopyWithImpl<$Res>
 class _AdminShowUserNotificationRecieveConfigNote
     implements AdminShowUserNotificationRecieveConfigNote {
   const _AdminShowUserNotificationRecieveConfigNote(
-      {required this.type, required this.userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigNoteType.unknown)
+      required this.type,
+      required this.userListId});
   factory _AdminShowUserNotificationRecieveConfigNote.fromJson(
           Map<String, dynamic> json) =>
       _$AdminShowUserNotificationRecieveConfigNoteFromJson(json);
 
   @override
+  @JsonKey(
+      unknownEnumValue: AdminShowUserNotificationRecieveConfigNoteType.unknown)
   final AdminShowUserNotificationRecieveConfigNoteType type;
   @override
   final String userListId;
@@ -154,7 +166,11 @@ abstract mixin class _$AdminShowUserNotificationRecieveConfigNoteCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminShowUserNotificationRecieveConfigNoteType type, String userListId});
+      {@JsonKey(
+          unknownEnumValue:
+              AdminShowUserNotificationRecieveConfigNoteType.unknown)
+      AdminShowUserNotificationRecieveConfigNoteType type,
+      String userListId});
 }
 
 /// @nodoc

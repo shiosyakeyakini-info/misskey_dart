@@ -10,7 +10,8 @@ _NotesDraftsCreateRequest _$NotesDraftsCreateRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesDraftsCreateRequest(
       visibility: $enumDecodeNullable(
-              _$NotesDraftsCreateVisibilityEnumMap, json['visibility']) ??
+              _$NotesDraftsCreateVisibilityEnumMap, json['visibility'],
+              unknownValue: NotesDraftsCreateVisibility.unknown) ??
           NotesDraftsCreateVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -20,7 +21,8 @@ _NotesDraftsCreateRequest _$NotesDraftsCreateRequestFromJson(
       localOnly: json['localOnly'] as bool? ?? false,
       reactionAcceptance: $enumDecodeNullable(
               _$NotesDraftsCreateReactionAcceptanceEnumMap,
-              json['reactionAcceptance']) ??
+              json['reactionAcceptance'],
+              unknownValue: NotesDraftsCreateReactionAcceptance.unknown) ??
           null,
       replyId: json['replyId'] as String?,
       renoteId: json['renoteId'] as String?,

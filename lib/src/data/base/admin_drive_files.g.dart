@@ -15,9 +15,10 @@ _AdminDriveFiles _$AdminDriveFilesFromJson(Map<String, dynamic> json) =>
       untilDate: (json['untilDate'] as num?)?.toInt(),
       userId: json['userId'] as String?,
       type: json['type'] as String?,
-      origin:
-          $enumDecodeNullable(_$AdminDriveFilesOriginEnumMap, json['origin']) ??
-              AdminDriveFilesOrigin.local,
+      origin: $enumDecodeNullable(
+              _$AdminDriveFilesOriginEnumMap, json['origin'],
+              unknownValue: AdminDriveFilesOrigin.unknown) ??
+          AdminDriveFilesOrigin.local,
       hostname: json['hostname'] as String? ?? null,
     );
 

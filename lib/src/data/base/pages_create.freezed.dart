@@ -22,6 +22,7 @@ mixin _$PagesCreate {
   List<dynamic> get variables;
   String get script;
   String? get eyeCatchingImageId;
+  @JsonKey(unknownEnumValue: PagesCreateFont.unknown)
   PagesCreateFont? get font;
   bool? get alignCenter;
   bool? get hideTitleWhenPinned;
@@ -91,7 +92,7 @@ abstract mixin class $PagesCreateCopyWith<$Res> {
       List<dynamic> variables,
       String script,
       String? eyeCatchingImageId,
-      PagesCreateFont? font,
+      @JsonKey(unknownEnumValue: PagesCreateFont.unknown) PagesCreateFont? font,
       bool? alignCenter,
       bool? hideTitleWhenPinned});
 }
@@ -175,6 +176,7 @@ class _PagesCreate implements PagesCreate {
       required final List<dynamic> variables,
       required this.script,
       this.eyeCatchingImageId,
+      @JsonKey(unknownEnumValue: PagesCreateFont.unknown)
       this.font = PagesCreateFont.sansSerif,
       this.alignCenter = false,
       this.hideTitleWhenPinned = false})
@@ -210,7 +212,7 @@ class _PagesCreate implements PagesCreate {
   @override
   final String? eyeCatchingImageId;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: PagesCreateFont.unknown)
   final PagesCreateFont? font;
   @override
   @JsonKey()
@@ -292,7 +294,7 @@ abstract mixin class _$PagesCreateCopyWith<$Res>
       List<dynamic> variables,
       String script,
       String? eyeCatchingImageId,
-      PagesCreateFont? font,
+      @JsonKey(unknownEnumValue: PagesCreateFont.unknown) PagesCreateFont? font,
       bool? alignCenter,
       bool? hideTitleWhenPinned});
 }

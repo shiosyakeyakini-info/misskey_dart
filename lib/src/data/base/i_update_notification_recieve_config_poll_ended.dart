@@ -7,7 +7,7 @@ part 'i_update_notification_recieve_config_poll_ended.g.dart';
 @freezed
 abstract class IUpdateNotificationRecieveConfigPollEnded with _$IUpdateNotificationRecieveConfigPollEnded {
   const factory IUpdateNotificationRecieveConfigPollEnded({
-    required IUpdateNotificationRecieveConfigPollEndedType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigPollEndedType.unknown) required IUpdateNotificationRecieveConfigPollEndedType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigPollEnded;
 

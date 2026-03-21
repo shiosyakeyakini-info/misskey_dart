@@ -11,7 +11,7 @@ abstract class FlashCreate with _$FlashCreate {
     required String summary,
     required String script,
     required List<String> permissions,
-    @Default(FlashCreateVisibility.public) FlashCreateVisibility? visibility,
+    @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown) @Default(FlashCreateVisibility.public) FlashCreateVisibility? visibility,
   }) = _FlashCreate;
 
   factory FlashCreate.fromJson(Map<String, Object?> json) => _$FlashCreateFromJson(json);

@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueRetryJob {
+  @JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown)
   AdminQueueRetryJobQueue get queue;
   String get jobId;
 
@@ -54,7 +55,10 @@ abstract mixin class $AdminQueueRetryJobCopyWith<$Res> {
           AdminQueueRetryJob value, $Res Function(AdminQueueRetryJob) _then) =
       _$AdminQueueRetryJobCopyWithImpl;
   @useResult
-  $Res call({AdminQueueRetryJobQueue queue, String jobId});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown)
+      AdminQueueRetryJobQueue queue,
+      String jobId});
 }
 
 /// @nodoc
@@ -89,11 +93,15 @@ class _$AdminQueueRetryJobCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _AdminQueueRetryJob implements AdminQueueRetryJob {
-  const _AdminQueueRetryJob({required this.queue, required this.jobId});
+  const _AdminQueueRetryJob(
+      {@JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown)
+      required this.queue,
+      required this.jobId});
   factory _AdminQueueRetryJob.fromJson(Map<String, dynamic> json) =>
       _$AdminQueueRetryJobFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown)
   final AdminQueueRetryJobQueue queue;
   @override
   final String jobId;
@@ -140,7 +148,10 @@ abstract mixin class _$AdminQueueRetryJobCopyWith<$Res>
       __$AdminQueueRetryJobCopyWithImpl;
   @override
   @useResult
-  $Res call({AdminQueueRetryJobQueue queue, String jobId});
+  $Res call(
+      {@JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown)
+      AdminQueueRetryJobQueue queue,
+      String jobId});
 }
 
 /// @nodoc

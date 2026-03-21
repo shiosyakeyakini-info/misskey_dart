@@ -54,10 +54,12 @@ _UserDetailedNotMeOnly _$UserDetailedNotMeOnlyFromJson(
           ? null
           : Page.fromJson(json['pinnedPage'] as Map<String, dynamic>),
       publicReactions: json['publicReactions'] as bool,
-      followingVisibility:
-          $enumDecode(_$FFVisibilityEnumMap, json['followingVisibility']),
-      followersVisibility:
-          $enumDecode(_$FFVisibilityEnumMap, json['followersVisibility']),
+      followingVisibility: $enumDecode(
+          _$FFVisibilityEnumMap, json['followingVisibility'],
+          unknownValue: FFVisibility.unknown),
+      followersVisibility: $enumDecode(
+          _$FFVisibilityEnumMap, json['followersVisibility'],
+          unknownValue: FFVisibility.unknown),
       chatScope: $enumDecode(_$ChatScopeEnumMap, json['chatScope']),
       canChat: json['canChat'] as bool,
       roles: (json['roles'] as List<dynamic>)

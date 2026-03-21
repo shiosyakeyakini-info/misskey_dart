@@ -22,6 +22,7 @@ mixin _$AdminDriveFilesRequest {
   int? get untilDate;
   String? get userId;
   String? get type;
+  @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown)
   AdminDriveFilesOrigin? get origin;
   String? get hostname;
 
@@ -80,6 +81,7 @@ abstract mixin class $AdminDriveFilesRequestCopyWith<$Res> {
       int? untilDate,
       String? userId,
       String? type,
+      @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown)
       AdminDriveFilesOrigin? origin,
       String? hostname});
 }
@@ -159,6 +161,7 @@ class _AdminDriveFilesRequest implements AdminDriveFilesRequest {
       this.untilDate,
       this.userId,
       this.type,
+      @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown)
       this.origin = AdminDriveFilesOrigin.local,
       this.hostname = null});
   factory _AdminDriveFilesRequest.fromJson(Map<String, dynamic> json) =>
@@ -180,7 +183,7 @@ class _AdminDriveFilesRequest implements AdminDriveFilesRequest {
   @override
   final String? type;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown)
   final AdminDriveFilesOrigin? origin;
   @override
   @JsonKey()
@@ -248,6 +251,7 @@ abstract mixin class _$AdminDriveFilesRequestCopyWith<$Res>
       int? untilDate,
       String? userId,
       String? type,
+      @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown)
       AdminDriveFilesOrigin? origin,
       String? hostname});
 }

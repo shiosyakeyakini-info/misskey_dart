@@ -17,11 +17,13 @@ _AdminAbuseUserReportsRequest _$AdminAbuseUserReportsRequestFromJson(
       state: json['state'] as String? ?? null,
       reporterOrigin: $enumDecodeNullable(
               _$AdminAbuseUserReportsReporterOriginEnumMap,
-              json['reporterOrigin']) ??
+              json['reporterOrigin'],
+              unknownValue: AdminAbuseUserReportsReporterOrigin.unknown) ??
           AdminAbuseUserReportsReporterOrigin.combined,
       targetUserOrigin: $enumDecodeNullable(
               _$AdminAbuseUserReportsTargetUserOriginEnumMap,
-              json['targetUserOrigin']) ??
+              json['targetUserOrigin'],
+              unknownValue: AdminAbuseUserReportsTargetUserOrigin.unknown) ??
           AdminAbuseUserReportsTargetUserOrigin.combined,
     );
 

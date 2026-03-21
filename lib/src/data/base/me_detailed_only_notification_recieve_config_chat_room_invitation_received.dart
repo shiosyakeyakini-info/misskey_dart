@@ -7,7 +7,7 @@ part 'me_detailed_only_notification_recieve_config_chat_room_invitation_received
 @freezed
 abstract class MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived with _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived {
   const factory MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived({
-    required MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType.unknown) required MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived;
 

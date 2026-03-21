@@ -13,7 +13,7 @@ abstract class AdminAnnouncementsListRequest with _$AdminAnnouncementsListReques
     int? sinceDate,
     int? untilDate,
     String? userId,
-    @Default(AdminAnnouncementsListStatus.active) AdminAnnouncementsListStatus? status,
+    @JsonKey(unknownEnumValue: AdminAnnouncementsListStatus.unknown) @Default(AdminAnnouncementsListStatus.active) AdminAnnouncementsListStatus? status,
   }) = _AdminAnnouncementsListRequest;
 
   factory AdminAnnouncementsListRequest.fromJson(Map<String, Object?> json) => _$AdminAnnouncementsListRequestFromJson(json);

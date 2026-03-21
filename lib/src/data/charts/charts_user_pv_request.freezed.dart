@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsUserPvRequest {
+  @JsonKey(unknownEnumValue: ChartsUserPvSpan.unknown)
   ChartsUserPvSpan? get span;
   int? get limit;
   int? get offset;
@@ -58,7 +59,12 @@ abstract mixin class $ChartsUserPvRequestCopyWith<$Res> {
           ChartsUserPvRequest value, $Res Function(ChartsUserPvRequest) _then) =
       _$ChartsUserPvRequestCopyWithImpl;
   @useResult
-  $Res call({ChartsUserPvSpan? span, int? limit, int? offset, String? userId});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsUserPvSpan.unknown)
+      ChartsUserPvSpan? span,
+      int? limit,
+      int? offset,
+      String? userId});
 }
 
 /// @nodoc
@@ -104,11 +110,15 @@ class _$ChartsUserPvRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChartsUserPvRequest implements ChartsUserPvRequest {
   const _ChartsUserPvRequest(
-      {this.span, this.limit = 30, this.offset = null, this.userId});
+      {@JsonKey(unknownEnumValue: ChartsUserPvSpan.unknown) this.span,
+      this.limit = 30,
+      this.offset = null,
+      this.userId});
   factory _ChartsUserPvRequest.fromJson(Map<String, dynamic> json) =>
       _$ChartsUserPvRequestFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: ChartsUserPvSpan.unknown)
   final ChartsUserPvSpan? span;
   @override
   @JsonKey()
@@ -164,7 +174,12 @@ abstract mixin class _$ChartsUserPvRequestCopyWith<$Res>
       __$ChartsUserPvRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({ChartsUserPvSpan? span, int? limit, int? offset, String? userId});
+  $Res call(
+      {@JsonKey(unknownEnumValue: ChartsUserPvSpan.unknown)
+      ChartsUserPvSpan? span,
+      int? limit,
+      int? offset,
+      String? userId});
 }
 
 /// @nodoc

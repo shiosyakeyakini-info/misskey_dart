@@ -72,10 +72,12 @@ _MetaDetailed _$MetaDetailedFromJson(Map<String, dynamic> json) =>
       themeColor: json['themeColor'] as String?,
       policies: RolePolicies.fromJson(json['policies'] as Map<String, dynamic>),
       noteSearchableScope: $enumDecodeNullable(
-              _$NoteSearchableScopeEnumMap, json['noteSearchableScope']) ??
+              _$NoteSearchableScopeEnumMap, json['noteSearchableScope'],
+              unknownValue: NoteSearchableScope.unknown) ??
           NoteSearchableScope.local,
       maxFileSize: (json['maxFileSize'] as num).toDouble(),
-      federation: $enumDecode(_$FederationScopeEnumMap, json['federation']),
+      federation: $enumDecode(_$FederationScopeEnumMap, json['federation'],
+          unknownValue: FederationScope.unknown),
       features: json['features'] == null
           ? null
           : MetaDetailedOnlyFeatures.fromJson(

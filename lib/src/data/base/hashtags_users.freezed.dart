@@ -18,8 +18,11 @@ mixin _$HashtagsUsers {
   String get tag;
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
   HashtagsUsersSort get sort;
+  @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
   HashtagsUsersState? get state;
+  @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
   HashtagsUsersOrigin? get origin;
 
   /// Create a copy of HashtagsUsers
@@ -67,8 +70,11 @@ abstract mixin class $HashtagsUsersCopyWith<$Res> {
       {String tag,
       int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
       HashtagsUsersSort sort,
+      @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       HashtagsUsersState? state,
+      @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
       HashtagsUsersOrigin? origin});
 }
 
@@ -128,8 +134,10 @@ class _HashtagsUsers implements HashtagsUsers {
       {required this.tag,
       this.limit = 10,
       this.offset = 0,
-      required this.sort,
+      @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown) required this.sort,
+      @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       this.state = HashtagsUsersState.all,
+      @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
       this.origin = HashtagsUsersOrigin.local});
   factory _HashtagsUsers.fromJson(Map<String, dynamic> json) =>
       _$HashtagsUsersFromJson(json);
@@ -143,12 +151,13 @@ class _HashtagsUsers implements HashtagsUsers {
   @JsonKey()
   final int? offset;
   @override
+  @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
   final HashtagsUsersSort sort;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
   final HashtagsUsersState? state;
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
   final HashtagsUsersOrigin? origin;
 
   /// Create a copy of HashtagsUsers
@@ -202,8 +211,11 @@ abstract mixin class _$HashtagsUsersCopyWith<$Res>
       {String tag,
       int? limit,
       int? offset,
+      @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
       HashtagsUsersSort sort,
+      @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       HashtagsUsersState? state,
+      @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
       HashtagsUsersOrigin? origin});
 }
 

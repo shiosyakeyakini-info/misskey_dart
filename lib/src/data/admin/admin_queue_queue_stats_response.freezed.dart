@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminQueueQueueStatsResponse {
+  @JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown)
   AdminQueueQueueStatsName get name;
   String get qualifiedName;
   Map<String, double> get counts;
@@ -68,7 +69,8 @@ abstract mixin class $AdminQueueQueueStatsResponseCopyWith<$Res> {
       _$AdminQueueQueueStatsResponseCopyWithImpl;
   @useResult
   $Res call(
-      {AdminQueueQueueStatsName name,
+      {@JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown)
+      AdminQueueQueueStatsName name,
       String qualifiedName,
       Map<String, double> counts,
       bool isPaused,
@@ -152,7 +154,8 @@ class _$AdminQueueQueueStatsResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminQueueQueueStatsResponse implements AdminQueueQueueStatsResponse {
   const _AdminQueueQueueStatsResponse(
-      {required this.name,
+      {@JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown)
+      required this.name,
       required this.qualifiedName,
       required final Map<String, double> counts,
       required this.isPaused,
@@ -163,6 +166,7 @@ class _AdminQueueQueueStatsResponse implements AdminQueueQueueStatsResponse {
       _$AdminQueueQueueStatsResponseFromJson(json);
 
   @override
+  @JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown)
   final AdminQueueQueueStatsName name;
   @override
   final String qualifiedName;
@@ -233,7 +237,8 @@ abstract mixin class _$AdminQueueQueueStatsResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AdminQueueQueueStatsName name,
+      {@JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown)
+      AdminQueueQueueStatsName name,
       String qualifiedName,
       Map<String, double> counts,
       bool isPaused,

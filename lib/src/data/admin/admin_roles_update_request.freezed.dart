@@ -20,6 +20,7 @@ mixin _$AdminRolesUpdateRequest {
   String? get description;
   String? get color;
   String? get iconUrl;
+  @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown)
   AdminRolesUpdateTarget? get target;
   Map<String, dynamic>? get condFormula;
   bool? get isPublic;
@@ -117,6 +118,7 @@ abstract mixin class $AdminRolesUpdateRequestCopyWith<$Res> {
       String? description,
       String? color,
       String? iconUrl,
+      @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown)
       AdminRolesUpdateTarget? target,
       Map<String, dynamic>? condFormula,
       bool? isPublic,
@@ -239,7 +241,7 @@ class _AdminRolesUpdateRequest implements AdminRolesUpdateRequest {
       this.description,
       this.color,
       this.iconUrl,
-      this.target,
+      @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown) this.target,
       final Map<String, dynamic>? condFormula,
       this.isPublic,
       this.isModerator,
@@ -266,6 +268,7 @@ class _AdminRolesUpdateRequest implements AdminRolesUpdateRequest {
   @override
   final String? iconUrl;
   @override
+  @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown)
   final AdminRolesUpdateTarget? target;
   final Map<String, dynamic>? _condFormula;
   @override
@@ -395,6 +398,7 @@ abstract mixin class _$AdminRolesUpdateRequestCopyWith<$Res>
       String? description,
       String? color,
       String? iconUrl,
+      @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown)
       AdminRolesUpdateTarget? target,
       Map<String, dynamic>? condFormula,
       bool? isPublic,

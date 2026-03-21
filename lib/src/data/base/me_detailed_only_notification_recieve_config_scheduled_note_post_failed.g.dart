@@ -12,7 +12,10 @@ _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed
         _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed(
           type: $enumDecode(
               _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap,
-              json['type']),
+              json['type'],
+              unknownValue:
+                  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+                      .unknown),
           userListId: json['userListId'] as String,
         );
 
