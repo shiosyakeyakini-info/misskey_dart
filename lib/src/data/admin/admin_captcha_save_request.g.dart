@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'admin_captcha_save_request.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_AdminCaptchaSaveRequest _$AdminCaptchaSaveRequestFromJson(
+        Map<String, dynamic> json) =>
+    _AdminCaptchaSaveRequest(
+      provider: $enumDecodeNullable(
+          _$AdminCaptchaSaveProviderEnumMap, json['provider']),
+      captchaResult: json['captchaResult'] as String?,
+      sitekey: json['sitekey'] as String?,
+      secret: json['secret'] as String?,
+      instanceUrl: json['instanceUrl'] as String?,
+    );
+
+Map<String, dynamic> _$AdminCaptchaSaveRequestToJson(
+        _AdminCaptchaSaveRequest instance) =>
+    <String, dynamic>{
+      'provider': _$AdminCaptchaSaveProviderEnumMap[instance.provider],
+      'captchaResult': instance.captchaResult,
+      'sitekey': instance.sitekey,
+      'secret': instance.secret,
+      'instanceUrl': instance.instanceUrl,
+    };
+
+const _$AdminCaptchaSaveProviderEnumMap = {
+  AdminCaptchaSaveProvider.none: 'none',
+  AdminCaptchaSaveProvider.hcaptcha: 'hcaptcha',
+  AdminCaptchaSaveProvider.mcaptcha: 'mcaptcha',
+  AdminCaptchaSaveProvider.recaptcha: 'recaptcha',
+  AdminCaptchaSaveProvider.turnstile: 'turnstile',
+  AdminCaptchaSaveProvider.testcaptcha: 'testcaptcha',
+  AdminCaptchaSaveProvider.unknown: 'unknown',
+};

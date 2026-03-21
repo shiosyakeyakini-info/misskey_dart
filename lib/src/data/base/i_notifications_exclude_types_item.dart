@@ -1,0 +1,27 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+enum INotificationsExcludeTypesItem {
+  note,
+  follow,
+  mention,
+  reply,
+  renote,
+  quote,
+  reaction,
+  pollEnded,
+  scheduledNotePosted,
+  scheduledNotePostFailed,
+  receiveFollowRequest,
+  followRequestAccepted,
+  roleAssigned,
+  chatRoomInvitationReceived,
+  achievementEarned,
+  exportCompleted,
+  login,
+  createToken,
+  app,
+  test,
+  pollVote,
+  groupInvited,
+  unknown,
+}

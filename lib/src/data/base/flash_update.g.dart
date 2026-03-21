@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'flash_update.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_FlashUpdate _$FlashUpdateFromJson(Map<String, dynamic> json) => _FlashUpdate(
+      flashId: json['flashId'] as String,
+      title: json['title'] as String?,
+      summary: json['summary'] as String?,
+      script: json['script'] as String?,
+      permissions: (json['permissions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      visibility: $enumDecodeNullable(
+          _$FlashUpdateVisibilityEnumMap, json['visibility']),
+    );
+
+Map<String, dynamic> _$FlashUpdateToJson(_FlashUpdate instance) =>
+    <String, dynamic>{
+      'flashId': instance.flashId,
+      'title': instance.title,
+      'summary': instance.summary,
+      'script': instance.script,
+      'permissions': instance.permissions,
+      'visibility': _$FlashUpdateVisibilityEnumMap[instance.visibility],
+    };
+
+const _$FlashUpdateVisibilityEnumMap = {
+  FlashUpdateVisibility.public: 'public',
+  FlashUpdateVisibility.private: 'private',
+  FlashUpdateVisibility.unknown: 'unknown',
+};

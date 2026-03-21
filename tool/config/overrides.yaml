@@ -1,0 +1,177 @@
+# ============================================================
+# misskey_dart Code Generator Override Configuration
+# ============================================================
+
+# Format-based automatic converter application
+format_converters:
+  date-time:
+    non_nullable:
+      converter: DateTimeConverter
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+    nullable:
+      converter: NullableDateTimeConverter
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+  url:
+    non_nullable:
+      converter: UriConverter
+      import: "package:misskey_dart/src/converters/uri_converter.dart"
+    nullable:
+      converter: NullableUriConverter
+      import: "package:misskey_dart/src/converters/uri_converter.dart"
+
+# Field-level overrides
+field_overrides:
+  UserLite:
+    emojis:
+      converter: EmojisConverter
+      import: "package:misskey_dart/src/converters/emojis_converter.dart"
+      dart_type: "Map<String, String>"
+      default: "{}"
+    isBot:
+      default: "false"
+    isCat:
+      default: "false"
+    avatarDecorations:
+      default: "[]"
+    badgeRoles:
+      default: "[]"
+    makeNotesFollowersOnlyBefore:
+      converter: HideBeforeConverter
+      import: "package:misskey_dart/src/converters/hide_before_converter.dart"
+      dart_type: "HideBefore?"
+    makeNotesHiddenBefore:
+      converter: HideBeforeConverter
+      import: "package:misskey_dart/src/converters/hide_before_converter.dart"
+      dart_type: "HideBefore?"
+
+  Note:
+    emojis:
+      converter: EmojisConverter
+      import: "package:misskey_dart/src/converters/emojis_converter.dart"
+      dart_type: "Map<String, String>"
+      default: "{}"
+    reactionEmojis:
+      converter: EmojisConverter
+      import: "package:misskey_dart/src/converters/emojis_converter.dart"
+      dart_type: "Map<String, String>"
+    visibleUserIds:
+      default: "[]"
+    mentions:
+      default: "[]"
+    reactionAndUserPairCache:
+      default: "[]"
+
+  MeDetailedOnly:
+    mutedWords:
+      converter: MuteWordsConverter
+      import: "package:misskey_dart/src/converters/mute_words_converter.dart"
+      dart_type: "List<MuteWord>"
+    hardMutedWords:
+      converter: MuteWordsConverter
+      import: "package:misskey_dart/src/converters/mute_words_converter.dart"
+      dart_type: "List<MuteWord>"
+      default: "[]"
+
+# Schema name overrides for inline schemas
+schema_name_overrides:
+  # Inline objects
+  "Note.properties.poll": NotePoll
+  "Note.properties.poll.properties.choices.items": NotePollChoice
+  "Note.properties.channel": NoteChannelInfo
+  "UserLite.properties.avatarDecorations.items": UserAvatarDecoration
+  "UserLite.properties.instance": UserInstanceInfo
+  "UserLite.properties.badgeRoles.items": UserBadgeRole
+
+  # Inline enums → existing Dart enum types
+  "Note.properties.visibility": NoteVisibility
+  "Note.properties.reactionAcceptance": ReactionAcceptance
+  "NoteDraft.properties.visibility": NoteVisibility
+  "NoteDraft.properties.reactionAcceptance": ReactionAcceptance
+  "UserLite.properties.onlineStatus": OnlineStatus
+  "UserDetailedNotMeOnly.properties.followingVisibility": FFVisibility
+  "UserDetailedNotMeOnly.properties.followersVisibility": FFVisibility
+  "UserDetailedNotMeOnly.properties.chatScope": ChatScope
+  "UserDetailedNotMeOnly.properties.notify": Notify
+  "MeDetailedOnly.properties.twoFactorBackupCodesStock": TwoFactorBackupCodesStock
+  "Announcement.properties.icon": AnnouncementIcon
+  "Announcement.properties.display": AnnouncementDisplay
+  "Antenna.properties.src": AntennaSource
+  "Flash.properties.visibility": FlashVisibility
+  "FederationInstance.properties.suspensionState": FederationSuspensionState
+  "Page.properties.font": PageFont
+  "RolePolicies.properties.chatAvailability": ChatAvailability
+  "ReversiGameLite.properties.bw": ReversiBw
+  "ReversiGameDetailed.properties.bw": ReversiBw
+  "MetaLite.properties.noteSearchableScope": NoteSearchableScope
+  "MetaLite.properties.federation": FederationScope
+
+# Type structure overrides
+type_structure_overrides:
+  User:
+    strategy: hierarchy
+    abstract_base: User
+    factory_discriminator:
+      - field_check: "url"
+        present: UserDetailed
+        absent: UserLite
+  UserDetailed:
+    strategy: hierarchy
+    abstract_base: UserDetailed
+    extends: User
+    factory_discriminator:
+      - field_check: "isFollowing"
+        present: UserDetailedNotMeWithRelations
+      - field_check: "avatarId"
+        present: MeDetailed
+      - default: UserDetailedNotMe
+  Notification:
+    strategy: sealed
+    target_class: Notification
+    fallback_variant: unknown
+  PageBlock:
+    strategy: converter
+    converter: PageContentConverter
+    abstract_base: AbstractPageContent
+
+# Endpoint name overrides
+endpoint_overrides:
+  "/notes/timeline":
+    method_name: homeTimeline
+  "/notes/update":
+    extra_options:
+      excludeRemoveNullPredicate: "(key, _) => key == \"cw\""
+
+# Manual files (skip generation entirely - not even generated to output)
+manual_files:
+  - "lib/src/services/"
+  - "lib/src/converters/"
+  - "lib/src/data/streaming/"
+  - "lib/src/util/"
+
+# number type fields that should be int
+number_as_int:
+  - "*.followersCount"
+  - "*.followingCount"
+  - "*.notesCount"
+  - "*.renoteCount"
+  - "*.repliesCount"
+  - "*.votes"
+  - "*.clippedCount"
+  - "*.reactionCount"
+  - "*.usersCount"
+  - "*.originalUsersCount"
+  - "*.originalNotesCount"
+  - "*.instances"
+  - "*.driveUsageLocal"
+  - "*.driveUsageRemote"
+  - "*.sentBytes"
+  - "*.receivedBytes"
+  - "*.choice"
+  - "*.sinceId"
+  - "*.untilId"
+
+# Fork-specific overrides
+fork_overrides:
+  mkkey_net:
+    description: "mkkey.net (Misskey v13 compatible)"
+    note: "emojis field returns List<{name,url}> format - handled by EmojisConverter"

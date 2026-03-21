@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'admin_show_user_notification_recieve_config_achievement_earned.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_AdminShowUserNotificationRecieveConfigAchievementEarned
+    _$AdminShowUserNotificationRecieveConfigAchievementEarnedFromJson(
+            Map<String, dynamic> json) =>
+        _AdminShowUserNotificationRecieveConfigAchievementEarned(
+          type: $enumDecode(
+              _$AdminShowUserNotificationRecieveConfigAchievementEarnedTypeEnumMap,
+              json['type']),
+          userListId: json['userListId'] as String,
+        );
+
+Map<String,
+    dynamic> _$AdminShowUserNotificationRecieveConfigAchievementEarnedToJson(
+        _AdminShowUserNotificationRecieveConfigAchievementEarned instance) =>
+    <String, dynamic>{
+      'type':
+          _$AdminShowUserNotificationRecieveConfigAchievementEarnedTypeEnumMap[
+              instance.type]!,
+      'userListId': instance.userListId,
+    };
+
+const _$AdminShowUserNotificationRecieveConfigAchievementEarnedTypeEnumMap = {
+  AdminShowUserNotificationRecieveConfigAchievementEarnedType.list: 'list',
+  AdminShowUserNotificationRecieveConfigAchievementEarnedType.unknown:
+      'unknown',
+};

@@ -1,0 +1,50 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
+
+part 'i_update.freezed.dart';
+part 'i_update.g.dart';
+
+@freezed
+abstract class IUpdate with _$IUpdate {
+  const factory IUpdate({
+    String? name,
+    String? description,
+    String? followedMessage,
+    String? location,
+    String? birthday,
+    IUpdateLang? lang,
+    String? avatarId,
+    List<IUpdateAvatarDecorationsItem>? avatarDecorations,
+    String? bannerId,
+    List<IUpdateFieldsItem>? fields,
+    bool? isLocked,
+    bool? isExplorable,
+    bool? hideOnlineStatus,
+    bool? publicReactions,
+    bool? carefulBot,
+    bool? autoAcceptFollowed,
+    bool? noCrawle,
+    bool? preventAiLearning,
+    bool? requireSigninToViewContents,
+    int? makeNotesFollowersOnlyBefore,
+    int? makeNotesHiddenBefore,
+    bool? isBot,
+    bool? isCat,
+    bool? injectFeaturedNote,
+    bool? receiveAnnouncementEmail,
+    bool? alwaysMarkNsfw,
+    bool? autoSensitive,
+    IUpdateFollowingVisibility? followingVisibility,
+    IUpdateFollowersVisibility? followersVisibility,
+    IUpdateChatScope? chatScope,
+    String? pinnedPageId,
+    List<dynamic>? mutedWords,
+    List<dynamic>? hardMutedWords,
+    List<String>? mutedInstances,
+    IUpdateNotificationRecieveConfig? notificationRecieveConfig,
+    List<String>? emailNotificationTypes,
+    List<String>? alsoKnownAs,
+  }) = _IUpdate;
+
+  factory IUpdate.fromJson(Map<String, Object?> json) => _$IUpdateFromJson(json);
+}
