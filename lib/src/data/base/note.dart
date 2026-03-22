@@ -16,10 +16,10 @@ abstract class Note with _$Note {
     required UserLite user,
     String? replyId,
     String? renoteId,
-    Map<String, dynamic>? reply,
-    Map<String, dynamic>? renote,
+    Note? reply,
+    Note? renote,
     bool? isHidden,
-    required NoteVisibility visibility,
+    @JsonKey(unknownEnumValue: NoteVisibility.unknown) required NoteVisibility visibility,
     @Default([]) List<String>? mentions,
     @Default([]) List<String>? visibleUserIds,
     List<String>? fileIds,
@@ -40,8 +40,8 @@ abstract class Note with _$Note {
     String? url,
     @Default([]) List<String>? reactionAndUserPairCache,
     int? clippedCount,
-    String? myReaction,
     bool? hasPoll,
+    String? myReaction,
   }) = _Note;
 
   factory Note.fromJson(Map<String, Object?> json) => _$NoteFromJson(json);

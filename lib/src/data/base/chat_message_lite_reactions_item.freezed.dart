@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ChatMessageLiteReactionsItem {
   String get reaction;
-  Map<String, dynamic>? get user;
+  UserLite? get user;
 
   /// Create a copy of ChatMessageLiteReactionsItem
   /// with the given fields replaced by the non-null parameter values.
@@ -37,13 +37,12 @@ mixin _$ChatMessageLiteReactionsItem {
             other is ChatMessageLiteReactionsItem &&
             (identical(other.reaction, reaction) ||
                 other.reaction == reaction) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, reaction, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, reaction, user);
 
   @override
   String toString() {
@@ -58,7 +57,9 @@ abstract mixin class $ChatMessageLiteReactionsItemCopyWith<$Res> {
           $Res Function(ChatMessageLiteReactionsItem) _then) =
       _$ChatMessageLiteReactionsItemCopyWithImpl;
   @useResult
-  $Res call({String reaction, Map<String, dynamic>? user});
+  $Res call({String reaction, UserLite? user});
+
+  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -85,31 +86,36 @@ class _$ChatMessageLiteReactionsItemCopyWithImpl<$Res>
       user: freezed == user
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as UserLite?,
     ));
+  }
+
+  /// Create a copy of ChatMessageLiteReactionsItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _ChatMessageLiteReactionsItem implements ChatMessageLiteReactionsItem {
-  const _ChatMessageLiteReactionsItem(
-      {required this.reaction, final Map<String, dynamic>? user})
-      : _user = user;
+  const _ChatMessageLiteReactionsItem({required this.reaction, this.user});
   factory _ChatMessageLiteReactionsItem.fromJson(Map<String, dynamic> json) =>
       _$ChatMessageLiteReactionsItemFromJson(json);
 
   @override
   final String reaction;
-  final Map<String, dynamic>? _user;
   @override
-  Map<String, dynamic>? get user {
-    final value = _user;
-    if (value == null) return null;
-    if (_user is EqualUnmodifiableMapView) return _user;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final UserLite? user;
 
   /// Create a copy of ChatMessageLiteReactionsItem
   /// with the given fields replaced by the non-null parameter values.
@@ -134,13 +140,12 @@ class _ChatMessageLiteReactionsItem implements ChatMessageLiteReactionsItem {
             other is _ChatMessageLiteReactionsItem &&
             (identical(other.reaction, reaction) ||
                 other.reaction == reaction) &&
-            const DeepCollectionEquality().equals(other._user, _user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, reaction, const DeepCollectionEquality().hash(_user));
+  int get hashCode => Object.hash(runtimeType, reaction, user);
 
   @override
   String toString() {
@@ -157,7 +162,10 @@ abstract mixin class _$ChatMessageLiteReactionsItemCopyWith<$Res>
       __$ChatMessageLiteReactionsItemCopyWithImpl;
   @override
   @useResult
-  $Res call({String reaction, Map<String, dynamic>? user});
+  $Res call({String reaction, UserLite? user});
+
+  @override
+  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -182,10 +190,24 @@ class __$ChatMessageLiteReactionsItemCopyWithImpl<$Res>
           : reaction // ignore: cast_nullable_to_non_nullable
               as String,
       user: freezed == user
-          ? _self._user
+          ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as UserLite?,
     ));
+  }
+
+  /// Create a copy of ChatMessageLiteReactionsItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLiteCopyWith<$Res>? get user {
+    if (_self.user == null) {
+      return null;
+    }
+
+    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
+      return _then(_self.copyWith(user: value));
+    });
   }
 }
 

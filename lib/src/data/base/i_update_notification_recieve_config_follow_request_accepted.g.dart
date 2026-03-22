@@ -30,6 +30,16 @@ Map<String, dynamic>
         };
 
 const _$IUpdateNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap = {
+  IUpdateNotificationRecieveConfigFollowRequestAcceptedType.all: 'all',
+  IUpdateNotificationRecieveConfigFollowRequestAcceptedType.following:
+      'following',
+  IUpdateNotificationRecieveConfigFollowRequestAcceptedType.follower:
+      'follower',
+  IUpdateNotificationRecieveConfigFollowRequestAcceptedType.mutualFollow:
+      'mutualFollow',
+  IUpdateNotificationRecieveConfigFollowRequestAcceptedType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigFollowRequestAcceptedType.never: 'never',
   IUpdateNotificationRecieveConfigFollowRequestAcceptedType.list: 'list',
   IUpdateNotificationRecieveConfigFollowRequestAcceptedType.unknown: 'unknown',
 };

@@ -27,6 +27,14 @@ Map<String, dynamic> _$AdminShowUserNotificationRecieveConfigMentionToJson(
     };
 
 const _$AdminShowUserNotificationRecieveConfigMentionTypeEnumMap = {
+  AdminShowUserNotificationRecieveConfigMentionType.all: 'all',
+  AdminShowUserNotificationRecieveConfigMentionType.following: 'following',
+  AdminShowUserNotificationRecieveConfigMentionType.follower: 'follower',
+  AdminShowUserNotificationRecieveConfigMentionType.mutualFollow:
+      'mutualFollow',
+  AdminShowUserNotificationRecieveConfigMentionType.followingOrFollower:
+      'followingOrFollower',
+  AdminShowUserNotificationRecieveConfigMentionType.never: 'never',
   AdminShowUserNotificationRecieveConfigMentionType.list: 'list',
   AdminShowUserNotificationRecieveConfigMentionType.unknown: 'unknown',
 };

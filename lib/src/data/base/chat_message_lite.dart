@@ -10,12 +10,12 @@ abstract class ChatMessageLite with _$ChatMessageLite {
     required String id,
     @DateTimeConverter() required DateTime createdAt,
     required String fromUserId,
-    Map<String, dynamic>? fromUser,
+    UserLite? fromUser,
     String? toUserId,
     String? toRoomId,
     String? text,
     String? fileId,
-    Map<String, dynamic>? file,
+    DriveFile? file,
     required List<ChatMessageLiteReactionsItem> reactions,
   }) = _ChatMessageLite;
 

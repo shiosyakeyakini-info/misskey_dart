@@ -12,7 +12,8 @@ _HashtagsUsersRequest _$HashtagsUsersRequestFromJson(
       tag: json['tag'] as String?,
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$UsersSortTypeEnumMap, json['sort']),
+      sort: $enumDecodeNullable(_$UsersSortTypeEnumMap, json['sort'],
+          unknownValue: UsersSortType.unknown),
       state: $enumDecodeNullable(_$HashtagsUsersStateEnumMap, json['state'],
               unknownValue: HashtagsUsersState.unknown) ??
           HashtagsUsersState.all,
@@ -33,12 +34,13 @@ Map<String, dynamic> _$HashtagsUsersRequestToJson(
     };
 
 const _$UsersSortTypeEnumMap = {
-  UsersSortType.followerAscendant: '-follower',
   UsersSortType.followerDescendant: '+follower',
-  UsersSortType.createdAtAscendant: '-createdAt',
+  UsersSortType.followerAscendant: '-follower',
   UsersSortType.createdAtDescendant: '+createdAt',
-  UsersSortType.updateAtAscendant: '-updatedAt',
+  UsersSortType.createdAtAscendant: '-createdAt',
   UsersSortType.updateAtDescendant: '+updatedAt',
+  UsersSortType.updateAtAscendant: '-updatedAt',
+  UsersSortType.unknown: 'unknown',
 };
 
 const _$HashtagsUsersStateEnumMap = {

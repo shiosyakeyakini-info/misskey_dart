@@ -14,7 +14,8 @@ _HashtagsListRequest _$HashtagsListRequestFromJson(Map<String, dynamic> json) =>
           json['attachedToLocalUserOnly'] as bool? ?? false,
       attachedToRemoteUserOnly:
           json['attachedToRemoteUserOnly'] as bool? ?? false,
-      sort: $enumDecodeNullable(_$HashtagsListSortTypeEnumMap, json['sort']),
+      sort: $enumDecodeNullable(_$HashtagsListSortTypeEnumMap, json['sort'],
+          unknownValue: HashtagsListSortType.unknown),
     );
 
 Map<String, dynamic> _$HashtagsListRequestToJson(
@@ -40,4 +41,5 @@ const _$HashtagsListSortTypeEnumMap = {
   HashtagsListSortType.attachedLocalUsersAscendant: '-attachedLocalUsers',
   HashtagsListSortType.attachedRemoteUsersDescendant: '+attachedRemoteUsers',
   HashtagsListSortType.attachedRemoteUsersAscendant: '-attachedRemoteUsers',
+  HashtagsListSortType.unknown: 'unknown',
 };

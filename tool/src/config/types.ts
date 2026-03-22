@@ -143,6 +143,14 @@ export interface MergedSchema extends ResolvedSchema {
 // Override Configuration Types
 // ============================================================
 
+export interface ExtraField {
+  dart_type: string;
+  nullable: boolean;
+  default?: string;
+  converter?: string;
+  import?: string;
+}
+
 export interface OverrideConfig {
   format_converters?: Record<
     string,
@@ -153,6 +161,8 @@ export interface OverrideConfig {
   >;
 
   field_overrides?: Record<string, Record<string, FieldOverride>>;
+
+  extra_fields?: Record<string, Record<string, ExtraField>>;
 
   schema_name_overrides?: Record<string, string>;
 
@@ -165,6 +175,8 @@ export interface OverrideConfig {
   manual_files?: string[];
 
   number_as_int?: string[];
+
+  enum_value_overrides?: Record<string, Record<string, string>>;
 
   fork_overrides?: Record<string, ForkOverride>;
 }

@@ -30,6 +30,16 @@ Map<String,
     };
 
 const _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap = {
+  AdminShowUserNotificationRecieveConfigScheduledNotePostedType.all: 'all',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostedType.following:
+      'following',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostedType.follower:
+      'follower',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostedType.mutualFollow:
+      'mutualFollow',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostedType
+      .followingOrFollower: 'followingOrFollower',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostedType.never: 'never',
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.list: 'list',
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.unknown:
       'unknown',

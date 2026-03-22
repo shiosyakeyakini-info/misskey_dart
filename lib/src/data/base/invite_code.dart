@@ -11,8 +11,8 @@ abstract class InviteCode with _$InviteCode {
     required String code,
     @NullableDateTimeConverter() DateTime? expiresAt,
     @DateTimeConverter() required DateTime createdAt,
-    Map<String, dynamic>? createdBy,
-    Map<String, dynamic>? usedBy,
+    UserLite? createdBy,
+    UserLite? usedBy,
     @NullableDateTimeConverter() DateTime? usedAt,
     required bool used,
   }) = _InviteCode;

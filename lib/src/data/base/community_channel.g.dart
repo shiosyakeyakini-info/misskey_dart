@@ -18,6 +18,7 @@ _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
       userId: json['userId'] as String?,
       bannerUrl: _$JsonConverterFromJson<String, Uri?>(
           json['bannerUrl'], const NullableUriConverter().fromJson),
+      bannerId: json['bannerId'] as String?,
       pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -29,11 +30,10 @@ _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
       allowRenoteToExternal: json['allowRenoteToExternal'] as bool,
       isFollowing: json['isFollowing'] as bool?,
       isFavorited: json['isFavorited'] as bool?,
+      isMuting: json['isMuting'] as bool?,
       pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
           ?.map((e) => Note.fromJson(e as Map<String, dynamic>))
           .toList(),
-      bannerId: json['bannerId'] as String?,
-      isMuting: json['isMuting'] as bool?,
     );
 
 Map<String, dynamic> _$CommunityChannelToJson(_CommunityChannel instance) =>
@@ -46,6 +46,7 @@ Map<String, dynamic> _$CommunityChannelToJson(_CommunityChannel instance) =>
       'description': instance.description,
       'userId': instance.userId,
       'bannerUrl': const NullableUriConverter().toJson(instance.bannerUrl),
+      'bannerId': instance.bannerId,
       'pinnedNoteIds': instance.pinnedNoteIds,
       'color': instance.color,
       'isArchived': instance.isArchived,
@@ -55,9 +56,8 @@ Map<String, dynamic> _$CommunityChannelToJson(_CommunityChannel instance) =>
       'allowRenoteToExternal': instance.allowRenoteToExternal,
       'isFollowing': instance.isFollowing,
       'isFavorited': instance.isFavorited,
-      'pinnedNotes': instance.pinnedNotes?.map((e) => e.toJson()).toList(),
-      'bannerId': instance.bannerId,
       'isMuting': instance.isMuting,
+      'pinnedNotes': instance.pinnedNotes?.map((e) => e.toJson()).toList(),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -20,8 +20,8 @@ mixin _$Following {
   DateTime get createdAt;
   String get followeeId;
   String get followerId;
-  Map<String, dynamic>? get followee;
-  Map<String, dynamic>? get follower;
+  UserDetailedNotMe? get followee;
+  UserDetailedNotMe? get follower;
 
   /// Create a copy of Following
   /// with the given fields replaced by the non-null parameter values.
@@ -45,20 +45,16 @@ mixin _$Following {
                 other.followeeId == followeeId) &&
             (identical(other.followerId, followerId) ||
                 other.followerId == followerId) &&
-            const DeepCollectionEquality().equals(other.followee, followee) &&
-            const DeepCollectionEquality().equals(other.follower, follower));
+            (identical(other.followee, followee) ||
+                other.followee == followee) &&
+            (identical(other.follower, follower) ||
+                other.follower == follower));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      createdAt,
-      followeeId,
-      followerId,
-      const DeepCollectionEquality().hash(followee),
-      const DeepCollectionEquality().hash(follower));
+      runtimeType, id, createdAt, followeeId, followerId, followee, follower);
 
   @override
   String toString() {
@@ -76,8 +72,11 @@ abstract mixin class $FollowingCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      Map<String, dynamic>? followee,
-      Map<String, dynamic>? follower});
+      UserDetailedNotMe? followee,
+      UserDetailedNotMe? follower});
+
+  $UserDetailedNotMeCopyWith<$Res>? get followee;
+  $UserDetailedNotMeCopyWith<$Res>? get follower;
 }
 
 /// @nodoc
@@ -119,12 +118,40 @@ class _$FollowingCopyWithImpl<$Res> implements $FollowingCopyWith<$Res> {
       followee: freezed == followee
           ? _self.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as UserDetailedNotMe?,
       follower: freezed == follower
           ? _self.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as UserDetailedNotMe?,
     ));
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get followee {
+    if (_self.followee == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.followee!, (value) {
+      return _then(_self.copyWith(followee: value));
+    });
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get follower {
+    if (_self.follower == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.follower!, (value) {
+      return _then(_self.copyWith(follower: value));
+    });
   }
 }
 
@@ -136,10 +163,8 @@ class _Following implements Following {
       @DateTimeConverter() required this.createdAt,
       required this.followeeId,
       required this.followerId,
-      final Map<String, dynamic>? followee,
-      final Map<String, dynamic>? follower})
-      : _followee = followee,
-        _follower = follower;
+      this.followee,
+      this.follower});
   factory _Following.fromJson(Map<String, dynamic> json) =>
       _$FollowingFromJson(json);
 
@@ -152,25 +177,10 @@ class _Following implements Following {
   final String followeeId;
   @override
   final String followerId;
-  final Map<String, dynamic>? _followee;
   @override
-  Map<String, dynamic>? get followee {
-    final value = _followee;
-    if (value == null) return null;
-    if (_followee is EqualUnmodifiableMapView) return _followee;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  final Map<String, dynamic>? _follower;
+  final UserDetailedNotMe? followee;
   @override
-  Map<String, dynamic>? get follower {
-    final value = _follower;
-    if (value == null) return null;
-    if (_follower is EqualUnmodifiableMapView) return _follower;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final UserDetailedNotMe? follower;
 
   /// Create a copy of Following
   /// with the given fields replaced by the non-null parameter values.
@@ -199,20 +209,16 @@ class _Following implements Following {
                 other.followeeId == followeeId) &&
             (identical(other.followerId, followerId) ||
                 other.followerId == followerId) &&
-            const DeepCollectionEquality().equals(other._followee, _followee) &&
-            const DeepCollectionEquality().equals(other._follower, _follower));
+            (identical(other.followee, followee) ||
+                other.followee == followee) &&
+            (identical(other.follower, follower) ||
+                other.follower == follower));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      createdAt,
-      followeeId,
-      followerId,
-      const DeepCollectionEquality().hash(_followee),
-      const DeepCollectionEquality().hash(_follower));
+      runtimeType, id, createdAt, followeeId, followerId, followee, follower);
 
   @override
   String toString() {
@@ -233,8 +239,13 @@ abstract mixin class _$FollowingCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      Map<String, dynamic>? followee,
-      Map<String, dynamic>? follower});
+      UserDetailedNotMe? followee,
+      UserDetailedNotMe? follower});
+
+  @override
+  $UserDetailedNotMeCopyWith<$Res>? get followee;
+  @override
+  $UserDetailedNotMeCopyWith<$Res>? get follower;
 }
 
 /// @nodoc
@@ -274,14 +285,42 @@ class __$FollowingCopyWithImpl<$Res> implements _$FollowingCopyWith<$Res> {
           : followerId // ignore: cast_nullable_to_non_nullable
               as String,
       followee: freezed == followee
-          ? _self._followee
+          ? _self.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as UserDetailedNotMe?,
       follower: freezed == follower
-          ? _self._follower
+          ? _self.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as UserDetailedNotMe?,
     ));
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get followee {
+    if (_self.followee == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.followee!, (value) {
+      return _then(_self.copyWith(followee: value));
+    });
+  }
+
+  /// Create a copy of Following
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserDetailedNotMeCopyWith<$Res>? get follower {
+    if (_self.follower == null) {
+      return null;
+    }
+
+    return $UserDetailedNotMeCopyWith<$Res>(_self.follower!, (value) {
+      return _then(_self.copyWith(follower: value));
+    });
   }
 }
 

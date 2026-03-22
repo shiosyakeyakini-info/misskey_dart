@@ -19,6 +19,7 @@ mixin _$HashtagsList {
   bool? get attachedToUserOnly;
   bool? get attachedToLocalUserOnly;
   bool? get attachedToRemoteUserOnly;
+  @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
   HashtagsListSortType get sort;
 
   /// Create a copy of HashtagsList
@@ -71,6 +72,7 @@ abstract mixin class $HashtagsListCopyWith<$Res> {
       bool? attachedToUserOnly,
       bool? attachedToLocalUserOnly,
       bool? attachedToRemoteUserOnly,
+      @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
       HashtagsListSortType sort});
 }
 
@@ -125,6 +127,7 @@ class _HashtagsList implements HashtagsList {
       this.attachedToUserOnly = false,
       this.attachedToLocalUserOnly = false,
       this.attachedToRemoteUserOnly = false,
+      @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
       required this.sort});
   factory _HashtagsList.fromJson(Map<String, dynamic> json) =>
       _$HashtagsListFromJson(json);
@@ -142,6 +145,7 @@ class _HashtagsList implements HashtagsList {
   @JsonKey()
   final bool? attachedToRemoteUserOnly;
   @override
+  @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
   final HashtagsListSortType sort;
 
   /// Create a copy of HashtagsList
@@ -200,6 +204,7 @@ abstract mixin class _$HashtagsListCopyWith<$Res>
       bool? attachedToUserOnly,
       bool? attachedToLocalUserOnly,
       bool? attachedToRemoteUserOnly,
+      @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
       HashtagsListSortType sort});
 }
 

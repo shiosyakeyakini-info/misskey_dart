@@ -31,6 +31,16 @@ Map<String,
 
 const _$IUpdateNotificationRecieveConfigChatRoomInvitationReceivedTypeEnumMap =
     {
+  IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.all: 'all',
+  IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.following:
+      'following',
+  IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.follower:
+      'follower',
+  IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.mutualFollow:
+      'mutualFollow',
+  IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+      .followingOrFollower: 'followingOrFollower',
+  IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.never: 'never',
   IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.list: 'list',
   IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.unknown:
       'unknown',

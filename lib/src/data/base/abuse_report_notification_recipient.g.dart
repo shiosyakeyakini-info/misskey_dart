@@ -18,9 +18,14 @@ _AbuseReportNotificationRecipient _$AbuseReportNotificationRecipientFromJson(
           _$AbuseReportNotificationRecipientMethodEnumMap, json['method'],
           unknownValue: AbuseReportNotificationRecipientMethod.unknown),
       userId: json['userId'] as String?,
-      user: json['user'] as Map<String, dynamic>?,
+      user: json['user'] == null
+          ? null
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
       systemWebhookId: json['systemWebhookId'] as String?,
-      systemWebhook: json['systemWebhook'] as Map<String, dynamic>?,
+      systemWebhook: json['systemWebhook'] == null
+          ? null
+          : SystemWebhook.fromJson(
+              json['systemWebhook'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AbuseReportNotificationRecipientToJson(
@@ -33,9 +38,9 @@ Map<String, dynamic> _$AbuseReportNotificationRecipientToJson(
       'method':
           _$AbuseReportNotificationRecipientMethodEnumMap[instance.method]!,
       'userId': instance.userId,
-      'user': instance.user,
+      'user': instance.user?.toJson(),
       'systemWebhookId': instance.systemWebhookId,
-      'systemWebhook': instance.systemWebhook,
+      'systemWebhook': instance.systemWebhook?.toJson(),
     };
 
 const _$AbuseReportNotificationRecipientMethodEnumMap = {

@@ -28,6 +28,14 @@ Map<String, dynamic> _$AdminShowUserNotificationRecieveConfigRoleAssignedToJson(
     };
 
 const _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap = {
+  AdminShowUserNotificationRecieveConfigRoleAssignedType.all: 'all',
+  AdminShowUserNotificationRecieveConfigRoleAssignedType.following: 'following',
+  AdminShowUserNotificationRecieveConfigRoleAssignedType.follower: 'follower',
+  AdminShowUserNotificationRecieveConfigRoleAssignedType.mutualFollow:
+      'mutualFollow',
+  AdminShowUserNotificationRecieveConfigRoleAssignedType.followingOrFollower:
+      'followingOrFollower',
+  AdminShowUserNotificationRecieveConfigRoleAssignedType.never: 'never',
   AdminShowUserNotificationRecieveConfigRoleAssignedType.list: 'list',
   AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown: 'unknown',
 };

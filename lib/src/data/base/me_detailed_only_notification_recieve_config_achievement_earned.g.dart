@@ -30,6 +30,16 @@ Map<String,
     };
 
 const _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedTypeEnumMap = {
+  MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.all: 'all',
+  MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.following:
+      'following',
+  MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.follower:
+      'follower',
+  MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.mutualFollow:
+      'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType
+      .followingOrFollower: 'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.never: 'never',
   MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.list: 'list',
   MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.unknown:
       'unknown',

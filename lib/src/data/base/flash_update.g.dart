@@ -30,7 +30,7 @@ Map<String, dynamic> _$FlashUpdateToJson(_FlashUpdate instance) =>
     };
 
 const _$FlashVisibilityEnumMap = {
-  FlashVisibility.public: 'public',
   FlashVisibility.private: 'private',
+  FlashVisibility.public: 'public',
   FlashVisibility.unknown: 'unknown',
 };

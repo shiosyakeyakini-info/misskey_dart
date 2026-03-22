@@ -27,6 +27,13 @@ Map<String, dynamic> _$IUpdateNotificationRecieveConfigRoleAssignedToJson(
     };
 
 const _$IUpdateNotificationRecieveConfigRoleAssignedTypeEnumMap = {
+  IUpdateNotificationRecieveConfigRoleAssignedType.all: 'all',
+  IUpdateNotificationRecieveConfigRoleAssignedType.following: 'following',
+  IUpdateNotificationRecieveConfigRoleAssignedType.follower: 'follower',
+  IUpdateNotificationRecieveConfigRoleAssignedType.mutualFollow: 'mutualFollow',
+  IUpdateNotificationRecieveConfigRoleAssignedType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigRoleAssignedType.never: 'never',
   IUpdateNotificationRecieveConfigRoleAssignedType.list: 'list',
   IUpdateNotificationRecieveConfigRoleAssignedType.unknown: 'unknown',
 };

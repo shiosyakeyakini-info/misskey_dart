@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesDraftsCreateRequest {
-  @JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
-  NotesDraftsCreateVisibility? get visibility;
+  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
+  NoteVisibility? get visibility;
   List<String>? get visibleUserIds;
   String? get cw;
   String? get hashtag;
@@ -104,8 +104,8 @@ abstract mixin class $NotesDraftsCreateRequestCopyWith<$Res> {
       _$NotesDraftsCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {@JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
-      NotesDraftsCreateVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
+      NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       String? hashtag,
@@ -156,7 +156,7 @@ class _$NotesDraftsCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as NotesDraftsCreateVisibility?,
+              as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
           ? _self.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
@@ -231,8 +231,8 @@ class _$NotesDraftsCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
   const _NotesDraftsCreateRequest(
-      {@JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
-      this.visibility = NotesDraftsCreateVisibility.public,
+      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
+      this.visibility = NoteVisibility.public,
       final List<String>? visibleUserIds,
       this.cw,
       this.hashtag,
@@ -253,8 +253,8 @@ class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
       _$NotesDraftsCreateRequestFromJson(json);
 
   @override
-  @JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
-  final NotesDraftsCreateVisibility? visibility;
+  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
+  final NoteVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
   List<String>? get visibleUserIds {
@@ -380,8 +380,8 @@ abstract mixin class _$NotesDraftsCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(unknownEnumValue: NotesDraftsCreateVisibility.unknown)
-      NotesDraftsCreateVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
+      NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       String? hashtag,
@@ -433,7 +433,7 @@ class __$NotesDraftsCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as NotesDraftsCreateVisibility?,
+              as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
           ? _self._visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable

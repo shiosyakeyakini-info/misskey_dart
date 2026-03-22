@@ -32,6 +32,17 @@ Map<String, dynamic>
 
 const _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap =
     {
+  MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.all: 'all',
+  MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.following:
+      'following',
+  MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.follower:
+      'follower',
+  MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.mutualFollow:
+      'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+      .followingOrFollower: 'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.never:
+      'never',
   MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.list: 'list',
   MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.unknown:
       'unknown',

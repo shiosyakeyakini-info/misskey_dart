@@ -26,10 +26,12 @@ mixin _$RolePolicies {
   bool get canManageCustomEmojis;
   bool get canManageAvatarDecorations;
   bool get canSearchNotes;
+  bool get canSearchUsers;
   bool get canUseTranslator;
   bool get canHideAds;
   int get driveCapacityMb;
   int get maxFileSizeMb;
+  List<String> get uploadableFileTypes;
   bool get alwaysMarkNsfw;
   bool get canUpdateBioMedia;
   int get pinLimit;
@@ -48,11 +50,9 @@ mixin _$RolePolicies {
   bool get canImportMuting;
   bool get canImportUserLists;
   ChatAvailability get chatAvailability;
-  List<String>? get uploadableFileTypes;
-  int? get noteDraftLimit;
-  bool? get watermarkAvailable;
-  bool? get canSearchUsers;
-  int? get scheduledNoteLimit;
+  int get noteDraftLimit;
+  int get scheduledNoteLimit;
+  bool get watermarkAvailable;
 
   /// Create a copy of RolePolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -93,6 +93,8 @@ mixin _$RolePolicies {
                     canManageAvatarDecorations) &&
             (identical(other.canSearchNotes, canSearchNotes) ||
                 other.canSearchNotes == canSearchNotes) &&
+            (identical(other.canSearchUsers, canSearchUsers) ||
+                other.canSearchUsers == canSearchUsers) &&
             (identical(other.canUseTranslator, canUseTranslator) ||
                 other.canUseTranslator == canUseTranslator) &&
             (identical(other.canHideAds, canHideAds) ||
@@ -101,6 +103,8 @@ mixin _$RolePolicies {
                 other.driveCapacityMb == driveCapacityMb) &&
             (identical(other.maxFileSizeMb, maxFileSizeMb) ||
                 other.maxFileSizeMb == maxFileSizeMb) &&
+            const DeepCollectionEquality()
+                .equals(other.uploadableFileTypes, uploadableFileTypes) &&
             (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.canUpdateBioMedia, canUpdateBioMedia) ||
@@ -137,13 +141,9 @@ mixin _$RolePolicies {
                 other.canImportUserLists == canImportUserLists) &&
             (identical(other.chatAvailability, chatAvailability) ||
                 other.chatAvailability == chatAvailability) &&
-            const DeepCollectionEquality()
-                .equals(other.uploadableFileTypes, uploadableFileTypes) &&
-            (identical(other.noteDraftLimit, noteDraftLimit) ||
-                other.noteDraftLimit == noteDraftLimit) &&
-            (identical(other.watermarkAvailable, watermarkAvailable) || other.watermarkAvailable == watermarkAvailable) &&
-            (identical(other.canSearchUsers, canSearchUsers) || other.canSearchUsers == canSearchUsers) &&
-            (identical(other.scheduledNoteLimit, scheduledNoteLimit) || other.scheduledNoteLimit == scheduledNoteLimit));
+            (identical(other.noteDraftLimit, noteDraftLimit) || other.noteDraftLimit == noteDraftLimit) &&
+            (identical(other.scheduledNoteLimit, scheduledNoteLimit) || other.scheduledNoteLimit == scheduledNoteLimit) &&
+            (identical(other.watermarkAvailable, watermarkAvailable) || other.watermarkAvailable == watermarkAvailable));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -161,10 +161,12 @@ mixin _$RolePolicies {
         canManageCustomEmojis,
         canManageAvatarDecorations,
         canSearchNotes,
+        canSearchUsers,
         canUseTranslator,
         canHideAds,
         driveCapacityMb,
         maxFileSizeMb,
+        const DeepCollectionEquality().hash(uploadableFileTypes),
         alwaysMarkNsfw,
         canUpdateBioMedia,
         pinLimit,
@@ -183,16 +185,14 @@ mixin _$RolePolicies {
         canImportMuting,
         canImportUserLists,
         chatAvailability,
-        const DeepCollectionEquality().hash(uploadableFileTypes),
         noteDraftLimit,
-        watermarkAvailable,
-        canSearchUsers,
-        scheduledNoteLimit
+        scheduledNoteLimit,
+        watermarkAvailable
       ]);
 
   @override
   String toString() {
-    return 'RolePolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, uploadableFileTypes: $uploadableFileTypes, noteDraftLimit: $noteDraftLimit, watermarkAvailable: $watermarkAvailable, canSearchUsers: $canSearchUsers, scheduledNoteLimit: $scheduledNoteLimit)';
+    return 'RolePolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canSearchUsers: $canSearchUsers, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, noteDraftLimit: $noteDraftLimit, scheduledNoteLimit: $scheduledNoteLimit, watermarkAvailable: $watermarkAvailable)';
   }
 }
 
@@ -214,10 +214,12 @@ abstract mixin class $RolePoliciesCopyWith<$Res> {
       bool canManageCustomEmojis,
       bool canManageAvatarDecorations,
       bool canSearchNotes,
+      bool canSearchUsers,
       bool canUseTranslator,
       bool canHideAds,
       int driveCapacityMb,
       int maxFileSizeMb,
+      List<String> uploadableFileTypes,
       bool alwaysMarkNsfw,
       bool canUpdateBioMedia,
       int pinLimit,
@@ -236,11 +238,9 @@ abstract mixin class $RolePoliciesCopyWith<$Res> {
       bool canImportMuting,
       bool canImportUserLists,
       ChatAvailability chatAvailability,
-      List<String>? uploadableFileTypes,
-      int? noteDraftLimit,
-      bool? watermarkAvailable,
-      bool? canSearchUsers,
-      int? scheduledNoteLimit});
+      int noteDraftLimit,
+      int scheduledNoteLimit,
+      bool watermarkAvailable});
 }
 
 /// @nodoc
@@ -266,10 +266,12 @@ class _$RolePoliciesCopyWithImpl<$Res> implements $RolePoliciesCopyWith<$Res> {
     Object? canManageCustomEmojis = null,
     Object? canManageAvatarDecorations = null,
     Object? canSearchNotes = null,
+    Object? canSearchUsers = null,
     Object? canUseTranslator = null,
     Object? canHideAds = null,
     Object? driveCapacityMb = null,
     Object? maxFileSizeMb = null,
+    Object? uploadableFileTypes = null,
     Object? alwaysMarkNsfw = null,
     Object? canUpdateBioMedia = null,
     Object? pinLimit = null,
@@ -288,11 +290,9 @@ class _$RolePoliciesCopyWithImpl<$Res> implements $RolePoliciesCopyWith<$Res> {
     Object? canImportMuting = null,
     Object? canImportUserLists = null,
     Object? chatAvailability = null,
-    Object? uploadableFileTypes = freezed,
-    Object? noteDraftLimit = freezed,
-    Object? watermarkAvailable = freezed,
-    Object? canSearchUsers = freezed,
-    Object? scheduledNoteLimit = freezed,
+    Object? noteDraftLimit = null,
+    Object? scheduledNoteLimit = null,
+    Object? watermarkAvailable = null,
   }) {
     return _then(_self.copyWith(
       gtlAvailable: null == gtlAvailable
@@ -339,6 +339,10 @@ class _$RolePoliciesCopyWithImpl<$Res> implements $RolePoliciesCopyWith<$Res> {
           ? _self.canSearchNotes
           : canSearchNotes // ignore: cast_nullable_to_non_nullable
               as bool,
+      canSearchUsers: null == canSearchUsers
+          ? _self.canSearchUsers
+          : canSearchUsers // ignore: cast_nullable_to_non_nullable
+              as bool,
       canUseTranslator: null == canUseTranslator
           ? _self.canUseTranslator
           : canUseTranslator // ignore: cast_nullable_to_non_nullable
@@ -355,6 +359,10 @@ class _$RolePoliciesCopyWithImpl<$Res> implements $RolePoliciesCopyWith<$Res> {
           ? _self.maxFileSizeMb
           : maxFileSizeMb // ignore: cast_nullable_to_non_nullable
               as int,
+      uploadableFileTypes: null == uploadableFileTypes
+          ? _self.uploadableFileTypes
+          : uploadableFileTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       alwaysMarkNsfw: null == alwaysMarkNsfw
           ? _self.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
@@ -427,26 +435,18 @@ class _$RolePoliciesCopyWithImpl<$Res> implements $RolePoliciesCopyWith<$Res> {
           ? _self.chatAvailability
           : chatAvailability // ignore: cast_nullable_to_non_nullable
               as ChatAvailability,
-      uploadableFileTypes: freezed == uploadableFileTypes
-          ? _self.uploadableFileTypes
-          : uploadableFileTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      noteDraftLimit: freezed == noteDraftLimit
+      noteDraftLimit: null == noteDraftLimit
           ? _self.noteDraftLimit
           : noteDraftLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      watermarkAvailable: freezed == watermarkAvailable
-          ? _self.watermarkAvailable
-          : watermarkAvailable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      canSearchUsers: freezed == canSearchUsers
-          ? _self.canSearchUsers
-          : canSearchUsers // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      scheduledNoteLimit: freezed == scheduledNoteLimit
+              as int,
+      scheduledNoteLimit: null == scheduledNoteLimit
           ? _self.scheduledNoteLimit
           : scheduledNoteLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      watermarkAvailable: null == watermarkAvailable
+          ? _self.watermarkAvailable
+          : watermarkAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -466,10 +466,12 @@ class _RolePolicies implements RolePolicies {
       required this.canManageCustomEmojis,
       required this.canManageAvatarDecorations,
       required this.canSearchNotes,
+      required this.canSearchUsers,
       required this.canUseTranslator,
       required this.canHideAds,
       required this.driveCapacityMb,
       required this.maxFileSizeMb,
+      required final List<String> uploadableFileTypes,
       required this.alwaysMarkNsfw,
       required this.canUpdateBioMedia,
       required this.pinLimit,
@@ -488,11 +490,9 @@ class _RolePolicies implements RolePolicies {
       required this.canImportMuting,
       required this.canImportUserLists,
       required this.chatAvailability,
-      final List<String>? uploadableFileTypes,
-      this.noteDraftLimit,
-      this.watermarkAvailable,
-      this.canSearchUsers,
-      this.scheduledNoteLimit})
+      required this.noteDraftLimit,
+      required this.scheduledNoteLimit,
+      required this.watermarkAvailable})
       : _uploadableFileTypes = uploadableFileTypes;
   factory _RolePolicies.fromJson(Map<String, dynamic> json) =>
       _$RolePoliciesFromJson(json);
@@ -520,6 +520,8 @@ class _RolePolicies implements RolePolicies {
   @override
   final bool canSearchNotes;
   @override
+  final bool canSearchUsers;
+  @override
   final bool canUseTranslator;
   @override
   final bool canHideAds;
@@ -527,6 +529,15 @@ class _RolePolicies implements RolePolicies {
   final int driveCapacityMb;
   @override
   final int maxFileSizeMb;
+  final List<String> _uploadableFileTypes;
+  @override
+  List<String> get uploadableFileTypes {
+    if (_uploadableFileTypes is EqualUnmodifiableListView)
+      return _uploadableFileTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_uploadableFileTypes);
+  }
+
   @override
   final bool alwaysMarkNsfw;
   @override
@@ -563,25 +574,12 @@ class _RolePolicies implements RolePolicies {
   final bool canImportUserLists;
   @override
   final ChatAvailability chatAvailability;
-  final List<String>? _uploadableFileTypes;
   @override
-  List<String>? get uploadableFileTypes {
-    final value = _uploadableFileTypes;
-    if (value == null) return null;
-    if (_uploadableFileTypes is EqualUnmodifiableListView)
-      return _uploadableFileTypes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final int noteDraftLimit;
   @override
-  final int? noteDraftLimit;
+  final int scheduledNoteLimit;
   @override
-  final bool? watermarkAvailable;
-  @override
-  final bool? canSearchUsers;
-  @override
-  final int? scheduledNoteLimit;
+  final bool watermarkAvailable;
 
   /// Create a copy of RolePolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -626,6 +624,8 @@ class _RolePolicies implements RolePolicies {
                     canManageAvatarDecorations) &&
             (identical(other.canSearchNotes, canSearchNotes) ||
                 other.canSearchNotes == canSearchNotes) &&
+            (identical(other.canSearchUsers, canSearchUsers) ||
+                other.canSearchUsers == canSearchUsers) &&
             (identical(other.canUseTranslator, canUseTranslator) ||
                 other.canUseTranslator == canUseTranslator) &&
             (identical(other.canHideAds, canHideAds) ||
@@ -634,6 +634,8 @@ class _RolePolicies implements RolePolicies {
                 other.driveCapacityMb == driveCapacityMb) &&
             (identical(other.maxFileSizeMb, maxFileSizeMb) ||
                 other.maxFileSizeMb == maxFileSizeMb) &&
+            const DeepCollectionEquality()
+                .equals(other._uploadableFileTypes, _uploadableFileTypes) &&
             (identical(other.alwaysMarkNsfw, alwaysMarkNsfw) ||
                 other.alwaysMarkNsfw == alwaysMarkNsfw) &&
             (identical(other.canUpdateBioMedia, canUpdateBioMedia) ||
@@ -670,13 +672,9 @@ class _RolePolicies implements RolePolicies {
                 other.canImportUserLists == canImportUserLists) &&
             (identical(other.chatAvailability, chatAvailability) ||
                 other.chatAvailability == chatAvailability) &&
-            const DeepCollectionEquality()
-                .equals(other._uploadableFileTypes, _uploadableFileTypes) &&
-            (identical(other.noteDraftLimit, noteDraftLimit) ||
-                other.noteDraftLimit == noteDraftLimit) &&
-            (identical(other.watermarkAvailable, watermarkAvailable) || other.watermarkAvailable == watermarkAvailable) &&
-            (identical(other.canSearchUsers, canSearchUsers) || other.canSearchUsers == canSearchUsers) &&
-            (identical(other.scheduledNoteLimit, scheduledNoteLimit) || other.scheduledNoteLimit == scheduledNoteLimit));
+            (identical(other.noteDraftLimit, noteDraftLimit) || other.noteDraftLimit == noteDraftLimit) &&
+            (identical(other.scheduledNoteLimit, scheduledNoteLimit) || other.scheduledNoteLimit == scheduledNoteLimit) &&
+            (identical(other.watermarkAvailable, watermarkAvailable) || other.watermarkAvailable == watermarkAvailable));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -694,10 +692,12 @@ class _RolePolicies implements RolePolicies {
         canManageCustomEmojis,
         canManageAvatarDecorations,
         canSearchNotes,
+        canSearchUsers,
         canUseTranslator,
         canHideAds,
         driveCapacityMb,
         maxFileSizeMb,
+        const DeepCollectionEquality().hash(_uploadableFileTypes),
         alwaysMarkNsfw,
         canUpdateBioMedia,
         pinLimit,
@@ -716,16 +716,14 @@ class _RolePolicies implements RolePolicies {
         canImportMuting,
         canImportUserLists,
         chatAvailability,
-        const DeepCollectionEquality().hash(_uploadableFileTypes),
         noteDraftLimit,
-        watermarkAvailable,
-        canSearchUsers,
-        scheduledNoteLimit
+        scheduledNoteLimit,
+        watermarkAvailable
       ]);
 
   @override
   String toString() {
-    return 'RolePolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, uploadableFileTypes: $uploadableFileTypes, noteDraftLimit: $noteDraftLimit, watermarkAvailable: $watermarkAvailable, canSearchUsers: $canSearchUsers, scheduledNoteLimit: $scheduledNoteLimit)';
+    return 'RolePolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canSearchUsers: $canSearchUsers, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, noteDraftLimit: $noteDraftLimit, scheduledNoteLimit: $scheduledNoteLimit, watermarkAvailable: $watermarkAvailable)';
   }
 }
 
@@ -749,10 +747,12 @@ abstract mixin class _$RolePoliciesCopyWith<$Res>
       bool canManageCustomEmojis,
       bool canManageAvatarDecorations,
       bool canSearchNotes,
+      bool canSearchUsers,
       bool canUseTranslator,
       bool canHideAds,
       int driveCapacityMb,
       int maxFileSizeMb,
+      List<String> uploadableFileTypes,
       bool alwaysMarkNsfw,
       bool canUpdateBioMedia,
       int pinLimit,
@@ -771,11 +771,9 @@ abstract mixin class _$RolePoliciesCopyWith<$Res>
       bool canImportMuting,
       bool canImportUserLists,
       ChatAvailability chatAvailability,
-      List<String>? uploadableFileTypes,
-      int? noteDraftLimit,
-      bool? watermarkAvailable,
-      bool? canSearchUsers,
-      int? scheduledNoteLimit});
+      int noteDraftLimit,
+      int scheduledNoteLimit,
+      bool watermarkAvailable});
 }
 
 /// @nodoc
@@ -802,10 +800,12 @@ class __$RolePoliciesCopyWithImpl<$Res>
     Object? canManageCustomEmojis = null,
     Object? canManageAvatarDecorations = null,
     Object? canSearchNotes = null,
+    Object? canSearchUsers = null,
     Object? canUseTranslator = null,
     Object? canHideAds = null,
     Object? driveCapacityMb = null,
     Object? maxFileSizeMb = null,
+    Object? uploadableFileTypes = null,
     Object? alwaysMarkNsfw = null,
     Object? canUpdateBioMedia = null,
     Object? pinLimit = null,
@@ -824,11 +824,9 @@ class __$RolePoliciesCopyWithImpl<$Res>
     Object? canImportMuting = null,
     Object? canImportUserLists = null,
     Object? chatAvailability = null,
-    Object? uploadableFileTypes = freezed,
-    Object? noteDraftLimit = freezed,
-    Object? watermarkAvailable = freezed,
-    Object? canSearchUsers = freezed,
-    Object? scheduledNoteLimit = freezed,
+    Object? noteDraftLimit = null,
+    Object? scheduledNoteLimit = null,
+    Object? watermarkAvailable = null,
   }) {
     return _then(_RolePolicies(
       gtlAvailable: null == gtlAvailable
@@ -875,6 +873,10 @@ class __$RolePoliciesCopyWithImpl<$Res>
           ? _self.canSearchNotes
           : canSearchNotes // ignore: cast_nullable_to_non_nullable
               as bool,
+      canSearchUsers: null == canSearchUsers
+          ? _self.canSearchUsers
+          : canSearchUsers // ignore: cast_nullable_to_non_nullable
+              as bool,
       canUseTranslator: null == canUseTranslator
           ? _self.canUseTranslator
           : canUseTranslator // ignore: cast_nullable_to_non_nullable
@@ -891,6 +893,10 @@ class __$RolePoliciesCopyWithImpl<$Res>
           ? _self.maxFileSizeMb
           : maxFileSizeMb // ignore: cast_nullable_to_non_nullable
               as int,
+      uploadableFileTypes: null == uploadableFileTypes
+          ? _self._uploadableFileTypes
+          : uploadableFileTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       alwaysMarkNsfw: null == alwaysMarkNsfw
           ? _self.alwaysMarkNsfw
           : alwaysMarkNsfw // ignore: cast_nullable_to_non_nullable
@@ -963,26 +969,18 @@ class __$RolePoliciesCopyWithImpl<$Res>
           ? _self.chatAvailability
           : chatAvailability // ignore: cast_nullable_to_non_nullable
               as ChatAvailability,
-      uploadableFileTypes: freezed == uploadableFileTypes
-          ? _self._uploadableFileTypes
-          : uploadableFileTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      noteDraftLimit: freezed == noteDraftLimit
+      noteDraftLimit: null == noteDraftLimit
           ? _self.noteDraftLimit
           : noteDraftLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      watermarkAvailable: freezed == watermarkAvailable
-          ? _self.watermarkAvailable
-          : watermarkAvailable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      canSearchUsers: freezed == canSearchUsers
-          ? _self.canSearchUsers
-          : canSearchUsers // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      scheduledNoteLimit: freezed == scheduledNoteLimit
+              as int,
+      scheduledNoteLimit: null == scheduledNoteLimit
           ? _self.scheduledNoteLimit
           : scheduledNoteLimit // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      watermarkAvailable: null == watermarkAvailable
+          ? _self.watermarkAvailable
+          : watermarkAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }

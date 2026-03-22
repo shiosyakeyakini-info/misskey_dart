@@ -32,6 +32,18 @@ Map<String, dynamic>
 
 const _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedTypeEnumMap =
     {
+  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType.all:
+      'all',
+  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+      .following: 'following',
+  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+      .follower: 'follower',
+  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+      .mutualFollow: 'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+      .followingOrFollower: 'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType.never:
+      'never',
   MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType.list:
       'list',
   MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType.unknown:

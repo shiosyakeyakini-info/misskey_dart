@@ -21,8 +21,8 @@ mixin _$INotificationsGrouped {
   int? get sinceDate;
   int? get untilDate;
   bool? get markAsRead;
-  List<INotificationsGroupedIncludeTypesItem>? get includeTypes;
-  List<INotificationsGroupedExcludeTypesItem>? get excludeTypes;
+  List<NotificationType>? get includeTypes;
+  List<NotificationType>? get excludeTypes;
 
   /// Create a copy of INotificationsGrouped
   /// with the given fields replaced by the non-null parameter values.
@@ -87,8 +87,8 @@ abstract mixin class $INotificationsGroupedCopyWith<$Res> {
       int? sinceDate,
       int? untilDate,
       bool? markAsRead,
-      List<INotificationsGroupedIncludeTypesItem>? includeTypes,
-      List<INotificationsGroupedExcludeTypesItem>? excludeTypes});
+      List<NotificationType>? includeTypes,
+      List<NotificationType>? excludeTypes});
 }
 
 /// @nodoc
@@ -141,11 +141,11 @@ class _$INotificationsGroupedCopyWithImpl<$Res>
       includeTypes: freezed == includeTypes
           ? _self.includeTypes
           : includeTypes // ignore: cast_nullable_to_non_nullable
-              as List<INotificationsGroupedIncludeTypesItem>?,
+              as List<NotificationType>?,
       excludeTypes: freezed == excludeTypes
           ? _self.excludeTypes
           : excludeTypes // ignore: cast_nullable_to_non_nullable
-              as List<INotificationsGroupedExcludeTypesItem>?,
+              as List<NotificationType>?,
     ));
   }
 }
@@ -160,8 +160,8 @@ class _INotificationsGrouped implements INotificationsGrouped {
       this.sinceDate,
       this.untilDate,
       this.markAsRead = true,
-      final List<INotificationsGroupedIncludeTypesItem>? includeTypes,
-      final List<INotificationsGroupedExcludeTypesItem>? excludeTypes})
+      final List<NotificationType>? includeTypes,
+      final List<NotificationType>? excludeTypes})
       : _includeTypes = includeTypes,
         _excludeTypes = excludeTypes;
   factory _INotificationsGrouped.fromJson(Map<String, dynamic> json) =>
@@ -181,9 +181,9 @@ class _INotificationsGrouped implements INotificationsGrouped {
   @override
   @JsonKey()
   final bool? markAsRead;
-  final List<INotificationsGroupedIncludeTypesItem>? _includeTypes;
+  final List<NotificationType>? _includeTypes;
   @override
-  List<INotificationsGroupedIncludeTypesItem>? get includeTypes {
+  List<NotificationType>? get includeTypes {
     final value = _includeTypes;
     if (value == null) return null;
     if (_includeTypes is EqualUnmodifiableListView) return _includeTypes;
@@ -191,9 +191,9 @@ class _INotificationsGrouped implements INotificationsGrouped {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<INotificationsGroupedExcludeTypesItem>? _excludeTypes;
+  final List<NotificationType>? _excludeTypes;
   @override
-  List<INotificationsGroupedExcludeTypesItem>? get excludeTypes {
+  List<NotificationType>? get excludeTypes {
     final value = _excludeTypes;
     if (value == null) return null;
     if (_excludeTypes is EqualUnmodifiableListView) return _excludeTypes;
@@ -271,8 +271,8 @@ abstract mixin class _$INotificationsGroupedCopyWith<$Res>
       int? sinceDate,
       int? untilDate,
       bool? markAsRead,
-      List<INotificationsGroupedIncludeTypesItem>? includeTypes,
-      List<INotificationsGroupedExcludeTypesItem>? excludeTypes});
+      List<NotificationType>? includeTypes,
+      List<NotificationType>? excludeTypes});
 }
 
 /// @nodoc
@@ -325,11 +325,11 @@ class __$INotificationsGroupedCopyWithImpl<$Res>
       includeTypes: freezed == includeTypes
           ? _self._includeTypes
           : includeTypes // ignore: cast_nullable_to_non_nullable
-              as List<INotificationsGroupedIncludeTypesItem>?,
+              as List<NotificationType>?,
       excludeTypes: freezed == excludeTypes
           ? _self._excludeTypes
           : excludeTypes // ignore: cast_nullable_to_non_nullable
-              as List<INotificationsGroupedExcludeTypesItem>?,
+              as List<NotificationType>?,
     ));
   }
 }

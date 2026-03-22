@@ -32,6 +32,17 @@ Map<String, dynamic>
 
 const _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap =
     {
+  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.all: 'all',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.following:
+      'following',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.follower:
+      'follower',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+      .mutualFollow: 'mutualFollow',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+      .followingOrFollower: 'followingOrFollower',
+  AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.never:
+      'never',
   AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.list:
       'list',
   AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.unknown:

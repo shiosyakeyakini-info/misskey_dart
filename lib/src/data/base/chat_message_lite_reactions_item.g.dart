@@ -10,12 +10,14 @@ _ChatMessageLiteReactionsItem _$ChatMessageLiteReactionsItemFromJson(
         Map<String, dynamic> json) =>
     _ChatMessageLiteReactionsItem(
       reaction: json['reaction'] as String,
-      user: json['user'] as Map<String, dynamic>?,
+      user: json['user'] == null
+          ? null
+          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ChatMessageLiteReactionsItemToJson(
         _ChatMessageLiteReactionsItem instance) =>
     <String, dynamic>{
       'reaction': instance.reaction,
-      'user': instance.user,
+      'user': instance.user?.toJson(),
     };

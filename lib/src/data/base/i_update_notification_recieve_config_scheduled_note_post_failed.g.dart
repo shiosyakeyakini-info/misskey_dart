@@ -30,6 +30,16 @@ Map<String,
     };
 
 const _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap = {
+  IUpdateNotificationRecieveConfigScheduledNotePostFailedType.all: 'all',
+  IUpdateNotificationRecieveConfigScheduledNotePostFailedType.following:
+      'following',
+  IUpdateNotificationRecieveConfigScheduledNotePostFailedType.follower:
+      'follower',
+  IUpdateNotificationRecieveConfigScheduledNotePostFailedType.mutualFollow:
+      'mutualFollow',
+  IUpdateNotificationRecieveConfigScheduledNotePostFailedType
+      .followingOrFollower: 'followingOrFollower',
+  IUpdateNotificationRecieveConfigScheduledNotePostFailedType.never: 'never',
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.list: 'list',
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown:
       'unknown',

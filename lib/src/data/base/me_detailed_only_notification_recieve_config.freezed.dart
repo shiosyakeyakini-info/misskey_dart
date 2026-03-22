@@ -23,6 +23,8 @@ mixin _$MeDetailedOnlyNotificationRecieveConfig {
   dynamic get quote;
   dynamic get reaction;
   dynamic get pollEnded;
+  dynamic get scheduledNotePosted;
+  dynamic get scheduledNotePostFailed;
   dynamic get receiveFollowRequest;
   dynamic get followRequestAccepted;
   dynamic get roleAssigned;
@@ -30,6 +32,9 @@ mixin _$MeDetailedOnlyNotificationRecieveConfig {
   dynamic get achievementEarned;
   dynamic get app;
   dynamic get test;
+  dynamic get login;
+  dynamic get createToken;
+  dynamic get exportCompleted;
 
   /// Create a copy of MeDetailedOnlyNotificationRecieveConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -58,6 +63,10 @@ mixin _$MeDetailedOnlyNotificationRecieveConfig {
             const DeepCollectionEquality().equals(other.reaction, reaction) &&
             const DeepCollectionEquality().equals(other.pollEnded, pollEnded) &&
             const DeepCollectionEquality()
+                .equals(other.scheduledNotePosted, scheduledNotePosted) &&
+            const DeepCollectionEquality().equals(
+                other.scheduledNotePostFailed, scheduledNotePostFailed) &&
+            const DeepCollectionEquality()
                 .equals(other.receiveFollowRequest, receiveFollowRequest) &&
             const DeepCollectionEquality()
                 .equals(other.followRequestAccepted, followRequestAccepted) &&
@@ -68,32 +77,43 @@ mixin _$MeDetailedOnlyNotificationRecieveConfig {
             const DeepCollectionEquality()
                 .equals(other.achievementEarned, achievementEarned) &&
             const DeepCollectionEquality().equals(other.app, app) &&
-            const DeepCollectionEquality().equals(other.test, test));
+            const DeepCollectionEquality().equals(other.test, test) &&
+            const DeepCollectionEquality().equals(other.login, login) &&
+            const DeepCollectionEquality()
+                .equals(other.createToken, createToken) &&
+            const DeepCollectionEquality()
+                .equals(other.exportCompleted, exportCompleted));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(note),
-      const DeepCollectionEquality().hash(follow),
-      const DeepCollectionEquality().hash(mention),
-      const DeepCollectionEquality().hash(reply),
-      const DeepCollectionEquality().hash(renote),
-      const DeepCollectionEquality().hash(quote),
-      const DeepCollectionEquality().hash(reaction),
-      const DeepCollectionEquality().hash(pollEnded),
-      const DeepCollectionEquality().hash(receiveFollowRequest),
-      const DeepCollectionEquality().hash(followRequestAccepted),
-      const DeepCollectionEquality().hash(roleAssigned),
-      const DeepCollectionEquality().hash(chatRoomInvitationReceived),
-      const DeepCollectionEquality().hash(achievementEarned),
-      const DeepCollectionEquality().hash(app),
-      const DeepCollectionEquality().hash(test));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(note),
+        const DeepCollectionEquality().hash(follow),
+        const DeepCollectionEquality().hash(mention),
+        const DeepCollectionEquality().hash(reply),
+        const DeepCollectionEquality().hash(renote),
+        const DeepCollectionEquality().hash(quote),
+        const DeepCollectionEquality().hash(reaction),
+        const DeepCollectionEquality().hash(pollEnded),
+        const DeepCollectionEquality().hash(scheduledNotePosted),
+        const DeepCollectionEquality().hash(scheduledNotePostFailed),
+        const DeepCollectionEquality().hash(receiveFollowRequest),
+        const DeepCollectionEquality().hash(followRequestAccepted),
+        const DeepCollectionEquality().hash(roleAssigned),
+        const DeepCollectionEquality().hash(chatRoomInvitationReceived),
+        const DeepCollectionEquality().hash(achievementEarned),
+        const DeepCollectionEquality().hash(app),
+        const DeepCollectionEquality().hash(test),
+        const DeepCollectionEquality().hash(login),
+        const DeepCollectionEquality().hash(createToken),
+        const DeepCollectionEquality().hash(exportCompleted)
+      ]);
 
   @override
   String toString() {
-    return 'MeDetailedOnlyNotificationRecieveConfig(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
+    return 'MeDetailedOnlyNotificationRecieveConfig(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, scheduledNotePosted: $scheduledNotePosted, scheduledNotePostFailed: $scheduledNotePostFailed, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test, login: $login, createToken: $createToken, exportCompleted: $exportCompleted)';
   }
 }
 
@@ -113,13 +133,18 @@ abstract mixin class $MeDetailedOnlyNotificationRecieveConfigCopyWith<$Res> {
       dynamic quote,
       dynamic reaction,
       dynamic pollEnded,
+      dynamic scheduledNotePosted,
+      dynamic scheduledNotePostFailed,
       dynamic receiveFollowRequest,
       dynamic followRequestAccepted,
       dynamic roleAssigned,
       dynamic chatRoomInvitationReceived,
       dynamic achievementEarned,
       dynamic app,
-      dynamic test});
+      dynamic test,
+      dynamic login,
+      dynamic createToken,
+      dynamic exportCompleted});
 }
 
 /// @nodoc
@@ -143,6 +168,8 @@ class _$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
     Object? quote = freezed,
     Object? reaction = freezed,
     Object? pollEnded = freezed,
+    Object? scheduledNotePosted = freezed,
+    Object? scheduledNotePostFailed = freezed,
     Object? receiveFollowRequest = freezed,
     Object? followRequestAccepted = freezed,
     Object? roleAssigned = freezed,
@@ -150,6 +177,9 @@ class _$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
     Object? achievementEarned = freezed,
     Object? app = freezed,
     Object? test = freezed,
+    Object? login = freezed,
+    Object? createToken = freezed,
+    Object? exportCompleted = freezed,
   }) {
     return _then(_self.copyWith(
       note: freezed == note
@@ -184,6 +214,14 @@ class _$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
           ? _self.pollEnded
           : pollEnded // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      scheduledNotePosted: freezed == scheduledNotePosted
+          ? _self.scheduledNotePosted
+          : scheduledNotePosted // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      scheduledNotePostFailed: freezed == scheduledNotePostFailed
+          ? _self.scheduledNotePostFailed
+          : scheduledNotePostFailed // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       receiveFollowRequest: freezed == receiveFollowRequest
           ? _self.receiveFollowRequest
           : receiveFollowRequest // ignore: cast_nullable_to_non_nullable
@@ -212,6 +250,18 @@ class _$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
           ? _self.test
           : test // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      login: freezed == login
+          ? _self.login
+          : login // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      createToken: freezed == createToken
+          ? _self.createToken
+          : createToken // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      exportCompleted: freezed == exportCompleted
+          ? _self.exportCompleted
+          : exportCompleted // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -229,13 +279,18 @@ class _MeDetailedOnlyNotificationRecieveConfig
       this.quote,
       this.reaction,
       this.pollEnded,
+      this.scheduledNotePosted,
+      this.scheduledNotePostFailed,
       this.receiveFollowRequest,
       this.followRequestAccepted,
       this.roleAssigned,
       this.chatRoomInvitationReceived,
       this.achievementEarned,
       this.app,
-      this.test});
+      this.test,
+      this.login,
+      this.createToken,
+      this.exportCompleted});
   factory _MeDetailedOnlyNotificationRecieveConfig.fromJson(
           Map<String, dynamic> json) =>
       _$MeDetailedOnlyNotificationRecieveConfigFromJson(json);
@@ -257,6 +312,10 @@ class _MeDetailedOnlyNotificationRecieveConfig
   @override
   final dynamic pollEnded;
   @override
+  final dynamic scheduledNotePosted;
+  @override
+  final dynamic scheduledNotePostFailed;
+  @override
   final dynamic receiveFollowRequest;
   @override
   final dynamic followRequestAccepted;
@@ -270,6 +329,12 @@ class _MeDetailedOnlyNotificationRecieveConfig
   final dynamic app;
   @override
   final dynamic test;
+  @override
+  final dynamic login;
+  @override
+  final dynamic createToken;
+  @override
+  final dynamic exportCompleted;
 
   /// Create a copy of MeDetailedOnlyNotificationRecieveConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -302,6 +367,10 @@ class _MeDetailedOnlyNotificationRecieveConfig
             const DeepCollectionEquality().equals(other.reaction, reaction) &&
             const DeepCollectionEquality().equals(other.pollEnded, pollEnded) &&
             const DeepCollectionEquality()
+                .equals(other.scheduledNotePosted, scheduledNotePosted) &&
+            const DeepCollectionEquality().equals(
+                other.scheduledNotePostFailed, scheduledNotePostFailed) &&
+            const DeepCollectionEquality()
                 .equals(other.receiveFollowRequest, receiveFollowRequest) &&
             const DeepCollectionEquality()
                 .equals(other.followRequestAccepted, followRequestAccepted) &&
@@ -312,32 +381,43 @@ class _MeDetailedOnlyNotificationRecieveConfig
             const DeepCollectionEquality()
                 .equals(other.achievementEarned, achievementEarned) &&
             const DeepCollectionEquality().equals(other.app, app) &&
-            const DeepCollectionEquality().equals(other.test, test));
+            const DeepCollectionEquality().equals(other.test, test) &&
+            const DeepCollectionEquality().equals(other.login, login) &&
+            const DeepCollectionEquality()
+                .equals(other.createToken, createToken) &&
+            const DeepCollectionEquality()
+                .equals(other.exportCompleted, exportCompleted));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(note),
-      const DeepCollectionEquality().hash(follow),
-      const DeepCollectionEquality().hash(mention),
-      const DeepCollectionEquality().hash(reply),
-      const DeepCollectionEquality().hash(renote),
-      const DeepCollectionEquality().hash(quote),
-      const DeepCollectionEquality().hash(reaction),
-      const DeepCollectionEquality().hash(pollEnded),
-      const DeepCollectionEquality().hash(receiveFollowRequest),
-      const DeepCollectionEquality().hash(followRequestAccepted),
-      const DeepCollectionEquality().hash(roleAssigned),
-      const DeepCollectionEquality().hash(chatRoomInvitationReceived),
-      const DeepCollectionEquality().hash(achievementEarned),
-      const DeepCollectionEquality().hash(app),
-      const DeepCollectionEquality().hash(test));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(note),
+        const DeepCollectionEquality().hash(follow),
+        const DeepCollectionEquality().hash(mention),
+        const DeepCollectionEquality().hash(reply),
+        const DeepCollectionEquality().hash(renote),
+        const DeepCollectionEquality().hash(quote),
+        const DeepCollectionEquality().hash(reaction),
+        const DeepCollectionEquality().hash(pollEnded),
+        const DeepCollectionEquality().hash(scheduledNotePosted),
+        const DeepCollectionEquality().hash(scheduledNotePostFailed),
+        const DeepCollectionEquality().hash(receiveFollowRequest),
+        const DeepCollectionEquality().hash(followRequestAccepted),
+        const DeepCollectionEquality().hash(roleAssigned),
+        const DeepCollectionEquality().hash(chatRoomInvitationReceived),
+        const DeepCollectionEquality().hash(achievementEarned),
+        const DeepCollectionEquality().hash(app),
+        const DeepCollectionEquality().hash(test),
+        const DeepCollectionEquality().hash(login),
+        const DeepCollectionEquality().hash(createToken),
+        const DeepCollectionEquality().hash(exportCompleted)
+      ]);
 
   @override
   String toString() {
-    return 'MeDetailedOnlyNotificationRecieveConfig(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
+    return 'MeDetailedOnlyNotificationRecieveConfig(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, scheduledNotePosted: $scheduledNotePosted, scheduledNotePostFailed: $scheduledNotePostFailed, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test, login: $login, createToken: $createToken, exportCompleted: $exportCompleted)';
   }
 }
 
@@ -359,13 +439,18 @@ abstract mixin class _$MeDetailedOnlyNotificationRecieveConfigCopyWith<$Res>
       dynamic quote,
       dynamic reaction,
       dynamic pollEnded,
+      dynamic scheduledNotePosted,
+      dynamic scheduledNotePostFailed,
       dynamic receiveFollowRequest,
       dynamic followRequestAccepted,
       dynamic roleAssigned,
       dynamic chatRoomInvitationReceived,
       dynamic achievementEarned,
       dynamic app,
-      dynamic test});
+      dynamic test,
+      dynamic login,
+      dynamic createToken,
+      dynamic exportCompleted});
 }
 
 /// @nodoc
@@ -390,6 +475,8 @@ class __$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
     Object? quote = freezed,
     Object? reaction = freezed,
     Object? pollEnded = freezed,
+    Object? scheduledNotePosted = freezed,
+    Object? scheduledNotePostFailed = freezed,
     Object? receiveFollowRequest = freezed,
     Object? followRequestAccepted = freezed,
     Object? roleAssigned = freezed,
@@ -397,6 +484,9 @@ class __$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
     Object? achievementEarned = freezed,
     Object? app = freezed,
     Object? test = freezed,
+    Object? login = freezed,
+    Object? createToken = freezed,
+    Object? exportCompleted = freezed,
   }) {
     return _then(_MeDetailedOnlyNotificationRecieveConfig(
       note: freezed == note
@@ -431,6 +521,14 @@ class __$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
           ? _self.pollEnded
           : pollEnded // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      scheduledNotePosted: freezed == scheduledNotePosted
+          ? _self.scheduledNotePosted
+          : scheduledNotePosted // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      scheduledNotePostFailed: freezed == scheduledNotePostFailed
+          ? _self.scheduledNotePostFailed
+          : scheduledNotePostFailed // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       receiveFollowRequest: freezed == receiveFollowRequest
           ? _self.receiveFollowRequest
           : receiveFollowRequest // ignore: cast_nullable_to_non_nullable
@@ -458,6 +556,18 @@ class __$MeDetailedOnlyNotificationRecieveConfigCopyWithImpl<$Res>
       test: freezed == test
           ? _self.test
           : test // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      login: freezed == login
+          ? _self.login
+          : login // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      createToken: freezed == createToken
+          ? _self.createToken
+          : createToken // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      exportCompleted: freezed == exportCompleted
+          ? _self.exportCompleted
+          : exportCompleted // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
   }

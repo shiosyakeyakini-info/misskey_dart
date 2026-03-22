@@ -27,7 +27,7 @@ mixin _$Flash {
   String get script;
   @JsonKey(unknownEnumValue: FlashVisibility.unknown)
   FlashVisibility get visibility;
-  double? get likedCount;
+  double get likedCount;
   bool? get isLiked;
 
   /// Create a copy of Flash
@@ -89,7 +89,7 @@ abstract mixin class $FlashCopyWith<$Res> {
       String script,
       @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       FlashVisibility visibility,
-      double? likedCount,
+      double likedCount,
       bool? isLiked});
 
   $UserLiteCopyWith<$Res> get user;
@@ -116,7 +116,7 @@ class _$FlashCopyWithImpl<$Res> implements $FlashCopyWith<$Res> {
     Object? summary = null,
     Object? script = null,
     Object? visibility = null,
-    Object? likedCount = freezed,
+    Object? likedCount = null,
     Object? isLiked = freezed,
   }) {
     return _then(_self.copyWith(
@@ -156,10 +156,10 @@ class _$FlashCopyWithImpl<$Res> implements $FlashCopyWith<$Res> {
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as FlashVisibility,
-      likedCount: freezed == likedCount
+      likedCount: null == likedCount
           ? _self.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       isLiked: freezed == isLiked
           ? _self.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
@@ -192,7 +192,7 @@ class _Flash implements Flash {
       required this.script,
       @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       required this.visibility,
-      this.likedCount,
+      required this.likedCount,
       this.isLiked});
   factory _Flash.fromJson(Map<String, dynamic> json) => _$FlashFromJson(json);
 
@@ -218,7 +218,7 @@ class _Flash implements Flash {
   @JsonKey(unknownEnumValue: FlashVisibility.unknown)
   final FlashVisibility visibility;
   @override
-  final double? likedCount;
+  final double likedCount;
   @override
   final bool? isLiked;
 
@@ -287,7 +287,7 @@ abstract mixin class _$FlashCopyWith<$Res> implements $FlashCopyWith<$Res> {
       String script,
       @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       FlashVisibility visibility,
-      double? likedCount,
+      double likedCount,
       bool? isLiked});
 
   @override
@@ -315,7 +315,7 @@ class __$FlashCopyWithImpl<$Res> implements _$FlashCopyWith<$Res> {
     Object? summary = null,
     Object? script = null,
     Object? visibility = null,
-    Object? likedCount = freezed,
+    Object? likedCount = null,
     Object? isLiked = freezed,
   }) {
     return _then(_Flash(
@@ -355,10 +355,10 @@ class __$FlashCopyWithImpl<$Res> implements _$FlashCopyWith<$Res> {
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as FlashVisibility,
-      likedCount: freezed == likedCount
+      likedCount: null == likedCount
           ? _self.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       isLiked: freezed == isLiked
           ? _self.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable

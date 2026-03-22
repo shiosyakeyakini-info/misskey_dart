@@ -13,8 +13,8 @@ abstract class INotificationsRequest with _$INotificationsRequest {
     int? sinceDate,
     int? untilDate,
     @Default(true) bool? markAsRead,
-    List<INotificationsIncludeTypesItem>? includeTypes,
-    List<INotificationsExcludeTypesItem>? excludeTypes,
+    List<NotificationType>? includeTypes,
+    List<NotificationType>? excludeTypes,
   }) = _INotificationsRequest;
 
   factory INotificationsRequest.fromJson(Map<String, Object?> json) => _$INotificationsRequestFromJson(json);

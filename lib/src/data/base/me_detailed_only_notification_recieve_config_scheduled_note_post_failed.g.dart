@@ -32,6 +32,17 @@ Map<String, dynamic>
 
 const _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap =
     {
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.all: 'all',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.following:
+      'following',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.follower:
+      'follower',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+      .mutualFollow: 'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
+      .followingOrFollower: 'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.never:
+      'never',
   MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.list:
       'list',
   MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.unknown:

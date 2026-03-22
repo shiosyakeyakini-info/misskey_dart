@@ -18,6 +18,7 @@ mixin _$HashtagsUsersRequest {
   String? get tag;
   int? get limit;
   int? get offset;
+  @JsonKey(unknownEnumValue: UsersSortType.unknown)
   UsersSortType? get sort;
   @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
   HashtagsUsersState? get state;
@@ -69,7 +70,7 @@ abstract mixin class $HashtagsUsersRequestCopyWith<$Res> {
       {String? tag,
       int? limit,
       int? offset,
-      UsersSortType? sort,
+      @JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? sort,
       @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       HashtagsUsersState? state,
       @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
@@ -132,7 +133,7 @@ class _HashtagsUsersRequest implements HashtagsUsersRequest {
       {this.tag,
       this.limit = 10,
       this.offset = 0,
-      this.sort,
+      @JsonKey(unknownEnumValue: UsersSortType.unknown) this.sort,
       @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       this.state = HashtagsUsersState.all,
       @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
@@ -149,6 +150,7 @@ class _HashtagsUsersRequest implements HashtagsUsersRequest {
   @JsonKey()
   final int? offset;
   @override
+  @JsonKey(unknownEnumValue: UsersSortType.unknown)
   final UsersSortType? sort;
   @override
   @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
@@ -209,7 +211,7 @@ abstract mixin class _$HashtagsUsersRequestCopyWith<$Res>
       {String? tag,
       int? limit,
       int? offset,
-      UsersSortType? sort,
+      @JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? sort,
       @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       HashtagsUsersState? state,
       @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)

@@ -44,7 +44,7 @@ mixin _$UserDetailedNotMeOnly {
   List<String> get pinnedNoteIds;
   List<Note> get pinnedNotes;
   String? get pinnedPageId;
-  Map<String, dynamic>? get pinnedPage;
+  Page? get pinnedPage;
   bool get publicReactions;
   @JsonKey(unknownEnumValue: FFVisibility.unknown)
   FFVisibility get followingVisibility;
@@ -129,8 +129,8 @@ mixin _$UserDetailedNotMeOnly {
                 .equals(other.pinnedNotes, pinnedNotes) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
-            const DeepCollectionEquality()
-                .equals(other.pinnedPage, pinnedPage) &&
+            (identical(other.pinnedPage, pinnedPage) ||
+                other.pinnedPage == pinnedPage) &&
             (identical(other.publicReactions, publicReactions) ||
                 other.publicReactions == publicReactions) &&
             (identical(other.followingVisibility, followingVisibility) ||
@@ -203,7 +203,7 @@ mixin _$UserDetailedNotMeOnly {
         const DeepCollectionEquality().hash(pinnedNoteIds),
         const DeepCollectionEquality().hash(pinnedNotes),
         pinnedPageId,
-        const DeepCollectionEquality().hash(pinnedPage),
+        pinnedPage,
         publicReactions,
         followingVisibility,
         followersVisibility,
@@ -265,7 +265,7 @@ abstract mixin class $UserDetailedNotMeOnlyCopyWith<$Res> {
       List<String> pinnedNoteIds,
       List<Note> pinnedNotes,
       String? pinnedPageId,
-      Map<String, dynamic>? pinnedPage,
+      Page? pinnedPage,
       bool publicReactions,
       @JsonKey(unknownEnumValue: FFVisibility.unknown)
       FFVisibility followingVisibility,
@@ -290,6 +290,8 @@ abstract mixin class $UserDetailedNotMeOnlyCopyWith<$Res> {
       bool? isRenoteMuted,
       Notify? notify,
       bool? withReplies});
+
+  $PageCopyWith<$Res>? get pinnedPage;
 }
 
 /// @nodoc
@@ -453,7 +455,7 @@ class _$UserDetailedNotMeOnlyCopyWithImpl<$Res>
       pinnedPage: freezed == pinnedPage
           ? _self.pinnedPage
           : pinnedPage // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Page?,
       publicReactions: null == publicReactions
           ? _self.publicReactions
           : publicReactions // ignore: cast_nullable_to_non_nullable
@@ -544,6 +546,20 @@ class _$UserDetailedNotMeOnlyCopyWithImpl<$Res>
               as bool?,
     ));
   }
+
+  /// Create a copy of UserDetailedNotMeOnly
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageCopyWith<$Res>? get pinnedPage {
+    if (_self.pinnedPage == null) {
+      return null;
+    }
+
+    return $PageCopyWith<$Res>(_self.pinnedPage!, (value) {
+      return _then(_self.copyWith(pinnedPage: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -574,7 +590,7 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
       required final List<String> pinnedNoteIds,
       required final List<Note> pinnedNotes,
       this.pinnedPageId,
-      final Map<String, dynamic>? pinnedPage,
+      this.pinnedPage,
       required this.publicReactions,
       @JsonKey(unknownEnumValue: FFVisibility.unknown)
       required this.followingVisibility,
@@ -604,7 +620,6 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
         _verifiedLinks = verifiedLinks,
         _pinnedNoteIds = pinnedNoteIds,
         _pinnedNotes = pinnedNotes,
-        _pinnedPage = pinnedPage,
         _roles = roles;
   factory _UserDetailedNotMeOnly.fromJson(Map<String, dynamic> json) =>
       _$UserDetailedNotMeOnlyFromJson(json);
@@ -694,16 +709,8 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
 
   @override
   final String? pinnedPageId;
-  final Map<String, dynamic>? _pinnedPage;
   @override
-  Map<String, dynamic>? get pinnedPage {
-    final value = _pinnedPage;
-    if (value == null) return null;
-    if (_pinnedPage is EqualUnmodifiableMapView) return _pinnedPage;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+  final Page? pinnedPage;
   @override
   final bool publicReactions;
   @override
@@ -821,8 +828,8 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
                 .equals(other._pinnedNotes, _pinnedNotes) &&
             (identical(other.pinnedPageId, pinnedPageId) ||
                 other.pinnedPageId == pinnedPageId) &&
-            const DeepCollectionEquality()
-                .equals(other._pinnedPage, _pinnedPage) &&
+            (identical(other.pinnedPage, pinnedPage) ||
+                other.pinnedPage == pinnedPage) &&
             (identical(other.publicReactions, publicReactions) ||
                 other.publicReactions == publicReactions) &&
             (identical(other.followingVisibility, followingVisibility) ||
@@ -895,7 +902,7 @@ class _UserDetailedNotMeOnly implements UserDetailedNotMeOnly {
         const DeepCollectionEquality().hash(_pinnedNoteIds),
         const DeepCollectionEquality().hash(_pinnedNotes),
         pinnedPageId,
-        const DeepCollectionEquality().hash(_pinnedPage),
+        pinnedPage,
         publicReactions,
         followingVisibility,
         followersVisibility,
@@ -959,7 +966,7 @@ abstract mixin class _$UserDetailedNotMeOnlyCopyWith<$Res>
       List<String> pinnedNoteIds,
       List<Note> pinnedNotes,
       String? pinnedPageId,
-      Map<String, dynamic>? pinnedPage,
+      Page? pinnedPage,
       bool publicReactions,
       @JsonKey(unknownEnumValue: FFVisibility.unknown)
       FFVisibility followingVisibility,
@@ -984,6 +991,9 @@ abstract mixin class _$UserDetailedNotMeOnlyCopyWith<$Res>
       bool? isRenoteMuted,
       Notify? notify,
       bool? withReplies});
+
+  @override
+  $PageCopyWith<$Res>? get pinnedPage;
 }
 
 /// @nodoc
@@ -1145,9 +1155,9 @@ class __$UserDetailedNotMeOnlyCopyWithImpl<$Res>
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
               as String?,
       pinnedPage: freezed == pinnedPage
-          ? _self._pinnedPage
+          ? _self.pinnedPage
           : pinnedPage // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Page?,
       publicReactions: null == publicReactions
           ? _self.publicReactions
           : publicReactions // ignore: cast_nullable_to_non_nullable
@@ -1237,6 +1247,20 @@ class __$UserDetailedNotMeOnlyCopyWithImpl<$Res>
           : withReplies // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
+  }
+
+  /// Create a copy of UserDetailedNotMeOnly
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PageCopyWith<$Res>? get pinnedPage {
+    if (_self.pinnedPage == null) {
+      return null;
+    }
+
+    return $PageCopyWith<$Res>(_self.pinnedPage!, (value) {
+      return _then(_self.copyWith(pinnedPage: value));
+    });
   }
 }
 

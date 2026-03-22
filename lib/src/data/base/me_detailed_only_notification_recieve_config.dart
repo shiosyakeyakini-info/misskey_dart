@@ -14,6 +14,8 @@ abstract class MeDetailedOnlyNotificationRecieveConfig with _$MeDetailedOnlyNoti
     dynamic quote,
     dynamic reaction,
     dynamic pollEnded,
+    dynamic scheduledNotePosted,
+    dynamic scheduledNotePostFailed,
     dynamic receiveFollowRequest,
     dynamic followRequestAccepted,
     dynamic roleAssigned,
@@ -21,6 +23,9 @@ abstract class MeDetailedOnlyNotificationRecieveConfig with _$MeDetailedOnlyNoti
     dynamic achievementEarned,
     dynamic app,
     dynamic test,
+    dynamic login,
+    dynamic createToken,
+    dynamic exportCompleted,
   }) = _MeDetailedOnlyNotificationRecieveConfig;
 
   factory MeDetailedOnlyNotificationRecieveConfig.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigFromJson(json);

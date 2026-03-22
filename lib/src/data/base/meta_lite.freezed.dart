@@ -30,6 +30,7 @@ mixin _$MetaLite {
   String? get feedbackUrl;
   String? get defaultDarkTheme;
   String? get defaultLightTheme;
+  MetaClientOptions get clientOptions;
   bool get disableRegistration;
   bool get emailRequiredForSignup;
   bool get enableHcaptcha;
@@ -72,7 +73,6 @@ mixin _$MetaLite {
   double get maxFileSize;
   @JsonKey(unknownEnumValue: FederationScope.unknown)
   FederationScope get federation;
-  Map<String, dynamic>? get clientOptions;
 
   /// Create a copy of MetaLite
   /// with the given fields replaced by the non-null parameter values.
@@ -112,6 +112,8 @@ mixin _$MetaLite {
                 other.defaultDarkTheme == defaultDarkTheme) &&
             (identical(other.defaultLightTheme, defaultLightTheme) ||
                 other.defaultLightTheme == defaultLightTheme) &&
+            (identical(other.clientOptions, clientOptions) ||
+                other.clientOptions == clientOptions) &&
             (identical(other.disableRegistration, disableRegistration) ||
                 other.disableRegistration == disableRegistration) &&
             (identical(other.emailRequiredForSignup, emailRequiredForSignup) ||
@@ -182,8 +184,7 @@ mixin _$MetaLite {
             (identical(other.policies, policies) || other.policies == policies) &&
             (identical(other.noteSearchableScope, noteSearchableScope) || other.noteSearchableScope == noteSearchableScope) &&
             (identical(other.maxFileSize, maxFileSize) || other.maxFileSize == maxFileSize) &&
-            (identical(other.federation, federation) || other.federation == federation) &&
-            const DeepCollectionEquality().equals(other.clientOptions, clientOptions));
+            (identical(other.federation, federation) || other.federation == federation));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -204,6 +205,7 @@ mixin _$MetaLite {
         feedbackUrl,
         defaultDarkTheme,
         defaultLightTheme,
+        clientOptions,
         disableRegistration,
         emailRequiredForSignup,
         enableHcaptcha,
@@ -243,13 +245,12 @@ mixin _$MetaLite {
         policies,
         noteSearchableScope,
         maxFileSize,
-        federation,
-        const DeepCollectionEquality().hash(clientOptions)
+        federation
       ]);
 
   @override
   String toString() {
-    return 'MetaLite(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, providesTarball: $providesTarball, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableMcaptcha: $enableMcaptcha, mcaptchaSiteKey: $mcaptchaSiteKey, mcaptchaInstanceUrl: $mcaptchaInstanceUrl, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, enableTestcaptcha: $enableTestcaptcha, googleAnalyticsMeasurementId: $googleAnalyticsMeasurementId, swPublickey: $swPublickey, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, serverErrorImageUrl: $serverErrorImageUrl, infoImageUrl: $infoImageUrl, notFoundImageUrl: $notFoundImageUrl, iconUrl: $iconUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, notesPerOneAd: $notesPerOneAd, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, sentryForFrontend: $sentryForFrontend, mediaProxy: $mediaProxy, enableUrlPreview: $enableUrlPreview, backgroundImageUrl: $backgroundImageUrl, impressumUrl: $impressumUrl, logoImageUrl: $logoImageUrl, privacyPolicyUrl: $privacyPolicyUrl, inquiryUrl: $inquiryUrl, serverRules: $serverRules, themeColor: $themeColor, policies: $policies, noteSearchableScope: $noteSearchableScope, maxFileSize: $maxFileSize, federation: $federation, clientOptions: $clientOptions)';
+    return 'MetaLite(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, providesTarball: $providesTarball, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, clientOptions: $clientOptions, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableMcaptcha: $enableMcaptcha, mcaptchaSiteKey: $mcaptchaSiteKey, mcaptchaInstanceUrl: $mcaptchaInstanceUrl, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, enableTestcaptcha: $enableTestcaptcha, googleAnalyticsMeasurementId: $googleAnalyticsMeasurementId, swPublickey: $swPublickey, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, serverErrorImageUrl: $serverErrorImageUrl, infoImageUrl: $infoImageUrl, notFoundImageUrl: $notFoundImageUrl, iconUrl: $iconUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, notesPerOneAd: $notesPerOneAd, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, sentryForFrontend: $sentryForFrontend, mediaProxy: $mediaProxy, enableUrlPreview: $enableUrlPreview, backgroundImageUrl: $backgroundImageUrl, impressumUrl: $impressumUrl, logoImageUrl: $logoImageUrl, privacyPolicyUrl: $privacyPolicyUrl, inquiryUrl: $inquiryUrl, serverRules: $serverRules, themeColor: $themeColor, policies: $policies, noteSearchableScope: $noteSearchableScope, maxFileSize: $maxFileSize, federation: $federation)';
   }
 }
 
@@ -273,6 +274,7 @@ abstract mixin class $MetaLiteCopyWith<$Res> {
       String? feedbackUrl,
       String? defaultDarkTheme,
       String? defaultLightTheme,
+      MetaClientOptions clientOptions,
       bool disableRegistration,
       bool emailRequiredForSignup,
       bool enableHcaptcha,
@@ -314,9 +316,9 @@ abstract mixin class $MetaLiteCopyWith<$Res> {
       NoteSearchableScope noteSearchableScope,
       double maxFileSize,
       @JsonKey(unknownEnumValue: FederationScope.unknown)
-      FederationScope federation,
-      Map<String, dynamic>? clientOptions});
+      FederationScope federation});
 
+  $MetaClientOptionsCopyWith<$Res> get clientOptions;
   $MetaLiteSentryForFrontendCopyWith<$Res>? get sentryForFrontend;
   $RolePoliciesCopyWith<$Res> get policies;
 }
@@ -347,6 +349,7 @@ class _$MetaLiteCopyWithImpl<$Res> implements $MetaLiteCopyWith<$Res> {
     Object? feedbackUrl = freezed,
     Object? defaultDarkTheme = freezed,
     Object? defaultLightTheme = freezed,
+    Object? clientOptions = null,
     Object? disableRegistration = null,
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
@@ -387,7 +390,6 @@ class _$MetaLiteCopyWithImpl<$Res> implements $MetaLiteCopyWith<$Res> {
     Object? noteSearchableScope = null,
     Object? maxFileSize = null,
     Object? federation = null,
-    Object? clientOptions = freezed,
   }) {
     return _then(_self.copyWith(
       maintainerName: freezed == maintainerName
@@ -446,6 +448,10 @@ class _$MetaLiteCopyWithImpl<$Res> implements $MetaLiteCopyWith<$Res> {
           ? _self.defaultLightTheme
           : defaultLightTheme // ignore: cast_nullable_to_non_nullable
               as String?,
+      clientOptions: null == clientOptions
+          ? _self.clientOptions
+          : clientOptions // ignore: cast_nullable_to_non_nullable
+              as MetaClientOptions,
       disableRegistration: null == disableRegistration
           ? _self.disableRegistration
           : disableRegistration // ignore: cast_nullable_to_non_nullable
@@ -606,11 +612,17 @@ class _$MetaLiteCopyWithImpl<$Res> implements $MetaLiteCopyWith<$Res> {
           ? _self.federation
           : federation // ignore: cast_nullable_to_non_nullable
               as FederationScope,
-      clientOptions: freezed == clientOptions
-          ? _self.clientOptions
-          : clientOptions // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ));
+  }
+
+  /// Create a copy of MetaLite
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetaClientOptionsCopyWith<$Res> get clientOptions {
+    return $MetaClientOptionsCopyWith<$Res>(_self.clientOptions, (value) {
+      return _then(_self.copyWith(clientOptions: value));
+    });
   }
 
   /// Create a copy of MetaLite
@@ -657,6 +669,7 @@ class _MetaLite implements MetaLite {
       this.feedbackUrl = "https://github.com/misskey-dev/misskey/issues/new",
       this.defaultDarkTheme,
       this.defaultLightTheme,
+      required this.clientOptions,
       required this.disableRegistration,
       required this.emailRequiredForSignup,
       required this.enableHcaptcha,
@@ -698,12 +711,10 @@ class _MetaLite implements MetaLite {
       this.noteSearchableScope = NoteSearchableScope.local,
       required this.maxFileSize,
       @JsonKey(unknownEnumValue: FederationScope.unknown)
-      required this.federation,
-      final Map<String, dynamic>? clientOptions})
+      required this.federation})
       : _langs = langs,
         _ads = ads,
-        _serverRules = serverRules,
-        _clientOptions = clientOptions;
+        _serverRules = serverRules;
   factory _MetaLite.fromJson(Map<String, dynamic> json) =>
       _$MetaLiteFromJson(json);
 
@@ -744,6 +755,8 @@ class _MetaLite implements MetaLite {
   final String? defaultDarkTheme;
   @override
   final String? defaultLightTheme;
+  @override
+  final MetaClientOptions clientOptions;
   @override
   final bool disableRegistration;
   @override
@@ -840,15 +853,6 @@ class _MetaLite implements MetaLite {
   @override
   @JsonKey(unknownEnumValue: FederationScope.unknown)
   final FederationScope federation;
-  final Map<String, dynamic>? _clientOptions;
-  @override
-  Map<String, dynamic>? get clientOptions {
-    final value = _clientOptions;
-    if (value == null) return null;
-    if (_clientOptions is EqualUnmodifiableMapView) return _clientOptions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
 
   /// Create a copy of MetaLite
   /// with the given fields replaced by the non-null parameter values.
@@ -893,6 +897,8 @@ class _MetaLite implements MetaLite {
                 other.defaultDarkTheme == defaultDarkTheme) &&
             (identical(other.defaultLightTheme, defaultLightTheme) ||
                 other.defaultLightTheme == defaultLightTheme) &&
+            (identical(other.clientOptions, clientOptions) ||
+                other.clientOptions == clientOptions) &&
             (identical(other.disableRegistration, disableRegistration) ||
                 other.disableRegistration == disableRegistration) &&
             (identical(other.emailRequiredForSignup, emailRequiredForSignup) ||
@@ -963,8 +969,7 @@ class _MetaLite implements MetaLite {
             (identical(other.policies, policies) || other.policies == policies) &&
             (identical(other.noteSearchableScope, noteSearchableScope) || other.noteSearchableScope == noteSearchableScope) &&
             (identical(other.maxFileSize, maxFileSize) || other.maxFileSize == maxFileSize) &&
-            (identical(other.federation, federation) || other.federation == federation) &&
-            const DeepCollectionEquality().equals(other._clientOptions, _clientOptions));
+            (identical(other.federation, federation) || other.federation == federation));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -985,6 +990,7 @@ class _MetaLite implements MetaLite {
         feedbackUrl,
         defaultDarkTheme,
         defaultLightTheme,
+        clientOptions,
         disableRegistration,
         emailRequiredForSignup,
         enableHcaptcha,
@@ -1024,13 +1030,12 @@ class _MetaLite implements MetaLite {
         policies,
         noteSearchableScope,
         maxFileSize,
-        federation,
-        const DeepCollectionEquality().hash(_clientOptions)
+        federation
       ]);
 
   @override
   String toString() {
-    return 'MetaLite(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, providesTarball: $providesTarball, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableMcaptcha: $enableMcaptcha, mcaptchaSiteKey: $mcaptchaSiteKey, mcaptchaInstanceUrl: $mcaptchaInstanceUrl, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, enableTestcaptcha: $enableTestcaptcha, googleAnalyticsMeasurementId: $googleAnalyticsMeasurementId, swPublickey: $swPublickey, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, serverErrorImageUrl: $serverErrorImageUrl, infoImageUrl: $infoImageUrl, notFoundImageUrl: $notFoundImageUrl, iconUrl: $iconUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, notesPerOneAd: $notesPerOneAd, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, sentryForFrontend: $sentryForFrontend, mediaProxy: $mediaProxy, enableUrlPreview: $enableUrlPreview, backgroundImageUrl: $backgroundImageUrl, impressumUrl: $impressumUrl, logoImageUrl: $logoImageUrl, privacyPolicyUrl: $privacyPolicyUrl, inquiryUrl: $inquiryUrl, serverRules: $serverRules, themeColor: $themeColor, policies: $policies, noteSearchableScope: $noteSearchableScope, maxFileSize: $maxFileSize, federation: $federation, clientOptions: $clientOptions)';
+    return 'MetaLite(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, providesTarball: $providesTarball, name: $name, shortName: $shortName, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, clientOptions: $clientOptions, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableMcaptcha: $enableMcaptcha, mcaptchaSiteKey: $mcaptchaSiteKey, mcaptchaInstanceUrl: $mcaptchaInstanceUrl, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, enableTestcaptcha: $enableTestcaptcha, googleAnalyticsMeasurementId: $googleAnalyticsMeasurementId, swPublickey: $swPublickey, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, serverErrorImageUrl: $serverErrorImageUrl, infoImageUrl: $infoImageUrl, notFoundImageUrl: $notFoundImageUrl, iconUrl: $iconUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, notesPerOneAd: $notesPerOneAd, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, sentryForFrontend: $sentryForFrontend, mediaProxy: $mediaProxy, enableUrlPreview: $enableUrlPreview, backgroundImageUrl: $backgroundImageUrl, impressumUrl: $impressumUrl, logoImageUrl: $logoImageUrl, privacyPolicyUrl: $privacyPolicyUrl, inquiryUrl: $inquiryUrl, serverRules: $serverRules, themeColor: $themeColor, policies: $policies, noteSearchableScope: $noteSearchableScope, maxFileSize: $maxFileSize, federation: $federation)';
   }
 }
 
@@ -1056,6 +1061,7 @@ abstract mixin class _$MetaLiteCopyWith<$Res>
       String? feedbackUrl,
       String? defaultDarkTheme,
       String? defaultLightTheme,
+      MetaClientOptions clientOptions,
       bool disableRegistration,
       bool emailRequiredForSignup,
       bool enableHcaptcha,
@@ -1097,9 +1103,10 @@ abstract mixin class _$MetaLiteCopyWith<$Res>
       NoteSearchableScope noteSearchableScope,
       double maxFileSize,
       @JsonKey(unknownEnumValue: FederationScope.unknown)
-      FederationScope federation,
-      Map<String, dynamic>? clientOptions});
+      FederationScope federation});
 
+  @override
+  $MetaClientOptionsCopyWith<$Res> get clientOptions;
   @override
   $MetaLiteSentryForFrontendCopyWith<$Res>? get sentryForFrontend;
   @override
@@ -1132,6 +1139,7 @@ class __$MetaLiteCopyWithImpl<$Res> implements _$MetaLiteCopyWith<$Res> {
     Object? feedbackUrl = freezed,
     Object? defaultDarkTheme = freezed,
     Object? defaultLightTheme = freezed,
+    Object? clientOptions = null,
     Object? disableRegistration = null,
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
@@ -1172,7 +1180,6 @@ class __$MetaLiteCopyWithImpl<$Res> implements _$MetaLiteCopyWith<$Res> {
     Object? noteSearchableScope = null,
     Object? maxFileSize = null,
     Object? federation = null,
-    Object? clientOptions = freezed,
   }) {
     return _then(_MetaLite(
       maintainerName: freezed == maintainerName
@@ -1231,6 +1238,10 @@ class __$MetaLiteCopyWithImpl<$Res> implements _$MetaLiteCopyWith<$Res> {
           ? _self.defaultLightTheme
           : defaultLightTheme // ignore: cast_nullable_to_non_nullable
               as String?,
+      clientOptions: null == clientOptions
+          ? _self.clientOptions
+          : clientOptions // ignore: cast_nullable_to_non_nullable
+              as MetaClientOptions,
       disableRegistration: null == disableRegistration
           ? _self.disableRegistration
           : disableRegistration // ignore: cast_nullable_to_non_nullable
@@ -1391,11 +1402,17 @@ class __$MetaLiteCopyWithImpl<$Res> implements _$MetaLiteCopyWith<$Res> {
           ? _self.federation
           : federation // ignore: cast_nullable_to_non_nullable
               as FederationScope,
-      clientOptions: freezed == clientOptions
-          ? _self._clientOptions
-          : clientOptions // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ));
+  }
+
+  /// Create a copy of MetaLite
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetaClientOptionsCopyWith<$Res> get clientOptions {
+    return $MetaClientOptionsCopyWith<$Res>(_self.clientOptions, (value) {
+      return _then(_self.copyWith(clientOptions: value));
+    });
   }
 
   /// Create a copy of MetaLite

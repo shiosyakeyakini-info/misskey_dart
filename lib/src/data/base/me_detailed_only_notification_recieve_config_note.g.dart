@@ -27,6 +27,13 @@ Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigNoteToJson(
     };
 
 const _$MeDetailedOnlyNotificationRecieveConfigNoteTypeEnumMap = {
+  MeDetailedOnlyNotificationRecieveConfigNoteType.all: 'all',
+  MeDetailedOnlyNotificationRecieveConfigNoteType.following: 'following',
+  MeDetailedOnlyNotificationRecieveConfigNoteType.follower: 'follower',
+  MeDetailedOnlyNotificationRecieveConfigNoteType.mutualFollow: 'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigNoteType.followingOrFollower:
+      'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigNoteType.never: 'never',
   MeDetailedOnlyNotificationRecieveConfigNoteType.list: 'list',
   MeDetailedOnlyNotificationRecieveConfigNoteType.unknown: 'unknown',
 };

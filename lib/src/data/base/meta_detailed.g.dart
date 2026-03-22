@@ -24,6 +24,8 @@ _MetaDetailed _$MetaDetailedFromJson(Map<String, dynamic> json) =>
           "https://github.com/misskey-dev/misskey/issues/new",
       defaultDarkTheme: json['defaultDarkTheme'] as String?,
       defaultLightTheme: json['defaultLightTheme'] as String?,
+      clientOptions: MetaClientOptions.fromJson(
+          json['clientOptions'] as Map<String, dynamic>),
       disableRegistration: json['disableRegistration'] as bool,
       emailRequiredForSignup: json['emailRequiredForSignup'] as bool,
       enableHcaptcha: json['enableHcaptcha'] as bool,
@@ -76,7 +78,6 @@ _MetaDetailed _$MetaDetailedFromJson(Map<String, dynamic> json) =>
       maxFileSize: (json['maxFileSize'] as num).toDouble(),
       federation: $enumDecode(_$FederationScopeEnumMap, json['federation'],
           unknownValue: FederationScope.unknown),
-      clientOptions: json['clientOptions'] as Map<String, dynamic>?,
       features: json['features'] == null
           ? null
           : MetaDetailedOnlyFeatures.fromJson(
@@ -103,6 +104,7 @@ Map<String, dynamic> _$MetaDetailedToJson(_MetaDetailed instance) =>
       'feedbackUrl': instance.feedbackUrl,
       'defaultDarkTheme': instance.defaultDarkTheme,
       'defaultLightTheme': instance.defaultLightTheme,
+      'clientOptions': instance.clientOptions.toJson(),
       'disableRegistration': instance.disableRegistration,
       'emailRequiredForSignup': instance.emailRequiredForSignup,
       'enableHcaptcha': instance.enableHcaptcha,
@@ -144,7 +146,6 @@ Map<String, dynamic> _$MetaDetailedToJson(_MetaDetailed instance) =>
           _$NoteSearchableScopeEnumMap[instance.noteSearchableScope]!,
       'maxFileSize': instance.maxFileSize,
       'federation': _$FederationScopeEnumMap[instance.federation]!,
-      'clientOptions': instance.clientOptions,
       'features': instance.features?.toJson(),
       'proxyAccountName': instance.proxyAccountName,
       'requireSetup': instance.requireSetup,

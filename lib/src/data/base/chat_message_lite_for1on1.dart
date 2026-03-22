@@ -13,7 +13,7 @@ abstract class ChatMessageLiteFor1on1 with _$ChatMessageLiteFor1on1 {
     required String toUserId,
     String? text,
     String? fileId,
-    Map<String, dynamic>? file,
+    DriveFile? file,
     required List<ChatMessageLiteFor1on1ReactionsItem> reactions,
   }) = _ChatMessageLiteFor1on1;
 

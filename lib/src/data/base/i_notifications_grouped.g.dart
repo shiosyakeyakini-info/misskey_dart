@@ -16,12 +16,10 @@ _INotificationsGrouped _$INotificationsGroupedFromJson(
       untilDate: (json['untilDate'] as num?)?.toInt(),
       markAsRead: json['markAsRead'] as bool? ?? true,
       includeTypes: (json['includeTypes'] as List<dynamic>?)
-          ?.map((e) =>
-              $enumDecode(_$INotificationsGroupedIncludeTypesItemEnumMap, e))
+          ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
           .toList(),
       excludeTypes: (json['excludeTypes'] as List<dynamic>?)
-          ?.map((e) =>
-              $enumDecode(_$INotificationsGroupedExcludeTypesItemEnumMap, e))
+          ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
           .toList(),
     );
 
@@ -35,71 +33,37 @@ Map<String, dynamic> _$INotificationsGroupedToJson(
       'untilDate': instance.untilDate,
       'markAsRead': instance.markAsRead,
       'includeTypes': instance.includeTypes
-          ?.map((e) => _$INotificationsGroupedIncludeTypesItemEnumMap[e]!)
+          ?.map((e) => _$NotificationTypeEnumMap[e]!)
           .toList(),
       'excludeTypes': instance.excludeTypes
-          ?.map((e) => _$INotificationsGroupedExcludeTypesItemEnumMap[e]!)
+          ?.map((e) => _$NotificationTypeEnumMap[e]!)
           .toList(),
     };
 
-const _$INotificationsGroupedIncludeTypesItemEnumMap = {
-  INotificationsGroupedIncludeTypesItem.note: 'note',
-  INotificationsGroupedIncludeTypesItem.follow: 'follow',
-  INotificationsGroupedIncludeTypesItem.mention: 'mention',
-  INotificationsGroupedIncludeTypesItem.reply: 'reply',
-  INotificationsGroupedIncludeTypesItem.renote: 'renote',
-  INotificationsGroupedIncludeTypesItem.quote: 'quote',
-  INotificationsGroupedIncludeTypesItem.reaction: 'reaction',
-  INotificationsGroupedIncludeTypesItem.pollEnded: 'pollEnded',
-  INotificationsGroupedIncludeTypesItem.scheduledNotePosted:
-      'scheduledNotePosted',
-  INotificationsGroupedIncludeTypesItem.scheduledNotePostFailed:
-      'scheduledNotePostFailed',
-  INotificationsGroupedIncludeTypesItem.receiveFollowRequest:
-      'receiveFollowRequest',
-  INotificationsGroupedIncludeTypesItem.followRequestAccepted:
-      'followRequestAccepted',
-  INotificationsGroupedIncludeTypesItem.roleAssigned: 'roleAssigned',
-  INotificationsGroupedIncludeTypesItem.chatRoomInvitationReceived:
-      'chatRoomInvitationReceived',
-  INotificationsGroupedIncludeTypesItem.achievementEarned: 'achievementEarned',
-  INotificationsGroupedIncludeTypesItem.exportCompleted: 'exportCompleted',
-  INotificationsGroupedIncludeTypesItem.login: 'login',
-  INotificationsGroupedIncludeTypesItem.createToken: 'createToken',
-  INotificationsGroupedIncludeTypesItem.app: 'app',
-  INotificationsGroupedIncludeTypesItem.test: 'test',
-  INotificationsGroupedIncludeTypesItem.pollVote: 'pollVote',
-  INotificationsGroupedIncludeTypesItem.groupInvited: 'groupInvited',
-  INotificationsGroupedIncludeTypesItem.unknown: 'unknown',
-};
-
-const _$INotificationsGroupedExcludeTypesItemEnumMap = {
-  INotificationsGroupedExcludeTypesItem.note: 'note',
-  INotificationsGroupedExcludeTypesItem.follow: 'follow',
-  INotificationsGroupedExcludeTypesItem.mention: 'mention',
-  INotificationsGroupedExcludeTypesItem.reply: 'reply',
-  INotificationsGroupedExcludeTypesItem.renote: 'renote',
-  INotificationsGroupedExcludeTypesItem.quote: 'quote',
-  INotificationsGroupedExcludeTypesItem.reaction: 'reaction',
-  INotificationsGroupedExcludeTypesItem.pollEnded: 'pollEnded',
-  INotificationsGroupedExcludeTypesItem.scheduledNotePosted:
-      'scheduledNotePosted',
-  INotificationsGroupedExcludeTypesItem.scheduledNotePostFailed:
-      'scheduledNotePostFailed',
-  INotificationsGroupedExcludeTypesItem.receiveFollowRequest:
-      'receiveFollowRequest',
-  INotificationsGroupedExcludeTypesItem.followRequestAccepted:
-      'followRequestAccepted',
-  INotificationsGroupedExcludeTypesItem.roleAssigned: 'roleAssigned',
-  INotificationsGroupedExcludeTypesItem.chatRoomInvitationReceived:
-      'chatRoomInvitationReceived',
-  INotificationsGroupedExcludeTypesItem.achievementEarned: 'achievementEarned',
-  INotificationsGroupedExcludeTypesItem.exportCompleted: 'exportCompleted',
-  INotificationsGroupedExcludeTypesItem.login: 'login',
-  INotificationsGroupedExcludeTypesItem.createToken: 'createToken',
-  INotificationsGroupedExcludeTypesItem.app: 'app',
-  INotificationsGroupedExcludeTypesItem.test: 'test',
-  INotificationsGroupedExcludeTypesItem.pollVote: 'pollVote',
-  INotificationsGroupedExcludeTypesItem.groupInvited: 'groupInvited',
-  INotificationsGroupedExcludeTypesItem.unknown: 'unknown',
+const _$NotificationTypeEnumMap = {
+  NotificationType.note: 'note',
+  NotificationType.mention: 'mention',
+  NotificationType.reply: 'reply',
+  NotificationType.renote: 'renote',
+  NotificationType.quote: 'quote',
+  NotificationType.reaction: 'reaction',
+  NotificationType.pollEnded: 'pollEnded',
+  NotificationType.scheduledNotePosted: 'scheduledNotePosted',
+  NotificationType.scheduledNotePostFailed: 'scheduledNotePostFailed',
+  NotificationType.follow: 'follow',
+  NotificationType.receiveFollowRequest: 'receiveFollowRequest',
+  NotificationType.followRequestAccepted: 'followRequestAccepted',
+  NotificationType.roleAssigned: 'roleAssigned',
+  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
+  NotificationType.achievementEarned: 'achievementEarned',
+  NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.login: 'login',
+  NotificationType.createToken: 'createToken',
+  NotificationType.app: 'app',
+  NotificationType.reactionGrouped: 'reaction:grouped',
+  NotificationType.renoteGrouped: 'renote:grouped',
+  NotificationType.test: 'test',
+  NotificationType.pollVote: 'pollVote',
+  NotificationType.groupInvited: 'groupInvited',
+  NotificationType.unknown: 'unknown',
 };

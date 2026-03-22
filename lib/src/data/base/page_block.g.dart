@@ -23,6 +23,9 @@ Map<String, dynamic> _$PageBlockToJson(_PageBlock instance) =>
     };
 
 const _$PageBlockTypeEnumMap = {
+  PageBlockType.text: 'text',
+  PageBlockType.section: 'section',
+  PageBlockType.image: 'image',
   PageBlockType.note: 'note',
   PageBlockType.unknown: 'unknown',
 };

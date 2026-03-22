@@ -10,9 +10,9 @@ _NotesDraftsCreateRequest _$NotesDraftsCreateRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesDraftsCreateRequest(
       visibility: $enumDecodeNullable(
-              _$NotesDraftsCreateVisibilityEnumMap, json['visibility'],
-              unknownValue: NotesDraftsCreateVisibility.unknown) ??
-          NotesDraftsCreateVisibility.public,
+              _$NoteVisibilityEnumMap, json['visibility'],
+              unknownValue: NoteVisibility.unknown) ??
+          NoteVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -41,7 +41,7 @@ _NotesDraftsCreateRequest _$NotesDraftsCreateRequestFromJson(
 Map<String, dynamic> _$NotesDraftsCreateRequestToJson(
         _NotesDraftsCreateRequest instance) =>
     <String, dynamic>{
-      'visibility': _$NotesDraftsCreateVisibilityEnumMap[instance.visibility],
+      'visibility': _$NoteVisibilityEnumMap[instance.visibility],
       'visibleUserIds': instance.visibleUserIds,
       'cw': instance.cw,
       'hashtag': instance.hashtag,
@@ -58,12 +58,12 @@ Map<String, dynamic> _$NotesDraftsCreateRequestToJson(
       'isActuallyScheduled': instance.isActuallyScheduled,
     };
 
-const _$NotesDraftsCreateVisibilityEnumMap = {
-  NotesDraftsCreateVisibility.public: 'public',
-  NotesDraftsCreateVisibility.home: 'home',
-  NotesDraftsCreateVisibility.followers: 'followers',
-  NotesDraftsCreateVisibility.specified: 'specified',
-  NotesDraftsCreateVisibility.unknown: 'unknown',
+const _$NoteVisibilityEnumMap = {
+  NoteVisibility.public: 'public',
+  NoteVisibility.home: 'home',
+  NoteVisibility.followers: 'followers',
+  NoteVisibility.specified: 'specified',
+  NoteVisibility.unknown: 'unknown',
 };
 
 const _$NotesDraftsCreateReactionAcceptanceEnumMap = {

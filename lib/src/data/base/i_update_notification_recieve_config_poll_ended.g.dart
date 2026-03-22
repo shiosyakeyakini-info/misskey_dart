@@ -27,6 +27,13 @@ Map<String, dynamic> _$IUpdateNotificationRecieveConfigPollEndedToJson(
     };
 
 const _$IUpdateNotificationRecieveConfigPollEndedTypeEnumMap = {
+  IUpdateNotificationRecieveConfigPollEndedType.all: 'all',
+  IUpdateNotificationRecieveConfigPollEndedType.following: 'following',
+  IUpdateNotificationRecieveConfigPollEndedType.follower: 'follower',
+  IUpdateNotificationRecieveConfigPollEndedType.mutualFollow: 'mutualFollow',
+  IUpdateNotificationRecieveConfigPollEndedType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigPollEndedType.never: 'never',
   IUpdateNotificationRecieveConfigPollEndedType.list: 'list',
   IUpdateNotificationRecieveConfigPollEndedType.unknown: 'unknown',
 };

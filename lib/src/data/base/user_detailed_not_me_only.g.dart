@@ -50,7 +50,9 @@ _UserDetailedNotMeOnly _$UserDetailedNotMeOnlyFromJson(
           .map((e) => Note.fromJson(e as Map<String, dynamic>))
           .toList(),
       pinnedPageId: json['pinnedPageId'] as String?,
-      pinnedPage: json['pinnedPage'] as Map<String, dynamic>?,
+      pinnedPage: json['pinnedPage'] == null
+          ? null
+          : Page.fromJson(json['pinnedPage'] as Map<String, dynamic>),
       publicReactions: json['publicReactions'] as bool,
       followingVisibility: $enumDecode(
           _$FFVisibilityEnumMap, json['followingVisibility'],
@@ -111,7 +113,7 @@ Map<String, dynamic> _$UserDetailedNotMeOnlyToJson(
       'pinnedNoteIds': instance.pinnedNoteIds,
       'pinnedNotes': instance.pinnedNotes.map((e) => e.toJson()).toList(),
       'pinnedPageId': instance.pinnedPageId,
-      'pinnedPage': instance.pinnedPage,
+      'pinnedPage': instance.pinnedPage?.toJson(),
       'publicReactions': instance.publicReactions,
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility]!,

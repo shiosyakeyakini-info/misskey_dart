@@ -17,7 +17,7 @@ abstract class Ad with _$Ad {
     required String imageUrl,
     required String memo,
     required int dayOfWeek,
-    bool? isSensitive,
+    required bool isSensitive,
   }) = _Ad;
 
   factory Ad.fromJson(Map<String, Object?> json) => _$AdFromJson(json);

@@ -17,7 +17,9 @@ _ChatMessageLiteForRoom _$ChatMessageLiteForRoomFromJson(
       toRoomId: json['toRoomId'] as String,
       text: json['text'] as String?,
       fileId: json['fileId'] as String?,
-      file: json['file'] as Map<String, dynamic>?,
+      file: json['file'] == null
+          ? null
+          : DriveFile.fromJson(json['file'] as Map<String, dynamic>),
       reactions: (json['reactions'] as List<dynamic>)
           .map((e) => ChatMessageLiteForRoomReactionsItem.fromJson(
               e as Map<String, dynamic>))
@@ -34,6 +36,6 @@ Map<String, dynamic> _$ChatMessageLiteForRoomToJson(
       'toRoomId': instance.toRoomId,
       'text': instance.text,
       'fileId': instance.fileId,
-      'file': instance.file,
+      'file': instance.file?.toJson(),
       'reactions': instance.reactions.map((e) => e.toJson()).toList(),
     };

@@ -31,6 +31,16 @@ Map<String,
 
 const _$AdminShowUserNotificationRecieveConfigReceiveFollowRequestTypeEnumMap =
     {
+  AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.all: 'all',
+  AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.following:
+      'following',
+  AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.follower:
+      'follower',
+  AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.mutualFollow:
+      'mutualFollow',
+  AdminShowUserNotificationRecieveConfigReceiveFollowRequestType
+      .followingOrFollower: 'followingOrFollower',
+  AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.never: 'never',
   AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.list: 'list',
   AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.unknown:
       'unknown',

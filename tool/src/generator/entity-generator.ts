@@ -60,6 +60,27 @@ export function generateEntityFile(
     }
   }
 
+  // Add extra fields from config (fields not in api.json but needed for compatibility)
+  const extraFields = config.extra_fields?.[name];
+  if (extraFields) {
+    for (const [fieldName, extra] of Object.entries(extraFields)) {
+      const parts: string[] = [];
+      if (extra.converter) {
+        parts.push(`@${extra.converter}()`);
+        if (extra.import) {
+          imports.add(`import '${extra.import}';`);
+        }
+      }
+      if (extra.default !== undefined) {
+        parts.push(`@Default(${extra.default})`);
+      }
+      const nullSuffix = extra.nullable ? "?" : "";
+      parts.push(`${extra.dart_type}${nullSuffix} ${fieldName},`);
+      fieldLines.push(`    ${parts.join(" ")}`);
+      needsBarrelImport = true;
+    }
+  }
+
   // Only add barrel import when fields reference external types
   if (needsBarrelImport) {
     imports.add("import 'package:misskey_dart/misskey_dart.dart';");
@@ -120,8 +141,16 @@ function flattenProperties(
           }
         }
       } else {
-        for (const [key, val] of part.properties) {
-          properties.set(key, val);
+        // Inline object within allOf - also recursively flatten in case it has nested allOf
+        if (part.allOf) {
+          const flatProps = flattenProperties(part, parsed, config);
+          for (const [key, val] of flatProps) {
+            properties.set(key, val);
+          }
+        } else {
+          for (const [key, val] of part.properties) {
+            properties.set(key, val);
+          }
         }
       }
     }

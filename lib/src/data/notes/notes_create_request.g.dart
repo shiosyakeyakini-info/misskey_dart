@@ -8,9 +8,10 @@ part of 'notes_create_request.dart';
 
 _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
     _NotesCreateRequest(
-      visibility:
-          $enumDecodeNullable(_$NoteVisibilityEnumMap, json['visibility']) ??
-              NoteVisibility.public,
+      visibility: $enumDecodeNullable(
+              _$NoteVisibilityEnumMap, json['visibility'],
+              unknownValue: NoteVisibility.unknown) ??
+          NoteVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -63,6 +64,7 @@ const _$NoteVisibilityEnumMap = {
   NoteVisibility.home: 'home',
   NoteVisibility.followers: 'followers',
   NoteVisibility.specified: 'specified',
+  NoteVisibility.unknown: 'unknown',
 };
 
 const _$NotesCreateReactionAcceptanceEnumMap = {

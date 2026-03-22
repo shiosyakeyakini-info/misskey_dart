@@ -31,6 +31,16 @@ Map<String,
 
 const _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedTypeEnumMap =
     {
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.all: 'all',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.following:
+      'following',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.follower:
+      'follower',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.mutualFollow:
+      'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+      .followingOrFollower: 'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.never: 'never',
   MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.list: 'list',
   MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.unknown:
       'unknown',

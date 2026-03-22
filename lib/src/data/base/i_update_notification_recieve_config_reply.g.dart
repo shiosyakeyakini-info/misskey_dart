@@ -25,6 +25,13 @@ Map<String, dynamic> _$IUpdateNotificationRecieveConfigReplyToJson(
     };
 
 const _$IUpdateNotificationRecieveConfigReplyTypeEnumMap = {
+  IUpdateNotificationRecieveConfigReplyType.all: 'all',
+  IUpdateNotificationRecieveConfigReplyType.following: 'following',
+  IUpdateNotificationRecieveConfigReplyType.follower: 'follower',
+  IUpdateNotificationRecieveConfigReplyType.mutualFollow: 'mutualFollow',
+  IUpdateNotificationRecieveConfigReplyType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigReplyType.never: 'never',
   IUpdateNotificationRecieveConfigReplyType.list: 'list',
   IUpdateNotificationRecieveConfigReplyType.unknown: 'unknown',
 };

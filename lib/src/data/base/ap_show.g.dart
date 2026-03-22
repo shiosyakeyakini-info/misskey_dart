@@ -18,6 +18,7 @@ Map<String, dynamic> _$ApShowToJson(_ApShow instance) => <String, dynamic>{
     };
 
 const _$ApShowTypeEnumMap = {
+  ApShowType.user: 'User',
   ApShowType.note: 'Note',
   ApShowType.unknown: 'unknown',
 };

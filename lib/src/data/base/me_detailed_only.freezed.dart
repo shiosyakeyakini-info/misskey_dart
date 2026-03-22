@@ -18,8 +18,8 @@ mixin _$MeDetailedOnly {
   String? get avatarId;
   String? get bannerId;
   String? get followedMessage;
-  bool? get isModerator;
-  bool? get isAdmin;
+  bool get isModerator;
+  bool get isAdmin;
   bool get injectFeaturedNote;
   bool get receiveAnnouncementEmail;
   bool get alwaysMarkNsfw;
@@ -46,10 +46,10 @@ mixin _$MeDetailedOnly {
   List<MuteWord> get mutedWords;
   @MuteWordsConverter()
   List<MuteWord> get hardMutedWords;
-  List<String>? get mutedInstances;
+  List<String> get mutedInstances;
   MeDetailedOnlyNotificationRecieveConfig get notificationRecieveConfig;
   List<String> get emailNotificationTypes;
-  List<MeDetailedOnlyAchievementsItem> get achievements;
+  List<Achievement> get achievements;
   double get loggedInDays;
   RolePolicies get policies;
   bool get twoFactorEnabled;
@@ -210,8 +210,8 @@ abstract mixin class $MeDetailedOnlyCopyWith<$Res> {
       {String? avatarId,
       String? bannerId,
       String? followedMessage,
-      bool? isModerator,
-      bool? isAdmin,
+      bool isModerator,
+      bool isAdmin,
       bool injectFeaturedNote,
       bool receiveAnnouncementEmail,
       bool alwaysMarkNsfw,
@@ -236,10 +236,10 @@ abstract mixin class $MeDetailedOnlyCopyWith<$Res> {
       double unreadNotificationsCount,
       @MuteWordsConverter() List<MuteWord> mutedWords,
       @MuteWordsConverter() List<MuteWord> hardMutedWords,
-      List<String>? mutedInstances,
+      List<String> mutedInstances,
       MeDetailedOnlyNotificationRecieveConfig notificationRecieveConfig,
       List<String> emailNotificationTypes,
-      List<MeDetailedOnlyAchievementsItem> achievements,
+      List<Achievement> achievements,
       double loggedInDays,
       RolePolicies policies,
       bool twoFactorEnabled,
@@ -270,8 +270,8 @@ class _$MeDetailedOnlyCopyWithImpl<$Res>
     Object? avatarId = freezed,
     Object? bannerId = freezed,
     Object? followedMessage = freezed,
-    Object? isModerator = freezed,
-    Object? isAdmin = freezed,
+    Object? isModerator = null,
+    Object? isAdmin = null,
     Object? injectFeaturedNote = null,
     Object? receiveAnnouncementEmail = null,
     Object? alwaysMarkNsfw = null,
@@ -296,7 +296,7 @@ class _$MeDetailedOnlyCopyWithImpl<$Res>
     Object? unreadNotificationsCount = null,
     Object? mutedWords = null,
     Object? hardMutedWords = null,
-    Object? mutedInstances = freezed,
+    Object? mutedInstances = null,
     Object? notificationRecieveConfig = null,
     Object? emailNotificationTypes = null,
     Object? achievements = null,
@@ -322,14 +322,14 @@ class _$MeDetailedOnlyCopyWithImpl<$Res>
           ? _self.followedMessage
           : followedMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      isModerator: freezed == isModerator
+      isModerator: null == isModerator
           ? _self.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isAdmin: freezed == isAdmin
+              as bool,
+      isAdmin: null == isAdmin
           ? _self.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       injectFeaturedNote: null == injectFeaturedNote
           ? _self.injectFeaturedNote
           : injectFeaturedNote // ignore: cast_nullable_to_non_nullable
@@ -426,10 +426,10 @@ class _$MeDetailedOnlyCopyWithImpl<$Res>
           ? _self.hardMutedWords
           : hardMutedWords // ignore: cast_nullable_to_non_nullable
               as List<MuteWord>,
-      mutedInstances: freezed == mutedInstances
+      mutedInstances: null == mutedInstances
           ? _self.mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       notificationRecieveConfig: null == notificationRecieveConfig
           ? _self.notificationRecieveConfig
           : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
@@ -441,7 +441,7 @@ class _$MeDetailedOnlyCopyWithImpl<$Res>
       achievements: null == achievements
           ? _self.achievements
           : achievements // ignore: cast_nullable_to_non_nullable
-              as List<MeDetailedOnlyAchievementsItem>,
+              as List<Achievement>,
       loggedInDays: null == loggedInDays
           ? _self.loggedInDays
           : loggedInDays // ignore: cast_nullable_to_non_nullable
@@ -507,8 +507,8 @@ class _MeDetailedOnly implements MeDetailedOnly {
       {this.avatarId,
       this.bannerId,
       this.followedMessage,
-      this.isModerator,
-      this.isAdmin,
+      required this.isModerator,
+      required this.isAdmin,
       required this.injectFeaturedNote,
       required this.receiveAnnouncementEmail,
       required this.alwaysMarkNsfw,
@@ -533,10 +533,10 @@ class _MeDetailedOnly implements MeDetailedOnly {
       required this.unreadNotificationsCount,
       @MuteWordsConverter() required final List<MuteWord> mutedWords,
       @MuteWordsConverter() final List<MuteWord> hardMutedWords = const [],
-      final List<String>? mutedInstances,
+      required final List<String> mutedInstances,
       required this.notificationRecieveConfig,
       required final List<String> emailNotificationTypes,
-      required final List<MeDetailedOnlyAchievementsItem> achievements,
+      required final List<Achievement> achievements,
       required this.loggedInDays,
       required this.policies,
       this.twoFactorEnabled = false,
@@ -562,9 +562,9 @@ class _MeDetailedOnly implements MeDetailedOnly {
   @override
   final String? followedMessage;
   @override
-  final bool? isModerator;
+  final bool isModerator;
   @override
-  final bool? isAdmin;
+  final bool isAdmin;
   @override
   final bool injectFeaturedNote;
   @override
@@ -635,14 +635,12 @@ class _MeDetailedOnly implements MeDetailedOnly {
     return EqualUnmodifiableListView(_hardMutedWords);
   }
 
-  final List<String>? _mutedInstances;
+  final List<String> _mutedInstances;
   @override
-  List<String>? get mutedInstances {
-    final value = _mutedInstances;
-    if (value == null) return null;
+  List<String> get mutedInstances {
     if (_mutedInstances is EqualUnmodifiableListView) return _mutedInstances;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_mutedInstances);
   }
 
   @override
@@ -656,9 +654,9 @@ class _MeDetailedOnly implements MeDetailedOnly {
     return EqualUnmodifiableListView(_emailNotificationTypes);
   }
 
-  final List<MeDetailedOnlyAchievementsItem> _achievements;
+  final List<Achievement> _achievements;
   @override
-  List<MeDetailedOnlyAchievementsItem> get achievements {
+  List<Achievement> get achievements {
     if (_achievements is EqualUnmodifiableListView) return _achievements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_achievements);
@@ -849,8 +847,8 @@ abstract mixin class _$MeDetailedOnlyCopyWith<$Res>
       {String? avatarId,
       String? bannerId,
       String? followedMessage,
-      bool? isModerator,
-      bool? isAdmin,
+      bool isModerator,
+      bool isAdmin,
       bool injectFeaturedNote,
       bool receiveAnnouncementEmail,
       bool alwaysMarkNsfw,
@@ -875,10 +873,10 @@ abstract mixin class _$MeDetailedOnlyCopyWith<$Res>
       double unreadNotificationsCount,
       @MuteWordsConverter() List<MuteWord> mutedWords,
       @MuteWordsConverter() List<MuteWord> hardMutedWords,
-      List<String>? mutedInstances,
+      List<String> mutedInstances,
       MeDetailedOnlyNotificationRecieveConfig notificationRecieveConfig,
       List<String> emailNotificationTypes,
-      List<MeDetailedOnlyAchievementsItem> achievements,
+      List<Achievement> achievements,
       double loggedInDays,
       RolePolicies policies,
       bool twoFactorEnabled,
@@ -911,8 +909,8 @@ class __$MeDetailedOnlyCopyWithImpl<$Res>
     Object? avatarId = freezed,
     Object? bannerId = freezed,
     Object? followedMessage = freezed,
-    Object? isModerator = freezed,
-    Object? isAdmin = freezed,
+    Object? isModerator = null,
+    Object? isAdmin = null,
     Object? injectFeaturedNote = null,
     Object? receiveAnnouncementEmail = null,
     Object? alwaysMarkNsfw = null,
@@ -937,7 +935,7 @@ class __$MeDetailedOnlyCopyWithImpl<$Res>
     Object? unreadNotificationsCount = null,
     Object? mutedWords = null,
     Object? hardMutedWords = null,
-    Object? mutedInstances = freezed,
+    Object? mutedInstances = null,
     Object? notificationRecieveConfig = null,
     Object? emailNotificationTypes = null,
     Object? achievements = null,
@@ -963,14 +961,14 @@ class __$MeDetailedOnlyCopyWithImpl<$Res>
           ? _self.followedMessage
           : followedMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      isModerator: freezed == isModerator
+      isModerator: null == isModerator
           ? _self.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isAdmin: freezed == isAdmin
+              as bool,
+      isAdmin: null == isAdmin
           ? _self.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       injectFeaturedNote: null == injectFeaturedNote
           ? _self.injectFeaturedNote
           : injectFeaturedNote // ignore: cast_nullable_to_non_nullable
@@ -1067,10 +1065,10 @@ class __$MeDetailedOnlyCopyWithImpl<$Res>
           ? _self._hardMutedWords
           : hardMutedWords // ignore: cast_nullable_to_non_nullable
               as List<MuteWord>,
-      mutedInstances: freezed == mutedInstances
+      mutedInstances: null == mutedInstances
           ? _self._mutedInstances
           : mutedInstances // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       notificationRecieveConfig: null == notificationRecieveConfig
           ? _self.notificationRecieveConfig
           : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
@@ -1082,7 +1080,7 @@ class __$MeDetailedOnlyCopyWithImpl<$Res>
       achievements: null == achievements
           ? _self._achievements
           : achievements // ignore: cast_nullable_to_non_nullable
-              as List<MeDetailedOnlyAchievementsItem>,
+              as List<Achievement>,
       loggedInDays: null == loggedInDays
           ? _self.loggedInDays
           : loggedInDays // ignore: cast_nullable_to_non_nullable

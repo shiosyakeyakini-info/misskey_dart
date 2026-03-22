@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-enum OnlineStatus { online, active, offline, unknown }
+import 'package:misskey_dart/misskey_dart.dart';
 
 class OnlineStatusJsonConverter extends JsonConverter<OnlineStatus?, String?> {
   const OnlineStatusJsonConverter();

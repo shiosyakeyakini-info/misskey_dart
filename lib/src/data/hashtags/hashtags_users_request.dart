@@ -10,7 +10,7 @@ abstract class HashtagsUsersRequest with _$HashtagsUsersRequest {
     String? tag,
     @Default(10) int? limit,
     @Default(0) int? offset,
-    UsersSortType? sort,
+    @JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? sort,
     @JsonKey(unknownEnumValue: HashtagsUsersState.unknown) @Default(HashtagsUsersState.all) HashtagsUsersState? state,
     @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown) @Default(HashtagsUsersOrigin.local) HashtagsUsersOrigin? origin,
   }) = _HashtagsUsersRequest;

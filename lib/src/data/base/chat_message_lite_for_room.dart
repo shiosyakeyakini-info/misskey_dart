@@ -14,7 +14,7 @@ abstract class ChatMessageLiteForRoom with _$ChatMessageLiteForRoom {
     required String toRoomId,
     String? text,
     String? fileId,
-    Map<String, dynamic>? file,
+    DriveFile? file,
     required List<ChatMessageLiteForRoomReactionsItem> reactions,
   }) = _ChatMessageLiteForRoom;
 

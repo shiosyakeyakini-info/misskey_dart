@@ -28,6 +28,14 @@ Map<String, dynamic> _$IUpdateNotificationRecieveConfigAchievementEarnedToJson(
     };
 
 const _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap = {
+  IUpdateNotificationRecieveConfigAchievementEarnedType.all: 'all',
+  IUpdateNotificationRecieveConfigAchievementEarnedType.following: 'following',
+  IUpdateNotificationRecieveConfigAchievementEarnedType.follower: 'follower',
+  IUpdateNotificationRecieveConfigAchievementEarnedType.mutualFollow:
+      'mutualFollow',
+  IUpdateNotificationRecieveConfigAchievementEarnedType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigAchievementEarnedType.never: 'never',
   IUpdateNotificationRecieveConfigAchievementEarnedType.list: 'list',
   IUpdateNotificationRecieveConfigAchievementEarnedType.unknown: 'unknown',
 };

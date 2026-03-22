@@ -153,10 +153,23 @@ export function collectInlineSchemas(
 
     // If it's an inline schema (object or enum) not at component level
     if (schema.originalName.includes(".")) {
-      if (
-        (schema.type === "object" && schema.properties.size > 0) ||
-        (schema.type === "enum" && schema.enumValues && schema.enumValues.length > 0)
-      ) {
+      // Skip inline schemas whose resolved name collides with a component schema
+      // (e.g., Role.allOf[1] resolving to "Role" would overwrite the proper Role entity)
+      if (parsedApi.componentSchemas.has(schema.name)) {
+        // Still recurse into properties/children below, but don't add to inlineSchemas
+      } else if (schema.type === "enum" && schema.enumValues && schema.enumValues.length > 0) {
+        // Merge enum values when the same name appears from multiple sources
+        const existing = inlineSchemas.get(schema.name);
+        if (existing && existing.type === "enum" && existing.enumValues) {
+          const merged = new Set(existing.enumValues);
+          for (const v of schema.enumValues) {
+            merged.add(v);
+          }
+          existing.enumValues = [...merged];
+        } else {
+          inlineSchemas.set(schema.name, schema);
+        }
+      } else if (schema.type === "object" && schema.properties.size > 0) {
         inlineSchemas.set(schema.name, schema);
       }
     }

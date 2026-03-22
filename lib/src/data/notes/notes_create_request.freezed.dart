@@ -15,6 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesCreateRequest {
+  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
   NoteVisibility? get visibility;
   List<String>? get visibleUserIds;
   String? get cw;
@@ -107,7 +108,8 @@ abstract mixin class $NotesCreateRequestCopyWith<$Res> {
       _$NotesCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {NoteVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
+      NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       bool? localOnly,
@@ -239,7 +241,8 @@ class _$NotesCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesCreateRequest implements NotesCreateRequest {
   const _NotesCreateRequest(
-      {this.visibility = NoteVisibility.public,
+      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
+      this.visibility = NoteVisibility.public,
       final List<String>? visibleUserIds,
       this.cw,
       this.localOnly = false,
@@ -262,7 +265,7 @@ class _NotesCreateRequest implements NotesCreateRequest {
       _$NotesCreateRequestFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
   final NoteVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
@@ -403,7 +406,8 @@ abstract mixin class _$NotesCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {NoteVisibility? visibility,
+      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
+      NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       bool? localOnly,

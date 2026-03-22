@@ -26,9 +26,10 @@ mixin _$Note {
   UserLite get user;
   String? get replyId;
   String? get renoteId;
-  Map<String, dynamic>? get reply;
-  Map<String, dynamic>? get renote;
+  Note? get reply;
+  Note? get renote;
   bool? get isHidden;
+  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
   NoteVisibility get visibility;
   List<String>? get mentions;
   List<String>? get visibleUserIds;
@@ -53,8 +54,8 @@ mixin _$Note {
   String? get url;
   List<String>? get reactionAndUserPairCache;
   int? get clippedCount;
-  String? get myReaction;
   bool? get hasPoll;
+  String? get myReaction;
 
   /// Create a copy of Note
   /// with the given fields replaced by the non-null parameter values.
@@ -83,8 +84,8 @@ mixin _$Note {
             (identical(other.replyId, replyId) || other.replyId == replyId) &&
             (identical(other.renoteId, renoteId) ||
                 other.renoteId == renoteId) &&
-            const DeepCollectionEquality().equals(other.reply, reply) &&
-            const DeepCollectionEquality().equals(other.renote, renote) &&
+            (identical(other.reply, reply) || other.reply == reply) &&
+            (identical(other.renote, renote) || other.renote == renote) &&
             (identical(other.isHidden, isHidden) ||
                 other.isHidden == isHidden) &&
             (identical(other.visibility, visibility) ||
@@ -119,9 +120,9 @@ mixin _$Note {
                 other.reactionAndUserPairCache, reactionAndUserPairCache) &&
             (identical(other.clippedCount, clippedCount) ||
                 other.clippedCount == clippedCount) &&
+            (identical(other.hasPoll, hasPoll) || other.hasPoll == hasPoll) &&
             (identical(other.myReaction, myReaction) ||
-                other.myReaction == myReaction) &&
-            (identical(other.hasPoll, hasPoll) || other.hasPoll == hasPoll));
+                other.myReaction == myReaction));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -137,8 +138,8 @@ mixin _$Note {
         user,
         replyId,
         renoteId,
-        const DeepCollectionEquality().hash(reply),
-        const DeepCollectionEquality().hash(renote),
+        reply,
+        renote,
         isHidden,
         visibility,
         const DeepCollectionEquality().hash(mentions),
@@ -161,13 +162,13 @@ mixin _$Note {
         url,
         const DeepCollectionEquality().hash(reactionAndUserPairCache),
         clippedCount,
-        myReaction,
-        hasPoll
+        hasPoll,
+        myReaction
       ]);
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, deletedAt: $deletedAt, text: $text, cw: $cw, userId: $userId, user: $user, replyId: $replyId, renoteId: $renoteId, reply: $reply, renote: $renote, isHidden: $isHidden, visibility: $visibility, mentions: $mentions, visibleUserIds: $visibleUserIds, fileIds: $fileIds, files: $files, tags: $tags, poll: $poll, emojis: $emojis, channelId: $channelId, channel: $channel, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, reactionEmojis: $reactionEmojis, reactions: $reactions, reactionCount: $reactionCount, renoteCount: $renoteCount, repliesCount: $repliesCount, uri: $uri, url: $url, reactionAndUserPairCache: $reactionAndUserPairCache, clippedCount: $clippedCount, myReaction: $myReaction, hasPoll: $hasPoll)';
+    return 'Note(id: $id, createdAt: $createdAt, deletedAt: $deletedAt, text: $text, cw: $cw, userId: $userId, user: $user, replyId: $replyId, renoteId: $renoteId, reply: $reply, renote: $renote, isHidden: $isHidden, visibility: $visibility, mentions: $mentions, visibleUserIds: $visibleUserIds, fileIds: $fileIds, files: $files, tags: $tags, poll: $poll, emojis: $emojis, channelId: $channelId, channel: $channel, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, reactionEmojis: $reactionEmojis, reactions: $reactions, reactionCount: $reactionCount, renoteCount: $renoteCount, repliesCount: $repliesCount, uri: $uri, url: $url, reactionAndUserPairCache: $reactionAndUserPairCache, clippedCount: $clippedCount, hasPoll: $hasPoll, myReaction: $myReaction)';
   }
 }
 
@@ -186,9 +187,10 @@ abstract mixin class $NoteCopyWith<$Res> {
       UserLite user,
       String? replyId,
       String? renoteId,
-      Map<String, dynamic>? reply,
-      Map<String, dynamic>? renote,
+      Note? reply,
+      Note? renote,
       bool? isHidden,
+      @JsonKey(unknownEnumValue: NoteVisibility.unknown)
       NoteVisibility visibility,
       List<String>? mentions,
       List<String>? visibleUserIds,
@@ -211,10 +213,12 @@ abstract mixin class $NoteCopyWith<$Res> {
       String? url,
       List<String>? reactionAndUserPairCache,
       int? clippedCount,
-      String? myReaction,
-      bool? hasPoll});
+      bool? hasPoll,
+      String? myReaction});
 
   $UserLiteCopyWith<$Res> get user;
+  $NoteCopyWith<$Res>? get reply;
+  $NoteCopyWith<$Res>? get renote;
   $NotePollCopyWith<$Res>? get poll;
   $NoteChannelInfoCopyWith<$Res>? get channel;
 }
@@ -264,8 +268,8 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
     Object? url = freezed,
     Object? reactionAndUserPairCache = freezed,
     Object? clippedCount = freezed,
-    Object? myReaction = freezed,
     Object? hasPoll = freezed,
+    Object? myReaction = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -307,11 +311,11 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
       reply: freezed == reply
           ? _self.reply
           : reply // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Note?,
       renote: freezed == renote
           ? _self.renote
           : renote // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Note?,
       isHidden: freezed == isHidden
           ? _self.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
@@ -400,14 +404,14 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
           ? _self.clippedCount
           : clippedCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      myReaction: freezed == myReaction
-          ? _self.myReaction
-          : myReaction // ignore: cast_nullable_to_non_nullable
-              as String?,
       hasPoll: freezed == hasPoll
           ? _self.hasPoll
           : hasPoll // ignore: cast_nullable_to_non_nullable
               as bool?,
+      myReaction: freezed == myReaction
+          ? _self.myReaction
+          : myReaction // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -418,6 +422,34 @@ class _$NoteCopyWithImpl<$Res> implements $NoteCopyWith<$Res> {
   $UserLiteCopyWith<$Res> get user {
     return $UserLiteCopyWith<$Res>(_self.user, (value) {
       return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res>? get reply {
+    if (_self.reply == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_self.reply!, (value) {
+      return _then(_self.copyWith(reply: value));
+    });
+  }
+
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res>? get renote {
+    if (_self.renote == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_self.renote!, (value) {
+      return _then(_self.copyWith(renote: value));
     });
   }
 
@@ -463,9 +495,10 @@ class _Note implements Note {
       required this.user,
       this.replyId,
       this.renoteId,
-      final Map<String, dynamic>? reply,
-      final Map<String, dynamic>? renote,
+      this.reply,
+      this.renote,
       this.isHidden,
+      @JsonKey(unknownEnumValue: NoteVisibility.unknown)
       required this.visibility,
       final List<String>? mentions = const [],
       final List<String>? visibleUserIds = const [],
@@ -488,11 +521,9 @@ class _Note implements Note {
       this.url,
       final List<String>? reactionAndUserPairCache = const [],
       this.clippedCount,
-      this.myReaction,
-      this.hasPoll})
-      : _reply = reply,
-        _renote = renote,
-        _mentions = mentions,
+      this.hasPoll,
+      this.myReaction})
+      : _mentions = mentions,
         _visibleUserIds = visibleUserIds,
         _fileIds = fileIds,
         _files = files,
@@ -523,29 +554,14 @@ class _Note implements Note {
   final String? replyId;
   @override
   final String? renoteId;
-  final Map<String, dynamic>? _reply;
   @override
-  Map<String, dynamic>? get reply {
-    final value = _reply;
-    if (value == null) return null;
-    if (_reply is EqualUnmodifiableMapView) return _reply;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  final Map<String, dynamic>? _renote;
+  final Note? reply;
   @override
-  Map<String, dynamic>? get renote {
-    final value = _renote;
-    if (value == null) return null;
-    if (_renote is EqualUnmodifiableMapView) return _renote;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+  final Note? renote;
   @override
   final bool? isHidden;
   @override
+  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
   final NoteVisibility visibility;
   final List<String>? _mentions;
   @override
@@ -662,9 +678,9 @@ class _Note implements Note {
   @override
   final int? clippedCount;
   @override
-  final String? myReaction;
-  @override
   final bool? hasPoll;
+  @override
+  final String? myReaction;
 
   /// Create a copy of Note
   /// with the given fields replaced by the non-null parameter values.
@@ -698,8 +714,8 @@ class _Note implements Note {
             (identical(other.replyId, replyId) || other.replyId == replyId) &&
             (identical(other.renoteId, renoteId) ||
                 other.renoteId == renoteId) &&
-            const DeepCollectionEquality().equals(other._reply, _reply) &&
-            const DeepCollectionEquality().equals(other._renote, _renote) &&
+            (identical(other.reply, reply) || other.reply == reply) &&
+            (identical(other.renote, renote) || other.renote == renote) &&
             (identical(other.isHidden, isHidden) ||
                 other.isHidden == isHidden) &&
             (identical(other.visibility, visibility) ||
@@ -735,9 +751,9 @@ class _Note implements Note {
                 other._reactionAndUserPairCache, _reactionAndUserPairCache) &&
             (identical(other.clippedCount, clippedCount) ||
                 other.clippedCount == clippedCount) &&
+            (identical(other.hasPoll, hasPoll) || other.hasPoll == hasPoll) &&
             (identical(other.myReaction, myReaction) ||
-                other.myReaction == myReaction) &&
-            (identical(other.hasPoll, hasPoll) || other.hasPoll == hasPoll));
+                other.myReaction == myReaction));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -753,8 +769,8 @@ class _Note implements Note {
         user,
         replyId,
         renoteId,
-        const DeepCollectionEquality().hash(_reply),
-        const DeepCollectionEquality().hash(_renote),
+        reply,
+        renote,
         isHidden,
         visibility,
         const DeepCollectionEquality().hash(_mentions),
@@ -777,13 +793,13 @@ class _Note implements Note {
         url,
         const DeepCollectionEquality().hash(_reactionAndUserPairCache),
         clippedCount,
-        myReaction,
-        hasPoll
+        hasPoll,
+        myReaction
       ]);
 
   @override
   String toString() {
-    return 'Note(id: $id, createdAt: $createdAt, deletedAt: $deletedAt, text: $text, cw: $cw, userId: $userId, user: $user, replyId: $replyId, renoteId: $renoteId, reply: $reply, renote: $renote, isHidden: $isHidden, visibility: $visibility, mentions: $mentions, visibleUserIds: $visibleUserIds, fileIds: $fileIds, files: $files, tags: $tags, poll: $poll, emojis: $emojis, channelId: $channelId, channel: $channel, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, reactionEmojis: $reactionEmojis, reactions: $reactions, reactionCount: $reactionCount, renoteCount: $renoteCount, repliesCount: $repliesCount, uri: $uri, url: $url, reactionAndUserPairCache: $reactionAndUserPairCache, clippedCount: $clippedCount, myReaction: $myReaction, hasPoll: $hasPoll)';
+    return 'Note(id: $id, createdAt: $createdAt, deletedAt: $deletedAt, text: $text, cw: $cw, userId: $userId, user: $user, replyId: $replyId, renoteId: $renoteId, reply: $reply, renote: $renote, isHidden: $isHidden, visibility: $visibility, mentions: $mentions, visibleUserIds: $visibleUserIds, fileIds: $fileIds, files: $files, tags: $tags, poll: $poll, emojis: $emojis, channelId: $channelId, channel: $channel, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, reactionEmojis: $reactionEmojis, reactions: $reactions, reactionCount: $reactionCount, renoteCount: $renoteCount, repliesCount: $repliesCount, uri: $uri, url: $url, reactionAndUserPairCache: $reactionAndUserPairCache, clippedCount: $clippedCount, hasPoll: $hasPoll, myReaction: $myReaction)';
   }
 }
 
@@ -803,9 +819,10 @@ abstract mixin class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       UserLite user,
       String? replyId,
       String? renoteId,
-      Map<String, dynamic>? reply,
-      Map<String, dynamic>? renote,
+      Note? reply,
+      Note? renote,
       bool? isHidden,
+      @JsonKey(unknownEnumValue: NoteVisibility.unknown)
       NoteVisibility visibility,
       List<String>? mentions,
       List<String>? visibleUserIds,
@@ -828,11 +845,15 @@ abstract mixin class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       String? url,
       List<String>? reactionAndUserPairCache,
       int? clippedCount,
-      String? myReaction,
-      bool? hasPoll});
+      bool? hasPoll,
+      String? myReaction});
 
   @override
   $UserLiteCopyWith<$Res> get user;
+  @override
+  $NoteCopyWith<$Res>? get reply;
+  @override
+  $NoteCopyWith<$Res>? get renote;
   @override
   $NotePollCopyWith<$Res>? get poll;
   @override
@@ -884,8 +905,8 @@ class __$NoteCopyWithImpl<$Res> implements _$NoteCopyWith<$Res> {
     Object? url = freezed,
     Object? reactionAndUserPairCache = freezed,
     Object? clippedCount = freezed,
-    Object? myReaction = freezed,
     Object? hasPoll = freezed,
+    Object? myReaction = freezed,
   }) {
     return _then(_Note(
       id: null == id
@@ -925,13 +946,13 @@ class __$NoteCopyWithImpl<$Res> implements _$NoteCopyWith<$Res> {
           : renoteId // ignore: cast_nullable_to_non_nullable
               as String?,
       reply: freezed == reply
-          ? _self._reply
+          ? _self.reply
           : reply // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Note?,
       renote: freezed == renote
-          ? _self._renote
+          ? _self.renote
           : renote // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as Note?,
       isHidden: freezed == isHidden
           ? _self.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
@@ -1020,14 +1041,14 @@ class __$NoteCopyWithImpl<$Res> implements _$NoteCopyWith<$Res> {
           ? _self.clippedCount
           : clippedCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      myReaction: freezed == myReaction
-          ? _self.myReaction
-          : myReaction // ignore: cast_nullable_to_non_nullable
-              as String?,
       hasPoll: freezed == hasPoll
           ? _self.hasPoll
           : hasPoll // ignore: cast_nullable_to_non_nullable
               as bool?,
+      myReaction: freezed == myReaction
+          ? _self.myReaction
+          : myReaction // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -1038,6 +1059,34 @@ class __$NoteCopyWithImpl<$Res> implements _$NoteCopyWith<$Res> {
   $UserLiteCopyWith<$Res> get user {
     return $UserLiteCopyWith<$Res>(_self.user, (value) {
       return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res>? get reply {
+    if (_self.reply == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_self.reply!, (value) {
+      return _then(_self.copyWith(reply: value));
+    });
+  }
+
+  /// Create a copy of Note
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res>? get renote {
+    if (_self.renote == null) {
+      return null;
+    }
+
+    return $NoteCopyWith<$Res>(_self.renote!, (value) {
+      return _then(_self.copyWith(renote: value));
     });
   }
 

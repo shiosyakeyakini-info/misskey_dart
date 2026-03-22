@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/hashtags_list_sort_type.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 class HashtagsListSortConverter
     extends JsonConverter<HashtagsListSortType, String> {

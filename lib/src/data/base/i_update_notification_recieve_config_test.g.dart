@@ -23,6 +23,13 @@ Map<String, dynamic> _$IUpdateNotificationRecieveConfigTestToJson(
     };
 
 const _$IUpdateNotificationRecieveConfigTestTypeEnumMap = {
+  IUpdateNotificationRecieveConfigTestType.all: 'all',
+  IUpdateNotificationRecieveConfigTestType.following: 'following',
+  IUpdateNotificationRecieveConfigTestType.follower: 'follower',
+  IUpdateNotificationRecieveConfigTestType.mutualFollow: 'mutualFollow',
+  IUpdateNotificationRecieveConfigTestType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigTestType.never: 'never',
   IUpdateNotificationRecieveConfigTestType.list: 'list',
   IUpdateNotificationRecieveConfigTestType.unknown: 'unknown',
 };

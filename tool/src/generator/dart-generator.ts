@@ -164,7 +164,12 @@ function generateEntities(
   const inlineSchemas = collectInlineSchemas(parsed);
   for (const [name, schema] of inlineSchemas) {
     const filePath = join(outputDir, "data", "base", `${classNameToFileName(name)}.dart`);
-    if (isManualFile(filePath, config)) continue;
+    if (isManualFile(filePath, config)) {
+      if (["NoteVisibility", "OnlineStatus", "NotificationType", "UsersSortType", "HashtagsListSortType"].includes(name)) {
+        console.log(`  [DEBUG] SKIPPED (manual_files): ${name} → ${filePath}`);
+      }
+      continue;
+    }
 
     let content: string | null = null;
     if (schema.type === "enum") {

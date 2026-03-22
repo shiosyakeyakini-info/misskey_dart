@@ -19,7 +19,7 @@ _Flash _$FlashFromJson(Map<String, dynamic> json) => _Flash(
       script: json['script'] as String,
       visibility: $enumDecode(_$FlashVisibilityEnumMap, json['visibility'],
           unknownValue: FlashVisibility.unknown),
-      likedCount: (json['likedCount'] as num?)?.toDouble(),
+      likedCount: (json['likedCount'] as num).toDouble(),
       isLiked: json['isLiked'] as bool?,
     );
 
@@ -38,7 +38,7 @@ Map<String, dynamic> _$FlashToJson(_Flash instance) => <String, dynamic>{
     };
 
 const _$FlashVisibilityEnumMap = {
-  FlashVisibility.public: 'public',
   FlashVisibility.private: 'private',
+  FlashVisibility.public: 'public',
   FlashVisibility.unknown: 'unknown',
 };

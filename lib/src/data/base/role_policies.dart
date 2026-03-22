@@ -18,10 +18,12 @@ abstract class RolePolicies with _$RolePolicies {
     required bool canManageCustomEmojis,
     required bool canManageAvatarDecorations,
     required bool canSearchNotes,
+    required bool canSearchUsers,
     required bool canUseTranslator,
     required bool canHideAds,
     required int driveCapacityMb,
     required int maxFileSizeMb,
+    required List<String> uploadableFileTypes,
     required bool alwaysMarkNsfw,
     required bool canUpdateBioMedia,
     required int pinLimit,
@@ -40,11 +42,9 @@ abstract class RolePolicies with _$RolePolicies {
     required bool canImportMuting,
     required bool canImportUserLists,
     required ChatAvailability chatAvailability,
-    List<String>? uploadableFileTypes,
-    int? noteDraftLimit,
-    bool? watermarkAvailable,
-    bool? canSearchUsers,
-    int? scheduledNoteLimit,
+    required int noteDraftLimit,
+    required int scheduledNoteLimit,
+    required bool watermarkAvailable,
   }) = _RolePolicies;
 
   factory RolePolicies.fromJson(Map<String, Object?> json) => _$RolePoliciesFromJson(json);

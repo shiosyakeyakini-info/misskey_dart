@@ -23,6 +23,13 @@ Map<String, dynamic> _$IUpdateNotificationRecieveConfigAppToJson(
     };
 
 const _$IUpdateNotificationRecieveConfigAppTypeEnumMap = {
+  IUpdateNotificationRecieveConfigAppType.all: 'all',
+  IUpdateNotificationRecieveConfigAppType.following: 'following',
+  IUpdateNotificationRecieveConfigAppType.follower: 'follower',
+  IUpdateNotificationRecieveConfigAppType.mutualFollow: 'mutualFollow',
+  IUpdateNotificationRecieveConfigAppType.followingOrFollower:
+      'followingOrFollower',
+  IUpdateNotificationRecieveConfigAppType.never: 'never',
   IUpdateNotificationRecieveConfigAppType.list: 'list',
   IUpdateNotificationRecieveConfigAppType.unknown: 'unknown',
 };

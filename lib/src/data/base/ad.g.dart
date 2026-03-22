@@ -18,7 +18,7 @@ _Ad _$AdFromJson(Map<String, dynamic> json) => _Ad(
       imageUrl: json['imageUrl'] as String,
       memo: json['memo'] as String,
       dayOfWeek: (json['dayOfWeek'] as num).toInt(),
-      isSensitive: json['isSensitive'] as bool?,
+      isSensitive: json['isSensitive'] as bool,
     );
 
 Map<String, dynamic> _$AdToJson(_Ad instance) => <String, dynamic>{

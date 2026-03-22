@@ -123,6 +123,7 @@ schema_name_overrides:
   "/antennas/create.request.properties.src": AntennaSource
   "/antennas/update.request.properties.src": AntennaSource
   "/notes/create.request.properties.visibility": NoteVisibility
+  "/notes/drafts/create.request.properties.visibility": NoteVisibility
   "/i/update.request.properties.chatScope": ChatScope
   "/flash/update.request.properties.visibility": FlashVisibility
   "/flash/create.request.properties.visibility": FlashVisibility
@@ -130,6 +131,11 @@ schema_name_overrides:
   "/hashtags/users.request.properties.sort": UsersSortType
   "/following/update.request.properties.notify": FollowingUpdateAllNotifyType
   "/following/update-all.request.properties.notify": FollowingUpdateAllNotifyType
+  # NotificationType inline enums (in array items)
+  "/i/notifications.request.properties.includeTypes.items": NotificationType
+  "/i/notifications.request.properties.excludeTypes.items": NotificationType
+  "/i/notifications-grouped.request.properties.includeTypes.items": NotificationType
+  "/i/notifications-grouped.request.properties.excludeTypes.items": NotificationType
 
 # Type structure overrides
 type_structure_overrides:
@@ -195,15 +201,11 @@ manual_files:
   # Core infrastructure (hand-maintained)
   - "lib/src/services/"
   - "lib/src/converters/"
+  - "lib/src/extensions/"
   - "lib/src/data/streaming/"
   - "lib/src/util/"
-  # Enums with custom logic (priority, value property, custom JsonConverter)
-  - "lib/src/enums/note_visibility.dart"
+  # Permission enum (not in api.json schema, must remain manual)
   - "lib/src/enums/permissions.dart"
-  - "lib/src/enums/online_status.dart"
-  - "lib/src/enums/users_sort_type.dart"
-  - "lib/src/enums/hashtags_list_sort_type.dart"
-  - "lib/src/enums/notification_type.dart"
   # Streaming-only enums (not in api.json)
   - "lib/src/enums/streaming_request_type.dart"
   - "lib/src/enums/streaming_response_type.dart"
@@ -212,11 +214,6 @@ manual_files:
   - "lib/src/enums/broadcast_event_type.dart"
   - "lib/src/enums/channel.dart"
   # Prevent auto-generated duplicates of manual enums in data/base/
-  - "lib/src/data/base/note_visibility.dart"
-  - "lib/src/data/base/online_status.dart"
-  - "lib/src/data/base/notification_type.dart"
-  - "lib/src/data/base/hashtags_list_sort_type.dart"
-  - "lib/src/data/base/users_sort_type.dart"
   - "lib/src/data/base/following_update_all_notify_type.dart"
   # Main class (contains StreamingService initialization)
   - "lib/src/misskey_dart_base.dart"
@@ -232,10 +229,6 @@ manual_files:
   - "lib/src/data/base/chat_availability.dart"
   # Page content hierarchy (uses custom converter)
   - "lib/src/data/base/page.dart"
-  # Role has fields (id, name, etc.) from allOf that the generator doesn't fully flatten
-  - "lib/src/data/base/role.dart"
-  # UserList has isLiked field added in later API versions
-  - "lib/src/data/base/user_list.dart"
   # IRegistrySetRequest.value needs dynamic type (not String)
   - "lib/src/data/i/i_registry_set_request.dart"
   # MisskeyDrive has manual createAsBinary/createWithFile methods for multipart uploads
@@ -262,6 +255,40 @@ number_as_int:
   - "*.choice"
   - "*.sinceId"
   - "*.untilId"
+
+# Extra fields (not in api.json but needed for version compatibility)
+extra_fields:
+  UserList:
+    likedCount:
+      dart_type: double
+      nullable: true
+    isLiked:
+      dart_type: bool
+      nullable: true
+
+# Enum value name overrides (JSON value → Dart member name)
+# Used when auto-generated names don't match existing code conventions
+enum_value_overrides:
+  UsersSortType:
+    "-follower": followerAscendant
+    "+follower": followerDescendant
+    "-createdAt": createdAtAscendant
+    "+createdAt": createdAtDescendant
+    "-updatedAt": updateAtAscendant
+    "+updatedAt": updateAtDescendant
+  HashtagsListSortType:
+    "+mentionedUsers": mentionedUsersDescendant
+    "-mentionedUsers": mentionedUsersAscendant
+    "+mentionedLocalUsers": mentionedLocalUsersDescendant
+    "-mentionedLocalUsers": mentionedLocalUsersAscendant
+    "+mentionedRemoteUsers": mentionedRemoteUsersDescendant
+    "-mentionedRemoteUsers": mentionedRemoteUsersAscendant
+    "+attachedUsers": attachedUsersDescendant
+    "-attachedUsers": attachedUsersAscendant
+    "+attachedLocalUsers": attachedLocalUsersDescendant
+    "-attachedLocalUsers": attachedLocalUsersAscendant
+    "+attachedRemoteUsers": attachedRemoteUsersDescendant
+    "-attachedRemoteUsers": attachedRemoteUsersAscendant
 
 # Fork-specific overrides
 fork_overrides:

@@ -30,6 +30,16 @@ Map<String, dynamic>
         };
 
 const _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap = {
+  MeDetailedOnlyNotificationRecieveConfigExportCompletedType.all: 'all',
+  MeDetailedOnlyNotificationRecieveConfigExportCompletedType.following:
+      'following',
+  MeDetailedOnlyNotificationRecieveConfigExportCompletedType.follower:
+      'follower',
+  MeDetailedOnlyNotificationRecieveConfigExportCompletedType.mutualFollow:
+      'mutualFollow',
+  MeDetailedOnlyNotificationRecieveConfigExportCompletedType
+      .followingOrFollower: 'followingOrFollower',
+  MeDetailedOnlyNotificationRecieveConfigExportCompletedType.never: 'never',
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.list: 'list',
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown: 'unknown',
 };

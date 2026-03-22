@@ -15,3 +15,11 @@ test/.env
 
 # FVM Version Cache
 .fvm/
+
+# IDE
+.vscode/
+
+# Codegen tool
+tool/node_modules/
+tool/dist/
+tool/output/

@@ -3,5 +3,6 @@ enum FederationSuspensionState {
   manuallySuspended,
   goneSuspended,
   autoSuspendedForNotResponding,
+  softwareSuspended,
   unknown,
 }

@@ -18,6 +18,8 @@ _MeDetailedOnlyNotificationRecieveConfig
           quote: json['quote'],
           reaction: json['reaction'],
           pollEnded: json['pollEnded'],
+          scheduledNotePosted: json['scheduledNotePosted'],
+          scheduledNotePostFailed: json['scheduledNotePostFailed'],
           receiveFollowRequest: json['receiveFollowRequest'],
           followRequestAccepted: json['followRequestAccepted'],
           roleAssigned: json['roleAssigned'],
@@ -25,6 +27,9 @@ _MeDetailedOnlyNotificationRecieveConfig
           achievementEarned: json['achievementEarned'],
           app: json['app'],
           test: json['test'],
+          login: json['login'],
+          createToken: json['createToken'],
+          exportCompleted: json['exportCompleted'],
         );
 
 Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigToJson(
@@ -38,6 +43,8 @@ Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigToJson(
       'quote': instance.quote,
       'reaction': instance.reaction,
       'pollEnded': instance.pollEnded,
+      'scheduledNotePosted': instance.scheduledNotePosted,
+      'scheduledNotePostFailed': instance.scheduledNotePostFailed,
       'receiveFollowRequest': instance.receiveFollowRequest,
       'followRequestAccepted': instance.followRequestAccepted,
       'roleAssigned': instance.roleAssigned,
@@ -45,4 +52,7 @@ Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigToJson(
       'achievementEarned': instance.achievementEarned,
       'app': instance.app,
       'test': instance.test,
+      'login': instance.login,
+      'createToken': instance.createToken,
+      'exportCompleted': instance.exportCompleted,
     };

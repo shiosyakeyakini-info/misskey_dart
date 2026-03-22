@@ -12,12 +12,16 @@ _ChatMessageLite _$ChatMessageLiteFromJson(Map<String, dynamic> json) =>
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       fromUserId: json['fromUserId'] as String,
-      fromUser: json['fromUser'] as Map<String, dynamic>?,
+      fromUser: json['fromUser'] == null
+          ? null
+          : UserLite.fromJson(json['fromUser'] as Map<String, dynamic>),
       toUserId: json['toUserId'] as String?,
       toRoomId: json['toRoomId'] as String?,
       text: json['text'] as String?,
       fileId: json['fileId'] as String?,
-      file: json['file'] as Map<String, dynamic>?,
+      file: json['file'] == null
+          ? null
+          : DriveFile.fromJson(json['file'] as Map<String, dynamic>),
       reactions: (json['reactions'] as List<dynamic>)
           .map((e) =>
               ChatMessageLiteReactionsItem.fromJson(e as Map<String, dynamic>))
@@ -29,11 +33,11 @@ Map<String, dynamic> _$ChatMessageLiteToJson(_ChatMessageLite instance) =>
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'fromUserId': instance.fromUserId,
-      'fromUser': instance.fromUser,
+      'fromUser': instance.fromUser?.toJson(),
       'toUserId': instance.toUserId,
       'toRoomId': instance.toRoomId,
       'text': instance.text,
       'fileId': instance.fileId,
-      'file': instance.file,
+      'file': instance.file?.toJson(),
       'reactions': instance.reactions.map((e) => e.toJson()).toList(),
     };
