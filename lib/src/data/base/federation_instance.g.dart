@@ -84,7 +84,6 @@ const _$FederationSuspensionStateEnumMap = {
   FederationSuspensionState.goneSuspended: 'goneSuspended',
   FederationSuspensionState.autoSuspendedForNotResponding:
       'autoSuspendedForNotResponding',
-  FederationSuspensionState.softwareSuspended: 'softwareSuspended',
   FederationSuspensionState.unknown: 'unknown',
 };
 

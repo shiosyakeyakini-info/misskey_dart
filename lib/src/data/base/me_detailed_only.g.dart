@@ -11,8 +11,8 @@ _MeDetailedOnly _$MeDetailedOnlyFromJson(Map<String, dynamic> json) =>
       avatarId: json['avatarId'] as String?,
       bannerId: json['bannerId'] as String?,
       followedMessage: json['followedMessage'] as String?,
-      isModerator: json['isModerator'] as bool,
-      isAdmin: json['isAdmin'] as bool,
+      isModerator: json['isModerator'] as bool?,
+      isAdmin: json['isAdmin'] as bool?,
       injectFeaturedNote: json['injectFeaturedNote'] as bool,
       receiveAnnouncementEmail: json['receiveAnnouncementEmail'] as bool,
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool,
@@ -47,8 +47,8 @@ _MeDetailedOnly _$MeDetailedOnlyFromJson(Map<String, dynamic> json) =>
               ?.map(const MuteWordsConverter().fromJson)
               .toList() ??
           const [],
-      mutedInstances: (json['mutedInstances'] as List<dynamic>)
-          .map((e) => e as String)
+      mutedInstances: (json['mutedInstances'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       notificationRecieveConfig:
           MeDetailedOnlyNotificationRecieveConfig.fromJson(
@@ -57,7 +57,8 @@ _MeDetailedOnly _$MeDetailedOnlyFromJson(Map<String, dynamic> json) =>
           .map((e) => e as String)
           .toList(),
       achievements: (json['achievements'] as List<dynamic>)
-          .map((e) => Achievement.fromJson(e as Map<String, dynamic>))
+          .map((e) => MeDetailedOnlyAchievementsItem.fromJson(
+              e as Map<String, dynamic>))
           .toList(),
       loggedInDays: (json['loggedInDays'] as num).toDouble(),
       policies: RolePolicies.fromJson(json['policies'] as Map<String, dynamic>),

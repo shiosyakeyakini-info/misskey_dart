@@ -36,7 +36,7 @@ abstract class IUpdate with _$IUpdate {
     bool? autoSensitive,
     @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown) IUpdateFollowingVisibility? followingVisibility,
     @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown) IUpdateFollowersVisibility? followersVisibility,
-    @JsonKey(unknownEnumValue: IUpdateChatScope.unknown) IUpdateChatScope? chatScope,
+    ChatScope? chatScope,
     String? pinnedPageId,
     List<dynamic>? mutedWords,
     List<dynamic>? hardMutedWords,

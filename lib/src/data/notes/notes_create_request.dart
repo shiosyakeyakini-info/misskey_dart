@@ -7,7 +7,7 @@ part 'notes_create_request.g.dart';
 @freezed
 abstract class NotesCreateRequest with _$NotesCreateRequest {
   const factory NotesCreateRequest({
-    @JsonKey(unknownEnumValue: NotesCreateVisibility.unknown) @Default(NotesCreateVisibility.public) NotesCreateVisibility? visibility,
+    @Default(NoteVisibility.public) NoteVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     @Default(false) bool? localOnly,

@@ -6,6 +6,8 @@ part 'admin_emoji_update_request.g.dart';
 @freezed
 abstract class AdminEmojiUpdateRequest with _$AdminEmojiUpdateRequest {
   const factory AdminEmojiUpdateRequest({
+    String? id,
+    String? name,
     String? fileId,
     String? category,
     List<String>? aliases,

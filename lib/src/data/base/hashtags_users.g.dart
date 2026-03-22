@@ -11,8 +11,7 @@ _HashtagsUsers _$HashtagsUsersFromJson(Map<String, dynamic> json) =>
       tag: json['tag'] as String,
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecode(_$HashtagsUsersSortEnumMap, json['sort'],
-          unknownValue: HashtagsUsersSort.unknown),
+      sort: $enumDecode(_$UsersSortTypeEnumMap, json['sort']),
       state: $enumDecodeNullable(_$HashtagsUsersStateEnumMap, json['state'],
               unknownValue: HashtagsUsersState.unknown) ??
           HashtagsUsersState.all,
@@ -26,19 +25,18 @@ Map<String, dynamic> _$HashtagsUsersToJson(_HashtagsUsers instance) =>
       'tag': instance.tag,
       'limit': instance.limit,
       'offset': instance.offset,
-      'sort': _$HashtagsUsersSortEnumMap[instance.sort]!,
+      'sort': _$UsersSortTypeEnumMap[instance.sort]!,
       'state': _$HashtagsUsersStateEnumMap[instance.state],
       'origin': _$HashtagsUsersOriginEnumMap[instance.origin],
     };
 
-const _$HashtagsUsersSortEnumMap = {
-  HashtagsUsersSort.plusFollower: '+follower',
-  HashtagsUsersSort.minusFollower: '-follower',
-  HashtagsUsersSort.plusCreatedAt: '+createdAt',
-  HashtagsUsersSort.minusCreatedAt: '-createdAt',
-  HashtagsUsersSort.plusUpdatedAt: '+updatedAt',
-  HashtagsUsersSort.minusUpdatedAt: '-updatedAt',
-  HashtagsUsersSort.unknown: 'unknown',
+const _$UsersSortTypeEnumMap = {
+  UsersSortType.followerAscendant: '-follower',
+  UsersSortType.followerDescendant: '+follower',
+  UsersSortType.createdAtAscendant: '-createdAt',
+  UsersSortType.createdAtDescendant: '+createdAt',
+  UsersSortType.updateAtAscendant: '-updatedAt',
+  UsersSortType.updateAtDescendant: '+updatedAt',
 };
 
 const _$HashtagsUsersStateEnumMap = {

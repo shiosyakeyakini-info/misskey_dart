@@ -26,7 +26,7 @@ mixin _$AdminDriveShowFileResponse {
   double get size;
   String? get comment;
   String? get blurhash;
-  AdminDriveShowFile get properties;
+  AdminDriveShowFileProperties get properties;
   bool? get storedInternal;
   @NullableUriConverter()
   Uri? get url;
@@ -165,7 +165,7 @@ abstract mixin class $AdminDriveShowFileResponseCopyWith<$Res> {
       double size,
       String? comment,
       String? blurhash,
-      AdminDriveShowFile properties,
+      AdminDriveShowFileProperties properties,
       bool? storedInternal,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? thumbnailUrl,
@@ -183,7 +183,7 @@ abstract mixin class $AdminDriveShowFileResponseCopyWith<$Res> {
       String? requestIp,
       Map<String, dynamic>? requestHeaders});
 
-  $AdminDriveShowFileCopyWith<$Res> get properties;
+  $AdminDriveShowFilePropertiesCopyWith<$Res> get properties;
 }
 
 /// @nodoc
@@ -271,7 +271,7 @@ class _$AdminDriveShowFileResponseCopyWithImpl<$Res>
       properties: null == properties
           ? _self.properties
           : properties // ignore: cast_nullable_to_non_nullable
-              as AdminDriveShowFile,
+              as AdminDriveShowFileProperties,
       storedInternal: freezed == storedInternal
           ? _self.storedInternal
           : storedInternal // ignore: cast_nullable_to_non_nullable
@@ -343,8 +343,9 @@ class _$AdminDriveShowFileResponseCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AdminDriveShowFileCopyWith<$Res> get properties {
-    return $AdminDriveShowFileCopyWith<$Res>(_self.properties, (value) {
+  $AdminDriveShowFilePropertiesCopyWith<$Res> get properties {
+    return $AdminDriveShowFilePropertiesCopyWith<$Res>(_self.properties,
+        (value) {
       return _then(_self.copyWith(properties: value));
     });
   }
@@ -407,7 +408,7 @@ class _AdminDriveShowFileResponse implements AdminDriveShowFileResponse {
   @override
   final String? blurhash;
   @override
-  final AdminDriveShowFile properties;
+  final AdminDriveShowFileProperties properties;
   @override
   final bool? storedInternal;
   @override
@@ -576,7 +577,7 @@ abstract mixin class _$AdminDriveShowFileResponseCopyWith<$Res>
       double size,
       String? comment,
       String? blurhash,
-      AdminDriveShowFile properties,
+      AdminDriveShowFileProperties properties,
       bool? storedInternal,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? thumbnailUrl,
@@ -595,7 +596,7 @@ abstract mixin class _$AdminDriveShowFileResponseCopyWith<$Res>
       Map<String, dynamic>? requestHeaders});
 
   @override
-  $AdminDriveShowFileCopyWith<$Res> get properties;
+  $AdminDriveShowFilePropertiesCopyWith<$Res> get properties;
 }
 
 /// @nodoc
@@ -683,7 +684,7 @@ class __$AdminDriveShowFileResponseCopyWithImpl<$Res>
       properties: null == properties
           ? _self.properties
           : properties // ignore: cast_nullable_to_non_nullable
-              as AdminDriveShowFile,
+              as AdminDriveShowFileProperties,
       storedInternal: freezed == storedInternal
           ? _self.storedInternal
           : storedInternal // ignore: cast_nullable_to_non_nullable
@@ -755,8 +756,9 @@ class __$AdminDriveShowFileResponseCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AdminDriveShowFileCopyWith<$Res> get properties {
-    return $AdminDriveShowFileCopyWith<$Res>(_self.properties, (value) {
+  $AdminDriveShowFilePropertiesCopyWith<$Res> get properties {
+    return $AdminDriveShowFilePropertiesCopyWith<$Res>(_self.properties,
+        (value) {
       return _then(_self.copyWith(properties: value));
     });
   }

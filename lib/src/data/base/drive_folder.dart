@@ -13,7 +13,7 @@ abstract class DriveFolder with _$DriveFolder {
     String? parentId,
     double? foldersCount,
     double? filesCount,
-    DriveFolder? parent,
+    Map<String, dynamic>? parent,
   }) = _DriveFolder;
 
   factory DriveFolder.fromJson(Map<String, Object?> json) => _$DriveFolderFromJson(json);

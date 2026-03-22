@@ -61,6 +61,14 @@ field_overrides:
     reactionAndUserPairCache:
       default: "[]"
 
+  NotesCreatePoll:
+    multiple:
+      default: "false"
+
+  ChatMessage:
+    fromUser:
+      dart_type: "UserLite?"
+
   MeDetailedOnly:
     mutedWords:
       converter: MuteWordsConverter
@@ -107,6 +115,22 @@ schema_name_overrides:
   "MetaLite.properties.noteSearchableScope": NoteSearchableScope
   "MetaLite.properties.federation": FederationScope
 
+  # DriveFile has a field called "properties" (image metadata: width/height/orientation/avgColor)
+  # Without this override, inlineSchemaName would collapse to "DriveFile", overwriting the parent
+  "DriveFile.properties.properties": DriveFileProperties
+
+  # Request-side inline enums → existing enum names (avoid duplicate enum types)
+  "/antennas/create.request.properties.src": AntennaSource
+  "/antennas/update.request.properties.src": AntennaSource
+  "/notes/create.request.properties.visibility": NoteVisibility
+  "/i/update.request.properties.chatScope": ChatScope
+  "/flash/update.request.properties.visibility": FlashVisibility
+  "/flash/create.request.properties.visibility": FlashVisibility
+  "/hashtags/list.request.properties.sort": HashtagsListSortType
+  "/hashtags/users.request.properties.sort": UsersSortType
+  "/following/update.request.properties.notify": FollowingUpdateAllNotifyType
+  "/following/update-all.request.properties.notify": FollowingUpdateAllNotifyType
+
 # Type structure overrides
 type_structure_overrides:
   User:
@@ -135,8 +159,17 @@ type_structure_overrides:
     converter: PageContentConverter
     abstract_base: AbstractPageContent
 
+# Module field name overrides (sub-module field names in generated API classes)
+module_overrides:
+  "users/lists":
+    field_name: list
+  "users/search":
+    field_name: search
+
 # Endpoint name overrides
 endpoint_overrides:
+  "/channels/my-favorites":
+    method_name: myFavorite
   "/notes/timeline":
     method_name: homeTimeline
   "/notes/update":
@@ -146,6 +179,16 @@ endpoint_overrides:
   # oneOf response with inline object (no generated response class)
   "/users/relation":
     return_type: void
+
+  # Registry returns dynamic values (string, null, number, array, boolean, object)
+  # Response uses text/plain content-type, requiring manual JSON decode
+  "/i/registry/get":
+    return_type: dynamic
+    response_format: raw_json
+  # Registry set needs to preserve null value in request body
+  "/i/registry/set":
+    extra_options:
+      excludeRemoveNullPredicate: "(key, _) => key == \"value\""
 
 # Manual files (skip generation entirely - not even generated to output)
 manual_files:
@@ -172,6 +215,9 @@ manual_files:
   - "lib/src/data/base/note_visibility.dart"
   - "lib/src/data/base/online_status.dart"
   - "lib/src/data/base/notification_type.dart"
+  - "lib/src/data/base/hashtags_list_sort_type.dart"
+  - "lib/src/data/base/users_sort_type.dart"
+  - "lib/src/data/base/following_update_all_notify_type.dart"
   # Main class (contains StreamingService initialization)
   - "lib/src/misskey_dart_base.dart"
   # User hierarchy (abstract classes + complex fromJson, generator can't fully produce)
@@ -186,6 +232,14 @@ manual_files:
   - "lib/src/data/base/chat_availability.dart"
   # Page content hierarchy (uses custom converter)
   - "lib/src/data/base/page.dart"
+  # Role has fields (id, name, etc.) from allOf that the generator doesn't fully flatten
+  - "lib/src/data/base/role.dart"
+  # UserList has isLiked field added in later API versions
+  - "lib/src/data/base/user_list.dart"
+  # IRegistrySetRequest.value needs dynamic type (not String)
+  - "lib/src/data/i/i_registry_set_request.dart"
+  # MisskeyDrive has manual createAsBinary/createWithFile methods for multipart uploads
+  - "lib/src/misskey_drive.dart"
 
 # number type fields that should be int
 number_as_int:

@@ -16,8 +16,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AntennasCreateRequest {
   String? get name;
-  @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
-  AntennasCreateSrc? get src;
+  @JsonKey(unknownEnumValue: AntennaSource.unknown)
+  AntennaSource? get src;
   String? get userListId;
   List<dynamic>? get keywords;
   List<dynamic>? get excludeKeywords;
@@ -100,8 +100,7 @@ abstract mixin class $AntennasCreateRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String? name,
-      @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
-      AntennasCreateSrc? src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src,
       String? userListId,
       List<dynamic>? keywords,
       List<dynamic>? excludeKeywords,
@@ -148,7 +147,7 @@ class _$AntennasCreateRequestCopyWithImpl<$Res>
       src: freezed == src
           ? _self.src
           : src // ignore: cast_nullable_to_non_nullable
-              as AntennasCreateSrc?,
+              as AntennaSource?,
       userListId: freezed == userListId
           ? _self.userListId
           : userListId // ignore: cast_nullable_to_non_nullable
@@ -198,7 +197,7 @@ class _$AntennasCreateRequestCopyWithImpl<$Res>
 class _AntennasCreateRequest implements AntennasCreateRequest {
   const _AntennasCreateRequest(
       {this.name,
-      @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown) this.src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) this.src,
       this.userListId,
       final List<dynamic>? keywords,
       final List<dynamic>? excludeKeywords,
@@ -218,8 +217,8 @@ class _AntennasCreateRequest implements AntennasCreateRequest {
   @override
   final String? name;
   @override
-  @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
-  final AntennasCreateSrc? src;
+  @JsonKey(unknownEnumValue: AntennaSource.unknown)
+  final AntennaSource? src;
   @override
   final String? userListId;
   final List<dynamic>? _keywords;
@@ -343,8 +342,7 @@ abstract mixin class _$AntennasCreateRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String? name,
-      @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown)
-      AntennasCreateSrc? src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src,
       String? userListId,
       List<dynamic>? keywords,
       List<dynamic>? excludeKeywords,
@@ -391,7 +389,7 @@ class __$AntennasCreateRequestCopyWithImpl<$Res>
       src: freezed == src
           ? _self.src
           : src // ignore: cast_nullable_to_non_nullable
-              as AntennasCreateSrc?,
+              as AntennaSource?,
       userListId: freezed == userListId
           ? _self.userListId
           : userListId // ignore: cast_nullable_to_non_nullable

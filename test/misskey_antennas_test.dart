@@ -17,7 +17,7 @@ void main() async {
         caseSensitive: false,
         withReplies: false,
         withFile: false,
-        notify: false,
+
       ),
     );
     expect(antenna.name, equals("test"));
@@ -36,7 +36,7 @@ void main() async {
         caseSensitive: false,
         withReplies: false,
         withFile: false,
-        notify: false,
+
       ),
     );
     await userClient.antennas
@@ -58,7 +58,7 @@ void main() async {
         caseSensitive: false,
         withReplies: false,
         withFile: false,
-        notify: false,
+
       ),
     );
     final response = await userClient.antennas.list();
@@ -78,7 +78,7 @@ void main() async {
         caseSensitive: false,
         withReplies: false,
         withFile: false,
-        notify: false,
+
       ),
     );
     final note = await userClient.createNote(text: "keyword");
@@ -100,7 +100,7 @@ void main() async {
         caseSensitive: false,
         withReplies: false,
         withFile: false,
-        notify: false,
+
       ),
     );
     final response = await userClient.antennas
@@ -121,7 +121,7 @@ void main() async {
         caseSensitive: false,
         withReplies: false,
         withFile: false,
-        notify: false,
+
       ),
     );
     await userClient.antennas.update(
@@ -137,7 +137,7 @@ void main() async {
         caseSensitive: true,
         withReplies: true,
         withFile: true,
-        notify: true,
+
       ),
     );
     final updated = await userClient.antennas

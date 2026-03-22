@@ -9,6 +9,8 @@ part of 'notes_search_by_tag_request.dart';
 _NotesSearchByTagRequest _$NotesSearchByTagRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesSearchByTagRequest(
+      tag: json['tag'] as String?,
+      query: json['query'] as List<dynamic>?,
       reply: json['reply'] as bool? ?? null,
       renote: json['renote'] as bool? ?? null,
       withFiles: json['withFiles'] as bool? ?? false,
@@ -23,6 +25,8 @@ _NotesSearchByTagRequest _$NotesSearchByTagRequestFromJson(
 Map<String, dynamic> _$NotesSearchByTagRequestToJson(
         _NotesSearchByTagRequest instance) =>
     <String, dynamic>{
+      'tag': instance.tag,
+      'query': instance.query,
       'reply': instance.reply,
       'renote': instance.renote,
       'withFiles': instance.withFiles,

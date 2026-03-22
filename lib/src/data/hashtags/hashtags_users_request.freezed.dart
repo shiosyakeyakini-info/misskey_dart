@@ -18,8 +18,7 @@ mixin _$HashtagsUsersRequest {
   String? get tag;
   int? get limit;
   int? get offset;
-  @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
-  HashtagsUsersSort? get sort;
+  UsersSortType? get sort;
   @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
   HashtagsUsersState? get state;
   @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
@@ -70,8 +69,7 @@ abstract mixin class $HashtagsUsersRequestCopyWith<$Res> {
       {String? tag,
       int? limit,
       int? offset,
-      @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
-      HashtagsUsersSort? sort,
+      UsersSortType? sort,
       @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       HashtagsUsersState? state,
       @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
@@ -114,7 +112,7 @@ class _$HashtagsUsersRequestCopyWithImpl<$Res>
       sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as HashtagsUsersSort?,
+              as UsersSortType?,
       state: freezed == state
           ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
@@ -134,7 +132,7 @@ class _HashtagsUsersRequest implements HashtagsUsersRequest {
       {this.tag,
       this.limit = 10,
       this.offset = 0,
-      @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown) this.sort,
+      this.sort,
       @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       this.state = HashtagsUsersState.all,
       @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
@@ -151,8 +149,7 @@ class _HashtagsUsersRequest implements HashtagsUsersRequest {
   @JsonKey()
   final int? offset;
   @override
-  @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
-  final HashtagsUsersSort? sort;
+  final UsersSortType? sort;
   @override
   @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
   final HashtagsUsersState? state;
@@ -212,8 +209,7 @@ abstract mixin class _$HashtagsUsersRequestCopyWith<$Res>
       {String? tag,
       int? limit,
       int? offset,
-      @JsonKey(unknownEnumValue: HashtagsUsersSort.unknown)
-      HashtagsUsersSort? sort,
+      UsersSortType? sort,
       @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
       HashtagsUsersState? state,
       @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
@@ -256,7 +252,7 @@ class __$HashtagsUsersRequestCopyWithImpl<$Res>
       sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as HashtagsUsersSort?,
+              as UsersSortType?,
       state: freezed == state
           ? _self.state
           : state // ignore: cast_nullable_to_non_nullable

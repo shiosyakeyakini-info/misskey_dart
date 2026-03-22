@@ -11,8 +11,8 @@ _AntennasUpdateRequest _$AntennasUpdateRequestFromJson(
     _AntennasUpdateRequest(
       antennaId: json['antennaId'] as String?,
       name: json['name'] as String?,
-      src: $enumDecodeNullable(_$AntennasUpdateSrcEnumMap, json['src'],
-          unknownValue: AntennasUpdateSrc.unknown),
+      src: $enumDecodeNullable(_$AntennaSourceEnumMap, json['src'],
+          unknownValue: AntennaSource.unknown),
       userListId: json['userListId'] as String?,
       keywords: json['keywords'] as List<dynamic>?,
       excludeKeywords: json['excludeKeywords'] as List<dynamic>?,
@@ -32,7 +32,7 @@ Map<String, dynamic> _$AntennasUpdateRequestToJson(
     <String, dynamic>{
       'antennaId': instance.antennaId,
       'name': instance.name,
-      'src': _$AntennasUpdateSrcEnumMap[instance.src],
+      'src': _$AntennaSourceEnumMap[instance.src],
       'userListId': instance.userListId,
       'keywords': instance.keywords,
       'excludeKeywords': instance.excludeKeywords,
@@ -45,11 +45,11 @@ Map<String, dynamic> _$AntennasUpdateRequestToJson(
       'excludeNotesInSensitiveChannel': instance.excludeNotesInSensitiveChannel,
     };
 
-const _$AntennasUpdateSrcEnumMap = {
-  AntennasUpdateSrc.home: 'home',
-  AntennasUpdateSrc.all: 'all',
-  AntennasUpdateSrc.users: 'users',
-  AntennasUpdateSrc.list: 'list',
-  AntennasUpdateSrc.usersBlacklist: 'users_blacklist',
-  AntennasUpdateSrc.unknown: 'unknown',
+const _$AntennaSourceEnumMap = {
+  AntennaSource.home: 'home',
+  AntennaSource.all: 'all',
+  AntennaSource.users: 'users',
+  AntennaSource.list: 'list',
+  AntennaSource.usersBlacklist: 'users_blacklist',
+  AntennaSource.unknown: 'unknown',
 };

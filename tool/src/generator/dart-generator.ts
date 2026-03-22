@@ -292,6 +292,29 @@ function buildModuleFromEndpoints(
     const segments = relPath.split("/").filter(Boolean);
 
     if (segments.length <= 1) {
+      // Check if this endpoint's method name would collide with a sub-module name.
+      // If so, route the endpoint into that sub-module instead of keeping it at the parent level.
+      const segName = segments[0];
+      if (segName) {
+        const subKey = `${pathPrefix}/${segName}`;
+        // We need to check if other endpoints exist with this sub-prefix
+        const hasSubEndpoints = endpoints.some((other) => {
+          if (other === ep) return false;
+          const otherRel = other.path
+            .replace(/^\//, "")
+            .slice(pathPrefix.length)
+            .replace(/^\//, "");
+          const otherSegs = otherRel.split("/").filter(Boolean);
+          return otherSegs.length > 1 && otherSegs[0] === segName;
+        });
+        if (hasSubEndpoints) {
+          if (!subGroups.has(subKey)) {
+            subGroups.set(subKey, []);
+          }
+          subGroups.get(subKey)!.push(ep);
+          continue;
+        }
+      }
       direct.push(ep);
     } else {
       const subPrefix = segments[0];
@@ -308,10 +331,14 @@ function buildModuleFromEndpoints(
     subModules.push(buildModuleFromEndpoints(subPrefix, subEps, config));
   }
 
+  // Apply module field name override if configured
+  const moduleOverride = config.module_overrides?.[pathPrefix];
+  const fieldName = moduleOverride?.field_name ?? pathToModuleFieldName(pathPrefix);
+
   return {
     name: pathPrefixToModuleClassName(pathPrefix),
     dartName: pathPrefixToModuleClassName(pathPrefix),
-    fieldName: pathToModuleFieldName(pathPrefix),
+    fieldName,
     pathPrefix,
     endpoints: direct,
     subModules,

@@ -7,15 +7,23 @@ part 'role.g.dart';
 @freezed
 abstract class Role with _$Role {
   const factory Role({
+    required String id,
     @DateTimeConverter() required DateTime createdAt,
-    @DateTimeConverter() required DateTime updatedAt,
+    @NullableDateTimeConverter() DateTime? updatedAt,
+    String? name,
+    String? description,
+    String? color,
+    String? iconUrl,
     @JsonKey(unknownEnumValue: RoleTarget.unknown) required RoleTarget target,
     required RoleCondFormulaValue condFormula,
     required bool isPublic,
+    bool? isModerator,
+    bool? isAdministrator,
     required bool isExplorable,
     required bool asBadge,
     required bool preserveAssignmentOnMoveAccount,
     required bool canEditMembersByModerator,
+    int? displayOrder,
     required Map<String, dynamic> policies,
     required int usersCount,
   }) = _Role;

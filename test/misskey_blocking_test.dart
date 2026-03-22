@@ -6,7 +6,7 @@ import 'util/misskey_dart_test_util.dart';
 void main() async {
   test("create", () async {
     final newUser = (await adminClient.createUser()).user;
-    await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
+    await userClient.blocking.create(BlockingCreateRequest(userId: newUser.id));
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect((userDetailed as UserDetailedNotMeWithRelations).isBlocking, isTrue);
@@ -14,8 +14,8 @@ void main() async {
 
   test("delete", () async {
     final newUser = (await adminClient.createUser()).user;
-    await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
-    await userClient.blocking.delete(BlockDeleteRequest(userId: newUser.id));
+    await userClient.blocking.create(BlockingCreateRequest(userId: newUser.id));
+    await userClient.blocking.delete(BlockingDeleteRequest(userId: newUser.id));
     final userDetailed =
         await userClient.users.show(UsersShowRequest(userId: newUser.id));
     expect(
@@ -26,7 +26,7 @@ void main() async {
 
   test("list", () async {
     final newUser = (await adminClient.createUser()).user;
-    await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
+    await userClient.blocking.create(BlockingCreateRequest(userId: newUser.id));
     final response = await userClient.blocking.list(BlockingListRequest());
     expect(response.map((e) => e.blockeeId), contains(newUser.id));
   });

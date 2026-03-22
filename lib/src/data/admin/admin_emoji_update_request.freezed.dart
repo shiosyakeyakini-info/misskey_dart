@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminEmojiUpdateRequest {
+  String? get id;
+  String? get name;
   String? get fileId;
   String? get category;
   List<String>? get aliases;
@@ -39,6 +41,8 @@ mixin _$AdminEmojiUpdateRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AdminEmojiUpdateRequest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
             (identical(other.category, category) ||
                 other.category == category) &&
@@ -57,6 +61,8 @@ mixin _$AdminEmojiUpdateRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      name,
       fileId,
       category,
       const DeepCollectionEquality().hash(aliases),
@@ -68,7 +74,7 @@ mixin _$AdminEmojiUpdateRequest {
 
   @override
   String toString() {
-    return 'AdminEmojiUpdateRequest(fileId: $fileId, category: $category, aliases: $aliases, license: $license, isSensitive: $isSensitive, localOnly: $localOnly, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
+    return 'AdminEmojiUpdateRequest(id: $id, name: $name, fileId: $fileId, category: $category, aliases: $aliases, license: $license, isSensitive: $isSensitive, localOnly: $localOnly, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
   }
 }
 
@@ -79,7 +85,9 @@ abstract mixin class $AdminEmojiUpdateRequestCopyWith<$Res> {
       _$AdminEmojiUpdateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String? fileId,
+      {String? id,
+      String? name,
+      String? fileId,
       String? category,
       List<String>? aliases,
       String? license,
@@ -101,6 +109,8 @@ class _$AdminEmojiUpdateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
     Object? fileId = freezed,
     Object? category = freezed,
     Object? aliases = freezed,
@@ -110,6 +120,14 @@ class _$AdminEmojiUpdateRequestCopyWithImpl<$Res>
     Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
   }) {
     return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
       fileId: freezed == fileId
           ? _self.fileId
           : fileId // ignore: cast_nullable_to_non_nullable
@@ -147,7 +165,9 @@ class _$AdminEmojiUpdateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _AdminEmojiUpdateRequest implements AdminEmojiUpdateRequest {
   const _AdminEmojiUpdateRequest(
-      {this.fileId,
+      {this.id,
+      this.name,
+      this.fileId,
       this.category,
       final List<String>? aliases,
       this.license,
@@ -160,6 +180,10 @@ class _AdminEmojiUpdateRequest implements AdminEmojiUpdateRequest {
   factory _AdminEmojiUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$AdminEmojiUpdateRequestFromJson(json);
 
+  @override
+  final String? id;
+  @override
+  final String? name;
   @override
   final String? fileId;
   @override
@@ -212,6 +236,8 @@ class _AdminEmojiUpdateRequest implements AdminEmojiUpdateRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AdminEmojiUpdateRequest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
             (identical(other.category, category) ||
                 other.category == category) &&
@@ -230,6 +256,8 @@ class _AdminEmojiUpdateRequest implements AdminEmojiUpdateRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      name,
       fileId,
       category,
       const DeepCollectionEquality().hash(_aliases),
@@ -241,7 +269,7 @@ class _AdminEmojiUpdateRequest implements AdminEmojiUpdateRequest {
 
   @override
   String toString() {
-    return 'AdminEmojiUpdateRequest(fileId: $fileId, category: $category, aliases: $aliases, license: $license, isSensitive: $isSensitive, localOnly: $localOnly, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
+    return 'AdminEmojiUpdateRequest(id: $id, name: $name, fileId: $fileId, category: $category, aliases: $aliases, license: $license, isSensitive: $isSensitive, localOnly: $localOnly, roleIdsThatCanBeUsedThisEmojiAsReaction: $roleIdsThatCanBeUsedThisEmojiAsReaction)';
   }
 }
 
@@ -254,7 +282,9 @@ abstract mixin class _$AdminEmojiUpdateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? fileId,
+      {String? id,
+      String? name,
+      String? fileId,
       String? category,
       List<String>? aliases,
       String? license,
@@ -276,6 +306,8 @@ class __$AdminEmojiUpdateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
     Object? fileId = freezed,
     Object? category = freezed,
     Object? aliases = freezed,
@@ -285,6 +317,14 @@ class __$AdminEmojiUpdateRequestCopyWithImpl<$Res>
     Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,
   }) {
     return _then(_AdminEmojiUpdateRequest(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
       fileId: freezed == fileId
           ? _self.fileId
           : fileId // ignore: cast_nullable_to_non_nullable

@@ -47,8 +47,7 @@ mixin _$IUpdate {
   IUpdateFollowingVisibility? get followingVisibility;
   @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
   IUpdateFollowersVisibility? get followersVisibility;
-  @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
-  IUpdateChatScope? get chatScope;
+  ChatScope? get chatScope;
   String? get pinnedPageId;
   List<dynamic>? get mutedWords;
   List<dynamic>? get hardMutedWords;
@@ -231,8 +230,7 @@ abstract mixin class $IUpdateCopyWith<$Res> {
       IUpdateFollowingVisibility? followingVisibility,
       @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
       IUpdateFollowersVisibility? followersVisibility,
-      @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
-      IUpdateChatScope? chatScope,
+      ChatScope? chatScope,
       String? pinnedPageId,
       List<dynamic>? mutedWords,
       List<dynamic>? hardMutedWords,
@@ -415,7 +413,7 @@ class _$IUpdateCopyWithImpl<$Res> implements $IUpdateCopyWith<$Res> {
       chatScope: freezed == chatScope
           ? _self.chatScope
           : chatScope // ignore: cast_nullable_to_non_nullable
-              as IUpdateChatScope?,
+              as ChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _self.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable
@@ -499,7 +497,7 @@ class _IUpdate implements IUpdate {
       this.followingVisibility,
       @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
       this.followersVisibility,
-      @JsonKey(unknownEnumValue: IUpdateChatScope.unknown) this.chatScope,
+      this.chatScope,
       this.pinnedPageId,
       final List<dynamic>? mutedWords,
       final List<dynamic>? hardMutedWords,
@@ -596,8 +594,7 @@ class _IUpdate implements IUpdate {
   @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
   final IUpdateFollowersVisibility? followersVisibility;
   @override
-  @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
-  final IUpdateChatScope? chatScope;
+  final ChatScope? chatScope;
   @override
   final String? pinnedPageId;
   final List<dynamic>? _mutedWords;
@@ -832,8 +829,7 @@ abstract mixin class _$IUpdateCopyWith<$Res> implements $IUpdateCopyWith<$Res> {
       IUpdateFollowingVisibility? followingVisibility,
       @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
       IUpdateFollowersVisibility? followersVisibility,
-      @JsonKey(unknownEnumValue: IUpdateChatScope.unknown)
-      IUpdateChatScope? chatScope,
+      ChatScope? chatScope,
       String? pinnedPageId,
       List<dynamic>? mutedWords,
       List<dynamic>? hardMutedWords,
@@ -1017,7 +1013,7 @@ class __$IUpdateCopyWithImpl<$Res> implements _$IUpdateCopyWith<$Res> {
       chatScope: freezed == chatScope
           ? _self.chatScope
           : chatScope // ignore: cast_nullable_to_non_nullable
-              as IUpdateChatScope?,
+              as ChatScope?,
       pinnedPageId: freezed == pinnedPageId
           ? _self.pinnedPageId
           : pinnedPageId // ignore: cast_nullable_to_non_nullable

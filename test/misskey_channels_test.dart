@@ -37,7 +37,7 @@ void main() async {
     await userClient.channels
         .favorite(ChannelsFavoriteRequest(channelId: channel.id));
     final response =
-        await userClient.channels.myFavorite(ChannelsMyFavoriteRequest());
+        await userClient.channels.myFavorite();
     expect(response.map((e) => e.id), contains(channel.id));
   });
 
@@ -104,7 +104,7 @@ void main() async {
     await userClient.channels
         .unfavorite(ChannelsUnfavoriteRequest(channelId: channel.id));
     final channels =
-        await userClient.channels.myFavorite(ChannelsMyFavoriteRequest());
+        await userClient.channels.myFavorite();
     expect(channels.map((e) => e.id), isNot(contains(channel.id)));
   });
 

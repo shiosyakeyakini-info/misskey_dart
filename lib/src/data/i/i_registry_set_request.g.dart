@@ -9,7 +9,7 @@ part of 'i_registry_set_request.dart';
 _IRegistrySetRequest _$IRegistrySetRequestFromJson(Map<String, dynamic> json) =>
     _IRegistrySetRequest(
       key: json['key'] as String?,
-      value: json['value'] as String?,
+      value: json['value'],
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],

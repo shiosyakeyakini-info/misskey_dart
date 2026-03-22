@@ -9,6 +9,9 @@ part of 'users_following_request.dart';
 _UsersFollowingRequest _$UsersFollowingRequestFromJson(
         Map<String, dynamic> json) =>
     _UsersFollowingRequest(
+      userId: json['userId'] as String?,
+      username: json['username'] as String?,
+      host: json['host'] as String?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: (json['sinceDate'] as num?)?.toInt(),
@@ -20,6 +23,9 @@ _UsersFollowingRequest _$UsersFollowingRequestFromJson(
 Map<String, dynamic> _$UsersFollowingRequestToJson(
         _UsersFollowingRequest instance) =>
     <String, dynamic>{
+      'userId': instance.userId,
+      'username': instance.username,
+      'host': instance.host,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
       'sinceDate': instance.sinceDate,

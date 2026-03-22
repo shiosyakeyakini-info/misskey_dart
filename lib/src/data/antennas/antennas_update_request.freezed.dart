@@ -17,8 +17,8 @@ T _$identity<T>(T value) => value;
 mixin _$AntennasUpdateRequest {
   String? get antennaId;
   String? get name;
-  @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
-  AntennasUpdateSrc? get src;
+  @JsonKey(unknownEnumValue: AntennaSource.unknown)
+  AntennaSource? get src;
   String? get userListId;
   List<dynamic>? get keywords;
   List<dynamic>? get excludeKeywords;
@@ -105,8 +105,7 @@ abstract mixin class $AntennasUpdateRequestCopyWith<$Res> {
   $Res call(
       {String? antennaId,
       String? name,
-      @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
-      AntennasUpdateSrc? src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src,
       String? userListId,
       List<dynamic>? keywords,
       List<dynamic>? excludeKeywords,
@@ -158,7 +157,7 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res>
       src: freezed == src
           ? _self.src
           : src // ignore: cast_nullable_to_non_nullable
-              as AntennasUpdateSrc?,
+              as AntennaSource?,
       userListId: freezed == userListId
           ? _self.userListId
           : userListId // ignore: cast_nullable_to_non_nullable
@@ -209,7 +208,7 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
   const _AntennasUpdateRequest(
       {this.antennaId,
       this.name,
-      @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown) this.src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) this.src,
       this.userListId,
       final List<dynamic>? keywords,
       final List<dynamic>? excludeKeywords,
@@ -231,8 +230,8 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
   @override
   final String? name;
   @override
-  @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
-  final AntennasUpdateSrc? src;
+  @JsonKey(unknownEnumValue: AntennaSource.unknown)
+  final AntennaSource? src;
   @override
   final String? userListId;
   final List<dynamic>? _keywords;
@@ -360,8 +359,7 @@ abstract mixin class _$AntennasUpdateRequestCopyWith<$Res>
   $Res call(
       {String? antennaId,
       String? name,
-      @JsonKey(unknownEnumValue: AntennasUpdateSrc.unknown)
-      AntennasUpdateSrc? src,
+      @JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src,
       String? userListId,
       List<dynamic>? keywords,
       List<dynamic>? excludeKeywords,
@@ -413,7 +411,7 @@ class __$AntennasUpdateRequestCopyWithImpl<$Res>
       src: freezed == src
           ? _self.src
           : src // ignore: cast_nullable_to_non_nullable
-              as AntennasUpdateSrc?,
+              as AntennaSource?,
       userListId: freezed == userListId
           ? _self.userListId
           : userListId // ignore: cast_nullable_to_non_nullable

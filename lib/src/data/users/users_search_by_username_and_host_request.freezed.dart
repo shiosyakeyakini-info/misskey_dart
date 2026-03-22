@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersSearchByUsernameAndHostRequest {
+  String? get username;
+  String? get host;
   int? get limit;
   bool? get detail;
 
@@ -36,17 +38,20 @@ mixin _$UsersSearchByUsernameAndHostRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UsersSearchByUsernameAndHostRequest &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.detail, detail) || other.detail == detail));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, detail);
+  int get hashCode => Object.hash(runtimeType, username, host, limit, detail);
 
   @override
   String toString() {
-    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail)';
+    return 'UsersSearchByUsernameAndHostRequest(username: $username, host: $host, limit: $limit, detail: $detail)';
   }
 }
 
@@ -57,7 +62,7 @@ abstract mixin class $UsersSearchByUsernameAndHostRequestCopyWith<$Res> {
           $Res Function(UsersSearchByUsernameAndHostRequest) _then) =
       _$UsersSearchByUsernameAndHostRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, bool? detail});
+  $Res call({String? username, String? host, int? limit, bool? detail});
 }
 
 /// @nodoc
@@ -73,10 +78,20 @@ class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? username = freezed,
+    Object? host = freezed,
     Object? limit = freezed,
     Object? detail = freezed,
   }) {
     return _then(_self.copyWith(
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -94,11 +109,15 @@ class _$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
 class _UsersSearchByUsernameAndHostRequest
     implements UsersSearchByUsernameAndHostRequest {
   const _UsersSearchByUsernameAndHostRequest(
-      {this.limit = 10, this.detail = true});
+      {this.username, this.host, this.limit = 10, this.detail = true});
   factory _UsersSearchByUsernameAndHostRequest.fromJson(
           Map<String, dynamic> json) =>
       _$UsersSearchByUsernameAndHostRequestFromJson(json);
 
+  @override
+  final String? username;
+  @override
+  final String? host;
   @override
   @JsonKey()
   final int? limit;
@@ -128,17 +147,20 @@ class _UsersSearchByUsernameAndHostRequest
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _UsersSearchByUsernameAndHostRequest &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.detail, detail) || other.detail == detail));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, detail);
+  int get hashCode => Object.hash(runtimeType, username, host, limit, detail);
 
   @override
   String toString() {
-    return 'UsersSearchByUsernameAndHostRequest(limit: $limit, detail: $detail)';
+    return 'UsersSearchByUsernameAndHostRequest(username: $username, host: $host, limit: $limit, detail: $detail)';
   }
 }
 
@@ -151,7 +173,7 @@ abstract mixin class _$UsersSearchByUsernameAndHostRequestCopyWith<$Res>
       __$UsersSearchByUsernameAndHostRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, bool? detail});
+  $Res call({String? username, String? host, int? limit, bool? detail});
 }
 
 /// @nodoc
@@ -167,10 +189,20 @@ class __$UsersSearchByUsernameAndHostRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? username = freezed,
+    Object? host = freezed,
     Object? limit = freezed,
     Object? detail = freezed,
   }) {
     return _then(_UsersSearchByUsernameAndHostRequest(
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

@@ -6,6 +6,9 @@ part 'users_following_request.g.dart';
 @freezed
 abstract class UsersFollowingRequest with _$UsersFollowingRequest {
   const factory UsersFollowingRequest({
+    String? userId,
+    String? username,
+    String? host,
     String? sinceId,
     String? untilId,
     int? sinceDate,

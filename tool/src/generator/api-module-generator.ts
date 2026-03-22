@@ -144,6 +144,9 @@ function generateMethod(
     case "void":
       returnType = "Future<void>";
       break;
+    case "dynamic":
+      returnType = "Future<dynamic>";
+      break;
     case "array": {
       const itemType = resolveResponseType(endpoint, parsed);
       returnType = `Future<Iterable<${itemType}>>`;
@@ -198,6 +201,24 @@ function generateMethod(
         `    await _apiService.post<void>("${apiPath}", ${body}${extraOptsStr});`
       );
       break;
+    case "dynamic": {
+      const responseFormat = override?.response_format;
+      if (responseFormat === "raw_json") {
+        imports.add("import 'dart:convert';");
+        lines.push(
+          `    final response = await _apiService.post<dynamic>("${apiPath}", ${body}${extraOptsStr});`
+        );
+        lines.push(`    if (response == null || (response is String && response.isEmpty)) return null;`);
+        lines.push(`    if (response is String) return jsonDecode(response);`);
+        lines.push(`    return response;`);
+      } else {
+        lines.push(
+          `    final response = await _apiService.post<dynamic>("${apiPath}", ${body}${extraOptsStr});`
+        );
+        lines.push(`    return response;`);
+      }
+      break;
+    }
     case "array": {
       const primitiveTypes = new Set(["String", "int", "double", "bool", "dynamic", "List<dynamic>"]);
       lines.push(

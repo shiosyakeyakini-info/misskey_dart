@@ -9,6 +9,8 @@ part of 'admin_emoji_update_request.dart';
 _AdminEmojiUpdateRequest _$AdminEmojiUpdateRequestFromJson(
         Map<String, dynamic> json) =>
     _AdminEmojiUpdateRequest(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
       fileId: json['fileId'] as String?,
       category: json['category'] as String?,
       aliases:
@@ -25,6 +27,8 @@ _AdminEmojiUpdateRequest _$AdminEmojiUpdateRequestFromJson(
 Map<String, dynamic> _$AdminEmojiUpdateRequestToJson(
         _AdminEmojiUpdateRequest instance) =>
     <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
       'fileId': instance.fileId,
       'category': instance.category,
       'aliases': instance.aliases,

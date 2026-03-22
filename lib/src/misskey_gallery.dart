@@ -21,12 +21,6 @@ class MisskeyGallery {
     return response.map((e) => GalleryPost.fromJson(e as Map<String, dynamic>));
   }
 
-  /// gallery/posts
-  Future<Iterable<GalleryPost>> postsList(GalleryPostsRequest request) async {
-    final response = await _apiService.post<List>("gallery/posts", request.toJson());
-    return response.map((e) => GalleryPost.fromJson(e as Map<String, dynamic>));
-  }
-
 }
 
 class MisskeyGalleryPosts {
@@ -35,6 +29,12 @@ class MisskeyGalleryPosts {
 
   MisskeyGalleryPosts({required ApiService apiService})
       : _apiService = apiService;
+
+  /// gallery/posts
+  Future<Iterable<GalleryPost>> posts(GalleryPostsRequest request) async {
+    final response = await _apiService.post<List>("gallery/posts", request.toJson());
+    return response.map((e) => GalleryPost.fromJson(e as Map<String, dynamic>));
+  }
 
   /// gallery/posts/create
   Future<GalleryPost> create(GalleryPostsCreateRequest request) async {

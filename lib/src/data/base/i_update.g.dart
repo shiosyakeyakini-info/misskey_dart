@@ -47,9 +47,7 @@ _IUpdate _$IUpdateFromJson(Map<String, dynamic> json) => _IUpdate(
       followersVisibility: $enumDecodeNullable(
           _$IUpdateFollowersVisibilityEnumMap, json['followersVisibility'],
           unknownValue: IUpdateFollowersVisibility.unknown),
-      chatScope: $enumDecodeNullable(
-          _$IUpdateChatScopeEnumMap, json['chatScope'],
-          unknownValue: IUpdateChatScope.unknown),
+      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
       pinnedPageId: json['pinnedPageId'] as String?,
       mutedWords: json['mutedWords'] as List<dynamic>?,
       hardMutedWords: json['hardMutedWords'] as List<dynamic>?,
@@ -101,7 +99,7 @@ Map<String, dynamic> _$IUpdateToJson(_IUpdate instance) => <String, dynamic>{
           _$IUpdateFollowingVisibilityEnumMap[instance.followingVisibility],
       'followersVisibility':
           _$IUpdateFollowersVisibilityEnumMap[instance.followersVisibility],
-      'chatScope': _$IUpdateChatScopeEnumMap[instance.chatScope],
+      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
       'pinnedPageId': instance.pinnedPageId,
       'mutedWords': instance.mutedWords,
       'hardMutedWords': instance.hardMutedWords,
@@ -350,11 +348,10 @@ const _$IUpdateFollowersVisibilityEnumMap = {
   IUpdateFollowersVisibility.unknown: 'unknown',
 };
 
-const _$IUpdateChatScopeEnumMap = {
-  IUpdateChatScope.everyone: 'everyone',
-  IUpdateChatScope.followers: 'followers',
-  IUpdateChatScope.following: 'following',
-  IUpdateChatScope.mutual: 'mutual',
-  IUpdateChatScope.none: 'none',
-  IUpdateChatScope.unknown: 'unknown',
+const _$ChatScopeEnumMap = {
+  ChatScope.everyone: 'everyone',
+  ChatScope.followers: 'followers',
+  ChatScope.following: 'following',
+  ChatScope.mutual: 'mutual',
+  ChatScope.none: 'none',
 };

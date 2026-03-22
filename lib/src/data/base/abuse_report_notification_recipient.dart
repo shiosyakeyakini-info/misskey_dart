@@ -13,9 +13,9 @@ abstract class AbuseReportNotificationRecipient with _$AbuseReportNotificationRe
     required String name,
     @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown) required AbuseReportNotificationRecipientMethod method,
     String? userId,
-    UserLite? user,
+    Map<String, dynamic>? user,
     String? systemWebhookId,
-    SystemWebhook? systemWebhook,
+    Map<String, dynamic>? systemWebhook,
   }) = _AbuseReportNotificationRecipient;
 
   factory AbuseReportNotificationRecipient.fromJson(Map<String, Object?> json) => _$AbuseReportNotificationRecipientFromJson(json);

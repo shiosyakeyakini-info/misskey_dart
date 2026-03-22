@@ -11,20 +11,16 @@ _ChatMessage _$ChatMessageFromJson(Map<String, dynamic> json) => _ChatMessage(
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       fromUserId: json['fromUserId'] as String,
-      fromUser: UserLite.fromJson(json['fromUser'] as Map<String, dynamic>),
+      fromUser: json['fromUser'] == null
+          ? null
+          : UserLite.fromJson(json['fromUser'] as Map<String, dynamic>),
       toUserId: json['toUserId'] as String?,
-      toUser: json['toUser'] == null
-          ? null
-          : UserLite.fromJson(json['toUser'] as Map<String, dynamic>),
+      toUser: json['toUser'] as Map<String, dynamic>?,
       toRoomId: json['toRoomId'] as String?,
-      toRoom: json['toRoom'] == null
-          ? null
-          : ChatRoom.fromJson(json['toRoom'] as Map<String, dynamic>),
+      toRoom: json['toRoom'] as Map<String, dynamic>?,
       text: json['text'] as String?,
       fileId: json['fileId'] as String?,
-      file: json['file'] == null
-          ? null
-          : DriveFile.fromJson(json['file'] as Map<String, dynamic>),
+      file: json['file'] as Map<String, dynamic>?,
       isRead: json['isRead'] as bool?,
       reactions: (json['reactions'] as List<dynamic>)
           .map((e) =>
@@ -37,14 +33,14 @@ Map<String, dynamic> _$ChatMessageToJson(_ChatMessage instance) =>
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'fromUserId': instance.fromUserId,
-      'fromUser': instance.fromUser.toJson(),
+      'fromUser': instance.fromUser?.toJson(),
       'toUserId': instance.toUserId,
-      'toUser': instance.toUser?.toJson(),
+      'toUser': instance.toUser,
       'toRoomId': instance.toRoomId,
-      'toRoom': instance.toRoom?.toJson(),
+      'toRoom': instance.toRoom,
       'text': instance.text,
       'fileId': instance.fileId,
-      'file': instance.file?.toJson(),
+      'file': instance.file,
       'isRead': instance.isRead,
       'reactions': instance.reactions.map((e) => e.toJson()).toList(),
     };

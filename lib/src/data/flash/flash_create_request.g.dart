@@ -15,9 +15,9 @@ _FlashCreateRequest _$FlashCreateRequestFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       visibility: $enumDecodeNullable(
-              _$FlashCreateVisibilityEnumMap, json['visibility'],
-              unknownValue: FlashCreateVisibility.unknown) ??
-          FlashCreateVisibility.public,
+              _$FlashVisibilityEnumMap, json['visibility'],
+              unknownValue: FlashVisibility.unknown) ??
+          FlashVisibility.public,
     );
 
 Map<String, dynamic> _$FlashCreateRequestToJson(_FlashCreateRequest instance) =>
@@ -26,11 +26,11 @@ Map<String, dynamic> _$FlashCreateRequestToJson(_FlashCreateRequest instance) =>
       'summary': instance.summary,
       'script': instance.script,
       'permissions': instance.permissions,
-      'visibility': _$FlashCreateVisibilityEnumMap[instance.visibility],
+      'visibility': _$FlashVisibilityEnumMap[instance.visibility],
     };
 
-const _$FlashCreateVisibilityEnumMap = {
-  FlashCreateVisibility.public: 'public',
-  FlashCreateVisibility.private: 'private',
-  FlashCreateVisibility.unknown: 'unknown',
+const _$FlashVisibilityEnumMap = {
+  FlashVisibility.public: 'public',
+  FlashVisibility.private: 'private',
+  FlashVisibility.unknown: 'unknown',
 };

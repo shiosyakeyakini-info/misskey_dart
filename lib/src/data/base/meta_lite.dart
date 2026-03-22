@@ -21,7 +21,6 @@ abstract class MetaLite with _$MetaLite {
     @Default("https://github.com/misskey-dev/misskey/issues/new") String? feedbackUrl,
     String? defaultDarkTheme,
     String? defaultLightTheme,
-    required MetaClientOptions clientOptions,
     required bool disableRegistration,
     required bool emailRequiredForSignup,
     required bool enableHcaptcha,
@@ -62,6 +61,7 @@ abstract class MetaLite with _$MetaLite {
     @JsonKey(unknownEnumValue: NoteSearchableScope.unknown) @Default(NoteSearchableScope.local) NoteSearchableScope noteSearchableScope,
     required double maxFileSize,
     @JsonKey(unknownEnumValue: FederationScope.unknown) required FederationScope federation,
+    Map<String, dynamic>? clientOptions,
   }) = _MetaLite;
 
   factory MetaLite.fromJson(Map<String, Object?> json) => _$MetaLiteFromJson(json);

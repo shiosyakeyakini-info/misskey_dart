@@ -7,7 +7,7 @@ part 'i_registry_set_request.g.dart';
 abstract class IRegistrySetRequest with _$IRegistrySetRequest {
   const factory IRegistrySetRequest({
     String? key,
-    String? value,
+    dynamic value,
     @Default([]) List<String>? scope,
     String? domain,
   }) = _IRegistrySetRequest;

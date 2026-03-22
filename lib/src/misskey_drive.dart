@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyDrive {
@@ -17,18 +20,6 @@ class MisskeyDrive {
     return DriveResponse.fromJson(response);
   }
 
-  /// drive/files
-  Future<Iterable<DriveFile>> filesList(DriveFilesRequest request) async {
-    final response = await _apiService.post<List>("drive/files", request.toJson());
-    return response.map((e) => DriveFile.fromJson(e as Map<String, dynamic>));
-  }
-
-  /// drive/folders
-  Future<Iterable<DriveFolder>> foldersList(DriveFoldersRequest request) async {
-    final response = await _apiService.post<List>("drive/folders", request.toJson());
-    return response.map((e) => DriveFolder.fromJson(e as Map<String, dynamic>));
-  }
-
   /// drive/stream
   Future<Iterable<DriveFile>> stream(DriveStreamRequest request) async {
     final response = await _apiService.post<List>("drive/stream", request.toJson());
@@ -43,6 +34,12 @@ class MisskeyDriveFiles {
 
   MisskeyDriveFiles({required ApiService apiService})
       : _apiService = apiService;
+
+  /// drive/files
+  Future<Iterable<DriveFile>> files(DriveFilesRequest request) async {
+    final response = await _apiService.post<List>("drive/files", request.toJson());
+    return response.map((e) => DriveFile.fromJson(e as Map<String, dynamic>));
+  }
 
   /// drive/files/attached-chat-messages
   Future<Iterable<ChatMessage>> attachedChatMessages(DriveFilesAttachedChatMessagesRequest request) async {
@@ -64,6 +61,32 @@ class MisskeyDriveFiles {
   /// drive/files/create
   Future<DriveFile> create() async {
     final response = await _apiService.post<Map<String, dynamic>>("drive/files/create", {});
+    return DriveFile.fromJson(response);
+  }
+
+  /// drive/files/create (with binary data)
+  Future<DriveFile> createAsBinary(
+    DriveFilesCreateRequest request,
+    Uint8List data,
+  ) async {
+    final response = await _apiService.postWithBinary<Map<String, dynamic>>(
+      "drive/files/create",
+      request.toJson(),
+      data,
+    );
+    return DriveFile.fromJson(response);
+  }
+
+  /// drive/files/create (with file)
+  Future<DriveFile> createWithFile(
+    DriveFilesCreateRequest request,
+    File file,
+  ) async {
+    final response = await _apiService.postWithFile<Map<String, dynamic>>(
+      "drive/files/create",
+      request.toJson(),
+      file,
+    );
     return DriveFile.fromJson(response);
   }
 
@@ -114,6 +137,12 @@ class MisskeyDriveFolders {
 
   MisskeyDriveFolders({required ApiService apiService})
       : _apiService = apiService;
+
+  /// drive/folders
+  Future<Iterable<DriveFolder>> folders(DriveFoldersRequest request) async {
+    final response = await _apiService.post<List>("drive/folders", request.toJson());
+    return response.map((e) => DriveFolder.fromJson(e as Map<String, dynamic>));
+  }
 
   /// drive/folders/create
   Future<DriveFolder> create(DriveFoldersCreateRequest request) async {

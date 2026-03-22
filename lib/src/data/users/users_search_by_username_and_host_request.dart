@@ -6,6 +6,8 @@ part 'users_search_by_username_and_host_request.g.dart';
 @freezed
 abstract class UsersSearchByUsernameAndHostRequest with _$UsersSearchByUsernameAndHostRequest {
   const factory UsersSearchByUsernameAndHostRequest({
+    String? username,
+    String? host,
     @Default(10) int? limit,
     @Default(true) bool? detail,
   }) = _UsersSearchByUsernameAndHostRequest;

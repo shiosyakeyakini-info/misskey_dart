@@ -109,8 +109,8 @@ function parseEndpoints(
 
     // Override return type
     if (endpointOverride?.return_type) {
-      if (endpointOverride.return_type === "void") {
-        responseType = "void";
+      if (endpointOverride.return_type === "void" || endpointOverride.return_type === "dynamic") {
+        responseType = endpointOverride.return_type as EndpointInfo["responseType"];
         responseSchema = undefined;
       }
     }

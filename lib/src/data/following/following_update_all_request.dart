@@ -7,7 +7,7 @@ part 'following_update_all_request.g.dart';
 @freezed
 abstract class FollowingUpdateAllRequest with _$FollowingUpdateAllRequest {
   const factory FollowingUpdateAllRequest({
-    @JsonKey(unknownEnumValue: FollowingUpdateAllNotify.unknown) FollowingUpdateAllNotify? notify,
+    FollowingUpdateAllNotifyType? notify,
     bool? withReplies,
   }) = _FollowingUpdateAllRequest;
 

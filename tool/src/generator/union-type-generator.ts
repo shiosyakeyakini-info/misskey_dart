@@ -228,6 +228,7 @@ function generateSealedClass(
   lines.push(`  const factory ${className}.unknown({`);
 
   // Include common fields (id, createdAt) if they exist in most variants
+  // All fields in the unknown fallback are nullable since we don't know the shape
   // Resolve $ref variants to their component schemas for property inspection
   const resolvedVariants = variants.map(v => {
     if (v.type === "ref" && v.refTarget) {
@@ -237,15 +238,15 @@ function generateSealedClass(
   });
   const commonFields = findCommonFields(resolvedVariants, discriminatorField);
   for (const [propName, prop] of commonFields) {
-    const dartType = resolveDartType(prop, config, className);
+    let dartType = resolveDartType(prop, config, className);
+    // Force nullable in fallback variant - data shape is unknown
+    if (!dartType.endsWith("?")) {
+      dartType = `${dartType}?`;
+    }
     if (isExternalDartType(dartType, className)) needsBarrelImport = true;
     const annotations = resolveDartAnnotations(prop, config, className, imports);
     if (annotations) needsBarrelImport = true;
-    if (prop.isRequired && !prop.isNullable) {
-      lines.push(`    ${annotations}required ${dartType} ${prop.dartName},`);
-    } else {
-      lines.push(`    ${annotations}${dartType} ${prop.dartName},`);
-    }
+    lines.push(`    ${annotations}${dartType} ${prop.dartName},`);
   }
 
   lines.push(`  }) = ${className}Unknown;`);

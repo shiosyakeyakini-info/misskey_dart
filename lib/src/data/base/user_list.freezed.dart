@@ -21,6 +21,8 @@ mixin _$UserList {
   String get name;
   List<String>? get userIds;
   bool get isPublic;
+  double? get likedCount;
+  bool? get isLiked;
 
   /// Create a copy of UserList
   /// with the given fields replaced by the non-null parameter values.
@@ -43,17 +45,27 @@ mixin _$UserList {
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other.userIds, userIds) &&
             (identical(other.isPublic, isPublic) ||
-                other.isPublic == isPublic));
+                other.isPublic == isPublic) &&
+            (identical(other.likedCount, likedCount) ||
+                other.likedCount == likedCount) &&
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      const DeepCollectionEquality().hash(userIds), isPublic);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      createdAt,
+      name,
+      const DeepCollectionEquality().hash(userIds),
+      isPublic,
+      likedCount,
+      isLiked);
 
   @override
   String toString() {
-    return 'UserList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
+    return 'UserList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic, likedCount: $likedCount, isLiked: $isLiked)';
   }
 }
 
@@ -67,7 +79,9 @@ abstract mixin class $UserListCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String name,
       List<String>? userIds,
-      bool isPublic});
+      bool isPublic,
+      double? likedCount,
+      bool? isLiked});
 }
 
 /// @nodoc
@@ -87,6 +101,8 @@ class _$UserListCopyWithImpl<$Res> implements $UserListCopyWith<$Res> {
     Object? name = null,
     Object? userIds = freezed,
     Object? isPublic = null,
+    Object? likedCount = freezed,
+    Object? isLiked = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -109,6 +125,14 @@ class _$UserListCopyWithImpl<$Res> implements $UserListCopyWith<$Res> {
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
+      likedCount: freezed == likedCount
+          ? _self.likedCount
+          : likedCount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      isLiked: freezed == isLiked
+          ? _self.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -121,7 +145,9 @@ class _UserList implements UserList {
       @DateTimeConverter() required this.createdAt,
       required this.name,
       final List<String>? userIds,
-      required this.isPublic})
+      required this.isPublic,
+      this.likedCount,
+      this.isLiked})
       : _userIds = userIds;
   factory _UserList.fromJson(Map<String, dynamic> json) =>
       _$UserListFromJson(json);
@@ -145,6 +171,10 @@ class _UserList implements UserList {
 
   @override
   final bool isPublic;
+  @override
+  final double? likedCount;
+  @override
+  final bool? isLiked;
 
   /// Create a copy of UserList
   /// with the given fields replaced by the non-null parameter values.
@@ -172,17 +202,27 @@ class _UserList implements UserList {
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._userIds, _userIds) &&
             (identical(other.isPublic, isPublic) ||
-                other.isPublic == isPublic));
+                other.isPublic == isPublic) &&
+            (identical(other.likedCount, likedCount) ||
+                other.likedCount == likedCount) &&
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      const DeepCollectionEquality().hash(_userIds), isPublic);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      createdAt,
+      name,
+      const DeepCollectionEquality().hash(_userIds),
+      isPublic,
+      likedCount,
+      isLiked);
 
   @override
   String toString() {
-    return 'UserList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
+    return 'UserList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic, likedCount: $likedCount, isLiked: $isLiked)';
   }
 }
 
@@ -198,7 +238,9 @@ abstract mixin class _$UserListCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String name,
       List<String>? userIds,
-      bool isPublic});
+      bool isPublic,
+      double? likedCount,
+      bool? isLiked});
 }
 
 /// @nodoc
@@ -218,6 +260,8 @@ class __$UserListCopyWithImpl<$Res> implements _$UserListCopyWith<$Res> {
     Object? name = null,
     Object? userIds = freezed,
     Object? isPublic = null,
+    Object? likedCount = freezed,
+    Object? isLiked = freezed,
   }) {
     return _then(_UserList(
       id: null == id
@@ -240,6 +284,14 @@ class __$UserListCopyWithImpl<$Res> implements _$UserListCopyWith<$Res> {
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
+      likedCount: freezed == likedCount
+          ? _self.likedCount
+          : likedCount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      isLiked: freezed == isLiked
+          ? _self.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }

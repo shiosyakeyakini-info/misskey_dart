@@ -8,10 +8,9 @@ part of 'notes_create_request.dart';
 
 _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
     _NotesCreateRequest(
-      visibility: $enumDecodeNullable(
-              _$NotesCreateVisibilityEnumMap, json['visibility'],
-              unknownValue: NotesCreateVisibility.unknown) ??
-          NotesCreateVisibility.public,
+      visibility:
+          $enumDecodeNullable(_$NoteVisibilityEnumMap, json['visibility']) ??
+              NoteVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -41,7 +40,7 @@ _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$NotesCreateRequestToJson(_NotesCreateRequest instance) =>
     <String, dynamic>{
-      'visibility': _$NotesCreateVisibilityEnumMap[instance.visibility],
+      'visibility': _$NoteVisibilityEnumMap[instance.visibility],
       'visibleUserIds': instance.visibleUserIds,
       'cw': instance.cw,
       'localOnly': instance.localOnly,
@@ -59,12 +58,11 @@ Map<String, dynamic> _$NotesCreateRequestToJson(_NotesCreateRequest instance) =>
       'poll': instance.poll?.toJson(),
     };
 
-const _$NotesCreateVisibilityEnumMap = {
-  NotesCreateVisibility.public: 'public',
-  NotesCreateVisibility.home: 'home',
-  NotesCreateVisibility.followers: 'followers',
-  NotesCreateVisibility.specified: 'specified',
-  NotesCreateVisibility.unknown: 'unknown',
+const _$NoteVisibilityEnumMap = {
+  NoteVisibility.public: 'public',
+  NoteVisibility.home: 'home',
+  NoteVisibility.followers: 'followers',
+  NoteVisibility.specified: 'specified',
 };
 
 const _$NotesCreateReactionAcceptanceEnumMap = {

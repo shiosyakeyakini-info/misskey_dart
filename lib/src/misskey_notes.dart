@@ -82,12 +82,6 @@ class MisskeyNotes {
     return response.map((e) => Note.fromJson(e as Map<String, dynamic>));
   }
 
-  /// notes/reactions
-  Future<Iterable<NoteReaction>> reactionsList(NotesReactionsRequest request) async {
-    final response = await _apiService.post<List>("notes/reactions", request.toJson());
-    return response.map((e) => NoteReaction.fromJson(e as Map<String, dynamic>));
-  }
-
   /// notes/renotes
   Future<Iterable<Note>> renotes(NotesRenotesRequest request) async {
     final response = await _apiService.post<List>("notes/renotes", request.toJson());
@@ -237,6 +231,12 @@ class MisskeyNotesReactions {
 
   MisskeyNotesReactions({required ApiService apiService})
       : _apiService = apiService;
+
+  /// notes/reactions
+  Future<Iterable<NoteReaction>> reactions(NotesReactionsRequest request) async {
+    final response = await _apiService.post<List>("notes/reactions", request.toJson());
+    return response.map((e) => NoteReaction.fromJson(e as Map<String, dynamic>));
+  }
 
   /// notes/reactions/create
   Future<void> create(NotesReactionsCreateRequest request) async {

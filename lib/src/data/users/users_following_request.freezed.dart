@@ -15,6 +15,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersFollowingRequest {
+  String? get userId;
+  String? get username;
+  String? get host;
   String? get sinceId;
   String? get untilId;
   int? get sinceDate;
@@ -38,6 +41,10 @@ mixin _$UsersFollowingRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UsersFollowingRequest &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.sinceDate, sinceDate) ||
@@ -51,12 +58,12 @@ mixin _$UsersFollowingRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, sinceId, untilId, sinceDate, untilDate, limit, birthday);
+  int get hashCode => Object.hash(runtimeType, userId, username, host, sinceId,
+      untilId, sinceDate, untilDate, limit, birthday);
 
   @override
   String toString() {
-    return 'UsersFollowingRequest(sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, birthday: $birthday)';
+    return 'UsersFollowingRequest(userId: $userId, username: $username, host: $host, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, birthday: $birthday)';
   }
 }
 
@@ -67,7 +74,10 @@ abstract mixin class $UsersFollowingRequestCopyWith<$Res> {
       _$UsersFollowingRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String? sinceId,
+      {String? userId,
+      String? username,
+      String? host,
+      String? sinceId,
       String? untilId,
       int? sinceDate,
       int? untilDate,
@@ -88,6 +98,9 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? userId = freezed,
+    Object? username = freezed,
+    Object? host = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
@@ -96,6 +109,18 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
     Object? birthday = freezed,
   }) {
     return _then(_self.copyWith(
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -128,7 +153,10 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _UsersFollowingRequest implements UsersFollowingRequest {
   const _UsersFollowingRequest(
-      {this.sinceId,
+      {this.userId,
+      this.username,
+      this.host,
+      this.sinceId,
       this.untilId,
       this.sinceDate,
       this.untilDate,
@@ -137,6 +165,12 @@ class _UsersFollowingRequest implements UsersFollowingRequest {
   factory _UsersFollowingRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersFollowingRequestFromJson(json);
 
+  @override
+  final String? userId;
+  @override
+  final String? username;
+  @override
+  final String? host;
   @override
   final String? sinceId;
   @override
@@ -172,6 +206,10 @@ class _UsersFollowingRequest implements UsersFollowingRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _UsersFollowingRequest &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
             (identical(other.sinceDate, sinceDate) ||
@@ -185,12 +223,12 @@ class _UsersFollowingRequest implements UsersFollowingRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, sinceId, untilId, sinceDate, untilDate, limit, birthday);
+  int get hashCode => Object.hash(runtimeType, userId, username, host, sinceId,
+      untilId, sinceDate, untilDate, limit, birthday);
 
   @override
   String toString() {
-    return 'UsersFollowingRequest(sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, birthday: $birthday)';
+    return 'UsersFollowingRequest(userId: $userId, username: $username, host: $host, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, birthday: $birthday)';
   }
 }
 
@@ -203,7 +241,10 @@ abstract mixin class _$UsersFollowingRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? sinceId,
+      {String? userId,
+      String? username,
+      String? host,
+      String? sinceId,
       String? untilId,
       int? sinceDate,
       int? untilDate,
@@ -224,6 +265,9 @@ class __$UsersFollowingRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? userId = freezed,
+    Object? username = freezed,
+    Object? host = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
@@ -232,6 +276,18 @@ class __$UsersFollowingRequestCopyWithImpl<$Res>
     Object? birthday = freezed,
   }) {
     return _then(_UsersFollowingRequest(
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable

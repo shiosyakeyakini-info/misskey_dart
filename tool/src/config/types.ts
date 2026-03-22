@@ -160,6 +160,8 @@ export interface OverrideConfig {
 
   endpoint_overrides?: Record<string, EndpointOverride>;
 
+  module_overrides?: Record<string, ModuleOverride>;
+
   manual_files?: string[];
 
   number_as_int?: string[];
@@ -203,8 +205,13 @@ export interface FactoryDiscriminator {
 export interface EndpointOverride {
   method_name?: string;
   return_type?: string;
+  response_format?: "raw_json";  // Decode text/plain JSON response with jsonDecode
   extra_options?: Record<string, string>;
   skip?: boolean;
+}
+
+export interface ModuleOverride {
+  field_name?: string;  // Override the sub-module field name (e.g., "lists" → "list")
 }
 
 export interface ForkOverride {
@@ -238,7 +245,7 @@ export interface EndpointInfo {
   summary?: string;
   requestSchema?: ResolvedSchema;
   responseSchema?: ResolvedSchema;
-  responseType: "void" | "single" | "array" | "primitive";
+  responseType: "void" | "single" | "array" | "primitive" | "dynamic";
   responseStatusCode: string; // "200" or "204"
   hasRequestBody: boolean;
 }

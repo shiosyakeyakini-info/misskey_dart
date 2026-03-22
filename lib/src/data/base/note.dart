@@ -16,8 +16,8 @@ abstract class Note with _$Note {
     required UserLite user,
     String? replyId,
     String? renoteId,
-    Note? reply,
-    Note? renote,
+    Map<String, dynamic>? reply,
+    Map<String, dynamic>? renote,
     bool? isHidden,
     required NoteVisibility visibility,
     @Default([]) List<String>? mentions,
@@ -40,8 +40,8 @@ abstract class Note with _$Note {
     String? url,
     @Default([]) List<String>? reactionAndUserPairCache,
     int? clippedCount,
-    bool? hasPoll,
     String? myReaction,
+    bool? hasPoll,
   }) = _Note;
 
   factory Note.fromJson(Map<String, Object?> json) => _$NoteFromJson(json);

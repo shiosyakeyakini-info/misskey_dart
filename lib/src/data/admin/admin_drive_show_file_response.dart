@@ -17,7 +17,7 @@ abstract class AdminDriveShowFileResponse with _$AdminDriveShowFileResponse {
     required double size,
     String? comment,
     String? blurhash,
-    required AdminDriveShowFile properties,
+    required AdminDriveShowFileProperties properties,
     bool? storedInternal,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? thumbnailUrl,

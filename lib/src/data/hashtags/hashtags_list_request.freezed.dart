@@ -19,8 +19,7 @@ mixin _$HashtagsListRequest {
   bool? get attachedToUserOnly;
   bool? get attachedToLocalUserOnly;
   bool? get attachedToRemoteUserOnly;
-  @JsonKey(unknownEnumValue: HashtagsListSort.unknown)
-  HashtagsListSort? get sort;
+  HashtagsListSortType? get sort;
 
   /// Create a copy of HashtagsListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -72,8 +71,7 @@ abstract mixin class $HashtagsListRequestCopyWith<$Res> {
       bool? attachedToUserOnly,
       bool? attachedToLocalUserOnly,
       bool? attachedToRemoteUserOnly,
-      @JsonKey(unknownEnumValue: HashtagsListSort.unknown)
-      HashtagsListSort? sort});
+      HashtagsListSortType? sort});
 }
 
 /// @nodoc
@@ -115,7 +113,7 @@ class _$HashtagsListRequestCopyWithImpl<$Res>
       sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as HashtagsListSort?,
+              as HashtagsListSortType?,
     ));
   }
 }
@@ -128,7 +126,7 @@ class _HashtagsListRequest implements HashtagsListRequest {
       this.attachedToUserOnly = false,
       this.attachedToLocalUserOnly = false,
       this.attachedToRemoteUserOnly = false,
-      @JsonKey(unknownEnumValue: HashtagsListSort.unknown) this.sort});
+      this.sort});
   factory _HashtagsListRequest.fromJson(Map<String, dynamic> json) =>
       _$HashtagsListRequestFromJson(json);
 
@@ -145,8 +143,7 @@ class _HashtagsListRequest implements HashtagsListRequest {
   @JsonKey()
   final bool? attachedToRemoteUserOnly;
   @override
-  @JsonKey(unknownEnumValue: HashtagsListSort.unknown)
-  final HashtagsListSort? sort;
+  final HashtagsListSortType? sort;
 
   /// Create a copy of HashtagsListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -205,8 +202,7 @@ abstract mixin class _$HashtagsListRequestCopyWith<$Res>
       bool? attachedToUserOnly,
       bool? attachedToLocalUserOnly,
       bool? attachedToRemoteUserOnly,
-      @JsonKey(unknownEnumValue: HashtagsListSort.unknown)
-      HashtagsListSort? sort});
+      HashtagsListSortType? sort});
 }
 
 /// @nodoc
@@ -248,7 +244,7 @@ class __$HashtagsListRequestCopyWithImpl<$Res>
       sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as HashtagsListSort?,
+              as HashtagsListSortType?,
     ));
   }
 }

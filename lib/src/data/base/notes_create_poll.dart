@@ -7,7 +7,7 @@ part 'notes_create_poll.g.dart';
 abstract class NotesCreatePoll with _$NotesCreatePoll {
   const factory NotesCreatePoll({
     required List<String> choices,
-    bool? multiple,
+    @Default(false) bool? multiple,
     int? expiresAt,
     int? expiredAfter,
   }) = _NotesCreatePoll;

@@ -310,7 +310,7 @@ Map<String, dynamic> _$RoleCondFormulaValueNotesMoreThanOrEqToJson(
 RoleCondFormulaValueUnknown _$RoleCondFormulaValueUnknownFromJson(
         Map<String, dynamic> json) =>
     RoleCondFormulaValueUnknown(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       $type: json['type'] as String?,
     );
 

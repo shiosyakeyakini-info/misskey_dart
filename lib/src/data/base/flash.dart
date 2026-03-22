@@ -16,7 +16,7 @@ abstract class Flash with _$Flash {
     required String summary,
     required String script,
     @JsonKey(unknownEnumValue: FlashVisibility.unknown) required FlashVisibility visibility,
-    required double likedCount,
+    double? likedCount,
     bool? isLiked,
   }) = _Flash;
 

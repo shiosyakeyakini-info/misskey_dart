@@ -20,8 +20,8 @@ mixin _$FlashUpdate {
   String? get summary;
   String? get script;
   List<String>? get permissions;
-  @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
-  FlashUpdateVisibility? get visibility;
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+  FlashVisibility? get visibility;
 
   /// Create a copy of FlashUpdate
   /// with the given fields replaced by the non-null parameter values.
@@ -71,8 +71,8 @@ abstract mixin class $FlashUpdateCopyWith<$Res> {
       String? summary,
       String? script,
       List<String>? permissions,
-      @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
-      FlashUpdateVisibility? visibility});
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+      FlashVisibility? visibility});
 }
 
 /// @nodoc
@@ -118,7 +118,7 @@ class _$FlashUpdateCopyWithImpl<$Res> implements $FlashUpdateCopyWith<$Res> {
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashUpdateVisibility?,
+              as FlashVisibility?,
     ));
   }
 }
@@ -132,8 +132,7 @@ class _FlashUpdate implements FlashUpdate {
       this.summary,
       this.script,
       final List<String>? permissions,
-      @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
-      this.visibility})
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown) this.visibility})
       : _permissions = permissions;
   factory _FlashUpdate.fromJson(Map<String, dynamic> json) =>
       _$FlashUpdateFromJson(json);
@@ -157,8 +156,8 @@ class _FlashUpdate implements FlashUpdate {
   }
 
   @override
-  @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
-  final FlashUpdateVisibility? visibility;
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+  final FlashVisibility? visibility;
 
   /// Create a copy of FlashUpdate
   /// with the given fields replaced by the non-null parameter values.
@@ -215,8 +214,8 @@ abstract mixin class _$FlashUpdateCopyWith<$Res>
       String? summary,
       String? script,
       List<String>? permissions,
-      @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown)
-      FlashUpdateVisibility? visibility});
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+      FlashVisibility? visibility});
 }
 
 /// @nodoc
@@ -262,7 +261,7 @@ class __$FlashUpdateCopyWithImpl<$Res> implements _$FlashUpdateCopyWith<$Res> {
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashUpdateVisibility?,
+              as FlashVisibility?,
     ));
   }
 }

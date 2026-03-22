@@ -10,20 +10,18 @@ _FollowingUpdateAllRequest _$FollowingUpdateAllRequestFromJson(
         Map<String, dynamic> json) =>
     _FollowingUpdateAllRequest(
       notify: $enumDecodeNullable(
-          _$FollowingUpdateAllNotifyEnumMap, json['notify'],
-          unknownValue: FollowingUpdateAllNotify.unknown),
+          _$FollowingUpdateAllNotifyTypeEnumMap, json['notify']),
       withReplies: json['withReplies'] as bool?,
     );
 
 Map<String, dynamic> _$FollowingUpdateAllRequestToJson(
         _FollowingUpdateAllRequest instance) =>
     <String, dynamic>{
-      'notify': _$FollowingUpdateAllNotifyEnumMap[instance.notify],
+      'notify': _$FollowingUpdateAllNotifyTypeEnumMap[instance.notify],
       'withReplies': instance.withReplies,
     };
 
-const _$FollowingUpdateAllNotifyEnumMap = {
-  FollowingUpdateAllNotify.normal: 'normal',
-  FollowingUpdateAllNotify.none: 'none',
-  FollowingUpdateAllNotify.unknown: 'unknown',
+const _$FollowingUpdateAllNotifyTypeEnumMap = {
+  FollowingUpdateAllNotifyType.normal: 'normal',
+  FollowingUpdateAllNotifyType.none: 'none',
 };

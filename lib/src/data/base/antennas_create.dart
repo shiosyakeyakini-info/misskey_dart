@@ -8,7 +8,7 @@ part 'antennas_create.g.dart';
 abstract class AntennasCreate with _$AntennasCreate {
   const factory AntennasCreate({
     required String name,
-    @JsonKey(unknownEnumValue: AntennasCreateSrc.unknown) required AntennasCreateSrc src,
+    @JsonKey(unknownEnumValue: AntennaSource.unknown) required AntennaSource src,
     String? userListId,
     required List<dynamic> keywords,
     required List<dynamic> excludeKeywords,

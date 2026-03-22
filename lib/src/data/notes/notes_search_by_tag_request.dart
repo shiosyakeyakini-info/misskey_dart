@@ -6,6 +6,8 @@ part 'notes_search_by_tag_request.g.dart';
 @freezed
 abstract class NotesSearchByTagRequest with _$NotesSearchByTagRequest {
   const factory NotesSearchByTagRequest({
+    String? tag,
+    List<dynamic>? query,
     @Default(null) bool? reply,
     @Default(null) bool? renote,
     @Default(false) bool? withFiles,

@@ -60,7 +60,7 @@ RoleCondFormulaValue _$RoleCondFormulaValueFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RoleCondFormulaValue {
-  String get id;
+  String? get id;
 
   /// Create a copy of RoleCondFormulaValue
   /// with the given fields replaced by the non-null parameter values.
@@ -117,7 +117,7 @@ class _$RoleCondFormulaValueCopyWithImpl<$Res>
   }) {
     return _then(_self.copyWith(
       id: null == id
-          ? _self.id
+          ? _self.id!
           : id // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1872,13 +1872,13 @@ class _$RoleCondFormulaValueNotesMoreThanOrEqCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class RoleCondFormulaValueUnknown implements RoleCondFormulaValue {
-  const RoleCondFormulaValueUnknown({required this.id, final String? $type})
+  const RoleCondFormulaValueUnknown({this.id, final String? $type})
       : $type = $type ?? 'unknown';
   factory RoleCondFormulaValueUnknown.fromJson(Map<String, dynamic> json) =>
       _$RoleCondFormulaValueUnknownFromJson(json);
 
   @override
-  final String id;
+  final String? id;
 
   @JsonKey(name: 'type')
   final String $type;
@@ -1926,7 +1926,7 @@ abstract mixin class $RoleCondFormulaValueUnknownCopyWith<$Res>
       _$RoleCondFormulaValueUnknownCopyWithImpl;
   @override
   @useResult
-  $Res call({String id});
+  $Res call({String? id});
 }
 
 /// @nodoc
@@ -1942,13 +1942,13 @@ class _$RoleCondFormulaValueUnknownCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
   }) {
     return _then(RoleCondFormulaValueUnknown(
-      id: null == id
+      id: freezed == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

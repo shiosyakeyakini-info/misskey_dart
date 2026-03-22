@@ -15,8 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FollowingUpdateAllRequest {
-  @JsonKey(unknownEnumValue: FollowingUpdateAllNotify.unknown)
-  FollowingUpdateAllNotify? get notify;
+  FollowingUpdateAllNotifyType? get notify;
   bool? get withReplies;
 
   /// Create a copy of FollowingUpdateAllRequest
@@ -56,10 +55,7 @@ abstract mixin class $FollowingUpdateAllRequestCopyWith<$Res> {
           $Res Function(FollowingUpdateAllRequest) _then) =
       _$FollowingUpdateAllRequestCopyWithImpl;
   @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: FollowingUpdateAllNotify.unknown)
-      FollowingUpdateAllNotify? notify,
-      bool? withReplies});
+  $Res call({FollowingUpdateAllNotifyType? notify, bool? withReplies});
 }
 
 /// @nodoc
@@ -82,7 +78,7 @@ class _$FollowingUpdateAllRequestCopyWithImpl<$Res>
       notify: freezed == notify
           ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
-              as FollowingUpdateAllNotify?,
+              as FollowingUpdateAllNotifyType?,
       withReplies: freezed == withReplies
           ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
@@ -94,15 +90,12 @@ class _$FollowingUpdateAllRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingUpdateAllRequest implements FollowingUpdateAllRequest {
-  const _FollowingUpdateAllRequest(
-      {@JsonKey(unknownEnumValue: FollowingUpdateAllNotify.unknown) this.notify,
-      this.withReplies});
+  const _FollowingUpdateAllRequest({this.notify, this.withReplies});
   factory _FollowingUpdateAllRequest.fromJson(Map<String, dynamic> json) =>
       _$FollowingUpdateAllRequestFromJson(json);
 
   @override
-  @JsonKey(unknownEnumValue: FollowingUpdateAllNotify.unknown)
-  final FollowingUpdateAllNotify? notify;
+  final FollowingUpdateAllNotifyType? notify;
   @override
   final bool? withReplies;
 
@@ -151,10 +144,7 @@ abstract mixin class _$FollowingUpdateAllRequestCopyWith<$Res>
       __$FollowingUpdateAllRequestCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: FollowingUpdateAllNotify.unknown)
-      FollowingUpdateAllNotify? notify,
-      bool? withReplies});
+  $Res call({FollowingUpdateAllNotifyType? notify, bool? withReplies});
 }
 
 /// @nodoc
@@ -177,7 +167,7 @@ class __$FollowingUpdateAllRequestCopyWithImpl<$Res>
       notify: freezed == notify
           ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
-              as FollowingUpdateAllNotify?,
+              as FollowingUpdateAllNotifyType?,
       withReplies: freezed == withReplies
           ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable

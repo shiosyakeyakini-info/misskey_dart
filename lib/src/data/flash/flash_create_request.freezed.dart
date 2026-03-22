@@ -19,8 +19,8 @@ mixin _$FlashCreateRequest {
   String? get summary;
   String? get script;
   List<String>? get permissions;
-  @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
-  FlashCreateVisibility? get visibility;
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+  FlashVisibility? get visibility;
 
   /// Create a copy of FlashCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -69,8 +69,8 @@ abstract mixin class $FlashCreateRequestCopyWith<$Res> {
       String? summary,
       String? script,
       List<String>? permissions,
-      @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
-      FlashCreateVisibility? visibility});
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+      FlashVisibility? visibility});
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class _$FlashCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashCreateVisibility?,
+              as FlashVisibility?,
     ));
   }
 }
@@ -125,8 +125,8 @@ class _FlashCreateRequest implements FlashCreateRequest {
       this.summary,
       this.script,
       final List<String>? permissions,
-      @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
-      this.visibility = FlashCreateVisibility.public})
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+      this.visibility = FlashVisibility.public})
       : _permissions = permissions;
   factory _FlashCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashCreateRequestFromJson(json);
@@ -148,8 +148,8 @@ class _FlashCreateRequest implements FlashCreateRequest {
   }
 
   @override
-  @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
-  final FlashCreateVisibility? visibility;
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+  final FlashVisibility? visibility;
 
   /// Create a copy of FlashCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -204,8 +204,8 @@ abstract mixin class _$FlashCreateRequestCopyWith<$Res>
       String? summary,
       String? script,
       List<String>? permissions,
-      @JsonKey(unknownEnumValue: FlashCreateVisibility.unknown)
-      FlashCreateVisibility? visibility});
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+      FlashVisibility? visibility});
 }
 
 /// @nodoc
@@ -247,7 +247,7 @@ class __$FlashCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as FlashCreateVisibility?,
+              as FlashVisibility?,
     ));
   }
 }

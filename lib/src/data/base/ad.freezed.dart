@@ -27,7 +27,7 @@ mixin _$Ad {
   String get imageUrl;
   String get memo;
   int get dayOfWeek;
-  bool get isSensitive;
+  bool? get isSensitive;
 
   /// Create a copy of Ad
   /// with the given fields replaced by the non-null parameter values.
@@ -88,7 +88,7 @@ abstract mixin class $AdCopyWith<$Res> {
       String imageUrl,
       String memo,
       int dayOfWeek,
-      bool isSensitive});
+      bool? isSensitive});
 }
 
 /// @nodoc
@@ -113,7 +113,7 @@ class _$AdCopyWithImpl<$Res> implements $AdCopyWith<$Res> {
     Object? imageUrl = null,
     Object? memo = null,
     Object? dayOfWeek = null,
-    Object? isSensitive = null,
+    Object? isSensitive = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -156,10 +156,10 @@ class _$AdCopyWithImpl<$Res> implements $AdCopyWith<$Res> {
           ? _self.dayOfWeek
           : dayOfWeek // ignore: cast_nullable_to_non_nullable
               as int,
-      isSensitive: null == isSensitive
+      isSensitive: freezed == isSensitive
           ? _self.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -178,7 +178,7 @@ class _Ad implements Ad {
       required this.imageUrl,
       required this.memo,
       required this.dayOfWeek,
-      required this.isSensitive});
+      this.isSensitive});
   factory _Ad.fromJson(Map<String, dynamic> json) => _$AdFromJson(json);
 
   @override
@@ -204,7 +204,7 @@ class _Ad implements Ad {
   @override
   final int dayOfWeek;
   @override
-  final bool isSensitive;
+  final bool? isSensitive;
 
   /// Create a copy of Ad
   /// with the given fields replaced by the non-null parameter values.
@@ -271,7 +271,7 @@ abstract mixin class _$AdCopyWith<$Res> implements $AdCopyWith<$Res> {
       String imageUrl,
       String memo,
       int dayOfWeek,
-      bool isSensitive});
+      bool? isSensitive});
 }
 
 /// @nodoc
@@ -296,7 +296,7 @@ class __$AdCopyWithImpl<$Res> implements _$AdCopyWith<$Res> {
     Object? imageUrl = null,
     Object? memo = null,
     Object? dayOfWeek = null,
-    Object? isSensitive = null,
+    Object? isSensitive = freezed,
   }) {
     return _then(_Ad(
       id: null == id
@@ -339,10 +339,10 @@ class __$AdCopyWithImpl<$Res> implements _$AdCopyWith<$Res> {
           ? _self.dayOfWeek
           : dayOfWeek // ignore: cast_nullable_to_non_nullable
               as int,
-      isSensitive: null == isSensitive
+      isSensitive: freezed == isSensitive
           ? _self.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }

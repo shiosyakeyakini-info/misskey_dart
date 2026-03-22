@@ -15,6 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesSearchByTagRequest {
+  String? get tag;
+  List<dynamic>? get query;
   bool? get reply;
   bool? get renote;
   bool? get withFiles;
@@ -41,6 +43,8 @@ mixin _$NotesSearchByTagRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NotesSearchByTagRequest &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            const DeepCollectionEquality().equals(other.query, query) &&
             (identical(other.reply, reply) || other.reply == reply) &&
             (identical(other.renote, renote) || other.renote == renote) &&
             (identical(other.withFiles, withFiles) ||
@@ -57,12 +61,23 @@ mixin _$NotesSearchByTagRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, reply, renote, withFiles, poll,
-      sinceId, untilId, sinceDate, untilDate, limit);
+  int get hashCode => Object.hash(
+      runtimeType,
+      tag,
+      const DeepCollectionEquality().hash(query),
+      reply,
+      renote,
+      withFiles,
+      poll,
+      sinceId,
+      untilId,
+      sinceDate,
+      untilDate,
+      limit);
 
   @override
   String toString() {
-    return 'NotesSearchByTagRequest(reply: $reply, renote: $renote, withFiles: $withFiles, poll: $poll, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
+    return 'NotesSearchByTagRequest(tag: $tag, query: $query, reply: $reply, renote: $renote, withFiles: $withFiles, poll: $poll, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -73,7 +88,9 @@ abstract mixin class $NotesSearchByTagRequestCopyWith<$Res> {
       _$NotesSearchByTagRequestCopyWithImpl;
   @useResult
   $Res call(
-      {bool? reply,
+      {String? tag,
+      List<dynamic>? query,
+      bool? reply,
       bool? renote,
       bool? withFiles,
       bool? poll,
@@ -97,6 +114,8 @@ class _$NotesSearchByTagRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? tag = freezed,
+    Object? query = freezed,
     Object? reply = freezed,
     Object? renote = freezed,
     Object? withFiles = freezed,
@@ -108,6 +127,14 @@ class _$NotesSearchByTagRequestCopyWithImpl<$Res>
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
+      tag: freezed == tag
+          ? _self.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String?,
+      query: freezed == query
+          ? _self.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
       reply: freezed == reply
           ? _self.reply
           : reply // ignore: cast_nullable_to_non_nullable
@@ -152,7 +179,9 @@ class _$NotesSearchByTagRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesSearchByTagRequest implements NotesSearchByTagRequest {
   const _NotesSearchByTagRequest(
-      {this.reply = null,
+      {this.tag,
+      final List<dynamic>? query,
+      this.reply = null,
       this.renote = null,
       this.withFiles = false,
       this.poll = null,
@@ -160,9 +189,22 @@ class _NotesSearchByTagRequest implements NotesSearchByTagRequest {
       this.untilId,
       this.sinceDate,
       this.untilDate,
-      this.limit = 10});
+      this.limit = 10})
+      : _query = query;
   factory _NotesSearchByTagRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesSearchByTagRequestFromJson(json);
+
+  @override
+  final String? tag;
+  final List<dynamic>? _query;
+  @override
+  List<dynamic>? get query {
+    final value = _query;
+    if (value == null) return null;
+    if (_query is EqualUnmodifiableListView) return _query;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   @JsonKey()
@@ -209,6 +251,8 @@ class _NotesSearchByTagRequest implements NotesSearchByTagRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _NotesSearchByTagRequest &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            const DeepCollectionEquality().equals(other._query, _query) &&
             (identical(other.reply, reply) || other.reply == reply) &&
             (identical(other.renote, renote) || other.renote == renote) &&
             (identical(other.withFiles, withFiles) ||
@@ -225,12 +269,23 @@ class _NotesSearchByTagRequest implements NotesSearchByTagRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, reply, renote, withFiles, poll,
-      sinceId, untilId, sinceDate, untilDate, limit);
+  int get hashCode => Object.hash(
+      runtimeType,
+      tag,
+      const DeepCollectionEquality().hash(_query),
+      reply,
+      renote,
+      withFiles,
+      poll,
+      sinceId,
+      untilId,
+      sinceDate,
+      untilDate,
+      limit);
 
   @override
   String toString() {
-    return 'NotesSearchByTagRequest(reply: $reply, renote: $renote, withFiles: $withFiles, poll: $poll, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
+    return 'NotesSearchByTagRequest(tag: $tag, query: $query, reply: $reply, renote: $renote, withFiles: $withFiles, poll: $poll, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -243,7 +298,9 @@ abstract mixin class _$NotesSearchByTagRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool? reply,
+      {String? tag,
+      List<dynamic>? query,
+      bool? reply,
       bool? renote,
       bool? withFiles,
       bool? poll,
@@ -267,6 +324,8 @@ class __$NotesSearchByTagRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? tag = freezed,
+    Object? query = freezed,
     Object? reply = freezed,
     Object? renote = freezed,
     Object? withFiles = freezed,
@@ -278,6 +337,14 @@ class __$NotesSearchByTagRequestCopyWithImpl<$Res>
     Object? limit = freezed,
   }) {
     return _then(_NotesSearchByTagRequest(
+      tag: freezed == tag
+          ? _self.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String?,
+      query: freezed == query
+          ? _self._query
+          : query // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
       reply: freezed == reply
           ? _self.reply
           : reply // ignore: cast_nullable_to_non_nullable

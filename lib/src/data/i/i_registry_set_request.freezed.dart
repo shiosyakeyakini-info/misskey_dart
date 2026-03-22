@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$IRegistrySetRequest {
   String? get key;
-  String? get value;
+  dynamic get value;
   List<String>? get scope;
   String? get domain;
 
@@ -37,15 +37,19 @@ mixin _$IRegistrySetRequest {
         (other.runtimeType == runtimeType &&
             other is IRegistrySetRequest &&
             (identical(other.key, key) || other.key == key) &&
-            (identical(other.value, value) || other.value == value) &&
+            const DeepCollectionEquality().equals(other.value, value) &&
             const DeepCollectionEquality().equals(other.scope, scope) &&
             (identical(other.domain, domain) || other.domain == domain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, key, value,
-      const DeepCollectionEquality().hash(scope), domain);
+  int get hashCode => Object.hash(
+      runtimeType,
+      key,
+      const DeepCollectionEquality().hash(value),
+      const DeepCollectionEquality().hash(scope),
+      domain);
 
   @override
   String toString() {
@@ -59,7 +63,7 @@ abstract mixin class $IRegistrySetRequestCopyWith<$Res> {
           IRegistrySetRequest value, $Res Function(IRegistrySetRequest) _then) =
       _$IRegistrySetRequestCopyWithImpl;
   @useResult
-  $Res call({String? key, String? value, List<String>? scope, String? domain});
+  $Res call({String? key, dynamic value, List<String>? scope, String? domain});
 }
 
 /// @nodoc
@@ -88,7 +92,7 @@ class _$IRegistrySetRequestCopyWithImpl<$Res>
       value: freezed == value
           ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       scope: freezed == scope
           ? _self.scope
           : scope // ignore: cast_nullable_to_non_nullable
@@ -113,7 +117,7 @@ class _IRegistrySetRequest implements IRegistrySetRequest {
   @override
   final String? key;
   @override
-  final String? value;
+  final dynamic value;
   final List<String>? _scope;
   @override
   @JsonKey()
@@ -150,15 +154,19 @@ class _IRegistrySetRequest implements IRegistrySetRequest {
         (other.runtimeType == runtimeType &&
             other is _IRegistrySetRequest &&
             (identical(other.key, key) || other.key == key) &&
-            (identical(other.value, value) || other.value == value) &&
+            const DeepCollectionEquality().equals(other.value, value) &&
             const DeepCollectionEquality().equals(other._scope, _scope) &&
             (identical(other.domain, domain) || other.domain == domain));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, key, value,
-      const DeepCollectionEquality().hash(_scope), domain);
+  int get hashCode => Object.hash(
+      runtimeType,
+      key,
+      const DeepCollectionEquality().hash(value),
+      const DeepCollectionEquality().hash(_scope),
+      domain);
 
   @override
   String toString() {
@@ -174,7 +182,7 @@ abstract mixin class _$IRegistrySetRequestCopyWith<$Res>
       __$IRegistrySetRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String? key, String? value, List<String>? scope, String? domain});
+  $Res call({String? key, dynamic value, List<String>? scope, String? domain});
 }
 
 /// @nodoc
@@ -203,7 +211,7 @@ class __$IRegistrySetRequestCopyWithImpl<$Res>
       value: freezed == value
           ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       scope: freezed == scope
           ? _self._scope
           : scope // ignore: cast_nullable_to_non_nullable

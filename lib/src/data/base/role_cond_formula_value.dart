@@ -94,7 +94,7 @@ sealed class RoleCondFormulaValue with _$RoleCondFormulaValue {
   }) = RoleCondFormulaValueNotesMoreThanOrEq;
 
   const factory RoleCondFormulaValue.unknown({
-    required String id,
+    String? id,
   }) = RoleCondFormulaValueUnknown;
 
   factory RoleCondFormulaValue.fromJson(Map<String, Object?> json) => _$RoleCondFormulaValueFromJson(json);

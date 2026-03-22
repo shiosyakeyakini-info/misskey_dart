@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyI {
@@ -278,9 +279,11 @@ class MisskeyIRegistry {
       : _apiService = apiService;
 
   /// i/registry/get
-  Future<Map<String, dynamic>> get(IRegistryGetRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("i/registry/get", request.toJson());
-    return response.cast();
+  Future<dynamic> get(IRegistryGetRequest request) async {
+    final response = await _apiService.post<dynamic>("i/registry/get", request.toJson());
+    if (response == null || (response is String && response.isEmpty)) return null;
+    if (response is String) return jsonDecode(response);
+    return response;
   }
 
   /// i/registry/get-all
@@ -320,7 +323,7 @@ class MisskeyIRegistry {
 
   /// i/registry/set
   Future<void> set(IRegistrySetRequest request) async {
-    await _apiService.post<void>("i/registry/set", request.toJson());
+    await _apiService.post<void>("i/registry/set", request.toJson(), excludeRemoveNullPredicate: (key, _) => key == "value");
   }
 
 }

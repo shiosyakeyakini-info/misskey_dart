@@ -9,8 +9,8 @@ part of 'antennas_create.dart';
 _AntennasCreate _$AntennasCreateFromJson(Map<String, dynamic> json) =>
     _AntennasCreate(
       name: json['name'] as String,
-      src: $enumDecode(_$AntennasCreateSrcEnumMap, json['src'],
-          unknownValue: AntennasCreateSrc.unknown),
+      src: $enumDecode(_$AntennaSourceEnumMap, json['src'],
+          unknownValue: AntennaSource.unknown),
       userListId: json['userListId'] as String?,
       keywords: json['keywords'] as List<dynamic>,
       excludeKeywords: json['excludeKeywords'] as List<dynamic>,
@@ -27,7 +27,7 @@ _AntennasCreate _$AntennasCreateFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AntennasCreateToJson(_AntennasCreate instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'src': _$AntennasCreateSrcEnumMap[instance.src]!,
+      'src': _$AntennaSourceEnumMap[instance.src]!,
       'userListId': instance.userListId,
       'keywords': instance.keywords,
       'excludeKeywords': instance.excludeKeywords,
@@ -40,11 +40,11 @@ Map<String, dynamic> _$AntennasCreateToJson(_AntennasCreate instance) =>
       'excludeNotesInSensitiveChannel': instance.excludeNotesInSensitiveChannel,
     };
 
-const _$AntennasCreateSrcEnumMap = {
-  AntennasCreateSrc.home: 'home',
-  AntennasCreateSrc.all: 'all',
-  AntennasCreateSrc.users: 'users',
-  AntennasCreateSrc.list: 'list',
-  AntennasCreateSrc.usersBlacklist: 'users_blacklist',
-  AntennasCreateSrc.unknown: 'unknown',
+const _$AntennaSourceEnumMap = {
+  AntennaSource.home: 'home',
+  AntennaSource.all: 'all',
+  AntennaSource.users: 'users',
+  AntennaSource.list: 'list',
+  AntennaSource.usersBlacklist: 'users_blacklist',
+  AntennaSource.unknown: 'unknown',
 };

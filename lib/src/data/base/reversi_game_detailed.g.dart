@@ -26,14 +26,11 @@ _ReversiGameDetailed _$ReversiGameDetailedFromJson(Map<String, dynamic> json) =>
       user1: UserLite.fromJson(json['user1'] as Map<String, dynamic>),
       user2: UserLite.fromJson(json['user2'] as Map<String, dynamic>),
       winnerId: json['winnerId'] as String?,
-      winner: json['winner'] == null
-          ? null
-          : UserLite.fromJson(json['winner'] as Map<String, dynamic>),
+      winner: json['winner'] as Map<String, dynamic>?,
       surrenderedUserId: json['surrenderedUserId'] as String?,
       timeoutUserId: json['timeoutUserId'] as String?,
       black: (json['black'] as num?)?.toDouble(),
-      bw: $enumDecode(_$ReversiBwEnumMap, json['bw'],
-          unknownValue: ReversiBw.unknown),
+      bw: json['bw'] as String,
       noIrregularRules: json['noIrregularRules'] as bool,
       isLlotheo: json['isLlotheo'] as bool,
       canPutEverywhere: json['canPutEverywhere'] as bool,
@@ -61,11 +58,11 @@ Map<String, dynamic> _$ReversiGameDetailedToJson(
       'user1': instance.user1.toJson(),
       'user2': instance.user2.toJson(),
       'winnerId': instance.winnerId,
-      'winner': instance.winner?.toJson(),
+      'winner': instance.winner,
       'surrenderedUserId': instance.surrenderedUserId,
       'timeoutUserId': instance.timeoutUserId,
       'black': instance.black,
-      'bw': _$ReversiBwEnumMap[instance.bw]!,
+      'bw': instance.bw,
       'noIrregularRules': instance.noIrregularRules,
       'isLlotheo': instance.isLlotheo,
       'canPutEverywhere': instance.canPutEverywhere,
@@ -80,10 +77,3 @@ Value? _$JsonConverterFromJson<Json, Value>(
   Value? Function(Json json) fromJson,
 ) =>
     json == null ? null : fromJson(json as Json);
-
-const _$ReversiBwEnumMap = {
-  ReversiBw.random: 'random',
-  ReversiBw.v1: '1',
-  ReversiBw.v2: '2',
-  ReversiBw.unknown: 'unknown',
-};

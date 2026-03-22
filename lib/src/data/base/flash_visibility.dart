@@ -1,5 +1,5 @@
 enum FlashVisibility {
-  private,
   public,
+  private,
   unknown,
 }

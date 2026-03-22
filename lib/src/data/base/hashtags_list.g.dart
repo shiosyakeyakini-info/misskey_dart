@@ -14,8 +14,7 @@ _HashtagsList _$HashtagsListFromJson(Map<String, dynamic> json) =>
           json['attachedToLocalUserOnly'] as bool? ?? false,
       attachedToRemoteUserOnly:
           json['attachedToRemoteUserOnly'] as bool? ?? false,
-      sort: $enumDecode(_$HashtagsListSortEnumMap, json['sort'],
-          unknownValue: HashtagsListSort.unknown),
+      sort: $enumDecode(_$HashtagsListSortTypeEnumMap, json['sort']),
     );
 
 Map<String, dynamic> _$HashtagsListToJson(_HashtagsList instance) =>
@@ -24,21 +23,20 @@ Map<String, dynamic> _$HashtagsListToJson(_HashtagsList instance) =>
       'attachedToUserOnly': instance.attachedToUserOnly,
       'attachedToLocalUserOnly': instance.attachedToLocalUserOnly,
       'attachedToRemoteUserOnly': instance.attachedToRemoteUserOnly,
-      'sort': _$HashtagsListSortEnumMap[instance.sort]!,
+      'sort': _$HashtagsListSortTypeEnumMap[instance.sort]!,
     };
 
-const _$HashtagsListSortEnumMap = {
-  HashtagsListSort.plusMentionedUsers: '+mentionedUsers',
-  HashtagsListSort.minusMentionedUsers: '-mentionedUsers',
-  HashtagsListSort.plusMentionedLocalUsers: '+mentionedLocalUsers',
-  HashtagsListSort.minusMentionedLocalUsers: '-mentionedLocalUsers',
-  HashtagsListSort.plusMentionedRemoteUsers: '+mentionedRemoteUsers',
-  HashtagsListSort.minusMentionedRemoteUsers: '-mentionedRemoteUsers',
-  HashtagsListSort.plusAttachedUsers: '+attachedUsers',
-  HashtagsListSort.minusAttachedUsers: '-attachedUsers',
-  HashtagsListSort.plusAttachedLocalUsers: '+attachedLocalUsers',
-  HashtagsListSort.minusAttachedLocalUsers: '-attachedLocalUsers',
-  HashtagsListSort.plusAttachedRemoteUsers: '+attachedRemoteUsers',
-  HashtagsListSort.minusAttachedRemoteUsers: '-attachedRemoteUsers',
-  HashtagsListSort.unknown: 'unknown',
+const _$HashtagsListSortTypeEnumMap = {
+  HashtagsListSortType.mentionedUsersDescendant: '+mentionedUsers',
+  HashtagsListSortType.mentionedUsersAscendant: '-mentionedUsers',
+  HashtagsListSortType.mentionedLocalUsersDescendant: '+mentionedLocalUsers',
+  HashtagsListSortType.mentionedLocalUsersAscendant: '-mentionedLocalUsers',
+  HashtagsListSortType.mentionedRemoteUsersDescendant: '+mentionedRemoteUsers',
+  HashtagsListSortType.mentionedRemoteUsersAscendant: '-mentionedRemoteUsers',
+  HashtagsListSortType.attachedUsersDescendant: '+attachedUsers',
+  HashtagsListSortType.attachedUsersAscendant: '-attachedUsers',
+  HashtagsListSortType.attachedLocalUsersDescendant: '+attachedLocalUsers',
+  HashtagsListSortType.attachedLocalUsersAscendant: '-attachedLocalUsers',
+  HashtagsListSortType.attachedRemoteUsersDescendant: '+attachedRemoteUsers',
+  HashtagsListSortType.attachedRemoteUsersAscendant: '-attachedRemoteUsers',
 };

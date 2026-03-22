@@ -20,7 +20,7 @@ _AdminDriveShowFileResponse _$AdminDriveShowFileResponseFromJson(
       size: (json['size'] as num).toDouble(),
       comment: json['comment'] as String?,
       blurhash: json['blurhash'] as String?,
-      properties: AdminDriveShowFile.fromJson(
+      properties: AdminDriveShowFileProperties.fromJson(
           json['properties'] as Map<String, dynamic>),
       storedInternal: json['storedInternal'] as bool?,
       url: _$JsonConverterFromJson<String, Uri?>(

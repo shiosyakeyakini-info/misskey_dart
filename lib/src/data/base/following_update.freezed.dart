@@ -16,8 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FollowingUpdate {
   String get userId;
-  @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
-  FollowingUpdateNotify? get notify;
+  FollowingUpdateAllNotifyType? get notify;
   bool? get withReplies;
 
   /// Create a copy of FollowingUpdate
@@ -59,10 +58,7 @@ abstract mixin class $FollowingUpdateCopyWith<$Res> {
       _$FollowingUpdateCopyWithImpl;
   @useResult
   $Res call(
-      {String userId,
-      @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
-      FollowingUpdateNotify? notify,
-      bool? withReplies});
+      {String userId, FollowingUpdateAllNotifyType? notify, bool? withReplies});
 }
 
 /// @nodoc
@@ -90,7 +86,7 @@ class _$FollowingUpdateCopyWithImpl<$Res>
       notify: freezed == notify
           ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
-              as FollowingUpdateNotify?,
+              as FollowingUpdateAllNotifyType?,
       withReplies: freezed == withReplies
           ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable
@@ -102,18 +98,14 @@ class _$FollowingUpdateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingUpdate implements FollowingUpdate {
-  const _FollowingUpdate(
-      {required this.userId,
-      @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown) this.notify,
-      this.withReplies});
+  const _FollowingUpdate({required this.userId, this.notify, this.withReplies});
   factory _FollowingUpdate.fromJson(Map<String, dynamic> json) =>
       _$FollowingUpdateFromJson(json);
 
   @override
   final String userId;
   @override
-  @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
-  final FollowingUpdateNotify? notify;
+  final FollowingUpdateAllNotifyType? notify;
   @override
   final bool? withReplies;
 
@@ -162,10 +154,7 @@ abstract mixin class _$FollowingUpdateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String userId,
-      @JsonKey(unknownEnumValue: FollowingUpdateNotify.unknown)
-      FollowingUpdateNotify? notify,
-      bool? withReplies});
+      {String userId, FollowingUpdateAllNotifyType? notify, bool? withReplies});
 }
 
 /// @nodoc
@@ -193,7 +182,7 @@ class __$FollowingUpdateCopyWithImpl<$Res>
       notify: freezed == notify
           ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
-              as FollowingUpdateNotify?,
+              as FollowingUpdateAllNotifyType?,
       withReplies: freezed == withReplies
           ? _self.withReplies
           : withReplies // ignore: cast_nullable_to_non_nullable

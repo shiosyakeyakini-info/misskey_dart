@@ -14,6 +14,8 @@ _UserList _$UserListFromJson(Map<String, dynamic> json) => _UserList(
       userIds:
           (json['userIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
       isPublic: json['isPublic'] as bool,
+      likedCount: (json['likedCount'] as num?)?.toDouble(),
+      isLiked: json['isLiked'] as bool?,
     );
 
 Map<String, dynamic> _$UserListToJson(_UserList instance) => <String, dynamic>{
@@ -22,4 +24,6 @@ Map<String, dynamic> _$UserListToJson(_UserList instance) => <String, dynamic>{
       'name': instance.name,
       'userIds': instance.userIds,
       'isPublic': instance.isPublic,
+      'likedCount': instance.likedCount,
+      'isLiked': instance.isLiked,
     };

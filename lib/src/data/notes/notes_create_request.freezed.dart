@@ -15,8 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesCreateRequest {
-  @JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
-  NotesCreateVisibility? get visibility;
+  NoteVisibility? get visibility;
   List<String>? get visibleUserIds;
   String? get cw;
   bool? get localOnly;
@@ -108,8 +107,7 @@ abstract mixin class $NotesCreateRequestCopyWith<$Res> {
       _$NotesCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {@JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
-      NotesCreateVisibility? visibility,
+      {NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       bool? localOnly,
@@ -162,7 +160,7 @@ class _$NotesCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as NotesCreateVisibility?,
+              as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
           ? _self.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
@@ -241,8 +239,7 @@ class _$NotesCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesCreateRequest implements NotesCreateRequest {
   const _NotesCreateRequest(
-      {@JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
-      this.visibility = NotesCreateVisibility.public,
+      {this.visibility = NoteVisibility.public,
       final List<String>? visibleUserIds,
       this.cw,
       this.localOnly = false,
@@ -265,8 +262,8 @@ class _NotesCreateRequest implements NotesCreateRequest {
       _$NotesCreateRequestFromJson(json);
 
   @override
-  @JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
-  final NotesCreateVisibility? visibility;
+  @JsonKey()
+  final NoteVisibility? visibility;
   final List<String>? _visibleUserIds;
   @override
   List<String>? get visibleUserIds {
@@ -406,8 +403,7 @@ abstract mixin class _$NotesCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(unknownEnumValue: NotesCreateVisibility.unknown)
-      NotesCreateVisibility? visibility,
+      {NoteVisibility? visibility,
       List<String>? visibleUserIds,
       String? cw,
       bool? localOnly,
@@ -461,7 +457,7 @@ class __$NotesCreateRequestCopyWithImpl<$Res>
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as NotesCreateVisibility?,
+              as NoteVisibility?,
       visibleUserIds: freezed == visibleUserIds
           ? _self._visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable

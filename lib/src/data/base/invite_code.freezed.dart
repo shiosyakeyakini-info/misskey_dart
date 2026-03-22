@@ -21,8 +21,8 @@ mixin _$InviteCode {
   DateTime? get expiresAt;
   @DateTimeConverter()
   DateTime get createdAt;
-  UserLite? get createdBy;
-  UserLite? get usedBy;
+  Map<String, dynamic>? get createdBy;
+  Map<String, dynamic>? get usedBy;
   @NullableDateTimeConverter()
   DateTime? get usedAt;
   bool get used;
@@ -48,17 +48,24 @@ mixin _$InviteCode {
                 other.expiresAt == expiresAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.createdBy, createdBy) ||
-                other.createdBy == createdBy) &&
-            (identical(other.usedBy, usedBy) || other.usedBy == usedBy) &&
+            const DeepCollectionEquality().equals(other.createdBy, createdBy) &&
+            const DeepCollectionEquality().equals(other.usedBy, usedBy) &&
             (identical(other.usedAt, usedAt) || other.usedAt == usedAt) &&
             (identical(other.used, used) || other.used == used));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, code, expiresAt, createdAt,
-      createdBy, usedBy, usedAt, used);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      code,
+      expiresAt,
+      createdAt,
+      const DeepCollectionEquality().hash(createdBy),
+      const DeepCollectionEquality().hash(usedBy),
+      usedAt,
+      used);
 
   @override
   String toString() {
@@ -77,13 +84,10 @@ abstract mixin class $InviteCodeCopyWith<$Res> {
       String code,
       @NullableDateTimeConverter() DateTime? expiresAt,
       @DateTimeConverter() DateTime createdAt,
-      UserLite? createdBy,
-      UserLite? usedBy,
+      Map<String, dynamic>? createdBy,
+      Map<String, dynamic>? usedBy,
       @NullableDateTimeConverter() DateTime? usedAt,
       bool used});
-
-  $UserLiteCopyWith<$Res>? get createdBy;
-  $UserLiteCopyWith<$Res>? get usedBy;
 }
 
 /// @nodoc
@@ -127,11 +131,11 @@ class _$InviteCodeCopyWithImpl<$Res> implements $InviteCodeCopyWith<$Res> {
       createdBy: freezed == createdBy
           ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       usedBy: freezed == usedBy
           ? _self.usedBy
           : usedBy // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       usedAt: freezed == usedAt
           ? _self.usedAt
           : usedAt // ignore: cast_nullable_to_non_nullable
@@ -141,34 +145,6 @@ class _$InviteCodeCopyWithImpl<$Res> implements $InviteCodeCopyWith<$Res> {
           : used // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of InviteCode
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
-    });
-  }
-
-  /// Create a copy of InviteCode
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get usedBy {
-    if (_self.usedBy == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.usedBy!, (value) {
-      return _then(_self.copyWith(usedBy: value));
-    });
   }
 }
 
@@ -180,10 +156,12 @@ class _InviteCode implements InviteCode {
       required this.code,
       @NullableDateTimeConverter() this.expiresAt,
       @DateTimeConverter() required this.createdAt,
-      this.createdBy,
-      this.usedBy,
+      final Map<String, dynamic>? createdBy,
+      final Map<String, dynamic>? usedBy,
       @NullableDateTimeConverter() this.usedAt,
-      required this.used});
+      required this.used})
+      : _createdBy = createdBy,
+        _usedBy = usedBy;
   factory _InviteCode.fromJson(Map<String, dynamic> json) =>
       _$InviteCodeFromJson(json);
 
@@ -197,10 +175,26 @@ class _InviteCode implements InviteCode {
   @override
   @DateTimeConverter()
   final DateTime createdAt;
+  final Map<String, dynamic>? _createdBy;
   @override
-  final UserLite? createdBy;
+  Map<String, dynamic>? get createdBy {
+    final value = _createdBy;
+    if (value == null) return null;
+    if (_createdBy is EqualUnmodifiableMapView) return _createdBy;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _usedBy;
   @override
-  final UserLite? usedBy;
+  Map<String, dynamic>? get usedBy {
+    final value = _usedBy;
+    if (value == null) return null;
+    if (_usedBy is EqualUnmodifiableMapView) return _usedBy;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   @NullableDateTimeConverter()
   final DateTime? usedAt;
@@ -233,17 +227,25 @@ class _InviteCode implements InviteCode {
                 other.expiresAt == expiresAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.createdBy, createdBy) ||
-                other.createdBy == createdBy) &&
-            (identical(other.usedBy, usedBy) || other.usedBy == usedBy) &&
+            const DeepCollectionEquality()
+                .equals(other._createdBy, _createdBy) &&
+            const DeepCollectionEquality().equals(other._usedBy, _usedBy) &&
             (identical(other.usedAt, usedAt) || other.usedAt == usedAt) &&
             (identical(other.used, used) || other.used == used));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, code, expiresAt, createdAt,
-      createdBy, usedBy, usedAt, used);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      code,
+      expiresAt,
+      createdAt,
+      const DeepCollectionEquality().hash(_createdBy),
+      const DeepCollectionEquality().hash(_usedBy),
+      usedAt,
+      used);
 
   @override
   String toString() {
@@ -264,15 +266,10 @@ abstract mixin class _$InviteCodeCopyWith<$Res>
       String code,
       @NullableDateTimeConverter() DateTime? expiresAt,
       @DateTimeConverter() DateTime createdAt,
-      UserLite? createdBy,
-      UserLite? usedBy,
+      Map<String, dynamic>? createdBy,
+      Map<String, dynamic>? usedBy,
       @NullableDateTimeConverter() DateTime? usedAt,
       bool used});
-
-  @override
-  $UserLiteCopyWith<$Res>? get createdBy;
-  @override
-  $UserLiteCopyWith<$Res>? get usedBy;
 }
 
 /// @nodoc
@@ -314,13 +311,13 @@ class __$InviteCodeCopyWithImpl<$Res> implements _$InviteCodeCopyWith<$Res> {
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       createdBy: freezed == createdBy
-          ? _self.createdBy
+          ? _self._createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       usedBy: freezed == usedBy
-          ? _self.usedBy
+          ? _self._usedBy
           : usedBy // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       usedAt: freezed == usedAt
           ? _self.usedAt
           : usedAt // ignore: cast_nullable_to_non_nullable
@@ -330,34 +327,6 @@ class __$InviteCodeCopyWithImpl<$Res> implements _$InviteCodeCopyWith<$Res> {
           : used // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of InviteCode
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
-    });
-  }
-
-  /// Create a copy of InviteCode
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get usedBy {
-    if (_self.usedBy == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.usedBy!, (value) {
-      return _then(_self.copyWith(usedBy: value));
-    });
   }
 }
 

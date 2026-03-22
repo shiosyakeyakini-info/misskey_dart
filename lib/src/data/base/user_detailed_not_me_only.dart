@@ -31,7 +31,7 @@ abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
     required List<String> pinnedNoteIds,
     required List<Note> pinnedNotes,
     String? pinnedPageId,
-    Page? pinnedPage,
+    Map<String, dynamic>? pinnedPage,
     required bool publicReactions,
     @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followingVisibility,
     @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followersVisibility,

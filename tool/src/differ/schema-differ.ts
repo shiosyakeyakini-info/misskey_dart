@@ -157,16 +157,18 @@ function mergeNewFields(
  * - New schemas get their first-appeared version recorded
  */
 export function applyVersionCompatibility(
-  mergeResult: MergeResult
+  mergeResult: MergeResult,
+  minimumVersion: string
 ): Map<string, MergedSchema> {
   const result = new Map<string, MergedSchema>();
 
   for (const [name, schema] of mergeResult.schemas) {
+    const isNewSchema = schema.firstAppearedIn !== minimumVersion;
     const adjustedProperties = new Map<string, MergedProperty>();
 
     for (const [key, prop] of schema.properties) {
-      if (!prop.availability.inMinimumVersion) {
-        // Force nullable for fields not in minimum version
+      if (!isNewSchema && !prop.availability.inMinimumVersion) {
+        // Existing schema's new field → force nullable
         adjustedProperties.set(key, {
           ...prop,
           isNullable: true,

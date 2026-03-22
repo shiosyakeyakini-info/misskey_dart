@@ -12,7 +12,7 @@ abstract class FlashUpdate with _$FlashUpdate {
     String? summary,
     String? script,
     List<String>? permissions,
-    @JsonKey(unknownEnumValue: FlashUpdateVisibility.unknown) FlashUpdateVisibility? visibility,
+    @JsonKey(unknownEnumValue: FlashVisibility.unknown) FlashVisibility? visibility,
   }) = _FlashUpdate;
 
   factory FlashUpdate.fromJson(Map<String, Object?> json) => _$FlashUpdateFromJson(json);

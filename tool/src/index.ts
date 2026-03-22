@@ -120,7 +120,7 @@ async function runMultiVersion(
     config
   );
 
-  const compatSchemas = applyVersionCompatibility(mergeResult);
+  const compatSchemas = applyVersionCompatibility(mergeResult, versionsConfig.minimum_version);
 
   // Count changes
   let newFields = 0;
@@ -143,7 +143,12 @@ async function runMultiVersion(
   const latestApi = versionedApis[versionedApis.length - 1];
   console.log(`\nGenerating code from latest (${latestApi.version}) with compatibility...`);
 
-  const files = generateAll(latestApi.parsed, config, outputDir, PROJECT_SRC_DIR);
+  const mergedParsed: typeof latestApi.parsed = {
+    ...latestApi.parsed,
+    componentSchemas: compatSchemas as Map<string, import("./config/types.js").ResolvedSchema>,
+  };
+
+  const files = generateAll(mergedParsed, config, outputDir, PROJECT_SRC_DIR);
   console.log(`  Generated ${files.length} files`);
 
   console.log("\nDone!");

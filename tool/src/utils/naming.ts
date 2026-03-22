@@ -124,8 +124,11 @@ export function inlineSchemaName(sourcePath: string): string {
 
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
-    // Skip structural path elements
-    if (skipParts.has(part)) continue;
+    const isLast = i === parts.length - 1;
+    // Skip structural path elements, but if the last segment is "properties"
+    // it may be an actual field name (e.g., DriveFile has a field called "properties"),
+    // so keep it to avoid name collision with the parent schema.
+    if (skipParts.has(part) && !(isLast && part === "properties")) continue;
     // Skip array indices like "oneOf[0]"
     if (/^\w+\[\d+\]$/.test(part)) continue;
     // Clean up the part name

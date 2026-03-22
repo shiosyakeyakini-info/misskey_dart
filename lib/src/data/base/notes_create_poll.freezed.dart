@@ -117,7 +117,7 @@ class _$NotesCreatePollCopyWithImpl<$Res>
 class _NotesCreatePoll implements NotesCreatePoll {
   const _NotesCreatePoll(
       {required final List<String> choices,
-      this.multiple,
+      this.multiple = false,
       this.expiresAt,
       this.expiredAfter})
       : _choices = choices;
@@ -133,6 +133,7 @@ class _NotesCreatePoll implements NotesCreatePoll {
   }
 
   @override
+  @JsonKey()
   final bool? multiple;
   @override
   final int? expiresAt;

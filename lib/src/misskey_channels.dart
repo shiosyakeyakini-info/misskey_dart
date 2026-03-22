@@ -38,7 +38,7 @@ class MisskeyChannels {
   }
 
   /// channels/my-favorites
-  Future<Iterable<CommunityChannel>> myFavorites() async {
+  Future<Iterable<CommunityChannel>> myFavorite() async {
     final response = await _apiService.post<List>("channels/my-favorites", {});
     return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }

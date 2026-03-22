@@ -2,14 +2,14 @@ import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyUsers {
   final MisskeyUsersGallery gallery;
-  final MisskeyUsersLists lists;
+  final MisskeyUsersLists list;
 
   final ApiService _apiService;
 
   MisskeyUsers({required ApiService apiService})
       :         _apiService = apiService,
         gallery = MisskeyUsersGallery(apiService: apiService),
-        lists = MisskeyUsersLists(apiService: apiService);
+        list = MisskeyUsersLists(apiService: apiService);
 
   /// users
   Future<Iterable<UserDetailed>> users(UsersRequest request) async {
