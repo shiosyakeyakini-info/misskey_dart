@@ -260,6 +260,7 @@ export interface EndpointInfo {
   responseType: "void" | "single" | "array" | "primitive" | "dynamic";
   responseStatusCode: string; // "200" or "204"
   hasRequestBody: boolean;
+  sinceVersion?: string; // set by multi-version mode for endpoints not in minimum_version
 }
 
 export interface ApiModuleInfo {

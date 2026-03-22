@@ -138,10 +138,25 @@ async function runMultiVersion(
   console.log(`  New schemas (after min version): ${newSchemas}`);
   console.log(`  New fields (forced nullable): ${newFields}`);
 
+  // Count new endpoints
+  let newEndpoints = 0;
+  for (const [, ep] of mergeResult.endpoints) {
+    if (!ep.inMinimumVersion) newEndpoints++;
+  }
+  console.log(`  New endpoints (after min version): ${newEndpoints}`);
+
   // Use the latest version's parsed API for endpoint info,
   // but with merged schema compatibility applied
   const latestApi = versionedApis[versionedApis.length - 1];
   console.log(`\nGenerating code from latest (${latestApi.version}) with compatibility...`);
+
+  // Annotate endpoints with version availability info
+  for (const ep of latestApi.parsed.endpoints) {
+    const availability = mergeResult.endpoints.get(ep.path);
+    if (availability && !availability.inMinimumVersion) {
+      ep.sinceVersion = availability.firstAppearedIn;
+    }
+  }
 
   const mergedParsed: typeof latestApi.parsed = {
     ...latestApi.parsed,

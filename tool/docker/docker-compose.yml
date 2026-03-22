@@ -10,7 +10,7 @@ services:
       redis:
         condition: service_healthy
     ports:
-      - "3000:3000"
+      - "${COLLECTOR_PORT:-3100}:3000"
     networks:
       - internal_network
       - external_network

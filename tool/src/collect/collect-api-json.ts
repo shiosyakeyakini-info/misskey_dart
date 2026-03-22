@@ -18,6 +18,7 @@ const VERSIONS_CONFIG = resolve(TOOL_ROOT, "config", "versions.yaml");
 
 const MAX_RETRIES = 30;
 const RETRY_INTERVAL_MS = 5000;
+const COLLECTOR_PORT = process.env.COLLECTOR_PORT ?? "3100";
 
 async function main() {
   const args = process.argv.slice(2);
@@ -72,7 +73,7 @@ async function collectApiJson(version: string, outputPath: string) {
   // Misskey auto-initializes the database on first start, so no separate init step is needed.
   console.log(`  Starting Misskey ${version}...`);
   exec(
-    `MISSKEY_VERSION=${version} docker compose up -d`,
+    `MISSKEY_VERSION=${version} COLLECTOR_PORT=${COLLECTOR_PORT} docker compose up -d`,
     DOCKER_DIR
   );
 
@@ -97,7 +98,7 @@ async function waitForServer(): Promise<void> {
   for (let i = 0; i < MAX_RETRIES; i++) {
     try {
       const result = execSync(
-        'curl -sf -X POST -H "Content-Type: application/json" -d "{}" http://localhost:3000/api/ping',
+        `curl -sf -X POST -H "Content-Type: application/json" -d "{}" http://localhost:${COLLECTOR_PORT}/api/ping`,
         {
           timeout: 5000,
           encoding: "utf-8",
@@ -116,7 +117,7 @@ async function waitForServer(): Promise<void> {
 }
 
 function fetchApiJson(): string {
-  return execSync("curl -sf http://localhost:3000/api.json", {
+  return execSync(`curl -sf http://localhost:${COLLECTOR_PORT}/api.json`, {
     timeout: 30000,
     encoding: "utf-8",
     maxBuffer: 10 * 1024 * 1024, // 10MB

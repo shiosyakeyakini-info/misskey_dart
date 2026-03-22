@@ -136,6 +136,11 @@ function generateMethod(
   const lines: string[] = [];
   const apiPath = endpoint.path.replace(/^\//, "");
 
+  // Add version availability comment for endpoints not in minimum version
+  if (endpoint.sinceVersion) {
+    lines.push(`  /// Available since Misskey ${endpoint.sinceVersion}`);
+  }
+
   // Determine return type
   let returnType: string;
   let responseClassName: string | undefined;
