@@ -5,17 +5,11 @@ part 'i_update_notification_recieve_config_receive_follow_request.freezed.dart';
 part 'i_update_notification_recieve_config_receive_follow_request.g.dart';
 
 @freezed
-abstract class IUpdateNotificationRecieveConfigReceiveFollowRequest
-    with _$IUpdateNotificationRecieveConfigReceiveFollowRequest {
+abstract class IUpdateNotificationRecieveConfigReceiveFollowRequest with _$IUpdateNotificationRecieveConfigReceiveFollowRequest {
   const factory IUpdateNotificationRecieveConfigReceiveFollowRequest({
-    @JsonKey(
-        unknownEnumValue:
-            IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown)
-    required IUpdateNotificationRecieveConfigReceiveFollowRequestType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigReceiveFollowRequestType.unknown) required IUpdateNotificationRecieveConfigReceiveFollowRequestType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigReceiveFollowRequest;
 
-  factory IUpdateNotificationRecieveConfigReceiveFollowRequest.fromJson(
-          Map<String, Object?> json) =>
-      _$IUpdateNotificationRecieveConfigReceiveFollowRequestFromJson(json);
+  factory IUpdateNotificationRecieveConfigReceiveFollowRequest.fromJson(Map<String, Object?> json) => _$IUpdateNotificationRecieveConfigReceiveFollowRequestFromJson(json);
 }

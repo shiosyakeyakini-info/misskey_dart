@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_list_request.freezed.dart';
 part 'clips_list_request.g.dart';
@@ -13,6 +14,5 @@ abstract class ClipsListRequest with _$ClipsListRequest {
     int? untilDate,
   }) = _ClipsListRequest;
 
-  factory ClipsListRequest.fromJson(Map<String, Object?> json) =>
-      _$ClipsListRequestFromJson(json);
+  factory ClipsListRequest.fromJson(Map<String, Object?> json) => _$ClipsListRequestFromJson(json);
 }

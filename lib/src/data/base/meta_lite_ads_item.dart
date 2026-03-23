@@ -16,6 +16,5 @@ abstract class MetaLiteAdsItem with _$MetaLiteAdsItem {
     bool? isSensitive,
   }) = _MetaLiteAdsItem;
 
-  factory MetaLiteAdsItem.fromJson(Map<String, Object?> json) =>
-      _$MetaLiteAdsItemFromJson(json);
+  factory MetaLiteAdsItem.fromJson(Map<String, Object?> json) => _$MetaLiteAdsItemFromJson(json);
 }

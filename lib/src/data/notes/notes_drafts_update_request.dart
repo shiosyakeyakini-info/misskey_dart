@@ -8,14 +8,12 @@ part 'notes_drafts_update_request.g.dart';
 abstract class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
   const factory NotesDraftsUpdateRequest({
     String? draftId,
-    @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
-    NotesDraftsUpdateVisibility? visibility,
+    @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     String? hashtag,
     bool? localOnly,
-    @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
-    NotesDraftsUpdateReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown) NotesDraftsUpdateReactionAcceptance? reactionAcceptance,
     String? replyId,
     String? renoteId,
     String? channelId,
@@ -26,6 +24,5 @@ abstract class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
     bool? isActuallyScheduled,
   }) = _NotesDraftsUpdateRequest;
 
-  factory NotesDraftsUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$NotesDraftsUpdateRequestFromJson(json);
+  factory NotesDraftsUpdateRequest.fromJson(Map<String, Object?> json) => _$NotesDraftsUpdateRequestFromJson(json);
 }

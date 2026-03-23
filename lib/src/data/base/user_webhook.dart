@@ -18,6 +18,5 @@ abstract class UserWebhook with _$UserWebhook {
     int? latestStatus,
   }) = _UserWebhook;
 
-  factory UserWebhook.fromJson(Map<String, Object?> json) =>
-      _$UserWebhookFromJson(json);
+  factory UserWebhook.fromJson(Map<String, Object?> json) => _$UserWebhookFromJson(json);
 }

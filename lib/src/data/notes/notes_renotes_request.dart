@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_renotes_request.freezed.dart';
 part 'notes_renotes_request.g.dart';
@@ -14,6 +15,5 @@ abstract class NotesRenotesRequest with _$NotesRenotesRequest {
     int? untilDate,
   }) = _NotesRenotesRequest;
 
-  factory NotesRenotesRequest.fromJson(Map<String, Object?> json) =>
-      _$NotesRenotesRequestFromJson(json);
+  factory NotesRenotesRequest.fromJson(Map<String, Object?> json) => _$NotesRenotesRequestFromJson(json);
 }

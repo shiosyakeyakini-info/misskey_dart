@@ -5,17 +5,11 @@ part 'admin_show_user_notification_recieve_config_achievement_earned.freezed.dar
 part 'admin_show_user_notification_recieve_config_achievement_earned.g.dart';
 
 @freezed
-abstract class AdminShowUserNotificationRecieveConfigAchievementEarned
-    with _$AdminShowUserNotificationRecieveConfigAchievementEarned {
+abstract class AdminShowUserNotificationRecieveConfigAchievementEarned with _$AdminShowUserNotificationRecieveConfigAchievementEarned {
   const factory AdminShowUserNotificationRecieveConfigAchievementEarned({
-    @JsonKey(
-        unknownEnumValue:
-            AdminShowUserNotificationRecieveConfigAchievementEarnedType.unknown)
-    required AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigAchievementEarnedType.unknown) required AdminShowUserNotificationRecieveConfigAchievementEarnedType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigAchievementEarned;
 
-  factory AdminShowUserNotificationRecieveConfigAchievementEarned.fromJson(
-          Map<String, Object?> json) =>
-      _$AdminShowUserNotificationRecieveConfigAchievementEarnedFromJson(json);
+  factory AdminShowUserNotificationRecieveConfigAchievementEarned.fromJson(Map<String, Object?> json) => _$AdminShowUserNotificationRecieveConfigAchievementEarnedFromJson(json);
 }

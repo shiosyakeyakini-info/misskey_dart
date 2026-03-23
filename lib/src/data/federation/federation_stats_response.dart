@@ -13,6 +13,5 @@ abstract class FederationStatsResponse with _$FederationStatsResponse {
     required double otherFollowingCount,
   }) = _FederationStatsResponse;
 
-  factory FederationStatsResponse.fromJson(Map<String, Object?> json) =>
-      _$FederationStatsResponseFromJson(json);
+  factory FederationStatsResponse.fromJson(Map<String, Object?> json) => _$FederationStatsResponseFromJson(json);
 }

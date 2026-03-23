@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i2fa_register_key_user.freezed.dart';
 part 'i2fa_register_key_user.g.dart';
@@ -11,6 +12,5 @@ abstract class I2faRegisterKeyUser with _$I2faRegisterKeyUser {
     required String displayName,
   }) = _I2faRegisterKeyUser;
 
-  factory I2faRegisterKeyUser.fromJson(Map<String, Object?> json) =>
-      _$I2faRegisterKeyUserFromJson(json);
+  factory I2faRegisterKeyUser.fromJson(Map<String, Object?> json) => _$I2faRegisterKeyUserFromJson(json);
 }

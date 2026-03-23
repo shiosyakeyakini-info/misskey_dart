@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'gallery_posts.freezed.dart';
 part 'gallery_posts.g.dart';
@@ -13,6 +14,5 @@ abstract class GalleryPosts with _$GalleryPosts {
     int? untilDate,
   }) = _GalleryPosts;
 
-  factory GalleryPosts.fromJson(Map<String, Object?> json) =>
-      _$GalleryPostsFromJson(json);
+  factory GalleryPosts.fromJson(Map<String, Object?> json) => _$GalleryPostsFromJson(json);
 }

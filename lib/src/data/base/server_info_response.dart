@@ -13,6 +13,5 @@ abstract class ServerInfoResponse with _$ServerInfoResponse {
     required ServerInfoFs fs,
   }) = _ServerInfoResponse;
 
-  factory ServerInfoResponse.fromJson(Map<String, Object?> json) =>
-      _$ServerInfoResponseFromJson(json);
+  factory ServerInfoResponse.fromJson(Map<String, Object?> json) => _$ServerInfoResponseFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_ap_request_response.freezed.dart';
 part 'charts_ap_request_response.g.dart';
@@ -11,6 +12,5 @@ abstract class ChartsApRequestResponse with _$ChartsApRequestResponse {
     required List<double> inboxReceived,
   }) = _ChartsApRequestResponse;
 
-  factory ChartsApRequestResponse.fromJson(Map<String, Object?> json) =>
-      _$ChartsApRequestResponseFromJson(json);
+  factory ChartsApRequestResponse.fromJson(Map<String, Object?> json) => _$ChartsApRequestResponseFromJson(json);
 }

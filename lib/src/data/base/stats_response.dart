@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'stats_response.freezed.dart';
 part 'stats_response.g.dart';
@@ -15,6 +16,5 @@ abstract class StatsResponse with _$StatsResponse {
     required int driveUsageRemote,
   }) = _StatsResponse;
 
-  factory StatsResponse.fromJson(Map<String, Object?> json) =>
-      _$StatsResponseFromJson(json);
+  factory StatsResponse.fromJson(Map<String, Object?> json) => _$StatsResponseFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_followers_request.freezed.dart';
 part 'users_followers_request.g.dart';
@@ -16,6 +17,5 @@ abstract class UsersFollowersRequest with _$UsersFollowersRequest {
     @Default(10) int? limit,
   }) = _UsersFollowersRequest;
 
-  factory UsersFollowersRequest.fromJson(Map<String, Object?> json) =>
-      _$UsersFollowersRequestFromJson(json);
+  factory UsersFollowersRequest.fromJson(Map<String, Object?> json) => _$UsersFollowersRequestFromJson(json);
 }

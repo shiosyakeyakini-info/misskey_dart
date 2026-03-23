@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'renote_mute_list_request.freezed.dart';
 part 'renote_mute_list_request.g.dart';
@@ -13,6 +14,5 @@ abstract class RenoteMuteListRequest with _$RenoteMuteListRequest {
     int? untilDate,
   }) = _RenoteMuteListRequest;
 
-  factory RenoteMuteListRequest.fromJson(Map<String, Object?> json) =>
-      _$RenoteMuteListRequestFromJson(json);
+  factory RenoteMuteListRequest.fromJson(Map<String, Object?> json) => _$RenoteMuteListRequestFromJson(json);
 }

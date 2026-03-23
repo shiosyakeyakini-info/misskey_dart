@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'fetch_rss_image.freezed.dart';
 part 'fetch_rss_image.g.dart';
@@ -11,6 +12,5 @@ abstract class FetchRssImage with _$FetchRssImage {
     String? title,
   }) = _FetchRssImage;
 
-  factory FetchRssImage.fromJson(Map<String, Object?> json) =>
-      _$FetchRssImageFromJson(json);
+  factory FetchRssImage.fromJson(Map<String, Object?> json) => _$FetchRssImageFromJson(json);
 }

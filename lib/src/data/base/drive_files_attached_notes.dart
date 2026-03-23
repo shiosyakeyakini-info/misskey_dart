@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_attached_notes.freezed.dart';
 part 'drive_files_attached_notes.g.dart';
@@ -14,6 +15,5 @@ abstract class DriveFilesAttachedNotes with _$DriveFilesAttachedNotes {
     required String fileId,
   }) = _DriveFilesAttachedNotes;
 
-  factory DriveFilesAttachedNotes.fromJson(Map<String, Object?> json) =>
-      _$DriveFilesAttachedNotesFromJson(json);
+  factory DriveFilesAttachedNotes.fromJson(Map<String, Object?> json) => _$DriveFilesAttachedNotesFromJson(json);
 }

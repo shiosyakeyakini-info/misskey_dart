@@ -14,6 +14,5 @@ abstract class SwRegister with _$SwRegister {
     required bool sendReadMessage,
   }) = _SwRegister;
 
-  factory SwRegister.fromJson(Map<String, Object?> json) =>
-      _$SwRegisterFromJson(json);
+  factory SwRegister.fromJson(Map<String, Object?> json) => _$SwRegisterFromJson(json);
 }

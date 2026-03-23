@@ -6,34 +6,30 @@ class MisskeyFollowing {
   final ApiService _apiService;
 
   MisskeyFollowing({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         requests = MisskeyFollowingRequests(apiService: apiService);
 
   /// following/create
   Future<UserLite> create(FollowingCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/create", request.toJson());
     return UserLite.fromJson(response);
   }
 
   /// following/delete
   Future<UserLite> delete(FollowingDeleteRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/delete", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/delete", request.toJson());
     return UserLite.fromJson(response);
   }
 
   /// following/invalidate
   Future<UserLite> invalidate(FollowingInvalidateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/invalidate", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/invalidate", request.toJson());
     return UserLite.fromJson(response);
   }
 
   /// following/update
   Future<UserLite> update(FollowingUpdateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/update", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/update", request.toJson());
     return UserLite.fromJson(response);
   }
 
@@ -41,9 +37,11 @@ class MisskeyFollowing {
   Future<void> updateAll(FollowingUpdateAllRequest request) async {
     await _apiService.post<void>("following/update-all", request.toJson());
   }
+
 }
 
 class MisskeyFollowingRequests {
+
   final ApiService _apiService;
 
   MisskeyFollowingRequests({required ApiService apiService})
@@ -56,18 +54,14 @@ class MisskeyFollowingRequests {
 
   /// following/requests/cancel
   Future<UserLite> cancel(FollowingRequestsCancelRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "following/requests/cancel", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("following/requests/cancel", request.toJson());
     return UserLite.fromJson(response);
   }
 
   /// following/requests/list
-  Future<Iterable<FollowingRequestsListItem>> list(
-      FollowingRequestsListRequest request) async {
-    final response = await _apiService.post<List>(
-        "following/requests/list", request.toJson());
-    return response.map(
-        (e) => FollowingRequestsListItem.fromJson(e as Map<String, dynamic>));
+  Future<Iterable<FollowingRequestsListItem>> list(FollowingRequestsListRequest request) async {
+    final response = await _apiService.post<List>("following/requests/list", request.toJson());
+    return response.map((e) => FollowingRequestsListItem.fromJson(e as Map<String, dynamic>));
   }
 
   /// following/requests/reject
@@ -76,11 +70,9 @@ class MisskeyFollowingRequests {
   }
 
   /// following/requests/sent
-  Future<Iterable<FollowingRequestsSentItem>> sent(
-      FollowingRequestsSentRequest request) async {
-    final response = await _apiService.post<List>(
-        "following/requests/sent", request.toJson());
-    return response.map(
-        (e) => FollowingRequestsSentItem.fromJson(e as Map<String, dynamic>));
+  Future<Iterable<FollowingRequestsSentItem>> sent(FollowingRequestsSentRequest request) async {
+    final response = await _apiService.post<List>("following/requests/sent", request.toJson());
+    return response.map((e) => FollowingRequestsSentItem.fromJson(e as Map<String, dynamic>));
   }
+
 }

@@ -50,6 +50,5 @@ abstract class MeDetailedOnly with _$MeDetailedOnly {
     List<MeDetailedOnlySecurityKeysListItem>? securityKeysList,
   }) = _MeDetailedOnly;
 
-  factory MeDetailedOnly.fromJson(Map<String, Object?> json) =>
-      _$MeDetailedOnlyFromJson(json);
+  factory MeDetailedOnly.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyFromJson(json);
 }

@@ -11,8 +11,7 @@ abstract class AdminRolesCreateRequest with _$AdminRolesCreateRequest {
     String? description,
     String? color,
     String? iconUrl,
-    @JsonKey(unknownEnumValue: AdminRolesCreateTarget.unknown)
-    AdminRolesCreateTarget? target,
+    @JsonKey(unknownEnumValue: AdminRolesCreateTarget.unknown) AdminRolesCreateTarget? target,
     Map<String, dynamic>? condFormula,
     bool? isPublic,
     bool? isModerator,
@@ -25,6 +24,5 @@ abstract class AdminRolesCreateRequest with _$AdminRolesCreateRequest {
     Map<String, dynamic>? policies,
   }) = _AdminRolesCreateRequest;
 
-  factory AdminRolesCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminRolesCreateRequestFromJson(json);
+  factory AdminRolesCreateRequest.fromJson(Map<String, Object?> json) => _$AdminRolesCreateRequestFromJson(json);
 }

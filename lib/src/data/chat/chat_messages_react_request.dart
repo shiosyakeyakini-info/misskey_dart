@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_messages_react_request.freezed.dart';
 part 'chat_messages_react_request.g.dart';
@@ -10,6 +11,5 @@ abstract class ChatMessagesReactRequest with _$ChatMessagesReactRequest {
     String? reaction,
   }) = _ChatMessagesReactRequest;
 
-  factory ChatMessagesReactRequest.fromJson(Map<String, Object?> json) =>
-      _$ChatMessagesReactRequestFromJson(json);
+  factory ChatMessagesReactRequest.fromJson(Map<String, Object?> json) => _$ChatMessagesReactRequestFromJson(json);
 }

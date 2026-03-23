@@ -7,12 +7,10 @@ part 'admin_queue_jobs_request.g.dart';
 @freezed
 abstract class AdminQueueJobsRequest with _$AdminQueueJobsRequest {
   const factory AdminQueueJobsRequest({
-    @JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown)
-    AdminQueueJobsQueue? queue,
+    @JsonKey(unknownEnumValue: AdminQueueJobsQueue.unknown) AdminQueueJobsQueue? queue,
     List<AdminQueueJobsStateItem>? state,
     String? search,
   }) = _AdminQueueJobsRequest;
 
-  factory AdminQueueJobsRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueJobsRequestFromJson(json);
+  factory AdminQueueJobsRequest.fromJson(Map<String, Object?> json) => _$AdminQueueJobsRequestFromJson(json);
 }

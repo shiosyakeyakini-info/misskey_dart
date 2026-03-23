@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_delete_request.freezed.dart';
 part 'clips_delete_request.g.dart';
@@ -9,6 +10,5 @@ abstract class ClipsDeleteRequest with _$ClipsDeleteRequest {
     String? clipId,
   }) = _ClipsDeleteRequest;
 
-  factory ClipsDeleteRequest.fromJson(Map<String, Object?> json) =>
-      _$ClipsDeleteRequestFromJson(json);
+  factory ClipsDeleteRequest.fromJson(Map<String, Object?> json) => _$ClipsDeleteRequestFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_page_likes_request.freezed.dart';
 part 'i_page_likes_request.g.dart';
@@ -13,6 +14,5 @@ abstract class IPageLikesRequest with _$IPageLikesRequest {
     int? untilDate,
   }) = _IPageLikesRequest;
 
-  factory IPageLikesRequest.fromJson(Map<String, Object?> json) =>
-      _$IPageLikesRequestFromJson(json);
+  factory IPageLikesRequest.fromJson(Map<String, Object?> json) => _$IPageLikesRequestFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'queue_job.freezed.dart';
 part 'queue_job.g.dart';
@@ -23,6 +24,5 @@ abstract class QueueJob with _$QueueJob {
     required bool isFailed,
   }) = _QueueJob;
 
-  factory QueueJob.fromJson(Map<String, Object?> json) =>
-      _$QueueJobFromJson(json);
+  factory QueueJob.fromJson(Map<String, Object?> json) => _$QueueJobFromJson(json);
 }

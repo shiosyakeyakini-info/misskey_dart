@@ -19,6 +19,5 @@ abstract class ChatMessageLite with _$ChatMessageLite {
     required List<ChatMessageLiteReactionsItem> reactions,
   }) = _ChatMessageLite;
 
-  factory ChatMessageLite.fromJson(Map<String, Object?> json) =>
-      _$ChatMessageLiteFromJson(json);
+  factory ChatMessageLite.fromJson(Map<String, Object?> json) => _$ChatMessageLiteFromJson(json);
 }

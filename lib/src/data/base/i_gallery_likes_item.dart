@@ -11,6 +11,5 @@ abstract class IGalleryLikesItem with _$IGalleryLikesItem {
     required GalleryPost post,
   }) = _IGalleryLikesItem;
 
-  factory IGalleryLikesItem.fromJson(Map<String, Object?> json) =>
-      _$IGalleryLikesItemFromJson(json);
+  factory IGalleryLikesItem.fromJson(Map<String, Object?> json) => _$IGalleryLikesItemFromJson(json);
 }

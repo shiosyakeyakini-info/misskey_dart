@@ -7,10 +7,8 @@ part 'admin_queue_queue_stats_request.g.dart';
 @freezed
 abstract class AdminQueueQueueStatsRequest with _$AdminQueueQueueStatsRequest {
   const factory AdminQueueQueueStatsRequest({
-    @JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown)
-    AdminQueueQueueStatsQueue? queue,
+    @JsonKey(unknownEnumValue: AdminQueueQueueStatsQueue.unknown) AdminQueueQueueStatsQueue? queue,
   }) = _AdminQueueQueueStatsRequest;
 
-  factory AdminQueueQueueStatsRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueQueueStatsRequestFromJson(json);
+  factory AdminQueueQueueStatsRequest.fromJson(Map<String, Object?> json) => _$AdminQueueQueueStatsRequestFromJson(json);
 }

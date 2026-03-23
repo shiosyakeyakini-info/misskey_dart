@@ -15,6 +15,5 @@ abstract class ChatRoomMembership with _$ChatRoomMembership {
     ChatRoom? room,
   }) = _ChatRoomMembership;
 
-  factory ChatRoomMembership.fromJson(Map<String, Object?> json) =>
-      _$ChatRoomMembershipFromJson(json);
+  factory ChatRoomMembership.fromJson(Map<String, Object?> json) => _$ChatRoomMembershipFromJson(json);
 }

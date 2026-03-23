@@ -22,6 +22,5 @@ abstract class GalleryPost with _$GalleryPost {
     bool? isLiked,
   }) = _GalleryPost;
 
-  factory GalleryPost.fromJson(Map<String, Object?> json) =>
-      _$GalleryPostFromJson(json);
+  factory GalleryPost.fromJson(Map<String, Object?> json) => _$GalleryPostFromJson(json);
 }

@@ -5,11 +5,9 @@ part 'admin_queue_queue_stats_response.freezed.dart';
 part 'admin_queue_queue_stats_response.g.dart';
 
 @freezed
-abstract class AdminQueueQueueStatsResponse
-    with _$AdminQueueQueueStatsResponse {
+abstract class AdminQueueQueueStatsResponse with _$AdminQueueQueueStatsResponse {
   const factory AdminQueueQueueStatsResponse({
-    @JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown)
-    required AdminQueueQueueStatsName name,
+    @JsonKey(unknownEnumValue: AdminQueueQueueStatsName.unknown) required AdminQueueQueueStatsName name,
     required String qualifiedName,
     required Map<String, double> counts,
     required bool isPaused,
@@ -17,6 +15,5 @@ abstract class AdminQueueQueueStatsResponse
     required AdminQueueQueueStatsDb db,
   }) = _AdminQueueQueueStatsResponse;
 
-  factory AdminQueueQueueStatsResponse.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueQueueStatsResponseFromJson(json);
+  factory AdminQueueQueueStatsResponse.fromJson(Map<String, Object?> json) => _$AdminQueueQueueStatsResponseFromJson(json);
 }

@@ -14,12 +14,9 @@ abstract class AdminDriveFiles with _$AdminDriveFiles {
     int? untilDate,
     String? userId,
     String? type,
-    @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown)
-    @Default(AdminDriveFilesOrigin.local)
-    AdminDriveFilesOrigin? origin,
+    @JsonKey(unknownEnumValue: AdminDriveFilesOrigin.unknown) @Default(AdminDriveFilesOrigin.local) AdminDriveFilesOrigin? origin,
     @Default(null) String? hostname,
   }) = _AdminDriveFiles;
 
-  factory AdminDriveFiles.fromJson(Map<String, Object?> json) =>
-      _$AdminDriveFilesFromJson(json);
+  factory AdminDriveFiles.fromJson(Map<String, Object?> json) => _$AdminDriveFilesFromJson(json);
 }

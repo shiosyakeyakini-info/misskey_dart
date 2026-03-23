@@ -166,6 +166,5 @@ sealed class Notification with _$Notification {
     @DateTimeConverter() DateTime? createdAt,
   }) = NotificationUnknown;
 
-  factory Notification.fromJson(Map<String, Object?> json) =>
-      _$NotificationFromJson(json);
+  factory Notification.fromJson(Map<String, Object?> json) => _$NotificationFromJson(json);
 }

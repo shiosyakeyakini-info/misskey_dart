@@ -15,6 +15,5 @@ abstract class ChatRoomInvitation with _$ChatRoomInvitation {
     required ChatRoom room,
   }) = _ChatRoomInvitation;
 
-  factory ChatRoomInvitation.fromJson(Map<String, Object?> json) =>
-      _$ChatRoomInvitationFromJson(json);
+  factory ChatRoomInvitation.fromJson(Map<String, Object?> json) => _$ChatRoomInvitationFromJson(json);
 }

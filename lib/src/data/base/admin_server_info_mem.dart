@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_server_info_mem.freezed.dart';
 part 'admin_server_info_mem.g.dart';
@@ -9,6 +10,5 @@ abstract class AdminServerInfoMem with _$AdminServerInfoMem {
     required double total,
   }) = _AdminServerInfoMem;
 
-  factory AdminServerInfoMem.fromJson(Map<String, Object?> json) =>
-      _$AdminServerInfoMemFromJson(json);
+  factory AdminServerInfoMem.fromJson(Map<String, Object?> json) => _$AdminServerInfoMemFromJson(json);
 }

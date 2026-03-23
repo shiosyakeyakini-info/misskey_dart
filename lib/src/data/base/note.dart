@@ -19,8 +19,7 @@ abstract class Note with _$Note {
     Note? reply,
     Note? renote,
     bool? isHidden,
-    @JsonKey(unknownEnumValue: NoteVisibility.unknown)
-    required NoteVisibility visibility,
+    @JsonKey(unknownEnumValue: NoteVisibility.unknown) required NoteVisibility visibility,
     @Default([]) List<String>? mentions,
     @Default([]) List<String>? visibleUserIds,
     List<String>? fileIds,
@@ -31,8 +30,7 @@ abstract class Note with _$Note {
     String? channelId,
     NoteChannelInfo? channel,
     bool? localOnly,
-    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
-    ReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,
     @EmojisConverter() required Map<String, String> reactionEmojis,
     required Map<String, dynamic> reactions,
     required int reactionCount,

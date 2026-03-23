@@ -1,6 +1,7 @@
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyRenoteMute {
+
   final ApiService _apiService;
 
   MisskeyRenoteMute({required ApiService apiService})
@@ -18,9 +19,8 @@ class MisskeyRenoteMute {
 
   /// renote-mute/list
   Future<Iterable<RenoteMuting>> list(RenoteMuteListRequest request) async {
-    final response =
-        await _apiService.post<List>("renote-mute/list", request.toJson());
-    return response
-        .map((e) => RenoteMuting.fromJson(e as Map<String, dynamic>));
+    final response = await _apiService.post<List>("renote-mute/list", request.toJson());
+    return response.map((e) => RenoteMuting.fromJson(e as Map<String, dynamic>));
   }
+
 }

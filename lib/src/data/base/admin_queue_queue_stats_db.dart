@@ -8,8 +8,7 @@ part 'admin_queue_queue_stats_db.g.dart';
 abstract class AdminQueueQueueStatsDb with _$AdminQueueQueueStatsDb {
   const factory AdminQueueQueueStatsDb({
     required String version,
-    @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown)
-    required AdminQueueQueueStatsDbMode mode,
+    @JsonKey(unknownEnumValue: AdminQueueQueueStatsDbMode.unknown) required AdminQueueQueueStatsDbMode mode,
     required String runId,
     required String processId,
     required double port,
@@ -19,6 +18,5 @@ abstract class AdminQueueQueueStatsDb with _$AdminQueueQueueStatsDb {
     required AdminQueueQueueStatsDbClients clients,
   }) = _AdminQueueQueueStatsDb;
 
-  factory AdminQueueQueueStatsDb.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueQueueStatsDbFromJson(json);
+  factory AdminQueueQueueStatsDb.fromJson(Map<String, Object?> json) => _$AdminQueueQueueStatsDbFromJson(json);
 }

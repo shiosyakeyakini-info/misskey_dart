@@ -9,11 +9,8 @@ abstract class AdminRelaysListItem with _$AdminRelaysListItem {
   const factory AdminRelaysListItem({
     required String id,
     @UriConverter() required Uri inbox,
-    @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown)
-    @Default(AdminRelaysListStatus.requesting)
-    AdminRelaysListStatus status,
+    @JsonKey(unknownEnumValue: AdminRelaysListStatus.unknown) @Default(AdminRelaysListStatus.requesting) AdminRelaysListStatus status,
   }) = _AdminRelaysListItem;
 
-  factory AdminRelaysListItem.fromJson(Map<String, Object?> json) =>
-      _$AdminRelaysListItemFromJson(json);
+  factory AdminRelaysListItem.fromJson(Map<String, Object?> json) => _$AdminRelaysListItemFromJson(json);
 }

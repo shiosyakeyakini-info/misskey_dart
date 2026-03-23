@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_followed.freezed.dart';
 part 'channels_followed.g.dart';
@@ -13,6 +14,5 @@ abstract class ChannelsFollowed with _$ChannelsFollowed {
     @Default(5) int? limit,
   }) = _ChannelsFollowed;
 
-  factory ChannelsFollowed.fromJson(Map<String, Object?> json) =>
-      _$ChannelsFollowedFromJson(json);
+  factory ChannelsFollowed.fromJson(Map<String, Object?> json) => _$ChannelsFollowedFromJson(json);
 }

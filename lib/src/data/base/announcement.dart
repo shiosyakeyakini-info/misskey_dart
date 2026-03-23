@@ -13,16 +13,13 @@ abstract class Announcement with _$Announcement {
     required String text,
     required String title,
     String? imageUrl,
-    @JsonKey(unknownEnumValue: AnnouncementIcon.unknown)
-    required AnnouncementIcon icon,
-    @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown)
-    required AnnouncementDisplay display,
+    @JsonKey(unknownEnumValue: AnnouncementIcon.unknown) required AnnouncementIcon icon,
+    @JsonKey(unknownEnumValue: AnnouncementDisplay.unknown) required AnnouncementDisplay display,
     required bool needConfirmationToRead,
     required bool silence,
     required bool forYou,
     bool? isRead,
   }) = _Announcement;
 
-  factory Announcement.fromJson(Map<String, Object?> json) =>
-      _$AnnouncementFromJson(json);
+  factory Announcement.fromJson(Map<String, Object?> json) => _$AnnouncementFromJson(json);
 }

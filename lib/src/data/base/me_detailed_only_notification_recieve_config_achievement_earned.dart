@@ -5,18 +5,11 @@ part 'me_detailed_only_notification_recieve_config_achievement_earned.freezed.da
 part 'me_detailed_only_notification_recieve_config_achievement_earned.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigAchievementEarned
-    with _$MeDetailedOnlyNotificationRecieveConfigAchievementEarned {
+abstract class MeDetailedOnlyNotificationRecieveConfigAchievementEarned with _$MeDetailedOnlyNotificationRecieveConfigAchievementEarned {
   const factory MeDetailedOnlyNotificationRecieveConfigAchievementEarned({
-    @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType
-                .unknown)
-    required MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType.unknown) required MeDetailedOnlyNotificationRecieveConfigAchievementEarnedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigAchievementEarned;
 
-  factory MeDetailedOnlyNotificationRecieveConfigAchievementEarned.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigAchievementEarned.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigAchievementEarnedFromJson(json);
 }

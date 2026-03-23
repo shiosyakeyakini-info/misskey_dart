@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'fetch_external_resources.freezed.dart';
 part 'fetch_external_resources.g.dart';
@@ -10,6 +11,5 @@ abstract class FetchExternalResources with _$FetchExternalResources {
     required String data,
   }) = _FetchExternalResources;
 
-  factory FetchExternalResources.fromJson(Map<String, Object?> json) =>
-      _$FetchExternalResourcesFromJson(json);
+  factory FetchExternalResources.fromJson(Map<String, Object?> json) => _$FetchExternalResourcesFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_folders_update.freezed.dart';
 part 'drive_folders_update.g.dart';
@@ -11,6 +12,5 @@ abstract class DriveFoldersUpdate with _$DriveFoldersUpdate {
     String? parentId,
   }) = _DriveFoldersUpdate;
 
-  factory DriveFoldersUpdate.fromJson(Map<String, Object?> json) =>
-      _$DriveFoldersUpdateFromJson(json);
+  factory DriveFoldersUpdate.fromJson(Map<String, Object?> json) => _$DriveFoldersUpdateFromJson(json);
 }

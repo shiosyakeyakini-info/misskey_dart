@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'sw_unregister_request.freezed.dart';
 part 'sw_unregister_request.g.dart';
@@ -9,6 +10,5 @@ abstract class SwUnregisterRequest with _$SwUnregisterRequest {
     String? endpoint,
   }) = _SwUnregisterRequest;
 
-  factory SwUnregisterRequest.fromJson(Map<String, Object?> json) =>
-      _$SwUnregisterRequestFromJson(json);
+  factory SwUnregisterRequest.fromJson(Map<String, Object?> json) => _$SwUnregisterRequestFromJson(json);
 }

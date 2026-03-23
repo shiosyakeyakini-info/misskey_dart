@@ -47,6 +47,5 @@ abstract class RolePolicies with _$RolePolicies {
     required bool watermarkAvailable,
   }) = _RolePolicies;
 
-  factory RolePolicies.fromJson(Map<String, Object?> json) =>
-      _$RolePoliciesFromJson(json);
+  factory RolePolicies.fromJson(Map<String, Object?> json) => _$RolePoliciesFromJson(json);
 }

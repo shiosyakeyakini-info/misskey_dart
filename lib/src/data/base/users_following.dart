@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_following.freezed.dart';
 part 'users_following.g.dart';
@@ -14,6 +15,5 @@ abstract class UsersFollowing with _$UsersFollowing {
     String? birthday,
   }) = _UsersFollowing;
 
-  factory UsersFollowing.fromJson(Map<String, Object?> json) =>
-      _$UsersFollowingFromJson(json);
+  factory UsersFollowing.fromJson(Map<String, Object?> json) => _$UsersFollowingFromJson(json);
 }

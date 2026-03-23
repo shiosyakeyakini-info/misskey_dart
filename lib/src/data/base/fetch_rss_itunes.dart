@@ -16,6 +16,5 @@ abstract class FetchRssItunes with _$FetchRssItunes {
     List<String>? keywords,
   }) = _FetchRssItunes;
 
-  factory FetchRssItunes.fromJson(Map<String, Object?> json) =>
-      _$FetchRssItunesFromJson(json);
+  factory FetchRssItunes.fromJson(Map<String, Object?> json) => _$FetchRssItunesFromJson(json);
 }

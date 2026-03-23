@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_mentions_request.freezed.dart';
 part 'notes_mentions_request.g.dart';
@@ -15,6 +16,5 @@ abstract class NotesMentionsRequest with _$NotesMentionsRequest {
     String? visibility,
   }) = _NotesMentionsRequest;
 
-  factory NotesMentionsRequest.fromJson(Map<String, Object?> json) =>
-      _$NotesMentionsRequestFromJson(json);
+  factory NotesMentionsRequest.fromJson(Map<String, Object?> json) => _$NotesMentionsRequestFromJson(json);
 }

@@ -11,6 +11,5 @@ abstract class AdminQueueQueueStatsMetrics with _$AdminQueueQueueStatsMetrics {
     required QueueMetrics failed,
   }) = _AdminQueueQueueStatsMetrics;
 
-  factory AdminQueueQueueStatsMetrics.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueQueueStatsMetricsFromJson(json);
+  factory AdminQueueQueueStatsMetrics.fromJson(Map<String, Object?> json) => _$AdminQueueQueueStatsMetricsFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_search_request.freezed.dart';
 part 'notes_search_request.g.dart';
@@ -18,6 +19,5 @@ abstract class NotesSearchRequest with _$NotesSearchRequest {
     @Default(null) String? channelId,
   }) = _NotesSearchRequest;
 
-  factory NotesSearchRequest.fromJson(Map<String, Object?> json) =>
-      _$NotesSearchRequestFromJson(json);
+  factory NotesSearchRequest.fromJson(Map<String, Object?> json) => _$NotesSearchRequestFromJson(json);
 }

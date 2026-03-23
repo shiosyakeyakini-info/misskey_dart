@@ -12,6 +12,5 @@ abstract class QueueMetrics with _$QueueMetrics {
     required double count,
   }) = _QueueMetrics;
 
-  factory QueueMetrics.fromJson(Map<String, Object?> json) =>
-      _$QueueMetricsFromJson(json);
+  factory QueueMetrics.fromJson(Map<String, Object?> json) => _$QueueMetricsFromJson(json);
 }

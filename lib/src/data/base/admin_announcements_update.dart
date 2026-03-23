@@ -11,16 +11,13 @@ abstract class AdminAnnouncementsUpdate with _$AdminAnnouncementsUpdate {
     String? title,
     String? text,
     String? imageUrl,
-    @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown)
-    AdminAnnouncementsUpdateIcon? icon,
-    @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown)
-    AdminAnnouncementsUpdateDisplay? display,
+    @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateIcon.unknown) AdminAnnouncementsUpdateIcon? icon,
+    @JsonKey(unknownEnumValue: AdminAnnouncementsUpdateDisplay.unknown) AdminAnnouncementsUpdateDisplay? display,
     bool? forExistingUsers,
     bool? silence,
     bool? needConfirmationToRead,
     bool? isActive,
   }) = _AdminAnnouncementsUpdate;
 
-  factory AdminAnnouncementsUpdate.fromJson(Map<String, Object?> json) =>
-      _$AdminAnnouncementsUpdateFromJson(json);
+  factory AdminAnnouncementsUpdate.fromJson(Map<String, Object?> json) => _$AdminAnnouncementsUpdateFromJson(json);
 }

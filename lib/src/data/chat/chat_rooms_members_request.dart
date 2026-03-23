@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_rooms_members_request.freezed.dart';
 part 'chat_rooms_members_request.g.dart';
@@ -14,6 +15,5 @@ abstract class ChatRoomsMembersRequest with _$ChatRoomsMembersRequest {
     int? untilDate,
   }) = _ChatRoomsMembersRequest;
 
-  factory ChatRoomsMembersRequest.fromJson(Map<String, Object?> json) =>
-      _$ChatRoomsMembersRequestFromJson(json);
+  factory ChatRoomsMembersRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsMembersRequestFromJson(json);
 }

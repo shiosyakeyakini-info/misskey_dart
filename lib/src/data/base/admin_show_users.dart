@@ -9,18 +9,12 @@ abstract class AdminShowUsers with _$AdminShowUsers {
   const factory AdminShowUsers({
     @Default(10) int? limit,
     @Default(0) int? offset,
-    @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown)
-    AdminShowUsersSort? sort,
-    @JsonKey(unknownEnumValue: AdminShowUsersState.unknown)
-    @Default(AdminShowUsersState.all)
-    AdminShowUsersState? state,
-    @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown)
-    @Default(AdminShowUsersOrigin.combined)
-    AdminShowUsersOrigin? origin,
+    @JsonKey(unknownEnumValue: AdminShowUsersSort.unknown) AdminShowUsersSort? sort,
+    @JsonKey(unknownEnumValue: AdminShowUsersState.unknown) @Default(AdminShowUsersState.all) AdminShowUsersState? state,
+    @JsonKey(unknownEnumValue: AdminShowUsersOrigin.unknown) @Default(AdminShowUsersOrigin.combined) AdminShowUsersOrigin? origin,
     @Default(null) String? username,
     @Default(null) String? hostname,
   }) = _AdminShowUsers;
 
-  factory AdminShowUsers.fromJson(Map<String, Object?> json) =>
-      _$AdminShowUsersFromJson(json);
+  factory AdminShowUsers.fromJson(Map<String, Object?> json) => _$AdminShowUsersFromJson(json);
 }

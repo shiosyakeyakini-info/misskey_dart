@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'note_draft_channel.freezed.dart';
 part 'note_draft_channel.g.dart';
@@ -14,6 +15,5 @@ abstract class NoteDraftChannel with _$NoteDraftChannel {
     String? userId,
   }) = _NoteDraftChannel;
 
-  factory NoteDraftChannel.fromJson(Map<String, Object?> json) =>
-      _$NoteDraftChannelFromJson(json);
+  factory NoteDraftChannel.fromJson(Map<String, Object?> json) => _$NoteDraftChannelFromJson(json);
 }

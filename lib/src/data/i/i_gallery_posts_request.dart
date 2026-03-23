@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_gallery_posts_request.freezed.dart';
 part 'i_gallery_posts_request.g.dart';
@@ -13,6 +14,5 @@ abstract class IGalleryPostsRequest with _$IGalleryPostsRequest {
     int? untilDate,
   }) = _IGalleryPostsRequest;
 
-  factory IGalleryPostsRequest.fromJson(Map<String, Object?> json) =>
-      _$IGalleryPostsRequestFromJson(json);
+  factory IGalleryPostsRequest.fromJson(Map<String, Object?> json) => _$IGalleryPostsRequestFromJson(json);
 }

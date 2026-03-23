@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'roles_users.freezed.dart';
 part 'roles_users.g.dart';
@@ -14,6 +15,5 @@ abstract class RolesUsers with _$RolesUsers {
     @Default(10) int? limit,
   }) = _RolesUsers;
 
-  factory RolesUsers.fromJson(Map<String, Object?> json) =>
-      _$RolesUsersFromJson(json);
+  factory RolesUsers.fromJson(Map<String, Object?> json) => _$RolesUsersFromJson(json);
 }

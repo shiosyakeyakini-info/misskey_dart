@@ -20,6 +20,5 @@ abstract class PagesUpdate with _$PagesUpdate {
     bool? hideTitleWhenPinned,
   }) = _PagesUpdate;
 
-  factory PagesUpdate.fromJson(Map<String, Object?> json) =>
-      _$PagesUpdateFromJson(json);
+  factory PagesUpdate.fromJson(Map<String, Object?> json) => _$PagesUpdateFromJson(json);
 }

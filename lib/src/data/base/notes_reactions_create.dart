@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_reactions_create.freezed.dart';
 part 'notes_reactions_create.g.dart';
@@ -10,6 +11,5 @@ abstract class NotesReactionsCreate with _$NotesReactionsCreate {
     required String reaction,
   }) = _NotesReactionsCreate;
 
-  factory NotesReactionsCreate.fromJson(Map<String, Object?> json) =>
-      _$NotesReactionsCreateFromJson(json);
+  factory NotesReactionsCreate.fromJson(Map<String, Object?> json) => _$NotesReactionsCreateFromJson(json);
 }

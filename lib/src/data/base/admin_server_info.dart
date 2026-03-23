@@ -17,6 +17,5 @@ abstract class AdminServerInfo with _$AdminServerInfo {
     required AdminServerInfoNet net,
   }) = _AdminServerInfo;
 
-  factory AdminServerInfo.fromJson(Map<String, Object?> json) =>
-      _$AdminServerInfoFromJson(json);
+  factory AdminServerInfo.fromJson(Map<String, Object?> json) => _$AdminServerInfoFromJson(json);
 }

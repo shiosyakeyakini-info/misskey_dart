@@ -22,6 +22,5 @@ abstract class AntennasUpdateRequest with _$AntennasUpdateRequest {
     bool? excludeNotesInSensitiveChannel,
   }) = _AntennasUpdateRequest;
 
-  factory AntennasUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$AntennasUpdateRequestFromJson(json);
+  factory AntennasUpdateRequest.fromJson(Map<String, Object?> json) => _$AntennasUpdateRequestFromJson(json);
 }

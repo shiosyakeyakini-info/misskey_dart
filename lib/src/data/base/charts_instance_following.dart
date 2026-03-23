@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_instance_following.freezed.dart';
 part 'charts_instance_following.g.dart';
@@ -11,6 +12,5 @@ abstract class ChartsInstanceFollowing with _$ChartsInstanceFollowing {
     required List<double> dec,
   }) = _ChartsInstanceFollowing;
 
-  factory ChartsInstanceFollowing.fromJson(Map<String, Object?> json) =>
-      _$ChartsInstanceFollowingFromJson(json);
+  factory ChartsInstanceFollowing.fromJson(Map<String, Object?> json) => _$ChartsInstanceFollowingFromJson(json);
 }

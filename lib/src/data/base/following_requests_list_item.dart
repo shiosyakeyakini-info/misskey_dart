@@ -12,6 +12,5 @@ abstract class FollowingRequestsListItem with _$FollowingRequestsListItem {
     required UserLite followee,
   }) = _FollowingRequestsListItem;
 
-  factory FollowingRequestsListItem.fromJson(Map<String, Object?> json) =>
-      _$FollowingRequestsListItemFromJson(json);
+  factory FollowingRequestsListItem.fromJson(Map<String, Object?> json) => _$FollowingRequestsListItemFromJson(json);
 }

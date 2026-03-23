@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_drive_local.freezed.dart';
 part 'charts_drive_local.g.dart';
@@ -12,6 +13,5 @@ abstract class ChartsDriveLocal with _$ChartsDriveLocal {
     required List<double> decSize,
   }) = _ChartsDriveLocal;
 
-  factory ChartsDriveLocal.fromJson(Map<String, Object?> json) =>
-      _$ChartsDriveLocalFromJson(json);
+  factory ChartsDriveLocal.fromJson(Map<String, Object?> json) => _$ChartsDriveLocalFromJson(json);
 }

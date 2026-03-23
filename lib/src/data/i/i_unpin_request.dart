@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_unpin_request.freezed.dart';
 part 'i_unpin_request.g.dart';
@@ -9,6 +10,5 @@ abstract class IUnpinRequest with _$IUnpinRequest {
     String? noteId,
   }) = _IUnpinRequest;
 
-  factory IUnpinRequest.fromJson(Map<String, Object?> json) =>
-      _$IUnpinRequestFromJson(json);
+  factory IUnpinRequest.fromJson(Map<String, Object?> json) => _$IUnpinRequestFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'flash_my_request.freezed.dart';
 part 'flash_my_request.g.dart';
@@ -13,6 +14,5 @@ abstract class FlashMyRequest with _$FlashMyRequest {
     int? untilDate,
   }) = _FlashMyRequest;
 
-  factory FlashMyRequest.fromJson(Map<String, Object?> json) =>
-      _$FlashMyRequestFromJson(json);
+  factory FlashMyRequest.fromJson(Map<String, Object?> json) => _$FlashMyRequestFromJson(json);
 }

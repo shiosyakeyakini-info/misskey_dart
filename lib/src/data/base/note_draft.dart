@@ -17,8 +17,7 @@ abstract class NoteDraft with _$NoteDraft {
     String? renoteId,
     Note? reply,
     Note? renote,
-    @JsonKey(unknownEnumValue: NoteVisibility.unknown)
-    required NoteVisibility visibility,
+    @JsonKey(unknownEnumValue: NoteVisibility.unknown) required NoteVisibility visibility,
     required List<String> visibleUserIds,
     required List<String> fileIds,
     List<DriveFile>? files,
@@ -27,12 +26,10 @@ abstract class NoteDraft with _$NoteDraft {
     String? channelId,
     NoteDraftChannel? channel,
     required bool localOnly,
-    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
-    ReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,
     double? scheduledAt,
     required bool isActuallyScheduled,
   }) = _NoteDraft;
 
-  factory NoteDraft.fromJson(Map<String, Object?> json) =>
-      _$NoteDraftFromJson(json);
+  factory NoteDraft.fromJson(Map<String, Object?> json) => _$NoteDraftFromJson(json);
 }

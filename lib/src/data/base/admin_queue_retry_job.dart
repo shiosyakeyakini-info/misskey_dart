@@ -7,11 +7,9 @@ part 'admin_queue_retry_job.g.dart';
 @freezed
 abstract class AdminQueueRetryJob with _$AdminQueueRetryJob {
   const factory AdminQueueRetryJob({
-    @JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown)
-    required AdminQueueRetryJobQueue queue,
+    @JsonKey(unknownEnumValue: AdminQueueRetryJobQueue.unknown) required AdminQueueRetryJobQueue queue,
     required String jobId,
   }) = _AdminQueueRetryJob;
 
-  factory AdminQueueRetryJob.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueRetryJobFromJson(json);
+  factory AdminQueueRetryJob.fromJson(Map<String, Object?> json) => _$AdminQueueRetryJobFromJson(json);
 }

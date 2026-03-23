@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'blocking_list.freezed.dart';
 part 'blocking_list.g.dart';
@@ -13,6 +14,5 @@ abstract class BlockingList with _$BlockingList {
     int? untilDate,
   }) = _BlockingList;
 
-  factory BlockingList.fromJson(Map<String, Object?> json) =>
-      _$BlockingListFromJson(json);
+  factory BlockingList.fromJson(Map<String, Object?> json) => _$BlockingListFromJson(json);
 }

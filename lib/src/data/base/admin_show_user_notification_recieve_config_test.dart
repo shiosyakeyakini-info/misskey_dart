@@ -5,17 +5,11 @@ part 'admin_show_user_notification_recieve_config_test.freezed.dart';
 part 'admin_show_user_notification_recieve_config_test.g.dart';
 
 @freezed
-abstract class AdminShowUserNotificationRecieveConfigTest
-    with _$AdminShowUserNotificationRecieveConfigTest {
+abstract class AdminShowUserNotificationRecieveConfigTest with _$AdminShowUserNotificationRecieveConfigTest {
   const factory AdminShowUserNotificationRecieveConfigTest({
-    @JsonKey(
-        unknownEnumValue:
-            AdminShowUserNotificationRecieveConfigTestType.unknown)
-    required AdminShowUserNotificationRecieveConfigTestType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigTestType.unknown) required AdminShowUserNotificationRecieveConfigTestType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigTest;
 
-  factory AdminShowUserNotificationRecieveConfigTest.fromJson(
-          Map<String, Object?> json) =>
-      _$AdminShowUserNotificationRecieveConfigTestFromJson(json);
+  factory AdminShowUserNotificationRecieveConfigTest.fromJson(Map<String, Object?> json) => _$AdminShowUserNotificationRecieveConfigTestFromJson(json);
 }

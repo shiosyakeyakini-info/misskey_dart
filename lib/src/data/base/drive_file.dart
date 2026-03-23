@@ -25,6 +25,5 @@ abstract class DriveFile with _$DriveFile {
     UserLite? user,
   }) = _DriveFile;
 
-  factory DriveFile.fromJson(Map<String, Object?> json) =>
-      _$DriveFileFromJson(json);
+  factory DriveFile.fromJson(Map<String, Object?> json) => _$DriveFileFromJson(json);
 }

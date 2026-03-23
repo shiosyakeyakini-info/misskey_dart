@@ -16,8 +16,7 @@ abstract class FederationInstance with _$FederationInstance {
     required int followersCount,
     required bool isNotResponding,
     required bool isSuspended,
-    @JsonKey(unknownEnumValue: FederationSuspensionState.unknown)
-    required FederationSuspensionState suspensionState,
+    @JsonKey(unknownEnumValue: FederationSuspensionState.unknown) required FederationSuspensionState suspensionState,
     required bool isBlocked,
     String? softwareName,
     String? softwareVersion,
@@ -36,6 +35,5 @@ abstract class FederationInstance with _$FederationInstance {
     String? moderationNote,
   }) = _FederationInstance;
 
-  factory FederationInstance.fromJson(Map<String, Object?> json) =>
-      _$FederationInstanceFromJson(json);
+  factory FederationInstance.fromJson(Map<String, Object?> json) => _$FederationInstanceFromJson(json);
 }

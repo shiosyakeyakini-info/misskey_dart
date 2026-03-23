@@ -5,8 +5,7 @@ part 'admin_system_webhook_update_request.freezed.dart';
 part 'admin_system_webhook_update_request.g.dart';
 
 @freezed
-abstract class AdminSystemWebhookUpdateRequest
-    with _$AdminSystemWebhookUpdateRequest {
+abstract class AdminSystemWebhookUpdateRequest with _$AdminSystemWebhookUpdateRequest {
   const factory AdminSystemWebhookUpdateRequest({
     String? id,
     bool? isActive,
@@ -16,6 +15,5 @@ abstract class AdminSystemWebhookUpdateRequest
     @Default("") String? secret,
   }) = _AdminSystemWebhookUpdateRequest;
 
-  factory AdminSystemWebhookUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminSystemWebhookUpdateRequestFromJson(json);
+  factory AdminSystemWebhookUpdateRequest.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookUpdateRequestFromJson(json);
 }

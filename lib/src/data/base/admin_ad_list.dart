@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_ad_list.freezed.dart';
 part 'admin_ad_list.g.dart';
@@ -14,6 +15,5 @@ abstract class AdminAdList with _$AdminAdList {
     @Default(null) bool? publishing,
   }) = _AdminAdList;
 
-  factory AdminAdList.fromJson(Map<String, Object?> json) =>
-      _$AdminAdListFromJson(json);
+  factory AdminAdList.fromJson(Map<String, Object?> json) => _$AdminAdListFromJson(json);
 }

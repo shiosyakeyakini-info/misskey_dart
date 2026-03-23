@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i2fa_remove_key.freezed.dart';
 part 'i2fa_remove_key.g.dart';
@@ -11,6 +12,5 @@ abstract class I2faRemoveKey with _$I2faRemoveKey {
     required String credentialId,
   }) = _I2faRemoveKey;
 
-  factory I2faRemoveKey.fromJson(Map<String, Object?> json) =>
-      _$I2faRemoveKeyFromJson(json);
+  factory I2faRemoveKey.fromJson(Map<String, Object?> json) => _$I2faRemoveKeyFromJson(json);
 }

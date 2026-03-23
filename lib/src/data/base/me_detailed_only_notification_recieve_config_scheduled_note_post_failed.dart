@@ -5,20 +5,11 @@ part 'me_detailed_only_notification_recieve_config_scheduled_note_post_failed.fr
 part 'me_detailed_only_notification_recieve_config_scheduled_note_post_failed.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed
-    with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed {
+abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed {
   const factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed({
-    @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
-                .unknown)
-    required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType
-        type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType.unknown) required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed;
 
-  factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedFromJson(
-          json);
+  factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailed.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostFailedFromJson(json);
 }

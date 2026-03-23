@@ -1,6 +1,7 @@
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyExportCustomEmojis {
+
   final ApiService _apiService;
 
   MisskeyExportCustomEmojis({required ApiService apiService})
@@ -10,4 +11,5 @@ class MisskeyExportCustomEmojis {
   Future<void> exportCustomEmojis() async {
     await _apiService.post<void>("export-custom-emojis", {});
   }
+
 }

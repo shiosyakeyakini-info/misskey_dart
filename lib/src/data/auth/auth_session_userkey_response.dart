@@ -11,6 +11,5 @@ abstract class AuthSessionUserkeyResponse with _$AuthSessionUserkeyResponse {
     required UserDetailedNotMe user,
   }) = _AuthSessionUserkeyResponse;
 
-  factory AuthSessionUserkeyResponse.fromJson(Map<String, Object?> json) =>
-      _$AuthSessionUserkeyResponseFromJson(json);
+  factory AuthSessionUserkeyResponse.fromJson(Map<String, Object?> json) => _$AuthSessionUserkeyResponseFromJson(json);
 }

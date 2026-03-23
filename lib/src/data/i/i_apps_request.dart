@@ -10,6 +10,5 @@ abstract class IAppsRequest with _$IAppsRequest {
     @JsonKey(unknownEnumValue: IAppsSort.unknown) IAppsSort? sort,
   }) = _IAppsRequest;
 
-  factory IAppsRequest.fromJson(Map<String, Object?> json) =>
-      _$IAppsRequestFromJson(json);
+  factory IAppsRequest.fromJson(Map<String, Object?> json) => _$IAppsRequestFromJson(json);
 }

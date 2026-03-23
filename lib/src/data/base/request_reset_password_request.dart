@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'request_reset_password_request.freezed.dart';
 part 'request_reset_password_request.g.dart';
@@ -10,6 +11,5 @@ abstract class RequestResetPasswordRequest with _$RequestResetPasswordRequest {
     String? email,
   }) = _RequestResetPasswordRequest;
 
-  factory RequestResetPasswordRequest.fromJson(Map<String, Object?> json) =>
-      _$RequestResetPasswordRequestFromJson(json);
+  factory RequestResetPasswordRequest.fromJson(Map<String, Object?> json) => _$RequestResetPasswordRequestFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i2fa_unregister.freezed.dart';
 part 'i2fa_unregister.g.dart';
@@ -10,6 +11,5 @@ abstract class I2faUnregister with _$I2faUnregister {
     String? token,
   }) = _I2faUnregister;
 
-  factory I2faUnregister.fromJson(Map<String, Object?> json) =>
-      _$I2faUnregisterFromJson(json);
+  factory I2faUnregister.fromJson(Map<String, Object?> json) => _$I2faUnregisterFromJson(json);
 }

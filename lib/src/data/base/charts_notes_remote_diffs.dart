@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_notes_remote_diffs.freezed.dart';
 part 'charts_notes_remote_diffs.g.dart';
@@ -12,6 +13,5 @@ abstract class ChartsNotesRemoteDiffs with _$ChartsNotesRemoteDiffs {
     required List<double> withFile,
   }) = _ChartsNotesRemoteDiffs;
 
-  factory ChartsNotesRemoteDiffs.fromJson(Map<String, Object?> json) =>
-      _$ChartsNotesRemoteDiffsFromJson(json);
+  factory ChartsNotesRemoteDiffs.fromJson(Map<String, Object?> json) => _$ChartsNotesRemoteDiffsFromJson(json);
 }

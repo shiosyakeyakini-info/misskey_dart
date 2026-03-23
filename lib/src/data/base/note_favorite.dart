@@ -13,6 +13,5 @@ abstract class NoteFavorite with _$NoteFavorite {
     required String noteId,
   }) = _NoteFavorite;
 
-  factory NoteFavorite.fromJson(Map<String, Object?> json) =>
-      _$NoteFavoriteFromJson(json);
+  factory NoteFavorite.fromJson(Map<String, Object?> json) => _$NoteFavoriteFromJson(json);
 }

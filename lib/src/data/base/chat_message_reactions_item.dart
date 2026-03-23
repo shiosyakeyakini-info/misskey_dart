@@ -11,6 +11,5 @@ abstract class ChatMessageReactionsItem with _$ChatMessageReactionsItem {
     required UserLite user,
   }) = _ChatMessageReactionsItem;
 
-  factory ChatMessageReactionsItem.fromJson(Map<String, Object?> json) =>
-      _$ChatMessageReactionsItemFromJson(json);
+  factory ChatMessageReactionsItem.fromJson(Map<String, Object?> json) => _$ChatMessageReactionsItemFromJson(json);
 }

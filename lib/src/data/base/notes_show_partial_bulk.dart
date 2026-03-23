@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_show_partial_bulk.freezed.dart';
 part 'notes_show_partial_bulk.g.dart';
@@ -9,6 +10,5 @@ abstract class NotesShowPartialBulk with _$NotesShowPartialBulk {
     required List<String> noteIds,
   }) = _NotesShowPartialBulk;
 
-  factory NotesShowPartialBulk.fromJson(Map<String, Object?> json) =>
-      _$NotesShowPartialBulkFromJson(json);
+  factory NotesShowPartialBulk.fromJson(Map<String, Object?> json) => _$NotesShowPartialBulkFromJson(json);
 }

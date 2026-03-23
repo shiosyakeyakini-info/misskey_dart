@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_translate.freezed.dart';
 part 'notes_translate.g.dart';
@@ -10,6 +11,5 @@ abstract class NotesTranslate with _$NotesTranslate {
     required String text,
   }) = _NotesTranslate;
 
-  factory NotesTranslate.fromJson(Map<String, Object?> json) =>
-      _$NotesTranslateFromJson(json);
+  factory NotesTranslate.fromJson(Map<String, Object?> json) => _$NotesTranslateFromJson(json);
 }

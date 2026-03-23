@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_unset_user_banner_request.freezed.dart';
 part 'admin_unset_user_banner_request.g.dart';
@@ -9,6 +10,5 @@ abstract class AdminUnsetUserBannerRequest with _$AdminUnsetUserBannerRequest {
     String? userId,
   }) = _AdminUnsetUserBannerRequest;
 
-  factory AdminUnsetUserBannerRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminUnsetUserBannerRequestFromJson(json);
+  factory AdminUnsetUserBannerRequest.fromJson(Map<String, Object?> json) => _$AdminUnsetUserBannerRequestFromJson(json);
 }

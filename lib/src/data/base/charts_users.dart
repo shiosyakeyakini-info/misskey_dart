@@ -11,6 +11,5 @@ abstract class ChartsUsers with _$ChartsUsers {
     required ChartsUsersRemote remote,
   }) = _ChartsUsers;
 
-  factory ChartsUsers.fromJson(Map<String, Object?> json) =>
-      _$ChartsUsersFromJson(json);
+  factory ChartsUsers.fromJson(Map<String, Object?> json) => _$ChartsUsersFromJson(json);
 }

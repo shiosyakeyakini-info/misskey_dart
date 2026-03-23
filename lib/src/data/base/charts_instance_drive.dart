@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_instance_drive.freezed.dart';
 part 'charts_instance_drive.g.dart';
@@ -13,6 +14,5 @@ abstract class ChartsInstanceDrive with _$ChartsInstanceDrive {
     required List<double> decUsage,
   }) = _ChartsInstanceDrive;
 
-  factory ChartsInstanceDrive.fromJson(Map<String, Object?> json) =>
-      _$ChartsInstanceDriveFromJson(json);
+  factory ChartsInstanceDrive.fromJson(Map<String, Object?> json) => _$ChartsInstanceDriveFromJson(json);
 }

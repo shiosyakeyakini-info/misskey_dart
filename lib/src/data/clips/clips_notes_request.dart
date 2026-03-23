@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_notes_request.freezed.dart';
 part 'clips_notes_request.g.dart';
@@ -15,6 +16,5 @@ abstract class ClipsNotesRequest with _$ClipsNotesRequest {
     String? search,
   }) = _ClipsNotesRequest;
 
-  factory ClipsNotesRequest.fromJson(Map<String, Object?> json) =>
-      _$ClipsNotesRequestFromJson(json);
+  factory ClipsNotesRequest.fromJson(Map<String, Object?> json) => _$ClipsNotesRequestFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_import_muting.freezed.dart';
 part 'i_import_muting.g.dart';
@@ -9,6 +10,5 @@ abstract class IImportMuting with _$IImportMuting {
     required String fileId,
   }) = _IImportMuting;
 
-  factory IImportMuting.fromJson(Map<String, Object?> json) =>
-      _$IImportMutingFromJson(json);
+  factory IImportMuting.fromJson(Map<String, Object?> json) => _$IImportMutingFromJson(json);
 }

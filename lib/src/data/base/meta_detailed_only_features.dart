@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'meta_detailed_only_features.freezed.dart';
 part 'meta_detailed_only_features.g.dart';
@@ -18,6 +19,5 @@ abstract class MetaDetailedOnlyFeatures with _$MetaDetailedOnlyFeatures {
     @Default(true) bool? miauth,
   }) = _MetaDetailedOnlyFeatures;
 
-  factory MetaDetailedOnlyFeatures.fromJson(Map<String, Object?> json) =>
-      _$MetaDetailedOnlyFeaturesFromJson(json);
+  factory MetaDetailedOnlyFeatures.fromJson(Map<String, Object?> json) => _$MetaDetailedOnlyFeaturesFromJson(json);
 }

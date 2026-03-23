@@ -12,6 +12,5 @@ abstract class AuthSessionShowResponse with _$AuthSessionShowResponse {
     required String token,
   }) = _AuthSessionShowResponse;
 
-  factory AuthSessionShowResponse.fromJson(Map<String, Object?> json) =>
-      _$AuthSessionShowResponseFromJson(json);
+  factory AuthSessionShowResponse.fromJson(Map<String, Object?> json) => _$AuthSessionShowResponseFromJson(json);
 }

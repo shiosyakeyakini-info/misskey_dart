@@ -7,15 +7,11 @@ part 'notes_create_request.g.dart';
 @freezed
 abstract class NotesCreateRequest with _$NotesCreateRequest {
   const factory NotesCreateRequest({
-    @JsonKey(unknownEnumValue: NoteVisibility.unknown)
-    @Default(NoteVisibility.public)
-    NoteVisibility? visibility,
+    @JsonKey(unknownEnumValue: NoteVisibility.unknown) @Default(NoteVisibility.public) NoteVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     @Default(false) bool? localOnly,
-    @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
-    @Default(null)
-    NotesCreateReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) @Default(null) NotesCreateReactionAcceptance? reactionAcceptance,
     @Default(false) bool? noExtractMentions,
     @Default(false) bool? noExtractHashtags,
     @Default(false) bool? noExtractEmojis,
@@ -28,6 +24,5 @@ abstract class NotesCreateRequest with _$NotesCreateRequest {
     NotesCreatePoll? poll,
   }) = _NotesCreateRequest;
 
-  factory NotesCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$NotesCreateRequestFromJson(json);
+  factory NotesCreateRequest.fromJson(Map<String, Object?> json) => _$NotesCreateRequestFromJson(json);
 }

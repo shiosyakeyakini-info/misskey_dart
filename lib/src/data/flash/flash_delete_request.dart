@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'flash_delete_request.freezed.dart';
 part 'flash_delete_request.g.dart';
@@ -9,6 +10,5 @@ abstract class FlashDeleteRequest with _$FlashDeleteRequest {
     String? flashId,
   }) = _FlashDeleteRequest;
 
-  factory FlashDeleteRequest.fromJson(Map<String, Object?> json) =>
-      _$FlashDeleteRequestFromJson(json);
+  factory FlashDeleteRequest.fromJson(Map<String, Object?> json) => _$FlashDeleteRequestFromJson(json);
 }

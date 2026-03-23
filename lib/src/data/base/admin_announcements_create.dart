@@ -15,6 +15,5 @@ abstract class AdminAnnouncementsCreate with _$AdminAnnouncementsCreate {
     String? imageUrl,
   }) = _AdminAnnouncementsCreate;
 
-  factory AdminAnnouncementsCreate.fromJson(Map<String, Object?> json) =>
-      _$AdminAnnouncementsCreateFromJson(json);
+  factory AdminAnnouncementsCreate.fromJson(Map<String, Object?> json) => _$AdminAnnouncementsCreateFromJson(json);
 }

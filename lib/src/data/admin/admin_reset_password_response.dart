@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_reset_password_response.freezed.dart';
 part 'admin_reset_password_response.g.dart';
@@ -9,6 +10,5 @@ abstract class AdminResetPasswordResponse with _$AdminResetPasswordResponse {
     required String password,
   }) = _AdminResetPasswordResponse;
 
-  factory AdminResetPasswordResponse.fromJson(Map<String, Object?> json) =>
-      _$AdminResetPasswordResponseFromJson(json);
+  factory AdminResetPasswordResponse.fromJson(Map<String, Object?> json) => _$AdminResetPasswordResponseFromJson(json);
 }

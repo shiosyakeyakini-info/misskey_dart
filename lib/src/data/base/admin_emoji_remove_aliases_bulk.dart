@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_remove_aliases_bulk.freezed.dart';
 part 'admin_emoji_remove_aliases_bulk.g.dart';
@@ -10,6 +11,5 @@ abstract class AdminEmojiRemoveAliasesBulk with _$AdminEmojiRemoveAliasesBulk {
     required List<String> aliases,
   }) = _AdminEmojiRemoveAliasesBulk;
 
-  factory AdminEmojiRemoveAliasesBulk.fromJson(Map<String, Object?> json) =>
-      _$AdminEmojiRemoveAliasesBulkFromJson(json);
+  factory AdminEmojiRemoveAliasesBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiRemoveAliasesBulkFromJson(json);
 }

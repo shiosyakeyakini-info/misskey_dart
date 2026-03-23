@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'mute_list.freezed.dart';
 part 'mute_list.g.dart';
@@ -13,6 +14,5 @@ abstract class MuteList with _$MuteList {
     int? untilDate,
   }) = _MuteList;
 
-  factory MuteList.fromJson(Map<String, Object?> json) =>
-      _$MuteListFromJson(json);
+  factory MuteList.fromJson(Map<String, Object?> json) => _$MuteListFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i2fa_register_response.freezed.dart';
 part 'i2fa_register_response.g.dart';
@@ -13,6 +14,5 @@ abstract class I2faRegisterResponse with _$I2faRegisterResponse {
     required String issuer,
   }) = _I2faRegisterResponse;
 
-  factory I2faRegisterResponse.fromJson(Map<String, Object?> json) =>
-      _$I2faRegisterResponseFromJson(json);
+  factory I2faRegisterResponse.fromJson(Map<String, Object?> json) => _$I2faRegisterResponseFromJson(json);
 }

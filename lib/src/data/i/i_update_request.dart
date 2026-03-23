@@ -34,10 +34,8 @@ abstract class IUpdateRequest with _$IUpdateRequest {
     bool? receiveAnnouncementEmail,
     bool? alwaysMarkNsfw,
     bool? autoSensitive,
-    @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown)
-    IUpdateFollowingVisibility? followingVisibility,
-    @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown)
-    IUpdateFollowersVisibility? followersVisibility,
+    @JsonKey(unknownEnumValue: IUpdateFollowingVisibility.unknown) IUpdateFollowingVisibility? followingVisibility,
+    @JsonKey(unknownEnumValue: IUpdateFollowersVisibility.unknown) IUpdateFollowersVisibility? followersVisibility,
     ChatScope? chatScope,
     String? pinnedPageId,
     List<dynamic>? mutedWords,
@@ -48,6 +46,5 @@ abstract class IUpdateRequest with _$IUpdateRequest {
     List<String>? alsoKnownAs,
   }) = _IUpdateRequest;
 
-  factory IUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$IUpdateRequestFromJson(json);
+  factory IUpdateRequest.fromJson(Map<String, Object?> json) => _$IUpdateRequestFromJson(json);
 }

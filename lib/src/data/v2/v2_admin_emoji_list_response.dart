@@ -13,6 +13,5 @@ abstract class V2AdminEmojiListResponse with _$V2AdminEmojiListResponse {
     required int allPages,
   }) = _V2AdminEmojiListResponse;
 
-  factory V2AdminEmojiListResponse.fromJson(Map<String, Object?> json) =>
-      _$V2AdminEmojiListResponseFromJson(json);
+  factory V2AdminEmojiListResponse.fromJson(Map<String, Object?> json) => _$V2AdminEmojiListResponseFromJson(json);
 }

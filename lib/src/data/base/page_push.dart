@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'page_push.freezed.dart';
 part 'page_push.g.dart';
@@ -11,6 +12,5 @@ abstract class PagePush with _$PagePush {
     @JsonKey(name: 'var') String? var_,
   }) = _PagePush;
 
-  factory PagePush.fromJson(Map<String, Object?> json) =>
-      _$PagePushFromJson(json);
+  factory PagePush.fromJson(Map<String, Object?> json) => _$PagePushFromJson(json);
 }
