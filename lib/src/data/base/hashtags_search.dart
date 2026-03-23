@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'hashtags_search.freezed.dart';
 part 'hashtags_search.g.dart';
@@ -12,5 +11,6 @@ abstract class HashtagsSearch with _$HashtagsSearch {
     @Default(0) int? offset,
   }) = _HashtagsSearch;
 
-  factory HashtagsSearch.fromJson(Map<String, Object?> json) => _$HashtagsSearchFromJson(json);
+  factory HashtagsSearch.fromJson(Map<String, Object?> json) =>
+      _$HashtagsSearchFromJson(json);
 }

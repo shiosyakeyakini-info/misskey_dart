@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'sw_register_request.freezed.dart';
 part 'sw_register_request.g.dart';
@@ -13,5 +12,6 @@ abstract class SwRegisterRequest with _$SwRegisterRequest {
     @Default(false) bool? sendReadMessage,
   }) = _SwRegisterRequest;
 
-  factory SwRegisterRequest.fromJson(Map<String, Object?> json) => _$SwRegisterRequestFromJson(json);
+  factory SwRegisterRequest.fromJson(Map<String, Object?> json) =>
+      _$SwRegisterRequestFromJson(json);
 }

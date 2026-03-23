@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'gallery_posts_update_request.freezed.dart';
 part 'gallery_posts_update_request.g.dart';
@@ -14,5 +13,6 @@ abstract class GalleryPostsUpdateRequest with _$GalleryPostsUpdateRequest {
     @Default(false) bool? isSensitive,
   }) = _GalleryPostsUpdateRequest;
 
-  factory GalleryPostsUpdateRequest.fromJson(Map<String, Object?> json) => _$GalleryPostsUpdateRequestFromJson(json);
+  factory GalleryPostsUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsUpdateRequestFromJson(json);
 }

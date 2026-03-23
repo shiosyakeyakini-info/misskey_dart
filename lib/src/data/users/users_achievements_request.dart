@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_achievements_request.freezed.dart';
 part 'users_achievements_request.g.dart';
@@ -10,5 +9,6 @@ abstract class UsersAchievementsRequest with _$UsersAchievementsRequest {
     String? userId,
   }) = _UsersAchievementsRequest;
 
-  factory UsersAchievementsRequest.fromJson(Map<String, Object?> json) => _$UsersAchievementsRequestFromJson(json);
+  factory UsersAchievementsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersAchievementsRequestFromJson(json);
 }

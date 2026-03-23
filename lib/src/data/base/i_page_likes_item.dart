@@ -11,5 +11,6 @@ abstract class IPageLikesItem with _$IPageLikesItem {
     required Page page,
   }) = _IPageLikesItem;
 
-  factory IPageLikesItem.fromJson(Map<String, Object?> json) => _$IPageLikesItemFromJson(json);
+  factory IPageLikesItem.fromJson(Map<String, Object?> json) =>
+      _$IPageLikesItemFromJson(json);
 }

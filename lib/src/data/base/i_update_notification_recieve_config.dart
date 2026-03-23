@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_update_notification_recieve_config.freezed.dart';
 part 'i_update_notification_recieve_config.g.dart';
 
 @freezed
-abstract class IUpdateNotificationRecieveConfig with _$IUpdateNotificationRecieveConfig {
+abstract class IUpdateNotificationRecieveConfig
+    with _$IUpdateNotificationRecieveConfig {
   const factory IUpdateNotificationRecieveConfig({
     dynamic note,
     dynamic follow,
@@ -26,5 +26,7 @@ abstract class IUpdateNotificationRecieveConfig with _$IUpdateNotificationReciev
     dynamic test,
   }) = _IUpdateNotificationRecieveConfig;
 
-  factory IUpdateNotificationRecieveConfig.fromJson(Map<String, Object?> json) => _$IUpdateNotificationRecieveConfigFromJson(json);
+  factory IUpdateNotificationRecieveConfig.fromJson(
+          Map<String, Object?> json) =>
+      _$IUpdateNotificationRecieveConfigFromJson(json);
 }

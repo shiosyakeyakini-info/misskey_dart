@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_avatar_decorations_list.freezed.dart';
 part 'admin_avatar_decorations_list.g.dart';
@@ -15,5 +14,6 @@ abstract class AdminAvatarDecorationsList with _$AdminAvatarDecorationsList {
     String? userId,
   }) = _AdminAvatarDecorationsList;
 
-  factory AdminAvatarDecorationsList.fromJson(Map<String, Object?> json) => _$AdminAvatarDecorationsListFromJson(json);
+  factory AdminAvatarDecorationsList.fromJson(Map<String, Object?> json) =>
+      _$AdminAvatarDecorationsListFromJson(json);
 }

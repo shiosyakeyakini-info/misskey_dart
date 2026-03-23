@@ -33,5 +33,6 @@ abstract class AdminShowUserResponse with _$AdminShowUserResponse {
     required List<AdminShowUserRoleAssignsItem> roleAssigns,
   }) = _AdminShowUserResponse;
 
-  factory AdminShowUserResponse.fromJson(Map<String, Object?> json) => _$AdminShowUserResponseFromJson(json);
+  factory AdminShowUserResponse.fromJson(Map<String, Object?> json) =>
+      _$AdminShowUserResponseFromJson(json);
 }

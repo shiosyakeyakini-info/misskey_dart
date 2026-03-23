@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_hybrid_timeline_request.freezed.dart';
 part 'notes_hybrid_timeline_request.g.dart';
@@ -21,5 +20,6 @@ abstract class NotesHybridTimelineRequest with _$NotesHybridTimelineRequest {
     @Default(false) bool? withReplies,
   }) = _NotesHybridTimelineRequest;
 
-  factory NotesHybridTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesHybridTimelineRequestFromJson(json);
+  factory NotesHybridTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesHybridTimelineRequestFromJson(json);
 }

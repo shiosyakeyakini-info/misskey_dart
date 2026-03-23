@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'sw_show_registration_request.freezed.dart';
 part 'sw_show_registration_request.g.dart';
@@ -10,5 +9,6 @@ abstract class SwShowRegistrationRequest with _$SwShowRegistrationRequest {
     String? endpoint,
   }) = _SwShowRegistrationRequest;
 
-  factory SwShowRegistrationRequest.fromJson(Map<String, Object?> json) => _$SwShowRegistrationRequestFromJson(json);
+  factory SwShowRegistrationRequest.fromJson(Map<String, Object?> json) =>
+      _$SwShowRegistrationRequestFromJson(json);
 }

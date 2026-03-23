@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'renote_mute_create_request.freezed.dart';
 part 'renote_mute_create_request.g.dart';
@@ -10,5 +9,6 @@ abstract class RenoteMuteCreateRequest with _$RenoteMuteCreateRequest {
     String? userId,
   }) = _RenoteMuteCreateRequest;
 
-  factory RenoteMuteCreateRequest.fromJson(Map<String, Object?> json) => _$RenoteMuteCreateRequestFromJson(json);
+  factory RenoteMuteCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$RenoteMuteCreateRequestFromJson(json);
 }

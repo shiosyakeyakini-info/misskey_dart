@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_find.freezed.dart';
 part 'drive_files_find.g.dart';
@@ -11,5 +10,6 @@ abstract class DriveFilesFind with _$DriveFilesFind {
     @Default(null) String? folderId,
   }) = _DriveFilesFind;
 
-  factory DriveFilesFind.fromJson(Map<String, Object?> json) => _$DriveFilesFindFromJson(json);
+  factory DriveFilesFind.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesFindFromJson(json);
 }

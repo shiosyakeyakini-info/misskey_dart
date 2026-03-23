@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'invite_list.freezed.dart';
 part 'invite_list.g.dart';
@@ -14,5 +13,6 @@ abstract class InviteList with _$InviteList {
     int? untilDate,
   }) = _InviteList;
 
-  factory InviteList.fromJson(Map<String, Object?> json) => _$InviteListFromJson(json);
+  factory InviteList.fromJson(Map<String, Object?> json) =>
+      _$InviteListFromJson(json);
 }

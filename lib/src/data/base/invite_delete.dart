@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'invite_delete.freezed.dart';
 part 'invite_delete.g.dart';
@@ -10,5 +9,6 @@ abstract class InviteDelete with _$InviteDelete {
     required String inviteId,
   }) = _InviteDelete;
 
-  factory InviteDelete.fromJson(Map<String, Object?> json) => _$InviteDeleteFromJson(json);
+  factory InviteDelete.fromJson(Map<String, Object?> json) =>
+      _$InviteDeleteFromJson(json);
 }

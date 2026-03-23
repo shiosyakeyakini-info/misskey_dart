@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_find_by_hash_request.freezed.dart';
 part 'drive_files_find_by_hash_request.g.dart';
@@ -10,5 +9,6 @@ abstract class DriveFilesFindByHashRequest with _$DriveFilesFindByHashRequest {
     String? md5,
   }) = _DriveFilesFindByHashRequest;
 
-  factory DriveFilesFindByHashRequest.fromJson(Map<String, Object?> json) => _$DriveFilesFindByHashRequestFromJson(json);
+  factory DriveFilesFindByHashRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesFindByHashRequestFromJson(json);
 }

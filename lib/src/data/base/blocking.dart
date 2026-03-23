@@ -13,5 +13,6 @@ abstract class Blocking with _$Blocking {
     required UserDetailedNotMe blockee,
   }) = _Blocking;
 
-  factory Blocking.fromJson(Map<String, Object?> json) => _$BlockingFromJson(json);
+  factory Blocking.fromJson(Map<String, Object?> json) =>
+      _$BlockingFromJson(json);
 }

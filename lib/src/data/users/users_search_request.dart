@@ -10,9 +10,12 @@ abstract class UsersSearchRequest with _$UsersSearchRequest {
     String? query,
     @Default(0) int? offset,
     @Default(10) int? limit,
-    @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) @Default(UsersSearchOrigin.combined) UsersSearchOrigin? origin,
+    @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)
+    @Default(UsersSearchOrigin.combined)
+    UsersSearchOrigin? origin,
     @Default(true) bool? detail,
   }) = _UsersSearchRequest;
 
-  factory UsersSearchRequest.fromJson(Map<String, Object?> json) => _$UsersSearchRequestFromJson(json);
+  factory UsersSearchRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersSearchRequestFromJson(json);
 }

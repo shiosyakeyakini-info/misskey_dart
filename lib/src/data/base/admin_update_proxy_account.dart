@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_update_proxy_account.freezed.dart';
 part 'admin_update_proxy_account.g.dart';
@@ -10,5 +9,6 @@ abstract class AdminUpdateProxyAccount with _$AdminUpdateProxyAccount {
     String? description,
   }) = _AdminUpdateProxyAccount;
 
-  factory AdminUpdateProxyAccount.fromJson(Map<String, Object?> json) => _$AdminUpdateProxyAccountFromJson(json);
+  factory AdminUpdateProxyAccount.fromJson(Map<String, Object?> json) =>
+      _$AdminUpdateProxyAccountFromJson(json);
 }

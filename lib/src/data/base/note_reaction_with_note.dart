@@ -14,5 +14,6 @@ abstract class NoteReactionWithNote with _$NoteReactionWithNote {
     required Note note,
   }) = _NoteReactionWithNote;
 
-  factory NoteReactionWithNote.fromJson(Map<String, Object?> json) => _$NoteReactionWithNoteFromJson(json);
+  factory NoteReactionWithNote.fromJson(Map<String, Object?> json) =>
+      _$NoteReactionWithNoteFromJson(json);
 }

@@ -49,8 +49,13 @@ abstract class AdminUpdateMetaRequest with _$AdminUpdateMetaRequest {
     String? turnstileSecretKey,
     bool? enableTestcaptcha,
     String? googleAnalyticsMeasurementId,
-    @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown) AdminUpdateMetaSensitiveMediaDetection? sensitiveMediaDetection,
-    @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown) AdminUpdateMetaSensitiveMediaDetectionSensitivity? sensitiveMediaDetectionSensitivity,
+    @JsonKey(unknownEnumValue: AdminUpdateMetaSensitiveMediaDetection.unknown)
+    AdminUpdateMetaSensitiveMediaDetection? sensitiveMediaDetection,
+    @JsonKey(
+        unknownEnumValue:
+            AdminUpdateMetaSensitiveMediaDetectionSensitivity.unknown)
+    AdminUpdateMetaSensitiveMediaDetectionSensitivity?
+        sensitiveMediaDetectionSensitivity,
     bool? setSensitiveFlagAutomatically,
     bool? enableSensitiveMediaDetectionForVideos,
     String? maintainerName,
@@ -121,11 +126,13 @@ abstract class AdminUpdateMetaRequest with _$AdminUpdateMetaRequest {
     bool? urlPreviewRequireContentLength,
     String? urlPreviewUserAgent,
     String? urlPreviewSummaryProxyUrl,
-    @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown) AdminUpdateMetaFederation? federation,
+    @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
+    AdminUpdateMetaFederation? federation,
     List<String>? federationHosts,
     List<AdminUpdateMetaDeliverSuspendedSoftwareItem>? deliverSuspendedSoftware,
     bool? singleUserMode,
-    @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown) AdminUpdateMetaUgcVisibilityForVisitor? ugcVisibilityForVisitor,
+    @JsonKey(unknownEnumValue: AdminUpdateMetaUgcVisibilityForVisitor.unknown)
+    AdminUpdateMetaUgcVisibilityForVisitor? ugcVisibilityForVisitor,
     bool? proxyRemoteFiles,
     bool? signToActivityPubGet,
     bool? allowExternalApRedirect,
@@ -135,5 +142,6 @@ abstract class AdminUpdateMetaRequest with _$AdminUpdateMetaRequest {
     bool? showRoleBadgesOfRemoteUsers,
   }) = _AdminUpdateMetaRequest;
 
-  factory AdminUpdateMetaRequest.fromJson(Map<String, Object?> json) => _$AdminUpdateMetaRequestFromJson(json);
+  factory AdminUpdateMetaRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminUpdateMetaRequestFromJson(json);
 }

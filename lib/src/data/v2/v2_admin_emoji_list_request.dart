@@ -14,8 +14,10 @@ abstract class V2AdminEmojiListRequest with _$V2AdminEmojiListRequest {
     int? untilDate,
     @Default(10) int? limit,
     int? page,
-    @Default([V2AdminEmojiListSortKeysItem.minusId]) List<V2AdminEmojiListSortKeysItem>? sortKeys,
+    @Default([V2AdminEmojiListSortKeysItem.minusId])
+    List<V2AdminEmojiListSortKeysItem>? sortKeys,
   }) = _V2AdminEmojiListRequest;
 
-  factory V2AdminEmojiListRequest.fromJson(Map<String, Object?> json) => _$V2AdminEmojiListRequestFromJson(json);
+  factory V2AdminEmojiListRequest.fromJson(Map<String, Object?> json) =>
+      _$V2AdminEmojiListRequestFromJson(json);
 }

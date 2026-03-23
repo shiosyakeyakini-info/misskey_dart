@@ -33,8 +33,10 @@ abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
     String? pinnedPageId,
     Page? pinnedPage,
     required bool publicReactions,
-    @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followingVisibility,
-    @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followersVisibility,
+    @JsonKey(unknownEnumValue: FFVisibility.unknown)
+    required FFVisibility followingVisibility,
+    @JsonKey(unknownEnumValue: FFVisibility.unknown)
+    required FFVisibility followersVisibility,
     required ChatScope chatScope,
     required bool canChat,
     required List<RoleLite> roles,
@@ -56,5 +58,6 @@ abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
     bool? withReplies,
   }) = _UserDetailedNotMeOnly;
 
-  factory UserDetailedNotMeOnly.fromJson(Map<String, Object?> json) => _$UserDetailedNotMeOnlyFromJson(json);
+  factory UserDetailedNotMeOnly.fromJson(Map<String, Object?> json) =>
+      _$UserDetailedNotMeOnlyFromJson(json);
 }

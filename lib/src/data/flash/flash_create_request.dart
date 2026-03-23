@@ -11,8 +11,11 @@ abstract class FlashCreateRequest with _$FlashCreateRequest {
     String? summary,
     String? script,
     List<String>? permissions,
-    @JsonKey(unknownEnumValue: FlashVisibility.unknown) @Default(FlashVisibility.public) FlashVisibility? visibility,
+    @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+    @Default(FlashVisibility.public)
+    FlashVisibility? visibility,
   }) = _FlashCreateRequest;
 
-  factory FlashCreateRequest.fromJson(Map<String, Object?> json) => _$FlashCreateRequestFromJson(json);
+  factory FlashCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$FlashCreateRequestFromJson(json);
 }

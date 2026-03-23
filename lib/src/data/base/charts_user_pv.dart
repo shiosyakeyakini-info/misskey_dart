@@ -11,5 +11,6 @@ abstract class ChartsUserPv with _$ChartsUserPv {
     required ChartsUserPvPv pv,
   }) = _ChartsUserPv;
 
-  factory ChartsUserPv.fromJson(Map<String, Object?> json) => _$ChartsUserPvFromJson(json);
+  factory ChartsUserPv.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserPvFromJson(json);
 }

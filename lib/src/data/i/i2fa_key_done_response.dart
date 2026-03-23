@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i2fa_key_done_response.freezed.dart';
 part 'i2fa_key_done_response.g.dart';
@@ -11,5 +10,6 @@ abstract class I2faKeyDoneResponse with _$I2faKeyDoneResponse {
     required String name,
   }) = _I2faKeyDoneResponse;
 
-  factory I2faKeyDoneResponse.fromJson(Map<String, Object?> json) => _$I2faKeyDoneResponseFromJson(json);
+  factory I2faKeyDoneResponse.fromJson(Map<String, Object?> json) =>
+      _$I2faKeyDoneResponseFromJson(json);
 }

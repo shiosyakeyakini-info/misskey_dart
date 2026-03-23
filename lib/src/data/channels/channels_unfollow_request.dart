@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_unfollow_request.freezed.dart';
 part 'channels_unfollow_request.g.dart';
@@ -10,5 +9,6 @@ abstract class ChannelsUnfollowRequest with _$ChannelsUnfollowRequest {
     String? channelId,
   }) = _ChannelsUnfollowRequest;
 
-  factory ChannelsUnfollowRequest.fromJson(Map<String, Object?> json) => _$ChannelsUnfollowRequestFromJson(json);
+  factory ChannelsUnfollowRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsUnfollowRequestFromJson(json);
 }

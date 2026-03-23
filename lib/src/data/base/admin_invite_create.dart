@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_invite_create.freezed.dart';
 part 'admin_invite_create.g.dart';
@@ -11,5 +10,6 @@ abstract class AdminInviteCreate with _$AdminInviteCreate {
     String? expiresAt,
   }) = _AdminInviteCreate;
 
-  factory AdminInviteCreate.fromJson(Map<String, Object?> json) => _$AdminInviteCreateFromJson(json);
+  factory AdminInviteCreate.fromJson(Map<String, Object?> json) =>
+      _$AdminInviteCreateFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'fetch_rss_enclosure.freezed.dart';
 part 'fetch_rss_enclosure.g.dart';
@@ -12,5 +11,6 @@ abstract class FetchRssEnclosure with _$FetchRssEnclosure {
     String? type,
   }) = _FetchRssEnclosure;
 
-  factory FetchRssEnclosure.fromJson(Map<String, Object?> json) => _$FetchRssEnclosureFromJson(json);
+  factory FetchRssEnclosure.fromJson(Map<String, Object?> json) =>
+      _$FetchRssEnclosureFromJson(json);
 }

@@ -11,5 +11,6 @@ abstract class Achievement with _$Achievement {
     required double unlockedAt,
   }) = _Achievement;
 
-  factory Achievement.fromJson(Map<String, Object?> json) => _$AchievementFromJson(json);
+  factory Achievement.fromJson(Map<String, Object?> json) =>
+      _$AchievementFromJson(json);
 }

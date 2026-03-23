@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_report_abuse_request.freezed.dart';
 part 'users_report_abuse_request.g.dart';
@@ -11,5 +10,6 @@ abstract class UsersReportAbuseRequest with _$UsersReportAbuseRequest {
     String? comment,
   }) = _UsersReportAbuseRequest;
 
-  factory UsersReportAbuseRequest.fromJson(Map<String, Object?> json) => _$UsersReportAbuseRequestFromJson(json);
+  factory UsersReportAbuseRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersReportAbuseRequestFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_unsuspend_user.freezed.dart';
 part 'admin_unsuspend_user.g.dart';
@@ -10,5 +9,6 @@ abstract class AdminUnsuspendUser with _$AdminUnsuspendUser {
     required String userId,
   }) = _AdminUnsuspendUser;
 
-  factory AdminUnsuspendUser.fromJson(Map<String, Object?> json) => _$AdminUnsuspendUserFromJson(json);
+  factory AdminUnsuspendUser.fromJson(Map<String, Object?> json) =>
+      _$AdminUnsuspendUserFromJson(json);
 }

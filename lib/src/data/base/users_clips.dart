@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_clips.freezed.dart';
 part 'users_clips.g.dart';
@@ -15,5 +14,6 @@ abstract class UsersClips with _$UsersClips {
     int? untilDate,
   }) = _UsersClips;
 
-  factory UsersClips.fromJson(Map<String, Object?> json) => _$UsersClipsFromJson(json);
+  factory UsersClips.fromJson(Map<String, Object?> json) =>
+      _$UsersClipsFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class EndpointResponse with _$EndpointResponse {
     required List<EndpointParamsItem> params,
   }) = _EndpointResponse;
 
-  factory EndpointResponse.fromJson(Map<String, Object?> json) => _$EndpointResponseFromJson(json);
+  factory EndpointResponse.fromJson(Map<String, Object?> json) =>
+      _$EndpointResponseFromJson(json);
 }

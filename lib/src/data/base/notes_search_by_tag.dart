@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_search_by_tag.freezed.dart';
 part 'notes_search_by_tag.g.dart';
@@ -18,5 +17,6 @@ abstract class NotesSearchByTag with _$NotesSearchByTag {
     @Default(10) int? limit,
   }) = _NotesSearchByTag;
 
-  factory NotesSearchByTag.fromJson(Map<String, Object?> json) => _$NotesSearchByTagFromJson(json);
+  factory NotesSearchByTag.fromJson(Map<String, Object?> json) =>
+      _$NotesSearchByTagFromJson(json);
 }

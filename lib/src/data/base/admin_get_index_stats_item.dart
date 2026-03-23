@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_get_index_stats_item.freezed.dart';
 part 'admin_get_index_stats_item.g.dart';
@@ -11,5 +10,6 @@ abstract class AdminGetIndexStatsItem with _$AdminGetIndexStatsItem {
     required String indexname,
   }) = _AdminGetIndexStatsItem;
 
-  factory AdminGetIndexStatsItem.fromJson(Map<String, Object?> json) => _$AdminGetIndexStatsItemFromJson(json);
+  factory AdminGetIndexStatsItem.fromJson(Map<String, Object?> json) =>
+      _$AdminGetIndexStatsItemFromJson(json);
 }

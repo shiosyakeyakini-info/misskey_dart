@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_accounts_delete_request.freezed.dart';
 part 'admin_accounts_delete_request.g.dart';
@@ -10,5 +9,6 @@ abstract class AdminAccountsDeleteRequest with _$AdminAccountsDeleteRequest {
     String? userId,
   }) = _AdminAccountsDeleteRequest;
 
-  factory AdminAccountsDeleteRequest.fromJson(Map<String, Object?> json) => _$AdminAccountsDeleteRequestFromJson(json);
+  factory AdminAccountsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminAccountsDeleteRequestFromJson(json);
 }

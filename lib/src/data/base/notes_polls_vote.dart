@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_polls_vote.freezed.dart';
 part 'notes_polls_vote.g.dart';
@@ -11,5 +10,6 @@ abstract class NotesPollsVote with _$NotesPollsVote {
     required int choice,
   }) = _NotesPollsVote;
 
-  factory NotesPollsVote.fromJson(Map<String, Object?> json) => _$NotesPollsVoteFromJson(json);
+  factory NotesPollsVote.fromJson(Map<String, Object?> json) =>
+      _$NotesPollsVoteFromJson(json);
 }

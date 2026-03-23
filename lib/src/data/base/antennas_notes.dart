@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'antennas_notes.freezed.dart';
 part 'antennas_notes.g.dart';
@@ -15,5 +14,6 @@ abstract class AntennasNotes with _$AntennasNotes {
     int? untilDate,
   }) = _AntennasNotes;
 
-  factory AntennasNotes.fromJson(Map<String, Object?> json) => _$AntennasNotesFromJson(json);
+  factory AntennasNotes.fromJson(Map<String, Object?> json) =>
+      _$AntennasNotesFromJson(json);
 }

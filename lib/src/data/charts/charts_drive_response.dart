@@ -11,5 +11,6 @@ abstract class ChartsDriveResponse with _$ChartsDriveResponse {
     required ChartsDriveRemote remote,
   }) = _ChartsDriveResponse;
 
-  factory ChartsDriveResponse.fromJson(Map<String, Object?> json) => _$ChartsDriveResponseFromJson(json);
+  factory ChartsDriveResponse.fromJson(Map<String, Object?> json) =>
+      _$ChartsDriveResponseFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_update_email.freezed.dart';
 part 'i_update_email.g.dart';
@@ -12,5 +11,6 @@ abstract class IUpdateEmail with _$IUpdateEmail {
     String? token,
   }) = _IUpdateEmail;
 
-  factory IUpdateEmail.fromJson(Map<String, Object?> json) => _$IUpdateEmailFromJson(json);
+  factory IUpdateEmail.fromJson(Map<String, Object?> json) =>
+      _$IUpdateEmailFromJson(json);
 }

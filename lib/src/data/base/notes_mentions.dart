@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_mentions.freezed.dart';
 part 'notes_mentions.g.dart';
@@ -16,5 +15,6 @@ abstract class NotesMentions with _$NotesMentions {
     String? visibility,
   }) = _NotesMentions;
 
-  factory NotesMentions.fromJson(Map<String, Object?> json) => _$NotesMentionsFromJson(json);
+  factory NotesMentions.fromJson(Map<String, Object?> json) =>
+      _$NotesMentionsFromJson(json);
 }

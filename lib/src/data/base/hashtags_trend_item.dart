@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'hashtags_trend_item.freezed.dart';
 part 'hashtags_trend_item.g.dart';
@@ -12,5 +11,6 @@ abstract class HashtagsTrendItem with _$HashtagsTrendItem {
     required int usersCount,
   }) = _HashtagsTrendItem;
 
-  factory HashtagsTrendItem.fromJson(Map<String, Object?> json) => _$HashtagsTrendItemFromJson(json);
+  factory HashtagsTrendItem.fromJson(Map<String, Object?> json) =>
+      _$HashtagsTrendItemFromJson(json);
 }

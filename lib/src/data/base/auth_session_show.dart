@@ -12,5 +12,6 @@ abstract class AuthSessionShow with _$AuthSessionShow {
     required String token,
   }) = _AuthSessionShow;
 
-  factory AuthSessionShow.fromJson(Map<String, Object?> json) => _$AuthSessionShowFromJson(json);
+  factory AuthSessionShow.fromJson(Map<String, Object?> json) =>
+      _$AuthSessionShowFromJson(json);
 }

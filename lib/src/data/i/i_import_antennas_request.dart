@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_import_antennas_request.freezed.dart';
 part 'i_import_antennas_request.g.dart';
@@ -10,5 +9,6 @@ abstract class IImportAntennasRequest with _$IImportAntennasRequest {
     String? fileId,
   }) = _IImportAntennasRequest;
 
-  factory IImportAntennasRequest.fromJson(Map<String, Object?> json) => _$IImportAntennasRequestFromJson(json);
+  factory IImportAntennasRequest.fromJson(Map<String, Object?> json) =>
+      _$IImportAntennasRequestFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_timeline_request.freezed.dart';
 part 'notes_timeline_request.g.dart';
@@ -20,5 +19,6 @@ abstract class NotesTimelineRequest with _$NotesTimelineRequest {
     @Default(true) bool? withRenotes,
   }) = _NotesTimelineRequest;
 
-  factory NotesTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesTimelineRequestFromJson(json);
+  factory NotesTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesTimelineRequestFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_export_following_request.freezed.dart';
 part 'i_export_following_request.g.dart';
@@ -11,5 +10,6 @@ abstract class IExportFollowingRequest with _$IExportFollowingRequest {
     @Default(false) bool? excludeInactive,
   }) = _IExportFollowingRequest;
 
-  factory IExportFollowingRequest.fromJson(Map<String, Object?> json) => _$IExportFollowingRequestFromJson(json);
+  factory IExportFollowingRequest.fromJson(Map<String, Object?> json) =>
+      _$IExportFollowingRequestFromJson(json);
 }

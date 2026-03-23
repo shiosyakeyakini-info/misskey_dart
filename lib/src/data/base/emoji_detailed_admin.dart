@@ -20,8 +20,10 @@ abstract class EmojiDetailedAdmin with _$EmojiDetailedAdmin {
     String? license,
     required bool localOnly,
     required bool isSensitive,
-    required List<EmojiDetailedAdminRoleIdsThatCanBeUsedThisEmojiAsReactionItem> roleIdsThatCanBeUsedThisEmojiAsReaction,
+    required List<EmojiDetailedAdminRoleIdsThatCanBeUsedThisEmojiAsReactionItem>
+        roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _EmojiDetailedAdmin;
 
-  factory EmojiDetailedAdmin.fromJson(Map<String, Object?> json) => _$EmojiDetailedAdminFromJson(json);
+  factory EmojiDetailedAdmin.fromJson(Map<String, Object?> json) =>
+      _$EmojiDetailedAdminFromJson(json);
 }

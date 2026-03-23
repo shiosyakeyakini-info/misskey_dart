@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'reversi_games_request.freezed.dart';
 part 'reversi_games_request.g.dart';
@@ -15,5 +14,6 @@ abstract class ReversiGamesRequest with _$ReversiGamesRequest {
     @Default(false) bool? my,
   }) = _ReversiGamesRequest;
 
-  factory ReversiGamesRequest.fromJson(Map<String, Object?> json) => _$ReversiGamesRequestFromJson(json);
+  factory ReversiGamesRequest.fromJson(Map<String, Object?> json) =>
+      _$ReversiGamesRequestFromJson(json);
 }

@@ -7,11 +7,13 @@ part 'charts_instance_request.g.dart';
 @freezed
 abstract class ChartsInstanceRequest with _$ChartsInstanceRequest {
   const factory ChartsInstanceRequest({
-    @JsonKey(unknownEnumValue: ChartsInstanceSpan.unknown) ChartsInstanceSpan? span,
+    @JsonKey(unknownEnumValue: ChartsInstanceSpan.unknown)
+    ChartsInstanceSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
     String? host,
   }) = _ChartsInstanceRequest;
 
-  factory ChartsInstanceRequest.fromJson(Map<String, Object?> json) => _$ChartsInstanceRequestFromJson(json);
+  factory ChartsInstanceRequest.fromJson(Map<String, Object?> json) =>
+      _$ChartsInstanceRequestFromJson(json);
 }

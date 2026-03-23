@@ -5,11 +5,20 @@ part 'i_update_notification_recieve_config_chat_room_invitation_received.freezed
 part 'i_update_notification_recieve_config_chat_room_invitation_received.g.dart';
 
 @freezed
-abstract class IUpdateNotificationRecieveConfigChatRoomInvitationReceived with _$IUpdateNotificationRecieveConfigChatRoomInvitationReceived {
+abstract class IUpdateNotificationRecieveConfigChatRoomInvitationReceived
+    with _$IUpdateNotificationRecieveConfigChatRoomInvitationReceived {
   const factory IUpdateNotificationRecieveConfigChatRoomInvitationReceived({
-    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType.unknown) required IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType type,
+    @JsonKey(
+        unknownEnumValue:
+            IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+                .unknown)
+    required IUpdateNotificationRecieveConfigChatRoomInvitationReceivedType
+        type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigChatRoomInvitationReceived;
 
-  factory IUpdateNotificationRecieveConfigChatRoomInvitationReceived.fromJson(Map<String, Object?> json) => _$IUpdateNotificationRecieveConfigChatRoomInvitationReceivedFromJson(json);
+  factory IUpdateNotificationRecieveConfigChatRoomInvitationReceived.fromJson(
+          Map<String, Object?> json) =>
+      _$IUpdateNotificationRecieveConfigChatRoomInvitationReceivedFromJson(
+          json);
 }

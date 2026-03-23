@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_recommendation.freezed.dart';
 part 'users_recommendation.g.dart';
@@ -11,5 +10,6 @@ abstract class UsersRecommendation with _$UsersRecommendation {
     @Default(0) int? offset,
   }) = _UsersRecommendation;
 
-  factory UsersRecommendation.fromJson(Map<String, Object?> json) => _$UsersRecommendationFromJson(json);
+  factory UsersRecommendation.fromJson(Map<String, Object?> json) =>
+      _$UsersRecommendationFromJson(json);
 }

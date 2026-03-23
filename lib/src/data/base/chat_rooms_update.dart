@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_rooms_update.freezed.dart';
 part 'chat_rooms_update.g.dart';
@@ -12,5 +11,6 @@ abstract class ChatRoomsUpdate with _$ChatRoomsUpdate {
     String? description,
   }) = _ChatRoomsUpdate;
 
-  factory ChatRoomsUpdate.fromJson(Map<String, Object?> json) => _$ChatRoomsUpdateFromJson(json);
+  factory ChatRoomsUpdate.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsUpdateFromJson(json);
 }

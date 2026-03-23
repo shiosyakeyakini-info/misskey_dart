@@ -11,5 +11,6 @@ abstract class ChartsUserFollowingLocal with _$ChartsUserFollowingLocal {
     required ChartsUserFollowingLocalFollowers followers,
   }) = _ChartsUserFollowingLocal;
 
-  factory ChartsUserFollowingLocal.fromJson(Map<String, Object?> json) => _$ChartsUserFollowingLocalFromJson(json);
+  factory ChartsUserFollowingLocal.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserFollowingLocalFromJson(json);
 }

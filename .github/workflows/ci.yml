@@ -2,12 +2,17 @@ name: CI
 
 on: [push, pull_request]
 
+env:
+  DART_SDK_VERSION: "3.8.1"
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ env.DART_SDK_VERSION }}
       - run: ./test/testenv/setup.sh
       - run: dart pub get
       - run: dart test --test-randomize-ordering-seed=random
@@ -16,6 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ env.DART_SDK_VERSION }}
       - run: dart pub get
       - run: dart format --output=none --set-exit-if-changed .
   analyze:
@@ -23,5 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ env.DART_SDK_VERSION }}
       - run: dart pub get
       - run: dart analyze --fatal-infos

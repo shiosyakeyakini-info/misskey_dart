@@ -12,7 +12,8 @@ abstract class Antenna with _$Antenna {
     required String name,
     required List<dynamic> keywords,
     required List<dynamic> excludeKeywords,
-    @JsonKey(unknownEnumValue: AntennaSource.unknown) required AntennaSource src,
+    @JsonKey(unknownEnumValue: AntennaSource.unknown)
+    required AntennaSource src,
     String? userListId,
     required List<String> users,
     @Default(false) bool caseSensitive,
@@ -26,5 +27,6 @@ abstract class Antenna with _$Antenna {
     @Default(false) bool excludeNotesInSensitiveChannel,
   }) = _Antenna;
 
-  factory Antenna.fromJson(Map<String, Object?> json) => _$AntennaFromJson(json);
+  factory Antenna.fromJson(Map<String, Object?> json) =>
+      _$AntennaFromJson(json);
 }

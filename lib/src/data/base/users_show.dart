@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_show.freezed.dart';
 part 'users_show.g.dart';
@@ -10,5 +9,6 @@ abstract class UsersShow with _$UsersShow {
     String? host,
   }) = _UsersShow;
 
-  factory UsersShow.fromJson(Map<String, Object?> json) => _$UsersShowFromJson(json);
+  factory UsersShow.fromJson(Map<String, Object?> json) =>
+      _$UsersShowFromJson(json);
 }

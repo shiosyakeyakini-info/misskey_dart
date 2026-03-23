@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'bubble_game_ranking_request.freezed.dart';
 part 'bubble_game_ranking_request.g.dart';
@@ -10,5 +9,6 @@ abstract class BubbleGameRankingRequest with _$BubbleGameRankingRequest {
     String? gameMode,
   }) = _BubbleGameRankingRequest;
 
-  factory BubbleGameRankingRequest.fromJson(Map<String, Object?> json) => _$BubbleGameRankingRequestFromJson(json);
+  factory BubbleGameRankingRequest.fromJson(Map<String, Object?> json) =>
+      _$BubbleGameRankingRequestFromJson(json);
 }

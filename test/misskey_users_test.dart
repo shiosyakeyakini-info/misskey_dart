@@ -30,9 +30,11 @@ void main() async {
   });
 
   test("showByIds", () async {
-    final response = await userClient.apiService
-        .post<List>("users/show", {"userIds": [admin.id, user.id]});
-    final users = response.map((e) => UserDetailed.fromJson(e as Map<String, dynamic>));
+    final response = await userClient.apiService.post<List>("users/show", {
+      "userIds": [admin.id, user.id]
+    });
+    final users =
+        response.map((e) => UserDetailed.fromJson(e as Map<String, dynamic>));
     expect(
       users.map((e) => e.username),
       orderedEquals([admin.username, user.username]),
@@ -40,8 +42,8 @@ void main() async {
   });
 
   test("showByName", () async {
-    final response = await userClient.users
-        .show(UsersShowRequest(username: user.username));
+    final response =
+        await userClient.users.show(UsersShowRequest(username: user.username));
     expect(response.id, equals(user.id));
   });
 
@@ -236,7 +238,8 @@ void main() async {
     test("list", () async {
       final list = await userClient.users.list
           .create(UsersListsCreateRequest(name: "test"));
-      final response = await userClient.users.list.list(UsersListsListRequest());
+      final response =
+          await userClient.users.list.list(UsersListsListRequest());
       expect(response.map((e) => e.id), contains(list.id));
     });
 

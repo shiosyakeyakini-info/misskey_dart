@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_delete_request.freezed.dart';
 part 'drive_files_delete_request.g.dart';
@@ -10,5 +9,6 @@ abstract class DriveFilesDeleteRequest with _$DriveFilesDeleteRequest {
     String? fileId,
   }) = _DriveFilesDeleteRequest;
 
-  factory DriveFilesDeleteRequest.fromJson(Map<String, Object?> json) => _$DriveFilesDeleteRequestFromJson(json);
+  factory DriveFilesDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesDeleteRequestFromJson(json);
 }

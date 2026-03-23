@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'blocking_create.freezed.dart';
 part 'blocking_create.g.dart';
@@ -10,5 +9,6 @@ abstract class BlockingCreate with _$BlockingCreate {
     required String userId,
   }) = _BlockingCreate;
 
-  factory BlockingCreate.fromJson(Map<String, Object?> json) => _$BlockingCreateFromJson(json);
+  factory BlockingCreate.fromJson(Map<String, Object?> json) =>
+      _$BlockingCreateFromJson(json);
 }

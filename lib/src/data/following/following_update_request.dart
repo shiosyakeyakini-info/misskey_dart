@@ -12,5 +12,6 @@ abstract class FollowingUpdateRequest with _$FollowingUpdateRequest {
     bool? withReplies,
   }) = _FollowingUpdateRequest;
 
-  factory FollowingUpdateRequest.fromJson(Map<String, Object?> json) => _$FollowingUpdateRequestFromJson(json);
+  factory FollowingUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$FollowingUpdateRequestFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_remove_note.freezed.dart';
 part 'clips_remove_note.g.dart';
@@ -11,5 +10,6 @@ abstract class ClipsRemoveNote with _$ClipsRemoveNote {
     required String noteId,
   }) = _ClipsRemoveNote;
 
-  factory ClipsRemoveNote.fromJson(Map<String, Object?> json) => _$ClipsRemoveNoteFromJson(json);
+  factory ClipsRemoveNote.fromJson(Map<String, Object?> json) =>
+      _$ClipsRemoveNoteFromJson(json);
 }

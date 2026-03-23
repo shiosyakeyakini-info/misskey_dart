@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_messages_search.freezed.dart';
 part 'chat_messages_search.g.dart';
@@ -13,5 +12,6 @@ abstract class ChatMessagesSearch with _$ChatMessagesSearch {
     String? roomId,
   }) = _ChatMessagesSearch;
 
-  factory ChatMessagesSearch.fromJson(Map<String, Object?> json) => _$ChatMessagesSearchFromJson(json);
+  factory ChatMessagesSearch.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesSearchFromJson(json);
 }

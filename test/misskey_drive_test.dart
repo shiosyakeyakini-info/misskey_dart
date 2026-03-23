@@ -25,7 +25,8 @@ void main() async {
       final path = "${dir.path}/$name.txt";
       final file = await File(path).create();
       await file.writeAsString("test");
-      await userClient.drive.files.createWithFile(DriveFilesCreateRequest(), file);
+      await userClient.drive.files
+          .createWithFile(DriveFilesCreateRequest(), file);
     });
 
     test("createAsBinary", () async {

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_lists_pull.freezed.dart';
 part 'users_lists_pull.g.dart';
@@ -11,5 +10,6 @@ abstract class UsersListsPull with _$UsersListsPull {
     required String userId,
   }) = _UsersListsPull;
 
-  factory UsersListsPull.fromJson(Map<String, Object?> json) => _$UsersListsPullFromJson(json);
+  factory UsersListsPull.fromJson(Map<String, Object?> json) =>
+      _$UsersListsPullFromJson(json);
 }

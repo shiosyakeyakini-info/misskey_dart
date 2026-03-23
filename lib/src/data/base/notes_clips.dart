@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_clips.freezed.dart';
 part 'notes_clips.g.dart';
@@ -10,5 +9,6 @@ abstract class NotesClips with _$NotesClips {
     required String noteId,
   }) = _NotesClips;
 
-  factory NotesClips.fromJson(Map<String, Object?> json) => _$NotesClipsFromJson(json);
+  factory NotesClips.fromJson(Map<String, Object?> json) =>
+      _$NotesClipsFromJson(json);
 }

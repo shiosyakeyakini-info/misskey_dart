@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'following_requests_sent.freezed.dart';
 part 'following_requests_sent.g.dart';
@@ -14,5 +13,6 @@ abstract class FollowingRequestsSent with _$FollowingRequestsSent {
     @Default(10) int? limit,
   }) = _FollowingRequestsSent;
 
-  factory FollowingRequestsSent.fromJson(Map<String, Object?> json) => _$FollowingRequestsSentFromJson(json);
+  factory FollowingRequestsSent.fromJson(Map<String, Object?> json) =>
+      _$FollowingRequestsSentFromJson(json);
 }

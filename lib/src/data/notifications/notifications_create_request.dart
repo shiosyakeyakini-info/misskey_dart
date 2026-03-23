@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notifications_create_request.freezed.dart';
 part 'notifications_create_request.g.dart';
@@ -12,5 +11,6 @@ abstract class NotificationsCreateRequest with _$NotificationsCreateRequest {
     String? icon,
   }) = _NotificationsCreateRequest;
 
-  factory NotificationsCreateRequest.fromJson(Map<String, Object?> json) => _$NotificationsCreateRequestFromJson(json);
+  factory NotificationsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$NotificationsCreateRequestFromJson(json);
 }

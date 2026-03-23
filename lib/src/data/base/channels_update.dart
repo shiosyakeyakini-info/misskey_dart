@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_update.freezed.dart';
 part 'channels_update.g.dart';
@@ -18,5 +17,6 @@ abstract class ChannelsUpdate with _$ChannelsUpdate {
     bool? allowRenoteToExternal,
   }) = _ChannelsUpdate;
 
-  factory ChannelsUpdate.fromJson(Map<String, Object?> json) => _$ChannelsUpdateFromJson(json);
+  factory ChannelsUpdate.fromJson(Map<String, Object?> json) =>
+      _$ChannelsUpdateFromJson(json);
 }

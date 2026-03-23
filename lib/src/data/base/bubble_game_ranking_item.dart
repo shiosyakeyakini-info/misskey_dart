@@ -12,5 +12,6 @@ abstract class BubbleGameRankingItem with _$BubbleGameRankingItem {
     UserLite? user,
   }) = _BubbleGameRankingItem;
 
-  factory BubbleGameRankingItem.fromJson(Map<String, Object?> json) => _$BubbleGameRankingItemFromJson(json);
+  factory BubbleGameRankingItem.fromJson(Map<String, Object?> json) =>
+      _$BubbleGameRankingItemFromJson(json);
 }

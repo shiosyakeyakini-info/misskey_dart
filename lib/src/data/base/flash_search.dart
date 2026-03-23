@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'flash_search.freezed.dart';
 part 'flash_search.g.dart';
@@ -15,5 +14,6 @@ abstract class FlashSearch with _$FlashSearch {
     @Default(5) int? limit,
   }) = _FlashSearch;
 
-  factory FlashSearch.fromJson(Map<String, Object?> json) => _$FlashSearchFromJson(json);
+  factory FlashSearch.fromJson(Map<String, Object?> json) =>
+      _$FlashSearchFromJson(json);
 }

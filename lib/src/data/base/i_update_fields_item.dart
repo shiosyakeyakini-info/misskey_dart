@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_update_fields_item.freezed.dart';
 part 'i_update_fields_item.g.dart';
@@ -11,5 +10,6 @@ abstract class IUpdateFieldsItem with _$IUpdateFieldsItem {
     required String value,
   }) = _IUpdateFieldsItem;
 
-  factory IUpdateFieldsItem.fromJson(Map<String, Object?> json) => _$IUpdateFieldsItemFromJson(json);
+  factory IUpdateFieldsItem.fromJson(Map<String, Object?> json) =>
+      _$IUpdateFieldsItemFromJson(json);
 }

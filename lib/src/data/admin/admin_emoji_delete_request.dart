@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_delete_request.freezed.dart';
 part 'admin_emoji_delete_request.g.dart';
@@ -10,5 +9,6 @@ abstract class AdminEmojiDeleteRequest with _$AdminEmojiDeleteRequest {
     String? id,
   }) = _AdminEmojiDeleteRequest;
 
-  factory AdminEmojiDeleteRequest.fromJson(Map<String, Object?> json) => _$AdminEmojiDeleteRequestFromJson(json);
+  factory AdminEmojiDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiDeleteRequestFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'gallery_featured_request.freezed.dart';
 part 'gallery_featured_request.g.dart';
@@ -11,5 +10,6 @@ abstract class GalleryFeaturedRequest with _$GalleryFeaturedRequest {
     String? untilId,
   }) = _GalleryFeaturedRequest;
 
-  factory GalleryFeaturedRequest.fromJson(Map<String, Object?> json) => _$GalleryFeaturedRequestFromJson(json);
+  factory GalleryFeaturedRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryFeaturedRequestFromJson(json);
 }

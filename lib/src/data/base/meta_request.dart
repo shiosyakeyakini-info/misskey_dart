@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'meta_request.freezed.dart';
 part 'meta_request.g.dart';
@@ -10,5 +9,6 @@ abstract class MetaRequest with _$MetaRequest {
     @Default(true) bool? detail,
   }) = _MetaRequest;
 
-  factory MetaRequest.fromJson(Map<String, Object?> json) => _$MetaRequestFromJson(json);
+  factory MetaRequest.fromJson(Map<String, Object?> json) =>
+      _$MetaRequestFromJson(json);
 }

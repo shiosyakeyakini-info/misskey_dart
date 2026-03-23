@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_lists_create_from_public.freezed.dart';
 part 'users_lists_create_from_public.g.dart';
@@ -11,5 +10,6 @@ abstract class UsersListsCreateFromPublic with _$UsersListsCreateFromPublic {
     required String listId,
   }) = _UsersListsCreateFromPublic;
 
-  factory UsersListsCreateFromPublic.fromJson(Map<String, Object?> json) => _$UsersListsCreateFromPublicFromJson(json);
+  factory UsersListsCreateFromPublic.fromJson(Map<String, Object?> json) =>
+      _$UsersListsCreateFromPublicFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_unset_user_avatar.freezed.dart';
 part 'admin_unset_user_avatar.g.dart';
@@ -10,5 +9,6 @@ abstract class AdminUnsetUserAvatar with _$AdminUnsetUserAvatar {
     required String userId,
   }) = _AdminUnsetUserAvatar;
 
-  factory AdminUnsetUserAvatar.fromJson(Map<String, Object?> json) => _$AdminUnsetUserAvatarFromJson(json);
+  factory AdminUnsetUserAvatar.fromJson(Map<String, Object?> json) =>
+      _$AdminUnsetUserAvatarFromJson(json);
 }

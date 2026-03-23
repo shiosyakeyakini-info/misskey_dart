@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'gallery_posts_delete_request.freezed.dart';
 part 'gallery_posts_delete_request.g.dart';
@@ -10,5 +9,6 @@ abstract class GalleryPostsDeleteRequest with _$GalleryPostsDeleteRequest {
     String? postId,
   }) = _GalleryPostsDeleteRequest;
 
-  factory GalleryPostsDeleteRequest.fromJson(Map<String, Object?> json) => _$GalleryPostsDeleteRequestFromJson(json);
+  factory GalleryPostsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsDeleteRequestFromJson(json);
 }

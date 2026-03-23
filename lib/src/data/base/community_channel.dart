@@ -28,5 +28,6 @@ abstract class CommunityChannel with _$CommunityChannel {
     List<Note>? pinnedNotes,
   }) = _CommunityChannel;
 
-  factory CommunityChannel.fromJson(Map<String, Object?> json) => _$CommunityChannelFromJson(json);
+  factory CommunityChannel.fromJson(Map<String, Object?> json) =>
+      _$CommunityChannelFromJson(json);
 }

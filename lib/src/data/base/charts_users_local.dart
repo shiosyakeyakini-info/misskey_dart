@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_users_local.freezed.dart';
 part 'charts_users_local.g.dart';
@@ -12,5 +11,6 @@ abstract class ChartsUsersLocal with _$ChartsUsersLocal {
     required List<double> dec,
   }) = _ChartsUsersLocal;
 
-  factory ChartsUsersLocal.fromJson(Map<String, Object?> json) => _$ChartsUsersLocalFromJson(json);
+  factory ChartsUsersLocal.fromJson(Map<String, Object?> json) =>
+      _$ChartsUsersLocalFromJson(json);
 }

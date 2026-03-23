@@ -11,5 +11,6 @@ abstract class RolesUsersItem with _$RolesUsersItem {
     required UserDetailed user,
   }) = _RolesUsersItem;
 
-  factory RolesUsersItem.fromJson(Map<String, Object?> json) => _$RolesUsersItemFromJson(json);
+  factory RolesUsersItem.fromJson(Map<String, Object?> json) =>
+      _$RolesUsersItemFromJson(json);
 }

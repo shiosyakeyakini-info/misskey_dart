@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_revoke_token.freezed.dart';
 part 'i_revoke_token.g.dart';
@@ -10,5 +9,6 @@ abstract class IRevokeToken with _$IRevokeToken {
     String? token,
   }) = _IRevokeToken;
 
-  factory IRevokeToken.fromJson(Map<String, Object?> json) => _$IRevokeTokenFromJson(json);
+  factory IRevokeToken.fromJson(Map<String, Object?> json) =>
+      _$IRevokeTokenFromJson(json);
 }

@@ -36,5 +36,6 @@ abstract class ReversiGameDetailed with _$ReversiGameDetailed {
     required List<String> map,
   }) = _ReversiGameDetailed;
 
-  factory ReversiGameDetailed.fromJson(Map<String, Object?> json) => _$ReversiGameDetailedFromJson(json);
+  factory ReversiGameDetailed.fromJson(Map<String, Object?> json) =>
+      _$ReversiGameDetailedFromJson(json);
 }

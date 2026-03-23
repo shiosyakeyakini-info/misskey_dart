@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_queue_queue_stats_db_memory.freezed.dart';
 part 'admin_queue_queue_stats_db_memory.g.dart';
 
 @freezed
-abstract class AdminQueueQueueStatsDbMemory with _$AdminQueueQueueStatsDbMemory {
+abstract class AdminQueueQueueStatsDbMemory
+    with _$AdminQueueQueueStatsDbMemory {
   const factory AdminQueueQueueStatsDbMemory({
     required double total,
     required double used,
@@ -13,5 +13,6 @@ abstract class AdminQueueQueueStatsDbMemory with _$AdminQueueQueueStatsDbMemory 
     required double peak,
   }) = _AdminQueueQueueStatsDbMemory;
 
-  factory AdminQueueQueueStatsDbMemory.fromJson(Map<String, Object?> json) => _$AdminQueueQueueStatsDbMemoryFromJson(json);
+  factory AdminQueueQueueStatsDbMemory.fromJson(Map<String, Object?> json) =>
+      _$AdminQueueQueueStatsDbMemoryFromJson(json);
 }

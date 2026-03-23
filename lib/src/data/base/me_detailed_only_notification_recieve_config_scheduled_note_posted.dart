@@ -5,11 +5,20 @@ part 'me_detailed_only_notification_recieve_config_scheduled_note_posted.freezed
 part 'me_detailed_only_notification_recieve_config_scheduled_note_posted.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted {
+abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted
+    with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted {
   const factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted({
-    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType.unknown) required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType type,
+    @JsonKey(
+        unknownEnumValue:
+            MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+                .unknown)
+    required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+        type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted;
 
-  factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted.fromJson(
+          Map<String, Object?> json) =>
+      _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedFromJson(
+          json);
 }
