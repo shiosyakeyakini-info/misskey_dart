@@ -9,5 +9,6 @@ abstract class MiauthGenToken with _$MiauthGenToken {
     required String token,
   }) = _MiauthGenToken;
 
-  factory MiauthGenToken.fromJson(Map<String, Object?> json) => _$MiauthGenTokenFromJson(json);
+  factory MiauthGenToken.fromJson(Map<String, Object?> json) =>
+      _$MiauthGenTokenFromJson(json);
 }

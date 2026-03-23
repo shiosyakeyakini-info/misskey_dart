@@ -9,5 +9,6 @@ abstract class IImportMutingRequest with _$IImportMutingRequest {
     String? fileId,
   }) = _IImportMutingRequest;
 
-  factory IImportMutingRequest.fromJson(Map<String, Object?> json) => _$IImportMutingRequestFromJson(json);
+  factory IImportMutingRequest.fromJson(Map<String, Object?> json) =>
+      _$IImportMutingRequestFromJson(json);
 }

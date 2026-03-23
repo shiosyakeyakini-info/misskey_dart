@@ -9,5 +9,6 @@ abstract class DriveFilesFindByHash with _$DriveFilesFindByHash {
     required String md5,
   }) = _DriveFilesFindByHash;
 
-  factory DriveFilesFindByHash.fromJson(Map<String, Object?> json) => _$DriveFilesFindByHashFromJson(json);
+  factory DriveFilesFindByHash.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesFindByHashFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class DriveFilesCheckExistence with _$DriveFilesCheckExistence {
     required String md5,
   }) = _DriveFilesCheckExistence;
 
-  factory DriveFilesCheckExistence.fromJson(Map<String, Object?> json) => _$DriveFilesCheckExistenceFromJson(json);
+  factory DriveFilesCheckExistence.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesCheckExistenceFromJson(json);
 }

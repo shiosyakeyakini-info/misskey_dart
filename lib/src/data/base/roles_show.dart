@@ -9,5 +9,6 @@ abstract class RolesShow with _$RolesShow {
     required String roleId,
   }) = _RolesShow;
 
-  factory RolesShow.fromJson(Map<String, Object?> json) => _$RolesShowFromJson(json);
+  factory RolesShow.fromJson(Map<String, Object?> json) =>
+      _$RolesShowFromJson(json);
 }

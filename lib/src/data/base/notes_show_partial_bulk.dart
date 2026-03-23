@@ -9,5 +9,6 @@ abstract class NotesShowPartialBulk with _$NotesShowPartialBulk {
     required List<String> noteIds,
   }) = _NotesShowPartialBulk;
 
-  factory NotesShowPartialBulk.fromJson(Map<String, Object?> json) => _$NotesShowPartialBulkFromJson(json);
+  factory NotesShowPartialBulk.fromJson(Map<String, Object?> json) =>
+      _$NotesShowPartialBulkFromJson(json);
 }

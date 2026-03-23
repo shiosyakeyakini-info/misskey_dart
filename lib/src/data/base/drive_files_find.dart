@@ -10,5 +10,6 @@ abstract class DriveFilesFind with _$DriveFilesFind {
     @Default(null) String? folderId,
   }) = _DriveFilesFind;
 
-  factory DriveFilesFind.fromJson(Map<String, Object?> json) => _$DriveFilesFindFromJson(json);
+  factory DriveFilesFind.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesFindFromJson(json);
 }

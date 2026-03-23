@@ -9,5 +9,6 @@ abstract class ApShowRequest with _$ApShowRequest {
     String? uri,
   }) = _ApShowRequest;
 
-  factory ApShowRequest.fromJson(Map<String, Object?> json) => _$ApShowRequestFromJson(json);
+  factory ApShowRequest.fromJson(Map<String, Object?> json) =>
+      _$ApShowRequestFromJson(json);
 }

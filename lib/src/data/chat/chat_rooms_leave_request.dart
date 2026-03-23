@@ -9,5 +9,6 @@ abstract class ChatRoomsLeaveRequest with _$ChatRoomsLeaveRequest {
     String? roomId,
   }) = _ChatRoomsLeaveRequest;
 
-  factory ChatRoomsLeaveRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsLeaveRequestFromJson(json);
+  factory ChatRoomsLeaveRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsLeaveRequestFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class BubbleGameRankingRequest with _$BubbleGameRankingRequest {
     String? gameMode,
   }) = _BubbleGameRankingRequest;
 
-  factory BubbleGameRankingRequest.fromJson(Map<String, Object?> json) => _$BubbleGameRankingRequestFromJson(json);
+  factory BubbleGameRankingRequest.fromJson(Map<String, Object?> json) =>
+      _$BubbleGameRankingRequestFromJson(json);
 }

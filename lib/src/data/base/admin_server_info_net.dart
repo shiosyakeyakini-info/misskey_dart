@@ -9,5 +9,6 @@ abstract class AdminServerInfoNet with _$AdminServerInfoNet {
     @JsonKey(name: 'interface') required String interface_,
   }) = _AdminServerInfoNet;
 
-  factory AdminServerInfoNet.fromJson(Map<String, Object?> json) => _$AdminServerInfoNetFromJson(json);
+  factory AdminServerInfoNet.fromJson(Map<String, Object?> json) =>
+      _$AdminServerInfoNetFromJson(json);
 }

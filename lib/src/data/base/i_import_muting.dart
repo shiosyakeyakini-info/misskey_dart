@@ -9,5 +9,6 @@ abstract class IImportMuting with _$IImportMuting {
     required String fileId,
   }) = _IImportMuting;
 
-  factory IImportMuting.fromJson(Map<String, Object?> json) => _$IImportMutingFromJson(json);
+  factory IImportMuting.fromJson(Map<String, Object?> json) =>
+      _$IImportMutingFromJson(json);
 }

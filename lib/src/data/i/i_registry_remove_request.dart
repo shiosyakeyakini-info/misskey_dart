@@ -11,5 +11,6 @@ abstract class IRegistryRemoveRequest with _$IRegistryRemoveRequest {
     String? domain,
   }) = _IRegistryRemoveRequest;
 
-  factory IRegistryRemoveRequest.fromJson(Map<String, Object?> json) => _$IRegistryRemoveRequestFromJson(json);
+  factory IRegistryRemoveRequest.fromJson(Map<String, Object?> json) =>
+      _$IRegistryRemoveRequestFromJson(json);
 }

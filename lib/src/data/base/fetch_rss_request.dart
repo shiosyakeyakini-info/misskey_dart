@@ -9,5 +9,6 @@ abstract class FetchRssRequest with _$FetchRssRequest {
     String? url,
   }) = _FetchRssRequest;
 
-  factory FetchRssRequest.fromJson(Map<String, Object?> json) => _$FetchRssRequestFromJson(json);
+  factory FetchRssRequest.fromJson(Map<String, Object?> json) =>
+      _$FetchRssRequestFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class ClipsAddNote with _$ClipsAddNote {
     required String noteId,
   }) = _ClipsAddNote;
 
-  factory ClipsAddNote.fromJson(Map<String, Object?> json) => _$ClipsAddNoteFromJson(json);
+  factory ClipsAddNote.fromJson(Map<String, Object?> json) =>
+      _$ClipsAddNoteFromJson(json);
 }

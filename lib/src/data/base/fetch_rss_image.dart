@@ -11,5 +11,6 @@ abstract class FetchRssImage with _$FetchRssImage {
     String? title,
   }) = _FetchRssImage;
 
-  factory FetchRssImage.fromJson(Map<String, Object?> json) => _$FetchRssImageFromJson(json);
+  factory FetchRssImage.fromJson(Map<String, Object?> json) =>
+      _$FetchRssImageFromJson(json);
 }

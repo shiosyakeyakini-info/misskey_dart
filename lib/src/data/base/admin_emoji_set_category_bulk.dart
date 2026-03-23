@@ -10,5 +10,6 @@ abstract class AdminEmojiSetCategoryBulk with _$AdminEmojiSetCategoryBulk {
     String? category,
   }) = _AdminEmojiSetCategoryBulk;
 
-  factory AdminEmojiSetCategoryBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiSetCategoryBulkFromJson(json);
+  factory AdminEmojiSetCategoryBulk.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiSetCategoryBulkFromJson(json);
 }

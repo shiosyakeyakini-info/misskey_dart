@@ -14,5 +14,6 @@ abstract class UsersClipsRequest with _$UsersClipsRequest {
     int? untilDate,
   }) = _UsersClipsRequest;
 
-  factory UsersClipsRequest.fromJson(Map<String, Object?> json) => _$UsersClipsRequestFromJson(json);
+  factory UsersClipsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersClipsRequestFromJson(json);
 }

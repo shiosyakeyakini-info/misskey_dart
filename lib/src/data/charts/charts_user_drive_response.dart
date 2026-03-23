@@ -14,5 +14,6 @@ abstract class ChartsUserDriveResponse with _$ChartsUserDriveResponse {
     required List<double> decSize,
   }) = _ChartsUserDriveResponse;
 
-  factory ChartsUserDriveResponse.fromJson(Map<String, Object?> json) => _$ChartsUserDriveResponseFromJson(json);
+  factory ChartsUserDriveResponse.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserDriveResponseFromJson(json);
 }

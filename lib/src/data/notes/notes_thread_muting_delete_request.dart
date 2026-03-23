@@ -4,10 +4,12 @@ part 'notes_thread_muting_delete_request.freezed.dart';
 part 'notes_thread_muting_delete_request.g.dart';
 
 @freezed
-abstract class NotesThreadMutingDeleteRequest with _$NotesThreadMutingDeleteRequest {
+abstract class NotesThreadMutingDeleteRequest
+    with _$NotesThreadMutingDeleteRequest {
   const factory NotesThreadMutingDeleteRequest({
     String? noteId,
   }) = _NotesThreadMutingDeleteRequest;
 
-  factory NotesThreadMutingDeleteRequest.fromJson(Map<String, Object?> json) => _$NotesThreadMutingDeleteRequestFromJson(json);
+  factory NotesThreadMutingDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesThreadMutingDeleteRequestFromJson(json);
 }

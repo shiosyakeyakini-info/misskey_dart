@@ -15,5 +15,6 @@ abstract class ChartsInstanceResponse with _$ChartsInstanceResponse {
     required ChartsInstanceDrive drive,
   }) = _ChartsInstanceResponse;
 
-  factory ChartsInstanceResponse.fromJson(Map<String, Object?> json) => _$ChartsInstanceResponseFromJson(json);
+  factory ChartsInstanceResponse.fromJson(Map<String, Object?> json) =>
+      _$ChartsInstanceResponseFromJson(json);
 }

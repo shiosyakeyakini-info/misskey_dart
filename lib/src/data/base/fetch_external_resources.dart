@@ -10,5 +10,6 @@ abstract class FetchExternalResources with _$FetchExternalResources {
     required String data,
   }) = _FetchExternalResources;
 
-  factory FetchExternalResources.fromJson(Map<String, Object?> json) => _$FetchExternalResourcesFromJson(json);
+  factory FetchExternalResources.fromJson(Map<String, Object?> json) =>
+      _$FetchExternalResourcesFromJson(json);
 }

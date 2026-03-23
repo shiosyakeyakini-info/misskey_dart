@@ -9,5 +9,6 @@ abstract class ClipsShowRequest with _$ClipsShowRequest {
     String? clipId,
   }) = _ClipsShowRequest;
 
-  factory ClipsShowRequest.fromJson(Map<String, Object?> json) => _$ClipsShowRequestFromJson(json);
+  factory ClipsShowRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsShowRequestFromJson(json);
 }

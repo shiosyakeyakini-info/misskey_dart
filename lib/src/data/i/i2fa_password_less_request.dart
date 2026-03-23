@@ -9,5 +9,6 @@ abstract class I2faPasswordLessRequest with _$I2faPasswordLessRequest {
     bool? value,
   }) = _I2faPasswordLessRequest;
 
-  factory I2faPasswordLessRequest.fromJson(Map<String, Object?> json) => _$I2faPasswordLessRequestFromJson(json);
+  factory I2faPasswordLessRequest.fromJson(Map<String, Object?> json) =>
+      _$I2faPasswordLessRequestFromJson(json);
 }

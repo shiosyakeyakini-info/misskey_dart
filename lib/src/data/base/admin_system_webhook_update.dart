@@ -15,5 +15,6 @@ abstract class AdminSystemWebhookUpdate with _$AdminSystemWebhookUpdate {
     @Default("") String? secret,
   }) = _AdminSystemWebhookUpdate;
 
-  factory AdminSystemWebhookUpdate.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookUpdateFromJson(json);
+  factory AdminSystemWebhookUpdate.fromJson(Map<String, Object?> json) =>
+      _$AdminSystemWebhookUpdateFromJson(json);
 }

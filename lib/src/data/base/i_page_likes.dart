@@ -13,5 +13,6 @@ abstract class IPageLikes with _$IPageLikes {
     int? untilDate,
   }) = _IPageLikes;
 
-  factory IPageLikes.fromJson(Map<String, Object?> json) => _$IPageLikesFromJson(json);
+  factory IPageLikes.fromJson(Map<String, Object?> json) =>
+      _$IPageLikesFromJson(json);
 }

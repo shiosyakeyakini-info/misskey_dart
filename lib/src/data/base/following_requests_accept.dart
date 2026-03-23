@@ -9,5 +9,6 @@ abstract class FollowingRequestsAccept with _$FollowingRequestsAccept {
     required String userId,
   }) = _FollowingRequestsAccept;
 
-  factory FollowingRequestsAccept.fromJson(Map<String, Object?> json) => _$FollowingRequestsAcceptFromJson(json);
+  factory FollowingRequestsAccept.fromJson(Map<String, Object?> json) =>
+      _$FollowingRequestsAcceptFromJson(json);
 }

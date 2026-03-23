@@ -5,11 +5,17 @@ part 'me_detailed_only_notification_recieve_config_renote.freezed.dart';
 part 'me_detailed_only_notification_recieve_config_renote.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigRenote with _$MeDetailedOnlyNotificationRecieveConfigRenote {
+abstract class MeDetailedOnlyNotificationRecieveConfigRenote
+    with _$MeDetailedOnlyNotificationRecieveConfigRenote {
   const factory MeDetailedOnlyNotificationRecieveConfigRenote({
-    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown) required MeDetailedOnlyNotificationRecieveConfigRenoteType type,
+    @JsonKey(
+        unknownEnumValue:
+            MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown)
+    required MeDetailedOnlyNotificationRecieveConfigRenoteType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigRenote;
 
-  factory MeDetailedOnlyNotificationRecieveConfigRenote.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigRenoteFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigRenote.fromJson(
+          Map<String, Object?> json) =>
+      _$MeDetailedOnlyNotificationRecieveConfigRenoteFromJson(json);
 }

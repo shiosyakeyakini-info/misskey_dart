@@ -11,5 +11,6 @@ abstract class SwShowRegistrationResponse with _$SwShowRegistrationResponse {
     required bool sendReadMessage,
   }) = _SwShowRegistrationResponse;
 
-  factory SwShowRegistrationResponse.fromJson(Map<String, Object?> json) => _$SwShowRegistrationResponseFromJson(json);
+  factory SwShowRegistrationResponse.fromJson(Map<String, Object?> json) =>
+      _$SwShowRegistrationResponseFromJson(json);
 }

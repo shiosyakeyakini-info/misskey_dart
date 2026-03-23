@@ -18,5 +18,6 @@ abstract class EmojiDetailed with _$EmojiDetailed {
     required List<String> roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _EmojiDetailed;
 
-  factory EmojiDetailed.fromJson(Map<String, Object?> json) => _$EmojiDetailedFromJson(json);
+  factory EmojiDetailed.fromJson(Map<String, Object?> json) =>
+      _$EmojiDetailedFromJson(json);
 }

@@ -18,5 +18,6 @@ abstract class NotesRequest with _$NotesRequest {
     int? untilDate,
   }) = _NotesRequest;
 
-  factory NotesRequest.fromJson(Map<String, Object?> json) => _$NotesRequestFromJson(json);
+  factory NotesRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesRequestFromJson(json);
 }

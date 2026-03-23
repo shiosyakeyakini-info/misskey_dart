@@ -9,5 +9,6 @@ abstract class SwUnregisterRequest with _$SwUnregisterRequest {
     String? endpoint,
   }) = _SwUnregisterRequest;
 
-  factory SwUnregisterRequest.fromJson(Map<String, Object?> json) => _$SwUnregisterRequestFromJson(json);
+  factory SwUnregisterRequest.fromJson(Map<String, Object?> json) =>
+      _$SwUnregisterRequestFromJson(json);
 }

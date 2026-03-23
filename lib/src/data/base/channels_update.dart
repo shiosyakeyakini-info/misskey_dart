@@ -17,5 +17,6 @@ abstract class ChannelsUpdate with _$ChannelsUpdate {
     bool? allowRenoteToExternal,
   }) = _ChannelsUpdate;
 
-  factory ChannelsUpdate.fromJson(Map<String, Object?> json) => _$ChannelsUpdateFromJson(json);
+  factory ChannelsUpdate.fromJson(Map<String, Object?> json) =>
+      _$ChannelsUpdateFromJson(json);
 }

@@ -20,7 +20,11 @@ abstract class JoinMisskeyStats with _$JoinMisskeyStats {
   const factory JoinMisskeyStats({
     required int notesCount,
     required int usersCount,
-    required int mau,
+    // Removed in joinmisskey/api 3.1.0
+    int? mau,
+    int? npd15,
+    int? druYesterday,
+    int? dru15,
     required int instancesCount,
   }) = _JoinMisskeyStats;
 
@@ -43,6 +47,9 @@ abstract class JoinMisskeyInstanceInfo with _$JoinMisskeyInstanceInfo {
     // ignore: invalid_annotation_target
     @JsonKey(name: "nodeinfo") JoinMisskeyNodeInfo? nodeInfo,
     Map<String, dynamic>? meta,
+    int? npd15,
+    int? druYesterday,
+    int? dru15,
   }) = _JoinMisskeyInstanceInfo;
 
   factory JoinMisskeyInstanceInfo.fromJson(Map<String, dynamic> json) =>

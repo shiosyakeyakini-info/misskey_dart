@@ -10,5 +10,6 @@ abstract class AdminUpdateUserNote with _$AdminUpdateUserNote {
     required String text,
   }) = _AdminUpdateUserNote;
 
-  factory AdminUpdateUserNote.fromJson(Map<String, Object?> json) => _$AdminUpdateUserNoteFromJson(json);
+  factory AdminUpdateUserNote.fromJson(Map<String, Object?> json) =>
+      _$AdminUpdateUserNoteFromJson(json);
 }

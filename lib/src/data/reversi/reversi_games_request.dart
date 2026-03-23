@@ -14,5 +14,6 @@ abstract class ReversiGamesRequest with _$ReversiGamesRequest {
     @Default(false) bool? my,
   }) = _ReversiGamesRequest;
 
-  factory ReversiGamesRequest.fromJson(Map<String, Object?> json) => _$ReversiGamesRequestFromJson(json);
+  factory ReversiGamesRequest.fromJson(Map<String, Object?> json) =>
+      _$ReversiGamesRequestFromJson(json);
 }

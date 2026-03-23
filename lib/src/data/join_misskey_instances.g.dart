@@ -29,7 +29,10 @@ _JoinMisskeyStats _$JoinMisskeyStatsFromJson(Map<String, dynamic> json) =>
     _JoinMisskeyStats(
       notesCount: (json['notesCount'] as num).toInt(),
       usersCount: (json['usersCount'] as num).toInt(),
-      mau: (json['mau'] as num).toInt(),
+      mau: (json['mau'] as num?)?.toInt(),
+      npd15: (json['npd15'] as num?)?.toInt(),
+      druYesterday: (json['druYesterday'] as num?)?.toInt(),
+      dru15: (json['dru15'] as num?)?.toInt(),
       instancesCount: (json['instancesCount'] as num).toInt(),
     );
 
@@ -38,6 +41,9 @@ Map<String, dynamic> _$JoinMisskeyStatsToJson(_JoinMisskeyStats instance) =>
       'notesCount': instance.notesCount,
       'usersCount': instance.usersCount,
       'mau': instance.mau,
+      'npd15': instance.npd15,
+      'druYesterday': instance.druYesterday,
+      'dru15': instance.dru15,
       'instancesCount': instance.instancesCount,
     };
 
@@ -58,6 +64,9 @@ _JoinMisskeyInstanceInfo _$JoinMisskeyInstanceInfoFromJson(
           : JoinMisskeyNodeInfo.fromJson(
               json['nodeinfo'] as Map<String, dynamic>),
       meta: json['meta'] as Map<String, dynamic>?,
+      npd15: (json['npd15'] as num?)?.toInt(),
+      druYesterday: (json['druYesterday'] as num?)?.toInt(),
+      dru15: (json['dru15'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$JoinMisskeyInstanceInfoToJson(
@@ -74,6 +83,9 @@ Map<String, dynamic> _$JoinMisskeyInstanceInfoToJson(
       'icon': instance.icon,
       'nodeinfo': instance.nodeInfo?.toJson(),
       'meta': instance.meta,
+      'npd15': instance.npd15,
+      'druYesterday': instance.druYesterday,
+      'dru15': instance.dru15,
     };
 
 _JoinMisskeyNodeInfo _$JoinMisskeyNodeInfoFromJson(Map<String, dynamic> json) =>

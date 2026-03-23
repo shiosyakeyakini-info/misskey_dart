@@ -9,5 +9,6 @@ abstract class FollowingRequestsReject with _$FollowingRequestsReject {
     required String userId,
   }) = _FollowingRequestsReject;
 
-  factory FollowingRequestsReject.fromJson(Map<String, Object?> json) => _$FollowingRequestsRejectFromJson(json);
+  factory FollowingRequestsReject.fromJson(Map<String, Object?> json) =>
+      _$FollowingRequestsRejectFromJson(json);
 }

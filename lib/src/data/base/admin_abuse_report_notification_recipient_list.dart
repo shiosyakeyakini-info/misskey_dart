@@ -5,10 +5,13 @@ part 'admin_abuse_report_notification_recipient_list.freezed.dart';
 part 'admin_abuse_report_notification_recipient_list.g.dart';
 
 @freezed
-abstract class AdminAbuseReportNotificationRecipientList with _$AdminAbuseReportNotificationRecipientList {
+abstract class AdminAbuseReportNotificationRecipientList
+    with _$AdminAbuseReportNotificationRecipientList {
   const factory AdminAbuseReportNotificationRecipientList({
     List<AdminAbuseReportNotificationRecipientListMethodItem>? method,
   }) = _AdminAbuseReportNotificationRecipientList;
 
-  factory AdminAbuseReportNotificationRecipientList.fromJson(Map<String, Object?> json) => _$AdminAbuseReportNotificationRecipientListFromJson(json);
+  factory AdminAbuseReportNotificationRecipientList.fromJson(
+          Map<String, Object?> json) =>
+      _$AdminAbuseReportNotificationRecipientListFromJson(json);
 }

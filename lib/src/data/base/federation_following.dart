@@ -14,5 +14,6 @@ abstract class FederationFollowing with _$FederationFollowing {
     @Default(10) int? limit,
   }) = _FederationFollowing;
 
-  factory FederationFollowing.fromJson(Map<String, Object?> json) => _$FederationFollowingFromJson(json);
+  factory FederationFollowing.fromJson(Map<String, Object?> json) =>
+      _$FederationFollowingFromJson(json);
 }

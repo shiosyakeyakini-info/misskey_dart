@@ -12,5 +12,6 @@ abstract class ChartsUserNotesDiffs with _$ChartsUserNotesDiffs {
     required List<double> withFile,
   }) = _ChartsUserNotesDiffs;
 
-  factory ChartsUserNotesDiffs.fromJson(Map<String, Object?> json) => _$ChartsUserNotesDiffsFromJson(json);
+  factory ChartsUserNotesDiffs.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserNotesDiffsFromJson(json);
 }

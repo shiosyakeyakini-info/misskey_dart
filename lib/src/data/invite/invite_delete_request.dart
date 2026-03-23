@@ -9,5 +9,6 @@ abstract class InviteDeleteRequest with _$InviteDeleteRequest {
     String? inviteId,
   }) = _InviteDeleteRequest;
 
-  factory InviteDeleteRequest.fromJson(Map<String, Object?> json) => _$InviteDeleteRequestFromJson(json);
+  factory InviteDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$InviteDeleteRequestFromJson(json);
 }

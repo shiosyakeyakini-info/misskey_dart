@@ -9,5 +9,6 @@ abstract class ReversiShowGameRequest with _$ReversiShowGameRequest {
     String? gameId,
   }) = _ReversiShowGameRequest;
 
-  factory ReversiShowGameRequest.fromJson(Map<String, Object?> json) => _$ReversiShowGameRequestFromJson(json);
+  factory ReversiShowGameRequest.fromJson(Map<String, Object?> json) =>
+      _$ReversiShowGameRequestFromJson(json);
 }

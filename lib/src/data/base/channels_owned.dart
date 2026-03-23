@@ -13,5 +13,6 @@ abstract class ChannelsOwned with _$ChannelsOwned {
     @Default(5) int? limit,
   }) = _ChannelsOwned;
 
-  factory ChannelsOwned.fromJson(Map<String, Object?> json) => _$ChannelsOwnedFromJson(json);
+  factory ChannelsOwned.fromJson(Map<String, Object?> json) =>
+      _$ChannelsOwnedFromJson(json);
 }

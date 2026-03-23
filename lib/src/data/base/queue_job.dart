@@ -23,5 +23,6 @@ abstract class QueueJob with _$QueueJob {
     required bool isFailed,
   }) = _QueueJob;
 
-  factory QueueJob.fromJson(Map<String, Object?> json) => _$QueueJobFromJson(json);
+  factory QueueJob.fromJson(Map<String, Object?> json) =>
+      _$QueueJobFromJson(json);
 }

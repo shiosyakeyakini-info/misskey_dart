@@ -9,5 +9,6 @@ abstract class PagesLikeRequest with _$PagesLikeRequest {
     String? pageId,
   }) = _PagesLikeRequest;
 
-  factory PagesLikeRequest.fromJson(Map<String, Object?> json) => _$PagesLikeRequestFromJson(json);
+  factory PagesLikeRequest.fromJson(Map<String, Object?> json) =>
+      _$PagesLikeRequestFromJson(json);
 }

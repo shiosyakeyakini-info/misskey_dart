@@ -13,5 +13,6 @@ abstract class BubbleGameRegisterRequest with _$BubbleGameRegisterRequest {
     int? gameVersion,
   }) = _BubbleGameRegisterRequest;
 
-  factory BubbleGameRegisterRequest.fromJson(Map<String, Object?> json) => _$BubbleGameRegisterRequestFromJson(json);
+  factory BubbleGameRegisterRequest.fromJson(Map<String, Object?> json) =>
+      _$BubbleGameRegisterRequestFromJson(json);
 }

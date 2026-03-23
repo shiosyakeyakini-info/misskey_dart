@@ -9,5 +9,6 @@ abstract class PromoRead with _$PromoRead {
     required String noteId,
   }) = _PromoRead;
 
-  factory PromoRead.fromJson(Map<String, Object?> json) => _$PromoReadFromJson(json);
+  factory PromoRead.fromJson(Map<String, Object?> json) =>
+      _$PromoReadFromJson(json);
 }

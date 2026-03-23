@@ -10,5 +10,6 @@ abstract class ChatRoomsInvitationsCreate with _$ChatRoomsInvitationsCreate {
     required String userId,
   }) = _ChatRoomsInvitationsCreate;
 
-  factory ChatRoomsInvitationsCreate.fromJson(Map<String, Object?> json) => _$ChatRoomsInvitationsCreateFromJson(json);
+  factory ChatRoomsInvitationsCreate.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsInvitationsCreateFromJson(json);
 }

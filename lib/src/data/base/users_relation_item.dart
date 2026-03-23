@@ -17,5 +17,6 @@ abstract class UsersRelationItem with _$UsersRelationItem {
     required bool isRenoteMuted,
   }) = _UsersRelationItem;
 
-  factory UsersRelationItem.fromJson(Map<String, Object?> json) => _$UsersRelationItemFromJson(json);
+  factory UsersRelationItem.fromJson(Map<String, Object?> json) =>
+      _$UsersRelationItemFromJson(json);
 }

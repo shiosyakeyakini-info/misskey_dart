@@ -11,5 +11,6 @@ abstract class AdminSendEmailRequest with _$AdminSendEmailRequest {
     String? text,
   }) = _AdminSendEmailRequest;
 
-  factory AdminSendEmailRequest.fromJson(Map<String, Object?> json) => _$AdminSendEmailRequestFromJson(json);
+  factory AdminSendEmailRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminSendEmailRequestFromJson(json);
 }

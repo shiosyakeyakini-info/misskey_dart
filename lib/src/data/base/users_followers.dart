@@ -13,5 +13,6 @@ abstract class UsersFollowers with _$UsersFollowers {
     @Default(10) int? limit,
   }) = _UsersFollowers;
 
-  factory UsersFollowers.fromJson(Map<String, Object?> json) => _$UsersFollowersFromJson(json);
+  factory UsersFollowers.fromJson(Map<String, Object?> json) =>
+      _$UsersFollowersFromJson(json);
 }

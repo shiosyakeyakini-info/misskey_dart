@@ -10,5 +10,6 @@ abstract class AdminUpdateAbuseUserReport with _$AdminUpdateAbuseUserReport {
     String? moderationNote,
   }) = _AdminUpdateAbuseUserReport;
 
-  factory AdminUpdateAbuseUserReport.fromJson(Map<String, Object?> json) => _$AdminUpdateAbuseUserReportFromJson(json);
+  factory AdminUpdateAbuseUserReport.fromJson(Map<String, Object?> json) =>
+      _$AdminUpdateAbuseUserReportFromJson(json);
 }

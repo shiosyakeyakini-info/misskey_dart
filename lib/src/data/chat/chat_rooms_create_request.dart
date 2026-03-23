@@ -10,5 +10,6 @@ abstract class ChatRoomsCreateRequest with _$ChatRoomsCreateRequest {
     String? description,
   }) = _ChatRoomsCreateRequest;
 
-  factory ChatRoomsCreateRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsCreateRequestFromJson(json);
+  factory ChatRoomsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsCreateRequestFromJson(json);
 }

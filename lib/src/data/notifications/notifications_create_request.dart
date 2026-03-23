@@ -11,5 +11,6 @@ abstract class NotificationsCreateRequest with _$NotificationsCreateRequest {
     String? icon,
   }) = _NotificationsCreateRequest;
 
-  factory NotificationsCreateRequest.fromJson(Map<String, Object?> json) => _$NotificationsCreateRequestFromJson(json);
+  factory NotificationsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$NotificationsCreateRequestFromJson(json);
 }

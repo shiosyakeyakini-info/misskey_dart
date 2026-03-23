@@ -16,5 +16,6 @@ abstract class IAppsItem with _$IAppsItem {
     String? description,
   }) = _IAppsItem;
 
-  factory IAppsItem.fromJson(Map<String, Object?> json) => _$IAppsItemFromJson(json);
+  factory IAppsItem.fromJson(Map<String, Object?> json) =>
+      _$IAppsItemFromJson(json);
 }

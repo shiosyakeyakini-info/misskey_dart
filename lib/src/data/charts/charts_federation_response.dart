@@ -16,5 +16,6 @@ abstract class ChartsFederationResponse with _$ChartsFederationResponse {
     required List<double> pubActive,
   }) = _ChartsFederationResponse;
 
-  factory ChartsFederationResponse.fromJson(Map<String, Object?> json) => _$ChartsFederationResponseFromJson(json);
+  factory ChartsFederationResponse.fromJson(Map<String, Object?> json) =>
+      _$ChartsFederationResponseFromJson(json);
 }

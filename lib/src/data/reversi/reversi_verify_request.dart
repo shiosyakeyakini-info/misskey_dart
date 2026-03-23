@@ -10,5 +10,6 @@ abstract class ReversiVerifyRequest with _$ReversiVerifyRequest {
     String? crc32,
   }) = _ReversiVerifyRequest;
 
-  factory ReversiVerifyRequest.fromJson(Map<String, Object?> json) => _$ReversiVerifyRequestFromJson(json);
+  factory ReversiVerifyRequest.fromJson(Map<String, Object?> json) =>
+      _$ReversiVerifyRequestFromJson(json);
 }

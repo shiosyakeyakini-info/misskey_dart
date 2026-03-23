@@ -4,7 +4,8 @@ part 'admin_drive_show_file_properties.freezed.dart';
 part 'admin_drive_show_file_properties.g.dart';
 
 @freezed
-abstract class AdminDriveShowFileProperties with _$AdminDriveShowFileProperties {
+abstract class AdminDriveShowFileProperties
+    with _$AdminDriveShowFileProperties {
   const factory AdminDriveShowFileProperties({
     double? width,
     double? height,
@@ -12,5 +13,6 @@ abstract class AdminDriveShowFileProperties with _$AdminDriveShowFileProperties 
     String? avgColor,
   }) = _AdminDriveShowFileProperties;
 
-  factory AdminDriveShowFileProperties.fromJson(Map<String, Object?> json) => _$AdminDriveShowFilePropertiesFromJson(json);
+  factory AdminDriveShowFileProperties.fromJson(Map<String, Object?> json) =>
+      _$AdminDriveShowFilePropertiesFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class AdminRolesDelete with _$AdminRolesDelete {
     required String roleId,
   }) = _AdminRolesDelete;
 
-  factory AdminRolesDelete.fromJson(Map<String, Object?> json) => _$AdminRolesDeleteFromJson(json);
+  factory AdminRolesDelete.fromJson(Map<String, Object?> json) =>
+      _$AdminRolesDeleteFromJson(json);
 }

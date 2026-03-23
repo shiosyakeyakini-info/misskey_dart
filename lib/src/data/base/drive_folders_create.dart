@@ -10,5 +10,6 @@ abstract class DriveFoldersCreate with _$DriveFoldersCreate {
     String? parentId,
   }) = _DriveFoldersCreate;
 
-  factory DriveFoldersCreate.fromJson(Map<String, Object?> json) => _$DriveFoldersCreateFromJson(json);
+  factory DriveFoldersCreate.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersCreateFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class IWebhooksTestOverride with _$IWebhooksTestOverride {
     String? secret,
   }) = _IWebhooksTestOverride;
 
-  factory IWebhooksTestOverride.fromJson(Map<String, Object?> json) => _$IWebhooksTestOverrideFromJson(json);
+  factory IWebhooksTestOverride.fromJson(Map<String, Object?> json) =>
+      _$IWebhooksTestOverrideFromJson(json);
 }

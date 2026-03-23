@@ -13,5 +13,6 @@ abstract class DriveFilesUpdateRequest with _$DriveFilesUpdateRequest {
     String? comment,
   }) = _DriveFilesUpdateRequest;
 
-  factory DriveFilesUpdateRequest.fromJson(Map<String, Object?> json) => _$DriveFilesUpdateRequestFromJson(json);
+  factory DriveFilesUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesUpdateRequestFromJson(json);
 }

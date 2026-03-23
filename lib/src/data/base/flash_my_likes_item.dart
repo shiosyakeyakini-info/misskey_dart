@@ -11,5 +11,6 @@ abstract class FlashMyLikesItem with _$FlashMyLikesItem {
     required Flash flash,
   }) = _FlashMyLikesItem;
 
-  factory FlashMyLikesItem.fromJson(Map<String, Object?> json) => _$FlashMyLikesItemFromJson(json);
+  factory FlashMyLikesItem.fromJson(Map<String, Object?> json) =>
+      _$FlashMyLikesItemFromJson(json);
 }

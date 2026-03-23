@@ -14,5 +14,6 @@ abstract class ChartsUserDrive with _$ChartsUserDrive {
     required List<double> decSize,
   }) = _ChartsUserDrive;
 
-  factory ChartsUserDrive.fromJson(Map<String, Object?> json) => _$ChartsUserDriveFromJson(json);
+  factory ChartsUserDrive.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserDriveFromJson(json);
 }

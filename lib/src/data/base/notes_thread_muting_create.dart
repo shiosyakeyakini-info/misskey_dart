@@ -9,5 +9,6 @@ abstract class NotesThreadMutingCreate with _$NotesThreadMutingCreate {
     required String noteId,
   }) = _NotesThreadMutingCreate;
 
-  factory NotesThreadMutingCreate.fromJson(Map<String, Object?> json) => _$NotesThreadMutingCreateFromJson(json);
+  factory NotesThreadMutingCreate.fromJson(Map<String, Object?> json) =>
+      _$NotesThreadMutingCreateFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class UsersListsFavorite with _$UsersListsFavorite {
     required String listId,
   }) = _UsersListsFavorite;
 
-  factory UsersListsFavorite.fromJson(Map<String, Object?> json) => _$UsersListsFavoriteFromJson(json);
+  factory UsersListsFavorite.fromJson(Map<String, Object?> json) =>
+      _$UsersListsFavoriteFromJson(json);
 }

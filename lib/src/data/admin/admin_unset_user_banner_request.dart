@@ -9,5 +9,6 @@ abstract class AdminUnsetUserBannerRequest with _$AdminUnsetUserBannerRequest {
     String? userId,
   }) = _AdminUnsetUserBannerRequest;
 
-  factory AdminUnsetUserBannerRequest.fromJson(Map<String, Object?> json) => _$AdminUnsetUserBannerRequestFromJson(json);
+  factory AdminUnsetUserBannerRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminUnsetUserBannerRequestFromJson(json);
 }

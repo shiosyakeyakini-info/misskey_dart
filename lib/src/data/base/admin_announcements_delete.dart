@@ -9,5 +9,6 @@ abstract class AdminAnnouncementsDelete with _$AdminAnnouncementsDelete {
     required String id,
   }) = _AdminAnnouncementsDelete;
 
-  factory AdminAnnouncementsDelete.fromJson(Map<String, Object?> json) => _$AdminAnnouncementsDeleteFromJson(json);
+  factory AdminAnnouncementsDelete.fromJson(Map<String, Object?> json) =>
+      _$AdminAnnouncementsDeleteFromJson(json);
 }

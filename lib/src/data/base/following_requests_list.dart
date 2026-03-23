@@ -13,5 +13,6 @@ abstract class FollowingRequestsList with _$FollowingRequestsList {
     @Default(10) int? limit,
   }) = _FollowingRequestsList;
 
-  factory FollowingRequestsList.fromJson(Map<String, Object?> json) => _$FollowingRequestsListFromJson(json);
+  factory FollowingRequestsList.fromJson(Map<String, Object?> json) =>
+      _$FollowingRequestsListFromJson(json);
 }

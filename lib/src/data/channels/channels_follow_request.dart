@@ -9,5 +9,6 @@ abstract class ChannelsFollowRequest with _$ChannelsFollowRequest {
     String? channelId,
   }) = _ChannelsFollowRequest;
 
-  factory ChannelsFollowRequest.fromJson(Map<String, Object?> json) => _$ChannelsFollowRequestFromJson(json);
+  factory ChannelsFollowRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsFollowRequestFromJson(json);
 }

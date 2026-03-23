@@ -14,5 +14,6 @@ abstract class UsersFlashsRequest with _$UsersFlashsRequest {
     int? untilDate,
   }) = _UsersFlashsRequest;
 
-  factory UsersFlashsRequest.fromJson(Map<String, Object?> json) => _$UsersFlashsRequestFromJson(json);
+  factory UsersFlashsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersFlashsRequestFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class GalleryPostsLike with _$GalleryPostsLike {
     required String postId,
   }) = _GalleryPostsLike;
 
-  factory GalleryPostsLike.fromJson(Map<String, Object?> json) => _$GalleryPostsLikeFromJson(json);
+  factory GalleryPostsLike.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsLikeFromJson(json);
 }

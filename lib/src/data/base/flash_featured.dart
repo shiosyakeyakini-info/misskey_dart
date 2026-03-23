@@ -10,5 +10,6 @@ abstract class FlashFeatured with _$FlashFeatured {
     @Default(10) int? limit,
   }) = _FlashFeatured;
 
-  factory FlashFeatured.fromJson(Map<String, Object?> json) => _$FlashFeaturedFromJson(json);
+  factory FlashFeatured.fromJson(Map<String, Object?> json) =>
+      _$FlashFeaturedFromJson(json);
 }

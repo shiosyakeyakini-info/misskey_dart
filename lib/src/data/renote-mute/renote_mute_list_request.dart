@@ -13,5 +13,6 @@ abstract class RenoteMuteListRequest with _$RenoteMuteListRequest {
     int? untilDate,
   }) = _RenoteMuteListRequest;
 
-  factory RenoteMuteListRequest.fromJson(Map<String, Object?> json) => _$RenoteMuteListRequestFromJson(json);
+  factory RenoteMuteListRequest.fromJson(Map<String, Object?> json) =>
+      _$RenoteMuteListRequestFromJson(json);
 }

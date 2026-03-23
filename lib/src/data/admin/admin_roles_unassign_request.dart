@@ -10,5 +10,6 @@ abstract class AdminRolesUnassignRequest with _$AdminRolesUnassignRequest {
     String? userId,
   }) = _AdminRolesUnassignRequest;
 
-  factory AdminRolesUnassignRequest.fromJson(Map<String, Object?> json) => _$AdminRolesUnassignRequestFromJson(json);
+  factory AdminRolesUnassignRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminRolesUnassignRequestFromJson(json);
 }

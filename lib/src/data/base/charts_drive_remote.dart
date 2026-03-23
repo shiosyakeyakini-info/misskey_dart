@@ -12,5 +12,6 @@ abstract class ChartsDriveRemote with _$ChartsDriveRemote {
     required List<double> decSize,
   }) = _ChartsDriveRemote;
 
-  factory ChartsDriveRemote.fromJson(Map<String, Object?> json) => _$ChartsDriveRemoteFromJson(json);
+  factory ChartsDriveRemote.fromJson(Map<String, Object?> json) =>
+      _$ChartsDriveRemoteFromJson(json);
 }

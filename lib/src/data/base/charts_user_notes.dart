@@ -13,5 +13,6 @@ abstract class ChartsUserNotes with _$ChartsUserNotes {
     required ChartsUserNotesDiffs diffs,
   }) = _ChartsUserNotes;
 
-  factory ChartsUserNotes.fromJson(Map<String, Object?> json) => _$ChartsUserNotesFromJson(json);
+  factory ChartsUserNotes.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserNotesFromJson(json);
 }

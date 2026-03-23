@@ -5,11 +5,17 @@ part 'me_detailed_only_notification_recieve_config_login.freezed.dart';
 part 'me_detailed_only_notification_recieve_config_login.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigLogin with _$MeDetailedOnlyNotificationRecieveConfigLogin {
+abstract class MeDetailedOnlyNotificationRecieveConfigLogin
+    with _$MeDetailedOnlyNotificationRecieveConfigLogin {
   const factory MeDetailedOnlyNotificationRecieveConfigLogin({
-    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigLoginType.unknown) required MeDetailedOnlyNotificationRecieveConfigLoginType type,
+    @JsonKey(
+        unknownEnumValue:
+            MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
+    required MeDetailedOnlyNotificationRecieveConfigLoginType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigLogin;
 
-  factory MeDetailedOnlyNotificationRecieveConfigLogin.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigLoginFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigLogin.fromJson(
+          Map<String, Object?> json) =>
+      _$MeDetailedOnlyNotificationRecieveConfigLoginFromJson(json);
 }

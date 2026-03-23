@@ -9,5 +9,6 @@ abstract class IRegenerateToken with _$IRegenerateToken {
     required String password,
   }) = _IRegenerateToken;
 
-  factory IRegenerateToken.fromJson(Map<String, Object?> json) => _$IRegenerateTokenFromJson(json);
+  factory IRegenerateToken.fromJson(Map<String, Object?> json) =>
+      _$IRegenerateTokenFromJson(json);
 }

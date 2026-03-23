@@ -10,5 +10,6 @@ abstract class UsersRecommendationRequest with _$UsersRecommendationRequest {
     @Default(0) int? offset,
   }) = _UsersRecommendationRequest;
 
-  factory UsersRecommendationRequest.fromJson(Map<String, Object?> json) => _$UsersRecommendationRequestFromJson(json);
+  factory UsersRecommendationRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersRecommendationRequestFromJson(json);
 }

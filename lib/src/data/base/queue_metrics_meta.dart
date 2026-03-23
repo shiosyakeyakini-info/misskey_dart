@@ -11,5 +11,6 @@ abstract class QueueMetricsMeta with _$QueueMetricsMeta {
     required double prevCount,
   }) = _QueueMetricsMeta;
 
-  factory QueueMetricsMeta.fromJson(Map<String, Object?> json) => _$QueueMetricsMetaFromJson(json);
+  factory QueueMetricsMeta.fromJson(Map<String, Object?> json) =>
+      _$QueueMetricsMetaFromJson(json);
 }

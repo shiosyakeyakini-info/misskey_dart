@@ -12,5 +12,6 @@ abstract class ChartsNotesLocalDiffs with _$ChartsNotesLocalDiffs {
     required List<double> withFile,
   }) = _ChartsNotesLocalDiffs;
 
-  factory ChartsNotesLocalDiffs.fromJson(Map<String, Object?> json) => _$ChartsNotesLocalDiffsFromJson(json);
+  factory ChartsNotesLocalDiffs.fromJson(Map<String, Object?> json) =>
+      _$ChartsNotesLocalDiffsFromJson(json);
 }

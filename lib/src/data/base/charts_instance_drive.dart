@@ -13,5 +13,6 @@ abstract class ChartsInstanceDrive with _$ChartsInstanceDrive {
     required List<double> decUsage,
   }) = _ChartsInstanceDrive;
 
-  factory ChartsInstanceDrive.fromJson(Map<String, Object?> json) => _$ChartsInstanceDriveFromJson(json);
+  factory ChartsInstanceDrive.fromJson(Map<String, Object?> json) =>
+      _$ChartsInstanceDriveFromJson(json);
 }

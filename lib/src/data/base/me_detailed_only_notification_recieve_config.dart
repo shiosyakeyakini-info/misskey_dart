@@ -4,7 +4,8 @@ part 'me_detailed_only_notification_recieve_config.freezed.dart';
 part 'me_detailed_only_notification_recieve_config.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfig with _$MeDetailedOnlyNotificationRecieveConfig {
+abstract class MeDetailedOnlyNotificationRecieveConfig
+    with _$MeDetailedOnlyNotificationRecieveConfig {
   const factory MeDetailedOnlyNotificationRecieveConfig({
     dynamic note,
     dynamic follow,
@@ -28,5 +29,7 @@ abstract class MeDetailedOnlyNotificationRecieveConfig with _$MeDetailedOnlyNoti
     dynamic exportCompleted,
   }) = _MeDetailedOnlyNotificationRecieveConfig;
 
-  factory MeDetailedOnlyNotificationRecieveConfig.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfig.fromJson(
+          Map<String, Object?> json) =>
+      _$MeDetailedOnlyNotificationRecieveConfigFromJson(json);
 }

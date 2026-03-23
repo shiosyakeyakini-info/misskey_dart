@@ -10,5 +10,6 @@ abstract class EndpointParamsItem with _$EndpointParamsItem {
     required String type,
   }) = _EndpointParamsItem;
 
-  factory EndpointParamsItem.fromJson(Map<String, Object?> json) => _$EndpointParamsItemFromJson(json);
+  factory EndpointParamsItem.fromJson(Map<String, Object?> json) =>
+      _$EndpointParamsItemFromJson(json);
 }

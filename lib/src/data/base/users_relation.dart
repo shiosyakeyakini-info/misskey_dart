@@ -9,5 +9,6 @@ abstract class UsersRelation with _$UsersRelation {
     required dynamic userId,
   }) = _UsersRelation;
 
-  factory UsersRelation.fromJson(Map<String, Object?> json) => _$UsersRelationFromJson(json);
+  factory UsersRelation.fromJson(Map<String, Object?> json) =>
+      _$UsersRelationFromJson(json);
 }

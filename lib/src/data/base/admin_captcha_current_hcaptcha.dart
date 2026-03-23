@@ -10,5 +10,6 @@ abstract class AdminCaptchaCurrentHcaptcha with _$AdminCaptchaCurrentHcaptcha {
     String? secretKey,
   }) = _AdminCaptchaCurrentHcaptcha;
 
-  factory AdminCaptchaCurrentHcaptcha.fromJson(Map<String, Object?> json) => _$AdminCaptchaCurrentHcaptchaFromJson(json);
+  factory AdminCaptchaCurrentHcaptcha.fromJson(Map<String, Object?> json) =>
+      _$AdminCaptchaCurrentHcaptchaFromJson(json);
 }

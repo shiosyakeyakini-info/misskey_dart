@@ -9,5 +9,6 @@ abstract class AdminUpdateProxyAccount with _$AdminUpdateProxyAccount {
     String? description,
   }) = _AdminUpdateProxyAccount;
 
-  factory AdminUpdateProxyAccount.fromJson(Map<String, Object?> json) => _$AdminUpdateProxyAccountFromJson(json);
+  factory AdminUpdateProxyAccount.fromJson(Map<String, Object?> json) =>
+      _$AdminUpdateProxyAccountFromJson(json);
 }

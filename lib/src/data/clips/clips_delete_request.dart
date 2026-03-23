@@ -9,5 +9,6 @@ abstract class ClipsDeleteRequest with _$ClipsDeleteRequest {
     String? clipId,
   }) = _ClipsDeleteRequest;
 
-  factory ClipsDeleteRequest.fromJson(Map<String, Object?> json) => _$ClipsDeleteRequestFromJson(json);
+  factory ClipsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsDeleteRequestFromJson(json);
 }

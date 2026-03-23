@@ -9,5 +9,6 @@ abstract class AdminRolesShow with _$AdminRolesShow {
     required String roleId,
   }) = _AdminRolesShow;
 
-  factory AdminRolesShow.fromJson(Map<String, Object?> json) => _$AdminRolesShowFromJson(json);
+  factory AdminRolesShow.fromJson(Map<String, Object?> json) =>
+      _$AdminRolesShowFromJson(json);
 }

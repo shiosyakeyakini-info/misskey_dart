@@ -17,5 +17,6 @@ abstract class NotesLocalTimelineRequest with _$NotesLocalTimelineRequest {
     int? untilDate,
   }) = _NotesLocalTimelineRequest;
 
-  factory NotesLocalTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesLocalTimelineRequestFromJson(json);
+  factory NotesLocalTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesLocalTimelineRequestFromJson(json);
 }

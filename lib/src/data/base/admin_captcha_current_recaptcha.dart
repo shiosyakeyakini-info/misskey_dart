@@ -4,11 +4,13 @@ part 'admin_captcha_current_recaptcha.freezed.dart';
 part 'admin_captcha_current_recaptcha.g.dart';
 
 @freezed
-abstract class AdminCaptchaCurrentRecaptcha with _$AdminCaptchaCurrentRecaptcha {
+abstract class AdminCaptchaCurrentRecaptcha
+    with _$AdminCaptchaCurrentRecaptcha {
   const factory AdminCaptchaCurrentRecaptcha({
     String? siteKey,
     String? secretKey,
   }) = _AdminCaptchaCurrentRecaptcha;
 
-  factory AdminCaptchaCurrentRecaptcha.fromJson(Map<String, Object?> json) => _$AdminCaptchaCurrentRecaptchaFromJson(json);
+  factory AdminCaptchaCurrentRecaptcha.fromJson(Map<String, Object?> json) =>
+      _$AdminCaptchaCurrentRecaptchaFromJson(json);
 }

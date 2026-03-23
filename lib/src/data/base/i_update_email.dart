@@ -11,5 +11,6 @@ abstract class IUpdateEmail with _$IUpdateEmail {
     String? token,
   }) = _IUpdateEmail;
 
-  factory IUpdateEmail.fromJson(Map<String, Object?> json) => _$IUpdateEmailFromJson(json);
+  factory IUpdateEmail.fromJson(Map<String, Object?> json) =>
+      _$IUpdateEmailFromJson(json);
 }

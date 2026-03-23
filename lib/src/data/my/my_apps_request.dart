@@ -10,5 +10,6 @@ abstract class MyAppsRequest with _$MyAppsRequest {
     @Default(0) int? offset,
   }) = _MyAppsRequest;
 
-  factory MyAppsRequest.fromJson(Map<String, Object?> json) => _$MyAppsRequestFromJson(json);
+  factory MyAppsRequest.fromJson(Map<String, Object?> json) =>
+      _$MyAppsRequestFromJson(json);
 }

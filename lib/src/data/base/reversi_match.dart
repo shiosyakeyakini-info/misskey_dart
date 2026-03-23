@@ -11,5 +11,6 @@ abstract class ReversiMatch with _$ReversiMatch {
     @Default(false) bool? multiple,
   }) = _ReversiMatch;
 
-  factory ReversiMatch.fromJson(Map<String, Object?> json) => _$ReversiMatchFromJson(json);
+  factory ReversiMatch.fromJson(Map<String, Object?> json) =>
+      _$ReversiMatchFromJson(json);
 }

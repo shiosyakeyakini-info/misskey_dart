@@ -213,7 +213,9 @@ function generateMethod(
         lines.push(
           `    final response = await _apiService.post<dynamic>("${apiPath}", ${body}${extraOptsStr});`
         );
-        lines.push(`    if (response == null || (response is String && response.isEmpty)) return null;`);
+        lines.push(`    if (response == null || (response is String && response.isEmpty)) {`);
+        lines.push(`      return null;`);
+        lines.push(`    }`);
         lines.push(`    if (response is String) return jsonDecode(response);`);
         lines.push(`    return response;`);
       } else {

@@ -9,5 +9,6 @@ abstract class ChatRoomsDelete with _$ChatRoomsDelete {
     required String roomId,
   }) = _ChatRoomsDelete;
 
-  factory ChatRoomsDelete.fromJson(Map<String, Object?> json) => _$ChatRoomsDeleteFromJson(json);
+  factory ChatRoomsDelete.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsDeleteFromJson(json);
 }

@@ -14,9 +14,11 @@ abstract class I2faRegisterKey with _$I2faRegisterKey {
     double? timeout,
     List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,
     I2faRegisterKeyAuthenticatorSelection? authenticatorSelection,
-    @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) I2faRegisterKeyAttestation? attestation,
+    @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)
+    I2faRegisterKeyAttestation? attestation,
     I2faRegisterKeyExtensions? extensions,
   }) = _I2faRegisterKey;
 
-  factory I2faRegisterKey.fromJson(Map<String, Object?> json) => _$I2faRegisterKeyFromJson(json);
+  factory I2faRegisterKey.fromJson(Map<String, Object?> json) =>
+      _$I2faRegisterKeyFromJson(json);
 }

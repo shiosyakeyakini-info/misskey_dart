@@ -9,5 +9,6 @@ abstract class VerifyEmail with _$VerifyEmail {
     required String code,
   }) = _VerifyEmail;
 
-  factory VerifyEmail.fromJson(Map<String, Object?> json) => _$VerifyEmailFromJson(json);
+  factory VerifyEmail.fromJson(Map<String, Object?> json) =>
+      _$VerifyEmailFromJson(json);
 }

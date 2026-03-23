@@ -11,5 +11,6 @@ abstract class UsersListsUpdateMembership with _$UsersListsUpdateMembership {
     bool? withReplies,
   }) = _UsersListsUpdateMembership;
 
-  factory UsersListsUpdateMembership.fromJson(Map<String, Object?> json) => _$UsersListsUpdateMembershipFromJson(json);
+  factory UsersListsUpdateMembership.fromJson(Map<String, Object?> json) =>
+      _$UsersListsUpdateMembershipFromJson(json);
 }

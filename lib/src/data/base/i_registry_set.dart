@@ -12,5 +12,6 @@ abstract class IRegistrySet with _$IRegistrySet {
     String? domain,
   }) = _IRegistrySet;
 
-  factory IRegistrySet.fromJson(Map<String, Object?> json) => _$IRegistrySetFromJson(json);
+  factory IRegistrySet.fromJson(Map<String, Object?> json) =>
+      _$IRegistrySetFromJson(json);
 }

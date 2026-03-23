@@ -14,5 +14,6 @@ abstract class NoteDraftChannel with _$NoteDraftChannel {
     String? userId,
   }) = _NoteDraftChannel;
 
-  factory NoteDraftChannel.fromJson(Map<String, Object?> json) => _$NoteDraftChannelFromJson(json);
+  factory NoteDraftChannel.fromJson(Map<String, Object?> json) =>
+      _$NoteDraftChannelFromJson(json);
 }

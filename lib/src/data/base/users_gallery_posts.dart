@@ -14,5 +14,6 @@ abstract class UsersGalleryPosts with _$UsersGalleryPosts {
     int? untilDate,
   }) = _UsersGalleryPosts;
 
-  factory UsersGalleryPosts.fromJson(Map<String, Object?> json) => _$UsersGalleryPostsFromJson(json);
+  factory UsersGalleryPosts.fromJson(Map<String, Object?> json) =>
+      _$UsersGalleryPostsFromJson(json);
 }

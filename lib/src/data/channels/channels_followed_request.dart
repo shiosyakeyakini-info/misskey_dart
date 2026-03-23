@@ -13,5 +13,6 @@ abstract class ChannelsFollowedRequest with _$ChannelsFollowedRequest {
     @Default(5) int? limit,
   }) = _ChannelsFollowedRequest;
 
-  factory ChannelsFollowedRequest.fromJson(Map<String, Object?> json) => _$ChannelsFollowedRequestFromJson(json);
+  factory ChannelsFollowedRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsFollowedRequestFromJson(json);
 }

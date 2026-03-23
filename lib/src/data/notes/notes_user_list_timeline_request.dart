@@ -4,7 +4,8 @@ part 'notes_user_list_timeline_request.freezed.dart';
 part 'notes_user_list_timeline_request.g.dart';
 
 @freezed
-abstract class NotesUserListTimelineRequest with _$NotesUserListTimelineRequest {
+abstract class NotesUserListTimelineRequest
+    with _$NotesUserListTimelineRequest {
   const factory NotesUserListTimelineRequest({
     String? listId,
     @Default(10) int? limit,
@@ -20,5 +21,6 @@ abstract class NotesUserListTimelineRequest with _$NotesUserListTimelineRequest 
     @Default(false) bool? withFiles,
   }) = _NotesUserListTimelineRequest;
 
-  factory NotesUserListTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesUserListTimelineRequestFromJson(json);
+  factory NotesUserListTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesUserListTimelineRequestFromJson(json);
 }

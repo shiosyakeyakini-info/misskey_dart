@@ -13,5 +13,6 @@ abstract class FetchRssPaginationLinks with _$FetchRssPaginationLinks {
     String? prev,
   }) = _FetchRssPaginationLinks;
 
-  factory FetchRssPaginationLinks.fromJson(Map<String, Object?> json) => _$FetchRssPaginationLinksFromJson(json);
+  factory FetchRssPaginationLinks.fromJson(Map<String, Object?> json) =>
+      _$FetchRssPaginationLinksFromJson(json);
 }

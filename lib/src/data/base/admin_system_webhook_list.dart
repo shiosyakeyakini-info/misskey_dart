@@ -11,5 +11,6 @@ abstract class AdminSystemWebhookList with _$AdminSystemWebhookList {
     @JsonKey(name: 'on') List<AdminSystemWebhookListOnItem>? on_,
   }) = _AdminSystemWebhookList;
 
-  factory AdminSystemWebhookList.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookListFromJson(json);
+  factory AdminSystemWebhookList.fromJson(Map<String, Object?> json) =>
+      _$AdminSystemWebhookListFromJson(json);
 }

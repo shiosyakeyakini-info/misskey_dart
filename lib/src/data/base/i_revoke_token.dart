@@ -9,5 +9,6 @@ abstract class IRevokeToken with _$IRevokeToken {
     String? token,
   }) = _IRevokeToken;
 
-  factory IRevokeToken.fromJson(Map<String, Object?> json) => _$IRevokeTokenFromJson(json);
+  factory IRevokeToken.fromJson(Map<String, Object?> json) =>
+      _$IRevokeTokenFromJson(json);
 }

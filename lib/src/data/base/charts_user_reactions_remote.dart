@@ -9,5 +9,6 @@ abstract class ChartsUserReactionsRemote with _$ChartsUserReactionsRemote {
     required List<double> count,
   }) = _ChartsUserReactionsRemote;
 
-  factory ChartsUserReactionsRemote.fromJson(Map<String, Object?> json) => _$ChartsUserReactionsRemoteFromJson(json);
+  factory ChartsUserReactionsRemote.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserReactionsRemoteFromJson(json);
 }

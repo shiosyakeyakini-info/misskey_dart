@@ -12,5 +12,6 @@ abstract class I2faKeyDoneRequest with _$I2faKeyDoneRequest {
     Map<String, dynamic>? credential,
   }) = _I2faKeyDoneRequest;
 
-  factory I2faKeyDoneRequest.fromJson(Map<String, Object?> json) => _$I2faKeyDoneRequestFromJson(json);
+  factory I2faKeyDoneRequest.fromJson(Map<String, Object?> json) =>
+      _$I2faKeyDoneRequestFromJson(json);
 }

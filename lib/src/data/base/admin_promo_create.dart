@@ -10,5 +10,6 @@ abstract class AdminPromoCreate with _$AdminPromoCreate {
     required int expiresAt,
   }) = _AdminPromoCreate;
 
-  factory AdminPromoCreate.fromJson(Map<String, Object?> json) => _$AdminPromoCreateFromJson(json);
+  factory AdminPromoCreate.fromJson(Map<String, Object?> json) =>
+      _$AdminPromoCreateFromJson(json);
 }

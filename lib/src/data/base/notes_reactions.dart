@@ -15,5 +15,6 @@ abstract class NotesReactions with _$NotesReactions {
     int? untilDate,
   }) = _NotesReactions;
 
-  factory NotesReactions.fromJson(Map<String, Object?> json) => _$NotesReactionsFromJson(json);
+  factory NotesReactions.fromJson(Map<String, Object?> json) =>
+      _$NotesReactionsFromJson(json);
 }

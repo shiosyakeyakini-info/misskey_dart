@@ -9,5 +9,6 @@ abstract class AuthAcceptRequest with _$AuthAcceptRequest {
     String? token,
   }) = _AuthAcceptRequest;
 
-  factory AuthAcceptRequest.fromJson(Map<String, Object?> json) => _$AuthAcceptRequestFromJson(json);
+  factory AuthAcceptRequest.fromJson(Map<String, Object?> json) =>
+      _$AuthAcceptRequestFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class UsersReactionsRequest with _$UsersReactionsRequest {
     int? untilDate,
   }) = _UsersReactionsRequest;
 
-  factory UsersReactionsRequest.fromJson(Map<String, Object?> json) => _$UsersReactionsRequestFromJson(json);
+  factory UsersReactionsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersReactionsRequestFromJson(json);
 }

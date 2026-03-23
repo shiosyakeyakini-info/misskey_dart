@@ -9,5 +9,6 @@ abstract class DriveFilesShow with _$DriveFilesShow {
     required String url,
   }) = _DriveFilesShow;
 
-  factory DriveFilesShow.fromJson(Map<String, Object?> json) => _$DriveFilesShowFromJson(json);
+  factory DriveFilesShow.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesShowFromJson(json);
 }

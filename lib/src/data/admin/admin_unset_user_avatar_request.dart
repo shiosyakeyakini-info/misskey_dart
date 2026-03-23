@@ -9,5 +9,6 @@ abstract class AdminUnsetUserAvatarRequest with _$AdminUnsetUserAvatarRequest {
     String? userId,
   }) = _AdminUnsetUserAvatarRequest;
 
-  factory AdminUnsetUserAvatarRequest.fromJson(Map<String, Object?> json) => _$AdminUnsetUserAvatarRequestFromJson(json);
+  factory AdminUnsetUserAvatarRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminUnsetUserAvatarRequestFromJson(json);
 }

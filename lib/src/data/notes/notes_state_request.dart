@@ -9,5 +9,6 @@ abstract class NotesStateRequest with _$NotesStateRequest {
     String? noteId,
   }) = _NotesStateRequest;
 
-  factory NotesStateRequest.fromJson(Map<String, Object?> json) => _$NotesStateRequestFromJson(json);
+  factory NotesStateRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesStateRequestFromJson(json);
 }

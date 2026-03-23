@@ -9,5 +9,6 @@ abstract class AnnouncementsShowRequest with _$AnnouncementsShowRequest {
     String? announcementId,
   }) = _AnnouncementsShowRequest;
 
-  factory AnnouncementsShowRequest.fromJson(Map<String, Object?> json) => _$AnnouncementsShowRequestFromJson(json);
+  factory AnnouncementsShowRequest.fromJson(Map<String, Object?> json) =>
+      _$AnnouncementsShowRequestFromJson(json);
 }

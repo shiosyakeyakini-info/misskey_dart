@@ -9,5 +9,6 @@ abstract class UsernameAvailableRequest with _$UsernameAvailableRequest {
     String? username,
   }) = _UsernameAvailableRequest;
 
-  factory UsernameAvailableRequest.fromJson(Map<String, Object?> json) => _$UsernameAvailableRequestFromJson(json);
+  factory UsernameAvailableRequest.fromJson(Map<String, Object?> json) =>
+      _$UsernameAvailableRequestFromJson(json);
 }

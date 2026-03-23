@@ -14,5 +14,6 @@ abstract class UsersFlashs with _$UsersFlashs {
     int? untilDate,
   }) = _UsersFlashs;
 
-  factory UsersFlashs.fromJson(Map<String, Object?> json) => _$UsersFlashsFromJson(json);
+  factory UsersFlashs.fromJson(Map<String, Object?> json) =>
+      _$UsersFlashsFromJson(json);
 }

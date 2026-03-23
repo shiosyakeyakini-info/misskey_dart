@@ -11,5 +11,6 @@ abstract class PagesShowRequest with _$PagesShowRequest {
     String? username,
   }) = _PagesShowRequest;
 
-  factory PagesShowRequest.fromJson(Map<String, Object?> json) => _$PagesShowRequestFromJson(json);
+  factory PagesShowRequest.fromJson(Map<String, Object?> json) =>
+      _$PagesShowRequestFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class IImportAntennasRequest with _$IImportAntennasRequest {
     String? fileId,
   }) = _IImportAntennasRequest;
 
-  factory IImportAntennasRequest.fromJson(Map<String, Object?> json) => _$IImportAntennasRequestFromJson(json);
+  factory IImportAntennasRequest.fromJson(Map<String, Object?> json) =>
+      _$IImportAntennasRequestFromJson(json);
 }

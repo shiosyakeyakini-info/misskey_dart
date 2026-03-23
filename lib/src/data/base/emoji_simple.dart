@@ -15,5 +15,6 @@ abstract class EmojiSimple with _$EmojiSimple {
     List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _EmojiSimple;
 
-  factory EmojiSimple.fromJson(Map<String, Object?> json) => _$EmojiSimpleFromJson(json);
+  factory EmojiSimple.fromJson(Map<String, Object?> json) =>
+      _$EmojiSimpleFromJson(json);
 }

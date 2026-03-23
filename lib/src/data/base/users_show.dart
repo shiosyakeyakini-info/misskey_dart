@@ -9,5 +9,6 @@ abstract class UsersShow with _$UsersShow {
     String? host,
   }) = _UsersShow;
 
-  factory UsersShow.fromJson(Map<String, Object?> json) => _$UsersShowFromJson(json);
+  factory UsersShow.fromJson(Map<String, Object?> json) =>
+      _$UsersShowFromJson(json);
 }

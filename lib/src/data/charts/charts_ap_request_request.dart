@@ -7,10 +7,12 @@ part 'charts_ap_request_request.g.dart';
 @freezed
 abstract class ChartsApRequestRequest with _$ChartsApRequestRequest {
   const factory ChartsApRequestRequest({
-    @JsonKey(unknownEnumValue: ChartsApRequestSpan.unknown) ChartsApRequestSpan? span,
+    @JsonKey(unknownEnumValue: ChartsApRequestSpan.unknown)
+    ChartsApRequestSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
   }) = _ChartsApRequestRequest;
 
-  factory ChartsApRequestRequest.fromJson(Map<String, Object?> json) => _$ChartsApRequestRequestFromJson(json);
+  factory ChartsApRequestRequest.fromJson(Map<String, Object?> json) =>
+      _$ChartsApRequestRequestFromJson(json);
 }

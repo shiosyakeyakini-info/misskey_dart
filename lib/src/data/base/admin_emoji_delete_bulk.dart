@@ -9,5 +9,6 @@ abstract class AdminEmojiDeleteBulk with _$AdminEmojiDeleteBulk {
     required List<String> ids,
   }) = _AdminEmojiDeleteBulk;
 
-  factory AdminEmojiDeleteBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiDeleteBulkFromJson(json);
+  factory AdminEmojiDeleteBulk.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiDeleteBulkFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class I2faRegisterKeyRp with _$I2faRegisterKeyRp {
     String? id,
   }) = _I2faRegisterKeyRp;
 
-  factory I2faRegisterKeyRp.fromJson(Map<String, Object?> json) => _$I2faRegisterKeyRpFromJson(json);
+  factory I2faRegisterKeyRp.fromJson(Map<String, Object?> json) =>
+      _$I2faRegisterKeyRpFromJson(json);
 }

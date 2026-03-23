@@ -5,11 +5,17 @@ part 'i_update_notification_recieve_config_scheduled_note_post_failed.freezed.da
 part 'i_update_notification_recieve_config_scheduled_note_post_failed.g.dart';
 
 @freezed
-abstract class IUpdateNotificationRecieveConfigScheduledNotePostFailed with _$IUpdateNotificationRecieveConfigScheduledNotePostFailed {
+abstract class IUpdateNotificationRecieveConfigScheduledNotePostFailed
+    with _$IUpdateNotificationRecieveConfigScheduledNotePostFailed {
   const factory IUpdateNotificationRecieveConfigScheduledNotePostFailed({
-    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown) required IUpdateNotificationRecieveConfigScheduledNotePostFailedType type,
+    @JsonKey(
+        unknownEnumValue:
+            IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown)
+    required IUpdateNotificationRecieveConfigScheduledNotePostFailedType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigScheduledNotePostFailed;
 
-  factory IUpdateNotificationRecieveConfigScheduledNotePostFailed.fromJson(Map<String, Object?> json) => _$IUpdateNotificationRecieveConfigScheduledNotePostFailedFromJson(json);
+  factory IUpdateNotificationRecieveConfigScheduledNotePostFailed.fromJson(
+          Map<String, Object?> json) =>
+      _$IUpdateNotificationRecieveConfigScheduledNotePostFailedFromJson(json);
 }

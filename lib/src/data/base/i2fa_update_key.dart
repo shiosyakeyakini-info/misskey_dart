@@ -10,5 +10,6 @@ abstract class I2faUpdateKey with _$I2faUpdateKey {
     required String credentialId,
   }) = _I2faUpdateKey;
 
-  factory I2faUpdateKey.fromJson(Map<String, Object?> json) => _$I2faUpdateKeyFromJson(json);
+  factory I2faUpdateKey.fromJson(Map<String, Object?> json) =>
+      _$I2faUpdateKeyFromJson(json);
 }

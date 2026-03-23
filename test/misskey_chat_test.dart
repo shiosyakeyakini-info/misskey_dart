@@ -18,6 +18,15 @@ void main() async {
     expect(response.map((e) => e.id), contains(message.id));
   });
 
+  test("readAll", () async {
+    final admin = await adminClient.i.i();
+    await userClient.chat.messages.createToUser(
+      ChatMessagesCreateToUserRequest(toUserId: admin.id, text: "test"),
+    );
+    // readAllを実行（エラーが発生しなければ成功）
+    await userClient.chat.readAll();
+  });
+
   group("messages", () {
     test("createToRoom", () async {
       final room = await userClient.chat.rooms.create(

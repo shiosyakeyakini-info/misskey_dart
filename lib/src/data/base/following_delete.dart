@@ -9,5 +9,6 @@ abstract class FollowingDelete with _$FollowingDelete {
     required String userId,
   }) = _FollowingDelete;
 
-  factory FollowingDelete.fromJson(Map<String, Object?> json) => _$FollowingDeleteFromJson(json);
+  factory FollowingDelete.fromJson(Map<String, Object?> json) =>
+      _$FollowingDeleteFromJson(json);
 }

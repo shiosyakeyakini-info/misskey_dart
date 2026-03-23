@@ -13,5 +13,6 @@ abstract class ServerInfo with _$ServerInfo {
     required ServerInfoFs fs,
   }) = _ServerInfo;
 
-  factory ServerInfo.fromJson(Map<String, Object?> json) => _$ServerInfoFromJson(json);
+  factory ServerInfo.fromJson(Map<String, Object?> json) =>
+      _$ServerInfoFromJson(json);
 }

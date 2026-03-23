@@ -10,5 +10,6 @@ abstract class I2faRegisterRequest with _$I2faRegisterRequest {
     String? token,
   }) = _I2faRegisterRequest;
 
-  factory I2faRegisterRequest.fromJson(Map<String, Object?> json) => _$I2faRegisterRequestFromJson(json);
+  factory I2faRegisterRequest.fromJson(Map<String, Object?> json) =>
+      _$I2faRegisterRequestFromJson(json);
 }

@@ -15,5 +15,6 @@ abstract class NotesReactionsRequest with _$NotesReactionsRequest {
     int? untilDate,
   }) = _NotesReactionsRequest;
 
-  factory NotesReactionsRequest.fromJson(Map<String, Object?> json) => _$NotesReactionsRequestFromJson(json);
+  factory NotesReactionsRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesReactionsRequestFromJson(json);
 }

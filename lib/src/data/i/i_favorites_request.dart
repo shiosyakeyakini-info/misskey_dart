@@ -13,5 +13,6 @@ abstract class IFavoritesRequest with _$IFavoritesRequest {
     int? untilDate,
   }) = _IFavoritesRequest;
 
-  factory IFavoritesRequest.fromJson(Map<String, Object?> json) => _$IFavoritesRequestFromJson(json);
+  factory IFavoritesRequest.fromJson(Map<String, Object?> json) =>
+      _$IFavoritesRequestFromJson(json);
 }

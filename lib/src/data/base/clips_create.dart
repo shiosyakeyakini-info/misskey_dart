@@ -11,5 +11,6 @@ abstract class ClipsCreate with _$ClipsCreate {
     String? description,
   }) = _ClipsCreate;
 
-  factory ClipsCreate.fromJson(Map<String, Object?> json) => _$ClipsCreateFromJson(json);
+  factory ClipsCreate.fromJson(Map<String, Object?> json) =>
+      _$ClipsCreateFromJson(json);
 }

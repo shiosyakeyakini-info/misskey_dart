@@ -14,5 +14,6 @@ abstract class UsersFollowing with _$UsersFollowing {
     String? birthday,
   }) = _UsersFollowing;
 
-  factory UsersFollowing.fromJson(Map<String, Object?> json) => _$UsersFollowingFromJson(json);
+  factory UsersFollowing.fromJson(Map<String, Object?> json) =>
+      _$UsersFollowingFromJson(json);
 }

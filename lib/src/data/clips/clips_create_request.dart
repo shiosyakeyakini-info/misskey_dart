@@ -11,5 +11,6 @@ abstract class ClipsCreateRequest with _$ClipsCreateRequest {
     String? description,
   }) = _ClipsCreateRequest;
 
-  factory ClipsCreateRequest.fromJson(Map<String, Object?> json) => _$ClipsCreateRequestFromJson(json);
+  factory ClipsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsCreateRequestFromJson(json);
 }

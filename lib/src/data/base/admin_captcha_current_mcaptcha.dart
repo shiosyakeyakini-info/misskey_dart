@@ -11,5 +11,6 @@ abstract class AdminCaptchaCurrentMcaptcha with _$AdminCaptchaCurrentMcaptcha {
     String? instanceUrl,
   }) = _AdminCaptchaCurrentMcaptcha;
 
-  factory AdminCaptchaCurrentMcaptcha.fromJson(Map<String, Object?> json) => _$AdminCaptchaCurrentMcaptchaFromJson(json);
+  factory AdminCaptchaCurrentMcaptcha.fromJson(Map<String, Object?> json) =>
+      _$AdminCaptchaCurrentMcaptchaFromJson(json);
 }

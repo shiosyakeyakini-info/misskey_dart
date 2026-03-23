@@ -10,5 +10,6 @@ abstract class NotesReactionsCreate with _$NotesReactionsCreate {
     required String reaction,
   }) = _NotesReactionsCreate;
 
-  factory NotesReactionsCreate.fromJson(Map<String, Object?> json) => _$NotesReactionsCreateFromJson(json);
+  factory NotesReactionsCreate.fromJson(Map<String, Object?> json) =>
+      _$NotesReactionsCreateFromJson(json);
 }

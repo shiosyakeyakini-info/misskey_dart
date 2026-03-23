@@ -9,5 +9,6 @@ abstract class ChatRoomsShow with _$ChatRoomsShow {
     required String roomId,
   }) = _ChatRoomsShow;
 
-  factory ChatRoomsShow.fromJson(Map<String, Object?> json) => _$ChatRoomsShowFromJson(json);
+  factory ChatRoomsShow.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsShowFromJson(json);
 }

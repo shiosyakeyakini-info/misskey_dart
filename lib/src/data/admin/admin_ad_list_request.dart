@@ -14,5 +14,6 @@ abstract class AdminAdListRequest with _$AdminAdListRequest {
     @Default(null) bool? publishing,
   }) = _AdminAdListRequest;
 
-  factory AdminAdListRequest.fromJson(Map<String, Object?> json) => _$AdminAdListRequestFromJson(json);
+  factory AdminAdListRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminAdListRequestFromJson(json);
 }

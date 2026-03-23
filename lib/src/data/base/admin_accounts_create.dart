@@ -9,5 +9,6 @@ abstract class AdminAccountsCreate with _$AdminAccountsCreate {
     required String token,
   }) = _AdminAccountsCreate;
 
-  factory AdminAccountsCreate.fromJson(Map<String, Object?> json) => _$AdminAccountsCreateFromJson(json);
+  factory AdminAccountsCreate.fromJson(Map<String, Object?> json) =>
+      _$AdminAccountsCreateFromJson(json);
 }

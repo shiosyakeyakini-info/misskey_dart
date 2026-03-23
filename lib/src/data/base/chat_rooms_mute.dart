@@ -10,5 +10,6 @@ abstract class ChatRoomsMute with _$ChatRoomsMute {
     required bool mute,
   }) = _ChatRoomsMute;
 
-  factory ChatRoomsMute.fromJson(Map<String, Object?> json) => _$ChatRoomsMuteFromJson(json);
+  factory ChatRoomsMute.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsMuteFromJson(json);
 }

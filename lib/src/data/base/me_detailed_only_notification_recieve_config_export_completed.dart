@@ -5,11 +5,17 @@ part 'me_detailed_only_notification_recieve_config_export_completed.freezed.dart
 part 'me_detailed_only_notification_recieve_config_export_completed.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigExportCompleted with _$MeDetailedOnlyNotificationRecieveConfigExportCompleted {
+abstract class MeDetailedOnlyNotificationRecieveConfigExportCompleted
+    with _$MeDetailedOnlyNotificationRecieveConfigExportCompleted {
   const factory MeDetailedOnlyNotificationRecieveConfigExportCompleted({
-    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown) required MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
+    @JsonKey(
+        unknownEnumValue:
+            MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown)
+    required MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigExportCompleted;
 
-  factory MeDetailedOnlyNotificationRecieveConfigExportCompleted.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigExportCompleted.fromJson(
+          Map<String, Object?> json) =>
+      _$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(json);
 }

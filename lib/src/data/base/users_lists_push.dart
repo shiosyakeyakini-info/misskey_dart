@@ -10,5 +10,6 @@ abstract class UsersListsPush with _$UsersListsPush {
     required String userId,
   }) = _UsersListsPush;
 
-  factory UsersListsPush.fromJson(Map<String, Object?> json) => _$UsersListsPushFromJson(json);
+  factory UsersListsPush.fromJson(Map<String, Object?> json) =>
+      _$UsersListsPushFromJson(json);
 }

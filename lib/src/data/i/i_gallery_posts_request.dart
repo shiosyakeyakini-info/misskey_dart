@@ -13,5 +13,6 @@ abstract class IGalleryPostsRequest with _$IGalleryPostsRequest {
     int? untilDate,
   }) = _IGalleryPostsRequest;
 
-  factory IGalleryPostsRequest.fromJson(Map<String, Object?> json) => _$IGalleryPostsRequestFromJson(json);
+  factory IGalleryPostsRequest.fromJson(Map<String, Object?> json) =>
+      _$IGalleryPostsRequestFromJson(json);
 }

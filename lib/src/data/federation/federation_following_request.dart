@@ -14,5 +14,6 @@ abstract class FederationFollowingRequest with _$FederationFollowingRequest {
     @Default(10) int? limit,
   }) = _FederationFollowingRequest;
 
-  factory FederationFollowingRequest.fromJson(Map<String, Object?> json) => _$FederationFollowingRequestFromJson(json);
+  factory FederationFollowingRequest.fromJson(Map<String, Object?> json) =>
+      _$FederationFollowingRequestFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class EmojiRequest with _$EmojiRequest {
     String? name,
   }) = _EmojiRequest;
 
-  factory EmojiRequest.fromJson(Map<String, Object?> json) => _$EmojiRequestFromJson(json);
+  factory EmojiRequest.fromJson(Map<String, Object?> json) =>
+      _$EmojiRequestFromJson(json);
 }

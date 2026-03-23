@@ -10,5 +10,6 @@ abstract class UsersReportAbuseRequest with _$UsersReportAbuseRequest {
     String? comment,
   }) = _UsersReportAbuseRequest;
 
-  factory UsersReportAbuseRequest.fromJson(Map<String, Object?> json) => _$UsersReportAbuseRequestFromJson(json);
+  factory UsersReportAbuseRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersReportAbuseRequestFromJson(json);
 }

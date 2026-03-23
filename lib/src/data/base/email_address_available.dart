@@ -10,5 +10,6 @@ abstract class EmailAddressAvailable with _$EmailAddressAvailable {
     String? reason,
   }) = _EmailAddressAvailable;
 
-  factory EmailAddressAvailable.fromJson(Map<String, Object?> json) => _$EmailAddressAvailableFromJson(json);
+  factory EmailAddressAvailable.fromJson(Map<String, Object?> json) =>
+      _$EmailAddressAvailableFromJson(json);
 }

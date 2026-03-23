@@ -10,5 +10,6 @@ abstract class AdminGetIndexStatsItem with _$AdminGetIndexStatsItem {
     required String indexname,
   }) = _AdminGetIndexStatsItem;
 
-  factory AdminGetIndexStatsItem.fromJson(Map<String, Object?> json) => _$AdminGetIndexStatsItemFromJson(json);
+  factory AdminGetIndexStatsItem.fromJson(Map<String, Object?> json) =>
+      _$AdminGetIndexStatsItemFromJson(json);
 }

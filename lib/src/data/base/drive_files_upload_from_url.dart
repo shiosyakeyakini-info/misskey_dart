@@ -14,5 +14,6 @@ abstract class DriveFilesUploadFromUrl with _$DriveFilesUploadFromUrl {
     @Default(false) bool? force,
   }) = _DriveFilesUploadFromUrl;
 
-  factory DriveFilesUploadFromUrl.fromJson(Map<String, Object?> json) => _$DriveFilesUploadFromUrlFromJson(json);
+  factory DriveFilesUploadFromUrl.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesUploadFromUrlFromJson(json);
 }

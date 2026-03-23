@@ -9,5 +9,6 @@ abstract class UsersListsCreateRequest with _$UsersListsCreateRequest {
     String? name,
   }) = _UsersListsCreateRequest;
 
-  factory UsersListsCreateRequest.fromJson(Map<String, Object?> json) => _$UsersListsCreateRequestFromJson(json);
+  factory UsersListsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersListsCreateRequestFromJson(json);
 }

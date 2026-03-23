@@ -10,5 +10,6 @@ abstract class AuthSessionUserkeyRequest with _$AuthSessionUserkeyRequest {
     String? token,
   }) = _AuthSessionUserkeyRequest;
 
-  factory AuthSessionUserkeyRequest.fromJson(Map<String, Object?> json) => _$AuthSessionUserkeyRequestFromJson(json);
+  factory AuthSessionUserkeyRequest.fromJson(Map<String, Object?> json) =>
+      _$AuthSessionUserkeyRequestFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class ReversiCancelMatch with _$ReversiCancelMatch {
     String? userId,
   }) = _ReversiCancelMatch;
 
-  factory ReversiCancelMatch.fromJson(Map<String, Object?> json) => _$ReversiCancelMatchFromJson(json);
+  factory ReversiCancelMatch.fromJson(Map<String, Object?> json) =>
+      _$ReversiCancelMatchFromJson(json);
 }

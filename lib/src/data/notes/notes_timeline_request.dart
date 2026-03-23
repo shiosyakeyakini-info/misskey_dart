@@ -19,5 +19,6 @@ abstract class NotesTimelineRequest with _$NotesTimelineRequest {
     @Default(true) bool? withRenotes,
   }) = _NotesTimelineRequest;
 
-  factory NotesTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesTimelineRequestFromJson(json);
+  factory NotesTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesTimelineRequestFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class ChatMessagesRoomTimeline with _$ChatMessagesRoomTimeline {
     required String roomId,
   }) = _ChatMessagesRoomTimeline;
 
-  factory ChatMessagesRoomTimeline.fromJson(Map<String, Object?> json) => _$ChatMessagesRoomTimelineFromJson(json);
+  factory ChatMessagesRoomTimeline.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesRoomTimelineFromJson(json);
 }

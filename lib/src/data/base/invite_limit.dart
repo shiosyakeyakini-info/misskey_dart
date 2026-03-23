@@ -9,5 +9,6 @@ abstract class InviteLimit with _$InviteLimit {
     int? remaining,
   }) = _InviteLimit;
 
-  factory InviteLimit.fromJson(Map<String, Object?> json) => _$InviteLimitFromJson(json);
+  factory InviteLimit.fromJson(Map<String, Object?> json) =>
+      _$InviteLimitFromJson(json);
 }

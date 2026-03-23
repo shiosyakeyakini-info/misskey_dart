@@ -15,5 +15,6 @@ abstract class NotesMentionsRequest with _$NotesMentionsRequest {
     String? visibility,
   }) = _NotesMentionsRequest;
 
-  factory NotesMentionsRequest.fromJson(Map<String, Object?> json) => _$NotesMentionsRequestFromJson(json);
+  factory NotesMentionsRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesMentionsRequestFromJson(json);
 }

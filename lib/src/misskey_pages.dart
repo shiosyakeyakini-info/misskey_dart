@@ -1,15 +1,14 @@
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyPages {
-
   final ApiService _apiService;
 
-  MisskeyPages({required ApiService apiService})
-      : _apiService = apiService;
+  MisskeyPages({required ApiService apiService}) : _apiService = apiService;
 
   /// pages/create
   Future<Page> create(PagesCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("pages/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "pages/create", request.toJson());
     return Page.fromJson(response);
   }
 
@@ -31,7 +30,8 @@ class MisskeyPages {
 
   /// pages/show
   Future<Page> show(PagesShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("pages/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+        "pages/show", request.toJson());
     return Page.fromJson(response);
   }
 
@@ -44,5 +44,4 @@ class MisskeyPages {
   Future<void> update(PagesUpdateRequest request) async {
     await _apiService.post<void>("pages/update", request.toJson());
   }
-
 }

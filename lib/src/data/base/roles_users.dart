@@ -14,5 +14,6 @@ abstract class RolesUsers with _$RolesUsers {
     @Default(10) int? limit,
   }) = _RolesUsers;
 
-  factory RolesUsers.fromJson(Map<String, Object?> json) => _$RolesUsersFromJson(json);
+  factory RolesUsers.fromJson(Map<String, Object?> json) =>
+      _$RolesUsersFromJson(json);
 }

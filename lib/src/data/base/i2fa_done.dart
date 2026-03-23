@@ -9,5 +9,6 @@ abstract class I2faDone with _$I2faDone {
     required List<String> backupCodes,
   }) = _I2faDone;
 
-  factory I2faDone.fromJson(Map<String, Object?> json) => _$I2faDoneFromJson(json);
+  factory I2faDone.fromJson(Map<String, Object?> json) =>
+      _$I2faDoneFromJson(json);
 }

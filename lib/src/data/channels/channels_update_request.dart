@@ -17,5 +17,6 @@ abstract class ChannelsUpdateRequest with _$ChannelsUpdateRequest {
     bool? allowRenoteToExternal,
   }) = _ChannelsUpdateRequest;
 
-  factory ChannelsUpdateRequest.fromJson(Map<String, Object?> json) => _$ChannelsUpdateRequestFromJson(json);
+  factory ChannelsUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsUpdateRequestFromJson(json);
 }

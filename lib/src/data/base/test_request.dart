@@ -13,5 +13,6 @@ abstract class TestRequest with _$TestRequest {
     String? id,
   }) = _TestRequest;
 
-  factory TestRequest.fromJson(Map<String, Object?> json) => _$TestRequestFromJson(json);
+  factory TestRequest.fromJson(Map<String, Object?> json) =>
+      _$TestRequestFromJson(json);
 }

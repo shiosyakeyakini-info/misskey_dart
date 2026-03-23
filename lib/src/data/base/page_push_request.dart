@@ -11,5 +11,6 @@ abstract class PagePushRequest with _$PagePushRequest {
     @JsonKey(name: 'var') String? var_,
   }) = _PagePushRequest;
 
-  factory PagePushRequest.fromJson(Map<String, Object?> json) => _$PagePushRequestFromJson(json);
+  factory PagePushRequest.fromJson(Map<String, Object?> json) =>
+      _$PagePushRequestFromJson(json);
 }

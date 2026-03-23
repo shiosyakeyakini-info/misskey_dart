@@ -10,5 +10,6 @@ abstract class ServerInfoFs with _$ServerInfoFs {
     required double used,
   }) = _ServerInfoFs;
 
-  factory ServerInfoFs.fromJson(Map<String, Object?> json) => _$ServerInfoFsFromJson(json);
+  factory ServerInfoFs.fromJson(Map<String, Object?> json) =>
+      _$ServerInfoFsFromJson(json);
 }

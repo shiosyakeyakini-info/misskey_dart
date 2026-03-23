@@ -9,5 +9,6 @@ abstract class MuteDeleteRequest with _$MuteDeleteRequest {
     String? userId,
   }) = _MuteDeleteRequest;
 
-  factory MuteDeleteRequest.fromJson(Map<String, Object?> json) => _$MuteDeleteRequestFromJson(json);
+  factory MuteDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$MuteDeleteRequestFromJson(json);
 }

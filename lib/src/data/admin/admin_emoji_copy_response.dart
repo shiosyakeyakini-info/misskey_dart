@@ -9,5 +9,6 @@ abstract class AdminEmojiCopyResponse with _$AdminEmojiCopyResponse {
     required String id,
   }) = _AdminEmojiCopyResponse;
 
-  factory AdminEmojiCopyResponse.fromJson(Map<String, Object?> json) => _$AdminEmojiCopyResponseFromJson(json);
+  factory AdminEmojiCopyResponse.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiCopyResponseFromJson(json);
 }

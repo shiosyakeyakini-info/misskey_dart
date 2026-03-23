@@ -19,5 +19,6 @@ abstract class AdminAdUpdate with _$AdminAdUpdate {
     bool? isSensitive,
   }) = _AdminAdUpdate;
 
-  factory AdminAdUpdate.fromJson(Map<String, Object?> json) => _$AdminAdUpdateFromJson(json);
+  factory AdminAdUpdate.fromJson(Map<String, Object?> json) =>
+      _$AdminAdUpdateFromJson(json);
 }

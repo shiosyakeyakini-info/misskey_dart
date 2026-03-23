@@ -1,10 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
-import 'package:misskey_dart/src/converters/emojis_converter.dart';
-import 'package:misskey_dart/src/converters/hide_before_converter.dart';
-import 'package:misskey_dart/src/converters/mute_words_converter.dart';
-import 'package:misskey_dart/src/converters/uri_converter.dart';
 
 part 'user.freezed.dart';
 part 'user.g.dart';
@@ -477,6 +472,9 @@ abstract class UserPolicies with _$UserPolicies {
     bool? canImportMuting,
     bool? canImportUserLists,
     ChatAvailability? chatAvailability,
+    int? noteDraftLimit,
+    int? scheduledNoteLimit,
+    bool? watermarkAvailable,
   }) = _UserPolicies;
 
   factory UserPolicies.fromJson(Map<String, Object?> json) =>
@@ -529,6 +527,8 @@ abstract class NotificationRecieveConfigs with _$NotificationRecieveConfigs {
     NotificationRecieveConfig? quote,
     NotificationRecieveConfig? reaction,
     NotificationRecieveConfig? pollEnded,
+    NotificationRecieveConfig? scheduledNotePosted,
+    NotificationRecieveConfig? scheduledNotePostFailed,
     NotificationRecieveConfig? receiveFollowRequest,
     NotificationRecieveConfig? followRequestAccepted,
     NotificationRecieveConfig? roleAssigned,
@@ -562,4 +562,4 @@ enum NotificationRecieveConfigType {
   never,
 }
 
-enum ChatAvailability { available, readOnly, unavailable }
+enum ChatAvailability { available, readonly, unavailable }

@@ -14,5 +14,6 @@ abstract class AdminAvatarDecorationsList with _$AdminAvatarDecorationsList {
     String? userId,
   }) = _AdminAvatarDecorationsList;
 
-  factory AdminAvatarDecorationsList.fromJson(Map<String, Object?> json) => _$AdminAvatarDecorationsListFromJson(json);
+  factory AdminAvatarDecorationsList.fromJson(Map<String, Object?> json) =>
+      _$AdminAvatarDecorationsListFromJson(json);
 }

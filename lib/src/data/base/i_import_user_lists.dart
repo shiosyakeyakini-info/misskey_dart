@@ -9,5 +9,6 @@ abstract class IImportUserLists with _$IImportUserLists {
     required String fileId,
   }) = _IImportUserLists;
 
-  factory IImportUserLists.fromJson(Map<String, Object?> json) => _$IImportUserListsFromJson(json);
+  factory IImportUserLists.fromJson(Map<String, Object?> json) =>
+      _$IImportUserListsFromJson(json);
 }

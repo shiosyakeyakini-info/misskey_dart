@@ -9,5 +9,6 @@ abstract class GalleryPostsDeleteRequest with _$GalleryPostsDeleteRequest {
     String? postId,
   }) = _GalleryPostsDeleteRequest;
 
-  factory GalleryPostsDeleteRequest.fromJson(Map<String, Object?> json) => _$GalleryPostsDeleteRequestFromJson(json);
+  factory GalleryPostsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsDeleteRequestFromJson(json);
 }

@@ -11,5 +11,6 @@ abstract class IRegistryGetRequest with _$IRegistryGetRequest {
     String? domain,
   }) = _IRegistryGetRequest;
 
-  factory IRegistryGetRequest.fromJson(Map<String, Object?> json) => _$IRegistryGetRequestFromJson(json);
+  factory IRegistryGetRequest.fromJson(Map<String, Object?> json) =>
+      _$IRegistryGetRequestFromJson(json);
 }

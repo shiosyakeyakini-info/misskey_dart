@@ -9,5 +9,6 @@ abstract class NotesFavoritesCreateRequest with _$NotesFavoritesCreateRequest {
     String? noteId,
   }) = _NotesFavoritesCreateRequest;
 
-  factory NotesFavoritesCreateRequest.fromJson(Map<String, Object?> json) => _$NotesFavoritesCreateRequestFromJson(json);
+  factory NotesFavoritesCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesFavoritesCreateRequestFromJson(json);
 }

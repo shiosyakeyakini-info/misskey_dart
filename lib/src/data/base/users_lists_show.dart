@@ -10,5 +10,6 @@ abstract class UsersListsShow with _$UsersListsShow {
     bool? isLiked,
   }) = _UsersListsShow;
 
-  factory UsersListsShow.fromJson(Map<String, Object?> json) => _$UsersListsShowFromJson(json);
+  factory UsersListsShow.fromJson(Map<String, Object?> json) =>
+      _$UsersListsShowFromJson(json);
 }

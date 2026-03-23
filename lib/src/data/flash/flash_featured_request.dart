@@ -10,5 +10,6 @@ abstract class FlashFeaturedRequest with _$FlashFeaturedRequest {
     @Default(10) int? limit,
   }) = _FlashFeaturedRequest;
 
-  factory FlashFeaturedRequest.fromJson(Map<String, Object?> json) => _$FlashFeaturedRequestFromJson(json);
+  factory FlashFeaturedRequest.fromJson(Map<String, Object?> json) =>
+      _$FlashFeaturedRequestFromJson(json);
 }

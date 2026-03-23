@@ -10,5 +10,6 @@ abstract class UsersListsPull with _$UsersListsPull {
     required String userId,
   }) = _UsersListsPull;
 
-  factory UsersListsPull.fromJson(Map<String, Object?> json) => _$UsersListsPullFromJson(json);
+  factory UsersListsPull.fromJson(Map<String, Object?> json) =>
+      _$UsersListsPullFromJson(json);
 }

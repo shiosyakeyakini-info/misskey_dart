@@ -9,5 +9,6 @@ abstract class NotesFavoritesCreate with _$NotesFavoritesCreate {
     required String noteId,
   }) = _NotesFavoritesCreate;
 
-  factory NotesFavoritesCreate.fromJson(Map<String, Object?> json) => _$NotesFavoritesCreateFromJson(json);
+  factory NotesFavoritesCreate.fromJson(Map<String, Object?> json) =>
+      _$NotesFavoritesCreateFromJson(json);
 }

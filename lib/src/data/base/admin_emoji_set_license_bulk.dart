@@ -10,5 +10,6 @@ abstract class AdminEmojiSetLicenseBulk with _$AdminEmojiSetLicenseBulk {
     String? license,
   }) = _AdminEmojiSetLicenseBulk;
 
-  factory AdminEmojiSetLicenseBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiSetLicenseBulkFromJson(json);
+  factory AdminEmojiSetLicenseBulk.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiSetLicenseBulkFromJson(json);
 }

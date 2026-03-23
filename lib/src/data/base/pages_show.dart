@@ -10,5 +10,6 @@ abstract class PagesShow with _$PagesShow {
     required String username,
   }) = _PagesShow;
 
-  factory PagesShow.fromJson(Map<String, Object?> json) => _$PagesShowFromJson(json);
+  factory PagesShow.fromJson(Map<String, Object?> json) =>
+      _$PagesShowFromJson(json);
 }

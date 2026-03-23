@@ -9,5 +9,6 @@ abstract class AdminRelaysRemoveRequest with _$AdminRelaysRemoveRequest {
     String? inbox,
   }) = _AdminRelaysRemoveRequest;
 
-  factory AdminRelaysRemoveRequest.fromJson(Map<String, Object?> json) => _$AdminRelaysRemoveRequestFromJson(json);
+  factory AdminRelaysRemoveRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminRelaysRemoveRequestFromJson(json);
 }

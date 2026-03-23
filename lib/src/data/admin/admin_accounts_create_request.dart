@@ -11,5 +11,6 @@ abstract class AdminAccountsCreateRequest with _$AdminAccountsCreateRequest {
     String? setupPassword,
   }) = _AdminAccountsCreateRequest;
 
-  factory AdminAccountsCreateRequest.fromJson(Map<String, Object?> json) => _$AdminAccountsCreateRequestFromJson(json);
+  factory AdminAccountsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminAccountsCreateRequestFromJson(json);
 }

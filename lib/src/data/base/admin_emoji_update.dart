@@ -15,5 +15,6 @@ abstract class AdminEmojiUpdate with _$AdminEmojiUpdate {
     List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _AdminEmojiUpdate;
 
-  factory AdminEmojiUpdate.fromJson(Map<String, Object?> json) => _$AdminEmojiUpdateFromJson(json);
+  factory AdminEmojiUpdate.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiUpdateFromJson(json);
 }

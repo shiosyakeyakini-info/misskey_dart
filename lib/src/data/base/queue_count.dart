@@ -13,5 +13,6 @@ abstract class QueueCount with _$QueueCount {
     required double delayed,
   }) = _QueueCount;
 
-  factory QueueCount.fromJson(Map<String, Object?> json) => _$QueueCountFromJson(json);
+  factory QueueCount.fromJson(Map<String, Object?> json) =>
+      _$QueueCountFromJson(json);
 }

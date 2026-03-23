@@ -12,5 +12,6 @@ abstract class ChartsNotesRemoteDiffs with _$ChartsNotesRemoteDiffs {
     required List<double> withFile,
   }) = _ChartsNotesRemoteDiffs;
 
-  factory ChartsNotesRemoteDiffs.fromJson(Map<String, Object?> json) => _$ChartsNotesRemoteDiffsFromJson(json);
+  factory ChartsNotesRemoteDiffs.fromJson(Map<String, Object?> json) =>
+      _$ChartsNotesRemoteDiffsFromJson(json);
 }

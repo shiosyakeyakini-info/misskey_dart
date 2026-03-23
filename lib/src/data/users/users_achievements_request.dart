@@ -9,5 +9,6 @@ abstract class UsersAchievementsRequest with _$UsersAchievementsRequest {
     String? userId,
   }) = _UsersAchievementsRequest;
 
-  factory UsersAchievementsRequest.fromJson(Map<String, Object?> json) => _$UsersAchievementsRequestFromJson(json);
+  factory UsersAchievementsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersAchievementsRequestFromJson(json);
 }

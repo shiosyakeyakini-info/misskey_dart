@@ -9,5 +9,6 @@ abstract class UsersListsDelete with _$UsersListsDelete {
     required String listId,
   }) = _UsersListsDelete;
 
-  factory UsersListsDelete.fromJson(Map<String, Object?> json) => _$UsersListsDeleteFromJson(json);
+  factory UsersListsDelete.fromJson(Map<String, Object?> json) =>
+      _$UsersListsDeleteFromJson(json);
 }

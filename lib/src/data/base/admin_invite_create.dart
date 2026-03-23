@@ -10,5 +10,6 @@ abstract class AdminInviteCreate with _$AdminInviteCreate {
     String? expiresAt,
   }) = _AdminInviteCreate;
 
-  factory AdminInviteCreate.fromJson(Map<String, Object?> json) => _$AdminInviteCreateFromJson(json);
+  factory AdminInviteCreate.fromJson(Map<String, Object?> json) =>
+      _$AdminInviteCreateFromJson(json);
 }

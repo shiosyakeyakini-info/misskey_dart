@@ -13,5 +13,6 @@ abstract class ChannelsOwnedRequest with _$ChannelsOwnedRequest {
     @Default(5) int? limit,
   }) = _ChannelsOwnedRequest;
 
-  factory ChannelsOwnedRequest.fromJson(Map<String, Object?> json) => _$ChannelsOwnedRequestFromJson(json);
+  factory ChannelsOwnedRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsOwnedRequestFromJson(json);
 }

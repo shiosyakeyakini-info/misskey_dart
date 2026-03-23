@@ -20,5 +20,6 @@ abstract class NotesHybridTimeline with _$NotesHybridTimeline {
     @Default(false) bool? withReplies,
   }) = _NotesHybridTimeline;
 
-  factory NotesHybridTimeline.fromJson(Map<String, Object?> json) => _$NotesHybridTimelineFromJson(json);
+  factory NotesHybridTimeline.fromJson(Map<String, Object?> json) =>
+      _$NotesHybridTimelineFromJson(json);
 }

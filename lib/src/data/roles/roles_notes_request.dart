@@ -14,5 +14,6 @@ abstract class RolesNotesRequest with _$RolesNotesRequest {
     int? untilDate,
   }) = _RolesNotesRequest;
 
-  factory RolesNotesRequest.fromJson(Map<String, Object?> json) => _$RolesNotesRequestFromJson(json);
+  factory RolesNotesRequest.fromJson(Map<String, Object?> json) =>
+      _$RolesNotesRequestFromJson(json);
 }

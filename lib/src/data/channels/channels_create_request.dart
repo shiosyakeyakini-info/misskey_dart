@@ -14,5 +14,6 @@ abstract class ChannelsCreateRequest with _$ChannelsCreateRequest {
     bool? allowRenoteToExternal,
   }) = _ChannelsCreateRequest;
 
-  factory ChannelsCreateRequest.fromJson(Map<String, Object?> json) => _$ChannelsCreateRequestFromJson(json);
+  factory ChannelsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsCreateRequestFromJson(json);
 }

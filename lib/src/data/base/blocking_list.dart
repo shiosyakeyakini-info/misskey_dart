@@ -13,5 +13,6 @@ abstract class BlockingList with _$BlockingList {
     int? untilDate,
   }) = _BlockingList;
 
-  factory BlockingList.fromJson(Map<String, Object?> json) => _$BlockingListFromJson(json);
+  factory BlockingList.fromJson(Map<String, Object?> json) =>
+      _$BlockingListFromJson(json);
 }

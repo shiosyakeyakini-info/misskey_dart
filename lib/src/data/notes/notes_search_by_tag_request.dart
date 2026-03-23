@@ -19,5 +19,6 @@ abstract class NotesSearchByTagRequest with _$NotesSearchByTagRequest {
     @Default(10) int? limit,
   }) = _NotesSearchByTagRequest;
 
-  factory NotesSearchByTagRequest.fromJson(Map<String, Object?> json) => _$NotesSearchByTagRequestFromJson(json);
+  factory NotesSearchByTagRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesSearchByTagRequestFromJson(json);
 }

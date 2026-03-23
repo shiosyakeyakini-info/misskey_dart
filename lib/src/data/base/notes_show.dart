@@ -9,5 +9,6 @@ abstract class NotesShow with _$NotesShow {
     required String noteId,
   }) = _NotesShow;
 
-  factory NotesShow.fromJson(Map<String, Object?> json) => _$NotesShowFromJson(json);
+  factory NotesShow.fromJson(Map<String, Object?> json) =>
+      _$NotesShowFromJson(json);
 }

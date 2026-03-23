@@ -9,5 +9,6 @@ abstract class UsersAchievements with _$UsersAchievements {
     required String userId,
   }) = _UsersAchievements;
 
-  factory UsersAchievements.fromJson(Map<String, Object?> json) => _$UsersAchievementsFromJson(json);
+  factory UsersAchievements.fromJson(Map<String, Object?> json) =>
+      _$UsersAchievementsFromJson(json);
 }

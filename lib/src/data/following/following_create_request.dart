@@ -10,5 +10,6 @@ abstract class FollowingCreateRequest with _$FollowingCreateRequest {
     bool? withReplies,
   }) = _FollowingCreateRequest;
 
-  factory FollowingCreateRequest.fromJson(Map<String, Object?> json) => _$FollowingCreateRequestFromJson(json);
+  factory FollowingCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$FollowingCreateRequestFromJson(json);
 }

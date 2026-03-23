@@ -9,5 +9,6 @@ abstract class ChannelsUnfavorite with _$ChannelsUnfavorite {
     required String channelId,
   }) = _ChannelsUnfavorite;
 
-  factory ChannelsUnfavorite.fromJson(Map<String, Object?> json) => _$ChannelsUnfavoriteFromJson(json);
+  factory ChannelsUnfavorite.fromJson(Map<String, Object?> json) =>
+      _$ChannelsUnfavoriteFromJson(json);
 }

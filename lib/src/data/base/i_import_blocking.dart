@@ -9,5 +9,6 @@ abstract class IImportBlocking with _$IImportBlocking {
     required String fileId,
   }) = _IImportBlocking;
 
-  factory IImportBlocking.fromJson(Map<String, Object?> json) => _$IImportBlockingFromJson(json);
+  factory IImportBlocking.fromJson(Map<String, Object?> json) =>
+      _$IImportBlockingFromJson(json);
 }

@@ -19,5 +19,6 @@ abstract class NotesTimeline with _$NotesTimeline {
     @Default(true) bool? withRenotes,
   }) = _NotesTimeline;
 
-  factory NotesTimeline.fromJson(Map<String, Object?> json) => _$NotesTimelineFromJson(json);
+  factory NotesTimeline.fromJson(Map<String, Object?> json) =>
+      _$NotesTimelineFromJson(json);
 }

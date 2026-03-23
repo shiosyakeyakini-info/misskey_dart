@@ -10,5 +10,6 @@ abstract class UsersListsShowRequest with _$UsersListsShowRequest {
     @Default(false) bool? forPublic,
   }) = _UsersListsShowRequest;
 
-  factory UsersListsShowRequest.fromJson(Map<String, Object?> json) => _$UsersListsShowRequestFromJson(json);
+  factory UsersListsShowRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersListsShowRequestFromJson(json);
 }

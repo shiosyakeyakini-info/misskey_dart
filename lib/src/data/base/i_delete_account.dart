@@ -10,5 +10,6 @@ abstract class IDeleteAccount with _$IDeleteAccount {
     String? token,
   }) = _IDeleteAccount;
 
-  factory IDeleteAccount.fromJson(Map<String, Object?> json) => _$IDeleteAccountFromJson(json);
+  factory IDeleteAccount.fromJson(Map<String, Object?> json) =>
+      _$IDeleteAccountFromJson(json);
 }

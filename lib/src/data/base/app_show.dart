@@ -9,5 +9,6 @@ abstract class AppShow with _$AppShow {
     required String appId,
   }) = _AppShow;
 
-  factory AppShow.fromJson(Map<String, Object?> json) => _$AppShowFromJson(json);
+  factory AppShow.fromJson(Map<String, Object?> json) =>
+      _$AppShowFromJson(json);
 }

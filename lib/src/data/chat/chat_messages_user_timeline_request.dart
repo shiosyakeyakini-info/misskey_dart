@@ -4,7 +4,8 @@ part 'chat_messages_user_timeline_request.freezed.dart';
 part 'chat_messages_user_timeline_request.g.dart';
 
 @freezed
-abstract class ChatMessagesUserTimelineRequest with _$ChatMessagesUserTimelineRequest {
+abstract class ChatMessagesUserTimelineRequest
+    with _$ChatMessagesUserTimelineRequest {
   const factory ChatMessagesUserTimelineRequest({
     @Default(10) int? limit,
     String? sinceId,
@@ -14,5 +15,6 @@ abstract class ChatMessagesUserTimelineRequest with _$ChatMessagesUserTimelineRe
     String? userId,
   }) = _ChatMessagesUserTimelineRequest;
 
-  factory ChatMessagesUserTimelineRequest.fromJson(Map<String, Object?> json) => _$ChatMessagesUserTimelineRequestFromJson(json);
+  factory ChatMessagesUserTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesUserTimelineRequestFromJson(json);
 }

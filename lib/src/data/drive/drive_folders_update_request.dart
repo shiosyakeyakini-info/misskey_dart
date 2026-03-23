@@ -11,5 +11,6 @@ abstract class DriveFoldersUpdateRequest with _$DriveFoldersUpdateRequest {
     String? parentId,
   }) = _DriveFoldersUpdateRequest;
 
-  factory DriveFoldersUpdateRequest.fromJson(Map<String, Object?> json) => _$DriveFoldersUpdateRequestFromJson(json);
+  factory DriveFoldersUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersUpdateRequestFromJson(json);
 }

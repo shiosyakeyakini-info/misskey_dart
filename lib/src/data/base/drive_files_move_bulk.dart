@@ -10,5 +10,6 @@ abstract class DriveFilesMoveBulk with _$DriveFilesMoveBulk {
     String? folderId,
   }) = _DriveFilesMoveBulk;
 
-  factory DriveFilesMoveBulk.fromJson(Map<String, Object?> json) => _$DriveFilesMoveBulkFromJson(json);
+  factory DriveFilesMoveBulk.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesMoveBulkFromJson(json);
 }

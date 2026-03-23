@@ -30,5 +30,6 @@ abstract class ReversiGameLite with _$ReversiGameLite {
     required double timeLimitForEachTurn,
   }) = _ReversiGameLite;
 
-  factory ReversiGameLite.fromJson(Map<String, Object?> json) => _$ReversiGameLiteFromJson(json);
+  factory ReversiGameLite.fromJson(Map<String, Object?> json) =>
+      _$ReversiGameLiteFromJson(json);
 }

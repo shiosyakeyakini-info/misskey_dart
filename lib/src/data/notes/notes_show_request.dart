@@ -9,5 +9,6 @@ abstract class NotesShowRequest with _$NotesShowRequest {
     String? noteId,
   }) = _NotesShowRequest;
 
-  factory NotesShowRequest.fromJson(Map<String, Object?> json) => _$NotesShowRequestFromJson(json);
+  factory NotesShowRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesShowRequestFromJson(json);
 }

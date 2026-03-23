@@ -10,5 +10,6 @@ abstract class IRevokeTokenRequest with _$IRevokeTokenRequest {
     String? token,
   }) = _IRevokeTokenRequest;
 
-  factory IRevokeTokenRequest.fromJson(Map<String, Object?> json) => _$IRevokeTokenRequestFromJson(json);
+  factory IRevokeTokenRequest.fromJson(Map<String, Object?> json) =>
+      _$IRevokeTokenRequestFromJson(json);
 }

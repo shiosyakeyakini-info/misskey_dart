@@ -15,5 +15,6 @@ abstract class UsersListsGetMemberships with _$UsersListsGetMemberships {
     int? untilDate,
   }) = _UsersListsGetMemberships;
 
-  factory UsersListsGetMemberships.fromJson(Map<String, Object?> json) => _$UsersListsGetMembershipsFromJson(json);
+  factory UsersListsGetMemberships.fromJson(Map<String, Object?> json) =>
+      _$UsersListsGetMembershipsFromJson(json);
 }

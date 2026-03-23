@@ -15,5 +15,6 @@ abstract class StatsResponse with _$StatsResponse {
     required int driveUsageRemote,
   }) = _StatsResponse;
 
-  factory StatsResponse.fromJson(Map<String, Object?> json) => _$StatsResponseFromJson(json);
+  factory StatsResponse.fromJson(Map<String, Object?> json) =>
+      _$StatsResponseFromJson(json);
 }

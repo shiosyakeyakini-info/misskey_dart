@@ -9,5 +9,6 @@ abstract class ClipsFavoriteRequest with _$ClipsFavoriteRequest {
     String? clipId,
   }) = _ClipsFavoriteRequest;
 
-  factory ClipsFavoriteRequest.fromJson(Map<String, Object?> json) => _$ClipsFavoriteRequestFromJson(json);
+  factory ClipsFavoriteRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsFavoriteRequestFromJson(json);
 }

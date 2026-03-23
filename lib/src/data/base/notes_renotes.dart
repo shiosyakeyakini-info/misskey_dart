@@ -14,5 +14,6 @@ abstract class NotesRenotes with _$NotesRenotes {
     int? untilDate,
   }) = _NotesRenotes;
 
-  factory NotesRenotes.fromJson(Map<String, Object?> json) => _$NotesRenotesFromJson(json);
+  factory NotesRenotes.fromJson(Map<String, Object?> json) =>
+      _$NotesRenotesFromJson(json);
 }

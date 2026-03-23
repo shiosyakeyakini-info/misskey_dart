@@ -9,5 +9,6 @@ abstract class NotesDraftsDelete with _$NotesDraftsDelete {
     required String draftId,
   }) = _NotesDraftsDelete;
 
-  factory NotesDraftsDelete.fromJson(Map<String, Object?> json) => _$NotesDraftsDeleteFromJson(json);
+  factory NotesDraftsDelete.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsDeleteFromJson(json);
 }

@@ -18,5 +18,6 @@ abstract class AdminAdCreateRequest with _$AdminAdCreateRequest {
     bool? isSensitive,
   }) = _AdminAdCreateRequest;
 
-  factory AdminAdCreateRequest.fromJson(Map<String, Object?> json) => _$AdminAdCreateRequestFromJson(json);
+  factory AdminAdCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminAdCreateRequestFromJson(json);
 }

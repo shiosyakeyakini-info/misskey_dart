@@ -12,5 +12,6 @@ abstract class DriveFileProperties with _$DriveFileProperties {
     String? avgColor,
   }) = _DriveFileProperties;
 
-  factory DriveFileProperties.fromJson(Map<String, Object?> json) => _$DriveFilePropertiesFromJson(json);
+  factory DriveFileProperties.fromJson(Map<String, Object?> json) =>
+      _$DriveFilePropertiesFromJson(json);
 }

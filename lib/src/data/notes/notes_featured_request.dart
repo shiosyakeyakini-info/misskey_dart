@@ -11,5 +11,6 @@ abstract class NotesFeaturedRequest with _$NotesFeaturedRequest {
     String? channelId,
   }) = _NotesFeaturedRequest;
 
-  factory NotesFeaturedRequest.fromJson(Map<String, Object?> json) => _$NotesFeaturedRequestFromJson(json);
+  factory NotesFeaturedRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesFeaturedRequestFromJson(json);
 }

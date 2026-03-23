@@ -17,5 +17,6 @@ abstract class NotesSearchByTag with _$NotesSearchByTag {
     @Default(10) int? limit,
   }) = _NotesSearchByTag;
 
-  factory NotesSearchByTag.fromJson(Map<String, Object?> json) => _$NotesSearchByTagFromJson(json);
+  factory NotesSearchByTag.fromJson(Map<String, Object?> json) =>
+      _$NotesSearchByTagFromJson(json);
 }

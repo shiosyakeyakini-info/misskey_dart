@@ -11,5 +11,6 @@ abstract class NotesConversation with _$NotesConversation {
     @Default(0) int? offset,
   }) = _NotesConversation;
 
-  factory NotesConversation.fromJson(Map<String, Object?> json) => _$NotesConversationFromJson(json);
+  factory NotesConversation.fromJson(Map<String, Object?> json) =>
+      _$NotesConversationFromJson(json);
 }

@@ -13,5 +13,6 @@ abstract class MuteListRequest with _$MuteListRequest {
     int? untilDate,
   }) = _MuteListRequest;
 
-  factory MuteListRequest.fromJson(Map<String, Object?> json) => _$MuteListRequestFromJson(json);
+  factory MuteListRequest.fromJson(Map<String, Object?> json) =>
+      _$MuteListRequestFromJson(json);
 }

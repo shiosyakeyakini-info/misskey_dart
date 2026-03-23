@@ -9,5 +9,6 @@ abstract class AuthSessionGenerateRequest with _$AuthSessionGenerateRequest {
     String? appSecret,
   }) = _AuthSessionGenerateRequest;
 
-  factory AuthSessionGenerateRequest.fromJson(Map<String, Object?> json) => _$AuthSessionGenerateRequestFromJson(json);
+  factory AuthSessionGenerateRequest.fromJson(Map<String, Object?> json) =>
+      _$AuthSessionGenerateRequestFromJson(json);
 }

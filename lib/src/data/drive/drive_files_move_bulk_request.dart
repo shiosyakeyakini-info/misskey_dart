@@ -10,5 +10,6 @@ abstract class DriveFilesMoveBulkRequest with _$DriveFilesMoveBulkRequest {
     String? folderId,
   }) = _DriveFilesMoveBulkRequest;
 
-  factory DriveFilesMoveBulkRequest.fromJson(Map<String, Object?> json) => _$DriveFilesMoveBulkRequestFromJson(json);
+  factory DriveFilesMoveBulkRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesMoveBulkRequestFromJson(json);
 }

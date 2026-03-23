@@ -14,5 +14,6 @@ abstract class UsersGalleryPostsRequest with _$UsersGalleryPostsRequest {
     int? untilDate,
   }) = _UsersGalleryPostsRequest;
 
-  factory UsersGalleryPostsRequest.fromJson(Map<String, Object?> json) => _$UsersGalleryPostsRequestFromJson(json);
+  factory UsersGalleryPostsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersGalleryPostsRequestFromJson(json);
 }

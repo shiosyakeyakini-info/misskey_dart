@@ -9,5 +9,6 @@ abstract class RenoteMuteDelete with _$RenoteMuteDelete {
     required String userId,
   }) = _RenoteMuteDelete;
 
-  factory RenoteMuteDelete.fromJson(Map<String, Object?> json) => _$RenoteMuteDeleteFromJson(json);
+  factory RenoteMuteDelete.fromJson(Map<String, Object?> json) =>
+      _$RenoteMuteDeleteFromJson(json);
 }

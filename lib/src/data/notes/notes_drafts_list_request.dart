@@ -14,5 +14,6 @@ abstract class NotesDraftsListRequest with _$NotesDraftsListRequest {
     bool? scheduled,
   }) = _NotesDraftsListRequest;
 
-  factory NotesDraftsListRequest.fromJson(Map<String, Object?> json) => _$NotesDraftsListRequestFromJson(json);
+  factory NotesDraftsListRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsListRequestFromJson(json);
 }

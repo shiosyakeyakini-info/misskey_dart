@@ -15,5 +15,6 @@ abstract class AdminShowModerationLogsItem with _$AdminShowModerationLogsItem {
     required UserDetailedNotMe user,
   }) = _AdminShowModerationLogsItem;
 
-  factory AdminShowModerationLogsItem.fromJson(Map<String, Object?> json) => _$AdminShowModerationLogsItemFromJson(json);
+  factory AdminShowModerationLogsItem.fromJson(Map<String, Object?> json) =>
+      _$AdminShowModerationLogsItemFromJson(json);
 }

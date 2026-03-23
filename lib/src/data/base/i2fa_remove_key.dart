@@ -11,5 +11,6 @@ abstract class I2faRemoveKey with _$I2faRemoveKey {
     required String credentialId,
   }) = _I2faRemoveKey;
 
-  factory I2faRemoveKey.fromJson(Map<String, Object?> json) => _$I2faRemoveKeyFromJson(json);
+  factory I2faRemoveKey.fromJson(Map<String, Object?> json) =>
+      _$I2faRemoveKeyFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class DriveFolders with _$DriveFolders {
     @Default(null) String? folderId,
   }) = _DriveFolders;
 
-  factory DriveFolders.fromJson(Map<String, Object?> json) => _$DriveFoldersFromJson(json);
+  factory DriveFolders.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersFromJson(json);
 }

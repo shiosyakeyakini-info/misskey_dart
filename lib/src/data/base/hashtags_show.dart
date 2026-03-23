@@ -9,5 +9,6 @@ abstract class HashtagsShow with _$HashtagsShow {
     required String tag,
   }) = _HashtagsShow;
 
-  factory HashtagsShow.fromJson(Map<String, Object?> json) => _$HashtagsShowFromJson(json);
+  factory HashtagsShow.fromJson(Map<String, Object?> json) =>
+      _$HashtagsShowFromJson(json);
 }

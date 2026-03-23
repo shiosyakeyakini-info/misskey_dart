@@ -10,5 +10,6 @@ abstract class IImportFollowingRequest with _$IImportFollowingRequest {
     bool? withReplies,
   }) = _IImportFollowingRequest;
 
-  factory IImportFollowingRequest.fromJson(Map<String, Object?> json) => _$IImportFollowingRequestFromJson(json);
+  factory IImportFollowingRequest.fromJson(Map<String, Object?> json) =>
+      _$IImportFollowingRequestFromJson(json);
 }

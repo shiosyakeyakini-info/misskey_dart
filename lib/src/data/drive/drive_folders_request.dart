@@ -14,5 +14,6 @@ abstract class DriveFoldersRequest with _$DriveFoldersRequest {
     @Default(null) String? folderId,
   }) = _DriveFoldersRequest;
 
-  factory DriveFoldersRequest.fromJson(Map<String, Object?> json) => _$DriveFoldersRequestFromJson(json);
+  factory DriveFoldersRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersRequestFromJson(json);
 }

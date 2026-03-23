@@ -13,5 +13,6 @@ abstract class GalleryPostsUpdateRequest with _$GalleryPostsUpdateRequest {
     @Default(false) bool? isSensitive,
   }) = _GalleryPostsUpdateRequest;
 
-  factory GalleryPostsUpdateRequest.fromJson(Map<String, Object?> json) => _$GalleryPostsUpdateRequestFromJson(json);
+  factory GalleryPostsUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsUpdateRequestFromJson(json);
 }

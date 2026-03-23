@@ -11,5 +11,6 @@ abstract class ChatMessagesCreateToRoom with _$ChatMessagesCreateToRoom {
     required String toRoomId,
   }) = _ChatMessagesCreateToRoom;
 
-  factory ChatMessagesCreateToRoom.fromJson(Map<String, Object?> json) => _$ChatMessagesCreateToRoomFromJson(json);
+  factory ChatMessagesCreateToRoom.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesCreateToRoomFromJson(json);
 }

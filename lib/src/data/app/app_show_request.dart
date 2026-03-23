@@ -9,5 +9,6 @@ abstract class AppShowRequest with _$AppShowRequest {
     String? appId,
   }) = _AppShowRequest;
 
-  factory AppShowRequest.fromJson(Map<String, Object?> json) => _$AppShowRequestFromJson(json);
+  factory AppShowRequest.fromJson(Map<String, Object?> json) =>
+      _$AppShowRequestFromJson(json);
 }

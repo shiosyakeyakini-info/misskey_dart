@@ -10,5 +10,6 @@ abstract class ChatMessagesReact with _$ChatMessagesReact {
     required String reaction,
   }) = _ChatMessagesReact;
 
-  factory ChatMessagesReact.fromJson(Map<String, Object?> json) => _$ChatMessagesReactFromJson(json);
+  factory ChatMessagesReact.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesReactFromJson(json);
 }

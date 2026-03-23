@@ -14,5 +14,6 @@ abstract class ChatRoomsMembersRequest with _$ChatRoomsMembersRequest {
     int? untilDate,
   }) = _ChatRoomsMembersRequest;
 
-  factory ChatRoomsMembersRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsMembersRequestFromJson(json);
+  factory ChatRoomsMembersRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsMembersRequestFromJson(json);
 }

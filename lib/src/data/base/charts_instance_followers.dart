@@ -11,5 +11,6 @@ abstract class ChartsInstanceFollowers with _$ChartsInstanceFollowers {
     required List<double> dec,
   }) = _ChartsInstanceFollowers;
 
-  factory ChartsInstanceFollowers.fromJson(Map<String, Object?> json) => _$ChartsInstanceFollowersFromJson(json);
+  factory ChartsInstanceFollowers.fromJson(Map<String, Object?> json) =>
+      _$ChartsInstanceFollowersFromJson(json);
 }

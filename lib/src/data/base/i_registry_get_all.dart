@@ -10,5 +10,6 @@ abstract class IRegistryGetAll with _$IRegistryGetAll {
     String? domain,
   }) = _IRegistryGetAll;
 
-  factory IRegistryGetAll.fromJson(Map<String, Object?> json) => _$IRegistryGetAllFromJson(json);
+  factory IRegistryGetAll.fromJson(Map<String, Object?> json) =>
+      _$IRegistryGetAllFromJson(json);
 }

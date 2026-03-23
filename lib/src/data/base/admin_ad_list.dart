@@ -14,5 +14,6 @@ abstract class AdminAdList with _$AdminAdList {
     @Default(null) bool? publishing,
   }) = _AdminAdList;
 
-  factory AdminAdList.fromJson(Map<String, Object?> json) => _$AdminAdListFromJson(json);
+  factory AdminAdList.fromJson(Map<String, Object?> json) =>
+      _$AdminAdListFromJson(json);
 }

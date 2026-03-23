@@ -10,5 +10,6 @@ abstract class ChannelsMuteCreate with _$ChannelsMuteCreate {
     int? expiresAt,
   }) = _ChannelsMuteCreate;
 
-  factory ChannelsMuteCreate.fromJson(Map<String, Object?> json) => _$ChannelsMuteCreateFromJson(json);
+  factory ChannelsMuteCreate.fromJson(Map<String, Object?> json) =>
+      _$ChannelsMuteCreateFromJson(json);
 }

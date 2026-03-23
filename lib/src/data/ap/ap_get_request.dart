@@ -9,5 +9,6 @@ abstract class ApGetRequest with _$ApGetRequest {
     String? uri,
   }) = _ApGetRequest;
 
-  factory ApGetRequest.fromJson(Map<String, Object?> json) => _$ApGetRequestFromJson(json);
+  factory ApGetRequest.fromJson(Map<String, Object?> json) =>
+      _$ApGetRequestFromJson(json);
 }

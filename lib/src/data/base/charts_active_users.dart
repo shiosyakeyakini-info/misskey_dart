@@ -17,5 +17,6 @@ abstract class ChartsActiveUsers with _$ChartsActiveUsers {
     required List<double> registeredOutsideYear,
   }) = _ChartsActiveUsers;
 
-  factory ChartsActiveUsers.fromJson(Map<String, Object?> json) => _$ChartsActiveUsersFromJson(json);
+  factory ChartsActiveUsers.fromJson(Map<String, Object?> json) =>
+      _$ChartsActiveUsersFromJson(json);
 }

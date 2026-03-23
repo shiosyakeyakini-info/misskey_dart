@@ -9,5 +9,6 @@ abstract class AdminSystemWebhookShow with _$AdminSystemWebhookShow {
     required String id,
   }) = _AdminSystemWebhookShow;
 
-  factory AdminSystemWebhookShow.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookShowFromJson(json);
+  factory AdminSystemWebhookShow.fromJson(Map<String, Object?> json) =>
+      _$AdminSystemWebhookShowFromJson(json);
 }

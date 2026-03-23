@@ -10,5 +10,6 @@ abstract class DriveResponse with _$DriveResponse {
     required double usage,
   }) = _DriveResponse;
 
-  factory DriveResponse.fromJson(Map<String, Object?> json) => _$DriveResponseFromJson(json);
+  factory DriveResponse.fromJson(Map<String, Object?> json) =>
+      _$DriveResponseFromJson(json);
 }

@@ -6938,6 +6938,9 @@ mixin _$UserPolicies {
   bool? get canImportMuting;
   bool? get canImportUserLists;
   ChatAvailability? get chatAvailability;
+  int? get noteDraftLimit;
+  int? get scheduledNoteLimit;
+  bool? get watermarkAvailable;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -7025,7 +7028,10 @@ mixin _$UserPolicies {
             (identical(other.canImportUserLists, canImportUserLists) ||
                 other.canImportUserLists == canImportUserLists) &&
             (identical(other.chatAvailability, chatAvailability) ||
-                other.chatAvailability == chatAvailability));
+                other.chatAvailability == chatAvailability) &&
+            (identical(other.noteDraftLimit, noteDraftLimit) || other.noteDraftLimit == noteDraftLimit) &&
+            (identical(other.scheduledNoteLimit, scheduledNoteLimit) || other.scheduledNoteLimit == scheduledNoteLimit) &&
+            (identical(other.watermarkAvailable, watermarkAvailable) || other.watermarkAvailable == watermarkAvailable));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7066,12 +7072,15 @@ mixin _$UserPolicies {
         canImportFollowing,
         canImportMuting,
         canImportUserLists,
-        chatAvailability
+        chatAvailability,
+        noteDraftLimit,
+        scheduledNoteLimit,
+        watermarkAvailable
       ]);
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, noteDraftLimit: $noteDraftLimit, scheduledNoteLimit: $scheduledNoteLimit, watermarkAvailable: $watermarkAvailable)';
   }
 }
 
@@ -7116,7 +7125,10 @@ abstract mixin class $UserPoliciesCopyWith<$Res> {
       bool? canImportFollowing,
       bool? canImportMuting,
       bool? canImportUserLists,
-      ChatAvailability? chatAvailability});
+      ChatAvailability? chatAvailability,
+      int? noteDraftLimit,
+      int? scheduledNoteLimit,
+      bool? watermarkAvailable});
 }
 
 /// @nodoc
@@ -7166,6 +7178,9 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
     Object? canImportMuting = freezed,
     Object? canImportUserLists = freezed,
     Object? chatAvailability = freezed,
+    Object? noteDraftLimit = freezed,
+    Object? scheduledNoteLimit = freezed,
+    Object? watermarkAvailable = freezed,
   }) {
     return _then(_self.copyWith(
       gtlAvailable: null == gtlAvailable
@@ -7308,6 +7323,18 @@ class _$UserPoliciesCopyWithImpl<$Res> implements $UserPoliciesCopyWith<$Res> {
           ? _self.chatAvailability
           : chatAvailability // ignore: cast_nullable_to_non_nullable
               as ChatAvailability?,
+      noteDraftLimit: freezed == noteDraftLimit
+          ? _self.noteDraftLimit
+          : noteDraftLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      scheduledNoteLimit: freezed == scheduledNoteLimit
+          ? _self.scheduledNoteLimit
+          : scheduledNoteLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      watermarkAvailable: freezed == watermarkAvailable
+          ? _self.watermarkAvailable
+          : watermarkAvailable // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -7350,7 +7377,10 @@ class _UserPolicies implements UserPolicies {
       this.canImportFollowing,
       this.canImportMuting,
       this.canImportUserLists,
-      this.chatAvailability})
+      this.chatAvailability,
+      this.noteDraftLimit,
+      this.scheduledNoteLimit,
+      this.watermarkAvailable})
       : _uploadableFileTypes = uploadableFileTypes;
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =>
       _$UserPoliciesFromJson(json);
@@ -7438,6 +7468,12 @@ class _UserPolicies implements UserPolicies {
   final bool? canImportUserLists;
   @override
   final ChatAvailability? chatAvailability;
+  @override
+  final int? noteDraftLimit;
+  @override
+  final int? scheduledNoteLimit;
+  @override
+  final bool? watermarkAvailable;
 
   /// Create a copy of UserPolicies
   /// with the given fields replaced by the non-null parameter values.
@@ -7529,7 +7565,10 @@ class _UserPolicies implements UserPolicies {
             (identical(other.canImportUserLists, canImportUserLists) ||
                 other.canImportUserLists == canImportUserLists) &&
             (identical(other.chatAvailability, chatAvailability) ||
-                other.chatAvailability == chatAvailability));
+                other.chatAvailability == chatAvailability) &&
+            (identical(other.noteDraftLimit, noteDraftLimit) || other.noteDraftLimit == noteDraftLimit) &&
+            (identical(other.scheduledNoteLimit, scheduledNoteLimit) || other.scheduledNoteLimit == scheduledNoteLimit) &&
+            (identical(other.watermarkAvailable, watermarkAvailable) || other.watermarkAvailable == watermarkAvailable));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7570,12 +7609,15 @@ class _UserPolicies implements UserPolicies {
         canImportFollowing,
         canImportMuting,
         canImportUserLists,
-        chatAvailability
+        chatAvailability,
+        noteDraftLimit,
+        scheduledNoteLimit,
+        watermarkAvailable
       ]);
 
   @override
   String toString() {
-    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability)';
+    return 'UserPolicies(gtlAvailable: $gtlAvailable, ltlAvailable: $ltlAvailable, canPublicNote: $canPublicNote, mentionLimit: $mentionLimit, canEditNote: $canEditNote, canInvite: $canInvite, inviteLimit: $inviteLimit, inviteLimitCycle: $inviteLimitCycle, inviteExpirationTime: $inviteExpirationTime, canManageCustomEmojis: $canManageCustomEmojis, canManageAvatarDecorations: $canManageAvatarDecorations, canSearchNotes: $canSearchNotes, canUseTranslator: $canUseTranslator, canHideAds: $canHideAds, driveCapacityMb: $driveCapacityMb, maxFileSizeMb: $maxFileSizeMb, uploadableFileTypes: $uploadableFileTypes, alwaysMarkNsfw: $alwaysMarkNsfw, canUpdateBioMedia: $canUpdateBioMedia, pinLimit: $pinLimit, antennaLimit: $antennaLimit, wordMuteLimit: $wordMuteLimit, webhookLimit: $webhookLimit, clipLimit: $clipLimit, noteEachClipsLimit: $noteEachClipsLimit, userListLimit: $userListLimit, userEachUserListsLimit: $userEachUserListsLimit, rateLimitFactor: $rateLimitFactor, avatarDecorationLimit: $avatarDecorationLimit, canImportAntennas: $canImportAntennas, canImportBlocking: $canImportBlocking, canImportFollowing: $canImportFollowing, canImportMuting: $canImportMuting, canImportUserLists: $canImportUserLists, chatAvailability: $chatAvailability, noteDraftLimit: $noteDraftLimit, scheduledNoteLimit: $scheduledNoteLimit, watermarkAvailable: $watermarkAvailable)';
   }
 }
 
@@ -7622,7 +7664,10 @@ abstract mixin class _$UserPoliciesCopyWith<$Res>
       bool? canImportFollowing,
       bool? canImportMuting,
       bool? canImportUserLists,
-      ChatAvailability? chatAvailability});
+      ChatAvailability? chatAvailability,
+      int? noteDraftLimit,
+      int? scheduledNoteLimit,
+      bool? watermarkAvailable});
 }
 
 /// @nodoc
@@ -7673,6 +7718,9 @@ class __$UserPoliciesCopyWithImpl<$Res>
     Object? canImportMuting = freezed,
     Object? canImportUserLists = freezed,
     Object? chatAvailability = freezed,
+    Object? noteDraftLimit = freezed,
+    Object? scheduledNoteLimit = freezed,
+    Object? watermarkAvailable = freezed,
   }) {
     return _then(_UserPolicies(
       gtlAvailable: null == gtlAvailable
@@ -7815,6 +7863,18 @@ class __$UserPoliciesCopyWithImpl<$Res>
           ? _self.chatAvailability
           : chatAvailability // ignore: cast_nullable_to_non_nullable
               as ChatAvailability?,
+      noteDraftLimit: freezed == noteDraftLimit
+          ? _self.noteDraftLimit
+          : noteDraftLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      scheduledNoteLimit: freezed == scheduledNoteLimit
+          ? _self.scheduledNoteLimit
+          : scheduledNoteLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      watermarkAvailable: freezed == watermarkAvailable
+          ? _self.watermarkAvailable
+          : watermarkAvailable // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -7984,6 +8044,8 @@ mixin _$NotificationRecieveConfigs {
   NotificationRecieveConfig? get quote;
   NotificationRecieveConfig? get reaction;
   NotificationRecieveConfig? get pollEnded;
+  NotificationRecieveConfig? get scheduledNotePosted;
+  NotificationRecieveConfig? get scheduledNotePostFailed;
   NotificationRecieveConfig? get receiveFollowRequest;
   NotificationRecieveConfig? get followRequestAccepted;
   NotificationRecieveConfig? get roleAssigned;
@@ -8019,6 +8081,11 @@ mixin _$NotificationRecieveConfigs {
                 other.reaction == reaction) &&
             (identical(other.pollEnded, pollEnded) ||
                 other.pollEnded == pollEnded) &&
+            (identical(other.scheduledNotePosted, scheduledNotePosted) ||
+                other.scheduledNotePosted == scheduledNotePosted) &&
+            (identical(
+                    other.scheduledNotePostFailed, scheduledNotePostFailed) ||
+                other.scheduledNotePostFailed == scheduledNotePostFailed) &&
             (identical(other.receiveFollowRequest, receiveFollowRequest) ||
                 other.receiveFollowRequest == receiveFollowRequest) &&
             (identical(other.followRequestAccepted, followRequestAccepted) ||
@@ -8047,6 +8114,8 @@ mixin _$NotificationRecieveConfigs {
       quote,
       reaction,
       pollEnded,
+      scheduledNotePosted,
+      scheduledNotePostFailed,
       receiveFollowRequest,
       followRequestAccepted,
       roleAssigned,
@@ -8057,7 +8126,7 @@ mixin _$NotificationRecieveConfigs {
 
   @override
   String toString() {
-    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
+    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, scheduledNotePosted: $scheduledNotePosted, scheduledNotePostFailed: $scheduledNotePostFailed, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
   }
 }
 
@@ -8076,6 +8145,8 @@ abstract mixin class $NotificationRecieveConfigsCopyWith<$Res> {
       NotificationRecieveConfig? quote,
       NotificationRecieveConfig? reaction,
       NotificationRecieveConfig? pollEnded,
+      NotificationRecieveConfig? scheduledNotePosted,
+      NotificationRecieveConfig? scheduledNotePostFailed,
       NotificationRecieveConfig? receiveFollowRequest,
       NotificationRecieveConfig? followRequestAccepted,
       NotificationRecieveConfig? roleAssigned,
@@ -8092,6 +8163,8 @@ abstract mixin class $NotificationRecieveConfigsCopyWith<$Res> {
   $NotificationRecieveConfigCopyWith<$Res>? get quote;
   $NotificationRecieveConfigCopyWith<$Res>? get reaction;
   $NotificationRecieveConfigCopyWith<$Res>? get pollEnded;
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePosted;
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePostFailed;
   $NotificationRecieveConfigCopyWith<$Res>? get receiveFollowRequest;
   $NotificationRecieveConfigCopyWith<$Res>? get followRequestAccepted;
   $NotificationRecieveConfigCopyWith<$Res>? get roleAssigned;
@@ -8122,6 +8195,8 @@ class _$NotificationRecieveConfigsCopyWithImpl<$Res>
     Object? quote = freezed,
     Object? reaction = freezed,
     Object? pollEnded = freezed,
+    Object? scheduledNotePosted = freezed,
+    Object? scheduledNotePostFailed = freezed,
     Object? receiveFollowRequest = freezed,
     Object? followRequestAccepted = freezed,
     Object? roleAssigned = freezed,
@@ -8162,6 +8237,14 @@ class _$NotificationRecieveConfigsCopyWithImpl<$Res>
       pollEnded: freezed == pollEnded
           ? _self.pollEnded
           : pollEnded // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfig?,
+      scheduledNotePosted: freezed == scheduledNotePosted
+          ? _self.scheduledNotePosted
+          : scheduledNotePosted // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfig?,
+      scheduledNotePostFailed: freezed == scheduledNotePostFailed
+          ? _self.scheduledNotePostFailed
+          : scheduledNotePostFailed // ignore: cast_nullable_to_non_nullable
               as NotificationRecieveConfig?,
       receiveFollowRequest: freezed == receiveFollowRequest
           ? _self.receiveFollowRequest
@@ -8303,6 +8386,36 @@ class _$NotificationRecieveConfigsCopyWithImpl<$Res>
 
     return $NotificationRecieveConfigCopyWith<$Res>(_self.pollEnded!, (value) {
       return _then(_self.copyWith(pollEnded: value));
+    });
+  }
+
+  /// Create a copy of NotificationRecieveConfigs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePosted {
+    if (_self.scheduledNotePosted == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigCopyWith<$Res>(_self.scheduledNotePosted!,
+        (value) {
+      return _then(_self.copyWith(scheduledNotePosted: value));
+    });
+  }
+
+  /// Create a copy of NotificationRecieveConfigs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePostFailed {
+    if (_self.scheduledNotePostFailed == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigCopyWith<$Res>(
+        _self.scheduledNotePostFailed!, (value) {
+      return _then(_self.copyWith(scheduledNotePostFailed: value));
     });
   }
 
@@ -8422,6 +8535,8 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
       this.quote,
       this.reaction,
       this.pollEnded,
+      this.scheduledNotePosted,
+      this.scheduledNotePostFailed,
       this.receiveFollowRequest,
       this.followRequestAccepted,
       this.roleAssigned,
@@ -8448,6 +8563,10 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
   final NotificationRecieveConfig? reaction;
   @override
   final NotificationRecieveConfig? pollEnded;
+  @override
+  final NotificationRecieveConfig? scheduledNotePosted;
+  @override
+  final NotificationRecieveConfig? scheduledNotePostFailed;
   @override
   final NotificationRecieveConfig? receiveFollowRequest;
   @override
@@ -8494,6 +8613,11 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
                 other.reaction == reaction) &&
             (identical(other.pollEnded, pollEnded) ||
                 other.pollEnded == pollEnded) &&
+            (identical(other.scheduledNotePosted, scheduledNotePosted) ||
+                other.scheduledNotePosted == scheduledNotePosted) &&
+            (identical(
+                    other.scheduledNotePostFailed, scheduledNotePostFailed) ||
+                other.scheduledNotePostFailed == scheduledNotePostFailed) &&
             (identical(other.receiveFollowRequest, receiveFollowRequest) ||
                 other.receiveFollowRequest == receiveFollowRequest) &&
             (identical(other.followRequestAccepted, followRequestAccepted) ||
@@ -8522,6 +8646,8 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
       quote,
       reaction,
       pollEnded,
+      scheduledNotePosted,
+      scheduledNotePostFailed,
       receiveFollowRequest,
       followRequestAccepted,
       roleAssigned,
@@ -8532,7 +8658,7 @@ class _NotificationRecieveConfigs implements NotificationRecieveConfigs {
 
   @override
   String toString() {
-    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
+    return 'NotificationRecieveConfigs(note: $note, follow: $follow, mention: $mention, reply: $reply, renote: $renote, quote: $quote, reaction: $reaction, pollEnded: $pollEnded, scheduledNotePosted: $scheduledNotePosted, scheduledNotePostFailed: $scheduledNotePostFailed, receiveFollowRequest: $receiveFollowRequest, followRequestAccepted: $followRequestAccepted, roleAssigned: $roleAssigned, chatRoomInvitationReceived: $chatRoomInvitationReceived, achievementEarned: $achievementEarned, app: $app, test: $test)';
   }
 }
 
@@ -8554,6 +8680,8 @@ abstract mixin class _$NotificationRecieveConfigsCopyWith<$Res>
       NotificationRecieveConfig? quote,
       NotificationRecieveConfig? reaction,
       NotificationRecieveConfig? pollEnded,
+      NotificationRecieveConfig? scheduledNotePosted,
+      NotificationRecieveConfig? scheduledNotePostFailed,
       NotificationRecieveConfig? receiveFollowRequest,
       NotificationRecieveConfig? followRequestAccepted,
       NotificationRecieveConfig? roleAssigned,
@@ -8578,6 +8706,10 @@ abstract mixin class _$NotificationRecieveConfigsCopyWith<$Res>
   $NotificationRecieveConfigCopyWith<$Res>? get reaction;
   @override
   $NotificationRecieveConfigCopyWith<$Res>? get pollEnded;
+  @override
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePosted;
+  @override
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePostFailed;
   @override
   $NotificationRecieveConfigCopyWith<$Res>? get receiveFollowRequest;
   @override
@@ -8615,6 +8747,8 @@ class __$NotificationRecieveConfigsCopyWithImpl<$Res>
     Object? quote = freezed,
     Object? reaction = freezed,
     Object? pollEnded = freezed,
+    Object? scheduledNotePosted = freezed,
+    Object? scheduledNotePostFailed = freezed,
     Object? receiveFollowRequest = freezed,
     Object? followRequestAccepted = freezed,
     Object? roleAssigned = freezed,
@@ -8655,6 +8789,14 @@ class __$NotificationRecieveConfigsCopyWithImpl<$Res>
       pollEnded: freezed == pollEnded
           ? _self.pollEnded
           : pollEnded // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfig?,
+      scheduledNotePosted: freezed == scheduledNotePosted
+          ? _self.scheduledNotePosted
+          : scheduledNotePosted // ignore: cast_nullable_to_non_nullable
+              as NotificationRecieveConfig?,
+      scheduledNotePostFailed: freezed == scheduledNotePostFailed
+          ? _self.scheduledNotePostFailed
+          : scheduledNotePostFailed // ignore: cast_nullable_to_non_nullable
               as NotificationRecieveConfig?,
       receiveFollowRequest: freezed == receiveFollowRequest
           ? _self.receiveFollowRequest
@@ -8796,6 +8938,36 @@ class __$NotificationRecieveConfigsCopyWithImpl<$Res>
 
     return $NotificationRecieveConfigCopyWith<$Res>(_self.pollEnded!, (value) {
       return _then(_self.copyWith(pollEnded: value));
+    });
+  }
+
+  /// Create a copy of NotificationRecieveConfigs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePosted {
+    if (_self.scheduledNotePosted == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigCopyWith<$Res>(_self.scheduledNotePosted!,
+        (value) {
+      return _then(_self.copyWith(scheduledNotePosted: value));
+    });
+  }
+
+  /// Create a copy of NotificationRecieveConfigs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationRecieveConfigCopyWith<$Res>? get scheduledNotePostFailed {
+    if (_self.scheduledNotePostFailed == null) {
+      return null;
+    }
+
+    return $NotificationRecieveConfigCopyWith<$Res>(
+        _self.scheduledNotePostFailed!, (value) {
+      return _then(_self.copyWith(scheduledNotePostFailed: value));
     });
   }
 

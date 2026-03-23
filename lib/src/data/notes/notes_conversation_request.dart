@@ -11,5 +11,6 @@ abstract class NotesConversationRequest with _$NotesConversationRequest {
     @Default(0) int? offset,
   }) = _NotesConversationRequest;
 
-  factory NotesConversationRequest.fromJson(Map<String, Object?> json) => _$NotesConversationRequestFromJson(json);
+  factory NotesConversationRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesConversationRequestFromJson(json);
 }

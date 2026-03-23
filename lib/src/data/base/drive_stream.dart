@@ -14,5 +14,6 @@ abstract class DriveStream with _$DriveStream {
     String? type,
   }) = _DriveStream;
 
-  factory DriveStream.fromJson(Map<String, Object?> json) => _$DriveStreamFromJson(json);
+  factory DriveStream.fromJson(Map<String, Object?> json) =>
+      _$DriveStreamFromJson(json);
 }

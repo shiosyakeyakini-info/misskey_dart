@@ -14,5 +14,6 @@ abstract class DriveStreamRequest with _$DriveStreamRequest {
     String? type,
   }) = _DriveStreamRequest;
 
-  factory DriveStreamRequest.fromJson(Map<String, Object?> json) => _$DriveStreamRequestFromJson(json);
+  factory DriveStreamRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveStreamRequestFromJson(json);
 }

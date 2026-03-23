@@ -10,5 +10,6 @@ abstract class MuteCreateRequest with _$MuteCreateRequest {
     int? expiresAt,
   }) = _MuteCreateRequest;
 
-  factory MuteCreateRequest.fromJson(Map<String, Object?> json) => _$MuteCreateRequestFromJson(json);
+  factory MuteCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$MuteCreateRequestFromJson(json);
 }

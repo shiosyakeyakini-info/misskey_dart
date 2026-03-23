@@ -12,5 +12,6 @@ abstract class SwRegisterRequest with _$SwRegisterRequest {
     @Default(false) bool? sendReadMessage,
   }) = _SwRegisterRequest;
 
-  factory SwRegisterRequest.fromJson(Map<String, Object?> json) => _$SwRegisterRequestFromJson(json);
+  factory SwRegisterRequest.fromJson(Map<String, Object?> json) =>
+      _$SwRegisterRequestFromJson(json);
 }

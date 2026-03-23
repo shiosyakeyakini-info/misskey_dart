@@ -12,5 +12,6 @@ abstract class AppCreateRequest with _$AppCreateRequest {
     String? callbackUrl,
   }) = _AppCreateRequest;
 
-  factory AppCreateRequest.fromJson(Map<String, Object?> json) => _$AppCreateRequestFromJson(json);
+  factory AppCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$AppCreateRequestFromJson(json);
 }

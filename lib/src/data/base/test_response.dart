@@ -13,5 +13,6 @@ abstract class TestResponse with _$TestResponse {
     @Default("hello") String? nullableDefault,
   }) = _TestResponse;
 
-  factory TestResponse.fromJson(Map<String, Object?> json) => _$TestResponseFromJson(json);
+  factory TestResponse.fromJson(Map<String, Object?> json) =>
+      _$TestResponseFromJson(json);
 }

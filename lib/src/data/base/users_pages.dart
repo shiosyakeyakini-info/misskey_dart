@@ -14,5 +14,6 @@ abstract class UsersPages with _$UsersPages {
     int? untilDate,
   }) = _UsersPages;
 
-  factory UsersPages.fromJson(Map<String, Object?> json) => _$UsersPagesFromJson(json);
+  factory UsersPages.fromJson(Map<String, Object?> json) =>
+      _$UsersPagesFromJson(json);
 }

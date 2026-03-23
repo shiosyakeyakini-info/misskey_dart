@@ -9,5 +9,6 @@ abstract class RenoteMuteDeleteRequest with _$RenoteMuteDeleteRequest {
     String? userId,
   }) = _RenoteMuteDeleteRequest;
 
-  factory RenoteMuteDeleteRequest.fromJson(Map<String, Object?> json) => _$RenoteMuteDeleteRequestFromJson(json);
+  factory RenoteMuteDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$RenoteMuteDeleteRequestFromJson(json);
 }

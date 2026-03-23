@@ -9,5 +9,6 @@ abstract class AdminUnsuspendUserRequest with _$AdminUnsuspendUserRequest {
     String? userId,
   }) = _AdminUnsuspendUserRequest;
 
-  factory AdminUnsuspendUserRequest.fromJson(Map<String, Object?> json) => _$AdminUnsuspendUserRequestFromJson(json);
+  factory AdminUnsuspendUserRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminUnsuspendUserRequestFromJson(json);
 }

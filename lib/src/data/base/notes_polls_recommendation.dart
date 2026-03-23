@@ -11,5 +11,6 @@ abstract class NotesPollsRecommendation with _$NotesPollsRecommendation {
     @Default(false) bool? excludeChannels,
   }) = _NotesPollsRecommendation;
 
-  factory NotesPollsRecommendation.fromJson(Map<String, Object?> json) => _$NotesPollsRecommendationFromJson(json);
+  factory NotesPollsRecommendation.fromJson(Map<String, Object?> json) =>
+      _$NotesPollsRecommendationFromJson(json);
 }

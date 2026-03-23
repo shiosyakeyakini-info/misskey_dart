@@ -10,5 +10,6 @@ abstract class ClipsRemoveNoteRequest with _$ClipsRemoveNoteRequest {
     String? noteId,
   }) = _ClipsRemoveNoteRequest;
 
-  factory ClipsRemoveNoteRequest.fromJson(Map<String, Object?> json) => _$ClipsRemoveNoteRequestFromJson(json);
+  factory ClipsRemoveNoteRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsRemoveNoteRequestFromJson(json);
 }

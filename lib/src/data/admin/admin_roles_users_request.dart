@@ -14,5 +14,6 @@ abstract class AdminRolesUsersRequest with _$AdminRolesUsersRequest {
     @Default(10) int? limit,
   }) = _AdminRolesUsersRequest;
 
-  factory AdminRolesUsersRequest.fromJson(Map<String, Object?> json) => _$AdminRolesUsersRequestFromJson(json);
+  factory AdminRolesUsersRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminRolesUsersRequestFromJson(json);
 }

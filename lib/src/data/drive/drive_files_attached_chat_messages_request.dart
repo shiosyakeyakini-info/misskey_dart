@@ -4,7 +4,8 @@ part 'drive_files_attached_chat_messages_request.freezed.dart';
 part 'drive_files_attached_chat_messages_request.g.dart';
 
 @freezed
-abstract class DriveFilesAttachedChatMessagesRequest with _$DriveFilesAttachedChatMessagesRequest {
+abstract class DriveFilesAttachedChatMessagesRequest
+    with _$DriveFilesAttachedChatMessagesRequest {
   const factory DriveFilesAttachedChatMessagesRequest({
     String? sinceId,
     String? untilId,
@@ -14,5 +15,7 @@ abstract class DriveFilesAttachedChatMessagesRequest with _$DriveFilesAttachedCh
     String? fileId,
   }) = _DriveFilesAttachedChatMessagesRequest;
 
-  factory DriveFilesAttachedChatMessagesRequest.fromJson(Map<String, Object?> json) => _$DriveFilesAttachedChatMessagesRequestFromJson(json);
+  factory DriveFilesAttachedChatMessagesRequest.fromJson(
+          Map<String, Object?> json) =>
+      _$DriveFilesAttachedChatMessagesRequestFromJson(json);
 }

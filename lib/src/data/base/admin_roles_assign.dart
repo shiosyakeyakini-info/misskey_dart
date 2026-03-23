@@ -11,5 +11,6 @@ abstract class AdminRolesAssign with _$AdminRolesAssign {
     int? expiresAt,
   }) = _AdminRolesAssign;
 
-  factory AdminRolesAssign.fromJson(Map<String, Object?> json) => _$AdminRolesAssignFromJson(json);
+  factory AdminRolesAssign.fromJson(Map<String, Object?> json) =>
+      _$AdminRolesAssignFromJson(json);
 }

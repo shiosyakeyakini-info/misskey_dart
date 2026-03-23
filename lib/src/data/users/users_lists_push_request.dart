@@ -10,5 +10,6 @@ abstract class UsersListsPushRequest with _$UsersListsPushRequest {
     String? userId,
   }) = _UsersListsPushRequest;
 
-  factory UsersListsPushRequest.fromJson(Map<String, Object?> json) => _$UsersListsPushRequestFromJson(json);
+  factory UsersListsPushRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersListsPushRequestFromJson(json);
 }

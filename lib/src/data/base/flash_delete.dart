@@ -9,5 +9,6 @@ abstract class FlashDelete with _$FlashDelete {
     required String flashId,
   }) = _FlashDelete;
 
-  factory FlashDelete.fromJson(Map<String, Object?> json) => _$FlashDeleteFromJson(json);
+  factory FlashDelete.fromJson(Map<String, Object?> json) =>
+      _$FlashDeleteFromJson(json);
 }

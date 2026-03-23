@@ -9,5 +9,6 @@ abstract class UsersListsUnfavoriteRequest with _$UsersListsUnfavoriteRequest {
     String? listId,
   }) = _UsersListsUnfavoriteRequest;
 
-  factory UsersListsUnfavoriteRequest.fromJson(Map<String, Object?> json) => _$UsersListsUnfavoriteRequestFromJson(json);
+  factory UsersListsUnfavoriteRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersListsUnfavoriteRequestFromJson(json);
 }

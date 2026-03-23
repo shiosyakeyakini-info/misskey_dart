@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'notification.freezed.dart';
 part 'notification.g.dart';
@@ -167,5 +166,6 @@ sealed class Notification with _$Notification {
     @DateTimeConverter() DateTime? createdAt,
   }) = NotificationUnknown;
 
-  factory Notification.fromJson(Map<String, Object?> json) => _$NotificationFromJson(json);
+  factory Notification.fromJson(Map<String, Object?> json) =>
+      _$NotificationFromJson(json);
 }

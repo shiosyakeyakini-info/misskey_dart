@@ -9,5 +9,6 @@ abstract class IWebhooksShowRequest with _$IWebhooksShowRequest {
     String? webhookId,
   }) = _IWebhooksShowRequest;
 
-  factory IWebhooksShowRequest.fromJson(Map<String, Object?> json) => _$IWebhooksShowRequestFromJson(json);
+  factory IWebhooksShowRequest.fromJson(Map<String, Object?> json) =>
+      _$IWebhooksShowRequestFromJson(json);
 }

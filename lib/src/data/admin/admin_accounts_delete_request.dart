@@ -9,5 +9,6 @@ abstract class AdminAccountsDeleteRequest with _$AdminAccountsDeleteRequest {
     String? userId,
   }) = _AdminAccountsDeleteRequest;
 
-  factory AdminAccountsDeleteRequest.fromJson(Map<String, Object?> json) => _$AdminAccountsDeleteRequestFromJson(json);
+  factory AdminAccountsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminAccountsDeleteRequestFromJson(json);
 }

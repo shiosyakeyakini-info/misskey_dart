@@ -19,5 +19,6 @@ abstract class UsersNotesRequest with _$UsersNotesRequest {
     @Default(false) bool? withFiles,
   }) = _UsersNotesRequest;
 
-  factory UsersNotesRequest.fromJson(Map<String, Object?> json) => _$UsersNotesRequestFromJson(json);
+  factory UsersNotesRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersNotesRequestFromJson(json);
 }

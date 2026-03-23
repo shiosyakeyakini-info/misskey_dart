@@ -17,5 +17,6 @@ abstract class INotifications with _$INotifications {
     List<NotificationType>? excludeTypes,
   }) = _INotifications;
 
-  factory INotifications.fromJson(Map<String, Object?> json) => _$INotificationsFromJson(json);
+  factory INotifications.fromJson(Map<String, Object?> json) =>
+      _$INotificationsFromJson(json);
 }

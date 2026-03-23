@@ -9,5 +9,6 @@ abstract class NotesFavoritesDelete with _$NotesFavoritesDelete {
     required String noteId,
   }) = _NotesFavoritesDelete;
 
-  factory NotesFavoritesDelete.fromJson(Map<String, Object?> json) => _$NotesFavoritesDeleteFromJson(json);
+  factory NotesFavoritesDelete.fromJson(Map<String, Object?> json) =>
+      _$NotesFavoritesDeleteFromJson(json);
 }

@@ -12,5 +12,6 @@ abstract class ClipsUpdate with _$ClipsUpdate {
     String? description,
   }) = _ClipsUpdate;
 
-  factory ClipsUpdate.fromJson(Map<String, Object?> json) => _$ClipsUpdateFromJson(json);
+  factory ClipsUpdate.fromJson(Map<String, Object?> json) =>
+      _$ClipsUpdateFromJson(json);
 }

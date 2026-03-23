@@ -9,5 +9,6 @@ abstract class AntennasShowRequest with _$AntennasShowRequest {
     String? antennaId,
   }) = _AntennasShowRequest;
 
-  factory AntennasShowRequest.fromJson(Map<String, Object?> json) => _$AntennasShowRequestFromJson(json);
+  factory AntennasShowRequest.fromJson(Map<String, Object?> json) =>
+      _$AntennasShowRequestFromJson(json);
 }

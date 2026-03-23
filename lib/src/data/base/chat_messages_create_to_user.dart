@@ -11,5 +11,6 @@ abstract class ChatMessagesCreateToUser with _$ChatMessagesCreateToUser {
     required String toUserId,
   }) = _ChatMessagesCreateToUser;
 
-  factory ChatMessagesCreateToUser.fromJson(Map<String, Object?> json) => _$ChatMessagesCreateToUserFromJson(json);
+  factory ChatMessagesCreateToUser.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesCreateToUserFromJson(json);
 }

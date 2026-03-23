@@ -9,5 +9,6 @@ abstract class PingResponse with _$PingResponse {
     required double pong,
   }) = _PingResponse;
 
-  factory PingResponse.fromJson(Map<String, Object?> json) => _$PingResponseFromJson(json);
+  factory PingResponse.fromJson(Map<String, Object?> json) =>
+      _$PingResponseFromJson(json);
 }

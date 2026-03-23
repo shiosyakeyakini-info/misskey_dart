@@ -9,5 +9,6 @@ abstract class FederationUpdateRemoteUser with _$FederationUpdateRemoteUser {
     required String userId,
   }) = _FederationUpdateRemoteUser;
 
-  factory FederationUpdateRemoteUser.fromJson(Map<String, Object?> json) => _$FederationUpdateRemoteUserFromJson(json);
+  factory FederationUpdateRemoteUser.fromJson(Map<String, Object?> json) =>
+      _$FederationUpdateRemoteUserFromJson(json);
 }

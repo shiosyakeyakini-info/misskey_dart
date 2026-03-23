@@ -9,5 +9,6 @@ abstract class ChannelsFavoriteRequest with _$ChannelsFavoriteRequest {
     String? channelId,
   }) = _ChannelsFavoriteRequest;
 
-  factory ChannelsFavoriteRequest.fromJson(Map<String, Object?> json) => _$ChannelsFavoriteRequestFromJson(json);
+  factory ChannelsFavoriteRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsFavoriteRequestFromJson(json);
 }

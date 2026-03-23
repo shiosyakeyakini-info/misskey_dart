@@ -10,5 +10,6 @@ abstract class I2faUnregister with _$I2faUnregister {
     String? token,
   }) = _I2faUnregister;
 
-  factory I2faUnregister.fromJson(Map<String, Object?> json) => _$I2faUnregisterFromJson(json);
+  factory I2faUnregister.fromJson(Map<String, Object?> json) =>
+      _$I2faUnregisterFromJson(json);
 }

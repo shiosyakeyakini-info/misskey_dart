@@ -10,5 +10,6 @@ abstract class IExportFollowingRequest with _$IExportFollowingRequest {
     @Default(false) bool? excludeInactive,
   }) = _IExportFollowingRequest;
 
-  factory IExportFollowingRequest.fromJson(Map<String, Object?> json) => _$IExportFollowingRequestFromJson(json);
+  factory IExportFollowingRequest.fromJson(Map<String, Object?> json) =>
+      _$IExportFollowingRequestFromJson(json);
 }

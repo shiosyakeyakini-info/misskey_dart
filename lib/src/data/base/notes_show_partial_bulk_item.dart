@@ -11,5 +11,6 @@ abstract class NotesShowPartialBulkItem with _$NotesShowPartialBulkItem {
     required Map<String, String> reactionEmojis,
   }) = _NotesShowPartialBulkItem;
 
-  factory NotesShowPartialBulkItem.fromJson(Map<String, Object?> json) => _$NotesShowPartialBulkItemFromJson(json);
+  factory NotesShowPartialBulkItem.fromJson(Map<String, Object?> json) =>
+      _$NotesShowPartialBulkItemFromJson(json);
 }

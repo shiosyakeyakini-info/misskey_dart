@@ -14,5 +14,6 @@ abstract class AdminEmojiList with _$AdminEmojiList {
     int? untilDate,
   }) = _AdminEmojiList;
 
-  factory AdminEmojiList.fromJson(Map<String, Object?> json) => _$AdminEmojiListFromJson(json);
+  factory AdminEmojiList.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiListFromJson(json);
 }

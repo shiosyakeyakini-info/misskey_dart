@@ -9,5 +9,6 @@ abstract class IWebhooksDeleteRequest with _$IWebhooksDeleteRequest {
     String? webhookId,
   }) = _IWebhooksDeleteRequest;
 
-  factory IWebhooksDeleteRequest.fromJson(Map<String, Object?> json) => _$IWebhooksDeleteRequestFromJson(json);
+  factory IWebhooksDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$IWebhooksDeleteRequestFromJson(json);
 }

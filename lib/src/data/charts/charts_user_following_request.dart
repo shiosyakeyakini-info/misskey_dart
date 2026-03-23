@@ -7,11 +7,13 @@ part 'charts_user_following_request.g.dart';
 @freezed
 abstract class ChartsUserFollowingRequest with _$ChartsUserFollowingRequest {
   const factory ChartsUserFollowingRequest({
-    @JsonKey(unknownEnumValue: ChartsUserFollowingSpan.unknown) ChartsUserFollowingSpan? span,
+    @JsonKey(unknownEnumValue: ChartsUserFollowingSpan.unknown)
+    ChartsUserFollowingSpan? span,
     @Default(30) int? limit,
     @Default(null) int? offset,
     String? userId,
   }) = _ChartsUserFollowingRequest;
 
-  factory ChartsUserFollowingRequest.fromJson(Map<String, Object?> json) => _$ChartsUserFollowingRequestFromJson(json);
+  factory ChartsUserFollowingRequest.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserFollowingRequestFromJson(json);
 }

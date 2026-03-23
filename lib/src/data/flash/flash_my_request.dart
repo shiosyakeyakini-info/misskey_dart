@@ -13,5 +13,6 @@ abstract class FlashMyRequest with _$FlashMyRequest {
     int? untilDate,
   }) = _FlashMyRequest;
 
-  factory FlashMyRequest.fromJson(Map<String, Object?> json) => _$FlashMyRequestFromJson(json);
+  factory FlashMyRequest.fromJson(Map<String, Object?> json) =>
+      _$FlashMyRequestFromJson(json);
 }

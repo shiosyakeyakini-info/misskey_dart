@@ -14,5 +14,6 @@ abstract class FederationUsers with _$FederationUsers {
     @Default(10) int? limit,
   }) = _FederationUsers;
 
-  factory FederationUsers.fromJson(Map<String, Object?> json) => _$FederationUsersFromJson(json);
+  factory FederationUsers.fromJson(Map<String, Object?> json) =>
+      _$FederationUsersFromJson(json);
 }

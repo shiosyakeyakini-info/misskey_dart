@@ -10,5 +10,6 @@ abstract class IRegistryKeysWithType with _$IRegistryKeysWithType {
     String? domain,
   }) = _IRegistryKeysWithType;
 
-  factory IRegistryKeysWithType.fromJson(Map<String, Object?> json) => _$IRegistryKeysWithTypeFromJson(json);
+  factory IRegistryKeysWithType.fromJson(Map<String, Object?> json) =>
+      _$IRegistryKeysWithTypeFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class NotesStateResponse with _$NotesStateResponse {
     required bool isMutedThread,
   }) = _NotesStateResponse;
 
-  factory NotesStateResponse.fromJson(Map<String, Object?> json) => _$NotesStateResponseFromJson(json);
+  factory NotesStateResponse.fromJson(Map<String, Object?> json) =>
+      _$NotesStateResponseFromJson(json);
 }

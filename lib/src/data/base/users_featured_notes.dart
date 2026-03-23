@@ -11,5 +11,6 @@ abstract class UsersFeaturedNotes with _$UsersFeaturedNotes {
     required String userId,
   }) = _UsersFeaturedNotes;
 
-  factory UsersFeaturedNotes.fromJson(Map<String, Object?> json) => _$UsersFeaturedNotesFromJson(json);
+  factory UsersFeaturedNotes.fromJson(Map<String, Object?> json) =>
+      _$UsersFeaturedNotesFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class AnnouncementsShow with _$AnnouncementsShow {
     required String announcementId,
   }) = _AnnouncementsShow;
 
-  factory AnnouncementsShow.fromJson(Map<String, Object?> json) => _$AnnouncementsShowFromJson(json);
+  factory AnnouncementsShow.fromJson(Map<String, Object?> json) =>
+      _$AnnouncementsShowFromJson(json);
 }

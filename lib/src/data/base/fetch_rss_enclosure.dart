@@ -11,5 +11,6 @@ abstract class FetchRssEnclosure with _$FetchRssEnclosure {
     String? type,
   }) = _FetchRssEnclosure;
 
-  factory FetchRssEnclosure.fromJson(Map<String, Object?> json) => _$FetchRssEnclosureFromJson(json);
+  factory FetchRssEnclosure.fromJson(Map<String, Object?> json) =>
+      _$FetchRssEnclosureFromJson(json);
 }

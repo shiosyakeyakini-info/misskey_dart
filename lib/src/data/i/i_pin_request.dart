@@ -9,5 +9,6 @@ abstract class IPinRequest with _$IPinRequest {
     String? noteId,
   }) = _IPinRequest;
 
-  factory IPinRequest.fromJson(Map<String, Object?> json) => _$IPinRequestFromJson(json);
+  factory IPinRequest.fromJson(Map<String, Object?> json) =>
+      _$IPinRequestFromJson(json);
 }

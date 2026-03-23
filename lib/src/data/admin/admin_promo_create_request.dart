@@ -10,5 +10,6 @@ abstract class AdminPromoCreateRequest with _$AdminPromoCreateRequest {
     int? expiresAt,
   }) = _AdminPromoCreateRequest;
 
-  factory AdminPromoCreateRequest.fromJson(Map<String, Object?> json) => _$AdminPromoCreateRequestFromJson(json);
+  factory AdminPromoCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminPromoCreateRequestFromJson(json);
 }

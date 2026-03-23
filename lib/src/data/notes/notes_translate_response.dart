@@ -10,5 +10,6 @@ abstract class NotesTranslateResponse with _$NotesTranslateResponse {
     required String text,
   }) = _NotesTranslateResponse;
 
-  factory NotesTranslateResponse.fromJson(Map<String, Object?> json) => _$NotesTranslateResponseFromJson(json);
+  factory NotesTranslateResponse.fromJson(Map<String, Object?> json) =>
+      _$NotesTranslateResponseFromJson(json);
 }

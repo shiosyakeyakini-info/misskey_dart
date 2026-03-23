@@ -12,5 +12,6 @@ abstract class GalleryPostsCreate with _$GalleryPostsCreate {
     @Default(false) bool? isSensitive,
   }) = _GalleryPostsCreate;
 
-  factory GalleryPostsCreate.fromJson(Map<String, Object?> json) => _$GalleryPostsCreateFromJson(json);
+  factory GalleryPostsCreate.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsCreateFromJson(json);
 }

@@ -20,5 +20,6 @@ abstract class PagesUpdateRequest with _$PagesUpdateRequest {
     bool? hideTitleWhenPinned,
   }) = _PagesUpdateRequest;
 
-  factory PagesUpdateRequest.fromJson(Map<String, Object?> json) => _$PagesUpdateRequestFromJson(json);
+  factory PagesUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$PagesUpdateRequestFromJson(json);
 }

@@ -5,7 +5,8 @@ part 'users_lists_get_memberships_item.freezed.dart';
 part 'users_lists_get_memberships_item.g.dart';
 
 @freezed
-abstract class UsersListsGetMembershipsItem with _$UsersListsGetMembershipsItem {
+abstract class UsersListsGetMembershipsItem
+    with _$UsersListsGetMembershipsItem {
   const factory UsersListsGetMembershipsItem({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -14,5 +15,6 @@ abstract class UsersListsGetMembershipsItem with _$UsersListsGetMembershipsItem 
     required bool withReplies,
   }) = _UsersListsGetMembershipsItem;
 
-  factory UsersListsGetMembershipsItem.fromJson(Map<String, Object?> json) => _$UsersListsGetMembershipsItemFromJson(json);
+  factory UsersListsGetMembershipsItem.fromJson(Map<String, Object?> json) =>
+      _$UsersListsGetMembershipsItemFromJson(json);
 }

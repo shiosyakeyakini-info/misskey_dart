@@ -14,5 +14,6 @@ abstract class NotesChildrenRequest with _$NotesChildrenRequest {
     int? untilDate,
   }) = _NotesChildrenRequest;
 
-  factory NotesChildrenRequest.fromJson(Map<String, Object?> json) => _$NotesChildrenRequestFromJson(json);
+  factory NotesChildrenRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesChildrenRequestFromJson(json);
 }

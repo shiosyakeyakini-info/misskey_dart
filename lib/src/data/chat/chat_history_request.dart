@@ -10,5 +10,6 @@ abstract class ChatHistoryRequest with _$ChatHistoryRequest {
     @Default(false) bool? room,
   }) = _ChatHistoryRequest;
 
-  factory ChatHistoryRequest.fromJson(Map<String, Object?> json) => _$ChatHistoryRequestFromJson(json);
+  factory ChatHistoryRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatHistoryRequestFromJson(json);
 }

@@ -12,5 +12,6 @@ abstract class ChatMessagesSearchRequest with _$ChatMessagesSearchRequest {
     String? roomId,
   }) = _ChatMessagesSearchRequest;
 
-  factory ChatMessagesSearchRequest.fromJson(Map<String, Object?> json) => _$ChatMessagesSearchRequestFromJson(json);
+  factory ChatMessagesSearchRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesSearchRequestFromJson(json);
 }

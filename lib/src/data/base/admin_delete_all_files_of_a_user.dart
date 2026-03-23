@@ -9,5 +9,6 @@ abstract class AdminDeleteAllFilesOfAUser with _$AdminDeleteAllFilesOfAUser {
     required String userId,
   }) = _AdminDeleteAllFilesOfAUser;
 
-  factory AdminDeleteAllFilesOfAUser.fromJson(Map<String, Object?> json) => _$AdminDeleteAllFilesOfAUserFromJson(json);
+  factory AdminDeleteAllFilesOfAUser.fromJson(Map<String, Object?> json) =>
+      _$AdminDeleteAllFilesOfAUserFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class PagesDeleteRequest with _$PagesDeleteRequest {
     String? pageId,
   }) = _PagesDeleteRequest;
 
-  factory PagesDeleteRequest.fromJson(Map<String, Object?> json) => _$PagesDeleteRequestFromJson(json);
+  factory PagesDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$PagesDeleteRequestFromJson(json);
 }

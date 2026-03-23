@@ -10,5 +10,6 @@ abstract class I2faKeyDone with _$I2faKeyDone {
     required String name,
   }) = _I2faKeyDone;
 
-  factory I2faKeyDone.fromJson(Map<String, Object?> json) => _$I2faKeyDoneFromJson(json);
+  factory I2faKeyDone.fromJson(Map<String, Object?> json) =>
+      _$I2faKeyDoneFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class UsernameAvailable with _$UsernameAvailable {
     required bool available,
   }) = _UsernameAvailable;
 
-  factory UsernameAvailable.fromJson(Map<String, Object?> json) => _$UsernameAvailableFromJson(json);
+  factory UsernameAvailable.fromJson(Map<String, Object?> json) =>
+      _$UsernameAvailableFromJson(json);
 }

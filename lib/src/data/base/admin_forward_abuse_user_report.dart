@@ -9,5 +9,6 @@ abstract class AdminForwardAbuseUserReport with _$AdminForwardAbuseUserReport {
     required String reportId,
   }) = _AdminForwardAbuseUserReport;
 
-  factory AdminForwardAbuseUserReport.fromJson(Map<String, Object?> json) => _$AdminForwardAbuseUserReportFromJson(json);
+  factory AdminForwardAbuseUserReport.fromJson(Map<String, Object?> json) =>
+      _$AdminForwardAbuseUserReportFromJson(json);
 }

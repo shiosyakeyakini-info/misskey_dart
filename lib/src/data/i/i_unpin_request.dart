@@ -9,5 +9,6 @@ abstract class IUnpinRequest with _$IUnpinRequest {
     String? noteId,
   }) = _IUnpinRequest;
 
-  factory IUnpinRequest.fromJson(Map<String, Object?> json) => _$IUnpinRequestFromJson(json);
+  factory IUnpinRequest.fromJson(Map<String, Object?> json) =>
+      _$IUnpinRequestFromJson(json);
 }

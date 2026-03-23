@@ -9,5 +9,6 @@ abstract class AdminEmojiImportZipRequest with _$AdminEmojiImportZipRequest {
     String? fileId,
   }) = _AdminEmojiImportZipRequest;
 
-  factory AdminEmojiImportZipRequest.fromJson(Map<String, Object?> json) => _$AdminEmojiImportZipRequestFromJson(json);
+  factory AdminEmojiImportZipRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiImportZipRequestFromJson(json);
 }

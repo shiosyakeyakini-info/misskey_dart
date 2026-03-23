@@ -13,5 +13,6 @@ abstract class ChatRoomsJoiningRequest with _$ChatRoomsJoiningRequest {
     int? untilDate,
   }) = _ChatRoomsJoiningRequest;
 
-  factory ChatRoomsJoiningRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsJoiningRequestFromJson(json);
+  factory ChatRoomsJoiningRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsJoiningRequestFromJson(json);
 }

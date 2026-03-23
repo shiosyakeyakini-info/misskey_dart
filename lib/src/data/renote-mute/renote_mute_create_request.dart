@@ -9,5 +9,6 @@ abstract class RenoteMuteCreateRequest with _$RenoteMuteCreateRequest {
     String? userId,
   }) = _RenoteMuteCreateRequest;
 
-  factory RenoteMuteCreateRequest.fromJson(Map<String, Object?> json) => _$RenoteMuteCreateRequestFromJson(json);
+  factory RenoteMuteCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$RenoteMuteCreateRequestFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class ChatMessagesReactRequest with _$ChatMessagesReactRequest {
     String? reaction,
   }) = _ChatMessagesReactRequest;
 
-  factory ChatMessagesReactRequest.fromJson(Map<String, Object?> json) => _$ChatMessagesReactRequestFromJson(json);
+  factory ChatMessagesReactRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesReactRequestFromJson(json);
 }

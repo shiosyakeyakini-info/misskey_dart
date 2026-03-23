@@ -11,5 +11,6 @@ abstract class ChartsUsersLocal with _$ChartsUsersLocal {
     required List<double> dec,
   }) = _ChartsUsersLocal;
 
-  factory ChartsUsersLocal.fromJson(Map<String, Object?> json) => _$ChartsUsersLocalFromJson(json);
+  factory ChartsUsersLocal.fromJson(Map<String, Object?> json) =>
+      _$ChartsUsersLocalFromJson(json);
 }

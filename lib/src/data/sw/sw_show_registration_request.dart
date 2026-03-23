@@ -9,5 +9,6 @@ abstract class SwShowRegistrationRequest with _$SwShowRegistrationRequest {
     String? endpoint,
   }) = _SwShowRegistrationRequest;
 
-  factory SwShowRegistrationRequest.fromJson(Map<String, Object?> json) => _$SwShowRegistrationRequestFromJson(json);
+  factory SwShowRegistrationRequest.fromJson(Map<String, Object?> json) =>
+      _$SwShowRegistrationRequestFromJson(json);
 }

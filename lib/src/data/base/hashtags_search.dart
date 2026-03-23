@@ -11,5 +11,6 @@ abstract class HashtagsSearch with _$HashtagsSearch {
     @Default(0) int? offset,
   }) = _HashtagsSearch;
 
-  factory HashtagsSearch.fromJson(Map<String, Object?> json) => _$HashtagsSearchFromJson(json);
+  factory HashtagsSearch.fromJson(Map<String, Object?> json) =>
+      _$HashtagsSearchFromJson(json);
 }

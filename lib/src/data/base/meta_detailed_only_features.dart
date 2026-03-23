@@ -18,5 +18,6 @@ abstract class MetaDetailedOnlyFeatures with _$MetaDetailedOnlyFeatures {
     @Default(true) bool? miauth,
   }) = _MetaDetailedOnlyFeatures;
 
-  factory MetaDetailedOnlyFeatures.fromJson(Map<String, Object?> json) => _$MetaDetailedOnlyFeaturesFromJson(json);
+  factory MetaDetailedOnlyFeatures.fromJson(Map<String, Object?> json) =>
+      _$MetaDetailedOnlyFeaturesFromJson(json);
 }

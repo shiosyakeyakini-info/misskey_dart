@@ -9,5 +9,6 @@ abstract class ReversiSurrender with _$ReversiSurrender {
     required String gameId,
   }) = _ReversiSurrender;
 
-  factory ReversiSurrender.fromJson(Map<String, Object?> json) => _$ReversiSurrenderFromJson(json);
+  factory ReversiSurrender.fromJson(Map<String, Object?> json) =>
+      _$ReversiSurrenderFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class AnnouncementsRequest with _$AnnouncementsRequest {
     @Default(true) bool? isActive,
   }) = _AnnouncementsRequest;
 
-  factory AnnouncementsRequest.fromJson(Map<String, Object?> json) => _$AnnouncementsRequestFromJson(json);
+  factory AnnouncementsRequest.fromJson(Map<String, Object?> json) =>
+      _$AnnouncementsRequestFromJson(json);
 }

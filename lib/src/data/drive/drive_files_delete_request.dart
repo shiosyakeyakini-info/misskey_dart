@@ -9,5 +9,6 @@ abstract class DriveFilesDeleteRequest with _$DriveFilesDeleteRequest {
     String? fileId,
   }) = _DriveFilesDeleteRequest;
 
-  factory DriveFilesDeleteRequest.fromJson(Map<String, Object?> json) => _$DriveFilesDeleteRequestFromJson(json);
+  factory DriveFilesDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesDeleteRequestFromJson(json);
 }

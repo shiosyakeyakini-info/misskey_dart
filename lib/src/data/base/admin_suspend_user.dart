@@ -9,5 +9,6 @@ abstract class AdminSuspendUser with _$AdminSuspendUser {
     required String userId,
   }) = _AdminSuspendUser;
 
-  factory AdminSuspendUser.fromJson(Map<String, Object?> json) => _$AdminSuspendUserFromJson(json);
+  factory AdminSuspendUser.fromJson(Map<String, Object?> json) =>
+      _$AdminSuspendUserFromJson(json);
 }

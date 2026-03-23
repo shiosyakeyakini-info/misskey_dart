@@ -9,5 +9,6 @@ abstract class UsernameAvailableResponse with _$UsernameAvailableResponse {
     required bool available,
   }) = _UsernameAvailableResponse;
 
-  factory UsernameAvailableResponse.fromJson(Map<String, Object?> json) => _$UsernameAvailableResponseFromJson(json);
+  factory UsernameAvailableResponse.fromJson(Map<String, Object?> json) =>
+      _$UsernameAvailableResponseFromJson(json);
 }

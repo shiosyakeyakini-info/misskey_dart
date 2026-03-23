@@ -13,5 +13,6 @@ abstract class FollowingRequestsSent with _$FollowingRequestsSent {
     @Default(10) int? limit,
   }) = _FollowingRequestsSent;
 
-  factory FollowingRequestsSent.fromJson(Map<String, Object?> json) => _$FollowingRequestsSentFromJson(json);
+  factory FollowingRequestsSent.fromJson(Map<String, Object?> json) =>
+      _$FollowingRequestsSentFromJson(json);
 }

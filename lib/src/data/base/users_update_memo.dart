@@ -10,5 +10,6 @@ abstract class UsersUpdateMemo with _$UsersUpdateMemo {
     String? memo,
   }) = _UsersUpdateMemo;
 
-  factory UsersUpdateMemo.fromJson(Map<String, Object?> json) => _$UsersUpdateMemoFromJson(json);
+  factory UsersUpdateMemo.fromJson(Map<String, Object?> json) =>
+      _$UsersUpdateMemoFromJson(json);
 }

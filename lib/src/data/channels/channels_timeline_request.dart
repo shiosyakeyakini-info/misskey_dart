@@ -15,5 +15,6 @@ abstract class ChannelsTimelineRequest with _$ChannelsTimelineRequest {
     @Default(false) bool? allowPartial,
   }) = _ChannelsTimelineRequest;
 
-  factory ChannelsTimelineRequest.fromJson(Map<String, Object?> json) => _$ChannelsTimelineRequestFromJson(json);
+  factory ChannelsTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsTimelineRequestFromJson(json);
 }

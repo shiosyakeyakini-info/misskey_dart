@@ -10,5 +10,6 @@ abstract class IRegistryGetDetail with _$IRegistryGetDetail {
     required String value,
   }) = _IRegistryGetDetail;
 
-  factory IRegistryGetDetail.fromJson(Map<String, Object?> json) => _$IRegistryGetDetailFromJson(json);
+  factory IRegistryGetDetail.fromJson(Map<String, Object?> json) =>
+      _$IRegistryGetDetailFromJson(json);
 }

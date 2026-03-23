@@ -9,5 +9,6 @@ abstract class GetOnlineUsersCount with _$GetOnlineUsersCount {
     required double count,
   }) = _GetOnlineUsersCount;
 
-  factory GetOnlineUsersCount.fromJson(Map<String, Object?> json) => _$GetOnlineUsersCountFromJson(json);
+  factory GetOnlineUsersCount.fromJson(Map<String, Object?> json) =>
+      _$GetOnlineUsersCountFromJson(json);
 }

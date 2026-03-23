@@ -5,11 +5,20 @@ part 'admin_show_user_notification_recieve_config_receive_follow_request.freezed
 part 'admin_show_user_notification_recieve_config_receive_follow_request.g.dart';
 
 @freezed
-abstract class AdminShowUserNotificationRecieveConfigReceiveFollowRequest with _$AdminShowUserNotificationRecieveConfigReceiveFollowRequest {
+abstract class AdminShowUserNotificationRecieveConfigReceiveFollowRequest
+    with _$AdminShowUserNotificationRecieveConfigReceiveFollowRequest {
   const factory AdminShowUserNotificationRecieveConfigReceiveFollowRequest({
-    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigReceiveFollowRequestType.unknown) required AdminShowUserNotificationRecieveConfigReceiveFollowRequestType type,
+    @JsonKey(
+        unknownEnumValue:
+            AdminShowUserNotificationRecieveConfigReceiveFollowRequestType
+                .unknown)
+    required AdminShowUserNotificationRecieveConfigReceiveFollowRequestType
+        type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigReceiveFollowRequest;
 
-  factory AdminShowUserNotificationRecieveConfigReceiveFollowRequest.fromJson(Map<String, Object?> json) => _$AdminShowUserNotificationRecieveConfigReceiveFollowRequestFromJson(json);
+  factory AdminShowUserNotificationRecieveConfigReceiveFollowRequest.fromJson(
+          Map<String, Object?> json) =>
+      _$AdminShowUserNotificationRecieveConfigReceiveFollowRequestFromJson(
+          json);
 }

@@ -14,5 +14,6 @@ abstract class FederationUsersRequest with _$FederationUsersRequest {
     @Default(10) int? limit,
   }) = _FederationUsersRequest;
 
-  factory FederationUsersRequest.fromJson(Map<String, Object?> json) => _$FederationUsersRequestFromJson(json);
+  factory FederationUsersRequest.fromJson(Map<String, Object?> json) =>
+      _$FederationUsersRequestFromJson(json);
 }

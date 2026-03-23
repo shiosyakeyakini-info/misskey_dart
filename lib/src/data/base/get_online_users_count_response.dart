@@ -9,5 +9,6 @@ abstract class GetOnlineUsersCountResponse with _$GetOnlineUsersCountResponse {
     required double count,
   }) = _GetOnlineUsersCountResponse;
 
-  factory GetOnlineUsersCountResponse.fromJson(Map<String, Object?> json) => _$GetOnlineUsersCountResponseFromJson(json);
+  factory GetOnlineUsersCountResponse.fromJson(Map<String, Object?> json) =>
+      _$GetOnlineUsersCountResponseFromJson(json);
 }

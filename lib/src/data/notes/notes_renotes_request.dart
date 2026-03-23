@@ -14,5 +14,6 @@ abstract class NotesRenotesRequest with _$NotesRenotesRequest {
     int? untilDate,
   }) = _NotesRenotesRequest;
 
-  factory NotesRenotesRequest.fromJson(Map<String, Object?> json) => _$NotesRenotesRequestFromJson(json);
+  factory NotesRenotesRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesRenotesRequestFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class EndpointRequest with _$EndpointRequest {
     String? endpoint,
   }) = _EndpointRequest;
 
-  factory EndpointRequest.fromJson(Map<String, Object?> json) => _$EndpointRequestFromJson(json);
+  factory EndpointRequest.fromJson(Map<String, Object?> json) =>
+      _$EndpointRequestFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class FetchRssItunesOwner with _$FetchRssItunesOwner {
     String? email,
   }) = _FetchRssItunesOwner;
 
-  factory FetchRssItunesOwner.fromJson(Map<String, Object?> json) => _$FetchRssItunesOwnerFromJson(json);
+  factory FetchRssItunesOwner.fromJson(Map<String, Object?> json) =>
+      _$FetchRssItunesOwnerFromJson(json);
 }

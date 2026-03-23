@@ -10,5 +10,6 @@ abstract class AdminServerInfoCpu with _$AdminServerInfoCpu {
     required double cores,
   }) = _AdminServerInfoCpu;
 
-  factory AdminServerInfoCpu.fromJson(Map<String, Object?> json) => _$AdminServerInfoCpuFromJson(json);
+  factory AdminServerInfoCpu.fromJson(Map<String, Object?> json) =>
+      _$AdminServerInfoCpuFromJson(json);
 }

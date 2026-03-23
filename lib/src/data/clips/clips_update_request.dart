@@ -12,5 +12,6 @@ abstract class ClipsUpdateRequest with _$ClipsUpdateRequest {
     String? description,
   }) = _ClipsUpdateRequest;
 
-  factory ClipsUpdateRequest.fromJson(Map<String, Object?> json) => _$ClipsUpdateRequestFromJson(json);
+  factory ClipsUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsUpdateRequestFromJson(json);
 }

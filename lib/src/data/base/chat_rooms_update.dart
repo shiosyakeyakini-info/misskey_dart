@@ -11,5 +11,6 @@ abstract class ChatRoomsUpdate with _$ChatRoomsUpdate {
     String? description,
   }) = _ChatRoomsUpdate;
 
-  factory ChatRoomsUpdate.fromJson(Map<String, Object?> json) => _$ChatRoomsUpdateFromJson(json);
+  factory ChatRoomsUpdate.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsUpdateFromJson(json);
 }

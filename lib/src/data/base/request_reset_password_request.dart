@@ -10,5 +10,6 @@ abstract class RequestResetPasswordRequest with _$RequestResetPasswordRequest {
     String? email,
   }) = _RequestResetPasswordRequest;
 
-  factory RequestResetPasswordRequest.fromJson(Map<String, Object?> json) => _$RequestResetPasswordRequestFromJson(json);
+  factory RequestResetPasswordRequest.fromJson(Map<String, Object?> json) =>
+      _$RequestResetPasswordRequestFromJson(json);
 }

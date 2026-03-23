@@ -10,5 +10,6 @@ abstract class UsersListsCreateFromPublic with _$UsersListsCreateFromPublic {
     required String listId,
   }) = _UsersListsCreateFromPublic;
 
-  factory UsersListsCreateFromPublic.fromJson(Map<String, Object?> json) => _$UsersListsCreateFromPublicFromJson(json);
+  factory UsersListsCreateFromPublic.fromJson(Map<String, Object?> json) =>
+      _$UsersListsCreateFromPublicFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class FlashSearch with _$FlashSearch {
     @Default(5) int? limit,
   }) = _FlashSearch;
 
-  factory FlashSearch.fromJson(Map<String, Object?> json) => _$FlashSearchFromJson(json);
+  factory FlashSearch.fromJson(Map<String, Object?> json) =>
+      _$FlashSearchFromJson(json);
 }

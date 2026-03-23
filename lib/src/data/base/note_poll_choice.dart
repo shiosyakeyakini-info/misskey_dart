@@ -11,5 +11,6 @@ abstract class NotePollChoice with _$NotePollChoice {
     required int votes,
   }) = _NotePollChoice;
 
-  factory NotePollChoice.fromJson(Map<String, Object?> json) => _$NotePollChoiceFromJson(json);
+  factory NotePollChoice.fromJson(Map<String, Object?> json) =>
+      _$NotePollChoiceFromJson(json);
 }

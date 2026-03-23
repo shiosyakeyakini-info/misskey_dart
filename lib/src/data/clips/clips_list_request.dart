@@ -13,5 +13,6 @@ abstract class ClipsListRequest with _$ClipsListRequest {
     int? untilDate,
   }) = _ClipsListRequest;
 
-  factory ClipsListRequest.fromJson(Map<String, Object?> json) => _$ClipsListRequestFromJson(json);
+  factory ClipsListRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsListRequestFromJson(json);
 }

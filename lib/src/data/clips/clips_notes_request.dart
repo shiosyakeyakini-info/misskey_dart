@@ -15,5 +15,6 @@ abstract class ClipsNotesRequest with _$ClipsNotesRequest {
     String? search,
   }) = _ClipsNotesRequest;
 
-  factory ClipsNotesRequest.fromJson(Map<String, Object?> json) => _$ClipsNotesRequestFromJson(json);
+  factory ClipsNotesRequest.fromJson(Map<String, Object?> json) =>
+      _$ClipsNotesRequestFromJson(json);
 }

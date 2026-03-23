@@ -10,5 +10,6 @@ abstract class AdminEmojiAddAliasesBulk with _$AdminEmojiAddAliasesBulk {
     required List<String> aliases,
   }) = _AdminEmojiAddAliasesBulk;
 
-  factory AdminEmojiAddAliasesBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiAddAliasesBulkFromJson(json);
+  factory AdminEmojiAddAliasesBulk.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiAddAliasesBulkFromJson(json);
 }

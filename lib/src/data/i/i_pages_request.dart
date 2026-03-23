@@ -13,5 +13,6 @@ abstract class IPagesRequest with _$IPagesRequest {
     int? untilDate,
   }) = _IPagesRequest;
 
-  factory IPagesRequest.fromJson(Map<String, Object?> json) => _$IPagesRequestFromJson(json);
+  factory IPagesRequest.fromJson(Map<String, Object?> json) =>
+      _$IPagesRequestFromJson(json);
 }

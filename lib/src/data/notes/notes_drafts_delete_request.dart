@@ -9,5 +9,6 @@ abstract class NotesDraftsDeleteRequest with _$NotesDraftsDeleteRequest {
     String? draftId,
   }) = _NotesDraftsDeleteRequest;
 
-  factory NotesDraftsDeleteRequest.fromJson(Map<String, Object?> json) => _$NotesDraftsDeleteRequestFromJson(json);
+  factory NotesDraftsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsDeleteRequestFromJson(json);
 }

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/enums/channel_event_type.dart';
 
 part 'streaming_response.freezed.dart';
 part 'streaming_response.g.dart';

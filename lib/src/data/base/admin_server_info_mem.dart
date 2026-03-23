@@ -9,5 +9,6 @@ abstract class AdminServerInfoMem with _$AdminServerInfoMem {
     required double total,
   }) = _AdminServerInfoMem;
 
-  factory AdminServerInfoMem.fromJson(Map<String, Object?> json) => _$AdminServerInfoMemFromJson(json);
+  factory AdminServerInfoMem.fromJson(Map<String, Object?> json) =>
+      _$AdminServerInfoMemFromJson(json);
 }

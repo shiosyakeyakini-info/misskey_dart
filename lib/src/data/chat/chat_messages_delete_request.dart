@@ -9,5 +9,6 @@ abstract class ChatMessagesDeleteRequest with _$ChatMessagesDeleteRequest {
     String? messageId,
   }) = _ChatMessagesDeleteRequest;
 
-  factory ChatMessagesDeleteRequest.fromJson(Map<String, Object?> json) => _$ChatMessagesDeleteRequestFromJson(json);
+  factory ChatMessagesDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesDeleteRequestFromJson(json);
 }

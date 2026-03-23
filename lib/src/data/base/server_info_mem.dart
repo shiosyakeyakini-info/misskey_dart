@@ -9,5 +9,6 @@ abstract class ServerInfoMem with _$ServerInfoMem {
     required double total,
   }) = _ServerInfoMem;
 
-  factory ServerInfoMem.fromJson(Map<String, Object?> json) => _$ServerInfoMemFromJson(json);
+  factory ServerInfoMem.fromJson(Map<String, Object?> json) =>
+      _$ServerInfoMemFromJson(json);
 }

@@ -11,5 +11,6 @@ abstract class ChartsInstanceFollowing with _$ChartsInstanceFollowing {
     required List<double> dec,
   }) = _ChartsInstanceFollowing;
 
-  factory ChartsInstanceFollowing.fromJson(Map<String, Object?> json) => _$ChartsInstanceFollowingFromJson(json);
+  factory ChartsInstanceFollowing.fromJson(Map<String, Object?> json) =>
+      _$ChartsInstanceFollowingFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class ChartsUserPvUpv with _$ChartsUserPvUpv {
     required List<double> visitor,
   }) = _ChartsUserPvUpv;
 
-  factory ChartsUserPvUpv.fromJson(Map<String, Object?> json) => _$ChartsUserPvUpvFromJson(json);
+  factory ChartsUserPvUpv.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserPvUpvFromJson(json);
 }

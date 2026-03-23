@@ -10,5 +10,6 @@ abstract class IDeleteAccountRequest with _$IDeleteAccountRequest {
     String? token,
   }) = _IDeleteAccountRequest;
 
-  factory IDeleteAccountRequest.fromJson(Map<String, Object?> json) => _$IDeleteAccountRequestFromJson(json);
+  factory IDeleteAccountRequest.fromJson(Map<String, Object?> json) =>
+      _$IDeleteAccountRequestFromJson(json);
 }

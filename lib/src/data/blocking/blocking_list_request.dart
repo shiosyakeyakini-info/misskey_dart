@@ -13,5 +13,6 @@ abstract class BlockingListRequest with _$BlockingListRequest {
     int? untilDate,
   }) = _BlockingListRequest;
 
-  factory BlockingListRequest.fromJson(Map<String, Object?> json) => _$BlockingListRequestFromJson(json);
+  factory BlockingListRequest.fromJson(Map<String, Object?> json) =>
+      _$BlockingListRequestFromJson(json);
 }

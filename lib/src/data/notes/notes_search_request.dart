@@ -18,5 +18,6 @@ abstract class NotesSearchRequest with _$NotesSearchRequest {
     @Default(null) String? channelId,
   }) = _NotesSearchRequest;
 
-  factory NotesSearchRequest.fromJson(Map<String, Object?> json) => _$NotesSearchRequestFromJson(json);
+  factory NotesSearchRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesSearchRequestFromJson(json);
 }

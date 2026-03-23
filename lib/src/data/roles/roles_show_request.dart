@@ -9,5 +9,6 @@ abstract class RolesShowRequest with _$RolesShowRequest {
     String? roleId,
   }) = _RolesShowRequest;
 
-  factory RolesShowRequest.fromJson(Map<String, Object?> json) => _$RolesShowRequestFromJson(json);
+  factory RolesShowRequest.fromJson(Map<String, Object?> json) =>
+      _$RolesShowRequestFromJson(json);
 }

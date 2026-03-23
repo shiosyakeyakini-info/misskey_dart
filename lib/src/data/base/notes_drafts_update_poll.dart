@@ -12,5 +12,6 @@ abstract class NotesDraftsUpdatePoll with _$NotesDraftsUpdatePoll {
     int? expiredAfter,
   }) = _NotesDraftsUpdatePoll;
 
-  factory NotesDraftsUpdatePoll.fromJson(Map<String, Object?> json) => _$NotesDraftsUpdatePollFromJson(json);
+  factory NotesDraftsUpdatePoll.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsUpdatePollFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class AntennasNotes with _$AntennasNotes {
     int? untilDate,
   }) = _AntennasNotes;
 
-  factory AntennasNotes.fromJson(Map<String, Object?> json) => _$AntennasNotesFromJson(json);
+  factory AntennasNotes.fromJson(Map<String, Object?> json) =>
+      _$AntennasNotesFromJson(json);
 }

@@ -12,5 +12,6 @@ abstract class UsersShowRequest with _$UsersShowRequest {
     String? host,
   }) = _UsersShowRequest;
 
-  factory UsersShowRequest.fromJson(Map<String, Object?> json) => _$UsersShowRequestFromJson(json);
+  factory UsersShowRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersShowRequestFromJson(json);
 }

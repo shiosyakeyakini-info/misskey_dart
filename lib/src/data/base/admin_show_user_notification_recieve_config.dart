@@ -4,7 +4,8 @@ part 'admin_show_user_notification_recieve_config.freezed.dart';
 part 'admin_show_user_notification_recieve_config.g.dart';
 
 @freezed
-abstract class AdminShowUserNotificationRecieveConfig with _$AdminShowUserNotificationRecieveConfig {
+abstract class AdminShowUserNotificationRecieveConfig
+    with _$AdminShowUserNotificationRecieveConfig {
   const factory AdminShowUserNotificationRecieveConfig({
     dynamic note,
     dynamic follow,
@@ -25,5 +26,7 @@ abstract class AdminShowUserNotificationRecieveConfig with _$AdminShowUserNotifi
     dynamic test,
   }) = _AdminShowUserNotificationRecieveConfig;
 
-  factory AdminShowUserNotificationRecieveConfig.fromJson(Map<String, Object?> json) => _$AdminShowUserNotificationRecieveConfigFromJson(json);
+  factory AdminShowUserNotificationRecieveConfig.fromJson(
+          Map<String, Object?> json) =>
+      _$AdminShowUserNotificationRecieveConfigFromJson(json);
 }

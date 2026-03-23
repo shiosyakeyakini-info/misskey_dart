@@ -13,5 +13,6 @@ abstract class IAuthorizedAppsItem with _$IAuthorizedAppsItem {
     bool? isAuthorized,
   }) = _IAuthorizedAppsItem;
 
-  factory IAuthorizedAppsItem.fromJson(Map<String, Object?> json) => _$IAuthorizedAppsItemFromJson(json);
+  factory IAuthorizedAppsItem.fromJson(Map<String, Object?> json) =>
+      _$IAuthorizedAppsItemFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class GalleryFeatured with _$GalleryFeatured {
     String? untilId,
   }) = _GalleryFeatured;
 
-  factory GalleryFeatured.fromJson(Map<String, Object?> json) => _$GalleryFeaturedFromJson(json);
+  factory GalleryFeatured.fromJson(Map<String, Object?> json) =>
+      _$GalleryFeaturedFromJson(json);
 }

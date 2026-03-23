@@ -10,5 +10,6 @@ abstract class DriveFoldersCreateRequest with _$DriveFoldersCreateRequest {
     String? parentId,
   }) = _DriveFoldersCreateRequest;
 
-  factory DriveFoldersCreateRequest.fromJson(Map<String, Object?> json) => _$DriveFoldersCreateRequestFromJson(json);
+  factory DriveFoldersCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersCreateRequestFromJson(json);
 }

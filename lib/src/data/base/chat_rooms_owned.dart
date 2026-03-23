@@ -13,5 +13,6 @@ abstract class ChatRoomsOwned with _$ChatRoomsOwned {
     int? untilDate,
   }) = _ChatRoomsOwned;
 
-  factory ChatRoomsOwned.fromJson(Map<String, Object?> json) => _$ChatRoomsOwnedFromJson(json);
+  factory ChatRoomsOwned.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsOwnedFromJson(json);
 }

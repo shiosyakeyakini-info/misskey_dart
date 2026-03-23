@@ -14,5 +14,6 @@ abstract class NoteChannelInfo with _$NoteChannelInfo {
     String? userId,
   }) = _NoteChannelInfo;
 
-  factory NoteChannelInfo.fromJson(Map<String, Object?> json) => _$NoteChannelInfoFromJson(json);
+  factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>
+      _$NoteChannelInfoFromJson(json);
 }

@@ -13,5 +13,6 @@ abstract class InviteListRequest with _$InviteListRequest {
     int? untilDate,
   }) = _InviteListRequest;
 
-  factory InviteListRequest.fromJson(Map<String, Object?> json) => _$InviteListRequestFromJson(json);
+  factory InviteListRequest.fromJson(Map<String, Object?> json) =>
+      _$InviteListRequestFromJson(json);
 }

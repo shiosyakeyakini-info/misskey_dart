@@ -13,5 +13,6 @@ abstract class ISigninHistoryRequest with _$ISigninHistoryRequest {
     int? untilDate,
   }) = _ISigninHistoryRequest;
 
-  factory ISigninHistoryRequest.fromJson(Map<String, Object?> json) => _$ISigninHistoryRequestFromJson(json);
+  factory ISigninHistoryRequest.fromJson(Map<String, Object?> json) =>
+      _$ISigninHistoryRequestFromJson(json);
 }

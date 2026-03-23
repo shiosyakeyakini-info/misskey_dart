@@ -9,5 +9,6 @@ abstract class ChatRoomsDeleteRequest with _$ChatRoomsDeleteRequest {
     String? roomId,
   }) = _ChatRoomsDeleteRequest;
 
-  factory ChatRoomsDeleteRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsDeleteRequestFromJson(json);
+  factory ChatRoomsDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsDeleteRequestFromJson(json);
 }

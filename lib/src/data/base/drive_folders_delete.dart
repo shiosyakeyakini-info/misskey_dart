@@ -9,5 +9,6 @@ abstract class DriveFoldersDelete with _$DriveFoldersDelete {
     required String folderId,
   }) = _DriveFoldersDelete;
 
-  factory DriveFoldersDelete.fromJson(Map<String, Object?> json) => _$DriveFoldersDeleteFromJson(json);
+  factory DriveFoldersDelete.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersDeleteFromJson(json);
 }

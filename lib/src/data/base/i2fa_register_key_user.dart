@@ -11,5 +11,6 @@ abstract class I2faRegisterKeyUser with _$I2faRegisterKeyUser {
     required String displayName,
   }) = _I2faRegisterKeyUser;
 
-  factory I2faRegisterKeyUser.fromJson(Map<String, Object?> json) => _$I2faRegisterKeyUserFromJson(json);
+  factory I2faRegisterKeyUser.fromJson(Map<String, Object?> json) =>
+      _$I2faRegisterKeyUserFromJson(json);
 }

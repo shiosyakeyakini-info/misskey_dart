@@ -10,5 +10,6 @@ abstract class ChatMessagesUnreact with _$ChatMessagesUnreact {
     required String reaction,
   }) = _ChatMessagesUnreact;
 
-  factory ChatMessagesUnreact.fromJson(Map<String, Object?> json) => _$ChatMessagesUnreactFromJson(json);
+  factory ChatMessagesUnreact.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesUnreactFromJson(json);
 }

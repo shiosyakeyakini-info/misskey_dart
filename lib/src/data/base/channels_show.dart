@@ -9,5 +9,6 @@ abstract class ChannelsShow with _$ChannelsShow {
     required String channelId,
   }) = _ChannelsShow;
 
-  factory ChannelsShow.fromJson(Map<String, Object?> json) => _$ChannelsShowFromJson(json);
+  factory ChannelsShow.fromJson(Map<String, Object?> json) =>
+      _$ChannelsShowFromJson(json);
 }

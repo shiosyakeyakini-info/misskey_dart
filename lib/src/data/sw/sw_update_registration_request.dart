@@ -10,5 +10,6 @@ abstract class SwUpdateRegistrationRequest with _$SwUpdateRegistrationRequest {
     bool? sendReadMessage,
   }) = _SwUpdateRegistrationRequest;
 
-  factory SwUpdateRegistrationRequest.fromJson(Map<String, Object?> json) => _$SwUpdateRegistrationRequestFromJson(json);
+  factory SwUpdateRegistrationRequest.fromJson(Map<String, Object?> json) =>
+      _$SwUpdateRegistrationRequestFromJson(json);
 }

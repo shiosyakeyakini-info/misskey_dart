@@ -13,5 +13,6 @@ abstract class ISigninHistory with _$ISigninHistory {
     int? untilDate,
   }) = _ISigninHistory;
 
-  factory ISigninHistory.fromJson(Map<String, Object?> json) => _$ISigninHistoryFromJson(json);
+  factory ISigninHistory.fromJson(Map<String, Object?> json) =>
+      _$ISigninHistoryFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class AdminDriveShowFileRequest with _$AdminDriveShowFileRequest {
     String? url,
   }) = _AdminDriveShowFileRequest;
 
-  factory AdminDriveShowFileRequest.fromJson(Map<String, Object?> json) => _$AdminDriveShowFileRequestFromJson(json);
+  factory AdminDriveShowFileRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminDriveShowFileRequestFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class ChatRoomsInvitationsOutbox with _$ChatRoomsInvitationsOutbox {
     int? untilDate,
   }) = _ChatRoomsInvitationsOutbox;
 
-  factory ChatRoomsInvitationsOutbox.fromJson(Map<String, Object?> json) => _$ChatRoomsInvitationsOutboxFromJson(json);
+  factory ChatRoomsInvitationsOutbox.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsInvitationsOutboxFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class ChannelsMuteDeleteRequest with _$ChannelsMuteDeleteRequest {
     String? channelId,
   }) = _ChannelsMuteDeleteRequest;
 
-  factory ChannelsMuteDeleteRequest.fromJson(Map<String, Object?> json) => _$ChannelsMuteDeleteRequestFromJson(json);
+  factory ChannelsMuteDeleteRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsMuteDeleteRequestFromJson(json);
 }

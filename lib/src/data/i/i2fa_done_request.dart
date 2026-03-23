@@ -9,5 +9,6 @@ abstract class I2faDoneRequest with _$I2faDoneRequest {
     String? token,
   }) = _I2faDoneRequest;
 
-  factory I2faDoneRequest.fromJson(Map<String, Object?> json) => _$I2faDoneRequestFromJson(json);
+  factory I2faDoneRequest.fromJson(Map<String, Object?> json) =>
+      _$I2faDoneRequestFromJson(json);
 }

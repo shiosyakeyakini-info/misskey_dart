@@ -11,5 +11,6 @@ abstract class IChangePassword with _$IChangePassword {
     String? token,
   }) = _IChangePassword;
 
-  factory IChangePassword.fromJson(Map<String, Object?> json) => _$IChangePasswordFromJson(json);
+  factory IChangePassword.fromJson(Map<String, Object?> json) =>
+      _$IChangePasswordFromJson(json);
 }

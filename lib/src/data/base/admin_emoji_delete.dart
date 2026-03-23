@@ -9,5 +9,6 @@ abstract class AdminEmojiDelete with _$AdminEmojiDelete {
     required String id,
   }) = _AdminEmojiDelete;
 
-  factory AdminEmojiDelete.fromJson(Map<String, Object?> json) => _$AdminEmojiDeleteFromJson(json);
+  factory AdminEmojiDelete.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiDeleteFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class NotesClipsRequest with _$NotesClipsRequest {
     String? noteId,
   }) = _NotesClipsRequest;
 
-  factory NotesClipsRequest.fromJson(Map<String, Object?> json) => _$NotesClipsRequestFromJson(json);
+  factory NotesClipsRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesClipsRequestFromJson(json);
 }

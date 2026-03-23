@@ -4,7 +4,8 @@ part 'users_lists_get_memberships_request.freezed.dart';
 part 'users_lists_get_memberships_request.g.dart';
 
 @freezed
-abstract class UsersListsGetMembershipsRequest with _$UsersListsGetMembershipsRequest {
+abstract class UsersListsGetMembershipsRequest
+    with _$UsersListsGetMembershipsRequest {
   const factory UsersListsGetMembershipsRequest({
     String? listId,
     @Default(false) bool? forPublic,
@@ -15,5 +16,6 @@ abstract class UsersListsGetMembershipsRequest with _$UsersListsGetMembershipsRe
     int? untilDate,
   }) = _UsersListsGetMembershipsRequest;
 
-  factory UsersListsGetMembershipsRequest.fromJson(Map<String, Object?> json) => _$UsersListsGetMembershipsRequestFromJson(json);
+  factory UsersListsGetMembershipsRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersListsGetMembershipsRequestFromJson(json);
 }

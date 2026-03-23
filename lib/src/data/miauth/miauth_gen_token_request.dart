@@ -13,5 +13,6 @@ abstract class MiauthGenTokenRequest with _$MiauthGenTokenRequest {
     List<String>? permission,
   }) = _MiauthGenTokenRequest;
 
-  factory MiauthGenTokenRequest.fromJson(Map<String, Object?> json) => _$MiauthGenTokenRequestFromJson(json);
+  factory MiauthGenTokenRequest.fromJson(Map<String, Object?> json) =>
+      _$MiauthGenTokenRequestFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class ChatMessagesUserTimeline with _$ChatMessagesUserTimeline {
     required String userId,
   }) = _ChatMessagesUserTimeline;
 
-  factory ChatMessagesUserTimeline.fromJson(Map<String, Object?> json) => _$ChatMessagesUserTimelineFromJson(json);
+  factory ChatMessagesUserTimeline.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesUserTimelineFromJson(json);
 }

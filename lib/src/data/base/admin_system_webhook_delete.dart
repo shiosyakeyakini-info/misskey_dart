@@ -9,5 +9,6 @@ abstract class AdminSystemWebhookDelete with _$AdminSystemWebhookDelete {
     required String id,
   }) = _AdminSystemWebhookDelete;
 
-  factory AdminSystemWebhookDelete.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookDeleteFromJson(json);
+  factory AdminSystemWebhookDelete.fromJson(Map<String, Object?> json) =>
+      _$AdminSystemWebhookDeleteFromJson(json);
 }

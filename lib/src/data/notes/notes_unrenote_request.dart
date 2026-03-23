@@ -9,5 +9,6 @@ abstract class NotesUnrenoteRequest with _$NotesUnrenoteRequest {
     String? noteId,
   }) = _NotesUnrenoteRequest;
 
-  factory NotesUnrenoteRequest.fromJson(Map<String, Object?> json) => _$NotesUnrenoteRequestFromJson(json);
+  factory NotesUnrenoteRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesUnrenoteRequestFromJson(json);
 }

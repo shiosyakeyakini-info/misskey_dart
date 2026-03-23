@@ -14,5 +14,6 @@ abstract class FlashMyLikes with _$FlashMyLikes {
     String? search,
   }) = _FlashMyLikes;
 
-  factory FlashMyLikes.fromJson(Map<String, Object?> json) => _$FlashMyLikesFromJson(json);
+  factory FlashMyLikes.fromJson(Map<String, Object?> json) =>
+      _$FlashMyLikesFromJson(json);
 }

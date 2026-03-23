@@ -11,5 +11,6 @@ abstract class ChartsApRequestResponse with _$ChartsApRequestResponse {
     required List<double> inboxReceived,
   }) = _ChartsApRequestResponse;
 
-  factory ChartsApRequestResponse.fromJson(Map<String, Object?> json) => _$ChartsApRequestResponseFromJson(json);
+  factory ChartsApRequestResponse.fromJson(Map<String, Object?> json) =>
+      _$ChartsApRequestResponseFromJson(json);
 }

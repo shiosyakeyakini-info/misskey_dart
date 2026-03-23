@@ -9,5 +9,6 @@ abstract class AdminGetUserIps with _$AdminGetUserIps {
     required String userId,
   }) = _AdminGetUserIps;
 
-  factory AdminGetUserIps.fromJson(Map<String, Object?> json) => _$AdminGetUserIpsFromJson(json);
+  factory AdminGetUserIps.fromJson(Map<String, Object?> json) =>
+      _$AdminGetUserIpsFromJson(json);
 }

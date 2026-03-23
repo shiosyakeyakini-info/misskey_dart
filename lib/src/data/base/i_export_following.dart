@@ -10,5 +10,6 @@ abstract class IExportFollowing with _$IExportFollowing {
     @Default(false) bool? excludeInactive,
   }) = _IExportFollowing;
 
-  factory IExportFollowing.fromJson(Map<String, Object?> json) => _$IExportFollowingFromJson(json);
+  factory IExportFollowing.fromJson(Map<String, Object?> json) =>
+      _$IExportFollowingFromJson(json);
 }

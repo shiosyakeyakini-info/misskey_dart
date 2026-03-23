@@ -9,5 +9,6 @@ abstract class AntennasDelete with _$AntennasDelete {
     required String antennaId,
   }) = _AntennasDelete;
 
-  factory AntennasDelete.fromJson(Map<String, Object?> json) => _$AntennasDeleteFromJson(json);
+  factory AntennasDelete.fromJson(Map<String, Object?> json) =>
+      _$AntennasDeleteFromJson(json);
 }

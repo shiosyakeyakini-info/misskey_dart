@@ -9,5 +9,6 @@ abstract class FederationShowInstance with _$FederationShowInstance {
     required String host,
   }) = _FederationShowInstance;
 
-  factory FederationShowInstance.fromJson(Map<String, Object?> json) => _$FederationShowInstanceFromJson(json);
+  factory FederationShowInstance.fromJson(Map<String, Object?> json) =>
+      _$FederationShowInstanceFromJson(json);
 }

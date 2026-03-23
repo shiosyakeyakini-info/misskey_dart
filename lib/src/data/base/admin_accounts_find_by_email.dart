@@ -9,5 +9,6 @@ abstract class AdminAccountsFindByEmail with _$AdminAccountsFindByEmail {
     required String email,
   }) = _AdminAccountsFindByEmail;
 
-  factory AdminAccountsFindByEmail.fromJson(Map<String, Object?> json) => _$AdminAccountsFindByEmailFromJson(json);
+  factory AdminAccountsFindByEmail.fromJson(Map<String, Object?> json) =>
+      _$AdminAccountsFindByEmailFromJson(json);
 }

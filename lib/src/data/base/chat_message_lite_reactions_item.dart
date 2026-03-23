@@ -5,11 +5,13 @@ part 'chat_message_lite_reactions_item.freezed.dart';
 part 'chat_message_lite_reactions_item.g.dart';
 
 @freezed
-abstract class ChatMessageLiteReactionsItem with _$ChatMessageLiteReactionsItem {
+abstract class ChatMessageLiteReactionsItem
+    with _$ChatMessageLiteReactionsItem {
   const factory ChatMessageLiteReactionsItem({
     required String reaction,
     UserLite? user,
   }) = _ChatMessageLiteReactionsItem;
 
-  factory ChatMessageLiteReactionsItem.fromJson(Map<String, Object?> json) => _$ChatMessageLiteReactionsItemFromJson(json);
+  factory ChatMessageLiteReactionsItem.fromJson(Map<String, Object?> json) =>
+      _$ChatMessageLiteReactionsItemFromJson(json);
 }

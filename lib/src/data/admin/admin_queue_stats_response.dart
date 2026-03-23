@@ -13,5 +13,6 @@ abstract class AdminQueueStatsResponse with _$AdminQueueStatsResponse {
     required QueueCount objectStorage,
   }) = _AdminQueueStatsResponse;
 
-  factory AdminQueueStatsResponse.fromJson(Map<String, Object?> json) => _$AdminQueueStatsResponseFromJson(json);
+  factory AdminQueueStatsResponse.fromJson(Map<String, Object?> json) =>
+      _$AdminQueueStatsResponseFromJson(json);
 }

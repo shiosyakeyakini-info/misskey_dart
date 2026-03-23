@@ -9,5 +9,6 @@ abstract class BlockingCreateRequest with _$BlockingCreateRequest {
     String? userId,
   }) = _BlockingCreateRequest;
 
-  factory BlockingCreateRequest.fromJson(Map<String, Object?> json) => _$BlockingCreateRequestFromJson(json);
+  factory BlockingCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$BlockingCreateRequestFromJson(json);
 }

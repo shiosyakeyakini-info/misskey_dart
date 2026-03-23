@@ -9,5 +9,6 @@ abstract class ChatRoomsJoinRequest with _$ChatRoomsJoinRequest {
     String? roomId,
   }) = _ChatRoomsJoinRequest;
 
-  factory ChatRoomsJoinRequest.fromJson(Map<String, Object?> json) => _$ChatRoomsJoinRequestFromJson(json);
+  factory ChatRoomsJoinRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsJoinRequestFromJson(json);
 }

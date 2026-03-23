@@ -9,5 +9,6 @@ abstract class DriveFoldersShow with _$DriveFoldersShow {
     required String folderId,
   }) = _DriveFoldersShow;
 
-  factory DriveFoldersShow.fromJson(Map<String, Object?> json) => _$DriveFoldersShowFromJson(json);
+  factory DriveFoldersShow.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersShowFromJson(json);
 }

@@ -16,5 +16,6 @@ abstract class AdminShowModerationLogs with _$AdminShowModerationLogs {
     String? search,
   }) = _AdminShowModerationLogs;
 
-  factory AdminShowModerationLogs.fromJson(Map<String, Object?> json) => _$AdminShowModerationLogsFromJson(json);
+  factory AdminShowModerationLogs.fromJson(Map<String, Object?> json) =>
+      _$AdminShowModerationLogsFromJson(json);
 }

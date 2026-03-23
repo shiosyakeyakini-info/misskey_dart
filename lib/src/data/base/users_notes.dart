@@ -19,5 +19,6 @@ abstract class UsersNotes with _$UsersNotes {
     @Default(false) bool? withFiles,
   }) = _UsersNotes;
 
-  factory UsersNotes.fromJson(Map<String, Object?> json) => _$UsersNotesFromJson(json);
+  factory UsersNotes.fromJson(Map<String, Object?> json) =>
+      _$UsersNotesFromJson(json);
 }

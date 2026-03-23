@@ -15,5 +15,6 @@ abstract class NotesGlobalTimeline with _$NotesGlobalTimeline {
     int? untilDate,
   }) = _NotesGlobalTimeline;
 
-  factory NotesGlobalTimeline.fromJson(Map<String, Object?> json) => _$NotesGlobalTimelineFromJson(json);
+  factory NotesGlobalTimeline.fromJson(Map<String, Object?> json) =>
+      _$NotesGlobalTimelineFromJson(json);
 }

@@ -13,5 +13,6 @@ abstract class MuteList with _$MuteList {
     int? untilDate,
   }) = _MuteList;
 
-  factory MuteList.fromJson(Map<String, Object?> json) => _$MuteListFromJson(json);
+  factory MuteList.fromJson(Map<String, Object?> json) =>
+      _$MuteListFromJson(json);
 }

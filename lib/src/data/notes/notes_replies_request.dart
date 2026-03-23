@@ -14,5 +14,6 @@ abstract class NotesRepliesRequest with _$NotesRepliesRequest {
     @Default(10) int? limit,
   }) = _NotesRepliesRequest;
 
-  factory NotesRepliesRequest.fromJson(Map<String, Object?> json) => _$NotesRepliesRequestFromJson(json);
+  factory NotesRepliesRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesRepliesRequestFromJson(json);
 }

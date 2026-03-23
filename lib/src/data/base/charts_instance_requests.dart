@@ -11,5 +11,6 @@ abstract class ChartsInstanceRequests with _$ChartsInstanceRequests {
     required List<double> received,
   }) = _ChartsInstanceRequests;
 
-  factory ChartsInstanceRequests.fromJson(Map<String, Object?> json) => _$ChartsInstanceRequestsFromJson(json);
+  factory ChartsInstanceRequests.fromJson(Map<String, Object?> json) =>
+      _$ChartsInstanceRequestsFromJson(json);
 }

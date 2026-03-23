@@ -9,5 +9,6 @@ abstract class MetaRequest with _$MetaRequest {
     @Default(true) bool? detail,
   }) = _MetaRequest;
 
-  factory MetaRequest.fromJson(Map<String, Object?> json) => _$MetaRequestFromJson(json);
+  factory MetaRequest.fromJson(Map<String, Object?> json) =>
+      _$MetaRequestFromJson(json);
 }

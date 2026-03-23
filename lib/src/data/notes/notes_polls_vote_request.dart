@@ -10,5 +10,6 @@ abstract class NotesPollsVoteRequest with _$NotesPollsVoteRequest {
     int? choice,
   }) = _NotesPollsVoteRequest;
 
-  factory NotesPollsVoteRequest.fromJson(Map<String, Object?> json) => _$NotesPollsVoteRequestFromJson(json);
+  factory NotesPollsVoteRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesPollsVoteRequestFromJson(json);
 }

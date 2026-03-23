@@ -10,5 +10,6 @@ abstract class ChatHistory with _$ChatHistory {
     @Default(false) bool? room,
   }) = _ChatHistory;
 
-  factory ChatHistory.fromJson(Map<String, Object?> json) => _$ChatHistoryFromJson(json);
+  factory ChatHistory.fromJson(Map<String, Object?> json) =>
+      _$ChatHistoryFromJson(json);
 }

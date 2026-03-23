@@ -17,5 +17,6 @@ abstract class UsersFollowingRequest with _$UsersFollowingRequest {
     String? birthday,
   }) = _UsersFollowingRequest;
 
-  factory UsersFollowingRequest.fromJson(Map<String, Object?> json) => _$UsersFollowingRequestFromJson(json);
+  factory UsersFollowingRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersFollowingRequestFromJson(json);
 }

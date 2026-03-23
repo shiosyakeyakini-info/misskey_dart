@@ -11,5 +11,6 @@ abstract class UsersListsUpdateRequest with _$UsersListsUpdateRequest {
     bool? isPublic,
   }) = _UsersListsUpdateRequest;
 
-  factory UsersListsUpdateRequest.fromJson(Map<String, Object?> json) => _$UsersListsUpdateRequestFromJson(json);
+  factory UsersListsUpdateRequest.fromJson(Map<String, Object?> json) =>
+      _$UsersListsUpdateRequestFromJson(json);
 }

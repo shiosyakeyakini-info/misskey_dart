@@ -14,5 +14,6 @@ abstract class RolesNotes with _$RolesNotes {
     int? untilDate,
   }) = _RolesNotes;
 
-  factory RolesNotes.fromJson(Map<String, Object?> json) => _$RolesNotesFromJson(json);
+  factory RolesNotes.fromJson(Map<String, Object?> json) =>
+      _$RolesNotesFromJson(json);
 }

@@ -15,5 +15,6 @@ abstract class NotesMentions with _$NotesMentions {
     String? visibility,
   }) = _NotesMentions;
 
-  factory NotesMentions.fromJson(Map<String, Object?> json) => _$NotesMentionsFromJson(json);
+  factory NotesMentions.fromJson(Map<String, Object?> json) =>
+      _$NotesMentionsFromJson(json);
 }

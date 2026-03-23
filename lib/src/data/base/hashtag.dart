@@ -15,5 +15,6 @@ abstract class Hashtag with _$Hashtag {
     required double attachedRemoteUsersCount,
   }) = _Hashtag;
 
-  factory Hashtag.fromJson(Map<String, Object?> json) => _$HashtagFromJson(json);
+  factory Hashtag.fromJson(Map<String, Object?> json) =>
+      _$HashtagFromJson(json);
 }

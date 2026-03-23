@@ -9,5 +9,6 @@ abstract class AdminRelaysAddRequest with _$AdminRelaysAddRequest {
     String? inbox,
   }) = _AdminRelaysAddRequest;
 
-  factory AdminRelaysAddRequest.fromJson(Map<String, Object?> json) => _$AdminRelaysAddRequestFromJson(json);
+  factory AdminRelaysAddRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminRelaysAddRequestFromJson(json);
 }

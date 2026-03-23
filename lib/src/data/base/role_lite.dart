@@ -16,5 +16,6 @@ abstract class RoleLite with _$RoleLite {
     required int displayOrder,
   }) = _RoleLite;
 
-  factory RoleLite.fromJson(Map<String, Object?> json) => _$RoleLiteFromJson(json);
+  factory RoleLite.fromJson(Map<String, Object?> json) =>
+      _$RoleLiteFromJson(json);
 }

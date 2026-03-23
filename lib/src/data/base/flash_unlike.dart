@@ -9,5 +9,6 @@ abstract class FlashUnlike with _$FlashUnlike {
     required String flashId,
   }) = _FlashUnlike;
 
-  factory FlashUnlike.fromJson(Map<String, Object?> json) => _$FlashUnlikeFromJson(json);
+  factory FlashUnlike.fromJson(Map<String, Object?> json) =>
+      _$FlashUnlikeFromJson(json);
 }

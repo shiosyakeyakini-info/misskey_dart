@@ -13,5 +13,6 @@ abstract class I2faRegisterResponse with _$I2faRegisterResponse {
     required String issuer,
   }) = _I2faRegisterResponse;
 
-  factory I2faRegisterResponse.fromJson(Map<String, Object?> json) => _$I2faRegisterResponseFromJson(json);
+  factory I2faRegisterResponse.fromJson(Map<String, Object?> json) =>
+      _$I2faRegisterResponseFromJson(json);
 }

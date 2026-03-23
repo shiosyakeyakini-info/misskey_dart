@@ -9,5 +9,6 @@ abstract class AdminShowUserRequest with _$AdminShowUserRequest {
     String? userId,
   }) = _AdminShowUserRequest;
 
-  factory AdminShowUserRequest.fromJson(Map<String, Object?> json) => _$AdminShowUserRequestFromJson(json);
+  factory AdminShowUserRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminShowUserRequestFromJson(json);
 }

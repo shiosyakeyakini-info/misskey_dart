@@ -14,5 +14,6 @@ abstract class ChannelsCreate with _$ChannelsCreate {
     bool? allowRenoteToExternal,
   }) = _ChannelsCreate;
 
-  factory ChannelsCreate.fromJson(Map<String, Object?> json) => _$ChannelsCreateFromJson(json);
+  factory ChannelsCreate.fromJson(Map<String, Object?> json) =>
+      _$ChannelsCreateFromJson(json);
 }

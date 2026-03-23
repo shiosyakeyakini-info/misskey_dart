@@ -9,5 +9,6 @@ abstract class GalleryPostsShowRequest with _$GalleryPostsShowRequest {
     String? postId,
   }) = _GalleryPostsShowRequest;
 
-  factory GalleryPostsShowRequest.fromJson(Map<String, Object?> json) => _$GalleryPostsShowRequestFromJson(json);
+  factory GalleryPostsShowRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsShowRequestFromJson(json);
 }

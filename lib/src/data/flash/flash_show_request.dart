@@ -9,5 +9,6 @@ abstract class FlashShowRequest with _$FlashShowRequest {
     String? flashId,
   }) = _FlashShowRequest;
 
-  factory FlashShowRequest.fromJson(Map<String, Object?> json) => _$FlashShowRequestFromJson(json);
+  factory FlashShowRequest.fromJson(Map<String, Object?> json) =>
+      _$FlashShowRequestFromJson(json);
 }

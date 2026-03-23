@@ -13,5 +13,6 @@ abstract class IPageLikesRequest with _$IPageLikesRequest {
     int? untilDate,
   }) = _IPageLikesRequest;
 
-  factory IPageLikesRequest.fromJson(Map<String, Object?> json) => _$IPageLikesRequestFromJson(json);
+  factory IPageLikesRequest.fromJson(Map<String, Object?> json) =>
+      _$IPageLikesRequestFromJson(json);
 }

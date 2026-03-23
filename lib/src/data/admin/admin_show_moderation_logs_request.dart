@@ -4,7 +4,8 @@ part 'admin_show_moderation_logs_request.freezed.dart';
 part 'admin_show_moderation_logs_request.g.dart';
 
 @freezed
-abstract class AdminShowModerationLogsRequest with _$AdminShowModerationLogsRequest {
+abstract class AdminShowModerationLogsRequest
+    with _$AdminShowModerationLogsRequest {
   const factory AdminShowModerationLogsRequest({
     @Default(10) int? limit,
     String? sinceId,
@@ -16,5 +17,6 @@ abstract class AdminShowModerationLogsRequest with _$AdminShowModerationLogsRequ
     String? search,
   }) = _AdminShowModerationLogsRequest;
 
-  factory AdminShowModerationLogsRequest.fromJson(Map<String, Object?> json) => _$AdminShowModerationLogsRequestFromJson(json);
+  factory AdminShowModerationLogsRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminShowModerationLogsRequestFromJson(json);
 }

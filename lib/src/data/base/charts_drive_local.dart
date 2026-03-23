@@ -12,5 +12,6 @@ abstract class ChartsDriveLocal with _$ChartsDriveLocal {
     required List<double> decSize,
   }) = _ChartsDriveLocal;
 
-  factory ChartsDriveLocal.fromJson(Map<String, Object?> json) => _$ChartsDriveLocalFromJson(json);
+  factory ChartsDriveLocal.fromJson(Map<String, Object?> json) =>
+      _$ChartsDriveLocalFromJson(json);
 }

@@ -14,5 +14,6 @@ abstract class DriveFilesAttachedNotes with _$DriveFilesAttachedNotes {
     required String fileId,
   }) = _DriveFilesAttachedNotes;
 
-  factory DriveFilesAttachedNotes.fromJson(Map<String, Object?> json) => _$DriveFilesAttachedNotesFromJson(json);
+  factory DriveFilesAttachedNotes.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesAttachedNotesFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class ChartsUserReactionsLocal with _$ChartsUserReactionsLocal {
     required List<double> count,
   }) = _ChartsUserReactionsLocal;
 
-  factory ChartsUserReactionsLocal.fromJson(Map<String, Object?> json) => _$ChartsUserReactionsLocalFromJson(json);
+  factory ChartsUserReactionsLocal.fromJson(Map<String, Object?> json) =>
+      _$ChartsUserReactionsLocalFromJson(json);
 }

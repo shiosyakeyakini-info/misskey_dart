@@ -9,5 +9,6 @@ abstract class ChatMessagesShowRequest with _$ChatMessagesShowRequest {
     String? messageId,
   }) = _ChatMessagesShowRequest;
 
-  factory ChatMessagesShowRequest.fromJson(Map<String, Object?> json) => _$ChatMessagesShowRequestFromJson(json);
+  factory ChatMessagesShowRequest.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesShowRequestFromJson(json);
 }

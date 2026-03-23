@@ -9,5 +9,6 @@ abstract class FederationStatsRequest with _$FederationStatsRequest {
     @Default(10) int? limit,
   }) = _FederationStatsRequest;
 
-  factory FederationStatsRequest.fromJson(Map<String, Object?> json) => _$FederationStatsRequestFromJson(json);
+  factory FederationStatsRequest.fromJson(Map<String, Object?> json) =>
+      _$FederationStatsRequestFromJson(json);
 }

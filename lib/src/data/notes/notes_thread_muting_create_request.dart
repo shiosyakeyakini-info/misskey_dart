@@ -4,10 +4,12 @@ part 'notes_thread_muting_create_request.freezed.dart';
 part 'notes_thread_muting_create_request.g.dart';
 
 @freezed
-abstract class NotesThreadMutingCreateRequest with _$NotesThreadMutingCreateRequest {
+abstract class NotesThreadMutingCreateRequest
+    with _$NotesThreadMutingCreateRequest {
   const factory NotesThreadMutingCreateRequest({
     String? noteId,
   }) = _NotesThreadMutingCreateRequest;
 
-  factory NotesThreadMutingCreateRequest.fromJson(Map<String, Object?> json) => _$NotesThreadMutingCreateRequestFromJson(json);
+  factory NotesThreadMutingCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesThreadMutingCreateRequestFromJson(json);
 }

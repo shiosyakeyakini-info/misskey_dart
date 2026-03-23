@@ -9,5 +9,6 @@ abstract class IReadAnnouncement with _$IReadAnnouncement {
     required String announcementId,
   }) = _IReadAnnouncement;
 
-  factory IReadAnnouncement.fromJson(Map<String, Object?> json) => _$IReadAnnouncementFromJson(json);
+  factory IReadAnnouncement.fromJson(Map<String, Object?> json) =>
+      _$IReadAnnouncementFromJson(json);
 }

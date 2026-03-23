@@ -9,5 +9,6 @@ abstract class ChatRoomsInvitationsIgnore with _$ChatRoomsInvitationsIgnore {
     required String roomId,
   }) = _ChatRoomsInvitationsIgnore;
 
-  factory ChatRoomsInvitationsIgnore.fromJson(Map<String, Object?> json) => _$ChatRoomsInvitationsIgnoreFromJson(json);
+  factory ChatRoomsInvitationsIgnore.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsInvitationsIgnoreFromJson(json);
 }

@@ -9,5 +9,6 @@ abstract class IMoveRequest with _$IMoveRequest {
     String? moveToAccount,
   }) = _IMoveRequest;
 
-  factory IMoveRequest.fromJson(Map<String, Object?> json) => _$IMoveRequestFromJson(json);
+  factory IMoveRequest.fromJson(Map<String, Object?> json) =>
+      _$IMoveRequestFromJson(json);
 }

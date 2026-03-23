@@ -7,12 +7,14 @@ part 'admin_captcha_current.g.dart';
 @freezed
 abstract class AdminCaptchaCurrent with _$AdminCaptchaCurrent {
   const factory AdminCaptchaCurrent({
-    @JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown) required AdminCaptchaCurrentProvider provider,
+    @JsonKey(unknownEnumValue: AdminCaptchaCurrentProvider.unknown)
+    required AdminCaptchaCurrentProvider provider,
     required AdminCaptchaCurrentHcaptcha hcaptcha,
     required AdminCaptchaCurrentMcaptcha mcaptcha,
     required AdminCaptchaCurrentRecaptcha recaptcha,
     required AdminCaptchaCurrentTurnstile turnstile,
   }) = _AdminCaptchaCurrent;
 
-  factory AdminCaptchaCurrent.fromJson(Map<String, Object?> json) => _$AdminCaptchaCurrentFromJson(json);
+  factory AdminCaptchaCurrent.fromJson(Map<String, Object?> json) =>
+      _$AdminCaptchaCurrentFromJson(json);
 }

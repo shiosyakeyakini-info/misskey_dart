@@ -9,5 +9,6 @@ abstract class AdminResetPassword with _$AdminResetPassword {
     required String password,
   }) = _AdminResetPassword;
 
-  factory AdminResetPassword.fromJson(Map<String, Object?> json) => _$AdminResetPasswordFromJson(json);
+  factory AdminResetPassword.fromJson(Map<String, Object?> json) =>
+      _$AdminResetPasswordFromJson(json);
 }

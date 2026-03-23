@@ -20,5 +20,6 @@ abstract class NotesUserListTimeline with _$NotesUserListTimeline {
     @Default(false) bool? withFiles,
   }) = _NotesUserListTimeline;
 
-  factory NotesUserListTimeline.fromJson(Map<String, Object?> json) => _$NotesUserListTimelineFromJson(json);
+  factory NotesUserListTimeline.fromJson(Map<String, Object?> json) =>
+      _$NotesUserListTimelineFromJson(json);
 }

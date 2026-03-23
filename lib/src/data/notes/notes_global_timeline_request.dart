@@ -15,5 +15,6 @@ abstract class NotesGlobalTimelineRequest with _$NotesGlobalTimelineRequest {
     int? untilDate,
   }) = _NotesGlobalTimelineRequest;
 
-  factory NotesGlobalTimelineRequest.fromJson(Map<String, Object?> json) => _$NotesGlobalTimelineRequestFromJson(json);
+  factory NotesGlobalTimelineRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesGlobalTimelineRequestFromJson(json);
 }

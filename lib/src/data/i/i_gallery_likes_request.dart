@@ -13,5 +13,6 @@ abstract class IGalleryLikesRequest with _$IGalleryLikesRequest {
     int? untilDate,
   }) = _IGalleryLikesRequest;
 
-  factory IGalleryLikesRequest.fromJson(Map<String, Object?> json) => _$IGalleryLikesRequestFromJson(json);
+  factory IGalleryLikesRequest.fromJson(Map<String, Object?> json) =>
+      _$IGalleryLikesRequestFromJson(json);
 }

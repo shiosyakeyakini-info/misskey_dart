@@ -9,5 +9,6 @@ abstract class GalleryPostsShow with _$GalleryPostsShow {
     required String postId,
   }) = _GalleryPostsShow;
 
-  factory GalleryPostsShow.fromJson(Map<String, Object?> json) => _$GalleryPostsShowFromJson(json);
+  factory GalleryPostsShow.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsShowFromJson(json);
 }

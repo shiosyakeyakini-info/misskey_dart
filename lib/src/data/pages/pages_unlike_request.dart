@@ -9,5 +9,6 @@ abstract class PagesUnlikeRequest with _$PagesUnlikeRequest {
     String? pageId,
   }) = _PagesUnlikeRequest;
 
-  factory PagesUnlikeRequest.fromJson(Map<String, Object?> json) => _$PagesUnlikeRequestFromJson(json);
+  factory PagesUnlikeRequest.fromJson(Map<String, Object?> json) =>
+      _$PagesUnlikeRequestFromJson(json);
 }

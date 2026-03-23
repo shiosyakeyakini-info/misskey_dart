@@ -8,9 +8,11 @@ part 'admin_system_webhook_test.g.dart';
 abstract class AdminSystemWebhookTest with _$AdminSystemWebhookTest {
   const factory AdminSystemWebhookTest({
     required String webhookId,
-    @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown) required AdminSystemWebhookTestType type,
+    @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
+    required AdminSystemWebhookTestType type,
     @JsonKey(name: 'override') AdminSystemWebhookTestOverride? override_,
   }) = _AdminSystemWebhookTest;
 
-  factory AdminSystemWebhookTest.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookTestFromJson(json);
+  factory AdminSystemWebhookTest.fromJson(Map<String, Object?> json) =>
+      _$AdminSystemWebhookTestFromJson(json);
 }

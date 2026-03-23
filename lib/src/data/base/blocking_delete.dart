@@ -9,5 +9,6 @@ abstract class BlockingDelete with _$BlockingDelete {
     required String userId,
   }) = _BlockingDelete;
 
-  factory BlockingDelete.fromJson(Map<String, Object?> json) => _$BlockingDeleteFromJson(json);
+  factory BlockingDelete.fromJson(Map<String, Object?> json) =>
+      _$BlockingDeleteFromJson(json);
 }

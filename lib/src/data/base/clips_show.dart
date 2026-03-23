@@ -9,5 +9,6 @@ abstract class ClipsShow with _$ClipsShow {
     required String clipId,
   }) = _ClipsShow;
 
-  factory ClipsShow.fromJson(Map<String, Object?> json) => _$ClipsShowFromJson(json);
+  factory ClipsShow.fromJson(Map<String, Object?> json) =>
+      _$ClipsShowFromJson(json);
 }

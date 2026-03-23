@@ -9,5 +9,6 @@ abstract class FollowingInvalidate with _$FollowingInvalidate {
     required String userId,
   }) = _FollowingInvalidate;
 
-  factory FollowingInvalidate.fromJson(Map<String, Object?> json) => _$FollowingInvalidateFromJson(json);
+  factory FollowingInvalidate.fromJson(Map<String, Object?> json) =>
+      _$FollowingInvalidateFromJson(json);
 }
