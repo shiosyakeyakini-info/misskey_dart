@@ -39,25 +39,19 @@ export function generateEntityFile(
     return null;
   }
 
-  const imports = new Set<string>();
-  imports.add("import 'package:freezed_annotation/freezed_annotation.dart';");
+  const imports = [
+    "import 'package:freezed_annotation/freezed_annotation.dart';",
+    "import 'package:misskey_dart/misskey_dart.dart';",
+  ];
 
   const fileName = classNameToFileName(name);
   const lines: string[] = [];
 
-  // Collect field lines and additional imports
-  let needsBarrelImport = false;
+  // Collect field lines
   const fieldLines: string[] = [];
   for (const [propName, prop] of properties) {
     const fieldOverride = getFieldOverride(name, propName, config);
-    const result = generateField(prop, fieldOverride, name, config);
-    fieldLines.push(result.line);
-    if (result.needsBarrelImport) {
-      needsBarrelImport = true;
-    }
-    for (const imp of result.fieldImports) {
-      imports.add(imp);
-    }
+    fieldLines.push(generateField(prop, fieldOverride, name, config));
   }
 
   // Add extra fields from config (fields not in api.json but needed for compatibility)
@@ -67,9 +61,6 @@ export function generateEntityFile(
       const parts: string[] = [];
       if (extra.converter) {
         parts.push(`@${extra.converter}()`);
-        if (extra.import) {
-          imports.add(`import '${extra.import}';`);
-        }
       }
       if (extra.default !== undefined) {
         parts.push(`@Default(${extra.default})`);
@@ -77,19 +68,11 @@ export function generateEntityFile(
       const nullSuffix = extra.nullable ? "?" : "";
       parts.push(`${extra.dart_type}${nullSuffix} ${fieldName},`);
       fieldLines.push(`    ${parts.join(" ")}`);
-      needsBarrelImport = true;
     }
   }
 
-  // Only add barrel import when fields reference external types
-  if (needsBarrelImport) {
-    imports.add("import 'package:misskey_dart/misskey_dart.dart';");
-  }
-
   // Build file content
-  const sortedImports = [...imports].sort();
-
-  lines.push(...sortedImports);
+  lines.push(...imports);
   lines.push("");
   lines.push(`part '${fileName}.freezed.dart';`);
   lines.push(`part '${fileName}.g.dart';`);
@@ -175,12 +158,6 @@ function getFieldOverride(
   return config.field_overrides?.[schemaName]?.[fieldName];
 }
 
-interface FieldResult {
-  line: string;
-  fieldImports: string[];
-  needsBarrelImport: boolean;
-}
-
 /**
  * Generate a single field line for a Freezed constructor.
  */
@@ -189,10 +166,8 @@ function generateField(
   fieldOverride: FieldOverride | undefined,
   schemaName: string,
   config: OverrideConfig
-): FieldResult {
-  const fieldImports: string[] = [];
+): string {
   const annotations: string[] = [];
-  let needsBarrelImport = false;
 
   // Determine Dart type
   let dartType: string;
@@ -202,16 +177,12 @@ function generateField(
   if (fieldOverride?.dart_type) {
     dartType = fieldOverride.dart_type;
     isRequired = !dartType.endsWith("?") && !fieldOverride.default;
-    // Field overrides with custom dart_type likely reference external types
-    needsBarrelImport = true;
   } else if (prop.schema.type === "ref" && prop.schema.refTarget) {
     const refName = prop.schema.refTarget;
     dartType = prop.isNullable ? `${refName}?` : refName;
-    needsBarrelImport = true;
   } else if (prop.schema.type === "array" && prop.schema.items) {
     const itemType = resolveItemType(prop.schema.items);
     dartType = prop.isNullable ? `List<${itemType}>?` : `List<${itemType}>`;
-    if (isExternalType(itemType)) needsBarrelImport = true;
   } else if (
     prop.schema.type === "object" &&
     prop.schema.additionalProperties
@@ -223,16 +194,12 @@ function generateField(
     dartType = prop.isNullable
       ? `Map<String, ${valueType}>?`
       : `Map<String, ${valueType}>`;
-    if (isExternalType(valueType)) needsBarrelImport = true;
   } else if (prop.schema.type === "enum") {
     const enumName = prop.schema.name;
     dartType = prop.isNullable ? `${enumName}?` : enumName;
-    needsBarrelImport = true;
   } else if (prop.schema.type === "object" && prop.schema.properties.size > 0) {
-    // Inline object → reference its generated class name
     const inlineName = prop.schema.name;
     dartType = prop.isNullable ? `${inlineName}?` : inlineName;
-    needsBarrelImport = true;
   } else {
     const mapping = mapType(
       prop.schema.type === "unknown" ? "string" : prop.schema.type,
@@ -244,8 +211,6 @@ function generateField(
     dartType = mapping.dartType;
     if (mapping.converter) {
       annotations.push(`@${mapping.converter.converter}()`);
-      // Converter types are available via barrel import, no individual import needed
-      needsBarrelImport = true;
     }
   }
 
@@ -257,8 +222,6 @@ function generateField(
   // Apply converter from override
   if (fieldOverride?.converter) {
     annotations.push(`@${fieldOverride.converter}()`);
-    // Converter types are available via barrel import, no individual import needed
-    needsBarrelImport = true;
   }
 
   // Apply default value
@@ -331,19 +294,7 @@ function generateField(
     parts.push(`${dartType} ${prop.dartName},`);
   }
 
-  return {
-    line: parts.join(""),
-    fieldImports,
-    needsBarrelImport,
-  };
-}
-
-/**
- * Check if a type name is an external (non-primitive) type that needs barrel import.
- */
-function isExternalType(typeName: string): boolean {
-  const primitives = new Set(["String", "int", "double", "bool", "dynamic", "num", "Object"]);
-  return !primitives.has(typeName);
+  return parts.join("");
 }
 
 /**

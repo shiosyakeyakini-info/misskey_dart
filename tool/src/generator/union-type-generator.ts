@@ -36,12 +36,12 @@ export function generateUnionTypeFile(
   const fileName = classNameToFileName(targetClass);
   const discriminatorField = schema.discriminator?.field ?? "type";
 
+  const imports = [
+    "import 'package:freezed_annotation/freezed_annotation.dart';",
+    "import 'package:misskey_dart/misskey_dart.dart';",
+  ];
+
   const lines: string[] = [];
-
-  const imports = new Set<string>();
-  imports.add("import 'package:freezed_annotation/freezed_annotation.dart';");
-
-  let needsBarrelImport = false;
 
   lines.push(`part '${fileName}.freezed.dart';`);
   lines.push(`part '${fileName}.g.dart';`);
@@ -54,27 +54,11 @@ export function generateUnionTypeFile(
       discriminatorField,
       config,
       parsed,
-      imports
     );
-    lines.push(...result.lines);
-    needsBarrelImport = result.needsBarrelImport;
+    lines.push(...result);
   }
 
-  if (needsBarrelImport) {
-    imports.add("import 'package:misskey_dart/misskey_dart.dart';");
-  }
-
-  // Prepend imports
-  const sortedImports = [...imports].sort();
-  return [...sortedImports, "", ...lines, ""].join("\n");
-}
-
-/**
- * Generate a Freezed sealed class with union variants.
- */
-interface SealedClassResult {
-  lines: string[];
-  needsBarrelImport: boolean;
+  return [...imports, "", ...lines, ""].join("\n");
 }
 
 function generateSealedClass(
@@ -83,10 +67,8 @@ function generateSealedClass(
   discriminatorField: string,
   config: OverrideConfig,
   parsed: ParsedApi,
-  imports: Set<string>
-): SealedClassResult {
+): string[] {
   const lines: string[] = [];
-  let needsBarrelImport = false;
 
   lines.push(`@Freezed(unionKey: "${discriminatorField}", fallbackUnion: "unknown")`);
   lines.push(`sealed class ${className} with _\$${className} {`);
@@ -163,9 +145,9 @@ function generateSealedClass(
         if (propName === discriminatorField) continue;
 
         const dartType = resolveDartType(prop, config, className);
-        if (isExternalDartType(dartType, className)) needsBarrelImport = true;
-        const annotations = resolveDartAnnotations(prop, config, className, imports);
-        if (annotations) needsBarrelImport = true;
+
+        const annotations = resolveDartAnnotations(prop, config, className);
+
 
         if (prop.isRequired && !prop.isNullable) {
           fields.push(`    ${annotations}required ${dartType} ${prop.dartName},`);
@@ -206,9 +188,9 @@ function generateSealedClass(
         if (propName === discriminatorField) continue;
 
         const dartType = resolveDartType(prop, config, className);
-        if (isExternalDartType(dartType, className)) needsBarrelImport = true;
-        const annotations = resolveDartAnnotations(prop, config, className, imports);
-        if (annotations) needsBarrelImport = true;
+
+        const annotations = resolveDartAnnotations(prop, config, className);
+
 
         if (prop.isRequired && !prop.isNullable) {
           fields.push(`    ${annotations}required ${dartType} ${prop.dartName},`);
@@ -243,9 +225,7 @@ function generateSealedClass(
     if (!dartType.endsWith("?")) {
       dartType = `${dartType}?`;
     }
-    if (isExternalDartType(dartType, className)) needsBarrelImport = true;
-    const annotations = resolveDartAnnotations(prop, config, className, imports);
-    if (annotations) needsBarrelImport = true;
+    const annotations = resolveDartAnnotations(prop, config, className);
     lines.push(`    ${annotations}${dartType} ${prop.dartName},`);
   }
 
@@ -257,7 +237,7 @@ function generateSealedClass(
   );
   lines.push("}");
 
-  return { lines, needsBarrelImport };
+  return lines;
 }
 
 /**
@@ -322,32 +302,13 @@ function resolveDartType(
 }
 
 /**
- * Check if a Dart type name references an external (non-primitive) type.
- * Self-references (to the current class) are not external.
- */
-function isExternalDartType(dartType: string, selfClassName?: string): boolean {
-  const bare = dartType.replace(/[?]$/, "");
-  const primitives = new Set(["String", "int", "double", "bool", "dynamic", "num", "Object"]);
-  if (selfClassName) primitives.add(selfClassName);
-  // Check for List<T>, Map<K,V> with non-primitive type args
-  if (bare.startsWith("List<") || bare.startsWith("Map<")) {
-    const inner = bare.slice(bare.indexOf("<") + 1, bare.lastIndexOf(">"));
-    return inner.split(",").some(t => !primitives.has(t.trim().replace(/[?]$/, "")));
-  }
-  return !primitives.has(bare);
-}
-
-/**
  * Resolve Dart annotations for a property.
  */
 function resolveDartAnnotations(
   prop: ResolvedProperty,
   config: OverrideConfig,
   schemaName: string,
-  imports: Set<string>
 ): string {
-  const annotations: string[] = [];
-
   const mapping = mapType(
     prop.schema.type === "unknown" ? "string" : prop.schema.type,
     prop.format,
@@ -357,12 +318,8 @@ function resolveDartAnnotations(
   );
 
   if (mapping.converter) {
-    annotations.push(`@${mapping.converter.converter}()`);
-    if (mapping.needsImport) {
-      imports.add(`import '${mapping.needsImport}';`);
-    }
+    return `@${mapping.converter.converter}() `;
   }
 
-  if (annotations.length === 0) return "";
-  return annotations.join(" ") + " ";
+  return "";
 }
