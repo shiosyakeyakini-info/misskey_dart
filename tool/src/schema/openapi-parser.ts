@@ -112,6 +112,20 @@ function parseEndpoints(
       if (endpointOverride.return_type === "void" || endpointOverride.return_type === "dynamic") {
         responseType = endpointOverride.return_type as EndpointInfo["responseType"];
         responseSchema = undefined;
+      } else if (["int", "double", "String", "bool"].includes(endpointOverride.return_type)) {
+        // Primitive type override (e.g., api.json says "number" but server returns int)
+        responseType = "primitive";
+        responseSchema = {
+          name: endpointOverride.return_type,
+          originalName: path,
+          type: endpointOverride.return_type === "int" ? "integer"
+            : endpointOverride.return_type === "double" ? "number"
+            : endpointOverride.return_type === "bool" ? "boolean"
+            : "string",
+          properties: new Map(),
+          required: [],
+          isSelfReferencing: false,
+        };
       }
     }
 

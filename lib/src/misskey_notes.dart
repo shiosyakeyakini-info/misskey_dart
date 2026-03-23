@@ -181,8 +181,8 @@ class MisskeyNotesDrafts {
       : _apiService = apiService;
 
   /// notes/drafts/count
-  Future<double> count() async {
-    return await _apiService.post<double>("notes/drafts/count", {});
+  Future<int> count() async {
+    return await _apiService.post<int>("notes/drafts/count", {});
   }
 
   /// notes/drafts/create

@@ -201,7 +201,16 @@ function printApiSummary(parsed: ReturnType<typeof parseApiJson>) {
 }
 
 function runPostGeneration() {
-  const dartCmd = existsSync(resolve(PROJECT_ROOT, ".fvmrc")) ? "fvm dart" : "dart";
+  // Use fvm if .fvmrc exists AND fvm is available in PATH
+  let dartCmd = "dart";
+  if (existsSync(resolve(PROJECT_ROOT, ".fvmrc"))) {
+    try {
+      execSync("fvm --version", { stdio: "pipe" });
+      dartCmd = "fvm dart";
+    } catch {
+      // fvm not in PATH, fall back to plain dart
+    }
+  }
 
   console.log("\n=== Post-generation ===");
 

@@ -186,6 +186,10 @@ endpoint_overrides:
   "/users/relation":
     return_type: void
 
+  # Count endpoint returns integer (api.json says "number" but server returns int)
+  "/notes/drafts/count":
+    return_type: int
+
   # Registry returns dynamic values (string, null, number, array, boolean, object)
   # Response uses text/plain content-type, requiring manual JSON decode
   "/i/registry/get":
