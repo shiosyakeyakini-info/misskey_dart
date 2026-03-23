@@ -12,6 +12,7 @@
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { existsSync, readdirSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { parseApiJson } from "./schema/openapi-parser.js";
 import { loadOverrideConfig, loadVersionsConfig } from "./config/config-loader.js";
 import { generateAll } from "./generator/dart-generator.js";
@@ -47,6 +48,11 @@ async function main() {
     await runMultiVersion(outputDir, configPath, config);
   } else {
     await runSingleVersion(apiJsonPath, outputDir, config);
+  }
+
+  // Post-generation: build_runner + dart fix
+  if (args.includes("--build")) {
+    runPostGeneration();
   }
 }
 
@@ -192,6 +198,35 @@ function printApiSummary(parsed: ReturnType<typeof parseApiJson>) {
     console.log(`    ${type}: ${count}`);
   }
   console.log();
+}
+
+function runPostGeneration() {
+  const dartCmd = existsSync(resolve(PROJECT_ROOT, ".fvmrc")) ? "fvm dart" : "dart";
+
+  console.log("\n=== Post-generation ===");
+
+  console.log("Running build_runner...");
+  execSync(`${dartCmd} run build_runner build --delete-conflicting-outputs`, {
+    cwd: PROJECT_ROOT,
+    stdio: "inherit",
+    timeout: 600000, // 10 minutes
+  });
+
+  console.log("Running dart fix...");
+  execSync(`${dartCmd} fix --apply`, {
+    cwd: PROJECT_ROOT,
+    stdio: "inherit",
+    timeout: 120000,
+  });
+
+  console.log("Running dart format...");
+  execSync(`${dartCmd} format lib/`, {
+    cwd: PROJECT_ROOT,
+    stdio: "inherit",
+    timeout: 120000,
+  });
+
+  console.log("\nPost-generation complete!");
 }
 
 function getArg(args: string[], flag: string): string | undefined {

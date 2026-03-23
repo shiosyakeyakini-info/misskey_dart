@@ -1,35 +1,42 @@
 # misskey_dart Code Generation Pipeline
 #
 # Usage:
-#   make generate          - Generate Dart code from api.json.sample (single version)
-#   make generate-multi    - Generate with multi-version compatibility
+#   make all               - Full pipeline: generate + build + fix + format + verify
+#   make all-multi         - Full pipeline with multi-version support
+#   make generate          - Generate Dart code only
+#   make generate-build    - Generate + build_runner + dart fix + dart format (one command)
+#   make verify            - Run dart analyze + dart test
 #   make collect           - Collect api.json from all configured Misskey versions
 #   make update-versions   - Fetch latest Misskey release tags and update versions.yaml
-#   make build             - Run build_runner (freezed + json_serializable)
-#   make verify            - Run dart analyze + dart test
-#   make all               - Full pipeline: generate → build → verify
-#   make all-multi         - Full pipeline with multi-version support
 
 TOOL_DIR := tool
 FVM := fvm dart
 
-.PHONY: all all-multi generate generate-multi build verify analyze test collect update-versions clean
+.PHONY: all all-multi generate generate-multi generate-build generate-build-multi build verify analyze test collect update-versions clean
 
 # Full pipeline (single version)
-all: generate build verify
+all: generate-build verify
 
 # Full pipeline (multi-version)
-all-multi: generate-multi build verify
+all-multi: generate-build-multi verify
 
-# Generate Dart code from api.json (single version, default)
+# Generate + build_runner + dart fix + dart format (recommended)
+generate-build:
+	cd $(TOOL_DIR) && npx tsx src/index.ts --output ../lib/src --build
+
+# Generate + build (multi-version)
+generate-build-multi:
+	cd $(TOOL_DIR) && npx tsx src/index.ts --output ../lib/src --multi --build
+
+# Generate Dart code only (no build_runner / dart fix)
 generate:
 	cd $(TOOL_DIR) && npx tsx src/index.ts --output ../lib/src
 
-# Generate with multi-version compatibility
+# Generate with multi-version compatibility (no build)
 generate-multi:
 	cd $(TOOL_DIR) && npx tsx src/index.ts --output ../lib/src --multi
 
-# Run build_runner to generate .freezed.dart and .g.dart
+# Run build_runner only
 build:
 	$(FVM) run build_runner build --delete-conflicting-outputs
 

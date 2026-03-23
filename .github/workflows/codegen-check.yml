@@ -53,12 +53,10 @@ jobs:
         run: |
           cd tool && npm ci
           dart pub get
-      - name: Generate code
-        run: cd tool && npx tsx src/index.ts --output ../lib/src
-      - name: Build (freezed + json_serializable)
-        run: dart run build_runner build --delete-conflicting-outputs
+      - name: Generate + Build + Fix + Format
+        run: cd tool && npx tsx src/index.ts --output ../lib/src --build
       - name: Analyze
-        run: dart analyze lib/
+        run: dart analyze --fatal-infos lib/
       - name: Check for changes
         run: |
           if git diff --quiet lib/; then
