@@ -16,9 +16,7 @@ _ChatMessageLiteFor1on1 _$ChatMessageLiteFor1on1FromJson(
       toUserId: json['toUserId'] as String,
       text: json['text'] as String?,
       fileId: json['fileId'] as String?,
-      file: json['file'] == null
-          ? null
-          : DriveFile.fromJson(json['file'] as Map<String, dynamic>),
+      file: json['file'] as Map<String, dynamic>?,
       reactions: (json['reactions'] as List<dynamic>)
           .map((e) => ChatMessageLiteFor1on1ReactionsItem.fromJson(
               e as Map<String, dynamic>))
@@ -34,6 +32,6 @@ Map<String, dynamic> _$ChatMessageLiteFor1on1ToJson(
       'toUserId': instance.toUserId,
       'text': instance.text,
       'fileId': instance.fileId,
-      'file': instance.file?.toJson(),
+      'file': instance.file,
       'reactions': instance.reactions.map((e) => e.toJson()).toList(),
     };

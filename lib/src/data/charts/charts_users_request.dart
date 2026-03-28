@@ -12,6 +12,5 @@ abstract class ChartsUsersRequest with _$ChartsUsersRequest {
     @Default(null) int? offset,
   }) = _ChartsUsersRequest;
 
-  factory ChartsUsersRequest.fromJson(Map<String, Object?> json) =>
-      _$ChartsUsersRequestFromJson(json);
+  factory ChartsUsersRequest.fromJson(Map<String, Object?> json) => _$ChartsUsersRequestFromJson(json);
 }

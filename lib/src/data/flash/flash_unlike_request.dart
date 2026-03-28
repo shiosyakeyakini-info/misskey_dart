@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'flash_unlike_request.freezed.dart';
 part 'flash_unlike_request.g.dart';
@@ -9,6 +10,5 @@ abstract class FlashUnlikeRequest with _$FlashUnlikeRequest {
     String? flashId,
   }) = _FlashUnlikeRequest;
 
-  factory FlashUnlikeRequest.fromJson(Map<String, Object?> json) =>
-      _$FlashUnlikeRequestFromJson(json);
+  factory FlashUnlikeRequest.fromJson(Map<String, Object?> json) => _$FlashUnlikeRequestFromJson(json);
 }

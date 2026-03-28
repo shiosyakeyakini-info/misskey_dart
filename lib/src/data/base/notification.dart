@@ -63,18 +63,6 @@ sealed class Notification with _$Notification {
     required Note note,
   }) = NotificationPollEnded;
 
-  const factory Notification.scheduledNotePosted({
-    required String id,
-    @DateTimeConverter() required DateTime createdAt,
-    required Note note,
-  }) = NotificationScheduledNotePosted;
-
-  const factory Notification.scheduledNotePostFailed({
-    required String id,
-    @DateTimeConverter() required DateTime createdAt,
-    required NoteDraft noteDraft,
-  }) = NotificationScheduledNotePostFailed;
-
   const factory Notification.follow({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -112,7 +100,7 @@ sealed class Notification with _$Notification {
   const factory Notification.achievementEarned({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
-    required AchievementName achievement,
+    required dynamic achievement,
   }) = NotificationAchievementEarned;
 
   const factory Notification.exportCompleted({
@@ -166,6 +154,5 @@ sealed class Notification with _$Notification {
     @DateTimeConverter() DateTime? createdAt,
   }) = NotificationUnknown;
 
-  factory Notification.fromJson(Map<String, Object?> json) =>
-      _$NotificationFromJson(json);
+  factory Notification.fromJson(Map<String, Object?> json) => _$NotificationFromJson(json);
 }

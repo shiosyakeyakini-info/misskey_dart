@@ -22,7 +22,7 @@ mixin _$ChatMessageLiteFor1on1 {
   String get toUserId;
   String? get text;
   String? get fileId;
-  DriveFile? get file;
+  Map<String, dynamic>? get file;
   List<ChatMessageLiteFor1on1ReactionsItem> get reactions;
 
   /// Create a copy of ChatMessageLiteFor1on1
@@ -50,7 +50,7 @@ mixin _$ChatMessageLiteFor1on1 {
                 other.toUserId == toUserId) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
-            (identical(other.file, file) || other.file == file) &&
+            const DeepCollectionEquality().equals(other.file, file) &&
             const DeepCollectionEquality().equals(other.reactions, reactions));
   }
 
@@ -64,7 +64,7 @@ mixin _$ChatMessageLiteFor1on1 {
       toUserId,
       text,
       fileId,
-      file,
+      const DeepCollectionEquality().hash(file),
       const DeepCollectionEquality().hash(reactions));
 
   @override
@@ -86,10 +86,8 @@ abstract mixin class $ChatMessageLiteFor1on1CopyWith<$Res> {
       String toUserId,
       String? text,
       String? fileId,
-      DriveFile? file,
+      Map<String, dynamic>? file,
       List<ChatMessageLiteFor1on1ReactionsItem> reactions});
-
-  $DriveFileCopyWith<$Res>? get file;
 }
 
 /// @nodoc
@@ -142,26 +140,12 @@ class _$ChatMessageLiteFor1on1CopyWithImpl<$Res>
       file: freezed == file
           ? _self.file
           : file // ignore: cast_nullable_to_non_nullable
-              as DriveFile?,
+              as Map<String, dynamic>?,
       reactions: null == reactions
           ? _self.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<ChatMessageLiteFor1on1ReactionsItem>,
     ));
-  }
-
-  /// Create a copy of ChatMessageLiteFor1on1
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFileCopyWith<$Res>? get file {
-    if (_self.file == null) {
-      return null;
-    }
-
-    return $DriveFileCopyWith<$Res>(_self.file!, (value) {
-      return _then(_self.copyWith(file: value));
-    });
   }
 }
 
@@ -175,9 +159,10 @@ class _ChatMessageLiteFor1on1 implements ChatMessageLiteFor1on1 {
       required this.toUserId,
       this.text,
       this.fileId,
-      this.file,
+      final Map<String, dynamic>? file,
       required final List<ChatMessageLiteFor1on1ReactionsItem> reactions})
-      : _reactions = reactions;
+      : _file = file,
+        _reactions = reactions;
   factory _ChatMessageLiteFor1on1.fromJson(Map<String, dynamic> json) =>
       _$ChatMessageLiteFor1on1FromJson(json);
 
@@ -194,8 +179,16 @@ class _ChatMessageLiteFor1on1 implements ChatMessageLiteFor1on1 {
   final String? text;
   @override
   final String? fileId;
+  final Map<String, dynamic>? _file;
   @override
-  final DriveFile? file;
+  Map<String, dynamic>? get file {
+    final value = _file;
+    if (value == null) return null;
+    if (_file is EqualUnmodifiableMapView) return _file;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   final List<ChatMessageLiteFor1on1ReactionsItem> _reactions;
   @override
   List<ChatMessageLiteFor1on1ReactionsItem> get reactions {
@@ -234,7 +227,7 @@ class _ChatMessageLiteFor1on1 implements ChatMessageLiteFor1on1 {
                 other.toUserId == toUserId) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
-            (identical(other.file, file) || other.file == file) &&
+            const DeepCollectionEquality().equals(other._file, _file) &&
             const DeepCollectionEquality()
                 .equals(other._reactions, _reactions));
   }
@@ -249,7 +242,7 @@ class _ChatMessageLiteFor1on1 implements ChatMessageLiteFor1on1 {
       toUserId,
       text,
       fileId,
-      file,
+      const DeepCollectionEquality().hash(_file),
       const DeepCollectionEquality().hash(_reactions));
 
   @override
@@ -273,11 +266,8 @@ abstract mixin class _$ChatMessageLiteFor1on1CopyWith<$Res>
       String toUserId,
       String? text,
       String? fileId,
-      DriveFile? file,
+      Map<String, dynamic>? file,
       List<ChatMessageLiteFor1on1ReactionsItem> reactions});
-
-  @override
-  $DriveFileCopyWith<$Res>? get file;
 }
 
 /// @nodoc
@@ -328,28 +318,14 @@ class __$ChatMessageLiteFor1on1CopyWithImpl<$Res>
           : fileId // ignore: cast_nullable_to_non_nullable
               as String?,
       file: freezed == file
-          ? _self.file
+          ? _self._file
           : file // ignore: cast_nullable_to_non_nullable
-              as DriveFile?,
+              as Map<String, dynamic>?,
       reactions: null == reactions
           ? _self._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<ChatMessageLiteFor1on1ReactionsItem>,
     ));
-  }
-
-  /// Create a copy of ChatMessageLiteFor1on1
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFileCopyWith<$Res>? get file {
-    if (_self.file == null) {
-      return null;
-    }
-
-    return $DriveFileCopyWith<$Res>(_self.file!, (value) {
-      return _then(_self.copyWith(file: value));
-    });
   }
 }
 

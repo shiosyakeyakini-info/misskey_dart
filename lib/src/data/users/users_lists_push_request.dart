@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_lists_push_request.freezed.dart';
 part 'users_lists_push_request.g.dart';
@@ -10,6 +11,5 @@ abstract class UsersListsPushRequest with _$UsersListsPushRequest {
     String? userId,
   }) = _UsersListsPushRequest;
 
-  factory UsersListsPushRequest.fromJson(Map<String, Object?> json) =>
-      _$UsersListsPushRequestFromJson(json);
+  factory UsersListsPushRequest.fromJson(Map<String, Object?> json) => _$UsersListsPushRequestFromJson(json);
 }

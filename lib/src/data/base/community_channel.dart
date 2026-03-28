@@ -14,7 +14,6 @@ abstract class CommunityChannel with _$CommunityChannel {
     String? description,
     String? userId,
     @NullableUriConverter() Uri? bannerUrl,
-    String? bannerId,
     required List<String> pinnedNoteIds,
     required String color,
     required bool isArchived,
@@ -24,10 +23,10 @@ abstract class CommunityChannel with _$CommunityChannel {
     required bool allowRenoteToExternal,
     bool? isFollowing,
     bool? isFavorited,
-    bool? isMuting,
     List<Note>? pinnedNotes,
+    String? bannerId,
+    bool? isMuting,
   }) = _CommunityChannel;
 
-  factory CommunityChannel.fromJson(Map<String, Object?> json) =>
-      _$CommunityChannelFromJson(json);
+  factory CommunityChannel.fromJson(Map<String, Object?> json) => _$CommunityChannelFromJson(json);
 }

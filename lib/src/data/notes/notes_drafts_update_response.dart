@@ -10,6 +10,5 @@ abstract class NotesDraftsUpdateResponse with _$NotesDraftsUpdateResponse {
     required NoteDraft updatedDraft,
   }) = _NotesDraftsUpdateResponse;
 
-  factory NotesDraftsUpdateResponse.fromJson(Map<String, Object?> json) =>
-      _$NotesDraftsUpdateResponseFromJson(json);
+  factory NotesDraftsUpdateResponse.fromJson(Map<String, Object?> json) => _$NotesDraftsUpdateResponseFromJson(json);
 }

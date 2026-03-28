@@ -17,6 +17,5 @@ abstract class FetchRss with _$FetchRss {
     FetchRssItunes? itunes,
   }) = _FetchRss;
 
-  factory FetchRss.fromJson(Map<String, Object?> json) =>
-      _$FetchRssFromJson(json);
+  factory FetchRss.fromJson(Map<String, Object?> json) => _$FetchRssFromJson(json);
 }

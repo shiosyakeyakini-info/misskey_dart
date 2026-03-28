@@ -2,23 +2,6 @@
 # misskey_dart Code Generator Override Configuration
 # ============================================================
 
-# Format-based automatic converter application
-format_converters:
-  date-time:
-    non_nullable:
-      converter: DateTimeConverter
-      import: "package:misskey_dart/src/converters/date_time_converter.dart"
-    nullable:
-      converter: NullableDateTimeConverter
-      import: "package:misskey_dart/src/converters/date_time_converter.dart"
-  url:
-    non_nullable:
-      converter: UriConverter
-      import: "package:misskey_dart/src/converters/uri_converter.dart"
-    nullable:
-      converter: NullableUriConverter
-      import: "package:misskey_dart/src/converters/uri_converter.dart"
-
 # Field-level overrides
 field_overrides:
   UserLite:

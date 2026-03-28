@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_update_request.freezed.dart';
 part 'admin_emoji_update_request.g.dart';
@@ -17,6 +18,5 @@ abstract class AdminEmojiUpdateRequest with _$AdminEmojiUpdateRequest {
     List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _AdminEmojiUpdateRequest;
 
-  factory AdminEmojiUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminEmojiUpdateRequestFromJson(json);
+  factory AdminEmojiUpdateRequest.fromJson(Map<String, Object?> json) => _$AdminEmojiUpdateRequestFromJson(json);
 }

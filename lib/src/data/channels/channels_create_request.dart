@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_create_request.freezed.dart';
 part 'channels_create_request.g.dart';
@@ -14,6 +15,5 @@ abstract class ChannelsCreateRequest with _$ChannelsCreateRequest {
     bool? allowRenoteToExternal,
   }) = _ChannelsCreateRequest;
 
-  factory ChannelsCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelsCreateRequestFromJson(json);
+  factory ChannelsCreateRequest.fromJson(Map<String, Object?> json) => _$ChannelsCreateRequestFromJson(json);
 }

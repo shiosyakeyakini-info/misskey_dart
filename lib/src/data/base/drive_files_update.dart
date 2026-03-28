@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_update.freezed.dart';
 part 'drive_files_update.g.dart';
@@ -13,6 +14,5 @@ abstract class DriveFilesUpdate with _$DriveFilesUpdate {
     String? comment,
   }) = _DriveFilesUpdate;
 
-  factory DriveFilesUpdate.fromJson(Map<String, Object?> json) =>
-      _$DriveFilesUpdateFromJson(json);
+  factory DriveFilesUpdate.fromJson(Map<String, Object?> json) => _$DriveFilesUpdateFromJson(json);
 }

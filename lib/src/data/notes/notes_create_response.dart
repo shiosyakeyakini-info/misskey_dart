@@ -10,6 +10,5 @@ abstract class NotesCreateResponse with _$NotesCreateResponse {
     required Note createdNote,
   }) = _NotesCreateResponse;
 
-  factory NotesCreateResponse.fromJson(Map<String, Object?> json) =>
-      _$NotesCreateResponseFromJson(json);
+  factory NotesCreateResponse.fromJson(Map<String, Object?> json) => _$NotesCreateResponseFromJson(json);
 }

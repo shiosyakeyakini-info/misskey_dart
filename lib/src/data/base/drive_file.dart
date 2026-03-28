@@ -20,11 +20,10 @@ abstract class DriveFile with _$DriveFile {
     @NullableUriConverter() Uri? thumbnailUrl,
     String? comment,
     String? folderId,
-    DriveFolder? folder,
+    Map<String, dynamic>? folder,
     String? userId,
-    UserLite? user,
+    Map<String, dynamic>? user,
   }) = _DriveFile;
 
-  factory DriveFile.fromJson(Map<String, Object?> json) =>
-      _$DriveFileFromJson(json);
+  factory DriveFile.fromJson(Map<String, Object?> json) => _$DriveFileFromJson(json);
 }

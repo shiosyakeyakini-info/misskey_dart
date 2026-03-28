@@ -8,11 +8,9 @@ part 'i_webhooks_test_request.g.dart';
 abstract class IWebhooksTestRequest with _$IWebhooksTestRequest {
   const factory IWebhooksTestRequest({
     String? webhookId,
-    @JsonKey(unknownEnumValue: IWebhooksTestType.unknown)
-    IWebhooksTestType? type,
+    @JsonKey(unknownEnumValue: IWebhooksTestType.unknown) IWebhooksTestType? type,
     @JsonKey(name: 'override') IWebhooksTestOverride? override_,
   }) = _IWebhooksTestRequest;
 
-  factory IWebhooksTestRequest.fromJson(Map<String, Object?> json) =>
-      _$IWebhooksTestRequestFromJson(json);
+  factory IWebhooksTestRequest.fromJson(Map<String, Object?> json) => _$IWebhooksTestRequestFromJson(json);
 }

@@ -25,7 +25,6 @@ mixin _$CommunityChannel {
   String? get userId;
   @NullableUriConverter()
   Uri? get bannerUrl;
-  String? get bannerId;
   List<String> get pinnedNoteIds;
   String get color;
   bool get isArchived;
@@ -35,8 +34,9 @@ mixin _$CommunityChannel {
   bool get allowRenoteToExternal;
   bool? get isFollowing;
   bool? get isFavorited;
-  bool? get isMuting;
   List<Note>? get pinnedNotes;
+  String? get bannerId;
+  bool? get isMuting;
 
   /// Create a copy of CommunityChannel
   /// with the given fields replaced by the non-null parameter values.
@@ -65,8 +65,6 @@ mixin _$CommunityChannel {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.bannerUrl, bannerUrl) ||
                 other.bannerUrl == bannerUrl) &&
-            (identical(other.bannerId, bannerId) ||
-                other.bannerId == bannerId) &&
             const DeepCollectionEquality()
                 .equals(other.pinnedNoteIds, pinnedNoteIds) &&
             (identical(other.color, color) || other.color == color) &&
@@ -84,10 +82,12 @@ mixin _$CommunityChannel {
                 other.isFollowing == isFollowing) &&
             (identical(other.isFavorited, isFavorited) ||
                 other.isFavorited == isFavorited) &&
-            (identical(other.isMuting, isMuting) ||
-                other.isMuting == isMuting) &&
             const DeepCollectionEquality()
-                .equals(other.pinnedNotes, pinnedNotes));
+                .equals(other.pinnedNotes, pinnedNotes) &&
+            (identical(other.bannerId, bannerId) ||
+                other.bannerId == bannerId) &&
+            (identical(other.isMuting, isMuting) ||
+                other.isMuting == isMuting));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -101,7 +101,6 @@ mixin _$CommunityChannel {
         description,
         userId,
         bannerUrl,
-        bannerId,
         const DeepCollectionEquality().hash(pinnedNoteIds),
         color,
         isArchived,
@@ -111,13 +110,14 @@ mixin _$CommunityChannel {
         allowRenoteToExternal,
         isFollowing,
         isFavorited,
-        isMuting,
-        const DeepCollectionEquality().hash(pinnedNotes)
+        const DeepCollectionEquality().hash(pinnedNotes),
+        bannerId,
+        isMuting
       ]);
 
   @override
   String toString() {
-    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, bannerId: $bannerId, pinnedNoteIds: $pinnedNoteIds, color: $color, isArchived: $isArchived, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal, isFollowing: $isFollowing, isFavorited: $isFavorited, isMuting: $isMuting, pinnedNotes: $pinnedNotes)';
+    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, color: $color, isArchived: $isArchived, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal, isFollowing: $isFollowing, isFavorited: $isFavorited, pinnedNotes: $pinnedNotes, bannerId: $bannerId, isMuting: $isMuting)';
   }
 }
 
@@ -135,7 +135,6 @@ abstract mixin class $CommunityChannelCopyWith<$Res> {
       String? description,
       String? userId,
       @NullableUriConverter() Uri? bannerUrl,
-      String? bannerId,
       List<String> pinnedNoteIds,
       String color,
       bool isArchived,
@@ -145,8 +144,9 @@ abstract mixin class $CommunityChannelCopyWith<$Res> {
       bool allowRenoteToExternal,
       bool? isFollowing,
       bool? isFavorited,
-      bool? isMuting,
-      List<Note>? pinnedNotes});
+      List<Note>? pinnedNotes,
+      String? bannerId,
+      bool? isMuting});
 }
 
 /// @nodoc
@@ -169,7 +169,6 @@ class _$CommunityChannelCopyWithImpl<$Res>
     Object? description = freezed,
     Object? userId = freezed,
     Object? bannerUrl = freezed,
-    Object? bannerId = freezed,
     Object? pinnedNoteIds = null,
     Object? color = null,
     Object? isArchived = null,
@@ -179,8 +178,9 @@ class _$CommunityChannelCopyWithImpl<$Res>
     Object? allowRenoteToExternal = null,
     Object? isFollowing = freezed,
     Object? isFavorited = freezed,
-    Object? isMuting = freezed,
     Object? pinnedNotes = freezed,
+    Object? bannerId = freezed,
+    Object? isMuting = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -211,10 +211,6 @@ class _$CommunityChannelCopyWithImpl<$Res>
           ? _self.bannerUrl
           : bannerUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
-      bannerId: freezed == bannerId
-          ? _self.bannerId
-          : bannerId // ignore: cast_nullable_to_non_nullable
-              as String?,
       pinnedNoteIds: null == pinnedNoteIds
           ? _self.pinnedNoteIds
           : pinnedNoteIds // ignore: cast_nullable_to_non_nullable
@@ -251,14 +247,18 @@ class _$CommunityChannelCopyWithImpl<$Res>
           ? _self.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isMuting: freezed == isMuting
-          ? _self.isMuting
-          : isMuting // ignore: cast_nullable_to_non_nullable
-              as bool?,
       pinnedNotes: freezed == pinnedNotes
           ? _self.pinnedNotes
           : pinnedNotes // ignore: cast_nullable_to_non_nullable
               as List<Note>?,
+      bannerId: freezed == bannerId
+          ? _self.bannerId
+          : bannerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isMuting: freezed == isMuting
+          ? _self.isMuting
+          : isMuting // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -274,7 +274,6 @@ class _CommunityChannel implements CommunityChannel {
       this.description,
       this.userId,
       @NullableUriConverter() this.bannerUrl,
-      this.bannerId,
       required final List<String> pinnedNoteIds,
       required this.color,
       required this.isArchived,
@@ -284,8 +283,9 @@ class _CommunityChannel implements CommunityChannel {
       required this.allowRenoteToExternal,
       this.isFollowing,
       this.isFavorited,
-      this.isMuting,
-      final List<Note>? pinnedNotes})
+      final List<Note>? pinnedNotes,
+      this.bannerId,
+      this.isMuting})
       : _pinnedNoteIds = pinnedNoteIds,
         _pinnedNotes = pinnedNotes;
   factory _CommunityChannel.fromJson(Map<String, dynamic> json) =>
@@ -308,8 +308,6 @@ class _CommunityChannel implements CommunityChannel {
   @override
   @NullableUriConverter()
   final Uri? bannerUrl;
-  @override
-  final String? bannerId;
   final List<String> _pinnedNoteIds;
   @override
   List<String> get pinnedNoteIds {
@@ -334,8 +332,6 @@ class _CommunityChannel implements CommunityChannel {
   final bool? isFollowing;
   @override
   final bool? isFavorited;
-  @override
-  final bool? isMuting;
   final List<Note>? _pinnedNotes;
   @override
   List<Note>? get pinnedNotes {
@@ -345,6 +341,11 @@ class _CommunityChannel implements CommunityChannel {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
+
+  @override
+  final String? bannerId;
+  @override
+  final bool? isMuting;
 
   /// Create a copy of CommunityChannel
   /// with the given fields replaced by the non-null parameter values.
@@ -377,8 +378,6 @@ class _CommunityChannel implements CommunityChannel {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.bannerUrl, bannerUrl) ||
                 other.bannerUrl == bannerUrl) &&
-            (identical(other.bannerId, bannerId) ||
-                other.bannerId == bannerId) &&
             const DeepCollectionEquality()
                 .equals(other._pinnedNoteIds, _pinnedNoteIds) &&
             (identical(other.color, color) || other.color == color) &&
@@ -396,10 +395,12 @@ class _CommunityChannel implements CommunityChannel {
                 other.isFollowing == isFollowing) &&
             (identical(other.isFavorited, isFavorited) ||
                 other.isFavorited == isFavorited) &&
-            (identical(other.isMuting, isMuting) ||
-                other.isMuting == isMuting) &&
             const DeepCollectionEquality()
-                .equals(other._pinnedNotes, _pinnedNotes));
+                .equals(other._pinnedNotes, _pinnedNotes) &&
+            (identical(other.bannerId, bannerId) ||
+                other.bannerId == bannerId) &&
+            (identical(other.isMuting, isMuting) ||
+                other.isMuting == isMuting));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -413,7 +414,6 @@ class _CommunityChannel implements CommunityChannel {
         description,
         userId,
         bannerUrl,
-        bannerId,
         const DeepCollectionEquality().hash(_pinnedNoteIds),
         color,
         isArchived,
@@ -423,13 +423,14 @@ class _CommunityChannel implements CommunityChannel {
         allowRenoteToExternal,
         isFollowing,
         isFavorited,
-        isMuting,
-        const DeepCollectionEquality().hash(_pinnedNotes)
+        const DeepCollectionEquality().hash(_pinnedNotes),
+        bannerId,
+        isMuting
       ]);
 
   @override
   String toString() {
-    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, bannerId: $bannerId, pinnedNoteIds: $pinnedNoteIds, color: $color, isArchived: $isArchived, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal, isFollowing: $isFollowing, isFavorited: $isFavorited, isMuting: $isMuting, pinnedNotes: $pinnedNotes)';
+    return 'CommunityChannel(id: $id, createdAt: $createdAt, lastNotedAt: $lastNotedAt, name: $name, description: $description, userId: $userId, bannerUrl: $bannerUrl, pinnedNoteIds: $pinnedNoteIds, color: $color, isArchived: $isArchived, usersCount: $usersCount, notesCount: $notesCount, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal, isFollowing: $isFollowing, isFavorited: $isFavorited, pinnedNotes: $pinnedNotes, bannerId: $bannerId, isMuting: $isMuting)';
   }
 }
 
@@ -449,7 +450,6 @@ abstract mixin class _$CommunityChannelCopyWith<$Res>
       String? description,
       String? userId,
       @NullableUriConverter() Uri? bannerUrl,
-      String? bannerId,
       List<String> pinnedNoteIds,
       String color,
       bool isArchived,
@@ -459,8 +459,9 @@ abstract mixin class _$CommunityChannelCopyWith<$Res>
       bool allowRenoteToExternal,
       bool? isFollowing,
       bool? isFavorited,
-      bool? isMuting,
-      List<Note>? pinnedNotes});
+      List<Note>? pinnedNotes,
+      String? bannerId,
+      bool? isMuting});
 }
 
 /// @nodoc
@@ -483,7 +484,6 @@ class __$CommunityChannelCopyWithImpl<$Res>
     Object? description = freezed,
     Object? userId = freezed,
     Object? bannerUrl = freezed,
-    Object? bannerId = freezed,
     Object? pinnedNoteIds = null,
     Object? color = null,
     Object? isArchived = null,
@@ -493,8 +493,9 @@ class __$CommunityChannelCopyWithImpl<$Res>
     Object? allowRenoteToExternal = null,
     Object? isFollowing = freezed,
     Object? isFavorited = freezed,
-    Object? isMuting = freezed,
     Object? pinnedNotes = freezed,
+    Object? bannerId = freezed,
+    Object? isMuting = freezed,
   }) {
     return _then(_CommunityChannel(
       id: null == id
@@ -525,10 +526,6 @@ class __$CommunityChannelCopyWithImpl<$Res>
           ? _self.bannerUrl
           : bannerUrl // ignore: cast_nullable_to_non_nullable
               as Uri?,
-      bannerId: freezed == bannerId
-          ? _self.bannerId
-          : bannerId // ignore: cast_nullable_to_non_nullable
-              as String?,
       pinnedNoteIds: null == pinnedNoteIds
           ? _self._pinnedNoteIds
           : pinnedNoteIds // ignore: cast_nullable_to_non_nullable
@@ -565,14 +562,18 @@ class __$CommunityChannelCopyWithImpl<$Res>
           ? _self.isFavorited
           : isFavorited // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isMuting: freezed == isMuting
-          ? _self.isMuting
-          : isMuting // ignore: cast_nullable_to_non_nullable
-              as bool?,
       pinnedNotes: freezed == pinnedNotes
           ? _self._pinnedNotes
           : pinnedNotes // ignore: cast_nullable_to_non_nullable
               as List<Note>?,
+      bannerId: freezed == bannerId
+          ? _self.bannerId
+          : bannerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isMuting: freezed == isMuting
+          ? _self.isMuting
+          : isMuting // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }

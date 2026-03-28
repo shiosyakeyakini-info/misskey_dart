@@ -23,13 +23,9 @@ _DriveFile _$DriveFileFromJson(Map<String, dynamic> json) => _DriveFile(
           json['thumbnailUrl'], const NullableUriConverter().fromJson),
       comment: json['comment'] as String?,
       folderId: json['folderId'] as String?,
-      folder: json['folder'] == null
-          ? null
-          : DriveFolder.fromJson(json['folder'] as Map<String, dynamic>),
+      folder: json['folder'] as Map<String, dynamic>?,
       userId: json['userId'] as String?,
-      user: json['user'] == null
-          ? null
-          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$DriveFileToJson(_DriveFile instance) =>
@@ -48,9 +44,9 @@ Map<String, dynamic> _$DriveFileToJson(_DriveFile instance) =>
           const NullableUriConverter().toJson(instance.thumbnailUrl),
       'comment': instance.comment,
       'folderId': instance.folderId,
-      'folder': instance.folder?.toJson(),
+      'folder': instance.folder,
       'userId': instance.userId,
-      'user': instance.user?.toJson(),
+      'user': instance.user,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -14,6 +14,5 @@ abstract class AdminSystemWebhookCreate with _$AdminSystemWebhookCreate {
     @Default("") String? secret,
   }) = _AdminSystemWebhookCreate;
 
-  factory AdminSystemWebhookCreate.fromJson(Map<String, Object?> json) =>
-      _$AdminSystemWebhookCreateFromJson(json);
+  factory AdminSystemWebhookCreate.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookCreateFromJson(json);
 }

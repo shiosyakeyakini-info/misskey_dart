@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_promo_create.freezed.dart';
 part 'admin_promo_create.g.dart';
@@ -10,6 +11,5 @@ abstract class AdminPromoCreate with _$AdminPromoCreate {
     required int expiresAt,
   }) = _AdminPromoCreate;
 
-  factory AdminPromoCreate.fromJson(Map<String, Object?> json) =>
-      _$AdminPromoCreateFromJson(json);
+  factory AdminPromoCreate.fromJson(Map<String, Object?> json) => _$AdminPromoCreateFromJson(json);
 }

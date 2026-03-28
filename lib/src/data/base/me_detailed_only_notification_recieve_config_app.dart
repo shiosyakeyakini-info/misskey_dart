@@ -5,17 +5,11 @@ part 'me_detailed_only_notification_recieve_config_app.freezed.dart';
 part 'me_detailed_only_notification_recieve_config_app.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigApp
-    with _$MeDetailedOnlyNotificationRecieveConfigApp {
+abstract class MeDetailedOnlyNotificationRecieveConfigApp with _$MeDetailedOnlyNotificationRecieveConfigApp {
   const factory MeDetailedOnlyNotificationRecieveConfigApp({
-    @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigAppType.unknown)
-    required MeDetailedOnlyNotificationRecieveConfigAppType type,
+    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigAppType.unknown) required MeDetailedOnlyNotificationRecieveConfigAppType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigApp;
 
-  factory MeDetailedOnlyNotificationRecieveConfigApp.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigAppFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigApp.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigAppFromJson(json);
 }

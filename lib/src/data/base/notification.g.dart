@@ -160,45 +160,6 @@ Map<String, dynamic> _$NotificationPollEndedToJson(
       'type': instance.$type,
     };
 
-NotificationScheduledNotePosted _$NotificationScheduledNotePostedFromJson(
-        Map<String, dynamic> json) =>
-    NotificationScheduledNotePosted(
-      id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      note: Note.fromJson(json['note'] as Map<String, dynamic>),
-      $type: json['type'] as String?,
-    );
-
-Map<String, dynamic> _$NotificationScheduledNotePostedToJson(
-        NotificationScheduledNotePosted instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-      'note': instance.note.toJson(),
-      'type': instance.$type,
-    };
-
-NotificationScheduledNotePostFailed
-    _$NotificationScheduledNotePostFailedFromJson(Map<String, dynamic> json) =>
-        NotificationScheduledNotePostFailed(
-          id: json['id'] as String,
-          createdAt:
-              const DateTimeConverter().fromJson(json['createdAt'] as String),
-          noteDraft:
-              NoteDraft.fromJson(json['noteDraft'] as Map<String, dynamic>),
-          $type: json['type'] as String?,
-        );
-
-Map<String, dynamic> _$NotificationScheduledNotePostFailedToJson(
-        NotificationScheduledNotePostFailed instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-      'noteDraft': instance.noteDraft.toJson(),
-      'type': instance.$type,
-    };
-
 NotificationFollow _$NotificationFollowFromJson(Map<String, dynamic> json) =>
     NotificationFollow(
       id: json['id'] as String,
@@ -308,7 +269,7 @@ NotificationAchievementEarned _$NotificationAchievementEarnedFromJson(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
-      achievement: $enumDecode(_$AchievementNameEnumMap, json['achievement']),
+      achievement: json['achievement'],
       $type: json['type'] as String?,
     );
 
@@ -317,92 +278,9 @@ Map<String, dynamic> _$NotificationAchievementEarnedToJson(
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-      'achievement': _$AchievementNameEnumMap[instance.achievement]!,
+      'achievement': instance.achievement,
       'type': instance.$type,
     };
-
-const _$AchievementNameEnumMap = {
-  AchievementName.notes1: 'notes1',
-  AchievementName.notes10: 'notes10',
-  AchievementName.notes100: 'notes100',
-  AchievementName.notes500: 'notes500',
-  AchievementName.notes1000: 'notes1000',
-  AchievementName.notes5000: 'notes5000',
-  AchievementName.notes10000: 'notes10000',
-  AchievementName.notes20000: 'notes20000',
-  AchievementName.notes30000: 'notes30000',
-  AchievementName.notes40000: 'notes40000',
-  AchievementName.notes50000: 'notes50000',
-  AchievementName.notes60000: 'notes60000',
-  AchievementName.notes70000: 'notes70000',
-  AchievementName.notes80000: 'notes80000',
-  AchievementName.notes90000: 'notes90000',
-  AchievementName.notes100000: 'notes100000',
-  AchievementName.login3: 'login3',
-  AchievementName.login7: 'login7',
-  AchievementName.login15: 'login15',
-  AchievementName.login30: 'login30',
-  AchievementName.login60: 'login60',
-  AchievementName.login100: 'login100',
-  AchievementName.login200: 'login200',
-  AchievementName.login300: 'login300',
-  AchievementName.login400: 'login400',
-  AchievementName.login500: 'login500',
-  AchievementName.login600: 'login600',
-  AchievementName.login700: 'login700',
-  AchievementName.login800: 'login800',
-  AchievementName.login900: 'login900',
-  AchievementName.login1000: 'login1000',
-  AchievementName.passedSinceAccountCreated1: 'passedSinceAccountCreated1',
-  AchievementName.passedSinceAccountCreated2: 'passedSinceAccountCreated2',
-  AchievementName.passedSinceAccountCreated3: 'passedSinceAccountCreated3',
-  AchievementName.loggedInOnBirthday: 'loggedInOnBirthday',
-  AchievementName.loggedInOnNewYearsDay: 'loggedInOnNewYearsDay',
-  AchievementName.noteClipped1: 'noteClipped1',
-  AchievementName.noteFavorited1: 'noteFavorited1',
-  AchievementName.myNoteFavorited1: 'myNoteFavorited1',
-  AchievementName.profileFilled: 'profileFilled',
-  AchievementName.markedAsCat: 'markedAsCat',
-  AchievementName.following1: 'following1',
-  AchievementName.following10: 'following10',
-  AchievementName.following50: 'following50',
-  AchievementName.following100: 'following100',
-  AchievementName.following300: 'following300',
-  AchievementName.followers1: 'followers1',
-  AchievementName.followers10: 'followers10',
-  AchievementName.followers50: 'followers50',
-  AchievementName.followers100: 'followers100',
-  AchievementName.followers300: 'followers300',
-  AchievementName.followers500: 'followers500',
-  AchievementName.followers1000: 'followers1000',
-  AchievementName.collectAchievements30: 'collectAchievements30',
-  AchievementName.viewAchievements3min: 'viewAchievements3min',
-  AchievementName.iLoveMisskey: 'iLoveMisskey',
-  AchievementName.foundTreasure: 'foundTreasure',
-  AchievementName.client30min: 'client30min',
-  AchievementName.client60min: 'client60min',
-  AchievementName.noteDeletedWithin1min: 'noteDeletedWithin1min',
-  AchievementName.postedAtLateNight: 'postedAtLateNight',
-  AchievementName.postedAt0min0sec: 'postedAt0min0sec',
-  AchievementName.selfQuote: 'selfQuote',
-  AchievementName.htl20npm: 'htl20npm',
-  AchievementName.viewInstanceChart: 'viewInstanceChart',
-  AchievementName.outputHelloWorldOnScratchpad: 'outputHelloWorldOnScratchpad',
-  AchievementName.open3windows: 'open3windows',
-  AchievementName.driveFolderCircularReference: 'driveFolderCircularReference',
-  AchievementName.reactWithoutRead: 'reactWithoutRead',
-  AchievementName.clickedClickHere: 'clickedClickHere',
-  AchievementName.justPlainLucky: 'justPlainLucky',
-  AchievementName.setNameToSyuilo: 'setNameToSyuilo',
-  AchievementName.cookieClicked: 'cookieClicked',
-  AchievementName.brainDiver: 'brainDiver',
-  AchievementName.smashTestNotificationButton: 'smashTestNotificationButton',
-  AchievementName.tutorialCompleted: 'tutorialCompleted',
-  AchievementName.bubbleGameExplodingHead: 'bubbleGameExplodingHead',
-  AchievementName.bubbleGameDoubleExplodingHead:
-      'bubbleGameDoubleExplodingHead',
-  AchievementName.unknown: 'unknown',
-};
 
 NotificationExportCompleted _$NotificationExportCompletedFromJson(
         Map<String, dynamic> json) =>

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_ad_update_request.freezed.dart';
 part 'admin_ad_update_request.g.dart';
@@ -19,6 +20,5 @@ abstract class AdminAdUpdateRequest with _$AdminAdUpdateRequest {
     bool? isSensitive,
   }) = _AdminAdUpdateRequest;
 
-  factory AdminAdUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminAdUpdateRequestFromJson(json);
+  factory AdminAdUpdateRequest.fromJson(Map<String, Object?> json) => _$AdminAdUpdateRequestFromJson(json);
 }

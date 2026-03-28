@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'flash_my_likes.freezed.dart';
 part 'flash_my_likes.g.dart';
@@ -14,6 +15,5 @@ abstract class FlashMyLikes with _$FlashMyLikes {
     String? search,
   }) = _FlashMyLikes;
 
-  factory FlashMyLikes.fromJson(Map<String, Object?> json) =>
-      _$FlashMyLikesFromJson(json);
+  factory FlashMyLikes.fromJson(Map<String, Object?> json) => _$FlashMyLikesFromJson(json);
 }

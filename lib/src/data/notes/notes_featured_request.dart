@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_featured_request.freezed.dart';
 part 'notes_featured_request.g.dart';
@@ -11,6 +12,5 @@ abstract class NotesFeaturedRequest with _$NotesFeaturedRequest {
     String? channelId,
   }) = _NotesFeaturedRequest;
 
-  factory NotesFeaturedRequest.fromJson(Map<String, Object?> json) =>
-      _$NotesFeaturedRequestFromJson(json);
+  factory NotesFeaturedRequest.fromJson(Map<String, Object?> json) => _$NotesFeaturedRequestFromJson(json);
 }

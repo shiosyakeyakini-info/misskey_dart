@@ -24,11 +24,11 @@ _NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
           : Note.fromJson(json['renote'] as Map<String, dynamic>),
       visibility: $enumDecode(_$NoteVisibilityEnumMap, json['visibility'],
           unknownValue: NoteVisibility.unknown),
-      visibleUserIds: (json['visibleUserIds'] as List<dynamic>)
-          .map((e) => e as String)
+      visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       fileIds:
-          (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
+          (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
       files: (json['files'] as List<dynamic>?)
           ?.map((e) => DriveFile.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -40,12 +40,12 @@ _NoteDraft _$NoteDraftFromJson(Map<String, dynamic> json) => _NoteDraft(
       channel: json['channel'] == null
           ? null
           : NoteDraftChannel.fromJson(json['channel'] as Map<String, dynamic>),
-      localOnly: json['localOnly'] as bool,
+      localOnly: json['localOnly'] as bool?,
       reactionAcceptance: $enumDecodeNullable(
           _$ReactionAcceptanceEnumMap, json['reactionAcceptance'],
           unknownValue: ReactionAcceptance.unknown),
       scheduledAt: (json['scheduledAt'] as num?)?.toDouble(),
-      isActuallyScheduled: json['isActuallyScheduled'] as bool,
+      isActuallyScheduled: json['isActuallyScheduled'] as bool?,
     );
 
 Map<String, dynamic> _$NoteDraftToJson(_NoteDraft instance) =>

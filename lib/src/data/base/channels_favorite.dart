@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_favorite.freezed.dart';
 part 'channels_favorite.g.dart';
@@ -9,6 +10,5 @@ abstract class ChannelsFavorite with _$ChannelsFavorite {
     required String channelId,
   }) = _ChannelsFavorite;
 
-  factory ChannelsFavorite.fromJson(Map<String, Object?> json) =>
-      _$ChannelsFavoriteFromJson(json);
+  factory ChannelsFavorite.fromJson(Map<String, Object?> json) => _$ChannelsFavoriteFromJson(json);
 }

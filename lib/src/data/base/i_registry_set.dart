@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_registry_set.freezed.dart';
 part 'i_registry_set.g.dart';
@@ -12,6 +13,5 @@ abstract class IRegistrySet with _$IRegistrySet {
     String? domain,
   }) = _IRegistrySet;
 
-  factory IRegistrySet.fromJson(Map<String, Object?> json) =>
-      _$IRegistrySetFromJson(json);
+  factory IRegistrySet.fromJson(Map<String, Object?> json) => _$IRegistrySetFromJson(json);
 }

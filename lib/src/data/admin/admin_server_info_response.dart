@@ -17,6 +17,5 @@ abstract class AdminServerInfoResponse with _$AdminServerInfoResponse {
     required AdminServerInfoNet net,
   }) = _AdminServerInfoResponse;
 
-  factory AdminServerInfoResponse.fromJson(Map<String, Object?> json) =>
-      _$AdminServerInfoResponseFromJson(json);
+  factory AdminServerInfoResponse.fromJson(Map<String, Object?> json) => _$AdminServerInfoResponseFromJson(json);
 }

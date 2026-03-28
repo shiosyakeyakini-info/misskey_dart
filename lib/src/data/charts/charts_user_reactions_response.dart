@@ -11,6 +11,5 @@ abstract class ChartsUserReactionsResponse with _$ChartsUserReactionsResponse {
     required ChartsUserReactionsRemote remote,
   }) = _ChartsUserReactionsResponse;
 
-  factory ChartsUserReactionsResponse.fromJson(Map<String, Object?> json) =>
-      _$ChartsUserReactionsResponseFromJson(json);
+  factory ChartsUserReactionsResponse.fromJson(Map<String, Object?> json) => _$ChartsUserReactionsResponseFromJson(json);
 }

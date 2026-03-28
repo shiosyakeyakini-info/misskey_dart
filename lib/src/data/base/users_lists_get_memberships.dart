@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_lists_get_memberships.freezed.dart';
 part 'users_lists_get_memberships.g.dart';
@@ -15,6 +16,5 @@ abstract class UsersListsGetMemberships with _$UsersListsGetMemberships {
     int? untilDate,
   }) = _UsersListsGetMemberships;
 
-  factory UsersListsGetMemberships.fromJson(Map<String, Object?> json) =>
-      _$UsersListsGetMembershipsFromJson(json);
+  factory UsersListsGetMemberships.fromJson(Map<String, Object?> json) => _$UsersListsGetMembershipsFromJson(json);
 }

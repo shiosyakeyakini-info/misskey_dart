@@ -23,8 +23,6 @@ _MetaLite _$MetaLiteFromJson(Map<String, dynamic> json) => _MetaLite(
           "https://github.com/misskey-dev/misskey/issues/new",
       defaultDarkTheme: json['defaultDarkTheme'] as String?,
       defaultLightTheme: json['defaultLightTheme'] as String?,
-      clientOptions: MetaClientOptions.fromJson(
-          json['clientOptions'] as Map<String, dynamic>),
       disableRegistration: json['disableRegistration'] as bool,
       emailRequiredForSignup: json['emailRequiredForSignup'] as bool,
       enableHcaptcha: json['enableHcaptcha'] as bool,
@@ -77,6 +75,7 @@ _MetaLite _$MetaLiteFromJson(Map<String, dynamic> json) => _MetaLite(
       maxFileSize: (json['maxFileSize'] as num).toDouble(),
       federation: $enumDecode(_$FederationScopeEnumMap, json['federation'],
           unknownValue: FederationScope.unknown),
+      clientOptions: json['clientOptions'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$MetaLiteToJson(_MetaLite instance) => <String, dynamic>{
@@ -94,7 +93,6 @@ Map<String, dynamic> _$MetaLiteToJson(_MetaLite instance) => <String, dynamic>{
       'feedbackUrl': instance.feedbackUrl,
       'defaultDarkTheme': instance.defaultDarkTheme,
       'defaultLightTheme': instance.defaultLightTheme,
-      'clientOptions': instance.clientOptions.toJson(),
       'disableRegistration': instance.disableRegistration,
       'emailRequiredForSignup': instance.emailRequiredForSignup,
       'enableHcaptcha': instance.enableHcaptcha,
@@ -136,6 +134,7 @@ Map<String, dynamic> _$MetaLiteToJson(_MetaLite instance) => <String, dynamic>{
           _$NoteSearchableScopeEnumMap[instance.noteSearchableScope]!,
       'maxFileSize': instance.maxFileSize,
       'federation': _$FederationScopeEnumMap[instance.federation]!,
+      'clientOptions': instance.clientOptions,
     };
 
 const _$NoteSearchableScopeEnumMap = {

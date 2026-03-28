@@ -33,6 +33,5 @@ abstract class AdminShowUser with _$AdminShowUser {
     required List<AdminShowUserRoleAssignsItem> roleAssigns,
   }) = _AdminShowUser;
 
-  factory AdminShowUser.fromJson(Map<String, Object?> json) =>
-      _$AdminShowUserFromJson(json);
+  factory AdminShowUser.fromJson(Map<String, Object?> json) => _$AdminShowUserFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'sw_show_registration.freezed.dart';
 part 'sw_show_registration.g.dart';
@@ -11,6 +12,5 @@ abstract class SwShowRegistration with _$SwShowRegistration {
     required bool sendReadMessage,
   }) = _SwShowRegistration;
 
-  factory SwShowRegistration.fromJson(Map<String, Object?> json) =>
-      _$SwShowRegistrationFromJson(json);
+  factory SwShowRegistration.fromJson(Map<String, Object?> json) => _$SwShowRegistrationFromJson(json);
 }

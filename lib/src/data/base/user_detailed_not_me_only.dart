@@ -8,8 +8,8 @@ part 'user_detailed_not_me_only.g.dart';
 abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
   const factory UserDetailedNotMeOnly({
     @NullableUriConverter() Uri? url,
-    Uri? uri,
-    Uri? movedTo,
+    @NullableUriConverter() Uri? uri,
+    @NullableUriConverter() Uri? movedTo,
     List<String>? alsoKnownAs,
     @DateTimeConverter() required DateTime createdAt,
     @NullableDateTimeConverter() DateTime? updatedAt,
@@ -31,12 +31,10 @@ abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
     required List<String> pinnedNoteIds,
     required List<Note> pinnedNotes,
     String? pinnedPageId,
-    Page? pinnedPage,
+    Map<String, dynamic>? pinnedPage,
     required bool publicReactions,
-    @JsonKey(unknownEnumValue: FFVisibility.unknown)
-    required FFVisibility followingVisibility,
-    @JsonKey(unknownEnumValue: FFVisibility.unknown)
-    required FFVisibility followersVisibility,
+    @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followingVisibility,
+    @JsonKey(unknownEnumValue: FFVisibility.unknown) required FFVisibility followersVisibility,
     required ChatScope chatScope,
     required bool canChat,
     required List<RoleLite> roles,
@@ -58,6 +56,5 @@ abstract class UserDetailedNotMeOnly with _$UserDetailedNotMeOnly {
     bool? withReplies,
   }) = _UserDetailedNotMeOnly;
 
-  factory UserDetailedNotMeOnly.fromJson(Map<String, Object?> json) =>
-      _$UserDetailedNotMeOnlyFromJson(json);
+  factory UserDetailedNotMeOnly.fromJson(Map<String, Object?> json) => _$UserDetailedNotMeOnlyFromJson(json);
 }

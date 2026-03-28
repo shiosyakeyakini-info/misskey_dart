@@ -11,6 +11,5 @@ abstract class ChartsUserFollowing with _$ChartsUserFollowing {
     required ChartsUserFollowingRemote remote,
   }) = _ChartsUserFollowing;
 
-  factory ChartsUserFollowing.fromJson(Map<String, Object?> json) =>
-      _$ChartsUserFollowingFromJson(json);
+  factory ChartsUserFollowing.fromJson(Map<String, Object?> json) => _$ChartsUserFollowingFromJson(json);
 }

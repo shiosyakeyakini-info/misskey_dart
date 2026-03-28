@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_delete_all_files_of_a_user.freezed.dart';
 part 'admin_delete_all_files_of_a_user.g.dart';
@@ -9,6 +10,5 @@ abstract class AdminDeleteAllFilesOfAUser with _$AdminDeleteAllFilesOfAUser {
     required String userId,
   }) = _AdminDeleteAllFilesOfAUser;
 
-  factory AdminDeleteAllFilesOfAUser.fromJson(Map<String, Object?> json) =>
-      _$AdminDeleteAllFilesOfAUserFromJson(json);
+  factory AdminDeleteAllFilesOfAUser.fromJson(Map<String, Object?> json) => _$AdminDeleteAllFilesOfAUserFromJson(json);
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_drafts_delete.freezed.dart';
 part 'notes_drafts_delete.g.dart';
@@ -9,6 +10,5 @@ abstract class NotesDraftsDelete with _$NotesDraftsDelete {
     required String draftId,
   }) = _NotesDraftsDelete;
 
-  factory NotesDraftsDelete.fromJson(Map<String, Object?> json) =>
-      _$NotesDraftsDeleteFromJson(json);
+  factory NotesDraftsDelete.fromJson(Map<String, Object?> json) => _$NotesDraftsDeleteFromJson(json);
 }

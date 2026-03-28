@@ -21,12 +21,12 @@ mixin _$ChatMessage {
   String get fromUserId;
   UserLite? get fromUser;
   String? get toUserId;
-  UserLite? get toUser;
+  Map<String, dynamic>? get toUser;
   String? get toRoomId;
-  ChatRoom? get toRoom;
+  Map<String, dynamic>? get toRoom;
   String? get text;
   String? get fileId;
-  DriveFile? get file;
+  Map<String, dynamic>? get file;
   bool? get isRead;
   List<ChatMessageReactionsItem> get reactions;
 
@@ -54,13 +54,13 @@ mixin _$ChatMessage {
                 other.fromUser == fromUser) &&
             (identical(other.toUserId, toUserId) ||
                 other.toUserId == toUserId) &&
-            (identical(other.toUser, toUser) || other.toUser == toUser) &&
+            const DeepCollectionEquality().equals(other.toUser, toUser) &&
             (identical(other.toRoomId, toRoomId) ||
                 other.toRoomId == toRoomId) &&
-            (identical(other.toRoom, toRoom) || other.toRoom == toRoom) &&
+            const DeepCollectionEquality().equals(other.toRoom, toRoom) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
-            (identical(other.file, file) || other.file == file) &&
+            const DeepCollectionEquality().equals(other.file, file) &&
             (identical(other.isRead, isRead) || other.isRead == isRead) &&
             const DeepCollectionEquality().equals(other.reactions, reactions));
   }
@@ -74,12 +74,12 @@ mixin _$ChatMessage {
       fromUserId,
       fromUser,
       toUserId,
-      toUser,
+      const DeepCollectionEquality().hash(toUser),
       toRoomId,
-      toRoom,
+      const DeepCollectionEquality().hash(toRoom),
       text,
       fileId,
-      file,
+      const DeepCollectionEquality().hash(file),
       isRead,
       const DeepCollectionEquality().hash(reactions));
 
@@ -101,19 +101,16 @@ abstract mixin class $ChatMessageCopyWith<$Res> {
       String fromUserId,
       UserLite? fromUser,
       String? toUserId,
-      UserLite? toUser,
+      Map<String, dynamic>? toUser,
       String? toRoomId,
-      ChatRoom? toRoom,
+      Map<String, dynamic>? toRoom,
       String? text,
       String? fileId,
-      DriveFile? file,
+      Map<String, dynamic>? file,
       bool? isRead,
       List<ChatMessageReactionsItem> reactions});
 
   $UserLiteCopyWith<$Res>? get fromUser;
-  $UserLiteCopyWith<$Res>? get toUser;
-  $ChatRoomCopyWith<$Res>? get toRoom;
-  $DriveFileCopyWith<$Res>? get file;
 }
 
 /// @nodoc
@@ -166,7 +163,7 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
       toUser: freezed == toUser
           ? _self.toUser
           : toUser // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       toRoomId: freezed == toRoomId
           ? _self.toRoomId
           : toRoomId // ignore: cast_nullable_to_non_nullable
@@ -174,7 +171,7 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
       toRoom: freezed == toRoom
           ? _self.toRoom
           : toRoom // ignore: cast_nullable_to_non_nullable
-              as ChatRoom?,
+              as Map<String, dynamic>?,
       text: freezed == text
           ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -186,7 +183,7 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
       file: freezed == file
           ? _self.file
           : file // ignore: cast_nullable_to_non_nullable
-              as DriveFile?,
+              as Map<String, dynamic>?,
       isRead: freezed == isRead
           ? _self.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -211,48 +208,6 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
       return _then(_self.copyWith(fromUser: value));
     });
   }
-
-  /// Create a copy of ChatMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get toUser {
-    if (_self.toUser == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.toUser!, (value) {
-      return _then(_self.copyWith(toUser: value));
-    });
-  }
-
-  /// Create a copy of ChatMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatRoomCopyWith<$Res>? get toRoom {
-    if (_self.toRoom == null) {
-      return null;
-    }
-
-    return $ChatRoomCopyWith<$Res>(_self.toRoom!, (value) {
-      return _then(_self.copyWith(toRoom: value));
-    });
-  }
-
-  /// Create a copy of ChatMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFileCopyWith<$Res>? get file {
-    if (_self.file == null) {
-      return null;
-    }
-
-    return $DriveFileCopyWith<$Res>(_self.file!, (value) {
-      return _then(_self.copyWith(file: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -264,15 +219,18 @@ class _ChatMessage implements ChatMessage {
       required this.fromUserId,
       this.fromUser,
       this.toUserId,
-      this.toUser,
+      final Map<String, dynamic>? toUser,
       this.toRoomId,
-      this.toRoom,
+      final Map<String, dynamic>? toRoom,
       this.text,
       this.fileId,
-      this.file,
+      final Map<String, dynamic>? file,
       this.isRead,
       required final List<ChatMessageReactionsItem> reactions})
-      : _reactions = reactions;
+      : _toUser = toUser,
+        _toRoom = toRoom,
+        _file = file,
+        _reactions = reactions;
   factory _ChatMessage.fromJson(Map<String, dynamic> json) =>
       _$ChatMessageFromJson(json);
 
@@ -287,18 +245,42 @@ class _ChatMessage implements ChatMessage {
   final UserLite? fromUser;
   @override
   final String? toUserId;
+  final Map<String, dynamic>? _toUser;
   @override
-  final UserLite? toUser;
+  Map<String, dynamic>? get toUser {
+    final value = _toUser;
+    if (value == null) return null;
+    if (_toUser is EqualUnmodifiableMapView) return _toUser;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? toRoomId;
+  final Map<String, dynamic>? _toRoom;
   @override
-  final ChatRoom? toRoom;
+  Map<String, dynamic>? get toRoom {
+    final value = _toRoom;
+    if (value == null) return null;
+    if (_toRoom is EqualUnmodifiableMapView) return _toRoom;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? text;
   @override
   final String? fileId;
+  final Map<String, dynamic>? _file;
   @override
-  final DriveFile? file;
+  Map<String, dynamic>? get file {
+    final value = _file;
+    if (value == null) return null;
+    if (_file is EqualUnmodifiableMapView) return _file;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final bool? isRead;
   final List<ChatMessageReactionsItem> _reactions;
@@ -338,13 +320,13 @@ class _ChatMessage implements ChatMessage {
                 other.fromUser == fromUser) &&
             (identical(other.toUserId, toUserId) ||
                 other.toUserId == toUserId) &&
-            (identical(other.toUser, toUser) || other.toUser == toUser) &&
+            const DeepCollectionEquality().equals(other._toUser, _toUser) &&
             (identical(other.toRoomId, toRoomId) ||
                 other.toRoomId == toRoomId) &&
-            (identical(other.toRoom, toRoom) || other.toRoom == toRoom) &&
+            const DeepCollectionEquality().equals(other._toRoom, _toRoom) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
-            (identical(other.file, file) || other.file == file) &&
+            const DeepCollectionEquality().equals(other._file, _file) &&
             (identical(other.isRead, isRead) || other.isRead == isRead) &&
             const DeepCollectionEquality()
                 .equals(other._reactions, _reactions));
@@ -359,12 +341,12 @@ class _ChatMessage implements ChatMessage {
       fromUserId,
       fromUser,
       toUserId,
-      toUser,
+      const DeepCollectionEquality().hash(_toUser),
       toRoomId,
-      toRoom,
+      const DeepCollectionEquality().hash(_toRoom),
       text,
       fileId,
-      file,
+      const DeepCollectionEquality().hash(_file),
       isRead,
       const DeepCollectionEquality().hash(_reactions));
 
@@ -388,23 +370,17 @@ abstract mixin class _$ChatMessageCopyWith<$Res>
       String fromUserId,
       UserLite? fromUser,
       String? toUserId,
-      UserLite? toUser,
+      Map<String, dynamic>? toUser,
       String? toRoomId,
-      ChatRoom? toRoom,
+      Map<String, dynamic>? toRoom,
       String? text,
       String? fileId,
-      DriveFile? file,
+      Map<String, dynamic>? file,
       bool? isRead,
       List<ChatMessageReactionsItem> reactions});
 
   @override
   $UserLiteCopyWith<$Res>? get fromUser;
-  @override
-  $UserLiteCopyWith<$Res>? get toUser;
-  @override
-  $ChatRoomCopyWith<$Res>? get toRoom;
-  @override
-  $DriveFileCopyWith<$Res>? get file;
 }
 
 /// @nodoc
@@ -455,17 +431,17 @@ class __$ChatMessageCopyWithImpl<$Res> implements _$ChatMessageCopyWith<$Res> {
           : toUserId // ignore: cast_nullable_to_non_nullable
               as String?,
       toUser: freezed == toUser
-          ? _self.toUser
+          ? _self._toUser
           : toUser // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       toRoomId: freezed == toRoomId
           ? _self.toRoomId
           : toRoomId // ignore: cast_nullable_to_non_nullable
               as String?,
       toRoom: freezed == toRoom
-          ? _self.toRoom
+          ? _self._toRoom
           : toRoom // ignore: cast_nullable_to_non_nullable
-              as ChatRoom?,
+              as Map<String, dynamic>?,
       text: freezed == text
           ? _self.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -475,9 +451,9 @@ class __$ChatMessageCopyWithImpl<$Res> implements _$ChatMessageCopyWith<$Res> {
           : fileId // ignore: cast_nullable_to_non_nullable
               as String?,
       file: freezed == file
-          ? _self.file
+          ? _self._file
           : file // ignore: cast_nullable_to_non_nullable
-              as DriveFile?,
+              as Map<String, dynamic>?,
       isRead: freezed == isRead
           ? _self.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -500,48 +476,6 @@ class __$ChatMessageCopyWithImpl<$Res> implements _$ChatMessageCopyWith<$Res> {
 
     return $UserLiteCopyWith<$Res>(_self.fromUser!, (value) {
       return _then(_self.copyWith(fromUser: value));
-    });
-  }
-
-  /// Create a copy of ChatMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get toUser {
-    if (_self.toUser == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.toUser!, (value) {
-      return _then(_self.copyWith(toUser: value));
-    });
-  }
-
-  /// Create a copy of ChatMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatRoomCopyWith<$Res>? get toRoom {
-    if (_self.toRoom == null) {
-      return null;
-    }
-
-    return $ChatRoomCopyWith<$Res>(_self.toRoom!, (value) {
-      return _then(_self.copyWith(toRoom: value));
-    });
-  }
-
-  /// Create a copy of ChatMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFileCopyWith<$Res>? get file {
-    if (_self.file == null) {
-      return null;
-    }
-
-    return $DriveFileCopyWith<$Res>(_self.file!, (value) {
-      return _then(_self.copyWith(file: value));
     });
   }
 }

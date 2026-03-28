@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_update_request.freezed.dart';
 part 'clips_update_request.g.dart';
@@ -12,6 +13,5 @@ abstract class ClipsUpdateRequest with _$ClipsUpdateRequest {
     String? description,
   }) = _ClipsUpdateRequest;
 
-  factory ClipsUpdateRequest.fromJson(Map<String, Object?> json) =>
-      _$ClipsUpdateRequestFromJson(json);
+  factory ClipsUpdateRequest.fromJson(Map<String, Object?> json) => _$ClipsUpdateRequestFromJson(json);
 }

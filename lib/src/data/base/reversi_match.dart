@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'reversi_match.freezed.dart';
 part 'reversi_match.g.dart';
@@ -11,6 +12,5 @@ abstract class ReversiMatch with _$ReversiMatch {
     @Default(false) bool? multiple,
   }) = _ReversiMatch;
 
-  factory ReversiMatch.fromJson(Map<String, Object?> json) =>
-      _$ReversiMatchFromJson(json);
+  factory ReversiMatch.fromJson(Map<String, Object?> json) => _$ReversiMatchFromJson(json);
 }

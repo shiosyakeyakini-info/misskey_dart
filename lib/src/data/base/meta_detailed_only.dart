@@ -14,6 +14,5 @@ abstract class MetaDetailedOnly with _$MetaDetailedOnly {
     required bool cacheRemoteSensitiveFiles,
   }) = _MetaDetailedOnly;
 
-  factory MetaDetailedOnly.fromJson(Map<String, Object?> json) =>
-      _$MetaDetailedOnlyFromJson(json);
+  factory MetaDetailedOnly.fromJson(Map<String, Object?> json) => _$MetaDetailedOnlyFromJson(json);
 }

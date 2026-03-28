@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_rooms_joining.freezed.dart';
 part 'chat_rooms_joining.g.dart';
@@ -13,6 +14,5 @@ abstract class ChatRoomsJoining with _$ChatRoomsJoining {
     int? untilDate,
   }) = _ChatRoomsJoining;
 
-  factory ChatRoomsJoining.fromJson(Map<String, Object?> json) =>
-      _$ChatRoomsJoiningFromJson(json);
+  factory ChatRoomsJoining.fromJson(Map<String, Object?> json) => _$ChatRoomsJoiningFromJson(json);
 }

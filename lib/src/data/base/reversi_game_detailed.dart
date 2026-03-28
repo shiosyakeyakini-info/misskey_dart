@@ -22,11 +22,11 @@ abstract class ReversiGameDetailed with _$ReversiGameDetailed {
     required UserLite user1,
     required UserLite user2,
     String? winnerId,
-    UserLite? winner,
+    Map<String, dynamic>? winner,
     String? surrenderedUserId,
     String? timeoutUserId,
     double? black,
-    @JsonKey(unknownEnumValue: ReversiBw.unknown) required ReversiBw bw,
+    required String bw,
     required bool noIrregularRules,
     required bool isLlotheo,
     required bool canPutEverywhere,
@@ -36,6 +36,5 @@ abstract class ReversiGameDetailed with _$ReversiGameDetailed {
     required List<String> map,
   }) = _ReversiGameDetailed;
 
-  factory ReversiGameDetailed.fromJson(Map<String, Object?> json) =>
-      _$ReversiGameDetailedFromJson(json);
+  factory ReversiGameDetailed.fromJson(Map<String, Object?> json) => _$ReversiGameDetailedFromJson(json);
 }

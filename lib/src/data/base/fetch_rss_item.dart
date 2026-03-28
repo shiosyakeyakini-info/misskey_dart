@@ -20,6 +20,5 @@ abstract class FetchRssItem with _$FetchRssItem {
     FetchRssEnclosure? enclosure,
   }) = _FetchRssItem;
 
-  factory FetchRssItem.fromJson(Map<String, Object?> json) =>
-      _$FetchRssItemFromJson(json);
+  factory FetchRssItem.fromJson(Map<String, Object?> json) => _$FetchRssItemFromJson(json);
 }

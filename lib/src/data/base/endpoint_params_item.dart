@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'endpoint_params_item.freezed.dart';
 part 'endpoint_params_item.g.dart';
@@ -10,6 +11,5 @@ abstract class EndpointParamsItem with _$EndpointParamsItem {
     required String type,
   }) = _EndpointParamsItem;
 
-  factory EndpointParamsItem.fromJson(Map<String, Object?> json) =>
-      _$EndpointParamsItemFromJson(json);
+  factory EndpointParamsItem.fromJson(Map<String, Object?> json) => _$EndpointParamsItemFromJson(json);
 }

@@ -8,8 +8,6 @@ enum NotificationType {
   quote,
   reaction,
   pollEnded,
-  scheduledNotePosted,
-  scheduledNotePostFailed,
   follow,
   receiveFollowRequest,
   followRequestAccepted,
@@ -25,6 +23,8 @@ enum NotificationType {
   @JsonValue("renote:grouped")
   renoteGrouped,
   test,
+  scheduledNotePosted,
+  scheduledNotePostFailed,
   pollVote,
   groupInvited,
   unknown,

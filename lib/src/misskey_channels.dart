@@ -6,13 +6,12 @@ class MisskeyChannels {
   final ApiService _apiService;
 
   MisskeyChannels({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         mute = MisskeyChannelsMute(apiService: apiService);
 
   /// channels/create
   Future<CommunityChannel> create(ChannelsCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "channels/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("channels/create", request.toJson());
     return CommunityChannel.fromJson(response);
   }
 
@@ -24,8 +23,7 @@ class MisskeyChannels {
   /// channels/featured
   Future<Iterable<CommunityChannel>> featured() async {
     final response = await _apiService.post<List>("channels/featured", {});
-    return response
-        .map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
+    return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }
 
   /// channels/follow
@@ -34,49 +32,38 @@ class MisskeyChannels {
   }
 
   /// channels/followed
-  Future<Iterable<CommunityChannel>> followed(
-      ChannelsFollowedRequest request) async {
-    final response =
-        await _apiService.post<List>("channels/followed", request.toJson());
-    return response
-        .map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
+  Future<Iterable<CommunityChannel>> followed(ChannelsFollowedRequest request) async {
+    final response = await _apiService.post<List>("channels/followed", request.toJson());
+    return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }
 
   /// channels/my-favorites
   Future<Iterable<CommunityChannel>> myFavorite() async {
     final response = await _apiService.post<List>("channels/my-favorites", {});
-    return response
-        .map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
+    return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }
 
   /// channels/owned
   Future<Iterable<CommunityChannel>> owned(ChannelsOwnedRequest request) async {
-    final response =
-        await _apiService.post<List>("channels/owned", request.toJson());
-    return response
-        .map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
+    final response = await _apiService.post<List>("channels/owned", request.toJson());
+    return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }
 
   /// channels/search
-  Future<Iterable<CommunityChannel>> search(
-      ChannelsSearchRequest request) async {
-    final response =
-        await _apiService.post<List>("channels/search", request.toJson());
-    return response
-        .map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
+  Future<Iterable<CommunityChannel>> search(ChannelsSearchRequest request) async {
+    final response = await _apiService.post<List>("channels/search", request.toJson());
+    return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }
 
   /// channels/show
   Future<CommunityChannel> show(ChannelsShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "channels/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("channels/show", request.toJson());
     return CommunityChannel.fromJson(response);
   }
 
   /// channels/timeline
   Future<Iterable<Note>> timeline(ChannelsTimelineRequest request) async {
-    final response =
-        await _apiService.post<List>("channels/timeline", request.toJson());
+    final response = await _apiService.post<List>("channels/timeline", request.toJson());
     return response.map((e) => Note.fromJson(e as Map<String, dynamic>));
   }
 
@@ -92,32 +79,36 @@ class MisskeyChannels {
 
   /// channels/update
   Future<CommunityChannel> update(ChannelsUpdateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "channels/update", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("channels/update", request.toJson());
     return CommunityChannel.fromJson(response);
   }
+
 }
 
 class MisskeyChannelsMute {
+
   final ApiService _apiService;
 
   MisskeyChannelsMute({required ApiService apiService})
       : _apiService = apiService;
 
+  /// Available since Misskey 2025.11.0
   /// channels/mute/create
   Future<void> create(ChannelsMuteCreateRequest request) async {
     await _apiService.post<void>("channels/mute/create", request.toJson());
   }
 
+  /// Available since Misskey 2025.11.0
   /// channels/mute/delete
   Future<void> delete(ChannelsMuteDeleteRequest request) async {
     await _apiService.post<void>("channels/mute/delete", request.toJson());
   }
 
+  /// Available since Misskey 2025.11.0
   /// channels/mute/list
   Future<Iterable<CommunityChannel>> list() async {
     final response = await _apiService.post<List>("channels/mute/list", {});
-    return response
-        .map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
+    return response.map((e) => CommunityChannel.fromJson(e as Map<String, dynamic>));
   }
+
 }

@@ -10,6 +10,5 @@ abstract class EmojisResponse with _$EmojisResponse {
     required List<EmojiSimple> emojis,
   }) = _EmojisResponse;
 
-  factory EmojisResponse.fromJson(Map<String, Object?> json) =>
-      _$EmojisResponseFromJson(json);
+  factory EmojisResponse.fromJson(Map<String, Object?> json) => _$EmojisResponseFromJson(json);
 }

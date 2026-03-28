@@ -28,18 +28,18 @@ mixin _$NoteDraft {
   Note? get renote;
   @JsonKey(unknownEnumValue: NoteVisibility.unknown)
   NoteVisibility get visibility;
-  List<String> get visibleUserIds;
-  List<String> get fileIds;
+  List<String>? get visibleUserIds;
+  List<String>? get fileIds;
   List<DriveFile>? get files;
   String? get hashtag;
   NoteDraftPoll? get poll;
   String? get channelId;
   NoteDraftChannel? get channel;
-  bool get localOnly;
+  bool? get localOnly;
   @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
   ReactionAcceptance? get reactionAcceptance;
   double? get scheduledAt;
-  bool get isActuallyScheduled;
+  bool? get isActuallyScheduled;
 
   /// Create a copy of NoteDraft
   /// with the given fields replaced by the non-null parameter values.
@@ -141,18 +141,18 @@ abstract mixin class $NoteDraftCopyWith<$Res> {
       Note? renote,
       @JsonKey(unknownEnumValue: NoteVisibility.unknown)
       NoteVisibility visibility,
-      List<String> visibleUserIds,
-      List<String> fileIds,
+      List<String>? visibleUserIds,
+      List<String>? fileIds,
       List<DriveFile>? files,
       String? hashtag,
       NoteDraftPoll? poll,
       String? channelId,
       NoteDraftChannel? channel,
-      bool localOnly,
+      bool? localOnly,
       @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       ReactionAcceptance? reactionAcceptance,
       double? scheduledAt,
-      bool isActuallyScheduled});
+      bool? isActuallyScheduled});
 
   $UserLiteCopyWith<$Res> get user;
   $NoteCopyWith<$Res>? get reply;
@@ -184,17 +184,17 @@ class _$NoteDraftCopyWithImpl<$Res> implements $NoteDraftCopyWith<$Res> {
     Object? reply = freezed,
     Object? renote = freezed,
     Object? visibility = null,
-    Object? visibleUserIds = null,
-    Object? fileIds = null,
+    Object? visibleUserIds = freezed,
+    Object? fileIds = freezed,
     Object? files = freezed,
     Object? hashtag = freezed,
     Object? poll = freezed,
     Object? channelId = freezed,
     Object? channel = freezed,
-    Object? localOnly = null,
+    Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
     Object? scheduledAt = freezed,
-    Object? isActuallyScheduled = null,
+    Object? isActuallyScheduled = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -241,14 +241,14 @@ class _$NoteDraftCopyWithImpl<$Res> implements $NoteDraftCopyWith<$Res> {
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as NoteVisibility,
-      visibleUserIds: null == visibleUserIds
+      visibleUserIds: freezed == visibleUserIds
           ? _self.visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      fileIds: null == fileIds
+              as List<String>?,
+      fileIds: freezed == fileIds
           ? _self.fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       files: freezed == files
           ? _self.files
           : files // ignore: cast_nullable_to_non_nullable
@@ -269,10 +269,10 @@ class _$NoteDraftCopyWithImpl<$Res> implements $NoteDraftCopyWith<$Res> {
           ? _self.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as NoteDraftChannel?,
-      localOnly: null == localOnly
+      localOnly: freezed == localOnly
           ? _self.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       reactionAcceptance: freezed == reactionAcceptance
           ? _self.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
@@ -281,10 +281,10 @@ class _$NoteDraftCopyWithImpl<$Res> implements $NoteDraftCopyWith<$Res> {
           ? _self.scheduledAt
           : scheduledAt // ignore: cast_nullable_to_non_nullable
               as double?,
-      isActuallyScheduled: null == isActuallyScheduled
+      isActuallyScheduled: freezed == isActuallyScheduled
           ? _self.isActuallyScheduled
           : isActuallyScheduled // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 
@@ -371,18 +371,18 @@ class _NoteDraft implements NoteDraft {
       this.renote,
       @JsonKey(unknownEnumValue: NoteVisibility.unknown)
       required this.visibility,
-      required final List<String> visibleUserIds,
-      required final List<String> fileIds,
+      final List<String>? visibleUserIds,
+      final List<String>? fileIds,
       final List<DriveFile>? files,
       this.hashtag,
       this.poll,
       this.channelId,
       this.channel,
-      required this.localOnly,
+      this.localOnly,
       @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       this.reactionAcceptance,
       this.scheduledAt,
-      required this.isActuallyScheduled})
+      this.isActuallyScheduled})
       : _visibleUserIds = visibleUserIds,
         _fileIds = fileIds,
         _files = files;
@@ -413,20 +413,24 @@ class _NoteDraft implements NoteDraft {
   @override
   @JsonKey(unknownEnumValue: NoteVisibility.unknown)
   final NoteVisibility visibility;
-  final List<String> _visibleUserIds;
+  final List<String>? _visibleUserIds;
   @override
-  List<String> get visibleUserIds {
+  List<String>? get visibleUserIds {
+    final value = _visibleUserIds;
+    if (value == null) return null;
     if (_visibleUserIds is EqualUnmodifiableListView) return _visibleUserIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_visibleUserIds);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String> _fileIds;
+  final List<String>? _fileIds;
   @override
-  List<String> get fileIds {
+  List<String>? get fileIds {
+    final value = _fileIds;
+    if (value == null) return null;
     if (_fileIds is EqualUnmodifiableListView) return _fileIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_fileIds);
+    return EqualUnmodifiableListView(value);
   }
 
   final List<DriveFile>? _files;
@@ -448,14 +452,14 @@ class _NoteDraft implements NoteDraft {
   @override
   final NoteDraftChannel? channel;
   @override
-  final bool localOnly;
+  final bool? localOnly;
   @override
   @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
   final ReactionAcceptance? reactionAcceptance;
   @override
   final double? scheduledAt;
   @override
-  final bool isActuallyScheduled;
+  final bool? isActuallyScheduled;
 
   /// Create a copy of NoteDraft
   /// with the given fields replaced by the non-null parameter values.
@@ -565,18 +569,18 @@ abstract mixin class _$NoteDraftCopyWith<$Res>
       Note? renote,
       @JsonKey(unknownEnumValue: NoteVisibility.unknown)
       NoteVisibility visibility,
-      List<String> visibleUserIds,
-      List<String> fileIds,
+      List<String>? visibleUserIds,
+      List<String>? fileIds,
       List<DriveFile>? files,
       String? hashtag,
       NoteDraftPoll? poll,
       String? channelId,
       NoteDraftChannel? channel,
-      bool localOnly,
+      bool? localOnly,
       @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
       ReactionAcceptance? reactionAcceptance,
       double? scheduledAt,
-      bool isActuallyScheduled});
+      bool? isActuallyScheduled});
 
   @override
   $UserLiteCopyWith<$Res> get user;
@@ -613,17 +617,17 @@ class __$NoteDraftCopyWithImpl<$Res> implements _$NoteDraftCopyWith<$Res> {
     Object? reply = freezed,
     Object? renote = freezed,
     Object? visibility = null,
-    Object? visibleUserIds = null,
-    Object? fileIds = null,
+    Object? visibleUserIds = freezed,
+    Object? fileIds = freezed,
     Object? files = freezed,
     Object? hashtag = freezed,
     Object? poll = freezed,
     Object? channelId = freezed,
     Object? channel = freezed,
-    Object? localOnly = null,
+    Object? localOnly = freezed,
     Object? reactionAcceptance = freezed,
     Object? scheduledAt = freezed,
-    Object? isActuallyScheduled = null,
+    Object? isActuallyScheduled = freezed,
   }) {
     return _then(_NoteDraft(
       id: null == id
@@ -670,14 +674,14 @@ class __$NoteDraftCopyWithImpl<$Res> implements _$NoteDraftCopyWith<$Res> {
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as NoteVisibility,
-      visibleUserIds: null == visibleUserIds
+      visibleUserIds: freezed == visibleUserIds
           ? _self._visibleUserIds
           : visibleUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      fileIds: null == fileIds
+              as List<String>?,
+      fileIds: freezed == fileIds
           ? _self._fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       files: freezed == files
           ? _self._files
           : files // ignore: cast_nullable_to_non_nullable
@@ -698,10 +702,10 @@ class __$NoteDraftCopyWithImpl<$Res> implements _$NoteDraftCopyWith<$Res> {
           ? _self.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as NoteDraftChannel?,
-      localOnly: null == localOnly
+      localOnly: freezed == localOnly
           ? _self.localOnly
           : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       reactionAcceptance: freezed == reactionAcceptance
           ? _self.reactionAcceptance
           : reactionAcceptance // ignore: cast_nullable_to_non_nullable
@@ -710,10 +714,10 @@ class __$NoteDraftCopyWithImpl<$Res> implements _$NoteDraftCopyWith<$Res> {
           ? _self.scheduledAt
           : scheduledAt // ignore: cast_nullable_to_non_nullable
               as double?,
-      isActuallyScheduled: null == isActuallyScheduled
+      isActuallyScheduled: freezed == isActuallyScheduled
           ? _self.isActuallyScheduled
           : isActuallyScheduled // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 

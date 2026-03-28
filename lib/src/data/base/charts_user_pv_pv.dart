@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_user_pv_pv.freezed.dart';
 part 'charts_user_pv_pv.g.dart';
@@ -10,6 +11,5 @@ abstract class ChartsUserPvPv with _$ChartsUserPvPv {
     required List<double> visitor,
   }) = _ChartsUserPvPv;
 
-  factory ChartsUserPvPv.fromJson(Map<String, Object?> json) =>
-      _$ChartsUserPvPvFromJson(json);
+  factory ChartsUserPvPv.fromJson(Map<String, Object?> json) => _$ChartsUserPvPvFromJson(json);
 }

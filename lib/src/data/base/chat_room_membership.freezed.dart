@@ -19,9 +19,9 @@ mixin _$ChatRoomMembership {
   @DateTimeConverter()
   DateTime get createdAt;
   String get userId;
-  UserLite? get user;
+  Map<String, dynamic>? get user;
   String get roomId;
-  ChatRoom? get room;
+  Map<String, dynamic>? get room;
 
   /// Create a copy of ChatRoomMembership
   /// with the given fields replaced by the non-null parameter values.
@@ -43,15 +43,21 @@ mixin _$ChatRoomMembership {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other.user, user) &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
-            (identical(other.room, room) || other.room == room));
+            const DeepCollectionEquality().equals(other.room, room));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, createdAt, userId, user, roomId, room);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      createdAt,
+      userId,
+      const DeepCollectionEquality().hash(user),
+      roomId,
+      const DeepCollectionEquality().hash(room));
 
   @override
   String toString() {
@@ -69,12 +75,9 @@ abstract mixin class $ChatRoomMembershipCopyWith<$Res> {
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String userId,
-      UserLite? user,
+      Map<String, dynamic>? user,
       String roomId,
-      ChatRoom? room});
-
-  $UserLiteCopyWith<$Res>? get user;
-  $ChatRoomCopyWith<$Res>? get room;
+      Map<String, dynamic>? room});
 }
 
 /// @nodoc
@@ -113,7 +116,7 @@ class _$ChatRoomMembershipCopyWithImpl<$Res>
       user: freezed == user
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       roomId: null == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
@@ -121,36 +124,8 @@ class _$ChatRoomMembershipCopyWithImpl<$Res>
       room: freezed == room
           ? _self.room
           : room // ignore: cast_nullable_to_non_nullable
-              as ChatRoom?,
+              as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of ChatRoomMembership
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
-
-  /// Create a copy of ChatRoomMembership
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatRoomCopyWith<$Res>? get room {
-    if (_self.room == null) {
-      return null;
-    }
-
-    return $ChatRoomCopyWith<$Res>(_self.room!, (value) {
-      return _then(_self.copyWith(room: value));
-    });
   }
 }
 
@@ -161,9 +136,11 @@ class _ChatRoomMembership implements ChatRoomMembership {
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       required this.userId,
-      this.user,
+      final Map<String, dynamic>? user,
       required this.roomId,
-      this.room});
+      final Map<String, dynamic>? room})
+      : _user = user,
+        _room = room;
   factory _ChatRoomMembership.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomMembershipFromJson(json);
 
@@ -174,12 +151,27 @@ class _ChatRoomMembership implements ChatRoomMembership {
   final DateTime createdAt;
   @override
   final String userId;
+  final Map<String, dynamic>? _user;
   @override
-  final UserLite? user;
+  Map<String, dynamic>? get user {
+    final value = _user;
+    if (value == null) return null;
+    if (_user is EqualUnmodifiableMapView) return _user;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String roomId;
+  final Map<String, dynamic>? _room;
   @override
-  final ChatRoom? room;
+  Map<String, dynamic>? get room {
+    final value = _room;
+    if (value == null) return null;
+    if (_room is EqualUnmodifiableMapView) return _room;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of ChatRoomMembership
   /// with the given fields replaced by the non-null parameter values.
@@ -205,15 +197,21 @@ class _ChatRoomMembership implements ChatRoomMembership {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other._user, _user) &&
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
-            (identical(other.room, room) || other.room == room));
+            const DeepCollectionEquality().equals(other._room, _room));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, createdAt, userId, user, roomId, room);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      createdAt,
+      userId,
+      const DeepCollectionEquality().hash(_user),
+      roomId,
+      const DeepCollectionEquality().hash(_room));
 
   @override
   String toString() {
@@ -233,14 +231,9 @@ abstract mixin class _$ChatRoomMembershipCopyWith<$Res>
       {String id,
       @DateTimeConverter() DateTime createdAt,
       String userId,
-      UserLite? user,
+      Map<String, dynamic>? user,
       String roomId,
-      ChatRoom? room});
-
-  @override
-  $UserLiteCopyWith<$Res>? get user;
-  @override
-  $ChatRoomCopyWith<$Res>? get room;
+      Map<String, dynamic>? room});
 }
 
 /// @nodoc
@@ -277,46 +270,18 @@ class __$ChatRoomMembershipCopyWithImpl<$Res>
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
       user: freezed == user
-          ? _self.user
+          ? _self._user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       roomId: null == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
               as String,
       room: freezed == room
-          ? _self.room
+          ? _self._room
           : room // ignore: cast_nullable_to_non_nullable
-              as ChatRoom?,
+              as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of ChatRoomMembership
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
-
-  /// Create a copy of ChatRoomMembership
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatRoomCopyWith<$Res>? get room {
-    if (_self.room == null) {
-      return null;
-    }
-
-    return $ChatRoomCopyWith<$Res>(_self.room!, (value) {
-      return _then(_self.copyWith(room: value));
-    });
   }
 }
 

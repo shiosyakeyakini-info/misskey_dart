@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_upload_from_url.freezed.dart';
 part 'drive_files_upload_from_url.g.dart';
@@ -14,6 +15,5 @@ abstract class DriveFilesUploadFromUrl with _$DriveFilesUploadFromUrl {
     @Default(false) bool? force,
   }) = _DriveFilesUploadFromUrl;
 
-  factory DriveFilesUploadFromUrl.fromJson(Map<String, Object?> json) =>
-      _$DriveFilesUploadFromUrlFromJson(json);
+  factory DriveFilesUploadFromUrl.fromJson(Map<String, Object?> json) => _$DriveFilesUploadFromUrlFromJson(json);
 }

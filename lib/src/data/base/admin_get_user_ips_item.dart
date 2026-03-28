@@ -11,6 +11,5 @@ abstract class AdminGetUserIpsItem with _$AdminGetUserIpsItem {
     @DateTimeConverter() required DateTime createdAt,
   }) = _AdminGetUserIpsItem;
 
-  factory AdminGetUserIpsItem.fromJson(Map<String, Object?> json) =>
-      _$AdminGetUserIpsItemFromJson(json);
+  factory AdminGetUserIpsItem.fromJson(Map<String, Object?> json) => _$AdminGetUserIpsItemFromJson(json);
 }

@@ -15,6 +15,5 @@ abstract class IWebhooksUpdate with _$IWebhooksUpdate {
     bool? active,
   }) = _IWebhooksUpdate;
 
-  factory IWebhooksUpdate.fromJson(Map<String, Object?> json) =>
-      _$IWebhooksUpdateFromJson(json);
+  factory IWebhooksUpdate.fromJson(Map<String, Object?> json) => _$IWebhooksUpdateFromJson(json);
 }

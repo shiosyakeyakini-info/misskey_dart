@@ -15,6 +15,5 @@ abstract class ChartsInstance with _$ChartsInstance {
     required ChartsInstanceDrive drive,
   }) = _ChartsInstance;
 
-  factory ChartsInstance.fromJson(Map<String, Object?> json) =>
-      _$ChartsInstanceFromJson(json);
+  factory ChartsInstance.fromJson(Map<String, Object?> json) => _$ChartsInstanceFromJson(json);
 }

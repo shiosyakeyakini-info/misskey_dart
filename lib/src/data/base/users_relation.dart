@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_relation.freezed.dart';
 part 'users_relation.g.dart';
@@ -9,6 +10,5 @@ abstract class UsersRelation with _$UsersRelation {
     required dynamic userId,
   }) = _UsersRelation;
 
-  factory UsersRelation.fromJson(Map<String, Object?> json) =>
-      _$UsersRelationFromJson(json);
+  factory UsersRelation.fromJson(Map<String, Object?> json) => _$UsersRelationFromJson(json);
 }

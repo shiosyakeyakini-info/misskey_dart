@@ -5,8 +5,7 @@ part 'admin_avatar_decorations_create_response.freezed.dart';
 part 'admin_avatar_decorations_create_response.g.dart';
 
 @freezed
-abstract class AdminAvatarDecorationsCreateResponse
-    with _$AdminAvatarDecorationsCreateResponse {
+abstract class AdminAvatarDecorationsCreateResponse with _$AdminAvatarDecorationsCreateResponse {
   const factory AdminAvatarDecorationsCreateResponse({
     required String id,
     @DateTimeConverter() required DateTime createdAt,
@@ -17,7 +16,5 @@ abstract class AdminAvatarDecorationsCreateResponse
     required List<String> roleIdsThatCanBeUsedThisDecoration,
   }) = _AdminAvatarDecorationsCreateResponse;
 
-  factory AdminAvatarDecorationsCreateResponse.fromJson(
-          Map<String, Object?> json) =>
-      _$AdminAvatarDecorationsCreateResponseFromJson(json);
+  factory AdminAvatarDecorationsCreateResponse.fromJson(Map<String, Object?> json) => _$AdminAvatarDecorationsCreateResponseFromJson(json);
 }

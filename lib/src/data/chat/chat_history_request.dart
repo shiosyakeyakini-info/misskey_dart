@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_history_request.freezed.dart';
 part 'chat_history_request.g.dart';
@@ -10,6 +11,5 @@ abstract class ChatHistoryRequest with _$ChatHistoryRequest {
     @Default(false) bool? room,
   }) = _ChatHistoryRequest;
 
-  factory ChatHistoryRequest.fromJson(Map<String, Object?> json) =>
-      _$ChatHistoryRequestFromJson(json);
+  factory ChatHistoryRequest.fromJson(Map<String, Object?> json) => _$ChatHistoryRequestFromJson(json);
 }

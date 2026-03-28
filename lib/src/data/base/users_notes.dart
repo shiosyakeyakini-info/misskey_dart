@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_notes.freezed.dart';
 part 'users_notes.g.dart';
@@ -19,6 +20,5 @@ abstract class UsersNotes with _$UsersNotes {
     @Default(false) bool? withFiles,
   }) = _UsersNotes;
 
-  factory UsersNotes.fromJson(Map<String, Object?> json) =>
-      _$UsersNotesFromJson(json);
+  factory UsersNotes.fromJson(Map<String, Object?> json) => _$UsersNotesFromJson(json);
 }

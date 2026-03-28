@@ -12,10 +12,9 @@ abstract class UserList with _$UserList {
     required String name,
     List<String>? userIds,
     required bool isPublic,
-    double? likedCount,
-    bool? isLiked,
+        double? likedCount,
+        bool? isLiked,
   }) = _UserList;
 
-  factory UserList.fromJson(Map<String, Object?> json) =>
-      _$UserListFromJson(json);
+  factory UserList.fromJson(Map<String, Object?> json) => _$UserListFromJson(json);
 }

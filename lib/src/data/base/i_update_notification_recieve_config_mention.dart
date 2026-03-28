@@ -5,16 +5,11 @@ part 'i_update_notification_recieve_config_mention.freezed.dart';
 part 'i_update_notification_recieve_config_mention.g.dart';
 
 @freezed
-abstract class IUpdateNotificationRecieveConfigMention
-    with _$IUpdateNotificationRecieveConfigMention {
+abstract class IUpdateNotificationRecieveConfigMention with _$IUpdateNotificationRecieveConfigMention {
   const factory IUpdateNotificationRecieveConfigMention({
-    @JsonKey(
-        unknownEnumValue: IUpdateNotificationRecieveConfigMentionType.unknown)
-    required IUpdateNotificationRecieveConfigMentionType type,
+    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigMentionType.unknown) required IUpdateNotificationRecieveConfigMentionType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigMention;
 
-  factory IUpdateNotificationRecieveConfigMention.fromJson(
-          Map<String, Object?> json) =>
-      _$IUpdateNotificationRecieveConfigMentionFromJson(json);
+  factory IUpdateNotificationRecieveConfigMention.fromJson(Map<String, Object?> json) => _$IUpdateNotificationRecieveConfigMentionFromJson(json);
 }

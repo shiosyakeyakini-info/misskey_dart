@@ -13,9 +13,7 @@ abstract class MetaLiteAdsItem with _$MetaLiteAdsItem {
     required double ratio,
     @UriConverter() required Uri imageUrl,
     required int dayOfWeek,
-    bool? isSensitive,
   }) = _MetaLiteAdsItem;
 
-  factory MetaLiteAdsItem.fromJson(Map<String, Object?> json) =>
-      _$MetaLiteAdsItemFromJson(json);
+  factory MetaLiteAdsItem.fromJson(Map<String, Object?> json) => _$MetaLiteAdsItemFromJson(json);
 }

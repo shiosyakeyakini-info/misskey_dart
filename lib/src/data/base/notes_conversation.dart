@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_conversation.freezed.dart';
 part 'notes_conversation.g.dart';
@@ -11,6 +12,5 @@ abstract class NotesConversation with _$NotesConversation {
     @Default(0) int? offset,
   }) = _NotesConversation;
 
-  factory NotesConversation.fromJson(Map<String, Object?> json) =>
-      _$NotesConversationFromJson(json);
+  factory NotesConversation.fromJson(Map<String, Object?> json) => _$NotesConversationFromJson(json);
 }

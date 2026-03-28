@@ -17,6 +17,5 @@ abstract class FetchRssResponse with _$FetchRssResponse {
     FetchRssItunes? itunes,
   }) = _FetchRssResponse;
 
-  factory FetchRssResponse.fromJson(Map<String, Object?> json) =>
-      _$FetchRssResponseFromJson(json);
+  factory FetchRssResponse.fromJson(Map<String, Object?> json) => _$FetchRssResponseFromJson(json);
 }

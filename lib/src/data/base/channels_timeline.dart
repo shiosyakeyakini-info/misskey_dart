@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_timeline.freezed.dart';
 part 'channels_timeline.g.dart';
@@ -15,6 +16,5 @@ abstract class ChannelsTimeline with _$ChannelsTimeline {
     @Default(false) bool? allowPartial,
   }) = _ChannelsTimeline;
 
-  factory ChannelsTimeline.fromJson(Map<String, Object?> json) =>
-      _$ChannelsTimelineFromJson(json);
+  factory ChannelsTimeline.fromJson(Map<String, Object?> json) => _$ChannelsTimelineFromJson(json);
 }

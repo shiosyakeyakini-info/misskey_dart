@@ -13,6 +13,5 @@ abstract class AdminQueueStats with _$AdminQueueStats {
     required QueueCount objectStorage,
   }) = _AdminQueueStats;
 
-  factory AdminQueueStats.fromJson(Map<String, Object?> json) =>
-      _$AdminQueueStatsFromJson(json);
+  factory AdminQueueStats.fromJson(Map<String, Object?> json) => _$AdminQueueStatsFromJson(json);
 }

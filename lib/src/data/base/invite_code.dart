@@ -11,12 +11,11 @@ abstract class InviteCode with _$InviteCode {
     required String code,
     @NullableDateTimeConverter() DateTime? expiresAt,
     @DateTimeConverter() required DateTime createdAt,
-    UserLite? createdBy,
-    UserLite? usedBy,
+    Map<String, dynamic>? createdBy,
+    Map<String, dynamic>? usedBy,
     @NullableDateTimeConverter() DateTime? usedAt,
     required bool used,
   }) = _InviteCode;
 
-  factory InviteCode.fromJson(Map<String, Object?> json) =>
-      _$InviteCodeFromJson(json);
+  factory InviteCode.fromJson(Map<String, Object?> json) => _$InviteCodeFromJson(json);
 }

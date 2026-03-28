@@ -13,6 +13,5 @@ abstract class ChartsUserPvRequest with _$ChartsUserPvRequest {
     String? userId,
   }) = _ChartsUserPvRequest;
 
-  factory ChartsUserPvRequest.fromJson(Map<String, Object?> json) =>
-      _$ChartsUserPvRequestFromJson(json);
+  factory ChartsUserPvRequest.fromJson(Map<String, Object?> json) => _$ChartsUserPvRequestFromJson(json);
 }

@@ -11,6 +11,5 @@ abstract class AuthSessionGenerate with _$AuthSessionGenerate {
     @UriConverter() required Uri url,
   }) = _AuthSessionGenerate;
 
-  factory AuthSessionGenerate.fromJson(Map<String, Object?> json) =>
-      _$AuthSessionGenerateFromJson(json);
+  factory AuthSessionGenerate.fromJson(Map<String, Object?> json) => _$AuthSessionGenerateFromJson(json);
 }

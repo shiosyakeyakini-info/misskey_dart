@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_create.freezed.dart';
 part 'clips_create.g.dart';
@@ -11,6 +12,5 @@ abstract class ClipsCreate with _$ClipsCreate {
     String? description,
   }) = _ClipsCreate;
 
-  factory ClipsCreate.fromJson(Map<String, Object?> json) =>
-      _$ClipsCreateFromJson(json);
+  factory ClipsCreate.fromJson(Map<String, Object?> json) => _$ClipsCreateFromJson(json);
 }

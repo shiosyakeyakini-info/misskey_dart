@@ -18,12 +18,8 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       replyId: json['replyId'] as String?,
       renoteId: json['renoteId'] as String?,
-      reply: json['reply'] == null
-          ? null
-          : Note.fromJson(json['reply'] as Map<String, dynamic>),
-      renote: json['renote'] == null
-          ? null
-          : Note.fromJson(json['renote'] as Map<String, dynamic>),
+      reply: json['reply'] as Map<String, dynamic>?,
+      renote: json['renote'] as Map<String, dynamic>?,
       isHidden: json['isHidden'] as bool?,
       visibility: $enumDecode(_$NoteVisibilityEnumMap, json['visibility'],
           unknownValue: NoteVisibility.unknown),
@@ -68,8 +64,8 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
                   .toList() ??
               const [],
       clippedCount: (json['clippedCount'] as num?)?.toInt(),
-      hasPoll: json['hasPoll'] as bool?,
       myReaction: json['myReaction'] as String?,
+      hasPoll: json['hasPoll'] as bool?,
     );
 
 Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
@@ -82,8 +78,8 @@ Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
       'user': instance.user.toJson(),
       'replyId': instance.replyId,
       'renoteId': instance.renoteId,
-      'reply': instance.reply?.toJson(),
-      'renote': instance.renote?.toJson(),
+      'reply': instance.reply,
+      'renote': instance.renote,
       'isHidden': instance.isHidden,
       'visibility': _$NoteVisibilityEnumMap[instance.visibility]!,
       'mentions': instance.mentions,
@@ -107,8 +103,8 @@ Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
       'url': instance.url,
       'reactionAndUserPairCache': instance.reactionAndUserPairCache,
       'clippedCount': instance.clippedCount,
-      'hasPoll': instance.hasPoll,
       'myReaction': instance.myReaction,
+      'hasPoll': instance.hasPoll,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

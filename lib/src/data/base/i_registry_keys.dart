@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_registry_keys.freezed.dart';
 part 'i_registry_keys.g.dart';
@@ -10,6 +11,5 @@ abstract class IRegistryKeys with _$IRegistryKeys {
     String? domain,
   }) = _IRegistryKeys;
 
-  factory IRegistryKeys.fromJson(Map<String, Object?> json) =>
-      _$IRegistryKeysFromJson(json);
+  factory IRegistryKeys.fromJson(Map<String, Object?> json) => _$IRegistryKeysFromJson(json);
 }

@@ -13,6 +13,5 @@ abstract class AdminRolesUsersItem with _$AdminRolesUsersItem {
     @NullableDateTimeConverter() DateTime? expiresAt,
   }) = _AdminRolesUsersItem;
 
-  factory AdminRolesUsersItem.fromJson(Map<String, Object?> json) =>
-      _$AdminRolesUsersItemFromJson(json);
+  factory AdminRolesUsersItem.fromJson(Map<String, Object?> json) => _$AdminRolesUsersItemFromJson(json);
 }

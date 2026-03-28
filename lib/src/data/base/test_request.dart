@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'test_request.freezed.dart';
 part 'test_request.g.dart';
@@ -13,6 +14,5 @@ abstract class TestRequest with _$TestRequest {
     String? id,
   }) = _TestRequest;
 
-  factory TestRequest.fromJson(Map<String, Object?> json) =>
-      _$TestRequestFromJson(json);
+  factory TestRequest.fromJson(Map<String, Object?> json) => _$TestRequestFromJson(json);
 }

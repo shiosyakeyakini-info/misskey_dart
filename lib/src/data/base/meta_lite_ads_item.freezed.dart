@@ -23,7 +23,6 @@ mixin _$MetaLiteAdsItem {
   @UriConverter()
   Uri get imageUrl;
   int get dayOfWeek;
-  bool? get isSensitive;
 
   /// Create a copy of MetaLiteAdsItem
   /// with the given fields replaced by the non-null parameter values.
@@ -48,19 +47,17 @@ mixin _$MetaLiteAdsItem {
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.dayOfWeek, dayOfWeek) ||
-                other.dayOfWeek == dayOfWeek) &&
-            (identical(other.isSensitive, isSensitive) ||
-                other.isSensitive == isSensitive));
+                other.dayOfWeek == dayOfWeek));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, url, place, ratio, imageUrl, dayOfWeek, isSensitive);
+  int get hashCode =>
+      Object.hash(runtimeType, id, url, place, ratio, imageUrl, dayOfWeek);
 
   @override
   String toString() {
-    return 'MetaLiteAdsItem(id: $id, url: $url, place: $place, ratio: $ratio, imageUrl: $imageUrl, dayOfWeek: $dayOfWeek, isSensitive: $isSensitive)';
+    return 'MetaLiteAdsItem(id: $id, url: $url, place: $place, ratio: $ratio, imageUrl: $imageUrl, dayOfWeek: $dayOfWeek)';
   }
 }
 
@@ -76,8 +73,7 @@ abstract mixin class $MetaLiteAdsItemCopyWith<$Res> {
       String place,
       double ratio,
       @UriConverter() Uri imageUrl,
-      int dayOfWeek,
-      bool? isSensitive});
+      int dayOfWeek});
 }
 
 /// @nodoc
@@ -99,7 +95,6 @@ class _$MetaLiteAdsItemCopyWithImpl<$Res>
     Object? ratio = null,
     Object? imageUrl = null,
     Object? dayOfWeek = null,
-    Object? isSensitive = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -126,10 +121,6 @@ class _$MetaLiteAdsItemCopyWithImpl<$Res>
           ? _self.dayOfWeek
           : dayOfWeek // ignore: cast_nullable_to_non_nullable
               as int,
-      isSensitive: freezed == isSensitive
-          ? _self.isSensitive
-          : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -143,8 +134,7 @@ class _MetaLiteAdsItem implements MetaLiteAdsItem {
       required this.place,
       required this.ratio,
       @UriConverter() required this.imageUrl,
-      required this.dayOfWeek,
-      this.isSensitive});
+      required this.dayOfWeek});
   factory _MetaLiteAdsItem.fromJson(Map<String, dynamic> json) =>
       _$MetaLiteAdsItemFromJson(json);
 
@@ -162,8 +152,6 @@ class _MetaLiteAdsItem implements MetaLiteAdsItem {
   final Uri imageUrl;
   @override
   final int dayOfWeek;
-  @override
-  final bool? isSensitive;
 
   /// Create a copy of MetaLiteAdsItem
   /// with the given fields replaced by the non-null parameter values.
@@ -192,19 +180,17 @@ class _MetaLiteAdsItem implements MetaLiteAdsItem {
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.dayOfWeek, dayOfWeek) ||
-                other.dayOfWeek == dayOfWeek) &&
-            (identical(other.isSensitive, isSensitive) ||
-                other.isSensitive == isSensitive));
+                other.dayOfWeek == dayOfWeek));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, url, place, ratio, imageUrl, dayOfWeek, isSensitive);
+  int get hashCode =>
+      Object.hash(runtimeType, id, url, place, ratio, imageUrl, dayOfWeek);
 
   @override
   String toString() {
-    return 'MetaLiteAdsItem(id: $id, url: $url, place: $place, ratio: $ratio, imageUrl: $imageUrl, dayOfWeek: $dayOfWeek, isSensitive: $isSensitive)';
+    return 'MetaLiteAdsItem(id: $id, url: $url, place: $place, ratio: $ratio, imageUrl: $imageUrl, dayOfWeek: $dayOfWeek)';
   }
 }
 
@@ -222,8 +208,7 @@ abstract mixin class _$MetaLiteAdsItemCopyWith<$Res>
       String place,
       double ratio,
       @UriConverter() Uri imageUrl,
-      int dayOfWeek,
-      bool? isSensitive});
+      int dayOfWeek});
 }
 
 /// @nodoc
@@ -245,7 +230,6 @@ class __$MetaLiteAdsItemCopyWithImpl<$Res>
     Object? ratio = null,
     Object? imageUrl = null,
     Object? dayOfWeek = null,
-    Object? isSensitive = freezed,
   }) {
     return _then(_MetaLiteAdsItem(
       id: null == id
@@ -272,10 +256,6 @@ class __$MetaLiteAdsItemCopyWithImpl<$Res>
           ? _self.dayOfWeek
           : dayOfWeek // ignore: cast_nullable_to_non_nullable
               as int,
-      isSensitive: freezed == isSensitive
-          ? _self.isSensitive
-          : isSensitive // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }

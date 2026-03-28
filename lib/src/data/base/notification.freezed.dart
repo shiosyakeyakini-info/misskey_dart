@@ -28,10 +28,6 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) {
       return NotificationReaction.fromJson(json);
     case 'pollEnded':
       return NotificationPollEnded.fromJson(json);
-    case 'scheduledNotePosted':
-      return NotificationScheduledNotePosted.fromJson(json);
-    case 'scheduledNotePostFailed':
-      return NotificationScheduledNotePostFailed.fromJson(json);
     case 'follow':
       return NotificationFollow.fromJson(json);
     case 'receiveFollowRequest':
@@ -1188,246 +1184,6 @@ class _$NotificationPollEndedCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class NotificationScheduledNotePosted implements Notification {
-  const NotificationScheduledNotePosted(
-      {required this.id,
-      @DateTimeConverter() required this.createdAt,
-      required this.note,
-      final String? $type})
-      : $type = $type ?? 'scheduledNotePosted';
-  factory NotificationScheduledNotePosted.fromJson(Map<String, dynamic> json) =>
-      _$NotificationScheduledNotePostedFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @DateTimeConverter()
-  final DateTime createdAt;
-  final Note note;
-
-  @JsonKey(name: 'type')
-  final String $type;
-
-  /// Create a copy of Notification
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotificationScheduledNotePostedCopyWith<NotificationScheduledNotePosted>
-      get copyWith => _$NotificationScheduledNotePostedCopyWithImpl<
-          NotificationScheduledNotePosted>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotificationScheduledNotePostedToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotificationScheduledNotePosted &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.note, note) || other.note == note));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, note);
-
-  @override
-  String toString() {
-    return 'Notification.scheduledNotePosted(id: $id, createdAt: $createdAt, note: $note)';
-  }
-}
-
-/// @nodoc
-abstract mixin class $NotificationScheduledNotePostedCopyWith<$Res>
-    implements $NotificationCopyWith<$Res> {
-  factory $NotificationScheduledNotePostedCopyWith(
-          NotificationScheduledNotePosted value,
-          $Res Function(NotificationScheduledNotePosted) _then) =
-      _$NotificationScheduledNotePostedCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String id, @DateTimeConverter() DateTime createdAt, Note note});
-
-  $NoteCopyWith<$Res> get note;
-}
-
-/// @nodoc
-class _$NotificationScheduledNotePostedCopyWithImpl<$Res>
-    implements $NotificationScheduledNotePostedCopyWith<$Res> {
-  _$NotificationScheduledNotePostedCopyWithImpl(this._self, this._then);
-
-  final NotificationScheduledNotePosted _self;
-  final $Res Function(NotificationScheduledNotePosted) _then;
-
-  /// Create a copy of Notification
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? note = null,
-  }) {
-    return _then(NotificationScheduledNotePosted(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      note: null == note
-          ? _self.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
-    ));
-  }
-
-  /// Create a copy of Notification
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_self.note, (value) {
-      return _then(_self.copyWith(note: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class NotificationScheduledNotePostFailed implements Notification {
-  const NotificationScheduledNotePostFailed(
-      {required this.id,
-      @DateTimeConverter() required this.createdAt,
-      required this.noteDraft,
-      final String? $type})
-      : $type = $type ?? 'scheduledNotePostFailed';
-  factory NotificationScheduledNotePostFailed.fromJson(
-          Map<String, dynamic> json) =>
-      _$NotificationScheduledNotePostFailedFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @DateTimeConverter()
-  final DateTime createdAt;
-  final NoteDraft noteDraft;
-
-  @JsonKey(name: 'type')
-  final String $type;
-
-  /// Create a copy of Notification
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotificationScheduledNotePostFailedCopyWith<
-          NotificationScheduledNotePostFailed>
-      get copyWith => _$NotificationScheduledNotePostFailedCopyWithImpl<
-          NotificationScheduledNotePostFailed>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotificationScheduledNotePostFailedToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotificationScheduledNotePostFailed &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.noteDraft, noteDraft) ||
-                other.noteDraft == noteDraft));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, noteDraft);
-
-  @override
-  String toString() {
-    return 'Notification.scheduledNotePostFailed(id: $id, createdAt: $createdAt, noteDraft: $noteDraft)';
-  }
-}
-
-/// @nodoc
-abstract mixin class $NotificationScheduledNotePostFailedCopyWith<$Res>
-    implements $NotificationCopyWith<$Res> {
-  factory $NotificationScheduledNotePostFailedCopyWith(
-          NotificationScheduledNotePostFailed value,
-          $Res Function(NotificationScheduledNotePostFailed) _then) =
-      _$NotificationScheduledNotePostFailedCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @DateTimeConverter() DateTime createdAt,
-      NoteDraft noteDraft});
-
-  $NoteDraftCopyWith<$Res> get noteDraft;
-}
-
-/// @nodoc
-class _$NotificationScheduledNotePostFailedCopyWithImpl<$Res>
-    implements $NotificationScheduledNotePostFailedCopyWith<$Res> {
-  _$NotificationScheduledNotePostFailedCopyWithImpl(this._self, this._then);
-
-  final NotificationScheduledNotePostFailed _self;
-  final $Res Function(NotificationScheduledNotePostFailed) _then;
-
-  /// Create a copy of Notification
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? noteDraft = null,
-  }) {
-    return _then(NotificationScheduledNotePostFailed(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      noteDraft: null == noteDraft
-          ? _self.noteDraft
-          : noteDraft // ignore: cast_nullable_to_non_nullable
-              as NoteDraft,
-    ));
-  }
-
-  /// Create a copy of Notification
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NoteDraftCopyWith<$Res> get noteDraft {
-    return $NoteDraftCopyWith<$Res>(_self.noteDraft, (value) {
-      return _then(_self.copyWith(noteDraft: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
 class NotificationFollow implements Notification {
   const NotificationFollow(
       {required this.id,
@@ -2079,7 +1835,7 @@ class NotificationAchievementEarned implements Notification {
   @override
   @DateTimeConverter()
   final DateTime createdAt;
-  final AchievementName achievement;
+  final dynamic achievement;
 
   @JsonKey(name: 'type')
   final String $type;
@@ -2108,13 +1864,14 @@ class NotificationAchievementEarned implements Notification {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.achievement, achievement) ||
-                other.achievement == achievement));
+            const DeepCollectionEquality()
+                .equals(other.achievement, achievement));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, achievement);
+  int get hashCode => Object.hash(runtimeType, id, createdAt,
+      const DeepCollectionEquality().hash(achievement));
 
   @override
   String toString() {
@@ -2134,7 +1891,7 @@ abstract mixin class $NotificationAchievementEarnedCopyWith<$Res>
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      AchievementName achievement});
+      dynamic achievement});
 }
 
 /// @nodoc
@@ -2152,7 +1909,7 @@ class _$NotificationAchievementEarnedCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? achievement = null,
+    Object? achievement = freezed,
   }) {
     return _then(NotificationAchievementEarned(
       id: null == id
@@ -2163,10 +1920,10 @@ class _$NotificationAchievementEarnedCopyWithImpl<$Res>
           ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      achievement: null == achievement
+      achievement: freezed == achievement
           ? _self.achievement
           : achievement // ignore: cast_nullable_to_non_nullable
-              as AchievementName,
+              as dynamic,
     ));
   }
 }

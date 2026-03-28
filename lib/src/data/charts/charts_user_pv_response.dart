@@ -11,6 +11,5 @@ abstract class ChartsUserPvResponse with _$ChartsUserPvResponse {
     required ChartsUserPvPv pv,
   }) = _ChartsUserPvResponse;
 
-  factory ChartsUserPvResponse.fromJson(Map<String, Object?> json) =>
-      _$ChartsUserPvResponseFromJson(json);
+  factory ChartsUserPvResponse.fromJson(Map<String, Object?> json) => _$ChartsUserPvResponseFromJson(json);
 }

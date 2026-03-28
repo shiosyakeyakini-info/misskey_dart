@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_pages_request.freezed.dart';
 part 'users_pages_request.g.dart';
@@ -14,6 +15,5 @@ abstract class UsersPagesRequest with _$UsersPagesRequest {
     int? untilDate,
   }) = _UsersPagesRequest;
 
-  factory UsersPagesRequest.fromJson(Map<String, Object?> json) =>
-      _$UsersPagesRequestFromJson(json);
+  factory UsersPagesRequest.fromJson(Map<String, Object?> json) => _$UsersPagesRequestFromJson(json);
 }

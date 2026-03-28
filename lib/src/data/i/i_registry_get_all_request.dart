@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_registry_get_all_request.freezed.dart';
 part 'i_registry_get_all_request.g.dart';
@@ -10,6 +11,5 @@ abstract class IRegistryGetAllRequest with _$IRegistryGetAllRequest {
     String? domain,
   }) = _IRegistryGetAllRequest;
 
-  factory IRegistryGetAllRequest.fromJson(Map<String, Object?> json) =>
-      _$IRegistryGetAllRequestFromJson(json);
+  factory IRegistryGetAllRequest.fromJson(Map<String, Object?> json) => _$IRegistryGetAllRequestFromJson(json);
 }

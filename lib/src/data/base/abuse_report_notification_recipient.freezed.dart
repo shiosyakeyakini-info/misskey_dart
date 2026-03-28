@@ -23,9 +23,9 @@ mixin _$AbuseReportNotificationRecipient {
   @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
   AbuseReportNotificationRecipientMethod get method;
   String? get userId;
-  UserLite? get user;
+  Map<String, dynamic>? get user;
   String? get systemWebhookId;
-  SystemWebhook? get systemWebhook;
+  Map<String, dynamic>? get systemWebhook;
 
   /// Create a copy of AbuseReportNotificationRecipient
   /// with the given fields replaced by the non-null parameter values.
@@ -52,17 +52,26 @@ mixin _$AbuseReportNotificationRecipient {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other.user, user) &&
             (identical(other.systemWebhookId, systemWebhookId) ||
                 other.systemWebhookId == systemWebhookId) &&
-            (identical(other.systemWebhook, systemWebhook) ||
-                other.systemWebhook == systemWebhook));
+            const DeepCollectionEquality()
+                .equals(other.systemWebhook, systemWebhook));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, isActive, updatedAt, name,
-      method, userId, user, systemWebhookId, systemWebhook);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      isActive,
+      updatedAt,
+      name,
+      method,
+      userId,
+      const DeepCollectionEquality().hash(user),
+      systemWebhookId,
+      const DeepCollectionEquality().hash(systemWebhook));
 
   @override
   String toString() {
@@ -85,12 +94,9 @@ abstract mixin class $AbuseReportNotificationRecipientCopyWith<$Res> {
       @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
       AbuseReportNotificationRecipientMethod method,
       String? userId,
-      UserLite? user,
+      Map<String, dynamic>? user,
       String? systemWebhookId,
-      SystemWebhook? systemWebhook});
-
-  $UserLiteCopyWith<$Res>? get user;
-  $SystemWebhookCopyWith<$Res>? get systemWebhook;
+      Map<String, dynamic>? systemWebhook});
 }
 
 /// @nodoc
@@ -144,7 +150,7 @@ class _$AbuseReportNotificationRecipientCopyWithImpl<$Res>
       user: freezed == user
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       systemWebhookId: freezed == systemWebhookId
           ? _self.systemWebhookId
           : systemWebhookId // ignore: cast_nullable_to_non_nullable
@@ -152,36 +158,8 @@ class _$AbuseReportNotificationRecipientCopyWithImpl<$Res>
       systemWebhook: freezed == systemWebhook
           ? _self.systemWebhook
           : systemWebhook // ignore: cast_nullable_to_non_nullable
-              as SystemWebhook?,
+              as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of AbuseReportNotificationRecipient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
-
-  /// Create a copy of AbuseReportNotificationRecipient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SystemWebhookCopyWith<$Res>? get systemWebhook {
-    if (_self.systemWebhook == null) {
-      return null;
-    }
-
-    return $SystemWebhookCopyWith<$Res>(_self.systemWebhook!, (value) {
-      return _then(_self.copyWith(systemWebhook: value));
-    });
   }
 }
 
@@ -197,9 +175,11 @@ class _AbuseReportNotificationRecipient
       @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
       required this.method,
       this.userId,
-      this.user,
+      final Map<String, dynamic>? user,
       this.systemWebhookId,
-      this.systemWebhook});
+      final Map<String, dynamic>? systemWebhook})
+      : _user = user,
+        _systemWebhook = systemWebhook;
   factory _AbuseReportNotificationRecipient.fromJson(
           Map<String, dynamic> json) =>
       _$AbuseReportNotificationRecipientFromJson(json);
@@ -218,12 +198,27 @@ class _AbuseReportNotificationRecipient
   final AbuseReportNotificationRecipientMethod method;
   @override
   final String? userId;
+  final Map<String, dynamic>? _user;
   @override
-  final UserLite? user;
+  Map<String, dynamic>? get user {
+    final value = _user;
+    if (value == null) return null;
+    if (_user is EqualUnmodifiableMapView) return _user;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? systemWebhookId;
+  final Map<String, dynamic>? _systemWebhook;
   @override
-  final SystemWebhook? systemWebhook;
+  Map<String, dynamic>? get systemWebhook {
+    final value = _systemWebhook;
+    if (value == null) return null;
+    if (_systemWebhook is EqualUnmodifiableMapView) return _systemWebhook;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of AbuseReportNotificationRecipient
   /// with the given fields replaced by the non-null parameter values.
@@ -254,17 +249,26 @@ class _AbuseReportNotificationRecipient
             (identical(other.name, name) || other.name == name) &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other._user, _user) &&
             (identical(other.systemWebhookId, systemWebhookId) ||
                 other.systemWebhookId == systemWebhookId) &&
-            (identical(other.systemWebhook, systemWebhook) ||
-                other.systemWebhook == systemWebhook));
+            const DeepCollectionEquality()
+                .equals(other._systemWebhook, _systemWebhook));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, isActive, updatedAt, name,
-      method, userId, user, systemWebhookId, systemWebhook);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      isActive,
+      updatedAt,
+      name,
+      method,
+      userId,
+      const DeepCollectionEquality().hash(_user),
+      systemWebhookId,
+      const DeepCollectionEquality().hash(_systemWebhook));
 
   @override
   String toString() {
@@ -289,14 +293,9 @@ abstract mixin class _$AbuseReportNotificationRecipientCopyWith<$Res>
       @JsonKey(unknownEnumValue: AbuseReportNotificationRecipientMethod.unknown)
       AbuseReportNotificationRecipientMethod method,
       String? userId,
-      UserLite? user,
+      Map<String, dynamic>? user,
       String? systemWebhookId,
-      SystemWebhook? systemWebhook});
-
-  @override
-  $UserLiteCopyWith<$Res>? get user;
-  @override
-  $SystemWebhookCopyWith<$Res>? get systemWebhook;
+      Map<String, dynamic>? systemWebhook});
 }
 
 /// @nodoc
@@ -348,46 +347,18 @@ class __$AbuseReportNotificationRecipientCopyWithImpl<$Res>
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
       user: freezed == user
-          ? _self.user
+          ? _self._user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       systemWebhookId: freezed == systemWebhookId
           ? _self.systemWebhookId
           : systemWebhookId // ignore: cast_nullable_to_non_nullable
               as String?,
       systemWebhook: freezed == systemWebhook
-          ? _self.systemWebhook
+          ? _self._systemWebhook
           : systemWebhook // ignore: cast_nullable_to_non_nullable
-              as SystemWebhook?,
+              as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of AbuseReportNotificationRecipient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
-
-  /// Create a copy of AbuseReportNotificationRecipient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SystemWebhookCopyWith<$Res>? get systemWebhook {
-    if (_self.systemWebhook == null) {
-      return null;
-    }
-
-    return $SystemWebhookCopyWith<$Res>(_self.systemWebhook!, (value) {
-      return _then(_self.copyWith(systemWebhook: value));
-    });
   }
 }
 

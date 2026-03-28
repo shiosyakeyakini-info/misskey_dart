@@ -5,15 +5,12 @@ part 'admin_system_webhook_test_request.freezed.dart';
 part 'admin_system_webhook_test_request.g.dart';
 
 @freezed
-abstract class AdminSystemWebhookTestRequest
-    with _$AdminSystemWebhookTestRequest {
+abstract class AdminSystemWebhookTestRequest with _$AdminSystemWebhookTestRequest {
   const factory AdminSystemWebhookTestRequest({
     String? webhookId,
-    @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown)
-    AdminSystemWebhookTestType? type,
+    @JsonKey(unknownEnumValue: AdminSystemWebhookTestType.unknown) AdminSystemWebhookTestType? type,
     @JsonKey(name: 'override') AdminSystemWebhookTestOverride? override_,
   }) = _AdminSystemWebhookTestRequest;
 
-  factory AdminSystemWebhookTestRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminSystemWebhookTestRequestFromJson(json);
+  factory AdminSystemWebhookTestRequest.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookTestRequestFromJson(json);
 }

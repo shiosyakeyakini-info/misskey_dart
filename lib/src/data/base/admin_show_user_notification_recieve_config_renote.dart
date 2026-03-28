@@ -5,17 +5,11 @@ part 'admin_show_user_notification_recieve_config_renote.freezed.dart';
 part 'admin_show_user_notification_recieve_config_renote.g.dart';
 
 @freezed
-abstract class AdminShowUserNotificationRecieveConfigRenote
-    with _$AdminShowUserNotificationRecieveConfigRenote {
+abstract class AdminShowUserNotificationRecieveConfigRenote with _$AdminShowUserNotificationRecieveConfigRenote {
   const factory AdminShowUserNotificationRecieveConfigRenote({
-    @JsonKey(
-        unknownEnumValue:
-            AdminShowUserNotificationRecieveConfigRenoteType.unknown)
-    required AdminShowUserNotificationRecieveConfigRenoteType type,
+    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigRenoteType.unknown) required AdminShowUserNotificationRecieveConfigRenoteType type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigRenote;
 
-  factory AdminShowUserNotificationRecieveConfigRenote.fromJson(
-          Map<String, Object?> json) =>
-      _$AdminShowUserNotificationRecieveConfigRenoteFromJson(json);
+  factory AdminShowUserNotificationRecieveConfigRenote.fromJson(Map<String, Object?> json) => _$AdminShowUserNotificationRecieveConfigRenoteFromJson(json);
 }

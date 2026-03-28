@@ -11,6 +11,5 @@ abstract class NotificationReactionsItem with _$NotificationReactionsItem {
     required String reaction,
   }) = _NotificationReactionsItem;
 
-  factory NotificationReactionsItem.fromJson(Map<String, Object?> json) =>
-      _$NotificationReactionsItemFromJson(json);
+  factory NotificationReactionsItem.fromJson(Map<String, Object?> json) => _$NotificationReactionsItemFromJson(json);
 }

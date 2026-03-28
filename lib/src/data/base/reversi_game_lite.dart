@@ -18,11 +18,11 @@ abstract class ReversiGameLite with _$ReversiGameLite {
     required UserLite user1,
     required UserLite user2,
     String? winnerId,
-    UserLite? winner,
+    Map<String, dynamic>? winner,
     String? surrenderedUserId,
     String? timeoutUserId,
     double? black,
-    @JsonKey(unknownEnumValue: ReversiBw.unknown) required ReversiBw bw,
+    required String bw,
     required bool noIrregularRules,
     required bool isLlotheo,
     required bool canPutEverywhere,
@@ -30,6 +30,5 @@ abstract class ReversiGameLite with _$ReversiGameLite {
     required double timeLimitForEachTurn,
   }) = _ReversiGameLite;
 
-  factory ReversiGameLite.fromJson(Map<String, Object?> json) =>
-      _$ReversiGameLiteFromJson(json);
+  factory ReversiGameLite.fromJson(Map<String, Object?> json) => _$ReversiGameLiteFromJson(json);
 }

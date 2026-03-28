@@ -19,14 +19,10 @@ _RolePolicies _$RolePoliciesFromJson(Map<String, dynamic> json) =>
       canManageCustomEmojis: json['canManageCustomEmojis'] as bool,
       canManageAvatarDecorations: json['canManageAvatarDecorations'] as bool,
       canSearchNotes: json['canSearchNotes'] as bool,
-      canSearchUsers: json['canSearchUsers'] as bool,
       canUseTranslator: json['canUseTranslator'] as bool,
       canHideAds: json['canHideAds'] as bool,
       driveCapacityMb: (json['driveCapacityMb'] as num).toInt(),
       maxFileSizeMb: (json['maxFileSizeMb'] as num).toInt(),
-      uploadableFileTypes: (json['uploadableFileTypes'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool,
       canUpdateBioMedia: json['canUpdateBioMedia'] as bool,
       pinLimit: (json['pinLimit'] as num).toInt(),
@@ -46,9 +42,13 @@ _RolePolicies _$RolePoliciesFromJson(Map<String, dynamic> json) =>
       canImportUserLists: json['canImportUserLists'] as bool,
       chatAvailability:
           $enumDecode(_$ChatAvailabilityEnumMap, json['chatAvailability']),
-      noteDraftLimit: (json['noteDraftLimit'] as num).toInt(),
-      scheduledNoteLimit: (json['scheduledNoteLimit'] as num).toInt(),
-      watermarkAvailable: json['watermarkAvailable'] as bool,
+      uploadableFileTypes: (json['uploadableFileTypes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      noteDraftLimit: (json['noteDraftLimit'] as num?)?.toInt(),
+      watermarkAvailable: json['watermarkAvailable'] as bool?,
+      canSearchUsers: json['canSearchUsers'] as bool?,
+      scheduledNoteLimit: (json['scheduledNoteLimit'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$RolePoliciesToJson(_RolePolicies instance) =>
@@ -64,12 +64,10 @@ Map<String, dynamic> _$RolePoliciesToJson(_RolePolicies instance) =>
       'canManageCustomEmojis': instance.canManageCustomEmojis,
       'canManageAvatarDecorations': instance.canManageAvatarDecorations,
       'canSearchNotes': instance.canSearchNotes,
-      'canSearchUsers': instance.canSearchUsers,
       'canUseTranslator': instance.canUseTranslator,
       'canHideAds': instance.canHideAds,
       'driveCapacityMb': instance.driveCapacityMb,
       'maxFileSizeMb': instance.maxFileSizeMb,
-      'uploadableFileTypes': instance.uploadableFileTypes,
       'alwaysMarkNsfw': instance.alwaysMarkNsfw,
       'canUpdateBioMedia': instance.canUpdateBioMedia,
       'pinLimit': instance.pinLimit,
@@ -88,9 +86,11 @@ Map<String, dynamic> _$RolePoliciesToJson(_RolePolicies instance) =>
       'canImportMuting': instance.canImportMuting,
       'canImportUserLists': instance.canImportUserLists,
       'chatAvailability': _$ChatAvailabilityEnumMap[instance.chatAvailability]!,
+      'uploadableFileTypes': instance.uploadableFileTypes,
       'noteDraftLimit': instance.noteDraftLimit,
-      'scheduledNoteLimit': instance.scheduledNoteLimit,
       'watermarkAvailable': instance.watermarkAvailable,
+      'canSearchUsers': instance.canSearchUsers,
+      'scheduledNoteLimit': instance.scheduledNoteLimit,
     };
 
 const _$ChatAvailabilityEnumMap = {

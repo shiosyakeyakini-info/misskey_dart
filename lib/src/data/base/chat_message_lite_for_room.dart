@@ -14,10 +14,9 @@ abstract class ChatMessageLiteForRoom with _$ChatMessageLiteForRoom {
     required String toRoomId,
     String? text,
     String? fileId,
-    DriveFile? file,
+    Map<String, dynamic>? file,
     required List<ChatMessageLiteForRoomReactionsItem> reactions,
   }) = _ChatMessageLiteForRoom;
 
-  factory ChatMessageLiteForRoom.fromJson(Map<String, Object?> json) =>
-      _$ChatMessageLiteForRoomFromJson(json);
+  factory ChatMessageLiteForRoom.fromJson(Map<String, Object?> json) => _$ChatMessageLiteForRoomFromJson(json);
 }

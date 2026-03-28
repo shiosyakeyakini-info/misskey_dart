@@ -33,12 +33,11 @@ mixin _$ReversiGameDetailed {
   UserLite get user1;
   UserLite get user2;
   String? get winnerId;
-  UserLite? get winner;
+  Map<String, dynamic>? get winner;
   String? get surrenderedUserId;
   String? get timeoutUserId;
   double? get black;
-  @JsonKey(unknownEnumValue: ReversiBw.unknown)
-  ReversiBw get bw;
+  String get bw;
   bool get noIrregularRules;
   bool get isLlotheo;
   bool get canPutEverywhere;
@@ -84,7 +83,7 @@ mixin _$ReversiGameDetailed {
             (identical(other.user2, user2) || other.user2 == user2) &&
             (identical(other.winnerId, winnerId) ||
                 other.winnerId == winnerId) &&
-            (identical(other.winner, winner) || other.winner == winner) &&
+            const DeepCollectionEquality().equals(other.winner, winner) &&
             (identical(other.surrenderedUserId, surrenderedUserId) ||
                 other.surrenderedUserId == surrenderedUserId) &&
             (identical(other.timeoutUserId, timeoutUserId) ||
@@ -124,7 +123,7 @@ mixin _$ReversiGameDetailed {
         user1,
         user2,
         winnerId,
-        winner,
+        const DeepCollectionEquality().hash(winner),
         surrenderedUserId,
         timeoutUserId,
         black,
@@ -166,11 +165,11 @@ abstract mixin class $ReversiGameDetailedCopyWith<$Res> {
       UserLite user1,
       UserLite user2,
       String? winnerId,
-      UserLite? winner,
+      Map<String, dynamic>? winner,
       String? surrenderedUserId,
       String? timeoutUserId,
       double? black,
-      @JsonKey(unknownEnumValue: ReversiBw.unknown) ReversiBw bw,
+      String bw,
       bool noIrregularRules,
       bool isLlotheo,
       bool canPutEverywhere,
@@ -181,7 +180,6 @@ abstract mixin class $ReversiGameDetailedCopyWith<$Res> {
 
   $UserLiteCopyWith<$Res> get user1;
   $UserLiteCopyWith<$Res> get user2;
-  $UserLiteCopyWith<$Res>? get winner;
 }
 
 /// @nodoc
@@ -289,7 +287,7 @@ class _$ReversiGameDetailedCopyWithImpl<$Res>
       winner: freezed == winner
           ? _self.winner
           : winner // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       surrenderedUserId: freezed == surrenderedUserId
           ? _self.surrenderedUserId
           : surrenderedUserId // ignore: cast_nullable_to_non_nullable
@@ -305,7 +303,7 @@ class _$ReversiGameDetailedCopyWithImpl<$Res>
       bw: null == bw
           ? _self.bw
           : bw // ignore: cast_nullable_to_non_nullable
-              as ReversiBw,
+              as String,
       noIrregularRules: null == noIrregularRules
           ? _self.noIrregularRules
           : noIrregularRules // ignore: cast_nullable_to_non_nullable
@@ -356,20 +354,6 @@ class _$ReversiGameDetailedCopyWithImpl<$Res>
       return _then(_self.copyWith(user2: value));
     });
   }
-
-  /// Create a copy of ReversiGameDetailed
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get winner {
-    if (_self.winner == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.winner!, (value) {
-      return _then(_self.copyWith(winner: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -391,11 +375,11 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
       required this.user1,
       required this.user2,
       this.winnerId,
-      this.winner,
+      final Map<String, dynamic>? winner,
       this.surrenderedUserId,
       this.timeoutUserId,
       this.black,
-      @JsonKey(unknownEnumValue: ReversiBw.unknown) required this.bw,
+      required this.bw,
       required this.noIrregularRules,
       required this.isLlotheo,
       required this.canPutEverywhere,
@@ -405,6 +389,7 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
       required final List<String> map})
       : _form1 = form1,
         _form2 = form2,
+        _winner = winner,
         _logs = logs,
         _map = map;
   factory _ReversiGameDetailed.fromJson(Map<String, dynamic> json) =>
@@ -459,8 +444,16 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
   final UserLite user2;
   @override
   final String? winnerId;
+  final Map<String, dynamic>? _winner;
   @override
-  final UserLite? winner;
+  Map<String, dynamic>? get winner {
+    final value = _winner;
+    if (value == null) return null;
+    if (_winner is EqualUnmodifiableMapView) return _winner;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? surrenderedUserId;
   @override
@@ -468,8 +461,7 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
   @override
   final double? black;
   @override
-  @JsonKey(unknownEnumValue: ReversiBw.unknown)
-  final ReversiBw bw;
+  final String bw;
   @override
   final bool noIrregularRules;
   @override
@@ -538,7 +530,7 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
             (identical(other.user2, user2) || other.user2 == user2) &&
             (identical(other.winnerId, winnerId) ||
                 other.winnerId == winnerId) &&
-            (identical(other.winner, winner) || other.winner == winner) &&
+            const DeepCollectionEquality().equals(other._winner, _winner) &&
             (identical(other.surrenderedUserId, surrenderedUserId) ||
                 other.surrenderedUserId == surrenderedUserId) &&
             (identical(other.timeoutUserId, timeoutUserId) ||
@@ -578,7 +570,7 @@ class _ReversiGameDetailed implements ReversiGameDetailed {
         user1,
         user2,
         winnerId,
-        winner,
+        const DeepCollectionEquality().hash(_winner),
         surrenderedUserId,
         timeoutUserId,
         black,
@@ -622,11 +614,11 @@ abstract mixin class _$ReversiGameDetailedCopyWith<$Res>
       UserLite user1,
       UserLite user2,
       String? winnerId,
-      UserLite? winner,
+      Map<String, dynamic>? winner,
       String? surrenderedUserId,
       String? timeoutUserId,
       double? black,
-      @JsonKey(unknownEnumValue: ReversiBw.unknown) ReversiBw bw,
+      String bw,
       bool noIrregularRules,
       bool isLlotheo,
       bool canPutEverywhere,
@@ -639,8 +631,6 @@ abstract mixin class _$ReversiGameDetailedCopyWith<$Res>
   $UserLiteCopyWith<$Res> get user1;
   @override
   $UserLiteCopyWith<$Res> get user2;
-  @override
-  $UserLiteCopyWith<$Res>? get winner;
 }
 
 /// @nodoc
@@ -746,9 +736,9 @@ class __$ReversiGameDetailedCopyWithImpl<$Res>
           : winnerId // ignore: cast_nullable_to_non_nullable
               as String?,
       winner: freezed == winner
-          ? _self.winner
+          ? _self._winner
           : winner // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
       surrenderedUserId: freezed == surrenderedUserId
           ? _self.surrenderedUserId
           : surrenderedUserId // ignore: cast_nullable_to_non_nullable
@@ -764,7 +754,7 @@ class __$ReversiGameDetailedCopyWithImpl<$Res>
       bw: null == bw
           ? _self.bw
           : bw // ignore: cast_nullable_to_non_nullable
-              as ReversiBw,
+              as String,
       noIrregularRules: null == noIrregularRules
           ? _self.noIrregularRules
           : noIrregularRules // ignore: cast_nullable_to_non_nullable
@@ -813,20 +803,6 @@ class __$ReversiGameDetailedCopyWithImpl<$Res>
   $UserLiteCopyWith<$Res> get user2 {
     return $UserLiteCopyWith<$Res>(_self.user2, (value) {
       return _then(_self.copyWith(user2: value));
-    });
-  }
-
-  /// Create a copy of ReversiGameDetailed
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get winner {
-    if (_self.winner == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.winner!, (value) {
-      return _then(_self.copyWith(winner: value));
     });
   }
 }

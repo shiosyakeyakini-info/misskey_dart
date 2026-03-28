@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_follow_request.freezed.dart';
 part 'channels_follow_request.g.dart';
@@ -9,6 +10,5 @@ abstract class ChannelsFollowRequest with _$ChannelsFollowRequest {
     String? channelId,
   }) = _ChannelsFollowRequest;
 
-  factory ChannelsFollowRequest.fromJson(Map<String, Object?> json) =>
-      _$ChannelsFollowRequestFromJson(json);
+  factory ChannelsFollowRequest.fromJson(Map<String, Object?> json) => _$ChannelsFollowRequestFromJson(json);
 }

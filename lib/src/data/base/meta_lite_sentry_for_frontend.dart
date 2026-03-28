@@ -13,6 +13,5 @@ abstract class MetaLiteSentryForFrontend with _$MetaLiteSentryForFrontend {
     Map<String, dynamic>? replayIntegration,
   }) = _MetaLiteSentryForFrontend;
 
-  factory MetaLiteSentryForFrontend.fromJson(Map<String, Object?> json) =>
-      _$MetaLiteSentryForFrontendFromJson(json);
+  factory MetaLiteSentryForFrontend.fromJson(Map<String, Object?> json) => _$MetaLiteSentryForFrontendFromJson(json);
 }

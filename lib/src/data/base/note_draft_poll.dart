@@ -13,6 +13,5 @@ abstract class NoteDraftPoll with _$NoteDraftPoll {
     required List<String> choices,
   }) = _NoteDraftPoll;
 
-  factory NoteDraftPoll.fromJson(Map<String, Object?> json) =>
-      _$NoteDraftPollFromJson(json);
+  factory NoteDraftPoll.fromJson(Map<String, Object?> json) => _$NoteDraftPollFromJson(json);
 }

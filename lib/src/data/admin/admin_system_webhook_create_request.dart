@@ -5,8 +5,7 @@ part 'admin_system_webhook_create_request.freezed.dart';
 part 'admin_system_webhook_create_request.g.dart';
 
 @freezed
-abstract class AdminSystemWebhookCreateRequest
-    with _$AdminSystemWebhookCreateRequest {
+abstract class AdminSystemWebhookCreateRequest with _$AdminSystemWebhookCreateRequest {
   const factory AdminSystemWebhookCreateRequest({
     bool? isActive,
     String? name,
@@ -15,6 +14,5 @@ abstract class AdminSystemWebhookCreateRequest
     @Default("") String? secret,
   }) = _AdminSystemWebhookCreateRequest;
 
-  factory AdminSystemWebhookCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$AdminSystemWebhookCreateRequestFromJson(json);
+  factory AdminSystemWebhookCreateRequest.fromJson(Map<String, Object?> json) => _$AdminSystemWebhookCreateRequestFromJson(json);
 }

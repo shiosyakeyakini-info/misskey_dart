@@ -11,9 +11,10 @@ _UserDetailedNotMeOnly _$UserDetailedNotMeOnlyFromJson(
     _UserDetailedNotMeOnly(
       url: _$JsonConverterFromJson<String, Uri?>(
           json['url'], const NullableUriConverter().fromJson),
-      uri: json['uri'] == null ? null : Uri.parse(json['uri'] as String),
-      movedTo:
-          json['movedTo'] == null ? null : Uri.parse(json['movedTo'] as String),
+      uri: _$JsonConverterFromJson<String, Uri?>(
+          json['uri'], const NullableUriConverter().fromJson),
+      movedTo: _$JsonConverterFromJson<String, Uri?>(
+          json['movedTo'], const NullableUriConverter().fromJson),
       alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -50,9 +51,7 @@ _UserDetailedNotMeOnly _$UserDetailedNotMeOnlyFromJson(
           .map((e) => Note.fromJson(e as Map<String, dynamic>))
           .toList(),
       pinnedPageId: json['pinnedPageId'] as String?,
-      pinnedPage: json['pinnedPage'] == null
-          ? null
-          : Page.fromJson(json['pinnedPage'] as Map<String, dynamic>),
+      pinnedPage: json['pinnedPage'] as Map<String, dynamic>?,
       publicReactions: json['publicReactions'] as bool,
       followingVisibility: $enumDecode(
           _$FFVisibilityEnumMap, json['followingVisibility'],
@@ -89,8 +88,8 @@ Map<String, dynamic> _$UserDetailedNotMeOnlyToJson(
         _UserDetailedNotMeOnly instance) =>
     <String, dynamic>{
       'url': const NullableUriConverter().toJson(instance.url),
-      'uri': instance.uri?.toString(),
-      'movedTo': instance.movedTo?.toString(),
+      'uri': const NullableUriConverter().toJson(instance.uri),
+      'movedTo': const NullableUriConverter().toJson(instance.movedTo),
       'alsoKnownAs': instance.alsoKnownAs,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
@@ -113,7 +112,7 @@ Map<String, dynamic> _$UserDetailedNotMeOnlyToJson(
       'pinnedNoteIds': instance.pinnedNoteIds,
       'pinnedNotes': instance.pinnedNotes.map((e) => e.toJson()).toList(),
       'pinnedPageId': instance.pinnedPageId,
-      'pinnedPage': instance.pinnedPage?.toJson(),
+      'pinnedPage': instance.pinnedPage,
       'publicReactions': instance.publicReactions,
       'followingVisibility':
           _$FFVisibilityEnumMap[instance.followingVisibility]!,

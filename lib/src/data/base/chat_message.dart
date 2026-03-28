@@ -12,16 +12,15 @@ abstract class ChatMessage with _$ChatMessage {
     required String fromUserId,
     UserLite? fromUser,
     String? toUserId,
-    UserLite? toUser,
+    Map<String, dynamic>? toUser,
     String? toRoomId,
-    ChatRoom? toRoom,
+    Map<String, dynamic>? toRoom,
     String? text,
     String? fileId,
-    DriveFile? file,
+    Map<String, dynamic>? file,
     bool? isRead,
     required List<ChatMessageReactionsItem> reactions,
   }) = _ChatMessage;
 
-  factory ChatMessage.fromJson(Map<String, Object?> json) =>
-      _$ChatMessageFromJson(json);
+  factory ChatMessage.fromJson(Map<String, Object?> json) => _$ChatMessageFromJson(json);
 }

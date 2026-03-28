@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_messages_create_to_user.freezed.dart';
 part 'chat_messages_create_to_user.g.dart';
@@ -11,6 +12,5 @@ abstract class ChatMessagesCreateToUser with _$ChatMessagesCreateToUser {
     required String toUserId,
   }) = _ChatMessagesCreateToUser;
 
-  factory ChatMessagesCreateToUser.fromJson(Map<String, Object?> json) =>
-      _$ChatMessagesCreateToUserFromJson(json);
+  factory ChatMessagesCreateToUser.fromJson(Map<String, Object?> json) => _$ChatMessagesCreateToUserFromJson(json);
 }

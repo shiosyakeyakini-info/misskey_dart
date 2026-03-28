@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_unrenote.freezed.dart';
 part 'notes_unrenote.g.dart';
@@ -9,6 +10,5 @@ abstract class NotesUnrenote with _$NotesUnrenote {
     required String noteId,
   }) = _NotesUnrenote;
 
-  factory NotesUnrenote.fromJson(Map<String, Object?> json) =>
-      _$NotesUnrenoteFromJson(json);
+  factory NotesUnrenote.fromJson(Map<String, Object?> json) => _$NotesUnrenoteFromJson(json);
 }

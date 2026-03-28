@@ -12,8 +12,7 @@ abstract class AdminRolesUpdate with _$AdminRolesUpdate {
     String? description,
     String? color,
     String? iconUrl,
-    @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown)
-    AdminRolesUpdateTarget? target,
+    @JsonKey(unknownEnumValue: AdminRolesUpdateTarget.unknown) AdminRolesUpdateTarget? target,
     Map<String, dynamic>? condFormula,
     bool? isPublic,
     bool? isModerator,
@@ -26,6 +25,5 @@ abstract class AdminRolesUpdate with _$AdminRolesUpdate {
     Map<String, dynamic>? policies,
   }) = _AdminRolesUpdate;
 
-  factory AdminRolesUpdate.fromJson(Map<String, Object?> json) =>
-      _$AdminRolesUpdateFromJson(json);
+  factory AdminRolesUpdate.fromJson(Map<String, Object?> json) => _$AdminRolesUpdateFromJson(json);
 }

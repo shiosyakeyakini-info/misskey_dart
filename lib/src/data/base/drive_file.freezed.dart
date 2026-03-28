@@ -31,9 +31,9 @@ mixin _$DriveFile {
   Uri? get thumbnailUrl;
   String? get comment;
   String? get folderId;
-  DriveFolder? get folder;
+  Map<String, dynamic>? get folder;
   String? get userId;
-  UserLite? get user;
+  Map<String, dynamic>? get user;
 
   /// Create a copy of DriveFile
   /// with the given fields replaced by the non-null parameter values.
@@ -69,9 +69,9 @@ mixin _$DriveFile {
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
-            (identical(other.folder, folder) || other.folder == folder) &&
+            const DeepCollectionEquality().equals(other.folder, folder) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user));
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -91,9 +91,9 @@ mixin _$DriveFile {
       thumbnailUrl,
       comment,
       folderId,
-      folder,
+      const DeepCollectionEquality().hash(folder),
       userId,
-      user);
+      const DeepCollectionEquality().hash(user));
 
   @override
   String toString() {
@@ -120,13 +120,11 @@ abstract mixin class $DriveFileCopyWith<$Res> {
       @NullableUriConverter() Uri? thumbnailUrl,
       String? comment,
       String? folderId,
-      DriveFolder? folder,
+      Map<String, dynamic>? folder,
       String? userId,
-      UserLite? user});
+      Map<String, dynamic>? user});
 
   $DriveFilePropertiesCopyWith<$Res> get properties;
-  $DriveFolderCopyWith<$Res>? get folder;
-  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -214,7 +212,7 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
       folder: freezed == folder
           ? _self.folder
           : folder // ignore: cast_nullable_to_non_nullable
-              as DriveFolder?,
+              as Map<String, dynamic>?,
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -222,7 +220,7 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
       user: freezed == user
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
     ));
   }
 
@@ -233,34 +231,6 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
   $DriveFilePropertiesCopyWith<$Res> get properties {
     return $DriveFilePropertiesCopyWith<$Res>(_self.properties, (value) {
       return _then(_self.copyWith(properties: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFolderCopyWith<$Res>? get folder {
-    if (_self.folder == null) {
-      return null;
-    }
-
-    return $DriveFolderCopyWith<$Res>(_self.folder!, (value) {
-      return _then(_self.copyWith(folder: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
     });
   }
 }
@@ -282,9 +252,11 @@ class _DriveFile implements DriveFile {
       @NullableUriConverter() this.thumbnailUrl,
       this.comment,
       this.folderId,
-      this.folder,
+      final Map<String, dynamic>? folder,
       this.userId,
-      this.user});
+      final Map<String, dynamic>? user})
+      : _folder = folder,
+        _user = user;
   factory _DriveFile.fromJson(Map<String, dynamic> json) =>
       _$DriveFileFromJson(json);
 
@@ -317,12 +289,27 @@ class _DriveFile implements DriveFile {
   final String? comment;
   @override
   final String? folderId;
+  final Map<String, dynamic>? _folder;
   @override
-  final DriveFolder? folder;
+  Map<String, dynamic>? get folder {
+    final value = _folder;
+    if (value == null) return null;
+    if (_folder is EqualUnmodifiableMapView) return _folder;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? userId;
+  final Map<String, dynamic>? _user;
   @override
-  final UserLite? user;
+  Map<String, dynamic>? get user {
+    final value = _user;
+    if (value == null) return null;
+    if (_user is EqualUnmodifiableMapView) return _user;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of DriveFile
   /// with the given fields replaced by the non-null parameter values.
@@ -363,9 +350,9 @@ class _DriveFile implements DriveFile {
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
-            (identical(other.folder, folder) || other.folder == folder) &&
+            const DeepCollectionEquality().equals(other._folder, _folder) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user));
+            const DeepCollectionEquality().equals(other._user, _user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -385,9 +372,9 @@ class _DriveFile implements DriveFile {
       thumbnailUrl,
       comment,
       folderId,
-      folder,
+      const DeepCollectionEquality().hash(_folder),
       userId,
-      user);
+      const DeepCollectionEquality().hash(_user));
 
   @override
   String toString() {
@@ -417,16 +404,12 @@ abstract mixin class _$DriveFileCopyWith<$Res>
       @NullableUriConverter() Uri? thumbnailUrl,
       String? comment,
       String? folderId,
-      DriveFolder? folder,
+      Map<String, dynamic>? folder,
       String? userId,
-      UserLite? user});
+      Map<String, dynamic>? user});
 
   @override
   $DriveFilePropertiesCopyWith<$Res> get properties;
-  @override
-  $DriveFolderCopyWith<$Res>? get folder;
-  @override
-  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -512,17 +495,17 @@ class __$DriveFileCopyWithImpl<$Res> implements _$DriveFileCopyWith<$Res> {
           : folderId // ignore: cast_nullable_to_non_nullable
               as String?,
       folder: freezed == folder
-          ? _self.folder
+          ? _self._folder
           : folder // ignore: cast_nullable_to_non_nullable
-              as DriveFolder?,
+              as Map<String, dynamic>?,
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
       user: freezed == user
-          ? _self.user
+          ? _self._user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
     ));
   }
 
@@ -533,34 +516,6 @@ class __$DriveFileCopyWithImpl<$Res> implements _$DriveFileCopyWith<$Res> {
   $DriveFilePropertiesCopyWith<$Res> get properties {
     return $DriveFilePropertiesCopyWith<$Res>(_self.properties, (value) {
       return _then(_self.copyWith(properties: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFolderCopyWith<$Res>? get folder {
-    if (_self.folder == null) {
-      return null;
-    }
-
-    return $DriveFolderCopyWith<$Res>(_self.folder!, (value) {
-      return _then(_self.copyWith(folder: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
     });
   }
 }

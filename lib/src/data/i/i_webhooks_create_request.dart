@@ -13,6 +13,5 @@ abstract class IWebhooksCreateRequest with _$IWebhooksCreateRequest {
     @JsonKey(name: 'on') List<IWebhooksCreateOnItem>? on_,
   }) = _IWebhooksCreateRequest;
 
-  factory IWebhooksCreateRequest.fromJson(Map<String, Object?> json) =>
-      _$IWebhooksCreateRequestFromJson(json);
+  factory IWebhooksCreateRequest.fromJson(Map<String, Object?> json) => _$IWebhooksCreateRequestFromJson(json);
 }

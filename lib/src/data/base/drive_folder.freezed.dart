@@ -22,7 +22,7 @@ mixin _$DriveFolder {
   String? get parentId;
   double? get foldersCount;
   double? get filesCount;
-  DriveFolder? get parent;
+  Map<String, dynamic>? get parent;
 
   /// Create a copy of DriveFolder
   /// with the given fields replaced by the non-null parameter values.
@@ -49,13 +49,13 @@ mixin _$DriveFolder {
                 other.foldersCount == foldersCount) &&
             (identical(other.filesCount, filesCount) ||
                 other.filesCount == filesCount) &&
-            (identical(other.parent, parent) || other.parent == parent));
+            const DeepCollectionEquality().equals(other.parent, parent));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, name, parentId,
-      foldersCount, filesCount, parent);
+      foldersCount, filesCount, const DeepCollectionEquality().hash(parent));
 
   @override
   String toString() {
@@ -76,9 +76,7 @@ abstract mixin class $DriveFolderCopyWith<$Res> {
       String? parentId,
       double? foldersCount,
       double? filesCount,
-      DriveFolder? parent});
-
-  $DriveFolderCopyWith<$Res>? get parent;
+      Map<String, dynamic>? parent});
 }
 
 /// @nodoc
@@ -129,22 +127,8 @@ class _$DriveFolderCopyWithImpl<$Res> implements $DriveFolderCopyWith<$Res> {
       parent: freezed == parent
           ? _self.parent
           : parent // ignore: cast_nullable_to_non_nullable
-              as DriveFolder?,
+              as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of DriveFolder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFolderCopyWith<$Res>? get parent {
-    if (_self.parent == null) {
-      return null;
-    }
-
-    return $DriveFolderCopyWith<$Res>(_self.parent!, (value) {
-      return _then(_self.copyWith(parent: value));
-    });
   }
 }
 
@@ -158,7 +142,8 @@ class _DriveFolder implements DriveFolder {
       this.parentId,
       this.foldersCount,
       this.filesCount,
-      this.parent});
+      final Map<String, dynamic>? parent})
+      : _parent = parent;
   factory _DriveFolder.fromJson(Map<String, dynamic> json) =>
       _$DriveFolderFromJson(json);
 
@@ -175,8 +160,15 @@ class _DriveFolder implements DriveFolder {
   final double? foldersCount;
   @override
   final double? filesCount;
+  final Map<String, dynamic>? _parent;
   @override
-  final DriveFolder? parent;
+  Map<String, dynamic>? get parent {
+    final value = _parent;
+    if (value == null) return null;
+    if (_parent is EqualUnmodifiableMapView) return _parent;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of DriveFolder
   /// with the given fields replaced by the non-null parameter values.
@@ -208,13 +200,13 @@ class _DriveFolder implements DriveFolder {
                 other.foldersCount == foldersCount) &&
             (identical(other.filesCount, filesCount) ||
                 other.filesCount == filesCount) &&
-            (identical(other.parent, parent) || other.parent == parent));
+            const DeepCollectionEquality().equals(other._parent, _parent));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, name, parentId,
-      foldersCount, filesCount, parent);
+      foldersCount, filesCount, const DeepCollectionEquality().hash(_parent));
 
   @override
   String toString() {
@@ -237,10 +229,7 @@ abstract mixin class _$DriveFolderCopyWith<$Res>
       String? parentId,
       double? foldersCount,
       double? filesCount,
-      DriveFolder? parent});
-
-  @override
-  $DriveFolderCopyWith<$Res>? get parent;
+      Map<String, dynamic>? parent});
 }
 
 /// @nodoc
@@ -289,24 +278,10 @@ class __$DriveFolderCopyWithImpl<$Res> implements _$DriveFolderCopyWith<$Res> {
           : filesCount // ignore: cast_nullable_to_non_nullable
               as double?,
       parent: freezed == parent
-          ? _self.parent
+          ? _self._parent
           : parent // ignore: cast_nullable_to_non_nullable
-              as DriveFolder?,
+              as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of DriveFolder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFolderCopyWith<$Res>? get parent {
-    if (_self.parent == null) {
-      return null;
-    }
-
-    return $DriveFolderCopyWith<$Res>(_self.parent!, (value) {
-      return _then(_self.copyWith(parent: value));
-    });
   }
 }
 
