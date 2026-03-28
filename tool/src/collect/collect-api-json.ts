@@ -9,6 +9,7 @@ import { existsSync, writeFileSync, mkdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadVersionsConfig } from "../config/config-loader.js";
+import { saveVersion, versionExists } from "./patch-store.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TOOL_ROOT = resolve(__dirname, "../..");
@@ -39,9 +40,7 @@ async function main() {
   console.log();
 
   for (const version of versions) {
-    const outputPath = resolve(SCHEMAS_DIR, `${version}.json`);
-
-    if (existsSync(outputPath) && !force) {
+    if (!force && versionExists(SCHEMAS_DIR, version, config.versions)) {
       console.log(`[${version}] Already exists, skipping (use --force to overwrite)`);
       continue;
     }
@@ -49,8 +48,8 @@ async function main() {
     console.log(`[${version}] Collecting api.json...`);
 
     try {
-      await collectApiJson(version, outputPath);
-      console.log(`[${version}] Done! Saved to ${outputPath}`);
+      await collectApiJson(version, config.versions);
+      console.log(`[${version}] Done!`);
     } catch (err) {
       console.error(`[${version}] Failed:`, err);
       // Ensure cleanup
@@ -63,7 +62,7 @@ async function main() {
   console.log("\nAll done!");
 }
 
-async function collectApiJson(version: string, outputPath: string) {
+async function collectApiJson(version: string, allVersions: string[]) {
   // Stop any existing containers
   try {
     dockerDown();
@@ -85,9 +84,9 @@ async function collectApiJson(version: string, outputPath: string) {
   console.log("  Fetching api.json...");
   const apiJson = fetchApiJson();
 
-  // Pretty print and save
+  // Pretty print and save (base as .json, others as .patch)
   const formatted = JSON.stringify(JSON.parse(apiJson), null, 2);
-  writeFileSync(outputPath, formatted, "utf-8");
+  saveVersion(SCHEMAS_DIR, version, formatted, allVersions);
 
   // Cleanup
   console.log("  Cleaning up...");

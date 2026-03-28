@@ -11,13 +11,14 @@
 
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { execSync } from "node:child_process";
-import { parseApiJson } from "./schema/openapi-parser.js";
+import { parseApiJson, parseApiJsonFromContent } from "./schema/openapi-parser.js";
 import { loadOverrideConfig, loadVersionsConfig } from "./config/config-loader.js";
 import { generateAll } from "./generator/dart-generator.js";
 import { mergeVersions, applyVersionCompatibility } from "./differ/schema-differ.js";
 import type { VersionedApi } from "./differ/schema-differ.js";
+import { resolveVersion } from "./collect/patch-store.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TOOL_ROOT = resolve(__dirname, "..");
@@ -97,16 +98,25 @@ async function runMultiVersion(
   // Parse all version schemas
   const versionedApis: VersionedApi[] = [];
   for (const version of versionsConfig.versions) {
-    const schemaPath = resolve(schemasDir, `${version}.json`);
-    if (!existsSync(schemaPath)) {
+    let content: string;
+
+    // Try full JSON first (base version or legacy), then patch
+    const jsonPath = resolve(schemasDir, `${version}.json`);
+    const patchPath = resolve(schemasDir, `${version}.patch`);
+
+    if (existsSync(jsonPath)) {
+      content = readFileSync(jsonPath, "utf-8");
+    } else if (existsSync(patchPath)) {
+      content = resolveVersion(schemasDir, version, versionsConfig.versions);
+    } else {
       console.warn(
-        `[${version}] Schema not found: ${schemaPath}, skipping`
+        `[${version}] No .json or .patch found, skipping`
       );
       continue;
     }
 
     console.log(`Parsing ${version}...`);
-    const parsed = parseApiJson(schemaPath, config);
+    const parsed = parseApiJsonFromContent(content, config);
     versionedApis.push({ version, parsed });
     console.log(
       `  Schemas: ${parsed.componentSchemas.size}, Endpoints: ${parsed.endpoints.length}`

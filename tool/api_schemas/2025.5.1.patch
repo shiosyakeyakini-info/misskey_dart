@@ -1,0 +1,4387 @@
+--- /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-0jNJYQ/prev.json	2026-03-28 18:43:52
++++ /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-0jNJYQ/new.json	2026-03-28 18:43:52
+@@ -1,7 +1,7 @@
+ {
+   "openapi": "3.1.0",
+   "info": {
+-    "version": "2025.5.0",
++    "version": "2025.5.1",
+     "title": "Misskey API"
+   },
+   "externalDocs": {
+@@ -77,7 +77,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/AbuseReportNotificationRecipient"
+                 }
+               }
+@@ -416,7 +415,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/AbuseReportNotificationRecipient"
+                   }
+                 }
+@@ -573,7 +571,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/AbuseReportNotificationRecipient"
+                 }
+               }
+@@ -766,7 +763,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/AbuseReportNotificationRecipient"
+                 }
+               }
+@@ -1020,21 +1016,18 @@
+                         "format": "id"
+                       },
+                       "reporter": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserDetailedNotMe"
+                       },
+                       "targetUser": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserDetailedNotMe"
+                       },
+                       "assignee": {
+-                        "type": [
+-                          "object",
+-                          "null"
+-                        ],
+-                        "allOf": [
++                        "oneOf": [
+                           {
+                             "$ref": "#/components/schemas/UserDetailedNotMe"
++                          },
++                          {
++                            "type": "null"
+                           }
+                         ]
+                       },
+@@ -1232,7 +1225,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "properties": {
+                     "token": {
+                       "type": "string"
+@@ -1561,7 +1553,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserDetailedNotMe"
+                 }
+               }
+@@ -1759,7 +1750,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Ad"
+                 }
+               }
+@@ -2088,7 +2078,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Ad"
+                   }
+                 }
+@@ -5077,7 +5066,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFile"
+                   }
+                 }
+@@ -5214,23 +5202,26 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "fileId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "url": {
+-                    "type": "string"
+-                  }
+-                },
+                 "anyOf": [
+                   {
++                    "type": "object",
++                    "properties": {
++                      "fileId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
+                     "required": [
+                       "fileId"
+                     ]
+                   },
+                   {
++                    "type": "object",
++                    "properties": {
++                      "url": {
++                        "type": "string"
++                      }
++                    },
+                     "required": [
+                       "url"
+                     ]
+@@ -5615,7 +5606,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/EmojiDetailed"
+                 }
+               }
+@@ -7633,62 +7623,74 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "id": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "name": {
+-                    "type": "string",
+-                    "pattern": "^[a-zA-Z0-9_]+$"
+-                  },
+-                  "fileId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "category": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ],
+-                    "description": "Use `null` to reset the category."
+-                  },
+-                  "aliases": {
+-                    "type": "array",
+-                    "items": {
+-                      "type": "string"
+-                    }
+-                  },
+-                  "license": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ]
+-                  },
+-                  "isSensitive": {
+-                    "type": "boolean"
+-                  },
+-                  "localOnly": {
+-                    "type": "boolean"
+-                  },
+-                  "roleIdsThatCanBeUsedThisEmojiAsReaction": {
+-                    "type": "array",
+-                    "items": {
+-                      "type": "string"
+-                    }
+-                  }
+-                },
+-                "anyOf": [
++                "allOf": [
+                   {
+-                    "required": [
+-                      "id"
++                    "anyOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "id": {
++                            "type": "string",
++                            "format": "misskey:id"
++                          }
++                        },
++                        "required": [
++                          "id"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "name": {
++                            "type": "string",
++                            "pattern": "^[a-zA-Z0-9_]+$"
++                          }
++                        },
++                        "required": [
++                          "name"
++                        ]
++                      }
+                     ]
+                   },
+                   {
+-                    "required": [
+-                      "name"
+-                    ]
++                    "type": "object",
++                    "properties": {
++                      "fileId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "category": {
++                        "type": [
++                          "string",
++                          "null"
++                        ],
++                        "description": "Use `null` to reset the category."
++                      },
++                      "aliases": {
++                        "type": "array",
++                        "items": {
++                          "type": "string"
++                        }
++                      },
++                      "license": {
++                        "type": [
++                          "string",
++                          "null"
++                        ]
++                      },
++                      "isSensitive": {
++                        "type": "boolean"
++                      },
++                      "localOnly": {
++                        "type": "boolean"
++                      },
++                      "roleIdsThatCanBeUsedThisEmojiAsReaction": {
++                        "type": "array",
++                        "items": {
++                          "type": "string"
++                        }
++                      }
++                    }
+                   }
+                 ]
+               }
+@@ -9115,7 +9117,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/InviteCode"
+                   }
+                 }
+@@ -9305,7 +9306,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/InviteCode"
+                   }
+                 }
+@@ -9957,6 +9957,9 @@
+                       "type": "string"
+                     },
+                     "urlPreviewEnabled": {
++                      "type": "boolean"
++                    },
++                    "urlPreviewAllowRedirect": {
+                       "type": "boolean"
+                     },
+                     "urlPreviewTimeout": {
+@@ -10011,6 +10014,26 @@
+                           "versionRange"
+                         ]
+                       }
++                    },
++                    "singleUserMode": {
++                      "type": "boolean"
++                    },
++                    "ugcVisibilityForVisitor": {
++                      "type": "string",
++                      "enum": [
++                        "all",
++                        "local",
++                        "none"
++                      ]
++                    },
++                    "proxyRemoteFiles": {
++                      "type": "boolean"
++                    },
++                    "signToActivityPubGet": {
++                      "type": "boolean"
++                    },
++                    "allowExternalApRedirect": {
++                      "type": "boolean"
+                     }
+                   },
+                   "required": [
+@@ -10120,6 +10143,7 @@
+                     "uri",
+                     "version",
+                     "urlPreviewEnabled",
++                    "urlPreviewAllowRedirect",
+                     "urlPreviewTimeout",
+                     "urlPreviewMaximumContentLength",
+                     "urlPreviewRequireContentLength",
+@@ -10127,7 +10151,12 @@
+                     "urlPreviewSummaryProxyUrl",
+                     "federation",
+                     "federationHosts",
+-                    "deliverSuspendedSoftware"
++                    "deliverSuspendedSoftware",
++                    "singleUserMode",
++                    "ugcVisibilityForVisitor",
++                    "proxyRemoteFiles",
++                    "signToActivityPubGet",
++                    "allowExternalApRedirect"
+                   ]
+                 }
+               }
+@@ -10938,7 +10967,8 @@
+                         "wait",
+                         "delayed",
+                         "completed",
+-                        "failed"
++                        "failed",
++                        "paused"
+                       ]
+                     }
+                   },
+@@ -10955,8 +10985,18 @@
+           }
+         },
+         "responses": {
+-          "204": {
+-            "description": "OK (without any results)"
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "type": "array",
++                  "items": {
++                    "$ref": "#/components/schemas/QueueJob"
++                  }
++                }
++              }
++            }
+           },
+           "400": {
+             "description": "Client error",
+@@ -11271,8 +11311,146 @@
+           }
+         },
+         "responses": {
+-          "204": {
+-            "description": "OK (without any results)"
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "type": "object",
++                  "properties": {
++                    "name": {
++                      "type": "string",
++                      "enum": [
++                        "system",
++                        "endedPollNotification",
++                        "deliver",
++                        "inbox",
++                        "db",
++                        "relationship",
++                        "objectStorage",
++                        "userWebhookDeliver",
++                        "systemWebhookDeliver"
++                      ]
++                    },
++                    "qualifiedName": {
++                      "type": "string"
++                    },
++                    "counts": {
++                      "type": "object",
++                      "additionalProperties": {
++                        "type": "number"
++                      }
++                    },
++                    "isPaused": {
++                      "type": "boolean"
++                    },
++                    "metrics": {
++                      "type": "object",
++                      "properties": {
++                        "completed": {
++                          "$ref": "#/components/schemas/QueueMetrics"
++                        },
++                        "failed": {
++                          "$ref": "#/components/schemas/QueueMetrics"
++                        }
++                      },
++                      "required": [
++                        "completed",
++                        "failed"
++                      ]
++                    },
++                    "db": {
++                      "type": "object",
++                      "properties": {
++                        "version": {
++                          "type": "string"
++                        },
++                        "mode": {
++                          "type": "string",
++                          "enum": [
++                            "cluster",
++                            "standalone",
++                            "sentinel"
++                          ]
++                        },
++                        "runId": {
++                          "type": "string"
++                        },
++                        "processId": {
++                          "type": "string"
++                        },
++                        "port": {
++                          "type": "number"
++                        },
++                        "os": {
++                          "type": "string"
++                        },
++                        "uptime": {
++                          "type": "number"
++                        },
++                        "memory": {
++                          "type": "object",
++                          "properties": {
++                            "total": {
++                              "type": "number"
++                            },
++                            "used": {
++                              "type": "number"
++                            },
++                            "fragmentationRatio": {
++                              "type": "number"
++                            },
++                            "peak": {
++                              "type": "number"
++                            }
++                          },
++                          "required": [
++                            "total",
++                            "used",
++                            "fragmentationRatio",
++                            "peak"
++                          ]
++                        },
++                        "clients": {
++                          "type": "object",
++                          "properties": {
++                            "blocked": {
++                              "type": "number"
++                            },
++                            "connected": {
++                              "type": "number"
++                            }
++                          },
++                          "required": [
++                            "blocked",
++                            "connected"
++                          ]
++                        }
++                      },
++                      "required": [
++                        "version",
++                        "mode",
++                        "runId",
++                        "processId",
++                        "port",
++                        "os",
++                        "uptime",
++                        "memory",
++                        "clients"
++                      ]
++                    }
++                  },
++                  "required": [
++                    "name",
++                    "qualifiedName",
++                    "counts",
++                    "isPaused",
++                    "metrics",
++                    "db"
++                  ]
++                }
++              }
++            }
+           },
+           "400": {
+             "description": "Client error",
+@@ -11400,8 +11578,64 @@
+           }
+         ],
+         "responses": {
+-          "204": {
+-            "description": "OK (without any results)"
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "type": "array",
++                  "items": {
++                    "type": "object",
++                    "properties": {
++                      "name": {
++                        "type": "string",
++                        "enum": [
++                          "system",
++                          "endedPollNotification",
++                          "deliver",
++                          "inbox",
++                          "db",
++                          "relationship",
++                          "objectStorage",
++                          "userWebhookDeliver",
++                          "systemWebhookDeliver"
++                        ]
++                      },
++                      "counts": {
++                        "type": "object",
++                        "additionalProperties": {
++                          "type": "number"
++                        }
++                      },
++                      "isPaused": {
++                        "type": "boolean"
++                      },
++                      "metrics": {
++                        "type": "object",
++                        "properties": {
++                          "completed": {
++                            "$ref": "#/components/schemas/QueueMetrics"
++                          },
++                          "failed": {
++                            "$ref": "#/components/schemas/QueueMetrics"
++                          }
++                        },
++                        "required": [
++                          "completed",
++                          "failed"
++                        ]
++                      }
++                    },
++                    "required": [
++                      "name",
++                      "counts",
++                      "isPaused",
++                      "metrics"
++                    ]
++                  }
++                }
++              }
++            }
+           },
+           "400": {
+             "description": "Client error",
+@@ -11886,8 +12120,15 @@
+           }
+         },
+         "responses": {
+-          "204": {
+-            "description": "OK (without any results)"
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/QueueJob"
++                }
++              }
++            }
+           },
+           "400": {
+             "description": "Client error",
+@@ -13277,7 +13518,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Role"
+                 }
+               }
+@@ -13573,7 +13813,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Role"
+                   }
+                 }
+@@ -13730,7 +13969,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Role"
+                 }
+               }
+@@ -15060,7 +15298,6 @@
+                         "format": "id"
+                       },
+                       "user": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserDetailedNotMe"
+                       }
+                     },
+@@ -15968,13 +16205,11 @@
+                       }
+                     },
+                     "policies": {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/RolePolicies"
+                     },
+                     "roles": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/Role"
+                       }
+                     },
+@@ -16239,7 +16474,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserDetailed"
+                   }
+                 }
+@@ -16575,7 +16809,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/SystemWebhook"
+                 }
+               }
+@@ -16890,7 +17123,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/SystemWebhook"
+                   }
+                 }
+@@ -17047,7 +17279,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/SystemWebhook"
+                 }
+               }
+@@ -17450,7 +17681,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/SystemWebhook"
+                 }
+               }
+@@ -18756,6 +18986,9 @@
+                   "urlPreviewEnabled": {
+                     "type": "boolean"
+                   },
++                  "urlPreviewAllowRedirect": {
++                    "type": "boolean"
++                  },
+                   "urlPreviewTimeout": {
+                     "type": "integer"
+                   },
+@@ -18808,6 +19041,26 @@
+                         "versionRange"
+                       ]
+                     }
++                  },
++                  "singleUserMode": {
++                    "type": "boolean"
++                  },
++                  "ugcVisibilityForVisitor": {
++                    "type": "string",
++                    "enum": [
++                      "all",
++                      "local",
++                      "none"
++                    ]
++                  },
++                  "proxyRemoteFiles": {
++                    "type": "boolean"
++                  },
++                  "signToActivityPubGet": {
++                    "type": "boolean"
++                  },
++                  "allowExternalApRedirect": {
++                    "type": "boolean"
+                   }
+                 }
+               }
+@@ -18969,7 +19222,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserDetailed"
+                 }
+               }
+@@ -19285,7 +19537,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Announcement"
+                   }
+                 }
+@@ -19437,7 +19688,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Announcement"
+                 }
+               }
+@@ -19669,7 +19919,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Antenna"
+                 }
+               }
+@@ -19992,7 +20241,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Antenna"
+                   }
+                 }
+@@ -20171,7 +20419,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -20337,7 +20584,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Antenna"
+                 }
+               }
+@@ -20566,7 +20812,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Antenna"
+                 }
+               }
+@@ -20934,7 +21179,6 @@
+                           ]
+                         },
+                         "object": {
+-                          "type": "object",
+                           "$ref": "#/components/schemas/UserDetailedNotMe"
+                         }
+                       },
+@@ -20953,7 +21197,6 @@
+                           ]
+                         },
+                         "object": {
+-                          "type": "object",
+                           "$ref": "#/components/schemas/Note"
+                         }
+                       },
+@@ -21195,7 +21438,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/App"
+                 }
+               }
+@@ -21346,7 +21588,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/App"
+                 }
+               }
+@@ -21839,7 +22080,6 @@
+                       "format": "id"
+                     },
+                     "app": {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/App"
+                     },
+                     "token": {
+@@ -22018,7 +22258,6 @@
+                       "type": "string"
+                     },
+                     "user": {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/UserDetailedNotMe"
+                     }
+                   },
+@@ -22207,7 +22446,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserDetailedNotMe"
+                 }
+               }
+@@ -22411,7 +22649,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserDetailedNotMe"
+                 }
+               }
+@@ -22624,7 +22861,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Blocking"
+                   }
+                 }
+@@ -22784,12 +23020,7 @@
+                         "type": "integer"
+                       },
+                       "user": {
+-                        "type": "object",
+-                        "allOf": [
+-                          {
+-                            "$ref": "#/components/schemas/UserLite"
+-                          }
+-                        ]
++                        "$ref": "#/components/schemas/UserLite"
+                       }
+                     },
+                     "required": [
+@@ -22952,12 +23183,7 @@
+                         "type": "integer"
+                       },
+                       "user": {
+-                        "type": "object",
+-                        "allOf": [
+-                          {
+-                            "$ref": "#/components/schemas/UserLite"
+-                          }
+-                        ]
++                        "$ref": "#/components/schemas/UserLite"
+                       }
+                     },
+                     "required": [
+@@ -23351,7 +23577,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Channel"
+                 }
+               }
+@@ -23672,7 +23897,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Channel"
+                   }
+                 }
+@@ -23995,7 +24219,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Channel"
+                   }
+                 }
+@@ -24135,7 +24358,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Channel"
+                   }
+                 }
+@@ -24301,7 +24523,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Channel"
+                   }
+                 }
+@@ -24476,7 +24697,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Channel"
+                   }
+                 }
+@@ -24628,7 +24848,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Channel"
+                 }
+               }
+@@ -24814,7 +25033,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -25344,7 +25562,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Channel"
+                 }
+               }
+@@ -31504,7 +31721,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatMessage"
+                   }
+                 }
+@@ -31672,7 +31888,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatMessageLiteForRoom"
+                 }
+               }
+@@ -31887,7 +32102,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatMessageLiteFor1on1"
+                 }
+               }
+@@ -32443,7 +32657,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatMessageLiteForRoom"
+                   }
+                 }
+@@ -32632,7 +32845,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatMessage"
+                   }
+                 }
+@@ -32798,7 +33010,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatMessage"
+                 }
+               }
+@@ -33140,7 +33351,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatMessageLiteFor1on1"
+                   }
+                 }
+@@ -33310,7 +33520,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatRoom"
+                 }
+               }
+@@ -33649,7 +33858,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatRoomInvitation"
+                 }
+               }
+@@ -34001,7 +34209,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatRoomInvitation"
+                   }
+                 }
+@@ -34174,7 +34381,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatRoomInvitation"
+                   }
+                 }
+@@ -34506,7 +34712,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatRoomMembership"
+                   }
+                 }
+@@ -34836,7 +35041,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatRoomMembership"
+                   }
+                 }
+@@ -35172,7 +35376,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/ChatRoom"
+                   }
+                 }
+@@ -35329,7 +35532,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatRoom"
+                 }
+               }
+@@ -35502,7 +35704,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ChatRoom"
+                 }
+               }
+@@ -35889,7 +36090,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Clip"
+                 }
+               }
+@@ -36360,7 +36560,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Clip"
+                   }
+                 }
+@@ -36500,7 +36699,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Clip"
+                   }
+                 }
+@@ -36668,7 +36866,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -37000,7 +37197,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Clip"
+                 }
+               }
+@@ -37346,7 +37542,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Clip"
+                 }
+               }
+@@ -37698,7 +37893,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFile"
+                   }
+                 }
+@@ -37871,7 +38065,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -38223,7 +38416,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/DriveFile"
+                 }
+               }
+@@ -38274,6 +38466,15 @@
+                       }
+                     }
+                   },
++                  "UNALLOWED_FILE_TYPE": {
++                    "value": {
++                      "error": {
++                        "message": "Cannot upload the file because it is an unallowed file type.",
++                        "code": "UNALLOWED_FILE_TYPE",
++                        "id": "4becd248-7f2c-48c4-a9f0-75edc4f9a1ea"
++                      }
++                    }
++                  },
+                   "INVALID_PARAM": {
+                     "value": {
+                       "error": {
+@@ -38612,7 +38813,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFile"
+                   }
+                 }
+@@ -38770,7 +38970,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFile"
+                   }
+                 }
+@@ -38885,14 +39084,14 @@
+         }
+       }
+     },
+-    "/drive/files/show": {
++    "/drive/files/move-bulk": {
+       "post": {
+-        "operationId": "post___drive___files___show",
+-        "summary": "drive/files/show",
+-        "description": "Show the properties of a drive file.\n\n**Credential required**: *Yes* / **Permission**: *read:drive*",
++        "operationId": "post___drive___files___move-bulk",
++        "summary": "drive/files/move-bulk",
++        "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:drive*",
+         "externalDocs": {
+           "description": "Source code",
+-          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/drive/files/show.ts"
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/drive/files/move-bulk.ts"
+         },
+         "tags": [
+           "drive"
+@@ -38909,21 +39108,185 @@
+               "schema": {
+                 "type": "object",
+                 "properties": {
+-                  "fileId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
++                  "fileIds": {
++                    "type": "array",
++                    "uniqueItems": true,
++                    "minItems": 1,
++                    "maxItems": 100,
++                    "items": {
++                      "type": "string",
++                      "format": "misskey:id"
++                    }
+                   },
+-                  "url": {
+-                    "type": "string"
++                  "folderId": {
++                    "type": [
++                      "string",
++                      "null"
++                    ],
++                    "format": "misskey:id"
++                  }
++                },
++                "required": [
++                  "fileIds"
++                ]
++              }
++            }
++          }
++        },
++        "responses": {
++          "204": {
++            "description": "OK (without any results)"
++          },
++          "400": {
++            "description": "Client error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INVALID_PARAM": {
++                    "value": {
++                      "error": {
++                        "message": "Invalid param.",
++                        "code": "INVALID_PARAM",
++                        "id": "3d81ceae-475f-4600-b2a8-2bc116157532"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "401": {
++            "description": "Authentication error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "CREDENTIAL_REQUIRED": {
++                    "value": {
++                      "error": {
++                        "message": "Credential required.",
++                        "code": "CREDENTIAL_REQUIRED",
++                        "id": "1384574d-a912-4b81-8601-c7b1c4085df1"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "403": {
++            "description": "Forbidden error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "AUTHENTICATION_FAILED": {
++                    "value": {
++                      "error": {
++                        "message": "Authentication failed. Please ensure your token is correct.",
++                        "code": "AUTHENTICATION_FAILED",
++                        "id": "b0a7f5f8-dc2f-4171-b91f-de88ad238e14"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "418": {
++            "description": "I'm Ai",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "I_AM_AI": {
++                    "value": {
++                      "error": {
++                        "message": "You sent a request to Ai-chan, Misskey's showgirl, instead of the server.",
++                        "code": "I_AM_AI",
++                        "id": "60c46cd1-f23a-46b1-bebe-5d2b73951a84"
++                      }
++                    }
+                   }
++                }
++              }
++            }
++          },
++          "500": {
++            "description": "Internal server error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
+                 },
++                "examples": {
++                  "INTERNAL_ERROR": {
++                    "value": {
++                      "error": {
++                        "message": "Internal error occurred. Please contact us if the error persists.",
++                        "code": "INTERNAL_ERROR",
++                        "id": "5d37dbcb-891e-41ca-a3d6-e690c97775ac"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    },
++    "/drive/files/show": {
++      "post": {
++        "operationId": "post___drive___files___show",
++        "summary": "drive/files/show",
++        "description": "Show the properties of a drive file.\n\n**Credential required**: *Yes* / **Permission**: *read:drive*",
++        "externalDocs": {
++          "description": "Source code",
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/drive/files/show.ts"
++        },
++        "tags": [
++          "drive"
++        ],
++        "security": [
++          {
++            "bearerAuth": []
++          }
++        ],
++        "requestBody": {
++          "required": true,
++          "content": {
++            "application/json": {
++              "schema": {
+                 "anyOf": [
+                   {
++                    "type": "object",
++                    "properties": {
++                      "fileId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
+                     "required": [
+                       "fileId"
+                     ]
+                   },
+                   {
++                    "type": "object",
++                    "properties": {
++                      "url": {
++                        "type": "string"
++                      }
++                    },
+                     "required": [
+                       "url"
+                     ]
+@@ -38939,7 +39302,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/DriveFile"
+                 }
+               }
+@@ -39133,7 +39495,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/DriveFile"
+                 }
+               }
+@@ -39550,7 +39911,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFolder"
+                   }
+                 }
+@@ -39712,7 +40072,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/DriveFolder"
+                 }
+               }
+@@ -40073,7 +40432,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFolder"
+                   }
+                 }
+@@ -40230,7 +40588,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/DriveFolder"
+                 }
+               }
+@@ -40406,7 +40763,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/DriveFolder"
+                 }
+               }
+@@ -40602,7 +40958,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/DriveFile"
+                   }
+                 }
+@@ -40917,7 +41272,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/EmojiDetailed"
+                 }
+               }
+@@ -41065,7 +41419,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/EmojiDetailed"
+                 }
+               }
+@@ -41202,7 +41555,6 @@
+                     "emojis": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/EmojiSimple"
+                       }
+                     }
+@@ -41343,7 +41695,6 @@
+                     "emojis": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/EmojiSimple"
+                       }
+                     }
+@@ -41980,7 +42331,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Following"
+                   }
+                 }
+@@ -42147,7 +42497,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Following"
+                   }
+                 }
+@@ -42376,7 +42725,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/FederationInstance"
+                   }
+                 }
+@@ -42603,7 +42951,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/FederationInstance"
+                   }
+                 }
+@@ -42754,13 +43101,12 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": [
+-                    "object",
+-                    "null"
+-                  ],
+-                  "allOf": [
++                  "oneOf": [
+                     {
+                       "$ref": "#/components/schemas/FederationInstance"
++                    },
++                    {
++                      "type": "null"
+                     }
+                   ]
+                 }
+@@ -42919,7 +43265,6 @@
+                     "topSubInstances": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/FederationInstance"
+                       }
+                     },
+@@ -42929,7 +43274,6 @@
+                     "topPubInstances": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/FederationInstance"
+                       }
+                     },
+@@ -43094,7 +43438,6 @@
+                     "topSubInstances": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/FederationInstance"
+                       }
+                     },
+@@ -43104,7 +43447,6 @@
+                     "topPubInstances": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/FederationInstance"
+                       }
+                     },
+@@ -43425,7 +43767,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserDetailedNotMe"
+                   }
+                 }
+@@ -44415,7 +44756,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Flash"
+                 }
+               }
+@@ -44759,7 +45099,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Flash"
+                   }
+                 }
+@@ -45100,7 +45439,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Flash"
+                   }
+                 }
+@@ -45273,7 +45611,6 @@
+                         "format": "id"
+                       },
+                       "flash": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/Flash"
+                       }
+                     },
+@@ -45431,7 +45768,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Flash"
+                 }
+               }
+@@ -45974,7 +46310,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               }
+@@ -46196,7 +46531,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               }
+@@ -46400,7 +46734,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               }
+@@ -46770,7 +47103,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               }
+@@ -46960,11 +47292,9 @@
+                         "format": "id"
+                       },
+                       "follower": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserLite"
+                       },
+                       "followee": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserLite"
+                       }
+                     },
+@@ -47301,11 +47631,9 @@
+                         "format": "id"
+                       },
+                       "follower": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserLite"
+                       },
+                       "followee": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserLite"
+                       }
+                     },
+@@ -47479,7 +47807,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               }
+@@ -47855,7 +48182,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/GalleryPost"
+                   }
+                 }
+@@ -47990,7 +48316,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/GalleryPost"
+                   }
+                 }
+@@ -48151,7 +48476,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/GalleryPost"
+                   }
+                 }
+@@ -48329,7 +48653,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/GalleryPost"
+                 }
+               }
+@@ -48842,7 +49165,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/GalleryPost"
+                 }
+               }
+@@ -49197,7 +49519,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/GalleryPost"
+                 }
+               }
+@@ -49842,7 +50163,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Hashtag"
+                   }
+                 }
+@@ -50155,7 +50475,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Hashtag"
+                 }
+               }
+@@ -50655,7 +50974,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserDetailed"
+                   }
+                 }
+@@ -50793,7 +51111,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/MeDetailed"
+                 }
+               }
+@@ -54631,7 +54948,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/NoteFavorite"
+                   }
+                 }
+@@ -54804,7 +55120,6 @@
+                         "format": "id"
+                       },
+                       "post": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/GalleryPost"
+                       }
+                     },
+@@ -54976,7 +55291,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/GalleryPost"
+                   }
+                 }
+@@ -56435,7 +56749,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Notification"
+                   }
+                 }
+@@ -56682,7 +56995,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Notification"
+                   }
+                 }
+@@ -56876,7 +57188,6 @@
+                         "format": "id"
+                       },
+                       "page": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/Page"
+                       }
+                     },
+@@ -57048,7 +57359,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Page"
+                   }
+                 }
+@@ -57205,7 +57515,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/MeDetailed"
+                 }
+               }
+@@ -58996,26 +59305,29 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "tokenId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "token": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ]
+-                  }
+-                },
+                 "anyOf": [
+                   {
++                    "type": "object",
++                    "properties": {
++                      "tokenId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
+                     "required": [
+                       "tokenId"
+                     ]
+                   },
+                   {
++                    "type": "object",
++                    "properties": {
++                      "token": {
++                        "type": [
++                          "string",
++                          "null"
++                        ]
++                      }
++                    },
+                     "required": [
+                       "token"
+                     ]
+@@ -59185,7 +59497,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Signin"
+                   }
+                 }
+@@ -59342,7 +59653,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/MeDetailed"
+                 }
+               }
+@@ -60641,7 +60951,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/MeDetailed"
+                 }
+               }
+@@ -60935,7 +61244,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/MeDetailed"
+                 }
+               }
+@@ -62355,7 +62663,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/InviteCode"
+                 }
+               }
+@@ -62851,7 +63158,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/InviteCode"
+                   }
+                 }
+@@ -63003,11 +63309,9 @@
+                   "type": "object",
+                   "oneOf": [
+                     {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/MetaLite"
+                     },
+                     {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/MetaDetailed"
+                     }
+                   ]
+@@ -63743,7 +64047,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Muting"
+                   }
+                 }
+@@ -63905,7 +64208,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/App"
+                   }
+                 }
+@@ -64082,7 +64384,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -64250,7 +64551,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -64404,7 +64704,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Clip"
+                   }
+                 }
+@@ -64577,7 +64876,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -64911,7 +65209,6 @@
+                   "type": "object",
+                   "properties": {
+                     "createdNote": {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/Note"
+                     }
+                   },
+@@ -65766,7 +66063,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -65928,7 +66224,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -66103,7 +66398,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -66312,7 +66606,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -66513,7 +66806,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -66704,7 +66996,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -66870,7 +67161,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -67250,7 +67540,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/NoteReaction"
+                   }
+                 }
+@@ -67431,7 +67720,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/NoteReaction"
+                   }
+                 }
+@@ -67983,7 +68271,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -68160,7 +68447,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -68351,7 +68637,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -68492,76 +68777,88 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "reply": {
+-                    "type": [
+-                      "boolean",
+-                      "null"
+-                    ],
+-                    "default": null
+-                  },
+-                  "renote": {
+-                    "type": [
+-                      "boolean",
+-                      "null"
+-                    ],
+-                    "default": null
+-                  },
+-                  "withFiles": {
+-                    "type": "boolean",
+-                    "default": false,
+-                    "description": "Only show notes that have attached files."
+-                  },
+-                  "poll": {
+-                    "type": [
+-                      "boolean",
+-                      "null"
+-                    ],
+-                    "default": null
+-                  },
+-                  "sinceId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "untilId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "limit": {
+-                    "type": "integer",
+-                    "minimum": 1,
+-                    "maximum": 100,
+-                    "default": 10
+-                  },
+-                  "tag": {
+-                    "type": "string",
+-                    "minLength": 1
+-                  },
+-                  "query": {
+-                    "type": "array",
+-                    "description": "The outer arrays are chained with OR, the inner arrays are chained with AND.",
+-                    "items": {
+-                      "type": "array",
+-                      "items": {
+-                        "type": "string",
+-                        "minLength": 1
+-                      },
+-                      "minItems": 1
+-                    },
+-                    "minItems": 1
+-                  }
+-                },
+-                "anyOf": [
++                "allOf": [
+                   {
+-                    "required": [
+-                      "tag"
++                    "anyOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "tag": {
++                            "type": "string",
++                            "minLength": 1
++                          }
++                        },
++                        "required": [
++                          "tag"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "query": {
++                            "type": "array",
++                            "description": "The outer arrays are chained with OR, the inner arrays are chained with AND.",
++                            "items": {
++                              "type": "array",
++                              "items": {
++                                "type": "string",
++                                "minLength": 1
++                              },
++                              "minItems": 1
++                            },
++                            "minItems": 1
++                          }
++                        },
++                        "required": [
++                          "query"
++                        ]
++                      }
+                     ]
+                   },
+                   {
+-                    "required": [
+-                      "query"
+-                    ]
++                    "type": "object",
++                    "properties": {
++                      "reply": {
++                        "type": [
++                          "boolean",
++                          "null"
++                        ],
++                        "default": null
++                      },
++                      "renote": {
++                        "type": [
++                          "boolean",
++                          "null"
++                        ],
++                        "default": null
++                      },
++                      "withFiles": {
++                        "type": "boolean",
++                        "default": false,
++                        "description": "Only show notes that have attached files."
++                      },
++                      "poll": {
++                        "type": [
++                          "boolean",
++                          "null"
++                        ],
++                        "default": null
++                      },
++                      "sinceId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "untilId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "limit": {
++                        "type": "integer",
++                        "minimum": 1,
++                        "maximum": 100,
++                        "default": 10
++                      }
++                    }
+                   }
+                 ]
+               }
+@@ -68576,7 +68873,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -68728,7 +69024,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Note"
+                 }
+               }
+@@ -68860,22 +69155,17 @@
+         }
+       }
+     },
+-    "/notes/state": {
++    "/notes/show-partial-bulk": {
+       "post": {
+-        "operationId": "post___notes___state",
+-        "summary": "notes/state",
+-        "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
++        "operationId": "post___notes___show-partial-bulk",
++        "summary": "notes/show-partial-bulk",
++        "description": "No description provided.\n\n**Credential required**: *No*",
+         "externalDocs": {
+           "description": "Source code",
+-          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/notes/state.ts"
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/notes/show-partial-bulk.ts"
+         },
+         "tags": [
+           "notes"
+-        ],
+-        "security": [
+-          {
+-            "bearerAuth": []
+-          }
+         ],
+         "requestBody": {
+           "required": true,
+@@ -68884,13 +69174,18 @@
+               "schema": {
+                 "type": "object",
+                 "properties": {
+-                  "noteId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
++                  "noteIds": {
++                    "type": "array",
++                    "items": {
++                      "type": "string",
++                      "format": "misskey:id"
++                    },
++                    "maxItems": 100,
++                    "minItems": 1
+                   }
+                 },
+                 "required": [
+-                  "noteId"
++                  "noteIds"
+                 ]
+               }
+             }
+@@ -68902,20 +69197,33 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+-                  "properties": {
+-                    "isFavorited": {
+-                      "type": "boolean"
+-                    },
+-                    "isMutedThread": {
+-                      "type": "boolean"
+-                    }
+-                  },
+-                  "required": [
+-                    "isFavorited",
+-                    "isMutedThread"
+-                  ]
+-                }
++                  "type": "array",
++                  "items": {
++                    "type": "object",
++                    "properties": {
++                      "id": {
++                        "type": "string"
++                      },
++                      "reactions": {
++                        "type": "object",
++                        "additionalProperties": {
++                          "type": "number"
++                        }
++                      },
++                      "reactionEmojis": {
++                        "type": "object",
++                        "additionalProperties": {
++                          "type": "string"
++                        }
++                      }
++                    },
++                    "required": [
++                      "id",
++                      "reactions",
++                      "reactionEmojis"
++                    ]
++                  }
++                }
+               }
+             }
+           },
+@@ -69027,6 +69335,173 @@
+         }
+       }
+     },
++    "/notes/state": {
++      "post": {
++        "operationId": "post___notes___state",
++        "summary": "notes/state",
++        "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
++        "externalDocs": {
++          "description": "Source code",
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/notes/state.ts"
++        },
++        "tags": [
++          "notes"
++        ],
++        "security": [
++          {
++            "bearerAuth": []
++          }
++        ],
++        "requestBody": {
++          "required": true,
++          "content": {
++            "application/json": {
++              "schema": {
++                "type": "object",
++                "properties": {
++                  "noteId": {
++                    "type": "string",
++                    "format": "misskey:id"
++                  }
++                },
++                "required": [
++                  "noteId"
++                ]
++              }
++            }
++          }
++        },
++        "responses": {
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "type": "object",
++                  "properties": {
++                    "isFavorited": {
++                      "type": "boolean"
++                    },
++                    "isMutedThread": {
++                      "type": "boolean"
++                    }
++                  },
++                  "required": [
++                    "isFavorited",
++                    "isMutedThread"
++                  ]
++                }
++              }
++            }
++          },
++          "400": {
++            "description": "Client error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INVALID_PARAM": {
++                    "value": {
++                      "error": {
++                        "message": "Invalid param.",
++                        "code": "INVALID_PARAM",
++                        "id": "3d81ceae-475f-4600-b2a8-2bc116157532"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "401": {
++            "description": "Authentication error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "CREDENTIAL_REQUIRED": {
++                    "value": {
++                      "error": {
++                        "message": "Credential required.",
++                        "code": "CREDENTIAL_REQUIRED",
++                        "id": "1384574d-a912-4b81-8601-c7b1c4085df1"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "403": {
++            "description": "Forbidden error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "AUTHENTICATION_FAILED": {
++                    "value": {
++                      "error": {
++                        "message": "Authentication failed. Please ensure your token is correct.",
++                        "code": "AUTHENTICATION_FAILED",
++                        "id": "b0a7f5f8-dc2f-4171-b91f-de88ad238e14"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "418": {
++            "description": "I'm Ai",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "I_AM_AI": {
++                    "value": {
++                      "error": {
++                        "message": "You sent a request to Ai-chan, Misskey's showgirl, instead of the server.",
++                        "code": "I_AM_AI",
++                        "id": "60c46cd1-f23a-46b1-bebe-5d2b73951a84"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "500": {
++            "description": "Internal server error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INTERNAL_ERROR": {
++                    "value": {
++                      "error": {
++                        "message": "Internal error occurred. Please contact us if the error persists.",
++                        "code": "INTERNAL_ERROR",
++                        "id": "5d37dbcb-891e-41ca-a3d6-e690c97775ac"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    },
+     "/notes/thread-muting/create": {
+       "post": {
+         "operationId": "post___notes___thread-muting___create",
+@@ -69443,7 +69918,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -70026,7 +70500,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -70993,7 +71466,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Page"
+                 }
+               }
+@@ -71332,7 +71804,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Page"
+                   }
+                 }
+@@ -71639,26 +72110,29 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "pageId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "name": {
+-                    "type": "string"
+-                  },
+-                  "username": {
+-                    "type": "string"
+-                  }
+-                },
+                 "anyOf": [
+                   {
++                    "type": "object",
++                    "properties": {
++                      "pageId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
+                     "required": [
+                       "pageId"
+                     ]
+                   },
+                   {
++                    "type": "object",
++                    "properties": {
++                      "name": {
++                        "type": "string"
++                      },
++                      "username": {
++                        "type": "string"
++                      }
++                    },
+                     "required": [
+                       "name",
+                       "username"
+@@ -71675,7 +72149,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Page"
+                 }
+               }
+@@ -72379,7 +72852,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserDetailed"
+                   }
+                 }
+@@ -73073,7 +73545,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/RenoteMuting"
+                   }
+                 }
+@@ -74428,12 +74899,7 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+-                  "allOf": [
+-                    {
+-                      "$ref": "#/components/schemas/ReversiGameDetailed"
+-                    }
+-                  ]
++                  "$ref": "#/components/schemas/ReversiGameDetailed"
+                 }
+               }
+             }
+@@ -74601,7 +75067,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/ReversiGameDetailed"
+                 }
+               }
+@@ -74940,13 +75405,12 @@
+                       "type": "boolean"
+                     },
+                     "game": {
+-                      "type": [
+-                        "object",
+-                        "null"
+-                      ],
+-                      "allOf": [
++                      "oneOf": [
+                         {
+                           "$ref": "#/components/schemas/ReversiGameDetailed"
++                        },
++                        {
++                          "type": "null"
+                         }
+                       ]
+                     }
+@@ -75100,7 +75564,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Role"
+                   }
+                 }
+@@ -75279,7 +75742,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -75440,7 +75902,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/Role"
+                 }
+               }
+@@ -75623,7 +76084,6 @@
+                         "format": "misskey:id"
+                       },
+                       "user": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserDetailed"
+                       }
+                     },
+@@ -77404,7 +77864,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserDetailed"
+                   }
+                 }
+@@ -77722,7 +78181,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Clip"
+                   }
+                 }
+@@ -77886,7 +78344,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -78048,7 +78505,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -78216,7 +78672,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Flash"
+                   }
+                 }
+@@ -78348,48 +78803,60 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "sinceId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "untilId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "limit": {
+-                    "type": "integer",
+-                    "minimum": 1,
+-                    "maximum": 100,
+-                    "default": 10
+-                  },
+-                  "userId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "username": {
+-                    "type": "string"
+-                  },
+-                  "host": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ],
+-                    "description": "The local host is represented with `null`."
+-                  }
+-                },
+-                "anyOf": [
++                "allOf": [
+                   {
+-                    "required": [
+-                      "userId"
++                    "anyOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "userId": {
++                            "type": "string",
++                            "format": "misskey:id"
++                          }
++                        },
++                        "required": [
++                          "userId"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "username": {
++                            "type": "string"
++                          },
++                          "host": {
++                            "type": [
++                              "string",
++                              "null"
++                            ],
++                            "description": "The local host is represented with `null`."
++                          }
++                        },
++                        "required": [
++                          "username",
++                          "host"
++                        ]
++                      }
+                     ]
+                   },
+                   {
+-                    "required": [
+-                      "username",
+-                      "host"
+-                    ]
++                    "type": "object",
++                    "properties": {
++                      "sinceId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "untilId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "limit": {
++                        "type": "integer",
++                        "minimum": 1,
++                        "maximum": 100,
++                        "default": 10
++                      }
++                    }
+                   }
+                 ]
+               }
+@@ -78404,7 +78871,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Following"
+                   }
+                 }
+@@ -78554,55 +79020,67 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "sinceId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "untilId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "limit": {
+-                    "type": "integer",
+-                    "minimum": 1,
+-                    "maximum": 100,
+-                    "default": 10
+-                  },
+-                  "userId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "username": {
+-                    "type": "string"
+-                  },
+-                  "host": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ],
+-                    "description": "The local host is represented with `null`."
+-                  },
+-                  "birthday": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ],
+-                    "pattern": "^([0-9]{4})-([0-9]{2})-([0-9]{2})$"
+-                  }
+-                },
+-                "anyOf": [
++                "allOf": [
+                   {
+-                    "required": [
+-                      "userId"
++                    "anyOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "userId": {
++                            "type": "string",
++                            "format": "misskey:id"
++                          }
++                        },
++                        "required": [
++                          "userId"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "username": {
++                            "type": "string"
++                          },
++                          "host": {
++                            "type": [
++                              "string",
++                              "null"
++                            ],
++                            "description": "The local host is represented with `null`."
++                          }
++                        },
++                        "required": [
++                          "username",
++                          "host"
++                        ]
++                      }
+                     ]
+                   },
+                   {
+-                    "required": [
+-                      "username",
+-                      "host"
+-                    ]
++                    "type": "object",
++                    "properties": {
++                      "sinceId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "untilId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "limit": {
++                        "type": "integer",
++                        "minimum": 1,
++                        "maximum": 100,
++                        "default": 10
++                      },
++                      "birthday": {
++                        "type": [
++                          "string",
++                          "null"
++                        ],
++                        "pattern": "^([0-9]{4})-([0-9]{2})-([0-9]{2})$"
++                      }
++                    }
+                   }
+                 ]
+               }
+@@ -78617,7 +79095,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Following"
+                   }
+                 }
+@@ -78812,7 +79289,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/GalleryPost"
+                   }
+                 }
+@@ -78975,7 +79451,6 @@
+                     "type": "object",
+                     "properties": {
+                       "user": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserDetailed"
+                       },
+                       "weight": {
+@@ -79151,7 +79626,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserList"
+                 }
+               }
+@@ -79319,7 +79793,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserList"
+                 }
+               }
+@@ -79879,7 +80352,6 @@
+                         "format": "misskey:id"
+                       },
+                       "user": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserLite"
+                       },
+                       "withReplies": {
+@@ -80051,7 +80523,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserList"
+                   }
+                 }
+@@ -80615,7 +81086,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserList"
+                 }
+               }
+@@ -80951,7 +81421,6 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserList"
+                 }
+               }
+@@ -81327,7 +81796,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Note"
+                   }
+                 }
+@@ -81522,7 +81990,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/Page"
+                   }
+                 }
+@@ -81696,7 +82163,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/NoteReaction"
+                   }
+                 }
+@@ -81876,7 +82342,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/UserDetailed"
+                   }
+                 }
+@@ -82016,7 +82481,7 @@
+                 "type": "object",
+                 "properties": {
+                   "userId": {
+-                    "anyOf": [
++                    "oneOf": [
+                       {
+                         "type": "string",
+                         "format": "misskey:id"
+@@ -82491,7 +82956,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/User"
+                   }
+                 }
+@@ -82623,41 +83087,53 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "limit": {
+-                    "type": "integer",
+-                    "minimum": 1,
+-                    "maximum": 100,
+-                    "default": 10
+-                  },
+-                  "detail": {
+-                    "type": "boolean",
+-                    "default": true
+-                  },
+-                  "username": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ]
+-                  },
+-                  "host": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ]
+-                  }
+-                },
+-                "anyOf": [
++                "allOf": [
+                   {
+-                    "required": [
+-                      "username"
++                    "anyOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "username": {
++                            "type": [
++                              "string",
++                              "null"
++                            ]
++                          }
++                        },
++                        "required": [
++                          "username"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "host": {
++                            "type": [
++                              "string",
++                              "null"
++                            ]
++                          }
++                        },
++                        "required": [
++                          "host"
++                        ]
++                      }
+                     ]
+                   },
+                   {
+-                    "required": [
+-                      "host"
+-                    ]
++                    "type": "object",
++                    "properties": {
++                      "limit": {
++                        "type": "integer",
++                        "minimum": 1,
++                        "maximum": 100,
++                        "default": 10
++                      },
++                      "detail": {
++                        "type": "boolean",
++                        "default": true
++                      }
++                    }
+                   }
+                 ]
+               }
+@@ -82672,7 +83148,6 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+                     "$ref": "#/components/schemas/User"
+                   }
+                 }
+@@ -82804,46 +83279,61 @@
+           "content": {
+             "application/json": {
+               "schema": {
+-                "type": "object",
+-                "properties": {
+-                  "userId": {
+-                    "type": "string",
+-                    "format": "misskey:id"
+-                  },
+-                  "userIds": {
+-                    "type": "array",
+-                    "uniqueItems": true,
+-                    "items": {
+-                      "type": "string",
+-                      "format": "misskey:id"
+-                    }
+-                  },
+-                  "username": {
+-                    "type": "string"
+-                  },
+-                  "host": {
+-                    "type": [
+-                      "string",
+-                      "null"
+-                    ],
+-                    "description": "The local host is represented with `null`."
+-                  }
+-                },
+-                "anyOf": [
++                "allOf": [
+                   {
+-                    "required": [
+-                      "userId"
++                    "anyOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "userId": {
++                            "type": "string",
++                            "format": "misskey:id"
++                          }
++                        },
++                        "required": [
++                          "userId"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "userIds": {
++                            "type": "array",
++                            "uniqueItems": true,
++                            "items": {
++                              "type": "string",
++                              "format": "misskey:id"
++                            }
++                          }
++                        },
++                        "required": [
++                          "userIds"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "username": {
++                            "type": "string"
++                          }
++                        },
++                        "required": [
++                          "username"
++                        ]
++                      }
+                     ]
+                   },
+                   {
+-                    "required": [
+-                      "userIds"
+-                    ]
+-                  },
+-                  {
+-                    "required": [
+-                      "username"
+-                    ]
++                    "type": "object",
++                    "properties": {
++                      "host": {
++                        "type": [
++                          "string",
++                          "null"
++                        ],
++                        "description": "The local host is represented with `null`."
++                      }
++                    }
+                   }
+                 ]
+               }
+@@ -82858,13 +83348,11 @@
+                 "schema": {
+                   "oneOf": [
+                     {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/UserDetailed"
+                     },
+                     {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/UserDetailed"
+                       }
+                     }
+@@ -83323,7 +83811,6 @@
+                     "emojis": {
+                       "type": "array",
+                       "items": {
+-                        "type": "object",
+                         "$ref": "#/components/schemas/EmojiDetailedAdmin"
+                       }
+                     },
+@@ -83832,7 +84319,6 @@
+           "pinnedNotes": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/Note"
+             }
+           },
+@@ -83843,13 +84329,12 @@
+             ]
+           },
+           "pinnedPage": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/Page"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -83888,7 +84373,6 @@
+           "roles": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/RoleLite"
+             }
+           },
+@@ -84074,7 +84558,6 @@
+           "unreadAnnouncements": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/Announcement"
+             }
+           },
+@@ -84789,7 +85272,6 @@
+             "type": "number"
+           },
+           "policies": {
+-            "type": "object",
+             "$ref": "#/components/schemas/RolePolicies"
+           },
+           "twoFactorEnabled": {
+@@ -84887,11 +85369,9 @@
+         "type": "object",
+         "allOf": [
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailedNotMeOnly"
+           }
+         ]
+@@ -84900,15 +85380,12 @@
+         "type": "object",
+         "allOf": [
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailedNotMeOnly"
+           },
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/MeDetailedOnly"
+           }
+         ]
+@@ -84916,11 +85393,9 @@
+       "UserDetailed": {
+         "oneOf": [
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailedNotMe"
+           },
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/MeDetailed"
+           }
+         ]
+@@ -84928,11 +85403,9 @@
+       "User": {
+         "oneOf": [
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailed"
+           }
+         ]
+@@ -85265,7 +85738,6 @@
+             "format": "id"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "replyId": {
+@@ -85285,24 +85757,22 @@
+             "example": "xxxxxxxxxx"
+           },
+           "reply": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/Note"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+           "renote": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/Note"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -85342,7 +85812,6 @@
+           "files": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/DriveFile"
+             }
+           },
+@@ -85511,6 +85980,9 @@
+           "clippedCount": {
+             "type": "number"
+           },
++          "hasPoll": {
++            "type": "boolean"
++          },
+           "myReaction": {
+             "type": [
+               "string",
+@@ -85546,7 +86018,6 @@
+             "format": "date-time"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "type": {
+@@ -85573,7 +86044,6 @@
+             "format": "date-time"
+           },
+           "note": {
+-            "type": "object",
+             "$ref": "#/components/schemas/Note"
+           },
+           "noteId": {
+@@ -85609,7 +86079,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85617,7 +86086,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               }
+             },
+@@ -85648,7 +86116,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85656,7 +86123,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               }
+             },
+@@ -85687,7 +86153,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85695,7 +86160,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               }
+             },
+@@ -85726,7 +86190,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85734,7 +86197,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               }
+             },
+@@ -85765,7 +86227,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85773,7 +86234,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               }
+             },
+@@ -85804,7 +86264,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85812,7 +86271,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               },
+               "reaction": {
+@@ -85847,7 +86305,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85855,7 +86312,6 @@
+                 "format": "id"
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               }
+             },
+@@ -85886,7 +86342,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85920,7 +86375,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85954,7 +86408,6 @@
+                 ]
+               },
+               "user": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/UserLite"
+               },
+               "userId": {
+@@ -85995,7 +86448,6 @@
+                 ]
+               },
+               "role": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Role"
+               }
+             },
+@@ -86024,7 +86476,6 @@
+                 ]
+               },
+               "invitation": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/ChatRoomInvitation"
+               }
+             },
+@@ -86215,7 +86666,6 @@
+                 ]
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               },
+               "reactions": {
+@@ -86224,7 +86674,6 @@
+                   "type": "object",
+                   "properties": {
+                     "user": {
+-                      "type": "object",
+                       "$ref": "#/components/schemas/UserLite"
+                     },
+                     "reaction": {
+@@ -86264,13 +86713,11 @@
+                 ]
+               },
+               "note": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/Note"
+               },
+               "users": {
+                 "type": "array",
+                 "items": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               }
+@@ -86394,13 +86841,12 @@
+             "example": "xxxxxxxxxx"
+           },
+           "folder": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFolder"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -86413,13 +86859,12 @@
+             "example": "xxxxxxxxxx"
+           },
+           "user": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/UserLite"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           }
+@@ -86471,13 +86916,12 @@
+             "type": "number"
+           },
+           "parent": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFolder"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           }
+@@ -86510,20 +86954,10 @@
+             "format": "id"
+           },
+           "followee": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/UserDetailedNotMe"
+-              }
+-            ]
++            "$ref": "#/components/schemas/UserDetailedNotMe"
+           },
+           "follower": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/UserDetailedNotMe"
+-              }
+-            ]
++            "$ref": "#/components/schemas/UserDetailedNotMe"
+           }
+         },
+         "required": [
+@@ -86557,7 +86991,6 @@
+             "format": "id"
+           },
+           "mutee": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailedNotMe"
+           }
+         },
+@@ -86586,7 +87019,6 @@
+             "format": "id"
+           },
+           "mutee": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailedNotMe"
+           }
+         },
+@@ -86614,7 +87046,6 @@
+             "format": "id"
+           },
+           "blockee": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserDetailedNotMe"
+           }
+         },
+@@ -86685,24 +87116,22 @@
+             "format": "date-time"
+           },
+           "createdBy": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/UserLite"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+           "usedBy": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/UserLite"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -86749,13 +87178,11 @@
+             "format": "id"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "content": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/PageBlock"
+             }
+           },
+@@ -86796,20 +87223,18 @@
+             ]
+           },
+           "eyeCatchingImage": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFile"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+           "attachedFiles": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/DriveFile"
+             }
+           },
+@@ -87027,7 +87452,6 @@
+           "pinnedNotes": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/Note"
+             }
+           }
+@@ -87076,6 +87500,111 @@
+           "delayed"
+         ]
+       },
++      "QueueMetrics": {
++        "type": "object",
++        "properties": {
++          "meta": {
++            "type": "object",
++            "properties": {
++              "count": {
++                "type": "number"
++              },
++              "prevTS": {
++                "type": "number"
++              },
++              "prevCount": {
++                "type": "number"
++              }
++            },
++            "required": [
++              "count",
++              "prevTS",
++              "prevCount"
++            ]
++          },
++          "data": {
++            "type": "array",
++            "items": {
++              "type": "number"
++            }
++          },
++          "count": {
++            "type": "number"
++          }
++        },
++        "required": [
++          "meta",
++          "data",
++          "count"
++        ]
++      },
++      "QueueJob": {
++        "type": "object",
++        "properties": {
++          "id": {
++            "type": "string"
++          },
++          "name": {
++            "type": "string"
++          },
++          "data": {
++            "type": "object"
++          },
++          "opts": {
++            "type": "object"
++          },
++          "timestamp": {
++            "type": "number"
++          },
++          "processedOn": {
++            "type": "number"
++          },
++          "processedBy": {
++            "type": "string"
++          },
++          "finishedOn": {
++            "type": "number"
++          },
++          "progress": {
++            "type": "object"
++          },
++          "attempts": {
++            "type": "number"
++          },
++          "delay": {
++            "type": "number"
++          },
++          "failedReason": {
++            "type": "string"
++          },
++          "stacktrace": {
++            "type": "array",
++            "items": {
++              "type": "string"
++            }
++          },
++          "returnValue": {
++            "type": "object"
++          },
++          "isFailed": {
++            "type": "boolean"
++          }
++        },
++        "required": [
++          "id",
++          "name",
++          "data",
++          "opts",
++          "timestamp",
++          "progress",
++          "attempts",
++          "delay",
++          "failedReason",
++          "stacktrace",
++          "returnValue",
++          "isFailed"
++        ]
++      },
+       "Antenna": {
+         "type": "object",
+         "properties": {
+@@ -87210,7 +87739,6 @@
+             "format": "id"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "name": {
+@@ -87433,7 +87961,6 @@
+             "format": "id"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "title": {
+@@ -87455,7 +87982,6 @@
+           "files": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+               "$ref": "#/components/schemas/DriveFile"
+             }
+           },
+@@ -87721,7 +88247,6 @@
+             "format": "id"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "title": {
+@@ -87830,7 +88355,6 @@
+             ]
+           },
+           "value": {
+-            "type": "object",
+             "$ref": "#/components/schemas/RoleCondFormulaValue"
+           }
+         },
+@@ -88037,7 +88561,6 @@
+         "type": "object",
+         "allOf": [
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/RoleLite"
+           },
+           {
+@@ -88059,7 +88582,6 @@
+                 ]
+               },
+               "condFormula": {
+-                "type": "object",
+                 "$ref": "#/components/schemas/RoleCondFormulaValue"
+               },
+               "isPublic": {
+@@ -88178,6 +88700,12 @@
+           "maxFileSizeMb": {
+             "type": "integer"
+           },
++          "uploadableFileTypes": {
++            "type": "array",
++            "items": {
++              "type": "string"
++            }
++          },
+           "alwaysMarkNsfw": {
+             "type": "boolean"
+           },
+@@ -88254,6 +88782,7 @@
+           "canHideAds",
+           "driveCapacityMb",
+           "maxFileSizeMb",
++          "uploadableFileTypes",
+           "alwaysMarkNsfw",
+           "canUpdateBioMedia",
+           "pinLimit",
+@@ -88314,11 +88843,9 @@
+             "format": "id"
+           },
+           "user1": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "user2": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "winnerId": {
+@@ -88329,13 +88856,12 @@
+             "format": "id"
+           },
+           "winner": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/UserLite"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -88460,11 +88986,9 @@
+             "format": "id"
+           },
+           "user1": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "user2": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "winnerId": {
+@@ -88475,13 +88999,12 @@
+             "format": "id"
+           },
+           "winner": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/UserLite"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -88895,7 +89418,6 @@
+             ]
+           },
+           "policies": {
+-            "type": "object",
+             "$ref": "#/components/schemas/RolePolicies"
+           },
+           "noteSearchableScope": {
+@@ -89053,11 +89575,9 @@
+         "type": "object",
+         "allOf": [
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/MetaLite"
+           },
+           {
+-            "type": "object",
+             "$ref": "#/components/schemas/MetaDetailedOnly"
+           }
+         ]
+@@ -89150,23 +89670,13 @@
+             "type": "string"
+           },
+           "user": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/UserLite"
+-              }
+-            ]
++            "$ref": "#/components/schemas/UserLite"
+           },
+           "systemWebhookId": {
+             "type": "string"
+           },
+           "systemWebhook": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/SystemWebhook"
+-              }
+-            ]
++            "$ref": "#/components/schemas/SystemWebhook"
+           }
+         },
+         "required": [
+@@ -89191,7 +89701,6 @@
+             "type": "string"
+           },
+           "fromUser": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "toUserId": {
+@@ -89201,13 +89710,12 @@
+             ]
+           },
+           "toUser": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/UserLite"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -89218,13 +89726,12 @@
+             ]
+           },
+           "toRoom": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/ChatRoom"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -89241,13 +89748,12 @@
+             ]
+           },
+           "file": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFile"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -89263,7 +89769,6 @@
+                   "type": "string"
+                 },
+                 "user": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               },
+@@ -89296,12 +89801,7 @@
+             "type": "string"
+           },
+           "fromUser": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/UserLite"
+-              }
+-            ]
++            "$ref": "#/components/schemas/UserLite"
+           },
+           "toUserId": {
+             "type": [
+@@ -89328,13 +89828,12 @@
+             ]
+           },
+           "file": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFile"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -89347,13 +89846,12 @@
+                   "type": "string"
+                 },
+                 "user": {
+-                  "type": [
+-                    "object",
+-                    "null"
+-                  ],
+-                  "allOf": [
++                  "oneOf": [
+                     {
+                       "$ref": "#/components/schemas/UserLite"
++                    },
++                    {
++                      "type": "null"
+                     }
+                   ]
+                 }
+@@ -89400,13 +89898,12 @@
+             ]
+           },
+           "file": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFile"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -89447,7 +89944,6 @@
+             "type": "string"
+           },
+           "fromUser": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "toRoomId": {
+@@ -89466,13 +89962,12 @@
+             ]
+           },
+           "file": {
+-            "type": [
+-              "object",
+-              "null"
+-            ],
+-            "allOf": [
++            "oneOf": [
+               {
+                 "$ref": "#/components/schemas/DriveFile"
++              },
++              {
++                "type": "null"
+               }
+             ]
+           },
+@@ -89485,7 +89980,6 @@
+                   "type": "string"
+                 },
+                 "user": {
+-                  "type": "object",
+                   "$ref": "#/components/schemas/UserLite"
+                 }
+               },
+@@ -89519,7 +90013,6 @@
+             "type": "string"
+           },
+           "owner": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "name": {
+@@ -89530,6 +90023,9 @@
+           },
+           "isMuted": {
+             "type": "boolean"
++          },
++          "invitationExists": {
++            "type": "boolean"
+           }
+         },
+         "required": [
+@@ -89555,14 +90051,12 @@
+             "type": "string"
+           },
+           "user": {
+-            "type": "object",
+             "$ref": "#/components/schemas/UserLite"
+           },
+           "roomId": {
+             "type": "string"
+           },
+           "room": {
+-            "type": "object",
+             "$ref": "#/components/schemas/ChatRoom"
+           }
+         },
+@@ -89589,23 +90083,13 @@
+             "type": "string"
+           },
+           "user": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/UserLite"
+-              }
+-            ]
++            "$ref": "#/components/schemas/UserLite"
+           },
+           "roomId": {
+             "type": "string"
+           },
+           "room": {
+-            "type": "object",
+-            "allOf": [
+-              {
+-                "$ref": "#/components/schemas/ChatRoom"
+-              }
+-            ]
++            "$ref": "#/components/schemas/ChatRoom"
+           }
+         },
+         "required": [

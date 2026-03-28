@@ -12,7 +12,7 @@
 TOOL_DIR := tool
 FVM := fvm dart
 
-.PHONY: all all-multi generate generate-multi generate-build generate-build-multi build verify analyze test collect update-versions clean
+.PHONY: all all-multi generate generate-multi generate-build generate-build-multi build verify analyze test collect update-versions migrate-patches restore-jsons clean
 
 # Full pipeline (single version)
 all: generate-build verify
@@ -58,6 +58,14 @@ collect:
 # Fetch latest Misskey release tags and update versions.yaml
 update-versions:
 	cd $(TOOL_DIR) && npx tsx src/collect/update-versions.ts
+
+# Restore full api.json files from base + patches
+restore-jsons:
+	cd $(TOOL_DIR) && npx tsx src/collect/restore-full-jsons.ts
+
+# One-time migration from full JSONs to patch chain
+migrate-patches:
+	cd $(TOOL_DIR) && npx tsx src/collect/migrate-to-patches.ts
 
 # Clean generated files
 clean:

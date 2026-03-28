@@ -26,6 +26,13 @@ export interface ParsedApi {
  */
 export function parseApiJson(filePath: string, config: OverrideConfig): ParsedApi {
   const content = readFileSync(filePath, "utf-8");
+  return parseApiJsonFromContent(content, config);
+}
+
+/**
+ * Parse an OpenAPI 3.1.0 JSON string and return the parsed representation.
+ */
+export function parseApiJsonFromContent(content: string, config: OverrideConfig): ParsedApi {
   const doc: OpenApiDocument = JSON.parse(content);
   return parseApiDocument(doc, config);
 }
