@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   get-token:
     build: get-token
