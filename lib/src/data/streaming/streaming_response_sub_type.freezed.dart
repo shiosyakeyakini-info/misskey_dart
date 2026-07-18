@@ -218,7 +218,7 @@ class __$PageEventCopyWithImpl<$Res> implements _$PageEventCopyWith<$Res> {
 
 /// @nodoc
 mixin _$UrlUploadFinishedEvent {
-  String get marker;
+  String? get marker;
   DriveFile get file;
 
   /// Create a copy of UrlUploadFinishedEvent
@@ -257,7 +257,7 @@ abstract mixin class $UrlUploadFinishedEventCopyWith<$Res> {
           $Res Function(UrlUploadFinishedEvent) _then) =
       _$UrlUploadFinishedEventCopyWithImpl;
   @useResult
-  $Res call({String marker, DriveFile file});
+  $Res call({String? marker, DriveFile file});
 
   $DriveFileCopyWith<$Res> get file;
 }
@@ -275,14 +275,14 @@ class _$UrlUploadFinishedEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? marker = null,
+    Object? marker = freezed,
     Object? file = null,
   }) {
     return _then(_self.copyWith(
-      marker: null == marker
+      marker: freezed == marker
           ? _self.marker
           : marker // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       file: null == file
           ? _self.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -304,12 +304,12 @@ class _$UrlUploadFinishedEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _UrlUploadFinishedEvent implements UrlUploadFinishedEvent {
-  const _UrlUploadFinishedEvent({required this.marker, required this.file});
+  const _UrlUploadFinishedEvent({this.marker, required this.file});
   factory _UrlUploadFinishedEvent.fromJson(Map<String, dynamic> json) =>
       _$UrlUploadFinishedEventFromJson(json);
 
   @override
-  final String marker;
+  final String? marker;
   @override
   final DriveFile file;
 
@@ -356,7 +356,7 @@ abstract mixin class _$UrlUploadFinishedEventCopyWith<$Res>
       __$UrlUploadFinishedEventCopyWithImpl;
   @override
   @useResult
-  $Res call({String marker, DriveFile file});
+  $Res call({String? marker, DriveFile file});
 
   @override
   $DriveFileCopyWith<$Res> get file;
@@ -375,14 +375,14 @@ class __$UrlUploadFinishedEventCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? marker = null,
+    Object? marker = freezed,
     Object? file = null,
   }) {
     return _then(_UrlUploadFinishedEvent(
-      marker: null == marker
+      marker: freezed == marker
           ? _self.marker
           : marker // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       file: null == file
           ? _self.file
           : file // ignore: cast_nullable_to_non_nullable
