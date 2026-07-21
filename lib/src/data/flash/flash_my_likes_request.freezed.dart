@@ -18,6 +18,9 @@ mixin _$FlashMyLikesRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
+  String? get search;
 
   /// Create a copy of FlashMyLikesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -37,16 +40,22 @@ mixin _$FlashMyLikesRequest {
             other is FlashMyLikesRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.search, search) || other.search == search));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, search);
 
   @override
   String toString() {
-    return 'FlashMyLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'FlashMyLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, search: $search)';
   }
 }
 
@@ -56,7 +65,13 @@ abstract mixin class $FlashMyLikesRequestCopyWith<$Res> {
           FlashMyLikesRequest value, $Res Function(FlashMyLikesRequest) _then) =
       _$FlashMyLikesRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? search});
 }
 
 /// @nodoc
@@ -75,6 +90,9 @@ class _$FlashMyLikesRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? search = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -89,6 +107,18 @@ class _$FlashMyLikesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      search: freezed == search
+          ? _self.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -96,16 +126,29 @@ class _$FlashMyLikesRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FlashMyLikesRequest implements FlashMyLikesRequest {
-  const _FlashMyLikesRequest({this.limit, this.sinceId, this.untilId});
+  const _FlashMyLikesRequest(
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.search});
   factory _FlashMyLikesRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashMyLikesRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  final String? search;
 
   /// Create a copy of FlashMyLikesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,16 +173,22 @@ class _FlashMyLikesRequest implements FlashMyLikesRequest {
             other is _FlashMyLikesRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
+            (identical(other.search, search) || other.search == search));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, search);
 
   @override
   String toString() {
-    return 'FlashMyLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'FlashMyLikesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, search: $search)';
   }
 }
 
@@ -151,7 +200,13 @@ abstract mixin class _$FlashMyLikesRequestCopyWith<$Res>
       __$FlashMyLikesRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? search});
 }
 
 /// @nodoc
@@ -170,6 +225,9 @@ class __$FlashMyLikesRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
+    Object? search = freezed,
   }) {
     return _then(_FlashMyLikesRequest(
       limit: freezed == limit
@@ -183,6 +241,18 @@ class __$FlashMyLikesRequestCopyWithImpl<$Res>
       untilId: freezed == untilId
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      search: freezed == search
+          ? _self.search
+          : search // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }

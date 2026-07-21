@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsUnfollowRequest {
-  String get channelId;
+  String? get channelId;
 
   /// Create a copy of ChannelsUnfollowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $ChannelsUnfollowRequestCopyWith<$Res> {
           $Res Function(ChannelsUnfollowRequest) _then) =
       _$ChannelsUnfollowRequestCopyWithImpl;
   @useResult
-  $Res call({String channelId});
+  $Res call({String? channelId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$ChannelsUnfollowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
   }) {
     return _then(_self.copyWith(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$ChannelsUnfollowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChannelsUnfollowRequest implements ChannelsUnfollowRequest {
-  const _ChannelsUnfollowRequest({required this.channelId});
+  const _ChannelsUnfollowRequest({this.channelId});
   factory _ChannelsUnfollowRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsUnfollowRequestFromJson(json);
 
   @override
-  final String channelId;
+  final String? channelId;
 
   /// Create a copy of ChannelsUnfollowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$ChannelsUnfollowRequestCopyWith<$Res>
       __$ChannelsUnfollowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String channelId});
+  $Res call({String? channelId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$ChannelsUnfollowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
   }) {
     return _then(_ChannelsUnfollowRequest(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

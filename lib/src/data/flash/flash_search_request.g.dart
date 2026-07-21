@@ -8,12 +8,12 @@ part of 'flash_search_request.dart';
 
 _FlashSearchRequest _$FlashSearchRequestFromJson(Map<String, dynamic> json) =>
     _FlashSearchRequest(
-      query: json['query'] as String,
+      query: json['query'] as String?,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
       sinceDate: (json['sinceDate'] as num?)?.toInt(),
       untilDate: (json['untilDate'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 5,
     );
 
 Map<String, dynamic> _$FlashSearchRequestToJson(_FlashSearchRequest instance) =>

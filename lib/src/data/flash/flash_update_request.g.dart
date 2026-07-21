@@ -8,15 +8,16 @@ part of 'flash_update_request.dart';
 
 _FlashUpdateRequest _$FlashUpdateRequestFromJson(Map<String, dynamic> json) =>
     _FlashUpdateRequest(
-      flashId: json['flashId'] as String,
+      flashId: json['flashId'] as String?,
       title: json['title'] as String?,
       summary: json['summary'] as String?,
       script: json['script'] as String?,
       permissions: (json['permissions'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      visibility:
-          $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
+      visibility: $enumDecodeNullable(
+          _$FlashVisibilityEnumMap, json['visibility'],
+          unknownValue: FlashVisibility.unknown),
     );
 
 Map<String, dynamic> _$FlashUpdateRequestToJson(_FlashUpdateRequest instance) =>
@@ -30,6 +31,7 @@ Map<String, dynamic> _$FlashUpdateRequestToJson(_FlashUpdateRequest instance) =>
     };
 
 const _$FlashVisibilityEnumMap = {
-  FlashVisibility.public: 'public',
   FlashVisibility.private: 'private',
+  FlashVisibility.public: 'public',
+  FlashVisibility.unknown: 'unknown',
 };

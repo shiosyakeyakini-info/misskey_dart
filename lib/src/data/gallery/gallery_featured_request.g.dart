@@ -9,7 +9,7 @@ part of 'gallery_featured_request.dart';
 _GalleryFeaturedRequest _$GalleryFeaturedRequestFromJson(
         Map<String, dynamic> json) =>
     _GalleryFeaturedRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       untilId: json['untilId'] as String?,
     );
 

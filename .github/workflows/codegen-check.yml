@@ -1,0 +1,67 @@
+name: Codegen Check
+
+on:
+  schedule:
+    # Check weekly for new Misskey releases (Monday 3:00 UTC)
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      misskey_version:
+        description: "Specific Misskey version to check (e.g., 2026.3.1)"
+        required: false
+
+jobs:
+  check-new-version:
+    runs-on: ubuntu-latest
+    outputs:
+      has_new: ${{ steps.check.outputs.has_new }}
+      new_version: ${{ steps.check.outputs.new_version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install tool dependencies
+        run: cd tool && npm ci
+      - name: Check for new Misskey releases
+        id: check
+        run: |
+          cd tool
+          BEFORE=$(cat config/versions.yaml | grep latest_version | sed 's/.*"\(.*\)"/\1/')
+          npx tsx src/collect/update-versions.ts
+          AFTER=$(cat config/versions.yaml | grep latest_version | sed 's/.*"\(.*\)"/\1/')
+          if [ "$BEFORE" != "$AFTER" ]; then
+            echo "has_new=true" >> "$GITHUB_OUTPUT"
+            echo "new_version=$AFTER" >> "$GITHUB_OUTPUT"
+            echo "New version detected: $AFTER (was: $BEFORE)"
+          else
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+            echo "No new version found (latest: $BEFORE)"
+          fi
+
+  codegen-verify:
+    runs-on: ubuntu-latest
+    needs: check-new-version
+    if: needs.check-new-version.outputs.has_new == 'true' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: |
+          cd tool && npm ci
+          dart pub get
+      - name: Generate + Build + Fix + Format
+        run: cd tool && npx tsx src/index.ts --output ../lib/src --build
+      - name: Analyze
+        run: dart analyze --fatal-infos lib/
+      - name: Check for changes
+        run: |
+          if git diff --quiet lib/; then
+            echo "No changes detected in generated code"
+          else
+            echo "::warning::Generated code has changed. Review the diff below:"
+            git diff --stat lib/
+          fi

@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/misskey_chat.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 import 'package:misskey_dart/src/services/streaming_service_impl.dart';
 
 class Misskey {
@@ -18,7 +16,7 @@ class Misskey {
   late final MisskeyUsers users;
   late final MisskeyI i;
   late final MisskeyClips clips;
-  late final MisskeyAntenna antennas;
+  late final MisskeyAntennas antennas;
   late final MisskeyDrive drive;
   late final MisskeyFollowing following;
   late final MisskeyGallery gallery;
@@ -59,8 +57,8 @@ class Misskey {
     users = MisskeyUsers(apiService: apiService);
     i = MisskeyI(apiService: apiService);
     clips = MisskeyClips(apiService: apiService);
-    antennas = MisskeyAntenna(apiService: apiService);
-    drive = MisskeyDrive(apiService);
+    antennas = MisskeyAntennas(apiService: apiService);
+    drive = MisskeyDrive(apiService: apiService);
     following = MisskeyFollowing(apiService: apiService);
     gallery = MisskeyGallery(apiService: apiService);
     blocking = MisskeyBlocking(apiService: apiService);

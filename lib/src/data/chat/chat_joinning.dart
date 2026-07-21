@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
-import 'package:misskey_dart/src/data/base/user.dart';
-import 'package:misskey_dart/src/data/chat/chat_room.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_joinning.freezed.dart';
 part 'chat_joinning.g.dart';

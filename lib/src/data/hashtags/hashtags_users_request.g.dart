@@ -9,11 +9,17 @@ part of 'hashtags_users_request.dart';
 _HashtagsUsersRequest _$HashtagsUsersRequestFromJson(
         Map<String, dynamic> json) =>
     _HashtagsUsersRequest(
-      tag: json['tag'] as String,
-      limit: (json['limit'] as num?)?.toInt(),
-      sort: const UsersSortConverter().fromJson(json['sort'] as String),
-      state: $enumDecodeNullable(_$UsersStateEnumMap, json['state']),
-      origin: $enumDecodeNullable(_$OriginEnumMap, json['origin']),
+      tag: json['tag'] as String?,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
+      sort: $enumDecodeNullable(_$UsersSortTypeEnumMap, json['sort'],
+          unknownValue: UsersSortType.unknown),
+      state: $enumDecodeNullable(_$HashtagsUsersStateEnumMap, json['state'],
+              unknownValue: HashtagsUsersState.unknown) ??
+          HashtagsUsersState.all,
+      origin: $enumDecodeNullable(_$HashtagsUsersOriginEnumMap, json['origin'],
+              unknownValue: HashtagsUsersOrigin.unknown) ??
+          HashtagsUsersOrigin.local,
     );
 
 Map<String, dynamic> _$HashtagsUsersRequestToJson(
@@ -21,18 +27,31 @@ Map<String, dynamic> _$HashtagsUsersRequestToJson(
     <String, dynamic>{
       'tag': instance.tag,
       'limit': instance.limit,
-      'sort': const UsersSortConverter().toJson(instance.sort),
-      'state': _$UsersStateEnumMap[instance.state],
-      'origin': _$OriginEnumMap[instance.origin],
+      'offset': instance.offset,
+      'sort': _$UsersSortTypeEnumMap[instance.sort],
+      'state': _$HashtagsUsersStateEnumMap[instance.state],
+      'origin': _$HashtagsUsersOriginEnumMap[instance.origin],
     };
 
-const _$UsersStateEnumMap = {
-  UsersState.all: 'all',
-  UsersState.alive: 'alive',
+const _$UsersSortTypeEnumMap = {
+  UsersSortType.followerDescendant: '+follower',
+  UsersSortType.followerAscendant: '-follower',
+  UsersSortType.createdAtDescendant: '+createdAt',
+  UsersSortType.createdAtAscendant: '-createdAt',
+  UsersSortType.updateAtDescendant: '+updatedAt',
+  UsersSortType.updateAtAscendant: '-updatedAt',
+  UsersSortType.unknown: 'unknown',
 };
 
-const _$OriginEnumMap = {
-  Origin.local: 'local',
-  Origin.remote: 'remote',
-  Origin.combined: 'combined',
+const _$HashtagsUsersStateEnumMap = {
+  HashtagsUsersState.all: 'all',
+  HashtagsUsersState.alive: 'alive',
+  HashtagsUsersState.unknown: 'unknown',
+};
+
+const _$HashtagsUsersOriginEnumMap = {
+  HashtagsUsersOrigin.combined: 'combined',
+  HashtagsUsersOrigin.local: 'local',
+  HashtagsUsersOrigin.remote: 'remote',
+  HashtagsUsersOrigin.unknown: 'unknown',
 };

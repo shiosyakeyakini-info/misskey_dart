@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatMessagesDeleteRequest {
-  String get messageId;
+  String? get messageId;
 
   /// Create a copy of ChatMessagesDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $ChatMessagesDeleteRequestCopyWith<$Res> {
           $Res Function(ChatMessagesDeleteRequest) _then) =
       _$ChatMessagesDeleteRequestCopyWithImpl;
   @useResult
-  $Res call({String messageId});
+  $Res call({String? messageId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$ChatMessagesDeleteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messageId = null,
+    Object? messageId = freezed,
   }) {
     return _then(_self.copyWith(
-      messageId: null == messageId
+      messageId: freezed == messageId
           ? _self.messageId
           : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$ChatMessagesDeleteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatMessagesDeleteRequest implements ChatMessagesDeleteRequest {
-  const _ChatMessagesDeleteRequest({required this.messageId});
+  const _ChatMessagesDeleteRequest({this.messageId});
   factory _ChatMessagesDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatMessagesDeleteRequestFromJson(json);
 
   @override
-  final String messageId;
+  final String? messageId;
 
   /// Create a copy of ChatMessagesDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -134,7 +134,7 @@ abstract mixin class _$ChatMessagesDeleteRequestCopyWith<$Res>
       __$ChatMessagesDeleteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String messageId});
+  $Res call({String? messageId});
 }
 
 /// @nodoc
@@ -150,13 +150,13 @@ class __$ChatMessagesDeleteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? messageId = null,
+    Object? messageId = freezed,
   }) {
     return _then(_ChatMessagesDeleteRequest(
-      messageId: null == messageId
+      messageId: freezed == messageId
           ? _self.messageId
           : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

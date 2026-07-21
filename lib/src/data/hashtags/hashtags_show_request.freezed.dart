@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$HashtagsShowRequest {
-  String get tag;
+  String? get tag;
 
   /// Create a copy of HashtagsShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $HashtagsShowRequestCopyWith<$Res> {
           HashtagsShowRequest value, $Res Function(HashtagsShowRequest) _then) =
       _$HashtagsShowRequestCopyWithImpl;
   @useResult
-  $Res call({String tag});
+  $Res call({String? tag});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$HashtagsShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tag = null,
+    Object? tag = freezed,
   }) {
     return _then(_self.copyWith(
-      tag: null == tag
+      tag: freezed == tag
           ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$HashtagsShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _HashtagsShowRequest implements HashtagsShowRequest {
-  const _HashtagsShowRequest({required this.tag});
+  const _HashtagsShowRequest({this.tag});
   factory _HashtagsShowRequest.fromJson(Map<String, dynamic> json) =>
       _$HashtagsShowRequestFromJson(json);
 
   @override
-  final String tag;
+  final String? tag;
 
   /// Create a copy of HashtagsShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +131,7 @@ abstract mixin class _$HashtagsShowRequestCopyWith<$Res>
       __$HashtagsShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String tag});
+  $Res call({String? tag});
 }
 
 /// @nodoc
@@ -147,13 +147,13 @@ class __$HashtagsShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? tag = null,
+    Object? tag = freezed,
   }) {
     return _then(_HashtagsShowRequest(
-      tag: null == tag
+      tag: freezed == tag
           ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

@@ -18,6 +18,8 @@ mixin _$FlashMyRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of FlashMyRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -37,16 +39,21 @@ mixin _$FlashMyRequest {
             other is FlashMyRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+  int get hashCode =>
+      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -56,7 +63,12 @@ abstract mixin class $FlashMyRequestCopyWith<$Res> {
           FlashMyRequest value, $Res Function(FlashMyRequest) _then) =
       _$FlashMyRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -75,6 +87,8 @@ class _$FlashMyRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -89,6 +103,14 @@ class _$FlashMyRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -96,16 +118,26 @@ class _$FlashMyRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FlashMyRequest implements FlashMyRequest {
-  const _FlashMyRequest({this.limit, this.sinceId, this.untilId});
+  const _FlashMyRequest(
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate});
   factory _FlashMyRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashMyRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
 
   /// Create a copy of FlashMyRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -129,16 +161,21 @@ class _FlashMyRequest implements FlashMyRequest {
             other is _FlashMyRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId);
+  int get hashCode =>
+      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'FlashMyRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -150,7 +187,12 @@ abstract mixin class _$FlashMyRequestCopyWith<$Res>
       __$FlashMyRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -169,6 +211,8 @@ class __$FlashMyRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_FlashMyRequest(
       limit: freezed == limit
@@ -183,6 +227,14 @@ class __$FlashMyRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }

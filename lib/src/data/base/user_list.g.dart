@@ -6,21 +6,24 @@ part of 'user_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UsersList _$UsersListFromJson(Map<String, dynamic> json) => _UsersList(
+_UserList _$UserListFromJson(Map<String, dynamic> json) => _UserList(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
-      name: json['name'] as String?,
+      name: json['name'] as String,
       userIds:
-          (json['userIds'] as List<dynamic>).map((e) => e as String).toList(),
-      isPublic: json['isPublic'] as bool?,
+          (json['userIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      isPublic: json['isPublic'] as bool,
+      likedCount: (json['likedCount'] as num?)?.toDouble(),
+      isLiked: json['isLiked'] as bool?,
     );
 
-Map<String, dynamic> _$UsersListToJson(_UsersList instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserListToJson(_UserList instance) => <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'name': instance.name,
       'userIds': instance.userIds,
       'isPublic': instance.isPublic,
+      'likedCount': instance.likedCount,
+      'isLiked': instance.isLiked,
     };

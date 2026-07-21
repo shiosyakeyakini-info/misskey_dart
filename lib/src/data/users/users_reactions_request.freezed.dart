@@ -15,14 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersReactionsRequest {
-  String get userId;
+  String? get userId;
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of UsersReactionsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -68,12 +66,12 @@ abstract mixin class $UsersReactionsRequestCopyWith<$Res> {
       _$UsersReactionsRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String userId,
+      {String? userId,
       int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -89,7 +87,7 @@ class _$UsersReactionsRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -97,10 +95,10 @@ class _$UsersReactionsRequestCopyWithImpl<$Res>
     Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -116,11 +114,11 @@ class _$UsersReactionsRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }
@@ -129,29 +127,28 @@ class _$UsersReactionsRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _UsersReactionsRequest implements UsersReactionsRequest {
   const _UsersReactionsRequest(
-      {required this.userId,
-      this.limit,
+      {this.userId,
+      this.limit = 10,
       this.sinceId,
       this.untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
+      this.sinceDate,
+      this.untilDate});
   factory _UsersReactionsRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersReactionsRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? sinceDate;
+  final int? sinceDate;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? untilDate;
+  final int? untilDate;
 
   /// Create a copy of UsersReactionsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -204,12 +201,12 @@ abstract mixin class _$UsersReactionsRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String userId,
+      {String? userId,
       int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -225,7 +222,7 @@ class __$UsersReactionsRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -233,10 +230,10 @@ class __$UsersReactionsRequestCopyWithImpl<$Res>
     Object? untilDate = freezed,
   }) {
     return _then(_UsersReactionsRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -252,11 +249,11 @@ class __$UsersReactionsRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }

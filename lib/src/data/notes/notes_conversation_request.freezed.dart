@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesConversationRequest {
-  String get noteId;
+  String? get noteId;
   int? get limit;
   int? get offset;
 
@@ -56,7 +56,7 @@ abstract mixin class $NotesConversationRequestCopyWith<$Res> {
           $Res Function(NotesConversationRequest) _then) =
       _$NotesConversationRequestCopyWithImpl;
   @useResult
-  $Res call({String noteId, int? limit, int? offset});
+  $Res call({String? noteId, int? limit, int? offset});
 }
 
 /// @nodoc
@@ -72,15 +72,15 @@ class _$NotesConversationRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
     Object? limit = freezed,
     Object? offset = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -97,15 +97,17 @@ class _$NotesConversationRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesConversationRequest implements NotesConversationRequest {
   const _NotesConversationRequest(
-      {required this.noteId, this.limit, this.offset});
+      {this.noteId, this.limit = 10, this.offset = 0});
   factory _NotesConversationRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesConversationRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
   @override
+  @JsonKey()
   final int? limit;
   @override
+  @JsonKey()
   final int? offset;
 
   /// Create a copy of NotesConversationRequest
@@ -152,7 +154,7 @@ abstract mixin class _$NotesConversationRequestCopyWith<$Res>
       __$NotesConversationRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String noteId, int? limit, int? offset});
+  $Res call({String? noteId, int? limit, int? offset});
 }
 
 /// @nodoc
@@ -168,15 +170,15 @@ class __$NotesConversationRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
     Object? limit = freezed,
     Object? offset = freezed,
   }) {
     return _then(_NotesConversationRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

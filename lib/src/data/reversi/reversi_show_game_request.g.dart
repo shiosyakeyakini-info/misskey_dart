@@ -9,7 +9,7 @@ part of 'reversi_show_game_request.dart';
 _ReversiShowGameRequest _$ReversiShowGameRequestFromJson(
         Map<String, dynamic> json) =>
     _ReversiShowGameRequest(
-      gameId: json['gameId'] as String,
+      gameId: json['gameId'] as String?,
     );
 
 Map<String, dynamic> _$ReversiShowGameRequestToJson(

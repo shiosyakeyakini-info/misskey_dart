@@ -9,7 +9,7 @@ part of 'channels_unfavorite_request.dart';
 _ChannelsUnfavoriteRequest _$ChannelsUnfavoriteRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsUnfavoriteRequest(
-      channelId: json['channelId'] as String,
+      channelId: json['channelId'] as String?,
     );
 
 Map<String, dynamic> _$ChannelsUnfavoriteRequestToJson(

@@ -8,7 +8,7 @@ part of 'hashtags_show_request.dart';
 
 _HashtagsShowRequest _$HashtagsShowRequestFromJson(Map<String, dynamic> json) =>
     _HashtagsShowRequest(
-      tag: json['tag'] as String,
+      tag: json['tag'] as String?,
     );
 
 Map<String, dynamic> _$HashtagsShowRequestToJson(

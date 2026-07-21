@@ -8,14 +8,16 @@ part of 'flash_create_request.dart';
 
 _FlashCreateRequest _$FlashCreateRequestFromJson(Map<String, dynamic> json) =>
     _FlashCreateRequest(
-      title: json['title'] as String,
-      summary: json['summary'] as String,
-      script: json['script'] as String,
-      permissions: (json['permissions'] as List<dynamic>)
-          .map((e) => e as String)
+      title: json['title'] as String?,
+      summary: json['summary'] as String?,
+      script: json['script'] as String?,
+      permissions: (json['permissions'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
-      visibility:
-          $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
+      visibility: $enumDecodeNullable(
+              _$FlashVisibilityEnumMap, json['visibility'],
+              unknownValue: FlashVisibility.unknown) ??
+          FlashVisibility.public,
     );
 
 Map<String, dynamic> _$FlashCreateRequestToJson(_FlashCreateRequest instance) =>
@@ -28,6 +30,7 @@ Map<String, dynamic> _$FlashCreateRequestToJson(_FlashCreateRequest instance) =>
     };
 
 const _$FlashVisibilityEnumMap = {
-  FlashVisibility.public: 'public',
   FlashVisibility.private: 'private',
+  FlashVisibility.public: 'public',
+  FlashVisibility.unknown: 'unknown',
 };

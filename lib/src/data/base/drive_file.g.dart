@@ -13,22 +13,19 @@ _DriveFile _$DriveFileFromJson(Map<String, dynamic> json) => _DriveFile(
       name: json['name'] as String,
       type: json['type'] as String,
       md5: json['md5'] as String,
-      size: (json['size'] as num).toInt(),
+      size: (json['size'] as num).toDouble(),
       isSensitive: json['isSensitive'] as bool,
       blurhash: json['blurhash'] as String?,
       properties: DriveFileProperties.fromJson(
           json['properties'] as Map<String, dynamic>),
-      url: json['url'] as String,
-      thumbnailUrl: json['thumbnailUrl'] as String?,
+      url: const UriConverter().fromJson(json['url'] as String),
+      thumbnailUrl: _$JsonConverterFromJson<String, Uri?>(
+          json['thumbnailUrl'], const NullableUriConverter().fromJson),
       comment: json['comment'] as String?,
       folderId: json['folderId'] as String?,
-      folder: json['folder'] == null
-          ? null
-          : DriveFolder.fromJson(json['folder'] as Map<String, dynamic>),
+      folder: json['folder'] as Map<String, dynamic>?,
       userId: json['userId'] as String?,
-      user: json['user'] == null
-          ? null
-          : UserLite.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$DriveFileToJson(_DriveFile instance) =>
@@ -42,28 +39,18 @@ Map<String, dynamic> _$DriveFileToJson(_DriveFile instance) =>
       'isSensitive': instance.isSensitive,
       'blurhash': instance.blurhash,
       'properties': instance.properties.toJson(),
-      'url': instance.url,
-      'thumbnailUrl': instance.thumbnailUrl,
+      'url': const UriConverter().toJson(instance.url),
+      'thumbnailUrl':
+          const NullableUriConverter().toJson(instance.thumbnailUrl),
       'comment': instance.comment,
       'folderId': instance.folderId,
-      'folder': instance.folder?.toJson(),
+      'folder': instance.folder,
       'userId': instance.userId,
-      'user': instance.user?.toJson(),
+      'user': instance.user,
     };
 
-_DriveFileProperties _$DriveFilePropertiesFromJson(Map<String, dynamic> json) =>
-    _DriveFileProperties(
-      width: (json['width'] as num?)?.toInt(),
-      height: (json['height'] as num?)?.toInt(),
-      orientation: (json['orientation'] as num?)?.toInt(),
-      avgColor: json['avgColor'] as String?,
-    );
-
-Map<String, dynamic> _$DriveFilePropertiesToJson(
-        _DriveFileProperties instance) =>
-    <String, dynamic>{
-      'width': instance.width,
-      'height': instance.height,
-      'orientation': instance.orientation,
-      'avgColor': instance.avgColor,
-    };
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);

@@ -17,8 +17,6 @@ T _$identity<T>(T value) => value;
 mixin _$NotesStateResponse {
   bool get isFavorited;
   bool get isMutedThread;
-  @Deprecated("This property is already removed")
-  bool? get isWatching;
 
   /// Create a copy of NotesStateResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -39,19 +37,16 @@ mixin _$NotesStateResponse {
             (identical(other.isFavorited, isFavorited) ||
                 other.isFavorited == isFavorited) &&
             (identical(other.isMutedThread, isMutedThread) ||
-                other.isMutedThread == isMutedThread) &&
-            (identical(other.isWatching, isWatching) ||
-                other.isWatching == isWatching));
+                other.isMutedThread == isMutedThread));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isFavorited, isMutedThread, isWatching);
+  int get hashCode => Object.hash(runtimeType, isFavorited, isMutedThread);
 
   @override
   String toString() {
-    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread, isWatching: $isWatching)';
+    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread)';
   }
 }
 
@@ -61,10 +56,7 @@ abstract mixin class $NotesStateResponseCopyWith<$Res> {
           NotesStateResponse value, $Res Function(NotesStateResponse) _then) =
       _$NotesStateResponseCopyWithImpl;
   @useResult
-  $Res call(
-      {bool isFavorited,
-      bool isMutedThread,
-      @Deprecated("This property is already removed") bool? isWatching});
+  $Res call({bool isFavorited, bool isMutedThread});
 }
 
 /// @nodoc
@@ -82,7 +74,6 @@ class _$NotesStateResponseCopyWithImpl<$Res>
   $Res call({
     Object? isFavorited = null,
     Object? isMutedThread = null,
-    Object? isWatching = freezed,
   }) {
     return _then(_self.copyWith(
       isFavorited: null == isFavorited
@@ -93,10 +84,6 @@ class _$NotesStateResponseCopyWithImpl<$Res>
           ? _self.isMutedThread
           : isMutedThread // ignore: cast_nullable_to_non_nullable
               as bool,
-      isWatching: freezed == isWatching
-          ? _self.isWatching
-          : isWatching // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -105,9 +92,7 @@ class _$NotesStateResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesStateResponse implements NotesStateResponse {
   const _NotesStateResponse(
-      {required this.isFavorited,
-      required this.isMutedThread,
-      @Deprecated("This property is already removed") this.isWatching});
+      {required this.isFavorited, required this.isMutedThread});
   factory _NotesStateResponse.fromJson(Map<String, dynamic> json) =>
       _$NotesStateResponseFromJson(json);
 
@@ -115,9 +100,6 @@ class _NotesStateResponse implements NotesStateResponse {
   final bool isFavorited;
   @override
   final bool isMutedThread;
-  @override
-  @Deprecated("This property is already removed")
-  final bool? isWatching;
 
   /// Create a copy of NotesStateResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -142,19 +124,16 @@ class _NotesStateResponse implements NotesStateResponse {
             (identical(other.isFavorited, isFavorited) ||
                 other.isFavorited == isFavorited) &&
             (identical(other.isMutedThread, isMutedThread) ||
-                other.isMutedThread == isMutedThread) &&
-            (identical(other.isWatching, isWatching) ||
-                other.isWatching == isWatching));
+                other.isMutedThread == isMutedThread));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isFavorited, isMutedThread, isWatching);
+  int get hashCode => Object.hash(runtimeType, isFavorited, isMutedThread);
 
   @override
   String toString() {
-    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread, isWatching: $isWatching)';
+    return 'NotesStateResponse(isFavorited: $isFavorited, isMutedThread: $isMutedThread)';
   }
 }
 
@@ -166,10 +145,7 @@ abstract mixin class _$NotesStateResponseCopyWith<$Res>
       __$NotesStateResponseCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {bool isFavorited,
-      bool isMutedThread,
-      @Deprecated("This property is already removed") bool? isWatching});
+  $Res call({bool isFavorited, bool isMutedThread});
 }
 
 /// @nodoc
@@ -187,7 +163,6 @@ class __$NotesStateResponseCopyWithImpl<$Res>
   $Res call({
     Object? isFavorited = null,
     Object? isMutedThread = null,
-    Object? isWatching = freezed,
   }) {
     return _then(_NotesStateResponse(
       isFavorited: null == isFavorited
@@ -198,10 +173,6 @@ class __$NotesStateResponseCopyWithImpl<$Res>
           ? _self.isMutedThread
           : isMutedThread // ignore: cast_nullable_to_non_nullable
               as bool,
-      isWatching: freezed == isWatching
-          ? _self.isWatching
-          : isWatching // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }

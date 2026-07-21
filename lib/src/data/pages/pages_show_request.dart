@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'pages_show_request.freezed.dart';
 part 'pages_show_request.g.dart';
@@ -11,6 +12,5 @@ abstract class PagesShowRequest with _$PagesShowRequest {
     String? username,
   }) = _PagesShowRequest;
 
-  factory PagesShowRequest.fromJson(Map<String, dynamic> json) =>
-      _$PagesShowRequestFromJson(json);
+  factory PagesShowRequest.fromJson(Map<String, Object?> json) => _$PagesShowRequestFromJson(json);
 }

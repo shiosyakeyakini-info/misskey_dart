@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/hashtags_list_sort_converter.dart';
-import 'package:misskey_dart/src/enums/hashtags_list_sort_type.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'hashtags_list_request.freezed.dart';
 part 'hashtags_list_request.g.dart';
@@ -8,13 +7,12 @@ part 'hashtags_list_request.g.dart';
 @freezed
 abstract class HashtagsListRequest with _$HashtagsListRequest {
   const factory HashtagsListRequest({
-    int? limit,
-    bool? attachedToUserOnly,
-    bool? attachedToLocalUserOnly,
-    bool? attachedToRemoteUserOnly,
-    @HashtagsListSortConverter() required HashtagsListSortType sort,
+    @Default(10) int? limit,
+    @Default(false) bool? attachedToUserOnly,
+    @Default(false) bool? attachedToLocalUserOnly,
+    @Default(false) bool? attachedToRemoteUserOnly,
+    @JsonKey(unknownEnumValue: HashtagsListSortType.unknown) HashtagsListSortType? sort,
   }) = _HashtagsListRequest;
 
-  factory HashtagsListRequest.fromJson(Map<String, dynamic> json) =>
-      _$HashtagsListRequestFromJson(json);
+  factory HashtagsListRequest.fromJson(Map<String, Object?> json) => _$HashtagsListRequestFromJson(json);
 }

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FlashSearchRequest {
-  String get query;
+  String? get query;
   String? get sinceId;
   String? get untilId;
   int? get sinceDate;
@@ -66,7 +66,7 @@ abstract mixin class $FlashSearchRequestCopyWith<$Res> {
       _$FlashSearchRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String query,
+      {String? query,
       String? sinceId,
       String? untilId,
       int? sinceDate,
@@ -87,7 +87,7 @@ class _$FlashSearchRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
@@ -95,10 +95,10 @@ class _$FlashSearchRequestCopyWithImpl<$Res>
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -127,17 +127,17 @@ class _$FlashSearchRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _FlashSearchRequest implements FlashSearchRequest {
   const _FlashSearchRequest(
-      {required this.query,
+      {this.query,
       this.sinceId,
       this.untilId,
       this.sinceDate,
       this.untilDate,
-      this.limit});
+      this.limit = 5});
   factory _FlashSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashSearchRequestFromJson(json);
 
   @override
-  final String query;
+  final String? query;
   @override
   final String? sinceId;
   @override
@@ -147,6 +147,7 @@ class _FlashSearchRequest implements FlashSearchRequest {
   @override
   final int? untilDate;
   @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of FlashSearchRequest
@@ -199,7 +200,7 @@ abstract mixin class _$FlashSearchRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String query,
+      {String? query,
       String? sinceId,
       String? untilId,
       int? sinceDate,
@@ -220,7 +221,7 @@ class __$FlashSearchRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
     Object? sinceDate = freezed,
@@ -228,10 +229,10 @@ class __$FlashSearchRequestCopyWithImpl<$Res>
     Object? limit = freezed,
   }) {
     return _then(_FlashSearchRequest(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable

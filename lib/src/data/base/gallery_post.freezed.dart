@@ -16,17 +16,19 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GalleryPost {
   String get id;
+  @DateTimeConverter()
   DateTime get createdAt;
+  @DateTimeConverter()
   DateTime get updatedAt;
   String get userId;
   UserLite get user;
   String get title;
   String? get description;
-  List<String> get fileIds;
-  List<DriveFile> get files;
+  List<String>? get fileIds;
+  List<DriveFile>? get files;
   List<String>? get tags;
   bool get isSensitive;
-  int get likedCount;
+  double get likedCount;
   bool? get isLiked;
 
   /// Create a copy of GalleryPost
@@ -96,17 +98,17 @@ abstract mixin class $GalleryPostCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @DateTimeConverter() DateTime createdAt,
+      @DateTimeConverter() DateTime updatedAt,
       String userId,
       UserLite user,
       String title,
       String? description,
-      List<String> fileIds,
-      List<DriveFile> files,
+      List<String>? fileIds,
+      List<DriveFile>? files,
       List<String>? tags,
       bool isSensitive,
-      int likedCount,
+      double likedCount,
       bool? isLiked});
 
   $UserLiteCopyWith<$Res> get user;
@@ -131,8 +133,8 @@ class _$GalleryPostCopyWithImpl<$Res> implements $GalleryPostCopyWith<$Res> {
     Object? user = null,
     Object? title = null,
     Object? description = freezed,
-    Object? fileIds = null,
-    Object? files = null,
+    Object? fileIds = freezed,
+    Object? files = freezed,
     Object? tags = freezed,
     Object? isSensitive = null,
     Object? likedCount = null,
@@ -167,14 +169,14 @@ class _$GalleryPostCopyWithImpl<$Res> implements $GalleryPostCopyWith<$Res> {
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      fileIds: null == fileIds
+      fileIds: freezed == fileIds
           ? _self.fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      files: null == files
+              as List<String>?,
+      files: freezed == files
           ? _self.files
           : files // ignore: cast_nullable_to_non_nullable
-              as List<DriveFile>,
+              as List<DriveFile>?,
       tags: freezed == tags
           ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -186,7 +188,7 @@ class _$GalleryPostCopyWithImpl<$Res> implements $GalleryPostCopyWith<$Res> {
       likedCount: null == likedCount
           ? _self.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isLiked: freezed == isLiked
           ? _self.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
@@ -210,14 +212,14 @@ class _$GalleryPostCopyWithImpl<$Res> implements $GalleryPostCopyWith<$Res> {
 class _GalleryPost implements GalleryPost {
   const _GalleryPost(
       {required this.id,
-      required this.createdAt,
-      required this.updatedAt,
+      @DateTimeConverter() required this.createdAt,
+      @DateTimeConverter() required this.updatedAt,
       required this.userId,
       required this.user,
       required this.title,
       this.description,
-      required final List<String> fileIds,
-      required final List<DriveFile> files,
+      final List<String>? fileIds,
+      final List<DriveFile>? files,
       final List<String>? tags,
       required this.isSensitive,
       required this.likedCount,
@@ -231,8 +233,10 @@ class _GalleryPost implements GalleryPost {
   @override
   final String id;
   @override
+  @DateTimeConverter()
   final DateTime createdAt;
   @override
+  @DateTimeConverter()
   final DateTime updatedAt;
   @override
   final String userId;
@@ -242,20 +246,24 @@ class _GalleryPost implements GalleryPost {
   final String title;
   @override
   final String? description;
-  final List<String> _fileIds;
+  final List<String>? _fileIds;
   @override
-  List<String> get fileIds {
+  List<String>? get fileIds {
+    final value = _fileIds;
+    if (value == null) return null;
     if (_fileIds is EqualUnmodifiableListView) return _fileIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_fileIds);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<DriveFile> _files;
+  final List<DriveFile>? _files;
   @override
-  List<DriveFile> get files {
+  List<DriveFile>? get files {
+    final value = _files;
+    if (value == null) return null;
     if (_files is EqualUnmodifiableListView) return _files;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_files);
+    return EqualUnmodifiableListView(value);
   }
 
   final List<String>? _tags;
@@ -271,7 +279,7 @@ class _GalleryPost implements GalleryPost {
   @override
   final bool isSensitive;
   @override
-  final int likedCount;
+  final double likedCount;
   @override
   final bool? isLiked;
 
@@ -349,17 +357,17 @@ abstract mixin class _$GalleryPostCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @DateTimeConverter() DateTime createdAt,
+      @DateTimeConverter() DateTime updatedAt,
       String userId,
       UserLite user,
       String title,
       String? description,
-      List<String> fileIds,
-      List<DriveFile> files,
+      List<String>? fileIds,
+      List<DriveFile>? files,
       List<String>? tags,
       bool isSensitive,
-      int likedCount,
+      double likedCount,
       bool? isLiked});
 
   @override
@@ -385,8 +393,8 @@ class __$GalleryPostCopyWithImpl<$Res> implements _$GalleryPostCopyWith<$Res> {
     Object? user = null,
     Object? title = null,
     Object? description = freezed,
-    Object? fileIds = null,
-    Object? files = null,
+    Object? fileIds = freezed,
+    Object? files = freezed,
     Object? tags = freezed,
     Object? isSensitive = null,
     Object? likedCount = null,
@@ -421,14 +429,14 @@ class __$GalleryPostCopyWithImpl<$Res> implements _$GalleryPostCopyWith<$Res> {
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      fileIds: null == fileIds
+      fileIds: freezed == fileIds
           ? _self._fileIds
           : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      files: null == files
+              as List<String>?,
+      files: freezed == files
           ? _self._files
           : files // ignore: cast_nullable_to_non_nullable
-              as List<DriveFile>,
+              as List<DriveFile>?,
       tags: freezed == tags
           ? _self._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -440,7 +448,7 @@ class __$GalleryPostCopyWithImpl<$Res> implements _$GalleryPostCopyWith<$Res> {
       likedCount: null == likedCount
           ? _self.likedCount
           : likedCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isLiked: freezed == isLiked
           ? _self.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable

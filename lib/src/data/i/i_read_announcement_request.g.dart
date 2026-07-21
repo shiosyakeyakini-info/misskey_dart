@@ -9,7 +9,7 @@ part of 'i_read_announcement_request.dart';
 _IReadAnnouncementRequest _$IReadAnnouncementRequestFromJson(
         Map<String, dynamic> json) =>
     _IReadAnnouncementRequest(
-      announcementId: json['announcementId'] as String,
+      announcementId: json['announcementId'] as String?,
     );
 
 Map<String, dynamic> _$IReadAnnouncementRequestToJson(

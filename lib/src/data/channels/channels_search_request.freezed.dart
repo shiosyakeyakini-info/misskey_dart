@@ -15,11 +15,13 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsSearchRequest {
-  String get query;
-  ChannelSearchType? get type;
+  String? get query;
+  @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
+  ChannelsSearchType? get type;
   String? get sinceId;
   String? get untilId;
-  @Assert('limit > 0')
+  int? get sinceDate;
+  int? get untilDate;
   int? get limit;
 
   /// Create a copy of ChannelsSearchRequest
@@ -42,17 +44,21 @@ mixin _$ChannelsSearchRequest {
             (identical(other.type, type) || other.type == type) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, query, type, sinceId, untilId, limit);
+  int get hashCode => Object.hash(
+      runtimeType, query, type, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'ChannelsSearchRequest(query: $query, type: $type, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'ChannelsSearchRequest(query: $query, type: $type, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -63,11 +69,14 @@ abstract mixin class $ChannelsSearchRequestCopyWith<$Res> {
       _$ChannelsSearchRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String query,
-      ChannelSearchType? type,
+      {String? query,
+      @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
+      ChannelsSearchType? type,
       String? sinceId,
       String? untilId,
-      @Assert('limit > 0') int? limit});
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -83,21 +92,23 @@ class _$ChannelsSearchRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? type = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: freezed == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
-              as ChannelSearchType?,
+              as ChannelsSearchType?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -106,6 +117,14 @@ class _$ChannelsSearchRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -118,24 +137,32 @@ class _$ChannelsSearchRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChannelsSearchRequest implements ChannelsSearchRequest {
   const _ChannelsSearchRequest(
-      {required this.query,
-      this.type,
+      {this.query,
+      @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
+      this.type = ChannelsSearchType.nameAndDescription,
       this.sinceId,
       this.untilId,
-      @Assert('limit > 0') this.limit});
+      this.sinceDate,
+      this.untilDate,
+      this.limit = 5});
   factory _ChannelsSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsSearchRequestFromJson(json);
 
   @override
-  final String query;
+  final String? query;
   @override
-  final ChannelSearchType? type;
+  @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
+  final ChannelsSearchType? type;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @Assert('limit > 0')
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of ChannelsSearchRequest
@@ -163,17 +190,21 @@ class _ChannelsSearchRequest implements ChannelsSearchRequest {
             (identical(other.type, type) || other.type == type) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, query, type, sinceId, untilId, limit);
+  int get hashCode => Object.hash(
+      runtimeType, query, type, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'ChannelsSearchRequest(query: $query, type: $type, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'ChannelsSearchRequest(query: $query, type: $type, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -186,11 +217,14 @@ abstract mixin class _$ChannelsSearchRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String query,
-      ChannelSearchType? type,
+      {String? query,
+      @JsonKey(unknownEnumValue: ChannelsSearchType.unknown)
+      ChannelsSearchType? type,
       String? sinceId,
       String? untilId,
-      @Assert('limit > 0') int? limit});
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -206,21 +240,23 @@ class __$ChannelsSearchRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? query = null,
+    Object? query = freezed,
     Object? type = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_ChannelsSearchRequest(
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: freezed == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
-              as ChannelSearchType?,
+              as ChannelsSearchType?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -229,6 +265,14 @@ class __$ChannelsSearchRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

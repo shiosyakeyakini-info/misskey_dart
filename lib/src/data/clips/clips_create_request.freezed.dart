@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsCreateRequest {
-  String get name;
+  String? get name;
   bool? get isPublic;
   String? get description;
 
@@ -58,7 +58,7 @@ abstract mixin class $ClipsCreateRequestCopyWith<$Res> {
           ClipsCreateRequest value, $Res Function(ClipsCreateRequest) _then) =
       _$ClipsCreateRequestCopyWithImpl;
   @useResult
-  $Res call({String name, bool? isPublic, String? description});
+  $Res call({String? name, bool? isPublic, String? description});
 }
 
 /// @nodoc
@@ -74,15 +74,15 @@ class _$ClipsCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? isPublic = freezed,
     Object? description = freezed,
   }) {
     return _then(_self.copyWith(
-      name: null == name
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isPublic: freezed == isPublic
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
@@ -99,13 +99,14 @@ class _$ClipsCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ClipsCreateRequest implements ClipsCreateRequest {
   const _ClipsCreateRequest(
-      {required this.name, this.isPublic, this.description});
+      {this.name, this.isPublic = false, this.description});
   factory _ClipsCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsCreateRequestFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
+  @JsonKey()
   final bool? isPublic;
   @override
   final String? description;
@@ -155,7 +156,7 @@ abstract mixin class _$ClipsCreateRequestCopyWith<$Res>
       __$ClipsCreateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String name, bool? isPublic, String? description});
+  $Res call({String? name, bool? isPublic, String? description});
 }
 
 /// @nodoc
@@ -171,15 +172,15 @@ class __$ClipsCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? isPublic = freezed,
     Object? description = freezed,
   }) {
     return _then(_ClipsCreateRequest(
-      name: null == name
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isPublic: freezed == isPublic
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable

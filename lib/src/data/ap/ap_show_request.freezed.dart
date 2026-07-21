@@ -15,8 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ApShowRequest {
-  @UriConverter()
-  Uri get uri;
+  String? get uri;
 
   /// Create a copy of ApShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +52,7 @@ abstract mixin class $ApShowRequestCopyWith<$Res> {
           ApShowRequest value, $Res Function(ApShowRequest) _then) =
       _$ApShowRequestCopyWithImpl;
   @useResult
-  $Res call({@UriConverter() Uri uri});
+  $Res call({String? uri});
 }
 
 /// @nodoc
@@ -69,13 +68,13 @@ class _$ApShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uri = null,
+    Object? uri = freezed,
   }) {
     return _then(_self.copyWith(
-      uri: null == uri
+      uri: freezed == uri
           ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as String?,
     ));
   }
 }
@@ -83,13 +82,12 @@ class _$ApShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ApShowRequest implements ApShowRequest {
-  const _ApShowRequest({@UriConverter() required this.uri});
+  const _ApShowRequest({this.uri});
   factory _ApShowRequest.fromJson(Map<String, dynamic> json) =>
       _$ApShowRequestFromJson(json);
 
   @override
-  @UriConverter()
-  final Uri uri;
+  final String? uri;
 
   /// Create a copy of ApShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -132,7 +130,7 @@ abstract mixin class _$ApShowRequestCopyWith<$Res>
       __$ApShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({@UriConverter() Uri uri});
+  $Res call({String? uri});
 }
 
 /// @nodoc
@@ -148,13 +146,13 @@ class __$ApShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? uri = null,
+    Object? uri = freezed,
   }) {
     return _then(_ApShowRequest(
-      uri: null == uri
+      uri: freezed == uri
           ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as String?,
     ));
   }
 }

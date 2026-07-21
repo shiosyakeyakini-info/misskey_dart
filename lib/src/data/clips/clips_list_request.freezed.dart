@@ -18,10 +18,8 @@ mixin _$ClipsListRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of ClipsListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -69,8 +67,8 @@ abstract mixin class $ClipsListRequestCopyWith<$Res> {
       {int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -108,11 +106,11 @@ class _$ClipsListRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }
@@ -121,26 +119,25 @@ class _$ClipsListRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ClipsListRequest implements ClipsListRequest {
   const _ClipsListRequest(
-      {this.limit,
+      {this.limit = 10,
       this.sinceId,
       this.untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
+      this.sinceDate,
+      this.untilDate});
   factory _ClipsListRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsListRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? sinceDate;
+  final int? sinceDate;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? untilDate;
+  final int? untilDate;
 
   /// Create a copy of ClipsListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -194,8 +191,8 @@ abstract mixin class _$ClipsListRequestCopyWith<$Res>
       {int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -233,11 +230,11 @@ class __$ClipsListRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }

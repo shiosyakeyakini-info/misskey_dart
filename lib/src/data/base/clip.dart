@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'clip.freezed.dart';
 part 'clip.g.dart';
@@ -13,10 +12,10 @@ abstract class Clip with _$Clip {
     @NullableDateTimeConverter() DateTime? lastClippedAt,
     required String userId,
     required UserLite user,
-    String? name,
+    required String name,
     String? description,
     required bool isPublic,
-    required int favoritedCount,
+    required double favoritedCount,
     bool? isFavorited,
     int? notesCount,
   }) = _Clip;

@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HashtagsSearchRequest {
   int? get limit;
-  String get query;
+  String? get query;
   int? get offset;
 
   /// Create a copy of HashtagsSearchRequest
@@ -56,7 +56,7 @@ abstract mixin class $HashtagsSearchRequestCopyWith<$Res> {
           $Res Function(HashtagsSearchRequest) _then) =
       _$HashtagsSearchRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String query, int? offset});
+  $Res call({int? limit, String? query, int? offset});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ class _$HashtagsSearchRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? limit = freezed,
-    Object? query = null,
+    Object? query = freezed,
     Object? offset = freezed,
   }) {
     return _then(_self.copyWith(
@@ -81,10 +81,10 @@ class _$HashtagsSearchRequestCopyWithImpl<$Res>
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       offset: freezed == offset
           ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable
@@ -96,15 +96,17 @@ class _$HashtagsSearchRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _HashtagsSearchRequest implements HashtagsSearchRequest {
-  const _HashtagsSearchRequest({this.limit, required this.query, this.offset});
+  const _HashtagsSearchRequest({this.limit = 10, this.query, this.offset = 0});
   factory _HashtagsSearchRequest.fromJson(Map<String, dynamic> json) =>
       _$HashtagsSearchRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
-  final String query;
+  final String? query;
   @override
+  @JsonKey()
   final int? offset;
 
   /// Create a copy of HashtagsSearchRequest
@@ -151,7 +153,7 @@ abstract mixin class _$HashtagsSearchRequestCopyWith<$Res>
       __$HashtagsSearchRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String query, int? offset});
+  $Res call({int? limit, String? query, int? offset});
 }
 
 /// @nodoc
@@ -168,7 +170,7 @@ class __$HashtagsSearchRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? limit = freezed,
-    Object? query = null,
+    Object? query = freezed,
     Object? offset = freezed,
   }) {
     return _then(_HashtagsSearchRequest(
@@ -176,10 +178,10 @@ class __$HashtagsSearchRequestCopyWithImpl<$Res>
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-      query: null == query
+      query: freezed == query
           ? _self.query
           : query // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       offset: freezed == offset
           ? _self.offset
           : offset // ignore: cast_nullable_to_non_nullable

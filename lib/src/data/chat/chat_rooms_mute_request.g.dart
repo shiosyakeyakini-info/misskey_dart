@@ -9,8 +9,8 @@ part of 'chat_rooms_mute_request.dart';
 _ChatRoomsMuteRequest _$ChatRoomsMuteRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatRoomsMuteRequest(
-      roomId: json['roomId'] as String,
-      mute: json['mute'] as bool,
+      roomId: json['roomId'] as String?,
+      mute: json['mute'] as bool?,
     );
 
 Map<String, dynamic> _$ChatRoomsMuteRequestToJson(

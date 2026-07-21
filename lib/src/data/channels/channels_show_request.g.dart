@@ -8,7 +8,7 @@ part of 'channels_show_request.dart';
 
 _ChannelsShowRequest _$ChannelsShowRequestFromJson(Map<String, dynamic> json) =>
     _ChannelsShowRequest(
-      channelId: json['channelId'] as String,
+      channelId: json['channelId'] as String?,
     );
 
 Map<String, dynamic> _$ChannelsShowRequestToJson(

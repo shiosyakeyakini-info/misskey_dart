@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ReversiShowGameRequest {
-  String get gameId;
+  String? get gameId;
 
   /// Create a copy of ReversiShowGameRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $ReversiShowGameRequestCopyWith<$Res> {
           $Res Function(ReversiShowGameRequest) _then) =
       _$ReversiShowGameRequestCopyWithImpl;
   @useResult
-  $Res call({String gameId});
+  $Res call({String? gameId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$ReversiShowGameRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? gameId = null,
+    Object? gameId = freezed,
   }) {
     return _then(_self.copyWith(
-      gameId: null == gameId
+      gameId: freezed == gameId
           ? _self.gameId
           : gameId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$ReversiShowGameRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ReversiShowGameRequest implements ReversiShowGameRequest {
-  const _ReversiShowGameRequest({required this.gameId});
+  const _ReversiShowGameRequest({this.gameId});
   factory _ReversiShowGameRequest.fromJson(Map<String, dynamic> json) =>
       _$ReversiShowGameRequestFromJson(json);
 
   @override
-  final String gameId;
+  final String? gameId;
 
   /// Create a copy of ReversiShowGameRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +131,7 @@ abstract mixin class _$ReversiShowGameRequestCopyWith<$Res>
       __$ReversiShowGameRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String gameId});
+  $Res call({String? gameId});
 }
 
 /// @nodoc
@@ -147,13 +147,13 @@ class __$ReversiShowGameRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? gameId = null,
+    Object? gameId = freezed,
   }) {
     return _then(_ReversiShowGameRequest(
-      gameId: null == gameId
+      gameId: freezed == gameId
           ? _self.gameId
           : gameId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

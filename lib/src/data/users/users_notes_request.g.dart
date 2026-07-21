@@ -8,56 +8,30 @@ part of 'users_notes_request.dart';
 
 _UsersNotesRequest _$UsersNotesRequestFromJson(Map<String, dynamic> json) =>
     _UsersNotesRequest(
-      userId: json['userId'] as String,
-      includeReplies: json['includeReplies'] as bool?,
-      withReplies: json['withReplies'] as bool?,
-      withRenotes: json['withRenotes'] as bool?,
-      withChannelNotes: json['withChannelNotes'] as bool?,
-      limit: (json['limit'] as num?)?.toInt(),
+      userId: json['userId'] as String?,
+      withReplies: json['withReplies'] as bool? ?? false,
+      withRenotes: json['withRenotes'] as bool? ?? true,
+      withChannelNotes: json['withChannelNotes'] as bool? ?? false,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      sinceDate: _$JsonConverterFromJson<int, DateTime>(json['sinceDate'],
-          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
-      untilDate: _$JsonConverterFromJson<int, DateTime>(json['untilDate'],
-          const EpocTimeDateTimeConverter.withMilliSeconds().fromJson),
-      includeMyRenotes: json['includeMyRenotes'] as bool?,
-      withFiles: json['withFiles'] as bool?,
-      fileType: (json['fileType'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      allowPartial: json['allowPartial'] as bool?,
-      excludeNsfw: json['excludeNsfw'] as bool?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      allowPartial: json['allowPartial'] as bool? ?? false,
+      withFiles: json['withFiles'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$UsersNotesRequestToJson(_UsersNotesRequest instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'includeReplies': instance.includeReplies,
       'withReplies': instance.withReplies,
       'withRenotes': instance.withRenotes,
       'withChannelNotes': instance.withChannelNotes,
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'sinceDate': _$JsonConverterToJson<int, DateTime>(instance.sinceDate,
-          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
-      'untilDate': _$JsonConverterToJson<int, DateTime>(instance.untilDate,
-          const EpocTimeDateTimeConverter.withMilliSeconds().toJson),
-      'includeMyRenotes': instance.includeMyRenotes,
-      'withFiles': instance.withFiles,
-      'fileType': instance.fileType,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'allowPartial': instance.allowPartial,
-      'excludeNsfw': instance.excludeNsfw,
+      'withFiles': instance.withFiles,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

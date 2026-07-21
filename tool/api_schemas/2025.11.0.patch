@@ -1,0 +1,573 @@
+--- /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-ugVplT/prev.json	2026-03-28 18:44:02
++++ /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-ugVplT/new.json	2026-03-28 18:44:02
+@@ -1,7 +1,7 @@
+ {
+   "openapi": "3.1.0",
+   "info": {
+-    "version": "2025.10.2",
++    "version": "2025.11.0",
+     "title": "Misskey API"
+   },
+   "externalDocs": {
+@@ -23999,7 +23999,6 @@
+                       "string",
+                       "null"
+                     ],
+-                    "minLength": 1,
+                     "maxLength": 2048
+                   },
+                   "bannerId": {
+@@ -24674,13 +24673,500 @@
+                     "minimum": 1,
+                     "maximum": 100,
+                     "default": 5
++                  }
++                }
++              }
++            }
++          }
++        },
++        "responses": {
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "type": "array",
++                  "items": {
++                    "$ref": "#/components/schemas/Channel"
++                  }
++                }
++              }
++            }
++          },
++          "400": {
++            "description": "Client error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INVALID_PARAM": {
++                    "value": {
++                      "error": {
++                        "message": "Invalid param.",
++                        "code": "INVALID_PARAM",
++                        "id": "3d81ceae-475f-4600-b2a8-2bc116157532"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "401": {
++            "description": "Authentication error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "CREDENTIAL_REQUIRED": {
++                    "value": {
++                      "error": {
++                        "message": "Credential required.",
++                        "code": "CREDENTIAL_REQUIRED",
++                        "id": "1384574d-a912-4b81-8601-c7b1c4085df1"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "403": {
++            "description": "Forbidden error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "AUTHENTICATION_FAILED": {
++                    "value": {
++                      "error": {
++                        "message": "Authentication failed. Please ensure your token is correct.",
++                        "code": "AUTHENTICATION_FAILED",
++                        "id": "b0a7f5f8-dc2f-4171-b91f-de88ad238e14"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "418": {
++            "description": "I'm Ai",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "I_AM_AI": {
++                    "value": {
++                      "error": {
++                        "message": "You sent a request to Ai-chan, Misskey's showgirl, instead of the server.",
++                        "code": "I_AM_AI",
++                        "id": "60c46cd1-f23a-46b1-bebe-5d2b73951a84"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "500": {
++            "description": "Internal server error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INTERNAL_ERROR": {
++                    "value": {
++                      "error": {
++                        "message": "Internal error occurred. Please contact us if the error persists.",
++                        "code": "INTERNAL_ERROR",
++                        "id": "5d37dbcb-891e-41ca-a3d6-e690c97775ac"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    },
++    "/channels/mute/create": {
++      "post": {
++        "operationId": "post___channels___mute___create",
++        "summary": "channels/mute/create",
++        "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*",
++        "externalDocs": {
++          "description": "Source code",
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/channels/mute/create.ts"
++        },
++        "tags": [
++          "channels"
++        ],
++        "security": [
++          {
++            "bearerAuth": []
++          }
++        ],
++        "requestBody": {
++          "required": true,
++          "content": {
++            "application/json": {
++              "schema": {
++                "type": "object",
++                "properties": {
++                  "channelId": {
++                    "type": "string",
++                    "format": "misskey:id"
++                  },
++                  "expiresAt": {
++                    "type": [
++                      "integer",
++                      "null"
++                    ],
++                    "description": "A Unix Epoch timestamp that must lie in the future. `null` means an indefinite mute."
++                  }
++                },
++                "required": [
++                  "channelId"
++                ]
++              }
++            }
++          }
++        },
++        "responses": {
++          "204": {
++            "description": "OK (without any results)"
++          },
++          "400": {
++            "description": "Client error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "NO_SUCH_CHANNEL": {
++                    "value": {
++                      "error": {
++                        "message": "No such Channel.",
++                        "code": "NO_SUCH_CHANNEL",
++                        "id": "7174361e-d58f-31d6-2e7c-6fb830786a3f"
++                      }
++                    }
++                  },
++                  "ALREADY_MUTING_CHANNEL": {
++                    "value": {
++                      "error": {
++                        "message": "You are already muting that user.",
++                        "code": "ALREADY_MUTING_CHANNEL",
++                        "id": "5a251978-769a-da44-3e89-3931e43bb592"
++                      }
++                    }
++                  },
++                  "EXPIRES_AT_IS_PAST": {
++                    "value": {
++                      "error": {
++                        "message": "Cannot set past date to \"expiresAt\".",
++                        "code": "EXPIRES_AT_IS_PAST",
++                        "id": "42b32236-df2c-a45f-fdbf-def67268f749"
++                      }
++                    }
++                  },
++                  "INVALID_PARAM": {
++                    "value": {
++                      "error": {
++                        "message": "Invalid param.",
++                        "code": "INVALID_PARAM",
++                        "id": "3d81ceae-475f-4600-b2a8-2bc116157532"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "401": {
++            "description": "Authentication error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "CREDENTIAL_REQUIRED": {
++                    "value": {
++                      "error": {
++                        "message": "Credential required.",
++                        "code": "CREDENTIAL_REQUIRED",
++                        "id": "1384574d-a912-4b81-8601-c7b1c4085df1"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "403": {
++            "description": "Forbidden error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "AUTHENTICATION_FAILED": {
++                    "value": {
++                      "error": {
++                        "message": "Authentication failed. Please ensure your token is correct.",
++                        "code": "AUTHENTICATION_FAILED",
++                        "id": "b0a7f5f8-dc2f-4171-b91f-de88ad238e14"
++                      }
++                    }
+                   }
+                 }
+               }
+             }
++          },
++          "418": {
++            "description": "I'm Ai",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "I_AM_AI": {
++                    "value": {
++                      "error": {
++                        "message": "You sent a request to Ai-chan, Misskey's showgirl, instead of the server.",
++                        "code": "I_AM_AI",
++                        "id": "60c46cd1-f23a-46b1-bebe-5d2b73951a84"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "500": {
++            "description": "Internal server error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INTERNAL_ERROR": {
++                    "value": {
++                      "error": {
++                        "message": "Internal error occurred. Please contact us if the error persists.",
++                        "code": "INTERNAL_ERROR",
++                        "id": "5d37dbcb-891e-41ca-a3d6-e690c97775ac"
++                      }
++                    }
++                  }
++                }
++              }
++            }
+           }
++        }
++      }
++    },
++    "/channels/mute/delete": {
++      "post": {
++        "operationId": "post___channels___mute___delete",
++        "summary": "channels/mute/delete",
++        "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *write:channels*",
++        "externalDocs": {
++          "description": "Source code",
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/channels/mute/delete.ts"
+         },
++        "tags": [
++          "channels"
++        ],
++        "security": [
++          {
++            "bearerAuth": []
++          }
++        ],
++        "requestBody": {
++          "required": true,
++          "content": {
++            "application/json": {
++              "schema": {
++                "type": "object",
++                "properties": {
++                  "channelId": {
++                    "type": "string",
++                    "format": "misskey:id"
++                  }
++                },
++                "required": [
++                  "channelId"
++                ]
++              }
++            }
++          }
++        },
+         "responses": {
++          "204": {
++            "description": "OK (without any results)"
++          },
++          "400": {
++            "description": "Client error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "NO_SUCH_CHANNEL": {
++                    "value": {
++                      "error": {
++                        "message": "No such Channel.",
++                        "code": "NO_SUCH_CHANNEL",
++                        "id": "e7998769-6e94-d9c2-6b8f-94a527314aba"
++                      }
++                    }
++                  },
++                  "NOT_MUTING_CHANNEL": {
++                    "value": {
++                      "error": {
++                        "message": "You are not muting that channel.",
++                        "code": "NOT_MUTING_CHANNEL",
++                        "id": "14d55962-6ea8-d990-1333-d6bef78dc2ab"
++                      }
++                    }
++                  },
++                  "INVALID_PARAM": {
++                    "value": {
++                      "error": {
++                        "message": "Invalid param.",
++                        "code": "INVALID_PARAM",
++                        "id": "3d81ceae-475f-4600-b2a8-2bc116157532"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "401": {
++            "description": "Authentication error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "CREDENTIAL_REQUIRED": {
++                    "value": {
++                      "error": {
++                        "message": "Credential required.",
++                        "code": "CREDENTIAL_REQUIRED",
++                        "id": "1384574d-a912-4b81-8601-c7b1c4085df1"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "403": {
++            "description": "Forbidden error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "AUTHENTICATION_FAILED": {
++                    "value": {
++                      "error": {
++                        "message": "Authentication failed. Please ensure your token is correct.",
++                        "code": "AUTHENTICATION_FAILED",
++                        "id": "b0a7f5f8-dc2f-4171-b91f-de88ad238e14"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "418": {
++            "description": "I'm Ai",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "I_AM_AI": {
++                    "value": {
++                      "error": {
++                        "message": "You sent a request to Ai-chan, Misskey's showgirl, instead of the server.",
++                        "code": "I_AM_AI",
++                        "id": "60c46cd1-f23a-46b1-bebe-5d2b73951a84"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "500": {
++            "description": "Internal server error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INTERNAL_ERROR": {
++                    "value": {
++                      "error": {
++                        "message": "Internal error occurred. Please contact us if the error persists.",
++                        "code": "INTERNAL_ERROR",
++                        "id": "5d37dbcb-891e-41ca-a3d6-e690c97775ac"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    },
++    "/channels/mute/list": {
++      "post": {
++        "operationId": "post___channels___mute___list",
++        "summary": "channels/mute/list",
++        "description": "No description provided.\n\n**Credential required**: *Yes* / **Permission**: *read:channels*",
++        "externalDocs": {
++          "description": "Source code",
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/channels/mute/list.ts"
++        },
++        "tags": [
++          "channels"
++        ],
++        "security": [
++          {
++            "bearerAuth": []
++          }
++        ],
++        "responses": {
+           "200": {
+             "description": "OK (with results)",
+             "content": {
+@@ -25989,7 +26475,6 @@
+                       "string",
+                       "null"
+                     ],
+-                    "minLength": 1,
+                     "maxLength": 2048
+                   },
+                   "bannerId": {
+@@ -90539,7 +91024,11 @@
+             "type": "boolean"
+           },
+           "font": {
+-            "type": "string"
++            "type": "string",
++            "enum": [
++              "serif",
++              "sans-serif"
++            ]
+           },
+           "script": {
+             "type": "string"
+@@ -90745,6 +91234,13 @@
+               "null"
+             ],
+             "format": "url"
++          },
++          "bannerId": {
++            "type": [
++              "string",
++              "null"
++            ],
++            "format": "id"
+           },
+           "pinnedNoteIds": {
+             "type": "array",
+@@ -90775,6 +91271,9 @@
+             "type": "boolean"
+           },
+           "isFavorited": {
++            "type": "boolean"
++          },
++          "isMuting": {
+             "type": "boolean"
+           },
+           "pinnedNotes": {
+@@ -90792,6 +91291,7 @@
+           "description",
+           "userId",
+           "bannerUrl",
++          "bannerId",
+           "pinnedNoteIds",
+           "color",
+           "isArchived",

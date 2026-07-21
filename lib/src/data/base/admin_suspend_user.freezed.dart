@@ -1,0 +1,160 @@
+// dart format width=80
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'admin_suspend_user.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+// dart format off
+T _$identity<T>(T value) => value;
+
+/// @nodoc
+mixin _$AdminSuspendUser {
+  String get userId;
+
+  /// Create a copy of AdminSuspendUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AdminSuspendUserCopyWith<AdminSuspendUser> get copyWith =>
+      _$AdminSuspendUserCopyWithImpl<AdminSuspendUser>(
+          this as AdminSuspendUser, _$identity);
+
+  /// Serializes this AdminSuspendUser to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AdminSuspendUser &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId);
+
+  @override
+  String toString() {
+    return 'AdminSuspendUser(userId: $userId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AdminSuspendUserCopyWith<$Res> {
+  factory $AdminSuspendUserCopyWith(
+          AdminSuspendUser value, $Res Function(AdminSuspendUser) _then) =
+      _$AdminSuspendUserCopyWithImpl;
+  @useResult
+  $Res call({String userId});
+}
+
+/// @nodoc
+class _$AdminSuspendUserCopyWithImpl<$Res>
+    implements $AdminSuspendUserCopyWith<$Res> {
+  _$AdminSuspendUserCopyWithImpl(this._self, this._then);
+
+  final AdminSuspendUser _self;
+  final $Res Function(AdminSuspendUser) _then;
+
+  /// Create a copy of AdminSuspendUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_self.copyWith(
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AdminSuspendUser implements AdminSuspendUser {
+  const _AdminSuspendUser({required this.userId});
+  factory _AdminSuspendUser.fromJson(Map<String, dynamic> json) =>
+      _$AdminSuspendUserFromJson(json);
+
+  @override
+  final String userId;
+
+  /// Create a copy of AdminSuspendUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AdminSuspendUserCopyWith<_AdminSuspendUser> get copyWith =>
+      __$AdminSuspendUserCopyWithImpl<_AdminSuspendUser>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AdminSuspendUserToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AdminSuspendUser &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId);
+
+  @override
+  String toString() {
+    return 'AdminSuspendUser(userId: $userId)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AdminSuspendUserCopyWith<$Res>
+    implements $AdminSuspendUserCopyWith<$Res> {
+  factory _$AdminSuspendUserCopyWith(
+          _AdminSuspendUser value, $Res Function(_AdminSuspendUser) _then) =
+      __$AdminSuspendUserCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String userId});
+}
+
+/// @nodoc
+class __$AdminSuspendUserCopyWithImpl<$Res>
+    implements _$AdminSuspendUserCopyWith<$Res> {
+  __$AdminSuspendUserCopyWithImpl(this._self, this._then);
+
+  final _AdminSuspendUser _self;
+  final $Res Function(_AdminSuspendUser) _then;
+
+  /// Create a copy of AdminSuspendUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_AdminSuspendUser(
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

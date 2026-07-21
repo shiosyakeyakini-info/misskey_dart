@@ -1,0 +1,175 @@
+// dart format width=80
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'admin_roles_update_default_policies.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+// dart format off
+T _$identity<T>(T value) => value;
+
+/// @nodoc
+mixin _$AdminRolesUpdateDefaultPolicies {
+  Map<String, dynamic> get policies;
+
+  /// Create a copy of AdminRolesUpdateDefaultPolicies
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AdminRolesUpdateDefaultPoliciesCopyWith<AdminRolesUpdateDefaultPolicies>
+      get copyWith => _$AdminRolesUpdateDefaultPoliciesCopyWithImpl<
+              AdminRolesUpdateDefaultPolicies>(
+          this as AdminRolesUpdateDefaultPolicies, _$identity);
+
+  /// Serializes this AdminRolesUpdateDefaultPolicies to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AdminRolesUpdateDefaultPolicies &&
+            const DeepCollectionEquality().equals(other.policies, policies));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(policies));
+
+  @override
+  String toString() {
+    return 'AdminRolesUpdateDefaultPolicies(policies: $policies)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AdminRolesUpdateDefaultPoliciesCopyWith<$Res> {
+  factory $AdminRolesUpdateDefaultPoliciesCopyWith(
+          AdminRolesUpdateDefaultPolicies value,
+          $Res Function(AdminRolesUpdateDefaultPolicies) _then) =
+      _$AdminRolesUpdateDefaultPoliciesCopyWithImpl;
+  @useResult
+  $Res call({Map<String, dynamic> policies});
+}
+
+/// @nodoc
+class _$AdminRolesUpdateDefaultPoliciesCopyWithImpl<$Res>
+    implements $AdminRolesUpdateDefaultPoliciesCopyWith<$Res> {
+  _$AdminRolesUpdateDefaultPoliciesCopyWithImpl(this._self, this._then);
+
+  final AdminRolesUpdateDefaultPolicies _self;
+  final $Res Function(AdminRolesUpdateDefaultPolicies) _then;
+
+  /// Create a copy of AdminRolesUpdateDefaultPolicies
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? policies = null,
+  }) {
+    return _then(_self.copyWith(
+      policies: null == policies
+          ? _self.policies
+          : policies // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AdminRolesUpdateDefaultPolicies
+    implements AdminRolesUpdateDefaultPolicies {
+  const _AdminRolesUpdateDefaultPolicies(
+      {required final Map<String, dynamic> policies})
+      : _policies = policies;
+  factory _AdminRolesUpdateDefaultPolicies.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminRolesUpdateDefaultPoliciesFromJson(json);
+
+  final Map<String, dynamic> _policies;
+  @override
+  Map<String, dynamic> get policies {
+    if (_policies is EqualUnmodifiableMapView) return _policies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_policies);
+  }
+
+  /// Create a copy of AdminRolesUpdateDefaultPolicies
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AdminRolesUpdateDefaultPoliciesCopyWith<_AdminRolesUpdateDefaultPolicies>
+      get copyWith => __$AdminRolesUpdateDefaultPoliciesCopyWithImpl<
+          _AdminRolesUpdateDefaultPolicies>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AdminRolesUpdateDefaultPoliciesToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AdminRolesUpdateDefaultPolicies &&
+            const DeepCollectionEquality().equals(other._policies, _policies));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_policies));
+
+  @override
+  String toString() {
+    return 'AdminRolesUpdateDefaultPolicies(policies: $policies)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AdminRolesUpdateDefaultPoliciesCopyWith<$Res>
+    implements $AdminRolesUpdateDefaultPoliciesCopyWith<$Res> {
+  factory _$AdminRolesUpdateDefaultPoliciesCopyWith(
+          _AdminRolesUpdateDefaultPolicies value,
+          $Res Function(_AdminRolesUpdateDefaultPolicies) _then) =
+      __$AdminRolesUpdateDefaultPoliciesCopyWithImpl;
+  @override
+  @useResult
+  $Res call({Map<String, dynamic> policies});
+}
+
+/// @nodoc
+class __$AdminRolesUpdateDefaultPoliciesCopyWithImpl<$Res>
+    implements _$AdminRolesUpdateDefaultPoliciesCopyWith<$Res> {
+  __$AdminRolesUpdateDefaultPoliciesCopyWithImpl(this._self, this._then);
+
+  final _AdminRolesUpdateDefaultPolicies _self;
+  final $Res Function(_AdminRolesUpdateDefaultPolicies) _then;
+
+  /// Create a copy of AdminRolesUpdateDefaultPolicies
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? policies = null,
+  }) {
+    return _then(_AdminRolesUpdateDefaultPolicies(
+      policies: null == policies
+          ? _self._policies
+          : policies // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+// dart format on

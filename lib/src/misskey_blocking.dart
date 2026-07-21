@@ -1,25 +1,28 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyBlocking {
+
   final ApiService _apiService;
 
-  MisskeyBlocking({required ApiService apiService}) : _apiService = apiService;
+  MisskeyBlocking({required ApiService apiService})
+      : _apiService = apiService;
 
-  /// ユーザーをブロックします。
-  Future<void> create(BlockCreateRequest request) async {
-    await _apiService.post("blocking/create", request.toJson());
+  /// blocking/create
+  Future<UserDetailedNotMe> create(BlockingCreateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("blocking/create", request.toJson());
+    return UserDetailedNotMe.fromJson(response);
   }
 
-  /// ユーザーのブロックを解除します。
-  Future<void> delete(BlockDeleteRequest request) async {
-    await _apiService.post("blocking/delete", request.toJson());
+  /// blocking/delete
+  Future<UserDetailedNotMe> delete(BlockingDeleteRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("blocking/delete", request.toJson());
+    return UserDetailedNotMe.fromJson(response);
   }
 
-  /// ブロックしているユーザーの一覧を取得します。
+  /// blocking/list
   Future<Iterable<Blocking>> list(BlockingListRequest request) async {
-    final response =
-        await _apiService.post<List>("blocking/list", request.toJson());
-    return response.map((e) => Blocking.fromJson(e));
+    final response = await _apiService.post<List>("blocking/list", request.toJson());
+    return response.map((e) => Blocking.fromJson(e as Map<String, dynamic>));
   }
+
 }

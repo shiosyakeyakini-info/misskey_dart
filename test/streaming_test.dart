@@ -188,7 +188,6 @@ void main() async {
               caseSensitive: false,
               withReplies: false,
               withFile: false,
-              notify: false,
             ),
           );
           final controller = await client.streamingService.stream();

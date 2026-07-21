@@ -9,7 +9,7 @@ part of 'clips_favorite_request.dart';
 _ClipsFavoriteRequest _$ClipsFavoriteRequestFromJson(
         Map<String, dynamic> json) =>
     _ClipsFavoriteRequest(
-      clipId: json['clipId'] as String,
+      clipId: json['clipId'] as String?,
     );
 
 Map<String, dynamic> _$ClipsFavoriteRequestToJson(

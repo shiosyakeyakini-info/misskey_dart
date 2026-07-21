@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_remove_note_request.freezed.dart';
 part 'clips_remove_note_request.g.dart';
@@ -6,10 +7,9 @@ part 'clips_remove_note_request.g.dart';
 @freezed
 abstract class ClipsRemoveNoteRequest with _$ClipsRemoveNoteRequest {
   const factory ClipsRemoveNoteRequest({
-    required String clipId,
-    required String noteId,
+    String? clipId,
+    String? noteId,
   }) = _ClipsRemoveNoteRequest;
 
-  factory ClipsRemoveNoteRequest.fromJson(Map<String, dynamic> json) =>
-      _$ClipsRemoveNoteRequestFromJson(json);
+  factory ClipsRemoveNoteRequest.fromJson(Map<String, Object?> json) => _$ClipsRemoveNoteRequestFromJson(json);
 }

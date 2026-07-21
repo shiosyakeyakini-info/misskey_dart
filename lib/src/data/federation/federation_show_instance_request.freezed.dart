@@ -15,17 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FederationShowInstanceRequest {
-  String get host;
-  bool? get blocked;
-  bool? get notResponding;
-  bool? get suspended;
-  bool? get silenced;
-  bool? get federating;
-  bool? get subscribing;
-  bool? get publishing;
-  int? get limit;
-  int? get offset;
-  String? get sort;
+  String? get host;
 
   /// Create a copy of FederationShowInstanceRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -44,44 +34,16 @@ mixin _$FederationShowInstanceRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FederationShowInstanceRequest &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.blocked, blocked) || other.blocked == blocked) &&
-            (identical(other.notResponding, notResponding) ||
-                other.notResponding == notResponding) &&
-            (identical(other.suspended, suspended) ||
-                other.suspended == suspended) &&
-            (identical(other.silenced, silenced) ||
-                other.silenced == silenced) &&
-            (identical(other.federating, federating) ||
-                other.federating == federating) &&
-            (identical(other.subscribing, subscribing) ||
-                other.subscribing == subscribing) &&
-            (identical(other.publishing, publishing) ||
-                other.publishing == publishing) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
-            (identical(other.sort, sort) || other.sort == sort));
+            (identical(other.host, host) || other.host == host));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      host,
-      blocked,
-      notResponding,
-      suspended,
-      silenced,
-      federating,
-      subscribing,
-      publishing,
-      limit,
-      offset,
-      sort);
+  int get hashCode => Object.hash(runtimeType, host);
 
   @override
   String toString() {
-    return 'FederationShowInstanceRequest(host: $host, blocked: $blocked, notResponding: $notResponding, suspended: $suspended, silenced: $silenced, federating: $federating, subscribing: $subscribing, publishing: $publishing, limit: $limit, offset: $offset, sort: $sort)';
+    return 'FederationShowInstanceRequest(host: $host)';
   }
 }
 
@@ -92,18 +54,7 @@ abstract mixin class $FederationShowInstanceRequestCopyWith<$Res> {
           $Res Function(FederationShowInstanceRequest) _then) =
       _$FederationShowInstanceRequestCopyWithImpl;
   @useResult
-  $Res call(
-      {String host,
-      bool? blocked,
-      bool? notResponding,
-      bool? suspended,
-      bool? silenced,
-      bool? federating,
-      bool? subscribing,
-      bool? publishing,
-      int? limit,
-      int? offset,
-      String? sort});
+  $Res call({String? host});
 }
 
 /// @nodoc
@@ -119,62 +70,12 @@ class _$FederationShowInstanceRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? host = null,
-    Object? blocked = freezed,
-    Object? notResponding = freezed,
-    Object? suspended = freezed,
-    Object? silenced = freezed,
-    Object? federating = freezed,
-    Object? subscribing = freezed,
-    Object? publishing = freezed,
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? sort = freezed,
+    Object? host = freezed,
   }) {
     return _then(_self.copyWith(
-      host: null == host
+      host: freezed == host
           ? _self.host
           : host // ignore: cast_nullable_to_non_nullable
-              as String,
-      blocked: freezed == blocked
-          ? _self.blocked
-          : blocked // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notResponding: freezed == notResponding
-          ? _self.notResponding
-          : notResponding // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      suspended: freezed == suspended
-          ? _self.suspended
-          : suspended // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      silenced: freezed == silenced
-          ? _self.silenced
-          : silenced // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      federating: freezed == federating
-          ? _self.federating
-          : federating // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      subscribing: freezed == subscribing
-          ? _self.subscribing
-          : subscribing // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      publishing: freezed == publishing
-          ? _self.publishing
-          : publishing // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _self.sort
-          : sort // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -183,43 +84,12 @@ class _$FederationShowInstanceRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FederationShowInstanceRequest implements FederationShowInstanceRequest {
-  const _FederationShowInstanceRequest(
-      {required this.host,
-      this.blocked,
-      this.notResponding,
-      this.suspended,
-      this.silenced,
-      this.federating,
-      this.subscribing,
-      this.publishing,
-      this.limit,
-      this.offset,
-      this.sort});
+  const _FederationShowInstanceRequest({this.host});
   factory _FederationShowInstanceRequest.fromJson(Map<String, dynamic> json) =>
       _$FederationShowInstanceRequestFromJson(json);
 
   @override
-  final String host;
-  @override
-  final bool? blocked;
-  @override
-  final bool? notResponding;
-  @override
-  final bool? suspended;
-  @override
-  final bool? silenced;
-  @override
-  final bool? federating;
-  @override
-  final bool? subscribing;
-  @override
-  final bool? publishing;
-  @override
-  final int? limit;
-  @override
-  final int? offset;
-  @override
-  final String? sort;
+  final String? host;
 
   /// Create a copy of FederationShowInstanceRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -242,44 +112,16 @@ class _FederationShowInstanceRequest implements FederationShowInstanceRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _FederationShowInstanceRequest &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.blocked, blocked) || other.blocked == blocked) &&
-            (identical(other.notResponding, notResponding) ||
-                other.notResponding == notResponding) &&
-            (identical(other.suspended, suspended) ||
-                other.suspended == suspended) &&
-            (identical(other.silenced, silenced) ||
-                other.silenced == silenced) &&
-            (identical(other.federating, federating) ||
-                other.federating == federating) &&
-            (identical(other.subscribing, subscribing) ||
-                other.subscribing == subscribing) &&
-            (identical(other.publishing, publishing) ||
-                other.publishing == publishing) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
-            (identical(other.sort, sort) || other.sort == sort));
+            (identical(other.host, host) || other.host == host));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      host,
-      blocked,
-      notResponding,
-      suspended,
-      silenced,
-      federating,
-      subscribing,
-      publishing,
-      limit,
-      offset,
-      sort);
+  int get hashCode => Object.hash(runtimeType, host);
 
   @override
   String toString() {
-    return 'FederationShowInstanceRequest(host: $host, blocked: $blocked, notResponding: $notResponding, suspended: $suspended, silenced: $silenced, federating: $federating, subscribing: $subscribing, publishing: $publishing, limit: $limit, offset: $offset, sort: $sort)';
+    return 'FederationShowInstanceRequest(host: $host)';
   }
 }
 
@@ -292,18 +134,7 @@ abstract mixin class _$FederationShowInstanceRequestCopyWith<$Res>
       __$FederationShowInstanceRequestCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String host,
-      bool? blocked,
-      bool? notResponding,
-      bool? suspended,
-      bool? silenced,
-      bool? federating,
-      bool? subscribing,
-      bool? publishing,
-      int? limit,
-      int? offset,
-      String? sort});
+  $Res call({String? host});
 }
 
 /// @nodoc
@@ -319,62 +150,12 @@ class __$FederationShowInstanceRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? host = null,
-    Object? blocked = freezed,
-    Object? notResponding = freezed,
-    Object? suspended = freezed,
-    Object? silenced = freezed,
-    Object? federating = freezed,
-    Object? subscribing = freezed,
-    Object? publishing = freezed,
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? sort = freezed,
+    Object? host = freezed,
   }) {
     return _then(_FederationShowInstanceRequest(
-      host: null == host
+      host: freezed == host
           ? _self.host
           : host // ignore: cast_nullable_to_non_nullable
-              as String,
-      blocked: freezed == blocked
-          ? _self.blocked
-          : blocked // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notResponding: freezed == notResponding
-          ? _self.notResponding
-          : notResponding // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      suspended: freezed == suspended
-          ? _self.suspended
-          : suspended // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      silenced: freezed == silenced
-          ? _self.silenced
-          : silenced // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      federating: freezed == federating
-          ? _self.federating
-          : federating // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      subscribing: freezed == subscribing
-          ? _self.subscribing
-          : subscribing // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      publishing: freezed == publishing
-          ? _self.publishing
-          : publishing // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _self.sort
-          : sort // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }

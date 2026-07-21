@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MuteDeleteRequest {
-  String get userId;
+  String? get userId;
 
   /// Create a copy of MuteDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $MuteDeleteRequestCopyWith<$Res> {
           MuteDeleteRequest value, $Res Function(MuteDeleteRequest) _then) =
       _$MuteDeleteRequestCopyWithImpl;
   @useResult
-  $Res call({String userId});
+  $Res call({String? userId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$MuteDeleteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$MuteDeleteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _MuteDeleteRequest implements MuteDeleteRequest {
-  const _MuteDeleteRequest({required this.userId});
+  const _MuteDeleteRequest({this.userId});
   factory _MuteDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$MuteDeleteRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
 
   /// Create a copy of MuteDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$MuteDeleteRequestCopyWith<$Res>
       __$MuteDeleteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId});
+  $Res call({String? userId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$MuteDeleteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_MuteDeleteRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

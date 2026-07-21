@@ -1,82 +1,67 @@
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
 
 class MisskeyFlash {
+
   final ApiService _apiService;
 
-  MisskeyFlash({required ApiService apiService}) : _apiService = apiService;
+  MisskeyFlash({required ApiService apiService})
+      : _apiService = apiService;
 
-  /// Playを作成します。
+  /// flash/create
   Future<Flash> create(FlashCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "flash/create",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("flash/create", request.toJson());
     return Flash.fromJson(response);
   }
 
-  /// Playを削除します。
+  /// flash/delete
   Future<void> delete(FlashDeleteRequest request) async {
-    await _apiService.post("flash/delete", request.toJson());
+    await _apiService.post<void>("flash/delete", request.toJson());
   }
 
-  /// 人気なPlayの一覧を取得します。
+  /// flash/featured
   Future<Iterable<Flash>> featured(FlashFeaturedRequest request) async {
-    final response =
-        await _apiService.post<List>("flash/featured", request.toJson());
-    return response.map((e) => Flash.fromJson(e));
+    final response = await _apiService.post<List>("flash/featured", request.toJson());
+    return response.map((e) => Flash.fromJson(e as Map<String, dynamic>));
   }
 
-  /// Playをいいねします。
+  /// flash/like
   Future<void> like(FlashLikeRequest request) async {
-    await _apiService.post("flash/like", request.toJson());
+    await _apiService.post<void>("flash/like", request.toJson());
   }
 
-  /// いいねしたPlayの一覧を取得します。
-  Future<Iterable<FlashMyLikesResponse>> myLikes(
-    FlashMyLikesRequest request,
-  ) async {
-    final response = await _apiService.post<List>(
-      "flash/my-likes",
-      request.toJson(),
-    );
-    return response.map((e) => FlashMyLikesResponse.fromJson(e));
-  }
-
-  /// ログイン中のユーザーが作成したPlayの一覧を取得します。
+  /// flash/my
   Future<Iterable<Flash>> my(FlashMyRequest request) async {
-    final response = await _apiService.post<List>(
-      "flash/my",
-      request.toJson(),
-    );
-    return response.map((e) => Flash.fromJson(e));
+    final response = await _apiService.post<List>("flash/my", request.toJson());
+    return response.map((e) => Flash.fromJson(e as Map<String, dynamic>));
   }
 
-  /// Playの情報を取得します。
+  /// flash/my-likes
+  Future<Iterable<FlashMyLikesItem>> myLikes(FlashMyLikesRequest request) async {
+    final response = await _apiService.post<List>("flash/my-likes", request.toJson());
+    return response.map((e) => FlashMyLikesItem.fromJson(e as Map<String, dynamic>));
+  }
+
+  /// Available since Misskey 2025.7.0
+  /// flash/search
+  Future<Iterable<Flash>> search(FlashSearchRequest request) async {
+    final response = await _apiService.post<List>("flash/search", request.toJson());
+    return response.map((e) => Flash.fromJson(e as Map<String, dynamic>));
+  }
+
+  /// flash/show
   Future<Flash> show(FlashShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-      "flash/show",
-      request.toJson(),
-    );
+    final response = await _apiService.post<Map<String, dynamic>>("flash/show", request.toJson());
     return Flash.fromJson(response);
   }
 
-  /// Playのいいねを解除します。
+  /// flash/unlike
   Future<void> unlike(FlashUnlikeRequest request) async {
-    await _apiService.post("flash/unlike", request.toJson());
+    await _apiService.post<void>("flash/unlike", request.toJson());
   }
 
-  /// Playを更新します。
+  /// flash/update
   Future<void> update(FlashUpdateRequest request) async {
-    await _apiService.post("flash/update", request.toJson());
+    await _apiService.post<void>("flash/update", request.toJson());
   }
 
-  /// Playを検索します。
-  Future<Iterable<Flash>> search(FlashSearchRequest request) async {
-    final response = await _apiService.post<List>(
-      "flash/search",
-      request.toJson(),
-    );
-    return response.map((e) => Flash.fromJson(e));
-  }
 }

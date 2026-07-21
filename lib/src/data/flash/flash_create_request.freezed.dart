@@ -15,10 +15,11 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FlashCreateRequest {
-  String get title;
-  String get summary;
-  String get script;
-  List<String> get permissions;
+  String? get title;
+  String? get summary;
+  String? get script;
+  List<String>? get permissions;
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
   FlashVisibility? get visibility;
 
   /// Create a copy of FlashCreateRequest
@@ -64,10 +65,11 @@ abstract mixin class $FlashCreateRequestCopyWith<$Res> {
       _$FlashCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String title,
-      String summary,
-      String script,
-      List<String> permissions,
+      {String? title,
+      String? summary,
+      String? script,
+      List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       FlashVisibility? visibility});
 }
 
@@ -84,29 +86,29 @@ class _$FlashCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
-    Object? summary = null,
-    Object? script = null,
-    Object? permissions = null,
+    Object? title = freezed,
+    Object? summary = freezed,
+    Object? script = freezed,
+    Object? permissions = freezed,
     Object? visibility = freezed,
   }) {
     return _then(_self.copyWith(
-      title: null == title
+      title: freezed == title
           ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      summary: null == summary
+              as String?,
+      summary: freezed == summary
           ? _self.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as String,
-      script: null == script
+              as String?,
+      script: freezed == script
           ? _self.script
           : script // ignore: cast_nullable_to_non_nullable
-              as String,
-      permissions: null == permissions
+              as String?,
+      permissions: freezed == permissions
           ? _self.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
@@ -119,30 +121,34 @@ class _$FlashCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _FlashCreateRequest implements FlashCreateRequest {
   const _FlashCreateRequest(
-      {required this.title,
-      required this.summary,
-      required this.script,
-      required final List<String> permissions,
-      this.visibility})
+      {this.title,
+      this.summary,
+      this.script,
+      final List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
+      this.visibility = FlashVisibility.public})
       : _permissions = permissions;
   factory _FlashCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashCreateRequestFromJson(json);
 
   @override
-  final String title;
+  final String? title;
   @override
-  final String summary;
+  final String? summary;
   @override
-  final String script;
-  final List<String> _permissions;
+  final String? script;
+  final List<String>? _permissions;
   @override
-  List<String> get permissions {
+  List<String>? get permissions {
+    final value = _permissions;
+    if (value == null) return null;
     if (_permissions is EqualUnmodifiableListView) return _permissions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_permissions);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
+  @JsonKey(unknownEnumValue: FlashVisibility.unknown)
   final FlashVisibility? visibility;
 
   /// Create a copy of FlashCreateRequest
@@ -194,10 +200,11 @@ abstract mixin class _$FlashCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
-      String summary,
-      String script,
-      List<String> permissions,
+      {String? title,
+      String? summary,
+      String? script,
+      List<String>? permissions,
+      @JsonKey(unknownEnumValue: FlashVisibility.unknown)
       FlashVisibility? visibility});
 }
 
@@ -214,29 +221,29 @@ class __$FlashCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? title = null,
-    Object? summary = null,
-    Object? script = null,
-    Object? permissions = null,
+    Object? title = freezed,
+    Object? summary = freezed,
+    Object? script = freezed,
+    Object? permissions = freezed,
     Object? visibility = freezed,
   }) {
     return _then(_FlashCreateRequest(
-      title: null == title
+      title: freezed == title
           ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      summary: null == summary
+              as String?,
+      summary: freezed == summary
           ? _self.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as String,
-      script: null == script
+              as String?,
+      script: freezed == script
           ? _self.script
           : script // ignore: cast_nullable_to_non_nullable
-              as String,
-      permissions: null == permissions
+              as String?,
+      permissions: freezed == permissions
           ? _self._permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       visibility: freezed == visibility
           ? _self.visibility
           : visibility // ignore: cast_nullable_to_non_nullable

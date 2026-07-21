@@ -20,18 +20,8 @@ mixin _$Following {
   DateTime get createdAt;
   String get followeeId;
   String get followerId;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-// - [MisskeyFederation.followers]
-// - [MisskeyFederation.following]
-  /// - [MisskeyUsers.following]
-  UserDetailed? get followee;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-  /// - [MisskeyUsers.followers]
-  UserDetailed? get follower;
+  Map<String, dynamic>? get followee;
+  Map<String, dynamic>? get follower;
 
   /// Create a copy of Following
   /// with the given fields replaced by the non-null parameter values.
@@ -55,16 +45,20 @@ mixin _$Following {
                 other.followeeId == followeeId) &&
             (identical(other.followerId, followerId) ||
                 other.followerId == followerId) &&
-            (identical(other.followee, followee) ||
-                other.followee == followee) &&
-            (identical(other.follower, follower) ||
-                other.follower == follower));
+            const DeepCollectionEquality().equals(other.followee, followee) &&
+            const DeepCollectionEquality().equals(other.follower, follower));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, createdAt, followeeId, followerId, followee, follower);
+      runtimeType,
+      id,
+      createdAt,
+      followeeId,
+      followerId,
+      const DeepCollectionEquality().hash(followee),
+      const DeepCollectionEquality().hash(follower));
 
   @override
   String toString() {
@@ -82,8 +76,8 @@ abstract mixin class $FollowingCopyWith<$Res> {
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      UserDetailed? followee,
-      UserDetailed? follower});
+      Map<String, dynamic>? followee,
+      Map<String, dynamic>? follower});
 }
 
 /// @nodoc
@@ -125,11 +119,11 @@ class _$FollowingCopyWithImpl<$Res> implements $FollowingCopyWith<$Res> {
       followee: freezed == followee
           ? _self.followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as Map<String, dynamic>?,
       follower: freezed == follower
           ? _self.follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -142,8 +136,10 @@ class _Following implements Following {
       @DateTimeConverter() required this.createdAt,
       required this.followeeId,
       required this.followerId,
-      this.followee,
-      this.follower});
+      final Map<String, dynamic>? followee,
+      final Map<String, dynamic>? follower})
+      : _followee = followee,
+        _follower = follower;
   factory _Following.fromJson(Map<String, dynamic> json) =>
       _$FollowingFromJson(json);
 
@@ -156,20 +152,25 @@ class _Following implements Following {
   final String followeeId;
   @override
   final String followerId;
-
-  /// 以下のエンドポイントでnon-null
-  ///
-// - [MisskeyFederation.followers]
-// - [MisskeyFederation.following]
-  /// - [MisskeyUsers.following]
+  final Map<String, dynamic>? _followee;
   @override
-  final UserDetailed? followee;
+  Map<String, dynamic>? get followee {
+    final value = _followee;
+    if (value == null) return null;
+    if (_followee is EqualUnmodifiableMapView) return _followee;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
-  /// 以下のエンドポイントでnon-null
-  ///
-  /// - [MisskeyUsers.followers]
+  final Map<String, dynamic>? _follower;
   @override
-  final UserDetailed? follower;
+  Map<String, dynamic>? get follower {
+    final value = _follower;
+    if (value == null) return null;
+    if (_follower is EqualUnmodifiableMapView) return _follower;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of Following
   /// with the given fields replaced by the non-null parameter values.
@@ -198,16 +199,20 @@ class _Following implements Following {
                 other.followeeId == followeeId) &&
             (identical(other.followerId, followerId) ||
                 other.followerId == followerId) &&
-            (identical(other.followee, followee) ||
-                other.followee == followee) &&
-            (identical(other.follower, follower) ||
-                other.follower == follower));
+            const DeepCollectionEquality().equals(other._followee, _followee) &&
+            const DeepCollectionEquality().equals(other._follower, _follower));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, createdAt, followeeId, followerId, followee, follower);
+      runtimeType,
+      id,
+      createdAt,
+      followeeId,
+      followerId,
+      const DeepCollectionEquality().hash(_followee),
+      const DeepCollectionEquality().hash(_follower));
 
   @override
   String toString() {
@@ -228,8 +233,8 @@ abstract mixin class _$FollowingCopyWith<$Res>
       @DateTimeConverter() DateTime createdAt,
       String followeeId,
       String followerId,
-      UserDetailed? followee,
-      UserDetailed? follower});
+      Map<String, dynamic>? followee,
+      Map<String, dynamic>? follower});
 }
 
 /// @nodoc
@@ -269,13 +274,13 @@ class __$FollowingCopyWithImpl<$Res> implements _$FollowingCopyWith<$Res> {
           : followerId // ignore: cast_nullable_to_non_nullable
               as String,
       followee: freezed == followee
-          ? _self.followee
+          ? _self._followee
           : followee // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as Map<String, dynamic>?,
       follower: freezed == follower
-          ? _self.follower
+          ? _self._follower
           : follower // ignore: cast_nullable_to_non_nullable
-              as UserDetailed?,
+              as Map<String, dynamic>?,
     ));
   }
 }

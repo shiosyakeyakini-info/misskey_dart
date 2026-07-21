@@ -17,7 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$UsersFeaturedNotesRequest {
   int? get limit;
   String? get untilId;
-  String get userId;
+  String? get userId;
 
   /// Create a copy of UsersFeaturedNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -56,7 +56,7 @@ abstract mixin class $UsersFeaturedNotesRequestCopyWith<$Res> {
           $Res Function(UsersFeaturedNotesRequest) _then) =
       _$UsersFeaturedNotesRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? untilId, String userId});
+  $Res call({int? limit, String? untilId, String? userId});
 }
 
 /// @nodoc
@@ -74,7 +74,7 @@ class _$UsersFeaturedNotesRequestCopyWithImpl<$Res>
   $Res call({
     Object? limit = freezed,
     Object? untilId = freezed,
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -85,10 +85,10 @@ class _$UsersFeaturedNotesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -97,16 +97,17 @@ class _$UsersFeaturedNotesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _UsersFeaturedNotesRequest implements UsersFeaturedNotesRequest {
   const _UsersFeaturedNotesRequest(
-      {this.limit, this.untilId, required this.userId});
+      {this.limit = 10, this.untilId, this.userId});
   factory _UsersFeaturedNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersFeaturedNotesRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? untilId;
   @override
-  final String userId;
+  final String? userId;
 
   /// Create a copy of UsersFeaturedNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -153,7 +154,7 @@ abstract mixin class _$UsersFeaturedNotesRequestCopyWith<$Res>
       __$UsersFeaturedNotesRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? untilId, String userId});
+  $Res call({int? limit, String? untilId, String? userId});
 }
 
 /// @nodoc
@@ -171,7 +172,7 @@ class __$UsersFeaturedNotesRequestCopyWithImpl<$Res>
   $Res call({
     Object? limit = freezed,
     Object? untilId = freezed,
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_UsersFeaturedNotesRequest(
       limit: freezed == limit
@@ -182,10 +183,10 @@ class __$UsersFeaturedNotesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

@@ -18,6 +18,8 @@ mixin _$ReversiGamesRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   bool? get my;
 
   /// Create a copy of ReversiGamesRequest
@@ -39,16 +41,21 @@ mixin _$ReversiGamesRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.my, my) || other.my == my));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId, my);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, my);
 
   @override
   String toString() {
-    return 'ReversiGamesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, my: $my)';
+    return 'ReversiGamesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, my: $my)';
   }
 }
 
@@ -58,7 +65,13 @@ abstract mixin class $ReversiGamesRequestCopyWith<$Res> {
           ReversiGamesRequest value, $Res Function(ReversiGamesRequest) _then) =
       _$ReversiGamesRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId, bool? my});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      bool? my});
 }
 
 /// @nodoc
@@ -77,6 +90,8 @@ class _$ReversiGamesRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? my = freezed,
   }) {
     return _then(_self.copyWith(
@@ -92,6 +107,14 @@ class _$ReversiGamesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       my: freezed == my
           ? _self.my
           : my // ignore: cast_nullable_to_non_nullable
@@ -103,17 +126,29 @@ class _$ReversiGamesRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ReversiGamesRequest implements ReversiGamesRequest {
-  const _ReversiGamesRequest({this.limit, this.sinceId, this.untilId, this.my});
+  const _ReversiGamesRequest(
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.my = false});
   factory _ReversiGamesRequest.fromJson(Map<String, dynamic> json) =>
       _$ReversiGamesRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final bool? my;
 
   /// Create a copy of ReversiGamesRequest
@@ -140,16 +175,21 @@ class _ReversiGamesRequest implements ReversiGamesRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.my, my) || other.my == my));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId, my);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, my);
 
   @override
   String toString() {
-    return 'ReversiGamesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, my: $my)';
+    return 'ReversiGamesRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, my: $my)';
   }
 }
 
@@ -161,7 +201,13 @@ abstract mixin class _$ReversiGamesRequestCopyWith<$Res>
       __$ReversiGamesRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId, bool? my});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      bool? my});
 }
 
 /// @nodoc
@@ -180,6 +226,8 @@ class __$ReversiGamesRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? my = freezed,
   }) {
     return _then(_ReversiGamesRequest(
@@ -195,6 +243,14 @@ class __$ReversiGamesRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       my: freezed == my
           ? _self.my
           : my // ignore: cast_nullable_to_non_nullable

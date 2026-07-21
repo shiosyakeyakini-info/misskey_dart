@@ -15,10 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsInvitationsOutboxRequest {
-  String get roomId;
+  String? get roomId;
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of ChatRoomsInvitationsOutboxRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -40,16 +42,21 @@ mixin _$ChatRoomsInvitationsOutboxRequest {
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, roomId, limit, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, roomId, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'ChatRoomsInvitationsOutboxRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'ChatRoomsInvitationsOutboxRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -60,7 +67,13 @@ abstract mixin class $ChatRoomsInvitationsOutboxRequestCopyWith<$Res> {
           $Res Function(ChatRoomsInvitationsOutboxRequest) _then) =
       _$ChatRoomsInvitationsOutboxRequestCopyWithImpl;
   @useResult
-  $Res call({String roomId, int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {String? roomId,
+      int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -76,16 +89,18 @@ class _$ChatRoomsInvitationsOutboxRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -98,6 +113,14 @@ class _$ChatRoomsInvitationsOutboxRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -107,19 +130,29 @@ class _$ChatRoomsInvitationsOutboxRequestCopyWithImpl<$Res>
 class _ChatRoomsInvitationsOutboxRequest
     implements ChatRoomsInvitationsOutboxRequest {
   const _ChatRoomsInvitationsOutboxRequest(
-      {required this.roomId, this.limit, this.sinceId, this.untilId});
+      {this.roomId,
+      this.limit = 30,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate});
   factory _ChatRoomsInvitationsOutboxRequest.fromJson(
           Map<String, dynamic> json) =>
       _$ChatRoomsInvitationsOutboxRequestFromJson(json);
 
   @override
-  final String roomId;
+  final String? roomId;
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
 
   /// Create a copy of ChatRoomsInvitationsOutboxRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -146,16 +179,21 @@ class _ChatRoomsInvitationsOutboxRequest
             (identical(other.roomId, roomId) || other.roomId == roomId) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, roomId, limit, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, roomId, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'ChatRoomsInvitationsOutboxRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId)';
+    return 'ChatRoomsInvitationsOutboxRequest(roomId: $roomId, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -168,7 +206,13 @@ abstract mixin class _$ChatRoomsInvitationsOutboxRequestCopyWith<$Res>
       __$ChatRoomsInvitationsOutboxRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roomId, int? limit, String? sinceId, String? untilId});
+  $Res call(
+      {String? roomId,
+      int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -184,16 +228,18 @@ class __$ChatRoomsInvitationsOutboxRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_ChatRoomsInvitationsOutboxRequest(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -206,6 +252,14 @@ class __$ChatRoomsInvitationsOutboxRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesUnrenoteRequest {
-  String get noteId;
+  String? get noteId;
 
   /// Create a copy of NotesUnrenoteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $NotesUnrenoteRequestCopyWith<$Res> {
           $Res Function(NotesUnrenoteRequest) _then) =
       _$NotesUnrenoteRequestCopyWithImpl;
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$NotesUnrenoteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$NotesUnrenoteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _NotesUnrenoteRequest implements NotesUnrenoteRequest {
-  const _NotesUnrenoteRequest({required this.noteId});
+  const _NotesUnrenoteRequest({this.noteId});
   factory _NotesUnrenoteRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesUnrenoteRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
 
   /// Create a copy of NotesUnrenoteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +131,7 @@ abstract mixin class _$NotesUnrenoteRequestCopyWith<$Res>
       __$NotesUnrenoteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String noteId});
+  $Res call({String? noteId});
 }
 
 /// @nodoc
@@ -147,13 +147,13 @@ class __$NotesUnrenoteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
   }) {
     return _then(_NotesUnrenoteRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

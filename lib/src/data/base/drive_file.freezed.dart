@@ -21,17 +21,19 @@ mixin _$DriveFile {
   String get name;
   String get type;
   String get md5;
-  int get size;
+  double get size;
   bool get isSensitive;
   String? get blurhash;
   DriveFileProperties get properties;
-  String get url;
-  String? get thumbnailUrl;
+  @UriConverter()
+  Uri get url;
+  @NullableUriConverter()
+  Uri? get thumbnailUrl;
   String? get comment;
   String? get folderId;
-  DriveFolder? get folder;
+  Map<String, dynamic>? get folder;
   String? get userId;
-  UserLite? get user;
+  Map<String, dynamic>? get user;
 
   /// Create a copy of DriveFile
   /// with the given fields replaced by the non-null parameter values.
@@ -67,9 +69,9 @@ mixin _$DriveFile {
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
-            (identical(other.folder, folder) || other.folder == folder) &&
+            const DeepCollectionEquality().equals(other.folder, folder) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user));
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -89,9 +91,9 @@ mixin _$DriveFile {
       thumbnailUrl,
       comment,
       folderId,
-      folder,
+      const DeepCollectionEquality().hash(folder),
       userId,
-      user);
+      const DeepCollectionEquality().hash(user));
 
   @override
   String toString() {
@@ -110,21 +112,19 @@ abstract mixin class $DriveFileCopyWith<$Res> {
       String name,
       String type,
       String md5,
-      int size,
+      double size,
       bool isSensitive,
       String? blurhash,
       DriveFileProperties properties,
-      String url,
-      String? thumbnailUrl,
+      @UriConverter() Uri url,
+      @NullableUriConverter() Uri? thumbnailUrl,
       String? comment,
       String? folderId,
-      DriveFolder? folder,
+      Map<String, dynamic>? folder,
       String? userId,
-      UserLite? user});
+      Map<String, dynamic>? user});
 
   $DriveFilePropertiesCopyWith<$Res> get properties;
-  $DriveFolderCopyWith<$Res>? get folder;
-  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -180,7 +180,7 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
       size: null == size
           ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isSensitive: null == isSensitive
           ? _self.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
@@ -196,11 +196,11 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
       url: null == url
           ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Uri,
       thumbnailUrl: freezed == thumbnailUrl
           ? _self.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Uri?,
       comment: freezed == comment
           ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
@@ -212,7 +212,7 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
       folder: freezed == folder
           ? _self.folder
           : folder // ignore: cast_nullable_to_non_nullable
-              as DriveFolder?,
+              as Map<String, dynamic>?,
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -220,7 +220,7 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
       user: freezed == user
           ? _self.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
     ));
   }
 
@@ -231,34 +231,6 @@ class _$DriveFileCopyWithImpl<$Res> implements $DriveFileCopyWith<$Res> {
   $DriveFilePropertiesCopyWith<$Res> get properties {
     return $DriveFilePropertiesCopyWith<$Res>(_self.properties, (value) {
       return _then(_self.copyWith(properties: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFolderCopyWith<$Res>? get folder {
-    if (_self.folder == null) {
-      return null;
-    }
-
-    return $DriveFolderCopyWith<$Res>(_self.folder!, (value) {
-      return _then(_self.copyWith(folder: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
     });
   }
 }
@@ -276,13 +248,15 @@ class _DriveFile implements DriveFile {
       required this.isSensitive,
       this.blurhash,
       required this.properties,
-      required this.url,
-      this.thumbnailUrl,
+      @UriConverter() required this.url,
+      @NullableUriConverter() this.thumbnailUrl,
       this.comment,
       this.folderId,
-      this.folder,
+      final Map<String, dynamic>? folder,
       this.userId,
-      this.user});
+      final Map<String, dynamic>? user})
+      : _folder = folder,
+        _user = user;
   factory _DriveFile.fromJson(Map<String, dynamic> json) =>
       _$DriveFileFromJson(json);
 
@@ -298,7 +272,7 @@ class _DriveFile implements DriveFile {
   @override
   final String md5;
   @override
-  final int size;
+  final double size;
   @override
   final bool isSensitive;
   @override
@@ -306,19 +280,36 @@ class _DriveFile implements DriveFile {
   @override
   final DriveFileProperties properties;
   @override
-  final String url;
+  @UriConverter()
+  final Uri url;
   @override
-  final String? thumbnailUrl;
+  @NullableUriConverter()
+  final Uri? thumbnailUrl;
   @override
   final String? comment;
   @override
   final String? folderId;
+  final Map<String, dynamic>? _folder;
   @override
-  final DriveFolder? folder;
+  Map<String, dynamic>? get folder {
+    final value = _folder;
+    if (value == null) return null;
+    if (_folder is EqualUnmodifiableMapView) return _folder;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? userId;
+  final Map<String, dynamic>? _user;
   @override
-  final UserLite? user;
+  Map<String, dynamic>? get user {
+    final value = _user;
+    if (value == null) return null;
+    if (_user is EqualUnmodifiableMapView) return _user;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Create a copy of DriveFile
   /// with the given fields replaced by the non-null parameter values.
@@ -359,9 +350,9 @@ class _DriveFile implements DriveFile {
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.folderId, folderId) ||
                 other.folderId == folderId) &&
-            (identical(other.folder, folder) || other.folder == folder) &&
+            const DeepCollectionEquality().equals(other._folder, _folder) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.user, user) || other.user == user));
+            const DeepCollectionEquality().equals(other._user, _user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -381,9 +372,9 @@ class _DriveFile implements DriveFile {
       thumbnailUrl,
       comment,
       folderId,
-      folder,
+      const DeepCollectionEquality().hash(_folder),
       userId,
-      user);
+      const DeepCollectionEquality().hash(_user));
 
   @override
   String toString() {
@@ -405,24 +396,20 @@ abstract mixin class _$DriveFileCopyWith<$Res>
       String name,
       String type,
       String md5,
-      int size,
+      double size,
       bool isSensitive,
       String? blurhash,
       DriveFileProperties properties,
-      String url,
-      String? thumbnailUrl,
+      @UriConverter() Uri url,
+      @NullableUriConverter() Uri? thumbnailUrl,
       String? comment,
       String? folderId,
-      DriveFolder? folder,
+      Map<String, dynamic>? folder,
       String? userId,
-      UserLite? user});
+      Map<String, dynamic>? user});
 
   @override
   $DriveFilePropertiesCopyWith<$Res> get properties;
-  @override
-  $DriveFolderCopyWith<$Res>? get folder;
-  @override
-  $UserLiteCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -478,7 +465,7 @@ class __$DriveFileCopyWithImpl<$Res> implements _$DriveFileCopyWith<$Res> {
       size: null == size
           ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isSensitive: null == isSensitive
           ? _self.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
@@ -494,11 +481,11 @@ class __$DriveFileCopyWithImpl<$Res> implements _$DriveFileCopyWith<$Res> {
       url: null == url
           ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Uri,
       thumbnailUrl: freezed == thumbnailUrl
           ? _self.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Uri?,
       comment: freezed == comment
           ? _self.comment
           : comment // ignore: cast_nullable_to_non_nullable
@@ -508,17 +495,17 @@ class __$DriveFileCopyWithImpl<$Res> implements _$DriveFileCopyWith<$Res> {
           : folderId // ignore: cast_nullable_to_non_nullable
               as String?,
       folder: freezed == folder
-          ? _self.folder
+          ? _self._folder
           : folder // ignore: cast_nullable_to_non_nullable
-              as DriveFolder?,
+              as Map<String, dynamic>?,
       userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
       user: freezed == user
-          ? _self.user
+          ? _self._user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserLite?,
+              as Map<String, dynamic>?,
     ));
   }
 
@@ -530,231 +517,6 @@ class __$DriveFileCopyWithImpl<$Res> implements _$DriveFileCopyWith<$Res> {
     return $DriveFilePropertiesCopyWith<$Res>(_self.properties, (value) {
       return _then(_self.copyWith(properties: value));
     });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DriveFolderCopyWith<$Res>? get folder {
-    if (_self.folder == null) {
-      return null;
-    }
-
-    return $DriveFolderCopyWith<$Res>(_self.folder!, (value) {
-      return _then(_self.copyWith(folder: value));
-    });
-  }
-
-  /// Create a copy of DriveFile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLiteCopyWith<$Res>? get user {
-    if (_self.user == null) {
-      return null;
-    }
-
-    return $UserLiteCopyWith<$Res>(_self.user!, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
-}
-
-/// @nodoc
-mixin _$DriveFileProperties {
-  int? get width;
-  int? get height;
-  int? get orientation;
-  String? get avgColor;
-
-  /// Create a copy of DriveFileProperties
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $DriveFilePropertiesCopyWith<DriveFileProperties> get copyWith =>
-      _$DriveFilePropertiesCopyWithImpl<DriveFileProperties>(
-          this as DriveFileProperties, _$identity);
-
-  /// Serializes this DriveFileProperties to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is DriveFileProperties &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.orientation, orientation) ||
-                other.orientation == orientation) &&
-            (identical(other.avgColor, avgColor) ||
-                other.avgColor == avgColor));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, width, height, orientation, avgColor);
-
-  @override
-  String toString() {
-    return 'DriveFileProperties(width: $width, height: $height, orientation: $orientation, avgColor: $avgColor)';
-  }
-}
-
-/// @nodoc
-abstract mixin class $DriveFilePropertiesCopyWith<$Res> {
-  factory $DriveFilePropertiesCopyWith(
-          DriveFileProperties value, $Res Function(DriveFileProperties) _then) =
-      _$DriveFilePropertiesCopyWithImpl;
-  @useResult
-  $Res call({int? width, int? height, int? orientation, String? avgColor});
-}
-
-/// @nodoc
-class _$DriveFilePropertiesCopyWithImpl<$Res>
-    implements $DriveFilePropertiesCopyWith<$Res> {
-  _$DriveFilePropertiesCopyWithImpl(this._self, this._then);
-
-  final DriveFileProperties _self;
-  final $Res Function(DriveFileProperties) _then;
-
-  /// Create a copy of DriveFileProperties
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? width = freezed,
-    Object? height = freezed,
-    Object? orientation = freezed,
-    Object? avgColor = freezed,
-  }) {
-    return _then(_self.copyWith(
-      width: freezed == width
-          ? _self.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-      height: freezed == height
-          ? _self.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      orientation: freezed == orientation
-          ? _self.orientation
-          : orientation // ignore: cast_nullable_to_non_nullable
-              as int?,
-      avgColor: freezed == avgColor
-          ? _self.avgColor
-          : avgColor // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _DriveFileProperties implements DriveFileProperties {
-  const _DriveFileProperties(
-      {this.width, this.height, this.orientation, this.avgColor});
-  factory _DriveFileProperties.fromJson(Map<String, dynamic> json) =>
-      _$DriveFilePropertiesFromJson(json);
-
-  @override
-  final int? width;
-  @override
-  final int? height;
-  @override
-  final int? orientation;
-  @override
-  final String? avgColor;
-
-  /// Create a copy of DriveFileProperties
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$DriveFilePropertiesCopyWith<_DriveFileProperties> get copyWith =>
-      __$DriveFilePropertiesCopyWithImpl<_DriveFileProperties>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$DriveFilePropertiesToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _DriveFileProperties &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.orientation, orientation) ||
-                other.orientation == orientation) &&
-            (identical(other.avgColor, avgColor) ||
-                other.avgColor == avgColor));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, width, height, orientation, avgColor);
-
-  @override
-  String toString() {
-    return 'DriveFileProperties(width: $width, height: $height, orientation: $orientation, avgColor: $avgColor)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$DriveFilePropertiesCopyWith<$Res>
-    implements $DriveFilePropertiesCopyWith<$Res> {
-  factory _$DriveFilePropertiesCopyWith(_DriveFileProperties value,
-          $Res Function(_DriveFileProperties) _then) =
-      __$DriveFilePropertiesCopyWithImpl;
-  @override
-  @useResult
-  $Res call({int? width, int? height, int? orientation, String? avgColor});
-}
-
-/// @nodoc
-class __$DriveFilePropertiesCopyWithImpl<$Res>
-    implements _$DriveFilePropertiesCopyWith<$Res> {
-  __$DriveFilePropertiesCopyWithImpl(this._self, this._then);
-
-  final _DriveFileProperties _self;
-  final $Res Function(_DriveFileProperties) _then;
-
-  /// Create a copy of DriveFileProperties
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? width = freezed,
-    Object? height = freezed,
-    Object? orientation = freezed,
-    Object? avgColor = freezed,
-  }) {
-    return _then(_DriveFileProperties(
-      width: freezed == width
-          ? _self.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-      height: freezed == height
-          ? _self.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      orientation: freezed == orientation
-          ? _self.orientation
-          : orientation // ignore: cast_nullable_to_non_nullable
-              as int?,
-      avgColor: freezed == avgColor
-          ? _self.avgColor
-          : avgColor // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
   }
 }
 

@@ -10,8 +10,8 @@ _UsersGetFrequentlyRepliedUsersRequest
     _$UsersGetFrequentlyRepliedUsersRequestFromJson(
             Map<String, dynamic> json) =>
         _UsersGetFrequentlyRepliedUsersRequest(
-          userId: json['userId'] as String,
-          limit: (json['limit'] as num?)?.toInt(),
+          userId: json['userId'] as String?,
+          limit: (json['limit'] as num?)?.toInt() ?? 10,
         );
 
 Map<String, dynamic> _$UsersGetFrequentlyRepliedUsersRequestToJson(

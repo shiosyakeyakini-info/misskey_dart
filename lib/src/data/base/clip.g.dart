@@ -14,10 +14,10 @@ _Clip _$ClipFromJson(Map<String, dynamic> json) => _Clip(
           json['lastClippedAt'], const NullableDateTimeConverter().fromJson),
       userId: json['userId'] as String,
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
-      name: json['name'] as String?,
+      name: json['name'] as String,
       description: json['description'] as String?,
       isPublic: json['isPublic'] as bool,
-      favoritedCount: (json['favoritedCount'] as num).toInt(),
+      favoritedCount: (json['favoritedCount'] as num).toDouble(),
       isFavorited: json['isFavorited'] as bool?,
       notesCount: (json['notesCount'] as num?)?.toInt(),
     );

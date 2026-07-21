@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$BubbleGameRankingRequest {
-  String get gameMode;
+  String? get gameMode;
 
   /// Create a copy of BubbleGameRankingRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $BubbleGameRankingRequestCopyWith<$Res> {
           $Res Function(BubbleGameRankingRequest) _then) =
       _$BubbleGameRankingRequestCopyWithImpl;
   @useResult
-  $Res call({String gameMode});
+  $Res call({String? gameMode});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$BubbleGameRankingRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? gameMode = null,
+    Object? gameMode = freezed,
   }) {
     return _then(_self.copyWith(
-      gameMode: null == gameMode
+      gameMode: freezed == gameMode
           ? _self.gameMode
           : gameMode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$BubbleGameRankingRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _BubbleGameRankingRequest implements BubbleGameRankingRequest {
-  const _BubbleGameRankingRequest({required this.gameMode});
+  const _BubbleGameRankingRequest({this.gameMode});
   factory _BubbleGameRankingRequest.fromJson(Map<String, dynamic> json) =>
       _$BubbleGameRankingRequestFromJson(json);
 
   @override
-  final String gameMode;
+  final String? gameMode;
 
   /// Create a copy of BubbleGameRankingRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$BubbleGameRankingRequestCopyWith<$Res>
       __$BubbleGameRankingRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String gameMode});
+  $Res call({String? gameMode});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$BubbleGameRankingRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? gameMode = null,
+    Object? gameMode = freezed,
   }) {
     return _then(_BubbleGameRankingRequest(
-      gameMode: null == gameMode
+      gameMode: freezed == gameMode
           ? _self.gameMode
           : gameMode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

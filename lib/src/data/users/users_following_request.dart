@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_following_request.freezed.dart';
 part 'users_following_request.g.dart';
@@ -7,13 +7,16 @@ part 'users_following_request.g.dart';
 @freezed
 abstract class UsersFollowingRequest with _$UsersFollowingRequest {
   const factory UsersFollowingRequest({
-    required String userId,
+    String? userId,
+    String? username,
+    String? host,
     String? sinceId,
     String? untilId,
-    int? limit,
-    @DateTimeConverter() DateTime? birthday,
+    int? sinceDate,
+    int? untilDate,
+    @Default(10) int? limit,
+    String? birthday,
   }) = _UsersFollowingRequest;
 
-  factory UsersFollowingRequest.fromJson(Map<String, dynamic> json) =>
-      _$UsersFollowingRequestFromJson(json);
+  factory UsersFollowingRequest.fromJson(Map<String, Object?> json) => _$UsersFollowingRequestFromJson(json);
 }

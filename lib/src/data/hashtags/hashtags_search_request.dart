@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'hashtags_search_request.freezed.dart';
 part 'hashtags_search_request.g.dart';
@@ -6,11 +7,10 @@ part 'hashtags_search_request.g.dart';
 @freezed
 abstract class HashtagsSearchRequest with _$HashtagsSearchRequest {
   const factory HashtagsSearchRequest({
-    int? limit,
-    required String query,
-    int? offset,
+    @Default(10) int? limit,
+    String? query,
+    @Default(0) int? offset,
   }) = _HashtagsSearchRequest;
 
-  factory HashtagsSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$HashtagsSearchRequestFromJson(json);
+  factory HashtagsSearchRequest.fromJson(Map<String, Object?> json) => _$HashtagsSearchRequestFromJson(json);
 }

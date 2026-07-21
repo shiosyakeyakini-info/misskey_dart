@@ -12,16 +12,14 @@ part of 'i_notifications_grouped_request.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-INotificationsGroupedRequest _$INotificationsGroupedRequestFromJson(
-    Map<String, dynamic> json) {
-  return _INotificationRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$INotificationsGroupedRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   bool? get markAsRead;
   List<NotificationType>? get includeTypes;
   List<NotificationType>? get excludeTypes;
@@ -46,6 +44,10 @@ mixin _$INotificationsGroupedRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.markAsRead, markAsRead) ||
                 other.markAsRead == markAsRead) &&
             const DeepCollectionEquality()
@@ -61,13 +63,15 @@ mixin _$INotificationsGroupedRequest {
       limit,
       sinceId,
       untilId,
+      sinceDate,
+      untilDate,
       markAsRead,
       const DeepCollectionEquality().hash(includeTypes),
       const DeepCollectionEquality().hash(excludeTypes));
 
   @override
   String toString() {
-    return 'INotificationsGroupedRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
+    return 'INotificationsGroupedRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
   }
 }
 
@@ -82,6 +86,8 @@ abstract mixin class $INotificationsGroupedRequestCopyWith<$Res> {
       {int? limit,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       bool? markAsRead,
       List<NotificationType>? includeTypes,
       List<NotificationType>? excludeTypes});
@@ -103,6 +109,8 @@ class _$INotificationsGroupedRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? markAsRead = freezed,
     Object? includeTypes = freezed,
     Object? excludeTypes = freezed,
@@ -120,6 +128,14 @@ class _$INotificationsGroupedRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       markAsRead: freezed == markAsRead
           ? _self.markAsRead
           : markAsRead // ignore: cast_nullable_to_non_nullable
@@ -138,26 +154,34 @@ class _$INotificationsGroupedRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _INotificationRequest implements INotificationsGroupedRequest {
-  const _INotificationRequest(
-      {this.limit,
+class _INotificationsGroupedRequest implements INotificationsGroupedRequest {
+  const _INotificationsGroupedRequest(
+      {this.limit = 10,
       this.sinceId,
       this.untilId,
-      this.markAsRead,
+      this.sinceDate,
+      this.untilDate,
+      this.markAsRead = true,
       final List<NotificationType>? includeTypes,
       final List<NotificationType>? excludeTypes})
       : _includeTypes = includeTypes,
         _excludeTypes = excludeTypes;
-  factory _INotificationRequest.fromJson(Map<String, dynamic> json) =>
-      _$INotificationRequestFromJson(json);
+  factory _INotificationsGroupedRequest.fromJson(Map<String, dynamic> json) =>
+      _$INotificationsGroupedRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final bool? markAsRead;
   final List<NotificationType>? _includeTypes;
   @override
@@ -184,13 +208,13 @@ class _INotificationRequest implements INotificationsGroupedRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$INotificationRequestCopyWith<_INotificationRequest> get copyWith =>
-      __$INotificationRequestCopyWithImpl<_INotificationRequest>(
-          this, _$identity);
+  _$INotificationsGroupedRequestCopyWith<_INotificationsGroupedRequest>
+      get copyWith => __$INotificationsGroupedRequestCopyWithImpl<
+          _INotificationsGroupedRequest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$INotificationRequestToJson(
+    return _$INotificationsGroupedRequestToJson(
       this,
     );
   }
@@ -199,10 +223,14 @@ class _INotificationRequest implements INotificationsGroupedRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _INotificationRequest &&
+            other is _INotificationsGroupedRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.markAsRead, markAsRead) ||
                 other.markAsRead == markAsRead) &&
             const DeepCollectionEquality()
@@ -218,40 +246,45 @@ class _INotificationRequest implements INotificationsGroupedRequest {
       limit,
       sinceId,
       untilId,
+      sinceDate,
+      untilDate,
       markAsRead,
       const DeepCollectionEquality().hash(_includeTypes),
       const DeepCollectionEquality().hash(_excludeTypes));
 
   @override
   String toString() {
-    return 'INotificationsGroupedRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
+    return 'INotificationsGroupedRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$INotificationRequestCopyWith<$Res>
+abstract mixin class _$INotificationsGroupedRequestCopyWith<$Res>
     implements $INotificationsGroupedRequestCopyWith<$Res> {
-  factory _$INotificationRequestCopyWith(_INotificationRequest value,
-          $Res Function(_INotificationRequest) _then) =
-      __$INotificationRequestCopyWithImpl;
+  factory _$INotificationsGroupedRequestCopyWith(
+          _INotificationsGroupedRequest value,
+          $Res Function(_INotificationsGroupedRequest) _then) =
+      __$INotificationsGroupedRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
       {int? limit,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       bool? markAsRead,
       List<NotificationType>? includeTypes,
       List<NotificationType>? excludeTypes});
 }
 
 /// @nodoc
-class __$INotificationRequestCopyWithImpl<$Res>
-    implements _$INotificationRequestCopyWith<$Res> {
-  __$INotificationRequestCopyWithImpl(this._self, this._then);
+class __$INotificationsGroupedRequestCopyWithImpl<$Res>
+    implements _$INotificationsGroupedRequestCopyWith<$Res> {
+  __$INotificationsGroupedRequestCopyWithImpl(this._self, this._then);
 
-  final _INotificationRequest _self;
-  final $Res Function(_INotificationRequest) _then;
+  final _INotificationsGroupedRequest _self;
+  final $Res Function(_INotificationsGroupedRequest) _then;
 
   /// Create a copy of INotificationsGroupedRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -261,11 +294,13 @@ class __$INotificationRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? markAsRead = freezed,
     Object? includeTypes = freezed,
     Object? excludeTypes = freezed,
   }) {
-    return _then(_INotificationRequest(
+    return _then(_INotificationsGroupedRequest(
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -278,6 +313,14 @@ class __$INotificationRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       markAsRead: freezed == markAsRead
           ? _self.markAsRead
           : markAsRead // ignore: cast_nullable_to_non_nullable

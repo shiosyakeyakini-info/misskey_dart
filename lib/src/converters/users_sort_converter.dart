@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/enums/users_sort_type.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 class NullableUsersSortConverter
     extends JsonConverter<UsersSortType?, String?> {

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FollowingUpdateRequest {
-  String get userId;
+  String? get userId;
   FollowingUpdateAllNotifyType? get notify;
   bool? get withReplies;
 
@@ -58,7 +58,9 @@ abstract mixin class $FollowingUpdateRequestCopyWith<$Res> {
       _$FollowingUpdateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String userId, FollowingUpdateAllNotifyType? notify, bool? withReplies});
+      {String? userId,
+      FollowingUpdateAllNotifyType? notify,
+      bool? withReplies});
 }
 
 /// @nodoc
@@ -74,15 +76,15 @@ class _$FollowingUpdateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? notify = freezed,
     Object? withReplies = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       notify: freezed == notify
           ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
@@ -98,13 +100,12 @@ class _$FollowingUpdateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingUpdateRequest implements FollowingUpdateRequest {
-  const _FollowingUpdateRequest(
-      {required this.userId, this.notify, this.withReplies});
+  const _FollowingUpdateRequest({this.userId, this.notify, this.withReplies});
   factory _FollowingUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$FollowingUpdateRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
   final FollowingUpdateAllNotifyType? notify;
   @override
@@ -156,7 +157,9 @@ abstract mixin class _$FollowingUpdateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String userId, FollowingUpdateAllNotifyType? notify, bool? withReplies});
+      {String? userId,
+      FollowingUpdateAllNotifyType? notify,
+      bool? withReplies});
 }
 
 /// @nodoc
@@ -172,15 +175,15 @@ class __$FollowingUpdateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
     Object? notify = freezed,
     Object? withReplies = freezed,
   }) {
     return _then(_FollowingUpdateRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       notify: freezed == notify
           ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable

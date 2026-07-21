@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsCreateRequest {
-  String get name;
+  String? get name;
   String? get description;
 
   /// Create a copy of ChatRoomsCreateRequest
@@ -55,7 +55,7 @@ abstract mixin class $ChatRoomsCreateRequestCopyWith<$Res> {
           $Res Function(ChatRoomsCreateRequest) _then) =
       _$ChatRoomsCreateRequestCopyWithImpl;
   @useResult
-  $Res call({String name, String? description});
+  $Res call({String? name, String? description});
 }
 
 /// @nodoc
@@ -71,14 +71,14 @@ class _$ChatRoomsCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? description = freezed,
   }) {
     return _then(_self.copyWith(
-      name: null == name
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -90,12 +90,12 @@ class _$ChatRoomsCreateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatRoomsCreateRequest implements ChatRoomsCreateRequest {
-  const _ChatRoomsCreateRequest({required this.name, this.description});
+  const _ChatRoomsCreateRequest({this.name, this.description});
   factory _ChatRoomsCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsCreateRequestFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
   final String? description;
 
@@ -143,7 +143,7 @@ abstract mixin class _$ChatRoomsCreateRequestCopyWith<$Res>
       __$ChatRoomsCreateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String name, String? description});
+  $Res call({String? name, String? description});
 }
 
 /// @nodoc
@@ -159,14 +159,14 @@ class __$ChatRoomsCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? description = freezed,
   }) {
     return _then(_ChatRoomsCreateRequest(
-      name: null == name
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable

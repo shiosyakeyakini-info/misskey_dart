@@ -17,6 +17,8 @@ T _$identity<T>(T value) => value;
 mixin _$ChannelsOwnedRequest {
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   int? get limit;
 
   /// Create a copy of ChannelsOwnedRequest
@@ -37,16 +39,21 @@ mixin _$ChannelsOwnedRequest {
             other is ChannelsOwnedRequest &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, sinceId, untilId, limit);
+  int get hashCode =>
+      Object.hash(runtimeType, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'ChannelsOwnedRequest(sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'ChannelsOwnedRequest(sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -56,7 +63,12 @@ abstract mixin class $ChannelsOwnedRequestCopyWith<$Res> {
           $Res Function(ChannelsOwnedRequest) _then) =
       _$ChannelsOwnedRequestCopyWithImpl;
   @useResult
-  $Res call({String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -74,6 +86,8 @@ class _$ChannelsOwnedRequestCopyWithImpl<$Res>
   $Res call({
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
@@ -85,6 +99,14 @@ class _$ChannelsOwnedRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -96,7 +118,12 @@ class _$ChannelsOwnedRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChannelsOwnedRequest implements ChannelsOwnedRequest {
-  const _ChannelsOwnedRequest({this.sinceId, this.untilId, this.limit});
+  const _ChannelsOwnedRequest(
+      {this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.limit = 5});
   factory _ChannelsOwnedRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsOwnedRequestFromJson(json);
 
@@ -105,6 +132,11 @@ class _ChannelsOwnedRequest implements ChannelsOwnedRequest {
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of ChannelsOwnedRequest
@@ -130,16 +162,21 @@ class _ChannelsOwnedRequest implements ChannelsOwnedRequest {
             other is _ChannelsOwnedRequest &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, sinceId, untilId, limit);
+  int get hashCode =>
+      Object.hash(runtimeType, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'ChannelsOwnedRequest(sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'ChannelsOwnedRequest(sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -151,7 +188,12 @@ abstract mixin class _$ChannelsOwnedRequestCopyWith<$Res>
       __$ChannelsOwnedRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -169,6 +211,8 @@ class __$ChannelsOwnedRequestCopyWithImpl<$Res>
   $Res call({
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_ChannelsOwnedRequest(
@@ -180,6 +224,14 @@ class __$ChannelsOwnedRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

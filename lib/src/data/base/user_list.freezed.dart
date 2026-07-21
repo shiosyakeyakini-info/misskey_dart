@@ -14,79 +14,95 @@ part of 'user_list.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$UsersList {
+mixin _$UserList {
   String get id;
   @DateTimeConverter()
   DateTime get createdAt;
-  String? get name;
-  List<String> get userIds; // Misskey 13.13.0 で追加. 後方互換性のためnullable
-  bool? get isPublic;
+  String get name;
+  List<String>? get userIds;
+  bool get isPublic;
+  double? get likedCount;
+  bool? get isLiked;
 
-  /// Create a copy of UsersList
+  /// Create a copy of UserList
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $UsersListCopyWith<UsersList> get copyWith =>
-      _$UsersListCopyWithImpl<UsersList>(this as UsersList, _$identity);
+  $UserListCopyWith<UserList> get copyWith =>
+      _$UserListCopyWithImpl<UserList>(this as UserList, _$identity);
 
-  /// Serializes this UsersList to a JSON map.
+  /// Serializes this UserList to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UsersList &&
+            other is UserList &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other.userIds, userIds) &&
             (identical(other.isPublic, isPublic) ||
-                other.isPublic == isPublic));
+                other.isPublic == isPublic) &&
+            (identical(other.likedCount, likedCount) ||
+                other.likedCount == likedCount) &&
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      const DeepCollectionEquality().hash(userIds), isPublic);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      createdAt,
+      name,
+      const DeepCollectionEquality().hash(userIds),
+      isPublic,
+      likedCount,
+      isLiked);
 
   @override
   String toString() {
-    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
+    return 'UserList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic, likedCount: $likedCount, isLiked: $isLiked)';
   }
 }
 
 /// @nodoc
-abstract mixin class $UsersListCopyWith<$Res> {
-  factory $UsersListCopyWith(UsersList value, $Res Function(UsersList) _then) =
-      _$UsersListCopyWithImpl;
+abstract mixin class $UserListCopyWith<$Res> {
+  factory $UserListCopyWith(UserList value, $Res Function(UserList) _then) =
+      _$UserListCopyWithImpl;
   @useResult
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String? name,
-      List<String> userIds,
-      bool? isPublic});
+      String name,
+      List<String>? userIds,
+      bool isPublic,
+      double? likedCount,
+      bool? isLiked});
 }
 
 /// @nodoc
-class _$UsersListCopyWithImpl<$Res> implements $UsersListCopyWith<$Res> {
-  _$UsersListCopyWithImpl(this._self, this._then);
+class _$UserListCopyWithImpl<$Res> implements $UserListCopyWith<$Res> {
+  _$UserListCopyWithImpl(this._self, this._then);
 
-  final UsersList _self;
-  final $Res Function(UsersList) _then;
+  final UserList _self;
+  final $Res Function(UserList) _then;
 
-  /// Create a copy of UsersList
+  /// Create a copy of UserList
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? name = freezed,
-    Object? userIds = null,
-    Object? isPublic = freezed,
+    Object? name = null,
+    Object? userIds = freezed,
+    Object? isPublic = null,
+    Object? likedCount = freezed,
+    Object? isLiked = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -97,17 +113,25 @@ class _$UsersListCopyWithImpl<$Res> implements $UsersListCopyWith<$Res> {
           ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      name: freezed == name
+      name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userIds: null == userIds
+              as String,
+      userIds: freezed == userIds
           ? _self.userIds
           : userIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      isPublic: freezed == isPublic
+              as List<String>?,
+      isPublic: null == isPublic
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool,
+      likedCount: freezed == likedCount
+          ? _self.likedCount
+          : likedCount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      isLiked: freezed == isLiked
+          ? _self.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -115,16 +139,18 @@ class _$UsersListCopyWithImpl<$Res> implements $UsersListCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _UsersList implements UsersList {
-  const _UsersList(
+class _UserList implements UserList {
+  const _UserList(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
-      this.name,
-      required final List<String> userIds,
-      this.isPublic})
+      required this.name,
+      final List<String>? userIds,
+      required this.isPublic,
+      this.likedCount,
+      this.isLiked})
       : _userIds = userIds;
-  factory _UsersList.fromJson(Map<String, dynamic> json) =>
-      _$UsersListFromJson(json);
+  factory _UserList.fromJson(Map<String, dynamic> json) =>
+      _$UserListFromJson(json);
 
   @override
   final String id;
@@ -132,30 +158,35 @@ class _UsersList implements UsersList {
   @DateTimeConverter()
   final DateTime createdAt;
   @override
-  final String? name;
-  final List<String> _userIds;
+  final String name;
+  final List<String>? _userIds;
   @override
-  List<String> get userIds {
+  List<String>? get userIds {
+    final value = _userIds;
+    if (value == null) return null;
     if (_userIds is EqualUnmodifiableListView) return _userIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_userIds);
+    return EqualUnmodifiableListView(value);
   }
 
-// Misskey 13.13.0 で追加. 後方互換性のためnullable
   @override
-  final bool? isPublic;
+  final bool isPublic;
+  @override
+  final double? likedCount;
+  @override
+  final bool? isLiked;
 
-  /// Create a copy of UsersList
+  /// Create a copy of UserList
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$UsersListCopyWith<_UsersList> get copyWith =>
-      __$UsersListCopyWithImpl<_UsersList>(this, _$identity);
+  _$UserListCopyWith<_UserList> get copyWith =>
+      __$UserListCopyWithImpl<_UserList>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$UsersListToJson(
+    return _$UserListToJson(
       this,
     );
   }
@@ -164,62 +195,75 @@ class _UsersList implements UsersList {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersList &&
+            other is _UserList &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._userIds, _userIds) &&
             (identical(other.isPublic, isPublic) ||
-                other.isPublic == isPublic));
+                other.isPublic == isPublic) &&
+            (identical(other.likedCount, likedCount) ||
+                other.likedCount == likedCount) &&
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      const DeepCollectionEquality().hash(_userIds), isPublic);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      createdAt,
+      name,
+      const DeepCollectionEquality().hash(_userIds),
+      isPublic,
+      likedCount,
+      isLiked);
 
   @override
   String toString() {
-    return 'UsersList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic)';
+    return 'UserList(id: $id, createdAt: $createdAt, name: $name, userIds: $userIds, isPublic: $isPublic, likedCount: $likedCount, isLiked: $isLiked)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$UsersListCopyWith<$Res>
-    implements $UsersListCopyWith<$Res> {
-  factory _$UsersListCopyWith(
-          _UsersList value, $Res Function(_UsersList) _then) =
-      __$UsersListCopyWithImpl;
+abstract mixin class _$UserListCopyWith<$Res>
+    implements $UserListCopyWith<$Res> {
+  factory _$UserListCopyWith(_UserList value, $Res Function(_UserList) _then) =
+      __$UserListCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       @DateTimeConverter() DateTime createdAt,
-      String? name,
-      List<String> userIds,
-      bool? isPublic});
+      String name,
+      List<String>? userIds,
+      bool isPublic,
+      double? likedCount,
+      bool? isLiked});
 }
 
 /// @nodoc
-class __$UsersListCopyWithImpl<$Res> implements _$UsersListCopyWith<$Res> {
-  __$UsersListCopyWithImpl(this._self, this._then);
+class __$UserListCopyWithImpl<$Res> implements _$UserListCopyWith<$Res> {
+  __$UserListCopyWithImpl(this._self, this._then);
 
-  final _UsersList _self;
-  final $Res Function(_UsersList) _then;
+  final _UserList _self;
+  final $Res Function(_UserList) _then;
 
-  /// Create a copy of UsersList
+  /// Create a copy of UserList
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? createdAt = null,
-    Object? name = freezed,
-    Object? userIds = null,
-    Object? isPublic = freezed,
+    Object? name = null,
+    Object? userIds = freezed,
+    Object? isPublic = null,
+    Object? likedCount = freezed,
+    Object? isLiked = freezed,
   }) {
-    return _then(_UsersList(
+    return _then(_UserList(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -228,17 +272,25 @@ class __$UsersListCopyWithImpl<$Res> implements _$UsersListCopyWith<$Res> {
           ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      name: freezed == name
+      name: null == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userIds: null == userIds
+              as String,
+      userIds: freezed == userIds
           ? _self._userIds
           : userIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      isPublic: freezed == isPublic
+              as List<String>?,
+      isPublic: null == isPublic
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
+              as bool,
+      likedCount: freezed == likedCount
+          ? _self.likedCount
+          : likedCount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      isLiked: freezed == isLiked
+          ? _self.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }

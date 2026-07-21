@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsInvitationsIgnoreRequest {
-  String get roomId;
+  String? get roomId;
 
   /// Create a copy of ChatRoomsInvitationsIgnoreRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -54,7 +54,7 @@ abstract mixin class $ChatRoomsInvitationsIgnoreRequestCopyWith<$Res> {
           $Res Function(ChatRoomsInvitationsIgnoreRequest) _then) =
       _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl;
   @useResult
-  $Res call({String roomId});
+  $Res call({String? roomId});
 }
 
 /// @nodoc
@@ -70,13 +70,13 @@ class _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
   }) {
     return _then(_self.copyWith(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -85,13 +85,13 @@ class _$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChatRoomsInvitationsIgnoreRequest
     implements ChatRoomsInvitationsIgnoreRequest {
-  const _ChatRoomsInvitationsIgnoreRequest({required this.roomId});
+  const _ChatRoomsInvitationsIgnoreRequest({this.roomId});
   factory _ChatRoomsInvitationsIgnoreRequest.fromJson(
           Map<String, dynamic> json) =>
       _$ChatRoomsInvitationsIgnoreRequestFromJson(json);
 
   @override
-  final String roomId;
+  final String? roomId;
 
   /// Create a copy of ChatRoomsInvitationsIgnoreRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -137,7 +137,7 @@ abstract mixin class _$ChatRoomsInvitationsIgnoreRequestCopyWith<$Res>
       __$ChatRoomsInvitationsIgnoreRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roomId});
+  $Res call({String? roomId});
 }
 
 /// @nodoc
@@ -153,13 +153,13 @@ class __$ChatRoomsInvitationsIgnoreRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
   }) {
     return _then(_ChatRoomsInvitationsIgnoreRequest(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

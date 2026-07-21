@@ -9,7 +9,7 @@ part of 'chat_rooms_invitations_ignore_request.dart';
 _ChatRoomsInvitationsIgnoreRequest _$ChatRoomsInvitationsIgnoreRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatRoomsInvitationsIgnoreRequest(
-      roomId: json['roomId'] as String,
+      roomId: json['roomId'] as String?,
     );
 
 Map<String, dynamic> _$ChatRoomsInvitationsIgnoreRequestToJson(

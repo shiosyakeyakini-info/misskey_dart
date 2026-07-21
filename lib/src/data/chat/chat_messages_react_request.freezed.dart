@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatMessagesReactRequest {
-  String get messageId;
-  String get reaction;
+  String? get messageId;
+  String? get reaction;
 
   /// Create a copy of ChatMessagesReactRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -56,7 +56,7 @@ abstract mixin class $ChatMessagesReactRequestCopyWith<$Res> {
           $Res Function(ChatMessagesReactRequest) _then) =
       _$ChatMessagesReactRequestCopyWithImpl;
   @useResult
-  $Res call({String messageId, String reaction});
+  $Res call({String? messageId, String? reaction});
 }
 
 /// @nodoc
@@ -72,18 +72,18 @@ class _$ChatMessagesReactRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messageId = null,
-    Object? reaction = null,
+    Object? messageId = freezed,
+    Object? reaction = freezed,
   }) {
     return _then(_self.copyWith(
-      messageId: null == messageId
+      messageId: freezed == messageId
           ? _self.messageId
           : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
-      reaction: null == reaction
+              as String?,
+      reaction: freezed == reaction
           ? _self.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -91,15 +91,14 @@ class _$ChatMessagesReactRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatMessagesReactRequest implements ChatMessagesReactRequest {
-  const _ChatMessagesReactRequest(
-      {required this.messageId, required this.reaction});
+  const _ChatMessagesReactRequest({this.messageId, this.reaction});
   factory _ChatMessagesReactRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatMessagesReactRequestFromJson(json);
 
   @override
-  final String messageId;
+  final String? messageId;
   @override
-  final String reaction;
+  final String? reaction;
 
   /// Create a copy of ChatMessagesReactRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -146,7 +145,7 @@ abstract mixin class _$ChatMessagesReactRequestCopyWith<$Res>
       __$ChatMessagesReactRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String messageId, String reaction});
+  $Res call({String? messageId, String? reaction});
 }
 
 /// @nodoc
@@ -162,18 +161,18 @@ class __$ChatMessagesReactRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? messageId = null,
-    Object? reaction = null,
+    Object? messageId = freezed,
+    Object? reaction = freezed,
   }) {
     return _then(_ChatMessagesReactRequest(
-      messageId: null == messageId
+      messageId: freezed == messageId
           ? _self.messageId
           : messageId // ignore: cast_nullable_to_non_nullable
-              as String,
-      reaction: null == reaction
+              as String?,
+      reaction: freezed == reaction
           ? _self.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

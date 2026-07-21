@@ -11,7 +11,9 @@ _ChannelsFollowedRequest _$ChannelsFollowedRequestFromJson(
     _ChannelsFollowedRequest(
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 5,
     );
 
 Map<String, dynamic> _$ChannelsFollowedRequestToJson(
@@ -19,5 +21,7 @@ Map<String, dynamic> _$ChannelsFollowedRequestToJson(
     <String, dynamic>{
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'limit': instance.limit,
     };

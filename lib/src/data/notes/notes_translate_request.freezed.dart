@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesTranslateRequest {
-  String get noteId;
-  String get targetLang;
+  String? get noteId;
+  String? get targetLang;
 
   /// Create a copy of NotesTranslateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -55,7 +55,7 @@ abstract mixin class $NotesTranslateRequestCopyWith<$Res> {
           $Res Function(NotesTranslateRequest) _then) =
       _$NotesTranslateRequestCopyWithImpl;
   @useResult
-  $Res call({String noteId, String targetLang});
+  $Res call({String? noteId, String? targetLang});
 }
 
 /// @nodoc
@@ -71,18 +71,18 @@ class _$NotesTranslateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
-    Object? targetLang = null,
+    Object? noteId = freezed,
+    Object? targetLang = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-      targetLang: null == targetLang
+              as String?,
+      targetLang: freezed == targetLang
           ? _self.targetLang
           : targetLang // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -90,15 +90,14 @@ class _$NotesTranslateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _NotesTranslateRequest implements NotesTranslateRequest {
-  const _NotesTranslateRequest(
-      {required this.noteId, required this.targetLang});
+  const _NotesTranslateRequest({this.noteId, this.targetLang});
   factory _NotesTranslateRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesTranslateRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
   @override
-  final String targetLang;
+  final String? targetLang;
 
   /// Create a copy of NotesTranslateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -144,7 +143,7 @@ abstract mixin class _$NotesTranslateRequestCopyWith<$Res>
       __$NotesTranslateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String noteId, String targetLang});
+  $Res call({String? noteId, String? targetLang});
 }
 
 /// @nodoc
@@ -160,18 +159,18 @@ class __$NotesTranslateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
-    Object? targetLang = null,
+    Object? noteId = freezed,
+    Object? targetLang = freezed,
   }) {
     return _then(_NotesTranslateRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
-      targetLang: null == targetLang
+              as String?,
+      targetLang: freezed == targetLang
           ? _self.targetLang
           : targetLang // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

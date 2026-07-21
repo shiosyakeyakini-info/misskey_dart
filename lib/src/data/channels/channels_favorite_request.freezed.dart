@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsFavoriteRequest {
-  String get channelId;
+  String? get channelId;
 
   /// Create a copy of ChannelsFavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $ChannelsFavoriteRequestCopyWith<$Res> {
           $Res Function(ChannelsFavoriteRequest) _then) =
       _$ChannelsFavoriteRequestCopyWithImpl;
   @useResult
-  $Res call({String channelId});
+  $Res call({String? channelId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$ChannelsFavoriteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
   }) {
     return _then(_self.copyWith(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$ChannelsFavoriteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChannelsFavoriteRequest implements ChannelsFavoriteRequest {
-  const _ChannelsFavoriteRequest({required this.channelId});
+  const _ChannelsFavoriteRequest({this.channelId});
   factory _ChannelsFavoriteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsFavoriteRequestFromJson(json);
 
   @override
-  final String channelId;
+  final String? channelId;
 
   /// Create a copy of ChannelsFavoriteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$ChannelsFavoriteRequestCopyWith<$Res>
       __$ChannelsFavoriteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String channelId});
+  $Res call({String? channelId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$ChannelsFavoriteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
   }) {
     return _then(_ChannelsFavoriteRequest(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

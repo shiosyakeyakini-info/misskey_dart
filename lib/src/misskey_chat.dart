@@ -1,232 +1,185 @@
-import 'package:misskey_dart/src/data/chat/chat_history_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_joinning.dart';
-import 'package:misskey_dart/src/data/chat/chat_message.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_create_to_room_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_create_to_user_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_delete_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_react_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_room_timeline_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_search_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_show_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_unreact_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_messages_user_timeline_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_room.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_create_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_delete_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_invitations_create_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_invitations_ignore_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_invitations_inbox_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_invitations_outbox_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_join_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_joining_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_leave_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_members_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_mute_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_owned_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_show_request.dart';
-import 'package:misskey_dart/src/data/chat/chat_rooms_update_request.dart';
-import 'package:misskey_dart/src/services/api_service.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyChat {
-  final ApiService _apiService;
-
   final MisskeyChatMessages messages;
   final MisskeyChatRooms rooms;
 
+  final ApiService _apiService;
+
   MisskeyChat({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         messages = MisskeyChatMessages(apiService: apiService),
         rooms = MisskeyChatRooms(apiService: apiService);
 
-  /// 直近のチャットメッセージを取得します
+  /// chat/history
   Future<Iterable<ChatMessage>> history(ChatHistoryRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/history", request.toJson());
-    return response.map((e) => ChatMessage.fromJson(e));
+    final response = await _apiService.post<List>("chat/history", request.toJson());
+    return response.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>));
   }
 
-  /// 全てのチャットメッセージを既読にします
+  /// Available since Misskey 2025.6.1
+  /// chat/read-all
   Future<void> readAll() async {
-    await _apiService.post("chat/read-all", {});
+    await _apiService.post<void>("chat/read-all", {});
   }
+
 }
 
 class MisskeyChatMessages {
+
   final ApiService _apiService;
 
   MisskeyChatMessages({required ApiService apiService})
       : _apiService = apiService;
 
-  /// チャットメッセージを作成します（ルーム宛）
-  Future<ChatMessage> createToRoom(
-      ChatMessagesCreateToRoomRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/messages/create-to-room", request.toJson());
-    return ChatMessage.fromJson(response);
+  /// chat/messages/create-to-room
+  Future<ChatMessageLiteForRoom> createToRoom(ChatMessagesCreateToRoomRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("chat/messages/create-to-room", request.toJson());
+    return ChatMessageLiteForRoom.fromJson(response);
   }
 
-  /// チャットメッセージを作成します（ユーザー宛）
-  Future<ChatMessage> createToUser(
-      ChatMessagesCreateToUserRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/messages/create-to-user", request.toJson());
-    return ChatMessage.fromJson(response);
+  /// chat/messages/create-to-user
+  Future<ChatMessageLiteFor1on1> createToUser(ChatMessagesCreateToUserRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("chat/messages/create-to-user", request.toJson());
+    return ChatMessageLiteFor1on1.fromJson(response);
   }
 
-  /// チャットメッセージを削除します
+  /// chat/messages/delete
   Future<void> delete(ChatMessagesDeleteRequest request) async {
-    await _apiService.post("chat/messages/delete", request.toJson());
+    await _apiService.post<void>("chat/messages/delete", request.toJson());
   }
 
-  /// チャットメッセージにリアクションを付与します
+  /// chat/messages/react
   Future<void> react(ChatMessagesReactRequest request) async {
-    await _apiService.post("chat/messages/react", request.toJson());
+    await _apiService.post<void>("chat/messages/react", request.toJson());
   }
 
-  /// チャットメッセージのリアクションを削除します
-  Future<void> unreact(ChatMessagesUnreactRequest request) async {
-    await _apiService.post("chat/messages/unreact", request.toJson());
+  /// chat/messages/room-timeline
+  Future<Iterable<ChatMessageLiteForRoom>> roomTimeline(ChatMessagesRoomTimelineRequest request) async {
+    final response = await _apiService.post<List>("chat/messages/room-timeline", request.toJson());
+    return response.map((e) => ChatMessageLiteForRoom.fromJson(e as Map<String, dynamic>));
   }
 
-  /// ルームのチャットを取得します
-  Future<Iterable<ChatMessage>> roomTimeline(
-    ChatMessagesRoomTimelineRequest request,
-  ) async {
-    final response = await _apiService.post<List>(
-        "chat/messages/room-timeline", request.toJson());
-    return response.map((e) => ChatMessage.fromJson(e));
+  /// chat/messages/search
+  Future<Iterable<ChatMessage>> search(ChatMessagesSearchRequest request) async {
+    final response = await _apiService.post<List>("chat/messages/search", request.toJson());
+    return response.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>));
   }
 
-  /// チャットメッセージを検索します
-  Future<Iterable<ChatMessage>> search(
-    ChatMessagesSearchRequest request,
-  ) async {
-    final response =
-        await _apiService.post<List>("chat/messages/search", request.toJson());
-    return response.map((e) => ChatMessage.fromJson(e));
-  }
-
-  /// チャットメッセージを取得します
+  /// chat/messages/show
   Future<ChatMessage> show(ChatMessagesShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/messages/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("chat/messages/show", request.toJson());
     return ChatMessage.fromJson(response);
   }
 
-  /// ユーザーのチャットを取得します
-  Future<Iterable<ChatMessage>> userTimeline(
-    ChatMessagesUserTimelineRequest request,
-  ) async {
-    final response = await _apiService.post<List>(
-        "chat/messages/user-timeline", request.toJson());
-    return response.map((e) => ChatMessage.fromJson(e));
+  /// chat/messages/unreact
+  Future<void> unreact(ChatMessagesUnreactRequest request) async {
+    await _apiService.post<void>("chat/messages/unreact", request.toJson());
   }
+
+  /// chat/messages/user-timeline
+  Future<Iterable<ChatMessageLiteFor1on1>> userTimeline(ChatMessagesUserTimelineRequest request) async {
+    final response = await _apiService.post<List>("chat/messages/user-timeline", request.toJson());
+    return response.map((e) => ChatMessageLiteFor1on1.fromJson(e as Map<String, dynamic>));
+  }
+
 }
 
 class MisskeyChatRooms {
-  final ApiService _apiService;
-
   final MisskeyChatRoomsInvitations invitations;
 
+  final ApiService _apiService;
+
   MisskeyChatRooms({required ApiService apiService})
-      : _apiService = apiService,
+      :         _apiService = apiService,
         invitations = MisskeyChatRoomsInvitations(apiService: apiService);
 
-  /// チャットルームを作成します
+  /// chat/rooms/create
   Future<ChatRoom> create(ChatRoomsCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("chat/rooms/create", request.toJson());
     return ChatRoom.fromJson(response);
   }
 
-  /// チャットルームを削除します
+  /// chat/rooms/delete
   Future<void> delete(ChatRoomsDeleteRequest request) async {
-    await _apiService.post("chat/rooms/delete", request.toJson());
+    await _apiService.post<void>("chat/rooms/delete", request.toJson());
   }
 
-  /// チャットルームに参加します
+  /// chat/rooms/join
   Future<void> join(ChatRoomsJoinRequest request) async {
-    await _apiService.post("chat/rooms/join", request.toJson());
+    await _apiService.post<void>("chat/rooms/join", request.toJson());
   }
 
-  /// 参加中のチャットルームを取得します
-  Future<Iterable<ChatJoining>> joining(ChatRoomsJoiningRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/rooms/joining", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e));
+  /// chat/rooms/joining
+  Future<Iterable<ChatRoomMembership>> joining(ChatRoomsJoiningRequest request) async {
+    final response = await _apiService.post<List>("chat/rooms/joining", request.toJson());
+    return response.map((e) => ChatRoomMembership.fromJson(e as Map<String, dynamic>));
   }
 
-  /// チャットルームを退室します
+  /// chat/rooms/leave
   Future<void> leave(ChatRoomsLeaveRequest request) async {
-    await _apiService.post("chat/rooms/leave", request.toJson());
+    await _apiService.post<void>("chat/rooms/leave", request.toJson());
   }
 
-  /// チャットルームのメンバーを取得します
-  Future<Iterable<ChatJoining>> members(ChatRoomsMembersRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/rooms/members", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e));
+  /// chat/rooms/members
+  Future<Iterable<ChatRoomMembership>> members(ChatRoomsMembersRequest request) async {
+    final response = await _apiService.post<List>("chat/rooms/members", request.toJson());
+    return response.map((e) => ChatRoomMembership.fromJson(e as Map<String, dynamic>));
   }
 
-  /// チャットルームをミュートします
+  /// chat/rooms/mute
   Future<void> mute(ChatRoomsMuteRequest request) async {
-    await _apiService.post("chat/rooms/mute", request.toJson());
+    await _apiService.post<void>("chat/rooms/mute", request.toJson());
   }
 
-  /// 自身が所有しているチャットルームを取得します
+  /// chat/rooms/owned
   Future<Iterable<ChatRoom>> owned(ChatRoomsOwnedRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/rooms/owned", request.toJson());
-    return response.map((e) => ChatRoom.fromJson(e));
+    final response = await _apiService.post<List>("chat/rooms/owned", request.toJson());
+    return response.map((e) => ChatRoom.fromJson(e as Map<String, dynamic>));
   }
 
-  /// チャットルームの情報を取得します
+  /// chat/rooms/show
   Future<ChatRoom> show(ChatRoomsShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("chat/rooms/show", request.toJson());
     return ChatRoom.fromJson(response);
   }
 
-  /// チャットルームの情報を更新します
+  /// chat/rooms/update
   Future<ChatRoom> update(ChatRoomsUpdateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/update", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>("chat/rooms/update", request.toJson());
     return ChatRoom.fromJson(response);
   }
+
 }
 
 class MisskeyChatRoomsInvitations {
+
   final ApiService _apiService;
 
   MisskeyChatRoomsInvitations({required ApiService apiService})
       : _apiService = apiService;
 
-  /// チャットルームへの招待を作成します
-  Future<ChatJoining> create(ChatRoomsInvitationsCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/invitations/create", request.toJson());
-    return ChatJoining.fromJson(response);
+  /// chat/rooms/invitations/create
+  Future<ChatRoomInvitation> create(ChatRoomsInvitationsCreateRequest request) async {
+    final response = await _apiService.post<Map<String, dynamic>>("chat/rooms/invitations/create", request.toJson());
+    return ChatRoomInvitation.fromJson(response);
   }
 
-  /// チャットルームへの招待を無視します
+  /// chat/rooms/invitations/ignore
   Future<void> ignore(ChatRoomsInvitationsIgnoreRequest request) async {
-    await _apiService.post("chat/rooms/invitations/ignore", request.toJson());
+    await _apiService.post<void>("chat/rooms/invitations/ignore", request.toJson());
   }
 
-  /// 自分に来ているチャットの招待リストを取得します
-  Future<Iterable<ChatJoining>> inbox(
-    ChatRoomsInvitationsInboxRequest request,
-  ) async {
-    final response = await _apiService.post<List>(
-        "chat/rooms/invitations/inbox", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e));
+  /// chat/rooms/invitations/inbox
+  Future<Iterable<ChatRoomInvitation>> inbox(ChatRoomsInvitationsInboxRequest request) async {
+    final response = await _apiService.post<List>("chat/rooms/invitations/inbox", request.toJson());
+    return response.map((e) => ChatRoomInvitation.fromJson(e as Map<String, dynamic>));
   }
 
-  /// チャットルームへ招待中のユーザーを取得します
-  Future<Iterable<ChatJoining>> outbox(
-      ChatRoomsInvitationsOutboxRequest request) async {
-    final response = await _apiService.post<List>(
-        "chat/rooms/invitations/outbox", request.toJson());
-    return response.map((e) => ChatJoining.fromJson(e));
+  /// chat/rooms/invitations/outbox
+  Future<Iterable<ChatRoomInvitation>> outbox(ChatRoomsInvitationsOutboxRequest request) async {
+    final response = await _apiService.post<List>("chat/rooms/invitations/outbox", request.toJson());
+    return response.map((e) => ChatRoomInvitation.fromJson(e as Map<String, dynamic>));
   }
+
 }

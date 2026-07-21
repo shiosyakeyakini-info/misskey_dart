@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FollowingDeleteRequest {
-  String get userId;
+  String? get userId;
 
   /// Create a copy of FollowingDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $FollowingDeleteRequestCopyWith<$Res> {
           $Res Function(FollowingDeleteRequest) _then) =
       _$FollowingDeleteRequestCopyWithImpl;
   @useResult
-  $Res call({String userId});
+  $Res call({String? userId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$FollowingDeleteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$FollowingDeleteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingDeleteRequest implements FollowingDeleteRequest {
-  const _FollowingDeleteRequest({required this.userId});
+  const _FollowingDeleteRequest({this.userId});
   factory _FollowingDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$FollowingDeleteRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
 
   /// Create a copy of FollowingDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +131,7 @@ abstract mixin class _$FollowingDeleteRequestCopyWith<$Res>
       __$FollowingDeleteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId});
+  $Res call({String? userId});
 }
 
 /// @nodoc
@@ -147,13 +147,13 @@ class __$FollowingDeleteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_FollowingDeleteRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

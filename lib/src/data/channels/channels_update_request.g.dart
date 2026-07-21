@@ -9,7 +9,7 @@ part of 'channels_update_request.dart';
 _ChannelsUpdateRequest _$ChannelsUpdateRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsUpdateRequest(
-      channelId: json['channelId'] as String,
+      channelId: json['channelId'] as String?,
       name: json['name'] as String?,
       description: json['description'] as String?,
       bannerId: json['bannerId'] as String?,
@@ -18,6 +18,8 @@ _ChannelsUpdateRequest _$ChannelsUpdateRequestFromJson(
           ?.map((e) => e as String)
           .toList(),
       color: json['color'] as String?,
+      isSensitive: json['isSensitive'] as bool?,
+      allowRenoteToExternal: json['allowRenoteToExternal'] as bool?,
     );
 
 Map<String, dynamic> _$ChannelsUpdateRequestToJson(
@@ -30,4 +32,6 @@ Map<String, dynamic> _$ChannelsUpdateRequestToJson(
       'isArchived': instance.isArchived,
       'pinnedNoteIds': instance.pinnedNoteIds,
       'color': instance.color,
+      'isSensitive': instance.isSensitive,
+      'allowRenoteToExternal': instance.allowRenoteToExternal,
     };

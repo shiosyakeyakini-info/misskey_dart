@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersUpdateMemoRequest {
-  String get userId;
-  String get memo;
+  String? get userId;
+  String? get memo;
 
   /// Create a copy of UsersUpdateMemoRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -54,7 +54,7 @@ abstract mixin class $UsersUpdateMemoRequestCopyWith<$Res> {
           $Res Function(UsersUpdateMemoRequest) _then) =
       _$UsersUpdateMemoRequestCopyWithImpl;
   @useResult
-  $Res call({String userId, String memo});
+  $Res call({String? userId, String? memo});
 }
 
 /// @nodoc
@@ -70,18 +70,18 @@ class _$UsersUpdateMemoRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
-    Object? memo = null,
+    Object? userId = freezed,
+    Object? memo = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      memo: null == memo
+              as String?,
+      memo: freezed == memo
           ? _self.memo
           : memo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -89,14 +89,14 @@ class _$UsersUpdateMemoRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _UsersUpdateMemoRequest implements UsersUpdateMemoRequest {
-  const _UsersUpdateMemoRequest({required this.userId, required this.memo});
+  const _UsersUpdateMemoRequest({this.userId, this.memo});
   factory _UsersUpdateMemoRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersUpdateMemoRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
   @override
-  final String memo;
+  final String? memo;
 
   /// Create a copy of UsersUpdateMemoRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -141,7 +141,7 @@ abstract mixin class _$UsersUpdateMemoRequestCopyWith<$Res>
       __$UsersUpdateMemoRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId, String memo});
+  $Res call({String? userId, String? memo});
 }
 
 /// @nodoc
@@ -157,18 +157,18 @@ class __$UsersUpdateMemoRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
-    Object? memo = null,
+    Object? userId = freezed,
+    Object? memo = freezed,
   }) {
     return _then(_UsersUpdateMemoRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      memo: null == memo
+              as String?,
+      memo: freezed == memo
           ? _self.memo
           : memo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

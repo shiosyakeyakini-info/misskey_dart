@@ -12,19 +12,14 @@ part of 'i_notifications_request.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-INotificationsRequest _$INotificationsRequestFromJson(
-    Map<String, dynamic> json) {
-  return _INotificationRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$INotificationsRequest {
-  @Assert('limit > 0')
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  bool? get following;
-  bool? get unreadOnly;
+  int? get sinceDate;
+  int? get untilDate;
   bool? get markAsRead;
   List<NotificationType>? get includeTypes;
   List<NotificationType>? get excludeTypes;
@@ -48,10 +43,10 @@ mixin _$INotificationsRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.following, following) ||
-                other.following == following) &&
-            (identical(other.unreadOnly, unreadOnly) ||
-                other.unreadOnly == unreadOnly) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.markAsRead, markAsRead) ||
                 other.markAsRead == markAsRead) &&
             const DeepCollectionEquality()
@@ -67,15 +62,15 @@ mixin _$INotificationsRequest {
       limit,
       sinceId,
       untilId,
-      following,
-      unreadOnly,
+      sinceDate,
+      untilDate,
       markAsRead,
       const DeepCollectionEquality().hash(includeTypes),
       const DeepCollectionEquality().hash(excludeTypes));
 
   @override
   String toString() {
-    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, following: $following, unreadOnly: $unreadOnly, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
+    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
   }
 }
 
@@ -86,11 +81,11 @@ abstract mixin class $INotificationsRequestCopyWith<$Res> {
       _$INotificationsRequestCopyWithImpl;
   @useResult
   $Res call(
-      {@Assert('limit > 0') int? limit,
+      {int? limit,
       String? sinceId,
       String? untilId,
-      bool? following,
-      bool? unreadOnly,
+      int? sinceDate,
+      int? untilDate,
       bool? markAsRead,
       List<NotificationType>? includeTypes,
       List<NotificationType>? excludeTypes});
@@ -112,8 +107,8 @@ class _$INotificationsRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
-    Object? following = freezed,
-    Object? unreadOnly = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? markAsRead = freezed,
     Object? includeTypes = freezed,
     Object? excludeTypes = freezed,
@@ -131,14 +126,14 @@ class _$INotificationsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
-      following: freezed == following
-          ? _self.following
-          : following // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      unreadOnly: freezed == unreadOnly
-          ? _self.unreadOnly
-          : unreadOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       markAsRead: freezed == markAsRead
           ? _self.markAsRead
           : markAsRead // ignore: cast_nullable_to_non_nullable
@@ -157,33 +152,34 @@ class _$INotificationsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _INotificationRequest implements INotificationsRequest {
-  const _INotificationRequest(
-      {@Assert('limit > 0') this.limit,
+class _INotificationsRequest implements INotificationsRequest {
+  const _INotificationsRequest(
+      {this.limit = 10,
       this.sinceId,
       this.untilId,
-      this.following,
-      this.unreadOnly,
-      this.markAsRead,
+      this.sinceDate,
+      this.untilDate,
+      this.markAsRead = true,
       final List<NotificationType>? includeTypes,
       final List<NotificationType>? excludeTypes})
       : _includeTypes = includeTypes,
         _excludeTypes = excludeTypes;
-  factory _INotificationRequest.fromJson(Map<String, dynamic> json) =>
-      _$INotificationRequestFromJson(json);
+  factory _INotificationsRequest.fromJson(Map<String, dynamic> json) =>
+      _$INotificationsRequestFromJson(json);
 
   @override
-  @Assert('limit > 0')
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  final bool? following;
+  final int? sinceDate;
   @override
-  final bool? unreadOnly;
+  final int? untilDate;
   @override
+  @JsonKey()
   final bool? markAsRead;
   final List<NotificationType>? _includeTypes;
   @override
@@ -210,13 +206,13 @@ class _INotificationRequest implements INotificationsRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$INotificationRequestCopyWith<_INotificationRequest> get copyWith =>
-      __$INotificationRequestCopyWithImpl<_INotificationRequest>(
+  _$INotificationsRequestCopyWith<_INotificationsRequest> get copyWith =>
+      __$INotificationsRequestCopyWithImpl<_INotificationsRequest>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$INotificationRequestToJson(
+    return _$INotificationsRequestToJson(
       this,
     );
   }
@@ -225,14 +221,14 @@ class _INotificationRequest implements INotificationsRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _INotificationRequest &&
+            other is _INotificationsRequest &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.following, following) ||
-                other.following == following) &&
-            (identical(other.unreadOnly, unreadOnly) ||
-                other.unreadOnly == unreadOnly) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.markAsRead, markAsRead) ||
                 other.markAsRead == markAsRead) &&
             const DeepCollectionEquality()
@@ -248,44 +244,44 @@ class _INotificationRequest implements INotificationsRequest {
       limit,
       sinceId,
       untilId,
-      following,
-      unreadOnly,
+      sinceDate,
+      untilDate,
       markAsRead,
       const DeepCollectionEquality().hash(_includeTypes),
       const DeepCollectionEquality().hash(_excludeTypes));
 
   @override
   String toString() {
-    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, following: $following, unreadOnly: $unreadOnly, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
+    return 'INotificationsRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, markAsRead: $markAsRead, includeTypes: $includeTypes, excludeTypes: $excludeTypes)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$INotificationRequestCopyWith<$Res>
+abstract mixin class _$INotificationsRequestCopyWith<$Res>
     implements $INotificationsRequestCopyWith<$Res> {
-  factory _$INotificationRequestCopyWith(_INotificationRequest value,
-          $Res Function(_INotificationRequest) _then) =
-      __$INotificationRequestCopyWithImpl;
+  factory _$INotificationsRequestCopyWith(_INotificationsRequest value,
+          $Res Function(_INotificationsRequest) _then) =
+      __$INotificationsRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {@Assert('limit > 0') int? limit,
+      {int? limit,
       String? sinceId,
       String? untilId,
-      bool? following,
-      bool? unreadOnly,
+      int? sinceDate,
+      int? untilDate,
       bool? markAsRead,
       List<NotificationType>? includeTypes,
       List<NotificationType>? excludeTypes});
 }
 
 /// @nodoc
-class __$INotificationRequestCopyWithImpl<$Res>
-    implements _$INotificationRequestCopyWith<$Res> {
-  __$INotificationRequestCopyWithImpl(this._self, this._then);
+class __$INotificationsRequestCopyWithImpl<$Res>
+    implements _$INotificationsRequestCopyWith<$Res> {
+  __$INotificationsRequestCopyWithImpl(this._self, this._then);
 
-  final _INotificationRequest _self;
-  final $Res Function(_INotificationRequest) _then;
+  final _INotificationsRequest _self;
+  final $Res Function(_INotificationsRequest) _then;
 
   /// Create a copy of INotificationsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -295,13 +291,13 @@ class __$INotificationRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
-    Object? following = freezed,
-    Object? unreadOnly = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? markAsRead = freezed,
     Object? includeTypes = freezed,
     Object? excludeTypes = freezed,
   }) {
-    return _then(_INotificationRequest(
+    return _then(_INotificationsRequest(
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -314,14 +310,14 @@ class __$INotificationRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
-      following: freezed == following
-          ? _self.following
-          : following // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      unreadOnly: freezed == unreadOnly
-          ? _self.unreadOnly
-          : unreadOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       markAsRead: freezed == markAsRead
           ? _self.markAsRead
           : markAsRead // ignore: cast_nullable_to_non_nullable

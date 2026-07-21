@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsFollowRequest {
-  String get channelId;
+  String? get channelId;
 
   /// Create a copy of ChannelsFollowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $ChannelsFollowRequestCopyWith<$Res> {
           $Res Function(ChannelsFollowRequest) _then) =
       _$ChannelsFollowRequestCopyWithImpl;
   @useResult
-  $Res call({String channelId});
+  $Res call({String? channelId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$ChannelsFollowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
   }) {
     return _then(_self.copyWith(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$ChannelsFollowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChannelsFollowRequest implements ChannelsFollowRequest {
-  const _ChannelsFollowRequest({required this.channelId});
+  const _ChannelsFollowRequest({this.channelId});
   factory _ChannelsFollowRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsFollowRequestFromJson(json);
 
   @override
-  final String channelId;
+  final String? channelId;
 
   /// Create a copy of ChannelsFollowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$ChannelsFollowRequestCopyWith<$Res>
       __$ChannelsFollowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String channelId});
+  $Res call({String? channelId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$ChannelsFollowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? channelId = null,
+    Object? channelId = freezed,
   }) {
     return _then(_ChannelsFollowRequest(
-      channelId: null == channelId
+      channelId: freezed == channelId
           ? _self.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

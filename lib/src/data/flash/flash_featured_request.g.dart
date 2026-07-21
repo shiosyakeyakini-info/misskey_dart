@@ -9,8 +9,8 @@ part of 'flash_featured_request.dart';
 _FlashFeaturedRequest _$FlashFeaturedRequestFromJson(
         Map<String, dynamic> json) =>
     _FlashFeaturedRequest(
-      offset: (json['offset'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt(),
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
     );
 
 Map<String, dynamic> _$FlashFeaturedRequestToJson(

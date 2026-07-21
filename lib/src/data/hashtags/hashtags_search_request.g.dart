@@ -9,9 +9,9 @@ part of 'hashtags_search_request.dart';
 _HashtagsSearchRequest _$HashtagsSearchRequestFromJson(
         Map<String, dynamic> json) =>
     _HashtagsSearchRequest(
-      limit: (json['limit'] as num?)?.toInt(),
-      query: json['query'] as String,
-      offset: (json['offset'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
+      query: json['query'] as String?,
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$HashtagsSearchRequestToJson(

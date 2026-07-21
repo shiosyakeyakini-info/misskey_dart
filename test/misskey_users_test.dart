@@ -30,17 +30,20 @@ void main() async {
   });
 
   test("showByIds", () async {
-    final response = await userClient.users
-        .showByIds(UsersShowByIdsRequest(userIds: [admin.id, user.id]));
+    final response = await userClient.apiService.post<List>("users/show", {
+      "userIds": [admin.id, user.id]
+    });
+    final users =
+        response.map((e) => UserDetailed.fromJson(e as Map<String, dynamic>));
     expect(
-      response.map((e) => e.username),
+      users.map((e) => e.username),
       orderedEquals([admin.username, user.username]),
     );
   });
 
   test("showByName", () async {
-    final response = await userClient.users
-        .showByName(UsersShowByUserNameRequest(userName: user.username));
+    final response =
+        await userClient.users.show(UsersShowRequest(username: user.username));
     expect(response.id, equals(user.id));
   });
 
@@ -141,8 +144,8 @@ void main() async {
   test("users", () async {
     final newUser = (await adminClient.createUser()).user;
     final response = await userClient.users.users(
-      UsersUsersRequest(
-        sort: UsersSortType.createdAtDescendant,
+      UsersRequest(
+        sort: UsersSort.plusCreatedAt,
       ),
     );
     expect(response.map((e) => e.id), contains(newUser.id));
@@ -216,7 +219,7 @@ void main() async {
           .create(UsersListsCreateRequest(name: "test"));
       await userClient.users.list
           .delete(UsersListsDeleteRequest(listId: list.id));
-      final lists = await userClient.users.list.list();
+      final lists = await userClient.users.list.list(UsersListsListRequest());
       expect(lists.map((e) => e.id), isNot(contains(list.id)));
     });
 
@@ -235,7 +238,8 @@ void main() async {
     test("list", () async {
       final list = await userClient.users.list
           .create(UsersListsCreateRequest(name: "test"));
-      final response = await userClient.users.list.list();
+      final response =
+          await userClient.users.list.list(UsersListsListRequest());
       expect(response.map((e) => e.id), contains(list.id));
     });
 

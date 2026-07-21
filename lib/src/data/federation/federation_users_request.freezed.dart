@@ -15,9 +15,11 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FederationUsersRequest {
-  String get host;
+  String? get host;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   int? get limit;
 
   /// Create a copy of FederationUsersRequest
@@ -39,16 +41,21 @@ mixin _$FederationUsersRequest {
             (identical(other.host, host) || other.host == host) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, host, sinceId, untilId, limit);
+  int get hashCode => Object.hash(
+      runtimeType, host, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'FederationUsersRequest(host: $host, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'FederationUsersRequest(host: $host, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -58,7 +65,13 @@ abstract mixin class $FederationUsersRequestCopyWith<$Res> {
           $Res Function(FederationUsersRequest) _then) =
       _$FederationUsersRequestCopyWithImpl;
   @useResult
-  $Res call({String host, String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String? host,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -74,16 +87,18 @@ class _$FederationUsersRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? host = null,
+    Object? host = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_self.copyWith(
-      host: null == host
+      host: freezed == host
           ? _self.host
           : host // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -92,6 +107,14 @@ class _$FederationUsersRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -104,17 +127,27 @@ class _$FederationUsersRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _FederationUsersRequest implements FederationUsersRequest {
   const _FederationUsersRequest(
-      {required this.host, this.sinceId, this.untilId, this.limit});
+      {this.host,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.limit = 10});
   factory _FederationUsersRequest.fromJson(Map<String, dynamic> json) =>
       _$FederationUsersRequestFromJson(json);
 
   @override
-  final String host;
+  final String? host;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of FederationUsersRequest
@@ -141,16 +174,21 @@ class _FederationUsersRequest implements FederationUsersRequest {
             (identical(other.host, host) || other.host == host) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, host, sinceId, untilId, limit);
+  int get hashCode => Object.hash(
+      runtimeType, host, sinceId, untilId, sinceDate, untilDate, limit);
 
   @override
   String toString() {
-    return 'FederationUsersRequest(host: $host, sinceId: $sinceId, untilId: $untilId, limit: $limit)';
+    return 'FederationUsersRequest(host: $host, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit)';
   }
 }
 
@@ -162,7 +200,13 @@ abstract mixin class _$FederationUsersRequestCopyWith<$Res>
       __$FederationUsersRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String host, String? sinceId, String? untilId, int? limit});
+  $Res call(
+      {String? host,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      int? limit});
 }
 
 /// @nodoc
@@ -178,16 +222,18 @@ class __$FederationUsersRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? host = null,
+    Object? host = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
   }) {
     return _then(_FederationUsersRequest(
-      host: null == host
+      host: freezed == host
           ? _self.host
           : host // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -196,6 +242,14 @@ class __$FederationUsersRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable

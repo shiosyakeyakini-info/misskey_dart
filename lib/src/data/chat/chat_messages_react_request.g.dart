@@ -9,8 +9,8 @@ part of 'chat_messages_react_request.dart';
 _ChatMessagesReactRequest _$ChatMessagesReactRequestFromJson(
         Map<String, dynamic> json) =>
     _ChatMessagesReactRequest(
-      messageId: json['messageId'] as String,
-      reaction: json['reaction'] as String,
+      messageId: json['messageId'] as String?,
+      reaction: json['reaction'] as String?,
     );
 
 Map<String, dynamic> _$ChatMessagesReactRequestToJson(

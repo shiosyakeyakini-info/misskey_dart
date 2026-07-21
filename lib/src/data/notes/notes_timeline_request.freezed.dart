@@ -18,18 +18,14 @@ mixin _$NotesTimelineRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
+  int? get sinceDate;
+  int? get untilDate;
+  bool? get allowPartial;
   bool? get includeMyRenotes;
   bool? get includeRenotedMyNotes;
   bool? get includeLocalRenotes;
   bool? get withFiles;
   bool? get withRenotes;
-  @Deprecated("removed at *")
-  bool? get excludeNsfw;
-  bool? get allowPartial;
 
   /// Create a copy of NotesTimelineRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -54,6 +50,8 @@ mixin _$NotesTimelineRequest {
                 other.sinceDate == sinceDate) &&
             (identical(other.untilDate, untilDate) ||
                 other.untilDate == untilDate) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial) &&
             (identical(other.includeMyRenotes, includeMyRenotes) ||
                 other.includeMyRenotes == includeMyRenotes) &&
             (identical(other.includeRenotedMyNotes, includeRenotedMyNotes) ||
@@ -63,11 +61,7 @@ mixin _$NotesTimelineRequest {
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             (identical(other.withRenotes, withRenotes) ||
-                other.withRenotes == withRenotes) &&
-            (identical(other.excludeNsfw, excludeNsfw) ||
-                other.excludeNsfw == excludeNsfw) &&
-            (identical(other.allowPartial, allowPartial) ||
-                other.allowPartial == allowPartial));
+                other.withRenotes == withRenotes));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -79,17 +73,16 @@ mixin _$NotesTimelineRequest {
       untilId,
       sinceDate,
       untilDate,
+      allowPartial,
       includeMyRenotes,
       includeRenotedMyNotes,
       includeLocalRenotes,
       withFiles,
-      withRenotes,
-      excludeNsfw,
-      allowPartial);
+      withRenotes);
 
   @override
   String toString() {
-    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withRenotes: $withRenotes, excludeNsfw: $excludeNsfw, allowPartial: $allowPartial)';
+    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withRenotes: $withRenotes)';
   }
 }
 
@@ -103,15 +96,14 @@ abstract mixin class $NotesTimelineRequestCopyWith<$Res> {
       {int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      int? sinceDate,
+      int? untilDate,
+      bool? allowPartial,
       bool? includeMyRenotes,
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      bool? withRenotes,
-      @Deprecated("removed at *") bool? excludeNsfw,
-      bool? allowPartial});
+      bool? withRenotes});
 }
 
 /// @nodoc
@@ -132,13 +124,12 @@ class _$NotesTimelineRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? allowPartial = freezed,
     Object? includeMyRenotes = freezed,
     Object? includeRenotedMyNotes = freezed,
     Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
-    Object? excludeNsfw = freezed,
-    Object? allowPartial = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -156,11 +147,15 @@ class _$NotesTimelineRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
+      allowPartial: freezed == allowPartial
+          ? _self.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
       includeMyRenotes: freezed == includeMyRenotes
           ? _self.includeMyRenotes
           : includeMyRenotes // ignore: cast_nullable_to_non_nullable
@@ -181,14 +176,6 @@ class _$NotesTimelineRequestCopyWithImpl<$Res>
           ? _self.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
               as bool?,
-      excludeNsfw: freezed == excludeNsfw
-          ? _self.excludeNsfw
-          : excludeNsfw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowPartial: freezed == allowPartial
-          ? _self.allowPartial
-          : allowPartial // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -197,48 +184,49 @@ class _$NotesTimelineRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesTimelineRequest implements NotesTimelineRequest {
   const _NotesTimelineRequest(
-      {this.limit,
+      {this.limit = 10,
       this.sinceId,
       this.untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate,
-      this.includeMyRenotes,
-      this.includeRenotedMyNotes,
-      this.includeLocalRenotes,
-      this.withFiles,
-      this.withRenotes,
-      @Deprecated("removed at *") this.excludeNsfw,
-      this.allowPartial});
+      this.sinceDate,
+      this.untilDate,
+      this.allowPartial = false,
+      this.includeMyRenotes = true,
+      this.includeRenotedMyNotes = true,
+      this.includeLocalRenotes = true,
+      this.withFiles = false,
+      this.withRenotes = true});
   factory _NotesTimelineRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesTimelineRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? sinceDate;
+  final int? sinceDate;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? untilDate;
+  final int? untilDate;
   @override
+  @JsonKey()
+  final bool? allowPartial;
+  @override
+  @JsonKey()
   final bool? includeMyRenotes;
   @override
+  @JsonKey()
   final bool? includeRenotedMyNotes;
   @override
+  @JsonKey()
   final bool? includeLocalRenotes;
   @override
+  @JsonKey()
   final bool? withFiles;
   @override
+  @JsonKey()
   final bool? withRenotes;
-  @override
-  @Deprecated("removed at *")
-  final bool? excludeNsfw;
-  @override
-  final bool? allowPartial;
 
   /// Create a copy of NotesTimelineRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -268,6 +256,8 @@ class _NotesTimelineRequest implements NotesTimelineRequest {
                 other.sinceDate == sinceDate) &&
             (identical(other.untilDate, untilDate) ||
                 other.untilDate == untilDate) &&
+            (identical(other.allowPartial, allowPartial) ||
+                other.allowPartial == allowPartial) &&
             (identical(other.includeMyRenotes, includeMyRenotes) ||
                 other.includeMyRenotes == includeMyRenotes) &&
             (identical(other.includeRenotedMyNotes, includeRenotedMyNotes) ||
@@ -277,11 +267,7 @@ class _NotesTimelineRequest implements NotesTimelineRequest {
             (identical(other.withFiles, withFiles) ||
                 other.withFiles == withFiles) &&
             (identical(other.withRenotes, withRenotes) ||
-                other.withRenotes == withRenotes) &&
-            (identical(other.excludeNsfw, excludeNsfw) ||
-                other.excludeNsfw == excludeNsfw) &&
-            (identical(other.allowPartial, allowPartial) ||
-                other.allowPartial == allowPartial));
+                other.withRenotes == withRenotes));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -293,17 +279,16 @@ class _NotesTimelineRequest implements NotesTimelineRequest {
       untilId,
       sinceDate,
       untilDate,
+      allowPartial,
       includeMyRenotes,
       includeRenotedMyNotes,
       includeLocalRenotes,
       withFiles,
-      withRenotes,
-      excludeNsfw,
-      allowPartial);
+      withRenotes);
 
   @override
   String toString() {
-    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withRenotes: $withRenotes, excludeNsfw: $excludeNsfw, allowPartial: $allowPartial)';
+    return 'NotesTimelineRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial, includeMyRenotes: $includeMyRenotes, includeRenotedMyNotes: $includeRenotedMyNotes, includeLocalRenotes: $includeLocalRenotes, withFiles: $withFiles, withRenotes: $withRenotes)';
   }
 }
 
@@ -319,15 +304,14 @@ abstract mixin class _$NotesTimelineRequestCopyWith<$Res>
       {int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
+      int? sinceDate,
+      int? untilDate,
+      bool? allowPartial,
       bool? includeMyRenotes,
       bool? includeRenotedMyNotes,
       bool? includeLocalRenotes,
       bool? withFiles,
-      bool? withRenotes,
-      @Deprecated("removed at *") bool? excludeNsfw,
-      bool? allowPartial});
+      bool? withRenotes});
 }
 
 /// @nodoc
@@ -348,13 +332,12 @@ class __$NotesTimelineRequestCopyWithImpl<$Res>
     Object? untilId = freezed,
     Object? sinceDate = freezed,
     Object? untilDate = freezed,
+    Object? allowPartial = freezed,
     Object? includeMyRenotes = freezed,
     Object? includeRenotedMyNotes = freezed,
     Object? includeLocalRenotes = freezed,
     Object? withFiles = freezed,
     Object? withRenotes = freezed,
-    Object? excludeNsfw = freezed,
-    Object? allowPartial = freezed,
   }) {
     return _then(_NotesTimelineRequest(
       limit: freezed == limit
@@ -372,11 +355,15 @@ class __$NotesTimelineRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
+      allowPartial: freezed == allowPartial
+          ? _self.allowPartial
+          : allowPartial // ignore: cast_nullable_to_non_nullable
+              as bool?,
       includeMyRenotes: freezed == includeMyRenotes
           ? _self.includeMyRenotes
           : includeMyRenotes // ignore: cast_nullable_to_non_nullable
@@ -396,14 +383,6 @@ class __$NotesTimelineRequestCopyWithImpl<$Res>
       withRenotes: freezed == withRenotes
           ? _self.withRenotes
           : withRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      excludeNsfw: freezed == excludeNsfw
-          ? _self.excludeNsfw
-          : excludeNsfw // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowPartial: freezed == allowPartial
-          ? _self.allowPartial
-          : allowPartial // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }

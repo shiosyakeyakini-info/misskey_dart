@@ -20,7 +20,7 @@ void main() async {
       test("simple", () async {
         await userClient.notes.create(
           NotesCreateRequest(
-            poll: NotesCreatePollRequest(
+            poll: NotesCreatePoll(
               choices: ["a", "b"],
             ),
           ),
@@ -30,9 +30,10 @@ void main() async {
       test("expiresAt", () async {
         await userClient.notes.create(
           NotesCreateRequest(
-            poll: NotesCreatePollRequest(
+            poll: NotesCreatePoll(
               choices: ["a", "b"],
-              expiresAt: DateTime.now().add(Duration(hours: 1)),
+              expiresAt:
+                  DateTime.now().add(Duration(hours: 1)).millisecondsSinceEpoch,
             ),
           ),
         );
@@ -41,9 +42,9 @@ void main() async {
       test("expiresAfter", () async {
         await userClient.notes.create(
           NotesCreateRequest(
-            poll: NotesCreatePollRequest(
+            poll: NotesCreatePoll(
               choices: ["a", "b"],
-              expiredAfter: Duration(hours: 1),
+              expiredAfter: Duration(hours: 1).inMilliseconds,
             ),
           ),
         );
@@ -60,8 +61,10 @@ void main() async {
     "update",
     () async {
       final note = await userClient.createNote();
-      await userClient.notes
-          .update(NotesUpdateRequest(noteId: note.id, text: "updated"));
+      await userClient.apiService.post("notes/update", {
+        "noteId": note.id,
+        "text": "updated",
+      });
       final updated =
           await userClient.notes.show(NotesShowRequest(noteId: note.id));
       expect(updated.text, "updated");
@@ -108,7 +111,7 @@ void main() async {
     final list = await userClient.users.list
         .create(UsersListsCreateRequest(name: "test"));
     await userClient.notes
-        .userListTimeline(UserListTimelineRequest(listId: list.id));
+        .userListTimeline(NotesUserListTimelineRequest(listId: list.id));
   });
 
   test("state", () async {
@@ -134,7 +137,7 @@ void main() async {
     final note = await userClient.createNote();
     final renote = await userClient.createNote(renoteId: note.id);
     final response =
-        await userClient.notes.renotes(NotesRenoteRequest(noteId: note.id));
+        await userClient.notes.renotes(NotesRenotesRequest(noteId: note.id));
     expect(response.map((e) => e.id), contains(renote.id));
   });
 

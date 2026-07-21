@@ -12,11 +12,9 @@ _DriveFolder _$DriveFolderFromJson(Map<String, dynamic> json) => _DriveFolder(
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       name: json['name'] as String,
       parentId: json['parentId'] as String?,
-      parent: json['parent'] == null
-          ? null
-          : DriveFolder.fromJson(json['parent'] as Map<String, dynamic>),
-      foldersCount: (json['foldersCount'] as num?)?.toInt(),
-      filesCount: (json['filesCount'] as num?)?.toInt(),
+      foldersCount: (json['foldersCount'] as num?)?.toDouble(),
+      filesCount: (json['filesCount'] as num?)?.toDouble(),
+      parent: json['parent'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$DriveFolderToJson(_DriveFolder instance) =>
@@ -25,7 +23,7 @@ Map<String, dynamic> _$DriveFolderToJson(_DriveFolder instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'name': instance.name,
       'parentId': instance.parentId,
-      'parent': instance.parent?.toJson(),
       'foldersCount': instance.foldersCount,
       'filesCount': instance.filesCount,
+      'parent': instance.parent,
     };

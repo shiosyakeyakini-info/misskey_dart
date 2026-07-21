@@ -9,12 +9,13 @@ part of 'notes_mentions_request.dart';
 _NotesMentionsRequest _$NotesMentionsRequestFromJson(
         Map<String, dynamic> json) =>
     _NotesMentionsRequest(
-      following: json['following'] as bool?,
-      limit: (json['limit'] as num?)?.toInt(),
+      following: json['following'] as bool? ?? false,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      visibility:
-          $enumDecodeNullable(_$NoteVisibilityEnumMap, json['visibility']),
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      visibility: json['visibility'] as String?,
     );
 
 Map<String, dynamic> _$NotesMentionsRequestToJson(
@@ -24,12 +25,7 @@ Map<String, dynamic> _$NotesMentionsRequestToJson(
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'visibility': _$NoteVisibilityEnumMap[instance.visibility],
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
+      'visibility': instance.visibility,
     };
-
-const _$NoteVisibilityEnumMap = {
-  NoteVisibility.public: 'public',
-  NoteVisibility.home: 'home',
-  NoteVisibility.followers: 'followers',
-  NoteVisibility.specified: 'specified',
-};

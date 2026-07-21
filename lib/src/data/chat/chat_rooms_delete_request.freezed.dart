@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChatRoomsDeleteRequest {
-  String get roomId;
+  String? get roomId;
 
   /// Create a copy of ChatRoomsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $ChatRoomsDeleteRequestCopyWith<$Res> {
           $Res Function(ChatRoomsDeleteRequest) _then) =
       _$ChatRoomsDeleteRequestCopyWithImpl;
   @useResult
-  $Res call({String roomId});
+  $Res call({String? roomId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$ChatRoomsDeleteRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
   }) {
     return _then(_self.copyWith(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$ChatRoomsDeleteRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _ChatRoomsDeleteRequest implements ChatRoomsDeleteRequest {
-  const _ChatRoomsDeleteRequest({required this.roomId});
+  const _ChatRoomsDeleteRequest({this.roomId});
   factory _ChatRoomsDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsDeleteRequestFromJson(json);
 
   @override
-  final String roomId;
+  final String? roomId;
 
   /// Create a copy of ChatRoomsDeleteRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -131,7 +131,7 @@ abstract mixin class _$ChatRoomsDeleteRequestCopyWith<$Res>
       __$ChatRoomsDeleteRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roomId});
+  $Res call({String? roomId});
 }
 
 /// @nodoc
@@ -147,13 +147,13 @@ class __$ChatRoomsDeleteRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roomId = null,
+    Object? roomId = freezed,
   }) {
     return _then(_ChatRoomsDeleteRequest(
-      roomId: null == roomId
+      roomId: freezed == roomId
           ? _self.roomId
           : roomId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

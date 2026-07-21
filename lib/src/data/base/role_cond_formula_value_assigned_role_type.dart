@@ -1,0 +1,4 @@
+enum RoleCondFormulaValueAssignedRoleType {
+  roleAssignedTo,
+  unknown,
+}

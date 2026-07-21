@@ -15,14 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AntennasNotesRequest {
-  String get antennaId;
+  String? get antennaId;
   int? get limit;
   String? get sinceId;
   String? get untilId;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get sinceDate;
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  DateTime? get untilDate;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of AntennasNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -69,12 +67,12 @@ abstract mixin class $AntennasNotesRequestCopyWith<$Res> {
       _$AntennasNotesRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String antennaId,
+      {String? antennaId,
       int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -90,7 +88,7 @@ class _$AntennasNotesRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? antennaId = null,
+    Object? antennaId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -98,10 +96,10 @@ class _$AntennasNotesRequestCopyWithImpl<$Res>
     Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
-      antennaId: null == antennaId
+      antennaId: freezed == antennaId
           ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -117,11 +115,11 @@ class _$AntennasNotesRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }
@@ -130,29 +128,28 @@ class _$AntennasNotesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _AntennasNotesRequest implements AntennasNotesRequest {
   const _AntennasNotesRequest(
-      {required this.antennaId,
-      this.limit,
+      {this.antennaId,
+      this.limit = 10,
       this.sinceId,
       this.untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() this.untilDate});
+      this.sinceDate,
+      this.untilDate});
   factory _AntennasNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$AntennasNotesRequestFromJson(json);
 
   @override
-  final String antennaId;
+  final String? antennaId;
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? sinceDate;
+  final int? sinceDate;
   @override
-  @EpocTimeDateTimeConverter.withMilliSeconds()
-  final DateTime? untilDate;
+  final int? untilDate;
 
   /// Create a copy of AntennasNotesRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -206,12 +203,12 @@ abstract mixin class _$AntennasNotesRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String antennaId,
+      {String? antennaId,
       int? limit,
       String? sinceId,
       String? untilId,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
-      @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate});
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -227,7 +224,7 @@ class __$AntennasNotesRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? antennaId = null,
+    Object? antennaId = freezed,
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
@@ -235,10 +232,10 @@ class __$AntennasNotesRequestCopyWithImpl<$Res>
     Object? untilDate = freezed,
   }) {
     return _then(_AntennasNotesRequest(
-      antennaId: null == antennaId
+      antennaId: freezed == antennaId
           ? _self.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -254,11 +251,11 @@ class __$AntennasNotesRequestCopyWithImpl<$Res>
       sinceDate: freezed == sinceDate
           ? _self.sinceDate
           : sinceDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
       untilDate: freezed == untilDate
           ? _self.untilDate
           : untilDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as int?,
     ));
   }
 }

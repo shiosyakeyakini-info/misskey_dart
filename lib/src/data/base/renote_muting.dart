@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'renote_muting.freezed.dart';
 part 'renote_muting.g.dart';
@@ -14,6 +13,5 @@ abstract class RenoteMuting with _$RenoteMuting {
     required UserDetailedNotMe mutee,
   }) = _RenoteMuting;
 
-  factory RenoteMuting.fromJson(Map<String, dynamic> json) =>
-      _$RenoteMutingFromJson(json);
+  factory RenoteMuting.fromJson(Map<String, Object?> json) => _$RenoteMutingFromJson(json);
 }

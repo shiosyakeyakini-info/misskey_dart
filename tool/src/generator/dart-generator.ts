@@ -1,0 +1,410 @@
+/**
+ * Main orchestrator for Dart code generation.
+ * Coordinates all sub-generators to produce the final output.
+ */
+
+import { writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { dirname, resolve, join } from "node:path";
+import type {
+  GeneratedFile,
+  OverrideConfig,
+  EndpointInfo,
+  ApiModuleInfo,
+} from "../config/types.js";
+import type { ParsedApi } from "../schema/openapi-parser.js";
+import { collectInlineSchemas } from "../schema/openapi-parser.js";
+import { isManualFile } from "../config/config-loader.js";
+import { generateEntityFile } from "./entity-generator.js";
+import { generateEnumFile } from "./enum-generator.js";
+import { generateUnionTypeFile } from "./union-type-generator.js";
+import { generateRequestFile } from "./request-generator.js";
+import { generateResponseFile } from "./response-generator.js";
+import { generateApiModuleFile } from "./api-module-generator.js";
+import { generateMainClassFile } from "./main-class-generator.js";
+import { generateExportFile } from "./export-generator.js";
+import {
+  classNameToFileName,
+  pathToRequestClassName,
+  pathToResponseClassName,
+  pathPrefixToModuleClassName,
+  pathToModuleFieldName,
+} from "../utils/naming.js";
+
+/**
+ * Generate all Dart files from the parsed API.
+ */
+export function generateAll(
+  parsed: ParsedApi,
+  config: OverrideConfig,
+  outputDir: string,
+  projectSrcDir?: string
+): GeneratedFile[] {
+  const files: GeneratedFile[] = [];
+
+  // 1. Generate entity classes from component schemas
+  console.log("  Generating entities...");
+  const entityFiles = generateEntities(parsed, config, outputDir);
+  files.push(...entityFiles);
+
+  // 2. Generate request/response types from endpoints
+  console.log("  Generating request/response types...");
+  const endpointFiles = generateEndpointTypes(parsed, config, outputDir);
+  files.push(...endpointFiles);
+
+  // 3. Generate API modules
+  console.log("  Generating API modules...");
+  const moduleFiles = generateApiModules(parsed, config, outputDir);
+  files.push(...moduleFiles);
+
+  // 4. Generate main Misskey class
+  console.log("  Generating main class...");
+  const mainFile = generateMainClass(parsed, config, outputDir);
+  if (mainFile) files.push(mainFile);
+
+  // Write all files (overwrite by default, use --no-overwrite to skip existing)
+  const noOverwrite = process.argv.includes("--no-overwrite");
+  let written = 0;
+
+  for (const file of files) {
+    const fullPath = file.path;
+    if (noOverwrite && existsSync(fullPath)) {
+      continue;
+    }
+
+    mkdirSync(dirname(fullPath), { recursive: true });
+    writeFileSync(fullPath, file.content, "utf-8");
+    written++;
+  }
+  console.log(`  Wrote ${written} files`);
+
+  // 5. Generate export file (always written - merges with existing)
+  console.log("  Generating exports...");
+  const exportFile = generateExports(files, config, outputDir, projectSrcDir);
+  if (exportFile) {
+    mkdirSync(dirname(exportFile.path), { recursive: true });
+    writeFileSync(exportFile.path, exportFile.content, "utf-8");
+    files.push(exportFile);
+  }
+
+  return files;
+}
+
+/**
+ * Collect component schema names that are used as union (oneOf) variants.
+ * These should not be generated as separate files since they become
+ * factory constructors within the sealed class.
+ */
+function collectUnionVariantSchemas(parsed: ParsedApi): Set<string> {
+  const variantNames = new Set<string>();
+  for (const [, schema] of parsed.componentSchemas) {
+    if (schema.type === "union" && schema.oneOf) {
+      for (const variant of schema.oneOf) {
+        if (variant.type === "ref" && variant.refTarget) {
+          variantNames.add(variant.refTarget);
+        }
+      }
+    }
+  }
+  return variantNames;
+}
+
+/**
+ * Generate entity classes from component schemas.
+ */
+function generateEntities(
+  parsed: ParsedApi,
+  config: OverrideConfig,
+  outputDir: string
+): GeneratedFile[] {
+  const files: GeneratedFile[] = [];
+
+  // Collect schemas that are union variants (should be inlined in sealed class)
+  const unionVariantSchemas = collectUnionVariantSchemas(parsed);
+
+  for (const [originalName, schema] of parsed.componentSchemas) {
+    // Use the (possibly overridden) schema name for file path and class name
+    const dartName = schema.name;
+    const filePath = join(outputDir, "data", "base", `${classNameToFileName(dartName)}.dart`);
+
+    // Skip manual files
+    if (isManualFile(filePath, config)) continue;
+
+    // Skip schemas that are used as union variants
+    if (unionVariantSchemas.has(originalName)) continue;
+
+    // Route to appropriate generator based on schema type
+    const typeOverride = config.type_structure_overrides?.[originalName]
+      ?? config.type_structure_overrides?.[dartName];
+
+    let content: string | null = null;
+
+    // Skip schemas with converter strategy (handled by manual converters)
+    if (typeOverride?.strategy === "converter") continue;
+
+    if (schema.type === "enum") {
+      content = generateEnumFile(dartName, schema, config);
+    } else if (schema.type === "union") {
+      if (typeOverride?.strategy === "hierarchy") {
+        content = generateEntityFile(dartName, schema, config, parsed);
+      } else {
+        content = generateUnionTypeFile(dartName, schema, config, parsed, typeOverride);
+      }
+    } else if (schema.allOf) {
+      content = generateEntityFile(dartName, schema, config, parsed);
+    } else if (schema.type === "object") {
+      content = generateEntityFile(dartName, schema, config, parsed);
+    }
+
+    if (content) {
+      files.push({ path: filePath, content });
+    }
+  }
+
+  // Also generate inline schemas (objects and enums)
+  const inlineSchemas = collectInlineSchemas(parsed);
+  for (const [name, schema] of inlineSchemas) {
+    const filePath = join(outputDir, "data", "base", `${classNameToFileName(name)}.dart`);
+    if (isManualFile(filePath, config)) {
+      if (["NoteVisibility", "OnlineStatus", "NotificationType", "UsersSortType", "HashtagsListSortType"].includes(name)) {
+        console.log(`  [DEBUG] SKIPPED (manual_files): ${name} → ${filePath}`);
+      }
+      continue;
+    }
+
+    let content: string | null = null;
+    if (schema.type === "enum") {
+      content = generateEnumFile(name, schema, config);
+    } else {
+      content = generateEntityFile(name, schema, config, parsed);
+    }
+    if (content) {
+      files.push({ path: filePath, content });
+    }
+  }
+
+  return files;
+}
+
+/**
+ * Generate request and response types from endpoints.
+ */
+function generateEndpointTypes(
+  parsed: ParsedApi,
+  config: OverrideConfig,
+  outputDir: string
+): GeneratedFile[] {
+  const files: GeneratedFile[] = [];
+
+  for (const endpoint of parsed.endpoints) {
+    const pathSegments = endpoint.path.replace(/^\//, "").split("/");
+    const subDir = pathSegments.length > 1 ? pathSegments[0] : "base";
+
+    // Request type
+    if (endpoint.hasRequestBody && endpoint.requestSchema) {
+      const className = pathToRequestClassName(endpoint.path);
+      const filePath = join(
+        outputDir,
+        "data",
+        subDir,
+        `${classNameToFileName(className)}.dart`
+      );
+
+      if (!isManualFile(filePath, config)) {
+        const content = generateRequestFile(
+          className,
+          endpoint.requestSchema,
+          config,
+          parsed
+        );
+        if (content) files.push({ path: filePath, content });
+      }
+    }
+
+    // Response type (only for inline response objects)
+    if (
+      endpoint.responseSchema &&
+      endpoint.responseType === "single" &&
+      endpoint.responseSchema.type === "object" &&
+      endpoint.responseSchema.properties.size > 0 &&
+      !endpoint.responseSchema.refTarget
+    ) {
+      const className = pathToResponseClassName(endpoint.path);
+      const filePath = join(
+        outputDir,
+        "data",
+        subDir,
+        `${classNameToFileName(className)}.dart`
+      );
+
+      if (!isManualFile(filePath, config)) {
+        const content = generateResponseFile(
+          className,
+          endpoint.responseSchema,
+          config,
+          parsed
+        );
+        if (content) files.push({ path: filePath, content });
+      }
+    }
+  }
+
+  return files;
+}
+
+/**
+ * Build the API module tree from endpoints.
+ */
+export function buildModuleTree(
+  endpoints: EndpointInfo[],
+  config: OverrideConfig
+): ApiModuleInfo[] {
+  // Group endpoints by their first path segment
+  const groups = new Map<string, EndpointInfo[]>();
+
+  for (const ep of endpoints) {
+    const segments = ep.path.replace(/^\//, "").split("/");
+    const topLevel = segments[0];
+    if (!groups.has(topLevel)) {
+      groups.set(topLevel, []);
+    }
+    groups.get(topLevel)!.push(ep);
+  }
+
+  const modules: ApiModuleInfo[] = [];
+
+  for (const [prefix, eps] of groups) {
+    const module = buildModuleFromEndpoints(prefix, eps, config);
+    modules.push(module);
+  }
+
+  return modules;
+}
+
+function buildModuleFromEndpoints(
+  pathPrefix: string,
+  endpoints: EndpointInfo[],
+  config: OverrideConfig
+): ApiModuleInfo {
+  // Separate direct endpoints from sub-module endpoints
+  const direct: EndpointInfo[] = [];
+  const subGroups = new Map<string, EndpointInfo[]>();
+
+  for (const ep of endpoints) {
+    const relPath = ep.path
+      .replace(/^\//, "")
+      .slice(pathPrefix.length)
+      .replace(/^\//, "");
+    const segments = relPath.split("/").filter(Boolean);
+
+    if (segments.length <= 1) {
+      // Check if this endpoint's method name would collide with a sub-module name.
+      // If so, route the endpoint into that sub-module instead of keeping it at the parent level.
+      const segName = segments[0];
+      if (segName) {
+        const subKey = `${pathPrefix}/${segName}`;
+        // We need to check if other endpoints exist with this sub-prefix
+        const hasSubEndpoints = endpoints.some((other) => {
+          if (other === ep) return false;
+          const otherRel = other.path
+            .replace(/^\//, "")
+            .slice(pathPrefix.length)
+            .replace(/^\//, "");
+          const otherSegs = otherRel.split("/").filter(Boolean);
+          return otherSegs.length > 1 && otherSegs[0] === segName;
+        });
+        if (hasSubEndpoints) {
+          if (!subGroups.has(subKey)) {
+            subGroups.set(subKey, []);
+          }
+          subGroups.get(subKey)!.push(ep);
+          continue;
+        }
+      }
+      direct.push(ep);
+    } else {
+      const subPrefix = segments[0];
+      const fullSubPrefix = `${pathPrefix}/${subPrefix}`;
+      if (!subGroups.has(fullSubPrefix)) {
+        subGroups.set(fullSubPrefix, []);
+      }
+      subGroups.get(fullSubPrefix)!.push(ep);
+    }
+  }
+
+  const subModules: ApiModuleInfo[] = [];
+  for (const [subPrefix, subEps] of subGroups) {
+    subModules.push(buildModuleFromEndpoints(subPrefix, subEps, config));
+  }
+
+  // Apply module field name override if configured
+  const moduleOverride = config.module_overrides?.[pathPrefix];
+  const fieldName = moduleOverride?.field_name ?? pathToModuleFieldName(pathPrefix);
+
+  return {
+    name: pathPrefixToModuleClassName(pathPrefix),
+    dartName: pathPrefixToModuleClassName(pathPrefix),
+    fieldName,
+    pathPrefix,
+    endpoints: direct,
+    subModules,
+  };
+}
+
+/**
+ * Generate API module files.
+ */
+function generateApiModules(
+  parsed: ParsedApi,
+  config: OverrideConfig,
+  outputDir: string
+): GeneratedFile[] {
+  const files: GeneratedFile[] = [];
+  const modules = buildModuleTree(parsed.endpoints, config);
+
+  for (const mod of modules) {
+    const filePath = join(
+      outputDir,
+      `misskey_${classNameToFileName(mod.fieldName)}.dart`
+    );
+    if (isManualFile(filePath, config)) continue;
+
+    const content = generateApiModuleFile(mod, config, parsed);
+    if (content) files.push({ path: filePath, content });
+  }
+
+  return files;
+}
+
+/**
+ * Generate main Misskey class.
+ */
+function generateMainClass(
+  parsed: ParsedApi,
+  config: OverrideConfig,
+  outputDir: string
+): GeneratedFile | null {
+  const filePath = join(outputDir, "misskey_dart_base.dart");
+  if (isManualFile(filePath, config)) return null;
+
+  const modules = buildModuleTree(parsed.endpoints, config);
+  const content = generateMainClassFile(modules, config, parsed);
+  if (!content) return null;
+
+  return { path: filePath, content };
+}
+
+/**
+ * Generate export file.
+ */
+function generateExports(
+  generatedFiles: GeneratedFile[],
+  config: OverrideConfig,
+  outputDir: string,
+  projectSrcDir?: string
+): GeneratedFile | null {
+  const exportPath = resolve(outputDir, "..", "misskey_dart.dart");
+  const content = generateExportFile(generatedFiles, config, outputDir, projectSrcDir);
+  if (!content) return null;
+  return { path: exportPath, content };
+}
+

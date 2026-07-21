@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/misskey_dart.dart';
-import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'muting.freezed.dart';
 part 'muting.g.dart';
@@ -15,5 +14,5 @@ abstract class Muting with _$Muting {
     required UserDetailedNotMe mutee,
   }) = _Muting;
 
-  factory Muting.fromJson(Map<String, dynamic> json) => _$MutingFromJson(json);
+  factory Muting.fromJson(Map<String, Object?> json) => _$MutingFromJson(json);
 }

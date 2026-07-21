@@ -19,8 +19,8 @@ mixin _$HashtagsListRequest {
   bool? get attachedToUserOnly;
   bool? get attachedToLocalUserOnly;
   bool? get attachedToRemoteUserOnly;
-  @HashtagsListSortConverter()
-  HashtagsListSortType get sort;
+  @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
+  HashtagsListSortType? get sort;
 
   /// Create a copy of HashtagsListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -72,7 +72,8 @@ abstract mixin class $HashtagsListRequestCopyWith<$Res> {
       bool? attachedToUserOnly,
       bool? attachedToLocalUserOnly,
       bool? attachedToRemoteUserOnly,
-      @HashtagsListSortConverter() HashtagsListSortType sort});
+      @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
+      HashtagsListSortType? sort});
 }
 
 /// @nodoc
@@ -92,7 +93,7 @@ class _$HashtagsListRequestCopyWithImpl<$Res>
     Object? attachedToUserOnly = freezed,
     Object? attachedToLocalUserOnly = freezed,
     Object? attachedToRemoteUserOnly = freezed,
-    Object? sort = null,
+    Object? sort = freezed,
   }) {
     return _then(_self.copyWith(
       limit: freezed == limit
@@ -111,10 +112,10 @@ class _$HashtagsListRequestCopyWithImpl<$Res>
           ? _self.attachedToRemoteUserOnly
           : attachedToRemoteUserOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
-      sort: null == sort
+      sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as HashtagsListSortType,
+              as HashtagsListSortType?,
     ));
   }
 }
@@ -123,25 +124,29 @@ class _$HashtagsListRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _HashtagsListRequest implements HashtagsListRequest {
   const _HashtagsListRequest(
-      {this.limit,
-      this.attachedToUserOnly,
-      this.attachedToLocalUserOnly,
-      this.attachedToRemoteUserOnly,
-      @HashtagsListSortConverter() required this.sort});
+      {this.limit = 10,
+      this.attachedToUserOnly = false,
+      this.attachedToLocalUserOnly = false,
+      this.attachedToRemoteUserOnly = false,
+      @JsonKey(unknownEnumValue: HashtagsListSortType.unknown) this.sort});
   factory _HashtagsListRequest.fromJson(Map<String, dynamic> json) =>
       _$HashtagsListRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
+  @JsonKey()
   final bool? attachedToUserOnly;
   @override
+  @JsonKey()
   final bool? attachedToLocalUserOnly;
   @override
+  @JsonKey()
   final bool? attachedToRemoteUserOnly;
   @override
-  @HashtagsListSortConverter()
-  final HashtagsListSortType sort;
+  @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
+  final HashtagsListSortType? sort;
 
   /// Create a copy of HashtagsListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -200,7 +205,8 @@ abstract mixin class _$HashtagsListRequestCopyWith<$Res>
       bool? attachedToUserOnly,
       bool? attachedToLocalUserOnly,
       bool? attachedToRemoteUserOnly,
-      @HashtagsListSortConverter() HashtagsListSortType sort});
+      @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
+      HashtagsListSortType? sort});
 }
 
 /// @nodoc
@@ -220,7 +226,7 @@ class __$HashtagsListRequestCopyWithImpl<$Res>
     Object? attachedToUserOnly = freezed,
     Object? attachedToLocalUserOnly = freezed,
     Object? attachedToRemoteUserOnly = freezed,
-    Object? sort = null,
+    Object? sort = freezed,
   }) {
     return _then(_HashtagsListRequest(
       limit: freezed == limit
@@ -239,10 +245,10 @@ class __$HashtagsListRequestCopyWithImpl<$Res>
           ? _self.attachedToRemoteUserOnly
           : attachedToRemoteUserOnly // ignore: cast_nullable_to_non_nullable
               as bool?,
-      sort: null == sort
+      sort: freezed == sort
           ? _self.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as HashtagsListSortType,
+              as HashtagsListSortType?,
     ));
   }
 }

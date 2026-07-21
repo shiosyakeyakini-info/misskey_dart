@@ -15,12 +15,15 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersFollowingRequest {
-  String get userId;
+  String? get userId;
+  String? get username;
+  String? get host;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   int? get limit;
-  @DateTimeConverter()
-  DateTime? get birthday;
+  String? get birthday;
 
   /// Create a copy of UsersFollowingRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -39,8 +42,15 @@ mixin _$UsersFollowingRequest {
         (other.runtimeType == runtimeType &&
             other is UsersFollowingRequest &&
             (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.birthday, birthday) ||
                 other.birthday == birthday));
@@ -48,12 +58,12 @@ mixin _$UsersFollowingRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, userId, sinceId, untilId, limit, birthday);
+  int get hashCode => Object.hash(runtimeType, userId, username, host, sinceId,
+      untilId, sinceDate, untilDate, limit, birthday);
 
   @override
   String toString() {
-    return 'UsersFollowingRequest(userId: $userId, sinceId: $sinceId, untilId: $untilId, limit: $limit, birthday: $birthday)';
+    return 'UsersFollowingRequest(userId: $userId, username: $username, host: $host, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, birthday: $birthday)';
   }
 }
 
@@ -64,11 +74,15 @@ abstract mixin class $UsersFollowingRequestCopyWith<$Res> {
       _$UsersFollowingRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String userId,
+      {String? userId,
+      String? username,
+      String? host,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       int? limit,
-      @DateTimeConverter() DateTime? birthday});
+      String? birthday});
 }
 
 /// @nodoc
@@ -84,17 +98,29 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
+    Object? username = freezed,
+    Object? host = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
     Object? birthday = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -103,6 +129,14 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -110,7 +144,7 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
       birthday: freezed == birthday
           ? _self.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
     ));
   }
 }
@@ -119,25 +153,37 @@ class _$UsersFollowingRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _UsersFollowingRequest implements UsersFollowingRequest {
   const _UsersFollowingRequest(
-      {required this.userId,
+      {this.userId,
+      this.username,
+      this.host,
       this.sinceId,
       this.untilId,
-      this.limit,
-      @DateTimeConverter() this.birthday});
+      this.sinceDate,
+      this.untilDate,
+      this.limit = 10,
+      this.birthday});
   factory _UsersFollowingRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersFollowingRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
+  @override
+  final String? username;
+  @override
+  final String? host;
   @override
   final String? sinceId;
   @override
   final String? untilId;
   @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
+  @override
+  @JsonKey()
   final int? limit;
   @override
-  @DateTimeConverter()
-  final DateTime? birthday;
+  final String? birthday;
 
   /// Create a copy of UsersFollowingRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -161,8 +207,15 @@ class _UsersFollowingRequest implements UsersFollowingRequest {
         (other.runtimeType == runtimeType &&
             other is _UsersFollowingRequest &&
             (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.host, host) || other.host == host) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.birthday, birthday) ||
                 other.birthday == birthday));
@@ -170,12 +223,12 @@ class _UsersFollowingRequest implements UsersFollowingRequest {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, userId, sinceId, untilId, limit, birthday);
+  int get hashCode => Object.hash(runtimeType, userId, username, host, sinceId,
+      untilId, sinceDate, untilDate, limit, birthday);
 
   @override
   String toString() {
-    return 'UsersFollowingRequest(userId: $userId, sinceId: $sinceId, untilId: $untilId, limit: $limit, birthday: $birthday)';
+    return 'UsersFollowingRequest(userId: $userId, username: $username, host: $host, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, birthday: $birthday)';
   }
 }
 
@@ -188,11 +241,15 @@ abstract mixin class _$UsersFollowingRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String userId,
+      {String? userId,
+      String? username,
+      String? host,
       String? sinceId,
       String? untilId,
+      int? sinceDate,
+      int? untilDate,
       int? limit,
-      @DateTimeConverter() DateTime? birthday});
+      String? birthday});
 }
 
 /// @nodoc
@@ -208,17 +265,29 @@ class __$UsersFollowingRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
+    Object? username = freezed,
+    Object? host = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? limit = freezed,
     Object? birthday = freezed,
   }) {
     return _then(_UsersFollowingRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
       sinceId: freezed == sinceId
           ? _self.sinceId
           : sinceId // ignore: cast_nullable_to_non_nullable
@@ -227,6 +296,14 @@ class __$UsersFollowingRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -234,7 +311,7 @@ class __$UsersFollowingRequestCopyWithImpl<$Res>
       birthday: freezed == birthday
           ? _self.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
     ));
   }
 }

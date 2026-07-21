@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ClipsUpdateRequest {
-  String get clipId;
-  String get name;
+  String? get clipId;
+  String? get name;
   bool? get isPublic;
   String? get description;
 
@@ -61,7 +61,8 @@ abstract mixin class $ClipsUpdateRequestCopyWith<$Res> {
           ClipsUpdateRequest value, $Res Function(ClipsUpdateRequest) _then) =
       _$ClipsUpdateRequestCopyWithImpl;
   @useResult
-  $Res call({String clipId, String name, bool? isPublic, String? description});
+  $Res call(
+      {String? clipId, String? name, bool? isPublic, String? description});
 }
 
 /// @nodoc
@@ -77,20 +78,20 @@ class _$ClipsUpdateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clipId = null,
-    Object? name = null,
+    Object? clipId = freezed,
+    Object? name = freezed,
     Object? isPublic = freezed,
     Object? description = freezed,
   }) {
     return _then(_self.copyWith(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isPublic: freezed == isPublic
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
@@ -107,17 +108,14 @@ class _$ClipsUpdateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ClipsUpdateRequest implements ClipsUpdateRequest {
   const _ClipsUpdateRequest(
-      {required this.clipId,
-      required this.name,
-      this.isPublic,
-      this.description});
+      {this.clipId, this.name, this.isPublic, this.description});
   factory _ClipsUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsUpdateRequestFromJson(json);
 
   @override
-  final String clipId;
+  final String? clipId;
   @override
-  final String name;
+  final String? name;
   @override
   final bool? isPublic;
   @override
@@ -170,7 +168,8 @@ abstract mixin class _$ClipsUpdateRequestCopyWith<$Res>
       __$ClipsUpdateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String clipId, String name, bool? isPublic, String? description});
+  $Res call(
+      {String? clipId, String? name, bool? isPublic, String? description});
 }
 
 /// @nodoc
@@ -186,20 +185,20 @@ class __$ClipsUpdateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? clipId = null,
-    Object? name = null,
+    Object? clipId = freezed,
+    Object? name = freezed,
     Object? isPublic = freezed,
     Object? description = freezed,
   }) {
     return _then(_ClipsUpdateRequest(
-      clipId: null == clipId
+      clipId: freezed == clipId
           ? _self.clipId
           : clipId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isPublic: freezed == isPublic
           ? _self.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable

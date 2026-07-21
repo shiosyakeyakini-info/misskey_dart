@@ -18,6 +18,8 @@ mixin _$DriveStreamRequest {
   int? get limit;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
   String? get type;
 
   /// Create a copy of DriveStreamRequest
@@ -39,16 +41,21 @@ mixin _$DriveStreamRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId, type);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, type);
 
   @override
   String toString() {
-    return 'DriveStreamRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, type: $type)';
+    return 'DriveStreamRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, type: $type)';
   }
 }
 
@@ -58,7 +65,13 @@ abstract mixin class $DriveStreamRequestCopyWith<$Res> {
           DriveStreamRequest value, $Res Function(DriveStreamRequest) _then) =
       _$DriveStreamRequestCopyWithImpl;
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId, String? type});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? type});
 }
 
 /// @nodoc
@@ -77,6 +90,8 @@ class _$DriveStreamRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? type = freezed,
   }) {
     return _then(_self.copyWith(
@@ -92,6 +107,14 @@ class _$DriveStreamRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       type: freezed == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -104,16 +127,26 @@ class _$DriveStreamRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _DriveStreamRequest implements DriveStreamRequest {
   const _DriveStreamRequest(
-      {this.limit, this.sinceId, this.untilId, this.type});
+      {this.limit = 10,
+      this.sinceId,
+      this.untilId,
+      this.sinceDate,
+      this.untilDate,
+      this.type});
   factory _DriveStreamRequest.fromJson(Map<String, dynamic> json) =>
       _$DriveStreamRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? limit;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
   @override
   final String? type;
 
@@ -140,16 +173,21 @@ class _DriveStreamRequest implements DriveStreamRequest {
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
             (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId, type);
+  int get hashCode => Object.hash(
+      runtimeType, limit, sinceId, untilId, sinceDate, untilDate, type);
 
   @override
   String toString() {
-    return 'DriveStreamRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, type: $type)';
+    return 'DriveStreamRequest(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, type: $type)';
   }
 }
 
@@ -161,7 +199,13 @@ abstract mixin class _$DriveStreamRequestCopyWith<$Res>
       __$DriveStreamRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({int? limit, String? sinceId, String? untilId, String? type});
+  $Res call(
+      {int? limit,
+      String? sinceId,
+      String? untilId,
+      int? sinceDate,
+      int? untilDate,
+      String? type});
 }
 
 /// @nodoc
@@ -180,6 +224,8 @@ class __$DriveStreamRequestCopyWithImpl<$Res>
     Object? limit = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
     Object? type = freezed,
   }) {
     return _then(_DriveStreamRequest(
@@ -195,6 +241,14 @@ class __$DriveStreamRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
       type: freezed == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FollowingInvalidateRequest {
-  String get userId;
+  String? get userId;
 
   /// Create a copy of FollowingInvalidateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +53,7 @@ abstract mixin class $FollowingInvalidateRequestCopyWith<$Res> {
           $Res Function(FollowingInvalidateRequest) _then) =
       _$FollowingInvalidateRequestCopyWithImpl;
   @useResult
-  $Res call({String userId});
+  $Res call({String? userId});
 }
 
 /// @nodoc
@@ -69,13 +69,13 @@ class _$FollowingInvalidateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_self.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -83,12 +83,12 @@ class _$FollowingInvalidateRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FollowingInvalidateRequest implements FollowingInvalidateRequest {
-  const _FollowingInvalidateRequest({required this.userId});
+  const _FollowingInvalidateRequest({this.userId});
   factory _FollowingInvalidateRequest.fromJson(Map<String, dynamic> json) =>
       _$FollowingInvalidateRequestFromJson(json);
 
   @override
-  final String userId;
+  final String? userId;
 
   /// Create a copy of FollowingInvalidateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -133,7 +133,7 @@ abstract mixin class _$FollowingInvalidateRequestCopyWith<$Res>
       __$FollowingInvalidateRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String userId});
+  $Res call({String? userId});
 }
 
 /// @nodoc
@@ -149,13 +149,13 @@ class __$FollowingInvalidateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_FollowingInvalidateRequest(
-      userId: null == userId
+      userId: freezed == userId
           ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

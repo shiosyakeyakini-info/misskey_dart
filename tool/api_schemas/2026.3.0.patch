@@ -1,0 +1,655 @@
+--- /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-6hcWOn/prev.json	2026-03-28 18:44:12
++++ /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-6hcWOn/new.json	2026-03-28 18:44:12
+@@ -1,7 +1,7 @@
+ {
+   "openapi": "3.1.0",
+   "info": {
+-    "version": "2025.12.2",
++    "version": "2026.3.0",
+     "title": "Misskey API"
+   },
+   "externalDocs": {
+@@ -2904,13 +2904,21 @@
+                         "type": "string"
+                       },
+                       "icon": {
+-                        "type": [
+-                          "string",
+-                          "null"
++                        "type": "string",
++                        "enum": [
++                          "info",
++                          "warning",
++                          "error",
++                          "success"
+                         ]
+                       },
+                       "display": {
+-                        "type": "string"
++                        "type": "string",
++                        "enum": [
++                          "normal",
++                          "banner",
++                          "dialog"
++                        ]
+                       },
+                       "isActive": {
+                         "type": "boolean"
+@@ -6703,46 +6711,7 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+-                    "properties": {
+-                      "id": {
+-                        "type": "string",
+-                        "format": "id"
+-                      },
+-                      "aliases": {
+-                        "type": "array",
+-                        "items": {
+-                          "type": "string"
+-                        }
+-                      },
+-                      "name": {
+-                        "type": "string"
+-                      },
+-                      "category": {
+-                        "type": [
+-                          "string",
+-                          "null"
+-                        ]
+-                      },
+-                      "host": {
+-                        "type": [
+-                          "string",
+-                          "null"
+-                        ],
+-                        "description": "The local host is represented with `null`. The field exists for compatibility with other API endpoints that return files."
+-                      },
+-                      "url": {
+-                        "type": "string"
+-                      }
+-                    },
+-                    "required": [
+-                      "id",
+-                      "aliases",
+-                      "name",
+-                      "category",
+-                      "host",
+-                      "url"
+-                    ]
++                    "$ref": "#/components/schemas/EmojiDetailed"
+                   }
+                 }
+               }
+@@ -6928,46 +6897,7 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+-                    "properties": {
+-                      "id": {
+-                        "type": "string",
+-                        "format": "id"
+-                      },
+-                      "aliases": {
+-                        "type": "array",
+-                        "items": {
+-                          "type": "string"
+-                        }
+-                      },
+-                      "name": {
+-                        "type": "string"
+-                      },
+-                      "category": {
+-                        "type": [
+-                          "string",
+-                          "null"
+-                        ]
+-                      },
+-                      "host": {
+-                        "type": [
+-                          "string",
+-                          "null"
+-                        ],
+-                        "description": "The local host is represented with `null`."
+-                      },
+-                      "url": {
+-                        "type": "string"
+-                      }
+-                    },
+-                    "required": [
+-                      "id",
+-                      "aliases",
+-                      "name",
+-                      "category",
+-                      "host",
+-                      "url"
+-                    ]
++                    "$ref": "#/components/schemas/EmojiDetailed"
+                   }
+                 }
+               }
+@@ -9996,7 +9926,7 @@
+                       ]
+                     },
+                     "clientOptions": {
+-                      "type": "object"
++                      "$ref": "#/components/schemas/MetaClientOptions"
+                     },
+                     "description": {
+                       "type": [
+@@ -19018,7 +18948,22 @@
+                     ]
+                   },
+                   "clientOptions": {
+-                    "type": "object"
++                    "type": "object",
++                    "properties": {
++                      "entrancePageStyle": {
++                        "type": "string",
++                        "enum": [
++                          "classic",
++                          "simple"
++                        ]
++                      },
++                      "showTimelineForVisitor": {
++                        "type": "boolean"
++                      },
++                      "showActivitiesForVisitor": {
++                        "type": "boolean"
++                      }
++                    }
+                   },
+                   "cacheRemoteFiles": {
+                     "type": "boolean"
+@@ -52553,6 +52498,10 @@
+                     "maximum": 100,
+                     "default": 10
+                   },
++                  "offset": {
++                    "type": "integer",
++                    "default": 0
++                  },
+                   "sort": {
+                     "type": "string",
+                     "enum": [
+@@ -82349,7 +82298,8 @@
+                           "string",
+                           "null"
+                         ],
+-                        "pattern": "^([0-9]{4})-([0-9]{2})-([0-9]{2})$"
++                        "pattern": "^([0-9]{4})-([0-9]{2})-([0-9]{2})$",
++                        "description": "@deprecated use get-following-users-by-birthday instead."
+                       }
+                     }
+                   }
+@@ -82680,6 +82630,257 @@
+         }
+       }
+     },
++    "/users/get-following-users-by-birthday": {
++      "post": {
++        "operationId": "post___users___get-following-users-by-birthday",
++        "summary": "users/get-following-users-by-birthday",
++        "description": "Retrieve users who have a birthday on the specified range.\n\n**Credential required**: *Yes* / **Permission**: *read:account*",
++        "externalDocs": {
++          "description": "Source code",
++          "url": "https://github.com/misskey-dev/misskey/blob/develop/packages/backend/src/server/api/endpoints/users/get-following-users-by-birthday.ts"
++        },
++        "tags": [
++          "users"
++        ],
++        "security": [
++          {
++            "bearerAuth": []
++          }
++        ],
++        "requestBody": {
++          "required": true,
++          "content": {
++            "application/json": {
++              "schema": {
++                "type": "object",
++                "properties": {
++                  "limit": {
++                    "type": "integer",
++                    "minimum": 1,
++                    "maximum": 100,
++                    "default": 10
++                  },
++                  "offset": {
++                    "type": "integer",
++                    "default": 0
++                  },
++                  "birthday": {
++                    "oneOf": [
++                      {
++                        "type": "object",
++                        "properties": {
++                          "month": {
++                            "type": "integer",
++                            "minimum": 1,
++                            "maximum": 12
++                          },
++                          "day": {
++                            "type": "integer",
++                            "minimum": 1,
++                            "maximum": 31
++                          }
++                        },
++                        "required": [
++                          "month",
++                          "day"
++                        ]
++                      },
++                      {
++                        "type": "object",
++                        "properties": {
++                          "begin": {
++                            "type": "object",
++                            "properties": {
++                              "month": {
++                                "type": "integer",
++                                "minimum": 1,
++                                "maximum": 12
++                              },
++                              "day": {
++                                "type": "integer",
++                                "minimum": 1,
++                                "maximum": 31
++                              }
++                            },
++                            "required": [
++                              "month",
++                              "day"
++                            ]
++                          },
++                          "end": {
++                            "type": "object",
++                            "properties": {
++                              "month": {
++                                "type": "integer",
++                                "minimum": 1,
++                                "maximum": 12
++                              },
++                              "day": {
++                                "type": "integer",
++                                "minimum": 1,
++                                "maximum": 31
++                              }
++                            },
++                            "required": [
++                              "month",
++                              "day"
++                            ]
++                          }
++                        },
++                        "required": [
++                          "begin",
++                          "end"
++                        ]
++                      }
++                    ]
++                  }
++                },
++                "required": [
++                  "birthday"
++                ]
++              }
++            }
++          }
++        },
++        "responses": {
++          "200": {
++            "description": "OK (with results)",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "type": "array",
++                  "items": {
++                    "type": "object",
++                    "properties": {
++                      "id": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      },
++                      "birthday": {
++                        "type": "string"
++                      },
++                      "user": {
++                        "$ref": "#/components/schemas/UserLite"
++                      }
++                    },
++                    "required": [
++                      "id",
++                      "birthday",
++                      "user"
++                    ]
++                  }
++                }
++              }
++            }
++          },
++          "400": {
++            "description": "Client error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INVALID_PARAM": {
++                    "value": {
++                      "error": {
++                        "message": "Invalid param.",
++                        "code": "INVALID_PARAM",
++                        "id": "3d81ceae-475f-4600-b2a8-2bc116157532"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "401": {
++            "description": "Authentication error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "CREDENTIAL_REQUIRED": {
++                    "value": {
++                      "error": {
++                        "message": "Credential required.",
++                        "code": "CREDENTIAL_REQUIRED",
++                        "id": "1384574d-a912-4b81-8601-c7b1c4085df1"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "403": {
++            "description": "Forbidden error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "AUTHENTICATION_FAILED": {
++                    "value": {
++                      "error": {
++                        "message": "Authentication failed. Please ensure your token is correct.",
++                        "code": "AUTHENTICATION_FAILED",
++                        "id": "b0a7f5f8-dc2f-4171-b91f-de88ad238e14"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "418": {
++            "description": "I'm Ai",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "I_AM_AI": {
++                    "value": {
++                      "error": {
++                        "message": "You sent a request to Ai-chan, Misskey's showgirl, instead of the server.",
++                        "code": "I_AM_AI",
++                        "id": "60c46cd1-f23a-46b1-bebe-5d2b73951a84"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          },
++          "500": {
++            "description": "Internal server error",
++            "content": {
++              "application/json": {
++                "schema": {
++                  "$ref": "#/components/schemas/Error"
++                },
++                "examples": {
++                  "INTERNAL_ERROR": {
++                    "value": {
++                      "error": {
++                        "message": "Internal error occurred. Please contact us if the error persists.",
++                        "code": "INTERNAL_ERROR",
++                        "id": "5d37dbcb-891e-41ca-a3d6-e690c97775ac"
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    },
+     "/users/get-frequently-replied-users": {
+       "post": {
+         "operationId": "post___users___get-frequently-replied-users",
+@@ -88748,6 +88949,49 @@
+                 ]
+               },
+               "test": {
++                "type": "object",
++                "oneOf": [
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "all",
++                          "following",
++                          "follower",
++                          "mutualFollow",
++                          "followingOrFollower",
++                          "never"
++                        ]
++                      }
++                    },
++                    "required": [
++                      "type"
++                    ]
++                  },
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "list"
++                        ]
++                      },
++                      "userListId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
++                    "required": [
++                      "type",
++                      "userListId"
++                    ]
++                  }
++                ]
++              },
++              "login": {
+                 "type": "object",
+                 "oneOf": [
+                   {
+@@ -88789,6 +89033,92 @@
+                     ]
+                   }
+                 ]
++              },
++              "createToken": {
++                "type": "object",
++                "oneOf": [
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "all",
++                          "following",
++                          "follower",
++                          "mutualFollow",
++                          "followingOrFollower",
++                          "never"
++                        ]
++                      }
++                    },
++                    "required": [
++                      "type"
++                    ]
++                  },
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "list"
++                        ]
++                      },
++                      "userListId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
++                    "required": [
++                      "type",
++                      "userListId"
++                    ]
++                  }
++                ]
++              },
++              "exportCompleted": {
++                "type": "object",
++                "oneOf": [
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "all",
++                          "following",
++                          "follower",
++                          "mutualFollow",
++                          "followingOrFollower",
++                          "never"
++                        ]
++                      }
++                    },
++                    "required": [
++                      "type"
++                    ]
++                  },
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "list"
++                        ]
++                      },
++                      "userListId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
++                    "required": [
++                      "type",
++                      "userListId"
++                    ]
++                  }
++                ]
+               }
+             }
+           },
+@@ -92763,7 +93093,12 @@
+             ]
+           },
+           "bw": {
+-            "type": "string"
++            "type": "string",
++            "enum": [
++              "random",
++              "1",
++              "2"
++            ]
+           },
+           "noIrregularRules": {
+             "type": "boolean"
+@@ -92906,7 +93241,12 @@
+             ]
+           },
+           "bw": {
+-            "type": "string"
++            "type": "string",
++            "enum": [
++              "random",
++              "1",
++              "2"
++            ]
+           },
+           "noIrregularRules": {
+             "type": "boolean"
+@@ -93052,7 +93392,7 @@
+             ]
+           },
+           "clientOptions": {
+-            "type": "object"
++            "$ref": "#/components/schemas/MetaClientOptions"
+           },
+           "disableRegistration": {
+             "type": "boolean"
+@@ -93466,6 +93806,29 @@
+           }
+         ]
+       },
++      "MetaClientOptions": {
++        "type": "object",
++        "properties": {
++          "entrancePageStyle": {
++            "type": "string",
++            "enum": [
++              "classic",
++              "simple"
++            ]
++          },
++          "showTimelineForVisitor": {
++            "type": "boolean"
++          },
++          "showActivitiesForVisitor": {
++            "type": "boolean"
++          }
++        },
++        "required": [
++          "entrancePageStyle",
++          "showTimelineForVisitor",
++          "showActivitiesForVisitor"
++        ]
++      },
+       "UserWebhook": {
+         "type": "object",
+         "properties": {

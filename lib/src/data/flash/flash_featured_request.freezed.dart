@@ -89,13 +89,15 @@ class _$FlashFeaturedRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _FlashFeaturedRequest implements FlashFeaturedRequest {
-  const _FlashFeaturedRequest({this.offset, this.limit});
+  const _FlashFeaturedRequest({this.offset = 0, this.limit = 10});
   factory _FlashFeaturedRequest.fromJson(Map<String, dynamic> json) =>
       _$FlashFeaturedRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int? offset;
   @override
+  @JsonKey()
   final int? limit;
 
   /// Create a copy of FlashFeaturedRequest

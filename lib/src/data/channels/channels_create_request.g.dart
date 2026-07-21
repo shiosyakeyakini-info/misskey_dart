@@ -9,10 +9,12 @@ part of 'channels_create_request.dart';
 _ChannelsCreateRequest _$ChannelsCreateRequestFromJson(
         Map<String, dynamic> json) =>
     _ChannelsCreateRequest(
-      name: json['name'] as String,
+      name: json['name'] as String?,
       description: json['description'] as String?,
       bannerId: json['bannerId'] as String?,
       color: json['color'] as String?,
+      isSensitive: json['isSensitive'] as bool?,
+      allowRenoteToExternal: json['allowRenoteToExternal'] as bool?,
     );
 
 Map<String, dynamic> _$ChannelsCreateRequestToJson(
@@ -22,4 +24,6 @@ Map<String, dynamic> _$ChannelsCreateRequestToJson(
       'description': instance.description,
       'bannerId': instance.bannerId,
       'color': instance.color,
+      'isSensitive': instance.isSensitive,
+      'allowRenoteToExternal': instance.allowRenoteToExternal,
     };

@@ -13,8 +13,8 @@ void main() async {
     await userClient.apiService.post("notifications/test-notification", {});
     final response = await userClient.i.notifications(INotificationsRequest());
     expect(
-      response.map((e) => e.type),
-      contains(NotificationType.test),
+      response.any((e) => e is NotificationTest),
+      isTrue,
     );
   });
 
@@ -26,8 +26,8 @@ void main() async {
     final response =
         await userClient.i.notificationsGrouped(INotificationsGroupedRequest());
     expect(
-      response.map((e) => e.type),
-      contains(NotificationType.renoteGrouped),
+      response.any((e) => e is NotificationRenoteGrouped),
+      isTrue,
     );
   });
 

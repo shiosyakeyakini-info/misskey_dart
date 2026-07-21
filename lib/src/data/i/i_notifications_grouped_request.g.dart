@@ -6,13 +6,15 @@ part of 'i_notifications_grouped_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_INotificationRequest _$INotificationRequestFromJson(
+_INotificationsGroupedRequest _$INotificationsGroupedRequestFromJson(
         Map<String, dynamic> json) =>
-    _INotificationRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+    _INotificationsGroupedRequest(
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      markAsRead: json['markAsRead'] as bool?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      markAsRead: json['markAsRead'] as bool? ?? true,
       includeTypes: (json['includeTypes'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
           .toList(),
@@ -21,12 +23,14 @@ _INotificationRequest _$INotificationRequestFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$INotificationRequestToJson(
-        _INotificationRequest instance) =>
+Map<String, dynamic> _$INotificationsGroupedRequestToJson(
+        _INotificationsGroupedRequest instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'markAsRead': instance.markAsRead,
       'includeTypes': instance.includeTypes
           ?.map((e) => _$NotificationTypeEnumMap[e]!)
@@ -37,29 +41,29 @@ Map<String, dynamic> _$INotificationRequestToJson(
     };
 
 const _$NotificationTypeEnumMap = {
-  NotificationType.follow: 'follow',
+  NotificationType.note: 'note',
   NotificationType.mention: 'mention',
   NotificationType.reply: 'reply',
   NotificationType.renote: 'renote',
   NotificationType.quote: 'quote',
   NotificationType.reaction: 'reaction',
-  NotificationType.pollVote: 'pollVote',
   NotificationType.pollEnded: 'pollEnded',
-  NotificationType.scheduledNotePosted: 'scheduledNotePosted',
-  NotificationType.scheduledNotePostFailed: 'scheduledNotePostFailed',
+  NotificationType.follow: 'follow',
   NotificationType.receiveFollowRequest: 'receiveFollowRequest',
   NotificationType.followRequestAccepted: 'followRequestAccepted',
-  NotificationType.groupInvited: 'groupInvited',
-  NotificationType.app: 'app',
+  NotificationType.roleAssigned: 'roleAssigned',
+  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
   NotificationType.achievementEarned: 'achievementEarned',
-  NotificationType.test: 'test',
-  NotificationType.note: 'note',
+  NotificationType.exportCompleted: 'exportCompleted',
+  NotificationType.login: 'login',
+  NotificationType.createToken: 'createToken',
+  NotificationType.app: 'app',
   NotificationType.reactionGrouped: 'reaction:grouped',
   NotificationType.renoteGrouped: 'renote:grouped',
-  NotificationType.roleAssigned: 'roleAssigned',
-  NotificationType.exportCompleted: 'exportCompleted',
-  NotificationType.createToken: 'createToken',
-  NotificationType.login: 'login',
-  NotificationType.chatRoomInvitationReceived: 'chatRoomInvitationReceived',
+  NotificationType.test: 'test',
+  NotificationType.scheduledNotePosted: 'scheduledNotePosted',
+  NotificationType.scheduledNotePostFailed: 'scheduledNotePostFailed',
+  NotificationType.pollVote: 'pollVote',
+  NotificationType.groupInvited: 'groupInvited',
   NotificationType.unknown: 'unknown',
 };

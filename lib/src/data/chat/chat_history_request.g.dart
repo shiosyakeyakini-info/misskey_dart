@@ -8,8 +8,8 @@ part of 'chat_history_request.dart';
 
 _ChatHistoryRequest _$ChatHistoryRequestFromJson(Map<String, dynamic> json) =>
     _ChatHistoryRequest(
-      limit: (json['limit'] as num?)?.toInt(),
-      room: json['room'] as bool?,
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
+      room: json['room'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$ChatHistoryRequestToJson(_ChatHistoryRequest instance) =>

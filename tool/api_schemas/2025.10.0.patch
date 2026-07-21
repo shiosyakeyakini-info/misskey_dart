@@ -1,0 +1,853 @@
+--- /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-ZNnMew/prev.json	2026-03-28 18:43:58
++++ /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-ZNnMew/new.json	2026-03-28 18:43:58
+@@ -1,7 +1,7 @@
+ {
+   "openapi": "3.1.0",
+   "info": {
+-    "version": "2025.9.0",
++    "version": "2025.10.0",
+     "title": "Misskey API"
+   },
+   "externalDocs": {
+@@ -1231,15 +1231,23 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "properties": {
+-                    "token": {
+-                      "type": "string"
++                  "type": "object",
++                  "allOf": [
++                    {
++                      "$ref": "#/components/schemas/MeDetailed"
++                    },
++                    {
++                      "type": "object",
++                      "properties": {
++                        "token": {
++                          "type": "string"
++                        }
++                      },
++                      "required": [
++                        "token"
++                      ]
+                     }
+-                  },
+-                  "required": [
+-                    "token"
+-                  ],
+-                  "$ref": "#/components/schemas/MeDetailed"
++                  ]
+                 }
+               }
+             }
+@@ -1733,6 +1741,9 @@
+                   },
+                   "dayOfWeek": {
+                     "type": "integer"
++                  },
++                  "isSensitive": {
++                    "type": "boolean"
+                   }
+                 },
+                 "required": [
+@@ -2260,6 +2271,9 @@
+                   },
+                   "dayOfWeek": {
+                     "type": "integer"
++                  },
++                  "isSensitive": {
++                    "type": "boolean"
+                   }
+                 },
+                 "required": [
+@@ -10603,6 +10617,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -11083,6 +11098,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -11269,6 +11285,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -11427,6 +11444,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -11457,6 +11475,7 @@
+                       "enum": [
+                         "system",
+                         "endedPollNotification",
++                        "postScheduledNote",
+                         "deliver",
+                         "inbox",
+                         "db",
+@@ -11726,6 +11745,7 @@
+                         "enum": [
+                           "system",
+                           "endedPollNotification",
++                          "postScheduledNote",
+                           "deliver",
+                           "inbox",
+                           "db",
+@@ -11908,6 +11928,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -12070,6 +12091,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -12232,6 +12254,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -12401,6 +12424,7 @@
+                     "enum": [
+                       "system",
+                       "endedPollNotification",
++                      "postScheduledNote",
+                       "deliver",
+                       "inbox",
+                       "db",
+@@ -16156,6 +16180,49 @@
+                           ]
+                         },
+                         "pollEnded": {
++                          "type": "object",
++                          "oneOf": [
++                            {
++                              "type": "object",
++                              "properties": {
++                                "type": {
++                                  "type": "string",
++                                  "enum": [
++                                    "all",
++                                    "following",
++                                    "follower",
++                                    "mutualFollow",
++                                    "followingOrFollower",
++                                    "never"
++                                  ]
++                                }
++                              },
++                              "required": [
++                                "type"
++                              ]
++                            },
++                            {
++                              "type": "object",
++                              "properties": {
++                                "type": {
++                                  "type": "string",
++                                  "enum": [
++                                    "list"
++                                  ]
++                                },
++                                "userListId": {
++                                  "type": "string",
++                                  "format": "misskey:id"
++                                }
++                              },
++                              "required": [
++                                "type",
++                                "userListId"
++                              ]
++                            }
++                          ]
++                        },
++                        "scheduledNotePosted": {
+                           "type": "object",
+                           "oneOf": [
+                             {
+@@ -16198,6 +16265,49 @@
+                             }
+                           ]
+                         },
++                        "scheduledNotePostFailed": {
++                          "type": "object",
++                          "oneOf": [
++                            {
++                              "type": "object",
++                              "properties": {
++                                "type": {
++                                  "type": "string",
++                                  "enum": [
++                                    "all",
++                                    "following",
++                                    "follower",
++                                    "mutualFollow",
++                                    "followingOrFollower",
++                                    "never"
++                                  ]
++                                }
++                              },
++                              "required": [
++                                "type"
++                              ]
++                            },
++                            {
++                              "type": "object",
++                              "properties": {
++                                "type": {
++                                  "type": "string",
++                                  "enum": [
++                                    "list"
++                                  ]
++                                },
++                                "userListId": {
++                                  "type": "string",
++                                  "format": "misskey:id"
++                                }
++                              },
++                              "required": [
++                                "type",
++                                "userListId"
++                              ]
++                            }
++                          ]
++                        },
+                         "receiveFollowRequest": {
+                           "type": "object",
+                           "oneOf": [
+@@ -57751,6 +57861,8 @@
+                         "quote",
+                         "reaction",
+                         "pollEnded",
++                        "scheduledNotePosted",
++                        "scheduledNotePostFailed",
+                         "receiveFollowRequest",
+                         "followRequestAccepted",
+                         "roleAssigned",
+@@ -57779,6 +57891,8 @@
+                         "quote",
+                         "reaction",
+                         "pollEnded",
++                        "scheduledNotePosted",
++                        "scheduledNotePostFailed",
+                         "receiveFollowRequest",
+                         "followRequestAccepted",
+                         "roleAssigned",
+@@ -58003,6 +58117,8 @@
+                         "quote",
+                         "reaction",
+                         "pollEnded",
++                        "scheduledNotePosted",
++                        "scheduledNotePostFailed",
+                         "receiveFollowRequest",
+                         "followRequestAccepted",
+                         "roleAssigned",
+@@ -58031,6 +58147,8 @@
+                         "quote",
+                         "reaction",
+                         "pollEnded",
++                        "scheduledNotePosted",
++                        "scheduledNotePostFailed",
+                         "receiveFollowRequest",
+                         "followRequestAccepted",
+                         "roleAssigned",
+@@ -61663,6 +61781,92 @@
+                         ]
+                       },
+                       "pollEnded": {
++                        "type": "object",
++                        "oneOf": [
++                          {
++                            "type": "object",
++                            "properties": {
++                              "type": {
++                                "type": "string",
++                                "enum": [
++                                  "all",
++                                  "following",
++                                  "follower",
++                                  "mutualFollow",
++                                  "followingOrFollower",
++                                  "never"
++                                ]
++                              }
++                            },
++                            "required": [
++                              "type"
++                            ]
++                          },
++                          {
++                            "type": "object",
++                            "properties": {
++                              "type": {
++                                "type": "string",
++                                "enum": [
++                                  "list"
++                                ]
++                              },
++                              "userListId": {
++                                "type": "string",
++                                "format": "misskey:id"
++                              }
++                            },
++                            "required": [
++                              "type",
++                              "userListId"
++                            ]
++                          }
++                        ]
++                      },
++                      "scheduledNotePosted": {
++                        "type": "object",
++                        "oneOf": [
++                          {
++                            "type": "object",
++                            "properties": {
++                              "type": {
++                                "type": "string",
++                                "enum": [
++                                  "all",
++                                  "following",
++                                  "follower",
++                                  "mutualFollow",
++                                  "followingOrFollower",
++                                  "never"
++                                ]
++                              }
++                            },
++                            "required": [
++                              "type"
++                            ]
++                          },
++                          {
++                            "type": "object",
++                            "properties": {
++                              "type": {
++                                "type": "string",
++                                "enum": [
++                                  "list"
++                                ]
++                              },
++                              "userListId": {
++                                "type": "string",
++                                "format": "misskey:id"
++                              }
++                            },
++                            "required": [
++                              "type",
++                              "userListId"
++                            ]
++                          }
++                        ]
++                      },
++                      "scheduledNotePostFailed": {
+                         "type": "object",
+                         "oneOf": [
+                           {
+@@ -66887,7 +67091,7 @@
+                   "fileIds": {
+                     "type": "array",
+                     "uniqueItems": true,
+-                    "minItems": 1,
++                    "minItems": 0,
+                     "maxItems": 16,
+                     "items": {
+                       "type": "string",
+@@ -66931,6 +67135,16 @@
+                     "required": [
+                       "choices"
+                     ]
++                  },
++                  "scheduledAt": {
++                    "type": [
++                      "integer",
++                      "null"
++                    ]
++                  },
++                  "isActuallyScheduled": {
++                    "type": "boolean",
++                    "default": false
+                   }
+                 }
+               }
+@@ -67099,6 +67313,15 @@
+                       }
+                     }
+                   },
++                  "TOO_MANY_SCHEDULED_NOTES": {
++                    "value": {
++                      "error": {
++                        "message": "You cannot create scheduled notes any more.",
++                        "code": "TOO_MANY_SCHEDULED_NOTES",
++                        "id": "22ae69eb-09e3-4541-a850-773cfa45e693"
++                      }
++                    }
++                  },
+                   "CANNOT_RENOTE_TO_EXTERNAL": {
+                     "value": {
+                       "error": {
+@@ -67438,6 +67661,12 @@
+                   },
+                   "untilDate": {
+                     "type": "integer"
++                  },
++                  "scheduled": {
++                    "type": [
++                      "boolean",
++                      "null"
++                    ]
+                   }
+                 }
+               }
+@@ -67601,8 +67830,7 @@
+                       "home",
+                       "followers",
+                       "specified"
+-                    ],
+-                    "default": "public"
++                    ]
+                   },
+                   "visibleUserIds": {
+                     "type": "array",
+@@ -67628,8 +67856,7 @@
+                     "maxLength": 200
+                   },
+                   "localOnly": {
+-                    "type": "boolean",
+-                    "default": false
++                    "type": "boolean"
+                   },
+                   "reactionAcceptance": {
+                     "type": [
+@@ -67642,8 +67869,7 @@
+                       "likeOnlyForRemote",
+                       "nonSensitiveOnly",
+                       "nonSensitiveOnlyForLocalLikeOnlyForRemote"
+-                    ],
+-                    "default": null
++                    ]
+                   },
+                   "replyId": {
+                     "type": [
+@@ -67677,7 +67903,7 @@
+                   "fileIds": {
+                     "type": "array",
+                     "uniqueItems": true,
+-                    "minItems": 1,
++                    "minItems": 0,
+                     "maxItems": 16,
+                     "items": {
+                       "type": "string",
+@@ -67720,7 +67946,16 @@
+                     },
+                     "required": [
+                       "choices"
++                    ]
++                  },
++                  "scheduledAt": {
++                    "type": [
++                      "integer",
++                      "null"
+                     ]
++                  },
++                  "isActuallyScheduled": {
++                    "type": "boolean"
+                   }
+                 },
+                 "required": [
+@@ -67946,6 +68181,15 @@
+                       }
+                     }
+                   },
++                  "TOO_MANY_SCHEDULED_NOTES": {
++                    "value": {
++                      "error": {
++                        "message": "You cannot create scheduled notes any more.",
++                        "code": "TOO_MANY_SCHEDULED_NOTES",
++                        "id": "02f5df79-08ae-4a33-8524-f1503c8f6212"
++                      }
++                    }
++                  },
+                   "INVALID_PARAM": {
+                     "value": {
+                       "error": {
+@@ -71494,15 +71738,24 @@
+                       }
+                     }
+                   },
+-                  "SIGNIN_REQUIRED": {
++                  "CONTENT_RESTRICTED_BY_USER": {
+                     "value": {
+                       "error": {
+-                        "message": "Signin required.",
+-                        "code": "SIGNIN_REQUIRED",
+-                        "id": "8e75455b-738c-471d-9f80-62693f33372e"
++                        "message": "Content restricted by user. Please sign in to view.",
++                        "code": "CONTENT_RESTRICTED_BY_USER",
++                        "id": "fbcc002d-37d9-4944-a6b0-d9e29f2d33ab"
+                       }
+                     }
+                   },
++                  "CONTENT_RESTRICTED_BY_SERVER": {
++                    "value": {
++                      "error": {
++                        "message": "Content restricted by server settings. Please sign in to view.",
++                        "code": "CONTENT_RESTRICTED_BY_SERVER",
++                        "id": "145f88d2-b03d-4087-8143-a78928883c4b"
++                      }
++                    }
++                  },
+                   "INVALID_PARAM": {
+                     "value": {
+                       "error": {
+@@ -83588,15 +83841,23 @@
+             "content": {
+               "application/json": {
+                 "schema": {
+-                  "properties": {
+-                    "likedCount": {
+-                      "type": "number"
++                  "type": "object",
++                  "allOf": [
++                    {
++                      "$ref": "#/components/schemas/UserList"
+                     },
+-                    "isLiked": {
+-                      "type": "boolean"
++                    {
++                      "type": "object",
++                      "properties": {
++                        "likedCount": {
++                          "type": "number"
++                        },
++                        "isLiked": {
++                          "type": "boolean"
++                        }
++                      }
+                     }
+-                  },
+-                  "$ref": "#/components/schemas/UserList"
++                  ]
+                 }
+               }
+             }
+@@ -87572,6 +87833,92 @@
+                 ]
+               },
+               "pollEnded": {
++                "type": "object",
++                "oneOf": [
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "all",
++                          "following",
++                          "follower",
++                          "mutualFollow",
++                          "followingOrFollower",
++                          "never"
++                        ]
++                      }
++                    },
++                    "required": [
++                      "type"
++                    ]
++                  },
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "list"
++                        ]
++                      },
++                      "userListId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
++                    "required": [
++                      "type",
++                      "userListId"
++                    ]
++                  }
++                ]
++              },
++              "scheduledNotePosted": {
++                "type": "object",
++                "oneOf": [
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "all",
++                          "following",
++                          "follower",
++                          "mutualFollow",
++                          "followingOrFollower",
++                          "never"
++                        ]
++                      }
++                    },
++                    "required": [
++                      "type"
++                    ]
++                  },
++                  {
++                    "type": "object",
++                    "properties": {
++                      "type": {
++                        "type": "string",
++                        "enum": [
++                          "list"
++                        ]
++                      },
++                      "userListId": {
++                        "type": "string",
++                        "format": "misskey:id"
++                      }
++                    },
++                    "required": [
++                      "type",
++                      "userListId"
++                    ]
++                  }
++                ]
++              },
++              "scheduledNotePostFailed": {
+                 "type": "object",
+                 "oneOf": [
+                   {
+@@ -88238,6 +88585,9 @@
+           },
+           "dayOfWeek": {
+             "type": "integer"
++          },
++          "isSensitive": {
++            "type": "boolean"
+           }
+         },
+         "required": [
+@@ -88250,7 +88600,8 @@
+           "url",
+           "imageUrl",
+           "memo",
+-          "dayOfWeek"
++          "dayOfWeek",
++          "isSensitive"
+         ]
+       },
+       "Announcement": {
+@@ -88702,19 +89053,16 @@
+               "string",
+               "null"
+             ],
+-            "format": "id",
+-            "example": "xxxxxxxxxx"
++            "format": "id"
+           },
+           "renoteId": {
+             "type": [
+               "string",
+               "null"
+             ],
+-            "format": "id",
+-            "example": "xxxxxxxxxx"
++            "format": "id"
+           },
+           "reply": {
+-            "description": "The reply target note contents if exists. If the reply target has been deleted since the draft was created, this will be null while replyId is not null.",
+             "oneOf": [
+               {
+                 "$ref": "#/components/schemas/Note"
+@@ -88725,7 +89073,6 @@
+             ]
+           },
+           "renote": {
+-            "description": "The renote target note contents if exists. If the renote target has been deleted since the draft was created, this will be null while renoteId is not null.",
+             "oneOf": [
+               {
+                 "$ref": "#/components/schemas/Note"
+@@ -88765,7 +89112,10 @@
+             }
+           },
+           "hashtag": {
+-            "type": "string"
++            "type": [
++              "string",
++              "null"
++            ]
+           },
+           "poll": {
+             "type": [
+@@ -88806,8 +89156,7 @@
+               "string",
+               "null"
+             ],
+-            "format": "id",
+-            "example": "xxxxxxxxxx"
++            "format": "id"
+           },
+           "channel": {
+             "type": [
+@@ -88861,16 +89210,36 @@
+               "nonSensitiveOnlyForLocalLikeOnlyForRemote",
+               null
+             ]
++          },
++          "scheduledAt": {
++            "type": [
++              "number",
++              "null"
++            ]
++          },
++          "isActuallyScheduled": {
++            "type": "boolean"
+           }
+         },
+         "required": [
+           "id",
+           "createdAt",
+           "text",
++          "cw",
+           "userId",
+           "user",
++          "replyId",
++          "renoteId",
+           "visibility",
+-          "reactionAcceptance"
++          "visibleUserIds",
++          "fileIds",
++          "hashtag",
++          "poll",
++          "channelId",
++          "localOnly",
++          "reactionAcceptance",
++          "scheduledAt",
++          "isActuallyScheduled"
+         ]
+       },
+       "NoteReaction": {
+@@ -89234,6 +89603,62 @@
+               "type": {
+                 "type": "string",
+                 "enum": [
++                  "scheduledNotePosted"
++                ]
++              },
++              "note": {
++                "$ref": "#/components/schemas/Note"
++              }
++            },
++            "required": [
++              "id",
++              "createdAt",
++              "type",
++              "note"
++            ]
++          },
++          {
++            "type": "object",
++            "properties": {
++              "id": {
++                "type": "string",
++                "format": "id"
++              },
++              "createdAt": {
++                "type": "string",
++                "format": "date-time"
++              },
++              "type": {
++                "type": "string",
++                "enum": [
++                  "scheduledNotePostFailed"
++                ]
++              },
++              "noteDraft": {
++                "$ref": "#/components/schemas/NoteDraft"
++              }
++            },
++            "required": [
++              "id",
++              "createdAt",
++              "type",
++              "noteDraft"
++            ]
++          },
++          {
++            "type": "object",
++            "properties": {
++              "id": {
++                "type": "string",
++                "format": "id"
++              },
++              "createdAt": {
++                "type": "string",
++                "format": "date-time"
++              },
++              "type": {
++                "type": "string",
++                "enum": [
+                   "follow"
+                 ]
+               },
+@@ -91664,6 +92089,9 @@
+           "noteDraftLimit": {
+             "type": "integer"
+           },
++          "scheduledNoteLimit": {
++            "type": "integer"
++          },
+           "watermarkAvailable": {
+             "type": "boolean"
+           }
+@@ -91705,6 +92133,7 @@
+           "canImportUserLists",
+           "chatAvailability",
+           "noteDraftLimit",
++          "scheduledNoteLimit",
+           "watermarkAvailable"
+         ]
+       },
+@@ -92208,6 +92637,9 @@
+                 },
+                 "dayOfWeek": {
+                   "type": "integer"
++                },
++                "isSensitive": {
++                  "type": "boolean"
+                 }
+               },
+               "required": [

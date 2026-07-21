@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RolesShowRequest {
-  String get roleId;
+  String? get roleId;
 
   /// Create a copy of RolesShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +52,7 @@ abstract mixin class $RolesShowRequestCopyWith<$Res> {
           RolesShowRequest value, $Res Function(RolesShowRequest) _then) =
       _$RolesShowRequestCopyWithImpl;
   @useResult
-  $Res call({String roleId});
+  $Res call({String? roleId});
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$RolesShowRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? roleId = null,
+    Object? roleId = freezed,
   }) {
     return _then(_self.copyWith(
-      roleId: null == roleId
+      roleId: freezed == roleId
           ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -82,12 +82,12 @@ class _$RolesShowRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _RolesShowRequest implements RolesShowRequest {
-  const _RolesShowRequest({required this.roleId});
+  const _RolesShowRequest({this.roleId});
   factory _RolesShowRequest.fromJson(Map<String, dynamic> json) =>
       _$RolesShowRequestFromJson(json);
 
   @override
-  final String roleId;
+  final String? roleId;
 
   /// Create a copy of RolesShowRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -130,7 +130,7 @@ abstract mixin class _$RolesShowRequestCopyWith<$Res>
       __$RolesShowRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String roleId});
+  $Res call({String? roleId});
 }
 
 /// @nodoc
@@ -146,13 +146,13 @@ class __$RolesShowRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? roleId = null,
+    Object? roleId = freezed,
   }) {
     return _then(_RolesShowRequest(
-      roleId: null == roleId
+      roleId: freezed == roleId
           ? _self.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }

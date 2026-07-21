@@ -15,10 +15,12 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsCreateRequest {
-  String get name;
+  String? get name;
   String? get description;
   String? get bannerId;
   String? get color;
+  bool? get isSensitive;
+  bool? get allowRenoteToExternal;
 
   /// Create a copy of ChannelsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -41,17 +43,21 @@ mixin _$ChannelsCreateRequest {
                 other.description == description) &&
             (identical(other.bannerId, bannerId) ||
                 other.bannerId == bannerId) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
+                other.allowRenoteToExternal == allowRenoteToExternal));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, description, bannerId, color);
+  int get hashCode => Object.hash(runtimeType, name, description, bannerId,
+      color, isSensitive, allowRenoteToExternal);
 
   @override
   String toString() {
-    return 'ChannelsCreateRequest(name: $name, description: $description, bannerId: $bannerId, color: $color)';
+    return 'ChannelsCreateRequest(name: $name, description: $description, bannerId: $bannerId, color: $color, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal)';
   }
 }
 
@@ -62,7 +68,12 @@ abstract mixin class $ChannelsCreateRequestCopyWith<$Res> {
       _$ChannelsCreateRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String name, String? description, String? bannerId, String? color});
+      {String? name,
+      String? description,
+      String? bannerId,
+      String? color,
+      bool? isSensitive,
+      bool? allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -78,16 +89,18 @@ class _$ChannelsCreateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? description = freezed,
     Object? bannerId = freezed,
     Object? color = freezed,
+    Object? isSensitive = freezed,
+    Object? allowRenoteToExternal = freezed,
   }) {
     return _then(_self.copyWith(
-      name: null == name
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -100,6 +113,14 @@ class _$ChannelsCreateRequestCopyWithImpl<$Res>
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSensitive: freezed == isSensitive
+          ? _self.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowRenoteToExternal: freezed == allowRenoteToExternal
+          ? _self.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -108,18 +129,27 @@ class _$ChannelsCreateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _ChannelsCreateRequest implements ChannelsCreateRequest {
   const _ChannelsCreateRequest(
-      {required this.name, this.description, this.bannerId, this.color});
+      {this.name,
+      this.description,
+      this.bannerId,
+      this.color,
+      this.isSensitive,
+      this.allowRenoteToExternal});
   factory _ChannelsCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$ChannelsCreateRequestFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
   final String? description;
   @override
   final String? bannerId;
   @override
   final String? color;
+  @override
+  final bool? isSensitive;
+  @override
+  final bool? allowRenoteToExternal;
 
   /// Create a copy of ChannelsCreateRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -147,17 +177,21 @@ class _ChannelsCreateRequest implements ChannelsCreateRequest {
                 other.description == description) &&
             (identical(other.bannerId, bannerId) ||
                 other.bannerId == bannerId) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.isSensitive, isSensitive) ||
+                other.isSensitive == isSensitive) &&
+            (identical(other.allowRenoteToExternal, allowRenoteToExternal) ||
+                other.allowRenoteToExternal == allowRenoteToExternal));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, description, bannerId, color);
+  int get hashCode => Object.hash(runtimeType, name, description, bannerId,
+      color, isSensitive, allowRenoteToExternal);
 
   @override
   String toString() {
-    return 'ChannelsCreateRequest(name: $name, description: $description, bannerId: $bannerId, color: $color)';
+    return 'ChannelsCreateRequest(name: $name, description: $description, bannerId: $bannerId, color: $color, isSensitive: $isSensitive, allowRenoteToExternal: $allowRenoteToExternal)';
   }
 }
 
@@ -170,7 +204,12 @@ abstract mixin class _$ChannelsCreateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name, String? description, String? bannerId, String? color});
+      {String? name,
+      String? description,
+      String? bannerId,
+      String? color,
+      bool? isSensitive,
+      bool? allowRenoteToExternal});
 }
 
 /// @nodoc
@@ -186,16 +225,18 @@ class __$ChannelsCreateRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? description = freezed,
     Object? bannerId = freezed,
     Object? color = freezed,
+    Object? isSensitive = freezed,
+    Object? allowRenoteToExternal = freezed,
   }) {
     return _then(_ChannelsCreateRequest(
-      name: null == name
+      name: freezed == name
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: freezed == description
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -208,6 +249,14 @@ class __$ChannelsCreateRequestCopyWithImpl<$Res>
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSensitive: freezed == isSensitive
+          ? _self.isSensitive
+          : isSensitive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      allowRenoteToExternal: freezed == allowRenoteToExternal
+          ? _self.allowRenoteToExternal
+          : allowRenoteToExternal // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }

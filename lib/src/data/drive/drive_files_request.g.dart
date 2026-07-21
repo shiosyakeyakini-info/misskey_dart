@@ -8,11 +8,15 @@ part of 'drive_files_request.dart';
 
 _DriveFilesRequest _$DriveFilesRequestFromJson(Map<String, dynamic> json) =>
     _DriveFilesRequest(
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      folderId: json['folderId'] as String?,
+      sinceDate: (json['sinceDate'] as num?)?.toInt(),
+      untilDate: (json['untilDate'] as num?)?.toInt(),
+      folderId: json['folderId'] as String? ?? null,
       type: json['type'] as String?,
+      sort: $enumDecodeNullable(_$DriveFilesSortEnumMap, json['sort'],
+          unknownValue: DriveFilesSort.unknown),
     );
 
 Map<String, dynamic> _$DriveFilesRequestToJson(_DriveFilesRequest instance) =>
@@ -20,6 +24,19 @@ Map<String, dynamic> _$DriveFilesRequestToJson(_DriveFilesRequest instance) =>
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
+      'sinceDate': instance.sinceDate,
+      'untilDate': instance.untilDate,
       'folderId': instance.folderId,
       'type': instance.type,
+      'sort': _$DriveFilesSortEnumMap[instance.sort],
     };
+
+const _$DriveFilesSortEnumMap = {
+  DriveFilesSort.plusCreatedAt: '+createdAt',
+  DriveFilesSort.minusCreatedAt: '-createdAt',
+  DriveFilesSort.plusName: '+name',
+  DriveFilesSort.minusName: '-name',
+  DriveFilesSort.plusSize: '+size',
+  DriveFilesSort.minusSize: '-size',
+  DriveFilesSort.unknown: 'unknown',
+};

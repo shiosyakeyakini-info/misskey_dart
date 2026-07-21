@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_featured_request.freezed.dart';
 part 'notes_featured_request.g.dart';
@@ -6,12 +7,10 @@ part 'notes_featured_request.g.dart';
 @freezed
 abstract class NotesFeaturedRequest with _$NotesFeaturedRequest {
   const factory NotesFeaturedRequest({
-    int? limit,
-    @Deprecated("removed at 2023.10.0") int? offset,
+    @Default(10) int? limit,
     String? untilId,
     String? channelId,
   }) = _NotesFeaturedRequest;
 
-  factory NotesFeaturedRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesFeaturedRequestFromJson(json);
+  factory NotesFeaturedRequest.fromJson(Map<String, Object?> json) => _$NotesFeaturedRequestFromJson(json);
 }

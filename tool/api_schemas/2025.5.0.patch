@@ -1,0 +1,327 @@
+--- /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-qDh6sy/prev.json	2026-03-28 18:43:52
++++ /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-qDh6sy/new.json	2026-03-28 18:43:52
+@@ -1,7 +1,7 @@
+ {
+   "openapi": "3.1.0",
+   "info": {
+-    "version": "2025.4.1",
++    "version": "2025.5.0",
+     "title": "Misskey API"
+   },
+   "externalDocs": {
+@@ -9993,6 +9993,24 @@
+                       "items": {
+                         "type": "string"
+                       }
++                    },
++                    "deliverSuspendedSoftware": {
++                      "type": "array",
++                      "items": {
++                        "type": "object",
++                        "properties": {
++                          "software": {
++                            "type": "string"
++                          },
++                          "versionRange": {
++                            "type": "string"
++                          }
++                        },
++                        "required": [
++                          "software",
++                          "versionRange"
++                        ]
++                      }
+                     }
+                   },
+                   "required": [
+@@ -10108,7 +10126,8 @@
+                     "urlPreviewUserAgent",
+                     "urlPreviewSummaryProxyUrl",
+                     "federation",
+-                    "federationHosts"
++                    "federationHosts",
++                    "deliverSuspendedSoftware"
+                   ]
+                 }
+               }
+@@ -18771,6 +18790,24 @@
+                     "items": {
+                       "type": "string"
+                     }
++                  },
++                  "deliverSuspendedSoftware": {
++                    "type": "array",
++                    "items": {
++                      "type": "object",
++                      "properties": {
++                        "software": {
++                          "type": "string"
++                        },
++                        "versionRange": {
++                          "type": "string"
++                        }
++                      },
++                      "required": [
++                        "software",
++                        "versionRange"
++                      ]
++                    }
+                   }
+                 }
+               }
+@@ -38232,7 +38269,8 @@
+                       "error": {
+                         "message": "Cannot upload the file because it exceeds the maximum file size.",
+                         "code": "MAX_FILE_SIZE_EXCEEDED",
+-                        "id": "b9d8c348-33f0-4673-b9a9-5d4da058977a"
++                        "id": "b9d8c348-33f0-4673-b9a9-5d4da058977a",
++                        "httpStatusCode": 413
+                       }
+                     }
+                   },
+@@ -77517,19 +77555,7 @@
+                 "schema": {
+                   "type": "array",
+                   "items": {
+-                    "type": "object",
+-                    "properties": {
+-                      "name": {
+-                        "type": "string"
+-                      },
+-                      "unlockedAt": {
+-                        "type": "number"
+-                      }
+-                    },
+-                    "required": [
+-                      "name",
+-                      "unlockedAt"
+-                    ]
++                    "$ref": "#/components/schemas/Achievement"
+                   }
+                 }
+               }
+@@ -84756,19 +84782,7 @@
+           "achievements": {
+             "type": "array",
+             "items": {
+-              "type": "object",
+-              "properties": {
+-                "name": {
+-                  "type": "string"
+-                },
+-                "unlockedAt": {
+-                  "type": "number"
+-                }
+-              },
+-              "required": [
+-                "name",
+-                "unlockedAt"
+-              ]
++              "$ref": "#/components/schemas/Achievement"
+             }
+           },
+           "loggedInDays": {
+@@ -84956,6 +84970,104 @@
+           "isPublic"
+         ]
+       },
++      "Achievement": {
++        "type": "object",
++        "properties": {
++          "name": {
++            "$ref": "#/components/schemas/AchievementName"
++          },
++          "unlockedAt": {
++            "type": "number"
++          }
++        },
++        "required": [
++          "name",
++          "unlockedAt"
++        ]
++      },
++      "AchievementName": {
++        "type": "string",
++        "enum": [
++          "notes1",
++          "notes10",
++          "notes100",
++          "notes500",
++          "notes1000",
++          "notes5000",
++          "notes10000",
++          "notes20000",
++          "notes30000",
++          "notes40000",
++          "notes50000",
++          "notes60000",
++          "notes70000",
++          "notes80000",
++          "notes90000",
++          "notes100000",
++          "login3",
++          "login7",
++          "login15",
++          "login30",
++          "login60",
++          "login100",
++          "login200",
++          "login300",
++          "login400",
++          "login500",
++          "login600",
++          "login700",
++          "login800",
++          "login900",
++          "login1000",
++          "passedSinceAccountCreated1",
++          "passedSinceAccountCreated2",
++          "passedSinceAccountCreated3",
++          "loggedInOnBirthday",
++          "loggedInOnNewYearsDay",
++          "noteClipped1",
++          "noteFavorited1",
++          "myNoteFavorited1",
++          "profileFilled",
++          "markedAsCat",
++          "following1",
++          "following10",
++          "following50",
++          "following100",
++          "following300",
++          "followers1",
++          "followers10",
++          "followers50",
++          "followers100",
++          "followers300",
++          "followers500",
++          "followers1000",
++          "collectAchievements30",
++          "viewAchievements3min",
++          "iLoveMisskey",
++          "foundTreasure",
++          "client30min",
++          "client60min",
++          "noteDeletedWithin1min",
++          "postedAtLateNight",
++          "postedAt0min0sec",
++          "selfQuote",
++          "htl20npm",
++          "viewInstanceChart",
++          "outputHelloWorldOnScratchpad",
++          "open3windows",
++          "driveFolderCircularReference",
++          "reactWithoutRead",
++          "clickedClickHere",
++          "justPlainLucky",
++          "setNameToSyuilo",
++          "cookieClicked",
++          "brainDiver",
++          "smashTestNotificationButton",
++          "tutorialCompleted",
++          "bubbleGameExplodingHead",
++          "bubbleGameDoubleExplodingHead"
++        ]
++      },
+       "Ad": {
+         "type": "object",
+         "properties": {
+@@ -85941,87 +86053,7 @@
+                 ]
+               },
+               "achievement": {
+-                "type": "string",
+-                "enum": [
+-                  "notes1",
+-                  "notes10",
+-                  "notes100",
+-                  "notes500",
+-                  "notes1000",
+-                  "notes5000",
+-                  "notes10000",
+-                  "notes20000",
+-                  "notes30000",
+-                  "notes40000",
+-                  "notes50000",
+-                  "notes60000",
+-                  "notes70000",
+-                  "notes80000",
+-                  "notes90000",
+-                  "notes100000",
+-                  "login3",
+-                  "login7",
+-                  "login15",
+-                  "login30",
+-                  "login60",
+-                  "login100",
+-                  "login200",
+-                  "login300",
+-                  "login400",
+-                  "login500",
+-                  "login600",
+-                  "login700",
+-                  "login800",
+-                  "login900",
+-                  "login1000",
+-                  "passedSinceAccountCreated1",
+-                  "passedSinceAccountCreated2",
+-                  "passedSinceAccountCreated3",
+-                  "loggedInOnBirthday",
+-                  "loggedInOnNewYearsDay",
+-                  "noteClipped1",
+-                  "noteFavorited1",
+-                  "myNoteFavorited1",
+-                  "profileFilled",
+-                  "markedAsCat",
+-                  "following1",
+-                  "following10",
+-                  "following50",
+-                  "following100",
+-                  "following300",
+-                  "followers1",
+-                  "followers10",
+-                  "followers50",
+-                  "followers100",
+-                  "followers300",
+-                  "followers500",
+-                  "followers1000",
+-                  "collectAchievements30",
+-                  "viewAchievements3min",
+-                  "iLoveMisskey",
+-                  "foundTreasure",
+-                  "client30min",
+-                  "client60min",
+-                  "noteDeletedWithin1min",
+-                  "postedAtLateNight",
+-                  "postedAt0min0sec",
+-                  "selfQuote",
+-                  "htl20npm",
+-                  "viewInstanceChart",
+-                  "outputHelloWorldOnScratchpad",
+-                  "open3windows",
+-                  "driveFolderCircularReference",
+-                  "reactWithoutRead",
+-                  "clickedClickHere",
+-                  "justPlainLucky",
+-                  "setNameToSyuilo",
+-                  "cookieClicked",
+-                  "brainDiver",
+-                  "smashTestNotificationButton",
+-                  "tutorialCompleted",
+-                  "bubbleGameExplodingHead",
+-                  "bubbleGameDoubleExplodingHead"
+-                ]
++                "$ref": "#/components/schemas/AchievementName"
+               }
+             },
+             "required": [
+@@ -87254,7 +87286,8 @@
+               "none",
+               "manuallySuspended",
+               "goneSuspended",
+-              "autoSuspendedForNotResponding"
++              "autoSuspendedForNotResponding",
++              "softwareSuspended"
+             ]
+           },
+           "isBlocked": {

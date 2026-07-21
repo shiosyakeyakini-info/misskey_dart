@@ -1,8 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/src/converters/users_sort_converter.dart';
-import 'package:misskey_dart/src/enums/origin.dart';
-import 'package:misskey_dart/src/enums/users_sort_type.dart';
-import 'package:misskey_dart/src/enums/users_state.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_users_request.freezed.dart';
 part 'users_users_request.g.dart';

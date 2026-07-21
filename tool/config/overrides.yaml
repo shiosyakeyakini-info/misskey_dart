@@ -1,0 +1,284 @@
+# ============================================================
+# misskey_dart Code Generator Override Configuration
+# ============================================================
+
+# Field-level overrides
+field_overrides:
+  UserLite:
+    emojis:
+      converter: EmojisConverter
+      import: "package:misskey_dart/src/converters/emojis_converter.dart"
+      dart_type: "Map<String, String>"
+      default: "{}"
+    isBot:
+      default: "false"
+    isCat:
+      default: "false"
+    avatarDecorations:
+      default: "[]"
+    badgeRoles:
+      default: "[]"
+    makeNotesFollowersOnlyBefore:
+      converter: HideBeforeConverter
+      import: "package:misskey_dart/src/converters/hide_before_converter.dart"
+      dart_type: "HideBefore?"
+    makeNotesHiddenBefore:
+      converter: HideBeforeConverter
+      import: "package:misskey_dart/src/converters/hide_before_converter.dart"
+      dart_type: "HideBefore?"
+
+  Note:
+    emojis:
+      converter: EmojisConverter
+      import: "package:misskey_dart/src/converters/emojis_converter.dart"
+      dart_type: "Map<String, String>"
+      default: "{}"
+    reactionEmojis:
+      converter: EmojisConverter
+      import: "package:misskey_dart/src/converters/emojis_converter.dart"
+      dart_type: "Map<String, String>"
+    visibleUserIds:
+      default: "[]"
+    mentions:
+      default: "[]"
+    reactionAndUserPairCache:
+      default: "[]"
+
+  NotesCreatePoll:
+    multiple:
+      default: "false"
+
+  ChatMessage:
+    fromUser:
+      dart_type: "UserLite?"
+
+  MeDetailedOnly:
+    mutedWords:
+      converter: MuteWordsConverter
+      import: "package:misskey_dart/src/converters/mute_words_converter.dart"
+      dart_type: "List<MuteWord>"
+    hardMutedWords:
+      converter: MuteWordsConverter
+      import: "package:misskey_dart/src/converters/mute_words_converter.dart"
+      dart_type: "List<MuteWord>"
+      default: "[]"
+
+# Schema name overrides for inline schemas and component schemas
+schema_name_overrides:
+  # Component schema renames (avoid name conflicts)
+  "Channel": CommunityChannel
+  # Inline objects
+  "Note.properties.poll": NotePoll
+  "Note.properties.poll.properties.choices.items": NotePollChoice
+  "Note.properties.channel": NoteChannelInfo
+  "UserLite.properties.avatarDecorations.items": UserAvatarDecoration
+  "UserLite.properties.instance": UserInstanceInfo
+  "UserLite.properties.badgeRoles.items": UserBadgeRole
+
+  # Inline enums → existing Dart enum types
+  "Note.properties.visibility": NoteVisibility
+  "Note.properties.reactionAcceptance": ReactionAcceptance
+  "NoteDraft.properties.visibility": NoteVisibility
+  "NoteDraft.properties.reactionAcceptance": ReactionAcceptance
+  "UserLite.properties.onlineStatus": OnlineStatus
+  "UserDetailedNotMeOnly.properties.followingVisibility": FFVisibility
+  "UserDetailedNotMeOnly.properties.followersVisibility": FFVisibility
+  "UserDetailedNotMeOnly.properties.chatScope": ChatScope
+  "UserDetailedNotMeOnly.properties.notify": Notify
+  "MeDetailedOnly.properties.twoFactorBackupCodesStock": TwoFactorBackupCodesStock
+  "Announcement.properties.icon": AnnouncementIcon
+  "Announcement.properties.display": AnnouncementDisplay
+  "Antenna.properties.src": AntennaSource
+  "Flash.properties.visibility": FlashVisibility
+  "FederationInstance.properties.suspensionState": FederationSuspensionState
+  "Page.properties.font": PageFont
+  "RolePolicies.properties.chatAvailability": ChatAvailability
+  "ReversiGameLite.properties.bw": ReversiBw
+  "ReversiGameDetailed.properties.bw": ReversiBw
+  "MetaLite.properties.noteSearchableScope": NoteSearchableScope
+  "MetaLite.properties.federation": FederationScope
+
+  # DriveFile has a field called "properties" (image metadata: width/height/orientation/avgColor)
+  # Without this override, inlineSchemaName would collapse to "DriveFile", overwriting the parent
+  "DriveFile.properties.properties": DriveFileProperties
+
+  # Request-side inline enums → existing enum names (avoid duplicate enum types)
+  "/antennas/create.request.properties.src": AntennaSource
+  "/antennas/update.request.properties.src": AntennaSource
+  "/notes/create.request.properties.visibility": NoteVisibility
+  "/notes/drafts/create.request.properties.visibility": NoteVisibility
+  "/i/update.request.properties.chatScope": ChatScope
+  "/flash/update.request.properties.visibility": FlashVisibility
+  "/flash/create.request.properties.visibility": FlashVisibility
+  "/hashtags/list.request.properties.sort": HashtagsListSortType
+  "/hashtags/users.request.properties.sort": UsersSortType
+  "/following/update.request.properties.notify": FollowingUpdateAllNotifyType
+  "/following/update-all.request.properties.notify": FollowingUpdateAllNotifyType
+  # NotificationType inline enums (in array items)
+  "/i/notifications.request.properties.includeTypes.items": NotificationType
+  "/i/notifications.request.properties.excludeTypes.items": NotificationType
+  "/i/notifications-grouped.request.properties.includeTypes.items": NotificationType
+  "/i/notifications-grouped.request.properties.excludeTypes.items": NotificationType
+
+# Type structure overrides
+type_structure_overrides:
+  User:
+    strategy: hierarchy
+    abstract_base: User
+    factory_discriminator:
+      - field_check: "url"
+        present: UserDetailed
+        absent: UserLite
+  UserDetailed:
+    strategy: hierarchy
+    abstract_base: UserDetailed
+    extends: User
+    factory_discriminator:
+      - field_check: "isFollowing"
+        present: UserDetailedNotMeWithRelations
+      - field_check: "avatarId"
+        present: MeDetailed
+      - default: UserDetailedNotMe
+  Notification:
+    strategy: sealed
+    target_class: Notification
+    fallback_variant: unknown
+  PageBlock:
+    strategy: converter
+    converter: PageContentConverter
+    abstract_base: AbstractPageContent
+
+# Module field name overrides (sub-module field names in generated API classes)
+module_overrides:
+  "users/lists":
+    field_name: list
+  "users/search":
+    field_name: search
+
+# Endpoint name overrides
+endpoint_overrides:
+  "/channels/my-favorites":
+    method_name: myFavorite
+  "/notes/timeline":
+    method_name: homeTimeline
+  "/notes/update":
+    extra_options:
+      excludeRemoveNullPredicate: "(key, _) => key == \"cw\""
+
+  # oneOf response with inline object (no generated response class)
+  "/users/relation":
+    return_type: void
+
+  # Count endpoint returns integer (api.json says "number" but server returns int)
+  "/notes/drafts/count":
+    return_type: int
+
+  # Registry returns dynamic values (string, null, number, array, boolean, object)
+  # Response uses text/plain content-type, requiring manual JSON decode
+  "/i/registry/get":
+    return_type: dynamic
+    response_format: raw_json
+  # Registry set needs to preserve null value in request body
+  "/i/registry/set":
+    extra_options:
+      excludeRemoveNullPredicate: "(key, _) => key == \"value\""
+
+# Manual files (skip generation entirely - not even generated to output)
+manual_files:
+  # Core infrastructure (hand-maintained)
+  - "lib/src/services/"
+  - "lib/src/converters/"
+  - "lib/src/extensions/"
+  - "lib/src/data/streaming/"
+  - "lib/src/util/"
+  # Permission enum (not in api.json schema, must remain manual)
+  - "lib/src/enums/permissions.dart"
+  # Streaming-only enums (not in api.json)
+  - "lib/src/enums/streaming_request_type.dart"
+  - "lib/src/enums/streaming_response_type.dart"
+  - "lib/src/enums/note_updated_event_type.dart"
+  - "lib/src/enums/channel_event_type.dart"
+  - "lib/src/enums/broadcast_event_type.dart"
+  - "lib/src/enums/channel.dart"
+  # Prevent auto-generated duplicates of manual enums in data/base/
+  - "lib/src/data/base/following_update_all_notify_type.dart"
+  # Main class (contains StreamingService initialization)
+  - "lib/src/misskey_dart_base.dart"
+  # User hierarchy (abstract classes + complex fromJson, generator can't fully produce)
+  - "lib/src/data/base/user.dart"
+  # Types defined inline in user.dart (prevent duplicate generation)
+  - "lib/src/data/base/user_avatar_decoration.dart"
+  - "lib/src/data/base/user_badge_role.dart"
+  - "lib/src/data/base/user_instance_info.dart"
+  - "lib/src/data/base/chat_scope.dart"
+  - "lib/src/data/base/notify.dart"
+  - "lib/src/data/base/two_factor_backup_codes_stock.dart"
+  - "lib/src/data/base/chat_availability.dart"
+  # Page content hierarchy (uses custom converter)
+  - "lib/src/data/base/page.dart"
+  # IRegistrySetRequest.value needs dynamic type (not String)
+  - "lib/src/data/i/i_registry_set_request.dart"
+  # MisskeyDrive has manual createAsBinary/createWithFile methods for multipart uploads
+  - "lib/src/misskey_drive.dart"
+
+# number type fields that should be int
+number_as_int:
+  - "*.followersCount"
+  - "*.followingCount"
+  - "*.notesCount"
+  - "*.renoteCount"
+  - "*.repliesCount"
+  - "*.votes"
+  - "*.clippedCount"
+  - "*.reactionCount"
+  - "*.usersCount"
+  - "*.originalUsersCount"
+  - "*.originalNotesCount"
+  - "*.instances"
+  - "*.driveUsageLocal"
+  - "*.driveUsageRemote"
+  - "*.sentBytes"
+  - "*.receivedBytes"
+  - "*.choice"
+  - "*.sinceId"
+  - "*.untilId"
+
+# Extra fields (not in api.json but needed for version compatibility)
+extra_fields:
+  UserList:
+    likedCount:
+      dart_type: double
+      nullable: true
+    isLiked:
+      dart_type: bool
+      nullable: true
+
+# Enum value name overrides (JSON value → Dart member name)
+# Used when auto-generated names don't match existing code conventions
+enum_value_overrides:
+  UsersSortType:
+    "-follower": followerAscendant
+    "+follower": followerDescendant
+    "-createdAt": createdAtAscendant
+    "+createdAt": createdAtDescendant
+    "-updatedAt": updateAtAscendant
+    "+updatedAt": updateAtDescendant
+  HashtagsListSortType:
+    "+mentionedUsers": mentionedUsersDescendant
+    "-mentionedUsers": mentionedUsersAscendant
+    "+mentionedLocalUsers": mentionedLocalUsersDescendant
+    "-mentionedLocalUsers": mentionedLocalUsersAscendant
+    "+mentionedRemoteUsers": mentionedRemoteUsersDescendant
+    "-mentionedRemoteUsers": mentionedRemoteUsersAscendant
+    "+attachedUsers": attachedUsersDescendant
+    "-attachedUsers": attachedUsersAscendant
+    "+attachedLocalUsers": attachedLocalUsersDescendant
+    "-attachedLocalUsers": attachedLocalUsersAscendant
+    "+attachedRemoteUsers": attachedRemoteUsersDescendant
+    "-attachedRemoteUsers": attachedRemoteUsersAscendant
+
+# Fork-specific overrides
+fork_overrides:
+  mkkey_net:
+    description: "mkkey.net (Misskey v13 compatible)"
+    note: "emojis field returns List<{name,url}> format - handled by EmojisConverter"

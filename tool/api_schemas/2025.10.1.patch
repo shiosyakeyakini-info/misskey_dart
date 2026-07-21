@@ -1,0 +1,41 @@
+--- /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-I4idZZ/prev.json	2026-03-28 18:43:59
++++ /var/folders/rp/vw39vghx3xvdyhf2r2f9x96h0000gn/T/misskey-diff-I4idZZ/new.json	2026-03-28 18:43:59
+@@ -1,7 +1,7 @@
+ {
+   "openapi": "3.1.0",
+   "info": {
+-    "version": "2025.10.0",
++    "version": "2025.10.1",
+     "title": "Misskey API"
+   },
+   "externalDocs": {
+@@ -10177,6 +10177,9 @@
+                     },
+                     "remoteNotesCleaningMaxProcessingDurationInMinutes": {
+                       "type": "number"
++                    },
++                    "showRoleBadgesOfRemoteUsers": {
++                      "type": "boolean"
+                     }
+                   },
+                   "required": [
+@@ -10304,7 +10307,8 @@
+                     "allowExternalApRedirect",
+                     "enableRemoteNotesCleaning",
+                     "remoteNotesCleaningExpiryDaysForEachNotes",
+-                    "remoteNotesCleaningMaxProcessingDurationInMinutes"
++                    "remoteNotesCleaningMaxProcessingDurationInMinutes",
++                    "showRoleBadgesOfRemoteUsers"
+                   ]
+                 }
+               }
+@@ -19505,6 +19509,9 @@
+                   },
+                   "remoteNotesCleaningMaxProcessingDurationInMinutes": {
+                     "type": "number"
++                  },
++                  "showRoleBadgesOfRemoteUsers": {
++                    "type": "boolean"
+                   }
+                 }
+               }

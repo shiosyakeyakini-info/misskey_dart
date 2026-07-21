@@ -8,8 +8,8 @@ part of 'clips_create_request.dart';
 
 _ClipsCreateRequest _$ClipsCreateRequestFromJson(Map<String, dynamic> json) =>
     _ClipsCreateRequest(
-      name: json['name'] as String,
-      isPublic: json['isPublic'] as bool?,
+      name: json['name'] as String?,
+      isPublic: json['isPublic'] as bool? ?? false,
       description: json['description'] as String?,
     );
 

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_show_request.freezed.dart';
 part 'users_show_request.g.dart';
@@ -6,31 +7,11 @@ part 'users_show_request.g.dart';
 @freezed
 abstract class UsersShowRequest with _$UsersShowRequest {
   const factory UsersShowRequest({
-    required String userId,
+    String? userId,
+    List<String>? userIds,
+    String? username,
+    String? host,
   }) = _UsersShowRequest;
 
-  factory UsersShowRequest.fromJson(Map<String, Object?> json) =>
-      _$UsersShowRequestFromJson(json);
-}
-
-@freezed
-abstract class UsersShowByIdsRequest with _$UsersShowByIdsRequest {
-  const factory UsersShowByIdsRequest({
-    required List<String> userIds,
-  }) = _UsersShowByIdsRequest;
-
-  factory UsersShowByIdsRequest.fromJson(Map<String, dynamic> json) =>
-      _$UsersShowByIdsRequestFromJson(json);
-}
-
-@freezed
-abstract class UsersShowByUserNameRequest with _$UsersShowByUserNameRequest {
-  const factory UsersShowByUserNameRequest({
-    // ignore: invalid_annotation_target
-    @JsonKey(name: "username") required String userName,
-    String? host,
-  }) = _UsersShowByUserNameRequest;
-
-  factory UsersShowByUserNameRequest.fromJson(Map<String, dynamic> json) =>
-      _$UsersShowByUserNameRequestFromJson(json);
+  factory UsersShowRequest.fromJson(Map<String, Object?> json) => _$UsersShowRequestFromJson(json);
 }

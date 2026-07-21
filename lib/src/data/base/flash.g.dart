@@ -12,32 +12,33 @@ _Flash _$FlashFromJson(Map<String, dynamic> json) => _Flash(
           const DateTimeConverter().fromJson(json['createdAt'] as String),
       updatedAt:
           const DateTimeConverter().fromJson(json['updatedAt'] as String),
+      userId: json['userId'] as String,
+      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       title: json['title'] as String,
       summary: json['summary'] as String,
       script: json['script'] as String,
-      visibility:
-          $enumDecodeNullable(_$FlashVisibilityEnumMap, json['visibility']),
-      userId: json['userId'] as String,
-      user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
-      likedCount: (json['likedCount'] as num?)?.toInt(),
-      isLiked: json['isLiked'] as bool? ?? false,
+      visibility: $enumDecode(_$FlashVisibilityEnumMap, json['visibility'],
+          unknownValue: FlashVisibility.unknown),
+      likedCount: (json['likedCount'] as num?)?.toDouble(),
+      isLiked: json['isLiked'] as bool?,
     );
 
 Map<String, dynamic> _$FlashToJson(_Flash instance) => <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),
+      'userId': instance.userId,
+      'user': instance.user.toJson(),
       'title': instance.title,
       'summary': instance.summary,
       'script': instance.script,
-      'visibility': _$FlashVisibilityEnumMap[instance.visibility],
-      'userId': instance.userId,
-      'user': instance.user.toJson(),
+      'visibility': _$FlashVisibilityEnumMap[instance.visibility]!,
       'likedCount': instance.likedCount,
       'isLiked': instance.isLiked,
     };
 
 const _$FlashVisibilityEnumMap = {
-  FlashVisibility.public: 'public',
   FlashVisibility.private: 'private',
+  FlashVisibility.public: 'public',
+  FlashVisibility.unknown: 'unknown',
 };

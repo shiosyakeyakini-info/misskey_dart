@@ -15,12 +15,13 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesReactionsRequest {
-  String get noteId;
+  String? get noteId;
   String? get type;
   int? get limit;
-  int? get offset;
   String? get sinceId;
   String? get untilId;
+  int? get sinceDate;
+  int? get untilDate;
 
   /// Create a copy of NotesReactionsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -41,19 +42,22 @@ mixin _$NotesReactionsRequest {
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, noteId, type, limit, offset, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, noteId, type, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'NotesReactionsRequest(noteId: $noteId, type: $type, limit: $limit, offset: $offset, sinceId: $sinceId, untilId: $untilId)';
+    return 'NotesReactionsRequest(noteId: $noteId, type: $type, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -64,12 +68,13 @@ abstract mixin class $NotesReactionsRequestCopyWith<$Res> {
       _$NotesReactionsRequestCopyWithImpl;
   @useResult
   $Res call(
-      {String noteId,
+      {String? noteId,
       String? type,
       int? limit,
-      int? offset,
       String? sinceId,
-      String? untilId});
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -85,18 +90,19 @@ class _$NotesReactionsRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
     Object? type = freezed,
     Object? limit = freezed,
-    Object? offset = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_self.copyWith(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: freezed == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -104,10 +110,6 @@ class _$NotesReactionsRequestCopyWithImpl<$Res>
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
           ? _self.sinceId
@@ -117,6 +119,14 @@ class _$NotesReactionsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -125,27 +135,31 @@ class _$NotesReactionsRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _NotesReactionsRequest implements NotesReactionsRequest {
   const _NotesReactionsRequest(
-      {required this.noteId,
+      {this.noteId,
       this.type,
-      this.limit,
-      this.offset,
+      this.limit = 10,
       this.sinceId,
-      this.untilId});
+      this.untilId,
+      this.sinceDate,
+      this.untilDate});
   factory _NotesReactionsRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesReactionsRequestFromJson(json);
 
   @override
-  final String noteId;
+  final String? noteId;
   @override
   final String? type;
   @override
+  @JsonKey()
   final int? limit;
-  @override
-  final int? offset;
   @override
   final String? sinceId;
   @override
   final String? untilId;
+  @override
+  final int? sinceDate;
+  @override
+  final int? untilDate;
 
   /// Create a copy of NotesReactionsRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -171,19 +185,22 @@ class _NotesReactionsRequest implements NotesReactionsRequest {
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId));
+            (identical(other.untilId, untilId) || other.untilId == untilId) &&
+            (identical(other.sinceDate, sinceDate) ||
+                other.sinceDate == sinceDate) &&
+            (identical(other.untilDate, untilDate) ||
+                other.untilDate == untilDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, noteId, type, limit, offset, sinceId, untilId);
+  int get hashCode => Object.hash(
+      runtimeType, noteId, type, limit, sinceId, untilId, sinceDate, untilDate);
 
   @override
   String toString() {
-    return 'NotesReactionsRequest(noteId: $noteId, type: $type, limit: $limit, offset: $offset, sinceId: $sinceId, untilId: $untilId)';
+    return 'NotesReactionsRequest(noteId: $noteId, type: $type, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
   }
 }
 
@@ -196,12 +213,13 @@ abstract mixin class _$NotesReactionsRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String noteId,
+      {String? noteId,
       String? type,
       int? limit,
-      int? offset,
       String? sinceId,
-      String? untilId});
+      String? untilId,
+      int? sinceDate,
+      int? untilDate});
 }
 
 /// @nodoc
@@ -217,18 +235,19 @@ class __$NotesReactionsRequestCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? noteId = null,
+    Object? noteId = freezed,
     Object? type = freezed,
     Object? limit = freezed,
-    Object? offset = freezed,
     Object? sinceId = freezed,
     Object? untilId = freezed,
+    Object? sinceDate = freezed,
+    Object? untilDate = freezed,
   }) {
     return _then(_NotesReactionsRequest(
-      noteId: null == noteId
+      noteId: freezed == noteId
           ? _self.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: freezed == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -236,10 +255,6 @@ class __$NotesReactionsRequestCopyWithImpl<$Res>
       limit: freezed == limit
           ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
               as int?,
       sinceId: freezed == sinceId
           ? _self.sinceId
@@ -249,6 +264,14 @@ class __$NotesReactionsRequestCopyWithImpl<$Res>
           ? _self.untilId
           : untilId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinceDate: freezed == sinceDate
+          ? _self.sinceDate
+          : sinceDate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      untilDate: freezed == untilDate
+          ? _self.untilDate
+          : untilDate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
