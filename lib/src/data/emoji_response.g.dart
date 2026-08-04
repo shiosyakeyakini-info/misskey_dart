@@ -9,7 +9,8 @@ part of 'emoji_response.dart';
 _EmojiResponse _$EmojiResponseFromJson(Map<String, dynamic> json) =>
     _EmojiResponse(
       id: json['id'] as String,
-      aliases: (json['aliases'] as List<dynamic>?)
+      aliases:
+          (json['aliases'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
@@ -17,7 +18,9 @@ _EmojiResponse _$EmojiResponseFromJson(Map<String, dynamic> json) =>
       category: json['category'] as String?,
       host: json['host'] as String?,
       url: _$JsonConverterFromJson<String, Uri?>(
-          json['url'], const NullableUriConverter().fromJson),
+        json['url'],
+        const NullableUriConverter().fromJson,
+      ),
       license: json['license'] as String?,
       isSensitive: json['isSensitive'] as bool? ?? false,
       localOnly: json['localOnly'] as bool? ?? false,
@@ -45,5 +48,4 @@ Map<String, dynamic> _$EmojiResponseToJson(_EmojiResponse instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

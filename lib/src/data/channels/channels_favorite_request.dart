@@ -5,9 +5,8 @@ part 'channels_favorite_request.g.dart';
 
 @freezed
 abstract class ChannelsFavoriteRequest with _$ChannelsFavoriteRequest {
-  const factory ChannelsFavoriteRequest({
-    required String channelId,
-  }) = _ChannelsFavoriteRequest;
+  const factory ChannelsFavoriteRequest({required String channelId}) =
+      _ChannelsFavoriteRequest;
 
   factory ChannelsFavoriteRequest.fromJson(Map<String, Object?> json) =>
       _$ChannelsFavoriteRequestFromJson(json);

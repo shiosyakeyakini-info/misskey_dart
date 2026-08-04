@@ -12,6 +12,6 @@ abstract class UsersGetFrequentlyRepliedUsersRequest
   }) = _UsersGetFrequentlyRepliedUsersRequest;
 
   factory UsersGetFrequentlyRepliedUsersRequest.fromJson(
-          Map<String, Object?> json) =>
-      _$UsersGetFrequentlyRepliedUsersRequestFromJson(json);
+    Map<String, Object?> json,
+  ) => _$UsersGetFrequentlyRepliedUsersRequestFromJson(json);
 }

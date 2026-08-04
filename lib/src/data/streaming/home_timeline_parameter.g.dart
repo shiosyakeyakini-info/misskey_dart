@@ -7,15 +7,15 @@ part of 'home_timeline_parameter.dart';
 // **************************************************************************
 
 _HomeTimelineParameter _$HomeTimelineParameterFromJson(
-        Map<String, dynamic> json) =>
-    _HomeTimelineParameter(
-      withRenotes: json['withRenotes'] as bool?,
-      withFiles: json['withFiles'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => _HomeTimelineParameter(
+  withRenotes: json['withRenotes'] as bool?,
+  withFiles: json['withFiles'] as bool?,
+);
 
 Map<String, dynamic> _$HomeTimelineParameterToJson(
-        _HomeTimelineParameter instance) =>
-    <String, dynamic>{
-      'withRenotes': instance.withRenotes,
-      'withFiles': instance.withFiles,
-    };
+  _HomeTimelineParameter instance,
+) => <String, dynamic>{
+  'withRenotes': instance.withRenotes,
+  'withFiles': instance.withFiles,
+};

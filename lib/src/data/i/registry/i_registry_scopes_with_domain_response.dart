@@ -13,6 +13,5 @@ abstract class IRegistryScopesWithDomainResponse
 
   factory IRegistryScopesWithDomainResponse.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$IRegistryScopesWithDomainResponseFromJson(json);
+  ) => _$IRegistryScopesWithDomainResponseFromJson(json);
 }

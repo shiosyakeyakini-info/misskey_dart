@@ -16,8 +16,9 @@ String _$hostHash() => r'7a0de90020bf0559f8fb54c293d4459c20da1844';
 final hostProvider = AutoDisposeProvider<String>.internal(
   host,
   name: r'hostProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$hostHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$hostHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

@@ -5,9 +5,8 @@ part 'notes_state_request.g.dart';
 
 @freezed
 abstract class NotesStateRequest with _$NotesStateRequest {
-  const factory NotesStateRequest({
-    required String noteId,
-  }) = _NotesStateRequest;
+  const factory NotesStateRequest({required String noteId}) =
+      _NotesStateRequest;
 
   factory NotesStateRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesStateRequestFromJson(json);

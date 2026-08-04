@@ -13,7 +13,4 @@ _UsersReportAbuse _$UsersReportAbuseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersReportAbuseToJson(_UsersReportAbuse instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'comment': instance.comment,
-    };
+    <String, dynamic>{'userId': instance.userId, 'comment': instance.comment};

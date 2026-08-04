@@ -6,9 +6,8 @@ part 'ap_show_request.g.dart';
 
 @freezed
 abstract class ApShowRequest with _$ApShowRequest {
-  const factory ApShowRequest({
-    @UriConverter() required Uri uri,
-  }) = _ApShowRequest;
+  const factory ApShowRequest({@UriConverter() required Uri uri}) =
+      _ApShowRequest;
 
   factory ApShowRequest.fromJson(Map<String, dynamic> json) =>
       _$ApShowRequestFromJson(json);

@@ -5,9 +5,8 @@ part 'antennas_delete_request.g.dart';
 
 @freezed
 abstract class AntennasDeleteRequest with _$AntennasDeleteRequest {
-  const factory AntennasDeleteRequest({
-    required String antennaId,
-  }) = _AntennasDeleteRequest;
+  const factory AntennasDeleteRequest({required String antennaId}) =
+      _AntennasDeleteRequest;
 
   factory AntennasDeleteRequest.fromJson(Map<String, Object?> json) =>
       _$AntennasDeleteRequestFromJson(json);

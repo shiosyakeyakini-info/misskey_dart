@@ -15,10 +15,10 @@ _DriveFoldersRequest _$DriveFoldersRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DriveFoldersRequestToJson(
-        _DriveFoldersRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'folderId': instance.folderId,
-    };
+  _DriveFoldersRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'folderId': instance.folderId,
+};

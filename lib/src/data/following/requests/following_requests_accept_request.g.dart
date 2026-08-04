@@ -7,13 +7,9 @@ part of 'following_requests_accept_request.dart';
 // **************************************************************************
 
 _FollowingRequestsAcceptRequest _$FollowingRequestsAcceptRequestFromJson(
-        Map<String, dynamic> json) =>
-    _FollowingRequestsAcceptRequest(
-      userId: json['userId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _FollowingRequestsAcceptRequest(userId: json['userId'] as String);
 
 Map<String, dynamic> _$FollowingRequestsAcceptRequestToJson(
-        _FollowingRequestsAcceptRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _FollowingRequestsAcceptRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

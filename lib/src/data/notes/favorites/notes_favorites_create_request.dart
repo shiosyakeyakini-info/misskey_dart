@@ -5,9 +5,8 @@ part 'notes_favorites_create_request.g.dart';
 
 @freezed
 abstract class NotesFavoritesCreateRequest with _$NotesFavoritesCreateRequest {
-  const factory NotesFavoritesCreateRequest({
-    required String noteId,
-  }) = _NotesFavoritesCreateRequest;
+  const factory NotesFavoritesCreateRequest({required String noteId}) =
+      _NotesFavoritesCreateRequest;
 
   factory NotesFavoritesCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$NotesFavoritesCreateRequestFromJson(json);

@@ -15,10 +15,10 @@ _IRegistrySetRequest _$IRegistrySetRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IRegistrySetRequestToJson(
-        _IRegistrySetRequest instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'value': instance.value,
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+  _IRegistrySetRequest instance,
+) => <String, dynamic>{
+  'key': instance.key,
+  'value': instance.value,
+  'scope': instance.scope,
+  'domain': instance.domain,
+};

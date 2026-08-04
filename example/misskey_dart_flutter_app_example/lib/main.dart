@@ -63,7 +63,7 @@ class MyHomePage extends HookWidget {
                     DropdownMenuItem(
                       value: Channel.globalTimeline,
                       child: Text("グローバル"),
-                    )
+                    ),
                   ],
                   value: channel.value,
                   onChanged: (value) =>
@@ -71,9 +71,7 @@ class MyHomePage extends HookWidget {
                 ),
               ],
             ),
-            Expanded(
-              child: StreamingPage(channel: channel.value),
-            ),
+            Expanded(child: StreamingPage(channel: channel.value)),
           ],
         ),
       ),

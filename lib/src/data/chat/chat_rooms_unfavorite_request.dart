@@ -5,9 +5,8 @@ part 'chat_rooms_unfavorite_request.g.dart';
 
 @freezed
 abstract class ChatRoomsUnfavoriteRequest with _$ChatRoomsUnfavoriteRequest {
-  const factory ChatRoomsUnfavoriteRequest({
-    required String roomId,
-  }) = _ChatRoomsUnfavoriteRequest;
+  const factory ChatRoomsUnfavoriteRequest({required String roomId}) =
+      _ChatRoomsUnfavoriteRequest;
 
   factory ChatRoomsUnfavoriteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsUnfavoriteRequestFromJson(json);

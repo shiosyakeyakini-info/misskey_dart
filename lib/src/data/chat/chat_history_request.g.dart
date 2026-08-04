@@ -13,7 +13,4 @@ _ChatHistoryRequest _$ChatHistoryRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChatHistoryRequestToJson(_ChatHistoryRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'room': instance.room,
-    };
+    <String, dynamic>{'limit': instance.limit, 'room': instance.room};

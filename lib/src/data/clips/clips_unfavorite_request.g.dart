@@ -7,13 +7,9 @@ part of 'clips_unfavorite_request.dart';
 // **************************************************************************
 
 _ClipsUnfavoriteRequest _$ClipsUnfavoriteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ClipsUnfavoriteRequest(
-      clipId: json['clipId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _ClipsUnfavoriteRequest(clipId: json['clipId'] as String);
 
 Map<String, dynamic> _$ClipsUnfavoriteRequestToJson(
-        _ClipsUnfavoriteRequest instance) =>
-    <String, dynamic>{
-      'clipId': instance.clipId,
-    };
+  _ClipsUnfavoriteRequest instance,
+) => <String, dynamic>{'clipId': instance.clipId};

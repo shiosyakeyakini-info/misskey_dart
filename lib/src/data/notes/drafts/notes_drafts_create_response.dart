@@ -6,9 +6,8 @@ part 'notes_drafts_create_response.g.dart';
 
 @freezed
 abstract class NotesDraftsCreateResponse with _$NotesDraftsCreateResponse {
-  const factory NotesDraftsCreateResponse({
-    required NoteDraft createdDraft,
-  }) = _NotesDraftsCreateResponse;
+  const factory NotesDraftsCreateResponse({required NoteDraft createdDraft}) =
+      _NotesDraftsCreateResponse;
 
   factory NotesDraftsCreateResponse.fromJson(Map<String, Object?> json) =>
       _$NotesDraftsCreateResponseFromJson(json);

@@ -5,9 +5,8 @@ part 'clips_favorite_request.g.dart';
 
 @freezed
 abstract class ClipsFavoriteRequest with _$ClipsFavoriteRequest {
-  const factory ClipsFavoriteRequest({
-    required String clipId,
-  }) = _ClipsFavoriteRequest;
+  const factory ClipsFavoriteRequest({required String clipId}) =
+      _ClipsFavoriteRequest;
 
   factory ClipsFavoriteRequest.fromJson(Map<String, dynamic> json) =>
       _$ClipsFavoriteRequestFromJson(json);

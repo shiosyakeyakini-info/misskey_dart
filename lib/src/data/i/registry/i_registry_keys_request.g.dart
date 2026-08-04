@@ -7,15 +7,12 @@ part of 'i_registry_keys_request.dart';
 // **************************************************************************
 
 _IRegistryKeysRequest _$IRegistryKeysRequestFromJson(
-        Map<String, dynamic> json) =>
-    _IRegistryKeysRequest(
-      scope: (json['scope'] as List<dynamic>).map((e) => e as String).toList(),
-      domain: json['domain'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _IRegistryKeysRequest(
+  scope: (json['scope'] as List<dynamic>).map((e) => e as String).toList(),
+  domain: json['domain'] as String?,
+);
 
 Map<String, dynamic> _$IRegistryKeysRequestToJson(
-        _IRegistryKeysRequest instance) =>
-    <String, dynamic>{
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+  _IRegistryKeysRequest instance,
+) => <String, dynamic>{'scope': instance.scope, 'domain': instance.domain};

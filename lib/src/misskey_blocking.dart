@@ -18,8 +18,10 @@ class MisskeyBlocking {
 
   /// ブロックしているユーザーの一覧を取得します。
   Future<Iterable<Blocking>> list(BlockingListRequest request) async {
-    final response =
-        await _apiService.post<List>("blocking/list", request.toJson());
+    final response = await _apiService.post<List>(
+      "blocking/list",
+      request.toJson(),
+    );
     return response.map((e) => Blocking.fromJson(e));
   }
 }

@@ -7,15 +7,15 @@ class MisskeyGallery {
   final ApiService _apiService;
 
   MisskeyGallery({required ApiService apiService})
-      : _apiService = apiService,
-        posts = MisskeyGalleryPosts(apiService: apiService);
+    : _apiService = apiService,
+      posts = MisskeyGalleryPosts(apiService: apiService);
 
   /// 人気なギャラリーの投稿の一覧を取得します。
-  Future<Iterable<GalleryPost>> featured(
-    GalleryFeaturedRequest request,
-  ) async {
-    final response =
-        await _apiService.post<List>("gallery/featured", request.toJson());
+  Future<Iterable<GalleryPost>> featured(GalleryFeaturedRequest request) async {
+    final response = await _apiService.post<List>(
+      "gallery/featured",
+      request.toJson(),
+    );
     return response.map((e) => GalleryPost.fromJson(e));
   }
 
@@ -30,7 +30,7 @@ class MisskeyGalleryPosts {
   final ApiService _apiService;
 
   MisskeyGalleryPosts({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// ギャラリーの投稿を作成します。
   Future<GalleryPost> create(GalleryPostsCreateRequest request) async {
@@ -53,8 +53,10 @@ class MisskeyGalleryPosts {
 
   /// ギャラリーの投稿の一覧を取得します。
   Future<Iterable<GalleryPost>> posts(GalleryPostsRequest request) async {
-    final response =
-        await _apiService.post<List>("gallery/posts", request.toJson());
+    final response = await _apiService.post<List>(
+      "gallery/posts",
+      request.toJson(),
+    );
     return response.map((e) => GalleryPost.fromJson(e));
   }
 

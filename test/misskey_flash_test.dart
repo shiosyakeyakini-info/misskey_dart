@@ -50,8 +50,9 @@ void main() async {
 
   test("show", () async {
     final flash = await userClient.createFlash();
-    final response =
-        await userClient.flash.show(FlashShowRequest(flashId: flash.id));
+    final response = await userClient.flash.show(
+      FlashShowRequest(flashId: flash.id),
+    );
     expect(response.title, equals(flash.title));
   });
 
@@ -83,8 +84,9 @@ void main() async {
         visibility: FlashVisibility.private,
       ),
     );
-    final updated =
-        await userClient.flash.show(FlashShowRequest(flashId: flash.id));
+    final updated = await userClient.flash.show(
+      FlashShowRequest(flashId: flash.id),
+    );
     expect(updated.title, equals("updated"));
   });
 }

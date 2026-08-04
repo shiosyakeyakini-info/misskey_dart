@@ -10,8 +10,9 @@ void main() async {
       final response = await userClient.ap.show(
         ApShowRequest(
           uri: Uri.parse(
-              "${userClient.apiService.apiUrl?.split(":")[0] ?? "https"}://"
-              "${userClient.host}/notes/${note.id}"),
+            "${userClient.apiService.apiUrl?.split(":")[0] ?? "https"}://"
+            "${userClient.host}/notes/${note.id}",
+          ),
         ),
       );
       expect(response.type, equals("Note"));
@@ -23,8 +24,9 @@ void main() async {
       final response = await userClient.ap.show(
         ApShowRequest(
           uri: Uri.parse(
-              "${userClient.apiService.apiUrl?.split(":")[0] ?? "https"}://"
-              "${userClient.host}/users/${user.id}"),
+            "${userClient.apiService.apiUrl?.split(":")[0] ?? "https"}://"
+            "${userClient.host}/users/${user.id}",
+          ),
         ),
       );
       expect(response.type, equals("User"));

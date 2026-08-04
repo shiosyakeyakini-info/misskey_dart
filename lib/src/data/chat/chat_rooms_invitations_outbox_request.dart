@@ -14,6 +14,6 @@ abstract class ChatRoomsInvitationsOutboxRequest
   }) = _ChatRoomsInvitationsOutboxRequest;
 
   factory ChatRoomsInvitationsOutboxRequest.fromJson(
-          Map<String, dynamic> json) =>
-      _$ChatRoomsInvitationsOutboxRequestFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$ChatRoomsInvitationsOutboxRequestFromJson(json);
 }

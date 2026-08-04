@@ -5,7 +5,7 @@ class MisskeyRenoteMute {
   final ApiService _apiService;
 
   MisskeyRenoteMute({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// ユーザーのリノートをミュートします。
   Future<void> create(RenoteMuteCreateRequest request) async {
@@ -19,8 +19,10 @@ class MisskeyRenoteMute {
 
   /// リノートをミュートしているユーザーの一覧を取得します。
   Future<Iterable<RenoteMuting>> list(RenoteMuteListRequest request) async {
-    final response =
-        await _apiService.post<List>("renote-mute/list", request.toJson());
+    final response = await _apiService.post<List>(
+      "renote-mute/list",
+      request.toJson(),
+    );
     return response.map((e) => RenoteMuting.fromJson(e));
   }
 }

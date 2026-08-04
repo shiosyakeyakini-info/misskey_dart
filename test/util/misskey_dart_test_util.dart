@@ -11,10 +11,7 @@ class CreateUserResponse {
   final Misskey client;
   final User user;
 
-  CreateUserResponse({
-    required this.client,
-    required this.user,
-  });
+  CreateUserResponse({required this.client, required this.user});
 }
 
 Misskey getTestClient(String? token) {
@@ -61,15 +58,17 @@ extension MisskeyTestExtension on Misskey {
     String? channelId,
     List<String>? poll,
   }) async {
-    final response =
-        await apiService.post<Map<String, dynamic>>("notes/create", {
-      "text": text,
-      "fileIds": fileIds,
-      "replyId": replyId,
-      "renoteId": renoteId,
-      "channelId": channelId,
-      if (poll != null) "poll": {"choices": poll},
-    });
+    final response = await apiService.post<Map<String, dynamic>>(
+      "notes/create",
+      {
+        "text": text,
+        "fileIds": fileIds,
+        "replyId": replyId,
+        "renoteId": renoteId,
+        "channelId": channelId,
+        if (poll != null) "poll": {"choices": poll},
+      },
+    );
     return Note.fromJson(response["createdNote"]);
   }
 
@@ -83,16 +82,14 @@ extension MisskeyTestExtension on Misskey {
   Future<DriveFile> createImageDriveFile() async {
     return drive.files.createAsBinary(
       DriveFilesCreateRequest(force: true),
-      Uint8List.fromList(
-        [
-          // header
-          ..."GIF89a".codeUnits, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
-          // image block
-          0x2c, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00,
-          // trailer
-          0x3b,
-        ],
-      ),
+      Uint8List.fromList([
+        // header
+        ..."GIF89a".codeUnits, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+        // image block
+        0x2c, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00,
+        // trailer
+        0x3b,
+      ]),
     );
   }
 

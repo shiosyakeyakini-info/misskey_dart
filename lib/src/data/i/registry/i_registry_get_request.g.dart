@@ -14,9 +14,9 @@ _IRegistryGetRequest _$IRegistryGetRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IRegistryGetRequestToJson(
-        _IRegistryGetRequest instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+  _IRegistryGetRequest instance,
+) => <String, dynamic>{
+  'key': instance.key,
+  'scope': instance.scope,
+  'domain': instance.domain,
+};

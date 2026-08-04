@@ -7,22 +7,27 @@ class MisskeyUsers {
   final MisskeyUsersLists list;
 
   MisskeyUsers({required ApiService apiService})
-      : _apiService = apiService,
-        gallery = MisskeyUsersGallery(apiService: apiService),
-        list = MisskeyUsersLists(apiService: apiService);
+    : _apiService = apiService,
+      gallery = MisskeyUsersGallery(apiService: apiService),
+      list = MisskeyUsersLists(apiService: apiService);
 
   /// ユーザー情報をIDから取得します。
   Future<UserDetailed> show(UsersShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "users/show", request.toJson());
+      "users/show",
+      request.toJson(),
+    );
     return UserDetailed.fromJson(response);
   }
 
   /// ユーザー情報を複数のIDから取得します。
   Future<Iterable<UserDetailed>> showByIds(
-      UsersShowByIdsRequest request) async {
-    final response =
-        await _apiService.post<List>("users/show", request.toJson());
+    UsersShowByIdsRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "users/show",
+      request.toJson(),
+    );
     return response.map((e) => UserDetailed.fromJson(e));
   }
 
@@ -30,35 +35,45 @@ class MisskeyUsers {
   /// 自分自身のホストのユーザーを取得する場合、hostはnullである必要があります。
   Future<UserDetailed> showByName(UsersShowByUserNameRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "users/show", request.toJson());
+      "users/show",
+      request.toJson(),
+    );
     return UserDetailed.fromJson(response);
   }
 
   /// ユーザーが投稿したノートを取得します。
   Future<Iterable<Note>> notes(UsersNotesRequest request) async {
-    final response =
-        await _apiService.post<List>("users/notes", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/notes",
+      request.toJson(),
+    );
     return response.map((e) => Note.fromJson(e));
   }
 
   /// ユーザーが作成した公開クリップを取得します。
   Future<Iterable<Clip>> clips(UsersClipsRequest request) async {
-    final response =
-        await _apiService.post<List>("users/clips", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/clips",
+      request.toJson(),
+    );
     return response.map((e) => Clip.fromJson(e));
   }
 
   /// ユーザーをフォローしているユーザーの一覧を取得します。
   Future<Iterable<Following>> followers(UsersFollowersRequest request) async {
-    final response =
-        await _apiService.post<List>("users/followers", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/followers",
+      request.toJson(),
+    );
     return response.map((e) => Following.fromJson(e));
   }
 
   /// ユーザーがフォローしているユーザーの一覧を取得します。
   Future<Iterable<Following>> following(UsersFollowingRequest request) async {
-    final response =
-        await _apiService.post<List>("users/following", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/following",
+      request.toJson(),
+    );
     return response.map((e) => Following.fromJson(e));
   }
 
@@ -69,9 +84,12 @@ class MisskeyUsers {
 
   /// ユーザーがつけたリアクションを取得します。
   Future<Iterable<UsersReactionsResponse>> reactions(
-      UsersReactionsRequest request) async {
-    final response =
-        await _apiService.post<List>("users/reactions", request.toJson());
+    UsersReactionsRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "users/reactions",
+      request.toJson(),
+    );
     return response.map((e) => UsersReactionsResponse.fromJson(e));
   }
 
@@ -80,8 +98,10 @@ class MisskeyUsers {
   /// [UsersSearchRequest.detail] が false のとき 返り値の各要素は [UserLite]
   /// そうでなければ [UserDetailed]
   Future<Iterable<User>> search(UsersSearchRequest request) async {
-    final response =
-        await _apiService.post<List>("users/search", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/search",
+      request.toJson(),
+    );
     return response.map((e) => User.fromJson(e));
   }
 
@@ -90,7 +110,8 @@ class MisskeyUsers {
   /// [UsersSearchRequest.detail] が false のとき 返り値の各要素は [UserLite]
   /// そうでなければ [UserDetailed]
   Future<Iterable<User>> searchByUsernameAndHost(
-      UsersSearchByUsernameAndHostRequest request) async {
+    UsersSearchByUsernameAndHostRequest request,
+  ) async {
     final response = await _apiService.post<List>(
       "users/search-by-username-and-host",
       request.toJson(),
@@ -100,20 +121,26 @@ class MisskeyUsers {
 
   /// 対象のユーザーがよくリプライを送る相手を返します。
   Future<Iterable<UsersGetFrequentlyRepliedUsersResponse>>
-      getFrequentlyRepliedUsers(
+  getFrequentlyRepliedUsers(
     UsersGetFrequentlyRepliedUsersRequest request,
   ) async {
     final response = await _apiService.post<List>(
-        "users/get-frequently-replied-users", request.toJson());
-    return response
-        .map((e) => UsersGetFrequentlyRepliedUsersResponse.fromJson(e));
+      "users/get-frequently-replied-users",
+      request.toJson(),
+    );
+    return response.map(
+      (e) => UsersGetFrequentlyRepliedUsersResponse.fromJson(e),
+    );
   }
 
   /// このAPIは必ずエラーを返し、動作していないようです。
   Future<Iterable<User>> recommendation(
-      UsersRecommendationRequest request) async {
-    final response =
-        await _apiService.post<List>("users/recommendation", request.toJson());
+    UsersRecommendationRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "users/recommendation",
+      request.toJson(),
+    );
     return response.map((e) => User.fromJson(e));
   }
 
@@ -130,23 +157,30 @@ class MisskeyUsers {
 
   /// ユーザーが作成したPlayの一覧を取得します。
   Future<Iterable<Flash>> flashs(UsersFlashsRequest request) async {
-    final response =
-        await _apiService.post<List>("users/flashs", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/flashs",
+      request.toJson(),
+    );
     return response.map((e) => Flash.fromJson(e));
   }
 
   /// ユーザーのハイライトのノートを取得します。
   Future<Iterable<Note>> featuredNotes(
-      UsersFeaturedNotesRequest request) async {
-    final response =
-        await _apiService.post<List>("users/featured-notes", request.toJson());
+    UsersFeaturedNotesRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "users/featured-notes",
+      request.toJson(),
+    );
     return response.map((e) => Note.fromJson(e));
   }
 
   /// ユーザーが作成したページを取得します。
   Future<Iterable<Page>> pages(UsersPagesRequest request) async {
-    final response =
-        await _apiService.post<List>("users/pages", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/pages",
+      request.toJson(),
+    );
     return response.map((e) => Page.fromJson(e));
   }
 }
@@ -155,12 +189,14 @@ class MisskeyUsersGallery {
   final ApiService _apiService;
 
   MisskeyUsersGallery({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// ユーザーが作成したギャラリーの投稿を取得します。
   Future<Iterable<GalleryPost>> posts(UsersGalleryPostsRequest request) async {
-    final response =
-        await _apiService.post<List>("users/gallery/posts", request.toJson());
+    final response = await _apiService.post<List>(
+      "users/gallery/posts",
+      request.toJson(),
+    );
     return response.map((e) => GalleryPost.fromJson(e));
   }
 }
@@ -169,12 +205,14 @@ class MisskeyUsersLists {
   final ApiService _apiService;
 
   MisskeyUsersLists({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// リストを作成します。
   Future<UsersList> create(UsersListsCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "users/lists/create", request.toJson());
+      "users/lists/create",
+      request.toJson(),
+    );
     return UsersList.fromJson(response);
   }
 
@@ -218,7 +256,9 @@ class MisskeyUsersLists {
   /// リスト情報をIDから取得します。
   Future<UsersListsShowResponse> show(UsersListsShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "users/lists/show", request.toJson());
+      "users/lists/show",
+      request.toJson(),
+    );
     return UsersListsShowResponse.fromJson(response);
   }
 
@@ -230,7 +270,9 @@ class MisskeyUsersLists {
   /// リスト名を更新します。
   Future<UsersList> update(UsersListsUpdateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "users/lists/update", request.toJson());
+      "users/lists/update",
+      request.toJson(),
+    );
     return UsersList.fromJson(response);
   }
 }

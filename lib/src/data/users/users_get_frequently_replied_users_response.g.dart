@@ -7,16 +7,15 @@ part of 'users_get_frequently_replied_users_response.dart';
 // **************************************************************************
 
 _UsersGetFrequentlyRepliedUsersResponse
-    _$UsersGetFrequentlyRepliedUsersResponseFromJson(
-            Map<String, dynamic> json) =>
-        _UsersGetFrequentlyRepliedUsersResponse(
-          user: User.fromJson(json['user'] as Map<String, dynamic>),
-          weight: (json['weight'] as num).toDouble(),
-        );
+_$UsersGetFrequentlyRepliedUsersResponseFromJson(Map<String, dynamic> json) =>
+    _UsersGetFrequentlyRepliedUsersResponse(
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      weight: (json['weight'] as num).toDouble(),
+    );
 
 Map<String, dynamic> _$UsersGetFrequentlyRepliedUsersResponseToJson(
-        _UsersGetFrequentlyRepliedUsersResponse instance) =>
-    <String, dynamic>{
-      'user': instance.user.toJson(),
-      'weight': instance.weight,
-    };
+  _UsersGetFrequentlyRepliedUsersResponse instance,
+) => <String, dynamic>{
+  'user': instance.user.toJson(),
+  'weight': instance.weight,
+};
