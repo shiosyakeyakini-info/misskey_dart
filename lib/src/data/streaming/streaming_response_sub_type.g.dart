@@ -26,7 +26,7 @@ Map<String, dynamic> _$PageEventToJson(_PageEvent instance) =>
 _UrlUploadFinishedEvent _$UrlUploadFinishedEventFromJson(
   Map<String, dynamic> json,
 ) => _UrlUploadFinishedEvent(
-  marker: json['marker'] as String,
+  marker: json['marker'] as String?,
   file: DriveFile.fromJson(json['file'] as Map<String, dynamic>),
 );
 
