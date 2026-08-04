@@ -5,10 +5,8 @@ part 'drive_folders_create_request.g.dart';
 
 @freezed
 abstract class DriveFoldersCreateRequest with _$DriveFoldersCreateRequest {
-  const factory DriveFoldersCreateRequest({
-    String? name,
-    String? parentId,
-  }) = _DriveFoldersCreateRequest;
+  const factory DriveFoldersCreateRequest({String? name, String? parentId}) =
+      _DriveFoldersCreateRequest;
 
   factory DriveFoldersCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$DriveFoldersCreateRequestFromJson(json);

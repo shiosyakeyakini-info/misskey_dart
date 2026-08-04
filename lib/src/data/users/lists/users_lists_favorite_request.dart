@@ -5,9 +5,8 @@ part 'users_lists_favorite_request.g.dart';
 
 @freezed
 abstract class UsersListsFavoriteRequest with _$UsersListsFavoriteRequest {
-  const factory UsersListsFavoriteRequest({
-    required String listId,
-  }) = _UsersListsFavoriteRequest;
+  const factory UsersListsFavoriteRequest({required String listId}) =
+      _UsersListsFavoriteRequest;
 
   factory UsersListsFavoriteRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersListsFavoriteRequestFromJson(json);

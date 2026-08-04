@@ -7,13 +7,9 @@ part of 'notes_thread_muting_create_request.dart';
 // **************************************************************************
 
 _NotesThreadMutingCreateRequest _$NotesThreadMutingCreateRequestFromJson(
-        Map<String, dynamic> json) =>
-    _NotesThreadMutingCreateRequest(
-      noteId: json['noteId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _NotesThreadMutingCreateRequest(noteId: json['noteId'] as String);
 
 Map<String, dynamic> _$NotesThreadMutingCreateRequestToJson(
-        _NotesThreadMutingCreateRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+  _NotesThreadMutingCreateRequest instance,
+) => <String, dynamic>{'noteId': instance.noteId};

@@ -7,11 +7,7 @@ part of 'chat_user_parameter.dart';
 // **************************************************************************
 
 _ChatUserParameter _$ChatUserParameterFromJson(Map<String, dynamic> json) =>
-    _ChatUserParameter(
-      otherId: json['otherId'] as String,
-    );
+    _ChatUserParameter(otherId: json['otherId'] as String);
 
 Map<String, dynamic> _$ChatUserParameterToJson(_ChatUserParameter instance) =>
-    <String, dynamic>{
-      'otherId': instance.otherId,
-    };
+    <String, dynamic>{'otherId': instance.otherId};

@@ -17,7 +17,7 @@ class HideBeforeConverter extends JsonConverter<HideBefore, int> {
 
   @override
   int toJson(HideBefore object) => switch (object) {
-        HideBeforeDuration(:final duration) => duration.inSeconds,
-        HideBeforeDateTime(:final date) => date.millisecondsSinceEpoch ~/ 1000,
-      };
+    HideBeforeDuration(:final duration) => duration.inSeconds,
+    HideBeforeDateTime(:final date) => date.millisecondsSinceEpoch ~/ 1000,
+  };
 }

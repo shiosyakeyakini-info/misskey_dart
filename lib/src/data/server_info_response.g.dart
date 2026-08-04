@@ -29,20 +29,13 @@ _ServerInfoCpu _$ServerInfoCpuFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ServerInfoCpuToJson(_ServerInfoCpu instance) =>
-    <String, dynamic>{
-      'model': instance.model,
-      'cores': instance.cores,
-    };
+    <String, dynamic>{'model': instance.model, 'cores': instance.cores};
 
 _ServerInfoMem _$ServerInfoMemFromJson(Map<String, dynamic> json) =>
-    _ServerInfoMem(
-      total: (json['total'] as num).toInt(),
-    );
+    _ServerInfoMem(total: (json['total'] as num).toInt());
 
 Map<String, dynamic> _$ServerInfoMemToJson(_ServerInfoMem instance) =>
-    <String, dynamic>{
-      'total': instance.total,
-    };
+    <String, dynamic>{'total': instance.total};
 
 _ServerInfoFs _$ServerInfoFsFromJson(Map<String, dynamic> json) =>
     _ServerInfoFs(
@@ -51,7 +44,4 @@ _ServerInfoFs _$ServerInfoFsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ServerInfoFsToJson(_ServerInfoFs instance) =>
-    <String, dynamic>{
-      'total': instance.total,
-      'used': instance.used,
-    };
+    <String, dynamic>{'total': instance.total, 'used': instance.used};

@@ -24,31 +24,28 @@ class StreamingPage extends HookConsumerWidget {
     final emoji = body.emoji;
     final reactionEmojis =
         emoji == null || note.reactionEmojis.containsKey(body.reaction)
-            ? note.reactionEmojis
-            : Map.fromEntries(
-                [
-                  ...note.reactionEmojis.entries,
-                  MapEntry(emoji.name, emoji.url),
-                ],
-              );
+        ? note.reactionEmojis
+        : Map.fromEntries([
+            ...note.reactionEmojis.entries,
+            MapEntry(emoji.name, emoji.url),
+          ]);
     if (note.reactions.containsKey(body.reaction)) {
       return note.copyWith(
-        reactions: Map.fromEntries(
-          [
-            for (final reaction in note.reactions.entries)
-              if (reaction.key == body.reaction)
-                MapEntry(reaction.key, reaction.value + 1)
-              else
-                reaction
-          ],
-        ),
+        reactions: Map.fromEntries([
+          for (final reaction in note.reactions.entries)
+            if (reaction.key == body.reaction)
+              MapEntry(reaction.key, reaction.value + 1)
+            else
+              reaction,
+        ]),
         reactionEmojis: reactionEmojis,
       );
     }
     return note.copyWith(
-      reactions: Map.fromEntries(
-        [...note.reactions.entries, MapEntry(body.reaction, 1)],
-      ),
+      reactions: Map.fromEntries([
+        ...note.reactions.entries,
+        MapEntry(body.reaction, 1),
+      ]),
       reactionEmojis: reactionEmojis,
     );
   }
@@ -63,124 +60,122 @@ class StreamingPage extends HookConsumerWidget {
       );
     }
     return note.copyWith(
-      reactions: Map.fromEntries(
-        [
-          for (final entry in note.reactions.entries)
-            if (entry.key == reaction)
-              MapEntry(entry.key, entry.value - 1)
-            else
-              entry
-        ],
-      ),
+      reactions: Map.fromEntries([
+        for (final entry in note.reactions.entries)
+          if (entry.key == reaction)
+            MapEntry(entry.key, entry.value - 1)
+          else
+            entry,
+      ]),
     );
   }
 
   Note addPollChoice(Note note, int choice) {
     return note.copyWith(
-        poll: note.poll?.copyWith(choices: [
-      for (final element
-          in note.poll?.choices.indexed ?? <(int, NotePollChoice)>[])
-        if (element.$1 == choice)
-          element.$2.copyWith(votes: element.$2.votes + 1)
-        else
-          element.$2
-    ]));
+      poll: note.poll?.copyWith(
+        choices: [
+          for (final element
+              in note.poll?.choices.indexed ?? <(int, NotePollChoice)>[])
+            if (element.$1 == choice)
+              element.$2.copyWith(votes: element.$2.votes + 1)
+            else
+              element.$2,
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final host = ref.watch(hostProvider);
     final misskey = useMemoized(() => Misskey(token: null, host: host), [host]);
-    final streamFuture = useMemoized(
-      () => misskey.streamingService.stream(),
-      [misskey, channel],
-    );
+    final streamFuture = useMemoized(() => misskey.streamingService.stream(), [
+      misskey,
+      channel,
+    ]);
     final streaming = useFuture(streamFuture);
-    final id = useMemoized(
-      () => DateTime.now().toIso8601String(),
-      [host, channel],
-    );
+    final id = useMemoized(() => DateTime.now().toIso8601String(), [
+      host,
+      channel,
+    ]);
     final notes = useState<List<Note>>([]);
 
-    useEffect(
-      () {
-        final controller = streaming.data;
-        if (controller == null ||
-            streaming.connectionState != ConnectionState.done) return null;
+    useEffect(() {
+      final controller = streaming.data;
+      if (controller == null ||
+          streaming.connectionState != ConnectionState.done)
+        return null;
 
-        notes.value = [];
+      notes.value = [];
 
-        final listener = controller.addChannel(channel, {}, id).listen((event) {
-          // ストリーミングを受信したときの処理を記述します。
-          switch (event) {
-            case StreamingChannelResponse(:final body):
-              switch (body) {
-                case NoteChannelEvent(:final body):
-                  notes.value = [body, ...notes.value];
-                  controller.subNote(body.id);
-                  if (body.renote != null) controller.subNote(body.renote!.id);
-                  if (body.reply != null) controller.subNote(body.reply!.id);
-                case _:
-              }
-            case StreamingChannelNoteUpdatedResponse(:final body):
-              switch (body) {
-                case ReactedChannelEvent(:final body, :final id):
-                  notes.value = [
-                    for (final note in notes.value)
-                      if (note.id == id)
-                        addOrReplaceReaction(note, body)
-                      else if (note.renote != null && note.renote!.id == id)
-                        addOrReplaceReaction(note.renote!, body)
-                      else if (note.reply != null && note.reply!.id == id)
-                        addOrReplaceReaction(note.reply!, body)
-                      else
-                        note
-                  ];
-                case UnreactedChannelEvent(:final body, :final id):
-                  notes.value = [
-                    for (final note in notes.value)
-                      if (note.id == id)
-                        removeReaction(note, body.reaction)
-                      else if (note.renote != null && note.renote!.id == id)
-                        removeReaction(note.renote!, body.reaction)
-                      else if (note.reply != null && note.reply!.id == id)
-                        removeReaction(note.reply!, body.reaction)
-                      else
-                        note
-                  ];
-                case DeletedChannelEvent(:final id):
-                  notes.value = [
-                    for (final note in notes.value.where((e) => e.id != id))
-                      if (note.renote != null && note.renote!.id == id)
-                        note.copyWith(renote: null)
-                      else if (note.reply != null && note.reply!.id == id)
-                        note.copyWith(reply: null)
-                      else
-                        note
-                  ];
-                case PollVotedChannelEvent(:final body):
-                  notes.value = [
-                    for (final note in notes.value)
-                      if (note.id == id)
-                        addPollChoice(note, body.choice)
-                      else if (note.renote != null && note.renote!.id == id)
-                        addPollChoice(note.renote!, body.choice)
-                      else if (note.reply != null && note.reply!.id == id)
-                        addPollChoice(note.reply!, body.choice)
-                      else
-                        note
-                  ];
-                case UpdatedChannelEvent():
-              }
-            case _:
-          }
-        });
+      final listener = controller.addChannel(channel, {}, id).listen((event) {
+        // ストリーミングを受信したときの処理を記述します。
+        switch (event) {
+          case StreamingChannelResponse(:final body):
+            switch (body) {
+              case NoteChannelEvent(:final body):
+                notes.value = [body, ...notes.value];
+                controller.subNote(body.id);
+                if (body.renote != null) controller.subNote(body.renote!.id);
+                if (body.reply != null) controller.subNote(body.reply!.id);
+              case _:
+            }
+          case StreamingChannelNoteUpdatedResponse(:final body):
+            switch (body) {
+              case ReactedChannelEvent(:final body, :final id):
+                notes.value = [
+                  for (final note in notes.value)
+                    if (note.id == id)
+                      addOrReplaceReaction(note, body)
+                    else if (note.renote != null && note.renote!.id == id)
+                      addOrReplaceReaction(note.renote!, body)
+                    else if (note.reply != null && note.reply!.id == id)
+                      addOrReplaceReaction(note.reply!, body)
+                    else
+                      note,
+                ];
+              case UnreactedChannelEvent(:final body, :final id):
+                notes.value = [
+                  for (final note in notes.value)
+                    if (note.id == id)
+                      removeReaction(note, body.reaction)
+                    else if (note.renote != null && note.renote!.id == id)
+                      removeReaction(note.renote!, body.reaction)
+                    else if (note.reply != null && note.reply!.id == id)
+                      removeReaction(note.reply!, body.reaction)
+                    else
+                      note,
+                ];
+              case DeletedChannelEvent(:final id):
+                notes.value = [
+                  for (final note in notes.value.where((e) => e.id != id))
+                    if (note.renote != null && note.renote!.id == id)
+                      note.copyWith(renote: null)
+                    else if (note.reply != null && note.reply!.id == id)
+                      note.copyWith(reply: null)
+                    else
+                      note,
+                ];
+              case PollVotedChannelEvent(:final body):
+                notes.value = [
+                  for (final note in notes.value)
+                    if (note.id == id)
+                      addPollChoice(note, body.choice)
+                    else if (note.renote != null && note.renote!.id == id)
+                      addPollChoice(note.renote!, body.choice)
+                    else if (note.reply != null && note.reply!.id == id)
+                      addPollChoice(note.reply!, body.choice)
+                    else
+                      note,
+                ];
+              case UpdatedChannelEvent():
+            }
+          case _:
+        }
+      });
 
-        return () async =>
-            (listener.cancel(), controller.removeChannel(id)).wait;
-      },
-      [streaming, channel],
-    );
+      return () async => (listener.cancel(), controller.removeChannel(id)).wait;
+    }, [streaming, channel]);
     return ListView.builder(
       itemCount: notes.value.length,
       itemBuilder: (context, index) => Padding(
@@ -260,7 +255,7 @@ class MiNote extends HookWidget {
                       TextSpan(
                         text:
                             " @${targetNote.user.username}${targetNote.user.host == null ? "" : "@${targetNote.user.host}"}",
-                      )
+                      ),
                     ],
                   ),
                   if (targetNote.cw != null)
@@ -272,9 +267,11 @@ class MiNote extends HookWidget {
                   if (targetNote.cw != null)
                     ElevatedButton(
                       onPressed: () => cwOpened.value = !cwOpened.value,
-                      child: Text(cwOpened.value
-                          ? "隠す"
-                          : "もっと見る（${targetNote.text?.length ?? 0}文字）"),
+                      child: Text(
+                        cwOpened.value
+                            ? "隠す"
+                            : "もっと見る（${targetNote.text?.length ?? 0}文字）",
+                      ),
                     ),
                   if (cwOpened.value || targetNote.cw == null)
                     Mfm(
@@ -293,9 +290,9 @@ class MiNote extends HookWidget {
                           anotherServerEmojis: targetNote.reactionEmojis,
                         ),
                         Text(reaction.value.toString()),
-                      ]
+                      ],
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

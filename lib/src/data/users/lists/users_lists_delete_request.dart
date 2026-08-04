@@ -5,9 +5,8 @@ part 'users_lists_delete_request.g.dart';
 
 @freezed
 abstract class UsersListsDeleteRequest with _$UsersListsDeleteRequest {
-  const factory UsersListsDeleteRequest({
-    required String listId,
-  }) = _UsersListsDeleteRequest;
+  const factory UsersListsDeleteRequest({required String listId}) =
+      _UsersListsDeleteRequest;
 
   factory UsersListsDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersListsDeleteRequestFromJson(json);

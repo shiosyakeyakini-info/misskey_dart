@@ -5,11 +5,8 @@ part 'i_pages_request.g.dart';
 
 @freezed
 abstract class IPagesRequest with _$IPagesRequest {
-  const factory IPagesRequest({
-    int? limit,
-    String? sinceId,
-    String? untilId,
-  }) = _IPageRequest;
+  const factory IPagesRequest({int? limit, String? sinceId, String? untilId}) =
+      _IPageRequest;
 
   factory IPagesRequest.fromJson(Map<String, Object?> json) =>
       _$IPagesRequestFromJson(json);

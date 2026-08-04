@@ -5,10 +5,8 @@ part 'gallery_featured_request.g.dart';
 
 @freezed
 abstract class GalleryFeaturedRequest with _$GalleryFeaturedRequest {
-  const factory GalleryFeaturedRequest({
-    int? limit,
-    String? untilId,
-  }) = _GalleryFeaturedRequest;
+  const factory GalleryFeaturedRequest({int? limit, String? untilId}) =
+      _GalleryFeaturedRequest;
 
   factory GalleryFeaturedRequest.fromJson(Map<String, dynamic> json) =>
       _$GalleryFeaturedRequestFromJson(json);

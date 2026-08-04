@@ -5,9 +5,8 @@ part 'flash_delete_request.g.dart';
 
 @freezed
 abstract class FlashDeleteRequest with _$FlashDeleteRequest {
-  const factory FlashDeleteRequest({
-    required String flashId,
-  }) = _FlashDeleteRequest;
+  const factory FlashDeleteRequest({required String flashId}) =
+      _FlashDeleteRequest;
 
   factory FlashDeleteRequest.fromJson(Map<String, Object?> json) =>
       _$FlashDeleteRequestFromJson(json);

@@ -16,9 +16,7 @@ void main() async {
   test("search", () async {
     await userClient.notes.create(NotesCreateRequest(text: "#abc"));
     final response = await userClient.hashtags.search(
-      HashtagsSearchRequest(
-        query: "abc",
-      ),
+      HashtagsSearchRequest(query: "abc"),
     );
     expect(response.toList(), contains("abc"));
   });
@@ -35,13 +33,11 @@ void main() async {
 
   test("users", () async {
     final newClient = (await adminClient.createUser()).client;
-    final newUser =
-        await newClient.i.update(IUpdateRequest(description: "#abc"));
+    final newUser = await newClient.i.update(
+      IUpdateRequest(description: "#abc"),
+    );
     final response = await userClient.hashtags.users(
-      HashtagsUsersRequest(
-        tag: "abc",
-        sort: UsersSortType.createdAtDescendant,
-      ),
+      HashtagsUsersRequest(tag: "abc", sort: UsersSortType.createdAtDescendant),
     );
     expect(response.map((e) => e.id), contains(newUser.id));
   });

@@ -9,7 +9,9 @@ class MisskeyAntenna {
   /// アンテナを作成します。
   Future<Antenna> create(AntennasCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "antennas/create", request.toJson());
+      "antennas/create",
+      request.toJson(),
+    );
     return Antenna.fromJson(response);
   }
 
@@ -26,15 +28,19 @@ class MisskeyAntenna {
 
   /// アンテナに引っかかったノートを返します。
   Future<Iterable<Note>> notes(AntennasNotesRequest request) async {
-    final response =
-        await _apiService.post<List>("antennas/notes", request.toJson());
+    final response = await _apiService.post<List>(
+      "antennas/notes",
+      request.toJson(),
+    );
     return response.map((e) => Note.fromJson(e));
   }
 
   /// アンテナ情報をIDから取得します。
   Future<Antenna> show(AntennasShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "antennas/show", request.toJson());
+      "antennas/show",
+      request.toJson(),
+    );
     return Antenna.fromJson(response);
   }
 

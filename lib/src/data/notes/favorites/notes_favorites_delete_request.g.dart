@@ -7,13 +7,9 @@ part of 'notes_favorites_delete_request.dart';
 // **************************************************************************
 
 _NotesFavoritesDeleteRequest _$NotesFavoritesDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _NotesFavoritesDeleteRequest(
-      noteId: json['noteId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _NotesFavoritesDeleteRequest(noteId: json['noteId'] as String);
 
 Map<String, dynamic> _$NotesFavoritesDeleteRequestToJson(
-        _NotesFavoritesDeleteRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+  _NotesFavoritesDeleteRequest instance,
+) => <String, dynamic>{'noteId': instance.noteId};

@@ -5,9 +5,8 @@ part 'chat_messages_delete_request.g.dart';
 
 @freezed
 abstract class ChatMessagesDeleteRequest with _$ChatMessagesDeleteRequest {
-  const factory ChatMessagesDeleteRequest({
-    required String messageId,
-  }) = _ChatMessagesDeleteRequest;
+  const factory ChatMessagesDeleteRequest({required String messageId}) =
+      _ChatMessagesDeleteRequest;
 
   factory ChatMessagesDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatMessagesDeleteRequestFromJson(json);

@@ -6,5 +6,5 @@ enum AntennaSource {
   users,
   @JsonValue("users_blacklist")
   usersBlackList,
-  list
+  list,
 }

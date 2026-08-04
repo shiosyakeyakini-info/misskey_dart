@@ -1,5 +1,1 @@
-enum FFVisibility {
-  public,
-  followers,
-  private,
-}
+enum FFVisibility { public, followers, private }

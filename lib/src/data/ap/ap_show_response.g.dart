@@ -13,7 +13,4 @@ _ApShowResponse _$ApShowResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ApShowResponseToJson(_ApShowResponse instance) =>
-    <String, dynamic>{
-      'type': instance.type,
-      'object': instance.object,
-    };
+    <String, dynamic>{'type': instance.type, 'object': instance.object};

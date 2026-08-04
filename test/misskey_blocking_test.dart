@@ -7,8 +7,9 @@ void main() async {
   test("create", () async {
     final newUser = (await adminClient.createUser()).user;
     await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
-    final userDetailed =
-        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    final userDetailed = await userClient.users.show(
+      UsersShowRequest(userId: newUser.id),
+    );
     expect((userDetailed as UserDetailedNotMeWithRelations).isBlocking, isTrue);
   });
 
@@ -16,8 +17,9 @@ void main() async {
     final newUser = (await adminClient.createUser()).user;
     await userClient.blocking.create(BlockCreateRequest(userId: newUser.id));
     await userClient.blocking.delete(BlockDeleteRequest(userId: newUser.id));
-    final userDetailed =
-        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    final userDetailed = await userClient.users.show(
+      UsersShowRequest(userId: newUser.id),
+    );
     expect(
       (userDetailed as UserDetailedNotMeWithRelations).isBlocking,
       isFalse,

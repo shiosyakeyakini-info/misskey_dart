@@ -7,14 +7,12 @@ part of 'user_list.dart';
 // **************************************************************************
 
 _UsersList _$UsersListFromJson(Map<String, dynamic> json) => _UsersList(
-      id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      name: json['name'] as String?,
-      userIds:
-          (json['userIds'] as List<dynamic>).map((e) => e as String).toList(),
-      isPublic: json['isPublic'] as bool?,
-    );
+  id: json['id'] as String,
+  createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
+  name: json['name'] as String?,
+  userIds: (json['userIds'] as List<dynamic>).map((e) => e as String).toList(),
+  isPublic: json['isPublic'] as bool?,
+);
 
 Map<String, dynamic> _$UsersListToJson(_UsersList instance) =>
     <String, dynamic>{

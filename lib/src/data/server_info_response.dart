@@ -18,10 +18,8 @@ abstract class ServerInfoResponse with _$ServerInfoResponse {
 
 @freezed
 abstract class ServerInfoCpu with _$ServerInfoCpu {
-  const factory ServerInfoCpu({
-    required String model,
-    required int cores,
-  }) = _ServerInfoCpu;
+  const factory ServerInfoCpu({required String model, required int cores}) =
+      _ServerInfoCpu;
 
   factory ServerInfoCpu.fromJson(Map<String, dynamic> json) =>
       _$ServerInfoCpuFromJson(json);
@@ -29,9 +27,7 @@ abstract class ServerInfoCpu with _$ServerInfoCpu {
 
 @freezed
 abstract class ServerInfoMem with _$ServerInfoMem {
-  const factory ServerInfoMem({
-    required int total,
-  }) = _ServerInfoMem;
+  const factory ServerInfoMem({required int total}) = _ServerInfoMem;
 
   factory ServerInfoMem.fromJson(Map<String, dynamic> json) =>
       _$ServerInfoMemFromJson(json);
@@ -39,10 +35,8 @@ abstract class ServerInfoMem with _$ServerInfoMem {
 
 @freezed
 abstract class ServerInfoFs with _$ServerInfoFs {
-  const factory ServerInfoFs({
-    required int total,
-    required int used,
-  }) = _ServerInfoFs;
+  const factory ServerInfoFs({required int total, required int used}) =
+      _ServerInfoFs;
 
   factory ServerInfoFs.fromJson(Map<String, dynamic> json) =>
       _$ServerInfoFsFromJson(json);

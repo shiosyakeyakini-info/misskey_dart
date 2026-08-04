@@ -61,7 +61,7 @@ enum PageContentType {
   @JsonValue('if')
   condition,
   @Deprecated("removed")
-  post
+  post,
 }
 
 abstract class AbstractPageContent {
@@ -141,10 +141,8 @@ abstract class AbstractPageUnknown extends AbstractPageContent {}
 
 @freezed
 abstract class PageUnknown with _$PageUnknown implements AbstractPageUnknown {
-  const factory PageUnknown({
-    required String id,
-    PageContentType? type,
-  }) = _PageUnknown;
+  const factory PageUnknown({required String id, PageContentType? type}) =
+      _PageUnknown;
 
   factory PageUnknown.fromJson(Map<String, dynamic> json) =>
       _$PageUnknownFromJson(json);

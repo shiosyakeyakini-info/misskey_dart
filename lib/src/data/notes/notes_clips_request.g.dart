@@ -7,11 +7,7 @@ part of 'notes_clips_request.dart';
 // **************************************************************************
 
 _NotesClipsRequest _$NotesClipsRequestFromJson(Map<String, dynamic> json) =>
-    _NotesClipsRequest(
-      noteId: json['noteId'] as String,
-    );
+    _NotesClipsRequest(noteId: json['noteId'] as String);
 
 Map<String, dynamic> _$NotesClipsRequestToJson(_NotesClipsRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+    <String, dynamic>{'noteId': instance.noteId};

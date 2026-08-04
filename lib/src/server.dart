@@ -21,25 +21,26 @@ class MisskeyServer {
 
   /// サーバーからのお知らせを取得します。
   Future<Iterable<AnnouncementsResponse>> announcements(
-      String host, AnnouncementsRequest request) async {
+    String host,
+    AnnouncementsRequest request,
+  ) async {
     final response = await dio.postUri<List>(
-        Uri(
-            scheme: "https",
-            host: host,
-            pathSegments: ["api", "announcements"]),
-        data: request.toJson()..removeWhere((key, value) => value == null));
+      Uri(scheme: "https", host: host, pathSegments: ["api", "announcements"]),
+      data: request.toJson()..removeWhere((key, value) => value == null),
+    );
     return response.data!.map((e) => AnnouncementsResponse.fromJson(e));
   }
 
   /// パスワードでログインし、トークンを返します
   Future<String> loginAsPassword(
-      String server, String userId, String password) async {
+    String server,
+    String userId,
+    String password,
+  ) async {
     final response = await dio.post<Map<String, dynamic>>(
       "https://$server/api/signin",
       data: jsonEncode({"username": userId, "password": password}),
-      options: Options(
-        method: "POST",
-      ),
+      options: Options(method: "POST"),
     );
     return response.data!["token"];
   }
@@ -58,20 +59,22 @@ class MisskeyServer {
       if (icon != null) MapEntry("icon", icon),
       if (callback != null) MapEntry("callback", callback),
       if (permission != null)
-        MapEntry("permission", permission.map((e) => e.value).join(","))
+        MapEntry("permission", permission.map((e) => e.value).join(",")),
     ]);
     final url = Uri(
-        scheme: "https",
-        host: host,
-        pathSegments: ["miauth", sessionId],
-        queryParameters: queryParameters);
+      scheme: "https",
+      host: host,
+      pathSegments: ["miauth", sessionId],
+      queryParameters: queryParameters,
+    );
 
     return url;
   }
 
   Future<String> checkMiAuthToken(String host, String sessionId) async {
     final response = await dio.post<Map<String, dynamic>>(
-        "https://$host/api/miauth/$sessionId/check");
+      "https://$host/api/miauth/$sessionId/check",
+    );
     return response.data!["token"];
   }
 }

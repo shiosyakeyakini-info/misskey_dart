@@ -1,5 +1,1 @@
-enum Origin {
-  local,
-  remote,
-  combined,
-}
+enum Origin { local, remote, combined }

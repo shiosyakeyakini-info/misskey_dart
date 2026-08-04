@@ -5,9 +5,7 @@ part 'pages_like_request.g.dart';
 
 @freezed
 abstract class PagesLikeRequest with _$PagesLikeRequest {
-  const factory PagesLikeRequest({
-    required String pageId,
-  }) = _PagesLikeRequest;
+  const factory PagesLikeRequest({required String pageId}) = _PagesLikeRequest;
 
   factory PagesLikeRequest.fromJson(Map<String, dynamic> json) =>
       _$PagesLikeRequestFromJson(json);

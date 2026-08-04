@@ -5,9 +5,7 @@ part 'ping_response.g.dart';
 
 @freezed
 abstract class PingResponse with _$PingResponse {
-  const factory PingResponse({
-    required int pong,
-  }) = _PingResponse;
+  const factory PingResponse({required int pong}) = _PingResponse;
 
   factory PingResponse.fromJson(Map<String, dynamic> json) =>
       _$PingResponseFromJson(json);

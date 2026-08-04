@@ -34,14 +34,16 @@ class MisskeyChat {
   final MisskeyChatRooms rooms;
 
   MisskeyChat({required ApiService apiService})
-      : _apiService = apiService,
-        messages = MisskeyChatMessages(apiService: apiService),
-        rooms = MisskeyChatRooms(apiService: apiService);
+    : _apiService = apiService,
+      messages = MisskeyChatMessages(apiService: apiService),
+      rooms = MisskeyChatRooms(apiService: apiService);
 
   /// 直近のチャットメッセージを取得します
   Future<Iterable<ChatMessage>> history(ChatHistoryRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/history", request.toJson());
+    final response = await _apiService.post<List>(
+      "chat/history",
+      request.toJson(),
+    );
     return response.map((e) => ChatMessage.fromJson(e));
   }
 
@@ -55,21 +57,27 @@ class MisskeyChatMessages {
   final ApiService _apiService;
 
   MisskeyChatMessages({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// チャットメッセージを作成します（ルーム宛）
   Future<ChatMessage> createToRoom(
-      ChatMessagesCreateToRoomRequest request) async {
+    ChatMessagesCreateToRoomRequest request,
+  ) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/messages/create-to-room", request.toJson());
+      "chat/messages/create-to-room",
+      request.toJson(),
+    );
     return ChatMessage.fromJson(response);
   }
 
   /// チャットメッセージを作成します（ユーザー宛）
   Future<ChatMessage> createToUser(
-      ChatMessagesCreateToUserRequest request) async {
+    ChatMessagesCreateToUserRequest request,
+  ) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/messages/create-to-user", request.toJson());
+      "chat/messages/create-to-user",
+      request.toJson(),
+    );
     return ChatMessage.fromJson(response);
   }
 
@@ -93,7 +101,9 @@ class MisskeyChatMessages {
     ChatMessagesRoomTimelineRequest request,
   ) async {
     final response = await _apiService.post<List>(
-        "chat/messages/room-timeline", request.toJson());
+      "chat/messages/room-timeline",
+      request.toJson(),
+    );
     return response.map((e) => ChatMessage.fromJson(e));
   }
 
@@ -101,15 +111,19 @@ class MisskeyChatMessages {
   Future<Iterable<ChatMessage>> search(
     ChatMessagesSearchRequest request,
   ) async {
-    final response =
-        await _apiService.post<List>("chat/messages/search", request.toJson());
+    final response = await _apiService.post<List>(
+      "chat/messages/search",
+      request.toJson(),
+    );
     return response.map((e) => ChatMessage.fromJson(e));
   }
 
   /// チャットメッセージを取得します
   Future<ChatMessage> show(ChatMessagesShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/messages/show", request.toJson());
+      "chat/messages/show",
+      request.toJson(),
+    );
     return ChatMessage.fromJson(response);
   }
 
@@ -118,7 +132,9 @@ class MisskeyChatMessages {
     ChatMessagesUserTimelineRequest request,
   ) async {
     final response = await _apiService.post<List>(
-        "chat/messages/user-timeline", request.toJson());
+      "chat/messages/user-timeline",
+      request.toJson(),
+    );
     return response.map((e) => ChatMessage.fromJson(e));
   }
 }
@@ -129,13 +145,15 @@ class MisskeyChatRooms {
   final MisskeyChatRoomsInvitations invitations;
 
   MisskeyChatRooms({required ApiService apiService})
-      : _apiService = apiService,
-        invitations = MisskeyChatRoomsInvitations(apiService: apiService);
+    : _apiService = apiService,
+      invitations = MisskeyChatRoomsInvitations(apiService: apiService);
 
   /// チャットルームを作成します
   Future<ChatRoom> create(ChatRoomsCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/create", request.toJson());
+      "chat/rooms/create",
+      request.toJson(),
+    );
     return ChatRoom.fromJson(response);
   }
 
@@ -151,8 +169,10 @@ class MisskeyChatRooms {
 
   /// 参加中のチャットルームを取得します
   Future<Iterable<ChatJoining>> joining(ChatRoomsJoiningRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/rooms/joining", request.toJson());
+    final response = await _apiService.post<List>(
+      "chat/rooms/joining",
+      request.toJson(),
+    );
     return response.map((e) => ChatJoining.fromJson(e));
   }
 
@@ -163,8 +183,10 @@ class MisskeyChatRooms {
 
   /// チャットルームのメンバーを取得します
   Future<Iterable<ChatJoining>> members(ChatRoomsMembersRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/rooms/members", request.toJson());
+    final response = await _apiService.post<List>(
+      "chat/rooms/members",
+      request.toJson(),
+    );
     return response.map((e) => ChatJoining.fromJson(e));
   }
 
@@ -175,22 +197,28 @@ class MisskeyChatRooms {
 
   /// 自身が所有しているチャットルームを取得します
   Future<Iterable<ChatRoom>> owned(ChatRoomsOwnedRequest request) async {
-    final response =
-        await _apiService.post<List>("chat/rooms/owned", request.toJson());
+    final response = await _apiService.post<List>(
+      "chat/rooms/owned",
+      request.toJson(),
+    );
     return response.map((e) => ChatRoom.fromJson(e));
   }
 
   /// チャットルームの情報を取得します
   Future<ChatRoom> show(ChatRoomsShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/show", request.toJson());
+      "chat/rooms/show",
+      request.toJson(),
+    );
     return ChatRoom.fromJson(response);
   }
 
   /// チャットルームの情報を更新します
   Future<ChatRoom> update(ChatRoomsUpdateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/update", request.toJson());
+      "chat/rooms/update",
+      request.toJson(),
+    );
     return ChatRoom.fromJson(response);
   }
 }
@@ -199,12 +227,14 @@ class MisskeyChatRoomsInvitations {
   final ApiService _apiService;
 
   MisskeyChatRoomsInvitations({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// チャットルームへの招待を作成します
   Future<ChatJoining> create(ChatRoomsInvitationsCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "chat/rooms/invitations/create", request.toJson());
+      "chat/rooms/invitations/create",
+      request.toJson(),
+    );
     return ChatJoining.fromJson(response);
   }
 
@@ -218,15 +248,20 @@ class MisskeyChatRoomsInvitations {
     ChatRoomsInvitationsInboxRequest request,
   ) async {
     final response = await _apiService.post<List>(
-        "chat/rooms/invitations/inbox", request.toJson());
+      "chat/rooms/invitations/inbox",
+      request.toJson(),
+    );
     return response.map((e) => ChatJoining.fromJson(e));
   }
 
   /// チャットルームへ招待中のユーザーを取得します
   Future<Iterable<ChatJoining>> outbox(
-      ChatRoomsInvitationsOutboxRequest request) async {
+    ChatRoomsInvitationsOutboxRequest request,
+  ) async {
     final response = await _apiService.post<List>(
-        "chat/rooms/invitations/outbox", request.toJson());
+      "chat/rooms/invitations/outbox",
+      request.toJson(),
+    );
     return response.map((e) => ChatJoining.fromJson(e));
   }
 }

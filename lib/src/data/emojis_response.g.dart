@@ -19,26 +19,25 @@ Map<String, dynamic> _$EmojisResponseToJson(_EmojisResponse instance) =>
     };
 
 _Emoji _$EmojiFromJson(Map<String, dynamic> json) => _Emoji(
-      aliases:
-          (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
-      name: json['name'] as String,
-      category: json['category'] as String?,
-      url: const UriConverter().fromJson(json['url'] as String),
-      localOnly: json['localOnly'] as bool?,
-      isSensitive: json['isSensitive'] as bool? ?? false,
-      roleIdsThatCanBeUsedThisEmojiAsReaction:
-          (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-    );
+  aliases: (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
+  name: json['name'] as String,
+  category: json['category'] as String?,
+  url: const UriConverter().fromJson(json['url'] as String),
+  localOnly: json['localOnly'] as bool?,
+  isSensitive: json['isSensitive'] as bool? ?? false,
+  roleIdsThatCanBeUsedThisEmojiAsReaction:
+      (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+);
 
 Map<String, dynamic> _$EmojiToJson(_Emoji instance) => <String, dynamic>{
-      'aliases': instance.aliases,
-      'name': instance.name,
-      'category': instance.category,
-      'url': const UriConverter().toJson(instance.url),
-      'localOnly': instance.localOnly,
-      'isSensitive': instance.isSensitive,
-      'roleIdsThatCanBeUsedThisEmojiAsReaction':
-          instance.roleIdsThatCanBeUsedThisEmojiAsReaction,
-    };
+  'aliases': instance.aliases,
+  'name': instance.name,
+  'category': instance.category,
+  'url': const UriConverter().toJson(instance.url),
+  'localOnly': instance.localOnly,
+  'isSensitive': instance.isSensitive,
+  'roleIdsThatCanBeUsedThisEmojiAsReaction':
+      instance.roleIdsThatCanBeUsedThisEmojiAsReaction,
+};

@@ -5,9 +5,8 @@ part 'chat_rooms_delete_request.g.dart';
 
 @freezed
 abstract class ChatRoomsDeleteRequest with _$ChatRoomsDeleteRequest {
-  const factory ChatRoomsDeleteRequest({
-    required String roomId,
-  }) = _ChatRoomsDeleteRequest;
+  const factory ChatRoomsDeleteRequest({required String roomId}) =
+      _ChatRoomsDeleteRequest;
 
   factory ChatRoomsDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsDeleteRequestFromJson(json);

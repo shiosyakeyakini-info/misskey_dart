@@ -10,8 +10,8 @@ class MisskeyDrive {
   final ApiService _apiService;
 
   MisskeyDrive(this._apiService)
-      : files = MisskeyDriveFiles(_apiService),
-        folders = MisskeyDriveFolders(_apiService);
+    : files = MisskeyDriveFiles(_apiService),
+      folders = MisskeyDriveFolders(_apiService);
 
   /// ドライブの容量と使用量を取得します。
   Future<DriveResponse> drive() async {
@@ -21,8 +21,10 @@ class MisskeyDrive {
 
   /// ドライブにあるファイルの一覧を取得します。
   Future<Iterable<DriveFile>> stream(DriveStreamRequest request) async {
-    final response =
-        await _apiService.post<List>("drive/stream", request.toJson());
+    final response = await _apiService.post<List>(
+      "drive/stream",
+      request.toJson(),
+    );
     return response.map((e) => DriveFile.fromJson(e));
   }
 }
@@ -33,24 +35,36 @@ class MisskeyDriveFiles {
 
   /// ドライブにファイルを作成します。
   Future<DriveFile> create(
-      DriveFilesCreateRequest request, File fileContent) async {
+    DriveFilesCreateRequest request,
+    File fileContent,
+  ) async {
     final response = await _apiService.postWithFile<Map<String, dynamic>>(
-        "drive/files/create", request.toJson(), fileContent);
+      "drive/files/create",
+      request.toJson(),
+      fileContent,
+    );
     return DriveFile.fromJson(response);
   }
 
   /// ドライブにファイルを作成します。
   Future<DriveFile> createAsBinary(
-      DriveFilesCreateRequest request, Uint8List fileContent) async {
+    DriveFilesCreateRequest request,
+    Uint8List fileContent,
+  ) async {
     final response = await _apiService.postWithBinary<Map<String, dynamic>>(
-        "drive/files/create", request.toJson(), fileContent);
+      "drive/files/create",
+      request.toJson(),
+      fileContent,
+    );
     return DriveFile.fromJson(response);
   }
 
   /// ドライブのファイルの情報を更新します。
   Future<DriveFile> update(DriveFilesUpdateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "drive/files/update", request.toJson());
+      "drive/files/update",
+      request.toJson(),
+    );
     return DriveFile.fromJson(response);
   }
 
@@ -61,15 +75,19 @@ class MisskeyDriveFiles {
 
   /// ドライブの指定したフォルダにあるファイル一覧を取得します。
   Future<Iterable<DriveFile>> files(DriveFilesRequest request) async {
-    final response =
-        await _apiService.post<List>("drive/files", request.toJson());
+    final response = await _apiService.post<List>(
+      "drive/files",
+      request.toJson(),
+    );
     return response.map((e) => DriveFile.fromJson(e));
   }
 
   /// ドライブの指定したフォルダのなかからファイルを検索します。
   Future<Iterable<DriveFile>> find(DriveFilesFindRequest request) async {
-    final response =
-        await _apiService.post<List>("drive/files/find", request.toJson());
+    final response = await _apiService.post<List>(
+      "drive/files/find",
+      request.toJson(),
+    );
     return response.map((e) => DriveFile.fromJson(e));
   }
 
@@ -130,8 +148,10 @@ class MisskeyDriveFolders {
 
   /// ドライブのフォルダの中にあるフォルダを取得します。
   Future<Iterable<DriveFolder>> folders(DriveFoldersRequest request) async {
-    final response =
-        await _apiService.post<List>("drive/folders", request.toJson());
+    final response = await _apiService.post<List>(
+      "drive/folders",
+      request.toJson(),
+    );
     return response.map((e) => DriveFolder.fromJson(e));
   }
 
@@ -151,8 +171,10 @@ class MisskeyDriveFolders {
 
   /// ドライブの指定したフォルダのなかからフォルダを検索します。
   Future<Iterable<DriveFolder>> find(DriveFoldersFindRequest request) async {
-    final response =
-        await _apiService.post<List>("drive/folders/find", request.toJson());
+    final response = await _apiService.post<List>(
+      "drive/folders/find",
+      request.toJson(),
+    );
     return response.map((e) => DriveFolder.fromJson(e));
   }
 

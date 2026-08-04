@@ -7,11 +7,7 @@ part of 'block_delete_request.dart';
 // **************************************************************************
 
 _BlockDeleteRequest _$BlockDeleteRequestFromJson(Map<String, dynamic> json) =>
-    _BlockDeleteRequest(
-      userId: json['userId'] as String,
-    );
+    _BlockDeleteRequest(userId: json['userId'] as String);
 
 Map<String, dynamic> _$BlockDeleteRequestToJson(_BlockDeleteRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

@@ -7,13 +7,9 @@ part of 'renote_mute_create_request.dart';
 // **************************************************************************
 
 _RenoteMuteCreateRequest _$RenoteMuteCreateRequestFromJson(
-        Map<String, dynamic> json) =>
-    _RenoteMuteCreateRequest(
-      userId: json['userId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _RenoteMuteCreateRequest(userId: json['userId'] as String);
 
 Map<String, dynamic> _$RenoteMuteCreateRequestToJson(
-        _RenoteMuteCreateRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _RenoteMuteCreateRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

@@ -5,10 +5,8 @@ part 'drive_response.g.dart';
 
 @freezed
 abstract class DriveResponse with _$DriveResponse {
-  const factory DriveResponse({
-    required int capacity,
-    required int usage,
-  }) = _DriveResponse;
+  const factory DriveResponse({required int capacity, required int usage}) =
+      _DriveResponse;
 
   factory DriveResponse.fromJson(Map<String, dynamic> json) =>
       _$DriveResponseFromJson(json);

@@ -5,9 +5,8 @@ part 'channels_show_request.g.dart';
 
 @freezed
 abstract class ChannelsShowRequest with _$ChannelsShowRequest {
-  const factory ChannelsShowRequest({
-    required String channelId,
-  }) = _ChannelsShowRequest;
+  const factory ChannelsShowRequest({required String channelId}) =
+      _ChannelsShowRequest;
 
   factory ChannelsShowRequest.fromJson(Map<String, Object?> json) =>
       _$ChannelsShowRequestFromJson(json);

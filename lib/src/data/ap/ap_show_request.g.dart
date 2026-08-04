@@ -7,11 +7,7 @@ part of 'ap_show_request.dart';
 // **************************************************************************
 
 _ApShowRequest _$ApShowRequestFromJson(Map<String, dynamic> json) =>
-    _ApShowRequest(
-      uri: const UriConverter().fromJson(json['uri'] as String),
-    );
+    _ApShowRequest(uri: const UriConverter().fromJson(json['uri'] as String));
 
 Map<String, dynamic> _$ApShowRequestToJson(_ApShowRequest instance) =>
-    <String, dynamic>{
-      'uri': const UriConverter().toJson(instance.uri),
-    };
+    <String, dynamic>{'uri': const UriConverter().toJson(instance.uri)};

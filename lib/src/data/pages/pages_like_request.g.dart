@@ -7,11 +7,7 @@ part of 'pages_like_request.dart';
 // **************************************************************************
 
 _PagesLikeRequest _$PagesLikeRequestFromJson(Map<String, dynamic> json) =>
-    _PagesLikeRequest(
-      pageId: json['pageId'] as String,
-    );
+    _PagesLikeRequest(pageId: json['pageId'] as String);
 
 Map<String, dynamic> _$PagesLikeRequestToJson(_PagesLikeRequest instance) =>
-    <String, dynamic>{
-      'pageId': instance.pageId,
-    };
+    <String, dynamic>{'pageId': instance.pageId};

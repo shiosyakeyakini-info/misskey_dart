@@ -5,9 +5,8 @@ part 'chat_user_parameter.g.dart';
 
 @freezed
 abstract class ChatUserParameter with _$ChatUserParameter {
-  const factory ChatUserParameter({
-    required String otherId,
-  }) = _ChatUserParameter;
+  const factory ChatUserParameter({required String otherId}) =
+      _ChatUserParameter;
 
   factory ChatUserParameter.fromJson(Map<String, dynamic> json) =>
       _$ChatUserParameterFromJson(json);

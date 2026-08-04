@@ -13,8 +13,9 @@ class NullableColorConverter extends JsonConverter<int?, String?> {
     }
     if (json.length >= 4) {
       return int.tryParse(
-          "${json.substring(1, 2)}${json.substring(1, 2)}${json.substring(2, 3)}${json.substring(2, 3)}${json.substring(3, 4)}${json.substring(3, 4)}",
-          radix: 16);
+        "${json.substring(1, 2)}${json.substring(1, 2)}${json.substring(2, 3)}${json.substring(2, 3)}${json.substring(3, 4)}${json.substring(3, 4)}",
+        radix: 16,
+      );
     }
     return null;
   }

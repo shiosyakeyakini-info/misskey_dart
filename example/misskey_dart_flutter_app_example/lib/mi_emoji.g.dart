@@ -13,12 +13,13 @@ String _$emojisHash() => r'bdb2053b6604e885031fd241e6e27e138733fdd4';
 final emojisProvider = AutoDisposeFutureProvider<List<Emoji>>.internal(
   emojis,
   name: r'emojisProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$emojisHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$emojisHash,
   dependencies: <ProviderOrFamily>[hostProvider],
   allTransitiveDependencies: <ProviderOrFamily>{
     hostProvider,
-    ...?hostProvider.allTransitiveDependencies
+    ...?hostProvider.allTransitiveDependencies,
   },
 );
 

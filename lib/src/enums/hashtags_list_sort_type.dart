@@ -10,8 +10,7 @@ enum HashtagsListSortType {
   attachedLocalUsersDescendant("+attachedLocalUsers"),
   attachedLocalUsersAscendant("-attachedLocalUsers"),
   attachedRemoteUsersDescendant("+attachedRemoteUsers"),
-  attachedRemoteUsersAscendant("-attachedRemoteUsers"),
-  ;
+  attachedRemoteUsersAscendant("-attachedRemoteUsers");
 
   final String value;
 

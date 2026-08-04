@@ -5,9 +5,8 @@ part 'drive_files_delete_request.g.dart';
 
 @freezed
 abstract class DriveFilesDeleteRequest with _$DriveFilesDeleteRequest {
-  const factory DriveFilesDeleteRequest({
-    required String fileId,
-  }) = _DriveFilesDeleteRequest;
+  const factory DriveFilesDeleteRequest({required String fileId}) =
+      _DriveFilesDeleteRequest;
 
   factory DriveFilesDeleteRequest.fromJson(Map<String, dynamic> json) =>
       _$DriveFilesDeleteRequestFromJson(json);

@@ -43,24 +43,24 @@ class NullableEpocTimeDateTimeConverter extends JsonConverter<DateTime?, int?> {
   final bool hasMicroSeconds;
 
   const NullableEpocTimeDateTimeConverter.withMilliSeconds()
-      : hasMicroSeconds = false;
+    : hasMicroSeconds = false;
 
   const NullableEpocTimeDateTimeConverter.withMicroSeconds()
-      : hasMicroSeconds = true;
+    : hasMicroSeconds = true;
 
   @override
   DateTime? fromJson(int? json) => json == null
       ? null
       : hasMicroSeconds
-          ? DateTime.fromMicrosecondsSinceEpoch(json)
-          : DateTime.fromMillisecondsSinceEpoch(json);
+      ? DateTime.fromMicrosecondsSinceEpoch(json)
+      : DateTime.fromMillisecondsSinceEpoch(json);
 
   @override
   int? toJson(DateTime? object) => object == null
       ? null
       : hasMicroSeconds
-          ? object.microsecondsSinceEpoch
-          : object.millisecondsSinceEpoch;
+      ? object.microsecondsSinceEpoch
+      : object.millisecondsSinceEpoch;
 }
 
 class BirthdayConverter extends JsonConverter<DateTime?, String?> {

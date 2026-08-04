@@ -7,11 +7,7 @@ part of 'emoji_request.dart';
 // **************************************************************************
 
 _EmojiRequest _$EmojiRequestFromJson(Map<String, dynamic> json) =>
-    _EmojiRequest(
-      name: json['name'] as String,
-    );
+    _EmojiRequest(name: json['name'] as String);
 
 Map<String, dynamic> _$EmojiRequestToJson(_EmojiRequest instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-    };
+    <String, dynamic>{'name': instance.name};

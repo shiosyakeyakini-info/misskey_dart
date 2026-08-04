@@ -10,6 +10,7 @@ class MisskeyAp {
   /// 照会操作を行います。
   Future<ApShowResponse> show(ApShowRequest request) async {
     return ApShowResponse.fromJson(
-        await _apiService.post("ap/show", request.toJson()));
+      await _apiService.post("ap/show", request.toJson()),
+    );
   }
 }

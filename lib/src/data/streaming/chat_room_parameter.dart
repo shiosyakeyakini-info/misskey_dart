@@ -5,9 +5,8 @@ part 'chat_room_parameter.g.dart';
 
 @freezed
 abstract class ChatRoomParameter with _$ChatRoomParameter {
-  const factory ChatRoomParameter({
-    required String roomId,
-  }) = _ChatRoomParameter;
+  const factory ChatRoomParameter({required String roomId}) =
+      _ChatRoomParameter;
 
   factory ChatRoomParameter.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomParameterFromJson(json);

@@ -5,9 +5,8 @@ part 'gallery_posts_unlike_request.g.dart';
 
 @freezed
 abstract class GalleryPostsUnlikeRequest with _$GalleryPostsUnlikeRequest {
-  const factory GalleryPostsUnlikeRequest({
-    required String postId,
-  }) = _GalleryPostsUnlikeRequest;
+  const factory GalleryPostsUnlikeRequest({required String postId}) =
+      _GalleryPostsUnlikeRequest;
 
   factory GalleryPostsUnlikeRequest.fromJson(Map<String, dynamic> json) =>
       _$GalleryPostsUnlikeRequestFromJson(json);
