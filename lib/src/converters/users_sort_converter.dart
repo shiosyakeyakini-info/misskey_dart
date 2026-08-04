@@ -9,8 +9,9 @@ class NullableUsersSortConverter
   @override
   UsersSortType? fromJson(String? json) => json == null
       ? null
-      : UsersSortType.values
-          .firstWhereOrNull((element) => element.value == json);
+      : UsersSortType.values.firstWhereOrNull(
+          (element) => element.value == json,
+        );
 
   @override
   String? toJson(UsersSortType? object) => object?.value;

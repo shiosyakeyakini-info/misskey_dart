@@ -5,10 +5,8 @@ part 'home_timeline_parameter.g.dart';
 
 @freezed
 abstract class HomeTimelineParameter with _$HomeTimelineParameter {
-  const factory HomeTimelineParameter({
-    bool? withRenotes,
-    bool? withFiles,
-  }) = _HomeTimelineParameter;
+  const factory HomeTimelineParameter({bool? withRenotes, bool? withFiles}) =
+      _HomeTimelineParameter;
 
   factory HomeTimelineParameter.fromJson(Map<String, dynamic> json) =>
       _$HomeTimelineParameterFromJson(json);

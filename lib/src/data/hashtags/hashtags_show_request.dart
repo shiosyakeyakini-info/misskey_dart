@@ -5,9 +5,8 @@ part 'hashtags_show_request.g.dart';
 
 @freezed
 abstract class HashtagsShowRequest with _$HashtagsShowRequest {
-  const factory HashtagsShowRequest({
-    required String tag,
-  }) = _HashtagsShowRequest;
+  const factory HashtagsShowRequest({required String tag}) =
+      _HashtagsShowRequest;
 
   factory HashtagsShowRequest.fromJson(Map<String, dynamic> json) =>
       _$HashtagsShowRequestFromJson(json);

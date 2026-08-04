@@ -9,8 +9,9 @@ part of 'renote_muting.dart';
 _RenoteMuting _$RenoteMutingFromJson(Map<String, dynamic> json) =>
     _RenoteMuting(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       muteeId: json['muteeId'] as String,
       mutee: UserDetailedNotMe.fromJson(json['mutee'] as Map<String, dynamic>),
     );

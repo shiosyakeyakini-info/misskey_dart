@@ -7,15 +7,12 @@ part of 'i_gallery_likes_response.dart';
 // **************************************************************************
 
 _IGalleryLikesResponse _$IGalleryLikesResponseFromJson(
-        Map<String, dynamic> json) =>
-    _IGalleryLikesResponse(
-      id: json['id'] as String,
-      post: GalleryPost.fromJson(json['post'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => _IGalleryLikesResponse(
+  id: json['id'] as String,
+  post: GalleryPost.fromJson(json['post'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$IGalleryLikesResponseToJson(
-        _IGalleryLikesResponse instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'post': instance.post.toJson(),
-    };
+  _IGalleryLikesResponse instance,
+) => <String, dynamic>{'id': instance.id, 'post': instance.post.toJson()};

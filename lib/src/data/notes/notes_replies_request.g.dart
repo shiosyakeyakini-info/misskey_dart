@@ -15,10 +15,10 @@ _NotesRepliesRequest _$NotesRepliesRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesRepliesRequestToJson(
-        _NotesRepliesRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-    };
+  _NotesRepliesRequest instance,
+) => <String, dynamic>{
+  'noteId': instance.noteId,
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+};

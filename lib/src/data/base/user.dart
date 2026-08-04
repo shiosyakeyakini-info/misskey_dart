@@ -495,24 +495,11 @@ abstract class UserField with _$UserField {
       _$UserFieldFromJson(json);
 }
 
-enum ChatScope {
-  everyone,
-  followers,
-  following,
-  mutual,
-  none,
-}
+enum ChatScope { everyone, followers, following, mutual, none }
 
-enum Notify {
-  normal,
-  none,
-}
+enum Notify { normal, none }
 
-enum TwoFactorBackupCodesStock {
-  full,
-  partial,
-  none,
-}
+enum TwoFactorBackupCodesStock { full, partial, none }
 
 class MuteWord {
   final String? regExp;

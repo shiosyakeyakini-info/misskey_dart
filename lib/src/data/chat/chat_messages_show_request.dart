@@ -5,9 +5,8 @@ part 'chat_messages_show_request.g.dart';
 
 @freezed
 abstract class ChatMessagesShowRequest with _$ChatMessagesShowRequest {
-  const factory ChatMessagesShowRequest({
-    required String messageId,
-  }) = _ChatMessagesShowRequest;
+  const factory ChatMessagesShowRequest({required String messageId}) =
+      _ChatMessagesShowRequest;
 
   factory ChatMessagesShowRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatMessagesShowRequestFromJson(json);

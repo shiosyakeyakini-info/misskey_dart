@@ -7,8 +7,9 @@ void main() async {
   test("create", () async {
     final newUser = (await adminClient.createUser()).user;
     await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
-    final userDetailed =
-        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    final userDetailed = await userClient.users.show(
+      UsersShowRequest(userId: newUser.id),
+    );
     expect((userDetailed as UserDetailedNotMeWithRelations).isMuted, isTrue);
   });
 
@@ -16,8 +17,9 @@ void main() async {
     final newUser = (await adminClient.createUser()).user;
     await userClient.mute.create(MuteCreateRequest(userId: newUser.id));
     await userClient.mute.delete(MuteDeleteRequest(userId: newUser.id));
-    final userDetailed =
-        await userClient.users.show(UsersShowRequest(userId: newUser.id));
+    final userDetailed = await userClient.users.show(
+      UsersShowRequest(userId: newUser.id),
+    );
     expect((userDetailed as UserDetailedNotMeWithRelations).isMuted, isFalse);
   });
 

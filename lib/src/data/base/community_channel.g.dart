@@ -9,8 +9,9 @@ part of 'community_channel.dart';
 _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
     _CommunityChannel(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       lastNotedAt: json['lastNotedAt'] == null
           ? null
           : DateTime.parse(json['lastNotedAt'] as String),
@@ -18,7 +19,9 @@ _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       userId: json['userId'] as String?,
       bannerUrl: _$JsonConverterFromJson<String, Uri?>(
-          json['bannerUrl'], const NullableUriConverter().fromJson),
+        json['bannerUrl'],
+        const NullableUriConverter().fromJson,
+      ),
       pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -61,5 +64,4 @@ Map<String, dynamic> _$CommunityChannelToJson(_CommunityChannel instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

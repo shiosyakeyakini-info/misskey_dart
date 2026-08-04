@@ -6,28 +6,29 @@ part of 'roles_list_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RolesListResponse _$RolesListResponseFromJson(Map<String, dynamic> json) =>
-    _RolesListResponse(
-      id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      updatedAt:
-          const DateTimeConverter().fromJson(json['updatedAt'] as String),
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      color: const NullableColorConverter().fromJson(json['color'] as String?),
-      iconUrl: _$JsonConverterFromJson<String, Uri?>(
-          json['iconUrl'], const NullableUriConverter().fromJson),
-      target: json['target'] as String?,
-      isPublic: json['isPublic'] as bool,
-      isAdministrator: json['isAdministrator'] as bool,
-      isModerator: json['isModerator'] as bool,
-      isExplorable: json['isExplorable'] as bool,
-      asBadge: json['asBadge'] as bool,
-      canEditMembersByModerator: json['canEditMembersByModerator'] as bool,
-      displayOrder: (json['displayOrder'] as num).toInt(),
-      usersCount: (json['usersCount'] as num).toInt(),
-    );
+_RolesListResponse _$RolesListResponseFromJson(
+  Map<String, dynamic> json,
+) => _RolesListResponse(
+  id: json['id'] as String,
+  createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
+  updatedAt: const DateTimeConverter().fromJson(json['updatedAt'] as String),
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  color: const NullableColorConverter().fromJson(json['color'] as String?),
+  iconUrl: _$JsonConverterFromJson<String, Uri?>(
+    json['iconUrl'],
+    const NullableUriConverter().fromJson,
+  ),
+  target: json['target'] as String?,
+  isPublic: json['isPublic'] as bool,
+  isAdministrator: json['isAdministrator'] as bool,
+  isModerator: json['isModerator'] as bool,
+  isExplorable: json['isExplorable'] as bool,
+  asBadge: json['asBadge'] as bool,
+  canEditMembersByModerator: json['canEditMembersByModerator'] as bool,
+  displayOrder: (json['displayOrder'] as num).toInt(),
+  usersCount: (json['usersCount'] as num).toInt(),
+);
 
 Map<String, dynamic> _$RolesListResponseToJson(_RolesListResponse instance) =>
     <String, dynamic>{
@@ -52,5 +53,4 @@ Map<String, dynamic> _$RolesListResponseToJson(_RolesListResponse instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

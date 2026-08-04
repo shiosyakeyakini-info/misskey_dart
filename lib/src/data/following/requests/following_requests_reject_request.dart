@@ -6,9 +6,8 @@ part 'following_requests_reject_request.g.dart';
 @freezed
 abstract class FollowingRequestsRejectRequest
     with _$FollowingRequestsRejectRequest {
-  const factory FollowingRequestsRejectRequest({
-    required String userId,
-  }) = _FollowingRequestsRejectRequest;
+  const factory FollowingRequestsRejectRequest({required String userId}) =
+      _FollowingRequestsRejectRequest;
 
   factory FollowingRequestsRejectRequest.fromJson(Map<String, dynamic> json) =>
       _$FollowingRequestsRejectRequestFromJson(json);

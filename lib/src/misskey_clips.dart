@@ -23,8 +23,10 @@ class MisskeyClips {
 
   /// クリップに関連付けられたノートの一覧を取得します。
   Future<Iterable<Note>> notes(ClipsNotesRequest request) async {
-    final response =
-        await _apiService.post<List>("clips/notes", request.toJson());
+    final response = await _apiService.post<List>(
+      "clips/notes",
+      request.toJson(),
+    );
     return response.map((e) => Note.fromJson(e));
   }
 

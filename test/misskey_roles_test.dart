@@ -32,8 +32,9 @@ void main() async {
       "roleId": role["id"],
       "userId": newUser.id,
     });
-    final response =
-        await userClient.roles.users(RolesUsersRequest(roleId: role["id"]));
+    final response = await userClient.roles.users(
+      RolesUsersRequest(roleId: role["id"]),
+    );
     expect(response.map((e) => e.user.id), contains(newUser.id));
   });
 
@@ -41,21 +42,18 @@ void main() async {
     await userClient.roles.show(RolesShowRequest(roleId: role["id"]));
   });
 
-  test(
-    "notes",
-    () async {
-      final clientAndUser = await adminClient.createUser();
-      final newClient = clientAndUser.client;
-      final newUser = clientAndUser.user;
-      await adminClient.apiService.post("admin/roles/assign", {
-        "roleId": role["id"],
-        "userId": newUser.id,
-      });
-      final note = await newClient.createNote();
-      final response =
-          await userClient.roles.notes(RolesNotesRequest(roleId: role["id"]));
-      expect(response.map((e) => e.id), contains(note.id));
-    },
-    retry: 3,
-  );
+  test("notes", () async {
+    final clientAndUser = await adminClient.createUser();
+    final newClient = clientAndUser.client;
+    final newUser = clientAndUser.user;
+    await adminClient.apiService.post("admin/roles/assign", {
+      "roleId": role["id"],
+      "userId": newUser.id,
+    });
+    final note = await newClient.createNote();
+    final response = await userClient.roles.notes(
+      RolesNotesRequest(roleId: role["id"]),
+    );
+    expect(response.map((e) => e.id), contains(note.id));
+  }, retry: 3);
 }

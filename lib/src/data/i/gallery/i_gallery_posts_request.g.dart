@@ -7,17 +7,17 @@ part of 'i_gallery_posts_request.dart';
 // **************************************************************************
 
 _IGalleryPostsRequest _$IGalleryPostsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _IGalleryPostsRequest(
-      limit: (json['limit'] as num?)?.toInt(),
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _IGalleryPostsRequest(
+  limit: (json['limit'] as num?)?.toInt(),
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+);
 
 Map<String, dynamic> _$IGalleryPostsRequestToJson(
-        _IGalleryPostsRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-    };
+  _IGalleryPostsRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+};

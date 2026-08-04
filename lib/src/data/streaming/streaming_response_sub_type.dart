@@ -57,10 +57,8 @@ abstract class Signin with _$Signin {
 
 @freezed
 abstract class TimelineVoted with _$TimelineVoted {
-  const factory TimelineVoted({
-    required int choice,
-    required String userId,
-  }) = _TimelineVoted;
+  const factory TimelineVoted({required int choice, required String userId}) =
+      _TimelineVoted;
 
   factory TimelineVoted.fromJson(Map<String, dynamic> json) =>
       _$TimelineVotedFromJson(json);
@@ -138,10 +136,8 @@ sealed class StreamingStats with _$StreamingStats {
 
 @freezed
 abstract class StatsLogFs with _$StatsLogFs {
-  const factory StatsLogFs({
-    required double r,
-    required double w,
-  }) = _StatsLogFs;
+  const factory StatsLogFs({required double r, required double w}) =
+      _StatsLogFs;
 
   factory StatsLogFs.fromJson(Map<String, dynamic> json) =>
       _$StatsLogFsFromJson(json);
@@ -149,10 +145,8 @@ abstract class StatsLogFs with _$StatsLogFs {
 
 @freezed
 abstract class StatsLogMem with _$StatsLogMem {
-  const factory StatsLogMem({
-    required double used,
-    required double active,
-  }) = _StatsLogMem;
+  const factory StatsLogMem({required double used, required double active}) =
+      _StatsLogMem;
 
   factory StatsLogMem.fromJson(Map<String, dynamic> json) =>
       _$StatsLogMemFromJson(json);
@@ -160,10 +154,8 @@ abstract class StatsLogMem with _$StatsLogMem {
 
 @freezed
 abstract class StatsLogNet with _$StatsLogNet {
-  const factory StatsLogNet({
-    required double rx,
-    required double tx,
-  }) = _StatsLogNet;
+  const factory StatsLogNet({required double rx, required double tx}) =
+      _StatsLogNet;
 
   factory StatsLogNet.fromJson(Map<String, dynamic> json) =>
       _$StatsLogNetFromJson(json);

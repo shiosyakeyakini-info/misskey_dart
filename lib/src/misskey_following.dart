@@ -7,20 +7,24 @@ class MisskeyFollowing {
   final ApiService _apiService;
 
   MisskeyFollowing({required apiService})
-      : _apiService = apiService,
-        requests = MisskeyFollowingRequests(apiService: apiService);
+    : _apiService = apiService,
+      requests = MisskeyFollowingRequests(apiService: apiService);
 
   /// ユーザーをフォローします。
   Future<UserLite> create(FollowingCreateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "following/create", request.toJson());
+      "following/create",
+      request.toJson(),
+    );
     return UserLite.fromJson(response);
   }
 
   /// ユーザーに対するフォローを解除します。
   Future<UserLite> delete(FollowingDeleteRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(
-        "following/delete", request.toJson());
+      "following/delete",
+      request.toJson(),
+    );
     return UserLite.fromJson(response);
   }
 

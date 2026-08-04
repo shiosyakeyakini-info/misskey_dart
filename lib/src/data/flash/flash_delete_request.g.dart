@@ -7,11 +7,7 @@ part of 'flash_delete_request.dart';
 // **************************************************************************
 
 _FlashDeleteRequest _$FlashDeleteRequestFromJson(Map<String, dynamic> json) =>
-    _FlashDeleteRequest(
-      flashId: json['flashId'] as String,
-    );
+    _FlashDeleteRequest(flashId: json['flashId'] as String);
 
 Map<String, dynamic> _$FlashDeleteRequestToJson(_FlashDeleteRequest instance) =>
-    <String, dynamic>{
-      'flashId': instance.flashId,
-    };
+    <String, dynamic>{'flashId': instance.flashId};

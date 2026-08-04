@@ -8,9 +8,12 @@ class MisskeyReversi {
 
   /// サーバー内のリバーシのゲームを取得します。
   Future<Iterable<ReversiGamesResponse>> show(
-      ReversiGamesRequest request) async {
-    final response =
-        await _apiService.post<List>("reversi/games", request.toJson());
+    ReversiGamesRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "reversi/games",
+      request.toJson(),
+    );
     return response.map((e) => ReversiGamesResponse.fromJson(e));
   }
 
@@ -23,6 +26,7 @@ class MisskeyReversi {
   /// サーバー内のゲームの詳細を取得します。
   Future<ReversiShowGameResponse> showGame(ReversiGamesRequest request) async {
     return ReversiShowGameResponse.fromJson(
-        await _apiService.post("reversi/show-game", request.toJson()));
+      await _apiService.post("reversi/show-game", request.toJson()),
+    );
   }
 }

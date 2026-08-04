@@ -39,8 +39,9 @@ void main() async {
     });
 
     test("server-info", () async {
-      await adminClient.apiService
-          .post("admin/update-meta", {"enableServerMachineStats": true});
+      await adminClient.apiService.post("admin/update-meta", {
+        "enableServerMachineStats": true,
+      });
       await userClient.serverInfo();
     });
 
@@ -49,14 +50,11 @@ void main() async {
     });
 
     test("get-avatar-decorations", () async {
-      await adminClient.apiService.post(
-        "admin/avatar-decorations/create",
-        {
-          "name": "test",
-          "description": "test",
-          "url": "https://example.com",
-        },
-      );
+      await adminClient.apiService.post("admin/avatar-decorations/create", {
+        "name": "test",
+        "description": "test",
+        "url": "https://example.com",
+      });
       final response = await userClient.getAvatarDecorations();
       response.toList();
     });

@@ -12,6 +12,6 @@ abstract class UsersListsCreateFromPublicRequest
   }) = _UsersListsCreateFromPublicRequest;
 
   factory UsersListsCreateFromPublicRequest.fromJson(
-          Map<String, dynamic> json) =>
-      _$UsersListsCreateFromPublicRequestFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$UsersListsCreateFromPublicRequestFromJson(json);
 }

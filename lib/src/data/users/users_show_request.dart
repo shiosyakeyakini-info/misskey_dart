@@ -5,9 +5,7 @@ part 'users_show_request.g.dart';
 
 @freezed
 abstract class UsersShowRequest with _$UsersShowRequest {
-  const factory UsersShowRequest({
-    required String userId,
-  }) = _UsersShowRequest;
+  const factory UsersShowRequest({required String userId}) = _UsersShowRequest;
 
   factory UsersShowRequest.fromJson(Map<String, Object?> json) =>
       _$UsersShowRequestFromJson(json);
@@ -15,9 +13,8 @@ abstract class UsersShowRequest with _$UsersShowRequest {
 
 @freezed
 abstract class UsersShowByIdsRequest with _$UsersShowByIdsRequest {
-  const factory UsersShowByIdsRequest({
-    required List<String> userIds,
-  }) = _UsersShowByIdsRequest;
+  const factory UsersShowByIdsRequest({required List<String> userIds}) =
+      _UsersShowByIdsRequest;
 
   factory UsersShowByIdsRequest.fromJson(Map<String, dynamic> json) =>
       _$UsersShowByIdsRequestFromJson(json);

@@ -18,8 +18,10 @@ class MisskeyMute {
 
   /// ミュートしているユーザーの一覧を取得します。
   Future<Iterable<Muting>> list(MuteListRequest request) async {
-    final response =
-        await _apiService.post<List>("mute/list", request.toJson());
+    final response = await _apiService.post<List>(
+      "mute/list",
+      request.toJson(),
+    );
     return response.map((e) => Muting.fromJson(e));
   }
 }

@@ -14,9 +14,9 @@ _GalleryPostsRequest _$GalleryPostsRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GalleryPostsRequestToJson(
-        _GalleryPostsRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-    };
+  _GalleryPostsRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+};

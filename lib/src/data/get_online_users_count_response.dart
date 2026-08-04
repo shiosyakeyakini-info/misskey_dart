@@ -5,9 +5,8 @@ part 'get_online_users_count_response.g.dart';
 
 @freezed
 abstract class GetOnlineUsersCountResponse with _$GetOnlineUsersCountResponse {
-  const factory GetOnlineUsersCountResponse({
-    required int count,
-  }) = _GetOnlineUsersCountResponse;
+  const factory GetOnlineUsersCountResponse({required int count}) =
+      _GetOnlineUsersCountResponse;
 
   factory GetOnlineUsersCountResponse.fromJson(Map<String, dynamic> json) =>
       _$GetOnlineUsersCountResponseFromJson(json);

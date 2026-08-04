@@ -9,9 +9,9 @@ class MisskeyI {
   final MisskeyIRegistry registry;
 
   MisskeyI({required ApiService apiService})
-      : _apiService = apiService,
-        gallery = MisskeyIGallery(apiService: apiService),
-        registry = MisskeyIRegistry(apiService: apiService);
+    : _apiService = apiService,
+      gallery = MisskeyIGallery(apiService: apiService),
+      registry = MisskeyIRegistry(apiService: apiService);
 
   /// 自分自身の情報を取得します。
   Future<MeDetailed> i() async {
@@ -21,9 +21,12 @@ class MisskeyI {
 
   /// 通知を取得します。
   Future<Iterable<INotificationsResponse>> notifications(
-      INotificationsRequest request) async {
-    final response =
-        await _apiService.post<List>("i/notifications", request.toJson());
+    INotificationsRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "i/notifications",
+      request.toJson(),
+    );
     return response.map((e) => INotificationsResponse.fromJson(e));
   }
 
@@ -45,9 +48,12 @@ class MisskeyI {
 
   /// お気に入りに登録されたノートの一覧を取得します。
   Future<Iterable<IFavoritesResponse>> favorites(
-      IFavoritesRequest request) async {
-    final response =
-        await _apiService.post<List>("i/favorites", request.toJson());
+    IFavoritesRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "i/favorites",
+      request.toJson(),
+    );
     return response.map((e) => IFavoritesResponse.fromJson(e));
   }
 
@@ -64,8 +70,10 @@ class MisskeyI {
   Future<Iterable<IPageLikesResponse>> pageLikes(
     IPageLikesRequest request,
   ) async {
-    final response =
-        await _apiService.post<List>("i/page-likes", request.toJson());
+    final response = await _apiService.post<List>(
+      "i/page-likes",
+      request.toJson(),
+    );
     return response.map((e) => IPageLikesResponse.fromJson(e));
   }
 
@@ -103,15 +111,19 @@ class MisskeyIGallery {
   Future<Iterable<IGalleryLikesResponse>> likes(
     IGalleryLikesRequest request,
   ) async {
-    final response =
-        await _apiService.post<List>("i/gallery/likes", request.toJson());
+    final response = await _apiService.post<List>(
+      "i/gallery/likes",
+      request.toJson(),
+    );
     return response.map((e) => IGalleryLikesResponse.fromJson(e));
   }
 
   /// ギャラリーの投稿の一覧を取得します。
   Future<Iterable<GalleryPost>> posts(IGalleryPostsRequest request) async {
-    final response =
-        await _apiService.post<List>("i/gallery/posts", request.toJson());
+    final response = await _apiService.post<List>(
+      "i/gallery/posts",
+      request.toJson(),
+    );
     return response.map((e) => GalleryPost.fromJson(e));
   }
 }
@@ -185,8 +197,10 @@ class MisskeyIRegistry {
 
   /// 全てのドメインの全てのスコープを取得します。
   Future<Iterable<IRegistryScopesWithDomainResponse>> scopesWithDomain() async {
-    final response =
-        await _apiService.post<List>("i/registry/scopes-with-domain", {});
+    final response = await _apiService.post<List>(
+      "i/registry/scopes-with-domain",
+      {},
+    );
     return response.map((e) => IRegistryScopesWithDomainResponse.fromJson(e));
   }
 

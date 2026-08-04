@@ -7,13 +7,9 @@ part of 'chat_rooms_unfavorite_request.dart';
 // **************************************************************************
 
 _ChatRoomsUnfavoriteRequest _$ChatRoomsUnfavoriteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChatRoomsUnfavoriteRequest(
-      roomId: json['roomId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _ChatRoomsUnfavoriteRequest(roomId: json['roomId'] as String);
 
 Map<String, dynamic> _$ChatRoomsUnfavoriteRequestToJson(
-        _ChatRoomsUnfavoriteRequest instance) =>
-    <String, dynamic>{
-      'roomId': instance.roomId,
-    };
+  _ChatRoomsUnfavoriteRequest instance,
+) => <String, dynamic>{'roomId': instance.roomId};

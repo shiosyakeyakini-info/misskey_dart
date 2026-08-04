@@ -10,8 +10,9 @@ _UsersUsersRequest _$UsersUsersRequestFromJson(Map<String, dynamic> json) =>
     _UsersUsersRequest(
       limit: (json['limit'] as num?)?.toInt(),
       offset: (json['offset'] as num?)?.toInt(),
-      sort:
-          const NullableUsersSortConverter().fromJson(json['sort'] as String?),
+      sort: const NullableUsersSortConverter().fromJson(
+        json['sort'] as String?,
+      ),
       state: $enumDecodeNullable(_$UsersStateEnumMap, json['state']),
       origin: $enumDecodeNullable(_$OriginEnumMap, json['origin']),
       hostname: json['hostname'] as String?,
@@ -27,10 +28,7 @@ Map<String, dynamic> _$UsersUsersRequestToJson(_UsersUsersRequest instance) =>
       'hostname': instance.hostname,
     };
 
-const _$UsersStateEnumMap = {
-  UsersState.all: 'all',
-  UsersState.alive: 'alive',
-};
+const _$UsersStateEnumMap = {UsersState.all: 'all', UsersState.alive: 'alive'};
 
 const _$OriginEnumMap = {
   Origin.local: 'local',

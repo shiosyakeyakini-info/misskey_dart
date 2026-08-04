@@ -5,9 +5,8 @@ part 'chat_rooms_show_request.g.dart';
 
 @freezed
 abstract class ChatRoomsShowRequest with _$ChatRoomsShowRequest {
-  const factory ChatRoomsShowRequest({
-    required String roomId,
-  }) = _ChatRoomsShowRequest;
+  const factory ChatRoomsShowRequest({required String roomId}) =
+      _ChatRoomsShowRequest;
 
   factory ChatRoomsShowRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatRoomsShowRequestFromJson(json);

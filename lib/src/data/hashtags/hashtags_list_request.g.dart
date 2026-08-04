@@ -16,11 +16,11 @@ _HashtagsListRequest _$HashtagsListRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$HashtagsListRequestToJson(
-        _HashtagsListRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'attachedToUserOnly': instance.attachedToUserOnly,
-      'attachedToLocalUserOnly': instance.attachedToLocalUserOnly,
-      'attachedToRemoteUserOnly': instance.attachedToRemoteUserOnly,
-      'sort': const HashtagsListSortConverter().toJson(instance.sort),
-    };
+  _HashtagsListRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'attachedToUserOnly': instance.attachedToUserOnly,
+  'attachedToLocalUserOnly': instance.attachedToLocalUserOnly,
+  'attachedToRemoteUserOnly': instance.attachedToRemoteUserOnly,
+  'sort': const HashtagsListSortConverter().toJson(instance.sort),
+};

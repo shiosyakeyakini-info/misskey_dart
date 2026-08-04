@@ -42,11 +42,7 @@ class Misskey {
     String? streamingUrl,
     this.socketConnectionTimeout,
   }) {
-    apiService = ApiService(
-      token: token,
-      host: host,
-      apiUrl: apiUrl,
-    );
+    apiService = ApiService(token: token, host: host, apiUrl: apiUrl);
     streamingService = StreamingService(
       host,
       token: token,
@@ -79,9 +75,12 @@ class Misskey {
 
   /// サーバーからのお知らせを取得します。
   Future<Iterable<AnnouncementsResponse>> announcements(
-      AnnouncementsRequest request) async {
-    final response =
-        await apiService.post<List>("announcements", request.toJson());
+    AnnouncementsRequest request,
+  ) async {
+    final response = await apiService.post<List>(
+      "announcements",
+      request.toJson(),
+    );
     return response.map((e) => AnnouncementsResponse.fromJson(e));
   }
 
@@ -108,8 +107,10 @@ class Misskey {
 
   /// 単一の絵文字についての情報を取得します。
   Future<EmojiResponse> emoji(EmojiRequest request) async {
-    final response =
-        await apiService.post<Map<String, dynamic>>("emoji", request.toJson());
+    final response = await apiService.post<Map<String, dynamic>>(
+      "emoji",
+      request.toJson(),
+    );
     return EmojiResponse.fromJson(response);
   }
 
@@ -134,15 +135,19 @@ class Misskey {
   /// サーバーのスペック情報を取得します。
   /// serverStatsLogStreamのストリームの情報には、この情報を先に取得していることが前提のものが含まれています。
   Future<ServerInfoResponse> serverInfo() async {
-    final response =
-        await apiService.post<Map<String, dynamic>>("server-info", {});
+    final response = await apiService.post<Map<String, dynamic>>(
+      "server-info",
+      {},
+    );
     return ServerInfoResponse.fromJson(response);
   }
 
   /// オンラインユーザー数を取得します。
   Future<GetOnlineUsersCountResponse> getOnlineUsersCount() async {
-    final response = await apiService
-        .post<Map<String, dynamic>>("get-online-users-count", {});
+    final response = await apiService.post<Map<String, dynamic>>(
+      "get-online-users-count",
+      {},
+    );
     return GetOnlineUsersCountResponse.fromJson(response);
   }
 

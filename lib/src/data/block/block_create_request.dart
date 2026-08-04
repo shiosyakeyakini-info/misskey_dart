@@ -5,9 +5,8 @@ part 'block_create_request.g.dart';
 
 @freezed
 abstract class BlockCreateRequest with _$BlockCreateRequest {
-  const factory BlockCreateRequest({
-    required String userId,
-  }) = _BlockCreateRequest;
+  const factory BlockCreateRequest({required String userId}) =
+      _BlockCreateRequest;
 
   factory BlockCreateRequest.fromJson(Map<String, dynamic> json) =>
       _$BlockCreateRequestFromJson(json);

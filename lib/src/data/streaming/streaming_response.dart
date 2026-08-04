@@ -8,9 +8,8 @@ part 'streaming_response.g.dart';
 @Freezed(unionKey: "type", fallbackUnion: "fallback")
 sealed class StreamingResponse with _$StreamingResponse {
   @FreezedUnionValue("channel")
-  const factory StreamingResponse.channel({
-    required ChannelStreamEvent body,
-  }) = StreamingChannelResponse;
+  const factory StreamingResponse.channel({required ChannelStreamEvent body}) =
+      StreamingChannelResponse;
 
   @FreezedUnionValue("noteUpdated")
   const factory StreamingResponse.noteUpdated({
@@ -37,9 +36,8 @@ sealed class StreamingResponse with _$StreamingResponse {
     required AnnouncementCreatedStreamEvent body,
   }) = StreamingChannelAnnouncementCreatedResponse;
 
-  const factory StreamingResponse.fallback({
-    required Object body,
-  }) = StreamingChannelUnknownResponse;
+  const factory StreamingResponse.fallback({required Object body}) =
+      StreamingChannelUnknownResponse;
 
   factory StreamingResponse.fromJson(Map<String, Object?> json) =>
       _$StreamingResponseFromJson(json);
@@ -177,9 +175,8 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   }) = UrlUploadFinishedChannelEvent;
 
   @FreezedUnionValue("readAllNotifications")
-  const factory ChannelStreamEvent.readAllNotifications({
-    required String id,
-  }) = ReadAllNotificationsChannelEvent;
+  const factory ChannelStreamEvent.readAllNotifications({required String id}) =
+      ReadAllNotificationsChannelEvent;
 
   @FreezedUnionValue("unreadNotification")
   const factory ChannelStreamEvent.unreadNotification({
@@ -196,14 +193,12 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
 
   /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("readAllUnreadMentions")
-  const factory ChannelStreamEvent.readAllUnreadMentions({
-    required String id,
-  }) = ReadAllUnreadMentionsChannelEvent;
+  const factory ChannelStreamEvent.readAllUnreadMentions({required String id}) =
+      ReadAllUnreadMentionsChannelEvent;
 
   @FreezedUnionValue("notificationFlushed")
-  const factory ChannelStreamEvent.notificationFlushed({
-    required String id,
-  }) = NotificationFlushedChannelEvent;
+  const factory ChannelStreamEvent.notificationFlushed({required String id}) =
+      NotificationFlushedChannelEvent;
 
   /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("unreadSpecifiedNote")
@@ -220,9 +215,8 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
 
   /// Removed in Misskey 2025.3.2-beta.10.
   @FreezedUnionValue("readAllAntennas")
-  const factory ChannelStreamEvent.readAllAntennas({
-    required String id,
-  }) = ReadAllAntennasChannelEvent;
+  const factory ChannelStreamEvent.readAllAntennas({required String id}) =
+      ReadAllAntennasChannelEvent;
 
   @FreezedUnionValue("unreadAntenna")
   const factory ChannelStreamEvent.unreadAntenna({
@@ -237,14 +231,12 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
   }) = NewChatMessageEvent;
 
   @FreezedUnionValue("readAllAnnouncements")
-  const factory ChannelStreamEvent.readAllAnnouncements({
-    required String id,
-  }) = ReadAllAnnouncementsChannelEvent;
+  const factory ChannelStreamEvent.readAllAnnouncements({required String id}) =
+      ReadAllAnnouncementsChannelEvent;
 
   @FreezedUnionValue("myTokenRegenerated")
-  const factory ChannelStreamEvent.myTokenRegenerated({
-    required String id,
-  }) = MyTokenRegeneratedChannelEvent;
+  const factory ChannelStreamEvent.myTokenRegenerated({required String id}) =
+      MyTokenRegeneratedChannelEvent;
 
   @FreezedUnionValue("signin")
   const factory ChannelStreamEvent.signin({

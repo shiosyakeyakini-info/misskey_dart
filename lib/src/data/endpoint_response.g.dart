@@ -25,7 +25,4 @@ _EndpointParameter _$EndpointParameterFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$EndpointParameterToJson(_EndpointParameter instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'type': instance.type,
-    };
+    <String, dynamic>{'name': instance.name, 'type': instance.type};

@@ -5,10 +5,8 @@ part 'chat_history_request.g.dart';
 
 @freezed
 abstract class ChatHistoryRequest with _$ChatHistoryRequest {
-  const factory ChatHistoryRequest({
-    int? limit,
-    bool? room,
-  }) = _ChatHistoryRequest;
+  const factory ChatHistoryRequest({int? limit, bool? room}) =
+      _ChatHistoryRequest;
 
   factory ChatHistoryRequest.fromJson(Map<String, dynamic> json) =>
       _$ChatHistoryRequestFromJson(json);

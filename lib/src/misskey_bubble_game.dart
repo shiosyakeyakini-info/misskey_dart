@@ -6,13 +6,16 @@ class MisskeyBubbleGame {
   final ApiService _apiService;
 
   MisskeyBubbleGame({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// バブルゲームのサーバー内ランキングを取得します。
   Future<Iterable<BubbleGameRankingResponse>> show(
-      BubbleGameRankingRequest request) async {
-    final response =
-        await _apiService.post<List>("bubble-game/ranking", request.toJson());
+    BubbleGameRankingRequest request,
+  ) async {
+    final response = await _apiService.post<List>(
+      "bubble-game/ranking",
+      request.toJson(),
+    );
     return response.map((e) => BubbleGameRankingResponse.fromJson(e));
   }
 }
