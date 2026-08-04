@@ -401,4 +401,25 @@ class StreamingService implements StreamingController, WebSocketController {
     required ChatUserParameter parameter,
     required String id,
   }) => addChannel(const Channel.chatUser(), parameter.toJson(), id);
+
+  @override
+  Stream<StreamingResponse> reversiStream({required String id}) =>
+      addChannel(const Channel.reversi(), {}, id);
+
+  @override
+  Stream<StreamingResponse> reversiGameStream({
+    required String gameId,
+    String? id,
+  }) =>
+      addChannel(const Channel.reversiGame(), {"gameId": gameId}, id ?? gameId);
+
+  @override
+  void sendChannelMessage({
+    required String id,
+    required String type,
+    Object? body,
+  }) => sendRequest(
+    StreamingRequestType.ch,
+    StreamingRequestBody(id: id, type: type, body: body),
+  );
 }

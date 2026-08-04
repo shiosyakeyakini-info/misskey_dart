@@ -23,6 +23,7 @@ abstract class ReversiShowGameResponse with _$ReversiShowGameResponse {
     required UserLite user1,
     required UserLite user2,
     String? winnerId,
+    UserLite? winner,
     String? surrenderedUserId,
     String? timeoutUserId,
     int? black,
@@ -32,7 +33,10 @@ abstract class ReversiShowGameResponse with _$ReversiShowGameResponse {
     required bool canPutEverywhere,
     required bool loopedBoard,
     required int timeLimitForEachTurn,
-    required List logs,
+
+    /// 打たれた手のログ。1 件が `[前の手からの経過ミリ秒, 打った人, 操作, 位置]`。
+    /// 打った人は黒が 1、操作は今のところ 0 (put) のみ。
+    required List<List<int>> logs,
     required List<String> map,
   }) = _ReversiShowGameResponse;
 

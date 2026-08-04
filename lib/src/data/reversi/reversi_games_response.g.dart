@@ -35,7 +35,7 @@ _ReversiGamesResponse _$ReversiGamesResponseFromJson(
   bw: json['bw'] as String,
   noIrregularRules: json['noIrregularRules'] as bool,
   isLlotheo: json['isLlotheo'] as bool,
-  canPutEveryWhere: json['canPutEveryWhere'] as bool,
+  canPutEverywhere: json['canPutEverywhere'] as bool,
   loopedBoard: json['loopedBoard'] as bool,
   timeLimitForEachTurn: (json['timeLimitForEachTurn'] as num).toInt(),
 );
@@ -61,7 +61,7 @@ Map<String, dynamic> _$ReversiGamesResponseToJson(
   'bw': instance.bw,
   'noIrregularRules': instance.noIrregularRules,
   'isLlotheo': instance.isLlotheo,
-  'canPutEveryWhere': instance.canPutEveryWhere,
+  'canPutEverywhere': instance.canPutEverywhere,
   'loopedBoard': instance.loopedBoard,
   'timeLimitForEachTurn': instance.timeLimitForEachTurn,
 };

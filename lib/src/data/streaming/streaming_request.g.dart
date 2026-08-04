@@ -40,7 +40,7 @@ _StreamingRequestBody _$StreamingRequestBodyFromJson(
   id: json['id'] as String,
   params: json['params'] as Map<String, dynamic>?,
   type: json['type'] as String?,
-  body: json['body'] as Map<String, dynamic>?,
+  body: json['body'],
 );
 
 Map<String, dynamic> _$StreamingRequestBodyToJson(

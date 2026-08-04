@@ -299,6 +299,55 @@ sealed class ChannelStreamEvent with _$ChannelStreamEvent {
     required ChatReact body,
   }) = ChatUnreactChannelEvent;
 
+  // reversi / reversiGame
+  @FreezedUnionValue("invited")
+  const factory ChannelStreamEvent.reversiInvited({
+    required String id,
+    required ReversiInvited body,
+  }) = ReversiInvitedChannelEvent;
+
+  @FreezedUnionValue("matched")
+  const factory ChannelStreamEvent.reversiMatched({
+    required String id,
+    required ReversiGameEvent body,
+  }) = ReversiMatchedChannelEvent;
+
+  @FreezedUnionValue("started")
+  const factory ChannelStreamEvent.reversiStarted({
+    required String id,
+    required ReversiGameEvent body,
+  }) = ReversiStartedChannelEvent;
+
+  @FreezedUnionValue("ended")
+  const factory ChannelStreamEvent.reversiEnded({
+    required String id,
+    required ReversiEnded body,
+  }) = ReversiEndedChannelEvent;
+
+  @FreezedUnionValue("log")
+  const factory ChannelStreamEvent.reversiLog({
+    required String id,
+    required ReversiLogEvent body,
+  }) = ReversiLogChannelEvent;
+
+  @FreezedUnionValue("changeReadyStates")
+  const factory ChannelStreamEvent.reversiChangeReadyStates({
+    required String id,
+    required ReversiReadyStates body,
+  }) = ReversiChangeReadyStatesChannelEvent;
+
+  @FreezedUnionValue("updateSettings")
+  const factory ChannelStreamEvent.reversiUpdateSettings({
+    required String id,
+    required ReversiUpdateSettings body,
+  }) = ReversiUpdateSettingsChannelEvent;
+
+  @FreezedUnionValue("canceled")
+  const factory ChannelStreamEvent.reversiCanceled({
+    required String id,
+    required ReversiCanceled body,
+  }) = ReversiCanceledChannelEvent;
+
   const factory ChannelStreamEvent.fallback({
     required String id,
     required Object? body,

@@ -729,6 +729,134 @@ Map<String, dynamic> _$ChatUnreactChannelEventToJson(
   'type': instance.$type,
 };
 
+ReversiInvitedChannelEvent _$ReversiInvitedChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiInvitedChannelEvent(
+  id: json['id'] as String,
+  body: ReversiInvited.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiInvitedChannelEventToJson(
+  ReversiInvitedChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiMatchedChannelEvent _$ReversiMatchedChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiMatchedChannelEvent(
+  id: json['id'] as String,
+  body: ReversiGameEvent.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiMatchedChannelEventToJson(
+  ReversiMatchedChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiStartedChannelEvent _$ReversiStartedChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiStartedChannelEvent(
+  id: json['id'] as String,
+  body: ReversiGameEvent.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiStartedChannelEventToJson(
+  ReversiStartedChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiEndedChannelEvent _$ReversiEndedChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiEndedChannelEvent(
+  id: json['id'] as String,
+  body: ReversiEnded.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiEndedChannelEventToJson(
+  ReversiEndedChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiLogChannelEvent _$ReversiLogChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiLogChannelEvent(
+  id: json['id'] as String,
+  body: ReversiLogEvent.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiLogChannelEventToJson(
+  ReversiLogChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiChangeReadyStatesChannelEvent
+_$ReversiChangeReadyStatesChannelEventFromJson(Map<String, dynamic> json) =>
+    ReversiChangeReadyStatesChannelEvent(
+      id: json['id'] as String,
+      body: ReversiReadyStates.fromJson(json['body'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$ReversiChangeReadyStatesChannelEventToJson(
+  ReversiChangeReadyStatesChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiUpdateSettingsChannelEvent _$ReversiUpdateSettingsChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiUpdateSettingsChannelEvent(
+  id: json['id'] as String,
+  body: ReversiUpdateSettings.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiUpdateSettingsChannelEventToJson(
+  ReversiUpdateSettingsChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
+ReversiCanceledChannelEvent _$ReversiCanceledChannelEventFromJson(
+  Map<String, dynamic> json,
+) => ReversiCanceledChannelEvent(
+  id: json['id'] as String,
+  body: ReversiCanceled.fromJson(json['body'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$ReversiCanceledChannelEventToJson(
+  ReversiCanceledChannelEvent instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'body': instance.body.toJson(),
+  'type': instance.$type,
+};
+
 FallbackChannelEvent _$FallbackChannelEventFromJson(
   Map<String, dynamic> json,
 ) => FallbackChannelEvent(

@@ -30,6 +30,9 @@ _ReversiShowGameResponse _$ReversiShowGameResponseFromJson(
   user1: UserLite.fromJson(json['user1'] as Map<String, dynamic>),
   user2: UserLite.fromJson(json['user2'] as Map<String, dynamic>),
   winnerId: json['winnerId'] as String?,
+  winner: json['winner'] == null
+      ? null
+      : UserLite.fromJson(json['winner'] as Map<String, dynamic>),
   surrenderedUserId: json['surrenderedUserId'] as String?,
   timeoutUserId: json['timeoutUserId'] as String?,
   black: (json['black'] as num?)?.toInt(),
@@ -39,7 +42,9 @@ _ReversiShowGameResponse _$ReversiShowGameResponseFromJson(
   canPutEverywhere: json['canPutEverywhere'] as bool,
   loopedBoard: json['loopedBoard'] as bool,
   timeLimitForEachTurn: (json['timeLimitForEachTurn'] as num).toInt(),
-  logs: json['logs'] as List<dynamic>,
+  logs: (json['logs'] as List<dynamic>)
+      .map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList())
+      .toList(),
   map: (json['map'] as List<dynamic>).map((e) => e as String).toList(),
 );
 
@@ -61,6 +66,7 @@ Map<String, dynamic> _$ReversiShowGameResponseToJson(
   'user1': instance.user1.toJson(),
   'user2': instance.user2.toJson(),
   'winnerId': instance.winnerId,
+  'winner': instance.winner?.toJson(),
   'surrenderedUserId': instance.surrenderedUserId,
   'timeoutUserId': instance.timeoutUserId,
   'black': instance.black,
