@@ -198,7 +198,8 @@ class StreamingService implements StreamingController, WebSocketController {
     try {
       final webSocketChannel = _webSocketChannel;
       if (webSocketChannel != null && webSocketChannel.closeCode == null) {
-        /*await*/ Future.wait([
+        /*await*/
+        Future.wait([
           _subscription?.cancel() ?? Future.value(),
           webSocketChannel.sink.close(),
         ]);
@@ -230,8 +231,11 @@ class StreamingService implements StreamingController, WebSocketController {
     Map<String, dynamic>? parameters,
     String id,
   ) {
-    final body =
-        StreamingRequestBody(channel: channel, id: id, params: parameters);
+    final body = StreamingRequestBody(
+      channel: channel,
+      id: id,
+      params: parameters,
+    );
     sendRequest(StreamingRequestType.connect, body);
     _connections.add(body);
     _activeStreams = _connections.length;
@@ -306,77 +310,67 @@ class StreamingService implements StreamingController, WebSocketController {
 
   @override
   void requestLog(String id, int length) => sendRequest(
-        StreamingRequestType.ch,
-        StreamingRequestBody(
-          id: id,
-          type: "requestLog",
-          body: {"id": id, "length": length},
-        ),
-      );
+    StreamingRequestType.ch,
+    StreamingRequestBody(
+      id: id,
+      type: "requestLog",
+      body: {"id": id, "length": length},
+    ),
+  );
 
   @override
   void read(String id) => sendRequest(
-        StreamingRequestType.ch,
-        StreamingRequestBody(id: id, type: "read"),
-      );
+    StreamingRequestType.ch,
+    StreamingRequestBody(id: id, type: "read"),
+  );
 
   @override
   Stream<StreamingResponse> localTimelineStream({
     required LocalTimelineParameter parameter,
     required String id,
-  }) =>
-      addChannel(const Channel.localTimeline(), parameter.toJson(), id);
+  }) => addChannel(const Channel.localTimeline(), parameter.toJson(), id);
 
   @override
   Stream<StreamingResponse> globalTimelineStream({
     required GlobalTimelineParameter parameter,
     required String id,
-  }) =>
-      addChannel(const Channel.globalTimeline(), parameter.toJson(), id);
+  }) => addChannel(const Channel.globalTimeline(), parameter.toJson(), id);
 
   @override
   Stream<StreamingResponse> hybridTimelineStream({
     required HybridTimelineParameter parameter,
     required String id,
-  }) =>
-      addChannel(const Channel.hybridTimeline(), parameter.toJson(), id);
+  }) => addChannel(const Channel.hybridTimeline(), parameter.toJson(), id);
 
   @override
   Stream<StreamingResponse> roleTimelineStream({
     required String roleId,
     String? id,
-  }) =>
-      addChannel(
-          const Channel.roleTimeline(), {"roleId": roleId}, id ?? roleId);
+  }) => addChannel(const Channel.roleTimeline(), {
+    "roleId": roleId,
+  }, id ?? roleId);
 
   @override
   Stream<StreamingResponse> channelStream({
     required String channelId,
     String? id,
-  }) =>
-      addChannel(
-        const Channel.channel(),
-        {"channelId": channelId},
-        id ?? channelId,
-      );
+  }) => addChannel(const Channel.channel(), {
+    "channelId": channelId,
+  }, id ?? channelId);
 
   @override
   Stream<StreamingResponse> userListStream({
     required String listId,
     String? id,
-  }) =>
-      addChannel(const Channel.userList(), {"listId": listId}, id ?? listId);
+  }) => addChannel(const Channel.userList(), {"listId": listId}, id ?? listId);
 
   @override
   Stream<StreamingResponse> antennaStream({
     required String antennaId,
     String? id,
-  }) =>
-      addChannel(
-        const Channel.antenna(),
-        {"antennaId": antennaId},
-        id ?? antennaId,
-      );
+  }) => addChannel(const Channel.antenna(), {
+    "antennaId": antennaId,
+  }, id ?? antennaId);
 
   @override
   Stream<StreamingResponse> serverStatsLogStream({required String id}) =>
@@ -394,20 +388,38 @@ class StreamingService implements StreamingController, WebSocketController {
   Stream<StreamingResponse> homeTimelineStream({
     required HomeTimelineParameter parameter,
     required String id,
-  }) =>
-      addChannel(const Channel.homeTimeline(), parameter.toJson(), id);
+  }) => addChannel(const Channel.homeTimeline(), parameter.toJson(), id);
 
   @override
   Stream<StreamingResponse> chatRoomStream({
     required ChatRoomParameter parameter,
     required String id,
-  }) =>
-      addChannel(const Channel.chatRoom(), parameter.toJson(), id);
+  }) => addChannel(const Channel.chatRoom(), parameter.toJson(), id);
 
   @override
   Stream<StreamingResponse> chatUserStream({
     required ChatUserParameter parameter,
     required String id,
+  }) => addChannel(const Channel.chatUser(), parameter.toJson(), id);
+
+  @override
+  Stream<StreamingResponse> reversiStream({required String id}) =>
+      addChannel(const Channel.reversi(), {}, id);
+
+  @override
+  Stream<StreamingResponse> reversiGameStream({
+    required String gameId,
+    String? id,
   }) =>
-      addChannel(const Channel.chatUser(), parameter.toJson(), id);
+      addChannel(const Channel.reversiGame(), {"gameId": gameId}, id ?? gameId);
+
+  @override
+  void sendChannelMessage({
+    required String id,
+    required String type,
+    Object? body,
+  }) => sendRequest(
+    StreamingRequestType.ch,
+    StreamingRequestBody(id: id, type: type, body: body),
+  );
 }

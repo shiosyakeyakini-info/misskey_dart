@@ -23,7 +23,13 @@ abstract class StreamingRequestBody with _$StreamingRequestBody {
     required String id,
     Map<String, dynamic>? params,
     String? type,
-    Map<String, dynamic>? body,
+
+    /// チャンネルへ送るメッセージの中身。
+    ///
+    /// Map とは限らない。リバーシの `ready` は真偽値をそのまま送る
+    /// （サーバーは `typeof body !== 'boolean'` で弾く）ので、Map に
+    /// 縛ると送れなくなる。
+    Object? body,
   }) = _StreamingRequestBody;
 
   factory StreamingRequestBody.fromJson(Map<String, Object?> json) =>
