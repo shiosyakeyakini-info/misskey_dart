@@ -15,85 +15,60 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesSearchRequest {
-  /// 検索クエリ。クエリが本文に含まれるノートを検索します。
-  String get query;
 
-  /// 指定すると、idがその値よりも大きいノートを返します。
-  String? get sinceId;
-
-  /// 指定すると、idがその値よりも小さいノートを返します。
-  String? get untilId;
-
-  /// 取得するノートの最大数。
-  int? get limit;
-
-  /// 検索結果の先頭offset個をスキップします。
-  int? get offset;
-
-  /// The local host is represented with `null`.
-  String? get host;
-
-  /// 指定すると、そのユーザが作成したノートを検索します。
-  String? get userId;
-
-  /// 指定すると、そのチャンネルに属するノートを検索します。userIdと併せて指定した場合、channelIdは無視されます。
-  String? get channelId;
-
-  /// Create a copy of NotesSearchRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesSearchRequestCopyWith<NotesSearchRequest> get copyWith =>
-      _$NotesSearchRequestCopyWithImpl<NotesSearchRequest>(
-          this as NotesSearchRequest, _$identity);
+/// 検索クエリ。クエリが本文に含まれるノートを検索します。
+ String get query;/// 指定すると、idがその値よりも大きいノートを返します。
+ String? get sinceId;/// 指定すると、idがその値よりも小さいノートを返します。
+ String? get untilId;/// 指定すると、その日時以降に投稿されたノートに絞り込みます。
+///
+/// `sinceId` / `untilId` はページングのカーソルなので、投稿日時で
+/// 絞り込むときはこちらを使います。
+@EpocTimeDateTimeConverter.withMilliSeconds() DateTime? get rangeStartAt;/// 指定すると、その日時以前に投稿されたノートに絞り込みます。
+@EpocTimeDateTimeConverter.withMilliSeconds() DateTime? get rangeEndAt;/// 取得するノートの最大数。
+ int? get limit;/// 検索結果の先頭offset個をスキップします。
+ int? get offset;/// The local host is represented with `null`.
+ String? get host;/// 指定すると、そのユーザが作成したノートを検索します。
+ String? get userId;/// 指定すると、そのチャンネルに属するノートを検索します。userIdと併せて指定した場合、channelIdは無視されます。
+ String? get channelId;
+/// Create a copy of NotesSearchRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NotesSearchRequestCopyWith<NotesSearchRequest> get copyWith => _$NotesSearchRequestCopyWithImpl<NotesSearchRequest>(this as NotesSearchRequest, _$identity);
 
   /// Serializes this NotesSearchRequest to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesSearchRequest &&
-            (identical(other.query, query) || other.query == query) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, query, sinceId, untilId, limit,
-      offset, host, userId, channelId);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesSearchRequest&&(identical(other.query, query) || other.query == query)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.rangeStartAt, rangeStartAt) || other.rangeStartAt == rangeStartAt)&&(identical(other.rangeEndAt, rangeEndAt) || other.rangeEndAt == rangeEndAt)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.host, host) || other.host == host)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
+}
 
-  @override
-  String toString() {
-    return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,query,sinceId,untilId,rangeStartAt,rangeEndAt,limit,offset,host,userId,channelId);
+
+@override
+String toString() {
+  return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, rangeStartAt: $rangeStartAt, rangeEndAt: $rangeEndAt, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $NotesSearchRequestCopyWith<$Res> {
-  factory $NotesSearchRequestCopyWith(
-          NotesSearchRequest value, $Res Function(NotesSearchRequest) _then) =
-      _$NotesSearchRequestCopyWithImpl;
-  @useResult
-  $Res call(
-      {String query,
-      String? sinceId,
-      String? untilId,
-      int? limit,
-      int? offset,
-      String? host,
-      String? userId,
-      String? channelId});
-}
+abstract mixin class $NotesSearchRequestCopyWith<$Res>  {
+  factory $NotesSearchRequestCopyWith(NotesSearchRequest value, $Res Function(NotesSearchRequest) _then) = _$NotesSearchRequestCopyWithImpl;
+@useResult
+$Res call({
+ String query, String? sinceId, String? untilId,@EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeStartAt,@EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeEndAt, int? limit, int? offset, String? host, String? userId, String? channelId
+});
 
+
+
+
+}
 /// @nodoc
 class _$NotesSearchRequestCopyWithImpl<$Res>
     implements $NotesSearchRequestCopyWith<$Res> {
@@ -102,165 +77,98 @@ class _$NotesSearchRequestCopyWithImpl<$Res>
   final NotesSearchRequest _self;
   final $Res Function(NotesSearchRequest) _then;
 
-  /// Create a copy of NotesSearchRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? query = null,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? host = freezed,
-    Object? userId = freezed,
-    Object? channelId = freezed,
-  }) {
-    return _then(_self.copyWith(
-      query: null == query
-          ? _self.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of NotesSearchRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? query = null,Object? sinceId = freezed,Object? untilId = freezed,Object? rangeStartAt = freezed,Object? rangeEndAt = freezed,Object? limit = freezed,Object? offset = freezed,Object? host = freezed,Object? userId = freezed,Object? channelId = freezed,}) {
+  return _then(_self.copyWith(
+query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
+as String,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,rangeStartAt: freezed == rangeStartAt ? _self.rangeStartAt : rangeStartAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,rangeEndAt: freezed == rangeEndAt ? _self.rangeEndAt : rangeEndAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
+as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
+
+}
+
 
 /// @nodoc
 @JsonSerializable()
+
 class _NotesSearchRequest implements NotesSearchRequest {
-  const _NotesSearchRequest(
-      {required this.query,
-      this.sinceId,
-      this.untilId,
-      this.limit,
-      this.offset,
-      this.host,
-      this.userId,
-      this.channelId});
-  factory _NotesSearchRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesSearchRequestFromJson(json);
+  const _NotesSearchRequest({required this.query, this.sinceId, this.untilId, @EpocTimeDateTimeConverter.withMilliSeconds() this.rangeStartAt, @EpocTimeDateTimeConverter.withMilliSeconds() this.rangeEndAt, this.limit, this.offset, this.host, this.userId, this.channelId});
+  factory _NotesSearchRequest.fromJson(Map<String, dynamic> json) => _$NotesSearchRequestFromJson(json);
 
-  /// 検索クエリ。クエリが本文に含まれるノートを検索します。
-  @override
-  final String query;
+/// 検索クエリ。クエリが本文に含まれるノートを検索します。
+@override final  String query;
+/// 指定すると、idがその値よりも大きいノートを返します。
+@override final  String? sinceId;
+/// 指定すると、idがその値よりも小さいノートを返します。
+@override final  String? untilId;
+/// 指定すると、その日時以降に投稿されたノートに絞り込みます。
+///
+/// `sinceId` / `untilId` はページングのカーソルなので、投稿日時で
+/// 絞り込むときはこちらを使います。
+@override@EpocTimeDateTimeConverter.withMilliSeconds() final  DateTime? rangeStartAt;
+/// 指定すると、その日時以前に投稿されたノートに絞り込みます。
+@override@EpocTimeDateTimeConverter.withMilliSeconds() final  DateTime? rangeEndAt;
+/// 取得するノートの最大数。
+@override final  int? limit;
+/// 検索結果の先頭offset個をスキップします。
+@override final  int? offset;
+/// The local host is represented with `null`.
+@override final  String? host;
+/// 指定すると、そのユーザが作成したノートを検索します。
+@override final  String? userId;
+/// 指定すると、そのチャンネルに属するノートを検索します。userIdと併せて指定した場合、channelIdは無視されます。
+@override final  String? channelId;
 
-  /// 指定すると、idがその値よりも大きいノートを返します。
-  @override
-  final String? sinceId;
+/// Create a copy of NotesSearchRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NotesSearchRequestCopyWith<_NotesSearchRequest> get copyWith => __$NotesSearchRequestCopyWithImpl<_NotesSearchRequest>(this, _$identity);
 
-  /// 指定すると、idがその値よりも小さいノートを返します。
-  @override
-  final String? untilId;
+@override
+Map<String, dynamic> toJson() {
+  return _$NotesSearchRequestToJson(this, );
+}
 
-  /// 取得するノートの最大数。
-  @override
-  final int? limit;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesSearchRequest&&(identical(other.query, query) || other.query == query)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.rangeStartAt, rangeStartAt) || other.rangeStartAt == rangeStartAt)&&(identical(other.rangeEndAt, rangeEndAt) || other.rangeEndAt == rangeEndAt)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.host, host) || other.host == host)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
+}
 
-  /// 検索結果の先頭offset個をスキップします。
-  @override
-  final int? offset;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,query,sinceId,untilId,rangeStartAt,rangeEndAt,limit,offset,host,userId,channelId);
 
-  /// The local host is represented with `null`.
-  @override
-  final String? host;
+@override
+String toString() {
+  return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, rangeStartAt: $rangeStartAt, rangeEndAt: $rangeEndAt, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
+}
 
-  /// 指定すると、そのユーザが作成したノートを検索します。
-  @override
-  final String? userId;
 
-  /// 指定すると、そのチャンネルに属するノートを検索します。userIdと併せて指定した場合、channelIdは無視されます。
-  @override
-  final String? channelId;
-
-  /// Create a copy of NotesSearchRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesSearchRequestCopyWith<_NotesSearchRequest> get copyWith =>
-      __$NotesSearchRequestCopyWithImpl<_NotesSearchRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesSearchRequestToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _NotesSearchRequest &&
-            (identical(other.query, query) || other.query == query) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, query, sinceId, untilId, limit,
-      offset, host, userId, channelId);
-
-  @override
-  String toString() {
-    return 'NotesSearchRequest(query: $query, sinceId: $sinceId, untilId: $untilId, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
-  }
 }
 
 /// @nodoc
-abstract mixin class _$NotesSearchRequestCopyWith<$Res>
-    implements $NotesSearchRequestCopyWith<$Res> {
-  factory _$NotesSearchRequestCopyWith(
-          _NotesSearchRequest value, $Res Function(_NotesSearchRequest) _then) =
-      __$NotesSearchRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String query,
-      String? sinceId,
-      String? untilId,
-      int? limit,
-      int? offset,
-      String? host,
-      String? userId,
-      String? channelId});
-}
+abstract mixin class _$NotesSearchRequestCopyWith<$Res> implements $NotesSearchRequestCopyWith<$Res> {
+  factory _$NotesSearchRequestCopyWith(_NotesSearchRequest value, $Res Function(_NotesSearchRequest) _then) = __$NotesSearchRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ String query, String? sinceId, String? untilId,@EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeStartAt,@EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeEndAt, int? limit, int? offset, String? host, String? userId, String? channelId
+});
 
+
+
+
+}
 /// @nodoc
 class __$NotesSearchRequestCopyWithImpl<$Res>
     implements _$NotesSearchRequestCopyWith<$Res> {
@@ -269,55 +177,25 @@ class __$NotesSearchRequestCopyWithImpl<$Res>
   final _NotesSearchRequest _self;
   final $Res Function(_NotesSearchRequest) _then;
 
-  /// Create a copy of NotesSearchRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? query = null,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? host = freezed,
-    Object? userId = freezed,
-    Object? channelId = freezed,
-  }) {
-    return _then(_NotesSearchRequest(
-      query: null == query
-          ? _self.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      host: freezed == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of NotesSearchRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? query = null,Object? sinceId = freezed,Object? untilId = freezed,Object? rangeStartAt = freezed,Object? rangeEndAt = freezed,Object? limit = freezed,Object? offset = freezed,Object? host = freezed,Object? userId = freezed,Object? channelId = freezed,}) {
+  return _then(_NotesSearchRequest(
+query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
+as String,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,rangeStartAt: freezed == rangeStartAt ? _self.rangeStartAt : rangeStartAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,rangeEndAt: freezed == rangeEndAt ? _self.rangeEndAt : rangeEndAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
+as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
 }
 
 // dart format on
