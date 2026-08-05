@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/src/converters/date_time_converter.dart';
 
 part 'notes_search_request.freezed.dart';
 part 'notes_search_request.g.dart';
@@ -14,6 +15,15 @@ abstract class NotesSearchRequest with _$NotesSearchRequest {
 
     /// 指定すると、idがその値よりも小さいノートを返します。
     String? untilId,
+
+    /// 指定すると、その日時以降に投稿されたノートに絞り込みます。
+    ///
+    /// `sinceId` / `untilId` はページングのカーソルなので、投稿日時で
+    /// 絞り込むときはこちらを使います。
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeStartAt,
+
+    /// 指定すると、その日時以前に投稿されたノートに絞り込みます。
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeEndAt,
 
     /// 取得するノートの最大数。
     int? limit,
