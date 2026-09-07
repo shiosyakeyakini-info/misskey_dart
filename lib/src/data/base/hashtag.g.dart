@@ -13,10 +13,9 @@ _Hashtag _$HashtagFromJson(Map<String, dynamic> json) => _Hashtag(
       .toDouble(),
   mentionedRemoteUsersCount: (json['mentionedRemoteUsersCount'] as num)
       .toDouble(),
-  attachedUsersCount: (json['attachedUsersCount'] as num).toDouble(),
-  attachedLocalUsersCount: (json['attachedLocalUsersCount'] as num).toDouble(),
-  attachedRemoteUsersCount: (json['attachedRemoteUsersCount'] as num)
-      .toDouble(),
+  attachedUsersCount: (json['attachedUsersCount'] as num).toInt(),
+  attachedLocalUsersCount: (json['attachedLocalUsersCount'] as num).toInt(),
+  attachedRemoteUsersCount: (json['attachedRemoteUsersCount'] as num).toInt(),
 );
 
 Map<String, dynamic> _$HashtagToJson(_Hashtag instance) => <String, dynamic>{

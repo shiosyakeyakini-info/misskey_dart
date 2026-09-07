@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PingResponse {
 
- double get pong;
+ int get pong;
 /// Create a copy of PingResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PingResponseCopyWith<$Res>  {
   factory $PingResponseCopyWith(PingResponse value, $Res Function(PingResponse) _then) = _$PingResponseCopyWithImpl;
 @useResult
 $Res call({
- double pong
+ int pong
 });
 
 
@@ -68,7 +68,7 @@ class _$PingResponseCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? pong = null,}) {
   return _then(_self.copyWith(
 pong: null == pong ? _self.pong : pong // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double pong)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int pong)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PingResponse() when $default != null:
 return $default(_that.pong);case _:
@@ -174,7 +174,7 @@ return $default(_that.pong);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double pong)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int pong)  $default,) {final _that = this;
 switch (_that) {
 case _PingResponse():
 return $default(_that.pong);case _:
@@ -194,7 +194,7 @@ return $default(_that.pong);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double pong)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int pong)?  $default,) {final _that = this;
 switch (_that) {
 case _PingResponse() when $default != null:
 return $default(_that.pong);case _:
@@ -212,7 +212,7 @@ class _PingResponse implements PingResponse {
   const _PingResponse({required this.pong});
   factory _PingResponse.fromJson(Map<String, dynamic> json) => _$PingResponseFromJson(json);
 
-@override final  double pong;
+@override final  int pong;
 
 /// Create a copy of PingResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +247,7 @@ abstract mixin class _$PingResponseCopyWith<$Res> implements $PingResponseCopyWi
   factory _$PingResponseCopyWith(_PingResponse value, $Res Function(_PingResponse) _then) = __$PingResponseCopyWithImpl;
 @override @useResult
 $Res call({
- double pong
+ int pong
 });
 
 
@@ -267,7 +267,7 @@ class __$PingResponseCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? pong = null,}) {
   return _then(_PingResponse(
 pong: null == pong ? _self.pong : pong // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 

@@ -29,10 +29,10 @@ _Role _$RoleFromJson(Map<String, dynamic> json) => _Role(
   isExplorable: json['isExplorable'] as bool,
   asBadge: json['asBadge'] as bool,
   preserveAssignmentOnMoveAccount:
-      json['preserveAssignmentOnMoveAccount'] as bool,
+      json['preserveAssignmentOnMoveAccount'] as bool? ?? false,
   canEditMembersByModerator: json['canEditMembersByModerator'] as bool,
   policies: json['policies'] as Map<String, dynamic>,
-  usersCount: (json['usersCount'] as num).toInt(),
+  usersCount: (json['usersCount'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$RoleToJson(_Role instance) => <String, dynamic>{

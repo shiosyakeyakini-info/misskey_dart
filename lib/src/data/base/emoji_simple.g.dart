@@ -12,7 +12,7 @@ _EmojiSimple _$EmojiSimpleFromJson(Map<String, dynamic> json) => _EmojiSimple(
   category: json['category'] as String?,
   url: const UriConverter().fromJson(json['url'] as String),
   localOnly: json['localOnly'] as bool?,
-  isSensitive: json['isSensitive'] as bool?,
+  isSensitive: json['isSensitive'] as bool? ?? false,
   roleIdsThatCanBeUsedThisEmojiAsReaction:
       (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
           ?.map((e) => e as String)

@@ -68,7 +68,7 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
   ),
   reactionEmojis: const EmojisConverter().fromJson(json['reactionEmojis']),
   reactions: Map<String, int>.from(json['reactions'] as Map),
-  reactionCount: (json['reactionCount'] as num).toInt(),
+  reactionCount: (json['reactionCount'] as num?)?.toInt() ?? 0,
   renoteCount: (json['renoteCount'] as num).toInt(),
   repliesCount: (json['repliesCount'] as num).toInt(),
   uri: _$JsonConverterFromJson<String, Uri?>(

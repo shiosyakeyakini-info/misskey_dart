@@ -9,11 +9,13 @@ part of 'mute_create_request.dart';
 _MuteCreateRequest _$MuteCreateRequestFromJson(Map<String, dynamic> json) =>
     _MuteCreateRequest(
       userId: json['userId'] as String?,
-      expiresAt: (json['expiresAt'] as num?)?.toInt(),
+      expiresAt: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson((json['expiresAt'] as num?)?.toInt()),
     );
 
 Map<String, dynamic> _$MuteCreateRequestToJson(_MuteCreateRequest instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'expiresAt': instance.expiresAt,
+      'expiresAt': const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .toJson(instance.expiresAt),
     };

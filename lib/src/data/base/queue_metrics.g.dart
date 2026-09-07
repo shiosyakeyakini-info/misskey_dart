@@ -12,7 +12,7 @@ _QueueMetrics _$QueueMetricsFromJson(Map<String, dynamic> json) =>
       data: (json['data'] as List<dynamic>)
           .map((e) => (e as num).toDouble())
           .toList(),
-      count: (json['count'] as num).toDouble(),
+      count: (json['count'] as num).toInt(),
     );
 
 Map<String, dynamic> _$QueueMetricsToJson(_QueueMetrics instance) =>

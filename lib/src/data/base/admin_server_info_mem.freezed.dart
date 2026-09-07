@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminServerInfoMem {
 
- double get total;
+ int get total;
 /// Create a copy of AdminServerInfoMem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $AdminServerInfoMemCopyWith<$Res>  {
   factory $AdminServerInfoMemCopyWith(AdminServerInfoMem value, $Res Function(AdminServerInfoMem) _then) = _$AdminServerInfoMemCopyWithImpl;
 @useResult
 $Res call({
- double total
+ int total
 });
 
 
@@ -68,7 +68,7 @@ class _$AdminServerInfoMemCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? total = null,}) {
   return _then(_self.copyWith(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double total)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int total)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminServerInfoMem() when $default != null:
 return $default(_that.total);case _:
@@ -174,7 +174,7 @@ return $default(_that.total);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double total)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int total)  $default,) {final _that = this;
 switch (_that) {
 case _AdminServerInfoMem():
 return $default(_that.total);case _:
@@ -194,7 +194,7 @@ return $default(_that.total);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double total)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int total)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminServerInfoMem() when $default != null:
 return $default(_that.total);case _:
@@ -212,7 +212,7 @@ class _AdminServerInfoMem implements AdminServerInfoMem {
   const _AdminServerInfoMem({required this.total});
   factory _AdminServerInfoMem.fromJson(Map<String, dynamic> json) => _$AdminServerInfoMemFromJson(json);
 
-@override final  double total;
+@override final  int total;
 
 /// Create a copy of AdminServerInfoMem
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +247,7 @@ abstract mixin class _$AdminServerInfoMemCopyWith<$Res> implements $AdminServerI
   factory _$AdminServerInfoMemCopyWith(_AdminServerInfoMem value, $Res Function(_AdminServerInfoMem) _then) = __$AdminServerInfoMemCopyWithImpl;
 @override @useResult
 $Res call({
- double total
+ int total
 });
 
 
@@ -267,7 +267,7 @@ class __$AdminServerInfoMemCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? total = null,}) {
   return _then(_AdminServerInfoMem(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 

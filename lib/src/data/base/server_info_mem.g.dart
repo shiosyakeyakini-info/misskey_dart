@@ -7,7 +7,7 @@ part of 'server_info_mem.dart';
 // **************************************************************************
 
 _ServerInfoMem _$ServerInfoMemFromJson(Map<String, dynamic> json) =>
-    _ServerInfoMem(total: (json['total'] as num).toDouble());
+    _ServerInfoMem(total: (json['total'] as num).toInt());
 
 Map<String, dynamic> _$ServerInfoMemToJson(_ServerInfoMem instance) =>
     <String, dynamic>{'total': instance.total};

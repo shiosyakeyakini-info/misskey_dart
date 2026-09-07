@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesMentionsRequest {
 
- bool? get following; int? get limit; String? get sinceId; String? get untilId; int? get sinceDate; int? get untilDate; String? get visibility;
+ bool? get following; int? get limit; String? get sinceId; String? get untilId; int? get sinceDate; int? get untilDate; NoteVisibility? get visibility;
 /// Create a copy of NotesMentionsRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NotesMentionsRequestCopyWith<$Res>  {
   factory $NotesMentionsRequestCopyWith(NotesMentionsRequest value, $Res Function(NotesMentionsRequest) _then) = _$NotesMentionsRequestCopyWithImpl;
 @useResult
 $Res call({
- bool? following, int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate, String? visibility
+ bool? following, int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate, NoteVisibility? visibility
 });
 
 
@@ -74,7 +74,7 @@ as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast
 as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
 as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
 as int?,visibility: freezed == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
-as String?,
+as NoteVisibility?,
   ));
 }
 
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool? following,  int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  String? visibility)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool? following,  int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  NoteVisibility? visibility)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesMentionsRequest() when $default != null:
 return $default(_that.following,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.visibility);case _:
@@ -180,7 +180,7 @@ return $default(_that.following,_that.limit,_that.sinceId,_that.untilId,_that.si
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool? following,  int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  String? visibility)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool? following,  int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  NoteVisibility? visibility)  $default,) {final _that = this;
 switch (_that) {
 case _NotesMentionsRequest():
 return $default(_that.following,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.visibility);case _:
@@ -200,7 +200,7 @@ return $default(_that.following,_that.limit,_that.sinceId,_that.untilId,_that.si
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool? following,  int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  String? visibility)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool? following,  int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  NoteVisibility? visibility)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesMentionsRequest() when $default != null:
 return $default(_that.following,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.visibility);case _:
@@ -224,7 +224,7 @@ class _NotesMentionsRequest implements NotesMentionsRequest {
 @override final  String? untilId;
 @override final  int? sinceDate;
 @override final  int? untilDate;
-@override final  String? visibility;
+@override final  NoteVisibility? visibility;
 
 /// Create a copy of NotesMentionsRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -259,7 +259,7 @@ abstract mixin class _$NotesMentionsRequestCopyWith<$Res> implements $NotesMenti
   factory _$NotesMentionsRequestCopyWith(_NotesMentionsRequest value, $Res Function(_NotesMentionsRequest) _then) = __$NotesMentionsRequestCopyWithImpl;
 @override @useResult
 $Res call({
- bool? following, int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate, String? visibility
+ bool? following, int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate, NoteVisibility? visibility
 });
 
 
@@ -285,7 +285,7 @@ as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast
 as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
 as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
 as int?,visibility: freezed == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
-as String?,
+as NoteVisibility?,
   ));
 }
 

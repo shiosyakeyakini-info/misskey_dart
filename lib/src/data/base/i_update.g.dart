@@ -25,7 +25,7 @@ _IUpdate _$IUpdateFromJson(Map<String, dynamic> json) => _IUpdate(
       .toList(),
   bannerId: json['bannerId'] as String?,
   fields: (json['fields'] as List<dynamic>?)
-      ?.map((e) => IUpdateFieldsItem.fromJson(e as Map<String, dynamic>))
+      ?.map((e) => UserField.fromJson(e as Map<String, dynamic>))
       .toList(),
   isLocked: json['isLocked'] as bool?,
   isExplorable: json['isExplorable'] as bool?,

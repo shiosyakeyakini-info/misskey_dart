@@ -9,7 +9,7 @@ abstract class QueueMetrics with _$QueueMetrics {
   const factory QueueMetrics({
     required QueueMetricsMeta meta,
     required List<double> data,
-    required double count,
+    required int count,
   }) = _QueueMetrics;
 
   factory QueueMetrics.fromJson(Map<String, Object?> json) =>

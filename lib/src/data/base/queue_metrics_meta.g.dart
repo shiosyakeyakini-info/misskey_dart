@@ -8,7 +8,7 @@ part of 'queue_metrics_meta.dart';
 
 _QueueMetricsMeta _$QueueMetricsMetaFromJson(Map<String, dynamic> json) =>
     _QueueMetricsMeta(
-      count: (json['count'] as num).toDouble(),
+      count: (json['count'] as num).toInt(),
       prevTS: (json['prevTS'] as num).toDouble(),
       prevCount: (json['prevCount'] as num).toDouble(),
     );

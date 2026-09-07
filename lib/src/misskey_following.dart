@@ -72,7 +72,7 @@ class MisskeyFollowingRequests {
   }
 
   /// following/requests/list
-  Future<Iterable<FollowingRequestsListItem>> list(
+  Future<Iterable<FollowRequest>> list(
     FollowingRequestsListRequest request,
   ) async {
     final response = await _apiService.post<List>(
@@ -80,7 +80,7 @@ class MisskeyFollowingRequests {
       request.toJson(),
     );
     return response.map(
-      (e) => FollowingRequestsListItem.fromJson(e as Map<String, dynamic>),
+      (e) => FollowRequest.fromJson(e as Map<String, dynamic>),
     );
   }
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$EmojiSimple {
 
- List<String> get aliases; String get name; String? get category;@UriConverter() Uri get url; bool? get localOnly; bool? get isSensitive; List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction;
+ List<String> get aliases; String get name; String? get category;@UriConverter() Uri get url; bool? get localOnly; bool get isSensitive; List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction;
 /// Create a copy of EmojiSimple
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $EmojiSimpleCopyWith<$Res>  {
   factory $EmojiSimpleCopyWith(EmojiSimple value, $Res Function(EmojiSimple) _then) = _$EmojiSimpleCopyWithImpl;
 @useResult
 $Res call({
- List<String> aliases, String name, String? category,@UriConverter() Uri url, bool? localOnly, bool? isSensitive, List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction
+ List<String> aliases, String name, String? category,@UriConverter() Uri url, bool? localOnly, bool isSensitive, List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction
 });
 
 
@@ -65,15 +65,15 @@ class _$EmojiSimpleCopyWithImpl<$Res>
 
 /// Create a copy of EmojiSimple
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? aliases = null,Object? name = null,Object? category = freezed,Object? url = null,Object? localOnly = freezed,Object? isSensitive = freezed,Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? aliases = null,Object? name = null,Object? category = freezed,Object? url = null,Object? localOnly = freezed,Object? isSensitive = null,Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,}) {
   return _then(_self.copyWith(
 aliases: null == aliases ? _self.aliases : aliases // ignore: cast_nullable_to_non_nullable
 as List<String>,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as Uri,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
-as bool?,isSensitive: freezed == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
-as bool?,roleIdsThatCanBeUsedThisEmojiAsReaction: freezed == roleIdsThatCanBeUsedThisEmojiAsReaction ? _self.roleIdsThatCanBeUsedThisEmojiAsReaction : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
+as bool?,isSensitive: null == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
+as bool,roleIdsThatCanBeUsedThisEmojiAsReaction: freezed == roleIdsThatCanBeUsedThisEmojiAsReaction ? _self.roleIdsThatCanBeUsedThisEmojiAsReaction : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> aliases,  String name,  String? category, @UriConverter()  Uri url,  bool? localOnly,  bool? isSensitive,  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> aliases,  String name,  String? category, @UriConverter()  Uri url,  bool? localOnly,  bool isSensitive,  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _EmojiSimple() when $default != null:
 return $default(_that.aliases,_that.name,_that.category,_that.url,_that.localOnly,_that.isSensitive,_that.roleIdsThatCanBeUsedThisEmojiAsReaction);case _:
@@ -180,7 +180,7 @@ return $default(_that.aliases,_that.name,_that.category,_that.url,_that.localOnl
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> aliases,  String name,  String? category, @UriConverter()  Uri url,  bool? localOnly,  bool? isSensitive,  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> aliases,  String name,  String? category, @UriConverter()  Uri url,  bool? localOnly,  bool isSensitive,  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction)  $default,) {final _that = this;
 switch (_that) {
 case _EmojiSimple():
 return $default(_that.aliases,_that.name,_that.category,_that.url,_that.localOnly,_that.isSensitive,_that.roleIdsThatCanBeUsedThisEmojiAsReaction);case _:
@@ -200,7 +200,7 @@ return $default(_that.aliases,_that.name,_that.category,_that.url,_that.localOnl
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> aliases,  String name,  String? category, @UriConverter()  Uri url,  bool? localOnly,  bool? isSensitive,  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> aliases,  String name,  String? category, @UriConverter()  Uri url,  bool? localOnly,  bool isSensitive,  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,) {final _that = this;
 switch (_that) {
 case _EmojiSimple() when $default != null:
 return $default(_that.aliases,_that.name,_that.category,_that.url,_that.localOnly,_that.isSensitive,_that.roleIdsThatCanBeUsedThisEmojiAsReaction);case _:
@@ -215,7 +215,7 @@ return $default(_that.aliases,_that.name,_that.category,_that.url,_that.localOnl
 @JsonSerializable()
 
 class _EmojiSimple implements EmojiSimple {
-  const _EmojiSimple({required final  List<String> aliases, required this.name, this.category, @UriConverter() required this.url, this.localOnly, this.isSensitive, final  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction}): _aliases = aliases,_roleIdsThatCanBeUsedThisEmojiAsReaction = roleIdsThatCanBeUsedThisEmojiAsReaction;
+  const _EmojiSimple({required final  List<String> aliases, required this.name, this.category, @UriConverter() required this.url, this.localOnly, this.isSensitive = false, final  List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction}): _aliases = aliases,_roleIdsThatCanBeUsedThisEmojiAsReaction = roleIdsThatCanBeUsedThisEmojiAsReaction;
   factory _EmojiSimple.fromJson(Map<String, dynamic> json) => _$EmojiSimpleFromJson(json);
 
  final  List<String> _aliases;
@@ -229,7 +229,7 @@ class _EmojiSimple implements EmojiSimple {
 @override final  String? category;
 @override@UriConverter() final  Uri url;
 @override final  bool? localOnly;
-@override final  bool? isSensitive;
+@override@JsonKey() final  bool isSensitive;
  final  List<String>? _roleIdsThatCanBeUsedThisEmojiAsReaction;
 @override List<String>? get roleIdsThatCanBeUsedThisEmojiAsReaction {
   final value = _roleIdsThatCanBeUsedThisEmojiAsReaction;
@@ -273,7 +273,7 @@ abstract mixin class _$EmojiSimpleCopyWith<$Res> implements $EmojiSimpleCopyWith
   factory _$EmojiSimpleCopyWith(_EmojiSimple value, $Res Function(_EmojiSimple) _then) = __$EmojiSimpleCopyWithImpl;
 @override @useResult
 $Res call({
- List<String> aliases, String name, String? category,@UriConverter() Uri url, bool? localOnly, bool? isSensitive, List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction
+ List<String> aliases, String name, String? category,@UriConverter() Uri url, bool? localOnly, bool isSensitive, List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction
 });
 
 
@@ -290,15 +290,15 @@ class __$EmojiSimpleCopyWithImpl<$Res>
 
 /// Create a copy of EmojiSimple
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? aliases = null,Object? name = null,Object? category = freezed,Object? url = null,Object? localOnly = freezed,Object? isSensitive = freezed,Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? aliases = null,Object? name = null,Object? category = freezed,Object? url = null,Object? localOnly = freezed,Object? isSensitive = null,Object? roleIdsThatCanBeUsedThisEmojiAsReaction = freezed,}) {
   return _then(_EmojiSimple(
 aliases: null == aliases ? _self._aliases : aliases // ignore: cast_nullable_to_non_nullable
 as List<String>,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as Uri,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
-as bool?,isSensitive: freezed == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
-as bool?,roleIdsThatCanBeUsedThisEmojiAsReaction: freezed == roleIdsThatCanBeUsedThisEmojiAsReaction ? _self._roleIdsThatCanBeUsedThisEmojiAsReaction : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
+as bool?,isSensitive: null == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
+as bool,roleIdsThatCanBeUsedThisEmojiAsReaction: freezed == roleIdsThatCanBeUsedThisEmojiAsReaction ? _self._roleIdsThatCanBeUsedThisEmojiAsReaction : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }

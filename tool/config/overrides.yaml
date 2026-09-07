@@ -65,6 +65,9 @@ field_overrides:
     localOnly:
       dart_type: "bool"
       default: "false"
+    # v13 世代のサーバーは返してこない
+    reactionCount:
+      default: "0"
     uri:
       converter: NullableUriConverter
       import: "package:misskey_dart/src/converters/uri_converter.dart"
@@ -135,6 +138,9 @@ field_overrides:
       dart_type: "Uri?"
 
   EmojiSimple:
+    isSensitive:
+      dart_type: "bool"
+      default: "false"
     url:
       converter: UriConverter
       import: "package:misskey_dart/src/converters/uri_converter.dart"
@@ -155,6 +161,55 @@ field_overrides:
       dart_type: "ChatRoom?"
     file:
       dart_type: "DriveFile?"
+
+  Role:
+    # v13 世代のサーバーは返してこない
+    preserveAssignmentOnMoveAccount:
+      default: "false"
+    usersCount:
+      default: "0"
+
+  NoteChannelInfo:
+    # v13 世代のサーバーは返してこない
+    isSensitive:
+      default: "false"
+    allowRenoteToExternal:
+      default: "true"
+    color:
+      converter: NullableColorConverter
+      import: "package:misskey_dart/src/converters/color_converter.dart"
+      dart_type: "int?"
+
+  CommunityChannel:
+    # v13 世代のサーバーは返してこない
+    isSensitive:
+      default: "false"
+    isArchived:
+      default: "false"
+    allowRenoteToExternal:
+      default: "true"
+    color:
+      converter: NullableColorConverter
+      import: "package:misskey_dart/src/converters/color_converter.dart"
+      dart_type: "int?"
+
+  Following:
+    # UserDetailedNotMeWithRelations は UserDetailedNotMe ではなく
+    # UserDetailed を実装しているので、広いほうで受ける
+    followee:
+      dart_type: "UserDetailed?"
+    follower:
+      dart_type: "UserDetailed?"
+
+  NotesMentionsRequest:
+    visibility:
+      dart_type: "NoteVisibility?"
+
+  MuteCreateRequest:
+    expiresAt:
+      converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
 
   ChatRoomMembership:
     user:
@@ -247,8 +302,11 @@ schema_name_overrides:
   "/flash/create.request.properties.visibility": FlashVisibility
   "/hashtags/list.request.properties.sort": HashtagsListSortType
   "/hashtags/users.request.properties.sort": UsersSortType
+  "/following/requests/list.response.items": FollowRequest
+  "/i/update.request.properties.fields.items": UserField
   "/users.request.properties.sort": UsersSortType
   "/users.request.properties.origin": Origin
+  "/users/search.request.properties.origin": Origin
   "/following/update.request.properties.notify": FollowingUpdateAllNotifyType
   "/following/update-all.request.properties.notify": FollowingUpdateAllNotifyType
   # NotificationType inline enums (in array items)
@@ -365,6 +423,7 @@ manual_files:
   # User hierarchy (abstract classes + complex fromJson, generator can't fully produce)
   - "lib/src/data/base/user.dart"
   # Types defined inline in user.dart (prevent duplicate generation)
+  - "lib/src/data/base/user_field.dart"
   - "lib/src/data/base/user_avatar_decoration.dart"
   - "lib/src/data/base/user_badge_role.dart"
   - "lib/src/data/base/user_instance_info.dart"
@@ -381,6 +440,12 @@ manual_files:
 
 # number type fields that should be int
 number_as_int:
+  - "*.count"
+  - "*.total"
+  - "*.pong"
+  - "*.attachedUsersCount"
+  - "*.attachedLocalUsersCount"
+  - "*.attachedRemoteUsersCount"
   - "*.followersCount"
   - "*.followingCount"
   - "*.notesCount"
@@ -472,6 +537,21 @@ extra_fields:
     isLiked:
       dart_type: bool
       nullable: true
+
+# 収集済みスキーマに載っていない sealed class のバリアント。
+# 予約投稿の通知は 2026.4 以降に入ったもので、api_schemas が 2026.3.1 までしか
+# ないので生成では出てこない。放っておくと unknown に落ちてノートを失う。
+extra_union_variants:
+  Notification:
+    - value: scheduledNotePosted
+      fields:
+        - "required String id"
+        - "@DateTimeConverter() required DateTime createdAt"
+        - "Note? note"
+    - value: scheduledNotePostFailed
+      fields:
+        - "required String id"
+        - "@DateTimeConverter() required DateTime createdAt"
 
 # Enum value name overrides (JSON value → Dart member name)
 # Used when auto-generated names don't match existing code conventions

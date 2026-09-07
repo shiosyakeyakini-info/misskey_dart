@@ -26,12 +26,12 @@ _CommunityChannel _$CommunityChannelFromJson(Map<String, dynamic> json) =>
       pinnedNoteIds: (json['pinnedNoteIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      color: json['color'] as String,
-      isArchived: json['isArchived'] as bool,
+      color: const NullableColorConverter().fromJson(json['color'] as String?),
+      isArchived: json['isArchived'] as bool? ?? false,
       usersCount: (json['usersCount'] as num).toInt(),
       notesCount: (json['notesCount'] as num).toInt(),
-      isSensitive: json['isSensitive'] as bool,
-      allowRenoteToExternal: json['allowRenoteToExternal'] as bool,
+      isSensitive: json['isSensitive'] as bool? ?? false,
+      allowRenoteToExternal: json['allowRenoteToExternal'] as bool? ?? true,
       isFollowing: json['isFollowing'] as bool?,
       isFavorited: json['isFavorited'] as bool?,
       pinnedNotes: (json['pinnedNotes'] as List<dynamic>?)
@@ -52,7 +52,7 @@ Map<String, dynamic> _$CommunityChannelToJson(
   'userId': instance.userId,
   'bannerUrl': const NullableUriConverter().toJson(instance.bannerUrl),
   'pinnedNoteIds': instance.pinnedNoteIds,
-  'color': instance.color,
+  'color': const NullableColorConverter().toJson(instance.color),
   'isArchived': instance.isArchived,
   'usersCount': instance.usersCount,
   'notesCount': instance.notesCount,

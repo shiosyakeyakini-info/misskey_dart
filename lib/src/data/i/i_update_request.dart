@@ -16,7 +16,7 @@ abstract class IUpdateRequest with _$IUpdateRequest {
     String? avatarId,
     List<IUpdateAvatarDecorationsItem>? avatarDecorations,
     String? bannerId,
-    List<IUpdateFieldsItem>? fields,
+    List<UserField>? fields,
     bool? isLocked,
     bool? isExplorable,
     bool? hideOnlineStatus,

@@ -5,7 +5,7 @@ part 'server_info_fs.g.dart';
 
 @freezed
 abstract class ServerInfoFs with _$ServerInfoFs {
-  const factory ServerInfoFs({required double total, required double used}) =
+  const factory ServerInfoFs({required int total, required double used}) =
       _ServerInfoFs;
 
   factory ServerInfoFs.fromJson(Map<String, Object?> json) =>

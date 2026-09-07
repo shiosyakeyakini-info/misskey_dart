@@ -236,7 +236,7 @@ return $default(_that.id,_that.name,_that.color,_that.iconUrl,_that.description,
 @JsonSerializable()
 
 class _Role implements Role {
-  const _Role({required this.id, required this.name, this.color, this.iconUrl, required this.description, required this.isModerator, required this.isAdministrator, required this.displayOrder, @DateTimeConverter() required this.createdAt, @DateTimeConverter() required this.updatedAt, @JsonKey(unknownEnumValue: RoleTarget.unknown) required this.target, required this.condFormula, required this.isPublic, required this.isExplorable, required this.asBadge, required this.preserveAssignmentOnMoveAccount, required this.canEditMembersByModerator, required final  Map<String, dynamic> policies, required this.usersCount}): _policies = policies;
+  const _Role({required this.id, required this.name, this.color, this.iconUrl, required this.description, required this.isModerator, required this.isAdministrator, required this.displayOrder, @DateTimeConverter() required this.createdAt, @DateTimeConverter() required this.updatedAt, @JsonKey(unknownEnumValue: RoleTarget.unknown) required this.target, required this.condFormula, required this.isPublic, required this.isExplorable, required this.asBadge, this.preserveAssignmentOnMoveAccount = false, required this.canEditMembersByModerator, required final  Map<String, dynamic> policies, this.usersCount = 0}): _policies = policies;
   factory _Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 
 @override final  String id;
@@ -254,7 +254,7 @@ class _Role implements Role {
 @override final  bool isPublic;
 @override final  bool isExplorable;
 @override final  bool asBadge;
-@override final  bool preserveAssignmentOnMoveAccount;
+@override@JsonKey() final  bool preserveAssignmentOnMoveAccount;
 @override final  bool canEditMembersByModerator;
  final  Map<String, dynamic> _policies;
 @override Map<String, dynamic> get policies {
@@ -263,7 +263,7 @@ class _Role implements Role {
   return EqualUnmodifiableMapView(_policies);
 }
 
-@override final  int usersCount;
+@override@JsonKey() final  int usersCount;
 
 /// Create a copy of Role
 /// with the given fields replaced by the non-null parameter values.

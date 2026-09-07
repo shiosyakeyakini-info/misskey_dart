@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MuteCreateRequest {
 
- String? get userId; int? get expiresAt;
+ String? get userId;@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? get expiresAt;
 /// Create a copy of MuteCreateRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $MuteCreateRequestCopyWith<$Res>  {
   factory $MuteCreateRequestCopyWith(MuteCreateRequest value, $Res Function(MuteCreateRequest) _then) = _$MuteCreateRequestCopyWithImpl;
 @useResult
 $Res call({
- String? userId, int? expiresAt
+ String? userId,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt
 });
 
 
@@ -69,7 +69,7 @@ class _$MuteCreateRequestCopyWithImpl<$Res>
   return _then(_self.copyWith(
 userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as int?,
+as DateTime?,
   ));
 }
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? userId,  int? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? userId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? expiresAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MuteCreateRequest() when $default != null:
 return $default(_that.userId,_that.expiresAt);case _:
@@ -175,7 +175,7 @@ return $default(_that.userId,_that.expiresAt);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? userId,  int? expiresAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? userId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? expiresAt)  $default,) {final _that = this;
 switch (_that) {
 case _MuteCreateRequest():
 return $default(_that.userId,_that.expiresAt);case _:
@@ -195,7 +195,7 @@ return $default(_that.userId,_that.expiresAt);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? userId,  int? expiresAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? userId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? expiresAt)?  $default,) {final _that = this;
 switch (_that) {
 case _MuteCreateRequest() when $default != null:
 return $default(_that.userId,_that.expiresAt);case _:
@@ -210,11 +210,11 @@ return $default(_that.userId,_that.expiresAt);case _:
 @JsonSerializable()
 
 class _MuteCreateRequest implements MuteCreateRequest {
-  const _MuteCreateRequest({this.userId, this.expiresAt});
+  const _MuteCreateRequest({this.userId, @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt});
   factory _MuteCreateRequest.fromJson(Map<String, dynamic> json) => _$MuteCreateRequestFromJson(json);
 
 @override final  String? userId;
-@override final  int? expiresAt;
+@override@NullableEpocTimeDateTimeConverter.withMilliSeconds() final  DateTime? expiresAt;
 
 /// Create a copy of MuteCreateRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$MuteCreateRequestCopyWith<$Res> implements $MuteCreateReq
   factory _$MuteCreateRequestCopyWith(_MuteCreateRequest value, $Res Function(_MuteCreateRequest) _then) = __$MuteCreateRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? userId, int? expiresAt
+ String? userId,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt
 });
 
 
@@ -270,7 +270,7 @@ class __$MuteCreateRequestCopyWithImpl<$Res>
   return _then(_MuteCreateRequest(
 userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as int?,
+as DateTime?,
   ));
 }
 

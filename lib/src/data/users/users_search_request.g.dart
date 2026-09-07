@@ -13,11 +13,11 @@ _UsersSearchRequest _$UsersSearchRequestFromJson(Map<String, dynamic> json) =>
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       origin:
           $enumDecodeNullable(
-            _$UsersSearchOriginEnumMap,
+            _$OriginEnumMap,
             json['origin'],
-            unknownValue: UsersSearchOrigin.unknown,
+            unknownValue: Origin.unknown,
           ) ??
-          UsersSearchOrigin.combined,
+          Origin.combined,
       detail: json['detail'] as bool? ?? true,
     );
 
@@ -26,13 +26,13 @@ Map<String, dynamic> _$UsersSearchRequestToJson(_UsersSearchRequest instance) =>
       'query': instance.query,
       'offset': instance.offset,
       'limit': instance.limit,
-      'origin': _$UsersSearchOriginEnumMap[instance.origin],
+      'origin': _$OriginEnumMap[instance.origin],
       'detail': instance.detail,
     };
 
-const _$UsersSearchOriginEnumMap = {
-  UsersSearchOrigin.local: 'local',
-  UsersSearchOrigin.remote: 'remote',
-  UsersSearchOrigin.combined: 'combined',
-  UsersSearchOrigin.unknown: 'unknown',
+const _$OriginEnumMap = {
+  Origin.combined: 'combined',
+  Origin.local: 'local',
+  Origin.remote: 'remote',
+  Origin.unknown: 'unknown',
 };

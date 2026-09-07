@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$QueueMetricsMeta {
 
- double get count; double get prevTS; double get prevCount;
+ int get count; double get prevTS; double get prevCount;
 /// Create a copy of QueueMetricsMeta
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $QueueMetricsMetaCopyWith<$Res>  {
   factory $QueueMetricsMetaCopyWith(QueueMetricsMeta value, $Res Function(QueueMetricsMeta) _then) = _$QueueMetricsMetaCopyWithImpl;
 @useResult
 $Res call({
- double count, double prevTS, double prevCount
+ int count, double prevTS, double prevCount
 });
 
 
@@ -68,7 +68,7 @@ class _$QueueMetricsMetaCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? count = null,Object? prevTS = null,Object? prevCount = null,}) {
   return _then(_self.copyWith(
 count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as double,prevTS: null == prevTS ? _self.prevTS : prevTS // ignore: cast_nullable_to_non_nullable
+as int,prevTS: null == prevTS ? _self.prevTS : prevTS // ignore: cast_nullable_to_non_nullable
 as double,prevCount: null == prevCount ? _self.prevCount : prevCount // ignore: cast_nullable_to_non_nullable
 as double,
   ));
@@ -155,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double count,  double prevTS,  double prevCount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int count,  double prevTS,  double prevCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _QueueMetricsMeta() when $default != null:
 return $default(_that.count,_that.prevTS,_that.prevCount);case _:
@@ -176,7 +176,7 @@ return $default(_that.count,_that.prevTS,_that.prevCount);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double count,  double prevTS,  double prevCount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int count,  double prevTS,  double prevCount)  $default,) {final _that = this;
 switch (_that) {
 case _QueueMetricsMeta():
 return $default(_that.count,_that.prevTS,_that.prevCount);case _:
@@ -196,7 +196,7 @@ return $default(_that.count,_that.prevTS,_that.prevCount);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double count,  double prevTS,  double prevCount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int count,  double prevTS,  double prevCount)?  $default,) {final _that = this;
 switch (_that) {
 case _QueueMetricsMeta() when $default != null:
 return $default(_that.count,_that.prevTS,_that.prevCount);case _:
@@ -214,7 +214,7 @@ class _QueueMetricsMeta implements QueueMetricsMeta {
   const _QueueMetricsMeta({required this.count, required this.prevTS, required this.prevCount});
   factory _QueueMetricsMeta.fromJson(Map<String, dynamic> json) => _$QueueMetricsMetaFromJson(json);
 
-@override final  double count;
+@override final  int count;
 @override final  double prevTS;
 @override final  double prevCount;
 
@@ -251,7 +251,7 @@ abstract mixin class _$QueueMetricsMetaCopyWith<$Res> implements $QueueMetricsMe
   factory _$QueueMetricsMetaCopyWith(_QueueMetricsMeta value, $Res Function(_QueueMetricsMeta) _then) = __$QueueMetricsMetaCopyWithImpl;
 @override @useResult
 $Res call({
- double count, double prevTS, double prevCount
+ int count, double prevTS, double prevCount
 });
 
 
@@ -271,7 +271,7 @@ class __$QueueMetricsMetaCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? count = null,Object? prevTS = null,Object? prevCount = null,}) {
   return _then(_QueueMetricsMeta(
 count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as double,prevTS: null == prevTS ? _self.prevTS : prevTS // ignore: cast_nullable_to_non_nullable
+as int,prevTS: null == prevTS ? _self.prevTS : prevTS // ignore: cast_nullable_to_non_nullable
 as double,prevCount: null == prevCount ? _self.prevCount : prevCount // ignore: cast_nullable_to_non_nullable
 as double,
   ));

@@ -5,10 +5,8 @@ part 'admin_server_info_fs.g.dart';
 
 @freezed
 abstract class AdminServerInfoFs with _$AdminServerInfoFs {
-  const factory AdminServerInfoFs({
-    required double total,
-    required double used,
-  }) = _AdminServerInfoFs;
+  const factory AdminServerInfoFs({required int total, required double used}) =
+      _AdminServerInfoFs;
 
   factory AdminServerInfoFs.fromJson(Map<String, Object?> json) =>
       _$AdminServerInfoFsFromJson(json);

@@ -5,8 +5,7 @@ part 'admin_server_info_mem.g.dart';
 
 @freezed
 abstract class AdminServerInfoMem with _$AdminServerInfoMem {
-  const factory AdminServerInfoMem({required double total}) =
-      _AdminServerInfoMem;
+  const factory AdminServerInfoMem({required int total}) = _AdminServerInfoMem;
 
   factory AdminServerInfoMem.fromJson(Map<String, Object?> json) =>
       _$AdminServerInfoMemFromJson(json);

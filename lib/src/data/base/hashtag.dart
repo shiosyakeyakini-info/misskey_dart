@@ -10,9 +10,9 @@ abstract class Hashtag with _$Hashtag {
     required double mentionedUsersCount,
     required double mentionedLocalUsersCount,
     required double mentionedRemoteUsersCount,
-    required double attachedUsersCount,
-    required double attachedLocalUsersCount,
-    required double attachedRemoteUsersCount,
+    required int attachedUsersCount,
+    required int attachedLocalUsersCount,
+    required int attachedRemoteUsersCount,
   }) = _Hashtag;
 
   factory Hashtag.fromJson(Map<String, Object?> json) =>

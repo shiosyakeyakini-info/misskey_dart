@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ServerInfoFs {
 
- double get total; double get used;
+ int get total; double get used;
 /// Create a copy of ServerInfoFs
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ServerInfoFsCopyWith<$Res>  {
   factory $ServerInfoFsCopyWith(ServerInfoFs value, $Res Function(ServerInfoFs) _then) = _$ServerInfoFsCopyWithImpl;
 @useResult
 $Res call({
- double total, double used
+ int total, double used
 });
 
 
@@ -68,7 +68,7 @@ class _$ServerInfoFsCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? total = null,Object? used = null,}) {
   return _then(_self.copyWith(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as double,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
+as int,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
 as double,
   ));
 }
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double total,  double used)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int total,  double used)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ServerInfoFs() when $default != null:
 return $default(_that.total,_that.used);case _:
@@ -175,7 +175,7 @@ return $default(_that.total,_that.used);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double total,  double used)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int total,  double used)  $default,) {final _that = this;
 switch (_that) {
 case _ServerInfoFs():
 return $default(_that.total,_that.used);case _:
@@ -195,7 +195,7 @@ return $default(_that.total,_that.used);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double total,  double used)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int total,  double used)?  $default,) {final _that = this;
 switch (_that) {
 case _ServerInfoFs() when $default != null:
 return $default(_that.total,_that.used);case _:
@@ -213,7 +213,7 @@ class _ServerInfoFs implements ServerInfoFs {
   const _ServerInfoFs({required this.total, required this.used});
   factory _ServerInfoFs.fromJson(Map<String, dynamic> json) => _$ServerInfoFsFromJson(json);
 
-@override final  double total;
+@override final  int total;
 @override final  double used;
 
 /// Create a copy of ServerInfoFs
@@ -249,7 +249,7 @@ abstract mixin class _$ServerInfoFsCopyWith<$Res> implements $ServerInfoFsCopyWi
   factory _$ServerInfoFsCopyWith(_ServerInfoFs value, $Res Function(_ServerInfoFs) _then) = __$ServerInfoFsCopyWithImpl;
 @override @useResult
 $Res call({
- double total, double used
+ int total, double used
 });
 
 
@@ -269,7 +269,7 @@ class __$ServerInfoFsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? total = null,Object? used = null,}) {
   return _then(_ServerInfoFs(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as double,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
+as int,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
 as double,
   ));
 }

@@ -15,7 +15,7 @@ _NotesMentionsRequest _$NotesMentionsRequestFromJson(
   untilId: json['untilId'] as String?,
   sinceDate: (json['sinceDate'] as num?)?.toInt(),
   untilDate: (json['untilDate'] as num?)?.toInt(),
-  visibility: json['visibility'] as String?,
+  visibility: $enumDecodeNullable(_$NoteVisibilityEnumMap, json['visibility']),
 );
 
 Map<String, dynamic> _$NotesMentionsRequestToJson(
@@ -27,5 +27,13 @@ Map<String, dynamic> _$NotesMentionsRequestToJson(
   'untilId': instance.untilId,
   'sinceDate': instance.sinceDate,
   'untilDate': instance.untilDate,
-  'visibility': instance.visibility,
+  'visibility': _$NoteVisibilityEnumMap[instance.visibility],
+};
+
+const _$NoteVisibilityEnumMap = {
+  NoteVisibility.public: 'public',
+  NoteVisibility.home: 'home',
+  NoteVisibility.followers: 'followers',
+  NoteVisibility.specified: 'specified',
+  NoteVisibility.unknown: 'unknown',
 };

@@ -7,7 +7,7 @@ part 'admin_queue_queue_stats_db_memory.g.dart';
 abstract class AdminQueueQueueStatsDbMemory
     with _$AdminQueueQueueStatsDbMemory {
   const factory AdminQueueQueueStatsDbMemory({
-    required double total,
+    required int total,
     required double used,
     required double fragmentationRatio,
     required double peak,

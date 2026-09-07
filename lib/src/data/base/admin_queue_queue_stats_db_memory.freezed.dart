@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminQueueQueueStatsDbMemory {
 
- double get total; double get used; double get fragmentationRatio; double get peak;
+ int get total; double get used; double get fragmentationRatio; double get peak;
 /// Create a copy of AdminQueueQueueStatsDbMemory
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $AdminQueueQueueStatsDbMemoryCopyWith<$Res>  {
   factory $AdminQueueQueueStatsDbMemoryCopyWith(AdminQueueQueueStatsDbMemory value, $Res Function(AdminQueueQueueStatsDbMemory) _then) = _$AdminQueueQueueStatsDbMemoryCopyWithImpl;
 @useResult
 $Res call({
- double total, double used, double fragmentationRatio, double peak
+ int total, double used, double fragmentationRatio, double peak
 });
 
 
@@ -68,7 +68,7 @@ class _$AdminQueueQueueStatsDbMemoryCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? total = null,Object? used = null,Object? fragmentationRatio = null,Object? peak = null,}) {
   return _then(_self.copyWith(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as double,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
+as int,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
 as double,fragmentationRatio: null == fragmentationRatio ? _self.fragmentationRatio : fragmentationRatio // ignore: cast_nullable_to_non_nullable
 as double,peak: null == peak ? _self.peak : peak // ignore: cast_nullable_to_non_nullable
 as double,
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double total,  double used,  double fragmentationRatio,  double peak)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int total,  double used,  double fragmentationRatio,  double peak)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminQueueQueueStatsDbMemory() when $default != null:
 return $default(_that.total,_that.used,_that.fragmentationRatio,_that.peak);case _:
@@ -177,7 +177,7 @@ return $default(_that.total,_that.used,_that.fragmentationRatio,_that.peak);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double total,  double used,  double fragmentationRatio,  double peak)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int total,  double used,  double fragmentationRatio,  double peak)  $default,) {final _that = this;
 switch (_that) {
 case _AdminQueueQueueStatsDbMemory():
 return $default(_that.total,_that.used,_that.fragmentationRatio,_that.peak);case _:
@@ -197,7 +197,7 @@ return $default(_that.total,_that.used,_that.fragmentationRatio,_that.peak);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double total,  double used,  double fragmentationRatio,  double peak)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int total,  double used,  double fragmentationRatio,  double peak)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminQueueQueueStatsDbMemory() when $default != null:
 return $default(_that.total,_that.used,_that.fragmentationRatio,_that.peak);case _:
@@ -215,7 +215,7 @@ class _AdminQueueQueueStatsDbMemory implements AdminQueueQueueStatsDbMemory {
   const _AdminQueueQueueStatsDbMemory({required this.total, required this.used, required this.fragmentationRatio, required this.peak});
   factory _AdminQueueQueueStatsDbMemory.fromJson(Map<String, dynamic> json) => _$AdminQueueQueueStatsDbMemoryFromJson(json);
 
-@override final  double total;
+@override final  int total;
 @override final  double used;
 @override final  double fragmentationRatio;
 @override final  double peak;
@@ -253,7 +253,7 @@ abstract mixin class _$AdminQueueQueueStatsDbMemoryCopyWith<$Res> implements $Ad
   factory _$AdminQueueQueueStatsDbMemoryCopyWith(_AdminQueueQueueStatsDbMemory value, $Res Function(_AdminQueueQueueStatsDbMemory) _then) = __$AdminQueueQueueStatsDbMemoryCopyWithImpl;
 @override @useResult
 $Res call({
- double total, double used, double fragmentationRatio, double peak
+ int total, double used, double fragmentationRatio, double peak
 });
 
 
@@ -273,7 +273,7 @@ class __$AdminQueueQueueStatsDbMemoryCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? total = null,Object? used = null,Object? fragmentationRatio = null,Object? peak = null,}) {
   return _then(_AdminQueueQueueStatsDbMemory(
 total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as double,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
+as int,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
 as double,fragmentationRatio: null == fragmentationRatio ? _self.fragmentationRatio : fragmentationRatio // ignore: cast_nullable_to_non_nullable
 as double,peak: null == peak ? _self.peak : peak // ignore: cast_nullable_to_non_nullable
 as double,

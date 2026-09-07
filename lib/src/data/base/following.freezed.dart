@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Following {
 
- String get id;@DateTimeConverter() DateTime get createdAt; String get followeeId; String get followerId; Map<String, dynamic>? get followee; Map<String, dynamic>? get follower;
+ String get id;@DateTimeConverter() DateTime get createdAt; String get followeeId; String get followerId; UserDetailed? get followee; UserDetailed? get follower;
 /// Create a copy of Following
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,12 +28,12 @@ $FollowingCopyWith<Following> get copyWith => _$FollowingCopyWithImpl<Following>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Following&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.followeeId, followeeId) || other.followeeId == followeeId)&&(identical(other.followerId, followerId) || other.followerId == followerId)&&const DeepCollectionEquality().equals(other.followee, followee)&&const DeepCollectionEquality().equals(other.follower, follower));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Following&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.followeeId, followeeId) || other.followeeId == followeeId)&&(identical(other.followerId, followerId) || other.followerId == followerId)&&(identical(other.followee, followee) || other.followee == followee)&&(identical(other.follower, follower) || other.follower == follower));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdAt,followeeId,followerId,const DeepCollectionEquality().hash(followee),const DeepCollectionEquality().hash(follower));
+int get hashCode => Object.hash(runtimeType,id,createdAt,followeeId,followerId,followee,follower);
 
 @override
 String toString() {
@@ -48,7 +48,7 @@ abstract mixin class $FollowingCopyWith<$Res>  {
   factory $FollowingCopyWith(Following value, $Res Function(Following) _then) = _$FollowingCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String followeeId, String followerId, Map<String, dynamic>? followee, Map<String, dynamic>? follower
+ String id,@DateTimeConverter() DateTime createdAt, String followeeId, String followerId, UserDetailed? followee, UserDetailed? follower
 });
 
 
@@ -72,8 +72,8 @@ as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: 
 as DateTime,followeeId: null == followeeId ? _self.followeeId : followeeId // ignore: cast_nullable_to_non_nullable
 as String,followerId: null == followerId ? _self.followerId : followerId // ignore: cast_nullable_to_non_nullable
 as String,followee: freezed == followee ? _self.followee : followee // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,follower: freezed == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
+as UserDetailed?,follower: freezed == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
+as UserDetailed?,
   ));
 }
 
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String followeeId,  String followerId,  Map<String, dynamic>? followee,  Map<String, dynamic>? follower)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String followeeId,  String followerId,  UserDetailed? followee,  UserDetailed? follower)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Following() when $default != null:
 return $default(_that.id,_that.createdAt,_that.followeeId,_that.followerId,_that.followee,_that.follower);case _:
@@ -179,7 +179,7 @@ return $default(_that.id,_that.createdAt,_that.followeeId,_that.followerId,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String followeeId,  String followerId,  Map<String, dynamic>? followee,  Map<String, dynamic>? follower)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String followeeId,  String followerId,  UserDetailed? followee,  UserDetailed? follower)  $default,) {final _that = this;
 switch (_that) {
 case _Following():
 return $default(_that.id,_that.createdAt,_that.followeeId,_that.followerId,_that.followee,_that.follower);case _:
@@ -199,7 +199,7 @@ return $default(_that.id,_that.createdAt,_that.followeeId,_that.followerId,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String followeeId,  String followerId,  Map<String, dynamic>? followee,  Map<String, dynamic>? follower)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String followeeId,  String followerId,  UserDetailed? followee,  UserDetailed? follower)?  $default,) {final _that = this;
 switch (_that) {
 case _Following() when $default != null:
 return $default(_that.id,_that.createdAt,_that.followeeId,_that.followerId,_that.followee,_that.follower);case _:
@@ -214,31 +214,15 @@ return $default(_that.id,_that.createdAt,_that.followeeId,_that.followerId,_that
 @JsonSerializable()
 
 class _Following implements Following {
-  const _Following({required this.id, @DateTimeConverter() required this.createdAt, required this.followeeId, required this.followerId, final  Map<String, dynamic>? followee, final  Map<String, dynamic>? follower}): _followee = followee,_follower = follower;
+  const _Following({required this.id, @DateTimeConverter() required this.createdAt, required this.followeeId, required this.followerId, this.followee, this.follower});
   factory _Following.fromJson(Map<String, dynamic> json) => _$FollowingFromJson(json);
 
 @override final  String id;
 @override@DateTimeConverter() final  DateTime createdAt;
 @override final  String followeeId;
 @override final  String followerId;
- final  Map<String, dynamic>? _followee;
-@override Map<String, dynamic>? get followee {
-  final value = _followee;
-  if (value == null) return null;
-  if (_followee is EqualUnmodifiableMapView) return _followee;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
- final  Map<String, dynamic>? _follower;
-@override Map<String, dynamic>? get follower {
-  final value = _follower;
-  if (value == null) return null;
-  if (_follower is EqualUnmodifiableMapView) return _follower;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
+@override final  UserDetailed? followee;
+@override final  UserDetailed? follower;
 
 /// Create a copy of Following
 /// with the given fields replaced by the non-null parameter values.
@@ -253,12 +237,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Following&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.followeeId, followeeId) || other.followeeId == followeeId)&&(identical(other.followerId, followerId) || other.followerId == followerId)&&const DeepCollectionEquality().equals(other._followee, _followee)&&const DeepCollectionEquality().equals(other._follower, _follower));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Following&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.followeeId, followeeId) || other.followeeId == followeeId)&&(identical(other.followerId, followerId) || other.followerId == followerId)&&(identical(other.followee, followee) || other.followee == followee)&&(identical(other.follower, follower) || other.follower == follower));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdAt,followeeId,followerId,const DeepCollectionEquality().hash(_followee),const DeepCollectionEquality().hash(_follower));
+int get hashCode => Object.hash(runtimeType,id,createdAt,followeeId,followerId,followee,follower);
 
 @override
 String toString() {
@@ -273,7 +257,7 @@ abstract mixin class _$FollowingCopyWith<$Res> implements $FollowingCopyWith<$Re
   factory _$FollowingCopyWith(_Following value, $Res Function(_Following) _then) = __$FollowingCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String followeeId, String followerId, Map<String, dynamic>? followee, Map<String, dynamic>? follower
+ String id,@DateTimeConverter() DateTime createdAt, String followeeId, String followerId, UserDetailed? followee, UserDetailed? follower
 });
 
 
@@ -296,9 +280,9 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,followeeId: null == followeeId ? _self.followeeId : followeeId // ignore: cast_nullable_to_non_nullable
 as String,followerId: null == followerId ? _self.followerId : followerId // ignore: cast_nullable_to_non_nullable
-as String,followee: freezed == followee ? _self._followee : followee // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,follower: freezed == follower ? _self._follower : follower // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
+as String,followee: freezed == followee ? _self.followee : followee // ignore: cast_nullable_to_non_nullable
+as UserDetailed?,follower: freezed == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
+as UserDetailed?,
   ));
 }
 

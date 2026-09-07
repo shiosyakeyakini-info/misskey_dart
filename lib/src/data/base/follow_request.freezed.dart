@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FollowRequest {
 
- String get id; UserLite get followee; UserLite get follower;
+ String get id; UserLite get follower; UserLite get followee;
 /// Create a copy of FollowRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $FollowRequestCopyWith<FollowRequest> get copyWith => _$FollowRequestCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FollowRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.followee, followee) || other.followee == followee)&&(identical(other.follower, follower) || other.follower == follower));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FollowRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.follower, follower) || other.follower == follower)&&(identical(other.followee, followee) || other.followee == followee));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,followee,follower);
+int get hashCode => Object.hash(runtimeType,id,follower,followee);
 
 @override
 String toString() {
-  return 'FollowRequest(id: $id, followee: $followee, follower: $follower)';
+  return 'FollowRequest(id: $id, follower: $follower, followee: $followee)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $FollowRequestCopyWith<$Res>  {
   factory $FollowRequestCopyWith(FollowRequest value, $Res Function(FollowRequest) _then) = _$FollowRequestCopyWithImpl;
 @useResult
 $Res call({
- String id, UserLite followee, UserLite follower
+ String id, UserLite follower, UserLite followee
 });
 
 
-$UserLiteCopyWith<$Res> get followee;$UserLiteCopyWith<$Res> get follower;
+$UserLiteCopyWith<$Res> get follower;$UserLiteCopyWith<$Res> get followee;
 
 }
 /// @nodoc
@@ -65,11 +65,11 @@ class _$FollowRequestCopyWithImpl<$Res>
 
 /// Create a copy of FollowRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? followee = null,Object? follower = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? follower = null,Object? followee = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,followee: null == followee ? _self.followee : followee // ignore: cast_nullable_to_non_nullable
-as UserLite,follower: null == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
+as String,follower: null == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
+as UserLite,followee: null == followee ? _self.followee : followee // ignore: cast_nullable_to_non_nullable
 as UserLite,
   ));
 }
@@ -77,19 +77,19 @@ as UserLite,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserLiteCopyWith<$Res> get followee {
+$UserLiteCopyWith<$Res> get follower {
   
-  return $UserLiteCopyWith<$Res>(_self.followee, (value) {
-    return _then(_self.copyWith(followee: value));
+  return $UserLiteCopyWith<$Res>(_self.follower, (value) {
+    return _then(_self.copyWith(follower: value));
   });
 }/// Create a copy of FollowRequest
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserLiteCopyWith<$Res> get follower {
+$UserLiteCopyWith<$Res> get followee {
   
-  return $UserLiteCopyWith<$Res>(_self.follower, (value) {
-    return _then(_self.copyWith(follower: value));
+  return $UserLiteCopyWith<$Res>(_self.followee, (value) {
+    return _then(_self.copyWith(followee: value));
   });
 }
 }
@@ -173,10 +173,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  UserLite followee,  UserLite follower)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  UserLite follower,  UserLite followee)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FollowRequest() when $default != null:
-return $default(_that.id,_that.followee,_that.follower);case _:
+return $default(_that.id,_that.follower,_that.followee);case _:
   return orElse();
 
 }
@@ -194,10 +194,10 @@ return $default(_that.id,_that.followee,_that.follower);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  UserLite followee,  UserLite follower)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  UserLite follower,  UserLite followee)  $default,) {final _that = this;
 switch (_that) {
 case _FollowRequest():
-return $default(_that.id,_that.followee,_that.follower);case _:
+return $default(_that.id,_that.follower,_that.followee);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -214,10 +214,10 @@ return $default(_that.id,_that.followee,_that.follower);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  UserLite followee,  UserLite follower)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  UserLite follower,  UserLite followee)?  $default,) {final _that = this;
 switch (_that) {
 case _FollowRequest() when $default != null:
-return $default(_that.id,_that.followee,_that.follower);case _:
+return $default(_that.id,_that.follower,_that.followee);case _:
   return null;
 
 }
@@ -229,12 +229,12 @@ return $default(_that.id,_that.followee,_that.follower);case _:
 @JsonSerializable()
 
 class _FollowRequest implements FollowRequest {
-  const _FollowRequest({required this.id, required this.followee, required this.follower});
+  const _FollowRequest({required this.id, required this.follower, required this.followee});
   factory _FollowRequest.fromJson(Map<String, dynamic> json) => _$FollowRequestFromJson(json);
 
 @override final  String id;
-@override final  UserLite followee;
 @override final  UserLite follower;
+@override final  UserLite followee;
 
 /// Create a copy of FollowRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -249,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FollowRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.followee, followee) || other.followee == followee)&&(identical(other.follower, follower) || other.follower == follower));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FollowRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.follower, follower) || other.follower == follower)&&(identical(other.followee, followee) || other.followee == followee));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,followee,follower);
+int get hashCode => Object.hash(runtimeType,id,follower,followee);
 
 @override
 String toString() {
-  return 'FollowRequest(id: $id, followee: $followee, follower: $follower)';
+  return 'FollowRequest(id: $id, follower: $follower, followee: $followee)';
 }
 
 
@@ -269,11 +269,11 @@ abstract mixin class _$FollowRequestCopyWith<$Res> implements $FollowRequestCopy
   factory _$FollowRequestCopyWith(_FollowRequest value, $Res Function(_FollowRequest) _then) = __$FollowRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String id, UserLite followee, UserLite follower
+ String id, UserLite follower, UserLite followee
 });
 
 
-@override $UserLiteCopyWith<$Res> get followee;@override $UserLiteCopyWith<$Res> get follower;
+@override $UserLiteCopyWith<$Res> get follower;@override $UserLiteCopyWith<$Res> get followee;
 
 }
 /// @nodoc
@@ -286,11 +286,11 @@ class __$FollowRequestCopyWithImpl<$Res>
 
 /// Create a copy of FollowRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? followee = null,Object? follower = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? follower = null,Object? followee = null,}) {
   return _then(_FollowRequest(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,followee: null == followee ? _self.followee : followee // ignore: cast_nullable_to_non_nullable
-as UserLite,follower: null == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
+as String,follower: null == follower ? _self.follower : follower // ignore: cast_nullable_to_non_nullable
+as UserLite,followee: null == followee ? _self.followee : followee // ignore: cast_nullable_to_non_nullable
 as UserLite,
   ));
 }
@@ -299,19 +299,19 @@ as UserLite,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserLiteCopyWith<$Res> get followee {
+$UserLiteCopyWith<$Res> get follower {
   
-  return $UserLiteCopyWith<$Res>(_self.followee, (value) {
-    return _then(_self.copyWith(followee: value));
+  return $UserLiteCopyWith<$Res>(_self.follower, (value) {
+    return _then(_self.copyWith(follower: value));
   });
 }/// Create a copy of FollowRequest
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserLiteCopyWith<$Res> get follower {
+$UserLiteCopyWith<$Res> get followee {
   
-  return $UserLiteCopyWith<$Res>(_self.follower, (value) {
-    return _then(_self.copyWith(follower: value));
+  return $UserLiteCopyWith<$Res>(_self.followee, (value) {
+    return _then(_self.copyWith(followee: value));
   });
 }
 }

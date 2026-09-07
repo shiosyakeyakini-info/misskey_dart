@@ -12,7 +12,7 @@ abstract class EmojiSimple with _$EmojiSimple {
     String? category,
     @UriConverter() required Uri url,
     bool? localOnly,
-    bool? isSensitive,
+    @Default(false) bool isSensitive,
     List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _EmojiSimple;
 

@@ -35,7 +35,7 @@ abstract class Note with _$Note {
     ReactionAcceptance? reactionAcceptance,
     @EmojisConverter() required Map<String, String> reactionEmojis,
     required Map<String, int> reactions,
-    required int reactionCount,
+    @Default(0) int reactionCount,
     required int renoteCount,
     required int repliesCount,
     @NullableUriConverter() Uri? uri,

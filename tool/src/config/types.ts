@@ -179,6 +179,23 @@ export interface OverrideConfig {
   enum_value_overrides?: Record<string, Record<string, string>>;
 
   fork_overrides?: Record<string, ForkOverride>;
+
+  /**
+   * Extra variants for a generated sealed class.
+   *
+   * The collected api.json files only go back so far and only go up to the
+   * newest version that was captured, so a union member that exists on a
+   * server outside that window never appears in the schema. Without it the
+   * payload falls into the `unknown` fallback and its fields are lost.
+   */
+  extra_union_variants?: Record<string, ExtraUnionVariant[]>;
+}
+
+export interface ExtraUnionVariant {
+  /** Discriminator value, e.g. "scheduledNotePosted". */
+  value: string;
+  /** Raw Dart field declarations, without the trailing comma. */
+  fields: string[];
 }
 
 export interface ConverterRef {

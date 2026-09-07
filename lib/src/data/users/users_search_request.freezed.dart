@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UsersSearchRequest {
 
- String? get query; int? get offset; int? get limit;@JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) UsersSearchOrigin? get origin; bool? get detail;
+ String? get query; int? get offset; int? get limit;@JsonKey(unknownEnumValue: Origin.unknown) Origin? get origin; bool? get detail;
 /// Create a copy of UsersSearchRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UsersSearchRequestCopyWith<$Res>  {
   factory $UsersSearchRequestCopyWith(UsersSearchRequest value, $Res Function(UsersSearchRequest) _then) = _$UsersSearchRequestCopyWithImpl;
 @useResult
 $Res call({
- String? query, int? offset, int? limit,@JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) UsersSearchOrigin? origin, bool? detail
+ String? query, int? offset, int? limit,@JsonKey(unknownEnumValue: Origin.unknown) Origin? origin, bool? detail
 });
 
 
@@ -71,7 +71,7 @@ query: freezed == query ? _self.query : query // ignore: cast_nullable_to_non_nu
 as String?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
-as UsersSearchOrigin?,detail: freezed == detail ? _self.detail : detail // ignore: cast_nullable_to_non_nullable
+as Origin?,detail: freezed == detail ? _self.detail : detail // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }
@@ -157,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? query,  int? offset,  int? limit, @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)  UsersSearchOrigin? origin,  bool? detail)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? query,  int? offset,  int? limit, @JsonKey(unknownEnumValue: Origin.unknown)  Origin? origin,  bool? detail)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UsersSearchRequest() when $default != null:
 return $default(_that.query,_that.offset,_that.limit,_that.origin,_that.detail);case _:
@@ -178,7 +178,7 @@ return $default(_that.query,_that.offset,_that.limit,_that.origin,_that.detail);
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? query,  int? offset,  int? limit, @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)  UsersSearchOrigin? origin,  bool? detail)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? query,  int? offset,  int? limit, @JsonKey(unknownEnumValue: Origin.unknown)  Origin? origin,  bool? detail)  $default,) {final _that = this;
 switch (_that) {
 case _UsersSearchRequest():
 return $default(_that.query,_that.offset,_that.limit,_that.origin,_that.detail);case _:
@@ -198,7 +198,7 @@ return $default(_that.query,_that.offset,_that.limit,_that.origin,_that.detail);
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? query,  int? offset,  int? limit, @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown)  UsersSearchOrigin? origin,  bool? detail)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? query,  int? offset,  int? limit, @JsonKey(unknownEnumValue: Origin.unknown)  Origin? origin,  bool? detail)?  $default,) {final _that = this;
 switch (_that) {
 case _UsersSearchRequest() when $default != null:
 return $default(_that.query,_that.offset,_that.limit,_that.origin,_that.detail);case _:
@@ -213,13 +213,13 @@ return $default(_that.query,_that.offset,_that.limit,_that.origin,_that.detail);
 @JsonSerializable()
 
 class _UsersSearchRequest implements UsersSearchRequest {
-  const _UsersSearchRequest({this.query, this.offset = 0, this.limit = 10, @JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) this.origin = UsersSearchOrigin.combined, this.detail = true});
+  const _UsersSearchRequest({this.query, this.offset = 0, this.limit = 10, @JsonKey(unknownEnumValue: Origin.unknown) this.origin = Origin.combined, this.detail = true});
   factory _UsersSearchRequest.fromJson(Map<String, dynamic> json) => _$UsersSearchRequestFromJson(json);
 
 @override final  String? query;
 @override@JsonKey() final  int? offset;
 @override@JsonKey() final  int? limit;
-@override@JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) final  UsersSearchOrigin? origin;
+@override@JsonKey(unknownEnumValue: Origin.unknown) final  Origin? origin;
 @override@JsonKey() final  bool? detail;
 
 /// Create a copy of UsersSearchRequest
@@ -255,7 +255,7 @@ abstract mixin class _$UsersSearchRequestCopyWith<$Res> implements $UsersSearchR
   factory _$UsersSearchRequestCopyWith(_UsersSearchRequest value, $Res Function(_UsersSearchRequest) _then) = __$UsersSearchRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? query, int? offset, int? limit,@JsonKey(unknownEnumValue: UsersSearchOrigin.unknown) UsersSearchOrigin? origin, bool? detail
+ String? query, int? offset, int? limit,@JsonKey(unknownEnumValue: Origin.unknown) Origin? origin, bool? detail
 });
 
 
@@ -278,7 +278,7 @@ query: freezed == query ? _self.query : query // ignore: cast_nullable_to_non_nu
 as String?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
-as UsersSearchOrigin?,detail: freezed == detail ? _self.detail : detail // ignore: cast_nullable_to_non_nullable
+as Origin?,detail: freezed == detail ? _self.detail : detail // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }

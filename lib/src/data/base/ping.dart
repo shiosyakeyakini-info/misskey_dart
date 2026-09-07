@@ -5,7 +5,7 @@ part 'ping.g.dart';
 
 @freezed
 abstract class Ping with _$Ping {
-  const factory Ping({required double pong}) = _Ping;
+  const factory Ping({required int pong}) = _Ping;
 
   factory Ping.fromJson(Map<String, Object?> json) => _$PingFromJson(json);
 }

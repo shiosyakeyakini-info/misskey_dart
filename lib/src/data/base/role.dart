@@ -22,10 +22,10 @@ abstract class Role with _$Role {
     required bool isPublic,
     required bool isExplorable,
     required bool asBadge,
-    required bool preserveAssignmentOnMoveAccount,
+    @Default(false) bool preserveAssignmentOnMoveAccount,
     required bool canEditMembersByModerator,
     required Map<String, dynamic> policies,
-    required int usersCount,
+    @Default(0) int usersCount,
   }) = _Role;
 
   factory Role.fromJson(Map<String, Object?> json) => _$RoleFromJson(json);

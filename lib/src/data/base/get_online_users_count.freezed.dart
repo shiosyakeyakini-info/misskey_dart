@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetOnlineUsersCount {
 
- double get count;
+ int get count;
 /// Create a copy of GetOnlineUsersCount
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $GetOnlineUsersCountCopyWith<$Res>  {
   factory $GetOnlineUsersCountCopyWith(GetOnlineUsersCount value, $Res Function(GetOnlineUsersCount) _then) = _$GetOnlineUsersCountCopyWithImpl;
 @useResult
 $Res call({
- double count
+ int count
 });
 
 
@@ -68,7 +68,7 @@ class _$GetOnlineUsersCountCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? count = null,}) {
   return _then(_self.copyWith(
 count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetOnlineUsersCount() when $default != null:
 return $default(_that.count);case _:
@@ -174,7 +174,7 @@ return $default(_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int count)  $default,) {final _that = this;
 switch (_that) {
 case _GetOnlineUsersCount():
 return $default(_that.count);case _:
@@ -194,7 +194,7 @@ return $default(_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int count)?  $default,) {final _that = this;
 switch (_that) {
 case _GetOnlineUsersCount() when $default != null:
 return $default(_that.count);case _:
@@ -212,7 +212,7 @@ class _GetOnlineUsersCount implements GetOnlineUsersCount {
   const _GetOnlineUsersCount({required this.count});
   factory _GetOnlineUsersCount.fromJson(Map<String, dynamic> json) => _$GetOnlineUsersCountFromJson(json);
 
-@override final  double count;
+@override final  int count;
 
 /// Create a copy of GetOnlineUsersCount
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +247,7 @@ abstract mixin class _$GetOnlineUsersCountCopyWith<$Res> implements $GetOnlineUs
   factory _$GetOnlineUsersCountCopyWith(_GetOnlineUsersCount value, $Res Function(_GetOnlineUsersCount) _then) = __$GetOnlineUsersCountCopyWithImpl;
 @override @useResult
 $Res call({
- double count
+ int count
 });
 
 
@@ -267,7 +267,7 @@ class __$GetOnlineUsersCountCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? count = null,}) {
   return _then(_GetOnlineUsersCount(
 count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 

@@ -206,6 +206,22 @@ function generateSealedClass(
     }
   }
 
+  // Variants declared in the config because they are missing from the
+  // collected schemas (see OverrideConfig.extra_union_variants).
+  for (const extra of config.extra_union_variants?.[className] ?? []) {
+    const variantMethodName = toCamelCase(extra.value.replace(/[^a-zA-Z0-9]/g, "_"));
+    const variantClassName = `${className}${toPascalCase(extra.value.replace(/[^a-zA-Z0-9]/g, "_"))}`;
+    if (variantMethodName !== extra.value) {
+      lines.push(`  @FreezedUnionValue("${extra.value}")`);
+    }
+    lines.push(`  const factory ${className}.${variantMethodName}({`);
+    for (const field of extra.fields) {
+      lines.push(`    ${field},`);
+    }
+    lines.push(`  }) = ${variantClassName};`);
+    lines.push("");
+  }
+
   // Add unknown fallback variant
   lines.push(`  const factory ${className}.unknown({`);
 

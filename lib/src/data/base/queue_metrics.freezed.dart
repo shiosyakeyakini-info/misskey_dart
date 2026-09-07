@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$QueueMetrics {
 
- QueueMetricsMeta get meta; List<double> get data; double get count;
+ QueueMetricsMeta get meta; List<double> get data; int get count;
 /// Create a copy of QueueMetrics
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $QueueMetricsCopyWith<$Res>  {
   factory $QueueMetricsCopyWith(QueueMetrics value, $Res Function(QueueMetrics) _then) = _$QueueMetricsCopyWithImpl;
 @useResult
 $Res call({
- QueueMetricsMeta meta, List<double> data, double count
+ QueueMetricsMeta meta, List<double> data, int count
 });
 
 
@@ -70,7 +70,7 @@ class _$QueueMetricsCopyWithImpl<$Res>
 meta: null == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
 as QueueMetricsMeta,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as List<double>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 /// Create a copy of QueueMetrics
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( QueueMetricsMeta meta,  List<double> data,  double count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( QueueMetricsMeta meta,  List<double> data,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _QueueMetrics() when $default != null:
 return $default(_that.meta,_that.data,_that.count);case _:
@@ -185,7 +185,7 @@ return $default(_that.meta,_that.data,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( QueueMetricsMeta meta,  List<double> data,  double count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( QueueMetricsMeta meta,  List<double> data,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _QueueMetrics():
 return $default(_that.meta,_that.data,_that.count);case _:
@@ -205,7 +205,7 @@ return $default(_that.meta,_that.data,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( QueueMetricsMeta meta,  List<double> data,  double count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( QueueMetricsMeta meta,  List<double> data,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _QueueMetrics() when $default != null:
 return $default(_that.meta,_that.data,_that.count);case _:
@@ -231,7 +231,7 @@ class _QueueMetrics implements QueueMetrics {
   return EqualUnmodifiableListView(_data);
 }
 
-@override final  double count;
+@override final  int count;
 
 /// Create a copy of QueueMetrics
 /// with the given fields replaced by the non-null parameter values.
@@ -266,7 +266,7 @@ abstract mixin class _$QueueMetricsCopyWith<$Res> implements $QueueMetricsCopyWi
   factory _$QueueMetricsCopyWith(_QueueMetrics value, $Res Function(_QueueMetrics) _then) = __$QueueMetricsCopyWithImpl;
 @override @useResult
 $Res call({
- QueueMetricsMeta meta, List<double> data, double count
+ QueueMetricsMeta meta, List<double> data, int count
 });
 
 
@@ -288,7 +288,7 @@ class __$QueueMetricsCopyWithImpl<$Res>
 meta: null == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
 as QueueMetricsMeta,data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
 as List<double>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as double,
+as int,
   ));
 }
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Hashtag {
 
- String get tag; double get mentionedUsersCount; double get mentionedLocalUsersCount; double get mentionedRemoteUsersCount; double get attachedUsersCount; double get attachedLocalUsersCount; double get attachedRemoteUsersCount;
+ String get tag; double get mentionedUsersCount; double get mentionedLocalUsersCount; double get mentionedRemoteUsersCount; int get attachedUsersCount; int get attachedLocalUsersCount; int get attachedRemoteUsersCount;
 /// Create a copy of Hashtag
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $HashtagCopyWith<$Res>  {
   factory $HashtagCopyWith(Hashtag value, $Res Function(Hashtag) _then) = _$HashtagCopyWithImpl;
 @useResult
 $Res call({
- String tag, double mentionedUsersCount, double mentionedLocalUsersCount, double mentionedRemoteUsersCount, double attachedUsersCount, double attachedLocalUsersCount, double attachedRemoteUsersCount
+ String tag, double mentionedUsersCount, double mentionedLocalUsersCount, double mentionedRemoteUsersCount, int attachedUsersCount, int attachedLocalUsersCount, int attachedRemoteUsersCount
 });
 
 
@@ -72,9 +72,9 @@ as String,mentionedUsersCount: null == mentionedUsersCount ? _self.mentionedUser
 as double,mentionedLocalUsersCount: null == mentionedLocalUsersCount ? _self.mentionedLocalUsersCount : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
 as double,mentionedRemoteUsersCount: null == mentionedRemoteUsersCount ? _self.mentionedRemoteUsersCount : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
 as double,attachedUsersCount: null == attachedUsersCount ? _self.attachedUsersCount : attachedUsersCount // ignore: cast_nullable_to_non_nullable
-as double,attachedLocalUsersCount: null == attachedLocalUsersCount ? _self.attachedLocalUsersCount : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-as double,attachedRemoteUsersCount: null == attachedRemoteUsersCount ? _self.attachedRemoteUsersCount : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-as double,
+as int,attachedLocalUsersCount: null == attachedLocalUsersCount ? _self.attachedLocalUsersCount : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
+as int,attachedRemoteUsersCount: null == attachedRemoteUsersCount ? _self.attachedRemoteUsersCount : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String tag,  double mentionedUsersCount,  double mentionedLocalUsersCount,  double mentionedRemoteUsersCount,  double attachedUsersCount,  double attachedLocalUsersCount,  double attachedRemoteUsersCount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String tag,  double mentionedUsersCount,  double mentionedLocalUsersCount,  double mentionedRemoteUsersCount,  int attachedUsersCount,  int attachedLocalUsersCount,  int attachedRemoteUsersCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Hashtag() when $default != null:
 return $default(_that.tag,_that.mentionedUsersCount,_that.mentionedLocalUsersCount,_that.mentionedRemoteUsersCount,_that.attachedUsersCount,_that.attachedLocalUsersCount,_that.attachedRemoteUsersCount);case _:
@@ -180,7 +180,7 @@ return $default(_that.tag,_that.mentionedUsersCount,_that.mentionedLocalUsersCou
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String tag,  double mentionedUsersCount,  double mentionedLocalUsersCount,  double mentionedRemoteUsersCount,  double attachedUsersCount,  double attachedLocalUsersCount,  double attachedRemoteUsersCount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String tag,  double mentionedUsersCount,  double mentionedLocalUsersCount,  double mentionedRemoteUsersCount,  int attachedUsersCount,  int attachedLocalUsersCount,  int attachedRemoteUsersCount)  $default,) {final _that = this;
 switch (_that) {
 case _Hashtag():
 return $default(_that.tag,_that.mentionedUsersCount,_that.mentionedLocalUsersCount,_that.mentionedRemoteUsersCount,_that.attachedUsersCount,_that.attachedLocalUsersCount,_that.attachedRemoteUsersCount);case _:
@@ -200,7 +200,7 @@ return $default(_that.tag,_that.mentionedUsersCount,_that.mentionedLocalUsersCou
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String tag,  double mentionedUsersCount,  double mentionedLocalUsersCount,  double mentionedRemoteUsersCount,  double attachedUsersCount,  double attachedLocalUsersCount,  double attachedRemoteUsersCount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String tag,  double mentionedUsersCount,  double mentionedLocalUsersCount,  double mentionedRemoteUsersCount,  int attachedUsersCount,  int attachedLocalUsersCount,  int attachedRemoteUsersCount)?  $default,) {final _that = this;
 switch (_that) {
 case _Hashtag() when $default != null:
 return $default(_that.tag,_that.mentionedUsersCount,_that.mentionedLocalUsersCount,_that.mentionedRemoteUsersCount,_that.attachedUsersCount,_that.attachedLocalUsersCount,_that.attachedRemoteUsersCount);case _:
@@ -222,9 +222,9 @@ class _Hashtag implements Hashtag {
 @override final  double mentionedUsersCount;
 @override final  double mentionedLocalUsersCount;
 @override final  double mentionedRemoteUsersCount;
-@override final  double attachedUsersCount;
-@override final  double attachedLocalUsersCount;
-@override final  double attachedRemoteUsersCount;
+@override final  int attachedUsersCount;
+@override final  int attachedLocalUsersCount;
+@override final  int attachedRemoteUsersCount;
 
 /// Create a copy of Hashtag
 /// with the given fields replaced by the non-null parameter values.
@@ -259,7 +259,7 @@ abstract mixin class _$HashtagCopyWith<$Res> implements $HashtagCopyWith<$Res> {
   factory _$HashtagCopyWith(_Hashtag value, $Res Function(_Hashtag) _then) = __$HashtagCopyWithImpl;
 @override @useResult
 $Res call({
- String tag, double mentionedUsersCount, double mentionedLocalUsersCount, double mentionedRemoteUsersCount, double attachedUsersCount, double attachedLocalUsersCount, double attachedRemoteUsersCount
+ String tag, double mentionedUsersCount, double mentionedLocalUsersCount, double mentionedRemoteUsersCount, int attachedUsersCount, int attachedLocalUsersCount, int attachedRemoteUsersCount
 });
 
 
@@ -283,9 +283,9 @@ as String,mentionedUsersCount: null == mentionedUsersCount ? _self.mentionedUser
 as double,mentionedLocalUsersCount: null == mentionedLocalUsersCount ? _self.mentionedLocalUsersCount : mentionedLocalUsersCount // ignore: cast_nullable_to_non_nullable
 as double,mentionedRemoteUsersCount: null == mentionedRemoteUsersCount ? _self.mentionedRemoteUsersCount : mentionedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
 as double,attachedUsersCount: null == attachedUsersCount ? _self.attachedUsersCount : attachedUsersCount // ignore: cast_nullable_to_non_nullable
-as double,attachedLocalUsersCount: null == attachedLocalUsersCount ? _self.attachedLocalUsersCount : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
-as double,attachedRemoteUsersCount: null == attachedRemoteUsersCount ? _self.attachedRemoteUsersCount : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
-as double,
+as int,attachedLocalUsersCount: null == attachedLocalUsersCount ? _self.attachedLocalUsersCount : attachedLocalUsersCount // ignore: cast_nullable_to_non_nullable
+as int,attachedRemoteUsersCount: null == attachedRemoteUsersCount ? _self.attachedRemoteUsersCount : attachedRemoteUsersCount // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 

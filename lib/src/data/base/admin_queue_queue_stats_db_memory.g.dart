@@ -9,7 +9,7 @@ part of 'admin_queue_queue_stats_db_memory.dart';
 _AdminQueueQueueStatsDbMemory _$AdminQueueQueueStatsDbMemoryFromJson(
   Map<String, dynamic> json,
 ) => _AdminQueueQueueStatsDbMemory(
-  total: (json['total'] as num).toDouble(),
+  total: (json['total'] as num).toInt(),
   used: (json['used'] as num).toDouble(),
   fragmentationRatio: (json['fragmentationRatio'] as num).toDouble(),
   peak: (json['peak'] as num).toDouble(),

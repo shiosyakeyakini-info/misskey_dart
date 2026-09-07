@@ -7,7 +7,7 @@ part of 'ping_response.dart';
 // **************************************************************************
 
 _PingResponse _$PingResponseFromJson(Map<String, dynamic> json) =>
-    _PingResponse(pong: (json['pong'] as num).toDouble());
+    _PingResponse(pong: (json['pong'] as num).toInt());
 
 Map<String, dynamic> _$PingResponseToJson(_PingResponse instance) =>
     <String, dynamic>{'pong': instance.pong};

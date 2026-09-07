@@ -149,6 +149,17 @@ sealed class Notification with _$Notification {
     @DateTimeConverter() required DateTime createdAt,
   }) = NotificationTest;
 
+  const factory Notification.scheduledNotePosted({
+    required String id,
+    @DateTimeConverter() required DateTime createdAt,
+    Note? note,
+  }) = NotificationScheduledNotePosted;
+
+  const factory Notification.scheduledNotePostFailed({
+    required String id,
+    @DateTimeConverter() required DateTime createdAt,
+  }) = NotificationScheduledNotePostFailed;
+
   const factory Notification.unknown({
     String? id,
     @DateTimeConverter() DateTime? createdAt,

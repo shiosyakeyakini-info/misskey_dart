@@ -301,7 +301,7 @@ return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_th
 @JsonSerializable()
 
 class _Note implements Note {
-  const _Note({required this.id, @DateTimeConverter() required this.createdAt, @NullableDateTimeConverter() this.deletedAt, this.text, this.cw, required this.userId, required this.user, this.replyId, this.renoteId, this.reply, this.renote, this.isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown) required this.visibility, final  List<String> mentions = const [], final  List<String> visibleUserIds = const [], final  List<String> fileIds = const [], final  List<DriveFile> files = const [], final  List<String> tags = const [], this.poll, @EmojisConverter() final  Map<String, String> emojis = const {}, this.channelId, this.channel, this.localOnly = false, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance, @EmojisConverter() required final  Map<String, String> reactionEmojis, required final  Map<String, int> reactions, required this.reactionCount, required this.renoteCount, required this.repliesCount, @NullableUriConverter() this.uri, @NullableUriConverter() this.url, final  List<String> reactionAndUserPairCache = const [], this.clippedCount, this.myReaction, this.hasPoll, @NullableDateTimeConverter() this.updatedAt}): _mentions = mentions,_visibleUserIds = visibleUserIds,_fileIds = fileIds,_files = files,_tags = tags,_emojis = emojis,_reactionEmojis = reactionEmojis,_reactions = reactions,_reactionAndUserPairCache = reactionAndUserPairCache;
+  const _Note({required this.id, @DateTimeConverter() required this.createdAt, @NullableDateTimeConverter() this.deletedAt, this.text, this.cw, required this.userId, required this.user, this.replyId, this.renoteId, this.reply, this.renote, this.isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown) required this.visibility, final  List<String> mentions = const [], final  List<String> visibleUserIds = const [], final  List<String> fileIds = const [], final  List<DriveFile> files = const [], final  List<String> tags = const [], this.poll, @EmojisConverter() final  Map<String, String> emojis = const {}, this.channelId, this.channel, this.localOnly = false, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance, @EmojisConverter() required final  Map<String, String> reactionEmojis, required final  Map<String, int> reactions, this.reactionCount = 0, required this.renoteCount, required this.repliesCount, @NullableUriConverter() this.uri, @NullableUriConverter() this.url, final  List<String> reactionAndUserPairCache = const [], this.clippedCount, this.myReaction, this.hasPoll, @NullableDateTimeConverter() this.updatedAt}): _mentions = mentions,_visibleUserIds = visibleUserIds,_fileIds = fileIds,_files = files,_tags = tags,_emojis = emojis,_reactionEmojis = reactionEmojis,_reactions = reactions,_reactionAndUserPairCache = reactionAndUserPairCache;
   factory _Note.fromJson(Map<String, dynamic> json) => _$NoteFromJson(json);
 
 @override final  String id;
@@ -378,7 +378,7 @@ class _Note implements Note {
   return EqualUnmodifiableMapView(_reactions);
 }
 
-@override final  int reactionCount;
+@override@JsonKey() final  int reactionCount;
 @override final  int renoteCount;
 @override final  int repliesCount;
 @override@NullableUriConverter() final  Uri? uri;

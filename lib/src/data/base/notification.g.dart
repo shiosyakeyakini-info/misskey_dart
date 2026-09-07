@@ -417,6 +417,44 @@ Map<String, dynamic> _$NotificationTestToJson(NotificationTest instance) =>
       'type': instance.$type,
     };
 
+NotificationScheduledNotePosted _$NotificationScheduledNotePostedFromJson(
+  Map<String, dynamic> json,
+) => NotificationScheduledNotePosted(
+  id: json['id'] as String,
+  createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
+  note: json['note'] == null
+      ? null
+      : Note.fromJson(json['note'] as Map<String, dynamic>),
+  $type: json['type'] as String?,
+);
+
+Map<String, dynamic> _$NotificationScheduledNotePostedToJson(
+  NotificationScheduledNotePosted instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'createdAt': const DateTimeConverter().toJson(instance.createdAt),
+  'note': instance.note?.toJson(),
+  'type': instance.$type,
+};
+
+NotificationScheduledNotePostFailed
+_$NotificationScheduledNotePostFailedFromJson(Map<String, dynamic> json) =>
+    NotificationScheduledNotePostFailed(
+      id: json['id'] as String,
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$NotificationScheduledNotePostFailedToJson(
+  NotificationScheduledNotePostFailed instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'createdAt': const DateTimeConverter().toJson(instance.createdAt),
+  'type': instance.$type,
+};
+
 NotificationUnknown _$NotificationUnknownFromJson(Map<String, dynamic> json) =>
     NotificationUnknown(
       id: json['id'] as String?,

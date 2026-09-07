@@ -8,7 +8,7 @@ part of 'admin_server_info_fs.dart';
 
 _AdminServerInfoFs _$AdminServerInfoFsFromJson(Map<String, dynamic> json) =>
     _AdminServerInfoFs(
-      total: (json['total'] as num).toDouble(),
+      total: (json['total'] as num).toInt(),
       used: (json['used'] as num).toDouble(),
     );
 

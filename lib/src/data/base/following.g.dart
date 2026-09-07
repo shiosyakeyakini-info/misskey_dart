@@ -11,8 +11,12 @@ _Following _$FollowingFromJson(Map<String, dynamic> json) => _Following(
   createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
   followeeId: json['followeeId'] as String,
   followerId: json['followerId'] as String,
-  followee: json['followee'] as Map<String, dynamic>?,
-  follower: json['follower'] as Map<String, dynamic>?,
+  followee: json['followee'] == null
+      ? null
+      : UserDetailed.fromJson(json['followee'] as Map<String, dynamic>),
+  follower: json['follower'] == null
+      ? null
+      : UserDetailed.fromJson(json['follower'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$FollowingToJson(_Following instance) =>
@@ -21,6 +25,6 @@ Map<String, dynamic> _$FollowingToJson(_Following instance) =>
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'followeeId': instance.followeeId,
       'followerId': instance.followerId,
-      'followee': instance.followee,
-      'follower': instance.follower,
+      'followee': instance.followee?.toJson(),
+      'follower': instance.follower?.toJson(),
     };
