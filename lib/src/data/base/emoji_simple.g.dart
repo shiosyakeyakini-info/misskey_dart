@@ -10,7 +10,7 @@ _EmojiSimple _$EmojiSimpleFromJson(Map<String, dynamic> json) => _EmojiSimple(
   aliases: (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
   name: json['name'] as String,
   category: json['category'] as String?,
-  url: json['url'] as String,
+  url: const UriConverter().fromJson(json['url'] as String),
   localOnly: json['localOnly'] as bool?,
   isSensitive: json['isSensitive'] as bool?,
   roleIdsThatCanBeUsedThisEmojiAsReaction:
@@ -24,7 +24,7 @@ Map<String, dynamic> _$EmojiSimpleToJson(_EmojiSimple instance) =>
       'aliases': instance.aliases,
       'name': instance.name,
       'category': instance.category,
-      'url': instance.url,
+      'url': const UriConverter().toJson(instance.url),
       'localOnly': instance.localOnly,
       'isSensitive': instance.isSensitive,
       'roleIdsThatCanBeUsedThisEmojiAsReaction':

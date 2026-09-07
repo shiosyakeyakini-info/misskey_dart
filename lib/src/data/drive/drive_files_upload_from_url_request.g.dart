@@ -9,7 +9,10 @@ part of 'drive_files_upload_from_url_request.dart';
 _DriveFilesUploadFromUrlRequest _$DriveFilesUploadFromUrlRequestFromJson(
   Map<String, dynamic> json,
 ) => _DriveFilesUploadFromUrlRequest(
-  url: json['url'] as String?,
+  url: _$JsonConverterFromJson<String, Uri?>(
+    json['url'],
+    const NullableUriConverter().fromJson,
+  ),
   folderId: json['folderId'] as String? ?? null,
   isSensitive: json['isSensitive'] as bool? ?? false,
   comment: json['comment'] as String? ?? null,
@@ -20,10 +23,15 @@ _DriveFilesUploadFromUrlRequest _$DriveFilesUploadFromUrlRequestFromJson(
 Map<String, dynamic> _$DriveFilesUploadFromUrlRequestToJson(
   _DriveFilesUploadFromUrlRequest instance,
 ) => <String, dynamic>{
-  'url': instance.url,
+  'url': const NullableUriConverter().toJson(instance.url),
   'folderId': instance.folderId,
   'isSensitive': instance.isSensitive,
   'comment': instance.comment,
   'marker': instance.marker,
   'force': instance.force,
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) => json == null ? null : fromJson(json as Json);

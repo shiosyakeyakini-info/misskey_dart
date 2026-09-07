@@ -193,6 +193,17 @@ class MisskeyUsers {
     return UserDetailed.fromJson(response);
   }
 
+  /// users/show
+  Future<Iterable<UserDetailed>> showByIds(UsersShowRequest request) async {
+    final response = await _apiService.post<List>(
+      "users/show",
+      request.toJson(),
+    );
+    return response.map(
+      (e) => UserDetailed.fromJson(e as Map<String, dynamic>),
+    );
+  }
+
   /// users/update-memo
   Future<void> updateMemo(UsersUpdateMemoRequest request) async {
     await _apiService.post<void>("users/update-memo", request.toJson());

@@ -119,6 +119,16 @@ function generateModuleClass(
     );
     lines.push(...methodLines);
     lines.push("");
+
+    for (const extra of override?.extra_methods ?? []) {
+      lines.push(
+        ...generateMethod(extra.method_name, ep, config, parsed, imports, {
+          responseType: extra.response_type,
+          itemType: extra.item_type,
+        })
+      );
+      lines.push("");
+    }
   }
 
   lines.push("}");
@@ -131,7 +141,8 @@ function generateMethod(
   endpoint: EndpointInfo,
   config: OverrideConfig,
   parsed: ParsedApi,
-  imports: Set<string>
+  imports: Set<string>,
+  shapeOverride?: { responseType: "single" | "array"; itemType: string }
 ): string[] {
   const lines: string[] = [];
   const apiPath = endpoint.path.replace(/^\//, "");
@@ -145,7 +156,9 @@ function generateMethod(
   let returnType: string;
   let responseClassName: string | undefined;
 
-  switch (endpoint.responseType) {
+  const responseShape = shapeOverride?.responseType ?? endpoint.responseType;
+
+  switch (responseShape) {
     case "void":
       returnType = "Future<void>";
       break;
@@ -153,13 +166,14 @@ function generateMethod(
       returnType = "Future<dynamic>";
       break;
     case "array": {
-      const itemType = resolveResponseType(endpoint, parsed);
+      const itemType = shapeOverride?.itemType ?? resolveResponseType(endpoint, parsed);
       returnType = `Future<Iterable<${itemType}>>`;
       responseClassName = itemType;
       break;
     }
     case "single": {
-      responseClassName = resolveResponseType(endpoint, parsed);
+      responseClassName =
+        shapeOverride?.itemType ?? resolveResponseType(endpoint, parsed);
       returnType = `Future<${responseClassName}>`;
       break;
     }
@@ -200,7 +214,7 @@ function generateMethod(
     extraOptsStr = `, ${entries}`;
   }
 
-  switch (endpoint.responseType) {
+  switch (responseShape) {
     case "void":
       lines.push(
         `    await _apiService.post<void>("${apiPath}", ${body}${extraOptsStr});`

@@ -22,9 +22,9 @@ _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
       localOnly: json['localOnly'] as bool? ?? false,
       reactionAcceptance:
           $enumDecodeNullable(
-            _$NotesCreateReactionAcceptanceEnumMap,
+            _$ReactionAcceptanceEnumMap,
             json['reactionAcceptance'],
-            unknownValue: NotesCreateReactionAcceptance.unknown,
+            unknownValue: ReactionAcceptance.unknown,
           ) ??
           null,
       noExtractMentions: json['noExtractMentions'] as bool? ?? false,
@@ -52,7 +52,7 @@ Map<String, dynamic> _$NotesCreateRequestToJson(_NotesCreateRequest instance) =>
       'cw': instance.cw,
       'localOnly': instance.localOnly,
       'reactionAcceptance':
-          _$NotesCreateReactionAcceptanceEnumMap[instance.reactionAcceptance],
+          _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
       'noExtractMentions': instance.noExtractMentions,
       'noExtractHashtags': instance.noExtractHashtags,
       'noExtractEmojis': instance.noExtractEmojis,
@@ -73,11 +73,11 @@ const _$NoteVisibilityEnumMap = {
   NoteVisibility.unknown: 'unknown',
 };
 
-const _$NotesCreateReactionAcceptanceEnumMap = {
-  NotesCreateReactionAcceptance.likeOnly: 'likeOnly',
-  NotesCreateReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
-  NotesCreateReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
-  NotesCreateReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
+const _$ReactionAcceptanceEnumMap = {
+  ReactionAcceptance.likeOnly: 'likeOnly',
+  ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+  ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
+  ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
-  NotesCreateReactionAcceptance.unknown: 'unknown',
+  ReactionAcceptance.unknown: 'unknown',
 };

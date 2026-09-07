@@ -19,8 +19,12 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
   user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
   replyId: json['replyId'] as String?,
   renoteId: json['renoteId'] as String?,
-  reply: json['reply'] as Map<String, dynamic>?,
-  renote: json['renote'] as Map<String, dynamic>?,
+  reply: json['reply'] == null
+      ? null
+      : Note.fromJson(json['reply'] as Map<String, dynamic>),
+  renote: json['renote'] == null
+      ? null
+      : Note.fromJson(json['renote'] as Map<String, dynamic>),
   isHidden: json['isHidden'] as bool?,
   visibility: $enumDecode(
     _$NoteVisibilityEnumMap,
@@ -35,13 +39,17 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
           ?.map((e) => e as String)
           .toList() ??
       const [],
-  fileIds: (json['fileIds'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  files: (json['files'] as List<dynamic>?)
-      ?.map((e) => DriveFile.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  fileIds:
+      (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  files:
+      (json['files'] as List<dynamic>?)
+          ?.map((e) => DriveFile.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+  tags:
+      (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
   poll: json['poll'] == null
       ? null
       : NotePoll.fromJson(json['poll'] as Map<String, dynamic>),
@@ -52,19 +60,25 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
   channel: json['channel'] == null
       ? null
       : NoteChannelInfo.fromJson(json['channel'] as Map<String, dynamic>),
-  localOnly: json['localOnly'] as bool?,
+  localOnly: json['localOnly'] as bool? ?? false,
   reactionAcceptance: $enumDecodeNullable(
     _$ReactionAcceptanceEnumMap,
     json['reactionAcceptance'],
     unknownValue: ReactionAcceptance.unknown,
   ),
   reactionEmojis: const EmojisConverter().fromJson(json['reactionEmojis']),
-  reactions: json['reactions'] as Map<String, dynamic>,
+  reactions: Map<String, int>.from(json['reactions'] as Map),
   reactionCount: (json['reactionCount'] as num).toInt(),
   renoteCount: (json['renoteCount'] as num).toInt(),
   repliesCount: (json['repliesCount'] as num).toInt(),
-  uri: json['uri'] as String?,
-  url: json['url'] as String?,
+  uri: _$JsonConverterFromJson<String, Uri?>(
+    json['uri'],
+    const NullableUriConverter().fromJson,
+  ),
+  url: _$JsonConverterFromJson<String, Uri?>(
+    json['url'],
+    const NullableUriConverter().fromJson,
+  ),
   reactionAndUserPairCache:
       (json['reactionAndUserPairCache'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -73,6 +87,10 @@ _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
   clippedCount: (json['clippedCount'] as num?)?.toInt(),
   myReaction: json['myReaction'] as String?,
   hasPoll: json['hasPoll'] as bool?,
+  updatedAt: _$JsonConverterFromJson<String, DateTime?>(
+    json['updatedAt'],
+    const NullableDateTimeConverter().fromJson,
+  ),
 );
 
 Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
@@ -85,8 +103,8 @@ Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
   'user': instance.user.toJson(),
   'replyId': instance.replyId,
   'renoteId': instance.renoteId,
-  'reply': instance.reply,
-  'renote': instance.renote,
+  'reply': instance.reply?.toJson(),
+  'renote': instance.renote?.toJson(),
   'isHidden': instance.isHidden,
   'visibility': _$NoteVisibilityEnumMap[instance.visibility]!,
   'mentions': instance.mentions,
@@ -106,12 +124,13 @@ Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
   'reactionCount': instance.reactionCount,
   'renoteCount': instance.renoteCount,
   'repliesCount': instance.repliesCount,
-  'uri': instance.uri,
-  'url': instance.url,
+  'uri': const NullableUriConverter().toJson(instance.uri),
+  'url': const NullableUriConverter().toJson(instance.url),
   'reactionAndUserPairCache': instance.reactionAndUserPairCache,
   'clippedCount': instance.clippedCount,
   'myReaction': instance.myReaction,
   'hasPoll': instance.hasPoll,
+  'updatedAt': const NullableDateTimeConverter().toJson(instance.updatedAt),
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'emoji_detailed.freezed.dart';
 part 'emoji_detailed.g.dart';
@@ -11,7 +12,7 @@ abstract class EmojiDetailed with _$EmojiDetailed {
     required String name,
     String? category,
     String? host,
-    required String url,
+    @UriConverter() required Uri url,
     String? license,
     required bool isSensitive,
     required bool localOnly,

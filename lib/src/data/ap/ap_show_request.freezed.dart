@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApShowRequest {
 
- String? get uri;
+@NullableUriConverter() Uri? get uri;
 /// Create a copy of ApShowRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ApShowRequestCopyWith<$Res>  {
   factory $ApShowRequestCopyWith(ApShowRequest value, $Res Function(ApShowRequest) _then) = _$ApShowRequestCopyWithImpl;
 @useResult
 $Res call({
- String? uri
+@NullableUriConverter() Uri? uri
 });
 
 
@@ -68,7 +68,7 @@ class _$ApShowRequestCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? uri = freezed,}) {
   return _then(_self.copyWith(
 uri: freezed == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
-as String?,
+as Uri?,
   ));
 }
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? uri)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@NullableUriConverter()  Uri? uri)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApShowRequest() when $default != null:
 return $default(_that.uri);case _:
@@ -174,7 +174,7 @@ return $default(_that.uri);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? uri)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@NullableUriConverter()  Uri? uri)  $default,) {final _that = this;
 switch (_that) {
 case _ApShowRequest():
 return $default(_that.uri);case _:
@@ -194,7 +194,7 @@ return $default(_that.uri);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? uri)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@NullableUriConverter()  Uri? uri)?  $default,) {final _that = this;
 switch (_that) {
 case _ApShowRequest() when $default != null:
 return $default(_that.uri);case _:
@@ -209,10 +209,10 @@ return $default(_that.uri);case _:
 @JsonSerializable()
 
 class _ApShowRequest implements ApShowRequest {
-  const _ApShowRequest({this.uri});
+  const _ApShowRequest({@NullableUriConverter() this.uri});
   factory _ApShowRequest.fromJson(Map<String, dynamic> json) => _$ApShowRequestFromJson(json);
 
-@override final  String? uri;
+@override@NullableUriConverter() final  Uri? uri;
 
 /// Create a copy of ApShowRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +247,7 @@ abstract mixin class _$ApShowRequestCopyWith<$Res> implements $ApShowRequestCopy
   factory _$ApShowRequestCopyWith(_ApShowRequest value, $Res Function(_ApShowRequest) _then) = __$ApShowRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? uri
+@NullableUriConverter() Uri? uri
 });
 
 
@@ -267,7 +267,7 @@ class __$ApShowRequestCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? uri = freezed,}) {
   return _then(_ApShowRequest(
 uri: freezed == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
-as String?,
+as Uri?,
   ));
 }
 

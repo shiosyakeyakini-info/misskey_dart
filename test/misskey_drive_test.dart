@@ -25,8 +25,10 @@ void main() async {
       final path = "${dir.path}/$name.txt";
       final file = await File(path).create();
       await file.writeAsString("test");
-      await userClient.drive.files
-          .createWithFile(DriveFilesCreateRequest(), file);
+      await userClient.drive.files.createWithFile(
+        DriveFilesCreateRequest(),
+        file,
+      );
     });
 
     test("createAsBinary", () async {
@@ -117,7 +119,7 @@ void main() async {
     test("uploadFromUrl", () async {
       final file = await userClient.createDriveFile();
       await userClient.drive.files.uploadFromUrl(
-        DriveFilesUploadFromUrlRequest(url: file.url.toString(), force: true),
+        DriveFilesUploadFromUrlRequest(url: file.url, force: true),
       );
     });
   });

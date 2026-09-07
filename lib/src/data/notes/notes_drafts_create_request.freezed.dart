@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesDraftsCreateRequest {
 
-@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; String? get hashtag; bool? get localOnly;@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) NotesDraftsCreateReactionAcceptance? get reactionAcceptance; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; NotesDraftsCreatePoll? get poll; int? get scheduledAt; bool? get isActuallyScheduled;
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; String? get hashtag; bool? get localOnly;@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? get reactionAcceptance; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; NotesDraftsCreatePoll? get poll; int? get scheduledAt; bool? get isActuallyScheduled;
 /// Create a copy of NotesDraftsCreateRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NotesDraftsCreateRequestCopyWith<$Res>  {
   factory $NotesDraftsCreateRequestCopyWith(NotesDraftsCreateRequest value, $Res Function(NotesDraftsCreateRequest) _then) = _$NotesDraftsCreateRequestCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) NotesDraftsCreateReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsCreatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsCreatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
 });
 
 
@@ -73,7 +73,7 @@ as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_n
 as String?,hashtag: freezed == hashtag ? _self.hashtag : hashtag // ignore: cast_nullable_to_non_nullable
 as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-as NotesDraftsCreateReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
+as ReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
 as String?,renoteId: freezed == renoteId ? _self.renoteId : renoteId // ignore: cast_nullable_to_non_nullable
 as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as String?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
@@ -178,7 +178,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)  NotesDraftsCreateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesDraftsCreateRequest() when $default != null:
 return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
@@ -199,7 +199,7 @@ return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)  NotesDraftsCreateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)  $default,) {final _that = this;
 switch (_that) {
 case _NotesDraftsCreateRequest():
 return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
@@ -219,7 +219,7 @@ return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)  NotesDraftsCreateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesDraftsCreateRequest() when $default != null:
 return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
@@ -234,7 +234,7 @@ return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_th
 @JsonSerializable()
 
 class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
-  const _NotesDraftsCreateRequest({@JsonKey(unknownEnumValue: NoteVisibility.unknown) this.visibility = NoteVisibility.public, final  List<String>? visibleUserIds, this.cw, this.hashtag, this.localOnly = false, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) this.reactionAcceptance = null, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, this.poll, this.scheduledAt, this.isActuallyScheduled = false}): _visibleUserIds = visibleUserIds,_fileIds = fileIds;
+  const _NotesDraftsCreateRequest({@JsonKey(unknownEnumValue: NoteVisibility.unknown) this.visibility = NoteVisibility.public, final  List<String>? visibleUserIds, this.cw, this.hashtag, this.localOnly = false, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance = null, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, this.poll, this.scheduledAt, this.isActuallyScheduled = false}): _visibleUserIds = visibleUserIds,_fileIds = fileIds;
   factory _NotesDraftsCreateRequest.fromJson(Map<String, dynamic> json) => _$NotesDraftsCreateRequestFromJson(json);
 
 @override@JsonKey(unknownEnumValue: NoteVisibility.unknown) final  NoteVisibility? visibility;
@@ -250,7 +250,7 @@ class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
 @override final  String? cw;
 @override final  String? hashtag;
 @override@JsonKey() final  bool? localOnly;
-@override@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) final  NotesDraftsCreateReactionAcceptance? reactionAcceptance;
+@override@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) final  ReactionAcceptance? reactionAcceptance;
 @override final  String? replyId;
 @override final  String? renoteId;
 @override final  String? channelId;
@@ -301,7 +301,7 @@ abstract mixin class _$NotesDraftsCreateRequestCopyWith<$Res> implements $NotesD
   factory _$NotesDraftsCreateRequestCopyWith(_NotesDraftsCreateRequest value, $Res Function(_NotesDraftsCreateRequest) _then) = __$NotesDraftsCreateRequestCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) NotesDraftsCreateReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsCreatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsCreatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
 });
 
 
@@ -326,7 +326,7 @@ as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_n
 as String?,hashtag: freezed == hashtag ? _self.hashtag : hashtag // ignore: cast_nullable_to_non_nullable
 as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-as NotesDraftsCreateReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
+as ReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
 as String?,renoteId: freezed == renoteId ? _self.renoteId : renoteId // ignore: cast_nullable_to_non_nullable
 as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as String?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable

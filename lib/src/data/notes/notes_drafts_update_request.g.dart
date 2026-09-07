@@ -22,9 +22,9 @@ _NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
   hashtag: json['hashtag'] as String?,
   localOnly: json['localOnly'] as bool?,
   reactionAcceptance: $enumDecodeNullable(
-    _$NotesDraftsUpdateReactionAcceptanceEnumMap,
+    _$ReactionAcceptanceEnumMap,
     json['reactionAcceptance'],
-    unknownValue: NotesDraftsUpdateReactionAcceptance.unknown,
+    unknownValue: ReactionAcceptance.unknown,
   ),
   replyId: json['replyId'] as String?,
   renoteId: json['renoteId'] as String?,
@@ -50,7 +50,7 @@ Map<String, dynamic> _$NotesDraftsUpdateRequestToJson(
   'hashtag': instance.hashtag,
   'localOnly': instance.localOnly,
   'reactionAcceptance':
-      _$NotesDraftsUpdateReactionAcceptanceEnumMap[instance.reactionAcceptance],
+      _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
   'replyId': instance.replyId,
   'renoteId': instance.renoteId,
   'channelId': instance.channelId,
@@ -69,11 +69,11 @@ const _$NotesDraftsUpdateVisibilityEnumMap = {
   NotesDraftsUpdateVisibility.unknown: 'unknown',
 };
 
-const _$NotesDraftsUpdateReactionAcceptanceEnumMap = {
-  NotesDraftsUpdateReactionAcceptance.likeOnly: 'likeOnly',
-  NotesDraftsUpdateReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
-  NotesDraftsUpdateReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
-  NotesDraftsUpdateReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
+const _$ReactionAcceptanceEnumMap = {
+  ReactionAcceptance.likeOnly: 'likeOnly',
+  ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+  ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
+  ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
-  NotesDraftsUpdateReactionAcceptance.unknown: 'unknown',
+  ReactionAcceptance.unknown: 'unknown',
 };

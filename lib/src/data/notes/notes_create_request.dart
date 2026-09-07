@@ -13,9 +13,9 @@ abstract class NotesCreateRequest with _$NotesCreateRequest {
     List<String>? visibleUserIds,
     String? cw,
     @Default(false) bool? localOnly,
-    @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)
+    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
     @Default(null)
-    NotesCreateReactionAcceptance? reactionAcceptance,
+    ReactionAcceptance? reactionAcceptance,
     @Default(false) bool? noExtractMentions,
     @Default(false) bool? noExtractHashtags,
     @Default(false) bool? noExtractEmojis,

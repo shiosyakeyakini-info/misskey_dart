@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesCreateRequest {
 
-@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; bool? get localOnly;@JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) NotesCreateReactionAcceptance? get reactionAcceptance; bool? get noExtractMentions; bool? get noExtractHashtags; bool? get noExtractEmojis; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; List<String>? get mediaIds; NotesCreatePoll? get poll;
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; bool? get localOnly;@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? get reactionAcceptance; bool? get noExtractMentions; bool? get noExtractHashtags; bool? get noExtractEmojis; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; List<String>? get mediaIds; NotesCreatePoll? get poll;
 /// Create a copy of NotesCreateRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NotesCreateRequestCopyWith<$Res>  {
   factory $NotesCreateRequestCopyWith(NotesCreateRequest value, $Res Function(NotesCreateRequest) _then) = _$NotesCreateRequestCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, bool? localOnly,@JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) NotesCreateReactionAcceptance? reactionAcceptance, bool? noExtractMentions, bool? noExtractHashtags, bool? noExtractEmojis, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, List<String>? mediaIds, NotesCreatePoll? poll
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance, bool? noExtractMentions, bool? noExtractHashtags, bool? noExtractEmojis, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, List<String>? mediaIds, NotesCreatePoll? poll
 });
 
 
@@ -72,7 +72,7 @@ as NoteVisibility?,visibleUserIds: freezed == visibleUserIds ? _self.visibleUser
 as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_non_nullable
 as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-as NotesCreateReactionAcceptance?,noExtractMentions: freezed == noExtractMentions ? _self.noExtractMentions : noExtractMentions // ignore: cast_nullable_to_non_nullable
+as ReactionAcceptance?,noExtractMentions: freezed == noExtractMentions ? _self.noExtractMentions : noExtractMentions // ignore: cast_nullable_to_non_nullable
 as bool?,noExtractHashtags: freezed == noExtractHashtags ? _self.noExtractHashtags : noExtractHashtags // ignore: cast_nullable_to_non_nullable
 as bool?,noExtractEmojis: freezed == noExtractEmojis ? _self.noExtractEmojis : noExtractEmojis // ignore: cast_nullable_to_non_nullable
 as bool?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
@@ -179,7 +179,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  bool? localOnly, @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)  NotesCreateReactionAcceptance? reactionAcceptance,  bool? noExtractMentions,  bool? noExtractHashtags,  bool? noExtractEmojis,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  List<String>? mediaIds,  NotesCreatePoll? poll)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  bool? noExtractMentions,  bool? noExtractHashtags,  bool? noExtractEmojis,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  List<String>? mediaIds,  NotesCreatePoll? poll)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesCreateRequest() when $default != null:
 return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.localOnly,_that.reactionAcceptance,_that.noExtractMentions,_that.noExtractHashtags,_that.noExtractEmojis,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.mediaIds,_that.poll);case _:
@@ -200,7 +200,7 @@ return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.localOnly,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  bool? localOnly, @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)  NotesCreateReactionAcceptance? reactionAcceptance,  bool? noExtractMentions,  bool? noExtractHashtags,  bool? noExtractEmojis,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  List<String>? mediaIds,  NotesCreatePoll? poll)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  bool? noExtractMentions,  bool? noExtractHashtags,  bool? noExtractEmojis,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  List<String>? mediaIds,  NotesCreatePoll? poll)  $default,) {final _that = this;
 switch (_that) {
 case _NotesCreateRequest():
 return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.localOnly,_that.reactionAcceptance,_that.noExtractMentions,_that.noExtractHashtags,_that.noExtractEmojis,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.mediaIds,_that.poll);case _:
@@ -220,7 +220,7 @@ return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.localOnly,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  bool? localOnly, @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown)  NotesCreateReactionAcceptance? reactionAcceptance,  bool? noExtractMentions,  bool? noExtractHashtags,  bool? noExtractEmojis,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  List<String>? mediaIds,  NotesCreatePoll? poll)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  bool? noExtractMentions,  bool? noExtractHashtags,  bool? noExtractEmojis,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  List<String>? mediaIds,  NotesCreatePoll? poll)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesCreateRequest() when $default != null:
 return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.localOnly,_that.reactionAcceptance,_that.noExtractMentions,_that.noExtractHashtags,_that.noExtractEmojis,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.mediaIds,_that.poll);case _:
@@ -235,7 +235,7 @@ return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.localOnly,_
 @JsonSerializable()
 
 class _NotesCreateRequest implements NotesCreateRequest {
-  const _NotesCreateRequest({@JsonKey(unknownEnumValue: NoteVisibility.unknown) this.visibility = NoteVisibility.public, final  List<String>? visibleUserIds, this.cw, this.localOnly = false, @JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) this.reactionAcceptance = null, this.noExtractMentions = false, this.noExtractHashtags = false, this.noExtractEmojis = false, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, final  List<String>? mediaIds, this.poll}): _visibleUserIds = visibleUserIds,_fileIds = fileIds,_mediaIds = mediaIds;
+  const _NotesCreateRequest({@JsonKey(unknownEnumValue: NoteVisibility.unknown) this.visibility = NoteVisibility.public, final  List<String>? visibleUserIds, this.cw, this.localOnly = false, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance = null, this.noExtractMentions = false, this.noExtractHashtags = false, this.noExtractEmojis = false, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, final  List<String>? mediaIds, this.poll}): _visibleUserIds = visibleUserIds,_fileIds = fileIds,_mediaIds = mediaIds;
   factory _NotesCreateRequest.fromJson(Map<String, dynamic> json) => _$NotesCreateRequestFromJson(json);
 
 @override@JsonKey(unknownEnumValue: NoteVisibility.unknown) final  NoteVisibility? visibility;
@@ -250,7 +250,7 @@ class _NotesCreateRequest implements NotesCreateRequest {
 
 @override final  String? cw;
 @override@JsonKey() final  bool? localOnly;
-@override@JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) final  NotesCreateReactionAcceptance? reactionAcceptance;
+@override@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) final  ReactionAcceptance? reactionAcceptance;
 @override@JsonKey() final  bool? noExtractMentions;
 @override@JsonKey() final  bool? noExtractHashtags;
 @override@JsonKey() final  bool? noExtractEmojis;
@@ -311,7 +311,7 @@ abstract mixin class _$NotesCreateRequestCopyWith<$Res> implements $NotesCreateR
   factory _$NotesCreateRequestCopyWith(_NotesCreateRequest value, $Res Function(_NotesCreateRequest) _then) = __$NotesCreateRequestCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, bool? localOnly,@JsonKey(unknownEnumValue: NotesCreateReactionAcceptance.unknown) NotesCreateReactionAcceptance? reactionAcceptance, bool? noExtractMentions, bool? noExtractHashtags, bool? noExtractEmojis, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, List<String>? mediaIds, NotesCreatePoll? poll
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance, bool? noExtractMentions, bool? noExtractHashtags, bool? noExtractEmojis, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, List<String>? mediaIds, NotesCreatePoll? poll
 });
 
 
@@ -335,7 +335,7 @@ as NoteVisibility?,visibleUserIds: freezed == visibleUserIds ? _self._visibleUse
 as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_non_nullable
 as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-as NotesCreateReactionAcceptance?,noExtractMentions: freezed == noExtractMentions ? _self.noExtractMentions : noExtractMentions // ignore: cast_nullable_to_non_nullable
+as ReactionAcceptance?,noExtractMentions: freezed == noExtractMentions ? _self.noExtractMentions : noExtractMentions // ignore: cast_nullable_to_non_nullable
 as bool?,noExtractHashtags: freezed == noExtractHashtags ? _self.noExtractHashtags : noExtractHashtags // ignore: cast_nullable_to_non_nullable
 as bool?,noExtractEmojis: freezed == noExtractEmojis ? _self.noExtractEmojis : noExtractEmojis // ignore: cast_nullable_to_non_nullable
 as bool?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable

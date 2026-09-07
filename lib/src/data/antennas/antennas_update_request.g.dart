@@ -52,6 +52,6 @@ const _$AntennaSourceEnumMap = {
   AntennaSource.all: 'all',
   AntennaSource.users: 'users',
   AntennaSource.list: 'list',
-  AntennaSource.usersBlacklist: 'users_blacklist',
+  AntennaSource.usersBlackList: 'users_blacklist',
   AntennaSource.unknown: 'unknown',
 };

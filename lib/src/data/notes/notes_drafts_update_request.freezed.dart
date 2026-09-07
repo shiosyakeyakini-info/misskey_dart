@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesDraftsUpdateRequest {
 
- String? get draftId;@JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; String? get hashtag; bool? get localOnly;@JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown) NotesDraftsUpdateReactionAcceptance? get reactionAcceptance; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; NotesDraftsUpdatePoll? get poll; int? get scheduledAt; bool? get isActuallyScheduled;
+ String? get draftId;@JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; String? get hashtag; bool? get localOnly;@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? get reactionAcceptance; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; NotesDraftsUpdatePoll? get poll; int? get scheduledAt; bool? get isActuallyScheduled;
 /// Create a copy of NotesDraftsUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NotesDraftsUpdateRequestCopyWith<$Res>  {
   factory $NotesDraftsUpdateRequestCopyWith(NotesDraftsUpdateRequest value, $Res Function(NotesDraftsUpdateRequest) _then) = _$NotesDraftsUpdateRequestCopyWithImpl;
 @useResult
 $Res call({
- String? draftId,@JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown) NotesDraftsUpdateReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsUpdatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
+ String? draftId,@JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsUpdatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
 });
 
 
@@ -74,7 +74,7 @@ as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_n
 as String?,hashtag: freezed == hashtag ? _self.hashtag : hashtag // ignore: cast_nullable_to_non_nullable
 as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-as NotesDraftsUpdateReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
+as ReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
 as String?,renoteId: freezed == renoteId ? _self.renoteId : renoteId // ignore: cast_nullable_to_non_nullable
 as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as String?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
@@ -179,7 +179,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)  NotesDraftsUpdateVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)  NotesDraftsUpdateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsUpdatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)  NotesDraftsUpdateVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsUpdatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesDraftsUpdateRequest() when $default != null:
 return $default(_that.draftId,_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
@@ -200,7 +200,7 @@ return $default(_that.draftId,_that.visibility,_that.visibleUserIds,_that.cw,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)  NotesDraftsUpdateVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)  NotesDraftsUpdateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsUpdatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)  NotesDraftsUpdateVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsUpdatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)  $default,) {final _that = this;
 switch (_that) {
 case _NotesDraftsUpdateRequest():
 return $default(_that.draftId,_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
@@ -220,7 +220,7 @@ return $default(_that.draftId,_that.visibility,_that.visibleUserIds,_that.cw,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)  NotesDraftsUpdateVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)  NotesDraftsUpdateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsUpdatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)  NotesDraftsUpdateVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsUpdatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesDraftsUpdateRequest() when $default != null:
 return $default(_that.draftId,_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
@@ -235,7 +235,7 @@ return $default(_that.draftId,_that.visibility,_that.visibleUserIds,_that.cw,_th
 @JsonSerializable()
 
 class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
-  const _NotesDraftsUpdateRequest({this.draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) this.visibility, final  List<String>? visibleUserIds, this.cw, this.hashtag, this.localOnly, @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown) this.reactionAcceptance, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, this.poll, this.scheduledAt, this.isActuallyScheduled}): _visibleUserIds = visibleUserIds,_fileIds = fileIds;
+  const _NotesDraftsUpdateRequest({this.draftId, @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) this.visibility, final  List<String>? visibleUserIds, this.cw, this.hashtag, this.localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, this.poll, this.scheduledAt, this.isActuallyScheduled}): _visibleUserIds = visibleUserIds,_fileIds = fileIds;
   factory _NotesDraftsUpdateRequest.fromJson(Map<String, dynamic> json) => _$NotesDraftsUpdateRequestFromJson(json);
 
 @override final  String? draftId;
@@ -252,7 +252,7 @@ class _NotesDraftsUpdateRequest implements NotesDraftsUpdateRequest {
 @override final  String? cw;
 @override final  String? hashtag;
 @override final  bool? localOnly;
-@override@JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown) final  NotesDraftsUpdateReactionAcceptance? reactionAcceptance;
+@override@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) final  ReactionAcceptance? reactionAcceptance;
 @override final  String? replyId;
 @override final  String? renoteId;
 @override final  String? channelId;
@@ -303,7 +303,7 @@ abstract mixin class _$NotesDraftsUpdateRequestCopyWith<$Res> implements $NotesD
   factory _$NotesDraftsUpdateRequestCopyWith(_NotesDraftsUpdateRequest value, $Res Function(_NotesDraftsUpdateRequest) _then) = __$NotesDraftsUpdateRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? draftId,@JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown) NotesDraftsUpdateReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsUpdatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
+ String? draftId,@JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown) NotesDraftsUpdateVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsUpdatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
 });
 
 
@@ -329,7 +329,7 @@ as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_n
 as String?,hashtag: freezed == hashtag ? _self.hashtag : hashtag // ignore: cast_nullable_to_non_nullable
 as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-as NotesDraftsUpdateReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
+as ReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
 as String?,renoteId: freezed == renoteId ? _self.renoteId : renoteId // ignore: cast_nullable_to_non_nullable
 as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as String?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable

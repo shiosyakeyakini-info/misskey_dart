@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DriveFilesUploadFromUrlRequest {
 
- String? get url; String? get folderId; bool? get isSensitive; String? get comment; String? get marker; bool? get force;
+@NullableUriConverter() Uri? get url; String? get folderId; bool? get isSensitive; String? get comment; String? get marker; bool? get force;
 /// Create a copy of DriveFilesUploadFromUrlRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $DriveFilesUploadFromUrlRequestCopyWith<$Res>  {
   factory $DriveFilesUploadFromUrlRequestCopyWith(DriveFilesUploadFromUrlRequest value, $Res Function(DriveFilesUploadFromUrlRequest) _then) = _$DriveFilesUploadFromUrlRequestCopyWithImpl;
 @useResult
 $Res call({
- String? url, String? folderId, bool? isSensitive, String? comment, String? marker, bool? force
+@NullableUriConverter() Uri? url, String? folderId, bool? isSensitive, String? comment, String? marker, bool? force
 });
 
 
@@ -68,7 +68,7 @@ class _$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? url = freezed,Object? folderId = freezed,Object? isSensitive = freezed,Object? comment = freezed,Object? marker = freezed,Object? force = freezed,}) {
   return _then(_self.copyWith(
 url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String?,folderId: freezed == folderId ? _self.folderId : folderId // ignore: cast_nullable_to_non_nullable
+as Uri?,folderId: freezed == folderId ? _self.folderId : folderId // ignore: cast_nullable_to_non_nullable
 as String?,isSensitive: freezed == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
 as bool?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
 as String?,marker: freezed == marker ? _self.marker : marker // ignore: cast_nullable_to_non_nullable
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? url,  String? folderId,  bool? isSensitive,  String? comment,  String? marker,  bool? force)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@NullableUriConverter()  Uri? url,  String? folderId,  bool? isSensitive,  String? comment,  String? marker,  bool? force)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DriveFilesUploadFromUrlRequest() when $default != null:
 return $default(_that.url,_that.folderId,_that.isSensitive,_that.comment,_that.marker,_that.force);case _:
@@ -179,7 +179,7 @@ return $default(_that.url,_that.folderId,_that.isSensitive,_that.comment,_that.m
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? url,  String? folderId,  bool? isSensitive,  String? comment,  String? marker,  bool? force)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@NullableUriConverter()  Uri? url,  String? folderId,  bool? isSensitive,  String? comment,  String? marker,  bool? force)  $default,) {final _that = this;
 switch (_that) {
 case _DriveFilesUploadFromUrlRequest():
 return $default(_that.url,_that.folderId,_that.isSensitive,_that.comment,_that.marker,_that.force);case _:
@@ -199,7 +199,7 @@ return $default(_that.url,_that.folderId,_that.isSensitive,_that.comment,_that.m
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? url,  String? folderId,  bool? isSensitive,  String? comment,  String? marker,  bool? force)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@NullableUriConverter()  Uri? url,  String? folderId,  bool? isSensitive,  String? comment,  String? marker,  bool? force)?  $default,) {final _that = this;
 switch (_that) {
 case _DriveFilesUploadFromUrlRequest() when $default != null:
 return $default(_that.url,_that.folderId,_that.isSensitive,_that.comment,_that.marker,_that.force);case _:
@@ -214,10 +214,10 @@ return $default(_that.url,_that.folderId,_that.isSensitive,_that.comment,_that.m
 @JsonSerializable()
 
 class _DriveFilesUploadFromUrlRequest implements DriveFilesUploadFromUrlRequest {
-  const _DriveFilesUploadFromUrlRequest({this.url, this.folderId = null, this.isSensitive = false, this.comment = null, this.marker = null, this.force = false});
+  const _DriveFilesUploadFromUrlRequest({@NullableUriConverter() this.url, this.folderId = null, this.isSensitive = false, this.comment = null, this.marker = null, this.force = false});
   factory _DriveFilesUploadFromUrlRequest.fromJson(Map<String, dynamic> json) => _$DriveFilesUploadFromUrlRequestFromJson(json);
 
-@override final  String? url;
+@override@NullableUriConverter() final  Uri? url;
 @override@JsonKey() final  String? folderId;
 @override@JsonKey() final  bool? isSensitive;
 @override@JsonKey() final  String? comment;
@@ -257,7 +257,7 @@ abstract mixin class _$DriveFilesUploadFromUrlRequestCopyWith<$Res> implements $
   factory _$DriveFilesUploadFromUrlRequestCopyWith(_DriveFilesUploadFromUrlRequest value, $Res Function(_DriveFilesUploadFromUrlRequest) _then) = __$DriveFilesUploadFromUrlRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? url, String? folderId, bool? isSensitive, String? comment, String? marker, bool? force
+@NullableUriConverter() Uri? url, String? folderId, bool? isSensitive, String? comment, String? marker, bool? force
 });
 
 
@@ -277,7 +277,7 @@ class __$DriveFilesUploadFromUrlRequestCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? url = freezed,Object? folderId = freezed,Object? isSensitive = freezed,Object? comment = freezed,Object? marker = freezed,Object? force = freezed,}) {
   return _then(_DriveFilesUploadFromUrlRequest(
 url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String?,folderId: freezed == folderId ? _self.folderId : folderId // ignore: cast_nullable_to_non_nullable
+as Uri?,folderId: freezed == folderId ? _self.folderId : folderId // ignore: cast_nullable_to_non_nullable
 as String?,isSensitive: freezed == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
 as bool?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
 as String?,marker: freezed == marker ? _self.marker : marker // ignore: cast_nullable_to_non_nullable

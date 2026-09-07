@@ -14,9 +14,9 @@ abstract class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
     String? cw,
     String? hashtag,
     @Default(false) bool? localOnly,
-    @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
+    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
     @Default(null)
-    NotesDraftsCreateReactionAcceptance? reactionAcceptance,
+    ReactionAcceptance? reactionAcceptance,
     String? replyId,
     String? renoteId,
     String? channelId,

@@ -220,6 +220,20 @@ export interface EndpointOverride {
   response_format?: "raw_json";  // Decode text/plain JSON response with jsonDecode
   extra_options?: Record<string, string>;
   skip?: boolean;
+  /**
+   * Additional methods generated for the same endpoint.
+   *
+   * oneOf responses such as `users/show` (a single user, or an array of them
+   * depending on the parameters) cannot be expressed with one Dart signature,
+   * so the extra shapes are declared here.
+   */
+  extra_methods?: ExtraMethod[];
+}
+
+export interface ExtraMethod {
+  method_name: string;
+  response_type: "single" | "array";
+  item_type: string;
 }
 
 export interface ModuleOverride {

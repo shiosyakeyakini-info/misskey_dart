@@ -24,9 +24,9 @@ _NotesDraftsCreateRequest _$NotesDraftsCreateRequestFromJson(
   localOnly: json['localOnly'] as bool? ?? false,
   reactionAcceptance:
       $enumDecodeNullable(
-        _$NotesDraftsCreateReactionAcceptanceEnumMap,
+        _$ReactionAcceptanceEnumMap,
         json['reactionAcceptance'],
-        unknownValue: NotesDraftsCreateReactionAcceptance.unknown,
+        unknownValue: ReactionAcceptance.unknown,
       ) ??
       null,
   replyId: json['replyId'] as String?,
@@ -52,7 +52,7 @@ Map<String, dynamic> _$NotesDraftsCreateRequestToJson(
   'hashtag': instance.hashtag,
   'localOnly': instance.localOnly,
   'reactionAcceptance':
-      _$NotesDraftsCreateReactionAcceptanceEnumMap[instance.reactionAcceptance],
+      _$ReactionAcceptanceEnumMap[instance.reactionAcceptance],
   'replyId': instance.replyId,
   'renoteId': instance.renoteId,
   'channelId': instance.channelId,
@@ -71,11 +71,11 @@ const _$NoteVisibilityEnumMap = {
   NoteVisibility.unknown: 'unknown',
 };
 
-const _$NotesDraftsCreateReactionAcceptanceEnumMap = {
-  NotesDraftsCreateReactionAcceptance.likeOnly: 'likeOnly',
-  NotesDraftsCreateReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
-  NotesDraftsCreateReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
-  NotesDraftsCreateReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
+const _$ReactionAcceptanceEnumMap = {
+  ReactionAcceptance.likeOnly: 'likeOnly',
+  ReactionAcceptance.likeOnlyForRemote: 'likeOnlyForRemote',
+  ReactionAcceptance.nonSensitiveOnly: 'nonSensitiveOnly',
+  ReactionAcceptance.nonSensitiveOnlyForLocalLikeOnlyForRemote:
       'nonSensitiveOnlyForLocalLikeOnlyForRemote',
-  NotesDraftsCreateReactionAcceptance.unknown: 'unknown',
+  ReactionAcceptance.unknown: 'unknown',
 };

@@ -14,8 +14,8 @@ abstract class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
     String? cw,
     String? hashtag,
     bool? localOnly,
-    @JsonKey(unknownEnumValue: NotesDraftsUpdateReactionAcceptance.unknown)
-    NotesDraftsUpdateReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)
+    ReactionAcceptance? reactionAcceptance,
     String? replyId,
     String? renoteId,
     String? channelId,

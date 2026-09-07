@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$EmojiDetailed {
 
- String get id; List<String> get aliases; String get name; String? get category; String? get host; String get url; String? get license; bool get isSensitive; bool get localOnly; List<String> get roleIdsThatCanBeUsedThisEmojiAsReaction;
+ String get id; List<String> get aliases; String get name; String? get category; String? get host;@UriConverter() Uri get url; String? get license; bool get isSensitive; bool get localOnly; List<String> get roleIdsThatCanBeUsedThisEmojiAsReaction;
 /// Create a copy of EmojiDetailed
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $EmojiDetailedCopyWith<$Res>  {
   factory $EmojiDetailedCopyWith(EmojiDetailed value, $Res Function(EmojiDetailed) _then) = _$EmojiDetailedCopyWithImpl;
 @useResult
 $Res call({
- String id, List<String> aliases, String name, String? category, String? host, String url, String? license, bool isSensitive, bool localOnly, List<String> roleIdsThatCanBeUsedThisEmojiAsReaction
+ String id, List<String> aliases, String name, String? category, String? host,@UriConverter() Uri url, String? license, bool isSensitive, bool localOnly, List<String> roleIdsThatCanBeUsedThisEmojiAsReaction
 });
 
 
@@ -73,7 +73,7 @@ as List<String>,name: null == name ? _self.name : name // ignore: cast_nullable_
 as String,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
 as String?,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,license: freezed == license ? _self.license : license // ignore: cast_nullable_to_non_nullable
+as Uri,license: freezed == license ? _self.license : license // ignore: cast_nullable_to_non_nullable
 as String?,isSensitive: null == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
 as bool,localOnly: null == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool,roleIdsThatCanBeUsedThisEmojiAsReaction: null == roleIdsThatCanBeUsedThisEmojiAsReaction ? _self.roleIdsThatCanBeUsedThisEmojiAsReaction : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  List<String> aliases,  String name,  String? category,  String? host,  String url,  String? license,  bool isSensitive,  bool localOnly,  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  List<String> aliases,  String name,  String? category,  String? host, @UriConverter()  Uri url,  String? license,  bool isSensitive,  bool localOnly,  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _EmojiDetailed() when $default != null:
 return $default(_that.id,_that.aliases,_that.name,_that.category,_that.host,_that.url,_that.license,_that.isSensitive,_that.localOnly,_that.roleIdsThatCanBeUsedThisEmojiAsReaction);case _:
@@ -183,7 +183,7 @@ return $default(_that.id,_that.aliases,_that.name,_that.category,_that.host,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  List<String> aliases,  String name,  String? category,  String? host,  String url,  String? license,  bool isSensitive,  bool localOnly,  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  List<String> aliases,  String name,  String? category,  String? host, @UriConverter()  Uri url,  String? license,  bool isSensitive,  bool localOnly,  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction)  $default,) {final _that = this;
 switch (_that) {
 case _EmojiDetailed():
 return $default(_that.id,_that.aliases,_that.name,_that.category,_that.host,_that.url,_that.license,_that.isSensitive,_that.localOnly,_that.roleIdsThatCanBeUsedThisEmojiAsReaction);case _:
@@ -203,7 +203,7 @@ return $default(_that.id,_that.aliases,_that.name,_that.category,_that.host,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  List<String> aliases,  String name,  String? category,  String? host,  String url,  String? license,  bool isSensitive,  bool localOnly,  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  List<String> aliases,  String name,  String? category,  String? host, @UriConverter()  Uri url,  String? license,  bool isSensitive,  bool localOnly,  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction)?  $default,) {final _that = this;
 switch (_that) {
 case _EmojiDetailed() when $default != null:
 return $default(_that.id,_that.aliases,_that.name,_that.category,_that.host,_that.url,_that.license,_that.isSensitive,_that.localOnly,_that.roleIdsThatCanBeUsedThisEmojiAsReaction);case _:
@@ -218,7 +218,7 @@ return $default(_that.id,_that.aliases,_that.name,_that.category,_that.host,_tha
 @JsonSerializable()
 
 class _EmojiDetailed implements EmojiDetailed {
-  const _EmojiDetailed({required this.id, required final  List<String> aliases, required this.name, this.category, this.host, required this.url, this.license, required this.isSensitive, required this.localOnly, required final  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction}): _aliases = aliases,_roleIdsThatCanBeUsedThisEmojiAsReaction = roleIdsThatCanBeUsedThisEmojiAsReaction;
+  const _EmojiDetailed({required this.id, required final  List<String> aliases, required this.name, this.category, this.host, @UriConverter() required this.url, this.license, required this.isSensitive, required this.localOnly, required final  List<String> roleIdsThatCanBeUsedThisEmojiAsReaction}): _aliases = aliases,_roleIdsThatCanBeUsedThisEmojiAsReaction = roleIdsThatCanBeUsedThisEmojiAsReaction;
   factory _EmojiDetailed.fromJson(Map<String, dynamic> json) => _$EmojiDetailedFromJson(json);
 
 @override final  String id;
@@ -232,7 +232,7 @@ class _EmojiDetailed implements EmojiDetailed {
 @override final  String name;
 @override final  String? category;
 @override final  String? host;
-@override final  String url;
+@override@UriConverter() final  Uri url;
 @override final  String? license;
 @override final  bool isSensitive;
 @override final  bool localOnly;
@@ -277,7 +277,7 @@ abstract mixin class _$EmojiDetailedCopyWith<$Res> implements $EmojiDetailedCopy
   factory _$EmojiDetailedCopyWith(_EmojiDetailed value, $Res Function(_EmojiDetailed) _then) = __$EmojiDetailedCopyWithImpl;
 @override @useResult
 $Res call({
- String id, List<String> aliases, String name, String? category, String? host, String url, String? license, bool isSensitive, bool localOnly, List<String> roleIdsThatCanBeUsedThisEmojiAsReaction
+ String id, List<String> aliases, String name, String? category, String? host,@UriConverter() Uri url, String? license, bool isSensitive, bool localOnly, List<String> roleIdsThatCanBeUsedThisEmojiAsReaction
 });
 
 
@@ -302,7 +302,7 @@ as List<String>,name: null == name ? _self.name : name // ignore: cast_nullable_
 as String,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String?,host: freezed == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
 as String?,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,license: freezed == license ? _self.license : license // ignore: cast_nullable_to_non_nullable
+as Uri,license: freezed == license ? _self.license : license // ignore: cast_nullable_to_non_nullable
 as String?,isSensitive: null == isSensitive ? _self.isSensitive : isSensitive // ignore: cast_nullable_to_non_nullable
 as bool,localOnly: null == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
 as bool,roleIdsThatCanBeUsedThisEmojiAsReaction: null == roleIdsThatCanBeUsedThisEmojiAsReaction ? _self._roleIdsThatCanBeUsedThisEmojiAsReaction : roleIdsThatCanBeUsedThisEmojiAsReaction // ignore: cast_nullable_to_non_nullable
