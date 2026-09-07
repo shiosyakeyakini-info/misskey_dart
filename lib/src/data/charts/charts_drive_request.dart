@@ -12,5 +12,6 @@ abstract class ChartsDriveRequest with _$ChartsDriveRequest {
     @Default(null) int? offset,
   }) = _ChartsDriveRequest;
 
-  factory ChartsDriveRequest.fromJson(Map<String, Object?> json) => _$ChartsDriveRequestFromJson(json);
+  factory ChartsDriveRequest.fromJson(Map<String, Object?> json) =>
+      _$ChartsDriveRequestFromJson(json);
 }

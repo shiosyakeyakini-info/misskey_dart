@@ -7,15 +7,12 @@ part of 'i_webhooks_test_override.dart';
 // **************************************************************************
 
 _IWebhooksTestOverride _$IWebhooksTestOverrideFromJson(
-        Map<String, dynamic> json) =>
-    _IWebhooksTestOverride(
-      url: json['url'] as String?,
-      secret: json['secret'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _IWebhooksTestOverride(
+  url: json['url'] as String?,
+  secret: json['secret'] as String?,
+);
 
 Map<String, dynamic> _$IWebhooksTestOverrideToJson(
-        _IWebhooksTestOverride instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-      'secret': instance.secret,
-    };
+  _IWebhooksTestOverride instance,
+) => <String, dynamic>{'url': instance.url, 'secret': instance.secret};

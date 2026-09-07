@@ -13,7 +13,4 @@ _IPageLikesItem _$IPageLikesItemFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IPageLikesItemToJson(_IPageLikesItem instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'page': instance.page.toJson(),
-    };
+    <String, dynamic>{'id': instance.id, 'page': instance.page.toJson()};

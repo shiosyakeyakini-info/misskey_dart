@@ -11,7 +11,8 @@ _MetaDetailedOnly _$MetaDetailedOnlyFromJson(Map<String, dynamic> json) =>
       features: json['features'] == null
           ? null
           : MetaDetailedOnlyFeatures.fromJson(
-              json['features'] as Map<String, dynamic>),
+              json['features'] as Map<String, dynamic>,
+            ),
       proxyAccountName: json['proxyAccountName'] as String?,
       requireSetup: json['requireSetup'] as bool,
       cacheRemoteFiles: json['cacheRemoteFiles'] as bool,

@@ -7,27 +7,27 @@ part of 'admin_show_user_notification_recieve_config_scheduled_note_posted.dart'
 // **************************************************************************
 
 _AdminShowUserNotificationRecieveConfigScheduledNotePosted
-    _$AdminShowUserNotificationRecieveConfigScheduledNotePostedFromJson(
-            Map<String, dynamic> json) =>
-        _AdminShowUserNotificationRecieveConfigScheduledNotePosted(
-          type: $enumDecode(
-              _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  AdminShowUserNotificationRecieveConfigScheduledNotePostedType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$AdminShowUserNotificationRecieveConfigScheduledNotePostedFromJson(
+  Map<String, dynamic> json,
+) => _AdminShowUserNotificationRecieveConfigScheduledNotePosted(
+  type: $enumDecode(
+    _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap,
+    json['type'],
+    unknownValue:
+        AdminShowUserNotificationRecieveConfigScheduledNotePostedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
-Map<String,
-    dynamic> _$AdminShowUserNotificationRecieveConfigScheduledNotePostedToJson(
-        _AdminShowUserNotificationRecieveConfigScheduledNotePosted instance) =>
-    <String, dynamic>{
-      'type':
-          _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap[
-              instance.type]!,
-      'userListId': instance.userListId,
-    };
+Map<String, dynamic>
+_$AdminShowUserNotificationRecieveConfigScheduledNotePostedToJson(
+  _AdminShowUserNotificationRecieveConfigScheduledNotePosted instance,
+) => <String, dynamic>{
+  'type':
+      _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap = {
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.all: 'all',
@@ -38,7 +38,8 @@ const _$AdminShowUserNotificationRecieveConfigScheduledNotePostedTypeEnumMap = {
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.mutualFollow:
       'mutualFollow',
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType
-      .followingOrFollower: 'followingOrFollower',
+          .followingOrFollower:
+      'followingOrFollower',
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.never: 'never',
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.list: 'list',
   AdminShowUserNotificationRecieveConfigScheduledNotePostedType.unknown:

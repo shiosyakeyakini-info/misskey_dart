@@ -7,15 +7,15 @@ part of 'admin_update_abuse_user_report.dart';
 // **************************************************************************
 
 _AdminUpdateAbuseUserReport _$AdminUpdateAbuseUserReportFromJson(
-        Map<String, dynamic> json) =>
-    _AdminUpdateAbuseUserReport(
-      reportId: json['reportId'] as String,
-      moderationNote: json['moderationNote'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminUpdateAbuseUserReport(
+  reportId: json['reportId'] as String,
+  moderationNote: json['moderationNote'] as String?,
+);
 
 Map<String, dynamic> _$AdminUpdateAbuseUserReportToJson(
-        _AdminUpdateAbuseUserReport instance) =>
-    <String, dynamic>{
-      'reportId': instance.reportId,
-      'moderationNote': instance.moderationNote,
-    };
+  _AdminUpdateAbuseUserReport instance,
+) => <String, dynamic>{
+  'reportId': instance.reportId,
+  'moderationNote': instance.moderationNote,
+};

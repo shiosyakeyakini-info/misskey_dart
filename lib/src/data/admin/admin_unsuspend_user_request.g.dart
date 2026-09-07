@@ -7,13 +7,9 @@ part of 'admin_unsuspend_user_request.dart';
 // **************************************************************************
 
 _AdminUnsuspendUserRequest _$AdminUnsuspendUserRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminUnsuspendUserRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminUnsuspendUserRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$AdminUnsuspendUserRequestToJson(
-        _AdminUnsuspendUserRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _AdminUnsuspendUserRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

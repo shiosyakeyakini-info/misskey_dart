@@ -1,7 +1,1 @@
-enum NoteVisibility {
-  public,
-  home,
-  followers,
-  specified,
-  unknown,
-}
+enum NoteVisibility { public, home, followers, specified, unknown }

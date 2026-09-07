@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_active_users.freezed.dart';
 part 'charts_active_users.g.dart';
@@ -18,5 +17,6 @@ abstract class ChartsActiveUsers with _$ChartsActiveUsers {
     required List<double> registeredOutsideYear,
   }) = _ChartsActiveUsers;
 
-  factory ChartsActiveUsers.fromJson(Map<String, Object?> json) => _$ChartsActiveUsersFromJson(json);
+  factory ChartsActiveUsers.fromJson(Map<String, Object?> json) =>
+      _$ChartsActiveUsersFromJson(json);
 }

@@ -13,7 +13,4 @@ _ClipsRemoveNote _$ClipsRemoveNoteFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ClipsRemoveNoteToJson(_ClipsRemoveNote instance) =>
-    <String, dynamic>{
-      'clipId': instance.clipId,
-      'noteId': instance.noteId,
-    };
+    <String, dynamic>{'clipId': instance.clipId, 'noteId': instance.noteId};

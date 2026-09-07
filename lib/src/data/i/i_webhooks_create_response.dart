@@ -18,5 +18,6 @@ abstract class IWebhooksCreateResponse with _$IWebhooksCreateResponse {
     int? latestStatus,
   }) = _IWebhooksCreateResponse;
 
-  factory IWebhooksCreateResponse.fromJson(Map<String, Object?> json) => _$IWebhooksCreateResponseFromJson(json);
+  factory IWebhooksCreateResponse.fromJson(Map<String, Object?> json) =>
+      _$IWebhooksCreateResponseFromJson(json);
 }

@@ -7,20 +7,26 @@ part of 'admin_queue_clear_request.dart';
 // **************************************************************************
 
 _AdminQueueClearRequest _$AdminQueueClearRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueClearRequest(
-      queue: $enumDecodeNullable(_$AdminQueueClearQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueClearQueue.unknown),
-      state: $enumDecodeNullable(_$AdminQueueClearStateEnumMap, json['state'],
-          unknownValue: AdminQueueClearState.unknown),
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueClearRequest(
+  queue: $enumDecodeNullable(
+    _$AdminQueueClearQueueEnumMap,
+    json['queue'],
+    unknownValue: AdminQueueClearQueue.unknown,
+  ),
+  state: $enumDecodeNullable(
+    _$AdminQueueClearStateEnumMap,
+    json['state'],
+    unknownValue: AdminQueueClearState.unknown,
+  ),
+);
 
 Map<String, dynamic> _$AdminQueueClearRequestToJson(
-        _AdminQueueClearRequest instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueueClearQueueEnumMap[instance.queue],
-      'state': _$AdminQueueClearStateEnumMap[instance.state],
-    };
+  _AdminQueueClearRequest instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueueClearQueueEnumMap[instance.queue],
+  'state': _$AdminQueueClearStateEnumMap[instance.state],
+};
 
 const _$AdminQueueClearQueueEnumMap = {
   AdminQueueClearQueue.system: 'system',

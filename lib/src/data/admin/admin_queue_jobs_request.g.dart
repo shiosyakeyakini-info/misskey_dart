@@ -7,25 +7,28 @@ part of 'admin_queue_jobs_request.dart';
 // **************************************************************************
 
 _AdminQueueJobsRequest _$AdminQueueJobsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueJobsRequest(
-      queue: $enumDecodeNullable(_$AdminQueueJobsQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueJobsQueue.unknown),
-      state: (json['state'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$AdminQueueJobsStateItemEnumMap, e))
-          .toList(),
-      search: json['search'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueJobsRequest(
+  queue: $enumDecodeNullable(
+    _$AdminQueueJobsQueueEnumMap,
+    json['queue'],
+    unknownValue: AdminQueueJobsQueue.unknown,
+  ),
+  state: (json['state'] as List<dynamic>?)
+      ?.map((e) => $enumDecode(_$AdminQueueJobsStateItemEnumMap, e))
+      .toList(),
+  search: json['search'] as String?,
+);
 
 Map<String, dynamic> _$AdminQueueJobsRequestToJson(
-        _AdminQueueJobsRequest instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueueJobsQueueEnumMap[instance.queue],
-      'state': instance.state
-          ?.map((e) => _$AdminQueueJobsStateItemEnumMap[e]!)
-          .toList(),
-      'search': instance.search,
-    };
+  _AdminQueueJobsRequest instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueueJobsQueueEnumMap[instance.queue],
+  'state': instance.state
+      ?.map((e) => _$AdminQueueJobsStateItemEnumMap[e]!)
+      .toList(),
+  'search': instance.search,
+};
 
 const _$AdminQueueJobsQueueEnumMap = {
   AdminQueueJobsQueue.system: 'system',

@@ -7,11 +7,7 @@ part of 'i2fa_password_less.dart';
 // **************************************************************************
 
 _I2faPasswordLess _$I2faPasswordLessFromJson(Map<String, dynamic> json) =>
-    _I2faPasswordLess(
-      value: json['value'] as bool,
-    );
+    _I2faPasswordLess(value: json['value'] as bool);
 
 Map<String, dynamic> _$I2faPasswordLessToJson(_I2faPasswordLess instance) =>
-    <String, dynamic>{
-      'value': instance.value,
-    };
+    <String, dynamic>{'value': instance.value};

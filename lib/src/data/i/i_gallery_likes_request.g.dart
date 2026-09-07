@@ -7,21 +7,21 @@ part of 'i_gallery_likes_request.dart';
 // **************************************************************************
 
 _IGalleryLikesRequest _$IGalleryLikesRequestFromJson(
-        Map<String, dynamic> json) =>
-    _IGalleryLikesRequest(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => _IGalleryLikesRequest(
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$IGalleryLikesRequestToJson(
-        _IGalleryLikesRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-    };
+  _IGalleryLikesRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+};

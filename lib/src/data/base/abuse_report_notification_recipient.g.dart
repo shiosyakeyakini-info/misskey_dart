@@ -7,36 +7,36 @@ part of 'abuse_report_notification_recipient.dart';
 // **************************************************************************
 
 _AbuseReportNotificationRecipient _$AbuseReportNotificationRecipientFromJson(
-        Map<String, dynamic> json) =>
-    _AbuseReportNotificationRecipient(
-      id: json['id'] as String,
-      isActive: json['isActive'] as bool,
-      updatedAt:
-          const DateTimeConverter().fromJson(json['updatedAt'] as String),
-      name: json['name'] as String,
-      method: $enumDecode(
-          _$AbuseReportNotificationRecipientMethodEnumMap, json['method'],
-          unknownValue: AbuseReportNotificationRecipientMethod.unknown),
-      userId: json['userId'] as String?,
-      user: json['user'] as Map<String, dynamic>?,
-      systemWebhookId: json['systemWebhookId'] as String?,
-      systemWebhook: json['systemWebhook'] as Map<String, dynamic>?,
-    );
+  Map<String, dynamic> json,
+) => _AbuseReportNotificationRecipient(
+  id: json['id'] as String,
+  isActive: json['isActive'] as bool,
+  updatedAt: const DateTimeConverter().fromJson(json['updatedAt'] as String),
+  name: json['name'] as String,
+  method: $enumDecode(
+    _$AbuseReportNotificationRecipientMethodEnumMap,
+    json['method'],
+    unknownValue: AbuseReportNotificationRecipientMethod.unknown,
+  ),
+  userId: json['userId'] as String?,
+  user: json['user'] as Map<String, dynamic>?,
+  systemWebhookId: json['systemWebhookId'] as String?,
+  systemWebhook: json['systemWebhook'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$AbuseReportNotificationRecipientToJson(
-        _AbuseReportNotificationRecipient instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'isActive': instance.isActive,
-      'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),
-      'name': instance.name,
-      'method':
-          _$AbuseReportNotificationRecipientMethodEnumMap[instance.method]!,
-      'userId': instance.userId,
-      'user': instance.user,
-      'systemWebhookId': instance.systemWebhookId,
-      'systemWebhook': instance.systemWebhook,
-    };
+  _AbuseReportNotificationRecipient instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'isActive': instance.isActive,
+  'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),
+  'name': instance.name,
+  'method': _$AbuseReportNotificationRecipientMethodEnumMap[instance.method]!,
+  'userId': instance.userId,
+  'user': instance.user,
+  'systemWebhookId': instance.systemWebhookId,
+  'systemWebhook': instance.systemWebhook,
+};
 
 const _$AbuseReportNotificationRecipientMethodEnumMap = {
   AbuseReportNotificationRecipientMethod.email: 'email',

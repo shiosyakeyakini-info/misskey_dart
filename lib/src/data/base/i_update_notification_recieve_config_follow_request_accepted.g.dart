@@ -7,27 +7,27 @@ part of 'i_update_notification_recieve_config_follow_request_accepted.dart';
 // **************************************************************************
 
 _IUpdateNotificationRecieveConfigFollowRequestAccepted
-    _$IUpdateNotificationRecieveConfigFollowRequestAcceptedFromJson(
-            Map<String, dynamic> json) =>
-        _IUpdateNotificationRecieveConfigFollowRequestAccepted(
-          type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  IUpdateNotificationRecieveConfigFollowRequestAcceptedType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$IUpdateNotificationRecieveConfigFollowRequestAcceptedFromJson(
+  Map<String, dynamic> json,
+) => _IUpdateNotificationRecieveConfigFollowRequestAccepted(
+  type: $enumDecode(
+    _$IUpdateNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap,
+    json['type'],
+    unknownValue:
+        IUpdateNotificationRecieveConfigFollowRequestAcceptedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic>
-    _$IUpdateNotificationRecieveConfigFollowRequestAcceptedToJson(
-            _IUpdateNotificationRecieveConfigFollowRequestAccepted instance) =>
-        <String, dynamic>{
-          'type':
-              _$IUpdateNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap[
-                  instance.type]!,
-          'userListId': instance.userListId,
-        };
+_$IUpdateNotificationRecieveConfigFollowRequestAcceptedToJson(
+  _IUpdateNotificationRecieveConfigFollowRequestAccepted instance,
+) => <String, dynamic>{
+  'type':
+      _$IUpdateNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$IUpdateNotificationRecieveConfigFollowRequestAcceptedTypeEnumMap = {
   IUpdateNotificationRecieveConfigFollowRequestAcceptedType.all: 'all',

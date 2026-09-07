@@ -7,11 +7,7 @@ part of 'pages_unlike_request.dart';
 // **************************************************************************
 
 _PagesUnlikeRequest _$PagesUnlikeRequestFromJson(Map<String, dynamic> json) =>
-    _PagesUnlikeRequest(
-      pageId: json['pageId'] as String?,
-    );
+    _PagesUnlikeRequest(pageId: json['pageId'] as String?);
 
 Map<String, dynamic> _$PagesUnlikeRequestToJson(_PagesUnlikeRequest instance) =>
-    <String, dynamic>{
-      'pageId': instance.pageId,
-    };
+    <String, dynamic>{'pageId': instance.pageId};

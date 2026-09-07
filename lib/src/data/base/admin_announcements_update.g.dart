@@ -7,38 +7,42 @@ part of 'admin_announcements_update.dart';
 // **************************************************************************
 
 _AdminAnnouncementsUpdate _$AdminAnnouncementsUpdateFromJson(
-        Map<String, dynamic> json) =>
-    _AdminAnnouncementsUpdate(
-      id: json['id'] as String,
-      title: json['title'] as String?,
-      text: json['text'] as String?,
-      imageUrl: json['imageUrl'] as String?,
-      icon: $enumDecodeNullable(
-          _$AdminAnnouncementsUpdateIconEnumMap, json['icon'],
-          unknownValue: AdminAnnouncementsUpdateIcon.unknown),
-      display: $enumDecodeNullable(
-          _$AdminAnnouncementsUpdateDisplayEnumMap, json['display'],
-          unknownValue: AdminAnnouncementsUpdateDisplay.unknown),
-      forExistingUsers: json['forExistingUsers'] as bool?,
-      silence: json['silence'] as bool?,
-      needConfirmationToRead: json['needConfirmationToRead'] as bool?,
-      isActive: json['isActive'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => _AdminAnnouncementsUpdate(
+  id: json['id'] as String,
+  title: json['title'] as String?,
+  text: json['text'] as String?,
+  imageUrl: json['imageUrl'] as String?,
+  icon: $enumDecodeNullable(
+    _$AdminAnnouncementsUpdateIconEnumMap,
+    json['icon'],
+    unknownValue: AdminAnnouncementsUpdateIcon.unknown,
+  ),
+  display: $enumDecodeNullable(
+    _$AdminAnnouncementsUpdateDisplayEnumMap,
+    json['display'],
+    unknownValue: AdminAnnouncementsUpdateDisplay.unknown,
+  ),
+  forExistingUsers: json['forExistingUsers'] as bool?,
+  silence: json['silence'] as bool?,
+  needConfirmationToRead: json['needConfirmationToRead'] as bool?,
+  isActive: json['isActive'] as bool?,
+);
 
 Map<String, dynamic> _$AdminAnnouncementsUpdateToJson(
-        _AdminAnnouncementsUpdate instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'text': instance.text,
-      'imageUrl': instance.imageUrl,
-      'icon': _$AdminAnnouncementsUpdateIconEnumMap[instance.icon],
-      'display': _$AdminAnnouncementsUpdateDisplayEnumMap[instance.display],
-      'forExistingUsers': instance.forExistingUsers,
-      'silence': instance.silence,
-      'needConfirmationToRead': instance.needConfirmationToRead,
-      'isActive': instance.isActive,
-    };
+  _AdminAnnouncementsUpdate instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'title': instance.title,
+  'text': instance.text,
+  'imageUrl': instance.imageUrl,
+  'icon': _$AdminAnnouncementsUpdateIconEnumMap[instance.icon],
+  'display': _$AdminAnnouncementsUpdateDisplayEnumMap[instance.display],
+  'forExistingUsers': instance.forExistingUsers,
+  'silence': instance.silence,
+  'needConfirmationToRead': instance.needConfirmationToRead,
+  'isActive': instance.isActive,
+};
 
 const _$AdminAnnouncementsUpdateIconEnumMap = {
   AdminAnnouncementsUpdateIcon.info: 'info',

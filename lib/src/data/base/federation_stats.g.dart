@@ -18,12 +18,11 @@ _FederationStats _$FederationStatsFromJson(Map<String, dynamic> json) =>
       otherFollowingCount: (json['otherFollowingCount'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$FederationStatsToJson(_FederationStats instance) =>
-    <String, dynamic>{
-      'topSubInstances':
-          instance.topSubInstances.map((e) => e.toJson()).toList(),
-      'otherFollowersCount': instance.otherFollowersCount,
-      'topPubInstances':
-          instance.topPubInstances.map((e) => e.toJson()).toList(),
-      'otherFollowingCount': instance.otherFollowingCount,
-    };
+Map<String, dynamic> _$FederationStatsToJson(
+  _FederationStats instance,
+) => <String, dynamic>{
+  'topSubInstances': instance.topSubInstances.map((e) => e.toJson()).toList(),
+  'otherFollowersCount': instance.otherFollowersCount,
+  'topPubInstances': instance.topPubInstances.map((e) => e.toJson()).toList(),
+  'otherFollowingCount': instance.otherFollowingCount,
+};

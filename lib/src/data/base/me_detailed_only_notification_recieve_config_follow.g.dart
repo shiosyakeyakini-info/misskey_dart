@@ -7,24 +7,25 @@ part of 'me_detailed_only_notification_recieve_config_follow.dart';
 // **************************************************************************
 
 _MeDetailedOnlyNotificationRecieveConfigFollow
-    _$MeDetailedOnlyNotificationRecieveConfigFollowFromJson(
-            Map<String, dynamic> json) =>
-        _MeDetailedOnlyNotificationRecieveConfigFollow(
-          type: $enumDecode(
-              _$MeDetailedOnlyNotificationRecieveConfigFollowTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  MeDetailedOnlyNotificationRecieveConfigFollowType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$MeDetailedOnlyNotificationRecieveConfigFollowFromJson(
+  Map<String, dynamic> json,
+) => _MeDetailedOnlyNotificationRecieveConfigFollow(
+  type: $enumDecode(
+    _$MeDetailedOnlyNotificationRecieveConfigFollowTypeEnumMap,
+    json['type'],
+    unknownValue: MeDetailedOnlyNotificationRecieveConfigFollowType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigFollowToJson(
-        _MeDetailedOnlyNotificationRecieveConfigFollow instance) =>
-    <String, dynamic>{
-      'type': _$MeDetailedOnlyNotificationRecieveConfigFollowTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _MeDetailedOnlyNotificationRecieveConfigFollow instance,
+) => <String, dynamic>{
+  'type':
+      _$MeDetailedOnlyNotificationRecieveConfigFollowTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$MeDetailedOnlyNotificationRecieveConfigFollowTypeEnumMap = {
   MeDetailedOnlyNotificationRecieveConfigFollowType.all: 'all',

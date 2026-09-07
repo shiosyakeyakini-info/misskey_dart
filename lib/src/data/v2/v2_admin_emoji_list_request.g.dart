@@ -7,39 +7,38 @@ part of 'v2_admin_emoji_list_request.dart';
 // **************************************************************************
 
 _V2AdminEmojiListRequest _$V2AdminEmojiListRequestFromJson(
-        Map<String, dynamic> json) =>
-    _V2AdminEmojiListRequest(
-      query: json['query'] == null
-          ? null
-          : V2AdminEmojiListQuery.fromJson(
-              json['query'] as Map<String, dynamic>),
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      page: (json['page'] as num?)?.toInt(),
-      sortKeys: (json['sortKeys'] as List<dynamic>?)
-              ?.map(
-                  (e) => $enumDecode(_$V2AdminEmojiListSortKeysItemEnumMap, e))
-              .toList() ??
-          const [V2AdminEmojiListSortKeysItem.minusId],
-    );
+  Map<String, dynamic> json,
+) => _V2AdminEmojiListRequest(
+  query: json['query'] == null
+      ? null
+      : V2AdminEmojiListQuery.fromJson(json['query'] as Map<String, dynamic>),
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  page: (json['page'] as num?)?.toInt(),
+  sortKeys:
+      (json['sortKeys'] as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$V2AdminEmojiListSortKeysItemEnumMap, e))
+          .toList() ??
+      const [V2AdminEmojiListSortKeysItem.minusId],
+);
 
 Map<String, dynamic> _$V2AdminEmojiListRequestToJson(
-        _V2AdminEmojiListRequest instance) =>
-    <String, dynamic>{
-      'query': instance.query?.toJson(),
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'limit': instance.limit,
-      'page': instance.page,
-      'sortKeys': instance.sortKeys
-          ?.map((e) => _$V2AdminEmojiListSortKeysItemEnumMap[e]!)
-          .toList(),
-    };
+  _V2AdminEmojiListRequest instance,
+) => <String, dynamic>{
+  'query': instance.query?.toJson(),
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'limit': instance.limit,
+  'page': instance.page,
+  'sortKeys': instance.sortKeys
+      ?.map((e) => _$V2AdminEmojiListSortKeysItemEnumMap[e]!)
+      .toList(),
+};
 
 const _$V2AdminEmojiListSortKeysItemEnumMap = {
   V2AdminEmojiListSortKeysItem.plusId: '+id',

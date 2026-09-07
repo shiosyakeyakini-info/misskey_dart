@@ -7,12 +7,15 @@ part of 'page_block.dart';
 // **************************************************************************
 
 _PageBlock _$PageBlockFromJson(Map<String, dynamic> json) => _PageBlock(
-      id: json['id'] as String,
-      type: $enumDecode(_$PageBlockTypeEnumMap, json['type'],
-          unknownValue: PageBlockType.unknown),
-      detailed: json['detailed'] as bool,
-      note: json['note'] as String?,
-    );
+  id: json['id'] as String,
+  type: $enumDecode(
+    _$PageBlockTypeEnumMap,
+    json['type'],
+    unknownValue: PageBlockType.unknown,
+  ),
+  detailed: json['detailed'] as bool,
+  note: json['note'] as String?,
+);
 
 Map<String, dynamic> _$PageBlockToJson(_PageBlock instance) =>
     <String, dynamic>{

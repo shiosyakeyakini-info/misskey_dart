@@ -23,18 +23,18 @@ _NotesHybridTimeline _$NotesHybridTimelineFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesHybridTimelineToJson(
-        _NotesHybridTimeline instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'allowPartial': instance.allowPartial,
-      'includeMyRenotes': instance.includeMyRenotes,
-      'includeRenotedMyNotes': instance.includeRenotedMyNotes,
-      'includeLocalRenotes': instance.includeLocalRenotes,
-      'withFiles': instance.withFiles,
-      'withRenotes': instance.withRenotes,
-      'withReplies': instance.withReplies,
-    };
+  _NotesHybridTimeline instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'allowPartial': instance.allowPartial,
+  'includeMyRenotes': instance.includeMyRenotes,
+  'includeRenotedMyNotes': instance.includeRenotedMyNotes,
+  'includeLocalRenotes': instance.includeLocalRenotes,
+  'withFiles': instance.withFiles,
+  'withRenotes': instance.withRenotes,
+  'withReplies': instance.withReplies,
+};

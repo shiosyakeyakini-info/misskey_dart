@@ -1,7 +1,1 @@
-enum AdminAnnouncementsCreateIcon {
-  info,
-  warning,
-  error,
-  success,
-  unknown,
-}
+enum AdminAnnouncementsCreateIcon { info, warning, error, success, unknown }

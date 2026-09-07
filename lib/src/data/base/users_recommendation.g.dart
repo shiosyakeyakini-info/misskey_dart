@@ -13,8 +13,5 @@ _UsersRecommendation _$UsersRecommendationFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersRecommendationToJson(
-        _UsersRecommendation instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-    };
+  _UsersRecommendation instance,
+) => <String, dynamic>{'limit': instance.limit, 'offset': instance.offset};

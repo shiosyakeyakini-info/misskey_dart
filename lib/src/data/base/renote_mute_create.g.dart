@@ -7,11 +7,7 @@ part of 'renote_mute_create.dart';
 // **************************************************************************
 
 _RenoteMuteCreate _$RenoteMuteCreateFromJson(Map<String, dynamic> json) =>
-    _RenoteMuteCreate(
-      userId: json['userId'] as String,
-    );
+    _RenoteMuteCreate(userId: json['userId'] as String);
 
 Map<String, dynamic> _$RenoteMuteCreateToJson(_RenoteMuteCreate instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

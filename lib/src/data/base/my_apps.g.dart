@@ -7,11 +7,11 @@ part of 'my_apps.dart';
 // **************************************************************************
 
 _MyApps _$MyAppsFromJson(Map<String, dynamic> json) => _MyApps(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      offset: (json['offset'] as num?)?.toInt() ?? 0,
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  offset: (json['offset'] as num?)?.toInt() ?? 0,
+);
 
 Map<String, dynamic> _$MyAppsToJson(_MyApps instance) => <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-    };
+  'limit': instance.limit,
+  'offset': instance.offset,
+};

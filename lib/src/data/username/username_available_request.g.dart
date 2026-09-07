@@ -7,13 +7,9 @@ part of 'username_available_request.dart';
 // **************************************************************************
 
 _UsernameAvailableRequest _$UsernameAvailableRequestFromJson(
-        Map<String, dynamic> json) =>
-    _UsernameAvailableRequest(
-      username: json['username'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _UsernameAvailableRequest(username: json['username'] as String?);
 
 Map<String, dynamic> _$UsernameAvailableRequestToJson(
-        _UsernameAvailableRequest instance) =>
-    <String, dynamic>{
-      'username': instance.username,
-    };
+  _UsernameAvailableRequest instance,
+) => <String, dynamic>{'username': instance.username};

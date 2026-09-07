@@ -7,23 +7,26 @@ part of 'charts_user_reactions_request.dart';
 // **************************************************************************
 
 _ChartsUserReactionsRequest _$ChartsUserReactionsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChartsUserReactionsRequest(
-      span: $enumDecodeNullable(_$ChartsUserReactionsSpanEnumMap, json['span'],
-          unknownValue: ChartsUserReactionsSpan.unknown),
-      limit: (json['limit'] as num?)?.toInt() ?? 30,
-      offset: (json['offset'] as num?)?.toInt() ?? null,
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _ChartsUserReactionsRequest(
+  span: $enumDecodeNullable(
+    _$ChartsUserReactionsSpanEnumMap,
+    json['span'],
+    unknownValue: ChartsUserReactionsSpan.unknown,
+  ),
+  limit: (json['limit'] as num?)?.toInt() ?? 30,
+  offset: (json['offset'] as num?)?.toInt() ?? null,
+  userId: json['userId'] as String?,
+);
 
 Map<String, dynamic> _$ChartsUserReactionsRequestToJson(
-        _ChartsUserReactionsRequest instance) =>
-    <String, dynamic>{
-      'span': _$ChartsUserReactionsSpanEnumMap[instance.span],
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'userId': instance.userId,
-    };
+  _ChartsUserReactionsRequest instance,
+) => <String, dynamic>{
+  'span': _$ChartsUserReactionsSpanEnumMap[instance.span],
+  'limit': instance.limit,
+  'offset': instance.offset,
+  'userId': instance.userId,
+};
 
 const _$ChartsUserReactionsSpanEnumMap = {
   ChartsUserReactionsSpan.day: 'day',

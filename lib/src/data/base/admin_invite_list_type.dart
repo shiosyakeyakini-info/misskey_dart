@@ -1,7 +1,1 @@
-enum AdminInviteListType {
-  unused,
-  used,
-  expired,
-  all,
-  unknown,
-}
+enum AdminInviteListType { unused, used, expired, all, unknown }

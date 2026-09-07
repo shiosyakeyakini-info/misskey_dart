@@ -7,11 +7,7 @@ part of 'notes_drafts_delete.dart';
 // **************************************************************************
 
 _NotesDraftsDelete _$NotesDraftsDeleteFromJson(Map<String, dynamic> json) =>
-    _NotesDraftsDelete(
-      draftId: json['draftId'] as String,
-    );
+    _NotesDraftsDelete(draftId: json['draftId'] as String);
 
 Map<String, dynamic> _$NotesDraftsDeleteToJson(_NotesDraftsDelete instance) =>
-    <String, dynamic>{
-      'draftId': instance.draftId,
-    };
+    <String, dynamic>{'draftId': instance.draftId};

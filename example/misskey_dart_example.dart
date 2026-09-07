@@ -32,10 +32,9 @@ Future<void> main() async {
     final body = event.body;
     switch (body) {
       case StatsLogChannelEvent(:final body):
-        print(body
-            .cast<ServerMetricsResponse>()
-            .map((e) => "${e.mem}")
-            .join(","));
+        print(
+          body.cast<ServerMetricsResponse>().map((e) => "${e.mem}").join(","),
+        );
       case StatsChannelEvent(:final body):
         print((body as ServerMetricsResponse).mem);
       case _:

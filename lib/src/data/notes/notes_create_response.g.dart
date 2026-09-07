@@ -12,7 +12,5 @@ _NotesCreateResponse _$NotesCreateResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesCreateResponseToJson(
-        _NotesCreateResponse instance) =>
-    <String, dynamic>{
-      'createdNote': instance.createdNote.toJson(),
-    };
+  _NotesCreateResponse instance,
+) => <String, dynamic>{'createdNote': instance.createdNote.toJson()};

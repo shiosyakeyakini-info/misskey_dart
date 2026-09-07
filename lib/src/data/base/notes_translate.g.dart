@@ -13,7 +13,4 @@ _NotesTranslate _$NotesTranslateFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesTranslateToJson(_NotesTranslate instance) =>
-    <String, dynamic>{
-      'sourceLang': instance.sourceLang,
-      'text': instance.text,
-    };
+    <String, dynamic>{'sourceLang': instance.sourceLang, 'text': instance.text};

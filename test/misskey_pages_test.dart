@@ -13,8 +13,9 @@ void main() async {
 
   test("show", () async {
     final page = await userClient.createPage();
-    final response =
-        await userClient.pages.show(PagesShowRequest(pageId: page["id"]));
+    final response = await userClient.pages.show(
+      PagesShowRequest(pageId: page["id"]),
+    );
     expect(response.title, page["title"]);
   });
 

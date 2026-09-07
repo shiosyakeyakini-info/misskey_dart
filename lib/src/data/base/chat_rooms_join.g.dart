@@ -7,11 +7,7 @@ part of 'chat_rooms_join.dart';
 // **************************************************************************
 
 _ChatRoomsJoin _$ChatRoomsJoinFromJson(Map<String, dynamic> json) =>
-    _ChatRoomsJoin(
-      roomId: json['roomId'] as String,
-    );
+    _ChatRoomsJoin(roomId: json['roomId'] as String);
 
 Map<String, dynamic> _$ChatRoomsJoinToJson(_ChatRoomsJoin instance) =>
-    <String, dynamic>{
-      'roomId': instance.roomId,
-    };
+    <String, dynamic>{'roomId': instance.roomId};

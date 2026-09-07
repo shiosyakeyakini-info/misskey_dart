@@ -7,25 +7,32 @@ part of 'admin_invite_list_request.dart';
 // **************************************************************************
 
 _AdminInviteListRequest _$AdminInviteListRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminInviteListRequest(
-      limit: (json['limit'] as num?)?.toInt() ?? 30,
-      offset: (json['offset'] as num?)?.toInt() ?? 0,
-      type: $enumDecodeNullable(_$AdminInviteListTypeEnumMap, json['type'],
-              unknownValue: AdminInviteListType.unknown) ??
-          AdminInviteListType.all,
-      sort: $enumDecodeNullable(_$AdminInviteListSortEnumMap, json['sort'],
-          unknownValue: AdminInviteListSort.unknown),
-    );
+  Map<String, dynamic> json,
+) => _AdminInviteListRequest(
+  limit: (json['limit'] as num?)?.toInt() ?? 30,
+  offset: (json['offset'] as num?)?.toInt() ?? 0,
+  type:
+      $enumDecodeNullable(
+        _$AdminInviteListTypeEnumMap,
+        json['type'],
+        unknownValue: AdminInviteListType.unknown,
+      ) ??
+      AdminInviteListType.all,
+  sort: $enumDecodeNullable(
+    _$AdminInviteListSortEnumMap,
+    json['sort'],
+    unknownValue: AdminInviteListSort.unknown,
+  ),
+);
 
 Map<String, dynamic> _$AdminInviteListRequestToJson(
-        _AdminInviteListRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'type': _$AdminInviteListTypeEnumMap[instance.type],
-      'sort': _$AdminInviteListSortEnumMap[instance.sort],
-    };
+  _AdminInviteListRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'offset': instance.offset,
+  'type': _$AdminInviteListTypeEnumMap[instance.type],
+  'sort': _$AdminInviteListSortEnumMap[instance.sort],
+};
 
 const _$AdminInviteListTypeEnumMap = {
   AdminInviteListType.unused: 'unused',

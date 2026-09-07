@@ -7,12 +7,8 @@ part of 'antennas_show_request.dart';
 // **************************************************************************
 
 _AntennasShowRequest _$AntennasShowRequestFromJson(Map<String, dynamic> json) =>
-    _AntennasShowRequest(
-      antennaId: json['antennaId'] as String?,
-    );
+    _AntennasShowRequest(antennaId: json['antennaId'] as String?);
 
 Map<String, dynamic> _$AntennasShowRequestToJson(
-        _AntennasShowRequest instance) =>
-    <String, dynamic>{
-      'antennaId': instance.antennaId,
-    };
+  _AntennasShowRequest instance,
+) => <String, dynamic>{'antennaId': instance.antennaId};

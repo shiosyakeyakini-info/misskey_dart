@@ -7,11 +7,7 @@ part of 'gallery_posts_unlike.dart';
 // **************************************************************************
 
 _GalleryPostsUnlike _$GalleryPostsUnlikeFromJson(Map<String, dynamic> json) =>
-    _GalleryPostsUnlike(
-      postId: json['postId'] as String,
-    );
+    _GalleryPostsUnlike(postId: json['postId'] as String);
 
 Map<String, dynamic> _$GalleryPostsUnlikeToJson(_GalleryPostsUnlike instance) =>
-    <String, dynamic>{
-      'postId': instance.postId,
-    };
+    <String, dynamic>{'postId': instance.postId};

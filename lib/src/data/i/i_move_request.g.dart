@@ -7,11 +7,7 @@ part of 'i_move_request.dart';
 // **************************************************************************
 
 _IMoveRequest _$IMoveRequestFromJson(Map<String, dynamic> json) =>
-    _IMoveRequest(
-      moveToAccount: json['moveToAccount'] as String?,
-    );
+    _IMoveRequest(moveToAccount: json['moveToAccount'] as String?);
 
 Map<String, dynamic> _$IMoveRequestToJson(_IMoveRequest instance) =>
-    <String, dynamic>{
-      'moveToAccount': instance.moveToAccount,
-    };
+    <String, dynamic>{'moveToAccount': instance.moveToAccount};

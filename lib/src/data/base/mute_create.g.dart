@@ -7,9 +7,9 @@ part of 'mute_create.dart';
 // **************************************************************************
 
 _MuteCreate _$MuteCreateFromJson(Map<String, dynamic> json) => _MuteCreate(
-      userId: json['userId'] as String,
-      expiresAt: (json['expiresAt'] as num?)?.toInt(),
-    );
+  userId: json['userId'] as String,
+  expiresAt: (json['expiresAt'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$MuteCreateToJson(_MuteCreate instance) =>
     <String, dynamic>{

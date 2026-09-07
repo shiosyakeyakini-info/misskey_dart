@@ -7,11 +7,7 @@ part of 'ap_get_request.dart';
 // **************************************************************************
 
 _ApGetRequest _$ApGetRequestFromJson(Map<String, dynamic> json) =>
-    _ApGetRequest(
-      uri: json['uri'] as String?,
-    );
+    _ApGetRequest(uri: json['uri'] as String?);
 
 Map<String, dynamic> _$ApGetRequestToJson(_ApGetRequest instance) =>
-    <String, dynamic>{
-      'uri': instance.uri,
-    };
+    <String, dynamic>{'uri': instance.uri};

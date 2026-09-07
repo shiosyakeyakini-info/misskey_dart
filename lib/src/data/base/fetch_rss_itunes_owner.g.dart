@@ -13,8 +13,5 @@ _FetchRssItunesOwner _$FetchRssItunesOwnerFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FetchRssItunesOwnerToJson(
-        _FetchRssItunesOwner instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'email': instance.email,
-    };
+  _FetchRssItunesOwner instance,
+) => <String, dynamic>{'name': instance.name, 'email': instance.email};

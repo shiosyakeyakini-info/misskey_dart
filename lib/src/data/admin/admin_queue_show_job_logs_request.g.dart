@@ -7,20 +7,22 @@ part of 'admin_queue_show_job_logs_request.dart';
 // **************************************************************************
 
 _AdminQueueShowJobLogsRequest _$AdminQueueShowJobLogsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueShowJobLogsRequest(
-      queue: $enumDecodeNullable(
-          _$AdminQueueShowJobLogsQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueShowJobLogsQueue.unknown),
-      jobId: json['jobId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueShowJobLogsRequest(
+  queue: $enumDecodeNullable(
+    _$AdminQueueShowJobLogsQueueEnumMap,
+    json['queue'],
+    unknownValue: AdminQueueShowJobLogsQueue.unknown,
+  ),
+  jobId: json['jobId'] as String?,
+);
 
 Map<String, dynamic> _$AdminQueueShowJobLogsRequestToJson(
-        _AdminQueueShowJobLogsRequest instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueueShowJobLogsQueueEnumMap[instance.queue],
-      'jobId': instance.jobId,
-    };
+  _AdminQueueShowJobLogsRequest instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueueShowJobLogsQueueEnumMap[instance.queue],
+  'jobId': instance.jobId,
+};
 
 const _$AdminQueueShowJobLogsQueueEnumMap = {
   AdminQueueShowJobLogsQueue.system: 'system',

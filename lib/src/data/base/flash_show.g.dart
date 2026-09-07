@@ -6,11 +6,8 @@ part of 'flash_show.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FlashShow _$FlashShowFromJson(Map<String, dynamic> json) => _FlashShow(
-      flashId: json['flashId'] as String,
-    );
+_FlashShow _$FlashShowFromJson(Map<String, dynamic> json) =>
+    _FlashShow(flashId: json['flashId'] as String);
 
 Map<String, dynamic> _$FlashShowToJson(_FlashShow instance) =>
-    <String, dynamic>{
-      'flashId': instance.flashId,
-    };
+    <String, dynamic>{'flashId': instance.flashId};

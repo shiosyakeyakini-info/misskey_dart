@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,221 +14,276 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IPages {
-  int? get limit;
-  String? get sinceId;
-  String? get untilId;
-  int? get sinceDate;
-  int? get untilDate;
 
-  /// Create a copy of IPages
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IPagesCopyWith<IPages> get copyWith =>
-      _$IPagesCopyWithImpl<IPages>(this as IPages, _$identity);
+ int? get limit; String? get sinceId; String? get untilId; int? get sinceDate; int? get untilDate;
+/// Create a copy of IPages
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$IPagesCopyWith<IPages> get copyWith => _$IPagesCopyWithImpl<IPages>(this as IPages, _$identity);
 
   /// Serializes this IPages to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IPages &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.sinceDate, sinceDate) ||
-                other.sinceDate == sinceDate) &&
-            (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IPages&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate));
+}
 
-  @override
-  String toString() {
-    return 'IPages(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,sinceId,untilId,sinceDate,untilDate);
+
+@override
+String toString() {
+  return 'IPages(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $IPagesCopyWith<$Res> {
-  factory $IPagesCopyWith(IPages value, $Res Function(IPages) _then) =
-      _$IPagesCopyWithImpl;
-  @useResult
-  $Res call(
-      {int? limit,
-      String? sinceId,
-      String? untilId,
-      int? sinceDate,
-      int? untilDate});
-}
+abstract mixin class $IPagesCopyWith<$Res>  {
+  factory $IPagesCopyWith(IPages value, $Res Function(IPages) _then) = _$IPagesCopyWithImpl;
+@useResult
+$Res call({
+ int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate
+});
 
+
+
+
+}
 /// @nodoc
-class _$IPagesCopyWithImpl<$Res> implements $IPagesCopyWith<$Res> {
+class _$IPagesCopyWithImpl<$Res>
+    implements $IPagesCopyWith<$Res> {
   _$IPagesCopyWithImpl(this._self, this._then);
 
   final IPages _self;
   final $Res Function(IPages) _then;
 
-  /// Create a copy of IPages
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-  }) {
-    return _then(_self.copyWith(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sinceDate: freezed == sinceDate
-          ? _self.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilDate: freezed == untilDate
-          ? _self.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Create a copy of IPages
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,}) {
+  return _then(_self.copyWith(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
+as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [IPages].
+extension IPagesPatterns on IPages {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _IPages value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _IPages() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _IPages value)  $default,){
+final _that = this;
+switch (_that) {
+case _IPages():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _IPages value)?  $default,){
+final _that = this;
+switch (_that) {
+case _IPages() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _IPages() when $default != null:
+return $default(_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate)  $default,) {final _that = this;
+switch (_that) {
+case _IPages():
+return $default(_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate)?  $default,) {final _that = this;
+switch (_that) {
+case _IPages() when $default != null:
+return $default(_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _IPages implements IPages {
-  const _IPages(
-      {this.limit = 10,
-      this.sinceId,
-      this.untilId,
-      this.sinceDate,
-      this.untilDate});
+  const _IPages({this.limit = 10, this.sinceId, this.untilId, this.sinceDate, this.untilDate});
   factory _IPages.fromJson(Map<String, dynamic> json) => _$IPagesFromJson(json);
 
-  @override
-  @JsonKey()
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-  @override
-  final int? sinceDate;
-  @override
-  final int? untilDate;
+@override@JsonKey() final  int? limit;
+@override final  String? sinceId;
+@override final  String? untilId;
+@override final  int? sinceDate;
+@override final  int? untilDate;
 
-  /// Create a copy of IPages
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IPagesCopyWith<_IPages> get copyWith =>
-      __$IPagesCopyWithImpl<_IPages>(this, _$identity);
+/// Create a copy of IPages
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$IPagesCopyWith<_IPages> get copyWith => __$IPagesCopyWithImpl<_IPages>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IPagesToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$IPagesToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _IPages &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.sinceDate, sinceDate) ||
-                other.sinceDate == sinceDate) &&
-            (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IPages&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, sinceId, untilId, sinceDate, untilDate);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,sinceId,untilId,sinceDate,untilDate);
 
-  @override
-  String toString() {
-    return 'IPages(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
-  }
+@override
+String toString() {
+  return 'IPages(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate)';
+}
+
+
 }
 
 /// @nodoc
 abstract mixin class _$IPagesCopyWith<$Res> implements $IPagesCopyWith<$Res> {
-  factory _$IPagesCopyWith(_IPages value, $Res Function(_IPages) _then) =
-      __$IPagesCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {int? limit,
-      String? sinceId,
-      String? untilId,
-      int? sinceDate,
-      int? untilDate});
-}
+  factory _$IPagesCopyWith(_IPages value, $Res Function(_IPages) _then) = __$IPagesCopyWithImpl;
+@override @useResult
+$Res call({
+ int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate
+});
 
+
+
+
+}
 /// @nodoc
-class __$IPagesCopyWithImpl<$Res> implements _$IPagesCopyWith<$Res> {
+class __$IPagesCopyWithImpl<$Res>
+    implements _$IPagesCopyWith<$Res> {
   __$IPagesCopyWithImpl(this._self, this._then);
 
   final _IPages _self;
   final $Res Function(_IPages) _then;
 
-  /// Create a copy of IPages
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-  }) {
-    return _then(_IPages(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sinceDate: freezed == sinceDate
-          ? _self.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilDate: freezed == untilDate
-          ? _self.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Create a copy of IPages
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,}) {
+  return _then(_IPages(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
+as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
 }
 
 // dart format on

@@ -7,11 +7,7 @@ part of 'chat_rooms_show.dart';
 // **************************************************************************
 
 _ChatRoomsShow _$ChatRoomsShowFromJson(Map<String, dynamic> json) =>
-    _ChatRoomsShow(
-      roomId: json['roomId'] as String,
-    );
+    _ChatRoomsShow(roomId: json['roomId'] as String);
 
 Map<String, dynamic> _$ChatRoomsShowToJson(_ChatRoomsShow instance) =>
-    <String, dynamic>{
-      'roomId': instance.roomId,
-    };
+    <String, dynamic>{'roomId': instance.roomId};

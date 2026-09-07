@@ -7,25 +7,26 @@ part of 'admin_show_user_notification_recieve_config_role_assigned.dart';
 // **************************************************************************
 
 _AdminShowUserNotificationRecieveConfigRoleAssigned
-    _$AdminShowUserNotificationRecieveConfigRoleAssignedFromJson(
-            Map<String, dynamic> json) =>
-        _AdminShowUserNotificationRecieveConfigRoleAssigned(
-          type: $enumDecode(
-              _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  AdminShowUserNotificationRecieveConfigRoleAssignedType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$AdminShowUserNotificationRecieveConfigRoleAssignedFromJson(
+  Map<String, dynamic> json,
+) => _AdminShowUserNotificationRecieveConfigRoleAssigned(
+  type: $enumDecode(
+    _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap,
+    json['type'],
+    unknownValue:
+        AdminShowUserNotificationRecieveConfigRoleAssignedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$AdminShowUserNotificationRecieveConfigRoleAssignedToJson(
-        _AdminShowUserNotificationRecieveConfigRoleAssigned instance) =>
-    <String, dynamic>{
-      'type': _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _AdminShowUserNotificationRecieveConfigRoleAssigned instance,
+) => <String, dynamic>{
+  'type':
+      _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$AdminShowUserNotificationRecieveConfigRoleAssignedTypeEnumMap = {
   AdminShowUserNotificationRecieveConfigRoleAssignedType.all: 'all',

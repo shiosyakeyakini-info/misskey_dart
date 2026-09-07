@@ -17,5 +17,6 @@ abstract class ChatRoom with _$ChatRoom {
     bool? invitationExists,
   }) = _ChatRoom;
 
-  factory ChatRoom.fromJson(Map<String, Object?> json) => _$ChatRoomFromJson(json);
+  factory ChatRoom.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomFromJson(json);
 }

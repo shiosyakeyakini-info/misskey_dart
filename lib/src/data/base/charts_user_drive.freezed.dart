@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,70 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsUserDrive {
-  List<double> get totalCount;
-  List<double> get totalSize;
-  List<double> get incCount;
-  List<double> get incSize;
-  List<double> get decCount;
-  List<double> get decSize;
 
-  /// Create a copy of ChartsUserDrive
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChartsUserDriveCopyWith<ChartsUserDrive> get copyWith =>
-      _$ChartsUserDriveCopyWithImpl<ChartsUserDrive>(
-          this as ChartsUserDrive, _$identity);
+ List<double> get totalCount; List<double> get totalSize; List<double> get incCount; List<double> get incSize; List<double> get decCount; List<double> get decSize;
+/// Create a copy of ChartsUserDrive
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChartsUserDriveCopyWith<ChartsUserDrive> get copyWith => _$ChartsUserDriveCopyWithImpl<ChartsUserDrive>(this as ChartsUserDrive, _$identity);
 
   /// Serializes this ChartsUserDrive to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChartsUserDrive &&
-            const DeepCollectionEquality()
-                .equals(other.totalCount, totalCount) &&
-            const DeepCollectionEquality().equals(other.totalSize, totalSize) &&
-            const DeepCollectionEquality().equals(other.incCount, incCount) &&
-            const DeepCollectionEquality().equals(other.incSize, incSize) &&
-            const DeepCollectionEquality().equals(other.decCount, decCount) &&
-            const DeepCollectionEquality().equals(other.decSize, decSize));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(totalCount),
-      const DeepCollectionEquality().hash(totalSize),
-      const DeepCollectionEquality().hash(incCount),
-      const DeepCollectionEquality().hash(incSize),
-      const DeepCollectionEquality().hash(decCount),
-      const DeepCollectionEquality().hash(decSize));
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChartsUserDrive&&const DeepCollectionEquality().equals(other.totalCount, totalCount)&&const DeepCollectionEquality().equals(other.totalSize, totalSize)&&const DeepCollectionEquality().equals(other.incCount, incCount)&&const DeepCollectionEquality().equals(other.incSize, incSize)&&const DeepCollectionEquality().equals(other.decCount, decCount)&&const DeepCollectionEquality().equals(other.decSize, decSize));
+}
 
-  @override
-  String toString() {
-    return 'ChartsUserDrive(totalCount: $totalCount, totalSize: $totalSize, incCount: $incCount, incSize: $incSize, decCount: $decCount, decSize: $decSize)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(totalCount),const DeepCollectionEquality().hash(totalSize),const DeepCollectionEquality().hash(incCount),const DeepCollectionEquality().hash(incSize),const DeepCollectionEquality().hash(decCount),const DeepCollectionEquality().hash(decSize));
+
+@override
+String toString() {
+  return 'ChartsUserDrive(totalCount: $totalCount, totalSize: $totalSize, incCount: $incCount, incSize: $incSize, decCount: $decCount, decSize: $decSize)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $ChartsUserDriveCopyWith<$Res> {
-  factory $ChartsUserDriveCopyWith(
-          ChartsUserDrive value, $Res Function(ChartsUserDrive) _then) =
-      _$ChartsUserDriveCopyWithImpl;
-  @useResult
-  $Res call(
-      {List<double> totalCount,
-      List<double> totalSize,
-      List<double> incCount,
-      List<double> incSize,
-      List<double> decCount,
-      List<double> decSize});
-}
+abstract mixin class $ChartsUserDriveCopyWith<$Res>  {
+  factory $ChartsUserDriveCopyWith(ChartsUserDrive value, $Res Function(ChartsUserDrive) _then) = _$ChartsUserDriveCopyWithImpl;
+@useResult
+$Res call({
+ List<double> totalCount, List<double> totalSize, List<double> incCount, List<double> incSize, List<double> decCount, List<double> decSize
+});
 
+
+
+
+}
 /// @nodoc
 class _$ChartsUserDriveCopyWithImpl<$Res>
     implements $ChartsUserDriveCopyWith<$Res> {
@@ -87,178 +63,243 @@ class _$ChartsUserDriveCopyWithImpl<$Res>
   final ChartsUserDrive _self;
   final $Res Function(ChartsUserDrive) _then;
 
-  /// Create a copy of ChartsUserDrive
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? totalCount = null,
-    Object? totalSize = null,
-    Object? incCount = null,
-    Object? incSize = null,
-    Object? decCount = null,
-    Object? decSize = null,
-  }) {
-    return _then(_self.copyWith(
-      totalCount: null == totalCount
-          ? _self.totalCount
-          : totalCount // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      totalSize: null == totalSize
-          ? _self.totalSize
-          : totalSize // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      incCount: null == incCount
-          ? _self.incCount
-          : incCount // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      incSize: null == incSize
-          ? _self.incSize
-          : incSize // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      decCount: null == decCount
-          ? _self.decCount
-          : decCount // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      decSize: null == decSize
-          ? _self.decSize
-          : decSize // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-    ));
-  }
+/// Create a copy of ChartsUserDrive
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? totalCount = null,Object? totalSize = null,Object? incCount = null,Object? incSize = null,Object? decCount = null,Object? decSize = null,}) {
+  return _then(_self.copyWith(
+totalCount: null == totalCount ? _self.totalCount : totalCount // ignore: cast_nullable_to_non_nullable
+as List<double>,totalSize: null == totalSize ? _self.totalSize : totalSize // ignore: cast_nullable_to_non_nullable
+as List<double>,incCount: null == incCount ? _self.incCount : incCount // ignore: cast_nullable_to_non_nullable
+as List<double>,incSize: null == incSize ? _self.incSize : incSize // ignore: cast_nullable_to_non_nullable
+as List<double>,decCount: null == decCount ? _self.decCount : decCount // ignore: cast_nullable_to_non_nullable
+as List<double>,decSize: null == decSize ? _self.decSize : decSize // ignore: cast_nullable_to_non_nullable
+as List<double>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ChartsUserDrive].
+extension ChartsUserDrivePatterns on ChartsUserDrive {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChartsUserDrive value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChartsUserDrive() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChartsUserDrive value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChartsUserDrive():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChartsUserDrive value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChartsUserDrive() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<double> totalCount,  List<double> totalSize,  List<double> incCount,  List<double> incSize,  List<double> decCount,  List<double> decSize)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ChartsUserDrive() when $default != null:
+return $default(_that.totalCount,_that.totalSize,_that.incCount,_that.incSize,_that.decCount,_that.decSize);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<double> totalCount,  List<double> totalSize,  List<double> incCount,  List<double> incSize,  List<double> decCount,  List<double> decSize)  $default,) {final _that = this;
+switch (_that) {
+case _ChartsUserDrive():
+return $default(_that.totalCount,_that.totalSize,_that.incCount,_that.incSize,_that.decCount,_that.decSize);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<double> totalCount,  List<double> totalSize,  List<double> incCount,  List<double> incSize,  List<double> decCount,  List<double> decSize)?  $default,) {final _that = this;
+switch (_that) {
+case _ChartsUserDrive() when $default != null:
+return $default(_that.totalCount,_that.totalSize,_that.incCount,_that.incSize,_that.decCount,_that.decSize);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _ChartsUserDrive implements ChartsUserDrive {
-  const _ChartsUserDrive(
-      {required final List<double> totalCount,
-      required final List<double> totalSize,
-      required final List<double> incCount,
-      required final List<double> incSize,
-      required final List<double> decCount,
-      required final List<double> decSize})
-      : _totalCount = totalCount,
-        _totalSize = totalSize,
-        _incCount = incCount,
-        _incSize = incSize,
-        _decCount = decCount,
-        _decSize = decSize;
-  factory _ChartsUserDrive.fromJson(Map<String, dynamic> json) =>
-      _$ChartsUserDriveFromJson(json);
+  const _ChartsUserDrive({required final  List<double> totalCount, required final  List<double> totalSize, required final  List<double> incCount, required final  List<double> incSize, required final  List<double> decCount, required final  List<double> decSize}): _totalCount = totalCount,_totalSize = totalSize,_incCount = incCount,_incSize = incSize,_decCount = decCount,_decSize = decSize;
+  factory _ChartsUserDrive.fromJson(Map<String, dynamic> json) => _$ChartsUserDriveFromJson(json);
 
-  final List<double> _totalCount;
-  @override
-  List<double> get totalCount {
-    if (_totalCount is EqualUnmodifiableListView) return _totalCount;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_totalCount);
-  }
+ final  List<double> _totalCount;
+@override List<double> get totalCount {
+  if (_totalCount is EqualUnmodifiableListView) return _totalCount;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_totalCount);
+}
 
-  final List<double> _totalSize;
-  @override
-  List<double> get totalSize {
-    if (_totalSize is EqualUnmodifiableListView) return _totalSize;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_totalSize);
-  }
+ final  List<double> _totalSize;
+@override List<double> get totalSize {
+  if (_totalSize is EqualUnmodifiableListView) return _totalSize;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_totalSize);
+}
 
-  final List<double> _incCount;
-  @override
-  List<double> get incCount {
-    if (_incCount is EqualUnmodifiableListView) return _incCount;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_incCount);
-  }
+ final  List<double> _incCount;
+@override List<double> get incCount {
+  if (_incCount is EqualUnmodifiableListView) return _incCount;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_incCount);
+}
 
-  final List<double> _incSize;
-  @override
-  List<double> get incSize {
-    if (_incSize is EqualUnmodifiableListView) return _incSize;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_incSize);
-  }
+ final  List<double> _incSize;
+@override List<double> get incSize {
+  if (_incSize is EqualUnmodifiableListView) return _incSize;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_incSize);
+}
 
-  final List<double> _decCount;
-  @override
-  List<double> get decCount {
-    if (_decCount is EqualUnmodifiableListView) return _decCount;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_decCount);
-  }
+ final  List<double> _decCount;
+@override List<double> get decCount {
+  if (_decCount is EqualUnmodifiableListView) return _decCount;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_decCount);
+}
 
-  final List<double> _decSize;
-  @override
-  List<double> get decSize {
-    if (_decSize is EqualUnmodifiableListView) return _decSize;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_decSize);
-  }
+ final  List<double> _decSize;
+@override List<double> get decSize {
+  if (_decSize is EqualUnmodifiableListView) return _decSize;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_decSize);
+}
 
-  /// Create a copy of ChartsUserDrive
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChartsUserDriveCopyWith<_ChartsUserDrive> get copyWith =>
-      __$ChartsUserDriveCopyWithImpl<_ChartsUserDrive>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChartsUserDriveToJson(
-      this,
-    );
-  }
+/// Create a copy of ChartsUserDrive
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChartsUserDriveCopyWith<_ChartsUserDrive> get copyWith => __$ChartsUserDriveCopyWithImpl<_ChartsUserDrive>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ChartsUserDrive &&
-            const DeepCollectionEquality()
-                .equals(other._totalCount, _totalCount) &&
-            const DeepCollectionEquality()
-                .equals(other._totalSize, _totalSize) &&
-            const DeepCollectionEquality().equals(other._incCount, _incCount) &&
-            const DeepCollectionEquality().equals(other._incSize, _incSize) &&
-            const DeepCollectionEquality().equals(other._decCount, _decCount) &&
-            const DeepCollectionEquality().equals(other._decSize, _decSize));
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChartsUserDriveToJson(this, );
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_totalCount),
-      const DeepCollectionEquality().hash(_totalSize),
-      const DeepCollectionEquality().hash(_incCount),
-      const DeepCollectionEquality().hash(_incSize),
-      const DeepCollectionEquality().hash(_decCount),
-      const DeepCollectionEquality().hash(_decSize));
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChartsUserDrive&&const DeepCollectionEquality().equals(other._totalCount, _totalCount)&&const DeepCollectionEquality().equals(other._totalSize, _totalSize)&&const DeepCollectionEquality().equals(other._incCount, _incCount)&&const DeepCollectionEquality().equals(other._incSize, _incSize)&&const DeepCollectionEquality().equals(other._decCount, _decCount)&&const DeepCollectionEquality().equals(other._decSize, _decSize));
+}
 
-  @override
-  String toString() {
-    return 'ChartsUserDrive(totalCount: $totalCount, totalSize: $totalSize, incCount: $incCount, incSize: $incSize, decCount: $decCount, decSize: $decSize)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_totalCount),const DeepCollectionEquality().hash(_totalSize),const DeepCollectionEquality().hash(_incCount),const DeepCollectionEquality().hash(_incSize),const DeepCollectionEquality().hash(_decCount),const DeepCollectionEquality().hash(_decSize));
+
+@override
+String toString() {
+  return 'ChartsUserDrive(totalCount: $totalCount, totalSize: $totalSize, incCount: $incCount, incSize: $incSize, decCount: $decCount, decSize: $decSize)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$ChartsUserDriveCopyWith<$Res>
-    implements $ChartsUserDriveCopyWith<$Res> {
-  factory _$ChartsUserDriveCopyWith(
-          _ChartsUserDrive value, $Res Function(_ChartsUserDrive) _then) =
-      __$ChartsUserDriveCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {List<double> totalCount,
-      List<double> totalSize,
-      List<double> incCount,
-      List<double> incSize,
-      List<double> decCount,
-      List<double> decSize});
-}
+abstract mixin class _$ChartsUserDriveCopyWith<$Res> implements $ChartsUserDriveCopyWith<$Res> {
+  factory _$ChartsUserDriveCopyWith(_ChartsUserDrive value, $Res Function(_ChartsUserDrive) _then) = __$ChartsUserDriveCopyWithImpl;
+@override @useResult
+$Res call({
+ List<double> totalCount, List<double> totalSize, List<double> incCount, List<double> incSize, List<double> decCount, List<double> decSize
+});
 
+
+
+
+}
 /// @nodoc
 class __$ChartsUserDriveCopyWithImpl<$Res>
     implements _$ChartsUserDriveCopyWith<$Res> {
@@ -267,45 +308,21 @@ class __$ChartsUserDriveCopyWithImpl<$Res>
   final _ChartsUserDrive _self;
   final $Res Function(_ChartsUserDrive) _then;
 
-  /// Create a copy of ChartsUserDrive
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? totalCount = null,
-    Object? totalSize = null,
-    Object? incCount = null,
-    Object? incSize = null,
-    Object? decCount = null,
-    Object? decSize = null,
-  }) {
-    return _then(_ChartsUserDrive(
-      totalCount: null == totalCount
-          ? _self._totalCount
-          : totalCount // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      totalSize: null == totalSize
-          ? _self._totalSize
-          : totalSize // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      incCount: null == incCount
-          ? _self._incCount
-          : incCount // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      incSize: null == incSize
-          ? _self._incSize
-          : incSize // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      decCount: null == decCount
-          ? _self._decCount
-          : decCount // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      decSize: null == decSize
-          ? _self._decSize
-          : decSize // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-    ));
-  }
+/// Create a copy of ChartsUserDrive
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? totalCount = null,Object? totalSize = null,Object? incCount = null,Object? incSize = null,Object? decCount = null,Object? decSize = null,}) {
+  return _then(_ChartsUserDrive(
+totalCount: null == totalCount ? _self._totalCount : totalCount // ignore: cast_nullable_to_non_nullable
+as List<double>,totalSize: null == totalSize ? _self._totalSize : totalSize // ignore: cast_nullable_to_non_nullable
+as List<double>,incCount: null == incCount ? _self._incCount : incCount // ignore: cast_nullable_to_non_nullable
+as List<double>,incSize: null == incSize ? _self._incSize : incSize // ignore: cast_nullable_to_non_nullable
+as List<double>,decCount: null == decCount ? _self._decCount : decCount // ignore: cast_nullable_to_non_nullable
+as List<double>,decSize: null == decSize ? _self._decSize : decSize // ignore: cast_nullable_to_non_nullable
+as List<double>,
+  ));
+}
+
+
 }
 
 // dart format on

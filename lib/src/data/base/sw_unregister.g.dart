@@ -7,11 +7,7 @@ part of 'sw_unregister.dart';
 // **************************************************************************
 
 _SwUnregister _$SwUnregisterFromJson(Map<String, dynamic> json) =>
-    _SwUnregister(
-      endpoint: json['endpoint'] as String,
-    );
+    _SwUnregister(endpoint: json['endpoint'] as String);
 
 Map<String, dynamic> _$SwUnregisterToJson(_SwUnregister instance) =>
-    <String, dynamic>{
-      'endpoint': instance.endpoint,
-    };
+    <String, dynamic>{'endpoint': instance.endpoint};

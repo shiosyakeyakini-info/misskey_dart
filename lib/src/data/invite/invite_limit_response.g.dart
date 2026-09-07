@@ -7,12 +7,8 @@ part of 'invite_limit_response.dart';
 // **************************************************************************
 
 _InviteLimitResponse _$InviteLimitResponseFromJson(Map<String, dynamic> json) =>
-    _InviteLimitResponse(
-      remaining: (json['remaining'] as num?)?.toInt(),
-    );
+    _InviteLimitResponse(remaining: (json['remaining'] as num?)?.toInt());
 
 Map<String, dynamic> _$InviteLimitResponseToJson(
-        _InviteLimitResponse instance) =>
-    <String, dynamic>{
-      'remaining': instance.remaining,
-    };
+  _InviteLimitResponse instance,
+) => <String, dynamic>{'remaining': instance.remaining};

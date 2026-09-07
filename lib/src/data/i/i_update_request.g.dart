@@ -13,12 +13,18 @@ _IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
       followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
       birthday: json['birthday'] as String?,
-      lang: $enumDecodeNullable(_$IUpdateLangEnumMap, json['lang'],
-          unknownValue: IUpdateLang.unknown),
+      lang: $enumDecodeNullable(
+        _$IUpdateLangEnumMap,
+        json['lang'],
+        unknownValue: IUpdateLang.unknown,
+      ),
       avatarId: json['avatarId'] as String?,
       avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
-          ?.map((e) =>
-              IUpdateAvatarDecorationsItem.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) => IUpdateAvatarDecorationsItem.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
           .toList(),
       bannerId: json['bannerId'] as String?,
       fields: (json['fields'] as List<dynamic>?)
@@ -43,11 +49,15 @@ _IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
       alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
       autoSensitive: json['autoSensitive'] as bool?,
       followingVisibility: $enumDecodeNullable(
-          _$IUpdateFollowingVisibilityEnumMap, json['followingVisibility'],
-          unknownValue: IUpdateFollowingVisibility.unknown),
+        _$IUpdateFollowingVisibilityEnumMap,
+        json['followingVisibility'],
+        unknownValue: IUpdateFollowingVisibility.unknown,
+      ),
       followersVisibility: $enumDecodeNullable(
-          _$IUpdateFollowersVisibilityEnumMap, json['followersVisibility'],
-          unknownValue: IUpdateFollowersVisibility.unknown),
+        _$IUpdateFollowersVisibilityEnumMap,
+        json['followersVisibility'],
+        unknownValue: IUpdateFollowersVisibility.unknown,
+      ),
       chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
       pinnedPageId: json['pinnedPageId'] as String?,
       mutedWords: json['mutedWords'] as List<dynamic>?,
@@ -58,7 +68,8 @@ _IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
       notificationRecieveConfig: json['notificationRecieveConfig'] == null
           ? null
           : IUpdateNotificationRecieveConfig.fromJson(
-              json['notificationRecieveConfig'] as Map<String, dynamic>),
+              json['notificationRecieveConfig'] as Map<String, dynamic>,
+            ),
       emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -76,8 +87,9 @@ Map<String, dynamic> _$IUpdateRequestToJson(_IUpdateRequest instance) =>
       'birthday': instance.birthday,
       'lang': _$IUpdateLangEnumMap[instance.lang],
       'avatarId': instance.avatarId,
-      'avatarDecorations':
-          instance.avatarDecorations?.map((e) => e.toJson()).toList(),
+      'avatarDecorations': instance.avatarDecorations
+          ?.map((e) => e.toJson())
+          .toList(),
       'bannerId': instance.bannerId,
       'fields': instance.fields?.map((e) => e.toJson()).toList(),
       'isLocked': instance.isLocked,

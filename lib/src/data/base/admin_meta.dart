@@ -47,8 +47,13 @@ abstract class AdminMeta with _$AdminMeta {
     String? mcaptchaSecretKey,
     String? recaptchaSecretKey,
     String? turnstileSecretKey,
-    @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown) required AdminMetaSensitiveMediaDetection sensitiveMediaDetection,
-    @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown) required AdminMetaSensitiveMediaDetectionSensitivity sensitiveMediaDetectionSensitivity,
+    @JsonKey(unknownEnumValue: AdminMetaSensitiveMediaDetection.unknown)
+    required AdminMetaSensitiveMediaDetection sensitiveMediaDetection,
+    @JsonKey(
+      unknownEnumValue: AdminMetaSensitiveMediaDetectionSensitivity.unknown,
+    )
+    required AdminMetaSensitiveMediaDetectionSensitivity
+    sensitiveMediaDetectionSensitivity,
     required bool setSensitiveFlagAutomatically,
     required bool enableSensitiveMediaDetectionForVideos,
     required String proxyAccountId,
@@ -123,11 +128,14 @@ abstract class AdminMeta with _$AdminMeta {
     required bool urlPreviewRequireContentLength,
     String? urlPreviewUserAgent,
     String? urlPreviewSummaryProxyUrl,
-    @JsonKey(unknownEnumValue: AdminMetaFederation.unknown) required AdminMetaFederation federation,
+    @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
+    required AdminMetaFederation federation,
     required List<String> federationHosts,
-    required List<AdminMetaDeliverSuspendedSoftwareItem> deliverSuspendedSoftware,
+    required List<AdminMetaDeliverSuspendedSoftwareItem>
+    deliverSuspendedSoftware,
     required bool singleUserMode,
-    @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown) required AdminMetaUgcVisibilityForVisitor ugcVisibilityForVisitor,
+    @JsonKey(unknownEnumValue: AdminMetaUgcVisibilityForVisitor.unknown)
+    required AdminMetaUgcVisibilityForVisitor ugcVisibilityForVisitor,
     required bool proxyRemoteFiles,
     required bool signToActivityPubGet,
     required bool allowExternalApRedirect,
@@ -137,5 +145,6 @@ abstract class AdminMeta with _$AdminMeta {
     required bool showRoleBadgesOfRemoteUsers,
   }) = _AdminMeta;
 
-  factory AdminMeta.fromJson(Map<String, Object?> json) => _$AdminMetaFromJson(json);
+  factory AdminMeta.fromJson(Map<String, Object?> json) =>
+      _$AdminMetaFromJson(json);
 }

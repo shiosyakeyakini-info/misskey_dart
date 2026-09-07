@@ -7,11 +7,7 @@ part of 'i2fa_register_key_rp.dart';
 // **************************************************************************
 
 _I2faRegisterKeyRp _$I2faRegisterKeyRpFromJson(Map<String, dynamic> json) =>
-    _I2faRegisterKeyRp(
-      id: json['id'] as String?,
-    );
+    _I2faRegisterKeyRp(id: json['id'] as String?);
 
 Map<String, dynamic> _$I2faRegisterKeyRpToJson(_I2faRegisterKeyRp instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+    <String, dynamic>{'id': instance.id};

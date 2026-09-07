@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'roles_notes.freezed.dart';
 part 'roles_notes.g.dart';
@@ -15,5 +14,6 @@ abstract class RolesNotes with _$RolesNotes {
     int? untilDate,
   }) = _RolesNotes;
 
-  factory RolesNotes.fromJson(Map<String, Object?> json) => _$RolesNotesFromJson(json);
+  factory RolesNotes.fromJson(Map<String, Object?> json) =>
+      _$RolesNotesFromJson(json);
 }

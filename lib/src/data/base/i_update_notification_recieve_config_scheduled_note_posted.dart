@@ -5,11 +5,18 @@ part 'i_update_notification_recieve_config_scheduled_note_posted.freezed.dart';
 part 'i_update_notification_recieve_config_scheduled_note_posted.g.dart';
 
 @freezed
-abstract class IUpdateNotificationRecieveConfigScheduledNotePosted with _$IUpdateNotificationRecieveConfigScheduledNotePosted {
+abstract class IUpdateNotificationRecieveConfigScheduledNotePosted
+    with _$IUpdateNotificationRecieveConfigScheduledNotePosted {
   const factory IUpdateNotificationRecieveConfigScheduledNotePosted({
-    @JsonKey(unknownEnumValue: IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown) required IUpdateNotificationRecieveConfigScheduledNotePostedType type,
+    @JsonKey(
+      unknownEnumValue:
+          IUpdateNotificationRecieveConfigScheduledNotePostedType.unknown,
+    )
+    required IUpdateNotificationRecieveConfigScheduledNotePostedType type,
     required String userListId,
   }) = _IUpdateNotificationRecieveConfigScheduledNotePosted;
 
-  factory IUpdateNotificationRecieveConfigScheduledNotePosted.fromJson(Map<String, Object?> json) => _$IUpdateNotificationRecieveConfigScheduledNotePostedFromJson(json);
+  factory IUpdateNotificationRecieveConfigScheduledNotePosted.fromJson(
+    Map<String, Object?> json,
+  ) => _$IUpdateNotificationRecieveConfigScheduledNotePostedFromJson(json);
 }

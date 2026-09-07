@@ -13,7 +13,4 @@ _UsersListsPull _$UsersListsPullFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersListsPullToJson(_UsersListsPull instance) =>
-    <String, dynamic>{
-      'listId': instance.listId,
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'listId': instance.listId, 'userId': instance.userId};

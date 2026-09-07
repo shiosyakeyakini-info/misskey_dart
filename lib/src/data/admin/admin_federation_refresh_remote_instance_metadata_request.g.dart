@@ -7,15 +7,13 @@ part of 'admin_federation_refresh_remote_instance_metadata_request.dart';
 // **************************************************************************
 
 _AdminFederationRefreshRemoteInstanceMetadataRequest
-    _$AdminFederationRefreshRemoteInstanceMetadataRequestFromJson(
-            Map<String, dynamic> json) =>
-        _AdminFederationRefreshRemoteInstanceMetadataRequest(
-          host: json['host'] as String?,
-        );
+_$AdminFederationRefreshRemoteInstanceMetadataRequestFromJson(
+  Map<String, dynamic> json,
+) => _AdminFederationRefreshRemoteInstanceMetadataRequest(
+  host: json['host'] as String?,
+);
 
 Map<String, dynamic>
-    _$AdminFederationRefreshRemoteInstanceMetadataRequestToJson(
-            _AdminFederationRefreshRemoteInstanceMetadataRequest instance) =>
-        <String, dynamic>{
-          'host': instance.host,
-        };
+_$AdminFederationRefreshRemoteInstanceMetadataRequestToJson(
+  _AdminFederationRefreshRemoteInstanceMetadataRequest instance,
+) => <String, dynamic>{'host': instance.host};

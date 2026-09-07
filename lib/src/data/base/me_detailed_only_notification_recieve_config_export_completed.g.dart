@@ -7,27 +7,27 @@ part of 'me_detailed_only_notification_recieve_config_export_completed.dart';
 // **************************************************************************
 
 _MeDetailedOnlyNotificationRecieveConfigExportCompleted
-    _$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(
-            Map<String, dynamic> json) =>
-        _MeDetailedOnlyNotificationRecieveConfigExportCompleted(
-          type: $enumDecode(
-              _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  MeDetailedOnlyNotificationRecieveConfigExportCompletedType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(
+  Map<String, dynamic> json,
+) => _MeDetailedOnlyNotificationRecieveConfigExportCompleted(
+  type: $enumDecode(
+    _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap,
+    json['type'],
+    unknownValue:
+        MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic>
-    _$MeDetailedOnlyNotificationRecieveConfigExportCompletedToJson(
-            _MeDetailedOnlyNotificationRecieveConfigExportCompleted instance) =>
-        <String, dynamic>{
-          'type':
-              _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap[
-                  instance.type]!,
-          'userListId': instance.userListId,
-        };
+_$MeDetailedOnlyNotificationRecieveConfigExportCompletedToJson(
+  _MeDetailedOnlyNotificationRecieveConfigExportCompleted instance,
+) => <String, dynamic>{
+  'type':
+      _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap = {
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.all: 'all',
@@ -38,7 +38,8 @@ const _$MeDetailedOnlyNotificationRecieveConfigExportCompletedTypeEnumMap = {
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.mutualFollow:
       'mutualFollow',
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType
-      .followingOrFollower: 'followingOrFollower',
+          .followingOrFollower:
+      'followingOrFollower',
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.never: 'never',
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.list: 'list',
   MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown: 'unknown',

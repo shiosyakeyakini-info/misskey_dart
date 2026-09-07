@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_roles_assign_request.freezed.dart';
 part 'admin_roles_assign_request.g.dart';
@@ -12,5 +11,6 @@ abstract class AdminRolesAssignRequest with _$AdminRolesAssignRequest {
     int? expiresAt,
   }) = _AdminRolesAssignRequest;
 
-  factory AdminRolesAssignRequest.fromJson(Map<String, Object?> json) => _$AdminRolesAssignRequestFromJson(json);
+  factory AdminRolesAssignRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminRolesAssignRequestFromJson(json);
 }

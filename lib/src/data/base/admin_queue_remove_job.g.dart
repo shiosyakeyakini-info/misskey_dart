@@ -8,17 +8,20 @@ part of 'admin_queue_remove_job.dart';
 
 _AdminQueueRemoveJob _$AdminQueueRemoveJobFromJson(Map<String, dynamic> json) =>
     _AdminQueueRemoveJob(
-      queue: $enumDecode(_$AdminQueueRemoveJobQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueRemoveJobQueue.unknown),
+      queue: $enumDecode(
+        _$AdminQueueRemoveJobQueueEnumMap,
+        json['queue'],
+        unknownValue: AdminQueueRemoveJobQueue.unknown,
+      ),
       jobId: json['jobId'] as String,
     );
 
 Map<String, dynamic> _$AdminQueueRemoveJobToJson(
-        _AdminQueueRemoveJob instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueueRemoveJobQueueEnumMap[instance.queue]!,
-      'jobId': instance.jobId,
-    };
+  _AdminQueueRemoveJob instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueueRemoveJobQueueEnumMap[instance.queue]!,
+  'jobId': instance.jobId,
+};
 
 const _$AdminQueueRemoveJobQueueEnumMap = {
   AdminQueueRemoveJobQueue.system: 'system',

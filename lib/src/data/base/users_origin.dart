@@ -1,6 +1,1 @@
-enum UsersOrigin {
-  combined,
-  local,
-  remote,
-  unknown,
-}
+enum UsersOrigin { combined, local, remote, unknown }

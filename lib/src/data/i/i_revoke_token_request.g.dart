@@ -13,8 +13,5 @@ _IRevokeTokenRequest _$IRevokeTokenRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IRevokeTokenRequestToJson(
-        _IRevokeTokenRequest instance) =>
-    <String, dynamic>{
-      'tokenId': instance.tokenId,
-      'token': instance.token,
-    };
+  _IRevokeTokenRequest instance,
+) => <String, dynamic>{'tokenId': instance.tokenId, 'token': instance.token};

@@ -36,5 +36,6 @@ abstract class AdminDriveShowFileResponse with _$AdminDriveShowFileResponse {
     Map<String, dynamic>? requestHeaders,
   }) = _AdminDriveShowFileResponse;
 
-  factory AdminDriveShowFileResponse.fromJson(Map<String, Object?> json) => _$AdminDriveShowFileResponseFromJson(json);
+  factory AdminDriveShowFileResponse.fromJson(Map<String, Object?> json) =>
+      _$AdminDriveShowFileResponseFromJson(json);
 }

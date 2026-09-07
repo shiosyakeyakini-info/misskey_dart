@@ -1,5 +1,1 @@
-enum MetaClientOptionsEntrancePageStyle {
-  classic,
-  simple,
-  unknown,
-}
+enum MetaClientOptionsEntrancePageStyle { classic, simple, unknown }

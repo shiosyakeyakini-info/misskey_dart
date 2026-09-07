@@ -26,11 +26,11 @@ _ChartsInstanceDrive _$ChartsInstanceDriveFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChartsInstanceDriveToJson(
-        _ChartsInstanceDrive instance) =>
-    <String, dynamic>{
-      'totalFiles': instance.totalFiles,
-      'incFiles': instance.incFiles,
-      'decFiles': instance.decFiles,
-      'incUsage': instance.incUsage,
-      'decUsage': instance.decUsage,
-    };
+  _ChartsInstanceDrive instance,
+) => <String, dynamic>{
+  'totalFiles': instance.totalFiles,
+  'incFiles': instance.incFiles,
+  'decFiles': instance.decFiles,
+  'incUsage': instance.incUsage,
+  'decUsage': instance.decUsage,
+};

@@ -7,43 +7,46 @@ part of 'me_detailed_only_notification_recieve_config_receive_follow_request.dar
 // **************************************************************************
 
 _MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequest
-    _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestFromJson(
-            Map<String, dynamic> json) =>
-        _MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequest(
-          type: $enumDecode(
-              _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestFromJson(
+  Map<String, dynamic> json,
+) => _MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequest(
+  type: $enumDecode(
+    _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestTypeEnumMap,
+    json['type'],
+    unknownValue:
+        MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic>
-    _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestToJson(
-            _MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequest
-                instance) =>
-        <String, dynamic>{
-          'type':
-              _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestTypeEnumMap[
-                  instance.type]!,
-          'userListId': instance.userListId,
-        };
+_$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestToJson(
+  _MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequest instance,
+) => <String, dynamic>{
+  'type':
+      _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestTypeEnumMap =
     {
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.all: 'all',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.following:
-      'following',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.follower:
-      'follower',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.mutualFollow:
-      'mutualFollow',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType
-      .followingOrFollower: 'followingOrFollower',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.never:
-      'never',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.list: 'list',
-  MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.unknown:
-      'unknown',
-};
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.all:
+          'all',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.following:
+          'following',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.follower:
+          'follower',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType
+              .mutualFollow:
+          'mutualFollow',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType
+              .followingOrFollower:
+          'followingOrFollower',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.never:
+          'never',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.list:
+          'list',
+      MeDetailedOnlyNotificationRecieveConfigReceiveFollowRequestType.unknown:
+          'unknown',
+    };

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,177 +14,267 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersGetFollowingUsersByBirthdayBirthdayBegin {
-  int get month;
-  int get day;
 
-  /// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<
-          UsersGetFollowingUsersByBirthdayBirthdayBegin>
-      get copyWith =>
-          _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl<
-                  UsersGetFollowingUsersByBirthdayBirthdayBegin>(
-              this as UsersGetFollowingUsersByBirthdayBirthdayBegin,
-              _$identity);
+ int get month; int get day;
+/// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<UsersGetFollowingUsersByBirthdayBirthdayBegin> get copyWith => _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl<UsersGetFollowingUsersByBirthdayBirthdayBegin>(this as UsersGetFollowingUsersByBirthdayBirthdayBegin, _$identity);
 
   /// Serializes this UsersGetFollowingUsersByBirthdayBirthdayBegin to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UsersGetFollowingUsersByBirthdayBirthdayBegin &&
-            (identical(other.month, month) || other.month == month) &&
-            (identical(other.day, day) || other.day == day));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, month, day);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersGetFollowingUsersByBirthdayBirthdayBegin&&(identical(other.month, month) || other.month == month)&&(identical(other.day, day) || other.day == day));
+}
 
-  @override
-  String toString() {
-    return 'UsersGetFollowingUsersByBirthdayBirthdayBegin(month: $month, day: $day)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,month,day);
+
+@override
+String toString() {
+  return 'UsersGetFollowingUsersByBirthdayBirthdayBegin(month: $month, day: $day)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<
-    $Res> {
-  factory $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith(
-          UsersGetFollowingUsersByBirthdayBirthdayBegin value,
-          $Res Function(UsersGetFollowingUsersByBirthdayBirthdayBegin) _then) =
-      _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl;
-  @useResult
-  $Res call({int month, int day});
-}
+abstract mixin class $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<$Res>  {
+  factory $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith(UsersGetFollowingUsersByBirthdayBirthdayBegin value, $Res Function(UsersGetFollowingUsersByBirthdayBirthdayBegin) _then) = _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl;
+@useResult
+$Res call({
+ int month, int day
+});
 
+
+
+
+}
 /// @nodoc
 class _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl<$Res>
     implements $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<$Res> {
-  _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl(
-      this._self, this._then);
+  _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl(this._self, this._then);
 
   final UsersGetFollowingUsersByBirthdayBirthdayBegin _self;
   final $Res Function(UsersGetFollowingUsersByBirthdayBirthdayBegin) _then;
 
-  /// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? month = null,
-    Object? day = null,
-  }) {
-    return _then(_self.copyWith(
-      month: null == month
-          ? _self.month
-          : month // ignore: cast_nullable_to_non_nullable
-              as int,
-      day: null == day
-          ? _self.day
-          : day // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
+/// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? month = null,Object? day = null,}) {
+  return _then(_self.copyWith(
+month: null == month ? _self.month : month // ignore: cast_nullable_to_non_nullable
+as int,day: null == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UsersGetFollowingUsersByBirthdayBirthdayBegin].
+extension UsersGetFollowingUsersByBirthdayBirthdayBeginPatterns on UsersGetFollowingUsersByBirthdayBirthdayBegin {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UsersGetFollowingUsersByBirthdayBirthdayBegin value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UsersGetFollowingUsersByBirthdayBirthdayBegin() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UsersGetFollowingUsersByBirthdayBirthdayBegin value)  $default,){
+final _that = this;
+switch (_that) {
+case _UsersGetFollowingUsersByBirthdayBirthdayBegin():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UsersGetFollowingUsersByBirthdayBirthdayBegin value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UsersGetFollowingUsersByBirthdayBirthdayBegin() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int month,  int day)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UsersGetFollowingUsersByBirthdayBirthdayBegin() when $default != null:
+return $default(_that.month,_that.day);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int month,  int day)  $default,) {final _that = this;
+switch (_that) {
+case _UsersGetFollowingUsersByBirthdayBirthdayBegin():
+return $default(_that.month,_that.day);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int month,  int day)?  $default,) {final _that = this;
+switch (_that) {
+case _UsersGetFollowingUsersByBirthdayBirthdayBegin() when $default != null:
+return $default(_that.month,_that.day);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _UsersGetFollowingUsersByBirthdayBirthdayBegin
-    implements UsersGetFollowingUsersByBirthdayBirthdayBegin {
-  const _UsersGetFollowingUsersByBirthdayBirthdayBegin(
-      {required this.month, required this.day});
-  factory _UsersGetFollowingUsersByBirthdayBirthdayBegin.fromJson(
-          Map<String, dynamic> json) =>
-      _$UsersGetFollowingUsersByBirthdayBirthdayBeginFromJson(json);
 
-  @override
-  final int month;
-  @override
-  final int day;
+class _UsersGetFollowingUsersByBirthdayBirthdayBegin implements UsersGetFollowingUsersByBirthdayBirthdayBegin {
+  const _UsersGetFollowingUsersByBirthdayBirthdayBegin({required this.month, required this.day});
+  factory _UsersGetFollowingUsersByBirthdayBirthdayBegin.fromJson(Map<String, dynamic> json) => _$UsersGetFollowingUsersByBirthdayBirthdayBeginFromJson(json);
 
-  /// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<
-          _UsersGetFollowingUsersByBirthdayBirthdayBegin>
-      get copyWith =>
-          __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl<
-              _UsersGetFollowingUsersByBirthdayBirthdayBegin>(this, _$identity);
+@override final  int month;
+@override final  int day;
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$UsersGetFollowingUsersByBirthdayBirthdayBeginToJson(
-      this,
-    );
-  }
+/// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<_UsersGetFollowingUsersByBirthdayBirthdayBegin> get copyWith => __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl<_UsersGetFollowingUsersByBirthdayBirthdayBegin>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _UsersGetFollowingUsersByBirthdayBirthdayBegin &&
-            (identical(other.month, month) || other.month == month) &&
-            (identical(other.day, day) || other.day == day));
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$UsersGetFollowingUsersByBirthdayBirthdayBeginToJson(this, );
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, month, day);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UsersGetFollowingUsersByBirthdayBirthdayBegin&&(identical(other.month, month) || other.month == month)&&(identical(other.day, day) || other.day == day));
+}
 
-  @override
-  String toString() {
-    return 'UsersGetFollowingUsersByBirthdayBirthdayBegin(month: $month, day: $day)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,month,day);
+
+@override
+String toString() {
+  return 'UsersGetFollowingUsersByBirthdayBirthdayBegin(month: $month, day: $day)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<
-        $Res>
-    implements $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<$Res> {
-  factory _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith(
-          _UsersGetFollowingUsersByBirthdayBirthdayBegin value,
-          $Res Function(_UsersGetFollowingUsersByBirthdayBirthdayBegin) _then) =
-      __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl;
-  @override
-  @useResult
-  $Res call({int month, int day});
-}
+abstract mixin class _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<$Res> implements $UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<$Res> {
+  factory _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith(_UsersGetFollowingUsersByBirthdayBirthdayBegin value, $Res Function(_UsersGetFollowingUsersByBirthdayBirthdayBegin) _then) = __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl;
+@override @useResult
+$Res call({
+ int month, int day
+});
 
+
+
+
+}
 /// @nodoc
 class __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl<$Res>
     implements _$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWith<$Res> {
-  __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl(
-      this._self, this._then);
+  __$UsersGetFollowingUsersByBirthdayBirthdayBeginCopyWithImpl(this._self, this._then);
 
   final _UsersGetFollowingUsersByBirthdayBirthdayBegin _self;
   final $Res Function(_UsersGetFollowingUsersByBirthdayBirthdayBegin) _then;
 
-  /// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? month = null,
-    Object? day = null,
-  }) {
-    return _then(_UsersGetFollowingUsersByBirthdayBirthdayBegin(
-      month: null == month
-          ? _self.month
-          : month // ignore: cast_nullable_to_non_nullable
-              as int,
-      day: null == day
-          ? _self.day
-          : day // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
+/// Create a copy of UsersGetFollowingUsersByBirthdayBirthdayBegin
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? month = null,Object? day = null,}) {
+  return _then(_UsersGetFollowingUsersByBirthdayBirthdayBegin(
+month: null == month ? _self.month : month // ignore: cast_nullable_to_non_nullable
+as int,day: null == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
 }
 
 // dart format on

@@ -18,7 +18,8 @@ _ChartsNotesRemote _$ChartsNotesRemoteFromJson(Map<String, dynamic> json) =>
           .map((e) => (e as num).toDouble())
           .toList(),
       diffs: ChartsNotesRemoteDiffs.fromJson(
-          json['diffs'] as Map<String, dynamic>),
+        json['diffs'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$ChartsNotesRemoteToJson(_ChartsNotesRemote instance) =>

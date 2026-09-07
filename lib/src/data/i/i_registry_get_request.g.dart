@@ -11,14 +11,14 @@ _IRegistryGetRequest _$IRegistryGetRequestFromJson(Map<String, dynamic> json) =>
       key: json['key'] as String?,
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          const [],
       domain: json['domain'] as String?,
     );
 
 Map<String, dynamic> _$IRegistryGetRequestToJson(
-        _IRegistryGetRequest instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+  _IRegistryGetRequest instance,
+) => <String, dynamic>{
+  'key': instance.key,
+  'scope': instance.scope,
+  'domain': instance.domain,
+};

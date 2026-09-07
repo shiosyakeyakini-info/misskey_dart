@@ -7,13 +7,9 @@ part of 'chat_rooms_invitations_ignore.dart';
 // **************************************************************************
 
 _ChatRoomsInvitationsIgnore _$ChatRoomsInvitationsIgnoreFromJson(
-        Map<String, dynamic> json) =>
-    _ChatRoomsInvitationsIgnore(
-      roomId: json['roomId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _ChatRoomsInvitationsIgnore(roomId: json['roomId'] as String);
 
 Map<String, dynamic> _$ChatRoomsInvitationsIgnoreToJson(
-        _ChatRoomsInvitationsIgnore instance) =>
-    <String, dynamic>{
-      'roomId': instance.roomId,
-    };
+  _ChatRoomsInvitationsIgnore instance,
+) => <String, dynamic>{'roomId': instance.roomId};

@@ -9,11 +9,14 @@ part of 'note_draft_poll.dart';
 _NoteDraftPoll _$NoteDraftPollFromJson(Map<String, dynamic> json) =>
     _NoteDraftPoll(
       expiresAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['expiresAt'], const NullableDateTimeConverter().fromJson),
+        json['expiresAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       expiredAfter: (json['expiredAfter'] as num?)?.toDouble(),
       multiple: json['multiple'] as bool,
-      choices:
-          (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
+      choices: (json['choices'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$NoteDraftPollToJson(_NoteDraftPoll instance) =>
@@ -27,5 +30,4 @@ Map<String, dynamic> _$NoteDraftPollToJson(_NoteDraftPoll instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

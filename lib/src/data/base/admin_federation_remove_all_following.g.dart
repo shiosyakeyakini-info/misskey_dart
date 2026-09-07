@@ -7,13 +7,9 @@ part of 'admin_federation_remove_all_following.dart';
 // **************************************************************************
 
 _AdminFederationRemoveAllFollowing _$AdminFederationRemoveAllFollowingFromJson(
-        Map<String, dynamic> json) =>
-    _AdminFederationRemoveAllFollowing(
-      host: json['host'] as String,
-    );
+  Map<String, dynamic> json,
+) => _AdminFederationRemoveAllFollowing(host: json['host'] as String);
 
 Map<String, dynamic> _$AdminFederationRemoveAllFollowingToJson(
-        _AdminFederationRemoveAllFollowing instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-    };
+  _AdminFederationRemoveAllFollowing instance,
+) => <String, dynamic>{'host': instance.host};

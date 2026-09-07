@@ -9,16 +9,18 @@ abstract class MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted
     with _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted {
   const factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted({
     @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
-                .unknown)
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
+              .unknown,
+    )
     required MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedType
-        type,
+    type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted;
 
   factory MeDetailedOnlyNotificationRecieveConfigScheduledNotePosted.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedFromJson(
-          json);
+    Map<String, Object?> json,
+  ) => _$MeDetailedOnlyNotificationRecieveConfigScheduledNotePostedFromJson(
+    json,
+  );
 }

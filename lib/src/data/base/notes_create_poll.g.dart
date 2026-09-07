@@ -8,8 +8,9 @@ part of 'notes_create_poll.dart';
 
 _NotesCreatePoll _$NotesCreatePollFromJson(Map<String, dynamic> json) =>
     _NotesCreatePoll(
-      choices:
-          (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
+      choices: (json['choices'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       multiple: json['multiple'] as bool? ?? false,
       expiresAt: (json['expiresAt'] as num?)?.toInt(),
       expiredAfter: (json['expiredAfter'] as num?)?.toInt(),

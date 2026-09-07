@@ -7,16 +7,19 @@ part of 'drive_files.dart';
 // **************************************************************************
 
 _DriveFiles _$DriveFilesFromJson(Map<String, dynamic> json) => _DriveFiles(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-      folderId: json['folderId'] as String? ?? null,
-      type: json['type'] as String?,
-      sort: $enumDecodeNullable(_$DriveFilesSortEnumMap, json['sort'],
-          unknownValue: DriveFilesSort.unknown),
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+  folderId: json['folderId'] as String? ?? null,
+  type: json['type'] as String?,
+  sort: $enumDecodeNullable(
+    _$DriveFilesSortEnumMap,
+    json['sort'],
+    unknownValue: DriveFilesSort.unknown,
+  ),
+);
 
 Map<String, dynamic> _$DriveFilesToJson(_DriveFiles instance) =>
     <String, dynamic>{

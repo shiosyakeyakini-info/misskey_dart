@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_pages_request.freezed.dart';
 part 'i_pages_request.g.dart';
@@ -14,5 +13,6 @@ abstract class IPagesRequest with _$IPagesRequest {
     int? untilDate,
   }) = _IPagesRequest;
 
-  factory IPagesRequest.fromJson(Map<String, Object?> json) => _$IPagesRequestFromJson(json);
+  factory IPagesRequest.fromJson(Map<String, Object?> json) =>
+      _$IPagesRequestFromJson(json);
 }

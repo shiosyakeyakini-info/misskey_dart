@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,46 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminUnsuspendUser {
-  String get userId;
 
-  /// Create a copy of AdminUnsuspendUser
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AdminUnsuspendUserCopyWith<AdminUnsuspendUser> get copyWith =>
-      _$AdminUnsuspendUserCopyWithImpl<AdminUnsuspendUser>(
-          this as AdminUnsuspendUser, _$identity);
+ String get userId;
+/// Create a copy of AdminUnsuspendUser
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AdminUnsuspendUserCopyWith<AdminUnsuspendUser> get copyWith => _$AdminUnsuspendUserCopyWithImpl<AdminUnsuspendUser>(this as AdminUnsuspendUser, _$identity);
 
   /// Serializes this AdminUnsuspendUser to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AdminUnsuspendUser &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, userId);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminUnsuspendUser&&(identical(other.userId, userId) || other.userId == userId));
+}
 
-  @override
-  String toString() {
-    return 'AdminUnsuspendUser(userId: $userId)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,userId);
+
+@override
+String toString() {
+  return 'AdminUnsuspendUser(userId: $userId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AdminUnsuspendUserCopyWith<$Res> {
-  factory $AdminUnsuspendUserCopyWith(
-          AdminUnsuspendUser value, $Res Function(AdminUnsuspendUser) _then) =
-      _$AdminUnsuspendUserCopyWithImpl;
-  @useResult
-  $Res call({String userId});
-}
+abstract mixin class $AdminUnsuspendUserCopyWith<$Res>  {
+  factory $AdminUnsuspendUserCopyWith(AdminUnsuspendUser value, $Res Function(AdminUnsuspendUser) _then) = _$AdminUnsuspendUserCopyWithImpl;
+@useResult
+$Res call({
+ String userId
+});
 
+
+
+
+}
 /// @nodoc
 class _$AdminUnsuspendUserCopyWithImpl<$Res>
     implements $AdminUnsuspendUserCopyWith<$Res> {
@@ -63,76 +63,197 @@ class _$AdminUnsuspendUserCopyWithImpl<$Res>
   final AdminUnsuspendUser _self;
   final $Res Function(AdminUnsuspendUser) _then;
 
-  /// Create a copy of AdminUnsuspendUser
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userId = null,
-  }) {
-    return _then(_self.copyWith(
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminUnsuspendUser
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? userId = null,}) {
+  return _then(_self.copyWith(
+userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AdminUnsuspendUser].
+extension AdminUnsuspendUserPatterns on AdminUnsuspendUser {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminUnsuspendUser value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AdminUnsuspendUser() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminUnsuspendUser value)  $default,){
+final _that = this;
+switch (_that) {
+case _AdminUnsuspendUser():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminUnsuspendUser value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AdminUnsuspendUser() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String userId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AdminUnsuspendUser() when $default != null:
+return $default(_that.userId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String userId)  $default,) {final _that = this;
+switch (_that) {
+case _AdminUnsuspendUser():
+return $default(_that.userId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String userId)?  $default,) {final _that = this;
+switch (_that) {
+case _AdminUnsuspendUser() when $default != null:
+return $default(_that.userId);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _AdminUnsuspendUser implements AdminUnsuspendUser {
   const _AdminUnsuspendUser({required this.userId});
-  factory _AdminUnsuspendUser.fromJson(Map<String, dynamic> json) =>
-      _$AdminUnsuspendUserFromJson(json);
+  factory _AdminUnsuspendUser.fromJson(Map<String, dynamic> json) => _$AdminUnsuspendUserFromJson(json);
 
-  @override
-  final String userId;
+@override final  String userId;
 
-  /// Create a copy of AdminUnsuspendUser
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AdminUnsuspendUserCopyWith<_AdminUnsuspendUser> get copyWith =>
-      __$AdminUnsuspendUserCopyWithImpl<_AdminUnsuspendUser>(this, _$identity);
+/// Create a copy of AdminUnsuspendUser
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AdminUnsuspendUserCopyWith<_AdminUnsuspendUser> get copyWith => __$AdminUnsuspendUserCopyWithImpl<_AdminUnsuspendUser>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AdminUnsuspendUserToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AdminUnsuspendUserToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AdminUnsuspendUser &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminUnsuspendUser&&(identical(other.userId, userId) || other.userId == userId));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, userId);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,userId);
 
-  @override
-  String toString() {
-    return 'AdminUnsuspendUser(userId: $userId)';
-  }
+@override
+String toString() {
+  return 'AdminUnsuspendUser(userId: $userId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AdminUnsuspendUserCopyWith<$Res>
-    implements $AdminUnsuspendUserCopyWith<$Res> {
-  factory _$AdminUnsuspendUserCopyWith(
-          _AdminUnsuspendUser value, $Res Function(_AdminUnsuspendUser) _then) =
-      __$AdminUnsuspendUserCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String userId});
-}
+abstract mixin class _$AdminUnsuspendUserCopyWith<$Res> implements $AdminUnsuspendUserCopyWith<$Res> {
+  factory _$AdminUnsuspendUserCopyWith(_AdminUnsuspendUser value, $Res Function(_AdminUnsuspendUser) _then) = __$AdminUnsuspendUserCopyWithImpl;
+@override @useResult
+$Res call({
+ String userId
+});
 
+
+
+
+}
 /// @nodoc
 class __$AdminUnsuspendUserCopyWithImpl<$Res>
     implements _$AdminUnsuspendUserCopyWith<$Res> {
@@ -141,20 +262,16 @@ class __$AdminUnsuspendUserCopyWithImpl<$Res>
   final _AdminUnsuspendUser _self;
   final $Res Function(_AdminUnsuspendUser) _then;
 
-  /// Create a copy of AdminUnsuspendUser
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? userId = null,
-  }) {
-    return _then(_AdminUnsuspendUser(
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminUnsuspendUser
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? userId = null,}) {
+  return _then(_AdminUnsuspendUser(
+userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

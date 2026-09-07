@@ -1,6 +1,1 @@
-enum AdminQueueQueueStatsDbMode {
-  cluster,
-  standalone,
-  sentinel,
-  unknown,
-}
+enum AdminQueueQueueStatsDbMode { cluster, standalone, sentinel, unknown }

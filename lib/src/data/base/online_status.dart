@@ -1,6 +1,1 @@
-enum OnlineStatus {
-  unknown,
-  online,
-  active,
-  offline,
-}
+enum OnlineStatus { unknown, online, active, offline }

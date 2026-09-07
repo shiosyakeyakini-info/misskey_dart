@@ -11,8 +11,10 @@ abstract class HashtagsList with _$HashtagsList {
     @Default(false) bool? attachedToUserOnly,
     @Default(false) bool? attachedToLocalUserOnly,
     @Default(false) bool? attachedToRemoteUserOnly,
-    @JsonKey(unknownEnumValue: HashtagsListSortType.unknown) required HashtagsListSortType sort,
+    @JsonKey(unknownEnumValue: HashtagsListSortType.unknown)
+    required HashtagsListSortType sort,
   }) = _HashtagsList;
 
-  factory HashtagsList.fromJson(Map<String, Object?> json) => _$HashtagsListFromJson(json);
+  factory HashtagsList.fromJson(Map<String, Object?> json) =>
+      _$HashtagsListFromJson(json);
 }

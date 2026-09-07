@@ -18,13 +18,13 @@ _NotesGlobalTimeline _$NotesGlobalTimelineFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesGlobalTimelineToJson(
-        _NotesGlobalTimeline instance) =>
-    <String, dynamic>{
-      'withFiles': instance.withFiles,
-      'withRenotes': instance.withRenotes,
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-    };
+  _NotesGlobalTimeline instance,
+) => <String, dynamic>{
+  'withFiles': instance.withFiles,
+  'withRenotes': instance.withRenotes,
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+};

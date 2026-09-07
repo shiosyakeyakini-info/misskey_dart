@@ -7,13 +7,9 @@ part of 'auth_session_generate_request.dart';
 // **************************************************************************
 
 _AuthSessionGenerateRequest _$AuthSessionGenerateRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AuthSessionGenerateRequest(
-      appSecret: json['appSecret'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AuthSessionGenerateRequest(appSecret: json['appSecret'] as String?);
 
 Map<String, dynamic> _$AuthSessionGenerateRequestToJson(
-        _AuthSessionGenerateRequest instance) =>
-    <String, dynamic>{
-      'appSecret': instance.appSecret,
-    };
+  _AuthSessionGenerateRequest instance,
+) => <String, dynamic>{'appSecret': instance.appSecret};

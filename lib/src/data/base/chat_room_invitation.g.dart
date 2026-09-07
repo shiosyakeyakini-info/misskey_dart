@@ -9,8 +9,9 @@ part of 'chat_room_invitation.dart';
 _ChatRoomInvitation _$ChatRoomInvitationFromJson(Map<String, dynamic> json) =>
     _ChatRoomInvitation(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       userId: json['userId'] as String,
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       roomId: json['roomId'] as String,

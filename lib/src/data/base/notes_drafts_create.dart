@@ -6,9 +6,9 @@ part 'notes_drafts_create.g.dart';
 
 @freezed
 abstract class NotesDraftsCreate with _$NotesDraftsCreate {
-  const factory NotesDraftsCreate({
-    required NoteDraft createdDraft,
-  }) = _NotesDraftsCreate;
+  const factory NotesDraftsCreate({required NoteDraft createdDraft}) =
+      _NotesDraftsCreate;
 
-  factory NotesDraftsCreate.fromJson(Map<String, Object?> json) => _$NotesDraftsCreateFromJson(json);
+  factory NotesDraftsCreate.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsCreateFromJson(json);
 }

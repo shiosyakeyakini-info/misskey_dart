@@ -7,11 +7,7 @@ part of 'notes_unrenote.dart';
 // **************************************************************************
 
 _NotesUnrenote _$NotesUnrenoteFromJson(Map<String, dynamic> json) =>
-    _NotesUnrenote(
-      noteId: json['noteId'] as String,
-    );
+    _NotesUnrenote(noteId: json['noteId'] as String);
 
 Map<String, dynamic> _$NotesUnrenoteToJson(_NotesUnrenote instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+    <String, dynamic>{'noteId': instance.noteId};

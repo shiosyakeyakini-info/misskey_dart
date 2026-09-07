@@ -7,12 +7,12 @@ part of 'i_page_likes.dart';
 // **************************************************************************
 
 _IPageLikes _$IPageLikesFromJson(Map<String, dynamic> json) => _IPageLikes(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$IPageLikesToJson(_IPageLikes instance) =>
     <String, dynamic>{

@@ -7,24 +7,24 @@ part of 'admin_show_user_notification_recieve_config_test.dart';
 // **************************************************************************
 
 _AdminShowUserNotificationRecieveConfigTest
-    _$AdminShowUserNotificationRecieveConfigTestFromJson(
-            Map<String, dynamic> json) =>
-        _AdminShowUserNotificationRecieveConfigTest(
-          type: $enumDecode(
-              _$AdminShowUserNotificationRecieveConfigTestTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  AdminShowUserNotificationRecieveConfigTestType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$AdminShowUserNotificationRecieveConfigTestFromJson(
+  Map<String, dynamic> json,
+) => _AdminShowUserNotificationRecieveConfigTest(
+  type: $enumDecode(
+    _$AdminShowUserNotificationRecieveConfigTestTypeEnumMap,
+    json['type'],
+    unknownValue: AdminShowUserNotificationRecieveConfigTestType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$AdminShowUserNotificationRecieveConfigTestToJson(
-        _AdminShowUserNotificationRecieveConfigTest instance) =>
-    <String, dynamic>{
-      'type': _$AdminShowUserNotificationRecieveConfigTestTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _AdminShowUserNotificationRecieveConfigTest instance,
+) => <String, dynamic>{
+  'type':
+      _$AdminShowUserNotificationRecieveConfigTestTypeEnumMap[instance.type]!,
+  'userListId': instance.userListId,
+};
 
 const _$AdminShowUserNotificationRecieveConfigTestTypeEnumMap = {
   AdminShowUserNotificationRecieveConfigTestType.all: 'all',

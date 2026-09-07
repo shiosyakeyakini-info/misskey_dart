@@ -1,5 +1,1 @@
-enum UsersState {
-  all,
-  alive,
-  unknown,
-}
+enum UsersState { all, alive, unknown }

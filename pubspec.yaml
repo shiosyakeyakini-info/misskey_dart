@@ -4,7 +4,9 @@ version: 1.0.0
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=3.6.0 <4.0.0'
+  # 3.8 未満だと null-aware elements (`?instance.foo`) が使えず、いまの
+  # json_serializable が吐くコードを解析できずに生成が落ちる。
+  sdk: '>=3.8.0 <4.0.0'
 
 dev_dependencies:
   build_runner: ^2.3.3

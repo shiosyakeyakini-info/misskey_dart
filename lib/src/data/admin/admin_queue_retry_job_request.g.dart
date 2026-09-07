@@ -7,20 +7,22 @@ part of 'admin_queue_retry_job_request.dart';
 // **************************************************************************
 
 _AdminQueueRetryJobRequest _$AdminQueueRetryJobRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueRetryJobRequest(
-      queue: $enumDecodeNullable(
-          _$AdminQueueRetryJobQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueRetryJobQueue.unknown),
-      jobId: json['jobId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueRetryJobRequest(
+  queue: $enumDecodeNullable(
+    _$AdminQueueRetryJobQueueEnumMap,
+    json['queue'],
+    unknownValue: AdminQueueRetryJobQueue.unknown,
+  ),
+  jobId: json['jobId'] as String?,
+);
 
 Map<String, dynamic> _$AdminQueueRetryJobRequestToJson(
-        _AdminQueueRetryJobRequest instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueueRetryJobQueueEnumMap[instance.queue],
-      'jobId': instance.jobId,
-    };
+  _AdminQueueRetryJobRequest instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueueRetryJobQueueEnumMap[instance.queue],
+  'jobId': instance.jobId,
+};
 
 const _$AdminQueueRetryJobQueueEnumMap = {
   AdminQueueRetryJobQueue.system: 'system',

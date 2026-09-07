@@ -14,8 +14,10 @@ _AdminRolesUpdate _$AdminRolesUpdateFromJson(Map<String, dynamic> json) =>
       color: json['color'] as String?,
       iconUrl: json['iconUrl'] as String?,
       target: $enumDecodeNullable(
-          _$AdminRolesUpdateTargetEnumMap, json['target'],
-          unknownValue: AdminRolesUpdateTarget.unknown),
+        _$AdminRolesUpdateTargetEnumMap,
+        json['target'],
+        unknownValue: AdminRolesUpdateTarget.unknown,
+      ),
       condFormula: json['condFormula'] as Map<String, dynamic>?,
       isPublic: json['isPublic'] as bool?,
       isModerator: json['isModerator'] as bool?,
@@ -29,26 +31,26 @@ _AdminRolesUpdate _$AdminRolesUpdateFromJson(Map<String, dynamic> json) =>
       policies: json['policies'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$AdminRolesUpdateToJson(_AdminRolesUpdate instance) =>
-    <String, dynamic>{
-      'roleId': instance.roleId,
-      'name': instance.name,
-      'description': instance.description,
-      'color': instance.color,
-      'iconUrl': instance.iconUrl,
-      'target': _$AdminRolesUpdateTargetEnumMap[instance.target],
-      'condFormula': instance.condFormula,
-      'isPublic': instance.isPublic,
-      'isModerator': instance.isModerator,
-      'isAdministrator': instance.isAdministrator,
-      'isExplorable': instance.isExplorable,
-      'asBadge': instance.asBadge,
-      'preserveAssignmentOnMoveAccount':
-          instance.preserveAssignmentOnMoveAccount,
-      'canEditMembersByModerator': instance.canEditMembersByModerator,
-      'displayOrder': instance.displayOrder,
-      'policies': instance.policies,
-    };
+Map<String, dynamic> _$AdminRolesUpdateToJson(
+  _AdminRolesUpdate instance,
+) => <String, dynamic>{
+  'roleId': instance.roleId,
+  'name': instance.name,
+  'description': instance.description,
+  'color': instance.color,
+  'iconUrl': instance.iconUrl,
+  'target': _$AdminRolesUpdateTargetEnumMap[instance.target],
+  'condFormula': instance.condFormula,
+  'isPublic': instance.isPublic,
+  'isModerator': instance.isModerator,
+  'isAdministrator': instance.isAdministrator,
+  'isExplorable': instance.isExplorable,
+  'asBadge': instance.asBadge,
+  'preserveAssignmentOnMoveAccount': instance.preserveAssignmentOnMoveAccount,
+  'canEditMembersByModerator': instance.canEditMembersByModerator,
+  'displayOrder': instance.displayOrder,
+  'policies': instance.policies,
+};
 
 const _$AdminRolesUpdateTargetEnumMap = {
   AdminRolesUpdateTarget.manual: 'manual',

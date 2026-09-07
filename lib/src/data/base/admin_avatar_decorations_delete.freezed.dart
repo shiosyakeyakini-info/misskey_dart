@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,48 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminAvatarDecorationsDelete {
-  String get id;
 
-  /// Create a copy of AdminAvatarDecorationsDelete
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AdminAvatarDecorationsDeleteCopyWith<AdminAvatarDecorationsDelete>
-      get copyWith => _$AdminAvatarDecorationsDeleteCopyWithImpl<
-              AdminAvatarDecorationsDelete>(
-          this as AdminAvatarDecorationsDelete, _$identity);
+ String get id;
+/// Create a copy of AdminAvatarDecorationsDelete
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AdminAvatarDecorationsDeleteCopyWith<AdminAvatarDecorationsDelete> get copyWith => _$AdminAvatarDecorationsDeleteCopyWithImpl<AdminAvatarDecorationsDelete>(this as AdminAvatarDecorationsDelete, _$identity);
 
   /// Serializes this AdminAvatarDecorationsDelete to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AdminAvatarDecorationsDelete &&
-            (identical(other.id, id) || other.id == id));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminAvatarDecorationsDelete&&(identical(other.id, id) || other.id == id));
+}
 
-  @override
-  String toString() {
-    return 'AdminAvatarDecorationsDelete(id: $id)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'AdminAvatarDecorationsDelete(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AdminAvatarDecorationsDeleteCopyWith<$Res> {
-  factory $AdminAvatarDecorationsDeleteCopyWith(
-          AdminAvatarDecorationsDelete value,
-          $Res Function(AdminAvatarDecorationsDelete) _then) =
-      _$AdminAvatarDecorationsDeleteCopyWithImpl;
-  @useResult
-  $Res call({String id});
-}
+abstract mixin class $AdminAvatarDecorationsDeleteCopyWith<$Res>  {
+  factory $AdminAvatarDecorationsDeleteCopyWith(AdminAvatarDecorationsDelete value, $Res Function(AdminAvatarDecorationsDelete) _then) = _$AdminAvatarDecorationsDeleteCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
 
+
+
+
+}
 /// @nodoc
 class _$AdminAvatarDecorationsDeleteCopyWithImpl<$Res>
     implements $AdminAvatarDecorationsDeleteCopyWith<$Res> {
@@ -65,78 +63,197 @@ class _$AdminAvatarDecorationsDeleteCopyWithImpl<$Res>
   final AdminAvatarDecorationsDelete _self;
   final $Res Function(AdminAvatarDecorationsDelete) _then;
 
-  /// Create a copy of AdminAvatarDecorationsDelete
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminAvatarDecorationsDelete
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AdminAvatarDecorationsDelete].
+extension AdminAvatarDecorationsDeletePatterns on AdminAvatarDecorationsDelete {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminAvatarDecorationsDelete value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AdminAvatarDecorationsDelete() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminAvatarDecorationsDelete value)  $default,){
+final _that = this;
+switch (_that) {
+case _AdminAvatarDecorationsDelete():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminAvatarDecorationsDelete value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AdminAvatarDecorationsDelete() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AdminAvatarDecorationsDelete() when $default != null:
+return $default(_that.id);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id)  $default,) {final _that = this;
+switch (_that) {
+case _AdminAvatarDecorationsDelete():
+return $default(_that.id);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id)?  $default,) {final _that = this;
+switch (_that) {
+case _AdminAvatarDecorationsDelete() when $default != null:
+return $default(_that.id);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _AdminAvatarDecorationsDelete implements AdminAvatarDecorationsDelete {
   const _AdminAvatarDecorationsDelete({required this.id});
-  factory _AdminAvatarDecorationsDelete.fromJson(Map<String, dynamic> json) =>
-      _$AdminAvatarDecorationsDeleteFromJson(json);
+  factory _AdminAvatarDecorationsDelete.fromJson(Map<String, dynamic> json) => _$AdminAvatarDecorationsDeleteFromJson(json);
 
-  @override
-  final String id;
+@override final  String id;
 
-  /// Create a copy of AdminAvatarDecorationsDelete
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AdminAvatarDecorationsDeleteCopyWith<_AdminAvatarDecorationsDelete>
-      get copyWith => __$AdminAvatarDecorationsDeleteCopyWithImpl<
-          _AdminAvatarDecorationsDelete>(this, _$identity);
+/// Create a copy of AdminAvatarDecorationsDelete
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AdminAvatarDecorationsDeleteCopyWith<_AdminAvatarDecorationsDelete> get copyWith => __$AdminAvatarDecorationsDeleteCopyWithImpl<_AdminAvatarDecorationsDelete>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AdminAvatarDecorationsDeleteToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AdminAvatarDecorationsDeleteToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AdminAvatarDecorationsDelete &&
-            (identical(other.id, id) || other.id == id));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminAvatarDecorationsDelete&&(identical(other.id, id) || other.id == id));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id);
 
-  @override
-  String toString() {
-    return 'AdminAvatarDecorationsDelete(id: $id)';
-  }
+@override
+String toString() {
+  return 'AdminAvatarDecorationsDelete(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AdminAvatarDecorationsDeleteCopyWith<$Res>
-    implements $AdminAvatarDecorationsDeleteCopyWith<$Res> {
-  factory _$AdminAvatarDecorationsDeleteCopyWith(
-          _AdminAvatarDecorationsDelete value,
-          $Res Function(_AdminAvatarDecorationsDelete) _then) =
-      __$AdminAvatarDecorationsDeleteCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String id});
-}
+abstract mixin class _$AdminAvatarDecorationsDeleteCopyWith<$Res> implements $AdminAvatarDecorationsDeleteCopyWith<$Res> {
+  factory _$AdminAvatarDecorationsDeleteCopyWith(_AdminAvatarDecorationsDelete value, $Res Function(_AdminAvatarDecorationsDelete) _then) = __$AdminAvatarDecorationsDeleteCopyWithImpl;
+@override @useResult
+$Res call({
+ String id
+});
 
+
+
+
+}
 /// @nodoc
 class __$AdminAvatarDecorationsDeleteCopyWithImpl<$Res>
     implements _$AdminAvatarDecorationsDeleteCopyWith<$Res> {
@@ -145,20 +262,16 @@ class __$AdminAvatarDecorationsDeleteCopyWithImpl<$Res>
   final _AdminAvatarDecorationsDelete _self;
   final $Res Function(_AdminAvatarDecorationsDelete) _then;
 
-  /// Create a copy of AdminAvatarDecorationsDelete
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_AdminAvatarDecorationsDelete(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminAvatarDecorationsDelete
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(_AdminAvatarDecorationsDelete(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

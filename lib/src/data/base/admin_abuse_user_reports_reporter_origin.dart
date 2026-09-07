@@ -1,6 +1,1 @@
-enum AdminAbuseUserReportsReporterOrigin {
-  combined,
-  local,
-  remote,
-  unknown,
-}
+enum AdminAbuseUserReportsReporterOrigin { combined, local, remote, unknown }

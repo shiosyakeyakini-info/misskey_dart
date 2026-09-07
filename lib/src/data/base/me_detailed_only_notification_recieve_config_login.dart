@@ -9,13 +9,14 @@ abstract class MeDetailedOnlyNotificationRecieveConfigLogin
     with _$MeDetailedOnlyNotificationRecieveConfigLogin {
   const factory MeDetailedOnlyNotificationRecieveConfigLogin({
     @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigLoginType.unknown)
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigLoginType.unknown,
+    )
     required MeDetailedOnlyNotificationRecieveConfigLoginType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigLogin;
 
   factory MeDetailedOnlyNotificationRecieveConfigLogin.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigLoginFromJson(json);
+    Map<String, Object?> json,
+  ) => _$MeDetailedOnlyNotificationRecieveConfigLoginFromJson(json);
 }

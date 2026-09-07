@@ -20,9 +20,9 @@ _ChartsInstanceUsers _$ChartsInstanceUsersFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChartsInstanceUsersToJson(
-        _ChartsInstanceUsers instance) =>
-    <String, dynamic>{
-      'total': instance.total,
-      'inc': instance.inc,
-      'dec': instance.dec,
-    };
+  _ChartsInstanceUsers instance,
+) => <String, dynamic>{
+  'total': instance.total,
+  'inc': instance.inc,
+  'dec': instance.dec,
+};

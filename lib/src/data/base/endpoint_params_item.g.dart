@@ -13,7 +13,4 @@ _EndpointParamsItem _$EndpointParamsItemFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$EndpointParamsItemToJson(_EndpointParamsItem instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'type': instance.type,
-    };
+    <String, dynamic>{'name': instance.name, 'type': instance.type};

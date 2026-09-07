@@ -13,8 +13,5 @@ _AdminUpdateUserNote _$AdminUpdateUserNoteFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminUpdateUserNoteToJson(
-        _AdminUpdateUserNote instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'text': instance.text,
-    };
+  _AdminUpdateUserNote instance,
+) => <String, dynamic>{'userId': instance.userId, 'text': instance.text};

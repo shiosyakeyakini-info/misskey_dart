@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_drafts_list_request.freezed.dart';
 part 'notes_drafts_list_request.g.dart';
@@ -15,5 +14,6 @@ abstract class NotesDraftsListRequest with _$NotesDraftsListRequest {
     bool? scheduled,
   }) = _NotesDraftsListRequest;
 
-  factory NotesDraftsListRequest.fromJson(Map<String, Object?> json) => _$NotesDraftsListRequestFromJson(json);
+  factory NotesDraftsListRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsListRequestFromJson(json);
 }

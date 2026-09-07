@@ -7,18 +7,21 @@ part of 'invite_code.dart';
 // **************************************************************************
 
 _InviteCode _$InviteCodeFromJson(Map<String, dynamic> json) => _InviteCode(
-      id: json['id'] as String,
-      code: json['code'] as String,
-      expiresAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['expiresAt'], const NullableDateTimeConverter().fromJson),
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      createdBy: json['createdBy'] as Map<String, dynamic>?,
-      usedBy: json['usedBy'] as Map<String, dynamic>?,
-      usedAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['usedAt'], const NullableDateTimeConverter().fromJson),
-      used: json['used'] as bool,
-    );
+  id: json['id'] as String,
+  code: json['code'] as String,
+  expiresAt: _$JsonConverterFromJson<String, DateTime?>(
+    json['expiresAt'],
+    const NullableDateTimeConverter().fromJson,
+  ),
+  createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
+  createdBy: json['createdBy'] as Map<String, dynamic>?,
+  usedBy: json['usedBy'] as Map<String, dynamic>?,
+  usedAt: _$JsonConverterFromJson<String, DateTime?>(
+    json['usedAt'],
+    const NullableDateTimeConverter().fromJson,
+  ),
+  used: json['used'] as bool,
+);
 
 Map<String, dynamic> _$InviteCodeToJson(_InviteCode instance) =>
     <String, dynamic>{
@@ -35,5 +38,4 @@ Map<String, dynamic> _$InviteCodeToJson(_InviteCode instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

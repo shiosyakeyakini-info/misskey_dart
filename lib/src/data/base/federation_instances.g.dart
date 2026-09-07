@@ -18,25 +18,28 @@ _FederationInstances _$FederationInstancesFromJson(Map<String, dynamic> json) =>
       publishing: json['publishing'] as bool?,
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$FederationInstancesSortEnumMap, json['sort'],
-          unknownValue: FederationInstancesSort.unknown),
+      sort: $enumDecodeNullable(
+        _$FederationInstancesSortEnumMap,
+        json['sort'],
+        unknownValue: FederationInstancesSort.unknown,
+      ),
     );
 
 Map<String, dynamic> _$FederationInstancesToJson(
-        _FederationInstances instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-      'blocked': instance.blocked,
-      'notResponding': instance.notResponding,
-      'suspended': instance.suspended,
-      'silenced': instance.silenced,
-      'federating': instance.federating,
-      'subscribing': instance.subscribing,
-      'publishing': instance.publishing,
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'sort': _$FederationInstancesSortEnumMap[instance.sort],
-    };
+  _FederationInstances instance,
+) => <String, dynamic>{
+  'host': instance.host,
+  'blocked': instance.blocked,
+  'notResponding': instance.notResponding,
+  'suspended': instance.suspended,
+  'silenced': instance.silenced,
+  'federating': instance.federating,
+  'subscribing': instance.subscribing,
+  'publishing': instance.publishing,
+  'limit': instance.limit,
+  'offset': instance.offset,
+  'sort': _$FederationInstancesSortEnumMap[instance.sort],
+};
 
 const _$FederationInstancesSortEnumMap = {
   FederationInstancesSort.plusPubSub: '+pubSub',

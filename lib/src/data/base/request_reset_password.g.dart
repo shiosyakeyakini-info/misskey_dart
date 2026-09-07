@@ -7,15 +7,12 @@ part of 'request_reset_password.dart';
 // **************************************************************************
 
 _RequestResetPassword _$RequestResetPasswordFromJson(
-        Map<String, dynamic> json) =>
-    _RequestResetPassword(
-      username: json['username'] as String,
-      email: json['email'] as String,
-    );
+  Map<String, dynamic> json,
+) => _RequestResetPassword(
+  username: json['username'] as String,
+  email: json['email'] as String,
+);
 
 Map<String, dynamic> _$RequestResetPasswordToJson(
-        _RequestResetPassword instance) =>
-    <String, dynamic>{
-      'username': instance.username,
-      'email': instance.email,
-    };
+  _RequestResetPassword instance,
+) => <String, dynamic>{'username': instance.username, 'email': instance.email};

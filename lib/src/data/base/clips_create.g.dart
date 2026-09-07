@@ -7,10 +7,10 @@ part of 'clips_create.dart';
 // **************************************************************************
 
 _ClipsCreate _$ClipsCreateFromJson(Map<String, dynamic> json) => _ClipsCreate(
-      name: json['name'] as String,
-      isPublic: json['isPublic'] as bool? ?? false,
-      description: json['description'] as String?,
-    );
+  name: json['name'] as String,
+  isPublic: json['isPublic'] as bool? ?? false,
+  description: json['description'] as String?,
+);
 
 Map<String, dynamic> _$ClipsCreateToJson(_ClipsCreate instance) =>
     <String, dynamic>{

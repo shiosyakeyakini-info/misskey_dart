@@ -7,15 +7,15 @@ part of 'admin_promo_create_request.dart';
 // **************************************************************************
 
 _AdminPromoCreateRequest _$AdminPromoCreateRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminPromoCreateRequest(
-      noteId: json['noteId'] as String?,
-      expiresAt: (json['expiresAt'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => _AdminPromoCreateRequest(
+  noteId: json['noteId'] as String?,
+  expiresAt: (json['expiresAt'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$AdminPromoCreateRequestToJson(
-        _AdminPromoCreateRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-      'expiresAt': instance.expiresAt,
-    };
+  _AdminPromoCreateRequest instance,
+) => <String, dynamic>{
+  'noteId': instance.noteId,
+  'expiresAt': instance.expiresAt,
+};

@@ -7,17 +7,18 @@ part of 'i_claim_achievement_request.dart';
 // **************************************************************************
 
 _IClaimAchievementRequest _$IClaimAchievementRequestFromJson(
-        Map<String, dynamic> json) =>
-    _IClaimAchievementRequest(
-      name: $enumDecodeNullable(_$IClaimAchievementNameEnumMap, json['name'],
-          unknownValue: IClaimAchievementName.unknown),
-    );
+  Map<String, dynamic> json,
+) => _IClaimAchievementRequest(
+  name: $enumDecodeNullable(
+    _$IClaimAchievementNameEnumMap,
+    json['name'],
+    unknownValue: IClaimAchievementName.unknown,
+  ),
+);
 
 Map<String, dynamic> _$IClaimAchievementRequestToJson(
-        _IClaimAchievementRequest instance) =>
-    <String, dynamic>{
-      'name': _$IClaimAchievementNameEnumMap[instance.name],
-    };
+  _IClaimAchievementRequest instance,
+) => <String, dynamic>{'name': _$IClaimAchievementNameEnumMap[instance.name]};
 
 const _$IClaimAchievementNameEnumMap = {
   IClaimAchievementName.notes1: 'notes1',

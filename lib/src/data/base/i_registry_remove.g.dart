@@ -11,7 +11,7 @@ _IRegistryRemove _$IRegistryRemoveFromJson(Map<String, dynamic> json) =>
       key: json['key'] as String,
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          const [],
       domain: json['domain'] as String?,
     );
 

@@ -8,8 +8,11 @@ part of 'charts_notes_request.dart';
 
 _ChartsNotesRequest _$ChartsNotesRequestFromJson(Map<String, dynamic> json) =>
     _ChartsNotesRequest(
-      span: $enumDecodeNullable(_$ChartsNotesSpanEnumMap, json['span'],
-          unknownValue: ChartsNotesSpan.unknown),
+      span: $enumDecodeNullable(
+        _$ChartsNotesSpanEnumMap,
+        json['span'],
+        unknownValue: ChartsNotesSpan.unknown,
+      ),
       limit: (json['limit'] as num?)?.toInt() ?? 30,
       offset: (json['offset'] as num?)?.toInt() ?? null,
     );

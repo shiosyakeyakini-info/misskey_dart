@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,50 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$HashtagsSearch {
-  int? get limit;
-  String get query;
-  int? get offset;
 
-  /// Create a copy of HashtagsSearch
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $HashtagsSearchCopyWith<HashtagsSearch> get copyWith =>
-      _$HashtagsSearchCopyWithImpl<HashtagsSearch>(
-          this as HashtagsSearch, _$identity);
+ int? get limit; String get query; int? get offset;
+/// Create a copy of HashtagsSearch
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$HashtagsSearchCopyWith<HashtagsSearch> get copyWith => _$HashtagsSearchCopyWithImpl<HashtagsSearch>(this as HashtagsSearch, _$identity);
 
   /// Serializes this HashtagsSearch to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is HashtagsSearch &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.query, query) || other.query == query) &&
-            (identical(other.offset, offset) || other.offset == offset));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, query, offset);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HashtagsSearch&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.query, query) || other.query == query)&&(identical(other.offset, offset) || other.offset == offset));
+}
 
-  @override
-  String toString() {
-    return 'HashtagsSearch(limit: $limit, query: $query, offset: $offset)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,query,offset);
+
+@override
+String toString() {
+  return 'HashtagsSearch(limit: $limit, query: $query, offset: $offset)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $HashtagsSearchCopyWith<$Res> {
-  factory $HashtagsSearchCopyWith(
-          HashtagsSearch value, $Res Function(HashtagsSearch) _then) =
-      _$HashtagsSearchCopyWithImpl;
-  @useResult
-  $Res call({int? limit, String query, int? offset});
-}
+abstract mixin class $HashtagsSearchCopyWith<$Res>  {
+  factory $HashtagsSearchCopyWith(HashtagsSearch value, $Res Function(HashtagsSearch) _then) = _$HashtagsSearchCopyWithImpl;
+@useResult
+$Res call({
+ int? limit, String query, int? offset
+});
 
+
+
+
+}
 /// @nodoc
 class _$HashtagsSearchCopyWithImpl<$Res>
     implements $HashtagsSearchCopyWith<$Res> {
@@ -67,95 +63,201 @@ class _$HashtagsSearchCopyWithImpl<$Res>
   final HashtagsSearch _self;
   final $Res Function(HashtagsSearch) _then;
 
-  /// Create a copy of HashtagsSearch
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? query = null,
-    Object? offset = freezed,
-  }) {
-    return _then(_self.copyWith(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      query: null == query
-          ? _self.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Create a copy of HashtagsSearch
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? limit = freezed,Object? query = null,Object? offset = freezed,}) {
+  return _then(_self.copyWith(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
+as String,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [HashtagsSearch].
+extension HashtagsSearchPatterns on HashtagsSearch {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _HashtagsSearch value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _HashtagsSearch() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _HashtagsSearch value)  $default,){
+final _that = this;
+switch (_that) {
+case _HashtagsSearch():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _HashtagsSearch value)?  $default,){
+final _that = this;
+switch (_that) {
+case _HashtagsSearch() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  String query,  int? offset)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _HashtagsSearch() when $default != null:
+return $default(_that.limit,_that.query,_that.offset);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  String query,  int? offset)  $default,) {final _that = this;
+switch (_that) {
+case _HashtagsSearch():
+return $default(_that.limit,_that.query,_that.offset);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  String query,  int? offset)?  $default,) {final _that = this;
+switch (_that) {
+case _HashtagsSearch() when $default != null:
+return $default(_that.limit,_that.query,_that.offset);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _HashtagsSearch implements HashtagsSearch {
-  const _HashtagsSearch(
-      {this.limit = 10, required this.query, this.offset = 0});
-  factory _HashtagsSearch.fromJson(Map<String, dynamic> json) =>
-      _$HashtagsSearchFromJson(json);
+  const _HashtagsSearch({this.limit = 10, required this.query, this.offset = 0});
+  factory _HashtagsSearch.fromJson(Map<String, dynamic> json) => _$HashtagsSearchFromJson(json);
 
-  @override
-  @JsonKey()
-  final int? limit;
-  @override
-  final String query;
-  @override
-  @JsonKey()
-  final int? offset;
+@override@JsonKey() final  int? limit;
+@override final  String query;
+@override@JsonKey() final  int? offset;
 
-  /// Create a copy of HashtagsSearch
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$HashtagsSearchCopyWith<_HashtagsSearch> get copyWith =>
-      __$HashtagsSearchCopyWithImpl<_HashtagsSearch>(this, _$identity);
+/// Create a copy of HashtagsSearch
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$HashtagsSearchCopyWith<_HashtagsSearch> get copyWith => __$HashtagsSearchCopyWithImpl<_HashtagsSearch>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$HashtagsSearchToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$HashtagsSearchToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _HashtagsSearch &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.query, query) || other.query == query) &&
-            (identical(other.offset, offset) || other.offset == offset));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HashtagsSearch&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.query, query) || other.query == query)&&(identical(other.offset, offset) || other.offset == offset));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, query, offset);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,query,offset);
 
-  @override
-  String toString() {
-    return 'HashtagsSearch(limit: $limit, query: $query, offset: $offset)';
-  }
+@override
+String toString() {
+  return 'HashtagsSearch(limit: $limit, query: $query, offset: $offset)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$HashtagsSearchCopyWith<$Res>
-    implements $HashtagsSearchCopyWith<$Res> {
-  factory _$HashtagsSearchCopyWith(
-          _HashtagsSearch value, $Res Function(_HashtagsSearch) _then) =
-      __$HashtagsSearchCopyWithImpl;
-  @override
-  @useResult
-  $Res call({int? limit, String query, int? offset});
-}
+abstract mixin class _$HashtagsSearchCopyWith<$Res> implements $HashtagsSearchCopyWith<$Res> {
+  factory _$HashtagsSearchCopyWith(_HashtagsSearch value, $Res Function(_HashtagsSearch) _then) = __$HashtagsSearchCopyWithImpl;
+@override @useResult
+$Res call({
+ int? limit, String query, int? offset
+});
 
+
+
+
+}
 /// @nodoc
 class __$HashtagsSearchCopyWithImpl<$Res>
     implements _$HashtagsSearchCopyWith<$Res> {
@@ -164,30 +266,18 @@ class __$HashtagsSearchCopyWithImpl<$Res>
   final _HashtagsSearch _self;
   final $Res Function(_HashtagsSearch) _then;
 
-  /// Create a copy of HashtagsSearch
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? query = null,
-    Object? offset = freezed,
-  }) {
-    return _then(_HashtagsSearch(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      query: null == query
-          ? _self.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Create a copy of HashtagsSearch
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? limit = freezed,Object? query = null,Object? offset = freezed,}) {
+  return _then(_HashtagsSearch(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
+as String,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
 }
 
 // dart format on

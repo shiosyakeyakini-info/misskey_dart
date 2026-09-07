@@ -14,7 +14,8 @@ _FetchRssResponse _$FetchRssResponseFromJson(Map<String, dynamic> json) =>
       paginationLinks: json['paginationLinks'] == null
           ? null
           : FetchRssPaginationLinks.fromJson(
-              json['paginationLinks'] as Map<String, dynamic>),
+              json['paginationLinks'] as Map<String, dynamic>,
+            ),
       link: json['link'] as String?,
       title: json['title'] as String?,
       items: (json['items'] as List<dynamic>)

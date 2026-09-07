@@ -7,11 +7,7 @@ part of 'reversi_show_game.dart';
 // **************************************************************************
 
 _ReversiShowGame _$ReversiShowGameFromJson(Map<String, dynamic> json) =>
-    _ReversiShowGame(
-      gameId: json['gameId'] as String,
-    );
+    _ReversiShowGame(gameId: json['gameId'] as String);
 
 Map<String, dynamic> _$ReversiShowGameToJson(_ReversiShowGame instance) =>
-    <String, dynamic>{
-      'gameId': instance.gameId,
-    };
+    <String, dynamic>{'gameId': instance.gameId};

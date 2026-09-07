@@ -7,11 +7,7 @@ part of 'i_revoke_token.dart';
 // **************************************************************************
 
 _IRevokeToken _$IRevokeTokenFromJson(Map<String, dynamic> json) =>
-    _IRevokeToken(
-      token: json['token'] as String?,
-    );
+    _IRevokeToken(token: json['token'] as String?);
 
 Map<String, dynamic> _$IRevokeTokenToJson(_IRevokeToken instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-    };
+    <String, dynamic>{'token': instance.token};

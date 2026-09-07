@@ -8,8 +8,9 @@ part of 'retention_item.dart';
 
 _RetentionItem _$RetentionItemFromJson(Map<String, dynamic> json) =>
     _RetentionItem(
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       users: (json['users'] as num).toDouble(),
       data: json['data'] as Map<String, dynamic>,
     );

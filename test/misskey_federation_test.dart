@@ -8,13 +8,15 @@ import 'util/misskey_dart_test_util.dart';
 
 void main() async {
   test("show-instance", () async {
-    await userClient.federation
-        .showInstance(FederationShowInstanceRequest(host: "host"));
+    await userClient.federation.showInstance(
+      FederationShowInstanceRequest(host: "host"),
+    );
   });
 
   test("users", () async {
-    final response =
-        await userClient.federation.users(FederationUsersRequest(host: "host"));
+    final response = await userClient.federation.users(
+      FederationUsersRequest(host: "host"),
+    );
     response.toList();
   });
 }

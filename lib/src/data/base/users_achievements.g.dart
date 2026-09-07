@@ -7,11 +7,7 @@ part of 'users_achievements.dart';
 // **************************************************************************
 
 _UsersAchievements _$UsersAchievementsFromJson(Map<String, dynamic> json) =>
-    _UsersAchievements(
-      userId: json['userId'] as String,
-    );
+    _UsersAchievements(userId: json['userId'] as String);
 
 Map<String, dynamic> _$UsersAchievementsToJson(_UsersAchievements instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

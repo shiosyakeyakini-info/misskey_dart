@@ -1,6 +1,1 @@
-enum AdminAnnouncementsUpdateDisplay {
-  normal,
-  banner,
-  dialog,
-  unknown,
-}
+enum AdminAnnouncementsUpdateDisplay { normal, banner, dialog, unknown }

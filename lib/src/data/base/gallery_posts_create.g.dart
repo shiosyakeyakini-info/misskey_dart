@@ -10,8 +10,9 @@ _GalleryPostsCreate _$GalleryPostsCreateFromJson(Map<String, dynamic> json) =>
     _GalleryPostsCreate(
       title: json['title'] as String,
       description: json['description'] as String?,
-      fileIds:
-          (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
+      fileIds: (json['fileIds'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       isSensitive: json['isSensitive'] as bool? ?? false,
     );
 

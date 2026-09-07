@@ -18,11 +18,11 @@ _IAuthorizedAppsItem _$IAuthorizedAppsItemFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IAuthorizedAppsItemToJson(
-        _IAuthorizedAppsItem instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'callbackUrl': instance.callbackUrl,
-      'permission': instance.permission,
-      'isAuthorized': instance.isAuthorized,
-    };
+  _IAuthorizedAppsItem instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'callbackUrl': instance.callbackUrl,
+  'permission': instance.permission,
+  'isAuthorized': instance.isAuthorized,
+};

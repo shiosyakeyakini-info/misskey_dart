@@ -16,8 +16,11 @@ _PagesUpdateRequest _$PagesUpdateRequestFromJson(Map<String, dynamic> json) =>
       variables: json['variables'] as List<dynamic>?,
       script: json['script'] as String?,
       eyeCatchingImageId: json['eyeCatchingImageId'] as String?,
-      font: $enumDecodeNullable(_$PagesUpdateFontEnumMap, json['font'],
-          unknownValue: PagesUpdateFont.unknown),
+      font: $enumDecodeNullable(
+        _$PagesUpdateFontEnumMap,
+        json['font'],
+        unknownValue: PagesUpdateFont.unknown,
+      ),
       alignCenter: json['alignCenter'] as bool?,
       hideTitleWhenPinned: json['hideTitleWhenPinned'] as bool?,
     );

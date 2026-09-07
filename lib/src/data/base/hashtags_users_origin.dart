@@ -1,6 +1,1 @@
-enum HashtagsUsersOrigin {
-  combined,
-  local,
-  remote,
-  unknown,
-}
+enum HashtagsUsersOrigin { combined, local, remote, unknown }

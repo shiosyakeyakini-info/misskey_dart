@@ -7,13 +7,9 @@ part of 'admin_show_user_request.dart';
 // **************************************************************************
 
 _AdminShowUserRequest _$AdminShowUserRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminShowUserRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminShowUserRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$AdminShowUserRequestToJson(
-        _AdminShowUserRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _AdminShowUserRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

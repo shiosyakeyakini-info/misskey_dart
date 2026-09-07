@@ -7,15 +7,14 @@ part of 'drive_folder.dart';
 // **************************************************************************
 
 _DriveFolder _$DriveFolderFromJson(Map<String, dynamic> json) => _DriveFolder(
-      id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      name: json['name'] as String,
-      parentId: json['parentId'] as String?,
-      foldersCount: (json['foldersCount'] as num?)?.toDouble(),
-      filesCount: (json['filesCount'] as num?)?.toDouble(),
-      parent: json['parent'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
+  name: json['name'] as String,
+  parentId: json['parentId'] as String?,
+  foldersCount: (json['foldersCount'] as num?)?.toDouble(),
+  filesCount: (json['filesCount'] as num?)?.toDouble(),
+  parent: json['parent'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$DriveFolderToJson(_DriveFolder instance) =>
     <String, dynamic>{

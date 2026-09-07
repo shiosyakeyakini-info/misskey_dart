@@ -7,14 +7,12 @@ part of 'admin_abuse_report_notification_recipient_show_request.dart';
 // **************************************************************************
 
 _AdminAbuseReportNotificationRecipientShowRequest
-    _$AdminAbuseReportNotificationRecipientShowRequestFromJson(
-            Map<String, dynamic> json) =>
-        _AdminAbuseReportNotificationRecipientShowRequest(
-          id: json['id'] as String?,
-        );
+_$AdminAbuseReportNotificationRecipientShowRequestFromJson(
+  Map<String, dynamic> json,
+) => _AdminAbuseReportNotificationRecipientShowRequest(
+  id: json['id'] as String?,
+);
 
 Map<String, dynamic> _$AdminAbuseReportNotificationRecipientShowRequestToJson(
-        _AdminAbuseReportNotificationRecipientShowRequest instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+  _AdminAbuseReportNotificationRecipientShowRequest instance,
+) => <String, dynamic>{'id': instance.id};

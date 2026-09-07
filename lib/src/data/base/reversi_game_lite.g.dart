@@ -9,12 +9,17 @@ part of 'reversi_game_lite.dart';
 _ReversiGameLite _$ReversiGameLiteFromJson(Map<String, dynamic> json) =>
     _ReversiGameLite(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       startedAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['startedAt'], const NullableDateTimeConverter().fromJson),
+        json['startedAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       endedAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['endedAt'], const NullableDateTimeConverter().fromJson),
+        json['endedAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       isStarted: json['isStarted'] as bool,
       isEnded: json['isEnded'] as bool,
       user1Id: json['user1Id'] as String,
@@ -62,5 +67,4 @@ Map<String, dynamic> _$ReversiGameLiteToJson(_ReversiGameLite instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

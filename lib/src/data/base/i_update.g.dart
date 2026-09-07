@@ -7,107 +7,117 @@ part of 'i_update.dart';
 // **************************************************************************
 
 _IUpdate _$IUpdateFromJson(Map<String, dynamic> json) => _IUpdate(
-      name: json['name'] as String?,
-      description: json['description'] as String?,
-      followedMessage: json['followedMessage'] as String?,
-      location: json['location'] as String?,
-      birthday: json['birthday'] as String?,
-      lang: $enumDecodeNullable(_$IUpdateLangEnumMap, json['lang'],
-          unknownValue: IUpdateLang.unknown),
-      avatarId: json['avatarId'] as String?,
-      avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
-          ?.map((e) =>
-              IUpdateAvatarDecorationsItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      bannerId: json['bannerId'] as String?,
-      fields: (json['fields'] as List<dynamic>?)
-          ?.map((e) => IUpdateFieldsItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      isLocked: json['isLocked'] as bool?,
-      isExplorable: json['isExplorable'] as bool?,
-      hideOnlineStatus: json['hideOnlineStatus'] as bool?,
-      publicReactions: json['publicReactions'] as bool?,
-      carefulBot: json['carefulBot'] as bool?,
-      autoAcceptFollowed: json['autoAcceptFollowed'] as bool?,
-      noCrawle: json['noCrawle'] as bool?,
-      preventAiLearning: json['preventAiLearning'] as bool?,
-      requireSigninToViewContents: json['requireSigninToViewContents'] as bool?,
-      makeNotesFollowersOnlyBefore:
-          (json['makeNotesFollowersOnlyBefore'] as num?)?.toInt(),
-      makeNotesHiddenBefore: (json['makeNotesHiddenBefore'] as num?)?.toInt(),
-      isBot: json['isBot'] as bool?,
-      isCat: json['isCat'] as bool?,
-      injectFeaturedNote: json['injectFeaturedNote'] as bool?,
-      receiveAnnouncementEmail: json['receiveAnnouncementEmail'] as bool?,
-      alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
-      autoSensitive: json['autoSensitive'] as bool?,
-      followingVisibility: $enumDecodeNullable(
-          _$IUpdateFollowingVisibilityEnumMap, json['followingVisibility'],
-          unknownValue: IUpdateFollowingVisibility.unknown),
-      followersVisibility: $enumDecodeNullable(
-          _$IUpdateFollowersVisibilityEnumMap, json['followersVisibility'],
-          unknownValue: IUpdateFollowersVisibility.unknown),
-      chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
-      pinnedPageId: json['pinnedPageId'] as String?,
-      mutedWords: json['mutedWords'] as List<dynamic>?,
-      hardMutedWords: json['hardMutedWords'] as List<dynamic>?,
-      mutedInstances: (json['mutedInstances'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      notificationRecieveConfig: json['notificationRecieveConfig'] == null
-          ? null
-          : IUpdateNotificationRecieveConfig.fromJson(
-              json['notificationRecieveConfig'] as Map<String, dynamic>),
-      emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-    );
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  followedMessage: json['followedMessage'] as String?,
+  location: json['location'] as String?,
+  birthday: json['birthday'] as String?,
+  lang: $enumDecodeNullable(
+    _$IUpdateLangEnumMap,
+    json['lang'],
+    unknownValue: IUpdateLang.unknown,
+  ),
+  avatarId: json['avatarId'] as String?,
+  avatarDecorations: (json['avatarDecorations'] as List<dynamic>?)
+      ?.map(
+        (e) => IUpdateAvatarDecorationsItem.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  bannerId: json['bannerId'] as String?,
+  fields: (json['fields'] as List<dynamic>?)
+      ?.map((e) => IUpdateFieldsItem.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  isLocked: json['isLocked'] as bool?,
+  isExplorable: json['isExplorable'] as bool?,
+  hideOnlineStatus: json['hideOnlineStatus'] as bool?,
+  publicReactions: json['publicReactions'] as bool?,
+  carefulBot: json['carefulBot'] as bool?,
+  autoAcceptFollowed: json['autoAcceptFollowed'] as bool?,
+  noCrawle: json['noCrawle'] as bool?,
+  preventAiLearning: json['preventAiLearning'] as bool?,
+  requireSigninToViewContents: json['requireSigninToViewContents'] as bool?,
+  makeNotesFollowersOnlyBefore: (json['makeNotesFollowersOnlyBefore'] as num?)
+      ?.toInt(),
+  makeNotesHiddenBefore: (json['makeNotesHiddenBefore'] as num?)?.toInt(),
+  isBot: json['isBot'] as bool?,
+  isCat: json['isCat'] as bool?,
+  injectFeaturedNote: json['injectFeaturedNote'] as bool?,
+  receiveAnnouncementEmail: json['receiveAnnouncementEmail'] as bool?,
+  alwaysMarkNsfw: json['alwaysMarkNsfw'] as bool?,
+  autoSensitive: json['autoSensitive'] as bool?,
+  followingVisibility: $enumDecodeNullable(
+    _$IUpdateFollowingVisibilityEnumMap,
+    json['followingVisibility'],
+    unknownValue: IUpdateFollowingVisibility.unknown,
+  ),
+  followersVisibility: $enumDecodeNullable(
+    _$IUpdateFollowersVisibilityEnumMap,
+    json['followersVisibility'],
+    unknownValue: IUpdateFollowersVisibility.unknown,
+  ),
+  chatScope: $enumDecodeNullable(_$ChatScopeEnumMap, json['chatScope']),
+  pinnedPageId: json['pinnedPageId'] as String?,
+  mutedWords: json['mutedWords'] as List<dynamic>?,
+  hardMutedWords: json['hardMutedWords'] as List<dynamic>?,
+  mutedInstances: (json['mutedInstances'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  notificationRecieveConfig: json['notificationRecieveConfig'] == null
+      ? null
+      : IUpdateNotificationRecieveConfig.fromJson(
+          json['notificationRecieveConfig'] as Map<String, dynamic>,
+        ),
+  emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$IUpdateToJson(_IUpdate instance) => <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'followedMessage': instance.followedMessage,
-      'location': instance.location,
-      'birthday': instance.birthday,
-      'lang': _$IUpdateLangEnumMap[instance.lang],
-      'avatarId': instance.avatarId,
-      'avatarDecorations':
-          instance.avatarDecorations?.map((e) => e.toJson()).toList(),
-      'bannerId': instance.bannerId,
-      'fields': instance.fields?.map((e) => e.toJson()).toList(),
-      'isLocked': instance.isLocked,
-      'isExplorable': instance.isExplorable,
-      'hideOnlineStatus': instance.hideOnlineStatus,
-      'publicReactions': instance.publicReactions,
-      'carefulBot': instance.carefulBot,
-      'autoAcceptFollowed': instance.autoAcceptFollowed,
-      'noCrawle': instance.noCrawle,
-      'preventAiLearning': instance.preventAiLearning,
-      'requireSigninToViewContents': instance.requireSigninToViewContents,
-      'makeNotesFollowersOnlyBefore': instance.makeNotesFollowersOnlyBefore,
-      'makeNotesHiddenBefore': instance.makeNotesHiddenBefore,
-      'isBot': instance.isBot,
-      'isCat': instance.isCat,
-      'injectFeaturedNote': instance.injectFeaturedNote,
-      'receiveAnnouncementEmail': instance.receiveAnnouncementEmail,
-      'alwaysMarkNsfw': instance.alwaysMarkNsfw,
-      'autoSensitive': instance.autoSensitive,
-      'followingVisibility':
-          _$IUpdateFollowingVisibilityEnumMap[instance.followingVisibility],
-      'followersVisibility':
-          _$IUpdateFollowersVisibilityEnumMap[instance.followersVisibility],
-      'chatScope': _$ChatScopeEnumMap[instance.chatScope],
-      'pinnedPageId': instance.pinnedPageId,
-      'mutedWords': instance.mutedWords,
-      'hardMutedWords': instance.hardMutedWords,
-      'mutedInstances': instance.mutedInstances,
-      'notificationRecieveConfig': instance.notificationRecieveConfig?.toJson(),
-      'emailNotificationTypes': instance.emailNotificationTypes,
-      'alsoKnownAs': instance.alsoKnownAs,
-    };
+  'name': instance.name,
+  'description': instance.description,
+  'followedMessage': instance.followedMessage,
+  'location': instance.location,
+  'birthday': instance.birthday,
+  'lang': _$IUpdateLangEnumMap[instance.lang],
+  'avatarId': instance.avatarId,
+  'avatarDecorations': instance.avatarDecorations
+      ?.map((e) => e.toJson())
+      .toList(),
+  'bannerId': instance.bannerId,
+  'fields': instance.fields?.map((e) => e.toJson()).toList(),
+  'isLocked': instance.isLocked,
+  'isExplorable': instance.isExplorable,
+  'hideOnlineStatus': instance.hideOnlineStatus,
+  'publicReactions': instance.publicReactions,
+  'carefulBot': instance.carefulBot,
+  'autoAcceptFollowed': instance.autoAcceptFollowed,
+  'noCrawle': instance.noCrawle,
+  'preventAiLearning': instance.preventAiLearning,
+  'requireSigninToViewContents': instance.requireSigninToViewContents,
+  'makeNotesFollowersOnlyBefore': instance.makeNotesFollowersOnlyBefore,
+  'makeNotesHiddenBefore': instance.makeNotesHiddenBefore,
+  'isBot': instance.isBot,
+  'isCat': instance.isCat,
+  'injectFeaturedNote': instance.injectFeaturedNote,
+  'receiveAnnouncementEmail': instance.receiveAnnouncementEmail,
+  'alwaysMarkNsfw': instance.alwaysMarkNsfw,
+  'autoSensitive': instance.autoSensitive,
+  'followingVisibility':
+      _$IUpdateFollowingVisibilityEnumMap[instance.followingVisibility],
+  'followersVisibility':
+      _$IUpdateFollowersVisibilityEnumMap[instance.followersVisibility],
+  'chatScope': _$ChatScopeEnumMap[instance.chatScope],
+  'pinnedPageId': instance.pinnedPageId,
+  'mutedWords': instance.mutedWords,
+  'hardMutedWords': instance.hardMutedWords,
+  'mutedInstances': instance.mutedInstances,
+  'notificationRecieveConfig': instance.notificationRecieveConfig?.toJson(),
+  'emailNotificationTypes': instance.emailNotificationTypes,
+  'alsoKnownAs': instance.alsoKnownAs,
+};
 
 const _$IUpdateLangEnumMap = {
   IUpdateLang.ach: 'ach',

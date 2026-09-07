@@ -9,14 +9,16 @@ part of 'charts_user_following.dart';
 _ChartsUserFollowing _$ChartsUserFollowingFromJson(Map<String, dynamic> json) =>
     _ChartsUserFollowing(
       local: ChartsUserFollowingLocal.fromJson(
-          json['local'] as Map<String, dynamic>),
+        json['local'] as Map<String, dynamic>,
+      ),
       remote: ChartsUserFollowingRemote.fromJson(
-          json['remote'] as Map<String, dynamic>),
+        json['remote'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$ChartsUserFollowingToJson(
-        _ChartsUserFollowing instance) =>
-    <String, dynamic>{
-      'local': instance.local.toJson(),
-      'remote': instance.remote.toJson(),
-    };
+  _ChartsUserFollowing instance,
+) => <String, dynamic>{
+  'local': instance.local.toJson(),
+  'remote': instance.remote.toJson(),
+};

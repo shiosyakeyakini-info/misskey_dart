@@ -13,7 +13,4 @@ _MyAppsRequest _$MyAppsRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$MyAppsRequestToJson(_MyAppsRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-    };
+    <String, dynamic>{'limit': instance.limit, 'offset': instance.offset};

@@ -7,11 +7,7 @@ part of 'gallery_posts_like.dart';
 // **************************************************************************
 
 _GalleryPostsLike _$GalleryPostsLikeFromJson(Map<String, dynamic> json) =>
-    _GalleryPostsLike(
-      postId: json['postId'] as String,
-    );
+    _GalleryPostsLike(postId: json['postId'] as String);
 
 Map<String, dynamic> _$GalleryPostsLikeToJson(_GalleryPostsLike instance) =>
-    <String, dynamic>{
-      'postId': instance.postId,
-    };
+    <String, dynamic>{'postId': instance.postId};

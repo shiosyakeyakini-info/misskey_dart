@@ -7,25 +7,25 @@ part of 'admin_emoji_list_remote.dart';
 // **************************************************************************
 
 _AdminEmojiListRemote _$AdminEmojiListRemoteFromJson(
-        Map<String, dynamic> json) =>
-    _AdminEmojiListRemote(
-      query: json['query'] as String? ?? null,
-      host: json['host'] as String? ?? null,
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => _AdminEmojiListRemote(
+  query: json['query'] as String? ?? null,
+  host: json['host'] as String? ?? null,
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$AdminEmojiListRemoteToJson(
-        _AdminEmojiListRemote instance) =>
-    <String, dynamic>{
-      'query': instance.query,
-      'host': instance.host,
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-    };
+  _AdminEmojiListRemote instance,
+) => <String, dynamic>{
+  'query': instance.query,
+  'host': instance.host,
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+};

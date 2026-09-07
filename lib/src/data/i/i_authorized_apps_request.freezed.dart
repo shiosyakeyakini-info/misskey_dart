@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,55 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IAuthorizedAppsRequest {
-  int? get limit;
-  int? get offset;
-  @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
-  IAuthorizedAppsSort? get sort;
 
-  /// Create a copy of IAuthorizedAppsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IAuthorizedAppsRequestCopyWith<IAuthorizedAppsRequest> get copyWith =>
-      _$IAuthorizedAppsRequestCopyWithImpl<IAuthorizedAppsRequest>(
-          this as IAuthorizedAppsRequest, _$identity);
+ int? get limit; int? get offset;@JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) IAuthorizedAppsSort? get sort;
+/// Create a copy of IAuthorizedAppsRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$IAuthorizedAppsRequestCopyWith<IAuthorizedAppsRequest> get copyWith => _$IAuthorizedAppsRequestCopyWithImpl<IAuthorizedAppsRequest>(this as IAuthorizedAppsRequest, _$identity);
 
   /// Serializes this IAuthorizedAppsRequest to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IAuthorizedAppsRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
-            (identical(other.sort, sort) || other.sort == sort));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, offset, sort);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IAuthorizedAppsRequest&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.sort, sort) || other.sort == sort));
+}
 
-  @override
-  String toString() {
-    return 'IAuthorizedAppsRequest(limit: $limit, offset: $offset, sort: $sort)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,offset,sort);
+
+@override
+String toString() {
+  return 'IAuthorizedAppsRequest(limit: $limit, offset: $offset, sort: $sort)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $IAuthorizedAppsRequestCopyWith<$Res> {
-  factory $IAuthorizedAppsRequestCopyWith(IAuthorizedAppsRequest value,
-          $Res Function(IAuthorizedAppsRequest) _then) =
-      _$IAuthorizedAppsRequestCopyWithImpl;
-  @useResult
-  $Res call(
-      {int? limit,
-      int? offset,
-      @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
-      IAuthorizedAppsSort? sort});
-}
+abstract mixin class $IAuthorizedAppsRequestCopyWith<$Res>  {
+  factory $IAuthorizedAppsRequestCopyWith(IAuthorizedAppsRequest value, $Res Function(IAuthorizedAppsRequest) _then) = _$IAuthorizedAppsRequestCopyWithImpl;
+@useResult
+$Res call({
+ int? limit, int? offset,@JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) IAuthorizedAppsSort? sort
+});
 
+
+
+
+}
 /// @nodoc
 class _$IAuthorizedAppsRequestCopyWithImpl<$Res>
     implements $IAuthorizedAppsRequestCopyWith<$Res> {
@@ -72,104 +63,201 @@ class _$IAuthorizedAppsRequestCopyWithImpl<$Res>
   final IAuthorizedAppsRequest _self;
   final $Res Function(IAuthorizedAppsRequest) _then;
 
-  /// Create a copy of IAuthorizedAppsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? sort = freezed,
-  }) {
-    return _then(_self.copyWith(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _self.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as IAuthorizedAppsSort?,
-    ));
-  }
+/// Create a copy of IAuthorizedAppsRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? limit = freezed,Object? offset = freezed,Object? sort = freezed,}) {
+  return _then(_self.copyWith(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as IAuthorizedAppsSort?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [IAuthorizedAppsRequest].
+extension IAuthorizedAppsRequestPatterns on IAuthorizedAppsRequest {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _IAuthorizedAppsRequest value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _IAuthorizedAppsRequest() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _IAuthorizedAppsRequest value)  $default,){
+final _that = this;
+switch (_that) {
+case _IAuthorizedAppsRequest():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _IAuthorizedAppsRequest value)?  $default,){
+final _that = this;
+switch (_that) {
+case _IAuthorizedAppsRequest() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)  IAuthorizedAppsSort? sort)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _IAuthorizedAppsRequest() when $default != null:
+return $default(_that.limit,_that.offset,_that.sort);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)  IAuthorizedAppsSort? sort)  $default,) {final _that = this;
+switch (_that) {
+case _IAuthorizedAppsRequest():
+return $default(_that.limit,_that.offset,_that.sort);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)  IAuthorizedAppsSort? sort)?  $default,) {final _that = this;
+switch (_that) {
+case _IAuthorizedAppsRequest() when $default != null:
+return $default(_that.limit,_that.offset,_that.sort);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _IAuthorizedAppsRequest implements IAuthorizedAppsRequest {
-  const _IAuthorizedAppsRequest(
-      {this.limit = 10,
-      this.offset = 0,
-      @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
-      this.sort = IAuthorizedAppsSort.desc});
-  factory _IAuthorizedAppsRequest.fromJson(Map<String, dynamic> json) =>
-      _$IAuthorizedAppsRequestFromJson(json);
+  const _IAuthorizedAppsRequest({this.limit = 10, this.offset = 0, @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) this.sort = IAuthorizedAppsSort.desc});
+  factory _IAuthorizedAppsRequest.fromJson(Map<String, dynamic> json) => _$IAuthorizedAppsRequestFromJson(json);
 
-  @override
-  @JsonKey()
-  final int? limit;
-  @override
-  @JsonKey()
-  final int? offset;
-  @override
-  @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
-  final IAuthorizedAppsSort? sort;
+@override@JsonKey() final  int? limit;
+@override@JsonKey() final  int? offset;
+@override@JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) final  IAuthorizedAppsSort? sort;
 
-  /// Create a copy of IAuthorizedAppsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IAuthorizedAppsRequestCopyWith<_IAuthorizedAppsRequest> get copyWith =>
-      __$IAuthorizedAppsRequestCopyWithImpl<_IAuthorizedAppsRequest>(
-          this, _$identity);
+/// Create a copy of IAuthorizedAppsRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$IAuthorizedAppsRequestCopyWith<_IAuthorizedAppsRequest> get copyWith => __$IAuthorizedAppsRequestCopyWithImpl<_IAuthorizedAppsRequest>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IAuthorizedAppsRequestToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$IAuthorizedAppsRequestToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _IAuthorizedAppsRequest &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.offset, offset) || other.offset == offset) &&
-            (identical(other.sort, sort) || other.sort == sort));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IAuthorizedAppsRequest&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.sort, sort) || other.sort == sort));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, offset, sort);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,offset,sort);
 
-  @override
-  String toString() {
-    return 'IAuthorizedAppsRequest(limit: $limit, offset: $offset, sort: $sort)';
-  }
+@override
+String toString() {
+  return 'IAuthorizedAppsRequest(limit: $limit, offset: $offset, sort: $sort)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$IAuthorizedAppsRequestCopyWith<$Res>
-    implements $IAuthorizedAppsRequestCopyWith<$Res> {
-  factory _$IAuthorizedAppsRequestCopyWith(_IAuthorizedAppsRequest value,
-          $Res Function(_IAuthorizedAppsRequest) _then) =
-      __$IAuthorizedAppsRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {int? limit,
-      int? offset,
-      @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
-      IAuthorizedAppsSort? sort});
-}
+abstract mixin class _$IAuthorizedAppsRequestCopyWith<$Res> implements $IAuthorizedAppsRequestCopyWith<$Res> {
+  factory _$IAuthorizedAppsRequestCopyWith(_IAuthorizedAppsRequest value, $Res Function(_IAuthorizedAppsRequest) _then) = __$IAuthorizedAppsRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ int? limit, int? offset,@JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) IAuthorizedAppsSort? sort
+});
 
+
+
+
+}
 /// @nodoc
 class __$IAuthorizedAppsRequestCopyWithImpl<$Res>
     implements _$IAuthorizedAppsRequestCopyWith<$Res> {
@@ -178,30 +266,18 @@ class __$IAuthorizedAppsRequestCopyWithImpl<$Res>
   final _IAuthorizedAppsRequest _self;
   final $Res Function(_IAuthorizedAppsRequest) _then;
 
-  /// Create a copy of IAuthorizedAppsRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? offset = freezed,
-    Object? sort = freezed,
-  }) {
-    return _then(_IAuthorizedAppsRequest(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _self.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as IAuthorizedAppsSort?,
-    ));
-  }
+/// Create a copy of IAuthorizedAppsRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? limit = freezed,Object? offset = freezed,Object? sort = freezed,}) {
+  return _then(_IAuthorizedAppsRequest(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as IAuthorizedAppsSort?,
+  ));
+}
+
+
 }
 
 // dart format on

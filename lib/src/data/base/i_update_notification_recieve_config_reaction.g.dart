@@ -7,24 +7,22 @@ part of 'i_update_notification_recieve_config_reaction.dart';
 // **************************************************************************
 
 _IUpdateNotificationRecieveConfigReaction
-    _$IUpdateNotificationRecieveConfigReactionFromJson(
-            Map<String, dynamic> json) =>
-        _IUpdateNotificationRecieveConfigReaction(
-          type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigReactionTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  IUpdateNotificationRecieveConfigReactionType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$IUpdateNotificationRecieveConfigReactionFromJson(Map<String, dynamic> json) =>
+    _IUpdateNotificationRecieveConfigReaction(
+      type: $enumDecode(
+        _$IUpdateNotificationRecieveConfigReactionTypeEnumMap,
+        json['type'],
+        unknownValue: IUpdateNotificationRecieveConfigReactionType.unknown,
+      ),
+      userListId: json['userListId'] as String,
+    );
 
 Map<String, dynamic> _$IUpdateNotificationRecieveConfigReactionToJson(
-        _IUpdateNotificationRecieveConfigReaction instance) =>
-    <String, dynamic>{
-      'type':
-          _$IUpdateNotificationRecieveConfigReactionTypeEnumMap[instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _IUpdateNotificationRecieveConfigReaction instance,
+) => <String, dynamic>{
+  'type': _$IUpdateNotificationRecieveConfigReactionTypeEnumMap[instance.type]!,
+  'userListId': instance.userListId,
+};
 
 const _$IUpdateNotificationRecieveConfigReactionTypeEnumMap = {
   IUpdateNotificationRecieveConfigReactionType.all: 'all',

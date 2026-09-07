@@ -13,8 +13,5 @@ _I2faRegisterRequest _$I2faRegisterRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$I2faRegisterRequestToJson(
-        _I2faRegisterRequest instance) =>
-    <String, dynamic>{
-      'password': instance.password,
-      'token': instance.token,
-    };
+  _I2faRegisterRequest instance,
+) => <String, dynamic>{'password': instance.password, 'token': instance.token};

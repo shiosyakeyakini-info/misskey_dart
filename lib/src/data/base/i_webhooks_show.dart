@@ -1,14 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'i_webhooks_show.freezed.dart';
 part 'i_webhooks_show.g.dart';
 
 @freezed
 abstract class IWebhooksShow with _$IWebhooksShow {
-  const factory IWebhooksShow({
-    required String webhookId,
-  }) = _IWebhooksShow;
+  const factory IWebhooksShow({required String webhookId}) = _IWebhooksShow;
 
-  factory IWebhooksShow.fromJson(Map<String, Object?> json) => _$IWebhooksShowFromJson(json);
+  factory IWebhooksShow.fromJson(Map<String, Object?> json) =>
+      _$IWebhooksShowFromJson(json);
 }

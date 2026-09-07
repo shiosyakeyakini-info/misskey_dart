@@ -1,4 +1,1 @@
-enum RoleCondFormulaValueNotType {
-  not,
-  unknown,
-}
+enum RoleCondFormulaValueNotType { not, unknown }

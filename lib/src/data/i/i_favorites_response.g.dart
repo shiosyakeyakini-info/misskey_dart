@@ -9,8 +9,9 @@ part of 'i_favorites_response.dart';
 _IFavoritesResponse _$IFavoritesResponseFromJson(Map<String, dynamic> json) =>
     _IFavoritesResponse(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       noteId: json['noteId'] as String,
       note: Note.fromJson(json['note'] as Map<String, dynamic>),
     );

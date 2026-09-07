@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_list_remote.freezed.dart';
 part 'admin_emoji_list_remote.g.dart';
@@ -16,5 +15,6 @@ abstract class AdminEmojiListRemote with _$AdminEmojiListRemote {
     int? untilDate,
   }) = _AdminEmojiListRemote;
 
-  factory AdminEmojiListRemote.fromJson(Map<String, Object?> json) => _$AdminEmojiListRemoteFromJson(json);
+  factory AdminEmojiListRemote.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiListRemoteFromJson(json);
 }

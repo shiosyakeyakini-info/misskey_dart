@@ -7,34 +7,35 @@ part of 'admin_emoji_update_request.dart';
 // **************************************************************************
 
 _AdminEmojiUpdateRequest _$AdminEmojiUpdateRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminEmojiUpdateRequest(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-      fileId: json['fileId'] as String?,
-      category: json['category'] as String?,
-      aliases:
-          (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      license: json['license'] as String?,
-      isSensitive: json['isSensitive'] as bool?,
-      localOnly: json['localOnly'] as bool?,
-      roleIdsThatCanBeUsedThisEmojiAsReaction:
-          (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-    );
+  Map<String, dynamic> json,
+) => _AdminEmojiUpdateRequest(
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  fileId: json['fileId'] as String?,
+  category: json['category'] as String?,
+  aliases: (json['aliases'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  license: json['license'] as String?,
+  isSensitive: json['isSensitive'] as bool?,
+  localOnly: json['localOnly'] as bool?,
+  roleIdsThatCanBeUsedThisEmojiAsReaction:
+      (json['roleIdsThatCanBeUsedThisEmojiAsReaction'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+);
 
 Map<String, dynamic> _$AdminEmojiUpdateRequestToJson(
-        _AdminEmojiUpdateRequest instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'fileId': instance.fileId,
-      'category': instance.category,
-      'aliases': instance.aliases,
-      'license': instance.license,
-      'isSensitive': instance.isSensitive,
-      'localOnly': instance.localOnly,
-      'roleIdsThatCanBeUsedThisEmojiAsReaction':
-          instance.roleIdsThatCanBeUsedThisEmojiAsReaction,
-    };
+  _AdminEmojiUpdateRequest instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'fileId': instance.fileId,
+  'category': instance.category,
+  'aliases': instance.aliases,
+  'license': instance.license,
+  'isSensitive': instance.isSensitive,
+  'localOnly': instance.localOnly,
+  'roleIdsThatCanBeUsedThisEmojiAsReaction':
+      instance.roleIdsThatCanBeUsedThisEmojiAsReaction,
+};

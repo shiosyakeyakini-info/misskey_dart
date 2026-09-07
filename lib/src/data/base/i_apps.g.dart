@@ -7,13 +7,16 @@ part of 'i_apps.dart';
 // **************************************************************************
 
 _IApps _$IAppsFromJson(Map<String, dynamic> json) => _IApps(
-      sort: $enumDecodeNullable(_$IAppsSortEnumMap, json['sort'],
-          unknownValue: IAppsSort.unknown),
-    );
+  sort: $enumDecodeNullable(
+    _$IAppsSortEnumMap,
+    json['sort'],
+    unknownValue: IAppsSort.unknown,
+  ),
+);
 
 Map<String, dynamic> _$IAppsToJson(_IApps instance) => <String, dynamic>{
-      'sort': _$IAppsSortEnumMap[instance.sort],
-    };
+  'sort': _$IAppsSortEnumMap[instance.sort],
+};
 
 const _$IAppsSortEnumMap = {
   IAppsSort.plusCreatedAt: '+createdAt',

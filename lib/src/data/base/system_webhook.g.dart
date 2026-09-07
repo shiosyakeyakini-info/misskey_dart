@@ -10,10 +10,13 @@ _SystemWebhook _$SystemWebhookFromJson(Map<String, dynamic> json) =>
     _SystemWebhook(
       id: json['id'] as String,
       isActive: json['isActive'] as bool,
-      updatedAt:
-          const DateTimeConverter().fromJson(json['updatedAt'] as String),
+      updatedAt: const DateTimeConverter().fromJson(
+        json['updatedAt'] as String,
+      ),
       latestSentAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['latestSentAt'], const NullableDateTimeConverter().fromJson),
+        json['latestSentAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       latestStatus: (json['latestStatus'] as num?)?.toDouble(),
       name: json['name'] as String,
       on_: (json['on'] as List<dynamic>)
@@ -28,8 +31,9 @@ Map<String, dynamic> _$SystemWebhookToJson(_SystemWebhook instance) =>
       'id': instance.id,
       'isActive': instance.isActive,
       'updatedAt': const DateTimeConverter().toJson(instance.updatedAt),
-      'latestSentAt':
-          const NullableDateTimeConverter().toJson(instance.latestSentAt),
+      'latestSentAt': const NullableDateTimeConverter().toJson(
+        instance.latestSentAt,
+      ),
       'latestStatus': instance.latestStatus,
       'name': instance.name,
       'on': instance.on_.map((e) => _$SystemWebhookOnItemEnumMap[e]!).toList(),
@@ -40,8 +44,7 @@ Map<String, dynamic> _$SystemWebhookToJson(_SystemWebhook instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);
 
 const _$SystemWebhookOnItemEnumMap = {
   SystemWebhookOnItem.abuseReport: 'abuseReport',

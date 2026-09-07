@@ -5,11 +5,22 @@ part 'me_detailed_only_notification_recieve_config_follow_request_accepted.freez
 part 'me_detailed_only_notification_recieve_config_follow_request_accepted.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted with _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted {
+abstract class MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted
+    with _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted {
   const factory MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted({
-    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType.unknown) required MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType type,
+    @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+              .unknown,
+    )
+    required MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedType
+    type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted;
 
-  factory MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigFollowRequestAccepted.fromJson(
+    Map<String, Object?> json,
+  ) => _$MeDetailedOnlyNotificationRecieveConfigFollowRequestAcceptedFromJson(
+    json,
+  );
 }

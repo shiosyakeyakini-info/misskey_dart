@@ -7,11 +7,7 @@ part of 'channels_show.dart';
 // **************************************************************************
 
 _ChannelsShow _$ChannelsShowFromJson(Map<String, dynamic> json) =>
-    _ChannelsShow(
-      channelId: json['channelId'] as String,
-    );
+    _ChannelsShow(channelId: json['channelId'] as String);
 
 Map<String, dynamic> _$ChannelsShowToJson(_ChannelsShow instance) =>
-    <String, dynamic>{
-      'channelId': instance.channelId,
-    };
+    <String, dynamic>{'channelId': instance.channelId};

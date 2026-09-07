@@ -13,5 +13,6 @@ abstract class ChartsNotesRemote with _$ChartsNotesRemote {
     required ChartsNotesRemoteDiffs diffs,
   }) = _ChartsNotesRemote;
 
-  factory ChartsNotesRemote.fromJson(Map<String, Object?> json) => _$ChartsNotesRemoteFromJson(json);
+  factory ChartsNotesRemote.fromJson(Map<String, Object?> json) =>
+      _$ChartsNotesRemoteFromJson(json);
 }

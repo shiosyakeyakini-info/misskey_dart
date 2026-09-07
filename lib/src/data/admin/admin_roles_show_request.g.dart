@@ -7,13 +7,9 @@ part of 'admin_roles_show_request.dart';
 // **************************************************************************
 
 _AdminRolesShowRequest _$AdminRolesShowRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminRolesShowRequest(
-      roleId: json['roleId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminRolesShowRequest(roleId: json['roleId'] as String?);
 
 Map<String, dynamic> _$AdminRolesShowRequestToJson(
-        _AdminRolesShowRequest instance) =>
-    <String, dynamic>{
-      'roleId': instance.roleId,
-    };
+  _AdminRolesShowRequest instance,
+) => <String, dynamic>{'roleId': instance.roleId};

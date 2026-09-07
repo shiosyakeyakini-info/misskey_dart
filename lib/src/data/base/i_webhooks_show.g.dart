@@ -7,11 +7,7 @@ part of 'i_webhooks_show.dart';
 // **************************************************************************
 
 _IWebhooksShow _$IWebhooksShowFromJson(Map<String, dynamic> json) =>
-    _IWebhooksShow(
-      webhookId: json['webhookId'] as String,
-    );
+    _IWebhooksShow(webhookId: json['webhookId'] as String);
 
 Map<String, dynamic> _$IWebhooksShowToJson(_IWebhooksShow instance) =>
-    <String, dynamic>{
-      'webhookId': instance.webhookId,
-    };
+    <String, dynamic>{'webhookId': instance.webhookId};

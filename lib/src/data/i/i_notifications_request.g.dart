@@ -7,38 +7,38 @@ part of 'i_notifications_request.dart';
 // **************************************************************************
 
 _INotificationsRequest _$INotificationsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _INotificationsRequest(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-      markAsRead: json['markAsRead'] as bool? ?? true,
-      includeTypes: (json['includeTypes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
-          .toList(),
-      excludeTypes: (json['excludeTypes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => _INotificationsRequest(
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+  markAsRead: json['markAsRead'] as bool? ?? true,
+  includeTypes: (json['includeTypes'] as List<dynamic>?)
+      ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
+      .toList(),
+  excludeTypes: (json['excludeTypes'] as List<dynamic>?)
+      ?.map((e) => $enumDecode(_$NotificationTypeEnumMap, e))
+      .toList(),
+);
 
 Map<String, dynamic> _$INotificationsRequestToJson(
-        _INotificationsRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'markAsRead': instance.markAsRead,
-      'includeTypes': instance.includeTypes
-          ?.map((e) => _$NotificationTypeEnumMap[e]!)
-          .toList(),
-      'excludeTypes': instance.excludeTypes
-          ?.map((e) => _$NotificationTypeEnumMap[e]!)
-          .toList(),
-    };
+  _INotificationsRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'markAsRead': instance.markAsRead,
+  'includeTypes': instance.includeTypes
+      ?.map((e) => _$NotificationTypeEnumMap[e]!)
+      .toList(),
+  'excludeTypes': instance.excludeTypes
+      ?.map((e) => _$NotificationTypeEnumMap[e]!)
+      .toList(),
+};
 
 const _$NotificationTypeEnumMap = {
   NotificationType.note: 'note',

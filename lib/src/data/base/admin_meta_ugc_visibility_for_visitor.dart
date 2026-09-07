@@ -1,6 +1,1 @@
-enum AdminMetaUgcVisibilityForVisitor {
-  all,
-  local,
-  none,
-  unknown,
-}
+enum AdminMetaUgcVisibilityForVisitor { all, local, none, unknown }

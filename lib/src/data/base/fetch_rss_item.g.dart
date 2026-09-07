@@ -23,7 +23,8 @@ _FetchRssItem _$FetchRssItemFromJson(Map<String, dynamic> json) =>
       enclosure: json['enclosure'] == null
           ? null
           : FetchRssEnclosure.fromJson(
-              json['enclosure'] as Map<String, dynamic>),
+              json['enclosure'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$FetchRssItemToJson(_FetchRssItem instance) =>

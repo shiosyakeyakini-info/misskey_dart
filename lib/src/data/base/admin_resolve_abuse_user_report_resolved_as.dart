@@ -1,5 +1,1 @@
-enum AdminResolveAbuseUserReportResolvedAs {
-  accept,
-  reject,
-  unknown,
-}
+enum AdminResolveAbuseUserReportResolvedAs { accept, reject, unknown }

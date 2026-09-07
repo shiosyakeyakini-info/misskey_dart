@@ -1,7 +1,1 @@
-enum AnnouncementIcon {
-  info,
-  warning,
-  error,
-  success,
-  unknown,
-}
+enum AnnouncementIcon { info, warning, error, success, unknown }

@@ -7,13 +7,11 @@ part of 'admin_update_proxy_account_request.dart';
 // **************************************************************************
 
 _AdminUpdateProxyAccountRequest _$AdminUpdateProxyAccountRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminUpdateProxyAccountRequest(
-      description: json['description'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminUpdateProxyAccountRequest(
+  description: json['description'] as String?,
+);
 
 Map<String, dynamic> _$AdminUpdateProxyAccountRequestToJson(
-        _AdminUpdateProxyAccountRequest instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-    };
+  _AdminUpdateProxyAccountRequest instance,
+) => <String, dynamic>{'description': instance.description};

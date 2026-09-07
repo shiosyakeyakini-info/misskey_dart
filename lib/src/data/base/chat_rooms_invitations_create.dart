@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_rooms_invitations_create.freezed.dart';
 part 'chat_rooms_invitations_create.g.dart';
@@ -11,5 +10,6 @@ abstract class ChatRoomsInvitationsCreate with _$ChatRoomsInvitationsCreate {
     required String userId,
   }) = _ChatRoomsInvitationsCreate;
 
-  factory ChatRoomsInvitationsCreate.fromJson(Map<String, Object?> json) => _$ChatRoomsInvitationsCreateFromJson(json);
+  factory ChatRoomsInvitationsCreate.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsInvitationsCreateFromJson(json);
 }

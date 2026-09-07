@@ -15,8 +15,11 @@ _DriveFilesRequest _$DriveFilesRequestFromJson(Map<String, dynamic> json) =>
       untilDate: (json['untilDate'] as num?)?.toInt(),
       folderId: json['folderId'] as String? ?? null,
       type: json['type'] as String?,
-      sort: $enumDecodeNullable(_$DriveFilesSortEnumMap, json['sort'],
-          unknownValue: DriveFilesSort.unknown),
+      sort: $enumDecodeNullable(
+        _$DriveFilesSortEnumMap,
+        json['sort'],
+        unknownValue: DriveFilesSort.unknown,
+      ),
     );
 
 Map<String, dynamic> _$DriveFilesRequestToJson(_DriveFilesRequest instance) =>

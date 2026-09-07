@@ -16,11 +16,11 @@ _BlockingListRequest _$BlockingListRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$BlockingListRequestToJson(
-        _BlockingListRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-    };
+  _BlockingListRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+};

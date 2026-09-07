@@ -7,30 +7,34 @@ part of 'admin_queue_queue_stats_response.dart';
 // **************************************************************************
 
 _AdminQueueQueueStatsResponse _$AdminQueueQueueStatsResponseFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueQueueStatsResponse(
-      name: $enumDecode(_$AdminQueueQueueStatsNameEnumMap, json['name'],
-          unknownValue: AdminQueueQueueStatsName.unknown),
-      qualifiedName: json['qualifiedName'] as String,
-      counts: (json['counts'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, (e as num).toDouble()),
-      ),
-      isPaused: json['isPaused'] as bool,
-      metrics: AdminQueueQueueStatsMetrics.fromJson(
-          json['metrics'] as Map<String, dynamic>),
-      db: AdminQueueQueueStatsDb.fromJson(json['db'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueQueueStatsResponse(
+  name: $enumDecode(
+    _$AdminQueueQueueStatsNameEnumMap,
+    json['name'],
+    unknownValue: AdminQueueQueueStatsName.unknown,
+  ),
+  qualifiedName: json['qualifiedName'] as String,
+  counts: (json['counts'] as Map<String, dynamic>).map(
+    (k, e) => MapEntry(k, (e as num).toDouble()),
+  ),
+  isPaused: json['isPaused'] as bool,
+  metrics: AdminQueueQueueStatsMetrics.fromJson(
+    json['metrics'] as Map<String, dynamic>,
+  ),
+  db: AdminQueueQueueStatsDb.fromJson(json['db'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$AdminQueueQueueStatsResponseToJson(
-        _AdminQueueQueueStatsResponse instance) =>
-    <String, dynamic>{
-      'name': _$AdminQueueQueueStatsNameEnumMap[instance.name]!,
-      'qualifiedName': instance.qualifiedName,
-      'counts': instance.counts,
-      'isPaused': instance.isPaused,
-      'metrics': instance.metrics.toJson(),
-      'db': instance.db.toJson(),
-    };
+  _AdminQueueQueueStatsResponse instance,
+) => <String, dynamic>{
+  'name': _$AdminQueueQueueStatsNameEnumMap[instance.name]!,
+  'qualifiedName': instance.qualifiedName,
+  'counts': instance.counts,
+  'isPaused': instance.isPaused,
+  'metrics': instance.metrics.toJson(),
+  'db': instance.db.toJson(),
+};
 
 const _$AdminQueueQueueStatsNameEnumMap = {
   AdminQueueQueueStatsName.system: 'system',

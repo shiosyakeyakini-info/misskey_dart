@@ -1,5 +1,1 @@
-enum FlashUpdateVisibility {
-  public,
-  private,
-  unknown,
-}
+enum FlashUpdateVisibility { public, private, unknown }

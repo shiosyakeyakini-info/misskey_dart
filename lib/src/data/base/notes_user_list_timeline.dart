@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_user_list_timeline.freezed.dart';
 part 'notes_user_list_timeline.g.dart';
@@ -21,5 +20,6 @@ abstract class NotesUserListTimeline with _$NotesUserListTimeline {
     @Default(false) bool? withFiles,
   }) = _NotesUserListTimeline;
 
-  factory NotesUserListTimeline.fromJson(Map<String, Object?> json) => _$NotesUserListTimelineFromJson(json);
+  factory NotesUserListTimeline.fromJson(Map<String, Object?> json) =>
+      _$NotesUserListTimelineFromJson(json);
 }

@@ -7,11 +7,7 @@ part of 'i_regenerate_token.dart';
 // **************************************************************************
 
 _IRegenerateToken _$IRegenerateTokenFromJson(Map<String, dynamic> json) =>
-    _IRegenerateToken(
-      password: json['password'] as String,
-    );
+    _IRegenerateToken(password: json['password'] as String);
 
 Map<String, dynamic> _$IRegenerateTokenToJson(_IRegenerateToken instance) =>
-    <String, dynamic>{
-      'password': instance.password,
-    };
+    <String, dynamic>{'password': instance.password};

@@ -7,11 +7,7 @@ part of 'invite_delete.dart';
 // **************************************************************************
 
 _InviteDelete _$InviteDeleteFromJson(Map<String, dynamic> json) =>
-    _InviteDelete(
-      inviteId: json['inviteId'] as String,
-    );
+    _InviteDelete(inviteId: json['inviteId'] as String);
 
 Map<String, dynamic> _$InviteDeleteToJson(_InviteDelete instance) =>
-    <String, dynamic>{
-      'inviteId': instance.inviteId,
-    };
+    <String, dynamic>{'inviteId': instance.inviteId};

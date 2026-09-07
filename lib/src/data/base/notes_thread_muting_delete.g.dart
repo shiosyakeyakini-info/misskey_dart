@@ -7,13 +7,9 @@ part of 'notes_thread_muting_delete.dart';
 // **************************************************************************
 
 _NotesThreadMutingDelete _$NotesThreadMutingDeleteFromJson(
-        Map<String, dynamic> json) =>
-    _NotesThreadMutingDelete(
-      noteId: json['noteId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _NotesThreadMutingDelete(noteId: json['noteId'] as String);
 
 Map<String, dynamic> _$NotesThreadMutingDeleteToJson(
-        _NotesThreadMutingDelete instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+  _NotesThreadMutingDelete instance,
+) => <String, dynamic>{'noteId': instance.noteId};

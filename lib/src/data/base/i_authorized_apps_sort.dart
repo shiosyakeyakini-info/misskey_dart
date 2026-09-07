@@ -1,5 +1,1 @@
-enum IAuthorizedAppsSort {
-  desc,
-  asc,
-  unknown,
-}
+enum IAuthorizedAppsSort { desc, asc, unknown }

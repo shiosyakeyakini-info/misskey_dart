@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'federation_users_request.freezed.dart';
 part 'federation_users_request.g.dart';
@@ -15,5 +14,6 @@ abstract class FederationUsersRequest with _$FederationUsersRequest {
     @Default(10) int? limit,
   }) = _FederationUsersRequest;
 
-  factory FederationUsersRequest.fromJson(Map<String, Object?> json) => _$FederationUsersRequestFromJson(json);
+  factory FederationUsersRequest.fromJson(Map<String, Object?> json) =>
+      _$FederationUsersRequestFromJson(json);
 }

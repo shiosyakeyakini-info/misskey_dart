@@ -1,5 +1,1 @@
-enum ChartsApRequestSpan {
-  day,
-  hour,
-  unknown,
-}
+enum ChartsApRequestSpan { day, hour, unknown }

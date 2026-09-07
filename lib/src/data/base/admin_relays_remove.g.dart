@@ -7,11 +7,7 @@ part of 'admin_relays_remove.dart';
 // **************************************************************************
 
 _AdminRelaysRemove _$AdminRelaysRemoveFromJson(Map<String, dynamic> json) =>
-    _AdminRelaysRemove(
-      inbox: json['inbox'] as String,
-    );
+    _AdminRelaysRemove(inbox: json['inbox'] as String);
 
 Map<String, dynamic> _$AdminRelaysRemoveToJson(_AdminRelaysRemove instance) =>
-    <String, dynamic>{
-      'inbox': instance.inbox,
-    };
+    <String, dynamic>{'inbox': instance.inbox};

@@ -1,6 +1,1 @@
-enum UsersSearchOrigin {
-  local,
-  remote,
-  combined,
-  unknown,
-}
+enum UsersSearchOrigin { local, remote, combined, unknown }

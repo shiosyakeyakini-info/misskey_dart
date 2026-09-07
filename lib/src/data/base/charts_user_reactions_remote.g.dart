@@ -7,15 +7,13 @@ part of 'charts_user_reactions_remote.dart';
 // **************************************************************************
 
 _ChartsUserReactionsRemote _$ChartsUserReactionsRemoteFromJson(
-        Map<String, dynamic> json) =>
-    _ChartsUserReactionsRemote(
-      count: (json['count'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => _ChartsUserReactionsRemote(
+  count: (json['count'] as List<dynamic>)
+      .map((e) => (e as num).toDouble())
+      .toList(),
+);
 
 Map<String, dynamic> _$ChartsUserReactionsRemoteToJson(
-        _ChartsUserReactionsRemote instance) =>
-    <String, dynamic>{
-      'count': instance.count,
-    };
+  _ChartsUserReactionsRemote instance,
+) => <String, dynamic>{'count': instance.count};

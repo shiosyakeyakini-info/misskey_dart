@@ -9,13 +9,14 @@ abstract class MeDetailedOnlyNotificationRecieveConfigExportCompleted
     with _$MeDetailedOnlyNotificationRecieveConfigExportCompleted {
   const factory MeDetailedOnlyNotificationRecieveConfigExportCompleted({
     @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown)
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigExportCompletedType.unknown,
+    )
     required MeDetailedOnlyNotificationRecieveConfigExportCompletedType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigExportCompleted;
 
   factory MeDetailedOnlyNotificationRecieveConfigExportCompleted.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(json);
+    Map<String, Object?> json,
+  ) => _$MeDetailedOnlyNotificationRecieveConfigExportCompletedFromJson(json);
 }

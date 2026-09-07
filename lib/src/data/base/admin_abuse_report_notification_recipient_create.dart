@@ -5,14 +5,21 @@ part 'admin_abuse_report_notification_recipient_create.freezed.dart';
 part 'admin_abuse_report_notification_recipient_create.g.dart';
 
 @freezed
-abstract class AdminAbuseReportNotificationRecipientCreate with _$AdminAbuseReportNotificationRecipientCreate {
+abstract class AdminAbuseReportNotificationRecipientCreate
+    with _$AdminAbuseReportNotificationRecipientCreate {
   const factory AdminAbuseReportNotificationRecipientCreate({
     required bool isActive,
     required String name,
-    @JsonKey(unknownEnumValue: AdminAbuseReportNotificationRecipientCreateMethod.unknown) required AdminAbuseReportNotificationRecipientCreateMethod method,
+    @JsonKey(
+      unknownEnumValue:
+          AdminAbuseReportNotificationRecipientCreateMethod.unknown,
+    )
+    required AdminAbuseReportNotificationRecipientCreateMethod method,
     String? userId,
     String? systemWebhookId,
   }) = _AdminAbuseReportNotificationRecipientCreate;
 
-  factory AdminAbuseReportNotificationRecipientCreate.fromJson(Map<String, Object?> json) => _$AdminAbuseReportNotificationRecipientCreateFromJson(json);
+  factory AdminAbuseReportNotificationRecipientCreate.fromJson(
+    Map<String, Object?> json,
+  ) => _$AdminAbuseReportNotificationRecipientCreateFromJson(json);
 }

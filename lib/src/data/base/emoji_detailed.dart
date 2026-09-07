@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'emoji_detailed.freezed.dart';
 part 'emoji_detailed.g.dart';
@@ -19,5 +18,6 @@ abstract class EmojiDetailed with _$EmojiDetailed {
     required List<String> roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _EmojiDetailed;
 
-  factory EmojiDetailed.fromJson(Map<String, Object?> json) => _$EmojiDetailedFromJson(json);
+  factory EmojiDetailed.fromJson(Map<String, Object?> json) =>
+      _$EmojiDetailedFromJson(json);
 }

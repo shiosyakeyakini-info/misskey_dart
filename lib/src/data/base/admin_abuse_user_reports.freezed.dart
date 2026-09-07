@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,77 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminAbuseUserReports {
-  int? get limit;
-  String? get sinceId;
-  String? get untilId;
-  int? get sinceDate;
-  int? get untilDate;
-  String? get state;
-  @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
-  AdminAbuseUserReportsReporterOrigin? get reporterOrigin;
-  @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
-  AdminAbuseUserReportsTargetUserOrigin? get targetUserOrigin;
 
-  /// Create a copy of AdminAbuseUserReports
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AdminAbuseUserReportsCopyWith<AdminAbuseUserReports> get copyWith =>
-      _$AdminAbuseUserReportsCopyWithImpl<AdminAbuseUserReports>(
-          this as AdminAbuseUserReports, _$identity);
+ int? get limit; String? get sinceId; String? get untilId; int? get sinceDate; int? get untilDate; String? get state;@JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown) AdminAbuseUserReportsReporterOrigin? get reporterOrigin;@JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown) AdminAbuseUserReportsTargetUserOrigin? get targetUserOrigin;
+/// Create a copy of AdminAbuseUserReports
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AdminAbuseUserReportsCopyWith<AdminAbuseUserReports> get copyWith => _$AdminAbuseUserReportsCopyWithImpl<AdminAbuseUserReports>(this as AdminAbuseUserReports, _$identity);
 
   /// Serializes this AdminAbuseUserReports to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AdminAbuseUserReports &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.sinceDate, sinceDate) ||
-                other.sinceDate == sinceDate) &&
-            (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.reporterOrigin, reporterOrigin) ||
-                other.reporterOrigin == reporterOrigin) &&
-            (identical(other.targetUserOrigin, targetUserOrigin) ||
-                other.targetUserOrigin == targetUserOrigin));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
-      sinceDate, untilDate, state, reporterOrigin, targetUserOrigin);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminAbuseUserReports&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.state, state) || other.state == state)&&(identical(other.reporterOrigin, reporterOrigin) || other.reporterOrigin == reporterOrigin)&&(identical(other.targetUserOrigin, targetUserOrigin) || other.targetUserOrigin == targetUserOrigin));
+}
 
-  @override
-  String toString() {
-    return 'AdminAbuseUserReports(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, state: $state, reporterOrigin: $reporterOrigin, targetUserOrigin: $targetUserOrigin)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,sinceId,untilId,sinceDate,untilDate,state,reporterOrigin,targetUserOrigin);
+
+@override
+String toString() {
+  return 'AdminAbuseUserReports(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, state: $state, reporterOrigin: $reporterOrigin, targetUserOrigin: $targetUserOrigin)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AdminAbuseUserReportsCopyWith<$Res> {
-  factory $AdminAbuseUserReportsCopyWith(AdminAbuseUserReports value,
-          $Res Function(AdminAbuseUserReports) _then) =
-      _$AdminAbuseUserReportsCopyWithImpl;
-  @useResult
-  $Res call(
-      {int? limit,
-      String? sinceId,
-      String? untilId,
-      int? sinceDate,
-      int? untilDate,
-      String? state,
-      @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
-      AdminAbuseUserReportsReporterOrigin? reporterOrigin,
-      @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
-      AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin});
-}
+abstract mixin class $AdminAbuseUserReportsCopyWith<$Res>  {
+  factory $AdminAbuseUserReportsCopyWith(AdminAbuseUserReports value, $Res Function(AdminAbuseUserReports) _then) = _$AdminAbuseUserReportsCopyWithImpl;
+@useResult
+$Res call({
+ int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate, String? state,@JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown) AdminAbuseUserReportsReporterOrigin? reporterOrigin,@JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown) AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin
+});
 
+
+
+
+}
 /// @nodoc
 class _$AdminAbuseUserReportsCopyWithImpl<$Res>
     implements $AdminAbuseUserReportsCopyWith<$Res> {
@@ -94,162 +63,211 @@ class _$AdminAbuseUserReportsCopyWithImpl<$Res>
   final AdminAbuseUserReports _self;
   final $Res Function(AdminAbuseUserReports) _then;
 
-  /// Create a copy of AdminAbuseUserReports
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-    Object? state = freezed,
-    Object? reporterOrigin = freezed,
-    Object? targetUserOrigin = freezed,
-  }) {
-    return _then(_self.copyWith(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sinceDate: freezed == sinceDate
-          ? _self.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilDate: freezed == untilDate
-          ? _self.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      state: freezed == state
-          ? _self.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reporterOrigin: freezed == reporterOrigin
-          ? _self.reporterOrigin
-          : reporterOrigin // ignore: cast_nullable_to_non_nullable
-              as AdminAbuseUserReportsReporterOrigin?,
-      targetUserOrigin: freezed == targetUserOrigin
-          ? _self.targetUserOrigin
-          : targetUserOrigin // ignore: cast_nullable_to_non_nullable
-              as AdminAbuseUserReportsTargetUserOrigin?,
-    ));
-  }
+/// Create a copy of AdminAbuseUserReports
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? state = freezed,Object? reporterOrigin = freezed,Object? targetUserOrigin = freezed,}) {
+  return _then(_self.copyWith(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
+as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
+as int?,state: freezed == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as String?,reporterOrigin: freezed == reporterOrigin ? _self.reporterOrigin : reporterOrigin // ignore: cast_nullable_to_non_nullable
+as AdminAbuseUserReportsReporterOrigin?,targetUserOrigin: freezed == targetUserOrigin ? _self.targetUserOrigin : targetUserOrigin // ignore: cast_nullable_to_non_nullable
+as AdminAbuseUserReportsTargetUserOrigin?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AdminAbuseUserReports].
+extension AdminAbuseUserReportsPatterns on AdminAbuseUserReports {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminAbuseUserReports value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AdminAbuseUserReports() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminAbuseUserReports value)  $default,){
+final _that = this;
+switch (_that) {
+case _AdminAbuseUserReports():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminAbuseUserReports value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AdminAbuseUserReports() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  String? state, @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)  AdminAbuseUserReportsReporterOrigin? reporterOrigin, @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)  AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AdminAbuseUserReports() when $default != null:
+return $default(_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.state,_that.reporterOrigin,_that.targetUserOrigin);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  String? state, @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)  AdminAbuseUserReportsReporterOrigin? reporterOrigin, @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)  AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin)  $default,) {final _that = this;
+switch (_that) {
+case _AdminAbuseUserReports():
+return $default(_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.state,_that.reporterOrigin,_that.targetUserOrigin);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  String? state, @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)  AdminAbuseUserReportsReporterOrigin? reporterOrigin, @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)  AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin)?  $default,) {final _that = this;
+switch (_that) {
+case _AdminAbuseUserReports() when $default != null:
+return $default(_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.state,_that.reporterOrigin,_that.targetUserOrigin);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _AdminAbuseUserReports implements AdminAbuseUserReports {
-  const _AdminAbuseUserReports(
-      {this.limit = 10,
-      this.sinceId,
-      this.untilId,
-      this.sinceDate,
-      this.untilDate,
-      this.state = null,
-      @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
-      this.reporterOrigin = AdminAbuseUserReportsReporterOrigin.combined,
-      @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
-      this.targetUserOrigin = AdminAbuseUserReportsTargetUserOrigin.combined});
-  factory _AdminAbuseUserReports.fromJson(Map<String, dynamic> json) =>
-      _$AdminAbuseUserReportsFromJson(json);
+  const _AdminAbuseUserReports({this.limit = 10, this.sinceId, this.untilId, this.sinceDate, this.untilDate, this.state = null, @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown) this.reporterOrigin = AdminAbuseUserReportsReporterOrigin.combined, @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown) this.targetUserOrigin = AdminAbuseUserReportsTargetUserOrigin.combined});
+  factory _AdminAbuseUserReports.fromJson(Map<String, dynamic> json) => _$AdminAbuseUserReportsFromJson(json);
 
-  @override
-  @JsonKey()
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-  @override
-  final int? sinceDate;
-  @override
-  final int? untilDate;
-  @override
-  @JsonKey()
-  final String? state;
-  @override
-  @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
-  final AdminAbuseUserReportsReporterOrigin? reporterOrigin;
-  @override
-  @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
-  final AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin;
+@override@JsonKey() final  int? limit;
+@override final  String? sinceId;
+@override final  String? untilId;
+@override final  int? sinceDate;
+@override final  int? untilDate;
+@override@JsonKey() final  String? state;
+@override@JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown) final  AdminAbuseUserReportsReporterOrigin? reporterOrigin;
+@override@JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown) final  AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin;
 
-  /// Create a copy of AdminAbuseUserReports
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AdminAbuseUserReportsCopyWith<_AdminAbuseUserReports> get copyWith =>
-      __$AdminAbuseUserReportsCopyWithImpl<_AdminAbuseUserReports>(
-          this, _$identity);
+/// Create a copy of AdminAbuseUserReports
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AdminAbuseUserReportsCopyWith<_AdminAbuseUserReports> get copyWith => __$AdminAbuseUserReportsCopyWithImpl<_AdminAbuseUserReports>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AdminAbuseUserReportsToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AdminAbuseUserReportsToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AdminAbuseUserReports &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.sinceDate, sinceDate) ||
-                other.sinceDate == sinceDate) &&
-            (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.reporterOrigin, reporterOrigin) ||
-                other.reporterOrigin == reporterOrigin) &&
-            (identical(other.targetUserOrigin, targetUserOrigin) ||
-                other.targetUserOrigin == targetUserOrigin));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminAbuseUserReports&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.state, state) || other.state == state)&&(identical(other.reporterOrigin, reporterOrigin) || other.reporterOrigin == reporterOrigin)&&(identical(other.targetUserOrigin, targetUserOrigin) || other.targetUserOrigin == targetUserOrigin));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, limit, sinceId, untilId,
-      sinceDate, untilDate, state, reporterOrigin, targetUserOrigin);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,limit,sinceId,untilId,sinceDate,untilDate,state,reporterOrigin,targetUserOrigin);
 
-  @override
-  String toString() {
-    return 'AdminAbuseUserReports(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, state: $state, reporterOrigin: $reporterOrigin, targetUserOrigin: $targetUserOrigin)';
-  }
+@override
+String toString() {
+  return 'AdminAbuseUserReports(limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, state: $state, reporterOrigin: $reporterOrigin, targetUserOrigin: $targetUserOrigin)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AdminAbuseUserReportsCopyWith<$Res>
-    implements $AdminAbuseUserReportsCopyWith<$Res> {
-  factory _$AdminAbuseUserReportsCopyWith(_AdminAbuseUserReports value,
-          $Res Function(_AdminAbuseUserReports) _then) =
-      __$AdminAbuseUserReportsCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {int? limit,
-      String? sinceId,
-      String? untilId,
-      int? sinceDate,
-      int? untilDate,
-      String? state,
-      @JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown)
-      AdminAbuseUserReportsReporterOrigin? reporterOrigin,
-      @JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown)
-      AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin});
-}
+abstract mixin class _$AdminAbuseUserReportsCopyWith<$Res> implements $AdminAbuseUserReportsCopyWith<$Res> {
+  factory _$AdminAbuseUserReportsCopyWith(_AdminAbuseUserReports value, $Res Function(_AdminAbuseUserReports) _then) = __$AdminAbuseUserReportsCopyWithImpl;
+@override @useResult
+$Res call({
+ int? limit, String? sinceId, String? untilId, int? sinceDate, int? untilDate, String? state,@JsonKey(unknownEnumValue: AdminAbuseUserReportsReporterOrigin.unknown) AdminAbuseUserReportsReporterOrigin? reporterOrigin,@JsonKey(unknownEnumValue: AdminAbuseUserReportsTargetUserOrigin.unknown) AdminAbuseUserReportsTargetUserOrigin? targetUserOrigin
+});
 
+
+
+
+}
 /// @nodoc
 class __$AdminAbuseUserReportsCopyWithImpl<$Res>
     implements _$AdminAbuseUserReportsCopyWith<$Res> {
@@ -258,55 +276,23 @@ class __$AdminAbuseUserReportsCopyWithImpl<$Res>
   final _AdminAbuseUserReports _self;
   final $Res Function(_AdminAbuseUserReports) _then;
 
-  /// Create a copy of AdminAbuseUserReports
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-    Object? state = freezed,
-    Object? reporterOrigin = freezed,
-    Object? targetUserOrigin = freezed,
-  }) {
-    return _then(_AdminAbuseUserReports(
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sinceDate: freezed == sinceDate
-          ? _self.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilDate: freezed == untilDate
-          ? _self.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      state: freezed == state
-          ? _self.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reporterOrigin: freezed == reporterOrigin
-          ? _self.reporterOrigin
-          : reporterOrigin // ignore: cast_nullable_to_non_nullable
-              as AdminAbuseUserReportsReporterOrigin?,
-      targetUserOrigin: freezed == targetUserOrigin
-          ? _self.targetUserOrigin
-          : targetUserOrigin // ignore: cast_nullable_to_non_nullable
-              as AdminAbuseUserReportsTargetUserOrigin?,
-    ));
-  }
+/// Create a copy of AdminAbuseUserReports
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? state = freezed,Object? reporterOrigin = freezed,Object? targetUserOrigin = freezed,}) {
+  return _then(_AdminAbuseUserReports(
+limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
+as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
+as int?,state: freezed == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as String?,reporterOrigin: freezed == reporterOrigin ? _self.reporterOrigin : reporterOrigin // ignore: cast_nullable_to_non_nullable
+as AdminAbuseUserReportsReporterOrigin?,targetUserOrigin: freezed == targetUserOrigin ? _self.targetUserOrigin : targetUserOrigin // ignore: cast_nullable_to_non_nullable
+as AdminAbuseUserReportsTargetUserOrigin?,
+  ));
+}
+
+
 }
 
 // dart format on

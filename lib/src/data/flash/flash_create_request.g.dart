@@ -14,9 +14,12 @@ _FlashCreateRequest _$FlashCreateRequestFromJson(Map<String, dynamic> json) =>
       permissions: (json['permissions'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      visibility: $enumDecodeNullable(
-              _$FlashVisibilityEnumMap, json['visibility'],
-              unknownValue: FlashVisibility.unknown) ??
+      visibility:
+          $enumDecodeNullable(
+            _$FlashVisibilityEnumMap,
+            json['visibility'],
+            unknownValue: FlashVisibility.unknown,
+          ) ??
           FlashVisibility.public,
     );
 

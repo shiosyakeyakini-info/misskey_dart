@@ -1,5 +1,1 @@
-enum ChartsUserNotesSpan {
-  day,
-  hour,
-  unknown,
-}
+enum ChartsUserNotesSpan { day, hour, unknown }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_messages_user_timeline.freezed.dart';
 part 'chat_messages_user_timeline.g.dart';
@@ -15,5 +14,6 @@ abstract class ChatMessagesUserTimeline with _$ChatMessagesUserTimeline {
     required String userId,
   }) = _ChatMessagesUserTimeline;
 
-  factory ChatMessagesUserTimeline.fromJson(Map<String, Object?> json) => _$ChatMessagesUserTimelineFromJson(json);
+  factory ChatMessagesUserTimeline.fromJson(Map<String, Object?> json) =>
+      _$ChatMessagesUserTimelineFromJson(json);
 }

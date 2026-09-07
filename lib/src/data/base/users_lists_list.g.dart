@@ -7,11 +7,7 @@ part of 'users_lists_list.dart';
 // **************************************************************************
 
 _UsersListsList _$UsersListsListFromJson(Map<String, dynamic> json) =>
-    _UsersListsList(
-      userId: json['userId'] as String?,
-    );
+    _UsersListsList(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$UsersListsListToJson(_UsersListsList instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

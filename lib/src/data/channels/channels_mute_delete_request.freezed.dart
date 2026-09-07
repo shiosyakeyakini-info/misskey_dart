@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,47 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChannelsMuteDeleteRequest {
-  String? get channelId;
 
-  /// Create a copy of ChannelsMuteDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChannelsMuteDeleteRequestCopyWith<ChannelsMuteDeleteRequest> get copyWith =>
-      _$ChannelsMuteDeleteRequestCopyWithImpl<ChannelsMuteDeleteRequest>(
-          this as ChannelsMuteDeleteRequest, _$identity);
+ String? get channelId;
+/// Create a copy of ChannelsMuteDeleteRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChannelsMuteDeleteRequestCopyWith<ChannelsMuteDeleteRequest> get copyWith => _$ChannelsMuteDeleteRequestCopyWithImpl<ChannelsMuteDeleteRequest>(this as ChannelsMuteDeleteRequest, _$identity);
 
   /// Serializes this ChannelsMuteDeleteRequest to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChannelsMuteDeleteRequest &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, channelId);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChannelsMuteDeleteRequest&&(identical(other.channelId, channelId) || other.channelId == channelId));
+}
 
-  @override
-  String toString() {
-    return 'ChannelsMuteDeleteRequest(channelId: $channelId)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,channelId);
+
+@override
+String toString() {
+  return 'ChannelsMuteDeleteRequest(channelId: $channelId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $ChannelsMuteDeleteRequestCopyWith<$Res> {
-  factory $ChannelsMuteDeleteRequestCopyWith(ChannelsMuteDeleteRequest value,
-          $Res Function(ChannelsMuteDeleteRequest) _then) =
-      _$ChannelsMuteDeleteRequestCopyWithImpl;
-  @useResult
-  $Res call({String? channelId});
-}
+abstract mixin class $ChannelsMuteDeleteRequestCopyWith<$Res>  {
+  factory $ChannelsMuteDeleteRequestCopyWith(ChannelsMuteDeleteRequest value, $Res Function(ChannelsMuteDeleteRequest) _then) = _$ChannelsMuteDeleteRequestCopyWithImpl;
+@useResult
+$Res call({
+ String? channelId
+});
 
+
+
+
+}
 /// @nodoc
 class _$ChannelsMuteDeleteRequestCopyWithImpl<$Res>
     implements $ChannelsMuteDeleteRequestCopyWith<$Res> {
@@ -64,79 +63,197 @@ class _$ChannelsMuteDeleteRequestCopyWithImpl<$Res>
   final ChannelsMuteDeleteRequest _self;
   final $Res Function(ChannelsMuteDeleteRequest) _then;
 
-  /// Create a copy of ChannelsMuteDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? channelId = freezed,
-  }) {
-    return _then(_self.copyWith(
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of ChannelsMuteDeleteRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? channelId = freezed,}) {
+  return _then(_self.copyWith(
+channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ChannelsMuteDeleteRequest].
+extension ChannelsMuteDeleteRequestPatterns on ChannelsMuteDeleteRequest {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChannelsMuteDeleteRequest value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChannelsMuteDeleteRequest() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChannelsMuteDeleteRequest value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChannelsMuteDeleteRequest():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChannelsMuteDeleteRequest value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChannelsMuteDeleteRequest() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? channelId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ChannelsMuteDeleteRequest() when $default != null:
+return $default(_that.channelId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? channelId)  $default,) {final _that = this;
+switch (_that) {
+case _ChannelsMuteDeleteRequest():
+return $default(_that.channelId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? channelId)?  $default,) {final _that = this;
+switch (_that) {
+case _ChannelsMuteDeleteRequest() when $default != null:
+return $default(_that.channelId);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _ChannelsMuteDeleteRequest implements ChannelsMuteDeleteRequest {
   const _ChannelsMuteDeleteRequest({this.channelId});
-  factory _ChannelsMuteDeleteRequest.fromJson(Map<String, dynamic> json) =>
-      _$ChannelsMuteDeleteRequestFromJson(json);
+  factory _ChannelsMuteDeleteRequest.fromJson(Map<String, dynamic> json) => _$ChannelsMuteDeleteRequestFromJson(json);
 
-  @override
-  final String? channelId;
+@override final  String? channelId;
 
-  /// Create a copy of ChannelsMuteDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChannelsMuteDeleteRequestCopyWith<_ChannelsMuteDeleteRequest>
-      get copyWith =>
-          __$ChannelsMuteDeleteRequestCopyWithImpl<_ChannelsMuteDeleteRequest>(
-              this, _$identity);
+/// Create a copy of ChannelsMuteDeleteRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChannelsMuteDeleteRequestCopyWith<_ChannelsMuteDeleteRequest> get copyWith => __$ChannelsMuteDeleteRequestCopyWithImpl<_ChannelsMuteDeleteRequest>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChannelsMuteDeleteRequestToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChannelsMuteDeleteRequestToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ChannelsMuteDeleteRequest &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChannelsMuteDeleteRequest&&(identical(other.channelId, channelId) || other.channelId == channelId));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, channelId);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,channelId);
 
-  @override
-  String toString() {
-    return 'ChannelsMuteDeleteRequest(channelId: $channelId)';
-  }
+@override
+String toString() {
+  return 'ChannelsMuteDeleteRequest(channelId: $channelId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$ChannelsMuteDeleteRequestCopyWith<$Res>
-    implements $ChannelsMuteDeleteRequestCopyWith<$Res> {
-  factory _$ChannelsMuteDeleteRequestCopyWith(_ChannelsMuteDeleteRequest value,
-          $Res Function(_ChannelsMuteDeleteRequest) _then) =
-      __$ChannelsMuteDeleteRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String? channelId});
-}
+abstract mixin class _$ChannelsMuteDeleteRequestCopyWith<$Res> implements $ChannelsMuteDeleteRequestCopyWith<$Res> {
+  factory _$ChannelsMuteDeleteRequestCopyWith(_ChannelsMuteDeleteRequest value, $Res Function(_ChannelsMuteDeleteRequest) _then) = __$ChannelsMuteDeleteRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ String? channelId
+});
 
+
+
+
+}
 /// @nodoc
 class __$ChannelsMuteDeleteRequestCopyWithImpl<$Res>
     implements _$ChannelsMuteDeleteRequestCopyWith<$Res> {
@@ -145,20 +262,16 @@ class __$ChannelsMuteDeleteRequestCopyWithImpl<$Res>
   final _ChannelsMuteDeleteRequest _self;
   final $Res Function(_ChannelsMuteDeleteRequest) _then;
 
-  /// Create a copy of ChannelsMuteDeleteRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? channelId = freezed,
-  }) {
-    return _then(_ChannelsMuteDeleteRequest(
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of ChannelsMuteDeleteRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? channelId = freezed,}) {
+  return _then(_ChannelsMuteDeleteRequest(
+channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
 }
 
 // dart format on

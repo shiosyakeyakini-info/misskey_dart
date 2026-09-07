@@ -18,5 +18,6 @@ abstract class SystemWebhook with _$SystemWebhook {
     required String secret,
   }) = _SystemWebhook;
 
-  factory SystemWebhook.fromJson(Map<String, Object?> json) => _$SystemWebhookFromJson(json);
+  factory SystemWebhook.fromJson(Map<String, Object?> json) =>
+      _$SystemWebhookFromJson(json);
 }

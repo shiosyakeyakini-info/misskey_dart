@@ -7,15 +7,12 @@ part of 'drive_folders_find_request.dart';
 // **************************************************************************
 
 _DriveFoldersFindRequest _$DriveFoldersFindRequestFromJson(
-        Map<String, dynamic> json) =>
-    _DriveFoldersFindRequest(
-      name: json['name'] as String?,
-      parentId: json['parentId'] as String? ?? null,
-    );
+  Map<String, dynamic> json,
+) => _DriveFoldersFindRequest(
+  name: json['name'] as String?,
+  parentId: json['parentId'] as String? ?? null,
+);
 
 Map<String, dynamic> _$DriveFoldersFindRequestToJson(
-        _DriveFoldersFindRequest instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'parentId': instance.parentId,
-    };
+  _DriveFoldersFindRequest instance,
+) => <String, dynamic>{'name': instance.name, 'parentId': instance.parentId};

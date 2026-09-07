@@ -7,13 +7,9 @@ part of 'admin_reset_password_request.dart';
 // **************************************************************************
 
 _AdminResetPasswordRequest _$AdminResetPasswordRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminResetPasswordRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminResetPasswordRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$AdminResetPasswordRequestToJson(
-        _AdminResetPasswordRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _AdminResetPasswordRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

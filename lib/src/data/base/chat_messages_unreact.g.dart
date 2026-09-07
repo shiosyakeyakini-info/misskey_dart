@@ -13,8 +13,8 @@ _ChatMessagesUnreact _$ChatMessagesUnreactFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChatMessagesUnreactToJson(
-        _ChatMessagesUnreact instance) =>
-    <String, dynamic>{
-      'messageId': instance.messageId,
-      'reaction': instance.reaction,
-    };
+  _ChatMessagesUnreact instance,
+) => <String, dynamic>{
+  'messageId': instance.messageId,
+  'reaction': instance.reaction,
+};

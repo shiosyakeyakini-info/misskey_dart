@@ -1,5 +1,1 @@
-enum FollowingUpdateNotify {
-  normal,
-  none,
-  unknown,
-}
+enum FollowingUpdateNotify { normal, none, unknown }

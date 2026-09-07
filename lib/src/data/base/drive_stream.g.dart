@@ -7,13 +7,13 @@ part of 'drive_stream.dart';
 // **************************************************************************
 
 _DriveStream _$DriveStreamFromJson(Map<String, dynamic> json) => _DriveStream(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-      type: json['type'] as String?,
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+  type: json['type'] as String?,
+);
 
 Map<String, dynamic> _$DriveStreamToJson(_DriveStream instance) =>
     <String, dynamic>{

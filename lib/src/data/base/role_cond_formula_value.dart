@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'role_cond_formula_value.freezed.dart';
 part 'role_cond_formula_value.g.dart';
@@ -21,33 +20,26 @@ sealed class RoleCondFormulaValue with _$RoleCondFormulaValue {
     required RoleCondFormulaValue value,
   }) = RoleCondFormulaValueNot;
 
-  const factory RoleCondFormulaValue.isLocal({
-    required String id,
-  }) = RoleCondFormulaValueIsLocal;
+  const factory RoleCondFormulaValue.isLocal({required String id}) =
+      RoleCondFormulaValueIsLocal;
 
-  const factory RoleCondFormulaValue.isRemote({
-    required String id,
-  }) = RoleCondFormulaValueIsRemote;
+  const factory RoleCondFormulaValue.isRemote({required String id}) =
+      RoleCondFormulaValueIsRemote;
 
-  const factory RoleCondFormulaValue.isSuspended({
-    required String id,
-  }) = RoleCondFormulaValueIsSuspended;
+  const factory RoleCondFormulaValue.isSuspended({required String id}) =
+      RoleCondFormulaValueIsSuspended;
 
-  const factory RoleCondFormulaValue.isLocked({
-    required String id,
-  }) = RoleCondFormulaValueIsLocked;
+  const factory RoleCondFormulaValue.isLocked({required String id}) =
+      RoleCondFormulaValueIsLocked;
 
-  const factory RoleCondFormulaValue.isBot({
-    required String id,
-  }) = RoleCondFormulaValueIsBot;
+  const factory RoleCondFormulaValue.isBot({required String id}) =
+      RoleCondFormulaValueIsBot;
 
-  const factory RoleCondFormulaValue.isCat({
-    required String id,
-  }) = RoleCondFormulaValueIsCat;
+  const factory RoleCondFormulaValue.isCat({required String id}) =
+      RoleCondFormulaValueIsCat;
 
-  const factory RoleCondFormulaValue.isExplorable({
-    required String id,
-  }) = RoleCondFormulaValueIsExplorable;
+  const factory RoleCondFormulaValue.isExplorable({required String id}) =
+      RoleCondFormulaValueIsExplorable;
 
   const factory RoleCondFormulaValue.roleAssignedTo({
     required String id,
@@ -94,9 +86,9 @@ sealed class RoleCondFormulaValue with _$RoleCondFormulaValue {
     required double value,
   }) = RoleCondFormulaValueNotesMoreThanOrEq;
 
-  const factory RoleCondFormulaValue.unknown({
-    String? id,
-  }) = RoleCondFormulaValueUnknown;
+  const factory RoleCondFormulaValue.unknown({String? id}) =
+      RoleCondFormulaValueUnknown;
 
-  factory RoleCondFormulaValue.fromJson(Map<String, Object?> json) => _$RoleCondFormulaValueFromJson(json);
+  factory RoleCondFormulaValue.fromJson(Map<String, Object?> json) =>
+      _$RoleCondFormulaValueFromJson(json);
 }

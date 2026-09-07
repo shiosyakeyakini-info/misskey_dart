@@ -7,14 +7,13 @@ part of 'following.dart';
 // **************************************************************************
 
 _Following _$FollowingFromJson(Map<String, dynamic> json) => _Following(
-      id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
-      followeeId: json['followeeId'] as String,
-      followerId: json['followerId'] as String,
-      followee: json['followee'] as Map<String, dynamic>?,
-      follower: json['follower'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
+  followeeId: json['followeeId'] as String,
+  followerId: json['followerId'] as String,
+  followee: json['followee'] as Map<String, dynamic>?,
+  follower: json['follower'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$FollowingToJson(_Following instance) =>
     <String, dynamic>{

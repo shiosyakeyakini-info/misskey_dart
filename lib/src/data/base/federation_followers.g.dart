@@ -17,12 +17,12 @@ _FederationFollowers _$FederationFollowersFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FederationFollowersToJson(
-        _FederationFollowers instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'limit': instance.limit,
-    };
+  _FederationFollowers instance,
+) => <String, dynamic>{
+  'host': instance.host,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'limit': instance.limit,
+};

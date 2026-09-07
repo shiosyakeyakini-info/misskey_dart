@@ -40,8 +40,10 @@ _RolePolicies _$RolePoliciesFromJson(Map<String, dynamic> json) =>
       canImportFollowing: json['canImportFollowing'] as bool,
       canImportMuting: json['canImportMuting'] as bool,
       canImportUserLists: json['canImportUserLists'] as bool,
-      chatAvailability:
-          $enumDecode(_$ChatAvailabilityEnumMap, json['chatAvailability']),
+      chatAvailability: $enumDecode(
+        _$ChatAvailabilityEnumMap,
+        json['chatAvailability'],
+      ),
       uploadableFileTypes: (json['uploadableFileTypes'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),

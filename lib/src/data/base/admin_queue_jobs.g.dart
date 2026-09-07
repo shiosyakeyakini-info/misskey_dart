@@ -8,8 +8,11 @@ part of 'admin_queue_jobs.dart';
 
 _AdminQueueJobs _$AdminQueueJobsFromJson(Map<String, dynamic> json) =>
     _AdminQueueJobs(
-      queue: $enumDecode(_$AdminQueueJobsQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueJobsQueue.unknown),
+      queue: $enumDecode(
+        _$AdminQueueJobsQueueEnumMap,
+        json['queue'],
+        unknownValue: AdminQueueJobsQueue.unknown,
+      ),
       state: (json['state'] as List<dynamic>)
           .map((e) => $enumDecode(_$AdminQueueJobsStateItemEnumMap, e))
           .toList(),

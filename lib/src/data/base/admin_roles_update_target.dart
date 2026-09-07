@@ -1,5 +1,1 @@
-enum AdminRolesUpdateTarget {
-  manual,
-  conditional,
-  unknown,
-}
+enum AdminRolesUpdateTarget { manual, conditional, unknown }

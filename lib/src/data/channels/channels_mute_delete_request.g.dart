@@ -7,13 +7,9 @@ part of 'channels_mute_delete_request.dart';
 // **************************************************************************
 
 _ChannelsMuteDeleteRequest _$ChannelsMuteDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChannelsMuteDeleteRequest(
-      channelId: json['channelId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _ChannelsMuteDeleteRequest(channelId: json['channelId'] as String?);
 
 Map<String, dynamic> _$ChannelsMuteDeleteRequestToJson(
-        _ChannelsMuteDeleteRequest instance) =>
-    <String, dynamic>{
-      'channelId': instance.channelId,
-    };
+  _ChannelsMuteDeleteRequest instance,
+) => <String, dynamic>{'channelId': instance.channelId};

@@ -7,11 +7,7 @@ part of 'i_import_user_lists.dart';
 // **************************************************************************
 
 _IImportUserLists _$IImportUserListsFromJson(Map<String, dynamic> json) =>
-    _IImportUserLists(
-      fileId: json['fileId'] as String,
-    );
+    _IImportUserLists(fileId: json['fileId'] as String);
 
 Map<String, dynamic> _$IImportUserListsToJson(_IImportUserLists instance) =>
-    <String, dynamic>{
-      'fileId': instance.fileId,
-    };
+    <String, dynamic>{'fileId': instance.fileId};

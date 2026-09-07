@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_drive_remote.freezed.dart';
 part 'charts_drive_remote.g.dart';
@@ -13,5 +12,6 @@ abstract class ChartsDriveRemote with _$ChartsDriveRemote {
     required List<double> decSize,
   }) = _ChartsDriveRemote;
 
-  factory ChartsDriveRemote.fromJson(Map<String, Object?> json) => _$ChartsDriveRemoteFromJson(json);
+  factory ChartsDriveRemote.fromJson(Map<String, Object?> json) =>
+      _$ChartsDriveRemoteFromJson(json);
 }

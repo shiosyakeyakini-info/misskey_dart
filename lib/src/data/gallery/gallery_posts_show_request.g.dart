@@ -7,13 +7,9 @@ part of 'gallery_posts_show_request.dart';
 // **************************************************************************
 
 _GalleryPostsShowRequest _$GalleryPostsShowRequestFromJson(
-        Map<String, dynamic> json) =>
-    _GalleryPostsShowRequest(
-      postId: json['postId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _GalleryPostsShowRequest(postId: json['postId'] as String?);
 
 Map<String, dynamic> _$GalleryPostsShowRequestToJson(
-        _GalleryPostsShowRequest instance) =>
-    <String, dynamic>{
-      'postId': instance.postId,
-    };
+  _GalleryPostsShowRequest instance,
+) => <String, dynamic>{'postId': instance.postId};

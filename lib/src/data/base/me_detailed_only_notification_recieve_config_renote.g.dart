@@ -7,24 +7,25 @@ part of 'me_detailed_only_notification_recieve_config_renote.dart';
 // **************************************************************************
 
 _MeDetailedOnlyNotificationRecieveConfigRenote
-    _$MeDetailedOnlyNotificationRecieveConfigRenoteFromJson(
-            Map<String, dynamic> json) =>
-        _MeDetailedOnlyNotificationRecieveConfigRenote(
-          type: $enumDecode(
-              _$MeDetailedOnlyNotificationRecieveConfigRenoteTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$MeDetailedOnlyNotificationRecieveConfigRenoteFromJson(
+  Map<String, dynamic> json,
+) => _MeDetailedOnlyNotificationRecieveConfigRenote(
+  type: $enumDecode(
+    _$MeDetailedOnlyNotificationRecieveConfigRenoteTypeEnumMap,
+    json['type'],
+    unknownValue: MeDetailedOnlyNotificationRecieveConfigRenoteType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigRenoteToJson(
-        _MeDetailedOnlyNotificationRecieveConfigRenote instance) =>
-    <String, dynamic>{
-      'type': _$MeDetailedOnlyNotificationRecieveConfigRenoteTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _MeDetailedOnlyNotificationRecieveConfigRenote instance,
+) => <String, dynamic>{
+  'type':
+      _$MeDetailedOnlyNotificationRecieveConfigRenoteTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$MeDetailedOnlyNotificationRecieveConfigRenoteTypeEnumMap = {
   MeDetailedOnlyNotificationRecieveConfigRenoteType.all: 'all',

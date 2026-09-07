@@ -13,7 +13,4 @@ _I2faUnregister _$I2faUnregisterFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$I2faUnregisterToJson(_I2faUnregister instance) =>
-    <String, dynamic>{
-      'password': instance.password,
-      'token': instance.token,
-    };
+    <String, dynamic>{'password': instance.password, 'token': instance.token};

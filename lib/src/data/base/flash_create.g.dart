@@ -7,17 +7,20 @@ part of 'flash_create.dart';
 // **************************************************************************
 
 _FlashCreate _$FlashCreateFromJson(Map<String, dynamic> json) => _FlashCreate(
-      title: json['title'] as String,
-      summary: json['summary'] as String,
-      script: json['script'] as String,
-      permissions: (json['permissions'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      visibility: $enumDecodeNullable(
-              _$FlashVisibilityEnumMap, json['visibility'],
-              unknownValue: FlashVisibility.unknown) ??
-          FlashVisibility.public,
-    );
+  title: json['title'] as String,
+  summary: json['summary'] as String,
+  script: json['script'] as String,
+  permissions: (json['permissions'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+  visibility:
+      $enumDecodeNullable(
+        _$FlashVisibilityEnumMap,
+        json['visibility'],
+        unknownValue: FlashVisibility.unknown,
+      ) ??
+      FlashVisibility.public,
+);
 
 Map<String, dynamic> _$FlashCreateToJson(_FlashCreate instance) =>
     <String, dynamic>{

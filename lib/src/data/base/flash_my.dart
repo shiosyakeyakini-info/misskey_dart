@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'flash_my.freezed.dart';
 part 'flash_my.g.dart';
@@ -14,5 +13,6 @@ abstract class FlashMy with _$FlashMy {
     int? untilDate,
   }) = _FlashMy;
 
-  factory FlashMy.fromJson(Map<String, Object?> json) => _$FlashMyFromJson(json);
+  factory FlashMy.fromJson(Map<String, Object?> json) =>
+      _$FlashMyFromJson(json);
 }

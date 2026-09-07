@@ -11,8 +11,9 @@ _GalleryPostsUpdate _$GalleryPostsUpdateFromJson(Map<String, dynamic> json) =>
       postId: json['postId'] as String,
       title: json['title'] as String?,
       description: json['description'] as String?,
-      fileIds:
-          (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      fileIds: (json['fileIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       isSensitive: json['isSensitive'] as bool? ?? false,
     );
 

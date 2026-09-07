@@ -1,11 +1,10 @@
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyNotifications {
-
   final ApiService _apiService;
 
   MisskeyNotifications({required ApiService apiService})
-      : _apiService = apiService;
+    : _apiService = apiService;
 
   /// notifications/create
   Future<void> create(NotificationsCreateRequest request) async {
@@ -26,5 +25,4 @@ class MisskeyNotifications {
   Future<void> testNotification() async {
     await _apiService.post<void>("notifications/test-notification", {});
   }
-
 }

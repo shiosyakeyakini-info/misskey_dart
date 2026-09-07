@@ -8,8 +8,11 @@ part of 'admin_captcha_save.dart';
 
 _AdminCaptchaSave _$AdminCaptchaSaveFromJson(Map<String, dynamic> json) =>
     _AdminCaptchaSave(
-      provider: $enumDecode(_$AdminCaptchaSaveProviderEnumMap, json['provider'],
-          unknownValue: AdminCaptchaSaveProvider.unknown),
+      provider: $enumDecode(
+        _$AdminCaptchaSaveProviderEnumMap,
+        json['provider'],
+        unknownValue: AdminCaptchaSaveProvider.unknown,
+      ),
       captchaResult: json['captchaResult'] as String?,
       sitekey: json['sitekey'] as String?,
       secret: json['secret'] as String?,

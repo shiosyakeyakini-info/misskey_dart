@@ -17,5 +17,6 @@ abstract class InviteCode with _$InviteCode {
     required bool used,
   }) = _InviteCode;
 
-  factory InviteCode.fromJson(Map<String, Object?> json) => _$InviteCodeFromJson(json);
+  factory InviteCode.fromJson(Map<String, Object?> json) =>
+      _$InviteCodeFromJson(json);
 }

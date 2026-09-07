@@ -7,10 +7,9 @@ part of 'charts_notes.dart';
 // **************************************************************************
 
 _ChartsNotes _$ChartsNotesFromJson(Map<String, dynamic> json) => _ChartsNotes(
-      local: ChartsNotesLocal.fromJson(json['local'] as Map<String, dynamic>),
-      remote:
-          ChartsNotesRemote.fromJson(json['remote'] as Map<String, dynamic>),
-    );
+  local: ChartsNotesLocal.fromJson(json['local'] as Map<String, dynamic>),
+  remote: ChartsNotesRemote.fromJson(json['remote'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$ChartsNotesToJson(_ChartsNotes instance) =>
     <String, dynamic>{

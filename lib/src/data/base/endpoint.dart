@@ -6,9 +6,9 @@ part 'endpoint.g.dart';
 
 @freezed
 abstract class Endpoint with _$Endpoint {
-  const factory Endpoint({
-    required List<EndpointParamsItem> params,
-  }) = _Endpoint;
+  const factory Endpoint({required List<EndpointParamsItem> params}) =
+      _Endpoint;
 
-  factory Endpoint.fromJson(Map<String, Object?> json) => _$EndpointFromJson(json);
+  factory Endpoint.fromJson(Map<String, Object?> json) =>
+      _$EndpointFromJson(json);
 }

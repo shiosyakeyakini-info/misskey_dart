@@ -7,17 +7,19 @@ part of 'charts_user_following_remote.dart';
 // **************************************************************************
 
 _ChartsUserFollowingRemote _$ChartsUserFollowingRemoteFromJson(
-        Map<String, dynamic> json) =>
-    _ChartsUserFollowingRemote(
-      followings: ChartsUserFollowingRemoteFollowings.fromJson(
-          json['followings'] as Map<String, dynamic>),
-      followers: ChartsUserFollowingRemoteFollowers.fromJson(
-          json['followers'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => _ChartsUserFollowingRemote(
+  followings: ChartsUserFollowingRemoteFollowings.fromJson(
+    json['followings'] as Map<String, dynamic>,
+  ),
+  followers: ChartsUserFollowingRemoteFollowers.fromJson(
+    json['followers'] as Map<String, dynamic>,
+  ),
+);
 
 Map<String, dynamic> _$ChartsUserFollowingRemoteToJson(
-        _ChartsUserFollowingRemote instance) =>
-    <String, dynamic>{
-      'followings': instance.followings.toJson(),
-      'followers': instance.followers.toJson(),
-    };
+  _ChartsUserFollowingRemote instance,
+) => <String, dynamic>{
+  'followings': instance.followings.toJson(),
+  'followers': instance.followers.toJson(),
+};

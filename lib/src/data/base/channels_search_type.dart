@@ -1,5 +1,1 @@
-enum ChannelsSearchType {
-  nameAndDescription,
-  nameOnly,
-  unknown,
-}
+enum ChannelsSearchType { nameAndDescription, nameOnly, unknown }

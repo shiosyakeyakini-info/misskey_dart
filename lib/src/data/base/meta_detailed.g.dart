@@ -18,9 +18,11 @@ _MetaDetailed _$MetaDetailedFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       langs: (json['langs'] as List<dynamic>).map((e) => e as String).toList(),
       tosUrl: json['tosUrl'] as String?,
-      repositoryUrl: json['repositoryUrl'] as String? ??
+      repositoryUrl:
+          json['repositoryUrl'] as String? ??
           "https://github.com/misskey-dev/misskey",
-      feedbackUrl: json['feedbackUrl'] as String? ??
+      feedbackUrl:
+          json['feedbackUrl'] as String? ??
           "https://github.com/misskey-dev/misskey/issues/new",
       defaultDarkTheme: json['defaultDarkTheme'] as String?,
       defaultLightTheme: json['defaultLightTheme'] as String?,
@@ -56,7 +58,8 @@ _MetaDetailed _$MetaDetailedFromJson(Map<String, dynamic> json) =>
       sentryForFrontend: json['sentryForFrontend'] == null
           ? null
           : MetaLiteSentryForFrontend.fromJson(
-              json['sentryForFrontend'] as Map<String, dynamic>),
+              json['sentryForFrontend'] as Map<String, dynamic>,
+            ),
       mediaProxy: json['mediaProxy'] as String,
       enableUrlPreview: json['enableUrlPreview'] as bool,
       backgroundImageUrl: json['backgroundImageUrl'] as String?,
@@ -69,18 +72,25 @@ _MetaDetailed _$MetaDetailedFromJson(Map<String, dynamic> json) =>
           .toList(),
       themeColor: json['themeColor'] as String?,
       policies: RolePolicies.fromJson(json['policies'] as Map<String, dynamic>),
-      noteSearchableScope: $enumDecodeNullable(
-              _$NoteSearchableScopeEnumMap, json['noteSearchableScope'],
-              unknownValue: NoteSearchableScope.unknown) ??
+      noteSearchableScope:
+          $enumDecodeNullable(
+            _$NoteSearchableScopeEnumMap,
+            json['noteSearchableScope'],
+            unknownValue: NoteSearchableScope.unknown,
+          ) ??
           NoteSearchableScope.local,
       maxFileSize: (json['maxFileSize'] as num).toDouble(),
-      federation: $enumDecode(_$FederationScopeEnumMap, json['federation'],
-          unknownValue: FederationScope.unknown),
+      federation: $enumDecode(
+        _$FederationScopeEnumMap,
+        json['federation'],
+        unknownValue: FederationScope.unknown,
+      ),
       clientOptions: json['clientOptions'] as Map<String, dynamic>?,
       features: json['features'] == null
           ? null
           : MetaDetailedOnlyFeatures.fromJson(
-              json['features'] as Map<String, dynamic>),
+              json['features'] as Map<String, dynamic>,
+            ),
       proxyAccountName: json['proxyAccountName'] as String?,
       requireSetup: json['requireSetup'] as bool,
       cacheRemoteFiles: json['cacheRemoteFiles'] as bool,

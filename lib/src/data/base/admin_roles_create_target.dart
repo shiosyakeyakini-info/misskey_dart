@@ -1,5 +1,1 @@
-enum AdminRolesCreateTarget {
-  manual,
-  conditional,
-  unknown,
-}
+enum AdminRolesCreateTarget { manual, conditional, unknown }

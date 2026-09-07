@@ -91,6 +91,32 @@ abstract class StreamingController {
     required ChatRoomParameter parameter,
     required String id,
   });
+
+  /// リバーシのマッチングのストリームに接続します。
+  ///
+  /// 招待されたとき (`invited`) と、自分が出した招待に相手が応じたとき
+  /// (`matched`) が流れてきます。
+  Stream<StreamingResponse> reversiStream({required String id});
+
+  /// リバーシの対局のストリームに接続します。
+  ///
+  /// 対局中のやりとりはすべてこのチャンネル越しに行います。石を打つのも
+  /// API ではなく [sendChannelMessage] で `putStone` を送ります。
+  Stream<StreamingResponse> reversiGameStream({
+    required String gameId,
+    String? id,
+  });
+
+  /// 接続済みのチャンネルへメッセージを送ります。
+  ///
+  /// Misskey のストリーミングは受信専用ではなく、チャンネルによっては
+  /// クライアントからの操作を受け付けます。リバーシの `ready` `putStone`
+  /// `surrender` 以外の操作はすべてこれで送ります。
+  void sendChannelMessage({
+    required String id,
+    required String type,
+    Object? body,
+  });
 }
 
 abstract class WebSocketController {

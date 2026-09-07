@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,56 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminRelaysAdd {
-  String get id;
-  @UriConverter()
-  Uri get inbox;
-  @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
-  AdminRelaysAddStatus get status;
 
-  /// Create a copy of AdminRelaysAdd
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AdminRelaysAddCopyWith<AdminRelaysAdd> get copyWith =>
-      _$AdminRelaysAddCopyWithImpl<AdminRelaysAdd>(
-          this as AdminRelaysAdd, _$identity);
+ String get id;@UriConverter() Uri get inbox;@JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown) AdminRelaysAddStatus get status;
+/// Create a copy of AdminRelaysAdd
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AdminRelaysAddCopyWith<AdminRelaysAdd> get copyWith => _$AdminRelaysAddCopyWithImpl<AdminRelaysAdd>(this as AdminRelaysAdd, _$identity);
 
   /// Serializes this AdminRelaysAdd to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AdminRelaysAdd &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.inbox, inbox) || other.inbox == inbox) &&
-            (identical(other.status, status) || other.status == status));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, inbox, status);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminRelaysAdd&&(identical(other.id, id) || other.id == id)&&(identical(other.inbox, inbox) || other.inbox == inbox)&&(identical(other.status, status) || other.status == status));
+}
 
-  @override
-  String toString() {
-    return 'AdminRelaysAdd(id: $id, inbox: $inbox, status: $status)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,inbox,status);
+
+@override
+String toString() {
+  return 'AdminRelaysAdd(id: $id, inbox: $inbox, status: $status)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AdminRelaysAddCopyWith<$Res> {
-  factory $AdminRelaysAddCopyWith(
-          AdminRelaysAdd value, $Res Function(AdminRelaysAdd) _then) =
-      _$AdminRelaysAddCopyWithImpl;
-  @useResult
-  $Res call(
-      {String id,
-      @UriConverter() Uri inbox,
-      @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
-      AdminRelaysAddStatus status});
-}
+abstract mixin class $AdminRelaysAddCopyWith<$Res>  {
+  factory $AdminRelaysAddCopyWith(AdminRelaysAdd value, $Res Function(AdminRelaysAdd) _then) = _$AdminRelaysAddCopyWithImpl;
+@useResult
+$Res call({
+ String id,@UriConverter() Uri inbox,@JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown) AdminRelaysAddStatus status
+});
 
+
+
+
+}
 /// @nodoc
 class _$AdminRelaysAddCopyWithImpl<$Res>
     implements $AdminRelaysAddCopyWith<$Res> {
@@ -73,102 +63,201 @@ class _$AdminRelaysAddCopyWithImpl<$Res>
   final AdminRelaysAdd _self;
   final $Res Function(AdminRelaysAdd) _then;
 
-  /// Create a copy of AdminRelaysAdd
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? inbox = null,
-    Object? status = null,
-  }) {
-    return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      inbox: null == inbox
-          ? _self.inbox
-          : inbox // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AdminRelaysAddStatus,
-    ));
-  }
+/// Create a copy of AdminRelaysAdd
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? inbox = null,Object? status = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,inbox: null == inbox ? _self.inbox : inbox // ignore: cast_nullable_to_non_nullable
+as Uri,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AdminRelaysAddStatus,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AdminRelaysAdd].
+extension AdminRelaysAddPatterns on AdminRelaysAdd {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminRelaysAdd value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AdminRelaysAdd() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminRelaysAdd value)  $default,){
+final _that = this;
+switch (_that) {
+case _AdminRelaysAdd():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminRelaysAdd value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AdminRelaysAdd() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @UriConverter()  Uri inbox, @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)  AdminRelaysAddStatus status)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AdminRelaysAdd() when $default != null:
+return $default(_that.id,_that.inbox,_that.status);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @UriConverter()  Uri inbox, @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)  AdminRelaysAddStatus status)  $default,) {final _that = this;
+switch (_that) {
+case _AdminRelaysAdd():
+return $default(_that.id,_that.inbox,_that.status);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @UriConverter()  Uri inbox, @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)  AdminRelaysAddStatus status)?  $default,) {final _that = this;
+switch (_that) {
+case _AdminRelaysAdd() when $default != null:
+return $default(_that.id,_that.inbox,_that.status);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _AdminRelaysAdd implements AdminRelaysAdd {
-  const _AdminRelaysAdd(
-      {required this.id,
-      @UriConverter() required this.inbox,
-      @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
-      this.status = AdminRelaysAddStatus.requesting});
-  factory _AdminRelaysAdd.fromJson(Map<String, dynamic> json) =>
-      _$AdminRelaysAddFromJson(json);
+  const _AdminRelaysAdd({required this.id, @UriConverter() required this.inbox, @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown) this.status = AdminRelaysAddStatus.requesting});
+  factory _AdminRelaysAdd.fromJson(Map<String, dynamic> json) => _$AdminRelaysAddFromJson(json);
 
-  @override
-  final String id;
-  @override
-  @UriConverter()
-  final Uri inbox;
-  @override
-  @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
-  final AdminRelaysAddStatus status;
+@override final  String id;
+@override@UriConverter() final  Uri inbox;
+@override@JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown) final  AdminRelaysAddStatus status;
 
-  /// Create a copy of AdminRelaysAdd
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AdminRelaysAddCopyWith<_AdminRelaysAdd> get copyWith =>
-      __$AdminRelaysAddCopyWithImpl<_AdminRelaysAdd>(this, _$identity);
+/// Create a copy of AdminRelaysAdd
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AdminRelaysAddCopyWith<_AdminRelaysAdd> get copyWith => __$AdminRelaysAddCopyWithImpl<_AdminRelaysAdd>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AdminRelaysAddToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AdminRelaysAddToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AdminRelaysAdd &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.inbox, inbox) || other.inbox == inbox) &&
-            (identical(other.status, status) || other.status == status));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminRelaysAdd&&(identical(other.id, id) || other.id == id)&&(identical(other.inbox, inbox) || other.inbox == inbox)&&(identical(other.status, status) || other.status == status));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, inbox, status);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,inbox,status);
 
-  @override
-  String toString() {
-    return 'AdminRelaysAdd(id: $id, inbox: $inbox, status: $status)';
-  }
+@override
+String toString() {
+  return 'AdminRelaysAdd(id: $id, inbox: $inbox, status: $status)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AdminRelaysAddCopyWith<$Res>
-    implements $AdminRelaysAddCopyWith<$Res> {
-  factory _$AdminRelaysAddCopyWith(
-          _AdminRelaysAdd value, $Res Function(_AdminRelaysAdd) _then) =
-      __$AdminRelaysAddCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @UriConverter() Uri inbox,
-      @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
-      AdminRelaysAddStatus status});
-}
+abstract mixin class _$AdminRelaysAddCopyWith<$Res> implements $AdminRelaysAddCopyWith<$Res> {
+  factory _$AdminRelaysAddCopyWith(_AdminRelaysAdd value, $Res Function(_AdminRelaysAdd) _then) = __$AdminRelaysAddCopyWithImpl;
+@override @useResult
+$Res call({
+ String id,@UriConverter() Uri inbox,@JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown) AdminRelaysAddStatus status
+});
 
+
+
+
+}
 /// @nodoc
 class __$AdminRelaysAddCopyWithImpl<$Res>
     implements _$AdminRelaysAddCopyWith<$Res> {
@@ -177,30 +266,18 @@ class __$AdminRelaysAddCopyWithImpl<$Res>
   final _AdminRelaysAdd _self;
   final $Res Function(_AdminRelaysAdd) _then;
 
-  /// Create a copy of AdminRelaysAdd
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? inbox = null,
-    Object? status = null,
-  }) {
-    return _then(_AdminRelaysAdd(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      inbox: null == inbox
-          ? _self.inbox
-          : inbox // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AdminRelaysAddStatus,
-    ));
-  }
+/// Create a copy of AdminRelaysAdd
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? inbox = null,Object? status = null,}) {
+  return _then(_AdminRelaysAdd(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,inbox: null == inbox ? _self.inbox : inbox // ignore: cast_nullable_to_non_nullable
+as Uri,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as AdminRelaysAddStatus,
+  ));
+}
+
+
 }
 
 // dart format on

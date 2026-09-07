@@ -12,7 +12,7 @@ _IRegistrySet _$IRegistrySetFromJson(Map<String, dynamic> json) =>
       value: json['value'] as String,
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          const [],
       domain: json['domain'] as String?,
     );
 

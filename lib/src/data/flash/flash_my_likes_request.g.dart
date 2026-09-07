@@ -17,12 +17,12 @@ _FlashMyLikesRequest _$FlashMyLikesRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FlashMyLikesRequestToJson(
-        _FlashMyLikesRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'search': instance.search,
-    };
+  _FlashMyLikesRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'search': instance.search,
+};

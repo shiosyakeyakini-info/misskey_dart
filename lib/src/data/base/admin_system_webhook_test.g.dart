@@ -7,24 +7,28 @@ part of 'admin_system_webhook_test.dart';
 // **************************************************************************
 
 _AdminSystemWebhookTest _$AdminSystemWebhookTestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminSystemWebhookTest(
-      webhookId: json['webhookId'] as String,
-      type: $enumDecode(_$AdminSystemWebhookTestTypeEnumMap, json['type'],
-          unknownValue: AdminSystemWebhookTestType.unknown),
-      override_: json['override'] == null
-          ? null
-          : AdminSystemWebhookTestOverride.fromJson(
-              json['override'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => _AdminSystemWebhookTest(
+  webhookId: json['webhookId'] as String,
+  type: $enumDecode(
+    _$AdminSystemWebhookTestTypeEnumMap,
+    json['type'],
+    unknownValue: AdminSystemWebhookTestType.unknown,
+  ),
+  override_: json['override'] == null
+      ? null
+      : AdminSystemWebhookTestOverride.fromJson(
+          json['override'] as Map<String, dynamic>,
+        ),
+);
 
 Map<String, dynamic> _$AdminSystemWebhookTestToJson(
-        _AdminSystemWebhookTest instance) =>
-    <String, dynamic>{
-      'webhookId': instance.webhookId,
-      'type': _$AdminSystemWebhookTestTypeEnumMap[instance.type]!,
-      'override': instance.override_?.toJson(),
-    };
+  _AdminSystemWebhookTest instance,
+) => <String, dynamic>{
+  'webhookId': instance.webhookId,
+  'type': _$AdminSystemWebhookTestTypeEnumMap[instance.type]!,
+  'override': instance.override_?.toJson(),
+};
 
 const _$AdminSystemWebhookTestTypeEnumMap = {
   AdminSystemWebhookTestType.abuseReport: 'abuseReport',

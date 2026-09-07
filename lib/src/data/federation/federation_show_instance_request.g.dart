@@ -7,13 +7,9 @@ part of 'federation_show_instance_request.dart';
 // **************************************************************************
 
 _FederationShowInstanceRequest _$FederationShowInstanceRequestFromJson(
-        Map<String, dynamic> json) =>
-    _FederationShowInstanceRequest(
-      host: json['host'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _FederationShowInstanceRequest(host: json['host'] as String?);
 
 Map<String, dynamic> _$FederationShowInstanceRequestToJson(
-        _FederationShowInstanceRequest instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-    };
+  _FederationShowInstanceRequest instance,
+) => <String, dynamic>{'host': instance.host};

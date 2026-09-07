@@ -7,15 +7,12 @@ part of 'admin_update_user_note_request.dart';
 // **************************************************************************
 
 _AdminUpdateUserNoteRequest _$AdminUpdateUserNoteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminUpdateUserNoteRequest(
-      userId: json['userId'] as String?,
-      text: json['text'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminUpdateUserNoteRequest(
+  userId: json['userId'] as String?,
+  text: json['text'] as String?,
+);
 
 Map<String, dynamic> _$AdminUpdateUserNoteRequestToJson(
-        _AdminUpdateUserNoteRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'text': instance.text,
-    };
+  _AdminUpdateUserNoteRequest instance,
+) => <String, dynamic>{'userId': instance.userId, 'text': instance.text};

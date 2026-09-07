@@ -7,15 +7,15 @@ part of 'sw_update_registration_request.dart';
 // **************************************************************************
 
 _SwUpdateRegistrationRequest _$SwUpdateRegistrationRequestFromJson(
-        Map<String, dynamic> json) =>
-    _SwUpdateRegistrationRequest(
-      endpoint: json['endpoint'] as String?,
-      sendReadMessage: json['sendReadMessage'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => _SwUpdateRegistrationRequest(
+  endpoint: json['endpoint'] as String?,
+  sendReadMessage: json['sendReadMessage'] as bool?,
+);
 
 Map<String, dynamic> _$SwUpdateRegistrationRequestToJson(
-        _SwUpdateRegistrationRequest instance) =>
-    <String, dynamic>{
-      'endpoint': instance.endpoint,
-      'sendReadMessage': instance.sendReadMessage,
-    };
+  _SwUpdateRegistrationRequest instance,
+) => <String, dynamic>{
+  'endpoint': instance.endpoint,
+  'sendReadMessage': instance.sendReadMessage,
+};

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_lists_update.freezed.dart';
 part 'users_lists_update.g.dart';
@@ -12,5 +11,6 @@ abstract class UsersListsUpdate with _$UsersListsUpdate {
     bool? isPublic,
   }) = _UsersListsUpdate;
 
-  factory UsersListsUpdate.fromJson(Map<String, Object?> json) => _$UsersListsUpdateFromJson(json);
+  factory UsersListsUpdate.fromJson(Map<String, Object?> json) =>
+      _$UsersListsUpdateFromJson(json);
 }

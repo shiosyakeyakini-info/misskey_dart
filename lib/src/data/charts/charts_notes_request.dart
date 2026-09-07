@@ -12,5 +12,6 @@ abstract class ChartsNotesRequest with _$ChartsNotesRequest {
     @Default(null) int? offset,
   }) = _ChartsNotesRequest;
 
-  factory ChartsNotesRequest.fromJson(Map<String, Object?> json) => _$ChartsNotesRequestFromJson(json);
+  factory ChartsNotesRequest.fromJson(Map<String, Object?> json) =>
+      _$ChartsNotesRequestFromJson(json);
 }

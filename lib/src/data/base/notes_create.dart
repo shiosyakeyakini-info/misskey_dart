@@ -6,9 +6,8 @@ part 'notes_create.g.dart';
 
 @freezed
 abstract class NotesCreate with _$NotesCreate {
-  const factory NotesCreate({
-    required Note createdNote,
-  }) = _NotesCreate;
+  const factory NotesCreate({required Note createdNote}) = _NotesCreate;
 
-  factory NotesCreate.fromJson(Map<String, Object?> json) => _$NotesCreateFromJson(json);
+  factory NotesCreate.fromJson(Map<String, Object?> json) =>
+      _$NotesCreateFromJson(json);
 }

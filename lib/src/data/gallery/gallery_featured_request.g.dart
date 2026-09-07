@@ -7,15 +7,12 @@ part of 'gallery_featured_request.dart';
 // **************************************************************************
 
 _GalleryFeaturedRequest _$GalleryFeaturedRequestFromJson(
-        Map<String, dynamic> json) =>
-    _GalleryFeaturedRequest(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      untilId: json['untilId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _GalleryFeaturedRequest(
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  untilId: json['untilId'] as String?,
+);
 
 Map<String, dynamic> _$GalleryFeaturedRequestToJson(
-        _GalleryFeaturedRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'untilId': instance.untilId,
-    };
+  _GalleryFeaturedRequest instance,
+) => <String, dynamic>{'limit': instance.limit, 'untilId': instance.untilId};

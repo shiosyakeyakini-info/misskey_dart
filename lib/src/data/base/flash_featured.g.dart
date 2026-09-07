@@ -13,7 +13,4 @@ _FlashFeatured _$FlashFeaturedFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FlashFeaturedToJson(_FlashFeatured instance) =>
-    <String, dynamic>{
-      'offset': instance.offset,
-      'limit': instance.limit,
-    };
+    <String, dynamic>{'offset': instance.offset, 'limit': instance.limit};

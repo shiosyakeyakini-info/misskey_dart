@@ -1,6 +1,1 @@
-enum AdminRelaysAddStatus {
-  requesting,
-  accepted,
-  rejected,
-  unknown,
-}
+enum AdminRelaysAddStatus { requesting, accepted, rejected, unknown }

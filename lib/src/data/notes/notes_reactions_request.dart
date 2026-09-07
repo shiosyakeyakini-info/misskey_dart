@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_reactions_request.freezed.dart';
 part 'notes_reactions_request.g.dart';
@@ -16,5 +15,6 @@ abstract class NotesReactionsRequest with _$NotesReactionsRequest {
     int? untilDate,
   }) = _NotesReactionsRequest;
 
-  factory NotesReactionsRequest.fromJson(Map<String, Object?> json) => _$NotesReactionsRequestFromJson(json);
+  factory NotesReactionsRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesReactionsRequestFromJson(json);
 }

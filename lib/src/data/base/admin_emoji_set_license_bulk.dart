@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_set_license_bulk.freezed.dart';
 part 'admin_emoji_set_license_bulk.g.dart';
@@ -11,5 +10,6 @@ abstract class AdminEmojiSetLicenseBulk with _$AdminEmojiSetLicenseBulk {
     String? license,
   }) = _AdminEmojiSetLicenseBulk;
 
-  factory AdminEmojiSetLicenseBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiSetLicenseBulkFromJson(json);
+  factory AdminEmojiSetLicenseBulk.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiSetLicenseBulkFromJson(json);
 }

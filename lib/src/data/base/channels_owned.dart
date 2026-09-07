@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_owned.freezed.dart';
 part 'channels_owned.g.dart';
@@ -14,5 +13,6 @@ abstract class ChannelsOwned with _$ChannelsOwned {
     @Default(5) int? limit,
   }) = _ChannelsOwned;
 
-  factory ChannelsOwned.fromJson(Map<String, Object?> json) => _$ChannelsOwnedFromJson(json);
+  factory ChannelsOwned.fromJson(Map<String, Object?> json) =>
+      _$ChannelsOwnedFromJson(json);
 }

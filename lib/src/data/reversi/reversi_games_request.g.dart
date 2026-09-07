@@ -17,12 +17,12 @@ _ReversiGamesRequest _$ReversiGamesRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ReversiGamesRequestToJson(
-        _ReversiGamesRequest instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'my': instance.my,
-    };
+  _ReversiGamesRequest instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'my': instance.my,
+};

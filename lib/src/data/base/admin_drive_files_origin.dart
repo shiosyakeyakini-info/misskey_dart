@@ -1,6 +1,1 @@
-enum AdminDriveFilesOrigin {
-  combined,
-  local,
-  remote,
-  unknown,
-}
+enum AdminDriveFilesOrigin { combined, local, remote, unknown }

@@ -1,5 +1,1 @@
-enum ChartsUserDriveSpan {
-  day,
-  hour,
-  unknown,
-}
+enum ChartsUserDriveSpan { day, hour, unknown }

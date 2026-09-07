@@ -7,9 +7,9 @@ part of 'notes_state.dart';
 // **************************************************************************
 
 _NotesState _$NotesStateFromJson(Map<String, dynamic> json) => _NotesState(
-      isFavorited: json['isFavorited'] as bool,
-      isMutedThread: json['isMutedThread'] as bool,
-    );
+  isFavorited: json['isFavorited'] as bool,
+  isMutedThread: json['isMutedThread'] as bool,
+);
 
 Map<String, dynamic> _$NotesStateToJson(_NotesState instance) =>
     <String, dynamic>{

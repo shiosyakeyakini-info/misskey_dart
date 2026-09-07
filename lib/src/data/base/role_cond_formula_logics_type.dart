@@ -1,5 +1,1 @@
-enum RoleCondFormulaLogicsType {
-  and,
-  or,
-  unknown,
-}
+enum RoleCondFormulaLogicsType { and, or, unknown }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'note_channel_info.freezed.dart';
 part 'note_channel_info.g.dart';
@@ -15,5 +14,6 @@ abstract class NoteChannelInfo with _$NoteChannelInfo {
     String? userId,
   }) = _NoteChannelInfo;
 
-  factory NoteChannelInfo.fromJson(Map<String, Object?> json) => _$NoteChannelInfoFromJson(json);
+  factory NoteChannelInfo.fromJson(Map<String, Object?> json) =>
+      _$NoteChannelInfoFromJson(json);
 }

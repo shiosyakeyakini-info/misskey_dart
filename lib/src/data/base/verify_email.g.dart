@@ -6,11 +6,8 @@ part of 'verify_email.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_VerifyEmail _$VerifyEmailFromJson(Map<String, dynamic> json) => _VerifyEmail(
-      code: json['code'] as String,
-    );
+_VerifyEmail _$VerifyEmailFromJson(Map<String, dynamic> json) =>
+    _VerifyEmail(code: json['code'] as String);
 
 Map<String, dynamic> _$VerifyEmailToJson(_VerifyEmail instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-    };
+    <String, dynamic>{'code': instance.code};

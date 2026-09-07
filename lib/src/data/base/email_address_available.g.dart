@@ -7,15 +7,15 @@ part of 'email_address_available.dart';
 // **************************************************************************
 
 _EmailAddressAvailable _$EmailAddressAvailableFromJson(
-        Map<String, dynamic> json) =>
-    _EmailAddressAvailable(
-      available: json['available'] as bool,
-      reason: json['reason'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _EmailAddressAvailable(
+  available: json['available'] as bool,
+  reason: json['reason'] as String?,
+);
 
 Map<String, dynamic> _$EmailAddressAvailableToJson(
-        _EmailAddressAvailable instance) =>
-    <String, dynamic>{
-      'available': instance.available,
-      'reason': instance.reason,
-    };
+  _EmailAddressAvailable instance,
+) => <String, dynamic>{
+  'available': instance.available,
+  'reason': instance.reason,
+};

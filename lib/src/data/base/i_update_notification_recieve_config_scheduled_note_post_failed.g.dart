@@ -7,27 +7,27 @@ part of 'i_update_notification_recieve_config_scheduled_note_post_failed.dart';
 // **************************************************************************
 
 _IUpdateNotificationRecieveConfigScheduledNotePostFailed
-    _$IUpdateNotificationRecieveConfigScheduledNotePostFailedFromJson(
-            Map<String, dynamic> json) =>
-        _IUpdateNotificationRecieveConfigScheduledNotePostFailed(
-          type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  IUpdateNotificationRecieveConfigScheduledNotePostFailedType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$IUpdateNotificationRecieveConfigScheduledNotePostFailedFromJson(
+  Map<String, dynamic> json,
+) => _IUpdateNotificationRecieveConfigScheduledNotePostFailed(
+  type: $enumDecode(
+    _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap,
+    json['type'],
+    unknownValue:
+        IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
-Map<String,
-    dynamic> _$IUpdateNotificationRecieveConfigScheduledNotePostFailedToJson(
-        _IUpdateNotificationRecieveConfigScheduledNotePostFailed instance) =>
-    <String, dynamic>{
-      'type':
-          _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap[
-              instance.type]!,
-      'userListId': instance.userListId,
-    };
+Map<String, dynamic>
+_$IUpdateNotificationRecieveConfigScheduledNotePostFailedToJson(
+  _IUpdateNotificationRecieveConfigScheduledNotePostFailed instance,
+) => <String, dynamic>{
+  'type':
+      _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap = {
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.all: 'all',
@@ -38,7 +38,8 @@ const _$IUpdateNotificationRecieveConfigScheduledNotePostFailedTypeEnumMap = {
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.mutualFollow:
       'mutualFollow',
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType
-      .followingOrFollower: 'followingOrFollower',
+          .followingOrFollower:
+      'followingOrFollower',
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.never: 'never',
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.list: 'list',
   IUpdateNotificationRecieveConfigScheduledNotePostFailedType.unknown:

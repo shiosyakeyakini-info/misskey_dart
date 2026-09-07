@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,51 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsUserFollowing {
-  ChartsUserFollowingLocal get local;
-  ChartsUserFollowingRemote get remote;
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChartsUserFollowingCopyWith<ChartsUserFollowing> get copyWith =>
-      _$ChartsUserFollowingCopyWithImpl<ChartsUserFollowing>(
-          this as ChartsUserFollowing, _$identity);
+ ChartsUserFollowingLocal get local; ChartsUserFollowingRemote get remote;
+/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChartsUserFollowingCopyWith<ChartsUserFollowing> get copyWith => _$ChartsUserFollowingCopyWithImpl<ChartsUserFollowing>(this as ChartsUserFollowing, _$identity);
 
   /// Serializes this ChartsUserFollowing to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChartsUserFollowing &&
-            (identical(other.local, local) || other.local == local) &&
-            (identical(other.remote, remote) || other.remote == remote));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, local, remote);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChartsUserFollowing&&(identical(other.local, local) || other.local == local)&&(identical(other.remote, remote) || other.remote == remote));
+}
 
-  @override
-  String toString() {
-    return 'ChartsUserFollowing(local: $local, remote: $remote)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,local,remote);
+
+@override
+String toString() {
+  return 'ChartsUserFollowing(local: $local, remote: $remote)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $ChartsUserFollowingCopyWith<$Res> {
-  factory $ChartsUserFollowingCopyWith(
-          ChartsUserFollowing value, $Res Function(ChartsUserFollowing) _then) =
-      _$ChartsUserFollowingCopyWithImpl;
-  @useResult
-  $Res call({ChartsUserFollowingLocal local, ChartsUserFollowingRemote remote});
+abstract mixin class $ChartsUserFollowingCopyWith<$Res>  {
+  factory $ChartsUserFollowingCopyWith(ChartsUserFollowing value, $Res Function(ChartsUserFollowing) _then) = _$ChartsUserFollowingCopyWithImpl;
+@useResult
+$Res call({
+ ChartsUserFollowingLocal local, ChartsUserFollowingRemote remote
+});
 
-  $ChartsUserFollowingLocalCopyWith<$Res> get local;
-  $ChartsUserFollowingRemoteCopyWith<$Res> get remote;
+
+$ChartsUserFollowingLocalCopyWith<$Res> get local;$ChartsUserFollowingRemoteCopyWith<$Res> get remote;
+
 }
-
 /// @nodoc
 class _$ChartsUserFollowingCopyWithImpl<$Res>
     implements $ChartsUserFollowingCopyWith<$Res> {
@@ -68,110 +63,217 @@ class _$ChartsUserFollowingCopyWithImpl<$Res>
   final ChartsUserFollowing _self;
   final $Res Function(ChartsUserFollowing) _then;
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? local = null,
-    Object? remote = null,
-  }) {
-    return _then(_self.copyWith(
-      local: null == local
-          ? _self.local
-          : local // ignore: cast_nullable_to_non_nullable
-              as ChartsUserFollowingLocal,
-      remote: null == remote
-          ? _self.remote
-          : remote // ignore: cast_nullable_to_non_nullable
-              as ChartsUserFollowingRemote,
-    ));
-  }
+/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? local = null,Object? remote = null,}) {
+  return _then(_self.copyWith(
+local: null == local ? _self.local : local // ignore: cast_nullable_to_non_nullable
+as ChartsUserFollowingLocal,remote: null == remote ? _self.remote : remote // ignore: cast_nullable_to_non_nullable
+as ChartsUserFollowingRemote,
+  ));
+}
+/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChartsUserFollowingLocalCopyWith<$Res> get local {
+  
+  return $ChartsUserFollowingLocalCopyWith<$Res>(_self.local, (value) {
+    return _then(_self.copyWith(local: value));
+  });
+}/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChartsUserFollowingRemoteCopyWith<$Res> get remote {
+  
+  return $ChartsUserFollowingRemoteCopyWith<$Res>(_self.remote, (value) {
+    return _then(_self.copyWith(remote: value));
+  });
+}
+}
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChartsUserFollowingLocalCopyWith<$Res> get local {
-    return $ChartsUserFollowingLocalCopyWith<$Res>(_self.local, (value) {
-      return _then(_self.copyWith(local: value));
-    });
-  }
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChartsUserFollowingRemoteCopyWith<$Res> get remote {
-    return $ChartsUserFollowingRemoteCopyWith<$Res>(_self.remote, (value) {
-      return _then(_self.copyWith(remote: value));
-    });
-  }
+/// Adds pattern-matching-related methods to [ChartsUserFollowing].
+extension ChartsUserFollowingPatterns on ChartsUserFollowing {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChartsUserFollowing value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChartsUserFollowing() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChartsUserFollowing value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChartsUserFollowing():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChartsUserFollowing value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChartsUserFollowing() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ChartsUserFollowingLocal local,  ChartsUserFollowingRemote remote)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ChartsUserFollowing() when $default != null:
+return $default(_that.local,_that.remote);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ChartsUserFollowingLocal local,  ChartsUserFollowingRemote remote)  $default,) {final _that = this;
+switch (_that) {
+case _ChartsUserFollowing():
+return $default(_that.local,_that.remote);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ChartsUserFollowingLocal local,  ChartsUserFollowingRemote remote)?  $default,) {final _that = this;
+switch (_that) {
+case _ChartsUserFollowing() when $default != null:
+return $default(_that.local,_that.remote);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _ChartsUserFollowing implements ChartsUserFollowing {
   const _ChartsUserFollowing({required this.local, required this.remote});
-  factory _ChartsUserFollowing.fromJson(Map<String, dynamic> json) =>
-      _$ChartsUserFollowingFromJson(json);
+  factory _ChartsUserFollowing.fromJson(Map<String, dynamic> json) => _$ChartsUserFollowingFromJson(json);
 
-  @override
-  final ChartsUserFollowingLocal local;
-  @override
-  final ChartsUserFollowingRemote remote;
+@override final  ChartsUserFollowingLocal local;
+@override final  ChartsUserFollowingRemote remote;
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChartsUserFollowingCopyWith<_ChartsUserFollowing> get copyWith =>
-      __$ChartsUserFollowingCopyWithImpl<_ChartsUserFollowing>(
-          this, _$identity);
+/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChartsUserFollowingCopyWith<_ChartsUserFollowing> get copyWith => __$ChartsUserFollowingCopyWithImpl<_ChartsUserFollowing>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChartsUserFollowingToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChartsUserFollowingToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ChartsUserFollowing &&
-            (identical(other.local, local) || other.local == local) &&
-            (identical(other.remote, remote) || other.remote == remote));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChartsUserFollowing&&(identical(other.local, local) || other.local == local)&&(identical(other.remote, remote) || other.remote == remote));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, local, remote);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,local,remote);
 
-  @override
-  String toString() {
-    return 'ChartsUserFollowing(local: $local, remote: $remote)';
-  }
+@override
+String toString() {
+  return 'ChartsUserFollowing(local: $local, remote: $remote)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$ChartsUserFollowingCopyWith<$Res>
-    implements $ChartsUserFollowingCopyWith<$Res> {
-  factory _$ChartsUserFollowingCopyWith(_ChartsUserFollowing value,
-          $Res Function(_ChartsUserFollowing) _then) =
-      __$ChartsUserFollowingCopyWithImpl;
-  @override
-  @useResult
-  $Res call({ChartsUserFollowingLocal local, ChartsUserFollowingRemote remote});
+abstract mixin class _$ChartsUserFollowingCopyWith<$Res> implements $ChartsUserFollowingCopyWith<$Res> {
+  factory _$ChartsUserFollowingCopyWith(_ChartsUserFollowing value, $Res Function(_ChartsUserFollowing) _then) = __$ChartsUserFollowingCopyWithImpl;
+@override @useResult
+$Res call({
+ ChartsUserFollowingLocal local, ChartsUserFollowingRemote remote
+});
 
-  @override
-  $ChartsUserFollowingLocalCopyWith<$Res> get local;
-  @override
-  $ChartsUserFollowingRemoteCopyWith<$Res> get remote;
+
+@override $ChartsUserFollowingLocalCopyWith<$Res> get local;@override $ChartsUserFollowingRemoteCopyWith<$Res> get remote;
+
 }
-
 /// @nodoc
 class __$ChartsUserFollowingCopyWithImpl<$Res>
     implements _$ChartsUserFollowingCopyWith<$Res> {
@@ -180,45 +282,35 @@ class __$ChartsUserFollowingCopyWithImpl<$Res>
   final _ChartsUserFollowing _self;
   final $Res Function(_ChartsUserFollowing) _then;
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? local = null,
-    Object? remote = null,
-  }) {
-    return _then(_ChartsUserFollowing(
-      local: null == local
-          ? _self.local
-          : local // ignore: cast_nullable_to_non_nullable
-              as ChartsUserFollowingLocal,
-      remote: null == remote
-          ? _self.remote
-          : remote // ignore: cast_nullable_to_non_nullable
-              as ChartsUserFollowingRemote,
-    ));
-  }
+/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? local = null,Object? remote = null,}) {
+  return _then(_ChartsUserFollowing(
+local: null == local ? _self.local : local // ignore: cast_nullable_to_non_nullable
+as ChartsUserFollowingLocal,remote: null == remote ? _self.remote : remote // ignore: cast_nullable_to_non_nullable
+as ChartsUserFollowingRemote,
+  ));
+}
 
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChartsUserFollowingLocalCopyWith<$Res> get local {
-    return $ChartsUserFollowingLocalCopyWith<$Res>(_self.local, (value) {
-      return _then(_self.copyWith(local: value));
-    });
-  }
-
-  /// Create a copy of ChartsUserFollowing
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChartsUserFollowingRemoteCopyWith<$Res> get remote {
-    return $ChartsUserFollowingRemoteCopyWith<$Res>(_self.remote, (value) {
-      return _then(_self.copyWith(remote: value));
-    });
-  }
+/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChartsUserFollowingLocalCopyWith<$Res> get local {
+  
+  return $ChartsUserFollowingLocalCopyWith<$Res>(_self.local, (value) {
+    return _then(_self.copyWith(local: value));
+  });
+}/// Create a copy of ChartsUserFollowing
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChartsUserFollowingRemoteCopyWith<$Res> get remote {
+  
+  return $ChartsUserFollowingRemoteCopyWith<$Res>(_self.remote, (value) {
+    return _then(_self.copyWith(remote: value));
+  });
+}
 }
 
 // dart format on

@@ -7,19 +7,23 @@ part of 'pages_create.dart';
 // **************************************************************************
 
 _PagesCreate _$PagesCreateFromJson(Map<String, dynamic> json) => _PagesCreate(
-      title: json['title'] as String,
-      name: json['name'] as String,
-      summary: json['summary'] as String?,
-      content: json['content'] as List<dynamic>,
-      variables: json['variables'] as List<dynamic>,
-      script: json['script'] as String,
-      eyeCatchingImageId: json['eyeCatchingImageId'] as String?,
-      font: $enumDecodeNullable(_$PagesCreateFontEnumMap, json['font'],
-              unknownValue: PagesCreateFont.unknown) ??
-          PagesCreateFont.sansSerif,
-      alignCenter: json['alignCenter'] as bool? ?? false,
-      hideTitleWhenPinned: json['hideTitleWhenPinned'] as bool? ?? false,
-    );
+  title: json['title'] as String,
+  name: json['name'] as String,
+  summary: json['summary'] as String?,
+  content: json['content'] as List<dynamic>,
+  variables: json['variables'] as List<dynamic>,
+  script: json['script'] as String,
+  eyeCatchingImageId: json['eyeCatchingImageId'] as String?,
+  font:
+      $enumDecodeNullable(
+        _$PagesCreateFontEnumMap,
+        json['font'],
+        unknownValue: PagesCreateFont.unknown,
+      ) ??
+      PagesCreateFont.sansSerif,
+  alignCenter: json['alignCenter'] as bool? ?? false,
+  hideTitleWhenPinned: json['hideTitleWhenPinned'] as bool? ?? false,
+);
 
 Map<String, dynamic> _$PagesCreateToJson(_PagesCreate instance) =>
     <String, dynamic>{

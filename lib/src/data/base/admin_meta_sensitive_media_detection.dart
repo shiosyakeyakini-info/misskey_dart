@@ -1,7 +1,1 @@
-enum AdminMetaSensitiveMediaDetection {
-  none,
-  all,
-  local,
-  remote,
-  unknown,
-}
+enum AdminMetaSensitiveMediaDetection { none, all, local, remote, unknown }

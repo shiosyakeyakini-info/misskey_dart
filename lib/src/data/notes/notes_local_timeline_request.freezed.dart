@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,78 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesLocalTimelineRequest {
-  bool? get withFiles;
-  bool? get withRenotes;
-  bool? get withReplies;
-  int? get limit;
-  String? get sinceId;
-  String? get untilId;
-  bool? get allowPartial;
-  int? get sinceDate;
-  int? get untilDate;
 
-  /// Create a copy of NotesLocalTimelineRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesLocalTimelineRequestCopyWith<NotesLocalTimelineRequest> get copyWith =>
-      _$NotesLocalTimelineRequestCopyWithImpl<NotesLocalTimelineRequest>(
-          this as NotesLocalTimelineRequest, _$identity);
+ bool? get withFiles; bool? get withRenotes; bool? get withReplies; int? get limit; String? get sinceId; String? get untilId; bool? get allowPartial; int? get sinceDate; int? get untilDate;
+/// Create a copy of NotesLocalTimelineRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NotesLocalTimelineRequestCopyWith<NotesLocalTimelineRequest> get copyWith => _$NotesLocalTimelineRequestCopyWithImpl<NotesLocalTimelineRequest>(this as NotesLocalTimelineRequest, _$identity);
 
   /// Serializes this NotesLocalTimelineRequest to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesLocalTimelineRequest &&
-            (identical(other.withFiles, withFiles) ||
-                other.withFiles == withFiles) &&
-            (identical(other.withRenotes, withRenotes) ||
-                other.withRenotes == withRenotes) &&
-            (identical(other.withReplies, withReplies) ||
-                other.withReplies == withReplies) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.allowPartial, allowPartial) ||
-                other.allowPartial == allowPartial) &&
-            (identical(other.sinceDate, sinceDate) ||
-                other.sinceDate == sinceDate) &&
-            (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, withFiles, withRenotes,
-      withReplies, limit, sinceId, untilId, allowPartial, sinceDate, untilDate);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesLocalTimelineRequest&&(identical(other.withFiles, withFiles) || other.withFiles == withFiles)&&(identical(other.withRenotes, withRenotes) || other.withRenotes == withRenotes)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.allowPartial, allowPartial) || other.allowPartial == allowPartial)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate));
+}
 
-  @override
-  String toString() {
-    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, limit: $limit, sinceId: $sinceId, untilId: $untilId, allowPartial: $allowPartial, sinceDate: $sinceDate, untilDate: $untilDate)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,withFiles,withRenotes,withReplies,limit,sinceId,untilId,allowPartial,sinceDate,untilDate);
+
+@override
+String toString() {
+  return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, limit: $limit, sinceId: $sinceId, untilId: $untilId, allowPartial: $allowPartial, sinceDate: $sinceDate, untilDate: $untilDate)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $NotesLocalTimelineRequestCopyWith<$Res> {
-  factory $NotesLocalTimelineRequestCopyWith(NotesLocalTimelineRequest value,
-          $Res Function(NotesLocalTimelineRequest) _then) =
-      _$NotesLocalTimelineRequestCopyWithImpl;
-  @useResult
-  $Res call(
-      {bool? withFiles,
-      bool? withRenotes,
-      bool? withReplies,
-      int? limit,
-      String? sinceId,
-      String? untilId,
-      bool? allowPartial,
-      int? sinceDate,
-      int? untilDate});
-}
+abstract mixin class $NotesLocalTimelineRequestCopyWith<$Res>  {
+  factory $NotesLocalTimelineRequestCopyWith(NotesLocalTimelineRequest value, $Res Function(NotesLocalTimelineRequest) _then) = _$NotesLocalTimelineRequestCopyWithImpl;
+@useResult
+$Res call({
+ bool? withFiles, bool? withRenotes, bool? withReplies, int? limit, String? sinceId, String? untilId, bool? allowPartial, int? sinceDate, int? untilDate
+});
 
+
+
+
+}
 /// @nodoc
 class _$NotesLocalTimelineRequestCopyWithImpl<$Res>
     implements $NotesLocalTimelineRequestCopyWith<$Res> {
@@ -95,172 +63,213 @@ class _$NotesLocalTimelineRequestCopyWithImpl<$Res>
   final NotesLocalTimelineRequest _self;
   final $Res Function(NotesLocalTimelineRequest) _then;
 
-  /// Create a copy of NotesLocalTimelineRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? withFiles = freezed,
-    Object? withRenotes = freezed,
-    Object? withReplies = freezed,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? allowPartial = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-  }) {
-    return _then(_self.copyWith(
-      withFiles: freezed == withFiles
-          ? _self.withFiles
-          : withFiles // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      withRenotes: freezed == withRenotes
-          ? _self.withRenotes
-          : withRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      withReplies: freezed == withReplies
-          ? _self.withReplies
-          : withReplies // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      allowPartial: freezed == allowPartial
-          ? _self.allowPartial
-          : allowPartial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sinceDate: freezed == sinceDate
-          ? _self.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilDate: freezed == untilDate
-          ? _self.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Create a copy of NotesLocalTimelineRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? withFiles = freezed,Object? withRenotes = freezed,Object? withReplies = freezed,Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? allowPartial = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,}) {
+  return _then(_self.copyWith(
+withFiles: freezed == withFiles ? _self.withFiles : withFiles // ignore: cast_nullable_to_non_nullable
+as bool?,withRenotes: freezed == withRenotes ? _self.withRenotes : withRenotes // ignore: cast_nullable_to_non_nullable
+as bool?,withReplies: freezed == withReplies ? _self.withReplies : withReplies // ignore: cast_nullable_to_non_nullable
+as bool?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,allowPartial: freezed == allowPartial ? _self.allowPartial : allowPartial // ignore: cast_nullable_to_non_nullable
+as bool?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
+as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [NotesLocalTimelineRequest].
+extension NotesLocalTimelineRequestPatterns on NotesLocalTimelineRequest {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _NotesLocalTimelineRequest value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _NotesLocalTimelineRequest() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _NotesLocalTimelineRequest value)  $default,){
+final _that = this;
+switch (_that) {
+case _NotesLocalTimelineRequest():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _NotesLocalTimelineRequest value)?  $default,){
+final _that = this;
+switch (_that) {
+case _NotesLocalTimelineRequest() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool? withFiles,  bool? withRenotes,  bool? withReplies,  int? limit,  String? sinceId,  String? untilId,  bool? allowPartial,  int? sinceDate,  int? untilDate)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _NotesLocalTimelineRequest() when $default != null:
+return $default(_that.withFiles,_that.withRenotes,_that.withReplies,_that.limit,_that.sinceId,_that.untilId,_that.allowPartial,_that.sinceDate,_that.untilDate);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool? withFiles,  bool? withRenotes,  bool? withReplies,  int? limit,  String? sinceId,  String? untilId,  bool? allowPartial,  int? sinceDate,  int? untilDate)  $default,) {final _that = this;
+switch (_that) {
+case _NotesLocalTimelineRequest():
+return $default(_that.withFiles,_that.withRenotes,_that.withReplies,_that.limit,_that.sinceId,_that.untilId,_that.allowPartial,_that.sinceDate,_that.untilDate);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool? withFiles,  bool? withRenotes,  bool? withReplies,  int? limit,  String? sinceId,  String? untilId,  bool? allowPartial,  int? sinceDate,  int? untilDate)?  $default,) {final _that = this;
+switch (_that) {
+case _NotesLocalTimelineRequest() when $default != null:
+return $default(_that.withFiles,_that.withRenotes,_that.withReplies,_that.limit,_that.sinceId,_that.untilId,_that.allowPartial,_that.sinceDate,_that.untilDate);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _NotesLocalTimelineRequest implements NotesLocalTimelineRequest {
-  const _NotesLocalTimelineRequest(
-      {this.withFiles = false,
-      this.withRenotes = true,
-      this.withReplies = false,
-      this.limit = 10,
-      this.sinceId,
-      this.untilId,
-      this.allowPartial = false,
-      this.sinceDate,
-      this.untilDate});
-  factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesLocalTimelineRequestFromJson(json);
+  const _NotesLocalTimelineRequest({this.withFiles = false, this.withRenotes = true, this.withReplies = false, this.limit = 10, this.sinceId, this.untilId, this.allowPartial = false, this.sinceDate, this.untilDate});
+  factory _NotesLocalTimelineRequest.fromJson(Map<String, dynamic> json) => _$NotesLocalTimelineRequestFromJson(json);
 
-  @override
-  @JsonKey()
-  final bool? withFiles;
-  @override
-  @JsonKey()
-  final bool? withRenotes;
-  @override
-  @JsonKey()
-  final bool? withReplies;
-  @override
-  @JsonKey()
-  final int? limit;
-  @override
-  final String? sinceId;
-  @override
-  final String? untilId;
-  @override
-  @JsonKey()
-  final bool? allowPartial;
-  @override
-  final int? sinceDate;
-  @override
-  final int? untilDate;
+@override@JsonKey() final  bool? withFiles;
+@override@JsonKey() final  bool? withRenotes;
+@override@JsonKey() final  bool? withReplies;
+@override@JsonKey() final  int? limit;
+@override final  String? sinceId;
+@override final  String? untilId;
+@override@JsonKey() final  bool? allowPartial;
+@override final  int? sinceDate;
+@override final  int? untilDate;
 
-  /// Create a copy of NotesLocalTimelineRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesLocalTimelineRequestCopyWith<_NotesLocalTimelineRequest>
-      get copyWith =>
-          __$NotesLocalTimelineRequestCopyWithImpl<_NotesLocalTimelineRequest>(
-              this, _$identity);
+/// Create a copy of NotesLocalTimelineRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NotesLocalTimelineRequestCopyWith<_NotesLocalTimelineRequest> get copyWith => __$NotesLocalTimelineRequestCopyWithImpl<_NotesLocalTimelineRequest>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesLocalTimelineRequestToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$NotesLocalTimelineRequestToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _NotesLocalTimelineRequest &&
-            (identical(other.withFiles, withFiles) ||
-                other.withFiles == withFiles) &&
-            (identical(other.withRenotes, withRenotes) ||
-                other.withRenotes == withRenotes) &&
-            (identical(other.withReplies, withReplies) ||
-                other.withReplies == withReplies) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.sinceId, sinceId) || other.sinceId == sinceId) &&
-            (identical(other.untilId, untilId) || other.untilId == untilId) &&
-            (identical(other.allowPartial, allowPartial) ||
-                other.allowPartial == allowPartial) &&
-            (identical(other.sinceDate, sinceDate) ||
-                other.sinceDate == sinceDate) &&
-            (identical(other.untilDate, untilDate) ||
-                other.untilDate == untilDate));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesLocalTimelineRequest&&(identical(other.withFiles, withFiles) || other.withFiles == withFiles)&&(identical(other.withRenotes, withRenotes) || other.withRenotes == withRenotes)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.allowPartial, allowPartial) || other.allowPartial == allowPartial)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, withFiles, withRenotes,
-      withReplies, limit, sinceId, untilId, allowPartial, sinceDate, untilDate);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,withFiles,withRenotes,withReplies,limit,sinceId,untilId,allowPartial,sinceDate,untilDate);
 
-  @override
-  String toString() {
-    return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, limit: $limit, sinceId: $sinceId, untilId: $untilId, allowPartial: $allowPartial, sinceDate: $sinceDate, untilDate: $untilDate)';
-  }
+@override
+String toString() {
+  return 'NotesLocalTimelineRequest(withFiles: $withFiles, withRenotes: $withRenotes, withReplies: $withReplies, limit: $limit, sinceId: $sinceId, untilId: $untilId, allowPartial: $allowPartial, sinceDate: $sinceDate, untilDate: $untilDate)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$NotesLocalTimelineRequestCopyWith<$Res>
-    implements $NotesLocalTimelineRequestCopyWith<$Res> {
-  factory _$NotesLocalTimelineRequestCopyWith(_NotesLocalTimelineRequest value,
-          $Res Function(_NotesLocalTimelineRequest) _then) =
-      __$NotesLocalTimelineRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {bool? withFiles,
-      bool? withRenotes,
-      bool? withReplies,
-      int? limit,
-      String? sinceId,
-      String? untilId,
-      bool? allowPartial,
-      int? sinceDate,
-      int? untilDate});
-}
+abstract mixin class _$NotesLocalTimelineRequestCopyWith<$Res> implements $NotesLocalTimelineRequestCopyWith<$Res> {
+  factory _$NotesLocalTimelineRequestCopyWith(_NotesLocalTimelineRequest value, $Res Function(_NotesLocalTimelineRequest) _then) = __$NotesLocalTimelineRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ bool? withFiles, bool? withRenotes, bool? withReplies, int? limit, String? sinceId, String? untilId, bool? allowPartial, int? sinceDate, int? untilDate
+});
 
+
+
+
+}
 /// @nodoc
 class __$NotesLocalTimelineRequestCopyWithImpl<$Res>
     implements _$NotesLocalTimelineRequestCopyWith<$Res> {
@@ -269,60 +278,24 @@ class __$NotesLocalTimelineRequestCopyWithImpl<$Res>
   final _NotesLocalTimelineRequest _self;
   final $Res Function(_NotesLocalTimelineRequest) _then;
 
-  /// Create a copy of NotesLocalTimelineRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? withFiles = freezed,
-    Object? withRenotes = freezed,
-    Object? withReplies = freezed,
-    Object? limit = freezed,
-    Object? sinceId = freezed,
-    Object? untilId = freezed,
-    Object? allowPartial = freezed,
-    Object? sinceDate = freezed,
-    Object? untilDate = freezed,
-  }) {
-    return _then(_NotesLocalTimelineRequest(
-      withFiles: freezed == withFiles
-          ? _self.withFiles
-          : withFiles // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      withRenotes: freezed == withRenotes
-          ? _self.withRenotes
-          : withRenotes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      withReplies: freezed == withReplies
-          ? _self.withReplies
-          : withReplies // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      limit: freezed == limit
-          ? _self.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sinceId: freezed == sinceId
-          ? _self.sinceId
-          : sinceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      untilId: freezed == untilId
-          ? _self.untilId
-          : untilId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      allowPartial: freezed == allowPartial
-          ? _self.allowPartial
-          : allowPartial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sinceDate: freezed == sinceDate
-          ? _self.sinceDate
-          : sinceDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      untilDate: freezed == untilDate
-          ? _self.untilDate
-          : untilDate // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Create a copy of NotesLocalTimelineRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? withFiles = freezed,Object? withRenotes = freezed,Object? withReplies = freezed,Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? allowPartial = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,}) {
+  return _then(_NotesLocalTimelineRequest(
+withFiles: freezed == withFiles ? _self.withFiles : withFiles // ignore: cast_nullable_to_non_nullable
+as bool?,withRenotes: freezed == withRenotes ? _self.withRenotes : withRenotes // ignore: cast_nullable_to_non_nullable
+as bool?,withReplies: freezed == withReplies ? _self.withReplies : withReplies // ignore: cast_nullable_to_non_nullable
+as bool?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
+as String?,allowPartial: freezed == allowPartial ? _self.allowPartial : allowPartial // ignore: cast_nullable_to_non_nullable
+as bool?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
+as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
 }
 
 // dart format on

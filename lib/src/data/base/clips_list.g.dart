@@ -7,12 +7,12 @@ part of 'clips_list.dart';
 // **************************************************************************
 
 _ClipsList _$ClipsListFromJson(Map<String, dynamic> json) => _ClipsList(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$ClipsListToJson(_ClipsList instance) =>
     <String, dynamic>{

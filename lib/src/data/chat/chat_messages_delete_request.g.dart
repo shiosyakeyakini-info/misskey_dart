@@ -7,13 +7,9 @@ part of 'chat_messages_delete_request.dart';
 // **************************************************************************
 
 _ChatMessagesDeleteRequest _$ChatMessagesDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChatMessagesDeleteRequest(
-      messageId: json['messageId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _ChatMessagesDeleteRequest(messageId: json['messageId'] as String?);
 
 Map<String, dynamic> _$ChatMessagesDeleteRequestToJson(
-        _ChatMessagesDeleteRequest instance) =>
-    <String, dynamic>{
-      'messageId': instance.messageId,
-    };
+  _ChatMessagesDeleteRequest instance,
+) => <String, dynamic>{'messageId': instance.messageId};

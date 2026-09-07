@@ -7,31 +7,42 @@ part of 'hashtags_users_request.dart';
 // **************************************************************************
 
 _HashtagsUsersRequest _$HashtagsUsersRequestFromJson(
-        Map<String, dynamic> json) =>
-    _HashtagsUsersRequest(
-      tag: json['tag'] as String?,
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$UsersSortTypeEnumMap, json['sort'],
-          unknownValue: UsersSortType.unknown),
-      state: $enumDecodeNullable(_$HashtagsUsersStateEnumMap, json['state'],
-              unknownValue: HashtagsUsersState.unknown) ??
-          HashtagsUsersState.all,
-      origin: $enumDecodeNullable(_$HashtagsUsersOriginEnumMap, json['origin'],
-              unknownValue: HashtagsUsersOrigin.unknown) ??
-          HashtagsUsersOrigin.local,
-    );
+  Map<String, dynamic> json,
+) => _HashtagsUsersRequest(
+  tag: json['tag'] as String?,
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  offset: (json['offset'] as num?)?.toInt() ?? 0,
+  sort: $enumDecodeNullable(
+    _$UsersSortTypeEnumMap,
+    json['sort'],
+    unknownValue: UsersSortType.unknown,
+  ),
+  state:
+      $enumDecodeNullable(
+        _$HashtagsUsersStateEnumMap,
+        json['state'],
+        unknownValue: HashtagsUsersState.unknown,
+      ) ??
+      HashtagsUsersState.all,
+  origin:
+      $enumDecodeNullable(
+        _$HashtagsUsersOriginEnumMap,
+        json['origin'],
+        unknownValue: HashtagsUsersOrigin.unknown,
+      ) ??
+      HashtagsUsersOrigin.local,
+);
 
 Map<String, dynamic> _$HashtagsUsersRequestToJson(
-        _HashtagsUsersRequest instance) =>
-    <String, dynamic>{
-      'tag': instance.tag,
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'sort': _$UsersSortTypeEnumMap[instance.sort],
-      'state': _$HashtagsUsersStateEnumMap[instance.state],
-      'origin': _$HashtagsUsersOriginEnumMap[instance.origin],
-    };
+  _HashtagsUsersRequest instance,
+) => <String, dynamic>{
+  'tag': instance.tag,
+  'limit': instance.limit,
+  'offset': instance.offset,
+  'sort': _$UsersSortTypeEnumMap[instance.sort],
+  'state': _$HashtagsUsersStateEnumMap[instance.state],
+  'origin': _$HashtagsUsersOriginEnumMap[instance.origin],
+};
 
 const _$UsersSortTypeEnumMap = {
   UsersSortType.followerDescendant: '+follower',

@@ -18,7 +18,8 @@ abstract class MetaDetailed with _$MetaDetailed {
     required List<String> langs,
     String? tosUrl,
     @Default("https://github.com/misskey-dev/misskey") String? repositoryUrl,
-    @Default("https://github.com/misskey-dev/misskey/issues/new") String? feedbackUrl,
+    @Default("https://github.com/misskey-dev/misskey/issues/new")
+    String? feedbackUrl,
     String? defaultDarkTheme,
     String? defaultLightTheme,
     required bool disableRegistration,
@@ -58,9 +59,12 @@ abstract class MetaDetailed with _$MetaDetailed {
     required List<String> serverRules,
     String? themeColor,
     required RolePolicies policies,
-    @JsonKey(unknownEnumValue: NoteSearchableScope.unknown) @Default(NoteSearchableScope.local) NoteSearchableScope noteSearchableScope,
+    @JsonKey(unknownEnumValue: NoteSearchableScope.unknown)
+    @Default(NoteSearchableScope.local)
+    NoteSearchableScope noteSearchableScope,
     required double maxFileSize,
-    @JsonKey(unknownEnumValue: FederationScope.unknown) required FederationScope federation,
+    @JsonKey(unknownEnumValue: FederationScope.unknown)
+    required FederationScope federation,
     Map<String, dynamic>? clientOptions,
     MetaDetailedOnlyFeatures? features,
     String? proxyAccountName,
@@ -69,5 +73,6 @@ abstract class MetaDetailed with _$MetaDetailed {
     required bool cacheRemoteSensitiveFiles,
   }) = _MetaDetailed;
 
-  factory MetaDetailed.fromJson(Map<String, Object?> json) => _$MetaDetailedFromJson(json);
+  factory MetaDetailed.fromJson(Map<String, Object?> json) =>
+      _$MetaDetailedFromJson(json);
 }

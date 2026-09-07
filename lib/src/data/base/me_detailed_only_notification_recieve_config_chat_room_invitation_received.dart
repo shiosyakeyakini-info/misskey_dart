@@ -5,11 +5,23 @@ part 'me_detailed_only_notification_recieve_config_chat_room_invitation_received
 part 'me_detailed_only_notification_recieve_config_chat_room_invitation_received.g.dart';
 
 @freezed
-abstract class MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived with _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived {
+abstract class MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived
+    with _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived {
   const factory MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived({
-    @JsonKey(unknownEnumValue: MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType.unknown) required MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType type,
+    @JsonKey(
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+              .unknown,
+    )
+    required MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedType
+    type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived;
 
-  factory MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived.fromJson(Map<String, Object?> json) => _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedFromJson(json);
+  factory MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceived.fromJson(
+    Map<String, Object?> json,
+  ) =>
+      _$MeDetailedOnlyNotificationRecieveConfigChatRoomInvitationReceivedFromJson(
+        json,
+      );
 }

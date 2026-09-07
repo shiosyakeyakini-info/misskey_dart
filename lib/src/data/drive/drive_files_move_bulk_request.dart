@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_files_move_bulk_request.freezed.dart';
 part 'drive_files_move_bulk_request.g.dart';
@@ -11,5 +10,6 @@ abstract class DriveFilesMoveBulkRequest with _$DriveFilesMoveBulkRequest {
     String? folderId,
   }) = _DriveFilesMoveBulkRequest;
 
-  factory DriveFilesMoveBulkRequest.fromJson(Map<String, Object?> json) => _$DriveFilesMoveBulkRequestFromJson(json);
+  factory DriveFilesMoveBulkRequest.fromJson(Map<String, Object?> json) =>
+      _$DriveFilesMoveBulkRequestFromJson(json);
 }

@@ -18,24 +18,27 @@ _IWebhooksCreate _$IWebhooksCreateFromJson(Map<String, dynamic> json) =>
       secret: json['secret'] as String,
       active: json['active'] as bool,
       latestSentAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['latestSentAt'], const NullableDateTimeConverter().fromJson),
+        json['latestSentAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       latestStatus: (json['latestStatus'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$IWebhooksCreateToJson(_IWebhooksCreate instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'userId': instance.userId,
-      'name': instance.name,
-      'on':
-          instance.on_.map((e) => _$IWebhooksCreateOnItemEnumMap[e]!).toList(),
-      'url': instance.url,
-      'secret': instance.secret,
-      'active': instance.active,
-      'latestSentAt':
-          const NullableDateTimeConverter().toJson(instance.latestSentAt),
-      'latestStatus': instance.latestStatus,
-    };
+Map<String, dynamic> _$IWebhooksCreateToJson(
+  _IWebhooksCreate instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'userId': instance.userId,
+  'name': instance.name,
+  'on': instance.on_.map((e) => _$IWebhooksCreateOnItemEnumMap[e]!).toList(),
+  'url': instance.url,
+  'secret': instance.secret,
+  'active': instance.active,
+  'latestSentAt': const NullableDateTimeConverter().toJson(
+    instance.latestSentAt,
+  ),
+  'latestStatus': instance.latestStatus,
+};
 
 const _$IWebhooksCreateOnItemEnumMap = {
   IWebhooksCreateOnItem.mention: 'mention',
@@ -52,5 +55,4 @@ const _$IWebhooksCreateOnItemEnumMap = {
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

@@ -7,11 +7,7 @@ part of 'channels_mute_delete.dart';
 // **************************************************************************
 
 _ChannelsMuteDelete _$ChannelsMuteDeleteFromJson(Map<String, dynamic> json) =>
-    _ChannelsMuteDelete(
-      channelId: json['channelId'] as String,
-    );
+    _ChannelsMuteDelete(channelId: json['channelId'] as String);
 
 Map<String, dynamic> _$ChannelsMuteDeleteToJson(_ChannelsMuteDelete instance) =>
-    <String, dynamic>{
-      'channelId': instance.channelId,
-    };
+    <String, dynamic>{'channelId': instance.channelId};

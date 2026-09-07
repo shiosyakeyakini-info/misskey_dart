@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_add_aliases_bulk.freezed.dart';
 part 'admin_emoji_add_aliases_bulk.g.dart';
@@ -11,5 +10,6 @@ abstract class AdminEmojiAddAliasesBulk with _$AdminEmojiAddAliasesBulk {
     required List<String> aliases,
   }) = _AdminEmojiAddAliasesBulk;
 
-  factory AdminEmojiAddAliasesBulk.fromJson(Map<String, Object?> json) => _$AdminEmojiAddAliasesBulkFromJson(json);
+  factory AdminEmojiAddAliasesBulk.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiAddAliasesBulkFromJson(json);
 }

@@ -17,5 +17,6 @@ abstract class ChatMessageLiteFor1on1 with _$ChatMessageLiteFor1on1 {
     required List<ChatMessageLiteFor1on1ReactionsItem> reactions,
   }) = _ChatMessageLiteFor1on1;
 
-  factory ChatMessageLiteFor1on1.fromJson(Map<String, Object?> json) => _$ChatMessageLiteFor1on1FromJson(json);
+  factory ChatMessageLiteFor1on1.fromJson(Map<String, Object?> json) =>
+      _$ChatMessageLiteFor1on1FromJson(json);
 }

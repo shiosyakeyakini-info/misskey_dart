@@ -7,13 +7,9 @@ part of 'drive_folders_show_request.dart';
 // **************************************************************************
 
 _DriveFoldersShowRequest _$DriveFoldersShowRequestFromJson(
-        Map<String, dynamic> json) =>
-    _DriveFoldersShowRequest(
-      folderId: json['folderId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _DriveFoldersShowRequest(folderId: json['folderId'] as String?);
 
 Map<String, dynamic> _$DriveFoldersShowRequestToJson(
-        _DriveFoldersShowRequest instance) =>
-    <String, dynamic>{
-      'folderId': instance.folderId,
-    };
+  _DriveFoldersShowRequest instance,
+) => <String, dynamic>{'folderId': instance.folderId};

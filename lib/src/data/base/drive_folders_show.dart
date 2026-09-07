@@ -1,14 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_folders_show.freezed.dart';
 part 'drive_folders_show.g.dart';
 
 @freezed
 abstract class DriveFoldersShow with _$DriveFoldersShow {
-  const factory DriveFoldersShow({
-    required String folderId,
-  }) = _DriveFoldersShow;
+  const factory DriveFoldersShow({required String folderId}) =
+      _DriveFoldersShow;
 
-  factory DriveFoldersShow.fromJson(Map<String, Object?> json) => _$DriveFoldersShowFromJson(json);
+  factory DriveFoldersShow.fromJson(Map<String, Object?> json) =>
+      _$DriveFoldersShowFromJson(json);
 }

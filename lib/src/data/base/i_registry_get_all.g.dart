@@ -10,12 +10,9 @@ _IRegistryGetAll _$IRegistryGetAllFromJson(Map<String, dynamic> json) =>
     _IRegistryGetAll(
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          const [],
       domain: json['domain'] as String?,
     );
 
 Map<String, dynamic> _$IRegistryGetAllToJson(_IRegistryGetAll instance) =>
-    <String, dynamic>{
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+    <String, dynamic>{'scope': instance.scope, 'domain': instance.domain};

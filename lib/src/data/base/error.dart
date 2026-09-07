@@ -6,9 +6,7 @@ part 'error.g.dart';
 
 @freezed
 abstract class Error with _$Error {
-  const factory Error({
-    required ErrorError error,
-  }) = _Error;
+  const factory Error({required ErrorError error}) = _Error;
 
   factory Error.fromJson(Map<String, Object?> json) => _$ErrorFromJson(json);
 }

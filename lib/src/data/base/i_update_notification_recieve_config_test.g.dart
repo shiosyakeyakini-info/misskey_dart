@@ -7,20 +7,22 @@ part of 'i_update_notification_recieve_config_test.dart';
 // **************************************************************************
 
 _IUpdateNotificationRecieveConfigTest
-    _$IUpdateNotificationRecieveConfigTestFromJson(Map<String, dynamic> json) =>
-        _IUpdateNotificationRecieveConfigTest(
-          type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigTestTypeEnumMap, json['type'],
-              unknownValue: IUpdateNotificationRecieveConfigTestType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$IUpdateNotificationRecieveConfigTestFromJson(Map<String, dynamic> json) =>
+    _IUpdateNotificationRecieveConfigTest(
+      type: $enumDecode(
+        _$IUpdateNotificationRecieveConfigTestTypeEnumMap,
+        json['type'],
+        unknownValue: IUpdateNotificationRecieveConfigTestType.unknown,
+      ),
+      userListId: json['userListId'] as String,
+    );
 
 Map<String, dynamic> _$IUpdateNotificationRecieveConfigTestToJson(
-        _IUpdateNotificationRecieveConfigTest instance) =>
-    <String, dynamic>{
-      'type': _$IUpdateNotificationRecieveConfigTestTypeEnumMap[instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _IUpdateNotificationRecieveConfigTest instance,
+) => <String, dynamic>{
+  'type': _$IUpdateNotificationRecieveConfigTestTypeEnumMap[instance.type]!,
+  'userListId': instance.userListId,
+};
 
 const _$IUpdateNotificationRecieveConfigTestTypeEnumMap = {
   IUpdateNotificationRecieveConfigTestType.all: 'all',

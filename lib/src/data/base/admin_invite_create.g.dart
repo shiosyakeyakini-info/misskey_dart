@@ -13,7 +13,4 @@ _AdminInviteCreate _$AdminInviteCreateFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminInviteCreateToJson(_AdminInviteCreate instance) =>
-    <String, dynamic>{
-      'count': instance.count,
-      'expiresAt': instance.expiresAt,
-    };
+    <String, dynamic>{'count': instance.count, 'expiresAt': instance.expiresAt};

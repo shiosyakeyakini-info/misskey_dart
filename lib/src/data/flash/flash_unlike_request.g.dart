@@ -7,11 +7,7 @@ part of 'flash_unlike_request.dart';
 // **************************************************************************
 
 _FlashUnlikeRequest _$FlashUnlikeRequestFromJson(Map<String, dynamic> json) =>
-    _FlashUnlikeRequest(
-      flashId: json['flashId'] as String?,
-    );
+    _FlashUnlikeRequest(flashId: json['flashId'] as String?);
 
 Map<String, dynamic> _$FlashUnlikeRequestToJson(_FlashUnlikeRequest instance) =>
-    <String, dynamic>{
-      'flashId': instance.flashId,
-    };
+    <String, dynamic>{'flashId': instance.flashId};

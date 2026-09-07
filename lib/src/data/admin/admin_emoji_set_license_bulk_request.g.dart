@@ -7,15 +7,12 @@ part of 'admin_emoji_set_license_bulk_request.dart';
 // **************************************************************************
 
 _AdminEmojiSetLicenseBulkRequest _$AdminEmojiSetLicenseBulkRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminEmojiSetLicenseBulkRequest(
-      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      license: json['license'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminEmojiSetLicenseBulkRequest(
+  ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  license: json['license'] as String?,
+);
 
 Map<String, dynamic> _$AdminEmojiSetLicenseBulkRequestToJson(
-        _AdminEmojiSetLicenseBulkRequest instance) =>
-    <String, dynamic>{
-      'ids': instance.ids,
-      'license': instance.license,
-    };
+  _AdminEmojiSetLicenseBulkRequest instance,
+) => <String, dynamic>{'ids': instance.ids, 'license': instance.license};

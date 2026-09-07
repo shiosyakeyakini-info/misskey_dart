@@ -7,25 +7,25 @@ part of 'i_update_notification_recieve_config_achievement_earned.dart';
 // **************************************************************************
 
 _IUpdateNotificationRecieveConfigAchievementEarned
-    _$IUpdateNotificationRecieveConfigAchievementEarnedFromJson(
-            Map<String, dynamic> json) =>
-        _IUpdateNotificationRecieveConfigAchievementEarned(
-          type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  IUpdateNotificationRecieveConfigAchievementEarnedType
-                      .unknown),
-          userListId: json['userListId'] as String,
-        );
+_$IUpdateNotificationRecieveConfigAchievementEarnedFromJson(
+  Map<String, dynamic> json,
+) => _IUpdateNotificationRecieveConfigAchievementEarned(
+  type: $enumDecode(
+    _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap,
+    json['type'],
+    unknownValue: IUpdateNotificationRecieveConfigAchievementEarnedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$IUpdateNotificationRecieveConfigAchievementEarnedToJson(
-        _IUpdateNotificationRecieveConfigAchievementEarned instance) =>
-    <String, dynamic>{
-      'type': _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _IUpdateNotificationRecieveConfigAchievementEarned instance,
+) => <String, dynamic>{
+  'type':
+      _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$IUpdateNotificationRecieveConfigAchievementEarnedTypeEnumMap = {
   IUpdateNotificationRecieveConfigAchievementEarnedType.all: 'all',

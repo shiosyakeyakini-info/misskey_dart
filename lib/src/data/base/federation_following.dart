@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'federation_following.freezed.dart';
 part 'federation_following.g.dart';
@@ -15,5 +14,6 @@ abstract class FederationFollowing with _$FederationFollowing {
     @Default(10) int? limit,
   }) = _FederationFollowing;
 
-  factory FederationFollowing.fromJson(Map<String, Object?> json) => _$FederationFollowingFromJson(json);
+  factory FederationFollowing.fromJson(Map<String, Object?> json) =>
+      _$FederationFollowingFromJson(json);
 }

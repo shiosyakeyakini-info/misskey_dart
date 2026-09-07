@@ -7,12 +7,12 @@ part of 'queue_count.dart';
 // **************************************************************************
 
 _QueueCount _$QueueCountFromJson(Map<String, dynamic> json) => _QueueCount(
-      waiting: (json['waiting'] as num).toDouble(),
-      active: (json['active'] as num).toDouble(),
-      completed: (json['completed'] as num).toDouble(),
-      failed: (json['failed'] as num).toDouble(),
-      delayed: (json['delayed'] as num).toDouble(),
-    );
+  waiting: (json['waiting'] as num).toDouble(),
+  active: (json['active'] as num).toDouble(),
+  completed: (json['completed'] as num).toDouble(),
+  failed: (json['failed'] as num).toDouble(),
+  delayed: (json['delayed'] as num).toDouble(),
+);
 
 Map<String, dynamic> _$QueueCountToJson(_QueueCount instance) =>
     <String, dynamic>{

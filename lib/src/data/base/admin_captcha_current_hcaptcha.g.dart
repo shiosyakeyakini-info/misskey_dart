@@ -7,15 +7,15 @@ part of 'admin_captcha_current_hcaptcha.dart';
 // **************************************************************************
 
 _AdminCaptchaCurrentHcaptcha _$AdminCaptchaCurrentHcaptchaFromJson(
-        Map<String, dynamic> json) =>
-    _AdminCaptchaCurrentHcaptcha(
-      siteKey: json['siteKey'] as String?,
-      secretKey: json['secretKey'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminCaptchaCurrentHcaptcha(
+  siteKey: json['siteKey'] as String?,
+  secretKey: json['secretKey'] as String?,
+);
 
 Map<String, dynamic> _$AdminCaptchaCurrentHcaptchaToJson(
-        _AdminCaptchaCurrentHcaptcha instance) =>
-    <String, dynamic>{
-      'siteKey': instance.siteKey,
-      'secretKey': instance.secretKey,
-    };
+  _AdminCaptchaCurrentHcaptcha instance,
+) => <String, dynamic>{
+  'siteKey': instance.siteKey,
+  'secretKey': instance.secretKey,
+};

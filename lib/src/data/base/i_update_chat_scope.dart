@@ -1,8 +1,1 @@
-enum IUpdateChatScope {
-  everyone,
-  followers,
-  following,
-  mutual,
-  none,
-  unknown,
-}
+enum IUpdateChatScope { everyone, followers, following, mutual, none, unknown }

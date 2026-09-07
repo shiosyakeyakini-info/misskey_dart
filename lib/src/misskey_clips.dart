@@ -1,11 +1,9 @@
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyClips {
-
   final ApiService _apiService;
 
-  MisskeyClips({required ApiService apiService})
-      : _apiService = apiService;
+  MisskeyClips({required ApiService apiService}) : _apiService = apiService;
 
   /// clips/add-note
   Future<void> addNote(ClipsAddNoteRequest request) async {
@@ -14,7 +12,10 @@ class MisskeyClips {
 
   /// clips/create
   Future<Clip> create(ClipsCreateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("clips/create", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "clips/create",
+      request.toJson(),
+    );
     return Clip.fromJson(response);
   }
 
@@ -30,7 +31,10 @@ class MisskeyClips {
 
   /// clips/list
   Future<Iterable<Clip>> list(ClipsListRequest request) async {
-    final response = await _apiService.post<List>("clips/list", request.toJson());
+    final response = await _apiService.post<List>(
+      "clips/list",
+      request.toJson(),
+    );
     return response.map((e) => Clip.fromJson(e as Map<String, dynamic>));
   }
 
@@ -42,7 +46,10 @@ class MisskeyClips {
 
   /// clips/notes
   Future<Iterable<Note>> notes(ClipsNotesRequest request) async {
-    final response = await _apiService.post<List>("clips/notes", request.toJson());
+    final response = await _apiService.post<List>(
+      "clips/notes",
+      request.toJson(),
+    );
     return response.map((e) => Note.fromJson(e as Map<String, dynamic>));
   }
 
@@ -53,7 +60,10 @@ class MisskeyClips {
 
   /// clips/show
   Future<Clip> show(ClipsShowRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("clips/show", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "clips/show",
+      request.toJson(),
+    );
     return Clip.fromJson(response);
   }
 
@@ -64,8 +74,10 @@ class MisskeyClips {
 
   /// clips/update
   Future<Clip> update(ClipsUpdateRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("clips/update", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "clips/update",
+      request.toJson(),
+    );
     return Clip.fromJson(response);
   }
-
 }

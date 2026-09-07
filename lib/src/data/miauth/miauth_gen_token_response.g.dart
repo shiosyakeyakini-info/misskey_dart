@@ -7,13 +7,9 @@ part of 'miauth_gen_token_response.dart';
 // **************************************************************************
 
 _MiauthGenTokenResponse _$MiauthGenTokenResponseFromJson(
-        Map<String, dynamic> json) =>
-    _MiauthGenTokenResponse(
-      token: json['token'] as String,
-    );
+  Map<String, dynamic> json,
+) => _MiauthGenTokenResponse(token: json['token'] as String);
 
 Map<String, dynamic> _$MiauthGenTokenResponseToJson(
-        _MiauthGenTokenResponse instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-    };
+  _MiauthGenTokenResponse instance,
+) => <String, dynamic>{'token': instance.token};

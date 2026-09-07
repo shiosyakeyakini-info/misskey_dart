@@ -7,11 +7,7 @@ part of 'users_lists_favorite.dart';
 // **************************************************************************
 
 _UsersListsFavorite _$UsersListsFavoriteFromJson(Map<String, dynamic> json) =>
-    _UsersListsFavorite(
-      listId: json['listId'] as String,
-    );
+    _UsersListsFavorite(listId: json['listId'] as String);
 
 Map<String, dynamic> _$UsersListsFavoriteToJson(_UsersListsFavorite instance) =>
-    <String, dynamic>{
-      'listId': instance.listId,
-    };
+    <String, dynamic>{'listId': instance.listId};

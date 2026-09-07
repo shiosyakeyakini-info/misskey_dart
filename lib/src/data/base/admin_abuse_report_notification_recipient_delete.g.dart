@@ -7,14 +7,10 @@ part of 'admin_abuse_report_notification_recipient_delete.dart';
 // **************************************************************************
 
 _AdminAbuseReportNotificationRecipientDelete
-    _$AdminAbuseReportNotificationRecipientDeleteFromJson(
-            Map<String, dynamic> json) =>
-        _AdminAbuseReportNotificationRecipientDelete(
-          id: json['id'] as String,
-        );
+_$AdminAbuseReportNotificationRecipientDeleteFromJson(
+  Map<String, dynamic> json,
+) => _AdminAbuseReportNotificationRecipientDelete(id: json['id'] as String);
 
 Map<String, dynamic> _$AdminAbuseReportNotificationRecipientDeleteToJson(
-        _AdminAbuseReportNotificationRecipientDelete instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+  _AdminAbuseReportNotificationRecipientDelete instance,
+) => <String, dynamic>{'id': instance.id};

@@ -1,15 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'chat_rooms_mute.freezed.dart';
 part 'chat_rooms_mute.g.dart';
 
 @freezed
 abstract class ChatRoomsMute with _$ChatRoomsMute {
-  const factory ChatRoomsMute({
-    required String roomId,
-    required bool mute,
-  }) = _ChatRoomsMute;
+  const factory ChatRoomsMute({required String roomId, required bool mute}) =
+      _ChatRoomsMute;
 
-  factory ChatRoomsMute.fromJson(Map<String, Object?> json) => _$ChatRoomsMuteFromJson(json);
+  factory ChatRoomsMute.fromJson(Map<String, Object?> json) =>
+      _$ChatRoomsMuteFromJson(json);
 }

@@ -13,7 +13,4 @@ _NotesPollsVote _$NotesPollsVoteFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesPollsVoteToJson(_NotesPollsVote instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-      'choice': instance.choice,
-    };
+    <String, dynamic>{'noteId': instance.noteId, 'choice': instance.choice};

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,50 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminGetIndexStatsItem {
-  String get tablename;
-  String get indexname;
 
-  /// Create a copy of AdminGetIndexStatsItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AdminGetIndexStatsItemCopyWith<AdminGetIndexStatsItem> get copyWith =>
-      _$AdminGetIndexStatsItemCopyWithImpl<AdminGetIndexStatsItem>(
-          this as AdminGetIndexStatsItem, _$identity);
+ String get tablename; String get indexname;
+/// Create a copy of AdminGetIndexStatsItem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AdminGetIndexStatsItemCopyWith<AdminGetIndexStatsItem> get copyWith => _$AdminGetIndexStatsItemCopyWithImpl<AdminGetIndexStatsItem>(this as AdminGetIndexStatsItem, _$identity);
 
   /// Serializes this AdminGetIndexStatsItem to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AdminGetIndexStatsItem &&
-            (identical(other.tablename, tablename) ||
-                other.tablename == tablename) &&
-            (identical(other.indexname, indexname) ||
-                other.indexname == indexname));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, tablename, indexname);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminGetIndexStatsItem&&(identical(other.tablename, tablename) || other.tablename == tablename)&&(identical(other.indexname, indexname) || other.indexname == indexname));
+}
 
-  @override
-  String toString() {
-    return 'AdminGetIndexStatsItem(tablename: $tablename, indexname: $indexname)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,tablename,indexname);
+
+@override
+String toString() {
+  return 'AdminGetIndexStatsItem(tablename: $tablename, indexname: $indexname)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AdminGetIndexStatsItemCopyWith<$Res> {
-  factory $AdminGetIndexStatsItemCopyWith(AdminGetIndexStatsItem value,
-          $Res Function(AdminGetIndexStatsItem) _then) =
-      _$AdminGetIndexStatsItemCopyWithImpl;
-  @useResult
-  $Res call({String tablename, String indexname});
-}
+abstract mixin class $AdminGetIndexStatsItemCopyWith<$Res>  {
+  factory $AdminGetIndexStatsItemCopyWith(AdminGetIndexStatsItem value, $Res Function(AdminGetIndexStatsItem) _then) = _$AdminGetIndexStatsItemCopyWithImpl;
+@useResult
+$Res call({
+ String tablename, String indexname
+});
 
+
+
+
+}
 /// @nodoc
 class _$AdminGetIndexStatsItemCopyWithImpl<$Res>
     implements $AdminGetIndexStatsItemCopyWith<$Res> {
@@ -67,88 +63,199 @@ class _$AdminGetIndexStatsItemCopyWithImpl<$Res>
   final AdminGetIndexStatsItem _self;
   final $Res Function(AdminGetIndexStatsItem) _then;
 
-  /// Create a copy of AdminGetIndexStatsItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? tablename = null,
-    Object? indexname = null,
-  }) {
-    return _then(_self.copyWith(
-      tablename: null == tablename
-          ? _self.tablename
-          : tablename // ignore: cast_nullable_to_non_nullable
-              as String,
-      indexname: null == indexname
-          ? _self.indexname
-          : indexname // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminGetIndexStatsItem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? tablename = null,Object? indexname = null,}) {
+  return _then(_self.copyWith(
+tablename: null == tablename ? _self.tablename : tablename // ignore: cast_nullable_to_non_nullable
+as String,indexname: null == indexname ? _self.indexname : indexname // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AdminGetIndexStatsItem].
+extension AdminGetIndexStatsItemPatterns on AdminGetIndexStatsItem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminGetIndexStatsItem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AdminGetIndexStatsItem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminGetIndexStatsItem value)  $default,){
+final _that = this;
+switch (_that) {
+case _AdminGetIndexStatsItem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminGetIndexStatsItem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AdminGetIndexStatsItem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String tablename,  String indexname)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AdminGetIndexStatsItem() when $default != null:
+return $default(_that.tablename,_that.indexname);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String tablename,  String indexname)  $default,) {final _that = this;
+switch (_that) {
+case _AdminGetIndexStatsItem():
+return $default(_that.tablename,_that.indexname);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String tablename,  String indexname)?  $default,) {final _that = this;
+switch (_that) {
+case _AdminGetIndexStatsItem() when $default != null:
+return $default(_that.tablename,_that.indexname);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _AdminGetIndexStatsItem implements AdminGetIndexStatsItem {
-  const _AdminGetIndexStatsItem(
-      {required this.tablename, required this.indexname});
-  factory _AdminGetIndexStatsItem.fromJson(Map<String, dynamic> json) =>
-      _$AdminGetIndexStatsItemFromJson(json);
+  const _AdminGetIndexStatsItem({required this.tablename, required this.indexname});
+  factory _AdminGetIndexStatsItem.fromJson(Map<String, dynamic> json) => _$AdminGetIndexStatsItemFromJson(json);
 
-  @override
-  final String tablename;
-  @override
-  final String indexname;
+@override final  String tablename;
+@override final  String indexname;
 
-  /// Create a copy of AdminGetIndexStatsItem
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AdminGetIndexStatsItemCopyWith<_AdminGetIndexStatsItem> get copyWith =>
-      __$AdminGetIndexStatsItemCopyWithImpl<_AdminGetIndexStatsItem>(
-          this, _$identity);
+/// Create a copy of AdminGetIndexStatsItem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AdminGetIndexStatsItemCopyWith<_AdminGetIndexStatsItem> get copyWith => __$AdminGetIndexStatsItemCopyWithImpl<_AdminGetIndexStatsItem>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AdminGetIndexStatsItemToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AdminGetIndexStatsItemToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AdminGetIndexStatsItem &&
-            (identical(other.tablename, tablename) ||
-                other.tablename == tablename) &&
-            (identical(other.indexname, indexname) ||
-                other.indexname == indexname));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminGetIndexStatsItem&&(identical(other.tablename, tablename) || other.tablename == tablename)&&(identical(other.indexname, indexname) || other.indexname == indexname));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, tablename, indexname);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,tablename,indexname);
 
-  @override
-  String toString() {
-    return 'AdminGetIndexStatsItem(tablename: $tablename, indexname: $indexname)';
-  }
+@override
+String toString() {
+  return 'AdminGetIndexStatsItem(tablename: $tablename, indexname: $indexname)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AdminGetIndexStatsItemCopyWith<$Res>
-    implements $AdminGetIndexStatsItemCopyWith<$Res> {
-  factory _$AdminGetIndexStatsItemCopyWith(_AdminGetIndexStatsItem value,
-          $Res Function(_AdminGetIndexStatsItem) _then) =
-      __$AdminGetIndexStatsItemCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String tablename, String indexname});
-}
+abstract mixin class _$AdminGetIndexStatsItemCopyWith<$Res> implements $AdminGetIndexStatsItemCopyWith<$Res> {
+  factory _$AdminGetIndexStatsItemCopyWith(_AdminGetIndexStatsItem value, $Res Function(_AdminGetIndexStatsItem) _then) = __$AdminGetIndexStatsItemCopyWithImpl;
+@override @useResult
+$Res call({
+ String tablename, String indexname
+});
 
+
+
+
+}
 /// @nodoc
 class __$AdminGetIndexStatsItemCopyWithImpl<$Res>
     implements _$AdminGetIndexStatsItemCopyWith<$Res> {
@@ -157,25 +264,17 @@ class __$AdminGetIndexStatsItemCopyWithImpl<$Res>
   final _AdminGetIndexStatsItem _self;
   final $Res Function(_AdminGetIndexStatsItem) _then;
 
-  /// Create a copy of AdminGetIndexStatsItem
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? tablename = null,
-    Object? indexname = null,
-  }) {
-    return _then(_AdminGetIndexStatsItem(
-      tablename: null == tablename
-          ? _self.tablename
-          : tablename // ignore: cast_nullable_to_non_nullable
-              as String,
-      indexname: null == indexname
-          ? _self.indexname
-          : indexname // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminGetIndexStatsItem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? tablename = null,Object? indexname = null,}) {
+  return _then(_AdminGetIndexStatsItem(
+tablename: null == tablename ? _self.tablename : tablename // ignore: cast_nullable_to_non_nullable
+as String,indexname: null == indexname ? _self.indexname : indexname // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

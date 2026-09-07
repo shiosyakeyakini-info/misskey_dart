@@ -7,11 +7,7 @@ part of 'admin_delete_account.dart';
 // **************************************************************************
 
 _AdminDeleteAccount _$AdminDeleteAccountFromJson(Map<String, dynamic> json) =>
-    _AdminDeleteAccount(
-      userId: json['userId'] as String,
-    );
+    _AdminDeleteAccount(userId: json['userId'] as String);
 
 Map<String, dynamic> _$AdminDeleteAccountToJson(_AdminDeleteAccount instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

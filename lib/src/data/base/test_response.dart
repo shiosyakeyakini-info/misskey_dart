@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'test_response.freezed.dart';
 part 'test_response.g.dart';
@@ -14,5 +13,6 @@ abstract class TestResponse with _$TestResponse {
     @Default("hello") String? nullableDefault,
   }) = _TestResponse;
 
-  factory TestResponse.fromJson(Map<String, Object?> json) => _$TestResponseFromJson(json);
+  factory TestResponse.fromJson(Map<String, Object?> json) =>
+      _$TestResponseFromJson(json);
 }

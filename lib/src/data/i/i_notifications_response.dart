@@ -56,5 +56,5 @@ enum UserExportableEntities {
   favorite,
   following,
   muting,
-  userList
+  userList,
 }

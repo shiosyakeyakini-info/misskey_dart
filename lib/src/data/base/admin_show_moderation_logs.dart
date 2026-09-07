@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_show_moderation_logs.freezed.dart';
 part 'admin_show_moderation_logs.g.dart';
@@ -17,5 +16,6 @@ abstract class AdminShowModerationLogs with _$AdminShowModerationLogs {
     String? search,
   }) = _AdminShowModerationLogs;
 
-  factory AdminShowModerationLogs.fromJson(Map<String, Object?> json) => _$AdminShowModerationLogsFromJson(json);
+  factory AdminShowModerationLogs.fromJson(Map<String, Object?> json) =>
+      _$AdminShowModerationLogsFromJson(json);
 }

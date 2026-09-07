@@ -7,13 +7,9 @@ part of 'admin_roles_delete_request.dart';
 // **************************************************************************
 
 _AdminRolesDeleteRequest _$AdminRolesDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminRolesDeleteRequest(
-      roleId: json['roleId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminRolesDeleteRequest(roleId: json['roleId'] as String?);
 
 Map<String, dynamic> _$AdminRolesDeleteRequestToJson(
-        _AdminRolesDeleteRequest instance) =>
-    <String, dynamic>{
-      'roleId': instance.roleId,
-    };
+  _AdminRolesDeleteRequest instance,
+) => <String, dynamic>{'roleId': instance.roleId};

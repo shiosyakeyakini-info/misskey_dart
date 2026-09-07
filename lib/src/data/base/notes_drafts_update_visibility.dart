@@ -1,7 +1,1 @@
-enum NotesDraftsUpdateVisibility {
-  public,
-  home,
-  followers,
-  specified,
-  unknown,
-}
+enum NotesDraftsUpdateVisibility { public, home, followers, specified, unknown }

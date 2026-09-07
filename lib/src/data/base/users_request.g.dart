@@ -10,13 +10,24 @@ _UsersRequest _$UsersRequestFromJson(Map<String, dynamic> json) =>
     _UsersRequest(
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       offset: (json['offset'] as num?)?.toInt() ?? 0,
-      sort: $enumDecodeNullable(_$UsersSortEnumMap, json['sort'],
-          unknownValue: UsersSort.unknown),
-      state: $enumDecodeNullable(_$UsersStateEnumMap, json['state'],
-              unknownValue: UsersState.unknown) ??
+      sort: $enumDecodeNullable(
+        _$UsersSortEnumMap,
+        json['sort'],
+        unknownValue: UsersSort.unknown,
+      ),
+      state:
+          $enumDecodeNullable(
+            _$UsersStateEnumMap,
+            json['state'],
+            unknownValue: UsersState.unknown,
+          ) ??
           UsersState.all,
-      origin: $enumDecodeNullable(_$UsersOriginEnumMap, json['origin'],
-              unknownValue: UsersOrigin.unknown) ??
+      origin:
+          $enumDecodeNullable(
+            _$UsersOriginEnumMap,
+            json['origin'],
+            unknownValue: UsersOrigin.unknown,
+          ) ??
           UsersOrigin.local,
       hostname: json['hostname'] as String? ?? null,
     );

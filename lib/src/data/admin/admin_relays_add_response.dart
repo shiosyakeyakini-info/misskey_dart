@@ -9,8 +9,11 @@ abstract class AdminRelaysAddResponse with _$AdminRelaysAddResponse {
   const factory AdminRelaysAddResponse({
     required String id,
     @UriConverter() required Uri inbox,
-    @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown) @Default(AdminRelaysAddStatus.requesting) AdminRelaysAddStatus status,
+    @JsonKey(unknownEnumValue: AdminRelaysAddStatus.unknown)
+    @Default(AdminRelaysAddStatus.requesting)
+    AdminRelaysAddStatus status,
   }) = _AdminRelaysAddResponse;
 
-  factory AdminRelaysAddResponse.fromJson(Map<String, Object?> json) => _$AdminRelaysAddResponseFromJson(json);
+  factory AdminRelaysAddResponse.fromJson(Map<String, Object?> json) =>
+      _$AdminRelaysAddResponseFromJson(json);
 }

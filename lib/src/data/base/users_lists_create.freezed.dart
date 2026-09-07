@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,46 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UsersListsCreate {
-  String get name;
 
-  /// Create a copy of UsersListsCreate
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $UsersListsCreateCopyWith<UsersListsCreate> get copyWith =>
-      _$UsersListsCreateCopyWithImpl<UsersListsCreate>(
-          this as UsersListsCreate, _$identity);
+ String get name;
+/// Create a copy of UsersListsCreate
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UsersListsCreateCopyWith<UsersListsCreate> get copyWith => _$UsersListsCreateCopyWithImpl<UsersListsCreate>(this as UsersListsCreate, _$identity);
 
   /// Serializes this UsersListsCreate to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UsersListsCreate &&
-            (identical(other.name, name) || other.name == name));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersListsCreate&&(identical(other.name, name) || other.name == name));
+}
 
-  @override
-  String toString() {
-    return 'UsersListsCreate(name: $name)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name);
+
+@override
+String toString() {
+  return 'UsersListsCreate(name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $UsersListsCreateCopyWith<$Res> {
-  factory $UsersListsCreateCopyWith(
-          UsersListsCreate value, $Res Function(UsersListsCreate) _then) =
-      _$UsersListsCreateCopyWithImpl;
-  @useResult
-  $Res call({String name});
-}
+abstract mixin class $UsersListsCreateCopyWith<$Res>  {
+  factory $UsersListsCreateCopyWith(UsersListsCreate value, $Res Function(UsersListsCreate) _then) = _$UsersListsCreateCopyWithImpl;
+@useResult
+$Res call({
+ String name
+});
 
+
+
+
+}
 /// @nodoc
 class _$UsersListsCreateCopyWithImpl<$Res>
     implements $UsersListsCreateCopyWith<$Res> {
@@ -63,76 +63,197 @@ class _$UsersListsCreateCopyWithImpl<$Res>
   final UsersListsCreate _self;
   final $Res Function(UsersListsCreate) _then;
 
-  /// Create a copy of UsersListsCreate
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_self.copyWith(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of UsersListsCreate
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,}) {
+  return _then(_self.copyWith(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UsersListsCreate].
+extension UsersListsCreatePatterns on UsersListsCreate {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UsersListsCreate value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UsersListsCreate() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UsersListsCreate value)  $default,){
+final _that = this;
+switch (_that) {
+case _UsersListsCreate():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UsersListsCreate value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UsersListsCreate() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UsersListsCreate() when $default != null:
+return $default(_that.name);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name)  $default,) {final _that = this;
+switch (_that) {
+case _UsersListsCreate():
+return $default(_that.name);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name)?  $default,) {final _that = this;
+switch (_that) {
+case _UsersListsCreate() when $default != null:
+return $default(_that.name);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _UsersListsCreate implements UsersListsCreate {
   const _UsersListsCreate({required this.name});
-  factory _UsersListsCreate.fromJson(Map<String, dynamic> json) =>
-      _$UsersListsCreateFromJson(json);
+  factory _UsersListsCreate.fromJson(Map<String, dynamic> json) => _$UsersListsCreateFromJson(json);
 
-  @override
-  final String name;
+@override final  String name;
 
-  /// Create a copy of UsersListsCreate
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$UsersListsCreateCopyWith<_UsersListsCreate> get copyWith =>
-      __$UsersListsCreateCopyWithImpl<_UsersListsCreate>(this, _$identity);
+/// Create a copy of UsersListsCreate
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UsersListsCreateCopyWith<_UsersListsCreate> get copyWith => __$UsersListsCreateCopyWithImpl<_UsersListsCreate>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$UsersListsCreateToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$UsersListsCreateToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _UsersListsCreate &&
-            (identical(other.name, name) || other.name == name));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UsersListsCreate&&(identical(other.name, name) || other.name == name));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name);
 
-  @override
-  String toString() {
-    return 'UsersListsCreate(name: $name)';
-  }
+@override
+String toString() {
+  return 'UsersListsCreate(name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$UsersListsCreateCopyWith<$Res>
-    implements $UsersListsCreateCopyWith<$Res> {
-  factory _$UsersListsCreateCopyWith(
-          _UsersListsCreate value, $Res Function(_UsersListsCreate) _then) =
-      __$UsersListsCreateCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String name});
-}
+abstract mixin class _$UsersListsCreateCopyWith<$Res> implements $UsersListsCreateCopyWith<$Res> {
+  factory _$UsersListsCreateCopyWith(_UsersListsCreate value, $Res Function(_UsersListsCreate) _then) = __$UsersListsCreateCopyWithImpl;
+@override @useResult
+$Res call({
+ String name
+});
 
+
+
+
+}
 /// @nodoc
 class __$UsersListsCreateCopyWithImpl<$Res>
     implements _$UsersListsCreateCopyWith<$Res> {
@@ -141,20 +262,16 @@ class __$UsersListsCreateCopyWithImpl<$Res>
   final _UsersListsCreate _self;
   final $Res Function(_UsersListsCreate) _then;
 
-  /// Create a copy of UsersListsCreate
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_UsersListsCreate(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of UsersListsCreate
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,}) {
+  return _then(_UsersListsCreate(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

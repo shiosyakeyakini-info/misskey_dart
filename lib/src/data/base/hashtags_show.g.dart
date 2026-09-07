@@ -7,11 +7,7 @@ part of 'hashtags_show.dart';
 // **************************************************************************
 
 _HashtagsShow _$HashtagsShowFromJson(Map<String, dynamic> json) =>
-    _HashtagsShow(
-      tag: json['tag'] as String,
-    );
+    _HashtagsShow(tag: json['tag'] as String);
 
 Map<String, dynamic> _$HashtagsShowToJson(_HashtagsShow instance) =>
-    <String, dynamic>{
-      'tag': instance.tag,
-    };
+    <String, dynamic>{'tag': instance.tag};

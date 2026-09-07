@@ -13,7 +13,4 @@ _DriveFoldersCreate _$DriveFoldersCreateFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DriveFoldersCreateToJson(_DriveFoldersCreate instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'parentId': instance.parentId,
-    };
+    <String, dynamic>{'name': instance.name, 'parentId': instance.parentId};

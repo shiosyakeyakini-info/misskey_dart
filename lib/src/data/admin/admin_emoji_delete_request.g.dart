@@ -7,13 +7,9 @@ part of 'admin_emoji_delete_request.dart';
 // **************************************************************************
 
 _AdminEmojiDeleteRequest _$AdminEmojiDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminEmojiDeleteRequest(
-      id: json['id'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminEmojiDeleteRequest(id: json['id'] as String?);
 
 Map<String, dynamic> _$AdminEmojiDeleteRequestToJson(
-        _AdminEmojiDeleteRequest instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+  _AdminEmojiDeleteRequest instance,
+) => <String, dynamic>{'id': instance.id};

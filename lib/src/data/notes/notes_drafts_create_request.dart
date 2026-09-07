@@ -7,12 +7,16 @@ part 'notes_drafts_create_request.g.dart';
 @freezed
 abstract class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
   const factory NotesDraftsCreateRequest({
-    @JsonKey(unknownEnumValue: NoteVisibility.unknown) @Default(NoteVisibility.public) NoteVisibility? visibility,
+    @JsonKey(unknownEnumValue: NoteVisibility.unknown)
+    @Default(NoteVisibility.public)
+    NoteVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     String? hashtag,
     @Default(false) bool? localOnly,
-    @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) @Default(null) NotesDraftsCreateReactionAcceptance? reactionAcceptance,
+    @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
+    @Default(null)
+    NotesDraftsCreateReactionAcceptance? reactionAcceptance,
     String? replyId,
     String? renoteId,
     String? channelId,
@@ -23,5 +27,6 @@ abstract class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
     @Default(false) bool? isActuallyScheduled,
   }) = _NotesDraftsCreateRequest;
 
-  factory NotesDraftsCreateRequest.fromJson(Map<String, Object?> json) => _$NotesDraftsCreateRequestFromJson(json);
+  factory NotesDraftsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesDraftsCreateRequestFromJson(json);
 }

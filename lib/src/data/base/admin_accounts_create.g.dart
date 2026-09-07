@@ -7,12 +7,8 @@ part of 'admin_accounts_create.dart';
 // **************************************************************************
 
 _AdminAccountsCreate _$AdminAccountsCreateFromJson(Map<String, dynamic> json) =>
-    _AdminAccountsCreate(
-      token: json['token'] as String,
-    );
+    _AdminAccountsCreate(token: json['token'] as String);
 
 Map<String, dynamic> _$AdminAccountsCreateToJson(
-        _AdminAccountsCreate instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-    };
+  _AdminAccountsCreate instance,
+) => <String, dynamic>{'token': instance.token};

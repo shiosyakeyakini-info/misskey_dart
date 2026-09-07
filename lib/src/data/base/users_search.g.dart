@@ -7,14 +7,18 @@ part of 'users_search.dart';
 // **************************************************************************
 
 _UsersSearch _$UsersSearchFromJson(Map<String, dynamic> json) => _UsersSearch(
-      query: json['query'] as String,
-      offset: (json['offset'] as num?)?.toInt() ?? 0,
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      origin: $enumDecodeNullable(_$UsersSearchOriginEnumMap, json['origin'],
-              unknownValue: UsersSearchOrigin.unknown) ??
-          UsersSearchOrigin.combined,
-      detail: json['detail'] as bool? ?? true,
-    );
+  query: json['query'] as String,
+  offset: (json['offset'] as num?)?.toInt() ?? 0,
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  origin:
+      $enumDecodeNullable(
+        _$UsersSearchOriginEnumMap,
+        json['origin'],
+        unknownValue: UsersSearchOrigin.unknown,
+      ) ??
+      UsersSearchOrigin.combined,
+  detail: json['detail'] as bool? ?? true,
+);
 
 Map<String, dynamic> _$UsersSearchToJson(_UsersSearch instance) =>
     <String, dynamic>{

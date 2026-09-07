@@ -9,8 +9,9 @@ part of 'note_reaction.dart';
 _NoteReaction _$NoteReactionFromJson(Map<String, dynamic> json) =>
     _NoteReaction(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       user: UserLite.fromJson(json['user'] as Map<String, dynamic>),
       type: json['type'] as String,
     );

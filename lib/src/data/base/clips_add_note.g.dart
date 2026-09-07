@@ -13,7 +13,4 @@ _ClipsAddNote _$ClipsAddNoteFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ClipsAddNoteToJson(_ClipsAddNote instance) =>
-    <String, dynamic>{
-      'clipId': instance.clipId,
-      'noteId': instance.noteId,
-    };
+    <String, dynamic>{'clipId': instance.clipId, 'noteId': instance.noteId};

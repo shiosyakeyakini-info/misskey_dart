@@ -10,8 +10,12 @@ _AdminRelaysAdd _$AdminRelaysAddFromJson(Map<String, dynamic> json) =>
     _AdminRelaysAdd(
       id: json['id'] as String,
       inbox: const UriConverter().fromJson(json['inbox'] as String),
-      status: $enumDecodeNullable(_$AdminRelaysAddStatusEnumMap, json['status'],
-              unknownValue: AdminRelaysAddStatus.unknown) ??
+      status:
+          $enumDecodeNullable(
+            _$AdminRelaysAddStatusEnumMap,
+            json['status'],
+            unknownValue: AdminRelaysAddStatus.unknown,
+          ) ??
           AdminRelaysAddStatus.requesting,
     );
 

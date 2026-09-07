@@ -7,11 +7,7 @@ part of 'following_delete.dart';
 // **************************************************************************
 
 _FollowingDelete _$FollowingDeleteFromJson(Map<String, dynamic> json) =>
-    _FollowingDelete(
-      userId: json['userId'] as String,
-    );
+    _FollowingDelete(userId: json['userId'] as String);
 
 Map<String, dynamic> _$FollowingDeleteToJson(_FollowingDelete instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

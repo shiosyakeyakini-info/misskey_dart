@@ -13,5 +13,6 @@ abstract class ChartsNotesLocal with _$ChartsNotesLocal {
     required ChartsNotesLocalDiffs diffs,
   }) = _ChartsNotesLocal;
 
-  factory ChartsNotesLocal.fromJson(Map<String, Object?> json) => _$ChartsNotesLocalFromJson(json);
+  factory ChartsNotesLocal.fromJson(Map<String, Object?> json) =>
+      _$ChartsNotesLocalFromJson(json);
 }

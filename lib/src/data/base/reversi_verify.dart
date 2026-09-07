@@ -11,5 +11,6 @@ abstract class ReversiVerify with _$ReversiVerify {
     ReversiGameDetailed? game,
   }) = _ReversiVerify;
 
-  factory ReversiVerify.fromJson(Map<String, Object?> json) => _$ReversiVerifyFromJson(json);
+  factory ReversiVerify.fromJson(Map<String, Object?> json) =>
+      _$ReversiVerifyFromJson(json);
 }

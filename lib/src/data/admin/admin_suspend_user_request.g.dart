@@ -7,13 +7,9 @@ part of 'admin_suspend_user_request.dart';
 // **************************************************************************
 
 _AdminSuspendUserRequest _$AdminSuspendUserRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminSuspendUserRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminSuspendUserRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$AdminSuspendUserRequestToJson(
-        _AdminSuspendUserRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _AdminSuspendUserRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

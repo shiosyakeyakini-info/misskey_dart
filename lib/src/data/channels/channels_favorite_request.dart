@@ -1,14 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'channels_favorite_request.freezed.dart';
 part 'channels_favorite_request.g.dart';
 
 @freezed
 abstract class ChannelsFavoriteRequest with _$ChannelsFavoriteRequest {
-  const factory ChannelsFavoriteRequest({
-    String? channelId,
-  }) = _ChannelsFavoriteRequest;
+  const factory ChannelsFavoriteRequest({String? channelId}) =
+      _ChannelsFavoriteRequest;
 
-  factory ChannelsFavoriteRequest.fromJson(Map<String, Object?> json) => _$ChannelsFavoriteRequestFromJson(json);
+  factory ChannelsFavoriteRequest.fromJson(Map<String, Object?> json) =>
+      _$ChannelsFavoriteRequestFromJson(json);
 }

@@ -7,24 +7,24 @@ part of 'admin_show_user_notification_recieve_config_renote.dart';
 // **************************************************************************
 
 _AdminShowUserNotificationRecieveConfigRenote
-    _$AdminShowUserNotificationRecieveConfigRenoteFromJson(
-            Map<String, dynamic> json) =>
-        _AdminShowUserNotificationRecieveConfigRenote(
-          type: $enumDecode(
-              _$AdminShowUserNotificationRecieveConfigRenoteTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  AdminShowUserNotificationRecieveConfigRenoteType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$AdminShowUserNotificationRecieveConfigRenoteFromJson(
+  Map<String, dynamic> json,
+) => _AdminShowUserNotificationRecieveConfigRenote(
+  type: $enumDecode(
+    _$AdminShowUserNotificationRecieveConfigRenoteTypeEnumMap,
+    json['type'],
+    unknownValue: AdminShowUserNotificationRecieveConfigRenoteType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$AdminShowUserNotificationRecieveConfigRenoteToJson(
-        _AdminShowUserNotificationRecieveConfigRenote instance) =>
-    <String, dynamic>{
-      'type': _$AdminShowUserNotificationRecieveConfigRenoteTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _AdminShowUserNotificationRecieveConfigRenote instance,
+) => <String, dynamic>{
+  'type':
+      _$AdminShowUserNotificationRecieveConfigRenoteTypeEnumMap[instance.type]!,
+  'userListId': instance.userListId,
+};
 
 const _$AdminShowUserNotificationRecieveConfigRenoteTypeEnumMap = {
   AdminShowUserNotificationRecieveConfigRenoteType.all: 'all',

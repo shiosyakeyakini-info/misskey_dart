@@ -17,8 +17,9 @@ _ChartsNotesLocal _$ChartsNotesLocalFromJson(Map<String, dynamic> json) =>
       dec: (json['dec'] as List<dynamic>)
           .map((e) => (e as num).toDouble())
           .toList(),
-      diffs:
-          ChartsNotesLocalDiffs.fromJson(json['diffs'] as Map<String, dynamic>),
+      diffs: ChartsNotesLocalDiffs.fromJson(
+        json['diffs'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$ChartsNotesLocalToJson(_ChartsNotesLocal instance) =>

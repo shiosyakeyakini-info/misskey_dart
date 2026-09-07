@@ -7,13 +7,9 @@ part of 'blocking_delete_request.dart';
 // **************************************************************************
 
 _BlockingDeleteRequest _$BlockingDeleteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _BlockingDeleteRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _BlockingDeleteRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$BlockingDeleteRequestToJson(
-        _BlockingDeleteRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _BlockingDeleteRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

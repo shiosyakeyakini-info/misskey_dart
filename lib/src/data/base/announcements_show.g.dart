@@ -7,11 +7,7 @@ part of 'announcements_show.dart';
 // **************************************************************************
 
 _AnnouncementsShow _$AnnouncementsShowFromJson(Map<String, dynamic> json) =>
-    _AnnouncementsShow(
-      announcementId: json['announcementId'] as String,
-    );
+    _AnnouncementsShow(announcementId: json['announcementId'] as String);
 
 Map<String, dynamic> _$AnnouncementsShowToJson(_AnnouncementsShow instance) =>
-    <String, dynamic>{
-      'announcementId': instance.announcementId,
-    };
+    <String, dynamic>{'announcementId': instance.announcementId};

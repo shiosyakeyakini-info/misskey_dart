@@ -17,7 +17,10 @@ abstract class NotesSearchRequest with _$NotesSearchRequest {
     String? host,
     @Default(null) String? userId,
     @Default(null) String? channelId,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeStartAt,
+    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeEndAt,
   }) = _NotesSearchRequest;
 
-  factory NotesSearchRequest.fromJson(Map<String, Object?> json) => _$NotesSearchRequestFromJson(json);
+  factory NotesSearchRequest.fromJson(Map<String, Object?> json) =>
+      _$NotesSearchRequestFromJson(json);
 }

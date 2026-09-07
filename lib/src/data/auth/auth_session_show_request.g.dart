@@ -7,13 +7,9 @@ part of 'auth_session_show_request.dart';
 // **************************************************************************
 
 _AuthSessionShowRequest _$AuthSessionShowRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AuthSessionShowRequest(
-      token: json['token'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AuthSessionShowRequest(token: json['token'] as String?);
 
 Map<String, dynamic> _$AuthSessionShowRequestToJson(
-        _AuthSessionShowRequest instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-    };
+  _AuthSessionShowRequest instance,
+) => <String, dynamic>{'token': instance.token};

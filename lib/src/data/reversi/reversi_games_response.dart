@@ -25,7 +25,10 @@ abstract class ReversiGamesResponse with _$ReversiGamesResponse {
     required String bw,
     required bool noIrregularRules,
     required bool isLlotheo,
-    required bool canPutEveryWhere,
+    // API のフィールド名は canPutEverywhere（w は小文字）。綴りがずれていた
+    // ため JSON に対応するキーが無く、reversi/games は終了済みの対局を 1 件でも
+    // 含むと必ず「Null is not a subtype of bool」で落ちていた。
+    required bool canPutEverywhere,
     required bool loopedBoard,
     required int timeLimitForEachTurn,
   }) = _ReversiGamesResponse;

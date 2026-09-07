@@ -7,13 +7,9 @@ part of 'username_available_response.dart';
 // **************************************************************************
 
 _UsernameAvailableResponse _$UsernameAvailableResponseFromJson(
-        Map<String, dynamic> json) =>
-    _UsernameAvailableResponse(
-      available: json['available'] as bool,
-    );
+  Map<String, dynamic> json,
+) => _UsernameAvailableResponse(available: json['available'] as bool);
 
 Map<String, dynamic> _$UsernameAvailableResponseToJson(
-        _UsernameAvailableResponse instance) =>
-    <String, dynamic>{
-      'available': instance.available,
-    };
+  _UsernameAvailableResponse instance,
+) => <String, dynamic>{'available': instance.available};

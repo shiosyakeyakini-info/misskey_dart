@@ -7,21 +7,24 @@ part of 'charts_ap_request_request.dart';
 // **************************************************************************
 
 _ChartsApRequestRequest _$ChartsApRequestRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChartsApRequestRequest(
-      span: $enumDecodeNullable(_$ChartsApRequestSpanEnumMap, json['span'],
-          unknownValue: ChartsApRequestSpan.unknown),
-      limit: (json['limit'] as num?)?.toInt() ?? 30,
-      offset: (json['offset'] as num?)?.toInt() ?? null,
-    );
+  Map<String, dynamic> json,
+) => _ChartsApRequestRequest(
+  span: $enumDecodeNullable(
+    _$ChartsApRequestSpanEnumMap,
+    json['span'],
+    unknownValue: ChartsApRequestSpan.unknown,
+  ),
+  limit: (json['limit'] as num?)?.toInt() ?? 30,
+  offset: (json['offset'] as num?)?.toInt() ?? null,
+);
 
 Map<String, dynamic> _$ChartsApRequestRequestToJson(
-        _ChartsApRequestRequest instance) =>
-    <String, dynamic>{
-      'span': _$ChartsApRequestSpanEnumMap[instance.span],
-      'limit': instance.limit,
-      'offset': instance.offset,
-    };
+  _ChartsApRequestRequest instance,
+) => <String, dynamic>{
+  'span': _$ChartsApRequestSpanEnumMap[instance.span],
+  'limit': instance.limit,
+  'offset': instance.offset,
+};
 
 const _$ChartsApRequestSpanEnumMap = {
   ChartsApRequestSpan.day: 'day',

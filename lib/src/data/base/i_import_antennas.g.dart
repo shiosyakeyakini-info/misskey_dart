@@ -7,11 +7,7 @@ part of 'i_import_antennas.dart';
 // **************************************************************************
 
 _IImportAntennas _$IImportAntennasFromJson(Map<String, dynamic> json) =>
-    _IImportAntennas(
-      fileId: json['fileId'] as String,
-    );
+    _IImportAntennas(fileId: json['fileId'] as String);
 
 Map<String, dynamic> _$IImportAntennasToJson(_IImportAntennas instance) =>
-    <String, dynamic>{
-      'fileId': instance.fileId,
-    };
+    <String, dynamic>{'fileId': instance.fileId};

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'notes_timeline.freezed.dart';
 part 'notes_timeline.g.dart';
@@ -20,5 +19,6 @@ abstract class NotesTimeline with _$NotesTimeline {
     @Default(true) bool? withRenotes,
   }) = _NotesTimeline;
 
-  factory NotesTimeline.fromJson(Map<String, Object?> json) => _$NotesTimelineFromJson(json);
+  factory NotesTimeline.fromJson(Map<String, Object?> json) =>
+      _$NotesTimelineFromJson(json);
 }

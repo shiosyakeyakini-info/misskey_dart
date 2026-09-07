@@ -7,13 +7,9 @@ part of 'users_lists_list_request.dart';
 // **************************************************************************
 
 _UsersListsListRequest _$UsersListsListRequestFromJson(
-        Map<String, dynamic> json) =>
-    _UsersListsListRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _UsersListsListRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$UsersListsListRequestToJson(
-        _UsersListsListRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _UsersListsListRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

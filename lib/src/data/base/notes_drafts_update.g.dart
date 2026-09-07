@@ -8,11 +8,10 @@ part of 'notes_drafts_update.dart';
 
 _NotesDraftsUpdate _$NotesDraftsUpdateFromJson(Map<String, dynamic> json) =>
     _NotesDraftsUpdate(
-      updatedDraft:
-          NoteDraft.fromJson(json['updatedDraft'] as Map<String, dynamic>),
+      updatedDraft: NoteDraft.fromJson(
+        json['updatedDraft'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$NotesDraftsUpdateToJson(_NotesDraftsUpdate instance) =>
-    <String, dynamic>{
-      'updatedDraft': instance.updatedDraft.toJson(),
-    };
+    <String, dynamic>{'updatedDraft': instance.updatedDraft.toJson()};

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,55 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChartsInstanceRequests {
-  List<double> get failed;
-  List<double> get succeeded;
-  List<double> get received;
 
-  /// Create a copy of ChartsInstanceRequests
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ChartsInstanceRequestsCopyWith<ChartsInstanceRequests> get copyWith =>
-      _$ChartsInstanceRequestsCopyWithImpl<ChartsInstanceRequests>(
-          this as ChartsInstanceRequests, _$identity);
+ List<double> get failed; List<double> get succeeded; List<double> get received;
+/// Create a copy of ChartsInstanceRequests
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChartsInstanceRequestsCopyWith<ChartsInstanceRequests> get copyWith => _$ChartsInstanceRequestsCopyWithImpl<ChartsInstanceRequests>(this as ChartsInstanceRequests, _$identity);
 
   /// Serializes this ChartsInstanceRequests to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChartsInstanceRequests &&
-            const DeepCollectionEquality().equals(other.failed, failed) &&
-            const DeepCollectionEquality().equals(other.succeeded, succeeded) &&
-            const DeepCollectionEquality().equals(other.received, received));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failed),
-      const DeepCollectionEquality().hash(succeeded),
-      const DeepCollectionEquality().hash(received));
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChartsInstanceRequests&&const DeepCollectionEquality().equals(other.failed, failed)&&const DeepCollectionEquality().equals(other.succeeded, succeeded)&&const DeepCollectionEquality().equals(other.received, received));
+}
 
-  @override
-  String toString() {
-    return 'ChartsInstanceRequests(failed: $failed, succeeded: $succeeded, received: $received)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(failed),const DeepCollectionEquality().hash(succeeded),const DeepCollectionEquality().hash(received));
+
+@override
+String toString() {
+  return 'ChartsInstanceRequests(failed: $failed, succeeded: $succeeded, received: $received)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $ChartsInstanceRequestsCopyWith<$Res> {
-  factory $ChartsInstanceRequestsCopyWith(ChartsInstanceRequests value,
-          $Res Function(ChartsInstanceRequests) _then) =
-      _$ChartsInstanceRequestsCopyWithImpl;
-  @useResult
-  $Res call(
-      {List<double> failed, List<double> succeeded, List<double> received});
-}
+abstract mixin class $ChartsInstanceRequestsCopyWith<$Res>  {
+  factory $ChartsInstanceRequestsCopyWith(ChartsInstanceRequests value, $Res Function(ChartsInstanceRequests) _then) = _$ChartsInstanceRequestsCopyWithImpl;
+@useResult
+$Res call({
+ List<double> failed, List<double> succeeded, List<double> received
+});
 
+
+
+
+}
 /// @nodoc
 class _$ChartsInstanceRequestsCopyWithImpl<$Res>
     implements $ChartsInstanceRequestsCopyWith<$Res> {
@@ -72,122 +63,219 @@ class _$ChartsInstanceRequestsCopyWithImpl<$Res>
   final ChartsInstanceRequests _self;
   final $Res Function(ChartsInstanceRequests) _then;
 
-  /// Create a copy of ChartsInstanceRequests
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failed = null,
-    Object? succeeded = null,
-    Object? received = null,
-  }) {
-    return _then(_self.copyWith(
-      failed: null == failed
-          ? _self.failed
-          : failed // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      succeeded: null == succeeded
-          ? _self.succeeded
-          : succeeded // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      received: null == received
-          ? _self.received
-          : received // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-    ));
-  }
+/// Create a copy of ChartsInstanceRequests
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? failed = null,Object? succeeded = null,Object? received = null,}) {
+  return _then(_self.copyWith(
+failed: null == failed ? _self.failed : failed // ignore: cast_nullable_to_non_nullable
+as List<double>,succeeded: null == succeeded ? _self.succeeded : succeeded // ignore: cast_nullable_to_non_nullable
+as List<double>,received: null == received ? _self.received : received // ignore: cast_nullable_to_non_nullable
+as List<double>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ChartsInstanceRequests].
+extension ChartsInstanceRequestsPatterns on ChartsInstanceRequests {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChartsInstanceRequests value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChartsInstanceRequests() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChartsInstanceRequests value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChartsInstanceRequests():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChartsInstanceRequests value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChartsInstanceRequests() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<double> failed,  List<double> succeeded,  List<double> received)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ChartsInstanceRequests() when $default != null:
+return $default(_that.failed,_that.succeeded,_that.received);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<double> failed,  List<double> succeeded,  List<double> received)  $default,) {final _that = this;
+switch (_that) {
+case _ChartsInstanceRequests():
+return $default(_that.failed,_that.succeeded,_that.received);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<double> failed,  List<double> succeeded,  List<double> received)?  $default,) {final _that = this;
+switch (_that) {
+case _ChartsInstanceRequests() when $default != null:
+return $default(_that.failed,_that.succeeded,_that.received);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _ChartsInstanceRequests implements ChartsInstanceRequests {
-  const _ChartsInstanceRequests(
-      {required final List<double> failed,
-      required final List<double> succeeded,
-      required final List<double> received})
-      : _failed = failed,
-        _succeeded = succeeded,
-        _received = received;
-  factory _ChartsInstanceRequests.fromJson(Map<String, dynamic> json) =>
-      _$ChartsInstanceRequestsFromJson(json);
+  const _ChartsInstanceRequests({required final  List<double> failed, required final  List<double> succeeded, required final  List<double> received}): _failed = failed,_succeeded = succeeded,_received = received;
+  factory _ChartsInstanceRequests.fromJson(Map<String, dynamic> json) => _$ChartsInstanceRequestsFromJson(json);
 
-  final List<double> _failed;
-  @override
-  List<double> get failed {
-    if (_failed is EqualUnmodifiableListView) return _failed;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_failed);
-  }
+ final  List<double> _failed;
+@override List<double> get failed {
+  if (_failed is EqualUnmodifiableListView) return _failed;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_failed);
+}
 
-  final List<double> _succeeded;
-  @override
-  List<double> get succeeded {
-    if (_succeeded is EqualUnmodifiableListView) return _succeeded;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_succeeded);
-  }
+ final  List<double> _succeeded;
+@override List<double> get succeeded {
+  if (_succeeded is EqualUnmodifiableListView) return _succeeded;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_succeeded);
+}
 
-  final List<double> _received;
-  @override
-  List<double> get received {
-    if (_received is EqualUnmodifiableListView) return _received;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_received);
-  }
+ final  List<double> _received;
+@override List<double> get received {
+  if (_received is EqualUnmodifiableListView) return _received;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_received);
+}
 
-  /// Create a copy of ChartsInstanceRequests
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ChartsInstanceRequestsCopyWith<_ChartsInstanceRequests> get copyWith =>
-      __$ChartsInstanceRequestsCopyWithImpl<_ChartsInstanceRequests>(
-          this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ChartsInstanceRequestsToJson(
-      this,
-    );
-  }
+/// Create a copy of ChartsInstanceRequests
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChartsInstanceRequestsCopyWith<_ChartsInstanceRequests> get copyWith => __$ChartsInstanceRequestsCopyWithImpl<_ChartsInstanceRequests>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ChartsInstanceRequests &&
-            const DeepCollectionEquality().equals(other._failed, _failed) &&
-            const DeepCollectionEquality()
-                .equals(other._succeeded, _succeeded) &&
-            const DeepCollectionEquality().equals(other._received, _received));
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChartsInstanceRequestsToJson(this, );
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_failed),
-      const DeepCollectionEquality().hash(_succeeded),
-      const DeepCollectionEquality().hash(_received));
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChartsInstanceRequests&&const DeepCollectionEquality().equals(other._failed, _failed)&&const DeepCollectionEquality().equals(other._succeeded, _succeeded)&&const DeepCollectionEquality().equals(other._received, _received));
+}
 
-  @override
-  String toString() {
-    return 'ChartsInstanceRequests(failed: $failed, succeeded: $succeeded, received: $received)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_failed),const DeepCollectionEquality().hash(_succeeded),const DeepCollectionEquality().hash(_received));
+
+@override
+String toString() {
+  return 'ChartsInstanceRequests(failed: $failed, succeeded: $succeeded, received: $received)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$ChartsInstanceRequestsCopyWith<$Res>
-    implements $ChartsInstanceRequestsCopyWith<$Res> {
-  factory _$ChartsInstanceRequestsCopyWith(_ChartsInstanceRequests value,
-          $Res Function(_ChartsInstanceRequests) _then) =
-      __$ChartsInstanceRequestsCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {List<double> failed, List<double> succeeded, List<double> received});
-}
+abstract mixin class _$ChartsInstanceRequestsCopyWith<$Res> implements $ChartsInstanceRequestsCopyWith<$Res> {
+  factory _$ChartsInstanceRequestsCopyWith(_ChartsInstanceRequests value, $Res Function(_ChartsInstanceRequests) _then) = __$ChartsInstanceRequestsCopyWithImpl;
+@override @useResult
+$Res call({
+ List<double> failed, List<double> succeeded, List<double> received
+});
 
+
+
+
+}
 /// @nodoc
 class __$ChartsInstanceRequestsCopyWithImpl<$Res>
     implements _$ChartsInstanceRequestsCopyWith<$Res> {
@@ -196,30 +284,18 @@ class __$ChartsInstanceRequestsCopyWithImpl<$Res>
   final _ChartsInstanceRequests _self;
   final $Res Function(_ChartsInstanceRequests) _then;
 
-  /// Create a copy of ChartsInstanceRequests
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? failed = null,
-    Object? succeeded = null,
-    Object? received = null,
-  }) {
-    return _then(_ChartsInstanceRequests(
-      failed: null == failed
-          ? _self._failed
-          : failed // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      succeeded: null == succeeded
-          ? _self._succeeded
-          : succeeded // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-      received: null == received
-          ? _self._received
-          : received // ignore: cast_nullable_to_non_nullable
-              as List<double>,
-    ));
-  }
+/// Create a copy of ChartsInstanceRequests
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? failed = null,Object? succeeded = null,Object? received = null,}) {
+  return _then(_ChartsInstanceRequests(
+failed: null == failed ? _self._failed : failed // ignore: cast_nullable_to_non_nullable
+as List<double>,succeeded: null == succeeded ? _self._succeeded : succeeded // ignore: cast_nullable_to_non_nullable
+as List<double>,received: null == received ? _self._received : received // ignore: cast_nullable_to_non_nullable
+as List<double>,
+  ));
+}
+
+
 }
 
 // dart format on

@@ -7,13 +7,9 @@ part of 'following_requests_reject.dart';
 // **************************************************************************
 
 _FollowingRequestsReject _$FollowingRequestsRejectFromJson(
-        Map<String, dynamic> json) =>
-    _FollowingRequestsReject(
-      userId: json['userId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _FollowingRequestsReject(userId: json['userId'] as String);
 
 Map<String, dynamic> _$FollowingRequestsRejectToJson(
-        _FollowingRequestsReject instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _FollowingRequestsReject instance,
+) => <String, dynamic>{'userId': instance.userId};

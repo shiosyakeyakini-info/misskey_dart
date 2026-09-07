@@ -7,23 +7,23 @@ part of 'admin_avatar_decorations_create_request.dart';
 // **************************************************************************
 
 _AdminAvatarDecorationsCreateRequest
-    _$AdminAvatarDecorationsCreateRequestFromJson(Map<String, dynamic> json) =>
-        _AdminAvatarDecorationsCreateRequest(
-          name: json['name'] as String?,
-          description: json['description'] as String?,
-          url: json['url'] as String?,
-          roleIdsThatCanBeUsedThisDecoration:
-              (json['roleIdsThatCanBeUsedThisDecoration'] as List<dynamic>?)
-                  ?.map((e) => e as String)
-                  .toList(),
-        );
+_$AdminAvatarDecorationsCreateRequestFromJson(Map<String, dynamic> json) =>
+    _AdminAvatarDecorationsCreateRequest(
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      url: json['url'] as String?,
+      roleIdsThatCanBeUsedThisDecoration:
+          (json['roleIdsThatCanBeUsedThisDecoration'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+    );
 
 Map<String, dynamic> _$AdminAvatarDecorationsCreateRequestToJson(
-        _AdminAvatarDecorationsCreateRequest instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'url': instance.url,
-      'roleIdsThatCanBeUsedThisDecoration':
-          instance.roleIdsThatCanBeUsedThisDecoration,
-    };
+  _AdminAvatarDecorationsCreateRequest instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'description': instance.description,
+  'url': instance.url,
+  'roleIdsThatCanBeUsedThisDecoration':
+      instance.roleIdsThatCanBeUsedThisDecoration,
+};

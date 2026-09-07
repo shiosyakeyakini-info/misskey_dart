@@ -7,11 +7,7 @@ part of 'channels_follow.dart';
 // **************************************************************************
 
 _ChannelsFollow _$ChannelsFollowFromJson(Map<String, dynamic> json) =>
-    _ChannelsFollow(
-      channelId: json['channelId'] as String,
-    );
+    _ChannelsFollow(channelId: json['channelId'] as String);
 
 Map<String, dynamic> _$ChannelsFollowToJson(_ChannelsFollow instance) =>
-    <String, dynamic>{
-      'channelId': instance.channelId,
-    };
+    <String, dynamic>{'channelId': instance.channelId};

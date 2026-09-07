@@ -1,5 +1,1 @@
-enum ChartsInstanceSpan {
-  day,
-  hour,
-  unknown,
-}
+enum ChartsInstanceSpan { day, hour, unknown }

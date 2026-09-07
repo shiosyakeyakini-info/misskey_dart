@@ -15,10 +15,10 @@ _DriveFileProperties _$DriveFilePropertiesFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DriveFilePropertiesToJson(
-        _DriveFileProperties instance) =>
-    <String, dynamic>{
-      'width': instance.width,
-      'height': instance.height,
-      'orientation': instance.orientation,
-      'avgColor': instance.avgColor,
-    };
+  _DriveFileProperties instance,
+) => <String, dynamic>{
+  'width': instance.width,
+  'height': instance.height,
+  'orientation': instance.orientation,
+  'avgColor': instance.avgColor,
+};

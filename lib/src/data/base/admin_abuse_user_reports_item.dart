@@ -18,9 +18,11 @@ abstract class AdminAbuseUserReportsItem with _$AdminAbuseUserReportsItem {
     required UserDetailedNotMe targetUser,
     UserDetailedNotMe? assignee,
     required bool forwarded,
-    @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown) AdminAbuseUserReportsResolvedAs? resolvedAs,
+    @JsonKey(unknownEnumValue: AdminAbuseUserReportsResolvedAs.unknown)
+    AdminAbuseUserReportsResolvedAs? resolvedAs,
     required String moderationNote,
   }) = _AdminAbuseUserReportsItem;
 
-  factory AdminAbuseUserReportsItem.fromJson(Map<String, Object?> json) => _$AdminAbuseUserReportsItemFromJson(json);
+  factory AdminAbuseUserReportsItem.fromJson(Map<String, Object?> json) =>
+      _$AdminAbuseUserReportsItemFromJson(json);
 }

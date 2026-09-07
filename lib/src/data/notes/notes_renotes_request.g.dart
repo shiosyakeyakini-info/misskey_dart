@@ -17,12 +17,12 @@ _NotesRenotesRequest _$NotesRenotesRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotesRenotesRequestToJson(
-        _NotesRenotesRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-    };
+  _NotesRenotesRequest instance,
+) => <String, dynamic>{
+  'noteId': instance.noteId,
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+};

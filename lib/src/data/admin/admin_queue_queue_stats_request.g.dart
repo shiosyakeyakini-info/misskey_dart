@@ -7,18 +7,20 @@ part of 'admin_queue_queue_stats_request.dart';
 // **************************************************************************
 
 _AdminQueueQueueStatsRequest _$AdminQueueQueueStatsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueQueueStatsRequest(
-      queue: $enumDecodeNullable(
-          _$AdminQueueQueueStatsQueueEnumMap, json['queue'],
-          unknownValue: AdminQueueQueueStatsQueue.unknown),
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueQueueStatsRequest(
+  queue: $enumDecodeNullable(
+    _$AdminQueueQueueStatsQueueEnumMap,
+    json['queue'],
+    unknownValue: AdminQueueQueueStatsQueue.unknown,
+  ),
+);
 
 Map<String, dynamic> _$AdminQueueQueueStatsRequestToJson(
-        _AdminQueueQueueStatsRequest instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueueQueueStatsQueueEnumMap[instance.queue],
-    };
+  _AdminQueueQueueStatsRequest instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueueQueueStatsQueueEnumMap[instance.queue],
+};
 
 const _$AdminQueueQueueStatsQueueEnumMap = {
   AdminQueueQueueStatsQueue.system: 'system',

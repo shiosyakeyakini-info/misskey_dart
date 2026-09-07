@@ -7,11 +7,7 @@ part of 'drive_files_delete.dart';
 // **************************************************************************
 
 _DriveFilesDelete _$DriveFilesDeleteFromJson(Map<String, dynamic> json) =>
-    _DriveFilesDelete(
-      fileId: json['fileId'] as String,
-    );
+    _DriveFilesDelete(fileId: json['fileId'] as String);
 
 Map<String, dynamic> _$DriveFilesDeleteToJson(_DriveFilesDelete instance) =>
-    <String, dynamic>{
-      'fileId': instance.fileId,
-    };
+    <String, dynamic>{'fileId': instance.fileId};

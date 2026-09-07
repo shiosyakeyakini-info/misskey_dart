@@ -13,7 +13,4 @@ _DriveResponse _$DriveResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DriveResponseToJson(_DriveResponse instance) =>
-    <String, dynamic>{
-      'capacity': instance.capacity,
-      'usage': instance.usage,
-    };
+    <String, dynamic>{'capacity': instance.capacity, 'usage': instance.usage};

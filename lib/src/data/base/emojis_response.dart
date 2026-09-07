@@ -6,9 +6,9 @@ part 'emojis_response.g.dart';
 
 @freezed
 abstract class EmojisResponse with _$EmojisResponse {
-  const factory EmojisResponse({
-    required List<EmojiSimple> emojis,
-  }) = _EmojisResponse;
+  const factory EmojisResponse({required List<EmojiSimple> emojis}) =
+      _EmojisResponse;
 
-  factory EmojisResponse.fromJson(Map<String, Object?> json) => _$EmojisResponseFromJson(json);
+  factory EmojisResponse.fromJson(Map<String, Object?> json) =>
+      _$EmojisResponseFromJson(json);
 }

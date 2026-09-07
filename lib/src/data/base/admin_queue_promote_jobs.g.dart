@@ -7,17 +7,20 @@ part of 'admin_queue_promote_jobs.dart';
 // **************************************************************************
 
 _AdminQueuePromoteJobs _$AdminQueuePromoteJobsFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueuePromoteJobs(
-      queue: $enumDecode(_$AdminQueuePromoteJobsQueueEnumMap, json['queue'],
-          unknownValue: AdminQueuePromoteJobsQueue.unknown),
-    );
+  Map<String, dynamic> json,
+) => _AdminQueuePromoteJobs(
+  queue: $enumDecode(
+    _$AdminQueuePromoteJobsQueueEnumMap,
+    json['queue'],
+    unknownValue: AdminQueuePromoteJobsQueue.unknown,
+  ),
+);
 
 Map<String, dynamic> _$AdminQueuePromoteJobsToJson(
-        _AdminQueuePromoteJobs instance) =>
-    <String, dynamic>{
-      'queue': _$AdminQueuePromoteJobsQueueEnumMap[instance.queue]!,
-    };
+  _AdminQueuePromoteJobs instance,
+) => <String, dynamic>{
+  'queue': _$AdminQueuePromoteJobsQueueEnumMap[instance.queue]!,
+};
 
 const _$AdminQueuePromoteJobsQueueEnumMap = {
   AdminQueuePromoteJobsQueue.system: 'system',

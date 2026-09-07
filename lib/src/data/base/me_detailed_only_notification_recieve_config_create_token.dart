@@ -9,13 +9,14 @@ abstract class MeDetailedOnlyNotificationRecieveConfigCreateToken
     with _$MeDetailedOnlyNotificationRecieveConfigCreateToken {
   const factory MeDetailedOnlyNotificationRecieveConfigCreateToken({
     @JsonKey(
-        unknownEnumValue:
-            MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown)
+      unknownEnumValue:
+          MeDetailedOnlyNotificationRecieveConfigCreateTokenType.unknown,
+    )
     required MeDetailedOnlyNotificationRecieveConfigCreateTokenType type,
     required String userListId,
   }) = _MeDetailedOnlyNotificationRecieveConfigCreateToken;
 
   factory MeDetailedOnlyNotificationRecieveConfigCreateToken.fromJson(
-          Map<String, Object?> json) =>
-      _$MeDetailedOnlyNotificationRecieveConfigCreateTokenFromJson(json);
+    Map<String, Object?> json,
+  ) => _$MeDetailedOnlyNotificationRecieveConfigCreateTokenFromJson(json);
 }

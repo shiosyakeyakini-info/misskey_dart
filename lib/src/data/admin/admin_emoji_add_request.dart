@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_emoji_add_request.freezed.dart';
 part 'admin_emoji_add_request.g.dart';
@@ -17,5 +16,6 @@ abstract class AdminEmojiAddRequest with _$AdminEmojiAddRequest {
     List<String>? roleIdsThatCanBeUsedThisEmojiAsReaction,
   }) = _AdminEmojiAddRequest;
 
-  factory AdminEmojiAddRequest.fromJson(Map<String, Object?> json) => _$AdminEmojiAddRequestFromJson(json);
+  factory AdminEmojiAddRequest.fromJson(Map<String, Object?> json) =>
+      _$AdminEmojiAddRequestFromJson(json);
 }

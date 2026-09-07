@@ -13,7 +13,4 @@ _IPageLikesResponse _$IPageLikesResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IPageLikesResponseToJson(_IPageLikesResponse instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'page': instance.page.toJson(),
-    };
+    <String, dynamic>{'id': instance.id, 'page': instance.page.toJson()};

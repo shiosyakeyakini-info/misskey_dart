@@ -7,13 +7,9 @@ part of 'admin_system_webhook_show.dart';
 // **************************************************************************
 
 _AdminSystemWebhookShow _$AdminSystemWebhookShowFromJson(
-        Map<String, dynamic> json) =>
-    _AdminSystemWebhookShow(
-      id: json['id'] as String,
-    );
+  Map<String, dynamic> json,
+) => _AdminSystemWebhookShow(id: json['id'] as String);
 
 Map<String, dynamic> _$AdminSystemWebhookShowToJson(
-        _AdminSystemWebhookShow instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+  _AdminSystemWebhookShow instance,
+) => <String, dynamic>{'id': instance.id};

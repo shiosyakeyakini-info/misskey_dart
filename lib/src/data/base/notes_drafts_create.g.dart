@@ -8,11 +8,10 @@ part of 'notes_drafts_create.dart';
 
 _NotesDraftsCreate _$NotesDraftsCreateFromJson(Map<String, dynamic> json) =>
     _NotesDraftsCreate(
-      createdDraft:
-          NoteDraft.fromJson(json['createdDraft'] as Map<String, dynamic>),
+      createdDraft: NoteDraft.fromJson(
+        json['createdDraft'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$NotesDraftsCreateToJson(_NotesDraftsCreate instance) =>
-    <String, dynamic>{
-      'createdDraft': instance.createdDraft.toJson(),
-    };
+    <String, dynamic>{'createdDraft': instance.createdDraft.toJson()};

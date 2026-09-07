@@ -7,11 +7,7 @@ part of 'clips_unfavorite.dart';
 // **************************************************************************
 
 _ClipsUnfavorite _$ClipsUnfavoriteFromJson(Map<String, dynamic> json) =>
-    _ClipsUnfavorite(
-      clipId: json['clipId'] as String,
-    );
+    _ClipsUnfavorite(clipId: json['clipId'] as String);
 
 Map<String, dynamic> _$ClipsUnfavoriteToJson(_ClipsUnfavorite instance) =>
-    <String, dynamic>{
-      'clipId': instance.clipId,
-    };
+    <String, dynamic>{'clipId': instance.clipId};

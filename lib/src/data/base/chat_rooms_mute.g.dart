@@ -13,7 +13,4 @@ _ChatRoomsMute _$ChatRoomsMuteFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChatRoomsMuteToJson(_ChatRoomsMute instance) =>
-    <String, dynamic>{
-      'roomId': instance.roomId,
-      'mute': instance.mute,
-    };
+    <String, dynamic>{'roomId': instance.roomId, 'mute': instance.mute};

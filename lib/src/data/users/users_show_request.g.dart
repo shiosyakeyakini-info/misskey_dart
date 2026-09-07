@@ -9,8 +9,9 @@ part of 'users_show_request.dart';
 _UsersShowRequest _$UsersShowRequestFromJson(Map<String, dynamic> json) =>
     _UsersShowRequest(
       userId: json['userId'] as String?,
-      userIds:
-          (json['userIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      userIds: (json['userIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       username: json['username'] as String?,
       host: json['host'] as String?,
     );

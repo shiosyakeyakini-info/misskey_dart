@@ -13,7 +13,4 @@ _DriveFilesFind _$DriveFilesFindFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DriveFilesFindToJson(_DriveFilesFind instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'folderId': instance.folderId,
-    };
+    <String, dynamic>{'name': instance.name, 'folderId': instance.folderId};

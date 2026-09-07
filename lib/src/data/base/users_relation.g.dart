@@ -7,11 +7,7 @@ part of 'users_relation.dart';
 // **************************************************************************
 
 _UsersRelation _$UsersRelationFromJson(Map<String, dynamic> json) =>
-    _UsersRelation(
-      userId: json['userId'],
-    );
+    _UsersRelation(userId: json['userId']);
 
 Map<String, dynamic> _$UsersRelationToJson(_UsersRelation instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

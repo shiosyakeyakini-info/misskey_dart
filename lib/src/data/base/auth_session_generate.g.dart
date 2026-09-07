@@ -13,8 +13,8 @@ _AuthSessionGenerate _$AuthSessionGenerateFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AuthSessionGenerateToJson(
-        _AuthSessionGenerate instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-      'url': const UriConverter().toJson(instance.url),
-    };
+  _AuthSessionGenerate instance,
+) => <String, dynamic>{
+  'token': instance.token,
+  'url': const UriConverter().toJson(instance.url),
+};

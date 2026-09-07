@@ -1254,6 +1254,7 @@ export 'src/data/reversi/reversi_games_response.dart';
 export 'src/data/reversi/reversi_match_request.dart';
 export 'src/data/reversi/reversi_show_game_request.dart';
 export 'src/data/reversi/reversi_show_game_response.dart';
+export 'src/data/reversi/reversi_stream_events.dart';
 export 'src/data/reversi/reversi_surrender_request.dart';
 export 'src/data/reversi/reversi_verify_request.dart';
 export 'src/data/reversi/reversi_verify_response.dart';

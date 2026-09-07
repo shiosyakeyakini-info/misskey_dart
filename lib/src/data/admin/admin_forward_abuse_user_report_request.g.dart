@@ -7,13 +7,9 @@ part of 'admin_forward_abuse_user_report_request.dart';
 // **************************************************************************
 
 _AdminForwardAbuseUserReportRequest
-    _$AdminForwardAbuseUserReportRequestFromJson(Map<String, dynamic> json) =>
-        _AdminForwardAbuseUserReportRequest(
-          reportId: json['reportId'] as String?,
-        );
+_$AdminForwardAbuseUserReportRequestFromJson(Map<String, dynamic> json) =>
+    _AdminForwardAbuseUserReportRequest(reportId: json['reportId'] as String?);
 
 Map<String, dynamic> _$AdminForwardAbuseUserReportRequestToJson(
-        _AdminForwardAbuseUserReportRequest instance) =>
-    <String, dynamic>{
-      'reportId': instance.reportId,
-    };
+  _AdminForwardAbuseUserReportRequest instance,
+) => <String, dynamic>{'reportId': instance.reportId};

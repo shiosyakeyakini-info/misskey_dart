@@ -7,20 +7,22 @@ part of 'i_update_notification_recieve_config_app.dart';
 // **************************************************************************
 
 _IUpdateNotificationRecieveConfigApp
-    _$IUpdateNotificationRecieveConfigAppFromJson(Map<String, dynamic> json) =>
-        _IUpdateNotificationRecieveConfigApp(
-          type: $enumDecode(
-              _$IUpdateNotificationRecieveConfigAppTypeEnumMap, json['type'],
-              unknownValue: IUpdateNotificationRecieveConfigAppType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$IUpdateNotificationRecieveConfigAppFromJson(Map<String, dynamic> json) =>
+    _IUpdateNotificationRecieveConfigApp(
+      type: $enumDecode(
+        _$IUpdateNotificationRecieveConfigAppTypeEnumMap,
+        json['type'],
+        unknownValue: IUpdateNotificationRecieveConfigAppType.unknown,
+      ),
+      userListId: json['userListId'] as String,
+    );
 
 Map<String, dynamic> _$IUpdateNotificationRecieveConfigAppToJson(
-        _IUpdateNotificationRecieveConfigApp instance) =>
-    <String, dynamic>{
-      'type': _$IUpdateNotificationRecieveConfigAppTypeEnumMap[instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _IUpdateNotificationRecieveConfigApp instance,
+) => <String, dynamic>{
+  'type': _$IUpdateNotificationRecieveConfigAppTypeEnumMap[instance.type]!,
+  'userListId': instance.userListId,
+};
 
 const _$IUpdateNotificationRecieveConfigAppTypeEnumMap = {
   IUpdateNotificationRecieveConfigAppType.all: 'all',

@@ -1,5 +1,1 @@
-enum HashtagsUsersState {
-  all,
-  alive,
-  unknown,
-}
+enum HashtagsUsersState { all, alive, unknown }

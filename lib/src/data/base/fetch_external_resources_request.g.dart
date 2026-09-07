@@ -7,15 +7,12 @@ part of 'fetch_external_resources_request.dart';
 // **************************************************************************
 
 _FetchExternalResourcesRequest _$FetchExternalResourcesRequestFromJson(
-        Map<String, dynamic> json) =>
-    _FetchExternalResourcesRequest(
-      url: json['url'] as String?,
-      hash: json['hash'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _FetchExternalResourcesRequest(
+  url: json['url'] as String?,
+  hash: json['hash'] as String?,
+);
 
 Map<String, dynamic> _$FetchExternalResourcesRequestToJson(
-        _FetchExternalResourcesRequest instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-      'hash': instance.hash,
-    };
+  _FetchExternalResourcesRequest instance,
+) => <String, dynamic>{'url': instance.url, 'hash': instance.hash};

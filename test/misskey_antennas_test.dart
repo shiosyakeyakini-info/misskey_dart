@@ -37,8 +37,9 @@ void main() async {
         withFile: false,
       ),
     );
-    await userClient.antennas
-        .delete(AntennasDeleteRequest(antennaId: antenna.id));
+    await userClient.antennas.delete(
+      AntennasDeleteRequest(antennaId: antenna.id),
+    );
     final antennas = await userClient.antennas.list();
     expect(antennas.map((e) => e.id), isNot(contains(antenna.id)));
   });
@@ -78,8 +79,9 @@ void main() async {
       ),
     );
     final note = await userClient.createNote(text: "keyword");
-    final response = await userClient.antennas
-        .notes(AntennasNotesRequest(antennaId: antenna.id));
+    final response = await userClient.antennas.notes(
+      AntennasNotesRequest(antennaId: antenna.id),
+    );
     expect(response.map((e) => e.id), contains(note.id));
   });
 
@@ -98,8 +100,9 @@ void main() async {
         withFile: false,
       ),
     );
-    final response = await userClient.antennas
-        .show(AntennasShowRequest(antennaId: antenna.id));
+    final response = await userClient.antennas.show(
+      AntennasShowRequest(antennaId: antenna.id),
+    );
     expect(response.name, equals(antenna.name));
   });
 
@@ -133,8 +136,9 @@ void main() async {
         withFile: true,
       ),
     );
-    final updated = await userClient.antennas
-        .show(AntennasShowRequest(antennaId: antenna.id));
+    final updated = await userClient.antennas.show(
+      AntennasShowRequest(antennaId: antenna.id),
+    );
     expect(updated.name, equals("updated"));
   });
 }

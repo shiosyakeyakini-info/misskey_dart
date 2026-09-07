@@ -7,11 +7,7 @@ part of 'bubble_game_ranking.dart';
 // **************************************************************************
 
 _BubbleGameRanking _$BubbleGameRankingFromJson(Map<String, dynamic> json) =>
-    _BubbleGameRanking(
-      gameMode: json['gameMode'] as String,
-    );
+    _BubbleGameRanking(gameMode: json['gameMode'] as String);
 
 Map<String, dynamic> _$BubbleGameRankingToJson(_BubbleGameRanking instance) =>
-    <String, dynamic>{
-      'gameMode': instance.gameMode,
-    };
+    <String, dynamic>{'gameMode': instance.gameMode};

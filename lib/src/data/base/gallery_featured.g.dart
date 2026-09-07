@@ -13,7 +13,4 @@ _GalleryFeatured _$GalleryFeaturedFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GalleryFeaturedToJson(_GalleryFeatured instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'untilId': instance.untilId,
-    };
+    <String, dynamic>{'limit': instance.limit, 'untilId': instance.untilId};

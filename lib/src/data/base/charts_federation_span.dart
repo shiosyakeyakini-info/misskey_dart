@@ -1,5 +1,1 @@
-enum ChartsFederationSpan {
-  day,
-  hour,
-  unknown,
-}
+enum ChartsFederationSpan { day, hour, unknown }

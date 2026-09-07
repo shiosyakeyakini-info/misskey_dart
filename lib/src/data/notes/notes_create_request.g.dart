@@ -8,19 +8,24 @@ part of 'notes_create_request.dart';
 
 _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
     _NotesCreateRequest(
-      visibility: $enumDecodeNullable(
-              _$NoteVisibilityEnumMap, json['visibility'],
-              unknownValue: NoteVisibility.unknown) ??
+      visibility:
+          $enumDecodeNullable(
+            _$NoteVisibilityEnumMap,
+            json['visibility'],
+            unknownValue: NoteVisibility.unknown,
+          ) ??
           NoteVisibility.public,
       visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       cw: json['cw'] as String?,
       localOnly: json['localOnly'] as bool? ?? false,
-      reactionAcceptance: $enumDecodeNullable(
-              _$NotesCreateReactionAcceptanceEnumMap,
-              json['reactionAcceptance'],
-              unknownValue: NotesCreateReactionAcceptance.unknown) ??
+      reactionAcceptance:
+          $enumDecodeNullable(
+            _$NotesCreateReactionAcceptanceEnumMap,
+            json['reactionAcceptance'],
+            unknownValue: NotesCreateReactionAcceptance.unknown,
+          ) ??
           null,
       noExtractMentions: json['noExtractMentions'] as bool? ?? false,
       noExtractHashtags: json['noExtractHashtags'] as bool? ?? false,
@@ -29,8 +34,9 @@ _NotesCreateRequest _$NotesCreateRequestFromJson(Map<String, dynamic> json) =>
       renoteId: json['renoteId'] as String?,
       channelId: json['channelId'] as String?,
       text: json['text'] as String?,
-      fileIds:
-          (json['fileIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      fileIds: (json['fileIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       mediaIds: (json['mediaIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),

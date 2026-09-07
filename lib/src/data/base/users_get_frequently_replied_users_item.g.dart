@@ -7,15 +7,15 @@ part of 'users_get_frequently_replied_users_item.dart';
 // **************************************************************************
 
 _UsersGetFrequentlyRepliedUsersItem
-    _$UsersGetFrequentlyRepliedUsersItemFromJson(Map<String, dynamic> json) =>
-        _UsersGetFrequentlyRepliedUsersItem(
-          user: UserDetailed.fromJson(json['user'] as Map<String, dynamic>),
-          weight: (json['weight'] as num).toDouble(),
-        );
+_$UsersGetFrequentlyRepliedUsersItemFromJson(Map<String, dynamic> json) =>
+    _UsersGetFrequentlyRepliedUsersItem(
+      user: UserDetailed.fromJson(json['user'] as Map<String, dynamic>),
+      weight: (json['weight'] as num).toDouble(),
+    );
 
 Map<String, dynamic> _$UsersGetFrequentlyRepliedUsersItemToJson(
-        _UsersGetFrequentlyRepliedUsersItem instance) =>
-    <String, dynamic>{
-      'user': instance.user.toJson(),
-      'weight': instance.weight,
-    };
+  _UsersGetFrequentlyRepliedUsersItem instance,
+) => <String, dynamic>{
+  'user': instance.user.toJson(),
+  'weight': instance.weight,
+};

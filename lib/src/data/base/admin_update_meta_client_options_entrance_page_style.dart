@@ -1,5 +1,1 @@
-enum AdminUpdateMetaClientOptionsEntrancePageStyle {
-  classic,
-  simple,
-  unknown,
-}
+enum AdminUpdateMetaClientOptionsEntrancePageStyle { classic, simple, unknown }

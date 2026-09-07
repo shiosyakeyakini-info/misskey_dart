@@ -9,14 +9,16 @@ part of 'charts_user_reactions.dart';
 _ChartsUserReactions _$ChartsUserReactionsFromJson(Map<String, dynamic> json) =>
     _ChartsUserReactions(
       local: ChartsUserReactionsLocal.fromJson(
-          json['local'] as Map<String, dynamic>),
+        json['local'] as Map<String, dynamic>,
+      ),
       remote: ChartsUserReactionsRemote.fromJson(
-          json['remote'] as Map<String, dynamic>),
+        json['remote'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$ChartsUserReactionsToJson(
-        _ChartsUserReactions instance) =>
-    <String, dynamic>{
-      'local': instance.local.toJson(),
-      'remote': instance.remote.toJson(),
-    };
+  _ChartsUserReactions instance,
+) => <String, dynamic>{
+  'local': instance.local.toJson(),
+  'remote': instance.remote.toJson(),
+};

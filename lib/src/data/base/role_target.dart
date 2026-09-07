@@ -1,5 +1,1 @@
-enum RoleTarget {
-  manual,
-  conditional,
-  unknown,
-}
+enum RoleTarget { manual, conditional, unknown }

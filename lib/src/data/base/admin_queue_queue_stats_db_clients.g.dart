@@ -7,15 +7,15 @@ part of 'admin_queue_queue_stats_db_clients.dart';
 // **************************************************************************
 
 _AdminQueueQueueStatsDbClients _$AdminQueueQueueStatsDbClientsFromJson(
-        Map<String, dynamic> json) =>
-    _AdminQueueQueueStatsDbClients(
-      blocked: (json['blocked'] as num).toDouble(),
-      connected: (json['connected'] as num).toDouble(),
-    );
+  Map<String, dynamic> json,
+) => _AdminQueueQueueStatsDbClients(
+  blocked: (json['blocked'] as num).toDouble(),
+  connected: (json['connected'] as num).toDouble(),
+);
 
 Map<String, dynamic> _$AdminQueueQueueStatsDbClientsToJson(
-        _AdminQueueQueueStatsDbClients instance) =>
-    <String, dynamic>{
-      'blocked': instance.blocked,
-      'connected': instance.connected,
-    };
+  _AdminQueueQueueStatsDbClients instance,
+) => <String, dynamic>{
+  'blocked': instance.blocked,
+  'connected': instance.connected,
+};

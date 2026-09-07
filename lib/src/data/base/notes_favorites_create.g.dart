@@ -7,13 +7,9 @@ part of 'notes_favorites_create.dart';
 // **************************************************************************
 
 _NotesFavoritesCreate _$NotesFavoritesCreateFromJson(
-        Map<String, dynamic> json) =>
-    _NotesFavoritesCreate(
-      noteId: json['noteId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _NotesFavoritesCreate(noteId: json['noteId'] as String);
 
 Map<String, dynamic> _$NotesFavoritesCreateToJson(
-        _NotesFavoritesCreate instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+  _NotesFavoritesCreate instance,
+) => <String, dynamic>{'noteId': instance.noteId};

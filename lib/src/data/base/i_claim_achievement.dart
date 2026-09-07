@@ -7,8 +7,10 @@ part 'i_claim_achievement.g.dart';
 @freezed
 abstract class IClaimAchievement with _$IClaimAchievement {
   const factory IClaimAchievement({
-    @JsonKey(unknownEnumValue: IClaimAchievementName.unknown) required IClaimAchievementName name,
+    @JsonKey(unknownEnumValue: IClaimAchievementName.unknown)
+    required IClaimAchievementName name,
   }) = _IClaimAchievement;
 
-  factory IClaimAchievement.fromJson(Map<String, Object?> json) => _$IClaimAchievementFromJson(json);
+  factory IClaimAchievement.fromJson(Map<String, Object?> json) =>
+      _$IClaimAchievementFromJson(json);
 }

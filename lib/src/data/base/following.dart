@@ -15,5 +15,6 @@ abstract class Following with _$Following {
     Map<String, dynamic>? follower,
   }) = _Following;
 
-  factory Following.fromJson(Map<String, Object?> json) => _$FollowingFromJson(json);
+  factory Following.fromJson(Map<String, Object?> json) =>
+      _$FollowingFromJson(json);
 }

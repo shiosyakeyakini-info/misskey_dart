@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'charts_federation.freezed.dart';
 part 'charts_federation.g.dart';
@@ -17,5 +16,6 @@ abstract class ChartsFederation with _$ChartsFederation {
     required List<double> pubActive,
   }) = _ChartsFederation;
 
-  factory ChartsFederation.fromJson(Map<String, Object?> json) => _$ChartsFederationFromJson(json);
+  factory ChartsFederation.fromJson(Map<String, Object?> json) =>
+      _$ChartsFederationFromJson(json);
 }

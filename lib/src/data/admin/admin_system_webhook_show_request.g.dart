@@ -7,13 +7,9 @@ part of 'admin_system_webhook_show_request.dart';
 // **************************************************************************
 
 _AdminSystemWebhookShowRequest _$AdminSystemWebhookShowRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminSystemWebhookShowRequest(
-      id: json['id'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminSystemWebhookShowRequest(id: json['id'] as String?);
 
 Map<String, dynamic> _$AdminSystemWebhookShowRequestToJson(
-        _AdminSystemWebhookShowRequest instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+  _AdminSystemWebhookShowRequest instance,
+) => <String, dynamic>{'id': instance.id};

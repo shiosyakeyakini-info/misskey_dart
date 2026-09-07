@@ -13,7 +13,4 @@ _UsersListsPush _$UsersListsPushFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersListsPushToJson(_UsersListsPush instance) =>
-    <String, dynamic>{
-      'listId': instance.listId,
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'listId': instance.listId, 'userId': instance.userId};

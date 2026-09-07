@@ -13,7 +13,4 @@ _UsersUpdateMemo _$UsersUpdateMemoFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UsersUpdateMemoToJson(_UsersUpdateMemo instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'memo': instance.memo,
-    };
+    <String, dynamic>{'userId': instance.userId, 'memo': instance.memo};

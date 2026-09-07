@@ -49,6 +49,12 @@ sealed class Channel with _$Channel {
   /// チャット（一対一）
   const factory Channel.chatUser() = _ChatUser;
 
+  /// リバーシのマッチング。招待されたときとマッチが成立したときに流れる。
+  const factory Channel.reversi() = _Reversi;
+
+  /// リバーシの対局。パラメータに gameId が要る。
+  const factory Channel.reversiGame() = _ReversiGame;
+
   /// 管理者用のなにか？
   const factory Channel.admin() = _Admin;
 
@@ -73,6 +79,8 @@ sealed class Channel with _$Channel {
     'queueStats': Channel.queueStats(),
     'chatRoom': Channel.chatRoom(),
     'chatUser': Channel.chatUser(),
+    'reversi': Channel.reversi(),
+    'reversiGame': Channel.reversiGame(),
     'admin': Channel.admin(),
     'main': Channel.main(),
   };

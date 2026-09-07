@@ -7,13 +7,9 @@ part of 'clips_favorite_request.dart';
 // **************************************************************************
 
 _ClipsFavoriteRequest _$ClipsFavoriteRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ClipsFavoriteRequest(
-      clipId: json['clipId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _ClipsFavoriteRequest(clipId: json['clipId'] as String?);
 
 Map<String, dynamic> _$ClipsFavoriteRequestToJson(
-        _ClipsFavoriteRequest instance) =>
-    <String, dynamic>{
-      'clipId': instance.clipId,
-    };
+  _ClipsFavoriteRequest instance,
+) => <String, dynamic>{'clipId': instance.clipId};

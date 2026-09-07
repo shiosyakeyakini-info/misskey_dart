@@ -18,14 +18,15 @@ _ChartsInstanceNotes _$ChartsInstanceNotesFromJson(Map<String, dynamic> json) =>
           .map((e) => (e as num).toDouble())
           .toList(),
       diffs: ChartsInstanceNotesDiffs.fromJson(
-          json['diffs'] as Map<String, dynamic>),
+        json['diffs'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$ChartsInstanceNotesToJson(
-        _ChartsInstanceNotes instance) =>
-    <String, dynamic>{
-      'total': instance.total,
-      'inc': instance.inc,
-      'dec': instance.dec,
-      'diffs': instance.diffs.toJson(),
-    };
+  _ChartsInstanceNotes instance,
+) => <String, dynamic>{
+  'total': instance.total,
+  'inc': instance.inc,
+  'dec': instance.dec,
+  'diffs': instance.diffs.toJson(),
+};

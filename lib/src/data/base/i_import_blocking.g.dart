@@ -7,11 +7,7 @@ part of 'i_import_blocking.dart';
 // **************************************************************************
 
 _IImportBlocking _$IImportBlockingFromJson(Map<String, dynamic> json) =>
-    _IImportBlocking(
-      fileId: json['fileId'] as String,
-    );
+    _IImportBlocking(fileId: json['fileId'] as String);
 
 Map<String, dynamic> _$IImportBlockingToJson(_IImportBlocking instance) =>
-    <String, dynamic>{
-      'fileId': instance.fileId,
-    };
+    <String, dynamic>{'fileId': instance.fileId};

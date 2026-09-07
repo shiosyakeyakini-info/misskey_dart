@@ -8,8 +8,11 @@ part of 'sw_register_response.dart';
 
 _SwRegisterResponse _$SwRegisterResponseFromJson(Map<String, dynamic> json) =>
     _SwRegisterResponse(
-      state: $enumDecodeNullable(_$SwRegisterStateEnumMap, json['state'],
-          unknownValue: SwRegisterState.unknown),
+      state: $enumDecodeNullable(
+        _$SwRegisterStateEnumMap,
+        json['state'],
+        unknownValue: SwRegisterState.unknown,
+      ),
       key: json['key'] as String?,
       userId: json['userId'] as String,
       endpoint: json['endpoint'] as String,

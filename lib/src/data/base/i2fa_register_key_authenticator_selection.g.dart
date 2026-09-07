@@ -7,35 +7,34 @@ part of 'i2fa_register_key_authenticator_selection.dart';
 // **************************************************************************
 
 _I2faRegisterKeyAuthenticatorSelection
-    _$I2faRegisterKeyAuthenticatorSelectionFromJson(
-            Map<String, dynamic> json) =>
-        _I2faRegisterKeyAuthenticatorSelection(
-          authenticatorAttachment: $enumDecode(
-              _$I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachmentEnumMap,
-              json['authenticatorAttachment'],
-              unknownValue:
-                  I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment
-                      .unknown),
-          requireResidentKey: json['requireResidentKey'] as bool,
-          userVerification: $enumDecode(
-              _$I2faRegisterKeyAuthenticatorSelectionUserVerificationEnumMap,
-              json['userVerification'],
-              unknownValue:
-                  I2faRegisterKeyAuthenticatorSelectionUserVerification
-                      .unknown),
-        );
+_$I2faRegisterKeyAuthenticatorSelectionFromJson(
+  Map<String, dynamic> json,
+) => _I2faRegisterKeyAuthenticatorSelection(
+  authenticatorAttachment: $enumDecode(
+    _$I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachmentEnumMap,
+    json['authenticatorAttachment'],
+    unknownValue:
+        I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment.unknown,
+  ),
+  requireResidentKey: json['requireResidentKey'] as bool,
+  userVerification: $enumDecode(
+    _$I2faRegisterKeyAuthenticatorSelectionUserVerificationEnumMap,
+    json['userVerification'],
+    unknownValue: I2faRegisterKeyAuthenticatorSelectionUserVerification.unknown,
+  ),
+);
 
 Map<String, dynamic> _$I2faRegisterKeyAuthenticatorSelectionToJson(
-        _I2faRegisterKeyAuthenticatorSelection instance) =>
-    <String, dynamic>{
-      'authenticatorAttachment':
-          _$I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachmentEnumMap[
-              instance.authenticatorAttachment]!,
-      'requireResidentKey': instance.requireResidentKey,
-      'userVerification':
-          _$I2faRegisterKeyAuthenticatorSelectionUserVerificationEnumMap[
-              instance.userVerification]!,
-    };
+  _I2faRegisterKeyAuthenticatorSelection instance,
+) => <String, dynamic>{
+  'authenticatorAttachment':
+      _$I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachmentEnumMap[instance
+          .authenticatorAttachment]!,
+  'requireResidentKey': instance.requireResidentKey,
+  'userVerification':
+      _$I2faRegisterKeyAuthenticatorSelectionUserVerificationEnumMap[instance
+          .userVerification]!,
+};
 
 const _$I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachmentEnumMap = {
   I2faRegisterKeyAuthenticatorSelectionAuthenticatorAttachment.crossPlatform:

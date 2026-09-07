@@ -1,14 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'clips_unfavorite.freezed.dart';
 part 'clips_unfavorite.g.dart';
 
 @freezed
 abstract class ClipsUnfavorite with _$ClipsUnfavorite {
-  const factory ClipsUnfavorite({
-    required String clipId,
-  }) = _ClipsUnfavorite;
+  const factory ClipsUnfavorite({required String clipId}) = _ClipsUnfavorite;
 
-  factory ClipsUnfavorite.fromJson(Map<String, Object?> json) => _$ClipsUnfavoriteFromJson(json);
+  factory ClipsUnfavorite.fromJson(Map<String, Object?> json) =>
+      _$ClipsUnfavoriteFromJson(json);
 }

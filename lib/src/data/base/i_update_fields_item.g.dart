@@ -13,7 +13,4 @@ _IUpdateFieldsItem _$IUpdateFieldsItemFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IUpdateFieldsItemToJson(_IUpdateFieldsItem instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'value': instance.value,
-    };
+    <String, dynamic>{'name': instance.name, 'value': instance.value};

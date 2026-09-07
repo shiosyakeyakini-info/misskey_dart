@@ -7,11 +7,7 @@ part of 'admin_get_user_ips.dart';
 // **************************************************************************
 
 _AdminGetUserIps _$AdminGetUserIpsFromJson(Map<String, dynamic> json) =>
-    _AdminGetUserIps(
-      userId: json['userId'] as String,
-    );
+    _AdminGetUserIps(userId: json['userId'] as String);
 
 Map<String, dynamic> _$AdminGetUserIpsToJson(_AdminGetUserIps instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

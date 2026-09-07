@@ -245,6 +245,21 @@ number_as_int:
 
 # Extra fields (not in api.json but needed for version compatibility)
 extra_fields:
+  # 2026.4 以降の Misskey が notes/search に追加したが、api_schemas に
+  # 収集済みなのが 2026.3.1 までなのでスキーマからは拾えない。
+  # 投稿日時での絞り込み用で、エポックミリ秒で送る。
+  NotesSearchRequest:
+    rangeStartAt:
+      dart_type: DateTime
+      nullable: true
+      converter: EpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+    rangeEndAt:
+      dart_type: DateTime
+      nullable: true
+      converter: EpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+
   UserList:
     likedCount:
       dart_type: double

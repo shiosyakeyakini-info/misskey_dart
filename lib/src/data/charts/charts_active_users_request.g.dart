@@ -7,21 +7,24 @@ part of 'charts_active_users_request.dart';
 // **************************************************************************
 
 _ChartsActiveUsersRequest _$ChartsActiveUsersRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChartsActiveUsersRequest(
-      span: $enumDecodeNullable(_$ChartsActiveUsersSpanEnumMap, json['span'],
-          unknownValue: ChartsActiveUsersSpan.unknown),
-      limit: (json['limit'] as num?)?.toInt() ?? 30,
-      offset: (json['offset'] as num?)?.toInt() ?? null,
-    );
+  Map<String, dynamic> json,
+) => _ChartsActiveUsersRequest(
+  span: $enumDecodeNullable(
+    _$ChartsActiveUsersSpanEnumMap,
+    json['span'],
+    unknownValue: ChartsActiveUsersSpan.unknown,
+  ),
+  limit: (json['limit'] as num?)?.toInt() ?? 30,
+  offset: (json['offset'] as num?)?.toInt() ?? null,
+);
 
 Map<String, dynamic> _$ChartsActiveUsersRequestToJson(
-        _ChartsActiveUsersRequest instance) =>
-    <String, dynamic>{
-      'span': _$ChartsActiveUsersSpanEnumMap[instance.span],
-      'limit': instance.limit,
-      'offset': instance.offset,
-    };
+  _ChartsActiveUsersRequest instance,
+) => <String, dynamic>{
+  'span': _$ChartsActiveUsersSpanEnumMap[instance.span],
+  'limit': instance.limit,
+  'offset': instance.offset,
+};
 
 const _$ChartsActiveUsersSpanEnumMap = {
   ChartsActiveUsersSpan.day: 'day',

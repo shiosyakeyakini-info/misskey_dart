@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'drive_stream.freezed.dart';
 part 'drive_stream.g.dart';
@@ -15,5 +14,6 @@ abstract class DriveStream with _$DriveStream {
     String? type,
   }) = _DriveStream;
 
-  factory DriveStream.fromJson(Map<String, Object?> json) => _$DriveStreamFromJson(json);
+  factory DriveStream.fromJson(Map<String, Object?> json) =>
+      _$DriveStreamFromJson(json);
 }

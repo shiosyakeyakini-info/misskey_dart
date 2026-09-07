@@ -11,9 +11,14 @@ abstract class HashtagsUsersRequest with _$HashtagsUsersRequest {
     @Default(10) int? limit,
     @Default(0) int? offset,
     @JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? sort,
-    @JsonKey(unknownEnumValue: HashtagsUsersState.unknown) @Default(HashtagsUsersState.all) HashtagsUsersState? state,
-    @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown) @Default(HashtagsUsersOrigin.local) HashtagsUsersOrigin? origin,
+    @JsonKey(unknownEnumValue: HashtagsUsersState.unknown)
+    @Default(HashtagsUsersState.all)
+    HashtagsUsersState? state,
+    @JsonKey(unknownEnumValue: HashtagsUsersOrigin.unknown)
+    @Default(HashtagsUsersOrigin.local)
+    HashtagsUsersOrigin? origin,
   }) = _HashtagsUsersRequest;
 
-  factory HashtagsUsersRequest.fromJson(Map<String, Object?> json) => _$HashtagsUsersRequestFromJson(json);
+  factory HashtagsUsersRequest.fromJson(Map<String, Object?> json) =>
+      _$HashtagsUsersRequestFromJson(json);
 }

@@ -7,11 +7,7 @@ part of 'drive_folders_delete.dart';
 // **************************************************************************
 
 _DriveFoldersDelete _$DriveFoldersDeleteFromJson(Map<String, dynamic> json) =>
-    _DriveFoldersDelete(
-      folderId: json['folderId'] as String,
-    );
+    _DriveFoldersDelete(folderId: json['folderId'] as String);
 
 Map<String, dynamic> _$DriveFoldersDeleteToJson(_DriveFoldersDelete instance) =>
-    <String, dynamic>{
-      'folderId': instance.folderId,
-    };
+    <String, dynamic>{'folderId': instance.folderId};

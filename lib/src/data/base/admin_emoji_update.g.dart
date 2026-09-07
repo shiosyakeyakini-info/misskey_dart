@@ -10,8 +10,9 @@ _AdminEmojiUpdate _$AdminEmojiUpdateFromJson(Map<String, dynamic> json) =>
     _AdminEmojiUpdate(
       fileId: json['fileId'] as String?,
       category: json['category'] as String?,
-      aliases:
-          (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      aliases: (json['aliases'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       license: json['license'] as String?,
       isSensitive: json['isSensitive'] as bool?,
       localOnly: json['localOnly'] as bool?,

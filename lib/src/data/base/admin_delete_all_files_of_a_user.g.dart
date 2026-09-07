@@ -7,13 +7,9 @@ part of 'admin_delete_all_files_of_a_user.dart';
 // **************************************************************************
 
 _AdminDeleteAllFilesOfAUser _$AdminDeleteAllFilesOfAUserFromJson(
-        Map<String, dynamic> json) =>
-    _AdminDeleteAllFilesOfAUser(
-      userId: json['userId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _AdminDeleteAllFilesOfAUser(userId: json['userId'] as String);
 
 Map<String, dynamic> _$AdminDeleteAllFilesOfAUserToJson(
-        _AdminDeleteAllFilesOfAUser instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _AdminDeleteAllFilesOfAUser instance,
+) => <String, dynamic>{'userId': instance.userId};

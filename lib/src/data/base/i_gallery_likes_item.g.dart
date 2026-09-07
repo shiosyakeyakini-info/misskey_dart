@@ -13,7 +13,4 @@ _IGalleryLikesItem _$IGalleryLikesItemFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IGalleryLikesItemToJson(_IGalleryLikesItem instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'post': instance.post.toJson(),
-    };
+    <String, dynamic>{'id': instance.id, 'post': instance.post.toJson()};

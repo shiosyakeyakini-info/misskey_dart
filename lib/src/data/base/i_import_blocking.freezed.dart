@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,46 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$IImportBlocking {
-  String get fileId;
 
-  /// Create a copy of IImportBlocking
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $IImportBlockingCopyWith<IImportBlocking> get copyWith =>
-      _$IImportBlockingCopyWithImpl<IImportBlocking>(
-          this as IImportBlocking, _$identity);
+ String get fileId;
+/// Create a copy of IImportBlocking
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$IImportBlockingCopyWith<IImportBlocking> get copyWith => _$IImportBlockingCopyWithImpl<IImportBlocking>(this as IImportBlocking, _$identity);
 
   /// Serializes this IImportBlocking to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is IImportBlocking &&
-            (identical(other.fileId, fileId) || other.fileId == fileId));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, fileId);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IImportBlocking&&(identical(other.fileId, fileId) || other.fileId == fileId));
+}
 
-  @override
-  String toString() {
-    return 'IImportBlocking(fileId: $fileId)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,fileId);
+
+@override
+String toString() {
+  return 'IImportBlocking(fileId: $fileId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $IImportBlockingCopyWith<$Res> {
-  factory $IImportBlockingCopyWith(
-          IImportBlocking value, $Res Function(IImportBlocking) _then) =
-      _$IImportBlockingCopyWithImpl;
-  @useResult
-  $Res call({String fileId});
-}
+abstract mixin class $IImportBlockingCopyWith<$Res>  {
+  factory $IImportBlockingCopyWith(IImportBlocking value, $Res Function(IImportBlocking) _then) = _$IImportBlockingCopyWithImpl;
+@useResult
+$Res call({
+ String fileId
+});
 
+
+
+
+}
 /// @nodoc
 class _$IImportBlockingCopyWithImpl<$Res>
     implements $IImportBlockingCopyWith<$Res> {
@@ -63,76 +63,197 @@ class _$IImportBlockingCopyWithImpl<$Res>
   final IImportBlocking _self;
   final $Res Function(IImportBlocking) _then;
 
-  /// Create a copy of IImportBlocking
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? fileId = null,
-  }) {
-    return _then(_self.copyWith(
-      fileId: null == fileId
-          ? _self.fileId
-          : fileId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of IImportBlocking
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? fileId = null,}) {
+  return _then(_self.copyWith(
+fileId: null == fileId ? _self.fileId : fileId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [IImportBlocking].
+extension IImportBlockingPatterns on IImportBlocking {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _IImportBlocking value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _IImportBlocking() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _IImportBlocking value)  $default,){
+final _that = this;
+switch (_that) {
+case _IImportBlocking():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _IImportBlocking value)?  $default,){
+final _that = this;
+switch (_that) {
+case _IImportBlocking() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String fileId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _IImportBlocking() when $default != null:
+return $default(_that.fileId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String fileId)  $default,) {final _that = this;
+switch (_that) {
+case _IImportBlocking():
+return $default(_that.fileId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String fileId)?  $default,) {final _that = this;
+switch (_that) {
+case _IImportBlocking() when $default != null:
+return $default(_that.fileId);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _IImportBlocking implements IImportBlocking {
   const _IImportBlocking({required this.fileId});
-  factory _IImportBlocking.fromJson(Map<String, dynamic> json) =>
-      _$IImportBlockingFromJson(json);
+  factory _IImportBlocking.fromJson(Map<String, dynamic> json) => _$IImportBlockingFromJson(json);
 
-  @override
-  final String fileId;
+@override final  String fileId;
 
-  /// Create a copy of IImportBlocking
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$IImportBlockingCopyWith<_IImportBlocking> get copyWith =>
-      __$IImportBlockingCopyWithImpl<_IImportBlocking>(this, _$identity);
+/// Create a copy of IImportBlocking
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$IImportBlockingCopyWith<_IImportBlocking> get copyWith => __$IImportBlockingCopyWithImpl<_IImportBlocking>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$IImportBlockingToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$IImportBlockingToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _IImportBlocking &&
-            (identical(other.fileId, fileId) || other.fileId == fileId));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IImportBlocking&&(identical(other.fileId, fileId) || other.fileId == fileId));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, fileId);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,fileId);
 
-  @override
-  String toString() {
-    return 'IImportBlocking(fileId: $fileId)';
-  }
+@override
+String toString() {
+  return 'IImportBlocking(fileId: $fileId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$IImportBlockingCopyWith<$Res>
-    implements $IImportBlockingCopyWith<$Res> {
-  factory _$IImportBlockingCopyWith(
-          _IImportBlocking value, $Res Function(_IImportBlocking) _then) =
-      __$IImportBlockingCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String fileId});
-}
+abstract mixin class _$IImportBlockingCopyWith<$Res> implements $IImportBlockingCopyWith<$Res> {
+  factory _$IImportBlockingCopyWith(_IImportBlocking value, $Res Function(_IImportBlocking) _then) = __$IImportBlockingCopyWithImpl;
+@override @useResult
+$Res call({
+ String fileId
+});
 
+
+
+
+}
 /// @nodoc
 class __$IImportBlockingCopyWithImpl<$Res>
     implements _$IImportBlockingCopyWith<$Res> {
@@ -141,20 +262,16 @@ class __$IImportBlockingCopyWithImpl<$Res>
   final _IImportBlocking _self;
   final $Res Function(_IImportBlocking) _then;
 
-  /// Create a copy of IImportBlocking
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? fileId = null,
-  }) {
-    return _then(_IImportBlocking(
-      fileId: null == fileId
-          ? _self.fileId
-          : fileId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of IImportBlocking
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? fileId = null,}) {
+  return _then(_IImportBlocking(
+fileId: null == fileId ? _self.fileId : fileId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

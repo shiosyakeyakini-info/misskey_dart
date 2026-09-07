@@ -1,5 +1,1 @@
-enum ChartsUserFollowingSpan {
-  day,
-  hour,
-  unknown,
-}
+enum ChartsUserFollowingSpan { day, hour, unknown }

@@ -7,11 +7,7 @@ part of 'username_available.dart';
 // **************************************************************************
 
 _UsernameAvailable _$UsernameAvailableFromJson(Map<String, dynamic> json) =>
-    _UsernameAvailable(
-      available: json['available'] as bool,
-    );
+    _UsernameAvailable(available: json['available'] as bool);
 
 Map<String, dynamic> _$UsernameAvailableToJson(_UsernameAvailable instance) =>
-    <String, dynamic>{
-      'available': instance.available,
-    };
+    <String, dynamic>{'available': instance.available};

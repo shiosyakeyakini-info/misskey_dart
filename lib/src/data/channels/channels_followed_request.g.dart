@@ -7,21 +7,21 @@ part of 'channels_followed_request.dart';
 // **************************************************************************
 
 _ChannelsFollowedRequest _$ChannelsFollowedRequestFromJson(
-        Map<String, dynamic> json) =>
-    _ChannelsFollowedRequest(
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt() ?? 5,
-    );
+  Map<String, dynamic> json,
+) => _ChannelsFollowedRequest(
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+  limit: (json['limit'] as num?)?.toInt() ?? 5,
+);
 
 Map<String, dynamic> _$ChannelsFollowedRequestToJson(
-        _ChannelsFollowedRequest instance) =>
-    <String, dynamic>{
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-      'limit': instance.limit,
-    };
+  _ChannelsFollowedRequest instance,
+) => <String, dynamic>{
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+  'limit': instance.limit,
+};

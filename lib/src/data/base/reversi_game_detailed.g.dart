@@ -9,12 +9,17 @@ part of 'reversi_game_detailed.dart';
 _ReversiGameDetailed _$ReversiGameDetailedFromJson(Map<String, dynamic> json) =>
     _ReversiGameDetailed(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       startedAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['startedAt'], const NullableDateTimeConverter().fromJson),
+        json['startedAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       endedAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['endedAt'], const NullableDateTimeConverter().fromJson),
+        json['endedAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       isStarted: json['isStarted'] as bool,
       isEnded: json['isEnded'] as bool,
       form1: json['form1'] as Map<String, dynamic>?,
@@ -41,39 +46,38 @@ _ReversiGameDetailed _$ReversiGameDetailedFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ReversiGameDetailedToJson(
-        _ReversiGameDetailed instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-      'startedAt': const NullableDateTimeConverter().toJson(instance.startedAt),
-      'endedAt': const NullableDateTimeConverter().toJson(instance.endedAt),
-      'isStarted': instance.isStarted,
-      'isEnded': instance.isEnded,
-      'form1': instance.form1,
-      'form2': instance.form2,
-      'user1Ready': instance.user1Ready,
-      'user2Ready': instance.user2Ready,
-      'user1Id': instance.user1Id,
-      'user2Id': instance.user2Id,
-      'user1': instance.user1.toJson(),
-      'user2': instance.user2.toJson(),
-      'winnerId': instance.winnerId,
-      'winner': instance.winner,
-      'surrenderedUserId': instance.surrenderedUserId,
-      'timeoutUserId': instance.timeoutUserId,
-      'black': instance.black,
-      'bw': instance.bw,
-      'noIrregularRules': instance.noIrregularRules,
-      'isLlotheo': instance.isLlotheo,
-      'canPutEverywhere': instance.canPutEverywhere,
-      'loopedBoard': instance.loopedBoard,
-      'timeLimitForEachTurn': instance.timeLimitForEachTurn,
-      'logs': instance.logs,
-      'map': instance.map,
-    };
+  _ReversiGameDetailed instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'createdAt': const DateTimeConverter().toJson(instance.createdAt),
+  'startedAt': const NullableDateTimeConverter().toJson(instance.startedAt),
+  'endedAt': const NullableDateTimeConverter().toJson(instance.endedAt),
+  'isStarted': instance.isStarted,
+  'isEnded': instance.isEnded,
+  'form1': instance.form1,
+  'form2': instance.form2,
+  'user1Ready': instance.user1Ready,
+  'user2Ready': instance.user2Ready,
+  'user1Id': instance.user1Id,
+  'user2Id': instance.user2Id,
+  'user1': instance.user1.toJson(),
+  'user2': instance.user2.toJson(),
+  'winnerId': instance.winnerId,
+  'winner': instance.winner,
+  'surrenderedUserId': instance.surrenderedUserId,
+  'timeoutUserId': instance.timeoutUserId,
+  'black': instance.black,
+  'bw': instance.bw,
+  'noIrregularRules': instance.noIrregularRules,
+  'isLlotheo': instance.isLlotheo,
+  'canPutEverywhere': instance.canPutEverywhere,
+  'loopedBoard': instance.loopedBoard,
+  'timeLimitForEachTurn': instance.timeLimitForEachTurn,
+  'logs': instance.logs,
+  'map': instance.map,
+};
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

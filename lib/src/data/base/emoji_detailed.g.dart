@@ -9,8 +9,9 @@ part of 'emoji_detailed.dart';
 _EmojiDetailed _$EmojiDetailedFromJson(Map<String, dynamic> json) =>
     _EmojiDetailed(
       id: json['id'] as String,
-      aliases:
-          (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
+      aliases: (json['aliases'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       name: json['name'] as String,
       category: json['category'] as String?,
       host: json['host'] as String?,

@@ -1,5 +1,1 @@
-enum NoteSearchableScope {
-  local,
-  global,
-  unknown,
-}
+enum NoteSearchableScope { local, global, unknown }

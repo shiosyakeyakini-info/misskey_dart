@@ -14,9 +14,9 @@ _NotificationsCreate _$NotificationsCreateFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotificationsCreateToJson(
-        _NotificationsCreate instance) =>
-    <String, dynamic>{
-      'body': instance.body,
-      'header': instance.header,
-      'icon': instance.icon,
-    };
+  _NotificationsCreate instance,
+) => <String, dynamic>{
+  'body': instance.body,
+  'header': instance.header,
+  'icon': instance.icon,
+};

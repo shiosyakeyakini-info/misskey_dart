@@ -7,15 +7,12 @@ part of 'i_delete_account_request.dart';
 // **************************************************************************
 
 _IDeleteAccountRequest _$IDeleteAccountRequestFromJson(
-        Map<String, dynamic> json) =>
-    _IDeleteAccountRequest(
-      password: json['password'] as String?,
-      token: json['token'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _IDeleteAccountRequest(
+  password: json['password'] as String?,
+  token: json['token'] as String?,
+);
 
 Map<String, dynamic> _$IDeleteAccountRequestToJson(
-        _IDeleteAccountRequest instance) =>
-    <String, dynamic>{
-      'password': instance.password,
-      'token': instance.token,
-    };
+  _IDeleteAccountRequest instance,
+) => <String, dynamic>{'password': instance.password, 'token': instance.token};

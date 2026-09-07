@@ -13,7 +13,4 @@ _DriveFoldersFind _$DriveFoldersFindFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DriveFoldersFindToJson(_DriveFoldersFind instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'parentId': instance.parentId,
-    };
+    <String, dynamic>{'name': instance.name, 'parentId': instance.parentId};

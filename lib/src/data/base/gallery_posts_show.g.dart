@@ -7,11 +7,7 @@ part of 'gallery_posts_show.dart';
 // **************************************************************************
 
 _GalleryPostsShow _$GalleryPostsShowFromJson(Map<String, dynamic> json) =>
-    _GalleryPostsShow(
-      postId: json['postId'] as String,
-    );
+    _GalleryPostsShow(postId: json['postId'] as String);
 
 Map<String, dynamic> _$GalleryPostsShowToJson(_GalleryPostsShow instance) =>
-    <String, dynamic>{
-      'postId': instance.postId,
-    };
+    <String, dynamic>{'postId': instance.postId};

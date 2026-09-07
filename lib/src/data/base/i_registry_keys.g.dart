@@ -10,12 +10,9 @@ _IRegistryKeys _$IRegistryKeysFromJson(Map<String, dynamic> json) =>
     _IRegistryKeys(
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          const [],
       domain: json['domain'] as String?,
     );
 
 Map<String, dynamic> _$IRegistryKeysToJson(_IRegistryKeys instance) =>
-    <String, dynamic>{
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+    <String, dynamic>{'scope': instance.scope, 'domain': instance.domain};

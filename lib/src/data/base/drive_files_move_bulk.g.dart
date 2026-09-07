@@ -8,8 +8,9 @@ part of 'drive_files_move_bulk.dart';
 
 _DriveFilesMoveBulk _$DriveFilesMoveBulkFromJson(Map<String, dynamic> json) =>
     _DriveFilesMoveBulk(
-      fileIds:
-          (json['fileIds'] as List<dynamic>).map((e) => e as String).toList(),
+      fileIds: (json['fileIds'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       folderId: json['folderId'] as String?,
     );
 

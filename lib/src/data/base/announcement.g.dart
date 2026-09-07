@@ -9,17 +9,26 @@ part of 'announcement.dart';
 _Announcement _$AnnouncementFromJson(Map<String, dynamic> json) =>
     _Announcement(
       id: json['id'] as String,
-      createdAt:
-          const DateTimeConverter().fromJson(json['createdAt'] as String),
+      createdAt: const DateTimeConverter().fromJson(
+        json['createdAt'] as String,
+      ),
       updatedAt: _$JsonConverterFromJson<String, DateTime?>(
-          json['updatedAt'], const NullableDateTimeConverter().fromJson),
+        json['updatedAt'],
+        const NullableDateTimeConverter().fromJson,
+      ),
       text: json['text'] as String,
       title: json['title'] as String,
       imageUrl: json['imageUrl'] as String?,
-      icon: $enumDecode(_$AnnouncementIconEnumMap, json['icon'],
-          unknownValue: AnnouncementIcon.unknown),
-      display: $enumDecode(_$AnnouncementDisplayEnumMap, json['display'],
-          unknownValue: AnnouncementDisplay.unknown),
+      icon: $enumDecode(
+        _$AnnouncementIconEnumMap,
+        json['icon'],
+        unknownValue: AnnouncementIcon.unknown,
+      ),
+      display: $enumDecode(
+        _$AnnouncementDisplayEnumMap,
+        json['display'],
+        unknownValue: AnnouncementDisplay.unknown,
+      ),
       needConfirmationToRead: json['needConfirmationToRead'] as bool,
       silence: json['silence'] as bool,
       forYou: json['forYou'] as bool,
@@ -45,8 +54,7 @@ Map<String, dynamic> _$AnnouncementToJson(_Announcement instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);
 
 const _$AnnouncementIconEnumMap = {
   AnnouncementIcon.info: 'info',

@@ -18,16 +18,16 @@ _IWebhooksUpdate _$IWebhooksUpdateFromJson(Map<String, dynamic> json) =>
       active: json['active'] as bool?,
     );
 
-Map<String, dynamic> _$IWebhooksUpdateToJson(_IWebhooksUpdate instance) =>
-    <String, dynamic>{
-      'webhookId': instance.webhookId,
-      'name': instance.name,
-      'url': instance.url,
-      'secret': instance.secret,
-      'on':
-          instance.on_?.map((e) => _$IWebhooksUpdateOnItemEnumMap[e]!).toList(),
-      'active': instance.active,
-    };
+Map<String, dynamic> _$IWebhooksUpdateToJson(
+  _IWebhooksUpdate instance,
+) => <String, dynamic>{
+  'webhookId': instance.webhookId,
+  'name': instance.name,
+  'url': instance.url,
+  'secret': instance.secret,
+  'on': instance.on_?.map((e) => _$IWebhooksUpdateOnItemEnumMap[e]!).toList(),
+  'active': instance.active,
+};
 
 const _$IWebhooksUpdateOnItemEnumMap = {
   IWebhooksUpdateOnItem.mention: 'mention',

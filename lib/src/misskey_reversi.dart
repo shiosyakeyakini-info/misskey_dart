@@ -1,11 +1,9 @@
 import 'package:misskey_dart/misskey_dart.dart';
 
 class MisskeyReversi {
-
   final ApiService _apiService;
 
-  MisskeyReversi({required ApiService apiService})
-      : _apiService = apiService;
+  MisskeyReversi({required ApiService apiService}) : _apiService = apiService;
 
   /// reversi/cancel-match
   Future<void> cancelMatch(ReversiCancelMatchRequest request) async {
@@ -14,8 +12,13 @@ class MisskeyReversi {
 
   /// reversi/games
   Future<Iterable<ReversiGameLite>> games(ReversiGamesRequest request) async {
-    final response = await _apiService.post<List>("reversi/games", request.toJson());
-    return response.map((e) => ReversiGameLite.fromJson(e as Map<String, dynamic>));
+    final response = await _apiService.post<List>(
+      "reversi/games",
+      request.toJson(),
+    );
+    return response.map(
+      (e) => ReversiGameLite.fromJson(e as Map<String, dynamic>),
+    );
   }
 
   /// reversi/invitations
@@ -26,13 +29,19 @@ class MisskeyReversi {
 
   /// reversi/match
   Future<ReversiGameDetailed> match(ReversiMatchRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("reversi/match", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "reversi/match",
+      request.toJson(),
+    );
     return ReversiGameDetailed.fromJson(response);
   }
 
   /// reversi/show-game
   Future<ReversiGameDetailed> showGame(ReversiShowGameRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("reversi/show-game", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "reversi/show-game",
+      request.toJson(),
+    );
     return ReversiGameDetailed.fromJson(response);
   }
 
@@ -43,8 +52,10 @@ class MisskeyReversi {
 
   /// reversi/verify
   Future<ReversiVerifyResponse> verify(ReversiVerifyRequest request) async {
-    final response = await _apiService.post<Map<String, dynamic>>("reversi/verify", request.toJson());
+    final response = await _apiService.post<Map<String, dynamic>>(
+      "reversi/verify",
+      request.toJson(),
+    );
     return ReversiVerifyResponse.fromJson(response);
   }
-
 }

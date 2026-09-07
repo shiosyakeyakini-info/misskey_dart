@@ -7,13 +7,9 @@ part of 'get_online_users_count_response.dart';
 // **************************************************************************
 
 _GetOnlineUsersCountResponse _$GetOnlineUsersCountResponseFromJson(
-        Map<String, dynamic> json) =>
-    _GetOnlineUsersCountResponse(
-      count: (json['count'] as num).toDouble(),
-    );
+  Map<String, dynamic> json,
+) => _GetOnlineUsersCountResponse(count: (json['count'] as num).toDouble());
 
 Map<String, dynamic> _$GetOnlineUsersCountResponseToJson(
-        _GetOnlineUsersCountResponse instance) =>
-    <String, dynamic>{
-      'count': instance.count,
-    };
+  _GetOnlineUsersCountResponse instance,
+) => <String, dynamic>{'count': instance.count};

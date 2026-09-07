@@ -14,9 +14,9 @@ _I2faRegisterKeyUser _$I2faRegisterKeyUserFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$I2faRegisterKeyUserToJson(
-        _I2faRegisterKeyUser instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'displayName': instance.displayName,
-    };
+  _I2faRegisterKeyUser instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'displayName': instance.displayName,
+};

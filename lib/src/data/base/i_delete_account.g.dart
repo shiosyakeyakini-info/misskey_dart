@@ -13,7 +13,4 @@ _IDeleteAccount _$IDeleteAccountFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IDeleteAccountToJson(_IDeleteAccount instance) =>
-    <String, dynamic>{
-      'password': instance.password,
-      'token': instance.token,
-    };
+    <String, dynamic>{'password': instance.password, 'token': instance.token};

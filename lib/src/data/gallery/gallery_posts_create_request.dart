@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'gallery_posts_create_request.freezed.dart';
 part 'gallery_posts_create_request.g.dart';
@@ -13,5 +12,6 @@ abstract class GalleryPostsCreateRequest with _$GalleryPostsCreateRequest {
     @Default(false) bool? isSensitive,
   }) = _GalleryPostsCreateRequest;
 
-  factory GalleryPostsCreateRequest.fromJson(Map<String, Object?> json) => _$GalleryPostsCreateRequestFromJson(json);
+  factory GalleryPostsCreateRequest.fromJson(Map<String, Object?> json) =>
+      _$GalleryPostsCreateRequestFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_ad_create.freezed.dart';
 part 'admin_ad_create.g.dart';
@@ -19,5 +18,6 @@ abstract class AdminAdCreate with _$AdminAdCreate {
     bool? isSensitive,
   }) = _AdminAdCreate;
 
-  factory AdminAdCreate.fromJson(Map<String, Object?> json) => _$AdminAdCreateFromJson(json);
+  factory AdminAdCreate.fromJson(Map<String, Object?> json) =>
+      _$AdminAdCreateFromJson(json);
 }

@@ -7,13 +7,9 @@ part of 'users_achievements_request.dart';
 // **************************************************************************
 
 _UsersAchievementsRequest _$UsersAchievementsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _UsersAchievementsRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _UsersAchievementsRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$UsersAchievementsRequestToJson(
-        _UsersAchievementsRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _UsersAchievementsRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

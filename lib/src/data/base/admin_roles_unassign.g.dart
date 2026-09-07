@@ -13,7 +13,4 @@ _AdminRolesUnassign _$AdminRolesUnassignFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminRolesUnassignToJson(_AdminRolesUnassign instance) =>
-    <String, dynamic>{
-      'roleId': instance.roleId,
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'roleId': instance.roleId, 'userId': instance.userId};

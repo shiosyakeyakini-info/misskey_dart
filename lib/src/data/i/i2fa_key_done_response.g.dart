@@ -13,8 +13,5 @@ _I2faKeyDoneResponse _$I2faKeyDoneResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$I2faKeyDoneResponseToJson(
-        _I2faKeyDoneResponse instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
+  _I2faKeyDoneResponse instance,
+) => <String, dynamic>{'id': instance.id, 'name': instance.name};

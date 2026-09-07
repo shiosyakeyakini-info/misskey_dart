@@ -1,6 +1,1 @@
-enum IUpdateFollowersVisibility {
-  public,
-  followers,
-  private,
-  unknown,
-}
+enum IUpdateFollowersVisibility { public, followers, private, unknown }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'hashtag.freezed.dart';
 part 'hashtag.g.dart';
@@ -16,5 +15,6 @@ abstract class Hashtag with _$Hashtag {
     required double attachedRemoteUsersCount,
   }) = _Hashtag;
 
-  factory Hashtag.fromJson(Map<String, Object?> json) => _$HashtagFromJson(json);
+  factory Hashtag.fromJson(Map<String, Object?> json) =>
+      _$HashtagFromJson(json);
 }

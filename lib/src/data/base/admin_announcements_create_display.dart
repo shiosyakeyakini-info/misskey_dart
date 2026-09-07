@@ -1,6 +1,1 @@
-enum AdminAnnouncementsCreateDisplay {
-  normal,
-  banner,
-  dialog,
-  unknown,
-}
+enum AdminAnnouncementsCreateDisplay { normal, banner, dialog, unknown }

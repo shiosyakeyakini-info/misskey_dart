@@ -7,13 +7,9 @@ part of 'admin_relays_remove_request.dart';
 // **************************************************************************
 
 _AdminRelaysRemoveRequest _$AdminRelaysRemoveRequestFromJson(
-        Map<String, dynamic> json) =>
-    _AdminRelaysRemoveRequest(
-      inbox: json['inbox'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _AdminRelaysRemoveRequest(inbox: json['inbox'] as String?);
 
 Map<String, dynamic> _$AdminRelaysRemoveRequestToJson(
-        _AdminRelaysRemoveRequest instance) =>
-    <String, dynamic>{
-      'inbox': instance.inbox,
-    };
+  _AdminRelaysRemoveRequest instance,
+) => <String, dynamic>{'inbox': instance.inbox};

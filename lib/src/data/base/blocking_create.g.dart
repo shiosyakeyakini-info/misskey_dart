@@ -7,11 +7,7 @@ part of 'blocking_create.dart';
 // **************************************************************************
 
 _BlockingCreate _$BlockingCreateFromJson(Map<String, dynamic> json) =>
-    _BlockingCreate(
-      userId: json['userId'] as String,
-    );
+    _BlockingCreate(userId: json['userId'] as String);
 
 Map<String, dynamic> _$BlockingCreateToJson(_BlockingCreate instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+    <String, dynamic>{'userId': instance.userId};

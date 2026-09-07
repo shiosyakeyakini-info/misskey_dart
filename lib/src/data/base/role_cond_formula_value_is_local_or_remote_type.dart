@@ -1,5 +1,1 @@
-enum RoleCondFormulaValueIsLocalOrRemoteType {
-  isLocal,
-  isRemote,
-  unknown,
-}
+enum RoleCondFormulaValueIsLocalOrRemoteType { isLocal, isRemote, unknown }

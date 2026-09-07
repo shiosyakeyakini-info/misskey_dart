@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,160 +14,264 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AdminFederationRefreshRemoteInstanceMetadata {
-  String get host;
 
-  /// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AdminFederationRefreshRemoteInstanceMetadataCopyWith<
-          AdminFederationRefreshRemoteInstanceMetadata>
-      get copyWith =>
-          _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl<
-                  AdminFederationRefreshRemoteInstanceMetadata>(
-              this as AdminFederationRefreshRemoteInstanceMetadata, _$identity);
+ String get host;
+/// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AdminFederationRefreshRemoteInstanceMetadataCopyWith<AdminFederationRefreshRemoteInstanceMetadata> get copyWith => _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl<AdminFederationRefreshRemoteInstanceMetadata>(this as AdminFederationRefreshRemoteInstanceMetadata, _$identity);
 
   /// Serializes this AdminFederationRefreshRemoteInstanceMetadata to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AdminFederationRefreshRemoteInstanceMetadata &&
-            (identical(other.host, host) || other.host == host));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, host);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminFederationRefreshRemoteInstanceMetadata&&(identical(other.host, host) || other.host == host));
+}
 
-  @override
-  String toString() {
-    return 'AdminFederationRefreshRemoteInstanceMetadata(host: $host)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,host);
+
+@override
+String toString() {
+  return 'AdminFederationRefreshRemoteInstanceMetadata(host: $host)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AdminFederationRefreshRemoteInstanceMetadataCopyWith<
-    $Res> {
-  factory $AdminFederationRefreshRemoteInstanceMetadataCopyWith(
-          AdminFederationRefreshRemoteInstanceMetadata value,
-          $Res Function(AdminFederationRefreshRemoteInstanceMetadata) _then) =
-      _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl;
-  @useResult
-  $Res call({String host});
-}
+abstract mixin class $AdminFederationRefreshRemoteInstanceMetadataCopyWith<$Res>  {
+  factory $AdminFederationRefreshRemoteInstanceMetadataCopyWith(AdminFederationRefreshRemoteInstanceMetadata value, $Res Function(AdminFederationRefreshRemoteInstanceMetadata) _then) = _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl;
+@useResult
+$Res call({
+ String host
+});
 
+
+
+
+}
 /// @nodoc
 class _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl<$Res>
     implements $AdminFederationRefreshRemoteInstanceMetadataCopyWith<$Res> {
-  _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl(
-      this._self, this._then);
+  _$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl(this._self, this._then);
 
   final AdminFederationRefreshRemoteInstanceMetadata _self;
   final $Res Function(AdminFederationRefreshRemoteInstanceMetadata) _then;
 
-  /// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = null,
-  }) {
-    return _then(_self.copyWith(
-      host: null == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? host = null,}) {
+  return _then(_self.copyWith(
+host: null == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [AdminFederationRefreshRemoteInstanceMetadata].
+extension AdminFederationRefreshRemoteInstanceMetadataPatterns on AdminFederationRefreshRemoteInstanceMetadata {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminFederationRefreshRemoteInstanceMetadata value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AdminFederationRefreshRemoteInstanceMetadata() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminFederationRefreshRemoteInstanceMetadata value)  $default,){
+final _that = this;
+switch (_that) {
+case _AdminFederationRefreshRemoteInstanceMetadata():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminFederationRefreshRemoteInstanceMetadata value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AdminFederationRefreshRemoteInstanceMetadata() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String host)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AdminFederationRefreshRemoteInstanceMetadata() when $default != null:
+return $default(_that.host);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String host)  $default,) {final _that = this;
+switch (_that) {
+case _AdminFederationRefreshRemoteInstanceMetadata():
+return $default(_that.host);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String host)?  $default,) {final _that = this;
+switch (_that) {
+case _AdminFederationRefreshRemoteInstanceMetadata() when $default != null:
+return $default(_that.host);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _AdminFederationRefreshRemoteInstanceMetadata
-    implements AdminFederationRefreshRemoteInstanceMetadata {
+
+class _AdminFederationRefreshRemoteInstanceMetadata implements AdminFederationRefreshRemoteInstanceMetadata {
   const _AdminFederationRefreshRemoteInstanceMetadata({required this.host});
-  factory _AdminFederationRefreshRemoteInstanceMetadata.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminFederationRefreshRemoteInstanceMetadataFromJson(json);
+  factory _AdminFederationRefreshRemoteInstanceMetadata.fromJson(Map<String, dynamic> json) => _$AdminFederationRefreshRemoteInstanceMetadataFromJson(json);
 
-  @override
-  final String host;
+@override final  String host;
 
-  /// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AdminFederationRefreshRemoteInstanceMetadataCopyWith<
-          _AdminFederationRefreshRemoteInstanceMetadata>
-      get copyWith =>
-          __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl<
-              _AdminFederationRefreshRemoteInstanceMetadata>(this, _$identity);
+/// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AdminFederationRefreshRemoteInstanceMetadataCopyWith<_AdminFederationRefreshRemoteInstanceMetadata> get copyWith => __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl<_AdminFederationRefreshRemoteInstanceMetadata>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AdminFederationRefreshRemoteInstanceMetadataToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AdminFederationRefreshRemoteInstanceMetadataToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AdminFederationRefreshRemoteInstanceMetadata &&
-            (identical(other.host, host) || other.host == host));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminFederationRefreshRemoteInstanceMetadata&&(identical(other.host, host) || other.host == host));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, host);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,host);
 
-  @override
-  String toString() {
-    return 'AdminFederationRefreshRemoteInstanceMetadata(host: $host)';
-  }
+@override
+String toString() {
+  return 'AdminFederationRefreshRemoteInstanceMetadata(host: $host)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AdminFederationRefreshRemoteInstanceMetadataCopyWith<
-        $Res>
-    implements $AdminFederationRefreshRemoteInstanceMetadataCopyWith<$Res> {
-  factory _$AdminFederationRefreshRemoteInstanceMetadataCopyWith(
-          _AdminFederationRefreshRemoteInstanceMetadata value,
-          $Res Function(_AdminFederationRefreshRemoteInstanceMetadata) _then) =
-      __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String host});
-}
+abstract mixin class _$AdminFederationRefreshRemoteInstanceMetadataCopyWith<$Res> implements $AdminFederationRefreshRemoteInstanceMetadataCopyWith<$Res> {
+  factory _$AdminFederationRefreshRemoteInstanceMetadataCopyWith(_AdminFederationRefreshRemoteInstanceMetadata value, $Res Function(_AdminFederationRefreshRemoteInstanceMetadata) _then) = __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl;
+@override @useResult
+$Res call({
+ String host
+});
 
+
+
+
+}
 /// @nodoc
 class __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl<$Res>
     implements _$AdminFederationRefreshRemoteInstanceMetadataCopyWith<$Res> {
-  __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl(
-      this._self, this._then);
+  __$AdminFederationRefreshRemoteInstanceMetadataCopyWithImpl(this._self, this._then);
 
   final _AdminFederationRefreshRemoteInstanceMetadata _self;
   final $Res Function(_AdminFederationRefreshRemoteInstanceMetadata) _then;
 
-  /// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? host = null,
-  }) {
-    return _then(_AdminFederationRefreshRemoteInstanceMetadata(
-      host: null == host
-          ? _self.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AdminFederationRefreshRemoteInstanceMetadata
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? host = null,}) {
+  return _then(_AdminFederationRefreshRemoteInstanceMetadata(
+host: null == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

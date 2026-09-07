@@ -14,6 +14,4 @@ _I2faDoneResponse _$I2faDoneResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$I2faDoneResponseToJson(_I2faDoneResponse instance) =>
-    <String, dynamic>{
-      'backupCodes': instance.backupCodes,
-    };
+    <String, dynamic>{'backupCodes': instance.backupCodes};

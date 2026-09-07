@@ -13,7 +13,4 @@ _FlashMyLikesItem _$FlashMyLikesItemFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FlashMyLikesItemToJson(_FlashMyLikesItem instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'flash': instance.flash.toJson(),
-    };
+    <String, dynamic>{'id': instance.id, 'flash': instance.flash.toJson()};

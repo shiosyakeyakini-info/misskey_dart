@@ -10,13 +10,17 @@ _AntennasUpdate _$AntennasUpdateFromJson(Map<String, dynamic> json) =>
     _AntennasUpdate(
       antennaId: json['antennaId'] as String,
       name: json['name'] as String?,
-      src: $enumDecodeNullable(_$AntennaSourceEnumMap, json['src'],
-          unknownValue: AntennaSource.unknown),
+      src: $enumDecodeNullable(
+        _$AntennaSourceEnumMap,
+        json['src'],
+        unknownValue: AntennaSource.unknown,
+      ),
       userListId: json['userListId'] as String?,
       keywords: json['keywords'] as List<dynamic>?,
       excludeKeywords: json['excludeKeywords'] as List<dynamic>?,
-      users:
-          (json['users'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      users: (json['users'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       caseSensitive: json['caseSensitive'] as bool?,
       localOnly: json['localOnly'] as bool?,
       excludeBots: json['excludeBots'] as bool?,

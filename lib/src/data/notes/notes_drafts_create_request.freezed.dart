@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,115 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$NotesDraftsCreateRequest {
-  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
-  NoteVisibility? get visibility;
-  List<String>? get visibleUserIds;
-  String? get cw;
-  String? get hashtag;
-  bool? get localOnly;
-  @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
-  NotesDraftsCreateReactionAcceptance? get reactionAcceptance;
-  String? get replyId;
-  String? get renoteId;
-  String? get channelId;
-  String? get text;
-  List<String>? get fileIds;
-  NotesDraftsCreatePoll? get poll;
-  int? get scheduledAt;
-  bool? get isActuallyScheduled;
 
-  /// Create a copy of NotesDraftsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $NotesDraftsCreateRequestCopyWith<NotesDraftsCreateRequest> get copyWith =>
-      _$NotesDraftsCreateRequestCopyWithImpl<NotesDraftsCreateRequest>(
-          this as NotesDraftsCreateRequest, _$identity);
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? get visibility; List<String>? get visibleUserIds; String? get cw; String? get hashtag; bool? get localOnly;@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) NotesDraftsCreateReactionAcceptance? get reactionAcceptance; String? get replyId; String? get renoteId; String? get channelId; String? get text; List<String>? get fileIds; NotesDraftsCreatePoll? get poll; int? get scheduledAt; bool? get isActuallyScheduled;
+/// Create a copy of NotesDraftsCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NotesDraftsCreateRequestCopyWith<NotesDraftsCreateRequest> get copyWith => _$NotesDraftsCreateRequestCopyWithImpl<NotesDraftsCreateRequest>(this as NotesDraftsCreateRequest, _$identity);
 
   /// Serializes this NotesDraftsCreateRequest to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is NotesDraftsCreateRequest &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility) &&
-            const DeepCollectionEquality()
-                .equals(other.visibleUserIds, visibleUserIds) &&
-            (identical(other.cw, cw) || other.cw == cw) &&
-            (identical(other.hashtag, hashtag) || other.hashtag == hashtag) &&
-            (identical(other.localOnly, localOnly) ||
-                other.localOnly == localOnly) &&
-            (identical(other.reactionAcceptance, reactionAcceptance) ||
-                other.reactionAcceptance == reactionAcceptance) &&
-            (identical(other.replyId, replyId) || other.replyId == replyId) &&
-            (identical(other.renoteId, renoteId) ||
-                other.renoteId == renoteId) &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId) &&
-            (identical(other.text, text) || other.text == text) &&
-            const DeepCollectionEquality().equals(other.fileIds, fileIds) &&
-            (identical(other.poll, poll) || other.poll == poll) &&
-            (identical(other.scheduledAt, scheduledAt) ||
-                other.scheduledAt == scheduledAt) &&
-            (identical(other.isActuallyScheduled, isActuallyScheduled) ||
-                other.isActuallyScheduled == isActuallyScheduled));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      visibility,
-      const DeepCollectionEquality().hash(visibleUserIds),
-      cw,
-      hashtag,
-      localOnly,
-      reactionAcceptance,
-      replyId,
-      renoteId,
-      channelId,
-      text,
-      const DeepCollectionEquality().hash(fileIds),
-      poll,
-      scheduledAt,
-      isActuallyScheduled);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesDraftsCreateRequest&&(identical(other.visibility, visibility) || other.visibility == visibility)&&const DeepCollectionEquality().equals(other.visibleUserIds, visibleUserIds)&&(identical(other.cw, cw) || other.cw == cw)&&(identical(other.hashtag, hashtag) || other.hashtag == hashtag)&&(identical(other.localOnly, localOnly) || other.localOnly == localOnly)&&(identical(other.reactionAcceptance, reactionAcceptance) || other.reactionAcceptance == reactionAcceptance)&&(identical(other.replyId, replyId) || other.replyId == replyId)&&(identical(other.renoteId, renoteId) || other.renoteId == renoteId)&&(identical(other.channelId, channelId) || other.channelId == channelId)&&(identical(other.text, text) || other.text == text)&&const DeepCollectionEquality().equals(other.fileIds, fileIds)&&(identical(other.poll, poll) || other.poll == poll)&&(identical(other.scheduledAt, scheduledAt) || other.scheduledAt == scheduledAt)&&(identical(other.isActuallyScheduled, isActuallyScheduled) || other.isActuallyScheduled == isActuallyScheduled));
+}
 
-  @override
-  String toString() {
-    return 'NotesDraftsCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll, scheduledAt: $scheduledAt, isActuallyScheduled: $isActuallyScheduled)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,visibility,const DeepCollectionEquality().hash(visibleUserIds),cw,hashtag,localOnly,reactionAcceptance,replyId,renoteId,channelId,text,const DeepCollectionEquality().hash(fileIds),poll,scheduledAt,isActuallyScheduled);
+
+@override
+String toString() {
+  return 'NotesDraftsCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll, scheduledAt: $scheduledAt, isActuallyScheduled: $isActuallyScheduled)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $NotesDraftsCreateRequestCopyWith<$Res> {
-  factory $NotesDraftsCreateRequestCopyWith(NotesDraftsCreateRequest value,
-          $Res Function(NotesDraftsCreateRequest) _then) =
-      _$NotesDraftsCreateRequestCopyWithImpl;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
-      NoteVisibility? visibility,
-      List<String>? visibleUserIds,
-      String? cw,
-      String? hashtag,
-      bool? localOnly,
-      @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
-      NotesDraftsCreateReactionAcceptance? reactionAcceptance,
-      String? replyId,
-      String? renoteId,
-      String? channelId,
-      String? text,
-      List<String>? fileIds,
-      NotesDraftsCreatePoll? poll,
-      int? scheduledAt,
-      bool? isActuallyScheduled});
+abstract mixin class $NotesDraftsCreateRequestCopyWith<$Res>  {
+  factory $NotesDraftsCreateRequestCopyWith(NotesDraftsCreateRequest value, $Res Function(NotesDraftsCreateRequest) _then) = _$NotesDraftsCreateRequestCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) NotesDraftsCreateReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsCreatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
+});
 
-  $NotesDraftsCreatePollCopyWith<$Res>? get poll;
+
+$NotesDraftsCreatePollCopyWith<$Res>? get poll;
+
 }
-
 /// @nodoc
 class _$NotesDraftsCreateRequestCopyWithImpl<$Res>
     implements $NotesDraftsCreateRequestCopyWith<$Res> {
@@ -132,275 +63,251 @@ class _$NotesDraftsCreateRequestCopyWithImpl<$Res>
   final NotesDraftsCreateRequest _self;
   final $Res Function(NotesDraftsCreateRequest) _then;
 
-  /// Create a copy of NotesDraftsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? visibility = freezed,
-    Object? visibleUserIds = freezed,
-    Object? cw = freezed,
-    Object? hashtag = freezed,
-    Object? localOnly = freezed,
-    Object? reactionAcceptance = freezed,
-    Object? replyId = freezed,
-    Object? renoteId = freezed,
-    Object? channelId = freezed,
-    Object? text = freezed,
-    Object? fileIds = freezed,
-    Object? poll = freezed,
-    Object? scheduledAt = freezed,
-    Object? isActuallyScheduled = freezed,
-  }) {
-    return _then(_self.copyWith(
-      visibility: freezed == visibility
-          ? _self.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
-      visibleUserIds: freezed == visibleUserIds
-          ? _self.visibleUserIds
-          : visibleUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      cw: freezed == cw
-          ? _self.cw
-          : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hashtag: freezed == hashtag
-          ? _self.hashtag
-          : hashtag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      localOnly: freezed == localOnly
-          ? _self.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      reactionAcceptance: freezed == reactionAcceptance
-          ? _self.reactionAcceptance
-          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-              as NotesDraftsCreateReactionAcceptance?,
-      replyId: freezed == replyId
-          ? _self.replyId
-          : replyId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      renoteId: freezed == renoteId
-          ? _self.renoteId
-          : renoteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fileIds: freezed == fileIds
-          ? _self.fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      poll: freezed == poll
-          ? _self.poll
-          : poll // ignore: cast_nullable_to_non_nullable
-              as NotesDraftsCreatePoll?,
-      scheduledAt: freezed == scheduledAt
-          ? _self.scheduledAt
-          : scheduledAt // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isActuallyScheduled: freezed == isActuallyScheduled
-          ? _self.isActuallyScheduled
-          : isActuallyScheduled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-
-  /// Create a copy of NotesDraftsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NotesDraftsCreatePollCopyWith<$Res>? get poll {
+/// Create a copy of NotesDraftsCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? visibility = freezed,Object? visibleUserIds = freezed,Object? cw = freezed,Object? hashtag = freezed,Object? localOnly = freezed,Object? reactionAcceptance = freezed,Object? replyId = freezed,Object? renoteId = freezed,Object? channelId = freezed,Object? text = freezed,Object? fileIds = freezed,Object? poll = freezed,Object? scheduledAt = freezed,Object? isActuallyScheduled = freezed,}) {
+  return _then(_self.copyWith(
+visibility: freezed == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
+as NoteVisibility?,visibleUserIds: freezed == visibleUserIds ? _self.visibleUserIds : visibleUserIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_non_nullable
+as String?,hashtag: freezed == hashtag ? _self.hashtag : hashtag // ignore: cast_nullable_to_non_nullable
+as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
+as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+as NotesDraftsCreateReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
+as String?,renoteId: freezed == renoteId ? _self.renoteId : renoteId // ignore: cast_nullable_to_non_nullable
+as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as String?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String?,fileIds: freezed == fileIds ? _self.fileIds : fileIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,poll: freezed == poll ? _self.poll : poll // ignore: cast_nullable_to_non_nullable
+as NotesDraftsCreatePoll?,scheduledAt: freezed == scheduledAt ? _self.scheduledAt : scheduledAt // ignore: cast_nullable_to_non_nullable
+as int?,isActuallyScheduled: freezed == isActuallyScheduled ? _self.isActuallyScheduled : isActuallyScheduled // ignore: cast_nullable_to_non_nullable
+as bool?,
+  ));
+}
+/// Create a copy of NotesDraftsCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NotesDraftsCreatePollCopyWith<$Res>? get poll {
     if (_self.poll == null) {
-      return null;
-    }
-
-    return $NotesDraftsCreatePollCopyWith<$Res>(_self.poll!, (value) {
-      return _then(_self.copyWith(poll: value));
-    });
+    return null;
   }
+
+  return $NotesDraftsCreatePollCopyWith<$Res>(_self.poll!, (value) {
+    return _then(_self.copyWith(poll: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [NotesDraftsCreateRequest].
+extension NotesDraftsCreateRequestPatterns on NotesDraftsCreateRequest {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _NotesDraftsCreateRequest value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _NotesDraftsCreateRequest() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _NotesDraftsCreateRequest value)  $default,){
+final _that = this;
+switch (_that) {
+case _NotesDraftsCreateRequest():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _NotesDraftsCreateRequest value)?  $default,){
+final _that = this;
+switch (_that) {
+case _NotesDraftsCreateRequest() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)  NotesDraftsCreateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _NotesDraftsCreateRequest() when $default != null:
+return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)  NotesDraftsCreateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)  $default,) {final _that = this;
+switch (_that) {
+case _NotesDraftsCreateRequest():
+return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility? visibility,  List<String>? visibleUserIds,  String? cw,  String? hashtag,  bool? localOnly, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)  NotesDraftsCreateReactionAcceptance? reactionAcceptance,  String? replyId,  String? renoteId,  String? channelId,  String? text,  List<String>? fileIds,  NotesDraftsCreatePoll? poll,  int? scheduledAt,  bool? isActuallyScheduled)?  $default,) {final _that = this;
+switch (_that) {
+case _NotesDraftsCreateRequest() when $default != null:
+return $default(_that.visibility,_that.visibleUserIds,_that.cw,_that.hashtag,_that.localOnly,_that.reactionAcceptance,_that.replyId,_that.renoteId,_that.channelId,_that.text,_that.fileIds,_that.poll,_that.scheduledAt,_that.isActuallyScheduled);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _NotesDraftsCreateRequest implements NotesDraftsCreateRequest {
-  const _NotesDraftsCreateRequest(
-      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
-      this.visibility = NoteVisibility.public,
-      final List<String>? visibleUserIds,
-      this.cw,
-      this.hashtag,
-      this.localOnly = false,
-      @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
-      this.reactionAcceptance = null,
-      this.replyId,
-      this.renoteId,
-      this.channelId,
-      this.text,
-      final List<String>? fileIds,
-      this.poll,
-      this.scheduledAt,
-      this.isActuallyScheduled = false})
-      : _visibleUserIds = visibleUserIds,
-        _fileIds = fileIds;
-  factory _NotesDraftsCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$NotesDraftsCreateRequestFromJson(json);
+  const _NotesDraftsCreateRequest({@JsonKey(unknownEnumValue: NoteVisibility.unknown) this.visibility = NoteVisibility.public, final  List<String>? visibleUserIds, this.cw, this.hashtag, this.localOnly = false, @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) this.reactionAcceptance = null, this.replyId, this.renoteId, this.channelId, this.text, final  List<String>? fileIds, this.poll, this.scheduledAt, this.isActuallyScheduled = false}): _visibleUserIds = visibleUserIds,_fileIds = fileIds;
+  factory _NotesDraftsCreateRequest.fromJson(Map<String, dynamic> json) => _$NotesDraftsCreateRequestFromJson(json);
 
-  @override
-  @JsonKey(unknownEnumValue: NoteVisibility.unknown)
-  final NoteVisibility? visibility;
-  final List<String>? _visibleUserIds;
-  @override
-  List<String>? get visibleUserIds {
-    final value = _visibleUserIds;
-    if (value == null) return null;
-    if (_visibleUserIds is EqualUnmodifiableListView) return _visibleUserIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+@override@JsonKey(unknownEnumValue: NoteVisibility.unknown) final  NoteVisibility? visibility;
+ final  List<String>? _visibleUserIds;
+@override List<String>? get visibleUserIds {
+  final value = _visibleUserIds;
+  if (value == null) return null;
+  if (_visibleUserIds is EqualUnmodifiableListView) return _visibleUserIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
 
-  @override
-  final String? cw;
-  @override
-  final String? hashtag;
-  @override
-  @JsonKey()
-  final bool? localOnly;
-  @override
-  @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
-  final NotesDraftsCreateReactionAcceptance? reactionAcceptance;
-  @override
-  final String? replyId;
-  @override
-  final String? renoteId;
-  @override
-  final String? channelId;
-  @override
-  final String? text;
-  final List<String>? _fileIds;
-  @override
-  List<String>? get fileIds {
-    final value = _fileIds;
-    if (value == null) return null;
-    if (_fileIds is EqualUnmodifiableListView) return _fileIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+@override final  String? cw;
+@override final  String? hashtag;
+@override@JsonKey() final  bool? localOnly;
+@override@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) final  NotesDraftsCreateReactionAcceptance? reactionAcceptance;
+@override final  String? replyId;
+@override final  String? renoteId;
+@override final  String? channelId;
+@override final  String? text;
+ final  List<String>? _fileIds;
+@override List<String>? get fileIds {
+  final value = _fileIds;
+  if (value == null) return null;
+  if (_fileIds is EqualUnmodifiableListView) return _fileIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
 
-  @override
-  final NotesDraftsCreatePoll? poll;
-  @override
-  final int? scheduledAt;
-  @override
-  @JsonKey()
-  final bool? isActuallyScheduled;
+@override final  NotesDraftsCreatePoll? poll;
+@override final  int? scheduledAt;
+@override@JsonKey() final  bool? isActuallyScheduled;
 
-  /// Create a copy of NotesDraftsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$NotesDraftsCreateRequestCopyWith<_NotesDraftsCreateRequest> get copyWith =>
-      __$NotesDraftsCreateRequestCopyWithImpl<_NotesDraftsCreateRequest>(
-          this, _$identity);
+/// Create a copy of NotesDraftsCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NotesDraftsCreateRequestCopyWith<_NotesDraftsCreateRequest> get copyWith => __$NotesDraftsCreateRequestCopyWithImpl<_NotesDraftsCreateRequest>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$NotesDraftsCreateRequestToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$NotesDraftsCreateRequestToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _NotesDraftsCreateRequest &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility) &&
-            const DeepCollectionEquality()
-                .equals(other._visibleUserIds, _visibleUserIds) &&
-            (identical(other.cw, cw) || other.cw == cw) &&
-            (identical(other.hashtag, hashtag) || other.hashtag == hashtag) &&
-            (identical(other.localOnly, localOnly) ||
-                other.localOnly == localOnly) &&
-            (identical(other.reactionAcceptance, reactionAcceptance) ||
-                other.reactionAcceptance == reactionAcceptance) &&
-            (identical(other.replyId, replyId) || other.replyId == replyId) &&
-            (identical(other.renoteId, renoteId) ||
-                other.renoteId == renoteId) &&
-            (identical(other.channelId, channelId) ||
-                other.channelId == channelId) &&
-            (identical(other.text, text) || other.text == text) &&
-            const DeepCollectionEquality().equals(other._fileIds, _fileIds) &&
-            (identical(other.poll, poll) || other.poll == poll) &&
-            (identical(other.scheduledAt, scheduledAt) ||
-                other.scheduledAt == scheduledAt) &&
-            (identical(other.isActuallyScheduled, isActuallyScheduled) ||
-                other.isActuallyScheduled == isActuallyScheduled));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesDraftsCreateRequest&&(identical(other.visibility, visibility) || other.visibility == visibility)&&const DeepCollectionEquality().equals(other._visibleUserIds, _visibleUserIds)&&(identical(other.cw, cw) || other.cw == cw)&&(identical(other.hashtag, hashtag) || other.hashtag == hashtag)&&(identical(other.localOnly, localOnly) || other.localOnly == localOnly)&&(identical(other.reactionAcceptance, reactionAcceptance) || other.reactionAcceptance == reactionAcceptance)&&(identical(other.replyId, replyId) || other.replyId == replyId)&&(identical(other.renoteId, renoteId) || other.renoteId == renoteId)&&(identical(other.channelId, channelId) || other.channelId == channelId)&&(identical(other.text, text) || other.text == text)&&const DeepCollectionEquality().equals(other._fileIds, _fileIds)&&(identical(other.poll, poll) || other.poll == poll)&&(identical(other.scheduledAt, scheduledAt) || other.scheduledAt == scheduledAt)&&(identical(other.isActuallyScheduled, isActuallyScheduled) || other.isActuallyScheduled == isActuallyScheduled));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      visibility,
-      const DeepCollectionEquality().hash(_visibleUserIds),
-      cw,
-      hashtag,
-      localOnly,
-      reactionAcceptance,
-      replyId,
-      renoteId,
-      channelId,
-      text,
-      const DeepCollectionEquality().hash(_fileIds),
-      poll,
-      scheduledAt,
-      isActuallyScheduled);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,visibility,const DeepCollectionEquality().hash(_visibleUserIds),cw,hashtag,localOnly,reactionAcceptance,replyId,renoteId,channelId,text,const DeepCollectionEquality().hash(_fileIds),poll,scheduledAt,isActuallyScheduled);
 
-  @override
-  String toString() {
-    return 'NotesDraftsCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll, scheduledAt: $scheduledAt, isActuallyScheduled: $isActuallyScheduled)';
-  }
+@override
+String toString() {
+  return 'NotesDraftsCreateRequest(visibility: $visibility, visibleUserIds: $visibleUserIds, cw: $cw, hashtag: $hashtag, localOnly: $localOnly, reactionAcceptance: $reactionAcceptance, replyId: $replyId, renoteId: $renoteId, channelId: $channelId, text: $text, fileIds: $fileIds, poll: $poll, scheduledAt: $scheduledAt, isActuallyScheduled: $isActuallyScheduled)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$NotesDraftsCreateRequestCopyWith<$Res>
-    implements $NotesDraftsCreateRequestCopyWith<$Res> {
-  factory _$NotesDraftsCreateRequestCopyWith(_NotesDraftsCreateRequest value,
-          $Res Function(_NotesDraftsCreateRequest) _then) =
-      __$NotesDraftsCreateRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: NoteVisibility.unknown)
-      NoteVisibility? visibility,
-      List<String>? visibleUserIds,
-      String? cw,
-      String? hashtag,
-      bool? localOnly,
-      @JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown)
-      NotesDraftsCreateReactionAcceptance? reactionAcceptance,
-      String? replyId,
-      String? renoteId,
-      String? channelId,
-      String? text,
-      List<String>? fileIds,
-      NotesDraftsCreatePoll? poll,
-      int? scheduledAt,
-      bool? isActuallyScheduled});
+abstract mixin class _$NotesDraftsCreateRequestCopyWith<$Res> implements $NotesDraftsCreateRequestCopyWith<$Res> {
+  factory _$NotesDraftsCreateRequestCopyWith(_NotesDraftsCreateRequest value, $Res Function(_NotesDraftsCreateRequest) _then) = __$NotesDraftsCreateRequestCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility? visibility, List<String>? visibleUserIds, String? cw, String? hashtag, bool? localOnly,@JsonKey(unknownEnumValue: NotesDraftsCreateReactionAcceptance.unknown) NotesDraftsCreateReactionAcceptance? reactionAcceptance, String? replyId, String? renoteId, String? channelId, String? text, List<String>? fileIds, NotesDraftsCreatePoll? poll, int? scheduledAt, bool? isActuallyScheduled
+});
 
-  @override
-  $NotesDraftsCreatePollCopyWith<$Res>? get poll;
+
+@override $NotesDraftsCreatePollCopyWith<$Res>? get poll;
+
 }
-
 /// @nodoc
 class __$NotesDraftsCreateRequestCopyWithImpl<$Res>
     implements _$NotesDraftsCreateRequestCopyWith<$Res> {
@@ -409,99 +316,41 @@ class __$NotesDraftsCreateRequestCopyWithImpl<$Res>
   final _NotesDraftsCreateRequest _self;
   final $Res Function(_NotesDraftsCreateRequest) _then;
 
-  /// Create a copy of NotesDraftsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? visibility = freezed,
-    Object? visibleUserIds = freezed,
-    Object? cw = freezed,
-    Object? hashtag = freezed,
-    Object? localOnly = freezed,
-    Object? reactionAcceptance = freezed,
-    Object? replyId = freezed,
-    Object? renoteId = freezed,
-    Object? channelId = freezed,
-    Object? text = freezed,
-    Object? fileIds = freezed,
-    Object? poll = freezed,
-    Object? scheduledAt = freezed,
-    Object? isActuallyScheduled = freezed,
-  }) {
-    return _then(_NotesDraftsCreateRequest(
-      visibility: freezed == visibility
-          ? _self.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as NoteVisibility?,
-      visibleUserIds: freezed == visibleUserIds
-          ? _self._visibleUserIds
-          : visibleUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      cw: freezed == cw
-          ? _self.cw
-          : cw // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hashtag: freezed == hashtag
-          ? _self.hashtag
-          : hashtag // ignore: cast_nullable_to_non_nullable
-              as String?,
-      localOnly: freezed == localOnly
-          ? _self.localOnly
-          : localOnly // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      reactionAcceptance: freezed == reactionAcceptance
-          ? _self.reactionAcceptance
-          : reactionAcceptance // ignore: cast_nullable_to_non_nullable
-              as NotesDraftsCreateReactionAcceptance?,
-      replyId: freezed == replyId
-          ? _self.replyId
-          : replyId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      renoteId: freezed == renoteId
-          ? _self.renoteId
-          : renoteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channelId: freezed == channelId
-          ? _self.channelId
-          : channelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fileIds: freezed == fileIds
-          ? _self._fileIds
-          : fileIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      poll: freezed == poll
-          ? _self.poll
-          : poll // ignore: cast_nullable_to_non_nullable
-              as NotesDraftsCreatePoll?,
-      scheduledAt: freezed == scheduledAt
-          ? _self.scheduledAt
-          : scheduledAt // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isActuallyScheduled: freezed == isActuallyScheduled
-          ? _self.isActuallyScheduled
-          : isActuallyScheduled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
+/// Create a copy of NotesDraftsCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? visibility = freezed,Object? visibleUserIds = freezed,Object? cw = freezed,Object? hashtag = freezed,Object? localOnly = freezed,Object? reactionAcceptance = freezed,Object? replyId = freezed,Object? renoteId = freezed,Object? channelId = freezed,Object? text = freezed,Object? fileIds = freezed,Object? poll = freezed,Object? scheduledAt = freezed,Object? isActuallyScheduled = freezed,}) {
+  return _then(_NotesDraftsCreateRequest(
+visibility: freezed == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
+as NoteVisibility?,visibleUserIds: freezed == visibleUserIds ? _self._visibleUserIds : visibleUserIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,cw: freezed == cw ? _self.cw : cw // ignore: cast_nullable_to_non_nullable
+as String?,hashtag: freezed == hashtag ? _self.hashtag : hashtag // ignore: cast_nullable_to_non_nullable
+as String?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
+as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+as NotesDraftsCreateReactionAcceptance?,replyId: freezed == replyId ? _self.replyId : replyId // ignore: cast_nullable_to_non_nullable
+as String?,renoteId: freezed == renoteId ? _self.renoteId : renoteId // ignore: cast_nullable_to_non_nullable
+as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
+as String?,text: freezed == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String?,fileIds: freezed == fileIds ? _self._fileIds : fileIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,poll: freezed == poll ? _self.poll : poll // ignore: cast_nullable_to_non_nullable
+as NotesDraftsCreatePoll?,scheduledAt: freezed == scheduledAt ? _self.scheduledAt : scheduledAt // ignore: cast_nullable_to_non_nullable
+as int?,isActuallyScheduled: freezed == isActuallyScheduled ? _self.isActuallyScheduled : isActuallyScheduled // ignore: cast_nullable_to_non_nullable
+as bool?,
+  ));
+}
 
-  /// Create a copy of NotesDraftsCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NotesDraftsCreatePollCopyWith<$Res>? get poll {
+/// Create a copy of NotesDraftsCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NotesDraftsCreatePollCopyWith<$Res>? get poll {
     if (_self.poll == null) {
-      return null;
-    }
-
-    return $NotesDraftsCreatePollCopyWith<$Res>(_self.poll!, (value) {
-      return _then(_self.copyWith(poll: value));
-    });
+    return null;
   }
+
+  return $NotesDraftsCreatePollCopyWith<$Res>(_self.poll!, (value) {
+    return _then(_self.copyWith(poll: value));
+  });
+}
 }
 
 // dart format on

@@ -6,11 +6,8 @@ part of 'flash_like.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FlashLike _$FlashLikeFromJson(Map<String, dynamic> json) => _FlashLike(
-      flashId: json['flashId'] as String,
-    );
+_FlashLike _$FlashLikeFromJson(Map<String, dynamic> json) =>
+    _FlashLike(flashId: json['flashId'] as String);
 
 Map<String, dynamic> _$FlashLikeToJson(_FlashLike instance) =>
-    <String, dynamic>{
-      'flashId': instance.flashId,
-    };
+    <String, dynamic>{'flashId': instance.flashId};

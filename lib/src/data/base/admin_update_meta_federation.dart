@@ -1,6 +1,1 @@
-enum AdminUpdateMetaFederation {
-  all,
-  none,
-  specified,
-  unknown,
-}
+enum AdminUpdateMetaFederation { all, none, specified, unknown }

@@ -13,7 +13,4 @@ _ServerInfoCpu _$ServerInfoCpuFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ServerInfoCpuToJson(_ServerInfoCpu instance) =>
-    <String, dynamic>{
-      'model': instance.model,
-      'cores': instance.cores,
-    };
+    <String, dynamic>{'model': instance.model, 'cores': instance.cores};

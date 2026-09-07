@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'reset_password.freezed.dart';
 part 'reset_password.g.dart';
@@ -11,5 +10,6 @@ abstract class ResetPassword with _$ResetPassword {
     required String password,
   }) = _ResetPassword;
 
-  factory ResetPassword.fromJson(Map<String, Object?> json) => _$ResetPasswordFromJson(json);
+  factory ResetPassword.fromJson(Map<String, Object?> json) =>
+      _$ResetPasswordFromJson(json);
 }

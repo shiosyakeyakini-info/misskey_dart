@@ -1,6 +1,1 @@
-enum AnnouncementDisplay {
-  dialog,
-  normal,
-  banner,
-  unknown,
-}
+enum AnnouncementDisplay { dialog, normal, banner, unknown }

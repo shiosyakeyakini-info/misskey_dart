@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:misskey_dart/misskey_dart.dart';
 
 part 'admin_server_info_cpu.freezed.dart';
 part 'admin_server_info_cpu.g.dart';
@@ -11,5 +10,6 @@ abstract class AdminServerInfoCpu with _$AdminServerInfoCpu {
     required double cores,
   }) = _AdminServerInfoCpu;
 
-  factory AdminServerInfoCpu.fromJson(Map<String, Object?> json) => _$AdminServerInfoCpuFromJson(json);
+  factory AdminServerInfoCpu.fromJson(Map<String, Object?> json) =>
+      _$AdminServerInfoCpuFromJson(json);
 }

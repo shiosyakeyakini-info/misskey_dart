@@ -17,7 +17,4 @@ _ChartsUserPvUpv _$ChartsUserPvUpvFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChartsUserPvUpvToJson(_ChartsUserPvUpv instance) =>
-    <String, dynamic>{
-      'user': instance.user,
-      'visitor': instance.visitor,
-    };
+    <String, dynamic>{'user': instance.user, 'visitor': instance.visitor};

@@ -25,5 +25,6 @@ abstract class DriveFile with _$DriveFile {
     Map<String, dynamic>? user,
   }) = _DriveFile;
 
-  factory DriveFile.fromJson(Map<String, Object?> json) => _$DriveFileFromJson(json);
+  factory DriveFile.fromJson(Map<String, Object?> json) =>
+      _$DriveFileFromJson(json);
 }

@@ -7,27 +7,27 @@ part of 'charts_instance_notes_diffs.dart';
 // **************************************************************************
 
 _ChartsInstanceNotesDiffs _$ChartsInstanceNotesDiffsFromJson(
-        Map<String, dynamic> json) =>
-    _ChartsInstanceNotesDiffs(
-      normal: (json['normal'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
-          .toList(),
-      reply: (json['reply'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
-          .toList(),
-      renote: (json['renote'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
-          .toList(),
-      withFile: (json['withFile'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => _ChartsInstanceNotesDiffs(
+  normal: (json['normal'] as List<dynamic>)
+      .map((e) => (e as num).toDouble())
+      .toList(),
+  reply: (json['reply'] as List<dynamic>)
+      .map((e) => (e as num).toDouble())
+      .toList(),
+  renote: (json['renote'] as List<dynamic>)
+      .map((e) => (e as num).toDouble())
+      .toList(),
+  withFile: (json['withFile'] as List<dynamic>)
+      .map((e) => (e as num).toDouble())
+      .toList(),
+);
 
 Map<String, dynamic> _$ChartsInstanceNotesDiffsToJson(
-        _ChartsInstanceNotesDiffs instance) =>
-    <String, dynamic>{
-      'normal': instance.normal,
-      'reply': instance.reply,
-      'renote': instance.renote,
-      'withFile': instance.withFile,
-    };
+  _ChartsInstanceNotesDiffs instance,
+) => <String, dynamic>{
+  'normal': instance.normal,
+  'reply': instance.reply,
+  'renote': instance.renote,
+  'withFile': instance.withFile,
+};

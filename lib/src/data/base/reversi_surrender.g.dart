@@ -7,11 +7,7 @@ part of 'reversi_surrender.dart';
 // **************************************************************************
 
 _ReversiSurrender _$ReversiSurrenderFromJson(Map<String, dynamic> json) =>
-    _ReversiSurrender(
-      gameId: json['gameId'] as String,
-    );
+    _ReversiSurrender(gameId: json['gameId'] as String);
 
 Map<String, dynamic> _$ReversiSurrenderToJson(_ReversiSurrender instance) =>
-    <String, dynamic>{
-      'gameId': instance.gameId,
-    };
+    <String, dynamic>{'gameId': instance.gameId};

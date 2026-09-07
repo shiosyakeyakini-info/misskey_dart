@@ -13,7 +13,4 @@ _ChartsUserPv _$ChartsUserPvFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ChartsUserPvToJson(_ChartsUserPv instance) =>
-    <String, dynamic>{
-      'upv': instance.upv.toJson(),
-      'pv': instance.pv.toJson(),
-    };
+    <String, dynamic>{'upv': instance.upv.toJson(), 'pv': instance.pv.toJson()};

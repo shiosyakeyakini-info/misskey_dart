@@ -7,23 +7,23 @@ part of 'users_reactions_request.dart';
 // **************************************************************************
 
 _UsersReactionsRequest _$UsersReactionsRequestFromJson(
-        Map<String, dynamic> json) =>
-    _UsersReactionsRequest(
-      userId: json['userId'] as String?,
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => _UsersReactionsRequest(
+  userId: json['userId'] as String?,
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$UsersReactionsRequestToJson(
-        _UsersReactionsRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'limit': instance.limit,
-      'sinceId': instance.sinceId,
-      'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
-    };
+  _UsersReactionsRequest instance,
+) => <String, dynamic>{
+  'userId': instance.userId,
+  'limit': instance.limit,
+  'sinceId': instance.sinceId,
+  'untilId': instance.untilId,
+  'sinceDate': instance.sinceDate,
+  'untilDate': instance.untilDate,
+};

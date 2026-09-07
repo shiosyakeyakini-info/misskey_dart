@@ -7,12 +7,9 @@ part of 'chat_history.dart';
 // **************************************************************************
 
 _ChatHistory _$ChatHistoryFromJson(Map<String, dynamic> json) => _ChatHistory(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      room: json['room'] as bool? ?? false,
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  room: json['room'] as bool? ?? false,
+);
 
 Map<String, dynamic> _$ChatHistoryToJson(_ChatHistory instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'room': instance.room,
-    };
+    <String, dynamic>{'limit': instance.limit, 'room': instance.room};

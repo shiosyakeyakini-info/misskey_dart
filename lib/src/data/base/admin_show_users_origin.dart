@@ -1,6 +1,1 @@
-enum AdminShowUsersOrigin {
-  combined,
-  local,
-  remote,
-  unknown,
-}
+enum AdminShowUsersOrigin { combined, local, remote, unknown }

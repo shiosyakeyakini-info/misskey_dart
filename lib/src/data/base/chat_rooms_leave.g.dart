@@ -7,11 +7,7 @@ part of 'chat_rooms_leave.dart';
 // **************************************************************************
 
 _ChatRoomsLeave _$ChatRoomsLeaveFromJson(Map<String, dynamic> json) =>
-    _ChatRoomsLeave(
-      roomId: json['roomId'] as String,
-    );
+    _ChatRoomsLeave(roomId: json['roomId'] as String);
 
 Map<String, dynamic> _$ChatRoomsLeaveToJson(_ChatRoomsLeave instance) =>
-    <String, dynamic>{
-      'roomId': instance.roomId,
-    };
+    <String, dynamic>{'roomId': instance.roomId};

@@ -7,24 +7,25 @@ part of 'me_detailed_only_notification_recieve_config_poll_ended.dart';
 // **************************************************************************
 
 _MeDetailedOnlyNotificationRecieveConfigPollEnded
-    _$MeDetailedOnlyNotificationRecieveConfigPollEndedFromJson(
-            Map<String, dynamic> json) =>
-        _MeDetailedOnlyNotificationRecieveConfigPollEnded(
-          type: $enumDecode(
-              _$MeDetailedOnlyNotificationRecieveConfigPollEndedTypeEnumMap,
-              json['type'],
-              unknownValue:
-                  MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown),
-          userListId: json['userListId'] as String,
-        );
+_$MeDetailedOnlyNotificationRecieveConfigPollEndedFromJson(
+  Map<String, dynamic> json,
+) => _MeDetailedOnlyNotificationRecieveConfigPollEnded(
+  type: $enumDecode(
+    _$MeDetailedOnlyNotificationRecieveConfigPollEndedTypeEnumMap,
+    json['type'],
+    unknownValue: MeDetailedOnlyNotificationRecieveConfigPollEndedType.unknown,
+  ),
+  userListId: json['userListId'] as String,
+);
 
 Map<String, dynamic> _$MeDetailedOnlyNotificationRecieveConfigPollEndedToJson(
-        _MeDetailedOnlyNotificationRecieveConfigPollEnded instance) =>
-    <String, dynamic>{
-      'type': _$MeDetailedOnlyNotificationRecieveConfigPollEndedTypeEnumMap[
-          instance.type]!,
-      'userListId': instance.userListId,
-    };
+  _MeDetailedOnlyNotificationRecieveConfigPollEnded instance,
+) => <String, dynamic>{
+  'type':
+      _$MeDetailedOnlyNotificationRecieveConfigPollEndedTypeEnumMap[instance
+          .type]!,
+  'userListId': instance.userListId,
+};
 
 const _$MeDetailedOnlyNotificationRecieveConfigPollEndedTypeEnumMap = {
   MeDetailedOnlyNotificationRecieveConfigPollEndedType.all: 'all',

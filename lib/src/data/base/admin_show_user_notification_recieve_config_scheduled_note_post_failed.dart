@@ -5,11 +5,22 @@ part 'admin_show_user_notification_recieve_config_scheduled_note_post_failed.fre
 part 'admin_show_user_notification_recieve_config_scheduled_note_post_failed.g.dart';
 
 @freezed
-abstract class AdminShowUserNotificationRecieveConfigScheduledNotePostFailed with _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailed {
+abstract class AdminShowUserNotificationRecieveConfigScheduledNotePostFailed
+    with _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailed {
   const factory AdminShowUserNotificationRecieveConfigScheduledNotePostFailed({
-    @JsonKey(unknownEnumValue: AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType.unknown) required AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType type,
+    @JsonKey(
+      unknownEnumValue:
+          AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+              .unknown,
+    )
+    required AdminShowUserNotificationRecieveConfigScheduledNotePostFailedType
+    type,
     required String userListId,
   }) = _AdminShowUserNotificationRecieveConfigScheduledNotePostFailed;
 
-  factory AdminShowUserNotificationRecieveConfigScheduledNotePostFailed.fromJson(Map<String, Object?> json) => _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedFromJson(json);
+  factory AdminShowUserNotificationRecieveConfigScheduledNotePostFailed.fromJson(
+    Map<String, Object?> json,
+  ) => _$AdminShowUserNotificationRecieveConfigScheduledNotePostFailedFromJson(
+    json,
+  );
 }

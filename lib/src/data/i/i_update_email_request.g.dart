@@ -14,9 +14,9 @@ _IUpdateEmailRequest _$IUpdateEmailRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IUpdateEmailRequestToJson(
-        _IUpdateEmailRequest instance) =>
-    <String, dynamic>{
-      'password': instance.password,
-      'email': instance.email,
-      'token': instance.token,
-    };
+  _IUpdateEmailRequest instance,
+) => <String, dynamic>{
+  'password': instance.password,
+  'email': instance.email,
+  'token': instance.token,
+};

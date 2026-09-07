@@ -7,19 +7,19 @@ part of 'i_registry_get_detail_request.dart';
 // **************************************************************************
 
 _IRegistryGetDetailRequest _$IRegistryGetDetailRequestFromJson(
-        Map<String, dynamic> json) =>
-    _IRegistryGetDetailRequest(
-      key: json['key'] as String?,
-      scope:
-          (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
-      domain: json['domain'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _IRegistryGetDetailRequest(
+  key: json['key'] as String?,
+  scope:
+      (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  domain: json['domain'] as String?,
+);
 
 Map<String, dynamic> _$IRegistryGetDetailRequestToJson(
-        _IRegistryGetDetailRequest instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+  _IRegistryGetDetailRequest instance,
+) => <String, dynamic>{
+  'key': instance.key,
+  'scope': instance.scope,
+  'domain': instance.domain,
+};

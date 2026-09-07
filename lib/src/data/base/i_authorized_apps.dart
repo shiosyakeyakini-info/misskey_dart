@@ -9,8 +9,11 @@ abstract class IAuthorizedApps with _$IAuthorizedApps {
   const factory IAuthorizedApps({
     @Default(10) int? limit,
     @Default(0) int? offset,
-    @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown) @Default(IAuthorizedAppsSort.desc) IAuthorizedAppsSort? sort,
+    @JsonKey(unknownEnumValue: IAuthorizedAppsSort.unknown)
+    @Default(IAuthorizedAppsSort.desc)
+    IAuthorizedAppsSort? sort,
   }) = _IAuthorizedApps;
 
-  factory IAuthorizedApps.fromJson(Map<String, Object?> json) => _$IAuthorizedAppsFromJson(json);
+  factory IAuthorizedApps.fromJson(Map<String, Object?> json) =>
+      _$IAuthorizedAppsFromJson(json);
 }

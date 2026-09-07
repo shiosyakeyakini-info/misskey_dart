@@ -13,5 +13,6 @@ abstract class NoteReaction with _$NoteReaction {
     required String type,
   }) = _NoteReaction;
 
-  factory NoteReaction.fromJson(Map<String, Object?> json) => _$NoteReactionFromJson(json);
+  factory NoteReaction.fromJson(Map<String, Object?> json) =>
+      _$NoteReactionFromJson(json);
 }

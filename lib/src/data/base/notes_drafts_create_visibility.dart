@@ -1,7 +1,1 @@
-enum NotesDraftsCreateVisibility {
-  public,
-  home,
-  followers,
-  specified,
-  unknown,
-}
+enum NotesDraftsCreateVisibility { public, home, followers, specified, unknown }

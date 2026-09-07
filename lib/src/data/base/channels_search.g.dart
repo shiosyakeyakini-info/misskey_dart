@@ -9,8 +9,12 @@ part of 'channels_search.dart';
 _ChannelsSearch _$ChannelsSearchFromJson(Map<String, dynamic> json) =>
     _ChannelsSearch(
       query: json['query'] as String,
-      type: $enumDecodeNullable(_$ChannelsSearchTypeEnumMap, json['type'],
-              unknownValue: ChannelsSearchType.unknown) ??
+      type:
+          $enumDecodeNullable(
+            _$ChannelsSearchTypeEnumMap,
+            json['type'],
+            unknownValue: ChannelsSearchType.unknown,
+          ) ??
           ChannelsSearchType.nameAndDescription,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,

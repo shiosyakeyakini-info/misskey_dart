@@ -7,13 +7,13 @@ part of 'admin_ad_list.dart';
 // **************************************************************************
 
 _AdminAdList _$AdminAdListFromJson(Map<String, dynamic> json) => _AdminAdList(
-      limit: (json['limit'] as num?)?.toInt() ?? 10,
-      sinceId: json['sinceId'] as String?,
-      untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
-      publishing: json['publishing'] as bool? ?? null,
-    );
+  limit: (json['limit'] as num?)?.toInt() ?? 10,
+  sinceId: json['sinceId'] as String?,
+  untilId: json['untilId'] as String?,
+  sinceDate: (json['sinceDate'] as num?)?.toInt(),
+  untilDate: (json['untilDate'] as num?)?.toInt(),
+  publishing: json['publishing'] as bool? ?? null,
+);
 
 Map<String, dynamic> _$AdminAdListToJson(_AdminAdList instance) =>
     <String, dynamic>{

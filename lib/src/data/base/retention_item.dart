@@ -12,5 +12,6 @@ abstract class RetentionItem with _$RetentionItem {
     required Map<String, dynamic> data,
   }) = _RetentionItem;
 
-  factory RetentionItem.fromJson(Map<String, Object?> json) => _$RetentionItemFromJson(json);
+  factory RetentionItem.fromJson(Map<String, Object?> json) =>
+      _$RetentionItemFromJson(json);
 }

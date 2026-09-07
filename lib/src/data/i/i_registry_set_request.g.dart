@@ -12,15 +12,15 @@ _IRegistrySetRequest _$IRegistrySetRequestFromJson(Map<String, dynamic> json) =>
       value: json['value'],
       scope:
           (json['scope'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          const [],
       domain: json['domain'] as String?,
     );
 
 Map<String, dynamic> _$IRegistrySetRequestToJson(
-        _IRegistrySetRequest instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'value': instance.value,
-      'scope': instance.scope,
-      'domain': instance.domain,
-    };
+  _IRegistrySetRequest instance,
+) => <String, dynamic>{
+  'key': instance.key,
+  'value': instance.value,
+  'scope': instance.scope,
+  'domain': instance.domain,
+};

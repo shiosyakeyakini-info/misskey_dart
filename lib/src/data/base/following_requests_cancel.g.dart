@@ -7,13 +7,9 @@ part of 'following_requests_cancel.dart';
 // **************************************************************************
 
 _FollowingRequestsCancel _$FollowingRequestsCancelFromJson(
-        Map<String, dynamic> json) =>
-    _FollowingRequestsCancel(
-      userId: json['userId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _FollowingRequestsCancel(userId: json['userId'] as String);
 
 Map<String, dynamic> _$FollowingRequestsCancelToJson(
-        _FollowingRequestsCancel instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _FollowingRequestsCancel instance,
+) => <String, dynamic>{'userId': instance.userId};

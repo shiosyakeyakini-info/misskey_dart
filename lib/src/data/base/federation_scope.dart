@@ -1,6 +1,1 @@
-enum FederationScope {
-  all,
-  specified,
-  none,
-  unknown,
-}
+enum FederationScope { all, specified, none, unknown }

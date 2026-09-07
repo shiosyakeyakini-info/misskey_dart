@@ -1,4 +1,1 @@
-enum RoleCondFormulaValueAssignedRoleType {
-  roleAssignedTo,
-  unknown,
-}
+enum RoleCondFormulaValueAssignedRoleType { roleAssignedTo, unknown }

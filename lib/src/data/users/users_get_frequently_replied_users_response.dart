@@ -13,6 +13,6 @@ abstract class UsersGetFrequentlyRepliedUsersResponse
   }) = _UsersGetFrequentlyRepliedUsersResponse;
 
   factory UsersGetFrequentlyRepliedUsersResponse.fromJson(
-          Map<String, Object?> json) =>
-      _$UsersGetFrequentlyRepliedUsersResponseFromJson(json);
+    Map<String, Object?> json,
+  ) => _$UsersGetFrequentlyRepliedUsersResponseFromJson(json);
 }

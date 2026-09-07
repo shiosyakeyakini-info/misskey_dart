@@ -7,11 +7,7 @@ part of 'notes_state_request.dart';
 // **************************************************************************
 
 _NotesStateRequest _$NotesStateRequestFromJson(Map<String, dynamic> json) =>
-    _NotesStateRequest(
-      noteId: json['noteId'] as String?,
-    );
+    _NotesStateRequest(noteId: json['noteId'] as String?);
 
 Map<String, dynamic> _$NotesStateRequestToJson(_NotesStateRequest instance) =>
-    <String, dynamic>{
-      'noteId': instance.noteId,
-    };
+    <String, dynamic>{'noteId': instance.noteId};

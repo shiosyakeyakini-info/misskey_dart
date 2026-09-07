@@ -13,7 +13,4 @@ _IRegistryGetDetail _$IRegistryGetDetailFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$IRegistryGetDetailToJson(_IRegistryGetDetail instance) =>
-    <String, dynamic>{
-      'updatedAt': instance.updatedAt,
-      'value': instance.value,
-    };
+    <String, dynamic>{'updatedAt': instance.updatedAt, 'value': instance.value};

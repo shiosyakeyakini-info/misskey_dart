@@ -7,11 +7,7 @@ part of 'antennas_show.dart';
 // **************************************************************************
 
 _AntennasShow _$AntennasShowFromJson(Map<String, dynamic> json) =>
-    _AntennasShow(
-      antennaId: json['antennaId'] as String,
-    );
+    _AntennasShow(antennaId: json['antennaId'] as String);
 
 Map<String, dynamic> _$AntennasShowToJson(_AntennasShow instance) =>
-    <String, dynamic>{
-      'antennaId': instance.antennaId,
-    };
+    <String, dynamic>{'antennaId': instance.antennaId};

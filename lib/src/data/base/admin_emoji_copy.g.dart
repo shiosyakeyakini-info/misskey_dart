@@ -7,11 +7,7 @@ part of 'admin_emoji_copy.dart';
 // **************************************************************************
 
 _AdminEmojiCopy _$AdminEmojiCopyFromJson(Map<String, dynamic> json) =>
-    _AdminEmojiCopy(
-      id: json['id'] as String,
-    );
+    _AdminEmojiCopy(id: json['id'] as String);
 
 Map<String, dynamic> _$AdminEmojiCopyToJson(_AdminEmojiCopy instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-    };
+    <String, dynamic>{'id': instance.id};

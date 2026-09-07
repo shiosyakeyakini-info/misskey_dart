@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,55 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$I2faRegisterResponse {
-  String get qr;
-  String get url;
-  String get secret;
-  String get label;
-  String get issuer;
 
-  /// Create a copy of I2faRegisterResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $I2faRegisterResponseCopyWith<I2faRegisterResponse> get copyWith =>
-      _$I2faRegisterResponseCopyWithImpl<I2faRegisterResponse>(
-          this as I2faRegisterResponse, _$identity);
+ String get qr; String get url; String get secret; String get label; String get issuer;
+/// Create a copy of I2faRegisterResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$I2faRegisterResponseCopyWith<I2faRegisterResponse> get copyWith => _$I2faRegisterResponseCopyWithImpl<I2faRegisterResponse>(this as I2faRegisterResponse, _$identity);
 
   /// Serializes this I2faRegisterResponse to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is I2faRegisterResponse &&
-            (identical(other.qr, qr) || other.qr == qr) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.secret, secret) || other.secret == secret) &&
-            (identical(other.label, label) || other.label == label) &&
-            (identical(other.issuer, issuer) || other.issuer == issuer));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, qr, url, secret, label, issuer);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is I2faRegisterResponse&&(identical(other.qr, qr) || other.qr == qr)&&(identical(other.url, url) || other.url == url)&&(identical(other.secret, secret) || other.secret == secret)&&(identical(other.label, label) || other.label == label)&&(identical(other.issuer, issuer) || other.issuer == issuer));
+}
 
-  @override
-  String toString() {
-    return 'I2faRegisterResponse(qr: $qr, url: $url, secret: $secret, label: $label, issuer: $issuer)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,qr,url,secret,label,issuer);
+
+@override
+String toString() {
+  return 'I2faRegisterResponse(qr: $qr, url: $url, secret: $secret, label: $label, issuer: $issuer)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $I2faRegisterResponseCopyWith<$Res> {
-  factory $I2faRegisterResponseCopyWith(I2faRegisterResponse value,
-          $Res Function(I2faRegisterResponse) _then) =
-      _$I2faRegisterResponseCopyWithImpl;
-  @useResult
-  $Res call(
-      {String qr, String url, String secret, String label, String issuer});
-}
+abstract mixin class $I2faRegisterResponseCopyWith<$Res>  {
+  factory $I2faRegisterResponseCopyWith(I2faRegisterResponse value, $Res Function(I2faRegisterResponse) _then) = _$I2faRegisterResponseCopyWithImpl;
+@useResult
+$Res call({
+ String qr, String url, String secret, String label, String issuer
+});
 
+
+
+
+}
 /// @nodoc
 class _$I2faRegisterResponseCopyWithImpl<$Res>
     implements $I2faRegisterResponseCopyWith<$Res> {
@@ -72,115 +63,205 @@ class _$I2faRegisterResponseCopyWithImpl<$Res>
   final I2faRegisterResponse _self;
   final $Res Function(I2faRegisterResponse) _then;
 
-  /// Create a copy of I2faRegisterResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? qr = null,
-    Object? url = null,
-    Object? secret = null,
-    Object? label = null,
-    Object? issuer = null,
-  }) {
-    return _then(_self.copyWith(
-      qr: null == qr
-          ? _self.qr
-          : qr // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      secret: null == secret
-          ? _self.secret
-          : secret // ignore: cast_nullable_to_non_nullable
-              as String,
-      label: null == label
-          ? _self.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuer: null == issuer
-          ? _self.issuer
-          : issuer // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of I2faRegisterResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? qr = null,Object? url = null,Object? secret = null,Object? label = null,Object? issuer = null,}) {
+  return _then(_self.copyWith(
+qr: null == qr ? _self.qr : qr // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,secret: null == secret ? _self.secret : secret // ignore: cast_nullable_to_non_nullable
+as String,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
+as String,issuer: null == issuer ? _self.issuer : issuer // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [I2faRegisterResponse].
+extension I2faRegisterResponsePatterns on I2faRegisterResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _I2faRegisterResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _I2faRegisterResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _I2faRegisterResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _I2faRegisterResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _I2faRegisterResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _I2faRegisterResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String qr,  String url,  String secret,  String label,  String issuer)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _I2faRegisterResponse() when $default != null:
+return $default(_that.qr,_that.url,_that.secret,_that.label,_that.issuer);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String qr,  String url,  String secret,  String label,  String issuer)  $default,) {final _that = this;
+switch (_that) {
+case _I2faRegisterResponse():
+return $default(_that.qr,_that.url,_that.secret,_that.label,_that.issuer);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String qr,  String url,  String secret,  String label,  String issuer)?  $default,) {final _that = this;
+switch (_that) {
+case _I2faRegisterResponse() when $default != null:
+return $default(_that.qr,_that.url,_that.secret,_that.label,_that.issuer);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _I2faRegisterResponse implements I2faRegisterResponse {
-  const _I2faRegisterResponse(
-      {required this.qr,
-      required this.url,
-      required this.secret,
-      required this.label,
-      required this.issuer});
-  factory _I2faRegisterResponse.fromJson(Map<String, dynamic> json) =>
-      _$I2faRegisterResponseFromJson(json);
+  const _I2faRegisterResponse({required this.qr, required this.url, required this.secret, required this.label, required this.issuer});
+  factory _I2faRegisterResponse.fromJson(Map<String, dynamic> json) => _$I2faRegisterResponseFromJson(json);
 
-  @override
-  final String qr;
-  @override
-  final String url;
-  @override
-  final String secret;
-  @override
-  final String label;
-  @override
-  final String issuer;
+@override final  String qr;
+@override final  String url;
+@override final  String secret;
+@override final  String label;
+@override final  String issuer;
 
-  /// Create a copy of I2faRegisterResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$I2faRegisterResponseCopyWith<_I2faRegisterResponse> get copyWith =>
-      __$I2faRegisterResponseCopyWithImpl<_I2faRegisterResponse>(
-          this, _$identity);
+/// Create a copy of I2faRegisterResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$I2faRegisterResponseCopyWith<_I2faRegisterResponse> get copyWith => __$I2faRegisterResponseCopyWithImpl<_I2faRegisterResponse>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$I2faRegisterResponseToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$I2faRegisterResponseToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _I2faRegisterResponse &&
-            (identical(other.qr, qr) || other.qr == qr) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.secret, secret) || other.secret == secret) &&
-            (identical(other.label, label) || other.label == label) &&
-            (identical(other.issuer, issuer) || other.issuer == issuer));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _I2faRegisterResponse&&(identical(other.qr, qr) || other.qr == qr)&&(identical(other.url, url) || other.url == url)&&(identical(other.secret, secret) || other.secret == secret)&&(identical(other.label, label) || other.label == label)&&(identical(other.issuer, issuer) || other.issuer == issuer));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, qr, url, secret, label, issuer);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,qr,url,secret,label,issuer);
 
-  @override
-  String toString() {
-    return 'I2faRegisterResponse(qr: $qr, url: $url, secret: $secret, label: $label, issuer: $issuer)';
-  }
+@override
+String toString() {
+  return 'I2faRegisterResponse(qr: $qr, url: $url, secret: $secret, label: $label, issuer: $issuer)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$I2faRegisterResponseCopyWith<$Res>
-    implements $I2faRegisterResponseCopyWith<$Res> {
-  factory _$I2faRegisterResponseCopyWith(_I2faRegisterResponse value,
-          $Res Function(_I2faRegisterResponse) _then) =
-      __$I2faRegisterResponseCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String qr, String url, String secret, String label, String issuer});
-}
+abstract mixin class _$I2faRegisterResponseCopyWith<$Res> implements $I2faRegisterResponseCopyWith<$Res> {
+  factory _$I2faRegisterResponseCopyWith(_I2faRegisterResponse value, $Res Function(_I2faRegisterResponse) _then) = __$I2faRegisterResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ String qr, String url, String secret, String label, String issuer
+});
 
+
+
+
+}
 /// @nodoc
 class __$I2faRegisterResponseCopyWithImpl<$Res>
     implements _$I2faRegisterResponseCopyWith<$Res> {
@@ -189,40 +270,20 @@ class __$I2faRegisterResponseCopyWithImpl<$Res>
   final _I2faRegisterResponse _self;
   final $Res Function(_I2faRegisterResponse) _then;
 
-  /// Create a copy of I2faRegisterResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? qr = null,
-    Object? url = null,
-    Object? secret = null,
-    Object? label = null,
-    Object? issuer = null,
-  }) {
-    return _then(_I2faRegisterResponse(
-      qr: null == qr
-          ? _self.qr
-          : qr // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      secret: null == secret
-          ? _self.secret
-          : secret // ignore: cast_nullable_to_non_nullable
-              as String,
-      label: null == label
-          ? _self.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String,
-      issuer: null == issuer
-          ? _self.issuer
-          : issuer // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of I2faRegisterResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? qr = null,Object? url = null,Object? secret = null,Object? label = null,Object? issuer = null,}) {
+  return _then(_I2faRegisterResponse(
+qr: null == qr ? _self.qr : qr // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,secret: null == secret ? _self.secret : secret // ignore: cast_nullable_to_non_nullable
+as String,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
+as String,issuer: null == issuer ? _self.issuer : issuer // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

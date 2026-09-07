@@ -7,13 +7,9 @@ part of 'users_lists_unfavorite.dart';
 // **************************************************************************
 
 _UsersListsUnfavorite _$UsersListsUnfavoriteFromJson(
-        Map<String, dynamic> json) =>
-    _UsersListsUnfavorite(
-      listId: json['listId'] as String,
-    );
+  Map<String, dynamic> json,
+) => _UsersListsUnfavorite(listId: json['listId'] as String);
 
 Map<String, dynamic> _$UsersListsUnfavoriteToJson(
-        _UsersListsUnfavorite instance) =>
-    <String, dynamic>{
-      'listId': instance.listId,
-    };
+  _UsersListsUnfavorite instance,
+) => <String, dynamic>{'listId': instance.listId};

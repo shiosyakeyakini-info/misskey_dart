@@ -7,11 +7,7 @@ part of 'drive_files_show.dart';
 // **************************************************************************
 
 _DriveFilesShow _$DriveFilesShowFromJson(Map<String, dynamic> json) =>
-    _DriveFilesShow(
-      url: json['url'] as String,
-    );
+    _DriveFilesShow(url: json['url'] as String);
 
 Map<String, dynamic> _$DriveFilesShowToJson(_DriveFilesShow instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-    };
+    <String, dynamic>{'url': instance.url};

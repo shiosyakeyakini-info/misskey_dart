@@ -7,9 +7,9 @@ part of 'achievement.dart';
 // **************************************************************************
 
 _Achievement _$AchievementFromJson(Map<String, dynamic> json) => _Achievement(
-      name: $enumDecode(_$AchievementNameEnumMap, json['name']),
-      unlockedAt: (json['unlockedAt'] as num).toDouble(),
-    );
+  name: $enumDecode(_$AchievementNameEnumMap, json['name']),
+  unlockedAt: (json['unlockedAt'] as num).toDouble(),
+);
 
 Map<String, dynamic> _$AchievementToJson(_Achievement instance) =>
     <String, dynamic>{

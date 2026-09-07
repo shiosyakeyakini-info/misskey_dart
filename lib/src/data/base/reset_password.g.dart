@@ -13,7 +13,4 @@ _ResetPassword _$ResetPasswordFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ResetPasswordToJson(_ResetPassword instance) =>
-    <String, dynamic>{
-      'token': instance.token,
-      'password': instance.password,
-    };
+    <String, dynamic>{'token': instance.token, 'password': instance.password};

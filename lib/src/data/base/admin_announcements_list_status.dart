@@ -1,6 +1,1 @@
-enum AdminAnnouncementsListStatus {
-  all,
-  active,
-  archived,
-  unknown,
-}
+enum AdminAnnouncementsListStatus { all, active, archived, unknown }

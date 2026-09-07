@@ -13,7 +13,4 @@ _ServerInfoFs _$ServerInfoFsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ServerInfoFsToJson(_ServerInfoFs instance) =>
-    <String, dynamic>{
-      'total': instance.total,
-      'used': instance.used,
-    };
+    <String, dynamic>{'total': instance.total, 'used': instance.used};

@@ -1,5 +1,1 @@
-enum AbuseReportNotificationRecipientMethod {
-  email,
-  webhook,
-  unknown,
-}
+enum AbuseReportNotificationRecipientMethod { email, webhook, unknown }

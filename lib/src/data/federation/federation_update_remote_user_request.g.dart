@@ -7,13 +7,9 @@ part of 'federation_update_remote_user_request.dart';
 // **************************************************************************
 
 _FederationUpdateRemoteUserRequest _$FederationUpdateRemoteUserRequestFromJson(
-        Map<String, dynamic> json) =>
-    _FederationUpdateRemoteUserRequest(
-      userId: json['userId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _FederationUpdateRemoteUserRequest(userId: json['userId'] as String?);
 
 Map<String, dynamic> _$FederationUpdateRemoteUserRequestToJson(
-        _FederationUpdateRemoteUserRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  _FederationUpdateRemoteUserRequest instance,
+) => <String, dynamic>{'userId': instance.userId};
