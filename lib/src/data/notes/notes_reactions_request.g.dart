@@ -16,6 +16,7 @@ _NotesReactionsRequest _$NotesReactionsRequestFromJson(
   untilId: json['untilId'] as String?,
   sinceDate: (json['sinceDate'] as num?)?.toInt(),
   untilDate: (json['untilDate'] as num?)?.toInt(),
+  offset: (json['offset'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$NotesReactionsRequestToJson(
@@ -28,4 +29,5 @@ Map<String, dynamic> _$NotesReactionsRequestToJson(
   'untilId': instance.untilId,
   'sinceDate': instance.sinceDate,
   'untilDate': instance.untilDate,
+  'offset': instance.offset,
 };

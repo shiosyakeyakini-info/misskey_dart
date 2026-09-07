@@ -13,6 +13,7 @@ abstract class NotesReactionsRequest with _$NotesReactionsRequest {
     String? untilId,
     int? sinceDate,
     int? untilDate,
+    int? offset,
   }) = _NotesReactionsRequest;
 
   factory NotesReactionsRequest.fromJson(Map<String, Object?> json) =>

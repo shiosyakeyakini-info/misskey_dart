@@ -147,7 +147,7 @@ void main() async {
   test("users", () async {
     final newUser = (await adminClient.createUser()).user;
     final response = await userClient.users.users(
-      UsersRequest(sort: UsersSort.plusCreatedAt),
+      UsersRequest(sort: UsersSortType.createdAtDescendant),
     );
     expect(response.map((e) => e.id), contains(newUser.id));
   });

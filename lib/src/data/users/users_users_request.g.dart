@@ -35,7 +35,8 @@ const _$UsersStateEnumMap = {
 };
 
 const _$OriginEnumMap = {
+  Origin.combined: 'combined',
   Origin.local: 'local',
   Origin.remote: 'remote',
-  Origin.combined: 'combined',
+  Origin.unknown: 'unknown',
 };

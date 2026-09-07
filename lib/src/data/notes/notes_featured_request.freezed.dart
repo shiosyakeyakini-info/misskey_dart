@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesFeaturedRequest {
 
- int? get limit; String? get untilId; String? get channelId;
+ int? get limit; String? get untilId; String? get channelId; int? get offset;
 /// Create a copy of NotesFeaturedRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $NotesFeaturedRequestCopyWith<NotesFeaturedRequest> get copyWith => _$NotesFeatu
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesFeaturedRequest&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesFeaturedRequest&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.channelId, channelId) || other.channelId == channelId)&&(identical(other.offset, offset) || other.offset == offset));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,limit,untilId,channelId);
+int get hashCode => Object.hash(runtimeType,limit,untilId,channelId,offset);
 
 @override
 String toString() {
-  return 'NotesFeaturedRequest(limit: $limit, untilId: $untilId, channelId: $channelId)';
+  return 'NotesFeaturedRequest(limit: $limit, untilId: $untilId, channelId: $channelId, offset: $offset)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $NotesFeaturedRequestCopyWith<$Res>  {
   factory $NotesFeaturedRequestCopyWith(NotesFeaturedRequest value, $Res Function(NotesFeaturedRequest) _then) = _$NotesFeaturedRequestCopyWithImpl;
 @useResult
 $Res call({
- int? limit, String? untilId, String? channelId
+ int? limit, String? untilId, String? channelId, int? offset
 });
 
 
@@ -65,12 +65,13 @@ class _$NotesFeaturedRequestCopyWithImpl<$Res>
 
 /// Create a copy of NotesFeaturedRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? limit = freezed,Object? untilId = freezed,Object? channelId = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? limit = freezed,Object? untilId = freezed,Object? channelId = freezed,Object? offset = freezed,}) {
   return _then(_self.copyWith(
 limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
 as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
@@ -155,10 +156,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  String? untilId,  String? channelId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  String? untilId,  String? channelId,  int? offset)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesFeaturedRequest() when $default != null:
-return $default(_that.limit,_that.untilId,_that.channelId);case _:
+return $default(_that.limit,_that.untilId,_that.channelId,_that.offset);case _:
   return orElse();
 
 }
@@ -176,10 +177,10 @@ return $default(_that.limit,_that.untilId,_that.channelId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  String? untilId,  String? channelId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  String? untilId,  String? channelId,  int? offset)  $default,) {final _that = this;
 switch (_that) {
 case _NotesFeaturedRequest():
-return $default(_that.limit,_that.untilId,_that.channelId);case _:
+return $default(_that.limit,_that.untilId,_that.channelId,_that.offset);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +197,10 @@ return $default(_that.limit,_that.untilId,_that.channelId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  String? untilId,  String? channelId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  String? untilId,  String? channelId,  int? offset)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesFeaturedRequest() when $default != null:
-return $default(_that.limit,_that.untilId,_that.channelId);case _:
+return $default(_that.limit,_that.untilId,_that.channelId,_that.offset);case _:
   return null;
 
 }
@@ -211,12 +212,13 @@ return $default(_that.limit,_that.untilId,_that.channelId);case _:
 @JsonSerializable()
 
 class _NotesFeaturedRequest implements NotesFeaturedRequest {
-  const _NotesFeaturedRequest({this.limit = 10, this.untilId, this.channelId});
+  const _NotesFeaturedRequest({this.limit = 10, this.untilId, this.channelId, this.offset});
   factory _NotesFeaturedRequest.fromJson(Map<String, dynamic> json) => _$NotesFeaturedRequestFromJson(json);
 
 @override@JsonKey() final  int? limit;
 @override final  String? untilId;
 @override final  String? channelId;
+@override final  int? offset;
 
 /// Create a copy of NotesFeaturedRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -231,16 +233,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesFeaturedRequest&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesFeaturedRequest&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.channelId, channelId) || other.channelId == channelId)&&(identical(other.offset, offset) || other.offset == offset));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,limit,untilId,channelId);
+int get hashCode => Object.hash(runtimeType,limit,untilId,channelId,offset);
 
 @override
 String toString() {
-  return 'NotesFeaturedRequest(limit: $limit, untilId: $untilId, channelId: $channelId)';
+  return 'NotesFeaturedRequest(limit: $limit, untilId: $untilId, channelId: $channelId, offset: $offset)';
 }
 
 
@@ -251,7 +253,7 @@ abstract mixin class _$NotesFeaturedRequestCopyWith<$Res> implements $NotesFeatu
   factory _$NotesFeaturedRequestCopyWith(_NotesFeaturedRequest value, $Res Function(_NotesFeaturedRequest) _then) = __$NotesFeaturedRequestCopyWithImpl;
 @override @useResult
 $Res call({
- int? limit, String? untilId, String? channelId
+ int? limit, String? untilId, String? channelId, int? offset
 });
 
 
@@ -268,12 +270,13 @@ class __$NotesFeaturedRequestCopyWithImpl<$Res>
 
 /// Create a copy of NotesFeaturedRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? limit = freezed,Object? untilId = freezed,Object? channelId = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? limit = freezed,Object? untilId = freezed,Object? channelId = freezed,Object? offset = freezed,}) {
   return _then(_NotesFeaturedRequest(
 limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
 as String?,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 

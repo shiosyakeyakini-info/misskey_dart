@@ -20,6 +20,7 @@ abstract class AntennasUpdateRequest with _$AntennasUpdateRequest {
     bool? withReplies,
     bool? withFile,
     bool? excludeNotesInSensitiveChannel,
+    bool? notify,
   }) = _AntennasUpdateRequest;
 
   factory AntennasUpdateRequest.fromJson(Map<String, Object?> json) =>

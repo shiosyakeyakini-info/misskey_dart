@@ -149,6 +149,18 @@ field_overrides:
   ChatMessage:
     fromUser:
       dart_type: "UserLite?"
+    toUser:
+      dart_type: "UserLite?"
+    toRoom:
+      dart_type: "ChatRoom?"
+    file:
+      dart_type: "DriveFile?"
+
+  ChatRoomMembership:
+    user:
+      dart_type: "UserLite?"
+    room:
+      dart_type: "ChatRoom?"
 
   ChatMessageReaction:
     # 自分がつけたばかりのリアクションをローカルで足すときは user がない
@@ -235,6 +247,8 @@ schema_name_overrides:
   "/flash/create.request.properties.visibility": FlashVisibility
   "/hashtags/list.request.properties.sort": HashtagsListSortType
   "/hashtags/users.request.properties.sort": UsersSortType
+  "/users.request.properties.sort": UsersSortType
+  "/users.request.properties.origin": Origin
   "/following/update.request.properties.notify": FollowingUpdateAllNotifyType
   "/following/update-all.request.properties.notify": FollowingUpdateAllNotifyType
   # NotificationType inline enums (in array items)
@@ -288,6 +302,19 @@ endpoint_overrides:
   # oneOf response with inline object (no generated response class)
   "/users/relation":
     return_type: void
+
+  # チャットのメッセージはエンドポイントごとに狭い型 (ChatMessageLiteForRoom /
+  # ChatMessageLiteFor1on1) が宣言されているが、どちらも ChatMessage の
+  # 部分集合なのでそのまま ChatMessage として読める。下流で型が割れると
+  # 扱いにくいだけなので寄せる。
+  "/chat/messages/room-timeline":
+    return_type: ChatMessage
+  "/chat/messages/user-timeline":
+    return_type: ChatMessage
+  "/chat/messages/create-to-room":
+    return_type: ChatMessage
+  "/chat/messages/create-to-user":
+    return_type: ChatMessage
 
   # users/show の応答は oneOf(UserDetailed, UserDetailed[]) で、userIds を
   # 渡したときだけ配列になる。ひとつのシグネチャでは表せないので、配列を返す
@@ -376,6 +403,37 @@ number_as_int:
 
 # Extra fields (not in api.json but needed for version compatibility)
 extra_fields:
+  # 収集済みのスキーマは 2025.4.1 以降だが、miria が相手にするのは v13 以降。
+  # 途中で消えたパラメータは新しい api.json には現れないので、ここで足す。
+  # 新しいサーバーは黙って無視する。
+  NotesFeaturedRequest:
+    offset:
+      dart_type: int
+      nullable: true
+  AnnouncementsRequest:
+    offset:
+      dart_type: int
+      nullable: true
+  NotesReactionsRequest:
+    offset:
+      dart_type: int
+      nullable: true
+  UsersNotesRequest:
+    includeReplies:
+      dart_type: bool
+      nullable: true
+    includeMyRenotes:
+      dart_type: bool
+      nullable: true
+  AntennasCreateRequest:
+    notify:
+      dart_type: bool
+      nullable: true
+  AntennasUpdateRequest:
+    notify:
+      dart_type: bool
+      nullable: true
+
   # 2026.4 以降で stats に増えたが、収集済みのスキーマが 2026.3.1 までなので
   # 拾えない。古いサーバーは返さないので nullable。
   StatsResponse:

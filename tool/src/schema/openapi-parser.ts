@@ -133,6 +133,36 @@ function parseEndpoints(
           required: [],
           isSelfReferencing: false,
         };
+      } else {
+        // Component schema name override.
+        //
+        // Some endpoints declare a narrower response schema than what the
+        // client wants to work with (the chat endpoints return per-endpoint
+        // "lite" shapes that are all subsets of ChatMessage). The payload
+        // still parses as the wider type, so only the name is swapped and
+        // the array/single shape is kept.
+        const ref: ResolvedSchema = {
+          name: endpointOverride.return_type,
+          originalName: endpointOverride.return_type,
+          type: "ref",
+          refTarget: endpointOverride.return_type,
+          properties: new Map(),
+          required: [],
+          isSelfReferencing: false,
+        };
+        responseSchema =
+          responseType === "array"
+            ? {
+                name: `${endpointOverride.return_type}List`,
+                originalName: path,
+                type: "array",
+                items: ref,
+                properties: new Map(),
+                required: [],
+                isSelfReferencing: false,
+              }
+            : ref;
+        if (responseType !== "array") responseType = "single";
       }
     }
 

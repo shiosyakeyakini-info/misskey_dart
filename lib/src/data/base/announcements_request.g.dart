@@ -15,6 +15,7 @@ _AnnouncementsRequest _$AnnouncementsRequestFromJson(
   sinceDate: (json['sinceDate'] as num?)?.toInt(),
   untilDate: (json['untilDate'] as num?)?.toInt(),
   isActive: json['isActive'] as bool? ?? true,
+  offset: (json['offset'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$AnnouncementsRequestToJson(
@@ -26,4 +27,5 @@ Map<String, dynamic> _$AnnouncementsRequestToJson(
   'sinceDate': instance.sinceDate,
   'untilDate': instance.untilDate,
   'isActive': instance.isActive,
+  'offset': instance.offset,
 };

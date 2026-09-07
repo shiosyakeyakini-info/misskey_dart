@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AntennasUpdateRequest {
 
- String? get antennaId; String? get name;@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? get src; String? get userListId; List<dynamic>? get keywords; List<dynamic>? get excludeKeywords; List<String>? get users; bool? get caseSensitive; bool? get localOnly; bool? get excludeBots; bool? get withReplies; bool? get withFile; bool? get excludeNotesInSensitiveChannel;
+ String? get antennaId; String? get name;@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? get src; String? get userListId; List<dynamic>? get keywords; List<dynamic>? get excludeKeywords; List<String>? get users; bool? get caseSensitive; bool? get localOnly; bool? get excludeBots; bool? get withReplies; bool? get withFile; bool? get excludeNotesInSensitiveChannel; bool? get notify;
 /// Create a copy of AntennasUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $AntennasUpdateRequestCopyWith<AntennasUpdateRequest> get copyWith => _$Antennas
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AntennasUpdateRequest&&(identical(other.antennaId, antennaId) || other.antennaId == antennaId)&&(identical(other.name, name) || other.name == name)&&(identical(other.src, src) || other.src == src)&&(identical(other.userListId, userListId) || other.userListId == userListId)&&const DeepCollectionEquality().equals(other.keywords, keywords)&&const DeepCollectionEquality().equals(other.excludeKeywords, excludeKeywords)&&const DeepCollectionEquality().equals(other.users, users)&&(identical(other.caseSensitive, caseSensitive) || other.caseSensitive == caseSensitive)&&(identical(other.localOnly, localOnly) || other.localOnly == localOnly)&&(identical(other.excludeBots, excludeBots) || other.excludeBots == excludeBots)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withFile, withFile) || other.withFile == withFile)&&(identical(other.excludeNotesInSensitiveChannel, excludeNotesInSensitiveChannel) || other.excludeNotesInSensitiveChannel == excludeNotesInSensitiveChannel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AntennasUpdateRequest&&(identical(other.antennaId, antennaId) || other.antennaId == antennaId)&&(identical(other.name, name) || other.name == name)&&(identical(other.src, src) || other.src == src)&&(identical(other.userListId, userListId) || other.userListId == userListId)&&const DeepCollectionEquality().equals(other.keywords, keywords)&&const DeepCollectionEquality().equals(other.excludeKeywords, excludeKeywords)&&const DeepCollectionEquality().equals(other.users, users)&&(identical(other.caseSensitive, caseSensitive) || other.caseSensitive == caseSensitive)&&(identical(other.localOnly, localOnly) || other.localOnly == localOnly)&&(identical(other.excludeBots, excludeBots) || other.excludeBots == excludeBots)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withFile, withFile) || other.withFile == withFile)&&(identical(other.excludeNotesInSensitiveChannel, excludeNotesInSensitiveChannel) || other.excludeNotesInSensitiveChannel == excludeNotesInSensitiveChannel)&&(identical(other.notify, notify) || other.notify == notify));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,antennaId,name,src,userListId,const DeepCollectionEquality().hash(keywords),const DeepCollectionEquality().hash(excludeKeywords),const DeepCollectionEquality().hash(users),caseSensitive,localOnly,excludeBots,withReplies,withFile,excludeNotesInSensitiveChannel);
+int get hashCode => Object.hash(runtimeType,antennaId,name,src,userListId,const DeepCollectionEquality().hash(keywords),const DeepCollectionEquality().hash(excludeKeywords),const DeepCollectionEquality().hash(users),caseSensitive,localOnly,excludeBots,withReplies,withFile,excludeNotesInSensitiveChannel,notify);
 
 @override
 String toString() {
-  return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, localOnly: $localOnly, excludeBots: $excludeBots, withReplies: $withReplies, withFile: $withFile, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
+  return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, localOnly: $localOnly, excludeBots: $excludeBots, withReplies: $withReplies, withFile: $withFile, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel, notify: $notify)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $AntennasUpdateRequestCopyWith<$Res>  {
   factory $AntennasUpdateRequestCopyWith(AntennasUpdateRequest value, $Res Function(AntennasUpdateRequest) _then) = _$AntennasUpdateRequestCopyWithImpl;
 @useResult
 $Res call({
- String? antennaId, String? name,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src, String? userListId, List<dynamic>? keywords, List<dynamic>? excludeKeywords, List<String>? users, bool? caseSensitive, bool? localOnly, bool? excludeBots, bool? withReplies, bool? withFile, bool? excludeNotesInSensitiveChannel
+ String? antennaId, String? name,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src, String? userListId, List<dynamic>? keywords, List<dynamic>? excludeKeywords, List<String>? users, bool? caseSensitive, bool? localOnly, bool? excludeBots, bool? withReplies, bool? withFile, bool? excludeNotesInSensitiveChannel, bool? notify
 });
 
 
@@ -65,7 +65,7 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res>
 
 /// Create a copy of AntennasUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? antennaId = freezed,Object? name = freezed,Object? src = freezed,Object? userListId = freezed,Object? keywords = freezed,Object? excludeKeywords = freezed,Object? users = freezed,Object? caseSensitive = freezed,Object? localOnly = freezed,Object? excludeBots = freezed,Object? withReplies = freezed,Object? withFile = freezed,Object? excludeNotesInSensitiveChannel = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? antennaId = freezed,Object? name = freezed,Object? src = freezed,Object? userListId = freezed,Object? keywords = freezed,Object? excludeKeywords = freezed,Object? users = freezed,Object? caseSensitive = freezed,Object? localOnly = freezed,Object? excludeBots = freezed,Object? withReplies = freezed,Object? withFile = freezed,Object? excludeNotesInSensitiveChannel = freezed,Object? notify = freezed,}) {
   return _then(_self.copyWith(
 antennaId: freezed == antennaId ? _self.antennaId : antennaId // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -80,6 +80,7 @@ as bool?,excludeBots: freezed == excludeBots ? _self.excludeBots : excludeBots /
 as bool?,withReplies: freezed == withReplies ? _self.withReplies : withReplies // ignore: cast_nullable_to_non_nullable
 as bool?,withFile: freezed == withFile ? _self.withFile : withFile // ignore: cast_nullable_to_non_nullable
 as bool?,excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel ? _self.excludeNotesInSensitiveChannel : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+as bool?,notify: freezed == notify ? _self.notify : notify // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }
@@ -165,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? antennaId,  String? name, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource? src,  String? userListId,  List<dynamic>? keywords,  List<dynamic>? excludeKeywords,  List<String>? users,  bool? caseSensitive,  bool? localOnly,  bool? excludeBots,  bool? withReplies,  bool? withFile,  bool? excludeNotesInSensitiveChannel)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? antennaId,  String? name, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource? src,  String? userListId,  List<dynamic>? keywords,  List<dynamic>? excludeKeywords,  List<String>? users,  bool? caseSensitive,  bool? localOnly,  bool? excludeBots,  bool? withReplies,  bool? withFile,  bool? excludeNotesInSensitiveChannel,  bool? notify)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AntennasUpdateRequest() when $default != null:
-return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keywords,_that.excludeKeywords,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.excludeNotesInSensitiveChannel);case _:
+return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keywords,_that.excludeKeywords,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.excludeNotesInSensitiveChannel,_that.notify);case _:
   return orElse();
 
 }
@@ -186,10 +187,10 @@ return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keyw
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? antennaId,  String? name, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource? src,  String? userListId,  List<dynamic>? keywords,  List<dynamic>? excludeKeywords,  List<String>? users,  bool? caseSensitive,  bool? localOnly,  bool? excludeBots,  bool? withReplies,  bool? withFile,  bool? excludeNotesInSensitiveChannel)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? antennaId,  String? name, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource? src,  String? userListId,  List<dynamic>? keywords,  List<dynamic>? excludeKeywords,  List<String>? users,  bool? caseSensitive,  bool? localOnly,  bool? excludeBots,  bool? withReplies,  bool? withFile,  bool? excludeNotesInSensitiveChannel,  bool? notify)  $default,) {final _that = this;
 switch (_that) {
 case _AntennasUpdateRequest():
-return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keywords,_that.excludeKeywords,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.excludeNotesInSensitiveChannel);case _:
+return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keywords,_that.excludeKeywords,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.excludeNotesInSensitiveChannel,_that.notify);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -206,10 +207,10 @@ return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keyw
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? antennaId,  String? name, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource? src,  String? userListId,  List<dynamic>? keywords,  List<dynamic>? excludeKeywords,  List<String>? users,  bool? caseSensitive,  bool? localOnly,  bool? excludeBots,  bool? withReplies,  bool? withFile,  bool? excludeNotesInSensitiveChannel)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? antennaId,  String? name, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource? src,  String? userListId,  List<dynamic>? keywords,  List<dynamic>? excludeKeywords,  List<String>? users,  bool? caseSensitive,  bool? localOnly,  bool? excludeBots,  bool? withReplies,  bool? withFile,  bool? excludeNotesInSensitiveChannel,  bool? notify)?  $default,) {final _that = this;
 switch (_that) {
 case _AntennasUpdateRequest() when $default != null:
-return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keywords,_that.excludeKeywords,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.excludeNotesInSensitiveChannel);case _:
+return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keywords,_that.excludeKeywords,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.excludeNotesInSensitiveChannel,_that.notify);case _:
   return null;
 
 }
@@ -221,7 +222,7 @@ return $default(_that.antennaId,_that.name,_that.src,_that.userListId,_that.keyw
 @JsonSerializable()
 
 class _AntennasUpdateRequest implements AntennasUpdateRequest {
-  const _AntennasUpdateRequest({this.antennaId, this.name, @JsonKey(unknownEnumValue: AntennaSource.unknown) this.src, this.userListId, final  List<dynamic>? keywords, final  List<dynamic>? excludeKeywords, final  List<String>? users, this.caseSensitive, this.localOnly, this.excludeBots, this.withReplies, this.withFile, this.excludeNotesInSensitiveChannel}): _keywords = keywords,_excludeKeywords = excludeKeywords,_users = users;
+  const _AntennasUpdateRequest({this.antennaId, this.name, @JsonKey(unknownEnumValue: AntennaSource.unknown) this.src, this.userListId, final  List<dynamic>? keywords, final  List<dynamic>? excludeKeywords, final  List<String>? users, this.caseSensitive, this.localOnly, this.excludeBots, this.withReplies, this.withFile, this.excludeNotesInSensitiveChannel, this.notify}): _keywords = keywords,_excludeKeywords = excludeKeywords,_users = users;
   factory _AntennasUpdateRequest.fromJson(Map<String, dynamic> json) => _$AntennasUpdateRequestFromJson(json);
 
 @override final  String? antennaId;
@@ -261,6 +262,7 @@ class _AntennasUpdateRequest implements AntennasUpdateRequest {
 @override final  bool? withReplies;
 @override final  bool? withFile;
 @override final  bool? excludeNotesInSensitiveChannel;
+@override final  bool? notify;
 
 /// Create a copy of AntennasUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -275,16 +277,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AntennasUpdateRequest&&(identical(other.antennaId, antennaId) || other.antennaId == antennaId)&&(identical(other.name, name) || other.name == name)&&(identical(other.src, src) || other.src == src)&&(identical(other.userListId, userListId) || other.userListId == userListId)&&const DeepCollectionEquality().equals(other._keywords, _keywords)&&const DeepCollectionEquality().equals(other._excludeKeywords, _excludeKeywords)&&const DeepCollectionEquality().equals(other._users, _users)&&(identical(other.caseSensitive, caseSensitive) || other.caseSensitive == caseSensitive)&&(identical(other.localOnly, localOnly) || other.localOnly == localOnly)&&(identical(other.excludeBots, excludeBots) || other.excludeBots == excludeBots)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withFile, withFile) || other.withFile == withFile)&&(identical(other.excludeNotesInSensitiveChannel, excludeNotesInSensitiveChannel) || other.excludeNotesInSensitiveChannel == excludeNotesInSensitiveChannel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AntennasUpdateRequest&&(identical(other.antennaId, antennaId) || other.antennaId == antennaId)&&(identical(other.name, name) || other.name == name)&&(identical(other.src, src) || other.src == src)&&(identical(other.userListId, userListId) || other.userListId == userListId)&&const DeepCollectionEquality().equals(other._keywords, _keywords)&&const DeepCollectionEquality().equals(other._excludeKeywords, _excludeKeywords)&&const DeepCollectionEquality().equals(other._users, _users)&&(identical(other.caseSensitive, caseSensitive) || other.caseSensitive == caseSensitive)&&(identical(other.localOnly, localOnly) || other.localOnly == localOnly)&&(identical(other.excludeBots, excludeBots) || other.excludeBots == excludeBots)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withFile, withFile) || other.withFile == withFile)&&(identical(other.excludeNotesInSensitiveChannel, excludeNotesInSensitiveChannel) || other.excludeNotesInSensitiveChannel == excludeNotesInSensitiveChannel)&&(identical(other.notify, notify) || other.notify == notify));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,antennaId,name,src,userListId,const DeepCollectionEquality().hash(_keywords),const DeepCollectionEquality().hash(_excludeKeywords),const DeepCollectionEquality().hash(_users),caseSensitive,localOnly,excludeBots,withReplies,withFile,excludeNotesInSensitiveChannel);
+int get hashCode => Object.hash(runtimeType,antennaId,name,src,userListId,const DeepCollectionEquality().hash(_keywords),const DeepCollectionEquality().hash(_excludeKeywords),const DeepCollectionEquality().hash(_users),caseSensitive,localOnly,excludeBots,withReplies,withFile,excludeNotesInSensitiveChannel,notify);
 
 @override
 String toString() {
-  return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, localOnly: $localOnly, excludeBots: $excludeBots, withReplies: $withReplies, withFile: $withFile, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel)';
+  return 'AntennasUpdateRequest(antennaId: $antennaId, name: $name, src: $src, userListId: $userListId, keywords: $keywords, excludeKeywords: $excludeKeywords, users: $users, caseSensitive: $caseSensitive, localOnly: $localOnly, excludeBots: $excludeBots, withReplies: $withReplies, withFile: $withFile, excludeNotesInSensitiveChannel: $excludeNotesInSensitiveChannel, notify: $notify)';
 }
 
 
@@ -295,7 +297,7 @@ abstract mixin class _$AntennasUpdateRequestCopyWith<$Res> implements $AntennasU
   factory _$AntennasUpdateRequestCopyWith(_AntennasUpdateRequest value, $Res Function(_AntennasUpdateRequest) _then) = __$AntennasUpdateRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? antennaId, String? name,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src, String? userListId, List<dynamic>? keywords, List<dynamic>? excludeKeywords, List<String>? users, bool? caseSensitive, bool? localOnly, bool? excludeBots, bool? withReplies, bool? withFile, bool? excludeNotesInSensitiveChannel
+ String? antennaId, String? name,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource? src, String? userListId, List<dynamic>? keywords, List<dynamic>? excludeKeywords, List<String>? users, bool? caseSensitive, bool? localOnly, bool? excludeBots, bool? withReplies, bool? withFile, bool? excludeNotesInSensitiveChannel, bool? notify
 });
 
 
@@ -312,7 +314,7 @@ class __$AntennasUpdateRequestCopyWithImpl<$Res>
 
 /// Create a copy of AntennasUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? antennaId = freezed,Object? name = freezed,Object? src = freezed,Object? userListId = freezed,Object? keywords = freezed,Object? excludeKeywords = freezed,Object? users = freezed,Object? caseSensitive = freezed,Object? localOnly = freezed,Object? excludeBots = freezed,Object? withReplies = freezed,Object? withFile = freezed,Object? excludeNotesInSensitiveChannel = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? antennaId = freezed,Object? name = freezed,Object? src = freezed,Object? userListId = freezed,Object? keywords = freezed,Object? excludeKeywords = freezed,Object? users = freezed,Object? caseSensitive = freezed,Object? localOnly = freezed,Object? excludeBots = freezed,Object? withReplies = freezed,Object? withFile = freezed,Object? excludeNotesInSensitiveChannel = freezed,Object? notify = freezed,}) {
   return _then(_AntennasUpdateRequest(
 antennaId: freezed == antennaId ? _self.antennaId : antennaId // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -327,6 +329,7 @@ as bool?,excludeBots: freezed == excludeBots ? _self.excludeBots : excludeBots /
 as bool?,withReplies: freezed == withReplies ? _self.withReplies : withReplies // ignore: cast_nullable_to_non_nullable
 as bool?,withFile: freezed == withFile ? _self.withFile : withFile // ignore: cast_nullable_to_non_nullable
 as bool?,excludeNotesInSensitiveChannel: freezed == excludeNotesInSensitiveChannel ? _self.excludeNotesInSensitiveChannel : excludeNotesInSensitiveChannel // ignore: cast_nullable_to_non_nullable
+as bool?,notify: freezed == notify ? _self.notify : notify // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }

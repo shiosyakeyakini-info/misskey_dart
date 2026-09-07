@@ -12,6 +12,7 @@ abstract class AnnouncementsRequest with _$AnnouncementsRequest {
     int? sinceDate,
     int? untilDate,
     @Default(true) bool? isActive,
+    int? offset,
   }) = _AnnouncementsRequest;
 
   factory AnnouncementsRequest.fromJson(Map<String, Object?> json) =>

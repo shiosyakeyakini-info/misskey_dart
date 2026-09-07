@@ -10,9 +10,9 @@ abstract class ChatRoomMembership with _$ChatRoomMembership {
     required String id,
     @DateTimeConverter() required DateTime createdAt,
     required String userId,
-    Map<String, dynamic>? user,
+    UserLite? user,
     required String roomId,
-    Map<String, dynamic>? room,
+    ChatRoom? room,
   }) = _ChatRoomMembership;
 
   factory ChatRoomMembership.fromJson(Map<String, Object?> json) =>

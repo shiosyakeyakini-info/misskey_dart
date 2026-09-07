@@ -18,6 +18,8 @@ abstract class UsersNotesRequest with _$UsersNotesRequest {
     @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
     @Default(false) bool? allowPartial,
     @Default(false) bool? withFiles,
+    bool? includeReplies,
+    bool? includeMyRenotes,
   }) = _UsersNotesRequest;
 
   factory UsersNotesRequest.fromJson(Map<String, Object?> json) =>

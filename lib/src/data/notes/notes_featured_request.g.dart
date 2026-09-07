@@ -12,6 +12,7 @@ _NotesFeaturedRequest _$NotesFeaturedRequestFromJson(
   limit: (json['limit'] as num?)?.toInt() ?? 10,
   untilId: json['untilId'] as String?,
   channelId: json['channelId'] as String?,
+  offset: (json['offset'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$NotesFeaturedRequestToJson(
@@ -20,4 +21,5 @@ Map<String, dynamic> _$NotesFeaturedRequestToJson(
   'limit': instance.limit,
   'untilId': instance.untilId,
   'channelId': instance.channelId,
+  'offset': instance.offset,
 };

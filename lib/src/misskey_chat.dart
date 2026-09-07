@@ -34,25 +34,25 @@ class MisskeyChatMessages {
     : _apiService = apiService;
 
   /// chat/messages/create-to-room
-  Future<ChatMessageLiteForRoom> createToRoom(
+  Future<ChatMessage> createToRoom(
     ChatMessagesCreateToRoomRequest request,
   ) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "chat/messages/create-to-room",
       request.toJson(),
     );
-    return ChatMessageLiteForRoom.fromJson(response);
+    return ChatMessage.fromJson(response);
   }
 
   /// chat/messages/create-to-user
-  Future<ChatMessageLiteFor1on1> createToUser(
+  Future<ChatMessage> createToUser(
     ChatMessagesCreateToUserRequest request,
   ) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "chat/messages/create-to-user",
       request.toJson(),
     );
-    return ChatMessageLiteFor1on1.fromJson(response);
+    return ChatMessage.fromJson(response);
   }
 
   /// chat/messages/delete
@@ -66,16 +66,14 @@ class MisskeyChatMessages {
   }
 
   /// chat/messages/room-timeline
-  Future<Iterable<ChatMessageLiteForRoom>> roomTimeline(
+  Future<Iterable<ChatMessage>> roomTimeline(
     ChatMessagesRoomTimelineRequest request,
   ) async {
     final response = await _apiService.post<List>(
       "chat/messages/room-timeline",
       request.toJson(),
     );
-    return response.map(
-      (e) => ChatMessageLiteForRoom.fromJson(e as Map<String, dynamic>),
-    );
+    return response.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>));
   }
 
   /// chat/messages/search
@@ -104,16 +102,14 @@ class MisskeyChatMessages {
   }
 
   /// chat/messages/user-timeline
-  Future<Iterable<ChatMessageLiteFor1on1>> userTimeline(
+  Future<Iterable<ChatMessage>> userTimeline(
     ChatMessagesUserTimelineRequest request,
   ) async {
     final response = await _apiService.post<List>(
       "chat/messages/user-timeline",
       request.toJson(),
     );
-    return response.map(
-      (e) => ChatMessageLiteFor1on1.fromJson(e as Map<String, dynamic>),
-    );
+    return response.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>));
   }
 }
 

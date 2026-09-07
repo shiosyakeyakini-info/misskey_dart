@@ -27,6 +27,7 @@ _AntennasUpdateRequest _$AntennasUpdateRequestFromJson(
   withFile: json['withFile'] as bool?,
   excludeNotesInSensitiveChannel:
       json['excludeNotesInSensitiveChannel'] as bool?,
+  notify: json['notify'] as bool?,
 );
 
 Map<String, dynamic> _$AntennasUpdateRequestToJson(
@@ -45,6 +46,7 @@ Map<String, dynamic> _$AntennasUpdateRequestToJson(
   'withReplies': instance.withReplies,
   'withFile': instance.withFile,
   'excludeNotesInSensitiveChannel': instance.excludeNotesInSensitiveChannel,
+  'notify': instance.notify,
 };
 
 const _$AntennaSourceEnumMap = {

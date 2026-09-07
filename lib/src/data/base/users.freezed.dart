@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Users {
 
- int? get limit; int? get offset;@JsonKey(unknownEnumValue: UsersSort.unknown) UsersSort? get sort;@JsonKey(unknownEnumValue: UsersState.unknown) UsersState? get state;@JsonKey(unknownEnumValue: UsersOrigin.unknown) UsersOrigin? get origin; String? get hostname;
+ int? get limit; int? get offset;@JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? get sort;@JsonKey(unknownEnumValue: UsersState.unknown) UsersState? get state;@JsonKey(unknownEnumValue: Origin.unknown) Origin? get origin; String? get hostname;
 /// Create a copy of Users
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UsersCopyWith<$Res>  {
   factory $UsersCopyWith(Users value, $Res Function(Users) _then) = _$UsersCopyWithImpl;
 @useResult
 $Res call({
- int? limit, int? offset,@JsonKey(unknownEnumValue: UsersSort.unknown) UsersSort? sort,@JsonKey(unknownEnumValue: UsersState.unknown) UsersState? state,@JsonKey(unknownEnumValue: UsersOrigin.unknown) UsersOrigin? origin, String? hostname
+ int? limit, int? offset,@JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? sort,@JsonKey(unknownEnumValue: UsersState.unknown) UsersState? state,@JsonKey(unknownEnumValue: Origin.unknown) Origin? origin, String? hostname
 });
 
 
@@ -70,9 +70,9 @@ class _$UsersCopyWithImpl<$Res>
 limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
-as UsersSort?,state: freezed == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as UsersSortType?,state: freezed == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
 as UsersState?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
-as UsersOrigin?,hostname: freezed == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
+as Origin?,hostname: freezed == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: UsersSort.unknown)  UsersSort? sort, @JsonKey(unknownEnumValue: UsersState.unknown)  UsersState? state, @JsonKey(unknownEnumValue: UsersOrigin.unknown)  UsersOrigin? origin,  String? hostname)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: UsersSortType.unknown)  UsersSortType? sort, @JsonKey(unknownEnumValue: UsersState.unknown)  UsersState? state, @JsonKey(unknownEnumValue: Origin.unknown)  Origin? origin,  String? hostname)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Users() when $default != null:
 return $default(_that.limit,_that.offset,_that.sort,_that.state,_that.origin,_that.hostname);case _:
@@ -179,7 +179,7 @@ return $default(_that.limit,_that.offset,_that.sort,_that.state,_that.origin,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: UsersSort.unknown)  UsersSort? sort, @JsonKey(unknownEnumValue: UsersState.unknown)  UsersState? state, @JsonKey(unknownEnumValue: UsersOrigin.unknown)  UsersOrigin? origin,  String? hostname)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: UsersSortType.unknown)  UsersSortType? sort, @JsonKey(unknownEnumValue: UsersState.unknown)  UsersState? state, @JsonKey(unknownEnumValue: Origin.unknown)  Origin? origin,  String? hostname)  $default,) {final _that = this;
 switch (_that) {
 case _Users():
 return $default(_that.limit,_that.offset,_that.sort,_that.state,_that.origin,_that.hostname);case _:
@@ -199,7 +199,7 @@ return $default(_that.limit,_that.offset,_that.sort,_that.state,_that.origin,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: UsersSort.unknown)  UsersSort? sort, @JsonKey(unknownEnumValue: UsersState.unknown)  UsersState? state, @JsonKey(unknownEnumValue: UsersOrigin.unknown)  UsersOrigin? origin,  String? hostname)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? limit,  int? offset, @JsonKey(unknownEnumValue: UsersSortType.unknown)  UsersSortType? sort, @JsonKey(unknownEnumValue: UsersState.unknown)  UsersState? state, @JsonKey(unknownEnumValue: Origin.unknown)  Origin? origin,  String? hostname)?  $default,) {final _that = this;
 switch (_that) {
 case _Users() when $default != null:
 return $default(_that.limit,_that.offset,_that.sort,_that.state,_that.origin,_that.hostname);case _:
@@ -214,14 +214,14 @@ return $default(_that.limit,_that.offset,_that.sort,_that.state,_that.origin,_th
 @JsonSerializable()
 
 class _Users implements Users {
-  const _Users({this.limit = 10, this.offset = 0, @JsonKey(unknownEnumValue: UsersSort.unknown) this.sort, @JsonKey(unknownEnumValue: UsersState.unknown) this.state = UsersState.all, @JsonKey(unknownEnumValue: UsersOrigin.unknown) this.origin = UsersOrigin.local, this.hostname = null});
+  const _Users({this.limit = 10, this.offset = 0, @JsonKey(unknownEnumValue: UsersSortType.unknown) this.sort, @JsonKey(unknownEnumValue: UsersState.unknown) this.state = UsersState.all, @JsonKey(unknownEnumValue: Origin.unknown) this.origin = Origin.local, this.hostname = null});
   factory _Users.fromJson(Map<String, dynamic> json) => _$UsersFromJson(json);
 
 @override@JsonKey() final  int? limit;
 @override@JsonKey() final  int? offset;
-@override@JsonKey(unknownEnumValue: UsersSort.unknown) final  UsersSort? sort;
+@override@JsonKey(unknownEnumValue: UsersSortType.unknown) final  UsersSortType? sort;
 @override@JsonKey(unknownEnumValue: UsersState.unknown) final  UsersState? state;
-@override@JsonKey(unknownEnumValue: UsersOrigin.unknown) final  UsersOrigin? origin;
+@override@JsonKey(unknownEnumValue: Origin.unknown) final  Origin? origin;
 @override@JsonKey() final  String? hostname;
 
 /// Create a copy of Users
@@ -257,7 +257,7 @@ abstract mixin class _$UsersCopyWith<$Res> implements $UsersCopyWith<$Res> {
   factory _$UsersCopyWith(_Users value, $Res Function(_Users) _then) = __$UsersCopyWithImpl;
 @override @useResult
 $Res call({
- int? limit, int? offset,@JsonKey(unknownEnumValue: UsersSort.unknown) UsersSort? sort,@JsonKey(unknownEnumValue: UsersState.unknown) UsersState? state,@JsonKey(unknownEnumValue: UsersOrigin.unknown) UsersOrigin? origin, String? hostname
+ int? limit, int? offset,@JsonKey(unknownEnumValue: UsersSortType.unknown) UsersSortType? sort,@JsonKey(unknownEnumValue: UsersState.unknown) UsersState? state,@JsonKey(unknownEnumValue: Origin.unknown) Origin? origin, String? hostname
 });
 
 
@@ -279,9 +279,9 @@ class __$UsersCopyWithImpl<$Res>
 limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
-as UsersSort?,state: freezed == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as UsersSortType?,state: freezed == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
 as UsersState?,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
-as UsersOrigin?,hostname: freezed == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
+as Origin?,hostname: freezed == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

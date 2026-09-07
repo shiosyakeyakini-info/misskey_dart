@@ -21,6 +21,8 @@ _UsersNotesRequest _$UsersNotesRequestFromJson(Map<String, dynamic> json) =>
           .fromJson((json['untilDate'] as num?)?.toInt()),
       allowPartial: json['allowPartial'] as bool? ?? false,
       withFiles: json['withFiles'] as bool? ?? false,
+      includeReplies: json['includeReplies'] as bool?,
+      includeMyRenotes: json['includeMyRenotes'] as bool?,
     );
 
 Map<String, dynamic> _$UsersNotesRequestToJson(_UsersNotesRequest instance) =>
@@ -38,4 +40,6 @@ Map<String, dynamic> _$UsersNotesRequestToJson(_UsersNotesRequest instance) =>
           .toJson(instance.untilDate),
       'allowPartial': instance.allowPartial,
       'withFiles': instance.withFiles,
+      'includeReplies': instance.includeReplies,
+      'includeMyRenotes': instance.includeMyRenotes,
     };

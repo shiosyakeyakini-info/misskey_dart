@@ -10,9 +10,9 @@ _Users _$UsersFromJson(Map<String, dynamic> json) => _Users(
   limit: (json['limit'] as num?)?.toInt() ?? 10,
   offset: (json['offset'] as num?)?.toInt() ?? 0,
   sort: $enumDecodeNullable(
-    _$UsersSortEnumMap,
+    _$UsersSortTypeEnumMap,
     json['sort'],
-    unknownValue: UsersSort.unknown,
+    unknownValue: UsersSortType.unknown,
   ),
   state:
       $enumDecodeNullable(
@@ -23,31 +23,31 @@ _Users _$UsersFromJson(Map<String, dynamic> json) => _Users(
       UsersState.all,
   origin:
       $enumDecodeNullable(
-        _$UsersOriginEnumMap,
+        _$OriginEnumMap,
         json['origin'],
-        unknownValue: UsersOrigin.unknown,
+        unknownValue: Origin.unknown,
       ) ??
-      UsersOrigin.local,
+      Origin.local,
   hostname: json['hostname'] as String? ?? null,
 );
 
 Map<String, dynamic> _$UsersToJson(_Users instance) => <String, dynamic>{
   'limit': instance.limit,
   'offset': instance.offset,
-  'sort': _$UsersSortEnumMap[instance.sort],
+  'sort': _$UsersSortTypeEnumMap[instance.sort],
   'state': _$UsersStateEnumMap[instance.state],
-  'origin': _$UsersOriginEnumMap[instance.origin],
+  'origin': _$OriginEnumMap[instance.origin],
   'hostname': instance.hostname,
 };
 
-const _$UsersSortEnumMap = {
-  UsersSort.plusFollower: '+follower',
-  UsersSort.minusFollower: '-follower',
-  UsersSort.plusCreatedAt: '+createdAt',
-  UsersSort.minusCreatedAt: '-createdAt',
-  UsersSort.plusUpdatedAt: '+updatedAt',
-  UsersSort.minusUpdatedAt: '-updatedAt',
-  UsersSort.unknown: 'unknown',
+const _$UsersSortTypeEnumMap = {
+  UsersSortType.followerDescendant: '+follower',
+  UsersSortType.followerAscendant: '-follower',
+  UsersSortType.createdAtDescendant: '+createdAt',
+  UsersSortType.createdAtAscendant: '-createdAt',
+  UsersSortType.updateAtDescendant: '+updatedAt',
+  UsersSortType.updateAtAscendant: '-updatedAt',
+  UsersSortType.unknown: 'unknown',
 };
 
 const _$UsersStateEnumMap = {
@@ -56,9 +56,9 @@ const _$UsersStateEnumMap = {
   UsersState.unknown: 'unknown',
 };
 
-const _$UsersOriginEnumMap = {
-  UsersOrigin.combined: 'combined',
-  UsersOrigin.local: 'local',
-  UsersOrigin.remote: 'remote',
-  UsersOrigin.unknown: 'unknown',
+const _$OriginEnumMap = {
+  Origin.combined: 'combined',
+  Origin.local: 'local',
+  Origin.remote: 'remote',
+  Origin.unknown: 'unknown',
 };

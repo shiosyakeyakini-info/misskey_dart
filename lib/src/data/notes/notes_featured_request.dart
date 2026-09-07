@@ -9,6 +9,7 @@ abstract class NotesFeaturedRequest with _$NotesFeaturedRequest {
     @Default(10) int? limit,
     String? untilId,
     String? channelId,
+    int? offset,
   }) = _NotesFeaturedRequest;
 
   factory NotesFeaturedRequest.fromJson(Map<String, Object?> json) =>

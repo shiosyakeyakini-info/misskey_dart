@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UsersNotesRequest {
 
- String? get userId; bool? get withReplies; bool? get withRenotes; bool? get withChannelNotes; int? get limit; String? get sinceId; String? get untilId;@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? get sinceDate;@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? get untilDate; bool? get allowPartial; bool? get withFiles;
+ String? get userId; bool? get withReplies; bool? get withRenotes; bool? get withChannelNotes; int? get limit; String? get sinceId; String? get untilId;@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? get sinceDate;@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? get untilDate; bool? get allowPartial; bool? get withFiles; bool? get includeReplies; bool? get includeMyRenotes;
 /// Create a copy of UsersNotesRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $UsersNotesRequestCopyWith<UsersNotesRequest> get copyWith => _$UsersNotesReques
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersNotesRequest&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withRenotes, withRenotes) || other.withRenotes == withRenotes)&&(identical(other.withChannelNotes, withChannelNotes) || other.withChannelNotes == withChannelNotes)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.allowPartial, allowPartial) || other.allowPartial == allowPartial)&&(identical(other.withFiles, withFiles) || other.withFiles == withFiles));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UsersNotesRequest&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withRenotes, withRenotes) || other.withRenotes == withRenotes)&&(identical(other.withChannelNotes, withChannelNotes) || other.withChannelNotes == withChannelNotes)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.allowPartial, allowPartial) || other.allowPartial == allowPartial)&&(identical(other.withFiles, withFiles) || other.withFiles == withFiles)&&(identical(other.includeReplies, includeReplies) || other.includeReplies == includeReplies)&&(identical(other.includeMyRenotes, includeMyRenotes) || other.includeMyRenotes == includeMyRenotes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,userId,withReplies,withRenotes,withChannelNotes,limit,sinceId,untilId,sinceDate,untilDate,allowPartial,withFiles);
+int get hashCode => Object.hash(runtimeType,userId,withReplies,withRenotes,withChannelNotes,limit,sinceId,untilId,sinceDate,untilDate,allowPartial,withFiles,includeReplies,includeMyRenotes);
 
 @override
 String toString() {
-  return 'UsersNotesRequest(userId: $userId, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial, withFiles: $withFiles)';
+  return 'UsersNotesRequest(userId: $userId, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial, withFiles: $withFiles, includeReplies: $includeReplies, includeMyRenotes: $includeMyRenotes)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $UsersNotesRequestCopyWith<$Res>  {
   factory $UsersNotesRequestCopyWith(UsersNotesRequest value, $Res Function(UsersNotesRequest) _then) = _$UsersNotesRequestCopyWithImpl;
 @useResult
 $Res call({
- String? userId, bool? withReplies, bool? withRenotes, bool? withChannelNotes, int? limit, String? sinceId, String? untilId,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate, bool? allowPartial, bool? withFiles
+ String? userId, bool? withReplies, bool? withRenotes, bool? withChannelNotes, int? limit, String? sinceId, String? untilId,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate, bool? allowPartial, bool? withFiles, bool? includeReplies, bool? includeMyRenotes
 });
 
 
@@ -65,7 +65,7 @@ class _$UsersNotesRequestCopyWithImpl<$Res>
 
 /// Create a copy of UsersNotesRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? userId = freezed,Object? withReplies = freezed,Object? withRenotes = freezed,Object? withChannelNotes = freezed,Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? allowPartial = freezed,Object? withFiles = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? userId = freezed,Object? withReplies = freezed,Object? withRenotes = freezed,Object? withChannelNotes = freezed,Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? allowPartial = freezed,Object? withFiles = freezed,Object? includeReplies = freezed,Object? includeMyRenotes = freezed,}) {
   return _then(_self.copyWith(
 userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String?,withReplies: freezed == withReplies ? _self.withReplies : withReplies // ignore: cast_nullable_to_non_nullable
@@ -78,6 +78,8 @@ as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // igno
 as DateTime?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
 as DateTime?,allowPartial: freezed == allowPartial ? _self.allowPartial : allowPartial // ignore: cast_nullable_to_non_nullable
 as bool?,withFiles: freezed == withFiles ? _self.withFiles : withFiles // ignore: cast_nullable_to_non_nullable
+as bool?,includeReplies: freezed == includeReplies ? _self.includeReplies : includeReplies // ignore: cast_nullable_to_non_nullable
+as bool?,includeMyRenotes: freezed == includeMyRenotes ? _self.includeMyRenotes : includeMyRenotes // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }
@@ -163,10 +165,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? userId,  bool? withReplies,  bool? withRenotes,  bool? withChannelNotes,  int? limit,  String? sinceId,  String? untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? untilDate,  bool? allowPartial,  bool? withFiles)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? userId,  bool? withReplies,  bool? withRenotes,  bool? withChannelNotes,  int? limit,  String? sinceId,  String? untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? untilDate,  bool? allowPartial,  bool? withFiles,  bool? includeReplies,  bool? includeMyRenotes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UsersNotesRequest() when $default != null:
-return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChannelNotes,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.allowPartial,_that.withFiles);case _:
+return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChannelNotes,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.allowPartial,_that.withFiles,_that.includeReplies,_that.includeMyRenotes);case _:
   return orElse();
 
 }
@@ -184,10 +186,10 @@ return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChann
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? userId,  bool? withReplies,  bool? withRenotes,  bool? withChannelNotes,  int? limit,  String? sinceId,  String? untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? untilDate,  bool? allowPartial,  bool? withFiles)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? userId,  bool? withReplies,  bool? withRenotes,  bool? withChannelNotes,  int? limit,  String? sinceId,  String? untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? untilDate,  bool? allowPartial,  bool? withFiles,  bool? includeReplies,  bool? includeMyRenotes)  $default,) {final _that = this;
 switch (_that) {
 case _UsersNotesRequest():
-return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChannelNotes,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.allowPartial,_that.withFiles);case _:
+return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChannelNotes,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.allowPartial,_that.withFiles,_that.includeReplies,_that.includeMyRenotes);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -204,10 +206,10 @@ return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChann
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? userId,  bool? withReplies,  bool? withRenotes,  bool? withChannelNotes,  int? limit,  String? sinceId,  String? untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? untilDate,  bool? allowPartial,  bool? withFiles)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? userId,  bool? withReplies,  bool? withRenotes,  bool? withChannelNotes,  int? limit,  String? sinceId,  String? untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? untilDate,  bool? allowPartial,  bool? withFiles,  bool? includeReplies,  bool? includeMyRenotes)?  $default,) {final _that = this;
 switch (_that) {
 case _UsersNotesRequest() when $default != null:
-return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChannelNotes,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.allowPartial,_that.withFiles);case _:
+return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChannelNotes,_that.limit,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.allowPartial,_that.withFiles,_that.includeReplies,_that.includeMyRenotes);case _:
   return null;
 
 }
@@ -219,7 +221,7 @@ return $default(_that.userId,_that.withReplies,_that.withRenotes,_that.withChann
 @JsonSerializable()
 
 class _UsersNotesRequest implements UsersNotesRequest {
-  const _UsersNotesRequest({this.userId, this.withReplies = false, this.withRenotes = true, this.withChannelNotes = false, this.limit = 10, this.sinceId, this.untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.untilDate, this.allowPartial = false, this.withFiles = false});
+  const _UsersNotesRequest({this.userId, this.withReplies = false, this.withRenotes = true, this.withChannelNotes = false, this.limit = 10, this.sinceId, this.untilId, @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.sinceDate, @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.untilDate, this.allowPartial = false, this.withFiles = false, this.includeReplies, this.includeMyRenotes});
   factory _UsersNotesRequest.fromJson(Map<String, dynamic> json) => _$UsersNotesRequestFromJson(json);
 
 @override final  String? userId;
@@ -233,6 +235,8 @@ class _UsersNotesRequest implements UsersNotesRequest {
 @override@NullableEpocTimeDateTimeConverter.withMilliSeconds() final  DateTime? untilDate;
 @override@JsonKey() final  bool? allowPartial;
 @override@JsonKey() final  bool? withFiles;
+@override final  bool? includeReplies;
+@override final  bool? includeMyRenotes;
 
 /// Create a copy of UsersNotesRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -247,16 +251,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UsersNotesRequest&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withRenotes, withRenotes) || other.withRenotes == withRenotes)&&(identical(other.withChannelNotes, withChannelNotes) || other.withChannelNotes == withChannelNotes)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.allowPartial, allowPartial) || other.allowPartial == allowPartial)&&(identical(other.withFiles, withFiles) || other.withFiles == withFiles));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UsersNotesRequest&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.withReplies, withReplies) || other.withReplies == withReplies)&&(identical(other.withRenotes, withRenotes) || other.withRenotes == withRenotes)&&(identical(other.withChannelNotes, withChannelNotes) || other.withChannelNotes == withChannelNotes)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.allowPartial, allowPartial) || other.allowPartial == allowPartial)&&(identical(other.withFiles, withFiles) || other.withFiles == withFiles)&&(identical(other.includeReplies, includeReplies) || other.includeReplies == includeReplies)&&(identical(other.includeMyRenotes, includeMyRenotes) || other.includeMyRenotes == includeMyRenotes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,userId,withReplies,withRenotes,withChannelNotes,limit,sinceId,untilId,sinceDate,untilDate,allowPartial,withFiles);
+int get hashCode => Object.hash(runtimeType,userId,withReplies,withRenotes,withChannelNotes,limit,sinceId,untilId,sinceDate,untilDate,allowPartial,withFiles,includeReplies,includeMyRenotes);
 
 @override
 String toString() {
-  return 'UsersNotesRequest(userId: $userId, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial, withFiles: $withFiles)';
+  return 'UsersNotesRequest(userId: $userId, withReplies: $withReplies, withRenotes: $withRenotes, withChannelNotes: $withChannelNotes, limit: $limit, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, allowPartial: $allowPartial, withFiles: $withFiles, includeReplies: $includeReplies, includeMyRenotes: $includeMyRenotes)';
 }
 
 
@@ -267,7 +271,7 @@ abstract mixin class _$UsersNotesRequestCopyWith<$Res> implements $UsersNotesReq
   factory _$UsersNotesRequestCopyWith(_UsersNotesRequest value, $Res Function(_UsersNotesRequest) _then) = __$UsersNotesRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? userId, bool? withReplies, bool? withRenotes, bool? withChannelNotes, int? limit, String? sinceId, String? untilId,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate, bool? allowPartial, bool? withFiles
+ String? userId, bool? withReplies, bool? withRenotes, bool? withChannelNotes, int? limit, String? sinceId, String? untilId,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate, bool? allowPartial, bool? withFiles, bool? includeReplies, bool? includeMyRenotes
 });
 
 
@@ -284,7 +288,7 @@ class __$UsersNotesRequestCopyWithImpl<$Res>
 
 /// Create a copy of UsersNotesRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? userId = freezed,Object? withReplies = freezed,Object? withRenotes = freezed,Object? withChannelNotes = freezed,Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? allowPartial = freezed,Object? withFiles = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? userId = freezed,Object? withReplies = freezed,Object? withRenotes = freezed,Object? withChannelNotes = freezed,Object? limit = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? allowPartial = freezed,Object? withFiles = freezed,Object? includeReplies = freezed,Object? includeMyRenotes = freezed,}) {
   return _then(_UsersNotesRequest(
 userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String?,withReplies: freezed == withReplies ? _self.withReplies : withReplies // ignore: cast_nullable_to_non_nullable
@@ -297,6 +301,8 @@ as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // igno
 as DateTime?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
 as DateTime?,allowPartial: freezed == allowPartial ? _self.allowPartial : allowPartial // ignore: cast_nullable_to_non_nullable
 as bool?,withFiles: freezed == withFiles ? _self.withFiles : withFiles // ignore: cast_nullable_to_non_nullable
+as bool?,includeReplies: freezed == includeReplies ? _self.includeReplies : includeReplies // ignore: cast_nullable_to_non_nullable
+as bool?,includeMyRenotes: freezed == includeMyRenotes ? _self.includeMyRenotes : includeMyRenotes // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }

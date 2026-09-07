@@ -19,6 +19,7 @@ abstract class AntennasCreateRequest with _$AntennasCreateRequest {
     bool? withReplies,
     bool? withFile,
     bool? excludeNotesInSensitiveChannel,
+    bool? notify,
   }) = _AntennasCreateRequest;
 
   factory AntennasCreateRequest.fromJson(Map<String, Object?> json) =>
