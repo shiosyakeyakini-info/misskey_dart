@@ -22,7 +22,7 @@ _ChatMessage _$ChatMessageFromJson(Map<String, dynamic> json) => _ChatMessage(
   file: json['file'] as Map<String, dynamic>?,
   isRead: json['isRead'] as bool?,
   reactions: (json['reactions'] as List<dynamic>)
-      .map((e) => ChatMessageReactionsItem.fromJson(e as Map<String, dynamic>))
+      .map((e) => ChatMessageReaction.fromJson(e as Map<String, dynamic>))
       .toList(),
 );
 

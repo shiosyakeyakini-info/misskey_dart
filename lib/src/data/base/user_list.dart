@@ -10,7 +10,7 @@ abstract class UserList with _$UserList {
     required String id,
     @DateTimeConverter() required DateTime createdAt,
     required String name,
-    List<String>? userIds,
+    @Default([]) List<String> userIds,
     required bool isPublic,
     double? likedCount,
     bool? isLiked,

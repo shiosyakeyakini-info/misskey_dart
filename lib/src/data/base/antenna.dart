@@ -10,8 +10,8 @@ abstract class Antenna with _$Antenna {
     required String id,
     @DateTimeConverter() required DateTime createdAt,
     required String name,
-    required List<dynamic> keywords,
-    required List<dynamic> excludeKeywords,
+    required List<List<String>> keywords,
+    required List<List<String>> excludeKeywords,
     @JsonKey(unknownEnumValue: AntennaSource.unknown)
     required AntennaSource src,
     String? userListId,

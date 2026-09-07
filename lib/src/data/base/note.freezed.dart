@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Note {
 
- String get id;@DateTimeConverter() DateTime get createdAt;@NullableDateTimeConverter() DateTime? get deletedAt; String? get text; String? get cw; String get userId; UserLite get user; String? get replyId; String? get renoteId; Note? get reply; Note? get renote; bool? get isHidden;@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility get visibility; List<String>? get mentions; List<String>? get visibleUserIds; List<String>? get fileIds; List<DriveFile>? get files; List<String>? get tags; NotePoll? get poll;@EmojisConverter() Map<String, String> get emojis; String? get channelId; NoteChannelInfo? get channel; bool? get localOnly;@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? get reactionAcceptance;@EmojisConverter() Map<String, String> get reactionEmojis; Map<String, int> get reactions; int get reactionCount; int get renoteCount; int get repliesCount;@NullableUriConverter() Uri? get uri;@NullableUriConverter() Uri? get url; List<String>? get reactionAndUserPairCache; int? get clippedCount; String? get myReaction; bool? get hasPoll;@NullableDateTimeConverter() DateTime? get updatedAt;
+ String get id;@DateTimeConverter() DateTime get createdAt;@NullableDateTimeConverter() DateTime? get deletedAt; String? get text; String? get cw; String get userId; UserLite get user; String? get replyId; String? get renoteId; Note? get reply; Note? get renote; bool? get isHidden;@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility get visibility; List<String> get mentions; List<String> get visibleUserIds; List<String> get fileIds; List<DriveFile> get files; List<String> get tags; NotePoll? get poll;@EmojisConverter() Map<String, String> get emojis; String? get channelId; NoteChannelInfo? get channel; bool get localOnly;@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? get reactionAcceptance;@EmojisConverter() Map<String, String> get reactionEmojis; Map<String, int> get reactions; int get reactionCount; int get renoteCount; int get repliesCount;@NullableUriConverter() Uri? get uri;@NullableUriConverter() Uri? get url; List<String> get reactionAndUserPairCache; int? get clippedCount; String? get myReaction; bool? get hasPoll;@NullableDateTimeConverter() DateTime? get updatedAt;
 /// Create a copy of Note
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NoteCopyWith<$Res>  {
   factory $NoteCopyWith(Note value, $Res Function(Note) _then) = _$NoteCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? deletedAt, String? text, String? cw, String userId, UserLite user, String? replyId, String? renoteId, Note? reply, Note? renote, bool? isHidden,@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility visibility, List<String>? mentions, List<String>? visibleUserIds, List<String>? fileIds, List<DriveFile>? files, List<String>? tags, NotePoll? poll,@EmojisConverter() Map<String, String> emojis, String? channelId, NoteChannelInfo? channel, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,@EmojisConverter() Map<String, String> reactionEmojis, Map<String, int> reactions, int reactionCount, int renoteCount, int repliesCount,@NullableUriConverter() Uri? uri,@NullableUriConverter() Uri? url, List<String>? reactionAndUserPairCache, int? clippedCount, String? myReaction, bool? hasPoll,@NullableDateTimeConverter() DateTime? updatedAt
+ String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? deletedAt, String? text, String? cw, String userId, UserLite user, String? replyId, String? renoteId, Note? reply, Note? renote, bool? isHidden,@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility visibility, List<String> mentions, List<String> visibleUserIds, List<String> fileIds, List<DriveFile> files, List<String> tags, NotePoll? poll,@EmojisConverter() Map<String, String> emojis, String? channelId, NoteChannelInfo? channel, bool localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,@EmojisConverter() Map<String, String> reactionEmojis, Map<String, int> reactions, int reactionCount, int renoteCount, int repliesCount,@NullableUriConverter() Uri? uri,@NullableUriConverter() Uri? url, List<String> reactionAndUserPairCache, int? clippedCount, String? myReaction, bool? hasPoll,@NullableDateTimeConverter() DateTime? updatedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$NoteCopyWithImpl<$Res>
 
 /// Create a copy of Note
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? deletedAt = freezed,Object? text = freezed,Object? cw = freezed,Object? userId = null,Object? user = null,Object? replyId = freezed,Object? renoteId = freezed,Object? reply = freezed,Object? renote = freezed,Object? isHidden = freezed,Object? visibility = null,Object? mentions = freezed,Object? visibleUserIds = freezed,Object? fileIds = freezed,Object? files = freezed,Object? tags = freezed,Object? poll = freezed,Object? emojis = null,Object? channelId = freezed,Object? channel = freezed,Object? localOnly = freezed,Object? reactionAcceptance = freezed,Object? reactionEmojis = null,Object? reactions = null,Object? reactionCount = null,Object? renoteCount = null,Object? repliesCount = null,Object? uri = freezed,Object? url = freezed,Object? reactionAndUserPairCache = freezed,Object? clippedCount = freezed,Object? myReaction = freezed,Object? hasPoll = freezed,Object? updatedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? deletedAt = freezed,Object? text = freezed,Object? cw = freezed,Object? userId = null,Object? user = null,Object? replyId = freezed,Object? renoteId = freezed,Object? reply = freezed,Object? renote = freezed,Object? isHidden = freezed,Object? visibility = null,Object? mentions = null,Object? visibleUserIds = null,Object? fileIds = null,Object? files = null,Object? tags = null,Object? poll = freezed,Object? emojis = null,Object? channelId = freezed,Object? channel = freezed,Object? localOnly = null,Object? reactionAcceptance = freezed,Object? reactionEmojis = null,Object? reactions = null,Object? reactionCount = null,Object? renoteCount = null,Object? repliesCount = null,Object? uri = freezed,Object? url = freezed,Object? reactionAndUserPairCache = null,Object? clippedCount = freezed,Object? myReaction = freezed,Object? hasPoll = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -80,17 +80,17 @@ as String?,reply: freezed == reply ? _self.reply : reply // ignore: cast_nullabl
 as Note?,renote: freezed == renote ? _self.renote : renote // ignore: cast_nullable_to_non_nullable
 as Note?,isHidden: freezed == isHidden ? _self.isHidden : isHidden // ignore: cast_nullable_to_non_nullable
 as bool?,visibility: null == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
-as NoteVisibility,mentions: freezed == mentions ? _self.mentions : mentions // ignore: cast_nullable_to_non_nullable
-as List<String>?,visibleUserIds: freezed == visibleUserIds ? _self.visibleUserIds : visibleUserIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,fileIds: freezed == fileIds ? _self.fileIds : fileIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,files: freezed == files ? _self.files : files // ignore: cast_nullable_to_non_nullable
-as List<DriveFile>?,tags: freezed == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
-as List<String>?,poll: freezed == poll ? _self.poll : poll // ignore: cast_nullable_to_non_nullable
+as NoteVisibility,mentions: null == mentions ? _self.mentions : mentions // ignore: cast_nullable_to_non_nullable
+as List<String>,visibleUserIds: null == visibleUserIds ? _self.visibleUserIds : visibleUserIds // ignore: cast_nullable_to_non_nullable
+as List<String>,fileIds: null == fileIds ? _self.fileIds : fileIds // ignore: cast_nullable_to_non_nullable
+as List<String>,files: null == files ? _self.files : files // ignore: cast_nullable_to_non_nullable
+as List<DriveFile>,tags: null == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
+as List<String>,poll: freezed == poll ? _self.poll : poll // ignore: cast_nullable_to_non_nullable
 as NotePoll?,emojis: null == emojis ? _self.emojis : emojis // ignore: cast_nullable_to_non_nullable
 as Map<String, String>,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as String?,channel: freezed == channel ? _self.channel : channel // ignore: cast_nullable_to_non_nullable
-as NoteChannelInfo?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
-as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+as NoteChannelInfo?,localOnly: null == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
+as bool,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
 as ReactionAcceptance?,reactionEmojis: null == reactionEmojis ? _self.reactionEmojis : reactionEmojis // ignore: cast_nullable_to_non_nullable
 as Map<String, String>,reactions: null == reactions ? _self.reactions : reactions // ignore: cast_nullable_to_non_nullable
 as Map<String, int>,reactionCount: null == reactionCount ? _self.reactionCount : reactionCount // ignore: cast_nullable_to_non_nullable
@@ -98,8 +98,8 @@ as int,renoteCount: null == renoteCount ? _self.renoteCount : renoteCount // ign
 as int,repliesCount: null == repliesCount ? _self.repliesCount : repliesCount // ignore: cast_nullable_to_non_nullable
 as int,uri: freezed == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
 as Uri?,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as Uri?,reactionAndUserPairCache: freezed == reactionAndUserPairCache ? _self.reactionAndUserPairCache : reactionAndUserPairCache // ignore: cast_nullable_to_non_nullable
-as List<String>?,clippedCount: freezed == clippedCount ? _self.clippedCount : clippedCount // ignore: cast_nullable_to_non_nullable
+as Uri?,reactionAndUserPairCache: null == reactionAndUserPairCache ? _self.reactionAndUserPairCache : reactionAndUserPairCache // ignore: cast_nullable_to_non_nullable
+as List<String>,clippedCount: freezed == clippedCount ? _self.clippedCount : clippedCount // ignore: cast_nullable_to_non_nullable
 as int?,myReaction: freezed == myReaction ? _self.myReaction : myReaction // ignore: cast_nullable_to_non_nullable
 as String?,hasPoll: freezed == hasPoll ? _self.hasPoll : hasPoll // ignore: cast_nullable_to_non_nullable
 as bool?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -245,7 +245,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? deletedAt,  String? text,  String? cw,  String userId,  UserLite user,  String? replyId,  String? renoteId,  Note? reply,  Note? renote,  bool? isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility visibility,  List<String>? mentions,  List<String>? visibleUserIds,  List<String>? fileIds,  List<DriveFile>? files,  List<String>? tags,  NotePoll? poll, @EmojisConverter()  Map<String, String> emojis,  String? channelId,  NoteChannelInfo? channel,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance, @EmojisConverter()  Map<String, String> reactionEmojis,  Map<String, int> reactions,  int reactionCount,  int renoteCount,  int repliesCount, @NullableUriConverter()  Uri? uri, @NullableUriConverter()  Uri? url,  List<String>? reactionAndUserPairCache,  int? clippedCount,  String? myReaction,  bool? hasPoll, @NullableDateTimeConverter()  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? deletedAt,  String? text,  String? cw,  String userId,  UserLite user,  String? replyId,  String? renoteId,  Note? reply,  Note? renote,  bool? isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility visibility,  List<String> mentions,  List<String> visibleUserIds,  List<String> fileIds,  List<DriveFile> files,  List<String> tags,  NotePoll? poll, @EmojisConverter()  Map<String, String> emojis,  String? channelId,  NoteChannelInfo? channel,  bool localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance, @EmojisConverter()  Map<String, String> reactionEmojis,  Map<String, int> reactions,  int reactionCount,  int renoteCount,  int repliesCount, @NullableUriConverter()  Uri? uri, @NullableUriConverter()  Uri? url,  List<String> reactionAndUserPairCache,  int? clippedCount,  String? myReaction,  bool? hasPoll, @NullableDateTimeConverter()  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Note() when $default != null:
 return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_that.userId,_that.user,_that.replyId,_that.renoteId,_that.reply,_that.renote,_that.isHidden,_that.visibility,_that.mentions,_that.visibleUserIds,_that.fileIds,_that.files,_that.tags,_that.poll,_that.emojis,_that.channelId,_that.channel,_that.localOnly,_that.reactionAcceptance,_that.reactionEmojis,_that.reactions,_that.reactionCount,_that.renoteCount,_that.repliesCount,_that.uri,_that.url,_that.reactionAndUserPairCache,_that.clippedCount,_that.myReaction,_that.hasPoll,_that.updatedAt);case _:
@@ -266,7 +266,7 @@ return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? deletedAt,  String? text,  String? cw,  String userId,  UserLite user,  String? replyId,  String? renoteId,  Note? reply,  Note? renote,  bool? isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility visibility,  List<String>? mentions,  List<String>? visibleUserIds,  List<String>? fileIds,  List<DriveFile>? files,  List<String>? tags,  NotePoll? poll, @EmojisConverter()  Map<String, String> emojis,  String? channelId,  NoteChannelInfo? channel,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance, @EmojisConverter()  Map<String, String> reactionEmojis,  Map<String, int> reactions,  int reactionCount,  int renoteCount,  int repliesCount, @NullableUriConverter()  Uri? uri, @NullableUriConverter()  Uri? url,  List<String>? reactionAndUserPairCache,  int? clippedCount,  String? myReaction,  bool? hasPoll, @NullableDateTimeConverter()  DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? deletedAt,  String? text,  String? cw,  String userId,  UserLite user,  String? replyId,  String? renoteId,  Note? reply,  Note? renote,  bool? isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility visibility,  List<String> mentions,  List<String> visibleUserIds,  List<String> fileIds,  List<DriveFile> files,  List<String> tags,  NotePoll? poll, @EmojisConverter()  Map<String, String> emojis,  String? channelId,  NoteChannelInfo? channel,  bool localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance, @EmojisConverter()  Map<String, String> reactionEmojis,  Map<String, int> reactions,  int reactionCount,  int renoteCount,  int repliesCount, @NullableUriConverter()  Uri? uri, @NullableUriConverter()  Uri? url,  List<String> reactionAndUserPairCache,  int? clippedCount,  String? myReaction,  bool? hasPoll, @NullableDateTimeConverter()  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Note():
 return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_that.userId,_that.user,_that.replyId,_that.renoteId,_that.reply,_that.renote,_that.isHidden,_that.visibility,_that.mentions,_that.visibleUserIds,_that.fileIds,_that.files,_that.tags,_that.poll,_that.emojis,_that.channelId,_that.channel,_that.localOnly,_that.reactionAcceptance,_that.reactionEmojis,_that.reactions,_that.reactionCount,_that.renoteCount,_that.repliesCount,_that.uri,_that.url,_that.reactionAndUserPairCache,_that.clippedCount,_that.myReaction,_that.hasPoll,_that.updatedAt);case _:
@@ -286,7 +286,7 @@ return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? deletedAt,  String? text,  String? cw,  String userId,  UserLite user,  String? replyId,  String? renoteId,  Note? reply,  Note? renote,  bool? isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility visibility,  List<String>? mentions,  List<String>? visibleUserIds,  List<String>? fileIds,  List<DriveFile>? files,  List<String>? tags,  NotePoll? poll, @EmojisConverter()  Map<String, String> emojis,  String? channelId,  NoteChannelInfo? channel,  bool? localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance, @EmojisConverter()  Map<String, String> reactionEmojis,  Map<String, int> reactions,  int reactionCount,  int renoteCount,  int repliesCount, @NullableUriConverter()  Uri? uri, @NullableUriConverter()  Uri? url,  List<String>? reactionAndUserPairCache,  int? clippedCount,  String? myReaction,  bool? hasPoll, @NullableDateTimeConverter()  DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? deletedAt,  String? text,  String? cw,  String userId,  UserLite user,  String? replyId,  String? renoteId,  Note? reply,  Note? renote,  bool? isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown)  NoteVisibility visibility,  List<String> mentions,  List<String> visibleUserIds,  List<String> fileIds,  List<DriveFile> files,  List<String> tags,  NotePoll? poll, @EmojisConverter()  Map<String, String> emojis,  String? channelId,  NoteChannelInfo? channel,  bool localOnly, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown)  ReactionAcceptance? reactionAcceptance, @EmojisConverter()  Map<String, String> reactionEmojis,  Map<String, int> reactions,  int reactionCount,  int renoteCount,  int repliesCount, @NullableUriConverter()  Uri? uri, @NullableUriConverter()  Uri? url,  List<String> reactionAndUserPairCache,  int? clippedCount,  String? myReaction,  bool? hasPoll, @NullableDateTimeConverter()  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Note() when $default != null:
 return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_that.userId,_that.user,_that.replyId,_that.renoteId,_that.reply,_that.renote,_that.isHidden,_that.visibility,_that.mentions,_that.visibleUserIds,_that.fileIds,_that.files,_that.tags,_that.poll,_that.emojis,_that.channelId,_that.channel,_that.localOnly,_that.reactionAcceptance,_that.reactionEmojis,_that.reactions,_that.reactionCount,_that.renoteCount,_that.repliesCount,_that.uri,_that.url,_that.reactionAndUserPairCache,_that.clippedCount,_that.myReaction,_that.hasPoll,_that.updatedAt);case _:
@@ -301,7 +301,7 @@ return $default(_that.id,_that.createdAt,_that.deletedAt,_that.text,_that.cw,_th
 @JsonSerializable()
 
 class _Note implements Note {
-  const _Note({required this.id, @DateTimeConverter() required this.createdAt, @NullableDateTimeConverter() this.deletedAt, this.text, this.cw, required this.userId, required this.user, this.replyId, this.renoteId, this.reply, this.renote, this.isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown) required this.visibility, final  List<String>? mentions = const [], final  List<String>? visibleUserIds = const [], final  List<String>? fileIds = const [], final  List<DriveFile>? files = const [], final  List<String>? tags = const [], this.poll, @EmojisConverter() final  Map<String, String> emojis = const {}, this.channelId, this.channel, this.localOnly = false, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance, @EmojisConverter() required final  Map<String, String> reactionEmojis, required final  Map<String, int> reactions, required this.reactionCount, required this.renoteCount, required this.repliesCount, @NullableUriConverter() this.uri, @NullableUriConverter() this.url, final  List<String>? reactionAndUserPairCache = const [], this.clippedCount, this.myReaction, this.hasPoll, @NullableDateTimeConverter() this.updatedAt}): _mentions = mentions,_visibleUserIds = visibleUserIds,_fileIds = fileIds,_files = files,_tags = tags,_emojis = emojis,_reactionEmojis = reactionEmojis,_reactions = reactions,_reactionAndUserPairCache = reactionAndUserPairCache;
+  const _Note({required this.id, @DateTimeConverter() required this.createdAt, @NullableDateTimeConverter() this.deletedAt, this.text, this.cw, required this.userId, required this.user, this.replyId, this.renoteId, this.reply, this.renote, this.isHidden, @JsonKey(unknownEnumValue: NoteVisibility.unknown) required this.visibility, final  List<String> mentions = const [], final  List<String> visibleUserIds = const [], final  List<String> fileIds = const [], final  List<DriveFile> files = const [], final  List<String> tags = const [], this.poll, @EmojisConverter() final  Map<String, String> emojis = const {}, this.channelId, this.channel, this.localOnly = false, @JsonKey(unknownEnumValue: ReactionAcceptance.unknown) this.reactionAcceptance, @EmojisConverter() required final  Map<String, String> reactionEmojis, required final  Map<String, int> reactions, required this.reactionCount, required this.renoteCount, required this.repliesCount, @NullableUriConverter() this.uri, @NullableUriConverter() this.url, final  List<String> reactionAndUserPairCache = const [], this.clippedCount, this.myReaction, this.hasPoll, @NullableDateTimeConverter() this.updatedAt}): _mentions = mentions,_visibleUserIds = visibleUserIds,_fileIds = fileIds,_files = files,_tags = tags,_emojis = emojis,_reactionEmojis = reactionEmojis,_reactions = reactions,_reactionAndUserPairCache = reactionAndUserPairCache;
   factory _Note.fromJson(Map<String, dynamic> json) => _$NoteFromJson(json);
 
 @override final  String id;
@@ -317,49 +317,39 @@ class _Note implements Note {
 @override final  Note? renote;
 @override final  bool? isHidden;
 @override@JsonKey(unknownEnumValue: NoteVisibility.unknown) final  NoteVisibility visibility;
- final  List<String>? _mentions;
-@override@JsonKey() List<String>? get mentions {
-  final value = _mentions;
-  if (value == null) return null;
+ final  List<String> _mentions;
+@override@JsonKey() List<String> get mentions {
   if (_mentions is EqualUnmodifiableListView) return _mentions;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_mentions);
 }
 
- final  List<String>? _visibleUserIds;
-@override@JsonKey() List<String>? get visibleUserIds {
-  final value = _visibleUserIds;
-  if (value == null) return null;
+ final  List<String> _visibleUserIds;
+@override@JsonKey() List<String> get visibleUserIds {
   if (_visibleUserIds is EqualUnmodifiableListView) return _visibleUserIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_visibleUserIds);
 }
 
- final  List<String>? _fileIds;
-@override@JsonKey() List<String>? get fileIds {
-  final value = _fileIds;
-  if (value == null) return null;
+ final  List<String> _fileIds;
+@override@JsonKey() List<String> get fileIds {
   if (_fileIds is EqualUnmodifiableListView) return _fileIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_fileIds);
 }
 
- final  List<DriveFile>? _files;
-@override@JsonKey() List<DriveFile>? get files {
-  final value = _files;
-  if (value == null) return null;
+ final  List<DriveFile> _files;
+@override@JsonKey() List<DriveFile> get files {
   if (_files is EqualUnmodifiableListView) return _files;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_files);
 }
 
- final  List<String>? _tags;
-@override@JsonKey() List<String>? get tags {
-  final value = _tags;
-  if (value == null) return null;
+ final  List<String> _tags;
+@override@JsonKey() List<String> get tags {
   if (_tags is EqualUnmodifiableListView) return _tags;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_tags);
 }
 
 @override final  NotePoll? poll;
@@ -372,7 +362,7 @@ class _Note implements Note {
 
 @override final  String? channelId;
 @override final  NoteChannelInfo? channel;
-@override@JsonKey() final  bool? localOnly;
+@override@JsonKey() final  bool localOnly;
 @override@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) final  ReactionAcceptance? reactionAcceptance;
  final  Map<String, String> _reactionEmojis;
 @override@EmojisConverter() Map<String, String> get reactionEmojis {
@@ -393,13 +383,11 @@ class _Note implements Note {
 @override final  int repliesCount;
 @override@NullableUriConverter() final  Uri? uri;
 @override@NullableUriConverter() final  Uri? url;
- final  List<String>? _reactionAndUserPairCache;
-@override@JsonKey() List<String>? get reactionAndUserPairCache {
-  final value = _reactionAndUserPairCache;
-  if (value == null) return null;
+ final  List<String> _reactionAndUserPairCache;
+@override@JsonKey() List<String> get reactionAndUserPairCache {
   if (_reactionAndUserPairCache is EqualUnmodifiableListView) return _reactionAndUserPairCache;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_reactionAndUserPairCache);
 }
 
 @override final  int? clippedCount;
@@ -440,7 +428,7 @@ abstract mixin class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   factory _$NoteCopyWith(_Note value, $Res Function(_Note) _then) = __$NoteCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? deletedAt, String? text, String? cw, String userId, UserLite user, String? replyId, String? renoteId, Note? reply, Note? renote, bool? isHidden,@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility visibility, List<String>? mentions, List<String>? visibleUserIds, List<String>? fileIds, List<DriveFile>? files, List<String>? tags, NotePoll? poll,@EmojisConverter() Map<String, String> emojis, String? channelId, NoteChannelInfo? channel, bool? localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,@EmojisConverter() Map<String, String> reactionEmojis, Map<String, int> reactions, int reactionCount, int renoteCount, int repliesCount,@NullableUriConverter() Uri? uri,@NullableUriConverter() Uri? url, List<String>? reactionAndUserPairCache, int? clippedCount, String? myReaction, bool? hasPoll,@NullableDateTimeConverter() DateTime? updatedAt
+ String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? deletedAt, String? text, String? cw, String userId, UserLite user, String? replyId, String? renoteId, Note? reply, Note? renote, bool? isHidden,@JsonKey(unknownEnumValue: NoteVisibility.unknown) NoteVisibility visibility, List<String> mentions, List<String> visibleUserIds, List<String> fileIds, List<DriveFile> files, List<String> tags, NotePoll? poll,@EmojisConverter() Map<String, String> emojis, String? channelId, NoteChannelInfo? channel, bool localOnly,@JsonKey(unknownEnumValue: ReactionAcceptance.unknown) ReactionAcceptance? reactionAcceptance,@EmojisConverter() Map<String, String> reactionEmojis, Map<String, int> reactions, int reactionCount, int renoteCount, int repliesCount,@NullableUriConverter() Uri? uri,@NullableUriConverter() Uri? url, List<String> reactionAndUserPairCache, int? clippedCount, String? myReaction, bool? hasPoll,@NullableDateTimeConverter() DateTime? updatedAt
 });
 
 
@@ -457,7 +445,7 @@ class __$NoteCopyWithImpl<$Res>
 
 /// Create a copy of Note
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? deletedAt = freezed,Object? text = freezed,Object? cw = freezed,Object? userId = null,Object? user = null,Object? replyId = freezed,Object? renoteId = freezed,Object? reply = freezed,Object? renote = freezed,Object? isHidden = freezed,Object? visibility = null,Object? mentions = freezed,Object? visibleUserIds = freezed,Object? fileIds = freezed,Object? files = freezed,Object? tags = freezed,Object? poll = freezed,Object? emojis = null,Object? channelId = freezed,Object? channel = freezed,Object? localOnly = freezed,Object? reactionAcceptance = freezed,Object? reactionEmojis = null,Object? reactions = null,Object? reactionCount = null,Object? renoteCount = null,Object? repliesCount = null,Object? uri = freezed,Object? url = freezed,Object? reactionAndUserPairCache = freezed,Object? clippedCount = freezed,Object? myReaction = freezed,Object? hasPoll = freezed,Object? updatedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? deletedAt = freezed,Object? text = freezed,Object? cw = freezed,Object? userId = null,Object? user = null,Object? replyId = freezed,Object? renoteId = freezed,Object? reply = freezed,Object? renote = freezed,Object? isHidden = freezed,Object? visibility = null,Object? mentions = null,Object? visibleUserIds = null,Object? fileIds = null,Object? files = null,Object? tags = null,Object? poll = freezed,Object? emojis = null,Object? channelId = freezed,Object? channel = freezed,Object? localOnly = null,Object? reactionAcceptance = freezed,Object? reactionEmojis = null,Object? reactions = null,Object? reactionCount = null,Object? renoteCount = null,Object? repliesCount = null,Object? uri = freezed,Object? url = freezed,Object? reactionAndUserPairCache = null,Object? clippedCount = freezed,Object? myReaction = freezed,Object? hasPoll = freezed,Object? updatedAt = freezed,}) {
   return _then(_Note(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -472,17 +460,17 @@ as String?,reply: freezed == reply ? _self.reply : reply // ignore: cast_nullabl
 as Note?,renote: freezed == renote ? _self.renote : renote // ignore: cast_nullable_to_non_nullable
 as Note?,isHidden: freezed == isHidden ? _self.isHidden : isHidden // ignore: cast_nullable_to_non_nullable
 as bool?,visibility: null == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
-as NoteVisibility,mentions: freezed == mentions ? _self._mentions : mentions // ignore: cast_nullable_to_non_nullable
-as List<String>?,visibleUserIds: freezed == visibleUserIds ? _self._visibleUserIds : visibleUserIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,fileIds: freezed == fileIds ? _self._fileIds : fileIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,files: freezed == files ? _self._files : files // ignore: cast_nullable_to_non_nullable
-as List<DriveFile>?,tags: freezed == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
-as List<String>?,poll: freezed == poll ? _self.poll : poll // ignore: cast_nullable_to_non_nullable
+as NoteVisibility,mentions: null == mentions ? _self._mentions : mentions // ignore: cast_nullable_to_non_nullable
+as List<String>,visibleUserIds: null == visibleUserIds ? _self._visibleUserIds : visibleUserIds // ignore: cast_nullable_to_non_nullable
+as List<String>,fileIds: null == fileIds ? _self._fileIds : fileIds // ignore: cast_nullable_to_non_nullable
+as List<String>,files: null == files ? _self._files : files // ignore: cast_nullable_to_non_nullable
+as List<DriveFile>,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
+as List<String>,poll: freezed == poll ? _self.poll : poll // ignore: cast_nullable_to_non_nullable
 as NotePoll?,emojis: null == emojis ? _self._emojis : emojis // ignore: cast_nullable_to_non_nullable
 as Map<String, String>,channelId: freezed == channelId ? _self.channelId : channelId // ignore: cast_nullable_to_non_nullable
 as String?,channel: freezed == channel ? _self.channel : channel // ignore: cast_nullable_to_non_nullable
-as NoteChannelInfo?,localOnly: freezed == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
-as bool?,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
+as NoteChannelInfo?,localOnly: null == localOnly ? _self.localOnly : localOnly // ignore: cast_nullable_to_non_nullable
+as bool,reactionAcceptance: freezed == reactionAcceptance ? _self.reactionAcceptance : reactionAcceptance // ignore: cast_nullable_to_non_nullable
 as ReactionAcceptance?,reactionEmojis: null == reactionEmojis ? _self._reactionEmojis : reactionEmojis // ignore: cast_nullable_to_non_nullable
 as Map<String, String>,reactions: null == reactions ? _self._reactions : reactions // ignore: cast_nullable_to_non_nullable
 as Map<String, int>,reactionCount: null == reactionCount ? _self.reactionCount : reactionCount // ignore: cast_nullable_to_non_nullable
@@ -490,8 +478,8 @@ as int,renoteCount: null == renoteCount ? _self.renoteCount : renoteCount // ign
 as int,repliesCount: null == repliesCount ? _self.repliesCount : repliesCount // ignore: cast_nullable_to_non_nullable
 as int,uri: freezed == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
 as Uri?,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as Uri?,reactionAndUserPairCache: freezed == reactionAndUserPairCache ? _self._reactionAndUserPairCache : reactionAndUserPairCache // ignore: cast_nullable_to_non_nullable
-as List<String>?,clippedCount: freezed == clippedCount ? _self.clippedCount : clippedCount // ignore: cast_nullable_to_non_nullable
+as Uri?,reactionAndUserPairCache: null == reactionAndUserPairCache ? _self._reactionAndUserPairCache : reactionAndUserPairCache // ignore: cast_nullable_to_non_nullable
+as List<String>,clippedCount: freezed == clippedCount ? _self.clippedCount : clippedCount // ignore: cast_nullable_to_non_nullable
 as int?,myReaction: freezed == myReaction ? _self.myReaction : myReaction // ignore: cast_nullable_to_non_nullable
 as String?,hasPoll: freezed == hasPoll ? _self.hasPoll : hasPoll // ignore: cast_nullable_to_non_nullable
 as bool?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable

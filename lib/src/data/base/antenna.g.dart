@@ -10,8 +10,12 @@ _Antenna _$AntennaFromJson(Map<String, dynamic> json) => _Antenna(
   id: json['id'] as String,
   createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
   name: json['name'] as String,
-  keywords: json['keywords'] as List<dynamic>,
-  excludeKeywords: json['excludeKeywords'] as List<dynamic>,
+  keywords: (json['keywords'] as List<dynamic>)
+      .map((e) => (e as List<dynamic>).map((e) => e as String).toList())
+      .toList(),
+  excludeKeywords: (json['excludeKeywords'] as List<dynamic>)
+      .map((e) => (e as List<dynamic>).map((e) => e as String).toList())
+      .toList(),
   src: $enumDecode(
     _$AntennaSourceEnumMap,
     json['src'],

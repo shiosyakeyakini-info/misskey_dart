@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NoteDraftPoll {
 
-@NullableDateTimeConverter() DateTime? get expiresAt; double? get expiredAfter; bool get multiple; List<String> get choices;
+@NullableDateTimeConverter() DateTime? get expiresAt;@NullableDurationConverter() Duration? get expiredAfter; bool get multiple; List<String> get choices;
 /// Create a copy of NoteDraftPoll
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NoteDraftPollCopyWith<$Res>  {
   factory $NoteDraftPollCopyWith(NoteDraftPoll value, $Res Function(NoteDraftPoll) _then) = _$NoteDraftPollCopyWithImpl;
 @useResult
 $Res call({
-@NullableDateTimeConverter() DateTime? expiresAt, double? expiredAfter, bool multiple, List<String> choices
+@NullableDateTimeConverter() DateTime? expiresAt,@NullableDurationConverter() Duration? expiredAfter, bool multiple, List<String> choices
 });
 
 
@@ -69,7 +69,7 @@ class _$NoteDraftPollCopyWithImpl<$Res>
   return _then(_self.copyWith(
 expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,expiredAfter: freezed == expiredAfter ? _self.expiredAfter : expiredAfter // ignore: cast_nullable_to_non_nullable
-as double?,multiple: null == multiple ? _self.multiple : multiple // ignore: cast_nullable_to_non_nullable
+as Duration?,multiple: null == multiple ? _self.multiple : multiple // ignore: cast_nullable_to_non_nullable
 as bool,choices: null == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@NullableDateTimeConverter()  DateTime? expiresAt,  double? expiredAfter,  bool multiple,  List<String> choices)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@NullableDateTimeConverter()  DateTime? expiresAt, @NullableDurationConverter()  Duration? expiredAfter,  bool multiple,  List<String> choices)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NoteDraftPoll() when $default != null:
 return $default(_that.expiresAt,_that.expiredAfter,_that.multiple,_that.choices);case _:
@@ -177,7 +177,7 @@ return $default(_that.expiresAt,_that.expiredAfter,_that.multiple,_that.choices)
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@NullableDateTimeConverter()  DateTime? expiresAt,  double? expiredAfter,  bool multiple,  List<String> choices)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@NullableDateTimeConverter()  DateTime? expiresAt, @NullableDurationConverter()  Duration? expiredAfter,  bool multiple,  List<String> choices)  $default,) {final _that = this;
 switch (_that) {
 case _NoteDraftPoll():
 return $default(_that.expiresAt,_that.expiredAfter,_that.multiple,_that.choices);case _:
@@ -197,7 +197,7 @@ return $default(_that.expiresAt,_that.expiredAfter,_that.multiple,_that.choices)
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@NullableDateTimeConverter()  DateTime? expiresAt,  double? expiredAfter,  bool multiple,  List<String> choices)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@NullableDateTimeConverter()  DateTime? expiresAt, @NullableDurationConverter()  Duration? expiredAfter,  bool multiple,  List<String> choices)?  $default,) {final _that = this;
 switch (_that) {
 case _NoteDraftPoll() when $default != null:
 return $default(_that.expiresAt,_that.expiredAfter,_that.multiple,_that.choices);case _:
@@ -212,11 +212,11 @@ return $default(_that.expiresAt,_that.expiredAfter,_that.multiple,_that.choices)
 @JsonSerializable()
 
 class _NoteDraftPoll implements NoteDraftPoll {
-  const _NoteDraftPoll({@NullableDateTimeConverter() this.expiresAt, this.expiredAfter, required this.multiple, required final  List<String> choices}): _choices = choices;
+  const _NoteDraftPoll({@NullableDateTimeConverter() this.expiresAt, @NullableDurationConverter() this.expiredAfter, required this.multiple, required final  List<String> choices}): _choices = choices;
   factory _NoteDraftPoll.fromJson(Map<String, dynamic> json) => _$NoteDraftPollFromJson(json);
 
 @override@NullableDateTimeConverter() final  DateTime? expiresAt;
-@override final  double? expiredAfter;
+@override@NullableDurationConverter() final  Duration? expiredAfter;
 @override final  bool multiple;
  final  List<String> _choices;
 @override List<String> get choices {
@@ -259,7 +259,7 @@ abstract mixin class _$NoteDraftPollCopyWith<$Res> implements $NoteDraftPollCopy
   factory _$NoteDraftPollCopyWith(_NoteDraftPoll value, $Res Function(_NoteDraftPoll) _then) = __$NoteDraftPollCopyWithImpl;
 @override @useResult
 $Res call({
-@NullableDateTimeConverter() DateTime? expiresAt, double? expiredAfter, bool multiple, List<String> choices
+@NullableDateTimeConverter() DateTime? expiresAt,@NullableDurationConverter() Duration? expiredAfter, bool multiple, List<String> choices
 });
 
 
@@ -280,7 +280,7 @@ class __$NoteDraftPollCopyWithImpl<$Res>
   return _then(_NoteDraftPoll(
 expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,expiredAfter: freezed == expiredAfter ? _self.expiredAfter : expiredAfter // ignore: cast_nullable_to_non_nullable
-as double?,multiple: null == multiple ? _self.multiple : multiple // ignore: cast_nullable_to_non_nullable
+as Duration?,multiple: null == multiple ? _self.multiple : multiple // ignore: cast_nullable_to_non_nullable
 as bool,choices: null == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,
   ));

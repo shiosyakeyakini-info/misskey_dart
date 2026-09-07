@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UserList {
 
- String get id;@DateTimeConverter() DateTime get createdAt; String get name; List<String>? get userIds; bool get isPublic; double? get likedCount; bool? get isLiked;
+ String get id;@DateTimeConverter() DateTime get createdAt; String get name; List<String> get userIds; bool get isPublic; double? get likedCount; bool? get isLiked;
 /// Create a copy of UserList
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UserListCopyWith<$Res>  {
   factory $UserListCopyWith(UserList value, $Res Function(UserList) _then) = _$UserListCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String name, List<String>? userIds, bool isPublic, double? likedCount, bool? isLiked
+ String id,@DateTimeConverter() DateTime createdAt, String name, List<String> userIds, bool isPublic, double? likedCount, bool? isLiked
 });
 
 
@@ -65,13 +65,13 @@ class _$UserListCopyWithImpl<$Res>
 
 /// Create a copy of UserList
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? name = null,Object? userIds = freezed,Object? isPublic = null,Object? likedCount = freezed,Object? isLiked = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? name = null,Object? userIds = null,Object? isPublic = null,Object? likedCount = freezed,Object? isLiked = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,userIds: freezed == userIds ? _self.userIds : userIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,isPublic: null == isPublic ? _self.isPublic : isPublic // ignore: cast_nullable_to_non_nullable
+as String,userIds: null == userIds ? _self.userIds : userIds // ignore: cast_nullable_to_non_nullable
+as List<String>,isPublic: null == isPublic ? _self.isPublic : isPublic // ignore: cast_nullable_to_non_nullable
 as bool,likedCount: freezed == likedCount ? _self.likedCount : likedCount // ignore: cast_nullable_to_non_nullable
 as double?,isLiked: freezed == isLiked ? _self.isLiked : isLiked // ignore: cast_nullable_to_non_nullable
 as bool?,
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<String>? userIds,  bool isPublic,  double? likedCount,  bool? isLiked)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<String> userIds,  bool isPublic,  double? likedCount,  bool? isLiked)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UserList() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name,_that.userIds,_that.isPublic,_that.likedCount,_that.isLiked);case _:
@@ -180,7 +180,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.userIds,_that.isPublic
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<String>? userIds,  bool isPublic,  double? likedCount,  bool? isLiked)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<String> userIds,  bool isPublic,  double? likedCount,  bool? isLiked)  $default,) {final _that = this;
 switch (_that) {
 case _UserList():
 return $default(_that.id,_that.createdAt,_that.name,_that.userIds,_that.isPublic,_that.likedCount,_that.isLiked);case _:
@@ -200,7 +200,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.userIds,_that.isPublic
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<String>? userIds,  bool isPublic,  double? likedCount,  bool? isLiked)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<String> userIds,  bool isPublic,  double? likedCount,  bool? isLiked)?  $default,) {final _that = this;
 switch (_that) {
 case _UserList() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name,_that.userIds,_that.isPublic,_that.likedCount,_that.isLiked);case _:
@@ -215,19 +215,17 @@ return $default(_that.id,_that.createdAt,_that.name,_that.userIds,_that.isPublic
 @JsonSerializable()
 
 class _UserList implements UserList {
-  const _UserList({required this.id, @DateTimeConverter() required this.createdAt, required this.name, final  List<String>? userIds, required this.isPublic, this.likedCount, this.isLiked}): _userIds = userIds;
+  const _UserList({required this.id, @DateTimeConverter() required this.createdAt, required this.name, final  List<String> userIds = const [], required this.isPublic, this.likedCount, this.isLiked}): _userIds = userIds;
   factory _UserList.fromJson(Map<String, dynamic> json) => _$UserListFromJson(json);
 
 @override final  String id;
 @override@DateTimeConverter() final  DateTime createdAt;
 @override final  String name;
- final  List<String>? _userIds;
-@override List<String>? get userIds {
-  final value = _userIds;
-  if (value == null) return null;
+ final  List<String> _userIds;
+@override@JsonKey() List<String> get userIds {
   if (_userIds is EqualUnmodifiableListView) return _userIds;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_userIds);
 }
 
 @override final  bool isPublic;
@@ -267,7 +265,7 @@ abstract mixin class _$UserListCopyWith<$Res> implements $UserListCopyWith<$Res>
   factory _$UserListCopyWith(_UserList value, $Res Function(_UserList) _then) = __$UserListCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String name, List<String>? userIds, bool isPublic, double? likedCount, bool? isLiked
+ String id,@DateTimeConverter() DateTime createdAt, String name, List<String> userIds, bool isPublic, double? likedCount, bool? isLiked
 });
 
 
@@ -284,13 +282,13 @@ class __$UserListCopyWithImpl<$Res>
 
 /// Create a copy of UserList
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? name = null,Object? userIds = freezed,Object? isPublic = null,Object? likedCount = freezed,Object? isLiked = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? name = null,Object? userIds = null,Object? isPublic = null,Object? likedCount = freezed,Object? isLiked = freezed,}) {
   return _then(_UserList(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,userIds: freezed == userIds ? _self._userIds : userIds // ignore: cast_nullable_to_non_nullable
-as List<String>?,isPublic: null == isPublic ? _self.isPublic : isPublic // ignore: cast_nullable_to_non_nullable
+as String,userIds: null == userIds ? _self._userIds : userIds // ignore: cast_nullable_to_non_nullable
+as List<String>,isPublic: null == isPublic ? _self.isPublic : isPublic // ignore: cast_nullable_to_non_nullable
 as bool,likedCount: freezed == likedCount ? _self.likedCount : likedCount // ignore: cast_nullable_to_non_nullable
 as double?,isLiked: freezed == isLiked ? _self.isLiked : isLiked // ignore: cast_nullable_to_non_nullable
 as bool?,

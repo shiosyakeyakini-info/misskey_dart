@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ChatMessage {
 
- String get id;@DateTimeConverter() DateTime get createdAt; String get fromUserId; UserLite? get fromUser; String? get toUserId; Map<String, dynamic>? get toUser; String? get toRoomId; Map<String, dynamic>? get toRoom; String? get text; String? get fileId; Map<String, dynamic>? get file; bool? get isRead; List<ChatMessageReactionsItem> get reactions;
+ String get id;@DateTimeConverter() DateTime get createdAt; String get fromUserId; UserLite? get fromUser; String? get toUserId; Map<String, dynamic>? get toUser; String? get toRoomId; Map<String, dynamic>? get toRoom; String? get text; String? get fileId; Map<String, dynamic>? get file; bool? get isRead; List<ChatMessageReaction> get reactions;
 /// Create a copy of ChatMessage
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ChatMessageCopyWith<$Res>  {
   factory $ChatMessageCopyWith(ChatMessage value, $Res Function(ChatMessage) _then) = _$ChatMessageCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String fromUserId, UserLite? fromUser, String? toUserId, Map<String, dynamic>? toUser, String? toRoomId, Map<String, dynamic>? toRoom, String? text, String? fileId, Map<String, dynamic>? file, bool? isRead, List<ChatMessageReactionsItem> reactions
+ String id,@DateTimeConverter() DateTime createdAt, String fromUserId, UserLite? fromUser, String? toUserId, Map<String, dynamic>? toUser, String? toRoomId, Map<String, dynamic>? toRoom, String? text, String? fileId, Map<String, dynamic>? file, bool? isRead, List<ChatMessageReaction> reactions
 });
 
 
@@ -80,7 +80,7 @@ as String?,fileId: freezed == fileId ? _self.fileId : fileId // ignore: cast_nul
 as String?,file: freezed == file ? _self.file : file // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,isRead: freezed == isRead ? _self.isRead : isRead // ignore: cast_nullable_to_non_nullable
 as bool?,reactions: null == reactions ? _self.reactions : reactions // ignore: cast_nullable_to_non_nullable
-as List<ChatMessageReactionsItem>,
+as List<ChatMessageReaction>,
   ));
 }
 /// Create a copy of ChatMessage
@@ -177,7 +177,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String fromUserId,  UserLite? fromUser,  String? toUserId,  Map<String, dynamic>? toUser,  String? toRoomId,  Map<String, dynamic>? toRoom,  String? text,  String? fileId,  Map<String, dynamic>? file,  bool? isRead,  List<ChatMessageReactionsItem> reactions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String fromUserId,  UserLite? fromUser,  String? toUserId,  Map<String, dynamic>? toUser,  String? toRoomId,  Map<String, dynamic>? toRoom,  String? text,  String? fileId,  Map<String, dynamic>? file,  bool? isRead,  List<ChatMessageReaction> reactions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ChatMessage() when $default != null:
 return $default(_that.id,_that.createdAt,_that.fromUserId,_that.fromUser,_that.toUserId,_that.toUser,_that.toRoomId,_that.toRoom,_that.text,_that.fileId,_that.file,_that.isRead,_that.reactions);case _:
@@ -198,7 +198,7 @@ return $default(_that.id,_that.createdAt,_that.fromUserId,_that.fromUser,_that.t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String fromUserId,  UserLite? fromUser,  String? toUserId,  Map<String, dynamic>? toUser,  String? toRoomId,  Map<String, dynamic>? toRoom,  String? text,  String? fileId,  Map<String, dynamic>? file,  bool? isRead,  List<ChatMessageReactionsItem> reactions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String fromUserId,  UserLite? fromUser,  String? toUserId,  Map<String, dynamic>? toUser,  String? toRoomId,  Map<String, dynamic>? toRoom,  String? text,  String? fileId,  Map<String, dynamic>? file,  bool? isRead,  List<ChatMessageReaction> reactions)  $default,) {final _that = this;
 switch (_that) {
 case _ChatMessage():
 return $default(_that.id,_that.createdAt,_that.fromUserId,_that.fromUser,_that.toUserId,_that.toUser,_that.toRoomId,_that.toRoom,_that.text,_that.fileId,_that.file,_that.isRead,_that.reactions);case _:
@@ -218,7 +218,7 @@ return $default(_that.id,_that.createdAt,_that.fromUserId,_that.fromUser,_that.t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String fromUserId,  UserLite? fromUser,  String? toUserId,  Map<String, dynamic>? toUser,  String? toRoomId,  Map<String, dynamic>? toRoom,  String? text,  String? fileId,  Map<String, dynamic>? file,  bool? isRead,  List<ChatMessageReactionsItem> reactions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String fromUserId,  UserLite? fromUser,  String? toUserId,  Map<String, dynamic>? toUser,  String? toRoomId,  Map<String, dynamic>? toRoom,  String? text,  String? fileId,  Map<String, dynamic>? file,  bool? isRead,  List<ChatMessageReaction> reactions)?  $default,) {final _that = this;
 switch (_that) {
 case _ChatMessage() when $default != null:
 return $default(_that.id,_that.createdAt,_that.fromUserId,_that.fromUser,_that.toUserId,_that.toUser,_that.toRoomId,_that.toRoom,_that.text,_that.fileId,_that.file,_that.isRead,_that.reactions);case _:
@@ -233,7 +233,7 @@ return $default(_that.id,_that.createdAt,_that.fromUserId,_that.fromUser,_that.t
 @JsonSerializable()
 
 class _ChatMessage implements ChatMessage {
-  const _ChatMessage({required this.id, @DateTimeConverter() required this.createdAt, required this.fromUserId, this.fromUser, this.toUserId, final  Map<String, dynamic>? toUser, this.toRoomId, final  Map<String, dynamic>? toRoom, this.text, this.fileId, final  Map<String, dynamic>? file, this.isRead, required final  List<ChatMessageReactionsItem> reactions}): _toUser = toUser,_toRoom = toRoom,_file = file,_reactions = reactions;
+  const _ChatMessage({required this.id, @DateTimeConverter() required this.createdAt, required this.fromUserId, this.fromUser, this.toUserId, final  Map<String, dynamic>? toUser, this.toRoomId, final  Map<String, dynamic>? toRoom, this.text, this.fileId, final  Map<String, dynamic>? file, this.isRead, required final  List<ChatMessageReaction> reactions}): _toUser = toUser,_toRoom = toRoom,_file = file,_reactions = reactions;
   factory _ChatMessage.fromJson(Map<String, dynamic> json) => _$ChatMessageFromJson(json);
 
 @override final  String id;
@@ -272,8 +272,8 @@ class _ChatMessage implements ChatMessage {
 }
 
 @override final  bool? isRead;
- final  List<ChatMessageReactionsItem> _reactions;
-@override List<ChatMessageReactionsItem> get reactions {
+ final  List<ChatMessageReaction> _reactions;
+@override List<ChatMessageReaction> get reactions {
   if (_reactions is EqualUnmodifiableListView) return _reactions;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_reactions);
@@ -313,7 +313,7 @@ abstract mixin class _$ChatMessageCopyWith<$Res> implements $ChatMessageCopyWith
   factory _$ChatMessageCopyWith(_ChatMessage value, $Res Function(_ChatMessage) _then) = __$ChatMessageCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String fromUserId, UserLite? fromUser, String? toUserId, Map<String, dynamic>? toUser, String? toRoomId, Map<String, dynamic>? toRoom, String? text, String? fileId, Map<String, dynamic>? file, bool? isRead, List<ChatMessageReactionsItem> reactions
+ String id,@DateTimeConverter() DateTime createdAt, String fromUserId, UserLite? fromUser, String? toUserId, Map<String, dynamic>? toUser, String? toRoomId, Map<String, dynamic>? toRoom, String? text, String? fileId, Map<String, dynamic>? file, bool? isRead, List<ChatMessageReaction> reactions
 });
 
 
@@ -345,7 +345,7 @@ as String?,fileId: freezed == fileId ? _self.fileId : fileId // ignore: cast_nul
 as String?,file: freezed == file ? _self._file : file // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,isRead: freezed == isRead ? _self.isRead : isRead // ignore: cast_nullable_to_non_nullable
 as bool?,reactions: null == reactions ? _self._reactions : reactions // ignore: cast_nullable_to_non_nullable
-as List<ChatMessageReactionsItem>,
+as List<ChatMessageReaction>,
   ));
 }
 

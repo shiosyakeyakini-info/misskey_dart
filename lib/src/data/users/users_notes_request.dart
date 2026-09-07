@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:misskey_dart/misskey_dart.dart';
 
 part 'users_notes_request.freezed.dart';
 part 'users_notes_request.g.dart';
@@ -13,8 +14,8 @@ abstract class UsersNotesRequest with _$UsersNotesRequest {
     @Default(10) int? limit,
     String? sinceId,
     String? untilId,
-    int? sinceDate,
-    int? untilDate,
+    @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? sinceDate,
+    @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? untilDate,
     @Default(false) bool? allowPartial,
     @Default(false) bool? withFiles,
   }) = _UsersNotesRequest;

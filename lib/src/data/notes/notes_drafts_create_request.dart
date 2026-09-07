@@ -22,7 +22,7 @@ abstract class NotesDraftsCreateRequest with _$NotesDraftsCreateRequest {
     String? channelId,
     String? text,
     List<String>? fileIds,
-    NotesDraftsCreatePoll? poll,
+    NotesCreatePoll? poll,
     int? scheduledAt,
     @Default(false) bool? isActuallyScheduled,
   }) = _NotesDraftsCreateRequest;

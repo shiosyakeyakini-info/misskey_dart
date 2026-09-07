@@ -12,7 +12,7 @@ _IUpdateRequest _$IUpdateRequestFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       followedMessage: json['followedMessage'] as String?,
       location: json['location'] as String?,
-      birthday: json['birthday'] as String?,
+      birthday: const BirthdayConverter().fromJson(json['birthday'] as String?),
       lang: $enumDecodeNullable(
         _$IUpdateLangEnumMap,
         json['lang'],
@@ -84,7 +84,7 @@ Map<String, dynamic> _$IUpdateRequestToJson(_IUpdateRequest instance) =>
       'description': instance.description,
       'followedMessage': instance.followedMessage,
       'location': instance.location,
-      'birthday': instance.birthday,
+      'birthday': const BirthdayConverter().toJson(instance.birthday),
       'lang': _$IUpdateLangEnumMap[instance.lang],
       'avatarId': instance.avatarId,
       'avatarDecorations': instance.avatarDecorations

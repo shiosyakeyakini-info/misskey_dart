@@ -11,9 +11,9 @@ _NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
 ) => _NotesDraftsUpdateRequest(
   draftId: json['draftId'] as String?,
   visibility: $enumDecodeNullable(
-    _$NotesDraftsUpdateVisibilityEnumMap,
+    _$NoteVisibilityEnumMap,
     json['visibility'],
-    unknownValue: NotesDraftsUpdateVisibility.unknown,
+    unknownValue: NoteVisibility.unknown,
   ),
   visibleUserIds: (json['visibleUserIds'] as List<dynamic>?)
       ?.map((e) => e as String)
@@ -35,7 +35,7 @@ _NotesDraftsUpdateRequest _$NotesDraftsUpdateRequestFromJson(
       .toList(),
   poll: json['poll'] == null
       ? null
-      : NotesDraftsUpdatePoll.fromJson(json['poll'] as Map<String, dynamic>),
+      : NotesCreatePoll.fromJson(json['poll'] as Map<String, dynamic>),
   scheduledAt: (json['scheduledAt'] as num?)?.toInt(),
   isActuallyScheduled: json['isActuallyScheduled'] as bool?,
 );
@@ -44,7 +44,7 @@ Map<String, dynamic> _$NotesDraftsUpdateRequestToJson(
   _NotesDraftsUpdateRequest instance,
 ) => <String, dynamic>{
   'draftId': instance.draftId,
-  'visibility': _$NotesDraftsUpdateVisibilityEnumMap[instance.visibility],
+  'visibility': _$NoteVisibilityEnumMap[instance.visibility],
   'visibleUserIds': instance.visibleUserIds,
   'cw': instance.cw,
   'hashtag': instance.hashtag,
@@ -61,12 +61,12 @@ Map<String, dynamic> _$NotesDraftsUpdateRequestToJson(
   'isActuallyScheduled': instance.isActuallyScheduled,
 };
 
-const _$NotesDraftsUpdateVisibilityEnumMap = {
-  NotesDraftsUpdateVisibility.public: 'public',
-  NotesDraftsUpdateVisibility.home: 'home',
-  NotesDraftsUpdateVisibility.followers: 'followers',
-  NotesDraftsUpdateVisibility.specified: 'specified',
-  NotesDraftsUpdateVisibility.unknown: 'unknown',
+const _$NoteVisibilityEnumMap = {
+  NoteVisibility.public: 'public',
+  NoteVisibility.home: 'home',
+  NoteVisibility.followers: 'followers',
+  NoteVisibility.specified: 'specified',
+  NoteVisibility.unknown: 'unknown',
 };
 
 const _$ReactionAcceptanceEnumMap = {

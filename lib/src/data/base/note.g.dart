@@ -110,7 +110,7 @@ Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
   'mentions': instance.mentions,
   'visibleUserIds': instance.visibleUserIds,
   'fileIds': instance.fileIds,
-  'files': instance.files?.map((e) => e.toJson()).toList(),
+  'files': instance.files.map((e) => e.toJson()).toList(),
   'tags': instance.tags,
   'poll': instance.poll?.toJson(),
   'emojis': const EmojisConverter().toJson(instance.emojis),

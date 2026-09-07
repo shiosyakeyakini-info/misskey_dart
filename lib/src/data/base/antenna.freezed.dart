@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Antenna {
 
- String get id;@DateTimeConverter() DateTime get createdAt; String get name; List<dynamic> get keywords; List<dynamic> get excludeKeywords;@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource get src; String? get userListId; List<String> get users; bool get caseSensitive; bool get localOnly; bool get excludeBots; bool get withReplies; bool get withFile; bool get isActive; bool get hasUnreadNote; bool get notify; bool get excludeNotesInSensitiveChannel;
+ String get id;@DateTimeConverter() DateTime get createdAt; String get name; List<List<String>> get keywords; List<List<String>> get excludeKeywords;@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource get src; String? get userListId; List<String> get users; bool get caseSensitive; bool get localOnly; bool get excludeBots; bool get withReplies; bool get withFile; bool get isActive; bool get hasUnreadNote; bool get notify; bool get excludeNotesInSensitiveChannel;
 /// Create a copy of Antenna
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $AntennaCopyWith<$Res>  {
   factory $AntennaCopyWith(Antenna value, $Res Function(Antenna) _then) = _$AntennaCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String name, List<dynamic> keywords, List<dynamic> excludeKeywords,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource src, String? userListId, List<String> users, bool caseSensitive, bool localOnly, bool excludeBots, bool withReplies, bool withFile, bool isActive, bool hasUnreadNote, bool notify, bool excludeNotesInSensitiveChannel
+ String id,@DateTimeConverter() DateTime createdAt, String name, List<List<String>> keywords, List<List<String>> excludeKeywords,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource src, String? userListId, List<String> users, bool caseSensitive, bool localOnly, bool excludeBots, bool withReplies, bool withFile, bool isActive, bool hasUnreadNote, bool notify, bool excludeNotesInSensitiveChannel
 });
 
 
@@ -71,8 +71,8 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,keywords: null == keywords ? _self.keywords : keywords // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,excludeKeywords: null == excludeKeywords ? _self.excludeKeywords : excludeKeywords // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,src: null == src ? _self.src : src // ignore: cast_nullable_to_non_nullable
+as List<List<String>>,excludeKeywords: null == excludeKeywords ? _self.excludeKeywords : excludeKeywords // ignore: cast_nullable_to_non_nullable
+as List<List<String>>,src: null == src ? _self.src : src // ignore: cast_nullable_to_non_nullable
 as AntennaSource,userListId: freezed == userListId ? _self.userListId : userListId // ignore: cast_nullable_to_non_nullable
 as String?,users: null == users ? _self.users : users // ignore: cast_nullable_to_non_nullable
 as List<String>,caseSensitive: null == caseSensitive ? _self.caseSensitive : caseSensitive // ignore: cast_nullable_to_non_nullable
@@ -169,7 +169,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<dynamic> keywords,  List<dynamic> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource src,  String? userListId,  List<String> users,  bool caseSensitive,  bool localOnly,  bool excludeBots,  bool withReplies,  bool withFile,  bool isActive,  bool hasUnreadNote,  bool notify,  bool excludeNotesInSensitiveChannel)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<List<String>> keywords,  List<List<String>> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource src,  String? userListId,  List<String> users,  bool caseSensitive,  bool localOnly,  bool excludeBots,  bool withReplies,  bool withFile,  bool isActive,  bool hasUnreadNote,  bool notify,  bool excludeNotesInSensitiveChannel)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Antenna() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name,_that.keywords,_that.excludeKeywords,_that.src,_that.userListId,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.isActive,_that.hasUnreadNote,_that.notify,_that.excludeNotesInSensitiveChannel);case _:
@@ -190,7 +190,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.keywords,_that.exclude
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<dynamic> keywords,  List<dynamic> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource src,  String? userListId,  List<String> users,  bool caseSensitive,  bool localOnly,  bool excludeBots,  bool withReplies,  bool withFile,  bool isActive,  bool hasUnreadNote,  bool notify,  bool excludeNotesInSensitiveChannel)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<List<String>> keywords,  List<List<String>> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource src,  String? userListId,  List<String> users,  bool caseSensitive,  bool localOnly,  bool excludeBots,  bool withReplies,  bool withFile,  bool isActive,  bool hasUnreadNote,  bool notify,  bool excludeNotesInSensitiveChannel)  $default,) {final _that = this;
 switch (_that) {
 case _Antenna():
 return $default(_that.id,_that.createdAt,_that.name,_that.keywords,_that.excludeKeywords,_that.src,_that.userListId,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.isActive,_that.hasUnreadNote,_that.notify,_that.excludeNotesInSensitiveChannel);case _:
@@ -210,7 +210,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.keywords,_that.exclude
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<dynamic> keywords,  List<dynamic> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource src,  String? userListId,  List<String> users,  bool caseSensitive,  bool localOnly,  bool excludeBots,  bool withReplies,  bool withFile,  bool isActive,  bool hasUnreadNote,  bool notify,  bool excludeNotesInSensitiveChannel)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  List<List<String>> keywords,  List<List<String>> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown)  AntennaSource src,  String? userListId,  List<String> users,  bool caseSensitive,  bool localOnly,  bool excludeBots,  bool withReplies,  bool withFile,  bool isActive,  bool hasUnreadNote,  bool notify,  bool excludeNotesInSensitiveChannel)?  $default,) {final _that = this;
 switch (_that) {
 case _Antenna() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name,_that.keywords,_that.excludeKeywords,_that.src,_that.userListId,_that.users,_that.caseSensitive,_that.localOnly,_that.excludeBots,_that.withReplies,_that.withFile,_that.isActive,_that.hasUnreadNote,_that.notify,_that.excludeNotesInSensitiveChannel);case _:
@@ -225,21 +225,21 @@ return $default(_that.id,_that.createdAt,_that.name,_that.keywords,_that.exclude
 @JsonSerializable()
 
 class _Antenna implements Antenna {
-  const _Antenna({required this.id, @DateTimeConverter() required this.createdAt, required this.name, required final  List<dynamic> keywords, required final  List<dynamic> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown) required this.src, this.userListId, required final  List<String> users, this.caseSensitive = false, this.localOnly = false, this.excludeBots = false, this.withReplies = false, required this.withFile, required this.isActive, this.hasUnreadNote = false, this.notify = false, this.excludeNotesInSensitiveChannel = false}): _keywords = keywords,_excludeKeywords = excludeKeywords,_users = users;
+  const _Antenna({required this.id, @DateTimeConverter() required this.createdAt, required this.name, required final  List<List<String>> keywords, required final  List<List<String>> excludeKeywords, @JsonKey(unknownEnumValue: AntennaSource.unknown) required this.src, this.userListId, required final  List<String> users, this.caseSensitive = false, this.localOnly = false, this.excludeBots = false, this.withReplies = false, required this.withFile, required this.isActive, this.hasUnreadNote = false, this.notify = false, this.excludeNotesInSensitiveChannel = false}): _keywords = keywords,_excludeKeywords = excludeKeywords,_users = users;
   factory _Antenna.fromJson(Map<String, dynamic> json) => _$AntennaFromJson(json);
 
 @override final  String id;
 @override@DateTimeConverter() final  DateTime createdAt;
 @override final  String name;
- final  List<dynamic> _keywords;
-@override List<dynamic> get keywords {
+ final  List<List<String>> _keywords;
+@override List<List<String>> get keywords {
   if (_keywords is EqualUnmodifiableListView) return _keywords;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_keywords);
 }
 
- final  List<dynamic> _excludeKeywords;
-@override List<dynamic> get excludeKeywords {
+ final  List<List<String>> _excludeKeywords;
+@override List<List<String>> get excludeKeywords {
   if (_excludeKeywords is EqualUnmodifiableListView) return _excludeKeywords;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_excludeKeywords);
@@ -297,7 +297,7 @@ abstract mixin class _$AntennaCopyWith<$Res> implements $AntennaCopyWith<$Res> {
   factory _$AntennaCopyWith(_Antenna value, $Res Function(_Antenna) _then) = __$AntennaCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String name, List<dynamic> keywords, List<dynamic> excludeKeywords,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource src, String? userListId, List<String> users, bool caseSensitive, bool localOnly, bool excludeBots, bool withReplies, bool withFile, bool isActive, bool hasUnreadNote, bool notify, bool excludeNotesInSensitiveChannel
+ String id,@DateTimeConverter() DateTime createdAt, String name, List<List<String>> keywords, List<List<String>> excludeKeywords,@JsonKey(unknownEnumValue: AntennaSource.unknown) AntennaSource src, String? userListId, List<String> users, bool caseSensitive, bool localOnly, bool excludeBots, bool withReplies, bool withFile, bool isActive, bool hasUnreadNote, bool notify, bool excludeNotesInSensitiveChannel
 });
 
 
@@ -320,8 +320,8 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,keywords: null == keywords ? _self._keywords : keywords // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,excludeKeywords: null == excludeKeywords ? _self._excludeKeywords : excludeKeywords // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,src: null == src ? _self.src : src // ignore: cast_nullable_to_non_nullable
+as List<List<String>>,excludeKeywords: null == excludeKeywords ? _self._excludeKeywords : excludeKeywords // ignore: cast_nullable_to_non_nullable
+as List<List<String>>,src: null == src ? _self.src : src // ignore: cast_nullable_to_non_nullable
 as AntennaSource,userListId: freezed == userListId ? _self.userListId : userListId // ignore: cast_nullable_to_non_nullable
 as String?,users: null == users ? _self._users : users // ignore: cast_nullable_to_non_nullable
 as List<String>,caseSensitive: null == caseSensitive ? _self.caseSensitive : caseSensitive // ignore: cast_nullable_to_non_nullable

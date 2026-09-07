@@ -19,7 +19,7 @@ abstract class ChatMessage with _$ChatMessage {
     String? fileId,
     Map<String, dynamic>? file,
     bool? isRead,
-    required List<ChatMessageReactionsItem> reactions,
+    required List<ChatMessageReaction> reactions,
   }) = _ChatMessage;
 
   factory ChatMessage.fromJson(Map<String, Object?> json) =>

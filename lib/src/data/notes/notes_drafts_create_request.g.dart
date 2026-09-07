@@ -38,7 +38,7 @@ _NotesDraftsCreateRequest _$NotesDraftsCreateRequestFromJson(
       .toList(),
   poll: json['poll'] == null
       ? null
-      : NotesDraftsCreatePoll.fromJson(json['poll'] as Map<String, dynamic>),
+      : NotesCreatePoll.fromJson(json['poll'] as Map<String, dynamic>),
   scheduledAt: (json['scheduledAt'] as num?)?.toInt(),
   isActuallyScheduled: json['isActuallyScheduled'] as bool? ?? false,
 );

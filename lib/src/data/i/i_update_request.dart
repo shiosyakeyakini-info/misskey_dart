@@ -11,7 +11,7 @@ abstract class IUpdateRequest with _$IUpdateRequest {
     String? description,
     String? followedMessage,
     String? location,
-    String? birthday,
+    @BirthdayConverter() DateTime? birthday,
     @JsonKey(unknownEnumValue: IUpdateLang.unknown) IUpdateLang? lang,
     String? avatarId,
     List<IUpdateAvatarDecorationsItem>? avatarDecorations,

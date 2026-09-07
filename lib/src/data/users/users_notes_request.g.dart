@@ -15,8 +15,10 @@ _UsersNotesRequest _$UsersNotesRequestFromJson(Map<String, dynamic> json) =>
       limit: (json['limit'] as num?)?.toInt() ?? 10,
       sinceId: json['sinceId'] as String?,
       untilId: json['untilId'] as String?,
-      sinceDate: (json['sinceDate'] as num?)?.toInt(),
-      untilDate: (json['untilDate'] as num?)?.toInt(),
+      sinceDate: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson((json['sinceDate'] as num?)?.toInt()),
+      untilDate: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson((json['untilDate'] as num?)?.toInt()),
       allowPartial: json['allowPartial'] as bool? ?? false,
       withFiles: json['withFiles'] as bool? ?? false,
     );
@@ -30,8 +32,10 @@ Map<String, dynamic> _$UsersNotesRequestToJson(_UsersNotesRequest instance) =>
       'limit': instance.limit,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
-      'sinceDate': instance.sinceDate,
-      'untilDate': instance.untilDate,
+      'sinceDate': const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .toJson(instance.sinceDate),
+      'untilDate': const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .toJson(instance.untilDate),
       'allowPartial': instance.allowPartial,
       'withFiles': instance.withFiles,
     };

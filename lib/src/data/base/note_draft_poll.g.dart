@@ -12,7 +12,9 @@ _NoteDraftPoll _$NoteDraftPollFromJson(Map<String, dynamic> json) =>
         json['expiresAt'],
         const NullableDateTimeConverter().fromJson,
       ),
-      expiredAfter: (json['expiredAfter'] as num?)?.toDouble(),
+      expiredAfter: const NullableDurationConverter().fromJson(
+        (json['expiredAfter'] as num?)?.toInt(),
+      ),
       multiple: json['multiple'] as bool,
       choices: (json['choices'] as List<dynamic>)
           .map((e) => e as String)
@@ -22,7 +24,9 @@ _NoteDraftPoll _$NoteDraftPollFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$NoteDraftPollToJson(_NoteDraftPoll instance) =>
     <String, dynamic>{
       'expiresAt': const NullableDateTimeConverter().toJson(instance.expiresAt),
-      'expiredAfter': instance.expiredAfter,
+      'expiredAfter': const NullableDurationConverter().toJson(
+        instance.expiredAfter,
+      ),
       'multiple': instance.multiple,
       'choices': instance.choices,
     };

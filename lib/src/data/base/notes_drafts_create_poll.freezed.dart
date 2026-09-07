@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesDraftsCreatePoll {
 
- List<String> get choices; bool? get multiple; int? get expiresAt; int? get expiredAfter;
+ List<String> get choices; bool? get multiple;@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? get expiresAt;@NullableDurationConverter() Duration? get expiredAfter;
 /// Create a copy of NotesDraftsCreatePoll
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NotesDraftsCreatePollCopyWith<$Res>  {
   factory $NotesDraftsCreatePollCopyWith(NotesDraftsCreatePoll value, $Res Function(NotesDraftsCreatePoll) _then) = _$NotesDraftsCreatePollCopyWithImpl;
 @useResult
 $Res call({
- List<String> choices, bool? multiple, int? expiresAt, int? expiredAfter
+ List<String> choices, bool? multiple,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,@NullableDurationConverter() Duration? expiredAfter
 });
 
 
@@ -70,8 +70,8 @@ class _$NotesDraftsCreatePollCopyWithImpl<$Res>
 choices: null == choices ? _self.choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,multiple: freezed == multiple ? _self.multiple : multiple // ignore: cast_nullable_to_non_nullable
 as bool?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as int?,expiredAfter: freezed == expiredAfter ? _self.expiredAfter : expiredAfter // ignore: cast_nullable_to_non_nullable
-as int?,
+as DateTime?,expiredAfter: freezed == expiredAfter ? _self.expiredAfter : expiredAfter // ignore: cast_nullable_to_non_nullable
+as Duration?,
   ));
 }
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> choices,  bool? multiple,  int? expiresAt,  int? expiredAfter)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> choices,  bool? multiple, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? expiresAt, @NullableDurationConverter()  Duration? expiredAfter)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesDraftsCreatePoll() when $default != null:
 return $default(_that.choices,_that.multiple,_that.expiresAt,_that.expiredAfter);case _:
@@ -177,7 +177,7 @@ return $default(_that.choices,_that.multiple,_that.expiresAt,_that.expiredAfter)
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> choices,  bool? multiple,  int? expiresAt,  int? expiredAfter)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> choices,  bool? multiple, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? expiresAt, @NullableDurationConverter()  Duration? expiredAfter)  $default,) {final _that = this;
 switch (_that) {
 case _NotesDraftsCreatePoll():
 return $default(_that.choices,_that.multiple,_that.expiresAt,_that.expiredAfter);case _:
@@ -197,7 +197,7 @@ return $default(_that.choices,_that.multiple,_that.expiresAt,_that.expiredAfter)
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> choices,  bool? multiple,  int? expiresAt,  int? expiredAfter)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> choices,  bool? multiple, @NullableEpocTimeDateTimeConverter.withMilliSeconds()  DateTime? expiresAt, @NullableDurationConverter()  Duration? expiredAfter)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesDraftsCreatePoll() when $default != null:
 return $default(_that.choices,_that.multiple,_that.expiresAt,_that.expiredAfter);case _:
@@ -212,7 +212,7 @@ return $default(_that.choices,_that.multiple,_that.expiresAt,_that.expiredAfter)
 @JsonSerializable()
 
 class _NotesDraftsCreatePoll implements NotesDraftsCreatePoll {
-  const _NotesDraftsCreatePoll({required final  List<String> choices, this.multiple, this.expiresAt, this.expiredAfter}): _choices = choices;
+  const _NotesDraftsCreatePoll({required final  List<String> choices, this.multiple, @NullableEpocTimeDateTimeConverter.withMilliSeconds() this.expiresAt, @NullableDurationConverter() this.expiredAfter}): _choices = choices;
   factory _NotesDraftsCreatePoll.fromJson(Map<String, dynamic> json) => _$NotesDraftsCreatePollFromJson(json);
 
  final  List<String> _choices;
@@ -223,8 +223,8 @@ class _NotesDraftsCreatePoll implements NotesDraftsCreatePoll {
 }
 
 @override final  bool? multiple;
-@override final  int? expiresAt;
-@override final  int? expiredAfter;
+@override@NullableEpocTimeDateTimeConverter.withMilliSeconds() final  DateTime? expiresAt;
+@override@NullableDurationConverter() final  Duration? expiredAfter;
 
 /// Create a copy of NotesDraftsCreatePoll
 /// with the given fields replaced by the non-null parameter values.
@@ -259,7 +259,7 @@ abstract mixin class _$NotesDraftsCreatePollCopyWith<$Res> implements $NotesDraf
   factory _$NotesDraftsCreatePollCopyWith(_NotesDraftsCreatePoll value, $Res Function(_NotesDraftsCreatePoll) _then) = __$NotesDraftsCreatePollCopyWithImpl;
 @override @useResult
 $Res call({
- List<String> choices, bool? multiple, int? expiresAt, int? expiredAfter
+ List<String> choices, bool? multiple,@NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? expiresAt,@NullableDurationConverter() Duration? expiredAfter
 });
 
 
@@ -281,8 +281,8 @@ class __$NotesDraftsCreatePollCopyWithImpl<$Res>
 choices: null == choices ? _self._choices : choices // ignore: cast_nullable_to_non_nullable
 as List<String>,multiple: freezed == multiple ? _self.multiple : multiple // ignore: cast_nullable_to_non_nullable
 as bool?,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as int?,expiredAfter: freezed == expiredAfter ? _self.expiredAfter : expiredAfter // ignore: cast_nullable_to_non_nullable
-as int?,
+as DateTime?,expiredAfter: freezed == expiredAfter ? _self.expiredAfter : expiredAfter // ignore: cast_nullable_to_non_nullable
+as Duration?,
   ));
 }
 

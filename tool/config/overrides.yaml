@@ -38,10 +38,13 @@ field_overrides:
       import: "package:misskey_dart/src/converters/emojis_converter.dart"
       dart_type: "Map<String, String>"
     visibleUserIds:
+      dart_type: "List<String>"
       default: "[]"
     mentions:
+      dart_type: "List<String>"
       default: "[]"
     reactionAndUserPairCache:
+      dart_type: "List<String>"
       default: "[]"
     # 自己参照なのでジェネレータが Map のまま出す
     reply:
@@ -51,12 +54,16 @@ field_overrides:
     reactions:
       dart_type: "Map<String, int>"
     fileIds:
+      dart_type: "List<String>"
       default: "[]"
     files:
+      dart_type: "List<DriveFile>"
       default: "[]"
     tags:
+      dart_type: "List<String>"
       default: "[]"
     localOnly:
+      dart_type: "bool"
       default: "false"
     uri:
       converter: NullableUriConverter
@@ -80,6 +87,30 @@ field_overrides:
       converter: NullableDurationConverter
       import: "package:misskey_dart/src/converters/duration_converter.dart"
       dart_type: "Duration?"
+
+  # 期限の類。スキーマ上はエポックミリ秒や経過ミリ秒の数値だが、
+  # Dart では DateTime / Duration で扱う
+  NoteDraftPoll:
+    expiredAfter:
+      converter: NullableDurationConverter
+      import: "package:misskey_dart/src/converters/duration_converter.dart"
+      dart_type: "Duration?"
+
+  UsersNotesRequest:
+    sinceDate:
+      converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
+    untilDate:
+      converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
+
+  IUpdateRequest:
+    birthday:
+      converter: BirthdayConverter
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
 
   DriveFile:
     # dio や Image.network にそのまま渡す先が String なので、
@@ -119,6 +150,23 @@ field_overrides:
     fromUser:
       dart_type: "UserLite?"
 
+  ChatMessageReaction:
+    # 自分がつけたばかりのリアクションをローカルで足すときは user がない
+    user:
+      dart_type: "UserLite?"
+
+  Antenna:
+    # OR で並べた AND の配列
+    keywords:
+      dart_type: "List<List<String>>"
+    excludeKeywords:
+      dart_type: "List<List<String>>"
+
+  UserList:
+    userIds:
+      dart_type: "List<String>"
+      default: "[]"
+
   MeDetailedOnly:
     mutedWords:
       converter: MuteWordsConverter
@@ -141,6 +189,7 @@ schema_name_overrides:
   "UserLite.properties.avatarDecorations.items": UserAvatarDecoration
   "UserLite.properties.instance": UserInstanceInfo
   "UserLite.properties.badgeRoles.items": UserBadgeRole
+  "ChatMessage.properties.reactions.items": ChatMessageReaction
 
   # Inline enums → existing Dart enum types
   "Note.properties.visibility": NoteVisibility
@@ -177,6 +226,10 @@ schema_name_overrides:
   "/antennas/update.request.properties.src": AntennaSource
   "/notes/create.request.properties.visibility": NoteVisibility
   "/notes/drafts/create.request.properties.visibility": NoteVisibility
+  "/notes/drafts/update.request.properties.visibility": NoteVisibility
+  # 下書きの投票は notes/create のものと同じ形なので型をひとつにする
+  "/notes/drafts/create.request.properties.poll": NotesCreatePoll
+  "/notes/drafts/update.request.properties.poll": NotesCreatePoll
   "/i/update.request.properties.chatScope": ChatScope
   "/flash/update.request.properties.visibility": FlashVisibility
   "/flash/create.request.properties.visibility": FlashVisibility
@@ -231,9 +284,6 @@ endpoint_overrides:
     method_name: myFavorite
   "/notes/timeline":
     method_name: homeTimeline
-  "/notes/update":
-    extra_options:
-      excludeRemoveNullPredicate: "(key, _) => key == \"cw\""
 
   # oneOf response with inline object (no generated response class)
   "/users/relation":
@@ -270,6 +320,8 @@ manual_files:
   - "lib/src/extensions/"
   - "lib/src/data/streaming/"
   - "lib/src/util/"
+  # フォーク専用エンドポイント（api.json に載らない）
+  - "lib/src/data/notes/notes_update_request.dart"
   # Permission enum (not in api.json schema, must remain manual)
   - "lib/src/enums/permissions.dart"
   # Streaming-only enums (not in api.json)
@@ -324,6 +376,13 @@ number_as_int:
 
 # Extra fields (not in api.json but needed for version compatibility)
 extra_fields:
+  # 2026.4 以降で stats に増えたが、収集済みのスキーマが 2026.3.1 までなので
+  # 拾えない。古いサーバーは返さないので nullable。
+  StatsResponse:
+    reactionsCount:
+      dart_type: int
+      nullable: true
+
   # 編集されたノートでサーバーが返してくるが、Misskey の json-schema には
   # 載っていないので生成では出てこない。miria の「編集済み」表示が使う。
   Note:

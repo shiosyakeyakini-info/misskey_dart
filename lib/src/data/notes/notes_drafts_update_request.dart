@@ -8,8 +8,8 @@ part 'notes_drafts_update_request.g.dart';
 abstract class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
   const factory NotesDraftsUpdateRequest({
     String? draftId,
-    @JsonKey(unknownEnumValue: NotesDraftsUpdateVisibility.unknown)
-    NotesDraftsUpdateVisibility? visibility,
+    @JsonKey(unknownEnumValue: NoteVisibility.unknown)
+    NoteVisibility? visibility,
     List<String>? visibleUserIds,
     String? cw,
     String? hashtag,
@@ -21,7 +21,7 @@ abstract class NotesDraftsUpdateRequest with _$NotesDraftsUpdateRequest {
     String? channelId,
     String? text,
     List<String>? fileIds,
-    NotesDraftsUpdatePoll? poll,
+    NotesCreatePoll? poll,
     int? scheduledAt,
     bool? isActuallyScheduled,
   }) = _NotesDraftsUpdateRequest;

@@ -8,7 +8,7 @@ part 'note_draft_poll.g.dart';
 abstract class NoteDraftPoll with _$NoteDraftPoll {
   const factory NoteDraftPoll({
     @NullableDateTimeConverter() DateTime? expiresAt,
-    double? expiredAfter,
+    @NullableDurationConverter() Duration? expiredAfter,
     required bool multiple,
     required List<String> choices,
   }) = _NoteDraftPoll;
