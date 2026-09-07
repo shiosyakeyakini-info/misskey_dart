@@ -70,6 +70,24 @@ field_overrides:
   NotesCreatePoll:
     multiple:
       default: "false"
+    # スキーマ上はどちらもエポックミリ秒の整数だが、Dart 側では
+    # 日時と期間として扱いたい
+    expiresAt:
+      converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
+    expiredAfter:
+      converter: NullableDurationConverter
+      import: "package:misskey_dart/src/converters/duration_converter.dart"
+      dart_type: "Duration?"
+
+  DriveFile:
+    # dio や Image.network にそのまま渡す先が String なので、
+    # format: url による自動 Uri 化から戻す
+    url:
+      dart_type: "String"
+    thumbnailUrl:
+      dart_type: "String?"
 
   # Misskey のスキーマが format: url を書き忘れているURL系。
   # 書いてあるもの（DriveFile.url など）は type-mapper が自動で Uri にする。

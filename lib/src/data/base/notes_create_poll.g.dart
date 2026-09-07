@@ -12,14 +12,20 @@ _NotesCreatePoll _$NotesCreatePollFromJson(Map<String, dynamic> json) =>
           .map((e) => e as String)
           .toList(),
       multiple: json['multiple'] as bool? ?? false,
-      expiresAt: (json['expiresAt'] as num?)?.toInt(),
-      expiredAfter: (json['expiredAfter'] as num?)?.toInt(),
+      expiresAt: const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .fromJson((json['expiresAt'] as num?)?.toInt()),
+      expiredAfter: const NullableDurationConverter().fromJson(
+        (json['expiredAfter'] as num?)?.toInt(),
+      ),
     );
 
 Map<String, dynamic> _$NotesCreatePollToJson(_NotesCreatePoll instance) =>
     <String, dynamic>{
       'choices': instance.choices,
       'multiple': instance.multiple,
-      'expiresAt': instance.expiresAt,
-      'expiredAfter': instance.expiredAfter,
+      'expiresAt': const NullableEpocTimeDateTimeConverter.withMilliSeconds()
+          .toJson(instance.expiresAt),
+      'expiredAfter': const NullableDurationConverter().toJson(
+        instance.expiredAfter,
+      ),
     };

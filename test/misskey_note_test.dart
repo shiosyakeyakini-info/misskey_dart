@@ -28,9 +28,7 @@ void main() async {
           NotesCreateRequest(
             poll: NotesCreatePoll(
               choices: ["a", "b"],
-              expiresAt: DateTime.now()
-                  .add(Duration(hours: 1))
-                  .millisecondsSinceEpoch,
+              expiresAt: DateTime.now().add(Duration(hours: 1)),
             ),
           ),
         );
@@ -41,7 +39,7 @@ void main() async {
           NotesCreateRequest(
             poll: NotesCreatePoll(
               choices: ["a", "b"],
-              expiredAfter: Duration(hours: 1).inMilliseconds,
+              expiredAfter: Duration(hours: 1),
             ),
           ),
         );

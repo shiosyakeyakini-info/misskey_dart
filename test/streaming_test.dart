@@ -987,8 +987,9 @@ void main() async {
           .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
           .listen((event) {
             final body = event.body;
-            if (body is EmojiUpdatedStreamEvent)
+            if (body is EmojiUpdatedStreamEvent) {
               completer.complete(body.emojis);
+            }
           });
       await adminClient.apiService.post("admin/emoji/update", {
         "id": response["id"],
@@ -1014,8 +1015,9 @@ void main() async {
           .homeTimelineStream(id: id, parameter: HomeTimelineParameter())
           .listen((event) {
             final body = event.body;
-            if (body is EmojiDeletedStreamEvent)
+            if (body is EmojiDeletedStreamEvent) {
               completer.complete(body.emojis);
+            }
           });
       await adminClient.apiService.post("admin/emoji/delete", {
         "id": response["id"],

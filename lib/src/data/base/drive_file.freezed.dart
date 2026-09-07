@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DriveFile {
 
- String get id;@DateTimeConverter() DateTime get createdAt; String get name; String get type; String get md5; double get size; bool get isSensitive; String? get blurhash; DriveFileProperties get properties;@UriConverter() Uri get url;@NullableUriConverter() Uri? get thumbnailUrl; String? get comment; String? get folderId; Map<String, dynamic>? get folder; String? get userId; Map<String, dynamic>? get user;
+ String get id;@DateTimeConverter() DateTime get createdAt; String get name; String get type; String get md5; double get size; bool get isSensitive; String? get blurhash; DriveFileProperties get properties; String get url; String? get thumbnailUrl; String? get comment; String? get folderId; Map<String, dynamic>? get folder; String? get userId; Map<String, dynamic>? get user;
 /// Create a copy of DriveFile
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $DriveFileCopyWith<$Res>  {
   factory $DriveFileCopyWith(DriveFile value, $Res Function(DriveFile) _then) = _$DriveFileCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String name, String type, String md5, double size, bool isSensitive, String? blurhash, DriveFileProperties properties,@UriConverter() Uri url,@NullableUriConverter() Uri? thumbnailUrl, String? comment, String? folderId, Map<String, dynamic>? folder, String? userId, Map<String, dynamic>? user
+ String id,@DateTimeConverter() DateTime createdAt, String name, String type, String md5, double size, bool isSensitive, String? blurhash, DriveFileProperties properties, String url, String? thumbnailUrl, String? comment, String? folderId, Map<String, dynamic>? folder, String? userId, Map<String, dynamic>? user
 });
 
 
@@ -77,8 +77,8 @@ as double,isSensitive: null == isSensitive ? _self.isSensitive : isSensitive // 
 as bool,blurhash: freezed == blurhash ? _self.blurhash : blurhash // ignore: cast_nullable_to_non_nullable
 as String?,properties: null == properties ? _self.properties : properties // ignore: cast_nullable_to_non_nullable
 as DriveFileProperties,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as Uri,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-as Uri?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
+as String,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+as String?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
 as String?,folderId: freezed == folderId ? _self.folderId : folderId // ignore: cast_nullable_to_non_nullable
 as String?,folder: freezed == folder ? _self.folder : folder // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
@@ -177,7 +177,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  String type,  String md5,  double size,  bool isSensitive,  String? blurhash,  DriveFileProperties properties, @UriConverter()  Uri url, @NullableUriConverter()  Uri? thumbnailUrl,  String? comment,  String? folderId,  Map<String, dynamic>? folder,  String? userId,  Map<String, dynamic>? user)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  String type,  String md5,  double size,  bool isSensitive,  String? blurhash,  DriveFileProperties properties,  String url,  String? thumbnailUrl,  String? comment,  String? folderId,  Map<String, dynamic>? folder,  String? userId,  Map<String, dynamic>? user)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DriveFile() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name,_that.type,_that.md5,_that.size,_that.isSensitive,_that.blurhash,_that.properties,_that.url,_that.thumbnailUrl,_that.comment,_that.folderId,_that.folder,_that.userId,_that.user);case _:
@@ -198,7 +198,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.type,_that.md5,_that.s
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  String type,  String md5,  double size,  bool isSensitive,  String? blurhash,  DriveFileProperties properties, @UriConverter()  Uri url, @NullableUriConverter()  Uri? thumbnailUrl,  String? comment,  String? folderId,  Map<String, dynamic>? folder,  String? userId,  Map<String, dynamic>? user)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  String type,  String md5,  double size,  bool isSensitive,  String? blurhash,  DriveFileProperties properties,  String url,  String? thumbnailUrl,  String? comment,  String? folderId,  Map<String, dynamic>? folder,  String? userId,  Map<String, dynamic>? user)  $default,) {final _that = this;
 switch (_that) {
 case _DriveFile():
 return $default(_that.id,_that.createdAt,_that.name,_that.type,_that.md5,_that.size,_that.isSensitive,_that.blurhash,_that.properties,_that.url,_that.thumbnailUrl,_that.comment,_that.folderId,_that.folder,_that.userId,_that.user);case _:
@@ -218,7 +218,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.type,_that.md5,_that.s
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  String type,  String md5,  double size,  bool isSensitive,  String? blurhash,  DriveFileProperties properties, @UriConverter()  Uri url, @NullableUriConverter()  Uri? thumbnailUrl,  String? comment,  String? folderId,  Map<String, dynamic>? folder,  String? userId,  Map<String, dynamic>? user)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String name,  String type,  String md5,  double size,  bool isSensitive,  String? blurhash,  DriveFileProperties properties,  String url,  String? thumbnailUrl,  String? comment,  String? folderId,  Map<String, dynamic>? folder,  String? userId,  Map<String, dynamic>? user)?  $default,) {final _that = this;
 switch (_that) {
 case _DriveFile() when $default != null:
 return $default(_that.id,_that.createdAt,_that.name,_that.type,_that.md5,_that.size,_that.isSensitive,_that.blurhash,_that.properties,_that.url,_that.thumbnailUrl,_that.comment,_that.folderId,_that.folder,_that.userId,_that.user);case _:
@@ -233,7 +233,7 @@ return $default(_that.id,_that.createdAt,_that.name,_that.type,_that.md5,_that.s
 @JsonSerializable()
 
 class _DriveFile implements DriveFile {
-  const _DriveFile({required this.id, @DateTimeConverter() required this.createdAt, required this.name, required this.type, required this.md5, required this.size, required this.isSensitive, this.blurhash, required this.properties, @UriConverter() required this.url, @NullableUriConverter() this.thumbnailUrl, this.comment, this.folderId, final  Map<String, dynamic>? folder, this.userId, final  Map<String, dynamic>? user}): _folder = folder,_user = user;
+  const _DriveFile({required this.id, @DateTimeConverter() required this.createdAt, required this.name, required this.type, required this.md5, required this.size, required this.isSensitive, this.blurhash, required this.properties, required this.url, this.thumbnailUrl, this.comment, this.folderId, final  Map<String, dynamic>? folder, this.userId, final  Map<String, dynamic>? user}): _folder = folder,_user = user;
   factory _DriveFile.fromJson(Map<String, dynamic> json) => _$DriveFileFromJson(json);
 
 @override final  String id;
@@ -245,8 +245,8 @@ class _DriveFile implements DriveFile {
 @override final  bool isSensitive;
 @override final  String? blurhash;
 @override final  DriveFileProperties properties;
-@override@UriConverter() final  Uri url;
-@override@NullableUriConverter() final  Uri? thumbnailUrl;
+@override final  String url;
+@override final  String? thumbnailUrl;
 @override final  String? comment;
 @override final  String? folderId;
  final  Map<String, dynamic>? _folder;
@@ -302,7 +302,7 @@ abstract mixin class _$DriveFileCopyWith<$Res> implements $DriveFileCopyWith<$Re
   factory _$DriveFileCopyWith(_DriveFile value, $Res Function(_DriveFile) _then) = __$DriveFileCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, String name, String type, String md5, double size, bool isSensitive, String? blurhash, DriveFileProperties properties,@UriConverter() Uri url,@NullableUriConverter() Uri? thumbnailUrl, String? comment, String? folderId, Map<String, dynamic>? folder, String? userId, Map<String, dynamic>? user
+ String id,@DateTimeConverter() DateTime createdAt, String name, String type, String md5, double size, bool isSensitive, String? blurhash, DriveFileProperties properties, String url, String? thumbnailUrl, String? comment, String? folderId, Map<String, dynamic>? folder, String? userId, Map<String, dynamic>? user
 });
 
 
@@ -331,8 +331,8 @@ as double,isSensitive: null == isSensitive ? _self.isSensitive : isSensitive // 
 as bool,blurhash: freezed == blurhash ? _self.blurhash : blurhash // ignore: cast_nullable_to_non_nullable
 as String?,properties: null == properties ? _self.properties : properties // ignore: cast_nullable_to_non_nullable
 as DriveFileProperties,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as Uri,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-as Uri?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
+as String,thumbnailUrl: freezed == thumbnailUrl ? _self.thumbnailUrl : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+as String?,comment: freezed == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
 as String?,folderId: freezed == folderId ? _self.folderId : folderId // ignore: cast_nullable_to_non_nullable
 as String?,folder: freezed == folder ? _self._folder : folder // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,userId: freezed == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable

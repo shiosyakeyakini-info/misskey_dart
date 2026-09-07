@@ -119,7 +119,7 @@ void main() async {
     test("uploadFromUrl", () async {
       final file = await userClient.createDriveFile();
       await userClient.drive.files.uploadFromUrl(
-        DriveFilesUploadFromUrlRequest(url: file.url, force: true),
+        DriveFilesUploadFromUrlRequest(url: Uri.parse(file.url), force: true),
       );
     });
   });
