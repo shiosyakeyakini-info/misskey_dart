@@ -4,6 +4,5 @@ enum AdminQueueJobsStateItem {
   delayed,
   completed,
   failed,
-  paused,
   unknown,
 }

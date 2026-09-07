@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Stats {
 
- int get notesCount; int get originalNotesCount; int get usersCount; int get originalUsersCount; int get instances; int get driveUsageLocal; int get driveUsageRemote;
+ int get notesCount; int get originalNotesCount; int get usersCount; int get originalUsersCount; int get reactionsCount; int get instances; int get driveUsageLocal; int get driveUsageRemote;
 /// Create a copy of Stats
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $StatsCopyWith<Stats> get copyWith => _$StatsCopyWithImpl<Stats>(this as Stats, 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Stats&&(identical(other.notesCount, notesCount) || other.notesCount == notesCount)&&(identical(other.originalNotesCount, originalNotesCount) || other.originalNotesCount == originalNotesCount)&&(identical(other.usersCount, usersCount) || other.usersCount == usersCount)&&(identical(other.originalUsersCount, originalUsersCount) || other.originalUsersCount == originalUsersCount)&&(identical(other.instances, instances) || other.instances == instances)&&(identical(other.driveUsageLocal, driveUsageLocal) || other.driveUsageLocal == driveUsageLocal)&&(identical(other.driveUsageRemote, driveUsageRemote) || other.driveUsageRemote == driveUsageRemote));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Stats&&(identical(other.notesCount, notesCount) || other.notesCount == notesCount)&&(identical(other.originalNotesCount, originalNotesCount) || other.originalNotesCount == originalNotesCount)&&(identical(other.usersCount, usersCount) || other.usersCount == usersCount)&&(identical(other.originalUsersCount, originalUsersCount) || other.originalUsersCount == originalUsersCount)&&(identical(other.reactionsCount, reactionsCount) || other.reactionsCount == reactionsCount)&&(identical(other.instances, instances) || other.instances == instances)&&(identical(other.driveUsageLocal, driveUsageLocal) || other.driveUsageLocal == driveUsageLocal)&&(identical(other.driveUsageRemote, driveUsageRemote) || other.driveUsageRemote == driveUsageRemote));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,notesCount,originalNotesCount,usersCount,originalUsersCount,instances,driveUsageLocal,driveUsageRemote);
+int get hashCode => Object.hash(runtimeType,notesCount,originalNotesCount,usersCount,originalUsersCount,reactionsCount,instances,driveUsageLocal,driveUsageRemote);
 
 @override
 String toString() {
-  return 'Stats(notesCount: $notesCount, originalNotesCount: $originalNotesCount, usersCount: $usersCount, originalUsersCount: $originalUsersCount, instances: $instances, driveUsageLocal: $driveUsageLocal, driveUsageRemote: $driveUsageRemote)';
+  return 'Stats(notesCount: $notesCount, originalNotesCount: $originalNotesCount, usersCount: $usersCount, originalUsersCount: $originalUsersCount, reactionsCount: $reactionsCount, instances: $instances, driveUsageLocal: $driveUsageLocal, driveUsageRemote: $driveUsageRemote)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $StatsCopyWith<$Res>  {
   factory $StatsCopyWith(Stats value, $Res Function(Stats) _then) = _$StatsCopyWithImpl;
 @useResult
 $Res call({
- int notesCount, int originalNotesCount, int usersCount, int originalUsersCount, int instances, int driveUsageLocal, int driveUsageRemote
+ int notesCount, int originalNotesCount, int usersCount, int originalUsersCount, int reactionsCount, int instances, int driveUsageLocal, int driveUsageRemote
 });
 
 
@@ -65,12 +65,13 @@ class _$StatsCopyWithImpl<$Res>
 
 /// Create a copy of Stats
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? notesCount = null,Object? originalNotesCount = null,Object? usersCount = null,Object? originalUsersCount = null,Object? instances = null,Object? driveUsageLocal = null,Object? driveUsageRemote = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? notesCount = null,Object? originalNotesCount = null,Object? usersCount = null,Object? originalUsersCount = null,Object? reactionsCount = null,Object? instances = null,Object? driveUsageLocal = null,Object? driveUsageRemote = null,}) {
   return _then(_self.copyWith(
 notesCount: null == notesCount ? _self.notesCount : notesCount // ignore: cast_nullable_to_non_nullable
 as int,originalNotesCount: null == originalNotesCount ? _self.originalNotesCount : originalNotesCount // ignore: cast_nullable_to_non_nullable
 as int,usersCount: null == usersCount ? _self.usersCount : usersCount // ignore: cast_nullable_to_non_nullable
 as int,originalUsersCount: null == originalUsersCount ? _self.originalUsersCount : originalUsersCount // ignore: cast_nullable_to_non_nullable
+as int,reactionsCount: null == reactionsCount ? _self.reactionsCount : reactionsCount // ignore: cast_nullable_to_non_nullable
 as int,instances: null == instances ? _self.instances : instances // ignore: cast_nullable_to_non_nullable
 as int,driveUsageLocal: null == driveUsageLocal ? _self.driveUsageLocal : driveUsageLocal // ignore: cast_nullable_to_non_nullable
 as int,driveUsageRemote: null == driveUsageRemote ? _self.driveUsageRemote : driveUsageRemote // ignore: cast_nullable_to_non_nullable
@@ -159,10 +160,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int notesCount,  int originalNotesCount,  int usersCount,  int originalUsersCount,  int instances,  int driveUsageLocal,  int driveUsageRemote)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int notesCount,  int originalNotesCount,  int usersCount,  int originalUsersCount,  int reactionsCount,  int instances,  int driveUsageLocal,  int driveUsageRemote)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Stats() when $default != null:
-return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that.originalUsersCount,_that.instances,_that.driveUsageLocal,_that.driveUsageRemote);case _:
+return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that.originalUsersCount,_that.reactionsCount,_that.instances,_that.driveUsageLocal,_that.driveUsageRemote);case _:
   return orElse();
 
 }
@@ -180,10 +181,10 @@ return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int notesCount,  int originalNotesCount,  int usersCount,  int originalUsersCount,  int instances,  int driveUsageLocal,  int driveUsageRemote)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int notesCount,  int originalNotesCount,  int usersCount,  int originalUsersCount,  int reactionsCount,  int instances,  int driveUsageLocal,  int driveUsageRemote)  $default,) {final _that = this;
 switch (_that) {
 case _Stats():
-return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that.originalUsersCount,_that.instances,_that.driveUsageLocal,_that.driveUsageRemote);case _:
+return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that.originalUsersCount,_that.reactionsCount,_that.instances,_that.driveUsageLocal,_that.driveUsageRemote);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +201,10 @@ return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int notesCount,  int originalNotesCount,  int usersCount,  int originalUsersCount,  int instances,  int driveUsageLocal,  int driveUsageRemote)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int notesCount,  int originalNotesCount,  int usersCount,  int originalUsersCount,  int reactionsCount,  int instances,  int driveUsageLocal,  int driveUsageRemote)?  $default,) {final _that = this;
 switch (_that) {
 case _Stats() when $default != null:
-return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that.originalUsersCount,_that.instances,_that.driveUsageLocal,_that.driveUsageRemote);case _:
+return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that.originalUsersCount,_that.reactionsCount,_that.instances,_that.driveUsageLocal,_that.driveUsageRemote);case _:
   return null;
 
 }
@@ -215,13 +216,14 @@ return $default(_that.notesCount,_that.originalNotesCount,_that.usersCount,_that
 @JsonSerializable()
 
 class _Stats implements Stats {
-  const _Stats({required this.notesCount, required this.originalNotesCount, required this.usersCount, required this.originalUsersCount, required this.instances, required this.driveUsageLocal, required this.driveUsageRemote});
+  const _Stats({required this.notesCount, required this.originalNotesCount, required this.usersCount, required this.originalUsersCount, required this.reactionsCount, required this.instances, required this.driveUsageLocal, required this.driveUsageRemote});
   factory _Stats.fromJson(Map<String, dynamic> json) => _$StatsFromJson(json);
 
 @override final  int notesCount;
 @override final  int originalNotesCount;
 @override final  int usersCount;
 @override final  int originalUsersCount;
+@override final  int reactionsCount;
 @override final  int instances;
 @override final  int driveUsageLocal;
 @override final  int driveUsageRemote;
@@ -239,16 +241,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Stats&&(identical(other.notesCount, notesCount) || other.notesCount == notesCount)&&(identical(other.originalNotesCount, originalNotesCount) || other.originalNotesCount == originalNotesCount)&&(identical(other.usersCount, usersCount) || other.usersCount == usersCount)&&(identical(other.originalUsersCount, originalUsersCount) || other.originalUsersCount == originalUsersCount)&&(identical(other.instances, instances) || other.instances == instances)&&(identical(other.driveUsageLocal, driveUsageLocal) || other.driveUsageLocal == driveUsageLocal)&&(identical(other.driveUsageRemote, driveUsageRemote) || other.driveUsageRemote == driveUsageRemote));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Stats&&(identical(other.notesCount, notesCount) || other.notesCount == notesCount)&&(identical(other.originalNotesCount, originalNotesCount) || other.originalNotesCount == originalNotesCount)&&(identical(other.usersCount, usersCount) || other.usersCount == usersCount)&&(identical(other.originalUsersCount, originalUsersCount) || other.originalUsersCount == originalUsersCount)&&(identical(other.reactionsCount, reactionsCount) || other.reactionsCount == reactionsCount)&&(identical(other.instances, instances) || other.instances == instances)&&(identical(other.driveUsageLocal, driveUsageLocal) || other.driveUsageLocal == driveUsageLocal)&&(identical(other.driveUsageRemote, driveUsageRemote) || other.driveUsageRemote == driveUsageRemote));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,notesCount,originalNotesCount,usersCount,originalUsersCount,instances,driveUsageLocal,driveUsageRemote);
+int get hashCode => Object.hash(runtimeType,notesCount,originalNotesCount,usersCount,originalUsersCount,reactionsCount,instances,driveUsageLocal,driveUsageRemote);
 
 @override
 String toString() {
-  return 'Stats(notesCount: $notesCount, originalNotesCount: $originalNotesCount, usersCount: $usersCount, originalUsersCount: $originalUsersCount, instances: $instances, driveUsageLocal: $driveUsageLocal, driveUsageRemote: $driveUsageRemote)';
+  return 'Stats(notesCount: $notesCount, originalNotesCount: $originalNotesCount, usersCount: $usersCount, originalUsersCount: $originalUsersCount, reactionsCount: $reactionsCount, instances: $instances, driveUsageLocal: $driveUsageLocal, driveUsageRemote: $driveUsageRemote)';
 }
 
 
@@ -259,7 +261,7 @@ abstract mixin class _$StatsCopyWith<$Res> implements $StatsCopyWith<$Res> {
   factory _$StatsCopyWith(_Stats value, $Res Function(_Stats) _then) = __$StatsCopyWithImpl;
 @override @useResult
 $Res call({
- int notesCount, int originalNotesCount, int usersCount, int originalUsersCount, int instances, int driveUsageLocal, int driveUsageRemote
+ int notesCount, int originalNotesCount, int usersCount, int originalUsersCount, int reactionsCount, int instances, int driveUsageLocal, int driveUsageRemote
 });
 
 
@@ -276,12 +278,13 @@ class __$StatsCopyWithImpl<$Res>
 
 /// Create a copy of Stats
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? notesCount = null,Object? originalNotesCount = null,Object? usersCount = null,Object? originalUsersCount = null,Object? instances = null,Object? driveUsageLocal = null,Object? driveUsageRemote = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? notesCount = null,Object? originalNotesCount = null,Object? usersCount = null,Object? originalUsersCount = null,Object? reactionsCount = null,Object? instances = null,Object? driveUsageLocal = null,Object? driveUsageRemote = null,}) {
   return _then(_Stats(
 notesCount: null == notesCount ? _self.notesCount : notesCount // ignore: cast_nullable_to_non_nullable
 as int,originalNotesCount: null == originalNotesCount ? _self.originalNotesCount : originalNotesCount // ignore: cast_nullable_to_non_nullable
 as int,usersCount: null == usersCount ? _self.usersCount : usersCount // ignore: cast_nullable_to_non_nullable
 as int,originalUsersCount: null == originalUsersCount ? _self.originalUsersCount : originalUsersCount // ignore: cast_nullable_to_non_nullable
+as int,reactionsCount: null == reactionsCount ? _self.reactionsCount : reactionsCount // ignore: cast_nullable_to_non_nullable
 as int,instances: null == instances ? _self.instances : instances // ignore: cast_nullable_to_non_nullable
 as int,driveUsageLocal: null == driveUsageLocal ? _self.driveUsageLocal : driveUsageLocal // ignore: cast_nullable_to_non_nullable
 as int,driveUsageRemote: null == driveUsageRemote ? _self.driveUsageRemote : driveUsageRemote // ignore: cast_nullable_to_non_nullable

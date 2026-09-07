@@ -10,10 +10,10 @@ abstract class StatsResponse with _$StatsResponse {
     required int originalNotesCount,
     required int usersCount,
     required int originalUsersCount,
+    int? reactionsCount,
     required int instances,
     required int driveUsageLocal,
     required int driveUsageRemote,
-    int? reactionsCount,
   }) = _StatsResponse;
 
   factory StatsResponse.fromJson(Map<String, Object?> json) =>

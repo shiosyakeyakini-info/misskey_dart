@@ -56,6 +56,10 @@ abstract class AdminMetaResponse with _$AdminMetaResponse {
     sensitiveMediaDetectionSensitivity,
     required bool setSensitiveFlagAutomatically,
     required bool enableSensitiveMediaDetectionForVideos,
+    String? sensitiveMediaDetectionApiUrl,
+    String? sensitiveMediaDetectionApiKey,
+    required double sensitiveMediaDetectionTimeout,
+    required double sensitiveMediaDetectionMaxImagesPerRequest,
     required String proxyAccountId,
     String? email,
     required bool smtpSecure,
@@ -128,6 +132,7 @@ abstract class AdminMetaResponse with _$AdminMetaResponse {
     required bool urlPreviewRequireContentLength,
     String? urlPreviewUserAgent,
     String? urlPreviewSummaryProxyUrl,
+    required List<String> urlPreviewSensitiveList,
     @JsonKey(unknownEnumValue: AdminMetaFederation.unknown)
     required AdminMetaFederation federation,
     required List<String> federationHosts,

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminAvatarDecorationsListItem {
 
- String get id;@DateTimeConverter() DateTime get createdAt;@NullableDateTimeConverter() DateTime? get updatedAt; String get name; String get description; String get url; List<String> get roleIdsThatCanBeUsedThisDecoration;
+ String get id;@DateTimeConverter() DateTime get createdAt;@NullableDateTimeConverter() DateTime? get updatedAt; String get name; String get description; String get url; List<String> get roleIdsThatCanBeUsedThisDecoration; String? get category;
 /// Create a copy of AdminAvatarDecorationsListItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $AdminAvatarDecorationsListItemCopyWith<AdminAvatarDecorationsListItem> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminAvatarDecorationsListItem&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.roleIdsThatCanBeUsedThisDecoration, roleIdsThatCanBeUsedThisDecoration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminAvatarDecorationsListItem&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.roleIdsThatCanBeUsedThisDecoration, roleIdsThatCanBeUsedThisDecoration)&&(identical(other.category, category) || other.category == category));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdAt,updatedAt,name,description,url,const DeepCollectionEquality().hash(roleIdsThatCanBeUsedThisDecoration));
+int get hashCode => Object.hash(runtimeType,id,createdAt,updatedAt,name,description,url,const DeepCollectionEquality().hash(roleIdsThatCanBeUsedThisDecoration),category);
 
 @override
 String toString() {
-  return 'AdminAvatarDecorationsListItem(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration)';
+  return 'AdminAvatarDecorationsListItem(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration, category: $category)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $AdminAvatarDecorationsListItemCopyWith<$Res>  {
   factory $AdminAvatarDecorationsListItemCopyWith(AdminAvatarDecorationsListItem value, $Res Function(AdminAvatarDecorationsListItem) _then) = _$AdminAvatarDecorationsListItemCopyWithImpl;
 @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? updatedAt, String name, String description, String url, List<String> roleIdsThatCanBeUsedThisDecoration
+ String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? updatedAt, String name, String description, String url, List<String> roleIdsThatCanBeUsedThisDecoration, String? category
 });
 
 
@@ -65,7 +65,7 @@ class _$AdminAvatarDecorationsListItemCopyWithImpl<$Res>
 
 /// Create a copy of AdminAvatarDecorationsListItem
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? updatedAt = freezed,Object? name = null,Object? description = null,Object? url = null,Object? roleIdsThatCanBeUsedThisDecoration = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? updatedAt = freezed,Object? name = null,Object? description = null,Object? url = null,Object? roleIdsThatCanBeUsedThisDecoration = null,Object? category = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,8 @@ as DateTime?,name: null == name ? _self.name : name // ignore: cast_nullable_to_
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as String,roleIdsThatCanBeUsedThisDecoration: null == roleIdsThatCanBeUsedThisDecoration ? _self.roleIdsThatCanBeUsedThisDecoration : roleIdsThatCanBeUsedThisDecoration // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as List<String>,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -159,10 +160,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? updatedAt,  String name,  String description,  String url,  List<String> roleIdsThatCanBeUsedThisDecoration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? updatedAt,  String name,  String description,  String url,  List<String> roleIdsThatCanBeUsedThisDecoration,  String? category)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminAvatarDecorationsListItem() when $default != null:
-return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration);case _:
+return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration,_that.category);case _:
   return orElse();
 
 }
@@ -180,10 +181,10 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.descri
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? updatedAt,  String name,  String description,  String url,  List<String> roleIdsThatCanBeUsedThisDecoration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? updatedAt,  String name,  String description,  String url,  List<String> roleIdsThatCanBeUsedThisDecoration,  String? category)  $default,) {final _that = this;
 switch (_that) {
 case _AdminAvatarDecorationsListItem():
-return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration);case _:
+return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration,_that.category);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +201,10 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.descri
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? updatedAt,  String name,  String description,  String url,  List<String> roleIdsThatCanBeUsedThisDecoration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @DateTimeConverter()  DateTime createdAt, @NullableDateTimeConverter()  DateTime? updatedAt,  String name,  String description,  String url,  List<String> roleIdsThatCanBeUsedThisDecoration,  String? category)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminAvatarDecorationsListItem() when $default != null:
-return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration);case _:
+return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration,_that.category);case _:
   return null;
 
 }
@@ -215,7 +216,7 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.name,_that.descri
 @JsonSerializable()
 
 class _AdminAvatarDecorationsListItem implements AdminAvatarDecorationsListItem {
-  const _AdminAvatarDecorationsListItem({required this.id, @DateTimeConverter() required this.createdAt, @NullableDateTimeConverter() this.updatedAt, required this.name, required this.description, required this.url, required final  List<String> roleIdsThatCanBeUsedThisDecoration}): _roleIdsThatCanBeUsedThisDecoration = roleIdsThatCanBeUsedThisDecoration;
+  const _AdminAvatarDecorationsListItem({required this.id, @DateTimeConverter() required this.createdAt, @NullableDateTimeConverter() this.updatedAt, required this.name, required this.description, required this.url, required final  List<String> roleIdsThatCanBeUsedThisDecoration, this.category}): _roleIdsThatCanBeUsedThisDecoration = roleIdsThatCanBeUsedThisDecoration;
   factory _AdminAvatarDecorationsListItem.fromJson(Map<String, dynamic> json) => _$AdminAvatarDecorationsListItemFromJson(json);
 
 @override final  String id;
@@ -231,6 +232,7 @@ class _AdminAvatarDecorationsListItem implements AdminAvatarDecorationsListItem 
   return EqualUnmodifiableListView(_roleIdsThatCanBeUsedThisDecoration);
 }
 
+@override final  String? category;
 
 /// Create a copy of AdminAvatarDecorationsListItem
 /// with the given fields replaced by the non-null parameter values.
@@ -245,16 +247,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminAvatarDecorationsListItem&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._roleIdsThatCanBeUsedThisDecoration, _roleIdsThatCanBeUsedThisDecoration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminAvatarDecorationsListItem&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._roleIdsThatCanBeUsedThisDecoration, _roleIdsThatCanBeUsedThisDecoration)&&(identical(other.category, category) || other.category == category));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdAt,updatedAt,name,description,url,const DeepCollectionEquality().hash(_roleIdsThatCanBeUsedThisDecoration));
+int get hashCode => Object.hash(runtimeType,id,createdAt,updatedAt,name,description,url,const DeepCollectionEquality().hash(_roleIdsThatCanBeUsedThisDecoration),category);
 
 @override
 String toString() {
-  return 'AdminAvatarDecorationsListItem(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration)';
+  return 'AdminAvatarDecorationsListItem(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration, category: $category)';
 }
 
 
@@ -265,7 +267,7 @@ abstract mixin class _$AdminAvatarDecorationsListItemCopyWith<$Res> implements $
   factory _$AdminAvatarDecorationsListItemCopyWith(_AdminAvatarDecorationsListItem value, $Res Function(_AdminAvatarDecorationsListItem) _then) = __$AdminAvatarDecorationsListItemCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? updatedAt, String name, String description, String url, List<String> roleIdsThatCanBeUsedThisDecoration
+ String id,@DateTimeConverter() DateTime createdAt,@NullableDateTimeConverter() DateTime? updatedAt, String name, String description, String url, List<String> roleIdsThatCanBeUsedThisDecoration, String? category
 });
 
 
@@ -282,7 +284,7 @@ class __$AdminAvatarDecorationsListItemCopyWithImpl<$Res>
 
 /// Create a copy of AdminAvatarDecorationsListItem
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? updatedAt = freezed,Object? name = null,Object? description = null,Object? url = null,Object? roleIdsThatCanBeUsedThisDecoration = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? updatedAt = freezed,Object? name = null,Object? description = null,Object? url = null,Object? roleIdsThatCanBeUsedThisDecoration = null,Object? category = freezed,}) {
   return _then(_AdminAvatarDecorationsListItem(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -291,7 +293,8 @@ as DateTime?,name: null == name ? _self.name : name // ignore: cast_nullable_to_
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as String,roleIdsThatCanBeUsedThisDecoration: null == roleIdsThatCanBeUsedThisDecoration ? _self._roleIdsThatCanBeUsedThisDecoration : roleIdsThatCanBeUsedThisDecoration // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as List<String>,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

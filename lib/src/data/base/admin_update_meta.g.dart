@@ -81,6 +81,14 @@ _AdminUpdateMeta _$AdminUpdateMetaFromJson(
   setSensitiveFlagAutomatically: json['setSensitiveFlagAutomatically'] as bool?,
   enableSensitiveMediaDetectionForVideos:
       json['enableSensitiveMediaDetectionForVideos'] as bool?,
+  sensitiveMediaDetectionApiUrl:
+      json['sensitiveMediaDetectionApiUrl'] as String?,
+  sensitiveMediaDetectionApiKey:
+      json['sensitiveMediaDetectionApiKey'] as String?,
+  sensitiveMediaDetectionTimeout:
+      (json['sensitiveMediaDetectionTimeout'] as num?)?.toInt(),
+  sensitiveMediaDetectionMaxImagesPerRequest:
+      (json['sensitiveMediaDetectionMaxImagesPerRequest'] as num?)?.toInt(),
   maintainerName: json['maintainerName'] as String?,
   maintainerEmail: json['maintainerEmail'] as String?,
   langs: (json['langs'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -168,6 +176,9 @@ _AdminUpdateMeta _$AdminUpdateMetaFromJson(
       json['urlPreviewRequireContentLength'] as bool?,
   urlPreviewUserAgent: json['urlPreviewUserAgent'] as String?,
   urlPreviewSummaryProxyUrl: json['urlPreviewSummaryProxyUrl'] as String?,
+  urlPreviewSensitiveList: (json['urlPreviewSensitiveList'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
   federation: $enumDecodeNullable(
     _$AdminUpdateMetaFederationEnumMap,
     json['federation'],
@@ -255,6 +266,11 @@ Map<String, dynamic> _$AdminUpdateMetaToJson(
   'setSensitiveFlagAutomatically': instance.setSensitiveFlagAutomatically,
   'enableSensitiveMediaDetectionForVideos':
       instance.enableSensitiveMediaDetectionForVideos,
+  'sensitiveMediaDetectionApiUrl': instance.sensitiveMediaDetectionApiUrl,
+  'sensitiveMediaDetectionApiKey': instance.sensitiveMediaDetectionApiKey,
+  'sensitiveMediaDetectionTimeout': instance.sensitiveMediaDetectionTimeout,
+  'sensitiveMediaDetectionMaxImagesPerRequest':
+      instance.sensitiveMediaDetectionMaxImagesPerRequest,
   'maintainerName': instance.maintainerName,
   'maintainerEmail': instance.maintainerEmail,
   'langs': instance.langs,
@@ -325,6 +341,7 @@ Map<String, dynamic> _$AdminUpdateMetaToJson(
   'urlPreviewRequireContentLength': instance.urlPreviewRequireContentLength,
   'urlPreviewUserAgent': instance.urlPreviewUserAgent,
   'urlPreviewSummaryProxyUrl': instance.urlPreviewSummaryProxyUrl,
+  'urlPreviewSensitiveList': instance.urlPreviewSensitiveList,
   'federation': _$AdminUpdateMetaFederationEnumMap[instance.federation],
   'federationHosts': instance.federationHosts,
   'deliverSuspendedSoftware': instance.deliverSuspendedSoftware

@@ -12,10 +12,10 @@ _StatsResponse _$StatsResponseFromJson(Map<String, dynamic> json) =>
       originalNotesCount: (json['originalNotesCount'] as num).toInt(),
       usersCount: (json['usersCount'] as num).toInt(),
       originalUsersCount: (json['originalUsersCount'] as num).toInt(),
+      reactionsCount: (json['reactionsCount'] as num?)?.toInt(),
       instances: (json['instances'] as num).toInt(),
       driveUsageLocal: (json['driveUsageLocal'] as num).toInt(),
       driveUsageRemote: (json['driveUsageRemote'] as num).toInt(),
-      reactionsCount: (json['reactionsCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$StatsResponseToJson(_StatsResponse instance) =>
@@ -24,8 +24,8 @@ Map<String, dynamic> _$StatsResponseToJson(_StatsResponse instance) =>
       'originalNotesCount': instance.originalNotesCount,
       'usersCount': instance.usersCount,
       'originalUsersCount': instance.originalUsersCount,
+      'reactionsCount': instance.reactionsCount,
       'instances': instance.instances,
       'driveUsageLocal': instance.driveUsageLocal,
       'driveUsageRemote': instance.driveUsageRemote,
-      'reactionsCount': instance.reactionsCount,
     };

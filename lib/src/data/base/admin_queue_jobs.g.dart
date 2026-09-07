@@ -48,6 +48,5 @@ const _$AdminQueueJobsStateItemEnumMap = {
   AdminQueueJobsStateItem.delayed: 'delayed',
   AdminQueueJobsStateItem.completed: 'completed',
   AdminQueueJobsStateItem.failed: 'failed',
-  AdminQueueJobsStateItem.paused: 'paused',
   AdminQueueJobsStateItem.unknown: 'unknown',
 };

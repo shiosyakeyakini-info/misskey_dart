@@ -422,9 +422,7 @@ NotificationScheduledNotePosted _$NotificationScheduledNotePostedFromJson(
 ) => NotificationScheduledNotePosted(
   id: json['id'] as String,
   createdAt: const DateTimeConverter().fromJson(json['createdAt'] as String),
-  note: json['note'] == null
-      ? null
-      : Note.fromJson(json['note'] as Map<String, dynamic>),
+  note: Note.fromJson(json['note'] as Map<String, dynamic>),
   $type: json['type'] as String?,
 );
 
@@ -433,7 +431,7 @@ Map<String, dynamic> _$NotificationScheduledNotePostedToJson(
 ) => <String, dynamic>{
   'id': instance.id,
   'createdAt': const DateTimeConverter().toJson(instance.createdAt),
-  'note': instance.note?.toJson(),
+  'note': instance.note.toJson(),
   'type': instance.$type,
 };
 
@@ -444,6 +442,7 @@ _$NotificationScheduledNotePostFailedFromJson(Map<String, dynamic> json) =>
       createdAt: const DateTimeConverter().fromJson(
         json['createdAt'] as String,
       ),
+      noteDraft: NoteDraft.fromJson(json['noteDraft'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
@@ -452,6 +451,7 @@ Map<String, dynamic> _$NotificationScheduledNotePostFailedToJson(
 ) => <String, dynamic>{
   'id': instance.id,
   'createdAt': const DateTimeConverter().toJson(instance.createdAt),
+  'noteDraft': instance.noteDraft.toJson(),
   'type': instance.$type,
 };
 

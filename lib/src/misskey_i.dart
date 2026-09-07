@@ -283,14 +283,14 @@ class MisskeyI2fa {
   }
 
   /// i/2fa/register-key
-  Future<I2faRegisterKeyResponse> registerKey(
+  Future<Map<String, dynamic>> registerKey(
     I2faRegisterKeyRequest request,
   ) async {
     final response = await _apiService.post<Map<String, dynamic>>(
       "i/2fa/register-key",
       request.toJson(),
     );
-    return I2faRegisterKeyResponse.fromJson(response);
+    return response.cast();
   }
 
   /// i/2fa/remove-key

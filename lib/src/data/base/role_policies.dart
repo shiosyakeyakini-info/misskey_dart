@@ -45,6 +45,7 @@ abstract class RolePolicies with _$RolePolicies {
     bool? watermarkAvailable,
     bool? canSearchUsers,
     int? scheduledNoteLimit,
+    bool? canCreateChannel,
   }) = _RolePolicies;
 
   factory RolePolicies.fromJson(Map<String, Object?> json) =>

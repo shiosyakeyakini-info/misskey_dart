@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$I2faRegisterKey {
 
- I2faRegisterKeyRp get rp; I2faRegisterKeyUser get user; String get challenge; List<I2faRegisterKeyPubKeyCredParamsItem> get pubKeyCredParams; double? get timeout; List<I2faRegisterKeyExcludeCredentialsItem>? get excludeCredentials; I2faRegisterKeyAuthenticatorSelection? get authenticatorSelection;@JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) I2faRegisterKeyAttestation? get attestation; I2faRegisterKeyExtensions? get extensions;
+ String get password; String? get token;
 /// Create a copy of I2faRegisterKey
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $I2faRegisterKeyCopyWith<I2faRegisterKey> get copyWith => _$I2faRegisterKeyCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is I2faRegisterKey&&(identical(other.rp, rp) || other.rp == rp)&&(identical(other.user, user) || other.user == user)&&(identical(other.challenge, challenge) || other.challenge == challenge)&&const DeepCollectionEquality().equals(other.pubKeyCredParams, pubKeyCredParams)&&(identical(other.timeout, timeout) || other.timeout == timeout)&&const DeepCollectionEquality().equals(other.excludeCredentials, excludeCredentials)&&(identical(other.authenticatorSelection, authenticatorSelection) || other.authenticatorSelection == authenticatorSelection)&&(identical(other.attestation, attestation) || other.attestation == attestation)&&(identical(other.extensions, extensions) || other.extensions == extensions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is I2faRegisterKey&&(identical(other.password, password) || other.password == password)&&(identical(other.token, token) || other.token == token));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,rp,user,challenge,const DeepCollectionEquality().hash(pubKeyCredParams),timeout,const DeepCollectionEquality().hash(excludeCredentials),authenticatorSelection,attestation,extensions);
+int get hashCode => Object.hash(runtimeType,password,token);
 
 @override
 String toString() {
-  return 'I2faRegisterKey(rp: $rp, user: $user, challenge: $challenge, pubKeyCredParams: $pubKeyCredParams, timeout: $timeout, excludeCredentials: $excludeCredentials, authenticatorSelection: $authenticatorSelection, attestation: $attestation, extensions: $extensions)';
+  return 'I2faRegisterKey(password: $password, token: $token)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $I2faRegisterKeyCopyWith<$Res>  {
   factory $I2faRegisterKeyCopyWith(I2faRegisterKey value, $Res Function(I2faRegisterKey) _then) = _$I2faRegisterKeyCopyWithImpl;
 @useResult
 $Res call({
- I2faRegisterKeyRp rp, I2faRegisterKeyUser user, String challenge, List<I2faRegisterKeyPubKeyCredParamsItem> pubKeyCredParams, double? timeout, List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials, I2faRegisterKeyAuthenticatorSelection? authenticatorSelection,@JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) I2faRegisterKeyAttestation? attestation, I2faRegisterKeyExtensions? extensions
+ String password, String? token
 });
 
 
-$I2faRegisterKeyRpCopyWith<$Res> get rp;$I2faRegisterKeyUserCopyWith<$Res> get user;$I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>? get authenticatorSelection;$I2faRegisterKeyExtensionsCopyWith<$Res>? get extensions;
+
 
 }
 /// @nodoc
@@ -65,63 +65,14 @@ class _$I2faRegisterKeyCopyWithImpl<$Res>
 
 /// Create a copy of I2faRegisterKey
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? rp = null,Object? user = null,Object? challenge = null,Object? pubKeyCredParams = null,Object? timeout = freezed,Object? excludeCredentials = freezed,Object? authenticatorSelection = freezed,Object? attestation = freezed,Object? extensions = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? password = null,Object? token = freezed,}) {
   return _then(_self.copyWith(
-rp: null == rp ? _self.rp : rp // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyRp,user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyUser,challenge: null == challenge ? _self.challenge : challenge // ignore: cast_nullable_to_non_nullable
-as String,pubKeyCredParams: null == pubKeyCredParams ? _self.pubKeyCredParams : pubKeyCredParams // ignore: cast_nullable_to_non_nullable
-as List<I2faRegisterKeyPubKeyCredParamsItem>,timeout: freezed == timeout ? _self.timeout : timeout // ignore: cast_nullable_to_non_nullable
-as double?,excludeCredentials: freezed == excludeCredentials ? _self.excludeCredentials : excludeCredentials // ignore: cast_nullable_to_non_nullable
-as List<I2faRegisterKeyExcludeCredentialsItem>?,authenticatorSelection: freezed == authenticatorSelection ? _self.authenticatorSelection : authenticatorSelection // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyAuthenticatorSelection?,attestation: freezed == attestation ? _self.attestation : attestation // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyAttestation?,extensions: freezed == extensions ? _self.extensions : extensions // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyExtensions?,
+password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
-/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyRpCopyWith<$Res> get rp {
-  
-  return $I2faRegisterKeyRpCopyWith<$Res>(_self.rp, (value) {
-    return _then(_self.copyWith(rp: value));
-  });
-}/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyUserCopyWith<$Res> get user {
-  
-  return $I2faRegisterKeyUserCopyWith<$Res>(_self.user, (value) {
-    return _then(_self.copyWith(user: value));
-  });
-}/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>? get authenticatorSelection {
-    if (_self.authenticatorSelection == null) {
-    return null;
-  }
 
-  return $I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>(_self.authenticatorSelection!, (value) {
-    return _then(_self.copyWith(authenticatorSelection: value));
-  });
-}/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyExtensionsCopyWith<$Res>? get extensions {
-    if (_self.extensions == null) {
-    return null;
-  }
-
-  return $I2faRegisterKeyExtensionsCopyWith<$Res>(_self.extensions!, (value) {
-    return _then(_self.copyWith(extensions: value));
-  });
-}
 }
 
 
@@ -203,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( I2faRegisterKeyRp rp,  I2faRegisterKeyUser user,  String challenge,  List<I2faRegisterKeyPubKeyCredParamsItem> pubKeyCredParams,  double? timeout,  List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,  I2faRegisterKeyAuthenticatorSelection? authenticatorSelection, @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)  I2faRegisterKeyAttestation? attestation,  I2faRegisterKeyExtensions? extensions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String password,  String? token)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _I2faRegisterKey() when $default != null:
-return $default(_that.rp,_that.user,_that.challenge,_that.pubKeyCredParams,_that.timeout,_that.excludeCredentials,_that.authenticatorSelection,_that.attestation,_that.extensions);case _:
+return $default(_that.password,_that.token);case _:
   return orElse();
 
 }
@@ -224,10 +175,10 @@ return $default(_that.rp,_that.user,_that.challenge,_that.pubKeyCredParams,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( I2faRegisterKeyRp rp,  I2faRegisterKeyUser user,  String challenge,  List<I2faRegisterKeyPubKeyCredParamsItem> pubKeyCredParams,  double? timeout,  List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,  I2faRegisterKeyAuthenticatorSelection? authenticatorSelection, @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)  I2faRegisterKeyAttestation? attestation,  I2faRegisterKeyExtensions? extensions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String password,  String? token)  $default,) {final _that = this;
 switch (_that) {
 case _I2faRegisterKey():
-return $default(_that.rp,_that.user,_that.challenge,_that.pubKeyCredParams,_that.timeout,_that.excludeCredentials,_that.authenticatorSelection,_that.attestation,_that.extensions);case _:
+return $default(_that.password,_that.token);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -244,10 +195,10 @@ return $default(_that.rp,_that.user,_that.challenge,_that.pubKeyCredParams,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( I2faRegisterKeyRp rp,  I2faRegisterKeyUser user,  String challenge,  List<I2faRegisterKeyPubKeyCredParamsItem> pubKeyCredParams,  double? timeout,  List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials,  I2faRegisterKeyAuthenticatorSelection? authenticatorSelection, @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown)  I2faRegisterKeyAttestation? attestation,  I2faRegisterKeyExtensions? extensions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String password,  String? token)?  $default,) {final _that = this;
 switch (_that) {
 case _I2faRegisterKey() when $default != null:
-return $default(_that.rp,_that.user,_that.challenge,_that.pubKeyCredParams,_that.timeout,_that.excludeCredentials,_that.authenticatorSelection,_that.attestation,_that.extensions);case _:
+return $default(_that.password,_that.token);case _:
   return null;
 
 }
@@ -259,32 +210,11 @@ return $default(_that.rp,_that.user,_that.challenge,_that.pubKeyCredParams,_that
 @JsonSerializable()
 
 class _I2faRegisterKey implements I2faRegisterKey {
-  const _I2faRegisterKey({required this.rp, required this.user, required this.challenge, required final  List<I2faRegisterKeyPubKeyCredParamsItem> pubKeyCredParams, this.timeout, final  List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials, this.authenticatorSelection, @JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) this.attestation, this.extensions}): _pubKeyCredParams = pubKeyCredParams,_excludeCredentials = excludeCredentials;
+  const _I2faRegisterKey({required this.password, this.token});
   factory _I2faRegisterKey.fromJson(Map<String, dynamic> json) => _$I2faRegisterKeyFromJson(json);
 
-@override final  I2faRegisterKeyRp rp;
-@override final  I2faRegisterKeyUser user;
-@override final  String challenge;
- final  List<I2faRegisterKeyPubKeyCredParamsItem> _pubKeyCredParams;
-@override List<I2faRegisterKeyPubKeyCredParamsItem> get pubKeyCredParams {
-  if (_pubKeyCredParams is EqualUnmodifiableListView) return _pubKeyCredParams;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_pubKeyCredParams);
-}
-
-@override final  double? timeout;
- final  List<I2faRegisterKeyExcludeCredentialsItem>? _excludeCredentials;
-@override List<I2faRegisterKeyExcludeCredentialsItem>? get excludeCredentials {
-  final value = _excludeCredentials;
-  if (value == null) return null;
-  if (_excludeCredentials is EqualUnmodifiableListView) return _excludeCredentials;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-@override final  I2faRegisterKeyAuthenticatorSelection? authenticatorSelection;
-@override@JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) final  I2faRegisterKeyAttestation? attestation;
-@override final  I2faRegisterKeyExtensions? extensions;
+@override final  String password;
+@override final  String? token;
 
 /// Create a copy of I2faRegisterKey
 /// with the given fields replaced by the non-null parameter values.
@@ -299,16 +229,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _I2faRegisterKey&&(identical(other.rp, rp) || other.rp == rp)&&(identical(other.user, user) || other.user == user)&&(identical(other.challenge, challenge) || other.challenge == challenge)&&const DeepCollectionEquality().equals(other._pubKeyCredParams, _pubKeyCredParams)&&(identical(other.timeout, timeout) || other.timeout == timeout)&&const DeepCollectionEquality().equals(other._excludeCredentials, _excludeCredentials)&&(identical(other.authenticatorSelection, authenticatorSelection) || other.authenticatorSelection == authenticatorSelection)&&(identical(other.attestation, attestation) || other.attestation == attestation)&&(identical(other.extensions, extensions) || other.extensions == extensions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _I2faRegisterKey&&(identical(other.password, password) || other.password == password)&&(identical(other.token, token) || other.token == token));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,rp,user,challenge,const DeepCollectionEquality().hash(_pubKeyCredParams),timeout,const DeepCollectionEquality().hash(_excludeCredentials),authenticatorSelection,attestation,extensions);
+int get hashCode => Object.hash(runtimeType,password,token);
 
 @override
 String toString() {
-  return 'I2faRegisterKey(rp: $rp, user: $user, challenge: $challenge, pubKeyCredParams: $pubKeyCredParams, timeout: $timeout, excludeCredentials: $excludeCredentials, authenticatorSelection: $authenticatorSelection, attestation: $attestation, extensions: $extensions)';
+  return 'I2faRegisterKey(password: $password, token: $token)';
 }
 
 
@@ -319,11 +249,11 @@ abstract mixin class _$I2faRegisterKeyCopyWith<$Res> implements $I2faRegisterKey
   factory _$I2faRegisterKeyCopyWith(_I2faRegisterKey value, $Res Function(_I2faRegisterKey) _then) = __$I2faRegisterKeyCopyWithImpl;
 @override @useResult
 $Res call({
- I2faRegisterKeyRp rp, I2faRegisterKeyUser user, String challenge, List<I2faRegisterKeyPubKeyCredParamsItem> pubKeyCredParams, double? timeout, List<I2faRegisterKeyExcludeCredentialsItem>? excludeCredentials, I2faRegisterKeyAuthenticatorSelection? authenticatorSelection,@JsonKey(unknownEnumValue: I2faRegisterKeyAttestation.unknown) I2faRegisterKeyAttestation? attestation, I2faRegisterKeyExtensions? extensions
+ String password, String? token
 });
 
 
-@override $I2faRegisterKeyRpCopyWith<$Res> get rp;@override $I2faRegisterKeyUserCopyWith<$Res> get user;@override $I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>? get authenticatorSelection;@override $I2faRegisterKeyExtensionsCopyWith<$Res>? get extensions;
+
 
 }
 /// @nodoc
@@ -336,64 +266,15 @@ class __$I2faRegisterKeyCopyWithImpl<$Res>
 
 /// Create a copy of I2faRegisterKey
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? rp = null,Object? user = null,Object? challenge = null,Object? pubKeyCredParams = null,Object? timeout = freezed,Object? excludeCredentials = freezed,Object? authenticatorSelection = freezed,Object? attestation = freezed,Object? extensions = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? password = null,Object? token = freezed,}) {
   return _then(_I2faRegisterKey(
-rp: null == rp ? _self.rp : rp // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyRp,user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyUser,challenge: null == challenge ? _self.challenge : challenge // ignore: cast_nullable_to_non_nullable
-as String,pubKeyCredParams: null == pubKeyCredParams ? _self._pubKeyCredParams : pubKeyCredParams // ignore: cast_nullable_to_non_nullable
-as List<I2faRegisterKeyPubKeyCredParamsItem>,timeout: freezed == timeout ? _self.timeout : timeout // ignore: cast_nullable_to_non_nullable
-as double?,excludeCredentials: freezed == excludeCredentials ? _self._excludeCredentials : excludeCredentials // ignore: cast_nullable_to_non_nullable
-as List<I2faRegisterKeyExcludeCredentialsItem>?,authenticatorSelection: freezed == authenticatorSelection ? _self.authenticatorSelection : authenticatorSelection // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyAuthenticatorSelection?,attestation: freezed == attestation ? _self.attestation : attestation // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyAttestation?,extensions: freezed == extensions ? _self.extensions : extensions // ignore: cast_nullable_to_non_nullable
-as I2faRegisterKeyExtensions?,
+password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
-/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyRpCopyWith<$Res> get rp {
-  
-  return $I2faRegisterKeyRpCopyWith<$Res>(_self.rp, (value) {
-    return _then(_self.copyWith(rp: value));
-  });
-}/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyUserCopyWith<$Res> get user {
-  
-  return $I2faRegisterKeyUserCopyWith<$Res>(_self.user, (value) {
-    return _then(_self.copyWith(user: value));
-  });
-}/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>? get authenticatorSelection {
-    if (_self.authenticatorSelection == null) {
-    return null;
-  }
 
-  return $I2faRegisterKeyAuthenticatorSelectionCopyWith<$Res>(_self.authenticatorSelection!, (value) {
-    return _then(_self.copyWith(authenticatorSelection: value));
-  });
-}/// Create a copy of I2faRegisterKey
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$I2faRegisterKeyExtensionsCopyWith<$Res>? get extensions {
-    if (_self.extensions == null) {
-    return null;
-  }
-
-  return $I2faRegisterKeyExtensionsCopyWith<$Res>(_self.extensions!, (value) {
-    return _then(_self.copyWith(extensions: value));
-  });
-}
 }
 
 // dart format on

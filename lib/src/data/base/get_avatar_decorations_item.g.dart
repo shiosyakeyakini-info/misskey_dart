@@ -17,6 +17,7 @@ _GetAvatarDecorationsItem _$GetAvatarDecorationsItemFromJson(
       (json['roleIdsThatCanBeUsedThisDecoration'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+  category: json['category'] as String?,
 );
 
 Map<String, dynamic> _$GetAvatarDecorationsItemToJson(
@@ -28,4 +29,5 @@ Map<String, dynamic> _$GetAvatarDecorationsItemToJson(
   'url': instance.url,
   'roleIdsThatCanBeUsedThisDecoration':
       instance.roleIdsThatCanBeUsedThisDecoration,
+  'category': instance.category,
 };

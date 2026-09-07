@@ -22,6 +22,7 @@ _AdminAvatarDecorationsListItem _$AdminAvatarDecorationsListItemFromJson(
       (json['roleIdsThatCanBeUsedThisDecoration'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+  category: json['category'] as String?,
 );
 
 Map<String, dynamic> _$AdminAvatarDecorationsListItemToJson(
@@ -35,6 +36,7 @@ Map<String, dynamic> _$AdminAvatarDecorationsListItemToJson(
   'url': instance.url,
   'roleIdsThatCanBeUsedThisDecoration':
       instance.roleIdsThatCanBeUsedThisDecoration,
+  'category': instance.category,
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(

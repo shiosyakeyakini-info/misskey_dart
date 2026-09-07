@@ -34,6 +34,12 @@ class MisskeyAntennas {
     return response.map((e) => Note.fromJson(e as Map<String, dynamic>));
   }
 
+  /// Available since Misskey 2026.9.0
+  /// antennas/remove-note
+  Future<void> removeNote(AntennasRemoveNoteRequest request) async {
+    await _apiService.post<void>("antennas/remove-note", request.toJson());
+  }
+
   /// antennas/show
   Future<Antenna> show(AntennasShowRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(

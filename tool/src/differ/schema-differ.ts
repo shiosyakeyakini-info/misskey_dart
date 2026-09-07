@@ -120,6 +120,12 @@ function toMergedSchema(
   return {
     ...schema,
     properties: mergedProperties,
+    // 元の配列を共有すると、あとから足すバリアントが読み込み元の
+    // ResolvedSchema まで汚してしまう
+    oneOf: schema.oneOf ? [...schema.oneOf] : undefined,
+    discriminator: schema.discriminator
+      ? { ...schema.discriminator, mapping: new Map(schema.discriminator.mapping) }
+      : undefined,
     firstAppearedIn: version,
   };
 }
@@ -148,6 +154,58 @@ function mergeNewFields(
     }
     // If field exists in both, keep the base version's definition
     // (type changes across versions would need manual override)
+  }
+
+  mergeNewVariants(merged, newer);
+}
+
+/**
+ * Merge sealed class variants that only exist in a newer version.
+ *
+ * Properties are merged field by field, but a oneOf schema also grows new
+ * variants over time (Misskey keeps adding notification kinds). Without this
+ * the base version's variant list wins and anything added later silently
+ * falls into the `unknown` fallback.
+ */
+function mergeNewVariants(merged: MergedSchema, newer: ResolvedSchema): void {
+  if (!newer.oneOf || newer.oneOf.length === 0) return;
+  if (!merged.oneOf) {
+    merged.oneOf = [...newer.oneOf];
+    return;
+  }
+
+  const field =
+    merged.discriminator?.field ?? newer.discriminator?.field ?? "type";
+
+  const keyOf = (variant: ResolvedSchema): string | undefined => {
+    if (variant.type === "ref" && variant.refTarget) return `ref:${variant.refTarget}`;
+    const prop = variant.properties.get(field);
+    const values = prop?.schema.enumValues;
+    return values && values.length === 1 ? values[0] : undefined;
+  };
+
+  const seen = new Set<string>();
+  for (const variant of merged.oneOf) {
+    const key = keyOf(variant);
+    if (key) seen.add(key);
+  }
+
+  for (const variant of newer.oneOf) {
+    const key = keyOf(variant);
+    if (!key || seen.has(key)) continue;
+    merged.oneOf.push(variant);
+    seen.add(key);
+
+    if (!merged.discriminator) continue;
+    // 判別子のマッピングの "__inline:N" は oneOf の添字なので、
+    // 新しい版での添字ではなくマージ後の添字に貼り直す
+    const target = newer.discriminator?.mapping?.get(key);
+    merged.discriminator.mapping.set(
+      key,
+      target && !target.startsWith("__inline:")
+        ? target
+        : `__inline:${merged.oneOf.length - 1}`,
+    );
   }
 }
 

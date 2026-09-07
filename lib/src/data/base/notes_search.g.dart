@@ -8,6 +8,8 @@ part of 'notes_search.dart';
 
 _NotesSearch _$NotesSearchFromJson(Map<String, dynamic> json) => _NotesSearch(
   query: json['query'] as String,
+  rangeStartAt: (json['rangeStartAt'] as num?)?.toInt(),
+  rangeEndAt: (json['rangeEndAt'] as num?)?.toInt(),
   sinceId: json['sinceId'] as String?,
   untilId: json['untilId'] as String?,
   sinceDate: (json['sinceDate'] as num?)?.toInt(),
@@ -22,6 +24,8 @@ _NotesSearch _$NotesSearchFromJson(Map<String, dynamic> json) => _NotesSearch(
 Map<String, dynamic> _$NotesSearchToJson(_NotesSearch instance) =>
     <String, dynamic>{
       'query': instance.query,
+      'rangeStartAt': instance.rangeStartAt,
+      'rangeEndAt': instance.rangeEndAt,
       'sinceId': instance.sinceId,
       'untilId': instance.untilId,
       'sinceDate': instance.sinceDate,

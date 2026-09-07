@@ -8,6 +8,9 @@ part 'notes_search_request.g.dart';
 abstract class NotesSearchRequest with _$NotesSearchRequest {
   const factory NotesSearchRequest({
     String? query,
+    @NullableEpocTimeDateTimeConverter.withMilliSeconds()
+    DateTime? rangeStartAt,
+    @NullableEpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeEndAt,
     String? sinceId,
     String? untilId,
     int? sinceDate,
@@ -17,8 +20,6 @@ abstract class NotesSearchRequest with _$NotesSearchRequest {
     String? host,
     @Default(null) String? userId,
     @Default(null) String? channelId,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeStartAt,
-    @EpocTimeDateTimeConverter.withMilliSeconds() DateTime? rangeEndAt,
   }) = _NotesSearchRequest;
 
   factory NotesSearchRequest.fromJson(Map<String, Object?> json) =>

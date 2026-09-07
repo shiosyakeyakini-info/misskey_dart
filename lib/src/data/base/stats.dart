@@ -10,6 +10,7 @@ abstract class Stats with _$Stats {
     required int originalNotesCount,
     required int usersCount,
     required int originalUsersCount,
+    required int reactionsCount,
     required int instances,
     required int driveUsageLocal,
     required int driveUsageRemote,

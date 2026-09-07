@@ -15,6 +15,7 @@ abstract class AdminAvatarDecorationsCreateResponse
     required String description,
     required String url,
     required List<String> roleIdsThatCanBeUsedThisDecoration,
+    String? category,
   }) = _AdminAvatarDecorationsCreateResponse;
 
   factory AdminAvatarDecorationsCreateResponse.fromJson(

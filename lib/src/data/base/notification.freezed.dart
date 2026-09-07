@@ -317,7 +317,7 @@ return unknown(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  note,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  mention,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  reply,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  renote,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  quote,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note,  String reaction)?  reaction,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  pollEnded,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  follow,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  receiveFollowRequest,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  String? message)?  followRequestAccepted,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Role role)?  roleAssigned,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  ChatRoomInvitation invitation)?  chatRoomInvitationReceived,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic achievement)?  achievementEarned,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic exportedEntity,  String fileId)?  exportCompleted,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  login,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  createToken,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String body,  String? header,  String? icon)?  app,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<NotificationReactionsItem> reactions)?  reactionGrouped,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<UserLite> users)?  renoteGrouped,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  test,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note? note)?  scheduledNotePosted,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  scheduledNotePostFailed,TResult Function( String? id, @DateTimeConverter()  DateTime? createdAt)?  unknown,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  note,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  mention,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  reply,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  renote,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  quote,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note,  String reaction)?  reaction,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  pollEnded,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  follow,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  receiveFollowRequest,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  String? message)?  followRequestAccepted,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Role role)?  roleAssigned,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  ChatRoomInvitation invitation)?  chatRoomInvitationReceived,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic achievement)?  achievementEarned,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic exportedEntity,  String fileId)?  exportCompleted,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  login,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  createToken,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String body,  String? header,  String? icon)?  app,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<NotificationReactionsItem> reactions)?  reactionGrouped,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<UserLite> users)?  renoteGrouped,TResult Function( String id, @DateTimeConverter()  DateTime createdAt)?  test,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note)?  scheduledNotePosted,TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  NoteDraft noteDraft)?  scheduledNotePostFailed,TResult Function( String? id, @DateTimeConverter()  DateTime? createdAt)?  unknown,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case NotificationNote() when note != null:
 return note(_that.id,_that.createdAt,_that.user,_that.userId,_that.note);case NotificationMention() when mention != null:
@@ -341,7 +341,7 @@ return reactionGrouped(_that.id,_that.createdAt,_that.note,_that.reactions);case
 return renoteGrouped(_that.id,_that.createdAt,_that.note,_that.users);case NotificationTest() when test != null:
 return test(_that.id,_that.createdAt);case NotificationScheduledNotePosted() when scheduledNotePosted != null:
 return scheduledNotePosted(_that.id,_that.createdAt,_that.note);case NotificationScheduledNotePostFailed() when scheduledNotePostFailed != null:
-return scheduledNotePostFailed(_that.id,_that.createdAt);case NotificationUnknown() when unknown != null:
+return scheduledNotePostFailed(_that.id,_that.createdAt,_that.noteDraft);case NotificationUnknown() when unknown != null:
 return unknown(_that.id,_that.createdAt);case _:
   return orElse();
 
@@ -360,7 +360,7 @@ return unknown(_that.id,_that.createdAt);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  note,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  mention,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  reply,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  renote,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  quote,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note,  String reaction)  reaction,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  pollEnded,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)  follow,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)  receiveFollowRequest,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  String? message)  followRequestAccepted,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Role role)  roleAssigned,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  ChatRoomInvitation invitation)  chatRoomInvitationReceived,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic achievement)  achievementEarned,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic exportedEntity,  String fileId)  exportCompleted,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  login,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  createToken,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String body,  String? header,  String? icon)  app,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<NotificationReactionsItem> reactions)  reactionGrouped,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<UserLite> users)  renoteGrouped,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  test,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note? note)  scheduledNotePosted,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  scheduledNotePostFailed,required TResult Function( String? id, @DateTimeConverter()  DateTime? createdAt)  unknown,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  note,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  mention,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  reply,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  renote,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  quote,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note,  String reaction)  reaction,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)  pollEnded,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)  follow,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)  receiveFollowRequest,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  String? message)  followRequestAccepted,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Role role)  roleAssigned,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  ChatRoomInvitation invitation)  chatRoomInvitationReceived,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic achievement)  achievementEarned,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic exportedEntity,  String fileId)  exportCompleted,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  login,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  createToken,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  String body,  String? header,  String? icon)  app,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<NotificationReactionsItem> reactions)  reactionGrouped,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<UserLite> users)  renoteGrouped,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt)  test,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note)  scheduledNotePosted,required TResult Function( String id, @DateTimeConverter()  DateTime createdAt,  NoteDraft noteDraft)  scheduledNotePostFailed,required TResult Function( String? id, @DateTimeConverter()  DateTime? createdAt)  unknown,}) {final _that = this;
 switch (_that) {
 case NotificationNote():
 return note(_that.id,_that.createdAt,_that.user,_that.userId,_that.note);case NotificationMention():
@@ -384,7 +384,7 @@ return reactionGrouped(_that.id,_that.createdAt,_that.note,_that.reactions);case
 return renoteGrouped(_that.id,_that.createdAt,_that.note,_that.users);case NotificationTest():
 return test(_that.id,_that.createdAt);case NotificationScheduledNotePosted():
 return scheduledNotePosted(_that.id,_that.createdAt,_that.note);case NotificationScheduledNotePostFailed():
-return scheduledNotePostFailed(_that.id,_that.createdAt);case NotificationUnknown():
+return scheduledNotePostFailed(_that.id,_that.createdAt,_that.noteDraft);case NotificationUnknown():
 return unknown(_that.id,_that.createdAt);}
 }
 /// A variant of `when` that fallback to returning `null`
@@ -399,7 +399,7 @@ return unknown(_that.id,_that.createdAt);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  note,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  mention,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  reply,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  renote,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  quote,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note,  String reaction)?  reaction,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  pollEnded,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  follow,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  receiveFollowRequest,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  String? message)?  followRequestAccepted,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Role role)?  roleAssigned,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  ChatRoomInvitation invitation)?  chatRoomInvitationReceived,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic achievement)?  achievementEarned,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic exportedEntity,  String fileId)?  exportCompleted,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  login,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  createToken,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String body,  String? header,  String? icon)?  app,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<NotificationReactionsItem> reactions)?  reactionGrouped,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<UserLite> users)?  renoteGrouped,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  test,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Note? note)?  scheduledNotePosted,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  scheduledNotePostFailed,TResult? Function( String? id, @DateTimeConverter()  DateTime? createdAt)?  unknown,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  note,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  mention,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  reply,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  renote,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  quote,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note,  String reaction)?  reaction,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  Note note)?  pollEnded,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  follow,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId)?  receiveFollowRequest,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  UserLite user,  String userId,  String? message)?  followRequestAccepted,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Role role)?  roleAssigned,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  ChatRoomInvitation invitation)?  chatRoomInvitationReceived,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic achievement)?  achievementEarned,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  dynamic exportedEntity,  String fileId)?  exportCompleted,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  login,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  createToken,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  String body,  String? header,  String? icon)?  app,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<NotificationReactionsItem> reactions)?  reactionGrouped,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note,  List<UserLite> users)?  renoteGrouped,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt)?  test,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  Note note)?  scheduledNotePosted,TResult? Function( String id, @DateTimeConverter()  DateTime createdAt,  NoteDraft noteDraft)?  scheduledNotePostFailed,TResult? Function( String? id, @DateTimeConverter()  DateTime? createdAt)?  unknown,}) {final _that = this;
 switch (_that) {
 case NotificationNote() when note != null:
 return note(_that.id,_that.createdAt,_that.user,_that.userId,_that.note);case NotificationMention() when mention != null:
@@ -423,7 +423,7 @@ return reactionGrouped(_that.id,_that.createdAt,_that.note,_that.reactions);case
 return renoteGrouped(_that.id,_that.createdAt,_that.note,_that.users);case NotificationTest() when test != null:
 return test(_that.id,_that.createdAt);case NotificationScheduledNotePosted() when scheduledNotePosted != null:
 return scheduledNotePosted(_that.id,_that.createdAt,_that.note);case NotificationScheduledNotePostFailed() when scheduledNotePostFailed != null:
-return scheduledNotePostFailed(_that.id,_that.createdAt);case NotificationUnknown() when unknown != null:
+return scheduledNotePostFailed(_that.id,_that.createdAt,_that.noteDraft);case NotificationUnknown() when unknown != null:
 return unknown(_that.id,_that.createdAt);case _:
   return null;
 
@@ -2219,12 +2219,12 @@ as DateTime,
 @JsonSerializable()
 
 class NotificationScheduledNotePosted implements Notification {
-  const NotificationScheduledNotePosted({required this.id, @DateTimeConverter() required this.createdAt, this.note, final  String? $type}): $type = $type ?? 'scheduledNotePosted';
+  const NotificationScheduledNotePosted({required this.id, @DateTimeConverter() required this.createdAt, required this.note, final  String? $type}): $type = $type ?? 'scheduledNotePosted';
   factory NotificationScheduledNotePosted.fromJson(Map<String, dynamic> json) => _$NotificationScheduledNotePostedFromJson(json);
 
 @override final  String id;
 @override@DateTimeConverter() final  DateTime createdAt;
- final  Note? note;
+ final  Note note;
 
 @JsonKey(name: 'type')
 final String $type;
@@ -2263,11 +2263,11 @@ abstract mixin class $NotificationScheduledNotePostedCopyWith<$Res> implements $
   factory $NotificationScheduledNotePostedCopyWith(NotificationScheduledNotePosted value, $Res Function(NotificationScheduledNotePosted) _then) = _$NotificationScheduledNotePostedCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt, Note? note
+ String id,@DateTimeConverter() DateTime createdAt, Note note
 });
 
 
-$NoteCopyWith<$Res>? get note;
+$NoteCopyWith<$Res> get note;
 
 }
 /// @nodoc
@@ -2280,12 +2280,12 @@ class _$NotificationScheduledNotePostedCopyWithImpl<$Res>
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? note = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? note = null,}) {
   return _then(NotificationScheduledNotePosted(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
-as Note?,
+as DateTime,note: null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
+as Note,
   ));
 }
 
@@ -2293,12 +2293,9 @@ as Note?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$NoteCopyWith<$Res>? get note {
-    if (_self.note == null) {
-    return null;
-  }
-
-  return $NoteCopyWith<$Res>(_self.note!, (value) {
+$NoteCopyWith<$Res> get note {
+  
+  return $NoteCopyWith<$Res>(_self.note, (value) {
     return _then(_self.copyWith(note: value));
   });
 }
@@ -2308,11 +2305,12 @@ $NoteCopyWith<$Res>? get note {
 @JsonSerializable()
 
 class NotificationScheduledNotePostFailed implements Notification {
-  const NotificationScheduledNotePostFailed({required this.id, @DateTimeConverter() required this.createdAt, final  String? $type}): $type = $type ?? 'scheduledNotePostFailed';
+  const NotificationScheduledNotePostFailed({required this.id, @DateTimeConverter() required this.createdAt, required this.noteDraft, final  String? $type}): $type = $type ?? 'scheduledNotePostFailed';
   factory NotificationScheduledNotePostFailed.fromJson(Map<String, dynamic> json) => _$NotificationScheduledNotePostFailedFromJson(json);
 
 @override final  String id;
 @override@DateTimeConverter() final  DateTime createdAt;
+ final  NoteDraft noteDraft;
 
 @JsonKey(name: 'type')
 final String $type;
@@ -2331,16 +2329,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationScheduledNotePostFailed&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationScheduledNotePostFailed&&(identical(other.id, id) || other.id == id)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.noteDraft, noteDraft) || other.noteDraft == noteDraft));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdAt);
+int get hashCode => Object.hash(runtimeType,id,createdAt,noteDraft);
 
 @override
 String toString() {
-  return 'Notification.scheduledNotePostFailed(id: $id, createdAt: $createdAt)';
+  return 'Notification.scheduledNotePostFailed(id: $id, createdAt: $createdAt, noteDraft: $noteDraft)';
 }
 
 
@@ -2351,11 +2349,11 @@ abstract mixin class $NotificationScheduledNotePostFailedCopyWith<$Res> implemen
   factory $NotificationScheduledNotePostFailedCopyWith(NotificationScheduledNotePostFailed value, $Res Function(NotificationScheduledNotePostFailed) _then) = _$NotificationScheduledNotePostFailedCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@DateTimeConverter() DateTime createdAt
+ String id,@DateTimeConverter() DateTime createdAt, NoteDraft noteDraft
 });
 
 
-
+$NoteDraftCopyWith<$Res> get noteDraft;
 
 }
 /// @nodoc
@@ -2368,15 +2366,25 @@ class _$NotificationScheduledNotePostFailedCopyWithImpl<$Res>
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? noteDraft = null,}) {
   return _then(NotificationScheduledNotePostFailed(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as DateTime,noteDraft: null == noteDraft ? _self.noteDraft : noteDraft // ignore: cast_nullable_to_non_nullable
+as NoteDraft,
   ));
 }
 
-
+/// Create a copy of Notification
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NoteDraftCopyWith<$Res> get noteDraft {
+  
+  return $NoteDraftCopyWith<$Res>(_self.noteDraft, (value) {
+    return _then(_self.copyWith(noteDraft: value));
+  });
+}
 }
 
 /// @nodoc

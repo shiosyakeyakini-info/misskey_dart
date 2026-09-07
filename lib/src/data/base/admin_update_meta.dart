@@ -59,6 +59,10 @@ abstract class AdminUpdateMeta with _$AdminUpdateMeta {
     sensitiveMediaDetectionSensitivity,
     bool? setSensitiveFlagAutomatically,
     bool? enableSensitiveMediaDetectionForVideos,
+    String? sensitiveMediaDetectionApiUrl,
+    String? sensitiveMediaDetectionApiKey,
+    int? sensitiveMediaDetectionTimeout,
+    int? sensitiveMediaDetectionMaxImagesPerRequest,
     String? maintainerName,
     String? maintainerEmail,
     List<String>? langs,
@@ -127,6 +131,7 @@ abstract class AdminUpdateMeta with _$AdminUpdateMeta {
     bool? urlPreviewRequireContentLength,
     String? urlPreviewUserAgent,
     String? urlPreviewSummaryProxyUrl,
+    List<String>? urlPreviewSensitiveList,
     @JsonKey(unknownEnumValue: AdminUpdateMetaFederation.unknown)
     AdminUpdateMetaFederation? federation,
     List<String>? federationHosts,

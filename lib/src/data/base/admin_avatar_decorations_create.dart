@@ -15,6 +15,7 @@ abstract class AdminAvatarDecorationsCreate
     required String description,
     required String url,
     required List<String> roleIdsThatCanBeUsedThisDecoration,
+    String? category,
   }) = _AdminAvatarDecorationsCreate;
 
   factory AdminAvatarDecorationsCreate.fromJson(Map<String, Object?> json) =>

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminAvatarDecorationsUpdateRequest {
 
- String? get id; String? get name; String? get description; String? get url; List<String>? get roleIdsThatCanBeUsedThisDecoration;
+ String? get id; String? get name; String? get description; String? get url; List<String>? get roleIdsThatCanBeUsedThisDecoration; String? get category;
 /// Create a copy of AdminAvatarDecorationsUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $AdminAvatarDecorationsUpdateRequestCopyWith<AdminAvatarDecorationsUpdateRequest
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminAvatarDecorationsUpdateRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.roleIdsThatCanBeUsedThisDecoration, roleIdsThatCanBeUsedThisDecoration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminAvatarDecorationsUpdateRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other.roleIdsThatCanBeUsedThisDecoration, roleIdsThatCanBeUsedThisDecoration)&&(identical(other.category, category) || other.category == category));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,description,url,const DeepCollectionEquality().hash(roleIdsThatCanBeUsedThisDecoration));
+int get hashCode => Object.hash(runtimeType,id,name,description,url,const DeepCollectionEquality().hash(roleIdsThatCanBeUsedThisDecoration),category);
 
 @override
 String toString() {
-  return 'AdminAvatarDecorationsUpdateRequest(id: $id, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration)';
+  return 'AdminAvatarDecorationsUpdateRequest(id: $id, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration, category: $category)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $AdminAvatarDecorationsUpdateRequestCopyWith<$Res>  {
   factory $AdminAvatarDecorationsUpdateRequestCopyWith(AdminAvatarDecorationsUpdateRequest value, $Res Function(AdminAvatarDecorationsUpdateRequest) _then) = _$AdminAvatarDecorationsUpdateRequestCopyWithImpl;
 @useResult
 $Res call({
- String? id, String? name, String? description, String? url, List<String>? roleIdsThatCanBeUsedThisDecoration
+ String? id, String? name, String? description, String? url, List<String>? roleIdsThatCanBeUsedThisDecoration, String? category
 });
 
 
@@ -65,14 +65,15 @@ class _$AdminAvatarDecorationsUpdateRequestCopyWithImpl<$Res>
 
 /// Create a copy of AdminAvatarDecorationsUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? description = freezed,Object? url = freezed,Object? roleIdsThatCanBeUsedThisDecoration = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,Object? description = freezed,Object? url = freezed,Object? roleIdsThatCanBeUsedThisDecoration = freezed,Object? category = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as String?,roleIdsThatCanBeUsedThisDecoration: freezed == roleIdsThatCanBeUsedThisDecoration ? _self.roleIdsThatCanBeUsedThisDecoration : roleIdsThatCanBeUsedThisDecoration // ignore: cast_nullable_to_non_nullable
-as List<String>?,
+as List<String>?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -157,10 +158,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? description,  String? url,  List<String>? roleIdsThatCanBeUsedThisDecoration)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? name,  String? description,  String? url,  List<String>? roleIdsThatCanBeUsedThisDecoration,  String? category)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminAvatarDecorationsUpdateRequest() when $default != null:
-return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration);case _:
+return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration,_that.category);case _:
   return orElse();
 
 }
@@ -178,10 +179,10 @@ return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsTha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? description,  String? url,  List<String>? roleIdsThatCanBeUsedThisDecoration)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? name,  String? description,  String? url,  List<String>? roleIdsThatCanBeUsedThisDecoration,  String? category)  $default,) {final _that = this;
 switch (_that) {
 case _AdminAvatarDecorationsUpdateRequest():
-return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration);case _:
+return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration,_that.category);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -198,10 +199,10 @@ return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsTha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? description,  String? url,  List<String>? roleIdsThatCanBeUsedThisDecoration)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? name,  String? description,  String? url,  List<String>? roleIdsThatCanBeUsedThisDecoration,  String? category)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminAvatarDecorationsUpdateRequest() when $default != null:
-return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration);case _:
+return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsThatCanBeUsedThisDecoration,_that.category);case _:
   return null;
 
 }
@@ -213,7 +214,7 @@ return $default(_that.id,_that.name,_that.description,_that.url,_that.roleIdsTha
 @JsonSerializable()
 
 class _AdminAvatarDecorationsUpdateRequest implements AdminAvatarDecorationsUpdateRequest {
-  const _AdminAvatarDecorationsUpdateRequest({this.id, this.name, this.description, this.url, final  List<String>? roleIdsThatCanBeUsedThisDecoration}): _roleIdsThatCanBeUsedThisDecoration = roleIdsThatCanBeUsedThisDecoration;
+  const _AdminAvatarDecorationsUpdateRequest({this.id, this.name, this.description, this.url, final  List<String>? roleIdsThatCanBeUsedThisDecoration, this.category}): _roleIdsThatCanBeUsedThisDecoration = roleIdsThatCanBeUsedThisDecoration;
   factory _AdminAvatarDecorationsUpdateRequest.fromJson(Map<String, dynamic> json) => _$AdminAvatarDecorationsUpdateRequestFromJson(json);
 
 @override final  String? id;
@@ -229,6 +230,7 @@ class _AdminAvatarDecorationsUpdateRequest implements AdminAvatarDecorationsUpda
   return EqualUnmodifiableListView(value);
 }
 
+@override final  String? category;
 
 /// Create a copy of AdminAvatarDecorationsUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -243,16 +245,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminAvatarDecorationsUpdateRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._roleIdsThatCanBeUsedThisDecoration, _roleIdsThatCanBeUsedThisDecoration));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminAvatarDecorationsUpdateRequest&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.url, url) || other.url == url)&&const DeepCollectionEquality().equals(other._roleIdsThatCanBeUsedThisDecoration, _roleIdsThatCanBeUsedThisDecoration)&&(identical(other.category, category) || other.category == category));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,description,url,const DeepCollectionEquality().hash(_roleIdsThatCanBeUsedThisDecoration));
+int get hashCode => Object.hash(runtimeType,id,name,description,url,const DeepCollectionEquality().hash(_roleIdsThatCanBeUsedThisDecoration),category);
 
 @override
 String toString() {
-  return 'AdminAvatarDecorationsUpdateRequest(id: $id, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration)';
+  return 'AdminAvatarDecorationsUpdateRequest(id: $id, name: $name, description: $description, url: $url, roleIdsThatCanBeUsedThisDecoration: $roleIdsThatCanBeUsedThisDecoration, category: $category)';
 }
 
 
@@ -263,7 +265,7 @@ abstract mixin class _$AdminAvatarDecorationsUpdateRequestCopyWith<$Res> impleme
   factory _$AdminAvatarDecorationsUpdateRequestCopyWith(_AdminAvatarDecorationsUpdateRequest value, $Res Function(_AdminAvatarDecorationsUpdateRequest) _then) = __$AdminAvatarDecorationsUpdateRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String? name, String? description, String? url, List<String>? roleIdsThatCanBeUsedThisDecoration
+ String? id, String? name, String? description, String? url, List<String>? roleIdsThatCanBeUsedThisDecoration, String? category
 });
 
 
@@ -280,14 +282,15 @@ class __$AdminAvatarDecorationsUpdateRequestCopyWithImpl<$Res>
 
 /// Create a copy of AdminAvatarDecorationsUpdateRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? description = freezed,Object? url = freezed,Object? roleIdsThatCanBeUsedThisDecoration = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,Object? description = freezed,Object? url = freezed,Object? roleIdsThatCanBeUsedThisDecoration = freezed,Object? category = freezed,}) {
   return _then(_AdminAvatarDecorationsUpdateRequest(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
 as String?,roleIdsThatCanBeUsedThisDecoration: freezed == roleIdsThatCanBeUsedThisDecoration ? _self._roleIdsThatCanBeUsedThisDecoration : roleIdsThatCanBeUsedThisDecoration // ignore: cast_nullable_to_non_nullable
-as List<String>?,
+as List<String>?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

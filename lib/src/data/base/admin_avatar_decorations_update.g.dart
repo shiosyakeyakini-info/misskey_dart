@@ -17,6 +17,7 @@ _AdminAvatarDecorationsUpdate _$AdminAvatarDecorationsUpdateFromJson(
       (json['roleIdsThatCanBeUsedThisDecoration'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+  category: json['category'] as String?,
 );
 
 Map<String, dynamic> _$AdminAvatarDecorationsUpdateToJson(
@@ -28,4 +29,5 @@ Map<String, dynamic> _$AdminAvatarDecorationsUpdateToJson(
   'url': instance.url,
   'roleIdsThatCanBeUsedThisDecoration':
       instance.roleIdsThatCanBeUsedThisDecoration,
+  'category': instance.category,
 };

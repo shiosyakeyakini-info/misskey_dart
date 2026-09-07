@@ -205,6 +205,22 @@ field_overrides:
     visibility:
       dart_type: "NoteVisibility?"
 
+  StatsResponse:
+    # 2026.4 以降で増えたので、古いサーバーは返してこない
+    reactionsCount:
+      dart_type: "int?"
+
+  NotesSearchRequest:
+    # スキーマ上はエポックミリ秒の整数
+    rangeStartAt:
+      converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
+    rangeEndAt:
+      converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
+      import: "package:misskey_dart/src/converters/date_time_converter.dart"
+      dart_type: "DateTime?"
+
   MuteCreateRequest:
     expiresAt:
       converter: NullableEpocTimeDateTimeConverter.withMilliSeconds
@@ -441,6 +457,7 @@ manual_files:
 # number type fields that should be int
 number_as_int:
   - "*.count"
+  - "*.reactionsCount"
   - "*.total"
   - "*.pong"
   - "*.attachedUsersCount"
@@ -499,13 +516,6 @@ extra_fields:
       dart_type: bool
       nullable: true
 
-  # 2026.4 以降で stats に増えたが、収集済みのスキーマが 2026.3.1 までなので
-  # 拾えない。古いサーバーは返さないので nullable。
-  StatsResponse:
-    reactionsCount:
-      dart_type: int
-      nullable: true
-
   # 編集されたノートでサーバーが返してくるが、Misskey の json-schema には
   # 載っていないので生成では出てこない。miria の「編集済み」表示が使う。
   Note:
@@ -515,21 +525,6 @@ extra_fields:
       converter: NullableDateTimeConverter
       import: "package:misskey_dart/src/converters/date_time_converter.dart"
 
-  # 2026.4 以降の Misskey が notes/search に追加したが、api_schemas に
-  # 収集済みなのが 2026.3.1 までなのでスキーマからは拾えない。
-  # 投稿日時での絞り込み用で、エポックミリ秒で送る。
-  NotesSearchRequest:
-    rangeStartAt:
-      dart_type: DateTime
-      nullable: true
-      converter: EpocTimeDateTimeConverter.withMilliSeconds
-      import: "package:misskey_dart/src/converters/date_time_converter.dart"
-    rangeEndAt:
-      dart_type: DateTime
-      nullable: true
-      converter: EpocTimeDateTimeConverter.withMilliSeconds
-      import: "package:misskey_dart/src/converters/date_time_converter.dart"
-
   UserList:
     likedCount:
       dart_type: double
@@ -537,21 +532,6 @@ extra_fields:
     isLiked:
       dart_type: bool
       nullable: true
-
-# 収集済みスキーマに載っていない sealed class のバリアント。
-# 予約投稿の通知は 2026.4 以降に入ったもので、api_schemas が 2026.3.1 までしか
-# ないので生成では出てこない。放っておくと unknown に落ちてノートを失う。
-extra_union_variants:
-  Notification:
-    - value: scheduledNotePosted
-      fields:
-        - "required String id"
-        - "@DateTimeConverter() required DateTime createdAt"
-        - "Note? note"
-    - value: scheduledNotePostFailed
-      fields:
-        - "required String id"
-        - "@DateTimeConverter() required DateTime createdAt"
 
 # Enum value name overrides (JSON value → Dart member name)
 # Used when auto-generated names don't match existing code conventions

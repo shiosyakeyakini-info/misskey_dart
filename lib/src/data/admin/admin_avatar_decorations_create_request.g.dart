@@ -16,6 +16,7 @@ _$AdminAvatarDecorationsCreateRequestFromJson(Map<String, dynamic> json) =>
           (json['roleIdsThatCanBeUsedThisDecoration'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
+      category: json['category'] as String?,
     );
 
 Map<String, dynamic> _$AdminAvatarDecorationsCreateRequestToJson(
@@ -26,4 +27,5 @@ Map<String, dynamic> _$AdminAvatarDecorationsCreateRequestToJson(
   'url': instance.url,
   'roleIdsThatCanBeUsedThisDecoration':
       instance.roleIdsThatCanBeUsedThisDecoration,
+  'category': instance.category,
 };

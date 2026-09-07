@@ -12,6 +12,7 @@ abstract class AdminAvatarDecorationsUpdateRequest
     String? description,
     String? url,
     List<String>? roleIdsThatCanBeUsedThisDecoration,
+    String? category,
   }) = _AdminAvatarDecorationsUpdateRequest;
 
   factory AdminAvatarDecorationsUpdateRequest.fromJson(

@@ -7,6 +7,8 @@ part 'notes_search.g.dart';
 abstract class NotesSearch with _$NotesSearch {
   const factory NotesSearch({
     required String query,
+    int? rangeStartAt,
+    int? rangeEndAt,
     String? sinceId,
     String? untilId,
     int? sinceDate,

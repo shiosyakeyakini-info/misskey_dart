@@ -36,6 +36,16 @@ class MisskeyFollowing {
     return UserLite.fromJson(response);
   }
 
+  /// Available since Misskey 2026.9.0
+  /// following/list
+  Future<Iterable<Following>> list(FollowingListRequest request) async {
+    final response = await _apiService.post<List>(
+      "following/list",
+      request.toJson(),
+    );
+    return response.map((e) => Following.fromJson(e as Map<String, dynamic>));
+  }
+
   /// following/update
   Future<UserLite> update(FollowingUpdateRequest request) async {
     final response = await _apiService.post<Map<String, dynamic>>(

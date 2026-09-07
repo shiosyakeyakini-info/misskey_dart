@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotesSearch {
 
- String get query; String? get sinceId; String? get untilId; int? get sinceDate; int? get untilDate; int? get limit; int? get offset; String? get host; String? get userId; String? get channelId;
+ String get query; int? get rangeStartAt; int? get rangeEndAt; String? get sinceId; String? get untilId; int? get sinceDate; int? get untilDate; int? get limit; int? get offset; String? get host; String? get userId; String? get channelId;
 /// Create a copy of NotesSearch
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $NotesSearchCopyWith<NotesSearch> get copyWith => _$NotesSearchCopyWithImpl<Note
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesSearch&&(identical(other.query, query) || other.query == query)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.host, host) || other.host == host)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotesSearch&&(identical(other.query, query) || other.query == query)&&(identical(other.rangeStartAt, rangeStartAt) || other.rangeStartAt == rangeStartAt)&&(identical(other.rangeEndAt, rangeEndAt) || other.rangeEndAt == rangeEndAt)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.host, host) || other.host == host)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,query,sinceId,untilId,sinceDate,untilDate,limit,offset,host,userId,channelId);
+int get hashCode => Object.hash(runtimeType,query,rangeStartAt,rangeEndAt,sinceId,untilId,sinceDate,untilDate,limit,offset,host,userId,channelId);
 
 @override
 String toString() {
-  return 'NotesSearch(query: $query, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
+  return 'NotesSearch(query: $query, rangeStartAt: $rangeStartAt, rangeEndAt: $rangeEndAt, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $NotesSearchCopyWith<$Res>  {
   factory $NotesSearchCopyWith(NotesSearch value, $Res Function(NotesSearch) _then) = _$NotesSearchCopyWithImpl;
 @useResult
 $Res call({
- String query, String? sinceId, String? untilId, int? sinceDate, int? untilDate, int? limit, int? offset, String? host, String? userId, String? channelId
+ String query, int? rangeStartAt, int? rangeEndAt, String? sinceId, String? untilId, int? sinceDate, int? untilDate, int? limit, int? offset, String? host, String? userId, String? channelId
 });
 
 
@@ -65,10 +65,12 @@ class _$NotesSearchCopyWithImpl<$Res>
 
 /// Create a copy of NotesSearch
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? query = null,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? limit = freezed,Object? offset = freezed,Object? host = freezed,Object? userId = freezed,Object? channelId = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? query = null,Object? rangeStartAt = freezed,Object? rangeEndAt = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? limit = freezed,Object? offset = freezed,Object? host = freezed,Object? userId = freezed,Object? channelId = freezed,}) {
   return _then(_self.copyWith(
 query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
-as String,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String,rangeStartAt: freezed == rangeStartAt ? _self.rangeStartAt : rangeStartAt // ignore: cast_nullable_to_non_nullable
+as int?,rangeEndAt: freezed == rangeEndAt ? _self.rangeEndAt : rangeEndAt // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
 as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
 as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
 as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable
@@ -162,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String query,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  int? limit,  int? offset,  String? host,  String? userId,  String? channelId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String query,  int? rangeStartAt,  int? rangeEndAt,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  int? limit,  int? offset,  String? host,  String? userId,  String? channelId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotesSearch() when $default != null:
-return $default(_that.query,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.limit,_that.offset,_that.host,_that.userId,_that.channelId);case _:
+return $default(_that.query,_that.rangeStartAt,_that.rangeEndAt,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.limit,_that.offset,_that.host,_that.userId,_that.channelId);case _:
   return orElse();
 
 }
@@ -183,10 +185,10 @@ return $default(_that.query,_that.sinceId,_that.untilId,_that.sinceDate,_that.un
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String query,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  int? limit,  int? offset,  String? host,  String? userId,  String? channelId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String query,  int? rangeStartAt,  int? rangeEndAt,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  int? limit,  int? offset,  String? host,  String? userId,  String? channelId)  $default,) {final _that = this;
 switch (_that) {
 case _NotesSearch():
-return $default(_that.query,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.limit,_that.offset,_that.host,_that.userId,_that.channelId);case _:
+return $default(_that.query,_that.rangeStartAt,_that.rangeEndAt,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.limit,_that.offset,_that.host,_that.userId,_that.channelId);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -203,10 +205,10 @@ return $default(_that.query,_that.sinceId,_that.untilId,_that.sinceDate,_that.un
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String query,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  int? limit,  int? offset,  String? host,  String? userId,  String? channelId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String query,  int? rangeStartAt,  int? rangeEndAt,  String? sinceId,  String? untilId,  int? sinceDate,  int? untilDate,  int? limit,  int? offset,  String? host,  String? userId,  String? channelId)?  $default,) {final _that = this;
 switch (_that) {
 case _NotesSearch() when $default != null:
-return $default(_that.query,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.limit,_that.offset,_that.host,_that.userId,_that.channelId);case _:
+return $default(_that.query,_that.rangeStartAt,_that.rangeEndAt,_that.sinceId,_that.untilId,_that.sinceDate,_that.untilDate,_that.limit,_that.offset,_that.host,_that.userId,_that.channelId);case _:
   return null;
 
 }
@@ -218,10 +220,12 @@ return $default(_that.query,_that.sinceId,_that.untilId,_that.sinceDate,_that.un
 @JsonSerializable()
 
 class _NotesSearch implements NotesSearch {
-  const _NotesSearch({required this.query, this.sinceId, this.untilId, this.sinceDate, this.untilDate, this.limit = 10, this.offset = 0, this.host, this.userId = null, this.channelId = null});
+  const _NotesSearch({required this.query, this.rangeStartAt, this.rangeEndAt, this.sinceId, this.untilId, this.sinceDate, this.untilDate, this.limit = 10, this.offset = 0, this.host, this.userId = null, this.channelId = null});
   factory _NotesSearch.fromJson(Map<String, dynamic> json) => _$NotesSearchFromJson(json);
 
 @override final  String query;
+@override final  int? rangeStartAt;
+@override final  int? rangeEndAt;
 @override final  String? sinceId;
 @override final  String? untilId;
 @override final  int? sinceDate;
@@ -245,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesSearch&&(identical(other.query, query) || other.query == query)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.host, host) || other.host == host)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotesSearch&&(identical(other.query, query) || other.query == query)&&(identical(other.rangeStartAt, rangeStartAt) || other.rangeStartAt == rangeStartAt)&&(identical(other.rangeEndAt, rangeEndAt) || other.rangeEndAt == rangeEndAt)&&(identical(other.sinceId, sinceId) || other.sinceId == sinceId)&&(identical(other.untilId, untilId) || other.untilId == untilId)&&(identical(other.sinceDate, sinceDate) || other.sinceDate == sinceDate)&&(identical(other.untilDate, untilDate) || other.untilDate == untilDate)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.host, host) || other.host == host)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.channelId, channelId) || other.channelId == channelId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,query,sinceId,untilId,sinceDate,untilDate,limit,offset,host,userId,channelId);
+int get hashCode => Object.hash(runtimeType,query,rangeStartAt,rangeEndAt,sinceId,untilId,sinceDate,untilDate,limit,offset,host,userId,channelId);
 
 @override
 String toString() {
-  return 'NotesSearch(query: $query, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
+  return 'NotesSearch(query: $query, rangeStartAt: $rangeStartAt, rangeEndAt: $rangeEndAt, sinceId: $sinceId, untilId: $untilId, sinceDate: $sinceDate, untilDate: $untilDate, limit: $limit, offset: $offset, host: $host, userId: $userId, channelId: $channelId)';
 }
 
 
@@ -265,7 +269,7 @@ abstract mixin class _$NotesSearchCopyWith<$Res> implements $NotesSearchCopyWith
   factory _$NotesSearchCopyWith(_NotesSearch value, $Res Function(_NotesSearch) _then) = __$NotesSearchCopyWithImpl;
 @override @useResult
 $Res call({
- String query, String? sinceId, String? untilId, int? sinceDate, int? untilDate, int? limit, int? offset, String? host, String? userId, String? channelId
+ String query, int? rangeStartAt, int? rangeEndAt, String? sinceId, String? untilId, int? sinceDate, int? untilDate, int? limit, int? offset, String? host, String? userId, String? channelId
 });
 
 
@@ -282,10 +286,12 @@ class __$NotesSearchCopyWithImpl<$Res>
 
 /// Create a copy of NotesSearch
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? query = null,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? limit = freezed,Object? offset = freezed,Object? host = freezed,Object? userId = freezed,Object? channelId = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? query = null,Object? rangeStartAt = freezed,Object? rangeEndAt = freezed,Object? sinceId = freezed,Object? untilId = freezed,Object? sinceDate = freezed,Object? untilDate = freezed,Object? limit = freezed,Object? offset = freezed,Object? host = freezed,Object? userId = freezed,Object? channelId = freezed,}) {
   return _then(_NotesSearch(
 query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
-as String,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
+as String,rangeStartAt: freezed == rangeStartAt ? _self.rangeStartAt : rangeStartAt // ignore: cast_nullable_to_non_nullable
+as int?,rangeEndAt: freezed == rangeEndAt ? _self.rangeEndAt : rangeEndAt // ignore: cast_nullable_to_non_nullable
+as int?,sinceId: freezed == sinceId ? _self.sinceId : sinceId // ignore: cast_nullable_to_non_nullable
 as String?,untilId: freezed == untilId ? _self.untilId : untilId // ignore: cast_nullable_to_non_nullable
 as String?,sinceDate: freezed == sinceDate ? _self.sinceDate : sinceDate // ignore: cast_nullable_to_non_nullable
 as int?,untilDate: freezed == untilDate ? _self.untilDate : untilDate // ignore: cast_nullable_to_non_nullable

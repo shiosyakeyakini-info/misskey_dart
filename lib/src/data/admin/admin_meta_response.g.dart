@@ -83,6 +83,14 @@ _AdminMetaResponse _$AdminMetaResponseFromJson(
   setSensitiveFlagAutomatically: json['setSensitiveFlagAutomatically'] as bool,
   enableSensitiveMediaDetectionForVideos:
       json['enableSensitiveMediaDetectionForVideos'] as bool,
+  sensitiveMediaDetectionApiUrl:
+      json['sensitiveMediaDetectionApiUrl'] as String?,
+  sensitiveMediaDetectionApiKey:
+      json['sensitiveMediaDetectionApiKey'] as String?,
+  sensitiveMediaDetectionTimeout:
+      (json['sensitiveMediaDetectionTimeout'] as num).toDouble(),
+  sensitiveMediaDetectionMaxImagesPerRequest:
+      (json['sensitiveMediaDetectionMaxImagesPerRequest'] as num).toDouble(),
   proxyAccountId: json['proxyAccountId'] as String,
   email: json['email'] as String?,
   smtpSecure: json['smtpSecure'] as bool,
@@ -166,6 +174,9 @@ _AdminMetaResponse _$AdminMetaResponseFromJson(
       json['urlPreviewRequireContentLength'] as bool,
   urlPreviewUserAgent: json['urlPreviewUserAgent'] as String?,
   urlPreviewSummaryProxyUrl: json['urlPreviewSummaryProxyUrl'] as String?,
+  urlPreviewSensitiveList: (json['urlPreviewSensitiveList'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
   federation: $enumDecode(
     _$AdminMetaFederationEnumMap,
     json['federation'],
@@ -251,6 +262,11 @@ Map<String, dynamic> _$AdminMetaResponseToJson(
   'setSensitiveFlagAutomatically': instance.setSensitiveFlagAutomatically,
   'enableSensitiveMediaDetectionForVideos':
       instance.enableSensitiveMediaDetectionForVideos,
+  'sensitiveMediaDetectionApiUrl': instance.sensitiveMediaDetectionApiUrl,
+  'sensitiveMediaDetectionApiKey': instance.sensitiveMediaDetectionApiKey,
+  'sensitiveMediaDetectionTimeout': instance.sensitiveMediaDetectionTimeout,
+  'sensitiveMediaDetectionMaxImagesPerRequest':
+      instance.sensitiveMediaDetectionMaxImagesPerRequest,
   'proxyAccountId': instance.proxyAccountId,
   'email': instance.email,
   'smtpSecure': instance.smtpSecure,
@@ -325,6 +341,7 @@ Map<String, dynamic> _$AdminMetaResponseToJson(
   'urlPreviewRequireContentLength': instance.urlPreviewRequireContentLength,
   'urlPreviewUserAgent': instance.urlPreviewUserAgent,
   'urlPreviewSummaryProxyUrl': instance.urlPreviewSummaryProxyUrl,
+  'urlPreviewSensitiveList': instance.urlPreviewSensitiveList,
   'federation': _$AdminMetaFederationEnumMap[instance.federation]!,
   'federationHosts': instance.federationHosts,
   'deliverSuspendedSoftware': instance.deliverSuspendedSoftware

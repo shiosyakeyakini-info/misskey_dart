@@ -189,6 +189,12 @@ class MisskeyAdmin {
     await _apiService.post<void>("admin/suspend-user", request.toJson());
   }
 
+  /// Available since Misskey 2026.9.0
+  /// admin/unset-mfa
+  Future<void> unsetMfa(AdminUnsetMfaRequest request) async {
+    await _apiService.post<void>("admin/unset-mfa", request.toJson());
+  }
+
   /// admin/unset-user-avatar
   Future<void> unsetUserAvatar(AdminUnsetUserAvatarRequest request) async {
     await _apiService.post<void>("admin/unset-user-avatar", request.toJson());
@@ -760,6 +766,12 @@ class MisskeyAdminQueue {
     return response.map((e) => QueueJob.fromJson(e as Map<String, dynamic>));
   }
 
+  /// Available since Misskey 2026.9.0
+  /// admin/queue/pause
+  Future<void> pause(AdminQueuePauseRequest request) async {
+    await _apiService.post<void>("admin/queue/pause", request.toJson());
+  }
+
   /// admin/queue/promote-jobs
   Future<void> promoteJobs(AdminQueuePromoteJobsRequest request) async {
     await _apiService.post<void>("admin/queue/promote-jobs", request.toJson());
@@ -787,6 +799,12 @@ class MisskeyAdminQueue {
   /// admin/queue/remove-job
   Future<void> removeJob(AdminQueueRemoveJobRequest request) async {
     await _apiService.post<void>("admin/queue/remove-job", request.toJson());
+  }
+
+  /// Available since Misskey 2026.9.0
+  /// admin/queue/resume
+  Future<void> resume(AdminQueueResumeRequest request) async {
+    await _apiService.post<void>("admin/queue/resume", request.toJson());
   }
 
   /// admin/queue/retry-job

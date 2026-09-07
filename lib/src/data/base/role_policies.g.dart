@@ -51,6 +51,7 @@ _RolePolicies _$RolePoliciesFromJson(Map<String, dynamic> json) =>
       watermarkAvailable: json['watermarkAvailable'] as bool?,
       canSearchUsers: json['canSearchUsers'] as bool?,
       scheduledNoteLimit: (json['scheduledNoteLimit'] as num?)?.toInt(),
+      canCreateChannel: json['canCreateChannel'] as bool?,
     );
 
 Map<String, dynamic> _$RolePoliciesToJson(_RolePolicies instance) =>
@@ -93,6 +94,7 @@ Map<String, dynamic> _$RolePoliciesToJson(_RolePolicies instance) =>
       'watermarkAvailable': instance.watermarkAvailable,
       'canSearchUsers': instance.canSearchUsers,
       'scheduledNoteLimit': instance.scheduledNoteLimit,
+      'canCreateChannel': instance.canCreateChannel,
     };
 
 const _$ChatAvailabilityEnumMap = {

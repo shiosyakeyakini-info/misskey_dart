@@ -11,6 +11,7 @@ abstract class GetAvatarDecorationsItem with _$GetAvatarDecorationsItem {
     required String description,
     required String url,
     required List<String> roleIdsThatCanBeUsedThisDecoration,
+    String? category,
   }) = _GetAvatarDecorationsItem;
 
   factory GetAvatarDecorationsItem.fromJson(Map<String, Object?> json) =>
